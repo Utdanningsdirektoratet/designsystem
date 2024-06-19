@@ -1,0 +1,16 @@
+{
+  "name": "@udir-design/react",
+  "type": "module",
+  "version": "0.0.0",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc --build"
+  }
+}
