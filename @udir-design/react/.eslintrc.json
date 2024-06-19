@@ -1,11 +1,14 @@
 {
   "extends": ["plugin:@nx/react", "../../.eslintrc.json"],
-  "ignorePatterns": ["!**/*"],
+  "ignorePatterns": ["!**/*", "storybook-static"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "parserOptions": {
-        "project": ["@udir-design/react/tsconfig.*?.json"]
+        "project": [
+          "@udir-design/react/tsconfig.*?.json",
+          "@udir-design/react/tsconfig.storybook.json"
+        ]
       },
       "rules": {}
     },
