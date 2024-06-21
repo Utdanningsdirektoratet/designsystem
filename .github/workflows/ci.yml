@@ -42,3 +42,5 @@ jobs:
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       # - run: npx nx-cloud record -- echo Hello World
       - run: npx nx affected -t typecheck lint test build
+        env:
+          NXCACHE_AZURE_ACCOUNT_KEY: ${{ secrets.NXCACHE_AZURE_ACCOUNT_KEY }}

@@ -10,6 +10,21 @@ Enhance your Nx experience by installing [Nx Console](https://nx.dev/nx-console)
 provides an interactive UI to view your projects, run tasks, generate code, and more! Available for VSCode, IntelliJ and
 comes with a LSP for Vim users.
 
+## Remote caching
+
+This workspace uses remote caching to speed up builds across developer machines and CI builds.
+The cache is stored in an Azure storage account, by using [nx-remotecache-azure](https://www.npmjs.com/package/nx-remotecache-azure)
+
+To benefit from this, each developer must add the following to a file `.env.local`
+
+```
+NXCACHE_AZURE_ACCOUNT_KEY=<secret key>
+```
+
+The `<secret key>` must be replaced with the actual key -- ask a developer for where to find this.
+
+Without this, the build will still work, but will fall back to the local cache.
+
 ## Nx plugins and code generators
 
 Add Nx plugins to leverage their code generators and automated, inferred tasks.
