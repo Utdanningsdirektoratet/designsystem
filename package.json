@@ -2,10 +2,14 @@
   "name": "designsystem",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "prepare": "husky"
+  },
   "private": true,
   "devDependencies": {
     "@chromatic-com/storybook": "^1.5.0",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@nx/eslint": "19.3.0",
     "@nx/eslint-plugin": "19.3.0",
     "@nx/js": "19.3.0",
@@ -39,6 +43,7 @@
     "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
+    "husky": "^9.0.11",
     "jsdom": "~22.1.0",
     "nx": "19.3.0",
     "prettier": "^2.6.2",
