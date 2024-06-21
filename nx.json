@@ -25,6 +25,9 @@
       "options": {
         "max-warnings": 0
       }
+    },
+    "typecheck": {
+      "cache": true
     }
   },
   "plugins": [
