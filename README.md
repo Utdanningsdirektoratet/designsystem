@@ -15,7 +15,9 @@ comes with a LSP for Vim users.
 This workspace uses remote caching to speed up builds across developer machines and CI builds.
 The cache is stored in an Azure storage account, by using [nx-remotecache-azure](https://www.npmjs.com/package/nx-remotecache-azure)
 
-To benefit from this, each developer must add the following to a file `.env.local`
+The required Azure infrastructure for remote caching is documented in [.azure/README.md](.azure/README.md).
+
+To benefit from remote caching, each developer must add the following to a file `.env.local`
 
 ```
 NXCACHE_AZURE_ACCOUNT_KEY=<secret key>
