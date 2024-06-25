@@ -1,0 +1,39 @@
+[
+  {
+    "id": "70cbd6e4-1c12-4111-9989-ffbb7c42aba3",
+    "name": "Light",
+    "selectedTokenSets": {
+      "primitives/colors/light/global": "enabled",
+      "primitives/colors/light/udir": "enabled"
+    },
+    "group": "Mode"
+  },
+  {
+    "id": "1e4b1380-f8ca-4ad5-86bc-66b9902d9136",
+    "name": "Dark",
+    "selectedTokenSets": {
+      "primitives/colors/dark/global": "enabled",
+      "primitives/colors/dark/udir": "enabled"
+    },
+    "group": "Mode"
+  },
+  {
+    "id": "0cde232e-3607-4880-aae1-04a107254157",
+    "name": "Udir",
+    "selectedTokenSets": {
+      "themes/udir": "enabled"
+    },
+    "group": "Theme"
+  },
+  {
+    "id": "f2177f59-bdbe-43b6-9856-5d37dfa2f9fc",
+    "name": "Semantic",
+    "selectedTokenSets": {
+      "semantic/style": "enabled",
+      "semantic/color": "enabled",
+      "primitives/globals": "source",
+      "primitives/typography/default": "source"
+    },
+    "group": "Semantic"
+  }
+]
