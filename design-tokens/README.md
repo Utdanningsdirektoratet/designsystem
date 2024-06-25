@@ -8,6 +8,7 @@
 2. Install the [Tokens Studio plugin](<https://www.figma.com/community/plugin/843461159747178978/Tokens-Studio-for-Figma-(Figma-Tokens)>) in Figma
 3. [Set up sync](https://docs.tokens.studio/sync/sync) in Tokens Studio for Figma
 4. Use the ["Create variables" action](https://docs.tokens.studio/variables/creating-variables) in Tokens Studio
+   (in Tokens Studio 2 this is called "Export styles and variables")
 5. Push the resulting variables from Tokens Studio to Git
 
 ### Customizing the theme
