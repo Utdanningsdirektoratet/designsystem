@@ -11,6 +11,7 @@
     }
   },
   "scripts": {
-    "typecheck": "tsc --build"
+    "typecheck": "tsc --build",
+    "build-storybook": "storybook build"
   }
 }
