@@ -1,0 +1,7 @@
+@import '@udir-design/tokens/udir.css';
+@import '@digdir/designsystemet-css';
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-feature-settings: 'cv05' 1; /* Enable lowercase l with tail */
+}
