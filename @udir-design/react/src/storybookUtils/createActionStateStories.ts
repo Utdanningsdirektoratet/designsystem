@@ -17,6 +17,7 @@ declare module '@storybook/types' {
 export function createActionStateStories<Story extends StoryObj>(story: Story) {
   const hovered: Story = {
     ...story,
+    tags: [...(story.tags ?? []), 'pseudo-state'],
     parameters: {
       pseudo: {
         hover: true,
@@ -26,6 +27,7 @@ export function createActionStateStories<Story extends StoryObj>(story: Story) {
 
   const pressed: Story = {
     ...story,
+    tags: [...(story.tags ?? []), 'pseudo-state'],
     parameters: {
       pseudo: {
         active: true,
@@ -35,6 +37,7 @@ export function createActionStateStories<Story extends StoryObj>(story: Story) {
 
   const focused: Story = {
     ...story,
+    tags: [...(story.tags ?? []), 'pseudo-state'],
     play: async ({ canvasElement }) => {
       const canvas = within(canvasElement);
       const button = canvas.getByRole('button');
