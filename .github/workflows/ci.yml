@@ -45,6 +45,17 @@ jobs:
         env:
           NXCACHE_AZURE_ACCOUNT_KEY: ${{ secrets.NXCACHE_AZURE_ACCOUNT_KEY }}
 
+      # Run storybook tests by installing playwright, serving storybook and running storybook-test
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+      - name: Build Storybook
+        run: npx nx build-storybook --quiet
+      - name: Serve Storybook and run tests
+        run: |
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "npx http-server @udir-design/react/storybook-static --port 6006 --silent" \
+            "npx wait-on tcp:6006 && npx nx test-storybook"
+
       - name: Publish Storybook to Chromatic
         uses: chromaui/action@latest
         with:
