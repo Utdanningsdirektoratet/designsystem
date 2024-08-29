@@ -29,6 +29,11 @@
     },
     "typecheck": {
       "cache": true
+    },
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["default", "^default"]
     }
   },
   "plugins": [
@@ -63,6 +68,11 @@
       "library": {
         "unitTestRunner": "vitest"
       }
+    }
+  },
+  "pluginsConfig": {
+    "@nx/js": {
+      "analyzeSourceFiles": true
     }
   }
 }
