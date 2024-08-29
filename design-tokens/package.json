@@ -1,9 +1,18 @@
 {
-  "name": "design-tokens",
+  "name": "@udir-design/tokens",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "exports": {
-    "./*": "./src/*"
+    ".": "./dist/udir.css",
+    "./*": "./dist/*"
+  },
+  "scripts": {
+    "build": "npm run clean && designsystemet tokens build -t ./src -o ./dist",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "@digdir/designsystemet": "1.0.0-next.32",
+    "rimraf": "^5.0.7"
   }
 }
