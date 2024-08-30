@@ -10,6 +10,9 @@
       "options": {
         "port": 6006
       }
+    },
+    "test-storybook": {
+      "dependsOn": ["^build"]
     }
   }
 }
