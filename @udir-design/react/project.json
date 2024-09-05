@@ -11,6 +11,10 @@
         "port": 6006
       }
     },
+    "build-storybook": {
+      "dependsOn": ["build"],
+      "cache": true
+    },
     "test-storybook": {
       "dependsOn": ["^build"]
     }
