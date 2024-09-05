@@ -6,10 +6,23 @@
   "typings": "./src/index.d.ts",
   "private": true,
   "scripts": {
-    "build": "npx tsc --build tsconfig.lib.json"
+    "build": "tsc --build tsconfig.lib.json"
   },
   "dependencies": {
-    "tslib": "^2.3.0",
-    "react-docgen-typescript": "^2.2.2"
+    "@babel/generator": "^7.25.6",
+    "@babel/types": "^7.25.6",
+    "@babel/traverse": "^7.25.6",
+    "@storybook/csf": "^0.1.11",
+    "@storybook/react": "^8.2.9",
+    "camelcase": "^8.0.0",
+    "magicast": "^0.3.4",
+    "react": "^18.3.1",
+    "react-docgen-typescript": "^2.2.2",
+    "tslib": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/babel__generator": "^7.6.8",
+    "@types/babel__traverse": "^7.20.6",
+    "@types/react": "^18.3.1"
   }
 }

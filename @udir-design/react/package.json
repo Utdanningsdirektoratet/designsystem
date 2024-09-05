@@ -18,9 +18,36 @@
   "dependencies": {
     "@digdir/designsystemet-css": "0.11.0-alpha.8",
     "@digdir/designsystemet-react": "1.0.0-rc.12",
-    "@udir-design/tokens": "*"
+    "@udir-design/tokens": "workspace:*",
+    "tslib": "^2.7.0"
+  },
+  "peerDependencies": {
+    "react": ">= 18.3.1",
+    "react-dom": ">= 18.3.1"
   },
   "devDependencies": {
-    "@internal/dynamic-csf": "*"
+    "@chromatic-com/storybook": "^1.5.0",
+    "@internal/dynamic-csf": "workspace:*",
+    "@storybook/addon-a11y": "^8.2.9",
+    "@storybook/addon-essentials": "^8.2.9",
+    "@storybook/addon-interactions": "^8.2.9",
+    "@storybook/core-common": "^8.2.9",
+    "@storybook/core-server": "^8.2.9",
+    "@storybook/csf-tools": "^8.2.9",
+    "@storybook/react": "^8.2.9",
+    "@storybook/react-vite": "^8.2.9",
+    "@storybook/test": "^8.2.9",
+    "@storybook/test-runner": "^0.19.1",
+    "@storybook/types": "^8.2.9",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "axe-playwright": "^2.0.2",
+    "chromatic": "^11.5.4",
+    "sass": "^1.55.0",
+    "storybook": "^8.2.9",
+    "storybook-addon-pseudo-states": "^3.1.1",
+    "unplugin": "^1.13.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }

@@ -18,43 +18,43 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Connect your workspace on nx.app and uncomment this to enable task distribution.
-      # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "build" targets have been requested
-      # - run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js" --stop-agents-after="build"
+      # Note: pnpm version is set in package.json "packageManager"
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
 
       # Cache node_modules
+      # Note: node version is set in package.json "engines.node"
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
+          node-version-file: 'package.json'
+          cache: 'pnpm'
 
-      - run: npm ci
+      - run: pnpm install
+
       - uses: nrwl/nx-set-shas@v4
 
       - name: Validate current commit (last commit) with commitlint
         if: github.event_name == 'push'
-        run: npx commitlint --last --verbose
+        run: pnpm commitlint --last --verbose
 
       - name: Validate PR commits with commitlint
         if: github.event_name == 'pull_request'
-        run: npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
+        run: pnpm commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
 
-      # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
-      # - run: npx nx-cloud record -- echo Hello World
-      - run: npx nx affected -t typecheck lint test build
+      - run: pnpm nx affected -t typecheck lint test build
         env:
           NXCACHE_AZURE_ACCOUNT_KEY: ${{ secrets.NXCACHE_AZURE_ACCOUNT_KEY }}
 
       # Run storybook tests by installing playwright, serving storybook and running storybook-test
       - name: Install Playwright
-        run: npx playwright install --with-deps
+        run: pnpx playwright install --with-deps
       - name: Build Storybook
-        run: npx nx build-storybook --quiet
+        run: pnpm nx build-storybook --quiet
       - name: Serve Storybook and run tests
         run: |
-          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-            "npx http-server @udir-design/react/storybook-static --port 6006 --silent" \
-            "npx wait-on tcp:6006 && npx nx test-storybook"
+          pnpx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "pnpx http-server @udir-design/react/storybook-static --port 6006 --silent" \
+            "pnpx wait-on tcp:6006 && pnpm nx test-storybook"
 
       - name: Publish Storybook to Chromatic
         uses: chromaui/action@latest
