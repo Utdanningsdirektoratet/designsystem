@@ -12,8 +12,8 @@
   },
   "scripts": {
     "typecheck": "tsc --build",
-    "build-storybook": "storybook build",
-    "test-storybook": "test-storybook --index-json"
+    "test-storybook": "test-storybook --index-json",
+    "chromatic:build-storybook": "nx build-storybook"
   },
   "dependencies": {
     "@digdir/designsystemet-css": "0.11.0-alpha.8",

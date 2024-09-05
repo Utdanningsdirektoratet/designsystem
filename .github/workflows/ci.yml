@@ -10,6 +10,9 @@ permissions:
   actions: read
   contents: read
 
+env:
+  NXCACHE_AZURE_ACCOUNT_KEY: ${{ secrets.NXCACHE_AZURE_ACCOUNT_KEY }}
+
 jobs:
   main:
     runs-on: ubuntu-latest
@@ -41,26 +44,67 @@ jobs:
         if: github.event_name == 'pull_request'
         run: pnpm commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
 
-      - run: pnpm nx affected -t typecheck lint test build
-        env:
-          NXCACHE_AZURE_ACCOUNT_KEY: ${{ secrets.NXCACHE_AZURE_ACCOUNT_KEY }}
+      - run: pnpm nx affected -t typecheck lint test build build-storybook
+
+  storybook-tests:
+    runs-on: ubuntu-latest
+    needs: main
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Note: pnpm version is set in package.json "packageManager"
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      # Cache node_modules
+      # Note: node version is set in package.json "engines.node"
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+          cache: 'pnpm'
+
+      - run: pnpm install
 
       # Run storybook tests by installing playwright, serving storybook and running storybook-test
       - name: Install Playwright
         run: pnpx playwright install --with-deps
-      - name: Build Storybook
-        run: pnpm nx build-storybook --quiet
+      - name: Build storybook
+        run: pnpm nx build-storybook
       - name: Serve Storybook and run tests
         run: |
           pnpx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "pnpx http-server @udir-design/react/storybook-static --port 6006 --silent" \
             "pnpx wait-on tcp:6006 && pnpm nx test-storybook"
 
+  chromatic:
+    runs-on: ubuntu-latest
+    needs: [main]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Note: pnpm version is set in package.json "packageManager"
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      # Cache node_modules
+      # Note: node version is set in package.json "engines.node"
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+          cache: 'pnpm'
+
+      - run: pnpm install
+
       - name: Publish Storybook to Chromatic
         uses: chromaui/action@latest
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: '@udir-design/react'
+          buildScriptName: 'chromatic:build-storybook'
           exitZeroOnChanges: true
           exitOnceUploaded: true
           onlyChanged: true
