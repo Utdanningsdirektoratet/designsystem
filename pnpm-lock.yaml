@@ -263,8 +263,8 @@ importers:
   design-tokens:
     devDependencies:
       '@digdir/designsystemet':
-        specifier: 1.0.0-next.32
-        version: 1.0.0-next.32(@babel/preset-env@7.25.4(@babel/core@7.25.2))
+        specifier: 1.0.0-next.35
+        version: 1.0.0-next.35(@babel/preset-env@7.25.4(@babel/core@7.25.2))
       rimraf:
         specifier: ^5.0.7
         version: 5.0.10
@@ -1149,8 +1149,8 @@ packages:
       react: '>=18.3.1'
       react-dom: '>=18.3.1'
 
-  '@digdir/designsystemet@1.0.0-next.32':
-    resolution: {integrity: sha512-eL6/1q0pHqGYHFgi0R7A4fuMfVG4X3JhoRGltbbwbyFs3VLjBoCjwH2TP38V4cVnmGcAew3MjLQuwbCTBJpb4g==}
+  '@digdir/designsystemet@1.0.0-next.35':
+    resolution: {integrity: sha512-otzRfJKXt0+r44Cliaz3tb5EVVGUb+B1BpS9jNhUlWSXaVOKPH/GscXRh2h6NP6Lk/elq6MqBY5SuX7K+PsKNw==}
     hasBin: true
 
   '@emnapi/core@1.2.0':
@@ -8558,7 +8558,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet@1.0.0-next.32(@babel/preset-env@7.25.4(@babel/core@7.25.2))':
+  '@digdir/designsystemet@1.0.0-next.35(@babel/preset-env@7.25.4(@babel/core@7.25.2))':
     dependencies:
       '@adobe/leonardo-contrast-colors': 1.0.0
       '@commander-js/extra-typings': 12.1.0(commander@12.1.0)
