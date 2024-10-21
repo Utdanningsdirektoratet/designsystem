@@ -9,20 +9,20 @@
     "build": "tsc --build tsconfig.lib.json"
   },
   "dependencies": {
-    "@babel/generator": "^7.25.6",
-    "@babel/types": "^7.25.6",
-    "@babel/traverse": "^7.25.6",
+    "@babel/generator": "^7.25.7",
+    "@babel/traverse": "^7.25.7",
+    "@babel/types": "^7.25.8",
     "@storybook/csf": "^0.1.11",
-    "@storybook/react": "^8.2.9",
+    "@storybook/react": "^8.3.6",
     "camelcase": "^8.0.0",
-    "magicast": "^0.3.4",
+    "magicast": "^0.3.5",
     "react": "^18.3.1",
     "react-docgen-typescript": "^2.2.2",
-    "tslib": "^2.7.0"
+    "tslib": "^2.8.0"
   },
   "devDependencies": {
     "@types/babel__generator": "^7.6.8",
     "@types/babel__traverse": "^7.20.6",
-    "@types/react": "^18.3.1"
+    "@types/react": "^18.3.11"
   }
 }
