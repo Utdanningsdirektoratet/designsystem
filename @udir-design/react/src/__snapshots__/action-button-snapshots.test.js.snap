@@ -1,757 +1,568 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`action/button/Snapshots Primary Accent Lg Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="accent"
+        data-size="lg"
+        data-variant="primary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Primary Accent Lg Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Primary Accent Lg Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Primary Accent Lg smoke-test 1`] = `
-<button type="button">
+<button data-color="accent"
+        data-size="lg"
+        data-variant="primary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Primary Accent Md Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="accent"
+        data-size="md"
+        data-variant="primary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Primary Accent Md Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Primary Accent Md Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Primary Accent Md smoke-test 1`] = `
-<button type="button">
+<button data-color="accent"
+        data-size="md"
+        data-variant="primary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Primary Accent Sm Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="accent"
+        data-size="sm"
+        data-variant="primary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Primary Accent Sm Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Primary Accent Sm Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Primary Accent Sm smoke-test 1`] = `
-<button type="button">
+<button data-color="accent"
+        data-size="sm"
+        data-variant="primary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Primary Danger Lg Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="danger"
+        data-size="lg"
+        data-variant="primary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Primary Danger Lg Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Primary Danger Lg Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Primary Danger Lg smoke-test 1`] = `
-<button type="button">
+<button data-color="danger"
+        data-size="lg"
+        data-variant="primary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Primary Danger Md Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="danger"
+        data-size="md"
+        data-variant="primary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Primary Danger Md Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Primary Danger Md Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Primary Danger Md smoke-test 1`] = `
-<button type="button">
+<button data-color="danger"
+        data-size="md"
+        data-variant="primary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Primary Danger Sm Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="danger"
+        data-size="sm"
+        data-variant="primary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Primary Danger Sm Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Primary Danger Sm Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Primary Danger Sm smoke-test 1`] = `
-<button type="button">
+<button data-color="danger"
+        data-size="sm"
+        data-variant="primary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Primary Neutral Lg Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="neutral"
+        data-size="lg"
+        data-variant="primary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Primary Neutral Lg Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Primary Neutral Lg Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Primary Neutral Lg smoke-test 1`] = `
-<button type="button">
+<button data-color="neutral"
+        data-size="lg"
+        data-variant="primary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Primary Neutral Md Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="neutral"
+        data-size="md"
+        data-variant="primary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Primary Neutral Md Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Primary Neutral Md Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Primary Neutral Md smoke-test 1`] = `
-<button type="button">
+<button data-color="neutral"
+        data-size="md"
+        data-variant="primary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Primary Neutral Sm Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="neutral"
+        data-size="sm"
+        data-variant="primary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Primary Neutral Sm Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Primary Neutral Sm Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Primary Neutral Sm smoke-test 1`] = `
-<button type="button">
+<button data-color="neutral"
+        data-size="sm"
+        data-variant="primary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Secondary Accent Lg Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="accent"
+        data-size="lg"
+        data-variant="secondary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Secondary Accent Lg Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Secondary Accent Lg Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Secondary Accent Lg smoke-test 1`] = `
-<button type="button">
+<button data-color="accent"
+        data-size="lg"
+        data-variant="secondary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Secondary Accent Md Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="accent"
+        data-size="md"
+        data-variant="secondary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Secondary Accent Md Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Secondary Accent Md Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Secondary Accent Md smoke-test 1`] = `
-<button type="button">
+<button data-color="accent"
+        data-size="md"
+        data-variant="secondary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Secondary Accent Sm Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="accent"
+        data-size="sm"
+        data-variant="secondary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Secondary Accent Sm Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Secondary Accent Sm Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Secondary Accent Sm smoke-test 1`] = `
-<button type="button">
+<button data-color="accent"
+        data-size="sm"
+        data-variant="secondary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Secondary Danger Lg Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="danger"
+        data-size="lg"
+        data-variant="secondary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Secondary Danger Lg Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Secondary Danger Lg Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Secondary Danger Lg smoke-test 1`] = `
-<button type="button">
+<button data-color="danger"
+        data-size="lg"
+        data-variant="secondary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Secondary Danger Md Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="danger"
+        data-size="md"
+        data-variant="secondary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Secondary Danger Md Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Secondary Danger Md Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Secondary Danger Md smoke-test 1`] = `
-<button type="button">
+<button data-color="danger"
+        data-size="md"
+        data-variant="secondary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Secondary Danger Sm Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="danger"
+        data-size="sm"
+        data-variant="secondary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Secondary Danger Sm Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Secondary Danger Sm Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Secondary Danger Sm smoke-test 1`] = `
-<button type="button">
+<button data-color="danger"
+        data-size="sm"
+        data-variant="secondary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Secondary Neutral Lg Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="neutral"
+        data-size="lg"
+        data-variant="secondary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Secondary Neutral Lg Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Secondary Neutral Lg Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Secondary Neutral Lg smoke-test 1`] = `
-<button type="button">
+<button data-color="neutral"
+        data-size="lg"
+        data-variant="secondary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Secondary Neutral Md Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="neutral"
+        data-size="md"
+        data-variant="secondary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Secondary Neutral Md Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Secondary Neutral Md Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Secondary Neutral Md smoke-test 1`] = `
-<button type="button">
+<button data-color="neutral"
+        data-size="md"
+        data-variant="secondary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Secondary Neutral Sm Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="neutral"
+        data-size="sm"
+        data-variant="secondary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Secondary Neutral Sm Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Secondary Neutral Sm Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Secondary Neutral Sm smoke-test 1`] = `
-<button type="button">
+<button data-color="neutral"
+        data-size="sm"
+        data-variant="secondary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Tertiary Accent Lg Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="accent"
+        data-size="lg"
+        data-variant="tertiary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Tertiary Accent Lg Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Tertiary Accent Lg Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Tertiary Accent Lg smoke-test 1`] = `
-<button type="button">
+<button data-color="accent"
+        data-size="lg"
+        data-variant="tertiary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Tertiary Accent Md Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="accent"
+        data-size="md"
+        data-variant="tertiary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Tertiary Accent Md Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Tertiary Accent Md Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Tertiary Accent Md smoke-test 1`] = `
-<button type="button">
+<button data-color="accent"
+        data-size="md"
+        data-variant="tertiary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Tertiary Accent Sm Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="accent"
+        data-size="sm"
+        data-variant="tertiary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Tertiary Accent Sm Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Tertiary Accent Sm Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Tertiary Accent Sm smoke-test 1`] = `
-<button type="button">
+<button data-color="accent"
+        data-size="sm"
+        data-variant="tertiary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Tertiary Danger Lg Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="danger"
+        data-size="lg"
+        data-variant="tertiary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Tertiary Danger Lg Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Tertiary Danger Lg Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Tertiary Danger Lg smoke-test 1`] = `
-<button type="button">
+<button data-color="danger"
+        data-size="lg"
+        data-variant="tertiary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Tertiary Danger Md Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="danger"
+        data-size="md"
+        data-variant="tertiary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Tertiary Danger Md Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Tertiary Danger Md Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Tertiary Danger Md smoke-test 1`] = `
-<button type="button">
+<button data-color="danger"
+        data-size="md"
+        data-variant="tertiary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Tertiary Danger Sm Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="danger"
+        data-size="sm"
+        data-variant="tertiary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Tertiary Danger Sm Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Tertiary Danger Sm Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Tertiary Danger Sm smoke-test 1`] = `
-<button type="button">
+<button data-color="danger"
+        data-size="sm"
+        data-variant="tertiary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Tertiary Neutral Lg Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="neutral"
+        data-size="lg"
+        data-variant="tertiary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Tertiary Neutral Lg Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Tertiary Neutral Lg Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Tertiary Neutral Lg smoke-test 1`] = `
-<button type="button">
+<button data-color="neutral"
+        data-size="lg"
+        data-variant="tertiary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Tertiary Neutral Md Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="neutral"
+        data-size="md"
+        data-variant="tertiary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Tertiary Neutral Md Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Tertiary Neutral Md Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Tertiary Neutral Md smoke-test 1`] = `
-<button type="button">
+<button data-color="neutral"
+        data-size="md"
+        data-variant="tertiary"
+        type="button"
+>
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Tertiary Neutral Sm Disabled smoke-test 1`] = `
-<button type="button"
+<button data-color="neutral"
+        data-size="sm"
+        data-variant="tertiary"
+        type="button"
         disabled
 >
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Tertiary Neutral Sm Full Width Disabled smoke-test 1`] = `
-<button type="button"
-        disabled
->
-  Action
-</button>
-`;
-
-exports[`action/button/Snapshots Tertiary Neutral Sm Full Width smoke-test 1`] = `
-<button type="button">
   Action
 </button>
 `;
 
 exports[`action/button/Snapshots Tertiary Neutral Sm smoke-test 1`] = `
-<button type="button">
+<button data-color="neutral"
+        data-size="sm"
+        data-variant="tertiary"
+        type="button"
+>
   Action
 </button>
 `;

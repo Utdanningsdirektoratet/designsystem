@@ -8,7 +8,7 @@ import type { GeneratorMeta } from '@internal/dynamic-csf';
 type Story = StoryObj<typeof Button>;
 
 /**
- * Examples of the Button component with all possible combinations of `variant`, `color`, `size`, and `fullWidth`.
+ * Examples of the Button component with all possible combinations of `variant`, `color` and `size`
  *
  * These are mainly used for automatic testing.
  */
@@ -16,7 +16,7 @@ const meta: GeneratorMeta<typeof Button, Story> = {
   component: Button,
   componentPath: './Button.tsx',
   baseStory: _Button,
-  variantProps: ['variant', 'color', 'size', 'fullWidth'],
+  variantProps: ['variant', 'color', 'size'],
   deriveStories: createActionStateStories,
   decorators: spaceForFocusStyleDecorator,
 };

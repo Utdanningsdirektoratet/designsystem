@@ -181,11 +181,11 @@ importers:
   '@udir-design/react':
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 0.11.0-alpha.8
-        version: 0.11.0-alpha.8
+        specifier: 1.0.0-next.35
+        version: 1.0.0-next.35
       '@digdir/designsystemet-react':
-        specifier: 1.0.0-rc.12
-        version: 1.0.0-rc.12(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.0.0-next.35
+        version: 1.0.0-next.35(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@udir-design/tokens':
         specifier: workspace:*
         version: link:../../design-tokens
@@ -1126,11 +1126,11 @@ packages:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
 
-  '@digdir/designsystemet-css@0.11.0-alpha.8':
-    resolution: {integrity: sha512-0tIc0VhZMNlVAjMK0LHZiP4MxEydbAkr8xOQaJpsDuhoBkqa9XK4zzArXqPoLL2FS3HKPlFNOJ/U3i2AKBKalg==}
+  '@digdir/designsystemet-css@1.0.0-next.35':
+    resolution: {integrity: sha512-bPnT4dU8GO0/1vz3J3Id3k3bhQ9HRynVrUjJ5U0mqeY5c6jjlHWN+e8TSbf34+MPcYFqrkIKiBTyG76y1+LkJA==}
 
-  '@digdir/designsystemet-react@1.0.0-rc.12':
-    resolution: {integrity: sha512-8knuHV5N2ui8Z+9XiA2Eos8Yy+0p6xSNdVqhRLhxQ9d0/7a/UPeXYn1fIMwg2ZHKGKgM039xkyPbRkNaygJKAA==}
+  '@digdir/designsystemet-react@1.0.0-next.35':
+    resolution: {integrity: sha512-+YUed5ulTrJPHRu79SZiwlT+vJBDdvJMuOxELcfwq+kVIEkWoinD4C5oQFXvJYMWG3u+SvWyKssARGiCJObzww==}
     peerDependencies:
       react: '>=18.3.1'
       react-dom: '>=18.3.1'
@@ -1460,8 +1460,8 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
-  '@floating-ui/react@0.26.12':
-    resolution: {integrity: sha512-D09o62HrWdIkstF2kGekIKAC0/N/Dl6wo3CQsnLcOmO3LkW6Ik8uIb3kw8JYkwxNCcg+uJ2bpWUiIijTBep05w==}
+  '@floating-ui/react@0.26.23':
+    resolution: {integrity: sha512-9u3i62fV0CFF3nIegiWiRDwOs7OW/KhSUJDNx2MkQM3LbE5zQOY01sL3nelcVBXvX7Ovvo3A49I8ql+20Wg/Hw==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -1805,8 +1805,8 @@ packages:
   '@napi-rs/wasm-runtime@0.2.4':
     resolution: {integrity: sha512-9zESzOO5aDByvhIAsOy9TbpZ0Ur2AJbUI7UT73kcUTS2mxAMHOBaa1st/jAymNoCtvrit99kkzT1FZuXVcgfIQ==}
 
-  '@navikt/aksel-icons@5.18.3':
-    resolution: {integrity: sha512-kytq0BT1xsJBrG7/eyDuMQLddQZA4OMT3Fw3VLGHsJNqjEWEVOl3uYCGL70Thvg0+du0s/Z3mXPQUQpIaDt7rg==}
+  '@navikt/aksel-icons@6.17.0':
+    resolution: {integrity: sha512-n+1AsE9kRFh3C7BcD0fAJhIA6/65PsLGrpNKnLQUjW8hwESzo1LYHfZgZXi2Shaw2hCzQ1wx/hBBdwtQfUiBNg==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -2956,6 +2956,9 @@ packages:
     resolution: {integrity: sha512-cDF0/Gf81QpY3xYyJKDV14Zwdmid5+uuENhjH2EqFaF0ni+yAyq/LzMaIJdhNJXZI7uLzwIlA+V7oWoyn6Curg==}
     engines: {node: ^18.18.0 || >=20.0.0}
 
+  '@u-elements/u-details@0.1.0':
+    resolution: {integrity: sha512-PAyTwXXsKj7SOI5U+iqSFrnOcMbOkw9aR6egTVlj4CgTZ+apxhS/RE5MW7t3LDXJp+ecVQA21u+XVyEGyuMW6Q==}
+
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
@@ -3642,6 +3645,10 @@ packages:
   clone@1.0.4:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
+
+  clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
+    engines: {node: '>=6'}
 
   co@4.6.0:
     resolution: {integrity: sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ==}
@@ -8793,14 +8800,17 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
 
-  '@digdir/designsystemet-css@0.11.0-alpha.8': {}
+  '@digdir/designsystemet-css@1.0.0-next.35': {}
 
-  '@digdir/designsystemet-react@1.0.0-rc.12(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@digdir/designsystemet-react@1.0.0-next.35(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@floating-ui/react': 0.26.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@navikt/aksel-icons': 5.18.3
+      '@floating-ui/dom': 1.6.11
+      '@floating-ui/react': 0.26.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@navikt/aksel-icons': 6.17.0
       '@radix-ui/react-slot': 1.1.0(@types/react@18.3.11)(react@18.3.1)
       '@tanstack/react-virtual': 3.10.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@u-elements/u-details': 0.1.0
+      clsx: 2.1.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
     transitivePeerDependencies:
@@ -9021,7 +9031,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@floating-ui/react@0.26.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@floating-ui/react@0.26.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@floating-ui/react-dom': 2.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@floating-ui/utils': 0.2.8
@@ -9524,7 +9534,7 @@ snapshots:
       '@emnapi/runtime': 1.3.1
       '@tybys/wasm-util': 0.9.0
 
-  '@navikt/aksel-icons@5.18.3': {}
+  '@navikt/aksel-icons@6.17.0': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -11067,6 +11077,8 @@ snapshots:
       '@typescript-eslint/types': 7.18.0
       eslint-visitor-keys: 3.4.3
 
+  '@u-elements/u-details@0.1.0': {}
+
   '@ungap/structured-clone@1.2.0': {}
 
   '@vitejs/plugin-react-swc@3.7.1(@swc/helpers@0.5.13)(vite@5.4.9(@types/node@20.16.13)(sass@1.80.3)(terser@5.36.0))':
@@ -11920,6 +11932,8 @@ snapshots:
       mimic-response: 1.0.1
 
   clone@1.0.4: {}
+
+  clsx@2.1.1: {}
 
   co@4.6.0: {}
 
