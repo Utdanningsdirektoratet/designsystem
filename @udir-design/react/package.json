@@ -2,14 +2,17 @@
   "name": "@udir-design/react",
   "type": "module",
   "version": "0.0.0",
-  "main": "./index.js",
-  "types": "./index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./index.mjs",
-      "require": "./index.js"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     }
   },
+  "files": [
+    "./dist"
+  ],
   "scripts": {
     "typecheck": "tsc --build",
     "test-storybook": "test-storybook --index-json",
