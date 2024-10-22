@@ -11,7 +11,11 @@
     "projects": ["@udir-design/*"],
     "projectsRelationship": "independent",
     "changelog": {
-      "projectChangelogs": true
+      "projectChangelogs": {
+        "renderOptions": {
+          "authors": false
+        }
+      }
     },
     "version": {
       "conventionalCommits": true
