@@ -122,6 +122,9 @@ importers:
       ts-node:
         specifier: 10.9.1
         version: 10.9.1(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@20.16.13)(typescript@5.4.5)
+      tslib:
+        specifier: ^2.3.0
+        version: 2.8.0
       typescript:
         specifier: ~5.4.5
         version: 5.4.5
@@ -186,9 +189,9 @@ importers:
       '@digdir/designsystemet-react':
         specifier: 1.0.0-next.35
         version: 1.0.0-next.35(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@udir-design/tokens':
+      '@udir-design/theme':
         specifier: workspace:*
-        version: link:../../design-tokens
+        version: link:../theme
       tslib:
         specifier: ^2.8.0
         version: 2.8.0
@@ -263,14 +266,23 @@ importers:
         specifier: ^1.14.1
         version: 1.14.1(webpack-sources@3.2.3)
 
+  '@udir-design/theme':
+    devDependencies:
+      '@udir-design/tokens':
+        specifier: workspace:*
+        version: link:../../design-tokens
+      rimraf:
+        specifier: ^6.0.1
+        version: 6.0.1
+
   design-tokens:
     devDependencies:
       '@digdir/designsystemet':
         specifier: 1.0.0-next.35
         version: 1.0.0-next.35(@babel/preset-env@7.25.8(@babel/core@7.25.8))
       rimraf:
-        specifier: ^5.0.10
-        version: 5.0.10
+        specifier: ^6.0.1
+        version: 6.0.1
 
 packages:
 
@@ -6616,10 +6628,6 @@ packages:
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
     deprecated: Rimraf versions prior to v4 are no longer supported
-    hasBin: true
-
-  rimraf@5.0.10:
-    resolution: {integrity: sha512-l0OE8wL34P4nJH/H2ffoaniAokM2qSmrtXHmlpvYr5AVVX8msAyW0l8NVJFDxlSK4u3Uh/f41cQheDVdnYijwQ==}
     hasBin: true
 
   rimraf@6.0.1:
@@ -15339,10 +15347,6 @@ snapshots:
   rimraf@3.0.2:
     dependencies:
       glob: 7.2.3
-
-  rimraf@5.0.10:
-    dependencies:
-      glob: 10.4.5
 
   rimraf@6.0.1:
     dependencies:

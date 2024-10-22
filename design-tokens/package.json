@@ -9,11 +9,11 @@
   },
   "scripts": {
     "tokens": "designsystemet tokens create --accent '#303030' --neutral '#dedede' --brand1 '#76c69d' --brand2 '#bed5e8' --brand3 '#e5ceae' --theme 'udir' --write './src'",
-    "build": "npm run clean && designsystemet tokens build -t ./src -o ./dist",
+    "build": "pnpm clean && designsystemet tokens build -t ./src -o ./dist",
     "clean": "rimraf dist"
   },
   "devDependencies": {
     "@digdir/designsystemet": "1.0.0-next.35",
-    "rimraf": "^5.0.10"
+    "rimraf": "^6.0.1"
   }
 }
