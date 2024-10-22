@@ -1,6 +1,8 @@
 # @udir-design/react
 
-## Installing and getting started
+## Getting started
+
+Install the library
 
 ```
 npm add @udir-design/react@next
