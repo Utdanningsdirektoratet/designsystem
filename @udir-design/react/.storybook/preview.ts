@@ -1,2 +1,2 @@
-import '../src/style.css';
+import './style.css';
 export const tags = ['autodocs'];
