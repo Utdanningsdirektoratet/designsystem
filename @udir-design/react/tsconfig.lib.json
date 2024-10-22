@@ -21,7 +21,11 @@
     "**/*.stories.ts",
     "**/*.stories.js",
     "**/*.stories.jsx",
-    "**/*.stories.tsx"
+    "**/*.stories.tsx",
+    "**/*.dynamic.ts",
+    "**/*.dynamic.js",
+    "**/*.dynamic.jsx",
+    "**/*.dynamic.tsx"
   ],
   "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
 }
