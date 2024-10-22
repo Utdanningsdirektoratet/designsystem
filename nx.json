@@ -39,6 +39,9 @@
     "typecheck": {
       "cache": true
     },
+    "build": {
+      "dependsOn": ["^build"]
+    },
     "@nx/js:tsc": {
       "cache": true,
       "dependsOn": ["^build"],

@@ -1,0 +1,22 @@
+{
+  "name": "@udir-design/theme",
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./dist/udir.css",
+    "./*": "./dist/*"
+  },
+  "files": [
+    "./dist"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@udir-design/tokens": "workspace:*",
+    "rimraf": "^6.0.1"
+  },
+  "scripts": {
+    "copy-css": "cp -r ../../design-tokens/dist/ ./dist/",
+    "clean": "rimraf ./dist",
+    "build": "pnpm clean && pnpm copy-css"
+  }
+}
