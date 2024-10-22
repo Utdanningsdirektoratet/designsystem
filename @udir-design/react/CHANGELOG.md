@@ -1,3 +1,8 @@
+## 0.1.0-1 (2024-10-22)
+
+build: don't bundle depenencies
+
+
 ## 0.1.0-0 (2024-10-22)
 
 ### 🚀 Features
