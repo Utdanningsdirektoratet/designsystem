@@ -32,5 +32,4 @@ export default [
     files: ['**/*.js', '**/*.jsx'],
     rules: {},
   },
-  { ignores: ['storybook-static'] },
 ];

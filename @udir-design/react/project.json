@@ -16,7 +16,7 @@
       "cache": true
     },
     "test-storybook": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["build"]
     }
   }
 }
