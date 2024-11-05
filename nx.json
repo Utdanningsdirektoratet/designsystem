@@ -40,10 +40,14 @@
       }
     },
     "typecheck": {
-      "cache": true
+      "cache": true,
+      "dependsOn": ["^build"]
     },
     "build": {
       "dependsOn": ["^build"]
+    },
+    "test": {
+      "dependsOn": ["build"]
     },
     "@nx/js:tsc": {
       "cache": true,

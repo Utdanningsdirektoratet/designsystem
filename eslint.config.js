@@ -1,8 +1,15 @@
 import { FlatCompat } from '@eslint/eslintrc';
+import { includeIgnoreFile } from '@eslint/compat';
 import nxEslintPlugin from '@nx/eslint-plugin';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import eslintjs from '@eslint/js';
 const { configs } = eslintjs;
+
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const gitignorePath = path.resolve(__dirname, '.gitignore');
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
@@ -10,6 +17,7 @@ const compat = new FlatCompat({
 });
 
 export default [
+  includeIgnoreFile(gitignorePath),
   {
     plugins: {
       '@nx': nxEslintPlugin,
