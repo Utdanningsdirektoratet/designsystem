@@ -8,9 +8,7 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "defaultProject": "@udir-design/react",
   "release": {
-    "projects": [
-      "@udir-design/*"
-    ],
+    "projects": ["@udir-design/*"],
     "projectsRelationship": "independent",
     "changelog": {
       "projectChangelogs": {
@@ -43,29 +41,18 @@
     },
     "typecheck": {
       "cache": true,
-      "dependsOn": [
-        "^build"
-      ]
+      "dependsOn": ["^build"]
     },
     "build": {
-      "dependsOn": [
-        "^build"
-      ]
+      "dependsOn": ["^build"]
     },
     "test": {
-      "dependsOn": [
-        "build"
-      ]
+      "dependsOn": ["build"]
     },
     "@nx/js:tsc": {
       "cache": true,
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "default",
-        "^default"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["default", "^default"]
     }
   },
   "plugins": [
@@ -119,6 +106,12 @@
       },
       "component": {
         "style": "scss"
+      }
+    },
+    "@nx/next": {
+      "application": {
+        "style": "scss",
+        "linter": "eslint"
       }
     }
   },
