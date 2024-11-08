@@ -5,6 +5,7 @@ import dts from 'vite-plugin-dts';
 import * as path from 'path';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import pkg from './package.json';
+import banner from 'vite-plugin-banner';
 
 const dependencies = Object.keys({
   ...pkg.dependencies,
@@ -29,6 +30,7 @@ export default defineConfig({
       entryRoot: 'src',
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
     }),
+    banner(`"'use client';"`),
   ],
 
   // Uncomment this if you are using workers.
