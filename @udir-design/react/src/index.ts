@@ -6,3 +6,4 @@ export * from './badge/Badge';
 export * from './breadcrumbs/Breadcrumbs';
 export * from './card/Card';
 export * from './checkbox/Checkbox';
+export * from './chip/Chip';
