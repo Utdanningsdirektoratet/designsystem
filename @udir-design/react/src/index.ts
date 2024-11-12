@@ -24,3 +24,4 @@ export * from './select/Select';
 export * from './skip-link/SkipLink';
 export * from './switch/Switch';
 export * from './table/Table';
+export * from './tabs/Tabs';
