@@ -8,3 +8,4 @@ export * from './card/Card';
 export * from './checkbox/Checkbox';
 export * from './chip/Chip';
 export * from './divider/Divider';
+export * from './dropdown/Dropdown';
