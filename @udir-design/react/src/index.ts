@@ -12,3 +12,4 @@ export * from './dropdown/Dropdown';
 export * from './error-summary/ErrorSummary';
 export * from './fieldset/Fieldset';
 export * from './help-text/HelpText';
+export * from './link/Link';
