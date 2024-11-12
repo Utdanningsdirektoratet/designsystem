@@ -29,3 +29,4 @@ export * from './tag/Tag';
 export * from './textarea/Textarea';
 export * from './textfield/Textfield';
 export * from './toggle-group/ToggleGroup';
+export * from './tooltip/Tooltip';
