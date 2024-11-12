@@ -16,3 +16,4 @@ export * from './link/Link';
 export * from './list/List';
 export * from './loaders/index';
 export * from './modal/Modal';
+export * from './pagination/Pagination';
