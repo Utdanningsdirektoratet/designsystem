@@ -19,3 +19,4 @@ export * from './modal/Modal';
 export * from './pagination/Pagination';
 export * from './popover/Popover';
 export * from './radio/Radio';
+export * from './search/Search';
