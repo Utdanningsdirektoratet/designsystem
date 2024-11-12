@@ -13,3 +13,4 @@ export * from './error-summary/ErrorSummary';
 export * from './fieldset/Fieldset';
 export * from './help-text/HelpText';
 export * from './link/Link';
+export * from './list/List';
