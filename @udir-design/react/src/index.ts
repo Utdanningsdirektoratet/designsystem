@@ -9,3 +9,4 @@ export * from './checkbox/Checkbox';
 export * from './chip/Chip';
 export * from './divider/Divider';
 export * from './dropdown/Dropdown';
+export * from './error-summary/ErrorSummary';
