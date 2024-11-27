@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumbs Preview smoke-test 1`] = `
+<nav aria-label="Du er her:">
+  <ol>
+    <li>
+      <a data-color="accent"
+         href="#"
+      >
+        Nivå 1
+      </a>
+    </li>
+    <li>
+      <a data-color="accent"
+         href="#"
+      >
+        Nivå 2
+      </a>
+    </li>
+    <li>
+      <a data-color="accent"
+         href="#"
+         aria-current="page"
+      >
+        Nivå 3
+      </a>
+    </li>
+  </ol>
+</nav>
+`;
