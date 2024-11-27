@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Textarea Preview smoke-test 1`] = `
+<div data-size="md"
+     data-variant="default"
+>
+  <label for="textarea-:r0:">
+    <span>
+      Label
+    </span>
+  </label>
+  <textarea id="textarea-:r0:">
+  </textarea>
+  <div id="textarea-error-:r0:"
+       aria-live="polite"
+       aria-relevant="additions removals"
+  >
+  </div>
+</div>
+`;

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loaders/Spinner Preview smoke-test 1`] = `
+<svg viewbox="0 0 50 50"
+     data-color="neutral"
+     data-size="md"
+>
+  <title>
+  </title>
+  <circle cx="25"
+          cy="25"
+          r="20"
+          fill="none"
+          stroke-width="5"
+  >
+  </circle>
+  <circle cx="25"
+          cy="25"
+          r="20"
+          fill="none"
+          stroke-width="5"
+  >
+  </circle>
+</svg>
+`;

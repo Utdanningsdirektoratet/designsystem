@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown Multiple Headings smoke-test 1`] = `
+<button data-color="accent"
+        data-size="md"
+        data-variant="primary"
+        type="button"
+        popovertarget=":r1:"
+>
+  Eksempel med overskrifter
+</button>
+<div data-size="md"
+     data-variant="default"
+     id=":r1:"
+     popover="manual"
+>
+  <h2>
+    Søt snacks
+  </h2>
+  <ul>
+    <li>
+      <button data-color="accent"
+              data-size="md"
+              data-variant="tertiary"
+              type="button"
+      >
+        Melkesjokolade
+      </button>
+    </li>
+    <li>
+      <button data-color="accent"
+              data-size="md"
+              data-variant="tertiary"
+              type="button"
+      >
+        Smågodt
+      </button>
+    </li>
+  </ul>
+  <h2>
+    Salt snacks
+  </h2>
+  <ul>
+    <li>
+      <button data-color="accent"
+              data-size="md"
+              data-variant="tertiary"
+              type="button"
+      >
+        Potetgull
+      </button>
+    </li>
+    <li>
+      <button data-color="accent"
+              data-size="md"
+              data-variant="tertiary"
+              type="button"
+      >
+        Peanøtter
+      </button>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Dropdown Preview smoke-test 1`] = `
+<button data-color="accent"
+        data-size="md"
+        data-variant="primary"
+        type="button"
+        popovertarget=":r0:"
+>
+  Eksempel
+</button>
+<div data-size="md"
+     data-variant="default"
+     id=":r0:"
+     popover="manual"
+>
+  <li>
+    <button data-color="accent"
+            data-size="md"
+            data-variant="tertiary"
+            type="button"
+    >
+      Sjokolade
+    </button>
+  </li>
+  <li>
+    <button data-color="accent"
+            data-size="md"
+            data-variant="tertiary"
+            type="button"
+    >
+      Smågodt
+    </button>
+  </li>
+  <li>
+    <button data-color="accent"
+            data-size="md"
+            data-variant="tertiary"
+            type="button"
+    >
+      Potetgull
+    </button>
+  </li>
+</div>
+`;

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorSummary Preview smoke-test 1`] = `
+<div aria-labelledby=":r0:"
+     aria-live="polite"
+     aria-relevant="all"
+     role="alert"
+>
+  <h2 data-size="xs"
+      id=":r0:"
+  >
+    For å gå videre må du rette opp følgende feil:
+  </h2>
+  <ul data-size="md">
+    <li>
+      <a data-color="accent"
+         href="#"
+      >
+        Fødselsdato kan ikke være etter år 2005
+      </a>
+    </li>
+    <li>
+      <a data-color="accent"
+         href="#"
+      >
+        Telefonnummer kan kun inneholde siffer
+      </a>
+    </li>
+    <li>
+      <a data-color="accent"
+         href="#"
+      >
+        E-post må være gyldig
+      </a>
+    </li>
+  </ul>
+</div>
+`;
