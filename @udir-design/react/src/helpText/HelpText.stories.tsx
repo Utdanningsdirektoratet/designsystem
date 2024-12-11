@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { HelpText } from './HelpText';
 
 const meta: Meta<typeof HelpText> = {
-  title: 'HelpText',
   component: HelpText,
 };
 

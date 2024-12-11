@@ -3,7 +3,6 @@ import { SkipLink } from './SkipLink';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 
 const meta: Meta<typeof SkipLink> = {
-  title: 'SkipLink',
   component: SkipLink,
 };
 

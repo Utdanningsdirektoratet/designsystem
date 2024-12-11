@@ -7,7 +7,6 @@ import {
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof ErrorSummary> = {
-  title: 'ErrorSummary',
   component: ErrorSummary,
 };
 
