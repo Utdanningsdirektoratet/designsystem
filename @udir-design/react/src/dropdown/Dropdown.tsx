@@ -1,4 +1,4 @@
-export {
+import {
   Dropdown,
   type DropdownProps,
   DropdownTrigger,
@@ -11,3 +11,17 @@ export {
   DropdownList,
   type DropdownListProps,
 } from '@digdir/designsystemet-react';
+
+export {
+  Dropdown,
+  DropdownProps,
+  DropdownTrigger,
+  DropdownContext,
+  DropdownContextProps,
+  DropdownHeading,
+  DropdownHeadingProps,
+  DropdownItem,
+  DropdownItemProps,
+  DropdownList,
+  DropdownListProps,
+};

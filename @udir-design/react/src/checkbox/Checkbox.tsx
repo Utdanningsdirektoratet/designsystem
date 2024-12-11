@@ -1,1 +1,2 @@
-export { Checkbox, type CheckboxProps } from '@digdir/designsystemet-react';
+import { Checkbox, type CheckboxProps } from '@digdir/designsystemet-react';
+export { Checkbox, CheckboxProps };

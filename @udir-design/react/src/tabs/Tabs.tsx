@@ -1,4 +1,4 @@
-export {
+import {
   Tabs,
   type TabsProps,
   TabsTab,
@@ -8,3 +8,14 @@ export {
   TabsList,
   type TabsListProps,
 } from '@digdir/designsystemet-react';
+
+export {
+  Tabs,
+  TabsProps,
+  TabsTab,
+  TabsTabProps,
+  TabsPanel,
+  TabsPanelProps,
+  TabsList,
+  TabsListProps,
+};

@@ -1,4 +1,4 @@
-export {
+import {
   Select,
   type SelectProps,
   SelectOption,
@@ -6,3 +6,12 @@ export {
   SelectOptgroup,
   type SelectOptgroupProps,
 } from '@digdir/designsystemet-react';
+
+export {
+  Select,
+  SelectProps,
+  SelectOption,
+  SelectOptionProps,
+  SelectOptgroup,
+  SelectOptgroupProps,
+};

@@ -1,4 +1,4 @@
-export {
+import {
   Table,
   type TableProps,
   TableBody,
@@ -12,3 +12,18 @@ export {
   TableRow,
   type TableRowProps,
 } from '@digdir/designsystemet-react';
+
+export {
+  Table,
+  TableProps,
+  TableBody,
+  TableBodyProps,
+  TableCell,
+  TableCellProps,
+  TableHead,
+  TableHeadProps,
+  TableHeaderCell,
+  TableHeaderCellProps,
+  TableRow,
+  TableRowProps,
+};

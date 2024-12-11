@@ -1,1 +1,2 @@
-export { Radio, type RadioProps } from '@digdir/designsystemet-react';
+import { Radio, type RadioProps } from '@digdir/designsystemet-react';
+export { Radio, RadioProps };
