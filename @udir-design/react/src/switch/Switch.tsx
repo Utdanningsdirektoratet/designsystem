@@ -1,1 +1,2 @@
-export { Switch, type SwitchProps } from '@digdir/designsystemet-react';
+import { Switch, type SwitchProps } from '@digdir/designsystemet-react';
+export { Switch, SwitchProps };

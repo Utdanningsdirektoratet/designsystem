@@ -1,4 +1,4 @@
-export {
+import {
   Pagination,
   type PaginationProps,
   PaginationButton,
@@ -10,3 +10,16 @@ export {
   usePagination,
   type UsePaginationProps,
 } from '@digdir/designsystemet-react';
+
+export {
+  Pagination,
+  PaginationProps,
+  PaginationButton,
+  PaginationButtonProps,
+  PaginationItem,
+  PaginationItemProps,
+  PaginationList,
+  PaginationListProps,
+  usePagination,
+  UsePaginationProps,
+};

@@ -1,1 +1,2 @@
-export { Textfield, type TextfieldProps } from '@digdir/designsystemet-react';
+import { Textfield, type TextfieldProps } from '@digdir/designsystemet-react';
+export { Textfield, TextfieldProps };

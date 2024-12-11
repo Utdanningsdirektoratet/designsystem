@@ -1,4 +1,4 @@
-export {
+import {
   Chip,
   ChipButton,
   type ChipButtonProps,
@@ -9,3 +9,15 @@ export {
   ChipRemovable,
   type ChipRemovableProps,
 } from '@digdir/designsystemet-react';
+
+export {
+  Chip,
+  ChipButton,
+  ChipButtonProps,
+  ChipCheckbox,
+  ChipCheckboxProps,
+  ChipRadio,
+  ChipRadioProps,
+  ChipRemovable,
+  ChipRemovableProps,
+};

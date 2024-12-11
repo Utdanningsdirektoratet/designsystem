@@ -1,4 +1,4 @@
-export {
+import {
   Modal,
   type ModalProps,
   ModalBlock,
@@ -8,3 +8,14 @@ export {
   ModalTrigger,
   type ModalTriggerProps,
 } from '@digdir/designsystemet-react';
+
+export {
+  Modal,
+  ModalProps,
+  ModalBlock,
+  ModalBlockProps,
+  ModalContext,
+  ModalContextProps,
+  ModalTrigger,
+  ModalTriggerProps,
+};

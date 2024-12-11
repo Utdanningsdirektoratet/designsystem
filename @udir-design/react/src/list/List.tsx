@@ -1,4 +1,4 @@
-export {
+import {
   List,
   ListItem,
   type ListItemProps,
@@ -7,3 +7,13 @@ export {
   ListUnordered,
   type ListUnorderedProps,
 } from '@digdir/designsystemet-react';
+
+export {
+  List,
+  ListItem,
+  ListItemProps,
+  ListOrdered,
+  ListOrderedProps,
+  ListUnordered,
+  ListUnorderedProps,
+};

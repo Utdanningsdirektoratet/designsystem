@@ -1,4 +1,4 @@
-export {
+import {
   Breadcrumbs,
   type BreadcrumbsProps,
   BreadcrumbsItem,
@@ -8,3 +8,14 @@ export {
   BreadcrumbsList,
   type BreadcrumbsListProps,
 } from '@digdir/designsystemet-react';
+
+export {
+  Breadcrumbs,
+  BreadcrumbsProps,
+  BreadcrumbsItem,
+  BreadcrumbsItemProps,
+  BreadcrumbsLink,
+  BreadcrumbsLinkProps,
+  BreadcrumbsList,
+  BreadcrumbsListProps,
+};

@@ -1,1 +1,2 @@
-export { Label, type LabelProps } from '@digdir/designsystemet-react';
+import { Label, type LabelProps } from '@digdir/designsystemet-react';
+export { Label, LabelProps };

@@ -1,4 +1,4 @@
-export {
+import {
   ErrorSummary,
   type ErrorSummaryProps,
   ErrorSummaryHeading,
@@ -8,3 +8,14 @@ export {
   ErrorSummaryList,
   type ErrorSummaryListProps,
 } from '@digdir/designsystemet-react';
+
+export {
+  ErrorSummary,
+  ErrorSummaryProps,
+  ErrorSummaryHeading,
+  ErrorSummaryHeadingProps,
+  ErrorSummaryItem,
+  ErrorSummaryItemProps,
+  ErrorSummaryList,
+  ErrorSummaryListProps,
+};

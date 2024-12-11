@@ -1,1 +1,2 @@
-export { Skeleton, type SkeletonProps } from '@digdir/designsystemet-react';
+import { Skeleton, type SkeletonProps } from '@digdir/designsystemet-react';
+export { Skeleton, SkeletonProps };
