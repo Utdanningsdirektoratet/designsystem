@@ -1,5 +1,4 @@
 export * from './button/Button';
-export * from './accordion/Accordion';
 export * from './alert/Alert';
 export * from './avatar/Avatar';
 export * from './badge/Badge';
@@ -9,7 +8,7 @@ export * from './checkbox/Checkbox';
 export * from './chip/Chip';
 export * from './divider/Divider';
 export * from './dropdown/Dropdown';
-export * from './error-summary/ErrorSummary';
+export * from './errorSummary/ErrorSummary';
 export * from './fieldset/Fieldset';
 export * from './help-text/HelpText';
 export * from './link/Link';
