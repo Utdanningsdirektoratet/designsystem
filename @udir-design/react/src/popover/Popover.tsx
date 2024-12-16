@@ -1,8 +1,8 @@
 import {
   Popover,
   type PopoverProps,
-  PopoverContext,
-  type PopoverContextProps,
+  PopoverTriggerContext,
+  type PopoverTriggerContextProps,
   PopoverTrigger,
   type PopoverTriggerProps,
 } from '@digdir/designsystemet-react';
@@ -10,8 +10,8 @@ import {
 export {
   Popover,
   PopoverProps,
-  PopoverContext,
-  PopoverContextProps,
+  PopoverTriggerContext,
+  PopoverTriggerContextProps,
   PopoverTrigger,
   PopoverTriggerProps,
 };

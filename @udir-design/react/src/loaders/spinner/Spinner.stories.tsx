@@ -9,5 +9,7 @@ export default meta;
 type Story = StoryObj<typeof Spinner>;
 
 export const Preview: Story = {
-  args: {},
+  args: {
+    'aria-label': 'Laster...',
+  },
 };

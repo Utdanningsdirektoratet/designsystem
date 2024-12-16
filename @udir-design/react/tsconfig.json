@@ -7,7 +7,7 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "strict": true,
-    "types": ["vite/client", "vitest"]
+    "types": ["vite/client", "vitest", "../theme/dist/colors.d.ts"]
   },
   "files": [],
   "include": [],

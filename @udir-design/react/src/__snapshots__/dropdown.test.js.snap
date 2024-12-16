@@ -1,17 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dropdown Multiple Headings smoke-test 1`] = `
-<button data-color="accent"
-        data-size="md"
-        data-variant="primary"
+<button data-variant="primary"
         type="button"
         popovertarget=":r1:"
 >
   Eksempel med overskrifter
 </button>
-<div data-size="md"
-     data-variant="default"
-     id=":r1:"
+<div id=":r1:"
      popover="manual"
 >
   <h2>
@@ -19,22 +15,10 @@ exports[`Dropdown Multiple Headings smoke-test 1`] = `
   </h2>
   <ul>
     <li>
-      <button data-color="accent"
-              data-size="md"
-              data-variant="tertiary"
-              type="button"
-      >
-        Melkesjokolade
-      </button>
+      Melkesjokolade
     </li>
     <li>
-      <button data-color="accent"
-              data-size="md"
-              data-variant="tertiary"
-              type="button"
-      >
-        Smågodt
-      </button>
+      Smågodt
     </li>
   </ul>
   <h2>
@@ -42,67 +26,33 @@ exports[`Dropdown Multiple Headings smoke-test 1`] = `
   </h2>
   <ul>
     <li>
-      <button data-color="accent"
-              data-size="md"
-              data-variant="tertiary"
-              type="button"
-      >
-        Potetgull
-      </button>
+      Potetgull
     </li>
     <li>
-      <button data-color="accent"
-              data-size="md"
-              data-variant="tertiary"
-              type="button"
-      >
-        Peanøtter
-      </button>
+      Peanøtter
     </li>
   </ul>
 </div>
 `;
 
 exports[`Dropdown Preview smoke-test 1`] = `
-<button data-color="accent"
-        data-size="md"
-        data-variant="primary"
+<button data-variant="primary"
         type="button"
         popovertarget=":r0:"
 >
   Eksempel
 </button>
-<div data-size="md"
-     data-variant="default"
-     id=":r0:"
+<div id=":r0:"
      popover="manual"
 >
   <li>
-    <button data-color="accent"
-            data-size="md"
-            data-variant="tertiary"
-            type="button"
-    >
-      Sjokolade
-    </button>
+    Sjokolade
   </li>
   <li>
-    <button data-color="accent"
-            data-size="md"
-            data-variant="tertiary"
-            type="button"
-    >
-      Smågodt
-    </button>
+    Smågodt
   </li>
   <li>
-    <button data-color="accent"
-            data-size="md"
-            data-variant="tertiary"
-            type="button"
-    >
-      Potetgull
-    </button>
+    Potetgull
   </li>
 </div>
 `;

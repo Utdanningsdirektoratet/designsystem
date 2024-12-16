@@ -1,16 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SkipLink Preview smoke-test 1`] = `
-<p data-size="md"
-   data-variant="default"
->
+<p data-variant="default">
   For å vise skiplinken, tab til dette eksempelet, eller klikk inni eksempelet og trykk Tab.
   <a href="#main-content">
     Hopp til hovedinnhold
   </a>
 </p>
-<p data-size="md"
-   data-variant="default"
+<p data-variant="default"
    id="main-content"
    tabindex="-1"
 >

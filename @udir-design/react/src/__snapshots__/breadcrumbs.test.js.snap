@@ -4,22 +4,17 @@ exports[`Breadcrumbs Preview smoke-test 1`] = `
 <nav aria-label="Du er her:">
   <ol>
     <li>
-      <a data-color="accent"
-         href="#"
-      >
+      <a href="#">
         Nivå 1
       </a>
     </li>
     <li>
-      <a data-color="accent"
-         href="#"
-      >
+      <a href="#">
         Nivå 2
       </a>
     </li>
     <li>
-      <a data-color="accent"
-         href="#"
+      <a href="#"
          aria-current="page"
       >
         Nivå 3

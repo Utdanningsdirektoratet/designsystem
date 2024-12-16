@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ValidationMessage Preview smoke-test 1`] = `
-<div data-error="true">
+<p data-field="validation">
   ValidationMessage
-</div>
+</p>
 `;

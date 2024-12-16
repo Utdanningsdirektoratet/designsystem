@@ -3,8 +3,8 @@ import {
   type ModalProps,
   ModalBlock,
   type ModalBlockProps,
-  ModalContext,
-  type ModalContextProps,
+  ModalTriggerContext,
+  type ModalTriggerContextProps,
   ModalTrigger,
   type ModalTriggerProps,
 } from '@digdir/designsystemet-react';
@@ -14,8 +14,8 @@ export {
   ModalProps,
   ModalBlock,
   ModalBlockProps,
-  ModalContext,
-  ModalContextProps,
+  ModalTriggerContext,
+  ModalTriggerContextProps,
   ModalTrigger,
   ModalTriggerProps,
 };
