@@ -9,7 +9,9 @@
   "files": [
     "./dist"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "@digdir/designsystemet-react": "1.0.0-next.44"
+  },
   "devDependencies": {
     "@udir-design/tokens": "workspace:*",
     "rimraf": "^6.0.1"

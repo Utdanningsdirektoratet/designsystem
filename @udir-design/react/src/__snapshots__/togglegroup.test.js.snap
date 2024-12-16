@@ -4,9 +4,7 @@ exports[`ToggleGroup Preview smoke-test 1`] = `
 <div role="radiogroup"
      tabindex="0"
 >
-  <button data-color="accent"
-          data-size="md"
-          data-variant="primary"
+  <button data-variant="primary"
           type="button"
           value="innboks"
           id="togglegroup-item-:r2:"
@@ -19,9 +17,7 @@ exports[`ToggleGroup Preview smoke-test 1`] = `
   >
     Innboks
   </button>
-  <button data-color="accent"
-          data-size="md"
-          data-variant="tertiary"
+  <button data-variant="tertiary"
           type="button"
           value="utkast"
           id="togglegroup-item-:r4:"
@@ -34,9 +30,7 @@ exports[`ToggleGroup Preview smoke-test 1`] = `
   >
     Utkast
   </button>
-  <button data-color="accent"
-          data-size="md"
-          data-variant="tertiary"
+  <button data-variant="tertiary"
           type="button"
           value="arkiv"
           id="togglegroup-item-:r6:"
@@ -49,9 +43,7 @@ exports[`ToggleGroup Preview smoke-test 1`] = `
   >
     Arkiv
   </button>
-  <button data-color="accent"
-          data-size="md"
-          data-variant="tertiary"
+  <button data-variant="tertiary"
           type="button"
           value="sendt"
           id="togglegroup-item-:r8:"

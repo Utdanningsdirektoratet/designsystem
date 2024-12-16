@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Link Preview smoke-test 1`] = `
-<a data-color="accent"
-   href="https://www.udir.no/"
->
+<a href="https://www.udir.no/">
   Gå til udir.no
 </a>
 `;

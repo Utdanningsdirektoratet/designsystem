@@ -3,7 +3,8 @@
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "outDir": "",
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "types": ["../theme/dist/colors.d.ts"]
   },
   "files": [
     "../../node_modules/@nx/react/typings/styled-jsx.d.ts",

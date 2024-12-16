@@ -6,7 +6,8 @@
       "node",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts",
-      "vite/client"
+      "vite/client",
+      "../theme/dist/colors.d.ts"
     ]
   },
   "exclude": [
