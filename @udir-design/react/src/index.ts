@@ -9,6 +9,7 @@ export * from './chip/Chip';
 export * from './divider/Divider';
 export * from './dropdown/Dropdown';
 export * from './errorSummary/ErrorSummary';
+export * from './field/Field';
 export * from './fieldset/Fieldset';
 export * from './helpText/HelpText';
 export * from './link/Link';
