@@ -6,6 +6,7 @@ export * from './breadcrumbs/Breadcrumbs';
 export * from './card/Card';
 export * from './checkbox/Checkbox';
 export * from './chip/Chip';
+export * from './details/Details';
 export * from './divider/Divider';
 export * from './dropdown/Dropdown';
 export * from './errorSummary/ErrorSummary';
