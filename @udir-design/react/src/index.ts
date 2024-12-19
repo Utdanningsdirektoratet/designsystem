@@ -13,6 +13,7 @@ export * from './errorSummary/ErrorSummary';
 export * from './field/Field';
 export * from './fieldset/Fieldset';
 export * from './helpText/HelpText';
+export * from './input/Input';
 export * from './link/Link';
 export * from './list/List';
 export * from './loaders';
