@@ -12,4 +12,5 @@ export const Preview: Story = {
   args: {
     label: 'En bryter',
   },
+  render: (args, context) => <Switch {...args} id={context.id} />,
 };

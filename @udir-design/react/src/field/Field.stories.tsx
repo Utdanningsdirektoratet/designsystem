@@ -11,11 +11,11 @@ export default meta;
 type Story = StoryObj<typeof Field>;
 
 export const Preview: Story = {
-  render: (args) => (
-    <Field {...args}>
-      <Label>Label</Label>
+  render: (args, context) => (
+    <Field {...args} id={context.id}>
+      <Label htmlFor="my-textarea">Label</Label>
       <Field.Description>Description</Field.Description>
-      <Textarea />
+      <Textarea id="my-textarea" />
     </Field>
   ),
 };
