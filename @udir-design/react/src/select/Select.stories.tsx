@@ -11,10 +11,10 @@ export default meta;
 type Story = StoryObj<typeof Select>;
 
 export const Preview: Story = {
-  render: (args) => (
+  render: (args, context) => (
     <Field>
       <Label>Velg et fjell</Label>
-      <Select {...args}>
+      <Select {...args} id={context.id}>
         <Select.Option value="blank">Velg …</Select.Option>
         <Select.Option value="everest">Mount Everest</Select.Option>
         <Select.Option value="aconcagua">Aconcagua</Select.Option>

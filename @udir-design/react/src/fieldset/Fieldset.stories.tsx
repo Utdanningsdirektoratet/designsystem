@@ -22,11 +22,11 @@ export const Preview: Story = {
         </Fieldset.Description>
         <Field>
           <Label>Kort beskrivelse</Label>
-          <Input />
+          <Input id={'my-input'} />
         </Field>
         <Field>
           <Label>Lang beskrivelse</Label>
-          <Textarea />
+          <Textarea id={'my-textarea'} />
         </Field>
       </Fieldset>
     </form>

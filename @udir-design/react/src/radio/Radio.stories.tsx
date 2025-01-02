@@ -12,4 +12,5 @@ export const Preview: Story = {
   args: {
     label: 'Radioknapp',
   },
+  render: (args, context) => <Radio {...args} id={context.id} />,
 };

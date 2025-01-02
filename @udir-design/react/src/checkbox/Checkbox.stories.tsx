@@ -12,4 +12,5 @@ export const Preview: Story = {
   args: {
     label: 'Checkbox label',
   },
+  render: (args, context) => <Checkbox {...args} id={context.id} />,
 };
