@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Preview smoke-test 1`] = `
+<div>
+  <input type="search"
+         placeholder
+         aria-label="Søk"
+  >
+  <button data-icon="true"
+          data-variant="tertiary"
+          type="reset"
+          aria-label="Tøm"
+  >
+  </button>
+  <button data-variant="primary"
+          type="submit"
+  >
+    Søk
+  </button>
+</div>
+`;

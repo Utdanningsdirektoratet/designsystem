@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch Preview smoke-test 1`] = `
+<div>
+  <input type="checkbox"
+         role="switch"
+         id="switch--preview"
+  >
+  <label data-weight="regular"
+         for="switch--preview"
+  >
+    En bryter
+  </label>
+</div>
+`;
