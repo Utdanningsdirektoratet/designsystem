@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/ToggleGroup Preview smoke-test 1`] = `
+<div role="radiogroup"
+     tabindex="0"
+>
+  <button data-variant="primary"
+          type="button"
+          value="innboks"
+          id="togglegroup-item-:r2:"
+          aria-checked="true"
+          aria-current="true"
+          role="radio"
+          name="togglegroup-name-:r0:"
+          data-roving-tabindex-item="true"
+          tabindex="0"
+  >
+    Innboks
+  </button>
+  <button data-variant="tertiary"
+          type="button"
+          value="utkast"
+          id="togglegroup-item-:r4:"
+          aria-checked="false"
+          aria-current="false"
+          role="radio"
+          name="togglegroup-name-:r0:"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+  >
+    Utkast
+  </button>
+  <button data-variant="tertiary"
+          type="button"
+          value="arkiv"
+          id="togglegroup-item-:r6:"
+          aria-checked="false"
+          aria-current="false"
+          role="radio"
+          name="togglegroup-name-:r0:"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+  >
+    Arkiv
+  </button>
+  <button data-variant="tertiary"
+          type="button"
+          value="sendt"
+          id="togglegroup-item-:r8:"
+          aria-checked="false"
+          aria-current="false"
+          role="radio"
+          name="togglegroup-name-:r0:"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+  >
+    Sendt
+  </button>
+</div>
+`;

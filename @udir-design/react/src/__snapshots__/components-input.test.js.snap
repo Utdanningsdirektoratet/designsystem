@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Input Preview smoke-test 1`] = `
+<div>
+  <label data-weight="medium"
+         for="components-input--preview"
+  >
+    Input 1
+  </label>
+  <input type="text"
+         id="components-input--preview"
+  >
+</div>
+`;

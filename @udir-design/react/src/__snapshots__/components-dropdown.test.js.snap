@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Dropdown Multiple Headings smoke-test 1`] = `
+<button data-variant="primary"
+        type="button"
+        popovertarget=":r1:"
+>
+  Eksempel med overskrifter
+</button>
+<div id=":r1:"
+     popover="manual"
+>
+  <h2>
+    Søt snacks
+  </h2>
+  <ul>
+    <li>
+      Melkesjokolade
+    </li>
+    <li>
+      Smågodt
+    </li>
+  </ul>
+  <h2>
+    Salt snacks
+  </h2>
+  <ul>
+    <li>
+      Potetgull
+    </li>
+    <li>
+      Peanøtter
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`components/Dropdown Preview smoke-test 1`] = `
+<button data-variant="primary"
+        type="button"
+        popovertarget=":r0:"
+>
+  Eksempel
+</button>
+<div id=":r0:"
+     popover="manual"
+>
+  <li>
+    Sjokolade
+  </li>
+  <li>
+    Smågodt
+  </li>
+  <li>
+    Potetgull
+  </li>
+</div>
+`;

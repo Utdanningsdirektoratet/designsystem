@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Pagination Preview smoke-test 1`] = `
+<nav aria-label="Sidenavigering">
+  <ul>
+    <li>
+      <button data-variant="tertiary"
+              type="button"
+              aria-label="Forrige side"
+      >
+        Forrige
+      </button>
+    </li>
+    <li>
+      <button data-variant="tertiary"
+              type="button"
+              aria-label="Side 1"
+      >
+        1
+      </button>
+    </li>
+    <li>
+      <button data-variant="tertiary"
+              type="button"
+              aria-label="Side 2"
+      >
+        2
+      </button>
+    </li>
+    <li>
+      <button data-variant="tertiary"
+              type="button"
+              aria-label="Side 3"
+      >
+        3
+      </button>
+    </li>
+    <li>
+      <button data-variant="primary"
+              type="button"
+              aria-current="page"
+              aria-label="Side 4"
+      >
+        4
+      </button>
+    </li>
+    <li>
+      <button data-variant="tertiary"
+              type="button"
+              aria-label="Side 5"
+      >
+        5
+      </button>
+    </li>
+    <li>
+      <button data-variant="tertiary"
+              type="button"
+              aria-hidden="true"
+              aria-label="Side "
+              tabindex="-1"
+      >
+      </button>
+    </li>
+    <li>
+      <button data-variant="tertiary"
+              type="button"
+              aria-label="Side 10"
+      >
+        10
+      </button>
+    </li>
+    <li>
+      <button data-variant="tertiary"
+              type="button"
+              aria-label="Neste side"
+      >
+        Neste
+      </button>
+    </li>
+  </ul>
+</nav>
+`;

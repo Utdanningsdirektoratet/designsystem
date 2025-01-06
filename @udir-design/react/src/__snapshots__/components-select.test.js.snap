@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Select Preview smoke-test 1`] = `
+<div>
+  <label data-weight="medium"
+         for="components-select--preview"
+  >
+    Velg et fjell
+  </label>
+  <select id="components-select--preview">
+    <option value="blank">
+      Velg …
+    </option>
+    <option value="everest">
+      Mount Everest
+    </option>
+    <option value="aconcagua">
+      Aconcagua
+    </option>
+    <option value="denali">
+      Denali
+    </option>
+    <option value="kilimanjaro">
+      Kilimanjaro
+    </option>
+    <option value="elbrus">
+      Elbrus
+    </option>
+    <option value="vinson">
+      Mount Vinson
+    </option>
+    <option value="puncakjaya">
+      Puncak Jaya
+    </option>
+    <option value="kosciuszko">
+      Mount Kosciuszko
+    </option>
+  </select>
+</div>
+`;
