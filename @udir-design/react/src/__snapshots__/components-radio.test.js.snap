@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Radio Preview smoke-test 1`] = `
+<div>
+  <input type="radio"
+         id="components-radio--preview"
+  >
+  <label data-weight="regular"
+         for="components-radio--preview"
+  >
+    Radioknapp
+  </label>
+</div>
+`;

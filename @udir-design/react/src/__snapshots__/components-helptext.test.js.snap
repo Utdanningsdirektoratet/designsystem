@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/HelpText Preview smoke-test 1`] = `
+<button data-variant="tertiary"
+        type="button"
+        popovertarget=":r0:"
+        data-color="info"
+        aria-label="Help text title"
+>
+</button>
+<div id=":r0:"
+     popover="manual"
+     data-color="info"
+>
+  Help text content
+</div>
+`;
