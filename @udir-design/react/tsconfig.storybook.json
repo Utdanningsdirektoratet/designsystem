@@ -2,7 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "emitDecoratorMetadata": true,
-    "outDir": "",
+    "outDir": "../../dist/out-tsc",
     "baseUrl": "./",
     "types": ["../theme/dist/colors.d.ts"]
   },
