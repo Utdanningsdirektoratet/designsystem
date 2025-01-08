@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`demo/DemoPage Simple smoke-test 1`] = `
+<div data-size="sm"
+     data-color-scheme="auto"
+>
+  <div>
+    <fieldset>
+      <legend data-weight="medium">
+        Handleliste
+      </legend>
+      <div>
+        <input type="checkbox"
+               value="epost"
+               id=":m5nuxbei6jd"
+        >
+        <label data-weight="regular"
+               for=":m5nuxbei6jd"
+        >
+          En kilo poteter
+        </label>
+      </div>
+      <div>
+        <input type="checkbox"
+               value="telefon"
+               id=":m5nuxbei04w"
+        >
+        <label data-weight="regular"
+               for=":m5nuxbei04w"
+        >
+          To liter Farris
+        </label>
+      </div>
+      <div>
+        <input type="checkbox"
+               value="sms"
+               checked
+               id=":m5nuxbeibhw"
+        >
+        <label data-weight="regular"
+               for=":m5nuxbeibhw"
+        >
+          Blomkål
+        </label>
+      </div>
+      <div>
+        <input type="checkbox"
+               value="sms"
+               checked
+               id=":m5nuxbeidu0"
+        >
+        <label data-weight="regular"
+               for=":m5nuxbeidu0"
+        >
+          Pizza
+        </label>
+      </div>
+      <div>
+        <input type="checkbox"
+               value="sms"
+               checked
+               id=":m5nuxbeivrk"
+        >
+        <label data-weight="regular"
+               for=":m5nuxbeivrk"
+        >
+          Tre liter lettmelk
+        </label>
+      </div>
+      <hr aria-hidden="true">
+      <div>
+        <input type="checkbox"
+               value="sms"
+               id=":m5nuxbei2us"
+        >
+        <label data-weight="regular"
+               for=":m5nuxbei2us"
+        >
+          2kg smågodt
+        </label>
+      </div>
+      <div>
+        <input type="checkbox"
+               value="sms"
+               id=":m5nuxbeib0n"
+        >
+        <label data-weight="regular"
+               for=":m5nuxbeib0n"
+        >
+          10 poser med Smash
+        </label>
+      </div>
+    </fieldset>
+  </div>
+  <div>
+    <h2>
+      Opprett ny bruker
+    </h2>
+    <div>
+      <label data-weight="medium"
+             for=":m5nuxbeisye"
+      >
+        Navn
+      </label>
+      <div>
+        <input type="text"
+               placeholder="Ola Normann"
+               id=":m5nuxbeisye"
+        >
+      </div>
+    </div>
+    <div>
+      <label data-weight="medium"
+             for=":m5nuxbeir5g"
+      >
+        E-post
+      </label>
+      <div>
+        <input type="email"
+               placeholder="ola@norge.no"
+               id=":m5nuxbeir5g"
+        >
+      </div>
+    </div>
+    <a href="#">
+      Glemt passord?
+    </a>
+    <button data-variant="primary"
+            type="button"
+    >
+      Opprett ny bruker
+    </button>
+  </div>
+  <div>
+    <h2>
+      Hva kan vi hjelpe deg med?
+    </h2>
+    <div>
+      <div data-color="brand1">
+        <h2>
+          Sikkerhet og drift
+        </h2>
+        <p data-variant="default">
+          Most provide as with carried business are much better more the perfected designer. Writing slightly explain.
+        </p>
+      </div>
+      <div data-color="brand2">
+        <h2>
+          Skole og utdanning
+        </h2>
+        <p data-variant="default">
+          Most provide as with carried business are much better more the perfected designer. Writing slightly explain.
+        </p>
+      </div>
+      <div data-color="brand3">
+        <h2>
+          Mat og helse
+        </h2>
+        <p data-variant="default">
+          Most provide as with carried business are much better more the perfected designer. Writing slightly explain.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
