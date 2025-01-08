@@ -8,12 +8,14 @@ export function Login() {
       <Heading>Opprett ny bruker</Heading>
       <Textfield
         label="Navn"
+        id="name"
         placeholder="Ola Normann"
         className={styles.userField}
       />
       <Textfield
         type="email"
         label="E-post"
+        id="email"
         placeholder="ola@norge.no"
         className={styles.userField}
       />
