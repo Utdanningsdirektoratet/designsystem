@@ -1,0 +1,13 @@
+.page {
+  padding: var(--ds-spacing-8);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--ds-spacing-8);
+  background-color: var(--ds-color-neutral-background-subtle);
+
+  > div {
+    background-color: var(--ds-color-neutral-background-default);
+    border-radius: var(--ds-border-radius-lg);
+    padding: var(--ds-spacing-6);
+  }
+}
