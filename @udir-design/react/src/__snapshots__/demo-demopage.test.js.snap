@@ -11,58 +11,58 @@ exports[`demo/DemoPage Simple smoke-test 1`] = `
       </legend>
       <div>
         <input type="checkbox"
-               value="epost"
-               id=":m5nuxbei6jd"
+               id="potet"
+               value="potet"
         >
         <label data-weight="regular"
-               for=":m5nuxbei6jd"
+               for="potet"
         >
           En kilo poteter
         </label>
       </div>
       <div>
         <input type="checkbox"
-               value="telefon"
-               id=":m5nuxbei04w"
+               id="farris"
+               value="farris"
         >
         <label data-weight="regular"
-               for=":m5nuxbei04w"
+               for="farris"
         >
           To liter Farris
         </label>
       </div>
       <div>
         <input type="checkbox"
-               value="sms"
+               id="blomkol"
+               value="blomkol"
                checked
-               id=":m5nuxbeibhw"
         >
         <label data-weight="regular"
-               for=":m5nuxbeibhw"
+               for="blomkol"
         >
           Blomkål
         </label>
       </div>
       <div>
         <input type="checkbox"
-               value="sms"
+               id="pizza"
+               value="pizza"
                checked
-               id=":m5nuxbeidu0"
         >
         <label data-weight="regular"
-               for=":m5nuxbeidu0"
+               for="pizza"
         >
           Pizza
         </label>
       </div>
       <div>
         <input type="checkbox"
-               value="sms"
+               id="melk"
+               value="melk"
                checked
-               id=":m5nuxbeivrk"
         >
         <label data-weight="regular"
-               for=":m5nuxbeivrk"
+               for="melk"
         >
           Tre liter lettmelk
         </label>
@@ -70,22 +70,22 @@ exports[`demo/DemoPage Simple smoke-test 1`] = `
       <hr aria-hidden="true">
       <div>
         <input type="checkbox"
-               value="sms"
-               id=":m5nuxbei2us"
+               id="smagodt"
+               value="smagodt"
         >
         <label data-weight="regular"
-               for=":m5nuxbei2us"
+               for="smagodt"
         >
           2kg smågodt
         </label>
       </div>
       <div>
         <input type="checkbox"
-               value="sms"
-               id=":m5nuxbeib0n"
+               id="smash"
+               value="smash"
         >
         <label data-weight="regular"
-               for=":m5nuxbeib0n"
+               for="smash"
         >
           10 poser med Smash
         </label>
@@ -98,27 +98,27 @@ exports[`demo/DemoPage Simple smoke-test 1`] = `
     </h2>
     <div>
       <label data-weight="medium"
-             for=":m5nuxbeisye"
+             for="name"
       >
         Navn
       </label>
       <div>
         <input type="text"
+               id="name"
                placeholder="Ola Normann"
-               id=":m5nuxbeisye"
         >
       </div>
     </div>
     <div>
       <label data-weight="medium"
-             for=":m5nuxbeir5g"
+             for="email"
       >
         E-post
       </label>
       <div>
         <input type="email"
+               id="email"
                placeholder="ola@norge.no"
-               id=":m5nuxbeir5g"
         >
       </div>
     </div>
