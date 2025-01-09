@@ -1,0 +1,81 @@
+name: Release
+
+on:
+  workflow_run:
+    workflows: CI
+    branches: release/*
+    types: completed
+  pull_request:
+    branches: release/*
+
+env:
+  NXCACHE_AZURE_ACCOUNT_KEY: ${{ secrets.NXCACHE_AZURE_ACCOUNT_KEY }}
+  # either the PR *target* branch, or the current branch being released
+  BRANCH_NAME: ${{ github.base_ref || github.ref_name }}
+  DRY_RUN: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  semantic-release:
+    name: Perform semantic release
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' || github.event.workflow_run.conclusion == 'success'
+    permissions:
+      contents: write # needs to read contents, and publish tags / github releases
+      pull-requests: write # needed to comment on pull requests
+      id-token: write # needed for provenance data generation
+    steps:
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
+
+      - name: Configure git user
+        run: |
+          # Setup the committers identity.
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Note: pnpm version is set in package.json "packageManager"
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      # Cache node_modules
+      # Note: node version is set in package.json "engines.node"
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+          cache: 'pnpm'
+
+      - run: pnpm install
+
+      - uses: nrwl/nx-set-shas@v4
+
+      - run: pnpm build
+
+      - name: Preview semantic-release for this PR
+        if: success() && github.event_name == 'pull_request'
+        run: ./@internal/build-tools/bin/semantic-release.ts --branch $BRANCH_NAME --preview-changelog
+
+      - name: Output preview changelog to file
+        if: success() && github.event_name == 'pull_request'
+        run: ./@internal/build-tools/bin/preview-changelogs.sh > CHANGELOG_PREVIEW.md
+
+      - name: Add changelog as comment on PR
+        if: success() && github.event_name == 'pull_request'
+        run: gh pr comment $PR_NUMBER --edit-last -F CHANGELOG_PREVIEW.md || gh pr comment $PR_NUMBER -F CHANGELOG_PREVIEW.md
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run semantic-release script
+        if: success() && github.event_name != 'pull_request'
+        run: ./@internal/build-tools/bin/semantic-release.ts --branch $BRANCH_NAME --dry-run
+        shell: bash
+        # See https://docs.github.com/en/actions/use-cases-and-examples/publishing-packages/publishing-nodejs-packages
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
