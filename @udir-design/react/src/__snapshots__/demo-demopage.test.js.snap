@@ -4,304 +4,338 @@ exports[`demo/DemoPage Simple smoke-test 1`] = `
 <div data-size="sm"
      data-color-scheme="auto"
 >
+  <h2>
+    Velkommen!
+  </h2>
+  <p data-variant="default">
+    På denne demosiden hvor vi har laget noen eksempler på komponentene i biblioteket, sånn at man kan se hvordan de samspiller i en litt større kontekst. På sikt vil alle komponentene være representert her, men så langt er det kun de vi har ansett som viktigst i første omgang. Lengre ned på siden kan du prøve å endre på størrelse og farge-modus for å se hvordan det påvirker komponentene.
+  </p>
+  <nav aria-label="Du er her:">
+    <ol>
+      <li>
+        <a href="#">
+          Nivå 1
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Nivå 2
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Nivå 3
+        </a>
+      </li>
+      <li>
+        <a href="#"
+           aria-current="page"
+        >
+          Nivå 4
+        </a>
+      </li>
+    </ol>
+  </nav>
   <div>
-    <fieldset>
-      <legend data-weight="medium">
-        Handleliste
-      </legend>
-      <div>
-        <input type="checkbox"
-               id="potet"
-               value="potet"
-        >
-        <label data-weight="regular"
-               for="potet"
-        >
-          En kilo poteter
-        </label>
-      </div>
-      <div>
-        <input type="checkbox"
-               id="farris"
-               value="farris"
-        >
-        <label data-weight="regular"
-               for="farris"
-        >
-          To liter Farris
-        </label>
-      </div>
-      <div>
-        <input type="checkbox"
-               id="blomkol"
-               value="blomkol"
-               checked
-        >
-        <label data-weight="regular"
-               for="blomkol"
-        >
-          Blomkål
-        </label>
-      </div>
-      <div>
-        <input type="checkbox"
-               id="pizza"
-               value="pizza"
-               checked
-        >
-        <label data-weight="regular"
-               for="pizza"
-        >
-          Pizza
-        </label>
-      </div>
-      <div>
-        <input type="checkbox"
-               id="melk"
-               value="melk"
-               checked
-        >
-        <label data-weight="regular"
-               for="melk"
-        >
-          Tre liter lettmelk
-        </label>
-      </div>
-      <hr aria-hidden="true">
-      <div>
-        <input type="checkbox"
-               id="smagodt"
-               value="smagodt"
-        >
-        <label data-weight="regular"
-               for="smagodt"
-        >
-          2kg smågodt
-        </label>
-      </div>
-      <div>
-        <input type="checkbox"
-               id="smash"
-               value="smash"
-        >
-        <label data-weight="regular"
-               for="smash"
-        >
-          10 poser med Smash
-        </label>
-      </div>
-    </fieldset>
-  </div>
-  <div>
-    <h2>
-      Opprett ny bruker
-    </h2>
     <div>
-      <label data-weight="medium"
-             for="name"
+      <fieldset>
+        <legend data-weight="medium">
+          Handleliste
+        </legend>
+        <div>
+          <input type="checkbox"
+                 id="potet"
+                 value="potet"
+          >
+          <label data-weight="regular"
+                 for="potet"
+          >
+            En kilo poteter
+          </label>
+        </div>
+        <div>
+          <input type="checkbox"
+                 id="farris"
+                 value="farris"
+          >
+          <label data-weight="regular"
+                 for="farris"
+          >
+            To liter Farris
+          </label>
+        </div>
+        <div>
+          <input type="checkbox"
+                 id="blomkol"
+                 value="blomkol"
+                 checked
+          >
+          <label data-weight="regular"
+                 for="blomkol"
+          >
+            Blomkål
+          </label>
+        </div>
+        <div>
+          <input type="checkbox"
+                 id="pizza"
+                 value="pizza"
+                 checked
+          >
+          <label data-weight="regular"
+                 for="pizza"
+          >
+            Pizza
+          </label>
+        </div>
+        <div>
+          <input type="checkbox"
+                 id="melk"
+                 value="melk"
+                 checked
+          >
+          <label data-weight="regular"
+                 for="melk"
+          >
+            Tre liter lettmelk
+          </label>
+        </div>
+        <hr aria-hidden="true">
+        <div>
+          <input type="checkbox"
+                 id="smagodt"
+                 value="smagodt"
+          >
+          <label data-weight="regular"
+                 for="smagodt"
+          >
+            2kg smågodt
+          </label>
+        </div>
+        <div>
+          <input type="checkbox"
+                 id="smash"
+                 value="smash"
+          >
+          <label data-weight="regular"
+                 for="smash"
+          >
+            10 poser med Smash
+          </label>
+        </div>
+      </fieldset>
+    </div>
+    <div>
+      <h2>
+        Opprett ny bruker
+      </h2>
+      <div>
+        <label data-weight="medium"
+               for="name"
+        >
+          Navn
+        </label>
+        <div>
+          <input type="text"
+                 id="name"
+                 placeholder="Ola Normann"
+          >
+        </div>
+      </div>
+      <div>
+        <label data-weight="medium"
+               for="email"
+        >
+          E-post
+        </label>
+        <div>
+          <input type="email"
+                 id="email"
+                 placeholder="ola@norge.no"
+          >
+        </div>
+      </div>
+      <a href="#">
+        Glemt passord?
+      </a>
+      <button data-variant="primary"
+              type="button"
       >
-        Navn
-      </label>
+        Opprett ny bruker
+      </button>
+    </div>
+    <div>
+      <h2>
+        Hva kan vi hjelpe deg med?
+      </h2>
       <div>
-        <input type="text"
-               id="name"
-               placeholder="Ola Normann"
-        >
+        <div data-color="brand1">
+          <h2>
+            Sikkerhet og drift
+          </h2>
+          <p data-variant="default">
+            Most provide as with carried business are much better more the perfected designer. Writing slightly explain.
+          </p>
+        </div>
+        <div data-color="brand2">
+          <h2>
+            Skole og utdanning
+          </h2>
+          <p data-variant="default">
+            Most provide as with carried business are much better more the perfected designer. Writing slightly explain.
+          </p>
+        </div>
+        <div data-color="brand3">
+          <h2>
+            Mat og helse
+          </h2>
+          <p data-variant="default">
+            Most provide as with carried business are much better more the perfected designer. Writing slightly explain.
+          </p>
+        </div>
       </div>
     </div>
     <div>
-      <label data-weight="medium"
-             for="email"
-      >
-        E-post
-      </label>
+      <h2>
+        Alle brukere
+      </h2>
       <div>
-        <input type="email"
-               id="email"
-               placeholder="ola@norge.no"
-        >
+        <div>
+          <select aria-label="Velg handling">
+            <option value="blank">
+              Velg handling
+            </option>
+            <option value="duplicate">
+              Dupliser
+            </option>
+            <option value="delete">
+              Slett
+            </option>
+            <option value="update">
+              Oppdater
+            </option>
+          </select>
+          <button data-variant="primary"
+                  type="button"
+          >
+            Utfør
+          </button>
+        </div>
+        <div>
+          <input type="search"
+                 placeholder
+                 aria-label="Søk"
+          >
+          <button data-icon="true"
+                  data-variant="tertiary"
+                  type="reset"
+                  aria-label="Tøm"
+          >
+          </button>
+          <button data-variant="primary"
+                  type="submit"
+          >
+            Søk
+          </button>
+        </div>
       </div>
+      <table>
+        <thead>
+          <tr>
+            <th aria-sort="none">
+              <button type="button">
+                Navn
+              </button>
+            </th>
+            <th>
+              Epost
+            </th>
+            <th aria-sort="none">
+              <button type="button">
+                Telefon
+              </button>
+            </th>
+            <th aria-sort="none">
+              <button type="button">
+                Ansattnr
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Tom Bombadil
+            </td>
+            <td>
+              tom.bombadill@post.no
+            </td>
+            <td>
+              22345678
+            </td>
+            <td>
+              0001
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Samvis Gamgod
+            </td>
+            <td>
+              samvis.gamgod@post.no
+            </td>
+            <td>
+              87654321
+            </td>
+            <td>
+              0002
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Harry Goatleaf
+            </td>
+            <td>
+              harry.goatleaf@post.no
+            </td>
+            <td>
+              55654321
+            </td>
+            <td>
+              0003
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Frodo Baggins
+            </td>
+            <td>
+              frodo.baggins@post.no
+            </td>
+            <td>
+              87904721
+            </td>
+            <td>
+              0004
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Fréaláf Hildason
+            </td>
+            <td>
+              frealaf.hildason@post.no
+            </td>
+            <td>
+              09873940
+            </td>
+            <td>
+              0005
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <a href="#">
-      Glemt passord?
-    </a>
-    <button data-variant="primary"
-            type="button"
-    >
-      Opprett ny bruker
-    </button>
-  </div>
-  <div>
-    <h2>
-      Hva kan vi hjelpe deg med?
-    </h2>
-    <div>
-      <div data-color="brand1">
-        <h2>
-          Sikkerhet og drift
-        </h2>
-        <p data-variant="default">
-          Most provide as with carried business are much better more the perfected designer. Writing slightly explain.
-        </p>
-      </div>
-      <div data-color="brand2">
-        <h2>
-          Skole og utdanning
-        </h2>
-        <p data-variant="default">
-          Most provide as with carried business are much better more the perfected designer. Writing slightly explain.
-        </p>
-      </div>
-      <div data-color="brand3">
-        <h2>
-          Mat og helse
-        </h2>
-        <p data-variant="default">
-          Most provide as with carried business are much better more the perfected designer. Writing slightly explain.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div>
-    <h2>
-      Alle brukere
-    </h2>
-    <div>
-      <div>
-        <select aria-label="Velg handling">
-          <option value="blank">
-            Velg handling
-          </option>
-          <option value="duplicate">
-            Dupliser
-          </option>
-          <option value="delete">
-            Slett
-          </option>
-          <option value="update">
-            Oppdater
-          </option>
-        </select>
-        <button data-variant="primary"
-                type="button"
-        >
-          Utfør
-        </button>
-      </div>
-      <div>
-        <input type="search"
-               placeholder
-               aria-label="Søk"
-        >
-        <button data-icon="true"
-                data-variant="tertiary"
-                type="reset"
-                aria-label="Tøm"
-        >
-        </button>
-        <button data-variant="primary"
-                type="submit"
-        >
-          Søk
-        </button>
-      </div>
-    </div>
-    <table>
-      <thead>
-        <tr>
-          <th aria-sort="none">
-            <button type="button">
-              Navn
-            </button>
-          </th>
-          <th>
-            Epost
-          </th>
-          <th aria-sort="none">
-            <button type="button">
-              Telefon
-            </button>
-          </th>
-          <th aria-sort="none">
-            <button type="button">
-              Ansattnr
-            </button>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            Tom Bombadil
-          </td>
-          <td>
-            tom.bombadill@post.no
-          </td>
-          <td>
-            22345678
-          </td>
-          <td>
-            0001
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Samvis Gamgod
-          </td>
-          <td>
-            samvis.gamgod@post.no
-          </td>
-          <td>
-            87654321
-          </td>
-          <td>
-            0002
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Harry Goatleaf
-          </td>
-          <td>
-            harry.goatleaf@post.no
-          </td>
-          <td>
-            55654321
-          </td>
-          <td>
-            0003
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Frodo Baggins
-          </td>
-          <td>
-            frodo.baggins@post.no
-          </td>
-          <td>
-            87904721
-          </td>
-          <td>
-            0004
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Fréaláf Hildason
-          </td>
-          <td>
-            frealaf.hildason@post.no
-          </td>
-          <td>
-            09873940
-          </td>
-          <td>
-            0005
-          </td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </div>
 `;
