@@ -11,6 +11,7 @@ on:
 permissions:
   actions: read
   contents: read
+  checks: write
 
 env:
   NXCACHE_AZURE_ACCOUNT_KEY: ${{ secrets.NXCACHE_AZURE_ACCOUNT_KEY }}
@@ -19,7 +20,7 @@ jobs:
   main:
     runs-on: ubuntu-latest
     outputs:
-      run_chromatic_job: ${{ github.event_name == 'pull_request' && steps.job_condition.outputs.chromatic == 'true' || false }}
+      run_ui_tests: ${{ steps.job_condition.outputs.run_ui_tests }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -40,9 +41,42 @@ jobs:
 
       - uses: nrwl/nx-set-shas@v4
 
+      - name: Print affected projects
+        run: pnpm nx show projects --affected --base $NX_BASE --head $NX_HEAD
+
       - name: Define whether Chromatic job needs to run
         id: job_condition
-        run: echo "chromatic=$(./@internal/build-tools/bin/is-project-affected.sh @udir-design/react)" >> "$GITHUB_OUTPUT"
+        run: |
+          IS_REACT_AFFECTED=$(./@internal/build-tools/bin/is-project-affected.sh @udir-design/react)
+          echo "Is @udir-design/react affected? $IS_REACT_AFFECTED"
+          echo "Is this a pull request? $IS_PR"
+          ($IS_REACT_AFFECTED && $IS_PR) && RUN_UI_TESTS=true || RUN_UI_TESTS=false
+          echo "Conclusion: should we run UI tests? $RUN_UI_TESTS"
+          echo "run_ui_tests=$RUN_UI_TESTS" >> "$GITHUB_OUTPUT"
+        env:
+          IS_PR: ${{ github.event_name == 'pull_request' }}
+
+      - name: Skip 'Storybook Publish' check
+        if: steps.job_condition.outputs.run_ui_tests == 'false'
+        uses: LouisBrunner/checks-action@v2.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Storybook Publish
+          conclusion: skipped
+      - name: Skip 'UI Tests' check
+        if: steps.job_condition.outputs.run_ui_tests == 'false'
+        uses: LouisBrunner/checks-action@v2.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: UI Tests
+          conclusion: skipped
+      - name: Skip 'UI Review' check
+        if: steps.job_condition.outputs.run_ui_tests == 'false'
+        uses: LouisBrunner/checks-action@v2.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: UI Review
+          conclusion: skipped
 
       - name: Validate current commit (last commit) with commitlint
         if: github.event_name == 'push'
@@ -89,7 +123,7 @@ jobs:
   chromatic:
     runs-on: ubuntu-latest
     needs: [main]
-    if: needs.main.outputs.run_chromatic_job
+    if: needs.main.outputs.run_ui_tests == 'true'
     steps:
       - uses: actions/checkout@v4
         with:
