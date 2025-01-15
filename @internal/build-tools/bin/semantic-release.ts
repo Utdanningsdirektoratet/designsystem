@@ -1,12 +1,13 @@
 #!/usr/bin/env -S pnpm tsx
 
 import process from 'node:process';
-import yargs from 'yargs';
+import yargs, { Options } from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { semanticRelease } from '../src/semantic-release';
 
 (async () => {
-  const options = await yargs(hideBin(process.argv))
+  const yargsInstance = yargs(hideBin(process.argv));
+  const options = await yargsInstance
     .version(false) // disable default --version option in yargs
     .options({
       branch: {
@@ -25,12 +26,13 @@ import { semanticRelease } from '../src/semantic-release';
       },
       'preview-changelog': {
         description:
-          'Similar to dry-run, but will actually update version numbers and changelogs (without committing to git). Useful for previewing the changelogs in CI.',
+          'Similar to dry-run, but will actually update version numbers and changelogs (without committing to git). Useful for previewing the changelogs in CI. --preview-changelog implies --no-git-push.',
         type: 'boolean',
         default: false,
       },
       publish: {
-        description: 'Whether or not to run the final publish step.',
+        description:
+          'Whether or not to run the final publish step. --publish implies --no-dry-run.',
         type: 'boolean',
         default: false,
       },
@@ -57,8 +59,16 @@ import { semanticRelease } from '../src/semantic-release';
         type: 'boolean',
         default: false,
       },
-    })
+    } satisfies Record<string, Options>)
+    .wrap(yargsInstance.terminalWidth())
     .parseAsync();
+
+  if (options.publish) {
+    options.dryRun = false;
+  }
+  if (options.previewChangelog) {
+    options.gitPush = false;
+  }
 
   await semanticRelease(options);
 })();

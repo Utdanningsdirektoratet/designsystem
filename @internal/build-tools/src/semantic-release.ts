@@ -108,7 +108,8 @@ export async function semanticRelease(options: SemanticReleaseOptions) {
     gitPush: !options.previewChangelog && options.gitPush,
     dryRun: !options.previewChangelog && options.dryRun,
     verbose: options.verbose,
-    createRelease: options.previewChangelog ? false : undefined,
+    createRelease:
+      options.previewChangelog || !options.gitPush ? false : undefined,
   });
 
   /*
