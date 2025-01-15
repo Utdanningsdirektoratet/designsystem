@@ -49,12 +49,12 @@ jobs:
         run: |
           IS_REACT_AFFECTED=$(./@internal/build-tools/bin/is-project-affected.sh @udir-design/react)
           echo "Is @udir-design/react affected? $IS_REACT_AFFECTED"
-          echo "Is this a pull request? $IS_PR"
-          ($IS_REACT_AFFECTED && $IS_PR) && RUN_UI_TESTS=true || RUN_UI_TESTS=false
+          echo "Is this a push to a protected branch? $IS_PUSH"
+          ($IS_REACT_AFFECTED || $IS_PUSH) && RUN_UI_TESTS=true || RUN_UI_TESTS=false
           echo "Conclusion: should we run UI tests? $RUN_UI_TESTS"
           echo "run_ui_tests=$RUN_UI_TESTS" >> "$GITHUB_OUTPUT"
         env:
-          IS_PR: ${{ github.event_name == 'pull_request' }}
+          IS_PUSH: ${{ github.event_name == 'push' }}
 
       - name: Skip 'Storybook Publish' check
         if: steps.job_condition.outputs.run_ui_tests == 'false'
