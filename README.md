@@ -301,7 +301,7 @@ I alle tilfeller blir versjonsnummer og endringslogg automatisk generert etter e
 
 Når du er ferdig med en fiks eller feature, må du ta stilling til hvor denne skal merges inn:
 
-- Skal den ikke rulles ut enda? Lag en PR mot `dev`-branchen
+- Skal den ikke rulles ut enda? Lag en PR mot `main`-branchen
 - Skal den rulles ut som en ny, stabil versjon? Lag en PR mot `release/latest`.
 - Skal den rulles ut som en alpha- eller beta-versjon? Lag en PR mot `release/alpha` eller `release/beta`.
 - Er det en feature eller bugfix for en eldre versjon? I dette tilfellet må endringene dine branche UT fra versjonen som trenger endring. For eksempel, dersom vi allerede er på versjon 2, men du må fikse en bug i versjon 1.13.1, så må du
@@ -314,31 +314,33 @@ Husk også at endringer som rulles ut til `release/latest` ikke automatisk blir 
 
 Man kan også måtte merge andre veien, f.eks. dersom en alpha-versjon skal promoteres til stabil vil man merge `release/alpha` inn i `release/latest`.
 
+Dersom man har endringer i `main`-branchen som ennå ikke er publisert, vil man altså opprette en PR for å merge `main` inn i en av `release/*`-branchene.
+
 ## Oversikt over verktøy
 
 Dette er de viktigste verktøyene og tjenestene vi bruker i designsystemet.
 
-Kode:
+### Kode
 
 - [TypeScript](https://www.typescriptlang.org/) — språket som kodebasen er skrevet i
 - [React](https://react.dev/) — komponentene våre leveres som React-komponenter
 
-Bygg, avhengigheter og utrulling:
+### Bygg, avhengigheter og utrulling
 
-- [node](https://nodejs.org) - kjøretidsmiljø for JavaScript som brukes av de fleste verktøyene våre
+- [Node.js](https://nodejs.org) - kjøretidsmiljø for JavaScript som brukes av de fleste verktøyene våre
 - [pnpm](https://pnpm.io/) — package manager som håndterer avhengigheter, både mellom interne moduler og til eksterne biblioteker
-- [Nx](https://nx.dev/) — overordnet byggesystem som respekterer avhengigheter mellom ulike deler av monorepoet
+- [Nx](https://nx.dev/) — overordnet byggesystem som respekterer avhengigheter mellom ulike deler av monorepoet, og håndterer publisering av biblioteker
 - [Vite](https://vite.dev/) — verktøy som bygger de individuelle TypeScript-bibliotekene
 - [GitHub Actions](https://github.com/features/actions) — kontinuerlig integrasjon og utrulling (CI/CD)
 
-Dokumentasjon og testing:
+### Dokumentasjon og testing
 
 - [Storybook](https://storybook.js.org/) — interaktiv dokumentasjon av komponentbiblioteket
 - [Chromatic](https://www.chromatic.com/) - designgjennomgang og automatisert testing av visuelle endringer, samt hosting av Storybook
 - [Vitest](https://vitest.dev/) - testrammeverket vi bruker for enhetstester
 - [Storybook test-runner](https://storybook.js.org/docs/writing-tests/test-runner) — kjører tester definert i Storybook i en browser, ved hjelp av [Playwright](https://playwright.dev/)
 
-Kodekvalitet:
+### Kodekvalitet
 
 - [typescript-eslint](https://typescript-eslint.io/) — statisk analyse av kodebasen for å finne mulige problemer
 - [prettier](https://prettier.io/) — håndterer konsistent formatering av kodebasen
