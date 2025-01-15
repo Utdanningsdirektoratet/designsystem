@@ -23,10 +23,12 @@ I dette repositoriet lever den delen av designsystemet som implementeres i kode:
 -->
 
 - [Hvordan ta i bruk Udirs designsystem](#hvordan-ta-i-bruk-udirs-designsystem)
+- [Versjonering og publisering](#versjonering-og-publisering)
 - [Informasjon for utviklere som skal bidra](#informasjon-for-utviklere-som-skal-bidra)
   - [Oppsett lokalt](#oppsett-lokalt)
   - [Monorepo - enkelt forklart](#monorepo---enkelt-forklart)
   - [Hvordan jobbe med kodebasen](#hvordan-jobbe-med-kodebasen)
+  - [Hvordan publisere en ny versjon](#hvordan-publisere-en-ny-versjon)
   - [Oversikt over verktøy](#oversikt-over-verktøy)
 
 # Hvordan ta i bruk Udirs designsystem
@@ -35,6 +37,21 @@ I dette repositoriet lever den delen av designsystemet som implementeres i kode:
 > For å bruke designsystemet i et React-prosjekt, trenger du kun å forholde deg til komponentbiblioteket `@udir-design/react`.
 >
 > Instrukser for å komme i gang finnes i [komponentbibliotekets README](./@udir-design/react/README.md).
+
+# Versjonering og publisering
+
+Bibliotekene våre følger [semantisk versjonering](https://semver.org/) og [semantisk publisering](https://semantic-release.gitbook.io).
+
+Det vil si, gitt et versjonsnummer MAJOR.MINOR.PATCH, vil
+
+- en økning i MAJOR-versjon indikere en endring som **ikke** er bakoverkompatibel
+- en økning i MINOR-versjon indikere ny, bakoverkompatibel funksjonalitet
+- en økning i PATCH-versjon indikere en bakoverkompativel bugfiks
+
+Koden som tilhører siste stabile, publiserte versjon vil alltid finnes på branchen [release/latest](https://github.com/Utdanningsdirektoratet/designsystem/tree/release/latest), mens koden for en spesifikk versjon kan finnes via [git tags](https://github.com/Utdanningsdirektoratet/designsystem/tags).
+
+> [!WARNING]
+> Foreløpig finnes ikke branchen `release/latest`, fordi vi ikke har publisert en stabil versjon ennå.
 
 # Informasjon for utviklere som skal bidra
 
@@ -150,7 +167,7 @@ flowchart-elk BT
 
 ### Git branching og commit-stil
 
-Før du begynner å utvikle må du sjekke ut en egen branch fra `main`. Vi har ingen spesifikk navngiving på brancher,
+Før du begynner å utvikle må du lage en ny branch ut fra `main`. Vi har ingen spesifikk navngiving på brancher,
 men for å lettere ha oversikt kan du gjerne følge dette mønsteret:
 
 - `feat/...` for nye features
@@ -267,6 +284,35 @@ Les mer i Nx sin dokumentasjon:
 
 - [Explore your Workspace](https://nx.dev/features/explore-graph)
 - [Run Tasks](https://nx.dev/features/run-tasks).
+
+## Hvordan publisere en ny versjon
+
+Vi benytter en publiseringsstrategi basert på [semantic-release](https://semantic-release.gitbook.io),
+tilpasset for bruk i monorepo. Denne strategien baserer seg på automatisert publisering gjennom pull requests til
+spesifikke brancher.
+
+Hos oss er dette satt opp slik:
+
+- `release/latest` brukes for å publisere en stabil versjon, og får `@latest`-taggen på npm.
+- `release/alpha` og `release/beta` brukes for å publisere hhv. alpha- og beta-versjoner. Disse får pre-release versjonsnummer i henhold til [SemVer](https://semver.org/) — f.eks. `1.1.0-alpha.2` — og hhv. `@alpha` og `@beta` tag på npm.
+- `release/<N>.x` og `release/<N>.<N>.x`, der `<N>` er et tall, brukes for å publisere vedlikeholdsversjoner. Det lar oss for eksempel fikse en bug eller legge til en feature på en versjon som er én eller flere major-versjoner bak `release/latest`.
+
+I alle tilfeller blir versjonsnummer og endringslogg automatisk generert etter endringene har blitt merget inn i korrekt branch.
+
+Når du er ferdig med en fiks eller feature, må du ta stilling til hvor denne skal merges inn:
+
+- Skal den ikke rulles ut enda? Lag en PR mot `dev`-branchen
+- Skal den rulles ut som en ny, stabil versjon? Lag en PR mot `release/latest`.
+- Skal den rulles ut som en alpha- eller beta-versjon? Lag en PR mot `release/alpha` eller `release/beta`.
+- Er det en feature eller bugfix for en eldre versjon? I dette tilfellet må endringene dine branche UT fra versjonen som trenger endring. For eksempel, dersom vi allerede er på versjon 2, men du må fikse en bug i versjon 1.13.1, så må du
+  - branche ut fra git-taggen `@udir-design/react@1.13.1`
+  - committe bugfix `fix: <description here>`
+  - lage en PR mot branchen `release/1.x` (eller `release/1.13.x`)
+  - dersom bug'en også finnes i versjon 2, kan du så lage en PR for å merge `release/1.x` inn i `release/latest`
+
+Husk også at endringer som rulles ut til `release/latest` ikke automatisk blir tilgjengelig på `release/alpha`, for å gjøre det må man merge `release/latest` inn i `release/alpha`.
+
+Man kan også måtte merge andre veien, f.eks. dersom en alpha-versjon skal promoteres til stabil vil man merge `release/alpha` inn i `release/latest`.
 
 ## Oversikt over verktøy
 
