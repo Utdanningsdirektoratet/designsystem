@@ -13,7 +13,10 @@
     },
     "build-storybook": {
       "dependsOn": ["build"],
-      "cache": true
+      "cache": true,
+      "options": {
+        "stats-json": "storybook-static"
+      }
     },
     "test-storybook": {
       "dependsOn": ["build"]
