@@ -44,7 +44,7 @@ jobs:
       - name: Print affected projects
         run: pnpm nx show projects --affected --base $NX_BASE --head $NX_HEAD
 
-      - name: Define whether Chromatic job needs to run
+      - name: Determine whether storybook-tests & chromatic need to run
         id: job_condition
         run: |
           IS_REACT_AFFECTED=$(./@internal/build-tools/bin/is-project-affected.sh @udir-design/react)
@@ -91,6 +91,7 @@ jobs:
   storybook-tests:
     runs-on: ubuntu-latest
     needs: main
+    if: needs.main.outputs.run_ui_tests == 'true'
     steps:
       - uses: actions/checkout@v4
         with:
