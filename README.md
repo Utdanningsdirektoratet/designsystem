@@ -301,7 +301,7 @@ I alle tilfeller blir versjonsnummer og endringslogg automatisk generert etter e
 
 Når du er ferdig med en fiks eller feature, må du ta stilling til hvor denne skal merges inn:
 
-- Skal den ikke rulles ut enda? Lag en PR mot `dev`-branchen
+- Skal den ikke rulles ut enda? Lag en PR mot `main`-branchen
 - Skal den rulles ut som en ny, stabil versjon? Lag en PR mot `release/latest`.
 - Skal den rulles ut som en alpha- eller beta-versjon? Lag en PR mot `release/alpha` eller `release/beta`.
 - Er det en feature eller bugfix for en eldre versjon? I dette tilfellet må endringene dine branche UT fra versjonen som trenger endring. For eksempel, dersom vi allerede er på versjon 2, men du må fikse en bug i versjon 1.13.1, så må du
@@ -313,6 +313,8 @@ Når du er ferdig med en fiks eller feature, må du ta stilling til hvor denne s
 Husk også at endringer som rulles ut til `release/latest` ikke automatisk blir tilgjengelig på `release/alpha`, for å gjøre det må man merge `release/latest` inn i `release/alpha`.
 
 Man kan også måtte merge andre veien, f.eks. dersom en alpha-versjon skal promoteres til stabil vil man merge `release/alpha` inn i `release/latest`.
+
+Dersom man har endringer i `main`-branchen som ennå ikke er publisert, vil man altså opprette en PR for å merge `main` inn i en av `release/*`-branchene.
 
 ## Oversikt over verktøy
 
@@ -327,7 +329,7 @@ Bygg, avhengigheter og utrulling:
 
 - [node](https://nodejs.org) - kjøretidsmiljø for JavaScript som brukes av de fleste verktøyene våre
 - [pnpm](https://pnpm.io/) — package manager som håndterer avhengigheter, både mellom interne moduler og til eksterne biblioteker
-- [Nx](https://nx.dev/) — overordnet byggesystem som respekterer avhengigheter mellom ulike deler av monorepoet
+- [Nx](https://nx.dev/) — overordnet byggesystem som respekterer avhengigheter mellom ulike deler av monorepoet, og håndterer publisering av biblioteker
 - [Vite](https://vite.dev/) — verktøy som bygger de individuelle TypeScript-bibliotekene
 - [GitHub Actions](https://github.com/features/actions) — kontinuerlig integrasjon og utrulling (CI/CD)
 
