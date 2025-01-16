@@ -8,6 +8,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof ErrorSummary> = {
   component: ErrorSummary,
+  tags: ['alpha'],
 };
 
 export default meta;

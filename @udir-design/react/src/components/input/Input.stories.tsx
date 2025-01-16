@@ -5,6 +5,7 @@ import { Label } from '@digdir/designsystemet-react';
 
 const meta: Meta<typeof Input> = {
   component: Input,
+  tags: ['alpha'],
 };
 
 export default meta;

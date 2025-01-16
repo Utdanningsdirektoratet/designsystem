@@ -3,6 +3,7 @@ import { Tag } from './Tag';
 
 const meta: Meta<typeof Tag> = {
   component: Tag,
+  tags: ['alpha'],
 };
 
 export default meta;

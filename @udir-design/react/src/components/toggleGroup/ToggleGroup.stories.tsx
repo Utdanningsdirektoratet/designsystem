@@ -3,6 +3,7 @@ import { ToggleGroup } from './ToggleGroup';
 
 const meta: Meta<typeof ToggleGroup> = {
   component: ToggleGroup,
+  tags: ['alpha'],
 };
 
 export default meta;

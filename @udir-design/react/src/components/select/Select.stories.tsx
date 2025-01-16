@@ -5,6 +5,7 @@ import { Field } from '../field/Field';
 
 const meta: Meta<typeof Select> = {
   component: Select,
+  tags: ['alpha'],
 };
 
 export default meta;

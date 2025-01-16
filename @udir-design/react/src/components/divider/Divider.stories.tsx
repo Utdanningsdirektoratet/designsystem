@@ -4,6 +4,7 @@ import { Divider } from './Divider';
 
 const meta: Meta<typeof Divider> = {
   component: Divider,
+  tags: ['alpha'],
 };
 
 export default meta;

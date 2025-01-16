@@ -3,6 +3,7 @@ import { Table } from './Table';
 
 const meta: Meta<typeof Table> = {
   component: Table,
+  tags: ['alpha'],
 };
 
 export default meta;

@@ -4,6 +4,7 @@ import { Label } from '../typography/label/Label';
 
 const meta: Meta<typeof Textfield> = {
   component: Textfield,
+  tags: ['alpha'],
 };
 
 export default meta;

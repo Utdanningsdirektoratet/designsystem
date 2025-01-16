@@ -3,6 +3,7 @@ import { Pagination } from './Pagination';
 
 const meta: Meta<typeof Pagination> = {
   component: Pagination,
+  tags: ['alpha'],
 };
 
 export default meta;

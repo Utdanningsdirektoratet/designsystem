@@ -3,6 +3,7 @@ import { Spinner } from './Spinner';
 
 const meta: Meta<typeof Spinner> = {
   component: Spinner,
+  tags: ['alpha'],
 };
 
 export default meta;

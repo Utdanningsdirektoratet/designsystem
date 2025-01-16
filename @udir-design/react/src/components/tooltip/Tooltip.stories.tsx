@@ -4,6 +4,7 @@ import { Button } from '../button/Button';
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
+  tags: ['alpha'],
 };
 
 export default meta;

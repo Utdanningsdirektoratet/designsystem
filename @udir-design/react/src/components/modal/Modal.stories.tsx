@@ -5,6 +5,7 @@ import { Paragraph } from '../typography/paragraph/Paragraph';
 
 const meta: Meta<typeof Modal> = {
   component: Modal,
+  tags: ['alpha'],
 };
 
 export default meta;

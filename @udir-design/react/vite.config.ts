@@ -36,6 +36,14 @@ export default defineConfig({
   //  plugins: [ nxViteTsPaths() ],
   // },
 
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+      },
+    },
+  },
+
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {

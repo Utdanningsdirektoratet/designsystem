@@ -4,6 +4,7 @@ import { Paragraph } from '../typography/paragraph/Paragraph';
 
 const meta: Meta<typeof SkipLink> = {
   component: SkipLink,
+  tags: ['alpha'],
 };
 
 export default meta;
