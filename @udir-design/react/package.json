@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "typecheck": "tsc --build",
-    "test-storybook": "test-storybook --index-json",
+    "test-storybook": "test-storybook",
     "chromatic:build-storybook": "nx build-storybook"
   },
   "dependencies": {
