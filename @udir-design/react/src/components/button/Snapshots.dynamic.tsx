@@ -1,3 +1,8 @@
+////////////////////////////////////
+// THIS FILE IS CURRENTLY NOT IN USE
+// It is kept here so we can re-use some of the logic to generate a single
+// variant/state-story in the future, instead of using code generation.
+////////////////////////////////////
 import type { StoryObj } from '@storybook/react';
 import { Button } from './Button';
 import { _Button } from './Button.stories';
