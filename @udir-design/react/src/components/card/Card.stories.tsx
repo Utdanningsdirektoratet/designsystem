@@ -3,6 +3,7 @@ import { Card, CardBlock } from './Card';
 
 const meta: Meta<typeof Card> = {
   component: Card,
+  tags: ['alpha'],
 };
 
 export default meta;

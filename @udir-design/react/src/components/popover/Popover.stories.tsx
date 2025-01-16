@@ -3,6 +3,7 @@ import { Popover } from './Popover';
 
 const meta: Meta<typeof Popover> = {
   component: Popover,
+  tags: ['alpha'],
 };
 
 export default meta;

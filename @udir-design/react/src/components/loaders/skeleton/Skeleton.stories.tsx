@@ -3,6 +3,7 @@ import { Skeleton } from './Skeleton';
 
 const meta: Meta<typeof Skeleton> = {
   component: Skeleton,
+  tags: ['alpha'],
 };
 
 export default meta;

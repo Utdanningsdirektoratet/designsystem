@@ -3,6 +3,7 @@ import { Details } from './Details';
 
 const meta: Meta<typeof Details> = {
   component: Details,
+  tags: ['alpha'],
 };
 
 export default meta;

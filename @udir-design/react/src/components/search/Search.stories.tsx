@@ -3,6 +3,7 @@ import { Search } from './Search';
 
 const meta: Meta<typeof Search> = {
   component: Search,
+  tags: ['alpha'],
 };
 
 export default meta;

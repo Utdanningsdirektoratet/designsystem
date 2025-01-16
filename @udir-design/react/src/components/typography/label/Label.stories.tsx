@@ -3,6 +3,7 @@ import { Label } from './Label';
 
 const meta: Meta<typeof Label> = {
   component: Label,
+  tags: ['alpha'],
 };
 
 export default meta;

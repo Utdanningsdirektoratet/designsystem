@@ -4,6 +4,7 @@ import { Dropdown } from './Dropdown';
 
 const meta: Meta<typeof Dropdown> = {
   component: Dropdown,
+  tags: ['alpha'],
 };
 
 export default meta;

@@ -3,6 +3,7 @@ import { Chip } from './Chip';
 
 const meta: Meta<typeof Chip.Button> = {
   component: Chip.Button,
+  tags: ['alpha'],
 };
 
 export default meta;

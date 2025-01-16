@@ -3,6 +3,7 @@ import { Heading } from './Heading';
 
 const meta: Meta<typeof Heading> = {
   component: Heading,
+  tags: ['alpha'],
 };
 
 export default meta;

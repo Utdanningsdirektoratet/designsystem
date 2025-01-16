@@ -3,6 +3,7 @@ import { Switch } from './Switch';
 
 const meta: Meta<typeof Switch> = {
   component: Switch,
+  tags: ['alpha'],
 };
 
 export default meta;

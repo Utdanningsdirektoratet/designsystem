@@ -5,6 +5,7 @@ import { Textarea } from '@digdir/designsystemet-react';
 
 const meta: Meta<typeof Field> = {
   component: Field,
+  tags: ['alpha'],
 };
 
 export default meta;

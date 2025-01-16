@@ -3,6 +3,7 @@ import { Paragraph } from './Paragraph';
 
 const meta: Meta<typeof Paragraph> = {
   component: Paragraph,
+  tags: ['alpha'],
 };
 
 export default meta;

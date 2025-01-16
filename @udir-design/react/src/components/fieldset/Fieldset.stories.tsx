@@ -7,6 +7,7 @@ import { Label } from '@digdir/designsystemet-react';
 
 const meta: Meta<typeof Fieldset> = {
   component: Fieldset,
+  tags: ['alpha'],
 };
 
 export default meta;

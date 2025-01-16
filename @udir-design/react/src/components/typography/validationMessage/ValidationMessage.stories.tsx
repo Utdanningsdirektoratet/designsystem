@@ -3,6 +3,7 @@ import { ValidationMessage } from './ValidationMessage';
 
 const meta: Meta<typeof ValidationMessage> = {
   component: ValidationMessage,
+  tags: ['alpha'],
 };
 
 export default meta;

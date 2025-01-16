@@ -3,6 +3,7 @@ import { Radio } from './Radio';
 
 const meta: Meta<typeof Radio> = {
   component: Radio,
+  tags: ['alpha'],
 };
 
 export default meta;

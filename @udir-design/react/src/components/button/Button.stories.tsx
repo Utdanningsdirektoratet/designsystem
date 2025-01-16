@@ -5,6 +5,7 @@ import { spaceForFocusStyleDecorator } from '../../../.storybook/utils/spaceForF
 
 const meta: Meta<typeof Button> = {
   component: Button,
+  tags: ['alpha'],
   decorators: spaceForFocusStyleDecorator,
 };
 export default meta;

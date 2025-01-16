@@ -8,6 +8,7 @@ import {
 
 const meta: Meta<typeof Breadcrumbs> = {
   component: Breadcrumbs,
+  tags: ['alpha'],
 };
 
 export default meta;

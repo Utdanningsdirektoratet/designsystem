@@ -3,6 +3,7 @@ import { List } from './List';
 
 const meta: Meta<typeof List.Unordered> = {
   component: List.Unordered,
+  tags: ['alpha'],
 };
 
 export default meta;

@@ -3,6 +3,7 @@ import { Alert } from './Alert';
 
 const meta: Meta<typeof Alert> = {
   component: Alert,
+  tags: ['alpha'],
 };
 
 export default meta;

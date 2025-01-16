@@ -3,6 +3,7 @@ import { Badge } from './Badge';
 
 const meta: Meta<typeof Badge> = {
   component: Badge,
+  tags: ['alpha'],
 };
 
 export default meta;
