@@ -6,7 +6,6 @@ const defaultConfig = getJestConfig();
 const config = {
   ...defaultConfig,
   rootDir: './',
-  snapshotResolver: './snapshot-resolver.js',
   snapshotSerializers: [
     // Sets up the custom serializer to preprocess the HTML before it's passed onto the test-runner
     './snapshot-serializer.js',
