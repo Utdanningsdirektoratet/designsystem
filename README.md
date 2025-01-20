@@ -24,6 +24,7 @@ I dette repositoriet lever den delen av designsystemet som implementeres i kode:
 
 - [Hvordan ta i bruk Udirs designsystem](#hvordan-ta-i-bruk-udirs-designsystem)
 - [Versjonering og publisering](#versjonering-og-publisering)
+  - [Komponenter, livsfaser og unntak fra versjoneringsregler](#komponenter-livsfaser-og-unntak-fra-versjoneringsregler)
 - [Informasjon for utviklere som skal bidra](#informasjon-for-utviklere-som-skal-bidra)
   - [Oppsett lokalt](#oppsett-lokalt)
   - [Monorepo - enkelt forklart](#monorepo---enkelt-forklart)
@@ -52,6 +53,22 @@ Koden som tilhører siste stabile, publiserte versjon vil alltid finnes på bran
 
 > [!WARNING]
 > Foreløpig finnes ikke branchen `release/latest`, fordi vi ikke har publisert en stabil versjon ennå.
+
+## Komponenter, livsfaser og unntak fra versjoneringsregler
+
+Komponenter i designsystemet kan befinne seg i én av tre ulike livsfaser:
+
+<dl>
+<dt><strong>Alpha</strong></dt><dd>Komponenten er implementert, men dokumentasjon er mangelfull. Den er ikke nødvendigvis testet i en større kontekst, og det er sannsynlig at utseende, oppførselen og/eller API vil endre seg.</dd>
+<dt><strong>Beta</strong></dt><dd>Komponenten har gjennomgått en initiell prosess i teamet, der visuelle valg har blitt tatt. Den har fått bruksdokumentasjon i Storybook og Figma, og er en del av en demoside der den kan testes i en større kontekst. Det finnes automatiserte testing av komponenten der det gir mening. Endringer er fremdeles mulig basert på tilbakemeldinger fra systemteam og manuell testing.</dd>
+<dt><strong>Stable</strong></dt><dd>Komponenten har fått tilbakemelding fra ulike systemteam i Udir og har vært gjennom akseptansetest i designteamet. Vi prøver å unngå endringer med mindre det ligger gode grunner bak.</dd>
+</dl>
+
+> [!WARNING]
+> I **alpha**- og **beta**-fasene vil følgende gjelde:
+>
+> - endringer som bryter bakoverkompatibilitet kan skje når som helst, uten at MAJOR-versjon økes
+> - komponentene må importeres fra henholdsvis `@udir-design/react/alpha` eller `@udir-design/react/beta`
 
 # Informasjon for utviklere som skal bidra
 
