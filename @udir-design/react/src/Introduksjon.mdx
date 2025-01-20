@@ -1,6 +1,9 @@
+import { Alert } from './components/alert/Alert';
+import { List } from './components/list/List';
+
 # Designsystem for Utdanningsdirektoratet
 
-Udirs designsystem er et initiativ for å skape og opprettholde helhetlig design slik at Udir har:
+Udirs designsystem skal bidra til å skape og opprettholde helhetlig design slik at Udir har:
 
 - tydelig identitet
 - brukervennlige løsninger
@@ -14,7 +17,21 @@ Bruk venstremenyen for å navigere i dokumentasjonen.
 
 Overskriften "Demo" inneholder eksempler som viser komponenter brukt sammen. Alle individuelle komponenter finner du under "Components".
 
-En komponent er markert med "Alpha" eller "Beta" dersom de ikke er stabile (les mer om livsfaser lenger ned). Bruk av disse skjer på eget ansvar. For å bruke disse må de importeres fra henholdsvis `@udir-design/react/alpha` eller `@udir-design/react/beta`. Endringer som ikke er bakoverkompatible kan skje når som helst.
+Komponenter er markert med "Alpha" eller "Beta" dersom de ikke er stabile (les mer om livsfaser lenger ned). Bruk av disse skjer på eget ansvar.
+
+<Alert data-color="warning">
+  <div>I **alpha**- og **beta**-fasene vil følgende gjelde</div>
+  <List.Unordered>
+    <List.Item>
+      endringer som bryter bakoverkompatibilitet kan skje når som helst, uten at
+      MAJOR-versjonsnummeret endres
+    </List.Item>
+    <List.Item>
+      komponentene må importeres fra henholdsvis `@udir-design/react/alpha`
+      eller `@udir-design/react/beta`
+    </List.Item>
+  </List.Unordered>
+</Alert>
 
 ## Livsfaser for en komponent
 
@@ -27,25 +44,32 @@ Komponenter i designsystemet kan befinne seg i én av tre ulike livsfaser:
   <dd>
     Komponenten er implementert, men dokumentasjon er mangelfull. Den er ikke
     nødvendigvis testet i en større kontekst, og det er sannsynlig at utseende,
-    oppførselen og/eller API vil endre seg.
+    oppførsel og/eller API vil endre seg.
   </dd>
   <dt>
     <strong>Beta</strong>
   </dt>
   <dd>
-    Komponenten har gjennomgått en initiell prosess i teamet, der visuelle valg
-    har blitt tatt. Den har fått bruksdokumentasjon i Storybook og Figma, og er
-    en del av en demoside der den kan testes i en større kontekst. Det finnes
-    automatiserte testing av komponenten der det gir mening. Endringer er
-    fremdeles mulig basert på tilbakemeldinger fra systemteam og manuell
-    testing.
+    Komponenten har gjennomgått en initiell prosess i designteamet, der visuelle
+    valg har blitt tatt. Den har fått bruksdokumentasjon i Storybook og Figma,
+    og er en del av en demoside der den kan testes i en større kontekst. Det
+    finnes automatiserte testing av komponenten der det gir mening. Endringer er
+    fremdeles mulig basert på tilbakemeldinger fra systemteam, vurderinger i
+    designteamet og manuell testing.
   </dd>
   <dt>
-    <strong>Stable</strong>
+    <strong>Stabil</strong>
   </dt>
   <dd>
-    Komponenten har fått tilbakemelding fra ulike systemteam i Udir og har vært
-    gjennom akseptansetest i designteamet. Vi prøver å unngå endringer med
-    mindre det ligger gode grunner bak.
+    Komponenten er vurdert til å tilfredsstille systemteamenes behov.
+    Designteamet har gjort denne vurderingen basert på kjennskap til Udirs
+    tjenester og tilbakemeldinger fra systemteamene i alpha- og betafasene.
+    Stabile komponenter har gjennomgått akseptansetest i designteamet. Vi prøver
+    å unngå endringer i stabile komponenter med mindre det ligger gode grunner
+    bak.
   </dd>
 </dl>
+
+### Overgang fra beta til stabil
+
+Vi legger ut melding på Slack-kanalen #designsystem-udir når vi mener en komponent kan gå fra beta til stabil. Hvis vi ikke får noen innsigelser på dette, setter vi komponenten til stabil etter cirka en uke.

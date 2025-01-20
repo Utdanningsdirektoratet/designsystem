@@ -1,6 +1,6 @@
 # Designsystem for Utdanningsdirektoratet <!-- omit from toc -->
 
-Udirs designsystem er et initiativ for å skape og opprettholde helhetlig design slik at Udir har:
+Udirs designsystem skal bidra til å skape og opprettholde helhetlig design slik at Udir har:
 
 - tydelig identitet
 - brukervennlige løsninger
@@ -59,16 +59,20 @@ Koden som tilhører siste stabile, publiserte versjon vil alltid finnes på bran
 Komponenter i designsystemet kan befinne seg i én av tre ulike livsfaser:
 
 <dl>
-<dt><strong>Alpha</strong></dt><dd>Komponenten er implementert, men dokumentasjon er mangelfull. Den er ikke nødvendigvis testet i en større kontekst, og det er sannsynlig at utseende, oppførselen og/eller API vil endre seg.</dd>
-<dt><strong>Beta</strong></dt><dd>Komponenten har gjennomgått en initiell prosess i teamet, der visuelle valg har blitt tatt. Den har fått bruksdokumentasjon i Storybook og Figma, og er en del av en demoside der den kan testes i en større kontekst. Det finnes automatiserte testing av komponenten der det gir mening. Endringer er fremdeles mulig basert på tilbakemeldinger fra systemteam og manuell testing.</dd>
-<dt><strong>Stable</strong></dt><dd>Komponenten har fått tilbakemelding fra ulike systemteam i Udir og har vært gjennom akseptansetest i designteamet. Vi prøver å unngå endringer med mindre det ligger gode grunner bak.</dd>
+<dt><strong>Alpha</strong></dt><dd>Komponenten er implementert, men dokumentasjon er mangelfull. Den er ikke nødvendigvis testet i en større kontekst, og det er sannsynlig at utseende, oppførsel og/eller API vil endre seg.</dd>
+<dt><strong>Beta</strong></dt><dd>Komponenten har gjennomgått en initiell prosess i designteamet, der visuelle valg har blitt tatt. Den har fått bruksdokumentasjon i Storybook og Figma, og er en del av en demoside der den kan testes i en større kontekst. Det finnes automatiserte testing av komponenten der det gir mening. Endringer er fremdeles mulig basert på tilbakemeldinger fra systemteam og manuell testing.</dd>
+<dt><strong>Stabil</strong></dt><dd>Komponenten er vurdert til å tilfredsstille systemteamenes behov. Designteamet har gjort denne vurderingen basert på kjennskap til Udirs tjenester og tilbakemeldinger fra systemteamene i alpha- og betafasene. Stabile komponenter har gjennomgått akseptansetest i designteamet. Vi prøver å unngå endringer i stabile komponenter med mindre det ligger gode grunner bak.</dd>
 </dl>
 
 > [!WARNING]
 > I **alpha**- og **beta**-fasene vil følgende gjelde:
 >
-> - endringer som bryter bakoverkompatibilitet kan skje når som helst, uten at MAJOR-versjon økes
+> - endringer som bryter bakoverkompatibilitet kan skje når som helst, uten at MAJOR-versjonsnummeret endres
 > - komponentene må importeres fra henholdsvis `@udir-design/react/alpha` eller `@udir-design/react/beta`
+
+### Overgang fra beta til stabil
+
+Vi legger ut melding på Slack-kanalen #designsystem-udir når vi mener en komponent kan gå fra beta til stabil. Hvis vi ikke får noen innsigelser på dette, setter vi komponenten til stabil etter cirka en uke.
 
 # Informasjon for utviklere som skal bidra
 
