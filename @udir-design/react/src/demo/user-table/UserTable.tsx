@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Button, Select, Search, Table } from '../../index';
+import { Heading, Button, Select, Search, Table } from '../../alpha';
 import styles from './UserTable.module.scss';
 
 export function UserTable() {
