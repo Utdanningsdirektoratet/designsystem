@@ -114,12 +114,12 @@ jobs:
       - name: Install Playwright
         run: pnpm exec playwright install --with-deps chromium
       - name: Build storybook
-        run: pnpm nx build-storybook
+        run: pnpm nx build:storybook
       - name: Serve Storybook and run tests
         run: |
           pnpx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "pnpx http-server @udir-design/react/storybook-static --port 6006 --silent" \
-            "pnpx wait-on tcp:6006 && pnpm nx test-storybook"
+            "pnpx wait-on tcp:6006 && pnpm nx test:storybook"
 
   chromatic:
     runs-on: ubuntu-latest
@@ -144,7 +144,7 @@ jobs:
       - run: pnpm install
 
       - name: Build storybook
-        run: pnpm nx build-storybook
+        run: pnpm nx build:storybook
 
       - name: Publish Storybook to Chromatic
         uses: chromaui/action@latest

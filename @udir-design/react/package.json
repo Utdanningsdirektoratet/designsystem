@@ -16,8 +16,9 @@
   ],
   "scripts": {
     "typecheck": "tsc --build",
-    "test-storybook": "test-storybook",
-    "chromatic:build-storybook": "nx build-storybook"
+    "dev": "storybook dev --port 6006",
+    "build:storybook": "storybook build --stats-json",
+    "test:storybook": "test-storybook"
   },
   "dependencies": {
     "@digdir/designsystemet-css": "1.0.0-next.44",
