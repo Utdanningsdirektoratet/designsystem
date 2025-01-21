@@ -1,14 +1,16 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/Dropdown MultipleHeadings smoke-test 1`] = `
-<button data-variant="primary"
-        type="button"
-        popovertarget=":r1:"
+exports[`Multiple Headings 1`] = `
+<button
+  data-variant="primary"
+  type="button"
+  popovertarget=":r1:"
 >
   Eksempel med overskrifter
 </button>
-<div id=":r1:"
-     popover="manual"
+<div
+  id=":r1:"
+  popover="manual"
 >
   <h2>
     Søt snacks
@@ -35,15 +37,17 @@ exports[`components/Dropdown MultipleHeadings smoke-test 1`] = `
 </div>
 `;
 
-exports[`components/Dropdown Preview smoke-test 1`] = `
-<button data-variant="primary"
-        type="button"
-        popovertarget=":r0:"
+exports[`Preview 1`] = `
+<button
+  data-variant="primary"
+  type="button"
+  popovertarget=":r0:"
 >
   Eksempel
 </button>
-<div id=":r0:"
-     popover="manual"
+<div
+  id=":r0:"
+  popover="manual"
 >
   <li>
     Sjokolade

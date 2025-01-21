@@ -1,15 +1,17 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/Textfield Preview smoke-test 1`] = `
-<label data-weight="medium"
-       for="my-textfield"
+exports[`Preview 1`] = `
+<label
+  data-weight="medium"
+  for="my-textfield"
 >
   Label
 </label>
 <div>
   <div>
-    <input type="text"
-           id="my-textfield"
+    <input
+      type="text"
+      id="my-textfield"
     >
   </div>
 </div>

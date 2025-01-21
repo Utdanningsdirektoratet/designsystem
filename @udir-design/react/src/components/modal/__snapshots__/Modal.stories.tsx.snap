@@ -1,20 +1,22 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/Modal Preview smoke-test 1`] = `
-<button data-variant="primary"
-        type="button"
-        aria-haspopup="dialog"
+exports[`Preview 1`] = `
+<button
+  data-variant="primary"
+  type="button"
+  aria-haspopup="dialog"
 >
   Open Modal
 </button>
 <dialog>
   <form method="dialog">
-    <button data-icon="true"
-            data-variant="tertiary"
-            type="submit"
-            aria-label="Lukk dialogvindu"
-            data-color="neutral"
-            name="close"
+    <button
+      data-icon="true"
+      data-variant="tertiary"
+      type="submit"
+      aria-label="Lukk dialogvindu"
+      data-color="neutral"
+      name="close"
     >
     </button>
   </form>

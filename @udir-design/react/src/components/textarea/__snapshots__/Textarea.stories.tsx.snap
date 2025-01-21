@@ -1,8 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/Textarea Preview smoke-test 1`] = `
-<label data-weight="medium"
-       for="my-textarea"
+exports[`Preview 1`] = `
+<label
+  data-weight="medium"
+  for="my-textarea"
 >
   Label
 </label>

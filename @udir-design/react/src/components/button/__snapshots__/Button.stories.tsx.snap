@@ -1,8 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/Button _Button play-test 1`] = `
-<button data-variant="primary"
-        type="button"
+exports[`Button 1`] = `
+<button
+  data-variant="primary"
+  type="button"
 >
   Action
 </button>

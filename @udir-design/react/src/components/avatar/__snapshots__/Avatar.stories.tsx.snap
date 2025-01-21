@@ -1,9 +1,10 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/Avatar Preview smoke-test 1`] = `
-<span data-variant="circle"
-      role="img"
-      aria-label="Ola Nordmann"
+exports[`Preview 1`] = `
+<span
+  data-variant="circle"
+  role="img"
+  aria-label="Ola Nordmann"
 >
 </span>
 `;

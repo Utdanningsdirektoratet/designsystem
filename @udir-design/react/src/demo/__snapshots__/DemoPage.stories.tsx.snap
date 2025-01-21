@@ -1,8 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`demo/DemoPage Simple smoke-test 1`] = `
-<div data-size="sm"
-     data-color-scheme="auto"
+exports[`Simple 1`] = `
+<div
+  data-size="sm"
+  data-color-scheme="auto"
 >
   <h2>
     Velkommen!
@@ -28,8 +29,9 @@ exports[`demo/DemoPage Simple smoke-test 1`] = `
         </a>
       </li>
       <li>
-        <a href="#"
-           aria-current="page"
+        <a
+          href="#"
+          aria-current="page"
         >
           Nivå 4
         </a>
@@ -43,82 +45,96 @@ exports[`demo/DemoPage Simple smoke-test 1`] = `
           Handleliste
         </legend>
         <div>
-          <input type="checkbox"
-                 id="potet"
-                 value="potet"
+          <input
+            type="checkbox"
+            id="potet"
+            value="potet"
           >
-          <label data-weight="regular"
-                 for="potet"
+          <label
+            data-weight="regular"
+            for="potet"
           >
             En kilo poteter
           </label>
         </div>
         <div>
-          <input type="checkbox"
-                 id="farris"
-                 value="farris"
+          <input
+            type="checkbox"
+            id="farris"
+            value="farris"
           >
-          <label data-weight="regular"
-                 for="farris"
+          <label
+            data-weight="regular"
+            for="farris"
           >
             To liter Farris
           </label>
         </div>
         <div>
-          <input type="checkbox"
-                 id="blomkol"
-                 value="blomkol"
-                 checked
+          <input
+            type="checkbox"
+            id="blomkol"
+            value="blomkol"
+            checked
           >
-          <label data-weight="regular"
-                 for="blomkol"
+          <label
+            data-weight="regular"
+            for="blomkol"
           >
             Blomkål
           </label>
         </div>
         <div>
-          <input type="checkbox"
-                 id="pizza"
-                 value="pizza"
-                 checked
+          <input
+            type="checkbox"
+            id="pizza"
+            value="pizza"
+            checked
           >
-          <label data-weight="regular"
-                 for="pizza"
+          <label
+            data-weight="regular"
+            for="pizza"
           >
             Pizza
           </label>
         </div>
         <div>
-          <input type="checkbox"
-                 id="melk"
-                 value="melk"
-                 checked
+          <input
+            type="checkbox"
+            id="melk"
+            value="melk"
+            checked
           >
-          <label data-weight="regular"
-                 for="melk"
+          <label
+            data-weight="regular"
+            for="melk"
           >
             Tre liter lettmelk
           </label>
         </div>
         <hr aria-hidden="true">
         <div>
-          <input type="checkbox"
-                 id="smagodt"
-                 value="smagodt"
+          <input
+            type="checkbox"
+            id="smagodt"
+            value="smagodt"
           >
-          <label data-weight="regular"
-                 for="smagodt"
+          <label
+            data-weight="regular"
+            for="smagodt"
           >
             2kg smågodt
           </label>
         </div>
         <div>
-          <input type="checkbox"
-                 id="smash"
-                 value="smash"
+          <input
+            type="checkbox"
+            id="smash"
+            value="smash"
           >
-          <label data-weight="regular"
-                 for="smash"
+          <label
+            data-weight="regular"
+            for="smash"
           >
             10 poser med Smash
           </label>
@@ -130,36 +146,41 @@ exports[`demo/DemoPage Simple smoke-test 1`] = `
         Opprett ny bruker
       </h2>
       <div>
-        <label data-weight="medium"
-               for="name"
+        <label
+          data-weight="medium"
+          for="name"
         >
           Navn
         </label>
         <div>
-          <input type="text"
-                 id="name"
-                 placeholder="Ola Normann"
+          <input
+            type="text"
+            id="name"
+            placeholder="Ola Normann"
           >
         </div>
       </div>
       <div>
-        <label data-weight="medium"
-               for="email"
+        <label
+          data-weight="medium"
+          for="email"
         >
           E-post
         </label>
         <div>
-          <input type="email"
-                 id="email"
-                 placeholder="ola@norge.no"
+          <input
+            type="email"
+            id="email"
+            placeholder="ola@norge.no"
           >
         </div>
       </div>
       <a href="#">
         Glemt passord?
       </a>
-      <button data-variant="primary"
-              type="button"
+      <button
+        data-variant="primary"
+        type="button"
       >
         Opprett ny bruker
       </button>
@@ -215,25 +236,29 @@ exports[`demo/DemoPage Simple smoke-test 1`] = `
               Oppdater
             </option>
           </select>
-          <button data-variant="primary"
-                  type="button"
+          <button
+            data-variant="primary"
+            type="button"
           >
             Utfør
           </button>
         </div>
         <div>
-          <input type="search"
-                 placeholder
-                 aria-label="Søk"
+          <input
+            type="search"
+            placeholder
+            aria-label="Søk"
           >
-          <button data-icon="true"
-                  data-variant="tertiary"
-                  type="reset"
-                  aria-label="Tøm"
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="reset"
+            aria-label="Tøm"
           >
           </button>
-          <button data-variant="primary"
-                  type="submit"
+          <button
+            data-variant="primary"
+            type="submit"
           >
             Søk
           </button>

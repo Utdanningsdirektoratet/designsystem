@@ -67,20 +67,4 @@ export default defineConfig({
       external: [...dependencies, ...dependenciesSubmodules],
     },
   },
-
-  test: {
-    watch: false,
-    globals: true,
-    cache: {
-      dir: '../../node_modules/.vitest/@udir-design/react',
-    },
-    environment: 'jsdom',
-    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-
-    reporters: ['default'],
-    coverage: {
-      reportsDirectory: '../../coverage/@udir-design/react',
-      provider: 'v8',
-    },
-  },
 });

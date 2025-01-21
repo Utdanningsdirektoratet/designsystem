@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/Breadcrumbs Preview smoke-test 1`] = `
+exports[`Preview 1`] = `
 <nav aria-label="Du er her:">
   <ol>
     <li>
@@ -14,8 +14,9 @@ exports[`components/Breadcrumbs Preview smoke-test 1`] = `
       </a>
     </li>
     <li>
-      <a href="#"
-         aria-current="page"
+      <a
+        href="#"
+        aria-current="page"
       >
         Nivå 3
       </a>

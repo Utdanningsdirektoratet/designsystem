@@ -17,7 +17,7 @@
       "outputs": ["{projectRoot}/storybook-static"]
     },
     "test:storybook": {
-      "dependsOn": ["build"]
+      "dependsOn": ["^build"]
     }
   }
 }

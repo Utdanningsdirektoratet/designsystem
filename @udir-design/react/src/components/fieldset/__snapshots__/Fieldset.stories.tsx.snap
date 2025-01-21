@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/Fieldset Preview smoke-test 1`] = `
+exports[`Preview 1`] = `
 <form>
   <fieldset>
     <legend data-weight="medium">
@@ -10,18 +10,21 @@ exports[`components/Fieldset Preview smoke-test 1`] = `
       Gi en kort beskrivelse i begge feltene
     </p>
     <div>
-      <label data-weight="medium"
-             for="my-input"
+      <label
+        data-weight="medium"
+        for="my-input"
       >
         Kort beskrivelse
       </label>
-      <input type="text"
-             id="my-input"
+      <input
+        type="text"
+        id="my-input"
       >
     </div>
     <div>
-      <label data-weight="medium"
-             for="my-textarea"
+      <label
+        data-weight="medium"
+        for="my-textarea"
       >
         Lang beskrivelse
       </label>

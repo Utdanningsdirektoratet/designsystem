@@ -1,14 +1,16 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/Input Preview smoke-test 1`] = `
+exports[`Preview 1`] = `
 <div>
-  <label data-weight="medium"
-         for="components-input--preview"
+  <label
+    data-weight="medium"
+    for="components-input--preview"
   >
     Input 1
   </label>
-  <input type="text"
-         id="components-input--preview"
+  <input
+    type="text"
+    id="components-input--preview"
   >
 </div>
 `;
