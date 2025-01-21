@@ -9,12 +9,6 @@ const config: StorybookConfig = {
     '@chromatic-com/storybook',
     'storybook-addon-pseudo-states',
     'storybook-addon-tag-badges',
-    {
-      name: './dynamic-indexer/preset',
-      options: {
-        tsconfigPath: 'tsconfig.storybook.json',
-      },
-    },
   ],
 
   framework: {
