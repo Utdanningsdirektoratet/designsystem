@@ -11,15 +11,13 @@
         "port": 6006
       }
     },
-    "build-storybook": {
+    "build:storybook": {
       "dependsOn": ["build"],
       "cache": true,
-      "options": {
-        "stats-json": "storybook-static"
-      }
+      "outputs": ["{projectRoot}/storybook-static"]
     },
-    "test-storybook": {
-      "dependsOn": ["build"]
+    "test:storybook": {
+      "dependsOn": ["^build"]
     }
   }
 }

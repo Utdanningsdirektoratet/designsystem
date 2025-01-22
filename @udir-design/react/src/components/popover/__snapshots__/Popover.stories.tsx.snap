@@ -1,14 +1,16 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/Popover Preview smoke-test 1`] = `
-<button data-variant="primary"
-        type="button"
-        popovertarget=":r0:"
+exports[`Preview 1`] = `
+<button
+  data-variant="primary"
+  type="button"
+  popovertarget=":r0:"
 >
   My trigger!
 </button>
-<div id=":r0:"
-     popover="manual"
+<div
+  id=":r0:"
+  popover="manual"
 >
   popover content
 </div>

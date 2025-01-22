@@ -1,11 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/Details Preview smoke-test 1`] = `
+exports[`Preview 1`] = `
 <u-details>
-  <u-summary aria-expanded="false"
-             role="button"
-             slot="summary"
-             tabindex="0"
+  <u-summary
+    aria-expanded="false"
+    role="button"
+    slot="summary"
+    tabindex="0"
   >
     Fagskole
   </u-summary>

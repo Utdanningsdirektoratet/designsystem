@@ -1,8 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/loaders/Skeleton Preview smoke-test 1`] = `
-<span aria-hidden="true"
-      data-variant="rectangle"
+exports[`Preview 1`] = `
+<span
+  aria-hidden="true"
+  data-variant="rectangle"
 >
 </span>
 `;

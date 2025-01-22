@@ -1,8 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/Tooltip Preview smoke-test 1`] = `
-<button data-variant="primary"
-        type="button"
+exports[`Preview 1`] = `
+<button
+  data-variant="primary"
+  type="button"
 >
   Hold peker over meg
 </button>

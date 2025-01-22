@@ -1,19 +1,22 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/Field Preview smoke-test 1`] = `
+exports[`Preview 1`] = `
 <div id="components-field--preview">
-  <label data-weight="medium"
-         for="my-textarea"
+  <label
+    data-weight="medium"
+    for="my-textarea"
   >
     Label
   </label>
-  <div data-field="description"
-       id="my-textarea:description"
+  <div
+    data-field="description"
+    id="my-textarea:description"
   >
     Description
   </div>
-  <textarea id="my-textarea"
-            aria-describedby="my-textarea:description"
+  <textarea
+    id="my-textarea"
+    aria-describedby="my-textarea:description"
   >
   </textarea>
 </div>

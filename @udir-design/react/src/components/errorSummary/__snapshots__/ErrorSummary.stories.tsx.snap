@@ -1,10 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/ErrorSummary Preview smoke-test 1`] = `
-<div aria-labelledby=":r0:"
-     aria-live="polite"
-     aria-relevant="all"
-     role="alert"
+exports[`Preview 1`] = `
+<div
+  aria-labelledby=":r0:"
+  aria-live="polite"
+  aria-relevant="all"
+  role="alert"
 >
   <h2 id=":r0:">
     For å gå videre må du rette opp følgende feil:

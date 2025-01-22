@@ -1,19 +1,22 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/Search Preview smoke-test 1`] = `
+exports[`Preview 1`] = `
 <div>
-  <input type="search"
-         placeholder
-         aria-label="Søk"
+  <input
+    type="search"
+    placeholder
+    aria-label="Søk"
   >
-  <button data-icon="true"
-          data-variant="tertiary"
-          type="reset"
-          aria-label="Tøm"
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="reset"
+    aria-label="Tøm"
   >
   </button>
-  <button data-variant="primary"
-          type="submit"
+  <button
+    data-variant="primary"
+    type="submit"
   >
     Søk
   </button>

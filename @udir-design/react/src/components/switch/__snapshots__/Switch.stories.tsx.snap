@@ -1,13 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/Switch Preview smoke-test 1`] = `
+exports[`Preview 1`] = `
 <div>
-  <input type="checkbox"
-         role="switch"
-         id="components-switch--preview"
+  <input
+    type="checkbox"
+    role="switch"
+    id="components-switch--preview"
   >
-  <label data-weight="regular"
-         for="components-switch--preview"
+  <label
+    data-weight="regular"
+    for="components-switch--preview"
   >
     En bryter
   </label>

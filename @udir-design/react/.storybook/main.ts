@@ -4,17 +4,11 @@ const config: StorybookConfig = {
   stories: ['../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
   addons: [
     '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
     '@storybook/addon-a11y',
     '@chromatic-com/storybook',
     'storybook-addon-pseudo-states',
     'storybook-addon-tag-badges',
-    {
-      name: './dynamic-indexer/preset',
-      options: {
-        tsconfigPath: 'tsconfig.storybook.json',
-      },
-    },
+    '@storybook/experimental-addon-test',
   ],
 
   framework: {

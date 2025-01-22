@@ -116,7 +116,7 @@ NXCACHE_AZURE_ACCOUNT_KEY=<secret key>
 
 ### Sjekke at oppsettet funker
 
-Kjør `pnpm i && pnpm nx storybook`. Dersom dette kjører uten problemer, og du får opp Storybook i nettleseren, er alt som det skal.
+Kjør `pnpm i && pnpm nx dev`. Dersom dette kjører uten problemer, og du får opp Storybook i nettleseren, er alt som det skal.
 
 ## Monorepo - enkelt forklart
 
@@ -235,7 +235,7 @@ BREAKING CHANGE: Consumers must upgrade to React 18 or 19.
 De vanlige stegene for å jobbe i arbeidsområdet er
 
 - `pnpm install` / `pnpm i` for å sørge for at lokale avhengigheter er oppdatert
-- `pnpm nx storybook` for å starte Storybook, slik at du kan se endringer live
+- `pnpm nx dev` for å starte Storybook, slik at du kan se endringer live
 - Gjøre endringer i `@udir-design/react` eller andre prosjekter
 - `pnpm build` — uten `nx` — for å kjøre lint, typesjekk, bygg og enhetstester for alle prosjekter som har blitt påvirket av dine endringer
 
