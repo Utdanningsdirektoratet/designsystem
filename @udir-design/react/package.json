@@ -6,8 +6,16 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./alpha": {
+      "import": "./dist/alpha.js",
+      "require": "./dist/alpha.cjs"
+    },
+    "./beta": {
+      "import": "./dist/beta.js",
+      "require": "./dist/beta.cjs"
     },
     "./style.css": "./dist/style.css"
   },

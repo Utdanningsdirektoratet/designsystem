@@ -1,4 +1,4 @@
-import { Button } from '@udir-design/react';
+import { Button } from '@udir-design/react/alpha';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.scss';
 

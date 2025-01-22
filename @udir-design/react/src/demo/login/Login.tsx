@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Textfield, Tooltip, Link, Button } from '../../index';
+import { Heading, Textfield, Tooltip, Link, Button } from '../../alpha';
 import styles from './Login.module.scss';
 
 export function Login() {
