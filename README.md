@@ -25,6 +25,11 @@ I dette repositoriet lever den delen av designsystemet som implementeres i kode:
 - [Hvordan ta i bruk Udirs designsystem](#hvordan-ta-i-bruk-udirs-designsystem)
 - [Versjonering og publisering](#versjonering-og-publisering)
   - [Komponenter, livsfaser og unntak fra versjoneringsregler](#komponenter-livsfaser-og-unntak-fra-versjoneringsregler)
+- [Hva tester vi?](#hva-tester-vi)
+  - [Individuelle komponenter](#individuelle-komponenter)
+  - [Komponenter i kontekst](#komponenter-i-kontekst)
+  - [Felles for begge](#felles-for-begge)
+  - [Tester for komponenter i ulike livsfaser](#tester-for-komponenter-i-ulike-livsfaser)
 - [Informasjon for utviklere som skal bidra](#informasjon-for-utviklere-som-skal-bidra)
   - [Oppsett lokalt](#oppsett-lokalt)
   - [Monorepo - enkelt forklart](#monorepo---enkelt-forklart)
@@ -74,9 +79,58 @@ Komponenter i designsystemet kan befinne seg i én av tre ulike livsfaser:
 
 Vi legger ut melding på Slack-kanalen #designsystem-udir når vi mener en komponent kan gå fra beta til stabil. Hvis vi ikke får noen innsigelser på dette, setter vi komponenten til stabil etter cirka en uke.
 
+# Hva tester vi?
+
+I designsystemet opererer vi med flere nivåer av automatisert testing for alle komponenter. For å skape
+trygghet rundt versjonsoppdateringer for systemteamene, har vi ikke mulighet til å publisere kode som
+bryter noen av disse testene.
+
+> [!NOTE]
+> Alle våre automatiserte tester kjører i Chromium
+
+## Individuelle komponenter
+
+**Komponenttester** brukes for å teste hvordan individuelle komponenter rendrer ut i nettleseren i ulike tilstander og etter ulike brukerinteraksjoner.
+
+I tillegg vil det finnes **enhetstester** i de tilfellene det gir mening for å teste logikk i komponenter som vi utvikler selv.
+
+## Komponenter i kontekst
+
+Hver komponent skal også testes i bruk i en større kontekst av andre komponenter. Dette kaller vi **komposisjonstester**. Her vil vi også teste interaksjoner på tvers av komponenter.
+
+## Felles for begge
+
+Både komponenttester og komposisjonstester er basert på _stories_ i Storybook. I tillegg til det som er beskrevet over, får hver story også automatisk en snapshottest, en visuell test, og en tilgjengelighetstest.
+
+**Snapshottester** brukes for å beskytte mot uventede endringer i HTML-markupen som blir generert fra hver enkelt komponent, mens **visuelle tester** beskytter mot uventede visuelle endringer i komponentene. Endringer i markup og utseende vil måtte godkjennes av en utvikler eller designer i designteamet.
+
+**Tilgjengelighetstester** bruker [Axe](https://github.com/dequelabs/axe-core) for å teste universell utforming. Det er viktig å merke seg at disse ikke kan fange opp alle tilgjengelighetsproblemer — Axe sier selv at de i snitt finner 57% av alle WCAG-brudd. Reglene som brukes [er beskrevet i Axe sin dokumentasjon](https://github.com/dequelabs/axe-core/blob/master/doc/rule-descriptions.md).
+
+> [!WARNING]
+> Vi kan kun gå god for tilgjengeligheten på komponenter som brukes riktig. Fordi våre komponenter må være
+> fleksible nok til å støtte bruk i ulike systemer, vil det kreves kjennskap til WCAG-krav, aria-attributter og
+> andre utviklingsprinsipper i systemteamene for å sørge for god universell utforming.
+>
+> Vi anbefaler derfor alle systemteam å ha egne automatiserte og manuelle tilgjengelighetstester.
+
+## Tester for komponenter i ulike livsfaser
+
+For en **alpha**-komponent vil følgende gjelde:
+
+- Det finnes minst én story for den individuelle komponenten
+
+For en **beta**-komponent vil følgende gjelde:
+
+- Det finnes stories for den individuelle komponenten i relevante tilstander og interaksjoner
+- Komponenten er testet i minst én komposisjonstest
+
+En **stabil** komponent skal ha alle testene beskrevet i forrige seksjon, og vil i tillegg ha gjennomgått
+manuell tilgjengelighetstesting i designteamet. Den manuelle testprosedyren skal så ha blitt automatisert som
+interaksjoner i komponent- og komposisjonstestene for å sikre oss mot regresjoner.
+
 # Informasjon for utviklere som skal bidra
 
-Før du kan bidra med kode i designsystemet trenger du å gjøre noe oppsett lokalt. I tillegg trenger du å forstå hvordan kodebasen er strukturert på et overordnet nivå. Deretter får du vite hvordan du jobber med kodebasen. Til slutt får du en oversikt over verktøy som er i bruk i kodebasen.
+Før du kan bidra med kode i designsystemet trenger du å gjøre noe oppsett lokalt. I tillegg trenger du å forstå hvordan kodebasen er strukturert på et overordnet nivå. Deretter får du vite hvordan du jobber med kodebasen, og hvordan du går fram for å publisere endringer. Til slutt får du en oversikt over verktøy som er i bruk i kodebasen.
 
 > [!NOTE]
 > Den påfølgende dokumentasjonen vil bruke følgende begreper, hentet fra Nx:
@@ -183,8 +237,8 @@ flowchart-elk BT
 ## Hvordan jobbe med kodebasen
 
 > [!CAUTION]
-> Denne dokumentasjonen inneholder foreløpig ingen informasjon om hvordan vi gjør testing.
-> Dette vil komme etter hvert som vi definerer teststrategien i designsystemet.
+> Denne dokumentasjonen inneholder foreløpig ingen informasjon om hvordan du går fram for å skrive tester.
+> Foreløpig kan du lese [Hva tester vi](#hva-tester-vi)-seksjonen, og be en kollega om hjelp om du står fast.
 
 ### Git branching og commit-stil
 
