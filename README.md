@@ -149,7 +149,7 @@ Du trenger å sette opp Node.js og pnpm dersom du ikke har dette fra før. Du ka
 
 pnpm sørger for at vi alltid bruker riktig versjon av Node.js i arbeidsområdet, som definert i `.npmrc`, men for å installere pnpm trenger du minst Node.js versjon 18.12.
 
-Om du ikke har Node.js fra før, er det enkleste å installere nyeste LTS-versjon ved å følge [de offisielle instruksene](https://nodejs.org/en/download/).
+Om du ikke har Node.js fra før, eller `corepack`-kommandoen ikke finnes, er det enkleste å installere nyeste LTS-versjon ved å følge [de offisielle instruksene](https://nodejs.org/en/download/). Bruk helst den anbefalte installasjonsmetoden: `nvm` eller `fnm` på macOS, og `fnm` på Windows.
 
 ### pnpm
 
