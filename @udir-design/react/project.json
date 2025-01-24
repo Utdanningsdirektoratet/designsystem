@@ -6,10 +6,8 @@
   "tags": [],
   "// targets": "to see all targets run: nx show project @udir-design/react --web",
   "targets": {
-    "storybook": {
-      "options": {
-        "port": 6006
-      }
+    "dev": {
+      "dependsOn": ["^build"]
     },
     "build:storybook": {
       "dependsOn": ["build"],
