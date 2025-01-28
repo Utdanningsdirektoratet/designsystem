@@ -1,7 +1,7 @@
 import './style.css';
 import { Preview } from '@storybook/react';
 import type { MarkdownToJSX } from 'markdown-to-jsx';
-
+import customTheme from './customTheme';
 import {
   Heading,
   Link,
@@ -157,6 +157,7 @@ const preview: Preview = {
       },
     },
     docs: {
+      theme: customTheme,
       components: componentOverrides,
     },
   },
