@@ -14,7 +14,7 @@ Load the Inter font somewhere, e.g. place this in your `index.html` `<head>`
 <link
   rel="preload stylesheet"
   as="style"
-  href="https://altinncdn.no/fonts/inter/inter.css"
+  href="https://altinncdn.no/fonts/inter/v4/inter.css"
 />
 ```
 
