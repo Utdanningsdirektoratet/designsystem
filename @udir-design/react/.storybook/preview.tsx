@@ -2,14 +2,7 @@ import './style.css';
 import { Preview } from '@storybook/react';
 import type { MarkdownToJSX } from 'markdown-to-jsx';
 import customTheme from './customTheme';
-import {
-  Heading,
-  Link,
-  LinkProps,
-  List,
-  Paragraph,
-  Table,
-} from '@udir-design/react/alpha';
+import { Heading, Link, LinkProps, List, Paragraph, Table } from '../src/alpha';
 
 type Props = Record<string, unknown>;
 
