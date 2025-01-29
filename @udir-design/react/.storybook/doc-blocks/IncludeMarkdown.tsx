@@ -14,7 +14,7 @@ import { componentOverrides } from '../preview';
 import { SeverityColors } from '@digdir/designsystemet-react/colors';
 import { Alert } from '../../src/components/alert/Alert';
 import { Heading as H } from '../../src/components/typography/heading/Heading';
-import { useMemo } from 'react';
+import { Fragment, useMemo } from 'react';
 
 interface Props {
   markdown: string;
@@ -42,7 +42,7 @@ export const IncludeMarkdown: React.FC<Props> = ({
   );
 
   return (
-    <Markdown options={{ overrides: componentOverrides }}>
+    <Markdown options={{ overrides: componentOverrides, wrapper: Fragment }}>
       {content.toString()}
     </Markdown>
   );
@@ -145,6 +145,7 @@ function remarkGithubAlert() {
                   {alertData.heading}
                 </H>
                 <div
+                  className="sb-unstyled"
                   dangerouslySetInnerHTML={{
                     __html: toHtml(
                       toHast({ type: 'root', children: blockquote.children })
