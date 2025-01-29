@@ -24,7 +24,7 @@ I dette repositoriet lever den delen av designsystemet som implementeres i kode:
 
 - [Hvordan ta i bruk Udirs designsystem](#hvordan-ta-i-bruk-udirs-designsystem)
 - [Versjonering og publisering](#versjonering-og-publisering)
-  - [Komponenter, livsfaser og unntak fra versjoneringsregler](#komponenter-livsfaser-og-unntak-fra-versjoneringsregler)
+  - [Livsfaser for en komponent](#livsfaser-for-en-komponent)
 - [Hva tester vi?](#hva-tester-vi)
   - [Individuelle komponenter](#individuelle-komponenter)
   - [Komponenter i kontekst](#komponenter-i-kontekst)
@@ -59,7 +59,7 @@ Koden som tilhører siste stabile, publiserte versjon vil alltid finnes på bran
 > [!WARNING]
 > Foreløpig finnes ikke branchen `release/latest`, fordi vi ikke har publisert en stabil versjon ennå.
 
-## Komponenter, livsfaser og unntak fra versjoneringsregler
+## Livsfaser for en komponent
 
 Komponenter i designsystemet kan befinne seg i én av tre ulike livsfaser:
 
