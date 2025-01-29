@@ -81,52 +81,50 @@ Vi legger ut melding på Slack-kanalen #designsystem-udir når vi mener en kompo
 
 # Hva tester vi?
 
-I designsystemet opererer vi med flere nivåer av automatisert testing for alle komponenter. For å skape
-trygghet rundt versjonsoppdateringer for systemteamene, har vi ikke mulighet til å publisere kode som
-bryter noen av disse testene.
+I designsystemet har vi med flere nivåer av automatisert testing for alle komponenter.
+Vi publiserer aldri nye versjoner av komponentbiblioteket før alle nye eller endrede komponenter har bestått disse testene.
 
-> [!NOTE]
-> Alle våre automatiserte tester kjører i Chromium
+Alle våre automatiserte tester kjører i nettleseren Chromium.
 
 ## Individuelle komponenter
 
-**Komponenttester** brukes for å teste hvordan individuelle komponenter rendrer ut i nettleseren i ulike tilstander og etter ulike brukerinteraksjoner.
+Vi bruker **komponenttester** for å teste hvordan individuelle komponenter rendrer ut i nettleseren i ulike tilstander og etter ulike brukerinteraksjoner.
 
-I tillegg vil det finnes **enhetstester** i de tilfellene det gir mening for å teste logikk i komponenter som vi utvikler selv.
+I de tilfellene vi implementerer egen oppførsel for komponenter, vil det finnes **enhetstester** for å teste denne oppførselen isolert.
 
 ## Komponenter i kontekst
 
-Hver komponent skal også testes i bruk i en større kontekst av andre komponenter. Dette kaller vi **komposisjonstester**. Her vil vi også teste interaksjoner på tvers av komponenter.
+Vi tester hver komponent i en større kontekst av andre komponenter. Dette kaller vi **komposisjonstester**. Her tester vi også interaksjoner på tvers av komponenter.
 
 ## Felles for begge
 
-Både komponenttester og komposisjonstester er basert på _stories_ i Storybook. I tillegg til det som er beskrevet over, får hver story også automatisk en snapshottest, en visuell test, og en tilgjengelighetstest.
+Både komponenttester og komposisjonstester er basert på _stories_ i Storybook. I tillegg til det som er beskrevet over, får hver story også automatisk en snapshottest, en visuell test, og en regelbasert UU-test.
 
-**Snapshottester** brukes for å beskytte mot uventede endringer i HTML-markupen som blir generert fra hver enkelt komponent, mens **visuelle tester** beskytter mot uventede visuelle endringer i komponentene. Endringer i markup og utseende vil måtte godkjennes av en utvikler eller designer i designteamet.
+**Snapshottester** avdekker uventede endringer i HTML-markupen som blir generert fra hver enkelt komponent, og **visuelle tester** avdekker uventede visuelle endringer i komponentene. Om det er endringer i markup eller utseende vurderer designteamet endringen manuelt for å avgjøre om den er godkjent eller ikke.
 
-**Tilgjengelighetstester** bruker [Axe](https://github.com/dequelabs/axe-core) for å teste universell utforming. Det er viktig å merke seg at disse ikke kan fange opp alle tilgjengelighetsproblemer — Axe sier selv at de i snitt finner 57% av alle WCAG-brudd. Reglene som brukes [er beskrevet i Axe sin dokumentasjon](https://github.com/dequelabs/axe-core/blob/master/doc/rule-descriptions.md).
+Vi bruker bruker [Axe](https://github.com/dequelabs/axe-core) til **regelbaserte UU-tester** for å avdekke vanlige brudd på universell utforming. Disse reglene, som er [beskrevet i Axe sin dokumentasjon](https://github.com/dequelabs/axe-core/blob/master/doc/rule-descriptions.md), kan ikke fange opp alle brudd. Vi supplerer derfor de regelbaserte testene med scenariebaserte UU-tester som vi gjennomfører i samarbeid med UU-eksperter fra Udirs testteam.
 
 > [!WARNING]
-> Vi kan kun gå god for tilgjengeligheten på komponenter som brukes riktig. Fordi våre komponenter må være
-> fleksible nok til å støtte bruk i ulike systemer, vil det kreves kjennskap til WCAG-krav, aria-attributter og
-> andre utviklingsprinsipper i systemteamene for å sørge for god universell utforming.
->
-> Vi anbefaler derfor alle systemteam å ha egne automatiserte og manuelle tilgjengelighetstester.
+> Komponenter fra designsystemet er i tråd med UU-tilsynets krav til
+> universell utforming. Det betyr ikke at digitale tjenester som bruker
+> designsystemet automatisk blir universelt utformet. Komponentene må også
+> settes sammen på riktig måte i grensesnittene for at systemet skal være
+> universelt utformet. Systemteamene må derfor selv sørge for å oppfylle
+> kravene til universell utforming i sine tjenester.
+> Vi anbefaler å kontakte Udirs testteam for bistand til UU-test av systemer.
 
 ## Tester for komponenter i ulike livsfaser
 
-For en **alpha**-komponent vil følgende gjelde:
+For en **alpha**-komponent gjelder dette:
 
 - Det finnes minst én story for den individuelle komponenten
 
-For en **beta**-komponent vil følgende gjelde:
+For en **beta**-komponent gjelder dette:
 
 - Det finnes stories for den individuelle komponenten i relevante tilstander og interaksjoner
 - Komponenten er testet i minst én komposisjonstest
 
-En **stabil** komponent skal ha alle testene beskrevet i forrige seksjon, og vil i tillegg ha gjennomgått
-manuell tilgjengelighetstesting i designteamet. Den manuelle testprosedyren skal så ha blitt automatisert som
-interaksjoner i komponent- og komposisjonstestene for å sikre oss mot regresjoner.
+En **stabil** komponent har bestått alle testene i alpha- og beta-fasene, og vil i tillegg ha bestått manuell, scenariebasert UU-testing. Der scenariene lar seg implementere som automatiserte komponent- og komposisjonstester vil dette ha blitt gjort.
 
 # Informasjon for utviklere som skal bidra
 
