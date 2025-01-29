@@ -1,0 +1,14 @@
+.heading {
+  background-color: 'transparent';
+  margin-bottom: var(--ds-spacing-2);
+
+  &:where(h1, h2) {
+    margin-top: var(--ds-spacing-5);
+  }
+  &:where(h3) {
+    margin-top: var(--ds-spacing-4);
+  }
+  &:first-child {
+    margin-top: 0;
+  }
+}
