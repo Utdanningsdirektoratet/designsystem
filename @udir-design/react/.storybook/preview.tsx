@@ -51,7 +51,7 @@ export const componentOverrides = {
       data-color-scheme="light"
       style={{
         backgroundColor: 'transparent',
-        marginTop: 'var(--ds-spacing-4)',
+        marginTop: 'var(--ds-spacing-5)',
         marginBottom: 'var(--ds-spacing-2)',
       }}
     />
@@ -84,7 +84,7 @@ export const componentOverrides = {
   ol: (props: Props) => (
     <List.Ordered
       {...props}
-      style={{ maxWidth: '70ch' }}
+      style={{ maxWidth: '70ch', marginBottom: 'var(--ds-spacing-2)' }}
       className="sb-unstyled"
       data-color-scheme="light"
     />
@@ -92,7 +92,7 @@ export const componentOverrides = {
   ul: (props: Props) => (
     <List.Unordered
       {...props}
-      style={{ maxWidth: '70ch' }}
+      style={{ maxWidth: '70ch', marginBottom: 'var(--ds-spacing-2)' }}
       className="sb-unstyled"
       data-color-scheme="light"
     />
@@ -101,7 +101,7 @@ export const componentOverrides = {
     <List.Item
       {...props}
       className="sb-unstyled"
-      style={{ maxWidth: '70ch' }}
+      style={{ maxWidth: '70ch', marginTop: 'var(--ds-spacing-1)' }}
       data-color-scheme="light"
     />
   ),
