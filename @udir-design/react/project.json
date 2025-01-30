@@ -10,7 +10,7 @@
       "dependsOn": ["^build"]
     },
     "build:storybook": {
-      "inputs": ["default", "{workspaceRoot}/README.md"],
+      "inputs": ["default", "^default", "{workspaceRoot}/README.md"],
       "dependsOn": ["build"],
       "cache": true,
       "outputs": ["{projectRoot}/storybook-static"]
