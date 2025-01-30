@@ -15,6 +15,7 @@ import { SeverityColors } from '@digdir/designsystemet-react/colors';
 import { Alert } from '../../src/components/alert/Alert';
 import { Heading as H } from '../../src/components/typography/heading/Heading';
 import { Fragment, useMemo } from 'react';
+import componentStyles from '../componentOverrides.module.scss';
 
 interface Props {
   markdown: string;
@@ -42,7 +43,20 @@ export const IncludeMarkdown: React.FC<Props> = ({
   );
 
   return (
-    <Markdown options={{ overrides: componentOverrides, wrapper: Fragment }}>
+    <Markdown
+      options={{
+        overrides: {
+          ...componentOverrides,
+          code: (props: Props) => (
+            <code
+              {...props}
+              className={`sb-unstyled ${componentStyles.code}`}
+            />
+          ),
+        },
+        wrapper: Fragment,
+      }}
+    >
       {content.toString()}
     </Markdown>
   );
