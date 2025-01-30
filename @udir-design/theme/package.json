@@ -18,7 +18,8 @@
   },
   "scripts": {
     "copy-css": "cp -r ../../design-tokens/dist/ ./dist/",
+    "postprocess-css": "../../@internal/build-tools/bin/postprocess-css-colors.ts ./dist/udir.css",
     "clean": "rimraf ./dist",
-    "build": "pnpm clean && pnpm copy-css"
+    "build": "pnpm clean && pnpm copy-css && pnpm postprocess-css"
   }
 }

@@ -8,7 +8,7 @@
     "./*": "./dist/*"
   },
   "scripts": {
-    "create": "designsystemet tokens create --main-colors  'accent:#303030' --neutral-color '#dedede' --support-colors 'brand1:#76c69d' 'brand2:#bed5e8' 'brand3:#e5ceae' --theme 'udir' --out-dir './src'",
+    "create": "designsystemet tokens create --main-colors  'accent:#76c69d' --neutral-color '#303030' --support-colors 'support1:#b9d9c8' 'support2:#bed5e8' 'support3:#e5ceae' --theme 'udir' --out-dir './src'",
     "build": "pnpm clean && designsystemet tokens build -t ./src -o ./dist",
     "clean": "rimraf dist"
   },
