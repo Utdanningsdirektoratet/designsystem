@@ -12,3 +12,20 @@
     margin-top: 0;
   }
 }
+
+.code {
+  background-color: var(--ds-color-background-subtle);
+  font-size: var(--ds-font-size-minus-1);
+  white-space: nowrap;
+}
+
+.pre {
+  background-color: var(--ds-color-background-subtle);
+  white-space: pre;
+  padding: var(--ds-spacing-2);
+}
+
+.pre .code {
+  background-color: unset;
+  white-space: inherit;
+}
