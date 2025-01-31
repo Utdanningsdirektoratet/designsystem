@@ -1,6 +1,17 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Preview 1`] = `
+exports[`Back Only 1`] = `
+<nav aria-label="Du er her:">
+  <a
+    href="#"
+    aria-label="Tilbake til Nivå 3"
+  >
+    Nivå 3
+  </a>
+</nav>
+`;
+
+exports[`List Only 1`] = `
 <nav aria-label="Du er her:">
   <ol>
     <li>
@@ -14,11 +25,139 @@ exports[`Preview 1`] = `
       </a>
     </li>
     <li>
+      <a href="#">
+        Nivå 3
+      </a>
+    </li>
+    <li>
       <a
         href="#"
         aria-current="page"
       >
+        Nivå 4
+      </a>
+    </li>
+  </ol>
+</nav>
+`;
+
+exports[`Long Items 1`] = `
+<nav aria-label="Du er her:">
+  <a
+    href="#"
+    aria-label="Tilbake til helsesertifikat for sjømat"
+  >
+    Slik søker du om helsesertifikat for sjømat
+  </a>
+  <ol aria-label="Du er her:">
+    <li>
+      <a href="#">
+        Hjem
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        Eksport til land utenfor EU/EØS
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        Eksport av mat og drikke
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        Eksport av fisk og sjømat
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        Veiledning om helsesertifikat for sjømat
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        Slik søker du om helsesertifikat for sjømat
+      </a>
+    </li>
+    <li>
+      <a
+        href="#"
+        aria-current="page"
+      >
+        Slik søker du om helsesertifikat i ny eksportløsning
+      </a>
+    </li>
+  </ol>
+</nav>
+`;
+
+exports[`Mobile Viewport 1`] = `
+<nav aria-label="Du er her:">
+  <a
+    href="#"
+    aria-label="Tilbake til Nivå 3"
+  >
+    Nivå 3
+  </a>
+  <ol>
+    <li>
+      <a href="#">
+        Nivå 1
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        Nivå 2
+      </a>
+    </li>
+    <li>
+      <a href="#">
         Nivå 3
+      </a>
+    </li>
+    <li>
+      <a
+        href="#"
+        aria-current="page"
+      >
+        Nivå 4
+      </a>
+    </li>
+  </ol>
+</nav>
+`;
+
+exports[`Preview 1`] = `
+<nav aria-label="Du er her:">
+  <a
+    href="#"
+    aria-label="Tilbake til Nivå 3"
+  >
+    Nivå 3
+  </a>
+  <ol>
+    <li>
+      <a href="#">
+        Nivå 1
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        Nivå 2
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        Nivå 3
+      </a>
+    </li>
+    <li>
+      <a
+        href="#"
+        aria-current="page"
+      >
+        Nivå 4
       </a>
     </li>
   </ol>
