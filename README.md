@@ -102,7 +102,7 @@ Både komponenttester og komposisjonstester er basert på _stories_ i Storybook.
 
 **Snapshottester** avdekker uventede endringer i HTML-markupen som blir generert fra hver enkelt komponent, og **visuelle tester** avdekker uventede visuelle endringer i komponentene. Om det er endringer i markup eller utseende vurderer designteamet endringen manuelt for å avgjøre om den er godkjent eller ikke.
 
-Vi bruker bruker [Axe](https://github.com/dequelabs/axe-core) til **regelbaserte UU-tester** for å avdekke vanlige brudd på universell utforming. Disse reglene, som er [beskrevet i Axe sin dokumentasjon](https://github.com/dequelabs/axe-core/blob/master/doc/rule-descriptions.md), kan ikke fange opp alle brudd. Vi supplerer derfor de regelbaserte testene med scenariebaserte UU-tester som vi gjennomfører i samarbeid med UU-eksperter fra Udirs testteam.
+Vi bruker bruker [Axe](https://github.com/dequelabs/axe-core) til **regelbaserte UU-tester** for å avdekke vanlige brudd på universell utforming. Disse reglene, som er [beskrevet i Axe sin dokumentasjon](https://github.com/dequelabs/axe-core/blob/master/doc/rule-descriptions.md), kan ikke fange opp alle brudd. Vi supplerer derfor de regelbaserte testene med andre UU-tester som vi gjennomfører i samarbeid med UU-eksperter fra Udirs testteam. Dette kan være manuelle testrutiner eller automatiserte komponent- og komposisjonstester.
 
 > [!WARNING]
 > Komponenter fra designsystemet er i tråd med UU-tilsynets krav til
@@ -124,7 +124,7 @@ For en **beta**-komponent gjelder dette:
 - Det finnes stories for den individuelle komponenten i relevante tilstander og interaksjoner
 - Komponenten er testet i minst én komposisjonstest
 
-En **stabil** komponent har bestått alle testene i alpha- og beta-fasene, og vil i tillegg ha bestått manuell, scenariebasert UU-testing. Der scenariene lar seg implementere som automatiserte komponent- og komposisjonstester vil dette ha blitt gjort.
+En **stabil** komponent har bestått alle testene i alpha- og beta-fasene og UU-testene som er beskrevet over.
 
 # Informasjon for utviklere som skal bidra
 
