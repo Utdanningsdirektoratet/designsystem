@@ -93,12 +93,6 @@ export const componentOverrides = {
   th: (props: Props) => <Table.HeaderCell {...props} className="sb-unstyled" />,
   td: (props: Props) => <Table.Cell {...props} className="sb-unstyled" />,
   dl: (props: Props) => <dl {...props} className="sb-unstyled" />,
-  code: (props: Props) => (
-    <code {...props} className={`sb-unstyled ${componentStyles.code}`} />
-  ),
-  pre: (props: Props) => (
-    <pre {...props} className={`sb-unstyled ${componentStyles.pre}`} />
-  ),
 } satisfies MarkdownToJSX.Overrides;
 
 const preview: Preview = {
