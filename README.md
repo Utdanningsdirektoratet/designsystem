@@ -410,8 +410,8 @@ Dette er de viktigste verktøyene og tjenestene vi bruker i designsystemet.
 
 - [Storybook](https://storybook.js.org/) — interaktiv dokumentasjon av komponentbiblioteket
 - [Chromatic](https://www.chromatic.com/) - designgjennomgang og automatisert testing av visuelle endringer, samt hosting av Storybook
-- [Vitest](https://vitest.dev/) - testrammeverket vi bruker for enhetstester
-- [Storybook test-runner](https://storybook.js.org/docs/writing-tests/test-runner) — kjører tester definert i Storybook i en browser, ved hjelp av [Playwright](https://playwright.dev/)
+- [Vitest](https://vitest.dev/) - testrammeverket vi bruker
+- [Playwright](https://playwright.dev/) - integrert med Vitest, kjører testene definert i Storybook i en ekte nettleser
 
 ### Kodekvalitet
 
