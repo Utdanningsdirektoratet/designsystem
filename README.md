@@ -98,7 +98,7 @@ Vi tester hver komponent i en større kontekst av andre komponenter. Dette kalle
 
 ## Felles for begge
 
-Både komponenttester og komposisjonstester er basert på _stories_ i Storybook. I tillegg til det som er beskrevet over, får hver story også automatisk en snapshottest, en visuell test, og en regelbasert UU-test.
+Både komponenttester og komposisjonstester er basert på eksempler (eng: _stories_) i Storybook. I tillegg til det som er beskrevet over, får hvert eksempel også automatisk en snapshottest, en visuell test, og en regelbasert UU-test.
 
 **Snapshottester** avdekker uventede endringer i HTML-markupen som blir generert fra hver enkelt komponent, og **visuelle tester** avdekker uventede visuelle endringer i komponentene. Om det er endringer i markup eller utseende vurderer designteamet endringen manuelt for å avgjøre om den er godkjent eller ikke.
 
@@ -117,11 +117,11 @@ Vi bruker bruker [Axe](https://github.com/dequelabs/axe-core) til **regelbaserte
 
 For en **alpha**-komponent gjelder dette:
 
-- Det finnes minst én story for den individuelle komponenten
+- Det finnes minst ett eksempel for den individuelle komponenten
 
 For en **beta**-komponent gjelder dette:
 
-- Det finnes stories for den individuelle komponenten i relevante tilstander og interaksjoner
+- Det finnes eksempler for den individuelle komponenten i relevante tilstander og interaksjoner
 - Komponenten er testet i minst én komposisjonstest
 
 En **stabil** komponent har bestått alle testene i alpha- og beta-fasene og UU-testene som er beskrevet over.
@@ -410,8 +410,8 @@ Dette er de viktigste verktøyene og tjenestene vi bruker i designsystemet.
 
 - [Storybook](https://storybook.js.org/) — interaktiv dokumentasjon av komponentbiblioteket
 - [Chromatic](https://www.chromatic.com/) - designgjennomgang og automatisert testing av visuelle endringer, samt hosting av Storybook
-- [Vitest](https://vitest.dev/) - testrammeverket vi bruker for enhetstester
-- [Storybook test-runner](https://storybook.js.org/docs/writing-tests/test-runner) — kjører tester definert i Storybook i en browser, ved hjelp av [Playwright](https://playwright.dev/)
+- [Vitest](https://vitest.dev/) - testrammeverket vi bruker
+- [Playwright](https://playwright.dev/) - integrert med Vitest, kjører testene definert i Storybook i en ekte nettleser
 
 ### Kodekvalitet
 
