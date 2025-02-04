@@ -112,31 +112,8 @@ export const LongItems: Story = {
 };
 
 export const MobileViewport: Story = {
-  args: {
-    'aria-label': 'Du er her:',
-    children: [
-      <Breadcrumbs.Link href="#" aria-label="Tilbake til Nivå 3">
-        Nivå 3
-      </Breadcrumbs.Link>,
-      <Breadcrumbs.List>
-        <Breadcrumbs.Item>
-          <Breadcrumbs.Link href="#">Nivå 1</Breadcrumbs.Link>
-        </Breadcrumbs.Item>
-        <Breadcrumbs.Item>
-          <Breadcrumbs.Link href="#">Nivå 2</Breadcrumbs.Link>
-        </Breadcrumbs.Item>
-        <Breadcrumbs.Item>
-          <Breadcrumbs.Link href="#">Nivå 3</Breadcrumbs.Link>
-        </Breadcrumbs.Item>
-        <Breadcrumbs.Item>
-          <Breadcrumbs.Link href="#">Nivå 4</Breadcrumbs.Link>
-        </Breadcrumbs.Item>
-      </Breadcrumbs.List>,
-    ],
-  },
-  parameters: {
-    viewport: {
-      defaultViewport: '375px', // Large mobile default viewport
-    },
+  ...Preview,
+  globals: {
+    viewport: { value: 'iphone6' },
   },
 };

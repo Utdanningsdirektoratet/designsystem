@@ -51,7 +51,20 @@ Hvis du legger en `Breadcrumbs.List` som direkte barn av `Breadcrumbs`, vil denn
 
 Hvis du legger både en `Breadcrumbs.Link` som direkte barn av `Breadcrumbs` og en `Breadcrumbs.List`, vil tilbake-knapp vises på mobil, og sti vises på desktop.
 
+#### På desktop
+
 <Canvas of={BreadcrumbsStories.Preview} />
+
+#### På mobil
+
+<div style={{ width: '377px' }}>
+  <Canvas
+    of={BreadcrumbsStories.Preview}
+    story={{ inline: false }}
+    layout="fullscreen"
+    sourceState="none"
+  />
+</div>
 
 ## Retningslinjer
 
