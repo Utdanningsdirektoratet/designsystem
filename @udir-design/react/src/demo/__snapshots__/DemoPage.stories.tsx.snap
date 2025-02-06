@@ -175,21 +175,9 @@ exports[`Simple 1`] = `
           >
         </div>
       </div>
-      <a
-        href="#"
-        popovertarget=":r0:"
-        popovertargetaction="show"
-      >
+      <a href="#">
         Glemt passord?
       </a>
-      <div
-        role="tooltip"
-        id=":r0:"
-        popover="manual"
-        style="opacity: 0;"
-      >
-        Trykk for å få hjelp
-      </div>
       <button
         data-variant="primary"
         type="button"
