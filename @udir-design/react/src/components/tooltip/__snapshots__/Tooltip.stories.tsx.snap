@@ -4,7 +4,17 @@ exports[`Preview 1`] = `
 <button
   data-variant="primary"
   type="button"
+  popovertarget=":r0:"
+  popovertargetaction="show"
 >
   Hold peker over meg
 </button>
+<div
+  role="tooltip"
+  id=":r0:"
+  popover="manual"
+  style="opacity: 0;"
+>
+  Tooltip tekst
+</div>
 `;
