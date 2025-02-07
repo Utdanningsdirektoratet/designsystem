@@ -1,7 +1,58 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`In Text 1`] = `
+<p data-variant="default">
+  Designsystemet må ses i sammenheng med
+  <a href="https://www.udir.no/om-udir/mal-og-oppgaver/">
+    Udirs mål og oppgaver
+  </a>
+  .
+</p>
+`;
+
+exports[`Long Link 1`] = `
+<p data-variant="default">
+  <a href="https://udir.no/">
+    Dette er en lenke som brekker over flere linjer
+  </a>
+</p>
+`;
+
+exports[`Neutral 1`] = `
+<a
+  href="https://udir.no/"
+  data-color="neutral"
+>
+  Gå til designsystemet
+</a>
+`;
+
 exports[`Preview 1`] = `
-<a href="https://www.udir.no/">
-  Gå til udir.no
+<a href="https://udir.no/">
+  Gå til udirs hjemmeside
+</a>
+`;
+
+exports[`With Icon 1`] = `
+<a href="mailto:designsystem@digdir.no">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M3 5.25a.75.75 0 0 0-.75.75v13c0 .414.336.75.75.75h18a.75.75 0 0 0 .75-.75V6a.75.75 0 0 0-.75-.75zm.75 11.94 5.273-5.273L3.75 8.4zm6.546-4.425L4.81 18.25h14.378l-5.485-5.485-1.288.859a.75.75 0 0 1-.832 0zm4.681-.848L20.25 8.4v8.788zm-11-5.167L12 12.099l8.023-5.349z"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
+  Kontakt oss
 </a>
 `;
