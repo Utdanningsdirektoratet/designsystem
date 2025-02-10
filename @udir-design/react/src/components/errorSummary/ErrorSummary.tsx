@@ -9,6 +9,9 @@ import {
   type ErrorSummaryListProps,
 } from '@digdir/designsystemet-react';
 
+// For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
+ErrorSummary.displayName = 'ErrorSummary';
+
 export {
   ErrorSummary,
   ErrorSummaryProps,

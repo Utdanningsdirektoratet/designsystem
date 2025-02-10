@@ -11,6 +11,9 @@ import {
   type UsePaginationProps,
 } from '@digdir/designsystemet-react';
 
+// For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
+Pagination.displayName = 'Pagination';
+
 export {
   Pagination,
   PaginationProps,

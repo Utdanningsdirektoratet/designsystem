@@ -13,6 +13,9 @@ import {
   type TableRowProps,
 } from '@digdir/designsystemet-react';
 
+// For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
+Table.displayName = 'Table';
+
 export {
   Table,
   TableProps,
