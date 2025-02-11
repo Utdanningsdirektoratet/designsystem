@@ -14,4 +14,9 @@ export const Simple: Story = {
     'data-size': 'sm',
     'data-color-scheme': 'auto',
   },
+  parameters: {
+    customStyles: {
+      padding: 0,
+    },
+  },
 };
