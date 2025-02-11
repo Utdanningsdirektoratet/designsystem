@@ -216,6 +216,9 @@ importers:
       '@digdir/designsystemet-react':
         specifier: 1.0.0-next.44
         version: 1.0.0-next.44(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@navikt/aksel-icons':
+        specifier: ^7.10.0
+        version: 7.10.0
       '@udir-design/theme':
         specifier: workspace:*
         version: link:../theme
@@ -307,6 +310,9 @@ importers:
       chromatic:
         specifier: ^11.22.0
         version: 11.22.0
+      clsx:
+        specifier: 2.1.1
+        version: 2.1.1
       diffable-html:
         specifier: ^5.0.0
         version: 5.0.0
@@ -2093,6 +2099,9 @@ packages:
 
   '@navikt/aksel-icons@6.17.0':
     resolution: {integrity: sha512-n+1AsE9kRFh3C7BcD0fAJhIA6/65PsLGrpNKnLQUjW8hwESzo1LYHfZgZXi2Shaw2hCzQ1wx/hBBdwtQfUiBNg==}
+
+  '@navikt/aksel-icons@7.10.0':
+    resolution: {integrity: sha512-k8mcnkx/kiNd6SacR6lQot+WuIz6/3k3oUc9A+mH91FFJ1DcA4GCstS72/A4otmszvvCxCw0ZkivgBtU1JFq1g==}
 
   '@next/env@14.2.22':
     resolution: {integrity: sha512-EQ6y1QeNQglNmNIXvwP/Bb+lf7n9WtgcWvtoFsHquVLCJUuxRs+6SfZ5EK0/EqkkLex4RrDySvKgKNN7PXip7Q==}
@@ -10679,6 +10688,8 @@ snapshots:
     optional: true
 
   '@navikt/aksel-icons@6.17.0': {}
+
+  '@navikt/aksel-icons@7.10.0': {}
 
   '@next/env@14.2.22': {}
 

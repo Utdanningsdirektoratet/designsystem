@@ -5,7 +5,7 @@
 ////////////////////////////////////
 import type { StoryObj } from '@storybook/react';
 import { Button } from './Button';
-import { _Button } from './Button.stories';
+import { Preview } from './Button.stories';
 import { createActionStateStories } from '../../../.storybook/utils/createActionStateStories';
 import type { GeneratorMeta } from '@internal/dynamic-csf';
 
@@ -19,7 +19,7 @@ type Story = StoryObj<typeof Button>;
 const meta: GeneratorMeta<typeof Button, Story> = {
   component: Button,
   componentPath: './Button.tsx',
-  baseStory: _Button,
+  baseStory: Preview,
   variantProps: ['variant', 'color'],
   deriveStories: createActionStateStories,
 };
