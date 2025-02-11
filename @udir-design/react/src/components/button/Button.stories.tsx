@@ -34,24 +34,18 @@ const meta: Meta<typeof Button> = {
 
 export default meta;
 
-export const _Button: Story = {
-  args: {
-    children: 'Action',
-  },
-  play: async ({ canvasElement, args }) => {
-    const canvas = within(canvasElement);
-    const button = canvas.getByRole('button');
-    expect(button).toBeTruthy();
-    expect(canvas.getByText(args.children as string)).toBeTruthy();
-  },
-};
-
 export const Preview: Story = {
   args: {
     disabled: false,
     variant: 'primary',
     icon: false,
     children: 'Knapp',
+  },
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button');
+    expect(button).toBeTruthy();
+    expect(canvas.getByText(args.children as string)).toBeTruthy();
   },
 };
 
