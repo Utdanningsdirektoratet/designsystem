@@ -7,7 +7,6 @@ import type { StoryObj } from '@storybook/react';
 import { Button } from './Button';
 import { _Button } from './Button.stories';
 import { createActionStateStories } from '../../../.storybook/utils/createActionStateStories';
-import { spaceForFocusStyleDecorator } from '../../../.storybook/utils/spaceForFocusStyleDecorator';
 import type { GeneratorMeta } from '@internal/dynamic-csf';
 
 type Story = StoryObj<typeof Button>;
@@ -23,6 +22,5 @@ const meta: GeneratorMeta<typeof Button, Story> = {
   baseStory: _Button,
   variantProps: ['variant', 'color'],
   deriveStories: createActionStateStories,
-  decorators: spaceForFocusStyleDecorator,
 };
 export default meta;

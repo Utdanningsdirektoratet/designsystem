@@ -1,10 +1,11 @@
 import './style.css';
+import { INITIAL_VIEWPORTS, type ViewportMap } from '@storybook/addon-viewport';
 import { Preview } from '@storybook/react';
 import type { MarkdownToJSX } from 'markdown-to-jsx';
 import customTheme from './customTheme';
 import { Heading, Link, LinkProps, List, Paragraph, Table } from '../src/alpha';
 import componentStyles from './componentOverrides.module.scss';
-import { INITIAL_VIEWPORTS, type ViewportMap } from '@storybook/addon-viewport';
+import { customStylesDecorator } from './utils/customStylesDecorator';
 
 // See the complete list of available devices in INITIAL_VIEWPORTS here:
 // https://storybook.js.org/docs/essentials/viewport#use-a-detailed-set-of-devices
@@ -134,6 +135,7 @@ const preview: Preview = {
   initialGlobals: {
     viewport: { value: 'desktop' },
   },
+  decorators: customStylesDecorator,
 };
 
 export default preview;

@@ -1,12 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { within, expect } from '@storybook/test';
 import { Button } from './Button';
-import { spaceForFocusStyleDecorator } from '../../../.storybook/utils/spaceForFocusStyleDecorator';
 
 const meta: Meta<typeof Button> = {
   component: Button,
   tags: ['alpha'],
-  decorators: spaceForFocusStyleDecorator,
 };
 export default meta;
 export type Story = StoryObj<typeof Button>;
