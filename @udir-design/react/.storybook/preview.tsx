@@ -4,6 +4,23 @@ import type { MarkdownToJSX } from 'markdown-to-jsx';
 import customTheme from './customTheme';
 import { Heading, Link, LinkProps, List, Paragraph, Table } from '../src/alpha';
 import componentStyles from './componentOverrides.module.scss';
+import { INITIAL_VIEWPORTS, type ViewportMap } from '@storybook/addon-viewport';
+
+// See the complete list of available devices in INITIAL_VIEWPORTS here:
+// https://storybook.js.org/docs/essentials/viewport#use-a-detailed-set-of-devices
+const storybookViewports: ViewportMap = {
+  iphone6: INITIAL_VIEWPORTS['iphone6'],
+  ipad: INITIAL_VIEWPORTS['ipad'],
+  desktop: {
+    name: 'Desktop',
+    styles: { width: '1200px', height: '100%' },
+    type: 'desktop',
+  },
+};
+
+const chromaticViewports = {
+  desktop: { viewport: { width: 1200 } },
+};
 
 type Props = Record<string, unknown>;
 
@@ -107,6 +124,15 @@ const preview: Preview = {
       theme: customTheme,
       components: componentOverrides,
     },
+    viewport: {
+      options: storybookViewports,
+    },
+    chromatic: {
+      modes: chromaticViewports,
+    },
+  },
+  initialGlobals: {
+    viewport: { value: 'desktop' },
   },
 };
 

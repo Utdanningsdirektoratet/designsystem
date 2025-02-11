@@ -3,6 +3,9 @@ import remarkGfm from 'remark-gfm';
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
+  features: {
+    viewportStoryGlobals: true,
+  },
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
