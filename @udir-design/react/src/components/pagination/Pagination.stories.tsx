@@ -47,14 +47,7 @@ export const Preview: Story = {
             5
           </Pagination.Button>
         </Pagination.Item>
-        <Pagination.Item>
-          <Pagination.Button
-            aria-hidden
-            aria-label="Side "
-            tabIndex={-1}
-            variant="tertiary"
-          />
-        </Pagination.Item>
+        <Pagination.Item />
         <Pagination.Item>
           <Pagination.Button aria-label="Side 10" variant="tertiary">
             10

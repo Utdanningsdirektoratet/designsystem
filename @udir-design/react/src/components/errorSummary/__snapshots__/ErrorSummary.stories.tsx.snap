@@ -12,17 +12,26 @@ exports[`Preview 1`] = `
   </h2>
   <ul>
     <li>
-      <a href="#">
+      <a
+        data-color="neutral"
+        href="#"
+      >
         Fødselsdato kan ikke være etter år 2005
       </a>
     </li>
     <li>
-      <a href="#">
+      <a
+        data-color="neutral"
+        href="#"
+      >
         Telefonnummer kan kun inneholde siffer
       </a>
     </li>
     <li>
-      <a href="#">
+      <a
+        data-color="neutral"
+        href="#"
+      >
         E-post må være gyldig
       </a>
     </li>

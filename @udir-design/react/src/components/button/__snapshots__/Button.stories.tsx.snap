@@ -607,6 +607,8 @@ exports[`Icon Only 1`] = `
   type="button"
   aria-label="Legg til ny"
   data-color="neutral"
+  popovertarget=":r18:"
+  popovertargetaction="show"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -627,12 +629,22 @@ exports[`Icon Only 1`] = `
     </path>
   </svg>
 </button>
+<div
+  role="tooltip"
+  id=":r18:"
+  popover="manual"
+  style="opacity: 0;"
+>
+  Legg til ny
+</div>
 <button
   data-icon="true"
   data-variant="tertiary"
   type="button"
   aria-label="Varslinger"
   data-color="neutral"
+  popovertarget=":r1a:"
+  popovertargetaction="show"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -653,12 +665,22 @@ exports[`Icon Only 1`] = `
     </path>
   </svg>
 </button>
+<div
+  role="tooltip"
+  id=":r1a:"
+  popover="manual"
+  style="opacity: 0;"
+>
+  Varslinger
+</div>
 <button
   data-icon="true"
   data-variant="tertiary"
   type="button"
   aria-label="Innstillinger"
   data-color="neutral"
+  popovertarget=":r1c:"
+  popovertargetaction="show"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -679,6 +701,14 @@ exports[`Icon Only 1`] = `
     </path>
   </svg>
 </button>
+<div
+  role="tooltip"
+  id=":r1c:"
+  popover="manual"
+  style="opacity: 0;"
+>
+  Instillinger
+</div>
 `;
 
 exports[`Icons 1`] = `
@@ -858,9 +888,9 @@ exports[`Icons Only Primary 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-r1h"
+    aria-labelledby="title-r1e"
   >
-    <title id="title-r1h">
+    <title id="title-r1e">
       Innstillinger
     </title>
     <path
@@ -886,9 +916,9 @@ exports[`Icons Only Primary 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-r1i"
+    aria-labelledby="title-r1f"
   >
-    <title id="title-r1i">
+    <title id="title-r1f">
       Innstillinger
     </title>
     <path
@@ -914,9 +944,9 @@ exports[`Icons Only Primary 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-r1j"
+    aria-labelledby="title-r1g"
   >
-    <title id="title-r1j">
+    <title id="title-r1g">
       Innstillinger
     </title>
     <path

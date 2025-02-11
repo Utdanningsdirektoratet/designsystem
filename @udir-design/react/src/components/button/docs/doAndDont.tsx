@@ -14,7 +14,7 @@ import { Button } from '../../alpha';
 
 export const ButtonEx1 = () => {
   return (
-    <Stack style={{ margin: 'var(--ds-spacing-8) 0' }}>
+    <Stack style={{ margin: 'var(--ds-size-8) 0' }}>
       <Do description="En knapp skal kun gjøre én handling">
         <Ex1Do />
       </Do>
@@ -27,7 +27,7 @@ export const ButtonEx1 = () => {
 
 export const ButtonEx2 = () => {
   return (
-    <Stack style={{ margin: 'var(--ds-spacing-8) 0' }}>
+    <Stack style={{ margin: 'var(--ds-size-8) 0' }}>
       <Do description="Det skal kun være én primærknapp per side">
         <Ex2Do />
       </Do>
@@ -40,7 +40,7 @@ export const ButtonEx2 = () => {
 
 export const ButtonEx3 = () => {
   return (
-    <Stack style={{ margin: 'var(--ds-spacing-8) 0' }}>
+    <Stack style={{ margin: 'var(--ds-size-8) 0' }}>
       <Do description="Knappene i en gruppe skal ha samme farge">
         <Ex3Do />
       </Do>
@@ -53,7 +53,7 @@ export const ButtonEx3 = () => {
 
 export const ButtonEx4 = () => {
   return (
-    <Stack style={{ margin: 'var(--ds-spacing-8) 0' }}>
+    <Stack style={{ margin: 'var(--ds-size-8) 0' }}>
       <Do description="Bruk kun ett ikon">
         <Ex4Do />
       </Do>
@@ -66,7 +66,7 @@ export const ButtonEx4 = () => {
 
 export const ButtonEx5 = () => {
   return (
-    <Stack style={{ margin: 'var(--ds-spacing-8) 0' }}>
+    <Stack style={{ margin: 'var(--ds-size-8) 0' }}>
       <Do description="Bruk stor forbokstav og små bokstaver på resten av ordene">
         <Ex5Do />
       </Do>

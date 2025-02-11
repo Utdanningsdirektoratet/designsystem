@@ -8,12 +8,12 @@
     "./*": "./dist/*"
   },
   "scripts": {
-    "create": "designsystemet tokens create --main-colors  'accent:#76c69d' --neutral-color '#303030' --support-colors 'support1:#b9d9c8' 'support2:#bed5e8' 'support3:#e5ceae' --theme 'udir' --out-dir './src'",
+    "create": "designsystemet tokens create",
     "build": "pnpm clean && designsystemet tokens build -t ./src -o ./dist",
     "clean": "rimraf dist"
   },
   "devDependencies": {
-    "@digdir/designsystemet": "1.0.0-next.44",
+    "@digdir/designsystemet": "1.0.0-next.48",
     "rimraf": "^6.0.1"
   }
 }

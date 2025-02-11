@@ -71,21 +71,21 @@ export const componentOverrides = {
       className="sb-unstyled"
       style={{
         backgroundColor: 'transparent',
-        marginBottom: 'var(--ds-spacing-2)',
+        marginBottom: 'var(--ds-size-2)',
       }}
     />
   ),
   ol: (props: Props) => (
     <List.Ordered
       {...props}
-      style={{ maxWidth: '70ch', marginBottom: 'var(--ds-spacing-2)' }}
+      style={{ maxWidth: '70ch', marginBottom: 'var(--ds-size-2)' }}
       className="sb-unstyled"
     />
   ),
   ul: (props: Props) => (
     <List.Unordered
       {...props}
-      style={{ maxWidth: '70ch', marginBottom: 'var(--ds-spacing-2)' }}
+      style={{ maxWidth: '70ch', marginBottom: 'var(--ds-size-2)' }}
       className="sb-unstyled"
     />
   ),
@@ -93,7 +93,7 @@ export const componentOverrides = {
     <List.Item
       {...props}
       className="sb-unstyled"
-      style={{ maxWidth: '70ch', marginTop: 'var(--ds-spacing-1)' }}
+      style={{ maxWidth: '70ch', marginTop: 'var(--ds-size-1)' }}
     />
   ),
   a: (props: LinkProps) => {

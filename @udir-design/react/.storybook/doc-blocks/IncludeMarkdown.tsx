@@ -153,7 +153,7 @@ function remarkGithubAlert() {
         parent.children[index] = {
           type: 'html',
           value: renderToStaticMarkup(
-            <Unstyled style={{ marginBottom: 'var(--ds-spacing-6)' }}>
+            <Unstyled style={{ marginBottom: 'var(--ds-size-6)' }}>
               <Alert data-color={alertData.type}>
                 <H data-size="xs" level={2}>
                   {alertData.heading}
