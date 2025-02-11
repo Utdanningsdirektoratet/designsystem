@@ -26,7 +26,7 @@ const meta: Meta<typeof Button> = {
       justifyContent: 'center',
       alignItems: 'center',
       flexWrap: 'wrap',
-      gap: 'var(--ds-spacing-4)',
+      gap: 'var(--ds-size-4)',
     },
   },
   tags: ['alpha'],
@@ -75,7 +75,7 @@ export const Accent: Story = {
     'data-color': 'accent',
   },
 
-  render: ({ ...args }) => {
+  render: (args) => {
     return (
       <>
         <Button variant="primary" {...args}>
@@ -98,7 +98,7 @@ export const Neutral: Story = {
   args: {
     'data-color': 'neutral',
   },
-  render: ({ ...args }) => {
+  render: (args) => {
     return (
       <>
         <Button variant="primary" {...args}>
@@ -124,7 +124,7 @@ export const Danger: Story = {
   args: {
     'data-color': 'danger',
   },
-  render: ({ ...args }) => {
+  render: (args) => {
     return (
       <>
         <Button variant="primary" {...args}>
@@ -147,7 +147,7 @@ export const Danger: Story = {
 export const DangerPseudoStates: Story = makePseudoStatesStory(Danger);
 
 export const CombinedColors: Story = {
-  render: ({ ...args }) => (
+  render: (args) => (
     <>
       <Button variant="primary" data-color="neutral" {...args}>
         Publiser
@@ -178,7 +178,7 @@ export const TextAndIcon: Story = {
   args: {
     'data-color': 'neutral',
   },
-  render: ({ ...args }) => {
+  render: (args) => {
     return (
       <>
         <Button variant="primary" {...args}>
@@ -198,7 +198,7 @@ export const Loading: Story = {
   args: {
     loading: true,
   },
-  render: ({ ...args }) => {
+  render: (args) => {
     return (
       <>
         <Button variant="primary" {...args}>
@@ -219,7 +219,7 @@ export const Icons: Story = {
   args: {
     variant: 'primary',
   },
-  render: ({ ...args }) => {
+  render: (args) => {
     return (
       <>
         <Button data-size="sm" icon {...args}>
@@ -254,7 +254,7 @@ export const IconOnly: Story = {
     'data-color': 'neutral',
     icon: true,
   },
-  render: ({ ...args }) => (
+  render: (args) => (
     <>
       <Tooltip content="Legg til ny">
         <Button aria-label="Legg til ny" {...args}>
@@ -286,7 +286,7 @@ export const IconsOnlyPrimary: Story = {
     variant: 'primary',
     icon: true,
   },
-  render: ({ ...args }) => {
+  render: (args) => {
     return (
       <>
         <Button data-size="sm" {...args}>

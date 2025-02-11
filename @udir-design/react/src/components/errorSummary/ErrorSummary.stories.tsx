@@ -1,9 +1,4 @@
-import {
-  ErrorSummary,
-  ErrorSummaryHeading,
-  ErrorSummaryItem,
-  ErrorSummaryList,
-} from './ErrorSummary';
+import { ErrorSummary } from './ErrorSummary';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof ErrorSummary> = {
@@ -17,18 +12,24 @@ type Story = StoryObj<typeof ErrorSummary>;
 export const Preview: Story = {
   render: (args) => (
     <ErrorSummary {...args}>
-      <ErrorSummaryHeading>
+      <ErrorSummary.Heading>
         For å gå videre må du rette opp følgende feil:
-      </ErrorSummaryHeading>
-      <ErrorSummaryList>
-        <ErrorSummaryItem href="#">
-          Fødselsdato kan ikke være etter år 2005
-        </ErrorSummaryItem>
-        <ErrorSummaryItem href="#">
-          Telefonnummer kan kun inneholde siffer
-        </ErrorSummaryItem>
-        <ErrorSummaryItem href="#">E-post må være gyldig</ErrorSummaryItem>
-      </ErrorSummaryList>
+      </ErrorSummary.Heading>
+      <ErrorSummary.List>
+        <ErrorSummary.Item>
+          <ErrorSummary.Link href="#">
+            Fødselsdato kan ikke være etter år 2005
+          </ErrorSummary.Link>
+        </ErrorSummary.Item>
+        <ErrorSummary.Item>
+          <ErrorSummary.Link href="#">
+            Telefonnummer kan kun inneholde siffer
+          </ErrorSummary.Link>
+        </ErrorSummary.Item>
+        <ErrorSummary.Item>
+          <ErrorSummary.Link href="#">E-post må være gyldig</ErrorSummary.Link>
+        </ErrorSummary.Item>
+      </ErrorSummary.List>
     </ErrorSummary>
   ),
 };

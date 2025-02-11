@@ -5,6 +5,6 @@
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--ds-spacing-6);
-  margin-top: var(--ds-spacing-3);
+  gap: var(--ds-size-6);
+  margin-top: var(--ds-size-3);
 }

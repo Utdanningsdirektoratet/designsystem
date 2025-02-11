@@ -5,10 +5,11 @@ import { UserTable } from './user-table/UserTable';
 import { Heading, Paragraph } from '../components/alpha';
 import { BreadcrumbsDemo } from './breadcrumbs/BreadcrumbsDemo';
 import styles from './DemoPage.module.scss';
+import { Size } from '@digdir/designsystemet-react';
 
 export type Props = {
   'data-color-scheme': 'auto' | 'dark' | 'light'; // TODO: type should come from @digdir, must be added there
-  'data-size': 'sm' | 'md' | 'lg'; // TODO: type should come from @digdir, does not work as hoped to use Size from @digdir
+  'data-size': Size;
 };
 
 export function DemoPage(props: Props) {
