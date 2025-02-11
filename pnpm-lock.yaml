@@ -298,6 +298,9 @@ importers:
       '@vitest/ui':
         specifier: ^3.0.4
         version: 3.0.4(vitest@3.0.4)
+      axe-core:
+        specifier: ^4.10.2
+        version: 4.10.2
       axe-playwright:
         specifier: ^2.0.3
         version: 2.0.3(playwright@1.49.1)
