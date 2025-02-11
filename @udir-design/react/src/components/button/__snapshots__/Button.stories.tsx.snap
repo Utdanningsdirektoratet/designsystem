@@ -24,52 +24,117 @@ exports[`Accent 1`] = `
 </button>
 `;
 
-exports[`Accent Hover 1`] = `
-<button
-  data-variant="primary"
-  type="button"
-  data-color="accent"
->
-  Gå videre
-</button>
-<button
-  data-variant="secondary"
-  type="button"
-  data-color="accent"
->
-  Fortsett senere
-</button>
-<button
-  data-variant="tertiary"
-  type="button"
-  data-color="accent"
->
-  Avbryt
-</button>
-`;
-
-exports[`Accent Pressed 1`] = `
-<button
-  data-variant="primary"
-  type="button"
-  data-color="accent"
->
-  Gå videre
-</button>
-<button
-  data-variant="secondary"
-  type="button"
-  data-color="accent"
->
-  Fortsett senere
-</button>
-<button
-  data-variant="tertiary"
-  type="button"
-  data-color="accent"
->
-  Avbryt
-</button>
+exports[`Accent Pseudo States 1`] = `
+<div style="display: grid; grid-template-columns: repeat(4, auto); gap: inherit; place-items: center;">
+  <label
+    data-weight="medium"
+    data-size="sm"
+  >
+    Default
+  </label>
+  <button
+    data-variant="primary"
+    type="button"
+    data-color="accent"
+  >
+    Gå videre
+  </button>
+  <button
+    data-variant="secondary"
+    type="button"
+    data-color="accent"
+  >
+    Fortsett senere
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    data-color="accent"
+  >
+    Avbryt
+  </button>
+  <label
+    data-weight="medium"
+    data-size="sm"
+  >
+    Hover
+  </label>
+  <button
+    data-variant="primary"
+    type="button"
+    data-color="accent"
+  >
+    Gå videre
+  </button>
+  <button
+    data-variant="secondary"
+    type="button"
+    data-color="accent"
+  >
+    Fortsett senere
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    data-color="accent"
+  >
+    Avbryt
+  </button>
+  <label
+    data-weight="medium"
+    data-size="sm"
+  >
+    Pressed
+  </label>
+  <button
+    data-variant="primary"
+    type="button"
+    data-color="accent"
+  >
+    Gå videre
+  </button>
+  <button
+    data-variant="secondary"
+    type="button"
+    data-color="accent"
+  >
+    Fortsett senere
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    data-color="accent"
+  >
+    Avbryt
+  </button>
+  <label
+    data-weight="medium"
+    data-size="sm"
+  >
+    Focused
+  </label>
+  <button
+    data-variant="primary"
+    type="button"
+    data-color="accent"
+  >
+    Gå videre
+  </button>
+  <button
+    data-variant="secondary"
+    type="button"
+    data-color="accent"
+  >
+    Fortsett senere
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    data-color="accent"
+  >
+    Avbryt
+  </button>
+</div>
 `;
 
 exports[`As Link 1`] = `
@@ -88,9 +153,9 @@ exports[`As Link 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-rj"
+    aria-labelledby="title-rv"
   >
-    <title id="title-rj">
+    <title id="title-rv">
       Ekstern lenke
     </title>
     <path
@@ -215,160 +280,333 @@ exports[`Danger 1`] = `
 </button>
 `;
 
-exports[`Danger Hover 1`] = `
-<button
-  data-variant="primary"
-  type="button"
-  data-color="danger"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
-    aria-hidden="true"
+exports[`Danger Pseudo States 1`] = `
+<div style="display: grid; grid-template-columns: repeat(4, auto); gap: inherit; place-items: center;">
+  <label
+    data-weight="medium"
+    data-size="sm"
   >
-    <path
-      fill="currentColor"
-      fill-rule="evenodd"
-      d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-      clip-rule="evenodd"
-    >
-    </path>
-  </svg>
-  Slett
-</button>
-<button
-  data-variant="secondary"
-  type="button"
-  data-color="danger"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
-    aria-hidden="true"
+    Default
+  </label>
+  <button
+    data-variant="primary"
+    type="button"
+    data-color="danger"
   >
-    <path
-      fill="currentColor"
-      fill-rule="evenodd"
-      d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-      clip-rule="evenodd"
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
     >
-    </path>
-  </svg>
-  Slett
-</button>
-<button
-  data-variant="tertiary"
-  type="button"
-  data-color="danger"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
-    aria-hidden="true"
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Slett
+  </button>
+  <button
+    data-variant="secondary"
+    type="button"
+    data-color="danger"
   >
-    <path
-      fill="currentColor"
-      fill-rule="evenodd"
-      d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-      clip-rule="evenodd"
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
     >
-    </path>
-  </svg>
-  Slett
-</button>
-`;
-
-exports[`Danger Pressed 1`] = `
-<button
-  data-variant="primary"
-  type="button"
-  data-color="danger"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
-    aria-hidden="true"
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Slett
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    data-color="danger"
   >
-    <path
-      fill="currentColor"
-      fill-rule="evenodd"
-      d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-      clip-rule="evenodd"
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
     >
-    </path>
-  </svg>
-  Slett
-</button>
-<button
-  data-variant="secondary"
-  type="button"
-  data-color="danger"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
-    aria-hidden="true"
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Slett
+  </button>
+  <label
+    data-weight="medium"
+    data-size="sm"
   >
-    <path
-      fill="currentColor"
-      fill-rule="evenodd"
-      d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-      clip-rule="evenodd"
-    >
-    </path>
-  </svg>
-  Slett
-</button>
-<button
-  data-variant="tertiary"
-  type="button"
-  data-color="danger"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
-    aria-hidden="true"
+    Hover
+  </label>
+  <button
+    data-variant="primary"
+    type="button"
+    data-color="danger"
   >
-    <path
-      fill="currentColor"
-      fill-rule="evenodd"
-      d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-      clip-rule="evenodd"
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
     >
-    </path>
-  </svg>
-  Slett
-</button>
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Slett
+  </button>
+  <button
+    data-variant="secondary"
+    type="button"
+    data-color="danger"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Slett
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    data-color="danger"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Slett
+  </button>
+  <label
+    data-weight="medium"
+    data-size="sm"
+  >
+    Pressed
+  </label>
+  <button
+    data-variant="primary"
+    type="button"
+    data-color="danger"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Slett
+  </button>
+  <button
+    data-variant="secondary"
+    type="button"
+    data-color="danger"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Slett
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    data-color="danger"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Slett
+  </button>
+  <label
+    data-weight="medium"
+    data-size="sm"
+  >
+    Focused
+  </label>
+  <button
+    data-variant="primary"
+    type="button"
+    data-color="danger"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Slett
+  </button>
+  <button
+    data-variant="secondary"
+    type="button"
+    data-color="danger"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Slett
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    data-color="danger"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Slett
+  </button>
+</div>
 `;
 
 exports[`Icon Only 1`] = `
@@ -467,9 +705,9 @@ exports[`Icons 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-rm"
+    aria-labelledby="title-r12"
   >
-    <title id="title-rm">
+    <title id="title-r12">
       Innstillinger
     </title>
     <path
@@ -520,9 +758,9 @@ exports[`Icons 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-ro"
+    aria-labelledby="title-r14"
   >
-    <title id="title-ro">
+    <title id="title-r14">
       Innstillinger
     </title>
     <path
@@ -573,9 +811,9 @@ exports[`Icons 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-rq"
+    aria-labelledby="title-r16"
   >
-    <title id="title-rq">
+    <title id="title-r16">
       Innstillinger
     </title>
     <path
@@ -629,9 +867,9 @@ exports[`Icons Only Primary 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-r15"
+    aria-labelledby="title-r1h"
   >
-    <title id="title-r15">
+    <title id="title-r1h">
       Innstillinger
     </title>
     <path
@@ -657,9 +895,9 @@ exports[`Icons Only Primary 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-r16"
+    aria-labelledby="title-r1i"
   >
-    <title id="title-r16">
+    <title id="title-r1i">
       Innstillinger
     </title>
     <path
@@ -685,9 +923,9 @@ exports[`Icons Only Primary 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-r17"
+    aria-labelledby="title-r1j"
   >
-    <title id="title-r17">
+    <title id="title-r1j">
       Innstillinger
     </title>
     <path
@@ -872,160 +1110,333 @@ exports[`Neutral 1`] = `
 </button>
 `;
 
-exports[`Neutral Hover 1`] = `
-<button
-  data-variant="primary"
-  type="button"
-  data-color="neutral"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
-    aria-hidden="true"
+exports[`Neutral Pseudo States 1`] = `
+<div style="display: grid; grid-template-columns: repeat(4, auto); gap: inherit; place-items: center;">
+  <label
+    data-weight="medium"
+    data-size="sm"
   >
-    <path
-      fill="currentColor"
-      fill-rule="evenodd"
-      d="M7 2.25a.75.75 0 0 0-.75.75v4.25H4A1.75 1.75 0 0 0 2.25 9v9c0 .414.336.75.75.75h3.25V21c0 .414.336.75.75.75h10a.75.75 0 0 0 .75-.75v-2.25H21a.75.75 0 0 0 .75-.75V9A1.75 1.75 0 0 0 20 7.25h-2.25V3a.75.75 0 0 0-.75-.75zM3.75 9A.25.25 0 0 1 4 8.75h16a.25.25 0 0 1 .25.25v8.25h-2.5V12a.75.75 0 0 0-.75-.75H7a.75.75 0 0 0-.75.75v5.25h-2.5zm12.5-1.75v-3.5h-8.5v3.5zm-8.5 5.5v7.5h8.5v-7.5zM9.25 15a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75m0 3a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H10a.75.75 0 0 1-.75-.75"
-      clip-rule="evenodd"
-    >
-    </path>
-  </svg>
-  Skriv ut
-</button>
-<button
-  data-variant="secondary"
-  type="button"
-  data-color="neutral"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
-    aria-hidden="true"
+    Default
+  </label>
+  <button
+    data-variant="primary"
+    type="button"
+    data-color="neutral"
   >
-    <path
-      fill="currentColor"
-      fill-rule="evenodd"
-      d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
-      clip-rule="evenodd"
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
     >
-    </path>
-  </svg>
-  Rediger
-</button>
-<button
-  data-variant="tertiary"
-  type="button"
-  data-color="neutral"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
-    aria-hidden="true"
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M7 2.25a.75.75 0 0 0-.75.75v4.25H4A1.75 1.75 0 0 0 2.25 9v9c0 .414.336.75.75.75h3.25V21c0 .414.336.75.75.75h10a.75.75 0 0 0 .75-.75v-2.25H21a.75.75 0 0 0 .75-.75V9A1.75 1.75 0 0 0 20 7.25h-2.25V3a.75.75 0 0 0-.75-.75zM3.75 9A.25.25 0 0 1 4 8.75h16a.25.25 0 0 1 .25.25v8.25h-2.5V12a.75.75 0 0 0-.75-.75H7a.75.75 0 0 0-.75.75v5.25h-2.5zm12.5-1.75v-3.5h-8.5v3.5zm-8.5 5.5v7.5h8.5v-7.5zM9.25 15a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75m0 3a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H10a.75.75 0 0 1-.75-.75"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Skriv ut
+  </button>
+  <button
+    data-variant="secondary"
+    type="button"
+    data-color="neutral"
   >
-    <path
-      fill="currentColor"
-      fill-rule="evenodd"
-      d="M13.672 3.825a.75.75 0 0 1 .791.085l7 5.5a.75.75 0 0 1 0 1.18l-7 5.5a.75.75 0 0 1-1.213-.59v-2.724a9.1 9.1 0 0 0-2.63.565c-2.284.87-3.759 2.562-4.671 4.077a12.4 12.4 0 0 0-.957 1.965 10 10 0 0 0-.263.792l-.001.007A.75.75 0 0 1 3.25 20c0-1.654.322-3.941 1.224-6.123.903-2.184 2.413-4.32 4.823-5.558 1.133-.581 2.445-.954 3.953-1.046V4.5a.75.75 0 0 1 .422-.675M5.505 15.412c1.038-1.344 2.519-2.688 4.582-3.473 1.136-.432 2.435-.689 3.913-.689a.75.75 0 0 1 .75.75v1.957L19.786 10 14.75 6.043V8a.75.75 0 0 1-.75.75c-1.606 0-2.927.344-4.018.904-1.996 1.025-3.306 2.824-4.121 4.796q-.197.479-.356.962"
-      clip-rule="evenodd"
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
     >
-    </path>
-  </svg>
-  Videresend
-</button>
-`;
-
-exports[`Neutral Pressed 1`] = `
-<button
-  data-variant="primary"
-  type="button"
-  data-color="neutral"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
-    aria-hidden="true"
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Rediger
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    data-color="neutral"
   >
-    <path
-      fill="currentColor"
-      fill-rule="evenodd"
-      d="M7 2.25a.75.75 0 0 0-.75.75v4.25H4A1.75 1.75 0 0 0 2.25 9v9c0 .414.336.75.75.75h3.25V21c0 .414.336.75.75.75h10a.75.75 0 0 0 .75-.75v-2.25H21a.75.75 0 0 0 .75-.75V9A1.75 1.75 0 0 0 20 7.25h-2.25V3a.75.75 0 0 0-.75-.75zM3.75 9A.25.25 0 0 1 4 8.75h16a.25.25 0 0 1 .25.25v8.25h-2.5V12a.75.75 0 0 0-.75-.75H7a.75.75 0 0 0-.75.75v5.25h-2.5zm12.5-1.75v-3.5h-8.5v3.5zm-8.5 5.5v7.5h8.5v-7.5zM9.25 15a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75m0 3a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H10a.75.75 0 0 1-.75-.75"
-      clip-rule="evenodd"
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
     >
-    </path>
-  </svg>
-  Skriv ut
-</button>
-<button
-  data-variant="secondary"
-  type="button"
-  data-color="neutral"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
-    aria-hidden="true"
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M13.672 3.825a.75.75 0 0 1 .791.085l7 5.5a.75.75 0 0 1 0 1.18l-7 5.5a.75.75 0 0 1-1.213-.59v-2.724a9.1 9.1 0 0 0-2.63.565c-2.284.87-3.759 2.562-4.671 4.077a12.4 12.4 0 0 0-.957 1.965 10 10 0 0 0-.263.792l-.001.007A.75.75 0 0 1 3.25 20c0-1.654.322-3.941 1.224-6.123.903-2.184 2.413-4.32 4.823-5.558 1.133-.581 2.445-.954 3.953-1.046V4.5a.75.75 0 0 1 .422-.675M5.505 15.412c1.038-1.344 2.519-2.688 4.582-3.473 1.136-.432 2.435-.689 3.913-.689a.75.75 0 0 1 .75.75v1.957L19.786 10 14.75 6.043V8a.75.75 0 0 1-.75.75c-1.606 0-2.927.344-4.018.904-1.996 1.025-3.306 2.824-4.121 4.796q-.197.479-.356.962"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Videresend
+  </button>
+  <label
+    data-weight="medium"
+    data-size="sm"
   >
-    <path
-      fill="currentColor"
-      fill-rule="evenodd"
-      d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
-      clip-rule="evenodd"
-    >
-    </path>
-  </svg>
-  Rediger
-</button>
-<button
-  data-variant="tertiary"
-  type="button"
-  data-color="neutral"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
-    aria-hidden="true"
+    Hover
+  </label>
+  <button
+    data-variant="primary"
+    type="button"
+    data-color="neutral"
   >
-    <path
-      fill="currentColor"
-      fill-rule="evenodd"
-      d="M13.672 3.825a.75.75 0 0 1 .791.085l7 5.5a.75.75 0 0 1 0 1.18l-7 5.5a.75.75 0 0 1-1.213-.59v-2.724a9.1 9.1 0 0 0-2.63.565c-2.284.87-3.759 2.562-4.671 4.077a12.4 12.4 0 0 0-.957 1.965 10 10 0 0 0-.263.792l-.001.007A.75.75 0 0 1 3.25 20c0-1.654.322-3.941 1.224-6.123.903-2.184 2.413-4.32 4.823-5.558 1.133-.581 2.445-.954 3.953-1.046V4.5a.75.75 0 0 1 .422-.675M5.505 15.412c1.038-1.344 2.519-2.688 4.582-3.473 1.136-.432 2.435-.689 3.913-.689a.75.75 0 0 1 .75.75v1.957L19.786 10 14.75 6.043V8a.75.75 0 0 1-.75.75c-1.606 0-2.927.344-4.018.904-1.996 1.025-3.306 2.824-4.121 4.796q-.197.479-.356.962"
-      clip-rule="evenodd"
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
     >
-    </path>
-  </svg>
-  Videresend
-</button>
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M7 2.25a.75.75 0 0 0-.75.75v4.25H4A1.75 1.75 0 0 0 2.25 9v9c0 .414.336.75.75.75h3.25V21c0 .414.336.75.75.75h10a.75.75 0 0 0 .75-.75v-2.25H21a.75.75 0 0 0 .75-.75V9A1.75 1.75 0 0 0 20 7.25h-2.25V3a.75.75 0 0 0-.75-.75zM3.75 9A.25.25 0 0 1 4 8.75h16a.25.25 0 0 1 .25.25v8.25h-2.5V12a.75.75 0 0 0-.75-.75H7a.75.75 0 0 0-.75.75v5.25h-2.5zm12.5-1.75v-3.5h-8.5v3.5zm-8.5 5.5v7.5h8.5v-7.5zM9.25 15a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75m0 3a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H10a.75.75 0 0 1-.75-.75"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Skriv ut
+  </button>
+  <button
+    data-variant="secondary"
+    type="button"
+    data-color="neutral"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Rediger
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    data-color="neutral"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M13.672 3.825a.75.75 0 0 1 .791.085l7 5.5a.75.75 0 0 1 0 1.18l-7 5.5a.75.75 0 0 1-1.213-.59v-2.724a9.1 9.1 0 0 0-2.63.565c-2.284.87-3.759 2.562-4.671 4.077a12.4 12.4 0 0 0-.957 1.965 10 10 0 0 0-.263.792l-.001.007A.75.75 0 0 1 3.25 20c0-1.654.322-3.941 1.224-6.123.903-2.184 2.413-4.32 4.823-5.558 1.133-.581 2.445-.954 3.953-1.046V4.5a.75.75 0 0 1 .422-.675M5.505 15.412c1.038-1.344 2.519-2.688 4.582-3.473 1.136-.432 2.435-.689 3.913-.689a.75.75 0 0 1 .75.75v1.957L19.786 10 14.75 6.043V8a.75.75 0 0 1-.75.75c-1.606 0-2.927.344-4.018.904-1.996 1.025-3.306 2.824-4.121 4.796q-.197.479-.356.962"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Videresend
+  </button>
+  <label
+    data-weight="medium"
+    data-size="sm"
+  >
+    Pressed
+  </label>
+  <button
+    data-variant="primary"
+    type="button"
+    data-color="neutral"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M7 2.25a.75.75 0 0 0-.75.75v4.25H4A1.75 1.75 0 0 0 2.25 9v9c0 .414.336.75.75.75h3.25V21c0 .414.336.75.75.75h10a.75.75 0 0 0 .75-.75v-2.25H21a.75.75 0 0 0 .75-.75V9A1.75 1.75 0 0 0 20 7.25h-2.25V3a.75.75 0 0 0-.75-.75zM3.75 9A.25.25 0 0 1 4 8.75h16a.25.25 0 0 1 .25.25v8.25h-2.5V12a.75.75 0 0 0-.75-.75H7a.75.75 0 0 0-.75.75v5.25h-2.5zm12.5-1.75v-3.5h-8.5v3.5zm-8.5 5.5v7.5h8.5v-7.5zM9.25 15a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75m0 3a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H10a.75.75 0 0 1-.75-.75"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Skriv ut
+  </button>
+  <button
+    data-variant="secondary"
+    type="button"
+    data-color="neutral"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Rediger
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    data-color="neutral"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M13.672 3.825a.75.75 0 0 1 .791.085l7 5.5a.75.75 0 0 1 0 1.18l-7 5.5a.75.75 0 0 1-1.213-.59v-2.724a9.1 9.1 0 0 0-2.63.565c-2.284.87-3.759 2.562-4.671 4.077a12.4 12.4 0 0 0-.957 1.965 10 10 0 0 0-.263.792l-.001.007A.75.75 0 0 1 3.25 20c0-1.654.322-3.941 1.224-6.123.903-2.184 2.413-4.32 4.823-5.558 1.133-.581 2.445-.954 3.953-1.046V4.5a.75.75 0 0 1 .422-.675M5.505 15.412c1.038-1.344 2.519-2.688 4.582-3.473 1.136-.432 2.435-.689 3.913-.689a.75.75 0 0 1 .75.75v1.957L19.786 10 14.75 6.043V8a.75.75 0 0 1-.75.75c-1.606 0-2.927.344-4.018.904-1.996 1.025-3.306 2.824-4.121 4.796q-.197.479-.356.962"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Videresend
+  </button>
+  <label
+    data-weight="medium"
+    data-size="sm"
+  >
+    Focused
+  </label>
+  <button
+    data-variant="primary"
+    type="button"
+    data-color="neutral"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M7 2.25a.75.75 0 0 0-.75.75v4.25H4A1.75 1.75 0 0 0 2.25 9v9c0 .414.336.75.75.75h3.25V21c0 .414.336.75.75.75h10a.75.75 0 0 0 .75-.75v-2.25H21a.75.75 0 0 0 .75-.75V9A1.75 1.75 0 0 0 20 7.25h-2.25V3a.75.75 0 0 0-.75-.75zM3.75 9A.25.25 0 0 1 4 8.75h16a.25.25 0 0 1 .25.25v8.25h-2.5V12a.75.75 0 0 0-.75-.75H7a.75.75 0 0 0-.75.75v5.25h-2.5zm12.5-1.75v-3.5h-8.5v3.5zm-8.5 5.5v7.5h8.5v-7.5zM9.25 15a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75m0 3a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H10a.75.75 0 0 1-.75-.75"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Skriv ut
+  </button>
+  <button
+    data-variant="secondary"
+    type="button"
+    data-color="neutral"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Rediger
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    data-color="neutral"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M13.672 3.825a.75.75 0 0 1 .791.085l7 5.5a.75.75 0 0 1 0 1.18l-7 5.5a.75.75 0 0 1-1.213-.59v-2.724a9.1 9.1 0 0 0-2.63.565c-2.284.87-3.759 2.562-4.671 4.077a12.4 12.4 0 0 0-.957 1.965 10 10 0 0 0-.263.792l-.001.007A.75.75 0 0 1 3.25 20c0-1.654.322-3.941 1.224-6.123.903-2.184 2.413-4.32 4.823-5.558 1.133-.581 2.445-.954 3.953-1.046V4.5a.75.75 0 0 1 .422-.675M5.505 15.412c1.038-1.344 2.519-2.688 4.582-3.473 1.136-.432 2.435-.689 3.913-.689a.75.75 0 0 1 .75.75v1.957L19.786 10 14.75 6.043V8a.75.75 0 0 1-.75.75c-1.606 0-2.927.344-4.018.904-1.996 1.025-3.306 2.824-4.121 4.796q-.197.479-.356.962"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Videresend
+  </button>
+</div>
 `;
 
 exports[`Preview 1`] = `
@@ -1041,7 +1452,6 @@ exports[`Primary 1`] = `
 <button
   data-variant="primary"
   type="button"
-  data-color="accent"
 >
   Lagre
 </button>
@@ -1051,7 +1461,6 @@ exports[`Secondary 1`] = `
 <button
   data-variant="secondary"
   type="button"
-  data-color="accent"
 >
   Avbryt
 </button>
@@ -1061,7 +1470,6 @@ exports[`Tertiary 1`] = `
 <button
   data-variant="tertiary"
   type="button"
-  data-color="accent"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"

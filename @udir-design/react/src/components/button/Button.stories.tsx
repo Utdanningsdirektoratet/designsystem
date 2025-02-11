@@ -13,7 +13,7 @@ import {
   PrinterSmallIcon,
   TrashIcon,
 } from '@navikt/aksel-icons';
-import { Tooltip } from '../alpha';
+import { Label, Tooltip } from '../alpha';
 
 export type Story = StoryObj<typeof Button>;
 
@@ -98,23 +98,7 @@ export const Accent: Story = {
   },
 };
 
-export const AccentHover: Story = {
-  ...Accent,
-  parameters: {
-    ...Accent.parameters,
-    pseudo: { hover: true },
-    chromatic: { modes: { mobile: { disable: true } } },
-  },
-};
-
-export const AccentPressed: Story = {
-  ...Accent,
-  parameters: {
-    ...Accent.parameters,
-    pseudo: { active: true },
-    chromatic: { modes: { mobile: { disable: true } } },
-  },
-};
+export const AccentPseudoStates: Story = makePseudoStatesStory(Accent);
 
 export const Neutral: Story = {
   args: {
@@ -140,23 +124,7 @@ export const Neutral: Story = {
   },
 };
 
-export const NeutralHover: Story = {
-  ...Neutral,
-  parameters: {
-    ...Neutral.parameters,
-    pseudo: { hover: true },
-    chromatic: { modes: { mobile: { disable: true } } },
-  },
-};
-
-export const NeutralPressed: Story = {
-  ...Neutral,
-  parameters: {
-    ...Neutral.parameters,
-    pseudo: { active: true },
-    chromatic: { modes: { mobile: { disable: true } } },
-  },
-};
+export const NeutralPseudoStates: Story = makePseudoStatesStory(Neutral);
 
 export const Danger: Story = {
   args: {
@@ -182,23 +150,7 @@ export const Danger: Story = {
   },
 };
 
-export const DangerHover: Story = {
-  ...Danger,
-  parameters: {
-    ...Danger.parameters,
-    pseudo: { hover: true },
-    chromatic: { modes: { mobile: { disable: true } } },
-  },
-};
-
-export const DangerPressed: Story = {
-  ...Danger,
-  parameters: {
-    ...Danger.parameters,
-    pseudo: { active: true },
-    chromatic: { modes: { mobile: { disable: true } } },
-  },
-};
+export const DangerPseudoStates: Story = makePseudoStatesStory(Danger);
 
 export const CombinedColors: Story = {
   render: ({ ...args }) => (
@@ -356,3 +308,37 @@ export const IconsOnlyPrimary: Story = {
     );
   },
 };
+
+function makePseudoStatesStory(originalStory: Story): Story {
+  return {
+    render: (args, ctx) => (
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, auto)',
+          gap: 'inherit',
+          alignItems: 'center',
+          justifyItems: 'center',
+        }}
+      >
+        <Label data-size="sm">Default</Label>
+        {originalStory.render?.(args, ctx)}
+        <Label data-size="sm">Hover</Label>
+        {originalStory.render?.({ ...args, className: 'hover' }, ctx)}
+        <Label data-size="sm">Pressed</Label>
+        {originalStory.render?.({ ...args, className: 'hover active' }, ctx)}
+        <Label data-size="sm">Focused</Label>
+        {originalStory.render?.({ ...args, className: 'focusVisible' }, ctx)}
+      </div>
+    ),
+    args: originalStory.args,
+    parameters: {
+      ...originalStory.parameters,
+      pseudo: {
+        hover: ['.hover'],
+        active: ['.active'],
+        focusVisible: ['.focusVisible'],
+      },
+    },
+  };
+}
