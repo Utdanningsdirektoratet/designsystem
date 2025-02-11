@@ -9,6 +9,9 @@ import {
   type SearchButtonProps,
 } from '@digdir/designsystemet-react';
 
+// For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
+Search.displayName = 'Search';
+
 export {
   Search,
   SearchProps,

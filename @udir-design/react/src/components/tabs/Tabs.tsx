@@ -9,6 +9,9 @@ import {
   type TabsListProps,
 } from '@digdir/designsystemet-react';
 
+// For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
+Tabs.displayName = 'Tabs';
+
 export {
   Tabs,
   TabsProps,

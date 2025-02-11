@@ -10,6 +10,9 @@ import {
   type ChipRemovableProps,
 } from '@digdir/designsystemet-react';
 
+// For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
+Chip.Button.displayName = 'Chip.Button';
+
 export {
   Chip,
   ChipButton,
