@@ -42,7 +42,9 @@ jobs:
       - uses: nrwl/nx-set-shas@v4
 
       - name: Print affected projects
-        run: pnpm nx show projects --affected --base $NX_BASE --head $NX_HEAD | grep -v "^info"
+        run: |
+          pnpm nx show projects --affected --base $NX_BASE --head $NX_HEAD \
+            | grep -v "^info" || echo "No projects affected" && true
 
       - name: Determine whether storybook-tests & chromatic need to run
         id: job_condition
