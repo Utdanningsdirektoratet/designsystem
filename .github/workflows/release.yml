@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request' || github.event.workflow_run.conclusion == 'success'
     permissions:
+      actions: read
       contents: write # needs to read contents, and publish tags / github releases
       pull-requests: write # needed to comment on pull requests
       id-token: write # needed for provenance data generation
@@ -53,6 +54,8 @@ jobs:
       - run: pnpm install
 
       - uses: nrwl/nx-set-shas@v4
+        with:
+          main-branch-name: ${{ github.base_ref || github.ref_name }}
 
       - run: pnpm build
 
