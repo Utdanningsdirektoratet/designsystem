@@ -73,7 +73,7 @@ jobs:
 
       - name: Run semantic-release script
         if: success() && github.event_name != 'pull_request'
-        run: ./@internal/build-tools/bin/semantic-release.ts --branch $BRANCH_NAME --dry-run
+        run: ./@internal/build-tools/bin/semantic-release.ts --branch $BRANCH_NAME --publish
         shell: bash
         # See https://docs.github.com/en/actions/use-cases-and-examples/publishing-packages/publishing-nodejs-packages
         env:
