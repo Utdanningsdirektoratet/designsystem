@@ -11,8 +11,7 @@ on:
 env:
   NXCACHE_AZURE_ACCOUNT_KEY: ${{ secrets.NXCACHE_AZURE_ACCOUNT_KEY }}
   # either the PR *target* branch, or the current branch being released
-  BRANCH_NAME: ${{ github.base_ref || github.ref_name }}
-  DRY_RUN: ${{ github.event_name == 'pull_request' }}
+  BRANCH_REF_OR_NAME: ${{ github.event.pull_request.base.ref || github.event.workflow_run.head_branch }}
 
 jobs:
   semantic-release:
@@ -27,7 +26,9 @@ jobs:
     steps:
       - name: Extract branch name
         shell: bash
-        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        run: |
+          echo "Current branch ref or name: $BRANCH_REF_OR_NAME"
+          echo "branch=${BRANCH_REF_OR_NAME#refs/heads/}}" >> $GITHUB_OUTPUT
         id: extract_branch
 
       - name: Configure git user
@@ -55,13 +56,13 @@ jobs:
 
       - uses: nrwl/nx-set-shas@v4
         with:
-          main-branch-name: ${{ github.base_ref || github.ref_name }}
+          main-branch-name: ${{ steps.extract_branch.outputs.branch }}
 
       - run: pnpm build
 
       - name: Preview semantic-release for this PR
         if: success() && github.event_name == 'pull_request'
-        run: ./@internal/build-tools/bin/semantic-release.ts --branch $BRANCH_NAME --preview-changelog
+        run: ./@internal/build-tools/bin/semantic-release.ts --branch ${{ steps.extract_branch.outputs.branch }} --preview-changelog
 
       - name: Output preview changelog to file
         if: success() && github.event_name == 'pull_request'
@@ -76,7 +77,7 @@ jobs:
 
       - name: Run semantic-release script
         if: success() && github.event_name != 'pull_request'
-        run: ./@internal/build-tools/bin/semantic-release.ts --branch $BRANCH_NAME --publish
+        run: ./@internal/build-tools/bin/semantic-release.ts --branch ${{ steps.extract_branch.outputs.branch }} --publish
         shell: bash
         # See https://docs.github.com/en/actions/use-cases-and-examples/publishing-packages/publishing-nodejs-packages
         env:
