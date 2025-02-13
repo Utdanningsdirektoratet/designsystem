@@ -155,3 +155,18 @@ jobs:
           exitOnceUploaded: true
           onlyChanged: true
           externals: 'design-tokens/src/**'
+
+  release:
+    needs: [main, storybook-tests, chromatic]
+    if: |
+      always() && !failure() && !cancelled() &&
+      (github.event_name == 'push' || github.event_name == 'pull_request') &&
+      startsWith( (github.base_ref || github.ref_name), 'release/')
+    uses: ./.github/workflows/release.yml
+    with:
+      dry-run: true
+    permissions:
+      actions: read
+      contents: write
+      pull-requests: write
+      id-token: write
