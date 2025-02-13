@@ -40,6 +40,8 @@ jobs:
       - run: pnpm install
 
       - uses: nrwl/nx-set-shas@v4
+        with:
+          main-branch-name: ${{ github.base_ref || github.ref_name }}
 
       - name: Print affected projects
         run: |
@@ -86,7 +88,7 @@ jobs:
 
       - name: Validate PR commits with commitlint
         if: github.event_name == 'pull_request'
-        run: pnpm commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
+        run: pnpm commitlint --from ${{ github.event.pull_request.base.sha}} --to ${{ github.event.pull_request.head.sha }} --verbose
 
       - run: pnpm build
 
