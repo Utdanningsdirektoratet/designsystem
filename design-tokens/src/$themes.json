@@ -152,7 +152,8 @@
     "$figmaModeId": "36329:4",
     "name": "udir",
     "selectedTokenSets": {
-      "themes/udir": "enabled"
+      "themes/udir": "enabled",
+      "themes/udir.overrides": "enabled"
     },
     "group": "Theme"
   },
@@ -203,8 +204,8 @@
     "name": "Semantic",
     "selectedTokenSets": {
       "semantic/style": "enabled",
+      "semantic/style.overrides": "enabled",
       "semantic/color": "enabled",
-      "semantic/overrides": "enabled",
       "primitives/globals": "source"
     },
     "group": "Semantic"
