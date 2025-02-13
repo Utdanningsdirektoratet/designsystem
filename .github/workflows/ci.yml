@@ -40,6 +40,8 @@ jobs:
       - run: pnpm install
 
       - uses: nrwl/nx-set-shas@v4
+        with:
+          main-branch-name: ${{ github.base_ref || github.ref_name }}
 
       - name: Print affected projects
         run: |
