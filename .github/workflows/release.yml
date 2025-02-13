@@ -28,7 +28,7 @@ jobs:
         shell: bash
         run: |
           echo "Current branch ref or name: $BRANCH_REF_OR_NAME"
-          echo "branch=${BRANCH_REF_OR_NAME#refs/heads/}}" >> $GITHUB_OUTPUT
+          echo "branch=${BRANCH_REF_OR_NAME#refs/heads/}" >> $GITHUB_OUTPUT
         id: extract_branch
 
       - name: Configure git user
