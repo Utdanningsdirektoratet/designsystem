@@ -1,0 +1,31 @@
+.heading {
+  background-color: 'transparent';
+  margin-bottom: var(--ds-size-2);
+
+  &:where(h1, h2) {
+    margin-top: var(--ds-size-5);
+  }
+  &:where(h3) {
+    margin-top: var(--ds-size-4);
+  }
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.code {
+  background-color: var(--ds-color-background-subtle);
+  font-size: var(--ds-font-size-minus-1);
+  white-space: nowrap;
+}
+
+.pre {
+  background-color: var(--ds-color-background-subtle);
+  white-space: pre;
+  padding: var(--ds-size-2);
+}
+
+.pre .code {
+  background-color: unset;
+  white-space: inherit;
+}

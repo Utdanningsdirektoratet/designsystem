@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Preview 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="components-input--preview"
+  >
+    Input 1
+  </label>
+  <input
+    type="text"
+    id="components-input--preview"
+  >
+</div>
+`;

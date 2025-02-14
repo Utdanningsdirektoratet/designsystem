@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Preview 1`] = `
+<div id="components-field--preview">
+  <label
+    data-weight="medium"
+    for="my-textarea"
+  >
+    Label
+  </label>
+  <div
+    data-field="description"
+    id="my-textarea:description"
+  >
+    Description
+  </div>
+  <textarea
+    id="my-textarea"
+    aria-describedby="my-textarea:description"
+  >
+  </textarea>
+</div>
+`;

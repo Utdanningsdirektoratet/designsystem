@@ -1,0 +1,36 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Preview 1`] = `
+<form>
+  <fieldset>
+    <legend data-weight="medium">
+      Skriv inn dine svar
+    </legend>
+    <p data-variant="default">
+      Gi en kort beskrivelse i begge feltene
+    </p>
+    <div>
+      <label
+        data-weight="medium"
+        for="my-input"
+      >
+        Kort beskrivelse
+      </label>
+      <input
+        type="text"
+        id="my-input"
+      >
+    </div>
+    <div>
+      <label
+        data-weight="medium"
+        for="my-textarea"
+      >
+        Lang beskrivelse
+      </label>
+      <textarea id="my-textarea">
+      </textarea>
+    </div>
+  </fieldset>
+</form>
+`;

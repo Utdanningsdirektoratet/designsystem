@@ -1,0 +1,13 @@
+{
+  "name": "@udir-design/theme",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "@udir-design/theme/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project @udir-design/theme --web",
+  "targets": {
+    "build": {
+      "cache": true
+    }
+  }
+}

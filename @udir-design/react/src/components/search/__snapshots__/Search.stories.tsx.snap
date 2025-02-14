@@ -1,0 +1,24 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Preview 1`] = `
+<div>
+  <input
+    type="search"
+    placeholder
+    aria-label="Søk"
+  >
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="reset"
+    aria-label="Tøm"
+  >
+  </button>
+  <button
+    data-variant="primary"
+    type="submit"
+  >
+    Søk
+  </button>
+</div>
+`;

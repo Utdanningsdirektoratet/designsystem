@@ -1,0 +1,26 @@
+.tableContainer {
+  grid-column: span 2;
+}
+
+.actionAndSearch {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--ds-size-4);
+}
+
+.selectAction {
+  display: flex;
+  align-items: center;
+}
+
+.actionBtn {
+  margin-left: var(--ds-size-2);
+}
+
+.tableSearch {
+  width: 260px;
+}
+
+.table {
+  margin-top: var(--ds-size-4);
+}

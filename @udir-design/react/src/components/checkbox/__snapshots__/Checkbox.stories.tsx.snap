@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Preview 1`] = `
+<div>
+  <input
+    type="checkbox"
+    id="components-checkbox--preview"
+  >
+  <label
+    data-weight="regular"
+    for="components-checkbox--preview"
+  >
+    Checkbox label
+  </label>
+</div>
+`;

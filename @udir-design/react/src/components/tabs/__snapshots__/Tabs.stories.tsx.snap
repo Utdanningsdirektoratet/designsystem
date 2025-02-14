@@ -1,0 +1,41 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Preview 1`] = `
+<div>
+  <div
+    role="tablist"
+    tabindex="0"
+  >
+    <button
+      aria-selected="false"
+      id="tab-:r0:"
+      role="tab"
+      type="button"
+      data-roving-tabindex-item="true"
+      tabindex="-1"
+    >
+      Tab 1
+    </button>
+    <button
+      aria-selected="false"
+      id="tab-:r1:"
+      role="tab"
+      type="button"
+      data-roving-tabindex-item="true"
+      tabindex="-1"
+    >
+      Tab 2
+    </button>
+    <button
+      aria-selected="false"
+      id="tab-:r2:"
+      role="tab"
+      type="button"
+      data-roving-tabindex-item="true"
+      tabindex="-1"
+    >
+      Tab 3
+    </button>
+  </div>
+</div>
+`;

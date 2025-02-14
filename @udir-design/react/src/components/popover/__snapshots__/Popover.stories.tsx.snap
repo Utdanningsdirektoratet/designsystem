@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Preview 1`] = `
+<button
+  data-variant="primary"
+  type="button"
+  popovertarget=":r0:"
+>
+  My trigger!
+</button>
+<div
+  id=":r0:"
+  popover="manual"
+>
+  popover content
+</div>
+`;

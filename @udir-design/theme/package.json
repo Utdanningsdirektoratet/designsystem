@@ -1,0 +1,28 @@
+{
+  "name": "@udir-design/theme",
+  "license": "MIT",
+  "version": "0.0.0-semantically-released",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/colors.d.ts",
+      "default": "./dist/udir.css"
+    }
+  },
+  "files": [
+    "./dist"
+  ],
+  "dependencies": {
+    "@digdir/designsystemet-react": "1.0.0-next.48"
+  },
+  "devDependencies": {
+    "@udir-design/tokens": "workspace:*",
+    "rimraf": "^6.0.1"
+  },
+  "scripts": {
+    "copy-css": "cp -r ../../design-tokens/dist/ ./dist/",
+    "postprocess-css": "../../@internal/build-tools/bin/postprocess-css-colors.ts ./dist/udir.css",
+    "clean": "rimraf ./dist",
+    "build": "pnpm clean && pnpm copy-css && pnpm postprocess-css"
+  }
+}

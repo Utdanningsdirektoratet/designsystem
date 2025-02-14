@@ -1,0 +1,11 @@
+{
+  "name": "design-tokens",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "design-tokens/src",
+  "targets": {
+    "build": {
+      "cache": true
+    }
+  }
+}

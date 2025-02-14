@@ -1,0 +1,21 @@
+{
+  "$schema": "./node_modules/@digdir/designsystemet/dist/config.schema.json",
+  "outDir": "./src",
+  "themes": {
+    "udir": {
+      "colors": {
+        "main": { "accent": "#76c69d" },
+        "neutral": "#303030",
+        "support": {
+          "support1": "#b9d9c8",
+          "support2": "#bed5e8",
+          "support3": "#e5ceae"
+        }
+      },
+      "typography": {
+        "fontFamily": "Inter"
+      },
+      "borderRadius": 12
+    }
+  }
+}

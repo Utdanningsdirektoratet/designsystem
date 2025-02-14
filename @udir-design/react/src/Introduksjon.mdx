@@ -1,0 +1,30 @@
+import { IncludeMarkdown } from '../.storybook/doc-blocks/IncludeMarkdown';
+import { Alert } from './components/alert/Alert';
+import { List } from './components/list/List';
+import README from '../../../README.md?raw';
+
+# Designsystem for Utdanningsdirektoratet
+
+Udirs designsystem skal bidra til å skape og opprettholde helhetlig design slik at Udir har:
+
+- tydelig identitet
+- brukervennlige løsninger
+- effektiv utvikling
+
+Udirs designsystem tar utgangspunkt i [Digdirs felles designsystem](https://www.designsystemet.no/). Designsystemet skal brukes for å oppnå helhetlig design i Udirs digitale tjenester og i andre kommunikasjonsflater i tråd med Udirs [designprofil](https://www.udir.no/om-udir/designprofil/).
+
+## Om denne dokumentasjonen
+
+Bruk venstremenyen for å navigere i dokumentasjonen.
+
+Overskriften "Demo" inneholder eksempler som viser komponenter brukt sammen. Alle individuelle komponenter finner du under "Components".
+
+Komponenter er markert med "Alpha" eller "Beta" dersom de ikke er stabile (les mer om livsfaser lenger ned).
+
+<IncludeMarkdown markdown={README} sectionId="livsfaser-for-en-komponent" />
+
+<IncludeMarkdown
+  markdown={README}
+  sectionId="hva-tester-vi"
+  increaseHeadingDepthBy={1}
+/>

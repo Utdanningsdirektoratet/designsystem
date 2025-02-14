@@ -1,0 +1,133 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Med Aria 1`] = `
+<div
+  data-color="danger"
+  role="alert"
+>
+  <h2
+    data-size="xs"
+    style="margin-bottom: var(--ds-size-2);"
+  >
+    Vi klarer ikke lagre skjemaet
+  </h2>
+  <p data-variant="default">
+    Vi har mistet forbindelsen med serveren og får ikke lagret skjemaet. Vent litt og prøv en gang til.
+  </p>
+</div>
+`;
+
+exports[`Med Heading 1`] = `
+<div data-color="info">
+  <h2
+    data-size="xs"
+    style="margin-bottom: var(--ds-size-2);"
+  >
+    Har du husket å bestille passtime?
+  </h2>
+  <p data-variant="default">
+    Det er lange køer for å bestille pass om dagen, det kan være lurt å bestille i god tid om du trenger pass til sommeren.
+  </p>
+</div>
+`;
+
+exports[`Med Kun Heading 1`] = `
+<div data-color="warning">
+  <p data-variant="default">
+    Du har 7 dager igjen på å fullføre søknaden.
+  </p>
+</div>
+`;
+
+exports[`Med Lenke 1`] = `
+<div data-color="warning">
+  <h2
+    data-size="xs"
+    style="margin-bottom: var(--ds-size-2);"
+  >
+    Søknadsfristen går ut om 3 dager
+  </h2>
+  <p data-variant="default">
+    Fristen for å søke opptak til utdanning er 15. april.
+    <a href="https://udir.no/">
+      Søk nå
+    </a>
+  </p>
+</div>
+`;
+
+exports[`Preview 1`] = `
+<div data-color="info">
+  En beskjed det er viktig at brukeren ser
+</div>
+`;
+
+exports[`Uten Aria 1`] = `
+<div data-color="warning">
+  <h2
+    data-size="xs"
+    style="margin-bottom: var(--ds-size-2);"
+  >
+    Nedetid
+  </h2>
+  <p data-variant="default">
+    I natt klokken 00:00 til 02:00 vil nettsiden være nede på grunn av vedlikehold.
+  </p>
+</div>
+`;
+
+exports[`Variant Danger 1`] = `
+<div data-color="danger">
+  <h2
+    data-size="xs"
+    style="margin-bottom: var(--ds-size-2);"
+  >
+    Det har skjedd en feil
+  </h2>
+  <p data-variant="default">
+    Vi klarer ikke å hente informasjonen du ser etter akkurat nå. Prøv igjen litt senere. Hvis vi fortsatt ikke klarer å vise informasjonen du trenger, tar du kontakt med kundeservice på telefon 85 44 32 66.
+  </p>
+</div>
+`;
+
+exports[`Variant Info 1`] = `
+<div data-color="info">
+  <h2
+    data-size="xs"
+    style="margin-bottom: var(--ds-size-2);"
+  >
+    Har du husket å bestille passtime?
+  </h2>
+  <p data-variant="default">
+    Det er lange køer for å bestille pass om dagen, det kan være lurt å bestille i god tid før du skal reise.
+  </p>
+</div>
+`;
+
+exports[`Variant Success 1`] = `
+<div data-color="success">
+  <h2
+    data-size="xs"
+    style="margin-bottom: var(--ds-size-2);"
+  >
+    Gratulerer! Du kan nå starte selskapet ditt
+  </h2>
+  <p data-variant="default">
+    Det ser ut til at regnestykket går i pluss og at du har det som skal til for å starte selskapet ditt.
+  </p>
+</div>
+`;
+
+exports[`Variant Warning 1`] = `
+<div data-color="warning">
+  <h2
+    data-size="xs"
+    style="margin-bottom: var(--ds-size-2);"
+  >
+    Vi har tekniske problemer
+  </h2>
+  <p data-variant="default">
+    Det gjør at du kan bli avbrutt mens du fyller ut skjemaet. Vi jobber med å rette problemene.
+  </p>
+</div>
+`;
