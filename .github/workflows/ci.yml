@@ -165,6 +165,7 @@ jobs:
     uses: ./.github/workflows/release.yml
     with:
       dry-run: false
+    secrets: inherit
     permissions:
       actions: read
       contents: write
