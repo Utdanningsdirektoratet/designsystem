@@ -1,36 +1,27 @@
 name: Release
 
 on:
-  workflow_run:
-    workflows: CI
-    branches: release/*
-    types: completed
-  pull_request:
-    branches: release/*
+  workflow_call:
+    inputs:
+      dry-run:
+        type: boolean
+        default: true
 
 env:
   NXCACHE_AZURE_ACCOUNT_KEY: ${{ secrets.NXCACHE_AZURE_ACCOUNT_KEY }}
   # either the PR *target* branch, or the current branch being released
-  BRANCH_REF_OR_NAME: ${{ github.event.pull_request.base.ref || github.event.workflow_run.head_branch }}
+  BRANCH_NAME: ${{ github.base_ref || github.ref_name }}
 
 jobs:
   semantic-release:
-    name: Perform semantic release
+    name: ${{ github.event_name == 'pull_request' && 'Preview release changelog' || 'Publish semantic release' }}
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' || github.event.workflow_run.conclusion == 'success'
     permissions:
       actions: read
       contents: write # needs to read contents, and publish tags / github releases
       pull-requests: write # needed to comment on pull requests
       id-token: write # needed for provenance data generation
     steps:
-      - name: Extract branch name
-        shell: bash
-        run: |
-          echo "Current branch ref or name: $BRANCH_REF_OR_NAME"
-          echo "branch=${BRANCH_REF_OR_NAME#refs/heads/}" >> $GITHUB_OUTPUT
-        id: extract_branch
-
       - name: Configure git user
         run: |
           # Setup the committers identity.
@@ -39,7 +30,6 @@ jobs:
 
       - uses: actions/checkout@v4
         with:
-          ref: ${{ steps.extract_branch.outputs.branch }}
           fetch-depth: 0
 
       # Note: pnpm version is set in package.json "packageManager"
@@ -57,13 +47,13 @@ jobs:
 
       - uses: nrwl/nx-set-shas@v4
         with:
-          main-branch-name: ${{ steps.extract_branch.outputs.branch }}
+          main-branch-name: ${{ env.BRANCH_NAME }}
 
       - run: pnpm build
 
       - name: Preview semantic-release for this PR
         if: success() && github.event_name == 'pull_request'
-        run: ./@internal/build-tools/bin/semantic-release.ts --branch ${{ steps.extract_branch.outputs.branch }} --preview-changelog
+        run: ./@internal/build-tools/bin/semantic-release.ts --branch $BRANCH_NAME --preview-changelog
 
       - name: Output preview changelog to file
         if: success() && github.event_name == 'pull_request'
@@ -78,7 +68,7 @@ jobs:
 
       - name: Run semantic-release script
         if: success() && github.event_name != 'pull_request'
-        run: ./@internal/build-tools/bin/semantic-release.ts --branch ${{ steps.extract_branch.outputs.branch }} --dry-run
+        run: ./@internal/build-tools/bin/semantic-release.ts --branch $BRANCH_NAME ${{ inputs.dry-run && '--dry-run' || '--publish'}}
         shell: bash
         # See https://docs.github.com/en/actions/use-cases-and-examples/publishing-packages/publishing-nodejs-packages
         env:
