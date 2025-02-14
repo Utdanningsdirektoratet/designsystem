@@ -27,7 +27,7 @@ node_modules
 # misc
 /.sass-cache
 /connect.lock
-/test-reports
+/coverage
 /libpeerconnection.log
 npm-debug.log
 yarn-error.log
@@ -46,6 +46,7 @@ storybook-static
 build-storybook.log
 .env.*
 **/vite.config.*.timestamp*
+test-reports/
 
 # Next.js
 .next
