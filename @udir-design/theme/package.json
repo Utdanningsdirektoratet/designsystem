@@ -4,8 +4,10 @@
   "version": "0.0.0-semantically-released",
   "type": "module",
   "exports": {
-    ".": "./dist/udir.css",
-    "./*": "./dist/*"
+    ".": {
+      "types": "./dist/colors.d.ts",
+      "default": "./dist/udir.css"
+    }
   },
   "files": [
     "./dist"

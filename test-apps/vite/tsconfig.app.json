@@ -7,7 +7,9 @@
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts",
       "vite/client",
-      "vitest/importMeta"
+      "vitest/importMeta",
+      "@udir-design/theme",
+      "@udir-design/react"
     ]
   },
   "exclude": [

@@ -7,7 +7,7 @@ For å ta i bruk biblioteket må du først installere det, og så gjøre litt op
 ## Installere biblioteket
 
 ```bash
-npm add @udir-design/react@alpha
+npm add @udir-design/theme@alpha @udir-design/react@alpha
 ```
 
 ## Oppsett
@@ -38,6 +38,53 @@ Alternativt eksempel: importer stilsettet fra din primære css-fil
 
 ```css
 @import '@udir-design/react/style.css';
+```
+
+### Skru på typedefinisjoner for `data-color`
+
+Dersom du bryker TypeScript, bør du legge til typene for `@udir-design/theme` og `@udir-design/react` i din `tsconfig.json`. Dette gir typesjekking og autocomplete for Udirs farger og størrelser (`data-color` og `data-size` properties), både i bibliotekets komponenter og vanlige HTML-tags.
+
+Et enkelt eksempel:
+
+```jsonc
+{
+  "compilerOptions": {
+    // ... andre compilerOptions
+    "types": ["@udir-design/theme", "@udir-design/react"]
+  }
+  // ... andre innstillinger
+}
+```
+
+Dette må passes inn med din eksisterende tsconfig, her er et eksempel på en ekte tsconfig fra en testapplikasjon:
+
+```jsonc
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "types": [
+      "node",
+      "@nx/react/typings/cssmodule.d.ts",
+      "@nx/react/typings/image.d.ts",
+      "vite/client",
+      "vitest/importMeta",
+      "@udir-design/theme", // <---- Legg til disse
+      "@udir-design/react" //  <---- to linjene
+    ]
+  },
+  "exclude": [
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "src/**/*.spec.tsx",
+    "src/**/*.test.tsx",
+    "src/**/*.spec.js",
+    "src/**/*.test.js",
+    "src/**/*.spec.jsx",
+    "src/**/*.test.jsx"
+  ],
+  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
+}
 ```
 
 ### Konfigurere standard typografi
