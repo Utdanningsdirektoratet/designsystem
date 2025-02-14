@@ -10,6 +10,9 @@ on:
       NXCACHE_AZURE_ACCOUNT_KEY:
         required: true
       NPM_ACCESS_TOKEN:
+        description: |
+          A granular access token created on npmjs.com with
+          read and write access to the @udir-design scope
         required: true
 
 env:
@@ -47,6 +50,7 @@ jobs:
         with:
           node-version-file: 'package.json'
           cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
 
       - run: pnpm install
 
@@ -54,7 +58,8 @@ jobs:
         with:
           main-branch-name: ${{ env.BRANCH_NAME }}
 
-      - run: pnpm build
+      # Retrieve builds from the cache for the projects we are releasing
+      - run: pnpm nx run-many -t build -p "@udir-design/*"
 
       - name: Preview semantic-release for this PR
         if: success() && github.event_name == 'pull_request'
@@ -79,4 +84,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
+          # NPM_CONFIG_PROVENANCE: true
