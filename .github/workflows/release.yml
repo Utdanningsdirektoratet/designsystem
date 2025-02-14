@@ -9,6 +9,8 @@ on:
     secrets:
       NXCACHE_AZURE_ACCOUNT_KEY:
         required: true
+      NPM_ACCESS_TOKEN:
+        required: true
 
 env:
   NXCACHE_AZURE_ACCOUNT_KEY: ${{ secrets.NXCACHE_AZURE_ACCOUNT_KEY }}
