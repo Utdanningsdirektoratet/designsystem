@@ -1,14 +1,20 @@
-# @udir-design/react
+# React-komponenter for Utdanningsdirektoratets designsystem.
 
-## Getting started
+Dette biblioteket inneholder React-komponenter for Utdanningsdirektoratets designsystem.
 
-Install the library
+For å ta i bruk biblioteket må du først installere det, og så gjøre litt oppsett.
 
+## Installere biblioteket
+
+```bash
+npm add @udir-design/react@alpha
 ```
-npm add @udir-design/react@next
-```
 
-Load the Inter font somewhere, e.g. place this in your `index.html` `<head>`
+## Oppsett
+
+### Laste inn riktig font
+
+Last inn fonten Inter, f.eks. ved å plassere følgende i din `index.html` `<head>`
 
 ```html
 <link
@@ -18,19 +24,27 @@ Load the Inter font somewhere, e.g. place this in your `index.html` `<head>`
 />
 ```
 
-Import the library's styles from your main entry point js/ts file
+### Laste inn stilsettet
+
+Du må laste inn bibliotekets stilsett enten, som ligger i `@udir-design/react/style.css`.
+
+Eksempel: importer stilsettet fra ditt JavaScript- eller TypeScript-entrypoint
 
 ```ts
 import '@udir-design/react/style.css';
 ```
 
-...or, alternatively, from your main css file
+Alternativt eksempel: importer stilsettet fra din primære css-fil
 
 ```css
 @import '@udir-design/react/style.css';
 ```
 
-Add the following styles
+### Konfigurere standard typografi
+
+Biblioteket setter ingen globale stiler. For å få en konsistent typografi på nettsiden må du derfor selv sette en standard typografistil for HTML som ikke bruker komponenter fra biblioteket.
+
+Dette gjøres slik:
 
 ```css
 body {
@@ -39,4 +53,29 @@ body {
 }
 ```
 
-`body` can be replaced with a selector for the part of the page where the library is being used
+## Ta i bruk
+
+> [!NOTE]
+> Legg merke til at eksempelet importerer fra `@udir-design/react/alpha`.
+> Du finner en forklaring på dette i [Designsystemets overordnede README](https://github.com/Utdanningsdirektoratet/designsystem?tab=readme-ov-file#livsfaser-for-en-komponent)
+
+Nå kan du importere og bruke komponenter, for eksempel slik:
+
+```tsx
+import { Details, Card } from '@udir-design/react/alpha';
+
+export const MyComponent = () => (
+  <Card>
+    <Details>
+      <Details.Summary>Første overskrift</Details.Summary>
+      <Details.Content>Skjult innhold som kan åpnes</Details.Content>
+    </Details>
+    <Details>
+      <Details.Summary>Andre overskrift</Details.Summary>
+      <Details.Content>Mer skjult innhold her</Details.Content>
+    </Details>
+  </Card>
+);
+```
+
+Oversikt over hvilke komponenter som finnes, og bruksdokumentasjon for disse, finner du [i vår Storybook](https://main--667e8f07bf467ff4403dfe77.chromatic.com).
