@@ -6,6 +6,9 @@ on:
       dry-run:
         type: boolean
         default: true
+    secrets:
+      NXCACHE_AZURE_ACCOUNT_KEY:
+        required: true
 
 env:
   NXCACHE_AZURE_ACCOUNT_KEY: ${{ secrets.NXCACHE_AZURE_ACCOUNT_KEY }}
