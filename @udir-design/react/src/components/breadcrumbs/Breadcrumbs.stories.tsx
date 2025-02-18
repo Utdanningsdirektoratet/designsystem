@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Breadcrumbs } from './Breadcrumbs';
+import { expect, within } from '@storybook/test';
 
 export default {
   component: Breadcrumbs,
@@ -30,6 +31,34 @@ export const Preview: Story = {
         </Breadcrumbs.Item>
       </Breadcrumbs.List>,
     ],
+  },
+  play: async ({ canvasElement, step, globals }) => {
+    const canvas = within(canvasElement);
+    const breadcrumbs = canvas.getByLabelText('Du er her:');
+
+    await step('Element with breadcrumbs role should exist', async () => {
+      expect(breadcrumbs).toBeTruthy();
+    });
+
+    await step('Link has the correct text and href', async () => {
+      const link =
+        canvas.queryByRole('link', { name: /nivå 1/i }) ||
+        canvas.queryByRole('link', { name: /nivå 3/i });
+      expect(link).toHaveAttribute('href', '#');
+    });
+
+    // Return early if viewport is iPhone 6 (no list on mobile)
+    if (globals.viewport.value === 'iphone6') return;
+
+    const list = canvas.getByRole('list');
+
+    await step('Element with list role should exist', async () => {
+      expect(list).toBeTruthy();
+    });
+
+    await step('List should have expected number of items', async () => {
+      expect(canvas.getAllByRole('listitem')).toHaveLength(4);
+    });
   },
 };
 
