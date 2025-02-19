@@ -6,7 +6,7 @@ exports[`Backdrop Close 1`] = `
   type="button"
   aria-haspopup="dialog"
 >
-  Open Modal
+  Open Dialog
 </button>
 <dialog open>
   <form method="dialog">
@@ -21,7 +21,7 @@ exports[`Backdrop Close 1`] = `
     </button>
   </form>
   <h2>
-    Modal med backdropClose og en veldig lang tittel
+    Dialog med backdropClose og en veldig lang tittel
   </h2>
   <p data-variant="default">
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
@@ -30,18 +30,18 @@ exports[`Backdrop Close 1`] = `
     data-variant="default"
     data-size="sm"
   >
-    Modal footer
+    Dialog footer
   </p>
 </dialog>
 `;
 
-exports[`Modal With Form 1`] = `
+exports[`Dialog With Form 1`] = `
 <button
   data-variant="primary"
   type="button"
   aria-haspopup="dialog"
 >
-  Open Modal
+  Open Dialog
 </button>
 <dialog open>
   <form method="dialog">
@@ -56,12 +56,12 @@ exports[`Modal With Form 1`] = `
     </button>
   </form>
   <h2 style="margin-bottom: var(--ds-size-2);">
-    Modal med skjema
+    Dialog med skjema
   </h2>
   <div>
     <label
       data-weight="medium"
-      for="components-modal--modal-with-form"
+      for="components-dialog--dialog-with-form"
     >
       Navn
     </label>
@@ -69,7 +69,7 @@ exports[`Modal With Form 1`] = `
       <input
         type="text"
         autofocus="true"
-        id="components-modal--modal-with-form"
+        id="components-dialog--dialog-with-form"
         value
       >
     </div>
@@ -91,13 +91,13 @@ exports[`Modal With Form 1`] = `
 </dialog>
 `;
 
-exports[`Modal With Max Width 1`] = `
+exports[`Dialog With Max Width 1`] = `
 <button
   data-variant="primary"
   type="button"
   aria-haspopup="dialog"
 >
-  Open Modal
+  Open Dialog
 </button>
 <dialog
   open
@@ -115,7 +115,7 @@ exports[`Modal With Max Width 1`] = `
     </button>
   </form>
   <h2 style="margin-bottom: var(--ds-size-2);">
-    Modal med en veldig lang bredde
+    Dialog med en veldig lang bredde
   </h2>
   <p data-variant="default">
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
@@ -129,7 +129,7 @@ exports[`Preview 1`] = `
   type="button"
   aria-haspopup="dialog"
 >
-  Open Modal
+  Open Dialog
 </button>
 <dialog open>
   <form method="dialog">
@@ -144,7 +144,7 @@ exports[`Preview 1`] = `
     </button>
   </form>
   <h2 style="margin-bottom: var(--ds-size-2);">
-    Modal header
+    Dialog header
   </h2>
   <p
     data-variant="default"
@@ -156,7 +156,7 @@ exports[`Preview 1`] = `
     data-variant="default"
     data-size="sm"
   >
-    Modal footer
+    Dialog footer
   </p>
 </dialog>
 `;
@@ -167,7 +167,7 @@ exports[`With Header And Footer 1`] = `
   type="button"
   aria-haspopup="dialog"
 >
-  Open Modal
+  Open Dialog
 </button>
 <dialog open>
   <form method="dialog">
@@ -209,12 +209,12 @@ exports[`With Header And Footer 1`] = `
 </dialog>
 `;
 
-exports[`Without Modal Trigger Context 1`] = `
+exports[`Without Dialog Trigger Context 1`] = `
 <button
   data-variant="primary"
   type="button"
 >
-  Open Modal
+  Open Dialog
 </button>
 <dialog open>
   <form method="dialog">
@@ -232,10 +232,10 @@ exports[`Without Modal Trigger Context 1`] = `
     data-variant="default"
     data-size="sm"
   >
-    Modal subtittel
+    Dialog subtittel
   </p>
   <h2 style="margin-bottom: var(--ds-size-2);">
-    Modal header
+    Dialog header
   </h2>
   <p
     data-variant="default"
@@ -243,6 +243,6 @@ exports[`Without Modal Trigger Context 1`] = `
   >
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
   </p>
-  Modal footer
+  Dialog footer
 </dialog>
 `;
