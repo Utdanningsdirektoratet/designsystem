@@ -8,10 +8,6 @@ const meta: Meta<typeof Link> = {
   tags: ['alpha'],
   parameters: {
     customStyles: { padding: '2px' },
-    status: {
-      type: 'beta',
-      url: 'http://www.url.com/status',
-    },
   },
 };
 
