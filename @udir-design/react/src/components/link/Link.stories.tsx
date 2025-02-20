@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Link } from './Link';
 import { Paragraph } from '../alpha';
 import { EnvelopeClosedIcon } from '@navikt/aksel-icons';
+EnvelopeClosedIcon.displayName = 'EnvelopeClosedIcon';
 
 const meta: Meta<typeof Link> = {
   component: Link,
