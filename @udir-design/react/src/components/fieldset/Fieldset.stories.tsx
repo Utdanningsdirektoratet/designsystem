@@ -14,7 +14,7 @@ export default meta;
 type Story = StoryObj<typeof Fieldset>;
 
 export const Preview: Story = {
-  render: (args) => (
+  render: (args, context) => (
     <form>
       <Fieldset {...args}>
         <Fieldset.Legend>Skriv inn dine svar</Fieldset.Legend>
@@ -23,11 +23,11 @@ export const Preview: Story = {
         </Fieldset.Description>
         <Field>
           <Label>Kort beskrivelse</Label>
-          <Input id={'my-input'} />
+          <Input id={`${context.id}-input`} />
         </Field>
         <Field>
           <Label>Lang beskrivelse</Label>
-          <Textarea id={'my-textarea'} />
+          <Textarea id={`${context.id}-textarea`} />
         </Field>
       </Fieldset>
     </form>

@@ -12,23 +12,23 @@ exports[`Preview 1`] = `
     <div>
       <label
         data-weight="medium"
-        for="my-input"
+        for="components-fieldset--preview-input"
       >
         Kort beskrivelse
       </label>
       <input
         type="text"
-        id="my-input"
+        id="components-fieldset--preview-input"
       >
     </div>
     <div>
       <label
         data-weight="medium"
-        for="my-textarea"
+        for="components-fieldset--preview-textarea"
       >
         Lang beskrivelse
       </label>
-      <textarea id="my-textarea">
+      <textarea id="components-fieldset--preview-textarea">
       </textarea>
     </div>
   </fieldset>
