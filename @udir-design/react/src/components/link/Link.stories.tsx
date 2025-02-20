@@ -38,7 +38,7 @@ export const InText: Story = {
 export const WithIcon: Story = {
   args: {
     href: 'mailto:designsystem@digdir.no',
-    children: [<EnvelopeClosedIcon aria-hidden />, 'Kontakt oss'],
+    children: [<EnvelopeClosedIcon aria-hidden />, ' Kontakt oss'],
   },
 };
 
