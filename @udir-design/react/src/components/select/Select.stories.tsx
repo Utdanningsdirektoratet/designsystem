@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Select } from './Select';
 import { Label } from '../typography/label/Label';
 import { Field } from '../field/Field';
+import { expect, userEvent, within } from '@storybook/test';
 
 const meta: Meta<typeof Select> = {
   component: Select,
@@ -12,11 +13,17 @@ export default meta;
 type Story = StoryObj<typeof Select>;
 
 export const Preview: Story = {
+  args: {
+    'aria-invalid': false,
+    width: 'full',
+    disabled: false,
+    readOnly: false,
+  },
   render: (args, context) => (
     <Field>
       <Label>Velg et fjell</Label>
-      <Select {...args} id={context.id}>
-        <Select.Option value="blank">Velg …</Select.Option>
+      <Select {...args} defaultValue="" id={context.id}>
+        <Select.Option value="">Velg et fjell &hellip;</Select.Option>
         <Select.Option value="everest">Mount Everest</Select.Option>
         <Select.Option value="aconcagua">Aconcagua</Select.Option>
         <Select.Option value="denali">Denali</Select.Option>
@@ -28,4 +35,40 @@ export const Preview: Story = {
       </Select>
     </Field>
   ),
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const select = canvas.getByRole('combobox');
+
+    await step('The label "Velg et fjell" is rendered', async () => {
+      const label = canvas.getByLabelText(/velg et fjell/i);
+      expect(label).toBeInTheDocument();
+    });
+
+    await step(
+      'The select element is rendered with the default value',
+      async () => {
+        expect(select).toBeInTheDocument();
+        expect(select).toHaveValue('');
+      }
+    );
+
+    await step('The select contains all expected options', async () => {
+      const placeholderOption = canvas.getByRole('option', {
+        name: /velg et fjell/i,
+      });
+      expect(placeholderOption).toBeInTheDocument();
+      const everestOption = canvas.getByRole('option', {
+        name: /mount everest/i,
+      });
+      expect(everestOption).toBeInTheDocument();
+    });
+
+    await step(
+      'User can select an option from the select element',
+      async () => {
+        await userEvent.selectOptions(select, 'everest');
+        expect(select).toHaveValue('everest');
+      }
+    );
+  },
 };
