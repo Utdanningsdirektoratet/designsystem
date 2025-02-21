@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Heading, Link, Paragraph } from '../alpha';
 
 import { Alert } from './Alert';
+import { within, expect } from '@storybook/test';
 
 type Story = StoryObj<typeof Alert>;
 
@@ -17,6 +18,20 @@ export const Preview: Story = {
   args: {
     'data-color': 'info',
     children: 'En beskjed det er viktig at brukeren ser',
+  },
+  render: (args) => <Alert data-testid="alert-preview" {...args} />,
+  play: async ({ canvasElement, args, step }) => {
+    const canvas = within(canvasElement);
+    const alert = canvas.getByTestId('alert-preview');
+    await step('Alert is rendered ', async () => {
+      expect(alert).toBeTruthy();
+    });
+    await step('Alert has correct color', async () => {
+      expect(alert).toHaveAttribute('data-color', 'info');
+    });
+    await step('Alert has correct text', async () => {
+      expect(alert).toHaveTextContent(args.children as string);
+    });
   },
 };
 
