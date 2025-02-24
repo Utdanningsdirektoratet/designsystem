@@ -8,6 +8,7 @@ exports[`Preview 1`] = `
         data-variant="tertiary"
         type="button"
         aria-label="Forrige side"
+        aria-disabled="false"
       >
         Forrige
       </button>
@@ -74,9 +75,94 @@ exports[`Preview 1`] = `
         data-variant="tertiary"
         type="button"
         aria-label="Neste side"
+        aria-disabled="false"
       >
         Neste
       </button>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`With Anchor 1`] = `
+<nav aria-label="Sidenavigering">
+  <ul>
+    <li>
+      <a
+        href="#forrige-side"
+        data-variant="tertiary"
+        aria-label="Forrige side"
+        aria-disabled="false"
+      >
+        Forrige
+      </a>
+    </li>
+    <li>
+      <a
+        href="#side-1"
+        data-variant="tertiary"
+        aria-label="Side 1"
+      >
+        1
+      </a>
+    </li>
+    <li>
+      <a
+        href="#side-2"
+        data-variant="primary"
+        aria-label="Side 2"
+        aria-current="page"
+      >
+        2
+      </a>
+    </li>
+    <li>
+      <a
+        href="#side-3"
+        data-variant="tertiary"
+        aria-label="Side 3"
+      >
+        3
+      </a>
+    </li>
+    <li>
+      <a
+        href="#side-4"
+        data-variant="tertiary"
+        aria-label="Side 4"
+      >
+        4
+      </a>
+    </li>
+    <li>
+      <a
+        href="#side-5"
+        data-variant="tertiary"
+        aria-label="Side 5"
+      >
+        5
+      </a>
+    </li>
+    <li>
+    </li>
+    <li>
+      <a
+        href="#side-10"
+        data-variant="tertiary"
+        aria-label="Side 10"
+      >
+        10
+      </a>
+    </li>
+    <li>
+      <a
+        href="#neste-side"
+        data-variant="tertiary"
+        aria-label="Neste side"
+        aria-disabled="false"
+      >
+        Neste
+      </a>
     </li>
   </ul>
 </nav>
