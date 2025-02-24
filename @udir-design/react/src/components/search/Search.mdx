@@ -1,0 +1,53 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/blocks';
+import * as SearchStories from './Search.stories';
+
+<Meta of={SearchStories} />
+
+# Search
+
+<Primary />
+<Controls />
+
+## Slik bruker du Search
+
+Du velger selv om du vil bruke `Search.Clear` og `Search.Button`. Vi anbefaler at du bruker `Search.Clear` for å gi brukeren mulighet til å fjerne søket.
+Dersom du ikke har `Search.Button` vil input feltet få et søkeikon.
+
+Du burde legge på `aria-label` eller `aria-labelledby` dersom du ikke kobler `Search.Input` med en `Label`.
+
+```tsx
+import { Search } from '@udir-design/react';
+
+<Search>
+  <Search.Input aria-label="Søk" />
+  <Search.Clear />
+  <Search.Button />
+</Search.Clear>
+```
+
+## Kontrollert
+
+<Canvas of={SearchStories.Controlled} />
+
+## Varianter
+
+Du kan endre `variant` på `Button`, eller ta den bort for å få forskjellige varianter.
+
+<Canvas of={SearchStories.Variants} />
+
+## Med Label
+
+Dersom du vil ha label på søkefeltet, må du legge til en `Label` komponent som du kobler sammen med `Search.Input`.
+I eksempelet har vi brukt `Field` for å få oppkobling mellom `Label` og `Search.Input`.
+
+<Canvas of={SearchStories.WithLabel} />
+
+## Skjema
+
+Søkeknappen har typen `"submit"` og vil dermed automatisk sende inn skjema.
+
+<Canvas of={SearchStories.Form} />
+
+## Referanser
+
+- [The ideal search box is 27 characters wide](https://www.smashingmagazine.com/2009/09/10-useful-usability-findings-and-guidelines/#6-the-ideal-search-box-is-27-characters-wide)

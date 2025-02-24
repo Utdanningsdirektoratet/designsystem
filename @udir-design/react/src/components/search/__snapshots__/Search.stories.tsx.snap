@@ -1,5 +1,78 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Controlled 1`] = `
+<div>
+  <input
+    type="search"
+    placeholder
+    aria-label="Søk"
+    value
+  >
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="reset"
+    aria-label="Tøm"
+  >
+  </button>
+  <button
+    data-variant="primary"
+    type="submit"
+  >
+    Søk
+  </button>
+</div>
+<hr
+  aria-hidden="true"
+  style="margin-top: var(--ds-size-4);"
+>
+<p
+  data-variant="default"
+  style="margin: var(--ds-size-2) 0;"
+>
+  Du har skrevet inn:
+</p>
+<button
+  data-variant="primary"
+  type="button"
+>
+  Jeg vil ha Pizza
+</button>
+`;
+
+exports[`Form 1`] = `
+<form>
+  <div>
+    <input
+      type="search"
+      placeholder
+      aria-label="Søk"
+      value
+    >
+    <button
+      data-icon="true"
+      data-variant="tertiary"
+      type="reset"
+      aria-label="Tøm"
+    >
+    </button>
+    <button
+      data-variant="primary"
+      type="submit"
+    >
+      Søk
+    </button>
+  </div>
+</form>
+<p
+  data-variant="default"
+  data-size="md"
+  style="margin-top: var(--ds-size-2);"
+>
+  Submitted value:
+</p>
+`;
+
 exports[`Preview 1`] = `
 <div>
   <input
@@ -20,5 +93,104 @@ exports[`Preview 1`] = `
   >
     Søk
   </button>
+</div>
+`;
+
+exports[`Variants 1`] = `
+<div>
+  <div>
+    <input
+      type="search"
+      placeholder
+      aria-label="Søk"
+    >
+    <button
+      data-icon="true"
+      data-variant="tertiary"
+      type="reset"
+      aria-label="Tøm"
+    >
+    </button>
+  </div>
+  <hr
+    aria-hidden="true"
+    style="margin-top: var(--ds-size-4);"
+  >
+  <div>
+    <input
+      type="search"
+      placeholder
+      aria-label="Søk"
+    >
+    <button
+      data-icon="true"
+      data-variant="tertiary"
+      type="reset"
+      aria-label="Tøm"
+    >
+    </button>
+    <button
+      data-variant="primary"
+      type="submit"
+    >
+      Søk
+    </button>
+  </div>
+  <hr
+    aria-hidden="true"
+    style="margin-top: var(--ds-size-4);"
+  >
+  <div>
+    <input
+      type="search"
+      placeholder
+      aria-label="Søk"
+    >
+    <button
+      data-icon="true"
+      data-variant="tertiary"
+      type="reset"
+      aria-label="Tøm"
+    >
+    </button>
+    <button
+      data-variant="secondary"
+      type="submit"
+    >
+      Søk
+    </button>
+  </div>
+</div>
+`;
+
+exports[`With Label 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="components-search--with-label"
+  >
+    Søk etter katter
+  </label>
+  <div>
+    <input
+      type="search"
+      placeholder
+      id="components-search--with-label"
+      name="cat-search"
+    >
+    <button
+      data-icon="true"
+      data-variant="tertiary"
+      type="reset"
+      aria-label="Tøm"
+    >
+    </button>
+    <button
+      data-variant="primary"
+      type="submit"
+    >
+      Søk
+    </button>
+  </div>
 </div>
 `;
