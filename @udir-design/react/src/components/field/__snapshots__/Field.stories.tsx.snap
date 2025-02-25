@@ -1,158 +1,156 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Affix 1`] = `
-<div style="display: flex; flex-direction: column; gap: var(--ds-size-4);">
+<div>
+  <label
+    data-weight="medium"
+    for="components-field--affix-input"
+  >
+    Hvor mange kroner koster det per måned?
+  </label>
   <div>
-    <label
-      data-weight="medium"
-      for="components-field--affix-input"
+    <span aria-hidden="true">
+      NOK
+    </span>
+    <input
+      type="text"
+      id="components-field--affix-input"
     >
-      Hvor mange kroner koster det per måned?
-    </label>
-    <div>
-      <span aria-hidden="true">
-        NOK
-      </span>
-      <input
-        type="text"
-        id="components-field--affix-input"
-      >
-      <span aria-hidden="true">
-        pr. mnd.
-      </span>
-    </div>
+    <span aria-hidden="true">
+      pr. mnd.
+    </span>
   </div>
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="components-field--affix-textarea"
+  >
+    Hvor mange kilo veier eplene du har valgt?
+  </label>
   <div>
-    <label
-      data-weight="medium"
-      for="components-field--affix-textarea"
+    <textarea
+      rows="2"
+      cols="4"
+      id="components-field--affix-textarea"
     >
-      Hvor mange kilo veier eplene du har valgt?
-    </label>
-    <div>
-      <textarea
-        rows="2"
-        cols="4"
-        id="components-field--affix-textarea"
-      >
-      </textarea>
-      <span aria-hidden="true">
-        KG
-      </span>
-    </div>
+    </textarea>
+    <span aria-hidden="true">
+      KG
+    </span>
   </div>
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="components-field--affix-select"
+  >
+    Hvor mange kroner koster det?
+  </label>
   <div>
-    <label
-      data-weight="medium"
-      for="components-field--affix-select"
-    >
-      Hvor mange kroner koster det?
-    </label>
-    <div>
-      <span aria-hidden="true">
-        NOK
-      </span>
-      <select id="components-field--affix-select">
-        <option value="-1">
-          Velg …
-        </option>
-        <option value="10">
-          10
-        </option>
-        <option value="20">
-          20
-        </option>
-        <option value="30">
-          30
-        </option>
-      </select>
-    </div>
+    <span aria-hidden="true">
+      NOK
+    </span>
+    <select id="components-field--affix-select">
+      <option value="-1">
+        Velg …
+      </option>
+      <option value="10">
+        10
+      </option>
+      <option value="20">
+        20
+      </option>
+      <option value="30">
+        30
+      </option>
+    </select>
   </div>
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="components-field--affix-input-noaffix"
+  >
+    No affix
+  </label>
   <div>
-    <label
-      data-weight="medium"
-      for="components-field--affix-input-noaffix"
+    <input
+      type="text"
+      id="components-field--affix-input-noaffix"
     >
-      No affix
-    </label>
-    <div>
-      <input
-        type="text"
-        id="components-field--affix-input-noaffix"
-      >
-    </div>
   </div>
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="components-field--affix-input-noaffix-small"
+  >
+    No affix and small size
+  </label>
   <div>
-    <label
-      data-weight="medium"
-      for="components-field--affix-input-noaffix-small"
+    <input
+      type="text"
+      size="10"
+      id="components-field--affix-input-noaffix-small"
     >
-      No affix and small size
-    </label>
-    <div>
-      <input
-        type="text"
-        size="10"
-        id="components-field--affix-input-noaffix-small"
-      >
-    </div>
   </div>
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="components-field--affix-input-noaffix-huge"
+  >
+    No affix and huge size
+  </label>
   <div>
-    <label
-      data-weight="medium"
-      for="components-field--affix-input-noaffix-huge"
+    <input
+      type="text"
+      size="9999"
+      id="components-field--affix-input-noaffix-huge"
     >
-      No affix and huge size
-    </label>
-    <div>
-      <input
-        type="text"
-        size="9999"
-        id="components-field--affix-input-noaffix-huge"
-      >
-    </div>
   </div>
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="components-field--affix-input-affix-small"
+  >
+    Affix and small size
+  </label>
   <div>
-    <label
-      data-weight="medium"
-      for="components-field--affix-input-affix-small"
+    <span aria-hidden="true">
+      NOK
+    </span>
+    <input
+      type="text"
+      size="10"
+      id="components-field--affix-input-affix-small"
     >
-      Affix and small size
-    </label>
-    <div>
-      <span aria-hidden="true">
-        NOK
-      </span>
-      <input
-        type="text"
-        size="10"
-        id="components-field--affix-input-affix-small"
-      >
-      <span aria-hidden="true">
-        pr. mnd.
-      </span>
-    </div>
+    <span aria-hidden="true">
+      pr. mnd.
+    </span>
   </div>
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="components-field--affix-input-affix-huge"
+  >
+    Affix and huge size
+  </label>
   <div>
-    <label
-      data-weight="medium"
-      for="components-field--affix-input-affix-huge"
+    <span aria-hidden="true">
+      NOK
+    </span>
+    <input
+      type="text"
+      size="50"
+      id="components-field--affix-input-affix-huge"
     >
-      Affix and huge size
-    </label>
-    <div>
-      <span aria-hidden="true">
-        NOK
-      </span>
-      <input
-        type="text"
-        size="50"
-        id="components-field--affix-input-affix-huge"
-      >
-      <span aria-hidden="true">
-        pr. mnd.
-      </span>
-    </div>
+    <span aria-hidden="true">
+      pr. mnd.
+    </span>
   </div>
 </div>
 `;

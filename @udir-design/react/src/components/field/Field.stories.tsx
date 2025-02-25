@@ -35,14 +35,15 @@ export const Preview: Story = {
 };
 
 export const Affix: Story = {
+  parameters: {
+    customStyles: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 'var(--ds-size-4)',
+    },
+  },
   render: (args, context) => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--ds-size-4)',
-      }}
-    >
+    <>
       <Field>
         <Label>Hvor mange kroner koster det per måned?</Label>
         <Field.Affixes>
@@ -111,7 +112,7 @@ export const Affix: Story = {
           <Field.Affix>pr. mnd.</Field.Affix>
         </Field.Affixes>
       </Field>
-    </div>
+    </>
   ),
 };
 
