@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { SkipLink } from './SkipLink';
 import { Paragraph } from '../typography/paragraph/Paragraph';
+import { expect, userEvent, within } from '@storybook/test';
 
 const meta: Meta<typeof SkipLink> = {
   component: SkipLink,
@@ -15,14 +16,40 @@ export const Preview: Story = {
     <>
       <Paragraph>
         For å vise skiplinken, tab til dette eksempelet, eller klikk inni
-        eksempelet og trykk Tab.
+        eksempelet og trykk <kbd>Tab</kbd>.
         <SkipLink {...args} href="#main-content">
           Hopp til hovedinnhold
         </SkipLink>
       </Paragraph>
-      <Paragraph id="main-content" tabIndex={-1}>
+      <main id="main-content" tabIndex={-1}>
         Region som kan motta fokus fra skiplink.
-      </Paragraph>
+      </main>
     </>
   ),
 };
+
+export const Tabbed: Story = {
+  render: () => (
+    <Paragraph>
+      For å vise skiplinken, tab til dette eksempelet, eller klikk inni
+      eksempelet og trykk <kbd>Tab</kbd>.
+      <SkipLink href="#main-content">Hopp til hovedinnhold</SkipLink>
+      <main id="main-content" tabIndex={-1}>
+        Region som kan motta fokus fra skiplink.
+      </main>
+    </Paragraph>
+  ),
+};
+Tabbed.play = async (ctx) => {
+  const canvas = within(ctx.canvasElement);
+  const link = canvas.getByRole('link');
+  await expect(link).not.toSatisfy(isVisibleOnScreen);
+  await userEvent.tab();
+  await expect(link).toSatisfy(isVisibleOnScreen);
+  await expect(link).toHaveFocus();
+};
+
+function isVisibleOnScreen(el: Element) {
+  const { height, width } = el.getBoundingClientRect();
+  return height > 1 && width > 1;
+}
