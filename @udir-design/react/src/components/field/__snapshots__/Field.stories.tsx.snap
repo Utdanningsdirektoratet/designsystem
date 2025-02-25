@@ -1,23 +1,302 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Preview 1`] = `
-<div id="components-field--preview">
+exports[`Affix 1`] = `
+<div>
   <label
     data-weight="medium"
-    for="my-textarea"
+    for="components-field--affix-input"
   >
-    Label
+    Hvor mange kroner koster det per måned?
+  </label>
+  <div>
+    <span aria-hidden="true">
+      NOK
+    </span>
+    <input
+      type="text"
+      id="components-field--affix-input"
+    >
+    <span aria-hidden="true">
+      pr. mnd.
+    </span>
+  </div>
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="components-field--affix-textarea"
+  >
+    Hvor mange kilo veier eplene du har valgt?
+  </label>
+  <div>
+    <textarea
+      rows="2"
+      cols="4"
+      id="components-field--affix-textarea"
+    >
+    </textarea>
+    <span aria-hidden="true">
+      KG
+    </span>
+  </div>
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="components-field--affix-select"
+  >
+    Hvor mange kroner koster det?
+  </label>
+  <div>
+    <span aria-hidden="true">
+      NOK
+    </span>
+    <select id="components-field--affix-select">
+      <option value="-1">
+        Velg …
+      </option>
+      <option value="10">
+        10
+      </option>
+      <option value="20">
+        20
+      </option>
+      <option value="30">
+        30
+      </option>
+    </select>
+  </div>
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="components-field--affix-input-noaffix"
+  >
+    No affix
+  </label>
+  <div>
+    <input
+      type="text"
+      id="components-field--affix-input-noaffix"
+    >
+  </div>
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="components-field--affix-input-noaffix-small"
+  >
+    No affix and small size
+  </label>
+  <div>
+    <input
+      type="text"
+      size="10"
+      id="components-field--affix-input-noaffix-small"
+    >
+  </div>
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="components-field--affix-input-noaffix-huge"
+  >
+    No affix and huge size
+  </label>
+  <div>
+    <input
+      type="text"
+      size="9999"
+      id="components-field--affix-input-noaffix-huge"
+    >
+  </div>
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="components-field--affix-input-affix-small"
+  >
+    Affix and small size
+  </label>
+  <div>
+    <span aria-hidden="true">
+      NOK
+    </span>
+    <input
+      type="text"
+      size="10"
+      id="components-field--affix-input-affix-small"
+    >
+    <span aria-hidden="true">
+      pr. mnd.
+    </span>
+  </div>
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="components-field--affix-input-affix-huge"
+  >
+    Affix and huge size
+  </label>
+  <div>
+    <span aria-hidden="true">
+      NOK
+    </span>
+    <input
+      type="text"
+      size="50"
+      id="components-field--affix-input-affix-huge"
+    >
+    <span aria-hidden="true">
+      pr. mnd.
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Counter 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="components-field--counter"
+  >
+    Legg til en beskrivelse
+  </label>
+  <textarea
+    rows="2"
+    id="components-field--counter"
+    aria-describedby="components-field--counter:validation  components-field--counter:description"
+  >
+  </textarea>
+  <div
+    data-field="description"
+    aria-live="polite"
+    id="components-field--counter:description"
+  >
+  </div>
+  <p
+    data-variant="default"
+    data-field="validation"
+    id="components-field--counter:validation"
+  >
+    10 tegn igjen
+  </p>
+</div>
+`;
+
+exports[`Position 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Fields with position="start"
+  </legend>
+  <div data-position="start">
+    <label
+      data-weight="medium"
+      for="components-field--position-radio-start"
+    >
+      Radio
+    </label>
+    <input
+      type="radio"
+      id="components-field--position-radio-start"
+    >
+  </div>
+  <div data-position="start">
+    <label
+      data-weight="medium"
+      for="components-field--position-checkbox-start"
+    >
+      Checkbox
+    </label>
+    <input
+      type="checkbox"
+      id="components-field--position-checkbox-start"
+    >
+  </div>
+  <div data-position="start">
+    <label
+      data-weight="medium"
+      for="components-field--position-switch-start"
+    >
+      Switch
+    </label>
+    <input
+      type="checkbox"
+      role="switch"
+      id="components-field--position-switch-start"
+    >
+  </div>
+</fieldset>
+<br>
+<fieldset>
+  <legend data-weight="medium">
+    Fields with position="end"
+  </legend>
+  <div data-position="end">
+    <label
+      data-weight="medium"
+      for="components-field--position-radio-end"
+    >
+      Radio
+    </label>
+    <input
+      type="radio"
+      id="components-field--position-radio-end"
+    >
+  </div>
+  <div data-position="end">
+    <label
+      data-weight="medium"
+      for="components-field--position-checkbox-end"
+    >
+      Checkbox
+    </label>
+    <input
+      type="checkbox"
+      id="components-field--position-checkbox-end"
+    >
+  </div>
+  <div data-position="end">
+    <label
+      data-weight="medium"
+      for="components-field--position-switch-end"
+    >
+      Switch
+    </label>
+    <input
+      type="checkbox"
+      role="switch"
+      id="components-field--position-switch-end"
+    >
+  </div>
+</fieldset>
+`;
+
+exports[`Preview 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="components-field--preview"
+  >
+    Kort beskrivelse
   </label>
   <div
     data-field="description"
-    id="my-textarea:description"
+    id="components-field--preview:description"
   >
-    Description
+    Beskrivelse
   </div>
-  <textarea
-    id="my-textarea"
-    aria-describedby="my-textarea:description"
+  <input
+    type="text"
+    id="components-field--preview"
+    aria-describedby="components-field--preview:validation  components-field--preview:description"
   >
-  </textarea>
+  <p
+    data-field="validation"
+    id="components-field--preview:validation"
+  >
+    Feilmelding
+  </p>
 </div>
 `;
