@@ -5,7 +5,7 @@ exports[`Affix 1`] = `
   <div>
     <label
       data-weight="medium"
-      for=":m6tfpnzd62f"
+      for="components-field--affix-input"
     >
       Hvor mange kroner koster det per måned?
     </label>
@@ -15,7 +15,7 @@ exports[`Affix 1`] = `
       </span>
       <input
         type="text"
-        id=":m6tfpnzd62f"
+        id="components-field--affix-input"
       >
       <span aria-hidden="true">
         pr. mnd.
@@ -25,7 +25,7 @@ exports[`Affix 1`] = `
   <div>
     <label
       data-weight="medium"
-      for=":m6tfpnzdj1c"
+      for="components-field--affix-textarea"
     >
       Hvor mange kilo veier eplene du har valgt?
     </label>
@@ -33,7 +33,7 @@ exports[`Affix 1`] = `
       <textarea
         rows="2"
         cols="4"
-        id=":m6tfpnzdj1c"
+        id="components-field--affix-textarea"
       >
       </textarea>
       <span aria-hidden="true">
@@ -44,7 +44,7 @@ exports[`Affix 1`] = `
   <div>
     <label
       data-weight="medium"
-      for=":m6tfpnzd5t9"
+      for="components-field--affix-select"
     >
       Hvor mange kroner koster det?
     </label>
@@ -52,7 +52,7 @@ exports[`Affix 1`] = `
       <span aria-hidden="true">
         NOK
       </span>
-      <select id=":m6tfpnzd5t9">
+      <select id="components-field--affix-select">
         <option value="-1">
           Velg …
         </option>
@@ -71,21 +71,21 @@ exports[`Affix 1`] = `
   <div>
     <label
       data-weight="medium"
-      for=":m6tfpnzd66p"
+      for="components-field--affix-input-noaffix"
     >
       No affix
     </label>
     <div>
       <input
         type="text"
-        id=":m6tfpnzd66p"
+        id="components-field--affix-input-noaffix"
       >
     </div>
   </div>
   <div>
     <label
       data-weight="medium"
-      for=":m6tfpnzdk29"
+      for="components-field--affix-input-noaffix-small"
     >
       No affix and small size
     </label>
@@ -93,14 +93,14 @@ exports[`Affix 1`] = `
       <input
         type="text"
         size="10"
-        id=":m6tfpnzdk29"
+        id="components-field--affix-input-noaffix-small"
       >
     </div>
   </div>
   <div>
     <label
       data-weight="medium"
-      for=":m6tfpnzd934"
+      for="components-field--affix-input-noaffix-huge"
     >
       No affix and huge size
     </label>
@@ -108,14 +108,14 @@ exports[`Affix 1`] = `
       <input
         type="text"
         size="9999"
-        id=":m6tfpnzd934"
+        id="components-field--affix-input-noaffix-huge"
       >
     </div>
   </div>
   <div>
     <label
       data-weight="medium"
-      for=":m6tfpnzdvsl"
+      for="components-field--affix-input-affix-small"
     >
       Affix and small size
     </label>
@@ -126,7 +126,7 @@ exports[`Affix 1`] = `
       <input
         type="text"
         size="10"
-        id=":m6tfpnzdvsl"
+        id="components-field--affix-input-affix-small"
       >
       <span aria-hidden="true">
         pr. mnd.
@@ -136,7 +136,7 @@ exports[`Affix 1`] = `
   <div>
     <label
       data-weight="medium"
-      for=":m6tfpnzdvmq"
+      for="components-field--affix-input-affix-huge"
     >
       Affix and huge size
     </label>
@@ -147,7 +147,7 @@ exports[`Affix 1`] = `
       <input
         type="text"
         size="50"
-        id=":m6tfpnzdvmq"
+        id="components-field--affix-input-affix-huge"
       >
       <span aria-hidden="true">
         pr. mnd.
@@ -161,26 +161,26 @@ exports[`Counter 1`] = `
 <div>
   <label
     data-weight="medium"
-    for=":m6tfpo0ezgk"
+    for="components-field--counter"
   >
     Legg til en beskrivelse
   </label>
   <textarea
     rows="2"
-    id=":m6tfpo0ezgk"
-    aria-describedby=":m6tfpo0ezgk:validation  :m6tfpo0ezgk:description"
+    id="components-field--counter"
+    aria-describedby="components-field--counter:validation  components-field--counter:description"
   >
   </textarea>
   <div
     data-field="description"
     aria-live="polite"
-    id=":m6tfpo0ezgk:description"
+    id="components-field--counter:description"
   >
   </div>
   <p
     data-variant="default"
     data-field="validation"
-    id=":m6tfpo0ezgk:validation"
+    id="components-field--counter:validation"
   >
     10 tegn igjen
   </p>
@@ -192,41 +192,41 @@ exports[`Position 1`] = `
   <legend data-weight="medium">
     Fields with position="start"
   </legend>
-  <div data-position="start">
+  <div position="start">
     <label
       data-weight="medium"
-      for=":m6tfpo1qwaj"
+      for="components-field--position-radio-start"
     >
       Radio
     </label>
     <input
       type="radio"
-      id=":m6tfpo1qwaj"
+      id="components-field--position-radio-start"
     >
   </div>
-  <div data-position="start">
+  <div position="start">
     <label
       data-weight="medium"
-      for=":m6tfpo1qtu1"
+      for="components-field--position-checkbox-start"
     >
       Checkbox
     </label>
     <input
       type="checkbox"
-      id=":m6tfpo1qtu1"
+      id="components-field--position-checkbox-start"
     >
   </div>
-  <div data-position="start">
+  <div position="start">
     <label
       data-weight="medium"
-      for=":m6tfpo1q1ta"
+      for="components-field--position-switch-start"
     >
       Switch
     </label>
     <input
       type="checkbox"
       role="switch"
-      id=":m6tfpo1q1ta"
+      id="components-field--position-switch-start"
     >
   </div>
 </fieldset>
@@ -235,68 +235,68 @@ exports[`Position 1`] = `
   <legend data-weight="medium">
     Fields with position="end"
   </legend>
-  <div data-position="end">
+  <div position="end">
     <label
       data-weight="medium"
-      for=":m6tfpo1q68t"
+      for="components-field--position-radio-end"
     >
       Radio
     </label>
     <input
       type="radio"
-      id=":m6tfpo1q68t"
+      id="components-field--position-radio-end"
     >
   </div>
-  <div data-position="end">
+  <div position="end">
     <label
       data-weight="medium"
-      for=":m6tfpo1qjib"
+      for="components-field--position-checkbox-end"
     >
       Checkbox
     </label>
     <input
       type="checkbox"
-      id=":m6tfpo1qjib"
+      id="components-field--position-checkbox-end"
     >
   </div>
-  <div data-position="end">
+  <div position="end">
     <label
       data-weight="medium"
-      for=":m6tfpo1qu98"
+      for="components-field--position-switch-end"
     >
       Switch
     </label>
     <input
       type="checkbox"
       role="switch"
-      id=":m6tfpo1qu98"
+      id="components-field--position-switch-end"
     >
   </div>
 </fieldset>
 `;
 
 exports[`Preview 1`] = `
-<div id="components-field--preview">
+<div>
   <label
     data-weight="medium"
-    for=":m6tfpnxtvwx"
+    for="components-field--preview"
   >
     Kort beskrivelse
   </label>
   <div
     data-field="description"
-    id=":m6tfpnxtvwx:description"
+    id="components-field--preview:description"
   >
     Beskrivelse
   </div>
   <input
     type="text"
-    id=":m6tfpnxtvwx"
-    aria-describedby=":m6tfpnxtvwx:validation  :m6tfpnxtvwx:description"
+    id="components-field--preview"
+    aria-describedby="components-field--preview:validation  components-field--preview:description"
   >
   <p
     data-field="validation"
-    id=":m6tfpnxtvwx:validation"
+    id="components-field--preview:validation"
   >
     Feilmelding
   </p>

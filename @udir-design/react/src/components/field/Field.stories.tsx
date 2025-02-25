@@ -25,17 +25,17 @@ type Story = StoryObj<typeof Field>;
 
 export const Preview: Story = {
   render: (args, context) => (
-    <Field {...args} id={context.id}>
+    <Field {...args}>
       <Label>Kort beskrivelse</Label>
       <Field.Description>Beskrivelse</Field.Description>
-      <Input />
+      <Input id={context.id} />
       <ValidationMessage>Feilmelding</ValidationMessage>
     </Field>
   ),
 };
 
 export const Affix: Story = {
-  render: () => (
+  render: (args, context) => (
     <div
       style={{
         display: 'flex',
@@ -47,7 +47,7 @@ export const Affix: Story = {
         <Label>Hvor mange kroner koster det per måned?</Label>
         <Field.Affixes>
           <Field.Affix>NOK</Field.Affix>
-          <Input />
+          <Input id={`${context.id}-input`} />
           <Field.Affix>pr. mnd.</Field.Affix>
         </Field.Affixes>
       </Field>
@@ -55,7 +55,7 @@ export const Affix: Story = {
       <Field>
         <Label>Hvor mange kilo veier eplene du har valgt?</Label>
         <Field.Affixes>
-          <Textarea rows={2} cols={4} />
+          <Textarea rows={2} cols={4} id={`${context.id}-textarea`} />
           <Field.Affix>KG</Field.Affix>
         </Field.Affixes>
       </Field>
@@ -64,7 +64,7 @@ export const Affix: Story = {
         <Label>Hvor mange kroner koster det?</Label>
         <Field.Affixes>
           <Field.Affix>NOK</Field.Affix>
-          <Select>
+          <Select id={`${context.id}-select`}>
             <Select.Option value="-1">Velg &hellip;</Select.Option>
             <Select.Option value="10">10</Select.Option>
             <Select.Option value="20">20</Select.Option>
@@ -76,21 +76,21 @@ export const Affix: Story = {
       <Field>
         <Label>No affix</Label>
         <Field.Affixes>
-          <Input />
+          <Input id={`${context.id}-input-noaffix`} />
         </Field.Affixes>
       </Field>
 
       <Field>
         <Label>No affix and small size</Label>
         <Field.Affixes>
-          <Input size={10} />
+          <Input size={10} id={`${context.id}-input-noaffix-small`} />
         </Field.Affixes>
       </Field>
 
       <Field>
         <Label>No affix and huge size</Label>
         <Field.Affixes>
-          <Input size={9999} />
+          <Input size={9999} id={`${context.id}-input-noaffix-huge`} />
         </Field.Affixes>
       </Field>
 
@@ -98,7 +98,7 @@ export const Affix: Story = {
         <Label>Affix and small size</Label>
         <Field.Affixes>
           <Field.Affix>NOK</Field.Affix>
-          <Input size={10} />
+          <Input size={10} id={`${context.id}-input-affix-small`} />
           <Field.Affix>pr. mnd.</Field.Affix>
         </Field.Affixes>
       </Field>
@@ -107,7 +107,7 @@ export const Affix: Story = {
         <Label>Affix and huge size</Label>
         <Field.Affixes>
           <Field.Affix>NOK</Field.Affix>
-          <Input size={50} />
+          <Input size={50} id={`${context.id}-input-affix-huge`} />
           <Field.Affix>pr. mnd.</Field.Affix>
         </Field.Affixes>
       </Field>
@@ -116,31 +116,35 @@ export const Affix: Story = {
 };
 
 export const Counter: Story = {
-  args: {
-    children: [
-      <Label>Legg til en beskrivelse</Label>,
-      <Textarea rows={2} />,
-      <Field.Counter limit={10} />,
-    ],
-  },
+  render: (args, context) => (
+    <Field {...args}>
+      <Label>Legg til en beskrivelse</Label>
+      <Textarea rows={2} id={context.id} />
+      <Field.Counter limit={10} />
+    </Field>
+  ),
 };
 
 export const Position: Story = {
-  render: () => (
+  render: (args, context) => (
     <>
       <Fieldset>
         <Fieldset.Legend>Fields with position="start"</Fieldset.Legend>
         <Field position="start">
           <Label>Radio</Label>
-          <Input type="radio" />
+          <Input type="radio" id={`${context.id}-radio-start`} />
         </Field>
         <Field position="start">
           <Label>Checkbox</Label>
-          <Input type="checkbox" />
+          <Input type="checkbox" id={`${context.id}-checkbox-start`} />
         </Field>
         <Field position="start">
           <Label>Switch</Label>
-          <Input type="checkbox" role="switch" />
+          <Input
+            type="checkbox"
+            role="switch"
+            id={`${context.id}-switch-start`}
+          />
         </Field>
       </Fieldset>
       <br />
@@ -148,15 +152,19 @@ export const Position: Story = {
         <Fieldset.Legend>Fields with position="end"</Fieldset.Legend>
         <Field position="end">
           <Label>Radio</Label>
-          <Input type="radio" />
+          <Input type="radio" id={`${context.id}-radio-end`} />
         </Field>
         <Field position="end">
           <Label>Checkbox</Label>
-          <Input type="checkbox" />
+          <Input type="checkbox" id={`${context.id}-checkbox-end`} />
         </Field>
         <Field position="end">
           <Label>Switch</Label>
-          <Input type="checkbox" role="switch" />
+          <Input
+            type="checkbox"
+            role="switch"
+            id={`${context.id}-switch-end`}
+          />
         </Field>
       </Fieldset>
     </>
