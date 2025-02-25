@@ -44,10 +44,10 @@ export const Disabled: Story = {
   args: {
     disabled: true,
   },
-  render: (args) => (
+  render: (args, context) => (
     <Field>
       <Label>Velg et fjell</Label>
-      <Select {...args}>
+      <Select {...args} id={context.id}>
         <Select.Option value="blank">Velg &hellip;</Select.Option>
         <Select.Option value="everest">Mount Everest</Select.Option>
         <Select.Option value="aconcagua">Aconcagua</Select.Option>
@@ -66,10 +66,10 @@ export const WithError: Story = {
   args: {
     'aria-invalid': true,
   },
-  render: (args) => (
+  render: (args, context) => (
     <Field>
       <Label>Velg et fjell</Label>
-      <Select {...args}>
+      <Select {...args} id={context.id}>
         <Select.Option value="blank">Velg &hellip;</Select.Option>
         <Select.Option value="everest">Mount Everest</Select.Option>
         <Select.Option value="aconcagua">Aconcagua</Select.Option>
@@ -86,10 +86,10 @@ export const WithError: Story = {
 };
 
 export const WithOptgroup: Story = {
-  render: (args) => (
+  render: (args, context) => (
     <Field>
       <Label>Velg et fjell</Label>
-      <Select {...args}>
+      <Select {...args} id={context.id}>
         <Select.Optgroup label="Gruppe 1">
           <Select.Option value="everest">Mount Everest</Select.Option>
           <Select.Option value="aconcagua">Aconcagua</Select.Option>

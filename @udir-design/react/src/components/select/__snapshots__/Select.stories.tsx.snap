@@ -5,13 +5,13 @@ exports[`Disabled 1`] = `
   <label
     data-weight="medium"
     aria-disabled="true"
-    for=":m6yxykiehgw"
+    for="components-select--disabled"
   >
     Velg et fjell
   </label>
   <select
     disabled
-    id=":m6yxykiehgw"
+    id="components-select--disabled"
   >
     <option value="blank">
       Velg …
@@ -95,14 +95,14 @@ exports[`With Error 1`] = `
 <div>
   <label
     data-weight="medium"
-    for=":m6yxykjafrq"
+    for="components-select--with-error"
   >
     Velg et fjell
   </label>
   <select
     aria-invalid="true"
-    id=":m6yxykjafrq"
-    aria-describedby=":m6yxykjafrq:validation"
+    id="components-select--with-error"
+    aria-describedby="components-select--with-error:validation"
   >
     <option value="blank">
       Velg …
@@ -134,7 +134,7 @@ exports[`With Error 1`] = `
   </select>
   <p
     data-field="validation"
-    id=":m6yxykjafrq:validation"
+    id="components-select--with-error:validation"
   >
     Velg et fjell
   </p>
@@ -145,11 +145,11 @@ exports[`With Optgroup 1`] = `
 <div>
   <label
     data-weight="medium"
-    for=":m6yxykk7adq"
+    for="components-select--with-optgroup"
   >
     Velg et fjell
   </label>
-  <select id=":m6yxykk7adq">
+  <select id="components-select--with-optgroup">
     <optgroup label="Gruppe 1">
       <option value="everest">
         Mount Everest
