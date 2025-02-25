@@ -10,6 +10,7 @@ import {
   PaperplaneIcon,
 } from '@navikt/aksel-icons';
 import { useState } from 'react';
+import { expect, fn, userEvent, within } from '@storybook/test';
 
 const meta: Meta<typeof ToggleGroup> = {
   component: ToggleGroup,
@@ -22,12 +23,65 @@ type Story = StoryObj<typeof ToggleGroup>;
 export const Preview: Story = {
   args: {
     defaultValue: 'innboks',
+    onChange: fn(),
     children: [
       <ToggleGroup.Item value="innboks">Innboks</ToggleGroup.Item>,
       <ToggleGroup.Item value="utkast">Utkast</ToggleGroup.Item>,
       <ToggleGroup.Item value="arkiv">Arkiv</ToggleGroup.Item>,
       <ToggleGroup.Item value="sendt">Sendt</ToggleGroup.Item>,
     ],
+  },
+  play: async ({ canvasElement, step, args }) => {
+    const canvas = within(canvasElement);
+    const innboksButton = canvas.getByRole('radio', { name: /innboks/i });
+    const utkastButton = canvas.getByRole('radio', { name: /utkast/i });
+    const arkivButton = canvas.getByRole('radio', { name: /arkiv/i });
+
+    await step('Default selection is "Innboks"', async () => {
+      expect(innboksButton).toHaveAttribute('aria-checked', 'true');
+    });
+
+    await step('Only one ToggleGroup item is active initially', async () => {
+      const buttons = canvas.getAllByRole('radio');
+      const activeButtons = buttons.filter(
+        (btn) => btn.getAttribute('aria-checked') === 'true'
+      );
+      expect(activeButtons).toHaveLength(1);
+    });
+
+    await step('User can navigate with arrow keys', async () => {
+      await userEvent.tab();
+      expect(innboksButton).toHaveFocus();
+
+      await userEvent.keyboard('{arrowright}');
+      expect(utkastButton).toHaveFocus();
+
+      await userEvent.keyboard('{arrowright}');
+      expect(arkivButton).toHaveFocus();
+
+      await userEvent.keyboard('{arrowleft}');
+      expect(utkastButton).toHaveFocus();
+    });
+
+    await step(
+      'Clicking a different option updates the active state and calls onChange',
+      async () => {
+        expect(utkastButton).toHaveAttribute('aria-checked', 'false');
+        await userEvent.click(utkastButton);
+        expect(args.onChange).toHaveBeenCalledWith('utkast');
+        expect(utkastButton).toHaveAttribute('aria-checked', 'true');
+        expect(innboksButton).toHaveAttribute('aria-checked', 'false');
+      }
+    );
+
+    await step(
+      'Clicking an already active option keeps it active',
+      async () => {
+        expect(utkastButton).toHaveAttribute('aria-checked', 'true');
+        await userEvent.click(utkastButton);
+        expect(utkastButton).toHaveAttribute('aria-checked', 'true');
+      }
+    );
   },
 };
 

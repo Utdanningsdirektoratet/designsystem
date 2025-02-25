@@ -1,35 +1,326 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Kontrollert 1`] = `
+<div
+  role="radiogroup"
+  tabindex="0"
+>
+  <button
+    data-variant="tertiary"
+    type="button"
+    value="innboks"
+    id="togglegroup-item-:ro:"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-:rm:"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M3 5.25a.75.75 0 0 0-.75.75v13c0 .414.336.75.75.75h18a.75.75 0 0 0 .75-.75V6a.75.75 0 0 0-.75-.75zm.75 11.94 5.273-5.273L3.75 8.4zm6.546-4.425L4.81 18.25h14.378l-5.485-5.485-1.288.859a.75.75 0 0 1-.832 0zm4.681-.848L20.25 8.4v8.788zm-11-5.167L12 12.099l8.023-5.349z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Innboks
+  </button>
+  <button
+    data-variant="primary"
+    type="button"
+    value="utkast"
+    id="togglegroup-item-:rr:"
+    aria-checked="true"
+    aria-current="true"
+    role="radio"
+    name="togglegroup-name-:rm:"
+    data-roving-tabindex-item="true"
+    tabindex="0"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M11.286 11.483a.75.75 0 0 1 .099-.33l4.5-7.795a2.75 2.75 0 0 1 4.763 2.75l-4.5 7.795a.75.75 0 0 1-.236.25l-3.732 2.465a.75.75 0 0 1-1.162-.671zm1.486.266-.167 2.79L14.937 13l3.028-5.243-2.165-1.25zm6.577-6.39-.634 1.097-2.165-1.25.634-1.098a1.25 1.25 0 1 1 2.165 1.25M12.5 4.75H5.75v15.5h11.5V15.5a.75.75 0 0 1 1.5 0v5c0 .69-.56 1.25-1.25 1.25h-12c-.69 0-1.25-.56-1.25-1.25v-16c0-.69.56-1.25 1.25-1.25h7a.75.75 0 0 1 0 1.5"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Utkast
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    value="arkiv"
+    id="togglegroup-item-:ru:"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-:rm:"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M3.25 4A.75.75 0 0 1 4 3.25h16a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-.75.75h-.25V19A1.75 1.75 0 0 1 18 20.75H6A1.75 1.75 0 0 1 4.25 19V8.75H4A.75.75 0 0 1 3.25 8zm2.5 4.75h12.5V19a.25.25 0 0 1-.25.25H6a.25.25 0 0 1-.25-.25zm-1-4v2.5h14.5v-2.5zm9.25 8.5a.75.75 0 0 0 0-1.5h-4a.75.75 0 0 0 0 1.5z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Arkiv
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    value="sendt"
+    id="togglegroup-item-:r11:"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-:rm:"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M6.317 4.32a.75.75 0 0 0-1.023.932L7.704 12l-2.41 6.748a.75.75 0 0 0 1.023.932l15-7a.75.75 0 0 0 0-1.36zm2.712 6.93L7.31 6.44 19.227 12 7.31 17.56l1.719-4.81H12.5a.75.75 0 0 0 0-1.5z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Sendt
+  </button>
+</div>
+<hr aria-hidden="true">
+<p data-variant="default">
+  Du har valgt: utkast
+</p>
+<button
+  data-variant="primary"
+  type="button"
+  data-size="sm"
+>
+  Velg Arkiv
+</button>
+`;
+
+exports[`Only Icons 1`] = `
+<div
+  role="radiogroup"
+  data-color="accent"
+  tabindex="0"
+>
+  <button
+    data-icon="true"
+    data-variant="primary"
+    type="button"
+    value="option-1"
+    popovertarget=":ra:"
+    popovertargetaction="show"
+    id="togglegroup-item-:rc:"
+    aria-checked="true"
+    aria-current="true"
+    role="radio"
+    name="togglegroup-name-:r9:"
+    data-roving-tabindex-item="true"
+    tabindex="0"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-labelledby="title-rd"
+    >
+      <title id="title-rd">
+        AlignLeftIcon
+      </title>
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4 3.25a.75.75 0 0 1 .75.75v16a.75.75 0 0 1-1.5 0V4A.75.75 0 0 1 4 3.25M6.25 6A.75.75 0 0 1 7 5.25h13a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-.75.75H7a.75.75 0 0 1-.75-.75zm1.5.75v2.5h11.5v-2.5zM7 13.25a.75.75 0 0 0-.75.75v4c0 .414.336.75.75.75h7a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 0-.75-.75zm.75 4v-2.5h5.5v2.5z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+  </button>
+  <div
+    role="tooltip"
+    id=":ra:"
+    popover="manual"
+    style="opacity: 0;"
+  >
+    Venstrestilt
+  </div>
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
+    value="option-2"
+    popovertarget=":re:"
+    popovertargetaction="show"
+    id="togglegroup-item-:rg:"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-:r9:"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-labelledby="title-rh"
+    >
+      <title id="title-rh">
+        AlignCenterIcon
+      </title>
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M12 3.25a.75.75 0 0 1 .75.75v1.25h5.75a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-.75.75h-5.75v2.5h2.75a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-.75.75h-2.75V20a.75.75 0 0 1-1.5 0v-1.25H8.5a.75.75 0 0 1-.75-.75v-4a.75.75 0 0 1 .75-.75h2.75v-2.5H5.5a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75h5.75V4a.75.75 0 0 1 .75-.75m-.75 11.5h-2v2.5h2zm1.5 2.5h2v-2.5h-2zm-6.5-10.5h5v2.5h-5zm6.5 0v2.5h5v-2.5z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+  </button>
+  <div
+    role="tooltip"
+    id=":re:"
+    popover="manual"
+    style="opacity: 0;"
+  >
+    Midtstilt
+  </div>
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
+    value="option-3"
+    popovertarget=":ri:"
+    popovertargetaction="show"
+    id="togglegroup-item-:rk:"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-:r9:"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-labelledby="title-rl"
+    >
+      <title id="title-rl">
+        AlignRightIcon
+      </title>
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M20 20.75a.75.75 0 0 1-.75-.75V4a.75.75 0 0 1 1.5 0v16a.75.75 0 0 1-.75.75M17.75 10a.75.75 0 0 1-.75.75H4a.75.75 0 0 1-.75-.75V6A.75.75 0 0 1 4 5.25h13a.75.75 0 0 1 .75.75zm-1.5-.75v-2.5H4.75v2.5zm.75 9.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 0-.75-.75h-7a.75.75 0 0 0-.75.75v4c0 .414.336.75.75.75zm-.75-4v2.5h-5.5v-2.5z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+  </button>
+  <div
+    role="tooltip"
+    id=":ri:"
+    popover="manual"
+    style="opacity: 0;"
+  >
+    Høyrestilt
+  </div>
+</div>
+`;
+
 exports[`Preview 1`] = `
 <div
   role="radiogroup"
   tabindex="0"
 >
   <button
-    data-variant="primary"
+    data-variant="tertiary"
     type="button"
     value="innboks"
     id="togglegroup-item-:r2:"
-    aria-checked="true"
-    aria-current="true"
-    role="radio"
-    name="togglegroup-name-:r0:"
-    data-roving-tabindex-item="true"
-    tabindex="0"
-  >
-    Innboks
-  </button>
-  <button
-    data-variant="tertiary"
-    type="button"
-    value="utkast"
-    id="togglegroup-item-:r4:"
     aria-checked="false"
     aria-current="false"
     role="radio"
     name="togglegroup-name-:r0:"
     data-roving-tabindex-item="true"
     tabindex="-1"
+  >
+    Innboks
+  </button>
+  <button
+    data-variant="primary"
+    type="button"
+    value="utkast"
+    id="togglegroup-item-:r4:"
+    aria-checked="true"
+    aria-current="true"
+    role="radio"
+    name="togglegroup-name-:r0:"
+    data-roving-tabindex-item="true"
+    tabindex="0"
   >
     Utkast
   </button>
