@@ -1,0 +1,129 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Eksempel Tekst 1`] = `
+<h1
+  data-size="xl"
+  style="margin-bottom: var(--ds-size-2);"
+>
+  Samordnet registermelding (H1)
+</h1>
+<p
+  data-variant="long"
+  style="margin-bottom: var(--ds-size-2);"
+>
+  Her kan du registrere nye virksomheter, som for eksempel enkeltpersonforetak, foreninger, aksjeselskap, ansvarlige selskap, samvirkeforetak og stiftelser. De aller fleste organisasjonsformene kan bruke denne tjenesten.
+</p>
+<h2
+  data-size="lg"
+  style="margin-bottom: var(--ds-size-2);"
+>
+  Når skal du bruke skjemaet? (H2)
+</h2>
+<p
+  data-variant="default"
+  style="margin-bottom: var(--ds-size-2);"
+>
+  Denne tjenesten kan du bruke for å melde opplysninger til Enhetsregisteret, Foretaksregisteret, Frivillighetsregisteret, NAV Aa-registeret, Virksomhets- og foretaksregisteret hos SSB, Stiftelsesregisteret og Skattedirektoratets register over upersonlige skattytere.
+</p>
+<h3
+  data-size="md"
+  style="margin-bottom: var(--ds-size-2);"
+>
+  Signering (H3)
+</h3>
+<p
+  data-variant="short"
+  style="margin-bottom: var(--ds-size-2);"
+>
+  Når du skal signere meldingen vil du motta en signeringsoppgave i meldingsboksen din i Altinn. Meldingen blir ikke sendt til behandling før alle har signert.
+</p>
+<h4
+  data-size="sm"
+  style="margin-bottom: var(--ds-size-2);"
+>
+  Krav om rolle for signering (H4)
+</h4>
+<p
+  data-variant="default"
+  style="margin-bottom: var(--ds-size-2);"
+>
+  For å signere på vegne av en virksomhet, trenger du Altinn-rollen Signerer av Samordnet registermelding. Du kan se hvilke roller du har for en aktør på menypunktet Profil, Skjema og tjenester du har rettighet til. Om du ikke har disse rollene, må du få noen som har rollene til å delegere dem til deg.
+</p>
+<h5
+  data-size="xs"
+  style="margin-bottom: var(--ds-size-2);"
+>
+  Personvern (H5)
+</h5>
+<p
+  data-variant="short"
+  style="margin-bottom: var(--ds-size-2);"
+>
+  Personvernerklæringen gir informasjon om hvilke personopplysninger vi behandler, hvordan disse blir behandlet og hvilke rettigheter du har.
+</p>
+`;
+
+exports[`Eksempel Tekst Dark 1`] = `
+<div data-color-scheme="dark">
+  <h1
+    data-size="xl"
+    style="margin-bottom: var(--ds-size-2);"
+  >
+    Samordnet registermelding (H1)
+  </h1>
+  <p
+    data-variant="long"
+    style="margin-bottom: var(--ds-size-2);"
+  >
+    Her kan du registrere nye virksomheter, som for eksempel enkeltpersonforetak, foreninger, aksjeselskap, ansvarlige selskap, samvirkeforetak og stiftelser. De aller fleste organisasjonsformene kan bruke denne tjenesten.
+  </p>
+  <h2
+    data-size="lg"
+    style="margin-bottom: var(--ds-size-2);"
+  >
+    Når skal du bruke skjemaet? (H2)
+  </h2>
+  <p
+    data-variant="default"
+    style="margin-bottom: var(--ds-size-2);"
+  >
+    Denne tjenesten kan du bruke for å melde opplysninger til Enhetsregisteret, Foretaksregisteret, Frivillighetsregisteret, NAV Aa-registeret, Virksomhets- og foretaksregisteret hos SSB, Stiftelsesregisteret og Skattedirektoratets register over upersonlige skattytere.
+  </p>
+  <h3
+    data-size="md"
+    style="margin-bottom: var(--ds-size-2);"
+  >
+    Signering (H3)
+  </h3>
+  <p
+    data-variant="short"
+    style="margin-bottom: var(--ds-size-2);"
+  >
+    Når du skal signere meldingen vil du motta en signeringsoppgave i meldingsboksen din i Altinn. Meldingen blir ikke sendt til behandling før alle har signert.
+  </p>
+  <h4
+    data-size="sm"
+    style="margin-bottom: var(--ds-size-2);"
+  >
+    Krav om rolle for signering (H4)
+  </h4>
+  <p
+    data-variant="default"
+    style="margin-bottom: var(--ds-size-2);"
+  >
+    For å signere på vegne av en virksomhet, trenger du Altinn-rollen Signerer av Samordnet registermelding. Du kan se hvilke roller du har for en aktør på menypunktet Profil, Skjema og tjenester du har rettighet til. Om du ikke har disse rollene, må du få noen som har rollene til å delegere dem til deg.
+  </p>
+  <h5
+    data-size="xs"
+    style="margin-bottom: var(--ds-size-2);"
+  >
+    Personvern (H5)
+  </h5>
+  <p
+    data-variant="short"
+    style="margin-bottom: var(--ds-size-2);"
+  >
+    Personvernerklæringen gir informasjon om hvilke personopplysninger vi behandler, hvordan disse blir behandlet og hvilke rettigheter du har.
+  </p>
+</div>
+`;

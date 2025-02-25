@@ -3,7 +3,8 @@ import { Paragraph } from './Paragraph';
 
 const meta: Meta<typeof Paragraph> = {
   component: Paragraph,
-  tags: ['alpha'],
+  tags: ['alpha', '!autodocs'],
+  title: 'Components/Typography/Paragraph',
 };
 
 export default meta;
@@ -11,6 +12,8 @@ type Story = StoryObj<typeof Paragraph>;
 
 export const Preview: Story = {
   args: {
-    children: 'Paragraph',
+    children:
+      'Personvernerklæringen gir informasjon om hvilke personopplysninger vi behandler, hvordan disse blir behandlet og hvilke rettigheter du har.',
+    variant: 'default',
   },
 };
