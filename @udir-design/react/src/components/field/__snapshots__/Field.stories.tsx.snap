@@ -1,23 +1,304 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Affix 1`] = `
+<div style="display: flex; flex-direction: column; gap: var(--ds-size-4);">
+  <div>
+    <label
+      data-weight="medium"
+      for=":m6tfpnzd62f"
+    >
+      Hvor mange kroner koster det per måned?
+    </label>
+    <div>
+      <span aria-hidden="true">
+        NOK
+      </span>
+      <input
+        type="text"
+        id=":m6tfpnzd62f"
+      >
+      <span aria-hidden="true">
+        pr. mnd.
+      </span>
+    </div>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for=":m6tfpnzdj1c"
+    >
+      Hvor mange kilo veier eplene du har valgt?
+    </label>
+    <div>
+      <textarea
+        rows="2"
+        cols="4"
+        id=":m6tfpnzdj1c"
+      >
+      </textarea>
+      <span aria-hidden="true">
+        KG
+      </span>
+    </div>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for=":m6tfpnzd5t9"
+    >
+      Hvor mange kroner koster det?
+    </label>
+    <div>
+      <span aria-hidden="true">
+        NOK
+      </span>
+      <select id=":m6tfpnzd5t9">
+        <option value="-1">
+          Velg …
+        </option>
+        <option value="10">
+          10
+        </option>
+        <option value="20">
+          20
+        </option>
+        <option value="30">
+          30
+        </option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for=":m6tfpnzd66p"
+    >
+      No affix
+    </label>
+    <div>
+      <input
+        type="text"
+        id=":m6tfpnzd66p"
+      >
+    </div>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for=":m6tfpnzdk29"
+    >
+      No affix and small size
+    </label>
+    <div>
+      <input
+        type="text"
+        size="10"
+        id=":m6tfpnzdk29"
+      >
+    </div>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for=":m6tfpnzd934"
+    >
+      No affix and huge size
+    </label>
+    <div>
+      <input
+        type="text"
+        size="9999"
+        id=":m6tfpnzd934"
+      >
+    </div>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for=":m6tfpnzdvsl"
+    >
+      Affix and small size
+    </label>
+    <div>
+      <span aria-hidden="true">
+        NOK
+      </span>
+      <input
+        type="text"
+        size="10"
+        id=":m6tfpnzdvsl"
+      >
+      <span aria-hidden="true">
+        pr. mnd.
+      </span>
+    </div>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for=":m6tfpnzdvmq"
+    >
+      Affix and huge size
+    </label>
+    <div>
+      <span aria-hidden="true">
+        NOK
+      </span>
+      <input
+        type="text"
+        size="50"
+        id=":m6tfpnzdvmq"
+      >
+      <span aria-hidden="true">
+        pr. mnd.
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Counter 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for=":m6tfpo0ezgk"
+  >
+    Legg til en beskrivelse
+  </label>
+  <textarea
+    rows="2"
+    id=":m6tfpo0ezgk"
+    aria-describedby=":m6tfpo0ezgk:validation  :m6tfpo0ezgk:description"
+  >
+  </textarea>
+  <div
+    data-field="description"
+    aria-live="polite"
+    id=":m6tfpo0ezgk:description"
+  >
+  </div>
+  <p
+    data-variant="default"
+    data-field="validation"
+    id=":m6tfpo0ezgk:validation"
+  >
+    10 tegn igjen
+  </p>
+</div>
+`;
+
+exports[`Position 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Fields with position="start"
+  </legend>
+  <div data-position="start">
+    <label
+      data-weight="medium"
+      for=":m6tfpo1qwaj"
+    >
+      Radio
+    </label>
+    <input
+      type="radio"
+      id=":m6tfpo1qwaj"
+    >
+  </div>
+  <div data-position="start">
+    <label
+      data-weight="medium"
+      for=":m6tfpo1qtu1"
+    >
+      Checkbox
+    </label>
+    <input
+      type="checkbox"
+      id=":m6tfpo1qtu1"
+    >
+  </div>
+  <div data-position="start">
+    <label
+      data-weight="medium"
+      for=":m6tfpo1q1ta"
+    >
+      Switch
+    </label>
+    <input
+      type="checkbox"
+      role="switch"
+      id=":m6tfpo1q1ta"
+    >
+  </div>
+</fieldset>
+<br>
+<fieldset>
+  <legend data-weight="medium">
+    Fields with position="end"
+  </legend>
+  <div data-position="end">
+    <label
+      data-weight="medium"
+      for=":m6tfpo1q68t"
+    >
+      Radio
+    </label>
+    <input
+      type="radio"
+      id=":m6tfpo1q68t"
+    >
+  </div>
+  <div data-position="end">
+    <label
+      data-weight="medium"
+      for=":m6tfpo1qjib"
+    >
+      Checkbox
+    </label>
+    <input
+      type="checkbox"
+      id=":m6tfpo1qjib"
+    >
+  </div>
+  <div data-position="end">
+    <label
+      data-weight="medium"
+      for=":m6tfpo1qu98"
+    >
+      Switch
+    </label>
+    <input
+      type="checkbox"
+      role="switch"
+      id=":m6tfpo1qu98"
+    >
+  </div>
+</fieldset>
+`;
+
 exports[`Preview 1`] = `
 <div id="components-field--preview">
   <label
     data-weight="medium"
-    for="my-textarea"
+    for=":m6tfpnxtvwx"
   >
-    Label
+    Kort beskrivelse
   </label>
   <div
     data-field="description"
-    id="my-textarea:description"
+    id=":m6tfpnxtvwx:description"
   >
-    Description
+    Beskrivelse
   </div>
-  <textarea
-    id="my-textarea"
-    aria-describedby="my-textarea:description"
+  <input
+    type="text"
+    id=":m6tfpnxtvwx"
+    aria-describedby=":m6tfpnxtvwx:validation  :m6tfpnxtvwx:description"
   >
-  </textarea>
+  <p
+    data-field="validation"
+    id=":m6tfpnxtvwx:validation"
+  >
+    Feilmelding
+  </p>
 </div>
 `;
