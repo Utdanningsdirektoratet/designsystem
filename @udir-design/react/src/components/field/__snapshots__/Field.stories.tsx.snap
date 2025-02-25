@@ -192,7 +192,7 @@ exports[`Position 1`] = `
   <legend data-weight="medium">
     Fields with position="start"
   </legend>
-  <div position="start">
+  <div data-position="start">
     <label
       data-weight="medium"
       for="components-field--position-radio-start"
@@ -204,7 +204,7 @@ exports[`Position 1`] = `
       id="components-field--position-radio-start"
     >
   </div>
-  <div position="start">
+  <div data-position="start">
     <label
       data-weight="medium"
       for="components-field--position-checkbox-start"
@@ -216,7 +216,7 @@ exports[`Position 1`] = `
       id="components-field--position-checkbox-start"
     >
   </div>
-  <div position="start">
+  <div data-position="start">
     <label
       data-weight="medium"
       for="components-field--position-switch-start"
@@ -235,7 +235,7 @@ exports[`Position 1`] = `
   <legend data-weight="medium">
     Fields with position="end"
   </legend>
-  <div position="end">
+  <div data-position="end">
     <label
       data-weight="medium"
       for="components-field--position-radio-end"
@@ -247,7 +247,7 @@ exports[`Position 1`] = `
       id="components-field--position-radio-end"
     >
   </div>
-  <div position="end">
+  <div data-position="end">
     <label
       data-weight="medium"
       for="components-field--position-checkbox-end"
@@ -259,7 +259,7 @@ exports[`Position 1`] = `
       id="components-field--position-checkbox-end"
     >
   </div>
-  <div position="end">
+  <div data-position="end">
     <label
       data-weight="medium"
       for="components-field--position-switch-end"
