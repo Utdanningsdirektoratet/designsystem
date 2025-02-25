@@ -1,14 +1,18 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Preview 1`] = `
+exports[`Disabled 1`] = `
 <div>
   <label
     data-weight="medium"
-    for="components-select--preview"
+    aria-disabled="true"
+    for=":m6yxykiehgw"
   >
     Velg et fjell
   </label>
-  <select id="components-select--preview">
+  <select
+    disabled
+    id=":m6yxykiehgw"
+  >
     <option value="blank">
       Velg …
     </option>
@@ -36,6 +40,144 @@ exports[`Preview 1`] = `
     <option value="kosciuszko">
       Mount Kosciuszko
     </option>
+  </select>
+</div>
+`;
+
+exports[`Preview 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="components-select--preview"
+  >
+    Velg et fjell
+  </label>
+  <select
+    data-width="full"
+    aria-invalid="false"
+    id="components-select--preview"
+  >
+    <option
+      value
+      selected
+    >
+      Velg et fjell …
+    </option>
+    <option value="everest">
+      Mount Everest
+    </option>
+    <option value="aconcagua">
+      Aconcagua
+    </option>
+    <option value="denali">
+      Denali
+    </option>
+    <option value="kilimanjaro">
+      Kilimanjaro
+    </option>
+    <option value="elbrus">
+      Elbrus
+    </option>
+    <option value="vinson">
+      Mount Vinson
+    </option>
+    <option value="puncakjaya">
+      Puncak Jaya
+    </option>
+    <option value="kosciuszko">
+      Mount Kosciuszko
+    </option>
+  </select>
+</div>
+`;
+
+exports[`With Error 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for=":m6yxykjafrq"
+  >
+    Velg et fjell
+  </label>
+  <select
+    aria-invalid="true"
+    id=":m6yxykjafrq"
+    aria-describedby=":m6yxykjafrq:validation"
+  >
+    <option value="blank">
+      Velg …
+    </option>
+    <option value="everest">
+      Mount Everest
+    </option>
+    <option value="aconcagua">
+      Aconcagua
+    </option>
+    <option value="denali">
+      Denali
+    </option>
+    <option value="kilimanjaro">
+      Kilimanjaro
+    </option>
+    <option value="elbrus">
+      Elbrus
+    </option>
+    <option value="vinson">
+      Mount Vinson
+    </option>
+    <option value="puncakjaya">
+      Puncak Jaya
+    </option>
+    <option value="kosciuszko">
+      Mount Kosciuszko
+    </option>
+  </select>
+  <p
+    data-field="validation"
+    id=":m6yxykjafrq:validation"
+  >
+    Velg et fjell
+  </p>
+</div>
+`;
+
+exports[`With Optgroup 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for=":m6yxykk7adq"
+  >
+    Velg et fjell
+  </label>
+  <select id=":m6yxykk7adq">
+    <optgroup label="Gruppe 1">
+      <option value="everest">
+        Mount Everest
+      </option>
+      <option value="aconcagua">
+        Aconcagua
+      </option>
+      <option value="denali">
+        Denali
+      </option>
+      <option value="kilimanjaro">
+        Kilimanjaro
+      </option>
+    </optgroup>
+    <optgroup label="Gruppe 2">
+      <option value="elbrus">
+        Elbrus
+      </option>
+      <option value="vinson">
+        Mount Vinson
+      </option>
+      <option value="puncakjaya">
+        Puncak Jaya
+      </option>
+      <option value="kosciuszko">
+        Mount Kosciuszko
+      </option>
+    </optgroup>
   </select>
 </div>
 `;
