@@ -1,18 +1,124 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Preview 1`] = `
-<label
-  data-weight="medium"
-  for="my-textfield"
->
-  Label
-</label>
+exports[`Affix 1`] = `
 <div>
+  <label
+    data-weight="medium"
+    for="textfield-affix"
+  >
+    Hvor mange kroner koster det per måned?
+  </label>
+  <div>
+    <span aria-hidden="true">
+      NOK
+    </span>
+    <input
+      type="text"
+      id="textfield-affix"
+    >
+    <span aria-hidden="true">
+      pr. mnd
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Controlled 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="textfield-controlled"
+  >
+    Kontroller meg!
+  </label>
   <div>
     <input
       type="text"
-      id="my-textfield"
+      id="textfield-controlled"
+      value
     >
+  </div>
+</div>
+<hr
+  aria-hidden="true"
+  style="margin-top: var(--ds-size-4);"
+>
+<p
+  data-variant="default"
+  style="margin: var(--ds-size-2) 0;"
+>
+  Du har skrevet inn:
+</p>
+<button
+  data-variant="primary"
+  type="button"
+>
+  Jeg vil ha Kake
+</button>
+`;
+
+exports[`Counter 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="textfield-counter"
+  >
+    Hvor mange kroner koster det per måned?
+  </label>
+  <div>
+    <input
+      type="text"
+      id="textfield-counter"
+      aria-describedby="textfield-counter:validation  textfield-counter:description"
+    >
+  </div>
+  <div
+    data-field="description"
+    aria-live="polite"
+    id="textfield-counter:description"
+  >
+  </div>
+  <p
+    data-variant="default"
+    data-field="validation"
+    id="textfield-counter:validation"
+  >
+    10 tegn igjen
+  </p>
+</div>
+`;
+
+exports[`Preview 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="textfield-preview"
+  >
+    Label
+  </label>
+  <div>
+    <input
+      type="text"
+      id="textfield-preview"
+    >
+  </div>
+</div>
+`;
+
+exports[`Rows 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="textfield-rows"
+  >
+    Label
+  </label>
+  <div>
+    <textarea
+      rows="4"
+      id="textfield-rows"
+    >
+    </textarea>
   </div>
 </div>
 `;
