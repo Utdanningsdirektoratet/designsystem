@@ -1,0 +1,71 @@
+import { Meta, Controls, Primary, Canvas, ArgTypes } from '@storybook/blocks';
+import * as PaginationStories from './Pagination.stories';
+
+<Meta of={PaginationStories} />
+
+# Pagination
+
+`Pagination` er en liste av knapper som ofte brukes for å navigere mellom sider av informasjon.
+
+Vær oppmerksom på:
+
+- Knappene er som standard `button` elementer.
+- Dersom ny side fører til ny side sørg for at paginering knapper er `a` elementer.
+
+<Primary />
+<Controls of={PaginationStories.Preview} />
+
+## Bruk
+
+### Eksempel på bruk med Pagination
+
+`Pagination` er en kontrollert komponent. Det vil si at komponentens tilstand om hvilken side som er aktiv styres utenfra.
+
+```tsx
+import { Pagination } from '@udir-design/react';
+
+const onChange = (event, page: number) => console.log(`Going to page ${page}`);
+const [currentPage, setCurrentPage] = useState(4);
+const { pages, prevButtonProps, nextButtonProps, hasNext, hasPrevious } =
+  usePagination({
+    currentPage,
+    setCurrentPage,
+    onChange,
+    totalPages: 10,
+    showPages: 7,
+  });
+
+<Pagination>
+  <Pagination.List>
+    <Pagination.Item>
+      <Pagination.Button aria-label="Forrige side" {...prevButtonProps}>
+        Forrige
+      </Pagination.Button>
+    </Pagination.Item>
+    {pages.map(({ page, itemKey, buttonProps }) => (
+      <Pagination.Item key={itemKey}>
+        {typeof page === 'number' && (
+          <Pagination.Button {...buttonProps} aria-label={`Side ${page}`}>
+            {page}
+          </Pagination.Button>
+        )}
+      </Pagination.Item>
+    ))}
+    <Pagination.Item>
+      <Pagination.Button aria-label="Neste side" {...nextButtonProps}>
+        Neste
+      </Pagination.Button>
+    </Pagination.Item>
+  </Pagination.List>
+</Pagination>;
+```
+
+## Paginering med usePagination
+
+Bruk `usePagination` for paginering-logikk sammen med de enkelt del-komponentene.
+
+### Pagenering med lenker
+
+Alle del-komponenter støtter `asChild` som kan brukes til å endre `Pagination.Button` til lenker (`a`).
+
+<Canvas of={PaginationStories.WithAnchor} />
