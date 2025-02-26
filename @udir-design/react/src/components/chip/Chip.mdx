@@ -1,0 +1,82 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/blocks';
+import * as ChipStories from './Chip.stories';
+
+<Meta of={ChipStories} />
+
+# Chip
+
+`Chip` er små, interaktive komponenter som lar brukerne styre hvordan de vil se innhold. For eksempel kan de brukes til å filtrere kategorier i et søkeresultat og vise hvilke filter som er aktive.
+
+- Ikke bruk `Chip` til å merke innhold med kategori/emne som ikke er interaktivt. Bruk heller [`Tag`](/docs/components-tag--docs)-komponenten dersom kategori/emne ikke er klikkbart.
+
+- Ikke bruk `Chip` som varsler for antall eller status. Bruk heller [`Badge`](/docs/components-badge--docs)-komponenten.
+
+<Primary />
+<Controls />
+
+## Slik bruker du Chip
+
+```tsx
+import { Chip } from '@udir-design/react';
+
+// som radio
+<Chip.Radio name="my-chip" defaultChecked>
+  You are using the Chip component!
+</Chip.Radio>;
+<Chip.Radio name="my-chip">You are using the Chip component!</Chip.Radio>;
+
+// som checkbox
+<Chip.Checkbox name="my-chip" defaultChecked>
+  You are using the Chip component!
+</Chip.Checkbox>;
+
+// som removable
+<Chip.Removable>You are using the Chip component!</Chip.Removable>;
+
+// som button
+<Chip.Button>You are using the Chip component!</Chip.Button>;
+```
+
+## Eksempler
+
+### Chip.Checkbox kan brukes som et alternativ til Checkbox.
+
+<Canvas of={ChipStories.Checkbox} />
+
+### Chip.Removable
+
+Vi bruker `Chip` med kryss når vi vil at brukerne skal kunne fjerne valgte verdier. Det kan for eksempel være filter som er satt, eller verdier som brukerne selv har skrevet inn i et tekstfelt.
+
+Denne komponenten inneholder et kryss som indikerer at filteret kan fjernes. Det er viktig å merke seg at `aria-label` må legges til dersom innholdet
+i Chip ikke forklarer at den kan fjernes. I dette eksempelet er det lagt til `aria-label="Slett {land}"`.
+
+<Canvas of={ChipStories.Removable} />
+
+### Chip.Button kan brukes i gruppe, for å vise valgmuligheter - ikke handlinger.
+
+<Canvas of={ChipStories.Button} />
+
+## Retningslinjer for Chip
+
+`Chip` lar brukerne styre hvordan de vil vise innhold. `Chip` kan vises på en eller flere rekker, de tilpasser seg den plassen de får.
+
+Unngå å plassere `Chip` vertikalt. Velg heller [`Checkbox`](/docs/components-checkbox--docs) eller [`Radio`](/docs/components-radio--docs) hvis du vil ha alternativer under hverandre.
+
+**Passer til å**
+
+- filtrere informasjon, for eksempel i lister eller tabeller
+- vise hvilke filtre som er valgt
+
+**Passer ikke til**
+
+- menyer, som sidemenyer eller hovedmenyer
+- ikke klikkbare kategorier/emner (bruk heller [`Tag`](/docs/components-tag--docs))
+- varsler for antall eller status (bruk heller [`Badge`](/docs/components-badge--docs))
+
+## Tekst i komponenten
+
+Chips bør ha så få ord som mulig, helst bare ett eller to.
+
+## Tilgjengelighet
+
+Hvis deler av en side blir oppdatert samtidig som brukerne gjør noe på siden, må vi passe på at brukere med skjermleser får beskjed om det. Vi kan bruke en `ARIA live region` til det, som kan vise antall treff eller andre endringer.
