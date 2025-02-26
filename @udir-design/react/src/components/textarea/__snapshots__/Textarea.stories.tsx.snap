@@ -1,5 +1,43 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Controlled 1`] = `
+<label
+  data-weight="medium"
+  for="my-textarea"
+>
+  Kontroller meg!
+</label>
+<textarea id="my-textarea">
+</textarea>
+<hr
+  aria-hidden="true"
+  style="margin-top: var(--ds-size-4);"
+>
+<p
+  data-variant="default"
+  style="margin: var(--ds-size-2) 0;"
+>
+  Du har skrevet inn:
+</p>
+<button
+  data-variant="primary"
+  type="button"
+>
+  Jeg vil ha Pizza
+</button>
+`;
+
+exports[`Full Width 1`] = `
+<label
+  data-weight="medium"
+  for="my-textarea"
+>
+  Label
+</label>
+<textarea id="my-textarea">
+</textarea>
+`;
+
 exports[`Preview 1`] = `
 <label
   data-weight="medium"
