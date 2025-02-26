@@ -1,7 +1,50 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Preview 1`] = `
+exports[`Button 1`] = `
 <button type="button">
-  Chip.Button
+  Søk etter nynorsk
+</button>
+<button type="button">
+  Søk etter bokmål
+</button>
+<button type="button">
+  Søk etter engelsk
+</button>
+`;
+
+exports[`Checkbox 1`] = `
+<label>
+  <input type="checkbox">
+  Nynorsk
+</label>
+`;
+
+exports[`Preview 1`] = `
+<label>
+  <input
+    type="radio"
+    name="my-radio"
+    value="nynorsk"
+    checked
+  >
+  Nynorsk
+</label>
+<label>
+  <input
+    type="radio"
+    name="my-radio"
+    value="bokmål"
+  >
+  Bokmål
+</label>
+`;
+
+exports[`Removable 1`] = `
+<button
+  type="button"
+  data-removable="true"
+  aria-label="Slett Norge"
+>
+  Norge
 </button>
 `;
