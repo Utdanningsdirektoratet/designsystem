@@ -1,9 +1,583 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Custom Placement 1`] = `
+<span
+  data-overlap="rectangle"
+  data-placement="top-right"
+  style="top: 16%; right: 10%;"
+>
+  <span
+    data-variant="base"
+    data-color="accent"
+  >
+  </span>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-labelledby="title-«r4»"
+  >
+    <title id="title-«r4»">
+      Meldinger
+    </title>
+    <path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M2.592 7.63a.224.224 0 0 0-.342.19v9.661a.5.5 0 0 0 .854.354l5.487-5.487a.5.5 0 0 0-.077-.77zm1.571 11.266a.5.5 0 0 0 .354.854H19.48a.5.5 0 0 0 .354-.854l-5.842-5.841a.5.5 0 0 0-.63-.062l-.948.631a.75.75 0 0 1-.832 0l-.947-.632a.5.5 0 0 0-.631.063zm16.733-1.06a.5.5 0 0 0 .854-.353V7.821a.225.225 0 0 0-.344-.19l-5.922 3.947a.5.5 0 0 0-.076.77zm.414-11.915c.213-.133.3-.425.087-.558A.75.75 0 0 0 21 5.25H3a.75.75 0 0 0-.398.114c-.213.134-.126.425.087.558l.708.442.018.012 8.307 5.538a.5.5 0 0 0 .554 0l8.307-5.538.019-.012z"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
+</span>
+`;
+
+exports[`Floating 1`] = `
+<span
+  data-overlap="rectangle"
+  data-placement="top-right"
+>
+  <span
+    data-variant="base"
+    data-color="accent"
+  >
+  </span>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-labelledby="title-«r0»"
+  >
+    <title id="title-«r0»">
+      Meldinger
+    </title>
+    <path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M2.592 7.63a.224.224 0 0 0-.342.19v9.661a.5.5 0 0 0 .854.354l5.487-5.487a.5.5 0 0 0-.077-.77zm1.571 11.266a.5.5 0 0 0 .354.854H19.48a.5.5 0 0 0 .354-.854l-5.842-5.841a.5.5 0 0 0-.63-.062l-.948.631a.75.75 0 0 1-.832 0l-.947-.632a.5.5 0 0 0-.631.063zm16.733-1.06a.5.5 0 0 0 .854-.353V7.821a.225.225 0 0 0-.344-.19l-5.922 3.947a.5.5 0 0 0-.076.77zm.414-11.915c.213-.133.3-.425.087-.558A.75.75 0 0 0 21 5.25H3a.75.75 0 0 0-.398.114c-.213.134-.126.425.087.558l.708.442.018.012 8.307 5.538a.5.5 0 0 0 .554 0l8.307-5.538.019-.012z"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
+</span>
+<span
+  data-overlap="rectangle"
+  data-placement="top-left"
+>
+  <span
+    data-variant="base"
+    data-color="accent"
+  >
+  </span>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-labelledby="title-«r1»"
+  >
+    <title id="title-«r1»">
+      Meldinger
+    </title>
+    <path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M2.592 7.63a.224.224 0 0 0-.342.19v9.661a.5.5 0 0 0 .854.354l5.487-5.487a.5.5 0 0 0-.077-.77zm1.571 11.266a.5.5 0 0 0 .354.854H19.48a.5.5 0 0 0 .354-.854l-5.842-5.841a.5.5 0 0 0-.63-.062l-.948.631a.75.75 0 0 1-.832 0l-.947-.632a.5.5 0 0 0-.631.063zm16.733-1.06a.5.5 0 0 0 .854-.353V7.821a.225.225 0 0 0-.344-.19l-5.922 3.947a.5.5 0 0 0-.076.77zm.414-11.915c.213-.133.3-.425.087-.558A.75.75 0 0 0 21 5.25H3a.75.75 0 0 0-.398.114c-.213.134-.126.425.087.558l.708.442.018.012 8.307 5.538a.5.5 0 0 0 .554 0l8.307-5.538.019-.012z"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
+</span>
+<span
+  data-overlap="rectangle"
+  data-placement="bottom-right"
+>
+  <span
+    data-variant="base"
+    data-color="accent"
+  >
+  </span>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-labelledby="title-«r2»"
+  >
+    <title id="title-«r2»">
+      Meldinger
+    </title>
+    <path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M2.592 7.63a.224.224 0 0 0-.342.19v9.661a.5.5 0 0 0 .854.354l5.487-5.487a.5.5 0 0 0-.077-.77zm1.571 11.266a.5.5 0 0 0 .354.854H19.48a.5.5 0 0 0 .354-.854l-5.842-5.841a.5.5 0 0 0-.63-.062l-.948.631a.75.75 0 0 1-.832 0l-.947-.632a.5.5 0 0 0-.631.063zm16.733-1.06a.5.5 0 0 0 .854-.353V7.821a.225.225 0 0 0-.344-.19l-5.922 3.947a.5.5 0 0 0-.076.77zm.414-11.915c.213-.133.3-.425.087-.558A.75.75 0 0 0 21 5.25H3a.75.75 0 0 0-.398.114c-.213.134-.126.425.087.558l.708.442.018.012 8.307 5.538a.5.5 0 0 0 .554 0l8.307-5.538.019-.012z"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
+</span>
+<span
+  data-overlap="rectangle"
+  data-placement="bottom-left"
+>
+  <span
+    data-variant="base"
+    data-color="accent"
+  >
+  </span>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-labelledby="title-«r3»"
+  >
+    <title id="title-«r3»">
+      Meldinger
+    </title>
+    <path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M2.592 7.63a.224.224 0 0 0-.342.19v9.661a.5.5 0 0 0 .854.354l5.487-5.487a.5.5 0 0 0-.077-.77zm1.571 11.266a.5.5 0 0 0 .354.854H19.48a.5.5 0 0 0 .354-.854l-5.842-5.841a.5.5 0 0 0-.63-.062l-.948.631a.75.75 0 0 1-.832 0l-.947-.632a.5.5 0 0 0-.631.063zm16.733-1.06a.5.5 0 0 0 .854-.353V7.821a.225.225 0 0 0-.344-.19l-5.922 3.947a.5.5 0 0 0-.076.77zm.414-11.915c.213-.133.3-.425.087-.558A.75.75 0 0 0 21 5.25H3a.75.75 0 0 0-.398.114c-.213.134-.126.425.087.558l.708.442.018.012 8.307 5.538a.5.5 0 0 0 .554 0l8.307-5.538.019-.012z"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
+</span>
+<span
+  data-overlap="circle"
+  data-placement="top-right"
+>
+  <span
+    data-variant="base"
+    data-color="accent"
+  >
+  </span>
+  <div style="width: 2rem; height: 2rem; border-radius: 50%; background-color: var(--ds-color-support2-base-default);">
+  </div>
+</span>
+<span
+  data-overlap="circle"
+  data-placement="top-left"
+>
+  <span
+    data-variant="base"
+    data-color="accent"
+  >
+  </span>
+  <div style="width: 2rem; height: 2rem; border-radius: 50%; background-color: var(--ds-color-support2-base-default);">
+  </div>
+</span>
+<span
+  data-overlap="circle"
+  data-placement="bottom-right"
+>
+  <span
+    data-variant="base"
+    data-color="accent"
+  >
+  </span>
+  <div style="width: 2rem; height: 2rem; border-radius: 50%; background-color: var(--ds-color-support2-base-default);">
+  </div>
+</span>
+<span
+  data-overlap="circle"
+  data-placement="bottom-left"
+>
+  <span
+    data-variant="base"
+    data-color="accent"
+  >
+  </span>
+  <div style="width: 2rem; height: 2rem; border-radius: 50%; background-color: var(--ds-color-support2-base-default);">
+  </div>
+</span>
+`;
+
+exports[`In Button 1`] = `
+<div style="display: flex; gap: var(--ds-size-4);">
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
+  >
+    <span
+      data-overlap="rectangle"
+      data-placement="top-right"
+    >
+      <span
+        data-count="99+"
+        data-variant="base"
+        data-color="danger"
+      >
+      </span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-labelledby="title-«rd»"
+      >
+        <title id="title-«rd»">
+          Innboks
+        </title>
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M6 4.25a.75.75 0 0 0-.696.471L2.31 12.206a.74.74 0 0 0-.06.311V19c0 .414.336.75.75.75h18a.75.75 0 0 0 .75-.75v-6.483a.75.75 0 0 0-.06-.311L18.696 4.72A.75.75 0 0 0 18 4.25zm13.892 7.5-2.4-6H6.508l-2.4 6h2.774a1.75 1.75 0 0 1 1.565.967l.947 1.895a.25.25 0 0 0 .224.138h4.764a.25.25 0 0 0 .224-.138l.947-1.895a1.75 1.75 0 0 1 1.565-.967zm-2.998 1.638a.25.25 0 0 1 .224-.138h3.132v5H3.75v-5h3.132a.25.25 0 0 1 .224.138l.947 1.895a1.75 1.75 0 0 0 1.565.967h4.764a1.75 1.75 0 0 0 1.565-.967z"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+    </span>
+  </button>
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
+  >
+    <span
+      data-overlap="rectangle"
+      data-placement="top-right"
+    >
+      <span
+        data-count="10"
+        data-variant="base"
+        data-color="danger"
+      >
+      </span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-labelledby="title-«re»"
+      >
+        <title id="title-«re»">
+          Meldinger
+        </title>
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M6 4.75c-.69 0-1.25.56-1.25 1.25v12.675l3.864-2.318A.75.75 0 0 1 9 16.25h9c.69 0 1.25-.56 1.25-1.25V6c0-.69-.56-1.25-1.25-1.25zM3.25 6A2.75 2.75 0 0 1 6 3.25h12A2.75 2.75 0 0 1 20.75 6v9A2.75 2.75 0 0 1 18 17.75H9.208l-4.822 2.893A.75.75 0 0 1 3.25 20z"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+    </span>
+  </button>
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
+  >
+    <span
+      data-overlap="rectangle"
+      data-placement="top-right"
+    >
+      <span
+        data-variant="base"
+        data-color="danger"
+      >
+      </span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-labelledby="title-«rf»"
+      >
+        <title id="title-«rf»">
+          Skru på video
+        </title>
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M4 5.25A1.75 1.75 0 0 0 2.25 7v10c0 .966.784 1.75 1.75 1.75h11A1.75 1.75 0 0 0 16.75 17v-1.572l4.021 1.286A.75.75 0 0 0 21.75 16V8a.75.75 0 0 0-.979-.714L16.75 8.573V7A1.75 1.75 0 0 0 15 5.25zm16.25 3.777-3.5 1.12v3.705l3.5 1.12zM15 17.25a.25.25 0 0 0 .25-.25V7a.25.25 0 0 0-.25-.25H4a.25.25 0 0 0-.25.25v10c0 .138.112.25.25.25z"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+    </span>
+  </button>
+</div>
+`;
+
+exports[`In Tabs 1`] = `
+<div>
+  <div
+    role="tablist"
+    tabindex="0"
+  >
+    <button
+      aria-selected="true"
+      id="tab-«r8»"
+      role="tab"
+      type="button"
+      data-roving-tabindex-item="true"
+      tabindex="0"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M12 4.969c1.399-1.242 2.776-1.844 4.125-1.844 1.519 0 2.823.763 3.905 1.845 2.373 2.372 2.206 6.354-1 9.56l-6.5 6.5a.75.75 0 0 1-1.06 0l-6.5-6.5c-3.207-3.206-3.373-7.188-1-9.56C5.05 3.888 6.355 3.125 7.874 3.125c1.349 0 2.726.602 4.125 1.844"
+        >
+        </path>
+      </svg>
+      Favoritter
+      <span
+        data-count="10+"
+        data-variant="base"
+        data-color="neutral"
+      >
+      </span>
+    </button>
+    <button
+      aria-selected="false"
+      id="tab-«ra»"
+      role="tab"
+      type="button"
+      data-roving-tabindex-item="true"
+      tabindex="-1"
+    >
+      Tab 2
+    </button>
+    <button
+      aria-selected="false"
+      id="tab-«rb»"
+      role="tab"
+      type="button"
+      data-roving-tabindex-item="true"
+      tabindex="-1"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M19.638 4.417a3.25 3.25 0 0 0-4.608-.008l-9.378 9.379a.75.75 0 0 0-.191.324l-1.414 4.95a.75.75 0 0 0 .925.927l4.94-1.398a.75.75 0 0 0 .327-.191l9.39-9.391a3.25 3.25 0 0 0 .01-4.592M16.091 5.47a1.752 1.752 0 1 1 2.478 2.478l-.23.23-2.477-2.479zM14.8 6.76 6.85 14.71l-.991 3.47 3.457-.979 7.963-7.963z"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+      Nylige
+      <span
+        data-count="2"
+        data-variant="base"
+        data-color="neutral"
+      >
+      </span>
+    </button>
+  </div>
+  <div
+    role="tabpanel"
+    tabindex="0"
+  >
+    content 1
+  </div>
+</div>
+`;
+
 exports[`Preview 1`] = `
 <span
   data-count="9+"
   data-variant="base"
 >
 </span>
+`;
+
+exports[`Status 1`] = `
+<div style="display: flex; gap: var(--ds-size-4);">
+  <span
+    data-overlap="rectangle"
+    data-placement="top-right"
+    data-size="sm"
+  >
+    <span
+      data-variant="base"
+      data-color="danger"
+    >
+    </span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-labelledby="title-«r5»"
+    >
+      <title id="title-«r5»">
+        Videokamera
+      </title>
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4 5.25A1.75 1.75 0 0 0 2.25 7v10c0 .966.784 1.75 1.75 1.75h11A1.75 1.75 0 0 0 16.75 17V7A1.75 1.75 0 0 0 15 5.25zm14.424 10.713a.25.25 0 0 1-.174-.238v-7.45a.25.25 0 0 1 .174-.238l2.347-.751A.75.75 0 0 1 21.75 8v8a.75.75 0 0 1-.979.714z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+  </span>
+  <span
+    data-overlap="rectangle"
+    data-placement="top-right"
+    data-size="md"
+  >
+    <span
+      data-variant="base"
+      data-color="danger"
+    >
+    </span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-labelledby="title-«r6»"
+    >
+      <title id="title-«r6»">
+        Videokamera
+      </title>
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4 5.25A1.75 1.75 0 0 0 2.25 7v10c0 .966.784 1.75 1.75 1.75h11A1.75 1.75 0 0 0 16.75 17V7A1.75 1.75 0 0 0 15 5.25zm14.424 10.713a.25.25 0 0 1-.174-.238v-7.45a.25.25 0 0 1 .174-.238l2.347-.751A.75.75 0 0 1 21.75 8v8a.75.75 0 0 1-.979.714z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+  </span>
+  <span
+    data-overlap="rectangle"
+    data-placement="top-right"
+    data-size="lg"
+  >
+    <span
+      data-variant="base"
+      data-color="danger"
+    >
+    </span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-labelledby="title-«r7»"
+    >
+      <title id="title-«r7»">
+        Videokamera
+      </title>
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4 5.25A1.75 1.75 0 0 0 2.25 7v10c0 .966.784 1.75 1.75 1.75h11A1.75 1.75 0 0 0 16.75 17V7A1.75 1.75 0 0 0 15 5.25zm14.424 10.713a.25.25 0 0 1-.174-.238v-7.45a.25.25 0 0 1 .174-.238l2.347-.751A.75.75 0 0 1 21.75 8v8a.75.75 0 0 1-.979.714z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+  </span>
+</div>
+`;
+
+exports[`Variants 1`] = `
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--ds-size-2); height: 100%; width: 100%;">
+  <span
+    data-count="9+"
+    data-variant="base"
+    data-color="neutral"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="tinted"
+    data-color="neutral"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="base"
+    data-color="danger"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="tinted"
+    data-color="danger"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="base"
+    data-color="info"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="tinted"
+    data-color="info"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="base"
+    data-color="warning"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="tinted"
+    data-color="warning"
+  >
+  </span>
+</div>
 `;
