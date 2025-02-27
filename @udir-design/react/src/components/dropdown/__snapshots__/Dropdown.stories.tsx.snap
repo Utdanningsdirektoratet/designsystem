@@ -1,38 +1,130 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Multiple Headings 1`] = `
+exports[`Controlled 1`] = `
+<button
+  data-variant="primary"
+  type="button"
+  popovertarget="«r4»"
+>
+  Dropdown
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
+</button>
+<div
+  id="«r4»"
+  popover="manual"
+  data-variant="default"
+  data-placement="bottom"
+  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+>
+  <ul>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Jeg lukker dropdownen
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Jeg lukker også
+      </button>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Icons 1`] = `
 <button
   data-variant="primary"
   type="button"
   popovertarget="«r1»"
 >
-  Eksempel med overskrifter
+  Dropdown
 </button>
 <div
   id="«r1»"
   popover="manual"
   data-variant="default"
+  data-placement="bottom"
+  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
 >
-  <h2>
-    Søt snacks
-  </h2>
   <ul>
     <li>
-      Melkesjokolade
+      <a
+        href="https://github.com/Utdanningsdirektoratet/designsystem"
+        target="_blank"
+        rel="noreferrer"
+        data-variant="tertiary"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M14.909 5.152a2.25 2.25 0 0 1 3.182 0l.757.757a2.25 2.25 0 0 1 0 3.182l-4.964 4.965a1.25 1.25 0 0 1-1.768 0L11.03 12.97a.75.75 0 1 0-1.06 1.06l1.085 1.086a2.75 2.75 0 0 0 3.89 0l4.964-4.964a3.75 3.75 0 0 0 0-5.304l-.757-.757-.53.53.53-.53a3.75 3.75 0 0 0-5.304 0l-.878.879a.75.75 0 0 0 1.06 1.06zm-1.964 3.732a2.75 2.75 0 0 0-3.89 0l-4.964 4.964a3.75 3.75 0 0 0 0 5.304l.513-.514-.513.514.757.757a3.75 3.75 0 0 0 5.304 0l.878-.879a.75.75 0 0 0-1.06-1.06l-.879.878a2.25 2.25 0 0 1-3.182 0l-.757-.757a2.25 2.25 0 0 1 0-3.182l4.964-4.965a1.25 1.25 0 0 1 1.768 0l1.086 1.086a.75.75 0 0 0 1.06-1.06z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+        Github
+      </a>
     </li>
     <li>
-      Smågodt
-    </li>
-  </ul>
-  <h2>
-    Salt snacks
-  </h2>
-  <ul>
-    <li>
-      Potetgull
-    </li>
-    <li>
-      Peanøtter
+      <a
+        href="https://udir.no"
+        target="_blank"
+        rel="noreferrer"
+        data-variant="tertiary"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M14.909 5.152a2.25 2.25 0 0 1 3.182 0l.757.757a2.25 2.25 0 0 1 0 3.182l-4.964 4.965a1.25 1.25 0 0 1-1.768 0L11.03 12.97a.75.75 0 1 0-1.06 1.06l1.085 1.086a2.75 2.75 0 0 0 3.89 0l4.964-4.964a3.75 3.75 0 0 0 0-5.304l-.757-.757-.53.53.53-.53a3.75 3.75 0 0 0-5.304 0l-.878.879a.75.75 0 0 0 1.06 1.06zm-1.964 3.732a2.75 2.75 0 0 0-3.89 0l-4.964 4.964a3.75 3.75 0 0 0 0 5.304l.513-.514-.513.514.757.757a3.75 3.75 0 0 0 5.304 0l.878-.879a.75.75 0 0 0-1.06-1.06l-.879.878a2.25 2.25 0 0 1-3.182 0l-.757-.757a2.25 2.25 0 0 1 0-3.182l4.964-4.965a1.25 1.25 0 0 1 1.768 0l1.086 1.086a.75.75 0 0 0 1.06-1.06z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+        Udir.no
+      </a>
     </li>
   </ul>
 </div>
@@ -44,21 +136,84 @@ exports[`Preview 1`] = `
   type="button"
   popovertarget="«r0»"
 >
-  Eksempel
+  Dropdown
 </button>
 <div
   id="«r0»"
   popover="manual"
   data-variant="default"
+  data-placement="bottom"
+  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
 >
-  <li>
-    Sjokolade
-  </li>
-  <li>
-    Smågodt
-  </li>
-  <li>
-    Potetgull
-  </li>
+  <h2>
+    First heading
+  </h2>
+  <ul>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Button 1.1
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Button 1.2
+      </button>
+    </li>
+  </ul>
+  <h2>
+    Second heading
+  </h2>
+  <ul>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Button 2.1
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Button 2.2
+      </button>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Without Trigger 1`] = `
+<button
+  data-variant="primary"
+  type="button"
+  popovertarget="dropdown"
+>
+  Dropdown
+</button>
+<div
+  id="dropdown"
+  popover="manual"
+  data-variant="default"
+  data-placement="bottom"
+  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+>
+  <ul>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Item
+      </button>
+    </li>
+  </ul>
 </div>
 `;
