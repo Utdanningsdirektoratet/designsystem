@@ -1,9 +1,127 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Preview 1`] = `
+exports[`Children 1`] = `
 <span
   aria-hidden="true"
   data-variant="rectangle"
 >
+  <p data-variant="default">
+    Her er en tekst som blir sendt inn som barn av en Skeleton.
+  </p>
+  <p data-variant="default">
+    Se hvordan Skeleton da dekker den samlede bredden og høyden til barna.
+  </p>
+  <button
+    data-variant="primary"
+    type="button"
+  >
+    Knapp
+  </button>
 </span>
+`;
+
+exports[`Components 1`] = `
+<div style="display: flex; align-items: center; gap: 20px;">
+  <span
+    aria-hidden="true"
+    data-variant="circle"
+    style="width: 50px; height: 50px;"
+  >
+  </span>
+  <span
+    aria-hidden="true"
+    data-variant="rectangle"
+    style="width: 100px; height: 50px;"
+  >
+  </span>
+  <p data-variant="default">
+    <span
+      aria-hidden="true"
+      data-text="----------"
+      data-variant="text"
+    >
+    </span>
+  </p>
+</div>
+`;
+
+exports[`Preview 1`] = `
+<span
+  aria-hidden="true"
+  data-variant="rectangle"
+  style="width: 200px; height: 100px;"
+>
+</span>
+`;
+
+exports[`Text 1`] = `
+<div style="display: flex; gap: 20px; max-width: 300px;">
+  <div style="flex: 1 1 200px;">
+    <h2>
+      En tittel
+    </h2>
+    <p
+      data-variant="default"
+      data-size="sm"
+    >
+      Her er en paragraf som går over flere linjer
+    </p>
+  </div>
+  <div style="flex: 1 1 200px;">
+    <h2>
+      <span
+        aria-hidden="true"
+        data-text="-"
+        data-variant="text"
+      >
+        En tittel
+      </span>
+    </h2>
+    <p
+      data-variant="default"
+      data-size="sm"
+    >
+      <span
+        aria-hidden="true"
+        data-text="--------------------------------------------"
+        data-variant="text"
+      >
+      </span>
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Usage Example 1`] = `
+<div style="max-width: 400px;">
+  <span
+    aria-hidden="true"
+    data-variant="rectangle"
+    style="height: 150px;"
+  >
+  </span>
+  <div style="display: flex; gap: 10px; align-items: center; padding: 5px 0px;">
+    <span
+      aria-hidden="true"
+      data-variant="circle"
+      style="width: 30px; height: 30px;"
+    >
+    </span>
+    <h2>
+      <span
+        aria-hidden="true"
+        data-text="-"
+        data-variant="text"
+      >
+        En medium tittel
+      </span>
+    </h2>
+  </div>
+  <span
+    aria-hidden="true"
+    data-text="--------------------------------------------------------------------------------------------------------------------------------------------"
+    data-variant="text"
+  >
+  </span>
+</div>
 `;

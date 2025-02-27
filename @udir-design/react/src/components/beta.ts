@@ -23,3 +23,4 @@ export * from './search/Search';
 export * from './select/Select';
 export * from './textarea/Textarea';
 export * from './textfield/Textfield';
+export * from './loaders';
