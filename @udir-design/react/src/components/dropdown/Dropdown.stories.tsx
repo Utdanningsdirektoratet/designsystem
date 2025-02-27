@@ -68,6 +68,32 @@ export const Preview: Story = {
       </Dropdown.TriggerContext>
     );
   },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button');
+    const dropdown = canvasElement.querySelector('[popover]');
+
+    await step('Open dropdown', async () => {
+      await userEvent.click(button);
+      expect(dropdown).toBeVisible();
+    });
+    await step('Lists and items are visible', async () => {
+      const lists = canvas.getAllByRole('list');
+      const items = canvas.getAllByRole('listitem');
+      expect(lists).toHaveLength(2);
+      expect(items).toHaveLength(4);
+    });
+    await step('Close dropdown', async () => {
+      await userEvent.click(button);
+      expect(dropdown).not.toBeVisible();
+    });
+    await step('Click outside closes dropdown', async () => {
+      await userEvent.click(button);
+      expect(dropdown).toBeVisible();
+      await userEvent.click(document.body);
+      expect(dropdown).not.toBeVisible();
+    });
+  },
 };
 
 export const Icons: Story = {
