@@ -3,7 +3,8 @@ import { Label } from './Label';
 
 const meta: Meta<typeof Label> = {
   component: Label,
-  tags: ['alpha'],
+  tags: ['alpha', '!autodocs'],
+  title: 'Components/Typography/Label',
 };
 
 export default meta;
@@ -11,6 +12,7 @@ type Story = StoryObj<typeof Label>;
 
 export const Preview: Story = {
   args: {
-    children: 'Label',
+    children: 'Vennligst skriv inn fødselsnummer. 11 tegn',
+    weight: 'medium',
   },
 };
