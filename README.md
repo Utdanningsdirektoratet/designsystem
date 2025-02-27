@@ -36,6 +36,7 @@ I dette repositoriet lever den delen av designsystemet som implementeres i kode:
   - [Hvordan jobbe med kodebasen](#hvordan-jobbe-med-kodebasen)
   - [Hvordan publisere en ny versjon](#hvordan-publisere-en-ny-versjon)
   - [Oversikt over verktøy](#oversikt-over-verktøy)
+- [Thanks](#thanks)
 
 # Hvordan ta i bruk Udirs designsystem
 
@@ -418,3 +419,9 @@ Dette er de viktigste verktøyene og tjenestene vi bruker i designsystemet.
 - [typescript-eslint](https://typescript-eslint.io/) — statisk analyse av kodebasen for å finne mulige problemer
 - [prettier](https://prettier.io/) — håndterer konsistent formatering av kodebasen
 - [commitlint](https://commitlint.js.org/) — sørger for at commits følger [Conventional Commits-standarden for commitmeldinger](https://www.conventionalcommits.org/en/v1.0.0/), slik at vi lettere kan lage endringslogg
+
+# Thanks
+
+<a href="https://www.chromatic.com/"><img src="https://user-images.githubusercontent.com/321738/84662277-e3db4f80-af1b-11ea-88f5-91d67a5e59f6.png" width="153" height="30" alt="Chromatic" /></a>
+
+Thanks to [Chromatic](https://www.chromatic.com/) for providing the visual testing platform that helps us review UI changes and catch visual regressions.
