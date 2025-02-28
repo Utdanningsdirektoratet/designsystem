@@ -1,5 +1,10 @@
 {
   "name": "@udir-design/theme",
+  "repository": {
+    "type": "git",
+    "url": "github:Utdanningsdirektoratet/designsystem",
+    "directory": "@udir-design/theme"
+  },
   "license": "MIT",
   "version": "0.0.0-semantically-released",
   "type": "module",
