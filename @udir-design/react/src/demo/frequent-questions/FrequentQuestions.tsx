@@ -20,7 +20,7 @@ export const FrequentQuestions = () => {
             perfected designer. Writing slightly explain.
           </Paragraph>
         </Card>
-        <Card data-color="support3">
+        <Card data-color="accent">
           <Heading>Mat og helse</Heading>
           <Paragraph>
             Most provide as with carried business are much better more the
