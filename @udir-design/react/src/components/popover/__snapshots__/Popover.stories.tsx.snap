@@ -1,5 +1,121 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Controlled 1`] = `
+<button
+  data-variant="primary"
+  type="button"
+  popovertarget=":rc:"
+>
+  My trigger
+</button>
+<div
+  id=":rc:"
+  popover="manual"
+  data-color="neutral"
+  data-placement="top"
+  style="--ds-popover-arrow-x: 147px; --ds-popover-arrow-y: 100%; translate: 453.429px 18px;"
+>
+  <p data-variant="default">
+    Er du sikker på at du vil slette?
+  </p>
+  <button
+    data-variant="primary"
+    type="button"
+    data-color="danger"
+    data-size="sm"
+    style="margin-top: var(--ds-size-2);"
+  >
+    Slett
+  </button>
+</div>
+`;
+
+exports[`Dotted Underline 1`] = `
+<p data-variant="default">
+  Vi bruker
+  <button
+    popovertarget=":r3:"
+    data-popover="inline"
+  >
+    design tokens
+  </button>
+  for å sikre at vi har konsistent design.
+</p>
+<div
+  id=":r3:"
+  popover="manual"
+  data-color="neutral"
+  data-placement="top"
+  style="--ds-popover-arrow-x: 150px; --ds-popover-arrow-y: 100%; translate: 329.914px 18px;"
+>
+  <p data-variant="default">
+    <strong style="display: block;">
+      Design tokens
+    </strong>
+    Design tokens er en samling av variabler som definerer designet i et designsystem.
+  </p>
+</div>
+`;
+
+exports[`Interactive 1`] = `
+<button
+  data-variant="primary"
+  type="button"
+  popovertarget=":r1:"
+  data-color="danger"
+  aria-label="Slett rad"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-labelledby="title-r2"
+  >
+    <title id="title-r2">
+      Slett rad
+    </title>
+    <path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
+</button>
+<div
+  id=":r1:"
+  popover="manual"
+  data-color="danger"
+  data-placement="top"
+  style="--ds-popover-arrow-x: 150px; --ds-popover-arrow-y: 100%; translate: 450px 27px;"
+>
+  <p data-variant="default">
+    Er du sikker på at du vil slette raden? Handlingen kan ikke angres.
+  </p>
+  <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
+    <button
+      data-variant="primary"
+      type="button"
+      data-size="sm"
+    >
+      Ja, slett den
+    </button>
+    <button
+      data-variant="tertiary"
+      type="button"
+      data-size="sm"
+    >
+      Avbryt
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Preview 1`] = `
 <button
   data-variant="primary"
@@ -11,7 +127,176 @@ exports[`Preview 1`] = `
 <div
   id=":r0:"
   popover="manual"
+  data-placement="top"
+  style="--ds-popover-arrow-x: 87px; --ds-popover-arrow-y: 100%; translate: 513.086px 19px;"
 >
   popover content
+</div>
+`;
+
+exports[`Variants 1`] = `
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--ds-size-2); height: 100%; width: 100%;">
+  <button
+    data-variant="primary"
+    type="button"
+    popovertarget=":r4:"
+  >
+    popover
+  </button>
+  <div
+    id=":r4:"
+    popover="manual"
+    data-color="neutral"
+    data-placement="top"
+    style="--ds-popover-arrow-x: 77px; --ds-popover-arrow-y: 100%; translate: 81.7345px 19px;"
+  >
+    neutralDefault
+  </div>
+  <button
+    data-variant="primary"
+    type="button"
+    popovertarget=":r5:"
+  >
+    popover
+  </button>
+  <div
+    id=":r5:"
+    popover="manual"
+    data-color="neutral"
+    data-variant="tinted"
+    data-placement="top"
+    style="--ds-popover-arrow-x: 74px; --ds-popover-arrow-y: 100%; translate: 379.328px 19px;"
+  >
+    neutralTinted
+  </div>
+  <button
+    data-variant="primary"
+    type="button"
+    popovertarget=":r6:"
+  >
+    popover
+  </button>
+  <div
+    id=":r6:"
+    popover="manual"
+    data-color="danger"
+    data-placement="top"
+    style="--ds-popover-arrow-x: 78px; --ds-popover-arrow-y: 100%; translate: 669.304px 19px;"
+  >
+    dangerDefault
+  </div>
+  <button
+    data-variant="primary"
+    type="button"
+    popovertarget=":r7:"
+  >
+    popover
+  </button>
+  <div
+    id=":r7:"
+    popover="manual"
+    data-color="danger"
+    data-variant="tinted"
+    data-placement="top"
+    style="--ds-popover-arrow-x: 73px; --ds-popover-arrow-y: 100%; translate: 967.547px 19px;"
+  >
+    dangerTinted
+  </div>
+  <button
+    data-variant="primary"
+    type="button"
+    popovertarget=":r8:"
+  >
+    popover
+  </button>
+  <div
+    id=":r8:"
+    popover="manual"
+    data-color="info"
+    data-placement="bottom"
+    style="--ds-popover-arrow-x: 63px; --ds-popover-arrow-y: 0; translate: 95.5235px 192px;"
+  >
+    infoDefault
+  </div>
+  <button
+    data-variant="primary"
+    type="button"
+    popovertarget=":r9:"
+  >
+    popover
+  </button>
+  <div
+    id=":r9:"
+    popover="manual"
+    data-color="info"
+    data-variant="tinted"
+    data-placement="bottom"
+    style="--ds-popover-arrow-x: 59px; --ds-popover-arrow-y: 0; translate: 393.82px 192px;"
+  >
+    infoTinted
+  </div>
+  <button
+    data-variant="primary"
+    type="button"
+    popovertarget=":ra:"
+  >
+    popover
+  </button>
+  <div
+    id=":ra:"
+    popover="manual"
+    data-color="warning"
+    data-placement="bottom"
+    style="--ds-popover-arrow-x: 82px; --ds-popover-arrow-y: 0; translate: 665.203px 192px;"
+  >
+    warningDefault
+  </div>
+  <button
+    data-variant="primary"
+    type="button"
+    popovertarget=":rb:"
+  >
+    popover
+  </button>
+  <div
+    id=":rb:"
+    popover="manual"
+    data-color="warning"
+    data-variant="tinted"
+    data-placement="bottom"
+    style="--ds-popover-arrow-x: 78px; --ds-popover-arrow-y: 0; translate: 963.25px 192px;"
+  >
+    warningTinted
+  </div>
+</div>
+`;
+
+exports[`Without Context 1`] = `
+<button
+  data-variant="primary"
+  type="button"
+  popovertarget="my-popover"
+>
+  My trigger
+</button>
+<div
+  id="my-popover"
+  popover="manual"
+  data-color="neutral"
+  data-placement="top"
+  style="--ds-popover-arrow-x: 147px; --ds-popover-arrow-y: 100%; translate: 453.429px 18px;"
+>
+  <p data-variant="default">
+    Er du sikker på at du vil slette?
+  </p>
+  <button
+    data-variant="primary"
+    type="button"
+    data-color="danger"
+    data-size="sm"
+    style="margin-top: var(--ds-size-2);"
+  >
+    Slett
+  </button>
 </div>
 `;

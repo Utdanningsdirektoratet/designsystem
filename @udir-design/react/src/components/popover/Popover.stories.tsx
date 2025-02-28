@@ -48,6 +48,26 @@ export const Preview: Story = {
       <Popover {...args}>popover content</Popover>
     </Popover.TriggerContext>
   ),
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button');
+    const dropdown = canvasElement.querySelector('[popover]');
+
+    await step('Open popover', async () => {
+      await userEvent.click(button);
+      expect(dropdown).toBeVisible();
+    });
+    await step('Close popover', async () => {
+      await userEvent.click(button);
+      expect(dropdown).not.toBeVisible();
+    });
+    await step('Click outside closes dropdown', async () => {
+      await userEvent.click(button);
+      expect(dropdown).toBeVisible();
+      await userEvent.click(document.body);
+      expect(dropdown).not.toBeVisible();
+    });
+  },
 };
 
 export const Interactive: Story = {
@@ -95,7 +115,7 @@ export const DottedUnderline: Story = {
       <Popover.TriggerContext>
         <Paragraph>
           Vi bruker <Popover.Trigger inline>design tokens</Popover.Trigger> for
-          å sikre at vi har en konsistent design.
+          å sikre at vi har konsistent design.
         </Paragraph>
         <Popover {...args} data-color="neutral">
           <Paragraph>
@@ -185,6 +205,9 @@ export const Variants: Story = {
         ))}
       </div>
     );
+  },
+  play: () => {
+    // Popover already open
   },
 };
 
