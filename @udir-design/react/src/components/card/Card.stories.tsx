@@ -30,7 +30,7 @@ const meta: Meta<typeof Card> = {
       alignItems: 'center',
       display: 'grid',
       gap: 'var(--ds-size-4)',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(280px , 1fr))',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(280px , 320px))',
     },
   },
 };
@@ -40,7 +40,6 @@ type Story = StoryObj<typeof Card>;
 
 export const Preview: Story = {
   args: {
-    style: { maxWidth: '320px' },
     'data-color': 'neutral',
     children: [
       <Heading>Card Neutral</Heading>,
@@ -197,7 +196,6 @@ export const Media: Story = {
 
 export const Video: Story = {
   args: {
-    style: { maxWidth: '320px' },
     'data-color': 'neutral',
     children: [
       <Card.Block>
