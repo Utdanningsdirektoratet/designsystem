@@ -1,9 +1,491 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Preview 1`] = `
+exports[`As Button 1`] = `
+<button
+  type="button"
+  data-color="support1"
+>
+  <div>
+    <h2>
+      Button Card with blocks
+    </h2>
+  </div>
+  <div>
+    <p data-variant="default">
+      Most provide as with carried business are much better more the perfected designer.
+    </p>
+  </div>
+</button>
+<button
+  type="button"
+  data-color="neutral"
+>
+  <h2>
+    Link Card
+  </h2>
+  <p data-variant="default">
+    Most provide as with carried business are much better more the perfected designer.
+  </p>
+</button>
+`;
+
+exports[`As Grid 1`] = `
+<div
+  data-color="neutral"
+  style="display: grid; grid-template-columns: 1fr 1fr;"
+>
+  <div>
+    <h2>
+      Button Card with blocks
+    </h2>
+  </div>
+  <div>
+    <p data-variant="default">
+      Most provide as with carried business are much better more the perfected designer.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`As Link 1`] = `
+<a
+  href="https://udir.no"
+  target="_blank"
+  rel="noopener noreferrer"
+  data-color="support1"
+>
+  <div>
+    <h2>
+      Link Card with blocks
+    </h2>
+  </div>
+  <div>
+    <p data-variant="default">
+      Most provide as with carried business are much better more the perfected designer.
+    </p>
+  </div>
+</a>
+<a
+  href="https://udir.no"
+  target="_blank"
+  rel="noopener noreferrer"
+  data-color="neutral"
+>
+  <h2>
+    Link Card
+  </h2>
+  <p data-variant="default">
+    Most provide as with carried business are much better more the perfected designer.
+  </p>
+</a>
+`;
+
+exports[`Composed 1`] = `
+<div style="display: grid; gap: var(--ds-size-4); grid-column: 1 / -1; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); width: 100%;">
+  <div data-color="neutral">
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2>
+          Rolle 1
+        </h2>
+        <button
+          data-variant="secondary"
+          type="button"
+          data-color="danger"
+          data-size="sm"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          Fjern
+        </button>
+      </div>
+    </div>
+    <div>
+      <div>
+        <label
+          data-weight="medium"
+          for="components-card--composed-role"
+        >
+          Velg rolle
+        </label>
+        <select id="components-card--composed-role">
+          <option value="daglig leder">
+            Dalig leder
+          </option>
+          <option value="forretningsfører">
+            Forretningsfører
+          </option>
+        </select>
+      </div>
+      <div>
+        <label
+          data-weight="medium"
+          for="components-card--composed-nationality-number"
+        >
+          Fødsels- eller d-nummer
+        </label>
+        <div>
+          <input
+            type="text"
+            id="components-card--composed-nationality-number"
+          >
+        </div>
+      </div>
+      <div>
+        <label
+          data-weight="medium"
+          for="components-card--composed-last-name"
+        >
+          Etternavn
+        </label>
+        <div>
+          <input
+            type="text"
+            id="components-card--composed-last-name"
+          >
+        </div>
+      </div>
+    </div>
+    <div>
+      <button
+        data-variant="secondary"
+        type="button"
+        data-color="accent"
+        data-size="sm"
+      >
+        Legg til rolle
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            d="M12.75 5.5a.75.75 0 0 0-1.5 0v5.75H5.5a.75.75 0 0 0 0 1.5h5.75v5.75a.75.75 0 0 0 1.5 0v-5.75h5.75a.75.75 0 0 0 0-1.5h-5.75z"
+          >
+          </path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div data-color="neutral">
+    <div>
+      <img
+        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="studenter"
+      >
+    </div>
+    <div>
+      <h2>
+        Card Neutral
+      </h2>
+      <p data-variant="default">
+        Most provide as with carried business are much better more the perfected designer. Writing slightly explain desk unable at supposedly about this.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Media 1`] = `
 <div data-color="neutral">
   <div>
-    Innhold til kort
+    <img
+      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="studenter"
+    >
+  </div>
+  <div>
+    <h2>
+      Card Neutral
+    </h2>
+    <p data-variant="default">
+      Most provide as with carried business are much better more the perfected designer. Writing slightly explain desk unable at supposedly about this
+    </p>
+  </div>
+</div>
+<div data-color="neutral">
+  <div>
+    <h2>
+      Card Neutral
+    </h2>
+    <p data-variant="default">
+      Most provide as with carried business are much better more the perfected designer. Writing slightly explain desk unable at supposedly about this
+    </p>
+  </div>
+  <div>
+    <img
+      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="studenter"
+    >
+  </div>
+</div>
+`;
+
+exports[`Preview 1`] = `
+<div
+  data-color="neutral"
+  style="max-width: 320px;"
+>
+  <h2>
+    Card Neutral
+  </h2>
+  <p data-variant="default">
+    Most provide as with carried business are much better more the perfected designer. Writing slightly explain desk unable at supposedly about this
+  </p>
+  <p
+    data-variant="default"
+    data-size="sm"
+  >
+    Footer text
+  </p>
+</div>
+`;
+
+exports[`Variants 1`] = `
+<div data-color="neutral">
+  <div>
+    <img
+      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="studenter"
+    >
+  </div>
+  <div>
+    <h2>
+      <a
+        href="https://udir.no"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Card Neutral
+      </a>
+    </h2>
+    <p data-variant="default">
+      Most provide as with carried business are much better more the perfected designer. Writing slightly explain desk unable at supposedly about this
+    </p>
+  </div>
+</div>
+<div data-color="accent">
+  <div>
+    <img
+      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="studenter"
+    >
+  </div>
+  <div>
+    <h2>
+      <a
+        href="https://udir.no"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Card Accent
+      </a>
+    </h2>
+    <p data-variant="default">
+      Most provide as with carried business are much better more the perfected designer. Writing slightly explain desk unable at supposedly about this
+    </p>
+  </div>
+</div>
+<div data-color="subtle">
+  <div>
+    <img
+      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="studenter"
+    >
+  </div>
+  <div>
+    <h2>
+      <a
+        href="https://udir.no"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Card Subtle
+      </a>
+    </h2>
+    <p data-variant="default">
+      Most provide as with carried business are much better more the perfected designer. Writing slightly explain desk unable at supposedly about this
+    </p>
+  </div>
+</div>
+<div data-color="support1">
+  <div>
+    <img
+      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="studenter"
+    >
+  </div>
+  <div>
+    <h2>
+      <a
+        href="https://udir.no"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Card Support1
+      </a>
+    </h2>
+    <p data-variant="default">
+      Most provide as with carried business are much better more the perfected designer. Writing slightly explain desk unable at supposedly about this
+    </p>
+  </div>
+</div>
+<div data-color="support2">
+  <div>
+    <img
+      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="studenter"
+    >
+  </div>
+  <div>
+    <h2>
+      <a
+        href="https://udir.no"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Card Support2
+      </a>
+    </h2>
+    <p data-variant="default">
+      Most provide as with carried business are much better more the perfected designer. Writing slightly explain desk unable at supposedly about this
+    </p>
+  </div>
+</div>
+<div data-color="support3">
+  <div>
+    <img
+      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="studenter"
+    >
+  </div>
+  <div>
+    <h2>
+      <a
+        href="https://udir.no"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Card Support3
+      </a>
+    </h2>
+    <p data-variant="default">
+      Most provide as with carried business are much better more the perfected designer. Writing slightly explain desk unable at supposedly about this
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Video 1`] = `
+<div
+  data-color="neutral"
+  style="max-width: 320px;"
+>
+  <div>
+    <iframe
+      data-chromatic="ignore"
+      src="https://player.vimeo.com/video/863563441?app_id=122963&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1"
+      width="320px"
+      height="179px"
+      allow="autoplay; fullscreen; picture-in-picture"
+      title="30 år med digitalt innsyn"
+    >
+    </iframe>
+  </div>
+  <div>
+    <h2>
+      <a
+        href="https://www.digdir.no/felleslosninger/30-ar-med-digitalt-innsyn/5015"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Vi feira 30 år med digitalt innsyn
+      </a>
+    </h2>
+    <p data-variant="default">
+      Det er i år 30 år sidan dei første forsøka med elektronisk postjournal i Noreg. Sjå opptak frå feiringa på Pressens Hus der det både var historiske tilbakeblikk og debatt om innsyn og openheit i forvaltninga.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`With Link 1`] = `
+<div data-color="support1">
+  <div>
+    <img
+      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="studenter"
+    >
+  </div>
+  <div>
+    <h2>
+      <a
+        href="https://udir.no"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Link Card
+      </a>
+    </h2>
+    <p data-variant="default">
+      Most provide as with carried business are much better more the perfected designer. Writing slightly explain desk unable at supposedly about this
+    </p>
+    <p
+      data-variant="default"
+      data-size="sm"
+    >
+      Footer text
+    </p>
+  </div>
+</div>
+<div data-color="neutral">
+  <div>
+    <h2>
+      <a
+        href="https://udir.no"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Link Card
+      </a>
+    </h2>
+    <p data-variant="default">
+      Most provide as with carried business are much better more the perfected designer. Writing slightly explain desk unable at supposedly about this
+    </p>
+    <p
+      data-variant="default"
+      data-size="sm"
+    >
+      Footer text
+    </p>
+  </div>
+  <div>
+    <img
+      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="studenter"
+    >
   </div>
 </div>
 `;
