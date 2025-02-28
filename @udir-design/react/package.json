@@ -29,11 +29,12 @@
     "./dist"
   ],
   "scripts": {
-    "test": "vitest --project unit",
+    "vitest": "vitest --outputFile.json test-reports/all.json",
+    "test": "vitest --project unit --outputFile.json test-reports/unit.json",
     "typecheck": "tsc --build",
     "dev": "storybook dev --port 6006",
     "build:storybook": "storybook build --stats-json",
-    "test:storybook": "vitest --project storybook"
+    "test:storybook": "vitest --project storybook --outputFile.json test-reports/storybook.json --outputFile.html test-reports/storybook/index.html"
   },
   "dependencies": {
     "@digdir/designsystemet-css": "1.0.0-next.48",

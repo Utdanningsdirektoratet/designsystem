@@ -119,6 +119,13 @@ jobs:
         run: pnpm exec playwright install --with-deps chromium
       - name: Run Storybook tests
         run: pnpm nx test:storybook
+      - name: Publish test report
+        uses: tanmen/jest-reporter@v1
+        if: always()
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          result-file: './@udir-design/react/test-reports/storybook.json'
+          action-name: 'Storybook test report'
 
   chromatic:
     runs-on: ubuntu-latest
