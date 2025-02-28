@@ -72,16 +72,16 @@ Bruk `stickyHeader={true}` for å få en sticky header.
 
 <Canvas of={TableStories.StickyHeader} />
 
-### Med form elementer
+### Med skjemaelementer
 
-Du kan legge inn form elementer i ein tabell, men du må håndtere logikken selv.
+Du kan legge inn skjemaelementer i en tabell, men du må håndtere logikken selv.
 
 <Canvas of={TableStories.WithFormElements} />
 
 ### Sortering
 
-`TableHeaderCell` har en `sortable` prop som kan brukes for å visa at raden er sortberbar.
-Bruk `sort` prop på `TableHeaderCell` for å indikere rekkefølgen radene er sortert.
+`Table.HeaderCell` har en `sortable` prop som kan brukes for å visa at raden er sortberbar.
+Bruk `sort` prop på `Table.HeaderCell` for å indikere rekkefølgen radene er sortert.
 Bruk `onSortClick` prop for å håndtere klikk på sorterbare rader.
 
 <Canvas of={TableStories.Sortable} />
@@ -99,11 +99,14 @@ Dette hjelper nettleseren til å tegne tabellen raskere, og er nyttig når du ha
 
 ## Retningslinjer for når du skal bruke table
 
-Vi bruker `Table` når vi skal organisere og vise data på en strukturert måte i rader og kolonner for brukerne.  
-Alt innhold bør være venstrejustert i tabeller, unntatt tall som bør høyrejusteres for at brukerne lett skal kunne sammenligne tallene.  
+Vi bruker `Table` når vi skal organisere og vise data på en strukturert måte i rader og kolonner for brukerne.
+
+Alt innhold bør være venstrejustert i tabeller, unntatt tall som bør høyrejusteres for at brukerne lett skal kunne sammenligne tallene.
+
 For å spare plass, kan vi bruke en meny, hvis flere handlinger i en tabellrad ikke må være synlig for brukerne hele tiden.
+
 I overskiftceller bruker vi `<Table.HeaderCell>`, ikke `<Table.Cell>`. En celle er en overskrift hvis den beskriver
-innholdet i cellene under eller ved siden av.
+innholdet i samme rad eller kolonne.
 
 **Passer til å**
 
@@ -138,8 +141,8 @@ av tabellen kan presenteres om gangen, ofte bare én celle.
 Tabellceller bør ikke slås sammen, og cellene bør kun inneholde ett interaktivt element. Da får brukerne
 raskt oversikt over innholdet og kan sammenligne og scanne informasjonen.
 
-Alle tabeller må ha overskrifter for hver kolonne (`<Table.HeaderCell>`). Unntaket er kolonner som inneholder kun har
-interaktive elementer, de skal ha ledetekst. Se eksempel ["Med form elementer"](#med-form-elementer).
+Alle tabeller må ha overskrifter for hver kolonne (`<Table.HeaderCell>`). Unntaket er kolonner som kun inneholder
+interaktive elementer, de skal ha ledetekst. Se eksempel ["Med skjemaelementer"](#med-skjemaelementer).
 
 For at brukerne skal kunne navigere i innholdet med skjermleser, må det være overskrifter i kolonnene.
 Hvis det er behov for å spare plass, kan vi visuelt skjule en eller flere overskrifter.
