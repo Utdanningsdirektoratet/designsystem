@@ -1,0 +1,80 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/blocks';
+import * as SwitchStories from './Switch.stories';
+
+<Meta of={SwitchStories} />
+
+# Switch
+
+Vi bruker `Switch` til å gi brukerne et valg mellom to alternativer. Bryteren kan enten slås av eller på og skal alltid være innstilt med et standardvalg.
+
+<Primary />
+<Controls />
+
+## Slik bruker du Switch
+
+```tsx
+import { Switch } from '@udir-design/react';
+
+<Switch label="Mørk modus" value="dark" />;
+```
+
+## Gruppering
+
+Bruker [Fieldset](/docs/components-fieldset--docs) til gruppering.
+
+<Canvas of={SwitchStories.Group} />
+
+### Høyrejustert
+
+Bruk `position="end"` til å plassere `Switch` på høyre side av ledeteksten hvis
+du trenger det.
+
+<Canvas of={SwitchStories.GroupEnd} />
+
+## Retningslinjer for Switch
+
+`Switch` skal være et valg mellom to alternativer. Vi bruker `Switch` til innstillinger, ikke i skjema.
+
+**Passer til å**
+
+- aktivere eller deaktivere funksjoner/tilstander med en gang
+- slå varsler av og på
+- endre visning av innhold mellom to kategorier, for eksempel
+  se statistikk per måned eller år
+
+**Passer ikke til**
+
+- å gi flere alternativer enn to
+- å bruke i stedet for avmerkingsboks (checkbox) eller alternativknapper (radio buttons) i et skjema
+- situasjoner der brukerne må lagre informasjon før en endring får effekt
+
+**Bruk heller**
+
+- avmerkingsbokser (checkboxes) hvis du skal tilby brukerne flere valg, der de skal velge ett eller flere alternativer
+- alternativknapper (radio buttons) hvis brukerne skal få flere valg, men bare skal velge ett
+- chip til å filtrere innhold
+
+## Tekst i komponenten
+
+Teksten til en switch må være kort og presis, ofte betyr det bare ett eller to ord. Det skal gi mening når du sier ledeteksten høyt og legger til av/på etterpå. Unngå tekst med flere ord og mellomrom.
+
+### Eksempel
+
+- ⚠️ Ikke: Skru på flymodus (Av/på)
+- 👍 Riktig: Flymodus (Av/på)
+
+### Plassering av tekst
+
+Som regel er det høyre som er den beste plasseringen for tekst, unntaket er når `Switch` er fast plassert på høyre side i grensesnittet er det best at teksten er på venstre side. Slik at alle knappene blir justert etter samme vertikale linje.
+
+## Tilgjengelighet
+
+Sørg for at komponenten oppfører seg konsekvent gjennom en hel tjeneste.
+Hvis du har en gruppe med flere vippebrytere, må du passe på at du er konsekvent med hvordan du formulerer tekstene til hver av dem også, ikke formulerer dem forskjellig.
+
+Vi bruker `role="switch"` for å fortelle skjermlesere at dette er en vippebryter. Dette gjør at skjermlesere kan gi brukeren informasjon om at dette er en vippebryter og at den kan skrus av og på.
+Det er ikke lagt på `aria-checked` siden dette er ikke nødvendig når bryteren er en input med `type="checkbox"`. <sup>1</sup>
+
+### Referanser
+
+[1. Switch rolle](https://www.w3.org/WAI/ARIA/apg/patterns/switch/#:~:text=If%20the%20switch%20element%20is%20an%20HTML%20input%5Btype%3D%22checkbox%22%5D%2C%20it%20uses%20the%20HTML%20checked%20attribute%20instead%20of%20the%20aria%2Dchecked%20property.)
