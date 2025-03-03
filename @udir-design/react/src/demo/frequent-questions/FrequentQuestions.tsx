@@ -6,21 +6,21 @@ export const FrequentQuestions = () => {
     <div className={styles.wrapper}>
       <Heading>Hva kan vi hjelpe deg med?</Heading>
       <div className={styles.cards}>
-        <Card data-color="support1">
+        <Card data-color="accent">
           <Heading>Sikkerhet og drift</Heading>
           <Paragraph>
             Most provide as with carried business are much better more the
             perfected designer. Writing slightly explain.
           </Paragraph>
         </Card>
-        <Card data-color="support2">
+        <Card data-color="support1">
           <Heading>Skole og utdanning</Heading>
           <Paragraph>
             Most provide as with carried business are much better more the
             perfected designer. Writing slightly explain.
           </Paragraph>
         </Card>
-        <Card data-color="support3">
+        <Card data-color="support2">
           <Heading>Mat og helse</Heading>
           <Paragraph>
             Most provide as with carried business are much better more the

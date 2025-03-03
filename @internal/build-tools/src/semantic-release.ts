@@ -129,7 +129,6 @@ export async function semanticRelease(options: SemanticReleaseOptions) {
 
   // publishResults contains a map of project names and their exit codes
   const publishResults = await nxPublishRelease({
-    projects: projectsToPublish,
     dryRun: !options.publish || options.dryRun,
     verbose: options.verbose,
     tag: config.channel,

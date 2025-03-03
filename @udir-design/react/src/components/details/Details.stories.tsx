@@ -41,7 +41,7 @@ export const InCard: Story = {
 export const InCardWithColor: Story = {
   render: (args) => {
     return (
-      <Card data-color="support3">
+      <Card data-color="support2">
         <Details {...args}>
           <Details.Summary>
             Hvordan får jeg tildelt et jegernummer?
