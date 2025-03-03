@@ -13,6 +13,7 @@
       "workspaceChangelog": false,
       "projectChangelogs": {
         "createRelease": "github",
+        "renderer": "{workspaceRoot}/changelog-renderer.ts",
         "renderOptions": {
           "authors": false
         }
