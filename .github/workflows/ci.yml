@@ -92,6 +92,9 @@ jobs:
 
       - run: pnpm build
 
+      - name: Fail if the build changed any checked-in files
+        run: git diff --stat --exit-code
+
   storybook-tests:
     runs-on: ubuntu-latest
     needs: main
