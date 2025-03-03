@@ -1,7 +1,50 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Colors 1`] = `
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--ds-size-2); height: 100%; width: 100%;">
+  <span data-color="neutral">
+    neutral
+  </span>
+  <span data-color="success">
+    success
+  </span>
+  <span data-color="warning">
+    warning
+  </span>
+  <span data-color="danger">
+    danger
+  </span>
+  <span data-color="info">
+    info
+  </span>
+  <span data-color="accent">
+    accent
+  </span>
+  <span data-color="support1">
+    support1
+  </span>
+  <span data-color="support2">
+    support2
+  </span>
+</div>
+`;
+
 exports[`Preview 1`] = `
 <span>
   Ny
 </span>
+`;
+
+exports[`Sizes 1`] = `
+<div style="display: flex; align-items: center; gap: var(--ds-size-2);">
+  <span data-size="sm">
+    sm
+  </span>
+  <span data-size="md">
+    md
+  </span>
+  <span data-size="lg">
+    lg
+  </span>
+</div>
 `;
