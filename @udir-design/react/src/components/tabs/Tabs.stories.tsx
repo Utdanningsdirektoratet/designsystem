@@ -8,7 +8,9 @@ import {
   NewspaperIcon,
 } from '@navikt/aksel-icons';
 import { useState } from 'react';
-import { Button } from '../alpha';
+
+import { expect, userEvent, within } from 'storybook/test';
+import { Button } from '@udir-design/react/alpha';
 
 const meta: Meta<typeof Tabs> = {
   component: Tabs,
@@ -31,6 +33,70 @@ export const Preview: Story = {
       <Tabs.Panel value="value2">content 2</Tabs.Panel>,
       <Tabs.Panel value="value3">content 3</Tabs.Panel>,
     ],
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const tab1 = canvas.getByRole('tab', { name: /tab 1/i });
+    const tab2 = canvas.getByRole('tab', { name: /tab 2/i });
+    const tab3 = canvas.getByRole('tab', { name: /tab 3/i });
+
+    await step(
+      'Default tab "Tab 1" is active and shows "content 1"',
+      async () => {
+        expect(tab1).toHaveAttribute('aria-selected', 'true');
+        const panel1 = canvas.getByText(/content 1/i);
+        expect(panel1).toBeVisible();
+        const panel2 = canvas.queryByText(/content 2/i);
+        expect(panel2).not.toBeInTheDocument();
+        const panel3 = canvas.queryByText(/content 3/i);
+        expect(panel3).not.toBeInTheDocument();
+      },
+    );
+
+    await step(
+      'Clicking tabs changes the active tab and displays the corresponding content',
+      async () => {
+        await userEvent.click(tab2);
+        expect(tab2).toHaveAttribute('aria-selected', 'true');
+
+        const panel2 = canvas.getByText(/content 2/i);
+        expect(panel2).toBeVisible();
+
+        await userEvent.click(tab3);
+        expect(tab3).toHaveAttribute('aria-selected', 'true');
+
+        const panel3 = canvas.getByText(/content 3/i);
+        expect(panel3).toBeVisible();
+
+        await userEvent.click(tab1);
+        expect(tab1).toHaveAttribute('aria-selected', 'true');
+
+        const panel1 = canvas.getByText(/content 1/i);
+        expect(panel1).toBeVisible();
+      },
+    );
+
+    await step('Can navigate tabs with the keyboard', async () => {
+      expect(tab1).toHaveFocus();
+
+      await userEvent.keyboard('{arrowright}');
+      expect(tab2).toHaveFocus();
+
+      await userEvent.keyboard('{arrowright}');
+      expect(tab3).toHaveFocus();
+
+      await userEvent.keyboard('{arrowright}');
+      expect(tab1).toHaveFocus();
+
+      await userEvent.keyboard('{arrowleft}');
+      expect(tab3).toHaveFocus();
+
+      await userEvent.keyboard('{arrowleft}');
+      expect(tab2).toHaveFocus();
+
+      await userEvent.keyboard('{arrowleft}');
+      expect(tab1).toHaveFocus();
+    });
   },
 };
 
