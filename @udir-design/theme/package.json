@@ -25,9 +25,9 @@
     "rimraf": "^6.0.1"
   },
   "scripts": {
-    "copy-css": "cp -r ../../design-tokens/dist/ ./dist/",
+    "copy-css": "cp ../../design-tokens/dist/*.* ./dist/",
     "postprocess-css": "../../@internal/build-tools/bin/postprocess-css-colors.ts ./dist/udir.css",
-    "clean": "rimraf ./dist",
+    "clean": "rimraf ./dist && mkdir ./dist",
     "build": "pnpm clean && pnpm copy-css && pnpm postprocess-css"
   }
 }

@@ -140,23 +140,6 @@ export const Variants: Story = {
           </Paragraph>
         </Card.Block>
       </Card>
-      <Card data-color="support3" {...args}>
-        <Card.Block>
-          <IllustrativeImg />
-        </Card.Block>
-        <Card.Block>
-          <Heading>
-            <a href="https://udir.no" target="_blank" rel="noopener noreferrer">
-              Card Support3
-            </a>
-          </Heading>
-          <Paragraph>
-            Most provide as with carried business are much better more the
-            perfected designer. Writing slightly explain desk unable at
-            supposedly about this
-          </Paragraph>
-        </Card.Block>
-      </Card>
     </>
   ),
 };

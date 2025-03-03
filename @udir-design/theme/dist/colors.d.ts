@@ -5,6 +5,5 @@ declare module '@digdir/designsystemet-react/colors' {
     accent: never;
     support1: never;
     support2: never;
-    support3: never;
   }
 }
