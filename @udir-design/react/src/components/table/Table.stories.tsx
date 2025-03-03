@@ -178,9 +178,9 @@ export const StickyHeader: Story = {
 };
 
 export const WithFormElements: Story = {
-  render: function Render(args) {
+  render: function Render(args, ctx) {
     const { getCheckboxProps } = useCheckboxGroup({
-      name: 'my-checkbox',
+      name: `${ctx.id}-checkboxGroup`,
       value: ['2'],
     });
 
@@ -194,6 +194,7 @@ export const WithFormElements: Story = {
                 {
                   ...(getCheckboxProps({
                     allowIndeterminate: true,
+                    id: `${ctx.id}-selectAll`,
                   }) as object) /* TODO: remove "as object" after next.49*/
                 }
               />
@@ -210,16 +211,21 @@ export const WithFormElements: Story = {
                 <Checkbox
                   aria-label={`Check ${row}`}
                   {
-                    ...(getCheckboxProps(
-                      String(row)
-                    ) as object) /* TODO: remove "as object" after next.49*/
+                    ...(getCheckboxProps({
+                      id: `${ctx.id}-select${row}`,
+                      value: String(row),
+                    }) as object) /* TODO: remove "as object" after next.49*/
                   }
                 />
               </Table.Cell>
               <Table.Cell>{row}</Table.Cell>
               <Table.Cell>{row}</Table.Cell>
               <Table.Cell>
-                <Textfield data-size="sm" aria-label={`Textfield ${row}`} />
+                <Textfield
+                  data-size="sm"
+                  aria-label={`Textfield ${row}`}
+                  id={`${ctx.id}-textfield${row}`}
+                />
               </Table.Cell>
             </Table.Row>
           ))}
