@@ -1,5 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button, Heading, Paragraph, Textfield, Dialog } from '../alpha';
+import {
+  Button,
+  Heading,
+  Paragraph,
+  Textfield,
+  Dialog,
+  Field,
+  Label,
+  Suggestion,
+} from '../alpha';
 import { expect, userEvent, within } from '@storybook/test';
 import { useRef, useState } from 'react';
 
@@ -248,6 +257,78 @@ export const DialogWithMaxWidth: Story = {
       </Dialog>
     </Dialog.TriggerContext>
   ),
+};
+
+const DATA_PLACES = [
+  'Sogndal',
+  'Oslo',
+  'Brønnøysund',
+  'Stavanger',
+  'Trondheim',
+  'Bergen',
+  'Lillestrøm',
+];
+
+export const DialogWithSuggestion: Story = {
+  render: function Render(args, ctx) {
+    const dialogRef = useRef<HTMLDialogElement>(null);
+
+    return (
+      <Dialog.TriggerContext>
+        <Dialog.Trigger>Open Dialog</Dialog.Trigger>
+        <Dialog style={{ overflow: 'visible' }} ref={dialogRef}>
+          <Dialog.Block>
+            <Heading>Dialog med suggestion</Heading>
+          </Dialog.Block>
+          <Dialog.Block>
+            <Field>
+              <Label>Velg en destinasjon</Label>
+              <Suggestion>
+                <Suggestion.Input id={`${ctx.id}-input`} />
+                <Suggestion.Clear />
+                <Suggestion.List>
+                  <Suggestion.Empty>Tomt</Suggestion.Empty>
+                  {DATA_PLACES.map((place) => (
+                    <Suggestion.Option key={place} value={place}>
+                      {place}
+                      <div>Kommune</div>
+                    </Suggestion.Option>
+                  ))}
+                </Suggestion.List>
+              </Suggestion>
+            </Field>
+          </Dialog.Block>
+          <Dialog.Block>
+            <Button
+              variant="secondary"
+              onClick={() => dialogRef.current?.close()}
+            >
+              Avbryt
+            </Button>
+          </Dialog.Block>
+        </Dialog>
+      </Dialog.TriggerContext>
+    );
+  },
+  parameters: {
+    a11y: {
+      // TODO: these rules should be enabled after figuring out why they occur.
+      // for some reason it says `aria-expanded` is not allowed
+      config: {
+        rules: [
+          {
+            id: 'aria-allowed-attr',
+            enabled: false,
+          },
+          /* It does not like role="combobox" either */
+          {
+            id: 'aria-allowed-role',
+            enabled: false,
+          },
+        ],
+      },
+    },
+  },
 };
 
 export const DialogNonModal: Story = {

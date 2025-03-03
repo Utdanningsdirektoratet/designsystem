@@ -206,6 +206,179 @@ exports[`Dialog With Open Prop 1`] = `
 </dialog>
 `;
 
+exports[`Dialog With Suggestion 1`] = `
+<button
+  data-variant="primary"
+  type="button"
+  aria-haspopup="dialog"
+>
+  Open Dialog
+</button>
+<dialog
+  data-modal="true"
+  open
+  style="overflow: visible;"
+>
+  <form method="dialog">
+    <button
+      data-icon="true"
+      data-variant="tertiary"
+      type="submit"
+      aria-label="Lukk dialogvindu"
+      data-color="neutral"
+      name="close"
+    >
+    </button>
+  </form>
+  <div>
+    <h2>
+      Dialog med suggestion
+    </h2>
+  </div>
+  <div>
+    <div>
+      <label
+        data-weight="medium"
+        for="components-dialog--dialog-with-suggestion-input"
+      >
+        Velg en destinasjon
+      </label>
+      <div>
+        <input
+          type="text"
+          list=":r0:"
+          placeholder
+          id="components-dialog--dialog-with-suggestion-input"
+          value
+          popovertarget=":r0:"
+          aria-autocomplete="list"
+          aria-controls=":r0:"
+          aria-expanded="false"
+          autocomplete="off"
+          role="combobox"
+        >
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="reset"
+          aria-label="Tøm"
+        >
+        </button>
+        <u-datalist
+          data-sr-singular="%d forslag"
+          data-sr-plural="%d forslag"
+          id=":r0:"
+          hidden
+          role="listbox"
+        >
+          <u-option
+            data-empty="true"
+            role="none"
+            tabindex="-1"
+            aria-disabled="false"
+            aria-selected="false"
+          >
+            Tomt
+          </u-option>
+          <u-option
+            value="Sogndal"
+            tabindex="-1"
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+          >
+            Sogndal
+            <div>
+              Kommune
+            </div>
+          </u-option>
+          <u-option
+            value="Oslo"
+            tabindex="-1"
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+          >
+            Oslo
+            <div>
+              Kommune
+            </div>
+          </u-option>
+          <u-option
+            value="Brønnøysund"
+            tabindex="-1"
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+          >
+            Brønnøysund
+            <div>
+              Kommune
+            </div>
+          </u-option>
+          <u-option
+            value="Stavanger"
+            tabindex="-1"
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+          >
+            Stavanger
+            <div>
+              Kommune
+            </div>
+          </u-option>
+          <u-option
+            value="Trondheim"
+            tabindex="-1"
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+          >
+            Trondheim
+            <div>
+              Kommune
+            </div>
+          </u-option>
+          <u-option
+            value="Bergen"
+            tabindex="-1"
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+          >
+            Bergen
+            <div>
+              Kommune
+            </div>
+          </u-option>
+          <u-option
+            value="Lillestrøm"
+            tabindex="-1"
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+          >
+            Lillestrøm
+            <div>
+              Kommune
+            </div>
+          </u-option>
+        </u-datalist>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button
+      data-variant="secondary"
+      type="button"
+    >
+      Avbryt
+    </button>
+  </div>
+</dialog>
+`;
+
 exports[`Preview 1`] = `
 <button
   data-variant="primary"
