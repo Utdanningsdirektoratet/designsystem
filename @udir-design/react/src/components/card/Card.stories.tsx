@@ -10,6 +10,8 @@ import {
   Select,
   Textfield,
 } from '../../alpha';
+import { Color } from '@digdir/designsystemet-react/colors';
+import { Fragment } from 'react/jsx-runtime';
 
 const IllustrativeImg = () => (
   <img
@@ -52,94 +54,61 @@ export const Preview: Story = {
   },
 };
 
+const VariantsMap: Record<
+  string,
+  { 'data-color': Color; variant: 'default' | 'tinted' }
+> = {
+  neutralDefault: {
+    'data-color': 'neutral',
+    variant: 'default',
+  },
+  neutralTinted: {
+    'data-color': 'neutral',
+    variant: 'tinted',
+  },
+  accentDefault: {
+    'data-color': 'accent',
+    variant: 'default',
+  },
+  accentTinted: {
+    'data-color': 'accent',
+    variant: 'tinted',
+  },
+  support1Default: {
+    'data-color': 'support1',
+    variant: 'default',
+  },
+  support1Tinted: {
+    'data-color': 'support1',
+    variant: 'tinted',
+  },
+  support2Default: {
+    'data-color': 'support2',
+    variant: 'default',
+  },
+  support2Tinted: {
+    'data-color': 'support2',
+    variant: 'tinted',
+  },
+};
+
 export const Variants: Story = {
   render: (args) => (
     <>
-      <Card data-color="neutral" {...args}>
-        <Card.Block>
-          <IllustrativeImg />
-        </Card.Block>
-        <Card.Block>
-          <Heading>
-            <a href="https://udir.no" target="_blank" rel="noopener noreferrer">
-              Card Neutral
-            </a>
-          </Heading>
-          <Paragraph>
-            Most provide as with carried business are much better more the
-            perfected designer. Writing slightly explain desk unable at
-            supposedly about this
-          </Paragraph>
-        </Card.Block>
-      </Card>
-      <Card data-color="accent" {...args}>
-        <Card.Block>
-          <IllustrativeImg />
-        </Card.Block>
-        <Card.Block>
-          <Heading>
-            <a href="https://udir.no" target="_blank" rel="noopener noreferrer">
-              Card Accent
-            </a>
-          </Heading>
-          <Paragraph>
-            Most provide as with carried business are much better more the
-            perfected designer. Writing slightly explain desk unable at
-            supposedly about this
-          </Paragraph>
-        </Card.Block>
-      </Card>
-      <Card data-color="subtle" {...args}>
-        <Card.Block>
-          <IllustrativeImg />
-        </Card.Block>
-        <Card.Block>
-          <Heading>
-            <a href="https://udir.no" target="_blank" rel="noopener noreferrer">
-              Card Subtle
-            </a>
-          </Heading>
-          <Paragraph>
-            Most provide as with carried business are much better more the
-            perfected designer. Writing slightly explain desk unable at
-            supposedly about this
-          </Paragraph>
-        </Card.Block>
-      </Card>
-      <Card data-color="support1" {...args}>
-        <Card.Block>
-          <IllustrativeImg />
-        </Card.Block>
-        <Card.Block>
-          <Heading>
-            <a href="https://udir.no" target="_blank" rel="noopener noreferrer">
-              Card Support1
-            </a>
-          </Heading>
-          <Paragraph>
-            Most provide as with carried business are much better more the
-            perfected designer. Writing slightly explain desk unable at
-            supposedly about this
-          </Paragraph>
-        </Card.Block>
-      </Card>
-      <Card data-color="support2" {...args}>
-        <Card.Block>
-          <IllustrativeImg />
-        </Card.Block>
-        <Card.Block>
-          <Heading>
-            <a href="https://udir.no" target="_blank" rel="noopener noreferrer">
-              Card Support2
-            </a>
-          </Heading>
-          <Paragraph>
-            Most provide as with carried business are much better more the
-            perfected designer. Writing slightly explain desk unable at
-            supposedly about this
-          </Paragraph>
-        </Card.Block>
-      </Card>
+      {Object.entries(VariantsMap).map(([key, value]) => (
+        <Card key={key} {...args} {...value}>
+          <Card.Block>
+            <Paragraph>
+              {Object.entries(value).map(([v, k]) => (
+                <Fragment key={v}>
+                  {v}: {k}
+                  <br />
+                </Fragment>
+              ))}
+            </Paragraph>
+          </Card.Block>
+        </Card>
+      ))}
     </>
   ),
 };
@@ -387,6 +356,11 @@ export const AsButton: Story = {
 };
 
 export const AsGrid: Story = {
+  parameters: {
+    customStyles: {
+      gridTemplateColumns: 'repeat(1fr)',
+    },
+  },
   args: {
     style: { display: 'grid', gridTemplateColumns: '1fr 1fr' },
     children: [

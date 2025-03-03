@@ -3,6 +3,7 @@
 exports[`As Button 1`] = `
 <button
   type="button"
+  data-variant="default"
   data-color="support1"
 >
   <div>
@@ -18,6 +19,7 @@ exports[`As Button 1`] = `
 </button>
 <button
   type="button"
+  data-variant="default"
   data-color="neutral"
 >
   <h2>
@@ -31,7 +33,7 @@ exports[`As Button 1`] = `
 
 exports[`As Grid 1`] = `
 <div
-  data-color="neutral"
+  data-variant="default"
   style="display: grid; grid-template-columns: 1fr 1fr;"
 >
   <div>
@@ -52,6 +54,7 @@ exports[`As Link 1`] = `
   href="https://udir.no"
   target="_blank"
   rel="noopener noreferrer"
+  data-variant="default"
   data-color="support1"
 >
   <div>
@@ -69,6 +72,7 @@ exports[`As Link 1`] = `
   href="https://udir.no"
   target="_blank"
   rel="noopener noreferrer"
+  data-variant="default"
   data-color="neutral"
 >
   <h2>
@@ -82,7 +86,7 @@ exports[`As Link 1`] = `
 
 exports[`Composed 1`] = `
 <div style="display: grid; gap: var(--ds-size-4); grid-column: 1 / -1; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); width: 100%;">
-  <div data-color="neutral">
+  <div data-variant="default">
     <div>
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <h2>
@@ -189,7 +193,7 @@ exports[`Composed 1`] = `
       </button>
     </div>
   </div>
-  <div data-color="neutral">
+  <div data-variant="default">
     <div>
       <img
         src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -209,7 +213,7 @@ exports[`Composed 1`] = `
 `;
 
 exports[`Media 1`] = `
-<div data-color="neutral">
+<div data-variant="default">
   <div>
     <img
       src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -225,7 +229,7 @@ exports[`Media 1`] = `
     </p>
   </div>
 </div>
-<div data-color="neutral">
+<div data-variant="default">
   <div>
     <h2>
       Card Neutral
@@ -244,7 +248,10 @@ exports[`Media 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<div data-color="neutral">
+<div
+  data-variant="default"
+  data-color="neutral"
+>
   <h2>
     Card Neutral
   </h2>
@@ -261,120 +268,117 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Variants 1`] = `
-<div data-color="neutral">
+<div
+  data-variant="default"
+  data-color="neutral"
+>
   <div>
-    <img
-      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      alt="studenter"
-    >
-  </div>
-  <div>
-    <h2>
-      <a
-        href="https://udir.no"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Card Neutral
-      </a>
-    </h2>
     <p data-variant="default">
-      Most provide as with carried business are much better more the perfected designer. Writing slightly explain desk unable at supposedly about this
+      data-color: neutral
+      <br>
+      variant: default
+      <br>
     </p>
   </div>
 </div>
-<div data-color="accent">
+<div
+  data-variant="tinted"
+  data-color="neutral"
+>
   <div>
-    <img
-      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      alt="studenter"
-    >
-  </div>
-  <div>
-    <h2>
-      <a
-        href="https://udir.no"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Card Accent
-      </a>
-    </h2>
     <p data-variant="default">
-      Most provide as with carried business are much better more the perfected designer. Writing slightly explain desk unable at supposedly about this
+      data-color: neutral
+      <br>
+      variant: tinted
+      <br>
     </p>
   </div>
 </div>
-<div data-color="subtle">
+<div
+  data-variant="default"
+  data-color="accent"
+>
   <div>
-    <img
-      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      alt="studenter"
-    >
-  </div>
-  <div>
-    <h2>
-      <a
-        href="https://udir.no"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Card Subtle
-      </a>
-    </h2>
     <p data-variant="default">
-      Most provide as with carried business are much better more the perfected designer. Writing slightly explain desk unable at supposedly about this
+      data-color: accent
+      <br>
+      variant: default
+      <br>
     </p>
   </div>
 </div>
-<div data-color="support1">
+<div
+  data-variant="tinted"
+  data-color="accent"
+>
   <div>
-    <img
-      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      alt="studenter"
-    >
-  </div>
-  <div>
-    <h2>
-      <a
-        href="https://udir.no"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Card Support1
-      </a>
-    </h2>
     <p data-variant="default">
-      Most provide as with carried business are much better more the perfected designer. Writing slightly explain desk unable at supposedly about this
+      data-color: accent
+      <br>
+      variant: tinted
+      <br>
     </p>
   </div>
 </div>
-<div data-color="support2">
+<div
+  data-variant="default"
+  data-color="support1"
+>
   <div>
-    <img
-      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      alt="studenter"
-    >
-  </div>
-  <div>
-    <h2>
-      <a
-        href="https://udir.no"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Card Support2
-      </a>
-    </h2>
     <p data-variant="default">
-      Most provide as with carried business are much better more the perfected designer. Writing slightly explain desk unable at supposedly about this
+      data-color: support1
+      <br>
+      variant: default
+      <br>
+    </p>
+  </div>
+</div>
+<div
+  data-variant="tinted"
+  data-color="support1"
+>
+  <div>
+    <p data-variant="default">
+      data-color: support1
+      <br>
+      variant: tinted
+      <br>
+    </p>
+  </div>
+</div>
+<div
+  data-variant="default"
+  data-color="support2"
+>
+  <div>
+    <p data-variant="default">
+      data-color: support2
+      <br>
+      variant: default
+      <br>
+    </p>
+  </div>
+</div>
+<div
+  data-variant="tinted"
+  data-color="support2"
+>
+  <div>
+    <p data-variant="default">
+      data-color: support2
+      <br>
+      variant: tinted
+      <br>
     </p>
   </div>
 </div>
 `;
 
 exports[`Video 1`] = `
-<div data-color="neutral">
+<div
+  data-variant="default"
+  data-color="neutral"
+>
   <div>
     <iframe
       data-chromatic="ignore"
@@ -404,7 +408,10 @@ exports[`Video 1`] = `
 `;
 
 exports[`With Link 1`] = `
-<div data-color="support1">
+<div
+  data-variant="default"
+  data-color="support1"
+>
   <div>
     <img
       src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -432,7 +439,10 @@ exports[`With Link 1`] = `
     </p>
   </div>
 </div>
-<div data-color="neutral">
+<div
+  data-variant="default"
+  data-color="neutral"
+>
   <div>
     <h2>
       <a
