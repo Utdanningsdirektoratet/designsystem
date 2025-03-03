@@ -8,9 +8,9 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "defaultProject": "@udir-design/react",
   "release": {
-    "projects": ["@udir-design/*"],
-    "projectsRelationship": "independent",
+    "projectsRelationship": "fixed",
     "changelog": {
+      "workspaceChangelog": false,
       "projectChangelogs": {
         "createRelease": "github",
         "renderOptions": {
