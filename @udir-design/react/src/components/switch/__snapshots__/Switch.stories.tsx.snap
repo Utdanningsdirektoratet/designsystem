@@ -1,5 +1,182 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Checked 1`] = `
+<div>
+  <input
+    type="checkbox"
+    role="switch"
+    id="components-switch--checked"
+    checked
+  >
+  <label
+    data-weight="regular"
+    for="components-switch--checked"
+  >
+    En bryter
+  </label>
+</div>
+`;
+
+exports[`Group 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Skru av/på en eller flere innstillinger
+  </legend>
+  <div>
+    <input
+      type="checkbox"
+      role="switch"
+      id="components-switch--group-1"
+      value="alt1"
+      checked
+      aria-describedby="components-switch--group-1:description"
+    >
+    <label
+      data-weight="regular"
+      for="components-switch--group-1"
+    >
+      Innstilling 1
+    </label>
+    <div
+      data-field="description"
+      id="components-switch--group-1:description"
+    >
+      Beskrivelse av innstilling
+    </div>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      role="switch"
+      id="components-switch--group-2"
+      value="alt2"
+    >
+    <label
+      data-weight="regular"
+      for="components-switch--group-2"
+    >
+      Innstilling 2
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      role="switch"
+      id="components-switch--group-3"
+      value="alt3"
+    >
+    <label
+      data-weight="regular"
+      for="components-switch--group-3"
+    >
+      Innstilling 3
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      role="switch"
+      readonly
+      id="components-switch--group-4"
+      value="alt4"
+      aria-describedby="components-switch--group-4:description"
+    >
+    <label
+      data-weight="regular"
+      for="components-switch--group-4"
+    >
+      Innstilling 4
+    </label>
+    <div
+      data-field="description"
+      id="components-switch--group-4:description"
+    >
+      Du mangler rettigheter for denne instillingen
+    </div>
+  </div>
+</fieldset>
+`;
+
+exports[`Group End 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Skru av/på en eller flere innstillinger
+  </legend>
+  <div data-position="end">
+    <input
+      type="checkbox"
+      role="switch"
+      id="components-switch--group-end-1"
+      value="alt1"
+      checked
+      aria-describedby="components-switch--group-end-1:description"
+    >
+    <label
+      data-weight="regular"
+      for="components-switch--group-end-1"
+    >
+      Innstilling 1
+    </label>
+    <div
+      data-field="description"
+      id="components-switch--group-end-1:description"
+    >
+      Beskrivelse av innstilling
+    </div>
+  </div>
+  <div data-position="end">
+    <input
+      type="checkbox"
+      role="switch"
+      id="components-switch--group-end-2"
+      value="alt2"
+    >
+    <label
+      data-weight="regular"
+      for="components-switch--group-end-2"
+    >
+      Innstilling 2
+    </label>
+  </div>
+  <div data-position="end">
+    <input
+      type="checkbox"
+      role="switch"
+      id="components-switch--group-end-3"
+      value="alt3"
+    >
+    <label
+      data-weight="regular"
+      for="components-switch--group-end-3"
+    >
+      Innstilling 3
+    </label>
+  </div>
+  <div data-position="end">
+    <input
+      type="checkbox"
+      role="switch"
+      readonly
+      id="components-switch--group-end-4"
+      value="alt4"
+      aria-describedby="components-switch--group-end-4:description"
+    >
+    <label
+      data-weight="regular"
+      for="components-switch--group-end-4"
+    >
+      Innstilling 4
+    </label>
+    <div
+      data-field="description"
+      id="components-switch--group-end-4:description"
+    >
+      Du mangler rettigheter for denne instillingen
+    </div>
+  </div>
+</fieldset>
+`;
+
 exports[`Preview 1`] = `
 <div>
   <input
