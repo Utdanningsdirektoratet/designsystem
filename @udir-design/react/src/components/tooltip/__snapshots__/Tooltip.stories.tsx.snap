@@ -1,5 +1,22 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Placement 1`] = `
+<span
+  popovertarget=":r2:"
+  popovertargetaction="show"
+>
+  Hold peker over meg
+</span>
+<div
+  role="tooltip"
+  id=":r2:"
+  popover="manual"
+  style="opacity: 0;"
+>
+  Tooltip text
+</div>
+`;
+
 exports[`Preview 1`] = `
 <button
   data-variant="primary"
@@ -13,8 +30,25 @@ exports[`Preview 1`] = `
   role="tooltip"
   id="«r0»"
   popover="manual"
-  style="opacity: 0;"
+  style="opacity: 0; --dsc-tooltip-arrow-x: 60px; --dsc-tooltip-arrow-y: 100%; translate: 94.4453px 8.6094px;"
 >
   Tooltip tekst
 </span>
+`;
+
+exports[`With String 1`] = `
+<span
+  popovertarget=":r1:"
+  popovertargetaction="show"
+>
+  Hold peker over meg
+</span>
+<div
+  role="tooltip"
+  id=":r1:"
+  popover="manual"
+  style="opacity: 0;"
+>
+  Tooltip text
+</div>
 `;
