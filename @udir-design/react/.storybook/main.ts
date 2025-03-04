@@ -33,7 +33,9 @@ const config: StorybookConfig = {
     },
   },
 
-  docs: {},
+  docs: {
+    autodocs: true
+  },
 
   tags: {
     // Configure stories with the 'snapshot' tag to only be visible in development.
