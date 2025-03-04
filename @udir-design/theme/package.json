@@ -1,5 +1,10 @@
 {
   "name": "@udir-design/theme",
+  "repository": {
+    "type": "git",
+    "url": "github:Utdanningsdirektoratet/designsystem",
+    "directory": "@udir-design/theme"
+  },
   "license": "MIT",
   "version": "0.0.0-semantically-released",
   "type": "module",
@@ -13,16 +18,16 @@
     "./dist"
   ],
   "dependencies": {
-    "@digdir/designsystemet-react": "1.0.0-next.48"
+    "@digdir/designsystemet-react": "1.0.0"
   },
   "devDependencies": {
     "@udir-design/tokens": "workspace:*",
     "rimraf": "^6.0.1"
   },
   "scripts": {
-    "copy-css": "cp -r ../../design-tokens/dist/ ./dist/",
+    "copy-css": "cp ../../design-tokens/dist/*.* ./dist/",
     "postprocess-css": "../../@internal/build-tools/bin/postprocess-css-colors.ts ./dist/udir.css",
-    "clean": "rimraf ./dist",
+    "clean": "rimraf ./dist && mkdir ./dist",
     "build": "pnpm clean && pnpm copy-css && pnpm postprocess-css"
   }
 }

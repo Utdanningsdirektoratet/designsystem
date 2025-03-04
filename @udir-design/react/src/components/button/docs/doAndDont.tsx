@@ -135,7 +135,7 @@ const Ex3Dont = () => {
       <Button variant="primary" data-color="accent">
         Publiser
       </Button>
-      <Button variant="secondary" data-color="info">
+      <Button variant="secondary" data-color="support1">
         Lagre
       </Button>
     </Stack>

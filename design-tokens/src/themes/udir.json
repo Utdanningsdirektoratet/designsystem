@@ -53,13 +53,17 @@
         "$type": "color",
         "$value": "{udir.accent.13}"
       },
-      "contrast-1": {
+      "14": {
         "$type": "color",
-        "$value": "{udir.accent.contrast-1}"
+        "$value": "{udir.accent.14}"
       },
-      "contrast-2": {
+      "15": {
         "$type": "color",
-        "$value": "{udir.accent.contrast-2}"
+        "$value": "{udir.accent.15}"
+      },
+      "16": {
+        "$type": "color",
+        "$value": "{udir.accent.16}"
       }
     },
     "neutral": {
@@ -115,13 +119,17 @@
         "$type": "color",
         "$value": "{udir.neutral.13}"
       },
-      "contrast-1": {
+      "14": {
         "$type": "color",
-        "$value": "{udir.neutral.contrast-1}"
+        "$value": "{udir.neutral.14}"
       },
-      "contrast-2": {
+      "15": {
         "$type": "color",
-        "$value": "{udir.neutral.contrast-2}"
+        "$value": "{udir.neutral.15}"
+      },
+      "16": {
+        "$type": "color",
+        "$value": "{udir.neutral.16}"
       }
     },
     "support1": {
@@ -177,13 +185,17 @@
         "$type": "color",
         "$value": "{udir.support1.13}"
       },
-      "contrast-1": {
+      "14": {
         "$type": "color",
-        "$value": "{udir.support1.contrast-1}"
+        "$value": "{udir.support1.14}"
       },
-      "contrast-2": {
+      "15": {
         "$type": "color",
-        "$value": "{udir.support1.contrast-2}"
+        "$value": "{udir.support1.15}"
+      },
+      "16": {
+        "$type": "color",
+        "$value": "{udir.support1.16}"
       }
     },
     "support2": {
@@ -239,96 +251,36 @@
         "$type": "color",
         "$value": "{udir.support2.13}"
       },
-      "contrast-1": {
+      "14": {
         "$type": "color",
-        "$value": "{udir.support2.contrast-1}"
+        "$value": "{udir.support2.14}"
       },
-      "contrast-2": {
+      "15": {
         "$type": "color",
-        "$value": "{udir.support2.contrast-2}"
-      }
-    },
-    "support3": {
-      "1": {
-        "$type": "color",
-        "$value": "{udir.support3.1}"
+        "$value": "{udir.support2.15}"
       },
-      "2": {
+      "16": {
         "$type": "color",
-        "$value": "{udir.support3.2}"
-      },
-      "3": {
-        "$type": "color",
-        "$value": "{udir.support3.3}"
-      },
-      "4": {
-        "$type": "color",
-        "$value": "{udir.support3.4}"
-      },
-      "5": {
-        "$type": "color",
-        "$value": "{udir.support3.5}"
-      },
-      "6": {
-        "$type": "color",
-        "$value": "{udir.support3.6}"
-      },
-      "7": {
-        "$type": "color",
-        "$value": "{udir.support3.7}"
-      },
-      "8": {
-        "$type": "color",
-        "$value": "{udir.support3.8}"
-      },
-      "9": {
-        "$type": "color",
-        "$value": "{udir.support3.9}"
-      },
-      "10": {
-        "$type": "color",
-        "$value": "{udir.support3.10}"
-      },
-      "11": {
-        "$type": "color",
-        "$value": "{udir.support3.11}"
-      },
-      "12": {
-        "$type": "color",
-        "$value": "{udir.support3.12}"
-      },
-      "13": {
-        "$type": "color",
-        "$value": "{udir.support3.13}"
-      },
-      "contrast-1": {
-        "$type": "color",
-        "$value": "{udir.support3.contrast-1}"
-      },
-      "contrast-2": {
-        "$type": "color",
-        "$value": "{udir.support3.contrast-2}"
+        "$value": "{udir.support2.16}"
       }
     }
   },
-  "font": {
-    "family": {
-      "$type": "fontFamilies",
-      "$value": "{udir.main}"
-    }
+  "font-family": {
+    "$type": "fontFamilies",
+    "$value": "{udir.font-family}"
   },
   "font-weight": {
     "medium": {
       "$type": "fontWeights",
-      "$value": "{udir.bold}"
+      "$value": "{udir.font-weight.medium}"
     },
     "semibold": {
       "$type": "fontWeights",
-      "$value": "{udir.extra-bold}"
+      "$value": "{udir.font-weight.semibold}"
     },
     "regular": {
       "$type": "fontWeights",
-      "$value": "{udir.regular}"
+      "$value": "{udir.font-weight.regular}"
     }
   },
   "border-radius": {

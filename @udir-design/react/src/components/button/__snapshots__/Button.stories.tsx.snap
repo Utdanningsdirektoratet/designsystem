@@ -963,6 +963,7 @@ exports[`Icons Only Primary 1`] = `
 exports[`Loading 1`] = `
 <button
   aria-busy="true"
+  aria-disabled="true"
   data-variant="primary"
   type="button"
 >
@@ -970,7 +971,6 @@ exports[`Loading 1`] = `
     role="img"
     viewbox="0 0 50 50"
     aria-hidden="true"
-    data-size="sm"
   >
     <circle
       cx="25"
@@ -993,6 +993,7 @@ exports[`Loading 1`] = `
 </button>
 <button
   aria-busy="true"
+  aria-disabled="true"
   data-variant="secondary"
   type="button"
 >
@@ -1000,7 +1001,6 @@ exports[`Loading 1`] = `
     role="img"
     viewbox="0 0 50 50"
     aria-hidden="true"
-    data-size="sm"
   >
     <circle
       cx="25"
@@ -1023,6 +1023,7 @@ exports[`Loading 1`] = `
 </button>
 <button
   aria-busy="true"
+  aria-disabled="true"
   data-variant="tertiary"
   type="button"
 >
@@ -1030,7 +1031,6 @@ exports[`Loading 1`] = `
     role="img"
     viewbox="0 0 50 50"
     aria-hidden="true"
-    data-size="sm"
   >
     <circle
       cx="25"

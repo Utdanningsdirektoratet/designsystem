@@ -202,7 +202,10 @@ exports[`Simple 1`] = `
         Hva kan vi hjelpe deg med?
       </h2>
       <div>
-        <div data-color="support1">
+        <div
+          data-variant="tinted"
+          data-color="accent"
+        >
           <h2>
             Sikkerhet og drift
           </h2>
@@ -210,7 +213,10 @@ exports[`Simple 1`] = `
             Most provide as with carried business are much better more the perfected designer. Writing slightly explain.
           </p>
         </div>
-        <div data-color="support2">
+        <div
+          data-variant="tinted"
+          data-color="support1"
+        >
           <h2>
             Skole og utdanning
           </h2>
@@ -218,7 +224,10 @@ exports[`Simple 1`] = `
             Most provide as with carried business are much better more the perfected designer. Writing slightly explain.
           </p>
         </div>
-        <div data-color="support3">
+        <div
+          data-variant="tinted"
+          data-color="support2"
+        >
           <h2>
             Mat og helse
           </h2>

@@ -8,7 +8,7 @@ exports[`Controlled 1`] = `
   Toggle Details
 </button>
 <br>
-<u-details>
+<u-details data-variant="default">
   <u-summary
     aria-expanded="false"
     role="button"
@@ -21,7 +21,7 @@ exports[`Controlled 1`] = `
     Skal du starte for deg selv? Enkeltpersonforetak er ofte den enkleste måten å etablere bedrift på. Denne organisasjonsformen har både fordeler og ulemper. Det gir deg stor grad av frihet, men kan også gi betydelig risiko fordi du har personlig ansvar for økonomien.
   </div>
 </u-details>
-<u-details>
+<u-details data-variant="default">
   <u-summary
     aria-expanded="false"
     role="button"
@@ -34,7 +34,7 @@ exports[`Controlled 1`] = `
     Planlegger du å starte næringsvirksomhet alene eller sammen med andre? Innebærer næringsvirksomheten en økonomisk risiko? Vil du ha rettigheter som arbeidstaker og muligheten til at andre kan investere i selskapet ditt? Da kan aksjeselskap være en hensiktsmessig organisasjonsform.
   </div>
 </u-details>
-<u-details>
+<u-details data-variant="default">
   <u-summary
     aria-expanded="false"
     role="button"
@@ -50,8 +50,11 @@ exports[`Controlled 1`] = `
 `;
 
 exports[`In Card 1`] = `
-<div data-color="neutral">
-  <u-details>
+<div
+  data-variant="default"
+  data-color="neutral"
+>
+  <u-details data-variant="default">
     <u-summary
       aria-expanded="false"
       role="button"
@@ -68,8 +71,11 @@ exports[`In Card 1`] = `
 `;
 
 exports[`In Card With Color 1`] = `
-<div data-color="support3">
-  <u-details>
+<div
+  data-variant="tinted"
+  data-color="support2"
+>
+  <u-details data-variant="default">
     <u-summary
       aria-expanded="false"
       role="button"
@@ -82,7 +88,7 @@ exports[`In Card With Color 1`] = `
       Du vil automatisk få tildelt jegernummer og bli registrert i Jegerregisteret når du har bestått jegerprøven.
     </div>
   </u-details>
-  <u-details>
+  <u-details data-variant="default">
     <u-summary
       aria-expanded="false"
       role="button"
@@ -122,7 +128,7 @@ exports[`In Card With Color 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<u-details>
+<u-details data-variant="default">
   <u-summary
     aria-expanded="false"
     role="button"
