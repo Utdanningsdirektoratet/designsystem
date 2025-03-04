@@ -41,11 +41,15 @@ export const Preview: Story = {
     icon: false,
     children: 'Knapp',
   },
-  play: async ({ canvasElement, args }) => {
+  play: async ({ canvasElement, args, step }) => {
     const canvas = within(canvasElement);
     const button = canvas.getByRole('button');
-    expect(button).toBeTruthy();
-    expect(canvas.getByText(args.children as string)).toBeTruthy();
+    await step('Element with button role should exist', async () => {
+      expect(button).toBeTruthy();
+    });
+    await step('Button should have expected text', async () => {
+      expect(canvas.getByText(args.children as string)).toBeTruthy();
+    });
   },
 };
 
