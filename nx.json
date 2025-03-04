@@ -46,7 +46,10 @@
       "dependsOn": ["^build"]
     },
     "build": {
-      "dependsOn": ["^build"]
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["default", "^default"],
+      "outputs": ["{projectRoot}/dist"]
     },
     "test": {
       "dependsOn": ["build"]
@@ -62,16 +65,6 @@
       "plugin": "@nx/eslint/plugin",
       "options": {
         "targetName": "lint"
-      }
-    },
-    {
-      "plugin": "@nx/vite/plugin",
-      "options": {
-        "buildTargetName": "build",
-        "testTargetName": "test",
-        "serveTargetName": "serve",
-        "previewTargetName": "preview",
-        "serveStaticTargetName": "serve-static"
       }
     },
     {

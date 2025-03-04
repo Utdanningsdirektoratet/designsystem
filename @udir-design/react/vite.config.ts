@@ -2,8 +2,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import dts from 'vite-plugin-dts';
+import tsConfigPaths from 'vite-tsconfig-paths';
 import * as path from 'path';
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import pkg from './package.json';
 
 const dependencies = Object.keys({
@@ -24,7 +24,7 @@ export default defineConfig({
 
   plugins: [
     react(),
-    nxViteTsPaths(),
+    tsConfigPaths(),
     dts({
       entryRoot: 'src',
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),

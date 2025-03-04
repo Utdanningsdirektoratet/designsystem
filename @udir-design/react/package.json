@@ -29,6 +29,7 @@
     "./dist"
   ],
   "scripts": {
+    "build": "vite build",
     "test": "vitest --project unit",
     "typecheck": "tsc --build",
     "dev": "storybook dev --port 6006",
@@ -69,6 +70,8 @@
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@types/remark-heading-id": "^1.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react-swc": "^3.8.0",
     "@vitest/browser": "^3.0.7",
     "@vitest/coverage-v8": "^3.0.7",
     "@vitest/ui": "^3.0.7",
@@ -95,6 +98,9 @@
     "unified": "^11.0.5",
     "unist-util-visit": "^5.0.0",
     "unplugin": "^1.16.1",
+    "vite": "^6.2.0",
+    "vite-plugin-dts": "^3.9.1",
+    "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.7"
   }
 }

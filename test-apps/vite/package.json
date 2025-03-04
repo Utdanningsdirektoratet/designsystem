@@ -1,6 +1,9 @@
 {
   "name": "test-app-vite",
   "type": "module",
+  "scripts": {
+    "build": "vite build"
+  },
   "dependencies": {
     "@udir-design/react": "workspace:*",
     "@udir-design/theme": "workspace:*",
@@ -10,6 +13,10 @@
   "devDependencies": {
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
-    "sass": "^1.85.1"
+    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react-swc": "^3.8.0",
+    "sass": "^1.85.1",
+    "vite": "^6.2.0",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }
