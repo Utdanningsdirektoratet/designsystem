@@ -19,6 +19,7 @@ const meta: Meta<typeof Checkbox> = {
 
 export default meta;
 type Story = StoryObj<typeof Checkbox>;
+type GroupStory = StoryObj<UseCheckboxGroupProps>;
 
 export const Preview: Story = {
   args: {
@@ -73,7 +74,7 @@ export const AriaLabel: Story = {
   },
 };
 
-export const Group: StoryObj<UseCheckboxGroupProps> = {
+export const Group: GroupStory = {
   args: {
     name: 'my-group',
     disabled: false,
@@ -131,7 +132,7 @@ export const OneOption: Story = {
   ),
 };
 
-export const WithError: StoryObj<UseCheckboxGroupProps> = {
+export const WithError: GroupStory = {
   args: {
     ...Group.args,
     name: 'my-error',
@@ -140,7 +141,7 @@ export const WithError: StoryObj<UseCheckboxGroupProps> = {
   render: Group.render,
 };
 
-export const Controlled: StoryObj<UseCheckboxGroupProps> = {
+export const Controlled: GroupStory = {
   render: function Render(args, context) {
     const { getCheckboxProps, validationMessageProps, value, setValue } =
       useCheckboxGroup({
@@ -196,7 +197,7 @@ export const Controlled: StoryObj<UseCheckboxGroupProps> = {
   },
 };
 
-export const ReadOnly: StoryObj<UseCheckboxGroupProps> = {
+export const ReadOnly: GroupStory = {
   args: {
     ...Group.args,
     name: 'my-readonly',
@@ -205,7 +206,7 @@ export const ReadOnly: StoryObj<UseCheckboxGroupProps> = {
   render: Group.render,
 };
 
-export const Disabled: StoryObj<UseCheckboxGroupProps> = {
+export const Disabled: GroupStory = {
   args: {
     ...Group.args,
     name: 'my-disabled',
@@ -214,7 +215,7 @@ export const Disabled: StoryObj<UseCheckboxGroupProps> = {
   render: Group.render,
 };
 
-export const InTable: StoryObj<UseCheckboxGroupProps> = {
+export const InTable: GroupStory = {
   render: function Render(args, context) {
     const { getCheckboxProps } = useCheckboxGroup({
       name: 'my-checkbox',
