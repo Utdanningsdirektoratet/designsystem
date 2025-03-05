@@ -223,6 +223,11 @@ export const InTable: GroupStory = {
     });
     return (
       <Table>
+        <colgroup>
+          {/* ensure the first column only takes up the necessary space */}
+          <col style={{ width: '1px' }} />
+          <col />
+        </colgroup>
         <Table.Head>
           <Table.Row>
             <Table.HeaderCell>
