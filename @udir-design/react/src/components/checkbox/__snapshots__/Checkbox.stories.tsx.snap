@@ -1,16 +1,657 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Aria Label 1`] = `
+<div>
+  <input
+    type="checkbox"
+    aria-label="Checkbox"
+    id="checkbox-aria-label"
+    value="value"
+  >
+</div>
+`;
+
+exports[`Content Ex 1 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Hvor lenge har du jobbet i det offentlige?
+  </legend>
+  <div>
+    <input
+      type="checkbox"
+      id="undefined-0-3"
+      value="0-3"
+    >
+    <label
+      data-weight="regular"
+      for="undefined-0-3"
+    >
+      I under ett år
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      id="undefined-1-3"
+      value="1-3"
+    >
+    <label
+      data-weight="regular"
+      for="undefined-1-3"
+    >
+      Fra 1-3 år
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      id="undefined->3"
+      value="3+"
+    >
+    <label
+      data-weight="regular"
+      for="undefined->3"
+    >
+      Mer enn 3 år
+    </label>
+  </div>
+</fieldset>
+`;
+
+exports[`Content Ex 2 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Hva liker du best med jobben din?
+  </legend>
+  <div>
+    <input
+      type="checkbox"
+      id="undefined-selvstendige"
+      value="selvstendige"
+    >
+    <label
+      data-weight="regular"
+      for="undefined-selvstendige"
+    >
+      Jeg liker å jobbe med selvstendige oppgaver
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      id="undefined-moter"
+      value="moter"
+    >
+    <label
+      data-weight="regular"
+      for="undefined-moter"
+    >
+      Jeg elsker møter
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      id="undefined-lunsj"
+      value="lunsj"
+    >
+    <label
+      data-weight="regular"
+      for="undefined-lunsj"
+    >
+      Lunsjen er best
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      id="undefined-kolleger"
+      value="kolleger"
+    >
+    <label
+      data-weight="regular"
+      for="undefined-kolleger"
+    >
+      Jeg liker å møte kolleger
+    </label>
+  </div>
+</fieldset>
+`;
+
+exports[`Content Ex 3 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Hva liker du best med jobben din?
+  </legend>
+  <div>
+    <input
+      type="checkbox"
+      id="undefined-selvstendige"
+      value="selvstendige"
+    >
+    <label
+      data-weight="regular"
+      for="undefined-selvstendige"
+    >
+      Selvstendige oppgaver
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      id="undefined-moter"
+      value="moter"
+    >
+    <label
+      data-weight="regular"
+      for="undefined-moter"
+    >
+      Møter
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      id="undefined-lunsj"
+      value="lunsj"
+    >
+    <label
+      data-weight="regular"
+      for="undefined-lunsj"
+    >
+      Lunsj
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      id="undefined-kolleger"
+      value="kolleger"
+    >
+    <label
+      data-weight="regular"
+      for="undefined-kolleger"
+    >
+      Kolleger
+    </label>
+  </div>
+</fieldset>
+`;
+
+exports[`Controlled 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Skal du reise til noen av disse landene?
+  </legend>
+  <p data-variant="default">
+    Velg alle landene du skal innom.
+  </p>
+  <div>
+    <input
+      type="checkbox"
+      id="components-checkbox--controlled-kroatia"
+      name="my-controlled"
+      value="-kroatia"
+    >
+    <label
+      data-weight="regular"
+      for="components-checkbox--controlled-kroatia"
+    >
+      Kroatia
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      id="components-checkbox--controlled-slovakia"
+      name="my-controlled"
+      value="slovakia"
+    >
+    <label
+      data-weight="regular"
+      for="components-checkbox--controlled-slovakia"
+    >
+      Slovakia
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      id="components-checkbox--controlled-hobbsyssel"
+      name="my-controlled"
+      value="hobsyssel"
+    >
+    <label
+      data-weight="regular"
+      for="components-checkbox--controlled-hobbsyssel"
+    >
+      Hobsyssel
+    </label>
+  </div>
+</fieldset>
+<p
+  data-field="validation"
+  hidden
+  id=":r5:"
+>
+</p>
+<hr
+  aria-hidden="true"
+  style="margin-top: var(--ds-size-4);"
+>
+<p
+  data-variant="default"
+  style="margin: var(--ds-size-2) 0;"
+>
+  Du har valgt:
+</p>
+<div style="display: flex; gap: 1rem;">
+  <button
+    data-variant="primary"
+    type="button"
+  >
+    Toggle Kroatia
+  </button>
+  <button
+    data-variant="primary"
+    type="button"
+  >
+    Toggle Hobsyssel
+  </button>
+</div>
+`;
+
+exports[`Disabled 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Hvordan vil du helst at vi skal kontakte deg?
+  </legend>
+  <p data-variant="default">
+    Velg alle alternativene som er relevante for deg.
+  </p>
+  <div>
+    <input
+      type="checkbox"
+      id="components-checkbox--disabled-email"
+      name="my-disabled"
+      disabled
+      value="epost"
+      checked
+    >
+    <label
+      data-weight="regular"
+      aria-disabled="true"
+      for="components-checkbox--disabled-email"
+    >
+      E-post
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      id="components-checkbox--disabled-telefon"
+      name="my-disabled"
+      disabled
+      value="telefon"
+    >
+    <label
+      data-weight="regular"
+      aria-disabled="true"
+      for="components-checkbox--disabled-telefon"
+    >
+      Telefon
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      id="components-checkbox--disabled-sms"
+      name="my-disabled"
+      disabled
+      value="sms"
+    >
+    <label
+      data-weight="regular"
+      aria-disabled="true"
+      for="components-checkbox--disabled-sms"
+    >
+      SMS
+    </label>
+  </div>
+  <p
+    data-field="validation"
+    hidden
+    id=":r9:"
+  >
+  </p>
+</fieldset>
+`;
+
+exports[`Group 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Hvordan vil du helst at vi skal kontakte deg?
+  </legend>
+  <p data-variant="default">
+    Velg alle alternativene som er relevante for deg.
+  </p>
+  <div>
+    <input
+      type="checkbox"
+      id="components-checkbox--group-email"
+      name="my-group"
+      value="epost"
+      checked
+    >
+    <label
+      data-weight="regular"
+      for="components-checkbox--group-email"
+    >
+      E-post
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      id="components-checkbox--group-telefon"
+      name="my-group"
+      value="telefon"
+    >
+    <label
+      data-weight="regular"
+      for="components-checkbox--group-telefon"
+    >
+      Telefon
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      id="components-checkbox--group-sms"
+      name="my-group"
+      value="sms"
+    >
+    <label
+      data-weight="regular"
+      for="components-checkbox--group-sms"
+    >
+      SMS
+    </label>
+  </div>
+  <p
+    data-field="validation"
+    hidden
+    id=":r1:"
+  >
+  </p>
+</fieldset>
+`;
+
+exports[`In Table 1`] = `
+<table>
+  <colgroup>
+    <col style="width: 1px;">
+    <col>
+  </colgroup>
+  <thead>
+    <tr>
+      <th>
+        <div>
+          <input
+            type="checkbox"
+            id="components-checkbox--in-table-all"
+            aria-label="Select all"
+            name="my-checkbox"
+            value="all"
+          >
+        </div>
+      </th>
+      <th>
+        Header
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div>
+          <input
+            type="checkbox"
+            id="components-checkbox--in-table-1"
+            aria-label="Check 1"
+            name="my-checkbox"
+            value="1"
+          >
+        </div>
+      </td>
+      <td>
+        Content
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div>
+          <input
+            type="checkbox"
+            id="components-checkbox--in-table-2"
+            aria-label="Check 2"
+            name="my-checkbox"
+            value="2"
+          >
+        </div>
+      </td>
+      <td>
+        Content
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div>
+          <input
+            type="checkbox"
+            id="components-checkbox--in-table-3"
+            aria-label="Check 3"
+            name="my-checkbox"
+            value="3"
+          >
+        </div>
+      </td>
+      <td>
+        Content
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div>
+          <input
+            type="checkbox"
+            id="components-checkbox--in-table-4"
+            aria-label="Check 4"
+            name="my-checkbox"
+            value="4"
+          >
+        </div>
+      </td>
+      <td>
+        Content
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`One Option 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Bekreft at du er over 18 år
+  </legend>
+  <p data-variant="default">
+    For at vi skal kunne sende deg opplysningen du ber om, må du bekrefte at du er myndig.
+  </p>
+  <div>
+    <input
+      type="checkbox"
+      id="components-checkbox--one-option"
+      value="samtykke"
+    >
+    <label
+      data-weight="regular"
+      for="components-checkbox--one-option"
+    >
+      Jeg bekrefter at jeg er over 18 år
+    </label>
+  </div>
+</fieldset>
+`;
+
 exports[`Preview 1`] = `
 <div>
   <input
     type="checkbox"
-    id="components-checkbox--preview"
+    id="checkbox-preview"
+    value="value"
+    aria-describedby="checkbox-preview:description"
   >
   <label
     data-weight="regular"
-    for="components-checkbox--preview"
+    for="checkbox-preview"
   >
     Checkbox label
   </label>
+  <div
+    data-field="description"
+    id="checkbox-preview:description"
+  >
+    Description
+  </div>
 </div>
+`;
+
+exports[`Read Only 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Hvordan vil du helst at vi skal kontakte deg?
+  </legend>
+  <p data-variant="default">
+    Velg alle alternativene som er relevante for deg.
+  </p>
+  <div>
+    <input
+      type="checkbox"
+      id="components-checkbox--read-only-email"
+      name="my-readonly"
+      readonly
+      value="epost"
+      checked
+    >
+    <label
+      data-weight="regular"
+      for="components-checkbox--read-only-email"
+    >
+      E-post
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      id="components-checkbox--read-only-telefon"
+      name="my-readonly"
+      readonly
+      value="telefon"
+    >
+    <label
+      data-weight="regular"
+      for="components-checkbox--read-only-telefon"
+    >
+      Telefon
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      id="components-checkbox--read-only-sms"
+      name="my-readonly"
+      readonly
+      value="sms"
+    >
+    <label
+      data-weight="regular"
+      for="components-checkbox--read-only-sms"
+    >
+      SMS
+    </label>
+  </div>
+  <p
+    data-field="validation"
+    hidden
+    id=":r7:"
+  >
+  </p>
+</fieldset>
+`;
+
+exports[`With Error 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Hvordan vil du helst at vi skal kontakte deg?
+  </legend>
+  <p data-variant="default">
+    Velg alle alternativene som er relevante for deg.
+  </p>
+  <div>
+    <input
+      type="checkbox"
+      id="components-checkbox--with-error-email"
+      aria-describedby=":r3:"
+      aria-invalid="true"
+      name="my-error"
+      value="epost"
+      checked
+    >
+    <label
+      data-weight="regular"
+      for="components-checkbox--with-error-email"
+    >
+      E-post
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      id="components-checkbox--with-error-telefon"
+      aria-describedby=":r3:"
+      aria-invalid="true"
+      name="my-error"
+      value="telefon"
+    >
+    <label
+      data-weight="regular"
+      for="components-checkbox--with-error-telefon"
+    >
+      Telefon
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      id="components-checkbox--with-error-sms"
+      aria-describedby=":r3:"
+      aria-invalid="true"
+      name="my-error"
+      value="sms"
+    >
+    <label
+      data-weight="regular"
+      for="components-checkbox--with-error-sms"
+    >
+      SMS
+    </label>
+  </div>
+  <p
+    data-field="validation"
+    id=":r3:"
+  >
+    Du må velge minst to kontaktalternativ
+  </p>
+</fieldset>
 `;

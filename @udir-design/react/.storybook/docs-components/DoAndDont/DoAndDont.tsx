@@ -9,7 +9,7 @@ const Wrapper = ({ variant, description, children }: WrapperProps) => {
 
   return (
     <figure
-      className={cl(styles.wrapper, styles[variant])}
+      className={cl('sb-unstyled', styles.wrapper, styles[variant])}
       data-color-scheme="light"
     >
       <div className={styles.header}>
