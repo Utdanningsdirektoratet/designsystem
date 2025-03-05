@@ -121,15 +121,22 @@ const preview: Preview = {
         order: ['Introduksjon', 'demo', 'components'],
       },
     },
+
     docs: {
       theme: customTheme,
       components: componentOverrides,
     },
+
     viewport: {
       options: storybookViewports,
     },
+
     chromatic: {
       modes: chromaticViewports,
+    },
+
+    a11y: {
+      test: 'error',
     },
   },
   initialGlobals: {

@@ -33,7 +33,29 @@ const config: StorybookConfig = {
     },
   },
 
-  docs: {},
+  async viteFinal(cfg, opts) {
+    const { mergeConfig } = await import('vite');
+    return mergeConfig(cfg, {
+      optimizeDeps: {
+        /*
+        Sometimes we get a message like this, and then tests fail:
+        > [vite] (client) ✨ new dependencies optimized: <dependency-name>
+        > [vitest] Vite unexpectedly reloaded a test. This may cause tests to fail,
+        >   lead to flaky behaviour or duplicated test runs.
+        > For a stable experience, please add mentioned dependencies to your config's
+        >   `optimizeDeps.include` field manually.
+        > [vite] (client) ✨ optimized dependencies changed. reloading
+        
+        This indicates that some dependencies
+        */
+        include: ['react/jsx-dev-runtime'],
+      },
+    });
+  },
+
+  docs: {
+    autodocs: true,
+  },
 
   tags: {
     // Configure stories with the 'snapshot' tag to only be visible in development.
