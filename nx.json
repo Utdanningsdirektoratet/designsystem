@@ -1,9 +1,6 @@
 {
-  "pluginsConfig": {
-    "@nx/js": {
-      "analyzeSourceFiles": true
-    }
-  },
+  "pluginsConfig": {},
+  "useDaemonProcess": true,
   "extends": "nx/presets/npm.json",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "defaultProject": "@udir-design/react",
@@ -53,11 +50,6 @@
     },
     "test": {
       "dependsOn": ["build"]
-    },
-    "@nx/js:tsc": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["default", "^default"]
     }
   },
   "plugins": [
