@@ -1,6 +1,11 @@
 {
   "name": "test-app-nextjs",
   "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
   "dependencies": {
     "@udir-design/react": "workspace:*",
     "@udir-design/theme": "workspace:*",
