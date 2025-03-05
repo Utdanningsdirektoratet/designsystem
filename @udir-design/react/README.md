@@ -65,8 +65,6 @@ Dette må passes inn med din eksisterende tsconfig, her er et eksempel på en ek
     "outDir": "../../dist/out-tsc",
     "types": [
       "node",
-      "@nx/react/typings/cssmodule.d.ts",
-      "@nx/react/typings/image.d.ts",
       "vite/client",
       "vitest/importMeta",
       "@udir-design/theme", // <---- Legg til disse
