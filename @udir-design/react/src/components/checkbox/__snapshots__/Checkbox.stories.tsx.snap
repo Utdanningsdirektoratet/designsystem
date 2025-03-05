@@ -5,8 +5,8 @@ exports[`Aria Label 1`] = `
   <input
     type="checkbox"
     aria-label="Checkbox"
+    id="checkbox-aria-label"
     value="value"
-    id=":m7ewihj4dc0"
   >
 </div>
 `;
@@ -19,12 +19,12 @@ exports[`Content Ex 1 1`] = `
   <div>
     <input
       type="checkbox"
+      id="undefined-0-3"
       value="0-3"
-      id=":m7ewihnfvft"
     >
     <label
       data-weight="regular"
-      for=":m7ewihnfvft"
+      for="undefined-0-3"
     >
       I under ett år
     </label>
@@ -32,12 +32,12 @@ exports[`Content Ex 1 1`] = `
   <div>
     <input
       type="checkbox"
+      id="undefined-1-3"
       value="1-3"
-      id=":m7ewihnftmb"
     >
     <label
       data-weight="regular"
-      for=":m7ewihnftmb"
+      for="undefined-1-3"
     >
       Fra 1-3 år
     </label>
@@ -45,12 +45,12 @@ exports[`Content Ex 1 1`] = `
   <div>
     <input
       type="checkbox"
+      id="undefined->3"
       value="3+"
-      id=":m7ewihnftc4"
     >
     <label
       data-weight="regular"
-      for=":m7ewihnftc4"
+      for="undefined->3"
     >
       Mer enn 3 år
     </label>
@@ -66,12 +66,12 @@ exports[`Content Ex 2 1`] = `
   <div>
     <input
       type="checkbox"
+      id="undefined-selvstendige"
       value="selvstendige"
-      id=":m7ewihnxsiu"
     >
     <label
       data-weight="regular"
-      for=":m7ewihnxsiu"
+      for="undefined-selvstendige"
     >
       Jeg liker å jobbe med selvstendige oppgaver
     </label>
@@ -79,12 +79,12 @@ exports[`Content Ex 2 1`] = `
   <div>
     <input
       type="checkbox"
+      id="undefined-moter"
       value="moter"
-      id=":m7ewihnxc6t"
     >
     <label
       data-weight="regular"
-      for=":m7ewihnxc6t"
+      for="undefined-moter"
     >
       Jeg elsker møter
     </label>
@@ -92,12 +92,12 @@ exports[`Content Ex 2 1`] = `
   <div>
     <input
       type="checkbox"
+      id="undefined-lunsj"
       value="lunsj"
-      id=":m7ewihnxjkd"
     >
     <label
       data-weight="regular"
-      for=":m7ewihnxjkd"
+      for="undefined-lunsj"
     >
       Lunsjen er best
     </label>
@@ -105,12 +105,12 @@ exports[`Content Ex 2 1`] = `
   <div>
     <input
       type="checkbox"
+      id="undefined-kolleger"
       value="kolleger"
-      id=":m7ewihnx390"
     >
     <label
       data-weight="regular"
-      for=":m7ewihnx390"
+      for="undefined-kolleger"
     >
       Jeg liker å møte kolleger
     </label>
@@ -126,12 +126,12 @@ exports[`Content Ex 3 1`] = `
   <div>
     <input
       type="checkbox"
+      id="undefined-selvstendige"
       value="selvstendige"
-      id=":m7ewihogz0x"
     >
     <label
       data-weight="regular"
-      for=":m7ewihogz0x"
+      for="undefined-selvstendige"
     >
       Selvstendige oppgaver
     </label>
@@ -139,12 +139,12 @@ exports[`Content Ex 3 1`] = `
   <div>
     <input
       type="checkbox"
+      id="undefined-moter"
       value="moter"
-      id=":m7ewihog3h3"
     >
     <label
       data-weight="regular"
-      for=":m7ewihog3h3"
+      for="undefined-moter"
     >
       Møter
     </label>
@@ -152,12 +152,12 @@ exports[`Content Ex 3 1`] = `
   <div>
     <input
       type="checkbox"
+      id="undefined-lunsj"
       value="lunsj"
-      id=":m7ewihogq0n"
     >
     <label
       data-weight="regular"
-      for=":m7ewihogq0n"
+      for="undefined-lunsj"
     >
       Lunsj
     </label>
@@ -165,12 +165,12 @@ exports[`Content Ex 3 1`] = `
   <div>
     <input
       type="checkbox"
+      id="undefined-kolleger"
       value="kolleger"
-      id=":m7ewihog36d"
     >
     <label
       data-weight="regular"
-      for=":m7ewihog36d"
+      for="undefined-kolleger"
     >
       Kolleger
     </label>
@@ -189,13 +189,13 @@ exports[`Controlled 1`] = `
   <div>
     <input
       type="checkbox"
+      id="components-checkbox--controlled-kroatia"
       name="my-controlled"
-      value="kroatia"
-      id=":m7ewihl817c"
+      value="-kroatia"
     >
     <label
       data-weight="regular"
-      for=":m7ewihl817c"
+      for="components-checkbox--controlled-kroatia"
     >
       Kroatia
     </label>
@@ -203,13 +203,13 @@ exports[`Controlled 1`] = `
   <div>
     <input
       type="checkbox"
+      id="components-checkbox--controlled-slovakia"
       name="my-controlled"
       value="slovakia"
-      id=":m7ewihl8awa"
     >
     <label
       data-weight="regular"
-      for=":m7ewihl8awa"
+      for="components-checkbox--controlled-slovakia"
     >
       Slovakia
     </label>
@@ -217,13 +217,13 @@ exports[`Controlled 1`] = `
   <div>
     <input
       type="checkbox"
+      id="components-checkbox--controlled-hobbsyssel"
       name="my-controlled"
       value="hobsyssel"
-      id=":m7ewihl8xwt"
     >
     <label
       data-weight="regular"
-      for=":m7ewihl8xwt"
+      for="components-checkbox--controlled-hobbsyssel"
     >
       Hobsyssel
     </label>
@@ -272,16 +272,16 @@ exports[`Disabled 1`] = `
   <div>
     <input
       type="checkbox"
+      id="components-checkbox--disabled-email"
       name="my-disabled"
       disabled
       value="epost"
       checked
-      id=":m7ewihmdpdf"
     >
     <label
       data-weight="regular"
       aria-disabled="true"
-      for=":m7ewihmdpdf"
+      for="components-checkbox--disabled-email"
     >
       E-post
     </label>
@@ -289,15 +289,15 @@ exports[`Disabled 1`] = `
   <div>
     <input
       type="checkbox"
+      id="components-checkbox--disabled-telefon"
       name="my-disabled"
       disabled
       value="telefon"
-      id=":m7ewihmdm5y"
     >
     <label
       data-weight="regular"
       aria-disabled="true"
-      for=":m7ewihmdm5y"
+      for="components-checkbox--disabled-telefon"
     >
       Telefon
     </label>
@@ -305,15 +305,15 @@ exports[`Disabled 1`] = `
   <div>
     <input
       type="checkbox"
+      id="components-checkbox--disabled-sms"
       name="my-disabled"
       disabled
       value="sms"
-      id=":m7ewihmd5yk"
     >
     <label
       data-weight="regular"
       aria-disabled="true"
-      for=":m7ewihmd5yk"
+      for="components-checkbox--disabled-sms"
     >
       SMS
     </label>
@@ -338,14 +338,14 @@ exports[`Group 1`] = `
   <div>
     <input
       type="checkbox"
+      id="components-checkbox--group-email"
       name="my-group"
       value="epost"
       checked
-      id=":m7ewihjkbjz"
     >
     <label
       data-weight="regular"
-      for=":m7ewihjkbjz"
+      for="components-checkbox--group-email"
     >
       E-post
     </label>
@@ -353,13 +353,13 @@ exports[`Group 1`] = `
   <div>
     <input
       type="checkbox"
+      id="components-checkbox--group-telefon"
       name="my-group"
       value="telefon"
-      id=":m7ewihjk68l"
     >
     <label
       data-weight="regular"
-      for=":m7ewihjk68l"
+      for="components-checkbox--group-telefon"
     >
       Telefon
     </label>
@@ -367,13 +367,13 @@ exports[`Group 1`] = `
   <div>
     <input
       type="checkbox"
+      id="components-checkbox--group-sms"
       name="my-group"
       value="sms"
-      id=":m7ewihjkcy5"
     >
     <label
       data-weight="regular"
-      for=":m7ewihjkcy5"
+      for="components-checkbox--group-sms"
     >
       SMS
     </label>
@@ -395,10 +395,10 @@ exports[`In Table 1`] = `
         <div>
           <input
             type="checkbox"
+            id="components-checkbox--in-table-all"
             aria-label="Select all"
             name="my-checkbox"
             value="all"
-            id=":m7ewihmvd27"
           >
         </div>
       </th>
@@ -413,10 +413,10 @@ exports[`In Table 1`] = `
         <div>
           <input
             type="checkbox"
+            id="components-checkbox--in-table-1"
             aria-label="Check 1"
             name="my-checkbox"
             value="1"
-            id=":m7ewihmvwx9"
           >
         </div>
       </td>
@@ -429,10 +429,10 @@ exports[`In Table 1`] = `
         <div>
           <input
             type="checkbox"
+            id="components-checkbox--in-table-2"
             aria-label="Check 2"
             name="my-checkbox"
             value="2"
-            id=":m7ewihmvsir"
           >
         </div>
       </td>
@@ -445,10 +445,10 @@ exports[`In Table 1`] = `
         <div>
           <input
             type="checkbox"
+            id="components-checkbox--in-table-3"
             aria-label="Check 3"
             name="my-checkbox"
             value="3"
-            id=":m7ewihmvbaq"
           >
         </div>
       </td>
@@ -461,10 +461,10 @@ exports[`In Table 1`] = `
         <div>
           <input
             type="checkbox"
+            id="components-checkbox--in-table-4"
             aria-label="Check 4"
             name="my-checkbox"
             value="4"
-            id=":m7ewihmvou8"
           >
         </div>
       </td>
@@ -487,12 +487,12 @@ exports[`One Option 1`] = `
   <div>
     <input
       type="checkbox"
+      id="components-checkbox--one-option"
       value="samtykke"
-      id=":m7ewihk4j3v"
     >
     <label
       data-weight="regular"
-      for=":m7ewihk4j3v"
+      for="components-checkbox--one-option"
     >
       Jeg bekrefter at jeg er over 18 år
     </label>
@@ -504,19 +504,19 @@ exports[`Preview 1`] = `
 <div>
   <input
     type="checkbox"
+    id="checkbox-preview"
     value="value"
-    id=":m7ewihgleba"
-    aria-describedby=":m7ewihgleba:description"
+    aria-describedby="checkbox-preview:description"
   >
   <label
     data-weight="regular"
-    for=":m7ewihgleba"
+    for="checkbox-preview"
   >
     Checkbox label
   </label>
   <div
     data-field="description"
-    id=":m7ewihgleba:description"
+    id="checkbox-preview:description"
   >
     Description
   </div>
@@ -534,15 +534,15 @@ exports[`Read Only 1`] = `
   <div>
     <input
       type="checkbox"
+      id="components-checkbox--read-only-email"
       name="my-readonly"
       readonly
       value="epost"
       checked
-      id=":m7ewihlu7j3"
     >
     <label
       data-weight="regular"
-      for=":m7ewihlu7j3"
+      for="components-checkbox--read-only-email"
     >
       E-post
     </label>
@@ -550,14 +550,14 @@ exports[`Read Only 1`] = `
   <div>
     <input
       type="checkbox"
+      id="components-checkbox--read-only-telefon"
       name="my-readonly"
       readonly
       value="telefon"
-      id=":m7ewihluimg"
     >
     <label
       data-weight="regular"
-      for=":m7ewihluimg"
+      for="components-checkbox--read-only-telefon"
     >
       Telefon
     </label>
@@ -565,14 +565,14 @@ exports[`Read Only 1`] = `
   <div>
     <input
       type="checkbox"
+      id="components-checkbox--read-only-sms"
       name="my-readonly"
       readonly
       value="sms"
-      id=":m7ewihluziz"
     >
     <label
       data-weight="regular"
-      for=":m7ewihluziz"
+      for="components-checkbox--read-only-sms"
     >
       SMS
     </label>
@@ -597,16 +597,16 @@ exports[`With Error 1`] = `
   <div>
     <input
       type="checkbox"
+      id="components-checkbox--with-error-email"
       aria-describedby=":r3:"
       aria-invalid="true"
       name="my-error"
       value="epost"
       checked
-      id=":m7ewihkmpba"
     >
     <label
       data-weight="regular"
-      for=":m7ewihkmpba"
+      for="components-checkbox--with-error-email"
     >
       E-post
     </label>
@@ -614,15 +614,15 @@ exports[`With Error 1`] = `
   <div>
     <input
       type="checkbox"
+      id="components-checkbox--with-error-telefon"
       aria-describedby=":r3:"
       aria-invalid="true"
       name="my-error"
       value="telefon"
-      id=":m7ewihkms7y"
     >
     <label
       data-weight="regular"
-      for=":m7ewihkms7y"
+      for="components-checkbox--with-error-telefon"
     >
       Telefon
     </label>
@@ -630,15 +630,15 @@ exports[`With Error 1`] = `
   <div>
     <input
       type="checkbox"
+      id="components-checkbox--with-error-sms"
       aria-describedby=":r3:"
       aria-invalid="true"
       name="my-error"
       value="sms"
-      id=":m7ewihkmtbs"
     >
     <label
       data-weight="regular"
-      for=":m7ewihkmtbs"
+      for="components-checkbox--with-error-sms"
     >
       SMS
     </label>

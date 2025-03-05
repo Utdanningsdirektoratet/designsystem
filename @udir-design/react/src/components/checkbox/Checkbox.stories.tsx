@@ -28,6 +28,7 @@ export const Preview: Story = {
     readOnly: false,
     value: 'value',
     onChange: fn(),
+    id: 'checkbox-preview',
   },
   play: async ({ canvasElement, step, args }) => {
     const canvas = within(canvasElement);
@@ -68,6 +69,7 @@ export const AriaLabel: Story = {
   args: {
     value: 'value',
     'aria-label': 'Checkbox',
+    id: 'checkbox-aria-label',
   },
 };
 
@@ -77,7 +79,7 @@ export const Group: StoryObj<UseCheckboxGroupProps> = {
     disabled: false,
     error: '',
   },
-  render: function Render(args) {
+  render: function Render(args, context) {
     const { getCheckboxProps, validationMessageProps } = useCheckboxGroup({
       value: ['epost'],
       ...args,
@@ -91,9 +93,21 @@ export const Group: StoryObj<UseCheckboxGroupProps> = {
         <Fieldset.Description>
           Velg alle alternativene som er relevante for deg.
         </Fieldset.Description>
-        <Checkbox label="E-post" {...getCheckboxProps('epost')} />
-        <Checkbox label="Telefon" {...getCheckboxProps('telefon')} />
-        <Checkbox label="SMS" {...getCheckboxProps('sms')} />
+        <Checkbox
+          id={context.id + '-email'}
+          label="E-post"
+          {...getCheckboxProps('epost')}
+        />
+        <Checkbox
+          id={context.id + '-telefon'}
+          label="Telefon"
+          {...getCheckboxProps('telefon')}
+        />
+        <Checkbox
+          id={context.id + '-sms'}
+          label="SMS"
+          {...getCheckboxProps('sms')}
+        />
         <ValidationMessage {...validationMessageProps} />
       </Fieldset>
     );
@@ -105,14 +119,14 @@ export const OneOption: Story = {
     label: 'Jeg bekrefter at jeg er over 18 år',
     value: 'samtykke',
   },
-  render: (args) => (
+  render: (args, context) => (
     <Fieldset>
       <Fieldset.Legend>Bekreft at du er over 18 år</Fieldset.Legend>
       <Fieldset.Description>
         For at vi skal kunne sende deg opplysningen du ber om, må du bekrefte at
         du er myndig.
       </Fieldset.Description>
-      <Checkbox {...args} />
+      <Checkbox id={context.id} {...args} />
     </Fieldset>
   ),
 };
@@ -127,7 +141,7 @@ export const WithError: StoryObj<UseCheckboxGroupProps> = {
 };
 
 export const Controlled: StoryObj<UseCheckboxGroupProps> = {
-  render: function Render(args) {
+  render: function Render(args, context) {
     const { getCheckboxProps, validationMessageProps, value, setValue } =
       useCheckboxGroup({
         name: 'my-controlled',
@@ -148,9 +162,21 @@ export const Controlled: StoryObj<UseCheckboxGroupProps> = {
           <Fieldset.Description>
             Velg alle landene du skal innom.
           </Fieldset.Description>
-          <Checkbox label="Kroatia" {...getCheckboxProps('kroatia')} />
-          <Checkbox label="Slovakia" {...getCheckboxProps('slovakia')} />
-          <Checkbox label="Hobsyssel" {...getCheckboxProps('hobsyssel')} />
+          <Checkbox
+            id={context.id + '-kroatia'}
+            label="Kroatia"
+            {...getCheckboxProps('-kroatia')}
+          />
+          <Checkbox
+            id={context.id + '-slovakia'}
+            label="Slovakia"
+            {...getCheckboxProps('slovakia')}
+          />
+          <Checkbox
+            id={context.id + '-hobbsyssel'}
+            label="Hobsyssel"
+            {...getCheckboxProps('hobsyssel')}
+          />
         </Fieldset>
         <ValidationMessage {...validationMessageProps} />
         <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
@@ -189,7 +215,7 @@ export const Disabled: StoryObj<UseCheckboxGroupProps> = {
 };
 
 export const InTable: StoryObj<UseCheckboxGroupProps> = {
-  render: function Render(args) {
+  render: function Render(args, context) {
     const { getCheckboxProps } = useCheckboxGroup({
       name: 'my-checkbox',
       ...args,
@@ -200,6 +226,7 @@ export const InTable: StoryObj<UseCheckboxGroupProps> = {
           <Table.Row>
             <Table.HeaderCell>
               <Checkbox
+                id={context.id + '-all'}
                 aria-label="Select all"
                 {...getCheckboxProps({
                   allowIndeterminate: true,
@@ -215,6 +242,7 @@ export const InTable: StoryObj<UseCheckboxGroupProps> = {
             <Table.Row key={row}>
               <Table.Cell>
                 <Checkbox
+                  id={context.id + '-' + row}
                   aria-label={`Check ${row}`}
                   {...getCheckboxProps(`${row}`)}
                 />
@@ -229,41 +257,62 @@ export const InTable: StoryObj<UseCheckboxGroupProps> = {
 };
 
 export const ContentEx1: Story = {
-  render: () => (
+  render: (context) => (
     <Fieldset>
       <Fieldset.Legend>
         Hvor lenge har du jobbet i det offentlige?
       </Fieldset.Legend>
-      <Checkbox label="I under ett år" value="0-3" />
-      <Checkbox label="Fra 1-3 år" value="1-3" />
-      <Checkbox label="Mer enn 3 år" value="3+" />
+      <Checkbox id={context.id + '-0-3'} label="I under ett år" value="0-3" />
+      <Checkbox id={context.id + '-1-3'} label="Fra 1-3 år" value="1-3" />
+      <Checkbox id={context.id + '->3'} label="Mer enn 3 år" value="3+" />
     </Fieldset>
   ),
 };
 
 export const ContentEx2: Story = {
-  render: () => (
+  render: (context) => (
     <Fieldset>
       <Fieldset.Legend>Hva liker du best med jobben din?</Fieldset.Legend>
       <Checkbox
+        id={context.id + '-selvstendige'}
         label="Jeg liker å jobbe med selvstendige oppgaver"
         value="selvstendige"
       />
-      <Checkbox label="Jeg elsker møter" value="moter" />
-      <Checkbox label="Lunsjen er best" value="lunsj" />
-      <Checkbox label="Jeg liker å møte kolleger" value="kolleger" />
+      <Checkbox
+        id={context.id + '-moter'}
+        label="Jeg elsker møter"
+        value="moter"
+      />
+      <Checkbox
+        id={context.id + '-lunsj'}
+        label="Lunsjen er best"
+        value="lunsj"
+      />
+      <Checkbox
+        id={context.id + '-kolleger'}
+        label="Jeg liker å møte kolleger"
+        value="kolleger"
+      />
     </Fieldset>
   ),
 };
 
 export const ContentEx3: Story = {
-  render: () => (
+  render: (context) => (
     <Fieldset>
       <Fieldset.Legend>Hva liker du best med jobben din?</Fieldset.Legend>
-      <Checkbox label="Selvstendige oppgaver" value="selvstendige" />
-      <Checkbox label="Møter" value="moter" />
-      <Checkbox label="Lunsj" value="lunsj" />
-      <Checkbox label="Kolleger" value="kolleger" />
+      <Checkbox
+        id={context.id + '-selvstendige'}
+        label="Selvstendige oppgaver"
+        value="selvstendige"
+      />
+      <Checkbox id={context.id + '-moter'} label="Møter" value="moter" />
+      <Checkbox id={context.id + '-lunsj'} label="Lunsj" value="lunsj" />
+      <Checkbox
+        id={context.id + '-kolleger'}
+        label="Kolleger"
+        value="kolleger"
+      />
     </Fieldset>
   ),
 };

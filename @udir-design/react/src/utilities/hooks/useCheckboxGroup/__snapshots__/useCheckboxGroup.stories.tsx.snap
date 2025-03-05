@@ -8,10 +8,10 @@ exports[`Allow Indeterminate 1`] = `
         <div>
           <input
             type="checkbox"
+            id="utilities-usecheckboxgroup--allow-indeterminate-all"
             aria-label="Select all"
             name="my-checkbox"
             value="all"
-            id=":m7ewifvcc0i"
           >
         </div>
       </th>
@@ -26,10 +26,10 @@ exports[`Allow Indeterminate 1`] = `
         <div>
           <input
             type="checkbox"
+            id="utilities-usecheckboxgroup--allow-indeterminate-1"
             aria-label="Check 1"
             name="my-checkbox"
             value="1"
-            id=":m7ewifvcp4n"
           >
         </div>
       </td>
@@ -42,10 +42,10 @@ exports[`Allow Indeterminate 1`] = `
         <div>
           <input
             type="checkbox"
+            id="utilities-usecheckboxgroup--allow-indeterminate-2"
             aria-label="Check 2"
             name="my-checkbox"
             value="2"
-            id=":m7ewifvcoy4"
           >
         </div>
       </td>
@@ -62,14 +62,14 @@ exports[`Default 1`] = `
   <div>
     <input
       type="checkbox"
+      id="utilities-usecheckboxgroup--default-email"
       name=":r0:"
       value="epost"
       checked
-      id=":m7ewifmz3ae"
     >
     <label
       data-weight="regular"
-      for=":m7ewifmz3ae"
+      for="utilities-usecheckboxgroup--default-email"
     >
       E-post
     </label>
@@ -77,13 +77,13 @@ exports[`Default 1`] = `
   <div>
     <input
       type="checkbox"
+      id="utilities-usecheckboxgroup--default-telefon"
       name=":r0:"
       value="telefon"
-      id=":m7ewifn0exd"
     >
     <label
       data-weight="regular"
-      for=":m7ewifn0exd"
+      for="utilities-usecheckboxgroup--default-telefon"
     >
       Telefon
     </label>
@@ -91,13 +91,13 @@ exports[`Default 1`] = `
   <div>
     <input
       type="checkbox"
+      id="utilities-usecheckboxgroup--default-sms"
       name=":r0:"
       value="sms"
-      id=":m7ewifn07y4"
     >
     <label
       data-weight="regular"
-      for=":m7ewifn07y4"
+      for="utilities-usecheckboxgroup--default-sms"
     >
       SMS
     </label>
