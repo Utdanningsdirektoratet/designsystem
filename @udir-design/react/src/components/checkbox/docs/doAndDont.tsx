@@ -4,10 +4,10 @@ import { Do, Dont, Stack } from '../../../../.storybook/docs-components';
 export const CheckboxEx1 = () => {
   return (
     <Stack style={{ margin: 'var(--ds-size-8) 0' }}>
-      <Do description="En knapp skal kun gjøre én handling">
+      <Do description="Plasser checkboxes vertikalt, slik at listen blir lettere å lese.">
         <Ex1Do />
       </Do>
-      <Dont description="Unngå flere handlinger på samme knapp">
+      <Dont description="Du bør unngå å plassere checkboxes i flere kolonner.">
         <Ex1Dont />
       </Dont>
     </Stack>
