@@ -10,6 +10,7 @@ import {
   ValidationMessage,
   useCheckboxGroup,
 } from '../../alpha';
+import { expect, fn, userEvent, within } from '@storybook/test';
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
@@ -26,6 +27,40 @@ export const Preview: Story = {
     disabled: false,
     readOnly: false,
     value: 'value',
+    onChange: fn(),
+  },
+  play: async ({ canvasElement, step, args }) => {
+    const canvas = within(canvasElement);
+    const checkbox = canvas.getByRole('checkbox');
+
+    await step('Label and description are rendered', async () => {
+      const label = canvas.getByText(args.label as string);
+      expect(label).toBeInTheDocument();
+
+      const description = canvas.getByText(args.description as string);
+      expect(description).toBeInTheDocument();
+    });
+
+    await step('Checkbox is rendered with the correct role', async () => {
+      expect(checkbox).toBeInTheDocument();
+      expect(checkbox).not.toBeChecked();
+    });
+
+    await step('User can toggle the checkbox', async () => {
+      await userEvent.click(checkbox);
+      expect(checkbox).toBeChecked();
+
+      await userEvent.click(checkbox);
+      expect(checkbox).not.toBeChecked();
+    });
+
+    await step(
+      'onChange callback is called when checkbox is toggled',
+      async () => {
+        await userEvent.click(checkbox);
+        expect(args.onChange).toHaveBeenCalled();
+      }
+    );
   },
 };
 

@@ -1,16 +1,653 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Aria Label 1`] = `
+<div>
+  <input
+    type="checkbox"
+    aria-label="Checkbox"
+    value="value"
+    id=":m7ewihj4dc0"
+  >
+</div>
+`;
+
+exports[`Content Ex 1 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Hvor lenge har du jobbet i det offentlige?
+  </legend>
+  <div>
+    <input
+      type="checkbox"
+      value="0-3"
+      id=":m7ewihnfvft"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihnfvft"
+    >
+      I under ett år
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      value="1-3"
+      id=":m7ewihnftmb"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihnftmb"
+    >
+      Fra 1-3 år
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      value="3+"
+      id=":m7ewihnftc4"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihnftc4"
+    >
+      Mer enn 3 år
+    </label>
+  </div>
+</fieldset>
+`;
+
+exports[`Content Ex 2 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Hva liker du best med jobben din?
+  </legend>
+  <div>
+    <input
+      type="checkbox"
+      value="selvstendige"
+      id=":m7ewihnxsiu"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihnxsiu"
+    >
+      Jeg liker å jobbe med selvstendige oppgaver
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      value="moter"
+      id=":m7ewihnxc6t"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihnxc6t"
+    >
+      Jeg elsker møter
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      value="lunsj"
+      id=":m7ewihnxjkd"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihnxjkd"
+    >
+      Lunsjen er best
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      value="kolleger"
+      id=":m7ewihnx390"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihnx390"
+    >
+      Jeg liker å møte kolleger
+    </label>
+  </div>
+</fieldset>
+`;
+
+exports[`Content Ex 3 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Hva liker du best med jobben din?
+  </legend>
+  <div>
+    <input
+      type="checkbox"
+      value="selvstendige"
+      id=":m7ewihogz0x"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihogz0x"
+    >
+      Selvstendige oppgaver
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      value="moter"
+      id=":m7ewihog3h3"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihog3h3"
+    >
+      Møter
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      value="lunsj"
+      id=":m7ewihogq0n"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihogq0n"
+    >
+      Lunsj
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      value="kolleger"
+      id=":m7ewihog36d"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihog36d"
+    >
+      Kolleger
+    </label>
+  </div>
+</fieldset>
+`;
+
+exports[`Controlled 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Skal du reise til noen av disse landene?
+  </legend>
+  <p data-variant="default">
+    Velg alle landene du skal innom.
+  </p>
+  <div>
+    <input
+      type="checkbox"
+      name="my-controlled"
+      value="kroatia"
+      id=":m7ewihl817c"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihl817c"
+    >
+      Kroatia
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      name="my-controlled"
+      value="slovakia"
+      id=":m7ewihl8awa"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihl8awa"
+    >
+      Slovakia
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      name="my-controlled"
+      value="hobsyssel"
+      id=":m7ewihl8xwt"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihl8xwt"
+    >
+      Hobsyssel
+    </label>
+  </div>
+</fieldset>
+<p
+  data-field="validation"
+  hidden
+  id=":r5:"
+>
+</p>
+<hr
+  aria-hidden="true"
+  style="margin-top: var(--ds-size-4);"
+>
+<p
+  data-variant="default"
+  style="margin: var(--ds-size-2) 0;"
+>
+  Du har valgt:
+</p>
+<div style="display: flex; gap: 1rem;">
+  <button
+    data-variant="primary"
+    type="button"
+  >
+    Toggle Kroatia
+  </button>
+  <button
+    data-variant="primary"
+    type="button"
+  >
+    Toggle Hobsyssel
+  </button>
+</div>
+`;
+
+exports[`Disabled 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Hvordan vil du helst at vi skal kontakte deg?
+  </legend>
+  <p data-variant="default">
+    Velg alle alternativene som er relevante for deg.
+  </p>
+  <div>
+    <input
+      type="checkbox"
+      name="my-disabled"
+      disabled
+      value="epost"
+      checked
+      id=":m7ewihmdpdf"
+    >
+    <label
+      data-weight="regular"
+      aria-disabled="true"
+      for=":m7ewihmdpdf"
+    >
+      E-post
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      name="my-disabled"
+      disabled
+      value="telefon"
+      id=":m7ewihmdm5y"
+    >
+    <label
+      data-weight="regular"
+      aria-disabled="true"
+      for=":m7ewihmdm5y"
+    >
+      Telefon
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      name="my-disabled"
+      disabled
+      value="sms"
+      id=":m7ewihmd5yk"
+    >
+    <label
+      data-weight="regular"
+      aria-disabled="true"
+      for=":m7ewihmd5yk"
+    >
+      SMS
+    </label>
+  </div>
+  <p
+    data-field="validation"
+    hidden
+    id=":r9:"
+  >
+  </p>
+</fieldset>
+`;
+
+exports[`Group 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Hvordan vil du helst at vi skal kontakte deg?
+  </legend>
+  <p data-variant="default">
+    Velg alle alternativene som er relevante for deg.
+  </p>
+  <div>
+    <input
+      type="checkbox"
+      name="my-group"
+      value="epost"
+      checked
+      id=":m7ewihjkbjz"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihjkbjz"
+    >
+      E-post
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      name="my-group"
+      value="telefon"
+      id=":m7ewihjk68l"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihjk68l"
+    >
+      Telefon
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      name="my-group"
+      value="sms"
+      id=":m7ewihjkcy5"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihjkcy5"
+    >
+      SMS
+    </label>
+  </div>
+  <p
+    data-field="validation"
+    hidden
+    id=":r1:"
+  >
+  </p>
+</fieldset>
+`;
+
+exports[`In Table 1`] = `
+<table>
+  <thead>
+    <tr>
+      <th>
+        <div>
+          <input
+            type="checkbox"
+            aria-label="Select all"
+            name="my-checkbox"
+            value="all"
+            id=":m7ewihmvd27"
+          >
+        </div>
+      </th>
+      <th>
+        Header
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div>
+          <input
+            type="checkbox"
+            aria-label="Check 1"
+            name="my-checkbox"
+            value="1"
+            id=":m7ewihmvwx9"
+          >
+        </div>
+      </td>
+      <td>
+        Content
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div>
+          <input
+            type="checkbox"
+            aria-label="Check 2"
+            name="my-checkbox"
+            value="2"
+            id=":m7ewihmvsir"
+          >
+        </div>
+      </td>
+      <td>
+        Content
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div>
+          <input
+            type="checkbox"
+            aria-label="Check 3"
+            name="my-checkbox"
+            value="3"
+            id=":m7ewihmvbaq"
+          >
+        </div>
+      </td>
+      <td>
+        Content
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div>
+          <input
+            type="checkbox"
+            aria-label="Check 4"
+            name="my-checkbox"
+            value="4"
+            id=":m7ewihmvou8"
+          >
+        </div>
+      </td>
+      <td>
+        Content
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`One Option 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Bekreft at du er over 18 år
+  </legend>
+  <p data-variant="default">
+    For at vi skal kunne sende deg opplysningen du ber om, må du bekrefte at du er myndig.
+  </p>
+  <div>
+    <input
+      type="checkbox"
+      value="samtykke"
+      id=":m7ewihk4j3v"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihk4j3v"
+    >
+      Jeg bekrefter at jeg er over 18 år
+    </label>
+  </div>
+</fieldset>
+`;
+
 exports[`Preview 1`] = `
 <div>
   <input
     type="checkbox"
-    id="components-checkbox--preview"
+    value="value"
+    id=":m7ewihgleba"
+    aria-describedby=":m7ewihgleba:description"
   >
   <label
     data-weight="regular"
-    for="components-checkbox--preview"
+    for=":m7ewihgleba"
   >
     Checkbox label
   </label>
+  <div
+    data-field="description"
+    id=":m7ewihgleba:description"
+  >
+    Description
+  </div>
 </div>
+`;
+
+exports[`Read Only 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Hvordan vil du helst at vi skal kontakte deg?
+  </legend>
+  <p data-variant="default">
+    Velg alle alternativene som er relevante for deg.
+  </p>
+  <div>
+    <input
+      type="checkbox"
+      name="my-readonly"
+      readonly
+      value="epost"
+      checked
+      id=":m7ewihlu7j3"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihlu7j3"
+    >
+      E-post
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      name="my-readonly"
+      readonly
+      value="telefon"
+      id=":m7ewihluimg"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihluimg"
+    >
+      Telefon
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      name="my-readonly"
+      readonly
+      value="sms"
+      id=":m7ewihluziz"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihluziz"
+    >
+      SMS
+    </label>
+  </div>
+  <p
+    data-field="validation"
+    hidden
+    id=":r7:"
+  >
+  </p>
+</fieldset>
+`;
+
+exports[`With Error 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Hvordan vil du helst at vi skal kontakte deg?
+  </legend>
+  <p data-variant="default">
+    Velg alle alternativene som er relevante for deg.
+  </p>
+  <div>
+    <input
+      type="checkbox"
+      aria-describedby=":r3:"
+      aria-invalid="true"
+      name="my-error"
+      value="epost"
+      checked
+      id=":m7ewihkmpba"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihkmpba"
+    >
+      E-post
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      aria-describedby=":r3:"
+      aria-invalid="true"
+      name="my-error"
+      value="telefon"
+      id=":m7ewihkms7y"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihkms7y"
+    >
+      Telefon
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      aria-describedby=":r3:"
+      aria-invalid="true"
+      name="my-error"
+      value="sms"
+      id=":m7ewihkmtbs"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewihkmtbs"
+    >
+      SMS
+    </label>
+  </div>
+  <p
+    data-field="validation"
+    id=":r3:"
+  >
+    Du må velge minst to kontaktalternativ
+  </p>
+</fieldset>
 `;

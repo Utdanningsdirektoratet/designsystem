@@ -1,0 +1,112 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Allow Indeterminate 1`] = `
+<table>
+  <thead>
+    <tr>
+      <th>
+        <div>
+          <input
+            type="checkbox"
+            aria-label="Select all"
+            name="my-checkbox"
+            value="all"
+            id=":m7ewifvcc0i"
+          >
+        </div>
+      </th>
+      <th>
+        Header
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div>
+          <input
+            type="checkbox"
+            aria-label="Check 1"
+            name="my-checkbox"
+            value="1"
+            id=":m7ewifvcp4n"
+          >
+        </div>
+      </td>
+      <td>
+        Content
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div>
+          <input
+            type="checkbox"
+            aria-label="Check 2"
+            name="my-checkbox"
+            value="2"
+            id=":m7ewifvcoy4"
+          >
+        </div>
+      </td>
+      <td>
+        Content
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Default 1`] = `
+<fieldset>
+  <div>
+    <input
+      type="checkbox"
+      name=":r0:"
+      value="epost"
+      checked
+      id=":m7ewifmz3ae"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewifmz3ae"
+    >
+      E-post
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      name=":r0:"
+      value="telefon"
+      id=":m7ewifn0exd"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewifn0exd"
+    >
+      Telefon
+    </label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      name=":r0:"
+      value="sms"
+      id=":m7ewifn07y4"
+    >
+    <label
+      data-weight="regular"
+      for=":m7ewifn07y4"
+    >
+      SMS
+    </label>
+  </div>
+  <p
+    data-field="validation"
+    hidden
+    id=":r1:"
+  >
+  </p>
+</fieldset>
+`;
