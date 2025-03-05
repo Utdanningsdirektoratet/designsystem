@@ -2,13 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": [
-      "node",
-      "@nx/react/typings/cssmodule.d.ts",
-      "@nx/react/typings/image.d.ts",
-      "vite/client",
-      "../theme/dist/colors.d.ts"
-    ]
+    "types": ["node", "vite/client", "../theme/dist/colors.d.ts"]
   },
   "exclude": [
     "**/*.spec.ts",

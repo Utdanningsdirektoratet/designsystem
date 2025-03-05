@@ -1,9 +1,6 @@
 {
-  "pluginsConfig": {
-    "@nx/js": {
-      "analyzeSourceFiles": true
-    }
-  },
+  "pluginsConfig": {},
+  "useDaemonProcess": true,
   "extends": "nx/presets/npm.json",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "defaultProject": "@udir-design/react",
@@ -53,11 +50,6 @@
     },
     "test": {
       "dependsOn": ["build"]
-    },
-    "@nx/js:tsc": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["default", "^default"]
     }
   },
   "plugins": [
@@ -66,40 +58,8 @@
       "options": {
         "targetName": "lint"
       }
-    },
-    {
-      "plugin": "@nx/next/plugin",
-      "options": {
-        "startTargetName": "start",
-        "buildTargetName": "build",
-        "devTargetName": "dev",
-        "serveStaticTargetName": "serve-static"
-      }
     }
   ],
-  "generators": {
-    "@nx/react": {
-      "library": {
-        "style": "scss",
-        "linter": "eslint",
-        "unitTestRunner": "vitest"
-      },
-      "application": {
-        "babel": true,
-        "style": "scss",
-        "linter": "eslint",
-        "bundler": "vite"
-      },
-      "component": {
-        "style": "scss"
-      }
-    },
-    "@nx/next": {
-      "application": {
-        "style": "scss",
-        "linter": "eslint"
-      }
-    }
-  },
+  "generators": {},
   "useLegacyCache": true
 }

@@ -4,13 +4,9 @@
     "emitDecoratorMetadata": true,
     "outDir": "../../dist/out-tsc",
     "baseUrl": "./",
-    "types": ["../theme/dist/colors.d.ts"]
+    "types": ["vite/client", "../theme/dist/colors.d.ts"]
   },
-  "files": [
-    "../../node_modules/@nx/react/typings/styled-jsx.d.ts",
-    "../../node_modules/@nx/react/typings/cssmodule.d.ts",
-    "../../node_modules/@nx/react/typings/image.d.ts"
-  ],
+  "files": [],
   "exclude": [
     "src/**/*.spec.ts",
     "src/**/*.test.ts",
