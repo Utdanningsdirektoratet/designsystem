@@ -31,6 +31,7 @@ export const Preview: Story = {
     id: 'radio-preview',
   },
   play: async ({ canvasElement, step, args }) => {
+    await Promise.resolve(); // ensure fieldObserver has had time to connect the elements
     const canvas = within(canvasElement);
     const radio = canvas.getByRole('radio');
 

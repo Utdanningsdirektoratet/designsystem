@@ -32,6 +32,7 @@ export const Preview: Story = {
     id: 'checkbox-preview',
   },
   play: async ({ canvasElement, step, args }) => {
+    await Promise.resolve(); // ensure fieldObserver has had time to connect the elements
     const canvas = within(canvasElement);
     const checkbox = canvas.getByRole('checkbox');
 
