@@ -8,6 +8,7 @@ import {
   ValidationMessage,
 } from '../alpha';
 import { useRadioGroup, UseRadioGroupProps } from '../../alpha';
+import { expect, fn, userEvent, within } from '@storybook/test';
 
 const meta: Meta<typeof Radio> = {
   component: Radio,
@@ -24,6 +25,34 @@ export const Preview: Story = {
     disabled: false,
     readOnly: false,
     value: 'value',
+    onChange: fn(),
+    onClick: fn(),
+  },
+  play: async ({ canvasElement, step, args }) => {
+    const canvas = within(canvasElement);
+    const radio = canvas.getByRole('radio');
+
+    await step('Radio label and description are rendered', async () => {
+      const label = canvas.getByLabelText(args.label as string);
+      expect(label).toBeInTheDocument();
+      const description = canvas.getByText(args.description as string);
+      expect(description).toBeInTheDocument();
+    });
+
+    await step('Radio is rendered with the correct initial state', async () => {
+      expect(radio).toBeInTheDocument();
+      expect(radio).not.toBeChecked();
+    });
+
+    await step(
+      "Radio calls onChange and onClick when it's checked",
+      async () => {
+        await userEvent.click(radio);
+        expect(radio).toBeChecked();
+        expect(args.onClick).toHaveBeenCalled();
+        expect(args.onChange).toHaveBeenCalled();
+      }
+    );
   },
 };
 
