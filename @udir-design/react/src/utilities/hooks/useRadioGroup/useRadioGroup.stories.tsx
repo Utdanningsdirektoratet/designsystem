@@ -3,7 +3,7 @@ import { Radio } from '../../../alpha';
 import type { UseRadioGroupProps } from './useRadioGroup';
 
 export const UseRadioGroup = (_props: UseRadioGroupProps) => (
-  <Radio aria-label="label" />
+  <Radio aria-label="label" id="useRadioGroup" />
 );
 
 export default {

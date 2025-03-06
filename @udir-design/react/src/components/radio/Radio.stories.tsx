@@ -27,6 +27,7 @@ export const Preview: Story = {
     value: 'value',
     onChange: fn(),
     onClick: fn(),
+    id: 'radio-preview',
   },
   play: async ({ canvasElement, step, args }) => {
     const canvas = within(canvasElement);
@@ -60,6 +61,7 @@ export const AriaLabel: Story = {
   args: {
     value: 'value',
     'aria-label': 'Radio',
+    id: 'radio-aria-label',
   },
 };
 
@@ -70,7 +72,7 @@ export const Group: StoryObj<UseRadioGroupProps> = {
     disabled: false,
     value: 'sjokolade',
   },
-  render: function Render(args) {
+  render: function Render(args, context) {
     const { getRadioProps, validationMessageProps } = useRadioGroup({
       ...args,
     });
@@ -81,14 +83,24 @@ export const Group: StoryObj<UseRadioGroupProps> = {
         <Fieldset.Description>
           Velg din favorittsmak blant alternativene.
         </Fieldset.Description>
-        <Radio label="Vanilje" {...getRadioProps('vanilje')} />
         <Radio
+          id={context.id + '-vanilje'}
+          label="Vanilje"
+          {...getRadioProps('vanilje')}
+        />
+        <Radio
+          id={context.id + '-jordbær'}
           label="Jordbær"
           description="Jordbær er best"
           {...getRadioProps('jordbær')}
         />
-        <Radio label="Sjokolade" {...getRadioProps('sjokolade')} />
         <Radio
+          id={context.id + '-sjokolade'}
+          label="Sjokolade"
+          {...getRadioProps('sjokolade')}
+        />
+        <Radio
+          id={context.id + '-spiser-ikke-is'}
           label="Jeg spiser ikke iskrem"
           {...getRadioProps('spiser-ikke-is')}
         />
@@ -108,7 +120,7 @@ export const WithError = {
 };
 
 export const Controlled: StoryObj<UseRadioGroupProps> = {
-  render: function Render(args) {
+  render: function Render(args, context) {
     const { value, setValue, getRadioProps } = useRadioGroup({
       ...args,
     });
@@ -121,14 +133,27 @@ export const Controlled: StoryObj<UseRadioGroupProps> = {
             Alle pizzaene er laget på våre egne nybakte bunner og serveres med
             kokkens egen osteblanding og tomatsaus.
           </Fieldset.Description>
-          <Radio label="Bare ost" {...getRadioProps('ost')} />
           <Radio
+            id={context.id + '-ost'}
+            label="Bare ost"
+            {...getRadioProps('ost')}
+          />
+          <Radio
+            id={context.id + '-dobbeldekker'}
             label="Dobbeldekker"
             description="Chorizo spesial med kokkens luksuskylling"
             {...getRadioProps('dobbeldekker')}
           />
-          <Radio label="Flammen" {...getRadioProps('flammen')} />
-          <Radio label="Snadder" {...getRadioProps('snadder')} />
+          <Radio
+            id={context.id + '-flammen'}
+            label="Flammen"
+            {...getRadioProps('flammen')}
+          />
+          <Radio
+            id={context.id + '-snadder'}
+            label="Snadder"
+            {...getRadioProps('snadder')}
+          />
         </Fieldset>
 
         <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
@@ -156,7 +181,7 @@ export const Disabled = {
 };
 
 export const Inline: Story = {
-  render: () => (
+  render: (context) => (
     <Fieldset>
       <Fieldset.Legend>Kontaktes på e-post?</Fieldset.Legend>
       <Fieldset.Description>
@@ -165,8 +190,18 @@ export const Inline: Story = {
       <div
         style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--ds-size-6)' }}
       >
-        <Radio name="my-inline" label="Ja" value="ja" />
-        <Radio name="my-inline" label="Nei" value="nei" />
+        <Radio
+          id={context.id + '-inline-ja'}
+          name="my-inline"
+          label="Ja"
+          value="ja"
+        />
+        <Radio
+          id={context.id + '-inline-nei'}
+          name="my-inline"
+          label="Nei"
+          value="nei"
+        />
       </div>
     </Fieldset>
   ),
