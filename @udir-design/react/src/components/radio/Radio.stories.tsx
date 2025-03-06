@@ -17,6 +17,7 @@ const meta: Meta<typeof Radio> = {
 
 export default meta;
 type Story = StoryObj<typeof Radio>;
+type GroupStory = StoryObj<UseRadioGroupProps>;
 
 export const Preview: Story = {
   args: {
@@ -65,7 +66,7 @@ export const AriaLabel: Story = {
   },
 };
 
-export const Group: StoryObj<UseRadioGroupProps> = {
+export const Group: GroupStory = {
   args: {
     name: 'my-group',
     readOnly: false,
@@ -119,7 +120,7 @@ export const WithError = {
   render: Group.render,
 };
 
-export const Controlled: StoryObj<UseRadioGroupProps> = {
+export const Controlled: GroupStory = {
   render: function Render(args, context) {
     const { value, setValue, getRadioProps } = useRadioGroup({
       ...args,
