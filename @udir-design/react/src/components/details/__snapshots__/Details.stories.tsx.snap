@@ -137,7 +137,7 @@ exports[`Preview 1`] = `
   >
     Hvem kan registrere seg i Frivillighetsregisteret?
   </u-summary>
-  <div>
+  <div data-testid="details-content">
     For å kunne bli registrert i Frivillighetsregisteret, må organisasjonen drive frivillig virksomhet. Det er bare foreninger, stiftelser og aksjeselskap som kan registreres. Virksomheten kan ikke dele ut midler til fysiske personer. Virksomheten må ha et styre.
   </div>
 </u-details>
