@@ -1,0 +1,26 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    # Grouping based on dependency type and semver version
+    groups:
+      dev-patch-minor:
+        dependency-type: 'development'
+        update-types:
+          - 'patch'
+          - 'minor'
+      dev-major:
+        dependency-type: 'development'
+        update-types:
+          - 'major'
+      prod-patch-minor:
+        dependency-type: 'production'
+        update-types:
+          - 'patch'
+          - 'minor'
+      prod-major:
+        dependency-type: 'production'
+        update-types:
+          - 'major'
