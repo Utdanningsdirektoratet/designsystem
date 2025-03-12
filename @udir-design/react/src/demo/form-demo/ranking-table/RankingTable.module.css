@@ -1,0 +1,10 @@
+.cell {
+  text-align: center;
+  vertical-align: middle;
+}
+.cell > * {
+  display: inline-block;
+}
+.assertions {
+  width: 200px;
+}
