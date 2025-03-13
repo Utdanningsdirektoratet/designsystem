@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import { Button, Card, Details, Link } from '../alpha';
+import { expect, userEvent, within } from '@storybook/test';
 
 export default {
   component: Details,
@@ -9,19 +10,60 @@ export default {
 
 type Story = StoryObj<typeof Details>;
 
+const previewSummary = 'Hvem kan registrere seg i Frivillighetsregisteret?';
+const previewContent =
+  'For å kunne bli registrert i Frivillighetsregisteret, må organisasjonen drive frivillig virksomhet. Det er bare foreninger, stiftelser og aksjeselskap som kan registreres. Virksomheten kan ikke dele ut midler til fysiske personer. Virksomheten må ha et styre.';
+
 export const Preview: Story = {
   args: {
     children: [
-      <Details.Summary>
-        Hvem kan registrere seg i Frivillighetsregisteret?
-      </Details.Summary>,
-      <Details.Content>
-        For å kunne bli registrert i Frivillighetsregisteret, må organisasjonen
-        drive frivillig virksomhet. Det er bare foreninger, stiftelser og
-        aksjeselskap som kan registreres. Virksomheten kan ikke dele ut midler
-        til fysiske personer. Virksomheten må ha et styre.
+      <Details.Summary>{previewSummary}</Details.Summary>,
+      <Details.Content data-testid="details-content">
+        {previewContent}
       </Details.Content>,
     ],
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const details = canvasElement.querySelector('u-details');
+    const summary = canvas.getByRole('button');
+    const content = canvas.getByTestId('details-content');
+
+    await step('Check that details are rendered', async () => {
+      expect(details).toBeTruthy();
+    });
+
+    await step('Summary text is correct', async () => {
+      expect(summary).toHaveTextContent(previewSummary);
+    });
+
+    await step('Content text is correct', async () => {
+      expect(content).toHaveTextContent(previewContent);
+    });
+
+    await step('Initial state: details is closed', async () => {
+      expect(details).not.toHaveAttribute('open');
+    });
+
+    await step('Click summary to open details', async () => {
+      await userEvent.click(summary);
+      expect(details).toHaveAttribute('open');
+    });
+
+    await step('Click summary to close details', async () => {
+      await userEvent.click(summary);
+      expect(details).not.toHaveAttribute('open');
+    });
+
+    await step('Keyboard interaction toggles details', async () => {
+      summary.focus();
+      await userEvent.keyboard('{Enter}');
+      expect(details).toHaveAttribute('open');
+
+      await userEvent.keyboard('{Enter}');
+      expect(details).not.toHaveAttribute('open');
+    });
+    await userEvent.keyboard('{Tab}');
   },
 };
 

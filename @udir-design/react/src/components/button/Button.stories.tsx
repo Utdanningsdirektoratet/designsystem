@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { within, expect } from '@storybook/test';
+import { within, expect, userEvent, fn } from '@storybook/test';
 import { Button } from './Button';
 import {
   ArrowForwardIcon,
@@ -40,12 +40,22 @@ export const Preview: Story = {
     variant: 'primary',
     icon: false,
     children: 'Knapp',
+    onClick: fn(),
   },
-  play: async ({ canvasElement, args }) => {
+  play: async ({ canvasElement, args, step }) => {
     const canvas = within(canvasElement);
     const button = canvas.getByRole('button');
-    expect(button).toBeTruthy();
-    expect(canvas.getByText(args.children as string)).toBeTruthy();
+    await step('Element with button role should exist', async () => {
+      expect(button).toBeTruthy();
+    });
+    await step('Button should have expected text', async () => {
+      expect(canvas.getByText(args.children as string)).toBeTruthy();
+    });
+    await step('Onclick should be called when button is clicked', async () => {
+      await userEvent.click(button);
+      expect(args.onClick).toHaveBeenCalled();
+    });
+    await userEvent.keyboard('{Tab}');
   },
 };
 
