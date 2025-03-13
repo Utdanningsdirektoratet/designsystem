@@ -29,11 +29,13 @@ exports[`Tabbed 1`] = `
   <a href="#main-content">
     Hopp til hovedinnhold
   </a>
-  <main
-    id="main-content"
-    tabindex="-1"
-  >
-    Region som kan motta fokus fra skiplink.
-  </main>
+</p>
+<main
+  id="main-content"
+  tabindex="-1"
+>
+  Region som kan motta fokus fra skiplink.
+</main>
+<p>
 </p>
 `;
