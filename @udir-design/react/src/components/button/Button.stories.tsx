@@ -55,6 +55,7 @@ export const Preview: Story = {
       await userEvent.click(button);
       expect(args.onClick).toHaveBeenCalled();
     });
+    await userEvent.keyboard('{Tab}');
   },
 };
 
