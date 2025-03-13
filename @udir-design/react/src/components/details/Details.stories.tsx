@@ -63,6 +63,7 @@ export const Preview: Story = {
       await userEvent.keyboard('{Enter}');
       expect(details).not.toHaveAttribute('open');
     });
+    await userEvent.keyboard('{Tab}');
   },
 };
 

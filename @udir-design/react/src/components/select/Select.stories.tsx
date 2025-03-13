@@ -74,6 +74,7 @@ export const Preview: Story = {
         expect(select).toHaveValue('everest');
       }
     );
+    await userEvent.keyboard('{Tab}');
   },
 };
 
