@@ -10,8 +10,8 @@ export async function postprocessCssColors(file: string) {
       '[data-color="accent"]'
     )
     .replace(
-      '[data-color=neutral]',
-      ':root, [data-color-scheme], [data-color=neutral]'
+      '[data-color="neutral"]',
+      ':root, [data-color-scheme], [data-color="neutral"]'
     );
 
   await fs.writeFile(file, css, { encoding: 'utf-8' });
