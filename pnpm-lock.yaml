@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  axios@<1.8.2: '>=1.8.2'
+  '@babel/runtime@<7.26.10': '>=7.26.10'
+  '@babel/helpers@<7.26.10': '>=7.26.10'
+
 importers:
 
   .:
@@ -619,10 +624,6 @@ packages:
     resolution: {integrity: sha512-UPYc3SauzZ3JGgj87GgZ89JVdC5dj0AoetR5Bw6wj4niittNyFh6+eOGonYvJ1ao6B8lEa3Q3klS7ADZ53bc5g==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/helpers@7.26.9':
-    resolution: {integrity: sha512-Mz/4+y8udxBKdmzt/UjPACs4G3j5SshJJEFFKxlCGPydG4JAHXxjWjAwjd09tf6oINvl1VfMJo+nB7H2YKQ0dA==}
-    engines: {node: '>=6.9.0'}
-
   '@babel/parser@7.26.10':
     resolution: {integrity: sha512-6aQR2zGE/QFi8JpDLjUZEPYOs7+mhKXm86VaKFiLP35JQwQb6bwUE+XbvkH0EptsYhbNBSUGaUBLKqxH1xSgsA==}
     engines: {node: '>=6.0.0'}
@@ -1076,8 +1077,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
-  '@babel/runtime@7.26.9':
-    resolution: {integrity: sha512-aA63XwOkcl4xxQa3HjPMqOP6LiK0ZDv3mUPYEFXkpHbaFjtGggE1A61FjFzJnB+p7/oy2gA8E+rcBNl/zC1tMg==}
+  '@babel/runtime@7.26.10':
+    resolution: {integrity: sha512-2WJMeRQPHKSPemqk/awGrAiuFfzBmOIPXKizAsVhWH9YJqLZ0H+HS4c8loHGgW6utJ3E/ejXQUsiGaQy2NZ9Fw==}
     engines: {node: '>=6.9.0'}
 
   '@babel/template@7.26.9':
@@ -3043,8 +3044,8 @@ packages:
     peerDependencies:
       playwright: '>1.0.0'
 
-  axios@1.8.1:
-    resolution: {integrity: sha512-NN+fvwH/kV01dYUQ3PTOZns4LWtWhOFCAhQ/pHb88WQ1hNe5V/dvFwc4VJcDL11LT9xSX0QtsR8sWUuyOuOq7g==}
+  axios@1.8.3:
+    resolution: {integrity: sha512-iP4DebzoNlP/YN2dpwCgb8zoCmhtkajzS48JvwmkSkXvPI3DHc7m+XYL5tGnSlJtR6nImXZmdCuN5aP8dh1d8A==}
 
   axobject-query@4.1.0:
     resolution: {integrity: sha512-qIj0G9wZbMGNLjLmg1PT6v2mE9AH2zlnADJD/2tC6E00hgmhUOfEB6greHPAfLRSufHqROIUTkw6E+M3lH0PTQ==}
@@ -6586,7 +6587,7 @@ snapshots:
       '@babel/generator': 7.26.10
       '@babel/helper-compilation-targets': 7.26.5
       '@babel/helper-module-transforms': 7.26.0(@babel/core@7.26.9)
-      '@babel/helpers': 7.26.9
+      '@babel/helpers': 7.26.10
       '@babel/parser': 7.26.9
       '@babel/template': 7.26.9
       '@babel/traverse': 7.26.10
@@ -6728,11 +6729,6 @@ snapshots:
       - supports-color
 
   '@babel/helpers@7.26.10':
-    dependencies:
-      '@babel/template': 7.26.9
-      '@babel/types': 7.26.10
-
-  '@babel/helpers@7.26.9':
     dependencies:
       '@babel/template': 7.26.9
       '@babel/types': 7.26.10
@@ -7296,7 +7292,7 @@ snapshots:
       pirates: 4.0.6
       source-map-support: 0.5.21
 
-  '@babel/runtime@7.26.9':
+  '@babel/runtime@7.26.10':
     dependencies:
       regenerator-runtime: 0.14.1
 
@@ -7974,7 +7970,7 @@ snapshots:
       '@babel/plugin-transform-runtime': 7.26.9(@babel/core@7.26.10)
       '@babel/preset-env': 7.26.9(@babel/core@7.26.10)
       '@babel/preset-typescript': 7.26.0(@babel/core@7.26.10)
-      '@babel/runtime': 7.26.9
+      '@babel/runtime': 7.26.10
       '@nx/devkit': 20.5.0(nx@20.5.0(@swc-node/register@1.10.10(@swc/core@1.11.9(@swc/helpers@0.5.15))(@swc/types@0.1.19)(typescript@5.8.2))(@swc/core@1.11.9(@swc/helpers@0.5.15)))
       '@nx/workspace': 20.5.0(@swc-node/register@1.10.10(@swc/core@1.11.9(@swc/helpers@0.5.15))(@swc/types@0.1.19)(typescript@5.8.2))(@swc/core@1.11.9(@swc/helpers@0.5.15))
       '@zkochan/js-yaml': 0.0.7
@@ -8018,7 +8014,7 @@ snapshots:
       '@babel/plugin-transform-runtime': 7.26.9(@babel/core@7.26.10)
       '@babel/preset-env': 7.26.9(@babel/core@7.26.10)
       '@babel/preset-typescript': 7.26.0(@babel/core@7.26.10)
-      '@babel/runtime': 7.26.9
+      '@babel/runtime': 7.26.10
       '@nx/devkit': 20.5.0(nx@20.5.0(@swc-node/register@1.10.10(@swc/core@1.11.9(@swc/helpers@0.5.15))(@swc/types@0.1.19)(typescript@5.8.2))(@swc/core@1.11.9(@swc/helpers@0.5.15)))
       '@nx/workspace': 20.5.0(@swc-node/register@1.10.10(@swc/core@1.11.9(@swc/helpers@0.5.15))(@swc/types@0.1.19)(typescript@5.8.2))(@swc/core@1.11.9(@swc/helpers@0.5.15))
       '@zkochan/js-yaml': 0.0.7
@@ -8719,7 +8715,7 @@ snapshots:
   '@testing-library/dom@10.4.0':
     dependencies:
       '@babel/code-frame': 7.26.2
-      '@babel/runtime': 7.26.9
+      '@babel/runtime': 7.26.10
       '@types/aria-query': 5.0.4
       aria-query: 5.3.0
       chalk: 4.1.2
@@ -8739,7 +8735,7 @@ snapshots:
 
   '@testing-library/react@15.0.7(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@babel/runtime': 7.26.9
+      '@babel/runtime': 7.26.10
       '@testing-library/dom': 10.4.0
       '@types/react-dom': 18.3.5(@types/react@18.3.18)
       react: 18.3.1
@@ -9481,7 +9477,7 @@ snapshots:
       picocolors: 1.1.1
       playwright: 1.51.0
 
-  axios@1.8.1:
+  axios@1.8.3:
     dependencies:
       follow-redirects: 1.15.9
       form-data: 4.0.2
@@ -9502,7 +9498,7 @@ snapshots:
 
   babel-plugin-macros@3.1.0:
     dependencies:
-      '@babel/runtime': 7.26.9
+      '@babel/runtime': 7.26.10
       cosmiconfig: 7.1.0
       resolve: 1.22.10
 
@@ -11887,7 +11883,7 @@ snapshots:
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.2
       '@zkochan/js-yaml': 0.0.7
-      axios: 1.8.1
+      axios: 1.8.3
       chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
@@ -12190,7 +12186,7 @@ snapshots:
 
   polished@4.3.1:
     dependencies:
-      '@babel/runtime': 7.26.9
+      '@babel/runtime': 7.26.10
 
   possible-typed-array-names@1.1.0: {}
 
@@ -12351,7 +12347,7 @@ snapshots:
 
   regenerator-transform@0.15.2:
     dependencies:
-      '@babel/runtime': 7.26.9
+      '@babel/runtime': 7.26.10
 
   regexp.prototype.flags@1.5.4:
     dependencies:
