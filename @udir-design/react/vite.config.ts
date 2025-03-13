@@ -15,7 +15,7 @@ const dependencies = Object.keys({
 Mark submodules from dependencies as being external
 */
 const dependenciesSubmodules = dependencies.map(
-  (dep) => new RegExp(`^${dep}/`)
+  (dep) => new RegExp(`^${dep}/`),
 );
 
 export default defineConfig({

@@ -41,7 +41,7 @@ export const Preview: Story = {
     await step('Clicking clear button clears the search input', async () => {
       const clearButton = assertExists(
         canvasElement.querySelector('button[type="reset"]'),
-        'Clear button not found'
+        'Clear button not found',
       );
       await userEvent.click(clearButton);
       expect(input).toHaveValue('');
@@ -50,7 +50,7 @@ export const Preview: Story = {
     await step('Search button is rendered and clickable', async () => {
       const searchButton = assertExists(
         canvasElement.querySelector('button[type="submit"]'),
-        'Search button not found'
+        'Search button not found',
       );
       await userEvent.click(searchButton);
       expect(args.onClick).toHaveBeenCalled();

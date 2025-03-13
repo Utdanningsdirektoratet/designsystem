@@ -12,7 +12,7 @@ const project = setProjectAnnotations([
     async experimental_afterEach(storyContext) {
       const canvasElement = storyContext.canvasElement as HTMLElement;
       const decorators = canvasElement.querySelectorAll(
-        '[data-storybook-decorator]'
+        '[data-storybook-decorator]',
       );
       const innerDecorator = Array.from(decorators).at(decorators.length - 1);
       const html = innerDecorator?.innerHTML || canvasElement.innerHTML;

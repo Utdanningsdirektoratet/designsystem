@@ -24,7 +24,7 @@ export async function generateDynamicCsf<T extends ComponentType>(
   tsconfigPath: string,
   fileName: string,
   meta: GeneratorMeta<T>,
-  providedLogger?: Logger
+  providedLogger?: Logger,
 ) {
   logger = providedLogger;
   // Sanity check that the file exposes the required metadata properties
@@ -34,7 +34,7 @@ export async function generateDynamicCsf<T extends ComponentType>(
   requiredMetaFields.forEach((field) => {
     if (meta[field] === undefined) {
       throw new Error(
-        `Missing property '${field}' from exported GeneratorMeta data`
+        `Missing property '${field}' from exported GeneratorMeta data`,
       );
     }
   });
@@ -43,7 +43,7 @@ export async function generateDynamicCsf<T extends ComponentType>(
   }
   const absoluteComponentPath = new URL(
     meta.componentPath,
-    `file://${fileName}`
+    `file://${fileName}`,
   ).pathname;
   const docgenWithTsconfig = withCustomConfig(tsconfigPath, {
     shouldRemoveUndefinedFromOptional: true,
@@ -52,14 +52,14 @@ export async function generateDynamicCsf<T extends ComponentType>(
   const docgenResults = docgenWithTsconfig.parse(absoluteComponentPath);
   // Parse the component source file using react-docgen-typescript and find the docs for the corresponding component
   const docgenInfo = docgenResults.find(
-    (x) => x.displayName === meta.component.displayName
+    (x) => x.displayName === meta.component.displayName,
   );
   if (!docgenInfo) {
     throw new Error(
       `
 No matching component found by react-docgen-typescript. Is componentPath defined correctly?
   - Looking for component with displayName '${meta.component.displayName}'
-    in file ${absoluteComponentPath}`.trim()
+    in file ${absoluteComponentPath}`.trim(),
     );
   }
 
@@ -67,14 +67,14 @@ No matching component found by react-docgen-typescript. Is componentPath defined
   logger?.log('Processing file', fileName);
   logger?.log('Component:', meta.component.displayName ?? '<anonymous>');
   const docgenVariantProps = Object.fromEntries(
-    meta.variantProps.map((key) => [key, docgenInfo.props[key as string]])
+    meta.variantProps.map((key) => [key, docgenInfo.props[key as string]]),
   );
   logger?.debug();
   logger?.debug('--- Variant docgen props ---');
   logger?.debug(docgenVariantProps);
 
   const derivedStorySuffixes = Object.keys(
-    meta.deriveStories?.(meta.baseStory) ?? {}
+    meta.deriveStories?.(meta.baseStory) ?? {},
   );
 
   const codeAsData = await loadFile(fileName);
@@ -84,7 +84,7 @@ No matching component found by react-docgen-typescript. Is componentPath defined
   });
   const argCombinations = getArgCombinations(
     docgenVariantProps,
-    meta.definedVariants
+    meta.definedVariants,
   );
   createValidCsf(codeAsData.$ast, argCombinations, derivedStorySuffixes);
   const code = generate(codeAsData.$ast).code;
@@ -121,7 +121,7 @@ function findUnusedImports(node: t.Program) {
       },
     },
     undefined,
-    resultState
+    resultState,
   );
   const imports = new Set(resultState.importedIdentifiers);
   const refs = new Set(resultState.referencedIdentifiers);
@@ -135,7 +135,7 @@ function removeUnusedImports(node: t.Program) {
     noScope: true,
     ImportDeclaration(path) {
       const newSpecifiers = path.node.specifiers.filter(
-        (x) => !unused.has(x.local.name)
+        (x) => !unused.has(x.local.name),
       );
       if (newSpecifiers.length === 0) {
         path.remove();
@@ -154,19 +154,19 @@ function generateStories(
   program: t.Program,
   propCombinations: UnknownObject[],
   derivedStorySuffixes: string[],
-  state: GenerateStoriesState = {}
+  state: GenerateStoriesState = {},
 ) {
   function generateStoriesFromMetadataObject(obj: t.ObjectExpression) {
     const baseStory = obj.properties.find(findPropertyWithName('baseStory'));
     const deriveStories = obj.properties.find(
-      findPropertyWithName('deriveStories')
+      findPropertyWithName('deriveStories'),
     );
     if (!baseStory) {
       throw new Error('Missing "baseStory" property in default export object');
     }
     if (!t.isExpression(baseStory.value)) {
       throw new Error(
-        `Expected baseStory to be a valid "Expression", but instead got ${baseStory.value.type}`
+        `Expected baseStory to be a valid "Expression", but instead got ${baseStory.value.type}`,
       );
     }
     const deriveStoriesFn =
@@ -179,7 +179,7 @@ function generateStories(
       baseStory.value,
       propCombinations,
       derivedStorySuffixes,
-      deriveStoriesFn
+      deriveStoriesFn,
     );
 
     program.body.push(...stories);
@@ -237,21 +237,21 @@ function makeExport(exportName: string, variantName: string) {
               t.spreadElement(
                 t.memberExpression(
                   t.identifier(BASE_STORY_VAR),
-                  t.identifier('args')
-                )
+                  t.identifier('args'),
+                ),
               ),
               t.spreadElement(
                 t.memberExpression(
                   t.identifier(VARIANT_PARAMS_OBJ),
                   t.stringLiteral(variantName),
-                  true
-                )
+                  true,
+                ),
               ),
-            ])
+            ]),
           ),
-        ])
+        ]),
       ),
-    ])
+    ]),
     // export const TertiaryDangerLg = { ...__baseStory, args: { ..._baseStory.args, ..._variants['tertiary-danger-lg] } }
   );
 }
@@ -260,7 +260,7 @@ function generateStoriesFromBaseStoryValue(
   base: t.Expression,
   argCombinations: UnknownObject[],
   derivedStorySuffixes: string[],
-  deriveStories?: t.Expression | t.V8IntrinsicIdentifier
+  deriveStories?: t.Expression | t.V8IntrinsicIdentifier,
 ): t.Statement[] {
   const baseStoryIdentifier = t.identifier(BASE_STORY_VAR);
   const baseStoryDeclaration = t.variableDeclaration('const', [
@@ -280,7 +280,7 @@ function generateStoriesFromBaseStoryValue(
         'leading',
         `
  * ${variantName}
- `
+ `,
       );
       const result = [storyExport];
       if (!deriveStories) {
@@ -302,12 +302,12 @@ function generateStoriesFromBaseStoryValue(
           t.variableDeclaration('const', [
             t.variableDeclarator(
               t.identifier(
-                camelCase(`${variantName}-${suffix}`, { pascalCase: true })
+                camelCase(`${variantName}-${suffix}`, { pascalCase: true }),
               ),
-              t.identifier(`${derivedStoriesName}['${suffix}']`)
+              t.identifier(`${derivedStoriesName}['${suffix}']`),
             ),
-          ])
-        )
+          ]),
+        ),
       );
       return [...result, derivedStoriesVar, ...derivedExports];
     }),
@@ -317,7 +317,7 @@ function generateStoriesFromBaseStoryValue(
 function createValidCsf(
   node: ASTNode,
   propCombinations: UnknownObject[],
-  derivedStorySuffixes: string[]
+  derivedStorySuffixes: string[],
 ) {
   t.addComment(
     node,
@@ -329,29 +329,29 @@ function createValidCsf(
 `
       .trim()
       // remove comment start/end, since this will be added by addComment
-      .replace(/(\/\*|\*\/)/g, '')
+      .replace(/(\/\*|\*\/)/g, ''),
   );
 
   const combinations = Object.fromEntries(
-    propCombinations.map((x) => [getVariantName(x), x])
+    propCombinations.map((x) => [getVariantName(x), x]),
   );
 
   const combinationsObj = t.variableDeclaration('const', [
     t.variableDeclarator(
       t.identifier(VARIANT_PARAMS_OBJ),
-      t.valueToNode(combinations)
+      t.valueToNode(combinations),
     ),
   ]);
   t.addComment(
     combinationsObj,
     'leading',
     ' Generated combinations of the known parameter variations',
-    true
+    true,
   );
 
   if (!t.isProgram(node)) {
     throw new Error(
-      `createValidCsf: invalid Node type. We expected a Program, but were given a ${node.type}`
+      `createValidCsf: invalid Node type. We expected a Program, but were given a ${node.type}`,
     );
   }
   node.body.push(combinationsObj);
@@ -428,7 +428,7 @@ function stripGeneratorMetaFields(node: ASTNode, identifier?: string) {
               t.isObjectProperty(x) &&
               t.isIdentifier(x.key) &&
               (generatorSpecificFields as string[]).includes(x.key.name)
-            )
+            ),
         );
       }
     },
@@ -439,7 +439,7 @@ type UnknownObject = Record<string, unknown>;
 
 function getArgCombinations(
   argTypes: Record<string, PropItem>,
-  predefinedCombinations?: Partial<CartesianInput<UnknownObject>>
+  predefinedCombinations?: Partial<CartesianInput<UnknownObject>>,
 ) {
   type ArgsMap = Record<string, unknown[]>;
 
@@ -460,7 +460,7 @@ function getArgCombinations(
       argsMap[key] = predefinedVariants;
     } else if (typeName === 'enum' && Array.isArray(argType.type.value)) {
       argsMap[key] = (argType.type.value as Array<{ value: string }>).map((x) =>
-        JSON.parse(x.value)
+        JSON.parse(x.value),
       );
     } else if (typeName === 'boolean') {
       argsMap[key] = [false, true];

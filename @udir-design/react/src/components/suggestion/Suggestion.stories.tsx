@@ -186,7 +186,7 @@ export const CustomFilterAlt2: Story = {
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
             {DATA_PLACES.filter(
-              (_, index) => !value || index === Number(value) - 1
+              (_, index) => !value || index === Number(value) - 1,
             ).map((text) => (
               <Suggestion.Option key={text}>{text}</Suggestion.Option>
             ))}
@@ -245,7 +245,7 @@ export const FetchExternal: Story = {
       const api = `https://restcountries.com/v2/name/${value}?fields=name`;
       const countries = await (await fetch(api)).json();
       setOptions(
-        Array.isArray(countries) ? countries.map(({ name }) => name) : []
+        Array.isArray(countries) ? countries.map(({ name }) => name) : [],
       );
     };
 

@@ -53,7 +53,7 @@ export const Preview: Story = {
       async () => {
         expect(select).toBeInTheDocument();
         expect(select).toHaveValue('');
-      }
+      },
     );
 
     await step('The select contains all expected options', async () => {
@@ -72,7 +72,7 @@ export const Preview: Story = {
       async () => {
         await userEvent.selectOptions(select, 'everest');
         expect(select).toHaveValue('everest');
-      }
+      },
     );
     await userEvent.keyboard('{Tab}');
   },

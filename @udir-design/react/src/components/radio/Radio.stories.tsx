@@ -54,7 +54,7 @@ export const Preview: Story = {
         expect(radio).toBeChecked();
         expect(args.onClick).toHaveBeenCalled();
         expect(args.onChange).toHaveBeenCalled();
-      }
+      },
     );
   },
 };

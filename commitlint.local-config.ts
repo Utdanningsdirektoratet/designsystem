@@ -11,7 +11,7 @@ export default {
   ignores: [
     (commitMsg) =>
       locallyAllowedMessagePrefixes.some((prefix) =>
-        commitMsg.toLowerCase().startsWith(prefix)
+        commitMsg.toLowerCase().startsWith(prefix),
       ),
   ],
 } satisfies UserConfig;
