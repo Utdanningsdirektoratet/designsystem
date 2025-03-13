@@ -318,7 +318,7 @@ De vanlige stegene for å jobbe i arbeidsområdet er
 > Under panseret kjører `pnpm build` følgende kommando:
 >
 > ```
-> pnpm nx affected -t typecheck lint test build build-storybook
+> pnpm nx format:check && pnpm nx affected -t typecheck lint test build build-storybook
 > ```
 
 ### Få overblikk med Nx
