@@ -34,6 +34,7 @@ I dette repositoriet lever den delen av designsystemet som implementeres i kode:
   - [Oppsett lokalt](#oppsett-lokalt)
   - [Monorepo - enkelt forklart](#monorepo---enkelt-forklart)
   - [Hvordan jobbe med kodebasen](#hvordan-jobbe-med-kodebasen)
+  - [Hvordan oppgradere avhengigheter](#hvordan-oppgradere-avhengigheter)
   - [Hvordan publisere en ny versjon](#hvordan-publisere-en-ny-versjon)
   - [Oversikt over verktøy](#oversikt-over-verktøy)
 - [Thanks](#thanks)
@@ -129,7 +130,7 @@ En **stabil** komponent har bestått alle testene i alpha- og beta-fasene og UU-
 
 # Informasjon for utviklere som skal bidra
 
-Før du kan bidra med kode i designsystemet trenger du å gjøre noe oppsett lokalt. I tillegg trenger du å forstå hvordan kodebasen er strukturert på et overordnet nivå. Deretter får du vite hvordan du jobber med kodebasen, og hvordan du går fram for å publisere endringer. Til slutt får du en oversikt over verktøy som er i bruk i kodebasen.
+Før du kan bidra med kode i designsystemet trenger du å gjøre noe oppsett lokalt. I tillegg trenger du å forstå hvordan kodebasen er strukturert på et overordnet nivå. Deretter får du vite hvordan du jobber med kodebasen, og hvordan du går fram for å oppdatere avhengigheter og publisere endringer. Til slutt får du en oversikt over verktøy som er i bruk i kodebasen.
 
 > [!NOTE]
 > Den påfølgende dokumentasjonen vil bruke følgende begreper, hentet fra Nx:
@@ -358,6 +359,114 @@ Les mer i Nx sin dokumentasjon:
 
 - [Explore your Workspace](https://nx.dev/features/explore-graph)
 - [Run Tasks](https://nx.dev/features/run-tasks).
+
+## Hvordan oppgradere avhengigheter
+
+Få oversikt over utdaterte avhengigheter i alle prosjekter med
+
+```sh
+pnpm outdated -r
+```
+
+Deretter, oppdater alle avhengigheter innenfor versjonsgrensene satt i `package.json`
+
+```sh
+pnpm update -r
+```
+
+Vi har noen avhengigheter som er pinnet til spesifikke versjoner. Disse trenger egne kommandoer.
+
+- **`@digdir/*`**
+
+  Designsystem-bibliotekene fra Digdir er pinnet for å ha full kontroll over hvilke versjoner som er i bruk hos Udir. Derfor må disse oppdateres slik:
+
+  ```sh
+  pnpm update -r --latest "@digdir/*"
+  ```
+
+- **`nx` og `@nx/*`**
+
+  `nx` har sin egen oppdateringskommando, som også klargjør migreringer i de tilfellene det er relevant.
+
+  ```sh
+  pnpm nx migrate latest
+  pnpm nx --run-migrations # kun dersom migrations.json ble opprettet
+  pnpm install --no-frozen-lockfile
+  ```
+
+- **`prettier`**
+
+  Siden nye versjoner av `prettier` ofte påvirker kodeformateringen, er denne versjonen pinnet slik at disse endringene kun skjer når vi velger det selv. Det beste er å gjøre følgende på en branch med ingen uncommited changes:
+
+  ```sh
+  pnpm update -r --latest prettier
+  git commit --all -m "build: update prettier to $(npm view prettier version)"
+  pnpm nx format:write --all
+  git commit --all -m "style: format files with prettier $(npm view prettier version)"
+  echo "# $(git show -s --format='%s')\n$(git rev-parse HEAD)" > .git-blame-ignore-revs
+  git commit --all -m "chore: update .git-blame-ignore-revs"
+  ```
+
+  > [!NOTE]
+  > Vi legger commits med Prettier-formatering inn i `.git-blame-ignore-revs` slik at de
+  > blir ignorert i blame-visningen på GitHub.
+  > Les mer om dette i [GitHubs dokumentasjon](https://docs.github.com/en/repositories/working-with-files/using-files/viewing-and-understanding-files#ignore-commits-in-the-blame-view)
+
+### Oppdatere til nye major-versjoner
+
+`pnpm update -r` vil kun oppdatere innenfor de versjonsgrensene vi har satt. F.eks. med grensen `^18.3.1` vil kommandoen kunne oppdatere til versjonen `18.4.0`, men ikke til `19.0.0`.
+
+Dersom `pnpm outdated -r` rapporterer avhengigheter der "Latest" er én eller flere major-versjoner nyere enn "Current", må man oppgradere disse spesifikt.
+
+Generelt er det lurt å oppdatere én og én avhengighet i dette tilfellet, for å holde kontroll på eventuelle endringer som må gjøres på grunn av breaking changes i avhengighetene:
+
+```sh
+pnpm update -r --latest <navn-på-avhengighet>
+pnpm build # sjekk at kodebasen fortsatt fungerer, fiks eventuelle feil
+```
+
+En del avhengigheter henger dog sammen, og gir mening å oppdatere samtidig. Dette gjelder f.eks. React:
+
+```sh
+pnpm update -r --latest react react-dom @types/react @types/react-dom
+```
+
+...og Storybook, som er et godt eksempel på å bruke `*` wildcards for å slippe å liste ut alle de relaterte avhengighetene som må være på samme versjon:
+
+```sh
+pnpm update -r --latest storybook "@storybook/*"
+```
+
+### Oppgradere Node.js
+
+> [!IMPORTANT]
+> Vi oppgradere kun til partallsversjoner av Node, siden dette er LTS-versjonene.
+
+For å endre hvilken versjon av Node som faktisk blir brukt, er det to steder som må oppdateres:
+
+- Feltet `use-node-version` i `.npmrc`, som leses av `pnpm`
+- Feltet `engines.node` i `package.json`, som leses av GitHub Actions
+
+Vi krysser fingrene for at [denne PRen](https://github.com/actions/setup-node/pull/1149) i `actions/setup-node` blir merget, så kan vi fjerne `engines.node` og kun oppdatere `.npmrc`.
+
+I tillegg bør vi sørge for at versjonen av avhengigheten `@types/node` samsvarer med versjonen av Node som vi har spesifisert over.
+
+### Fikse sikkerhetsadvarsler
+
+Se en liste over sikkerhetsadvarsler med
+
+```sh
+pnpm audit
+```
+
+Ofte vil sikkerhetsadvarslene gå bort ved å oppgradere avhengigheter med stegene over. Dersom det fortsatt er problemer igjen, og `pnpm audit` rapporterer at det finnes "patched versions", er det sannsynligvis fordi et bibliotek avhenger av en versjon som ikke har blitt fikset.
+
+Vi kan da be `pnpm` overstyre installerte transitive avhengigheter:
+
+```sh
+pnpm audit --fix
+pnpm install
+```
 
 ## Hvordan publisere en ny versjon
 
