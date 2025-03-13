@@ -10,7 +10,7 @@
   "private": true,
   "packageManager": "pnpm@9.15.3+sha256.c1da43727ccbc1ed42aff4fd6bdb4b1e91e65a818e6efff5b240fbf070ba4eaf",
   "engines": {
-    "node": "^20.0.0"
+    "node": "22.14.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
@@ -26,7 +26,7 @@
     "@swc/helpers": "^0.5.15",
     "@testing-library/react": "^15.0.7",
     "@types/eslint__js": "^8.42.3",
-    "@types/node": "^20.17.24",
+    "@types/node": "^22.13.10",
     "@typescript-eslint/eslint-plugin": "^8.26.1",
     "@typescript-eslint/parser": "^8.26.1",
     "eslint": "^9.22.0",
