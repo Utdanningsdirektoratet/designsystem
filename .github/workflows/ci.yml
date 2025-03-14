@@ -31,22 +31,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Note: pnpm version is set in package.json "packageManager"
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-
-      # Cache node_modules
-      # Note: node version is set in package.json "engines.node"
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: 'package.json'
-          cache: 'pnpm'
-
-      - run: pnpm install
-
-      - uses: nrwl/nx-set-shas@v4
-        with:
-          main-branch-name: ${{ github.base_ref || github.ref_name }}
+      - uses: ./.github/actions/pnpm-setup
 
       - name: Print affected projects
         run: |
@@ -57,12 +42,14 @@ jobs:
         id: job_condition
         run: |
           IS_REACT_AFFECTED=$(./@internal/build-tools/bin/is-project-affected.sh @udir-design/react)
+          echo "Is this a PR which is ready for review? $IS_PR_READY"
           echo "Is @udir-design/react affected? $IS_REACT_AFFECTED"
           echo "Is this a push to a protected branch? $IS_PUSH"
-          ($IS_REACT_AFFECTED || $IS_PUSH) && RUN_UI_TESTS=true || RUN_UI_TESTS=false
+          (($IS_PR_READY && $IS_REACT_AFFECTED) || $IS_PUSH) && RUN_UI_TESTS=true || RUN_UI_TESTS=false
           echo "Conclusion: should we run UI tests? $RUN_UI_TESTS"
           echo "run_ui_tests=$RUN_UI_TESTS" >> "$GITHUB_OUTPUT"
         env:
+          IS_PR_READY: ${{ github.event_name == 'pull_request' && !github.event.pull_request.draft }}
           IS_PUSH: ${{ github.event_name == 'push' }}
 
       - name: Skip 'Storybook Publish' check
@@ -108,20 +95,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      # Note: pnpm version is set in package.json "packageManager"
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-
-      # Cache node_modules
-      # Note: node version is set in package.json "engines.node"
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: 'package.json'
-          cache: 'pnpm'
-
-      - run: pnpm install
-
+      - uses: ./.github/actions/pnpm-setup
       # Storybook tests requires first installing browsers for Playwright
       - name: Install Playwright browsers
         run: pnpm exec playwright install --with-deps chromium
@@ -137,18 +111,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Note: pnpm version is set in package.json "packageManager"
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-
-      # Cache node_modules
-      # Note: node version is set in package.json "engines.node"
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: 'package.json'
-          cache: 'pnpm'
-
-      - run: pnpm install
+      - uses: ./.github/actions/pnpm-setup
 
       - name: Build storybook
         run: pnpm nx build:storybook

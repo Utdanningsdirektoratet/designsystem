@@ -407,10 +407,10 @@ Vi har noen avhengigheter som er pinnet til spesifikke versjoner. Disse trenger 
   git commit --all -m "chore: update .git-blame-ignore-revs"
   ```
 
-  > [!NOTE]
-  > Vi legger commits med Prettier-formatering inn i `.git-blame-ignore-revs` slik at de
-  > blir ignorert i blame-visningen på GitHub.
-  > Les mer om dette i [GitHubs dokumentasjon](https://docs.github.com/en/repositories/working-with-files/using-files/viewing-and-understanding-files#ignore-commits-in-the-blame-view)
+> [!NOTE]
+> Vi legger commits med Prettier-formatering inn i `.git-blame-ignore-revs` slik at de
+> blir ignorert i blame-visningen på GitHub.
+> Les mer om dette i [GitHubs dokumentasjon](https://docs.github.com/en/repositories/working-with-files/using-files/viewing-and-understanding-files#ignore-commits-in-the-blame-view)
 
 ### Oppdatere til nye major-versjoner
 
