@@ -5,47 +5,53 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "build": "pnpm nx affected -t typecheck lint test build build:storybook"
+    "build": "pnpm nx format:check && pnpm nx affected -t typecheck lint test build build:storybook"
   },
   "private": true,
-  "packageManager": "pnpm@9.15.3+sha256.c1da43727ccbc1ed42aff4fd6bdb4b1e91e65a818e6efff5b240fbf070ba4eaf",
+  "packageManager": "pnpm@10.6.3+sha256.bc1efe92ee4d40b1a7a644e5ca9e1855c5c5eafc6b1512f9017b31b9245419db",
   "engines": {
-    "node": "^20.0.0"
+    "node": "22.14.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.7.1",
-    "@commitlint/config-conventional": "^19.7.1",
-    "@commitlint/types": "^19.5.0",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@commitlint/types": "^19.8.0",
     "@eslint/compat": "^1.2.7",
     "@eslint/eslintrc": "^3.3.0",
-    "@eslint/js": "^9.21.0",
-    "@nx/eslint": "20.4.6",
-    "@nx/eslint-plugin": "20.4.6",
-    "@swc-node/register": "^1.10.9",
-    "@swc/core": "^1.11.6",
+    "@eslint/js": "^9.22.0",
+    "@nx/eslint": "20.5.0",
+    "@nx/eslint-plugin": "20.5.0",
+    "@swc-node/register": "^1.10.10",
+    "@swc/core": "^1.11.9",
     "@swc/helpers": "^0.5.15",
-    "@testing-library/react": "^15.0.7",
-    "@types/eslint__js": "^8.42.3",
-    "@types/node": "^20.17.23",
-    "@typescript-eslint/eslint-plugin": "^8.26.0",
-    "@typescript-eslint/parser": "^8.26.0",
-    "eslint": "^9.21.0",
+    "@testing-library/react": "^16.2.0",
+    "@types/node": "^22.13.10",
+    "@typescript-eslint/eslint-plugin": "^8.26.1",
+    "@typescript-eslint/parser": "^8.26.1",
+    "eslint": "^9.22.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.2.0",
     "husky": "^9.1.7",
-    "jsdom": "^22.1.0",
+    "jsdom": "^26.0.0",
     "just-pnpm": "^1.0.2",
-    "nx": "20.4.6",
+    "nx": "20.5.0",
     "nx-remotecache-azure": "^20.0.0",
-    "playwright": "^1.50.1",
-    "prettier": "^2.8.8",
+    "playwright": "^1.51.0",
+    "prettier": "3.5.3",
     "ts-node": "^10.9.2",
     "tslib": "^2.8.1",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
-    "typescript-eslint": "^8.26.0"
+    "typescript-eslint": "^8.26.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "axios@<1.8.2": ">=1.8.2",
+      "@babel/runtime@<7.26.10": ">=7.26.10",
+      "@babel/helpers@<7.26.10": ">=7.26.10"
+    }
   }
 }

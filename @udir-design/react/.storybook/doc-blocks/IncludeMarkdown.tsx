@@ -39,7 +39,7 @@ export const IncludeMarkdown: React.FC<Props> = ({
         .use(remarkGithubAlert)
         .use(remarkStringify)
         .processSync(markdown),
-    [increaseHeadingDepthBy, markdown, sectionId]
+    [increaseHeadingDepthBy, markdown, sectionId],
   );
 
   return (
@@ -92,8 +92,8 @@ function remarkGetSection({ sectionId }: RemarkGetSectionOptions) {
     const newChildren = applyTo(tree.children)(
       pipe(
         dropWhile((x) => !isWantedHeading(x)),
-        takeWhile(isInThisSection)
-      )
+        takeWhile(isInThisSection),
+      ),
     );
     tree.children = newChildren;
   };
@@ -146,7 +146,7 @@ function remarkGithubAlert() {
             text.value = text.value.replace(githubAlertTypesRegex, '');
             alertData = alertMap[matches[1]];
           }
-        }
+        },
       );
 
       if (alertData) {
@@ -162,12 +162,12 @@ function remarkGithubAlert() {
                   className="sb-unstyled"
                   dangerouslySetInnerHTML={{
                     __html: toHtml(
-                      toHast({ type: 'root', children: blockquote.children })
+                      toHast({ type: 'root', children: blockquote.children }),
                     ),
                   }}
                 />
               </Alert>
-            </Unstyled>
+            </Unstyled>,
           ),
         };
       }

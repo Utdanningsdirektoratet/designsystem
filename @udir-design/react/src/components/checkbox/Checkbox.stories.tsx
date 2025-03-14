@@ -62,7 +62,7 @@ export const Preview: Story = {
       async () => {
         await userEvent.click(checkbox);
         expect(args.onChange).toHaveBeenCalled();
-      }
+      },
     );
   },
 };

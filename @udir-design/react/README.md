@@ -50,8 +50,8 @@ Et enkelt eksempel:
 {
   "compilerOptions": {
     // ... andre compilerOptions
-    "types": ["@udir-design/theme", "@udir-design/react"]
-  }
+    "types": ["@udir-design/theme", "@udir-design/react"],
+  },
   // ... andre innstillinger
 }
 ```
@@ -68,8 +68,8 @@ Dette må passes inn med din eksisterende tsconfig, her er et eksempel på en ek
       "vite/client",
       "vitest/importMeta",
       "@udir-design/theme", // <---- Legg til disse
-      "@udir-design/react" //  <---- to linjene
-    ]
+      "@udir-design/react", //  <---- to linjene
+    ],
   },
   "exclude": [
     "src/**/*.spec.ts",
@@ -79,9 +79,9 @@ Dette må passes inn med din eksisterende tsconfig, her er et eksempel på en ek
     "src/**/*.spec.js",
     "src/**/*.test.js",
     "src/**/*.spec.jsx",
-    "src/**/*.test.jsx"
+    "src/**/*.test.jsx",
   ],
-  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
+  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
 }
 ```
 

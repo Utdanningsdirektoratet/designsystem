@@ -4,7 +4,7 @@ import * as fs from 'node:fs/promises';
 
 const tsconfigPath = path.resolve(
   import.meta.dirname,
-  '../../tsconfig.lib.json'
+  '../../tsconfig.lib.json',
 );
 const testCaseDirectory = path.resolve(import.meta.dirname, './test-cases');
 
@@ -13,13 +13,13 @@ describe('dynamicCsf', () => {
     const meta = (await import('./test-cases/Simple.dynamic')).default;
     const expectedOutput = await fs.readFile(
       path.resolve(testCaseDirectory, 'Simple.generated.tsx'),
-      { encoding: 'utf-8' }
+      { encoding: 'utf-8' },
     );
     const generatedOutput = await generateDynamicCsf(
       tsconfigPath,
       path.resolve(testCaseDirectory, 'Simple.dynamic.tsx'),
       meta,
-      console
+      console,
     );
     expect(generatedOutput).toBe(expectedOutput);
   });

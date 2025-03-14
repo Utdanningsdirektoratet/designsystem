@@ -70,7 +70,7 @@ export async function semanticRelease(options: SemanticReleaseOptions) {
 
   if (!config) {
     console.log(
-      `Branch '${options.branch}' does not match a configured release plan. It will not be released.`
+      `Branch '${options.branch}' does not match a configured release plan. It will not be released.`,
     );
     process.exit();
   }
@@ -118,7 +118,7 @@ export async function semanticRelease(options: SemanticReleaseOptions) {
   const projectsToPublish = Object.entries(projectsVersionData)
     .filter(
       ([, versionInfo]) =>
-        versionInfo.currentVersion !== null && versionInfo.newVersion !== null
+        versionInfo.currentVersion !== null && versionInfo.newVersion !== null,
     )
     .map(([projectName]) => projectName);
 
@@ -140,7 +140,7 @@ export async function semanticRelease(options: SemanticReleaseOptions) {
   restoreGitTags(ignoredTags, options);
 
   process.exit(
-    Object.values(publishResults).every((result) => result.code === 0) ? 0 : 1
+    Object.values(publishResults).every((result) => result.code === 0) ? 0 : 1,
   );
 }
 
@@ -160,7 +160,7 @@ type CompleteReleaseConfig = Required<ReleaseConfig>;
 
 function ignoreGitTags(
   config: CompleteReleaseConfig,
-  options: SemanticReleaseOptions
+  options: SemanticReleaseOptions,
 ) {
   const removedTags: { tag: string; commit: string }[] = [];
   if (!config.prerelease) {
@@ -169,7 +169,7 @@ function ignoreGitTags(
       .trim()
       .split('\n');
     const prereleaseTags = gitTags.filter((tag) =>
-      tag.match(/(-(\w|\d)+)+\.\d+$/)
+      tag.match(/(-(\w|\d)+)+\.\d+$/),
     );
     if (options.verbose) {
       console.log('Ignoring pre-release versions:');
@@ -188,7 +188,7 @@ function ignoreGitTags(
 
 function restoreGitTags(
   tagsToRestore: ReturnType<typeof ignoreGitTags>,
-  options: SemanticReleaseOptions
+  options: SemanticReleaseOptions,
 ) {
   if (options.dryRun || options.previewChangelog || !options.gitPush) {
     // Recreate the removed tags. This is not necessary when actually running in CI,
@@ -214,7 +214,7 @@ function sanitizeNpmTag(tag: string) {
 
 function getReleaseConfig(
   configs: ReleaseConfig[],
-  branchName: string
+  branchName: string,
 ): CompleteReleaseConfig | undefined {
   const defaultConfig = {
     // Use the branch name as the distribution channel, if not explicitly set,
@@ -223,7 +223,7 @@ function getReleaseConfig(
     prerelease: false,
   };
   const config = configs.find((config) =>
-    micromatch.isMatch(branchName, config.name)
+    micromatch.isMatch(branchName, config.name),
   );
   if (!config) {
     return;
@@ -236,7 +236,7 @@ function getReleaseConfig(
  */
 async function updateVersion(
   versionOptions: VersionOptions,
-  branchConfig: Required<ReleaseConfig>
+  branchConfig: Required<ReleaseConfig>,
 ) {
   // Let Nx handle versioning
   const version = await nxUpdateVersion(versionOptions);
@@ -249,11 +249,11 @@ async function updateVersion(
     v === null || isZeroVersion(v);
 
   const currentProjectVersions = Object.values(version.projectsVersionData).map(
-    (x) => x.currentVersion
+    (x) => x.currentVersion,
   );
   if (currentProjectVersions.every(isNullOrZeroVersion)) {
     console.log(
-      'Current version is 0.x.x, which is unsupported in semantic-release. bumping to 1.0.0 before continuing.'
+      'Current version is 0.x.x, which is unsupported in semantic-release. bumping to 1.0.0 before continuing.',
     );
     return await nxUpdateVersion({
       ...versionOptions,
@@ -262,7 +262,7 @@ async function updateVersion(
     });
   } else if (currentProjectVersions.some(isZeroVersion)) {
     console.error(
-      'Current versions are a mix of 0.x.x and >= 1.x.x, this is not supported and must be resolved manually.'
+      'Current versions are a mix of 0.x.x and >= 1.x.x, this is not supported and must be resolved manually.',
     );
     process.exit(1);
   }

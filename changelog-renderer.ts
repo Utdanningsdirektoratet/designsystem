@@ -9,7 +9,7 @@ const breakingChangePattern = /^BREAKING[ -]CHANGE:/m;
 const tokenFooterPattern = /^[A-Za-z-]+(?:: | #)/m;
 const footerPattern = new RegExp(
   `(?:${breakingChangePattern.source})|(?:${tokenFooterPattern.source})`,
-  'm'
+  'm',
 );
 
 function removeGitInfo(message: string) {
@@ -20,7 +20,7 @@ function indent(lines: string, hanging = false, indentation = '  '): string {
   return lines
     .split('\n')
     .map((line, index) =>
-      hanging && index === 0 ? line : `${indentation}${line}`
+      hanging && index === 0 ? line : `${indentation}${line}`,
     )
     .join('\n');
 }

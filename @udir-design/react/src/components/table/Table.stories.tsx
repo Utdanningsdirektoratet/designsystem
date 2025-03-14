@@ -97,7 +97,7 @@ export const Sortable: Story = {
         setSortDirection(
           sortField === field && sortDirection === 'ascending'
             ? 'descending'
-            : 'ascending'
+            : 'ascending',
         );
       }
     };

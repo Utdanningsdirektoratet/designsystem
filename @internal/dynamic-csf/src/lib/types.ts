@@ -10,7 +10,7 @@ type RequireKeys<T, K extends keyof T> = T & RequiredAndNonNullable<Pick<T, K>>;
 
 export interface GeneratorSpecificMeta<
   TComponent extends ComponentType,
-  Story extends StoryObj<TComponent> = StoryObj<TComponent>
+  Story extends StoryObj<TComponent> = StoryObj<TComponent>,
 > {
   /**
    * Path to the file where the primary component is found.
@@ -68,7 +68,7 @@ export const generatorSpecificFields: GeneratorSpecificFieldsTuple =
  */
 export type GeneratorMeta<
   TComponent extends ComponentType = ComponentType,
-  Story extends StoryObj<TComponent> = StoryObj<TComponent>
+  Story extends StoryObj<TComponent> = StoryObj<TComponent>,
 > = GeneratorSpecificMeta<TComponent, Story> &
   RequireKeys<Meta<ComponentProps<TComponent>>, 'component'>;
 

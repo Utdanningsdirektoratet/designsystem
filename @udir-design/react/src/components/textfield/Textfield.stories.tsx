@@ -72,7 +72,7 @@ export const Preview: Story = {
       async () => {
         expect(input).toBeInTheDocument();
         expect(input).toHaveAttribute('id', args.id);
-      }
+      },
     );
 
     await step('User can focus the text field', async () => {
@@ -96,7 +96,7 @@ export const Preview: Story = {
         'Text field is disabled or read-only so it should not be editable',
         async () => {
           expect(input).toBeDisabled();
-        }
+        },
       );
     }
   },
