@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { expect, userEvent, within } from '@storybook/test';
+import { expect, userEvent, waitFor, within } from '@storybook/test';
 import { Select } from './Select';
 import { Label } from '../typography/label/Label';
 import { Field } from '../field/Field';
@@ -44,7 +44,9 @@ export const Preview: Story = {
     const select = canvas.getByRole('combobox');
 
     await step('The label "Velg et fjell" is rendered', async () => {
-      const label = canvas.getByLabelText(/velg et fjell/i);
+      const label = await waitFor(() =>
+        canvas.getByLabelText(/velg et fjell/i),
+      );
       expect(label).toBeInTheDocument();
     });
 
