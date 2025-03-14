@@ -1,0 +1,11 @@
+.controls {
+  display: flex;
+  gap: var(--ds-size-18);
+  padding-bottom: var(--ds-size-2);
+  align-items: baseline;
+}
+
+.controls code {
+  background: var(--ds-color-neutral-background-tinted);
+  padding: var(--ds-size-1);
+}
