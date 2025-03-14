@@ -42,12 +42,14 @@ jobs:
         id: job_condition
         run: |
           IS_REACT_AFFECTED=$(./@internal/build-tools/bin/is-project-affected.sh @udir-design/react)
+          echo "Is this a PR which is ready for review? $IS_PR_READY"
           echo "Is @udir-design/react affected? $IS_REACT_AFFECTED"
           echo "Is this a push to a protected branch? $IS_PUSH"
-          ($IS_REACT_AFFECTED || $IS_PUSH) && RUN_UI_TESTS=true || RUN_UI_TESTS=false
+          (($IS_PR_READY && $IS_REACT_AFFECTED) || $IS_PUSH) && RUN_UI_TESTS=true || RUN_UI_TESTS=false
           echo "Conclusion: should we run UI tests? $RUN_UI_TESTS"
           echo "run_ui_tests=$RUN_UI_TESTS" >> "$GITHUB_OUTPUT"
         env:
+          IS_PR_READY: ${{ github.event_name == 'pull_request' && !github.event.pull_request.draft }}
           IS_PUSH: ${{ github.event_name == 'push' }}
 
       - name: Skip 'Storybook Publish' check
