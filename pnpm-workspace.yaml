@@ -1,5 +1,15 @@
 packages:
   - '@internal/*'
   - '@udir-design/*'
-  - 'design-tokens'
-  - 'test-apps/*'
+  - design-tokens
+  - test-apps/*
+onlyBuiltDependencies:
+  - just-pnpm
+  - nx
+ignoredBuiltDependencies:
+  - '@bundled-es-modules/glob'
+  - '@parcel/watcher'
+  - '@swc/core'
+  - esbuild
+  - msw
+  - style-dictionary
