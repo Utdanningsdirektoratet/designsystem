@@ -249,6 +249,9 @@ importers:
       '@types/diffable-html':
         specifier: ^5.0.2
         version: 5.0.2
+      '@types/highcharts':
+        specifier: ^7.0.0
+        version: 7.0.0
       '@types/mdast':
         specifier: ^4.0.4
         version: 4.0.4
@@ -300,6 +303,12 @@ importers:
       hast-util-to-html:
         specifier: ^9.0.5
         version: 9.0.5
+      highcharts:
+        specifier: ^12.1.2
+        version: 12.1.2
+      highcharts-react-official:
+        specifier: ^3.2.1
+        version: 3.2.1(highcharts@12.1.2)(react@18.3.1)
       markdown-to-jsx:
         specifier: ^7.7.4
         version: 7.7.4(react@18.3.1)
@@ -523,6 +532,7 @@ packages:
   '@azure/msal-browser@3.28.1':
     resolution: {integrity: sha512-OHHEWMB5+Zrix8yKvLVzU3rKDFvh7SOzAzXfICD7YgUXLxfHpTPX2pzOotrri1kskwhHqIj4a5LvhZlIqE7C7g==}
     engines: {node: '>=0.8.0'}
+    deprecated: A bug was identified in msal-browser v4.9.1 that could be production impacting. Please roll back to v4.8.0 or before until a new release is made with the bug fix.
 
   '@azure/msal-common@14.16.0':
     resolution: {integrity: sha512-1KOZj9IpcDSwpNiQNjt0jDYZpQvNZay7QAEi/5DLubay40iGYtLzya/jbjRPLyOTZhEKyL1MzPuw2HqBCjceYA==}
@@ -2580,6 +2590,10 @@ packages:
   '@types/hast@3.0.4':
     resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
 
+  '@types/highcharts@7.0.0':
+    resolution: {integrity: sha512-YDevls0s9uqz6VEbchxp+NEaKssAPq5aDZgqEUpxOIUCQEncQtXxibp1w4lvgKyhM4qDejAcSZ+DKfA/kzqR0A==}
+    deprecated: This is a stub types definition. highcharts provides its own type definitions, so you do not need this installed.
+
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
@@ -4153,6 +4167,15 @@ packages:
 
   headers-polyfill@4.0.3:
     resolution: {integrity: sha512-IScLbePpkvO846sIwOtOTDjutRMWdXdJmXdMvk6gCBHxFO8d+QKOQedyZSxFTTFYRSmlgSTDtXqqq4pcenBXLQ==}
+
+  highcharts-react-official@3.2.1:
+    resolution: {integrity: sha512-hyQTX7ezCxl7JqumaWiGsroGWalzh24GedQIgO3vJbkGOZ6ySRAltIYjfxhrq4HszJOySZegotEF7v+haQ75UA==}
+    peerDependencies:
+      highcharts: '>=6.0.0'
+      react: '>=16.8.0'
+
+  highcharts@12.1.2:
+    resolution: {integrity: sha512-paZ72q1um0zZT1sS+O/3JfXVSOLPmZ0zlo8SgRc0rEplPFPQUPc4VpkgQS8IUTueeOBgIWwVpAWyC9tBYbQ0kg==}
 
   hosted-git-info@7.0.2:
     resolution: {integrity: sha512-puUZAUKT5m8Zzvs72XWy3HtvVbTWljRE66cP60bxJzAqf2DgICo7lYTY2IHUmLnNpjYvw5bvmoHvPc0QO2a62w==}
@@ -8814,6 +8837,10 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
 
+  '@types/highcharts@7.0.0':
+    dependencies:
+      highcharts: 12.1.2
+
   '@types/json-schema@7.0.15': {}
 
   '@types/json5@0.0.29': {}
@@ -10613,6 +10640,13 @@ snapshots:
 
   headers-polyfill@4.0.3:
     optional: true
+
+  highcharts-react-official@3.2.1(highcharts@12.1.2)(react@18.3.1):
+    dependencies:
+      highcharts: 12.1.2
+      react: 18.3.1
+
+  highcharts@12.1.2: {}
 
   hosted-git-info@7.0.2:
     dependencies:
