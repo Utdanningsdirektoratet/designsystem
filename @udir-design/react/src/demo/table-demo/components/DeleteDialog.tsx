@@ -21,7 +21,7 @@ export const DeleteDialog = ({ student, handleDelete }: DeleteDialogProps) => {
           variant="tertiary"
           aria-label="Slett"
         >
-          <TrashFillIcon />
+          <TrashFillIcon aria-hidden />
         </Dialog.Trigger>
       </Tooltip>
       <Dialog ref={dialogRef}>

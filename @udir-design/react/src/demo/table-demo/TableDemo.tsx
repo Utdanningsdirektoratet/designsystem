@@ -105,6 +105,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
               <Select
                 aria-label="Velg utdanningsnivå"
                 onChange={handleEducationFilterChange}
+                id="select-education-level"
               >
                 <Select.Option value="blank">Alle nivåer</Select.Option>
                 <Select.Option value="Barnehage">Barnehage</Select.Option>
@@ -132,6 +133,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
             <Table.Row>
               <Table.HeaderCell>
                 <Checkbox
+                  id="checkbox-select-all"
                   aria-label="Select all"
                   {...getCheckboxProps({
                     allowIndeterminate: true,
@@ -162,6 +164,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
               <Table.Row key={student.id}>
                 <Table.Cell>
                   <Checkbox
+                    id={'checkbox-' + student.id}
                     aria-label={'Check ' + student.name}
                     {...getCheckboxProps({
                       value: student.id.toString(),
