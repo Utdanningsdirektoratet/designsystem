@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 
 export function useFilterData<T>(
   data: T[],
-  initialFilters: Partial<Record<keyof T, unknown>> = {}
+  initialFilters: Partial<Record<keyof T, unknown>> = {},
 ) {
   const [filters, setFilters] =
     useState<Partial<Record<keyof T, unknown>>>(initialFilters);

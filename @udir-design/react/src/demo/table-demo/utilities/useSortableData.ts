@@ -26,7 +26,7 @@ function useSortableData<T>(data: T[], initialField: keyof T | null = null) {
       setSortDirection(
         sortField === field && sortDirection === 'ascending'
           ? 'descending'
-          : 'ascending'
+          : 'ascending',
       );
     }
   };
