@@ -1,5 +1,6 @@
 name: Alert for available major version updates
 on:
+  workflow_dispatch:
   schedule:
     # Runs at 23:00, only on Sunday
     - cron: 0 23 * * 0
