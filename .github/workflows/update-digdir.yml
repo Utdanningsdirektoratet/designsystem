@@ -1,0 +1,31 @@
+name: Update @digdir/* packages
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs at 01:00, Monday through Friday
+    - cron: 0 1 * * 1-5
+
+jobs:
+  update-digdir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/pnpm-setup
+      - run: pnpm update -r --latest "@digdir/*"
+      - run: echo "version=$(npm view @digdir/designsystemet version)" >> "$GITHUB_OUTPUT"
+        id: digdir_info
+      - name: Create or update pull request
+        uses: peter-evans/create-pull-request@v7.0.8
+        with:
+          branch: build/update-digdir
+          base: ${{ github.event.repository.default_branch }}
+          commit-message: 'build: update `@digdir/*` to ${{ steps.digdir_info.outputs.version }}'
+          title: 'build: update `@digdir/*` to ${{ steps.digdir_info.outputs.version }}'
+          body: |
+            Updates all packages in the `@digdir` scope to the latest version.
+
+            > [!IMPORTANT]
+            > If this update includes features or bugfixes that are relevant to our users,
+            > manually rebase this branch and change the conventional-commits type from `build` to
+            > `feat` or `fix`, and add a body which describes the relevant features or fixes.
+          draft: always-true

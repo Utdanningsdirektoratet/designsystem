@@ -1,0 +1,39 @@
+name: Update prettier
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs at 02:00, only on Monday
+    - cron: 0 2 * * 1
+
+jobs:
+  update-digdir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/pnpm-setup
+      - run: echo "version=$(npm view prettier version)" >> "$GITHUB_OUTPUT"
+        id: prettier_info
+
+      - name: Update Prettier and format all files
+        id: prettier_run
+        run: |
+          pnpm update -r --latest prettier
+          git commit --all -m "build: update prettier to ${{ steps.prettier_info.outputs.version }}"
+          pnpm nx format:write --all
+          echo has_changes="$(git diff --stat --exit-code)" >> "$GITHUB_OUTPUT"
+
+      - name: Commit changes and update .git-blame-ignore-revs
+        if: steps.prettier_run.outputs.has_changes == 1
+        run: |
+          git commit --all -m "style: format files with prettier ${{ steps.prettier_info.outputs.version }}"
+          echo "# $(git show -s --format='%s')\n$(git rev-parse HEAD)" > .git-blame-ignore-revs
+          git commit --all -m "chore: update .git-blame-ignore-revs"
+
+      - name: Create or update pull request
+        uses: peter-evans/create-pull-request@v7.0.8
+        with:
+          branch: build/update-prettier
+          base: ${{ github.event.repository.default_branch }}
+          title: 'build: update prettier to ${{ steps.prettier_info.outputs.version }}'
+          body: Updates prettier to the latest version and formats all files
+          draft: always-true

@@ -1,0 +1,46 @@
+name: Alert for available major version updates
+on:
+  schedule:
+    # Runs at 23:00, only on Sunday
+    - cron: 0 23 * * 0
+
+jobs:
+  update-major-alert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/pnpm-setup
+      - name: Find outdated major versions
+        id: outdated_majors
+        run: |
+          {
+            echo "markdown<<EOF"
+            ./@internal/build-tools/bin/get-outdated-majors.sh
+            echo EOF
+          } >> $GITHUB_OUTPUT
+      - name: Post to slack
+        if: steps.outdated_majors.outputs.markdown != ''
+        uses: slackapi/slack-github-action@v2.0.0
+        with:
+          webhook: ${{ secrets.SLACK_DS_UDIR_DEV_WEBHOOK }}
+          webhook-type: incoming-webhook
+          payload: |
+            blocks:
+              - type: header
+                text:
+                  type: plain_text
+                  text: >-
+                    :warning: Tilgjengelige major-versjonsoppdateringer
+              - type: section
+                text:
+                  type: plain_text
+                  text: >-
+                    Disse avhengighetene ligger bak siste major-versjon, og bør oppdateres:
+              - type: markdown
+                text: "${{ steps.outdated_majors.outputs.markdown }}"
+              - type: context
+                elements:
+                  - type: mrkdwn
+                    text: >-
+                      Følg <https://github.com/Utdanningsdirektoratet/designsystem?tab=readme-ov-file#oppdatere-til-nye-major-versjoner|disse instruksene>
+                      for å bli kvitt disse meldingene.

@@ -1,0 +1,33 @@
+name: Update patch and minor versions
+description: Updates all dependencies according to the version ranges defined in package.json files
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs at 23:00, only on Sunday
+    - cron: 0 23 * * 0
+
+jobs:
+  update-deps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/pnpm-setup
+      - run: pnpm update -r
+      - name: Create or update pull request
+        uses: peter-evans/create-pull-request@v7.0.8
+        with:
+          branch: build/update-patch-and-minor-deps
+          base: ${{ github.event.repository.default_branch }}
+          commit-message: 'build: update patch and minor versions of dependencies'
+          # Unfortunately GITHUB_TOKEN doesn't have permission to read teams
+          # team-reviewers: Designsystemet-devs
+          title: 'build: update patch and minor versions of dependencies'
+          body: Updates dependencies within existing version ranges
+          # When GITHUB_TOKEN is used when creating the PR, GitHub doesn't allow
+          # further workflows to run automatically to prevent recursion.
+          # To circumvent this, the PR is created as a draft. When we manually
+          # set the PR to "ready for review", the standard CI workflow will be run.
+          # The alternatives to this is creating a machine user and an associated PAT,
+          # or creating a GitHub App. See:
+          # https://github.com/peter-evans/create-pull-request/blob/main/docs/concepts-guidelines.md#triggering-further-workflow-runs
+          draft: always-true

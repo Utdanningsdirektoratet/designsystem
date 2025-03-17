@@ -1,0 +1,22 @@
+name: Prepare pnpm & Nx
+description: Installs pnpm, sets up the pnpm cache, and sets the Nx hashes
+runs:
+  using: 'composite'
+  steps:
+    # Note: pnpm version is set in package.json "packageManager"
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
+
+    # Cache node_modules
+    # Note: node version is set in package.json "engines.node"
+    - uses: actions/setup-node@v4
+      with:
+        node-version-file: 'package.json'
+        cache: 'pnpm'
+
+    - run: pnpm install
+      shell: bash
+
+    - uses: nrwl/nx-set-shas@v4
+      with:
+        main-branch-name: ${{ github.base_ref || github.ref_name }}
