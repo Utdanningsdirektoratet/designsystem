@@ -5,7 +5,7 @@ import { Size } from '@digdir/designsystemet-react';
 import { Controls } from '../controls/Controls';
 
 const meta: Meta<typeof TableDemo> = {
-  title: 'Demo/Table Demo',
+  title: 'demo/Table Demo',
   component: TableDemo,
 };
 
