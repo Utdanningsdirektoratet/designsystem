@@ -1,142 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Accent 1`] = `
-<button
-  data-variant="primary"
-  type="button"
-  data-color="accent"
->
-  Gå videre
-</button>
-<button
-  data-variant="secondary"
-  type="button"
-  data-color="accent"
->
-  Fortsett senere
-</button>
-<button
-  data-variant="tertiary"
-  type="button"
-  data-color="accent"
->
-  Avbryt
-</button>
-`;
-
-exports[`Accent Pseudo States 1`] = `
-<div style="display: grid; grid-template-columns: repeat(4, auto); gap: inherit; place-items: center;">
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
-    Default
-  </label>
-  <button
-    data-variant="primary"
-    type="button"
-    data-color="accent"
-  >
-    Gå videre
-  </button>
-  <button
-    data-variant="secondary"
-    type="button"
-    data-color="accent"
-  >
-    Fortsett senere
-  </button>
-  <button
-    data-variant="tertiary"
-    type="button"
-    data-color="accent"
-  >
-    Avbryt
-  </button>
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
-    Hover
-  </label>
-  <button
-    data-variant="primary"
-    type="button"
-    data-color="accent"
-  >
-    Gå videre
-  </button>
-  <button
-    data-variant="secondary"
-    type="button"
-    data-color="accent"
-  >
-    Fortsett senere
-  </button>
-  <button
-    data-variant="tertiary"
-    type="button"
-    data-color="accent"
-  >
-    Avbryt
-  </button>
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
-    Pressed
-  </label>
-  <button
-    data-variant="primary"
-    type="button"
-    data-color="accent"
-  >
-    Gå videre
-  </button>
-  <button
-    data-variant="secondary"
-    type="button"
-    data-color="accent"
-  >
-    Fortsett senere
-  </button>
-  <button
-    data-variant="tertiary"
-    type="button"
-    data-color="accent"
-  >
-    Avbryt
-  </button>
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
-    Focused
-  </label>
-  <button
-    data-variant="primary"
-    type="button"
-    data-color="accent"
-  >
-    Gå videre
-  </button>
-  <button
-    data-variant="secondary"
-    type="button"
-    data-color="accent"
-  >
-    Fortsett senere
-  </button>
-  <button
-    data-variant="tertiary"
-    type="button"
-    data-color="accent"
-  >
-    Avbryt
-  </button>
-</div>
-`;
-
 exports[`As Link 1`] = `
 <a
   target="_blank"
@@ -167,6 +30,20 @@ exports[`As Link 1`] = `
     </path>
   </svg>
 </a>
+`;
+
+exports[`Button In Color Context 1`] = `
+<div
+  data-variant="tinted"
+  data-color="accent"
+>
+  <button
+    data-variant="primary"
+    type="button"
+  >
+    Knapp
+  </button>
+</div>
 `;
 
 exports[`Combined Colors 1`] = `

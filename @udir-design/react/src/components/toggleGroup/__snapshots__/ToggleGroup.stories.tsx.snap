@@ -63,3 +63,72 @@ exports[`Preview 1`] = `
   </button>
 </div>
 `;
+
+exports[`Toggle Group In Color Context 1`] = `
+<div
+  data-variant="tinted"
+  data-color="accent"
+>
+  <div
+    role="radiogroup"
+    tabindex="0"
+  >
+    <button
+      data-variant="primary"
+      type="button"
+      value="innboks"
+      id="togglegroup-item-:rb:"
+      aria-checked="true"
+      aria-current="true"
+      role="radio"
+      name="togglegroup-name-:r9:"
+      data-roving-tabindex-item="true"
+      tabindex="0"
+    >
+      Innboks
+    </button>
+    <button
+      data-variant="tertiary"
+      type="button"
+      value="utkast"
+      id="togglegroup-item-:rd:"
+      aria-checked="false"
+      aria-current="false"
+      role="radio"
+      name="togglegroup-name-:r9:"
+      data-roving-tabindex-item="true"
+      tabindex="-1"
+    >
+      Utkast
+    </button>
+    <button
+      data-variant="tertiary"
+      type="button"
+      value="arkiv"
+      id="togglegroup-item-:rf:"
+      aria-checked="false"
+      aria-current="false"
+      role="radio"
+      name="togglegroup-name-:r9:"
+      data-roving-tabindex-item="true"
+      tabindex="-1"
+    >
+      Arkiv
+    </button>
+    <button
+      data-variant="tertiary"
+      type="button"
+      value="sendt"
+      id="togglegroup-item-:rh:"
+      aria-checked="false"
+      aria-current="false"
+      role="radio"
+      name="togglegroup-name-:r9:"
+      data-roving-tabindex-item="true"
+      tabindex="-1"
+    >
+      Sendt
+    </button>
+  </div>
+</div>
+`;

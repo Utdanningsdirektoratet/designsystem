@@ -11,6 +11,34 @@ exports[`Aria Label 1`] = `
 </div>
 `;
 
+exports[`Checkbox In Color Context 1`] = `
+<div
+  data-variant="tinted"
+  data-color="accent"
+>
+  <div>
+    <input
+      type="checkbox"
+      id="checkbox-in-color-context"
+      checked
+      aria-describedby="checkbox-in-color-context:description"
+    >
+    <label
+      data-weight="regular"
+      for="checkbox-in-color-context"
+    >
+      Checkbox label
+    </label>
+    <div
+      data-field="description"
+      id="checkbox-in-color-context:description"
+    >
+      Description
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Content Ex 1 1`] = `
 <fieldset>
   <legend data-weight="medium">

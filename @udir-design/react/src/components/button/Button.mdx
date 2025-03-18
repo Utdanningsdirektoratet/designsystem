@@ -2,13 +2,7 @@ import { Meta, Canvas, Controls, Primary } from '@storybook/blocks';
 import { Do, Dont, Stack } from '../../../.storybook/docs-components';
 import { Button } from './Button';
 import * as ButtonStories from './Button.stories';
-import {
-  ButtonEx1,
-  ButtonEx2,
-  ButtonEx3,
-  ButtonEx4,
-  ButtonEx5,
-} from './docs/doAndDont';
+import { ButtonEx1, ButtonEx2, ButtonEx4, ButtonEx5 } from './docs/doAndDont';
 
 <Meta of={ButtonStories} />
 
@@ -55,27 +49,19 @@ Denne knappen bruker vi til nedtonede handlinger. Hvis vi vil bruke den alene, m
 
 ## Fargevarianter
 
-### Hovedfarger
+Knappene kommer i to fargevarianter: `neutral` og `danger`.
 
-Knappene kommer i to hovedfarger `accent` og `neutral`.
-
-- `accent`-fargen stikker seg mer ut enn `neutral` og brukes gjerne når handlingen skal ha oppmerksomhet.
-
-<Canvas of={ButtonStories.Accent} />
-
-- `neutral`-fargen er mer nøytral og kan brukes når det er flere knapper på en side som ikke skal ta så mye oppmerksomhet.
+- `neutral` er standardfargen.
 
 <Canvas of={ButtonStories.Neutral} />
 
-### Danger
-
-`Danger`-fargen bruker vi til handlinger som brukeren ikke kan angre, for eksempel Slett.
+- `danger`-fargen bruker vi til handlinger som brukeren ikke kan angre, for eksempel Slett.
 
 <Canvas of={ButtonStories.Danger} />
 
 ### Kombinere ulike fargevarianter
 
-En gruppe med knapper bør bruke samme fargevariant. Unntaket er når vi skal tydeliggjøre en handling brukeren ikke kan angre, for eksempel Forkast. Vi skal ikke kombinere andre fargevarianter.
+Vi kan bruke en `danger`-knapp sammen med én eller flere `neutral`-knapper når vi skal tydeliggjøre en handling brukeren ikke kan angre, for eksempel Forkast. Vi skal ikke kombinere andre fargevarianter.
 
 <Canvas of={ButtonStories.CombinedColors} />
 
@@ -174,13 +160,6 @@ Vi skal tydelig beskrive handlingene knappene utfører. En knapp kan bare ha én
 Vi skal holde oss til én primærknapp per side. Hvis det er flere hovedhandlinger kan brukerne bli usikre på hva de skal gjøre.
 
 <ButtonEx2 />
-<br />
-
-### Bruk samme farge på knappene i en gruppe
-
-Vi skal holde oss til samme fargevariant for en gruppe knapper.
-
-<ButtonEx3 />
 <br />
 
 ### Ett ikon per knapp

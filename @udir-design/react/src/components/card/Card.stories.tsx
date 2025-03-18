@@ -231,7 +231,7 @@ export const Composed: Story = {
           <Textfield id={context.id + '-last-name'} label="Etternavn" />
         </Card.Block>
         <Card.Block>
-          <Button variant="secondary" data-color="accent" data-size="sm">
+          <Button variant="secondary" data-size="sm">
             Legg til rolle
             <PlusIcon aria-hidden />
           </Button>

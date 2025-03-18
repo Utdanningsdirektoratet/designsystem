@@ -38,19 +38,6 @@ export const ButtonEx2 = () => {
   );
 };
 
-export const ButtonEx3 = () => {
-  return (
-    <Stack style={{ margin: 'var(--ds-size-8) 0' }}>
-      <Do description="Knappene i en gruppe skal ha samme farge">
-        <Ex3Do />
-      </Do>
-      <Dont description="Ulike farger i en gruppe kan være forvirrende">
-        <Ex3Dont />
-      </Dont>
-    </Stack>
-  );
-};
-
 export const ButtonEx4 = () => {
   return (
     <Stack style={{ margin: 'var(--ds-size-8) 0' }}>
@@ -112,32 +99,6 @@ const Ex2Dont = () => {
       <Button variant="primary">Send inn</Button>
       <Button variant="primary">Lagre utkast</Button>
       <Button variant="primary">Forkast</Button>
-    </Stack>
-  );
-};
-
-const Ex3Do = () => {
-  return (
-    <Stack>
-      <Button variant="primary" data-color="accent">
-        Publiser
-      </Button>
-      <Button variant="secondary" data-color="accent">
-        Lagre
-      </Button>
-    </Stack>
-  );
-};
-
-const Ex3Dont = () => {
-  return (
-    <Stack>
-      <Button variant="primary" data-color="accent">
-        Publiser
-      </Button>
-      <Button variant="secondary" data-color="support1">
-        Lagre
-      </Button>
     </Stack>
   );
 };

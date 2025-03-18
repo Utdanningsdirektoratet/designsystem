@@ -342,6 +342,34 @@ exports[`Preview 1`] = `
 </div>
 `;
 
+exports[`Radio In Color Context 1`] = `
+<div
+  data-variant="tinted"
+  data-color="accent"
+>
+  <div>
+    <input
+      type="radio"
+      id="radio-in-color-context"
+      checked
+      aria-describedby="radio-in-color-context:description"
+    >
+    <label
+      data-weight="regular"
+      for="radio-in-color-context"
+    >
+      Radio
+    </label>
+    <div
+      data-field="description"
+      id="radio-in-color-context:description"
+    >
+      Description
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Read Only 1`] = `
 <fieldset>
   <legend data-weight="medium">

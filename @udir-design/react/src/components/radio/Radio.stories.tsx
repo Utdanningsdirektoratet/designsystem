@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import {
   Button,
+  Card,
   Divider,
   Fieldset,
   Paragraph,
@@ -208,4 +209,30 @@ export const Inline: Story = {
       </div>
     </Fieldset>
   ),
+};
+
+export const RadioInColorContext: Story = {
+  args: {
+    label: 'Radio',
+    description: 'Description',
+    checked: true,
+    id: 'radio-in-color-context',
+  },
+  render: (args) => (
+    <Card data-color="accent" variant="tinted">
+      <Radio {...args} />
+    </Card>
+  ),
+  play: async ({ canvasElement, step }) => {
+    await step(
+      'Should have neutral color palette by default, no matter the surrounding color palette',
+      async () => {
+        const radio = within(canvasElement).getByRole('radio');
+        const expectedColor = getComputedStyle(radio).getPropertyValue(
+          '--ds-color-neutral-base-default',
+        );
+        expect(radio).toHaveStyle(`background-color: ${expectedColor}`);
+      },
+    );
+  },
 };

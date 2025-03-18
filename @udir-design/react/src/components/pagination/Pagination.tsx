@@ -1,6 +1,6 @@
 import {
-  Pagination,
-  type PaginationProps,
+  Pagination as DigdirPagination,
+  type PaginationProps as DigdirPaginationProps,
   PaginationButton,
   type PaginationButtonProps,
   PaginationItem,
@@ -10,6 +10,13 @@ import {
   usePagination,
   type UsePaginationProps,
 } from '@digdir/designsystemet-react';
+import { ForwardRefExoticComponent } from 'react';
+
+type PaginationProps = Omit<DigdirPaginationProps, 'data-color'>;
+
+const Pagination =
+  DigdirPagination as ForwardRefExoticComponent<PaginationProps> &
+    Pick<typeof DigdirPagination, 'Button' | 'List' | 'Item'>;
 
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 Pagination.displayName = 'Pagination';

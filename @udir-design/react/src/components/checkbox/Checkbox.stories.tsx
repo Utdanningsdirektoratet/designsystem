@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import {
   Button,
+  Card,
   Checkbox,
   Divider,
   Fieldset,
@@ -259,6 +260,32 @@ export const InTable: GroupStory = {
           ))}
         </Table.Body>
       </Table>
+    );
+  },
+};
+
+export const CheckboxInColorContext: Story = {
+  args: {
+    label: 'Checkbox label',
+    description: 'Description',
+    checked: true,
+    id: 'checkbox-in-color-context',
+  },
+  render: (args) => (
+    <Card data-color="accent" variant="tinted">
+      <Checkbox {...args} />
+    </Card>
+  ),
+  play: async ({ canvasElement, step }) => {
+    await step(
+      'Should have neutral color palette by default, no matter the surrounding color palette',
+      async () => {
+        const checkbox = within(canvasElement).getByRole('checkbox');
+        const expectedColor = getComputedStyle(checkbox).getPropertyValue(
+          '--ds-color-neutral-base-default',
+        );
+        expect(checkbox).toHaveStyle(`background-color: ${expectedColor}`);
+      },
     );
   },
 };

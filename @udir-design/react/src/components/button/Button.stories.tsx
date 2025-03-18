@@ -13,7 +13,7 @@ import {
   PrinterSmallIcon,
   TrashIcon,
 } from '@navikt/aksel-icons';
-import { Label, Tooltip } from '../alpha';
+import { Card, Label, Tooltip } from '../alpha';
 
 export type Story = StoryObj<typeof Button>;
 
@@ -79,30 +79,6 @@ export const Tertiary: Story = {
     children: [<PencilWritingIcon aria-hidden />, 'Rediger'],
   },
 };
-
-export const Accent: Story = {
-  args: {
-    'data-color': 'accent',
-  },
-
-  render: (args) => {
-    return (
-      <>
-        <Button variant="primary" {...args}>
-          Gå videre
-        </Button>
-        <Button variant="secondary" {...args}>
-          Fortsett senere
-        </Button>
-        <Button variant="tertiary" {...args}>
-          Avbryt
-        </Button>
-      </>
-    );
-  },
-};
-
-export const AccentPseudoStates: Story = makePseudoStatesStory(Accent);
 
 export const Neutral: Story = {
   args: {
@@ -361,6 +337,26 @@ export const IconsOnlyPrimary: Story = {
           <CogIcon title="Innstillinger" />
         </Button>
       </>
+    );
+  },
+};
+
+export const ButtonInColorContext: Story = {
+  render: (args) => (
+    <Card data-color="accent" variant="tinted">
+      <Button {...args}>Knapp</Button>
+    </Card>
+  ),
+  play: async ({ canvasElement, step }) => {
+    await step(
+      'Should have neutral color palette by default, no matter the surrounding color palette',
+      async () => {
+        const button = within(canvasElement).getByRole('button');
+        const expectedColor = getComputedStyle(button).getPropertyValue(
+          '--ds-color-neutral-base-default',
+        );
+        expect(button).toHaveStyle(`background-color: ${expectedColor}`);
+      },
     );
   },
 };
