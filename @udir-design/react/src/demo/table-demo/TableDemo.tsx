@@ -31,9 +31,21 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [students, setStudents] = useState<Student[]>(STUDENTS);
   const [showErrorSummary, setShowErrorSummary] = useState(false);
+  const [selectedStudentIds, setSelectedStudentIds] = useState<string[]>([]);
 
-  const { getCheckboxProps, value: selectedValues } = useCheckboxGroup({
+  // Merge selected students from different pages.
+  const handleCheckboxChange = (newSelectedStudentIds: string[]) => {
+    const currentPageIds = currentUsers.map((student) => student.id.toString());
+    const filteredPrev = selectedStudentIds.filter(
+      (val) => !currentPageIds.includes(val),
+    );
+    setSelectedStudentIds([...filteredPrev, ...newSelectedStudentIds]);
+  };
+
+  const { getCheckboxProps } = useCheckboxGroup({
     name: 'my-checkbox',
+    value: selectedStudentIds,
+    onChange: handleCheckboxChange,
   });
 
   // Hook for filtering the users.
@@ -71,7 +83,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
     return sortedData.slice(startIndex, startIndex + itemsPerPage);
   }, [currentPage, sortedData]);
 
-  const isStudentsSelected = selectedValues.length > 0;
+  const isStudentsSelected = selectedStudentIds.length > 0;
 
   // Handler to delete a student by id.
   const handleDelete = (id: number) => {
@@ -169,6 +181,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
                     {...getCheckboxProps({
                       value: student.id.toString(),
                     })}
+                    checked={selectedStudentIds.includes(student.id.toString())}
                   />
                 </Table.Cell>
                 <Table.Cell className={classes.tableCell}>
