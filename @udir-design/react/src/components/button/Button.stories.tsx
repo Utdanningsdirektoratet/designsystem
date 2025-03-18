@@ -55,7 +55,7 @@ export const Preview: Story = {
       await userEvent.click(button);
       expect(args.onClick).toHaveBeenCalled();
     });
-    await userEvent.keyboard('{Tab}');
+    await userEvent.tab();
   },
 };
 
@@ -207,6 +207,7 @@ export const TextAndIcon: Story = {
 export const Loading: Story = {
   args: {
     loading: true,
+    onClick: fn(),
   },
   render: (args) => {
     return (
@@ -222,6 +223,57 @@ export const Loading: Story = {
         </Button>
       </>
     );
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getAllByRole('button')[0];
+    await step(
+      'Button should have aria-busy and aria-disabled attributes',
+      async () => {
+        expect(button).toHaveAttribute('aria-busy', 'true');
+        expect(button).toHaveAttribute('aria-disabled', 'true');
+      },
+    );
+    await step('Button should be focusable', async () => {
+      await userEvent.tab();
+      expect(button).toHaveFocus();
+      await userEvent.tab({ shift: true });
+    });
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+    onClick: fn(),
+  },
+  render: (args) => {
+    return (
+      <>
+        <Button variant="primary" {...args}>
+          Disabled
+        </Button>
+        <Button variant="secondary" {...args}>
+          Disabled
+        </Button>
+        <Button variant="tertiary" {...args}>
+          Disabled
+        </Button>
+      </>
+    );
+  },
+  play: async ({ canvasElement, args, step }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getAllByRole('button')[0];
+    await step('Button should be disabled', async () => {
+      expect(button).toBeDisabled();
+      await userEvent.click(button);
+      expect(args.onClick).not.toHaveBeenCalled();
+    });
+    await step('Button should not be focusable', async () => {
+      await userEvent.tab();
+      expect(button).not.toHaveFocus();
+    });
   },
 };
 
