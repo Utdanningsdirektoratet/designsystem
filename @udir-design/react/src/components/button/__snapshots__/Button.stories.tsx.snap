@@ -600,6 +600,30 @@ exports[`Danger Pseudo States 1`] = `
 </div>
 `;
 
+exports[`Disabled 1`] = `
+<button
+  data-variant="primary"
+  type="button"
+  disabled
+>
+  Disabled
+</button>
+<button
+  data-variant="secondary"
+  type="button"
+  disabled
+>
+  Disabled
+</button>
+<button
+  data-variant="tertiary"
+  type="button"
+  disabled
+>
+  Disabled
+</button>
+`;
+
 exports[`Icon Only 1`] = `
 <button
   data-icon="true"
