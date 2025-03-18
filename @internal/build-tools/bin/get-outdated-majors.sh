@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-## Prints a Markdown-formatted list of dependencies
+## Creates a Slack message payload which lists dependencies
 ## which are outdated by one or more major versions
-pnpm outdated -r --format=json | jq -r 'to_entries[]
-  | { name: .key, current_full: .value.current, latest_full: .value.latest} + .value
-  | (.current, .latest) |= (split(".").[0])
-  | select(.current < .latest)
-  | "- **\(.name)**: ~v\(.current_full)~ → v\(.latest_full)"'
+CURRENT_DIR=${BASH_SOURCE%/*}
+OUTDATED_MAJORS="$($CURRENT_DIR/../src/get-outdated-majors/make-list.sh)"
+echo "$(/usr/bin/env -S pnpm tsx $CURRENT_DIR/../src/get-outdated-majors/slack-message-template.ts "$OUTDATED_MAJORS")"
+
