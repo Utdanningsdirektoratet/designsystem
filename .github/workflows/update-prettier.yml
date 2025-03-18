@@ -11,10 +11,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/pnpm-setup
-      - run: echo "version=$(npm view prettier version)" >> "$GITHUB_OUTPUT"
+      - name: Configure git user
+        run: |
+          # Setup the committers identity.
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+      - name: Check if update is necessary
+        run: echo "version=$(pnpm outdated -r prettier --json | jq -r '.prettier.latest // ""')" >> "$GITHUB_OUTPUT"
         id: prettier_info
 
       - name: Update Prettier and format all files
+        if: steps.prettier_info.outputs.version
         id: prettier_run
         run: |
           pnpm update -r --latest prettier
@@ -34,6 +42,7 @@ jobs:
         with:
           branch: build/update-prettier
           base: ${{ github.event.repository.default_branch }}
+          author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
           title: 'build: update prettier to ${{ steps.prettier_info.outputs.version }}'
           body: Updates prettier to the latest version and formats all files
           draft: always-true

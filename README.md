@@ -374,38 +374,47 @@ Deretter, oppdater alle avhengigheter innenfor versjonsgrensene satt i `package.
 pnpm update -r
 ```
 
+> [!IMPORTANT]
+> Oppdateringer innenfor versjonsgrensene skjer automatisk [hver søndag kl 23:00 (UTC)](https://github.com/Utdanningsdirektoratet/designsystem/actions/workflows/update-deps.yml), og eventuelle endringer må godkjennes i en pull request.
+
 Vi har noen avhengigheter som er pinnet til spesifikke versjoner. Disse trenger egne kommandoer.
 
-- **`@digdir/*`**
+### `@digdir/*`
 
-  Designsystem-bibliotekene fra Digdir er pinnet for å ha full kontroll over hvilke versjoner som er i bruk hos Udir. Derfor må disse oppdateres slik:
+> [!IMPORTANT]
+> Oppdateringer av Digdir-bibliotekene skjer automatisk [hver natt kl 01:00 (UTC)](https://github.com/Utdanningsdirektoratet/designsystem/actions/workflows/update-digdir.yml), og eventuelle endringer må godkjennes i en pull request.
 
-  ```sh
-  pnpm update -r --latest "@digdir/*"
-  ```
+Designsystem-bibliotekene fra Digdir er pinnet for å ha full kontroll over hvilke versjoner som er i bruk hos Udir. Derfor må disse oppdateres slik:
 
-- **`nx` og `@nx/*`**
+```sh
+pnpm update -r --latest "@digdir/*"
+```
 
-  `nx` har sin egen oppdateringskommando, som også klargjør migreringer i de tilfellene det er relevant.
+### `nx` og `@nx/*`
 
-  ```sh
-  pnpm nx migrate latest
-  pnpm nx --run-migrations # kun dersom migrations.json ble opprettet
-  pnpm install --no-frozen-lockfile
-  ```
+`nx` har sin egen oppdateringskommando, som også klargjør migreringer i de tilfellene det er relevant.
 
-- **`prettier`**
+```sh
+pnpm nx migrate latest
+pnpm nx --run-migrations # kun dersom migrations.json ble opprettet
+pnpm install --no-frozen-lockfile
+```
 
-  Siden nye versjoner av `prettier` ofte påvirker kodeformateringen, er denne versjonen pinnet slik at disse endringene kun skjer når vi velger det selv. Det beste er å gjøre følgende på en branch med ingen uncommited changes:
+### `prettier`
 
-  ```sh
-  pnpm update -r --latest prettier
-  git commit --all -m "build: update prettier to $(npm view prettier version)"
-  pnpm nx format:write --all
-  git commit --all -m "style: format files with prettier $(npm view prettier version)"
-  echo "# $(git show -s --format='%s')\n$(git rev-parse HEAD)" > .git-blame-ignore-revs
-  git commit --all -m "chore: update .git-blame-ignore-revs"
-  ```
+> [!IMPORTANT]
+> Oppdateringer av `prettier` skjer automatisk [hver mandag kl 02:00 (UTC)](https://github.com/Utdanningsdirektoratet/designsystem/actions/workflows/update-prettier.yml), og eventuelle endringer må godkjennes i en pull request.
+
+Siden nye versjoner av `prettier` ofte påvirker kodeformateringen, er denne versjonen pinnet slik at disse endringene kun skjer når vi velger det selv. Det beste er å gjøre følgende på en branch med ingen uncommited changes:
+
+```sh
+pnpm update -r --latest prettier
+git commit --all -m "build: update prettier to $(npm view prettier version)"
+pnpm nx format:write --all
+git commit --all -m "style: format files with prettier $(npm view prettier version)"
+echo "# $(git show -s --format='%s')\n$(git rev-parse HEAD)" > .git-blame-ignore-revs
+git commit --all -m "chore: update .git-blame-ignore-revs"
+```
 
 > [!NOTE]
 > Vi legger commits med Prettier-formatering inn i `.git-blame-ignore-revs` slik at de

@@ -11,14 +11,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/pnpm-setup
-      - run: pnpm update -r --latest "@digdir/*"
-      - run: echo "version=$(npm view @digdir/designsystemet version)" >> "$GITHUB_OUTPUT"
+      - name: Check if update is necessary
+        run: echo "version=$(pnpm outdated -r '@digdir/*' --json | jq -r '."@digdir/designsystemet".latest // ""')" >> "$GITHUB_OUTPUT"
         id: digdir_info
+      - name: Update @digdir/* packages
+        run: pnpm update -r --latest "@digdir/*"
+        if: steps.digdir_info.outputs.version
       - name: Create or update pull request
+        if: steps.digdir_info.outputs.version
         uses: peter-evans/create-pull-request@v7.0.8
         with:
           branch: build/update-digdir
           base: ${{ github.event.repository.default_branch }}
+          author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
           commit-message: 'build: update `@digdir/*` to ${{ steps.digdir_info.outputs.version }}'
           title: 'build: update `@digdir/*` to ${{ steps.digdir_info.outputs.version }}'
           body: |
