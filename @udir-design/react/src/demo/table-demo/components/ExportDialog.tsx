@@ -41,7 +41,7 @@ export const ExportDialog = ({ handleExport }: ExportDialogProps) => {
               onClick={handlePdfExport}
               loading={pdfLoading}
             >
-              <FilePdfFillIcon aria-hidden />
+              {!pdfLoading && <FilePdfFillIcon aria-hidden />}
               PDF
             </Button>
             <Button
@@ -49,7 +49,7 @@ export const ExportDialog = ({ handleExport }: ExportDialogProps) => {
               onClick={handleCsvExport}
               loading={csvLoading}
             >
-              <FileCsvFillIcon aria-hidden />
+              {!csvLoading && <FileCsvFillIcon aria-hidden />}
               CSV
             </Button>
           </div>
