@@ -46,6 +46,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
     name: 'my-checkbox',
     value: selectedStudentIds,
     onChange: handleCheckboxChange,
+    error: showErrorSummary && !selectedStudentIds.length,
   });
 
   // Hook for filtering the users.
