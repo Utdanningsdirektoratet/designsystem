@@ -11,7 +11,7 @@ import {
   ValidationMessage,
   useCheckboxGroup,
 } from '../../alpha';
-import { expect, fn, userEvent, within } from '@storybook/test';
+import { expect, fn, userEvent, waitFor, within } from '@storybook/test';
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
@@ -33,12 +33,11 @@ export const Preview: Story = {
     id: 'checkbox-preview',
   },
   play: async ({ canvasElement, step, args }) => {
-    await Promise.resolve(); // ensure fieldObserver has had time to connect the elements
     const canvas = within(canvasElement);
     const checkbox = canvas.getByRole('checkbox');
 
     await step('Label and description are rendered', async () => {
-      const label = canvas.getByText(args.label as string);
+      const label = await waitFor(() => canvas.getByText(args.label as string));
       expect(label).toBeInTheDocument();
 
       const description = canvas.getByText(args.description as string);
