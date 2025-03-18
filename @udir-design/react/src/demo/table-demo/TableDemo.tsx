@@ -218,7 +218,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
             </ErrorSummary.Heading>
             <ErrorSummary.List>
               <ErrorSummary.Item>
-                <ErrorSummary.Link href="#">
+                <ErrorSummary.Link href="#checkbox-select-all">
                   Velge studenter som skal eksporteres
                 </ErrorSummary.Link>
               </ErrorSummary.Item>
