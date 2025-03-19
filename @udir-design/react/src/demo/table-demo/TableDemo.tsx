@@ -35,6 +35,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
 
   // Merge selected students from different pages.
   const handleCheckboxChange = (newSelectedStudentIds: string[]) => {
+    setShowErrorSummary(false);
     const currentPageIds = currentUsers.map((student) => student.id.toString());
     const filteredPrev = selectedStudentIds.filter(
       (val) => !currentPageIds.includes(val),
@@ -46,7 +47,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
     name: 'my-checkbox',
     value: selectedStudentIds,
     onChange: handleCheckboxChange,
-    error: showErrorSummary && !selectedStudentIds.length,
+    error: showErrorSummary,
   });
 
   // Hook for filtering the users.
@@ -214,7 +215,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
           />
           <ExportDialog handleExport={handleExport} />
         </div>
-        {!isStudentsSelected && showErrorSummary && (
+        {showErrorSummary && (
           <ErrorSummary>
             <ErrorSummary.Heading>
               For å eksportere liste må du gjøre følgende:
