@@ -358,6 +358,9 @@ importers:
         specifier: 1.0.2
         version: 1.0.2(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
+      '@internal/build-tools':
+        specifier: workspace:*
+        version: link:../../@internal/build-tools
       '@udir-design/tokens':
         specifier: workspace:*
         version: link:../../design-tokens

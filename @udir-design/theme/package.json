@@ -21,6 +21,7 @@
     "@digdir/designsystemet-react": "1.0.2"
   },
   "devDependencies": {
+    "@internal/build-tools": "workspace:*",
     "@udir-design/tokens": "workspace:*",
     "rimraf": "^6.0.1"
   },

@@ -8,7 +8,7 @@
   "targets": {
     "build": {
       "cache": true,
-      "inputs": ["default", "^default", "{workspaceRoot}/@internal/build-tools"]
+      "inputs": ["default", "^default"]
     }
   }
 }
