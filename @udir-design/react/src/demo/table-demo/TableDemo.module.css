@@ -23,14 +23,14 @@
   width: 100%;
   margin-bottom: 24px;
   margin-top: 16px;
-  table-layout: initial;
+  table-layout: fixed;
 }
 
-.tableCell {
+.student {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 13px 12px;
+  padding: 4px 0px;
 }
 
 .tableSelect {
@@ -68,4 +68,32 @@
 
 .justifyEnd {
   justify-content: flex-end;
+}
+
+.row > :nth-child(1) {
+  width: 20px;
+}
+
+.row > :nth-child(2) {
+  width: calc(2.625rem + 15ch);
+}
+
+.row > :nth-child(3) {
+  width: 16ch;
+}
+
+.row > :nth-child(4) {
+  width: 9ch;
+}
+
+.row > :nth-child(5) {
+  width: 8ch;
+}
+
+.row > :nth-child(6) {
+  width: 12ch;
+}
+
+.row > :nth-child(7) {
+  width: 40px;
 }

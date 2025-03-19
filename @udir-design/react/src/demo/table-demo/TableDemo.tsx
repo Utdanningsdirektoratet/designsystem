@@ -143,7 +143,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
         </div>
         <Table border className={classes.table}>
           <Table.Head>
-            <Table.Row>
+            <Table.Row className={classes.row}>
               <Table.HeaderCell>
                 <Checkbox
                   id="checkbox-select-all"
@@ -174,7 +174,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
           </Table.Head>
           <Table.Body>
             {currentUsers.map((student) => (
-              <Table.Row key={student.id}>
+              <Table.Row className={classes.row} key={student.id}>
                 <Table.Cell>
                   <Checkbox
                     id={'checkbox-' + student.id}
@@ -185,9 +185,11 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
                     checked={selectedStudentIds.includes(student.id.toString())}
                   />
                 </Table.Cell>
-                <Table.Cell className={classes.tableCell}>
-                  <Avatar aria-label={student.name} />
-                  {student.name}
+                <Table.Cell>
+                  <div className={classes.student}>
+                    <Avatar aria-label={student.name} />
+                    {student.name}
+                  </div>
                 </Table.Cell>
                 <Table.Cell>{student.educationLevel}</Table.Cell>
                 <Table.Cell>{student.edited}</Table.Cell>
