@@ -55,11 +55,3 @@ export const LongLink: Story = {
     </Paragraph>
   ),
 };
-
-export const Neutral: Story = {
-  args: {
-    children: 'Gå til designsystemet',
-    href: udirLink,
-    'data-color': 'neutral',
-  },
-};

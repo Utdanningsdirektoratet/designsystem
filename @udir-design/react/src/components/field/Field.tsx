@@ -1,6 +1,6 @@
 import {
-  Field,
-  type FieldProps,
+  Field as DigdirField,
+  type FieldProps as DigdirFieldProps,
   FieldAffix,
   type FieldAffixProps,
   FieldCounter,
@@ -10,6 +10,12 @@ import {
   FieldAffixes,
   type FieldAffixesProps,
 } from '@digdir/designsystemet-react';
+import { ForwardRefExoticComponent } from 'react';
+
+type FieldProps = Omit<DigdirFieldProps, 'data-color'>;
+
+const Field = DigdirField as ForwardRefExoticComponent<FieldProps> &
+  Pick<typeof DigdirField, 'Affix' | 'Affixes' | 'Counter' | 'Description'>;
 
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 Field.displayName = 'Field';

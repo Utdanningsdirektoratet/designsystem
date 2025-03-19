@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import {
   Button,
+  Card,
   Checkbox,
   Divider,
   Fieldset,
@@ -10,7 +11,7 @@ import {
   ValidationMessage,
   useCheckboxGroup,
 } from '../../alpha';
-import { expect, fn, userEvent, within } from '@storybook/test';
+import { expect, fn, userEvent, waitFor, within } from '@storybook/test';
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
@@ -32,12 +33,11 @@ export const Preview: Story = {
     id: 'checkbox-preview',
   },
   play: async ({ canvasElement, step, args }) => {
-    await Promise.resolve(); // ensure fieldObserver has had time to connect the elements
     const canvas = within(canvasElement);
     const checkbox = canvas.getByRole('checkbox');
 
     await step('Label and description are rendered', async () => {
-      const label = canvas.getByText(args.label as string);
+      const label = await waitFor(() => canvas.getByText(args.label as string));
       expect(label).toBeInTheDocument();
 
       const description = canvas.getByText(args.description as string);
@@ -259,6 +259,32 @@ export const InTable: GroupStory = {
           ))}
         </Table.Body>
       </Table>
+    );
+  },
+};
+
+export const CheckboxInColorContext: Story = {
+  args: {
+    label: 'Checkbox label',
+    description: 'Description',
+    checked: true,
+    id: 'checkbox-in-color-context',
+  },
+  render: (args) => (
+    <Card data-color="accent" variant="tinted">
+      <Checkbox {...args} />
+    </Card>
+  ),
+  play: async ({ canvasElement, step }) => {
+    await step(
+      'Should have neutral color palette by default, no matter the surrounding color palette',
+      async () => {
+        const checkbox = within(canvasElement).getByRole('checkbox');
+        const expectedColor = getComputedStyle(checkbox).getPropertyValue(
+          '--ds-color-neutral-base-default',
+        );
+        expect(checkbox).toHaveStyle(`background-color: ${expectedColor}`);
+      },
     );
   },
 };

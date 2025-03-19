@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { expect, userEvent, within } from '@storybook/test';
+import { expect, userEvent, waitFor, within } from '@storybook/test';
 import { Textfield } from './Textfield';
 import { useState } from 'react';
 import { Button, Divider, Paragraph } from '../alpha';
@@ -63,7 +63,9 @@ export const Preview: Story = {
     });
 
     await step('Label is rendered', async () => {
-      const labelElement = canvas.getByText(args.label as string);
+      const labelElement = await waitFor(() =>
+        canvas.getByText(args.label as string),
+      );
       expect(labelElement).toBeInTheDocument();
     });
 
