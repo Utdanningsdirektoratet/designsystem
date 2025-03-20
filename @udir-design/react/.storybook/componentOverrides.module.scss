@@ -14,13 +14,13 @@
 }
 
 .code {
-  background-color: var(--ds-color-background-subtle);
+  background-color: var(--ds-color-background-tinted);
   font-size: var(--ds-font-size-minus-1);
   white-space: nowrap;
 }
 
 .pre {
-  background-color: var(--ds-color-background-subtle);
+  background-color: var(--ds-color-background-tinted);
   white-space: pre;
   padding: var(--ds-size-2);
 }
