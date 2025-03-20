@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+}
+
+.card {
+  background-color: var(--ds-color-neutral-background-tinted);
+  border-radius: var(--ds-border-radius-md);
+  padding: 24px;
+  width: 30rem;
+}
+
+.components {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-8);
+}
+
+.dialogActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--ds-size-2);
+}
