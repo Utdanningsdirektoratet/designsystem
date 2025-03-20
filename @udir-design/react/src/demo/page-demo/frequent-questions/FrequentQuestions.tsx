@@ -1,4 +1,4 @@
-import { Card, Heading, Paragraph } from '../../alpha';
+import { Card, Heading, Paragraph } from '../../../alpha';
 import styles from './FrequentQuestions.module.scss';
 
 export const FrequentQuestions = () => {

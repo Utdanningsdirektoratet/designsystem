@@ -58,14 +58,14 @@ export const Preview: Story = {
   },
   play: async ({ canvasElement, step, args }) => {
     const canvas = within(canvasElement);
-    const input = canvas.getByRole('textbox', {
-      name: args.label as string,
-    });
+    const input = await waitFor(() =>
+      canvas.getByRole('textbox', {
+        name: args.label as string,
+      }),
+    );
 
     await step('Label is rendered', async () => {
-      const labelElement = await waitFor(() =>
-        canvas.getByText(args.label as string),
-      );
+      const labelElement = canvas.getByText(args.label as string);
       expect(labelElement).toBeInTheDocument();
     });
 
