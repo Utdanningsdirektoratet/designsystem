@@ -1,0 +1,28 @@
+.toc-list {
+  .toc-list-item {
+    .toc-link {
+      color: var(--ds-color-neutral-text-subtle);
+      &.is-active-link {
+        color: var(--ds-color-neutral-text-default);
+      }
+    }
+  }
+}
+
+// This is the right TOC sidebar
+.sbdocs-content + div {
+  // Fix width issue for the rendered TOC
+  & > :first-child {
+    width: auto;
+  }
+  // If TOC is disabled, hide the entire TOC sidebar
+  &:empty {
+    display: none;
+  }
+  // If TOC is enabled, but there is no content, hide the contents but keep the sidebar.
+  // As the TOC renders after the rest of the page, this avoids temporarily showing
+  // a TOC heading with no links.
+  &:has(.toc-wrapper:empty) > :first-child {
+    display: none;
+  }
+}

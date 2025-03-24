@@ -1,4 +1,5 @@
 import './style.css';
+import './customTheme.scss';
 import { INITIAL_VIEWPORTS, type ViewportMap } from '@storybook/addon-viewport';
 import { Preview } from '@storybook/react';
 import customTheme from './customTheme';
@@ -131,6 +132,11 @@ const preview: Preview = {
     },
 
     docs: {
+      // Configure the table of contents
+      toc: {
+        title: 'På denne siden',
+        headingSelector: 'h2',
+      },
       theme: customTheme,
       components: componentOverrides,
     },
