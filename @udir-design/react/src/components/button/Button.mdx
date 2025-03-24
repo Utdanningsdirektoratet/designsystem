@@ -1,5 +1,10 @@
 import { Meta, Canvas, Controls, Primary } from '@storybook/blocks';
-import { Do, Dont, Stack } from '../../../.storybook/docs-components';
+import {
+  Do,
+  Dont,
+  Stack,
+  SimpleAlert,
+} from '../../../.storybook/docs-components';
 import { Button } from './Button';
 import * as ButtonStories from './Button.stories';
 import { ButtonEx1, ButtonEx2, ButtonEx4, ButtonEx5 } from './docs/doAndDont';
@@ -104,9 +109,11 @@ I eksempelet under bruker vi proppen `loading` for å vise at knappen laster.
 
 I eksempelet over blir `aria-disabled` satt av `loading="true"`. Dette er den anbefalte måten for å vise at en knapp er deaktivert. Da kan den fortsatt få fokus når noen navigerer med tastaturet. Slik vil blant annet skjermlesere og andre hjelpemidler bli informert om at knappen finnes, men ikke er aktiv.
 
-Denne egenskapen stopper ikke automatisk knappen fra å utløse `onClick`.
-
-Pass på at callback-funksjonen ikke kjører når knappen er deaktivert.
+<SimpleAlert type="info" heading={{ text: 'Tips', level: 4 }}>
+  `loading="true"` eller `aria-disabled` stopper ikke automatisk knappen fra å
+  utløse `onClick`. Du må selv passe på at callback-funksjonen ikke kjører når
+  knappen er deaktivert.
+</SimpleAlert>
 
 ## Retningslinjer for button
 
