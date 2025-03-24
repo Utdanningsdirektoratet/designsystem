@@ -1,11 +1,11 @@
 import './style.css';
 import { INITIAL_VIEWPORTS, type ViewportMap } from '@storybook/addon-viewport';
 import { Preview } from '@storybook/react';
-import type { MarkdownToJSX } from 'markdown-to-jsx';
 import customTheme from './customTheme';
-import { Heading, Link, LinkProps, List, Paragraph, Table } from '../src/alpha';
+import { Heading, Link, List, Paragraph, Table } from '../src/alpha';
 import componentStyles from './componentOverrides.module.scss';
 import { customStylesDecorator } from './utils/customStylesDecorator';
+import { MdxComponentOverrides } from './types/parameters';
 
 // See the complete list of available devices in INITIAL_VIEWPORTS here:
 // https://storybook.js.org/docs/essentials/viewport#use-a-detailed-set-of-devices
@@ -23,8 +23,6 @@ const chromaticViewports = {
   desktop: { viewport: { width: 1200 } },
 };
 
-type Props = Record<string, unknown>;
-
 const getPath = (href: string | undefined): string => {
   if (!href) {
     return '';
@@ -40,8 +38,8 @@ const getPath = (href: string | undefined): string => {
   return href;
 };
 
-export const componentOverrides = {
-  h1: (props: Props) => (
+export const componentOverrides: MdxComponentOverrides = {
+  h1: (props) => (
     <Heading
       data-size="lg"
       {...props}
@@ -49,7 +47,7 @@ export const componentOverrides = {
       level={1}
     />
   ),
-  h2: (props: Props) => (
+  h2: (props) => (
     <Heading
       data-size="md"
       {...props}
@@ -57,7 +55,7 @@ export const componentOverrides = {
       level={2}
     />
   ),
-  h3: (props: Props) => (
+  h3: (props) => (
     <Heading
       data-size="sm"
       {...props}
@@ -65,7 +63,7 @@ export const componentOverrides = {
       level={3}
     />
   ),
-  p: (props: Props) => (
+  p: (props) => (
     <Paragraph
       {...props}
       className="sb-unstyled"
@@ -75,43 +73,53 @@ export const componentOverrides = {
       }}
     />
   ),
-  ol: (props: Props) => (
+  ol: (props) => (
     <List.Ordered
       {...props}
       style={{ maxWidth: '70ch', marginBottom: 'var(--ds-size-2)' }}
       className="sb-unstyled"
     />
   ),
-  ul: (props: Props) => (
+  ul: (props) => (
     <List.Unordered
       {...props}
       style={{ maxWidth: '70ch', marginBottom: 'var(--ds-size-2)' }}
       className="sb-unstyled"
     />
   ),
-  li: (props: Props) => (
+  li: (props) => (
     <List.Item
       {...props}
       className="sb-unstyled"
       style={{ maxWidth: '70ch', marginTop: 'var(--ds-size-1)' }}
     />
   ),
-  a: (props: LinkProps) => {
+  a: ({ children = '', ...props }) => {
     // if link starts with /, add current path to link
     const href = getPath(props.href);
 
-    return <Link {...props} href={href} className="sb-unstyled" />;
+    return (
+      <Link {...props} href={href} className="sb-unstyled">
+        {children}
+      </Link>
+    );
   },
-  table: (props: Props) => (
-    <Table {...props} zebra className="sb-unstyled" style={{ width: '100%' }} />
+  table: (props) => (
+    <Table
+      {...props}
+      border={false}
+      zebra
+      className="sb-unstyled"
+      style={{ width: '100%' }}
+    />
   ),
-  thead: (props: Props) => <Table.Head {...props} className="sb-unstyled" />,
-  tbody: (props: Props) => <Table.Body {...props} className="sb-unstyled" />,
-  tr: (props: Props) => <Table.Row {...props} className="sb-unstyled" />,
-  th: (props: Props) => <Table.HeaderCell {...props} className="sb-unstyled" />,
-  td: (props: Props) => <Table.Cell {...props} className="sb-unstyled" />,
-  dl: (props: Props) => <dl {...props} className="sb-unstyled" />,
-} satisfies MarkdownToJSX.Overrides;
+  thead: (props) => <Table.Head {...props} className="sb-unstyled" />,
+  tbody: (props) => <Table.Body {...props} className="sb-unstyled" />,
+  tr: (props) => <Table.Row {...props} className="sb-unstyled" />,
+  th: (props) => <Table.HeaderCell {...props} className="sb-unstyled" />,
+  td: (props) => <Table.Cell {...props} className="sb-unstyled" />,
+  dl: (props) => <dl {...props} className="sb-unstyled" />,
+};
 
 const preview: Preview = {
   tags: ['autodocs', 'a11y-test'],
