@@ -107,7 +107,7 @@ I eksempelet under bruker vi proppen `loading` for å vise at knappen laster.
 
 <Canvas of={ButtonStories.Loading} />
 
-I eksempelet over blir `aria-disabled` satt av `loading="true"`. Dette er den anbefalte måten for å vise at en knapp er deaktivert. Da kan den fortsatt få fokus når noen navigerer med tastaturet. Slik vil blant annet skjermlesere og andre hjelpemidler bli informert om at knappen finnes, men ikke er aktiv.
+I eksempelet over blir `aria-disabled` satt av `loading="true"`. Skjermlesere og andre hjelpemidler vil bli informert om at knappen finnes, men ikke er aktiv. I motsetning til `disabled` kan knappen fortsatt få fokus når noen navigerer med tastaturet.
 
 <SimpleAlert type="info" heading={{ text: 'Tips', level: 4 }}>
   `loading="true"` eller `aria-disabled` stopper ikke automatisk knappen fra å
@@ -135,7 +135,18 @@ Når vi legger flere knapper ved siden av hverandre, skal primærknappen stå f�
 
 ### Ikke bruk deaktiverte knapper
 
-Deaktiverte knapper bør unngås fordi de kan være vanskelige å oppfatte. Noen brukere vil ikke forstå hva knappen sier eller hvorfor den ikke er klikkbar. Bruk heller en aktiv knapp som validerer.
+Deaktiverte (`disabled`) knapper bør unngås fordi de kan være vanskelige å oppfatte. Noen brukere vil ikke forstå hva knappen sier eller hvorfor den ikke er klikkbar. Bruk heller en aktiv knapp som validerer.
+
+<SimpleAlert type="info" heading={{text: "Tips", level: 4}}>
+Hvis du mot formodning må bruke en deaktivert knapp:
+
+- Sørg for at alle brukerne dine både opplever og forstår at knappen eksisterer, at den er deaktivert, og hvorfor.
+- Bruk gjerne støttetekst som alltid er synlig når knappen er deaktivert.
+- Dersom det gir mening å fortsatt kunne navigere til knappen med tastaturet, eller det av andre grunner er viktig å beholde tab-rekkefølgen, bruk `aria-disabled` heller enn `disabled`. Da må du også huske å selv blokkere kjøring av callback-funksjoner (f.eks. `onClick`).
+
+</SimpleAlert>
+
+Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander) og hvilke alternativer som finnes.
 
 ### En knapp skal utføre kun én handling
 
