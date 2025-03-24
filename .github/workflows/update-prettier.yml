@@ -6,7 +6,7 @@ on:
     - cron: 0 2 * * 1
 
 jobs:
-  update-digdir:
+  update-prettier:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
