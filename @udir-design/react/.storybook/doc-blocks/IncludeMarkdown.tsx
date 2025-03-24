@@ -155,8 +155,12 @@ function remarkGithubAlert() {
           value: renderToStaticMarkup(
             <Unstyled style={{ marginBottom: 'var(--ds-size-6)' }}>
               <Alert data-color={alertData.type}>
-                <H data-size="xs" level={2}>
-                  {alertData.heading}
+                <H
+                  data-size="xs"
+                  style={{ marginBottom: 'var(--ds-size-2)' }}
+                  asChild
+                >
+                  <div>{alertData.heading}</div>
                 </H>
                 <div
                   className="sb-unstyled"
