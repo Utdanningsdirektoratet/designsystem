@@ -1,10 +1,264 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`As Link 1`] = `
+<a href="https://www.udir.no/">
+  <span
+    data-variant="circle"
+    role="img"
+    aria-label="Ola Nordmann"
+  >
+  </span>
+</a>
+`;
+
+exports[`Color Variants 1`] = `
+<span
+  data-variant="circle"
+  role="img"
+  aria-label="color neutral"
+  data-color="neutral"
+>
+</span>
+<span
+  data-variant="circle"
+  role="img"
+  aria-label="color accent"
+  data-color="accent"
+>
+</span>
+<span
+  data-variant="circle"
+  role="img"
+  aria-label="color support1"
+  data-color="support1"
+>
+</span>
+<span
+  data-variant="circle"
+  role="img"
+  aria-label="color support2"
+  data-color="support2"
+>
+</span>
+`;
+
+exports[`In Dropdown 1`] = `
+<button
+  data-variant="tertiary"
+  type="button"
+  popovertarget=":r0:"
+>
+  <span
+    data-variant="circle"
+    role="img"
+    aria-label="Ola Nordmann"
+    data-size="sm"
+  >
+    ON
+  </span>
+  Velg Profil
+</button>
+<div
+  id=":r0:"
+  popover="manual"
+  data-variant="default"
+  data-size="md"
+  data-placement="bottom"
+  style="--ds-popover-arrow-x: 184px; --ds-popover-arrow-y: 0; translate: <removed>;"
+>
+  <ul>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        <span
+          data-overlap="circle"
+          data-placement="top-right"
+        >
+          <span
+            data-variant="base"
+            data-color="danger"
+            data-size="sm"
+          >
+          </span>
+          <span
+            data-variant="circle"
+            role="img"
+            aria-label="Ola Nordmann"
+            data-size="xs"
+          >
+            ON
+          </span>
+        </span>
+        Ola Nordmann
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        <span
+          data-variant="circle"
+          role="img"
+          aria-label="Sogndal Kommune"
+          data-size="xs"
+          data-color="support1"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M2.25 7.5c0-.69.56-1.25 1.25-1.25h4.25V5c0-.966.784-1.75 1.75-1.75h5c.966 0 1.75.784 1.75 1.75v1.25h4.25c.69 0 1.25.56 1.25 1.25v5c0 .69-.56 1.25-1.25 1.25h-.25v4.75c0 .69-.56 1.25-1.25 1.25H5c-.69 0-1.25-.56-1.25-1.25v-4.75H3.5c-.69 0-1.25-.56-1.25-1.25zm7-2.5a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v1.25h-5.5zM12 15.75a.75.75 0 0 0 .75-.75v-1.25h6v4.5H5.25v-4.5h6V15c0 .414.336.75.75.75m0-5.5a.75.75 0 0 1 .75.75v1.25h7.5v-4.5H3.75v4.5h7.5V11a.75.75 0 0 1 .75-.75"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </span>
+        Sogndal kommune
+      </button>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`No Name 1`] = `
+<span
+  data-variant="circle"
+  role="img"
+  aria-label="Ola"
+>
+</span>
+`;
+
 exports[`Preview 1`] = `
 <span
   data-variant="circle"
   role="img"
   aria-label="Ola Nordmann"
 >
+</span>
+`;
+
+exports[`Shape Variants 1`] = `
+<span
+  data-variant="circle"
+  role="img"
+  aria-label="variant circle"
+>
+</span>
+<span
+  data-variant="square"
+  role="img"
+  aria-label="variant square"
+>
+</span>
+<span
+  data-variant="circle"
+  role="img"
+  aria-label="Ola Nordman"
+>
+  ON
+</span>
+<span
+  data-variant="square"
+  role="img"
+  aria-label="Ola Nordman"
+>
+  ON
+</span>
+`;
+
+exports[`Sizes 1`] = `
+<span
+  data-variant="circle"
+  data-initials="xs"
+  role="img"
+  aria-label="extra small"
+  data-size="xs"
+>
+</span>
+<span
+  data-variant="circle"
+  role="img"
+  aria-label="extra small"
+  data-size="xs"
+>
+</span>
+<span
+  data-variant="circle"
+  data-initials="sm"
+  role="img"
+  aria-label="small"
+  data-size="sm"
+>
+</span>
+<span
+  data-variant="circle"
+  role="img"
+  aria-label="small"
+  data-size="sm"
+>
+</span>
+<span
+  data-variant="circle"
+  data-initials="md"
+  role="img"
+  aria-label="default"
+>
+</span>
+<span
+  data-variant="circle"
+  data-initials="md"
+  role="img"
+  aria-label="medium"
+  data-size="md"
+>
+</span>
+<span
+  data-variant="circle"
+  role="img"
+  aria-label="medium"
+  data-size="md"
+>
+</span>
+<span
+  data-variant="circle"
+  data-initials="lg"
+  role="img"
+  aria-label="large"
+  data-size="lg"
+>
+</span>
+<span
+  data-variant="circle"
+  role="img"
+  aria-label="large"
+  data-size="lg"
+>
+</span>
+`;
+
+exports[`With Image 1`] = `
+<span
+  data-variant="circle"
+  role="img"
+  aria-label="Ola Nordman"
+>
+  <img
+    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&amp;w=1480&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    alt
+    aria-hidden="true"
+  >
 </span>
 `;
