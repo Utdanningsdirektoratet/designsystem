@@ -1,0 +1,37 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/blocks';
+import { Alert } from '../alpha';
+import * as InputStories from './Input.stories';
+
+<Meta of={InputStories} />
+
+# Input
+
+`Input` er et skjemaelement for å samle inn brukerdata. Det tilbyr grunnleggende funksjonalitet og er ideell når du trenger full kontroll over komponentenes oppsett og validering, noe som gjør det ideelt for bygging av spesialtilpassede elementer.
+
+Se også [`Textfield`](docs/components-textfield--docs) som er en gruppering av komponenter som ofte brukes sammen. Med `Textfield` slipper du å sy sammen `Label`, `Description`, `Input`, `ValidationMessage` selv hver gang.
+
+<Primary />
+<Controls />
+## Eksempler
+
+### Kontrollert
+
+<Canvas of={InputStories.Controlled} />
+
+### Html size
+
+`Size` attributtet kan brukes for å angi bredden på tekstfeltet. Verdien kan være et tall fra 1 til 99.
+
+<Canvas of={InputStories.HtmlSize} />
+
+## Retningslinjer for når du skal bruke Input
+
+Se retningslinjer for [`Textfield`](docs/komponenter-textfield--docs).
+
+### Plassering av ledeteksten
+
+Ledeteksten og eventuell beskrivelse skal alltid stå over tekstfeltet. Dette gjør dem lette å se på små skjermer og hindres ikke av eventuelle feilmeldinger.
+
+## Tilgjengelighet
+
+For god praksis se [`Textfield`](docs/komponenter-textfield--docs).
