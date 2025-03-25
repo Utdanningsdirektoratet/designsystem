@@ -38,3 +38,117 @@ exports[`Preview 1`] = `
   </ul>
 </div>
 `;
+
+exports[`Show Hide 1`] = `
+<div style="display: grid; place-items: center; margin-bottom: var(--ds-size-4);">
+  <button
+    data-variant="primary"
+    type="button"
+  >
+    Skjul
+  </button>
+</div>
+<div
+  aria-labelledby=":r2:"
+  aria-live="polite"
+  aria-relevant="all"
+  role="alert"
+>
+  <h2 id=":r2:">
+    For å gå videre må du rette opp følgende feil:
+  </h2>
+  <ul>
+    <li>
+      <a
+        data-color="neutral"
+        href="#fornavn"
+      >
+        Fornavn må være minst 2 tegn
+      </a>
+    </li>
+    <li>
+      <a
+        data-color="neutral"
+        href="#telefon"
+      >
+        Telefonnummer kan kun inneholde siffer
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`With Form 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="fornavn"
+  >
+    Fornavn
+  </label>
+  <div>
+    <input
+      type="text"
+      aria-invalid="true"
+      id="fornavn"
+      aria-describedby="fornavn:validation"
+    >
+  </div>
+  <p
+    data-field="validation"
+    id="fornavn:validation"
+  >
+    Fornavn må være minst 2 tegn
+  </p>
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="telefon"
+  >
+    Telefon
+  </label>
+  <div>
+    <input
+      type="tel"
+      aria-invalid="true"
+      id="telefon"
+      aria-describedby="telefon:validation"
+    >
+  </div>
+  <p
+    data-field="validation"
+    id="telefon:validation"
+  >
+    Telefonnummer kan kun inneholde siffer
+  </p>
+</div>
+<div
+  aria-labelledby=":r1:"
+  aria-live="polite"
+  aria-relevant="all"
+  role="alert"
+>
+  <h2 id=":r1:">
+    For å gå videre må du rette opp følgende feil:
+  </h2>
+  <ul>
+    <li>
+      <a
+        data-color="neutral"
+        href="#fornavn"
+      >
+        Fornavn må være minst 2 tegn
+      </a>
+    </li>
+    <li>
+      <a
+        data-color="neutral"
+        href="#telefon"
+      >
+        Telefonnummer kan kun inneholde siffer
+      </a>
+    </li>
+  </ul>
+</div>
+`;

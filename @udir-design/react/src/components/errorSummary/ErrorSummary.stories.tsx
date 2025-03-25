@@ -1,12 +1,19 @@
+import { useState } from 'react';
+import { Button, Textfield } from '../alpha';
 import { ErrorSummary } from './ErrorSummary';
 import type { Meta, StoryObj } from '@storybook/react';
+import { expect, userEvent, within } from '@storybook/test';
 
 const meta: Meta<typeof ErrorSummary> = {
   component: ErrorSummary,
   tags: ['alpha'],
+  parameters: {
+    layout: 'centered',
+  },
 };
 
 export default meta;
+
 type Story = StoryObj<typeof ErrorSummary>;
 
 export const Preview: Story = {
@@ -32,4 +39,91 @@ export const Preview: Story = {
       </ErrorSummary.List>
     </ErrorSummary>
   ),
+};
+
+export const WithForm: Story = {
+  parameters: {
+    customStyles: { display: 'grid', gap: 'var(--ds-size-4)' },
+  },
+  render: (args) => (
+    <>
+      <Textfield
+        label="Fornavn"
+        id="fornavn"
+        error="Fornavn må være minst 2 tegn"
+      />
+
+      <Textfield
+        label="Telefon"
+        id="telefon"
+        type="tel"
+        error="Telefonnummer kan kun inneholde siffer"
+      />
+
+      <ErrorSummary {...args}>
+        <ErrorSummary.Heading>
+          For å gå videre må du rette opp følgende feil:
+        </ErrorSummary.Heading>
+        <ErrorSummary.List>
+          <ErrorSummary.Item>
+            <ErrorSummary.Link href="#fornavn">
+              Fornavn må være minst 2 tegn
+            </ErrorSummary.Link>
+          </ErrorSummary.Item>
+          <ErrorSummary.Item>
+            <ErrorSummary.Link href="#telefon">
+              Telefonnummer kan kun inneholde siffer
+            </ErrorSummary.Link>
+          </ErrorSummary.Item>
+        </ErrorSummary.List>
+      </ErrorSummary>
+    </>
+  ),
+};
+
+export const ShowHide: Story = {
+  render: function Render(args) {
+    const [show, setShow] = useState(false);
+    return (
+      <>
+        <div
+          style={{
+            display: 'grid',
+            placeItems: 'center',
+            marginBottom: 'var(--ds-size-4)',
+          }}
+        >
+          <Button onClick={() => setShow(!show)}>
+            {show ? 'Skjul' : 'Vis'}
+          </Button>
+        </div>
+        {show && (
+          <ErrorSummary>
+            <ErrorSummary.Heading>
+              For å gå videre må du rette opp følgende feil:
+            </ErrorSummary.Heading>
+            <ErrorSummary.List>
+              <ErrorSummary.Item>
+                <ErrorSummary.Link href="#fornavn">
+                  Fornavn må være minst 2 tegn
+                </ErrorSummary.Link>
+              </ErrorSummary.Item>
+              <ErrorSummary.Item>
+                <ErrorSummary.Link href="#telefon">
+                  Telefonnummer kan kun inneholde siffer
+                </ErrorSummary.Link>
+              </ErrorSummary.Item>
+            </ErrorSummary.List>
+          </ErrorSummary>
+        )}
+      </>
+    );
+  },
+  play: async (ctx) => {
+    const canvas = within(ctx.canvasElement);
+    const button = canvas.getByRole('button');
+    await userEvent.click(button);
+    const errorSummary = canvas.getByRole('alert');
+    await expect(errorSummary).toBeVisible();
+  },
 };
