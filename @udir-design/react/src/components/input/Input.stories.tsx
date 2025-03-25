@@ -12,6 +12,7 @@ import {
   ValidationMessage,
 } from '../../alpha';
 import { Size } from '@digdir/designsystemet-react';
+import { expect, userEvent, within } from '@storybook/test';
 
 type Story = StoryObj<typeof Input>;
 
@@ -52,7 +53,37 @@ export const Preview: Story = {
       </Field>
     );
   },
+  play: async ({ canvasElement, step, args }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByRole('textbox');
+
+    await step('User can focus the input', async () => {
+      await userEvent.click(input);
+      expect(input).toHaveFocus();
+    });
+
+    await step('User can blur the input', async () => {
+      await userEvent.tab();
+      expect(input).not.toHaveFocus();
+    });
+
+    if (!args.disabled && !args.readOnly) {
+      await step('User can type in the input', async () => {
+        await userEvent.clear(input);
+        await userEvent.type(input, 'Hello World');
+        expect(input).toHaveValue('Hello World');
+      });
+    } else {
+      await step(
+        'Input is disabled or read-only so it should not be editable',
+        async () => {
+          expect(input).toBeDisabled();
+        },
+      );
+    }
+  },
 };
+
 export const HtmlSize: Story = {
   args: {
     size: 10,
