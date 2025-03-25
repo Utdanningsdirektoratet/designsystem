@@ -153,7 +153,7 @@ export const AsLink: Story = {
     asChild: true,
     children: (
       <a target="_blank" rel="noreferrer" href="https://www.udir.no/">
-        Gå til Udirs hjemmeside
+        Gå til udir.no
         <ExternalLinkIcon title="Ekstern lenke" />
       </a>
     ),

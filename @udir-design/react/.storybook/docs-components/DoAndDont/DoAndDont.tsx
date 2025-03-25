@@ -15,7 +15,7 @@ const Wrapper = ({ variant, description, children }: WrapperProps) => {
       <div className={styles.header}>
         <div className={styles.icon}>{icon}</div>
         <Heading
-          level={2}
+          asChild
           data-size="sm"
           style={{
             margin: 0,
@@ -23,7 +23,7 @@ const Wrapper = ({ variant, description, children }: WrapperProps) => {
           }}
           className="sb-unstyled"
         >
-          {heading}
+          <p>{heading}</p>
         </Heading>
       </div>
       <figcaption>

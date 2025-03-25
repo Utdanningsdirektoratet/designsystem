@@ -1,0 +1,8 @@
+.simpleAlert {
+  &:not(:first-child) {
+    margin-top: var(--ds-size-6);
+  }
+  &:not(:last-child) {
+    margin-bottom: var(--ds-size-6);
+  }
+}

@@ -1,5 +1,10 @@
 import { Meta, Canvas, Controls, Primary } from '@storybook/blocks';
-import { Do, Dont, Stack } from '../../../.storybook/docs-components';
+import {
+  Do,
+  Dont,
+  Stack,
+  SimpleAlert,
+} from '../../../.storybook/docs-components';
 import { Button } from './Button';
 import * as ButtonStories from './Button.stories';
 import { ButtonEx1, ButtonEx2, ButtonEx4, ButtonEx5 } from './docs/doAndDont';
@@ -25,8 +30,6 @@ import { Button } from '@udir-design/react';
 
 Vi har forskjellige knapper for å fremheve utvalgte handlinger. `Primary`, `secondary` og `tertiary` bestemmer hvor viktig handlingen er.
 
-<br />
-
 ### Primary button
 
 Vi bruker denne knappen til den handlingen som er viktigst for brukeren, for eksempel Lagre, Neste eller Send inn. Det skal bare være en primærknapp per side.
@@ -44,8 +47,6 @@ Vi bruker denne knappen til handlinger som ikke er hovedhandlinger. Den står gj
 Denne knappen bruker vi til nedtonede handlinger. Hvis vi vil bruke den alene, må den ha med et ikon, hvis ikke er det vanskelig å se at det er en knapp.
 
 <Canvas of={ButtonStories.Tertiary} />
-
-<br />
 
 ## Fargevarianter
 
@@ -65,14 +66,12 @@ Vi kan bruke en `danger`-knapp sammen med én eller flere `neutral`-knapper når
 
 <Canvas of={ButtonStories.CombinedColors} />
 
-<br />
-
 ## Eksempler
 
 ### Knapp som lenke
 
 Bruk `asChild` dersom du trenger å bruke knappen som en lenke. Vurder først om det er bedre å bruke [`Link`](/docs/components-link--docs)-komponenten.
-Du kan lese mer om komposisjon [her](https://www.designsystemet.no/grunnleggende/for-utviklere/komposisjon).
+[Les mer om komposisjon](https://www.designsystemet.no/grunnleggende/for-utviklere/komposisjon).
 
 <Canvas of={ButtonStories.AsLink} />
 
@@ -95,15 +94,11 @@ Som regel er det **venstre** som er den beste plasseringen, men det finnes unnta
 - Er det en knapp som sier “Start” med en høyrepekende pil, er det naturlig at pilen plasseres til høyre for teksten.
 - Er knappen fast plassert på høyre side av grensesnittet er det best at ikonet også er høyrestilt for teksten.
 
-<br />
-
 ### Størrelse på ikon
 
-Ikon skalerer automatisk basert på knappestørrelse, men du kan endre denne ved å sette font størrelsen.
+Ikon skalerer automatisk basert på knappestørrelse, men du kan endre denne ved å sette fontstørrelsen.
 
 <Canvas of={ButtonStories.IconOnly} />
-
-<br />
 
 ### Last inn
 
@@ -112,13 +107,13 @@ I eksempelet under bruker vi proppen `loading` for å vise at knappen laster.
 
 <Canvas of={ButtonStories.Loading} />
 
-I eksempelet over blir `aria-disabled` satt av `loading="true"`. Dette er den anbefalte måten for å vise at en knapp er deaktivert. Da kan den fortsatt få fokus når noen navigerer med tastaturet. Slik vil blant annet skjermlesere og andre hjelpemidler bli informert om at knappen finnes, men ikke er aktiv.
+I eksempelet over blir `aria-disabled` satt av `loading="true"`. Skjermlesere og andre hjelpemidler vil bli informert om at knappen finnes, men ikke er aktiv. I motsetning til `disabled` kan knappen fortsatt få fokus når noen navigerer med tastaturet.
 
-Denne egenskapen stopper ikke automatisk knappen fra å utløse `onClick`.
-
-Pass på at callback-funksjonen ikke kjører når knappen er deaktivert.
-
-<br />
+<SimpleAlert type="info" heading={{ text: 'Tips', level: 4 }}>
+  `loading="true"` eller `aria-disabled` stopper ikke automatisk knappen fra å
+  utløse `onClick`. Du må selv passe på at callback-funksjonen ikke kjører når
+  knappen er deaktivert.
+</SimpleAlert>
 
 ## Retningslinjer for button
 
@@ -130,44 +125,46 @@ Knapper skal brukes til å utføre handlinger.
 - navigere i en flyt, for eksempel med Forrige og Neste
 - sende inn et skjema
 
-<br />
 **Passer ikke til å**
 
-- navigere til andre sider eller ut av tjenesten, bruk heller [`link`](/docs/components-link--docs)
-
-<br />
+- navigere til andre sider eller ut av tjenesten, bruk heller [`Link`](/docs/components-link--docs)
 
 ### Plassering av knapper
 
 Når vi legger flere knapper ved siden av hverandre, skal primærknappen stå først. Unntaket er Forrige og Neste, da skal sekundærknappen Forrige stå først.
 
-<br />
-
 ### Ikke bruk deaktiverte knapper
 
-Deaktiverte knapper bør unngås fordi de kan være vanskelige å oppfatte. Noen brukere vil ikke forstå hva knappen sier eller hvorfor den ikke er klikkbar. Bruk heller en aktiv knapp som validerer.
+Vi unngår deaktiverte (`disabled`) knapper fordi de kan være vanskelige å oppfatte. Noen brukere vil ikke forstå hva knappen sier eller hvorfor den ikke er klikkbar. En aktiv knapp som viser en feilmelding når brukeren klikker gir i de fleste tilfeller en bedre brukeropplevelse.
 
-<br />
+Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander) og hvilke alternativer som finnes.
+
+<SimpleAlert type="info" heading={{text: "Tips", level: 4}}>
+Hvis du mot formodning må bruke en deaktivert knapp:
+
+- Sørg for at alle brukerne dine både opplever og forstår at knappen eksisterer, at den er deaktivert, og hvorfor.
+- Bruk gjerne støttetekst som alltid er synlig når knappen er deaktivert.
+- Dersom det gir mening å fortsatt kunne navigere til knappen med tastaturet, eller det av andre grunner er viktig å beholde tab-rekkefølgen, bruk `aria-disabled` heller enn `disabled`. Da må du også huske å selv blokkere kjøring av callback-funksjoner (f.eks. `onClick`).
+
+</SimpleAlert>
+
 ### En knapp skal utføre kun én handling
 
 Vi skal tydelig beskrive handlingene knappene utfører. En knapp kan bare ha én handling, ikke flere.
 
 <ButtonEx1 />
-<br />
 
 ### Èn hovedhandling per side
 
 Vi skal holde oss til én primærknapp per side. Hvis det er flere hovedhandlinger kan brukerne bli usikre på hva de skal gjøre.
 
 <ButtonEx2 />
-<br />
 
 ### Ett ikon per knapp
 
 Vi skal holde oss til ett ikon per knapp.
 
 <ButtonEx4 />
-<br />
 
 ## Tekst i komponenten
 

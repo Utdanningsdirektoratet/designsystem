@@ -8,8 +8,10 @@
  */
 
 import type {} from '@storybook/types';
-import type { ElementContext, Spec } from 'axe-core';
-import type { CSSProperties } from 'react';
+import type { DocsParameters } from '@storybook/addon-docs';
+import type { A11yParameters } from '@storybook/addon-a11y';
+import type { CSSProperties, ReactNode } from 'react';
+import { ThemeVars } from '@storybook/theming';
 
 type ChromaticViewport = {
   width?: number | `${string}px`;
@@ -28,8 +30,14 @@ type PseudoState =
 
 type PseudoValue = boolean | string | string[];
 
+export type MdxComponentOverrides = {
+  [K in keyof React.JSX.IntrinsicElements]?: React.FC<
+    React.JSX.IntrinsicElements[K]
+  >;
+} & Record<string, React.FC>;
+
 declare module '@storybook/types' {
-  interface Parameters {
+  interface Parameters extends A11yParameters, DocsParameters {
     /**
      * Set custom styling for the story's root element. The default styling is:
      * ```css
@@ -53,14 +61,7 @@ declare module '@storybook/types' {
      */
     layout?: 'centered' | 'fullscreen' | 'padded';
 
-    /**
-     * Configure `@storybook/addon-a11y`. See [the documentation](https://storybook.js.org/addons/@storybook/addon-a11y)
-     */
-    a11y?: {
-      disable?: boolean;
-      element?: ElementContext;
-      config?: Spec;
-      manual?: boolean;
+    a11y?: A11yParameters['a11y'] & {
       /**
        * - `'todo'` - show a11y violations in the test UI only
        * - `'error'` - fail CI on a11y violations
@@ -114,6 +115,49 @@ declare module '@storybook/types' {
           // to use in modes can also be added here
         }
       >;
+    };
+
+    docs?: DocsParameters['docs'] & {
+      components?: MdxComponentOverrides;
+      theme?: ThemeVars;
+      toc?:
+        | boolean
+        | {
+            /**
+             * Defines the container's CSS selector for search for the headings
+             * @example
+             * '.sbdocs-content'
+             */
+            contentsSelector?: string;
+            /**
+             * Hides the table of contents for the documentation pages
+             */
+            disable?: boolean;
+            /**
+             * Defines the list of headings to feature in the table of contents
+             * @example
+             * 'h1, h2, h3'
+             */
+            headingSelector?: string;
+            /**
+             * Configures the table of contents to ignore specific headings or stories.
+             * By default, the table of contents will ignore all content placed within Story blocks
+             * @example
+             * '.docs-story h2'
+             */
+            ignoreSelector?: string;
+            /**
+             * Defines a title caption for the table of contents.
+             * @default null
+             * @example 'Table of Contents'
+             */
+            title?: ReactNode;
+            /**
+             * Provides additional TocBot configuration options.
+             * See https://github.com/tscanlin/tocbot/blob/master/index.d.ts
+             */
+            unsafeTocbotOptions?: Record<string, unknown>;
+          };
     };
 
     /**

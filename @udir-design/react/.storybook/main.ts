@@ -1,5 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 import remarkGfm from 'remark-gfm';
+import { UserConfig } from 'vite';
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
@@ -50,11 +51,7 @@ const config: StorybookConfig = {
         */
         include: ['react/jsx-dev-runtime'],
       },
-    });
-  },
-
-  docs: {
-    autodocs: true,
+    } satisfies UserConfig);
   },
 
   tags: {

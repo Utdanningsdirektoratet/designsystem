@@ -1,0 +1,55 @@
+.sbdocs-content {
+  code {
+    // 14px in body text, but scale with headings
+    font-size: round(down, 0.8em, 0.0625rem);
+  }
+
+  a > code {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 0.0625em;
+    text-underline-offset: 0.27em; /* 5px ish */
+
+    /* Only use hover for non-touch devices to prevent sticky-hovering */
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--ds-color-text-default);
+        text-decoration-thickness: 0.125em;
+      }
+    }
+
+    &:active {
+      background-color: var(--ds-color-surface-tinted);
+      color: var(--ds-color-text-default);
+    }
+  }
+}
+
+.toc-list {
+  .toc-list-item {
+    .toc-link {
+      color: var(--ds-color-neutral-text-subtle);
+      &.is-active-link {
+        color: var(--ds-color-neutral-text-default);
+      }
+    }
+  }
+}
+
+// This is the right TOC sidebar
+.sbdocs-content + div {
+  // Fix width issue for the rendered TOC
+  & > :first-child {
+    width: auto;
+  }
+  // If TOC is disabled, hide the entire TOC sidebar
+  &:empty {
+    display: none;
+  }
+  // If TOC is enabled, but there is no content, hide the contents but keep the sidebar.
+  // As the TOC renders after the rest of the page, this avoids temporarily showing
+  // a TOC heading with no links.
+  &:has(.toc-wrapper:empty) > :first-child {
+    display: none;
+  }
+}

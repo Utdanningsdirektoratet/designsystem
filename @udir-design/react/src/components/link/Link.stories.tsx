@@ -20,7 +20,7 @@ const udirLink = 'https://udir.no/';
 export const Preview: Story = {
   args: {
     href: udirLink,
-    children: 'Gå til udirs hjemmeside',
+    children: 'Gå til udir.no',
   },
 };
 
