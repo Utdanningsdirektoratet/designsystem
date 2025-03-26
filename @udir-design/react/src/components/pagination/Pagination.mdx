@@ -5,21 +5,20 @@ import * as PaginationStories from './Pagination.stories';
 
 # Pagination
 
-`Pagination` er en liste av knapper som ofte brukes for å navigere mellom sider av informasjon.
+`Pagination` er en liste av knapper som ofte brukes for å navigere mellom sider av informasjon. Komponenten kan brukes på forskjellige måter, se eksempler under [bruk](#bruk).
 
 Vær oppmerksom på:
 
-- Knappene er som standard `button` elementer.
-- Dersom ny side fører til ny side sørg for at paginering knapper er `a` elementer.
+- Knappene er som standard `button`-elementer.
+- Dersom du bruker paginering for å navigere mellom ulike sider i nettleseren, sørg for at pagineringsknappene blir `a`-elementer. Se eksempel [Paginering med lenker](#paginering-med-lenker).
 
 <Primary />
 <Controls of={PaginationStories.Preview} />
 
 ## Bruk
 
-### Eksempel på bruk med Pagination
-
-`Pagination` er en kontrollert komponent. Det vil si at komponentens tilstand om hvilken side som er aktiv styres utenfra.
+`Pagination` er en kontrollert komponent. Det vil si at komponentens tilstand om hvilken side som er aktiv styres utenfra. Vi bruker `usePagination` sammen med de enkelte delkomponentene for å implementere funksjonaliteten.
+[Les mer om `usePagination`](/docs/utilities-usepagination--docs).
 
 ```tsx
 import { Pagination } from '@udir-design/react';
@@ -60,11 +59,7 @@ const { pages, prevButtonProps, nextButtonProps, hasNext, hasPrevious } =
 </Pagination>;
 ```
 
-## Paginering med usePagination
-
-Bruk `usePagination` for paginering-logikk sammen med de enkelt del-komponentene.
-
-### Pagenering med lenker
+### Paginering med lenker
 
 Alle del-komponenter støtter `asChild` som kan brukes til å endre `Pagination.Button` til lenker (`a`).
 
