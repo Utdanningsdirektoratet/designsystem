@@ -23,7 +23,7 @@ Denne varianten strekker tekstområdet til å fylle hele bredden av tilgjengelig
 
 <Canvas of={TextareaStories.FullWidth} />
 
-## Retningslinjer for bruk av Textarea
+## Retningslinjer
 
 Bruk `Textarea` når brukerne forventes å skrive inn mer enn én linje med tekst, for eksempel ved åpne spørsmål, tilbakemeldinger, eller andre situasjoner hvor lengre tekstinnhold er nødvendig.
 
@@ -35,13 +35,13 @@ Vær oppmerksom på at brukerne kan synes det er vanskelig å skrive fritekst el
 
 **Passer ikke til**
 
-- korte svar som e-postadresser og telefonnummer – bruk [`input`](/docs/komponenter-input--docs) for disse.
+- korte svar som e-postadresser og telefonnummer – bruk [`input`](/docs/components-input--docs) for disse.
 
 ### Størrelse og tilpasning
 
 #### Høyden på tekstområdet
 
-Høyden på `textarea` bør tilpasses forventet tekstmengde. Forventer du at brukeren skal skrive tre linjer, bør høyden reflektere dette. For lengre tekster er det viktig å gi mer visuell plass for en bedre brukeropplevelse. Du kan endre høyde med `rows="{number}"`.
+Høyden på `Textarea` bør tilpasses forventet tekstmengde. Forventer du at brukeren skal skrive tre linjer, bør høyden reflektere dette. For lengre tekster er det viktig å gi mer visuell plass for en bedre brukeropplevelse. Du kan endre høyde med `rows={number}`.
 
 `Textarea` skal kunne tilpasses i høyden, når brukeren har behov for mer plass. Feltet
 vil automatisk utvide seg når brukeren skriver, dersom du ikke setter `rows`, slik
@@ -53,4 +53,4 @@ Et tekstområde bør ikke være bredere enn 50–75 tegn inkludert mellomrom. Hv
 
 ### Øvrige retningslinjer
 
-I tillegg til de retningslinjene, bør du også følge de generelle retninglinjene for [`textfield`](/docs/components-Textfield--docs) og [`input`](/docs/components-input--docs).
+I tillegg til de retningslinjene, bør du også følge de generelle retninglinjene for [`Textfield`](/docs/components-Textfield--docs#retningslinjer) og [`Input`](/docs/components-input--docs#retningslinjer).
