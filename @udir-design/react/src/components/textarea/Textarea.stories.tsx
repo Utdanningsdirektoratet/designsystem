@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Label } from '../typography/label/Label';
 import { useState } from 'react';
 import { Button, Divider, Paragraph, Textarea } from '../alpha';
+import { expect, userEvent, within } from '@storybook/test';
 
 const meta: Meta<typeof Textarea> = {
   component: Textarea,
@@ -31,6 +32,39 @@ export const Preview: Story = {
       <Textarea {...args} />
     </>
   ),
+  play: async ({ canvasElement, step, args }) => {
+    const canvas = within(canvasElement);
+    const textarea = canvas.getByRole('textbox');
+
+    await step('Textarea is rendered', async () => {
+      expect(textarea).toBeInTheDocument();
+    });
+
+    await step('User can focus the textarea', async () => {
+      await userEvent.click(textarea);
+      expect(textarea).toHaveFocus();
+    });
+
+    await step('User can blur the textarea', async () => {
+      await userEvent.tab();
+      expect(textarea).not.toHaveFocus();
+    });
+
+    if (!args.disabled && !args.readOnly) {
+      await step('User can type in the textarea', async () => {
+        await userEvent.clear(textarea);
+        await userEvent.type(textarea, 'Hello World');
+        expect(textarea).toHaveValue('Hello World');
+      });
+    } else {
+      await step(
+        'Textarea is disabled or read-only so it should not be editable',
+        async () => {
+          expect(textarea).toBeDisabled();
+        },
+      );
+    }
+  },
 };
 
 export const FullWidth: Story = {
