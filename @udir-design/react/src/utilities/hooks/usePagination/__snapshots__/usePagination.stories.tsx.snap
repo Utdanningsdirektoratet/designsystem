@@ -1,0 +1,85 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Preview 1`] = `
+<nav aria-label="Sidenavigering">
+  <ul>
+    <li>
+      <button
+        aria-disabled="false"
+        data-variant="tertiary"
+        type="button"
+        aria-label="Forrige side"
+      >
+        Forrige
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+        aria-label="Side 1"
+      >
+        1
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="primary"
+        type="button"
+        aria-label="Side 2"
+        aria-current="page"
+      >
+        2
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+        aria-label="Side 3"
+      >
+        3
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+        aria-label="Side 4"
+      >
+        4
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+        aria-label="Side 5"
+      >
+        5
+      </button>
+    </li>
+    <li>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+        aria-label="Side 10"
+      >
+        10
+      </button>
+    </li>
+    <li>
+      <button
+        aria-disabled="false"
+        data-variant="tertiary"
+        type="button"
+        aria-label="Neste side"
+      >
+        Neste
+      </button>
+    </li>
+  </ul>
+</nav>
+`;
