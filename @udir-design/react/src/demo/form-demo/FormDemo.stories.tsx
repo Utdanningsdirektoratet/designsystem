@@ -8,6 +8,21 @@ import classes from './FormDemo.module.css';
 const meta: Meta<typeof FormDemo> = {
   title: 'Demo/Form Demo',
   component: FormDemo,
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'aria-allowed-role',
+            enabled: true,
+            // Exclude the combobox element from this check because of Suggestion
+            // TODO: this selector should be removed after https://github.com/dequelabs/axe-core/issues/4672 have propagated to @storybook/addon-a11y.
+            selector: ':not([role="combobox"])',
+          },
+        ],
+      },
+    },
+  },
 };
 
 export default meta;
