@@ -105,6 +105,15 @@ export const componentOverrides: MdxComponentOverrides = {
         {...props}
         href={href}
         className="sb-unstyled"
+        onClick={(event) => {
+          // Handle in-page anchor links
+          if (props.href?.startsWith('#')) {
+            event.preventDefault();
+            document
+              .getElementById(props.href.substring(1))
+              ?.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
         // Add a data-attribute for use when styling links which include code snippets
         {...(Children.count(children) === 1 && { 'data-single-child': true })}
       >
