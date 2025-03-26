@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Pagination, usePagination, UsePaginationProps } from '../alpha';
 import { useState } from 'react';
+import { expect, userEvent, within } from '@storybook/test';
 
 const meta: Meta<typeof Pagination> = {
   component: Pagination,
@@ -44,6 +45,43 @@ export const Preview: Story = {
           </Pagination.Item>
         </Pagination.List>
       </Pagination>
+    );
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const pagination = canvas.getByRole('navigation');
+    const prevButton = canvas.getByRole('button', { name: /forrige side/i });
+    const nextButton = canvas.getByRole('button', { name: /neste side/i });
+
+    await step('Pagination component is rendered', async () => {
+      expect(pagination).toBeInTheDocument();
+    });
+
+    await step('Navigation buttons are rendered', async () => {
+      expect(prevButton).toBeInTheDocument();
+      expect(nextButton).toBeInTheDocument();
+    });
+
+    await step('Initial active page is 4', async () => {
+      const activePageButton = canvas.getByRole('button', { name: /side 4/i });
+      expect(activePageButton).toHaveAttribute('aria-current', 'page');
+    });
+
+    await step('Clicking "Neste side" changes active page to 5', async () => {
+      await userEvent.click(nextButton);
+      const activePageButton = canvas.getByRole('button', { name: /side 5/i });
+      expect(activePageButton).toHaveAttribute('aria-current', 'page');
+    });
+
+    await step(
+      'Clicking "Forrige side" changes active page back to 4',
+      async () => {
+        await userEvent.click(prevButton);
+        const activePageButton = canvas.getByRole('button', {
+          name: /side 4/i,
+        });
+        expect(activePageButton).toHaveAttribute('aria-current', 'page');
+      },
     );
   },
 };
