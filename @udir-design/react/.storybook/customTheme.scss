@@ -1,24 +1,37 @@
 .sbdocs-content {
   code {
+    display: inline;
+    border: none;
     // 14px in body text, but scale with headings
     font-size: round(down, 0.8em, 0.0625rem);
   }
 
-  a > code {
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    text-decoration-thickness: 0.0625em;
-    text-underline-offset: 0.27em; /* 5px ish */
+  a {
+    // Hack to properly render the link underline across regular text and code
+    &:not([data-single-child]) > code {
+      position: relative;
+      margin: 0;
+      padding-left: 0;
+      padding-right: 0;
+
+      &::before,
+      &::after {
+        font-size: 8px;
+        display: inline;
+        content: '\00a0';
+        position: relative;
+      }
+    }
 
     /* Only use hover for non-touch devices to prevent sticky-hovering */
     @media (hover: hover) and (pointer: fine) {
-      &:hover {
+      &:hover > code {
         color: var(--ds-color-text-default);
         text-decoration-thickness: 0.125em;
       }
     }
 
-    &:active {
+    &:active > code {
       background-color: var(--ds-color-surface-tinted);
       color: var(--ds-color-text-default);
     }

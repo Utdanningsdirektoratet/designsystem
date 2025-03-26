@@ -7,8 +7,6 @@ import {
   type PaginationItemProps,
   PaginationList,
   type PaginationListProps,
-  usePagination,
-  type UsePaginationProps,
 } from '@digdir/designsystemet-react';
 import { ForwardRefExoticComponent } from 'react';
 
@@ -30,6 +28,4 @@ export {
   PaginationItemProps,
   PaginationList,
   PaginationListProps,
-  usePagination,
-  UsePaginationProps,
 };

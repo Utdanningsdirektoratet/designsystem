@@ -225,6 +225,9 @@ importers:
       '@storybook/manager-api':
         specifier: ^8.6.8
         version: 8.6.8(storybook@8.6.8(prettier@3.5.3))
+      '@storybook/preview-api':
+        specifier: ^8.6.8
+        version: 8.6.8(storybook@8.6.8(prettier@3.5.3))
       '@storybook/react':
         specifier: ^8.6.8
         version: 8.6.8(@storybook/test@8.6.8(storybook@8.6.8(prettier@3.5.3)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.6.8(prettier@3.5.3))(typescript@5.8.2)

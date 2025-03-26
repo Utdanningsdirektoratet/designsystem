@@ -1,0 +1,66 @@
+import { Meta, Controls, Primary, Canvas, ArgTypes } from '@storybook/blocks';
+import * as PaginationStories from './Pagination.stories';
+
+<Meta of={PaginationStories} />
+
+# Pagination
+
+`Pagination` er en liste av knapper som ofte brukes for å navigere mellom sider av informasjon. Komponenten kan brukes på forskjellige måter, se eksempler under [bruk](#bruk).
+
+Vær oppmerksom på:
+
+- Knappene er som standard `button`-elementer.
+- Dersom du bruker paginering for å navigere mellom ulike sider i nettleseren, sørg for at pagineringsknappene blir `a`-elementer. Se eksempel [Paginering med lenker](#paginering-med-lenker).
+
+<Primary />
+<Controls of={PaginationStories.Preview} />
+
+## Bruk
+
+`Pagination` er en kontrollert komponent. Det vil si at komponentens tilstand om hvilken side som er aktiv styres utenfra. Vi bruker `usePagination` sammen med de enkelte delkomponentene for å implementere funksjonaliteten.
+[Les mer om `usePagination`](/docs/utilities-usepagination--docs).
+
+```tsx
+import { Pagination } from '@udir-design/react';
+
+const onChange = (event, page: number) => console.log(`Going to page ${page}`);
+const [currentPage, setCurrentPage] = useState(4);
+const { pages, prevButtonProps, nextButtonProps, hasNext, hasPrevious } =
+  usePagination({
+    currentPage,
+    setCurrentPage,
+    onChange,
+    totalPages: 10,
+    showPages: 7,
+  });
+
+<Pagination>
+  <Pagination.List>
+    <Pagination.Item>
+      <Pagination.Button aria-label="Forrige side" {...prevButtonProps}>
+        Forrige
+      </Pagination.Button>
+    </Pagination.Item>
+    {pages.map(({ page, itemKey, buttonProps }) => (
+      <Pagination.Item key={itemKey}>
+        {typeof page === 'number' && (
+          <Pagination.Button {...buttonProps} aria-label={`Side ${page}`}>
+            {page}
+          </Pagination.Button>
+        )}
+      </Pagination.Item>
+    ))}
+    <Pagination.Item>
+      <Pagination.Button aria-label="Neste side" {...nextButtonProps}>
+        Neste
+      </Pagination.Button>
+    </Pagination.Item>
+  </Pagination.List>
+</Pagination>;
+```
+
+### Paginering med lenker
+
+Alle del-komponenter støtter `asChild` som kan brukes til å endre `Pagination.Button` til lenker (`a`).
+
+<Canvas of={PaginationStories.WithAnchor} />

@@ -7,6 +7,7 @@ import { Heading, Link, List, Paragraph, Table } from '../src/alpha';
 import componentStyles from './componentOverrides.module.scss';
 import { customStylesDecorator } from './utils/customStylesDecorator';
 import { MdxComponentOverrides } from './types/parameters';
+import { Children } from 'react';
 
 // See the complete list of available devices in INITIAL_VIEWPORTS here:
 // https://storybook.js.org/docs/essentials/viewport#use-a-detailed-set-of-devices
@@ -100,7 +101,22 @@ export const componentOverrides: MdxComponentOverrides = {
     const href = getPath(props.href);
 
     return (
-      <Link {...props} href={href} className="sb-unstyled">
+      <Link
+        {...props}
+        href={href}
+        className="sb-unstyled"
+        onClick={(event) => {
+          // Handle in-page anchor links
+          if (props.href?.startsWith('#')) {
+            event.preventDefault();
+            document
+              .getElementById(props.href.substring(1))
+              ?.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
+        // Add a data-attribute for use when styling links which include code snippets
+        {...(Children.count(children) === 1 && { 'data-single-child': true })}
+      >
         {children}
       </Link>
     );
