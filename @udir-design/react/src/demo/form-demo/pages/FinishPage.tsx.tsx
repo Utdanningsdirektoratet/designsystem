@@ -41,7 +41,7 @@ export const FinishPage = ({
         Avslutning
       </Heading>
       <Textfield
-        id="addition"
+        id="textfield-addition"
         label="Har du noe annet du ønsker å nevne?"
         multiline
         rows={4}

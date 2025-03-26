@@ -60,7 +60,7 @@ export const PersonalInfoPage = ({
         Personinformasjon
       </Heading>
       <Textfield
-        id="firstName"
+        id="textfield-firstName"
         label="Fornavn"
         {...register('firstName', {
           required: 'Fyll ut fornavn',
@@ -70,6 +70,7 @@ export const PersonalInfoPage = ({
       <Field>
         <Label>Etternavn</Label>
         <Input
+          id="input-lastName"
           {...register('lastName', {
             required: 'Fyll ut etternavn',
           })}
@@ -88,7 +89,11 @@ export const PersonalInfoPage = ({
           defaultValue=""
           render={({ field }) => (
             <Suggestion>
-              <Suggestion.Input {...field} aria-invalid={!!errors.county} />
+              <Suggestion.Input
+                id="suggestion-county"
+                {...field}
+                aria-invalid={!!errors.county}
+              />
               <Suggestion.Clear />
               <Suggestion.List>
                 <Suggestion.Empty>Ingen resultater</Suggestion.Empty>
@@ -115,6 +120,7 @@ export const PersonalInfoPage = ({
           render={({ field }) => (
             <>
               <Radio
+                id="radio-kindergarten"
                 label="Barnehage"
                 {...radio.getRadioProps({
                   ...field,
@@ -122,14 +128,17 @@ export const PersonalInfoPage = ({
                 })}
               />
               <Radio
+                id="radio-primary"
                 label="Grunnskole"
                 {...radio.getRadioProps({ ...field, value: 'primary' })}
               />
               <Radio
+                id="radio-secondary"
                 label="Videregående"
                 {...radio.getRadioProps({ ...field, value: 'secondary' })}
               />
               <Radio
+                id="radio-higher"
                 label="Høyere utdanning"
                 {...radio.getRadioProps({
                   ...field,
@@ -144,6 +153,7 @@ export const PersonalInfoPage = ({
       <Field>
         <Label>Aldersgruppe</Label>
         <Select
+          id="select-ageGroup"
           aria-label="Velg aldersgruppe"
           {...register('ageGroup', {
             validate: (value) => value !== 'blank' || 'Velg en aldersgruppe',
