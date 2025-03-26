@@ -131,14 +131,14 @@ exports[`Form Story 1`] = `
       <div>
         <label
           data-weight="medium"
-          for="firstName"
+          for="textfield-firstName"
         >
           Fornavn
         </label>
         <div>
           <input
             type="text"
-            id="firstName"
+            id="textfield-firstName"
             name="firstName"
           >
         </div>
@@ -146,88 +146,21 @@ exports[`Form Story 1`] = `
       <div>
         <label
           data-weight="medium"
-          for=":m8pulnvy4y6"
+          for="input-lastName"
         >
           Etternavn
         </label>
         <input
           type="text"
+          id="input-lastName"
           name="lastName"
           aria-invalid="false"
-          id=":m8pulnvy4y6"
         >
       </div>
-      <fieldset>
-        <legend data-weight="medium">
-          Utdanningsnivå
-        </legend>
-        <div>
-          <input
-            type="radio"
-            name="radio-group"
-            value="kindergarten"
-            id=":m8pulnvyo50"
-          >
-          <label
-            data-weight="regular"
-            for=":m8pulnvyo50"
-          >
-            Barnehage
-          </label>
-        </div>
-        <div>
-          <input
-            type="radio"
-            name="radio-group"
-            value="primary"
-            id=":m8pulnvyqdo"
-          >
-          <label
-            data-weight="regular"
-            for=":m8pulnvyqdo"
-          >
-            Grunnskole
-          </label>
-        </div>
-        <div>
-          <input
-            type="radio"
-            name="radio-group"
-            value="secondary"
-            id=":m8pulnvyg8h"
-          >
-          <label
-            data-weight="regular"
-            for=":m8pulnvyg8h"
-          >
-            Videregående
-          </label>
-        </div>
-        <div>
-          <input
-            type="radio"
-            name="radio-group"
-            value="higher"
-            id=":m8pulnvyafu"
-          >
-          <label
-            data-weight="regular"
-            for=":m8pulnvyafu"
-          >
-            Høyere utdanning
-          </label>
-        </div>
-        <p
-          data-field="validation"
-          hidden
-          id=":re:"
-        >
-        </p>
-      </fieldset>
       <div>
         <label
           data-weight="medium"
-          for=":m8pulnvybq8"
+          for="suggestion-county"
         >
           Fylke
         </label>
@@ -236,10 +169,10 @@ exports[`Form Story 1`] = `
             type="text"
             list=":rg:"
             placeholder
+            id="suggestion-county"
             name="county"
             aria-invalid="false"
             value
-            id=":m8pulnvybq8"
             popovertarget=":rg:"
             aria-autocomplete="list"
             aria-controls=":rg:"
@@ -405,18 +338,85 @@ exports[`Form Story 1`] = `
           </u-datalist>
         </div>
       </div>
+      <fieldset>
+        <legend data-weight="medium">
+          Utdanningsnivå
+        </legend>
+        <div>
+          <input
+            type="radio"
+            id="radio-kindergarten"
+            name="radio-group"
+            value="kindergarten"
+          >
+          <label
+            data-weight="regular"
+            for="radio-kindergarten"
+          >
+            Barnehage
+          </label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="radio-primary"
+            name="radio-group"
+            value="primary"
+          >
+          <label
+            data-weight="regular"
+            for="radio-primary"
+          >
+            Grunnskole
+          </label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="radio-secondary"
+            name="radio-group"
+            value="secondary"
+          >
+          <label
+            data-weight="regular"
+            for="radio-secondary"
+          >
+            Videregående
+          </label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="radio-higher"
+            name="radio-group"
+            value="higher"
+          >
+          <label
+            data-weight="regular"
+            for="radio-higher"
+          >
+            Høyere utdanning
+          </label>
+        </div>
+        <p
+          data-field="validation"
+          hidden
+          id=":re:"
+        >
+        </p>
+      </fieldset>
       <div>
         <label
           data-weight="medium"
-          for=":m8pulnvyptz"
+          for="select-ageGroup"
         >
           Aldersgruppe
         </label>
         <select
+          id="select-ageGroup"
           aria-label="Velg aldersgruppe"
           name="ageGroup"
           aria-invalid="false"
-          id=":m8pulnvyptz"
         >
           <option
             value="blank"
