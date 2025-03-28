@@ -127,7 +127,6 @@ exports[`Disabled 1`] = `
     >
     <label
       data-weight="regular"
-      aria-disabled="true"
       for="components-radio--disabled-vanilje"
     >
       Vanilje
@@ -144,14 +143,12 @@ exports[`Disabled 1`] = `
     >
     <label
       data-weight="regular"
-      aria-disabled="true"
       for="components-radio--disabled-jordbær"
     >
       Jordbær
     </label>
     <div
       data-field="description"
-      aria-disabled="true"
       id="components-radio--disabled-jordbær:description"
     >
       Jordbær er best
@@ -167,7 +164,6 @@ exports[`Disabled 1`] = `
     >
     <label
       data-weight="regular"
-      aria-disabled="true"
       for="components-radio--disabled-sjokolade"
     >
       Sjokolade
@@ -183,7 +179,6 @@ exports[`Disabled 1`] = `
     >
     <label
       data-weight="regular"
-      aria-disabled="true"
       for="components-radio--disabled-spiser-ikke-is"
     >
       Jeg spiser ikke iskrem
