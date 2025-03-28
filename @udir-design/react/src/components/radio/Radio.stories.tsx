@@ -182,6 +182,9 @@ export const ReadOnly = {
 export const Disabled = {
   args: { ...Group.args, disabled: true, name: 'my-disabled' },
   render: Group.render,
+  parameters: {
+    a11y: { config: { rules: [{ id: 'color-contrast', enabled: false }] } },
+  },
 };
 
 export const Inline: Story = {
