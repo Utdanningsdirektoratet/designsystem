@@ -29,7 +29,7 @@ const meta: Meta<typeof Button> = {
       gap: 'var(--ds-size-4)',
     },
   },
-  tags: ['alpha'],
+  tags: ['beta'],
 };
 
 export default meta;

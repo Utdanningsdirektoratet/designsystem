@@ -1,7 +1,7 @@
 /*
  * This is the entry point for the /alpha sub-module.
- * Only alpha components should be exported here.
+ * It exports the alpha-stage components, plus everything in beta (& stable).
  */
-
+export * from './beta';
 export * from './components/alpha';
 export * from './utilities/alpha';

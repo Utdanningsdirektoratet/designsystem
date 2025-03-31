@@ -1,6 +1,6 @@
 /*
  * This is the entry point for the /beta sub-module.
- * Only beta components should be exported here.
+ * It exports the beta-stage components, plus everything in stable.
  */
-
+export * from './index';
 export * from './components/beta';

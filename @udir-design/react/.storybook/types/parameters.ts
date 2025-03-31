@@ -32,7 +32,7 @@ type PseudoValue = boolean | string | string[];
 
 export type MdxComponentOverrides = {
   [K in keyof React.JSX.IntrinsicElements]?: React.FC<
-    React.JSX.IntrinsicElements[K]
+    Omit<React.JSX.IntrinsicElements[K], 'data-size' | 'data-color'>
   >;
 } & Record<string, React.FC>;
 
