@@ -182,6 +182,10 @@ export const ReadOnly = {
 export const Disabled = {
   args: { ...Group.args, disabled: true, name: 'my-disabled' },
   render: Group.render,
+  parameters: {
+    // Disabled inputs don't pass text contrast requirements
+    a11y: { config: { rules: [{ id: 'color-contrast', enabled: false }] } },
+  },
 };
 
 export const Inline: Story = {

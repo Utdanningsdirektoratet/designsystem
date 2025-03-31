@@ -1,2 +1,7 @@
 @import '@udir-design/theme';
 @import '@digdir/designsystemet-css';
+
+/* Temporary fix until this is fixed upstream */
+.ds-fieldset > legend {
+  padding-inline: 0;
+}
