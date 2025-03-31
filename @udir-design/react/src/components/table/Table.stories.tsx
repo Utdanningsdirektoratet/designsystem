@@ -1,7 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Checkbox, Table, TableHeaderCellProps, Textfield } from '../alpha';
+import {
+  Checkbox,
+  Table,
+  TableHeaderCellProps,
+  Textfield,
+} from '@udir-design/react/alpha';
 import { useState } from 'react';
-import { useCheckboxGroup } from '../../alpha';
+import { useCheckboxGroup } from '@udir-design/react/alpha';
 
 const meta: Meta<typeof Table> = {
   component: Table,

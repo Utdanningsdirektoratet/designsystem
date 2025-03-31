@@ -5,7 +5,7 @@ import {
   Radio,
   ValidationMessage,
   Fieldset,
-} from '../../../alpha';
+} from '@udir-design/react/alpha';
 import { FormValues } from '../FormDemo';
 import classes from './RankingTable.module.css';
 

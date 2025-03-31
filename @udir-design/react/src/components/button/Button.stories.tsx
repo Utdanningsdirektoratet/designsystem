@@ -13,7 +13,7 @@ import {
   PrinterSmallIcon,
   TrashIcon,
 } from '@navikt/aksel-icons';
-import { Card, Label, Tooltip } from '../alpha';
+import { Card, Label, Tooltip } from '@udir-design/react/alpha';
 
 export type Story = StoryObj<typeof Button>;
 

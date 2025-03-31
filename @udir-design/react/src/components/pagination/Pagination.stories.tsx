@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Pagination, usePagination, UsePaginationProps } from '../../alpha';
+import {
+  Pagination,
+  usePagination,
+  UsePaginationProps,
+} from '@udir-design/react/alpha';
 import { useState } from 'react';
 import { expect, userEvent, within } from '@storybook/test';
 

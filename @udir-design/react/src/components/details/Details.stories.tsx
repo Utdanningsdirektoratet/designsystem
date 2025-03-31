@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { Button, Card, Details, Link } from '../alpha';
+import { Button, Card, Details, Link } from '@udir-design/react/alpha';
 import { expect, userEvent, within } from '@storybook/test';
 
 export default {

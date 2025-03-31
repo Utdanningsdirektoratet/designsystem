@@ -13,7 +13,7 @@ import {
   Table,
   Tag,
   useCheckboxGroup,
-} from '../../alpha';
+} from '@udir-design/react/alpha';
 import classes from './TableDemo.module.css';
 import cl from 'clsx/lite';
 import { Student, STUDENTS } from './data/students';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Fieldset, Checkbox, Divider } from '../../../alpha';
+import { Fieldset, Checkbox, Divider } from '@udir-design/react/alpha';
 
 export function Shoppinglist() {
   return (

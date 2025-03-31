@@ -1,5 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Checkbox, Fieldset, Table, ValidationMessage } from '../../../alpha';
+import {
+  Checkbox,
+  Fieldset,
+  Table,
+  ValidationMessage,
+} from '@udir-design/react/alpha';
 import {
   type UseCheckboxGroupProps,
   useCheckboxGroup,

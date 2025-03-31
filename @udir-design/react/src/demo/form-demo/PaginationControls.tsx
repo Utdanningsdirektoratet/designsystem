@@ -1,4 +1,4 @@
-import { Pagination, usePagination } from '../../alpha';
+import { Pagination, usePagination } from '@udir-design/react/alpha';
 
 export interface PaginationControlsProps {
   currentPage: number;

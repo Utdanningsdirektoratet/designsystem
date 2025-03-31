@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breadcrumbs } from '../../../alpha';
+import { Breadcrumbs } from '@udir-design/react/alpha';
 import styles from './BreadcrumbsDemo.module.scss';
 
 export function BreadcrumbsDemo() {

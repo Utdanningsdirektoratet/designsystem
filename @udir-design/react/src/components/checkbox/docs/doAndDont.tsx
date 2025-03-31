@@ -1,4 +1,4 @@
-import { Checkbox, Fieldset } from '../../alpha';
+import { Checkbox, Fieldset } from '@udir-design/react/alpha';
 import { Do, Dont, Stack } from '../../../../.storybook/docs-components';
 
 export const CheckboxEx1 = () => {

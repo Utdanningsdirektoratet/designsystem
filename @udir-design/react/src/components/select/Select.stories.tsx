@@ -3,7 +3,7 @@ import { expect, userEvent, waitFor, within } from '@storybook/test';
 import { Select } from './Select';
 import { Label } from '../typography/label/Label';
 import { Field } from '../field/Field';
-import { ValidationMessage } from '../alpha';
+import { ValidationMessage } from '@udir-design/react/alpha';
 
 const meta: Meta<typeof Select> = {
   component: Select,

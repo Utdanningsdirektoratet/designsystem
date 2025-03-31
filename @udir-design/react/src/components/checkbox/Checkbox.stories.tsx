@@ -10,7 +10,7 @@ import {
   UseCheckboxGroupProps,
   ValidationMessage,
   useCheckboxGroup,
-} from '../../alpha';
+} from '@udir-design/react/alpha';
 import { expect, fn, userEvent, waitFor, within } from '@storybook/test';
 
 const meta: Meta<typeof Checkbox> = {

@@ -32,4 +32,16 @@ export default [
     files: ['**/*.js', '**/*.jsx'],
     rules: {},
   },
+  {
+    // Storybook & docs-specific overrides
+    files: ['**/*.stories.{ts,tsx}', '**/{.storybook,demo,docs}/**/*.{ts,tsx}'],
+    rules: {
+      '@nx/enforce-module-boundaries': [
+        'error',
+        {
+          allowCircularSelfDependency: true,
+        },
+      ],
+    },
+  },
 ];

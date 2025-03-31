@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Textfield } from '../alpha';
+import { Button, Textfield } from '@udir-design/react/alpha';
 import { ErrorSummary } from './ErrorSummary';
 import type { Meta, StoryObj } from '@storybook/react';
 import { expect, userEvent, within } from '@storybook/test';

@@ -1,5 +1,5 @@
 import { FileCsvFillIcon, FilePdfFillIcon } from '@navikt/aksel-icons';
-import { Button, Dialog, Heading, Paragraph } from '../../../alpha';
+import { Button, Dialog, Heading, Paragraph } from '@udir-design/react/alpha';
 import classes from '../TableDemo.module.css';
 import { useRef, useState } from 'react';
 

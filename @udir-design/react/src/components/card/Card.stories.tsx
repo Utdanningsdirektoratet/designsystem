@@ -9,7 +9,7 @@ import {
   Paragraph,
   Select,
   Textfield,
-} from '../../alpha';
+} from '@udir-design/react/alpha';
 import { Color } from '@digdir/designsystemet-react/colors';
 import { Fragment } from 'react/jsx-runtime';
 

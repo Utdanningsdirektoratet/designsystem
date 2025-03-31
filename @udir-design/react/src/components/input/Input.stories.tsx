@@ -10,7 +10,7 @@ import {
   Label,
   Paragraph,
   ValidationMessage,
-} from '../../alpha';
+} from '@udir-design/react/alpha';
 import { Size } from '@digdir/designsystemet-react';
 import { expect, userEvent, within } from '@storybook/test';
 
