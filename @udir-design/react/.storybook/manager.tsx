@@ -1,10 +1,17 @@
+import React from 'react';
 import { addons } from '@storybook/manager-api';
 import {
   defaultConfig,
+  renderLabel,
   type TagBadgeParameters,
 } from 'storybook-addon-tag-badges';
 import customTheme from './customTheme';
 import './style.css';
+import {
+  ComponentIcon,
+  RectangleSectionsIcon,
+  WrenchIcon,
+} from '@navikt/aksel-icons';
 
 addons.setConfig({
   theme: customTheme,
@@ -29,4 +36,38 @@ addons.setConfig({
     },
     ...defaultConfig,
   ] satisfies TagBadgeParameters,
+  sidebar: {
+    renderLabel(item) {
+      if (item.type === 'root') {
+        if (item.id === 'demo') {
+          return (
+            <>
+              <RectangleSectionsIcon aria-hidden fontSize={18} />
+              Demosider
+            </>
+          );
+        }
+        if (item.id === 'components') {
+          return (
+            <>
+              <ComponentIcon aria-hidden fontSize={18} />
+              Komponenter
+            </>
+          );
+        }
+        if (item.id === 'utilities') {
+          return (
+            <>
+              <WrenchIcon aria-hidden fontSize={18} />
+              Hjelpeverktøy
+            </>
+          );
+        }
+      }
+      if (item.type === 'docs' && item.name === 'Docs') {
+        return 'Dokumentasjon';
+      }
+      return renderLabel(item);
+    },
+  },
 });
