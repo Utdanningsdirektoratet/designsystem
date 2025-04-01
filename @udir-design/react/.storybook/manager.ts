@@ -13,8 +13,18 @@ addons.setConfig({
       tags: 'alpha',
       badge: {
         text: 'Alpha',
-        bgColor: '#D2E5F3',
-        fgColor: 'var(--ds-color-text-default)',
+        bgColor: 'var(--ds-color-danger-surface-tinted)',
+        borderColor: 'var(--ds-color-danger-border-subtle)',
+        fgColor: 'var(--ds-color-danger-text-default)',
+      },
+    },
+    {
+      tags: 'beta',
+      badge: {
+        text: 'Beta',
+        bgColor: 'var(--ds-color-warning-surface-tinted)',
+        borderColor: 'var(--ds-color-warning-border-subtle)',
+        fgColor: 'var(--ds-color-warning-text-default)',
       },
     },
     ...defaultConfig,
