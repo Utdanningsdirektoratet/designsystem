@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Link } from './Link';
-import { Paragraph } from '../alpha';
+import { Paragraph } from '@udir-design/react/alpha';
 import { EnvelopeClosedIcon } from '@navikt/aksel-icons';
 EnvelopeClosedIcon.displayName = 'EnvelopeClosedIcon';
 

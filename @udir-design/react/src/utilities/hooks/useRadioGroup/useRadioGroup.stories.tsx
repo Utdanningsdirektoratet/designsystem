@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react';
-import { Radio } from '../../../alpha';
+import { Radio } from '@udir-design/react/alpha';
 import type { UseRadioGroupProps } from './useRadioGroup';
 
 export const UseRadioGroup = (_props: UseRadioGroupProps) => (

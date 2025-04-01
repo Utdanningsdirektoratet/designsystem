@@ -1,5 +1,5 @@
 import { Size } from '@digdir/designsystemet-react';
-import { Fieldset, ToggleGroup } from '../../alpha';
+import { Fieldset, ToggleGroup } from '@udir-design/react/alpha';
 import classes from './Controls.module.css';
 
 const sizes: Size[] = ['sm', 'md', 'lg'];

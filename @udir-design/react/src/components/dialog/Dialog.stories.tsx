@@ -8,7 +8,7 @@ import {
   Field,
   Label,
   Suggestion,
-} from '../alpha';
+} from '@udir-design/react/alpha';
 import { expect, userEvent, within } from '@storybook/test';
 import { useRef, useState } from 'react';
 

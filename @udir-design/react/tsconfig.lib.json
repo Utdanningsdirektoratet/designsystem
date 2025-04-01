@@ -20,7 +20,11 @@
     "**/*.dynamic.ts",
     "**/*.dynamic.js",
     "**/*.dynamic.jsx",
-    "**/*.dynamic.tsx"
+    "**/*.dynamic.tsx",
+    "src/**/demo/**/*.ts",
+    "src/**/demo/**/*.tsx",
+    "src/**/docs/**/*.ts",
+    "src/**/docs/**/*.tsx"
   ],
   "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
 }

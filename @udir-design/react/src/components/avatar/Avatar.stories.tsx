@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Avatar, Badge, Dropdown } from '../alpha';
+import { Avatar, Badge, Dropdown } from '@udir-design/react/alpha';
 import { BriefcaseIcon } from '@navikt/aksel-icons';
 
 const meta: Meta<typeof Avatar> = {

@@ -10,7 +10,7 @@ import {
   Textfield,
   useRadioGroup,
   ValidationMessage,
-} from '../../../alpha';
+} from '@udir-design/react/alpha';
 import {
   Control,
   Controller,

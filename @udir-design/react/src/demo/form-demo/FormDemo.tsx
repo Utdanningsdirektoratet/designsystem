@@ -1,5 +1,11 @@
 import { HTMLAttributes, useRef, useState } from 'react';
-import { Alert, Button, Dialog, ErrorSummary, Heading } from '../../alpha';
+import {
+  Alert,
+  Button,
+  Dialog,
+  ErrorSummary,
+  Heading,
+} from '@udir-design/react/alpha';
 import classes from './FormDemo.module.css';
 import { useForm } from 'react-hook-form';
 import PaginationControls from './PaginationControls';

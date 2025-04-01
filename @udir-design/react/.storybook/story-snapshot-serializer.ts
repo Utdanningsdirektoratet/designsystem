@@ -2,13 +2,17 @@ import { SnapshotSerializer } from 'vitest';
 import diffableHtml from 'diffable-html';
 
 const CLASS_PATTERN = /class="[^"]+"/g;
-const TRANSLATE_PATTERN = /translate: [^;]*;/;
+const DS_POPOVER_ARROW_PATTERN = /(--ds-popover-arrow-[xy]): [^;]+;/g;
+const TRANSLATE_PATTERN = /(translate): [^;]+;/g;
 
 export default {
   serialize(val) {
     const cleaned = (val as string)
       .replace(CLASS_PATTERN, '') // remove class names
-      .replace(TRANSLATE_PATTERN, 'translate: <removed>;'); // ensure dynamic translate don't break tests
+      // ensure dynamic popover arrow position doesn't break tests
+      .replace(DS_POPOVER_ARROW_PATTERN, '$1: <removed>;')
+      // ensure dynamic translate doesn't break tests
+      .replace(TRANSLATE_PATTERN, '$1: <removed>;');
     return diffableHtml(cleaned).trim();
   },
   /**

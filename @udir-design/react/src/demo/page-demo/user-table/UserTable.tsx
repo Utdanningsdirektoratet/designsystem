@@ -1,5 +1,11 @@
 import React from 'react';
-import { Heading, Button, Select, Search, Table } from '../../../alpha';
+import {
+  Heading,
+  Button,
+  Select,
+  Search,
+  Table,
+} from '@udir-design/react/alpha';
 import styles from './UserTable.module.scss';
 
 export function UserTable() {

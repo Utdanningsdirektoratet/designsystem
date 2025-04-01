@@ -6,7 +6,7 @@ import {
   Select,
   Textarea,
   ValidationMessage,
-} from '../alpha';
+} from '@udir-design/react/alpha';
 import { Label } from '../typography/label/Label';
 
 const meta: Meta<typeof Field> = {

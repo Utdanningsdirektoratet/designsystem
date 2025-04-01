@@ -2,7 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { userEvent, within } from '@storybook/test';
 import { type ChangeEvent, useState } from 'react';
 import { Suggestion } from './Suggestion';
-import { Button, Divider, Field, Label, Paragraph, Spinner } from '../alpha';
+import {
+  Button,
+  Divider,
+  Field,
+  Label,
+  Paragraph,
+  Spinner,
+} from '@udir-design/react/alpha';
 import { useDebounceCallback } from '@digdir/designsystemet-react';
 
 const meta: Meta<typeof Suggestion> = {

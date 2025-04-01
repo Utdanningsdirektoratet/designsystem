@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Heading, Link, Paragraph } from '../alpha';
+import { Heading, Link, Paragraph } from '@udir-design/react/alpha';
 
 import { Alert } from './Alert';
 import { within, expect } from '@storybook/test';

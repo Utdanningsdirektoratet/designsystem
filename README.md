@@ -75,7 +75,10 @@ Komponenter i designsystemet kan befinne seg i én av tre ulike livsfaser:
 > I **alpha**- og **beta**-fasene vil følgende gjelde:
 >
 > - endringer som bryter bakoverkompatibilitet kan skje når som helst, uten at MAJOR-versjonsnummeret endres
-> - komponentene må importeres fra henholdsvis `@udir-design/react/alpha` eller `@udir-design/react/beta`
+> - komponentene må importeres fra riktig undermodul:
+>   - `@udir-design/react/alpha` gir tilgang til alpha, beta og stabile komponenter
+>   - `@udir-design/react/beta` gir tilgang til beta og stabile komponenter
+>   - `@udir-design/react` gir kun tilgang til stabile komponenter
 
 ### Overgang fra beta til stabil
 

@@ -6,7 +6,7 @@ import {
   PlusIcon,
 } from '@navikt/aksel-icons';
 import { Do, Dont, Stack } from '../../../../.storybook/docs-components';
-import { Button } from '../../alpha';
+import { Button } from '@udir-design/react/alpha';
 
 /*
  * Dos and donts

@@ -7,8 +7,9 @@ import {
   Paragraph,
   Radio,
   ValidationMessage,
-} from '../alpha';
-import { useRadioGroup, UseRadioGroupProps } from '../../alpha';
+  useRadioGroup,
+  UseRadioGroupProps,
+} from '@udir-design/react/alpha';
 import { expect, fn, userEvent, waitFor, within } from '@storybook/test';
 
 const meta: Meta<typeof Radio> = {

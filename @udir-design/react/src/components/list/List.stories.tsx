@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { List, Heading, Link } from '../alpha';
+import { List, Heading, Link } from '@udir-design/react/alpha';
 
 const meta: Meta<typeof List.Unordered> = {
   component: List.Unordered,

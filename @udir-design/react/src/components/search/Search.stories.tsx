@@ -2,7 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { expect, fn, userEvent, within } from '@storybook/test';
 import { Search } from './Search';
 import { useState } from 'react';
-import { Button, Divider, Field, Label, Paragraph } from '../alpha';
+import {
+  Button,
+  Divider,
+  Field,
+  Label,
+  Paragraph,
+} from '@udir-design/react/alpha';
 import { assertExists } from '../../utilities/helpers/assertExists';
 
 const meta: Meta<typeof Search> = {

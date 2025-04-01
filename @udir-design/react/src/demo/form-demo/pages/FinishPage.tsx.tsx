@@ -5,7 +5,7 @@ import {
   Textfield,
   useCheckboxGroup,
   ValidationMessage,
-} from '../../../alpha';
+} from '@udir-design/react/alpha';
 import {
   Control,
   Controller,

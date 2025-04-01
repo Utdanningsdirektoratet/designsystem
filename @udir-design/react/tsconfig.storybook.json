@@ -4,7 +4,12 @@
     "emitDecoratorMetadata": true,
     "outDir": "../../dist/out-tsc",
     "baseUrl": "./",
-    "types": ["vite/client", "../theme/dist/colors.d.ts"]
+    "types": ["vite/client", "../theme/dist/colors.d.ts"],
+    "paths": {
+      "@udir-design/react": ["src/index"],
+      "@udir-design/react/alpha": ["src/alpha"],
+      "@udir-design/react/beta": ["src/beta"]
+    }
   },
   "files": [],
   "exclude": [
@@ -27,6 +32,10 @@
     "src/**/*.dynamic.js",
     "src/**/*.dynamic.jsx",
     "src/**/*.dynamic.tsx",
+    "src/**/demo/**/*.ts",
+    "src/**/demo/**/*.tsx",
+    "src/**/docs/**/*.ts",
+    "src/**/docs/**/*.tsx",
     ".storybook/**/*.js",
     ".storybook/**/*.ts",
     ".storybook/**/*.tsx"

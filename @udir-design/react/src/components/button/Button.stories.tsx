@@ -13,7 +13,7 @@ import {
   PrinterSmallIcon,
   TrashIcon,
 } from '@navikt/aksel-icons';
-import { Card, Label, Tooltip } from '../alpha';
+import { Card, Label, Tooltip } from '@udir-design/react/alpha';
 
 export type Story = StoryObj<typeof Button>;
 
@@ -29,7 +29,7 @@ const meta: Meta<typeof Button> = {
       gap: 'var(--ds-size-4)',
     },
   },
-  tags: ['alpha'],
+  tags: ['beta'],
 };
 
 export default meta;
