@@ -1,12 +1,13 @@
 import { Meta, Canvas, Controls, Primary, ArgTypes } from '@storybook/blocks';
 import * as DetailsStories from './Details.stories';
 import { Details } from './Details';
+import { DetailsEx1, DetailsEx2 } from './docs/doAndDont';
 
 <Meta of={DetailsStories} />
 
 # Details
 
-Med `Details` kan du presentere mye innhold på liten plass i en eller flere rader. Hele raden er klikkbar og lar brukere åpne eller lukke visningen av innholdet under.
+Med `Details` kan du presentere mye innhold på liten plass i én eller flere rader. Hele raden er klikkbar og lar brukere åpne eller lukke visningen av innholdet under.
 
 **Vær oppmerksom på:**
 
@@ -16,7 +17,7 @@ Med `Details` kan du presentere mye innhold på liten plass i en eller flere rad
 <Primary />
 <Controls />
 
-## Bruk
+## Slik bruker du Details
 
 ```tsx
 /* Uten ramme */
@@ -28,7 +29,6 @@ import { Details } from '@digdir/designsystemet-react';
 </Details>;
 
 /* Med ramme */
-
 import { Details, Card } from '@digdir/designsystemet-react';
 
 <Card>
@@ -38,8 +38,6 @@ import { Details, Card } from '@digdir/designsystemet-react';
   </Details>
 </Card>;
 ```
-
-## Eksempler
 
 ### Med ramme
 
@@ -54,9 +52,9 @@ Dette kan passe i tilfeller der details ikke fyller hele siden, eller når det k
 
 <Canvas of={DetailsStories.InCardWithColor} />
 
-#### Kontrollert
+### Kontrollere Details utenfra
 
-`Details` har egen tilstand på åpen/lukket, men dette kan kontrolleres utenfra.
+`Details` har egen tilstand på åpen/lukket, men dette kan også kontrolleres utenfra.
 
 <Canvas of={DetailsStories.Controlled} />
 
@@ -64,28 +62,40 @@ Dette kan passe i tilfeller der details ikke fyller hele siden, eller når det k
 
 Tester viser at brukerne sjeldnere ser på skjult innhold, enn det som er synlig direkte på siden. Ikke bruk `Details` til å skjule innhold for å gjøre siden "ryddigere". Finn ut om du faktisk må skjule innhold og vær klar over hvorfor du gjør det. Tenk over om det er lurt å vise det viktigste innholdet i åpen status når brukeren kommer inn på siden.
 
-Hvis innholdet er for langt eller komplisert, bør du heller omformulere teksten og/eller eventuelt fordele den på flere sider.
+Hvis innholdet er for langt eller komplisert, bør du heller omformulere teksten og/eller fordele den på flere sider.
 
-### Egnet til
+**Passer til å**
 
 - samle innhold som er litt lengre
 - gjøre det frivillig å se innhold som er litt mindre viktig enn alltid synlig innhold
 - vise ofte stilte spørsmål
 - vise tilleggsinformasjon som kan være til hjelp for brukerne
 
-### Ikke egnet til
+**Passer ikke til å**
 
 - vise små mengder innhold
-- vise informasjon hvis det bare er ett element
 - vise viktig innhold som alle bør se når de kommer til siden (for eksempel feilmeldinger)
 - gi mer informasjon om et spørsmål i et skjema – det innholdet bør brukeren se med en gang
 - velge mellom ulike alternativer
 - skjule innhold fra søkeresultater eller oversikter/tabeller
 - dele opp en logisk flyt eller en rekke med handlinger, da bør du heller bruke en trinnvis liste
 
-### Unngå
+### Unngå å bruke flere nivåer av `Details`
 
-- Ikke legg en `Details` inni en annen, det vi kaller nøstede lister.
+Ikke legg en `Details` inni en annen. Er innholdet allerede skjult, er det ikke hensiktsmessig å skjule det ytterligere. Det blir vanskeligere for brukeren å finne informasjonen de leter etter.
+
+### Hold innholdet kort
+
+Hold innholdet kort for å sikre at det lett kan relateres til overskriften.
+Bryt innholdet opp i flere `Details` istedenfor å bruke flere overskrifter i én `Details`. Ved mye innhold kan du vurdere å lage en egen side i stedet. Dette gjør det enklere å finne tilbake til innholdet senere.
+
+<DetailsEx1 />
+
+### Bruk ramme dersom `Details` brukes med kun ett element
+
+Hvis `Details` kun har ett element, kan det være lurt å legge det i et `Card` for å skille det fra resten av innholdet. Bruk av ett enkelt `Details` med ramme er et godt virkemiddel for å organisere og skille ut informasjon. Det kan for eksempel brukes til informasjon som forklarer noe mer detaljert eller forklarer noe relatert til innholdet på siden.
+
+<DetailsEx2 />
 
 ## Tekst i komponenten
 
