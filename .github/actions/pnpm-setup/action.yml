@@ -1,5 +1,12 @@
 name: Prepare pnpm & Nx
 description: Installs pnpm, sets up the pnpm cache, and sets the Nx hashes
+inputs:
+  registry-url:
+    description: |
+      Optional registry to set up for auth. Will set the registry in a project level
+      .npmrc and .yarnrc file, and set up auth to read in from env.NODE_AUTH_TOKEN.
+    default: ''
+
 runs:
   using: 'composite'
   steps:
@@ -13,6 +20,7 @@ runs:
       with:
         node-version-file: 'package.json'
         cache: 'pnpm'
+        registry-url: ${{ inputs.registry-url }}
 
     - run: pnpm install
       shell: bash
