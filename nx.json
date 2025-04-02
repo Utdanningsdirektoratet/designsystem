@@ -7,8 +7,7 @@
   "release": {
     "projectsRelationship": "fixed",
     "changelog": {
-      "workspaceChangelog": false,
-      "projectChangelogs": {
+      "workspaceChangelog": {
         "createRelease": "github",
         "renderer": "{workspaceRoot}/changelog-renderer.ts",
         "renderOptions": {
