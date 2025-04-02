@@ -41,6 +41,8 @@ jobs:
           fetch-depth: 0
 
       - uses: ./.github/actions/pnpm-setup
+        with:
+          registry-url: 'https://registry.npmjs.org'
 
       # Retrieve builds from the cache for the projects we are releasing
       - run: pnpm nx run-many -t build -p "@udir-design/*"
