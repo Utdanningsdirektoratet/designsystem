@@ -7,7 +7,7 @@ For å ta i bruk biblioteket må du først installere det, og så gjøre litt op
 ## Installere biblioteket
 
 ```bash
-npm add @udir-design/theme@alpha @udir-design/react@alpha
+npm add @udir-design/theme@beta @udir-design/react@beta
 ```
 
 ## Oppsett
