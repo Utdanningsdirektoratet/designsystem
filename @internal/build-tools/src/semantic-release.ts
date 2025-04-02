@@ -165,7 +165,7 @@ function ignoreGitTags(
   const removedTags: { tag: string; commit: string }[] = [];
   if (!config.prerelease) {
     // Remove pre-release tags locally, to prevent resolving a pre-release as the current version
-    const gitTags = execSync('git tag --list *@*.*.*', { encoding: 'utf-8' })
+    const gitTags = execSync('git tag --list *.*.*', { encoding: 'utf-8' })
       .trim()
       .split('\n');
     const prereleaseTags = gitTags.filter((tag) =>
