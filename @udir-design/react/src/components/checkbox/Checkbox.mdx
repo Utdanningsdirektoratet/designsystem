@@ -10,10 +10,19 @@ import { CheckboxEx1, CheckboxEx2, CheckboxEx3 } from './docs/doAndDont';
 
 Vi bruker `Checkbox` (avmerkingsboks) for å gi brukerne valg, der de kan velge ett eller flere alternativer. Brukerne kan både velge og oppheve valgene de gjør. Bruk [`Fieldset`](/docs/components-fieldset--docs) til å gruppere flere valg.
 
-<Primary />
-<Controls />
+**Passer til å**
+
+- velge flere alternativer
+
+**Passer ikke til å**
+
+- velge gjensidig utelukkende alternativer, bruk heller [`Radio`](/docs/components-radio--docs)
+- velge mellom flere enn 7 svaralternativer, bruk heller [`Select`](/docs/components-select--docs) eller [`Suggestion`](/docs/components-suggestion--docs)
 
 ## Slik bruker du checkbox
+
+<Primary />
+<Controls />
 
 ```tsx
 import { Checkbox } from '@udir-design/react';
@@ -25,6 +34,8 @@ import { Checkbox } from '@udir-design/react';
   <Checkbox label="Videregående" value="videregaende" />
 </Fieldset>;
 ```
+
+## Eksempler
 
 ### Kun ett valg
 
@@ -102,15 +113,6 @@ Bruk `useCheckboxGroup` og `setValue` for å kontrollere hvilke alternativer som
 <Canvas of={CheckboxStories.Controlled} />
 
 ## Retningslinjer for checkbox
-
-**Passer til å**
-
-- velge flere alternativer
-
-**Passer ikke til å**
-
-- velge gjensidig utelukkende alternativer, bruk heller [`Radio`](/docs/components-radio--docs)
-- velge mellom flere enn 7 svaralternativer, bruk heller [`Select`](/docs/components-select--docs) eller [`Suggestion`](/docs/components-suggestion--docs)
 
 ### Sortering
 

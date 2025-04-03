@@ -15,10 +15,20 @@ import { ButtonEx1, ButtonEx2, ButtonEx4, ButtonEx5 } from './docs/doAndDont';
 
 Knapper lar brukerne utføre handlinger. Vi har variantene `primary`, `secondary` og `tertiary` som kommer i ulike fargevarianter og størrelser.
 
-<Primary />
-<Controls />
+**Passer til å**
+
+- starte en prosess
+- navigere i en flyt, for eksempel med Forrige og Neste
+- sende inn et skjema
+
+**Passer ikke til å**
+
+- navigere til andre sider eller ut av tjenesten, bruk heller [`Link`](/docs/components-link--docs)
 
 ## Slik bruker du button
+
+<Primary />
+<Controls />
 
 ```tsx
 import { Button } from '@udir-design/react';
@@ -116,18 +126,6 @@ I eksempelet over blir `aria-disabled` satt av `loading="true"`. Skjermlesere og
 </SimpleAlert>
 
 ## Retningslinjer for button
-
-Knapper skal brukes til å utføre handlinger.
-
-**Passer til å**
-
-- starte en prosess
-- navigere i en flyt, for eksempel med Forrige og Neste
-- sende inn et skjema
-
-**Passer ikke til å**
-
-- navigere til andre sider eller ut av tjenesten, bruk heller [`Link`](/docs/components-link--docs)
 
 ### Plassering av knapper
 
