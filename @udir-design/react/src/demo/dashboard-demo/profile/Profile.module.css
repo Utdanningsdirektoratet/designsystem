@@ -1,0 +1,25 @@
+.profile {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--ds-size-2);
+  width: fit-content;
+}
+
+.profile > :first-child {
+  height: fit-content;
+}
+
+.profile > * {
+  height: fit-content;
+}
+
+.flex {
+  display: flex;
+  gap: var(--ds-size-2);
+  align-items: center;
+}
+
+.cardHeader {
+  background-color: var(--ds-color-support1-base-default);
+  height: var(--ds-size-22);
+}

@@ -1,0 +1,30 @@
+.loading {
+  display: flex;
+  gap: var(--ds-size-18);
+  flex-direction: column;
+}
+
+.cards {
+  display: grid;
+  gap: var(--ds-size-2);
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  height: 300px;
+}
+
+.skeletonContainer {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.skeleton {
+  display: flex;
+  gap: var(--ds-size-2);
+  padding: var(--ds-size-2) 0 var(--ds-size-2) 0;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
