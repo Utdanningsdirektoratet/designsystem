@@ -144,6 +144,11 @@ export const WithError: GroupStory = {
 
 export const Controlled: GroupStory = {
   render: function Render(args, context) {
+    const choices = {
+      barnehage: { label: 'Barnehage' },
+      grunnskole: { label: 'Grunnskole' },
+      videregaende: { label: 'Videregående' },
+    };
     const { getCheckboxProps, validationMessageProps, value, setValue } =
       useCheckboxGroup({
         name: 'my-controlled',
@@ -162,26 +167,22 @@ export const Controlled: GroupStory = {
           <Fieldset.Description>
             Velg de alternativene som er relevante for deg.
           </Fieldset.Description>
-          <Checkbox
-            id={context.id + '-barnehage'}
-            label="Barnehage"
-            {...getCheckboxProps('barnehage')}
-          />
-          <Checkbox
-            id={context.id + '-grunnskole'}
-            label="Grunnskole"
-            {...getCheckboxProps('grunnskole')}
-          />
-          <Checkbox
-            id={context.id + '-videregaende'}
-            label="Videregående"
-            {...getCheckboxProps('videregaende')}
-          />
+          {Object.entries(choices).map(([value, { label }]) => (
+            <Checkbox
+              key={value}
+              id={`${context.id}-${value}`}
+              label={label}
+              {...getCheckboxProps(value)}
+            />
+          ))}
         </Fieldset>
         <ValidationMessage {...validationMessageProps} />
         <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
         <Paragraph style={{ margin: 'var(--ds-size-2) 0' }}>
-          Du har valgt: {value.toString()}
+          Du har valgt:{' '}
+          {value
+            .map((x) => choices[x as keyof typeof choices].label)
+            .join(', ')}
         </Paragraph>
         <div style={{ display: 'flex', gap: '1rem' }}>
           <Button onClick={() => setValue(toggle(value, 'grunnskole'))}>
