@@ -8,6 +8,7 @@ import componentStyles from './componentOverrides.module.scss';
 import { customStylesDecorator } from './utils/customStylesDecorator';
 import { MdxComponentOverrides } from './types/parameters';
 import { Children } from 'react';
+import { ExternalLinkIcon } from '@navikt/aksel-icons';
 
 // See the complete list of available devices in INITIAL_VIEWPORTS here:
 // https://storybook.js.org/docs/essentials/viewport#use-a-detailed-set-of-devices
@@ -99,12 +100,20 @@ export const componentOverrides: MdxComponentOverrides = {
   a: ({ children = '', ...props }) => {
     // if link starts with /, add current path to link
     const href = getPath(props.href);
-
+    let isExternal = false;
+    try {
+      isExternal =
+        new URL(href, document.location.origin).origin !==
+        document.location.origin;
+    } catch {
+      // If the URL is invalid, assume it's not external
+      isExternal = false;
+    }
     return (
       <Link
         {...props}
         href={href}
-        className="sb-unstyled"
+        className={`sb-unstyled ${componentStyles.link}`}
         onClick={(event) => {
           // Handle in-page anchor links
           if (props.href?.startsWith('#')) {
@@ -118,6 +127,9 @@ export const componentOverrides: MdxComponentOverrides = {
         {...(Children.count(children) === 1 && { 'data-single-child': true })}
       >
         {children}
+        {isExternal && (
+          <ExternalLinkIcon className={componentStyles.linkIcon} />
+        )}
       </Link>
     );
   },
