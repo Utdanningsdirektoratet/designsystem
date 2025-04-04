@@ -215,17 +215,25 @@ export const Disabled: GroupStory = {
   render: Group.render,
 };
 
-export const InTable: GroupStory = {
+export const IndeterminateInTable: GroupStory = {
   render: function Render(args, context) {
     const { getCheckboxProps } = useCheckboxGroup({
-      name: 'my-checkbox',
+      name: context.id,
+      value: ['2', '3'],
       ...args,
     });
+    const people = [
+      { id: 1, name: 'Lise Nordmann', education: 'Barnehage' },
+      { id: 2, name: 'Ola Nordmann', education: 'Grunnskole' },
+      { id: 3, name: 'Kari Nordmann', education: 'Videregående' },
+      { id: 4, name: 'Per Nordmann', education: 'Barnehage' },
+    ];
     return (
       <Table>
         <colgroup>
           {/* ensure the first column only takes up the necessary space */}
           <col style={{ width: '1px' }} />
+          <col style={{ width: '10em' }} />
           <col />
         </colgroup>
         <Table.Head>
@@ -233,27 +241,31 @@ export const InTable: GroupStory = {
             <Table.HeaderCell>
               <Checkbox
                 id={context.id + '-all'}
-                aria-label="Select all"
+                aria-label="Velg alle"
                 {...getCheckboxProps({
                   allowIndeterminate: true,
                   value: 'all',
                 })}
               />
             </Table.HeaderCell>
-            <Table.HeaderCell>Header</Table.HeaderCell>
+            <Table.HeaderCell>Navn</Table.HeaderCell>
+            <Table.HeaderCell>Utdanningsnivå</Table.HeaderCell>
           </Table.Row>
         </Table.Head>
         <Table.Body>
-          {[1, 2, 3, 4].map((row) => (
-            <Table.Row key={row}>
+          {people.map((person) => (
+            <Table.Row key={person.name}>
               <Table.Cell>
                 <Checkbox
-                  id={context.id + '-' + row}
-                  aria-label={`Check ${row}`}
-                  {...getCheckboxProps(`${row}`)}
+                  id={`${context.id}-${person.id}`}
+                  aria-labelledby={`${context.id}-${person.id}-name`}
+                  {...getCheckboxProps(person.id.toString())}
                 />
               </Table.Cell>
-              <Table.Cell>Content</Table.Cell>
+              <Table.Cell id={`${context.id}-${person.id}-name`}>
+                {person.name}
+              </Table.Cell>
+              <Table.Cell>{person.education}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
