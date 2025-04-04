@@ -1,6 +1,54 @@
 import { Checkbox, Divider, Fieldset } from '@udir-design/react/alpha';
 import { Do, Dont, Stack } from '../../../../.storybook/docs-components';
 
+export const CheckboxExConversation = () => {
+  return (
+    <Stack style={{ margin: 'var(--ds-size-8) 0' }}>
+      <Do description="Formuler forklaring og svar som en samtale mellom to parter">
+        <ExConversationDo />
+      </Do>
+      <Dont description="Du bør unngå å formulere forklaringen fra mottakers perspektiv eller i passiv">
+        <ExConversationDont />
+      </Dont>
+    </Stack>
+  );
+};
+
+const ExConversationDo = () => {
+  return (
+    <Fieldset
+      style={{
+        flexDirection: 'column',
+      }}
+    >
+      <Fieldset.Legend>Hva vil du vite mer om?</Fieldset.Legend>
+      <Checkbox label="Barnehage" value="barnehage" />
+      <Checkbox label="Grunnskole" value="grunnskole" />
+      <Checkbox label="Videregående" value="videregaende" />
+    </Fieldset>
+  );
+};
+
+const ExConversationDont = () => {
+  return (
+    <>
+      <Fieldset>
+        <Fieldset.Legend>Jeg vil vite mer om</Fieldset.Legend>
+        <Checkbox label="Barnehage" value="barnehage" />
+        <Checkbox label="Grunnskole" value="grunnskole" />
+        <Checkbox label="Videregående" value="videregaende" />
+      </Fieldset>
+      <Divider />
+      <Fieldset>
+        <Fieldset.Legend>Informasjon ønskes om</Fieldset.Legend>
+        <Checkbox label="Barnehage" value="barnehage" />
+        <Checkbox label="Grunnskole" value="grunnskole" />
+        <Checkbox label="Videregående" value="videregaende" />
+      </Fieldset>
+    </>
+  );
+};
+
 export const CheckboxEx1 = () => {
   return (
     <Stack style={{ margin: 'var(--ds-size-8) 0' }}>
