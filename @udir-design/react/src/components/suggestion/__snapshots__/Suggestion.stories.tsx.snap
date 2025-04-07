@@ -35,6 +35,7 @@ exports[`Always Show All 1`] = `
       data-sr-plural="%d forslag"
       id=":r5:"
       role="listbox"
+      tabindex="-1"
       aria-labelledby=":label6"
     >
       <u-option
@@ -151,6 +152,7 @@ exports[`Controlled 1`] = `
       data-sr-plural="%d forslag"
       id=":r1:"
       role="listbox"
+      tabindex="-1"
       aria-labelledby=":label2"
     >
       <u-option
@@ -274,6 +276,7 @@ exports[`Custom Filter Alt 1 1`] = `
       data-sr-plural="%d forslag"
       id=":r3:"
       role="listbox"
+      tabindex="-1"
       aria-labelledby=":label4"
     >
       <u-option
@@ -389,6 +392,7 @@ exports[`Custom Filter Alt 2 1`] = `
       data-sr-plural="%d forslag"
       id=":r4:"
       role="listbox"
+      tabindex="-1"
       aria-labelledby=":label5"
     >
       <u-option
@@ -504,6 +508,7 @@ exports[`Default Value 1`] = `
       data-sr-plural="%d forslag"
       id=":r2:"
       role="listbox"
+      tabindex="-1"
       aria-labelledby=":label3"
     >
       <u-option
@@ -619,6 +624,7 @@ exports[`Fetch External 1`] = `
       data-sr-plural="%d countries"
       id=":r6:"
       role="listbox"
+      tabindex="-1"
       aria-labelledby=":label7"
     >
     </u-datalist>
@@ -661,6 +667,7 @@ exports[`Preview 1`] = `
       data-sr-plural="%d forslag"
       id=":r0:"
       role="listbox"
+      tabindex="-1"
       aria-labelledby=":label1"
     >
       <u-option
