@@ -19,7 +19,8 @@ permissions:
   checks: write
 
 env:
-  NXCACHE_AZURE_ACCOUNT_KEY: ${{ secrets.NXCACHE_AZURE_ACCOUNT_KEY }}
+  AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+  NX_KEY: ${{ secrets.NX_KEY }}
 
 jobs:
   main:

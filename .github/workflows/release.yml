@@ -7,7 +7,9 @@ on:
         type: boolean
         default: true
     secrets:
-      NXCACHE_AZURE_ACCOUNT_KEY:
+      AZURE_STORAGE_CONNECTION_STRING:
+        required: true
+      NX_KEY:
         required: true
       NPM_ACCESS_TOKEN:
         description: |
@@ -16,7 +18,8 @@ on:
         required: true
 
 env:
-  NXCACHE_AZURE_ACCOUNT_KEY: ${{ secrets.NXCACHE_AZURE_ACCOUNT_KEY }}
+  AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+  NX_KEY: ${{ secrets.NX_KEY }}
   # either the PR *target* branch, or the current branch being released
   BRANCH_NAME: ${{ github.base_ref || github.ref_name }}
 
