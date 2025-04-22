@@ -1,13 +1,13 @@
-import { Checkbox, Divider, Fieldset } from '@udir-design/react/alpha';
+import { Checkbox, Divider, Fieldset, Heading } from '@udir-design/react/alpha';
 import { Do, Dont, Stack } from '../../../../.storybook/docs-components';
 
 export const CheckboxExConversation = () => {
   return (
     <Stack style={{ margin: 'var(--ds-size-8) 0' }}>
-      <Do description="Formuler forklaring og svar som en samtale mellom to parter">
+      <Do description="Formuler spørsmål og svar som en samtale mellom to parter">
         <ExConversationDo />
       </Do>
-      <Dont description="Du bør unngå å formulere forklaringen fra mottakers perspektiv eller i passiv">
+      <Dont description="Ikke bruk passivt språk">
         <ExConversationDont />
       </Dont>
     </Stack>
@@ -31,21 +31,83 @@ const ExConversationDo = () => {
 
 const ExConversationDont = () => {
   return (
-    <>
+    <Fieldset>
+      <Fieldset.Legend>Informasjon ønskes om</Fieldset.Legend>
+      <Checkbox label="Barnehage" value="barnehage" />
+      <Checkbox label="Grunnskole" value="grunnskole" />
+      <Checkbox label="Videregående" value="videregaende" />
+    </Fieldset>
+  );
+};
+
+export const CheckboxExFilter = () => {
+  return (
+    <Stack style={{ margin: 'var(--ds-size-8) 0' }}>
+      <Do description="Bruk enkeltord eller korte setninger for forklaring og alternativer">
+        <FilterExampleDo />
+      </Do>
+      <Dont description="Ikke bruk unødvendig lange setninger">
+        <FilterExampleDont />
+      </Dont>
+    </Stack>
+  );
+};
+
+const FilterExampleDo = () => {
+  return (
+    <div
+      data-size="sm"
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 'var(--ds-size-6)',
+      }}
+    >
+      <Heading level={3} data-size="xs">
+        Filtrer resultater
+      </Heading>
       <Fieldset>
-        <Fieldset.Legend>Jeg vil vite mer om</Fieldset.Legend>
-        <Checkbox label="Barnehage" value="barnehage" />
-        <Checkbox label="Grunnskole" value="grunnskole" />
-        <Checkbox label="Videregående" value="videregaende" />
+        <Fieldset.Legend>Område</Fieldset.Legend>
+        <Checkbox label="Barnehage" />
+        <Checkbox label="Grunnskole" />
+        <Checkbox label="Videregående" />
       </Fieldset>
-      <Divider />
       <Fieldset>
-        <Fieldset.Legend>Informasjon ønskes om</Fieldset.Legend>
-        <Checkbox label="Barnehage" value="barnehage" />
-        <Checkbox label="Grunnskole" value="grunnskole" />
-        <Checkbox label="Videregående" value="videregaende" />
+        <Fieldset.Legend>Læreplan</Fieldset.Legend>
+        <Checkbox label="Kunnskapsløftet 2020" />
+        <Checkbox label="Kunnskapsløftet 2006" />
       </Fieldset>
-    </>
+    </div>
+  );
+};
+
+const FilterExampleDont = () => {
+  return (
+    <div
+      data-size="sm"
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 'var(--ds-size-6)',
+      }}
+    >
+      <Heading level={3} data-size="xs">
+        Filtrer resultater
+      </Heading>
+      <Fieldset>
+        <Fieldset.Legend>Hvilke områder er du interessert i?</Fieldset.Legend>
+        <Checkbox label="Barnehage" />
+        <Checkbox label="Grunnskole" />
+        <Checkbox label="Videregående" />
+      </Fieldset>
+      <Fieldset>
+        <Fieldset.Legend>
+          Hvilke læreplaner er relevant for deg?
+        </Fieldset.Legend>
+        <Checkbox label="Kunnskapsløftet 2020" />
+        <Checkbox label="Kunnskapsløftet 2006" />
+      </Fieldset>
+    </div>
   );
 };
 

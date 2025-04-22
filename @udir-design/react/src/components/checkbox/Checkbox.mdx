@@ -7,6 +7,7 @@ import {
   CheckboxEx2,
   CheckboxEx3,
   CheckboxExConversation,
+  CheckboxExFilter,
 } from './docs/doAndDont';
 
 <Meta of={CheckboxStories} />
@@ -147,13 +148,26 @@ endre innholdet i feltet.
 
 ## Tekst i checkbox
 
-I et skjema er ofte forklaringen formulert som et spørsmål. Vurder om du trenger å ha med informasjon om at brukeren kan velge flere svaralternativer. Bruk et aktivt og positivt språk, og tenk på innholdet som en samtale.
+Bruk et aktivt og positivt språk når du formulerer forklaringer og svaralternativer.
+
+Hvordan vi henvender oss til brukerne kan avhenge av hvilken kontekst avmerkingsboksene blir brukt i.
+
+### I skjema
+
+Det er naturlig å tenke på et skjema som en samtale med den som svarer. Brukerne leser gjerne innholdet i den
+rekkefølgen det opptrer i skjemaet. Derfor er ofte forklaringen og alternativene formulert som spørsmål og svar.
 
 <CheckboxExConversation />
 
-**Plassering av tekst:**
+### I andre grensesnitt
 
-- `legend` og eventuell `description` plasseres før listen med svaralternativ.
+Når `Checkbox` er brukt som del av andre typer interaktive elementer, er det ofte som del av filtre eller andre handlinger. Vi forventer at brukerne hurtig titter gjennom grensesnittet for å finne mulige handlinger ved behov, og at disse ikke nødvendigvis leses i rekkefølge. Vi bør derfor unngå overflødig tekst.
+
+<CheckboxExFilter />
+
+### Plassering av tekst
+
+- Plasser `legend` og eventuell tilhørende `description` før listen med svaralternativer.
 - `label` til hver boks må beskrive alternativet.
 - `label` skal stå til høyre for boksen. Hvis det er nødvendig med ekstra beskrivelse, kan du ha en `description` under `label` .
 - `label` skal alltid ha stor forbokstav.
