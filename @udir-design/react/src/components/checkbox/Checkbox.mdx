@@ -2,13 +2,13 @@ import { Meta, Canvas, Controls, Primary, ArgTypes } from '@storybook/blocks';
 import { Do, Dont, Stack } from '../../../.storybook/docs-components';
 import * as CheckboxStories from './Checkbox.stories';
 import * as useCheckboxGroupStories from '../../utilities/hooks/useCheckboxGroup/useCheckboxGroup.stories';
-import { CheckboxEx1 } from './docs/doAndDont';
+import { CheckboxEx1, CheckboxEx2, CheckboxEx3 } from './docs/doAndDont';
 
 <Meta of={CheckboxStories} />
 
 # Checkbox
 
-Vi bruker `Checkbox` (avmerkingsboks) for å gi brukerne valg, der de kan velge ett eller flere alternativer. Brukerne kan både velge og oppheve valgene de gjør. Bruk [`Fieldset`](#fieldset) til å gruppere flere valg.
+Vi bruker `Checkbox` (avmerkingsboks) for å gi brukerne valg, der de kan velge ett eller flere alternativer. Brukerne kan både velge og oppheve valgene de gjør. Bruk [`Fieldset`](/docs/components-fieldset--docs) til å gruppere flere valg.
 
 <Primary />
 <Controls />
@@ -19,15 +19,12 @@ Vi bruker `Checkbox` (avmerkingsboks) for å gi brukerne valg, der de kan velge 
 import { Checkbox } from '@udir-design/react';
 
 <Fieldset>
-  <Fieldset.Legend>Skal du reise til noen av disse landene?</Fieldset.Legend>
-  <Checkbox label="Kroatia" value="kroatia" />
-  <Checkbox label="Slovakia" value="slovakia" />
-  <Checkbox label="Hobsyssel" value="hobsyssel" />
-  <Checkbox label="Jeg skal ikke til noen av disse landene" value="ingen" />
+  <Fieldset.Legend>Hva vil du vite mer om?</Fieldset.Legend>
+  <Checkbox label="Barnehage" value="barnehage" />
+  <Checkbox label="Grunnskole" value="grunnskole" />
+  <Checkbox label="Videregående" value="videregaende" />
 </Fieldset>;
 ```
-
-## Eksempler
 
 ### Kun ett valg
 
@@ -35,7 +32,7 @@ Hvis brukeren skal bekrefte noe, men ikke velge noe, kan en `checkbox` stå alen
 
 <Canvas of={CheckboxStories.OneOption} />
 
-## Fieldset og useCheckboxGroup
+### Gruppering av flere valg
 
 Bruk `Fieldset` og `useCheckboxGroup` for gruppering av flere valg.
 
@@ -67,29 +64,30 @@ const { getCheckboxProps, validationMessageProps } = useCheckboxGroup({
 
 return (
   <Fieldset>
-    <Fieldset.Legend>Skal du reise til noen av disse landene?</Fieldset.Legend>
+    <Fieldset.Legend>Hva vil du vite mer om?</Fieldset.Legend>
     <Fieldset.Description>
-      Velg alle landene du skal innom.
+      Velg de alternativene som er relevante for deg.
     </Fieldset.Description>
     <Checkbox
       label="Alle"
       {...getCheckboxProps({ allowIndeterminate: true })}
     />
-    <Checkbox label="Kroatia" {...getCheckboxProps('kroatia')} />
-    <Checkbox label="Slovakia" {...getCheckboxProps('slovakia')} />
-    <Checkbox label="Hobsyssel" {...getCheckboxProps('hobsyssel')} />
+    <Checkbox label="Barnehage" {...getCheckboxProps('barnehage')} />
+    <Checkbox label="Grunnskole" {...getCheckboxProps('grunnskole')} />
+    <Checkbox label="Videregående" {...getCheckboxProps('videregaende')} />
     <ValidationMessage {...validationMessageProps} />
   </Fieldset>
 );
 ```
 
-### Ubestemt
+### Velge alle alternativer med en hoved-sjekkboks
 
-Bruk `indeterminate` til å signalisere at en eller flere sjekkbokser er markert i gruppen.
+Legg inn `allowIndeterminate: true`i `getCheckboxProps` for å opprette en hoved-sjekkboks som både kan velge og fjerne alle alternativer.
+Dette aktiverer en ekstra tilstand, `indeterminate`, ved siden av `checked` og `unchecked`. Den vises med en horisontal strek og signaliserer at én eller flere sjekkbokser er markert i gruppen.
 
 <Canvas of={CheckboxStories.InTable} />
 
-#### Feilmelding
+### Vise feilmelding
 
 Bruk `error` på `Fieldset` for å vise feilmelding.
 
@@ -97,29 +95,22 @@ Her må du bruke `Fieldset` for å gjøre innholdet tilgjengelig og aktivere rik
 
 <Canvas of={CheckboxStories.WithError} />
 
-#### Kontrollert
+### Kontrollere checkbox utenfra
 
 Bruk `useCheckboxGroup` og `setValue` for å kontrollere hvilke alternativer som er valgt.
 
 <Canvas of={CheckboxStories.Controlled} />
 
-#### Readonly
-
-Felter med `readonly`-attributtet er med i tabrekkefølgen. Brukerne kan kopiere innholdet men ikke redigere det. Informasjon blir med når skjemaet sendes inn.
-
-`Readonly`-felter kan være forvirrende for noen brukere. Ikke alle vil skjønne hvorfor de ikke får til å endre innholdet i feltet. Vi anbefaler derfor å unngå readonly så langt det lar seg gjøre.
-
-<Canvas of={CheckboxStories.ReadOnly} />
-
-#### Disabled
-
-Unngå deaktiverte tilstander om du kan. De har lav fargekontrast som er problematisk for noen brukere. `Disabled` kan ikke møte kontrastkravene, for da kan brukeren tro at elementet er aktivt, prøve å trykke på det, og ikke skjønne hvorfor det ikke går.
-
-<Canvas of={CheckboxStories.Disabled} />
-
 ## Retningslinjer for checkbox
 
-Hvis det er flere enn 7 svaralternativer, bruk [`Select`](/docs/components-select--docs) eller [`Suggestion`](/docs/components-suggestion--docs) istedenfor.
+**Passer til å**
+
+- velge flere alternativer
+
+**Passer ikke til å**
+
+- velge gjensidig utelukkende alternativer, bruk heller [`Radio`](/docs/components-radio--docs)
+- velge mellom flere enn 7 svaralternativer, bruk heller [`Select`](/docs/components-select--docs) eller [`Suggestion`](/docs/components-suggestion--docs)
 
 ### Sortering
 
@@ -136,6 +127,18 @@ se godt nok, er en horisontal liste ekstra vanskelig.
 
 <CheckboxEx1 />
 
+### Ikke bruk deaktiverte checkboxer
+
+Vi unngår deaktiverte (`disabled`) checkboxer fordi de kan være vanskelige å oppfatte. Noen brukere vil ikke forstå hva checkboxen sier eller hvorfor den ikke er klikkbar. Hvis en checkbox eller gruppe med checkboxer ikke er relevant, bør du helst fjerne valgene fremfor å deaktivere dem. Tilby gjerne brukeren informasjon om hvorfor valgene ikke er tilgjengelig.
+
+Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander) og hvilke alternativer som finnes.
+
+### Unngå skrivebeskyttede checkboxer
+
+Felter med `readonly`-attributtet er med i tabrekkefølgen. Brukerne kan kopiere innholdet men ikke redigere det. Informasjon blir med når skjemaet sendes inn.
+
+`Readonly`-felter kan være forvirrende for noen brukere. Ikke alle vil skjønne hvorfor de ikke får til å endre innholdet i feltet. Vi anbefaler derfor å unngå readonly så langt det lar seg gjøre.
+
 ## Tekst i checkbox
 
 I et skjema er ofte forklaringen formulert som et spørsmål. Vurder om du trenger å ha med informasjon om at brukeren kan velge flere svaralternativer.
@@ -143,9 +146,11 @@ I et skjema er ofte forklaringen formulert som et spørsmål. Vurder om du treng
 Bruk et aktivt og positivt språk. Tenk på innholdet som en samtale. Når `legend`
 er en setning, kan du skrive den i du-form og svaralternativene (`label`) i jeg-form.
 
-- `legend` og eventuell `description` plasseres før listen med svaralternativ kommer.
+**Plassering av tekst:**
+
+- `legend` og eventuell `description` plasseres før listen med svaralternativ.
 - `label` til hver boks må beskrive alternativet.
-- `label` skal stå til høyre for boksen. Hvis det er nødvendi med ekstra beskrivelse, kan du ha en `description` under `label` .
+- `label` skal stå til høyre for boksen. Hvis det er nødvendig med ekstra beskrivelse, kan du ha en `description` under `label` .
 - `label` skal alltid ha stor forbokstav.
 
 ### Lag logisk sammenheng mellom forklaringen og svaralternativene
@@ -154,19 +159,13 @@ Brukeren skal kunne lese hvert svaralternativ som en logisk respons på forklari
 
 Eksempel på riktig logisk sammenheng:
 
-<Canvas of={CheckboxStories.ContentEx1} />
+<CheckboxEx2 />
 
 ### Gi svaralternativene samme språklige form
 
 Det betyr at de kan ha enten fullstendige setninger eller ett ord, ikke begge deler.
 
-**Enten:**
-
-<Canvas of={CheckboxStories.ContentEx2} />
-
-**Eller:**
-
-<Canvas of={CheckboxStories.ContentEx3} />
+<CheckboxEx3 />
 
 ## Tilgjengelighet
 

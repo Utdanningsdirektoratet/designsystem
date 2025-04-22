@@ -93,7 +93,7 @@ export const Group: GroupStory = {
           Hvordan vil du helst at vi skal kontakte deg?
         </Fieldset.Legend>
         <Fieldset.Description>
-          Velg alle alternativene som er relevante for deg.
+          Velg de alternativene som er relevante for deg.
         </Fieldset.Description>
         <Checkbox
           id={context.id + '-email'}
@@ -158,26 +158,24 @@ export const Controlled: GroupStory = {
     return (
       <>
         <Fieldset>
-          <Fieldset.Legend>
-            Skal du reise til noen av disse landene?
-          </Fieldset.Legend>
+          <Fieldset.Legend>Hva vil du vite mer om?</Fieldset.Legend>
           <Fieldset.Description>
-            Velg alle landene du skal innom.
+            Velg de alternativene som er relevante for deg.
           </Fieldset.Description>
           <Checkbox
-            id={context.id + '-kroatia'}
-            label="Kroatia"
-            {...getCheckboxProps('-kroatia')}
+            id={context.id + '-barnehage'}
+            label="Barnehage"
+            {...getCheckboxProps('barnehage')}
           />
           <Checkbox
-            id={context.id + '-slovakia'}
-            label="Slovakia"
-            {...getCheckboxProps('slovakia')}
+            id={context.id + '-grunnskole'}
+            label="Grunnskole"
+            {...getCheckboxProps('grunnskole')}
           />
           <Checkbox
-            id={context.id + '-hobbsyssel'}
-            label="Hobsyssel"
-            {...getCheckboxProps('hobsyssel')}
+            id={context.id + '-videregaende'}
+            label="Videregående"
+            {...getCheckboxProps('videregaende')}
           />
         </Fieldset>
         <ValidationMessage {...validationMessageProps} />
@@ -186,11 +184,11 @@ export const Controlled: GroupStory = {
           Du har valgt: {value.toString()}
         </Paragraph>
         <div style={{ display: 'flex', gap: '1rem' }}>
-          <Button onClick={() => setValue(toggle(value, 'kroatia'))}>
-            Toggle Kroatia
+          <Button onClick={() => setValue(toggle(value, 'grunnskole'))}>
+            Toggle Grunnskole
           </Button>
-          <Button onClick={() => setValue(toggle(value, 'hobsyssel'))}>
-            Toggle Hobsyssel
+          <Button onClick={() => setValue(toggle(value, 'videregaende'))}>
+            Toggle Videregående
           </Button>
         </div>
       </>
@@ -287,65 +285,4 @@ export const CheckboxInColorContext: Story = {
       },
     );
   },
-};
-
-export const ContentEx1: Story = {
-  render: (context) => (
-    <Fieldset>
-      <Fieldset.Legend>
-        Hvor lenge har du jobbet i det offentlige?
-      </Fieldset.Legend>
-      <Checkbox id={context.id + '-0-3'} label="I under ett år" value="0-3" />
-      <Checkbox id={context.id + '-1-3'} label="Fra 1-3 år" value="1-3" />
-      <Checkbox id={context.id + '->3'} label="Mer enn 3 år" value="3+" />
-    </Fieldset>
-  ),
-};
-
-export const ContentEx2: Story = {
-  render: (context) => (
-    <Fieldset>
-      <Fieldset.Legend>Hva liker du best med jobben din?</Fieldset.Legend>
-      <Checkbox
-        id={context.id + '-selvstendige'}
-        label="Jeg liker å jobbe med selvstendige oppgaver"
-        value="selvstendige"
-      />
-      <Checkbox
-        id={context.id + '-moter'}
-        label="Jeg elsker møter"
-        value="moter"
-      />
-      <Checkbox
-        id={context.id + '-lunsj'}
-        label="Lunsjen er best"
-        value="lunsj"
-      />
-      <Checkbox
-        id={context.id + '-kolleger'}
-        label="Jeg liker å møte kolleger"
-        value="kolleger"
-      />
-    </Fieldset>
-  ),
-};
-
-export const ContentEx3: Story = {
-  render: (context) => (
-    <Fieldset>
-      <Fieldset.Legend>Hva liker du best med jobben din?</Fieldset.Legend>
-      <Checkbox
-        id={context.id + '-selvstendige'}
-        label="Selvstendige oppgaver"
-        value="selvstendige"
-      />
-      <Checkbox id={context.id + '-moter'} label="Møter" value="moter" />
-      <Checkbox id={context.id + '-lunsj'} label="Lunsj" value="lunsj" />
-      <Checkbox
-        id={context.id + '-kolleger'}
-        label="Kolleger"
-        value="kolleger"
-      />
-    </Fieldset>
-  ),
 };
