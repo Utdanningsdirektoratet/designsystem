@@ -31,8 +31,7 @@ const Wrapper = ({ variant, description, children }: WrapperProps) => {
           {description}
         </Paragraph>
       </figcaption>
-
-      <div className={styles.imageWrapper}>{children}</div>
+      <div className={styles.contentWrapper}>{children}</div>
     </figure>
   );
 };
