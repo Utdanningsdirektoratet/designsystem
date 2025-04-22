@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import {
   Checkbox,
   Fieldset,
-  Table,
   ValidationMessage,
 } from '@udir-design/react/alpha';
 import {
@@ -88,52 +87,10 @@ export const Default: Story = {
         <Checkbox
           id={context.id + '-sms'}
           label="SMS"
-          {...getCheckboxProps('sms')}
+          {...getCheckboxProps({ value: 'sms' })}
         />
         <ValidationMessage {...validationMessageProps} />
       </Fieldset>
-    );
-  },
-};
-
-export const AllowIndeterminate: Story = {
-  render: function Render(args, context) {
-    const { getCheckboxProps } = useCheckboxGroup({
-      name: 'my-checkbox',
-      ...args,
-    });
-    return (
-      <Table>
-        <Table.Head>
-          <Table.Row>
-            <Table.HeaderCell>
-              <Checkbox
-                id={context.id + '-all'}
-                aria-label="Select all"
-                {...getCheckboxProps({
-                  allowIndeterminate: true,
-                  value: 'all',
-                })}
-              />
-            </Table.HeaderCell>
-            <Table.HeaderCell>Header</Table.HeaderCell>
-          </Table.Row>
-        </Table.Head>
-        <Table.Body>
-          {[1, 2].map((row) => (
-            <Table.Row key={row}>
-              <Table.Cell>
-                <Checkbox
-                  id={context.id + '-' + row}
-                  aria-label={`Check ${row}`}
-                  {...getCheckboxProps(`${row}`)}
-                />
-              </Table.Cell>
-              <Table.Cell>Content</Table.Cell>
-            </Table.Row>
-          ))}
-        </Table.Body>
-      </Table>
     );
   },
 };
