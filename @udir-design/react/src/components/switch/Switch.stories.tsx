@@ -38,7 +38,7 @@ export const SwitchInColorContext: Story = {
         const expectedColor = getComputedStyle(element).getPropertyValue(
           '--ds-color-neutral-base-default',
         );
-        expect(element).toHaveStyle(`background-color: ${expectedColor}`);
+        await expect(element).toHaveStyle(`background-color: ${expectedColor}`);
       },
     );
   },

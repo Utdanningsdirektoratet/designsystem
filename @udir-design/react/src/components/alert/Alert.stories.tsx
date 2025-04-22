@@ -24,13 +24,13 @@ export const Preview: Story = {
     const canvas = within(canvasElement);
     const alert = canvas.getByTestId('alert-preview');
     await step('Alert is rendered ', async () => {
-      expect(alert).toBeTruthy();
+      await expect(alert).toBeTruthy();
     });
     await step('Alert has correct color', async () => {
-      expect(alert).toHaveAttribute('data-color', 'info');
+      await expect(alert).toHaveAttribute('data-color', 'info');
     });
     await step('Alert has correct text', async () => {
-      expect(alert).toHaveTextContent(args.children as string);
+      await expect(alert).toHaveTextContent(args.children as string);
     });
   },
 };
