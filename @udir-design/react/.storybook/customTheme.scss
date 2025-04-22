@@ -2,8 +2,28 @@
   code {
     display: inline;
     border: none;
+    border-radius: var(--ds-border-radius-sm);
+    background: var(--ds-color-background-tinted);
+  }
+
+  code,
+  kbd {
     // 14px in body text, but scale with headings
     font-size: round(down, 0.8em, 0.0625rem);
+  }
+
+  kbd {
+    font-family:
+      ui-monospace, Menlo, Monaco, 'Roboto Mono', 'Oxygen Mono',
+      'Ubuntu Monospace', 'Source Code Pro', 'Droid Sans Mono', 'Courier New',
+      monospace;
+    background: var(--ds-color-background-tinted);
+    padding: var(--ds-size-1);
+    border-radius: var(--ds-border-radius-sm);
+    border: solid 1px var(--ds-color-border-subtle);
+    position: relative;
+    bottom: 2px;
+    box-shadow: 0.5px 1px 0 0 var(--ds-color-border-strong);
   }
 
   a {
