@@ -50,47 +50,7 @@ Bruk `Fieldset` og `useCheckboxGroup` for gruppering av flere valg.
 
 <Canvas of={CheckboxStories.Group} />
 
-Til `useCheckboxGroup` kan du sende inn:
-
-<ArgTypes of={useCheckboxGroupStories.Default} />
-
-I respons får du objektet:
-
-```ts
-{
-  getCheckboxProps: (value: string | { allowIndeterminate: true }) => CheckboxProps, // Returnerer props du kan spre på <Checkbox /> eller <input type="checkbox" />
-  validationMessageProps: ValidationMessageProps, // Properties du kan valgfritt spre på ValidationMessage
-  setValue: string[], // Funksjon for å sette checkbox gruppens verdi
-  value: string[], // Nåværende verdi for checkbox gruppen
-}
-```
-
-Eksempel på bruk:
-
-```tsx
-const { getCheckboxProps, validationMessageProps } = useCheckboxGroup({
-  name: 'my-checkbox-group',
-  value: [''],
-  error: 'Du må velge et alternativ',
-});
-
-return (
-  <Fieldset>
-    <Fieldset.Legend>Hva vil du vite mer om?</Fieldset.Legend>
-    <Fieldset.Description>
-      Velg de alternativene som er relevante for deg.
-    </Fieldset.Description>
-    <Checkbox
-      label="Alle"
-      {...getCheckboxProps({ allowIndeterminate: true })}
-    />
-    <Checkbox label="Barnehage" {...getCheckboxProps('barnehage')} />
-    <Checkbox label="Grunnskole" {...getCheckboxProps('grunnskole')} />
-    <Checkbox label="Videregående" {...getCheckboxProps('videregaende')} />
-    <ValidationMessage {...validationMessageProps} />
-  </Fieldset>
-);
-```
+[Les mer om `useCheckboxGroup`](/docs/utilities-usecheckboxgroup--docs)
 
 ### Velge alle alternativer med en hoved-sjekkboks
 
