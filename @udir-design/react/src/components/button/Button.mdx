@@ -119,7 +119,7 @@ I eksempelet under bruker vi proppen `loading` for å vise at knappen laster.
 
 I eksempelet over blir `aria-disabled` satt av `loading="true"`. Skjermlesere og andre hjelpemidler vil bli informert om at knappen finnes, men ikke er aktiv. I motsetning til `disabled` kan knappen fortsatt få fokus når noen navigerer med tastaturet.
 
-<SimpleAlert type="info" heading={{ text: 'Tips', level: 4 }}>
+<SimpleAlert type="info" heading="Tips">
   `loading="true"` eller `aria-disabled` stopper ikke automatisk knappen fra å
   utløse `onClick`. Du må selv passe på at callback-funksjonen ikke kjører når
   knappen er deaktivert.
@@ -137,7 +137,7 @@ Vi unngår deaktiverte (`disabled`) knapper fordi de kan være vanskelige å opp
 
 Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander) og hvilke alternativer som finnes.
 
-<SimpleAlert type="info" heading={{text: "Tips", level: 4}}>
+<SimpleAlert type="info" heading="Tips">
 Hvis du mot formodning må bruke en deaktivert knapp:
 
 - Sørg for at alle brukerne dine både opplever og forstår at knappen eksisterer, at den er deaktivert, og hvorfor.

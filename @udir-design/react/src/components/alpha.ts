@@ -20,6 +20,7 @@ export * from './input/Input';
 export * from './link/Link';
 export * from './list/List';
 export * from './loaders';
+export * from './multiSuggestion/MultiSuggestion';
 export * from './pagination/Pagination';
 export * from './popover/Popover';
 export * from './radio/Radio';
