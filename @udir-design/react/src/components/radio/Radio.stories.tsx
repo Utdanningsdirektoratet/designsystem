@@ -77,7 +77,7 @@ export const Group: GroupStory = {
     disabled: false,
     value: 'sjokolade',
   },
-  render: function Render(args, context) {
+  render(args, context) {
     const { getRadioProps, validationMessageProps } = useRadioGroup({
       ...args,
     });
@@ -125,7 +125,7 @@ export const WithError = {
 };
 
 export const Controlled: GroupStory = {
-  render: function Render(args, context) {
+  render(args, context) {
     const { value, setValue, getRadioProps } = useRadioGroup({
       ...args,
     });

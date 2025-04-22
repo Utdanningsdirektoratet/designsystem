@@ -67,7 +67,7 @@ const DATA_PLACES = [
 ];
 
 export const Preview: Story = {
-  render: function Render(args, ctx) {
+  render(args, ctx) {
     return (
       <Field>
         <Label>Velg en destinasjon</Label>
@@ -90,7 +90,7 @@ export const Preview: Story = {
 };
 
 export const Controlled: Story = {
-  render: function Render(args, ctx) {
+  render(args, ctx) {
     const [value, setValue] = useState('');
 
     return (
@@ -132,7 +132,7 @@ export const Controlled: Story = {
 };
 
 export const DefaultValue: Story = {
-  render: function Render(args, ctx) {
+  render(args, ctx) {
     return (
       <Field>
         <Label>Velg en destinasjon</Label>
@@ -152,7 +152,7 @@ export const DefaultValue: Story = {
 };
 
 export const CustomFilterAlt1: Story = {
-  render: function Render(args, ctx) {
+  render(args, ctx) {
     return (
       <Field>
         <Label>Skriv inn et tall mellom 1-6</Label>
@@ -177,7 +177,7 @@ export const CustomFilterAlt1: Story = {
 };
 
 export const CustomFilterAlt2: Story = {
-  render: function Render(args, ctx) {
+  render(args, ctx) {
     const [value, setValue] = useState('');
 
     return (
@@ -205,7 +205,7 @@ export const CustomFilterAlt2: Story = {
 };
 
 export const AlwaysShowAll: Story = {
-  render: function Render(args, ctx) {
+  render(args, ctx) {
     const [value, setValue] = useState('Sogndal');
 
     return (
@@ -231,7 +231,7 @@ export const AlwaysShowAll: Story = {
 };
 
 export const FetchExternal: Story = {
-  render: function Render(args, ctx) {
+  render(args, ctx) {
     const [value, setValue] = useState('');
     const [options, setOptions] = useState<string[] | null>(null);
 

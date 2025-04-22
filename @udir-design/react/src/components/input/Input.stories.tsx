@@ -97,7 +97,7 @@ export const HtmlSize: Story = {
 };
 
 export const Controlled: Story = {
-  render: function Render(args, context) {
+  render(args, context) {
     const [value, setValue] = useState<string>();
 
     return (
@@ -247,7 +247,7 @@ export const Checkbox: Story = {
   args: {
     type: 'checkbox',
   },
-  render: function Render(args, context) {
+  render(args, context) {
     useEffect(() => {
       for (const input of Array.from(document.getElementsByTagName('input'))) {
         if (input.hasAttribute('data-indeterminate'))

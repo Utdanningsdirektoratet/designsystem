@@ -79,7 +79,7 @@ export const Preview: Story = {
 };
 
 export const WithoutDialogTriggerContext: Story = {
-  render: function Render(args) {
+  render(args) {
     const dialogRef = useRef<HTMLDialogElement>(null);
     return (
       <>
@@ -103,7 +103,7 @@ export const WithoutDialogTriggerContext: Story = {
 };
 
 export const DialogWithOpenProp: Story = {
-  render: function Render(args) {
+  render(args) {
     const [open, setOpen] = useState(false);
 
     return (
@@ -128,7 +128,7 @@ export const DialogWithOpenProp: Story = {
 };
 
 export const BackdropClosedbyAny: Story = {
-  render: function Render() {
+  render() {
     const dialogRef = useRef<HTMLDialogElement>(null);
 
     return (
@@ -190,7 +190,7 @@ export const WithHeaderAndFooter: Story = {
 };
 
 export const DialogWithForm: Story = {
-  render: function Render(args, context) {
+  render(args, context) {
     const dialogRef = useRef<HTMLDialogElement>(null);
     const [input, setInput] = useState('');
 
@@ -270,7 +270,7 @@ const DATA_PLACES = [
 ];
 
 export const DialogWithSuggestion: Story = {
-  render: function Render(args, ctx) {
+  render(args, ctx) {
     const dialogRef = useRef<HTMLDialogElement>(null);
 
     return (
@@ -337,7 +337,7 @@ export const DialogNonModal: Story = {
       padding: 'var(--ds-size-18)',
     },
   },
-  render: function Render() {
+  render() {
     const dialogRef = useRef<HTMLDialogElement>(null);
 
     return (

@@ -16,7 +16,7 @@ export default meta;
 type Story = StoryObj<typeof Pagination>;
 
 export const Preview: Story = {
-  render: function Render(args) {
+  render(args) {
     const [page, setCurrentPage] = useState(4);
     const { pages, nextButtonProps, prevButtonProps } = usePagination({
       currentPage: page,
@@ -97,7 +97,7 @@ export const WithAnchor: StoryObj<UsePaginationProps> = {
     totalPages: 10,
     showPages: 7,
   },
-  render: function Render(args) {
+  render(args) {
     const [currentPage, setCurrentPage] = useState(args.currentPage);
     const { pages, nextButtonProps, prevButtonProps } = usePagination({
       ...args,

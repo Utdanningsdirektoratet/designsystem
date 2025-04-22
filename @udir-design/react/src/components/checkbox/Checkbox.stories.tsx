@@ -73,7 +73,7 @@ export const Group: GroupStory = {
     disabled: false,
     error: '',
   },
-  render: function Render(args, context) {
+  render(args, context) {
     const { getCheckboxProps, validationMessageProps } = useCheckboxGroup({
       value: ['epost'],
       ...args,
@@ -135,7 +135,7 @@ export const WithError: GroupStory = {
 };
 
 export const Controlled: GroupStory = {
-  render: function Render(args, context) {
+  render(args, context) {
     const choices = {
       barnehage: { label: 'Barnehage' },
       grunnskole: { label: 'Grunnskole' },
@@ -208,7 +208,7 @@ export const Disabled: GroupStory = {
 };
 
 export const IndeterminateInTable: GroupStory = {
-  render: function Render(args, context) {
+  render(args, context) {
     const { getCheckboxProps } = useCheckboxGroup({
       name: context.id,
       value: ['2', '3'],
