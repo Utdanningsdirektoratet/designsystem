@@ -67,14 +67,6 @@ export const Preview: Story = {
   },
 };
 
-export const AriaLabel: Story = {
-  args: {
-    value: 'value',
-    'aria-label': 'Checkbox',
-    id: 'checkbox-aria-label',
-  },
-};
-
 export const Group: GroupStory = {
   args: {
     name: 'my-group',
