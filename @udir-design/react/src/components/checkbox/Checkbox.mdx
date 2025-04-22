@@ -2,7 +2,12 @@ import { Meta, Canvas, Controls, Primary, ArgTypes } from '@storybook/blocks';
 import { Do, Dont, Stack } from '../../../.storybook/docs-components';
 import * as CheckboxStories from './Checkbox.stories';
 import * as useCheckboxGroupStories from '../../utilities/hooks/useCheckboxGroup/useCheckboxGroup.stories';
-import { CheckboxEx1, CheckboxEx2, CheckboxEx3 } from './docs/doAndDont';
+import {
+  CheckboxEx1,
+  CheckboxEx2,
+  CheckboxEx3,
+  CheckboxExConversation,
+} from './docs/doAndDont';
 
 <Meta of={CheckboxStories} />
 
@@ -142,10 +147,9 @@ endre innholdet i feltet.
 
 ## Tekst i checkbox
 
-I et skjema er ofte forklaringen formulert som et spørsmål. Vurder om du trenger å ha med informasjon om at brukeren kan velge flere svaralternativer.
+I et skjema er ofte forklaringen formulert som et spørsmål. Vurder om du trenger å ha med informasjon om at brukeren kan velge flere svaralternativer. Bruk et aktivt og positivt språk, og tenk på innholdet som en samtale.
 
-Bruk et aktivt og positivt språk. Tenk på innholdet som en samtale. Når `legend`
-er en setning, kan du skrive den i du-form og svaralternativene (`label`) i jeg-form.
+<CheckboxExConversation />
 
 **Plassering av tekst:**
 
