@@ -1,7 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { useState } from 'react';
-import { Button, Card, Details, List } from '@udir-design/react/alpha';
+import type { Decorator, Meta, StoryObj } from '@storybook/react';
+import { createElement, useState } from 'react';
+import {
+  Button,
+  Card,
+  CardProps,
+  Details,
+  Fieldset,
+  List,
+  ToggleGroup,
+} from '@udir-design/react/alpha';
 import { expect, userEvent, within } from '@storybook/test';
+import { Stack } from '.storybook/docs-components';
 
 export default {
   component: Details,
@@ -80,10 +89,75 @@ export const InCard: Story = {
   },
 };
 
+const detailsColorDecorator: Decorator = (Story) => {
+  const [card, setCard] = useState<Required<CardProps>['variant'] | 'none'>(
+    'tinted',
+  );
+  const cardChoices: Record<typeof card, string> = {
+    tinted: 'Tinted Card',
+    default: 'Card',
+    none: 'Ingen',
+  };
+
+  const [color, setColor] =
+    useState<Required<CardProps>['data-color']>('accent');
+  const colorChoices: Record<typeof color, string> = {
+    accent: 'Accent',
+    support1: 'Support 1',
+    support2: 'Support 2',
+    neutral: 'Neutral',
+  };
+
+  return (
+    <div>
+      <Stack
+        direction="row"
+        data-size="xs"
+        style={{ marginBottom: 'var(--ds-size-5)' }}
+      >
+        <Fieldset>
+          <Fieldset.Legend>Farge</Fieldset.Legend>
+          <ToggleGroup
+            value={color}
+            onChange={(val) => setColor(val as typeof color)}
+          >
+            {Object.entries(colorChoices).map(([value, label]) => (
+              <ToggleGroup.Item key={value} value={value}>
+                {label}
+              </ToggleGroup.Item>
+            ))}
+          </ToggleGroup>
+        </Fieldset>
+        <Fieldset>
+          <Fieldset.Legend>Foreldreelement</Fieldset.Legend>
+          <ToggleGroup
+            value={card}
+            onChange={(val) => setCard(val as typeof card)}
+          >
+            {Object.entries(cardChoices).map(([value, label]) => (
+              <ToggleGroup.Item key={value} value={value}>
+                {label}
+              </ToggleGroup.Item>
+            ))}
+          </ToggleGroup>
+        </Fieldset>
+      </Stack>
+      <div data-storybook-decorator>
+        {createElement(card === 'none' ? 'div' : Card, {
+          variant: card !== 'none' ? card : undefined,
+          'data-color': color,
+          children: <Story />,
+        })}
+      </div>
+    </div>
+  );
+};
+
 export const InCardWithColor: Story = {
+  decorators: [detailsColorDecorator],
   render: (args) => {
     return (
-      <Card data-color="support2" variant="tinted">
+      <>
         <Details {...args}>
           <Details.Summary>{previewSummary}</Details.Summary>
           <Details.Content>{previewContent}</Details.Content>
@@ -109,7 +183,7 @@ export const InCardWithColor: Story = {
             </List.Unordered>
           </Details.Content>
         </Details>
-      </Card>
+      </>
     );
   },
 };
