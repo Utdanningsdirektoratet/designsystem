@@ -1,5 +1,5 @@
 import { Checkbox, Divider, Fieldset, Heading } from '@udir-design/react/alpha';
-import { Do, Dont, Stack } from '../../../../.storybook/docs-components';
+import { Do, Dont, Stack } from '.storybook/docs-components';
 
 export const CheckboxExConversation = () => {
   return (

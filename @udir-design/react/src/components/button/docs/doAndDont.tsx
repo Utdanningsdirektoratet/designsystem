@@ -5,7 +5,7 @@ import {
   PersonPlusIcon,
   PlusIcon,
 } from '@navikt/aksel-icons';
-import { Do, Dont, Stack } from '../../../../.storybook/docs-components';
+import { Do, Dont, Stack } from '.storybook/docs-components';
 import { Button } from '@udir-design/react/alpha';
 
 /*
