@@ -11,11 +11,12 @@ const neutralComponents = [
   '.ds-button',
   '.ds-field',
   '.ds-input',
-  '.ds-link',
   '.ds-pagination',
   '.ds-suggestion',
   '.ds-togglegroup',
 ];
+
+const infoComponents = ['.ds-link'];
 
 export async function postprocessCssColors(file: string) {
   // Change default color from accent to neutral
@@ -27,6 +28,10 @@ export async function postprocessCssColors(file: string) {
     .replace(
       '[data-color="neutral"]',
       `:root, [data-color-scheme], :not([data-color]):where(${neutralComponents.join(', ')}), [data-color="neutral"]`,
+    )
+    .replace(
+      '[data-color="info"]',
+      `[data-color="info"], :not([data-color]):where(${infoComponents.join(', ')})`,
     );
 
   await fs.writeFile(file, css, { encoding: 'utf-8' });
