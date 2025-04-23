@@ -37,14 +37,14 @@ export const Preview: Story = {
     const breadcrumbs = canvas.getByLabelText('Du er her:');
 
     await step('Element with breadcrumbs role should exist', async () => {
-      expect(breadcrumbs).toBeTruthy();
+      await expect(breadcrumbs).toBeTruthy();
     });
 
     await step('Link has the correct text and href', async () => {
       const link =
         canvas.queryByRole('link', { name: /nivå 1/i }) ||
         canvas.queryByRole('link', { name: /nivå 3/i });
-      expect(link).toHaveAttribute('href', '#');
+      await expect(link).toHaveAttribute('href', '#');
     });
 
     // Return early if viewport is iPhone 6 (no list on mobile)
@@ -53,11 +53,11 @@ export const Preview: Story = {
     const list = canvas.getByRole('list');
 
     await step('Element with list role should exist', async () => {
-      expect(list).toBeTruthy();
+      await expect(list).toBeTruthy();
     });
 
     await step('List should have expected number of items', async () => {
-      expect(canvas.getAllByRole('listitem')).toHaveLength(4);
+      await expect(canvas.getAllByRole('listitem')).toHaveLength(4);
     });
   },
 };

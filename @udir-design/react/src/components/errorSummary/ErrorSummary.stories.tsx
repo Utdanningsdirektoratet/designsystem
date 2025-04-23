@@ -82,7 +82,7 @@ export const WithForm: Story = {
 };
 
 export const ShowHide: Story = {
-  render: function Render(args) {
+  render(args) {
     const [show, setShow] = useState(false);
     return (
       <>

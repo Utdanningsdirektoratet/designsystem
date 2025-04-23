@@ -86,7 +86,7 @@ const dummyData = [
 ];
 
 export const Sortable: Story = {
-  render: function Render(args) {
+  render(args) {
     const [sortField, setSortField] = useState<
       keyof (typeof dummyData)[0] | null
     >(null);
@@ -183,7 +183,7 @@ export const StickyHeader: Story = {
 };
 
 export const WithFormElements: Story = {
-  render: function Render(args, ctx) {
+  render(args, ctx) {
     const { getCheckboxProps } = useCheckboxGroup({
       name: `${ctx.id}-checkboxGroup`,
       value: ['2'],

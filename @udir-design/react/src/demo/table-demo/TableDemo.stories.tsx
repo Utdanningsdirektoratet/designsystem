@@ -18,7 +18,7 @@ export const TableStory: Story = {
       padding: 0,
     },
   },
-  render: function Render(args) {
+  render(args) {
     const [size, setSize] = useState<Size>('sm');
     const [colorMode, setColorMode] = useState('auto');
     return (

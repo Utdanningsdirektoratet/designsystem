@@ -40,7 +40,9 @@ export const ToggleGroupInColorContext: Story = {
         const expectedColor = getComputedStyle(firstButton).getPropertyValue(
           '--ds-color-neutral-base-default',
         );
-        expect(firstButton).toHaveStyle(`background-color: ${expectedColor}`);
+        await expect(firstButton).toHaveStyle(
+          `background-color: ${expectedColor}`,
+        );
       },
     );
   },

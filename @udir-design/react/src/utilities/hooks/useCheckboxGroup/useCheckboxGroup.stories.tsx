@@ -66,7 +66,7 @@ export default meta;
 type Story = StoryObj<UseCheckboxGroupProps>;
 
 export const Default: Story = {
-  render: function Render(args, context) {
+  render(args, context) {
     const { getCheckboxProps, validationMessageProps } = useCheckboxGroup({
       value: ['epost'],
       ...args,

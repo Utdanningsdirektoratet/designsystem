@@ -88,7 +88,7 @@ export const Controlled: Story = {
   args: {
     id: 'my-textarea',
   },
-  render: function Render(args) {
+  render(args) {
     const [value, setValue] = useState(`${args.value || ''}`);
 
     return (
