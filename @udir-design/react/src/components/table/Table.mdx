@@ -139,10 +139,7 @@ For å sikre at tabeller fungerer optimalt for alle brukere er det viktig å fø
 - **Enkelt celleinnhold:**
   Tabellceller bør ikke slås sammen, og hver celle bør inneholde kun ett interaktivt element. Dette bidrar til at brukerne raskt får oversikt over innholdet og lettere kan sammenligne og skanne informasjonen.
 - **Overskrifter:**
-  Alle tabeller må ha overskrifter for hver kolonne (`<Table.HeaderCell>`). Unntaket er kolonner som kun inneholder interaktive elementer, de skal ha ledetekst. Se eksempel ["Med skjemaelementer"](#med-skjemaelementer). Hvis det er behov for å spare plass, kan vi visuelt skjule én eller flere overskrifter.
-- **Kolonneoverskrifter:**
-  For at brukerne skal kunne navigere i innholdet med skjermleser, må det være overskrifter i kolonnene. Hvis det er behov for å spare plass, kan vi visuelt skjule én eller flere overskrifter.
-  Bruk `scope="row"` og `scope="col"` for å angi om overskriften gjelder en rad eller kolonne.
+  For at brukerne skal kunne navigere i innholdet med skjermleser, er det viktig å bruke rad- og/eller kolonneoverskrifter (`<Table.HeaderCell>`). Bruk `scope="row"` og `scope="col"` for å angi om overskriften gjelder en rad eller kolonne. Hvis det er behov for å spare plass, kan vi visuelt skjule én eller flere overskrifter.
 - **Caption-element:**
   Tabeller skal alltid ha et caption-element med kort tekst om hva tabellen viser. Skjermlesere vil lese caption-elementet, og brukerne kan ta stilling til om de vil lese videre i tabellen.
 - **Tomme celler:**
@@ -151,4 +148,4 @@ For å sikre at tabeller fungerer optimalt for alle brukere er det viktig å fø
   Sjekk at du kan velge ulik sortering med tastatur. Test med skjermleser at du hører hva som er sorterbart, typer sortering og at du ikke mister fokus når du endrer sortering.
 - **Tilpasning for mobil:**
   Det kan være vanskelig å vise tabeller på mobil, siden det ikke finnes et felles design som fungerer i alle sammenhenger.
-  De vanligste tabellene som brukes på mobil er en tabell som ruller horisontalt eller omgjøring til listevisning.
+  De vanligste alternativene som brukes på mobil er en tabell som ruller horisontalt eller omgjøring til listevisning.
