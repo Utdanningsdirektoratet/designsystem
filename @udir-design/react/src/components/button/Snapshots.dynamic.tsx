@@ -6,7 +6,7 @@
 import type { StoryObj } from '@storybook/react';
 import { Button } from './Button';
 import { Preview } from './Button.stories';
-import { createActionStateStories } from '../../../.storybook/utils/createActionStateStories';
+import { createActionStateStories } from '.storybook/utils/createActionStateStories';
 import type { GeneratorMeta } from '@internal/dynamic-csf';
 
 type Story = StoryObj<typeof Button>;

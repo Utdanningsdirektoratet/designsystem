@@ -1,26 +1,45 @@
 import { Meta, Canvas, Controls, Primary, ArgTypes } from '@storybook/blocks';
 import * as DetailsStories from './Details.stories';
 import { Details } from './Details';
+import { DetailsEx1, DetailsEx2 } from './docs/doAndDont';
+import { SimpleAlert } from '.storybook/docs-components';
 
 <Meta of={DetailsStories} />
 
 # Details
 
-Med `Details` kan du presentere mye innhold på liten plass i en eller flere rader. Hele raden er klikkbar og lar brukere åpne eller lukke visningen av innholdet under.
+Med `Details` kan du presentere mye innhold på liten plass i én eller flere rader. Hele raden er klikkbar og lar brukere åpne eller lukke visningen av innholdet under.
 
-**Vær oppmerksom på:**
-
+<SimpleAlert heading="Vær oppmerksom på">
 - Ved å legge innhold i `Details` risikerer du at det ikke blir sett av brukerne. Innhold som er viktig bør _ikke_ skjules.
 - Ikke legg en `Details` inni en annen.
+
+</SimpleAlert>
+
+**Passer til å**
+
+- samle innhold som er litt lengre
+- gjøre det frivillig å se innhold som er litt mindre viktig enn alltid synlig innhold
+- vise ofte stilte spørsmål
+- vise tilleggsinformasjon som kan være til hjelp for brukerne
+
+**Passer ikke til å**
+
+- vise små mengder innhold
+- vise viktig innhold som alle bør se når de kommer til siden (for eksempel feilmeldinger)
+- gi mer informasjon om et spørsmål i et skjema – det innholdet bør brukeren se med en gang
+- velge mellom ulike alternativer
+- skjule innhold fra søkeresultater eller oversikter/tabeller
+- dele opp en logisk flyt eller en rekke med handlinger, da bør du heller bruke en trinnvis liste
+
+## Slik bruker du Details
 
 <Primary />
 <Controls />
 
-## Bruk
-
 ```tsx
 /* Uten ramme */
-import { Details } from '@digdir/designsystemet-react';
+import { Details } from '@udir-design/react';
 
 <Details>
   <Details.Summary>Details heading text</Details.Summary>
@@ -28,8 +47,7 @@ import { Details } from '@digdir/designsystemet-react';
 </Details>;
 
 /* Med ramme */
-
-import { Details, Card } from '@digdir/designsystemet-react';
+import { Details, Card } from '@udir-design/react';
 
 <Card>
   <Details>
@@ -38,8 +56,6 @@ import { Details, Card } from '@digdir/designsystemet-react';
   </Details>
 </Card>;
 ```
-
-## Eksempler
 
 ### Med ramme
 
@@ -50,13 +66,36 @@ Dette kan passe i tilfeller der details ikke fyller hele siden, eller når det k
 
 ### Med farger
 
-`Details` kan vises i farger fra ditt tema.
+`Details` kan bruke alle fargene i Udirs fargeprofil, ved å sette `data-color` på `Details` (eller et foreldreelement, som `Card` eller `div`)
+
+```tsx
+/* Én enkelt Details */
+<Details data-color="accent">{/* ...innhold... */}</Details>
+
+/* Flere Details uten ramme */
+<div data-color="accent">
+  <Details>{/* ...innhold... */}</Details>
+  <Details>{/* ...innhold... */}</Details>
+</div>;
+
+/* Flere Details i et Card */
+<Card data-color="accent">
+  <Details>{/* ...innhold... */}</Details>
+  <Details>{/* ...innhold... */}</Details>
+</Card>;
+
+/* Flere Details i et tinted Card */
+<Card data-color="accent" variant="tinted">
+  <Details>{/* ...innhold... */}</Details>
+  <Details>{/* ...innhold... */}</Details>
+</Card>;
+```
 
 <Canvas of={DetailsStories.InCardWithColor} />
 
-#### Kontrollert
+### Kontrollere Details utenfra
 
-`Details` har egen tilstand på åpen/lukket, men dette kan kontrolleres utenfra.
+`Details` holder selv styr på om den er åpen eller lukket, men dette kan også kontrolleres utenfra.
 
 <Canvas of={DetailsStories.Controlled} />
 
@@ -64,28 +103,24 @@ Dette kan passe i tilfeller der details ikke fyller hele siden, eller når det k
 
 Tester viser at brukerne sjeldnere ser på skjult innhold, enn det som er synlig direkte på siden. Ikke bruk `Details` til å skjule innhold for å gjøre siden "ryddigere". Finn ut om du faktisk må skjule innhold og vær klar over hvorfor du gjør det. Tenk over om det er lurt å vise det viktigste innholdet i åpen status når brukeren kommer inn på siden.
 
-Hvis innholdet er for langt eller komplisert, bør du heller omformulere teksten og/eller eventuelt fordele den på flere sider.
+Hvis innholdet er for langt eller komplisert, bør du heller omformulere teksten og/eller fordele den på flere sider.
 
-### Egnet til
+### Unngå å bruke flere nivåer av `Details`
 
-- samle innhold som er litt lengre
-- gjøre det frivillig å se innhold som er litt mindre viktig enn alltid synlig innhold
-- vise ofte stilte spørsmål
-- vise tilleggsinformasjon som kan være til hjelp for brukerne
+Ikke legg en `Details` inni en annen. Er innholdet allerede skjult, er det ikke hensiktsmessig å skjule det ytterligere. Det blir vanskeligere for brukeren å finne informasjonen de leter etter.
 
-### Ikke egnet til
+### Hold innholdet kort
 
-- vise små mengder innhold
-- vise informasjon hvis det bare er ett element
-- vise viktig innhold som alle bør se når de kommer til siden (for eksempel feilmeldinger)
-- gi mer informasjon om et spørsmål i et skjema – det innholdet bør brukeren se med en gang
-- velge mellom ulike alternativer
-- skjule innhold fra søkeresultater eller oversikter/tabeller
-- dele opp en logisk flyt eller en rekke med handlinger, da bør du heller bruke en trinnvis liste
+Hold innholdet kort for å sikre at det lett kan relateres til overskriften.
+Bryt innholdet opp i flere `Details` istedenfor å bruke flere overskrifter i én `Details`. Ved mye innhold kan du vurdere å lage en egen side i stedet. Dette gjør det enklere å finne tilbake til innholdet senere.
 
-### Unngå
+<DetailsEx1 />
 
-- Ikke legg en `Details` inni en annen, det vi kaller nøstede lister.
+### Bruk ramme dersom `Details` brukes med kun ett element
+
+Hvis `Details` kun har ett element, kan det være lurt å legge det i et `Card` for å skille det fra resten av innholdet. Bruk av ett enkelt `Details` med ramme er et godt virkemiddel for å organisere og skille ut informasjon. Det kan for eksempel brukes til informasjon som forklarer noe mer detaljert eller forklarer noe relatert til innholdet på siden.
+
+<DetailsEx2 />
 
 ## Tekst i komponenten
 
@@ -97,7 +132,8 @@ Details skal brukes til maksimalt to avsnitt innenfor hvert nedtrekk. Sørg for 
 
 Ikke plasser andre interaktive elementer inn i `Details.Summary`, da hele raden skal være klikkbar. Ikonet og teksten skal _ikke_ lenke til ulike handlinger (for eksempel at teksten går videre til en side, mens ikonet åpner listen). Brukerne forventer ikke at ikon og tekst skal gi ulikt resultat når de velger dem.
 
-`Tab` : Flytter fokus til neste element som kan ha fokus \
-`Shift` + `Tab` : Flytter fokus til forrige element som kan ha fokus \
-`Space` : Aktiverer knapp \
-`Enter` : Aktiverer knapp
+<kbd>Tab</kbd> : Flytter fokus til neste element som kan ha fokus <br />
+<kbd>Shift</kbd> + <kbd>Tab</kbd> : Flytter fokus til forrige element som kan ha
+fokus <br />
+<kbd>Space</kbd> : Aktiverer knapp <br />
+<kbd>Enter</kbd> : Aktiverer knapp
