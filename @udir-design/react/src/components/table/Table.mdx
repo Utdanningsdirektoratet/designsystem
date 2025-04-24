@@ -90,9 +90,8 @@ Du kan legge inn skjemaelementer i en tabell, men du må håndtere logikken selv
 
 ### Sortering av rader
 
-`Table.HeaderCell` har en `sortable` prop som kan brukes for å vise at raden er sorterbar.
-Bruk `sort` prop på `Table.HeaderCell` for å indikere rekkefølgen radene er sortert.
-Bruk `onSortClick` prop for å håndtere klikk på sorterbare rader.
+Props på `Table.HeaderCell` kan brukes for å vise at radene i tabellen kan sorteres basert på innholdet i kolonnen.
+Bruk `sort` prop for å indikere sorteringsretningen (`"none"` = usortert, `"ascending"` = stigende, eller `"descending"` = synkende), og `onClick` prop for å håndtere klikk på sorterbare kolonneoverskrifter.
 
 <Canvas of={TableStories.Sortable} />
 
