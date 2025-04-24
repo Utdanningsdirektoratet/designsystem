@@ -11,6 +11,12 @@ import { useCheckboxGroup } from '@udir-design/react/alpha';
 const meta: Meta<typeof Table> = {
   component: Table,
   tags: ['alpha'],
+  parameters: {
+    customStyles: {
+      width: 'fit-content',
+      margin: '0 auto',
+    },
+  },
 };
 
 export default meta;
@@ -223,8 +229,8 @@ export const WithFormElements: Story = {
                   }
                 />
               </Table.Cell>
-              <Table.Cell>{row}</Table.Cell>
-              <Table.Cell>{row}</Table.Cell>
+              <Table.Cell style={{ textAlign: 'right' }}>{row}</Table.Cell>
+              <Table.Cell style={{ textAlign: 'right' }}>{row}</Table.Cell>
               <Table.Cell>
                 <Textfield
                   data-size="sm"
