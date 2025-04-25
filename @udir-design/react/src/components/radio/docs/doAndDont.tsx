@@ -51,10 +51,10 @@ const ExConversationDont = () => {
 export const RadioExPlacement = () => {
   return (
     <Stack style={{ margin: 'var(--ds-size-8) 0' }}>
-      <Do description="Plasser radioknapper vertikalt, slik at listen blir lettere å lese.">
+      <Do description="Plasser alternativene vertikalt, slik at listen blir lettere å lese.">
         <ExPlacementDo />
       </Do>
-      <Dont description="Du bør unngå å plassere radioknapper i flere kolonner.">
+      <Dont description="Du bør unngå å plassere alternativene i flere kolonner.">
         <ExPlacementExDont />
       </Dont>
     </Stack>

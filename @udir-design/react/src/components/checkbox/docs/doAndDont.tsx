@@ -114,10 +114,10 @@ const FilterExampleDont = () => {
 export const CheckboxEx1 = () => {
   return (
     <Stack style={{ margin: 'var(--ds-size-8) 0' }}>
-      <Do description="Plasser checkboxes vertikalt, slik at listen blir lettere å lese.">
+      <Do description="Plasser alternativene vertikalt, slik at listen blir lettere å lese.">
         <Ex1Do />
       </Do>
-      <Dont description="Du bør unngå å plassere checkboxes i flere kolonner.">
+      <Dont description="Du bør unngå å plassere alternativene i flere kolonner.">
         <Ex1Dont />
       </Dont>
     </Stack>
