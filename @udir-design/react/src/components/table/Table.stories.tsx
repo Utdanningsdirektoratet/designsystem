@@ -11,6 +11,12 @@ import { useCheckboxGroup } from '@udir-design/react/alpha';
 const meta: Meta<typeof Table> = {
   component: Table,
   tags: ['alpha'],
+  parameters: {
+    customStyles: {
+      width: 'fit-content',
+      margin: '0 auto',
+    },
+  },
 };
 
 export default meta;
@@ -56,6 +62,78 @@ export const Preview: Story = {
       </Table>
     );
   },
+};
+
+export const ColumnAndRowHeaders: Story = {
+  args: {
+    zebra: true,
+    stickyHeader: false,
+    border: false,
+    hover: true,
+  },
+  render: (args) => (
+    <Table {...args}>
+      <caption
+        style={{
+          fontSize: 'var(--ds-font-size-3)',
+          captionSide: 'bottom',
+          textAlign: 'center',
+          fontWeight: 'normal',
+          marginTop: 'var(--ds-size-2)',
+        }}
+      >
+        Svarprosent for elevundersøkelsen nasjonalt
+      </caption>
+      <Table.Head style={{ textAlign: 'right' }}>
+        <Table.Row>
+          <Table.Cell />
+          <Table.HeaderCell scope="col">2022–23</Table.HeaderCell>
+          <Table.HeaderCell scope="col">2023–24</Table.HeaderCell>
+          <Table.HeaderCell scope="col">2024–25</Table.HeaderCell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body
+        style={{ textAlign: 'right', fontFeatureSettings: "'tnum' 1" }}
+      >
+        <Table.Row>
+          <Table.HeaderCell scope="row">8. årstrinn</Table.HeaderCell>
+          <Table.Cell>88,5%</Table.Cell>
+          <Table.Cell>86,3%</Table.Cell>
+          <Table.Cell>85,3%</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.HeaderCell scope="row">9. årstrinn</Table.HeaderCell>
+          <Table.Cell>88,7%</Table.Cell>
+          <Table.Cell>86,3%</Table.Cell>
+          <Table.Cell>84,9%</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.HeaderCell scope="row">10. årstrinn</Table.HeaderCell>
+          <Table.Cell>89,7%</Table.Cell>
+          <Table.Cell>87,3%</Table.Cell>
+          <Table.Cell>85,7%</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.HeaderCell scope="row">Videregående trinn 1</Table.HeaderCell>
+          <Table.Cell>84,8%</Table.Cell>
+          <Table.Cell>82,8%</Table.Cell>
+          <Table.Cell>83,1%</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.HeaderCell scope="row">Videregående trinn 2</Table.HeaderCell>
+          <Table.Cell>82,5%</Table.Cell>
+          <Table.Cell>80,0%</Table.Cell>
+          <Table.Cell>80,3%</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.HeaderCell scope="row">Videregående trinn 3</Table.HeaderCell>
+          <Table.Cell>79,9%</Table.Cell>
+          <Table.Cell>75,7%</Table.Cell>
+          <Table.Cell>76,9%</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  ),
 };
 
 const dummyData = [
@@ -223,8 +301,8 @@ export const WithFormElements: Story = {
                   }
                 />
               </Table.Cell>
-              <Table.Cell>{row}</Table.Cell>
-              <Table.Cell>{row}</Table.Cell>
+              <Table.Cell style={{ textAlign: 'right' }}>{row}</Table.Cell>
+              <Table.Cell style={{ textAlign: 'right' }}>{row}</Table.Cell>
               <Table.Cell>
                 <Textfield
                   data-size="sm"
