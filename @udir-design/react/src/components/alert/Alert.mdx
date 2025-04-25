@@ -7,15 +7,24 @@ import * as AlertStories from './Alert.stories';
 
 Vi bruker `Alert` til å gi brukeren informasjon som det er ekstra viktig at de ser og forstår. Alert er designet for å fange brukernes oppmerksomhet. Teksten i varselet skal være kort og tydelig.
 
+**Passer til å**
+
+- gi korte og informative varsler
+
+**Passer ikke til å**
+
+- validere enkelte skjemaelement, bruk heller komponentens egen feilmelding
+- varsle om en feil som hindrer all videre bruk av tjenesten (bruk en feilside i stedet)
+
+## Slik bruker du Alert
+
 <Primary />
 <Controls />
-
-## Bruk
 
 ```tsx
 import { Alert } from '@udir-design/react';
 
-<Alert>You are using the Alert component!</Alert>;
+<Alert>En beskjed det er viktig at brukeren ser</Alert>;
 ```
 
 ## Eksempler
@@ -30,7 +39,7 @@ Bruk `info` til informasjon som er nyttig for brukerne, men ikke avgjørende for
 
 ### Suksess
 
-Bruk `success` når du vil bekrefte at brukeren har fullført en oppgave, at handlingen var vellykket.
+Bruk `success` når du vil bekrefte at brukeren har fullført en oppgave.
 
 <Canvas of={AlertStories.VariantSuccess} />
 
@@ -50,8 +59,6 @@ Bruk `danger` for å informere om noe som er kritisk eller som hindrer brukeren 
 
 Hvis meldingen er lenger enn en setning kan det være nyttig å bruke en overskrift til å fremheve det viktigste. Dette kan gjøres ved bruk av [Typografi](/docs/components-typography--docs)-komponentene. Husk å velge riktig overskriftsnivå ut fra plassen alert har i innholdsstrukturen på siden.
 
-<Canvas of={AlertStories.MedHeading} />
-
 Dersom tittel og beskrivelse gjentar det samme er det bedre å bruke en enkel setning uten overskrift.
 
 <Canvas of={AlertStories.MedKunHeading} />
@@ -62,20 +69,11 @@ Du kan ha en lenke i Alert hvis det hjelper brukeren med å løse oppgaven. Men 
 
 <Canvas of={AlertStories.MedLenke} />
 
-## Retningslinjer for alert
+## Retningslinjer
 
-Alert har flere varianter, som brukes til fire ulike budskap: Informasjon, advarsler, suksess og feilmelding. Bruk komponenten varsomt. Brukere kan forveksle varsler med reklame, og dermed overse dem. Hvis vi bruker varsler for ofte, kan vi forverre dette problemet.
+Bruk `Alert` sparsomt. Brukere kan forveksle varsler med reklame, og dermed overse dem. Hvis vi bruker varsler for ofte, kan vi forverre dette problemet.
 
-Pass på at alert har samme utseende og formspråk i alle tjenester og produkter. Denne komponenten skal være mulig å kjenne igjen over alt, så vi skal ikke justere den.
-
-**Passer til å**
-
-- gi korte og informative varsler
-
-**Passer ikke til å**
-
-- gi varsler om systemfeil eller lignende
-- validere enkelte skjemaelement, bruk heller komponentens egen feilmelding
+`Alert` skal ha samme utseende og formspråk i alle tjenester og produkter. Den skal være mulig å kjenne igjen over alt, så vi skal ikke justere den. De fire ulike fargene som brukes i komponenten skiller seg ut fra Udir-paletten slik at de fanger oppmerksomheten til brukeren.
 
 ### Størrelser
 
@@ -89,30 +87,38 @@ Dersom du sender inn tekst ved bruk av komponenter kan du følge tabellen under 
 | md              | xs                | md                  |
 | lg              | sm                | lg                  |
 
-## Tekst i komponenten
+## Tekst i Alert
 
-Det er ikke alltid lett å forstå forskjellen på varslene, selv om de har ulike ikoner og farger. Derfor er det viktig at teksten vi skriver i varselet er tydelig og lett å forstå.
+Når vi skriver tekst i `Alert`-komponenten, er det viktig at den er lett å forstå. Her er noen retningslinjer for hvordan vi kan skrive gode varsler:
 
-Vi kan velge om vi vil ha med en overskrift i alert. Hvis meldingen er lengre enn en setning, kan det være lurt å ha med en overskrift som fremhever det viktigste.
+- Legg til en overskrift hvis teksten er lengre enn én setning.
+- Tenk på teksten som en samtale med brukeren, bruk ord som «vi» og «du» for å tydeliggjøre hvem som gjør hva.
+- Gjenta nøkkelord fra ledeteksten dersom varselet er knyttet til en handling.
+- Forklar tydelig hva brukeren må eller kan gjøre for å komme videre.
 
-Det må være tydelig hvem som gjør hva. Tenk på teksten som en samtale med brukeren, bruk ord som «vi» og «du».
+<br />
 
-Hvis meldingen er knyttet til en bestemt handling, for eksempel svar på et spørsmål, bør teksten gjenta nøkkelord fra ledeteksten.
+**Teksten i `Alert` er som regel basert på en av følgende scenarioer:**
 
-Det er spesielt viktig at teksten i varsler forteller om det er noe brukerne må eller kan gjøre for å komme videre med oppgaven sin.
+Fortell hva som har skjedd:
 
-Her er en liste med hvilken type informasjon en varsel bør inneholde:
+> "Kunne ikke koble til konto."
 
-- Fortell hva som har skjedd
-  - Eksempel: "Kunne ikke koble til konto."
-- Fortell hvorfor det skjedde
-  - Eksempel: "Vi kunne ikke koble til kontoen din på grunn av tekniske problemer fra vår side."
-- Forsikre brukeren
-  - Eksempel: "Endringene dine har blitt lagret."
-- Gi dem en vei ut av problemet
-  - Eksempel: "Hvis dette problemet oppstår igjen, kontakt Kundeservice."
-- Hjelp dem å fikse problemet selv
-  - Eksempel: "Vennligst prøv igjen."
+Fortell hvorfor det skjedde:
+
+> "Vi kunne ikke koble til kontoen din på grunn av tekniske problemer fra vår side."
+
+Forsikre brukeren:
+
+> "Endringene dine har blitt lagret."
+
+Gi dem en vei ut av problemet:
+
+> "Hvis dette problemet oppstår igjen, kontakt Kundeservice."
+
+Hjelp dem å fikse problemet selv:
+
+> "Vennligst prøv igjen."
 
 ## Tilgjengelighet
 
@@ -120,18 +126,14 @@ Her er en liste med hvilken type informasjon en varsel bør inneholde:
 
 Ikonene er ikke bare dekorative. De har en standard alternativtekst som kommuniserer alvorlighetsgrad: "Informasjon", "Suksess", "Advarsel" og "Feil". Denne blir lest opp som en del av innholdet for skjermleserbrukere.
 
-### Interaksjon med skjermleser
+### Bruk av `role="alert"`
 
-Alert-komponenten kommer ikke med en `role="alert"` som default, den blir presentert for skjermleserbrukere som vanlig statisk innhold. Du kan legge på `role=alert` selv, men vær oppmerksom på forventet oppførsel dette medfører. Du kan lese mer om dette på [dokumentasjonen til ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role).
+Alert-komponenten kommer ikke med en `role="alert"` som default, den blir presentert for skjermleserbrukere som vanlig statisk innhold. Du kan legge på `role="alert"` selv, men vær oppmerksom på forventet oppførsel dette medfører. Du kan lese mer om dette på [dokumentasjonen til ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role).
 
-#### Ikke gjør dette
-
-Ikke bruk `role=alert` om `Alert` er synlig når siden lastes inn.
+Ikke bruk `role="alert"` om `Alert` er synlig når siden lastes inn.
 
 <Canvas of={AlertStories.UtenAria} />
 
-#### Gjør dette
-
-Bruk `role=alert` hvis den dukker opp dynamisk underveis pga. brukerinput eller andre faktorer som kan utløse en alert.
+Bruk `role="alert"` hvis den dukker opp dynamisk underveis pga. brukerinput eller andre faktorer som kan utløse en alert.
 
 <Canvas of={AlertStories.MedAria} />

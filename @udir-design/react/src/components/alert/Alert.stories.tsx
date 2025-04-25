@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Heading, Link, Paragraph } from '@udir-design/react/alpha';
-
 import { Alert } from './Alert';
 import { within, expect } from '@storybook/test';
 
@@ -46,11 +45,10 @@ export const VariantInfo: Story = {
           marginBottom: 'var(--ds-size-2)',
         }}
       >
-        Har du husket å bestille passtime?
+        Har du husket å melde deg på privatisteksamen?
       </Heading>,
       <Paragraph>
-        Det er lange køer for å bestille pass om dagen, det kan være lurt å
-        bestille i god tid før du skal reise.
+        Du må melde deg på innen 1. februar for våreksamen.
       </Paragraph>,
     ],
   },
@@ -67,11 +65,11 @@ export const VariantSuccess: Story = {
           marginBottom: 'var(--ds-size-2)',
         }}
       >
-        Gratulerer! Du kan nå starte selskapet ditt
+        Du kan levere søknaden din!
       </Heading>,
       <Paragraph>
-        Det ser ut til at regnestykket går i pluss og at du har det som skal til
-        for å starte selskapet ditt.
+        Du har besvart på alle spørsmålene i skjemaet. Du kan nå levere søknaden
+        din.
       </Paragraph>,
     ],
   },
@@ -115,26 +113,6 @@ export const VariantDanger: Story = {
         Vi klarer ikke å hente informasjonen du ser etter akkurat nå. Prøv igjen
         litt senere. Hvis vi fortsatt ikke klarer å vise informasjonen du
         trenger, tar du kontakt med kundeservice på telefon 85 44 32 66.
-      </Paragraph>,
-    ],
-  },
-};
-
-export const MedHeading: Story = {
-  args: {
-    children: [
-      <Heading
-        level={2}
-        data-size="xs"
-        style={{
-          marginBottom: 'var(--ds-size-2)',
-        }}
-      >
-        Har du husket å bestille passtime?
-      </Heading>,
-      <Paragraph>
-        Det er lange køer for å bestille pass om dagen, det kan være lurt å
-        bestille i god tid om du trenger pass til sommeren.
       </Paragraph>,
     ],
   },
