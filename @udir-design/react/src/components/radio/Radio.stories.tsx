@@ -62,13 +62,11 @@ export const Preview: Story = {
   },
 };
 
-export const AriaLabel: Story = {
-  args: {
-    value: 'value',
-    'aria-label': 'Radio',
-    id: 'radio-aria-label',
-  },
-};
+const ageGroups = [
+  { value: '10-20', label: '10-20 år' },
+  { value: '21-45', label: '21-45 år' },
+  { value: '46-80', label: '46-80 år' },
+];
 
 export const Group: GroupStory = {
   args: {
@@ -84,31 +82,18 @@ export const Group: GroupStory = {
 
     return (
       <Fieldset>
-        <Fieldset.Legend>Hvilken iskremsmak er best?</Fieldset.Legend>
+        <Fieldset.Legend>Velg din aldersgruppe.</Fieldset.Legend>
         <Fieldset.Description>
-          Velg din favorittsmak blant alternativene.
+          Informasjonen blir brukt til å tilpasse innholdet på siden.
         </Fieldset.Description>
-        <Radio
-          id={context.id + '-vanilje'}
-          label="Vanilje"
-          {...getRadioProps('vanilje')}
-        />
-        <Radio
-          id={context.id + '-jordbær'}
-          label="Jordbær"
-          description="Jordbær er best"
-          {...getRadioProps('jordbær')}
-        />
-        <Radio
-          id={context.id + '-sjokolade'}
-          label="Sjokolade"
-          {...getRadioProps('sjokolade')}
-        />
-        <Radio
-          id={context.id + '-spiser-ikke-is'}
-          label="Jeg spiser ikke iskrem"
-          {...getRadioProps('spiser-ikke-is')}
-        />
+        {ageGroups.map((group) => (
+          <Radio
+            key={group.value}
+            id={context.id + '-' + group.value}
+            label={group.label}
+            {...getRadioProps(group.value)}
+          />
+        ))}
         <ValidationMessage {...validationMessageProps} />
       </Fieldset>
     );
@@ -118,11 +103,18 @@ export const Group: GroupStory = {
 export const WithError = {
   args: {
     ...Group.args,
-    error: 'Du må velge jordbær fordi det smaker best',
+    error: 'Du må velge en aldersgruppe',
     name: 'my-error',
   },
   render: Group.render,
 };
+
+const educationLevels = [
+  { value: 'kindergarten', label: 'Barnehage' },
+  { value: 'primary', label: 'Grunnskole' },
+  { value: 'secondary', label: 'Videregående' },
+  { value: 'higher', label: 'Høyere utdanning' },
+];
 
 export const Controlled: GroupStory = {
   render(args, context) {
@@ -133,42 +125,29 @@ export const Controlled: GroupStory = {
     return (
       <>
         <Fieldset>
-          <Fieldset.Legend>Velg pizza</Fieldset.Legend>
+          <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
           <Fieldset.Description>
-            Alle pizzaene er laget på våre egne nybakte bunner og serveres med
-            kokkens egen osteblanding og tomatsaus.
+            Velg det høyeste utdanningsnivået du har fullført.
           </Fieldset.Description>
-          <Radio
-            id={context.id + '-ost'}
-            label="Bare ost"
-            {...getRadioProps('ost')}
-          />
-          <Radio
-            id={context.id + '-dobbeldekker'}
-            label="Dobbeldekker"
-            description="Chorizo spesial med kokkens luksuskylling"
-            {...getRadioProps('dobbeldekker')}
-          />
-          <Radio
-            id={context.id + '-flammen'}
-            label="Flammen"
-            {...getRadioProps('flammen')}
-          />
-          <Radio
-            id={context.id + '-snadder'}
-            label="Snadder"
-            {...getRadioProps('snadder')}
-          />
+          {educationLevels.map((level) => (
+            <Radio
+              key={level.value}
+              id={`${context.id}-${level.value}`}
+              label={level.label}
+              {...getRadioProps(level.value)}
+            />
+          ))}
         </Fieldset>
-
         <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
-
         <Paragraph style={{ marginBlock: 'var(--ds-size-2)' }}>
-          Du har valgt: {value}
+          Du har valgt:{' '}
+          {educationLevels.find((level) => level.value === value)?.label}
         </Paragraph>
         <div style={{ display: 'flex', gap: '1rem' }}>
-          <Button onClick={() => setValue('flammen')}>Velg Flammen</Button>
-          <Button onClick={() => setValue('snadder')}>Velg Snadder</Button>
+          <Button onClick={() => setValue('kindergarten')}>
+            Velg Barnehage
+          </Button>
+          <Button onClick={() => setValue('primary')}>Velg Grunnskole</Button>
         </div>
       </>
     );
