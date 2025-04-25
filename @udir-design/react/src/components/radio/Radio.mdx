@@ -12,7 +12,7 @@ import {
 
 # Radio
 
-`Radio` viser brukeren en liste med alternativer de kan velge mellom. Brukerne kan bytte mellom alternativene, men må velge ett. Bruk `Fieldset` for å gruppere alternativknappene.
+Vi bruker `Radio` (radioknapp) for å gi brukerne valg, der de kan velge mellom flere alternativer. Brukerne kan bytte mellom alternativene, men må velge ett. Bruk [`Fieldset`](/docs/components-fieldset--docs) for å gruppere alternativene.
 
 **Passer til å**
 
@@ -21,10 +21,10 @@ import {
 **Passer ikke til å**
 
 - gi brukerne ett enkelt valg, bruk heller [`Switch`](/docs/components-switch--docs)
-- velge flere alternativer, bruk heller [`Checkbox`](/docs/components-checkbox--docs)
+- velge flere alternativer, bruk heller [`Checkbox`](/docs/components-checkbox--docs) eller [`MultiSuggestion`](/docs/components-multisuggestion--docs)
 - velge mellom veldig mange alternativer, bruk heller [`Suggestion`](/docs/components-suggestion--docs)
 
-## Slik bruker du radio
+## Slik bruker du Radio
 
 <Primary />
 <Controls />
@@ -39,7 +39,7 @@ import { Radio } from '@udir-design/react';
 
 ### Gruppering av valg
 
-Bruk `Fieldset` og `useRadioGroup` for gruppering av alternativknapper.
+Bruk `Fieldset` og `useRadioGroup` for gruppering av radioknapper.
 
 <Canvas of={RadioStories.Group} />
 
@@ -53,7 +53,7 @@ Her må du bruke `Fieldset` for å gjøre innholdet tilgjengelig og aktivere rik
 
 <Canvas of={RadioStories.WithError} />
 
-### Kontrollere radio utenfra
+### Kontrollere Radio utenfra
 
 Bruk `useRadioGroup` og `setValue` for å kontrollere hvilket alternativ som er valgt.
 
@@ -141,14 +141,14 @@ Det betyr at de kan ha enten fullstendige setninger eller ett ord, ikke begge de
 
 ## Tilgjengelighet
 
-Pass på at det er nok luft rundt hver alternativknapp, slik at den er lett å velge også på berøringsskjermer.
+Pass på at det er nok luft rundt hver radioknapp, slik at den er lett å velge også på berøringsskjermer.
 
-Unngå å plassere alternativknapper ved siden av hverandre. Det gjør det vanskelig å lese. Det skaper også problemer for brukere som må forstørre (zoome) en nettside eller app for å se godt nok.
+Unngå å plassere radioknapper ved siden av hverandre. Det gjør det vanskelig å lese. Det skaper også problemer for brukere som må forstørre (zoome) en nettside eller app for å se godt nok.
 
 Merk at vi bruker piltastene til å velge alternativer i `Radio`-komponenten, ikke Tab-tasten.
 
 - <kbd data-icon>↑</kbd> eller <kbd data-icon>←</kbd> - går til forrige valg
 - <kbd data-icon>↓</kbd> eller <kbd data-icon>→</kbd> - går til neste valg
 - <kbd>Space</kbd> - går til det første alternativet i en gruppe med
-  alternativknapper, når gruppa ikke har et forhåndsvalgt alternativ.
+  radioknapper, når gruppa ikke har et forhåndsvalgt alternativ.
 - <kbd>Tab</kbd> - går til hele gruppa med alternativer.

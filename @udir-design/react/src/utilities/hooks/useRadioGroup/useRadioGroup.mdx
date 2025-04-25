@@ -8,7 +8,7 @@ import { useRadioGroup } from './useRadioGroup';
 
 # useRadioGroup
 
-En React-hook for å koble sammen en gruppe av radio-knapper.
+En React-hook for å koble sammen en gruppe av radioknapper.
 
 <Primary />
 <Controls of={Stories.Default} />
@@ -21,8 +21,8 @@ I respons får du objektet:
 {
   getRadioProps: (value: string | RadioProps) => RadioProps, // Returnerer props du kan spre på <Radio /> eller <input type="radio" />
   validationMessageProps: ValidationMessageProps, // Props du valgfritt spre på ValidationMessage for å koble feilmelding til radio gruppen
-  setValue: string, // Funksjon for å sette radio gruppens verdi
-  value: string, // Nåværende verdi for radio gruppen
+  setValue: string, // Funksjon for å sette radiogruppens verdi
+  value: string, // Nåværende verdi for radiogruppen
 }
 ```
 
