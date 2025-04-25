@@ -8,7 +8,7 @@ import { useCheckboxGroup } from './useCheckboxGroup';
 
 # useCheckboxGroup
 
-En React-hook for å koble sammen en gruppe av checkboxer.
+En React-hook for å koble sammen en gruppe av avmerkingsbokser.
 
 <Primary />
 <Controls of={Stories.Default} />
@@ -26,10 +26,10 @@ I respons får du objektet:
 
 ## Bruk
 
-Fra `useCheckboxGroup` får du `getCheckboxProps` som du bruker for å hente props som du sprer på checkboxene dine.
+Fra `useCheckboxGroup` får du `getCheckboxProps` som du bruker for å hente props som du sprer på de enkelte `Checkbox`-komponentene dine.
 Du kan også hente ut `validationMessageProps`, `value` og `setValue`.
 
-I `getCheckboxProps`-funksjonen er første parameter enten `value` — en unik identifikator for checkboxen — eller et objekt med props som kan legges på en `Checkbox`. Dersom du sender inn et objekt, må du passe på at det inneholder `value`.
+I `getCheckboxProps`-funksjonen er første parameter enten `value` — en unik identifikator for avmerkingsboksen — eller et objekt med props som kan legges på en `Checkbox`. Dersom du sender inn et objekt, må du passe på at det inneholder `value`.
 
 ```tsx
 <Checkbox label="Barnehage" {...getCheckboxProps('barnehage')} />;

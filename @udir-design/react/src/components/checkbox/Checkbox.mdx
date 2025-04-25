@@ -25,7 +25,7 @@ Vi bruker `Checkbox` (avmerkingsboks) for å gi brukerne valg, der de kan velge 
 - velge gjensidig utelukkende alternativer, bruk heller [`Radio`](/docs/components-radio--docs), [`Select`](/docs/components-select--docs) eller [`Suggestion`](/docs/components-suggestion--docs)
 - velge mellom flere enn 7 svaralternativer, bruk heller [`MultiSuggestion`](/docs/components-multisuggestion--docs)
 
-## Slik bruker du checkbox
+## Slik bruker du Checkbox
 
 <Primary />
 <Controls />
@@ -40,7 +40,7 @@ import { Checkbox } from '@udir-design/react';
 
 ### Kun ett valg
 
-Hvis brukeren skal bekrefte noe, men ikke velge noe, kan en `checkbox` stå alene. For eksempel når brukeren skal samtykke til vilkår.
+Hvis brukeren skal bekrefte noe, men ikke velge noe, kan en `Checkbox` stå alene. For eksempel når brukeren skal samtykke til vilkår.
 
 <Canvas of={CheckboxStories.OneOption} />
 
@@ -52,10 +52,10 @@ Bruk `Fieldset` og `useCheckboxGroup` for gruppering av flere valg.
 
 [Les mer om `useCheckboxGroup`](/docs/utilities-usecheckboxgroup--docs)
 
-### Velge alle alternativer med en hoved-sjekkboks
+### Velge alle alternativer med en overordnet avmerkingsboks
 
-Legg inn `allowIndeterminate: true` i `getCheckboxProps` for å opprette en hoved-sjekkboks som både kan velge og fjerne alle alternativer.
-Dette aktiverer en ekstra tilstand, `indeterminate`, ved siden av `checked` og `unchecked`. Den vises med en horisontal strek og signaliserer at én eller flere sjekkbokser er markert i gruppen.
+Legg inn `allowIndeterminate: true` i `getCheckboxProps` for å opprette en overordnet avmerkingsboks som både kan velge og fjerne alle alternativer.
+Dette aktiverer en ekstra tilstand, `indeterminate`, ved siden av `checked` og `unchecked`. Den vises med en horisontal strek og signaliserer at én eller flere avmerkingsbokser er markert i gruppen.
 
 <Canvas of={CheckboxStories.IndeterminateInTable} />
 
@@ -67,13 +67,13 @@ Her må du bruke `Fieldset` for å gjøre innholdet tilgjengelig og aktivere rik
 
 <Canvas of={CheckboxStories.WithError} />
 
-### Kontrollere checkbox utenfra
+### Kontrollere Checkbox utenfra
 
 Bruk `useCheckboxGroup` og `setValue` for å kontrollere hvilke alternativer som er valgt.
 
 <Canvas of={CheckboxStories.Controlled} />
 
-## Retningslinjer for checkbox
+## Retningslinjer
 
 ### Rekkefølge
 
@@ -93,20 +93,20 @@ se godt nok, er en horisontal liste ekstra vanskelig.
 
 <CheckboxEx1 />
 
-### Ikke bruk deaktiverte checkboxer
+### Ikke bruk deaktiverte avmerkingsbokser
 
-Vi unngår deaktiverte (`disabled`) checkboxer fordi de kan være vanskelige å oppfatte. Noen brukere vil ikke forstå hva checkboxen sier eller hvorfor den ikke er klikkbar. Hvis en checkbox eller gruppe med checkboxer ikke er relevant, bør du helst fjerne valgene fremfor å deaktivere dem. Tilby gjerne brukeren informasjon om hvorfor valgene ikke er tilgjengelig.
+Vi unngår deaktiverte (`disabled`) avmerkingsbokser fordi de kan være vanskelige å oppfatte. Noen brukere vil ikke forstå hva avmerkingsboksen sier eller hvorfor den ikke er klikkbar. Hvis en avmerkingsboks eller gruppe med avmerkingsbokser ikke er relevant, bør du helst fjerne valgene fremfor å deaktivere dem. Tilby gjerne brukeren informasjon om hvorfor valgene ikke er tilgjengelig.
 
 Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander) og hvilke alternativer som finnes.
 
-### Unngå skrivebeskyttede checkboxer
+### Unngå skrivebeskyttede avmerkingsbokser
 
 `Checkbox` støtter `readOnly`-attributtet for å gjøre feltet skrivebeskyttet, og gir en visuell indikasjon
 som skiller seg fra redigerbare felter. Vi unngår likevel `readOnly` så langt det lar seg gjøre, fordi
 slike felter kan være forvirrende for noen brukere. Ikke alle vil skjønne hvorfor de ikke får til å
 endre innholdet i feltet.
 
-## Tekst i checkbox
+## Tekst i Checkbox
 
 Bruk et aktivt og positivt språk når du formulerer forklaringer og svaralternativer.
 
@@ -152,4 +152,4 @@ Det skal være mulig å flytte fokus til `Checkbox`, ved å trykke <kbd>Tab</kbd
 
 ### Bruk label
 
-`Checkbox` skal alltid ha et tilgjengelig navn. I de fleste tilfeller er dette `label`. I spesielle tilfeller kan det gi mening å unnlate `label`, og heller bruke `aria-label` eller `aria-labelledby`. Et eksempel på begge disse aria-attributtene er [bruken av `Checkbox` i tabell](#velge-alle-alternativer-med-en-hoved-sjekkboks) lenger opp.
+`Checkbox` skal alltid ha et tilgjengelig navn. I de fleste tilfeller er dette `label`. I spesielle tilfeller kan det gi mening å unnlate `label`, og heller bruke `aria-label` eller `aria-labelledby`. Et eksempel på begge disse aria-attributtene er [bruken av `Checkbox` i tabell](#velge-alle-alternativer-med-en-overordnet-avmerkingsoks) lenger opp.
