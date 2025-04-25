@@ -1,0 +1,56 @@
+import { Meta, Primary, ArgTypes, Controls } from '@storybook/blocks';
+
+import { SimpleAlert } from '../../../../.storybook/docs-components';
+import * as Stories from './useRadioGroup.stories';
+import { useRadioGroup } from './useRadioGroup';
+
+<Meta of={Stories} />
+
+# useRadioGroup
+
+En React-hook for å koble sammen en gruppe av radioknapper.
+
+<Primary />
+<Controls of={Stories.Default} />
+
+## Bruk
+
+I respons får du objektet:
+
+```ts
+{
+  getRadioProps: (value: string | RadioProps) => RadioProps, // Returnerer props du kan spre på <Radio /> eller <input type="radio" />
+  validationMessageProps: ValidationMessageProps, // Props du valgfritt spre på ValidationMessage for å koble feilmelding til radio gruppen
+  setValue: string, // Funksjon for å sette radiogruppens verdi
+  value: string, // Nåværende verdi for radiogruppen
+}
+```
+
+<SimpleAlert type="info" heading="Tips">
+  Dersom du skal sende props til en `Radio`, er det viktig at du sender disse
+  som objekt til `getRadioProps` og **ikke** direkte på `Radio`. Ellers kan du
+  risikere å overstyre funksjonaliteten fra `useRadioGroup`.
+</SimpleAlert>
+
+Eksempel på bruk:
+
+```tsx
+const { getRadioProps, validationMessageProps } = useRadioGroup({
+  name: 'my-radio-group',
+  value: '10-20',
+  error: 'Du må velge et alternativ',
+});
+
+return (
+  <Fieldset>
+    <Fieldset.Legend>Velg din aldersgruppe.</Fieldset.Legend>
+    <Fieldset.Description>
+      Informasjonen blir brukt til å tilpasse innholdet.
+    </Fieldset.Description>
+    <Radio label="10-20år" {...getRadioProps('10-20')} />
+    <Radio label="21-45år" {...getRadioProps('21-45')} />
+    <Radio label="46-80år" {...getRadioProps('46-80')} />
+    <ValidationMessage {...validationMessageProps} />
+  </Fieldset>
+);
+```

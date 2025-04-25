@@ -1,109 +1,65 @@
 import { Meta, Canvas, Controls, Primary, ArgTypes } from '@storybook/blocks';
 import * as RadioStories from './Radio.stories';
 import * as useRadioGroupStories from '../../utilities/hooks/useRadioGroup/useRadioGroup.stories';
+import {
+  RadioExConversation,
+  RadioExPlacement,
+  RadioExLangStyle,
+  RadioExLogic,
+} from './docs/doAndDont';
 
 <Meta of={RadioStories} />
 
 # Radio
 
-`Radio` viser brukeren en liste med alternativer de kan velge mellom. Brukerne kan bytte mellom alternativene, men må velge ett. Bruk `Fieldset` for å gruppere alternativknappene.
+Vi bruker `Radio` (radioknapp) for å gi brukerne valg, der de kan velge mellom flere alternativer. Brukerne kan bytte mellom alternativene, men må velge ett. Bruk [`Fieldset`](/docs/components-fieldset--docs) for å gruppere alternativene.
+
+**Passer til å**
+
+- velge ett alternativ
+
+**Passer ikke til å**
+
+- gi brukerne ett enkelt valg, bruk heller [`Switch`](/docs/components-switch--docs)
+- velge flere alternativer, bruk heller [`Checkbox`](/docs/components-checkbox--docs) eller [`MultiSuggestion`](/docs/components-multisuggestion--docs)
+- velge mellom veldig mange alternativer, bruk heller [`Suggestion`](/docs/components-suggestion--docs)
+
+## Slik bruker du Radio
 
 <Primary />
 <Controls />
 
-## Slik bruker du radio
-
 ```tsx
 import { Radio } from '@udir-design/react';
 
-<Fieldset>
-  <Fieldset.Legend>Er du over 18 år?</Fieldset.Legend>
-  <Radio name="over-18" value="ja" label="Ja" />
-  <Radio name="over-18" value="nei" label="Nei" />
-</Fieldset>;
+<Radio description="Description" label="Radio label" value="value" />;
 ```
 
 ## Eksempler
 
-### Enkel radio
+### Gruppering av valg
 
-`Radio` skal alltid ha en `label`. Når du bruker `label` fra en annen plass, husk å bruke `aria-label` eller `aria-labelledby`.
-
-<Canvas of={RadioStories.AriaLabel} />
-
-## Fieldset og useRadioGroup
-
-Bruk `Fieldset` og `useRadioGroup` for gruppering av alternativknapper.
+Bruk `Fieldset` og `useRadioGroup` for gruppering av radioknapper.
 
 <Canvas of={RadioStories.Group} />
 
-Til `useRadioGroup` kan du sende inn:
+[Les mer om `useRadioGroup`](/docs/utilities-useradiogroup--docs)
 
-<ArgTypes of={useRadioGroupStories.UseRadioGroup} />
-
-I respons får du objektet:
-
-```ts
-{
-  getRadioProps: (value: string | RadioProps) => RadioProps, // Returnerer props du kan spre på <Radio /> eller <input type="radio" />
-  validationMessageProps: ValidationMessageProps, // Props du valgfritt spre på ValidationMessage for å koble feilmelding til radio gruppen
-  setValue: string, // Funksjon for å sette radio gruppens verdi
-  value: string, // Nåværende verdi for radio gruppen
-}
-```
-
-Eksempel på bruk:
-
-```tsx
-const { getRadioProps, validationMessageProps } = useRadioGroup({
-  name: 'my-radio-group',
-  value: 'sjokolade',
-  error: 'Du må velge et alternativ',
-});
-
-return (
-  <Fieldset>
-    <Fieldset.Legend>Hvilken iskremsmak er best?</Fieldset.Legend>
-    <Fieldset.Description>
-      Velg din favorittsmak blant alternativene.
-    </Fieldset.Description>
-    <Radio label="Vanilje" {...getRadioProps('vanilje')} />
-    <Radio label="Jordbær" {...getRadioProps('jordbær')} />
-    <Radio label="Sjokolade" {...getRadioProps('sjokolade')} />
-    <ValidationMessage {...validationMessageProps} />
-  </Fieldset>
-);
-```
-
-### Feilmelding
+### Vise feilmelding
 
 Bruk `error` på `Fieldset` for å vise feilmelding.
 
-Her må vi bruke `Fieldset`, fordi den aktiverer riktig stil og sørger for at innholdet har de riktige attributtene for tilgjengelighet.
+Her må du bruke `Fieldset` for å gjøre innholdet tilgjengelig og aktivere riktig stil.
 
 <Canvas of={RadioStories.WithError} />
 
-### Kontrollert
+### Kontrollere Radio utenfra
 
 Bruk `useRadioGroup` og `setValue` for å kontrollere hvilket alternativ som er valgt.
 
 <Canvas of={RadioStories.Controlled} />
 
-### Readonly
-
-Felter med `readonly`-attributtet er med i tabrekkefølgen. Brukerne kan kopiere innholdet men ikke redigere det. Informasjon blir med når skjemaet sendes inn.
-
-`readonly`-felter kan være forvirrende for noen brukere. Ikke alle vil skjønne hvorfor de ikke får til å endre innholdet i feltet. Vi anbefaler derfor å unngå `readonly` så langt det lar seg gjøre.
-
-<Canvas of={RadioStories.ReadOnly} />
-
-### Disabled
-
-Unngå deaktiverte tilstander om du kan. De har lav fargekontrast som er problematisk for noen brukere. `disabled` kan ikke møte kontrastkravene, for da kan brukeren tro at elementet er aktivt, prøve å trykke på det, og ikke skjønne hvorfor det ikke går.
-
-<Canvas of={RadioStories.Disabled} />
-
-### Inline
+### Radioknapper på samme linje
 
 `Radio` skal som hovedregel _ikke_ plasseres på samme linje. Men, hvis du har kun to alternativer med korte tekster som "Ja" og "Nei", kan du vurdere om de bør plasseres ved siden av hverandre.
 
@@ -111,39 +67,88 @@ Unngå deaktiverte tilstander om du kan. De har lav fargekontrast som er problem
 
 ## Retningslinjer
 
-Vi bruker `Radio` når vi skal gi brukerne mulighet til å velge kun ett alternativ. Skal de kunne velge flere, bruker du [`Checkbox`](/docs/components-checkbox--docs).
+### Rekkefølge
 
-Vi kan ha opptil syv alternativer i en gruppe. Trenger vi å gi brukerne mer enn syv valg, bør vi heller bruke [`Suggestion`](/docs/components-suggestion--docs)-komponenten. Hvis vi bare skal gi brukerne ett valg, kan en [`Switch`](/docs/components-switch--docs) eller [`Checkbox`](/docs/components-checkbox--docs) passe bedre.
+Vær bevisst på rekkefølgen du velger for alternativene. Ofte er en alfabetisk sortering det beste,
+men dersom det finnes en logisk rekkefølge — f.eks. _vinter, vår, sommer, høst_ — bør du
+heller bruke denne.
 
-### Sortering
-
-Alternativene skal som hovedregel sorteres alfabetisk. Velger du å presentere de mest aktuelle alternativene først kan det bli vanskelig å finne ønsket alternativ. Du kan også risikere å påvirke svaret, noe som er uheldig.
+I noen tilfeller kan det være hjelpsomt å ha de mest aktuelle alternativene først, men vær forsiktig
+så rekkefølgen ikke påvirker svaret eller gjør det vanskelig å finne ønsket alternativ.
 
 ### Plassering
 
 `Radio` skal som hovedregel plasseres vertikalt, av hensyn til lesbarhet. Det er enklere for brukere å skanne listen når alternativene ligger under hverandre. For brukere som trenger å forstørre (zoome inn) nettsiden for å se godt nok, er en horisontal liste ekstra vanskelig.
 
-Hvis vi bare har to valg med korte `labels`, kan vi vise dem ved siden av hverandre. I en likert-skala vil det også være naturlig å vise dem ved siden av hverandre. I en horisontal visning er det viktig at det kommer tydelig fram hvilken tekst som hører til hvilken boks.
+Hvis vi bare har to valg med korte labels, kan vi vise dem ved siden av hverandre. I en [Likert-skala](https://snl.no/Likert-skala) vil det også være naturlig å vise dem ved siden av hverandre. I en horisontal visning er det viktig at det kommer tydelig fram hvilken tekst som hører til hvilken boks.
+
+<RadioExPlacement />
 
 ### Unngå forhåndsvalgt alternativ
 
 Tenk nøye over om du virkelig trenger å ha et forhåndsvalgt alternativ. Det kan ha motsatt effekt av det du ønsker, for eksempel at brukeren føler seg manipulert til å ta ett bestemt valg, eller ikke klarer å ta et bevisst valg selv.
 
-## Tekst i komponenten
+### Ikke bruk deaktiverte radioknapper
 
-En gruppe med alternativknapper bør alltid ha en `legend` og eventuelt en `description` dersom hjelpetekst er nødvendig.
+Vi unngår deaktiverte (`disabled`) radioknapper fordi de kan være vanskelige å oppfatte. Noen brukere vil ikke forstå hva radioknappen sier eller hvorfor den ikke er klikkbar. Hvis en radioknapp eller gruppe med radioknapper ikke er relevant, bør du helst fjerne valgene fremfor å deaktivere dem. Tilby gjerne brukeren informasjon om hvorfor valgene ikke er tilgjengelig.
 
-Radioknapper skal alltid ha en `label`. Den skal være så kort som mulig og hvert alternativ bør være formulert på samme måte. Radio-komponenten kan også ha `description`. Da kommer den rett under `label`.
+Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander) og hvilke alternativer som finnes.
+
+### Unngå skrivebeskyttede radioknapper
+
+`Radio` støtter `readOnly`-attributtet for å gjøre feltet skrivebeskyttet, og gir en visuell indikasjon
+som skiller seg fra redigerbare felter. Vi unngår likevel `readOnly` så langt det lar seg gjøre, fordi
+slike felter kan være forvirrende for noen brukere. Ikke alle vil skjønne hvorfor de ikke får til å
+endre innholdet i feltet.
+
+## Tekst i Radio
+
+Bruk et aktivt og positivt språk når du formulerer forklaringer og svaralternativer.
+
+Hvordan vi henvender oss til brukerne kan avhenge av hvilken kontekst avmerkingsboksene blir brukt i.
+
+### I skjema
+
+Det er naturlig å tenke på et skjema som en samtale med den som svarer. Brukerne leser gjerne innholdet i den
+rekkefølgen det opptrer i skjemaet. Derfor er ofte forklaringen og alternativene formulert som spørsmål og svar.
+
+<RadioExConversation />
+
+### I andre grensesnitt
+
+Når `Radio` er brukt som del av andre typer interaktive elementer, er det ofte som del av filtre eller andre handlinger. Vi forventer at brukerne hurtig titter gjennom grensesnittet for å finne mulige handlinger ved behov, og at disse ikke nødvendigvis leses i rekkefølge. Vi bør derfor unngå overflødig tekst.
+
+### Plassering av tekst
+
+- Plasser `legend` og eventuell tilhørende `description` før listen med svaralternativer.
+- `label` til hver boks må beskrive alternativet.
+- `label` skal stå til høyre for boksen. Hvis det er nødvendig med ekstra beskrivelse, kan du ha en `description` under `label` .
+- `label` skal alltid ha stor forbokstav.
+
+### Lag logisk sammenheng mellom forklaringen og svaralternativene
+
+Brukeren skal kunne lese hvert svaralternativ som en logisk respons på forklaringen over boksene.
+
+Eksempel på riktig logisk sammenheng:
+
+<RadioExLogic />
+
+### Gi svaralternativene samme språklige form
+
+Det betyr at de kan ha enten fullstendige setninger eller ett ord, ikke begge deler.
+
+<RadioExLangStyle />
 
 ## Tilgjengelighet
 
-Pass på at det er nok luft rundt hver alternativknapp, slik at den er lett å velge også på berøringsskjermer.
+Pass på at det er nok luft rundt hver radioknapp, slik at den er lett å velge også på berøringsskjermer.
 
-Unngå å plassere alternativknapper ved siden av hverandre. Det gjør det vanskelig å lese. Det skaper også problemer for brukere som må forstørre (zoome) en nettside eller app for å se godt nok.
+Unngå å plassere radioknapper ved siden av hverandre. Det gjør det vanskelig å lese. Det skaper også problemer for brukere som må forstørre (zoome) en nettside eller app for å se godt nok.
 
 Merk at vi bruker piltastene til å velge alternativer i `Radio`-komponenten, ikke Tab-tasten.
 
-- Pil opp/venstre - går til forrige valg
-- Pil ned/høyre - går til neste valg
-- Mellomromstasten - går til det første alternativet i en gruppe med alternativknapper, når gruppa ikke har et forhåndsvalgt alternativ.
-- Tab - går til hele gruppa med alternativer.
+- <kbd data-icon>↑</kbd> eller <kbd data-icon>←</kbd> - går til forrige valg
+- <kbd data-icon>↓</kbd> eller <kbd data-icon>→</kbd> - går til neste valg
+- <kbd>Space</kbd> - går til det første alternativet i en gruppe med
+  radioknapper, når gruppa ikke har et forhåndsvalgt alternativ.
+- <kbd>Tab</kbd> - går til hele gruppa med alternativer.
