@@ -8,8 +8,14 @@
 
   code,
   kbd {
-    // 14px in body text, but scale with headings
     font-size: round(down, 0.8em, 0.0625rem);
+
+    // If the kbd element is used for an icon, add data-icon attribute
+    &[data-icon] {
+      font-size: 1.2em;
+      padding: 0 0.3em 2px 0.3em;
+      bottom: 0px;
+    }
   }
 
   kbd {
