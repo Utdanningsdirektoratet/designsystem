@@ -7,6 +7,7 @@ import {
 } from '@udir-design/react/alpha';
 import { useState } from 'react';
 import { useCheckboxGroup } from '@udir-design/react/alpha';
+import { expect, within } from '@storybook/test';
 
 const meta: Meta<typeof Table> = {
   component: Table,
@@ -199,6 +200,7 @@ export const Sortable: Story = {
         <Table.Head>
           <Table.Row>
             <Table.HeaderCell
+              data-testid="sortable-th-navn"
               sort={sortField === 'navn' ? sortDirection : 'none'}
               onClick={() => handleSort('navn')}
             >
@@ -206,6 +208,7 @@ export const Sortable: Story = {
             </Table.HeaderCell>
             <Table.HeaderCell>Epost</Table.HeaderCell>
             <Table.HeaderCell
+              data-testid="sortable-th-telefon"
               sort={sortField === 'telefon' ? sortDirection : 'none'}
               onClick={() => handleSort('telefon')}
             >
@@ -224,6 +227,17 @@ export const Sortable: Story = {
         </Table.Body>
       </Table>
     );
+  },
+  async play({ canvasElement, args, step }) {
+    const canvas = within(canvasElement);
+    await step('Sortable headings should have aria-sort and a button', () => {
+      const ths = canvas.getAllByTestId(/^sortable-th/);
+      ths.forEach((th) => {
+        expect(th).toHaveAttribute('aria-sort');
+        const sortButton = within(th).getByRole('button');
+        expect(sortButton).toBeVisible();
+      });
+    });
   },
 };
 
