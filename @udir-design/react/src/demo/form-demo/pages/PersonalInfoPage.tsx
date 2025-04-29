@@ -60,7 +60,7 @@ export const PersonalInfoPage = ({
         Personinformasjon
       </Heading>
       <Textfield
-        id="textfield-firstName"
+        id="firstName"
         label="Fornavn"
         {...register('firstName', {
           required: 'Fyll ut fornavn',
@@ -70,7 +70,7 @@ export const PersonalInfoPage = ({
       <Field>
         <Label>Etternavn</Label>
         <Input
-          id="input-lastName"
+          id="lastName"
           {...register('lastName', {
             required: 'Fyll ut etternavn',
           })}
@@ -90,7 +90,7 @@ export const PersonalInfoPage = ({
           render={({ field }) => (
             <Suggestion>
               <Suggestion.Input
-                id="suggestion-county"
+                id="county"
                 {...field}
                 aria-invalid={!!errors.county}
               />
@@ -111,7 +111,7 @@ export const PersonalInfoPage = ({
           <ValidationMessage>{errors.county.message}</ValidationMessage>
         )}
       </Field>
-      <Fieldset>
+      <Fieldset id="educationLevel">
         <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
         <Controller
           name="educationLevel"
@@ -153,7 +153,7 @@ export const PersonalInfoPage = ({
       <Field>
         <Label>Aldersgruppe</Label>
         <Select
-          id="select-ageGroup"
+          id="ageGroup"
           aria-label="Velg aldersgruppe"
           {...register('ageGroup', {
             validate: (value) => value !== 'blank' || 'Velg en aldersgruppe',

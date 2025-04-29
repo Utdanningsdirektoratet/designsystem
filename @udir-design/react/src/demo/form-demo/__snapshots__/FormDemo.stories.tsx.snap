@@ -131,14 +131,14 @@ exports[`Form Story 1`] = `
       <div>
         <label
           data-weight="medium"
-          for="textfield-firstName"
+          for="firstName"
         >
           Fornavn
         </label>
         <div>
           <input
             type="text"
-            id="textfield-firstName"
+            id="firstName"
             name="firstName"
           >
         </div>
@@ -146,13 +146,13 @@ exports[`Form Story 1`] = `
       <div>
         <label
           data-weight="medium"
-          for="input-lastName"
+          for="lastName"
         >
           Etternavn
         </label>
         <input
           type="text"
-          id="input-lastName"
+          id="lastName"
           name="lastName"
           aria-invalid="false"
         >
@@ -160,7 +160,7 @@ exports[`Form Story 1`] = `
       <div>
         <label
           data-weight="medium"
-          for="suggestion-county"
+          for="county"
         >
           Fylke
         </label>
@@ -169,7 +169,7 @@ exports[`Form Story 1`] = `
             type="text"
             list=":rg:"
             placeholder
-            id="suggestion-county"
+            id="county"
             name="county"
             aria-invalid="false"
             value
@@ -339,7 +339,7 @@ exports[`Form Story 1`] = `
           </u-datalist>
         </div>
       </div>
-      <fieldset>
+      <fieldset id="educationLevel">
         <legend data-weight="medium">
           Utdanningsnivå
         </legend>
@@ -409,12 +409,12 @@ exports[`Form Story 1`] = `
       <div>
         <label
           data-weight="medium"
-          for="select-ageGroup"
+          for="ageGroup"
         >
           Aldersgruppe
         </label>
         <select
-          id="select-ageGroup"
+          id="ageGroup"
           aria-label="Velg aldersgruppe"
           name="ageGroup"
           aria-invalid="false"
