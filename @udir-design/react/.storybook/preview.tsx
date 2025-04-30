@@ -3,12 +3,19 @@ import './customTheme.scss';
 import { INITIAL_VIEWPORTS, type ViewportMap } from '@storybook/addon-viewport';
 import { Preview } from '@storybook/react';
 import customTheme from './customTheme';
-import { Heading, Link, List, Paragraph, Table } from '../src/alpha';
+import {
+  Heading,
+  HeadingProps,
+  Link,
+  List,
+  Paragraph,
+  Table,
+} from '../src/alpha';
 import componentStyles from './componentOverrides.module.scss';
 import { customStylesDecorator } from './utils/customStylesDecorator';
 import { MdxComponentOverrides } from './types/parameters';
-import { Children } from 'react';
-import { ExternalLinkIcon } from '@navikt/aksel-icons';
+import { Children, MouseEventHandler } from 'react';
+import { ExternalLinkIcon, LinkIcon } from '@navikt/aksel-icons';
 
 // See the complete list of available devices in INITIAL_VIEWPORTS here:
 // https://storybook.js.org/docs/essentials/viewport#use-a-detailed-set-of-devices
@@ -41,31 +48,44 @@ const getPath = (href: string | undefined): string => {
   return href;
 };
 
+const handleLinkClick =
+  (href: string): MouseEventHandler<HTMLAnchorElement> =>
+  (event) => {
+    // Handle in-page anchor links
+    if (href.startsWith('#')) {
+      event.preventDefault();
+      document
+        .getElementById(href.substring(1))
+        ?.scrollIntoView({ behavior: 'smooth' });
+      window.parent.history.pushState(undefined, '', href);
+    }
+  };
+
+const HeadingSelfLink: React.FC<HeadingProps> = ({ children, ...props }) => {
+  const href = `#${props.id}`;
+  return (
+    <Heading {...props} className={`sb-unstyled ${componentStyles.heading}`}>
+      {children}
+      <Link
+        aria-hidden
+        tabIndex={-1}
+        href={href}
+        className={componentStyles.headingLink}
+        onClick={handleLinkClick(href)}
+      >
+        <LinkIcon title="Link to this heading" />
+      </Link>
+    </Heading>
+  );
+};
+
 export const componentOverrides: MdxComponentOverrides = {
-  h1: (props) => (
-    <Heading
-      data-size="lg"
-      {...props}
-      className={`sb-unstyled ${componentStyles.heading}`}
-      level={1}
-    />
-  ),
-  h2: (props) => (
-    <Heading
-      data-size="md"
-      {...props}
-      className={`sb-unstyled ${componentStyles.heading}`}
-      level={2}
-    />
-  ),
-  h3: (props) => (
-    <Heading
-      data-size="sm"
-      {...props}
-      className={`sb-unstyled ${componentStyles.heading}`}
-      level={3}
-    />
-  ),
+  h1: (props) => <HeadingSelfLink data-size="lg" {...props} level={1} />,
+  h2: (props) => <HeadingSelfLink data-size="md" {...props} level={2} />,
+  h3: (props) => <HeadingSelfLink data-size="sm" {...props} level={3} />,
+  h4: (props) => <HeadingSelfLink data-size="sm" {...props} level={4} />,
+  h5: (props) => <HeadingSelfLink data-size="sm" {...props} level={5} />,
+  h6: (props) => <HeadingSelfLink data-size="sm" {...props} level={6} />,
   p: (props) => (
     <Paragraph
       {...props}
@@ -114,15 +134,7 @@ export const componentOverrides: MdxComponentOverrides = {
         {...props}
         href={href}
         className={`sb-unstyled ${componentStyles.link}`}
-        onClick={(event) => {
-          // Handle in-page anchor links
-          if (props.href?.startsWith('#')) {
-            event.preventDefault();
-            document
-              .getElementById(props.href.substring(1))
-              ?.scrollIntoView({ behavior: 'smooth' });
-          }
-        }}
+        onClick={handleLinkClick(props.href ?? '')}
         // Add a data-attribute for use when styling links which include code snippets
         {...(Children.count(children) === 1 && { 'data-single-child': true })}
       >
