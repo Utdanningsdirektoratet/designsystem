@@ -29,6 +29,7 @@ export const RankingTable = ({
     <Fieldset
       aria-invalid={!!error}
       aria-describedby={error ? errorId : undefined}
+      id="rankings"
     >
       {title && (
         <Fieldset.Legend>

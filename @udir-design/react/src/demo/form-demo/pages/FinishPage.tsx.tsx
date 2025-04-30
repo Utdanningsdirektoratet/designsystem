@@ -41,13 +41,13 @@ export const FinishPage = ({
         Avslutning
       </Heading>
       <Textfield
-        id="textfield-addition"
+        id="addition"
         label="Har du noe annet du ønsker å nevne?"
         multiline
         rows={4}
         {...register('addition')}
       />
-      <Fieldset>
+      <Fieldset id="contactMethods">
         <Fieldset.Legend>
           Hvordan ønsker du at vi skal kontakte deg?
         </Fieldset.Legend>
