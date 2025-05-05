@@ -9,9 +9,9 @@
     "build": "tsc --build tsconfig.lib.json"
   },
   "dependencies": {
-    "@babel/generator": "^7.27.0",
-    "@babel/traverse": "^7.27.0",
-    "@babel/types": "^7.27.0",
+    "@babel/generator": "^7.27.1",
+    "@babel/traverse": "^7.27.1",
+    "@babel/types": "^7.27.1",
     "@storybook/csf": "^0.1.13",
     "@storybook/react": "^8.6.12",
     "camelcase": "^8.0.0",
