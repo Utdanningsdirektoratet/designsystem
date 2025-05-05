@@ -19,18 +19,22 @@
   margin-bottom: var(--ds-size-2);
 }
 
-.table {
-  width: 100%;
-  margin-bottom: 24px;
-  margin-top: 16px;
-  table-layout: fixed;
-}
-
 .student {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 4px 0px;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  margin-bottom: 24px;
+  margin-top: 16px;
+}
+
+.table {
+  width: 100%;
+  table-layout: fixed;
 }
 
 .tableSelect {
