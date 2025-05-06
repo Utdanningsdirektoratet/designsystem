@@ -45,7 +45,7 @@ exports[`Show Hide 1`] = `
     data-variant="primary"
     type="button"
   >
-    Skjul
+    Skjul feilmelding
   </button>
 </div>
 <div
@@ -71,7 +71,7 @@ exports[`Show Hide 1`] = `
         data-color="neutral"
         href="#telefon"
       >
-        Telefonnummer kan kun inneholde siffer
+        Telefonnummer ma ha minst 8 siffer
       </a>
     </li>
   </ul>
@@ -91,6 +91,7 @@ exports[`With Form 1`] = `
       type="text"
       aria-invalid="true"
       id="fornavn"
+      value
       aria-describedby="fornavn:validation"
     >
   </div>
@@ -113,6 +114,7 @@ exports[`With Form 1`] = `
       type="tel"
       aria-invalid="true"
       id="telefon"
+      value
       aria-describedby="telefon:validation"
     >
   </div>
@@ -120,7 +122,7 @@ exports[`With Form 1`] = `
     data-field="validation"
     id="telefon:validation"
   >
-    Telefonnummer kan kun inneholde siffer
+    Telefonnummer må ha minst 8 siffer
   </p>
 </div>
 <div
@@ -146,7 +148,7 @@ exports[`With Form 1`] = `
         data-color="neutral"
         href="#telefon"
       >
-        Telefonnummer kan kun inneholde siffer
+        Telefonnummer må ha minst 8 siffer
       </a>
     </li>
   </ul>
