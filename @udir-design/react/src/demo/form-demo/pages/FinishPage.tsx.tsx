@@ -6,34 +6,15 @@ import {
   useCheckboxGroup,
   ValidationMessage,
 } from '@udir-design/react/alpha';
-import {
-  Control,
-  Controller,
-  FieldErrors,
-  UseFormRegister,
-} from 'react-hook-form';
-import { FormValues } from '../FormDemo';
+import { Controller, useFormContext } from 'react-hook-form';
+import type { FormValues, PageProps } from '../FormDemo';
 
-type FinishPageProps = {
-  register: UseFormRegister<FormValues>;
-  errors: FieldErrors<FormValues>;
-  control: Control<FormValues, unknown>;
-  contactMethods: string[];
-  setContactMethods: (value: string[]) => void;
-};
-
-export const FinishPage = ({
-  register,
-  errors,
-  control,
-  contactMethods,
-  setContactMethods,
-}: FinishPageProps) => {
-  const { ...checkbox } = useCheckboxGroup({
+export const FinishPage = ({ showErrors }: PageProps) => {
+  const { register, control, formState } = useFormContext<FormValues>();
+  const errors = showErrors ? formState.errors : {};
+  const checkbox = useCheckboxGroup({
     name: 'checkbox-group',
     error: errors.contactMethods?.message,
-    value: contactMethods,
-    onChange: setContactMethods,
   });
   return (
     <>

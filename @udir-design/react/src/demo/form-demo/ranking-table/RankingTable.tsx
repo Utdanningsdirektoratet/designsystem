@@ -1,4 +1,4 @@
-import { Controller, Control, FieldError } from 'react-hook-form';
+import { Controller, useFormContext } from 'react-hook-form';
 import {
   Heading,
   Table,
@@ -6,25 +6,30 @@ import {
   ValidationMessage,
   Fieldset,
 } from '@udir-design/react/alpha';
-import { FormValues } from '../FormDemo';
+import type { FormValues, PageProps } from '../FormDemo';
 import classes from './RankingTable.module.css';
 
 type RankingTableProps = {
   title?: string;
   assertions: string[];
   rankings: string[];
-  control: Control<FormValues>;
-  error?: FieldError;
-};
+} & PageProps;
 
 export const RankingTable = ({
   title,
   assertions,
   rankings,
-  control,
-  error,
+  showErrors,
 }: RankingTableProps) => {
   const errorId = 'rankings-error';
+  const { control, formState } = useFormContext<FormValues>();
+
+  const rawRankingErrors = formState.errors.rankings;
+  const rankingError = rawRankingErrors
+    ? Object.values(rawRankingErrors)[0]
+    : undefined;
+  const error = showErrors ? rankingError : undefined;
+
   return (
     <Fieldset
       aria-invalid={!!error}

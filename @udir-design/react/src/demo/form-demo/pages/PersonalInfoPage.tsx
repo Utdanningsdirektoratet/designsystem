@@ -11,21 +11,8 @@ import {
   useRadioGroup,
   ValidationMessage,
 } from '@udir-design/react/alpha';
-import {
-  Control,
-  Controller,
-  FieldErrors,
-  UseFormRegister,
-} from 'react-hook-form';
-import { FormValues } from '../FormDemo';
-
-type PersonalInfoPageProps = {
-  register: UseFormRegister<FormValues>;
-  errors: FieldErrors<FormValues>;
-  control: Control<FormValues, unknown>;
-  educationLevel: string | undefined;
-  setEducationLevel: (value: string) => void;
-};
+import { Controller, useFormContext } from 'react-hook-form';
+import type { FormValues, PageProps } from '../FormDemo';
 
 const DATA_COUNTIES = [
   'Oslo',
@@ -41,18 +28,13 @@ const DATA_COUNTIES = [
   'Troms og Finnmark',
 ];
 
-export const PersonalInfoPage = ({
-  register,
-  errors,
-  control,
-  educationLevel,
-  setEducationLevel,
-}: PersonalInfoPageProps) => {
-  const { ...radio } = useRadioGroup({
+export const PersonalInfoPage = ({ showErrors }: PageProps) => {
+  const { register, control, formState } = useFormContext<FormValues>();
+  const errors = showErrors ? formState.errors : {};
+
+  const radio = useRadioGroup({
     name: 'radio-group',
     error: errors.educationLevel?.message,
-    onChange: (value) => setEducationLevel(value),
-    value: educationLevel,
   });
   return (
     <>
