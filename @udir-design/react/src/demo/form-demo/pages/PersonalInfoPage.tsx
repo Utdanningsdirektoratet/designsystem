@@ -36,6 +36,7 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
     name: 'radio-group',
     error: errors.educationLevel?.message,
   });
+  const educationLevelRules = { required: 'Velg et utdanningsnivå' };
   return (
     <>
       <Heading level={2} data-size="sm">
@@ -95,40 +96,29 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
       </Field>
       <Fieldset id="educationLevel">
         <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
-        <Controller
-          name="educationLevel"
-          control={control}
-          rules={{ required: 'Velg et utdanningsnivå' }}
-          render={({ field }) => (
-            <>
-              <Radio
-                id="radio-kindergarten"
-                label="Barnehage"
-                {...radio.getRadioProps({
-                  ...field,
-                  value: 'kindergarten',
-                })}
-              />
-              <Radio
-                id="radio-primary"
-                label="Grunnskole"
-                {...radio.getRadioProps({ ...field, value: 'primary' })}
-              />
-              <Radio
-                id="radio-secondary"
-                label="Videregående"
-                {...radio.getRadioProps({ ...field, value: 'secondary' })}
-              />
-              <Radio
-                id="radio-higher"
-                label="Høyere utdanning"
-                {...radio.getRadioProps({
-                  ...field,
-                  value: 'higher',
-                })}
-              />
-            </>
-          )}
+        <Radio
+          id="radio-kindergarten"
+          label="Barnehage"
+          {...radio.getRadioProps({ value: 'kindergarten' })}
+          {...register('educationLevel', educationLevelRules)}
+        />
+        <Radio
+          id="radio-primary"
+          label="Grunnskole"
+          {...radio.getRadioProps({ value: 'primary' })}
+          {...register('educationLevel', educationLevelRules)}
+        />
+        <Radio
+          id="radio-secondary"
+          label="Videregående"
+          {...radio.getRadioProps({ value: 'secondary' })}
+          {...register('educationLevel', educationLevelRules)}
+        />
+        <Radio
+          id="radio-higher"
+          label="Høyere utdanning"
+          {...radio.getRadioProps({ value: 'higher' })}
+          {...register('educationLevel', educationLevelRules)}
         />
         <ValidationMessage {...radio.validationMessageProps} />
       </Fieldset>
