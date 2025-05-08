@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { List, Heading, Link } from '@udir-design/react/alpha';
+import { List, Heading, Link, Button } from '@udir-design/react/alpha';
 
 const meta: Meta<typeof List.Unordered> = {
   component: List.Unordered,
@@ -8,6 +8,7 @@ const meta: Meta<typeof List.Unordered> = {
 
 export default meta;
 type Story = StoryObj<typeof List.Unordered>;
+type OrderedStory = StoryObj<typeof List.Ordered>;
 
 export const Preview: Story = {
   render: (args) => (
@@ -19,7 +20,7 @@ export const Preview: Story = {
   ),
 };
 
-export const Sortert: Story = {
+export const Ordered: Story = {
   render: () => (
     <>
       <Heading
@@ -27,28 +28,21 @@ export const Sortert: Story = {
         data-size="xs"
         style={{ marginBottom: 'var(--ds-size-2)' }}
       >
-        Slik gjør du:
+        Slik gjennomfører dere metoden:
       </Heading>
       <List.Ordered>
+        <List.Item>Presentere en problemstilling</List.Item>
         <List.Item>
-          Tørk over kyllingfiletene før du krydrer og steker. Dette vil gi en
-          finere stekeskorpe på kjøttet. Ikke bruk kjøkkenpapir som loer.
-          Papirbiter i maten er ikke noe særlig.
+          Refleksjon og summing: deltakerne går sammen to og to
         </List.Item>
-        <List.Item>
-          Ha salt og pepper på filetene og eventuelt annet krydder for ekstra
-          smak. Hvitløkpepper, paprika eller provence kan gi en god smak!
-        </List.Item>
-        <List.Item>
-          Stek filetene på sterk varme i to minutter på hver side. Sett deretter
-          på lokk og stek videre på svak varme i syv minutter på hver side.
-        </List.Item>
+        <List.Item>Gjennomgang i plenum</List.Item>
+        <List.Item>Noter ned viktig innspill og refleksjoner</List.Item>
       </List.Ordered>
     </>
   ),
 };
 
-export const Usortert: Story = {
+export const Unordered: Story = {
   render: (args) => (
     <>
       <Heading
@@ -56,104 +50,99 @@ export const Usortert: Story = {
         data-size="xs"
         style={{ marginBottom: 'var(--ds-size-2)' }}
       >
-        Foreningen har plikt til å ha revisor hvis de har
+        Gjennom arbeid med kommunikasjon, språk og tekst skal barnehagen bidra
+        til at barna
       </Heading>
       <List.Unordered {...args}>
         <List.Item>
-          et gjennomsnittlig antall ansatte som tilsvarer ti årsverk eller mer
+          uttrykker sine følelser, tanker, meninger og erfaringer på ulike måter
         </List.Item>
-        <List.Item>balansesum som er 27 millioner kroner eller mer</List.Item>
         <List.Item>
-          driftsinntekter for sin samlede virksomhet på 7 millioner kroner eller
-          mer
+          bruker språk til å skape relasjoner, delta i lek og som redskap til å
+          løse konflikter
+        </List.Item>
+        <List.Item>
+          videreutvikler sin begrepsforståelse og bruker et variert ordforråd
         </List.Item>
       </List.Unordered>
     </>
   ),
 };
 
-export const Innrykk: Story = {
+export const Indented: OrderedStory = {
   args: {
-    children: [
-      <List.Item>
-        <Heading
-          level={3}
-          data-size="xs"
-          style={{ marginBottom: 'var(--ds-size-2)' }}
-        >
-          List Item 1
-        </Heading>
-        <List.Ordered>
-          <List.Item>List Item 1.1</List.Item>
-          <List.Item>List Item 1.2</List.Item>
-          <List.Item>List Item 1.3</List.Item>
-        </List.Ordered>
-      </List.Item>,
-      <List.Item>
-        <Heading
-          level={3}
-          data-size="xs"
-          style={{ marginBottom: 'var(--ds-size-2)' }}
-        >
-          List Item 2
-        </Heading>
-        <List.Unordered>
-          <List.Item>List Item 2.1</List.Item>
-          <List.Item>List Item 2.2</List.Item>
-          <List.Item>List Item 2.3</List.Item>
-        </List.Unordered>
-      </List.Item>,
-      <List.Item>
-        <Heading
-          level={3}
-          data-size="xs"
-          style={{ marginBottom: 'var(--ds-size-2)' }}
-        >
-          List Item 3
-        </Heading>
-        <List.Unordered>
-          <List.Item>List Item 3.1</List.Item>
-          <List.Item>List Item 3.2</List.Item>
-          <List.Item>List Item 3.3</List.Item>
-        </List.Unordered>
-      </List.Item>,
-    ],
+    style: { marginTop: 'var(--ds-size-2)' },
   },
+  render: (args) => (
+    <>
+      <Heading level={2} data-size="xs">
+        Innhold
+      </Heading>
+      <List.Ordered {...args}>
+        <List.Item>
+          Barnehagens verdigrunnlag
+          <List.Unordered>
+            <List.Item>Barn og barndom</List.Item>
+            <List.Item>Demokrati</List.Item>
+            <List.Item>Mangfold og gjensidig respekt</List.Item>
+          </List.Unordered>
+        </List.Item>
+        <List.Item>
+          Ansvar og roller
+          <List.Unordered>
+            <List.Item>Barnehageeier</List.Item>
+            <List.Item>Styrer</List.Item>
+            <List.Item>Pedagogisk leder</List.Item>
+          </List.Unordered>
+        </List.Item>
+        <List.Item>
+          Barnehagens formål og innhold
+          <List.Unordered>
+            <List.Item>
+              Barnehagen skal ivareta barnas behov for omsorg
+            </List.Item>
+            <List.Item>Barnehagen skal ivareta barnas behov for lek</List.Item>
+            <List.Item>List Item 3.3</List.Item>
+          </List.Unordered>
+        </List.Item>
+      </List.Ordered>
+    </>
+  ),
 };
 
-export const ListeMedLenker: Story = {
+const designLinks = [
+  {
+    href: 'https://www.udir.no/om-udir/designprofil/identitet/',
+    text: 'Identitet',
+  },
+  {
+    href: 'https://www.udir.no/om-udir/designprofil/farger/',
+    text: 'Farger',
+  },
+  {
+    href: 'https://www.udir.no/om-udir/designprofil/typografi/',
+    text: 'Typografi',
+  },
+];
+
+export const WithLinks: Story = {
   args: {
     style: { listStyle: 'none', padding: 0 },
-    children: [
-      <List.Item>
-        <Link
-          href="https://www.udir.no/om-udir/designprofil/identitet/"
-          target="_blank"
-        >
-          Identitet
-        </Link>
-      </List.Item>,
-      <List.Item>
-        <Link
-          href="https://www.udir.no/om-udir/designprofil/farger/"
-          target="_blank"
-        >
-          Farger
-        </Link>
-      </List.Item>,
-      <List.Item>
-        <Link
-          href="https://www.udir.no/om-udir/designprofil/typografi/"
-          target="_blank"
-        >
-          Typografi
-        </Link>
-      </List.Item>,
-    ],
   },
+  render: (args) => (
+    <List.Unordered {...args}>
+      {designLinks.map((link) => (
+        <List.Item key={link.href}>
+          <Link href={link.href} target="_blank">
+            {link.text}
+          </Link>
+        </List.Item>
+      ))}
+    </List.Unordered>
+  ),
 };
 
-export const ListeMedOverskrift: Story = {
+export const WithHeading: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
       <div>
@@ -165,27 +154,13 @@ export const ListeMedOverskrift: Story = {
           List sm og Heading 2xs
         </Heading>
         <List.Unordered data-size="sm">
-          <List.Item>
-            <Link
-              href="https://www.designsystemet.no/grunnleggende"
-              target="_blank"
-            >
-              Grunnleggende
-            </Link>
-          </List.Item>
-          <List.Item>
-            <Link
-              href="https://www.designsystemet.no/god-praksis"
-              target="_blank"
-            >
-              God praksis
-            </Link>
-          </List.Item>
-          <List.Item>
-            <Link href="https://www.designsystemet.no/monstre" target="_blank">
-              Mønstre
-            </Link>
-          </List.Item>
+          {designLinks.map((link) => (
+            <List.Item key={link.href}>
+              <Link href={link.href} target="_blank">
+                {link.text}
+              </Link>
+            </List.Item>
+          ))}
         </List.Unordered>
       </div>
       <div>
@@ -197,27 +172,13 @@ export const ListeMedOverskrift: Story = {
           List md og Heading xs
         </Heading>
         <List.Unordered data-size="md">
-          <List.Item>
-            <Link
-              href="https://www.designsystemet.no/grunnleggende"
-              target="_blank"
-            >
-              Grunnleggende
-            </Link>
-          </List.Item>
-          <List.Item>
-            <Link
-              href="https://www.designsystemet.no/god-praksis"
-              target="_blank"
-            >
-              God praksis
-            </Link>
-          </List.Item>
-          <List.Item>
-            <Link href="https://www.designsystemet.no/monstre" target="_blank">
-              Mønstre
-            </Link>
-          </List.Item>
+          {designLinks.map((link) => (
+            <List.Item key={link.href}>
+              <Link href={link.href} target="_blank">
+                {link.text}
+              </Link>
+            </List.Item>
+          ))}
         </List.Unordered>
       </div>
       <div>
@@ -229,29 +190,73 @@ export const ListeMedOverskrift: Story = {
           List lg og Heading sm
         </Heading>
         <List.Unordered data-size="lg">
-          <List.Item>
-            <Link
-              href="https://www.designsystemet.no/grunnleggende"
-              target="_blank"
-            >
-              Grunnleggende
-            </Link>
-          </List.Item>
-          <List.Item>
-            <Link
-              href="https://www.designsystemet.no/god-praksis"
-              target="_blank"
-            >
-              God praksis
-            </Link>
-          </List.Item>
-          <List.Item>
-            <Link href="https://www.designsystemet.no/monstre" target="_blank">
-              Mønstre
-            </Link>
-          </List.Item>
+          {designLinks.map((link) => (
+            <List.Item key={link.href}>
+              <Link href={link.href} target="_blank">
+                {link.text}
+              </Link>
+            </List.Item>
+          ))}
         </List.Unordered>
       </div>
     </div>
+  ),
+};
+
+const navLinks = [
+  {
+    href: 'https://www.udir.no/utdanningslopet/barnehage/',
+    text: 'Barnehage',
+  },
+  {
+    href: 'https://www.udir.no/utdanningslopet/grunnskole/',
+    text: 'Grunnskole',
+  },
+  {
+    href: 'https://www.udir.no/utdanningslopet/videregaende-opplaring/',
+    text: 'Videregående',
+  },
+];
+
+export const AsNav: Story = {
+  args: {
+    style: { listStyle: 'none', padding: 0 },
+  },
+  render: (args) => (
+    <nav aria-label="Snarveier">
+      <List.Unordered {...args}>
+        {navLinks.map((link) => (
+          <List.Item key={link.href}>
+            <Link href={link.href} target="_blank">
+              {link.text}
+            </Link>
+          </List.Item>
+        ))}
+      </List.Unordered>
+    </nav>
+  ),
+};
+
+export const AsMenu: Story = {
+  args: {
+    style: {
+      listStyle: 'none',
+      padding: 0,
+    },
+  },
+  render: (args) => (
+    <List.Unordered asChild>
+      <menu {...args}>
+        <List.Item>
+          <Button variant="secondary">Kopier</Button>
+        </List.Item>
+        <List.Item>
+          <Button variant="secondary">Klipp ut</Button>
+        </List.Item>
+        <List.Item>
+          <Button variant="secondary">Lim inn</Button>
+        </List.Item>
+      </menu>
+    </List.Unordered>
   ),
 };
