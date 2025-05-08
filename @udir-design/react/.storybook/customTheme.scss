@@ -63,6 +63,11 @@
       color: var(--ds-color-text-default);
     }
   }
+
+  blockquote {
+    color: var(--ds-color-neutral-text-subtle);
+    border-color: var(--ds-color-support1-surface-hover);
+  }
 }
 
 .toc-list {
