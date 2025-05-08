@@ -1,68 +1,280 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Innrykk 1`] = `
-<ul>
+exports[`As Menu 1`] = `
+<menu style="list-style: none; padding: 0px;">
   <li>
-    <h3
-      data-size="xs"
-      style="margin-bottom: var(--ds-size-2);"
+    <button
+      data-variant="secondary"
+      type="button"
     >
-      List Item 1
-    </h3>
-    <ol>
-      <li>
-        List Item 1.1
-      </li>
-      <li>
-        List Item 1.2
-      </li>
-      <li>
-        List Item 1.3
-      </li>
-    </ol>
+      Kopier
+    </button>
   </li>
   <li>
-    <h3
-      data-size="xs"
-      style="margin-bottom: var(--ds-size-2);"
+    <button
+      data-variant="secondary"
+      type="button"
     >
-      List Item 2
-    </h3>
+      Klipp ut
+    </button>
+  </li>
+  <li>
+    <button
+      data-variant="secondary"
+      type="button"
+    >
+      Lim inn
+    </button>
+  </li>
+</menu>
+`;
+
+exports[`As Nav 1`] = `
+<nav aria-label="Snarveier">
+  <ul style="list-style: none; padding: 0px;">
+    <li>
+      <a
+        href="https://www.udir.no/utdanningslopet/barnehage/"
+        target="_blank"
+      >
+        Barnehage
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.udir.no/utdanningslopet/grunnskole/"
+        target="_blank"
+      >
+        Grunnskole
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.udir.no/utdanningslopet/videregaende-opplaring/"
+        target="_blank"
+      >
+        Videregående
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Indented 1`] = `
+<h2 data-size="xs">
+  Innhold
+</h2>
+<ol style="margin-top: var(--ds-size-2);">
+  <li>
+    Barnehagens verdigrunnlag
     <ul>
       <li>
-        List Item 2.1
+        Barn og barndom
       </li>
       <li>
-        List Item 2.2
+        Demokrati
       </li>
       <li>
-        List Item 2.3
+        Mangfold og gjensidig respekt
       </li>
     </ul>
   </li>
   <li>
-    <h3
-      data-size="xs"
-      style="margin-bottom: var(--ds-size-2);"
-    >
-      List Item 3
-    </h3>
+    Ansvar og roller
     <ul>
       <li>
-        List Item 3.1
+        Barnehageeier
       </li>
       <li>
-        List Item 3.2
+        Styrer
+      </li>
+      <li>
+        Pedagogisk leder
+      </li>
+    </ul>
+  </li>
+  <li>
+    Barnehagens formål og innhold
+    <ul>
+      <li>
+        Barnehagen skal ivareta barnas behov for omsorg
+      </li>
+      <li>
+        Barnehagen skal ivareta barnas behov for lek
       </li>
       <li>
         List Item 3.3
       </li>
     </ul>
   </li>
+</ol>
+`;
+
+exports[`Ordered 1`] = `
+<h2
+  data-size="xs"
+  style="margin-bottom: var(--ds-size-2);"
+>
+  Slik gjennomfører dere metoden:
+</h2>
+<ol>
+  <li>
+    Presentere en problemstilling
+  </li>
+  <li>
+    Refleksjon og summing: deltakerne går sammen to og to
+  </li>
+  <li>
+    Gjennomgang i plenum
+  </li>
+  <li>
+    Noter ned viktig innspill og refleksjoner
+  </li>
+</ol>
+`;
+
+exports[`Preview 1`] = `
+<ul>
+  <li>
+    List Item 1
+  </li>
+  <li>
+    List Item 2
+  </li>
+  <li>
+    List Item 3
+  </li>
 </ul>
 `;
 
-exports[`Liste Med Lenker 1`] = `
+exports[`Unordered 1`] = `
+<h2
+  data-size="xs"
+  style="margin-bottom: var(--ds-size-2);"
+>
+  Gjennom arbeid med kommunikasjon, språk og tekst skal barnehagen bidra til at barna
+</h2>
+<ul>
+  <li>
+    uttrykker sine følelser, tanker, meninger og erfaringer på ulike måter
+  </li>
+  <li>
+    bruker språk til å skape relasjoner, delta i lek og som redskap til å løse konflikter
+  </li>
+  <li>
+    videreutvikler sin begrepsforståelse og bruker et variert ordforråd
+  </li>
+</ul>
+`;
+
+exports[`With Heading 1`] = `
+<div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+  <div>
+    <h2
+      data-size="2xs"
+      style="margin-bottom: var(--ds-size-2);"
+    >
+      List sm og Heading 2xs
+    </h2>
+    <ul data-size="sm">
+      <li>
+        <a
+          href="https://www.udir.no/om-udir/designprofil/identitet/"
+          target="_blank"
+        >
+          Identitet
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.udir.no/om-udir/designprofil/farger/"
+          target="_blank"
+        >
+          Farger
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.udir.no/om-udir/designprofil/typografi/"
+          target="_blank"
+        >
+          Typografi
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h2
+      data-size="xs"
+      style="margin-bottom: var(--ds-size-2);"
+    >
+      List md og Heading xs
+    </h2>
+    <ul data-size="md">
+      <li>
+        <a
+          href="https://www.udir.no/om-udir/designprofil/identitet/"
+          target="_blank"
+        >
+          Identitet
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.udir.no/om-udir/designprofil/farger/"
+          target="_blank"
+        >
+          Farger
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.udir.no/om-udir/designprofil/typografi/"
+          target="_blank"
+        >
+          Typografi
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h2
+      data-size="sm"
+      style="margin-bottom: var(--ds-size-2);"
+    >
+      List lg og Heading sm
+    </h2>
+    <ul data-size="lg">
+      <li>
+        <a
+          href="https://www.udir.no/om-udir/designprofil/identitet/"
+          target="_blank"
+        >
+          Identitet
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.udir.no/om-udir/designprofil/farger/"
+          target="_blank"
+        >
+          Farger
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.udir.no/om-udir/designprofil/typografi/"
+          target="_blank"
+        >
+          Typografi
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`With Links 1`] = `
 <ul style="list-style: none; padding: 0px;">
   <li>
     <a
@@ -87,167 +299,6 @@ exports[`Liste Med Lenker 1`] = `
     >
       Typografi
     </a>
-  </li>
-</ul>
-`;
-
-exports[`Liste Med Overskrift 1`] = `
-<div style="display: flex; gap: 2rem; flex-wrap: wrap;">
-  <div>
-    <h2
-      data-size="2xs"
-      style="margin-bottom: var(--ds-size-2);"
-    >
-      List sm og Heading 2xs
-    </h2>
-    <ul data-size="sm">
-      <li>
-        <a
-          href="https://www.designsystemet.no/grunnleggende"
-          target="_blank"
-        >
-          Grunnleggende
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.designsystemet.no/god-praksis"
-          target="_blank"
-        >
-          God praksis
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.designsystemet.no/monstre"
-          target="_blank"
-        >
-          Mønstre
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div>
-    <h2
-      data-size="xs"
-      style="margin-bottom: var(--ds-size-2);"
-    >
-      List md og Heading xs
-    </h2>
-    <ul data-size="md">
-      <li>
-        <a
-          href="https://www.designsystemet.no/grunnleggende"
-          target="_blank"
-        >
-          Grunnleggende
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.designsystemet.no/god-praksis"
-          target="_blank"
-        >
-          God praksis
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.designsystemet.no/monstre"
-          target="_blank"
-        >
-          Mønstre
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div>
-    <h2
-      data-size="sm"
-      style="margin-bottom: var(--ds-size-2);"
-    >
-      List lg og Heading sm
-    </h2>
-    <ul data-size="lg">
-      <li>
-        <a
-          href="https://www.designsystemet.no/grunnleggende"
-          target="_blank"
-        >
-          Grunnleggende
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.designsystemet.no/god-praksis"
-          target="_blank"
-        >
-          God praksis
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.designsystemet.no/monstre"
-          target="_blank"
-        >
-          Mønstre
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
-`;
-
-exports[`Preview 1`] = `
-<ul>
-  <li>
-    List Item 1
-  </li>
-  <li>
-    List Item 2
-  </li>
-  <li>
-    List Item 3
-  </li>
-</ul>
-`;
-
-exports[`Sortert 1`] = `
-<h2
-  data-size="xs"
-  style="margin-bottom: var(--ds-size-2);"
->
-  Slik gjør du:
-</h2>
-<ol>
-  <li>
-    Tørk over kyllingfiletene før du krydrer og steker. Dette vil gi en finere stekeskorpe på kjøttet. Ikke bruk kjøkkenpapir som loer. Papirbiter i maten er ikke noe særlig.
-  </li>
-  <li>
-    Ha salt og pepper på filetene og eventuelt annet krydder for ekstra smak. Hvitløkpepper, paprika eller provence kan gi en god smak!
-  </li>
-  <li>
-    Stek filetene på sterk varme i to minutter på hver side. Sett deretter på lokk og stek videre på svak varme i syv minutter på hver side.
-  </li>
-</ol>
-`;
-
-exports[`Usortert 1`] = `
-<h2
-  data-size="xs"
-  style="margin-bottom: var(--ds-size-2);"
->
-  Foreningen har plikt til å ha revisor hvis de har
-</h2>
-<ul>
-  <li>
-    et gjennomsnittlig antall ansatte som tilsvarer ti årsverk eller mer
-  </li>
-  <li>
-    balansesum som er 27 millioner kroner eller mer
-  </li>
-  <li>
-    driftsinntekter for sin samlede virksomhet på 7 millioner kroner eller mer
   </li>
 </ul>
 `;
