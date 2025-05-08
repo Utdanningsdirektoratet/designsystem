@@ -5,7 +5,7 @@ import * as CardStories from './Card.stories';
 
 # Card
 
-Vi bruker `Card` til å fremheve informasjon eller oppgaver som hører sammen. Kortene finnes i flere varianter og kan inneholde elementer som tekst, bilder, tekstfelt, knapper, lenker og videoer.
+Vi bruker `Card` til å fremheve informasjon eller oppgaver som hører sammen. Den finnes i flere varianter og kan inneholde elementer som tekst, bilder, tekstfelt, knapper, lenker og videoer.
 
 **Passer til å**
 
@@ -15,7 +15,7 @@ Vi bruker `Card` til å fremheve informasjon eller oppgaver som hører sammen. K
 
 **Passer ikke til å**
 
-- erstatte seksjoner på en side (gruppere store mengder innhold i samme kort)
+- erstatte seksjoner på en side (gruppere store mengder innhold i samme `Card`)
 
 ## Slik bruker du Card
 
@@ -35,8 +35,8 @@ import { Card } from '@udir-design/react';
 
 ### Med `Block`
 
-Bruk flere `Card.Block` hvis du vil dele opp kortet med skillelinjer eller legge inn utfallende bilder eller video.
-Merk at innhold kan ikke plasseres direkte i `Card` dersom du bruker `Card.Block`. Da burde alt innholdet være inni en av av kortets `Card.Block`-seksjoner.
+Bruk flere `Card.Block` hvis du vil dele opp `Card` med skillelinjer eller legge inn utfallende bilder eller video.
+Merk at innhold ikke kan plasseres direkte i `Card` dersom du bruker `Card.Block`. Da burde alt innholdet være inni en av kortets `Card.Block`-seksjoner.
 
 <Canvas of={CardStories.Media} />
 
@@ -48,7 +48,7 @@ Merk at innhold kan ikke plasseres direkte i `Card` dersom du bruker `Card.Block
 
 `Card` kan brukes som lenkekort for å ta brukerne videre til en annen side.
 
-**Legg inn lenken i kortets tittel.** Hele kortet blir da automatisk klikkbart, og skjermlesere får en [bedre brukeropplevelse enn dersom hele kortet var en lenke](https://adrianroselli.com/2020/02/block-links-cards-clickable-regions-etc.html).
+**Legg inn lenken i tittelen til `Card`.** Hele `Card` blir da automatisk klikkbar, og skjermlesere får en [bedre brukeropplevelse enn dersom hele var en lenke](https://adrianroselli.com/2020/02/block-links-cards-clickable-regions-etc.html).
 
 <Canvas of={CardStories.WithLink} />
 
@@ -66,25 +66,25 @@ Eksempler på `default`- og `tinted`-variantene med de forskjellige fargene.
 
 ### Komponert
 
-Eksempel på hvordan andre komponenter kan brukes til å komponere et kort.
+Eksempel på hvordan andre komponenter kan brukes til å komponere et `Card`.
 
 <Canvas of={CardStories.Composed} />
 
-## Retningslinjer for Card
+## Retningslinjer
 
-Følg disse retningslinjene for å sikre at kortene er enkle å bruke og forstå:
+Følg disse retningslinjene for å sikre at et `Card` er enkelt å bruke og forstå:
 
-- Dersom kortet er en link med bilde, så skal bildet **ikke** være informativt, og `alt` attributtet skal være tomt.
+- Dersom `Card` er en link med bilde, så skal bildet **ikke** være informativt, og `alt` attributtet skal være tomt.
 
-- Et kort skal oppfattes som en selvstendig, avgrenset enhet. Innholdet i kortet skal være helhetlig og relatert til et enkelt emne eller en destinasjon.
+- Et `Card` skal oppfattes som en selvstendig, avgrenset enhet. Innholdet skal være helhetlig og relatert til et enkelt emne eller en destinasjon.
 
-- Kortet skal kunne stå alene uten å være avhengig av omkringliggende elementer for kontekst. Det skal gi tilstrekkelig informasjon til å forstå det presenterte innholdet uten eksterne referanser.
+- `Card` skal kunne stå alene uten å være avhengig av omkringliggende elementer for kontekst. Det skal gi tilstrekkelig informasjon til å forstå det presenterte innholdet uten eksterne referanser.
 
 **Unngå å:**
 
-- bruke for mange kort på en side, det kan skape forvirring
-- blande for mange forskjellige typer innhold i et enkelt kort
+- bruke for mange `Card` på en side, det kan skape forvirring
+- blande for mange forskjellige typer innhold i et enkelt `Card`
 
-## Tekst i komponenten
+## Tekst i Card
 
-Unngå lange tekster på kortene. Tenk nøye gjennom hva du trenger å si og skriv en kort og presis overskrift, underoverskrift og eventuell brødtekst.
+Unngå lange tekster i `Card`. Tenk nøye gjennom hva du trenger å si og skriv en kort og presis overskrift, underoverskrift og eventuell brødtekst.

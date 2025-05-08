@@ -53,7 +53,7 @@ export const Preview: Story = {
   args: {
     'data-color': 'neutral',
     children: [
-      <Heading>Kort</Heading>,
+      <Heading>Tittel</Heading>,
       <Paragraph>Innhold</Paragraph>,
       <Paragraph data-size="sm">Fotnote</Paragraph>,
     ],
@@ -294,11 +294,11 @@ export const Horizontal: Story = {
     style: { display: 'grid', gridTemplateColumns: '1fr 1fr' },
     children: [
       <Card.Block>
-        <Heading>Kort med grid</Heading>
+        <Heading>Card med grid</Heading>
       </Card.Block>,
       <Card.Block>
         <Paragraph>
-          Eksempel på hvordan du kan bruke et kort horisontalt ved bruk av grid.
+          Eksempel på hvordan du kan bruke et Card horisontalt ved bruk av grid.
         </Paragraph>
       </Card.Block>,
     ],
