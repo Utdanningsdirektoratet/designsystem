@@ -5,12 +5,17 @@ import * as TextfieldStories from './Textfield.stories';
 
 # Textfield
 
-Textfield er en samensatt komponent for [`input`](/docs/components-input--docs) og [`textarea`](/docs/components-textarea--docs). Du bytter mellom de ved å sette `multiline={true/false}`. `Textfield` har også innebygd `label`, `description`, `validationmessage`, `affix` og `counter`.
+Textfield er en samensatt komponent for [`Input`](/docs/components-input--docs) og [`Textarea`](/docs/components-textarea--docs). Du bytter mellom de ved å sette `multiline={true/false}`. Den har innebygget `label`, `description`, `validationmessage`, `affix` og `counter`. Trenger du full kontroll over komponentenes oppsett bruker du heller [`input`](/docs/components-input--docs) eller [`textarea`](/docs/components-textarea--docs) direkte.
+
+**Passer til å**
+
+- skrive inn korte tekster (`multiline={false}`)
+- skrive inn lengre tekster (`multiline={true}`)
+
+## Slik bruker du Textfield
 
 <Primary />
 <Controls />
-
-## Slik bruker du Textfield
 
 ```tsx
 import { Textfield } from '@udir-design/react';
@@ -20,7 +25,7 @@ import { Textfield } from '@udir-design/react';
 
 ## Eksempler
 
-### Multiline
+### Lengre tekster
 
 Du endrer til `textarea` ved å sette `multiline` til `true`. Da kan brukerne skrive lengre tekster.
 
@@ -28,7 +33,7 @@ Du endrer til `textarea` ved å sette `multiline` til `true`. Da kan brukerne sk
 
 ### Prefix/Suffix
 
-Prefixer og suffixer er nyttige for å vise enheter, valuta eller annen informasjon som er relevant for feltet. Disse skal **ikke** brukes alene, da skjermlesere ikke leser dem opp. Det er viktig at samme informasjon som vises i prefixet eller suffixet, også inkluderes i ledeteksten.
+Prefixer og suffixer er nyttige for å vise enheter, valuta eller annen informasjon som er relevant for feltet. Disse skal **ikke** brukes alene, da skjermlesere ikke leser dem opp. Det er viktig at samme informasjon som vises i prefixet eller suffixet, også inkluderes i `label`.
 
 <Canvas of={TextfieldStories.Affix} />
 
@@ -38,7 +43,9 @@ Bruk `counter` til å begrense antall tegn brukerne kan skrive i feltet.
 
 <Canvas of={TextfieldStories.Counter} />
 
-### Kontrollert
+### Kontrollere Textfield utenfra
+
+`Textfield` kan kontrolleres utenfra ved å bruke `value` og `onChange`. Dette er nyttig når du vil at `Textfield` skal oppdatere seg selv basert på endringer i andre komponenter eller tilstander.
 
 <Canvas of={TextfieldStories.Controlled} />
 
@@ -46,13 +53,13 @@ Bruk `counter` til å begrense antall tegn brukerne kan skrive i feltet.
 
 `Input` er egnet til korte tekster/svar. `Textarea` er egnet til mer utfyllende og lengre svar.
 
-### Unngå plassholdertekster
+### Unngå placeholder
 
-Plassholdertekster (`placeholder`) forsvinner når brukerne skriver i feltet. Det er derfor bedre å inkludere hint og viktig informasjon i selve ledeteksten eller den tilhørende beskrivelsen. Kontrastkravene i WCAG gjelder for `placeholder` også, og da blir teksten så mørk at brukerne kan oppfatte `textfield` som utfylt.
+`Placeholder` forsvinner når brukerne skriver i feltet. Det er derfor bedre å inkludere hint og viktig informasjon i `label` eller den tilhørende beskrivelsen. Kontrastkravene i WCAG gjelder for `placeholder` også, og da blir teksten så mørk at brukerne kan oppfatte `textfield` som utfylt.
 
 ### Tilpass bredden på tekstfeltet
 
-Tilpass bredden etter hva brukerne skal skrive inn - kort bredde for telefonnummer og bredere for stedsnavn. Ulik bredde på feltene gjør det lettere å navigere i skjemaer med mange felter.
+Tilpass bredden etter hva brukerne skal skrive inn - f.eks. kort bredde for telefonnummer og bredere for stedsnavn. Ulik bredde på feltene gjør det lettere å navigere i skjemaer med mange felter.
 
 ### Tillat kopier og lim inn
 
@@ -62,25 +69,45 @@ Brukere som skal fylle ut et tekstområde, trenger ofte å kopiere og lime inn i
 
 For å sikre en god brukeropplevelse er det viktig å bruke en kombinasjon av riktig input-type og autocomplete-attributter.
 
-- Tillat variasjoner i hvordan data skrives inn, så lenge informasjonen er forståelig. For eksempel bør telefonnumre kunne inneholde mellomrom, personnumre punktum, og e-postadresser aksepteres selv om de har et mellomrom til slutt.
+- Tillat variasjoner i hvordan data skrives inn, så lenge informasjonen er forståelig. For eksempel bør telefonnumre kunne inneholde mellomrom, personnumre burde kunne ha punktum, og e-postadresser burde aksepteres selv om de har et mellomrom til slutt.
 - Velg inputtyper som samsvarer med informasjonen du ber om, for eksempel `tel`, `search` eller `email`. Dette gir mobilbrukere et tilpasset tastatur, men vær oppmerksom på at enkelte inputtyper kan aktivere klientsidevalidering.
 - `autoComplete` brukes i felter som mottar personlig informasjon. Hvis feltet skal be om personopplysninger om en annen person enn brukeren, må du skru `autoComplete` av.
 - Pass på at brukerne ser inndata som formateres automatisk, men uten at det forstyrrer dem mens de fyller ut.
 
-## Tekst i komponenten
+### Tall i Textfield
 
-Det skal alltid være ledetekst på `textfield`. I spesielle tilfeller kan vi skjule ledeteksten ved å ikke sende inn `label`. Det kan for eksempel være i tabeller, hvis feltet får ledeteksten fra tabelloverskriften. Selv om vi har tenkt å skjule ledeteksten, må vi alltid skrive en ledetekst som gir mening, siden den leses opp av skjermlesere.
+Når brukeren skal skrive inn tall i `Textfield`, må du vurdere om du skal bruke `type="number"` eller ikke. [Number-input skaper ofte flere problemer enn det løser](https://stackoverflow.blog/2022/12/26/why-the-number-input-is-the-worst-input/).
 
-- Hold ledeteksten kort, unngå at den går over to linjer.
+**Bruk `type="number"` når**
+
+- tallet **ikke** trenger betinget validering (f.eks. tallet er alltid innefor et bestemt intervall)
+- tallet **ikke** har et forhold til andre felt i skjemaet
+
+Hvis én av disse betingelsene ikke er oppfylt må det håndteres manuelt. For integers kan du bruke `<input type="text" inputmode="numeric" pattern="[0-9]*">`. For desimaltall må du bruke `type="text"` og håndtere valideringen selv.
+
+### Ikke bruk deaktivert Textfield
+
+Vi unngår deaktivert (`disabled`) `Textfield` fordi de kan være vanskelige å oppfatte. Noen brukere vil ikke forstå hvorfor den ikke er klikkbar. Hvis et `Textfield` ikke er relevant, bør du helst fjerne det fremfor å deaktivere det. Tilby gjerne brukeren informasjon om hvorfor noe ikke er tilgjengelig.
+
+Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander) og hvilke alternativer som finnes.
+
+### Unngå skrivebeskyttet Textfield
+
+`Textfield` støtter `readOnly`-attributtet for å gjøre feltet skrivebeskyttet, og gir en visuell indikasjon
+som skiller seg fra redigerbare felter. Vi unngår likevel `readOnly` så langt det lar seg gjøre, fordi
+slike felter kan være forvirrende for noen brukere. Ikke alle vil skjønne hvorfor de ikke får til å
+endre innholdet i feltet.
+
+## Tekst i Textfield
+
+Det skal alltid være `label` på `textfield`. I spesielle tilfeller kan vi skjule `label`. Det kan for eksempel være i tabeller, hvis feltet får `label` fra tabelloverskriften. Selv om vi har tenkt å skjule den, må vi alltid skrive en `label` som gir mening, siden den leses opp av skjermlesere.
+
+- Hold `label` kort, unngå at den går over to linjer.
 - Unngå å legge til beskrivelse som ikke er relevant eller meningsfull for brukeren.
 - Unngå å bruke kolon etter `label`.
 
 ## Tilgjengelighet
 
-### Ikke bruk deaktiverte felt
-
-Ikke bruk deaktivert tilstand (`disabled`) på tekstfelt. Tenk heller over om du trenger å vise feltet i det hele tatt, eller om du heller kan skrive informasjonen ut i ren tekst eller bruke `readonly`.
-
 ### Prefiks og suffiks
 
-Prefiks og suffiks er et ekstra visuelt hjelpemiddel, som blir ignorert av skjermlesere. Vi må alltid ha en beskrivende ledetekst. Prefiks og suffiks er plassert utenfor inndatafeltene de tilhører. Da unngår vi at de ikke skaper trøbbel i noen nettlesere, som kan sette inn et ikon i inndatafeltet (for eksempel ikoner for å vise eller lage passord).
+Prefiks og suffiks er et ekstra visuelt hjelpemiddel, som blir ignorert av skjermlesere. Vi må alltid ha en beskrivende `label`. Prefiks og suffiks er plassert utenfor inndatafeltene de tilhører. Da unngår vi at de ikke skaper trøbbel i noen nettlesere, som kan sette inn et ikon i inndatafeltet (for eksempel ikoner for å vise eller lage passord).
