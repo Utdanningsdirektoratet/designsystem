@@ -6,11 +6,13 @@ import {
   CardProps,
   Details,
   Fieldset,
+  Link,
   List,
   ToggleGroup,
 } from '@udir-design/react/alpha';
 import { expect, userEvent, within } from '@storybook/test';
 import { Stack } from '.storybook/docs-components';
+import { ChevronDownUpIcon, ChevronUpDownIcon } from '@navikt/aksel-icons';
 
 export default {
   component: Details,
@@ -82,7 +84,28 @@ export const InCard: Story = {
       <Card data-color="neutral">
         <Details {...args}>
           <Details.Summary>Vedlegg</Details.Summary>
-          <Details.Content>Vedlegg 1, vedlegg 2, vedlegg 3</Details.Content>
+          <Details.Content>
+            <List.Unordered>
+              <List.Item>
+                Vedlegg 1:{' '}
+                <Link href="#" target="_blank">
+                  Regler og retningslinjer.pdf
+                </Link>{' '}
+              </List.Item>
+              <List.Item>
+                Vedlegg 2:{' '}
+                <Link href="#" target="_blank">
+                  Brevmal.docx
+                </Link>{' '}
+              </List.Item>
+              <List.Item>
+                Vedlegg 3:{' '}
+                <Link href="#" target="_blank">
+                  Illustrasjoner.zip
+                </Link>
+              </List.Item>
+            </List.Unordered>
+          </Details.Content>
         </Details>
       </Card>
     );
@@ -193,34 +216,86 @@ export const Controlled: Story = {
     const [open1, setOpen1] = useState(false);
     const [open2, setOpen2] = useState(false);
     const [open3, setOpen3] = useState(false);
+    const isOpen = [open1, open2, open3].every(Boolean);
     const toggleOpen = () => {
-      const isOpen = [open1, open2, open3].every(Boolean);
       setOpen1(!isOpen);
       setOpen2(!isOpen);
       setOpen3(!isOpen);
     };
     return (
       <>
-        <Button onClick={toggleOpen}>Toggle Details</Button>
+        <Button variant="tertiary" onClick={toggleOpen} data-size="sm">
+          {isOpen ? (
+            <>
+              <ChevronDownUpIcon aria-hidden />
+              Lukk alle
+            </>
+          ) : (
+            <>
+              <ChevronUpDownIcon aria-hidden />
+              Åpne alle
+            </>
+          )}
+        </Button>
         <br />
         <Details open={open1} onToggle={() => setOpen1(!open1)}>
-          <Details.Summary>Feide</Details.Summary>
+          <Details.Summary>Hva er Feide?</Details.Summary>
           <Details.Content>
-            Feide er en nasjonal fellesløsning for sikker identifisering i
-            utdanningssektoren.
+            <p>
+              Feide er den nasjonale løsningen for trygg innlogging og
+              datadeling i utdanning og forskning.
+            </p>
+            <p>
+              Svært mange av de digitale læremidlene og tjenestene som er i bruk
+              i norsk utdanning, har Feide som innloggingsløsning.
+            </p>
+            <p>
+              Med en Feide-bruker bruker elever, studenter, forskere og
+              undervisere ett og samme brukernavn og passord til å logge inn på
+              alle tjenester som har Feide som innloggingsløsning. De slipper
+              med andre ord å huske ulike brukernavn og passord for ulike
+              tjenester.
+            </p>
           </Details.Content>
         </Details>
         <Details open={open2} onToggle={() => setOpen2(!open2)}>
-          <Details.Summary>UIDP</Details.Summary>
+          <Details.Summary>Hva er UIDP?</Details.Summary>
           <Details.Content>
-            UIDP er Udirs nye løsning for identitets- og tilgangskontroll.
+            <p>
+              UIDP er Udirs nye løsning for identitets- og tilgangskontroll.
+            </p>
+            <p>
+              Løsningen har som formål å sørge for sikker og lettfattelig
+              pålogging for brukere til Utdanningsdirektoratets tjenester og å
+              sørge for sikker maskintilgang til Utdanningsdirektoratets API-er.
+              UIDP benyttes av over 30 systemer i Utdanningsdirektoratet og en
+              betydelig mengde brukere fra sektor er registrert i systemet. I
+              2019 hadde UIDP over 3 millioner pålogginger.
+            </p>
+            <p>
+              Brukere kan logge inn med tre forskjellige identitetsleverandører:
+              Feide, ID-porten og en lokal løsning der brukerne bare ligger i
+              UIDP. Den lokale løsningen benyttes av elever og kandidater som
+              ikke bruker Feide.
+            </p>
+            <p>
+              UIDP er også integrert med Udir sin gamle påloggingsløsning UBAS.
+            </p>
           </Details.Content>
         </Details>
         <Details open={open3} onToggle={() => setOpen3(!open3)}>
-          <Details.Summary>UBAS</Details.Summary>
+          <Details.Summary>Hva er UBAS?</Details.Summary>
           <Details.Content>
-            UBAS styrer brukertilgang til flere av våre nettjenester. UBAS vil
-            gradvis bli faset ut og erstattet av nyere påloggingsløsninger.
+            <p>
+              UBAS er Udirs gamle løsning for identitets- og tilgangskontroll.
+              Fra 2022 blir UBAS gradvis faset ut og erstattet med nyere
+              fellesløsninger (UIDP, Feide, ID-porten, Altinn Autorisasjon).
+            </p>
+            <p>
+              Etter overgang til nye løsninger vil tildeling av roller og
+              tjenestetilganger som hovedregel gjøres i Altinn, og ikke lenger i
+              UBAS.
+            </p>
           </Details.Content>
         </Details>
       </>

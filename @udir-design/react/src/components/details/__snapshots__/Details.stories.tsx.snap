@@ -2,10 +2,29 @@
 
 exports[`Controlled 1`] = `
 <button
-  data-variant="primary"
+  data-variant="tertiary"
   type="button"
+  data-size="sm"
 >
-  Toggle Details
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M12.53 4.47a.75.75 0 0 0-1.06 0l-3.5 3.5a.75.75 0 0 0 1.06 1.06L12 6.06l2.97 2.97a.75.75 0 1 0 1.06-1.06zm-3.5 10.5a.75.75 0 0 0-1.06 1.06l3.5 3.5a.75.75 0 0 0 1.06 0l3.5-3.5a.75.75 0 1 0-1.06-1.06L12 17.94z"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
+  Åpne alle
 </button>
 <br>
 <u-details data-variant="default">
@@ -15,10 +34,18 @@ exports[`Controlled 1`] = `
     slot="summary"
     tabindex="0"
   >
-    Feide
+    Hva er Feide?
   </u-summary>
   <div>
-    Feide er en nasjonal fellesløsning for sikker identifisering i utdanningssektoren.
+    <p>
+      Feide er den nasjonale løsningen for trygg innlogging og datadeling i utdanning og forskning.
+    </p>
+    <p>
+      Svært mange av de digitale læremidlene og tjenestene som er i bruk i norsk utdanning, har Feide som innloggingsløsning.
+    </p>
+    <p>
+      Med en Feide-bruker bruker elever, studenter, forskere og undervisere ett og samme brukernavn og passord til å logge inn på alle tjenester som har Feide som innloggingsløsning. De slipper med andre ord å huske ulike brukernavn og passord for ulike tjenester.
+    </p>
   </div>
 </u-details>
 <u-details data-variant="default">
@@ -28,10 +55,21 @@ exports[`Controlled 1`] = `
     slot="summary"
     tabindex="0"
   >
-    UIDP
+    Hva er UIDP?
   </u-summary>
   <div>
-    UIDP er Udirs nye løsning for identitets- og tilgangskontroll.
+    <p>
+      UIDP er Udirs nye løsning for identitets- og tilgangskontroll.
+    </p>
+    <p>
+      Løsningen har som formål å sørge for sikker og lettfattelig pålogging for brukere til Utdanningsdirektoratets tjenester og å sørge for sikker maskintilgang til Utdanningsdirektoratets API-er. UIDP benyttes av over 30 systemer i Utdanningsdirektoratet og en betydelig mengde brukere fra sektor er registrert i systemet. I 2019 hadde UIDP over 3 millioner pålogginger.
+    </p>
+    <p>
+      Brukere kan logge inn med tre forskjellige identitetsleverandører: Feide, ID-porten og en lokal løsning der brukerne bare ligger i UIDP. Den lokale løsningen benyttes av elever og kandidater som ikke bruker Feide.
+    </p>
+    <p>
+      UIDP er også integrert med Udir sin gamle påloggingsløsning UBAS.
+    </p>
   </div>
 </u-details>
 <u-details data-variant="default">
@@ -41,10 +79,15 @@ exports[`Controlled 1`] = `
     slot="summary"
     tabindex="0"
   >
-    UBAS
+    Hva er UBAS?
   </u-summary>
   <div>
-    UBAS styrer brukertilgang til flere av våre nettjenester. UBAS vil gradvis bli faset ut og erstattet av nyere påloggingsløsninger.
+    <p>
+      UBAS er Udirs gamle løsning for identitets- og tilgangskontroll. Fra 2022 blir UBAS gradvis faset ut og erstattet med nyere fellesløsninger (UIDP, Feide, ID-porten, Altinn Autorisasjon).
+    </p>
+    <p>
+      Etter overgang til nye løsninger vil tildeling av roller og tjenestetilganger som hovedregel gjøres i Altinn, og ikke lenger i UBAS.
+    </p>
   </div>
 </u-details>
 `;
@@ -64,7 +107,35 @@ exports[`In Card 1`] = `
       Vedlegg
     </u-summary>
     <div>
-      Vedlegg 1, vedlegg 2, vedlegg 3
+      <ul>
+        <li>
+          Vedlegg 1:
+          <a
+            href="#"
+            target="_blank"
+          >
+            Regler og retningslinjer.pdf
+          </a>
+        </li>
+        <li>
+          Vedlegg 2:
+          <a
+            href="#"
+            target="_blank"
+          >
+            Brevmal.docx
+          </a>
+        </li>
+        <li>
+          Vedlegg 3:
+          <a
+            href="#"
+            target="_blank"
+          >
+            Illustrasjoner.zip
+          </a>
+        </li>
+      </ul>
     </div>
   </u-details>
 </div>
