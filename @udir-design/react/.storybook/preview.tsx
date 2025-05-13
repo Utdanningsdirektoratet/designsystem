@@ -65,7 +65,7 @@ const HeadingSelfLink: React.FC<HeadingProps> = ({ children, ...props }) => {
   const href = `#${props.id}`;
   return (
     <Heading {...props} className={`sb-unstyled ${componentStyles.heading}`}>
-      {children}
+      <span>{children}</span>
       <Link
         aria-hidden
         tabIndex={-1}
