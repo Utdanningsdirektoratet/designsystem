@@ -1,5 +1,5 @@
-import { Decorator } from '@storybook/react';
-import { MouseEventHandler } from 'react';
+import type { Decorator } from '@storybook/react';
+import type { MouseEventHandler } from 'react';
 
 const handleScrollHash: MouseEventHandler<HTMLDivElement> = (event) => {
   const anchor = (event.target as Element).closest<HTMLAnchorElement>(
@@ -10,7 +10,7 @@ const handleScrollHash: MouseEventHandler<HTMLDivElement> = (event) => {
   event.preventDefault();
   const element = document.getElementById(hash.slice(1));
   if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
+    element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     element.focus({ preventScroll: true });
   }
 };
