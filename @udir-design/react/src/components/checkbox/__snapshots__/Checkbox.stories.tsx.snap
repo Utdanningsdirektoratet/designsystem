@@ -31,17 +31,15 @@ exports[`Checkbox In Color Context 1`] = `
 exports[`Controlled 1`] = `
 <fieldset>
   <legend data-weight="medium">
-    Hva vil du vite mer om?
+    Utdanningsnivå
   </legend>
-  <p data-variant="default">
-    Velg de alternativene som er relevante for deg.
-  </p>
   <div>
     <input
       type="checkbox"
       id="components-checkbox--controlled-barnehage"
       name="my-controlled"
       value="barnehage"
+      checked
     >
     <label
       data-weight="regular"
@@ -70,6 +68,7 @@ exports[`Controlled 1`] = `
       id="components-checkbox--controlled-videregaende"
       name="my-controlled"
       value="videregaende"
+      checked
     >
     <label
       data-weight="regular"
@@ -85,30 +84,37 @@ exports[`Controlled 1`] = `
   id=":r5:"
 >
 </p>
-<hr
-  aria-hidden="true"
-  style="margin-top: var(--ds-size-4);"
->
-<p
-  data-variant="default"
-  style="margin: var(--ds-size-2) 0;"
->
-  Du har valgt:
+<hr aria-hidden="true">
+<p data-variant="default">
+  (Annet innhold)
 </p>
-<div style="display: flex; gap: 1rem;">
+<hr aria-hidden="true">
+<div style="display: flex; gap: var(--ds-size-2);">
+  <p data-variant="default">
+    Viser innhold for:
+  </p>
   <button
-    data-variant="primary"
     type="button"
+    data-removable="true"
+    aria-label="Slett Barnehage"
   >
-    Toggle Grunnskole
+    Barnehage
   </button>
   <button
-    data-variant="primary"
     type="button"
+    data-removable="true"
+    aria-label="Slett Videregående"
   >
-    Toggle Videregående
+    Videregående
   </button>
 </div>
+<button
+  data-variant="secondary"
+  type="button"
+  style="width: fit-content;"
+>
+  Tøm filtre
+</button>
 `;
 
 exports[`Disabled 1`] = `

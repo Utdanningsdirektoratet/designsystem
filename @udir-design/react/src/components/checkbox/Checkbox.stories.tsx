@@ -10,6 +10,7 @@ import {
   UseCheckboxGroupProps,
   ValidationMessage,
   useCheckboxGroup,
+  Chip,
 } from '@udir-design/react/alpha';
 import { expect, fn, userEvent, waitFor, within } from '@storybook/test';
 
@@ -134,9 +135,22 @@ export const WithError: GroupStory = {
   render: Group.render,
 };
 
+type Choices = {
+  [key: string]: {
+    label: string;
+  };
+};
+
 export const Controlled: GroupStory = {
+  parameters: {
+    customStyles: {
+      display: 'flex',
+      gap: 'var(--ds-size-4)',
+      flexDirection: 'column',
+    },
+  },
   render(args, context) {
-    const choices = {
+    const choices: Choices = {
       barnehage: { label: 'Barnehage' },
       grunnskole: { label: 'Grunnskole' },
       videregaende: { label: 'Videregående' },
@@ -144,6 +158,7 @@ export const Controlled: GroupStory = {
     const { getCheckboxProps, validationMessageProps, value, setValue } =
       useCheckboxGroup({
         name: 'my-controlled',
+        value: ['barnehage', 'videregaende'],
         ...args,
       });
 
@@ -152,13 +167,12 @@ export const Controlled: GroupStory = {
         ? haystack.filter((value) => value !== needle)
         : haystack.concat(needle);
 
+    const isFiltered = value.length > 0;
+
     return (
       <>
         <Fieldset>
-          <Fieldset.Legend>Hva vil du vite mer om?</Fieldset.Legend>
-          <Fieldset.Description>
-            Velg de alternativene som er relevante for deg.
-          </Fieldset.Description>
+          <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
           {Object.entries(choices).map(([value, { label }]) => (
             <Checkbox
               key={value}
@@ -169,21 +183,33 @@ export const Controlled: GroupStory = {
           ))}
         </Fieldset>
         <ValidationMessage {...validationMessageProps} />
-        <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
-        <Paragraph style={{ margin: 'var(--ds-size-2) 0' }}>
-          Du har valgt:{' '}
-          {value
-            .map((x) => choices[x as keyof typeof choices].label)
-            .join(', ')}
-        </Paragraph>
-        <div style={{ display: 'flex', gap: '1rem' }}>
-          <Button onClick={() => setValue(toggle(value, 'grunnskole'))}>
-            Toggle Grunnskole
-          </Button>
-          <Button onClick={() => setValue(toggle(value, 'videregaende'))}>
-            Toggle Videregående
-          </Button>
+        <Divider />
+        <Paragraph>(Annet innhold)</Paragraph>
+        <Divider />
+        <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
+          <Paragraph>
+            {isFiltered ? 'Viser innhold for:' : 'Viser alt innhold'}
+          </Paragraph>
+          {isFiltered &&
+            value.map((v) => (
+              <Chip.Removable
+                key={v}
+                aria-label={`Slett ${choices[v].label}`}
+                onClick={() => setValue(toggle(value, v))}
+              >
+                {choices[v].label}
+              </Chip.Removable>
+            ))}
         </div>
+        {isFiltered && (
+          <Button
+            style={{ width: 'fit-content' }}
+            variant="secondary"
+            onClick={() => setValue([])}
+          >
+            Tøm filtre
+          </Button>
+        )}
       </>
     );
   },
