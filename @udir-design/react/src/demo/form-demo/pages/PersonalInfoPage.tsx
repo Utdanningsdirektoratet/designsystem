@@ -8,24 +8,10 @@ import {
   Select,
   Suggestion,
   Textfield,
-  useRadioGroup,
   ValidationMessage,
 } from '@udir-design/react/alpha';
-import {
-  Control,
-  Controller,
-  FieldErrors,
-  UseFormRegister,
-} from 'react-hook-form';
-import { FormValues } from '../FormDemo';
-
-type PersonalInfoPageProps = {
-  register: UseFormRegister<FormValues>;
-  errors: FieldErrors<FormValues>;
-  control: Control<FormValues, unknown>;
-  educationLevel: string | undefined;
-  setEducationLevel: (value: string) => void;
-};
+import { Controller, useFormContext } from 'react-hook-form';
+import type { FormValues, PageProps } from '../FormDemo';
 
 const DATA_COUNTIES = [
   'Oslo',
@@ -41,19 +27,11 @@ const DATA_COUNTIES = [
   'Troms og Finnmark',
 ];
 
-export const PersonalInfoPage = ({
-  register,
-  errors,
-  control,
-  educationLevel,
-  setEducationLevel,
-}: PersonalInfoPageProps) => {
-  const { ...radio } = useRadioGroup({
-    name: 'radio-group',
-    error: errors.educationLevel?.message,
-    onChange: (value) => setEducationLevel(value),
-    value: educationLevel,
-  });
+export const PersonalInfoPage = ({ showErrors }: PageProps) => {
+  const { register, control, formState } = useFormContext<FormValues>();
+  const errors = showErrors ? formState.errors : {};
+
+  const educationLevelRules = { required: 'Velg et utdanningsnivå' };
   return (
     <>
       <Heading level={2} data-size="sm">
@@ -113,42 +91,33 @@ export const PersonalInfoPage = ({
       </Field>
       <Fieldset id="educationLevel">
         <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
-        <Controller
-          name="educationLevel"
-          control={control}
-          rules={{ required: 'Velg et utdanningsnivå' }}
-          render={({ field }) => (
-            <>
-              <Radio
-                id="radio-kindergarten"
-                label="Barnehage"
-                {...radio.getRadioProps({
-                  ...field,
-                  value: 'kindergarten',
-                })}
-              />
-              <Radio
-                id="radio-primary"
-                label="Grunnskole"
-                {...radio.getRadioProps({ ...field, value: 'primary' })}
-              />
-              <Radio
-                id="radio-secondary"
-                label="Videregående"
-                {...radio.getRadioProps({ ...field, value: 'secondary' })}
-              />
-              <Radio
-                id="radio-higher"
-                label="Høyere utdanning"
-                {...radio.getRadioProps({
-                  ...field,
-                  value: 'higher',
-                })}
-              />
-            </>
-          )}
+        <Radio
+          id="radio-kindergarten"
+          label="Barnehage"
+          value="kindergarten"
+          {...register('educationLevel', educationLevelRules)}
         />
-        <ValidationMessage {...radio.validationMessageProps} />
+        <Radio
+          id="radio-primary"
+          label="Grunnskole"
+          value="primary"
+          {...register('educationLevel', educationLevelRules)}
+        />
+        <Radio
+          id="radio-secondary"
+          label="Videregående"
+          value="secondary"
+          {...register('educationLevel', educationLevelRules)}
+        />
+        <Radio
+          id="radio-higher"
+          label="Høyere utdanning"
+          value="higher"
+          {...register('educationLevel', educationLevelRules)}
+        />
+        {errors.educationLevel && (
+          <ValidationMessage>{errors.educationLevel.message}</ValidationMessage>
+        )}
       </Fieldset>
       <Field>
         <Label>Aldersgruppe</Label>

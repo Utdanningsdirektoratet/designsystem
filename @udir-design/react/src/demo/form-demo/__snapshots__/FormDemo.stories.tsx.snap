@@ -167,15 +167,15 @@ exports[`Form Story 1`] = `
         <div>
           <input
             type="text"
-            list=":rg:"
+            list=":re:"
             placeholder
             id="county"
             name="county"
             aria-invalid="false"
             value
-            popovertarget=":rg:"
+            popovertarget=":re:"
             aria-autocomplete="list"
-            aria-controls=":rg:"
+            aria-controls=":re:"
             aria-expanded="false"
             autocomplete="off"
             role="combobox"
@@ -190,7 +190,7 @@ exports[`Form Story 1`] = `
           <u-datalist
             data-sr-singular="%d forslag"
             data-sr-plural="%d forslag"
-            id=":rg:"
+            id=":re:"
             hidden
             role="listbox"
             tabindex="-1"
@@ -347,7 +347,7 @@ exports[`Form Story 1`] = `
           <input
             type="radio"
             id="radio-kindergarten"
-            name="radio-group"
+            name="educationLevel"
             value="kindergarten"
           >
           <label
@@ -361,7 +361,7 @@ exports[`Form Story 1`] = `
           <input
             type="radio"
             id="radio-primary"
-            name="radio-group"
+            name="educationLevel"
             value="primary"
           >
           <label
@@ -375,7 +375,7 @@ exports[`Form Story 1`] = `
           <input
             type="radio"
             id="radio-secondary"
-            name="radio-group"
+            name="educationLevel"
             value="secondary"
           >
           <label
@@ -389,7 +389,7 @@ exports[`Form Story 1`] = `
           <input
             type="radio"
             id="radio-higher"
-            name="radio-group"
+            name="educationLevel"
             value="higher"
           >
           <label
@@ -399,12 +399,6 @@ exports[`Form Story 1`] = `
             Høyere utdanning
           </label>
         </div>
-        <p
-          data-field="validation"
-          hidden
-          id=":re:"
-        >
-        </p>
       </fieldset>
       <div>
         <label
