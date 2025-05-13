@@ -7,7 +7,7 @@ import {
   Heading,
 } from '@udir-design/react/alpha';
 import classes from './FormDemo.module.css';
-import { useForm } from 'react-hook-form';
+import { FormProvider, useForm } from 'react-hook-form';
 import PaginationControls from './PaginationControls';
 import { PersonalInfoPage } from './pages/PersonalInfoPage';
 import { RankingPage } from './pages/RankingPage';
@@ -26,6 +26,10 @@ export type FormValues = {
   contactMethods: string[];
 };
 
+export type PageProps = {
+  showErrors: boolean;
+};
+
 const pageFields: Record<number, (keyof FormValues)[]> = {
   1: ['firstName', 'lastName', 'county', 'educationLevel', 'ageGroup'],
   2: ['rankings'],
@@ -33,24 +37,19 @@ const pageFields: Record<number, (keyof FormValues)[]> = {
 };
 
 export const FormDemo = ({ ...props }: FormDemo) => {
+  const methods = useForm<FormValues>({
+    mode: 'onChange',
+  });
   const {
-    register,
     handleSubmit,
-    control,
     trigger,
     reset,
     formState: { errors },
-  } = useForm<FormValues>({
-    mode: 'onChange',
-  });
+  } = methods;
 
   const [currentPage, setCurrentPage] = useState(1);
   const [attemptedNext, setAttemptedNext] = useState(false);
   const totalPages = 3;
-  const [educationLevel, setEducationLevel] = useState<string | undefined>(
-    undefined,
-  );
-  const [contactMethods, setContactMethods] = useState<string[]>([]);
 
   const onSubmit = (data: FormValues) => {
     console.log(data);
@@ -58,8 +57,6 @@ export const FormDemo = ({ ...props }: FormDemo) => {
     reset();
     setCurrentPage(1);
     setAttemptedNext(false);
-    setEducationLevel(undefined);
-    setContactMethods([]);
   };
 
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -78,110 +75,97 @@ export const FormDemo = ({ ...props }: FormDemo) => {
   };
 
   const renderCurrentPage = () => {
-    const renderErrors = attemptedNext ? errors : {};
+    const props = { showErrors: attemptedNext };
     switch (currentPage) {
       case 1:
-        return (
-          <PersonalInfoPage
-            register={register}
-            errors={renderErrors}
-            control={control}
-            educationLevel={educationLevel}
-            setEducationLevel={setEducationLevel}
-          />
-        );
+        return <PersonalInfoPage {...props} />;
       case 2:
-        return <RankingPage control={control} errors={renderErrors} />;
+        return <RankingPage {...props} />;
       case 3:
-        return (
-          <FinishPage
-            register={register}
-            errors={renderErrors}
-            control={control}
-            contactMethods={contactMethods}
-            setContactMethods={setContactMethods}
-          />
-        );
+        return <FinishPage {...props} />;
     }
   };
 
   return (
-    <div {...props} className={classes.container}>
-      <Heading level={1} data-size="md">
-        Skjema
-      </Heading>
-      <Alert>
-        Ditt svar i skjemaet lagres automatisk, så du kan fortsette på et senere
-        tidspunkt.
-      </Alert>
-      <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
-        {renderCurrentPage()}
-        {currentPage === totalPages && (
-          <Button
-            onClick={() => {
-              setAttemptedNext(true);
-              handleSubmit(() => {
-                dialogRef.current?.showModal();
-              })();
-            }}
-          >
-            Send inn skjema
-          </Button>
-        )}
-      </form>
-      <Dialog ref={dialogRef}>
-        <Dialog.Block>
-          <Heading data-size="xs">
-            Er du sikker på at du vil sende inn skjema?
-          </Heading>
-        </Dialog.Block>
-        <Dialog.Block className={classes.dialogActions}>
-          <Button type="submit" onClick={handleSubmit(onSubmit)}>
-            Send inn skjema
-          </Button>
-          <Button
-            onClick={() => dialogRef.current?.close()}
-            variant="secondary"
-          >
-            Avbryt
-          </Button>
-        </Dialog.Block>
-      </Dialog>
-      {attemptedNext && Object.keys(errors).length > 0 && (
-        <ErrorSummary>
-          <ErrorSummary.Heading>
-            For å gå videre må du rette opp følgende feil:
-          </ErrorSummary.Heading>
-          <ErrorSummary.List>
-            {errors.rankings && Object.values(errors.rankings)[0] && (
-              <ErrorSummary.Item key="rankings">
-                <ErrorSummary.Link href="#rankings">
-                  {Object.values(errors.rankings)[0]?.message}
-                </ErrorSummary.Link>
-              </ErrorSummary.Item>
-            )}
-            {Object.entries(errors)
-              .filter(([fieldName]) => fieldName !== 'rankings')
-              .map(([fieldName, error]) => (
-                <ErrorSummary.Item key={fieldName}>
-                  <ErrorSummary.Link href={`#${fieldName}`}>
-                    {typeof error?.message === 'string'
-                      ? error.message
-                      : 'Feltet er påkrevd'}
+    <FormProvider {...methods}>
+      <div {...props} className={classes.container}>
+        <Heading level={1} data-size="md">
+          Skjema
+        </Heading>
+        <Alert>
+          Ditt svar i skjemaet lagres automatisk, så du kan fortsette på et
+          senere tidspunkt.
+        </Alert>
+
+        <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
+          {renderCurrentPage()}
+          {currentPage === totalPages && (
+            <Button
+              onClick={() => {
+                setAttemptedNext(true);
+                handleSubmit(() => {
+                  dialogRef.current?.showModal();
+                })();
+              }}
+            >
+              Send inn skjema
+            </Button>
+          )}
+        </form>
+        <Dialog ref={dialogRef}>
+          <Dialog.Block>
+            <Heading data-size="xs">
+              Er du sikker på at du vil sende inn skjema?
+            </Heading>
+          </Dialog.Block>
+          <Dialog.Block className={classes.dialogActions}>
+            <Button type="submit" onClick={handleSubmit(onSubmit)}>
+              Send inn skjema
+            </Button>
+            <Button
+              onClick={() => dialogRef.current?.close()}
+              variant="secondary"
+            >
+              Avbryt
+            </Button>
+          </Dialog.Block>
+        </Dialog>
+        {attemptedNext && Object.keys(errors).length > 0 && (
+          <ErrorSummary>
+            <ErrorSummary.Heading>
+              For å gå videre må du rette opp følgende feil:
+            </ErrorSummary.Heading>
+            <ErrorSummary.List>
+              {errors.rankings && Object.values(errors.rankings)[0] && (
+                <ErrorSummary.Item key="rankings">
+                  <ErrorSummary.Link href="#rankings">
+                    {Object.values(errors.rankings)[0]?.message}
                   </ErrorSummary.Link>
                 </ErrorSummary.Item>
-              ))}
-          </ErrorSummary.List>
-        </ErrorSummary>
-      )}
-      <PaginationControls
-        currentPage={currentPage}
-        totalPages={totalPages}
-        setCurrentPage={(page) => {
-          handleNextPage(page);
-        }}
-        className={classes.pagination}
-      />
-    </div>
+              )}
+              {Object.entries(errors)
+                .filter(([fieldName]) => fieldName !== 'rankings')
+                .map(([fieldName, error]) => (
+                  <ErrorSummary.Item key={fieldName}>
+                    <ErrorSummary.Link href={`#${fieldName}`}>
+                      {typeof error?.message === 'string'
+                        ? error.message
+                        : 'Feltet er påkrevd'}
+                    </ErrorSummary.Link>
+                  </ErrorSummary.Item>
+                ))}
+            </ErrorSummary.List>
+          </ErrorSummary>
+        )}
+        <PaginationControls
+          currentPage={currentPage}
+          totalPages={totalPages}
+          setCurrentPage={(page) => {
+            handleNextPage(page);
+          }}
+          className={classes.pagination}
+        />
+      </div>
+    </FormProvider>
   );
 };
