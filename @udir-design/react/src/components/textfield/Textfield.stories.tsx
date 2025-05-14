@@ -40,6 +40,9 @@ const meta: Meta<typeof Textfield> = {
       ],
     },
   },
+  parameters: {
+    layout: 'centered',
+  },
 };
 
 export default meta;
