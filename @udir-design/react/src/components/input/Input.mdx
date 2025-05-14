@@ -6,32 +6,60 @@ import * as InputStories from './Input.stories';
 
 # Input
 
-`Input` er et skjemaelement for å samle inn brukerdata. Det tilbyr grunnleggende funksjonalitet og er ideell når du trenger full kontroll over komponentenes oppsett og validering, noe som gjør det ideelt for bygging av spesialtilpassede elementer.
+`Input` er et skjemaelement for å samle inn brukerdata. Det tilbyr grunnleggende funksjonalitet og er nyttig når du trenger full kontroll over komponentenes oppsett og validering, noe som gjør det ideelt for bygging av spesialtilpassede elementer.
 
-Se også [`Textfield`](docs/components-textfield--docs) som er en gruppering av komponenter som ofte brukes sammen. Med `Textfield` slipper du å sy sammen `Label`, `Description`, `Input`, `ValidationMessage` selv hver gang.
+Se også [`Textfield`](/docs/components-textfield--docs) som er en gruppering av komponenter som ofte brukes sammen. Da slipper du å sy sammen `Label`, `Description`, `Input`, `ValidationMessage` selv hver gang.
+
+**Passer til å**
+
+- skreddersy inputfelt til spesifikke behov
+
+**Passer ikke til å**
+
+- skrive inn lengre tekster, bruk heller [`Textarea`](/docs/components-textarea--docs)
+
+## Slik bruker du Input
 
 <Primary />
 <Controls />
+
+```tsx
+import { Input } from '@udir-design/react';
+
+<Field>
+  <Label>Input</Label>
+  <Input name="input" type="text" />
+  <ValidationMessage hidden>Feilmelding</ValidationMessage>
+</Field>;
+```
+
 ## Eksempler
 
-### Kontrollert
-
-<Canvas of={InputStories.Controlled} />
-
-### Html size
+### Sett bredde med html size
 
 `Size` attributtet kan brukes for å angi bredden på tekstfeltet. Verdien kan være et tall fra 1 til 99.
 
 <Canvas of={InputStories.HtmlSize} />
 
-## Retningslinjer
+### Bruk av forskjellige inputtyper
 
-Se retningslinjer for [`Textfield`](docs/components-textfield--docs#retningslinjer).
+Trenger du full kontroll over for eksempel [`Checkbox`](/docs/components-checkbox--docs), [`Radio`](/docs/components-radio--docs) eller [`Switch`](/docs/components-switch--docs) kan du bruke `Input` med `type` attributtet. Dette gir deg mulighet til å lage spesialtilpassede komponenter.
 
-### Plassering av ledeteksten
+<Canvas of={InputStories.InputTypes} />
 
-Ledeteksten og eventuell beskrivelse skal alltid stå over tekstfeltet. Dette gjør dem lette å se på små skjermer og hindres ikke av eventuelle feilmeldinger.
+### Kontrollere Input utenfra
 
-## Tilgjengelighet
+`Input` kan kontrolleres utenfra ved å bruke `value` og `onChange`. Dette er nyttig når du vil at Textfield skal oppdatere seg selv basert på endringer i andre komponenter eller tilstander.
 
-For god praksis se [`Textfield`](docs/components-textfield--docs).
+<Canvas of={InputStories.Controlled} />
+
+## Retningslinjer og tilgjengelighet
+
+Ledeteksten og eventuell beskrivelse skal alltid stå over `Input`. Dette gjør det enkelt å se feltene på små skjermer og hindres ikke av eventuelle feilmeldinger.
+
+For ytterligere informasjon om tilgjengelighet og retningslinjer, se dokumentasjonen som dekker den aktuelle inputtypen:
+
+- [`Textfield`](/docs/components-textfield--docs)
+- [`Checkbox`](/docs/components-checkbox--docs)
+- [`Radio`](/docs/components-radio--docs)
+- [`Switch`](/docs/components-switch--docs)
