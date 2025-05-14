@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+  min-height: 800px;
+  border: 1px solid var(--ds-color-neutral-border-subtle);
+  border-radius: var(--ds-border-radius-md);
+}
+
+.card {
+  border-radius: var(--ds-border-radius-md);
+  padding: 24px;
+}
+
+.components {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-8);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  gap: var(--ds-size-2);
+  align-items: center;
+}
