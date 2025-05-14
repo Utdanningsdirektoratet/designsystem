@@ -1,0 +1,25 @@
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-8);
+  margin-top: var(--ds-size-4);
+}
+
+.overviewContent {
+  display: grid;
+  grid-template-columns: 0.75fr 2fr;
+  gap: var(--ds-size-10);
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+}
+
+.datesCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-2);
+  text-wrap: nowrap;
+}
