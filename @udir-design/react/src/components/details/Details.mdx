@@ -20,17 +20,15 @@ Med `Details` kan du presentere mye innhold på liten plass i én eller flere ra
 
 - samle innhold som er litt lengre
 - gjøre det frivillig å se innhold som er litt mindre viktig enn alltid synlig innhold
-- vise ofte stilte spørsmål
 - vise tilleggsinformasjon som kan være til hjelp for brukerne
 
 **Passer ikke til å**
 
 - vise små mengder innhold
 - vise viktig innhold som alle bør se når de kommer til siden (for eksempel feilmeldinger)
-- gi mer informasjon om et spørsmål i et skjema – det innholdet bør brukeren se med en gang
-- velge mellom ulike alternativer
+- gi mer informasjon om et spørsmål i et skjema
 - skjule innhold fra søkeresultater eller oversikter/tabeller
-- dele opp en logisk flyt eller en rekke med handlinger, da bør du heller bruke en trinnvis liste
+- dele opp en logisk flyt eller en rekke med handlinger
 
 ## Slik bruker du Details
 
@@ -101,22 +99,22 @@ Dette kan passe i tilfeller der `Details` ikke fyller hele siden, eller når det
 
 ## Retningslinjer
 
-Tester viser at brukerne sjeldnere ser på skjult innhold, enn det som er synlig direkte på siden. Ikke bruk `Details` til å skjule innhold for å gjøre siden "ryddigere". Finn ut om du faktisk må skjule innhold og vær klar over hvorfor du gjør det. Tenk over om det er lurt å vise det viktigste innholdet i åpen status når brukeren kommer inn på siden.
+Når innhold skjules i `Details` er det mindre sannsynlig at brukerne leser det. Ikke bruk `Details` til å skjule innhold for å gjøre siden "ryddigere". Finn ut om du faktisk må skjule innhold og vær klar over hvorfor du gjør det. Tenk over om det er lurt å vise det viktigste innholdet i åpen status når brukeren kommer inn på siden.
 
-Hvis innholdet er for langt eller komplisert, bør du heller omformulere teksten og/eller fordele den på flere sider.
-
-### Unngå å bruke flere nivåer av `Details`
+### Unngå å bruke flere nivåer av Details
 
 Ikke legg en `Details` inni en annen. Er innholdet allerede skjult, er det ikke hensiktsmessig å skjule det ytterligere. Det blir vanskeligere for brukeren å finne informasjonen de leter etter.
 
-### Hold innholdet kort
+### Unngå for langt innhold
 
-Hold innholdet kort for å sikre at det lett kan relateres til overskriften.
-Bryt innholdet opp i flere `Details` istedenfor å bruke flere overskrifter i én `Details`. Ved mye innhold kan du vurdere å lage en egen side i stedet. Dette gjør det enklere å finne tilbake til innholdet senere.
+Ikke legg for mye innhold i en `Details`. Ofte kan et par avsnitt være passe. Dette gjør det lettere å relatere innholdet til overskriften.
+Der det gir mening, foretrekk å bryte innholdet opp i flere `Details` istedenfor å bruke flere overskrifter i én `Details`.
+
+Hvis innholdet er for langt eller komplisert, bør du vurdere om det er mulig å korte ned eller omformulere teksten, endre strukturen, fordele innholdet på flere sider, og/eller bruke funksjon for "innhold på denne siden". Om du flytter innhold over på egen side, vær oppmerksom på brukerne ofte kan nå innholdet fra mange ulike kontekster, og det bør komme tydelig fram hvilken helhet innholdsfragmentet inngår i.
 
 <DetailsEx1 />
 
-### Bruk ramme dersom `Details` brukes med kun ett element
+### Bruk ramme dersom Details brukes med kun ett element
 
 Hvis `Details` kun har ett element, kan det være lurt å legge det i et `Card` for å skille det fra resten av innholdet. Bruk av ett enkelt `Details` med ramme er et godt virkemiddel for å organisere og skille ut informasjon. Det kan for eksempel brukes til informasjon som forklarer noe mer detaljert eller forklarer noe relatert til innholdet på siden.
 
@@ -124,16 +122,21 @@ Hvis `Details` kun har ett element, kan det være lurt å legge det i et `Card` 
 
 ## Tekst i Details
 
-`Details` skal brukes til maksimalt to avsnitt innenfor hvert nedtrekk. Sørg for at overskriften gir en god beskrivelse av hva innholdet i `Details` er. En tydelig og beskrivende overskrift skal gjøre brukerne nysgjerrige på innholdet. Overskriftene til `Details` kan ha stor betydning for om brukerne finner det de trenger, om innholdet blir lest og om det kan regnes som tilgjengelig for alle brukere. «Vis mer» eller «Les mer her» er ikke gode nok titler. Har du en `Details` med mange nedtrekk, kan du ha en hovedoverskrift eller temaoverskrift over hele listen.
+Sørg for at overskriften gir en god beskrivelse av hva innholdet i `Details` er. En tydelig og beskrivende overskrift skal gjøre brukerne nysgjerrige på innholdet. Overskriftene til `Details` kan ha stor betydning for om brukerne finner det de trenger, om innholdet blir lest og om det kan regnes som tilgjengelig for alle brukere. «Vis mer» eller «Les mer her» er ikke gode nok titler.
+
+Har du en liste med mange `Details`, kan du ha en hovedoverskrift eller temaoverskrift over hele listen.
 
 ## Tilgjengelighet
 
-[`Chevron`](https://aksel.nav.no/ikoner/ChevronDown)-ikonet er bevisst plassert til venstre for teksten, av hensyn til brukere med nedsatt synsfelt. Der er det lettere for brukeren å se det (fordi vi leser fra venstre). Mange brukere tror at de må peke på og velge ikonet for å åpne.
+[`Chevron`-ikonet](https://aksel.nav.no/ikoner/ChevronDown) er bevisst plassert til venstre for teksten, av hensyn til brukere med nedsatt synsfelt. Der er det lettere for brukeren å se det (fordi vi leser fra venstre). Mange brukere tror at de må peke på og velge ikonet for å åpne.
 
 Ikke plasser andre interaktive elementer inn i `Details.Summary`, da hele raden skal være klikkbar. Ikonet og teksten skal _ikke_ lenke til ulike handlinger (for eksempel at teksten går videre til en side, mens ikonet åpner listen). Brukerne forventer ikke at ikon og tekst skal gi ulikt resultat når de velger dem.
 
-<kbd>Tab</kbd> : Flytter fokus til neste element som kan ha fokus <br />
-<kbd>Shift</kbd> + <kbd>Tab</kbd> : Flytter fokus til forrige element som kan ha
-fokus <br />
-<kbd>Space</kbd> : Aktiverer knapp <br />
-<kbd>Enter</kbd> : Aktiverer knapp
+- <kbd>Tab</kbd> flytter fokus til neste element som kan ha fokus
+- <kbd>Shift</kbd> + <kbd>Tab</kbd> flytter fokus til forrige element som kan ha
+  fokus
+- <kbd>Space</kbd> eller <kbd>Enter</kbd> aktiverer knapp
+
+## Kjente mangler
+
+I Firefox og Safari spilles det ikke av animasjon når `Details` åpnes og lukkes. Se [`interpolate-size` hos MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/interpolate-size).
