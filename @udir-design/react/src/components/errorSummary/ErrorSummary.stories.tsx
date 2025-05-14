@@ -43,42 +43,68 @@ export const Preview: Story = {
 
 export const WithForm: Story = {
   parameters: {
-    customStyles: { display: 'grid', gap: 'var(--ds-size-4)' },
+    customStyles: {
+      display: 'grid',
+      gap: 'var(--ds-size-4)',
+    },
   },
-  render: (args) => (
-    <>
-      <Textfield
-        label="Fornavn"
-        id="fornavn"
-        error="Fornavn må være minst 2 tegn"
-      />
+  render: (args) => {
+    const [firstName, setFirstName] = useState('');
+    const [telephone, setTelephone] = useState('');
 
-      <Textfield
-        label="Telefon"
-        id="telefon"
-        type="tel"
-        error="Telefonnummer kan kun inneholde siffer"
-      />
+    const firstNameError =
+      firstName.trim().length < 2 ? 'Fornavn må være minst 2 tegn' : '';
+    const telephoneError = !/^\d{8,}$/.test(telephone.trim())
+      ? 'Telefonnummer må ha minst 8 siffer'
+      : '';
 
-      <ErrorSummary {...args}>
-        <ErrorSummary.Heading>
-          For å gå videre må du rette opp følgende feil:
-        </ErrorSummary.Heading>
-        <ErrorSummary.List>
-          <ErrorSummary.Item>
-            <ErrorSummary.Link href="#fornavn">
-              Fornavn må være minst 2 tegn
-            </ErrorSummary.Link>
-          </ErrorSummary.Item>
-          <ErrorSummary.Item>
-            <ErrorSummary.Link href="#telefon">
-              Telefonnummer kan kun inneholde siffer
-            </ErrorSummary.Link>
-          </ErrorSummary.Item>
-        </ErrorSummary.List>
-      </ErrorSummary>
-    </>
-  ),
+    const hasErrors = Boolean(firstNameError || telephoneError);
+
+    return (
+      <>
+        <Textfield
+          label="Fornavn"
+          id="fornavn"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+          error={firstNameError || undefined}
+        />
+
+        <Textfield
+          label="Telefon"
+          id="telefon"
+          type="tel"
+          value={telephone}
+          onChange={(e) => setTelephone(e.target.value)}
+          error={telephoneError || undefined}
+        />
+
+        {hasErrors && (
+          <ErrorSummary {...args}>
+            <ErrorSummary.Heading>
+              For å gå videre må du rette opp følgende feil:
+            </ErrorSummary.Heading>
+            <ErrorSummary.List>
+              {firstNameError && (
+                <ErrorSummary.Item>
+                  <ErrorSummary.Link href="#fornavn">
+                    {firstNameError}
+                  </ErrorSummary.Link>
+                </ErrorSummary.Item>
+              )}
+              {telephoneError && (
+                <ErrorSummary.Item>
+                  <ErrorSummary.Link href="#telefon">
+                    {telephoneError}
+                  </ErrorSummary.Link>
+                </ErrorSummary.Item>
+              )}
+            </ErrorSummary.List>
+          </ErrorSummary>
+        )}
+      </>
+    );
+  },
 };
 
 export const ShowHide: Story = {
@@ -94,11 +120,11 @@ export const ShowHide: Story = {
           }}
         >
           <Button onClick={() => setShow(!show)}>
-            {show ? 'Skjul' : 'Vis'}
+            {show ? 'Skjul feilmelding' : 'Send inn skjema'}
           </Button>
         </div>
         {show && (
-          <ErrorSummary>
+          <ErrorSummary {...args}>
             <ErrorSummary.Heading>
               For å gå videre må du rette opp følgende feil:
             </ErrorSummary.Heading>
@@ -110,7 +136,7 @@ export const ShowHide: Story = {
               </ErrorSummary.Item>
               <ErrorSummary.Item>
                 <ErrorSummary.Link href="#telefon">
-                  Telefonnummer kan kun inneholde siffer
+                  Telefonnummer ma ha minst 8 siffer
                 </ErrorSummary.Link>
               </ErrorSummary.Item>
             </ErrorSummary.List>
