@@ -5,15 +5,21 @@ import * as SearchStories from './Search.stories';
 
 # Search
 
-<Primary />
-<Controls />
+`Search` lar brukere raskt finne relevant innhold på et nettsted eller i en applikasjon. Komponenten består av et søkefelt, med eller uten en søkeknapp.
+
+**Passer til å**
+
+- søke med fritekst
+
+**Passer ikke til å**
+
+- søke i en liste med alternativer, bruk heller [`Suggestion`](/docs/components-suggestion--docs)
+- søke i innhold som er lett å navigere i
 
 ## Slik bruker du Search
 
-Du velger selv om du vil bruke `Search.Clear` og `Search.Button`. Vi anbefaler at du bruker `Search.Clear` for å gi brukeren mulighet til å fjerne søket.
-Dersom du ikke har `Search.Button` vil input feltet få et søkeikon.
-
-Du burde legge på `aria-label` eller `aria-labelledby` dersom du ikke kobler `Search.Input` med en `Label`.
+<Primary />
+<Controls />
 
 ```tsx
 import { Search } from '@udir-design/react';
@@ -25,29 +31,62 @@ import { Search } from '@udir-design/react';
 </Search.Clear>
 ```
 
-## Kontrollert
+## Eksempler
 
-<Canvas of={SearchStories.Controlled} />
+### Varianter
 
-## Varianter
-
-Du kan endre `variant` på `Button`, eller ta den bort for å få forskjellige varianter.
+Du velger selv om du vil bruke `Search.Clear` og `Search.Button`. Vi anbefaler at du bruker `Search.Clear` for å gi brukeren mulighet til å fjerne søket.
+Dersom du ikke har `Search.Button` vil input feltet få et søkeikon.
+Du kan endre `variant` på `Button` for å tilpasse visningen. Eksemplene nedenfor viser varianter som inkluderer ikon, primær- og sekundærknapp.
 
 <Canvas of={SearchStories.Variants} />
 
-## Med Label
+### Med Label
 
-Dersom du vil ha label på søkefeltet, må du legge til en `Label` komponent som du kobler sammen med `Search.Input`.
+Du kan legge til en `Label` komponent som du kobler sammen med `Search.Input`.
 I eksempelet har vi brukt `Field` for å få oppkobling mellom `Label` og `Search.Input`.
 
 <Canvas of={SearchStories.WithLabel} />
 
-## Skjema
+### Bruk i skjema
 
 Søkeknappen har typen `"submit"` og vil dermed automatisk sende inn skjema.
 
 <Canvas of={SearchStories.Form} />
 
-## Referanser
+### Kontrollere Search utenfra
 
-- [The ideal search box is 27 characters wide](https://www.smashingmagazine.com/2009/09/10-useful-usability-findings-and-guidelines/#6-the-ideal-search-box-is-27-characters-wide)
+`Search` kan kontrolleres utenfra ved å bruke value og onChange. Dette er nyttig når du vil at `Search` skal oppdateres basert på endringer i andre komponenter eller tilstander.
+I dette tilfellet har vi brukt `Search` i et skjema hvor søk blir utført når brukeren trykker på "Søk", eller en av hurtigsøk-knappene ([`Chip.Button`](/docs/components-chip--docs)).
+
+<Canvas of={SearchStories.Controlled} />
+
+## Retningslinjer
+
+### Unngå placeholder
+
+`Placeholder` forsvinner når brukerne skriver i feltet. Det er derfor bedre å inkludere hint og viktig informasjon i `label` eller den tilhørende beskrivelsen. Kontrastkravene i WCAG gjelder for `placeholder` også, og da blir teksten så mørk at brukerne kan oppfatte `textfield` som utfylt.
+
+### Tilpass bredden på søkefeltet
+
+Bredden på søkefeltet bør tilsvare lengden på søkeordene brukerne vanligvis skriver inn. Størrelsen på feltet er et viktig signal om hva de kan skrive inn. For eksempel bør et søkefelt for personnumre ha en bredde som tilsvarer et personnummer. Hovedsøkefeltet for et nettsted bør være bredere, slik at brukerne kan se flere ord samtidig.
+Unngå å bruke for korte søkefelt, da dette kan føre til at deler av innholdet ikke vises.
+
+### Label
+
+I mange tilfeller er det ikke nødvendig med synlig label på `Search`. Feltets utforming, søkeikon og knapp gjør søket tydelig for brukeren.
+Legg til `aria-label` eller `aria-labelledby` dersom du ikke kobler `Search.Input` med en `Label`.
+
+## Tilgjengelighet
+
+### Søk-landemerke
+
+Hvis du vil eksponere søket for hjelpemidler som et ARIA søk-landemerke, legger du det i et element med `role="search"`. Velg det ytterste elementet som er tilknyttet søket (f.eks. `<form role="search">`). Dette kan være nyttig om søket er en viktig del av sidens funksjonalitet, som for eksempel hovedsøket for nettsiden eller hvis søkefeltet er starten av en viktig brukeroppgave. Slik blir det mulig å navigere direkte til søket med hjelpemidler.
+
+### Tastaturnavigering
+
+- <kbd>ESC</kbd> - tømmer søkefeltet for en enhetlig opplevelse på tvers av
+  nettlesere.
+- <kbd>Tab</kbd> - lar brukere bevege seg mellom inputfelt, clear-knapp og
+  søkeknapp.
+- <kbd>Enter</kbd> - sender inn søket når fokus er i inputfeltet.
