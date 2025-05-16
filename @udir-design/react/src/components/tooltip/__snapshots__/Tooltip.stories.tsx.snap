@@ -9,12 +9,12 @@ exports[`Preview 1`] = `
 >
   Hold peker over meg
 </button>
-<div
+<span
   role="tooltip"
   id=":r0:"
   popover="manual"
   style="opacity: 0;"
 >
   Tooltip tekst
-</div>
+</span>
 `;

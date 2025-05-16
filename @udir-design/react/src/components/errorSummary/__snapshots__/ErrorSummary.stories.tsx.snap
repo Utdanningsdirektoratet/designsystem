@@ -2,10 +2,8 @@
 
 exports[`Preview 1`] = `
 <div
+  tabindex="-1"
   aria-labelledby=":r0:"
-  aria-live="polite"
-  aria-relevant="all"
-  role="alert"
 >
   <h2 id=":r0:">
     For å gå videre må du rette opp følgende feil:
@@ -49,10 +47,8 @@ exports[`Show Hide 1`] = `
   </button>
 </div>
 <div
+  tabindex="-1"
   aria-labelledby=":r2:"
-  aria-live="polite"
-  aria-relevant="all"
-  role="alert"
 >
   <h2 id=":r2:">
     For å gå videre må du rette opp følgende feil:
@@ -124,10 +120,8 @@ exports[`With Form 1`] = `
   </p>
 </div>
 <div
+  tabindex="-1"
   aria-labelledby=":r1:"
-  aria-live="polite"
-  aria-relevant="all"
-  role="alert"
 >
   <h2 id=":r1:">
     For å gå videre må du rette opp følgende feil:
