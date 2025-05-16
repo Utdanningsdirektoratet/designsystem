@@ -4,6 +4,7 @@ import { Button, Heading, Link, Paragraph } from '@udir-design/react/alpha';
 import { Alert } from './Alert';
 import { within, expect } from '@storybook/test';
 import { useState } from 'react';
+import { formatReactSource } from '.storybook/utils/sourceTransformers';
 
 type Story = StoryObj<typeof Alert>;
 
@@ -186,9 +187,13 @@ export const WrongLiveRegion: StoryFn<typeof Alert> = () => {
 };
 WrongLiveRegion.parameters = {
   docs: {
+    canvas: {
+      sourceState: 'shown',
+    },
     source: {
       // Ensure we show the actual code, and not the initially rendered output
       type: 'code',
+      transform: formatReactSource,
     },
   },
   customStyles: {
