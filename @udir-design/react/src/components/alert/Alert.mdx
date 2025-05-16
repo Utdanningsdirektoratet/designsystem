@@ -5,16 +5,20 @@ import * as AlertStories from './Alert.stories';
 
 # Alert
 
-Vi bruker `Alert` til å gi brukeren informasjon som det er ekstra viktig at de ser og forstår. Alert er designet for å fange brukernes oppmerksomhet. Teksten i varselet skal være kort og tydelig.
+Vi bruker `Alert` til å gi brukeren informasjon som det er ekstra viktig at de ser og forstår. Komponenten er designet for å fange brukernes oppmerksomhet. Teksten i varselet skal være kort og tydelig.
 
 **Passer til å**
 
-- gi korte og informative varsler
+- gi korte og informative tidsbegrensede varsler
+- informere om feil som kun påvirker én del av systemet eller en mindre funksjon
+- informere om tilkoblingsproblemer eller API-feil som sannsynligvis løser seg ved å laste inn siden på nytt
 
 **Passer ikke til å**
 
-- validere enkelte skjemaelement, bruk heller komponentens egen feilmelding
-- varsle om en feil som hindrer all videre bruk av tjenesten (bruk en feilside i stedet)
+- validere individuelle skjemaelementer, bruk heller komponentens egen feilmelding
+- oppsummere flere feilmeldinger i et skjema, bruk heller [`ErrorSummary`](/docs/components-errorsummary--docs)
+- vise feil som hindrer all videre bruk av tjenesten, bruk heller en feilside
+- vise statisk informasjon som skal vises hele tiden, bruk heller [`Card`](/docs/components-card--docs)
 
 ## Slik bruker du Alert
 
@@ -29,17 +33,17 @@ import { Alert } from '@udir-design/react';
 
 ## Eksempler
 
-`Alert` kan brukes til fire ulike budskap: Informasjon, advarsler, suksess og feilmelding. Den kan også brukes sammen med andre komponenter og stiler. Her er noen eksempler.
+`Alert` kan brukes til fire ulike budskap: Informasjon, suksess, advarsler og feilmelding.
 
 ### Informasjon
 
-Bruk `info` til informasjon som er nyttig for brukerne, men ikke avgjørende for at de skal forstå oppgaven.
+Bruk `info` når du vil gi brukeren nøytral og nyttig informasjon.
 
 <Canvas of={AlertStories.VariantInfo} />
 
 ### Suksess
 
-Bruk `success` når du vil bekrefte at brukeren har fullført en oppgave.
+Bruk `success` når du vil bekrefte at brukeren har fullført en oppgave, eller vise at handlingen var vellykket.
 
 <Canvas of={AlertStories.VariantSuccess} />
 
@@ -57,11 +61,11 @@ Bruk `danger` for å informere om noe som er kritisk eller som hindrer brukeren 
 
 ### Med og uten overskrift
 
-Hvis meldingen er lenger enn en setning kan det være nyttig å bruke en overskrift til å fremheve det viktigste. Dette kan gjøres ved bruk av [Typografi](/docs/components-typography--docs)-komponentene. Husk å velge riktig overskriftsnivå ut fra plassen alert har i innholdsstrukturen på siden.
+Hvis meldingen er lenger enn en setning kan det være nyttig å bruke en overskrift til å fremheve det viktigste. Dette kan gjøres ved bruk av [typografi-komponentene](/docs/components-typography--docs). Husk å velge riktig overskriftsnivå ut fra plassen `Alert` har i innholdsstrukturen på siden.
 
 Dersom tittel og beskrivelse gjentar det samme er det bedre å bruke en enkel setning uten overskrift.
 
-<Canvas of={AlertStories.MedKunHeading} />
+<Canvas of={AlertStories.UtenHeading} />
 
 ### Med lenke
 
@@ -71,21 +75,11 @@ Du kan ha en lenke i Alert hvis det hjelper brukeren med å løse oppgaven. Men 
 
 ## Retningslinjer
 
-Bruk `Alert` sparsomt. Brukere kan forveksle varsler med reklame, og dermed overse dem. Hvis vi bruker varsler for ofte, kan vi forverre dette problemet.
+`Alert` brukes for å vise viktige meldinger som krever oppmerksomhet, men ikke nødvendigvis handling. Den kan brukes til å informere brukeren om status, endringer eller problemer i en løsning. Meldingen vises tydelig og skiller seg visuelt fra resten av innholdet.
+
+Bruk `Alert` varsomt. Brukere kan forveksle varsler med reklame, og dermed overse dem. Hvis vi bruker varsler for ofte, kan vi forverre dette problemet.
 
 `Alert` skal ha samme utseende og formspråk i alle tjenester og produkter. Den skal være mulig å kjenne igjen over alt, så vi skal ikke justere den. De fire ulike fargene som brukes i komponenten skiller seg ut fra Udir-paletten slik at de fanger oppmerksomheten til brukeren.
-
-### Størrelser
-
-Når du setter `size`, endrer vi ikke størrelsen på tekst som ligger i tekstkomponenter. Fritekst som blir sendt inn vil endre størrelse i henhold til `size`-propen.
-
-Dersom du sender inn tekst ved bruk av komponenter kan du følge tabellen under for anbefalt størrelser:
-
-| Alert Størrelse | Heading størrelse | Paragraph størrelse |
-| --------------- | ----------------- | ------------------- |
-| sm              | 2xs               | sm                  |
-| md              | xs                | md                  |
-| lg              | sm                | lg                  |
 
 ## Tekst i Alert
 
@@ -124,18 +118,27 @@ Teksten i `Alert` bør følge disse prinsippene:
 
 ## Tilgjengelighet
 
-### Alternativtekst
+### Interaksjon med skjermleser
 
-Ikonene er ikke bare dekorative. De har en standard alternativtekst som kommuniserer alvorlighetsgrad: "Informasjon", "Suksess", "Advarsel" og "Feil". Denne blir lest opp som en del av innholdet for skjermleserbrukere.
+Ut av boksen blir `Alert` presentert for skjermleserbrukere som vanlig statisk innhold. For varsler som oppstår dynamisk kan du selv definere en _live region_ for skjermlesere, men vær opperksom på hvilken oppførsel dette medfører.
+Du kan lese mer om dette i [MDN sin dokumentasjon om ARIA live regions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions).
 
-### Bruk av `role="alert"`
+Legg spesielt merke til at live-regionen — altså elementet med attributt `role="alert"`, `role="status"` eller `aria-live` med verdi `"assertive"` eller `"polite"` — må eksistere på siden **før** varselet som skal leses opp.
 
-Alert-komponenten kommer ikke med en `role="alert"` som default, den blir presentert for skjermleserbrukere som vanlig statisk innhold. Du kan legge på `role="alert"` selv, men vær oppmerksom på forventet oppførsel dette medfører. Du kan lese mer om dette på [dokumentasjonen til ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role).
+For dynamiske varsler er det mest aktuelt å bruke `role="alert"` for kritiske varsel eller `role="status"` for mindre kritiske vasel, som beskrevet i [mønsteret for systemvarsler](https://www.designsystemet.no/monstre/systemvarsler#niv%C3%A5er-for-dynamiske-varsler). Se også [alert role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) og [status role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/status_role) hos MDN.
 
-Ikke bruk `role="alert"` om `Alert` er synlig når siden lastes inn.
+**Ikke** kombiner `role="alert"` og `aria-live`, siden [dette fører at varselet leses opp dobbelt i VoiceOver](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions#:~:text=adding%20both%20aria%2Dlive%20and%20role=%22alert%22%20causes%20double%20speaking%20issues%20in%20VoiceOver%20on%20iOS).
 
-<Canvas of={AlertStories.UtenAria} />
+Du **bør** kombinere `role="status"` og `aria-live="polite"` [for å maksimere kompatibilitet](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions#roles_with_implicit_live_region_attributes).
 
-Bruk `role="alert"` hvis den dukker opp dynamisk underveis pga. brukerinput eller andre faktorer som kan utløse en alert.
+#### Ikke gjør dette
 
-<Canvas of={AlertStories.MedAria} />
+Ikke definer en _live region_ direkte på `Alert`. For statiske varsler har det ingen effekt, og for dynamiske varsler vil det ikke bli tolket riktig av alle skjermlesere, selv om mange skjermlesere har spesialhåndtering som går ut over ARIA-spesifikasjonen for akkurat `role="alert"`.
+
+<Canvas of={AlertStories.WrongLiveRegion} />
+
+#### Gjør dette for dynamiske varsler
+
+Definer en _live region_, f.eks. med `role="alert"`, for varsler som kan dukke opp dynamisk underveis som følge av brukerens handlinger eller andre faktorer. Dette vil også fungere på samme måte med `role="status"`.
+
+<Canvas of={AlertStories.CorrectLiveRegion} />

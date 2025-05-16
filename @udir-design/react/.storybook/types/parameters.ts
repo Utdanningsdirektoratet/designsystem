@@ -36,6 +36,11 @@ export type MdxComponentOverrides = {
   >;
 } & Record<string, React.FC>;
 
+type DocsParams = Required<DocsParameters>['docs'];
+// Use Partial here to make `of` not required when setting parameters.docs.{canvas,source}
+type DocsCanvasParams = Partial<DocsParams['canvas']>;
+type DocsSourceParams = Partial<DocsParams['source']>;
+
 declare module '@storybook/types' {
   interface Parameters extends A11yParameters, DocsParameters {
     /**
@@ -117,7 +122,9 @@ declare module '@storybook/types' {
       >;
     };
 
-    docs?: DocsParameters['docs'] & {
+    docs?: Omit<DocsParams, 'canvas' | 'source'> & {
+      canvas?: DocsCanvasParams;
+      source?: DocsSourceParams;
       components?: MdxComponentOverrides;
       theme?: ThemeVars;
       toc?:

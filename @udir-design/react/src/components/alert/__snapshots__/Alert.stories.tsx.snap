@@ -1,28 +1,15 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Med Aria 1`] = `
-<div
-  data-color="danger"
-  role="alert"
+exports[`Correct Live Region 1`] = `
+<div role="alert">
+</div>
+<button
+  data-variant="secondary"
+  type="button"
+  data-size="sm"
 >
-  <h2
-    data-size="xs"
-    style="margin-bottom: var(--ds-size-2);"
-  >
-    Vi klarer ikke lagre skjemaet
-  </h2>
-  <p data-variant="default">
-    Vi har mistet forbindelsen med serveren og får ikke lagret skjemaet. Vent litt og prøv en gang til.
-  </p>
-</div>
-`;
-
-exports[`Med Kun Heading 1`] = `
-<div data-color="warning">
-  <p data-variant="default">
-    Du har 7 dager igjen på å fullføre søknaden.
-  </p>
-</div>
+  Handling som fører til varsel
+</button>
 `;
 
 exports[`Med Lenke 1`] = `
@@ -48,16 +35,10 @@ exports[`Preview 1`] = `
 </div>
 `;
 
-exports[`Uten Aria 1`] = `
+exports[`Uten Heading 1`] = `
 <div data-color="warning">
-  <h2
-    data-size="xs"
-    style="margin-bottom: var(--ds-size-2);"
-  >
-    Nedetid
-  </h2>
   <p data-variant="default">
-    I natt klokken 00:00 til 02:00 vil nettsiden være nede på grunn av vedlikehold.
+    Du har 7 dager igjen på å fullføre søknaden.
   </p>
 </div>
 `;
@@ -116,4 +97,14 @@ exports[`Variant Warning 1`] = `
     Det gjør at du kan bli avbrutt mens du fyller ut skjemaet. Vi jobber med å rette problemene.
   </p>
 </div>
+`;
+
+exports[`Wrong Live Region 1`] = `
+<button
+  data-variant="secondary"
+  type="button"
+  data-size="sm"
+>
+  Handling som fører til varsel
+</button>
 `;

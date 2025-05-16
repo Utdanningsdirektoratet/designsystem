@@ -1,8 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { Heading, Link, Paragraph } from '@udir-design/react/alpha';
+import { Button, Heading, Link, Paragraph } from '@udir-design/react/alpha';
 import { Alert } from './Alert';
 import { within, expect } from '@storybook/test';
+import { useState } from 'react';
 
 type Story = StoryObj<typeof Alert>;
 
@@ -118,7 +119,7 @@ export const VariantDanger: Story = {
   },
 };
 
-export const MedKunHeading: Story = {
+export const UtenHeading: Story = {
   args: {
     'data-color': 'warning',
     children: [
@@ -148,45 +149,88 @@ export const MedLenke: Story = {
   },
 };
 
-export const UtenAria: Story = {
-  args: {
-    'data-color': 'warning',
-    children: [
-      <Heading
-        level={2}
-        data-size="xs"
-        style={{
-          marginBottom: 'var(--ds-size-2)',
-        }}
+export const WrongLiveRegion: StoryFn<typeof Alert> = () => {
+  const [showAlert, setShowAlert] = useState(false);
+  return (
+    <>
+      {showAlert && (
+        <Alert
+          data-color="warning"
+          // Feil bruk: role="alert" ligger på selve varselet
+          role="alert"
+        >
+          <Heading
+            level={2}
+            data-size="xs"
+            style={{
+              marginBottom: 'var(--ds-size-2)',
+            }}
+          >
+            Vi klarer ikke lagre skjemaet
+          </Heading>
+          <Paragraph>
+            Vi har mistet forbindelsen med serveren og får ikke lagret skjemaet.
+            Vent litt og prøv en gang til.
+          </Paragraph>
+        </Alert>
+      )}
+      <Button
+        data-size="sm"
+        variant="secondary"
+        onClick={() => setShowAlert((value) => !value)}
       >
-        Nedetid
-      </Heading>,
-      <Paragraph>
-        I natt klokken 00:00 til 02:00 vil nettsiden være nede på grunn av
-        vedlikehold.
-      </Paragraph>,
-    ],
+        {showAlert ? 'Skjul varsel' : 'Handling som fører til varsel'}
+      </Button>
+    </>
+  );
+};
+WrongLiveRegion.parameters = {
+  docs: {
+    source: {
+      // Ensure we show the actual code, and not the initially rendered output
+      type: 'code',
+    },
+  },
+  customStyles: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 'var(--ds-size-2)',
+    alignItems: 'start',
   },
 };
 
-export const MedAria: Story = {
-  args: {
-    'data-color': 'danger',
-    role: 'alert',
-    children: [
-      <Heading
-        level={2}
-        data-size="xs"
-        style={{
-          marginBottom: 'var(--ds-size-2)',
-        }}
+export const CorrectLiveRegion: StoryFn<typeof Alert> = () => {
+  const [showAlert, setShowAlert] = useState(false);
+  return (
+    <>
+      {/* Korrekt bruk: role="alert" ligger på elementet der varselet dukker opp */}
+      <div role="alert">
+        {showAlert && (
+          <Alert data-color="warning">
+            <Heading
+              level={2}
+              data-size="xs"
+              style={{
+                marginBottom: 'var(--ds-size-2)',
+              }}
+            >
+              Vi klarer ikke lagre skjemaet
+            </Heading>
+            <Paragraph>
+              Vi har mistet forbindelsen med serveren og får ikke lagret
+              skjemaet. Vent litt og prøv en gang til.
+            </Paragraph>
+          </Alert>
+        )}
+      </div>
+      <Button
+        data-size="sm"
+        variant="secondary"
+        onClick={() => setShowAlert((value) => !value)}
       >
-        Vi klarer ikke lagre skjemaet
-      </Heading>,
-      <Paragraph>
-        Vi har mistet forbindelsen med serveren og får ikke lagret skjemaet.
-        Vent litt og prøv en gang til.
-      </Paragraph>,
-    ],
-  },
+        {showAlert ? 'Skjul varsel' : 'Handling som fører til varsel'}
+      </Button>
+    </>
+  );
 };
+CorrectLiveRegion.parameters = WrongLiveRegion.parameters;
