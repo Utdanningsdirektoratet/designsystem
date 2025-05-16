@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/blocks';
+import { Meta, Canvas, Source, Controls, Primary } from '@storybook/blocks';
 import * as AlertStories from './Alert.stories';
 
 <Meta of={AlertStories} />
@@ -135,7 +135,7 @@ Du **bør** kombinere `role="status"` og `aria-live="polite"` [for å maksimere 
 
 Ikke definer en _live region_ direkte på `Alert`. For statiske varsler har det ingen effekt, og for dynamiske varsler vil det ikke bli tolket riktig av alle skjermlesere, selv om mange skjermlesere har spesialhåndtering som går ut over ARIA-spesifikasjonen for akkurat `role="alert"`.
 
-<Canvas of={AlertStories.WrongLiveRegion} />
+<Source of={AlertStories.WrongLiveRegion} dark />
 
 #### Gjør dette for dynamiske varsler
 
