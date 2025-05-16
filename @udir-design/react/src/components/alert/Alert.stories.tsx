@@ -119,7 +119,7 @@ export const VariantDanger: Story = {
   },
 };
 
-export const UtenHeading: Story = {
+export const NoHeading: Story = {
   args: {
     'data-color': 'warning',
     children: [
@@ -128,7 +128,7 @@ export const UtenHeading: Story = {
   },
 };
 
-export const MedLenke: Story = {
+export const WithLink: Story = {
   args: {
     'data-color': 'warning',
     children: [
