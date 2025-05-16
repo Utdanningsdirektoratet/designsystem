@@ -182,14 +182,14 @@ exports[`Simple 1`] = `
       >
         Glemt passord?
       </a>
-      <div
+      <span
         role="tooltip"
         id=":r0:"
         popover="manual"
         style="opacity: 0;"
       >
         Trykk for å få hjelp
-      </div>
+      </span>
       <button
         data-variant="primary"
         type="button"
