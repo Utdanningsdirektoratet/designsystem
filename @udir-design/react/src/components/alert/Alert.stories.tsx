@@ -67,11 +67,10 @@ export const VariantSuccess: Story = {
           marginBottom: 'var(--ds-size-2)',
         }}
       >
-        Du kan levere søknaden din!
+        Du har levert søknaden din!
       </Heading>,
       <Paragraph>
-        Du har besvart på alle spørsmålene i skjemaet. Du kan nå levere søknaden
-        din.
+        Vi har mottatt søknaden din, og vil behandle den i løpet av få dager.
       </Paragraph>,
     ],
   },
