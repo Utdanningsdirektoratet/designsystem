@@ -17,20 +17,6 @@ exports[`Med Aria 1`] = `
 </div>
 `;
 
-exports[`Med Heading 1`] = `
-<div data-color="info">
-  <h2
-    data-size="xs"
-    style="margin-bottom: var(--ds-size-2);"
-  >
-    Har du husket å bestille passtime?
-  </h2>
-  <p data-variant="default">
-    Det er lange køer for å bestille pass om dagen, det kan være lurt å bestille i god tid om du trenger pass til sommeren.
-  </p>
-</div>
-`;
-
 exports[`Med Kun Heading 1`] = `
 <div data-color="warning">
   <p data-variant="default">
@@ -96,10 +82,10 @@ exports[`Variant Info 1`] = `
     data-size="xs"
     style="margin-bottom: var(--ds-size-2);"
   >
-    Har du husket å bestille passtime?
+    Har du husket å melde deg på privatisteksamen?
   </h2>
   <p data-variant="default">
-    Det er lange køer for å bestille pass om dagen, det kan være lurt å bestille i god tid før du skal reise.
+    Du må melde deg på innen 1. februar for våreksamen.
   </p>
 </div>
 `;
@@ -110,10 +96,10 @@ exports[`Variant Success 1`] = `
     data-size="xs"
     style="margin-bottom: var(--ds-size-2);"
   >
-    Gratulerer! Du kan nå starte selskapet ditt
+    Du kan levere søknaden din!
   </h2>
   <p data-variant="default">
-    Det ser ut til at regnestykket går i pluss og at du har det som skal til for å starte selskapet ditt.
+    Du har besvart på alle spørsmålene i skjemaet. Du kan nå levere søknaden din.
   </p>
 </div>
 `;
