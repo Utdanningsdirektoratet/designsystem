@@ -4,14 +4,14 @@ exports[`Preview 1`] = `
 <button
   data-variant="primary"
   type="button"
-  popovertarget=":r0:"
+  popovertarget="«r0»"
   popovertargetaction="show"
 >
   Hold peker over meg
 </button>
 <span
   role="tooltip"
-  id=":r0:"
+  id="«r0»"
   popover="manual"
   style="opacity: 0;"
 >

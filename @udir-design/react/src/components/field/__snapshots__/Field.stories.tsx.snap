@@ -13,8 +13,8 @@ exports[`Affix 1`] = `
       NOK
     </span>
     <input
-      type="text"
       id="components-field--affix-input"
+      type="text"
     >
     <span aria-hidden="true">
       pr. mnd.
@@ -76,8 +76,8 @@ exports[`Affix 1`] = `
   </label>
   <div>
     <input
-      type="text"
       id="components-field--affix-input-noaffix"
+      type="text"
     >
   </div>
 </div>
@@ -90,9 +90,9 @@ exports[`Affix 1`] = `
   </label>
   <div>
     <input
-      type="text"
       size="10"
       id="components-field--affix-input-noaffix-small"
+      type="text"
     >
   </div>
 </div>
@@ -105,9 +105,9 @@ exports[`Affix 1`] = `
   </label>
   <div>
     <input
-      type="text"
       size="9999"
       id="components-field--affix-input-noaffix-huge"
+      type="text"
     >
   </div>
 </div>
@@ -123,9 +123,9 @@ exports[`Affix 1`] = `
       NOK
     </span>
     <input
-      type="text"
       size="10"
       id="components-field--affix-input-affix-small"
+      type="text"
     >
     <span aria-hidden="true">
       pr. mnd.
@@ -144,9 +144,9 @@ exports[`Affix 1`] = `
       NOK
     </span>
     <input
-      type="text"
       size="50"
       id="components-field--affix-input-affix-huge"
+      type="text"
     >
     <span aria-hidden="true">
       pr. mnd.
@@ -198,8 +198,8 @@ exports[`Position 1`] = `
       Radio
     </label>
     <input
-      type="radio"
       id="components-field--position-radio-start"
+      type="radio"
     >
   </div>
   <div data-position="start">
@@ -210,8 +210,8 @@ exports[`Position 1`] = `
       Checkbox
     </label>
     <input
-      type="checkbox"
       id="components-field--position-checkbox-start"
+      type="checkbox"
     >
   </div>
   <div data-position="start">
@@ -222,9 +222,9 @@ exports[`Position 1`] = `
       Switch
     </label>
     <input
-      type="checkbox"
       role="switch"
       id="components-field--position-switch-start"
+      type="checkbox"
     >
   </div>
 </fieldset>
@@ -241,8 +241,8 @@ exports[`Position 1`] = `
       Radio
     </label>
     <input
-      type="radio"
       id="components-field--position-radio-end"
+      type="radio"
     >
   </div>
   <div data-position="end">
@@ -253,8 +253,8 @@ exports[`Position 1`] = `
       Checkbox
     </label>
     <input
-      type="checkbox"
       id="components-field--position-checkbox-end"
+      type="checkbox"
     >
   </div>
   <div data-position="end">
@@ -265,9 +265,9 @@ exports[`Position 1`] = `
       Switch
     </label>
     <input
-      type="checkbox"
       role="switch"
       id="components-field--position-switch-end"
+      type="checkbox"
     >
   </div>
 </fieldset>
@@ -288,8 +288,8 @@ exports[`Preview 1`] = `
     Beskrivelse
   </div>
   <input
-    type="text"
     id="components-field--preview"
+    type="text"
     aria-describedby="components-field--preview:validation  components-field--preview:description"
   >
   <p

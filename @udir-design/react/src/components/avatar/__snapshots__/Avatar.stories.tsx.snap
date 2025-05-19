@@ -46,7 +46,7 @@ exports[`In Dropdown 1`] = `
 <button
   data-variant="tertiary"
   type="button"
-  popovertarget=":r0:"
+  popovertarget="«r0»"
 >
   <span
     data-variant="circle"
@@ -59,7 +59,7 @@ exports[`In Dropdown 1`] = `
   Velg Profil
 </button>
 <div
-  id=":r0:"
+  id="«r0»"
   popover="manual"
   data-variant="default"
   data-size="md"
@@ -256,9 +256,9 @@ exports[`With Image 1`] = `
   aria-label="Ola Nordman"
 >
   <img
-    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&amp;w=1480&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     alt
     aria-hidden="true"
+    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&amp;w=1480&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   >
 </span>
 `;

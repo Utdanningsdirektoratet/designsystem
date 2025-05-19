@@ -4,12 +4,12 @@ exports[`Multiple Headings 1`] = `
 <button
   data-variant="primary"
   type="button"
-  popovertarget=":r1:"
+  popovertarget="«r1»"
 >
   Eksempel med overskrifter
 </button>
 <div
-  id=":r1:"
+  id="«r1»"
   popover="manual"
   data-variant="default"
 >
@@ -42,12 +42,12 @@ exports[`Preview 1`] = `
 <button
   data-variant="primary"
   type="button"
-  popovertarget=":r0:"
+  popovertarget="«r0»"
 >
   Eksempel
 </button>
 <div
-  id=":r0:"
+  id="«r0»"
   popover="manual"
   data-variant="default"
 >

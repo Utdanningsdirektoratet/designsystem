@@ -94,7 +94,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
 
   // Handler to export the selected students.
   const handleExport = (
-    dialogExportRef: React.RefObject<HTMLDialogElement>,
+    dialogExportRef: React.RefObject<HTMLDialogElement | null>,
   ) => {
     if (!isStudentsSelected) {
       setShowErrorSummary(true);

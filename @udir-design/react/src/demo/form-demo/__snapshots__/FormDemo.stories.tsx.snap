@@ -18,11 +18,11 @@ exports[`Form Story 1`] = `
           data-variant="primary"
           type="button"
           value="sm"
-          id="togglegroup-item-:r2:"
+          id="togglegroup-item-«r2»"
           aria-checked="true"
           aria-current="true"
           role="radio"
-          name="togglegroup-name-:r0:"
+          name="togglegroup-name-«r0»"
           data-roving-tabindex-item="true"
           tabindex="0"
         >
@@ -32,11 +32,11 @@ exports[`Form Story 1`] = `
           data-variant="tertiary"
           type="button"
           value="md"
-          id="togglegroup-item-:r4:"
+          id="togglegroup-item-«r4»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-:r0:"
+          name="togglegroup-name-«r0»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -46,11 +46,11 @@ exports[`Form Story 1`] = `
           data-variant="tertiary"
           type="button"
           value="lg"
-          id="togglegroup-item-:r6:"
+          id="togglegroup-item-«r6»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-:r0:"
+          name="togglegroup-name-«r0»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -73,11 +73,11 @@ exports[`Form Story 1`] = `
           data-variant="tertiary"
           type="button"
           value="light"
-          id="togglegroup-item-:r9:"
+          id="togglegroup-item-«r9»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-:r7:"
+          name="togglegroup-name-«r7»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -87,11 +87,11 @@ exports[`Form Story 1`] = `
           data-variant="tertiary"
           type="button"
           value="dark"
-          id="togglegroup-item-:rb:"
+          id="togglegroup-item-«rb»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-:r7:"
+          name="togglegroup-name-«r7»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -101,11 +101,11 @@ exports[`Form Story 1`] = `
           data-variant="primary"
           type="button"
           value="auto"
-          id="togglegroup-item-:rd:"
+          id="togglegroup-item-«rd»"
           aria-checked="true"
           aria-current="true"
           role="radio"
-          name="togglegroup-name-:r7:"
+          name="togglegroup-name-«r7»"
           data-roving-tabindex-item="true"
           tabindex="0"
         >
@@ -137,8 +137,8 @@ exports[`Form Story 1`] = `
         </label>
         <div>
           <input
-            type="text"
             id="firstName"
+            type="text"
             name="firstName"
           >
         </div>
@@ -151,10 +151,10 @@ exports[`Form Story 1`] = `
           Etternavn
         </label>
         <input
-          type="text"
           id="lastName"
-          name="lastName"
           aria-invalid="false"
+          type="text"
+          name="lastName"
         >
       </div>
       <div>
@@ -166,16 +166,16 @@ exports[`Form Story 1`] = `
         </label>
         <div>
           <input
-            type="text"
-            list=":re:"
+            list="«re»"
             placeholder
             id="county"
-            name="county"
             aria-invalid="false"
+            type="text"
             value
-            popovertarget=":re:"
+            name="county"
+            popovertarget="«re»"
             aria-autocomplete="list"
-            aria-controls=":re:"
+            aria-controls="«re»"
             aria-expanded="false"
             autocomplete="off"
             role="combobox"
@@ -190,13 +190,13 @@ exports[`Form Story 1`] = `
           <u-datalist
             data-sr-singular="%d forslag"
             data-sr-plural="%d forslag"
-            id=":re:"
+            id="«re»"
             hidden
             role="listbox"
             tabindex="-1"
           >
             <u-option
-              data-empty="true"
+              data-empty
               role="none"
               tabindex="-1"
               aria-disabled="false"
@@ -345,10 +345,10 @@ exports[`Form Story 1`] = `
         </legend>
         <div>
           <input
-            type="radio"
             id="radio-kindergarten"
-            name="educationLevel"
+            type="radio"
             value="kindergarten"
+            name="educationLevel"
           >
           <label
             data-weight="regular"
@@ -359,10 +359,10 @@ exports[`Form Story 1`] = `
         </div>
         <div>
           <input
-            type="radio"
             id="radio-primary"
-            name="educationLevel"
+            type="radio"
             value="primary"
+            name="educationLevel"
           >
           <label
             data-weight="regular"
@@ -373,10 +373,10 @@ exports[`Form Story 1`] = `
         </div>
         <div>
           <input
-            type="radio"
             id="radio-secondary"
-            name="educationLevel"
+            type="radio"
             value="secondary"
+            name="educationLevel"
           >
           <label
             data-weight="regular"
@@ -387,10 +387,10 @@ exports[`Form Story 1`] = `
         </div>
         <div>
           <input
-            type="radio"
             id="radio-higher"
-            name="educationLevel"
+            type="radio"
             value="higher"
+            name="educationLevel"
           >
           <label
             data-weight="regular"

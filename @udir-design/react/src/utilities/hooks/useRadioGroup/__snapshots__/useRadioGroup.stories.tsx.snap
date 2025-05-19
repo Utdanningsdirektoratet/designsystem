@@ -7,10 +7,10 @@ exports[`Default 1`] = `
   </legend>
   <div>
     <input
-      type="radio"
       id="utilities-useradiogroup--default-10-20"
-      name="my-group"
+      type="radio"
       value="10-20"
+      name="my-group"
     >
     <label
       data-weight="regular"
@@ -21,10 +21,10 @@ exports[`Default 1`] = `
   </div>
   <div>
     <input
-      type="radio"
       id="utilities-useradiogroup--default-21-45"
-      name="my-group"
+      type="radio"
       value="21-45"
+      name="my-group"
     >
     <label
       data-weight="regular"
@@ -35,10 +35,10 @@ exports[`Default 1`] = `
   </div>
   <div>
     <input
-      type="radio"
       id="utilities-useradiogroup--default-46-80"
-      name="my-group"
+      type="radio"
       value="46-80"
+      name="my-group"
     >
     <label
       data-weight="regular"
@@ -50,7 +50,7 @@ exports[`Default 1`] = `
   <p
     data-field="validation"
     hidden
-    id=":r0:"
+    id="«r0»"
   >
   </p>
 </fieldset>

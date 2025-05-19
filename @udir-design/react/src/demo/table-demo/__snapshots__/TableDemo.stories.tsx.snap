@@ -18,11 +18,11 @@ exports[`Table Story 1`] = `
           data-variant="primary"
           type="button"
           value="sm"
-          id="togglegroup-item-:r2:"
+          id="togglegroup-item-«r2»"
           aria-checked="true"
           aria-current="true"
           role="radio"
-          name="togglegroup-name-:r0:"
+          name="togglegroup-name-«r0»"
           data-roving-tabindex-item="true"
           tabindex="0"
         >
@@ -32,11 +32,11 @@ exports[`Table Story 1`] = `
           data-variant="tertiary"
           type="button"
           value="md"
-          id="togglegroup-item-:r4:"
+          id="togglegroup-item-«r4»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-:r0:"
+          name="togglegroup-name-«r0»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -46,11 +46,11 @@ exports[`Table Story 1`] = `
           data-variant="tertiary"
           type="button"
           value="lg"
-          id="togglegroup-item-:r6:"
+          id="togglegroup-item-«r6»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-:r0:"
+          name="togglegroup-name-«r0»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -73,11 +73,11 @@ exports[`Table Story 1`] = `
           data-variant="tertiary"
           type="button"
           value="light"
-          id="togglegroup-item-:r9:"
+          id="togglegroup-item-«r9»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-:r7:"
+          name="togglegroup-name-«r7»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -87,11 +87,11 @@ exports[`Table Story 1`] = `
           data-variant="tertiary"
           type="button"
           value="dark"
-          id="togglegroup-item-:rb:"
+          id="togglegroup-item-«rb»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-:r7:"
+          name="togglegroup-name-«r7»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -101,11 +101,11 @@ exports[`Table Story 1`] = `
           data-variant="primary"
           type="button"
           value="auto"
-          id="togglegroup-item-:rd:"
+          id="togglegroup-item-«rd»"
           aria-checked="true"
           aria-current="true"
           role="radio"
-          name="togglegroup-name-:r7:"
+          name="togglegroup-name-«r7»"
           data-roving-tabindex-item="true"
           tabindex="0"
         >
@@ -156,11 +156,11 @@ exports[`Table Story 1`] = `
         </div>
         <div>
           <input
-            type="search"
             placeholder="Søk"
-            name="search"
             aria-label="Søk"
+            type="search"
             value
+            name="search"
           >
           <button
             data-icon="true"
@@ -178,11 +178,11 @@ exports[`Table Story 1`] = `
               <th>
                 <div>
                   <input
-                    type="checkbox"
                     id="checkbox-select-all"
                     aria-label="Select all"
-                    name="my-checkbox"
+                    type="checkbox"
                     value="all"
+                    name="my-checkbox"
                   >
                 </div>
               </th>
@@ -215,11 +215,11 @@ exports[`Table Story 1`] = `
               <td>
                 <div>
                   <input
-                    type="checkbox"
                     id="checkbox-1"
                     aria-label="Check Lise Nordmann"
-                    name="my-checkbox"
+                    type="checkbox"
                     value="1"
+                    name="my-checkbox"
                   >
                 </div>
               </td>
@@ -256,7 +256,7 @@ exports[`Table Story 1`] = `
                   aria-haspopup="dialog"
                   data-color="danger"
                   aria-label="Slett"
-                  popovertarget=":rg:"
+                  popovertarget="«rg»"
                   popovertargetaction="show"
                 >
                   <svg
@@ -280,7 +280,7 @@ exports[`Table Story 1`] = `
                 </button>
                 <span
                   role="tooltip"
-                  id=":rg:"
+                  id="«rg»"
                   popover="manual"
                   style="opacity: 0;"
                 >
@@ -325,11 +325,11 @@ exports[`Table Story 1`] = `
               <td>
                 <div>
                   <input
-                    type="checkbox"
                     id="checkbox-2"
                     aria-label="Check Ola Nordmann"
-                    name="my-checkbox"
+                    type="checkbox"
                     value="2"
+                    name="my-checkbox"
                   >
                 </div>
               </td>
@@ -366,7 +366,7 @@ exports[`Table Story 1`] = `
                   aria-haspopup="dialog"
                   data-color="danger"
                   aria-label="Slett"
-                  popovertarget=":ri:"
+                  popovertarget="«ri»"
                   popovertargetaction="show"
                 >
                   <svg
@@ -390,7 +390,7 @@ exports[`Table Story 1`] = `
                 </button>
                 <span
                   role="tooltip"
-                  id=":ri:"
+                  id="«ri»"
                   popover="manual"
                   style="opacity: 0;"
                 >
@@ -435,11 +435,11 @@ exports[`Table Story 1`] = `
               <td>
                 <div>
                   <input
-                    type="checkbox"
                     id="checkbox-3"
                     aria-label="Check Kari Nordmann"
-                    name="my-checkbox"
+                    type="checkbox"
                     value="3"
+                    name="my-checkbox"
                   >
                 </div>
               </td>
@@ -476,7 +476,7 @@ exports[`Table Story 1`] = `
                   aria-haspopup="dialog"
                   data-color="danger"
                   aria-label="Slett"
-                  popovertarget=":rk:"
+                  popovertarget="«rk»"
                   popovertargetaction="show"
                 >
                   <svg
@@ -500,7 +500,7 @@ exports[`Table Story 1`] = `
                 </button>
                 <span
                   role="tooltip"
-                  id=":rk:"
+                  id="«rk»"
                   popover="manual"
                   style="opacity: 0;"
                 >
@@ -545,11 +545,11 @@ exports[`Table Story 1`] = `
               <td>
                 <div>
                   <input
-                    type="checkbox"
                     id="checkbox-4"
                     aria-label="Check Per Nordmann"
-                    name="my-checkbox"
+                    type="checkbox"
                     value="4"
+                    name="my-checkbox"
                   >
                 </div>
               </td>
@@ -586,7 +586,7 @@ exports[`Table Story 1`] = `
                   aria-haspopup="dialog"
                   data-color="danger"
                   aria-label="Slett"
-                  popovertarget=":rm:"
+                  popovertarget="«rm»"
                   popovertargetaction="show"
                 >
                   <svg
@@ -610,7 +610,7 @@ exports[`Table Story 1`] = `
                 </button>
                 <span
                   role="tooltip"
-                  id=":rm:"
+                  id="«rm»"
                   popover="manual"
                   style="opacity: 0;"
                 >
@@ -655,11 +655,11 @@ exports[`Table Story 1`] = `
               <td>
                 <div>
                   <input
-                    type="checkbox"
                     id="checkbox-5"
                     aria-label="Check Anne Nordmann"
-                    name="my-checkbox"
+                    type="checkbox"
                     value="5"
+                    name="my-checkbox"
                   >
                 </div>
               </td>
@@ -696,7 +696,7 @@ exports[`Table Story 1`] = `
                   aria-haspopup="dialog"
                   data-color="danger"
                   aria-label="Slett"
-                  popovertarget=":ro:"
+                  popovertarget="«ro»"
                   popovertargetaction="show"
                 >
                   <svg
@@ -720,7 +720,7 @@ exports[`Table Story 1`] = `
                 </button>
                 <span
                   role="tooltip"
-                  id=":ro:"
+                  id="«ro»"
                   popover="manual"
                   style="opacity: 0;"
                 >

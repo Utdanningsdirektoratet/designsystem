@@ -1630,11 +1630,11 @@ exports[`With Form Elements 1`] = `
       <th>
         <div>
           <input
-            type="checkbox"
             aria-label="Select all"
             id="components-table--with-form-elements-selectAll"
-            name="components-table--with-form-elements-checkboxGroup"
+            type="checkbox"
             value
+            name="components-table--with-form-elements-checkboxGroup"
           >
         </div>
       </th>
@@ -1654,11 +1654,11 @@ exports[`With Form Elements 1`] = `
       <td>
         <div>
           <input
-            type="checkbox"
             aria-label="Check 1"
             id="components-table--with-form-elements-select1"
-            name="components-table--with-form-elements-checkboxGroup"
+            type="checkbox"
             value="1"
+            name="components-table--with-form-elements-checkboxGroup"
           >
         </div>
       </td>
@@ -1672,9 +1672,9 @@ exports[`With Form Elements 1`] = `
         <div data-size="sm">
           <div>
             <input
-              type="text"
               aria-label="Textfield 1"
               id="components-table--with-form-elements-textfield1"
+              type="text"
             >
           </div>
         </div>
@@ -1684,12 +1684,12 @@ exports[`With Form Elements 1`] = `
       <td>
         <div>
           <input
-            type="checkbox"
             aria-label="Check 2"
             id="components-table--with-form-elements-select2"
-            name="components-table--with-form-elements-checkboxGroup"
+            type="checkbox"
             value="2"
             checked
+            name="components-table--with-form-elements-checkboxGroup"
           >
         </div>
       </td>
@@ -1703,9 +1703,9 @@ exports[`With Form Elements 1`] = `
         <div data-size="sm">
           <div>
             <input
-              type="text"
               aria-label="Textfield 2"
               id="components-table--with-form-elements-textfield2"
+              type="text"
             >
           </div>
         </div>
@@ -1715,11 +1715,11 @@ exports[`With Form Elements 1`] = `
       <td>
         <div>
           <input
-            type="checkbox"
             aria-label="Check 3"
             id="components-table--with-form-elements-select3"
-            name="components-table--with-form-elements-checkboxGroup"
+            type="checkbox"
             value="3"
+            name="components-table--with-form-elements-checkboxGroup"
           >
         </div>
       </td>
@@ -1733,9 +1733,9 @@ exports[`With Form Elements 1`] = `
         <div data-size="sm">
           <div>
             <input
-              type="text"
               aria-label="Textfield 3"
               id="components-table--with-form-elements-textfield3"
+              type="text"
             >
           </div>
         </div>

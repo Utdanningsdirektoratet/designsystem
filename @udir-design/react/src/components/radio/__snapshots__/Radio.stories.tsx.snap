@@ -10,10 +10,10 @@ exports[`Controlled 1`] = `
   </p>
   <div>
     <input
-      type="radio"
       id="components-radio--controlled-kindergarten"
-      name=":r5:"
+      type="radio"
       value="kindergarten"
+      name="«r5»"
     >
     <label
       data-weight="regular"
@@ -24,10 +24,10 @@ exports[`Controlled 1`] = `
   </div>
   <div>
     <input
-      type="radio"
       id="components-radio--controlled-primary"
-      name=":r5:"
+      type="radio"
       value="primary"
+      name="«r5»"
     >
     <label
       data-weight="regular"
@@ -38,10 +38,10 @@ exports[`Controlled 1`] = `
   </div>
   <div>
     <input
-      type="radio"
       id="components-radio--controlled-secondary"
-      name=":r5:"
+      type="radio"
       value="secondary"
+      name="«r5»"
     >
     <label
       data-weight="regular"
@@ -52,10 +52,10 @@ exports[`Controlled 1`] = `
   </div>
   <div>
     <input
-      type="radio"
       id="components-radio--controlled-higher"
-      name=":r5:"
+      type="radio"
       value="higher"
+      name="«r5»"
     >
     <label
       data-weight="regular"
@@ -101,11 +101,11 @@ exports[`Disabled 1`] = `
   </p>
   <div>
     <input
-      type="radio"
       id="components-radio--disabled-10-20"
-      name="my-disabled"
       disabled
+      type="radio"
       value="10-20"
+      name="my-disabled"
     >
     <label
       data-weight="regular"
@@ -116,11 +116,11 @@ exports[`Disabled 1`] = `
   </div>
   <div>
     <input
-      type="radio"
       id="components-radio--disabled-21-45"
-      name="my-disabled"
       disabled
+      type="radio"
       value="21-45"
+      name="my-disabled"
     >
     <label
       data-weight="regular"
@@ -131,11 +131,11 @@ exports[`Disabled 1`] = `
   </div>
   <div>
     <input
-      type="radio"
       id="components-radio--disabled-46-80"
-      name="my-disabled"
       disabled
+      type="radio"
       value="46-80"
+      name="my-disabled"
     >
     <label
       data-weight="regular"
@@ -147,7 +147,7 @@ exports[`Disabled 1`] = `
   <p
     data-field="validation"
     hidden
-    id=":r8:"
+    id="«r8»"
   >
   </p>
 </fieldset>
@@ -163,10 +163,10 @@ exports[`Group 1`] = `
   </p>
   <div>
     <input
-      type="radio"
       id="components-radio--group-10-20"
-      name="my-group"
+      type="radio"
       value="10-20"
+      name="my-group"
     >
     <label
       data-weight="regular"
@@ -177,10 +177,10 @@ exports[`Group 1`] = `
   </div>
   <div>
     <input
-      type="radio"
       id="components-radio--group-21-45"
-      name="my-group"
+      type="radio"
       value="21-45"
+      name="my-group"
     >
     <label
       data-weight="regular"
@@ -191,10 +191,10 @@ exports[`Group 1`] = `
   </div>
   <div>
     <input
-      type="radio"
       id="components-radio--group-46-80"
-      name="my-group"
+      type="radio"
       value="46-80"
+      name="my-group"
     >
     <label
       data-weight="regular"
@@ -206,7 +206,7 @@ exports[`Group 1`] = `
   <p
     data-field="validation"
     hidden
-    id=":r0:"
+    id="«r0»"
   >
   </p>
 </fieldset>
@@ -223,10 +223,10 @@ exports[`Inline 1`] = `
   <div style="display: flex; flex-wrap: wrap; gap: var(--ds-size-6);">
     <div>
       <input
-        type="radio"
         id="undefined-inline-ja"
-        name="my-inline"
+        type="radio"
         value="ja"
+        name="my-inline"
       >
       <label
         data-weight="regular"
@@ -237,10 +237,10 @@ exports[`Inline 1`] = `
     </div>
     <div>
       <input
-        type="radio"
         id="undefined-inline-nei"
-        name="my-inline"
+        type="radio"
         value="nei"
+        name="my-inline"
       >
       <label
         data-weight="regular"
@@ -256,8 +256,8 @@ exports[`Inline 1`] = `
 exports[`Preview 1`] = `
 <div>
   <input
-    type="radio"
     id="radio-preview"
+    type="radio"
     value="value"
     aria-describedby="radio-preview:description"
   >
@@ -283,8 +283,8 @@ exports[`Radio In Color Context 1`] = `
 >
   <div>
     <input
-      type="radio"
       id="radio-in-color-context"
+      type="radio"
       checked
       aria-describedby="radio-in-color-context:description"
     >
@@ -314,11 +314,11 @@ exports[`Read Only 1`] = `
   </p>
   <div>
     <input
-      type="radio"
       id="components-radio--read-only-10-20"
-      name="my-readonly"
       readonly
+      type="radio"
       value="10-20"
+      name="my-readonly"
     >
     <label
       data-weight="regular"
@@ -329,11 +329,11 @@ exports[`Read Only 1`] = `
   </div>
   <div>
     <input
-      type="radio"
       id="components-radio--read-only-21-45"
-      name="my-readonly"
       readonly
+      type="radio"
       value="21-45"
+      name="my-readonly"
     >
     <label
       data-weight="regular"
@@ -344,11 +344,11 @@ exports[`Read Only 1`] = `
   </div>
   <div>
     <input
-      type="radio"
       id="components-radio--read-only-46-80"
-      name="my-readonly"
       readonly
+      type="radio"
       value="46-80"
+      name="my-readonly"
     >
     <label
       data-weight="regular"
@@ -360,7 +360,7 @@ exports[`Read Only 1`] = `
   <p
     data-field="validation"
     hidden
-    id=":r6:"
+    id="«r6»"
   >
   </p>
 </fieldset>
@@ -376,12 +376,12 @@ exports[`With Error 1`] = `
   </p>
   <div>
     <input
-      type="radio"
       id="components-radio--with-error-10-20"
-      name="my-error"
-      aria-describedby=":r2:"
+      aria-describedby="«r2»"
       aria-invalid="true"
+      type="radio"
       value="10-20"
+      name="my-error"
     >
     <label
       data-weight="regular"
@@ -392,12 +392,12 @@ exports[`With Error 1`] = `
   </div>
   <div>
     <input
-      type="radio"
       id="components-radio--with-error-21-45"
-      name="my-error"
-      aria-describedby=":r2:"
+      aria-describedby="«r2»"
       aria-invalid="true"
+      type="radio"
       value="21-45"
+      name="my-error"
     >
     <label
       data-weight="regular"
@@ -408,12 +408,12 @@ exports[`With Error 1`] = `
   </div>
   <div>
     <input
-      type="radio"
       id="components-radio--with-error-46-80"
-      name="my-error"
-      aria-describedby=":r2:"
+      aria-describedby="«r2»"
       aria-invalid="true"
+      type="radio"
       value="46-80"
+      name="my-error"
     >
     <label
       data-weight="regular"
@@ -424,7 +424,7 @@ exports[`With Error 1`] = `
   </div>
   <p
     data-field="validation"
-    id=":r2:"
+    id="«r2»"
   >
     Du må velge en aldersgruppe
   </p>

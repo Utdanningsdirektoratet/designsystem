@@ -7,8 +7,8 @@ exports[`Checkbox In Color Context 1`] = `
 >
   <div>
     <input
-      type="checkbox"
       id="checkbox-in-color-context"
+      type="checkbox"
       checked
       aria-describedby="checkbox-in-color-context:description"
     >
@@ -35,11 +35,11 @@ exports[`Controlled 1`] = `
   </legend>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--controlled-barnehage"
-      name="my-controlled"
+      type="checkbox"
       value="barnehage"
       checked
+      name="my-controlled"
     >
     <label
       data-weight="regular"
@@ -50,10 +50,10 @@ exports[`Controlled 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--controlled-grunnskole"
-      name="my-controlled"
+      type="checkbox"
       value="grunnskole"
+      name="my-controlled"
     >
     <label
       data-weight="regular"
@@ -64,11 +64,11 @@ exports[`Controlled 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--controlled-videregaende"
-      name="my-controlled"
+      type="checkbox"
       value="videregaende"
       checked
+      name="my-controlled"
     >
     <label
       data-weight="regular"
@@ -81,7 +81,7 @@ exports[`Controlled 1`] = `
 <p
   data-field="validation"
   hidden
-  id=":r5:"
+  id="«r5»"
 >
 </p>
 <hr aria-hidden="true">
@@ -127,12 +127,12 @@ exports[`Disabled 1`] = `
   </p>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--disabled-email"
-      name="my-disabled"
       disabled
+      type="checkbox"
       value="epost"
       checked
+      name="my-disabled"
     >
     <label
       data-weight="regular"
@@ -143,11 +143,11 @@ exports[`Disabled 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--disabled-telefon"
-      name="my-disabled"
       disabled
+      type="checkbox"
       value="telefon"
+      name="my-disabled"
     >
     <label
       data-weight="regular"
@@ -158,11 +158,11 @@ exports[`Disabled 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--disabled-sms"
-      name="my-disabled"
       disabled
+      type="checkbox"
       value="sms"
+      name="my-disabled"
     >
     <label
       data-weight="regular"
@@ -174,7 +174,7 @@ exports[`Disabled 1`] = `
   <p
     data-field="validation"
     hidden
-    id=":r9:"
+    id="«r9»"
   >
   </p>
 </fieldset>
@@ -190,11 +190,11 @@ exports[`Group 1`] = `
   </p>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--group-email"
-      name="my-group"
+      type="checkbox"
       value="epost"
       checked
+      name="my-group"
     >
     <label
       data-weight="regular"
@@ -205,10 +205,10 @@ exports[`Group 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--group-telefon"
-      name="my-group"
+      type="checkbox"
       value="telefon"
+      name="my-group"
     >
     <label
       data-weight="regular"
@@ -219,10 +219,10 @@ exports[`Group 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--group-sms"
-      name="my-group"
+      type="checkbox"
       value="sms"
+      name="my-group"
     >
     <label
       data-weight="regular"
@@ -234,7 +234,7 @@ exports[`Group 1`] = `
   <p
     data-field="validation"
     hidden
-    id=":r1:"
+    id="«r1»"
   >
   </p>
 </fieldset>
@@ -252,11 +252,11 @@ exports[`Indeterminate In Table 1`] = `
       <th>
         <div>
           <input
-            type="checkbox"
             id="components-checkbox--indeterminate-in-table-all"
             aria-label="Velg alle"
-            name="components-checkbox--indeterminate-in-table"
+            type="checkbox"
             value="all"
+            name="components-checkbox--indeterminate-in-table"
           >
         </div>
       </th>
@@ -273,11 +273,11 @@ exports[`Indeterminate In Table 1`] = `
       <td>
         <div>
           <input
-            type="checkbox"
             id="components-checkbox--indeterminate-in-table-1"
             aria-labelledby="components-checkbox--indeterminate-in-table-1-name"
-            name="components-checkbox--indeterminate-in-table"
+            type="checkbox"
             value="1"
+            name="components-checkbox--indeterminate-in-table"
           >
         </div>
       </td>
@@ -292,12 +292,12 @@ exports[`Indeterminate In Table 1`] = `
       <td>
         <div>
           <input
-            type="checkbox"
             id="components-checkbox--indeterminate-in-table-2"
             aria-labelledby="components-checkbox--indeterminate-in-table-2-name"
-            name="components-checkbox--indeterminate-in-table"
+            type="checkbox"
             value="2"
             checked
+            name="components-checkbox--indeterminate-in-table"
           >
         </div>
       </td>
@@ -312,12 +312,12 @@ exports[`Indeterminate In Table 1`] = `
       <td>
         <div>
           <input
-            type="checkbox"
             id="components-checkbox--indeterminate-in-table-3"
             aria-labelledby="components-checkbox--indeterminate-in-table-3-name"
-            name="components-checkbox--indeterminate-in-table"
+            type="checkbox"
             value="3"
             checked
+            name="components-checkbox--indeterminate-in-table"
           >
         </div>
       </td>
@@ -332,11 +332,11 @@ exports[`Indeterminate In Table 1`] = `
       <td>
         <div>
           <input
-            type="checkbox"
             id="components-checkbox--indeterminate-in-table-4"
             aria-labelledby="components-checkbox--indeterminate-in-table-4-name"
-            name="components-checkbox--indeterminate-in-table"
+            type="checkbox"
             value="4"
+            name="components-checkbox--indeterminate-in-table"
           >
         </div>
       </td>
@@ -361,8 +361,8 @@ exports[`One Option 1`] = `
   </p>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--one-option"
+      type="checkbox"
       value="samtykke"
     >
     <label
@@ -378,8 +378,8 @@ exports[`One Option 1`] = `
 exports[`Preview 1`] = `
 <div>
   <input
-    type="checkbox"
     id="checkbox-preview"
+    type="checkbox"
     value="value"
     aria-describedby="checkbox-preview:description"
   >
@@ -408,12 +408,12 @@ exports[`Read Only 1`] = `
   </p>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--read-only-email"
-      name="my-readonly"
       readonly
+      type="checkbox"
       value="epost"
       checked
+      name="my-readonly"
     >
     <label
       data-weight="regular"
@@ -424,11 +424,11 @@ exports[`Read Only 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--read-only-telefon"
-      name="my-readonly"
       readonly
+      type="checkbox"
       value="telefon"
+      name="my-readonly"
     >
     <label
       data-weight="regular"
@@ -439,11 +439,11 @@ exports[`Read Only 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--read-only-sms"
-      name="my-readonly"
       readonly
+      type="checkbox"
       value="sms"
+      name="my-readonly"
     >
     <label
       data-weight="regular"
@@ -455,7 +455,7 @@ exports[`Read Only 1`] = `
   <p
     data-field="validation"
     hidden
-    id=":r7:"
+    id="«r7»"
   >
   </p>
 </fieldset>
@@ -471,13 +471,13 @@ exports[`With Error 1`] = `
   </p>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--with-error-email"
-      aria-describedby=":r3:"
+      aria-describedby="«r3»"
       aria-invalid="true"
-      name="my-error"
+      type="checkbox"
       value="epost"
       checked
+      name="my-error"
     >
     <label
       data-weight="regular"
@@ -488,12 +488,12 @@ exports[`With Error 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--with-error-telefon"
-      aria-describedby=":r3:"
+      aria-describedby="«r3»"
       aria-invalid="true"
-      name="my-error"
+      type="checkbox"
       value="telefon"
+      name="my-error"
     >
     <label
       data-weight="regular"
@@ -504,12 +504,12 @@ exports[`With Error 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--with-error-sms"
-      aria-describedby=":r3:"
+      aria-describedby="«r3»"
       aria-invalid="true"
-      name="my-error"
+      type="checkbox"
       value="sms"
+      name="my-error"
     >
     <label
       data-weight="regular"
@@ -520,7 +520,7 @@ exports[`With Error 1`] = `
   </div>
   <p
     data-field="validation"
-    id=":r3:"
+    id="«r3»"
   >
     Du må velge minst to kontaktalternativ
   </p>
