@@ -132,49 +132,6 @@ importers:
         specifier: ^17.7.2
         version: 17.7.2
 
-  '@internal/dynamic-csf':
-    dependencies:
-      '@babel/generator':
-        specifier: ^7.27.1
-        version: 7.27.1
-      '@babel/traverse':
-        specifier: ^7.27.1
-        version: 7.27.1
-      '@babel/types':
-        specifier: ^7.27.1
-        version: 7.27.1
-      '@storybook/csf':
-        specifier: ^0.1.13
-        version: 0.1.13
-      '@storybook/react':
-        specifier: ^8.6.14
-        version: 8.6.14(@storybook/test@8.6.14(storybook@8.6.14(prettier@3.5.3)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.6.14(prettier@3.5.3))(typescript@5.8.3)
-      camelcase:
-        specifier: ^8.0.0
-        version: 8.0.0
-      magicast:
-        specifier: ^0.3.5
-        version: 0.3.5
-      react:
-        specifier: ^18.3.1
-        version: 18.3.1
-      react-docgen-typescript:
-        specifier: ^2.2.2
-        version: 2.2.2(typescript@5.8.3)
-      tslib:
-        specifier: ^2.8.1
-        version: 2.8.1
-    devDependencies:
-      '@types/babel__generator':
-        specifier: ^7.27.0
-        version: 7.27.0
-      '@types/babel__traverse':
-        specifier: ^7.20.7
-        version: 7.20.7
-      '@types/react':
-        specifier: ^18.3.21
-        version: 18.3.21
-
   '@udir-design/react':
     dependencies:
       '@digdir/designsystemet-css':
@@ -196,9 +153,6 @@ importers:
         specifier: ^2.8.1
         version: 2.8.1
     devDependencies:
-      '@internal/dynamic-csf':
-        specifier: workspace:*
-        version: link:../../@internal/dynamic-csf
       '@storybook/addon-a11y':
         specifier: ^8.6.14
         version: 8.6.14(storybook@8.6.14(prettier@3.5.3))
@@ -3207,10 +3161,6 @@ packages:
   callsites@3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
-
-  camelcase@8.0.0:
-    resolution: {integrity: sha512-8WB3Jcas3swSvjIeA2yvCJ+Miyz5l1ZmB6HFb9R1317dt9LCQoswg/BGrmAmkWVEszSrrg4RwmO46qIm2OEnSA==}
-    engines: {node: '>=16'}
 
   caniuse-lite@1.0.30001718:
     resolution: {integrity: sha512-AflseV1ahcSunK53NfEs9gFWgOEmzr0f+kaMFA4xiLZlr9Hzt7HxcSpIFcnNCUkz6R6dWKa54rUz3HUmI3nVcw==}
@@ -9463,8 +9413,6 @@ snapshots:
       get-intrinsic: 1.3.0
 
   callsites@3.1.0: {}
-
-  camelcase@8.0.0: {}
 
   caniuse-lite@1.0.30001718: {}
 
