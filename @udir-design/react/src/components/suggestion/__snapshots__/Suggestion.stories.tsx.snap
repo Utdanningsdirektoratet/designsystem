@@ -11,14 +11,14 @@ exports[`Always Show All 1`] = `
   </label>
   <div>
     <input
-      type="text"
-      list=":r5:"
+      list="«r5»"
       placeholder
       id="components-suggestion--always-show-all"
+      type="text"
       value="Sogndal"
-      popovertarget=":r5:"
+      popovertarget="«r5»"
       aria-autocomplete="list"
-      aria-controls=":r5:"
+      aria-controls="«r5»"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -33,13 +33,13 @@ exports[`Always Show All 1`] = `
     <u-datalist
       data-sr-singular="%d forslag"
       data-sr-plural="%d forslag"
-      id=":r5:"
+      id="«r5»"
       role="listbox"
       tabindex="-1"
       aria-labelledby=":label6"
     >
       <u-option
-        data-empty="true"
+        data-empty
         role="none"
         tabindex="-1"
         aria-disabled="false"
@@ -128,14 +128,14 @@ exports[`Controlled 1`] = `
   </label>
   <div>
     <input
-      type="text"
-      list=":r1:"
+      list="«r1»"
       placeholder
       id="components-suggestion--controlled"
+      type="text"
       value
-      popovertarget=":r1:"
+      popovertarget="«r1»"
       aria-autocomplete="list"
-      aria-controls=":r1:"
+      aria-controls="«r1»"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -150,13 +150,13 @@ exports[`Controlled 1`] = `
     <u-datalist
       data-sr-singular="%d forslag"
       data-sr-plural="%d forslag"
-      id=":r1:"
+      id="«r1»"
       role="listbox"
       tabindex="-1"
       aria-labelledby=":label2"
     >
       <u-option
-        data-empty="true"
+        data-empty
         role="none"
         tabindex="-1"
         aria-disabled="false"
@@ -252,14 +252,13 @@ exports[`Custom Filter Alt 1 1`] = `
   </label>
   <div>
     <input
-      type="text"
-      list=":r3:"
+      list="«r3»"
       placeholder
       id="components-suggestion--custom-filter-alt-1"
-      value
-      popovertarget=":r3:"
+      type="text"
+      popovertarget="«r3»"
       aria-autocomplete="list"
-      aria-controls=":r3:"
+      aria-controls="«r3»"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -274,13 +273,13 @@ exports[`Custom Filter Alt 1 1`] = `
     <u-datalist
       data-sr-singular="%d forslag"
       data-sr-plural="%d forslag"
-      id=":r3:"
+      id="«r3»"
       role="listbox"
       tabindex="-1"
       aria-labelledby=":label4"
     >
       <u-option
-        data-empty="true"
+        data-empty
         role="none"
         tabindex="-1"
         aria-disabled="false"
@@ -368,14 +367,14 @@ exports[`Custom Filter Alt 2 1`] = `
   </label>
   <div>
     <input
-      type="text"
-      list=":r4:"
+      list="«r4»"
       placeholder
       id="components-suggestion--custom-filter-alt-2"
+      type="text"
       value
-      popovertarget=":r4:"
+      popovertarget="«r4»"
       aria-autocomplete="list"
-      aria-controls=":r4:"
+      aria-controls="«r4»"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -390,13 +389,13 @@ exports[`Custom Filter Alt 2 1`] = `
     <u-datalist
       data-sr-singular="%d forslag"
       data-sr-plural="%d forslag"
-      id=":r4:"
+      id="«r4»"
       role="listbox"
       tabindex="-1"
       aria-labelledby=":label5"
     >
       <u-option
-        data-empty="true"
+        data-empty
         role="none"
         tabindex="-1"
         aria-disabled="false"
@@ -484,14 +483,14 @@ exports[`Default Value 1`] = `
   </label>
   <div>
     <input
-      type="text"
-      list=":r2:"
+      list="«r2»"
       placeholder
       id="components-suggestion--default-value"
+      type="text"
       value="Sogndal"
-      popovertarget=":r2:"
+      popovertarget="«r2»"
       aria-autocomplete="list"
-      aria-controls=":r2:"
+      aria-controls="«r2»"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -506,13 +505,13 @@ exports[`Default Value 1`] = `
     <u-datalist
       data-sr-singular="%d forslag"
       data-sr-plural="%d forslag"
-      id=":r2:"
+      id="«r2»"
       role="listbox"
       tabindex="-1"
       aria-labelledby=":label3"
     >
       <u-option
-        data-empty="true"
+        data-empty
         role="none"
         tabindex="-1"
         aria-disabled="false"
@@ -600,14 +599,14 @@ exports[`Fetch External 1`] = `
   </label>
   <div>
     <input
-      type="text"
-      list=":r6:"
+      list="«r6»"
       placeholder
       id="components-suggestion--fetch-external"
+      type="text"
       value
-      popovertarget=":r6:"
+      popovertarget="«r6»"
       aria-autocomplete="list"
-      aria-controls=":r6:"
+      aria-controls="«r6»"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -622,7 +621,7 @@ exports[`Fetch External 1`] = `
     <u-datalist
       data-sr-singular="%d country"
       data-sr-plural="%d countries"
-      id=":r6:"
+      id="«r6»"
       role="listbox"
       tabindex="-1"
       aria-labelledby=":label7"
@@ -643,14 +642,13 @@ exports[`Preview 1`] = `
   </label>
   <div>
     <input
-      type="text"
-      list=":r0:"
+      list="«r0»"
       placeholder
       id="components-suggestion--preview"
-      value
-      popovertarget=":r0:"
+      type="text"
+      popovertarget="«r0»"
       aria-autocomplete="list"
-      aria-controls=":r0:"
+      aria-controls="«r0»"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -665,13 +663,13 @@ exports[`Preview 1`] = `
     <u-datalist
       data-sr-singular="%d forslag"
       data-sr-plural="%d forslag"
-      id=":r0:"
+      id="«r0»"
       role="listbox"
       tabindex="-1"
       aria-labelledby=":label1"
     >
       <u-option
-        data-empty="true"
+        data-empty
         role="none"
         tabindex="-1"
         aria-disabled="false"

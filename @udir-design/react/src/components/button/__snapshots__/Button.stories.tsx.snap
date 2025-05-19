@@ -16,9 +16,9 @@ exports[`As Link 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-rv"
+    aria-labelledby="title-«rv»"
   >
-    <title id="title-rv">
+    <title id="title-«rv»">
       Ekstern lenke
     </title>
     <path
@@ -508,7 +508,7 @@ exports[`Icon Only 1`] = `
   type="button"
   aria-label="Legg til ny"
   data-color="neutral"
-  popovertarget=":r18:"
+  popovertarget="«r18»"
   popovertargetaction="show"
 >
   <svg
@@ -532,7 +532,7 @@ exports[`Icon Only 1`] = `
 </button>
 <span
   role="tooltip"
-  id=":r18:"
+  id="«r18»"
   popover="manual"
   style="opacity: 0;"
 >
@@ -544,7 +544,7 @@ exports[`Icon Only 1`] = `
   type="button"
   aria-label="Varslinger"
   data-color="neutral"
-  popovertarget=":r1a:"
+  popovertarget="«r1a»"
   popovertargetaction="show"
 >
   <svg
@@ -568,7 +568,7 @@ exports[`Icon Only 1`] = `
 </button>
 <span
   role="tooltip"
-  id=":r1a:"
+  id="«r1a»"
   popover="manual"
   style="opacity: 0;"
 >
@@ -580,7 +580,7 @@ exports[`Icon Only 1`] = `
   type="button"
   aria-label="Innstillinger"
   data-color="neutral"
-  popovertarget=":r1c:"
+  popovertarget="«r1c»"
   popovertargetaction="show"
 >
   <svg
@@ -604,7 +604,7 @@ exports[`Icon Only 1`] = `
 </button>
 <span
   role="tooltip"
-  id=":r1c:"
+  id="«r1c»"
   popover="manual"
   style="opacity: 0;"
 >
@@ -627,9 +627,9 @@ exports[`Icons 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-r12"
+    aria-labelledby="title-«r12»"
   >
-    <title id="title-r12">
+    <title id="title-«r12»">
       Innstillinger
     </title>
     <path
@@ -680,9 +680,9 @@ exports[`Icons 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-r14"
+    aria-labelledby="title-«r14»"
   >
-    <title id="title-r14">
+    <title id="title-«r14»">
       Innstillinger
     </title>
     <path
@@ -733,9 +733,9 @@ exports[`Icons 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-r16"
+    aria-labelledby="title-«r16»"
   >
-    <title id="title-r16">
+    <title id="title-«r16»">
       Innstillinger
     </title>
     <path
@@ -789,9 +789,9 @@ exports[`Icons Only Primary 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-r1e"
+    aria-labelledby="title-«r1e»"
   >
-    <title id="title-r1e">
+    <title id="title-«r1e»">
       Innstillinger
     </title>
     <path
@@ -817,9 +817,9 @@ exports[`Icons Only Primary 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-r1f"
+    aria-labelledby="title-«r1f»"
   >
-    <title id="title-r1f">
+    <title id="title-«r1f»">
       Innstillinger
     </title>
     <path
@@ -845,9 +845,9 @@ exports[`Icons Only Primary 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-r1g"
+    aria-labelledby="title-«r1g»"
   >
-    <title id="title-r1g">
+    <title id="title-«r1g»">
       Innstillinger
     </title>
     <path

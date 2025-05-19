@@ -13,8 +13,8 @@ exports[`Affix 1`] = `
       NOK
     </span>
     <input
-      type="text"
       id="textfield-affix"
+      type="text"
     >
     <span aria-hidden="true">
       pr. mnd
@@ -33,8 +33,8 @@ exports[`Controlled 1`] = `
   </label>
   <div>
     <input
-      type="text"
       id="textfield-controlled"
+      type="text"
       value
     >
   </div>
@@ -67,8 +67,8 @@ exports[`Counter 1`] = `
   </label>
   <div>
     <input
-      type="text"
       id="textfield-counter"
+      type="text"
       aria-describedby="textfield-counter:validation  textfield-counter:description"
     >
   </div>
@@ -98,8 +98,8 @@ exports[`Preview 1`] = `
   </label>
   <div>
     <input
-      type="text"
       id="textfield-preview"
+      type="text"
     >
   </div>
 </div>

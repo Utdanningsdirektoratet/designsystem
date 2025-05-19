@@ -3,10 +3,9 @@
 exports[`Controlled 1`] = `
 <div>
   <input
-    type="search"
     placeholder
     aria-label="Søk"
-    value
+    type="search"
   >
   <button
     data-icon="true"
@@ -44,10 +43,9 @@ exports[`Form 1`] = `
 <form>
   <div>
     <input
-      type="search"
       placeholder
       aria-label="Søk"
-      value
+      type="search"
     >
     <button
       data-icon="true"
@@ -76,9 +74,9 @@ exports[`Form 1`] = `
 exports[`Preview 1`] = `
 <div>
   <input
-    type="search"
     placeholder
     aria-label="Søk"
+    type="search"
   >
   <button
     data-icon="true"
@@ -100,9 +98,9 @@ exports[`Variants 1`] = `
 <div>
   <div>
     <input
-      type="search"
       placeholder
       aria-label="Søk"
+      type="search"
     >
     <button
       data-icon="true"
@@ -118,9 +116,9 @@ exports[`Variants 1`] = `
   >
   <div>
     <input
-      type="search"
       placeholder
       aria-label="Søk"
+      type="search"
     >
     <button
       data-icon="true"
@@ -142,9 +140,9 @@ exports[`Variants 1`] = `
   >
   <div>
     <input
-      type="search"
       placeholder
       aria-label="Søk"
+      type="search"
     >
     <button
       data-icon="true"
@@ -173,9 +171,9 @@ exports[`With Label 1`] = `
   </label>
   <div>
     <input
-      type="search"
       placeholder
       id="components-search--with-label"
+      type="search"
       name="cat-search"
     >
     <button

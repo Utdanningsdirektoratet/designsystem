@@ -16,7 +16,6 @@ export default defineConfig({
       exclude: [
         ...coverageConfigDefaults.exclude,
         '**/.storybook/**',
-        '**/*.dynamic.*',
         // 👇 This pattern must align with the `stories` property of your `.storybook/main.ts` config
         '**/*.stories.*',
         // 👇 This pattern must align with the output directory of `storybook build`

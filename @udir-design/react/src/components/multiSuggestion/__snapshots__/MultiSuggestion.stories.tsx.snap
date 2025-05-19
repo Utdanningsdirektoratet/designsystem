@@ -14,15 +14,15 @@ exports[`Always Show All 1`] = `
     aria-label="Viser alle options også når valgt"
   >
     <input
-      type="text"
-      list=":r4:"
+      list="«r4»"
       placeholder
       id="components-multisuggestion--always-show-all"
+      type="text"
       value="Sogndal"
       aria-label="Viser alle options også når valgt, No selected"
-      popovertarget=":r4:"
+      popovertarget="«r4»"
       aria-autocomplete="list"
-      aria-controls=":r4:"
+      aria-controls="«r4»"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -37,14 +37,14 @@ exports[`Always Show All 1`] = `
     <u-datalist
       data-sr-singular="%d forslag"
       data-sr-plural="%d forslag"
-      id=":r4:"
+      id="«r4»"
       role="listbox"
       tabindex="-1"
       data-multiselectable="true"
       aria-labelledby=":label4"
     >
       <u-option
-        data-empty="true"
+        data-empty
         role="none"
         tabindex="-1"
         aria-disabled="false"
@@ -135,15 +135,14 @@ exports[`Controlled 1`] = `
       OsloKommune
     </data>
     <input
-      type="text"
-      list=":r1:"
+      list="«r1»"
       placeholder
       id="components-multisuggestion--controlled"
-      value
+      type="text"
       aria-label="Velg reisemål du vil besøke, Navigate left to find 1 selected"
-      popovertarget=":r1:"
+      popovertarget="«r1»"
       aria-autocomplete="list"
-      aria-controls=":r1:"
+      aria-controls="«r1»"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -158,14 +157,14 @@ exports[`Controlled 1`] = `
     <u-datalist
       data-sr-singular="%d forslag"
       data-sr-plural="%d forslag"
-      id=":r1:"
+      id="«r1»"
       role="listbox"
       tabindex="-1"
       data-multiselectable="true"
       aria-labelledby=":label1"
     >
       <u-option
-        data-empty="true"
+        data-empty
         role="none"
         tabindex="-1"
         aria-disabled="false"
@@ -281,15 +280,14 @@ exports[`Custom Filter Alt 1 1`] = `
     aria-label="Skriv inn et tall mellom 1-6"
   >
     <input
-      type="text"
-      list=":r2:"
+      list="«r2»"
       placeholder
       id="components-multisuggestion--custom-filter-alt-1"
-      value
+      type="text"
       aria-label="Skriv inn et tall mellom 1-6, No selected"
-      popovertarget=":r2:"
+      popovertarget="«r2»"
       aria-autocomplete="list"
-      aria-controls=":r2:"
+      aria-controls="«r2»"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -304,14 +302,14 @@ exports[`Custom Filter Alt 1 1`] = `
     <u-datalist
       data-sr-singular="%d forslag"
       data-sr-plural="%d forslag"
-      id=":r2:"
+      id="«r2»"
       role="listbox"
       tabindex="-1"
       data-multiselectable="true"
       aria-labelledby=":label2"
     >
       <u-option
-        data-empty="true"
+        data-empty
         role="none"
         tabindex="-1"
         aria-disabled="false"
@@ -393,15 +391,15 @@ exports[`Custom Filter Alt 2 1`] = `
     aria-label="Skriv inn et tall mellom 1-6"
   >
     <input
-      type="text"
-      list=":r3:"
+      list="«r3»"
       placeholder
       id="components-multisuggestion--custom-filter-alt-2"
+      type="text"
       value
       aria-label="Skriv inn et tall mellom 1-6, No selected"
-      popovertarget=":r3:"
+      popovertarget="«r3»"
       aria-autocomplete="list"
-      aria-controls=":r3:"
+      aria-controls="«r3»"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -416,14 +414,14 @@ exports[`Custom Filter Alt 2 1`] = `
     <u-datalist
       data-sr-singular="%d forslag"
       data-sr-plural="%d forslag"
-      id=":r3:"
+      id="«r3»"
       role="listbox"
       tabindex="-1"
       data-multiselectable="true"
       aria-labelledby=":label3"
     >
       <u-option
-        data-empty="true"
+        data-empty
         role="none"
         tabindex="-1"
         aria-disabled="false"
@@ -505,15 +503,15 @@ exports[`Fetch External 1`] = `
     aria-label="Search for countries (in english)"
   >
     <input
-      type="text"
-      list=":r5:"
+      list="«r5»"
       placeholder
       id="components-multisuggestion--fetch-external"
+      type="text"
       value
       aria-label="Search for countries (in english), No selected"
-      popovertarget=":r5:"
+      popovertarget="«r5»"
       aria-autocomplete="list"
-      aria-controls=":r5:"
+      aria-controls="«r5»"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -528,7 +526,7 @@ exports[`Fetch External 1`] = `
     <u-datalist
       data-sr-singular="%d country"
       data-sr-plural="%d countries"
-      id=":r5:"
+      id="«r5»"
       role="listbox"
       tabindex="-1"
       data-multiselectable="true"
@@ -545,15 +543,14 @@ exports[`Preview 1`] = `
   aria-label
 >
   <input
-    type="text"
-    list=":r0:"
+    list="«r0»"
     placeholder
     id="components-multisuggestion--preview"
-    value
+    type="text"
     aria-label=", No selected"
-    popovertarget=":r0:"
+    popovertarget="«r0»"
     aria-autocomplete="list"
-    aria-controls=":r0:"
+    aria-controls="«r0»"
     aria-expanded="true"
     autocomplete="off"
     role="combobox"
@@ -568,14 +565,14 @@ exports[`Preview 1`] = `
   <u-datalist
     data-sr-singular="%d forslag"
     data-sr-plural="%d forslag"
-    id=":r0:"
+    id="«r0»"
     role="listbox"
     tabindex="-1"
     data-multiselectable="true"
     aria-labelledby
   >
     <u-option
-      data-empty="true"
+      data-empty
       role="none"
       tabindex="-1"
       aria-disabled="false"

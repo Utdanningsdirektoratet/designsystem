@@ -3,9 +3,9 @@
 exports[`Preview 1`] = `
 <div
   tabindex="-1"
-  aria-labelledby=":r0:"
+  aria-labelledby="«r0»"
 >
-  <h2 id=":r0:">
+  <h2 id="«r0»">
     For å gå videre må du rette opp følgende feil:
   </h2>
   <ul>
@@ -48,9 +48,9 @@ exports[`Show Hide 1`] = `
 </div>
 <div
   tabindex="-1"
-  aria-labelledby=":r2:"
+  aria-labelledby="«r2»"
 >
-  <h2 id=":r2:">
+  <h2 id="«r2»">
     For å gå videre må du rette opp følgende feil:
   </h2>
   <ul>
@@ -84,9 +84,9 @@ exports[`With Form 1`] = `
   </label>
   <div>
     <input
-      type="text"
       aria-invalid="true"
       id="fornavn"
+      type="text"
       aria-describedby="fornavn:validation"
     >
   </div>
@@ -106,9 +106,9 @@ exports[`With Form 1`] = `
   </label>
   <div>
     <input
-      type="tel"
       aria-invalid="true"
       id="telefon"
+      type="tel"
       aria-describedby="telefon:validation"
     >
   </div>
@@ -121,9 +121,9 @@ exports[`With Form 1`] = `
 </div>
 <div
   tabindex="-1"
-  aria-labelledby=":r1:"
+  aria-labelledby="«r1»"
 >
-  <h2 id=":r1:">
+  <h2 id="«r1»">
     For å gå videre må du rette opp følgende feil:
   </h2>
   <ul>
