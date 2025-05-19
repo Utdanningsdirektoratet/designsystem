@@ -558,34 +558,31 @@ exports[`Checkbox 1`] = `
 `;
 
 exports[`Controlled 1`] = `
-<div>
-  <label
-    data-weight="medium"
-    for="components-input--controlled"
-  >
-    Kontroller meg!
-  </label>
-  <input
-    type="text"
-    id="components-input--controlled"
-    value
-  >
-</div>
-<div>
-  <hr aria-hidden="true">
-  <p
-    data-variant="default"
-    style="margin: var(--ds-size-2) 0;"
-  >
-    Du har skrevet inn:
-  </p>
+<div style="display: flex; gap: var(--ds-size-2); align-items: end; width: 100%;">
+  <div>
+    <label
+      data-weight="medium"
+      for="components-input--controlled"
+    >
+      Fullt navn
+    </label>
+    <input
+      type="text"
+      id="components-input--controlled"
+      value
+    >
+  </div>
   <button
-    data-variant="primary"
+    data-variant="secondary"
     type="button"
   >
-    Jeg vil ha Kake
+    Tøm feltet
   </button>
 </div>
+<hr aria-hidden="true">
+<p data-variant="default">
+  Ditt brukernavn blir da:
+</p>
 `;
 
 exports[`Html Size 1`] = `
@@ -604,13 +601,56 @@ exports[`Html Size 1`] = `
 </div>
 `;
 
+exports[`Input Types 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="components-input--input-types-checkbox"
+  >
+    Checkbox
+  </label>
+  <input
+    type="checkbox"
+    id="components-input--input-types-checkbox"
+    checked
+  >
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="components-input--input-types-radio"
+  >
+    Radio
+  </label>
+  <input
+    type="radio"
+    id="components-input--input-types-radio"
+    checked
+  >
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="components-input--input-types-switch"
+  >
+    Switch
+  </label>
+  <input
+    type="checkbox"
+    role="switch"
+    id="components-input--input-types-switch"
+    checked
+  >
+</div>
+`;
+
 exports[`Preview 1`] = `
 <div>
   <label
     data-weight="medium"
     for="components-input--preview"
   >
-    Input 1
+    Input
   </label>
   <input
     type="text"
