@@ -3,18 +3,37 @@ import { expect, userEvent, waitFor, within } from 'storybook/test';
 import { Select } from './Select';
 import { Label } from '../typography/label/Label';
 import { Field } from '../field/Field';
-import { ValidationMessage } from '@udir-design/react/alpha';
+import { Heading, ValidationMessage } from '@udir-design/react/alpha';
+import { useState } from 'react';
 
 const meta: Meta<typeof Select> = {
   component: Select,
   tags: ['alpha'],
   parameters: {
-    layout: 'padded',
+    layout: 'centered',
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof Select>;
+
+type County =
+  | 'Akershus'
+  | 'Agder'
+  | 'Buskerud'
+  | 'Finnmark'
+  | 'Innlandet'
+  | 'Nordland'
+  | 'Rogaland';
+const counties: County[] = [
+  'Akershus',
+  'Agder',
+  'Buskerud',
+  'Finnmark',
+  'Innlandet',
+  'Nordland',
+  'Rogaland',
+];
 
 export const Preview: Story = {
   args: {
@@ -25,17 +44,14 @@ export const Preview: Story = {
   },
   render: (args, context) => (
     <Field>
-      <Label>Velg et fjell</Label>
+      <Label>Fylke</Label>
       <Select {...args} defaultValue="" id={context.id}>
-        <Select.Option value="">Velg et fjell &hellip;</Select.Option>
-        <Select.Option value="everest">Mount Everest</Select.Option>
-        <Select.Option value="aconcagua">Aconcagua</Select.Option>
-        <Select.Option value="denali">Denali</Select.Option>
-        <Select.Option value="kilimanjaro">Kilimanjaro</Select.Option>
-        <Select.Option value="elbrus">Elbrus</Select.Option>
-        <Select.Option value="vinson">Mount Vinson</Select.Option>
-        <Select.Option value="puncakjaya">Puncak Jaya</Select.Option>
-        <Select.Option value="kosciuszko">Mount Kosciuszko</Select.Option>
+        <Select.Option value="">Velg et fylke &hellip;</Select.Option>
+        {counties.map((county) => (
+          <Select.Option key={county} value={county.toLowerCase()}>
+            {county}
+          </Select.Option>
+        ))}
       </Select>
     </Field>
   ),
@@ -43,10 +59,8 @@ export const Preview: Story = {
     const canvas = within(canvasElement);
     const select = canvas.getByRole('combobox');
 
-    await step('The label "Velg et fjell" is rendered', async () => {
-      const label = await waitFor(() =>
-        canvas.getByLabelText(/velg et fjell/i),
-      );
+    await step('The label "County" is rendered', async () => {
+      const label = await waitFor(() => canvas.getByLabelText(/Fylke/i));
       expect(label).toBeInTheDocument();
     });
 
@@ -60,11 +74,11 @@ export const Preview: Story = {
 
     await step('The select contains all expected options', async () => {
       const placeholderOption = canvas.getByRole('option', {
-        name: /velg et fjell/i,
+        name: /velg et fylke/i,
       });
       expect(placeholderOption).toBeInTheDocument();
       const everestOption = canvas.getByRole('option', {
-        name: /mount everest/i,
+        name: /akershus/i,
       });
       expect(everestOption).toBeInTheDocument();
     });
@@ -72,34 +86,12 @@ export const Preview: Story = {
     await step(
       'User can select an option from the select element',
       async () => {
-        await userEvent.selectOptions(select, 'everest');
-        expect(select).toHaveValue('everest');
+        await userEvent.selectOptions(select, 'akershus');
+        expect(select).toHaveValue('akershus');
       },
     );
     await userEvent.keyboard('{Tab}');
   },
-};
-
-export const Disabled: Story = {
-  args: {
-    disabled: true,
-  },
-  render: (args, context) => (
-    <Field>
-      <Label>Velg et fjell</Label>
-      <Select {...args} id={context.id}>
-        <Select.Option value="blank">Velg &hellip;</Select.Option>
-        <Select.Option value="everest">Mount Everest</Select.Option>
-        <Select.Option value="aconcagua">Aconcagua</Select.Option>
-        <Select.Option value="denali">Denali</Select.Option>
-        <Select.Option value="kilimanjaro">Kilimanjaro</Select.Option>
-        <Select.Option value="elbrus">Elbrus</Select.Option>
-        <Select.Option value="vinson">Mount Vinson</Select.Option>
-        <Select.Option value="puncakjaya">Puncak Jaya</Select.Option>
-        <Select.Option value="kosciuszko">Mount Kosciuszko</Select.Option>
-      </Select>
-    </Field>
-  ),
 };
 
 export const WithError: Story = {
@@ -108,41 +100,208 @@ export const WithError: Story = {
   },
   render: (args, context) => (
     <Field>
-      <Label>Velg et fjell</Label>
+      <Label>Fylke</Label>
       <Select {...args} id={context.id}>
-        <Select.Option value="blank">Velg &hellip;</Select.Option>
-        <Select.Option value="everest">Mount Everest</Select.Option>
-        <Select.Option value="aconcagua">Aconcagua</Select.Option>
-        <Select.Option value="denali">Denali</Select.Option>
-        <Select.Option value="kilimanjaro">Kilimanjaro</Select.Option>
-        <Select.Option value="elbrus">Elbrus</Select.Option>
-        <Select.Option value="vinson">Mount Vinson</Select.Option>
-        <Select.Option value="puncakjaya">Puncak Jaya</Select.Option>
-        <Select.Option value="kosciuszko">Mount Kosciuszko</Select.Option>
+        <Select.Option value="">Velg et Fylke &hellip;</Select.Option>
+        {counties.map((county) => (
+          <Select.Option key={county} value={county.toLowerCase()}>
+            {county}
+          </Select.Option>
+        ))}
       </Select>
-      <ValidationMessage>Velg et fjell</ValidationMessage>
+      <ValidationMessage>Velg et fylke</ValidationMessage>
     </Field>
   ),
+};
+
+const educationalLevels = {
+  barneskole: [
+    'Første',
+    'Andre',
+    'Tredje',
+    'Fjerde',
+    'Femte',
+    'Sjette',
+    'Syvende',
+  ],
+  ungdomsskole: ['Åttende', 'Niende', 'Tiende'],
+  videregående: ['Vg1', 'Vg2', 'Vg3'],
 };
 
 export const WithOptgroup: Story = {
   render: (args, context) => (
     <Field>
-      <Label>Velg et fjell</Label>
+      <Label>Klassetrinn</Label>
       <Select {...args} id={context.id}>
-        <Select.Optgroup label="Gruppe 1">
-          <Select.Option value="everest">Mount Everest</Select.Option>
-          <Select.Option value="aconcagua">Aconcagua</Select.Option>
-          <Select.Option value="denali">Denali</Select.Option>
-          <Select.Option value="kilimanjaro">Kilimanjaro</Select.Option>
-        </Select.Optgroup>
-        <Select.Optgroup label="Gruppe 2">
-          <Select.Option value="elbrus">Elbrus</Select.Option>
-          <Select.Option value="vinson">Mount Vinson</Select.Option>
-          <Select.Option value="puncakjaya">Puncak Jaya</Select.Option>
-          <Select.Option value="kosciuszko">Mount Kosciuszko</Select.Option>
-        </Select.Optgroup>
+        <Select.Option value="">Velg klassetrinn &hellip;</Select.Option>
+        {Object.entries(educationalLevels).map(([key, levels]) => (
+          <Select.Optgroup
+            key={key}
+            label={key[0].toUpperCase() + key.slice(1)}
+          >
+            {levels.map((level) => (
+              <Select.Option key={level} value={level.toLowerCase()}>
+                {level}
+              </Select.Option>
+            ))}
+          </Select.Optgroup>
+        ))}
       </Select>
     </Field>
   ),
+};
+
+type Cities = Record<County, string[]>;
+const Cities: Cities = {
+  Akershus: [
+    'Oslo',
+    'Bærum',
+    'Lillestrøm',
+    'Asker',
+    'Lørenskog',
+    'Skedsmokorset',
+    'Oppegård',
+  ],
+  Agder: [
+    'Kristiansand',
+    'Arendal',
+    'Grimstad',
+    'Lillesand',
+    'Farsund',
+    'Flekkefjord',
+    'Søgne',
+  ],
+  Buskerud: [
+    'Drammen',
+    'Kongsberg',
+    'Hønefoss',
+    'Mjøndalen',
+    'Lierbyen',
+    'Ringerike',
+    'Hole',
+  ],
+  Finnmark: [
+    'Alta',
+    'Hammerfest',
+    'Vardo',
+    'Kirkenes',
+    'Kautokeino',
+    'Båtsfjord',
+    'Mehamn',
+  ],
+  Innlandet: [
+    'Lillehammer',
+    'Gjøvik',
+    'Hamar',
+    'Elverum',
+    'Otta',
+    'Kongsvinger',
+    'Rena',
+  ],
+  Nordland: [
+    'Bodø',
+    'Narvik',
+    'Mo i Rana',
+    'Fauske',
+    'Svolvær',
+    'Stokmarknes',
+    'Brønnøysund',
+  ],
+  Rogaland: [
+    'Stavanger',
+    'Sandnes',
+    'Haugesund',
+    'Bryne',
+    'Egersund',
+    'Sauda',
+    'Åkrehamn',
+  ],
+};
+type SelectedCounty = County | '';
+
+export const Controlled: Story = {
+  parameters: {
+    customStyles: {
+      display: 'flex',
+      gap: 'var(--ds-size-4)',
+      flexDirection: 'column',
+    },
+  },
+  render: (args, context) => {
+    const [selectedCounty, setSelectedCounty] = useState<SelectedCounty>('');
+    const [selectedCity, setSelectedCity] = useState<string>('');
+
+    const handleCountyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+      const newCounty = e.target.value as County;
+      setSelectedCounty(newCounty);
+      if (!Cities[newCounty].some((c) => c.toLowerCase() === selectedCity)) {
+        setSelectedCity('');
+      }
+    };
+
+    const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+      const newCity = e.target.value;
+      setSelectedCity(newCity);
+      const newCounty = (Object.keys(Cities) as County[]).find((f) =>
+        Cities[f].some((c) => c.toLowerCase() === newCity),
+      );
+      if (newCounty && newCounty !== selectedCounty) {
+        setSelectedCounty(newCounty);
+      }
+    };
+
+    return (
+      <>
+        <Heading>Hvor bor du?</Heading>
+        <Field>
+          <Label>Fylke</Label>
+          <Select
+            {...args}
+            id={context.id}
+            value={selectedCounty}
+            onChange={handleCountyChange}
+          >
+            <Select.Option value="">Velg et fylke &hellip;</Select.Option>
+            {(Object.keys(Cities) as County[]).map((f) => (
+              <Select.Option key={f} value={f}>
+                {f}
+              </Select.Option>
+            ))}
+          </Select>
+        </Field>
+        <Field>
+          <Label>By</Label>
+          <Select
+            {...args}
+            id={`${context.id}-by`}
+            value={selectedCity}
+            onChange={handleCityChange}
+          >
+            <Select.Option value="">Velg en by &hellip;</Select.Option>
+            {selectedCounty
+              ? Cities[selectedCounty].map((city) => (
+                  <Select.Option key={city} value={city.toLowerCase()}>
+                    {city}
+                  </Select.Option>
+                ))
+              : null}
+          </Select>
+        </Field>
+      </>
+    );
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+  render: Preview.render,
+};
+
+export const ReadOnly: Story = {
+  args: {
+    readOnly: true,
+  },
+  render: Preview.render,
 };
