@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 import {
   Button,
   Card,
@@ -13,10 +13,11 @@ import {
   Chip,
 } from '@udir-design/react/alpha';
 import { expect, fn, userEvent, waitFor, within } from '@storybook/test';
+import { formatReactSource } from '.storybook/utils/sourceTransformers';
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
-  tags: ['alpha'],
+  tags: ['beta'],
 };
 
 export default meta;
@@ -58,6 +59,14 @@ export const Preview: Story = {
       expect(checkbox).not.toBeChecked();
     });
 
+    await step('Check keyboard toggle', async () => {
+      checkbox.focus();
+      await userEvent.keyboard(' ');
+      expect(checkbox).toBeChecked();
+      await userEvent.keyboard(' ');
+      expect(checkbox).not.toBeChecked();
+    });
+
     await step(
       'onChange callback is called when checkbox is toggled',
       async () => {
@@ -65,6 +74,8 @@ export const Preview: Story = {
         expect(args.onChange).toHaveBeenCalled();
       },
     );
+
+    userEvent.tab();
   },
 };
 
@@ -141,78 +152,78 @@ type Choices = {
   };
 };
 
-export const Controlled: GroupStory = {
-  parameters: {
-    customStyles: {
-      display: 'flex',
-      gap: 'var(--ds-size-4)',
-      flexDirection: 'column',
-    },
-  },
-  render(args, context) {
-    const choices: Choices = {
-      barnehage: { label: 'Barnehage' },
-      grunnskole: { label: 'Grunnskole' },
-      videregaende: { label: 'Videregående' },
-    };
-    const { getCheckboxProps, validationMessageProps, value, setValue } =
-      useCheckboxGroup({
-        name: 'my-controlled',
-        value: ['barnehage', 'videregaende'],
-        ...args,
-      });
+export const Controlled: StoryFn<UseCheckboxGroupProps> = (args, context) => {
+  const choices: Choices = {
+    barnehage: { label: 'Barnehage' },
+    grunnskole: { label: 'Grunnskole' },
+    videregaende: { label: 'Videregående' },
+  };
+  const { getCheckboxProps, validationMessageProps, value, setValue } =
+    useCheckboxGroup({
+      name: 'my-controlled',
+      value: ['barnehage', 'videregaende'],
+      ...args,
+    });
 
-    const toggle = (haystack: string[], needle: string) =>
-      haystack.includes(needle)
-        ? haystack.filter((value) => value !== needle)
-        : haystack.concat(needle);
+  const toggle = (haystack: string[], needle: string) =>
+    haystack.includes(needle)
+      ? haystack.filter((value) => value !== needle)
+      : haystack.concat(needle);
 
-    const isFiltered = value.length > 0;
+  const isFiltered = value.length > 0;
 
-    return (
-      <>
-        <Fieldset>
-          <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
-          {Object.entries(choices).map(([value, { label }]) => (
-            <Checkbox
-              key={value}
-              id={`${context.id}-${value}`}
-              label={label}
-              {...getCheckboxProps(value)}
-            />
+  return (
+    <>
+      <Fieldset>
+        <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
+        {Object.entries(choices).map(([value, { label }]) => (
+          <Checkbox
+            key={value}
+            id={`${context.id}-${value}`}
+            label={label}
+            {...getCheckboxProps(value)}
+          />
+        ))}
+      </Fieldset>
+      <ValidationMessage {...validationMessageProps} />
+      <Divider />
+      <Paragraph>(Annet innhold)</Paragraph>
+      <Divider />
+      <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
+        <Paragraph>
+          {isFiltered ? 'Viser innhold for:' : 'Viser alt innhold'}
+        </Paragraph>
+        {isFiltered &&
+          value.map((v) => (
+            <Chip.Removable
+              key={v}
+              aria-label={`Slett ${choices[v].label}`}
+              onClick={() => setValue(toggle(value, v))}
+            >
+              {choices[v].label}
+            </Chip.Removable>
           ))}
-        </Fieldset>
-        <ValidationMessage {...validationMessageProps} />
-        <Divider />
-        <Paragraph>(Annet innhold)</Paragraph>
-        <Divider />
-        <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
-          <Paragraph>
-            {isFiltered ? 'Viser innhold for:' : 'Viser alt innhold'}
-          </Paragraph>
-          {isFiltered &&
-            value.map((v) => (
-              <Chip.Removable
-                key={v}
-                aria-label={`Slett ${choices[v].label}`}
-                onClick={() => setValue(toggle(value, v))}
-              >
-                {choices[v].label}
-              </Chip.Removable>
-            ))}
-        </div>
-        {isFiltered && (
-          <Button
-            style={{ width: 'fit-content' }}
-            variant="secondary"
-            onClick={() => setValue([])}
-          >
-            Tøm filtre
-          </Button>
-        )}
-      </>
-    );
+      </div>
+      {isFiltered && (
+        <Button
+          style={{ width: 'fit-content' }}
+          variant="secondary"
+          onClick={() => setValue([])}
+        >
+          Tøm filtre
+        </Button>
+      )}
+    </>
+  );
+};
+
+Controlled.parameters = {
+  customStyles: {
+    display: 'flex',
+    gap: 'var(--ds-size-4)',
+    flexDirection: 'column',
   },
+  docs: { source: { type: 'code', transform: formatReactSource } },
 };
 
 export const ReadOnly: GroupStory = {
@@ -315,5 +326,14 @@ export const CheckboxInColorContext: Story = {
         expect(checkbox).toHaveStyle(`background-color: ${expectedColor}`);
       },
     );
+  },
+};
+
+export const Focused: Story = {
+  args: Preview.args,
+  parameters: {
+    pseudo: {
+      focusVisible: true,
+    },
   },
 };
