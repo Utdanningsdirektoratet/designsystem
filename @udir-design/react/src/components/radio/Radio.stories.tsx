@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 import {
   Button,
   Card,
@@ -11,6 +11,7 @@ import {
   UseRadioGroupProps,
 } from '@udir-design/react/alpha';
 import { expect, fn, userEvent, waitFor, within } from '@storybook/test';
+import { formatReactSource } from '.storybook/utils/sourceTransformers';
 
 const meta: Meta<typeof Radio> = {
   component: Radio,
@@ -98,6 +99,31 @@ export const Group: GroupStory = {
       </Fieldset>
     );
   },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const radios = canvas.getAllByRole('radio');
+
+    await step('Keyboard interaction', async () => {
+      radios[0].focus();
+      expect(radios[0]).toHaveFocus();
+      await userEvent.keyboard(' ');
+      expect(radios[0]).toBeChecked();
+      await userEvent.keyboard('{ArrowDown}');
+      expect(radios[1]).toHaveFocus();
+      expect(radios[1]).toBeChecked();
+      await userEvent.keyboard('{ArrowUp}');
+      expect(radios[0]).toHaveFocus();
+      expect(radios[0]).toBeChecked();
+      // Arrows are reversed
+      // TODO: Will hopfully be fixed in Storybook 9.0 (https://github.com/testing-library/user-event/pull/1049)
+      await userEvent.keyboard('{ArrowLeft}');
+      expect(radios[1]).toHaveFocus();
+      expect(radios[1]).toBeChecked();
+      await userEvent.keyboard('{ArrowRight}');
+      expect(radios[0]).toHaveFocus();
+      expect(radios[0]).toBeChecked();
+    });
+  },
 };
 
 export const WithError = {
@@ -116,47 +142,50 @@ const educationLevels = [
   { value: 'higher', label: 'Høyere utdanning' },
 ];
 
-export const Controlled: GroupStory = {
-  render(args, context) {
-    const { value, setValue, getRadioProps } = useRadioGroup({
-      ...args,
-    });
-
-    return (
-      <>
-        <Fieldset>
-          <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
-          <Fieldset.Description>
-            Velg det høyeste utdanningsnivået du har fullført.
-          </Fieldset.Description>
-          {educationLevels.map((level) => (
-            <Radio
-              key={level.value}
-              id={`${context.id}-${level.value}`}
-              label={level.label}
-              {...getRadioProps(level.value)}
-            />
-          ))}
-        </Fieldset>
-        <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
-        <Paragraph style={{ marginBlock: 'var(--ds-size-2)' }}>
-          Du har valgt:{' '}
-          {educationLevels.find((level) => level.value === value)?.label}
-        </Paragraph>
-        <div style={{ display: 'flex', gap: '1rem' }}>
-          <Button onClick={() => setValue('kindergarten')}>
-            Velg Barnehage
-          </Button>
-          <Button onClick={() => setValue('primary')}>Velg Grunnskole</Button>
-        </div>
-      </>
-    );
-  },
+export const Controlled: StoryFn<UseRadioGroupProps> = (args, context) => {
+  const { value, setValue, getRadioProps } = useRadioGroup({
+    ...args,
+  });
+  return (
+    <>
+      <Fieldset>
+        <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
+        <Fieldset.Description>
+          Velg det høyeste utdanningsnivået du har fullført.
+        </Fieldset.Description>
+        {educationLevels.map((level) => (
+          <Radio
+            key={level.value}
+            id={`${context.id}-${level.value}`}
+            label={level.label}
+            {...getRadioProps(level.value)}
+          />
+        ))}
+      </Fieldset>
+      <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
+      <Paragraph style={{ marginBlock: 'var(--ds-size-2)' }}>
+        Du har valgt:{' '}
+        {educationLevels.find((level) => level.value === value)?.label}
+      </Paragraph>
+      <div data-size="sm" style={{ display: 'flex', gap: '1rem' }}>
+        <Button variant="secondary" onClick={() => setValue('kindergarten')}>
+          Velg Barnehage
+        </Button>
+        <Button variant="secondary" onClick={() => setValue('primary')}>
+          Velg Grunnskole
+        </Button>
+      </div>
+    </>
+  );
 };
 
-export const ReadOnly = {
-  args: { ...Group.args, readOnly: true, name: 'my-readonly' },
-  render: Group.render,
+Controlled.parameters = {
+  customStyles: {
+    display: 'flex',
+    gap: 'var(--ds-size-2)',
+    flexDirection: 'column',
+  },
+  docs: { source: { type: 'code', transform: formatReactSource } },
 };
 
 export const Disabled = {
@@ -166,6 +195,11 @@ export const Disabled = {
     // Disabled inputs don't pass text contrast requirements
     a11y: { config: { rules: [{ id: 'color-contrast', enabled: false }] } },
   },
+};
+
+export const ReadOnly = {
+  args: { ...Group.args, readOnly: true, name: 'my-readonly' },
+  render: Group.render,
 };
 
 export const Inline: Story = {
@@ -218,5 +252,14 @@ export const RadioInColorContext: Story = {
         expect(radio).toHaveStyle(`background-color: ${expectedColor}`);
       },
     );
+  },
+};
+
+export const Focused: Story = {
+  args: Preview.args,
+  parameters: {
+    pseudo: {
+      focusVisible: true,
+    },
   },
 };
