@@ -15,7 +15,7 @@ import { formatReactSource } from '.storybook/utils/sourceTransformers';
 
 const meta: Meta<typeof Radio> = {
   component: Radio,
-  tags: ['alpha'],
+  tags: ['beta'],
 };
 
 export default meta;

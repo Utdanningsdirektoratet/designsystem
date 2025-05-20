@@ -17,7 +17,7 @@ import { ChevronDownUpIcon, ChevronUpDownIcon } from '@navikt/aksel-icons';
 
 export default {
   component: Details,
-  tags: ['alpha'],
+  tags: ['beta'],
 } as Meta<typeof Details>;
 
 type Story = StoryObj<typeof Details>;

@@ -17,7 +17,7 @@ import { formatReactSource } from '.storybook/utils/sourceTransformers';
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
-  tags: ['alpha'],
+  tags: ['beta'],
 };
 
 export default meta;
