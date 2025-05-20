@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Avatar, Badge, Dropdown } from '@udir-design/react/alpha';
+import { Avatar, Badge, Dropdown, Link } from '@udir-design/react/alpha';
 import { BriefcaseIcon } from '@navikt/aksel-icons';
 
 const meta: Meta<typeof Avatar> = {
@@ -39,7 +39,6 @@ export const Sizes: Story = {
       <Avatar {...args} data-size="xs" aria-label="extra small" />
       <Avatar {...args} data-size="sm" aria-label="small" initials="sm" />
       <Avatar {...args} data-size="sm" aria-label="small" />
-      <Avatar {...args} aria-label="default" initials="md" />
       <Avatar {...args} data-size="md" aria-label="medium" initials="md" />
       <Avatar {...args} data-size="md" aria-label="medium" />
       <Avatar {...args} data-size="lg" aria-label="large" initials="lg" />
@@ -141,8 +140,12 @@ export const AsLink: Story = {
     'aria-label': 'Ola Nordmann',
   },
   render: (args) => (
-    <a href="https://www.udir.no/">
+    <Link
+      href="https://www.udir.no/"
+      style={{ display: 'flex', gap: 'var(--ds-size-2)', alignItems: 'center' }}
+    >
       <Avatar {...args} />
-    </a>
+      Ola Nordmann
+    </Link>
   ),
 };
