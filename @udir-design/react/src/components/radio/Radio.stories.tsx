@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 import {
   Button,
   Card,
@@ -11,10 +11,11 @@ import {
   UseRadioGroupProps,
 } from '@udir-design/react/alpha';
 import { expect, fn, userEvent, waitFor, within } from '@storybook/test';
+import { formatReactSource } from '.storybook/utils/sourceTransformers';
 
 const meta: Meta<typeof Radio> = {
   component: Radio,
-  tags: ['alpha'],
+  tags: ['beta'],
 };
 
 export default meta;
@@ -62,13 +63,11 @@ export const Preview: Story = {
   },
 };
 
-export const AriaLabel: Story = {
-  args: {
-    value: 'value',
-    'aria-label': 'Radio',
-    id: 'radio-aria-label',
-  },
-};
+const ageGroups = [
+  { value: '10-20', label: '10-20 år' },
+  { value: '21-45', label: '21-45 år' },
+  { value: '46-80', label: '46-80 år' },
+];
 
 export const Group: GroupStory = {
   args: {
@@ -77,107 +76,116 @@ export const Group: GroupStory = {
     disabled: false,
     value: 'sjokolade',
   },
-  render: function Render(args, context) {
+  render(args, context) {
     const { getRadioProps, validationMessageProps } = useRadioGroup({
       ...args,
     });
 
     return (
       <Fieldset>
-        <Fieldset.Legend>Hvilken iskremsmak er best?</Fieldset.Legend>
+        <Fieldset.Legend>Velg din aldersgruppe.</Fieldset.Legend>
         <Fieldset.Description>
-          Velg din favorittsmak blant alternativene.
+          Informasjonen blir brukt til å tilpasse innholdet på siden.
         </Fieldset.Description>
-        <Radio
-          id={context.id + '-vanilje'}
-          label="Vanilje"
-          {...getRadioProps('vanilje')}
-        />
-        <Radio
-          id={context.id + '-jordbær'}
-          label="Jordbær"
-          description="Jordbær er best"
-          {...getRadioProps('jordbær')}
-        />
-        <Radio
-          id={context.id + '-sjokolade'}
-          label="Sjokolade"
-          {...getRadioProps('sjokolade')}
-        />
-        <Radio
-          id={context.id + '-spiser-ikke-is'}
-          label="Jeg spiser ikke iskrem"
-          {...getRadioProps('spiser-ikke-is')}
-        />
+        {ageGroups.map((group) => (
+          <Radio
+            key={group.value}
+            id={context.id + '-' + group.value}
+            label={group.label}
+            {...getRadioProps(group.value)}
+          />
+        ))}
         <ValidationMessage {...validationMessageProps} />
       </Fieldset>
     );
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const radios = canvas.getAllByRole('radio');
+
+    await step('Keyboard interaction', async () => {
+      radios[0].focus();
+      expect(radios[0]).toHaveFocus();
+      await userEvent.keyboard(' ');
+      expect(radios[0]).toBeChecked();
+      await userEvent.keyboard('{ArrowDown}');
+      expect(radios[1]).toHaveFocus();
+      expect(radios[1]).toBeChecked();
+      await userEvent.keyboard('{ArrowUp}');
+      expect(radios[0]).toHaveFocus();
+      expect(radios[0]).toBeChecked();
+      // Arrows are reversed
+      // TODO: Will hopfully be fixed in Storybook 9.0 (https://github.com/testing-library/user-event/pull/1049)
+      await userEvent.keyboard('{ArrowLeft}');
+      expect(radios[1]).toHaveFocus();
+      expect(radios[1]).toBeChecked();
+      await userEvent.keyboard('{ArrowRight}');
+      expect(radios[0]).toHaveFocus();
+      expect(radios[0]).toBeChecked();
+    });
   },
 };
 
 export const WithError = {
   args: {
     ...Group.args,
-    error: 'Du må velge jordbær fordi det smaker best',
+    error: 'Du må velge en aldersgruppe',
     name: 'my-error',
   },
   render: Group.render,
 };
 
-export const Controlled: GroupStory = {
-  render: function Render(args, context) {
-    const { value, setValue, getRadioProps } = useRadioGroup({
-      ...args,
-    });
+const educationLevels = [
+  { value: 'kindergarten', label: 'Barnehage' },
+  { value: 'primary', label: 'Grunnskole' },
+  { value: 'secondary', label: 'Videregående' },
+  { value: 'higher', label: 'Høyere utdanning' },
+];
 
-    return (
-      <>
-        <Fieldset>
-          <Fieldset.Legend>Velg pizza</Fieldset.Legend>
-          <Fieldset.Description>
-            Alle pizzaene er laget på våre egne nybakte bunner og serveres med
-            kokkens egen osteblanding og tomatsaus.
-          </Fieldset.Description>
+export const Controlled: StoryFn<UseRadioGroupProps> = (args, context) => {
+  const { value, setValue, getRadioProps } = useRadioGroup({
+    ...args,
+  });
+  return (
+    <>
+      <Fieldset>
+        <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
+        <Fieldset.Description>
+          Velg det høyeste utdanningsnivået du har fullført.
+        </Fieldset.Description>
+        {educationLevels.map((level) => (
           <Radio
-            id={context.id + '-ost'}
-            label="Bare ost"
-            {...getRadioProps('ost')}
+            key={level.value}
+            id={`${context.id}-${level.value}`}
+            label={level.label}
+            {...getRadioProps(level.value)}
           />
-          <Radio
-            id={context.id + '-dobbeldekker'}
-            label="Dobbeldekker"
-            description="Chorizo spesial med kokkens luksuskylling"
-            {...getRadioProps('dobbeldekker')}
-          />
-          <Radio
-            id={context.id + '-flammen'}
-            label="Flammen"
-            {...getRadioProps('flammen')}
-          />
-          <Radio
-            id={context.id + '-snadder'}
-            label="Snadder"
-            {...getRadioProps('snadder')}
-          />
-        </Fieldset>
-
-        <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
-
-        <Paragraph style={{ marginBlock: 'var(--ds-size-2)' }}>
-          Du har valgt: {value}
-        </Paragraph>
-        <div style={{ display: 'flex', gap: '1rem' }}>
-          <Button onClick={() => setValue('flammen')}>Velg Flammen</Button>
-          <Button onClick={() => setValue('snadder')}>Velg Snadder</Button>
-        </div>
-      </>
-    );
-  },
+        ))}
+      </Fieldset>
+      <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
+      <Paragraph style={{ marginBlock: 'var(--ds-size-2)' }}>
+        Du har valgt:{' '}
+        {educationLevels.find((level) => level.value === value)?.label}
+      </Paragraph>
+      <div data-size="sm" style={{ display: 'flex', gap: '1rem' }}>
+        <Button variant="secondary" onClick={() => setValue('kindergarten')}>
+          Velg Barnehage
+        </Button>
+        <Button variant="secondary" onClick={() => setValue('primary')}>
+          Velg Grunnskole
+        </Button>
+      </div>
+    </>
+  );
 };
 
-export const ReadOnly = {
-  args: { ...Group.args, readOnly: true, name: 'my-readonly' },
-  render: Group.render,
+Controlled.parameters = {
+  customStyles: {
+    display: 'flex',
+    gap: 'var(--ds-size-2)',
+    flexDirection: 'column',
+  },
+  docs: { source: { type: 'code', transform: formatReactSource } },
 };
 
 export const Disabled = {
@@ -187,6 +195,11 @@ export const Disabled = {
     // Disabled inputs don't pass text contrast requirements
     a11y: { config: { rules: [{ id: 'color-contrast', enabled: false }] } },
   },
+};
+
+export const ReadOnly = {
+  args: { ...Group.args, readOnly: true, name: 'my-readonly' },
+  render: Group.render,
 };
 
 export const Inline: Story = {
@@ -239,5 +252,14 @@ export const RadioInColorContext: Story = {
         expect(radio).toHaveStyle(`background-color: ${expectedColor}`);
       },
     );
+  },
+};
+
+export const Focused: Story = {
+  args: Preview.args,
+  parameters: {
+    pseudo: {
+      focusVisible: true,
+    },
   },
 };

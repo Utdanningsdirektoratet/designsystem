@@ -1,71 +1,14 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Allow Indeterminate 1`] = `
-<table>
-  <thead>
-    <tr>
-      <th>
-        <div>
-          <input
-            type="checkbox"
-            id="utilities-usecheckboxgroup--allow-indeterminate-all"
-            aria-label="Select all"
-            name="my-checkbox"
-            value="all"
-          >
-        </div>
-      </th>
-      <th>
-        Header
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <div>
-          <input
-            type="checkbox"
-            id="utilities-usecheckboxgroup--allow-indeterminate-1"
-            aria-label="Check 1"
-            name="my-checkbox"
-            value="1"
-          >
-        </div>
-      </td>
-      <td>
-        Content
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <div>
-          <input
-            type="checkbox"
-            id="utilities-usecheckboxgroup--allow-indeterminate-2"
-            aria-label="Check 2"
-            name="my-checkbox"
-            value="2"
-          >
-        </div>
-      </td>
-      <td>
-        Content
-      </td>
-    </tr>
-  </tbody>
-</table>
-`;
-
 exports[`Default 1`] = `
 <fieldset>
   <div>
     <input
-      type="checkbox"
       id="utilities-usecheckboxgroup--default-email"
-      name=":r0:"
+      type="checkbox"
       value="epost"
       checked
+      name="«r0»"
     >
     <label
       data-weight="regular"
@@ -76,10 +19,10 @@ exports[`Default 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="utilities-usecheckboxgroup--default-telefon"
-      name=":r0:"
+      type="checkbox"
       value="telefon"
+      name="«r0»"
     >
     <label
       data-weight="regular"
@@ -90,10 +33,10 @@ exports[`Default 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="utilities-usecheckboxgroup--default-sms"
-      name=":r0:"
+      type="checkbox"
       value="sms"
+      name="«r0»"
     >
     <label
       data-weight="regular"
@@ -105,7 +48,7 @@ exports[`Default 1`] = `
   <p
     data-field="validation"
     hidden
-    id=":r1:"
+    id="«r1»"
   >
   </p>
 </fieldset>

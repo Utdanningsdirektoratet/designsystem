@@ -52,7 +52,7 @@ export const Preview: Story = {
     totalPages: 10,
     showPages: 7,
   },
-  render: function Render(args) {
+  render(args) {
     const [, updateArgs] = useArgs();
     const { pages, nextButtonProps, prevButtonProps } = usePagination({
       ...args,

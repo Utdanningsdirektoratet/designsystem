@@ -2,8 +2,34 @@
   code {
     display: inline;
     border: none;
-    // 14px in body text, but scale with headings
+    border-radius: var(--ds-border-radius-sm);
+    background: var(--ds-color-background-tinted);
+  }
+
+  code,
+  kbd {
     font-size: round(down, 0.8em, 0.0625rem);
+
+    // If the kbd element is used for an icon, add data-icon attribute
+    &[data-icon] {
+      font-size: 1.2em;
+      padding: 0 0.3em 2px 0.3em;
+      bottom: 0px;
+    }
+  }
+
+  kbd {
+    font-family:
+      ui-monospace, Menlo, Monaco, 'Roboto Mono', 'Oxygen Mono',
+      'Ubuntu Monospace', 'Source Code Pro', 'Droid Sans Mono', 'Courier New',
+      monospace;
+    background: var(--ds-color-background-tinted);
+    padding: var(--ds-size-1);
+    border-radius: var(--ds-border-radius-sm);
+    border: solid 1px var(--ds-color-border-subtle);
+    position: relative;
+    bottom: 2px;
+    box-shadow: 0.5px 1px 0 0 var(--ds-color-border-strong);
   }
 
   a {
@@ -13,6 +39,7 @@
       margin: 0;
       padding-left: 0;
       padding-right: 0;
+      margin-top: 4px;
 
       &::before,
       &::after {
@@ -35,6 +62,14 @@
       background-color: var(--ds-color-surface-tinted);
       color: var(--ds-color-text-default);
     }
+  }
+
+  blockquote {
+    color: var(--ds-color-neutral-text-subtle);
+    font-size: var(--ds-font-size-3);
+    margin: var(--ds-size-4) 0px;
+    border-left: 4px solid var(--ds-color-support1-surface-hover);
+    padding: 0px var(--ds-size-4);
   }
 }
 

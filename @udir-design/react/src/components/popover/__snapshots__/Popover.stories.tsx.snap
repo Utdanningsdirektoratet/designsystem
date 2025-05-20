@@ -4,12 +4,12 @@ exports[`Preview 1`] = `
 <button
   data-variant="primary"
   type="button"
-  popovertarget=":r0:"
+  popovertarget="«r0»"
 >
   My trigger!
 </button>
 <div
-  id=":r0:"
+  id="«r0»"
   popover="manual"
   data-variant="default"
 >

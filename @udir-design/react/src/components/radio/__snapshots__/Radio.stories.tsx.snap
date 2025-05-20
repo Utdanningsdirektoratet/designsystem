@@ -1,85 +1,67 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Aria Label 1`] = `
-<div>
-  <input
-    type="radio"
-    aria-label="Radio"
-    id="radio-aria-label"
-    value="value"
-  >
-</div>
-`;
-
 exports[`Controlled 1`] = `
 <fieldset>
   <legend data-weight="medium">
-    Velg pizza
+    Utdanningsnivå
   </legend>
   <p data-variant="default">
-    Alle pizzaene er laget på våre egne nybakte bunner og serveres med kokkens egen osteblanding og tomatsaus.
+    Velg det høyeste utdanningsnivået du har fullført.
   </p>
   <div>
     <input
+      id="components-radio--controlled-kindergarten"
       type="radio"
-      id="components-radio--controlled-ost"
-      name=":r5:"
-      value="ost"
+      value="kindergarten"
+      name="«r5»"
     >
     <label
       data-weight="regular"
-      for="components-radio--controlled-ost"
+      for="components-radio--controlled-kindergarten"
     >
-      Bare ost
+      Barnehage
     </label>
   </div>
   <div>
     <input
+      id="components-radio--controlled-primary"
       type="radio"
-      id="components-radio--controlled-dobbeldekker"
-      name=":r5:"
-      value="dobbeldekker"
-      aria-describedby="components-radio--controlled-dobbeldekker:description"
+      value="primary"
+      name="«r5»"
     >
     <label
       data-weight="regular"
-      for="components-radio--controlled-dobbeldekker"
+      for="components-radio--controlled-primary"
     >
-      Dobbeldekker
-    </label>
-    <div
-      data-field="description"
-      id="components-radio--controlled-dobbeldekker:description"
-    >
-      Chorizo spesial med kokkens luksuskylling
-    </div>
-  </div>
-  <div>
-    <input
-      type="radio"
-      id="components-radio--controlled-flammen"
-      name=":r5:"
-      value="flammen"
-    >
-    <label
-      data-weight="regular"
-      for="components-radio--controlled-flammen"
-    >
-      Flammen
+      Grunnskole
     </label>
   </div>
   <div>
     <input
+      id="components-radio--controlled-secondary"
       type="radio"
-      id="components-radio--controlled-snadder"
-      name=":r5:"
-      value="snadder"
+      value="secondary"
+      name="«r5»"
     >
     <label
       data-weight="regular"
-      for="components-radio--controlled-snadder"
+      for="components-radio--controlled-secondary"
     >
-      Snadder
+      Videregående
+    </label>
+  </div>
+  <div>
+    <input
+      id="components-radio--controlled-higher"
+      type="radio"
+      value="higher"
+      name="«r5»"
+    >
+    <label
+      data-weight="regular"
+      for="components-radio--controlled-higher"
+    >
+      Høyere utdanning
     </label>
   </div>
 </fieldset>
@@ -93,18 +75,21 @@ exports[`Controlled 1`] = `
 >
   Du har valgt:
 </p>
-<div style="display: flex; gap: 1rem;">
+<div
+  data-size="sm"
+  style="display: flex; gap: 1rem;"
+>
   <button
-    data-variant="primary"
+    data-variant="secondary"
     type="button"
   >
-    Velg Flammen
+    Velg Barnehage
   </button>
   <button
-    data-variant="primary"
+    data-variant="secondary"
     type="button"
   >
-    Velg Snadder
+    Velg Grunnskole
   </button>
 </div>
 `;
@@ -112,162 +97,142 @@ exports[`Controlled 1`] = `
 exports[`Disabled 1`] = `
 <fieldset>
   <legend data-weight="medium">
-    Hvilken iskremsmak er best?
+    Velg din aldersgruppe.
   </legend>
   <p data-variant="default">
-    Velg din favorittsmak blant alternativene.
+    Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
   <div>
     <input
-      type="radio"
-      id="components-radio--disabled-vanilje"
-      name="my-disabled"
+      id="components-radio--disabled-10-20"
       disabled
-      value="vanilje"
+      type="radio"
+      value="10-20"
+      name="my-disabled"
     >
     <label
       data-weight="regular"
-      for="components-radio--disabled-vanilje"
+      for="components-radio--disabled-10-20"
     >
-      Vanilje
+      10-20 år
     </label>
   </div>
   <div>
     <input
-      type="radio"
-      id="components-radio--disabled-jordbær"
-      name="my-disabled"
+      id="components-radio--disabled-21-45"
       disabled
-      value="jordbær"
-      aria-describedby="components-radio--disabled-jordbær:description"
+      type="radio"
+      value="21-45"
+      name="my-disabled"
     >
     <label
       data-weight="regular"
-      for="components-radio--disabled-jordbær"
+      for="components-radio--disabled-21-45"
     >
-      Jordbær
-    </label>
-    <div
-      data-field="description"
-      id="components-radio--disabled-jordbær:description"
-    >
-      Jordbær er best
-    </div>
-  </div>
-  <div>
-    <input
-      type="radio"
-      id="components-radio--disabled-sjokolade"
-      name="my-disabled"
-      disabled
-      value="sjokolade"
-    >
-    <label
-      data-weight="regular"
-      for="components-radio--disabled-sjokolade"
-    >
-      Sjokolade
+      21-45 år
     </label>
   </div>
   <div>
     <input
-      type="radio"
-      id="components-radio--disabled-spiser-ikke-is"
-      name="my-disabled"
+      id="components-radio--disabled-46-80"
       disabled
-      value="spiser-ikke-is"
+      type="radio"
+      value="46-80"
+      name="my-disabled"
     >
     <label
       data-weight="regular"
-      for="components-radio--disabled-spiser-ikke-is"
+      for="components-radio--disabled-46-80"
     >
-      Jeg spiser ikke iskrem
+      46-80 år
     </label>
   </div>
   <p
     data-field="validation"
     hidden
-    id=":r8:"
+    id="«r6»"
   >
   </p>
 </fieldset>
 `;
 
+exports[`Focused 1`] = `
+<div>
+  <input
+    id="radio-preview"
+    type="radio"
+    value="value"
+    aria-describedby="radio-preview:description"
+  >
+  <label
+    data-weight="regular"
+    for="radio-preview"
+  >
+    Radio
+  </label>
+  <div
+    data-field="description"
+    id="radio-preview:description"
+  >
+    Description
+  </div>
+</div>
+`;
+
 exports[`Group 1`] = `
 <fieldset>
   <legend data-weight="medium">
-    Hvilken iskremsmak er best?
+    Velg din aldersgruppe.
   </legend>
   <p data-variant="default">
-    Velg din favorittsmak blant alternativene.
+    Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
   <div>
     <input
+      id="components-radio--group-10-20"
       type="radio"
-      id="components-radio--group-vanilje"
+      value="10-20"
       name="my-group"
-      value="vanilje"
     >
     <label
       data-weight="regular"
-      for="components-radio--group-vanilje"
+      for="components-radio--group-10-20"
     >
-      Vanilje
+      10-20 år
     </label>
   </div>
   <div>
     <input
+      id="components-radio--group-21-45"
       type="radio"
-      id="components-radio--group-jordbær"
+      value="21-45"
       name="my-group"
-      value="jordbær"
-      aria-describedby="components-radio--group-jordbær:description"
     >
     <label
       data-weight="regular"
-      for="components-radio--group-jordbær"
+      for="components-radio--group-21-45"
     >
-      Jordbær
-    </label>
-    <div
-      data-field="description"
-      id="components-radio--group-jordbær:description"
-    >
-      Jordbær er best
-    </div>
-  </div>
-  <div>
-    <input
-      type="radio"
-      id="components-radio--group-sjokolade"
-      name="my-group"
-      value="sjokolade"
-    >
-    <label
-      data-weight="regular"
-      for="components-radio--group-sjokolade"
-    >
-      Sjokolade
+      21-45 år
     </label>
   </div>
   <div>
     <input
+      id="components-radio--group-46-80"
       type="radio"
-      id="components-radio--group-spiser-ikke-is"
+      value="46-80"
       name="my-group"
-      value="spiser-ikke-is"
     >
     <label
       data-weight="regular"
-      for="components-radio--group-spiser-ikke-is"
+      for="components-radio--group-46-80"
     >
-      Jeg spiser ikke iskrem
+      46-80 år
     </label>
   </div>
   <p
     data-field="validation"
     hidden
-    id=":r0:"
+    id="«r0»"
   >
   </p>
 </fieldset>
@@ -284,10 +249,10 @@ exports[`Inline 1`] = `
   <div style="display: flex; flex-wrap: wrap; gap: var(--ds-size-6);">
     <div>
       <input
-        type="radio"
         id="undefined-inline-ja"
-        name="my-inline"
+        type="radio"
         value="ja"
+        name="my-inline"
       >
       <label
         data-weight="regular"
@@ -298,10 +263,10 @@ exports[`Inline 1`] = `
     </div>
     <div>
       <input
-        type="radio"
         id="undefined-inline-nei"
-        name="my-inline"
+        type="radio"
         value="nei"
+        name="my-inline"
       >
       <label
         data-weight="regular"
@@ -317,8 +282,8 @@ exports[`Inline 1`] = `
 exports[`Preview 1`] = `
 <div>
   <input
-    type="radio"
     id="radio-preview"
+    type="radio"
     value="value"
     aria-describedby="radio-preview:description"
   >
@@ -344,8 +309,8 @@ exports[`Radio In Color Context 1`] = `
 >
   <div>
     <input
-      type="radio"
       id="radio-in-color-context"
+      type="radio"
       checked
       aria-describedby="radio-in-color-context:description"
     >
@@ -368,82 +333,60 @@ exports[`Radio In Color Context 1`] = `
 exports[`Read Only 1`] = `
 <fieldset>
   <legend data-weight="medium">
-    Hvilken iskremsmak er best?
+    Velg din aldersgruppe.
   </legend>
   <p data-variant="default">
-    Velg din favorittsmak blant alternativene.
+    Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
   <div>
     <input
-      type="radio"
-      id="components-radio--read-only-vanilje"
-      name="my-readonly"
+      id="components-radio--read-only-10-20"
       readonly
-      value="vanilje"
+      type="radio"
+      value="10-20"
+      name="my-readonly"
     >
     <label
       data-weight="regular"
-      for="components-radio--read-only-vanilje"
+      for="components-radio--read-only-10-20"
     >
-      Vanilje
+      10-20 år
     </label>
   </div>
   <div>
     <input
-      type="radio"
-      id="components-radio--read-only-jordbær"
-      name="my-readonly"
+      id="components-radio--read-only-21-45"
       readonly
-      value="jordbær"
-      aria-describedby="components-radio--read-only-jordbær:description"
+      type="radio"
+      value="21-45"
+      name="my-readonly"
     >
     <label
       data-weight="regular"
-      for="components-radio--read-only-jordbær"
+      for="components-radio--read-only-21-45"
     >
-      Jordbær
-    </label>
-    <div
-      data-field="description"
-      id="components-radio--read-only-jordbær:description"
-    >
-      Jordbær er best
-    </div>
-  </div>
-  <div>
-    <input
-      type="radio"
-      id="components-radio--read-only-sjokolade"
-      name="my-readonly"
-      readonly
-      value="sjokolade"
-    >
-    <label
-      data-weight="regular"
-      for="components-radio--read-only-sjokolade"
-    >
-      Sjokolade
+      21-45 år
     </label>
   </div>
   <div>
     <input
-      type="radio"
-      id="components-radio--read-only-spiser-ikke-is"
-      name="my-readonly"
+      id="components-radio--read-only-46-80"
       readonly
-      value="spiser-ikke-is"
+      type="radio"
+      value="46-80"
+      name="my-readonly"
     >
     <label
       data-weight="regular"
-      for="components-radio--read-only-spiser-ikke-is"
+      for="components-radio--read-only-46-80"
     >
-      Jeg spiser ikke iskrem
+      46-80 år
     </label>
   </div>
   <p
     data-field="validation"
     hidden
-    id=":r6:"
+    id="«r8»"
   >
   </p>
 </fieldset>
@@ -452,86 +395,64 @@ exports[`Read Only 1`] = `
 exports[`With Error 1`] = `
 <fieldset>
   <legend data-weight="medium">
-    Hvilken iskremsmak er best?
+    Velg din aldersgruppe.
   </legend>
   <p data-variant="default">
-    Velg din favorittsmak blant alternativene.
+    Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
   <div>
     <input
-      type="radio"
-      id="components-radio--with-error-vanilje"
-      name="my-error"
-      aria-describedby=":r2:"
+      id="components-radio--with-error-10-20"
+      aria-describedby="«r2»"
       aria-invalid="true"
-      value="vanilje"
+      type="radio"
+      value="10-20"
+      name="my-error"
     >
     <label
       data-weight="regular"
-      for="components-radio--with-error-vanilje"
+      for="components-radio--with-error-10-20"
     >
-      Vanilje
+      10-20 år
     </label>
   </div>
   <div>
     <input
-      type="radio"
-      id="components-radio--with-error-jordbær"
-      name="my-error"
-      aria-describedby=":r2: components-radio--with-error-jordbær:description"
+      id="components-radio--with-error-21-45"
+      aria-describedby="«r2»"
       aria-invalid="true"
-      value="jordbær"
+      type="radio"
+      value="21-45"
+      name="my-error"
     >
     <label
       data-weight="regular"
-      for="components-radio--with-error-jordbær"
+      for="components-radio--with-error-21-45"
     >
-      Jordbær
-    </label>
-    <div
-      data-field="description"
-      id="components-radio--with-error-jordbær:description"
-    >
-      Jordbær er best
-    </div>
-  </div>
-  <div>
-    <input
-      type="radio"
-      id="components-radio--with-error-sjokolade"
-      name="my-error"
-      aria-describedby=":r2:"
-      aria-invalid="true"
-      value="sjokolade"
-    >
-    <label
-      data-weight="regular"
-      for="components-radio--with-error-sjokolade"
-    >
-      Sjokolade
+      21-45 år
     </label>
   </div>
   <div>
     <input
-      type="radio"
-      id="components-radio--with-error-spiser-ikke-is"
-      name="my-error"
-      aria-describedby=":r2:"
+      id="components-radio--with-error-46-80"
+      aria-describedby="«r2»"
       aria-invalid="true"
-      value="spiser-ikke-is"
+      type="radio"
+      value="46-80"
+      name="my-error"
     >
     <label
       data-weight="regular"
-      for="components-radio--with-error-spiser-ikke-is"
+      for="components-radio--with-error-46-80"
     >
-      Jeg spiser ikke iskrem
+      46-80 år
     </label>
   </div>
   <p
     data-field="validation"
-    id=":r2:"
+    id="«r2»"
   >
-    Du må velge jordbær fordi det smaker best
+    Du må velge en aldersgruppe
   </p>
 </fieldset>
 `;

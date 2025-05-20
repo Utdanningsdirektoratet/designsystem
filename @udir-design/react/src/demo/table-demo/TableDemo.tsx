@@ -94,7 +94,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
 
   // Handler to export the selected students.
   const handleExport = (
-    dialogExportRef: React.RefObject<HTMLDialogElement>,
+    dialogExportRef: React.RefObject<HTMLDialogElement | null>,
   ) => {
     if (!isStudentsSelected) {
       setShowErrorSummary(true);
@@ -142,71 +142,78 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
             <Search.Clear onClick={() => setSearchQuery('')} />
           </Search>
         </div>
-        <Table border className={classes.table}>
-          <Table.Head>
-            <Table.Row className={classes.row}>
-              <Table.HeaderCell>
-                <Checkbox
-                  id="checkbox-select-all"
-                  aria-label="Select all"
-                  {...getCheckboxProps({
-                    allowIndeterminate: true,
-                    value: 'all',
-                  })}
-                />
-              </Table.HeaderCell>
-              <Table.HeaderCell
-                sort={sortField === 'name' ? sortDirection : 'none'}
-                onClick={() => handleSort('name')}
-              >
-                Navn
-              </Table.HeaderCell>
-              <Table.HeaderCell
-                sort={sortField === 'educationLevel' ? sortDirection : 'none'}
-                onClick={() => handleSort('educationLevel')}
-              >
-                Utdanningsnivå
-              </Table.HeaderCell>
-              <Table.HeaderCell>Sist endret</Table.HeaderCell>
-              <Table.HeaderCell>Telefon</Table.HeaderCell>
-              <Table.HeaderCell>Status</Table.HeaderCell>
-              <Table.HeaderCell>Slett</Table.HeaderCell>
-            </Table.Row>
-          </Table.Head>
-          <Table.Body>
-            {currentUsers.map((student) => (
-              <Table.Row className={classes.row} key={student.id}>
-                <Table.Cell>
+        <div className={classes.tableContainer}>
+          <Table border className={classes.table}>
+            <Table.Head>
+              <Table.Row className={classes.row}>
+                <Table.HeaderCell>
                   <Checkbox
-                    id={'checkbox-' + student.id}
-                    aria-label={'Check ' + student.name}
+                    id="checkbox-select-all"
+                    aria-label="Select all"
                     {...getCheckboxProps({
-                      value: student.id.toString(),
+                      allowIndeterminate: true,
+                      value: 'all',
                     })}
-                    checked={selectedStudentIds.includes(student.id.toString())}
                   />
-                </Table.Cell>
-                <Table.Cell>
-                  <div className={classes.student}>
-                    <Avatar aria-label={student.name} />
-                    {student.name}
-                  </div>
-                </Table.Cell>
-                <Table.Cell>{student.educationLevel}</Table.Cell>
-                <Table.Cell>{student.edited}</Table.Cell>
-                <Table.Cell>{student.phone}</Table.Cell>
-                <Table.Cell>
-                  <Tag data-color={tagColor(student.status)}>
-                    {student.status}
-                  </Tag>
-                </Table.Cell>
-                <Table.Cell>
-                  <DeleteDialog student={student} handleDelete={handleDelete} />
-                </Table.Cell>
+                </Table.HeaderCell>
+                <Table.HeaderCell
+                  sort={sortField === 'name' ? sortDirection : 'none'}
+                  onClick={() => handleSort('name')}
+                >
+                  Navn
+                </Table.HeaderCell>
+                <Table.HeaderCell
+                  sort={sortField === 'educationLevel' ? sortDirection : 'none'}
+                  onClick={() => handleSort('educationLevel')}
+                >
+                  Utdanningsnivå
+                </Table.HeaderCell>
+                <Table.HeaderCell>Sist endret</Table.HeaderCell>
+                <Table.HeaderCell>Telefon</Table.HeaderCell>
+                <Table.HeaderCell>Status</Table.HeaderCell>
+                <Table.HeaderCell>Slett</Table.HeaderCell>
               </Table.Row>
-            ))}
-          </Table.Body>
-        </Table>
+            </Table.Head>
+            <Table.Body>
+              {currentUsers.map((student) => (
+                <Table.Row className={classes.row} key={student.id}>
+                  <Table.Cell>
+                    <Checkbox
+                      id={'checkbox-' + student.id}
+                      aria-label={'Check ' + student.name}
+                      {...getCheckboxProps({
+                        value: student.id.toString(),
+                      })}
+                      checked={selectedStudentIds.includes(
+                        student.id.toString(),
+                      )}
+                    />
+                  </Table.Cell>
+                  <Table.Cell>
+                    <div className={classes.student}>
+                      <Avatar aria-label={student.name} />
+                      {student.name}
+                    </div>
+                  </Table.Cell>
+                  <Table.Cell>{student.educationLevel}</Table.Cell>
+                  <Table.Cell>{student.edited}</Table.Cell>
+                  <Table.Cell>{student.phone}</Table.Cell>
+                  <Table.Cell>
+                    <Tag data-color={tagColor(student.status)}>
+                      {student.status}
+                    </Tag>
+                  </Table.Cell>
+                  <Table.Cell>
+                    <DeleteDialog
+                      student={student}
+                      handleDelete={handleDelete}
+                    />
+                  </Table.Cell>
+                </Table.Row>
+              ))}
+            </Table.Body>
+          </Table>
+        </div>
         <div className={classes.tableFooter}>
           <PaginationControls
             currentPage={currentPage}

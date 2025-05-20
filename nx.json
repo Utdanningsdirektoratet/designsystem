@@ -22,15 +22,6 @@
       }
     }
   },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx-remotecache-azure",
-      "options": {
-        "accountName": "stdesignsystembuild",
-        "container": "nx-remotecache"
-      }
-    }
-  },
   "targetDefaults": {
     "lint": {
       "options": {
@@ -60,5 +51,8 @@
     }
   ],
   "generators": {},
-  "useLegacyCache": true
+  "azure": {
+    "container": "nx-remotecache",
+    "localMode": "read-write"
+  }
 }

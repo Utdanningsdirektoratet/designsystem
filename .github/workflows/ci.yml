@@ -19,7 +19,8 @@ permissions:
   checks: write
 
 env:
-  NXCACHE_AZURE_ACCOUNT_KEY: ${{ secrets.NXCACHE_AZURE_ACCOUNT_KEY }}
+  AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+  NX_KEY: ${{ secrets.NX_KEY }}
 
 jobs:
   main:
@@ -27,7 +28,7 @@ jobs:
     outputs:
       run_ui_tests: ${{ steps.job_condition.outputs.run_ui_tests }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0
 
@@ -54,21 +55,21 @@ jobs:
 
       - name: Skip 'Storybook Publish' check
         if: steps.job_condition.outputs.run_ui_tests == 'false'
-        uses: LouisBrunner/checks-action@v2.0.0
+        uses: LouisBrunner/checks-action@6b626ffbad7cc56fd58627f774b9067e6118af23 # v2.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: Storybook Publish
           conclusion: skipped
       - name: Skip 'UI Tests' check
         if: steps.job_condition.outputs.run_ui_tests == 'false'
-        uses: LouisBrunner/checks-action@v2.0.0
+        uses: LouisBrunner/checks-action@6b626ffbad7cc56fd58627f774b9067e6118af23 # v2.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: UI Tests
           conclusion: skipped
       - name: Skip 'UI Review' check
         if: steps.job_condition.outputs.run_ui_tests == 'false'
-        uses: LouisBrunner/checks-action@v2.0.0
+        uses: LouisBrunner/checks-action@6b626ffbad7cc56fd58627f774b9067e6118af23 # v2.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: UI Review
@@ -92,7 +93,7 @@ jobs:
     needs: main
     if: needs.main.outputs.run_ui_tests == 'true'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0
       - uses: ./.github/actions/pnpm-setup
@@ -107,7 +108,7 @@ jobs:
     needs: [main]
     if: needs.main.outputs.run_ui_tests == 'true'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0
 
@@ -117,7 +118,7 @@ jobs:
         run: pnpm nx build:storybook
 
       - name: Publish Storybook to Chromatic
-        uses: chromaui/action@latest
+        uses: chromaui/action@e8cc4c31775280b175a3c440076c00d19a9014d7 # v11.28.2
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: '@udir-design/react'

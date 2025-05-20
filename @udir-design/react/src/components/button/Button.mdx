@@ -1,10 +1,5 @@
 import { Meta, Canvas, Controls, Primary } from '@storybook/blocks';
-import {
-  Do,
-  Dont,
-  Stack,
-  SimpleAlert,
-} from '../../../.storybook/docs-components';
+import { Do, Dont, Stack, SimpleAlert } from '.storybook/docs-components';
 import { Button } from './Button';
 import * as ButtonStories from './Button.stories';
 import { ButtonEx1, ButtonEx2, ButtonEx4, ButtonEx5 } from './docs/doAndDont';
@@ -15,10 +10,20 @@ import { ButtonEx1, ButtonEx2, ButtonEx4, ButtonEx5 } from './docs/doAndDont';
 
 Knapper lar brukerne utføre handlinger. Vi har variantene `primary`, `secondary` og `tertiary` som kommer i ulike fargevarianter og størrelser.
 
+**Passer til å**
+
+- starte en prosess
+- navigere i en flyt, for eksempel med Forrige og Neste
+- sende inn et skjema
+
+**Passer ikke til å**
+
+- navigere til andre sider eller ut av tjenesten, bruk heller [`Link`](/docs/components-link--docs)
+
+## Slik bruker du Button
+
 <Primary />
 <Controls />
-
-## Slik bruker du button
 
 ```tsx
 import { Button } from '@udir-design/react';
@@ -26,23 +31,23 @@ import { Button } from '@udir-design/react';
 <Button>Trykk på meg!</Button>;
 ```
 
-## Varianter av button
+## Varianter av Button
 
 Vi har forskjellige knapper for å fremheve utvalgte handlinger. `Primary`, `secondary` og `tertiary` bestemmer hvor viktig handlingen er.
 
-### Primary button
+### Primary Button
 
 Vi bruker denne knappen til den handlingen som er viktigst for brukeren, for eksempel Lagre, Neste eller Send inn. Det skal bare være en primærknapp per side.
 
 <Canvas of={ButtonStories.Primary} />
 
-### Secondary button
+### Secondary Button
 
 Vi bruker denne knappen til handlinger som ikke er hovedhandlinger. Den står gjerne sammen med en hovedknapp, så hvis hovedknappen er Lagre, kan sekundærknappen være Avbryt.
 
 <Canvas of={ButtonStories.Secondary} />
 
-### Tertiary button
+### Tertiary Button
 
 Denne knappen bruker vi til nedtonede handlinger. Hvis vi vil bruke den alene, må den ha med et ikon, hvis ikke er det vanskelig å se at det er en knapp.
 
@@ -109,25 +114,13 @@ I eksempelet under bruker vi proppen `loading` for å vise at knappen laster.
 
 I eksempelet over blir `aria-disabled` satt av `loading="true"`. Skjermlesere og andre hjelpemidler vil bli informert om at knappen finnes, men ikke er aktiv. I motsetning til `disabled` kan knappen fortsatt få fokus når noen navigerer med tastaturet.
 
-<SimpleAlert type="info" heading={{ text: 'Tips', level: 4 }}>
+<SimpleAlert type="info" heading="Tips">
   `loading="true"` eller `aria-disabled` stopper ikke automatisk knappen fra å
   utløse `onClick`. Du må selv passe på at callback-funksjonen ikke kjører når
   knappen er deaktivert.
 </SimpleAlert>
 
-## Retningslinjer for button
-
-Knapper skal brukes til å utføre handlinger.
-
-**Passer til å**
-
-- starte en prosess
-- navigere i en flyt, for eksempel med Forrige og Neste
-- sende inn et skjema
-
-**Passer ikke til å**
-
-- navigere til andre sider eller ut av tjenesten, bruk heller [`Link`](/docs/components-link--docs)
+## Retningslinjer
 
 ### Plassering av knapper
 
@@ -139,7 +132,7 @@ Vi unngår deaktiverte (`disabled`) knapper fordi de kan være vanskelige å opp
 
 Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander) og hvilke alternativer som finnes.
 
-<SimpleAlert type="info" heading={{text: "Tips", level: 4}}>
+<SimpleAlert type="info" heading="Tips">
 Hvis du mot formodning må bruke en deaktivert knapp:
 
 - Sørg for at alle brukerne dine både opplever og forstår at knappen eksisterer, at den er deaktivert, og hvorfor.
@@ -154,7 +147,7 @@ Vi skal tydelig beskrive handlingene knappene utfører. En knapp kan bare ha én
 
 <ButtonEx1 />
 
-### Èn hovedhandling per side
+### Én hovedhandling per side
 
 Vi skal holde oss til én primærknapp per side. Hvis det er flere hovedhandlinger kan brukerne bli usikre på hva de skal gjøre.
 
@@ -166,7 +159,7 @@ Vi skal holde oss til ett ikon per knapp.
 
 <ButtonEx4 />
 
-## Tekst i komponenten
+## Tekst i Button
 
 Knappeteksten skal være kort, helst ikke mer enn to, maks. tre ord. Tenk på at knappen tydelig skal beskrive hva som skjer når brukeren klikker på den.
 

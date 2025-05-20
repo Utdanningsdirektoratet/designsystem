@@ -1,4 +1,4 @@
-import { Controller, Control, FieldError } from 'react-hook-form';
+import { useFormContext } from 'react-hook-form';
 import {
   Heading,
   Table,
@@ -6,29 +6,36 @@ import {
   ValidationMessage,
   Fieldset,
 } from '@udir-design/react/alpha';
-import { FormValues } from '../FormDemo';
+import type { FormValues, PageProps } from '../FormDemo';
 import classes from './RankingTable.module.css';
 
 type RankingTableProps = {
   title?: string;
   assertions: string[];
   rankings: string[];
-  control: Control<FormValues>;
-  error?: FieldError;
-};
+} & PageProps;
 
 export const RankingTable = ({
   title,
   assertions,
   rankings,
-  control,
-  error,
+  showErrors,
 }: RankingTableProps) => {
   const errorId = 'rankings-error';
+  const assertionRules = { required: 'Du må besvare alle påstandene' };
+  const { register, formState, getFieldState } = useFormContext<FormValues>();
+
+  const rawRankingErrors = formState.errors.rankings;
+  const rankingError = rawRankingErrors
+    ? Object.values(rawRankingErrors)[0]
+    : undefined;
+  const error = showErrors ? rankingError : undefined;
+
   return (
     <Fieldset
       aria-invalid={!!error}
       aria-describedby={error ? errorId : undefined}
+      id="rankings"
     >
       {title && (
         <Fieldset.Legend>
@@ -49,38 +56,31 @@ export const RankingTable = ({
           </Table.Row>
         </Table.Head>
         <Table.Body>
-          {assertions.map((assertion, rowIndex) => (
-            <Table.Row key={rowIndex}>
-              <Table.Cell>{assertion}</Table.Cell>
-              <Controller
-                name={`rankings.${assertion}`}
-                control={control}
-                rules={{ required: 'Du må besvare alle påstandene' }}
-                render={({ field }) => {
-                  const isInvalid = !field.value;
-                  return (
-                    <>
-                      {rankings.map((ranking, colIndex) => (
-                        <Table.Cell key={colIndex} className={classes.cell}>
-                          <Radio
-                            {...field}
-                            value={ranking}
-                            checked={field.value === ranking}
-                            aria-invalid={error && isInvalid}
-                            aria-describedby={
-                              error && isInvalid
-                                ? `${errorId}-${rowIndex}`
-                                : undefined
-                            }
-                          />
-                        </Table.Cell>
-                      ))}
-                    </>
-                  );
-                }}
-              />
-            </Table.Row>
-          ))}
+          {assertions.map((assertion, rowIndex) => {
+            const fieldName = `rankings.${assertion}` as const;
+            const isInvalid = getFieldState(fieldName).invalid;
+
+            return (
+              <Table.Row key={rowIndex}>
+                <Table.Cell>{assertion}</Table.Cell>
+
+                {rankings.map((ranking, colIndex) => (
+                  <Table.Cell key={colIndex} className={classes.cell}>
+                    <Radio
+                      value={ranking}
+                      aria-invalid={error && isInvalid}
+                      aria-describedby={
+                        error && isInvalid
+                          ? `${errorId}-${rowIndex}`
+                          : undefined
+                      }
+                      {...register(fieldName, assertionRules)}
+                    />
+                  </Table.Cell>
+                ))}
+              </Table.Row>
+            );
+          })}
         </Table.Body>
       </Table>
       {error && (

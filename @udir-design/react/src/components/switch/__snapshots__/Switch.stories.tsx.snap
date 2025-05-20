@@ -3,9 +3,9 @@
 exports[`Preview 1`] = `
 <div>
   <input
-    type="checkbox"
     role="switch"
     id="components-switch--preview"
+    type="checkbox"
   >
   <label
     data-weight="regular"
@@ -23,9 +23,9 @@ exports[`Switch In Color Context 1`] = `
 >
   <div>
     <input
-      type="checkbox"
       role="switch"
       id="switch-in-color-context"
+      type="checkbox"
       checked
       aria-describedby="switch-in-color-context:description"
     >

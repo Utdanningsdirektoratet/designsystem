@@ -14,9 +14,9 @@ exports[`Checkbox 1`] = `
     </h2>
     <div>
       <input
+        id="components-input--checkbox-sm-default"
         type="checkbox"
         name="sm-default"
-        id="components-input--checkbox-sm-default"
       >
       <label
         data-weight="medium"
@@ -27,10 +27,10 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="sm-checked"
         id="components-input--checkbox-sm-checked"
+        type="checkbox"
         checked
+        name="sm-checked"
       >
       <label
         data-weight="medium"
@@ -41,10 +41,10 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="sm-indeterminate"
         data-indeterminate="true"
         id="components-input--checkbox-sm-indeterminate"
+        type="checkbox"
+        name="sm-indeterminate"
       >
       <label
         data-weight="medium"
@@ -55,10 +55,10 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="sm-disabled"
         disabled
         id="components-input--checkbox-sm-disabled"
+        type="checkbox"
+        name="sm-disabled"
       >
       <label
         data-weight="medium"
@@ -69,11 +69,11 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="sm-disabled-checked"
         disabled
         id="components-input--checkbox-sm-disabled-checked"
+        type="checkbox"
         checked
+        name="sm-disabled-checked"
       >
       <label
         data-weight="medium"
@@ -84,11 +84,11 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="sm-disabled-indeterminate"
         disabled
         data-indeterminate="true"
         id="components-input--checkbox-sm-disabled-indeterminate"
+        type="checkbox"
+        name="sm-disabled-indeterminate"
       >
       <label
         data-weight="medium"
@@ -99,10 +99,10 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="sm-invalid"
         aria-invalid="true"
         id="components-input--checkbox-sm-invalid"
+        type="checkbox"
+        name="sm-invalid"
       >
       <label
         data-weight="medium"
@@ -113,11 +113,11 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="sm-invalid-checked"
         aria-invalid="true"
         id="components-input--checkbox-sm-invalid-checked"
+        type="checkbox"
         checked
+        name="sm-invalid-checked"
       >
       <label
         data-weight="medium"
@@ -128,11 +128,11 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="sm-invalid-indeterminate"
         aria-invalid="true"
         data-indeterminate="true"
         id="components-input--checkbox-sm-invalid-indeterminate"
+        type="checkbox"
+        name="sm-invalid-indeterminate"
       >
       <label
         data-weight="medium"
@@ -143,10 +143,10 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="sm-read-only"
         readonly
         id="components-input--checkbox-sm-read-only"
+        type="checkbox"
+        name="sm-read-only"
       >
       <label
         data-weight="medium"
@@ -157,11 +157,11 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="sm-read-only-checked"
         readonly
         id="components-input--checkbox-sm-read-only-checked"
+        type="checkbox"
         checked
+        name="sm-read-only-checked"
       >
       <label
         data-weight="medium"
@@ -172,11 +172,11 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="sm-read-only-indeterminate"
         readonly
         data-indeterminate="true"
         id="components-input--checkbox-sm-read-only-indeterminate"
+        type="checkbox"
+        name="sm-read-only-indeterminate"
       >
       <label
         data-weight="medium"
@@ -198,9 +198,9 @@ exports[`Checkbox 1`] = `
     </h2>
     <div>
       <input
+        id="components-input--checkbox-md-default"
         type="checkbox"
         name="md-default"
-        id="components-input--checkbox-md-default"
       >
       <label
         data-weight="medium"
@@ -211,10 +211,10 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="md-checked"
         id="components-input--checkbox-md-checked"
+        type="checkbox"
         checked
+        name="md-checked"
       >
       <label
         data-weight="medium"
@@ -225,10 +225,10 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="md-indeterminate"
         data-indeterminate="true"
         id="components-input--checkbox-md-indeterminate"
+        type="checkbox"
+        name="md-indeterminate"
       >
       <label
         data-weight="medium"
@@ -239,10 +239,10 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="md-disabled"
         disabled
         id="components-input--checkbox-md-disabled"
+        type="checkbox"
+        name="md-disabled"
       >
       <label
         data-weight="medium"
@@ -253,11 +253,11 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="md-disabled-checked"
         disabled
         id="components-input--checkbox-md-disabled-checked"
+        type="checkbox"
         checked
+        name="md-disabled-checked"
       >
       <label
         data-weight="medium"
@@ -268,11 +268,11 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="md-disabled-indeterminate"
         disabled
         data-indeterminate="true"
         id="components-input--checkbox-md-disabled-indeterminate"
+        type="checkbox"
+        name="md-disabled-indeterminate"
       >
       <label
         data-weight="medium"
@@ -283,10 +283,10 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="md-invalid"
         aria-invalid="true"
         id="components-input--checkbox-md-invalid"
+        type="checkbox"
+        name="md-invalid"
       >
       <label
         data-weight="medium"
@@ -297,11 +297,11 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="md-invalid-checked"
         aria-invalid="true"
         id="components-input--checkbox-md-invalid-checked"
+        type="checkbox"
         checked
+        name="md-invalid-checked"
       >
       <label
         data-weight="medium"
@@ -312,11 +312,11 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="md-invalid-indeterminate"
         aria-invalid="true"
         data-indeterminate="true"
         id="components-input--checkbox-md-invalid-indeterminate"
+        type="checkbox"
+        name="md-invalid-indeterminate"
       >
       <label
         data-weight="medium"
@@ -327,10 +327,10 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="md-read-only"
         readonly
         id="components-input--checkbox-md-read-only"
+        type="checkbox"
+        name="md-read-only"
       >
       <label
         data-weight="medium"
@@ -341,11 +341,11 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="md-read-only-checked"
         readonly
         id="components-input--checkbox-md-read-only-checked"
+        type="checkbox"
         checked
+        name="md-read-only-checked"
       >
       <label
         data-weight="medium"
@@ -356,11 +356,11 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="md-read-only-indeterminate"
         readonly
         data-indeterminate="true"
         id="components-input--checkbox-md-read-only-indeterminate"
+        type="checkbox"
+        name="md-read-only-indeterminate"
       >
       <label
         data-weight="medium"
@@ -382,9 +382,9 @@ exports[`Checkbox 1`] = `
     </h2>
     <div>
       <input
+        id="components-input--checkbox-lg-default"
         type="checkbox"
         name="lg-default"
-        id="components-input--checkbox-lg-default"
       >
       <label
         data-weight="medium"
@@ -395,10 +395,10 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="lg-checked"
         id="components-input--checkbox-lg-checked"
+        type="checkbox"
         checked
+        name="lg-checked"
       >
       <label
         data-weight="medium"
@@ -409,10 +409,10 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="lg-indeterminate"
         data-indeterminate="true"
         id="components-input--checkbox-lg-indeterminate"
+        type="checkbox"
+        name="lg-indeterminate"
       >
       <label
         data-weight="medium"
@@ -423,10 +423,10 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="lg-disabled"
         disabled
         id="components-input--checkbox-lg-disabled"
+        type="checkbox"
+        name="lg-disabled"
       >
       <label
         data-weight="medium"
@@ -437,11 +437,11 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="lg-disabled-checked"
         disabled
         id="components-input--checkbox-lg-disabled-checked"
+        type="checkbox"
         checked
+        name="lg-disabled-checked"
       >
       <label
         data-weight="medium"
@@ -452,11 +452,11 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="lg-disabled-indeterminate"
         disabled
         data-indeterminate="true"
         id="components-input--checkbox-lg-disabled-indeterminate"
+        type="checkbox"
+        name="lg-disabled-indeterminate"
       >
       <label
         data-weight="medium"
@@ -467,10 +467,10 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="lg-invalid"
         aria-invalid="true"
         id="components-input--checkbox-lg-invalid"
+        type="checkbox"
+        name="lg-invalid"
       >
       <label
         data-weight="medium"
@@ -481,11 +481,11 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="lg-invalid-checked"
         aria-invalid="true"
         id="components-input--checkbox-lg-invalid-checked"
+        type="checkbox"
         checked
+        name="lg-invalid-checked"
       >
       <label
         data-weight="medium"
@@ -496,11 +496,11 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="lg-invalid-indeterminate"
         aria-invalid="true"
         data-indeterminate="true"
         id="components-input--checkbox-lg-invalid-indeterminate"
+        type="checkbox"
+        name="lg-invalid-indeterminate"
       >
       <label
         data-weight="medium"
@@ -511,10 +511,10 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="lg-read-only"
         readonly
         id="components-input--checkbox-lg-read-only"
+        type="checkbox"
+        name="lg-read-only"
       >
       <label
         data-weight="medium"
@@ -525,11 +525,11 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="lg-read-only-checked"
         readonly
         id="components-input--checkbox-lg-read-only-checked"
+        type="checkbox"
         checked
+        name="lg-read-only-checked"
       >
       <label
         data-weight="medium"
@@ -540,11 +540,11 @@ exports[`Checkbox 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
-        name="lg-read-only-indeterminate"
         readonly
         data-indeterminate="true"
         id="components-input--checkbox-lg-read-only-indeterminate"
+        type="checkbox"
+        name="lg-read-only-indeterminate"
       >
       <label
         data-weight="medium"
@@ -566,9 +566,8 @@ exports[`Controlled 1`] = `
     Kontroller meg!
   </label>
   <input
-    type="text"
     id="components-input--controlled"
-    value
+    type="text"
   >
 </div>
 <div>
@@ -597,9 +596,9 @@ exports[`Html Size 1`] = `
     Input with size
   </label>
   <input
-    type="text"
     size="10"
     id="components-input--html-size"
+    type="text"
   >
 </div>
 `;
@@ -613,11 +612,11 @@ exports[`Preview 1`] = `
     Input 1
   </label>
   <input
-    type="text"
     aria-invalid="false"
-    name="inputs"
     id="components-input--preview"
+    type="text"
     checked
+    name="inputs"
     aria-describedby="components-input--preview:validation"
   >
   <p
@@ -644,9 +643,9 @@ exports[`Radio 1`] = `
     </h2>
     <div>
       <input
+        id="components-input--radio-sm-Default"
         type="radio"
         name="sm-Default"
-        id="components-input--radio-sm-Default"
       >
       <label
         data-weight="medium"
@@ -657,10 +656,10 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="sm-Checked"
         id="components-input--radio-sm-Checked"
+        type="radio"
         checked
+        name="sm-Checked"
       >
       <label
         data-weight="medium"
@@ -671,10 +670,10 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="sm-Disabled"
         disabled
         id="components-input--radio-sm-Disabled"
+        type="radio"
+        name="sm-Disabled"
       >
       <label
         data-weight="medium"
@@ -685,11 +684,11 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="sm-Disabled"
         disabled
         id="components-input--radio-sm-Disabled"
+        type="radio"
         checked
+        name="sm-Disabled"
       >
       <label
         data-weight="medium"
@@ -700,10 +699,10 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="sm-Invalid"
         aria-invalid="true"
         id="components-input--radio-sm-Invalid"
+        type="radio"
+        name="sm-Invalid"
       >
       <label
         data-weight="medium"
@@ -714,11 +713,11 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="sm-Invalid"
         aria-invalid="true"
         id="components-input--radio-sm-Invalid"
+        type="radio"
         checked
+        name="sm-Invalid"
       >
       <label
         data-weight="medium"
@@ -729,10 +728,10 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="sm-Read-only"
         readonly
         id="components-input--radio-sm-Read-only"
+        type="radio"
+        name="sm-Read-only"
       >
       <label
         data-weight="medium"
@@ -743,11 +742,11 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="sm-Read-only"
         readonly
         id="components-input--radio-sm-Read-only"
+        type="radio"
         checked
+        name="sm-Read-only"
       >
       <label
         data-weight="medium"
@@ -769,9 +768,9 @@ exports[`Radio 1`] = `
     </h2>
     <div>
       <input
+        id="components-input--radio-md-Default"
         type="radio"
         name="md-Default"
-        id="components-input--radio-md-Default"
       >
       <label
         data-weight="medium"
@@ -782,10 +781,10 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="md-Checked"
         id="components-input--radio-md-Checked"
+        type="radio"
         checked
+        name="md-Checked"
       >
       <label
         data-weight="medium"
@@ -796,10 +795,10 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="md-Disabled"
         disabled
         id="components-input--radio-md-Disabled"
+        type="radio"
+        name="md-Disabled"
       >
       <label
         data-weight="medium"
@@ -810,11 +809,11 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="md-Disabled"
         disabled
         id="components-input--radio-md-Disabled"
+        type="radio"
         checked
+        name="md-Disabled"
       >
       <label
         data-weight="medium"
@@ -825,10 +824,10 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="md-Invalid"
         aria-invalid="true"
         id="components-input--radio-md-Invalid"
+        type="radio"
+        name="md-Invalid"
       >
       <label
         data-weight="medium"
@@ -839,11 +838,11 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="md-Invalid"
         aria-invalid="true"
         id="components-input--radio-md-Invalid"
+        type="radio"
         checked
+        name="md-Invalid"
       >
       <label
         data-weight="medium"
@@ -854,10 +853,10 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="md-Read-only"
         readonly
         id="components-input--radio-md-Read-only"
+        type="radio"
+        name="md-Read-only"
       >
       <label
         data-weight="medium"
@@ -868,11 +867,11 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="md-Read-only"
         readonly
         id="components-input--radio-md-Read-only"
+        type="radio"
         checked
+        name="md-Read-only"
       >
       <label
         data-weight="medium"
@@ -894,9 +893,9 @@ exports[`Radio 1`] = `
     </h2>
     <div>
       <input
+        id="components-input--radio-lg-Default"
         type="radio"
         name="lg-Default"
-        id="components-input--radio-lg-Default"
       >
       <label
         data-weight="medium"
@@ -907,10 +906,10 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="lg-Checked"
         id="components-input--radio-lg-Checked"
+        type="radio"
         checked
+        name="lg-Checked"
       >
       <label
         data-weight="medium"
@@ -921,10 +920,10 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="lg-Disabled"
         disabled
         id="components-input--radio-lg-Disabled"
+        type="radio"
+        name="lg-Disabled"
       >
       <label
         data-weight="medium"
@@ -935,11 +934,11 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="lg-Disabled"
         disabled
         id="components-input--radio-lg-Disabled"
+        type="radio"
         checked
+        name="lg-Disabled"
       >
       <label
         data-weight="medium"
@@ -950,10 +949,10 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="lg-Invalid"
         aria-invalid="true"
         id="components-input--radio-lg-Invalid"
+        type="radio"
+        name="lg-Invalid"
       >
       <label
         data-weight="medium"
@@ -964,11 +963,11 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="lg-Invalid"
         aria-invalid="true"
         id="components-input--radio-lg-Invalid"
+        type="radio"
         checked
+        name="lg-Invalid"
       >
       <label
         data-weight="medium"
@@ -979,10 +978,10 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="lg-Read-only"
         readonly
         id="components-input--radio-lg-Read-only"
+        type="radio"
+        name="lg-Read-only"
       >
       <label
         data-weight="medium"
@@ -993,11 +992,11 @@ exports[`Radio 1`] = `
     </div>
     <div>
       <input
-        type="radio"
-        name="lg-Read-only"
         readonly
         id="components-input--radio-lg-Read-only"
+        type="radio"
         checked
+        name="lg-Read-only"
       >
       <label
         data-weight="medium"
@@ -1024,10 +1023,10 @@ exports[`Switch 1`] = `
     </h2>
     <div>
       <input
-        type="checkbox"
         role="switch"
-        name="sm-default"
         id="components-input--switch-sm-default"
+        type="checkbox"
+        name="sm-default"
       >
       <label
         data-weight="medium"
@@ -1038,11 +1037,11 @@ exports[`Switch 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
         role="switch"
-        name="sm-checked"
         id="components-input--switch-sm-checked"
+        type="checkbox"
         checked
+        name="sm-checked"
       >
       <label
         data-weight="medium"
@@ -1053,11 +1052,11 @@ exports[`Switch 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
         role="switch"
-        name="sm-disabled"
         disabled
         id="components-input--switch-sm-disabled"
+        type="checkbox"
+        name="sm-disabled"
       >
       <label
         data-weight="medium"
@@ -1068,12 +1067,12 @@ exports[`Switch 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
         role="switch"
-        name="sm-disabled-checked"
         disabled
         id="components-input--switch-sm-disabled-checked"
+        type="checkbox"
         checked
+        name="sm-disabled-checked"
       >
       <label
         data-weight="medium"
@@ -1084,11 +1083,11 @@ exports[`Switch 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
         role="switch"
-        name="sm-read-only"
         readonly
         id="components-input--switch-sm-read-only"
+        type="checkbox"
+        name="sm-read-only"
       >
       <label
         data-weight="medium"
@@ -1099,12 +1098,12 @@ exports[`Switch 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
         role="switch"
-        name="sm-read-only-checked"
         readonly
         id="components-input--switch-sm-read-only-checked"
+        type="checkbox"
         checked
+        name="sm-read-only-checked"
       >
       <label
         data-weight="medium"
@@ -1126,10 +1125,10 @@ exports[`Switch 1`] = `
     </h2>
     <div>
       <input
-        type="checkbox"
         role="switch"
-        name="md-default"
         id="components-input--switch-md-default"
+        type="checkbox"
+        name="md-default"
       >
       <label
         data-weight="medium"
@@ -1140,11 +1139,11 @@ exports[`Switch 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
         role="switch"
-        name="md-checked"
         id="components-input--switch-md-checked"
+        type="checkbox"
         checked
+        name="md-checked"
       >
       <label
         data-weight="medium"
@@ -1155,11 +1154,11 @@ exports[`Switch 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
         role="switch"
-        name="md-disabled"
         disabled
         id="components-input--switch-md-disabled"
+        type="checkbox"
+        name="md-disabled"
       >
       <label
         data-weight="medium"
@@ -1170,12 +1169,12 @@ exports[`Switch 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
         role="switch"
-        name="md-disabled-checked"
         disabled
         id="components-input--switch-md-disabled-checked"
+        type="checkbox"
         checked
+        name="md-disabled-checked"
       >
       <label
         data-weight="medium"
@@ -1186,11 +1185,11 @@ exports[`Switch 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
         role="switch"
-        name="md-read-only"
         readonly
         id="components-input--switch-md-read-only"
+        type="checkbox"
+        name="md-read-only"
       >
       <label
         data-weight="medium"
@@ -1201,12 +1200,12 @@ exports[`Switch 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
         role="switch"
-        name="md-read-only-checked"
         readonly
         id="components-input--switch-md-read-only-checked"
+        type="checkbox"
         checked
+        name="md-read-only-checked"
       >
       <label
         data-weight="medium"
@@ -1228,10 +1227,10 @@ exports[`Switch 1`] = `
     </h2>
     <div>
       <input
-        type="checkbox"
         role="switch"
-        name="lg-default"
         id="components-input--switch-lg-default"
+        type="checkbox"
+        name="lg-default"
       >
       <label
         data-weight="medium"
@@ -1242,11 +1241,11 @@ exports[`Switch 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
         role="switch"
-        name="lg-checked"
         id="components-input--switch-lg-checked"
+        type="checkbox"
         checked
+        name="lg-checked"
       >
       <label
         data-weight="medium"
@@ -1257,11 +1256,11 @@ exports[`Switch 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
         role="switch"
-        name="lg-disabled"
         disabled
         id="components-input--switch-lg-disabled"
+        type="checkbox"
+        name="lg-disabled"
       >
       <label
         data-weight="medium"
@@ -1272,12 +1271,12 @@ exports[`Switch 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
         role="switch"
-        name="lg-disabled-checked"
         disabled
         id="components-input--switch-lg-disabled-checked"
+        type="checkbox"
         checked
+        name="lg-disabled-checked"
       >
       <label
         data-weight="medium"
@@ -1288,11 +1287,11 @@ exports[`Switch 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
         role="switch"
-        name="lg-read-only"
         readonly
         id="components-input--switch-lg-read-only"
+        type="checkbox"
+        name="lg-read-only"
       >
       <label
         data-weight="medium"
@@ -1303,12 +1302,12 @@ exports[`Switch 1`] = `
     </div>
     <div>
       <input
-        type="checkbox"
         role="switch"
-        name="lg-read-only-checked"
         readonly
         id="components-input--switch-lg-read-only-checked"
+        type="checkbox"
         checked
+        name="lg-read-only-checked"
       >
       <label
         data-weight="medium"
@@ -1341,11 +1340,11 @@ exports[`Text 1`] = `
         Default
       </label>
       <input
-        type="text"
-        name="sm-default"
         data-size="sm"
         id="components-input--text-sm-default"
+        type="text"
         value="Value"
+        name="sm-default"
       >
     </div>
     <div>
@@ -1356,12 +1355,12 @@ exports[`Text 1`] = `
         Disabled
       </label>
       <input
-        type="text"
-        name="sm-disabled"
         disabled
         data-size="sm"
         id="components-input--text-sm-disabled"
+        type="text"
         value="Value"
+        name="sm-disabled"
       >
     </div>
     <div>
@@ -1372,12 +1371,12 @@ exports[`Text 1`] = `
         Invalid
       </label>
       <input
-        type="text"
-        name="sm-invalid"
         aria-invalid="true"
         data-size="sm"
         id="components-input--text-sm-invalid"
+        type="text"
         value="Value"
+        name="sm-invalid"
         aria-describedby="components-input--text-sm-invalid:validation"
       >
       <p
@@ -1395,12 +1394,12 @@ exports[`Text 1`] = `
         Read-only
       </label>
       <input
-        type="text"
-        name="sm-read-only"
         readonly
         data-size="sm"
         id="components-input--text-sm-read-only"
+        type="text"
         value="Value"
+        name="sm-read-only"
       >
     </div>
   </div>
@@ -1422,11 +1421,11 @@ exports[`Text 1`] = `
         Default
       </label>
       <input
-        type="text"
-        name="md-default"
         data-size="md"
         id="components-input--text-md-default"
+        type="text"
         value="Value"
+        name="md-default"
       >
     </div>
     <div>
@@ -1437,12 +1436,12 @@ exports[`Text 1`] = `
         Disabled
       </label>
       <input
-        type="text"
-        name="md-disabled"
         disabled
         data-size="md"
         id="components-input--text-md-disabled"
+        type="text"
         value="Value"
+        name="md-disabled"
       >
     </div>
     <div>
@@ -1453,12 +1452,12 @@ exports[`Text 1`] = `
         Invalid
       </label>
       <input
-        type="text"
-        name="md-invalid"
         aria-invalid="true"
         data-size="md"
         id="components-input--text-md-invalid"
+        type="text"
         value="Value"
+        name="md-invalid"
         aria-describedby="components-input--text-md-invalid:validation"
       >
       <p
@@ -1476,12 +1475,12 @@ exports[`Text 1`] = `
         Read-only
       </label>
       <input
-        type="text"
-        name="md-read-only"
         readonly
         data-size="md"
         id="components-input--text-md-read-only"
+        type="text"
         value="Value"
+        name="md-read-only"
       >
     </div>
   </div>
@@ -1503,11 +1502,11 @@ exports[`Text 1`] = `
         Default
       </label>
       <input
-        type="text"
-        name="lg-default"
         data-size="lg"
         id="components-input--text-lg-default"
+        type="text"
         value="Value"
+        name="lg-default"
       >
     </div>
     <div>
@@ -1518,12 +1517,12 @@ exports[`Text 1`] = `
         Disabled
       </label>
       <input
-        type="text"
-        name="lg-disabled"
         disabled
         data-size="lg"
         id="components-input--text-lg-disabled"
+        type="text"
         value="Value"
+        name="lg-disabled"
       >
     </div>
     <div>
@@ -1534,12 +1533,12 @@ exports[`Text 1`] = `
         Invalid
       </label>
       <input
-        type="text"
-        name="lg-invalid"
         aria-invalid="true"
         data-size="lg"
         id="components-input--text-lg-invalid"
+        type="text"
         value="Value"
+        name="lg-invalid"
         aria-describedby="components-input--text-lg-invalid:validation"
       >
       <p
@@ -1557,12 +1556,12 @@ exports[`Text 1`] = `
         Read-only
       </label>
       <input
-        type="text"
-        name="lg-read-only"
         readonly
         data-size="lg"
         id="components-input--text-lg-read-only"
+        type="text"
         value="Value"
+        name="lg-read-only"
       >
     </div>
   </div>

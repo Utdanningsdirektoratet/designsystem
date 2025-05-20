@@ -1,0 +1,71 @@
+import { Meta, Primary, ArgTypes, Controls } from '@storybook/blocks';
+
+import { SimpleAlert } from '.storybook/docs-components';
+import * as Stories from './useCheckboxGroup.stories';
+import { useCheckboxGroup } from './useCheckboxGroup';
+
+<Meta of={Stories} />
+
+# useCheckboxGroup
+
+En React-hook for å koble sammen en gruppe av avmerkingsbokser.
+
+<Primary />
+<Controls of={Stories.Default} />
+
+I respons får du objektet:
+
+```ts
+{
+  getCheckboxProps: (value: string | { allowIndeterminate: true }) => CheckboxProps, // Returnerer props du kan spre på <Checkbox /> eller <input type="checkbox" />
+  validationMessageProps: ValidationMessageProps, // Properties du kan valgfritt spre på ValidationMessage
+  setValue: string[], // Funksjon for å sette checkboxgruppens verdi
+  value: string[], // Nåværende verdi for checkboxgruppen
+}
+```
+
+## Bruk
+
+Fra `useCheckboxGroup` får du `getCheckboxProps` som du bruker for å hente props som du sprer på de enkelte `Checkbox`-komponentene dine.
+Du kan også hente ut `validationMessageProps`, `value` og `setValue`.
+
+I `getCheckboxProps`-funksjonen er første parameter enten `value` — en unik identifikator for avmerkingsboksen — eller et objekt med props som kan legges på en `Checkbox`. Dersom du sender inn et objekt, må du passe på at det inneholder `value`.
+
+```tsx
+<Checkbox label="Barnehage" {...getCheckboxProps('barnehage')} />;
+// eller
+<Checkbox label="Barnehage" {...getCheckboxProps({ value: 'barnehage' /* ...and other props... */ }) />;
+```
+
+<SimpleAlert type="info" heading="Tips">
+  Dersom du skal sende props til en `Checkbox`, er det viktig at du sender disse
+  som objekt til `getCheckboxProps` og **ikke** direkte på `Checkbox`. Ellers
+  kan du risikere å overstyre funksjonaliteten fra `useCheckboxGroup`.
+</SimpleAlert>
+
+Eksempel på bruk:
+
+```tsx
+const { getCheckboxProps, validationMessageProps } = useCheckboxGroup({
+  name: 'my-checkbox-group',
+  value: [''],
+  error: 'Du må velge et alternativ',
+});
+
+return (
+  <Fieldset>
+    <Fieldset.Legend>Hva vil du vite mer om?</Fieldset.Legend>
+    <Fieldset.Description>
+      Velg de alternativene som er relevante for deg.
+    </Fieldset.Description>
+    <Checkbox
+      label="Alle"
+      {...getCheckboxProps({ allowIndeterminate: true })}
+    />
+    <Checkbox label="Barnehage" {...getCheckboxProps('barnehage')} />
+    <Checkbox label="Grunnskole" {...getCheckboxProps('grunnskole')} />
+    <Checkbox label="Videregående" {...getCheckboxProps('videregaende')} />
+    <ValidationMessage {...validationMessageProps} />
+  </Fieldset>
+);
+```

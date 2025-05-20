@@ -1,27 +1,41 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { useState } from 'react';
-import { Button, Card, Details, Link } from '@udir-design/react/alpha';
+import type { Decorator, Meta, StoryObj } from '@storybook/react';
+import { createElement, useState } from 'react';
+import {
+  Button,
+  Card,
+  CardProps,
+  Details,
+  Fieldset,
+  Label,
+  Link,
+  List,
+  ToggleGroup,
+} from '@udir-design/react/alpha';
 import { expect, userEvent, within } from '@storybook/test';
+import { Stack } from '.storybook/docs-components';
+import { ChevronDownUpIcon, ChevronUpDownIcon } from '@navikt/aksel-icons';
 
 export default {
   component: Details,
-  tags: ['alpha'],
+  tags: ['beta'],
 } as Meta<typeof Details>;
 
 type Story = StoryObj<typeof Details>;
 
-const previewSummary = 'Hvem kan registrere seg i Frivillighetsregisteret?';
+const previewSummary = 'Kva er nasjonale prøver?';
 const previewContent =
-  'For å kunne bli registrert i Frivillighetsregisteret, må organisasjonen drive frivillig virksomhet. Det er bare foreninger, stiftelser og aksjeselskap som kan registreres. Virksomheten kan ikke dele ut midler til fysiske personer. Virksomheten må ha et styre.';
+  'Føremålet med nasjonale prøver er å gi skolane kunnskap om elevane sine grunnleggjande ferdigheiter i lesing, rekning og engelsk. Informasjonen frå prøvene skal danne grunnlag for undervegsvurdering og kvalitetsutvikling på alle nivå i skolesystemet.';
 
 export const Preview: Story = {
-  args: {
-    children: [
-      <Details.Summary>{previewSummary}</Details.Summary>,
-      <Details.Content data-testid="details-content">
-        {previewContent}
-      </Details.Content>,
-    ],
+  render: (args) => {
+    return (
+      <Details {...args}>
+        <Details.Summary>{previewSummary}</Details.Summary>
+        <Details.Content data-testid="details-content">
+          {previewContent}
+        </Details.Content>
+      </Details>
+    );
   },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
@@ -73,151 +87,252 @@ export const InCard: Story = {
       <Card data-color="neutral">
         <Details {...args}>
           <Details.Summary>Vedlegg</Details.Summary>
-          <Details.Content>Vedlegg 1, vedlegg 2, vedlegg 3</Details.Content>
+          <Details.Content>
+            <List.Unordered>
+              <List.Item>
+                Vedlegg 1:{' '}
+                <Link href="#" target="_blank">
+                  Regler og retningslinjer.pdf
+                </Link>{' '}
+              </List.Item>
+              <List.Item>
+                Vedlegg 2:{' '}
+                <Link href="#" target="_blank">
+                  Brevmal.docx
+                </Link>{' '}
+              </List.Item>
+              <List.Item>
+                Vedlegg 3:{' '}
+                <Link href="#" target="_blank">
+                  Illustrasjoner.zip
+                </Link>
+              </List.Item>
+            </List.Unordered>
+          </Details.Content>
         </Details>
       </Card>
     );
   },
+};
+
+const detailsColorDecorator: Decorator = (Story) => {
+  const [card, setCard] = useState<Required<CardProps>['variant'] | 'none'>(
+    'tinted',
+  );
+  const cardChoices: Record<typeof card, string> = {
+    tinted: 'Tinted Card',
+    default: 'Card',
+    none: 'Ingen',
+  };
+
+  const [color, setColor] =
+    useState<Required<CardProps>['data-color']>('accent');
+  const colorChoices: Record<typeof color, string> = {
+    accent: 'Accent',
+    support1: 'Support 1',
+    support2: 'Support 2',
+    neutral: 'Neutral',
+  };
+
+  return (
+    <div>
+      <Stack
+        direction="row"
+        data-size="xs"
+        style={{ marginBottom: 'var(--ds-size-5)' }}
+      >
+        <Fieldset>
+          <Fieldset.Legend>Farge</Fieldset.Legend>
+          <ToggleGroup
+            value={color}
+            onChange={(val) => setColor(val as typeof color)}
+          >
+            {Object.entries(colorChoices).map(([value, label]) => (
+              <ToggleGroup.Item key={value} value={value}>
+                {label}
+              </ToggleGroup.Item>
+            ))}
+          </ToggleGroup>
+        </Fieldset>
+        <Fieldset>
+          <Fieldset.Legend>Foreldreelement</Fieldset.Legend>
+          <ToggleGroup
+            value={card}
+            onChange={(val) => setCard(val as typeof card)}
+          >
+            {Object.entries(cardChoices).map(([value, label]) => (
+              <ToggleGroup.Item key={value} value={value}>
+                {label}
+              </ToggleGroup.Item>
+            ))}
+          </ToggleGroup>
+        </Fieldset>
+      </Stack>
+      <div data-storybook-decorator>
+        {createElement(card === 'none' ? 'div' : Card, {
+          variant: card !== 'none' ? card : undefined,
+          'data-color': color,
+          children: <Story />,
+        })}
+      </div>
+    </div>
+  );
 };
 
 export const InCardWithColor: Story = {
+  decorators: [detailsColorDecorator],
   render: (args) => {
     return (
-      <Card data-color="support2" variant="tinted">
+      <>
         <Details {...args}>
-          <Details.Summary>
-            Hvordan får jeg tildelt et jegernummer?
-          </Details.Summary>
-          <Details.Content>
-            Du vil automatisk få tildelt jegernummer og bli registrert i
-            Jegerregisteret når du har bestått jegerprøven.
-          </Details.Content>
+          <Details.Summary>{previewSummary}</Details.Summary>
+          <Details.Content>{previewContent}</Details.Content>
         </Details>
         <Details>
           <Details.Summary>
-            Jeg har glemt jegernummeret mitt. Hvor finner jeg dette?
+            Korleis skal nasjonale prøver brukast?
           </Details.Summary>
           <Details.Content>
-            <p style={{ marginTop: 0 }}>
-              Du kan finne dette ved å logge inn på{' '}
-              <Link href="https://minjegerside.brreg.no/">Min side</Link>
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              eu orci nisi. Nulla sed sem eget odio pellentesque venenatis vitae
-              et sem. Nunc vulputate nibh id nunc condimentum, et mattis quam
-              vehicula. Praesent gravida turpis eget tincidunt sodales. Praesent
-              ante arcu, semper at rhoncus ut, commodo ut ligula. Phasellus quis
-              nibh vitae dolor faucibus dictum et dapibus justo. Morbi
-              scelerisque sem id nisi ornare, in facilisis felis molestie.
-            </p>
-            <p>
-              Vivamus maximus eget mi ut aliquam. Nulla facilisi. Sed lobortis,
-              dui at facilisis scelerisque, tellus justo sodales enim, at luctus
-              diam turpis id diam. Sed vel magna eget nulla ornare lacinia.
-              Mauris commodo erat at dui interdum viverra. Morbi rhoncus dolor
-              in massa vehicula, aliquam dictum tortor luctus. Quisque vel
-              feugiat libero.
-            </p>
-            <p>
-              Nullam sed quam vestibulum, scelerisque nisl vel, rhoncus leo.
-              Integer eu tempor ex, in vulputate erat. Quisque nisl lectus,
-              consequat sit amet ex ut, interdum tincidunt ligula. Morbi sed
-              odio a leo bibendum hendrerit. Nullam erat nisi, convallis
-              tincidunt tempor eu, iaculis scelerisque mauris. Nulla pretium
-              ornare blandit. Proin dignissim massa risus, eget euismod enim
-              lobortis at. Donec venenatis libero sed ligula convallis
-              scelerisque. Pellentesque ut aliquet ante. Pellentesque et
-              eleifend ex. Quisque posuere convallis urna et ullamcorper. Morbi
-              eu tincidunt mauris. Ut nec diam nunc. Sed sed neque facilisis,
-              luctus libero vitae, porttitor ex. Mauris euismod vitae velit eu
-              laoreet.
-            </p>
-            <p>
-              Vivamus maximus eget mi ut aliquam. Nulla facilisi. Sed lobortis,
-              dui at facilisis scelerisque, tellus justo sodales enim, at luctus
-              diam turpis id diam. Sed vel magna eget nulla ornare lacinia.
-              Mauris commodo erat at dui interdum viverra. Morbi rhoncus dolor
-              in massa vehicula, aliquam dictum tortor luctus. Quisque vel
-              feugiat libero.
-            </p>
-            <p>
-              Nullam sed quam vestibulum, scelerisque nisl vel, rhoncus leo.
-              Integer eu tempor ex, in vulputate erat. Quisque nisl lectus,
-              consequat sit amet ex ut, interdum tincidunt ligula. Morbi sed
-              odio a leo bibendum hendrerit. Nullam erat nisi, convallis
-              tincidunt tempor eu, iaculis scelerisque mauris. Nulla pretium
-              ornare blandit. Proin dignissim massa risus, eget euismod enim
-              lobortis at. Donec venenatis libero sed ligula convallis
-              scelerisque. Pellentesque ut aliquet ante. Pellentesque et
-              eleifend ex. Quisque posuere convallis urna et ullamcorper. Morbi
-              eu tincidunt mauris. Ut nec diam nunc. Sed sed neque facilisis,
-              luctus libero vitae, porttitor ex. Mauris euismod vitae velit eu
-              laoreet.
-            </p>
-            <p style={{ marginBottom: 0 }}>
-              Nulla facilisi. Maecenas vel fringilla felis. Sed orci felis,
-              volutpat ac bibendum sit amet, sodales ac purus. Fusce nisi eros,
-              tristique sed consequat sed, scelerisque et tortor. Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit. Vestibulum
-              pellentesque vehicula orci sed scelerisque. Ut nec elementum
-              tortor. Praesent lobortis eros nec laoreet iaculis. Pellentesque
-              ex purus, vulputate non volutpat non, sodales a arcu. Phasellus
-              ornare, lorem nec aliquam venenatis, augue eros sagittis quam, at
-              sagittis tellus ante in metus.
-            </p>
-          </Details.Content>
-        </Details>
-      </Card>
-    );
-  },
-};
-
-export const Controlled: Story = {
-  render: function Render() {
-    const [open1, setOpen1] = useState(false);
-    const [open2, setOpen2] = useState(false);
-    const [open3, setOpen3] = useState(false);
-    const toggleOpen = () => {
-      const isOpen = [open1, open2, open3].every(Boolean);
-      setOpen1(!isOpen);
-      setOpen2(!isOpen);
-      setOpen3(!isOpen);
-    };
-    return (
-      <>
-        <Button onClick={toggleOpen}>Toggle Details</Button>
-        <br />
-        <Details open={open1} onToggle={() => setOpen1(!open1)}>
-          <Details.Summary>Enkeltpersonforetak</Details.Summary>
-          <Details.Content>
-            Skal du starte for deg selv? Enkeltpersonforetak er ofte den
-            enkleste måten å etablere bedrift på. Denne organisasjonsformen har
-            både fordeler og ulemper. Det gir deg stor grad av frihet, men kan
-            også gi betydelig risiko fordi du har personlig ansvar for
-            økonomien.
-          </Details.Content>
-        </Details>
-        <Details open={open2} onToggle={() => setOpen2(!open2)}>
-          <Details.Summary>Aksjeselskap (AS)</Details.Summary>
-          <Details.Content>
-            Planlegger du å starte næringsvirksomhet alene eller sammen med
-            andre? Innebærer næringsvirksomheten en økonomisk risiko? Vil du ha
-            rettigheter som arbeidstaker og muligheten til at andre kan
-            investere i selskapet ditt? Da kan aksjeselskap være en
-            hensiktsmessig organisasjonsform.
-          </Details.Content>
-        </Details>
-        <Details open={open3} onToggle={() => setOpen3(!open3)}>
-          <Details.Summary>Ansvarlig selskap (ANS/DA)</Details.Summary>
-          <Details.Content>
-            Er dere minst to personer som skal starte opp egen virksomhet?
-            Samarbeider du godt med den/de som du skal starte opp sammen med?
-            Krever virksomheten få investeringer og tar du liten økonomisk
-            risiko? Da kan du vurdere å etablere et ansvarlig selskap.
+            <List.Unordered>
+              <List.Item>
+                Lærarane skal bruke resultata for å følgje opp elevane sine og i
+                arbeidet med undervegsvurdering og tilpassa opplæring.
+              </List.Item>
+              <List.Item>
+                Kommunar og skolar skal bruke resultata som grunnlag for
+                kvalitetsutvikling i opplæringa.
+              </List.Item>
+              <List.Item>
+                Forskarar kan søkje om å få utlevert resultat frå nasjonale
+                prøver til bruk i forsking.
+              </List.Item>
+            </List.Unordered>
           </Details.Content>
         </Details>
       </>
     );
   },
 };
+
+export const Controlled: Story = {
+  render() {
+    const [open1, setOpen1] = useState(false);
+    const [open2, setOpen2] = useState(false);
+    const [open3, setOpen3] = useState(false);
+    const isOpen = [open1, open2, open3].every(Boolean);
+    const toggleOpen = () => {
+      setOpen1(!isOpen);
+      setOpen2(!isOpen);
+      setOpen3(!isOpen);
+    };
+    return (
+      <>
+        <Button variant="tertiary" onClick={toggleOpen} data-size="sm">
+          {isOpen ? (
+            <>
+              <ChevronDownUpIcon aria-hidden />
+              Lukk alle
+            </>
+          ) : (
+            <>
+              <ChevronUpDownIcon aria-hidden />
+              Åpne alle
+            </>
+          )}
+        </Button>
+        <br />
+        <Details open={open1} onToggle={() => setOpen1(!open1)}>
+          <Details.Summary>Hva er Feide?</Details.Summary>
+          <Details.Content>
+            <p>
+              Feide er den nasjonale løsningen for trygg innlogging og
+              datadeling i utdanning og forskning.
+            </p>
+            <p>
+              Svært mange av de digitale læremidlene og tjenestene som er i bruk
+              i norsk utdanning, har Feide som innloggingsløsning.
+            </p>
+            <p>
+              Med en Feide-bruker bruker elever, studenter, forskere og
+              undervisere ett og samme brukernavn og passord til å logge inn på
+              alle tjenester som har Feide som innloggingsløsning. De slipper
+              med andre ord å huske ulike brukernavn og passord for ulike
+              tjenester.
+            </p>
+          </Details.Content>
+        </Details>
+        <Details open={open2} onToggle={() => setOpen2(!open2)}>
+          <Details.Summary>Hva er UIDP?</Details.Summary>
+          <Details.Content>
+            <p>
+              UIDP er Udirs nye løsning for identitets- og tilgangskontroll.
+            </p>
+            <p>
+              Løsningen har som formål å sørge for sikker og lettfattelig
+              pålogging for brukere til Utdanningsdirektoratets tjenester og å
+              sørge for sikker maskintilgang til Utdanningsdirektoratets API-er.
+              UIDP benyttes av over 30 systemer i Utdanningsdirektoratet og en
+              betydelig mengde brukere fra sektor er registrert i systemet. I
+              2019 hadde UIDP over 3 millioner pålogginger.
+            </p>
+            <p>
+              Brukere kan logge inn med tre forskjellige identitetsleverandører:
+              Feide, ID-porten og en lokal løsning der brukerne bare ligger i
+              UIDP. Den lokale løsningen benyttes av elever og kandidater som
+              ikke bruker Feide.
+            </p>
+            <p>
+              UIDP er også integrert med Udir sin gamle påloggingsløsning UBAS.
+            </p>
+          </Details.Content>
+        </Details>
+        <Details open={open3} onToggle={() => setOpen3(!open3)}>
+          <Details.Summary>Hva er UBAS?</Details.Summary>
+          <Details.Content>
+            <p>
+              UBAS er Udirs gamle løsning for identitets- og tilgangskontroll.
+              Fra 2022 blir UBAS gradvis faset ut og erstattet med nyere
+              fellesløsninger (UIDP, Feide, ID-porten, Altinn Autorisasjon).
+            </p>
+            <p>
+              Etter overgang til nye løsninger vil tildeling av roller og
+              tjenestetilganger som hovedregel gjøres i Altinn, og ikke lenger i
+              UBAS.
+            </p>
+          </Details.Content>
+        </Details>
+      </>
+    );
+  },
+};
+
+export const PseudoStates: Story = makePseudoStatesStory(Preview);
+
+function makePseudoStatesStory(originalStory: Story): Story {
+  return {
+    render: (args, ctx) => (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 'var(--ds-size-4)',
+        }}
+      >
+        <Label data-size="sm">Default</Label>
+        {originalStory.render?.(args, ctx)}
+        <Label data-size="sm">Hover</Label>
+        {originalStory.render?.({ ...args, className: 'hover' }, ctx)}
+        <Label data-size="sm">Focused</Label>
+        {originalStory.render?.({ ...args, className: 'focusVisible' }, ctx)}
+      </div>
+    ),
+    args: originalStory.args,
+    parameters: {
+      ...originalStory.parameters,
+      pseudo: {
+        hover: ['.hover > u-summary'],
+        focusVisible: ['.focusVisible > u-summary'],
+      },
+    },
+  };
+}

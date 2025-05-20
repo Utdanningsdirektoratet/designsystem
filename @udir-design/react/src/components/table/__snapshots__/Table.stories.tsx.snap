@@ -1,5 +1,117 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Column And Row Headers 1`] = `
+<table
+  data-hover="true"
+  data-zebra="true"
+>
+  <caption style="font-size: var(--ds-font-size-3); caption-side: bottom; text-align: center; font-weight: normal; margin-top: var(--ds-size-2);">
+    Svarprosent for elevundersøkelsen nasjonalt
+  </caption>
+  <thead style="text-align: right;">
+    <tr>
+      <td>
+      </td>
+      <th scope="col">
+        2022–23
+      </th>
+      <th scope="col">
+        2023–24
+      </th>
+      <th scope="col">
+        2024–25
+      </th>
+    </tr>
+  </thead>
+  <tbody style="text-align: right; font-feature-settings: &quot;tnum&quot;;">
+    <tr>
+      <th scope="row">
+        8. årstrinn
+      </th>
+      <td>
+        88,5%
+      </td>
+      <td>
+        86,3%
+      </td>
+      <td>
+        85,3%
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        9. årstrinn
+      </th>
+      <td>
+        88,7%
+      </td>
+      <td>
+        86,3%
+      </td>
+      <td>
+        84,9%
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        10. årstrinn
+      </th>
+      <td>
+        89,7%
+      </td>
+      <td>
+        87,3%
+      </td>
+      <td>
+        85,7%
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        Videregående trinn 1
+      </th>
+      <td>
+        84,8%
+      </td>
+      <td>
+        82,8%
+      </td>
+      <td>
+        83,1%
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        Videregående trinn 2
+      </th>
+      <td>
+        82,5%
+      </td>
+      <td>
+        80,0%
+      </td>
+      <td>
+        80,3%
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        Videregående trinn 3
+      </th>
+      <td>
+        79,9%
+      </td>
+      <td>
+        75,7%
+      </td>
+      <td>
+        76,9%
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
 exports[`Fixed Table 1`] = `
 <table style="table-layout: fixed;">
   <thead>
@@ -1518,11 +1630,11 @@ exports[`With Form Elements 1`] = `
       <th>
         <div>
           <input
-            type="checkbox"
             aria-label="Select all"
             id="components-table--with-form-elements-selectAll"
-            name="components-table--with-form-elements-checkboxGroup"
+            type="checkbox"
             value
+            name="components-table--with-form-elements-checkboxGroup"
           >
         </div>
       </th>
@@ -1542,27 +1654,27 @@ exports[`With Form Elements 1`] = `
       <td>
         <div>
           <input
-            type="checkbox"
             aria-label="Check 1"
             id="components-table--with-form-elements-select1"
-            name="components-table--with-form-elements-checkboxGroup"
+            type="checkbox"
             value="1"
+            name="components-table--with-form-elements-checkboxGroup"
           >
         </div>
       </td>
-      <td>
+      <td style="text-align: right;">
         1
       </td>
-      <td>
+      <td style="text-align: right;">
         1
       </td>
       <td>
         <div data-size="sm">
           <div>
             <input
-              type="text"
               aria-label="Textfield 1"
               id="components-table--with-form-elements-textfield1"
+              type="text"
             >
           </div>
         </div>
@@ -1572,28 +1684,28 @@ exports[`With Form Elements 1`] = `
       <td>
         <div>
           <input
-            type="checkbox"
             aria-label="Check 2"
             id="components-table--with-form-elements-select2"
-            name="components-table--with-form-elements-checkboxGroup"
+            type="checkbox"
             value="2"
             checked
+            name="components-table--with-form-elements-checkboxGroup"
           >
         </div>
       </td>
-      <td>
+      <td style="text-align: right;">
         2
       </td>
-      <td>
+      <td style="text-align: right;">
         2
       </td>
       <td>
         <div data-size="sm">
           <div>
             <input
-              type="text"
               aria-label="Textfield 2"
               id="components-table--with-form-elements-textfield2"
+              type="text"
             >
           </div>
         </div>
@@ -1603,27 +1715,27 @@ exports[`With Form Elements 1`] = `
       <td>
         <div>
           <input
-            type="checkbox"
             aria-label="Check 3"
             id="components-table--with-form-elements-select3"
-            name="components-table--with-form-elements-checkboxGroup"
+            type="checkbox"
             value="3"
+            name="components-table--with-form-elements-checkboxGroup"
           >
         </div>
       </td>
-      <td>
+      <td style="text-align: right;">
         3
       </td>
-      <td>
+      <td style="text-align: right;">
         3
       </td>
       <td>
         <div data-size="sm">
           <div>
             <input
-              type="text"
               aria-label="Textfield 3"
               id="components-table--with-form-elements-textfield3"
+              type="text"
             >
           </div>
         </div>

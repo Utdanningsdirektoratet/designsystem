@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Size } from '@digdir/designsystemet-react';
 import { Controls } from '../controls/Controls';
 import classes from './FormDemo.module.css';
+import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 
 const meta: Meta<typeof FormDemo> = {
   title: 'Demo/Form Demo',
@@ -34,7 +35,8 @@ export const FormStory: Story = {
       padding: 0,
     },
   },
-  render: function Render(args) {
+  decorators: [withScrollHashBehavior],
+  render(args) {
     const [size, setSize] = useState<Size>('sm');
     const [colorMode, setColorMode] = useState('auto');
     return (

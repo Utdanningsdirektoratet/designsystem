@@ -46,8 +46,8 @@ exports[`Simple 1`] = `
         </legend>
         <div>
           <input
-            type="checkbox"
             id="potet"
+            type="checkbox"
             value="potet"
           >
           <label
@@ -59,8 +59,8 @@ exports[`Simple 1`] = `
         </div>
         <div>
           <input
-            type="checkbox"
             id="farris"
+            type="checkbox"
             value="farris"
           >
           <label
@@ -72,8 +72,8 @@ exports[`Simple 1`] = `
         </div>
         <div>
           <input
-            type="checkbox"
             id="blomkol"
+            type="checkbox"
             value="blomkol"
             checked
           >
@@ -86,8 +86,8 @@ exports[`Simple 1`] = `
         </div>
         <div>
           <input
-            type="checkbox"
             id="pizza"
+            type="checkbox"
             value="pizza"
             checked
           >
@@ -100,8 +100,8 @@ exports[`Simple 1`] = `
         </div>
         <div>
           <input
-            type="checkbox"
             id="melk"
+            type="checkbox"
             value="melk"
             checked
           >
@@ -115,8 +115,8 @@ exports[`Simple 1`] = `
         <hr aria-hidden="true">
         <div>
           <input
-            type="checkbox"
             id="smagodt"
+            type="checkbox"
             value="smagodt"
           >
           <label
@@ -128,8 +128,8 @@ exports[`Simple 1`] = `
         </div>
         <div>
           <input
-            type="checkbox"
             id="smash"
+            type="checkbox"
             value="smash"
           >
           <label
@@ -154,9 +154,9 @@ exports[`Simple 1`] = `
         </label>
         <div>
           <input
-            type="text"
             id="name"
             placeholder="Ola Normann"
+            type="text"
           >
         </div>
       </div>
@@ -169,27 +169,27 @@ exports[`Simple 1`] = `
         </label>
         <div>
           <input
-            type="email"
             id="email"
             placeholder="ola@norge.no"
+            type="email"
           >
         </div>
       </div>
       <a
         href="#"
-        popovertarget=":r0:"
+        popovertarget="«r0»"
         popovertargetaction="show"
       >
         Glemt passord?
       </a>
-      <div
+      <span
         role="tooltip"
-        id=":r0:"
+        id="«r0»"
         popover="manual"
         style="opacity: 0;"
       >
         Trykk for å få hjelp
-      </div>
+      </span>
       <button
         data-variant="primary"
         type="button"
@@ -266,9 +266,9 @@ exports[`Simple 1`] = `
         </div>
         <div>
           <input
-            type="search"
             placeholder
             aria-label="Søk"
+            type="search"
           >
           <button
             data-icon="true"

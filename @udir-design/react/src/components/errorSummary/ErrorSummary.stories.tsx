@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Button, Textfield } from '@udir-design/react/alpha';
 import { ErrorSummary } from './ErrorSummary';
 import type { Meta, StoryObj } from '@storybook/react';
@@ -82,8 +82,15 @@ export const WithForm: Story = {
 };
 
 export const ShowHide: Story = {
-  render: function Render(args) {
+  render(args) {
     const [show, setShow] = useState(false);
+    const summaryRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+      if (show) {
+        summaryRef.current?.focus();
+      }
+    }, [show]);
+
     return (
       <>
         <div
@@ -94,11 +101,11 @@ export const ShowHide: Story = {
           }}
         >
           <Button onClick={() => setShow(!show)}>
-            {show ? 'Skjul' : 'Vis'}
+            {show ? 'Skjul' : 'Send inn skjema'}
           </Button>
         </div>
         {show && (
-          <ErrorSummary>
+          <ErrorSummary data-testid="show-hide" ref={summaryRef}>
             <ErrorSummary.Heading>
               For å gå videre må du rette opp følgende feil:
             </ErrorSummary.Heading>
@@ -123,7 +130,8 @@ export const ShowHide: Story = {
     const canvas = within(ctx.canvasElement);
     const button = canvas.getByRole('button');
     await userEvent.click(button);
-    const errorSummary = canvas.getByRole('alert');
+    const errorSummary = canvas.getByTestId('show-hide');
     await expect(errorSummary).toBeVisible();
+    await expect(errorSummary).toHaveFocus();
   },
 };

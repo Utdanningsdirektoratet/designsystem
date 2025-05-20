@@ -172,25 +172,18 @@ corepack prepare
 > [!NOTE]
 > Dette steget er ikke nødvendig for at prosjektene skal bygge, men uten dette vil Nx kun bruke din lokale cache.
 
-Vi bruker en felles Nx cache for å gjøre bygg raskere på tvers av ulike utviklermaskiner og CI-kjøringer. Cachen er lagret i en Azure storage account, gjennom pluginen [nx-remotecache-azure](https://www.npmjs.com/package/nx-remotecache-azure).
+Vi bruker en felles Nx cache for å gjøre bygg raskere på tvers av ulike utviklermaskiner og CI-kjøringer. Cachen er lagret i en Azure storage account, gjennom pluginen [@nx/azure-cache](https://www.npmjs.com/package/@nx/azure-cache).
 
 Azure-infrastrukturen som er nødvendig for felles caching er dokumentert i [.azure/README.md](.azure/README.md).
 
 For å kunne bruke den felles cachen, må hver utvikler legge til følgende i den git-ignorerte filen `.env.local`
 
 ```
-NXCACHE_AZURE_ACCOUNT_KEY=<secret key>
+AZURE_STORAGE_CONNECTION_STRING=<secret value>
+NX_KEY=<secret value>
 ```
 
-`<secret key>` må erstattes med den faktiske nøkkelen. Spør en utvikler på designteamet om hvor du kan finne denne.
-
-> [!WARNING]
-> For øyeblikket får vi følgende beskjeder, som må tas tak i, men som foreløpig kan ignoreres:
->
-> - Custom task runners will no longer be supported in Nx 21.  
->   Use Nx Cloud or the Nx Powerpack caches instead.
-> - Nx is configured to use the legacy cache. This cache will be removed in Nx 21.  
->   Read more at https://nx.dev/deprecated/legacy-cache#tasksrunneroptions.
+`<secret value>` må erstattes med faktiske verdier. Spør en utvikler på designteamet om hvor du kan finne disse.
 
 ### Sjekke at oppsettet funker
 

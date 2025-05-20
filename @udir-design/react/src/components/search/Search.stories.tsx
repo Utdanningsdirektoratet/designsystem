@@ -66,7 +66,7 @@ export const Preview: Story = {
 };
 
 export const Controlled: Story = {
-  render: function Render() {
+  render() {
     const [value, setValue] = useState<string>();
     return (
       <>
@@ -132,7 +132,7 @@ export const WithLabel: Story = {
 };
 
 export const Form: Story = {
-  render: function Render() {
+  render() {
     const [value, setValue] = useState<string>();
     const [submittedValue, setSubmittedValue] = useState<string>();
 

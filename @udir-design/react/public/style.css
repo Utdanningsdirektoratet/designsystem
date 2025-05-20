@@ -1,7 +1,10 @@
 @import '@udir-design/theme';
 @import '@digdir/designsystemet-css';
 
-/* Temporary fix until this is fixed upstream */
-.ds-fieldset > legend {
-  padding-inline: 0;
+/* Use Digdir's "special case" for neutral link color as default, since neutral is our default */
+
+.ds-link {
+  --dsc-link-color--active: var(--ds-color-text-subtle);
+  --dsc-link-color--hover: var(--ds-color-text-subtle);
+  --dsc-link-color: var(--ds-color-text-default);
 }

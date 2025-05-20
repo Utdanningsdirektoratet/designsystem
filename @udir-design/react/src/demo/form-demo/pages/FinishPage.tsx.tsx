@@ -3,85 +3,56 @@ import {
   Fieldset,
   Heading,
   Textfield,
-  useCheckboxGroup,
   ValidationMessage,
 } from '@udir-design/react/alpha';
-import {
-  Control,
-  Controller,
-  FieldErrors,
-  UseFormRegister,
-} from 'react-hook-form';
-import { FormValues } from '../FormDemo';
+import { useFormContext } from 'react-hook-form';
+import type { FormValues, PageProps } from '../FormDemo';
 
-type FinishPageProps = {
-  register: UseFormRegister<FormValues>;
-  errors: FieldErrors<FormValues>;
-  control: Control<FormValues, unknown>;
-  contactMethods: string[];
-  setContactMethods: (value: string[]) => void;
-};
-
-export const FinishPage = ({
-  register,
-  errors,
-  control,
-  contactMethods,
-  setContactMethods,
-}: FinishPageProps) => {
-  const { ...checkbox } = useCheckboxGroup({
-    name: 'checkbox-group',
-    error: errors.contactMethods?.message,
-    value: contactMethods,
-    onChange: setContactMethods,
-  });
+export const FinishPage = ({ showErrors }: PageProps) => {
+  const { register, formState } = useFormContext<FormValues>();
+  const errors = showErrors ? formState.errors : {};
+  const contactMethodsRules = { required: 'Velg hvordan vi kan kontakte deg' };
+  const isInvalid = !!errors.contactMethods;
   return (
     <>
       <Heading level={2} data-size="sm">
         Avslutning
       </Heading>
       <Textfield
-        id="textfield-addition"
+        id="addition"
         label="Har du noe annet du ønsker å nevne?"
         multiline
         rows={4}
         {...register('addition')}
       />
-      <Fieldset>
+      <Fieldset id="contactMethods">
         <Fieldset.Legend>
           Hvordan ønsker du at vi skal kontakte deg?
         </Fieldset.Legend>
         <Fieldset.Description>
           Velg ett eller flere alternativer
         </Fieldset.Description>
-        <Controller
-          name="contactMethods"
-          control={control}
-          rules={{ required: 'Velg hvordan vi kan kontakte deg' }}
-          render={({ field }) => (
-            <>
-              <Checkbox
-                label="E-post"
-                {...checkbox.getCheckboxProps({
-                  ...field,
-                  value: 'epost',
-                })}
-              />
-              <Checkbox
-                label="Telefon"
-                {...checkbox.getCheckboxProps({
-                  ...field,
-                  value: 'telefon',
-                })}
-              />
-              <Checkbox
-                label="SMS"
-                {...checkbox.getCheckboxProps({ ...field, value: 'sms' })}
-              />
-            </>
-          )}
+        <Checkbox
+          label="E-post"
+          {...register('contactMethods', contactMethodsRules)}
+          aria-invalid={isInvalid}
+          value="epost"
         />
-        <ValidationMessage {...checkbox.validationMessageProps} />
+        <Checkbox
+          label="Telefon"
+          {...register('contactMethods', contactMethodsRules)}
+          aria-invalid={isInvalid}
+          value="telefon"
+        />
+        <Checkbox
+          label="SMS"
+          {...register('contactMethods', contactMethodsRules)}
+          aria-invalid={isInvalid}
+          value="sms"
+        />
+        {errors.contactMethods && (
+          <ValidationMessage>{errors.contactMethods.message}</ValidationMessage>
+        )}
       </Fieldset>
     </>
   );

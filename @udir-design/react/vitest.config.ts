@@ -1,12 +1,7 @@
 import { coverageConfigDefaults, defineConfig } from 'vitest/config';
 import { storybookTest } from '@storybook/experimental-addon-test/vitest-plugin';
+import viteConfig from './vite.config';
 import path from 'node:path';
-import * as R from 'ramda';
-
-const resolveAlias = (alias: string): string =>
-  path.resolve(import.meta.dirname, alias);
-
-const resolveAliases = R.map(resolveAlias);
 
 export default defineConfig({
   test: {
@@ -21,7 +16,6 @@ export default defineConfig({
       exclude: [
         ...coverageConfigDefaults.exclude,
         '**/.storybook/**',
-        '**/*.dynamic.*',
         // 👇 This pattern must align with the `stories` property of your `.storybook/main.ts` config
         '**/*.stories.*',
         // 👇 This pattern must align with the output directory of `storybook build`
@@ -57,12 +51,7 @@ export default defineConfig({
           },
           setupFiles: ['./.storybook/vitest.setup.ts'],
           snapshotSerializers: ['./.storybook/story-snapshot-serializer.ts'],
-          alias: resolveAliases({
-            '@udir-design/react/alpha': 'src/alpha',
-            '@udir-design/react/beta': 'src/beta',
-            // the root (stable) export must be last to not interfere with the aliases above
-            '@udir-design/react': 'src/index',
-          }),
+          alias: viteConfig.resolve?.alias,
         },
       },
     ],

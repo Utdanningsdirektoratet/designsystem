@@ -3,3 +3,6 @@
  */
 
 export * from './button/Button';
+export * from './checkbox/Checkbox';
+export * from './details/Details';
+export * from './radio/Radio';

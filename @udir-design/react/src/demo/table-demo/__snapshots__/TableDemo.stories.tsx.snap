@@ -18,11 +18,11 @@ exports[`Table Story 1`] = `
           data-variant="primary"
           type="button"
           value="sm"
-          id="togglegroup-item-:r2:"
+          id="togglegroup-item-«r2»"
           aria-checked="true"
           aria-current="true"
           role="radio"
-          name="togglegroup-name-:r0:"
+          name="togglegroup-name-«r0»"
           data-roving-tabindex-item="true"
           tabindex="0"
         >
@@ -32,11 +32,11 @@ exports[`Table Story 1`] = `
           data-variant="tertiary"
           type="button"
           value="md"
-          id="togglegroup-item-:r4:"
+          id="togglegroup-item-«r4»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-:r0:"
+          name="togglegroup-name-«r0»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -46,11 +46,11 @@ exports[`Table Story 1`] = `
           data-variant="tertiary"
           type="button"
           value="lg"
-          id="togglegroup-item-:r6:"
+          id="togglegroup-item-«r6»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-:r0:"
+          name="togglegroup-name-«r0»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -73,11 +73,11 @@ exports[`Table Story 1`] = `
           data-variant="tertiary"
           type="button"
           value="light"
-          id="togglegroup-item-:r9:"
+          id="togglegroup-item-«r9»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-:r7:"
+          name="togglegroup-name-«r7»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -87,11 +87,11 @@ exports[`Table Story 1`] = `
           data-variant="tertiary"
           type="button"
           value="dark"
-          id="togglegroup-item-:rb:"
+          id="togglegroup-item-«rb»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-:r7:"
+          name="togglegroup-name-«r7»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -101,11 +101,11 @@ exports[`Table Story 1`] = `
           data-variant="primary"
           type="button"
           value="auto"
-          id="togglegroup-item-:rd:"
+          id="togglegroup-item-«rd»"
           aria-checked="true"
           aria-current="true"
           role="radio"
-          name="togglegroup-name-:r7:"
+          name="togglegroup-name-«r7»"
           data-roving-tabindex-item="true"
           tabindex="0"
         >
@@ -156,11 +156,11 @@ exports[`Table Story 1`] = `
         </div>
         <div>
           <input
-            type="search"
             placeholder="Søk"
-            name="search"
             aria-label="Søk"
+            type="search"
             value
+            name="search"
           >
           <button
             data-icon="true"
@@ -171,597 +171,599 @@ exports[`Table Story 1`] = `
           </button>
         </div>
       </div>
-      <table data-border="true">
-        <thead>
-          <tr>
-            <th>
-              <div>
-                <input
-                  type="checkbox"
-                  id="checkbox-select-all"
-                  aria-label="Select all"
-                  name="my-checkbox"
-                  value="all"
-                >
-              </div>
-            </th>
-            <th aria-sort="none">
-              <button type="button">
-                Navn
-              </button>
-            </th>
-            <th aria-sort="none">
-              <button type="button">
-                Utdanningsnivå
-              </button>
-            </th>
-            <th>
-              Sist endret
-            </th>
-            <th>
-              Telefon
-            </th>
-            <th>
-              Status
-            </th>
-            <th>
-              Slett
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <div>
-                <input
-                  type="checkbox"
-                  id="checkbox-1"
-                  aria-label="Check Lise Nordmann"
-                  name="my-checkbox"
-                  value="1"
-                >
-              </div>
-            </td>
-            <td>
-              <div>
-                <span
-                  data-variant="circle"
-                  role="img"
-                  aria-label="Lise Nordmann"
-                >
-                </span>
-                Lise Nordmann
-              </div>
-            </td>
-            <td>
-              Barnehage
-            </td>
-            <td>
-              01.01.2023
-            </td>
-            <td>
-              22345678
-            </td>
-            <td>
-              <span data-color="info">
-                Ny
-              </span>
-            </td>
-            <td>
-              <button
-                data-icon="true"
-                data-variant="tertiary"
-                type="button"
-                aria-haspopup="dialog"
-                data-color="danger"
-                aria-label="Slett"
-                popovertarget=":rg:"
-                popovertargetaction="show"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
-                  aria-hidden="true"
-                >
-                  <path
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-                    clip-rule="evenodd"
+      <div>
+        <table data-border="true">
+          <thead>
+            <tr>
+              <th>
+                <div>
+                  <input
+                    id="checkbox-select-all"
+                    aria-label="Select all"
+                    type="checkbox"
+                    value="all"
+                    name="my-checkbox"
                   >
-                  </path>
-                </svg>
-              </button>
-              <div
-                role="tooltip"
-                id=":rg:"
-                popover="manual"
-                style="opacity: 0;"
-              >
+                </div>
+              </th>
+              <th aria-sort="none">
+                <button type="button">
+                  Navn
+                </button>
+              </th>
+              <th aria-sort="none">
+                <button type="button">
+                  Utdanningsnivå
+                </button>
+              </th>
+              <th>
+                Sist endret
+              </th>
+              <th>
+                Telefon
+              </th>
+              <th>
+                Status
+              </th>
+              <th>
                 Slett
-              </div>
-              <dialog data-modal="true">
-                <form method="dialog">
-                  <button
-                    data-icon="true"
-                    data-variant="tertiary"
-                    type="submit"
-                    aria-label="Lukk dialogvindu"
-                    data-color="neutral"
-                    name="close"
-                  >
-                  </button>
-                </form>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
                 <div>
-                  <h2 data-size="xs">
-                    Er du sikker på at du vil slette Lise Nordmann?
-                  </h2>
+                  <input
+                    id="checkbox-1"
+                    aria-label="Check Lise Nordmann"
+                    type="checkbox"
+                    value="1"
+                    name="my-checkbox"
+                  >
                 </div>
+              </td>
+              <td>
                 <div>
-                  <button
-                    data-variant="primary"
-                    type="button"
-                    data-color="danger"
+                  <span
+                    data-variant="circle"
+                    role="img"
+                    aria-label="Lise Nordmann"
                   >
-                    Slett
-                  </button>
-                  <button
-                    data-variant="secondary"
-                    type="button"
-                  >
-                    Avbryt
-                  </button>
+                  </span>
+                  Lise Nordmann
                 </div>
-              </dialog>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div>
-                <input
-                  type="checkbox"
-                  id="checkbox-2"
-                  aria-label="Check Ola Nordmann"
-                  name="my-checkbox"
-                  value="2"
-                >
-              </div>
-            </td>
-            <td>
-              <div>
-                <span
-                  data-variant="circle"
-                  role="img"
-                  aria-label="Ola Nordmann"
-                >
+              </td>
+              <td>
+                Barnehage
+              </td>
+              <td>
+                01.01.2023
+              </td>
+              <td>
+                22345678
+              </td>
+              <td>
+                <span data-color="info">
+                  Ny
                 </span>
-                Ola Nordmann
-              </div>
-            </td>
-            <td>
-              Grunnskole
-            </td>
-            <td>
-              01.02.2023
-            </td>
-            <td>
-              87654321
-            </td>
-            <td>
-              <span data-color="success">
-                Eksportert
-              </span>
-            </td>
-            <td>
-              <button
-                data-icon="true"
-                data-variant="tertiary"
-                type="button"
-                aria-haspopup="dialog"
-                data-color="danger"
-                aria-label="Slett"
-                popovertarget=":ri:"
-                popovertargetaction="show"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
-                  aria-hidden="true"
+              </td>
+              <td>
+                <button
+                  data-icon="true"
+                  data-variant="tertiary"
+                  type="button"
+                  aria-haspopup="dialog"
+                  data-color="danger"
+                  aria-label="Slett"
+                  popovertarget="«rg»"
+                  popovertargetaction="show"
                 >
-                  <path
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-                    clip-rule="evenodd"
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    fill="none"
+                    viewbox="0 0 24 24"
+                    focusable="false"
+                    role="img"
+                    aria-hidden="true"
                   >
-                  </path>
-                </svg>
-              </button>
-              <div
-                role="tooltip"
-                id=":ri:"
-                popover="manual"
-                style="opacity: 0;"
-              >
-                Slett
-              </div>
-              <dialog data-modal="true">
-                <form method="dialog">
-                  <button
-                    data-icon="true"
-                    data-variant="tertiary"
-                    type="submit"
-                    aria-label="Lukk dialogvindu"
-                    data-color="neutral"
-                    name="close"
-                  >
-                  </button>
-                </form>
-                <div>
-                  <h2 data-size="xs">
-                    Er du sikker på at du vil slette Ola Nordmann?
-                  </h2>
-                </div>
-                <div>
-                  <button
-                    data-variant="primary"
-                    type="button"
-                    data-color="danger"
-                  >
-                    Slett
-                  </button>
-                  <button
-                    data-variant="secondary"
-                    type="button"
-                  >
-                    Avbryt
-                  </button>
-                </div>
-              </dialog>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div>
-                <input
-                  type="checkbox"
-                  id="checkbox-3"
-                  aria-label="Check Kari Nordmann"
-                  name="my-checkbox"
-                  value="3"
-                >
-              </div>
-            </td>
-            <td>
-              <div>
+                    <path
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                      clip-rule="evenodd"
+                    >
+                    </path>
+                  </svg>
+                </button>
                 <span
-                  data-variant="circle"
-                  role="img"
-                  aria-label="Kari Nordmann"
+                  role="tooltip"
+                  id="«rg»"
+                  popover="manual"
+                  style="opacity: 0;"
                 >
+                  Slett
                 </span>
-                Kari Nordmann
-              </div>
-            </td>
-            <td>
-              Videregående
-            </td>
-            <td>
-              01.03.2023
-            </td>
-            <td>
-              11223344
-            </td>
-            <td>
-              <span data-color="warning">
-                Ikke eksportert
-              </span>
-            </td>
-            <td>
-              <button
-                data-icon="true"
-                data-variant="tertiary"
-                type="button"
-                aria-haspopup="dialog"
-                data-color="danger"
-                aria-label="Slett"
-                popovertarget=":rk:"
-                popovertargetaction="show"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
-                  aria-hidden="true"
-                >
-                  <path
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-              </button>
-              <div
-                role="tooltip"
-                id=":rk:"
-                popover="manual"
-                style="opacity: 0;"
-              >
-                Slett
-              </div>
-              <dialog data-modal="true">
-                <form method="dialog">
-                  <button
-                    data-icon="true"
-                    data-variant="tertiary"
-                    type="submit"
-                    aria-label="Lukk dialogvindu"
-                    data-color="neutral"
-                    name="close"
-                  >
-                  </button>
-                </form>
+                <dialog data-modal="true">
+                  <form method="dialog">
+                    <button
+                      data-icon="true"
+                      data-variant="tertiary"
+                      type="submit"
+                      aria-label="Lukk dialogvindu"
+                      data-color="neutral"
+                      name="close"
+                    >
+                    </button>
+                  </form>
+                  <div>
+                    <h2 data-size="xs">
+                      Er du sikker på at du vil slette Lise Nordmann?
+                    </h2>
+                  </div>
+                  <div>
+                    <button
+                      data-variant="primary"
+                      type="button"
+                      data-color="danger"
+                    >
+                      Slett
+                    </button>
+                    <button
+                      data-variant="secondary"
+                      type="button"
+                    >
+                      Avbryt
+                    </button>
+                  </div>
+                </dialog>
+              </td>
+            </tr>
+            <tr>
+              <td>
                 <div>
-                  <h2 data-size="xs">
-                    Er du sikker på at du vil slette Kari Nordmann?
-                  </h2>
+                  <input
+                    id="checkbox-2"
+                    aria-label="Check Ola Nordmann"
+                    type="checkbox"
+                    value="2"
+                    name="my-checkbox"
+                  >
                 </div>
+              </td>
+              <td>
                 <div>
-                  <button
-                    data-variant="primary"
-                    type="button"
-                    data-color="danger"
+                  <span
+                    data-variant="circle"
+                    role="img"
+                    aria-label="Ola Nordmann"
                   >
-                    Slett
-                  </button>
-                  <button
-                    data-variant="secondary"
-                    type="button"
-                  >
-                    Avbryt
-                  </button>
+                  </span>
+                  Ola Nordmann
                 </div>
-              </dialog>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div>
-                <input
-                  type="checkbox"
-                  id="checkbox-4"
-                  aria-label="Check Per Nordmann"
-                  name="my-checkbox"
-                  value="4"
+              </td>
+              <td>
+                Grunnskole
+              </td>
+              <td>
+                01.02.2023
+              </td>
+              <td>
+                87654321
+              </td>
+              <td>
+                <span data-color="success">
+                  Eksportert
+                </span>
+              </td>
+              <td>
+                <button
+                  data-icon="true"
+                  data-variant="tertiary"
+                  type="button"
+                  aria-haspopup="dialog"
+                  data-color="danger"
+                  aria-label="Slett"
+                  popovertarget="«ri»"
+                  popovertargetaction="show"
                 >
-              </div>
-            </td>
-            <td>
-              <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    fill="none"
+                    viewbox="0 0 24 24"
+                    focusable="false"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                      clip-rule="evenodd"
+                    >
+                    </path>
+                  </svg>
+                </button>
                 <span
-                  data-variant="circle"
-                  role="img"
-                  aria-label="Per Nordmann"
+                  role="tooltip"
+                  id="«ri»"
+                  popover="manual"
+                  style="opacity: 0;"
                 >
+                  Slett
                 </span>
-                Per Nordmann
-              </div>
-            </td>
-            <td>
-              Barnehage
-            </td>
-            <td>
-              01.04.2023
-            </td>
-            <td>
-              44332211
-            </td>
-            <td>
-              <span data-color="info">
-                Ny
-              </span>
-            </td>
-            <td>
-              <button
-                data-icon="true"
-                data-variant="tertiary"
-                type="button"
-                aria-haspopup="dialog"
-                data-color="danger"
-                aria-label="Slett"
-                popovertarget=":rm:"
-                popovertargetaction="show"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
-                  aria-hidden="true"
-                >
-                  <path
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-              </button>
-              <div
-                role="tooltip"
-                id=":rm:"
-                popover="manual"
-                style="opacity: 0;"
-              >
-                Slett
-              </div>
-              <dialog data-modal="true">
-                <form method="dialog">
-                  <button
-                    data-icon="true"
-                    data-variant="tertiary"
-                    type="submit"
-                    aria-label="Lukk dialogvindu"
-                    data-color="neutral"
-                    name="close"
-                  >
-                  </button>
-                </form>
+                <dialog data-modal="true">
+                  <form method="dialog">
+                    <button
+                      data-icon="true"
+                      data-variant="tertiary"
+                      type="submit"
+                      aria-label="Lukk dialogvindu"
+                      data-color="neutral"
+                      name="close"
+                    >
+                    </button>
+                  </form>
+                  <div>
+                    <h2 data-size="xs">
+                      Er du sikker på at du vil slette Ola Nordmann?
+                    </h2>
+                  </div>
+                  <div>
+                    <button
+                      data-variant="primary"
+                      type="button"
+                      data-color="danger"
+                    >
+                      Slett
+                    </button>
+                    <button
+                      data-variant="secondary"
+                      type="button"
+                    >
+                      Avbryt
+                    </button>
+                  </div>
+                </dialog>
+              </td>
+            </tr>
+            <tr>
+              <td>
                 <div>
-                  <h2 data-size="xs">
-                    Er du sikker på at du vil slette Per Nordmann?
-                  </h2>
+                  <input
+                    id="checkbox-3"
+                    aria-label="Check Kari Nordmann"
+                    type="checkbox"
+                    value="3"
+                    name="my-checkbox"
+                  >
                 </div>
+              </td>
+              <td>
                 <div>
-                  <button
-                    data-variant="primary"
-                    type="button"
-                    data-color="danger"
+                  <span
+                    data-variant="circle"
+                    role="img"
+                    aria-label="Kari Nordmann"
                   >
-                    Slett
-                  </button>
-                  <button
-                    data-variant="secondary"
-                    type="button"
-                  >
-                    Avbryt
-                  </button>
+                  </span>
+                  Kari Nordmann
                 </div>
-              </dialog>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div>
-                <input
-                  type="checkbox"
-                  id="checkbox-5"
-                  aria-label="Check Anne Nordmann"
-                  name="my-checkbox"
-                  value="5"
+              </td>
+              <td>
+                Videregående
+              </td>
+              <td>
+                01.03.2023
+              </td>
+              <td>
+                11223344
+              </td>
+              <td>
+                <span data-color="warning">
+                  Ikke eksportert
+                </span>
+              </td>
+              <td>
+                <button
+                  data-icon="true"
+                  data-variant="tertiary"
+                  type="button"
+                  aria-haspopup="dialog"
+                  data-color="danger"
+                  aria-label="Slett"
+                  popovertarget="«rk»"
+                  popovertargetaction="show"
                 >
-              </div>
-            </td>
-            <td>
-              <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    fill="none"
+                    viewbox="0 0 24 24"
+                    focusable="false"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                      clip-rule="evenodd"
+                    >
+                    </path>
+                  </svg>
+                </button>
                 <span
-                  data-variant="circle"
-                  role="img"
-                  aria-label="Anne Nordmann"
+                  role="tooltip"
+                  id="«rk»"
+                  popover="manual"
+                  style="opacity: 0;"
                 >
+                  Slett
                 </span>
-                Anne Nordmann
-              </div>
-            </td>
-            <td>
-              Grunnskole
-            </td>
-            <td>
-              01.05.2023
-            </td>
-            <td>
-              55667788
-            </td>
-            <td>
-              <span data-color="success">
-                Eksportert
-              </span>
-            </td>
-            <td>
-              <button
-                data-icon="true"
-                data-variant="tertiary"
-                type="button"
-                aria-haspopup="dialog"
-                data-color="danger"
-                aria-label="Slett"
-                popovertarget=":ro:"
-                popovertargetaction="show"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
-                  aria-hidden="true"
+                <dialog data-modal="true">
+                  <form method="dialog">
+                    <button
+                      data-icon="true"
+                      data-variant="tertiary"
+                      type="submit"
+                      aria-label="Lukk dialogvindu"
+                      data-color="neutral"
+                      name="close"
+                    >
+                    </button>
+                  </form>
+                  <div>
+                    <h2 data-size="xs">
+                      Er du sikker på at du vil slette Kari Nordmann?
+                    </h2>
+                  </div>
+                  <div>
+                    <button
+                      data-variant="primary"
+                      type="button"
+                      data-color="danger"
+                    >
+                      Slett
+                    </button>
+                    <button
+                      data-variant="secondary"
+                      type="button"
+                    >
+                      Avbryt
+                    </button>
+                  </div>
+                </dialog>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div>
+                  <input
+                    id="checkbox-4"
+                    aria-label="Check Per Nordmann"
+                    type="checkbox"
+                    value="4"
+                    name="my-checkbox"
+                  >
+                </div>
+              </td>
+              <td>
+                <div>
+                  <span
+                    data-variant="circle"
+                    role="img"
+                    aria-label="Per Nordmann"
+                  >
+                  </span>
+                  Per Nordmann
+                </div>
+              </td>
+              <td>
+                Barnehage
+              </td>
+              <td>
+                01.04.2023
+              </td>
+              <td>
+                44332211
+              </td>
+              <td>
+                <span data-color="info">
+                  Ny
+                </span>
+              </td>
+              <td>
+                <button
+                  data-icon="true"
+                  data-variant="tertiary"
+                  type="button"
+                  aria-haspopup="dialog"
+                  data-color="danger"
+                  aria-label="Slett"
+                  popovertarget="«rm»"
+                  popovertargetaction="show"
                 >
-                  <path
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-                    clip-rule="evenodd"
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    fill="none"
+                    viewbox="0 0 24 24"
+                    focusable="false"
+                    role="img"
+                    aria-hidden="true"
                   >
-                  </path>
-                </svg>
-              </button>
-              <div
-                role="tooltip"
-                id=":ro:"
-                popover="manual"
-                style="opacity: 0;"
-              >
-                Slett
-              </div>
-              <dialog data-modal="true">
-                <form method="dialog">
-                  <button
-                    data-icon="true"
-                    data-variant="tertiary"
-                    type="submit"
-                    aria-label="Lukk dialogvindu"
-                    data-color="neutral"
-                    name="close"
-                  >
-                  </button>
-                </form>
+                    <path
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                      clip-rule="evenodd"
+                    >
+                    </path>
+                  </svg>
+                </button>
+                <span
+                  role="tooltip"
+                  id="«rm»"
+                  popover="manual"
+                  style="opacity: 0;"
+                >
+                  Slett
+                </span>
+                <dialog data-modal="true">
+                  <form method="dialog">
+                    <button
+                      data-icon="true"
+                      data-variant="tertiary"
+                      type="submit"
+                      aria-label="Lukk dialogvindu"
+                      data-color="neutral"
+                      name="close"
+                    >
+                    </button>
+                  </form>
+                  <div>
+                    <h2 data-size="xs">
+                      Er du sikker på at du vil slette Per Nordmann?
+                    </h2>
+                  </div>
+                  <div>
+                    <button
+                      data-variant="primary"
+                      type="button"
+                      data-color="danger"
+                    >
+                      Slett
+                    </button>
+                    <button
+                      data-variant="secondary"
+                      type="button"
+                    >
+                      Avbryt
+                    </button>
+                  </div>
+                </dialog>
+              </td>
+            </tr>
+            <tr>
+              <td>
                 <div>
-                  <h2 data-size="xs">
-                    Er du sikker på at du vil slette Anne Nordmann?
-                  </h2>
+                  <input
+                    id="checkbox-5"
+                    aria-label="Check Anne Nordmann"
+                    type="checkbox"
+                    value="5"
+                    name="my-checkbox"
+                  >
                 </div>
+              </td>
+              <td>
                 <div>
-                  <button
-                    data-variant="primary"
-                    type="button"
-                    data-color="danger"
+                  <span
+                    data-variant="circle"
+                    role="img"
+                    aria-label="Anne Nordmann"
                   >
-                    Slett
-                  </button>
-                  <button
-                    data-variant="secondary"
-                    type="button"
-                  >
-                    Avbryt
-                  </button>
+                  </span>
+                  Anne Nordmann
                 </div>
-              </dialog>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+              </td>
+              <td>
+                Grunnskole
+              </td>
+              <td>
+                01.05.2023
+              </td>
+              <td>
+                55667788
+              </td>
+              <td>
+                <span data-color="success">
+                  Eksportert
+                </span>
+              </td>
+              <td>
+                <button
+                  data-icon="true"
+                  data-variant="tertiary"
+                  type="button"
+                  aria-haspopup="dialog"
+                  data-color="danger"
+                  aria-label="Slett"
+                  popovertarget="«ro»"
+                  popovertargetaction="show"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    fill="none"
+                    viewbox="0 0 24 24"
+                    focusable="false"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                      clip-rule="evenodd"
+                    >
+                    </path>
+                  </svg>
+                </button>
+                <span
+                  role="tooltip"
+                  id="«ro»"
+                  popover="manual"
+                  style="opacity: 0;"
+                >
+                  Slett
+                </span>
+                <dialog data-modal="true">
+                  <form method="dialog">
+                    <button
+                      data-icon="true"
+                      data-variant="tertiary"
+                      type="submit"
+                      aria-label="Lukk dialogvindu"
+                      data-color="neutral"
+                      name="close"
+                    >
+                    </button>
+                  </form>
+                  <div>
+                    <h2 data-size="xs">
+                      Er du sikker på at du vil slette Anne Nordmann?
+                    </h2>
+                  </div>
+                  <div>
+                    <button
+                      data-variant="primary"
+                      type="button"
+                      data-color="danger"
+                    >
+                      Slett
+                    </button>
+                    <button
+                      data-variant="secondary"
+                      type="button"
+                    >
+                      Avbryt
+                    </button>
+                  </div>
+                </dialog>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <div>
         <nav aria-label="Sidenavigering">
           <ul>

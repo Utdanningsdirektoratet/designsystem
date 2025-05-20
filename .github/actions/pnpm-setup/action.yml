@@ -12,7 +12,7 @@ runs:
   steps:
     # Note: pnpm version is set in package.json "packageManager"
     - name: Install pnpm
-      uses: pnpm/action-setup@v4
+      uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
 
     # Cache node_modules
     # Note: node version is set in package.json "engines.node"
@@ -25,6 +25,6 @@ runs:
     - run: pnpm install
       shell: bash
 
-    - uses: nrwl/nx-set-shas@v4
+    - uses: nrwl/nx-set-shas@dbe0650947e5f2c81f59190a38512cf49126fe6b # v4.3.0
       with:
         main-branch-name: ${{ github.base_ref || github.ref_name }}

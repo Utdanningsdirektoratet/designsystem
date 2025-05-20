@@ -1,11 +1,57 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Use Radio Group 1`] = `
-<div>
-  <input
-    type="radio"
-    aria-label="label"
-    id="useRadioGroup"
+exports[`Default 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Velg din aldersgruppe.
+  </legend>
+  <div>
+    <input
+      id="utilities-useradiogroup--default-10-20"
+      type="radio"
+      value="10-20"
+      name="my-group"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-useradiogroup--default-10-20"
+    >
+      10-20 år
+    </label>
+  </div>
+  <div>
+    <input
+      id="utilities-useradiogroup--default-21-45"
+      type="radio"
+      value="21-45"
+      name="my-group"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-useradiogroup--default-21-45"
+    >
+      21-45 år
+    </label>
+  </div>
+  <div>
+    <input
+      id="utilities-useradiogroup--default-46-80"
+      type="radio"
+      value="46-80"
+      name="my-group"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-useradiogroup--default-46-80"
+    >
+      46-80 år
+    </label>
+  </div>
+  <p
+    data-field="validation"
+    hidden
+    id="«r0»"
   >
-</div>
+  </p>
+</fieldset>
 `;

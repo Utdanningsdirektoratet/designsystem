@@ -5,6 +5,12 @@ import dts from 'vite-plugin-dts';
 import tsConfigPaths from 'vite-tsconfig-paths';
 import * as path from 'path';
 import pkg from './package.json';
+import * as R from 'ramda';
+
+const resolveAlias = (alias: string): string =>
+  path.resolve(import.meta.dirname, alias);
+
+const resolveAliases = R.map(resolveAlias);
 
 const dependencies = Object.keys({
   ...pkg.dependencies,
@@ -21,6 +27,15 @@ const dependenciesSubmodules = dependencies.map(
 export default defineConfig({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/@udir-design/react',
+  resolve: {
+    alias: resolveAliases({
+      '.storybook': '.storybook',
+      '@udir-design/react/alpha': 'src/alpha',
+      '@udir-design/react/beta': 'src/beta',
+      // the root (stable) export must be last to not interfere with the aliases above
+      '@udir-design/react': 'src/index',
+    }),
+  },
 
   plugins: [
     react(),

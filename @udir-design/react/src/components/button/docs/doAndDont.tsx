@@ -5,7 +5,7 @@ import {
   PersonPlusIcon,
   PlusIcon,
 } from '@navikt/aksel-icons';
-import { Do, Dont, Stack } from '../../../../.storybook/docs-components';
+import { Do, Dont, Stack } from '.storybook/docs-components';
 import { Button } from '@udir-design/react/alpha';
 
 /*
@@ -78,7 +78,7 @@ const Ex1Do = () => {
 };
 
 const Ex1Dont = () => {
-  return <Button>Avbryt og fortsett senere senere</Button>;
+  return <Button>Avbryt og fortsett senere</Button>;
 };
 
 const Ex2Do = () => {

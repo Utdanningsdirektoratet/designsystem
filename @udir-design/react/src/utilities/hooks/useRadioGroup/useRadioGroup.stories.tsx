@@ -1,15 +1,15 @@
-import type { Meta } from '@storybook/react';
-import { Radio } from '@udir-design/react/alpha';
+import type { Meta, StoryObj } from '@storybook/react';
+import {
+  Fieldset,
+  Radio,
+  useRadioGroup,
+  ValidationMessage,
+} from '@udir-design/react/alpha';
 import type { UseRadioGroupProps } from './useRadioGroup';
-
-export const UseRadioGroup = (_props: UseRadioGroupProps) => (
-  <Radio aria-label="label" id="useRadioGroup" />
-);
 
 export default {
   title: 'Utilities/useRadioGroup',
-  tags: ['!dev', '!autodocs'], // Hide from sidebar as documented in https://storybook.js.org/docs/writing-stories/tags
-  component: UseRadioGroup,
+  parameters: { chromatic: { disableSnapshot: true } },
   argTypes: {
     name: {
       table: { type: { summary: 'string' } },
@@ -56,3 +56,40 @@ export default {
     },
   },
 } as Meta;
+
+type Story = StoryObj<UseRadioGroupProps>;
+
+const ageGroups = [
+  { value: '10-20', label: '10-20 år' },
+  { value: '21-45', label: '21-45 år' },
+  { value: '46-80', label: '46-80 år' },
+];
+
+export const Default: Story = {
+  args: {
+    name: 'my-group',
+    readOnly: false,
+    disabled: false,
+    value: '10-20',
+  },
+  render(args, context) {
+    const { getRadioProps, validationMessageProps } = useRadioGroup({
+      ...args,
+    });
+
+    return (
+      <Fieldset>
+        <Fieldset.Legend>Velg din aldersgruppe.</Fieldset.Legend>
+        {ageGroups.map((group) => (
+          <Radio
+            key={group.value}
+            id={context.id + '-' + group.value}
+            label={group.label}
+            {...getRadioProps(group.value)}
+          />
+        ))}
+        <ValidationMessage {...validationMessageProps} />
+      </Fieldset>
+    );
+  },
+};

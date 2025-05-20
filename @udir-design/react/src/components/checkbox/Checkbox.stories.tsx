@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 import {
   Button,
   Card,
@@ -10,12 +10,14 @@ import {
   UseCheckboxGroupProps,
   ValidationMessage,
   useCheckboxGroup,
+  Chip,
 } from '@udir-design/react/alpha';
 import { expect, fn, userEvent, waitFor, within } from '@storybook/test';
+import { formatReactSource } from '.storybook/utils/sourceTransformers';
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
-  tags: ['alpha'],
+  tags: ['beta'],
 };
 
 export default meta;
@@ -57,6 +59,14 @@ export const Preview: Story = {
       expect(checkbox).not.toBeChecked();
     });
 
+    await step('Check keyboard toggle', async () => {
+      checkbox.focus();
+      await userEvent.keyboard(' ');
+      expect(checkbox).toBeChecked();
+      await userEvent.keyboard(' ');
+      expect(checkbox).not.toBeChecked();
+    });
+
     await step(
       'onChange callback is called when checkbox is toggled',
       async () => {
@@ -64,14 +74,8 @@ export const Preview: Story = {
         expect(args.onChange).toHaveBeenCalled();
       },
     );
-  },
-};
 
-export const AriaLabel: Story = {
-  args: {
-    value: 'value',
-    'aria-label': 'Checkbox',
-    id: 'checkbox-aria-label',
+    userEvent.tab();
   },
 };
 
@@ -81,7 +85,7 @@ export const Group: GroupStory = {
     disabled: false,
     error: '',
   },
-  render: function Render(args, context) {
+  render(args, context) {
     const { getCheckboxProps, validationMessageProps } = useCheckboxGroup({
       value: ['epost'],
       ...args,
@@ -93,7 +97,7 @@ export const Group: GroupStory = {
           Hvordan vil du helst at vi skal kontakte deg?
         </Fieldset.Legend>
         <Fieldset.Description>
-          Velg alle alternativene som er relevante for deg.
+          Velg de alternativene som er relevante for deg.
         </Fieldset.Description>
         <Checkbox
           id={context.id + '-email'}
@@ -142,60 +146,84 @@ export const WithError: GroupStory = {
   render: Group.render,
 };
 
-export const Controlled: GroupStory = {
-  render: function Render(args, context) {
-    const { getCheckboxProps, validationMessageProps, value, setValue } =
-      useCheckboxGroup({
-        name: 'my-controlled',
-        ...args,
-      });
+type Choices = {
+  [key: string]: {
+    label: string;
+  };
+};
 
-    const toggle = (haystack: string[], needle: string) =>
-      haystack.includes(needle)
-        ? haystack.filter((value) => value !== needle)
-        : haystack.concat(needle);
+export const Controlled: StoryFn<UseCheckboxGroupProps> = (args, context) => {
+  const choices: Choices = {
+    barnehage: { label: 'Barnehage' },
+    grunnskole: { label: 'Grunnskole' },
+    videregaende: { label: 'Videregående' },
+  };
+  const { getCheckboxProps, validationMessageProps, value, setValue } =
+    useCheckboxGroup({
+      name: 'my-controlled',
+      value: ['barnehage', 'videregaende'],
+      ...args,
+    });
 
-    return (
-      <>
-        <Fieldset>
-          <Fieldset.Legend>
-            Skal du reise til noen av disse landene?
-          </Fieldset.Legend>
-          <Fieldset.Description>
-            Velg alle landene du skal innom.
-          </Fieldset.Description>
+  const toggle = (haystack: string[], needle: string) =>
+    haystack.includes(needle)
+      ? haystack.filter((value) => value !== needle)
+      : haystack.concat(needle);
+
+  const isFiltered = value.length > 0;
+
+  return (
+    <>
+      <Fieldset>
+        <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
+        {Object.entries(choices).map(([value, { label }]) => (
           <Checkbox
-            id={context.id + '-kroatia'}
-            label="Kroatia"
-            {...getCheckboxProps('-kroatia')}
+            key={value}
+            id={`${context.id}-${value}`}
+            label={label}
+            {...getCheckboxProps(value)}
           />
-          <Checkbox
-            id={context.id + '-slovakia'}
-            label="Slovakia"
-            {...getCheckboxProps('slovakia')}
-          />
-          <Checkbox
-            id={context.id + '-hobbsyssel'}
-            label="Hobsyssel"
-            {...getCheckboxProps('hobsyssel')}
-          />
-        </Fieldset>
-        <ValidationMessage {...validationMessageProps} />
-        <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
-        <Paragraph style={{ margin: 'var(--ds-size-2) 0' }}>
-          Du har valgt: {value.toString()}
+        ))}
+      </Fieldset>
+      <ValidationMessage {...validationMessageProps} />
+      <Divider />
+      <Paragraph>(Annet innhold)</Paragraph>
+      <Divider />
+      <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
+        <Paragraph>
+          {isFiltered ? 'Viser innhold for:' : 'Viser alt innhold'}
         </Paragraph>
-        <div style={{ display: 'flex', gap: '1rem' }}>
-          <Button onClick={() => setValue(toggle(value, 'kroatia'))}>
-            Toggle Kroatia
-          </Button>
-          <Button onClick={() => setValue(toggle(value, 'hobsyssel'))}>
-            Toggle Hobsyssel
-          </Button>
-        </div>
-      </>
-    );
+        {isFiltered &&
+          value.map((v) => (
+            <Chip.Removable
+              key={v}
+              aria-label={`Slett ${choices[v].label}`}
+              onClick={() => setValue(toggle(value, v))}
+            >
+              {choices[v].label}
+            </Chip.Removable>
+          ))}
+      </div>
+      {isFiltered && (
+        <Button
+          style={{ width: 'fit-content' }}
+          variant="secondary"
+          onClick={() => setValue([])}
+        >
+          Tøm filtre
+        </Button>
+      )}
+    </>
+  );
+};
+
+Controlled.parameters = {
+  customStyles: {
+    display: 'flex',
+    gap: 'var(--ds-size-4)',
+    flexDirection: 'column',
   },
+  docs: { source: { type: 'code', transform: formatReactSource } },
 };
 
 export const ReadOnly: GroupStory = {
@@ -216,17 +244,25 @@ export const Disabled: GroupStory = {
   render: Group.render,
 };
 
-export const InTable: GroupStory = {
-  render: function Render(args, context) {
+export const IndeterminateInTable: GroupStory = {
+  render(args, context) {
     const { getCheckboxProps } = useCheckboxGroup({
-      name: 'my-checkbox',
+      name: context.id,
+      value: ['2', '3'],
       ...args,
     });
+    const people = [
+      { id: 1, name: 'Lise Nordmann', education: 'Barnehage' },
+      { id: 2, name: 'Ola Nordmann', education: 'Grunnskole' },
+      { id: 3, name: 'Kari Nordmann', education: 'Videregående' },
+      { id: 4, name: 'Per Nordmann', education: 'Barnehage' },
+    ];
     return (
       <Table>
         <colgroup>
           {/* ensure the first column only takes up the necessary space */}
           <col style={{ width: '1px' }} />
+          <col style={{ width: '10em' }} />
           <col />
         </colgroup>
         <Table.Head>
@@ -234,27 +270,31 @@ export const InTable: GroupStory = {
             <Table.HeaderCell>
               <Checkbox
                 id={context.id + '-all'}
-                aria-label="Select all"
+                aria-label="Velg alle"
                 {...getCheckboxProps({
                   allowIndeterminate: true,
                   value: 'all',
                 })}
               />
             </Table.HeaderCell>
-            <Table.HeaderCell>Header</Table.HeaderCell>
+            <Table.HeaderCell>Navn</Table.HeaderCell>
+            <Table.HeaderCell>Utdanningsnivå</Table.HeaderCell>
           </Table.Row>
         </Table.Head>
         <Table.Body>
-          {[1, 2, 3, 4].map((row) => (
-            <Table.Row key={row}>
+          {people.map((person) => (
+            <Table.Row key={person.name}>
               <Table.Cell>
                 <Checkbox
-                  id={context.id + '-' + row}
-                  aria-label={`Check ${row}`}
-                  {...getCheckboxProps(`${row}`)}
+                  id={`${context.id}-${person.id}`}
+                  aria-labelledby={`${context.id}-${person.id}-name`}
+                  {...getCheckboxProps(person.id.toString())}
                 />
               </Table.Cell>
-              <Table.Cell>Content</Table.Cell>
+              <Table.Cell id={`${context.id}-${person.id}-name`}>
+                {person.name}
+              </Table.Cell>
+              <Table.Cell>{person.education}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
@@ -289,63 +329,11 @@ export const CheckboxInColorContext: Story = {
   },
 };
 
-export const ContentEx1: Story = {
-  render: (context) => (
-    <Fieldset>
-      <Fieldset.Legend>
-        Hvor lenge har du jobbet i det offentlige?
-      </Fieldset.Legend>
-      <Checkbox id={context.id + '-0-3'} label="I under ett år" value="0-3" />
-      <Checkbox id={context.id + '-1-3'} label="Fra 1-3 år" value="1-3" />
-      <Checkbox id={context.id + '->3'} label="Mer enn 3 år" value="3+" />
-    </Fieldset>
-  ),
-};
-
-export const ContentEx2: Story = {
-  render: (context) => (
-    <Fieldset>
-      <Fieldset.Legend>Hva liker du best med jobben din?</Fieldset.Legend>
-      <Checkbox
-        id={context.id + '-selvstendige'}
-        label="Jeg liker å jobbe med selvstendige oppgaver"
-        value="selvstendige"
-      />
-      <Checkbox
-        id={context.id + '-moter'}
-        label="Jeg elsker møter"
-        value="moter"
-      />
-      <Checkbox
-        id={context.id + '-lunsj'}
-        label="Lunsjen er best"
-        value="lunsj"
-      />
-      <Checkbox
-        id={context.id + '-kolleger'}
-        label="Jeg liker å møte kolleger"
-        value="kolleger"
-      />
-    </Fieldset>
-  ),
-};
-
-export const ContentEx3: Story = {
-  render: (context) => (
-    <Fieldset>
-      <Fieldset.Legend>Hva liker du best med jobben din?</Fieldset.Legend>
-      <Checkbox
-        id={context.id + '-selvstendige'}
-        label="Selvstendige oppgaver"
-        value="selvstendige"
-      />
-      <Checkbox id={context.id + '-moter'} label="Møter" value="moter" />
-      <Checkbox id={context.id + '-lunsj'} label="Lunsj" value="lunsj" />
-      <Checkbox
-        id={context.id + '-kolleger'}
-        label="Kolleger"
-        value="kolleger"
-      />
-    </Fieldset>
-  ),
+export const Focused: Story = {
+  args: Preview.args,
+  parameters: {
+    pseudo: {
+      focusVisible: true,
+    },
+  },
 };

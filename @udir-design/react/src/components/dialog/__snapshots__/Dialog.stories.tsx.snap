@@ -108,9 +108,9 @@ exports[`Dialog With Form 1`] = `
     </label>
     <div>
       <input
-        type="text"
         autofocus="true"
         id="components-dialog--dialog-with-form"
+        type="text"
         value
       >
     </div>
@@ -245,14 +245,13 @@ exports[`Dialog With Suggestion 1`] = `
       </label>
       <div>
         <input
-          type="text"
-          list=":r0:"
+          list="«r0»"
           placeholder
           id="components-dialog--dialog-with-suggestion-input"
-          value
-          popovertarget=":r0:"
+          type="text"
+          popovertarget="«r0»"
           aria-autocomplete="list"
-          aria-controls=":r0:"
+          aria-controls="«r0»"
           aria-expanded="false"
           autocomplete="off"
           role="combobox"
@@ -267,12 +266,13 @@ exports[`Dialog With Suggestion 1`] = `
         <u-datalist
           data-sr-singular="%d forslag"
           data-sr-plural="%d forslag"
-          id=":r0:"
+          id="«r0»"
           hidden
           role="listbox"
+          tabindex="-1"
         >
           <u-option
-            data-empty="true"
+            data-empty
             role="none"
             tabindex="-1"
             aria-disabled="false"

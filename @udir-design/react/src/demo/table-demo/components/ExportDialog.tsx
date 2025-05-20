@@ -4,7 +4,9 @@ import classes from '../TableDemo.module.css';
 import { useRef, useState } from 'react';
 
 type ExportDialogProps = {
-  handleExport: (dialogExportRef: React.RefObject<HTMLDialogElement>) => void;
+  handleExport: (
+    dialogExportRef: React.RefObject<HTMLDialogElement | null>,
+  ) => void;
 };
 
 export const ExportDialog = ({ handleExport }: ExportDialogProps) => {

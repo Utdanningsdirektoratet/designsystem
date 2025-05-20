@@ -131,7 +131,7 @@ export const Counter: Story = {
 };
 
 export const Controlled: Story = {
-  render: function Render() {
+  render() {
     const [value, setValue] = useState<string>('');
     return (
       <>

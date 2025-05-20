@@ -1,0 +1,22 @@
+import { Meta, Canvas, Controls, Primary, ArgTypes } from '@storybook/blocks';
+import * as MultiSuggestionStories from './MultiSuggestion.stories';
+import { MultiSuggestionList } from './MultiSuggestion';
+import { SimpleAlert } from '.storybook/docs-components';
+
+<Meta of={MultiSuggestionStories} />
+
+<SimpleAlert type="warning" heading="Advarsel">
+  MultiSuggestion er i en tidlig utviklingsfase hos Digdir, og har fremdeles
+  utfordringer med tilgjengelighet.
+</SimpleAlert>
+
+# MultiSuggestion
+
+Søkbar multi-"select".
+
+<Primary />
+<Controls />
+
+## `MultiSuggestion.List`
+
+<ArgTypes of={MultiSuggestionList} />

@@ -15,7 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@internal/dynamic-csf": ["@internal/dynamic-csf/src/index.ts"],
       "@udir-design/react": ["@udir-design/react/src/index.ts"],
       "@udir-design/theme": ["@udir-design/theme/src/index.ts"]
     }

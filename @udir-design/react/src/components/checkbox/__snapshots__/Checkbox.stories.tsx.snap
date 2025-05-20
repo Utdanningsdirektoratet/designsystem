@@ -1,16 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Aria Label 1`] = `
-<div>
-  <input
-    type="checkbox"
-    aria-label="Checkbox"
-    id="checkbox-aria-label"
-    value="value"
-  >
-</div>
-`;
-
 exports[`Checkbox In Color Context 1`] = `
 <div
   data-variant="tinted"
@@ -18,8 +7,8 @@ exports[`Checkbox In Color Context 1`] = `
 >
   <div>
     <input
-      type="checkbox"
       id="checkbox-in-color-context"
+      type="checkbox"
       checked
       aria-describedby="checkbox-in-color-context:description"
     >
@@ -39,254 +28,93 @@ exports[`Checkbox In Color Context 1`] = `
 </div>
 `;
 
-exports[`Content Ex 1 1`] = `
-<fieldset>
-  <legend data-weight="medium">
-    Hvor lenge har du jobbet i det offentlige?
-  </legend>
-  <div>
-    <input
-      type="checkbox"
-      id="undefined-0-3"
-      value="0-3"
-    >
-    <label
-      data-weight="regular"
-      for="undefined-0-3"
-    >
-      I under ett år
-    </label>
-  </div>
-  <div>
-    <input
-      type="checkbox"
-      id="undefined-1-3"
-      value="1-3"
-    >
-    <label
-      data-weight="regular"
-      for="undefined-1-3"
-    >
-      Fra 1-3 år
-    </label>
-  </div>
-  <div>
-    <input
-      type="checkbox"
-      id="undefined->3"
-      value="3+"
-    >
-    <label
-      data-weight="regular"
-      for="undefined->3"
-    >
-      Mer enn 3 år
-    </label>
-  </div>
-</fieldset>
-`;
-
-exports[`Content Ex 2 1`] = `
-<fieldset>
-  <legend data-weight="medium">
-    Hva liker du best med jobben din?
-  </legend>
-  <div>
-    <input
-      type="checkbox"
-      id="undefined-selvstendige"
-      value="selvstendige"
-    >
-    <label
-      data-weight="regular"
-      for="undefined-selvstendige"
-    >
-      Jeg liker å jobbe med selvstendige oppgaver
-    </label>
-  </div>
-  <div>
-    <input
-      type="checkbox"
-      id="undefined-moter"
-      value="moter"
-    >
-    <label
-      data-weight="regular"
-      for="undefined-moter"
-    >
-      Jeg elsker møter
-    </label>
-  </div>
-  <div>
-    <input
-      type="checkbox"
-      id="undefined-lunsj"
-      value="lunsj"
-    >
-    <label
-      data-weight="regular"
-      for="undefined-lunsj"
-    >
-      Lunsjen er best
-    </label>
-  </div>
-  <div>
-    <input
-      type="checkbox"
-      id="undefined-kolleger"
-      value="kolleger"
-    >
-    <label
-      data-weight="regular"
-      for="undefined-kolleger"
-    >
-      Jeg liker å møte kolleger
-    </label>
-  </div>
-</fieldset>
-`;
-
-exports[`Content Ex 3 1`] = `
-<fieldset>
-  <legend data-weight="medium">
-    Hva liker du best med jobben din?
-  </legend>
-  <div>
-    <input
-      type="checkbox"
-      id="undefined-selvstendige"
-      value="selvstendige"
-    >
-    <label
-      data-weight="regular"
-      for="undefined-selvstendige"
-    >
-      Selvstendige oppgaver
-    </label>
-  </div>
-  <div>
-    <input
-      type="checkbox"
-      id="undefined-moter"
-      value="moter"
-    >
-    <label
-      data-weight="regular"
-      for="undefined-moter"
-    >
-      Møter
-    </label>
-  </div>
-  <div>
-    <input
-      type="checkbox"
-      id="undefined-lunsj"
-      value="lunsj"
-    >
-    <label
-      data-weight="regular"
-      for="undefined-lunsj"
-    >
-      Lunsj
-    </label>
-  </div>
-  <div>
-    <input
-      type="checkbox"
-      id="undefined-kolleger"
-      value="kolleger"
-    >
-    <label
-      data-weight="regular"
-      for="undefined-kolleger"
-    >
-      Kolleger
-    </label>
-  </div>
-</fieldset>
-`;
-
 exports[`Controlled 1`] = `
 <fieldset>
   <legend data-weight="medium">
-    Skal du reise til noen av disse landene?
+    Utdanningsnivå
   </legend>
-  <p data-variant="default">
-    Velg alle landene du skal innom.
-  </p>
   <div>
     <input
+      id="components-checkbox--controlled-barnehage"
       type="checkbox"
-      id="components-checkbox--controlled-kroatia"
+      value="barnehage"
+      checked
       name="my-controlled"
-      value="-kroatia"
     >
     <label
       data-weight="regular"
-      for="components-checkbox--controlled-kroatia"
+      for="components-checkbox--controlled-barnehage"
     >
-      Kroatia
+      Barnehage
     </label>
   </div>
   <div>
     <input
+      id="components-checkbox--controlled-grunnskole"
       type="checkbox"
-      id="components-checkbox--controlled-slovakia"
+      value="grunnskole"
       name="my-controlled"
-      value="slovakia"
     >
     <label
       data-weight="regular"
-      for="components-checkbox--controlled-slovakia"
+      for="components-checkbox--controlled-grunnskole"
     >
-      Slovakia
+      Grunnskole
     </label>
   </div>
   <div>
     <input
+      id="components-checkbox--controlled-videregaende"
       type="checkbox"
-      id="components-checkbox--controlled-hobbsyssel"
+      value="videregaende"
+      checked
       name="my-controlled"
-      value="hobsyssel"
     >
     <label
       data-weight="regular"
-      for="components-checkbox--controlled-hobbsyssel"
+      for="components-checkbox--controlled-videregaende"
     >
-      Hobsyssel
+      Videregående
     </label>
   </div>
 </fieldset>
 <p
   data-field="validation"
   hidden
-  id=":r5:"
+  id="«r5»"
 >
 </p>
-<hr
-  aria-hidden="true"
-  style="margin-top: var(--ds-size-4);"
->
-<p
-  data-variant="default"
-  style="margin: var(--ds-size-2) 0;"
->
-  Du har valgt:
+<hr aria-hidden="true">
+<p data-variant="default">
+  (Annet innhold)
 </p>
-<div style="display: flex; gap: 1rem;">
+<hr aria-hidden="true">
+<div style="display: flex; gap: var(--ds-size-2);">
+  <p data-variant="default">
+    Viser innhold for:
+  </p>
   <button
-    data-variant="primary"
     type="button"
+    data-removable="true"
+    aria-label="Slett Barnehage"
   >
-    Toggle Kroatia
+    Barnehage
   </button>
   <button
-    data-variant="primary"
     type="button"
+    data-removable="true"
+    aria-label="Slett Videregående"
   >
-    Toggle Hobsyssel
+    Videregående
   </button>
 </div>
+<button
+  data-variant="secondary"
+  type="button"
+  style="width: fit-content;"
+>
+  Tøm filtre
+</button>
 `;
 
 exports[`Disabled 1`] = `
@@ -295,16 +123,16 @@ exports[`Disabled 1`] = `
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
   <p data-variant="default">
-    Velg alle alternativene som er relevante for deg.
+    Velg de alternativene som er relevante for deg.
   </p>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--disabled-email"
-      name="my-disabled"
       disabled
+      type="checkbox"
       value="epost"
       checked
+      name="my-disabled"
     >
     <label
       data-weight="regular"
@@ -315,11 +143,11 @@ exports[`Disabled 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--disabled-telefon"
-      name="my-disabled"
       disabled
+      type="checkbox"
       value="telefon"
+      name="my-disabled"
     >
     <label
       data-weight="regular"
@@ -330,11 +158,11 @@ exports[`Disabled 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--disabled-sms"
-      name="my-disabled"
       disabled
+      type="checkbox"
       value="sms"
+      name="my-disabled"
     >
     <label
       data-weight="regular"
@@ -346,10 +174,33 @@ exports[`Disabled 1`] = `
   <p
     data-field="validation"
     hidden
-    id=":r9:"
+    id="«r9»"
   >
   </p>
 </fieldset>
+`;
+
+exports[`Focused 1`] = `
+<div>
+  <input
+    id="checkbox-preview"
+    type="checkbox"
+    value="value"
+    aria-describedby="checkbox-preview:description"
+  >
+  <label
+    data-weight="regular"
+    for="checkbox-preview"
+  >
+    Checkbox label
+  </label>
+  <div
+    data-field="description"
+    id="checkbox-preview:description"
+  >
+    Description
+  </div>
+</div>
 `;
 
 exports[`Group 1`] = `
@@ -358,15 +209,15 @@ exports[`Group 1`] = `
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
   <p data-variant="default">
-    Velg alle alternativene som er relevante for deg.
+    Velg de alternativene som er relevante for deg.
   </p>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--group-email"
-      name="my-group"
+      type="checkbox"
       value="epost"
       checked
+      name="my-group"
     >
     <label
       data-weight="regular"
@@ -377,10 +228,10 @@ exports[`Group 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--group-telefon"
-      name="my-group"
+      type="checkbox"
       value="telefon"
+      name="my-group"
     >
     <label
       data-weight="regular"
@@ -391,10 +242,10 @@ exports[`Group 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--group-sms"
-      name="my-group"
+      type="checkbox"
       value="sms"
+      name="my-group"
     >
     <label
       data-weight="regular"
@@ -406,16 +257,17 @@ exports[`Group 1`] = `
   <p
     data-field="validation"
     hidden
-    id=":r1:"
+    id="«r1»"
   >
   </p>
 </fieldset>
 `;
 
-exports[`In Table 1`] = `
+exports[`Indeterminate In Table 1`] = `
 <table>
   <colgroup>
     <col style="width: 1px;">
+    <col style="width: 10em;">
     <col>
   </colgroup>
   <thead>
@@ -423,16 +275,19 @@ exports[`In Table 1`] = `
       <th>
         <div>
           <input
+            id="components-checkbox--indeterminate-in-table-all"
+            aria-label="Velg alle"
             type="checkbox"
-            id="components-checkbox--in-table-all"
-            aria-label="Select all"
-            name="my-checkbox"
             value="all"
+            name="components-checkbox--indeterminate-in-table"
           >
         </div>
       </th>
       <th>
-        Header
+        Navn
+      </th>
+      <th>
+        Utdanningsnivå
       </th>
     </tr>
   </thead>
@@ -441,64 +296,78 @@ exports[`In Table 1`] = `
       <td>
         <div>
           <input
+            id="components-checkbox--indeterminate-in-table-1"
+            aria-labelledby="components-checkbox--indeterminate-in-table-1-name"
             type="checkbox"
-            id="components-checkbox--in-table-1"
-            aria-label="Check 1"
-            name="my-checkbox"
             value="1"
+            name="components-checkbox--indeterminate-in-table"
           >
         </div>
       </td>
+      <td id="components-checkbox--indeterminate-in-table-1-name">
+        Lise Nordmann
+      </td>
       <td>
-        Content
+        Barnehage
       </td>
     </tr>
     <tr>
       <td>
         <div>
           <input
+            id="components-checkbox--indeterminate-in-table-2"
+            aria-labelledby="components-checkbox--indeterminate-in-table-2-name"
             type="checkbox"
-            id="components-checkbox--in-table-2"
-            aria-label="Check 2"
-            name="my-checkbox"
             value="2"
+            checked
+            name="components-checkbox--indeterminate-in-table"
           >
         </div>
       </td>
+      <td id="components-checkbox--indeterminate-in-table-2-name">
+        Ola Nordmann
+      </td>
       <td>
-        Content
+        Grunnskole
       </td>
     </tr>
     <tr>
       <td>
         <div>
           <input
+            id="components-checkbox--indeterminate-in-table-3"
+            aria-labelledby="components-checkbox--indeterminate-in-table-3-name"
             type="checkbox"
-            id="components-checkbox--in-table-3"
-            aria-label="Check 3"
-            name="my-checkbox"
             value="3"
+            checked
+            name="components-checkbox--indeterminate-in-table"
           >
         </div>
       </td>
+      <td id="components-checkbox--indeterminate-in-table-3-name">
+        Kari Nordmann
+      </td>
       <td>
-        Content
+        Videregående
       </td>
     </tr>
     <tr>
       <td>
         <div>
           <input
+            id="components-checkbox--indeterminate-in-table-4"
+            aria-labelledby="components-checkbox--indeterminate-in-table-4-name"
             type="checkbox"
-            id="components-checkbox--in-table-4"
-            aria-label="Check 4"
-            name="my-checkbox"
             value="4"
+            name="components-checkbox--indeterminate-in-table"
           >
         </div>
       </td>
+      <td id="components-checkbox--indeterminate-in-table-4-name">
+        Per Nordmann
+      </td>
       <td>
-        Content
+        Barnehage
       </td>
     </tr>
   </tbody>
@@ -515,8 +384,8 @@ exports[`One Option 1`] = `
   </p>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--one-option"
+      type="checkbox"
       value="samtykke"
     >
     <label
@@ -532,8 +401,8 @@ exports[`One Option 1`] = `
 exports[`Preview 1`] = `
 <div>
   <input
-    type="checkbox"
     id="checkbox-preview"
+    type="checkbox"
     value="value"
     aria-describedby="checkbox-preview:description"
   >
@@ -558,16 +427,16 @@ exports[`Read Only 1`] = `
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
   <p data-variant="default">
-    Velg alle alternativene som er relevante for deg.
+    Velg de alternativene som er relevante for deg.
   </p>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--read-only-email"
-      name="my-readonly"
       readonly
+      type="checkbox"
       value="epost"
       checked
+      name="my-readonly"
     >
     <label
       data-weight="regular"
@@ -578,11 +447,11 @@ exports[`Read Only 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--read-only-telefon"
-      name="my-readonly"
       readonly
+      type="checkbox"
       value="telefon"
+      name="my-readonly"
     >
     <label
       data-weight="regular"
@@ -593,11 +462,11 @@ exports[`Read Only 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--read-only-sms"
-      name="my-readonly"
       readonly
+      type="checkbox"
       value="sms"
+      name="my-readonly"
     >
     <label
       data-weight="regular"
@@ -609,7 +478,7 @@ exports[`Read Only 1`] = `
   <p
     data-field="validation"
     hidden
-    id=":r7:"
+    id="«r7»"
   >
   </p>
 </fieldset>
@@ -621,17 +490,17 @@ exports[`With Error 1`] = `
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
   <p data-variant="default">
-    Velg alle alternativene som er relevante for deg.
+    Velg de alternativene som er relevante for deg.
   </p>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--with-error-email"
-      aria-describedby=":r3:"
+      aria-describedby="«r3»"
       aria-invalid="true"
-      name="my-error"
+      type="checkbox"
       value="epost"
       checked
+      name="my-error"
     >
     <label
       data-weight="regular"
@@ -642,12 +511,12 @@ exports[`With Error 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--with-error-telefon"
-      aria-describedby=":r3:"
+      aria-describedby="«r3»"
       aria-invalid="true"
-      name="my-error"
+      type="checkbox"
       value="telefon"
+      name="my-error"
     >
     <label
       data-weight="regular"
@@ -658,12 +527,12 @@ exports[`With Error 1`] = `
   </div>
   <div>
     <input
-      type="checkbox"
       id="components-checkbox--with-error-sms"
-      aria-describedby=":r3:"
+      aria-describedby="«r3»"
       aria-invalid="true"
-      name="my-error"
+      type="checkbox"
       value="sms"
+      name="my-error"
     >
     <label
       data-weight="regular"
@@ -674,7 +543,7 @@ exports[`With Error 1`] = `
   </div>
   <p
     data-field="validation"
-    id=":r3:"
+    id="«r3»"
   >
     Du må velge minst to kontaktalternativ
   </p>

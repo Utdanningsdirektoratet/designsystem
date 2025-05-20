@@ -4,20 +4,20 @@ import styles from './SimpleAlert.module.scss';
 
 export const SimpleAlert: React.FC<
   React.PropsWithChildren<{
-    heading?: { text: string; level: 1 | 2 | 3 | 4 | 5 | 6 };
+    heading?: string;
     type: SeverityColors;
   }>
 > = ({ type, heading, children }) => (
   <Alert data-color={type} className={`sb-unstyled ${styles.simpleAlert}`}>
     {heading && (
       <Heading
+        asChild
         data-size="xs"
-        level={heading.level}
         style={{
           marginBottom: 'var(--ds-size-2)',
         }}
       >
-        {heading.text}
+        <p>{heading}</p>
       </Heading>
     )}
     {children}
