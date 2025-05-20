@@ -75,15 +75,18 @@ exports[`Controlled 1`] = `
 >
   Du har valgt:
 </p>
-<div style="display: flex; gap: 1rem;">
+<div
+  data-size="sm"
+  style="display: flex; gap: 1rem;"
+>
   <button
-    data-variant="primary"
+    data-variant="secondary"
     type="button"
   >
     Velg Barnehage
   </button>
   <button
-    data-variant="primary"
+    data-variant="secondary"
     type="button"
   >
     Velg Grunnskole
@@ -147,10 +150,33 @@ exports[`Disabled 1`] = `
   <p
     data-field="validation"
     hidden
-    id="«r8»"
+    id="«r6»"
   >
   </p>
 </fieldset>
+`;
+
+exports[`Focused 1`] = `
+<div>
+  <input
+    id="radio-preview"
+    type="radio"
+    value="value"
+    aria-describedby="radio-preview:description"
+  >
+  <label
+    data-weight="regular"
+    for="radio-preview"
+  >
+    Radio
+  </label>
+  <div
+    data-field="description"
+    id="radio-preview:description"
+  >
+    Description
+  </div>
+</div>
 `;
 
 exports[`Group 1`] = `
@@ -360,7 +386,7 @@ exports[`Read Only 1`] = `
   <p
     data-field="validation"
     hidden
-    id="«r6»"
+    id="«r8»"
   >
   </p>
 </fieldset>
