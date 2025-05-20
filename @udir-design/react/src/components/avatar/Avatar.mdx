@@ -5,12 +5,21 @@ import * as AvatarStories from './Avatar.stories';
 
 # Avatar
 
-`Avatar` er en komponent som viser et bilde, initialer eller ikon for en bruker eller profil.
+`Avatar` viser et bilde, initialer eller et ikon for en bruker eller profil.
+
+**Passer til å**
+
+- representere en person eller enhet
+
+**Passer ikke til å**
+
+- representere handlinger, objekter eller steder, bruk heller ikoner eller andre visuelle symboler
+- brukes rent visuelt
+
+## Slik bruker du Avatar
 
 <Primary />
 <Controls />
-
-## Bruk
 
 ```tsx
 import { Avatar } from '@udir-design/react';
@@ -27,48 +36,66 @@ import { Avatar } from '@udir-design/react';
 </Avatar>
 ```
 
-## Standard ikon
+## Eksempler
 
-Sender du ikke inn `children` viser vi et standard brukerikon.
+### Standard ikon
+
+Et standard ikon vises dersom det ikke sendes inn `children`.
 
 <Canvas of={AvatarStories.NoName} />
 
-## Størrelser
+### Størrelser
 
 `Avatar` kommer i flere størrelser. Tekst og ikon vil skalere, men det kan hende ikonet ditt må tilpasses.
 
 <Canvas of={AvatarStories.Sizes} />
 
-## Fargevarianter
+### Fargevarianter
 
-Du kan bruke alle tema fargene dine på `Avatar`.
+Du kan bruke alle temafargene på `Avatar`.
 
 <Canvas of={AvatarStories.ColorVariants} />
 
-## Varianter
+### Varianter
 
-Du kan endre mellom sirkel og firkantet form. Standard er sirkel.
+`Avatar` har to varianter: `circle` og `square`. Den runde varianten er standard.
 
 <Canvas of={AvatarStories.ShapeVariants} />
 
-## Med bilde
+### Med bilde
 
-Skal du ha bilde, legger du dette som direkte barn av `Avatar`.
-
-Bilde (og andre child elements) får automatisk `aria-hidden="true"` for å unngå dobbel informasjon.
+`Avatar` kan brukes med bilder, for eksempel profilbilder. Dette legger du inn som `children` i komponenten.
+Bilder (og andre child elements) får automatisk `aria-hidden="true"` for å unngå dobbel informasjon.
 
 <Canvas of={AvatarStories.WithImage} />
 
-## Komponering
+### Komponering
 
-Du kan komponere `Avatar` inn i andre komponenter, som `Dropdown`, samt bruke komponenter som
-`Badge` rundt for å vise status.
+Du kan integrere `Avatar` i andre komponenter, for eksempel i en `Dropdown`. I tillegg kan du kombinere den med komponenter som `Badge` for å indikere status.
 
 <Canvas of={AvatarStories.InDropdown} />
 
-## Som lenke
+### Som lenke
 
-Legg lenker eller knapper rundt `Avatar` for å gjøre det klikkbart.
+Legg lenker eller knapper rundt `Avatar` for å gjøre den klikkbar.
 Du må selv sette styling dersom du skal ha en interaktiv `Avatar`.
 
 <Canvas of={AvatarStories.AsLink} />
+
+## Retningslinjer
+
+`Avatar` skal bidra til å gjøre brukergrensesnittet mer gjenkjennelig og lett å navigere i, uten å forstyrre eller ta for mye plass.
+
+- Bruk samme form på avataren på en konsekvent måte i hele løsningen.
+- Avataren bør som regel kombineres med tekst, med mindre det er helt åpenbart hvem eller hva avataren representerer.
+- Bruk avatar kun når det faktisk gir verdi for brukeropplevelsen, for eksempel å vise hvem som har skrevet noe, eller hvem som er ansvarlig.
+
+## Tekst i komponenten
+
+`Avatar` skal som hovedregel ikke inneholde tekst i selve komponenten, med unntak av når initialer brukes. Annen tekst, for eksempel fullt navn, rolle eller organisasjon, bør vises utenfor avataren for å sikre god lesbarhet.
+
+## Tilgjengelighet
+
+`Avatar` må alltid ha en `aria-label` som forklarer hvem eller hva avataren representerer, spesielt dersom den er interaktiv eller del av et brukargrensesnitt med flere brukere. Ikke spesifiser i `aria-label` at det er et bilde, skjermleseren formidler dette automatisk. Det holder å bruke navnet, som for eksempel `aria-label="Ola Nordmann"`.
+
+Bilder, og andre `children`, får automatisk `aria-hidden="true"` for å unngå dobbel informasjon.
