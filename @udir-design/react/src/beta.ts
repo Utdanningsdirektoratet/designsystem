@@ -4,3 +4,4 @@
  */
 export * from './index';
 export * from './components/beta';
+export * from './utilities/hooks/beta';
