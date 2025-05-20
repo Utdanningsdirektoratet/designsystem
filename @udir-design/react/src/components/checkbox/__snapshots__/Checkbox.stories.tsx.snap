@@ -180,6 +180,29 @@ exports[`Disabled 1`] = `
 </fieldset>
 `;
 
+exports[`Focused 1`] = `
+<div>
+  <input
+    id="checkbox-preview"
+    type="checkbox"
+    value="value"
+    aria-describedby="checkbox-preview:description"
+  >
+  <label
+    data-weight="regular"
+    for="checkbox-preview"
+  >
+    Checkbox label
+  </label>
+  <div
+    data-field="description"
+    id="checkbox-preview:description"
+  >
+    Description
+  </div>
+</div>
+`;
+
 exports[`Group 1`] = `
 <fieldset>
   <legend data-weight="medium">

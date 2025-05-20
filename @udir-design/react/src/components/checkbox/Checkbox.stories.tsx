@@ -58,6 +58,14 @@ export const Preview: Story = {
       expect(checkbox).not.toBeChecked();
     });
 
+    await step('Check keyboard toggle', async () => {
+      checkbox.focus();
+      await userEvent.keyboard(' ');
+      expect(checkbox).toBeChecked();
+      await userEvent.keyboard(' ');
+      expect(checkbox).not.toBeChecked();
+    });
+
     await step(
       'onChange callback is called when checkbox is toggled',
       async () => {
@@ -65,6 +73,8 @@ export const Preview: Story = {
         expect(args.onChange).toHaveBeenCalled();
       },
     );
+
+    userEvent.tab();
   },
 };
 
@@ -315,5 +325,14 @@ export const CheckboxInColorContext: Story = {
         expect(checkbox).toHaveStyle(`background-color: ${expectedColor}`);
       },
     );
+  },
+};
+
+export const Focused: Story = {
+  args: Preview.args,
+  parameters: {
+    pseudo: {
+      focusVisible: true,
+    },
   },
 };
