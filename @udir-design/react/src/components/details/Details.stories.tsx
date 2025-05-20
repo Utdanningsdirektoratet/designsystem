@@ -6,6 +6,7 @@ import {
   CardProps,
   Details,
   Fieldset,
+  Label,
   Link,
   List,
   ToggleGroup,
@@ -26,13 +27,15 @@ const previewContent =
   'Føremålet med nasjonale prøver er å gi skolane kunnskap om elevane sine grunnleggjande ferdigheiter i lesing, rekning og engelsk. Informasjonen frå prøvene skal danne grunnlag for undervegsvurdering og kvalitetsutvikling på alle nivå i skolesystemet.';
 
 export const Preview: Story = {
-  args: {
-    children: [
-      <Details.Summary>{previewSummary}</Details.Summary>,
-      <Details.Content data-testid="details-content">
-        {previewContent}
-      </Details.Content>,
-    ],
+  render: (args) => {
+    return (
+      <Details {...args}>
+        <Details.Summary>{previewSummary}</Details.Summary>
+        <Details.Content data-testid="details-content">
+          {previewContent}
+        </Details.Content>
+      </Details>
+    );
   },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
@@ -302,3 +305,34 @@ export const Controlled: Story = {
     );
   },
 };
+
+export const PseudoStates: Story = makePseudoStatesStory(Preview);
+
+function makePseudoStatesStory(originalStory: Story): Story {
+  return {
+    render: (args, ctx) => (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 'var(--ds-size-4)',
+        }}
+      >
+        <Label data-size="sm">Default</Label>
+        {originalStory.render?.(args, ctx)}
+        <Label data-size="sm">Hover</Label>
+        {originalStory.render?.({ ...args, className: 'hover' }, ctx)}
+        <Label data-size="sm">Focused</Label>
+        {originalStory.render?.({ ...args, className: 'focusVisible' }, ctx)}
+      </div>
+    ),
+    args: originalStory.args,
+    parameters: {
+      ...originalStory.parameters,
+      pseudo: {
+        hover: ['.hover > u-summary'],
+        focusVisible: ['.focusVisible > u-summary'],
+      },
+    },
+  };
+}

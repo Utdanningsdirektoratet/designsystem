@@ -200,3 +200,65 @@ exports[`Preview 1`] = `
   </div>
 </u-details>
 `;
+
+exports[`Pseudo States 1`] = `
+<div style="display: flex; flex-direction: column; gap: var(--ds-size-4);">
+  <label
+    data-weight="medium"
+    data-size="sm"
+  >
+    Default
+  </label>
+  <u-details data-variant="default">
+    <u-summary
+      aria-expanded="false"
+      role="button"
+      slot="summary"
+      tabindex="0"
+    >
+      Kva er nasjonale prøver?
+    </u-summary>
+    <div>
+      Føremålet med nasjonale prøver er å gi skolane kunnskap om elevane sine grunnleggjande ferdigheiter i lesing, rekning og engelsk. Informasjonen frå prøvene skal danne grunnlag for undervegsvurdering og kvalitetsutvikling på alle nivå i skolesystemet.
+    </div>
+  </u-details>
+  <label
+    data-weight="medium"
+    data-size="sm"
+  >
+    Hover
+  </label>
+  <u-details data-variant="default">
+    <u-summary
+      aria-expanded="false"
+      role="button"
+      slot="summary"
+      tabindex="0"
+    >
+      Kva er nasjonale prøver?
+    </u-summary>
+    <div>
+      Føremålet med nasjonale prøver er å gi skolane kunnskap om elevane sine grunnleggjande ferdigheiter i lesing, rekning og engelsk. Informasjonen frå prøvene skal danne grunnlag for undervegsvurdering og kvalitetsutvikling på alle nivå i skolesystemet.
+    </div>
+  </u-details>
+  <label
+    data-weight="medium"
+    data-size="sm"
+  >
+    Focused
+  </label>
+  <u-details data-variant="default">
+    <u-summary
+      aria-expanded="false"
+      role="button"
+      slot="summary"
+      tabindex="0"
+    >
+      Kva er nasjonale prøver?
+    </u-summary>
+    <div>
+      Føremålet med nasjonale prøver er å gi skolane kunnskap om elevane sine grunnleggjande ferdigheiter i lesing, rekning og engelsk. Informasjonen frå prøvene skal danne grunnlag for undervegsvurdering og kvalitetsutvikling på alle nivå i skolesystemet.
+    </div>
+  </u-details>
+</div>
+`;
