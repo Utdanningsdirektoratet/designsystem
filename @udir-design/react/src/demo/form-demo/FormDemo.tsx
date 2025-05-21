@@ -39,6 +39,7 @@ const pageFields: Record<number, (keyof FormValues)[]> = {
 export const FormDemo = ({ ...props }: FormDemo) => {
   const methods = useForm<FormValues>({
     mode: 'onChange',
+    shouldFocusError: false, // We focus the ErrorSummary instead
   });
   const {
     handleSubmit,
@@ -60,6 +61,7 @@ export const FormDemo = ({ ...props }: FormDemo) => {
   };
 
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const errorSummaryRef = useRef<HTMLDivElement>(null);
 
   const handleNextPage = async (targetPage: number) => {
     setAttemptedNext(true);
@@ -67,6 +69,7 @@ export const FormDemo = ({ ...props }: FormDemo) => {
     if (targetPage > currentPage) {
       const valid = await trigger(pageFields[currentPage]);
       if (!valid) {
+        errorSummaryRef.current?.focus();
         return;
       }
     }
@@ -103,9 +106,16 @@ export const FormDemo = ({ ...props }: FormDemo) => {
             <Button
               onClick={() => {
                 setAttemptedNext(true);
-                handleSubmit(() => {
-                  dialogRef.current?.showModal();
-                })();
+                handleSubmit(
+                  () => {
+                    // onValid
+                    dialogRef.current?.showModal();
+                  },
+                  () => {
+                    // onInvalid
+                    errorSummaryRef.current?.focus();
+                  },
+                )();
               }}
             >
               Send inn skjema
@@ -131,7 +141,7 @@ export const FormDemo = ({ ...props }: FormDemo) => {
           </Dialog.Block>
         </Dialog>
         {attemptedNext && Object.keys(errors).length > 0 && (
-          <ErrorSummary>
+          <ErrorSummary ref={errorSummaryRef}>
             <ErrorSummary.Heading>
               For å gå videre må du rette opp følgende feil:
             </ErrorSummary.Heading>
