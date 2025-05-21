@@ -8,7 +8,7 @@ const handleScrollHash: MouseEventHandler<HTMLDivElement> = (event) => {
   const hash = anchor?.hash;
   if (!hash) return;
   event.preventDefault();
-  const element = document.getElementById(hash.slice(1));
+  const element = document.getElementById(decodeURIComponent(hash).slice(1));
   if (element) {
     element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     element.focus({ preventScroll: true });
