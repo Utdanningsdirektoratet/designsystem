@@ -101,7 +101,7 @@ export const ShowHide: Story = {
           }}
         >
           <Button onClick={() => setShow(!show)}>
-            {show ? 'Skjul' : 'Send inn skjema'}
+            {show ? 'Skjul feilmelding' : 'Send inn skjema'}
           </Button>
         </div>
         {show && (
