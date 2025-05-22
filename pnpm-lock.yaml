@@ -252,6 +252,12 @@ importers:
       hast-util-to-html:
         specifier: ^9.0.5
         version: 9.0.5
+      highcharts:
+        specifier: ^12.2.0
+        version: 12.2.0
+      highcharts-react-official:
+        specifier: ^3.2.2
+        version: 3.2.2(highcharts@12.2.0)(react@18.3.1)
       markdown-to-jsx:
         specifier: ^7.7.6
         version: 7.7.6(react@19.1.0)
@@ -4088,6 +4094,15 @@ packages:
 
   headers-polyfill@4.0.3:
     resolution: {integrity: sha512-IScLbePpkvO846sIwOtOTDjutRMWdXdJmXdMvk6gCBHxFO8d+QKOQedyZSxFTTFYRSmlgSTDtXqqq4pcenBXLQ==}
+
+  highcharts-react-official@3.2.2:
+    resolution: {integrity: sha512-2kkWOB6RpdR26fmAJkrtJFG9xWFUDGKWyat88tW3fa/3l/Jc7D5ZfwTng2MZsdiKIH32AFy0Pr75udUe7uN6LA==}
+    peerDependencies:
+      highcharts: '>=6.0.0'
+      react: '>=16.8.0'
+
+  highcharts@12.2.0:
+    resolution: {integrity: sha512-UUN+osTP3aeGc4KmoMuWAjzpKif8GYHFozzYI4O8h1ILGof25M/ZGBpXLvgqf1z0LVh7N9eG7i0HnzMfjcR4nA==}
 
   hosted-git-info@7.0.2:
     resolution: {integrity: sha512-puUZAUKT5m8Zzvs72XWy3HtvVbTWljRE66cP60bxJzAqf2DgICo7lYTY2IHUmLnNpjYvw5bvmoHvPc0QO2a62w==}
@@ -10489,6 +10504,13 @@ snapshots:
 
   headers-polyfill@4.0.3:
     optional: true
+
+  highcharts-react-official@3.2.2(highcharts@12.2.0)(react@18.3.1):
+    dependencies:
+      highcharts: 12.2.0
+      react: 18.3.1
+
+  highcharts@12.2.0: {}
 
   hosted-git-info@7.0.2:
     dependencies:
