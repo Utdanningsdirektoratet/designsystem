@@ -11,7 +11,11 @@ import {
   ValidationMessage,
 } from '@udir-design/react/alpha';
 import { Controller, useFormContext } from 'react-hook-form';
-import type { FormValues, PageProps } from '../FormDemo';
+import {
+  focusableFieldsetProps,
+  type FormValues,
+  type PageProps,
+} from '../FormDemo';
 
 const DATA_COUNTIES = [
   'Oslo',
@@ -89,7 +93,7 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
           <ValidationMessage>{errors.county.message}</ValidationMessage>
         )}
       </Field>
-      <Fieldset id="educationLevel">
+      <Fieldset id="educationLevel" {...focusableFieldsetProps}>
         <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
         <Radio
           id="radio-kindergarten"

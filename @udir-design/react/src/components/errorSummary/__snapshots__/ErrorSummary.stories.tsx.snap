@@ -38,14 +38,12 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Show Hide 1`] = `
-<div style="display: grid; place-items: center; margin-bottom: var(--ds-size-4);">
-  <button
-    data-variant="primary"
-    type="button"
-  >
-    Skjul
-  </button>
-</div>
+<button
+  data-variant="primary"
+  type="button"
+>
+  Skjul feilmelding
+</button>
 <div
   tabindex="-1"
   aria-labelledby="«r2»"

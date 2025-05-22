@@ -55,7 +55,7 @@ const handleLinkClick =
     if (href.startsWith('#')) {
       event.preventDefault();
       document
-        .getElementById(href.substring(1))
+        .getElementById(decodeURIComponent(href).substring(1))
         ?.scrollIntoView({ behavior: 'smooth' });
       window.parent.history.pushState(undefined, '', href);
     }

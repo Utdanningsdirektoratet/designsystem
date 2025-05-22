@@ -7,15 +7,30 @@ import * as ErrorSummaryStories from './ErrorSummary.stories';
 # ErrorSummary
 
 `ErrorSummary` er en oppsummering av feil. Det gir brukeren oversikt over feil eller
-mangler som må rettes på en side eller trinn, for å komme videre.
+mangler som må rettes på en side eller i et steg for å komme videre.
+
+**Passer til**
+
+- å gi brukerne en tydelig oversikt over hvilke feil som må rettes før de kan fortsette
+- skjema med mange felt, der det kan være vanskelig å få oversikt over hvor feilene befinner seg
+
+**Passer ikke til**
+
+- å vise systemvarsler, bruk [`Alert`](/docs/components-alert--docs)
+- å vise tilbakemeldinger som ikke hindrer innsending, for eksempel advarsler eller anbefalinger
+- å vise feilmeldinger for individuelle felter, bruk heller `error` prop for [`Textfield`](/docs/components-textfield--docs), [`Checkbox`](/docs/components-checkbox--docs), [`Radio`](/docs/components-radio--docs) og [`Switch`](/docs/components-switch--docs); eller kombiner [`Field`](/docs/components-field--docs) og [`ValidationMessage`](/docs/components-typography--docs#validationmessage) for andre skjemaelementer
+
+## Slik bruker du ErrorSummary
 
 <Primary />
 <Controls />
 
-## Slik bruker du ErrorSummary
+`ErrorSummary` består av flere delkomponenter som må brukes riktig.
 
-`ErrorSummary` er påkrevd for å få riktig aria attributter (`aria-labelledby`, `role='alert'`, osv.).
-Alle `ErrorSummary.Link` må ha en `href` for å kunne navigere til riktig sted i skjemaet.
+- `ErrorSummary.Heading` definerer for overskriften.
+- `ErrorSummary.List` definerer listen med feil.
+- Hver feil representeres som en `ErrorSummary.Item` som inneholder en `ErrorSummary.Link`.
+- Hver `ErrorSummary.Link` må ha en `href` til den unike identifikatoren for et skjemafelt, slik at brukeren kan navigere til riktig sted i skjemaet.
 
 ```tsx
 import { ErrorSummary } from '@udir-design/react';
@@ -24,68 +39,66 @@ import { ErrorSummary } from '@udir-design/react';
   <ErrorSummary.Heading>Heading</ErrorSummary.Heading>
   <ErrorSummary.List>
     <ErrorSummary.Item>
-      <ErrorSummary.Link href="#">Item</ErrorSummary.Link>
+      <ErrorSummary.Link href="#some-field-id">Item</ErrorSummary.Link>
     </ErrorSummary.Item>
   </ErrorSummary.List>
 </ErrorSummary>;
 ```
 
+Ta en titt på [demosiden for et fullstendig skjema](/docs/demo-form-demo--docs/) for å se hvordan `ErrorSummary` brukes i praksis.
+
 ## Eksempler
 
-### Bruk med tekstfelt
+### Koble sammen skjemafelt og feilmelding
 
-<Canvas of={ErrorSummaryStories.WithForm} />
+I dette forenklede eksempelet ser du hvordan `id` på skjemafeltene og `href` på `ErrorSummary.Link` skal henge sammen.
 
-### role='alert'
+<Canvas of={ErrorSummaryStories.WithForm} sourceState="shown" />
 
-`ErrorSummary` har `role='alert'` som standard. Dette betyr at skjermlesere vil lese opp innholdet i `ErrorSummary` automatisk.
-Det er fortsatt viktig at `ErrorSummary` får fokus ved submit slik at brukeren får med seg at det er feil eller mangler i skjemaet.
+### Flytte fokus når ErrorSummary vises
 
-<Canvas of={ErrorSummaryStories.ShowHide} />
+`ErrorSummary` skal være skjult helt til brukeren prøver å komme seg videre, for eksempel ved å sende inn et skjema, og det finnes feil eller mangler som hindrer innsending.
+
+Det er viktig at `ErrorSummary` får fokus når den dukker opp, slik at brukeren får med seg hva hen må gjøre for å komme videre. Her ser du hvordan du gjør dette teknisk.
+
+<Canvas of={ErrorSummaryStories.ShowHide} sourceState="shown" />
 
 ## Retningslinjer
 
-`ErrorSummary` brukes til å vise en oppsummering når det er feil eller mangler i noe brukeren har gjort. En oppsummering kan gjelde for én eller flere feil.
+`ErrorSummary` er en viktig del av brukeropplevelsen og skal brukes i alle skjemaer der det er mulig å ha flere feil eller mangler. Følg disse retningslinjene for å sikre at `ErrorSummary` brukes riktig:
 
-**Pass på at**
-
-- brukerne kan gå direkte til feilene de må rette opp, og fokuset blir flyttet dit
-- overskriften “For å gå videre må du rette opp følgende feil” brukes
-- lenkene i oppsummeringen stemmer med feilmeldingene de lenker til
+- Bruk overskriften “For å gå videre må du rette opp følgende feil”, eller en setning som formidler det samme på språket som brukes.
+- `ErrorSummary` skal inneholde alle feilmeldingene på siden.
+- Det skal være lenker fra `ErrorSummary` til der feilen er på siden. Dersom vanlig nettleseroppførsel overstyres, husk at trykk på lenken skal flytte fokus til skjemafeltet som blir lenket til.
+- Lenketeksten skal stemme overens med feilmeldingen den peker til.
+- Hvis feilen gjelder flere felt, for eksempel når to felt valideres på tvers, lenker vi til det første tilfellet av feilen.
 
 ### Plassering
 
 Vi anbefaler å vise `ErrorSummary` like over Neste/Send inn-knappen. Dette for
 at brukerne skal forstå sammenhengen mellom feilen og hvorfor de blir hindret i å gå videre.
 
-I noen tilfeller kan det likevel være bedre å vise oppsummeringen i toppen, det kan du lese mer om i [artikkelen om feilmeldinger hos Digdir](https://designsystemet.no/monstre/feilmeldinger#oppsummering-av-flere-feilmeldinger).
-
-`ErrorSummary` skal inneholde alle feilmeldingene som er på siden, så brukerne kan navigere direkte
-til feilene og manglene.
-
-Det skal være lenker fra `ErrorSummary` til der feilen er på siden. Når brukeren trykker på en av lenkene,
-skal fokus flyttes til der feilen er.
-
-Lenketeksten i `ErrorSummary` må være identisk med feilen den lenker til.
-
-<br />
+I noen tilfeller kan det likevel være bedre å vise `ErrorSummary` i toppen, det kan du lese mer om i [artikkelen om feilmeldinger hos Digdir](https://designsystemet.no/monstre/feilmeldinger#oppsummering-av-flere-feilmeldinger).
 
 ### Synlighet
 
-Oppsummeringen skal ikke være synlig uten at brukeren foretar seg noe. Den skal bli synlig først når brukeren har utført en handling som utløser feil.
+`ErrorSummary` skal ikke være synlig uten at brukeren foretar seg noe. Den skal bli synlig først når brukeren har utført en handling som utløser feil.
 
-- Hvis vi validerer fortløpende (f.eks. ved `onBlur` på hvert felt), venter vi med å vise ErrorSummary til brukeren prøver å sende inn skjemaet.
-- Det er viktig at komponenten får fokus når den blir vist, slik at brukeren får med seg at det er feil eller mangler i skjemaet.
-- Feilmeldingene i oppsummeringen skal være formulert lik feilmeldingen ved feltet.
-- Feilmeldingene skal lenke direkte til feltet det gjelder.
-- Hvis feilen gjelder flere felt, lenker vi til det første tilfellet av feilen.
+Hvis vi validerer fortløpende (f.eks. ved `onBlur` på hvert felt), venter vi med å vise `ErrorSummary` til brukeren prøver å sende inn skjemaet.
 
 ## Tilgjengelighet
 
-`ErrorSummary` har `aria-role='alert'` som standard. Dette betyr at skjermlesere vil lese opp innholdet i `ErrorSummary` automatisk når den vises.
-Alle punkt i listen er lenker, og oppfører seg som en lenke.
+Når `ErrorSummary` blir synlig, må dette kommuniseres til skjermleserbrukere.
 
-**Pass på at**
+### Flytt fokus
 
-- Når oppsummeringen blir synlig, flyttes fokus dit
-- Når brukeren trykker på en lenke, flyttes fokus til stedet hvor feilen eller mangelen oppstod
+Vi anbefaler å flytte fokus til `ErrorSummary` når komponenten blir synlig. Skjermlesere vil da lese opp overskriften, og brukerne kan selv velge å flytte fokus til hver enkelt feilmelding i listen. Derifra kan brukerne lett navigere til feltet som inneholdt feilen. Se [eksempelet "flytte fokus"](#flytte-fokus-når-errorsummary-vises) for hvordan dette kan implementeres.
+
+Ved å flytte fokus kommuniserer vi endringen på siden gjennom en _kontekstendring_. [Dette gjør at kravet 4.1.3 Statusbeskjeder ikke gjelder](https://www.uutilsynet.no/veiledning/413-statusbeskjeder/1268#:~:text=Merk%20at%20dette%20er%20kun%20nødvendig%20hvis%20beskjeden%20ikke%20blir%20gitt%20gjennom%20en%20kontekstendring.). Dette er mer utfyllende beskrevet på engelsk i [formålet med suksesskriterie 4.1.3 hos W3C WAI](https://www.w3.org/WAI/WCAG21/Understanding/status-messages#intent).
+
+### Ikke bruk live region for ErrorSummary
+
+En alternativ løsning er å ikke flytte fokus, men heller definere en live region (f.eks. med `aria-role="alert"`) som `ErrorSummary` kan dukke opp i. Vi anbefaler å **ikke** gjøre dette, fordi:
+
+- Hele `ErrorSummary`, inkludert alle feilmeldinger, vil bli lest opp. Dette blir lett uoversiktlig.
+- Selv om feilmeldingene leses opp, kan ikke brukeren enkelt interagere med de. Dermed er det heller ingen enkel måte å gå til feltet som inneholder feil.
