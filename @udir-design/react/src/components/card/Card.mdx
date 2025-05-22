@@ -44,29 +44,13 @@ Merk at innhold kan ikke plasseres direkte i `Card` dersom du bruker `Card.Block
 
 <Canvas of={CardStories.Video} />
 
-### Klikkbart
+### Lenkekort
 
-- `Card` kan brukes som navigasjonskort for å ta brukerne videre til en annen side.
-- Dersom kortet skal lenke til en annen side, kan du legge en lenke inn i kortets tittel. Hele kortet blir da automatisk klikkbart, men skjermlesere får en [bedre brukeropplevelse enn dersom hele kortet var en lenke](https://adrianroselli.com/2020/02/block-links-cards-clickable-regions-etc.html).
-- Dersom kortet kun innholder litt tekst, kan hele kortet bli en lenke eller knapp ved å benytte `asChild`.
+`Card` kan brukes som lenkekort for å ta brukerne videre til en annen side.
 
-#### Kort med lenke i tittel:
-
-I dette eksempelet rendrer Card med lenke `<a>` inni tittel elementet. Dette er nyttig når Card inneholder tekst eller media, og skal navigere til en annen side.
+**Legg inn lenken i kortets tittel.** Hele kortet blir da automatisk klikkbart, og skjermlesere får en [bedre brukeropplevelse enn dersom hele kortet var en lenke](https://adrianroselli.com/2020/02/block-links-cards-clickable-regions-etc.html).
 
 <Canvas of={CardStories.WithLink} />
-
-#### Kort som er en lenke:
-
-I dette eksempelet rendrer Card som lenke `<a>`. Bruk dette bare dersom kort med lenke i tittel ikke er hensiktsmessig.
-
-<Canvas of={CardStories.AsLink} />
-
-#### Kort som er en knapp:
-
-I dette eksempelet rendrer Card som knapp `<button>`. Dette er nyttig når Card inneholder lite tekst, og skal åpne en Modal eller utføre annen handling på samme side.
-
-<Canvas of={CardStories.AsButton} />
 
 ### Horisontalt
 
