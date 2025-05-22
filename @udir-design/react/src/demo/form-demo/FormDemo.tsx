@@ -4,6 +4,7 @@ import {
   Button,
   Dialog,
   ErrorSummary,
+  FieldsetProps,
   Heading,
 } from '@udir-design/react/alpha';
 import classes from './FormDemo.module.css';
@@ -28,6 +29,16 @@ export type FormValues = {
 
 export type PageProps = {
   showErrors: boolean;
+};
+
+export const focusableFieldsetProps: Partial<FieldsetProps> = {
+  tabIndex: -1, // Needed to be focusable from ErrorSummary
+  onFocus: (event) => {
+    if (event.target === event.currentTarget) {
+      // Focus the first input within the fieldset when the fieldset gets focus from the ErrorSummary
+      event.target.querySelector('input')?.focus();
+    }
+  },
 };
 
 const pageFields: Record<number, (keyof FormValues)[]> = {

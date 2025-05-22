@@ -339,7 +339,10 @@ exports[`Form Story 1`] = `
           </u-datalist>
         </div>
       </div>
-      <fieldset id="educationLevel">
+      <fieldset
+        id="educationLevel"
+        tabindex="-1"
+      >
         <legend data-weight="medium">
           Utdanningsnivå
         </legend>
