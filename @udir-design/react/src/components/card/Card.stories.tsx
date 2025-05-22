@@ -13,23 +13,11 @@ import {
 import { Color } from '@digdir/designsystemet-react/colors';
 import { Fragment } from 'react/jsx-runtime';
 
-const StudentsImg = () => (
-  <img
-    src={
-      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    }
-    alt="studenter"
-  />
-);
+const studentsImg =
+  'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
-const SchoolSuppliesImg = () => (
-  <img
-    src={
-      'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1644&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    }
-    alt="skoleutstyr"
-  />
-);
+const schoolSuppliesImg =
+  'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1644&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
 const meta: Meta<typeof Card> = {
   component: Card,
@@ -124,7 +112,10 @@ export const Media: Story = {
     <>
       <Card {...args}>
         <Card.Block>
-          <SchoolSuppliesImg />
+          <img
+            src={schoolSuppliesImg}
+            alt="Fotografi av forskjellig skoleutstyr"
+          />
         </Card.Block>
         <Card.Block>
           <Heading>Skoleutstyr</Heading>
@@ -145,7 +136,10 @@ export const Media: Story = {
           </Paragraph>
         </Card.Block>
         <Card.Block>
-          <SchoolSuppliesImg />
+          <img
+            src={schoolSuppliesImg}
+            alt="Fotografi av forskjellig skoleutstyr"
+          />
         </Card.Block>
       </Card>
     </>
@@ -240,7 +234,7 @@ export const WithLink: Story = {
     <>
       <Card data-color="support1" {...args}>
         <Card.Block>
-          <StudentsImg />
+          <img src={studentsImg} alt="" />
         </Card.Block>
         <Card.Block>
           <Heading>
@@ -277,7 +271,7 @@ export const WithLink: Story = {
           <Paragraph data-size="sm">Privatisteksamen</Paragraph>
         </Card.Block>
         <Card.Block>
-          <StudentsImg />
+          <img src={studentsImg} alt="" />
         </Card.Block>
       </Card>
     </>
