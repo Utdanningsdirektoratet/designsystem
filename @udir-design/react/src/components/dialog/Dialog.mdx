@@ -12,77 +12,62 @@ import { Dialog } from './Dialog';
 
 # Dialog
 
-`Dialog` lar deg lage modale og ikke-modale dialoger som bruker HTML-elementet `dialog`.
-Du kan bruke vår `Trigger` komponent dersom du kun trenger å åpne eller lukke komponenten basert på brukerinteraksjon.
-Om du trenger programmatisk kontroll over åpning og lukking av modalen kan du bruke `open`-propen, eller en `ref` som
-gir tilgang på HTML-elementets [instance-metoder](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement#instance_methods) (f.eks. `.show()`, `.showModal()` og `.close()`).
-Les [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog) for mer info.
+`Dialog` lar deg lage modale og ikke-modale dialoger basert på HTML-elementet `dialog`. [Gå til retningslinjene](#retningslinjer) for mer informasjon om når du bør bruke modal og ikke-modal dialog.
 
-Du ender mellom non-modal og modal dialoger ved å bruke proppen `modal`, som er standard satt til `true`.
-Vi overstyrer hvordan `open` fungerer basert på `modal`-proppen.
-
-En modal `dialog` har native focus trap, som betyr at brukeren ikke kan tabbe til annet innhold på siden.
+## Slik bruker du Dialog
 
 <Primary />
 <Controls />
 
-## Slik bruker du Dialog
+Du bytter mellom modal og ikke-modal dialog ved å bruke `modal`-propen, som er satt til `true` som standard. Vi overstyrer hvordan `open` fungerer basert på verdien til `modal`.
+
+En modal `dialog` har innebygd "focus trap", som betyr at brukeren ikke kan navigere med tabulator til annet innhold på siden mens dialogen er åpen.
 
 ```tsx
 import { Dialog } from '@udir-design/react';
 
 <Dialog.TriggerContext>
-  <Dialog.Trigger>Open Dialog</Dialog.Trigger>
+  <Dialog.Trigger>Åpne Dialog</Dialog.Trigger>
   <Dialog>
     <Dialog.Block>
-      <Heading data-size="xs">Header</Heading>
+      <Heading data-size="xs">Tittel</Heading>
     </Dialog.Block>
-    <Dialog.Block>Content</Dialog.Block>
-    <Dialog.Block>Footer</Dialog.Block>
+    <Dialog.Block>Innhold</Dialog.Block>
+    <Dialog.Block>Fotnote</Dialog.Block>
   </Dialog>
 </Dialog.TriggerContext>;
 ```
 
-## Bruk med ekstern trigger
+## Eksempler
 
-Dersom du vil bruke en ekstern trigger, som for eksempel ligger en annen plass i treet, kan du bruke `ref` for å åpne dialogen.
+### Bruk med ekstern trigger
 
-```tsx
-const dialogRef = useRef<HTMLDialogElement>(null);
-
-...
-
-<Button onClick={() => dialogRef.current?.showModal()}>Open Dialog</Button>
-<Dialog ref={dialogRef}>
-  Content
-</Dialog>
-```
-
-### Med bruk av `ref`
+Om du trenger programmatisk kontroll over åpning og lukking av modalen kan du bruke `open`-propen, eller en `ref` som gir tilgang på HTML-elementets [instance-metoder](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement#instance_methods) (f.eks. `.show()`, `.showModal()` og `.close()`).
+Her bruker vi `useRef` for å få tilgang til dialogen, og kaller `.showModal()` når knappen trykkes.
 
 <Canvas of={DialogStories.WithoutDialogTriggerContext} />
 
-### Close on backdrop click
+### Lukk ved klikk utenfor
 
 Vi bruker `closedby="any"` proppen for å lukke dialogen når brukeren klikker utenfor.
 Dette funker kun dersom du har `modal={true}`, fordi en non-modal har ikke et backdrop.
 
 <Canvas of={DialogStories.BackdropClosedbyAny} />
 
-### Med `Block`
+### Med inndeling
 
 Bruk flere `Dialog.Block` hvis du vil dele opp dialogen med skillelinjer til for eksempel topp- og bunn-område.
 Merk at innhold kan ikke plasseres direkte i `Dialog` dersom du bruker `Dialog.Block`; da burde alt innholdet være inni en av dialogens `Dialog.Block`-seksjoner.
 
 <Canvas of={DialogStories.WithHeaderAndFooter} />
 
-### Form
+### Fokus
 
 Vi bruker native `autoFocus` på `Textfield` for å fokusere inputen i skjemaet.
 
 <Canvas of={DialogStories.DialogWithForm} />
 
-### Med egendefinert bredde
+### Egendefinert bredde
 
 Bruk `max-width` for å sette egendefinert maks bredde på dialogen. Default er 40rem.
 
@@ -94,8 +79,50 @@ Bruk `overflow: visible` for å la innhold gå utenfor dialogen.
 
 <Canvas of={DialogStories.DialogWithSuggestion} />
 
-### Non-modal dialog
+### Ikke-modal Dialog
 
-Bruk `modal={false}` for å lage en non-modal dialog.
+Bruk `modal={false}` for å lage en non-modal dialog. Den kan brukes til å gi støtteinformasjon eller ekstra funksjonalitet som ikke krever full oppmerksomhet.
+
+En ikke-modal Dialog burde som regel plasseres i forhold til innholdet. Da må du overstyre standard plassering, som vanligvis er i midten av skjermen.
+
+I eksempelet under kan du se skrivetips i en dialog, samtidig som du kan fortsette å skrive inn i tekstfeltet.
 
 <Canvas of={DialogStories.DialogNonModal} />
+
+## Retningslinjer
+
+`Dialog` kan brukes som både **(1) modal** og **(2) ikke-modal**.
+
+### 1) Modal Dialog
+
+En modal `Dialog` er et midlertidig vindu som åpnes over resten av innholdet på nettsiden. Modal `Dialog` fanger brukerens oppmerksomhet og hindrer interaksjon med annet innhold, samtidig som konteksten til nettsiden beholdes. Bruk av modal `Dialog` bør generelt begrenses, men kan være nyttig når brukeren må ta stilling til informasjon, bekrefte en handling eller fokusere på en spesifikk oppgave – uten å navigere bort fra siden.
+
+**Passer til å**
+
+- få brukeren til å fokusere på en spesifikk oppgave
+- sikre at brukeren får med seg viktig informasjon
+- gi mer informasjon uten at brukeren må forlate hovedinnholdet
+
+**Passer ikke til å**
+
+- vise omfattende eller komplekst innhold som krever langvarig interaksjon
+- gi informasjon uten å avbryte brukerens arbeidsflyt - bruk heller [`Alert`](/docs/komponenter-alert--docs), [`Popover`](/docs/komponenter-popover--docs), eller "ikke-modal" `Dialog`
+
+### 2) Ikke-modal Dialog
+
+En "ikke-modal" `Dialog` lar brukeren fortsatt bruke resten av siden mens dialogen er åpen. Den bør brukes med varsomhet, og passer best når du skal gi støtteinformasjon eller ekstra funksjonalitet som ikke krever full oppmerksomhet.
+
+**Passer til å**
+
+- gi brukeren tilgang til informasjon eller handlinger parallelt med resten av innholdet
+
+**Passer ikke til å**
+
+- gi kritiske valg som brukeren må ta stilling til før de kan fortsette - bruk heller modal `Dialog`
+- gi bekreftelser eller varsler som krever brukerens fulle oppmerksomhet - bruk heller modal `Dialog`
+
+## Tekst
+
+- Ha en kort og konsis overskrift. Overskriften skal gjøre det tydelig for brukeren at konteksten er endret.
+- Unngå mange avsnitt med tekst.
+- Sørg for at formålet er tydelig og at all nødvendig informasjon er tilgjengelig i modalen.
