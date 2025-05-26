@@ -5,19 +5,29 @@ import * as CardStories from './Card.stories';
 
 # Card
 
-Med `Card` kan vi fremheve informasjon eller oppgaver som hører sammen. Kortene finnes i flere varianter og kan inneholde tekst, bilde, tekstfelt, knapper og/eller lenker.
+Vi bruker `Card` til å fremheve informasjon eller oppgaver som hører sammen. Kortene finnes i flere varianter og kan inneholde elementer som tekst, bilder, tekstfelt, knapper, lenker og videoer.
+
+**Passer til å**
+
+- gruppere innhold eller funksjonalitet som hører sammen
+- fremheve innhold som er viktig for brukeren
+- navigere til en annen side eller utføre en handling
+
+**Passer ikke til å**
+
+- erstatte seksjoner på en side (gruppere store mengder innhold i samme kort)
+
+## Slik bruker du Card
 
 <Primary />
 <Controls />
-
-## Slik bruker du Card
 
 ```tsx
 import { Card } from '@udir-design/react';
 <Card>
   <Card.Block>Tittel</Card.Block>
   <Card.Block>Innhold</Card.Block>
-  <Card.Block>Valgfri fotnote</Card.Block>
+  <Card.Block>Fotnote</Card.Block>
 </Card>;
 ```
 
@@ -26,7 +36,7 @@ import { Card } from '@udir-design/react';
 ### Med `Block`
 
 Bruk flere `Card.Block` hvis du vil dele opp kortet med skillelinjer eller legge inn utfallende bilder eller video.
-Merk at innhold kan ikke plasseres direkte i `Card` dersom du bruker `Card.Block`; da burde alt innholdet være inni en av av kortets `Card.Block`-seksjoner.
+Merk at innhold kan ikke plasseres direkte i `Card` dersom du bruker `Card.Block`. Da burde alt innholdet være inni en av av kortets `Card.Block`-seksjoner.
 
 <Canvas of={CardStories.Media} />
 
@@ -48,7 +58,7 @@ I dette eksempelet rendrer Card med lenke `<a>` inni tittel elementet. Dette er 
 
 #### Kort som er en lenke:
 
-I dette eksempelet rendrer Card som lenke `<a>`. Dette er nyttig når Card inneholder lite tekst, og skal navigere til en annen side.
+I dette eksempelet rendrer Card som lenke `<a>`. Bruk dette bare dersom kort med lenke i tittel ikke er hensiktsmessig.
 
 <Canvas of={CardStories.AsLink} />
 
@@ -60,37 +70,36 @@ I dette eksempelet rendrer Card som knapp `<button>`. Dette er nyttig når Card 
 
 ### Horisontalt
 
-`Card` støtter både `display: flex` og `display: grid` for å legge `Card.Block` ved siden av hverandre:
+Bruk `display: flex` eller `display: grid` for å legge `Card.Block` ved siden av hverandre:
 
-<Canvas of={CardStories.AsGrid} />
+<Canvas of={CardStories.Horizontal} />
 
-### Farger
+### Varianter og farger
 
-Forskjellige varianter av `Card`-komponenten, inkludert nøytral, accent, subtil, og støttefargene.
+Eksempler på `default`- og `tinted`-variantene med de forskjellige fargene.
 
 <Canvas of={CardStories.Variants} />
 
 ### Komponert
 
-Eksempler på hvordan andre komponenter kan brukes til å komponere sammen i et kort.
+Eksempel på hvordan andre komponenter kan brukes til å komponere et kort.
 
 <Canvas of={CardStories.Composed} />
 
 ## Retningslinjer for Card
 
-`Card` passer til å gruppere innhold eller funksjonalitet som du vil skille ut fra
-resten av innholdet.
+Følg disse retningslinjene for å sikre at kortene er enkle å bruke og forstå:
 
-Dersom kortet er en link med bilde, så skal **ikke** bildet være informativt, og `alt` attributtet skal være tomt.
+- Dersom kortet er en link med bilde, så skal bildet **ikke** være informativt, og `alt` attributtet skal være tomt.
 
-Et kort skal oppfattes som en selvstendig, avgrenset enhet. Innholdet i kortet skal være helhetlig og relatert til et enkelt emne eller en destinasjon.
+- Et kort skal oppfattes som en selvstendig, avgrenset enhet. Innholdet i kortet skal være helhetlig og relatert til et enkelt emne eller en destinasjon.
 
-Kortet skal kunne stå alene uten å være avhengig av omkringliggende elementer for kontekst. Det skal gi tilstrekkelig informasjon til å forstå det presenterte innholdet uten eksterne referanser.
+- Kortet skal kunne stå alene uten å være avhengig av omkringliggende elementer for kontekst. Det skal gi tilstrekkelig informasjon til å forstå det presenterte innholdet uten eksterne referanser.
 
-### Unngå
+**Unngå å:**
 
-- å bruke for mange kort på en side, det kan skape forvirring
-- å blande for mange forskjellige typer innhold i et enkelt kort
+- bruke for mange kort på en side, det kan skape forvirring
+- blande for mange forskjellige typer innhold i et enkelt kort
 
 ## Tekst i komponenten
 
