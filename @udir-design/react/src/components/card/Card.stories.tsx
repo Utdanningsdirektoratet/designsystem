@@ -284,56 +284,6 @@ export const WithLink: Story = {
   ),
 };
 
-export const AsLink: Story = {
-  render: (args) => (
-    <>
-      <Card {...args} data-color="support1" asChild>
-        <a href="https://udir.no" target="_blank" rel="noopener noreferrer">
-          <Card.Block>
-            <Heading>Lenkekort med blokker</Heading>
-          </Card.Block>
-          <Card.Block>
-            <Paragraph>
-              Eksempel på kort som lenke som er delt opp med blokker
-            </Paragraph>
-          </Card.Block>
-        </a>
-      </Card>
-      <Card {...args} data-color="neutral" asChild>
-        <a href="https://udir.no" target="_blank" rel="noopener noreferrer">
-          <Heading>Lenkekort</Heading>
-          <Paragraph>Eksempel på kort som lenke uten blokker</Paragraph>
-        </a>
-      </Card>
-    </>
-  ),
-};
-
-export const AsButton: Story = {
-  render: (args) => (
-    <>
-      <Card {...args} data-color="support1" asChild>
-        <button type="button">
-          <Card.Block>
-            <Heading>Kort som knapp med blokker</Heading>
-          </Card.Block>
-          <Card.Block>
-            <Paragraph>
-              Eksempel på kort som knapp som er delt opp med blokker
-            </Paragraph>
-          </Card.Block>
-        </button>
-      </Card>
-      <Card {...args} data-color="neutral" asChild>
-        <button type="button">
-          <Heading>Kort som knapp</Heading>
-          <Paragraph>Eksempel på kort som knapp uten blokker</Paragraph>
-        </button>
-      </Card>
-    </>
-  ),
-};
-
 export const Horizontal: Story = {
   parameters: {
     customStyles: {
