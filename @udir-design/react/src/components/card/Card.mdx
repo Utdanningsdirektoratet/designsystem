@@ -5,17 +5,17 @@ import * as CardStories from './Card.stories';
 
 # Card
 
-Vi bruker `Card` til å fremheve informasjon eller oppgaver som hører sammen. Den finnes i flere varianter og kan inneholde elementer som tekst, bilder, tekstfelt, knapper, lenker og videoer.
+Vi bruker `Card` til å fremheve informasjon eller oppgaver som hører sammen. `Card` finnes i to varianter og kan inneholde elementer som tekst, bilder, tekstfelt, knapper, lenker og videoer.
 
 **Passer til å**
 
-- gruppere innhold eller funksjonalitet som hører sammen
-- fremheve innhold som er viktig for brukeren
-- navigere til en annen side eller utføre en handling
+- gruppere innhold som du vil skille ut fra resten av siden
+- navigere til en annen side
 
 **Passer ikke til å**
 
-- erstatte seksjoner på en side (gruppere store mengder innhold i samme `Card`)
+- vise lange tekstblokker eller detaljerte forklaringer
+- vise viktige meldinger som bør presenteres som varsler (bruk heller [`Alert`](/docs/components-alert--docs))
 
 ## Slik bruker du Card
 
@@ -35,8 +35,7 @@ import { Card } from '@udir-design/react';
 
 ### Med `Block`
 
-Bruk flere `Card.Block` hvis du vil dele opp `Card` med skillelinjer eller legge inn utfallende bilder eller video.
-Merk at innhold ikke kan plasseres direkte i `Card` dersom du bruker `Card.Block`. Da burde alt innholdet være inni en av kortets `Card.Block`-seksjoner.
+Bruk flere `Card.Block` hvis du vil dele opp `Card` med skillelinjer eller legge til bilder eller video som går ut i kanten. Merk at når du bruker `Card.Block` må alt innholdet ligge inni `Card.Block`, og ikke plasseres direkte i `Card`.
 
 <Canvas of={CardStories.Media} />
 
@@ -72,19 +71,18 @@ Eksempel på hvordan andre komponenter kan brukes til å komponere et `Card`.
 
 ## Retningslinjer
 
-Følg disse retningslinjene for å sikre at et `Card` er enkelt å bruke og forstå:
+`Card` er en fleksibel komponent som brukes til å strukturere og presentere innhold på en tydelig og visuelt avgrenset måte. Kortet kan inneholde ulike typer innhold, som tekst, media og lenker, og brukes ofte i oversikter, navigasjon eller for å fremheve enkeltemner.
 
-- Dersom `Card` blir brukt som lenkekort og har et bilde, så skal bildet **ikke** være informativt, og `alt`-attributtet skal være tomt.
+Følg disse retningslinjene for å sikre at et `Card` er enkelt å bruke og forstå:
 
 - Et `Card` skal oppfattes som en selvstendig, avgrenset enhet. Innholdet skal være helhetlig og relatert til et enkelt emne eller en destinasjon.
 
 - `Card` skal kunne stå alene uten å være avhengig av omkringliggende elementer for kontekst. Det skal gi tilstrekkelig informasjon til å forstå det presenterte innholdet uten eksterne referanser.
 
-**Unngå å:**
-
-- bruke for mange `Card` på en side, det kan skape forvirring
-- blande for mange forskjellige typer innhold i et enkelt `Card`
-
 ## Tekst i Card
 
-Unngå lange tekster i `Card`. Tenk nøye gjennom hva du trenger å si og skriv en kort og presis overskrift, underoverskrift og eventuell brødtekst.
+Teksten i et `Card` skal være tydelig, relevant og gi brukeren nok informasjon til å forstå hva kortet handler om.
+
+Hvordan du utformer teksten kommer an på konteksten. Kortet kan være en inngang til en ny side, et valg i en prosess eller en del av en informasjonsoversikt. Teksten bør gjenspeile det.
+
+Unngå unødvendige detaljer, og sørg for at tittel og beskrivelse henger sammen og gir mening i sammenheng med resten av innholdet.
