@@ -21,10 +21,12 @@
     "./dist"
   ],
   "dependencies": {
-    "@digdir/designsystemet": "1.6.0"
+    "@digdir/designsystemet": "1.6.0",
+    "style-dictionary": "^5.0.0"
   },
   "devDependencies": {
     "@internal/build-tools": "workspace:*",
+    "@tokens-studio/sd-transforms": "^1.3.0",
     "@udir-design/tokens": "workspace:*",
     "rimraf": "^6.0.1"
   },
