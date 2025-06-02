@@ -1,4 +1,4 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import {
   Button,
   Card,
@@ -10,7 +10,7 @@ import {
   useRadioGroup,
   UseRadioGroupProps,
 } from '@udir-design/react/alpha';
-import { expect, fn, userEvent, waitFor, within } from '@storybook/test';
+import { expect, fn, userEvent, waitFor, within } from 'storybook/test';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
 
 const meta: Meta<typeof Radio> = {
@@ -114,12 +114,10 @@ export const Group: GroupStory = {
       await userEvent.keyboard('{ArrowUp}');
       expect(radios[0]).toHaveFocus();
       expect(radios[0]).toBeChecked();
-      // Arrows are reversed
-      // TODO: Will hopfully be fixed in Storybook 9.0 (https://github.com/testing-library/user-event/pull/1049)
-      await userEvent.keyboard('{ArrowLeft}');
+      await userEvent.keyboard('{ArrowRight}');
       expect(radios[1]).toHaveFocus();
       expect(radios[1]).toBeChecked();
-      await userEvent.keyboard('{ArrowRight}');
+      await userEvent.keyboard('{ArrowLeft}');
       expect(radios[0]).toHaveFocus();
       expect(radios[0]).toBeChecked();
     });

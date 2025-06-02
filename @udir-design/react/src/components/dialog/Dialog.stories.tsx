@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import {
   Button,
   Heading,
@@ -9,7 +9,7 @@ import {
   Label,
   Suggestion,
 } from '@udir-design/react/alpha';
-import { expect, userEvent, within } from '@storybook/test';
+import { expect, userEvent, within } from 'storybook/test';
 import { useRef, useState } from 'react';
 
 const meta: Meta<typeof Dialog> = {

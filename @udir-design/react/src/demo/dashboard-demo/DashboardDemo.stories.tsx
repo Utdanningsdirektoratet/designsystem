@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { DashboardDemo } from './DashboardDemo';
 import { useState } from 'react';
 import { Size } from '@digdir/designsystemet-react';

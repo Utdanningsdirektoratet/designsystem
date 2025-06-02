@@ -1,5 +1,5 @@
 import React from 'react';
-import { addons } from '@storybook/manager-api';
+import { addons } from 'storybook/manager-api';
 import {
   defaultConfig,
   renderLabel,
@@ -20,18 +20,22 @@ addons.setConfig({
       tags: 'alpha',
       badge: {
         text: 'Alpha',
-        bgColor: 'var(--ds-color-danger-surface-tinted)',
-        borderColor: 'var(--ds-color-danger-border-subtle)',
-        fgColor: 'var(--ds-color-danger-text-default)',
+        style: {
+          backgroundColor: 'var(--ds-color-danger-surface-tinted)',
+          borderColor: 'var(--ds-color-danger-border-subtle)',
+          color: 'var(--ds-color-danger-text-default)',
+        },
       },
     },
     {
       tags: 'beta',
       badge: {
         text: 'Beta',
-        bgColor: 'var(--ds-color-warning-surface-tinted)',
-        borderColor: 'var(--ds-color-warning-border-subtle)',
-        fgColor: 'var(--ds-color-warning-text-default)',
+        style: {
+          backgroundColor: 'var(--ds-color-warning-surface-tinted)',
+          borderColor: 'var(--ds-color-warning-border-subtle)',
+          color: 'var(--ds-color-warning-text-default)',
+        },
       },
     },
     ...defaultConfig,

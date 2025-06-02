@@ -1,4 +1,4 @@
-import type { Decorator } from '@storybook/react';
+import type { Decorator } from '@storybook/react-vite';
 
 const handleScrollHash = (event: MouseEvent) => {
   const anchor = (event.target as Element).closest<HTMLAnchorElement>(

@@ -1,4 +1,4 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import {
   Button,
   Card,
@@ -12,7 +12,7 @@ import {
   useCheckboxGroup,
   Chip,
 } from '@udir-design/react/alpha';
-import { expect, fn, userEvent, waitFor, within } from '@storybook/test';
+import { expect, fn, userEvent, waitFor, within } from 'storybook/test';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
 
 const meta: Meta<typeof Checkbox> = {

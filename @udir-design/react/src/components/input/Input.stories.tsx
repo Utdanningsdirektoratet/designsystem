@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useEffect, useState } from 'react';
 
 import {
@@ -12,7 +12,7 @@ import {
   ValidationMessage,
 } from '@udir-design/react/alpha';
 import { Size } from '@digdir/designsystemet-react';
-import { expect, userEvent, within } from '@storybook/test';
+import { expect, userEvent, within } from 'storybook/test';
 
 type Story = StoryObj<typeof Input>;
 
