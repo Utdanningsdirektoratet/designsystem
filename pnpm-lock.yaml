@@ -238,8 +238,8 @@ importers:
         specifier: ^2.1.0
         version: 2.1.0(playwright@1.52.0)
       chromatic:
-        specifier: ^11.29.0
-        version: 11.29.0
+        specifier: ^12.0.0
+        version: 12.0.0
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -3237,8 +3237,8 @@ packages:
   chroma-js@3.1.2:
     resolution: {integrity: sha512-IJnETTalXbsLx1eKEgx19d5L6SRM7cH4vINw/99p/M11HCuXGRWL+6YmCm7FWFGIo6dtWuQoQi1dc5yQ7ESIHg==}
 
-  chromatic@11.29.0:
-    resolution: {integrity: sha512-yisBlntp9hHVj19lIQdpTlcYIXuU9H/DbFuu6tyWHmj6hWT2EtukCCcxYXL78XdQt1vm2GfIrtgtKpj/Rzmo4A==}
+  chromatic@12.0.0:
+    resolution: {integrity: sha512-X7v26BLfAzHCU92nxPsCuvt+MazmA7S6cN7pCRRhnDYChDxHES48YvXarOybLdlH9kNP/3lMyknu6iseTh0T9A==}
     hasBin: true
     peerDependencies:
       '@chromatic-com/cypress': ^0.*.* || ^1.0.0
@@ -9546,7 +9546,7 @@ snapshots:
 
   chroma-js@3.1.2: {}
 
-  chromatic@11.29.0: {}
+  chromatic@12.0.0: {}
 
   ci-info@3.9.0: {}
 
