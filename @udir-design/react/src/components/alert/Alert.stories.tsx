@@ -1,8 +1,8 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 
 import { Button, Heading, Link, Paragraph } from '@udir-design/react/alpha';
 import { Alert } from './Alert';
-import { within, expect } from '@storybook/test';
+import { within, expect } from 'storybook/test';
 import { useState } from 'react';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
 

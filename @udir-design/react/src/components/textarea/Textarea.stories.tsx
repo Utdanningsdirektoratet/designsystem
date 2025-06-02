@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Label } from '../typography/label/Label';
 import { useState } from 'react';
 import { Button, Divider, Paragraph, Textarea } from '@udir-design/react/alpha';
-import { expect, userEvent, within } from '@storybook/test';
+import { expect, userEvent, within } from 'storybook/test';
 
 const meta: Meta<typeof Textarea> = {
   component: Textarea,

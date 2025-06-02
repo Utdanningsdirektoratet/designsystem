@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { SkipLink } from './SkipLink';
 import { Paragraph } from '../typography/paragraph/Paragraph';
-import { expect, userEvent, within } from '@storybook/test';
+import { expect, userEvent, within } from 'storybook/test';
 
 const meta: Meta<typeof SkipLink> = {
   component: SkipLink,
@@ -40,12 +40,15 @@ export const Tabbed: Story = {
     </Paragraph>
   ),
 };
+
 Tabbed.play = async (ctx) => {
   const canvas = within(ctx.canvasElement);
   const link = canvas.getByRole('link');
-  await expect(link).not.toSatisfy(isVisibleOnScreen);
+  //@ts-expect-error https://github.com/storybookjs/storybook/issues/31643
+  await expect(link).not.satisfy(isVisibleOnScreen);
   await userEvent.tab();
-  await expect(link).toSatisfy(isVisibleOnScreen);
+  //@ts-expect-error https://github.com/storybookjs/storybook/issues/31643
+  await expect(link).satisfy(isVisibleOnScreen);
   await expect(link).toHaveFocus();
 };
 

@@ -7,11 +7,12 @@
  * See https://github.com/microsoft/TypeScript/issues/30511 for details.
  */
 
-import type {} from '@storybook/types';
+import type {} from 'storybook/internal/types';
 import type { DocsParameters } from '@storybook/addon-docs';
 import type { A11yParameters } from '@storybook/addon-a11y';
 import type { CSSProperties, ReactNode } from 'react';
-import { ThemeVars } from '@storybook/theming';
+import { ThemeVars } from 'storybook/theming';
+import { StoryContext } from '@storybook/react-vite';
 
 type ChromaticViewport = {
   width?: number | `${string}px`;
@@ -36,12 +37,20 @@ export type MdxComponentOverrides = {
   >;
 } & Record<string, React.FC>;
 
+type SourceBlockParameters = NonNullable<DocsParams['source']>;
+
 type DocsParams = Required<DocsParameters>['docs'];
 // Use Partial here to make `of` not required when setting parameters.docs.{canvas,source}
 type DocsCanvasParams = Partial<DocsParams['canvas']>;
-type DocsSourceParams = Partial<DocsParams['source']>;
+type DocsSourceParams = Partial<Omit<SourceBlockParameters, 'transform'>> & {
+  /** Source code transformations */
+  transform?: (
+    code: string,
+    storyContext: StoryContext,
+  ) => string | Promise<string>; // original type doesn't allow Promise, although support for this was added in 9.0.0. See https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#parametersdocssourceformat-removal
+};
 
-declare module '@storybook/types' {
+declare module 'storybook/internal/types' {
   interface Parameters extends A11yParameters, DocsParameters {
     /**
      * Set custom styling for the story's root element. The default styling is:

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { List, Heading, Link } from '@udir-design/react/alpha';
 
 const meta: Meta<typeof List.Unordered> = {

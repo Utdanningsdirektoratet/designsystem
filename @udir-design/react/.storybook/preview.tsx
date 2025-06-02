@@ -1,7 +1,7 @@
 import './style.css';
 import './customTheme.scss';
-import { INITIAL_VIEWPORTS, type ViewportMap } from '@storybook/addon-viewport';
-import { Preview } from '@storybook/react';
+import { INITIAL_VIEWPORTS, type ViewportMap } from 'storybook/viewport';
+import { Preview } from '@storybook/react-vite';
 import customTheme from './customTheme';
 import {
   Heading,

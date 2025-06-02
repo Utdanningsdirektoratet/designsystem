@@ -4,15 +4,11 @@ import { UserConfig } from 'vite';
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
-  features: {
-    viewportStoryGlobals: true,
-  },
   addons: [
-    '@storybook/addon-essentials',
     '@storybook/addon-a11y',
     'storybook-addon-pseudo-states',
     'storybook-addon-tag-badges',
-    '@storybook/experimental-addon-test',
+    '@storybook/addon-vitest',
     {
       name: '@storybook/addon-docs',
       options: {
