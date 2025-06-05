@@ -10,10 +10,16 @@
   "scripts": {
     "create": "designsystemet tokens create",
     "build": "pnpm clean && designsystemet tokens build -t ./src -o ./dist",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "build-data": "style-dictionary build --config ./process/sd.config.js --verbose"
   },
   "devDependencies": {
     "@digdir/designsystemet": "1.0.6",
-    "rimraf": "^6.0.1"
+    "@tokens-studio/sd-transforms": "^1.3.0",
+    "rimraf": "^6.0.1",
+    "style-dictionary": "^5.0.0"
+  },
+  "dependencies": {
+    "ramda": "^0.30.1"
   }
 }
