@@ -236,3 +236,12 @@ export const ReadOnly: Story = {
     );
   },
 };
+
+export const Focused: Story = {
+  args: Preview.args,
+  parameters: {
+    pseudo: {
+      focusVisible: true,
+    },
+  },
+};

@@ -15,6 +15,7 @@ exports[`Affix 1`] = `
     <input
       id="textfield-affix"
       inputmode="numeric"
+      type="text"
     >
     <span aria-hidden="true">
       pr. mnd
@@ -34,8 +35,8 @@ exports[`Controlled 1`] = `
     </label>
     <div>
       <input
-        type="text"
         id="textfield-controlled"
+        type="text"
         value
       >
     </div>
@@ -64,11 +65,8 @@ exports[`Counter 1`] = `
   <div>
     <input
       id="textfield-counter"
-<<<<<<< HEAD
-      type="text"
-=======
       inputmode="numeric"
->>>>>>> 4f94250 (docs: improving textfield for beta)
+      type="text"
       aria-describedby="textfield-counter:validation  textfield-counter:description"
     >
   </div>
@@ -98,9 +96,9 @@ exports[`Disabled 1`] = `
   </label>
   <div>
     <input
-      type="text"
       id="textfield-disabled"
       disabled
+      type="text"
     >
   </div>
 </div>
@@ -118,6 +116,23 @@ exports[`Disabled 1`] = `
       disabled
     >
     </textarea>
+  </div>
+</div>
+`;
+
+exports[`Focused 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="textfield-preview"
+  >
+    Label
+  </label>
+  <div>
+    <input
+      id="textfield-preview"
+      type="text"
+    >
   </div>
 </div>
 `;
@@ -149,9 +164,9 @@ exports[`Read Only 1`] = `
   </label>
   <div>
     <input
-      type="text"
       id="textfield-readonly"
       readonly
+      type="text"
     >
   </div>
 </div>

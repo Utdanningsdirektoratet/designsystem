@@ -5,7 +5,11 @@ import * as TextfieldStories from './Textfield.stories';
 
 # Textfield
 
-Textfield er en samensatt komponent for [`Input`](/docs/components-input--docs) og [`Textarea`](/docs/components-textarea--docs). Du bytter mellom de ved å sette `multiline={true/false}`. Den har innebygget `label`, `description`, `validationmessage`, `affix` og `counter`. Trenger du full kontroll over komponentenes oppsett bruker du heller [`input`](/docs/components-input--docs) eller [`textarea`](/docs/components-textarea--docs) direkte.
+`Textfield` gir brukere muligheten til å skrive fritekst eller tall. Den kan brukes enten som [`Input`](/docs/komponenter-input--docs) eller [`Textarea`](/docs/komponenter-textarea--docs). Du bytter mellom de ved å sette `multiline={true/false}`.
+
+Den har innebygget `label`, `description`, `validationmessage`, `affix` og `counter`. Trenger du full kontroll over komponentenes oppsett bruker du heller [`Input`](/docs/components-input--docs) eller [`Textarea`](/docs/components-textarea--docs) direkte.
+
+**OBS:** Ikke legg [`Field`](/docs/komponenter-field--docs) rundt `Textfield`, siden den allerede benytter [`Field`](/docs/komponenter-field--docs)-komponenten.
 
 **Passer til å**
 
@@ -27,7 +31,7 @@ import { Textfield } from '@udir-design/react';
 
 ### Lengre tekster
 
-Du endrer til `textarea` ved å sette `multiline` til `true`. Da kan brukerne skrive lengre tekster.
+Du endrer til `Textarea` ved å sette `multiline` til `true`. Da kan brukerne skrive lengre tekster.
 
 <Canvas of={TextfieldStories.Rows} />
 
@@ -51,11 +55,11 @@ Bruk `counter` til å begrense antall tegn brukerne kan skrive i feltet.
 
 ## Retningslinjer
 
-`Input` er egnet til korte tekster/svar. `Textarea` er egnet til mer utfyllende og lengre svar.
+`Textfield` med `multiline={false}` er egnet til korte tekster/svar. `Textfield` med `multiline={true}` er egnet til mer utfyllende og lengre svar.
 
 ### Unngå placeholder
 
-`Placeholder` forsvinner når brukerne skriver i feltet. Det er derfor bedre å inkludere hint og viktig informasjon i `label` eller den tilhørende beskrivelsen. Kontrastkravene i WCAG gjelder for `placeholder` også, og da blir teksten så mørk at brukerne kan oppfatte `textfield` som utfylt.
+`Placeholder` forsvinner når brukerne skriver i feltet. Det er derfor bedre å inkludere hint og viktig informasjon i `label` eller den tilhørende beskrivelsen. For å oppfylle kontrastkravene i WCAG må placeholder-teksten ha så stor kontrast mot bakgrunnen at brukerne kan misforstå og tro at textfield er utfylt.
 
 ### Tilpass bredden på tekstfeltet
 
@@ -67,12 +71,12 @@ Brukere som skal fylle ut et tekstområde, trenger ofte å kopiere og lime inn i
 
 ### Inndata
 
-For å sikre en god brukeropplevelse er det viktig å bruke en kombinasjon av riktig input-type og autocomplete-attributter.
+For å sikre en god brukeropplevelse er det viktig å bruke en kombinasjon av riktig input-type og autocomplete-attributter. Les mer om [autocomplete på MDN Webdocs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete).
 
 - Tillat variasjoner i hvordan data skrives inn, så lenge informasjonen er forståelig. For eksempel bør telefonnumre kunne inneholde mellomrom, personnumre burde kunne ha punktum, og e-postadresser burde aksepteres selv om de har et mellomrom til slutt.
 - Velg inputtyper som samsvarer med informasjonen du ber om, for eksempel `tel`, `search` eller `email`. Dette gir mobilbrukere et tilpasset tastatur, men vær oppmerksom på at enkelte inputtyper kan aktivere klientsidevalidering.
-- `autoComplete` brukes i felter som mottar personlig informasjon. Hvis feltet skal be om personopplysninger om en annen person enn brukeren, må du skru `autoComplete` av.
-- Pass på at brukerne ser inndata som formateres automatisk, men uten at det forstyrrer dem mens de fyller ut.
+- `autoComplete` brukes i felter som mottar personlig informasjon. Hvis feltet skal be om personopplysninger om en annen person enn brukeren, må man sette `autoComplete="off"`.
+- Hvis inndata formateres automatisk, pass på at brukeren får det med seg uten å forstyrre utfylling av data.
 
 ### Tall i Textfield
 
@@ -100,7 +104,7 @@ endre innholdet i feltet.
 
 ## Tekst i Textfield
 
-Det skal alltid være `label` på `textfield`. I spesielle tilfeller kan vi skjule `label`. Det kan for eksempel være i tabeller, hvis feltet får `label` fra tabelloverskriften. Selv om vi har tenkt å skjule den, må vi alltid skrive en `label` som gir mening, siden den leses opp av skjermlesere.
+Det skal alltid være `label` på `Textfield`.
 
 - Hold `label` kort, unngå at den går over to linjer.
 - Unngå å legge til beskrivelse som ikke er relevant eller meningsfull for brukeren.
@@ -110,4 +114,4 @@ Det skal alltid være `label` på `textfield`. I spesielle tilfeller kan vi skju
 
 ### Prefiks og suffiks
 
-Prefiks og suffiks er et ekstra visuelt hjelpemiddel, som blir ignorert av skjermlesere. Vi må alltid ha en beskrivende `label`. Prefiks og suffiks er plassert utenfor inndatafeltene de tilhører. Da unngår vi at de ikke skaper trøbbel i noen nettlesere, som kan sette inn et ikon i inndatafeltet (for eksempel ikoner for å vise eller lage passord).
+Prefiks og suffiks er et ekstra visuelt hjelpemiddel, som blir ignorert av skjermlesere. Vi må alltid ha en beskrivende `label`. Prefiks og suffiks er plassert utenfor inndatafeltene de tilhører. Da unngår vi at de skaper trøbbel i noen nettlesere. For eksempel kan noen nettlesere sette inn ikoner i inndatafeltet.
