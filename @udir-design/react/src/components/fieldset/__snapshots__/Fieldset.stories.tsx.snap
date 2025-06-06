@@ -1,36 +1,84 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Legend As Heading 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    <h1>
+      Hvor skal du reise?
+    </h1>
+  </legend>
+</fieldset>
+`;
+
 exports[`Preview 1`] = `
-<form>
-  <fieldset>
-    <legend data-weight="medium">
-      Skriv inn dine svar
-    </legend>
-    <p data-variant="default">
-      Gi en kort beskrivelse i begge feltene
-    </p>
-    <div>
-      <label
-        data-weight="medium"
-        for="components-fieldset--preview-input"
-      >
-        Kort beskrivelse
-      </label>
-      <input
-        id="components-fieldset--preview-input"
-        type="text"
-      >
-    </div>
-    <div>
-      <label
-        data-weight="medium"
-        for="components-fieldset--preview-textarea"
-      >
-        Lang beskrivelse
-      </label>
-      <textarea id="components-fieldset--preview-textarea">
-      </textarea>
-    </div>
-  </fieldset>
-</form>
+<fieldset>
+  <legend data-weight="medium">
+    Hvilken fjordarm bor du ved?
+  </legend>
+  <p data-variant="default">
+    Valget vil hjelpe oss å forbedre innholdet vi viser deg.
+  </p>
+  <div>
+    <input
+      id="components-fieldset--preview-radio-barsnesfjorden"
+      type="radio"
+      value="barsnesfjorden"
+      name="radio"
+    >
+    <label
+      data-weight="regular"
+      for="components-fieldset--preview-radio-barsnesfjorden"
+    >
+      Barsnesfjorden
+    </label>
+  </div>
+  <div>
+    <input
+      id="components-fieldset--preview-radio-eidsfjorden"
+      type="radio"
+      value="eidsfjorden"
+      name="radio"
+    >
+    <label
+      data-weight="regular"
+      for="components-fieldset--preview-radio-eidsfjorden"
+    >
+      Eidsfjorden
+    </label>
+  </div>
+  <div>
+    <input
+      id="components-fieldset--preview-radio-ingen-av-de"
+      type="radio"
+      value="ingen-av-de"
+      name="radio"
+    >
+    <label
+      data-weight="regular"
+      for="components-fieldset--preview-radio-ingen-av-de"
+    >
+      Ingen av de
+    </label>
+  </div>
+</fieldset>
+`;
+
+exports[`With Checkbox 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Godtar du vilkårene?
+  </legend>
+  <div>
+    <input
+      id="components-fieldset--with-checkbox-checkbox"
+      type="checkbox"
+    >
+    <label
+      data-weight="regular"
+      for="components-fieldset--with-checkbox-checkbox"
+    >
+      Ja, jeg godtar
+    </label>
+  </div>
+</fieldset>
 `;
