@@ -14,14 +14,6 @@
     }
   },
   "_font-scale": {
-    "base": {
-      "$type": "number",
-      "$value": "{font-scale._base}"
-    },
-    "ratio": {
-      "$type": "number",
-      "$value": "{font-scale._ratio}"
-    },
     "1": {
       "$type": "number",
       "$value": "roundTo({_font-scale.base} * 16 / pow({_font-scale.ratio}, 3), 0)"
@@ -61,6 +53,14 @@
     "10": {
       "$type": "number",
       "$value": "roundTo({_font-scale.base} * 16 * pow({_font-scale.ratio}, 9), 0)"
+    },
+    "base": {
+      "$type": "number",
+      "$value": "{font-scale._base}"
+    },
+    "ratio": {
+      "$type": "number",
+      "$value": "{font-scale._ratio}"
     }
   },
   "font-size": {
