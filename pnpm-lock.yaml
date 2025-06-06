@@ -135,11 +135,11 @@ importers:
   '@udir-design/react':
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.0.6
-        version: 1.0.6
+        specifier: 1.0.8
+        version: 1.0.8
       '@digdir/designsystemet-react':
-        specifier: 1.0.6
-        version: 1.0.6(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: 1.0.8
+        version: 1.0.8(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@navikt/aksel-icons':
         specifier: ^7.22.0
         version: 7.22.0
@@ -292,8 +292,8 @@ importers:
   '@udir-design/theme':
     dependencies:
       '@digdir/designsystemet-react':
-        specifier: 1.0.6
-        version: 1.0.6(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: 1.0.8
+        version: 1.0.8(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
     devDependencies:
       '@internal/build-tools':
         specifier: workspace:*
@@ -308,8 +308,8 @@ importers:
   design-tokens:
     devDependencies:
       '@digdir/designsystemet':
-        specifier: 1.0.6
-        version: 1.0.6
+        specifier: 1.0.8
+        version: 1.0.8
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -1131,18 +1131,18 @@ packages:
     resolution: {integrity: sha512-Vd/9EVDiu6PPJt9yAh6roZP6El1xHrdvIVGjyBsHR0RYwNHgL7FJPyIIW4fANJNG6FtyZfvlRPpFI4ZM/lubvw==}
     engines: {node: '>=18'}
 
-  '@digdir/designsystemet-css@1.0.6':
-    resolution: {integrity: sha512-Vis61mOZizZR7GblxsBwxsxtrlouNzHg77Djk1vRgPiPsaJcLWE6FT3P5j2oFWQUhLYaPhcX/Xuy3Mhs7x3oQQ==}
+  '@digdir/designsystemet-css@1.0.8':
+    resolution: {integrity: sha512-5CPZs6TeVgtaikoVpPSfc/a7PC1v6zTwHLufsL0F1P8kPlhRyuWEoTMYZvw1fs71aHQ+3EPWJKQQppO6TM57EQ==}
 
-  '@digdir/designsystemet-react@1.0.6':
-    resolution: {integrity: sha512-tzO8wU7DvlUHJKy1jS5YC5mxa7/061o7w3Z//UULNyXYd42kKKH0GykgfjKVSKDb20Txcs6OJ2kXxpRmsOBtsA==}
+  '@digdir/designsystemet-react@1.0.8':
+    resolution: {integrity: sha512-kUSyLyHl0nFewm4dUSZERoUSPJok2BPiwj2n6tqwGrEINAm4HuOc+VmUs3dXelVM/M/Tf7gDr5m8tJOe8BczkQ==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet@1.0.6':
-    resolution: {integrity: sha512-zDLPtWmViQFz1p/gIZuoYxRKN92E2mbswsFt1u43+usOUDBNbZb/YXDpG/P6VootvilOxy1vj4fBPTgFiimAQQ==}
-    engines: {node: '>=22.15.0'}
+  '@digdir/designsystemet@1.0.8':
+    resolution: {integrity: sha512-lyp+ajHdtKwyKVeTVpPNKSsNT4zduPdT/5tHQwJca7TotYj4BmCSecGfwOTp0gy0zVGzwNRAj/Mx/xSwHKcEig==}
+    engines: {node: '>=22.16.0'}
     hasBin: true
 
   '@emnapi/core@1.4.3':
@@ -1354,14 +1354,14 @@ packages:
     resolution: {integrity: sha512-0J+zgWxHN+xXONWIyPWKFMgVuJoZuGiIFu8yxk7RJjxkzpGmyja5wRFqZIVtjDVOQpV+Rw0iOAjYPE2eQyjr0w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@floating-ui/core@1.7.0':
-    resolution: {integrity: sha512-FRdBLykrPPA6P76GGGqlex/e7fbe0F1ykgxHYNXQsH/iTEtjMj/f9bpY5oQqbjt5VgZvgz/uKXbGuROijh3VLA==}
+  '@floating-ui/core@1.7.1':
+    resolution: {integrity: sha512-azI0DrjMMfIug/ExbBaeDVJXcY0a7EPvPjb2xAJPa4HeimBX+Z18HK8QQR3jb6356SnDDdxx+hinMLcJEDdOjw==}
 
-  '@floating-ui/dom@1.7.0':
-    resolution: {integrity: sha512-lGTor4VlXcesUMh1cupTUTDoCxMb0V6bm3CnxHzQcw8Eaf1jQbgQX4i02fYgT0vJ82tb5MZ4CZk1LRGkktJCzg==}
+  '@floating-ui/dom@1.7.1':
+    resolution: {integrity: sha512-cwsmW/zyw5ltYTUeeYJ60CnQuPqmGwuGVhG9w0PRaRKkAyi38BT5CKrpIbb+jtahSwUl04cWzSx9ZOIxeS6RsQ==}
 
-  '@floating-ui/react-dom@2.1.2':
-    resolution: {integrity: sha512-06okr5cgPzMNBy+Ycse2A6udMi4bqwW/zgBF/rwjcNqWkyr82Mcg8b0vjX8OJpZFy/FKjJmw6wV7t44kK6kW7A==}
+  '@floating-ui/react-dom@2.1.3':
+    resolution: {integrity: sha512-huMBfiU9UnQ2oBwIhgzyIiSpVgvlDstU8CX0AF+wS+KzmYMs0J2a3GwuFHV1Lz+jlrQGeC1fF+Nv0QoumyV0bA==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -6130,8 +6130,8 @@ packages:
     peerDependencies:
       zod: ^3.24.4
 
-  zod@3.25.46:
-    resolution: {integrity: sha512-IqRxcHEIjqLd4LNS/zKffB3Jzg3NwqJxQQ0Ns7pdrvgGkwQsEBdEQcOHaBVqvvZArShRzI39+aMST3FBGmTrLQ==}
+  zod@3.25.53:
+    resolution: {integrity: sha512-BKOKoY3XcGUVkqaalCtFK15LhwR0G0i65AClFpWSXLN2gJNBGlTktukHgwexCTa/dAacPPp9ReryXPWyeZF4LQ==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -7177,11 +7177,11 @@ snapshots:
 
   '@csstools/css-tokenizer@3.0.4': {}
 
-  '@digdir/designsystemet-css@1.0.6': {}
+  '@digdir/designsystemet-css@1.0.8': {}
 
-  '@digdir/designsystemet-react@1.0.6(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@digdir/designsystemet-react@1.0.8(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@floating-ui/dom': 1.7.0
+      '@floating-ui/dom': 1.7.1
       '@floating-ui/react': 0.26.23(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@navikt/aksel-icons': 7.22.0
       '@radix-ui/react-slot': 1.2.3(@types/react@19.1.6)(react@19.1.0)
@@ -7195,7 +7195,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet@1.0.6':
+  '@digdir/designsystemet@1.0.8':
     dependencies:
       '@commander-js/extra-typings': 13.1.0(commander@13.1.0)
       '@tokens-studio/sd-transforms': 1.3.0(style-dictionary@4.4.0)
@@ -7211,8 +7211,8 @@ snapshots:
       postcss: 8.5.4
       ramda: 0.30.1
       style-dictionary: 4.4.0
-      zod: 3.25.46
-      zod-validation-error: 3.4.1(zod@3.25.46)
+      zod: 3.25.53
+      zod-validation-error: 3.4.1(zod@3.25.53)
 
   '@emnapi/core@1.4.3':
     dependencies:
@@ -7352,24 +7352,24 @@ snapshots:
       '@eslint/core': 0.14.0
       levn: 0.4.1
 
-  '@floating-ui/core@1.7.0':
+  '@floating-ui/core@1.7.1':
     dependencies:
       '@floating-ui/utils': 0.2.9
 
-  '@floating-ui/dom@1.7.0':
+  '@floating-ui/dom@1.7.1':
     dependencies:
-      '@floating-ui/core': 1.7.0
+      '@floating-ui/core': 1.7.1
       '@floating-ui/utils': 0.2.9
 
-  '@floating-ui/react-dom@2.1.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@floating-ui/react-dom@2.1.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@floating-ui/dom': 1.7.0
+      '@floating-ui/dom': 1.7.1
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
   '@floating-ui/react@0.26.23(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@floating-ui/react-dom': 2.1.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@floating-ui/react-dom': 2.1.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@floating-ui/utils': 0.2.9
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
@@ -12802,10 +12802,10 @@ snapshots:
   yoctocolors-cjs@2.1.2:
     optional: true
 
-  zod-validation-error@3.4.1(zod@3.25.46):
+  zod-validation-error@3.4.1(zod@3.25.53):
     dependencies:
-      zod: 3.25.46
+      zod: 3.25.53
 
-  zod@3.25.46: {}
+  zod@3.25.53: {}
 
   zwitch@2.0.4: {}
