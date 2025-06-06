@@ -1,13 +1,17 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`As Link 1`] = `
-<a href="https://www.udir.no/">
+<a
+  href="https://www.udir.no/"
+  style="display: flex; gap: var(--ds-size-2); align-items: center;"
+>
   <span
     data-variant="circle"
     role="img"
     aria-label="Ola Nordmann"
   >
   </span>
+  Ola Nordmann
 </a>
 `;
 
@@ -208,13 +212,6 @@ exports[`Sizes 1`] = `
   role="img"
   aria-label="small"
   data-size="sm"
->
-</span>
-<span
-  data-variant="circle"
-  data-initials="md"
-  role="img"
-  aria-label="default"
 >
 </span>
 <span
