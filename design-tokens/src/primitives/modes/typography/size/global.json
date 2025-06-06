@@ -1,0 +1,138 @@
+{
+  "line-height": {
+    "sm": {
+      "$type": "lineHeights",
+      "$value": "130%"
+    },
+    "md": {
+      "$type": "lineHeights",
+      "$value": "150%"
+    },
+    "lg": {
+      "$type": "lineHeights",
+      "$value": "170%"
+    }
+  },
+  "font-scale": {
+    "1": {
+      "$type": "number",
+      "$value": "roundTo({font-scale.base} * 16 / pow({font-scale.ratio}, 3), 0)"
+    },
+    "2": {
+      "$type": "number",
+      "$value": "roundTo({font-scale.base} * 16 / pow({font-scale.ratio}, 2), 0)"
+    },
+    "3": {
+      "$type": "number",
+      "$value": "roundTo({font-scale.base} * 16 / pow({font-scale.ratio}, 1), 0)"
+    },
+    "4": {
+      "$type": "number",
+      "$value": "roundTo({font-scale.base} * 16 * pow({font-scale.ratio}, 0), 0)"
+    },
+    "5": {
+      "$type": "number",
+      "$value": "roundTo({font-scale.base} * 16 * pow({font-scale.ratio}, 1), 0)"
+    },
+    "6": {
+      "$type": "number",
+      "$value": "roundTo({font-scale.base} * 16 * pow({font-scale.ratio}, 2), 0)"
+    },
+    "7": {
+      "$type": "number",
+      "$value": "roundTo({font-scale.base} * 16 * pow({font-scale.ratio}, 3), 0)"
+    },
+    "8": {
+      "$type": "number",
+      "$value": "roundTo({font-scale.base} * 16 * pow({font-scale.ratio}, 5), 0)"
+    },
+    "9": {
+      "$type": "number",
+      "$value": "roundTo({font-scale.base} * 16 * pow({font-scale.ratio}, 7), 0)"
+    },
+    "10": {
+      "$type": "number",
+      "$value": "roundTo({font-scale.base} * 16 * pow({font-scale.ratio}, 9), 0)"
+    }
+  },
+  "font-size": {
+    "1": {
+      "$type": "fontSizes",
+      "$value": "{font-scale.1}px"
+    },
+    "2": {
+      "$type": "fontSizes",
+      "$value": "{font-scale.2}px"
+    },
+    "3": {
+      "$type": "fontSizes",
+      "$value": "{font-scale.3}px"
+    },
+    "4": {
+      "$type": "fontSizes",
+      "$value": "{font-scale.4}px"
+    },
+    "5": {
+      "$type": "fontSizes",
+      "$value": "{font-scale.5}px"
+    },
+    "6": {
+      "$type": "fontSizes",
+      "$value": "{font-scale.6}px"
+    },
+    "7": {
+      "$type": "fontSizes",
+      "$value": "{font-scale.7}px"
+    },
+    "8": {
+      "$type": "fontSizes",
+      "$value": "{font-scale.8}px"
+    },
+    "9": {
+      "$type": "fontSizes",
+      "$value": "{font-scale.9}px"
+    },
+    "10": {
+      "$type": "fontSizes",
+      "$value": "{font-scale.10}px"
+    }
+  },
+  "letter-spacing": {
+    "1": {
+      "$type": "letterSpacing",
+      "$value": "-1%"
+    },
+    "2": {
+      "$type": "letterSpacing",
+      "$value": "-0.5%"
+    },
+    "3": {
+      "$type": "letterSpacing",
+      "$value": "-0.25%"
+    },
+    "4": {
+      "$type": "letterSpacing",
+      "$value": "-0.15%"
+    },
+    "5": {
+      "$type": "letterSpacing",
+      "$value": "0%"
+    },
+    "6": {
+      "$type": "letterSpacing",
+      "$value": "0.15%"
+    },
+    "7": {
+      "$type": "letterSpacing",
+      "$value": "0.25%"
+    },
+    "8": {
+      "$type": "letterSpacing",
+      "$value": "0.5%"
+    },
+    "9": {
+      "$type": "letterSpacing",
+      "$value": "1.5%"
+    }
+  }
+}
