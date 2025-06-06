@@ -1,14 +1,14 @@
 {
   "font-scale": {
     "_base": {
-      "$description": "The size, as a factor of the root font size, to use as the basis for the scale, and the font size at step 4.",
       "$type": "number",
-      "$value": "1.125"
+      "$value": "1.125",
+      "$description": "The size, as a factor of the root font size, to use as the basis for the scale, and the font size at step 4."
     },
     "_ratio": {
-      "$description": "The ratio used to calculate each step in the scale. Must be larger than 1 (a ratio of 1 would make all font sizes the same, while a number between 0 and 1 effectively inverts the scale). Larger numbers result in a larger font-size.10 and a smaller font-size.1.",
       "$type": "number",
-      "$value": "8 / 7"
+      "$value": "8 / 7",
+      "$description": "The ratio used to calculate each step in the scale. Must be larger than 1 (a ratio of 1 would make all font sizes the same, while a number between 0 and 1 effectively inverts the scale). Larger numbers result in a larger font-size.10 and a smaller font-size.1."
     }
   }
 }

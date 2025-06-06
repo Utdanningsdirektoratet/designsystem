@@ -13,7 +13,7 @@
       "$value": "170%"
     }
   },
-  "font-scale": {
+  "_font-scale": {
     "1": {
       "$type": "number",
       "$value": "roundTo({font-scale.base} * 16 / pow({font-scale.ratio}, 3), 0)"
@@ -58,43 +58,43 @@
   "font-size": {
     "1": {
       "$type": "fontSizes",
-      "$value": "{font-scale.1}px"
+      "$value": "{_font-scale.1}px"
     },
     "2": {
       "$type": "fontSizes",
-      "$value": "{font-scale.2}px"
+      "$value": "{_font-scale.2}px"
     },
     "3": {
       "$type": "fontSizes",
-      "$value": "{font-scale.3}px"
+      "$value": "{_font-scale.3}px"
     },
     "4": {
       "$type": "fontSizes",
-      "$value": "{font-scale.4}px"
+      "$value": "{_font-scale.4}px"
     },
     "5": {
       "$type": "fontSizes",
-      "$value": "{font-scale.5}px"
+      "$value": "{_font-scale.5}px"
     },
     "6": {
       "$type": "fontSizes",
-      "$value": "{font-scale.6}px"
+      "$value": "{_font-scale.6}px"
     },
     "7": {
       "$type": "fontSizes",
-      "$value": "{font-scale.7}px"
+      "$value": "{_font-scale.7}px"
     },
     "8": {
       "$type": "fontSizes",
-      "$value": "{font-scale.8}px"
+      "$value": "{_font-scale.8}px"
     },
     "9": {
       "$type": "fontSizes",
-      "$value": "{font-scale.9}px"
+      "$value": "{_font-scale.9}px"
     },
     "10": {
       "$type": "fontSizes",
-      "$value": "{font-scale.10}px"
+      "$value": "{_font-scale.10}px"
     }
   },
   "letter-spacing": {
