@@ -16,51 +16,43 @@
   "_font-scale": {
     "1": {
       "$type": "number",
-      "$value": "roundTo({_font-scale.base} * 16 / pow({_font-scale.ratio}, 3), 0)"
+      "$value": "roundTo({font-scale._base} * 16 / pow({font-scale._ratio}, 3), 0)"
     },
     "2": {
       "$type": "number",
-      "$value": "roundTo({_font-scale.base} * 16 / pow({_font-scale.ratio}, 2), 0)"
+      "$value": "roundTo({font-scale._base} * 16 / pow({font-scale._ratio}, 2), 0)"
     },
     "3": {
       "$type": "number",
-      "$value": "roundTo({_font-scale.base} * 16 / pow({_font-scale.ratio}, 1), 0)"
+      "$value": "roundTo({font-scale._base} * 16 / pow({font-scale._ratio}, 1), 0)"
     },
     "4": {
       "$type": "number",
-      "$value": "roundTo({_font-scale.base} * 16 * pow({_font-scale.ratio}, 0), 0)"
+      "$value": "roundTo({font-scale._base} * 16 * pow({font-scale._ratio}, 0), 0)"
     },
     "5": {
       "$type": "number",
-      "$value": "roundTo({_font-scale.base} * 16 * pow({_font-scale.ratio}, 1), 0)"
+      "$value": "roundTo({font-scale._base} * 16 * pow({font-scale._ratio}, 1), 0)"
     },
     "6": {
       "$type": "number",
-      "$value": "roundTo({_font-scale.base} * 16 * pow({_font-scale.ratio}, 2), 0)"
+      "$value": "roundTo({font-scale._base} * 16 * pow({font-scale._ratio}, 2), 0)"
     },
     "7": {
       "$type": "number",
-      "$value": "roundTo({_font-scale.base} * 16 * pow({_font-scale.ratio}, 3), 0)"
+      "$value": "roundTo({font-scale._base} * 16 * pow({font-scale._ratio}, 3), 0)"
     },
     "8": {
       "$type": "number",
-      "$value": "roundTo({_font-scale.base} * 16 * pow({_font-scale.ratio}, 5), 0)"
+      "$value": "roundTo({font-scale._base} * 16 * pow({font-scale._ratio}, 5), 0)"
     },
     "9": {
       "$type": "number",
-      "$value": "roundTo({_font-scale.base} * 16 * pow({_font-scale.ratio}, 7), 0)"
+      "$value": "roundTo({font-scale._base} * 16 * pow({font-scale._ratio}, 7), 0)"
     },
     "10": {
       "$type": "number",
-      "$value": "roundTo({_font-scale.base} * 16 * pow({_font-scale.ratio}, 9), 0)"
-    },
-    "base": {
-      "$type": "number",
-      "$value": "{font-scale._base}"
-    },
-    "ratio": {
-      "$type": "number",
-      "$value": "{font-scale._ratio}"
+      "$value": "roundTo({font-scale._base} * 16 * pow({font-scale._ratio}, 9), 0)"
     }
   },
   "font-size": {
