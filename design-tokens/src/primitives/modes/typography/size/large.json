@@ -2,8 +2,8 @@
   "font-scale": {
     "_base": {
       "$type": "number",
-      "$value": "1.3125",
-      "$description": "The size, as a factor of the root font size, to use as the basis for the scale, and the font size at step 4."
+      "$value": "21",
+      "$description": "The font size (in px) to use as the basis for the scale, and the font size at step 4."
     },
     "_ratio": {
       "$type": "number",
