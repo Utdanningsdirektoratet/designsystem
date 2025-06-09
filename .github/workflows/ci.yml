@@ -118,7 +118,7 @@ jobs:
         run: pnpm nx build:storybook
 
       - name: Publish Storybook to Chromatic
-        uses: chromaui/action@d7afd50124cf4f337bcd943e7f45cfa85a5e4476 # v12.0.0
+        uses: chromaui/action@c50adf8eaa8c2878af3263499a73077854de39d4 # v12.2.0
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: '@udir-design/react'
