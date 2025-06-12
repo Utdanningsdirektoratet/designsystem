@@ -1,16 +1,14 @@
 {
-  "line-height": {
-    "sm": {
-      "$type": "lineHeights",
-      "$value": "130%"
+  "font-scale": {
+    "_height-factor": {
+      "$type": "number",
+      "$value": 1.5,
+      "$description": "The factor (e.g. 1.5 = 100%) to use as a basis for line height. Is used as line-height.4"
     },
-    "md": {
-      "$type": "lineHeights",
-      "$value": "150%"
-    },
-    "lg": {
-      "$type": "lineHeights",
-      "$value": "170%"
+    "_spacing-factor": {
+      "$type": "number",
+      "$value": 0.005,
+      "$description": "The factor (e.g. 0.005 = 0.5%) to use as a basis for letter spacing. Is used as letter-spacing.4"
     }
   },
   "font-size": {
@@ -58,39 +56,85 @@
   "letter-spacing": {
     "1": {
       "$type": "letterSpacing",
-      "$value": "-1%"
+      "$value": "(({font-scale._spacing-factor} + 0.03) * {font-scale._base} / {font-size.1} - 0.03) * {font-scale._base}"
     },
     "2": {
       "$type": "letterSpacing",
-      "$value": "-0.5%"
+      "$value": "(({font-scale._spacing-factor} + 0.03) * {font-scale._base} / {font-size.2} - 0.03) * {font-scale._base}"
     },
     "3": {
       "$type": "letterSpacing",
-      "$value": "-0.25%"
+      "$value": "(({font-scale._spacing-factor} + 0.03) * {font-scale._base} / {font-size.3} - 0.03) * {font-scale._base}"
     },
     "4": {
       "$type": "letterSpacing",
-      "$value": "-0.15%"
+      "$value": "(({font-scale._spacing-factor} + 0.03) * {font-scale._base} / {font-size.4} - 0.03) * {font-scale._base}"
     },
     "5": {
       "$type": "letterSpacing",
-      "$value": "0%"
+      "$value": "(({font-scale._spacing-factor} + 0.03) * {font-scale._base} / {font-size.5} - 0.03) * {font-scale._base}"
     },
     "6": {
       "$type": "letterSpacing",
-      "$value": "0.15%"
+      "$value": "(({font-scale._spacing-factor} + 0.03) * {font-scale._base} / {font-size.6} - 0.03) * {font-scale._base}"
     },
     "7": {
       "$type": "letterSpacing",
-      "$value": "0.25%"
+      "$value": "(({font-scale._spacing-factor} + 0.03) * {font-scale._base} / {font-size.7} - 0.03) * {font-scale._base}"
     },
     "8": {
       "$type": "letterSpacing",
-      "$value": "0.5%"
+      "$value": "(({font-scale._spacing-factor} + 0.03) * {font-scale._base} / {font-size.8} - 0.03) * {font-scale._base}"
     },
     "9": {
       "$type": "letterSpacing",
-      "$value": "1.5%"
+      "$value": "(({font-scale._spacing-factor} + 0.03) * {font-scale._base} / {font-size.9} - 0.03) * {font-scale._base}"
+    },
+    "10": {
+      "$type": "letterSpacing",
+      "$value": "(({font-scale._spacing-factor} + 0.03) * {font-scale._base} / {font-size.1} - 0.03) * {font-scale._base}"
+    }
+  },
+  "line-height": {
+    "1": {
+      "$type": "lineHeights",
+      "$value": "{font-scale._height-factor} * {font-scale._base} - {font-scale._base} + {font-size.1}"
+    },
+    "2": {
+      "$type": "lineHeights",
+      "$value": "{font-scale._height-factor} * {font-scale._base} - {font-scale._base} + {font-size.2}"
+    },
+    "3": {
+      "$type": "lineHeights",
+      "$value": "{font-scale._height-factor} * {font-scale._base} - {font-scale._base} + {font-size.3}"
+    },
+    "4": {
+      "$type": "lineHeights",
+      "$value": "{font-scale._height-factor} * {font-scale._base} - {font-scale._base} + {font-size.4}"
+    },
+    "5": {
+      "$type": "lineHeights",
+      "$value": "{font-scale._height-factor} * {font-scale._base} - {font-scale._base} + {font-size.5}"
+    },
+    "6": {
+      "$type": "lineHeights",
+      "$value": "{font-scale._height-factor} * {font-scale._base} - {font-scale._base} + {font-size.6}"
+    },
+    "7": {
+      "$type": "lineHeights",
+      "$value": "{font-scale._height-factor} * {font-scale._base} - {font-scale._base} + {font-size.7}"
+    },
+    "8": {
+      "$type": "lineHeights",
+      "$value": "{font-scale._height-factor} * {font-scale._base} - {font-scale._base} + {font-size.8}"
+    },
+    "9": {
+      "$type": "lineHeights",
+      "$value": "{font-scale._height-factor} * {font-scale._base} - {font-scale._base} + {font-size.9}"
+    },
+    "10": {
+      "$type": "lineHeights",
+      "$value": "{font-scale._height-factor} * {font-scale._base} - {font-scale._base} + {font-size.10}"
     }
   }
 }
