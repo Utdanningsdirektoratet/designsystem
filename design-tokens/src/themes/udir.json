@@ -291,6 +291,14 @@
     "_ratio": {
       "$type": "number",
       "$value": "{udir.font-scale._ratio}"
+    },
+    "_height-factor": {
+      "$type": "number",
+      "$value": "{udir.font-scale._height-factor}"
+    },
+    "_spacing-factor": {
+      "$type": "number",
+      "$value": "{udir.font-scale._spacing-factor}"
     }
   },
   "border-radius": {

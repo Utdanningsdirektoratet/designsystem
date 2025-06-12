@@ -26,6 +26,16 @@
       "_ratio": {
         "$type": "number",
         "$value": "{udir.font-scale.primary._ratio}"
+      },
+      "_height-factor": {
+        "$type": "number",
+        "$value": 1.3,
+        "$description": "The factor (e.g. 1.5 = 100%) to use as a basis for line height. Is used as line-height.4"
+      },
+      "_spacing-factor": {
+        "$type": "number",
+        "$value": 0.035,
+        "$description": "The factor (e.g. 0.005 = 0.5%) to use as a basis for letter spacing. Is used as letter-spacing.4"
       }
     }
   }
