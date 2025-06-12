@@ -283,6 +283,16 @@
       "$value": "{udir.font-weight.regular}"
     }
   },
+  "font-scale": {
+    "_base": {
+      "$type": "number",
+      "$value": "{udir.font-scale._base}"
+    },
+    "_ratio": {
+      "$type": "number",
+      "$value": "{udir.font-scale._ratio}"
+    }
+  },
   "border-radius": {
     "1": {
       "$type": "dimension",

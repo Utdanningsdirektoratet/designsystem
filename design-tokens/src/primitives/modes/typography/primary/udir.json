@@ -17,6 +17,16 @@
         "$type": "fontWeights",
         "$value": "Regular"
       }
+    },
+    "font-scale": {
+      "_base": {
+        "$type": "number",
+        "$value": "{udir.font-scale.primary._base}"
+      },
+      "_ratio": {
+        "$type": "number",
+        "$value": "{udir.font-scale.primary._ratio}"
+      }
     }
   }
 }

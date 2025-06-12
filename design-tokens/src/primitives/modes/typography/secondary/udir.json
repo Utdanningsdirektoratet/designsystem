@@ -2,7 +2,7 @@
   "udir": {
     "font-family": {
       "$type": "fontFamilies",
-      "$value": "Inter"
+      "$value": "Montserrat"
     },
     "font-weight": {
       "medium": {
@@ -11,11 +11,21 @@
       },
       "semibold": {
         "$type": "fontWeights",
-        "$value": "Semi bold"
+        "$value": "SemiBold"
       },
       "regular": {
         "$type": "fontWeights",
         "$value": "Regular"
+      }
+    },
+    "font-scale": {
+      "_base": {
+        "$type": "number",
+        "$value": "{udir.font-scale.primary._base}"
+      },
+      "_ratio": {
+        "$type": "number",
+        "$value": "{udir.font-scale.primary._ratio}"
       }
     }
   }
