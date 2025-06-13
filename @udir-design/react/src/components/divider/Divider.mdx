@@ -5,13 +5,34 @@ import * as DividerStories from './Divider.stories';
 
 # Divider
 
+`Divider` brukes for å skape et visuelt skille mellom innhold, slik at det blir mer oversiktlig og lettere å lese. Det er en enkel horisontal linje som strekker seg over tilgjengelig bredde. Den kan også brukes for å skille innhold som er relatert til hverandre, men som likevel bør ha en visuelt skille.
+
+**Passer til å**
+
+- skape en tydelig oppdeling av innhold
+- strukturere innhold for bedre lesbarhet
+
+**Passer ikke til å**
+
+- skape spacing der andre visuelle elementer bedre kan gi separasjon
+
+## Slik bruker du Divider
+
 <Primary />
 <Controls />
-
-## Bruk
 
 ```tsx
 import { Divider } from '@udir-design/react';
 
 <Divider />;
 ```
+
+## Tilgjengelighet
+
+Unngå å bruke `Divider` utelukkende for visuell effekt uten funksjonell betydning. En `Divider` representerer egentlig et `<hr>`-element i HTML, som står for “horizontal rule” – altså en tematisk inndeling av innhold.
+
+Den skal brukes til å markere et skille mellom innhold som ikke hører logisk sammen, for eksempel ulike seksjoner i en artikkel eller ulike funksjonelle områder på en side. Bruk den for å tydeliggjøre strukturen, ikke bare for å fylle tomrom eller “pynte” siden.
+
+### Kjente begrensninger
+
+Stilen til `Divider` kan påvirkes av foreldreelementer, spesielt ved bruk i fleksible grensesnitt.
