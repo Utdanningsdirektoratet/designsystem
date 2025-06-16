@@ -3,52 +3,37 @@ import { register } from '@tokens-studio/sd-transforms';
 import StyleDictionary from 'style-dictionary';
 import { colorScheme } from './formats.js';
 
-// register transforms & format
 register(StyleDictionary);
 StyleDictionary.registerFormat(colorScheme);
 
-// helper: generates a platform object for a given scheme
-const colorSchemeVariables = ({ 'color-scheme': scheme = 'light' }) => {
-  const selector = `${scheme === 'light' ? ':root, ' : ''}[data-color-scheme="${scheme}"]`;
-  const layer = `ds.theme.color-scheme.${scheme}`;
-
-  return {
-    preprocessors: ['tokens-studio'],
-    platforms: {
-      css: {
-        colorScheme: scheme,
-        selector,
-        layer,
-        transformGroup: 'tokens-studio',
-        transforms: ['name/kebab'],
-        buildPath: 'dist/',
-        files: [
-          {
-            destination: `udir-data-${scheme}.css`,
-            format: colorScheme.name,
-            filter: (token) => token.filePath.endsWith(`/${scheme}.json`),
-          },
-        ],
-      },
-    },
-  };
-};
-
-// build a config with two platforms: css_light and css_dark
 const schemes = ['light', 'dark'];
-const baseSource = ['visualization/data-visualization/**/*.json'];
-const basePreprocessors = ['tokens-studio'];
+
+// scope your source to pick up nested files
+const baseSource = schemes.map(s =>
+  `visualization/data-visualization/**/${s}.json`
+);
 
 const platforms = schemes.reduce((acc, scheme) => {
-  const cfg = colorSchemeVariables({ 'color-scheme': scheme });
-  // pull out the `css` platform and rename it
-  acc[`css_${scheme}`] = cfg.platforms.css;
+  const isLight = scheme === 'light';
+  acc[`css_${scheme}`] = {
+    source: [`visualization/data-visualization/**/${scheme}.json`],
+    // actually run the tokens-studio preprocessor
+    preprocessors: ['tokens-studio'],
+    selector:    `${isLight ? ':root, ' : ''}[data-color-scheme="${scheme}"]`,
+    layer:       `ds.theme.color-scheme.${scheme}`,
+    transformGroup: 'tokens-studio',
+    transforms: ['name/kebab'],
+    buildPath: 'dist/',
+    files: [{
+      destination: `udir-data-${scheme}.css`,
+      format:   colorScheme.name,
+      filter:      t => t.filePath.endsWith(`${scheme}.json`),
+    }],
+  };
   return acc;
 }, {});
 
-export default  {
+export default {
   source: baseSource,
-  preprocessors: basePreprocessors,
   platforms,
 };
-
