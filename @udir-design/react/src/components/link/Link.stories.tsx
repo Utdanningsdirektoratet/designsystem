@@ -6,7 +6,7 @@ EnvelopeClosedIcon.displayName = 'EnvelopeClosedIcon';
 
 const meta: Meta<typeof Link> = {
   component: Link,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     layout: 'centered',
   },
@@ -69,4 +69,13 @@ export const File: Story = {
       <FilePdfFillIcon aria-hidden /> Samisk i barnehagen (PDF, 299KB)
     </Link>
   ),
+};
+
+export const Focused: Story = {
+  args: Preview.args,
+  parameters: {
+    pseudo: {
+      focusVisible: true,
+    },
+  },
 };

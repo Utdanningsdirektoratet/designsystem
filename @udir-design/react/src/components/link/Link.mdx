@@ -71,7 +71,7 @@ Det skal da informeres om at lenken åpnes i en ny fane.
 
 Det er ikke alltid nødvendig å merke at en lenke er ekstern. Ofte fremgår det tydelig av konteksten. Hvis lenketeksten for eksempel er “Flekkefjord kommune”, vil brukeren naturlig forvente at lenken leder til kommunens nettsider. I slike tilfeller er det unødvendig å legge til ekstra informasjon.
 
-Dersom lenken viser til et spesifikt innhold hos kommunen, som for eksempel informasjon om parkering, kan lenken være "Parkering i Flekkefjord kommune" eller "Parkering (flekkefjord.kommune.no)" Det viktigste er at brukeren ikke blir overrasket over hvor de havner etter å ha klikket.
+Dersom lenken viser til et spesifikt innhold hos kommunen, som for eksempel informasjon om parkering, kan lenken være "Parkering i Flekkefjord kommune" eller "Parkering (flekkefjord.kommune.no)". Det viktigste er at brukeren ikke blir overrasket over hvor de havner etter å ha klikket.
 
 ### Lenke til filer
 
@@ -87,7 +87,7 @@ Følg disse retningslinjene for å lage gode og selvforklarende lenker:
 - Bruk beskrivende og forklarende lenketekster.
 - Skriv korte lenketekster. Ikke prøv å gjenskape informasjon på siden du lenker til, bare si hva innholdet dreier seg om.
 - Start lenketeksten med den mest relevante informasjonen. Det gjør det lettere for brukerne å skanne teksten og finne det de leter etter.
-- Lenketekster skal være unike for hver side.
+- Pass på at du ikke har flere lenker med lik lenketekst på samme side, med mindre de lenker til samme sted.
 
 Vi bruker aldri lenketekster som “Klikk her”, “Se her” og “Les mer”. Det er fordi brukerne ofte skanner teksten og leter etter veier videre. Når brukerne kan lese et meningsbærende innhold i lenketeksten, finner de raskt det innholdet de leter etter.
 
@@ -95,10 +95,10 @@ Vi bruker aldri lenketekster som “Klikk her”, “Se her” og “Les mer”.
 
 ## Tilgjengelighet
 
-`Link` fungerer som anchor tag, og det er ikke endret på funksjonalitet.
-Fokus legger på en bakgrunn rundt lenken.
+`Link` fungerer som et [`Anchor element`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a).
 
-Når brukeren har besøkt en lenke tidligere, vil fargen på lenken endres.
+Når lenken får fokus gjennom tastaturnavigasjon får den bakgrunnsfarge.
+Lenker som er besøkt vil ha en annen farge enn lenker som ikke er besøkt. Dette er for å hjelpe brukerne med å forstå hvilke lenker de allerede har klikket på.
 
 Dersom du bruker bare et bilde som en lenke, må bildet være kodet med alternativ tekst, ellers så vet ikke skjermlesere eller søkemotorer hvor lenken leder til.
 
