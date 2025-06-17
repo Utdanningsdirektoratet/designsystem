@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { List, Heading, Link, Button } from '@udir-design/react/alpha';
+import { List, Heading, Link } from '@udir-design/react/alpha';
 
 const meta: Meta<typeof List.Unordered> = {
   component: List.Unordered,
-  tags: ['alpha'],
+  tags: ['beta'],
 };
 
 export default meta;
@@ -13,9 +13,9 @@ type OrderedStory = StoryObj<typeof List.Ordered>;
 export const Preview: Story = {
   render: (args) => (
     <List.Unordered {...args}>
-      <List.Item>List Item 1</List.Item>
-      <List.Item>List Item 2</List.Item>
-      <List.Item>List Item 3</List.Item>
+      <List.Item>listepunkt 1</List.Item>
+      <List.Item>listepunkt 2</List.Item>
+      <List.Item>listepunkt 3</List.Item>
     </List.Unordered>
   ),
 };
@@ -31,12 +31,10 @@ export const Ordered: Story = {
         Slik gjennomfører dere metoden:
       </Heading>
       <List.Ordered>
-        <List.Item>Presentere en problemstilling</List.Item>
-        <List.Item>
-          Refleksjon og summing: deltakerne går sammen to og to
-        </List.Item>
-        <List.Item>Gjennomgang i plenum</List.Item>
-        <List.Item>Noter ned viktig innspill og refleksjoner</List.Item>
+        <List.Item>Presenter en problemstilling.</List.Item>
+        <List.Item>Gå sammen to og to for å reflektere.</List.Item>
+        <List.Item>Del innsikter og spørsmål i plenum.</List.Item>
+        <List.Item>Noter ned viktige innspill og refleksjoner.</List.Item>
       </List.Ordered>
     </>
   ),
@@ -102,7 +100,6 @@ export const Indented: OrderedStory = {
               Barnehagen skal ivareta barnas behov for omsorg
             </List.Item>
             <List.Item>Barnehagen skal ivareta barnas behov for lek</List.Item>
-            <List.Item>List Item 3.3</List.Item>
           </List.Unordered>
         </List.Item>
       </List.Ordered>
@@ -234,29 +231,5 @@ export const AsNav: Story = {
         ))}
       </List.Unordered>
     </nav>
-  ),
-};
-
-export const AsMenu: Story = {
-  args: {
-    style: {
-      listStyle: 'none',
-      padding: 0,
-    },
-  },
-  render: (args) => (
-    <List.Unordered asChild>
-      <menu {...args}>
-        <List.Item>
-          <Button variant="secondary">Kopier</Button>
-        </List.Item>
-        <List.Item>
-          <Button variant="secondary">Klipp ut</Button>
-        </List.Item>
-        <List.Item>
-          <Button variant="secondary">Lim inn</Button>
-        </List.Item>
-      </menu>
-    </List.Unordered>
   ),
 };

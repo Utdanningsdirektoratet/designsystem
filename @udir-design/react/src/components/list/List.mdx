@@ -55,7 +55,7 @@ En sortert liste brukes når det er viktig at brukerne forstår grader av viktig
 
 Liste kan brukes sammen med en `Heading` for å gi brukeren en rask oversikt over innholdet. Dette er spesielt nyttig for lengre lister.
 
-Størrelse på overskrifter over lister er avhengig av bruksområde, og er derfor noe du må sette selv.
+Størrelse på `Heading` er avhengig av kontekst.
 I løpende tekst anbefaler vi disse størrelsene:
 
 | Størrelse på `List` | Størrelse på `Heading` |
@@ -68,7 +68,7 @@ I løpende tekst anbefaler vi disse størrelsene:
 
 ### Lister i lister
 
-Vi kan legge en liste under et enkelt listepunkt når punktet inneholder tilleggsinformasjon som må deles opp videre. Før du bruker en underliste, vurder om dette er et hovedpunkt som kan stå for seg selv, eller om det er informasjon som passer best som underpunkt. Selvstendige punkter skal ikke ha en underliste.
+Vi kan legge en liste under et enkelt listepunkt når punktet inneholder tilleggsinformasjon som må deles opp videre. Før du bruker en underliste, vurder om dette er et hovedpunkt som kan stå for seg selv, eller om det er informasjon som passer best som underpunkt.
 
 <Canvas of={ListStories.Indented} />
 
@@ -102,14 +102,3 @@ kan du legge et `<nav>` element rundt med en `aria-label` for å gi skjermlesere
 [W3C anbefaler](https://www.w3.org/TR/using-aria/#label-support) å unngå `aria-label` / `aria-labelledby` rett på `ul`/`ol`.
 
 <Canvas of={ListStories.AsNav} />
-
-### List med interaktive elementer
-
-Usorterte lister kan byttest ut med `menu`, som er et semantisk alternativ til `ul`.
-Begge elementene representerer en usortert liste, og nettlesere oppfatter disse likt.
-Forskjellen er at `menu` er tiltenkt interaktive elementer.
-
-Dette er et eksempel der `List.Unordered` har blitt endra til `menu`, og intensjonen
-for listen er å vise knapper som utfører en funksjonalitet i applikasjonen.
-
-<Canvas of={ListStories.AsMenu} />

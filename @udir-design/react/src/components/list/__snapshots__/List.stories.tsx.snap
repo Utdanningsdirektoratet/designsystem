@@ -1,34 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`As Menu 1`] = `
-<menu style="list-style: none; padding: 0px;">
-  <li>
-    <button
-      data-variant="secondary"
-      type="button"
-    >
-      Kopier
-    </button>
-  </li>
-  <li>
-    <button
-      data-variant="secondary"
-      type="button"
-    >
-      Klipp ut
-    </button>
-  </li>
-  <li>
-    <button
-      data-variant="secondary"
-      type="button"
-    >
-      Lim inn
-    </button>
-  </li>
-</menu>
-`;
-
 exports[`As Nav 1`] = `
 <nav aria-label="Snarveier">
   <ul style="list-style: none; padding: 0px;">
@@ -102,9 +73,6 @@ exports[`Indented 1`] = `
       <li>
         Barnehagen skal ivareta barnas behov for lek
       </li>
-      <li>
-        List Item 3.3
-      </li>
     </ul>
   </li>
 </ol>
@@ -119,16 +87,16 @@ exports[`Ordered 1`] = `
 </h2>
 <ol>
   <li>
-    Presentere en problemstilling
+    Presenter en problemstilling.
   </li>
   <li>
-    Refleksjon og summing: deltakerne går sammen to og to
+    Gå sammen to og to for å reflektere.
   </li>
   <li>
-    Gjennomgang i plenum
+    Del innsikter og spørsmål i plenum.
   </li>
   <li>
-    Noter ned viktig innspill og refleksjoner
+    Noter ned viktige innspill og refleksjoner.
   </li>
 </ol>
 `;
@@ -136,13 +104,13 @@ exports[`Ordered 1`] = `
 exports[`Preview 1`] = `
 <ul>
   <li>
-    List Item 1
+    listepunkt 1
   </li>
   <li>
-    List Item 2
+    listepunkt 2
   </li>
   <li>
-    List Item 3
+    listepunkt 3
   </li>
 </ul>
 `;
