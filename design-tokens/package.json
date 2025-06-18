@@ -11,7 +11,7 @@
     "create": "designsystemet tokens create",
     "build": "pnpm clean && designsystemet tokens build -t ./src -o ./dist",
     "clean": "rimraf dist",
-    "build-data": "style-dictionary build --config ./process/sd.config.js --verbose"
+    "build:data-css": "node process/build-data-css.mjs"
   },
   "devDependencies": {
     "@digdir/designsystemet": "1.0.6",

@@ -11,7 +11,7 @@ const prefersColorScheme = (colorScheme, content) => `
 
 export const colorScheme = {
   name: 'ds/css-colorscheme',
-  format: async ({ dictionary, file, options, platform }) => {
+  format: async ({ dictionary, options, platform }) => {
     const { allTokens } = dictionary;
     const { outputReferences, usesDtcg } = options;
     const { selector, colorScheme, layer } = platform;

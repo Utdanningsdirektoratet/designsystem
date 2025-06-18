@@ -1,39 +1,35 @@
 // process/sd.config.js
+import { basename } from 'path';
+import * as SDmod from 'style-dictionary';
 import { register } from '@tokens-studio/sd-transforms';
-import StyleDictionary from 'style-dictionary';
 import { colorScheme } from './formats.js';
 
+const StyleDictionary = SDmod.default || SDmod;
 register(StyleDictionary);
 StyleDictionary.registerFormat(colorScheme);
 
-const schemes = ['light', 'dark'];
-
-// scope your source to pick up nested files
-const baseSource = schemes.map(s =>
-  `visualization/data-visualization/**/${s}.json`
-);
-
-const platforms = schemes.reduce((acc, scheme) => {
-  const isLight = scheme === 'light';
-  acc[`css_${scheme}`] = {
-    source: [`visualization/data-visualization/**/${scheme}.json`],
-    // actually run the tokens-studio preprocessor
-    preprocessors: ['tokens-studio'],
-    selector:    `${isLight ? ':root, ' : ''}[data-color-scheme="${scheme}"]`,
-    layer:       `ds.theme.color-scheme.${scheme}`,
-    transformGroup: 'tokens-studio',
-    transforms: ['name/kebab'],
-    buildPath: 'dist/',
-    files: [{
-      destination: `udir-data-${scheme}.css`,
-      format:   colorScheme.name,
-      filter:      t => t.filePath.endsWith(`${scheme}.json`),
-    }],
-  };
-  return acc;
-}, {});
+const scheme = (process.env.COLOR_SCHEME || 'light').toLowerCase();
+const isLight = scheme === 'light';
 
 export default {
-  source: baseSource,
-  platforms,
+  source: [`visualization/data-visualization/${scheme}.json`],
+  preprocessors: ['tokens-studio'],
+  platforms: {
+    css: {
+      transformGroup: 'tokens-studio',
+      transforms:     ['name/kebab'],
+      buildPath:      'dist/',
+      selector:       isLight
+                          ? ':root, [data-color-scheme="light"]'
+                          : '[data-color-scheme="dark"]',
+      layer:          `ds.theme.color-scheme.${scheme}`,
+      files: [
+        {
+          destination: `udir-data-${scheme}.css`,
+          format:      colorScheme.name,
+          filter:      t => basename(t.filePath).toLowerCase() === `${scheme}.json`,
+        },
+      ],
+    },
+  },
 };
