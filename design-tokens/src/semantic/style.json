@@ -1,4 +1,102 @@
 {
+  "typography": {
+    "heading": {
+      "2xl": {
+        "$type": "typography",
+        "$value": "{typography-style.heading.2xl}"
+      },
+      "xl": {
+        "$type": "typography",
+        "$value": "{typography-style.heading.xl}"
+      },
+      "lg": {
+        "$type": "typography",
+        "$value": "{typography-style.heading.lg}"
+      },
+      "md": {
+        "$type": "typography",
+        "$value": "{typography-style.heading.md}"
+      },
+      "sm": {
+        "$type": "typography",
+        "$value": "{typography-style.heading.sm}"
+      },
+      "xs": {
+        "$type": "typography",
+        "$value": "{typography-style.heading.xs}"
+      },
+      "2xs": {
+        "$type": "typography",
+        "$value": "{typography-style.heading.2xs}"
+      }
+    },
+    "body": {
+      "xl": {
+        "$type": "typography",
+        "$value": "{typography-style.body.xl}"
+      },
+      "lg": {
+        "$type": "typography",
+        "$value": "{typography-style.body.lg}"
+      },
+      "md": {
+        "$type": "typography",
+        "$value": "{typography-style.body.md}"
+      },
+      "sm": {
+        "$type": "typography",
+        "$value": "{typography-style.body.sm}"
+      },
+      "xs": {
+        "$type": "typography",
+        "$value": "{typography-style.body.xs}"
+      },
+      "short": {
+        "xl": {
+          "$type": "typography",
+          "$value": "{typography-style.body.short.xl}"
+        },
+        "lg": {
+          "$type": "typography",
+          "$value": "{typography-style.body.short.lg}"
+        },
+        "md": {
+          "$type": "typography",
+          "$value": "{typography-style.body.short.md}"
+        },
+        "sm": {
+          "$type": "typography",
+          "$value": "{typography-style.body.short.sm}"
+        },
+        "xs": {
+          "$type": "typography",
+          "$value": "{typography-style.body.short.xs}"
+        }
+      },
+      "long": {
+        "xl": {
+          "$type": "typography",
+          "$value": "{typography-style.body.long.xl}"
+        },
+        "lg": {
+          "$type": "typography",
+          "$value": "{typography-style.body.long.lg}"
+        },
+        "md": {
+          "$type": "typography",
+          "$value": "{typography-style.body.long.md}"
+        },
+        "sm": {
+          "$type": "typography",
+          "$value": "{typography-style.body.long.sm}"
+        },
+        "xs": {
+          "$type": "typography",
+          "$value": "{typography-style.body.long.xs}"
+        }
+      }
+    }
+  },
   "opacity": {
     "disabled": {
       "$type": "opacity",
