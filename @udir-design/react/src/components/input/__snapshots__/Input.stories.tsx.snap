@@ -645,29 +645,14 @@ exports[`Input Types 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<div>
-  <label
-    data-weight="medium"
-    for="components-input--preview"
-  >
-    Input
-  </label>
-  <input
-    aria-invalid="false"
-    id="components-input--preview"
-    type="text"
-    checked
-    name="inputs"
-    aria-describedby="components-input--preview:validation"
-  >
-  <p
-    data-field="validation"
-    hidden
-    id="components-input--preview:validation"
-  >
-    Feilmelding
-  </p>
-</div>
+<input
+  aria-invalid="false"
+  aria-label="input"
+  id="components-input--preview"
+  type="text"
+  checked
+  name="inputs"
+>
 `;
 
 exports[`Radio 1`] = `
