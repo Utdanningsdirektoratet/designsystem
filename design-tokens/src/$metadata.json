@@ -5,11 +5,10 @@
     "primitives/modes/size/medium",
     "primitives/modes/size/large",
     "primitives/modes/size/global",
-    "primitives/modes/typography/size/small",
-    "primitives/modes/typography/size/medium",
-    "primitives/modes/typography/size/large",
-    "primitives/modes/typography/primary/udir",
-    "primitives/modes/typography/secondary/udir",
+    "primitives/modes/typography/udir",
+    "primitives/modes/typography/size/small/udir",
+    "primitives/modes/typography/size/medium/udir",
+    "primitives/modes/typography/size/large/udir",
     "primitives/modes/color-scheme/dark/global",
     "primitives/modes/color-scheme/dark/udir",
     "primitives/modes/color-scheme/light/global",
@@ -20,7 +19,6 @@
     "semantic/modes/main-color/accent",
     "semantic/modes/support-color/support1",
     "semantic/modes/support-color/support2",
-    "semantic/style",
-    "semantic/style.overrides"
+    "semantic/style"
   ]
 }
