@@ -6,7 +6,7 @@ import { Button, Divider, Paragraph } from '@udir-design/react/alpha';
 
 const meta: Meta<typeof Textfield> = {
   component: Textfield,
-  tags: ['alpha'],
+  tags: ['beta'],
   argTypes: {
     multiline: {
       type: 'boolean',
