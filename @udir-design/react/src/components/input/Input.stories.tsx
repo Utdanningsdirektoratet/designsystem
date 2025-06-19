@@ -18,7 +18,7 @@ type Story = StoryObj<typeof Input>;
 
 export default {
   component: Input,
-  tags: ['alpha'],
+  tags: ['beta'],
   argTypes: {
     role: {
       control: 'radio',
@@ -37,21 +37,13 @@ export const Preview: Story = {
     disabled: false,
     readOnly: false,
     type: 'text',
-    role: 'checkbox',
     name: 'inputs',
+    'aria-label': 'input',
   },
   render: (args, context) => {
     if (args.role !== 'switch') args.role = undefined; // Ensure we only keep switch role in storybook
 
-    return (
-      <Field>
-        <Label>Input</Label>
-        <Input {...args} defaultChecked id={context.id} />
-        <ValidationMessage hidden={!args['aria-invalid']}>
-          Feilmelding
-        </ValidationMessage>
-      </Field>
-    );
+    return <Input {...args} defaultChecked id={context.id} />;
   },
   play: async ({ canvasElement, step, args }) => {
     const canvas = within(canvasElement);
