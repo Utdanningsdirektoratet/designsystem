@@ -4,7 +4,7 @@ import { expect, within } from 'storybook/test';
 
 export default {
   component: Breadcrumbs,
-  tags: ['alpha'],
+  tags: ['beta'],
 } as Meta<typeof Breadcrumbs>;
 
 type Story = StoryObj<typeof Breadcrumbs>;
