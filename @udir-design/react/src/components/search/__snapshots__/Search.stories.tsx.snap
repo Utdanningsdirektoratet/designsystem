@@ -3,34 +3,26 @@
 exports[`Controlled 1`] = `
 <form style="display: flex; flex-direction: column; gap: var(--ds-size-2);">
   <div>
-    <label
-      data-weight="medium"
-      for="search-input-controlled"
+    <input
+      placeholder
+      id="search-input-controlled"
+      aria-label="Søk"
+      type="search"
+      value
     >
-      Hva leter du etter?
-    </label>
-    <div>
-      <input
-        type="search"
-        placeholder
-        id="search-input-controlled"
-        aria-label="Søk"
-        value
-      >
-      <button
-        data-icon="true"
-        data-variant="tertiary"
-        type="reset"
-        aria-label="Tøm"
-      >
-      </button>
-      <button
-        data-variant="primary"
-        type="submit"
-      >
-        Søk
-      </button>
-    </div>
+    <button
+      data-icon="true"
+      data-variant="tertiary"
+      type="reset"
+      aria-label="Tøm"
+    >
+    </button>
+    <button
+      data-variant="primary"
+      type="submit"
+    >
+      Søk
+    </button>
   </div>
   <div style="display: flex; gap: var(--ds-size-2); align-items: center;">
     <p
@@ -75,13 +67,6 @@ exports[`Form 1`] = `
     </button>
   </div>
 </form>
-<p
-  data-variant="default"
-  data-size="md"
-  style="margin-top: var(--ds-size-2);"
->
-  Søkeord:
-</p>
 `;
 
 exports[`Preview 1`] = `
@@ -180,7 +165,7 @@ exports[`With Label 1`] = `
     data-weight="medium"
     for="components-search--with-label"
   >
-    Hva leter du etter?
+    Søk i læreplaner
   </label>
   <div>
     <input
