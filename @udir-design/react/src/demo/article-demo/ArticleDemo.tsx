@@ -72,8 +72,8 @@ export const ArticleDemo = ({ ...props }: ArticleDemoProps) => {
         <ContentSection section={section1} />
         <ContentSection section={section2} />
         <ContentSection section={section3} />
-        <div className={classes.changes}>
-          <Card>
+        <Card>
+          <Card.Block>
             <Heading level={2} data-size="sm">
               Endringer i verktøyet
             </Heading>
@@ -81,16 +81,14 @@ export const ArticleDemo = ({ ...props }: ArticleDemoProps) => {
               Vi går igjennom alle innspillene vi får, og med jevne mellomrom
               prioriterer vi hva vi gjør av endringer.
             </Paragraph>
-          </Card>
-          <div>
-            {changes.map(({ summary, content }, i) => (
-              <Details key={i}>
-                <Details.Summary>{summary}</Details.Summary>
-                <Details.Content>{content}</Details.Content>
-              </Details>
-            ))}
-          </div>
-        </div>
+          </Card.Block>
+          {changes.map(({ summary, content }, i) => (
+            <Details key={i}>
+              <Details.Summary>{summary}</Details.Summary>
+              <Details.Content>{content}</Details.Content>
+            </Details>
+          ))}
+        </Card>
         <Divider />
         <Button
           variant="secondary"

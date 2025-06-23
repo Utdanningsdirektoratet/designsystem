@@ -26,12 +26,6 @@
   border-color: var(--ds-color-support2-border-subtle);
 }
 
-.changes {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-3);
-}
-
 .headingWrapper {
   display: flex;
   justify-content: space-between;

@@ -238,8 +238,8 @@ exports[`Article Story 1`] = `
           Har du tekniske spørsmål, så send en e-post til lpv@udir.no. Hvis du bytter Feide-bruker, så hjelper vi deg også med å koble planer du allerede har til din nye Feide-bruker.
         </p>
       </section>
-      <div>
-        <div data-variant="default">
+      <div data-variant="default">
+        <div>
           <h2 data-size="sm">
             Endringer i verktøyet
           </h2>
@@ -247,73 +247,71 @@ exports[`Article Story 1`] = `
             Vi går igjennom alle innspillene vi får, og med jevne mellomrom prioriterer vi hva vi gjør av endringer.
           </p>
         </div>
-        <div>
-          <u-details data-variant="default">
-            <u-summary
-              aria-expanded="false"
-              role="button"
-              slot="summary"
-              tabindex="0"
-            >
-              Oversikt - 19.11.2022
-            </u-summary>
-            <div>
-              Vi har lagt til en ny knapp hvor du får oversikt over hvilke deler av læreplanen du har brukt i planene dine.
-            </div>
-          </u-details>
-          <u-details data-variant="default">
-            <u-summary
-              aria-expanded="false"
-              role="button"
-              slot="summary"
-              tabindex="0"
-            >
-              Tilgang for instruktører i bedrift - 09.11.2022
-            </u-summary>
-            <div>
-              Vi har lagt til pålogging med ID-porten slik at også instruktører i bedrift kan bruke planleggingsverktøyet.
-            </div>
-          </u-details>
-          <u-details data-variant="default">
-            <u-summary
-              aria-expanded="false"
-              role="button"
-              slot="summary"
-              tabindex="0"
-            >
-              Invitere til flere planer - 25.01.2022
-            </u-summary>
-            <div>
-              Vi har fått innspill om at det er tungvindt å gå inn i en og en plan for å invitere samarbeidspartnere. Vi har lagt til mulighet for å invitere samarbeidspartnere til mange planer samtidig.
-            </div>
-          </u-details>
-          <u-details data-variant="default">
-            <u-summary
-              aria-expanded="false"
-              role="button"
-              slot="summary"
-              tabindex="0"
-            >
-              Velge språk - 10.01.2022
-            </u-summary>
-            <div>
-              Vi har lagt til funksjon for å velge språk slik at verktøyet er tilgjengelig på bokmål, nynorsk, nordsamisk, sørsamisk og lulesamisk. Det er mulig å velge språk på brukerinnstillinger og på hver enkelt plan.
-            </div>
-          </u-details>
-          <u-details data-variant="default">
-            <u-summary
-              aria-expanded="false"
-              role="button"
-              slot="summary"
-              tabindex="0"
-            >
-              Overføring av planer når en bruker slettes - 22.06.2022
-            </u-summary>
-            <div>
-              Tidligere var det slik at hvis en bruker slettet seg fra planleggingsverktøyet, så ble alle planene personen hadde opprettet også slettet. Vi fikk tilbakemelding om at dette var uheldig for samarbeidspartnerne. Vi har derfor endret dette. Nå er det slik: Den som har  opprettet en plan, har rollen som administrator. Hvis administrator av en plan slettes som bruker, blir ikke planen slettet hvis det er samarbeidspartnere på planen. Rollen som administrator blir overført til den samarbeidspartneren som står øverst på lista i planen. Samtykkeerklæringen er oppdatert i tråd med denne endringen. Det er fortsatt slik at både administrator og samarbeidspartnere kan endre en plan, men bare administrator kan slette den
-            </div>
-          </u-details>
-        </div>
+        <u-details data-variant="default">
+          <u-summary
+            aria-expanded="false"
+            role="button"
+            slot="summary"
+            tabindex="0"
+          >
+            Oversikt - 19.11.2022
+          </u-summary>
+          <div>
+            Vi har lagt til en ny knapp hvor du får oversikt over hvilke deler av læreplanen du har brukt i planene dine.
+          </div>
+        </u-details>
+        <u-details data-variant="default">
+          <u-summary
+            aria-expanded="false"
+            role="button"
+            slot="summary"
+            tabindex="0"
+          >
+            Tilgang for instruktører i bedrift - 09.11.2022
+          </u-summary>
+          <div>
+            Vi har lagt til pålogging med ID-porten slik at også instruktører i bedrift kan bruke planleggingsverktøyet.
+          </div>
+        </u-details>
+        <u-details data-variant="default">
+          <u-summary
+            aria-expanded="false"
+            role="button"
+            slot="summary"
+            tabindex="0"
+          >
+            Invitere til flere planer - 25.01.2022
+          </u-summary>
+          <div>
+            Vi har fått innspill om at det er tungvindt å gå inn i en og en plan for å invitere samarbeidspartnere. Vi har lagt til mulighet for å invitere samarbeidspartnere til mange planer samtidig.
+          </div>
+        </u-details>
+        <u-details data-variant="default">
+          <u-summary
+            aria-expanded="false"
+            role="button"
+            slot="summary"
+            tabindex="0"
+          >
+            Velge språk - 10.01.2022
+          </u-summary>
+          <div>
+            Vi har lagt til funksjon for å velge språk slik at verktøyet er tilgjengelig på bokmål, nynorsk, nordsamisk, sørsamisk og lulesamisk. Det er mulig å velge språk på brukerinnstillinger og på hver enkelt plan.
+          </div>
+        </u-details>
+        <u-details data-variant="default">
+          <u-summary
+            aria-expanded="false"
+            role="button"
+            slot="summary"
+            tabindex="0"
+          >
+            Overføring av planer når en bruker slettes - 22.06.2022
+          </u-summary>
+          <div>
+            Tidligere var det slik at hvis en bruker slettet seg fra planleggingsverktøyet, så ble alle planene personen hadde opprettet også slettet. Vi fikk tilbakemelding om at dette var uheldig for samarbeidspartnerne. Vi har derfor endret dette. Nå er det slik: Den som har  opprettet en plan, har rollen som administrator. Hvis administrator av en plan slettes som bruker, blir ikke planen slettet hvis det er samarbeidspartnere på planen. Rollen som administrator blir overført til den samarbeidspartneren som står øverst på lista i planen. Samtykkeerklæringen er oppdatert i tråd med denne endringen. Det er fortsatt slik at både administrator og samarbeidspartnere kan endre en plan, men bare administrator kan slette den
+          </div>
+        </u-details>
       </div>
       <hr aria-hidden="true">
       <button
