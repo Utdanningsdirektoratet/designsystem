@@ -746,60 +746,156 @@ exports[`Multiple Header Rows 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<table
-  data-zebra="true"
-  data-color="neutral"
->
+<table data-color="neutral">
   <caption>
-    Table caption
+    Sensur FSP6236 Tegnspråk III
   </caption>
   <thead>
     <tr>
       <th>
-        Header 1
+        <div>
+          <input
+            aria-label="Velg alle ansatte"
+            id="checkbox-select-all"
+            type="checkbox"
+            value
+            name="my-checkbox"
+          >
+        </div>
+      </th>
+      <th aria-sort="none">
+        <button type="button">
+          Navn
+        </button>
       </th>
       <th>
-        Header 2
+        E-post
       </th>
       <th>
-        Header 3
+        Status
+      </th>
+      <th>
+        Besvarelser
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>
-        Cell 1
+        <div>
+          <input
+            id="checkbox-1"
+            aria-label="Velg [object Object]"
+            type="checkbox"
+            value="1"
+            name="my-checkbox"
+          >
+        </div>
       </td>
       <td>
-        Cell 2
+        Lise Nordmann
       </td>
       <td>
-        Cell 3
+        lise@nordmann.no
+      </td>
+      <td>
+        <span data-color="info">
+          I arbeid
+        </span>
+      </td>
+      <td style="text-align: right;">
+        19
       </td>
     </tr>
     <tr>
       <td>
-        Cell 4
+        <div>
+          <input
+            id="checkbox-2"
+            aria-label="Velg [object Object]"
+            type="checkbox"
+            value="2"
+            name="my-checkbox"
+          >
+        </div>
       </td>
       <td>
-        Cell 5
+        Kari Nordmann
       </td>
       <td>
-        Cell 6
+        kari@nordmann.no
+      </td>
+      <td>
+        <span data-color="success">
+          Ferdig
+        </span>
+      </td>
+      <td style="text-align: right;">
+        0
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div>
+          <input
+            id="checkbox-3"
+            aria-label="Velg [object Object]"
+            type="checkbox"
+            value="3"
+            name="my-checkbox"
+          >
+        </div>
+      </td>
+      <td>
+        Ola Nordmann
+      </td>
+      <td>
+        ola@nordmann.no
+      </td>
+      <td>
+        <span data-color="info">
+          I arbeid
+        </span>
+      </td>
+      <td style="text-align: right;">
+        14
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div>
+          <input
+            id="checkbox-4"
+            aria-label="Velg [object Object]"
+            type="checkbox"
+            value="4"
+            name="my-checkbox"
+          >
+        </div>
+      </td>
+      <td>
+        Per Nordmann
+      </td>
+      <td>
+        per@nordmann.no
+      </td>
+      <td>
+        <span data-color="warning">
+          Ikke begynt
+        </span>
+      </td>
+      <td style="text-align: right;">
+        35
       </td>
     </tr>
   </tbody>
   <tfoot>
     <tr>
-      <td>
-        Footer 1
+      <td colspan="4">
+        Totalt gjenstår
       </td>
-      <td>
-        Footer 2
-      </td>
-      <td>
-        Footer 3
+      <td style="text-align: right;">
+        68
       </td>
     </tr>
   </tfoot>
@@ -2525,82 +2621,6 @@ exports[`With Border 1`] = `
     data-tinted-column-header="true"
     data-tinted-row-header="true"
   >
-    <tbody>
-      <tr>
-        <td>
-          Cell 11
-        </td>
-        <td>
-          Cell 12
-        </td>
-        <td>
-          Cell 13
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Cell 21
-        </td>
-        <td>
-          Cell 22
-        </td>
-        <td>
-          Cell 23
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Cell 31
-        </td>
-        <td>
-          Cell 32
-        </td>
-        <td>
-          Cell 33
-        </td>
-      </tr>
-    </tbody>
-    <tbody>
-      <tr>
-        <td>
-          Cell 11
-        </td>
-        <td>
-          Cell 12
-        </td>
-        <td>
-          Cell 13
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Cell 21
-        </td>
-        <td>
-          Cell 22
-        </td>
-        <td>
-          Cell 23
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Cell 31
-        </td>
-        <td>
-          Cell 32
-        </td>
-        <td>
-          Cell 33
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <table
-    data-border="true"
-    data-tinted-column-header="true"
-    data-tinted-row-header="true"
-  >
     <thead>
       <tr>
         <th>
@@ -2614,47 +2634,6 @@ exports[`With Border 1`] = `
         </th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>
-          Cell 11
-        </td>
-        <td>
-          Cell 12
-        </td>
-        <td>
-          Cell 13
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Cell 21
-        </td>
-        <td>
-          Cell 22
-        </td>
-        <td>
-          Cell 23
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Cell 31
-        </td>
-        <td>
-          Cell 32
-        </td>
-        <td>
-          Cell 33
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <table
-    data-border="true"
-    data-tinted-column-header="true"
-    data-tinted-row-header="true"
-  >
     <tbody>
       <tr>
         <td>

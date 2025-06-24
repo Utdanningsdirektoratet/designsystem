@@ -1,17 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import {
-  Checkbox,
-  Table,
-  TableHeaderCellProps,
-  Textfield,
-} from '@udir-design/react/alpha';
+import { Checkbox, Tag, Textfield } from '@udir-design/react/alpha';
+import { Table, TableHeaderCellProps } from '@udir-design/react/beta';
 import { useState } from 'react';
 import { useCheckboxGroup } from '@udir-design/react/alpha';
 import { expect, within } from 'storybook/test';
 
 const meta: Meta<typeof Table> = {
   component: Table,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     customStyles: {
       width: 'fit-content',
@@ -25,7 +21,7 @@ type Story = StoryObj<typeof Table>;
 
 export const Preview: Story = {
   args: {
-    zebra: true,
+    zebra: false,
     stickyHeader: false,
     border: false,
     hover: false,
@@ -34,33 +30,85 @@ export const Preview: Story = {
     'data-color': 'neutral',
   },
   render: (args) => {
+    const [sortField, setSortField] = useState<
+      keyof (typeof dummyData)[0] | null
+    >(null);
+    const [sortDirection, setSortDirection] =
+      useState<TableHeaderCellProps['sort']>(undefined);
+    const handleSort = (field: keyof (typeof dummyData)[0]) => {
+      if (sortField === field && sortDirection === 'descending') {
+        setSortField(null);
+        setSortDirection(undefined);
+      } else {
+        setSortField(field);
+        setSortDirection(
+          sortField === field && sortDirection === 'ascending'
+            ? 'descending'
+            : 'ascending',
+        );
+      }
+    };
+    const sortedData = [...dummyData].sort((a, b) => {
+      if (sortField === null) return 0;
+      if (a[sortField] < b[sortField])
+        return sortDirection === 'ascending' ? -1 : 1;
+      if (a[sortField] > b[sortField])
+        return sortDirection === 'ascending' ? 1 : -1;
+      return 0;
+    });
+    const { getCheckboxProps } = useCheckboxGroup({
+      name: 'my-checkbox',
+    });
     return (
       <Table {...args}>
-        <caption>Table caption</caption>
+        <caption>Sensur FSP6236 Tegnspråk III</caption>
         <Table.Head>
           <Table.Row>
-            <Table.HeaderCell>Header 1</Table.HeaderCell>
-            <Table.HeaderCell>Header 2</Table.HeaderCell>
-            <Table.HeaderCell>Header 3</Table.HeaderCell>
+            <Table.HeaderCell>
+              <Checkbox
+                aria-label="Velg alle ansatte"
+                id="checkbox-select-all"
+                {...getCheckboxProps({
+                  allowIndeterminate: true,
+                })}
+              />
+            </Table.HeaderCell>
+            <Table.HeaderCell
+              sort={sortField === 'navn' ? sortDirection : 'none'}
+              onClick={() => handleSort('navn')}
+            >
+              Navn
+            </Table.HeaderCell>
+            <Table.HeaderCell>E-post</Table.HeaderCell>
+            <Table.HeaderCell>Status</Table.HeaderCell>
+            <Table.HeaderCell>Besvarelser</Table.HeaderCell>
           </Table.Row>
         </Table.Head>
         <Table.Body>
-          <Table.Row>
-            <Table.Cell>Cell 1</Table.Cell>
-            <Table.Cell>Cell 2</Table.Cell>
-            <Table.Cell>Cell 3</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>Cell 4</Table.Cell>
-            <Table.Cell>Cell 5</Table.Cell>
-            <Table.Cell>Cell 6</Table.Cell>
-          </Table.Row>
+          {sortedData.map((row) => (
+            <Table.Row key={row.id}>
+              <Table.Cell>
+                <Checkbox
+                  id={'checkbox-' + row.id}
+                  aria-label={`Velg ${row}`}
+                  {...getCheckboxProps(String(row.id))}
+                />
+              </Table.Cell>
+              <Table.Cell>{row.navn}</Table.Cell>
+              <Table.Cell>{row.epost}</Table.Cell>
+              <Table.Cell>
+                <Tag data-color={tagColor(row.status)}>{row.status}</Tag>
+              </Table.Cell>
+              <Table.Cell style={{ textAlign: 'right' }}>
+                {row.prover}
+              </Table.Cell>
+            </Table.Row>
+          ))}
         </Table.Body>
         <Table.Foot>
           <Table.Row>
-            <Table.Cell>Footer 1</Table.Cell>
-            <Table.Cell>Footer 2</Table.Cell>
-            <Table.Cell>Footer 3</Table.Cell>
+            <Table.Cell colSpan={4}>Totalt gjenstår</Table.Cell>
+            <Table.Cell style={{ textAlign: 'right' }}>68</Table.Cell>
           </Table.Row>
         </Table.Foot>
       </Table>
@@ -148,26 +196,47 @@ const dummyData = [
     navn: 'Lise Nordmann',
     epost: 'lise@nordmann.no',
     telefon: '22345678',
+    prover: 19,
+    status: 'I arbeid',
   },
   {
     id: 2,
     navn: 'Kari Nordmann',
     epost: 'kari@nordmann.no',
     telefon: '87654321',
+    prover: 0,
+    status: 'Ferdig',
   },
   {
     id: 3,
     navn: 'Ola Nordmann',
     epost: 'ola@nordmann.no',
     telefon: '32345678',
+    prover: 14,
+    status: 'I arbeid',
   },
   {
     id: 4,
     navn: 'Per Nordmann',
     epost: 'per@nordmann.no',
     telefon: '12345678',
+    prover: 35,
+    status: 'Ikke begynt',
   },
 ];
+
+const tagColor = (status: string) => {
+  switch (status) {
+    case 'Ikke begynt':
+      return 'warning';
+    case 'I arbeid':
+      return 'info';
+    case 'Ferdig':
+      return 'success';
+    default:
+      return 'info';
+  }
+};
 
 export const Sortable: Story = {
   render(args) {
@@ -429,26 +498,6 @@ export const WithBorder: Story = {
     return (
       <div style={{ display: 'grid', gap: '1rem' }}>
         <Table {...args}>
-          <Table.Body>
-            {rows.map((row) => (
-              <Table.Row key={row}>
-                <Table.Cell>{`Cell ${row}1`}</Table.Cell>
-                <Table.Cell>{`Cell ${row}2`}</Table.Cell>
-                <Table.Cell>{`Cell ${row}3`}</Table.Cell>
-              </Table.Row>
-            ))}
-          </Table.Body>
-          <Table.Body>
-            {rows.map((row) => (
-              <Table.Row key={row}>
-                <Table.Cell>{`Cell ${row}1`}</Table.Cell>
-                <Table.Cell>{`Cell ${row}2`}</Table.Cell>
-                <Table.Cell>{`Cell ${row}3`}</Table.Cell>
-              </Table.Row>
-            ))}
-          </Table.Body>
-        </Table>
-        <Table {...args}>
           <Table.Head>
             <Table.Row>
               <Table.HeaderCell>Header 3</Table.HeaderCell>
@@ -456,17 +505,6 @@ export const WithBorder: Story = {
               <Table.HeaderCell>Header 5</Table.HeaderCell>
             </Table.Row>
           </Table.Head>
-          <Table.Body>
-            {rows.map((row) => (
-              <Table.Row key={row}>
-                <Table.Cell>{`Cell ${row}1`}</Table.Cell>
-                <Table.Cell>{`Cell ${row}2`}</Table.Cell>
-                <Table.Cell>{`Cell ${row}3`}</Table.Cell>
-              </Table.Row>
-            ))}
-          </Table.Body>
-        </Table>
-        <Table {...args}>
           <Table.Body>
             {rows.map((row) => (
               <Table.Row key={row}>
