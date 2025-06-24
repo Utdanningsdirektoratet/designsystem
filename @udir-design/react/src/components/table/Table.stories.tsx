@@ -27,8 +27,11 @@ export const Preview: Story = {
   args: {
     zebra: true,
     stickyHeader: false,
-    border: true,
-    hover: true,
+    border: false,
+    hover: false,
+    tintedColumnHeader: false,
+    tintedRowHeader: false,
+    'data-color': 'neutral',
   },
   render: (args) => {
     return (
@@ -67,13 +70,15 @@ export const Preview: Story = {
 
 export const ColumnAndRowHeaders: Story = {
   args: {
-    zebra: true,
+    zebra: false,
     stickyHeader: false,
     border: false,
     hover: true,
+    tintedColumnHeader: true,
+    tintedRowHeader: true,
   },
   render: (args) => (
-    <Table {...args}>
+    <Table {...args} data-color="accent">
       <caption
         style={{
           fontSize: 'var(--ds-font-size-3)',
@@ -245,9 +250,15 @@ export const StickyHeader: Story = {
   args: {
     tabIndex: 0,
     stickyHeader: true,
+    zebra: true,
   },
   parameters: {
-    customStyles: { height: '280px', overflow: 'auto', padding: 0 },
+    customStyles: {
+      height: '280px',
+      width: '500px',
+      overflow: 'auto',
+      padding: 0,
+    },
   },
   render: (args) => {
     const rows = Array.from({ length: 50 }, (_, i) => i + 1);
@@ -255,17 +266,31 @@ export const StickyHeader: Story = {
       <Table {...args}>
         <Table.Head>
           <Table.Row>
+            <Table.Cell />
             <Table.HeaderCell>Header 1</Table.HeaderCell>
             <Table.HeaderCell>Header 2</Table.HeaderCell>
             <Table.HeaderCell>Header 3</Table.HeaderCell>
+            <Table.HeaderCell>Header 4</Table.HeaderCell>
+            <Table.HeaderCell>Header 5</Table.HeaderCell>
+            <Table.HeaderCell>Header 6</Table.HeaderCell>
+            <Table.HeaderCell>Header 7</Table.HeaderCell>
+            <Table.HeaderCell>Header 8</Table.HeaderCell>
+            <Table.HeaderCell>Header 9</Table.HeaderCell>
           </Table.Row>
         </Table.Head>
         <Table.Body>
           {rows.map((row) => (
             <Table.Row key={row}>
+              <Table.HeaderCell scope="row">Row {row}</Table.HeaderCell>
               <Table.Cell>{`Cell ${row}1`}</Table.Cell>
               <Table.Cell>{`Cell ${row}2`}</Table.Cell>
               <Table.Cell>{`Cell ${row}3`}</Table.Cell>
+              <Table.Cell>{`Cell ${row}4`}</Table.Cell>
+              <Table.Cell>{`Cell ${row}5`}</Table.Cell>
+              <Table.Cell>{`Cell ${row}6`}</Table.Cell>
+              <Table.Cell>{`Cell ${row}7`}</Table.Cell>
+              <Table.Cell>{`Cell ${row}8`}</Table.Cell>
+              <Table.Cell>{`Cell ${row}9`}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
@@ -396,6 +421,8 @@ export const MultipleHeaderRows: Story = {
 export const WithBorder: Story = {
   args: {
     border: true,
+    tintedColumnHeader: true,
+    tintedRowHeader: true,
   },
   render: (args) => {
     const rows = Array.from({ length: 3 }, (_, i) => i + 1);
