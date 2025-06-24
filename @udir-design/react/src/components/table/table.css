@@ -1,0 +1,40 @@
+.ds-table {
+  --dsc-table-background--zebra: var(--ds-color-neutral-background-tinted);
+  --dsc-table-header-background--sorted: var(--ds-color-surface-active);
+
+  &[data-zebra] > thead > tr > :is(th, td) {
+    background: var(--ds-color-neutral-background-default);
+  }
+
+  &[data-zebra][data-tinted-column-header] > thead > tr > :is(th, td) {
+    background: var(--ds-color-surface-tinted);
+  }
+
+  & > tfoot > tr:first-child > :is(th, td) {
+    background: var(--ds-color-neutral-background-default);
+  }
+
+  &[data-tinted-column-header] {
+    --dsc-table-header-background: var(--ds-color-surface-tinted);
+  }
+
+  &[data-tinted-row-header] th[scope='row'] {
+    background-color: var(--ds-color-surface-tinted);
+  }
+
+  &[data-sticky-header] {
+    th[scope='row'] {
+      background-color: var(--ds-color-neutral-background-default);
+      position: sticky;
+      left: 0;
+    }
+
+    &[data-tinted-column-header] > thead > tr > :is(th, td) {
+      background-color: var(--ds-color-surface-tinted);
+    }
+
+    &[data-tinted-row-header] th[scope='row'] {
+      background-color: var(--ds-color-surface-tinted);
+    }
+  }
+}

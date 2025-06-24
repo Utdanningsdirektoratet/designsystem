@@ -71,6 +71,8 @@ Bruk tabelloverskrifter til å fortelle brukerne hva som er innholdet i radene o
 Bruk [scope-atributtet](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th#scope) til å hjelpe brukere av hjelpeteknologi til å
 skille mellom overskriftene på rader og kolonner.
 
+Tabelloverskrifter kan få en tinted farge. Dette kontrolleres med to props for column- og row headers respektivt: `tintedColumnHeader` og `tintedRowHeader`. Vær bevisst på når man velger å bruke tinted headere, og vær gjerne konsekvent i hvert system.
+
 <Canvas of={TableStories.ColumnAndRowHeaders} />
 
 ### Tall i en tabell
@@ -87,7 +89,7 @@ Tabellen skal kunne vises i den bredden som innholdet krever.
 
 ### Sticky header
 
-Bruk `stickyHeader={true}` for å få en sticky header.
+Bruk `stickyHeader={true}` for å få en sticky header som gjør det lettere å få oversikt i større tabeller med mye informasjon. Dette gjelder både row- og column headere.
 
 <Canvas of={TableStories.StickyHeader} />
 
