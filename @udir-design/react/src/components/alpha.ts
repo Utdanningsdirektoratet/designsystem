@@ -23,7 +23,6 @@ export * from './select/Select';
 export * from './skipLink/SkipLink';
 export * from './suggestion/Suggestion';
 export * from './switch/Switch';
-export * from './table/Table';
 export * from './tabs/Tabs';
 export * from './tag/Tag';
 export * from './textarea/Textarea';

@@ -3,7 +3,9 @@
 exports[`Column And Row Headers 1`] = `
 <table
   data-hover="true"
-  data-zebra="true"
+  data-color="accent"
+  data-tinted-column-header="true"
+  data-tinted-row-header="true"
 >
   <caption style="font-size: var(--ds-font-size-3); caption-side: bottom; text-align: center; font-weight: normal; margin-top: var(--ds-size-2);">
     Svarprosent for elevundersøkelsen nasjonalt
@@ -745,9 +747,8 @@ exports[`Multiple Header Rows 1`] = `
 
 exports[`Preview 1`] = `
 <table
-  data-border="true"
-  data-hover="true"
   data-zebra="true"
+  data-color="neutral"
 >
   <caption>
     Table caption
@@ -876,10 +877,13 @@ exports[`Sortable 1`] = `
 exports[`Sticky Header 1`] = `
 <table
   data-sticky-header="true"
+  data-zebra="true"
   tabindex="0"
 >
   <thead>
     <tr>
+      <td>
+      </td>
       <th>
         Header 1
       </th>
@@ -889,10 +893,31 @@ exports[`Sticky Header 1`] = `
       <th>
         Header 3
       </th>
+      <th>
+        Header 4
+      </th>
+      <th>
+        Header 5
+      </th>
+      <th>
+        Header 6
+      </th>
+      <th>
+        Header 7
+      </th>
+      <th>
+        Header 8
+      </th>
+      <th>
+        Header 9
+      </th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <th scope="row">
+        Row 1
+      </th>
       <td>
         Cell 11
       </td>
@@ -902,8 +927,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 13
       </td>
+      <td>
+        Cell 14
+      </td>
+      <td>
+        Cell 15
+      </td>
+      <td>
+        Cell 16
+      </td>
+      <td>
+        Cell 17
+      </td>
+      <td>
+        Cell 18
+      </td>
+      <td>
+        Cell 19
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 2
+      </th>
       <td>
         Cell 21
       </td>
@@ -913,8 +959,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 23
       </td>
+      <td>
+        Cell 24
+      </td>
+      <td>
+        Cell 25
+      </td>
+      <td>
+        Cell 26
+      </td>
+      <td>
+        Cell 27
+      </td>
+      <td>
+        Cell 28
+      </td>
+      <td>
+        Cell 29
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 3
+      </th>
       <td>
         Cell 31
       </td>
@@ -924,8 +991,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 33
       </td>
+      <td>
+        Cell 34
+      </td>
+      <td>
+        Cell 35
+      </td>
+      <td>
+        Cell 36
+      </td>
+      <td>
+        Cell 37
+      </td>
+      <td>
+        Cell 38
+      </td>
+      <td>
+        Cell 39
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 4
+      </th>
       <td>
         Cell 41
       </td>
@@ -935,8 +1023,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 43
       </td>
+      <td>
+        Cell 44
+      </td>
+      <td>
+        Cell 45
+      </td>
+      <td>
+        Cell 46
+      </td>
+      <td>
+        Cell 47
+      </td>
+      <td>
+        Cell 48
+      </td>
+      <td>
+        Cell 49
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 5
+      </th>
       <td>
         Cell 51
       </td>
@@ -946,8 +1055,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 53
       </td>
+      <td>
+        Cell 54
+      </td>
+      <td>
+        Cell 55
+      </td>
+      <td>
+        Cell 56
+      </td>
+      <td>
+        Cell 57
+      </td>
+      <td>
+        Cell 58
+      </td>
+      <td>
+        Cell 59
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 6
+      </th>
       <td>
         Cell 61
       </td>
@@ -957,8 +1087,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 63
       </td>
+      <td>
+        Cell 64
+      </td>
+      <td>
+        Cell 65
+      </td>
+      <td>
+        Cell 66
+      </td>
+      <td>
+        Cell 67
+      </td>
+      <td>
+        Cell 68
+      </td>
+      <td>
+        Cell 69
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 7
+      </th>
       <td>
         Cell 71
       </td>
@@ -968,8 +1119,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 73
       </td>
+      <td>
+        Cell 74
+      </td>
+      <td>
+        Cell 75
+      </td>
+      <td>
+        Cell 76
+      </td>
+      <td>
+        Cell 77
+      </td>
+      <td>
+        Cell 78
+      </td>
+      <td>
+        Cell 79
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 8
+      </th>
       <td>
         Cell 81
       </td>
@@ -979,8 +1151,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 83
       </td>
+      <td>
+        Cell 84
+      </td>
+      <td>
+        Cell 85
+      </td>
+      <td>
+        Cell 86
+      </td>
+      <td>
+        Cell 87
+      </td>
+      <td>
+        Cell 88
+      </td>
+      <td>
+        Cell 89
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 9
+      </th>
       <td>
         Cell 91
       </td>
@@ -990,8 +1183,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 93
       </td>
+      <td>
+        Cell 94
+      </td>
+      <td>
+        Cell 95
+      </td>
+      <td>
+        Cell 96
+      </td>
+      <td>
+        Cell 97
+      </td>
+      <td>
+        Cell 98
+      </td>
+      <td>
+        Cell 99
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 10
+      </th>
       <td>
         Cell 101
       </td>
@@ -1001,8 +1215,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 103
       </td>
+      <td>
+        Cell 104
+      </td>
+      <td>
+        Cell 105
+      </td>
+      <td>
+        Cell 106
+      </td>
+      <td>
+        Cell 107
+      </td>
+      <td>
+        Cell 108
+      </td>
+      <td>
+        Cell 109
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 11
+      </th>
       <td>
         Cell 111
       </td>
@@ -1012,8 +1247,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 113
       </td>
+      <td>
+        Cell 114
+      </td>
+      <td>
+        Cell 115
+      </td>
+      <td>
+        Cell 116
+      </td>
+      <td>
+        Cell 117
+      </td>
+      <td>
+        Cell 118
+      </td>
+      <td>
+        Cell 119
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 12
+      </th>
       <td>
         Cell 121
       </td>
@@ -1023,8 +1279,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 123
       </td>
+      <td>
+        Cell 124
+      </td>
+      <td>
+        Cell 125
+      </td>
+      <td>
+        Cell 126
+      </td>
+      <td>
+        Cell 127
+      </td>
+      <td>
+        Cell 128
+      </td>
+      <td>
+        Cell 129
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 13
+      </th>
       <td>
         Cell 131
       </td>
@@ -1034,8 +1311,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 133
       </td>
+      <td>
+        Cell 134
+      </td>
+      <td>
+        Cell 135
+      </td>
+      <td>
+        Cell 136
+      </td>
+      <td>
+        Cell 137
+      </td>
+      <td>
+        Cell 138
+      </td>
+      <td>
+        Cell 139
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 14
+      </th>
       <td>
         Cell 141
       </td>
@@ -1045,8 +1343,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 143
       </td>
+      <td>
+        Cell 144
+      </td>
+      <td>
+        Cell 145
+      </td>
+      <td>
+        Cell 146
+      </td>
+      <td>
+        Cell 147
+      </td>
+      <td>
+        Cell 148
+      </td>
+      <td>
+        Cell 149
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 15
+      </th>
       <td>
         Cell 151
       </td>
@@ -1056,8 +1375,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 153
       </td>
+      <td>
+        Cell 154
+      </td>
+      <td>
+        Cell 155
+      </td>
+      <td>
+        Cell 156
+      </td>
+      <td>
+        Cell 157
+      </td>
+      <td>
+        Cell 158
+      </td>
+      <td>
+        Cell 159
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 16
+      </th>
       <td>
         Cell 161
       </td>
@@ -1067,8 +1407,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 163
       </td>
+      <td>
+        Cell 164
+      </td>
+      <td>
+        Cell 165
+      </td>
+      <td>
+        Cell 166
+      </td>
+      <td>
+        Cell 167
+      </td>
+      <td>
+        Cell 168
+      </td>
+      <td>
+        Cell 169
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 17
+      </th>
       <td>
         Cell 171
       </td>
@@ -1078,8 +1439,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 173
       </td>
+      <td>
+        Cell 174
+      </td>
+      <td>
+        Cell 175
+      </td>
+      <td>
+        Cell 176
+      </td>
+      <td>
+        Cell 177
+      </td>
+      <td>
+        Cell 178
+      </td>
+      <td>
+        Cell 179
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 18
+      </th>
       <td>
         Cell 181
       </td>
@@ -1089,8 +1471,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 183
       </td>
+      <td>
+        Cell 184
+      </td>
+      <td>
+        Cell 185
+      </td>
+      <td>
+        Cell 186
+      </td>
+      <td>
+        Cell 187
+      </td>
+      <td>
+        Cell 188
+      </td>
+      <td>
+        Cell 189
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 19
+      </th>
       <td>
         Cell 191
       </td>
@@ -1100,8 +1503,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 193
       </td>
+      <td>
+        Cell 194
+      </td>
+      <td>
+        Cell 195
+      </td>
+      <td>
+        Cell 196
+      </td>
+      <td>
+        Cell 197
+      </td>
+      <td>
+        Cell 198
+      </td>
+      <td>
+        Cell 199
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 20
+      </th>
       <td>
         Cell 201
       </td>
@@ -1111,8 +1535,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 203
       </td>
+      <td>
+        Cell 204
+      </td>
+      <td>
+        Cell 205
+      </td>
+      <td>
+        Cell 206
+      </td>
+      <td>
+        Cell 207
+      </td>
+      <td>
+        Cell 208
+      </td>
+      <td>
+        Cell 209
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 21
+      </th>
       <td>
         Cell 211
       </td>
@@ -1122,8 +1567,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 213
       </td>
+      <td>
+        Cell 214
+      </td>
+      <td>
+        Cell 215
+      </td>
+      <td>
+        Cell 216
+      </td>
+      <td>
+        Cell 217
+      </td>
+      <td>
+        Cell 218
+      </td>
+      <td>
+        Cell 219
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 22
+      </th>
       <td>
         Cell 221
       </td>
@@ -1133,8 +1599,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 223
       </td>
+      <td>
+        Cell 224
+      </td>
+      <td>
+        Cell 225
+      </td>
+      <td>
+        Cell 226
+      </td>
+      <td>
+        Cell 227
+      </td>
+      <td>
+        Cell 228
+      </td>
+      <td>
+        Cell 229
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 23
+      </th>
       <td>
         Cell 231
       </td>
@@ -1144,8 +1631,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 233
       </td>
+      <td>
+        Cell 234
+      </td>
+      <td>
+        Cell 235
+      </td>
+      <td>
+        Cell 236
+      </td>
+      <td>
+        Cell 237
+      </td>
+      <td>
+        Cell 238
+      </td>
+      <td>
+        Cell 239
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 24
+      </th>
       <td>
         Cell 241
       </td>
@@ -1155,8 +1663,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 243
       </td>
+      <td>
+        Cell 244
+      </td>
+      <td>
+        Cell 245
+      </td>
+      <td>
+        Cell 246
+      </td>
+      <td>
+        Cell 247
+      </td>
+      <td>
+        Cell 248
+      </td>
+      <td>
+        Cell 249
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 25
+      </th>
       <td>
         Cell 251
       </td>
@@ -1166,8 +1695,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 253
       </td>
+      <td>
+        Cell 254
+      </td>
+      <td>
+        Cell 255
+      </td>
+      <td>
+        Cell 256
+      </td>
+      <td>
+        Cell 257
+      </td>
+      <td>
+        Cell 258
+      </td>
+      <td>
+        Cell 259
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 26
+      </th>
       <td>
         Cell 261
       </td>
@@ -1177,8 +1727,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 263
       </td>
+      <td>
+        Cell 264
+      </td>
+      <td>
+        Cell 265
+      </td>
+      <td>
+        Cell 266
+      </td>
+      <td>
+        Cell 267
+      </td>
+      <td>
+        Cell 268
+      </td>
+      <td>
+        Cell 269
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 27
+      </th>
       <td>
         Cell 271
       </td>
@@ -1188,8 +1759,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 273
       </td>
+      <td>
+        Cell 274
+      </td>
+      <td>
+        Cell 275
+      </td>
+      <td>
+        Cell 276
+      </td>
+      <td>
+        Cell 277
+      </td>
+      <td>
+        Cell 278
+      </td>
+      <td>
+        Cell 279
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 28
+      </th>
       <td>
         Cell 281
       </td>
@@ -1199,8 +1791,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 283
       </td>
+      <td>
+        Cell 284
+      </td>
+      <td>
+        Cell 285
+      </td>
+      <td>
+        Cell 286
+      </td>
+      <td>
+        Cell 287
+      </td>
+      <td>
+        Cell 288
+      </td>
+      <td>
+        Cell 289
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 29
+      </th>
       <td>
         Cell 291
       </td>
@@ -1210,8 +1823,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 293
       </td>
+      <td>
+        Cell 294
+      </td>
+      <td>
+        Cell 295
+      </td>
+      <td>
+        Cell 296
+      </td>
+      <td>
+        Cell 297
+      </td>
+      <td>
+        Cell 298
+      </td>
+      <td>
+        Cell 299
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 30
+      </th>
       <td>
         Cell 301
       </td>
@@ -1221,8 +1855,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 303
       </td>
+      <td>
+        Cell 304
+      </td>
+      <td>
+        Cell 305
+      </td>
+      <td>
+        Cell 306
+      </td>
+      <td>
+        Cell 307
+      </td>
+      <td>
+        Cell 308
+      </td>
+      <td>
+        Cell 309
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 31
+      </th>
       <td>
         Cell 311
       </td>
@@ -1232,8 +1887,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 313
       </td>
+      <td>
+        Cell 314
+      </td>
+      <td>
+        Cell 315
+      </td>
+      <td>
+        Cell 316
+      </td>
+      <td>
+        Cell 317
+      </td>
+      <td>
+        Cell 318
+      </td>
+      <td>
+        Cell 319
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 32
+      </th>
       <td>
         Cell 321
       </td>
@@ -1243,8 +1919,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 323
       </td>
+      <td>
+        Cell 324
+      </td>
+      <td>
+        Cell 325
+      </td>
+      <td>
+        Cell 326
+      </td>
+      <td>
+        Cell 327
+      </td>
+      <td>
+        Cell 328
+      </td>
+      <td>
+        Cell 329
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 33
+      </th>
       <td>
         Cell 331
       </td>
@@ -1254,8 +1951,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 333
       </td>
+      <td>
+        Cell 334
+      </td>
+      <td>
+        Cell 335
+      </td>
+      <td>
+        Cell 336
+      </td>
+      <td>
+        Cell 337
+      </td>
+      <td>
+        Cell 338
+      </td>
+      <td>
+        Cell 339
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 34
+      </th>
       <td>
         Cell 341
       </td>
@@ -1265,8 +1983,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 343
       </td>
+      <td>
+        Cell 344
+      </td>
+      <td>
+        Cell 345
+      </td>
+      <td>
+        Cell 346
+      </td>
+      <td>
+        Cell 347
+      </td>
+      <td>
+        Cell 348
+      </td>
+      <td>
+        Cell 349
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 35
+      </th>
       <td>
         Cell 351
       </td>
@@ -1276,8 +2015,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 353
       </td>
+      <td>
+        Cell 354
+      </td>
+      <td>
+        Cell 355
+      </td>
+      <td>
+        Cell 356
+      </td>
+      <td>
+        Cell 357
+      </td>
+      <td>
+        Cell 358
+      </td>
+      <td>
+        Cell 359
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 36
+      </th>
       <td>
         Cell 361
       </td>
@@ -1287,8 +2047,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 363
       </td>
+      <td>
+        Cell 364
+      </td>
+      <td>
+        Cell 365
+      </td>
+      <td>
+        Cell 366
+      </td>
+      <td>
+        Cell 367
+      </td>
+      <td>
+        Cell 368
+      </td>
+      <td>
+        Cell 369
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 37
+      </th>
       <td>
         Cell 371
       </td>
@@ -1298,8 +2079,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 373
       </td>
+      <td>
+        Cell 374
+      </td>
+      <td>
+        Cell 375
+      </td>
+      <td>
+        Cell 376
+      </td>
+      <td>
+        Cell 377
+      </td>
+      <td>
+        Cell 378
+      </td>
+      <td>
+        Cell 379
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 38
+      </th>
       <td>
         Cell 381
       </td>
@@ -1309,8 +2111,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 383
       </td>
+      <td>
+        Cell 384
+      </td>
+      <td>
+        Cell 385
+      </td>
+      <td>
+        Cell 386
+      </td>
+      <td>
+        Cell 387
+      </td>
+      <td>
+        Cell 388
+      </td>
+      <td>
+        Cell 389
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 39
+      </th>
       <td>
         Cell 391
       </td>
@@ -1320,8 +2143,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 393
       </td>
+      <td>
+        Cell 394
+      </td>
+      <td>
+        Cell 395
+      </td>
+      <td>
+        Cell 396
+      </td>
+      <td>
+        Cell 397
+      </td>
+      <td>
+        Cell 398
+      </td>
+      <td>
+        Cell 399
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 40
+      </th>
       <td>
         Cell 401
       </td>
@@ -1331,8 +2175,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 403
       </td>
+      <td>
+        Cell 404
+      </td>
+      <td>
+        Cell 405
+      </td>
+      <td>
+        Cell 406
+      </td>
+      <td>
+        Cell 407
+      </td>
+      <td>
+        Cell 408
+      </td>
+      <td>
+        Cell 409
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 41
+      </th>
       <td>
         Cell 411
       </td>
@@ -1342,8 +2207,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 413
       </td>
+      <td>
+        Cell 414
+      </td>
+      <td>
+        Cell 415
+      </td>
+      <td>
+        Cell 416
+      </td>
+      <td>
+        Cell 417
+      </td>
+      <td>
+        Cell 418
+      </td>
+      <td>
+        Cell 419
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 42
+      </th>
       <td>
         Cell 421
       </td>
@@ -1353,8 +2239,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 423
       </td>
+      <td>
+        Cell 424
+      </td>
+      <td>
+        Cell 425
+      </td>
+      <td>
+        Cell 426
+      </td>
+      <td>
+        Cell 427
+      </td>
+      <td>
+        Cell 428
+      </td>
+      <td>
+        Cell 429
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 43
+      </th>
       <td>
         Cell 431
       </td>
@@ -1364,8 +2271,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 433
       </td>
+      <td>
+        Cell 434
+      </td>
+      <td>
+        Cell 435
+      </td>
+      <td>
+        Cell 436
+      </td>
+      <td>
+        Cell 437
+      </td>
+      <td>
+        Cell 438
+      </td>
+      <td>
+        Cell 439
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 44
+      </th>
       <td>
         Cell 441
       </td>
@@ -1375,8 +2303,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 443
       </td>
+      <td>
+        Cell 444
+      </td>
+      <td>
+        Cell 445
+      </td>
+      <td>
+        Cell 446
+      </td>
+      <td>
+        Cell 447
+      </td>
+      <td>
+        Cell 448
+      </td>
+      <td>
+        Cell 449
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 45
+      </th>
       <td>
         Cell 451
       </td>
@@ -1386,8 +2335,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 453
       </td>
+      <td>
+        Cell 454
+      </td>
+      <td>
+        Cell 455
+      </td>
+      <td>
+        Cell 456
+      </td>
+      <td>
+        Cell 457
+      </td>
+      <td>
+        Cell 458
+      </td>
+      <td>
+        Cell 459
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 46
+      </th>
       <td>
         Cell 461
       </td>
@@ -1397,8 +2367,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 463
       </td>
+      <td>
+        Cell 464
+      </td>
+      <td>
+        Cell 465
+      </td>
+      <td>
+        Cell 466
+      </td>
+      <td>
+        Cell 467
+      </td>
+      <td>
+        Cell 468
+      </td>
+      <td>
+        Cell 469
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 47
+      </th>
       <td>
         Cell 471
       </td>
@@ -1408,8 +2399,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 473
       </td>
+      <td>
+        Cell 474
+      </td>
+      <td>
+        Cell 475
+      </td>
+      <td>
+        Cell 476
+      </td>
+      <td>
+        Cell 477
+      </td>
+      <td>
+        Cell 478
+      </td>
+      <td>
+        Cell 479
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 48
+      </th>
       <td>
         Cell 481
       </td>
@@ -1419,8 +2431,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 483
       </td>
+      <td>
+        Cell 484
+      </td>
+      <td>
+        Cell 485
+      </td>
+      <td>
+        Cell 486
+      </td>
+      <td>
+        Cell 487
+      </td>
+      <td>
+        Cell 488
+      </td>
+      <td>
+        Cell 489
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 49
+      </th>
       <td>
         Cell 491
       </td>
@@ -1430,8 +2463,29 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 493
       </td>
+      <td>
+        Cell 494
+      </td>
+      <td>
+        Cell 495
+      </td>
+      <td>
+        Cell 496
+      </td>
+      <td>
+        Cell 497
+      </td>
+      <td>
+        Cell 498
+      </td>
+      <td>
+        Cell 499
+      </td>
     </tr>
     <tr>
+      <th scope="row">
+        Row 50
+      </th>
       <td>
         Cell 501
       </td>
@@ -1441,6 +2495,24 @@ exports[`Sticky Header 1`] = `
       <td>
         Cell 503
       </td>
+      <td>
+        Cell 504
+      </td>
+      <td>
+        Cell 505
+      </td>
+      <td>
+        Cell 506
+      </td>
+      <td>
+        Cell 507
+      </td>
+      <td>
+        Cell 508
+      </td>
+      <td>
+        Cell 509
+      </td>
     </tr>
   </tbody>
 </table>
@@ -1448,7 +2520,11 @@ exports[`Sticky Header 1`] = `
 
 exports[`With Border 1`] = `
 <div style="display: grid; gap: 1rem;">
-  <table data-border="true">
+  <table
+    data-border="true"
+    data-tinted-column-header="true"
+    data-tinted-row-header="true"
+  >
     <tbody>
       <tr>
         <td>
@@ -1520,7 +2596,11 @@ exports[`With Border 1`] = `
       </tr>
     </tbody>
   </table>
-  <table data-border="true">
+  <table
+    data-border="true"
+    data-tinted-column-header="true"
+    data-tinted-row-header="true"
+  >
     <thead>
       <tr>
         <th>
@@ -1570,7 +2650,11 @@ exports[`With Border 1`] = `
       </tr>
     </tbody>
   </table>
-  <table data-border="true">
+  <table
+    data-border="true"
+    data-tinted-column-header="true"
+    data-tinted-row-header="true"
+  >
     <tbody>
       <tr>
         <td>
