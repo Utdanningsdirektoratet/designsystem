@@ -5,7 +5,6 @@
 export * from './alert/Alert';
 export * from './avatar/Avatar';
 export * from './badge/Badge';
-export * from './breadcrumbs/Breadcrumbs';
 export * from './card/Card';
 export * from './chip/Chip';
 export * from './dialog/Dialog';
@@ -15,8 +14,6 @@ export * from './errorSummary/ErrorSummary';
 export * from './field/Field';
 export * from './fieldset/Fieldset';
 export * from './input/Input';
-export * from './link/Link';
-export * from './list/List';
 export * from './loaders';
 export * from './multiSuggestion/MultiSuggestion';
 export * from './pagination/Pagination';
