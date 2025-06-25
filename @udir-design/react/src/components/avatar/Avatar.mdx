@@ -14,7 +14,7 @@ import * as AvatarStories from './Avatar.stories';
 **Passer ikke til å**
 
 - representere handlinger, objekter eller steder, bruk heller ikoner eller andre visuelle symboler
-- brukes rent visuelt
+- brukes som visuell dekor
 
 ## Slik bruker du Avatar
 
@@ -38,11 +38,12 @@ import { Avatar } from '@udir-design/react';
 
 ## Eksempler
 
-### Standard ikon
+### Innhold
 
-Et standard ikon vises dersom det ikke sendes inn `children`.
+`Avatar` kan inneholde et ikon, et bilde, eller initialer. Ikon og bilde legger du inn som `children` i komponenten. Innholdet får automatisk `aria-hidden="true"` for å unngå dobbel informasjon.
+Initialer sendes inn i `initials`-propen. Det vil fungere som en fallback dersom bildet ikke lastes. Et standard ikon vises dersom det ikke sendes inn `children` eller `initials`.
 
-<Canvas of={AvatarStories.NoName} />
+<Canvas of={AvatarStories.Content} />
 
 ### Størrelser
 
@@ -50,24 +51,11 @@ Et standard ikon vises dersom det ikke sendes inn `children`.
 
 <Canvas of={AvatarStories.Sizes} />
 
-### Fargevarianter
+### Farger
 
 Du kan bruke alle temafargene på `Avatar`.
 
 <Canvas of={AvatarStories.ColorVariants} />
-
-### Varianter
-
-`Avatar` har to varianter: `circle` og `square`. Den runde varianten er standard.
-
-<Canvas of={AvatarStories.ShapeVariants} />
-
-### Med bilde
-
-`Avatar` kan brukes med bilder, for eksempel profilbilder. Dette legger du inn som `children` i komponenten.
-Bilder (og andre child elements) får automatisk `aria-hidden="true"` for å unngå dobbel informasjon.
-
-<Canvas of={AvatarStories.WithImage} />
 
 ### Komponering
 
@@ -90,7 +78,7 @@ Du må selv sette styling dersom du skal ha en interaktiv `Avatar`.
 - Avataren bør som regel kombineres med tekst, med mindre det er helt åpenbart hvem eller hva avataren representerer.
 - Bruk avatar kun når det faktisk gir verdi for brukeropplevelsen, for eksempel å vise hvem som har skrevet noe, eller hvem som er ansvarlig.
 
-## Tekst i komponenten
+## Tekst i Avatar
 
 `Avatar` skal som hovedregel ikke inneholde tekst i selve komponenten, med unntak av når initialer brukes. Annen tekst, for eksempel fullt navn, rolle eller organisasjon, bør vises utenfor avataren for å sikre god lesbarhet.
 
