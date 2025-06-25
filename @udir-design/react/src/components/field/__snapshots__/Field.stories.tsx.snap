@@ -166,7 +166,7 @@ exports[`Counter 1`] = `
   <textarea
     rows="2"
     id="components-field--counter"
-    aria-describedby="components-field--counter:validation  components-field--counter:description"
+    aria-describedby="components-field--counter:validation components-field--counter:description"
   >
   </textarea>
   <div
@@ -290,7 +290,7 @@ exports[`Preview 1`] = `
   <input
     id="components-field--preview"
     type="text"
-    aria-describedby="components-field--preview:validation  components-field--preview:description"
+    aria-describedby="components-field--preview:validation components-field--preview:description"
   >
   <p
     data-field="validation"
