@@ -278,7 +278,7 @@ exports[`Dashboard Page 2 1`] = `
               style="overflow: hidden;"
             >
               <div
-                id="highcharts-vj83q1m-0"
+                id="highcharts-97d45fv-0"
                 dir="ltr"
                 style="position: relative; overflow: hidden; width: 786px; height: 400px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; touch-action: manipulation; outline: none; padding: 0px; font-family: Inter, sans-serif;"
               >
@@ -351,7 +351,7 @@ exports[`Dashboard Page 2 1`] = `
                     >
                       <path
                         fill="#5BA27E"
-                        d="M 382.9999989295894 54.37412408701769 A 0.000875915863915111 0.000875915863915111 0 0 1 383.0008748512095 54.37324817114674 A 133.12675183172783 133.12675183172783 0 0 1 383.0201400096826 54.373249691707485 A 0.000875915863915111 0.000875915863915111 0 0 1 383.02101579302314 54.37412574583706 L 383.02101579302314 54.37412574583706 A 0.000875915863915111 0.000875915863915111 0 0 1 383.0201397446577 54.37500152341528 A 133.125 133.125 0 0 0 383.0008748396972 54.37500000287454 A 0.000875915863915111 0.000875915863915111 0 0 1 382.9999989295894 54.37412408701769 Z"
+                        d="M 382.9999983274896 54.37363139862845 A 0.0013686084065795967 0.0013686084065795967 0 0 1 383.001366949949 54.37226279020473 A 133.12773721681316 133.12773721681316 0 0 1 383.0314687700087 54.37226650248502 A 0.0013686084065795967 0.0013686084065795967 0 0 1 383.0328370548616 54.37363544843538 L 383.0328370548616 54.37363544843538 A 0.0013686084065795967 0.0013686084065795967 0 0 1 383.0314681229847 54.375003719221695 A 133.125 133.125 0 0 0 383.0013669218434 54.375000007017746 A 0.0013686084065795967 0.0013686084065795967 0 0 1 382.9999983274896 54.37363139862845 Z"
                         transform="translate(0,0)"
                         stroke="#ffffff"
                         stroke-width="1"
@@ -361,7 +361,7 @@ exports[`Dashboard Page 2 1`] = `
                       </path>
                       <path
                         fill="#6C7C94"
-                        d="M 383.01182141763974 54.37450782026704 A 0.0004927055100836242 0.0004927055100836242 0 0 1 383.0123141687232 54.37401515851084 A 133.12598541102017 133.12598541102017 0 0 1 383.0180808403078 54.37401581682724 A 0.0004927055100836242 0.0004927055100836242 0 0 1 383.018573478895 54.374508591074346 L 383.018573478895 54.374508591074346 A 0.0004927055100836242 0.0004927055100836242 0 0 1 383.0180807064717 54.37500122783831 A 133.125 133.125 0 0 0 383.01231407757257 54.375000569526776 A 0.0004927055100836242 0.0004927055100836242 0 0 1 383.01182141763974 54.37450782026704 Z"
+                        d="M 383.0328370548616 54.37363544843538 A 0.0013686084065795967 0.0013686084065795967 0 0 1 383.0342060148786 54.372267177656 A 133.12773721681316 133.12773721681316 0 0 1 383.0502245643488 54.372272257196556 A 0.0013686084065795967 0.0013686084065795967 0 0 1 383.0515926563232 54.37364139590514 L 383.0515926563232 54.37364139590514 A 0.0013686084065795967 0.0013686084065795967 0 0 1 383.05022353169005 54.37500947381491 A 133.125 133.125 0 0 0 383.0342053115745 54.375004394378806 A 0.0013686084065795967 0.0013686084065795967 0 0 1 383.0328370548616 54.37363544843538 Z"
                         transform="translate(0,0)"
                         stroke="#ffffff"
                         stroke-width="1"
@@ -852,7 +852,7 @@ exports[`Dashboard Page 3 1`] = `
               style="overflow: hidden;"
             >
               <div
-                id="highcharts-vj83q1m-7"
+                id="highcharts-97d45fv-7"
                 dir="ltr"
                 style="position: relative; overflow: hidden; width: 786px; height: 400px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; touch-action: manipulation; outline: none; padding: 0px; font-family: Inter, sans-serif;"
               >
@@ -1489,19 +1489,19 @@ exports[`Dashboard Page 4 1`] = `
               <div>
                 <input
                   role="switch"
+                  id="dark-mode"
                   type="checkbox"
-                  id=":mcajf6ffbae"
-                  aria-describedby=":mcajf6ffbae:description"
+                  aria-describedby="dark-mode:description"
                 >
                 <label
                   data-weight="regular"
-                  for=":mcajf6ffbae"
+                  for="dark-mode"
                 >
                   Mørk modus
                 </label>
                 <div
                   data-field="description"
-                  id=":mcajf6ffbae:description"
+                  id="dark-mode:description"
                 >
                   Et mørkere grensesnitt for å spare øynene.
                 </div>
@@ -1509,21 +1509,21 @@ exports[`Dashboard Page 4 1`] = `
               <div>
                 <input
                   role="switch"
+                  id="auto-updates"
                   type="checkbox"
                   value="auto-updates"
                   checked
-                  id=":mcajf6ffu6v"
-                  aria-describedby=":mcajf6ffu6v:description"
+                  aria-describedby="auto-updates:description"
                 >
                 <label
                   data-weight="regular"
-                  for=":mcajf6ffu6v"
+                  for="auto-updates"
                 >
                   Automatiske oppdateringer
                 </label>
                 <div
                   data-field="description"
-                  id=":mcajf6ffu6v:description"
+                  id="auto-updates:description"
                 >
                   Bruk automatisk oppdateringer for å holde systemet oppdatert.
                 </div>
@@ -1545,50 +1545,50 @@ exports[`Dashboard Page 4 1`] = `
                 </p>
                 <div>
                   <input
+                    id="privacy-public"
                     type="radio"
                     value="public"
                     checked
                     name="privacy"
-                    id=":mcajf6ffdrx"
                   >
                   <label
                     data-weight="regular"
-                    for=":mcajf6ffdrx"
+                    for="privacy-public"
                   >
                     Alle
                   </label>
                 </div>
                 <div>
                   <input
+                    id="privacy-friends"
                     type="radio"
                     value="friends"
                     name="privacy"
-                    id=":mcajf6ffpil"
-                    aria-describedby=":mcajf6ffpil:description"
+                    aria-describedby="privacy-friends:description"
                   >
                   <label
                     data-weight="regular"
-                    for=":mcajf6ffpil"
+                    for="privacy-friends"
                   >
                     Kun venner
                   </label>
                   <div
                     data-field="description"
-                    id=":mcajf6ffpil:description"
+                    id="privacy-friends:description"
                   >
                     Bare personer du har lagt til kan se profilen din.
                   </div>
                 </div>
                 <div>
                   <input
+                    id="privacy-private"
                     type="radio"
                     value="private"
                     name="privacy"
-                    id=":mcajf6ff1et"
                   >
                   <label
                     data-weight="regular"
-                    for=":mcajf6ff1et"
+                    for="privacy-private"
                   >
                     Kun meg
                   </label>
@@ -1611,20 +1611,20 @@ exports[`Dashboard Page 4 1`] = `
               <div>
                 <input
                   role="switch"
+                  id="sound-notifications"
                   type="checkbox"
                   value="sound-notifications"
-                  id=":mcajf6ffj7g"
-                  aria-describedby=":mcajf6ffj7g:description"
+                  aria-describedby="sound-notifications:description"
                 >
                 <label
                   data-weight="regular"
-                  for=":mcajf6ffj7g"
+                  for="sound-notifications"
                 >
                   Lydvarsler
                 </label>
                 <div
                   data-field="description"
-                  id=":mcajf6ffj7g:description"
+                  id="sound-notifications:description"
                 >
                   Spill av lyd når et varsel mottas.
                 </div>
@@ -1632,20 +1632,20 @@ exports[`Dashboard Page 4 1`] = `
               <div>
                 <input
                   role="switch"
+                  id="popup-notifications"
                   type="checkbox"
                   value="popup-notifications"
-                  id=":mcajf6ffcfj"
-                  aria-describedby=":mcajf6ffcfj:description"
+                  aria-describedby="popup-notifications:description"
                 >
                 <label
                   data-weight="regular"
-                  for=":mcajf6ffcfj"
+                  for="popup-notifications"
                 >
                   Popup-varsler
                 </label>
                 <div
                   data-field="description"
-                  id=":mcajf6ffcfj:description"
+                  id="popup-notifications:description"
                 >
                   Vis popup-varsler på skjermen.
                 </div>
@@ -1653,20 +1653,20 @@ exports[`Dashboard Page 4 1`] = `
               <div>
                 <input
                   role="switch"
+                  id="email-notifications"
                   type="checkbox"
                   value="email-notifications"
-                  id=":mcajf6fftuh"
-                  aria-describedby=":mcajf6fftuh:description"
+                  aria-describedby="email-notifications:description"
                 >
                 <label
                   data-weight="regular"
-                  for=":mcajf6fftuh"
+                  for="email-notifications"
                 >
                   E-postvarsler
                 </label>
                 <div
                   data-field="description"
-                  id=":mcajf6fftuh:description"
+                  id="email-notifications:description"
                 >
                   Tillat e-postvarsler for viktige oppdateringer.
                 </div>

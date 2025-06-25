@@ -72,6 +72,7 @@ export const RankingTable = ({
                 {rankings.map((ranking, colIndex) => (
                   <Table.Cell key={colIndex} className={classes.cell}>
                     <Radio
+                      id={`${fieldName}-${ranking}`}
                       aria-label={`${ranking} i påstand ${assertion}`}
                       value={ranking}
                       aria-invalid={error && isInvalid}
