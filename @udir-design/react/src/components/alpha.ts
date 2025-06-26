@@ -7,7 +7,6 @@ export * from './chip/Chip';
 export * from './dropdown/Dropdown';
 export * from './errorSummary/ErrorSummary';
 export * from './loaders';
-export * from './pagination/Pagination';
 export * from './popover/Popover';
 export * from './skipLink/SkipLink';
 export * from './suggestion/Suggestion';

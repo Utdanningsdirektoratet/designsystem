@@ -20,3 +20,4 @@ export * from './radio/Radio';
 export * from './search/Search';
 export * from './select/Select';
 export * from './textfield/Textfield';
+export * from './pagination/Pagination';
