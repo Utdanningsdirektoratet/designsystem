@@ -217,7 +217,7 @@ export const DialogWithForm: Story = {
           <div
             style={{
               display: 'flex',
-              gap: 'var(--ds-size-4)',
+              gap: 'var(--ds-size-2)',
               marginTop: 'var(--ds-size-4)',
             }}
           >
@@ -270,9 +270,8 @@ const DATA_PLACES = [
 ];
 
 export const DialogWithSuggestion: Story = {
-  render(args, ctx) {
+  render(ctx) {
     const dialogRef = useRef<HTMLDialogElement>(null);
-
     return (
       <Dialog.TriggerContext>
         <Dialog.Trigger variant="secondary">Åpne Dialog</Dialog.Trigger>
@@ -299,7 +298,20 @@ export const DialogWithSuggestion: Story = {
               </Suggestion>
             </Field>
           </Dialog.Block>
-          <Dialog.Block>
+          <Dialog.Block
+            style={{
+              display: 'flex',
+              gap: 'var(--ds-size-2)',
+            }}
+          >
+            <Button
+              onClick={() => {
+                window.alert(`Skjema er sendt inn`);
+                dialogRef.current?.close();
+              }}
+            >
+              Send inn
+            </Button>
             <Button
               variant="secondary"
               onClick={() => dialogRef.current?.close()}

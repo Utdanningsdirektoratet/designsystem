@@ -106,7 +106,7 @@ En modal `Dialog` er et midlertidig vindu som åpnes over resten av innholdet p�
 **Passer ikke til å**
 
 - vise omfattende eller komplekst innhold som krever langvarig interaksjon
-- gi informasjon uten å avbryte brukerens arbeidsflyt - bruk heller [`Alert`](/docs/komponenter-alert--docs), [`Popover`](/docs/komponenter-popover--docs), eller "ikke-modal" `Dialog`
+- gi informasjon uten å avbryte brukerens arbeidsflyt - bruk heller [`Alert`](/docs/components-alert--docs), [`Popover`](/docs/components-popover--docs), eller "ikke-modal" `Dialog`
 
 ### 2) Ikke-modal Dialog
 
@@ -121,7 +121,9 @@ En "ikke-modal" `Dialog` lar brukeren fortsatt bruke resten av siden mens dialog
 - gi kritiske valg som brukeren må ta stilling til før de kan fortsette - bruk heller modal `Dialog`
 - gi bekreftelser eller varsler som krever brukerens fulle oppmerksomhet - bruk heller modal `Dialog`
 
-## Tekst
+På mobil kan en "ikke-modal" `Dialog` være problematisk på grunn av begrenset skjermplass. Den kan dekke viktig innhold og forstyrre brukeropplevelsen. I slike tilfeller kan det være bedre å bruke modal `Dialog` eller andre løsninger.
+
+## Tekst i Dialog
 
 - Ha en kort og konsis overskrift. Overskriften skal gjøre det tydelig for brukeren at konteksten er endret.
 - Unngå mange avsnitt med tekst.

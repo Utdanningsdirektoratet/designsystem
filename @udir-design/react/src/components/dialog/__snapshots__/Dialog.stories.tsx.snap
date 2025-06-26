@@ -142,7 +142,7 @@ exports[`Dialog With Form 1`] = `
       >
     </div>
   </div>
-  <div style="display: flex; gap: var(--ds-size-4); margin-top: var(--ds-size-4);">
+  <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-4);">
     <button
       data-variant="primary"
       type="button"
@@ -266,17 +266,17 @@ exports[`Dialog With Suggestion 1`] = `
     <div>
       <label
         data-weight="medium"
-        for="components-dialog--dialog-with-suggestion-input"
+        for="undefined-input"
       >
         Velg en kommune
       </label>
       <u-combobox>
         <input
           placeholder
-          id="components-dialog--dialog-with-suggestion-input"
+          id="undefined-input"
           type="text"
           list=":u-datalist1"
-          aria-label="Velg en destinasjon, "
+          aria-label="Velg en kommune, "
           aria-autocomplete="list"
           aria-controls=":u-datalist1"
           aria-expanded="true"
@@ -396,7 +396,13 @@ exports[`Dialog With Suggestion 1`] = `
       </u-combobox>
     </div>
   </div>
-  <div>
+  <div style="display: flex; gap: var(--ds-size-2);">
+    <button
+      data-variant="primary"
+      type="button"
+    >
+      Send inn
+    </button>
     <button
       data-variant="secondary"
       type="button"
