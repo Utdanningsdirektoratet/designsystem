@@ -139,67 +139,6 @@ export const WithLinks: Story = {
   ),
 };
 
-export const WithHeading: Story = {
-  render: () => (
-    <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
-      <div>
-        <Heading
-          level={2}
-          data-size="2xs"
-          style={{ marginBottom: 'var(--ds-size-2)' }}
-        >
-          List sm og Heading 2xs
-        </Heading>
-        <List.Unordered data-size="sm">
-          {designLinks.map((link) => (
-            <List.Item key={link.href}>
-              <Link href={link.href} target="_blank">
-                {link.text}
-              </Link>
-            </List.Item>
-          ))}
-        </List.Unordered>
-      </div>
-      <div>
-        <Heading
-          level={2}
-          data-size="xs"
-          style={{ marginBottom: 'var(--ds-size-2)' }}
-        >
-          List md og Heading xs
-        </Heading>
-        <List.Unordered data-size="md">
-          {designLinks.map((link) => (
-            <List.Item key={link.href}>
-              <Link href={link.href} target="_blank">
-                {link.text}
-              </Link>
-            </List.Item>
-          ))}
-        </List.Unordered>
-      </div>
-      <div>
-        <Heading
-          level={2}
-          data-size="sm"
-          style={{ marginBottom: 'var(--ds-size-2)' }}
-        >
-          List lg og Heading sm
-        </Heading>
-        <List.Unordered data-size="lg">
-          {designLinks.map((link) => (
-            <List.Item key={link.href}>
-              <Link href={link.href} target="_blank">
-                {link.text}
-              </Link>
-            </List.Item>
-          ))}
-        </List.Unordered>
-      </div>
-    </div>
-  ),
-};
-
 const navLinks = [
   {
     href: 'https://www.udir.no/utdanningslopet/barnehage/',
