@@ -34,6 +34,7 @@
     "typecheck": "tsc --build",
     "dev": "storybook dev --port 6006",
     "build:storybook": "storybook build --stats-json",
+    "serve:storybook": "pnpm dlx http-server ./storybook-static",
     "test:storybook": "vitest --project storybook"
   },
   "dependencies": {
