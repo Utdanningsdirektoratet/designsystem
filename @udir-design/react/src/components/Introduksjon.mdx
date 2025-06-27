@@ -1,0 +1,32 @@
+import README from '../../../../README.md?raw';
+import { IncludeMarkdown } from '.storybook/doc-blocks/IncludeMarkdown';
+import { Unstyled } from '@storybook/addon-docs/blocks';
+import { ComponentResourceLinks } from '../ResourceLinks';
+
+import { HideToc } from '../../.storybook/utils/HideToc';
+
+<HideToc />
+
+# Komponenter
+
+Bruk venstremenyen for å navigere i dokumentasjonen.
+
+Overskriften "Demosider" inneholder eksempler som viser komponenter brukt sammen. Alle individuelle komponenter finner du under "Komponenter".
+
+Komponenter er markert med "Alpha" eller "Beta" dersom de ikke er stabile (les mer om livsfaser lenger ned).
+
+<Unstyled>
+  <ComponentResourceLinks />
+</Unstyled>
+
+<IncludeMarkdown
+  markdown={README}
+  sectionId="livsfaser-for-en-komponent"
+  increaseHeadingDepthBy={1}
+/>
+
+<IncludeMarkdown
+  markdown={README}
+  sectionId="hva-tester-vi"
+  increaseHeadingDepthBy={1}
+/>
