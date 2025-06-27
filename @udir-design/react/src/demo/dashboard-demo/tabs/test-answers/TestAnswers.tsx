@@ -17,7 +17,9 @@ const characterDistribution = [
 
 const options = {
   title: {
-    text: '',
+    text: 'Karakterfordeling',
+    // hide title but keep for accessibility
+    style: { display: 'none' },
   },
   colors: [
     '#5BA27E',
