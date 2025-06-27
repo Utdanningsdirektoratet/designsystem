@@ -37,9 +37,9 @@
     "test:storybook": "vitest --project storybook"
   },
   "dependencies": {
-    "@digdir/designsystemet-css": "1.0.6",
-    "@digdir/designsystemet-react": "1.0.6",
-    "@navikt/aksel-icons": "^7.22.0",
+    "@digdir/designsystemet-css": "1.1.2",
+    "@digdir/designsystemet-react": "1.1.2",
+    "@navikt/aksel-icons": "^7.24.0",
     "@udir-design/theme": "workspace:*",
     "tslib": "^2.8.1"
   },

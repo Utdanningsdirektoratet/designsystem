@@ -1,6 +1,7 @@
 {
   "$schema": "./node_modules/@digdir/designsystemet/dist/config.schema.json",
   "outDir": "./src",
+  "clean": true,
   "themes": {
     "udir": {
       "colors": {
