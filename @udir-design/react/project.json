@@ -7,6 +7,7 @@
   "// targets": "to see all targets run: nx show project @udir-design/react --web",
   "targets": {
     "dev": {
+      "continuous": true,
       "dependsOn": ["^build"]
     },
     "build:storybook": {
@@ -14,6 +15,10 @@
       "dependsOn": ["build"],
       "cache": true,
       "outputs": ["{projectRoot}/storybook-static"]
+    },
+    "serve:storybook": {
+      "continuous": true,
+      "dependsOn": ["build:storybook"]
     },
     "test:storybook": {
       "dependsOn": ["build"]
