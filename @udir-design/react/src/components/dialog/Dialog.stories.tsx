@@ -284,12 +284,13 @@ export const DialogWithSuggestion: Story = {
             <Field>
               <Label>Velg en destinasjon</Label>
               <Suggestion>
+                <Suggestion.Chips />
                 <Suggestion.Input id={`${ctx.id}-input`} />
                 <Suggestion.Clear />
                 <Suggestion.List>
                   <Suggestion.Empty>Tomt</Suggestion.Empty>
                   {DATA_PLACES.map((place) => (
-                    <Suggestion.Option key={place} value={place}>
+                    <Suggestion.Option key={place} label={place} value={place}>
                       {place}
                       <div>Kommune</div>
                     </Suggestion.Option>

@@ -243,44 +243,39 @@ exports[`Dialog With Suggestion 1`] = `
       >
         Velg en destinasjon
       </label>
-      <div>
+      <u-combobox>
         <input
-          list="«r0»"
           placeholder
           id="components-dialog--dialog-with-suggestion-input"
           type="text"
-          popovertarget="«r0»"
+          list=":u-datalist1"
+          aria-label="Velg en destinasjon, "
           aria-autocomplete="list"
-          aria-controls="«r0»"
-          aria-expanded="false"
+          aria-controls=":u-datalist1"
+          aria-expanded="true"
           autocomplete="off"
           role="combobox"
         >
-        <button
+        <del
           data-icon="true"
           data-variant="tertiary"
-          type="reset"
           aria-label="Tøm"
+          hidden
+          role="button"
         >
-        </button>
+        </del>
         <u-datalist
+          data-nofilter
           data-sr-singular="%d forslag"
           data-sr-plural="%d forslag"
-          id="«r0»"
           hidden
           role="listbox"
           tabindex="-1"
+          aria-multiselectable="false"
+          id=":u-datalist1"
         >
           <u-option
-            data-empty
-            role="none"
-            tabindex="-1"
-            aria-disabled="false"
-            aria-selected="false"
-          >
-            Tomt
-          </u-option>
-          <u-option
+            label="Sogndal"
             value="Sogndal"
             tabindex="-1"
             role="option"
@@ -293,6 +288,7 @@ exports[`Dialog With Suggestion 1`] = `
             </div>
           </u-option>
           <u-option
+            label="Oslo"
             value="Oslo"
             tabindex="-1"
             role="option"
@@ -305,6 +301,7 @@ exports[`Dialog With Suggestion 1`] = `
             </div>
           </u-option>
           <u-option
+            label="Brønnøysund"
             value="Brønnøysund"
             tabindex="-1"
             role="option"
@@ -317,6 +314,7 @@ exports[`Dialog With Suggestion 1`] = `
             </div>
           </u-option>
           <u-option
+            label="Stavanger"
             value="Stavanger"
             tabindex="-1"
             role="option"
@@ -329,6 +327,7 @@ exports[`Dialog With Suggestion 1`] = `
             </div>
           </u-option>
           <u-option
+            label="Trondheim"
             value="Trondheim"
             tabindex="-1"
             role="option"
@@ -341,6 +340,7 @@ exports[`Dialog With Suggestion 1`] = `
             </div>
           </u-option>
           <u-option
+            label="Bergen"
             value="Bergen"
             tabindex="-1"
             role="option"
@@ -353,6 +353,7 @@ exports[`Dialog With Suggestion 1`] = `
             </div>
           </u-option>
           <u-option
+            label="Lillestrøm"
             value="Lillestrøm"
             tabindex="-1"
             role="option"
@@ -365,7 +366,7 @@ exports[`Dialog With Suggestion 1`] = `
             </div>
           </u-option>
         </u-datalist>
-      </div>
+      </u-combobox>
     </div>
   </div>
   <div>

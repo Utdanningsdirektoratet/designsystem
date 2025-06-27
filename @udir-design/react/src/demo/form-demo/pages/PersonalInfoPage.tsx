@@ -69,18 +69,21 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
           control={control}
           rules={{ required: 'Velg et fylke' }}
           defaultValue=""
-          render={({ field }) => (
-            <Suggestion>
-              <Suggestion.Input
-                id="county"
-                {...field}
-                aria-invalid={!!errors.county}
-              />
+          render={({ field: { onChange, ...field } }) => (
+            <Suggestion
+              {...field}
+              id="county"
+              onValueChange={(value) => {
+                onChange(value.at(0)?.value);
+              }}
+            >
+              <Suggestion.Chips />
+              <Suggestion.Input aria-invalid={!!errors.county} />
               <Suggestion.Clear />
               <Suggestion.List>
                 <Suggestion.Empty>Ingen resultater</Suggestion.Empty>
                 {DATA_COUNTIES.map((county) => (
-                  <Suggestion.Option key={county} value={county}>
+                  <Suggestion.Option key={county} label={county} value={county}>
                     {county}
                     <div>Fylke</div>
                   </Suggestion.Option>

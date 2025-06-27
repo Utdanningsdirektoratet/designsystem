@@ -15,7 +15,6 @@ export * from './field/Field';
 export * from './fieldset/Fieldset';
 export * from './input/Input';
 export * from './loaders';
-export * from './multiSuggestion/MultiSuggestion';
 export * from './pagination/Pagination';
 export * from './popover/Popover';
 export * from './search/Search';
