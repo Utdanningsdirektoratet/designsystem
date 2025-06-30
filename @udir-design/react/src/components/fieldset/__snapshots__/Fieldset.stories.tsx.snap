@@ -3,10 +3,55 @@
 exports[`Legend As Heading 1`] = `
 <fieldset>
   <legend data-weight="medium">
-    <h1>
-      Hvor skal du reise?
-    </h1>
+    <h2 data-size="sm">
+      Hvilke tjenester bruker du?
+    </h2>
   </legend>
+  <p data-variant="default">
+    Påloggingssystemer hos Udir
+  </p>
+  <div>
+    <input
+      id="components-fieldset--legend-as-heading-feide"
+      type="checkbox"
+      value="feide"
+      name="components-fieldset--legend-as-heading-feide"
+    >
+    <label
+      data-weight="regular"
+      for="components-fieldset--legend-as-heading-feide"
+    >
+      Feide
+    </label>
+  </div>
+  <div>
+    <input
+      id="components-fieldset--legend-as-heading-UIDP"
+      type="checkbox"
+      value="UIDP"
+      name="components-fieldset--legend-as-heading-UIDP"
+    >
+    <label
+      data-weight="regular"
+      for="components-fieldset--legend-as-heading-UIDP"
+    >
+      UIDP
+    </label>
+  </div>
+  <div>
+    <input
+      id="components-fieldset--legend-as-heading-UBAS"
+      type="checkbox"
+      value="UBAS"
+      name="components-fieldset--legend-as-heading-UBAS"
+    >
+    <label
+      data-weight="regular"
+      for="components-fieldset--legend-as-heading-UBAS"
+    >
+      UBAS
+    </label>
+  </div>
 </fieldset>
 `;
 
@@ -79,6 +124,68 @@ exports[`With Checkbox 1`] = `
     >
       Ja, jeg godtar
     </label>
+  </div>
+</fieldset>
+`;
+
+exports[`With Textfield 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    <h2 data-size="sm">
+      Adresse
+    </h2>
+  </legend>
+  <p data-variant="default">
+    Skriv inn adressen din for å motta post fra oss.
+  </p>
+  <div>
+    <label
+      data-weight="medium"
+      for="components-fieldset--with-textfield-textfield"
+    >
+      Gateadresse
+    </label>
+    <div>
+      <input
+        id="components-fieldset--with-textfield-textfield"
+        type="text"
+        name="components-fieldset--with-textfield-textfield"
+      >
+    </div>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for="components-fieldset--with-textfield-textfield"
+    >
+      Postnummer
+    </label>
+    <div>
+      <input
+        id="components-fieldset--with-textfield-textfield"
+        pattern="[0-9]*"
+        inputmode="numeric"
+        size="4"
+        type="text"
+        name="components-fieldset--with-textfield-textfield"
+      >
+    </div>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for="components-fieldset--with-textfield-textfield2"
+    >
+      Poststed
+    </label>
+    <div>
+      <input
+        id="components-fieldset--with-textfield-textfield2"
+        size="25"
+        type="text"
+        name="components-fieldset--with-textfield-textfield2"
+      >
+    </div>
   </div>
 </fieldset>
 `;
