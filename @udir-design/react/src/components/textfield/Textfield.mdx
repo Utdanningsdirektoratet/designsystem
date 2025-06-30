@@ -82,12 +82,10 @@ For å sikre en god brukeropplevelse er det viktig å bruke en kombinasjon av ri
 
 Når brukeren skal skrive inn tall i `Textfield`, må du vurdere om du skal bruke `type="number"` eller ikke. [Number-input skaper ofte flere problemer enn det løser](https://stackoverflow.blog/2022/12/26/why-the-number-input-is-the-worst-input/).
 
-**Bruk `type="number"` når**
+- For heltall bruker du `<input type="text" inputmode="numeric" pattern="[0-9]*">`.
+- For desimaltall bruker du `<input type="text" inputmode="decimal">` og håndterer valideringen selv.
 
-- tallet **ikke** trenger betinget validering (f.eks. tallet er alltid innefor et bestemt intervall)
-- tallet **ikke** har et forhold til andre felt i skjemaet
-
-Hvis én av disse betingelsene ikke er oppfylt må det håndteres manuelt. For integers kan du bruke `<input type="text" inputmode="numeric" pattern="[0-9]*">`. For desimaltall må du bruke `type="text"` og håndtere valideringen selv.
+Du kan vurdere å bruke `Input` med `type="number"` til felt som er tall i matematisk forstand, som for eksempel alder eller antall barn. Det betyr at felter som postnummer, telefonnummer og personnummer aldri skal ha `type="number"`.
 
 ### Ikke bruk deaktivert Textfield
 
