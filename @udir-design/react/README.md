@@ -42,7 +42,7 @@ Alternativt eksempel: importer stilsettet fra din primære css-fil
 
 ### Skru på typedefinisjoner for `data-color`
 
-Dersom du bryker TypeScript, bør du legge til typene for `@udir-design/theme` og `@udir-design/react` i din `tsconfig.json`. Dette gir typesjekking og autocomplete for Udirs farger og størrelser (`data-color` og `data-size` properties), både i bibliotekets komponenter og vanlige HTML-tags.
+Dersom du bryker TypeScript, bør du legge til typene for `@udir-design/theme` og `@udir-design/react/html` i din `tsconfig.json`. Dette gir typesjekking og autocomplete for Udirs farger og størrelser (`data-color` og `data-size` properties), både i bibliotekets komponenter og vanlige HTML-tags.
 
 Et enkelt eksempel:
 
@@ -50,7 +50,7 @@ Et enkelt eksempel:
 {
   "compilerOptions": {
     // ... andre compilerOptions
-    "types": ["@udir-design/theme", "@udir-design/react"],
+    "types": ["@udir-design/theme", "@udir-design/react/html"],
   },
   // ... andre innstillinger
 }
@@ -67,8 +67,8 @@ Dette må passes inn med din eksisterende tsconfig, her er et eksempel på en ek
       "node",
       "vite/client",
       "vitest/importMeta",
-      "@udir-design/theme", // <---- Legg til disse
-      "@udir-design/react", //  <---- to linjene
+      "@udir-design/theme", //       <---- Legg til disse
+      "@udir-design/react/html", //  <---- to linjene
     ],
   },
   "exclude": [
