@@ -14,6 +14,7 @@ exports[`Affix 1`] = `
     </span>
     <input
       id="affix"
+      size="12"
       type="text"
     >
     <span aria-hidden="true">
@@ -55,32 +56,33 @@ exports[`Counter 1`] = `
 
 exports[`Position 1`] = `
 <div style="max-width: 200px; margin: auto;">
-  <div data-position="end">
-    <label
-      data-weight="medium"
-      for="airplane"
-    >
-      Flymodus
-    </label>
-    <input
-      role="switch"
-      id="airplane"
-      type="checkbox"
-    >
-  </div>
-  <hr aria-hidden="true">
-  <div data-position="end">
-    <label
-      data-weight="medium"
-      for="sounds"
-    >
-      Lydløs
-    </label>
-    <input
-      role="switch"
-      id="sounds"
-      type="checkbox"
-    >
+  <div style="display: flex; flex-direction: column; gap: var(--ds-size-2);">
+    <div data-position="end">
+      <label
+        data-weight="medium"
+        for="airplane"
+      >
+        Flymodus
+      </label>
+      <input
+        role="switch"
+        id="airplane"
+        type="checkbox"
+      >
+    </div>
+    <div data-position="end">
+      <label
+        data-weight="medium"
+        for="sounds"
+      >
+        Lydløs
+      </label>
+      <input
+        role="switch"
+        id="sounds"
+        type="checkbox"
+      >
+    </div>
   </div>
 </div>
 `;
@@ -91,25 +93,26 @@ exports[`Preview 1`] = `
     data-weight="medium"
     for="preview"
   >
-    Etternavn
+    E-post
   </label>
   <div
     data-field="description"
     id="preview:description:1"
   >
-    Etternavn kan ikke inneholde mellomrom
+    E-posten din brukes til å logge inn og motta varsler
   </div>
   <input
     id="preview"
+    aria-invalid="true"
     type="text"
-    value="Nordmann Svenske"
+    value="ola nordmann@udir.no"
     aria-describedby="preview:validation:1  preview:description:1"
   >
   <p
     data-field="validation"
     id="preview:validation:1"
   >
-    Du kan ikke ha mellomrom i etternavnet ditt
+    Du må oppgi en gyldig e-postadresse
   </p>
 </div>
 `;
