@@ -1,11 +1,40 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Preview 1`] = `
+<h1
+  data-size="md"
+  style="margin-bottom: var(--ds-size-2);"
+>
+  Kvalitet i barnehagen
+</h1>
 <p data-variant="default">
-  Divider er brukt for å dele opp innhold i mindre deler.
+  Barnehagen er første trinn i et langt utdanningsløp og skal gi barn en god start, uavhengig av bakgrunn og behov. Barnehager av høy kvalitet kan ha positiv effekt som varer hele livet.
 </p>
-<hr aria-hidden="true">
 <p data-variant="default">
-  Den kan også brukes for å skille innhold som er relatert til hverandre.
+  Kvalitet i barnehagen omtales i barnehageloven med forskrifter inkludert rammeplanen. Rammeplanen er utgangspunktet for barnehagens arbeid med å ivareta barnas behov for omsorg og lek, og fremme læring og danning som grunnlag for allsidig utvikling.
 </p>
+<hr
+  aria-hidden="true"
+  style="margin: var(--ds-size-4) 0;"
+>
+<h2>
+  Se også
+</h2>
+<ul style="list-style: none; padding: 0px;">
+  <li>
+    <a href="https://www.udir.no/kvalitet-og-kompetanse/hva-er-kvalitet/#a190252">
+      Kvalitet i SFO
+    </a>
+  </li>
+  <li>
+    <a href="https://www.udir.no/kvalitet-og-kompetanse/hva-er-kvalitet/#a190241">
+      Kvalitet i grunnopplæringen
+    </a>
+  </li>
+  <li>
+    <a href="https://www.udir.no/kvalitet-og-kompetanse/hva-er-kvalitet/#a190254">
+      Kvalitet i PP-tjenesten
+    </a>
+  </li>
+</ul>
 `;
