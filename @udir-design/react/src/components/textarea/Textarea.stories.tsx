@@ -1,13 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Label } from '../typography/label/Label';
 import { useState } from 'react';
-import { Button, Divider, Paragraph, Textarea } from '@udir-design/react/alpha';
+import { Button, Textarea } from '@udir-design/react/alpha';
 import { expect, userEvent, within } from 'storybook/test';
 
 const meta: Meta<typeof Textarea> = {
   component: Textarea,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
+    layout: 'centered',
     customStyles: {
       display: 'flex',
       flexDirection: 'column',
@@ -24,6 +25,8 @@ export const Preview: Story = {
   args: {
     disabled: false,
     readOnly: false,
+    rows: 3,
+    cols: 20,
     id: 'my-textarea',
   },
   render: (args) => (
@@ -78,7 +81,7 @@ export const FullWidth: Story = {
   },
   render: (args) => (
     <>
-      <Label htmlFor={args.id}>Label</Label>
+      <Label htmlFor={args.id}>Beskriv bekymringen din</Label>
       <Textarea {...args} />
     </>
   ),
@@ -86,26 +89,36 @@ export const FullWidth: Story = {
 
 export const Controlled: Story = {
   args: {
-    id: 'my-textarea',
+    id: 'textfield-controlled',
   },
-  render(args) {
+  parameters: {
+    customStyles: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 'var(--ds-size-2)',
+    },
+  },
+  render: (args) => {
     const [value, setValue] = useState(`${args.value || ''}`);
 
     return (
       <>
-        <Label htmlFor={args.id}>Kontroller meg!</Label>
+        <Label htmlFor={args.id}>Beskriv bekymringen din</Label>
         <Textarea
-          onChange={(e) => setValue(e.target.value)}
-          value={value}
           {...args}
+          rows={4}
+          value={value}
+          onChange={(
+            e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+          ) => setValue(e.target.value)}
         />
-
-        <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
-
-        <Paragraph style={{ margin: 'var(--ds-size-2) 0' }}>
-          Du har skrevet inn: {value}
-        </Paragraph>
-        <Button onClick={() => setValue('Pizza')}>Jeg vil ha Pizza</Button>
+        <Button
+          variant="secondary"
+          onClick={() => setValue('')}
+          style={{ marginTop: 'var(--ds-size-2)' }}
+        >
+          Tøm feltet
+        </Button>
       </>
     );
   },

@@ -3,27 +3,21 @@
 exports[`Controlled 1`] = `
 <label
   data-weight="medium"
-  for="my-textarea"
+  for="textfield-controlled"
 >
-  Kontroller meg!
+  Beskriv bekymringen din
 </label>
-<textarea id="my-textarea">
+<textarea
+  id="textfield-controlled"
+  rows="4"
+>
 </textarea>
-<hr
-  aria-hidden="true"
-  style="margin-top: var(--ds-size-4);"
->
-<p
-  data-variant="default"
-  style="margin: var(--ds-size-2) 0;"
->
-  Du har skrevet inn:
-</p>
 <button
-  data-variant="primary"
+  data-variant="secondary"
   type="button"
+  style="margin-top: var(--ds-size-2);"
 >
-  Jeg vil ha Pizza
+  Tøm feltet
 </button>
 `;
 
@@ -32,7 +26,7 @@ exports[`Full Width 1`] = `
   data-weight="medium"
   for="my-textarea"
 >
-  Label
+  Beskriv bekymringen din
 </label>
 <textarea id="my-textarea">
 </textarea>
@@ -45,6 +39,10 @@ exports[`Preview 1`] = `
 >
   Label
 </label>
-<textarea id="my-textarea">
+<textarea
+  rows="3"
+  cols="20"
+  id="my-textarea"
+>
 </textarea>
 `;

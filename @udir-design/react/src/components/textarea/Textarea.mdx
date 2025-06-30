@@ -6,51 +6,70 @@ import * as TextareaStories from './Textarea.stories';
 
 # Textarea
 
-`Textarea` brukes når vi vil gi brukerne mulighet til å legge inn tekst som er lengre enn én linje.
+`Textarea` er et skjemaelement for å samle inn tekst som er lengre enn én linje. Det tilbyr grunnleggende funksjonalitet og er nyttig når du trenger full kontroll over komponentenes oppsett og validering, noe som gjør det ideelt for bygging av spesialtilpassede elementer.
+
+Se også [`Textfield`](/docs/components-textfield--docs) som er en gruppering av komponenter som ofte brukes sammen. Da slipper du å sy sammen `Label`, `Description`, `Input` og `ValidationMessage` selv hver gang.
+
+**Passer til å**
+
+- la brukeren skrive mer enn én linje tekst.
+- være et tekstfelt der det ikke finnes en forhåndsdefinert liste med svaralternativer.
+- gi brukeren plass til å formulere seg fritt.
+- skreddersy større tekstfelter til spesifikke behov.
+
+**Passer ikke til å**
+
+- motta korte svar som navn, e-postadresser og telefonnummer - bruk [`Input`](/docs/components-input--docs) for disse.
+- motta strukturerte data som skal valideres, f.eks fødselsnummer eller dato.
+
+## Slik bruker du Textarea
 
 <Primary />
 <Controls />
+
+`Textarea` kan også ta inn flere vanlige `<input>` attributter slik som `aria-label`.
+
+```tsx
+import { Textarea, Label } from '@udir-design/react';
+
+ <Label htmlFor="my-textarea">
+    Label
+  </Label>
+  <Textarea
+    rows="5"
+    id="my-textarea"
+  />
+```
 
 ## Eksempler
 
 ### Kontrollert
 
+`Textarea` kan kontrolleres programatisk ved å bruke `value` og `onChange`. Dette er nyttig når du vil at `Textfield` skal oppdatere seg selv basert på endringer i andre komponenter eller tilstander.
+
 <Canvas of={TextareaStories.Controlled} />
-
-### Full bredde
-
-Denne varianten strekker tekstområdet til å fylle hele bredden av tilgjengelig plass. Brukes når tekstfeltet skal stå ut som et hovedfelt eller når det er behov for maksimal skriveplass.
-
-<Canvas of={TextareaStories.FullWidth} />
 
 ## Retningslinjer
 
 Bruk `Textarea` når brukerne forventes å skrive inn mer enn én linje med tekst, for eksempel ved åpne spørsmål, tilbakemeldinger, eller andre situasjoner hvor lengre tekstinnhold er nødvendig.
 
-Vær oppmerksom på at brukerne kan synes det er vanskelig å skrive fritekst eller svare på åpne spørsmål. Noen ganger kan det være bedre å bryte opp spørsmålet i flere enklere spørsmål, og gi brukerne mulighet til å svare med for eksempel `radio`.
+Vær oppmerksom på at brukerne kan synes det er vanskelig å skrive fritekst eller svare på åpne spørsmål. Noen ganger kan det være bedre å bryte opp spørsmålet i flere enklere spørsmål, og gi brukerne mulighet til å svare med for eksempel [`Radio`](/docs/components-radio--docs).
 
-**Passer til**
+### Høyden på tekstområdet
 
-- å gi mulighet for lengre tekster/svar, for eksempel et avsnitt eller en kommentar.
+Høyden på `Textarea` bør tilpasses forventet tekstmengde. Forventer du at brukeren skal skrive tre linjer, bør høyden reflektere dette. For lengre tekster er det viktig å gi mer visuell plass for en bedre brukeropplevelse. Du kan endre høyde med `rows="{number}"`.
 
-**Passer ikke til**
+`Textarea` skal kunne tilpasses i høyden, når brukeren har behov for mer plass. Feltet vil automatisk utvide seg når brukeren skriver, dersom du ikke setter `rows`, slik at de alltid kan se hele innholdet sitt uten å måtte bruke rullefelt.
 
-- korte svar som e-postadresser og telefonnummer – bruk [`input`](/docs/components-input--docs) for disse.
+### Bredden på tekstområdet
 
-### Størrelse og tilpasning
-
-#### Høyden på tekstområdet
-
-Høyden på `Textarea` bør tilpasses forventet tekstmengde. Forventer du at brukeren skal skrive tre linjer, bør høyden reflektere dette. For lengre tekster er det viktig å gi mer visuell plass for en bedre brukeropplevelse. Du kan endre høyde med `rows={number}`.
-
-`Textarea` skal kunne tilpasses i høyden, når brukeren har behov for mer plass. Feltet
-vil automatisk utvide seg når brukeren skriver, dersom du ikke setter `rows`, slik
-at de alltid kan se hele innholdet sitt uten å måtte bruke rullefelt.{' '}
-
-#### Bredden på teksområdet
-
-Et tekstområde bør ikke være bredere enn 50–75 tegn inkludert mellomrom. Hvis vi holder oss til det, blir lesbarheten best for alle brukere.
+Et tekstområde bør ikke være bredere enn 50-75 tegn inkludert mellomrom. Hvis vi holder oss til det, blir lesbarheten best for alle brukere.
 
 ### Øvrige retningslinjer
 
-I tillegg til de retningslinjene, bør du også følge de generelle retninglinjene for [`Textfield`](/docs/components-Textfield--docs#retningslinjer) og [`Input`](/docs/components-input--docs#retningslinjer).
+I tillegg til de retningslinjene, bør du også følge de generelle retninglinjene for [`Textfield`](/docs/components-Textfield--docs) og [`Input`](/docs/components-input--docs).
+
+- [Unngå plassholdertekster](/docs/components-textfield--docs#unng%C3%A5-placeholder)
+- [Inndata og formatering](/docs/components-textfield--docs#inndata)
+- [Tekst i komponenten](/docs/components-textfield--docs#tekst-i-textfield)
+- [Tilgjengelighet](/docs/components-textfield--docs#tilgjengelighet)
