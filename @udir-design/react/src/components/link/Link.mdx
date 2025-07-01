@@ -53,6 +53,24 @@ Ikonet burde være skjult fra skjermleser, ved å legge på `aria-hidden`.
 
 <Canvas of={LinkStories.File} />
 
+### Ankerlenker
+
+Ankerlenker brukes for å navigere til en annen del av samme side. Disse lenkene skal ha `ArrowDownRightIcon` på venstre side, og ingen understrek eller `visited`-farge.
+
+<Canvas of={LinkStories.AnchorLinks} />
+
+Bruk følgende css-klasse for å style en ankerlenke:
+
+```css
+.anchor-link {
+  --dsc-link-color--visited: var(--dsc-link-color);
+  text-decoration-color: transparent;
+  &:hover {
+    text-decoration-color: var(--dsc-link-color);
+  }
+}
+```
+
 ## Retningslinjer
 
 ### Åpne lenker i samme fane/vindu

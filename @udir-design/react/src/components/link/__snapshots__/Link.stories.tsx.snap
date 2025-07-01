@@ -1,5 +1,81 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Anchor Links 1`] = `
+<div
+  data-variant="tinted"
+  data-color="accent"
+>
+  <h2 data-size="xs">
+    Innhold på siden
+  </h2>
+  <ul style="list-style: none; padding: 0px; margin-top: var(--ds-size-4);">
+    <li>
+      <a href="#retningslinjer">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            d="M6.5 11.25c-.69 0-1.25-.56-1.25-1.25V4a.75.75 0 0 0-1.5 0v6a2.75 2.75 0 0 0 2.75 2.75h10.69l-3.22 3.22a.75.75 0 1 0 1.06 1.06l4.5-4.5a.75.75 0 0 0 0-1.06l-4.5-4.5a.75.75 0 0 0-1.06 1.06l3.22 3.22z"
+          >
+          </path>
+        </svg>
+        Retningslinjer
+      </a>
+    </li>
+    <li>
+      <a href="#tekst-i-link">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            d="M6.5 11.25c-.69 0-1.25-.56-1.25-1.25V4a.75.75 0 0 0-1.5 0v6a2.75 2.75 0 0 0 2.75 2.75h10.69l-3.22 3.22a.75.75 0 1 0 1.06 1.06l4.5-4.5a.75.75 0 0 0 0-1.06l-4.5-4.5a.75.75 0 0 0-1.06 1.06l3.22 3.22z"
+          >
+          </path>
+        </svg>
+        Tekst i Link
+      </a>
+    </li>
+    <li>
+      <a href="#tilgjengelighet">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            d="M6.5 11.25c-.69 0-1.25-.56-1.25-1.25V4a.75.75 0 0 0-1.5 0v6a2.75 2.75 0 0 0 2.75 2.75h10.69l-3.22 3.22a.75.75 0 1 0 1.06 1.06l4.5-4.5a.75.75 0 0 0 0-1.06l-4.5-4.5a.75.75 0 0 0-1.06 1.06l3.22 3.22z"
+          >
+          </path>
+        </svg>
+        Tilgjengelighet
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`File 1`] = `
 <a href="https://www.udir.no/api/PdfApi/PrintPageAsPdfDocument/224209">
   <svg
