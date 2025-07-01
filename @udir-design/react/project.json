@@ -8,7 +8,7 @@
   "targets": {
     "dev": {
       "continuous": true,
-      "dependsOn": ["^build"]
+      "dependsOn": ["build"]
     },
     "build:storybook": {
       "inputs": ["default", "^default", "{workspaceRoot}/README.md"],
