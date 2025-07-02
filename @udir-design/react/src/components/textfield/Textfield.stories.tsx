@@ -6,7 +6,7 @@ import { Button, Divider, Paragraph } from '@udir-design/react/alpha';
 
 const meta: Meta<typeof Textfield> = {
   component: Textfield,
-  tags: ['alpha'],
+  tags: ['beta'],
   argTypes: {
     multiline: {
       type: 'boolean',
@@ -39,6 +39,9 @@ const meta: Meta<typeof Textfield> = {
         'week',
       ],
     },
+  },
+  parameters: {
+    layout: 'centered',
   },
 };
 
@@ -106,7 +109,7 @@ export const Preview: Story = {
 
 export const Rows: Story = {
   args: {
-    label: 'Label',
+    label: 'Beskrivelse',
     multiline: true,
     rows: 4,
     id: 'textfield-rows',
@@ -119,6 +122,7 @@ export const Affix: Story = {
     suffix: 'pr. mnd',
     label: 'Hvor mange kroner koster det per måned?',
     id: 'textfield-affix',
+    inputMode: 'numeric',
   },
 };
 
@@ -127,28 +131,117 @@ export const Counter: Story = {
     counter: 10,
     label: 'Hvor mange kroner koster det per måned?',
     id: 'textfield-counter',
+    inputMode: 'numeric',
   },
 };
 
 export const Controlled: Story = {
-  render() {
+  args: {
+    label: 'Fullt navn',
+    multiline: false,
+    id: 'textfield-controlled',
+  },
+  parameters: {
+    customStyles: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 'var(--ds-size-2)',
+    },
+  },
+  render: (args) => {
     const [value, setValue] = useState<string>('');
     return (
       <>
-        <Textfield
-          label="Kontroller meg!"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          id="textfield-controlled"
-        />
-
-        <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
-
-        <Paragraph style={{ margin: 'var(--ds-size-2) 0' }}>
-          Du har skrevet inn: {value}
+        <div
+          style={{
+            display: 'flex',
+            gap: 'var(--ds-size-2)',
+            alignItems: 'end',
+            width: '100%',
+          }}
+        >
+          <Textfield
+            {...args}
+            value={value}
+            onChange={(
+              e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+            ) => setValue(e.target.value)}
+            style={{ flexGrow: 1 }}
+          />
+          <Button variant="secondary" onClick={() => setValue('')}>
+            Tøm feltet
+          </Button>
+        </div>
+        <Divider />
+        <Paragraph>
+          Ditt brukernavn blir da: {value.replace(/\s/g, '').toLowerCase()}
         </Paragraph>
-        <Button onClick={() => setValue('Kake')}>Jeg vil ha Kake</Button>
       </>
     );
+  },
+};
+
+export const Disabled: Story = {
+  parameters: {
+    customStyles: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 'var(--ds-size-2)',
+    },
+  },
+  render: () => {
+    return (
+      <>
+        <Textfield
+          id="textfield-disabled"
+          label="Disabled Textfield"
+          disabled
+        />
+        <Textfield
+          id="textarea-disabled"
+          label="Disabled Textarea"
+          multiline
+          rows={4}
+          disabled
+        />
+      </>
+    );
+  },
+};
+
+export const ReadOnly: Story = {
+  parameters: {
+    customStyles: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 'var(--ds-size-2)',
+    },
+  },
+  render: () => {
+    return (
+      <>
+        <Textfield
+          id="textfield-readonly"
+          label="ReadOnly Textfield"
+          readOnly
+        />
+        <Textfield
+          id="textarea-readonly"
+          label="ReadOnly Textarea"
+          multiline
+          rows={4}
+          readOnly
+        />
+      </>
+    );
+  },
+};
+
+export const Focused: Story = {
+  args: Preview.args,
+  parameters: {
+    pseudo: {
+      focusVisible: true,
+    },
   },
 };
