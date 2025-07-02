@@ -14,7 +14,7 @@ import { assertExists } from '../../utilities/helpers/assertExists';
 
 const meta: Meta<typeof Search> = {
   component: Search,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     layout: 'centered',
   },
@@ -97,20 +97,16 @@ export const Controlled: Story = {
             gap: 'var(--ds-size-2)',
           }}
         >
-          <Field>
-            <Label>Hva leter du etter?</Label>
-            <Search>
-              <Search.Input
-                id="search-input-controlled"
-                aria-label="Søk"
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-              />
-              <Search.Clear />
-              <Search.Button type="submit" />
-            </Search>
-          </Field>
-
+          <Search>
+            <Search.Input
+              id="search-input-controlled"
+              aria-label="Søk"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+            />
+            <Search.Clear />
+            <Search.Button type="submit" />
+          </Search>
           <div
             style={{
               display: 'flex',
@@ -203,7 +199,7 @@ export const Variants: Story = {
 export const WithLabel: Story = {
   render: (args, context) => (
     <Field>
-      <Label>Hva leter du etter?</Label>
+      <Label>Søk i læreplaner</Label>
       <Search {...args}>
         <Search.Input id={context.id} name="cat-search" />
         <Search.Clear />
@@ -237,10 +233,11 @@ export const Form: Story = {
             <Search.Button />
           </Search>
         </form>
-
-        <Paragraph data-size="md" style={{ marginTop: 'var(--ds-size-2)' }}>
-          Søkeord: {submittedValue}
-        </Paragraph>
+        {submittedValue && (
+          <Paragraph data-size="md" style={{ marginTop: 'var(--ds-size-2)' }}>
+            Søkeord: {submittedValue}
+          </Paragraph>
+        )}
       </>
     );
   },
