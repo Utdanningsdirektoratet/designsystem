@@ -1,18 +1,10 @@
-import { useEffect } from 'react';
+export const hideTocForIds: Set<string> = new Set();
 
 export function HideToc() {
-  useEffect(() => {
-    const style = document.createElement('style');
-    style.id = 'hide-toc-style';
-    style.textContent = `
-      .sbdocs-toc--custom {
-        display: none;
-      }
-    `;
-    document.head.appendChild(style);
-    return () => {
-      style.remove();
-    };
-  }, []);
+  const params = new URLSearchParams(window.location.search);
+  const pageId = params.get('id');
+  if (pageId) {
+    hideTocForIds.add(pageId);
+  }
   return null;
 }
