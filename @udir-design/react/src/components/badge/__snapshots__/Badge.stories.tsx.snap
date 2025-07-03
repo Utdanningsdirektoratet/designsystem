@@ -1,14 +1,43 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Color Variants 1`] = `
+<div style="display: grid; grid-template-columns: repeat(4, 60px); gap: var(--ds-size-2); justify-content: center; height: 100%; width: 100%;">
+  <span
+    data-count="9+"
+    data-variant="base"
+    data-color="neutral"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="tinted"
+    data-color="neutral"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="base"
+    data-color="accent"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="tinted"
+    data-color="accent"
+  >
+  </span>
+</div>
+`;
+
 exports[`Custom Placement 1`] = `
 <span
   data-overlap="rectangle"
   data-placement="top-right"
-  style="top: 16%; right: 10%;"
 >
   <span
     data-variant="base"
-    data-color="accent"
+    data-color="danger"
+    style="--dsc-badge-top: 16%; --dsc-badge-right: 10%;"
   >
   </span>
   <svg
@@ -42,7 +71,7 @@ exports[`Floating 1`] = `
 >
   <span
     data-variant="base"
-    data-color="accent"
+    data-color="danger"
   >
   </span>
   <svg
@@ -73,7 +102,7 @@ exports[`Floating 1`] = `
 >
   <span
     data-variant="base"
-    data-color="accent"
+    data-color="danger"
   >
   </span>
   <svg
@@ -104,7 +133,7 @@ exports[`Floating 1`] = `
 >
   <span
     data-variant="base"
-    data-color="accent"
+    data-color="danger"
   >
   </span>
   <svg
@@ -135,7 +164,7 @@ exports[`Floating 1`] = `
 >
   <span
     data-variant="base"
-    data-color="accent"
+    data-color="danger"
   >
   </span>
   <svg
@@ -166,11 +195,16 @@ exports[`Floating 1`] = `
 >
   <span
     data-variant="base"
-    data-color="accent"
+    data-color="danger"
   >
   </span>
-  <div style="width: 2rem; height: 2rem; border-radius: 50%; background-color: var(--ds-color-support2-base-default);">
-  </div>
+  <span
+    data-variant="circle"
+    role="img"
+    aria-label="Avatar 1"
+    style="width: 2rem; height: 2rem; border-radius: 50%;"
+  >
+  </span>
 </span>
 <span
   data-overlap="circle"
@@ -178,11 +212,16 @@ exports[`Floating 1`] = `
 >
   <span
     data-variant="base"
-    data-color="accent"
+    data-color="danger"
   >
   </span>
-  <div style="width: 2rem; height: 2rem; border-radius: 50%; background-color: var(--ds-color-support2-base-default);">
-  </div>
+  <span
+    data-variant="circle"
+    role="img"
+    aria-label="Avatar 1"
+    style="width: 2rem; height: 2rem; border-radius: 50%;"
+  >
+  </span>
 </span>
 <span
   data-overlap="circle"
@@ -190,11 +229,16 @@ exports[`Floating 1`] = `
 >
   <span
     data-variant="base"
-    data-color="accent"
+    data-color="danger"
   >
   </span>
-  <div style="width: 2rem; height: 2rem; border-radius: 50%; background-color: var(--ds-color-support2-base-default);">
-  </div>
+  <span
+    data-variant="circle"
+    role="img"
+    aria-label="Avatar 1"
+    style="width: 2rem; height: 2rem; border-radius: 50%;"
+  >
+  </span>
 </span>
 <span
   data-overlap="circle"
@@ -202,11 +246,16 @@ exports[`Floating 1`] = `
 >
   <span
     data-variant="base"
-    data-color="accent"
+    data-color="danger"
   >
   </span>
-  <div style="width: 2rem; height: 2rem; border-radius: 50%; background-color: var(--ds-color-support2-base-default);">
-  </div>
+  <span
+    data-variant="circle"
+    role="img"
+    aria-label="Avatar 1"
+    style="width: 2rem; height: 2rem; border-radius: 50%;"
+  >
+  </span>
 </span>
 `;
 
@@ -235,9 +284,9 @@ exports[`In Button 1`] = `
         viewbox="0 0 24 24"
         focusable="false"
         role="img"
-        aria-labelledby="title-«rd»"
+        aria-labelledby="title-«rb»"
       >
-        <title id="title-«rd»">
+        <title id="title-«rb»">
           Innboks
         </title>
         <path
@@ -273,9 +322,9 @@ exports[`In Button 1`] = `
         viewbox="0 0 24 24"
         focusable="false"
         role="img"
-        aria-labelledby="title-«re»"
+        aria-labelledby="title-«rc»"
       >
-        <title id="title-«re»">
+        <title id="title-«rc»">
           Meldinger
         </title>
         <path
@@ -310,9 +359,9 @@ exports[`In Button 1`] = `
         viewbox="0 0 24 24"
         focusable="false"
         role="img"
-        aria-labelledby="title-«rf»"
+        aria-labelledby="title-«rd»"
       >
-        <title id="title-«rf»">
+        <title id="title-«rd»">
           Skru på video
         </title>
         <path
@@ -336,7 +385,7 @@ exports[`In Tabs 1`] = `
   >
     <button
       aria-selected="true"
-      id="tab-«r8»"
+      id="tab-«r6»"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
@@ -354,31 +403,23 @@ exports[`In Tabs 1`] = `
       >
         <path
           fill="currentColor"
-          d="M12 4.969c1.399-1.242 2.776-1.844 4.125-1.844 1.519 0 2.823.763 3.905 1.845 2.373 2.372 2.206 6.354-1 9.56l-6.5 6.5a.75.75 0 0 1-1.06 0l-6.5-6.5c-3.207-3.206-3.373-7.188-1-9.56C5.05 3.888 6.355 3.125 7.874 3.125c1.349 0 2.726.602 4.125 1.844"
+          fill-rule="evenodd"
+          d="M6 4.25a.75.75 0 0 0-.696.471L2.31 12.206a.74.74 0 0 0-.06.311V19c0 .414.336.75.75.75h18a.75.75 0 0 0 .75-.75v-6.483a.75.75 0 0 0-.06-.311L18.696 4.72A.75.75 0 0 0 18 4.25zm13.892 7.5-2.4-6H6.508l-2.4 6h2.774a1.75 1.75 0 0 1 1.565.967l.947 1.895a.25.25 0 0 0 .224.138h4.764a.25.25 0 0 0 .224-.138l.947-1.895a1.75 1.75 0 0 1 1.565-.967zm-2.998 1.638a.25.25 0 0 1 .224-.138h3.132v5H3.75v-5h3.132a.25.25 0 0 1 .224.138l.947 1.895a1.75 1.75 0 0 0 1.565.967h4.764a1.75 1.75 0 0 0 1.565-.967z"
+          clip-rule="evenodd"
         >
         </path>
       </svg>
-      Favoritter
+      Innboks
       <span
         data-count="10+"
         data-variant="base"
-        data-color="neutral"
+        data-color="accent"
       >
       </span>
     </button>
     <button
       aria-selected="false"
-      id="tab-«ra»"
-      role="tab"
-      type="button"
-      data-roving-tabindex-item="true"
-      tabindex="-1"
-    >
-      Tab 2
-    </button>
-    <button
-      aria-selected="false"
-      id="tab-«rb»"
+      id="tab-«r8»"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
@@ -402,20 +443,24 @@ exports[`In Tabs 1`] = `
         >
         </path>
       </svg>
-      Nylige
+      Pågående saker
       <span
         data-count="2"
         data-variant="base"
-        data-color="neutral"
+        data-color="accent"
       >
       </span>
     </button>
-  </div>
-  <div
-    role="tabpanel"
-    tabindex="0"
-  >
-    content 1
+    <button
+      aria-selected="false"
+      id="tab-«ra»"
+      role="tab"
+      type="button"
+      data-roving-tabindex-item="true"
+      tabindex="-1"
+    >
+      Løste saker
+    </button>
   </div>
 </div>
 `;
@@ -428,72 +473,61 @@ exports[`Preview 1`] = `
 </span>
 `;
 
+exports[`Semantic Color Variants 1`] = `
+<div style="display: grid; grid-template-columns: repeat(4, 60px); gap: var(--ds-size-2); justify-content: center; height: 100%; width: 100%;">
+  <span
+    data-count="9+"
+    data-variant="base"
+    data-color="danger"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="tinted"
+    data-color="danger"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="base"
+    data-color="info"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="tinted"
+    data-color="info"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="base"
+    data-color="warning"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="tinted"
+    data-color="warning"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="base"
+    data-color="success"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="tinted"
+    data-color="success"
+  >
+  </span>
+</div>
+`;
+
 exports[`Status 1`] = `
-<div style="display: flex; gap: var(--ds-size-4);">
-  <span
-    data-overlap="rectangle"
-    data-placement="top-right"
-    data-size="sm"
-  >
-    <span
-      data-variant="base"
-      data-color="danger"
-    >
-    </span>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
-      fill="none"
-      viewbox="0 0 24 24"
-      focusable="false"
-      role="img"
-      aria-labelledby="title-«r5»"
-    >
-      <title id="title-«r5»">
-        Videokamera
-      </title>
-      <path
-        fill="currentColor"
-        fill-rule="evenodd"
-        d="M4 5.25A1.75 1.75 0 0 0 2.25 7v10c0 .966.784 1.75 1.75 1.75h11A1.75 1.75 0 0 0 16.75 17V7A1.75 1.75 0 0 0 15 5.25zm14.424 10.713a.25.25 0 0 1-.174-.238v-7.45a.25.25 0 0 1 .174-.238l2.347-.751A.75.75 0 0 1 21.75 8v8a.75.75 0 0 1-.979.714z"
-        clip-rule="evenodd"
-      >
-      </path>
-    </svg>
-  </span>
-  <span
-    data-overlap="rectangle"
-    data-placement="top-right"
-    data-size="md"
-  >
-    <span
-      data-variant="base"
-      data-color="danger"
-    >
-    </span>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
-      fill="none"
-      viewbox="0 0 24 24"
-      focusable="false"
-      role="img"
-      aria-labelledby="title-«r6»"
-    >
-      <title id="title-«r6»">
-        Videokamera
-      </title>
-      <path
-        fill="currentColor"
-        fill-rule="evenodd"
-        d="M4 5.25A1.75 1.75 0 0 0 2.25 7v10c0 .966.784 1.75 1.75 1.75h11A1.75 1.75 0 0 0 16.75 17V7A1.75 1.75 0 0 0 15 5.25zm14.424 10.713a.25.25 0 0 1-.174-.238v-7.45a.25.25 0 0 1 .174-.238l2.347-.751A.75.75 0 0 1 21.75 8v8a.75.75 0 0 1-.979.714z"
-        clip-rule="evenodd"
-      >
-      </path>
-    </svg>
-  </span>
+<div>
   <span
     data-overlap="rectangle"
     data-placement="top-right"
@@ -512,72 +546,19 @@ exports[`Status 1`] = `
       viewbox="0 0 24 24"
       focusable="false"
       role="img"
-      aria-labelledby="title-«r7»"
+      aria-labelledby="title-«r5»"
     >
-      <title id="title-«r7»">
-        Videokamera
+      <title id="title-«r5»">
+        Lagre
       </title>
       <path
         fill="currentColor"
         fill-rule="evenodd"
-        d="M4 5.25A1.75 1.75 0 0 0 2.25 7v10c0 .966.784 1.75 1.75 1.75h11A1.75 1.75 0 0 0 16.75 17V7A1.75 1.75 0 0 0 15 5.25zm14.424 10.713a.25.25 0 0 1-.174-.238v-7.45a.25.25 0 0 1 .174-.238l2.347-.751A.75.75 0 0 1 21.75 8v8a.75.75 0 0 1-.979.714z"
+        d="M4 3.25h2.75a.5.5 0 0 1 .5.5V7c0 .414.336.75.75.75h8a.75.75 0 0 0 .75-.75V3.75a.5.5 0 0 1 .5-.5H18a.75.75 0 0 1 .53.22l2 2c.141.14.22.331.22.53v14a.75.75 0 0 1-.75.75h-1.75a.5.5 0 0 1-.5-.5V11a.75.75 0 0 0-.75-.75H7a.75.75 0 0 0-.75.75v9.25a.5.5 0 0 1-.5.5H4a.75.75 0 0 1-.75-.75V4A.75.75 0 0 1 4 3.25m12.25 17a.5.5 0 0 1-.5.5h-7.5a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h7.5a.5.5 0 0 1 .5.5zm-7.5-16.5a.5.5 0 0 1 .5-.5h5.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-5.5a.5.5 0 0 1-.5-.5zM9.25 14a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75m.75 2.25a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5z"
         clip-rule="evenodd"
       >
       </path>
     </svg>
-  </span>
-</div>
-`;
-
-exports[`Variants 1`] = `
-<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--ds-size-2); height: 100%; width: 100%;">
-  <span
-    data-count="9+"
-    data-variant="base"
-    data-color="neutral"
-  >
-  </span>
-  <span
-    data-count="9+"
-    data-variant="tinted"
-    data-color="neutral"
-  >
-  </span>
-  <span
-    data-count="9+"
-    data-variant="base"
-    data-color="danger"
-  >
-  </span>
-  <span
-    data-count="9+"
-    data-variant="tinted"
-    data-color="danger"
-  >
-  </span>
-  <span
-    data-count="9+"
-    data-variant="base"
-    data-color="info"
-  >
-  </span>
-  <span
-    data-count="9+"
-    data-variant="tinted"
-    data-color="info"
-  >
-  </span>
-  <span
-    data-count="9+"
-    data-variant="base"
-    data-color="warning"
-  >
-  </span>
-  <span
-    data-count="9+"
-    data-variant="tinted"
-    data-color="warning"
-  >
   </span>
 </div>
 `;

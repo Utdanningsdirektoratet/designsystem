@@ -2,18 +2,27 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import {
   ChatIcon,
   EnvelopeClosedFillIcon,
-  HeartFillIcon,
   InboxIcon,
   PencilIcon,
-  VideoFillIcon,
   VideoIcon,
+  FloppydiskFillIcon,
 } from '@navikt/aksel-icons';
-import { Badge, Tabs } from '../alpha';
-import { Button } from '../beta';
+import { Tabs } from '../alpha';
+import { Badge } from './Badge';
+import { Avatar, Button } from '../beta';
+import { CSSProperties } from 'react';
 
 const meta: Meta<typeof Badge> = {
   component: Badge,
   tags: ['alpha'],
+  parameters: {
+    customStyles: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+  },
 };
 
 export default meta;
@@ -27,7 +36,7 @@ export const Preview: Story = {
 };
 
 export const Floating: Story = {
-  args: { 'data-color': 'accent' },
+  args: { 'data-color': 'danger' },
   parameters: {
     customStyles: {
       display: 'flex',
@@ -54,46 +63,46 @@ export const Floating: Story = {
       </Badge.Position>
       <Badge.Position placement="top-right" overlap="circle">
         <Badge {...args} />
-        <div
+        <Avatar
           style={{
             width: '2rem',
             height: '2rem',
             borderRadius: '50%',
-            backgroundColor: 'var(--ds-color-support2-base-default)',
           }}
+          aria-label={'Avatar 1'}
         />
       </Badge.Position>
       <Badge.Position placement="top-left" overlap="circle">
         <Badge {...args} />
-        <div
+        <Avatar
           style={{
             width: '2rem',
             height: '2rem',
             borderRadius: '50%',
-            backgroundColor: 'var(--ds-color-support2-base-default)',
           }}
+          aria-label={'Avatar 1'}
         />
       </Badge.Position>
       <Badge.Position placement="bottom-right" overlap="circle">
         <Badge {...args} />
-        <div
+        <Avatar
           style={{
             width: '2rem',
             height: '2rem',
             borderRadius: '50%',
-            backgroundColor: 'var(--ds-color-support2-base-default)',
           }}
+          aria-label={'Avatar 1'}
         />
       </Badge.Position>
       <Badge.Position placement="bottom-left" overlap="circle">
         <Badge {...args} />
-        <div
+        <Avatar
           style={{
             width: '2rem',
             height: '2rem',
             borderRadius: '50%',
-            backgroundColor: 'var(--ds-color-support2-base-default)',
           }}
+          aria-label={'Avatar 1'}
         />
       </Badge.Position>
     </>
@@ -103,14 +112,16 @@ export const Floating: Story = {
 export const CustomPlacement: Story = {
   args: { 'data-color': 'danger' },
   render: (args) => (
-    <Badge.Position
-      placement="top-right"
-      style={{
-        top: '16%',
-        right: '10%',
-      }}
-    >
-      <Badge data-color="accent"></Badge>
+    <Badge.Position placement="top-right">
+      <Badge
+        style={
+          {
+            '--dsc-badge-top': '16%',
+            '--dsc-badge-right': '10%',
+          } as CSSProperties
+        }
+        {...args}
+      />
       <EnvelopeClosedFillIcon title="Meldinger" />
     </Badge.Position>
   ),
@@ -119,48 +130,32 @@ export const CustomPlacement: Story = {
 export const Status: Story = {
   args: { 'data-color': 'danger' },
   render: (args) => (
-    <div
-      style={{
-        display: 'flex',
-        gap: 'var(--ds-size-4)',
-      }}
-    >
-      <Badge.Position data-size="sm">
-        <Badge {...args} />
-        <VideoFillIcon title="Videokamera" />
-      </Badge.Position>
-      <Badge.Position data-size="md">
-        <Badge {...args} />
-        <VideoFillIcon title="Videokamera" />
-      </Badge.Position>
+    <div>
       <Badge.Position data-size="lg">
         <Badge {...args} />
-        <VideoFillIcon title="Videokamera" />
+        <FloppydiskFillIcon title="Lagre" />
       </Badge.Position>
     </div>
   ),
 };
 
 export const InTabs: Story = {
-  args: { 'data-color': 'neutral' },
+  args: { 'data-color': 'accent' },
   render: (args) => (
     <Tabs defaultValue="value1">
       <Tabs.List>
         <Tabs.Tab value="value1">
-          <HeartFillIcon aria-hidden />
-          Favoritter
+          <InboxIcon aria-hidden />
+          Innboks
           <Badge {...args} count={64} maxCount={10} />
         </Tabs.Tab>
-        <Tabs.Tab value="value2">Tab 2</Tabs.Tab>
-        <Tabs.Tab value="value3">
+        <Tabs.Tab value="value2">
           <PencilIcon aria-hidden />
-          Nylige
+          Pågående saker
           <Badge {...args} count={2} />
         </Tabs.Tab>
+        <Tabs.Tab value="value3">Løste saker</Tabs.Tab>
       </Tabs.List>
-      <Tabs.Panel value="value1">content 1</Tabs.Panel>
-      <Tabs.Panel value="value2">content 2</Tabs.Panel>
-      <Tabs.Panel value="value3">content 3</Tabs.Panel>
     </Tabs>
   ),
 };
@@ -196,7 +191,7 @@ export const InButton: Story = {
   ),
 };
 
-const VariantsMap: {
+const ColorsMap: {
   [key: string]: { [key: string]: string };
 } = {
   neutralBase: {
@@ -206,6 +201,18 @@ const VariantsMap: {
     'data-color': 'neutral',
     'data-variant': 'tinted',
   },
+  accentBase: {
+    'data-color': 'accent',
+  },
+  accentTinted: {
+    'data-color': 'accent',
+    'data-variant': 'tinted',
+  },
+};
+
+const SemanticColorsMap: {
+  [key: string]: { [key: string]: string };
+} = {
   dangerBase: {
     'data-color': 'danger',
   },
@@ -227,20 +234,47 @@ const VariantsMap: {
     'data-color': 'warning',
     'data-variant': 'tinted',
   },
+  successBase: {
+    'data-color': 'success',
+  },
+  successTinted: {
+    'data-color': 'success',
+    'data-variant': 'tinted',
+  },
 };
 
-export const Variants: Story = {
+export const ColorVariants: Story = {
   render: () => (
     <div
       style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(4, 1fr)',
+        gridTemplateColumns: 'repeat(4, 60px)',
         gap: 'var(--ds-size-2)',
+        justifyContent: 'center',
         height: '100%',
         width: '100%',
       }}
     >
-      {Object.entries(VariantsMap).map(([key, value]) => (
+      {Object.entries(ColorsMap).map(([key, value]) => (
+        <Badge key={key} {...value} count={15} maxCount={9} />
+      ))}
+    </div>
+  ),
+};
+
+export const SemanticColorVariants: Story = {
+  render: () => (
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, 60px)',
+        gap: 'var(--ds-size-2)',
+        justifyContent: 'center',
+        height: '100%',
+        width: '100%',
+      }}
+    >
+      {Object.entries(SemanticColorsMap).map(([key, value]) => (
         <Badge key={key} {...value} count={15} maxCount={9} />
       ))}
     </div>
