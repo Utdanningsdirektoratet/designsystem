@@ -12,12 +12,12 @@ import {
   TrashFillIcon,
 } from '@navikt/aksel-icons';
 import { useState } from 'react';
-import { Avatar, Divider, Dropdown } from '../alpha';
-import { Button } from '../beta';
+import { Avatar, Divider } from '../alpha';
+import { Button, Dropdown } from '../beta';
 
 const meta: Meta<typeof Dropdown> = {
   component: Dropdown,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     layout: 'fullscreen',
     customStyles: {
