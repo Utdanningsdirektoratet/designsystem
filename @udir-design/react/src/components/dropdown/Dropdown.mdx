@@ -8,10 +8,19 @@ import { Dropdown } from './Dropdown';
 
 Dropdown er en generisk nedtrekksliste. Den legger grunnmuren for å bygge menyer og lister.
 
-<Primary />
-<Controls />
+**Passer til å**
+
+- brukes som kontekstmeny
+- liste ut handlinger
+
+**Passer ikke til å**
+
+- beskrive handlinger eller elementer (se [`Popover`](/docs/components-popover--docs) eller [`Tooltip`](/docs/components-tooltip--docs))
 
 ## Slik bruker du Dropdown
+
+<Primary />
+<Controls />
 
 ```tsx
 import { Dropdown } from '@udir-design/react';
@@ -41,58 +50,40 @@ import { Dropdown } from '@udir-design/react';
 </Dropdown>
 ```
 
-### Polyfill
-
-`Dropdown` bruker [popover](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover). Dette apiet er klassifisert som [Baseline:
-Newly available](https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility) fra april 2024,
-med Firefox som siste nettleser la det til. I noen tilfeller kan en oppleve at brukere av ulike grunner er låst til eldre nettleserversjoner, og da kan det være aktuelt å legge til en polyfill for å sikre at `Dropdown` fungerer for alle.
-
-- [Popover-Polyfill](https://github.com/oddbird/popover-polyfill)
-
 ## Eksempler
 
-### Kontrollert
+Du kan legge ikon og lignende komponenter slik som `Avatar` rett inn i `Dropdown.Item`.
 
-Dersom du sender inn `open`, så bruker du `Dropdown` kontrollert. Du kan bruke `onClose` for å få beskjed når `Dropdown` vil lukkes.
+<Canvas of={DropdownStories.Avatars} />
+
+### Kontrollert tilstand
+
+Tilstanden til `Dropdown` kan kontrolleres ved å bruke `open` og `onClose`.
 
 <Canvas of={DropdownStories.Controlled} />
 
-### Ikoner
+### Trigger
 
-Du kan legge ikon rett inn i `Dropdown.Item`, dersom det blir mye mellomrom til kanten kan du legge på din egen klasse og endre på `padding`.
+Triggeren er en [`Button`](/docs/components-button--docs) som standard. Du kan bruke `asChild` for å endre `Dropdown.Trigger` elementet. Dersom du skal legge på funksjoner som `onClick`, legg det på ditt element, og legg `asChild` på `Dropdown.Trigger`.
 
-<Canvas of={DropdownStories.Icons} />
-
-### Uten Trigger
-
-`Dropdown` bruker popover APIet, så du kan bruke `Dropdown` uten `Dropdown.Trigger`.
-Du må da legge til `popovertarget={id}` på `Dropdown`, og `id` på `Dropdown`.
+Fordi `Dropdown` bruker popover API-et, kan du også bruke `Dropdown` uten `Dropdown.Trigger`. Da må du legge til `popovertarget={id}` på komponenten som skal brukes som trigger, og `id` på `Dropdown`.
 
 <Canvas of={DropdownStories.WithoutTrigger} />
 
 ## Tilgjengelighet
 
-Det er innebygd tilgjengelighet i `Dropdown.Trigger` med `aria-expanded={true/false}` i henhold til åpne/lukket tilstand, og `aria-haspopup='menu'`. Du kan lese mer om Popover APIet i mozilla sin [dokumentasjon](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API).
+Det er innebygd tilgjengelighet i `Dropdown.Trigger` med `aria-expanded={true/false}` i henhold til åpnet/lukket tilstand, og `aria-haspopup='menu'`. Du kan lese mer om Popover API-et i mozilla sin [dokumentasjon](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API).
 
 ### Tastatur
 
-På grunn av forskjellige bruksmønstre for `Dropdown` har vi ikke innebygd tastaturhåndtering.
-Dersom du lager en meny må du selv implementere tastaturhåndtering for å navigere i menyen.
-Se ["Menu and Menubar Pattern" hos w3c](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/).
-Vi har [`RovingFocus`](/docs/utilities-rovingfocus--docs) som er en hjelpekomponent for tastaturnavigasjon.
+På grunn av forskjellige bruksmønstre for `Dropdown` har vi ikke innebygd tastaturhåndtering. Dersom du lager en meny må du selv implementere tastaturhåndtering for å navigere i menyen. Se ["Menu and Menubar Pattern" hos w3c](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/).
 
 Dersom du bruker `Dropdown` uten å gjøre noe selv, vil fokuserbare elementer i `Dropdown.List` kunne navigeres med tabulator-tasten, og du kan lukke `Dropdown` med Escape-tasten.
 
-### Dropdown.Trigger
+## Kompatibilitet
 
-Triggeren er en [`Button`](/docs/components-button--docs) som standard.
+`Dropdown` bruker [popover API-et](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover). Dette API-et er klassifisert som [Baseline:
+Newly available](https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility) fra april 2024,
+med Firefox som siste nettleser la det til. I noen tilfeller kan en oppleve at brukere av ulike grunner er låst til eldre nettleserversjoner, og da kan det være aktuelt å legge til en polyfill for å sikre at `Dropdown` fungerer for alle.
 
-Bruk `Dropdown.Trigger` til å aktivere `Dropdown`. Du kan bruke `asChild` for å endre `Dropdown.Trigger` elementet.
-Dersom du skal legge på funksjoner som `onClick`, legg det på ditt element, og legg `asChild` på `Dropdown.Trigger`.
-
-### Referanser
-
-Vi bruker `ul` og `li` tags i dropdownen, valget er basert på dette:
-
-- https://www.w3.org/WAI/tutorials/menus/flyout/#flyoutnavkbbtn
-- https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/../Dropdown.stories.
+- [Popover-Polyfill](https://github.com/oddbird/popover-polyfill)
