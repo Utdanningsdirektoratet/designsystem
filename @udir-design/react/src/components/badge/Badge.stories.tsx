@@ -7,12 +7,13 @@ import {
   PencilIcon,
   VideoIcon,
 } from '@navikt/aksel-icons';
-import { Avatar, Badge, Tabs } from '../alpha';
+import { Avatar, Tabs } from '../alpha';
+import { Badge } from '../beta';
 import { Button } from '../beta';
 
 const meta: Meta<typeof Badge> = {
   component: Badge,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     customStyles: {
       display: 'flex',

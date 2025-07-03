@@ -2,7 +2,9 @@
  * This file exports the components that are in the alpha stage of development
  */
 
-export * from './badge/Badge';
+export * from './alert/Alert';
+export * from './avatar/Avatar';
+export * from './card/Card';
 export * from './chip/Chip';
 export * from './dropdown/Dropdown';
 export * from './errorSummary/ErrorSummary';
