@@ -13,12 +13,12 @@ import {
   TrashFillIcon,
 } from '@navikt/aksel-icons';
 import { useState } from 'react';
-import { Avatar, Divider, Dropdown } from '../alpha';
-import { Button } from '../beta';
+import { Badge } from '@udir-design/react/alpha';
+import { Button, Dropdown, Avatar, Divider } from '../beta';
 
 const meta: Meta<typeof Dropdown> = {
   component: Dropdown,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     layout: 'fullscreen',
     customStyles: {
@@ -152,7 +152,7 @@ export const Avatars: Story = {
                 <Avatar aria-label="Sarpsborg kommune" data-color="support1">
                   <BriefcaseIcon />
                 </Avatar>
-                Sarpsborg kommune
+                Sarpsborg kommune <Badge count={10} maxCount={9} />
               </Dropdown.Button>
             </Dropdown.Item>
             <Divider />

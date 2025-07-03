@@ -13,6 +13,7 @@ export * from './checkbox/Checkbox';
 export * from './details/Details';
 export * from './dialog/Dialog';
 export * from './divider/Divider';
+export * from './dropdown/Dropdown';
 export * from './errorSummary/ErrorSummary';
 export * from './field/Field';
 export * from './fieldset/Fieldset';
