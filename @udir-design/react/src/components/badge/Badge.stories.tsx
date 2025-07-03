@@ -2,18 +2,21 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import {
   ChatIcon,
   EnvelopeClosedFillIcon,
-  HeartFillIcon,
   InboxIcon,
+  InboxFillIcon,
   PencilIcon,
-  VideoFillIcon,
   VideoIcon,
 } from '@navikt/aksel-icons';
-import { Badge, Tabs } from '../alpha';
+import { Avatar, Badge, Tabs } from '../alpha';
 import { Button } from '../beta';
 
 const meta: Meta<typeof Badge> = {
   component: Badge,
   tags: ['alpha'],
+  parameters: {
+    layout: 'centered',
+    right: 40,
+  },
 };
 
 export default meta;
@@ -53,47 +56,51 @@ export const Floating: Story = {
         <EnvelopeClosedFillIcon title="Meldinger" />
       </Badge.Position>
       <Badge.Position placement="top-right" overlap="circle">
-        <Badge {...args} />
-        <div
+        <Badge {...args} data-size="lg" />
+        <Avatar
+          data-color="support2"
           style={{
             width: '2rem',
             height: '2rem',
             borderRadius: '50%',
-            backgroundColor: 'var(--ds-color-support2-base-default)',
           }}
+          aria-label={'Avatar 1'}
         />
       </Badge.Position>
       <Badge.Position placement="top-left" overlap="circle">
         <Badge {...args} />
-        <div
+        <Avatar
+          data-color="support2"
           style={{
             width: '2rem',
             height: '2rem',
             borderRadius: '50%',
-            backgroundColor: 'var(--ds-color-support2-base-default)',
           }}
+          aria-label={'Avatar 1'}
         />
       </Badge.Position>
       <Badge.Position placement="bottom-right" overlap="circle">
         <Badge {...args} />
-        <div
+        <Avatar
+          data-color="support2"
           style={{
             width: '2rem',
             height: '2rem',
             borderRadius: '50%',
-            backgroundColor: 'var(--ds-color-support2-base-default)',
           }}
+          aria-label={'Avatar 1'}
         />
       </Badge.Position>
       <Badge.Position placement="bottom-left" overlap="circle">
         <Badge {...args} />
-        <div
+        <Avatar
+          data-color="support2"
           style={{
             width: '2rem',
             height: '2rem',
             borderRadius: '50%',
-            backgroundColor: 'var(--ds-color-support2-base-default)',
           }}
+          aria-label={'Avatar 1'}
         />
       </Badge.Position>
     </>
@@ -127,15 +134,15 @@ export const Status: Story = {
     >
       <Badge.Position data-size="sm">
         <Badge {...args} />
-        <VideoFillIcon title="Videokamera" />
+        <InboxFillIcon title="Innboks" />
       </Badge.Position>
       <Badge.Position data-size="md">
         <Badge {...args} />
-        <VideoFillIcon title="Videokamera" />
+        <InboxFillIcon title="Innboks" />
       </Badge.Position>
       <Badge.Position data-size="lg">
         <Badge {...args} />
-        <VideoFillIcon title="Videokamera" />
+        <InboxFillIcon title="Innboks" />
       </Badge.Position>
     </div>
   ),
@@ -147,20 +154,17 @@ export const InTabs: Story = {
     <Tabs defaultValue="value1">
       <Tabs.List>
         <Tabs.Tab value="value1">
-          <HeartFillIcon aria-hidden />
-          Favoritter
+          <InboxIcon aria-hidden />
+          Innboks
           <Badge {...args} count={64} maxCount={10} />
         </Tabs.Tab>
-        <Tabs.Tab value="value2">Tab 2</Tabs.Tab>
-        <Tabs.Tab value="value3">
+        <Tabs.Tab value="value2">
           <PencilIcon aria-hidden />
-          Nylige
+          Pågående saker
           <Badge {...args} count={2} />
         </Tabs.Tab>
+        <Tabs.Tab value="value3">Løste saker</Tabs.Tab>
       </Tabs.List>
-      <Tabs.Panel value="value1">content 1</Tabs.Panel>
-      <Tabs.Panel value="value2">content 2</Tabs.Panel>
-      <Tabs.Panel value="value3">content 3</Tabs.Panel>
     </Tabs>
   ),
 };
@@ -206,6 +210,27 @@ const VariantsMap: {
     'data-color': 'neutral',
     'data-variant': 'tinted',
   },
+  accentBase: {
+    'data-color': 'accent',
+  },
+  accentTinted: {
+    'data-color': 'accent',
+    'data-variant': 'tinted',
+  },
+  support1Base: {
+    'data-color': 'support1',
+  },
+  support1Tinted: {
+    'data-color': 'support1',
+    'data-variant': 'tinted',
+  },
+  support2Base: {
+    'data-color': 'support2',
+  },
+  support2Tinted: {
+    'data-color': 'support2',
+    'data-variant': 'tinted',
+  },
   dangerBase: {
     'data-color': 'danger',
   },
@@ -234,8 +259,8 @@ export const Variants: Story = {
     <div
       style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(4, 1fr)',
-        gap: 'var(--ds-size-2)',
+        gridTemplateColumns: 'repeat(14, 1fr )',
+        gap: 'var(--ds-size-4)',
         height: '100%',
         width: '100%',
       }}

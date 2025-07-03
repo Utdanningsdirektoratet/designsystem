@@ -5,16 +5,26 @@ import * as BadgeStories from './Badge.stories';
 
 # Badge
 
-`Badge` er ein ikkje-interaktiv komponent som viser status med eller utan tal. Bruk [Tag](/docs/komponenter-tag--docs) dersom du skal
+`Badge` er ein ikkje-interaktiv komponent som viser status med eller utan tal. Bruk [`Tag`](/docs/components-tag--docs) dersom du skal
 ha tekst i staden for tal.
+
+## Slik bruker du Badge
+
+**Passer til:**
+
+- Tal som viser antall nye meldingar, varsel eller oppgåver.
+- Små statusindikatorar i form av ein sirkel, som for eksempel viser om ein person er opptatt, borte eller aktiv.
+
+**Passer ikkje til:**
+
+- Tekstar - bruk `Tag` i staden.
+- Interaktive handlingar - bruk `Chip` eller `Button` i staden.
 
 <Primary />
 <Controls />
 
-## Bruk
-
 ```tsx
-import { Badge } from '@digdir/designsystemet-react';
+import { Badge } from '@udir-design/react';
 
 /* Inline */
 <Badge />
@@ -26,18 +36,7 @@ import { Badge } from '@digdir/designsystemet-react';
 </Badge.Position>
 ```
 
-## Kodeeksempel
-
-### Flytande over element
-
-Du kan setje plassering med `placement`. Dersom elementet du plasserer over er ein sirkel, kan du setje `overlap="circle"`.
-
-<Canvas of={BadgeStories.Floating} />
-
-Ikkje alle ikon har lik form, og då må du kanskje endre kor `Badge` skal plasserast. Dersom du ikkje får `Badge` til å liggje der du ynskjer, kan du bruke `style` for å overstyre plasseringa.
-Dette fungerer også når du bruker `overlap="circle"`.
-
-<Canvas of={BadgeStories.CustomPlacement} />
+## Variantar av Badge
 
 ### Fargar
 
@@ -52,25 +51,28 @@ Dersom du ikkje sender inn `count`, blir berre ein sirkel vist. Dette kan brukas
 
 <Canvas of={BadgeStories.Status} />
 
+## Eksempler
+
+### Flytande over element
+
+Du kan setje plassering med `placement`. Dersom elementet du plasserer over er ein sirkel, kan du setje `overlap="circle"`.
+
+<Canvas of={BadgeStories.Floating} />
+
+Ikkje alle ikon har lik form, og då må du kanskje endre kor `Badge` skal plasserast. Dersom du ikkje får `Badge` til å liggje der du ynskjer, kan du bruke `style` for å overstyre plasseringa.
+Dette fungerer også når du bruker `overlap="circle"`.
+
+<Canvas of={BadgeStories.CustomPlacement} />
+
 ### Inline
 
-Du kan bruke komponenten anten inline eller flytande over eit element.
+Du kan også bruke komponenten inline.
 
 <Canvas of={BadgeStories.InTabs} />
 
 ## Retningslinjer
 
 Bruk `Badge` for å trekkje merksemd mot statusar, varslar eller tal.
-
-**Passer til:**
-
-- Tal som viser antall nye meldingar, varsel eller oppgåver.
-- Små statusindikatorar i form av ein sirkel, som for eksempel viser om ein person er opptatt, borte eller aktiv.
-
-**Passer ikkje til:**
-
-- Tekstar – bruk `Tag` i staden.
-- Interaktive handlingar - bruk `Chip` eller `Button` i staden.
 
 ## Tekst
 
