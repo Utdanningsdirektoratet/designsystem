@@ -1,8 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { within, expect, userEvent } from 'storybook/test';
-import { ChevronDownIcon, ChevronUpIcon, LinkIcon } from '@navikt/aksel-icons';
+import {
+  ArrowDownIcon,
+  ArrowUpIcon,
+  BriefcaseIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+  DownloadIcon,
+  LeaveIcon,
+  LinkIcon,
+  MenuElipsisVerticalIcon,
+  TrashFillIcon,
+} from '@navikt/aksel-icons';
 import { useState } from 'react';
-import { Dropdown } from '../alpha';
+import { Avatar, Divider, Dropdown } from '../alpha';
 import { Button } from '../beta';
 
 const meta: Meta<typeof Dropdown> = {
@@ -23,13 +34,6 @@ const meta: Meta<typeof Dropdown> = {
       },
     },
   },
-  play: async (ctx) => {
-    // When not in Docs mode, automatically open the dropdown
-    const button = within(ctx.canvasElement).getByRole('button');
-    await userEvent.click(button);
-    const dropdown = ctx.canvasElement.querySelector('[popover]');
-    await expect(dropdown).toBeVisible();
-  },
 };
 
 export default meta;
@@ -43,30 +47,31 @@ export const Preview: Story = {
     return (
       <Dropdown.TriggerContext>
         <Dropdown.Trigger data-color={args['data-color']}>
-          Dropdown
+          Last ned
+          <DownloadIcon aria-hidden />
         </Dropdown.Trigger>
         <Dropdown {...args}>
-          <Dropdown.Heading>First heading</Dropdown.Heading>
           <Dropdown.List>
             <Dropdown.Item>
-              <Dropdown.Button>Button 1.1</Dropdown.Button>
+              <Dropdown.Heading>Velg format</Dropdown.Heading>
             </Dropdown.Item>
             <Dropdown.Item>
-              <Dropdown.Button>Button 1.2</Dropdown.Button>
-            </Dropdown.Item>
-          </Dropdown.List>
-          <Dropdown.Heading>Second heading</Dropdown.Heading>
-          <Dropdown.List>
-            <Dropdown.Item>
-              <Dropdown.Button>Button 2.1</Dropdown.Button>
+              <Dropdown.Button>.pdf</Dropdown.Button>
             </Dropdown.Item>
             <Dropdown.Item>
-              <Dropdown.Button>Button 2.2</Dropdown.Button>
+              <Dropdown.Button>.docx</Dropdown.Button>
             </Dropdown.Item>
           </Dropdown.List>
         </Dropdown>
       </Dropdown.TriggerContext>
     );
+  },
+  play: async (ctx) => {
+    // When not in Docs mode, automatically open the dropdown
+    const button = within(ctx.canvasElement).getByRole('button');
+    await userEvent.click(button);
+    const dropdown = ctx.canvasElement.querySelector('[popover]');
+    await expect(dropdown).toBeVisible();
   },
 };
 
@@ -74,7 +79,7 @@ export const Icons: Story = {
   render: (args) => {
     return (
       <Dropdown.TriggerContext>
-        <Dropdown.Trigger>Dropdown</Dropdown.Trigger>
+        <Dropdown.Trigger>Nyttige lenker</Dropdown.Trigger>
         <Dropdown {...args}>
           <Dropdown.List>
             <Dropdown.Item>
@@ -104,14 +109,14 @@ export const Icons: Story = {
   },
 };
 
-export const Controlled: Story = {
-  render: function Render(args) {
+export const Avatars: Story = {
+  render: (args) => {
     const [open, setOpen] = useState(false);
 
     return (
-      <Dropdown.TriggerContext>
-        <Dropdown.Trigger onClick={() => setOpen(!open)}>
-          Dropdown
+      <Dropdown.TriggerContext data-color="accent">
+        <Dropdown.Trigger variant="tertiary" onClick={() => setOpen(!open)}>
+          <Avatar aria-label="Kai Nordmann" /> Kai Nordmann{' '}
           {open ? (
             <ChevronUpIcon aria-hidden />
           ) : (
@@ -121,13 +126,78 @@ export const Controlled: Story = {
         <Dropdown {...args} open={open} onClose={() => setOpen(false)}>
           <Dropdown.List>
             <Dropdown.Item>
+              <Dropdown.Heading>Velg profil</Dropdown.Heading>
+            </Dropdown.Item>
+            <Dropdown.Item>
               <Dropdown.Button onClick={() => setOpen(false)}>
-                Jeg lukker dropdownen
+                <Avatar aria-label="Kai Nordmann" />
+                Kai Nordmann
               </Dropdown.Button>
             </Dropdown.Item>
             <Dropdown.Item>
               <Dropdown.Button onClick={() => setOpen(false)}>
-                Jeg lukker også
+                <Avatar aria-label="Sarpsborg kommune" data-color="support1">
+                  <BriefcaseIcon />
+                </Avatar>
+                Sarpsborg kommune
+              </Dropdown.Button>
+            </Dropdown.Item>
+            <Divider />
+            <Dropdown.Item>
+              <Button variant="tertiary">
+                <LeaveIcon aria-hidden />
+                Logg ut
+              </Button>
+            </Dropdown.Item>
+          </Dropdown.List>
+        </Dropdown>
+      </Dropdown.TriggerContext>
+    );
+  },
+};
+
+export const Controlled: Story = {
+  render: function Render(args) {
+    const [open, setOpen] = useState(false);
+
+    return (
+      <Dropdown.TriggerContext>
+        <Dropdown.Trigger onClick={() => setOpen(!open)}>
+          Utdanningsløp
+          {open ? (
+            <ChevronUpIcon aria-hidden />
+          ) : (
+            <ChevronDownIcon aria-hidden />
+          )}
+        </Dropdown.Trigger>
+        <Dropdown {...args} open={open} onClose={() => setOpen(false)}>
+          <Dropdown.List>
+            <Dropdown.Item>
+              <Dropdown.Heading>Grunnskolen</Dropdown.Heading>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Dropdown.Button onClick={() => setOpen(false)}>
+                Barneskolen
+              </Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Dropdown.Button onClick={() => setOpen(false)}>
+                Ungdomsskolen
+              </Dropdown.Button>
+            </Dropdown.Item>
+          </Dropdown.List>
+          <Dropdown.List>
+            <Dropdown.Item>
+              <Dropdown.Heading>Videregående opplæring</Dropdown.Heading>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Dropdown.Button onClick={() => setOpen(false)}>
+                Studieforberedende
+              </Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Dropdown.Button onClick={() => setOpen(false)}>
+                Yrkesfaglig
               </Dropdown.Button>
             </Dropdown.Item>
           </Dropdown.List>
@@ -141,11 +211,26 @@ export const WithoutTrigger: Story = {
   render: () => {
     return (
       <>
-        <Button popovertarget="dropdown">Dropdown</Button>
+        <Button
+          popovertarget="dropdown"
+          variant="tertiary"
+          icon
+          title="Flere valg"
+        >
+          <MenuElipsisVerticalIcon aria-hidden />
+        </Button>
         <Dropdown id="dropdown">
           <Dropdown.List>
             <Dropdown.Item>
-              <Dropdown.Button>Item</Dropdown.Button>
+              <Dropdown.Button>
+                <ArrowUpIcon aria-hidden /> Flytt spørsmål opp
+              </Dropdown.Button>
+              <Dropdown.Button>
+                <ArrowDownIcon aria-hidden /> Flytt spørsmål ned
+              </Dropdown.Button>
+              <Dropdown.Button data-color="danger">
+                <TrashFillIcon aria-hidden /> Slett spørsmål
+              </Dropdown.Button>
             </Dropdown.Item>
           </Dropdown.List>
         </Dropdown>
