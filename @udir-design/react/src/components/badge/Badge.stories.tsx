@@ -7,12 +7,13 @@ import {
   VideoIcon,
   FloppydiskFillIcon,
 } from '@navikt/aksel-icons';
-import { Avatar, Badge, Tabs } from '../alpha';
-import { Button } from '../beta';
+import { Tabs } from '../alpha';
+import { Badge } from './Badge';
+import { Avatar, Button } from '../beta';
 
 const meta: Meta<typeof Badge> = {
   component: Badge,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     customStyles: {
       display: 'flex',
