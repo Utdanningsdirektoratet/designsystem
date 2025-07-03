@@ -4,7 +4,6 @@
 
 export * from './alert/Alert';
 export * from './avatar/Avatar';
-export * from './badge/Badge';
 export * from './card/Card';
 export * from './chip/Chip';
 export * from './dialog/Dialog';
