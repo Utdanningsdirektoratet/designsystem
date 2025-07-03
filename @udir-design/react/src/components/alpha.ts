@@ -2,7 +2,6 @@
  * This file exports the components that are in the alpha stage of development
  */
 
-export * from './badge/Badge';
 export * from './dropdown/Dropdown';
 export * from './popover/Popover';
 export * from './skipLink/SkipLink';

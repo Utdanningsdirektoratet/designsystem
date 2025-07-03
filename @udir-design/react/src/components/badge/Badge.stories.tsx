@@ -14,7 +14,7 @@ import { CSSProperties } from 'react';
 
 const meta: Meta<typeof Badge> = {
   component: Badge,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     customStyles: {
       display: 'flex',
