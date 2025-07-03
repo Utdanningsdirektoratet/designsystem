@@ -1,17 +1,68 @@
-import { Meta, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Controls, Primary, Canvas } from '@storybook/addon-docs/blocks';
 import * as FieldsetStories from './Fieldset.stories';
 
 <Meta of={FieldsetStories} />
 
 # Fieldset
 
+`Fieldset` brukes til å gruppere og navngi felt som naturlig hører sammen, for eksempel datofelt eller adressefelt. Komponenten hjelper med å organisere informasjon, gjøre skjemaer mer oversiktlige og forbedre tilgjengeligheten for skjermlesere.
+
+**Passer til å**
+
+- gruppere en liste med flere [`Radio`](/docs/components-radio--docs) eller [`Checkbox`](/docs/components-checkbox--docs) som hører naturlig sammen
+- dele inn et skjema i seksjoner med forklarende ledetekster
+
+**Passer ikke til å**
+
+- gruppere elementer som ligger utenfor et skjema
+
+## Slik bruker du Fieldset
+
 <Primary />
 <Controls />
 
-# Fieldset
+```tsx
+import { Fieldset } from '@udir-design/react';
 
-`Fieldset` er et [fieldset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset)-element med diverse hjelpfunksjoner for å hjelpe med bruk og gruppering av kontrollelementer i et skjema.
+<Fieldset>
+  <Fieldset.Legend>
+    Hvordan vil du helst at vi skal kontakte deg?
+  </Fieldset.Legend>
+  <Fieldset.Description>
+    Velg de alternativene som passer best for deg.
+  </Fieldset.Description>
+  <Checkbox label="E-post" value="email" />
+  <Checkbox label="Telefon" value="phone" />
+  <Checkbox label="SMS" value="sms" />
+</Fieldset>;
+```
 
-## Referanser
+## Eksempler
 
-[Providing a description for groups of form controls using fieldset and legend elements](https://www.w3.org/WAI/WCAG21/Techniques/html/H71)
+### Checkbox
+
+`Fieldset` er et [HTML `<fieldset>`-element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset) med diverse hjelpfunksjoner for å hjelpe med bruk og gruppering av kontrollelementer i et skjema. Den kan for eksempel brukes med [`Checkbox`](/docs/components-checkbox--docs).
+
+<Canvas of={FieldsetStories.WithCheckbox} />
+
+### Textfield
+
+`Fieldset` kan også brukes med [`Textfield`](/docs/components-textfield--docs) for å gruppere relaterte inndatafelt, som for eksempel adressefelt.
+
+<Canvas of={FieldsetStories.WithTextfield} />
+
+### Spørsmål som overskrift
+
+Å bruke selve spørsmålet som overskrift er god praksis i mange tilfeller, fordi brukere med skjermleser da bare hører spørsmålet én gang.
+
+På sider med mange inndatafelt er det også enklere for brukere med skjermleser om spørsmålet er en overskrift. Dette understreker at alle de tilhørende feltene hører til samme gruppe.
+
+<Canvas of={FieldsetStories.LegendAsHeading} />
+
+## Retningslinjer
+
+Når du bruker `Fieldset`, starter du med en `Fieldset.Legend` som forklarer hva feltene under handler om. Det kan være et spørsmål som «Hvor bor du nå?», eller en beskrivelse som «Personopplysninger». Dette hjelper brukeren med å forstå sammenhengen mellom feltene og hva de skal fylle ut.
+
+## Tekst i Fieldset
+
+Unngå å bruke samme tekst i `label` og `Fieldset.Legend`. Ha gjerne med `Fieldset.Description` hvis det gjør det enklere for brukerne å fylle ut skjemaet. Lag teksten så kort som mulig.
