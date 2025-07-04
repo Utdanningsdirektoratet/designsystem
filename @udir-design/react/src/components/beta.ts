@@ -9,3 +9,4 @@ export * from './details/Details';
 export * from './link/Link';
 export * from './list/List';
 export * from './radio/Radio';
+export * from './textarea/Textarea';

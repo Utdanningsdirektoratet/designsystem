@@ -25,7 +25,6 @@ export * from './switch/Switch';
 export * from './table/Table';
 export * from './tabs/Tabs';
 export * from './tag/Tag';
-export * from './textarea/Textarea';
 export * from './textfield/Textfield';
 export * from './toggleGroup/ToggleGroup';
 export * from './tooltip/Tooltip';
