@@ -101,7 +101,7 @@ exports[`With Error 1`] = `
   <select
     aria-invalid="true"
     id="components-select--with-error"
-    aria-describedby="components-select--with-error:validation"
+    aria-describedby="components-select--with-error:validation:1"
   >
     <option value="blank">
       Velg …
@@ -133,7 +133,7 @@ exports[`With Error 1`] = `
   </select>
   <p
     data-field="validation"
-    id="components-select--with-error:validation"
+    id="components-select--with-error:validation:1"
   >
     Velg et fjell
   </p>

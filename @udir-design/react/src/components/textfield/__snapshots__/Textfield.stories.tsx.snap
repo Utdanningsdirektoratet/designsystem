@@ -67,19 +67,19 @@ exports[`Counter 1`] = `
       id="textfield-counter"
       inputmode="numeric"
       type="text"
-      aria-describedby="textfield-counter:validation  textfield-counter:description"
+      aria-describedby="textfield-counter:validation:1  textfield-counter:description:1"
     >
   </div>
   <div
     data-field="description"
     aria-live="polite"
-    id="textfield-counter:description"
+    id="textfield-counter:description:1"
   >
   </div>
   <p
     data-variant="default"
     data-field="validation"
-    id="textfield-counter:validation"
+    id="textfield-counter:validation:1"
   >
     10 tegn igjen
   </p>

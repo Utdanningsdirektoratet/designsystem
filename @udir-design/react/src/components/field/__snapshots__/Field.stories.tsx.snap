@@ -166,19 +166,19 @@ exports[`Counter 1`] = `
   <textarea
     rows="2"
     id="components-field--counter"
-    aria-describedby="components-field--counter:validation  components-field--counter:description"
+    aria-describedby="components-field--counter:validation:1  components-field--counter:description:1"
   >
   </textarea>
   <div
     data-field="description"
     aria-live="polite"
-    id="components-field--counter:description"
+    id="components-field--counter:description:1"
   >
   </div>
   <p
     data-variant="default"
     data-field="validation"
-    id="components-field--counter:validation"
+    id="components-field--counter:validation:1"
   >
     10 tegn igjen
   </p>
@@ -283,18 +283,18 @@ exports[`Preview 1`] = `
   </label>
   <div
     data-field="description"
-    id="components-field--preview:description"
+    id="components-field--preview:description:1"
   >
     Beskrivelse
   </div>
   <input
     id="components-field--preview"
     type="text"
-    aria-describedby="components-field--preview:validation  components-field--preview:description"
+    aria-describedby="components-field--preview:validation:1  components-field--preview:description:1"
   >
   <p
     data-field="validation"
-    id="components-field--preview:validation"
+    id="components-field--preview:validation:1"
   >
     Feilmelding
   </p>

@@ -165,14 +165,6 @@ exports[`Form Story 1`] = `
           Fylke
         </label>
         <u-combobox id="county">
-          <data
-            data-removable="true"
-            value
-            role="button"
-            tabindex="-1"
-            aria-label=", Press to remove, 1 of 1"
-          >
-          </data>
           <input
             placeholder
             aria-invalid="false"
@@ -352,11 +344,6 @@ exports[`Form Story 1`] = `
             hidden
             id="county-select"
           >
-            <option
-              value
-              selected
-            >
-            </option>
           </select>
         </u-combobox>
       </div>
