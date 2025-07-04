@@ -3,32 +3,41 @@ import { expect, fn, userEvent, within } from 'storybook/test';
 import { Search } from './Search';
 import { useState } from 'react';
 import {
-  Button,
+  Chip,
   Divider,
   Field,
   Label,
   Paragraph,
+  Skeleton,
+  Spinner,
 } from '@udir-design/react/alpha';
 import { assertExists } from '../../utilities/helpers/assertExists';
+import { useDebounceCallback } from '@digdir/designsystemet-react';
 
 const meta: Meta<typeof Search> = {
   component: Search,
-  tags: ['alpha'],
+  tags: ['beta'],
+  parameters: {
+    layout: 'centered',
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Search>;
 
+const onSubmit = fn<React.FormEventHandler<HTMLFormElement>>((e) => {
+  e.preventDefault();
+});
+
 export const Preview: Story = {
-  args: {
-    onClick: fn(),
-  },
   render: (args) => (
-    <Search {...args}>
-      <Search.Input aria-label="Søk" />
-      <Search.Clear />
-      <Search.Button />
-    </Search>
+    <form onSubmit={onSubmit}>
+      <Search {...args}>
+        <Search.Input aria-label="Søk" />
+        <Search.Clear />
+        <Search.Button />
+      </Search>
+    </form>
   ),
   play: async ({ canvasElement, step, args }) => {
     const canvas = within(canvasElement);
@@ -50,6 +59,7 @@ export const Preview: Story = {
         'Clear button not found',
       );
       await userEvent.click(clearButton);
+      expect(onSubmit).not.toHaveBeenCalled();
       expect(input).toHaveValue('');
     });
 
@@ -59,33 +69,108 @@ export const Preview: Story = {
         'Search button not found',
       );
       await userEvent.click(searchButton);
-      expect(args.onClick).toHaveBeenCalled();
+      expect(onSubmit).toHaveBeenCalled();
     });
+
     await userEvent.keyboard('{Tab}');
   },
 };
 
 export const Controlled: Story = {
+  parameters: {
+    customStyles: {
+      minHeight: '600px',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 'var(--ds-size-2)',
+    },
+  },
   render() {
-    const [value, setValue] = useState<string>();
+    const [inputValue, setInputValue] = useState('');
+    const [searchTerm, setSearchTerm] = useState<string>('');
+
+    const handleSubmit = (e: React.FormEvent) => {
+      e.preventDefault();
+      setSearchTerm(inputValue);
+    };
+
     return (
       <>
-        <Search>
-          <Search.Input
-            aria-label="Søk"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          />
-          <Search.Clear />
-          <Search.Button />
-        </Search>
-
-        <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
-
-        <Paragraph style={{ margin: 'var(--ds-size-2) 0' }}>
-          Du har skrevet inn: {value}
-        </Paragraph>
-        <Button onClick={() => setValue('Pizza')}>Jeg vil ha Pizza</Button>
+        <form
+          onSubmit={handleSubmit}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'var(--ds-size-2)',
+          }}
+        >
+          <Search>
+            <Search.Input
+              id="search-input-controlled"
+              aria-label="Søk"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+            />
+            <Search.Clear />
+            <Search.Button type="submit" />
+          </Search>
+          <div
+            style={{
+              display: 'flex',
+              gap: 'var(--ds-size-2)',
+              alignItems: 'center',
+            }}
+          >
+            <Paragraph data-size="sm">Hurtigsøk:</Paragraph>
+            <Chip.Button
+              onClick={() => {
+                setInputValue('Læreplaner');
+                setSearchTerm('Læreplaner');
+              }}
+            >
+              Læreplaner
+            </Chip.Button>
+            <Chip.Button
+              onClick={() => {
+                setInputValue('Skole');
+                setSearchTerm('Skole');
+              }}
+            >
+              Skole
+            </Chip.Button>
+            <Chip.Button
+              onClick={() => {
+                setInputValue('Eksamen');
+                setSearchTerm('Eksamen');
+              }}
+            >
+              Eksamen
+            </Chip.Button>
+          </div>
+        </form>
+        {searchTerm && (
+          <>
+            <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
+            <div style={{ margin: 'var(--ds-size-2) 0' }}>
+              Søker etter: {searchTerm}
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 'var(--ds-size-2)',
+                  marginTop: 'var(--ds-size-4)',
+                }}
+              >
+                <Skeleton variant="rectangle" height="150px" />
+                <Skeleton variant="rectangle" width="200px" />
+                <Skeleton variant="rectangle" />
+                <Skeleton variant="rectangle" />
+                <Skeleton variant="rectangle" />
+                <Skeleton variant="rectangle" width="50px" />
+              </div>
+            </div>
+          </>
+        )}
       </>
     );
   },
@@ -121,7 +206,7 @@ export const Variants: Story = {
 export const WithLabel: Story = {
   render: (args, context) => (
     <Field>
-      <Label>Søk etter katter</Label>
+      <Label>Søk i læreplaner</Label>
       <Search {...args}>
         <Search.Input id={context.id} name="cat-search" />
         <Search.Clear />
@@ -155,10 +240,59 @@ export const Form: Story = {
             <Search.Button />
           </Search>
         </form>
+        {submittedValue && (
+          <Paragraph data-size="md" style={{ marginTop: 'var(--ds-size-2)' }}>
+            Søkeord: {submittedValue}
+          </Paragraph>
+        )}
+      </>
+    );
+  },
+};
 
-        <Paragraph data-size="md" style={{ marginTop: 'var(--ds-size-2)' }}>
-          Submitted value: {submittedValue}
-        </Paragraph>
+export const LiveSearch: Story = {
+  parameters: {
+    customStyles: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 'var(--ds-size-2)',
+    },
+    docs: { source: { type: 'code' } },
+  },
+  render(args) {
+    const [value, setValue] = useState<string>('');
+    const [searchValue, setSearchValue] = useState<string>('');
+    const setSearchValueDebounced = useDebounceCallback(setSearchValue, 500);
+
+    return (
+      <>
+        <Search {...args}>
+          <Search.Input
+            aria-label="Søk"
+            value={value}
+            onChange={(e) => {
+              const newValue = e.target.value;
+              setValue(newValue);
+              // Don't search while typing
+              setSearchValue('');
+              // Search after stopped typing
+              setSearchValueDebounced(newValue);
+            }}
+          />
+          <Search.Clear />
+        </Search>
+        {searchValue !== '' && (
+          <div
+            style={{
+              display: 'flex',
+              gap: 'var(--ds-size-1)',
+              alignItems: 'center',
+            }}
+          >
+            <Spinner aria-hidden data-size="xs" />
+            <span>Søker etter: {searchValue}</span>
+          </div>
+        )}
       </>
     );
   },
