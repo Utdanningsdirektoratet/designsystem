@@ -5,7 +5,7 @@ import * as SearchStories from './Search.stories';
 
 # Search
 
-`Search` lar brukere raskt finne relevant innhold på et nettsted eller i en applikasjon. Komponenten består av et søkefelt, med eller uten en søkeknapp.
+`Search` er egnet til å implementere søk som lar brukere raskt finne relevant innhold på et nettsted eller i en applikasjon. Komponenten består av et søkefelt, med eller uten en søkeknapp.
 
 **Passer til å**
 
@@ -24,11 +24,23 @@ import * as SearchStories from './Search.stories';
 ```tsx
 import { Search } from '@udir-design/react';
 
+// live-søk
 <Search>
-  <Search.Input aria-label="Søk" />
+  <Search.Input aria-label="Søk" onChange={(event) => { /* håndter søk */ }} />
   <Search.Clear />
-  <Search.Button />
-</Search.Clear>
+</Search>
+
+// søk ved enter/knappetrykk
+<form onSubmit={(event) => {
+  event.preventDefault();
+  /* håndter søk */
+}}>
+  <Search>
+    <Search.Input aria-label="Søk" />
+    <Search.Clear />
+    <Search.Button />
+  </Search>
+<form>
 ```
 
 ## Eksempler
@@ -54,10 +66,16 @@ Du kan utføre søkehandling ved både <kbd>Enter</kbd> og klikk ved å putte s�
 
 <Canvas of={SearchStories.Form} />
 
+### Utføre søkehandling "live"
+
+I mange tilfeller er det mer hensiktsmessig å utføre søkehandling mens brukeren skriver i inputfeltet, heller enn å vente på <kbd>Enter</kbd> eller klikk.
+
+<Canvas of={SearchStories.LiveSearch} />
+
 ### Kontrollere Search utenfra
 
-`Search` kan kontrolleres utenfra ved å bruke value og onChange. Dette er nyttig når du vil at `Search` skal oppdateres basert på endringer i andre komponenter eller tilstander.
-I dette tilfellet har vi brukt `Search` i et skjema hvor søk blir utført når brukeren trykker på "Søk", eller en av hurtigsøk-knappene ([`Chip.Button`](/docs/components-chip--docs)).
+`Search.Input` kan kontrolleres utenfra ved å bruke `value` og `onChange`. Dette er nyttig når du vil at `Search` skal oppdateres basert på endringer i andre komponenter eller tilstander.
+I dette tilfellet har vi brukt `Search` i et skjema hvor søk blir utført når brukeren trykker <kbd>Enter</kbd>, på "Søk"-knappen, eller en av hurtigsøk-knappene ([`Chip.Button`](/docs/components-chip--docs)).
 
 <Canvas of={SearchStories.Controlled} />
 

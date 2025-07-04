@@ -69,12 +69,13 @@ exports[`Form 1`] = `
 </form>
 `;
 
-exports[`Preview 1`] = `
+exports[`Live Search 1`] = `
 <div>
   <input
     placeholder
     aria-label="Søk"
     type="search"
+    value
   >
   <button
     data-icon="true"
@@ -83,13 +84,32 @@ exports[`Preview 1`] = `
     aria-label="Tøm"
   >
   </button>
-  <button
-    data-variant="primary"
-    type="submit"
-  >
-    Søk
-  </button>
 </div>
+`;
+
+exports[`Preview 1`] = `
+<form>
+  <div>
+    <input
+      placeholder
+      aria-label="Søk"
+      type="search"
+    >
+    <button
+      data-icon="true"
+      data-variant="tertiary"
+      type="reset"
+      aria-label="Tøm"
+    >
+    </button>
+    <button
+      data-variant="primary"
+      type="submit"
+    >
+      Søk
+    </button>
+  </div>
+</form>
 `;
 
 exports[`Variants 1`] = `

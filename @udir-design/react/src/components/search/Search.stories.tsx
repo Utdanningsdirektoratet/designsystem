@@ -9,8 +9,10 @@ import {
   Label,
   Paragraph,
   Skeleton,
+  Spinner,
 } from '@udir-design/react/alpha';
 import { assertExists } from '../../utilities/helpers/assertExists';
+import { useDebounceCallback } from '@digdir/designsystemet-react';
 
 const meta: Meta<typeof Search> = {
   component: Search,
@@ -23,16 +25,19 @@ const meta: Meta<typeof Search> = {
 export default meta;
 type Story = StoryObj<typeof Search>;
 
+const onSubmit = fn<React.FormEventHandler<HTMLFormElement>>((e) => {
+  e.preventDefault();
+});
+
 export const Preview: Story = {
-  args: {
-    onClick: fn(),
-  },
   render: (args) => (
-    <Search {...args}>
-      <Search.Input aria-label="Søk" />
-      <Search.Clear />
-      <Search.Button />
-    </Search>
+    <form onSubmit={onSubmit}>
+      <Search {...args}>
+        <Search.Input aria-label="Søk" />
+        <Search.Clear />
+        <Search.Button />
+      </Search>
+    </form>
   ),
   play: async ({ canvasElement, step, args }) => {
     const canvas = within(canvasElement);
@@ -54,6 +59,7 @@ export const Preview: Story = {
         'Clear button not found',
       );
       await userEvent.click(clearButton);
+      expect(onSubmit).not.toHaveBeenCalled();
       expect(input).toHaveValue('');
     });
 
@@ -63,8 +69,9 @@ export const Preview: Story = {
         'Search button not found',
       );
       await userEvent.click(searchButton);
-      expect(args.onClick).toHaveBeenCalled();
+      expect(onSubmit).toHaveBeenCalled();
     });
+
     await userEvent.keyboard('{Tab}');
   },
 };
@@ -144,7 +151,7 @@ export const Controlled: Story = {
         {searchTerm && (
           <>
             <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
-            <Paragraph style={{ margin: 'var(--ds-size-2) 0' }}>
+            <div style={{ margin: 'var(--ds-size-2) 0' }}>
               Søker etter: {searchTerm}
               <div
                 style={{
@@ -161,7 +168,7 @@ export const Controlled: Story = {
                 <Skeleton variant="rectangle" />
                 <Skeleton variant="rectangle" width="50px" />
               </div>
-            </Paragraph>
+            </div>
           </>
         )}
       </>
@@ -237,6 +244,54 @@ export const Form: Story = {
           <Paragraph data-size="md" style={{ marginTop: 'var(--ds-size-2)' }}>
             Søkeord: {submittedValue}
           </Paragraph>
+        )}
+      </>
+    );
+  },
+};
+
+export const LiveSearch: Story = {
+  parameters: {
+    customStyles: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 'var(--ds-size-2)',
+    },
+    docs: { source: { type: 'code' } },
+  },
+  render(args) {
+    const [value, setValue] = useState<string>('');
+    const [searchValue, setSearchValue] = useState<string>('');
+    const setSearchValueDebounced = useDebounceCallback(setSearchValue, 500);
+
+    return (
+      <>
+        <Search {...args}>
+          <Search.Input
+            aria-label="Søk"
+            value={value}
+            onChange={(e) => {
+              const newValue = e.target.value;
+              setValue(newValue);
+              // Don't search while typing
+              setSearchValue('');
+              // Search after stopped typing
+              setSearchValueDebounced(newValue);
+            }}
+          />
+          <Search.Clear />
+        </Search>
+        {searchValue !== '' && (
+          <div
+            style={{
+              display: 'flex',
+              gap: 'var(--ds-size-1)',
+              alignItems: 'center',
+            }}
+          >
+            <Spinner aria-hidden data-size="xs" />
+            <span>Søker etter: {searchValue}</span>
+          </div>
         )}
       </>
     );
