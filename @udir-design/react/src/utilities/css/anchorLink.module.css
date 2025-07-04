@@ -1,0 +1,7 @@
+.anchorLink {
+  --dsc-link-color--visited: var(--dsc-link-color);
+  text-decoration-color: transparent;
+  &:hover {
+    text-decoration-color: var(--dsc-link-color);
+  }
+}
