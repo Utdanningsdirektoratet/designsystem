@@ -1403,11 +1403,11 @@ exports[`Text 1`] = `
         type="text"
         value="Value"
         name="sm-invalid"
-        aria-describedby="components-input--text-sm-invalid:validation"
+        aria-describedby="components-input--text-sm-invalid:validation:1"
       >
       <p
         data-field="validation"
-        id="components-input--text-sm-invalid:validation"
+        id="components-input--text-sm-invalid:validation:1"
       >
         Feilmelding
       </p>
@@ -1484,11 +1484,11 @@ exports[`Text 1`] = `
         type="text"
         value="Value"
         name="md-invalid"
-        aria-describedby="components-input--text-md-invalid:validation"
+        aria-describedby="components-input--text-md-invalid:validation:1"
       >
       <p
         data-field="validation"
-        id="components-input--text-md-invalid:validation"
+        id="components-input--text-md-invalid:validation:1"
       >
         Feilmelding
       </p>
@@ -1565,11 +1565,11 @@ exports[`Text 1`] = `
         type="text"
         value="Value"
         name="lg-invalid"
-        aria-describedby="components-input--text-lg-invalid:validation"
+        aria-describedby="components-input--text-lg-invalid:validation:1"
       >
       <p
         data-field="validation"
-        id="components-input--text-lg-invalid:validation"
+        id="components-input--text-lg-invalid:validation:1"
       >
         Feilmelding
       </p>

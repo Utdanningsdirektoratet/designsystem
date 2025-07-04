@@ -10,7 +10,7 @@ exports[`Checkbox In Color Context 1`] = `
       id="checkbox-in-color-context"
       type="checkbox"
       checked
-      aria-describedby="checkbox-in-color-context:description"
+      aria-describedby="checkbox-in-color-context:description:1"
     >
     <label
       data-weight="regular"
@@ -20,7 +20,7 @@ exports[`Checkbox In Color Context 1`] = `
     </label>
     <div
       data-field="description"
-      id="checkbox-in-color-context:description"
+      id="checkbox-in-color-context:description:1"
     >
       Description
     </div>
@@ -186,7 +186,7 @@ exports[`Focused 1`] = `
     id="checkbox-preview"
     type="checkbox"
     value="value"
-    aria-describedby="checkbox-preview:description"
+    aria-describedby="checkbox-preview:description:1"
   >
   <label
     data-weight="regular"
@@ -196,7 +196,7 @@ exports[`Focused 1`] = `
   </label>
   <div
     data-field="description"
-    id="checkbox-preview:description"
+    id="checkbox-preview:description:1"
   >
     Description
   </div>
@@ -404,7 +404,7 @@ exports[`Preview 1`] = `
     id="checkbox-preview"
     type="checkbox"
     value="value"
-    aria-describedby="checkbox-preview:description"
+    aria-describedby="checkbox-preview:description:1"
   >
   <label
     data-weight="regular"
@@ -414,7 +414,7 @@ exports[`Preview 1`] = `
   </label>
   <div
     data-field="description"
-    id="checkbox-preview:description"
+    id="checkbox-preview:description:1"
   >
     Description
   </div>

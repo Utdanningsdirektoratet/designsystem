@@ -69,12 +69,14 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
           control={control}
           rules={{ required: 'Velg et fylke' }}
           defaultValue=""
-          render={({ field: { onChange, ...field } }) => (
+          render={({ field: { onChange, value, ...field } }) => (
             <Suggestion
               {...field}
+              // Using an array value as a workaround for bug in Suggestion component when initial value is ""
+              value={value === '' ? [] : [value]}
               id="county"
-              onValueChange={(value) => {
-                onChange(value.at(0)?.value);
+              onValueChange={(v) => {
+                onChange(v.at(0)?.value);
               }}
             >
               <Suggestion.Chips />
