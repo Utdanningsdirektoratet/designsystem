@@ -44,11 +44,9 @@ export const Tabbed: Story = {
 Tabbed.play = async (ctx) => {
   const canvas = within(ctx.canvasElement);
   const link = canvas.getByRole('link');
-  //@ts-expect-error https://github.com/storybookjs/storybook/issues/31643
-  await expect(link).not.satisfy(isVisibleOnScreen);
+  await expect(link).not.toSatisfy(isVisibleOnScreen);
   await userEvent.tab();
-  //@ts-expect-error https://github.com/storybookjs/storybook/issues/31643
-  await expect(link).satisfy(isVisibleOnScreen);
+  await expect(link).toSatisfy(isVisibleOnScreen);
   await expect(link).toHaveFocus();
 };
 
