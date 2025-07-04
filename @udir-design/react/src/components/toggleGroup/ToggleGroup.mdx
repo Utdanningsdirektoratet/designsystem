@@ -37,6 +37,14 @@ import { ToggleGroup } from '@udir-design/react';
 
 ## Eksempler
 
+### Kontrollert tilstand
+
+For at resten av systemet skal kunne vite hvilken knapp som er valgt må du bruke `value` og `onChange`. Dette kan også brukes til å styre hvilken som er valgt utenfra. Eksempelet under viser hvordan du kan filtrere innhold i en datatabell for retting av prøver. Her er det også en ekstra knapp som endrer tilstand i `ToggleGroup` til "Ikke påbegynt". Dette kan være nyttig når listen over besvarelser er lang, og du vil at brukerne skal kunne bytte til en mye brukt tilstand uten å scrolle opp igjen.
+
+<Canvas of={ToggleGroupStories.Controlled} />
+
+### Ulike typer innhold
+
 `ToggleGroup` kan ha tre typer innhold:
 
 - bare tekst
@@ -58,12 +66,6 @@ Kombinasjonen av ikoner og tekst gir både visuell og tekstlig beskrivelse av in
 Alternativet "Bare ikon" brukes kun når du vet at brukerne vil forstå ikonet. Det kan for eksempel være ekspertbrukere eller brukere av interne tjenester, som kjenner symbolene i den aktuelle `ToggleGroup` godt. Forklar handlingene med [`Tooltip`](/docs/components-tooltip--docs) når du bruker kun ikoner.
 
 <Canvas of={ToggleGroupStories.OnlyIcons} />
-
-#### Kontrollert tilstand
-
-For at resten av systemet skal kunne vite hvilken knapp som er valgt må du bruke `value` og `onChange`. Dette kan også brukes til å styre hvilken som er valgt utenfra. Eksempelet under viser hvordan du kan filtrere innhold i en datatabell for retting av prøver. Her er det også en ekstra knapp som endrer tilstand i `ToggleGroup` til "Ikke påbegynt". Dette kan være nyttig når listen over besvarelser er lang, og du vil at brukerne skal kunne bytte til en mye brukt tilstand uten å scrolle opp igjen.
-
-<Canvas of={ToggleGroupStories.Controlled} />
 
 ## Retningslinjer
 
