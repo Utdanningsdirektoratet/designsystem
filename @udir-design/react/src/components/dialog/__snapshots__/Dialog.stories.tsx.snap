@@ -2,11 +2,11 @@
 
 exports[`Backdrop Closedby Any 1`] = `
 <button
-  data-variant="primary"
+  data-variant="secondary"
   type="button"
   aria-haspopup="dialog"
 >
-  Open Dialog
+  Åpne Dialog
 </button>
 <dialog
   data-modal="true"
@@ -28,7 +28,6 @@ exports[`Backdrop Closedby Any 1`] = `
     <code>
       closedby="any"
     </code>
-    og en veldig lang tittel
   </h2>
   <p data-variant="default">
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
@@ -43,15 +42,29 @@ exports[`Backdrop Closedby Any 1`] = `
 `;
 
 exports[`Dialog Non Modal 1`] = `
+<div style="width: 400px;">
+  <label
+    data-weight="medium"
+    for="textareaundefined"
+  >
+    Besvarelse
+  </label>
+  <textarea
+    id="textareaundefined"
+    rows="8"
+  >
+  </textarea>
+</div>
 <button
-  data-variant="primary"
+  data-variant="secondary"
   type="button"
 >
-  Open Dialog
+  Åpne skrivetips
 </button>
 <dialog
   data-modal="false"
   open
+  style="width: 300px; left: 80%;"
 >
   <form method="dialog">
     <button
@@ -64,12 +77,26 @@ exports[`Dialog Non Modal 1`] = `
     >
     </button>
   </form>
-  <h2>
-    Non-modal dialog
+  <h2 style="margin-bottom: var(--ds-size-2);">
+    Hva besvarelsen burde inneholde
   </h2>
-  <p data-variant="default">
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
-  </p>
+  <ul>
+    <li>
+      Intro til prosjektet
+    </li>
+    <li>
+      Oversikt over hva som er gjort i prosjektet
+    </li>
+    <li>
+      Beskrivelse av prosjektmålene
+    </li>
+    <li>
+      Metode for å oppnå prosjektmålene
+    </li>
+    <li>
+      Leveranse
+    </li>
+  </ul>
 </dialog>
 `;
 
@@ -79,7 +106,7 @@ exports[`Dialog With Form 1`] = `
   type="button"
   aria-haspopup="dialog"
 >
-  Open Dialog
+  Send inn skjema
 </button>
 <dialog
   data-modal="true"
@@ -97,7 +124,7 @@ exports[`Dialog With Form 1`] = `
     </button>
   </form>
   <h2 style="margin-bottom: var(--ds-size-2);">
-    Dialog med skjema
+    Skjemainnsending
   </h2>
   <div>
     <label
@@ -115,7 +142,7 @@ exports[`Dialog With Form 1`] = `
       >
     </div>
   </div>
-  <div style="display: flex; gap: var(--ds-size-4); margin-top: var(--ds-size-4);">
+  <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-4);">
     <button
       data-variant="primary"
       type="button"
@@ -134,11 +161,11 @@ exports[`Dialog With Form 1`] = `
 
 exports[`Dialog With Max Width 1`] = `
 <button
-  data-variant="primary"
+  data-variant="secondary"
   type="button"
   aria-haspopup="dialog"
 >
-  Open Dialog
+  Åpne Dialog
 </button>
 <dialog
   data-modal="true"
@@ -157,7 +184,7 @@ exports[`Dialog With Max Width 1`] = `
     </button>
   </form>
   <h2 style="margin-bottom: var(--ds-size-2);">
-    Dialog med en veldig lang bredde
+    Dialog som er veldig bred
   </h2>
   <p data-variant="default">
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
@@ -208,11 +235,11 @@ exports[`Dialog With Open Prop 1`] = `
 
 exports[`Dialog With Suggestion 1`] = `
 <button
-  data-variant="primary"
+  data-variant="secondary"
   type="button"
   aria-haspopup="dialog"
 >
-  Open Dialog
+  Åpne Dialog
 </button>
 <dialog
   data-modal="true"
@@ -232,24 +259,24 @@ exports[`Dialog With Suggestion 1`] = `
   </form>
   <div>
     <h2>
-      Dialog med suggestion
+      Dialog med innhold utenfor
     </h2>
   </div>
   <div>
     <div>
       <label
         data-weight="medium"
-        for="components-dialog--dialog-with-suggestion-input"
+        for="undefined-input"
       >
-        Velg en destinasjon
+        Velg en kommune
       </label>
       <u-combobox>
         <input
           placeholder
-          id="components-dialog--dialog-with-suggestion-input"
+          id="undefined-input"
           type="text"
           list=":u-datalist1"
-          aria-label="Velg en destinasjon, "
+          aria-label="Velg en kommune, "
           aria-autocomplete="list"
           aria-controls=":u-datalist1"
           aria-expanded="true"
@@ -369,7 +396,13 @@ exports[`Dialog With Suggestion 1`] = `
       </u-combobox>
     </div>
   </div>
-  <div>
+  <div style="display: flex; gap: var(--ds-size-2);">
+    <button
+      data-variant="primary"
+      type="button"
+    >
+      Send inn
+    </button>
     <button
       data-variant="secondary"
       type="button"
@@ -386,7 +419,7 @@ exports[`Preview 1`] = `
   type="button"
   aria-haspopup="dialog"
 >
-  Open Dialog
+  Åpne Dialog
 </button>
 <dialog
   data-modal="true"
@@ -427,7 +460,7 @@ exports[`With Header And Footer 1`] = `
   type="button"
   aria-haspopup="dialog"
 >
-  Open Dialog
+  Gå til neste
 </button>
 <dialog
   data-modal="true"
@@ -449,10 +482,10 @@ exports[`With Header And Footer 1`] = `
       data-variant="default"
       data-size="sm"
     >
-      Her er det også divider
+      Undertittel
     </p>
     <h2>
-      Vi kan legge divider under header
+      Dette må du vite før du går videre
     </h2>
   </div>
   <div>
@@ -467,17 +500,17 @@ exports[`With Header And Footer 1`] = `
     </p>
   </div>
   <div>
-    Og over footer
+    Footer
   </div>
 </dialog>
 `;
 
 exports[`Without Dialog Trigger Context 1`] = `
 <button
-  data-variant="primary"
+  data-variant="secondary"
   type="button"
 >
-  Open Dialog
+  Åpne Dialog
 </button>
 <dialog
   data-modal="true"
@@ -501,7 +534,11 @@ exports[`Without Dialog Trigger Context 1`] = `
     Dialog subtittel
   </p>
   <h2 style="margin-bottom: var(--ds-size-2);">
-    Dialog header
+    Her bruker vi
+    <code>
+      ref
+    </code>
+    for å åpne dialogen
   </h2>
   <p
     data-variant="default"

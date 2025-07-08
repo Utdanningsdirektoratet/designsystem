@@ -8,6 +8,8 @@ import {
   Field,
   Label,
   Suggestion,
+  List,
+  Textarea,
 } from '@udir-design/react/alpha';
 import { expect, userEvent, within } from 'storybook/test';
 import { useRef, useState } from 'react';
@@ -58,12 +60,7 @@ type Story = StoryObj<typeof Dialog>;
 export const Preview: Story = {
   render: (args) => (
     <Dialog.TriggerContext>
-      <Dialog.Trigger
-        data-color={args['data-color']}
-        data-size={args['data-size']}
-      >
-        Open Dialog
-      </Dialog.Trigger>
+      <Dialog.Trigger data-size={args['data-size']}>Åpne Dialog</Dialog.Trigger>
       <Dialog {...args}>
         <Heading style={{ marginBottom: 'var(--ds-size-2)' }}>
           Dialog header
@@ -83,13 +80,16 @@ export const WithoutDialogTriggerContext: Story = {
     const dialogRef = useRef<HTMLDialogElement>(null);
     return (
       <>
-        <Button onClick={() => dialogRef.current?.showModal()}>
-          Open Dialog
+        <Button
+          variant="secondary"
+          onClick={() => dialogRef.current?.showModal()}
+        >
+          Åpne Dialog
         </Button>
         <Dialog {...args} ref={dialogRef}>
           <Paragraph data-size="sm">Dialog subtittel</Paragraph>
           <Heading style={{ marginBottom: 'var(--ds-size-2)' }}>
-            Dialog header
+            Her bruker vi <code>ref</code> for å åpne dialogen
           </Heading>
           <Paragraph style={{ marginBottom: 'var(--ds-size-2)' }}>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
@@ -133,10 +133,10 @@ export const BackdropClosedbyAny: Story = {
 
     return (
       <Dialog.TriggerContext>
-        <Dialog.Trigger>Open Dialog</Dialog.Trigger>
+        <Dialog.Trigger variant="secondary">Åpne Dialog</Dialog.Trigger>
         <Dialog ref={dialogRef} closedby="any">
           <Heading>
-            Dialog med <code>closedby="any"</code> og en veldig lang tittel
+            Dialog med <code>closedby="any"</code>
           </Heading>
           <Paragraph>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
@@ -152,11 +152,11 @@ export const BackdropClosedbyAny: Story = {
 export const WithHeaderAndFooter: Story = {
   render: () => (
     <Dialog.TriggerContext>
-      <Dialog.Trigger>Open Dialog</Dialog.Trigger>
+      <Dialog.Trigger>Gå til neste</Dialog.Trigger>
       <Dialog>
         <Dialog.Block>
-          <Paragraph data-size="sm">Her er det også divider</Paragraph>
-          <Heading>Vi kan legge divider under header</Heading>
+          <Paragraph data-size="sm">Undertittel</Paragraph>
+          <Heading>Dette må du vite før du går videre</Heading>
         </Dialog.Block>
         <Dialog.Block>
           <Paragraph style={{ marginBottom: 'var(--ds-size-2)' }}>
@@ -183,7 +183,7 @@ export const WithHeaderAndFooter: Story = {
             massa.
           </Paragraph>
         </Dialog.Block>
-        <Dialog.Block>Og over footer</Dialog.Block>
+        <Dialog.Block>Footer</Dialog.Block>
       </Dialog>
     </Dialog.TriggerContext>
   ),
@@ -196,7 +196,7 @@ export const DialogWithForm: Story = {
 
     return (
       <Dialog.TriggerContext>
-        <Dialog.Trigger>Open Dialog</Dialog.Trigger>
+        <Dialog.Trigger>Send inn skjema</Dialog.Trigger>
         <Dialog
           ref={dialogRef}
           onClose={() => setInput('')}
@@ -204,7 +204,7 @@ export const DialogWithForm: Story = {
           {...args}
         >
           <Heading style={{ marginBottom: 'var(--ds-size-2)' }}>
-            Dialog med skjema
+            Skjemainnsending
           </Heading>
           <Textfield
             // @ts-expect-error We want the native "autofocus" and Reacts onMount smartness (see https://react.dev/reference/react-dom/components/input#input)
@@ -217,7 +217,7 @@ export const DialogWithForm: Story = {
           <div
             style={{
               display: 'flex',
-              gap: 'var(--ds-size-4)',
+              gap: 'var(--ds-size-2)',
               marginTop: 'var(--ds-size-4)',
             }}
           >
@@ -245,10 +245,10 @@ export const DialogWithForm: Story = {
 export const DialogWithMaxWidth: Story = {
   render: () => (
     <Dialog.TriggerContext>
-      <Dialog.Trigger>Open Dialog</Dialog.Trigger>
+      <Dialog.Trigger variant="secondary">Åpne Dialog</Dialog.Trigger>
       <Dialog style={{ maxWidth: 1200 }}>
         <Heading style={{ marginBottom: 'var(--ds-size-2)' }}>
-          Dialog med en veldig lang bredde
+          Dialog som er veldig bred
         </Heading>
         <Paragraph>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
@@ -270,19 +270,18 @@ const DATA_PLACES = [
 ];
 
 export const DialogWithSuggestion: Story = {
-  render(args, ctx) {
+  render(ctx) {
     const dialogRef = useRef<HTMLDialogElement>(null);
-
     return (
       <Dialog.TriggerContext>
-        <Dialog.Trigger>Open Dialog</Dialog.Trigger>
+        <Dialog.Trigger variant="secondary">Åpne Dialog</Dialog.Trigger>
         <Dialog style={{ overflow: 'visible' }} ref={dialogRef}>
           <Dialog.Block>
-            <Heading>Dialog med suggestion</Heading>
+            <Heading>Dialog med innhold utenfor</Heading>
           </Dialog.Block>
           <Dialog.Block>
             <Field>
-              <Label>Velg en destinasjon</Label>
+              <Label>Velg en kommune</Label>
               <Suggestion>
                 <Suggestion.Chips />
                 <Suggestion.Input id={`${ctx.id}-input`} />
@@ -299,7 +298,20 @@ export const DialogWithSuggestion: Story = {
               </Suggestion>
             </Field>
           </Dialog.Block>
-          <Dialog.Block>
+          <Dialog.Block
+            style={{
+              display: 'flex',
+              gap: 'var(--ds-size-2)',
+            }}
+          >
+            <Button
+              onClick={() => {
+                window.alert(`Skjema er sendt inn`);
+                dialogRef.current?.close();
+              }}
+            >
+              Send inn
+            </Button>
             <Button
               variant="secondary"
               onClick={() => dialogRef.current?.close()}
@@ -335,21 +347,41 @@ export const DialogWithSuggestion: Story = {
 export const DialogNonModal: Story = {
   parameters: {
     customStyles: {
-      padding: 'var(--ds-size-18)',
+      display: 'flex',
+      height: '400px',
+      alignItems: 'center',
+      gap: 'var(--ds-size-4)',
     },
   },
-  render() {
+  render(context) {
     const dialogRef = useRef<HTMLDialogElement>(null);
-
     return (
       <>
-        <Button onClick={() => dialogRef.current?.show()}>Open Dialog</Button>
-        <Dialog ref={dialogRef} modal={false}>
-          <Heading>Non-modal dialog</Heading>
-          <Paragraph>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
-            doloremque obcaecati assumenda odio ducimus sunt et.
-          </Paragraph>
+        <Field style={{ width: '400px' }}>
+          <Label>Besvarelse</Label>
+          <Textarea id={'textarea' + context.id} rows={8} />
+        </Field>
+        <Button variant="secondary" onClick={() => dialogRef.current?.show()}>
+          Åpne skrivetips
+        </Button>
+        <Dialog
+          ref={dialogRef}
+          modal={false}
+          style={{
+            width: '300px',
+            left: '80%',
+          }}
+        >
+          <Heading style={{ marginBottom: 'var(--ds-size-2)' }}>
+            Hva besvarelsen burde inneholde
+          </Heading>
+          <List.Unordered>
+            <List.Item>Intro til prosjektet</List.Item>
+            <List.Item>Oversikt over hva som er gjort i prosjektet</List.Item>
+            <List.Item>Beskrivelse av prosjektmålene</List.Item>
+            <List.Item>Metode for å oppnå prosjektmålene</List.Item>
+            <List.Item>Leveranse</List.Item>
+          </List.Unordered>
         </Dialog>
       </>
     );
