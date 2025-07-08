@@ -1,36 +1,191 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Legend As Heading 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    <h2 data-size="sm">
+      Hvilke tjenester bruker du?
+    </h2>
+  </legend>
+  <p data-variant="default">
+    Påloggingssystemer hos Udir
+  </p>
+  <div>
+    <input
+      id="components-fieldset--legend-as-heading-feide"
+      type="checkbox"
+      value="feide"
+      name="components-fieldset--legend-as-heading-feide"
+    >
+    <label
+      data-weight="regular"
+      for="components-fieldset--legend-as-heading-feide"
+    >
+      Feide
+    </label>
+  </div>
+  <div>
+    <input
+      id="components-fieldset--legend-as-heading-UIDP"
+      type="checkbox"
+      value="UIDP"
+      name="components-fieldset--legend-as-heading-UIDP"
+    >
+    <label
+      data-weight="regular"
+      for="components-fieldset--legend-as-heading-UIDP"
+    >
+      UIDP
+    </label>
+  </div>
+  <div>
+    <input
+      id="components-fieldset--legend-as-heading-UBAS"
+      type="checkbox"
+      value="UBAS"
+      name="components-fieldset--legend-as-heading-UBAS"
+    >
+    <label
+      data-weight="regular"
+      for="components-fieldset--legend-as-heading-UBAS"
+    >
+      UBAS
+    </label>
+  </div>
+</fieldset>
+`;
+
 exports[`Preview 1`] = `
-<form>
-  <fieldset>
-    <legend data-weight="medium">
-      Skriv inn dine svar
-    </legend>
-    <p data-variant="default">
-      Gi en kort beskrivelse i begge feltene
-    </p>
+<fieldset>
+  <legend data-weight="medium">
+    Hvilken fjordarm bor du ved?
+  </legend>
+  <p data-variant="default">
+    Valget vil hjelpe oss å forbedre innholdet vi viser deg.
+  </p>
+  <div>
+    <input
+      id="components-fieldset--preview-radio-barsnesfjorden"
+      type="radio"
+      value="barsnesfjorden"
+      name="radio"
+    >
+    <label
+      data-weight="regular"
+      for="components-fieldset--preview-radio-barsnesfjorden"
+    >
+      Barsnesfjorden
+    </label>
+  </div>
+  <div>
+    <input
+      id="components-fieldset--preview-radio-eidsfjorden"
+      type="radio"
+      value="eidsfjorden"
+      name="radio"
+    >
+    <label
+      data-weight="regular"
+      for="components-fieldset--preview-radio-eidsfjorden"
+    >
+      Eidsfjorden
+    </label>
+  </div>
+  <div>
+    <input
+      id="components-fieldset--preview-radio-ingen-av-de"
+      type="radio"
+      value="ingen-av-de"
+      name="radio"
+    >
+    <label
+      data-weight="regular"
+      for="components-fieldset--preview-radio-ingen-av-de"
+    >
+      Ingen av de
+    </label>
+  </div>
+</fieldset>
+`;
+
+exports[`With Checkbox 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Godtar du vilkårene?
+  </legend>
+  <div>
+    <input
+      id="components-fieldset--with-checkbox-checkbox"
+      type="checkbox"
+    >
+    <label
+      data-weight="regular"
+      for="components-fieldset--with-checkbox-checkbox"
+    >
+      Ja, jeg godtar
+    </label>
+  </div>
+</fieldset>
+`;
+
+exports[`With Textfield 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    <h2 data-size="sm">
+      Adresse
+    </h2>
+  </legend>
+  <p data-variant="default">
+    Skriv inn adressen din for å motta post fra oss.
+  </p>
+  <div>
+    <label
+      data-weight="medium"
+      for="components-fieldset--with-textfield-textfield"
+    >
+      Gateadresse
+    </label>
     <div>
-      <label
-        data-weight="medium"
-        for="components-fieldset--preview-input"
-      >
-        Kort beskrivelse
-      </label>
       <input
-        id="components-fieldset--preview-input"
+        id="components-fieldset--with-textfield-textfield"
         type="text"
+        name="components-fieldset--with-textfield-textfield"
       >
     </div>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for="components-fieldset--with-textfield-textfield"
+    >
+      Postnummer
+    </label>
     <div>
-      <label
-        data-weight="medium"
-        for="components-fieldset--preview-textarea"
+      <input
+        id="components-fieldset--with-textfield-textfield"
+        pattern="[0-9]*"
+        inputmode="numeric"
+        size="4"
+        type="text"
+        name="components-fieldset--with-textfield-textfield"
       >
-        Lang beskrivelse
-      </label>
-      <textarea id="components-fieldset--preview-textarea">
-      </textarea>
     </div>
-  </fieldset>
-</form>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for="components-fieldset--with-textfield-textfield2"
+    >
+      Poststed
+    </label>
+    <div>
+      <input
+        id="components-fieldset--with-textfield-textfield2"
+        size="25"
+        type="text"
+        name="components-fieldset--with-textfield-textfield2"
+      >
+    </div>
+  </div>
+</fieldset>
 `;
