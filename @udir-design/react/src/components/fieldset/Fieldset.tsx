@@ -12,6 +12,9 @@ type FieldsetProps = Omit<DigdirFieldsetProps, 'data-color'>;
 const Fieldset = DigdirFieldset as ForwardRefExoticComponent<FieldsetProps> &
   Pick<typeof DigdirFieldset, 'Legend' | 'Description'>;
 
+// For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
+Fieldset.displayName = 'Fieldset';
+
 export {
   Fieldset,
   FieldsetProps,
