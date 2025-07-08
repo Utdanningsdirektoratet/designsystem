@@ -5,17 +5,25 @@ import * as SelectStories from './Select.stories';
 
 # Select
 
-`Select` er en enkel nedtrekksliste som lar brukeren velge ett eller flere alternativer fra et statisk utvalg.
-Komponenten er bygget på HTML-elementet `select`, som benytter seg av operativsystemets standarder (derav "native").
+`Select` er en nedtrekksliste som lar brukeren velge ett alternativ fra et utvalg av muligheter.  
+Komponenten er bygget på HTML-elementet `select`, som benytter seg av operativsystemets standarder, og er derfor native.
 Dette sikrer forutsigbarhet og tilgjengelighet, men det setter noen begrensninger på hvordan komponenten kan tilpasses.
 For eksempel er det ikke mulig å overstyre formateringen av alternativene.
 
-## Props
+**Passer til å**
+
+- velge ett alternativ
+
+**Passer ikke til å**
+
+- navigere mellom sider eller seksjoner i en applikasjon
+- velge flere alternativer, bruk heller [`MultiSuggestion`](/docs/components-multisuggestion--docs) eller [`Checkbox`](/docs/components-checkbox--docs)
+- velge fra en liste med få alternativer, bruk heller [`Radio`](/docs/components-radio--docs)
+
+## Slik bruker du Select
 
 <Primary />
 <Controls />
-
-## Bruk
 
 ```tsx
 import { Select, Field } from '@udir-design/react';
@@ -32,14 +40,64 @@ import { Select, Field } from '@udir-design/react';
 
 ## Eksempler
 
-### Deaktivert
+### Vise feilmelding
 
-<Canvas of={SelectStories.Disabled} />
-
-### Med feil
+Bruk `aria-invalid` på `Select` og `ValidationMessage` for å vise feilmeldinger.
 
 <Canvas of={SelectStories.WithError} />
 
-### Med gruppering
+### Gruppering av alternativer
+
+Gruppering brukes for å organisere alternativer i kategorier, noe som gjør lange lister mer oversiktlige og enklere å navigere.
 
 <Canvas of={SelectStories.WithOptgroup} />
+
+### Kontrollere Select utenfra
+
+`Select` kan kontrolleres utenfra ved å bruke value og onChange. Dette er nyttig når du vil at `Select` skal oppdatere seg selv basert på endringer i andre komponenter eller tilstander.
+For eksempel kan du filtrere alternativene i `Select` basert på brukerens valg i en annen komponent. I eksempelet nedenfor velger man fylke først slik at man ikke må bla gjennnom en lang liste med byer.
+
+<Canvas of={SelectStories.Controlled} />
+
+## Retningslinjer
+
+### Antall alternativer
+
+Bruk `select` når det er 7 eller flere alternativer. For færre alternativer kan [`Radio`](/docs/components-radio--docs) være enklere for brukerne. Det kan ofte være bedre å stille flere spørsmål i forkant for å redusere antallet alternativer å velge mellom.
+
+### Tilpass bredden på feltet
+
+Tilpass bredden etter hva brukerne skal velge - f.eks. kort bredde for telefonnummer og bredere for stedsnavn. Ulik bredde på feltene gjør det lettere å navigere i skjemaer med mange felter.
+
+### Ikke bruk deaktivert Select
+
+Vi unngår deaktivert (`disabled`) `Select` fordi de kan være vanskelige å oppfatte. Noen brukere vil ikke forstå hvorfor den ikke er klikkbar. Hvis et `Select` ikke er relevant, bør du helst fjerne det fremfor å deaktivere det. Tilby gjerne brukeren informasjon om hvorfor noe ikke er tilgjengelig.
+
+Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander) og hvilke alternativer som finnes.
+
+### Unngå skrivebeskyttet Select
+
+`Select` støtter `readOnly`-attributtet for å gjøre feltet skrivebeskyttet, og gir en visuell indikasjon
+som skiller seg fra redigerbare felter. Vi unngår likevel `readOnly` så langt det lar seg gjøre, fordi
+slike felter kan være forvirrende for noen brukere. Ikke alle vil skjønne hvorfor de ikke får til å
+endre innholdet i feltet.
+
+## Tekst i komponenten
+
+Det skal alltid være `label` på `Select`. I spesielle tilfeller kan vi skjule `label`. Det kan for eksempel være i tabeller, hvis feltet får `label` fra tabelloverskriften. Selv om vi har tenkt å skjule den, må vi alltid skrive en `label` som gir mening, siden den leses opp av skjermlesere.
+
+- Hold `label` kort, unngå at den går over to linjer.
+- Unngå å legge til beskrivelse som ikke er relevant eller meningsfull for brukeren.
+- Unngå å bruke kolon etter `label`.
+
+## Tilgjengelighet
+
+Det er en kjent feil at `select` ikke fungerer med VoiceOver i Chrome på Mac.
+
+- <kbd>Space</kbd> - åpner listen (velger også et alternativ på Mac)
+- <kbd>Enter</kbd> - velger alternativ i listen (åpner også listen på Windows)
+- <kbd data-icon>↓</kbd> - markerer neste alternativ i listen
+- <kbd data-icon>↑</kbd> - markerer forrige alternativ i listen
+- <kbd>Home</kbd> - markerer det første alternativet i listen
+- <kbd>End</kbd> - markerer det siste alternativet i listen
+- Andre bokstaver/tegn hopper til det første alternativet som starter på den bokstaven eller det tegnet.
