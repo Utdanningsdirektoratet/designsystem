@@ -6,7 +6,7 @@ import * as SelectStories from './Select.stories';
 # Select
 
 `Select` er en nedtrekksliste som lar brukeren velge ett alternativ fra et utvalg av muligheter.  
-Komponenten er bygget på HTML-elementet `select`, som benytter seg av operativsystemets standarder, og er derfor native.
+Komponenten er bygget på [HTML-elementet `<select>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/select), som benytter seg av operativsystemets standarder.
 Dette sikrer forutsigbarhet og tilgjengelighet, men det setter noen begrensninger på hvordan komponenten kan tilpasses.
 For eksempel er det ikke mulig å overstyre formateringen av alternativene.
 
@@ -63,7 +63,7 @@ For eksempel kan du filtrere alternativene i `Select` basert på brukerens valg 
 
 ### Antall alternativer
 
-Bruk `select` når det er 7 eller flere alternativer. For færre alternativer kan [`Radio`](/docs/components-radio--docs) være enklere for brukerne. Det kan ofte være bedre å stille flere spørsmål i forkant for å redusere antallet alternativer å velge mellom.
+Bruk `Select` når det er 7 eller flere alternativer. For færre alternativer kan [`Radio`](/docs/components-radio--docs) være enklere for brukerne. Det kan ofte være bedre å stille flere spørsmål i forkant for å redusere antallet alternativer å velge mellom.
 
 ### Tilpass bredden på feltet
 
@@ -82,7 +82,7 @@ som skiller seg fra redigerbare felter. Vi unngår likevel `readOnly` så langt 
 slike felter kan være forvirrende for noen brukere. Ikke alle vil skjønne hvorfor de ikke får til å
 endre innholdet i feltet.
 
-## Tekst i komponenten
+## Tekst i Select
 
 Det skal alltid være `label` på `Select`. I spesielle tilfeller kan vi skjule `label`. Det kan for eksempel være i tabeller, hvis feltet får `label` fra tabelloverskriften. Selv om vi har tenkt å skjule den, må vi alltid skrive en `label` som gir mening, siden den leses opp av skjermlesere.
 
@@ -92,7 +92,9 @@ Det skal alltid være `label` på `Select`. I spesielle tilfeller kan vi skjule 
 
 ## Tilgjengelighet
 
-Det er en kjent feil at `select` ikke fungerer med VoiceOver i Chrome på Mac.
+Det er en kjent feil at HTML-elementet `<select>` ikke fungerer med VoiceOver i Chrome på Mac.
+
+### Tastaturnavigasjon
 
 - <kbd>Space</kbd> - åpner listen (velger også et alternativ på Mac)
 - <kbd>Enter</kbd> - velger alternativ i listen (åpner også listen på Windows)

@@ -102,7 +102,7 @@ export const WithError: Story = {
     <Field>
       <Label>Fylke</Label>
       <Select {...args} id={context.id}>
-        <Select.Option value="">Velg et Fylke &hellip;</Select.Option>
+        <Select.Option value="">Velg et fylke &hellip;</Select.Option>
         {counties.map((county) => (
           <Select.Option key={county} value={county.toLowerCase()}>
             {county}
