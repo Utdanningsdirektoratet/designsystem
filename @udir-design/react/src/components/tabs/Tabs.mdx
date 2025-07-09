@@ -12,12 +12,27 @@ import * as TabsStories from './Tabs.stories';
 
 # Tabs
 
-Tabs lar brukerne navigere mellom relaterte deler av innholdet, der én del vises om gangen.
+`Tabs` lar brukerne navigere mellom relaterte deler av innholdet, der én del vises om gangen. Dette er en effektiv måte å organisere og presentere relatert innhold på samme side.
+
+**Passer til å**
+
+- strukturere innhold uten å laste en ny side
+- dele opp innhold i tydelig merkede seksjoner
+- forenkle navigasjon når brukeren ikke trenger å se alt samtidig
+
+**Passer ikke til å**
+
+- gi en umiddelbar oversikt over innhold, da `Tabs` skjuler informasjon
+- presentere innhold som må sammenlignes på tvers av seksjoner
+- veilede brukeren gjennom en steg-for-steg-prosess der rekkefølgen er viktig
+- håndtere store mengder innhold som kan gjøre siden treg å laste
+- erstatte hovednavigasjon eller brukes til filtrering og sortering
+- være en løsning når innholdet like gjerne kan vises på én side eller fordeles på flere sider
+
+## Slik bruker du Tabs
 
 <Primary />
 <Controls />
-
-## Bruk
 
 ```tsx
 import { Tabs } from '@udir-design/react';
@@ -34,16 +49,95 @@ import { Tabs } from '@udir-design/react';
 </Tabs>;
 ```
 
-## Icons only
+## Eksempler
 
-<Canvas of={TabsStories.IconsOnly} />
+Tabbene i `Tabs` kan ha tre typer innhold:
 
-## Controlled
+- Bare tekst.
+- Tekst med ikon til venstre for teksten.
+- Bare ikon med `Tooltip`.
+
+### Bare tekst
+
+<Canvas of={TabsStories.OnlyText} />
+
+### Med ikoner og tekst
+
+Kombinasjonen av ikoner og tekst gir både visuell og tekstlig beskrivelse av innholdet. Ikonene bør være dekorative og markeres med `aria-hidden`.
+
+<Canvas of={TabsStories.IconsWithText} />
+
+### Bare ikoner
+
+Alternativet "Bare ikon" brukes kun når du vet at brukerne vil forstå ikonet. Det kan for eksempel være ekspertbrukere eller brukere av interne tjenester, som kjenner symbolene i den aktuelle `Tabs` godt. Forklar handlingene med [`Tooltip`](/docs/components-tooltip--docs) når du kun bruker ikoner.
+
+<Canvas of={TabsStories.OnlyIcons} />
+
+### Kontrollere Tabs utenfra
+
+Bruk `value` og `onChange` på `Tabs` for å kontrollere hvilken tab som er aktiv utenfra. Eksemplet nedenfor har en tab som er en liste over brukere og en annen som viser din profil. Når du klikker på din egen bruker i lista, endres den aktive taben til "Din profil".
 
 <Canvas of={TabsStories.Controlled} />
 
-### Props
+## Retningslinjer
 
-#### Tabs
+`Tabs` skal brukes til å organisere relatert innhold i separate seksjoner.
 
-<ArgTypes of={Tabs} />
+### Alternativer til Tabs
+
+Før du velger `Tabs`, vurder om det er bedre å:
+
+- forenkle og redusere mengden innhold
+- fordele innholdet på flere sider
+- beholde alt på én side, med tydelige overskrifter
+- bruke en innholdsfortegnelse for enklere navigasjon
+
+### Endre URL
+
+Tabs bør ikke brukes til sidenavigasjon, da det vil være en uventet oppførsel som kan forvirre brukeren.
+Noen ganger kan det være nyttig å knytte valgt tab til URLen, uten at det teller som navigasjon. Det kan løses ved bruk av shallow-routing, noe de fleste routing-rammeverk støtter. Under er et eksempel med bruk av Nextjs.
+
+```tsx
+<Tabs
+  value={selectedTab}
+  onChange={() => router.push(url, undefined, { shallow: true })}
+>
+  <Tabs.List>
+    <Tabs.Tab value="tab-1">Tab 1</Tabs.Tab>
+    <Tabs.Tab value="tab-2">Tab 2</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel value="tab-1">Panel 1</Tabs.Panel>
+  <Tabs.Panel value="tab-2">Panel 2</Tabs.Panel>
+</Tabs>
+```
+
+### Beste praksis
+
+- **Begrens antall `Tabs`** – for mange skaper dårlig oversikt, særlig på små skjermer.
+- **Bruk tydelig navn på en tab** – `Tabs` skjuler innhold, så taben må klart indikere hva brukeren får se.
+- **Plasser viktigst innhold først** – organiser `Tabs` etter brukerens behov.
+- **Hold `Tabs` på én linje** – lange `Tabs` eller for mange `Tabs` kan gjøre navigasjonen vanskelig.
+- **Unngå deaktiverte `Tabs`** – fjern deaktiverte `Tabs` eller forklar hvorfor de er tomme.
+
+## Tekst i Tabs
+
+### Tydelige merkelapper og overskrifter
+
+Teksten i `Tabs` bør være kort og beskrivende, slik at brukeren lett forstår hva de vil se når de klikker. Hvis det er vanskelig å lage presise tabber, kan det tyde på at innholdet ikke er godt strukturert.
+
+Hvis det er behov for å gi en overordnet kontekst, kan en felles tittel plasseres over `Tabs` som gir rask oversikt over innholdet.
+
+## Tilgjengelighet
+
+- Hver tab må ha en unik tittel.
+- Ved bruk av ikoner, sørg for at de er dekorative (`aria-hidden`) eller har beskrivende titler.
+- Dersom et `Tabs.Panel` ikke har fokuserbare elementer, får selve panelet fokus.
+
+### Tastaturnavigasjon
+
+- <kbd>Tab</kbd> - flytter fokus til neste interaktive element
+- <kbd data-icon>→</kbd> - flytter fokus til neste tab
+- <kbd data-icon>←</kbd> - flytter fokus til forrige tab
+- <kbd>Home</kbd> - flytter fokus til første tab
+- <kbd>End</kbd> - flytter fokus til siste tab
+- <kbd>Enter</kbd> eller <kbd>Space</kbd> - aktiverer valgt tab
