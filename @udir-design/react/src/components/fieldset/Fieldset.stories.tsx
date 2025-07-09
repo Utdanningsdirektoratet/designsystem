@@ -9,7 +9,7 @@ import {
 
 const meta: Meta<typeof Fieldset> = {
   component: Fieldset,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     layout: 'centered',
   },

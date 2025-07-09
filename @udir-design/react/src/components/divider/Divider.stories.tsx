@@ -11,7 +11,7 @@ import {
 
 const meta: Meta<typeof Divider> = {
   component: Divider,
-  tags: ['alpha'],
+  tags: ['beta'],
 };
 
 export default meta;
