@@ -33,9 +33,9 @@ export const Preview: Story = {
   ),
   play: async ({ canvasElement, step, globals }) => {
     const canvas = within(canvasElement);
-    const breadcrumbs = canvas.getByLabelText('Du er her:');
+    const breadcrumbs = canvas.getByRole('navigation');
 
-    await step('Element with breadcrumbs role should exist', async () => {
+    await step('Element with navigation role should exist', async () => {
       await expect(breadcrumbs).toBeTruthy();
     });
 
