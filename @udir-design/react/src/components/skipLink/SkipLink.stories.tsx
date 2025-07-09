@@ -2,10 +2,12 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { SkipLink } from './SkipLink';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { expect, userEvent, within } from 'storybook/test';
+import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 
 const meta: Meta<typeof SkipLink> = {
   component: SkipLink,
   tags: ['alpha'],
+  decorators: [withScrollHashBehavior],
 };
 
 export default meta;
@@ -26,17 +28,24 @@ export const Preview: Story = {
       </main>
     </>
   ),
-};
-
-export const Tabbed: Story = {
-  ...Preview,
   play: async (ctx) => {
     const canvas = within(ctx.canvasElement);
+    const mainContent = canvas.getByRole('main');
     const link = canvas.getByRole('link');
     await expect(link).not.toSatisfy(isVisibleOnScreen);
     await userEvent.tab();
     await expect(link).toSatisfy(isVisibleOnScreen);
     await expect(link).toHaveFocus();
+    await userEvent.keyboard('{Enter}');
+    await expect(mainContent).toHaveFocus();
+    await userEvent.keyboard('{Tab}');
+  },
+};
+
+export const Tabbed: Story = {
+  ...Preview,
+  play: async () => {
+    await userEvent.tab();
   },
 };
 
