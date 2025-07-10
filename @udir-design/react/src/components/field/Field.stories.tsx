@@ -6,6 +6,7 @@ import {
   ValidationMessage,
 } from '@udir-design/react/alpha';
 import { Label } from '../typography/label/Label';
+import { expect, waitFor } from 'storybook/test';
 
 const meta: Meta<typeof Field> = {
   component: Field,
@@ -29,6 +30,40 @@ export const Preview: Story = {
       <ValidationMessage>Du må oppgi en gyldig e-postadresse</ValidationMessage>
     </Field>
   ),
+  play: async ({ canvasElement, step }) => {
+    const canvas = canvasElement as HTMLElement;
+    const input = canvas.querySelector('input') as HTMLInputElement;
+    const label = canvas.querySelector('label') as HTMLLabelElement;
+    const validationMessage = canvas.querySelector(
+      '[data-field="validation"]',
+    ) as HTMLParagraphElement;
+    const description = canvas.querySelector(
+      '[data-field="description"]',
+    ) as HTMLDivElement;
+
+    await step('Input field is rendered and connected with label', async () => {
+      expect(input).toBeInTheDocument();
+      expect(input).toHaveAttribute('id', input.id);
+      expect(label).toBeInTheDocument();
+      await waitFor(() => expect(label).toHaveAttribute('for', input.id));
+    });
+
+    await step(
+      'Validation message and description is connected with input',
+      async () => {
+        expect(validationMessage).toBeInTheDocument();
+        expect(validationMessage).toHaveAttribute('id', validationMessage.id);
+        expect(description).toBeInTheDocument();
+        expect(description).toHaveAttribute('id', description.id);
+        await waitFor(() =>
+          expect(input).toHaveAttribute(
+            'aria-describedby',
+            validationMessage.id + '  ' + description.id,
+          ),
+        );
+      },
+    );
+  },
 };
 
 export const Affix: Story = {
@@ -52,26 +87,54 @@ export const Counter: Story = {
       <Field.Counter limit={10} />
     </Field>
   ),
+  play: async ({ canvasElement, step }) => {
+    const canvas = canvasElement as HTMLElement;
+    const textarea = canvas.querySelector('textarea') as HTMLTextAreaElement;
+    const label = canvas.querySelector('label') as HTMLLabelElement;
+
+    await step('Textarea is rendered and connected with label', async () => {
+      expect(textarea).toBeInTheDocument();
+      expect(textarea).toHaveAttribute('id', textarea.id);
+      expect(label).toBeInTheDocument();
+      await waitFor(() => expect(label).toHaveAttribute('for', textarea.id));
+    });
+  },
 };
 
-export const Position: Story = () => (
-  <div
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 'var(--ds-size-2)',
-    }}
-  >
-    <Field position="end">
-      <Label>Flymodus</Label>
-      <Input type="checkbox" role="switch" id={'airplane'} />
-    </Field>
-    <Field position="end">
-      <Label>Lydløs</Label>
-      <Input type="checkbox" role="switch" id={'sounds'} />
-    </Field>
-  </div>
-);
+export const Position: Story = {
+  render: () => (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 'var(--ds-size-2)',
+      }}
+    >
+      <Field position="end">
+        <Label>Flymodus</Label>
+        <Input type="checkbox" role="switch" id={'airplane'} />
+      </Field>
+      <Field position="end">
+        <Label>Lydløs</Label>
+        <Input type="checkbox" role="switch" id={'sounds'} />
+      </Field>
+    </div>
+  ),
+  play: async ({ canvasElement, step }) => {
+    const canvas = canvasElement as HTMLElement;
+    const checkbox = canvas.querySelector(
+      'input[type="checkbox"]',
+    ) as HTMLInputElement;
+    const label = canvas.querySelector('label') as HTMLLabelElement;
+
+    await step('Checkbox is rendered and connected with label', async () => {
+      expect(checkbox).toBeInTheDocument();
+      expect(checkbox).toHaveAttribute('id', checkbox.id);
+      expect(label).toBeInTheDocument();
+      await waitFor(() => expect(label).toHaveAttribute('for', checkbox.id));
+    });
+  },
+};
 
 Position.decorators = [
   (Story) => (
