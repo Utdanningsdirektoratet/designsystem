@@ -69,7 +69,7 @@ export const Preview: Story = {
       <Label>Velg en destinasjon</Label>
       <Suggestion {...args}>
         <Suggestion.Chips />
-        <Suggestion.Input />
+        <Suggestion.Input id="suggestion-preview" />
         <Suggestion.Clear />
         <Suggestion.List>
           <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -99,7 +99,7 @@ export const ControlledSingleArray: Story = {
             onValueChange={(items) => setValue(items.map((item) => item.value))}
           >
             <Suggestion.Chips />
-            <Suggestion.Input />
+            <Suggestion.Input id="suggestion-controlled-single-array" />
             <Suggestion.Clear />
             <Suggestion.List>
               <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -168,7 +168,7 @@ export const ControlledSingle: Story = {
             onValueChange={(items) => setValue(items.at(0)?.value ?? '')}
           >
             <Suggestion.Chips />
-            <Suggestion.Input />
+            <Suggestion.Input id="suggestion-controlled-single" />
             <Suggestion.Clear />
             <Suggestion.List>
               <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -225,7 +225,6 @@ ControlledSingle.play = async ({ canvasElement, step }) => {
 export const ControlledMultiple: Story = {
   render: (args) => {
     const [value, setValue] = useState<string[]>(['Oslo']);
-
     return (
       <>
         <Field>
@@ -237,7 +236,7 @@ export const ControlledMultiple: Story = {
             onValueChange={(items) => setValue(items.map((item) => item.value))}
           >
             <Suggestion.Chips />
-            <Suggestion.Input />
+            <Suggestion.Input id="suggestion-controlled-multiple" />
             <Suggestion.Clear />
             <Suggestion.List>
               <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -310,7 +309,7 @@ export const CustomFilterAlt1: Story = {
         }
       >
         <Suggestion.Chips />
-        <Suggestion.Input />
+        <Suggestion.Input id="suggestion-custom-filter-alt1-input" />
         <Suggestion.Clear />
         <Suggestion.List>
           <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -336,13 +335,13 @@ CustomFilterAlt1.parameters = {
 export const CustomFilterAlt2: Story = {
   render: (args) => {
     const [value, setValue] = useState('');
-
     return (
       <Field>
         <Label>Skriv inn et tall mellom 1-6</Label>
         <Suggestion {...args} filter={false}>
           <Suggestion.Chips />
           <Suggestion.Input
+            id="suggestion-custom-filter-alt2-input"
             onInput={({ currentTarget }) => setValue(currentTarget.value)}
           />
           <Suggestion.Clear />
@@ -363,7 +362,6 @@ export const CustomFilterAlt2: Story = {
 export const AlwaysShowAll: Story = {
   render: (args) => {
     const [value, setValue] = useState<SuggestionValues>('Sogndal');
-
     return (
       <Field>
         <Label>Viser alle options også når valgt</Label>
@@ -374,7 +372,7 @@ export const AlwaysShowAll: Story = {
           onValueChange={(values) => setValue(values)}
         >
           <Suggestion.Chips />
-          <Suggestion.Input />
+          <Suggestion.Input id="suggestion-always-show-all-input" />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -418,7 +416,10 @@ export const FetchExternal: Story = {
         <Label>Search for countries (in english)</Label>
         <Suggestion {...args} filter={false}>
           <Suggestion.Chips />
-          <Suggestion.Input onInput={handleInput} />
+          <Suggestion.Input
+            id="suggestion-fetch-external-input"
+            onInput={handleInput}
+          />
           <Suggestion.Clear />
           <Suggestion.List singular="%d country" plural="%d countries">
             {value ? (
@@ -457,7 +458,7 @@ export const DefaultValue: Story = {
       <Label>Velg en destinasjon</Label>
       <Suggestion {...args} defaultValue={['Sogndal']}>
         <Suggestion.Chips />
-        <Suggestion.Input />
+        <Suggestion.Input id="suggestion-default-value-input" />
         <Suggestion.Clear />
         <Suggestion.List>
           <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -476,7 +477,7 @@ export const Multiple: Story = {
       <Label>Velg en destinasjon</Label>
       <Suggestion {...args}>
         <Suggestion.Chips />
-        <Suggestion.Input />
+        <Suggestion.Input id="suggestion-multiple-input" />
         <Suggestion.Clear />
         <Suggestion.List>
           <Suggestion.Empty>Tomt</Suggestion.Empty>

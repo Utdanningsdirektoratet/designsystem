@@ -4,7 +4,7 @@ exports[`Always Show All 1`] = `
 <div>
   <label
     data-weight="medium"
-    for=":mcx5kubeiyt"
+    for="suggestion-always-show-all-input"
     id=":label4"
   >
     Viser alle options også når valgt
@@ -21,8 +21,8 @@ exports[`Always Show All 1`] = `
     </data>
     <input
       placeholder
+      id="suggestion-always-show-all-input"
       type="text"
-      id=":mcx5kubeiyt"
       list=":u-datalist7"
       aria-label="Viser alle options også når valgt, "
       aria-autocomplete="list"
@@ -121,7 +121,7 @@ exports[`Controlled Multiple 1`] = `
 <div>
   <label
     data-weight="medium"
-    for=":mcx5ku4f5ym"
+    for="suggestion-controlled-multiple"
   >
     Velg destinasjoner
   </label>
@@ -146,8 +146,8 @@ exports[`Controlled Multiple 1`] = `
     </data>
     <input
       placeholder
+      id="suggestion-controlled-multiple"
       type="text"
-      id=":mcx5ku4f5ym"
       list=":u-datalist4"
       aria-label="Velg destinasjoner, Navigate left to find 2 selected"
       aria-autocomplete="list"
@@ -292,7 +292,7 @@ exports[`Controlled Single 1`] = `
 <div>
   <label
     data-weight="medium"
-    for=":mcx5ku1s6ou"
+    for="suggestion-controlled-single"
   >
     Velg destinasjon
   </label>
@@ -308,8 +308,8 @@ exports[`Controlled Single 1`] = `
     </data>
     <input
       placeholder
+      id="suggestion-controlled-single"
       type="text"
-      id=":mcx5ku1s6ou"
       list=":u-datalist3"
       aria-label="Velg destinasjon, "
       aria-autocomplete="list"
@@ -465,7 +465,7 @@ exports[`Controlled Single Array 1`] = `
 <div>
   <label
     data-weight="medium"
-    for=":mcx5ktygdkp"
+    for="suggestion-controlled-single-array"
   >
     Velg destinasjon
   </label>
@@ -481,8 +481,8 @@ exports[`Controlled Single Array 1`] = `
     </data>
     <input
       placeholder
+      id="suggestion-controlled-single-array"
       type="text"
-      id=":mcx5ktygdkp"
       list=":u-datalist2"
       aria-label="Velg destinasjon, "
       aria-autocomplete="list"
@@ -638,7 +638,7 @@ exports[`Custom Filter Alt 1 1`] = `
 <div>
   <label
     data-weight="medium"
-    for=":mcx5ku7i0w5"
+    for="suggestion-custom-filter-alt1-input"
     id=":label2"
   >
     Skriv inn et tall mellom 1-6
@@ -646,8 +646,8 @@ exports[`Custom Filter Alt 1 1`] = `
   <u-combobox>
     <input
       placeholder
+      id="suggestion-custom-filter-alt1-input"
       type="text"
-      id=":mcx5ku7i0w5"
       list=":u-datalist5"
       aria-label="Skriv inn et tall mellom 1-6, "
       aria-autocomplete="list"
@@ -753,7 +753,7 @@ exports[`Custom Filter Alt 2 1`] = `
 <div>
   <label
     data-weight="medium"
-    for=":mcx5ku9zwpx"
+    for="suggestion-custom-filter-alt2-input"
     id=":label3"
   >
     Skriv inn et tall mellom 1-6
@@ -761,8 +761,8 @@ exports[`Custom Filter Alt 2 1`] = `
   <u-combobox>
     <input
       placeholder
+      id="suggestion-custom-filter-alt2-input"
       type="text"
-      id=":mcx5ku9zwpx"
       list=":u-datalist6"
       aria-label="Skriv inn et tall mellom 1-6, "
       aria-autocomplete="list"
@@ -861,7 +861,7 @@ exports[`Default Value 1`] = `
 <div>
   <label
     data-weight="medium"
-    for=":mcx5kuf3742"
+    for="suggestion-default-value-input"
     id=":label6"
   >
     Velg en destinasjon
@@ -878,8 +878,8 @@ exports[`Default Value 1`] = `
     </data>
     <input
       placeholder
+      id="suggestion-default-value-input"
       type="text"
-      id=":mcx5kuf3742"
       list=":u-datalist9"
       aria-label="Velg en destinasjon, "
       aria-autocomplete="list"
@@ -984,7 +984,7 @@ exports[`Fetch External 1`] = `
 <div lang="en">
   <label
     data-weight="medium"
-    for=":mcx5kudozwd"
+    for="suggestion-fetch-external-input"
     id=":label5"
   >
     Search for countries (in english)
@@ -992,8 +992,8 @@ exports[`Fetch External 1`] = `
   <u-combobox>
     <input
       placeholder
+      id="suggestion-fetch-external-input"
       type="text"
-      id=":mcx5kudozwd"
       list=":u-datalist8"
       aria-label="Search for countries (in english), "
       aria-autocomplete="list"
@@ -1029,7 +1029,7 @@ exports[`Multiple 1`] = `
 <div>
   <label
     data-weight="medium"
-    for=":mcx5kughfwu"
+    for="suggestion-multiple-input"
     id=":label7"
   >
     Velg en destinasjon
@@ -1037,8 +1037,8 @@ exports[`Multiple 1`] = `
   <u-combobox data-multiple>
     <input
       placeholder
+      id="suggestion-multiple-input"
       type="text"
-      id=":mcx5kughfwu"
       list=":u-datalista"
       aria-label="Velg en destinasjon, No selected"
       aria-autocomplete="list"
@@ -1137,7 +1137,7 @@ exports[`Preview 1`] = `
 <div>
   <label
     data-weight="medium"
-    for=":mcx5ktmnsr9"
+    for="suggestion-preview"
     id=":label1"
   >
     Velg en destinasjon
@@ -1145,8 +1145,8 @@ exports[`Preview 1`] = `
   <u-combobox>
     <input
       placeholder
+      id="suggestion-preview"
       type="text"
-      id=":mcx5ktmnsr9"
       list=":u-datalist1"
       aria-label="Velg en destinasjon, "
       aria-autocomplete="list"
