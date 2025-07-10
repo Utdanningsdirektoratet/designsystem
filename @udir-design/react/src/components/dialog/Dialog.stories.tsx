@@ -48,9 +48,6 @@ const meta: Meta<typeof Dialog> = {
         resolve();
       });
     });
-
-    await expect(dialog).toBeInTheDocument();
-    await expect(dialog).toHaveAttribute('open');
   },
 };
 
@@ -58,6 +55,7 @@ export default meta;
 type Story = StoryObj<typeof Dialog>;
 
 export const Preview: Story = {
+  args: { closedby: 'any' },
   render: (args) => (
     <Dialog.TriggerContext>
       <Dialog.Trigger data-size={args['data-size']}>Åpne Dialog</Dialog.Trigger>
@@ -73,6 +71,47 @@ export const Preview: Story = {
       </Dialog>
     </Dialog.TriggerContext>
   ),
+  play: async (ctx) => {
+    await meta.play?.(ctx);
+    const canvas = within(ctx.canvasElement);
+    const dialog = canvas.getByRole('dialog');
+    const button = canvas.getByRole('button', {
+      name: /åpne dialog/i,
+    });
+
+    await ctx.step('Dialog is open', async () => {
+      await expect(dialog).toBeInTheDocument();
+      await expect(dialog).toHaveAttribute('open');
+    });
+
+    await ctx.step('Dialog has content', async () => {
+      const heading = within(dialog).getByRole('heading', {
+        name: /dialog header/i,
+      });
+      const paragraph = within(dialog).getByText(
+        /lorem ipsum dolor sit, amet consectetur adipisicing elit/i,
+      );
+      const footer = within(dialog).getByText(/dialog footer/i);
+      await expect(heading).toBeInTheDocument();
+      await expect(paragraph).toBeInTheDocument();
+      await expect(footer).toBeInTheDocument();
+    });
+
+    await ctx.step('Close with blur', async () => {
+      await userEvent.click(document.body);
+      // Dialog has open="" when closed by blur
+      await expect(dialog).toHaveAttribute('open', '');
+    });
+
+    await userEvent.click(button);
+    await ctx.step('Close with close button', async () => {
+      const closeButton = within(dialog).getByRole('button');
+      await userEvent.click(closeButton);
+      // Dialog does not have open attribute when closed by close button
+      await expect(dialog).not.toHaveAttribute('open');
+    });
+    await userEvent.click(button);
+  },
 };
 
 export const WithoutDialogTriggerContext: Story = {
@@ -384,6 +423,24 @@ export const DialogNonModal: Story = {
           </List.Unordered>
         </Dialog>
       </>
+    );
+  },
+  play: async (ctx) => {
+    await meta.play?.(ctx);
+    const canvas = within(ctx.canvasElement);
+    const dialog = canvas.getByRole('dialog');
+
+    await ctx.step('Dialog is open', async () => {
+      await expect(dialog).toBeInTheDocument();
+      await expect(dialog).toHaveAttribute('open');
+    });
+
+    await ctx.step(
+      'Interaction outside dialog when dialog is open',
+      async () => {
+        await userEvent.click(document.body);
+        await expect(dialog).toHaveAttribute('open');
+      },
     );
   },
 };
