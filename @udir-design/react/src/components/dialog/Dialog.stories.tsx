@@ -16,7 +16,7 @@ import { useRef, useState } from 'react';
 
 const meta: Meta<typeof Dialog> = {
   component: Dialog,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     customStyles: {
       display: 'grid',

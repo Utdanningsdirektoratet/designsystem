@@ -10,7 +10,7 @@ import { expect, waitFor } from 'storybook/test';
 
 const meta: Meta<typeof Field> = {
   component: Field,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     layout: 'centered',
   },

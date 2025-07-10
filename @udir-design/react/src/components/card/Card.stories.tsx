@@ -21,7 +21,7 @@ const schoolSuppliesImg =
 
 const meta: Meta<typeof Card> = {
   component: Card,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     customStyles: {
       width: '100%',

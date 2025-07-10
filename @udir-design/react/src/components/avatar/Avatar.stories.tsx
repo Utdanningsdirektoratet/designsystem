@@ -4,7 +4,7 @@ import { BriefcaseIcon, ChevronUpIcon } from '@navikt/aksel-icons';
 
 const meta: Meta<typeof Avatar> = {
   component: Avatar,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     layout: 'padded',
     customStyles: {

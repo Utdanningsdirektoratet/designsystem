@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 const meta: Meta<typeof Select> = {
   component: Select,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     layout: 'centered',
   },
