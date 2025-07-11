@@ -115,6 +115,46 @@ export const Preview: Story = {
       </Table>
     );
   },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const table = canvas.getByRole('table');
+    const headerCells = canvas.getAllByRole('columnheader');
+
+    await step(
+      'Table, thead, tbody, tfoot, th, td, tr should be visible',
+      () => {
+        expect(table).toBeVisible();
+        const thead = canvas.getAllByRole('rowgroup')[0];
+        const tbody = canvas.getAllByRole('rowgroup')[1];
+        const tfoot = canvas.getAllByRole('rowgroup')[2];
+        const ths = canvas.getAllByRole('columnheader');
+        const tds = canvas.getAllByRole('cell');
+        const trs = canvas.getAllByRole('row');
+        expect(thead).toBeVisible();
+        expect(tbody).toBeVisible();
+        expect(tfoot).toBeVisible();
+        expect(ths).toHaveLength(5);
+        expect(tds).toHaveLength(27);
+        expect(trs).toHaveLength(7);
+      },
+    );
+
+    await step('Table should have a caption', () => {
+      const caption = canvas.getByText('Sensur FSP6236 Tegnspråk III');
+      expect(caption).toBeVisible();
+    });
+
+    await step('Table should have a header row with sortable columns', () => {
+      expect(headerCells).toHaveLength(5);
+      expect(headerCells[1]).toHaveAttribute('aria-sort', 'none');
+      expect(canvas.getByRole('button')).toBeVisible();
+    });
+
+    await step('Click on the first headerCell to sort', async () => {
+      await headerCells[1].click();
+      expect(headerCells[1]).toHaveAttribute('aria-sort', 'ascending');
+    });
+  },
 };
 
 export const ColumnAndRowHeaders: Story = {

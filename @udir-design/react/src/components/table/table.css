@@ -18,7 +18,8 @@
     --dsc-table-header-background: var(--ds-color-surface-tinted);
   }
 
-  &[data-tinted-row-header] th[scope='row'] {
+  &[data-tinted-row-header] th[scope='row'],
+  &[data-tinted-row-header] th[scope='rowGroup'] {
     background-color: var(--ds-color-surface-tinted);
   }
 

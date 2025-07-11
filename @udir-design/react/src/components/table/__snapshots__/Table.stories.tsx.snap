@@ -384,7 +384,7 @@ exports[`Preview 1`] = `
           >
         </div>
       </th>
-      <th aria-sort="none">
+      <th aria-sort="ascending">
         <button type="button">
           Navn
         </button>
@@ -405,27 +405,27 @@ exports[`Preview 1`] = `
       <td>
         <div>
           <input
-            id="checkbox-1"
+            id="checkbox-4"
             aria-label="Velg [object Object]"
             type="checkbox"
-            value="1"
+            value="4"
             name="my-checkbox"
           >
         </div>
       </td>
       <td>
-        Rita Nordmann
+        Kai Nordmann
       </td>
       <td>
-        rita@nordmann.no
+        kai@nordmann.no
       </td>
       <td>
-        <span data-color="info">
-          I arbeid
+        <span data-color="warning">
+          Ikke begynt
         </span>
       </td>
       <td style="text-align: right;">
-        19
+        35
       </td>
     </tr>
     <tr>
@@ -445,6 +445,33 @@ exports[`Preview 1`] = `
       </td>
       <td>
         kari@nordmann.no
+      </td>
+      <td>
+        <span data-color="success">
+          Ferdig
+        </span>
+      </td>
+      <td style="text-align: right;">
+        0
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div>
+          <input
+            id="checkbox-5"
+            aria-label="Velg [object Object]"
+            type="checkbox"
+            value="5"
+            name="my-checkbox"
+          >
+        </div>
+      </td>
+      <td>
+        Mateo Nordmann
+      </td>
+      <td>
+        mateo@nordmann.no
       </td>
       <td>
         <span data-color="success">
@@ -486,54 +513,27 @@ exports[`Preview 1`] = `
       <td>
         <div>
           <input
-            id="checkbox-4"
+            id="checkbox-1"
             aria-label="Velg [object Object]"
             type="checkbox"
-            value="4"
+            value="1"
             name="my-checkbox"
           >
         </div>
       </td>
       <td>
-        Kai Nordmann
+        Rita Nordmann
       </td>
       <td>
-        kai@nordmann.no
+        rita@nordmann.no
       </td>
       <td>
-        <span data-color="warning">
-          Ikke begynt
+        <span data-color="info">
+          I arbeid
         </span>
       </td>
       <td style="text-align: right;">
-        35
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <div>
-          <input
-            id="checkbox-5"
-            aria-label="Velg [object Object]"
-            type="checkbox"
-            value="5"
-            name="my-checkbox"
-          >
-        </div>
-      </td>
-      <td>
-        Mateo Nordmann
-      </td>
-      <td>
-        mateo@nordmann.no
-      </td>
-      <td>
-        <span data-color="success">
-          Ferdig
-        </span>
-      </td>
-      <td style="text-align: right;">
-        0
+        19
       </td>
     </tr>
   </tbody>

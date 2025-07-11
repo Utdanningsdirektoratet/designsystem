@@ -78,7 +78,7 @@ Bruk tabelloverskrifter til å fortelle brukerne hva som er innholdet i radene o
 Bruk [scope-atributtet](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th#scope) til å hjelpe brukere av hjelpeteknologi til å
 skille mellom overskriftene på rader og kolonner.
 
-Tabelloverskrifter kan få en tinted farge. Dette kontrolleres med to props for column- og row headers respektivt: `tintedColumnHeader` og `tintedRowHeader`. Vær bevisst på når man velger å bruke tinted headere, og vær gjerne konsekvent i hvert system.
+Tabelloverskrifter kan settes til tinted farge. Dette kontrolleres med to props for column- og row headers respektivt: `tintedColumnHeader` og `tintedRowHeader`. For å sette farge på radoverskrifter må `scope='row'` eller `scope='rowGroup'` brukes på `Table.HeaderCell`. Vær bevisst på når du velger å bruke tinted headere, og vær konsekvent i hvert system.
 
 <Canvas of={TableStories.ColumnAndRowHeaders} />
 
@@ -110,7 +110,7 @@ Du kan legge inn skjemaelementer i en tabell, men du må håndtere logikken selv
 
 Du kan bruke props på `Table.HeaderCell` for å vise at tabellen kan sorteres etter innholdet i en kolonne.
 
-- Bruk `sort`-prop'en for å indikere sorteringsretningen:
+- Bruk `sort`-propen for å indikere sorteringsretningen:
   - `"none"` – ingen sortering
   - `"ascending"` – stigende rekkefølge
   - `"descending"` – synkende rekkefølge
@@ -157,7 +157,7 @@ For å sikre at tabeller fungerer optimalt for alle brukere er det viktig å fø
 - **Enkelt celleinnhold:**
   Tabellceller bør ikke slås sammen, og hver celle bør inneholde kun ett interaktivt element. Dette bidrar til at brukerne raskt får oversikt over innholdet og lettere kan sammenligne og skanne informasjonen.
 - **Overskrifter:**
-  For at brukerne skal kunne navigere i innholdet med skjermleser, er det viktig å bruke rad- og/eller kolonneoverskrifter (`<Table.HeaderCell>`). Bruk `scope="row"` og `scope="col"` for å angi om overskriften gjelder en rad eller kolonne. Hvis det er behov for å spare plass, kan vi visuelt skjule én eller flere overskrifter.
+  For at brukerne skal kunne navigere i innholdet med skjermleser, er det viktig å bruke rad- og/eller kolonneoverskrifter (`<Table.HeaderCell>`) der det er nødvendig. Det er nødvendig i alle typer tabeller som har mer enn én rad eller kolonne med overskrifter. Bruk `scope="row"` og `scope="col"` for å angi om overskriften gjelder en rad eller kolonne. Hvis det er behov for å spare plass, kan vi visuelt skjule én eller flere overskrifter.
 - **Caption-element:**
   Tabeller skal alltid ha et `<caption>`-element med kort tekst om hva tabellen viser. Skjermlesere vil lese `<caption>`-elementet, og brukerne kan ta stilling til om de vil lese videre i tabellen.
 - **Tomme celler:**
