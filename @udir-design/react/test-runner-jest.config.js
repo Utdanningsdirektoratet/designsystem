@@ -1,4 +1,4 @@
-import { getJestConfig } from '@storybook/test-runner';
+import { getJestConfig } from 'storybook/test-runner';
 
 const defaultConfig = getJestConfig();
 

@@ -1,5 +1,5 @@
 import { coverageConfigDefaults, defineConfig } from 'vitest/config';
-import { storybookTest } from '@storybook/experimental-addon-test/vitest-plugin';
+import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 import viteConfig from './vite.config';
 import path from 'node:path';
 

@@ -162,7 +162,7 @@ exports[`Focused 1`] = `
     id="radio-preview"
     type="radio"
     value="value"
-    aria-describedby="radio-preview:description"
+    aria-describedby="radio-preview:description:1"
   >
   <label
     data-weight="regular"
@@ -172,7 +172,7 @@ exports[`Focused 1`] = `
   </label>
   <div
     data-field="description"
-    id="radio-preview:description"
+    id="radio-preview:description:1"
   >
     Description
   </div>
@@ -285,7 +285,7 @@ exports[`Preview 1`] = `
     id="radio-preview"
     type="radio"
     value="value"
-    aria-describedby="radio-preview:description"
+    aria-describedby="radio-preview:description:1"
   >
   <label
     data-weight="regular"
@@ -295,7 +295,7 @@ exports[`Preview 1`] = `
   </label>
   <div
     data-field="description"
-    id="radio-preview:description"
+    id="radio-preview:description:1"
   >
     Description
   </div>
@@ -312,7 +312,7 @@ exports[`Radio In Color Context 1`] = `
       id="radio-in-color-context"
       type="radio"
       checked
-      aria-describedby="radio-in-color-context:description"
+      aria-describedby="radio-in-color-context:description:1"
     >
     <label
       data-weight="regular"
@@ -322,7 +322,7 @@ exports[`Radio In Color Context 1`] = `
     </label>
     <div
       data-field="description"
-      id="radio-in-color-context:description"
+      id="radio-in-color-context:description:1"
     >
       Description
     </div>

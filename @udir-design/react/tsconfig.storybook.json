@@ -4,7 +4,7 @@
     "emitDecoratorMetadata": true,
     "outDir": "../../dist/out-tsc",
     "baseUrl": "./",
-    "types": ["vite/client", "../theme/dist/colors.d.ts"],
+    "types": ["vite/client", "../theme/dist/colors", "./dist/html"],
     "paths": {
       "@udir-design/react": ["src/index"],
       "@udir-design/react/alpha": ["src/alpha"],

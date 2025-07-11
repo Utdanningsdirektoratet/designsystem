@@ -6,7 +6,11 @@ import {
   ValidationMessage,
 } from '@udir-design/react/alpha';
 import { useFormContext } from 'react-hook-form';
-import type { FormValues, PageProps } from '../FormDemo';
+import {
+  focusableFieldsetProps,
+  type FormValues,
+  type PageProps,
+} from '../FormDemo';
 
 export const FinishPage = ({ showErrors }: PageProps) => {
   const { register, formState } = useFormContext<FormValues>();
@@ -25,7 +29,7 @@ export const FinishPage = ({ showErrors }: PageProps) => {
         rows={4}
         {...register('addition')}
       />
-      <Fieldset id="contactMethods">
+      <Fieldset id="contactMethods" {...focusableFieldsetProps}>
         <Fieldset.Legend>
           Hvordan ønsker du at vi skal kontakte deg?
         </Fieldset.Legend>

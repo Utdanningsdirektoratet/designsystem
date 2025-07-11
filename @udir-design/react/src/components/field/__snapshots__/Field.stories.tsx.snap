@@ -4,7 +4,7 @@ exports[`Affix 1`] = `
 <div>
   <label
     data-weight="medium"
-    for="components-field--affix-input"
+    for="affix"
   >
     Hvor mange kroner koster det per måned?
   </label>
@@ -13,139 +13,8 @@ exports[`Affix 1`] = `
       NOK
     </span>
     <input
-      id="components-field--affix-input"
-      type="text"
-    >
-    <span aria-hidden="true">
-      pr. mnd.
-    </span>
-  </div>
-</div>
-<div>
-  <label
-    data-weight="medium"
-    for="components-field--affix-textarea"
-  >
-    Hvor mange kilo veier eplene du har valgt?
-  </label>
-  <div>
-    <textarea
-      rows="2"
-      cols="4"
-      id="components-field--affix-textarea"
-    >
-    </textarea>
-    <span aria-hidden="true">
-      KG
-    </span>
-  </div>
-</div>
-<div>
-  <label
-    data-weight="medium"
-    for="components-field--affix-select"
-  >
-    Hvor mange kroner koster det?
-  </label>
-  <div>
-    <span aria-hidden="true">
-      NOK
-    </span>
-    <select id="components-field--affix-select">
-      <option value="-1">
-        Velg …
-      </option>
-      <option value="10">
-        10
-      </option>
-      <option value="20">
-        20
-      </option>
-      <option value="30">
-        30
-      </option>
-    </select>
-  </div>
-</div>
-<div>
-  <label
-    data-weight="medium"
-    for="components-field--affix-input-noaffix"
-  >
-    No affix
-  </label>
-  <div>
-    <input
-      id="components-field--affix-input-noaffix"
-      type="text"
-    >
-  </div>
-</div>
-<div>
-  <label
-    data-weight="medium"
-    for="components-field--affix-input-noaffix-small"
-  >
-    No affix and small size
-  </label>
-  <div>
-    <input
-      size="10"
-      id="components-field--affix-input-noaffix-small"
-      type="text"
-    >
-  </div>
-</div>
-<div>
-  <label
-    data-weight="medium"
-    for="components-field--affix-input-noaffix-huge"
-  >
-    No affix and huge size
-  </label>
-  <div>
-    <input
-      size="9999"
-      id="components-field--affix-input-noaffix-huge"
-      type="text"
-    >
-  </div>
-</div>
-<div>
-  <label
-    data-weight="medium"
-    for="components-field--affix-input-affix-small"
-  >
-    Affix and small size
-  </label>
-  <div>
-    <span aria-hidden="true">
-      NOK
-    </span>
-    <input
-      size="10"
-      id="components-field--affix-input-affix-small"
-      type="text"
-    >
-    <span aria-hidden="true">
-      pr. mnd.
-    </span>
-  </div>
-</div>
-<div>
-  <label
-    data-weight="medium"
-    for="components-field--affix-input-affix-huge"
-  >
-    Affix and huge size
-  </label>
-  <div>
-    <span aria-hidden="true">
-      NOK
-    </span>
-    <input
-      size="50"
-      id="components-field--affix-input-affix-huge"
+      id="affix"
+      size="12"
       type="text"
     >
     <span aria-hidden="true">
@@ -159,26 +28,26 @@ exports[`Counter 1`] = `
 <div>
   <label
     data-weight="medium"
-    for="components-field--counter"
+    for="counter"
   >
     Legg til en beskrivelse
   </label>
   <textarea
     rows="2"
-    id="components-field--counter"
-    aria-describedby="components-field--counter:validation  components-field--counter:description"
+    id="counter"
+    aria-describedby="counter:validation:1  counter:description:1"
   >
   </textarea>
   <div
     data-field="description"
     aria-live="polite"
-    id="components-field--counter:description"
+    id="counter:description:1"
   >
   </div>
   <p
     data-variant="default"
     data-field="validation"
-    id="components-field--counter:validation"
+    id="counter:validation:1"
   >
     10 tegn igjen
   </p>
@@ -186,117 +55,64 @@ exports[`Counter 1`] = `
 `;
 
 exports[`Position 1`] = `
-<fieldset>
-  <legend data-weight="medium">
-    Fields with position="start"
-  </legend>
-  <div data-position="start">
-    <label
-      data-weight="medium"
-      for="components-field--position-radio-start"
-    >
-      Radio
-    </label>
-    <input
-      id="components-field--position-radio-start"
-      type="radio"
-    >
+<div style="max-width: 200px; margin: auto;">
+  <div style="display: flex; flex-direction: column; gap: var(--ds-size-2);">
+    <div data-position="end">
+      <label
+        data-weight="medium"
+        for="airplane"
+      >
+        Flymodus
+      </label>
+      <input
+        role="switch"
+        id="airplane"
+        type="checkbox"
+      >
+    </div>
+    <div data-position="end">
+      <label
+        data-weight="medium"
+        for="sounds"
+      >
+        Lydløs
+      </label>
+      <input
+        role="switch"
+        id="sounds"
+        type="checkbox"
+      >
+    </div>
   </div>
-  <div data-position="start">
-    <label
-      data-weight="medium"
-      for="components-field--position-checkbox-start"
-    >
-      Checkbox
-    </label>
-    <input
-      id="components-field--position-checkbox-start"
-      type="checkbox"
-    >
-  </div>
-  <div data-position="start">
-    <label
-      data-weight="medium"
-      for="components-field--position-switch-start"
-    >
-      Switch
-    </label>
-    <input
-      role="switch"
-      id="components-field--position-switch-start"
-      type="checkbox"
-    >
-  </div>
-</fieldset>
-<br>
-<fieldset>
-  <legend data-weight="medium">
-    Fields with position="end"
-  </legend>
-  <div data-position="end">
-    <label
-      data-weight="medium"
-      for="components-field--position-radio-end"
-    >
-      Radio
-    </label>
-    <input
-      id="components-field--position-radio-end"
-      type="radio"
-    >
-  </div>
-  <div data-position="end">
-    <label
-      data-weight="medium"
-      for="components-field--position-checkbox-end"
-    >
-      Checkbox
-    </label>
-    <input
-      id="components-field--position-checkbox-end"
-      type="checkbox"
-    >
-  </div>
-  <div data-position="end">
-    <label
-      data-weight="medium"
-      for="components-field--position-switch-end"
-    >
-      Switch
-    </label>
-    <input
-      role="switch"
-      id="components-field--position-switch-end"
-      type="checkbox"
-    >
-  </div>
-</fieldset>
+</div>
 `;
 
 exports[`Preview 1`] = `
 <div>
   <label
     data-weight="medium"
-    for="components-field--preview"
+    for="preview"
   >
-    Kort beskrivelse
+    E-post
   </label>
   <div
     data-field="description"
-    id="components-field--preview:description"
+    id="preview:description:1"
   >
-    Beskrivelse
+    E-posten din brukes til å logge inn og motta varsler
   </div>
   <input
-    id="components-field--preview"
+    id="preview"
+    aria-invalid="true"
     type="text"
-    aria-describedby="components-field--preview:validation  components-field--preview:description"
+    value="ola nordmann@udir.no"
+    aria-describedby="preview:validation:1  preview:description:1"
   >
   <p
     data-field="validation"
-    id="components-field--preview:validation"
+    id="preview:validation:1"
   >
-    Feilmelding
+    Du må oppgi en gyldig e-postadresse
   </p>
 </div>
 `;

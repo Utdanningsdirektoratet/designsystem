@@ -19,7 +19,7 @@
     "skipLibCheck": true,
     "module": "esnext",
     "moduleResolution": "bundler",
-    "types": ["@udir-design/theme", "@udir-design/react"]
+    "types": ["@udir-design/theme", "@udir-design/react/html"]
   },
   "include": [
     "**/*.ts",

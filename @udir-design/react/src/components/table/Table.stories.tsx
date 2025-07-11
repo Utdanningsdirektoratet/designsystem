@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import {
   Checkbox,
   Table,
@@ -7,7 +7,7 @@ import {
 } from '@udir-design/react/alpha';
 import { useState } from 'react';
 import { useCheckboxGroup } from '@udir-design/react/alpha';
-import { expect, within } from '@storybook/test';
+import { expect, within } from 'storybook/test';
 
 const meta: Meta<typeof Table> = {
   component: Table,

@@ -1,0 +1,243 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Dashboard Story 1`] = `
+<div>
+  <div data-size="sm">
+    <fieldset>
+      <legend data-weight="medium">
+        Størrelse
+        <code data-size="xs">
+          (data-size)
+        </code>
+      </legend>
+      <div
+        role="radiogroup"
+        tabindex="0"
+      >
+        <button
+          data-variant="primary"
+          type="button"
+          value="sm"
+          id="togglegroup-item-«r2»"
+          aria-checked="true"
+          aria-current="true"
+          role="radio"
+          name="togglegroup-name-«r0»"
+          data-roving-tabindex-item="true"
+          tabindex="0"
+        >
+          sm
+        </button>
+        <button
+          data-variant="tertiary"
+          type="button"
+          value="md"
+          id="togglegroup-item-«r4»"
+          aria-checked="false"
+          aria-current="false"
+          role="radio"
+          name="togglegroup-name-«r0»"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+        >
+          md
+        </button>
+        <button
+          data-variant="tertiary"
+          type="button"
+          value="lg"
+          id="togglegroup-item-«r6»"
+          aria-checked="false"
+          aria-current="false"
+          role="radio"
+          name="togglegroup-name-«r0»"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+        >
+          lg
+        </button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend data-weight="medium">
+        Fargemodus
+        <code data-size="xs">
+          (data-color-scheme)
+        </code>
+      </legend>
+      <div
+        role="radiogroup"
+        tabindex="0"
+      >
+        <button
+          data-variant="tertiary"
+          type="button"
+          value="light"
+          id="togglegroup-item-«r9»"
+          aria-checked="false"
+          aria-current="false"
+          role="radio"
+          name="togglegroup-name-«r7»"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+        >
+          light
+        </button>
+        <button
+          data-variant="tertiary"
+          type="button"
+          value="dark"
+          id="togglegroup-item-«rb»"
+          aria-checked="false"
+          aria-current="false"
+          role="radio"
+          name="togglegroup-name-«r7»"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+        >
+          dark
+        </button>
+        <button
+          data-variant="primary"
+          type="button"
+          value="auto"
+          id="togglegroup-item-«rd»"
+          aria-checked="true"
+          aria-current="true"
+          role="radio"
+          name="togglegroup-name-«r7»"
+          data-roving-tabindex-item="true"
+          tabindex="0"
+        >
+          auto
+        </button>
+      </div>
+    </fieldset>
+  </div>
+  <div
+    data-size="sm"
+    data-color-scheme="auto"
+  >
+    <h1 data-size="md">
+      Schweigaardsgate skole
+    </h1>
+    <div>
+      <div
+        role="tablist"
+        tabindex="0"
+      >
+        <button
+          aria-selected="true"
+          id="tab-«re»"
+          role="tab"
+          type="button"
+          data-roving-tabindex-item="true"
+          tabindex="0"
+        >
+          Oversikt
+        </button>
+        <button
+          aria-selected="false"
+          id="tab-«rf»"
+          role="tab"
+          type="button"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+        >
+          Prøver
+        </button>
+        <button
+          aria-selected="false"
+          id="tab-«rg»"
+          role="tab"
+          type="button"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+        >
+          Prøvesvar
+        </button>
+        <button
+          aria-selected="false"
+          id="tab-«rh»"
+          role="tab"
+          type="button"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+        >
+          Innstillinger
+        </button>
+      </div>
+      <div
+        role="tabpanel"
+        tabindex="0"
+      >
+        <p data-variant="default">
+          Her får du en oversikt over all den overordnede informasjonen.
+        </p>
+        <div>
+          <div>
+            <div data-variant="default">
+              <h2>
+                Viktige datoer
+              </h2>
+              <ul>
+                <li>
+                  Prøvestart: 12. april
+                </li>
+                <li>
+                  Prøvefrist: 5. mai
+                </li>
+                <li>
+                  Svarfrist: 28. mai
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h2>
+              Prøveoversikt
+            </h2>
+            <span
+              aria-hidden="true"
+              data-variant="rectangle"
+              style="width: 250px;"
+            >
+            </span>
+            <span
+              aria-hidden="true"
+              data-variant="rectangle"
+              style="width: 250px;"
+            >
+            </span>
+            <div>
+              <svg
+                aria-label="laster inn"
+                role="img"
+                viewbox="0 0 50 50"
+                data-size="lg"
+              >
+                <circle
+                  cx="25"
+                  cy="25"
+                  r="20"
+                  fill="none"
+                  stroke-width="5"
+                >
+                </circle>
+                <circle
+                  cx="25"
+                  cy="25"
+                  r="20"
+                  fill="none"
+                  stroke-width="5"
+                >
+                </circle>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

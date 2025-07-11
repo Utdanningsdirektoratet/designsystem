@@ -1,7 +1,9 @@
 import { IncludeMarkdown } from '.storybook/doc-blocks/IncludeMarkdown';
-import { Alert } from './components/alert/Alert';
-import { List } from './components/list/List';
-import README from '../../../README.md?raw';
+import { Unstyled } from '@storybook/addon-docs/blocks';
+import { LandingResourceLinks } from './ResourceLinks';
+import { HideToc } from '../.storybook/utils/HideToc';
+
+<HideToc />
 
 # Designsystem for Utdanningsdirektoratet
 
@@ -13,18 +15,8 @@ Udirs designsystem skal bidra til å skape og opprettholde helhetlig design slik
 
 Udirs designsystem tar utgangspunkt i [Digdirs felles designsystem](https://www.designsystemet.no/). Designsystemet skal brukes for å oppnå helhetlig design i Udirs digitale tjenester og i andre kommunikasjonsflater i tråd med Udirs [designprofil](https://www.udir.no/om-udir/designprofil/).
 
-## Om denne dokumentasjonen
+Dersom du har forslag til designendringer, nye features, oppdater en bug, eller har andre henvendelser knyttet til designsystemet kan teamet nås på [designteamet@udir.no](mailto:designteamet@udir.no) eller i slack-kanalen [#designsystem-udir](https://udir.slack.com/archives/C06G2E50HF0). De viktigste tilbakemeldingene vi får er erfaringer fra bruk, det er slik vi oppdager nye behov.
 
-Bruk venstremenyen for å navigere i dokumentasjonen.
-
-Overskriften "Demosider" inneholder eksempler som viser komponenter brukt sammen. Alle individuelle komponenter finner du under "Komponenter".
-
-Komponenter er markert med "Alpha" eller "Beta" dersom de ikke er stabile (les mer om livsfaser lenger ned).
-
-<IncludeMarkdown markdown={README} sectionId="livsfaser-for-en-komponent" />
-
-<IncludeMarkdown
-  markdown={README}
-  sectionId="hva-tester-vi"
-  increaseHeadingDepthBy={1}
-/>
+<Unstyled>
+  <LandingResourceLinks />
+</Unstyled>

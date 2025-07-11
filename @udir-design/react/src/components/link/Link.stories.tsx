@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Link } from './Link';
 import { Paragraph } from '@udir-design/react/alpha';
-import { EnvelopeClosedIcon } from '@navikt/aksel-icons';
+import { EnvelopeClosedIcon, FilePdfFillIcon } from '@navikt/aksel-icons';
 EnvelopeClosedIcon.displayName = 'EnvelopeClosedIcon';
 
 const meta: Meta<typeof Link> = {
   component: Link,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
-    customStyles: { padding: '2px' },
+    layout: 'centered',
   },
 };
 
@@ -39,8 +39,12 @@ export const InText: Story = {
 export const WithIcon: Story = {
   args: {
     href: 'mailto:designsystem@digdir.no',
-    children: [<EnvelopeClosedIcon aria-hidden />, ' Kontakt oss'],
   },
+  render: (args) => (
+    <Link {...args}>
+      <EnvelopeClosedIcon aria-hidden /> Kontakt oss
+    </Link>
+  ),
 };
 
 export const LongLink: Story = {
@@ -54,4 +58,24 @@ export const LongLink: Story = {
       </Link>
     </Paragraph>
   ),
+};
+
+export const File: Story = {
+  args: {
+    href: 'https://www.udir.no/api/PdfApi/PrintPageAsPdfDocument/224209',
+  },
+  render: (args) => (
+    <Link {...args}>
+      <FilePdfFillIcon aria-hidden /> Samisk i barnehagen (PDF, 299KB)
+    </Link>
+  ),
+};
+
+export const Focused: Story = {
+  args: Preview.args,
+  parameters: {
+    pseudo: {
+      focusVisible: true,
+    },
+  },
 };

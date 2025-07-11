@@ -6,7 +6,11 @@ import {
   ValidationMessage,
   Fieldset,
 } from '@udir-design/react/alpha';
-import type { FormValues, PageProps } from '../FormDemo';
+import {
+  focusableFieldsetProps,
+  type FormValues,
+  type PageProps,
+} from '../FormDemo';
 import classes from './RankingTable.module.css';
 
 type RankingTableProps = {
@@ -36,6 +40,7 @@ export const RankingTable = ({
       aria-invalid={!!error}
       aria-describedby={error ? errorId : undefined}
       id="rankings"
+      {...focusableFieldsetProps}
     >
       {title && (
         <Fieldset.Legend>

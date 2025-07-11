@@ -1,43 +1,96 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Controlled 1`] = `
+<h2>
+  Hvor bor du?
+</h2>
+<div>
+  <label
+    data-weight="medium"
+    for="components-select--controlled"
+  >
+    Fylke
+  </label>
+  <select id="components-select--controlled">
+    <option value>
+      Velg et fylke …
+    </option>
+    <option value="Akershus">
+      Akershus
+    </option>
+    <option value="Agder">
+      Agder
+    </option>
+    <option value="Buskerud">
+      Buskerud
+    </option>
+    <option value="Finnmark">
+      Finnmark
+    </option>
+    <option value="Innlandet">
+      Innlandet
+    </option>
+    <option value="Nordland">
+      Nordland
+    </option>
+    <option value="Rogaland">
+      Rogaland
+    </option>
+  </select>
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="components-select--controlled-by"
+  >
+    By
+  </label>
+  <select id="components-select--controlled-by">
+    <option value>
+      Velg en by …
+    </option>
+  </select>
+</div>
+`;
+
 exports[`Disabled 1`] = `
 <div>
   <label
     data-weight="medium"
     for="components-select--disabled"
   >
-    Velg et fjell
+    Fylke
   </label>
   <select
     disabled
     id="components-select--disabled"
   >
-    <option value="blank">
-      Velg …
+    <option
+      value
+      selected
+    >
+      Velg et fylke …
     </option>
-    <option value="everest">
-      Mount Everest
+    <option value="akershus">
+      Akershus
     </option>
-    <option value="aconcagua">
-      Aconcagua
+    <option value="agder">
+      Agder
     </option>
-    <option value="denali">
-      Denali
+    <option value="buskerud">
+      Buskerud
     </option>
-    <option value="kilimanjaro">
-      Kilimanjaro
+    <option value="finnmark">
+      Finnmark
     </option>
-    <option value="elbrus">
-      Elbrus
+    <option value="innlandet">
+      Innlandet
     </option>
-    <option value="vinson">
-      Mount Vinson
+    <option value="nordland">
+      Nordland
     </option>
-    <option value="puncakjaya">
-      Puncak Jaya
-    </option>
-    <option value="kosciuszko">
-      Mount Kosciuszko
+    <option value="rogaland">
+      Rogaland
     </option>
   </select>
 </div>
@@ -49,7 +102,7 @@ exports[`Preview 1`] = `
     data-weight="medium"
     for="components-select--preview"
   >
-    Velg et fjell
+    Fylke
   </label>
   <select
     data-width="full"
@@ -60,31 +113,71 @@ exports[`Preview 1`] = `
       value
       selected
     >
-      Velg et fjell …
+      Velg et fylke …
     </option>
-    <option value="everest">
-      Mount Everest
+    <option value="akershus">
+      Akershus
     </option>
-    <option value="aconcagua">
-      Aconcagua
+    <option value="agder">
+      Agder
     </option>
-    <option value="denali">
-      Denali
+    <option value="buskerud">
+      Buskerud
     </option>
-    <option value="kilimanjaro">
-      Kilimanjaro
+    <option value="finnmark">
+      Finnmark
     </option>
-    <option value="elbrus">
-      Elbrus
+    <option value="innlandet">
+      Innlandet
     </option>
-    <option value="vinson">
-      Mount Vinson
+    <option value="nordland">
+      Nordland
     </option>
-    <option value="puncakjaya">
-      Puncak Jaya
+    <option value="rogaland">
+      Rogaland
     </option>
-    <option value="kosciuszko">
-      Mount Kosciuszko
+  </select>
+</div>
+`;
+
+exports[`Read Only 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="components-select--read-only"
+  >
+    Fylke
+  </label>
+  <select
+    readonly
+    id="components-select--read-only"
+  >
+    <option
+      value
+      selected
+    >
+      Velg et fylke …
+    </option>
+    <option value="akershus">
+      Akershus
+    </option>
+    <option value="agder">
+      Agder
+    </option>
+    <option value="buskerud">
+      Buskerud
+    </option>
+    <option value="finnmark">
+      Finnmark
+    </option>
+    <option value="innlandet">
+      Innlandet
+    </option>
+    <option value="nordland">
+      Nordland
+    </option>
+    <option value="rogaland">
+      Rogaland
     </option>
   </select>
 </div>
@@ -96,46 +189,43 @@ exports[`With Error 1`] = `
     data-weight="medium"
     for="components-select--with-error"
   >
-    Velg et fjell
+    Fylke
   </label>
   <select
     aria-invalid="true"
     id="components-select--with-error"
-    aria-describedby="components-select--with-error:validation"
+    aria-describedby="components-select--with-error:validation:1"
   >
-    <option value="blank">
-      Velg …
+    <option value>
+      Velg et fylke …
     </option>
-    <option value="everest">
-      Mount Everest
+    <option value="akershus">
+      Akershus
     </option>
-    <option value="aconcagua">
-      Aconcagua
+    <option value="agder">
+      Agder
     </option>
-    <option value="denali">
-      Denali
+    <option value="buskerud">
+      Buskerud
     </option>
-    <option value="kilimanjaro">
-      Kilimanjaro
+    <option value="finnmark">
+      Finnmark
     </option>
-    <option value="elbrus">
-      Elbrus
+    <option value="innlandet">
+      Innlandet
     </option>
-    <option value="vinson">
-      Mount Vinson
+    <option value="nordland">
+      Nordland
     </option>
-    <option value="puncakjaya">
-      Puncak Jaya
-    </option>
-    <option value="kosciuszko">
-      Mount Kosciuszko
+    <option value="rogaland">
+      Rogaland
     </option>
   </select>
   <p
     data-field="validation"
-    id="components-select--with-error:validation"
+    id="components-select--with-error:validation:1"
   >
-    Velg et fjell
+    Velg et fylke
   </p>
 </div>
 `;
@@ -146,35 +236,55 @@ exports[`With Optgroup 1`] = `
     data-weight="medium"
     for="components-select--with-optgroup"
   >
-    Velg et fjell
+    Klassetrinn
   </label>
   <select id="components-select--with-optgroup">
-    <optgroup label="Gruppe 1">
-      <option value="everest">
-        Mount Everest
+    <option value>
+      Velg klassetrinn …
+    </option>
+    <optgroup label="Barneskole">
+      <option value="første">
+        Første
       </option>
-      <option value="aconcagua">
-        Aconcagua
+      <option value="andre">
+        Andre
       </option>
-      <option value="denali">
-        Denali
+      <option value="tredje">
+        Tredje
       </option>
-      <option value="kilimanjaro">
-        Kilimanjaro
+      <option value="fjerde">
+        Fjerde
+      </option>
+      <option value="femte">
+        Femte
+      </option>
+      <option value="sjette">
+        Sjette
+      </option>
+      <option value="syvende">
+        Syvende
       </option>
     </optgroup>
-    <optgroup label="Gruppe 2">
-      <option value="elbrus">
-        Elbrus
+    <optgroup label="Ungdomsskole">
+      <option value="åttende">
+        Åttende
       </option>
-      <option value="vinson">
-        Mount Vinson
+      <option value="niende">
+        Niende
       </option>
-      <option value="puncakjaya">
-        Puncak Jaya
+      <option value="tiende">
+        Tiende
       </option>
-      <option value="kosciuszko">
-        Mount Kosciuszko
+    </optgroup>
+    <optgroup label="Videregående">
+      <option value="vg1">
+        Vg1
+      </option>
+      <option value="vg2">
+        Vg2
+      </option>
+      <option value="vg3">
+        Vg3
       </option>
     </optgroup>
   </select>

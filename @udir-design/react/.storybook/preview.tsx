@@ -1,7 +1,7 @@
 import './style.css';
 import './customTheme.scss';
-import { INITIAL_VIEWPORTS, type ViewportMap } from '@storybook/addon-viewport';
-import { Preview } from '@storybook/react';
+import { INITIAL_VIEWPORTS, type ViewportMap } from 'storybook/viewport';
+import { Preview } from '@storybook/react-vite';
 import customTheme from './customTheme';
 import {
   Heading,
@@ -16,6 +16,7 @@ import { customStylesDecorator } from './utils/customStylesDecorator';
 import { MdxComponentOverrides } from './types/parameters';
 import { Children, MouseEventHandler } from 'react';
 import { LinkIcon } from '@navikt/aksel-icons';
+import { hideTocForIds } from './utils/HideToc';
 
 // See the complete list of available devices in INITIAL_VIEWPORTS here:
 // https://storybook.js.org/docs/essentials/viewport#use-a-detailed-set-of-devices
@@ -55,7 +56,7 @@ const handleLinkClick =
     if (href.startsWith('#')) {
       event.preventDefault();
       document
-        .getElementById(href.substring(1))
+        .getElementById(decodeURIComponent(href).substring(1))
         ?.scrollIntoView({ behavior: 'smooth' });
       window.parent.history.pushState(undefined, '', href);
     }
@@ -165,6 +166,18 @@ const preview: Preview = {
       toc: {
         title: 'På denne siden',
         headingSelector: 'h2',
+        unsafeTocbotOptions: {
+          headingObjectCallback(obj: object): object | void {
+            if (hideTocForIds.size > 0) {
+              const params = new URLSearchParams(window.location.search);
+              const pageId = params.get('id');
+              if (pageId && hideTocForIds.has(pageId)) {
+                return;
+              }
+            }
+            return obj;
+          },
+        },
       },
       theme: customTheme,
       components: componentOverrides,

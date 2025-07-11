@@ -27,7 +27,7 @@ exports[`Switch In Color Context 1`] = `
       id="switch-in-color-context"
       type="checkbox"
       checked
-      aria-describedby="switch-in-color-context:description"
+      aria-describedby="switch-in-color-context:description:1"
     >
     <label
       data-weight="regular"
@@ -37,7 +37,7 @@ exports[`Switch In Color Context 1`] = `
     </label>
     <div
       data-field="description"
-      id="switch-in-color-context:description"
+      id="switch-in-color-context:description:1"
     >
       Description
     </div>

@@ -1,42 +1,47 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Controlled 1`] = `
-<div>
-  <input
-    placeholder
-    aria-label="Søk"
-    type="search"
-  >
-  <button
-    data-icon="true"
-    data-variant="tertiary"
-    type="reset"
-    aria-label="Tøm"
-  >
-  </button>
-  <button
-    data-variant="primary"
-    type="submit"
-  >
-    Søk
-  </button>
-</div>
-<hr
-  aria-hidden="true"
-  style="margin-top: var(--ds-size-4);"
->
-<p
-  data-variant="default"
-  style="margin: var(--ds-size-2) 0;"
->
-  Du har skrevet inn:
-</p>
-<button
-  data-variant="primary"
-  type="button"
->
-  Jeg vil ha Pizza
-</button>
+<form style="display: flex; flex-direction: column; gap: var(--ds-size-2);">
+  <div>
+    <input
+      placeholder
+      id="search-input-controlled"
+      aria-label="Søk"
+      type="search"
+      value
+    >
+    <button
+      data-icon="true"
+      data-variant="tertiary"
+      type="reset"
+      aria-label="Tøm"
+    >
+    </button>
+    <button
+      data-variant="primary"
+      type="submit"
+    >
+      Søk
+    </button>
+  </div>
+  <div style="display: flex; gap: var(--ds-size-2); align-items: center;">
+    <p
+      data-variant="default"
+      data-size="sm"
+    >
+      Hurtigsøk:
+    </p>
+    <button type="button">
+      Læreplaner
+    </button>
+    <button type="button">
+      Skole
+    </button>
+    <button type="button">
+      Eksamen
+    </button>
+  </div>
+</form>
 `;
 
 exports[`Form 1`] = `
@@ -62,21 +67,15 @@ exports[`Form 1`] = `
     </button>
   </div>
 </form>
-<p
-  data-variant="default"
-  data-size="md"
-  style="margin-top: var(--ds-size-2);"
->
-  Submitted value:
-</p>
 `;
 
-exports[`Preview 1`] = `
+exports[`Live Search 1`] = `
 <div>
   <input
     placeholder
     aria-label="Søk"
     type="search"
+    value
   >
   <button
     data-icon="true"
@@ -85,13 +84,32 @@ exports[`Preview 1`] = `
     aria-label="Tøm"
   >
   </button>
-  <button
-    data-variant="primary"
-    type="submit"
-  >
-    Søk
-  </button>
 </div>
+`;
+
+exports[`Preview 1`] = `
+<form>
+  <div>
+    <input
+      placeholder
+      aria-label="Søk"
+      type="search"
+    >
+    <button
+      data-icon="true"
+      data-variant="tertiary"
+      type="reset"
+      aria-label="Tøm"
+    >
+    </button>
+    <button
+      data-variant="primary"
+      type="submit"
+    >
+      Søk
+    </button>
+  </div>
+</form>
 `;
 
 exports[`Variants 1`] = `
@@ -167,7 +185,7 @@ exports[`With Label 1`] = `
     data-weight="medium"
     for="components-search--with-label"
   >
-    Søk etter katter
+    Søk i læreplaner
   </label>
   <div>
     <input

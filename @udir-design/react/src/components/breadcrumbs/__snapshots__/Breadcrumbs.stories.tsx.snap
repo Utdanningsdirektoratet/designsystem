@@ -4,9 +4,9 @@ exports[`Back Only 1`] = `
 <nav aria-label="Du er her:">
   <a
     href="#"
-    aria-label="Tilbake til Nivå 3"
+    aria-label="Tilbake til Eksamen"
   >
-    Nivå 3
+    Eksamen
   </a>
 </nav>
 `;
@@ -16,17 +16,17 @@ exports[`List Only 1`] = `
   <ol>
     <li>
       <a href="#">
-        Nivå 1
+        Forside
       </a>
     </li>
     <li>
       <a href="#">
-        Nivå 2
+        Eksamen og prøver
       </a>
     </li>
     <li>
       <a href="#">
-        Nivå 3
+        Eksamen
       </a>
     </li>
     <li>
@@ -34,7 +34,7 @@ exports[`List Only 1`] = `
         href="#"
         aria-current="page"
       >
-        Nivå 4
+        Kartleggingsprøver
       </a>
     </li>
   </ol>
@@ -47,37 +47,32 @@ exports[`Long Items 1`] = `
     href="#"
     aria-label="Tilbake til helsesertifikat for sjømat"
   >
-    Slik søker du om helsesertifikat for sjømat
+    Slik søker du om å bli vurdert for videreutdanning
   </a>
   <ol aria-label="Du er her:">
     <li>
       <a href="#">
-        Hjem
+        Forside
       </a>
     </li>
     <li>
       <a href="#">
-        Eksport til land utenfor EU/EØS
+        Kvalitet og kompetanse
       </a>
     </li>
     <li>
       <a href="#">
-        Eksport av mat og drikke
+        Arbeid med kvalitet og kompetanse
       </a>
     </li>
     <li>
       <a href="#">
-        Eksport av fisk og sjømat
+        Videreutdanning
       </a>
     </li>
     <li>
       <a href="#">
-        Veiledning om helsesertifikat for sjømat
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        Slik søker du om helsesertifikat for sjømat
+        Videreutdanning for lærere
       </a>
     </li>
     <li>
@@ -85,7 +80,7 @@ exports[`Long Items 1`] = `
         href="#"
         aria-current="page"
       >
-        Slik søker du om helsesertifikat i ny eksportløsning
+        Slik søker du om å bli vurdert for videreutdanning
       </a>
     </li>
   </ol>
@@ -96,24 +91,19 @@ exports[`Mobile Viewport 1`] = `
 <nav aria-label="Du er her:">
   <a
     href="#"
-    aria-label="Tilbake til Nivå 3"
+    aria-label="Tilbake til Utdanningsløpet"
   >
-    Nivå 3
+    Utdanningsløpet
   </a>
   <ol>
     <li>
       <a href="#">
-        Nivå 1
+        Forside
       </a>
     </li>
     <li>
       <a href="#">
-        Nivå 2
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        Nivå 3
+        Utdanningsløpet
       </a>
     </li>
     <li>
@@ -121,7 +111,7 @@ exports[`Mobile Viewport 1`] = `
         href="#"
         aria-current="page"
       >
-        Nivå 4
+        Grunnskole
       </a>
     </li>
   </ol>
@@ -132,24 +122,19 @@ exports[`Preview 1`] = `
 <nav aria-label="Du er her:">
   <a
     href="#"
-    aria-label="Tilbake til Nivå 3"
+    aria-label="Tilbake til Utdanningsløpet"
   >
-    Nivå 3
+    Utdanningsløpet
   </a>
   <ol>
     <li>
       <a href="#">
-        Nivå 1
+        Forside
       </a>
     </li>
     <li>
       <a href="#">
-        Nivå 2
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        Nivå 3
+        Utdanningsløpet
       </a>
     </li>
     <li>
@@ -157,7 +142,7 @@ exports[`Preview 1`] = `
         href="#"
         aria-current="page"
       >
-        Nivå 4
+        Grunnskole
       </a>
     </li>
   </ol>

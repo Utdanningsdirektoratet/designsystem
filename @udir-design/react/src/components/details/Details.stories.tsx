@@ -1,4 +1,4 @@
-import type { Decorator, Meta, StoryObj } from '@storybook/react';
+import type { Decorator, Meta, StoryObj } from '@storybook/react-vite';
 import { createElement, useState } from 'react';
 import {
   Button,
@@ -11,7 +11,7 @@ import {
   List,
   ToggleGroup,
 } from '@udir-design/react/alpha';
-import { expect, userEvent, within } from '@storybook/test';
+import { expect, userEvent, within } from 'storybook/test';
 import { Stack } from '.storybook/docs-components';
 import { ChevronDownUpIcon, ChevronUpDownIcon } from '@navikt/aksel-icons';
 
