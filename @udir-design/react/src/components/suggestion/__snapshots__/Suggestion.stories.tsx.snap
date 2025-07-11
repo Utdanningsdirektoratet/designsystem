@@ -21,12 +21,13 @@ exports[`Always Show All 1`] = `
     </data>
     <input
       placeholder
+      popovertarget="«r7»-list"
       id="components-suggestion--always-show-all"
       type="text"
-      list=":u-datalist8"
+      list="«r7»-list"
       aria-label="Viser alle options også når valgt, "
       aria-autocomplete="list"
-      aria-controls=":u-datalist8"
+      aria-controls="«r7»-list"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -42,11 +43,13 @@ exports[`Always Show All 1`] = `
       data-nofilter
       data-sr-singular="%d forslag"
       data-sr-plural="%d forslag"
+      id="«r7»-list"
+      popover="manual"
       role="listbox"
       tabindex="-1"
       aria-multiselectable="false"
-      id=":u-datalist8"
       aria-labelledby=":label8"
+      style="width: 1168px; translate: <removed>;"
     >
       <u-option
         tabindex="-1"
@@ -138,12 +141,13 @@ exports[`Controlled 1`] = `
     </data>
     <input
       placeholder
+      popovertarget="«r2»-list"
       id="components-suggestion--controlled"
       type="text"
-      list=":u-datalist3"
+      list="«r2»-list"
       aria-label="Velg destinasjoner, "
       aria-autocomplete="list"
-      aria-controls=":u-datalist3"
+      aria-controls="«r2»-list"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -159,21 +163,22 @@ exports[`Controlled 1`] = `
       data-nofilter
       data-sr-singular="%d forslag"
       data-sr-plural="%d forslag"
+      id="«r2»-list"
+      popover="manual"
       role="listbox"
       tabindex="-1"
       aria-multiselectable="false"
-      id=":u-datalist3"
       aria-labelledby=":label3"
+      style="width: 1168px; translate: <removed>;"
     >
       <u-option
         label="Sogndal"
         value="Sogndal"
         tabindex="-1"
         role="option"
-        aria-disabled="true"
+        aria-disabled="false"
         aria-selected="false"
-        disabled
-        aria-hidden="true"
+        aria-hidden="false"
       >
         Sogndal
         <div>
@@ -200,10 +205,9 @@ exports[`Controlled 1`] = `
         value="Brønnøysund"
         tabindex="-1"
         role="option"
-        aria-disabled="true"
+        aria-disabled="false"
         aria-selected="false"
-        disabled
-        aria-hidden="true"
+        aria-hidden="false"
       >
         Brønnøysund
         <div>
@@ -215,10 +219,9 @@ exports[`Controlled 1`] = `
         value="Stavanger"
         tabindex="-1"
         role="option"
-        aria-disabled="true"
+        aria-disabled="false"
         aria-selected="false"
-        disabled
-        aria-hidden="true"
+        aria-hidden="false"
       >
         Stavanger
         <div>
@@ -230,10 +233,9 @@ exports[`Controlled 1`] = `
         value="Trondheim"
         tabindex="-1"
         role="option"
-        aria-disabled="true"
+        aria-disabled="false"
         aria-selected="false"
-        disabled
-        aria-hidden="true"
+        aria-hidden="false"
       >
         Trondheim
         <div>
@@ -245,10 +247,9 @@ exports[`Controlled 1`] = `
         value="Bergen"
         tabindex="-1"
         role="option"
-        aria-disabled="true"
+        aria-disabled="false"
         aria-selected="false"
-        disabled
-        aria-hidden="true"
+        aria-hidden="false"
       >
         Bergen
         <div>
@@ -260,10 +261,9 @@ exports[`Controlled 1`] = `
         value="Lillestrøm"
         tabindex="-1"
         role="option"
-        aria-disabled="true"
+        aria-disabled="false"
         aria-selected="false"
-        disabled
-        aria-hidden="true"
+        aria-hidden="false"
       >
         Lillestrøm
         <div>
@@ -312,12 +312,13 @@ exports[`Controlled Multiple 1`] = `
     </data>
     <input
       placeholder
+      popovertarget="«r3»-list"
       id="components-suggestion--controlled-multiple"
       type="text"
-      list=":u-datalist4"
+      list="«r3»-list"
       aria-label="Velg destinasjoner, Navigate left to find 1 selected"
       aria-autocomplete="list"
-      aria-controls=":u-datalist4"
+      aria-controls="«r3»-list"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -334,11 +335,13 @@ exports[`Controlled Multiple 1`] = `
       data-nofilter
       data-sr-singular="%d forslag"
       data-sr-plural="%d forslag"
+      id="«r3»-list"
+      popover="manual"
       role="listbox"
       tabindex="-1"
       aria-multiselectable="true"
-      id=":u-datalist4"
       aria-labelledby=":label4"
+      style="width: 1168px; translate: <removed>;"
     >
       <u-option
         label="Sogndal"
@@ -472,12 +475,13 @@ exports[`Custom Filter Alt 1 1`] = `
   <u-combobox>
     <input
       placeholder
+      popovertarget="«r5»-list"
       id="components-suggestion--custom-filter-alt-1"
       type="text"
-      list=":u-datalist6"
+      list="«r5»-list"
       aria-label="Skriv inn et tall mellom 1-6, "
       aria-autocomplete="list"
-      aria-controls=":u-datalist6"
+      aria-controls="«r5»-list"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -494,11 +498,13 @@ exports[`Custom Filter Alt 1 1`] = `
       data-nofilter
       data-sr-singular="%d forslag"
       data-sr-plural="%d forslag"
+      id="«r5»-list"
+      popover="manual"
       role="listbox"
       tabindex="-1"
       aria-multiselectable="false"
-      id=":u-datalist6"
       aria-labelledby=":label6"
+      style="width: 1168px; translate: <removed>;"
     >
       <u-option
         value="sogndal"
@@ -587,12 +593,13 @@ exports[`Custom Filter Alt 2 1`] = `
   <u-combobox>
     <input
       placeholder
+      popovertarget="«r6»-list"
       id="components-suggestion--custom-filter-alt-2"
       type="text"
-      list=":u-datalist7"
+      list="«r6»-list"
       aria-label="Skriv inn et tall mellom 1-6, "
       aria-autocomplete="list"
-      aria-controls=":u-datalist7"
+      aria-controls="«r6»-list"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -609,11 +616,13 @@ exports[`Custom Filter Alt 2 1`] = `
       data-nofilter
       data-sr-singular="%d forslag"
       data-sr-plural="%d forslag"
+      id="«r6»-list"
+      popover="manual"
       role="listbox"
       tabindex="-1"
       aria-multiselectable="false"
-      id=":u-datalist7"
       aria-labelledby=":label7"
+      style="width: 1168px; translate: <removed>;"
     >
       <u-option
         tabindex="-1"
@@ -704,12 +713,13 @@ exports[`Default Value 1`] = `
     </data>
     <input
       placeholder
+      popovertarget="«r4»-list"
       id="components-suggestion--default-value"
       type="text"
-      list=":u-datalist5"
+      list="«r4»-list"
       aria-label="Velg en destinasjon, "
       aria-autocomplete="list"
-      aria-controls=":u-datalist5"
+      aria-controls="«r4»-list"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -725,11 +735,13 @@ exports[`Default Value 1`] = `
       data-nofilter
       data-sr-singular="%d forslag"
       data-sr-plural="%d forslag"
+      id="«r4»-list"
+      popover="manual"
       role="listbox"
       tabindex="-1"
       aria-multiselectable="false"
-      id=":u-datalist5"
       aria-labelledby=":label5"
+      style="width: 1168px; translate: <removed>;"
     >
       <u-option
         tabindex="-1"
@@ -744,60 +756,54 @@ exports[`Default Value 1`] = `
       <u-option
         tabindex="-1"
         role="option"
-        aria-disabled="true"
+        aria-disabled="false"
         aria-selected="false"
-        disabled
-        aria-hidden="true"
+        aria-hidden="false"
       >
         Oslo
       </u-option>
       <u-option
         tabindex="-1"
         role="option"
-        aria-disabled="true"
+        aria-disabled="false"
         aria-selected="false"
-        disabled
-        aria-hidden="true"
+        aria-hidden="false"
       >
         Brønnøysund
       </u-option>
       <u-option
         tabindex="-1"
         role="option"
-        aria-disabled="true"
+        aria-disabled="false"
         aria-selected="false"
-        disabled
-        aria-hidden="true"
+        aria-hidden="false"
       >
         Stavanger
       </u-option>
       <u-option
         tabindex="-1"
         role="option"
-        aria-disabled="true"
+        aria-disabled="false"
         aria-selected="false"
-        disabled
-        aria-hidden="true"
+        aria-hidden="false"
       >
         Trondheim
       </u-option>
       <u-option
         tabindex="-1"
         role="option"
-        aria-disabled="true"
+        aria-disabled="false"
         aria-selected="false"
-        disabled
-        aria-hidden="true"
+        aria-hidden="false"
       >
         Bergen
       </u-option>
       <u-option
         tabindex="-1"
         role="option"
-        aria-disabled="true"
+        aria-disabled="false"
         aria-selected="false"
-        disabled
-        aria-hidden="true"
+        aria-hidden="false"
       >
         Lillestrøm
       </u-option>
@@ -818,12 +824,13 @@ exports[`Fetch External 1`] = `
   <u-combobox>
     <input
       placeholder
+      popovertarget="«r8»-list"
       id="components-suggestion--fetch-external"
       type="text"
-      list=":u-datalist9"
+      list="«r8»-list"
       aria-label="Search for countries (in english), "
       aria-autocomplete="list"
-      aria-controls=":u-datalist9"
+      aria-controls="«r8»-list"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -840,11 +847,13 @@ exports[`Fetch External 1`] = `
       data-nofilter
       data-sr-singular="%d country"
       data-sr-plural="%d countries"
+      id="«r8»-list"
+      popover="manual"
       role="listbox"
       tabindex="-1"
       aria-multiselectable="false"
-      id=":u-datalist9"
       aria-labelledby=":label9"
+      style="width: 1168px; translate: <removed>;"
     >
     </u-datalist>
   </u-combobox>
@@ -863,12 +872,13 @@ exports[`Multiple 1`] = `
   <u-combobox data-multiple>
     <input
       placeholder
+      popovertarget="«r1»-list"
       id="components-suggestion--multiple"
       type="text"
-      list=":u-datalist2"
+      list="«r1»-list"
       aria-label="Velg en destinasjon, No selected"
       aria-autocomplete="list"
-      aria-controls=":u-datalist2"
+      aria-controls="«r1»-list"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -885,11 +895,13 @@ exports[`Multiple 1`] = `
       data-nofilter
       data-sr-singular="%d forslag"
       data-sr-plural="%d forslag"
+      id="«r1»-list"
+      popover="manual"
       role="listbox"
       tabindex="-1"
       aria-multiselectable="true"
-      id=":u-datalist2"
       aria-labelledby=":label2"
+      style="width: 1168px; translate: <removed>;"
     >
       <u-option
         label="Sogndal"
@@ -1006,12 +1018,13 @@ exports[`Preview 1`] = `
   <u-combobox>
     <input
       placeholder
+      popovertarget="«r0»-list"
       id="components-suggestion--preview"
       type="text"
-      list=":u-datalist1"
+      list="«r0»-list"
       aria-label="Velg en destinasjon, "
       aria-autocomplete="list"
-      aria-controls=":u-datalist1"
+      aria-controls="«r0»-list"
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
@@ -1028,11 +1041,13 @@ exports[`Preview 1`] = `
       data-nofilter
       data-sr-singular="%d forslag"
       data-sr-plural="%d forslag"
+      id="«r0»-list"
+      popover="manual"
       role="listbox"
       tabindex="-1"
       aria-multiselectable="false"
-      id=":u-datalist1"
       aria-labelledby=":label1"
+      style="width: 1168px; translate: <removed>;"
     >
       <u-option
         label="Sogndal"
