@@ -1,24 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { DashboardDemo } from './DashboardDemo';
 import { useState } from 'react';
 import { Divider, Size } from '@digdir/designsystemet-react';
 import { Controls } from '../controls/Controls';
+import { ArticleDemo } from './ArticleDemo';
 
-const meta: Meta<typeof DashboardDemo> = {
-  title: 'Demo/Dashboard Demo',
-  component: DashboardDemo,
+const meta: Meta<typeof ArticleDemo> = {
+  title: 'demo/Article Demo',
+  component: ArticleDemo,
 };
 
 export default meta;
-type Story = StoryObj<typeof DashboardDemo>;
+type Story = StoryObj<typeof ArticleDemo>;
 
-export const DashboardStory: Story = {
+export const ArticleStory: Story = {
   parameters: {
     customStyles: {
       padding: 0,
     },
   },
-  render: function Render(args) {
+  render(args) {
     const [size, setSize] = useState<Size>('sm');
     const [colorMode, setColorMode] = useState('auto');
     return (
@@ -30,12 +30,7 @@ export const DashboardStory: Story = {
           setColorMode={setColorMode}
         />
         <Divider />
-        <DashboardDemo
-          {...args}
-          data-size={size}
-          data-color-scheme={colorMode}
-          setColorMode={setColorMode}
-        />
+        <ArticleDemo {...args} data-size={size} data-color-scheme={colorMode} />
       </div>
     );
   },
