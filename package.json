@@ -52,7 +52,8 @@
       "axios@<1.8.2": ">=1.8.2",
       "@azure/core-rest-pipeline": "1.19.1",
       "@babel/runtime@<7.26.10": ">=7.26.10",
-      "@babel/helpers@<7.26.10": ">=7.26.10"
+      "@babel/helpers@<7.26.10": ">=7.26.10",
+      "vite>rollup": "4.44.2"
     },
     "ignoredBuiltDependencies": [
       "@bundled-es-modules/glob",
