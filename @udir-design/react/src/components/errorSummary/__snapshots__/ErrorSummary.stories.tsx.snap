@@ -38,14 +38,12 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Show Hide 1`] = `
-<div style="display: grid; place-items: center; margin-bottom: var(--ds-size-4);">
-  <button
-    data-variant="primary"
-    type="button"
-  >
-    Skjul
-  </button>
-</div>
+<button
+  data-variant="primary"
+  type="button"
+>
+  Skjul feilmelding
+</button>
 <div
   tabindex="-1"
   aria-labelledby="«r2»"
@@ -87,12 +85,12 @@ exports[`With Form 1`] = `
       aria-invalid="true"
       id="fornavn"
       type="text"
-      aria-describedby="fornavn:validation"
+      aria-describedby="fornavn:validation:1"
     >
   </div>
   <p
     data-field="validation"
-    id="fornavn:validation"
+    id="fornavn:validation:1"
   >
     Fornavn må være minst 2 tegn
   </p>
@@ -109,12 +107,12 @@ exports[`With Form 1`] = `
       aria-invalid="true"
       id="telefon"
       type="tel"
-      aria-describedby="telefon:validation"
+      aria-describedby="telefon:validation:1"
     >
   </div>
   <p
     data-field="validation"
-    id="telefon:validation"
+    id="telefon:validation:1"
   >
     Telefonnummer kan kun inneholde siffer
   </p>

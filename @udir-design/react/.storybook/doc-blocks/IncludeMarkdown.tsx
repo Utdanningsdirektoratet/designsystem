@@ -1,5 +1,5 @@
 import { renderToStaticMarkup } from 'react-dom/server';
-import { Markdown, Unstyled } from '@storybook/blocks';
+import { Markdown, Unstyled } from '@storybook/addon-docs/blocks';
 import type { Heading, Root, RootContent, Text } from 'mdast';
 import { toHast } from 'mdast-util-to-hast';
 import { toHtml } from 'hast-util-to-html';

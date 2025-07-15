@@ -558,33 +558,31 @@ exports[`Checkbox 1`] = `
 `;
 
 exports[`Controlled 1`] = `
-<div>
-  <label
-    data-weight="medium"
-    for="components-input--controlled"
-  >
-    Kontroller meg!
-  </label>
-  <input
-    id="components-input--controlled"
-    type="text"
-  >
-</div>
-<div>
-  <hr aria-hidden="true">
-  <p
-    data-variant="default"
-    style="margin: var(--ds-size-2) 0;"
-  >
-    Du har skrevet inn:
-  </p>
+<div style="display: flex; gap: var(--ds-size-2); align-items: end; width: 100%;">
+  <div>
+    <label
+      data-weight="medium"
+      for="components-input--controlled"
+    >
+      Fullt navn
+    </label>
+    <input
+      id="components-input--controlled"
+      type="text"
+      value
+    >
+  </div>
   <button
-    data-variant="primary"
+    data-variant="secondary"
     type="button"
   >
-    Jeg vil ha Kake
+    Tøm feltet
   </button>
 </div>
+<hr aria-hidden="true">
+<p data-variant="default">
+  Ditt brukernavn blir da:
+</p>
 `;
 
 exports[`Html Size 1`] = `
@@ -603,30 +601,58 @@ exports[`Html Size 1`] = `
 </div>
 `;
 
-exports[`Preview 1`] = `
+exports[`Input Types 1`] = `
 <div>
   <label
     data-weight="medium"
-    for="components-input--preview"
+    for="components-input--input-types-checkbox"
   >
-    Input 1
+    Checkbox
   </label>
   <input
-    aria-invalid="false"
-    id="components-input--preview"
-    type="text"
+    id="components-input--input-types-checkbox"
+    type="checkbox"
     checked
-    name="inputs"
-    aria-describedby="components-input--preview:validation"
   >
-  <p
-    data-field="validation"
-    hidden
-    id="components-input--preview:validation"
-  >
-    Feilmelding
-  </p>
 </div>
+<div>
+  <label
+    data-weight="medium"
+    for="components-input--input-types-radio"
+  >
+    Radio
+  </label>
+  <input
+    id="components-input--input-types-radio"
+    type="radio"
+    checked
+  >
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="components-input--input-types-switch"
+  >
+    Switch
+  </label>
+  <input
+    role="switch"
+    id="components-input--input-types-switch"
+    type="checkbox"
+    checked
+  >
+</div>
+`;
+
+exports[`Preview 1`] = `
+<input
+  aria-invalid="false"
+  aria-label="input"
+  id="components-input--preview"
+  type="text"
+  checked
+  name="inputs"
+>
 `;
 
 exports[`Radio 1`] = `
@@ -1377,11 +1403,11 @@ exports[`Text 1`] = `
         type="text"
         value="Value"
         name="sm-invalid"
-        aria-describedby="components-input--text-sm-invalid:validation"
+        aria-describedby="components-input--text-sm-invalid:validation:1"
       >
       <p
         data-field="validation"
-        id="components-input--text-sm-invalid:validation"
+        id="components-input--text-sm-invalid:validation:1"
       >
         Feilmelding
       </p>
@@ -1458,11 +1484,11 @@ exports[`Text 1`] = `
         type="text"
         value="Value"
         name="md-invalid"
-        aria-describedby="components-input--text-md-invalid:validation"
+        aria-describedby="components-input--text-md-invalid:validation:1"
       >
       <p
         data-field="validation"
-        id="components-input--text-md-invalid:validation"
+        id="components-input--text-md-invalid:validation:1"
       >
         Feilmelding
       </p>
@@ -1539,11 +1565,11 @@ exports[`Text 1`] = `
         type="text"
         value="Value"
         name="lg-invalid"
-        aria-describedby="components-input--text-lg-invalid:validation"
+        aria-describedby="components-input--text-lg-invalid:validation:1"
       >
       <p
         data-field="validation"
-        id="components-input--text-lg-invalid:validation"
+        id="components-input--text-lg-invalid:validation:1"
       >
         Feilmelding
       </p>

@@ -1,17 +1,34 @@
-import { Meta, Controls, Primary } from '@storybook/blocks';
+import { Meta, Controls, Primary } from '@storybook/addon-docs/blocks';
 import * as DividerStories from './Divider.stories';
 
 <Meta of={DividerStories} />
 
 # Divider
 
+`Divider` brukes for å skape et visuelt skille mellom innhold – f.eks. ulike seksjoner i en artikkel eller ulike funksjonelle områder på en side – slik at det blir mer oversiktlig og lettere å lese. Det er en enkel horisontal linje som strekker seg over tilgjengelig bredde. Den kan også brukes for å skille innhold som er relatert til hverandre, men som likevel bør ha en visuelt skille.
+
+**Passer til å**
+
+- skape en tydelig visuell oppdeling av innhold
+- strukturere innhold visuelt for bedre lesbarhet
+
+**Passer ikke til å**
+
+- skape spacing der andre visuelle elementer bedre kan gi separasjon
+
+## Slik bruker du Divider
+
 <Primary />
 <Controls />
-
-## Bruk
 
 ```tsx
 import { Divider } from '@udir-design/react';
 
 <Divider />;
 ```
+
+## Tilgjengelighet
+
+`Divider` er et rent visuelt virkemiddel, og leses ikke opp av skjermlesere.
+
+Unngå likevel å bruke `Divider` utelukkende for visuell effekt uten funksjonell betydning. En `Divider` representerer en tematisk inndeling av innhold. For å kommunisere denne inndelingen på en tilgjengelig måte må man i tillegg bruke elementer som en skjermleser forstår. Dette kan for eksempel være en [`Heading`](/docs/components-heading--docs), en [`List`](/docs/components-list--docs), [`<section>`-elementer](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/section), eller elementer med [`role="group"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role).

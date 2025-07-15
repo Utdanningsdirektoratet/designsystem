@@ -2,7 +2,12 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": ["node", "vite/client", "@udir-design/theme", "@udir-design/react"]
+    "types": [
+      "node",
+      "vite/client",
+      "@udir-design/theme",
+      "@udir-design/react/html"
+    ]
   },
   "exclude": [
     "src/**/*.spec.ts",

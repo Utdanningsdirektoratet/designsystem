@@ -14,6 +14,7 @@ exports[`Affix 1`] = `
     </span>
     <input
       id="textfield-affix"
+      inputmode="numeric"
       type="text"
     >
     <span aria-hidden="true">
@@ -24,37 +25,33 @@ exports[`Affix 1`] = `
 `;
 
 exports[`Controlled 1`] = `
-<div>
-  <label
-    data-weight="medium"
-    for="textfield-controlled"
-  >
-    Kontroller meg!
-  </label>
-  <div>
-    <input
-      id="textfield-controlled"
-      type="text"
-      value
+<div style="display: flex; gap: var(--ds-size-2); align-items: end; width: 100%;">
+  <div style="flex-grow: 1;">
+    <label
+      data-weight="medium"
+      for="textfield-controlled"
     >
+      Fullt navn
+    </label>
+    <div>
+      <input
+        id="textfield-controlled"
+        type="text"
+        value
+      >
+    </div>
   </div>
+  <button
+    data-variant="secondary"
+    type="button"
+  >
+    Tøm feltet
+  </button>
 </div>
-<hr
-  aria-hidden="true"
-  style="margin-top: var(--ds-size-4);"
->
-<p
-  data-variant="default"
-  style="margin: var(--ds-size-2) 0;"
->
-  Du har skrevet inn:
+<hr aria-hidden="true">
+<p data-variant="default">
+  Ditt brukernavn blir da:
 </p>
-<button
-  data-variant="primary"
-  type="button"
->
-  Jeg vil ha Kake
-</button>
 `;
 
 exports[`Counter 1`] = `
@@ -68,23 +65,75 @@ exports[`Counter 1`] = `
   <div>
     <input
       id="textfield-counter"
+      inputmode="numeric"
       type="text"
-      aria-describedby="textfield-counter:validation  textfield-counter:description"
+      aria-describedby="textfield-counter:validation:1  textfield-counter:description:1"
     >
   </div>
   <div
     data-field="description"
     aria-live="polite"
-    id="textfield-counter:description"
+    id="textfield-counter:description:1"
   >
   </div>
   <p
     data-variant="default"
     data-field="validation"
-    id="textfield-counter:validation"
+    id="textfield-counter:validation:1"
   >
     10 tegn igjen
   </p>
+</div>
+`;
+
+exports[`Disabled 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="textfield-disabled"
+  >
+    Disabled Textfield
+  </label>
+  <div>
+    <input
+      id="textfield-disabled"
+      disabled
+      type="text"
+    >
+  </div>
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="textarea-disabled"
+  >
+    Disabled Textarea
+  </label>
+  <div>
+    <textarea
+      id="textarea-disabled"
+      rows="4"
+      disabled
+    >
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`Focused 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="textfield-preview"
+  >
+    Label
+  </label>
+  <div>
+    <input
+      id="textfield-preview"
+      type="text"
+    >
+  </div>
 </div>
 `;
 
@@ -105,13 +154,47 @@ exports[`Preview 1`] = `
 </div>
 `;
 
+exports[`Read Only 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="textfield-readonly"
+  >
+    ReadOnly Textfield
+  </label>
+  <div>
+    <input
+      id="textfield-readonly"
+      readonly
+      type="text"
+    >
+  </div>
+</div>
+<div>
+  <label
+    data-weight="medium"
+    for="textarea-readonly"
+  >
+    ReadOnly Textarea
+  </label>
+  <div>
+    <textarea
+      id="textarea-readonly"
+      rows="4"
+      readonly
+    >
+    </textarea>
+  </div>
+</div>
+`;
+
 exports[`Rows 1`] = `
 <div>
   <label
     data-weight="medium"
     for="textfield-rows"
   >
-    Label
+    Beskrivelse
   </label>
   <div>
     <textarea

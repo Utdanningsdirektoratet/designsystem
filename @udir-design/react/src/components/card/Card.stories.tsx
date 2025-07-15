@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { PlusIcon, TrashFillIcon } from '@navikt/aksel-icons';
 import {
   Button,
@@ -13,18 +13,15 @@ import {
 import { Color } from '@digdir/designsystemet-react/colors';
 import { Fragment } from 'react/jsx-runtime';
 
-const IllustrativeImg = () => (
-  <img
-    src={
-      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    }
-    alt="studenter"
-  />
-);
+const studentsImg =
+  'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+
+const schoolSuppliesImg =
+  'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1644&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
 const meta: Meta<typeof Card> = {
   component: Card,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     customStyles: {
       width: '100%',
@@ -44,12 +41,9 @@ export const Preview: Story = {
   args: {
     'data-color': 'neutral',
     children: [
-      <Heading>Card Neutral</Heading>,
-      <Paragraph>
-        Most provide as with carried business are much better more the perfected
-        designer. Writing slightly explain desk unable at supposedly about this
-      </Paragraph>,
-      <Paragraph data-size="sm">Footer text</Paragraph>,
+      <Heading>Tittel</Heading>,
+      <Paragraph>Innhold</Paragraph>,
+      <Paragraph data-size="sm">Fotnote</Paragraph>,
     ],
   },
 };
@@ -118,28 +112,34 @@ export const Media: Story = {
     <>
       <Card {...args}>
         <Card.Block>
-          <IllustrativeImg />
+          <img
+            src={schoolSuppliesImg}
+            alt="Fotografi av forskjellig skoleutstyr"
+          />
         </Card.Block>
         <Card.Block>
-          <Heading>Card Neutral</Heading>
+          <Heading>Skoleutstyr</Heading>
           <Paragraph>
-            Most provide as with carried business are much better more the
-            perfected designer. Writing slightly explain desk unable at
-            supposedly about this
+            Fylkeskommunen skal sørge for at elevene i videregående skole får
+            gratis lærebøker og andre trykte og digitale læremidler og digitalt
+            utstyr.
           </Paragraph>
         </Card.Block>
       </Card>
       <Card {...args}>
         <Card.Block>
-          <Heading>Card Neutral</Heading>
+          <Heading>Skoleutstyr</Heading>
           <Paragraph>
-            Most provide as with carried business are much better more the
-            perfected designer. Writing slightly explain desk unable at
-            supposedly about this
+            Fylkeskommunen skal sørge for at elevene i videregående skole får
+            gratis lærebøker og andre trykte og digitale læremidler og digitalt
+            utstyr.
           </Paragraph>
         </Card.Block>
         <Card.Block>
-          <IllustrativeImg />
+          <img
+            src={schoolSuppliesImg}
+            alt="Fotografi av forskjellig skoleutstyr"
+          />
         </Card.Block>
       </Card>
     </>
@@ -153,7 +153,7 @@ export const Video: Story = {
       <Card.Block>
         <iframe
           data-chromatic="ignore"
-          src="https://player.vimeo.com/video/863563441?app_id=122963&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1"
+          src="https://player.vimeo.com/video/992000551?h=03734e8f67"
           width="320px"
           height="179px"
           allow="autoplay; fullscreen; picture-in-picture"
@@ -163,18 +163,15 @@ export const Video: Story = {
       <Card.Block>
         <Heading>
           <a
-            href="https://www.digdir.no/felleslosninger/30-ar-med-digitalt-innsyn/5015"
+            href="https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/filmer/"
             target="_blank"
             rel="noreferrer"
           >
-            Vi feira 30 år med digitalt innsyn
+            Ny opplæringslov
           </a>
         </Heading>
         <Paragraph>
-          Det er i år 30 år sidan dei første forsøka med elektronisk postjournal
-          i Noreg. Sjå opptak frå feiringa på Pressens Hus der det både var
-          historiske tilbakeblikk og debatt om innsyn og openheit i
-          forvaltninga.
+          Kunnskapsminister Kari Nessa Nordtun om den nye opplæringsloven.
         </Paragraph>
       </Card.Block>,
     ],
@@ -182,75 +179,53 @@ export const Video: Story = {
 };
 
 const options = [
-  { value: 'daglig leder', label: 'Dalig leder' },
-  { value: 'forretningsfører', label: 'Forretningsfører' },
+  { value: 'lærer', label: 'Lærer' },
+  { value: 'elev', label: 'Elev' },
+  { value: 'forelder', label: 'Forelder' },
 ];
 
 export const Composed: Story = {
   render: (args, context) => (
-    <div
-      style={{
-        display: 'grid', // Used to test Card.Block border logic
-        gap: 'var(--ds-size-4)',
-        gridColumn: '1 / -1',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px , 1fr))',
-        width: '100%',
-      }}
-    >
-      <Card {...args}>
-        <Card.Block>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-            }}
-          >
-            <Heading>Rolle 1</Heading>
-            <Button variant="secondary" data-color="danger" data-size="sm">
-              <TrashFillIcon aria-hidden />
-              Fjern
-            </Button>
-          </div>
-        </Card.Block>
-        <Card.Block>
-          <Field>
-            <Label>Velg rolle</Label>
-            <Select id={context.id + '-role'}>
-              {options.map(({ value, label }, index) => (
-                <Select.Option key={index} value={value}>
-                  {label}
-                </Select.Option>
-              ))}
-            </Select>
-          </Field>
-          <Textfield
-            id={context.id + '-nationality-number'}
-            label="Fødsels- eller d-nummer"
-          />
-          <Textfield id={context.id + '-last-name'} label="Etternavn" />
-        </Card.Block>
-        <Card.Block>
-          <Button variant="secondary" data-size="sm">
-            Legg til rolle
-            <PlusIcon aria-hidden />
+    <Card {...args}>
+      <Card.Block>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
+          <Heading>Rolle 1</Heading>
+          <Button variant="secondary" data-color="danger" data-size="sm">
+            <TrashFillIcon aria-hidden />
+            Fjern
           </Button>
-        </Card.Block>
-      </Card>
-      <Card {...args}>
-        <Card.Block>
-          <IllustrativeImg />
-        </Card.Block>
-        <Card.Block>
-          <Heading>Card Neutral</Heading>
-          <Paragraph>
-            Most provide as with carried business are much better more the
-            perfected designer. Writing slightly explain desk unable at
-            supposedly about this.
-          </Paragraph>
-        </Card.Block>
-      </Card>
-    </div>
+        </div>
+      </Card.Block>
+      <Card.Block>
+        <Field>
+          <Label>Velg rolle</Label>
+          <Select id={context.id + '-role'}>
+            {options.map(({ value, label }, index) => (
+              <Select.Option key={index} value={value}>
+                {label}
+              </Select.Option>
+            ))}
+          </Select>
+        </Field>
+        <Textfield
+          id={context.id + '-nationality-number'}
+          label="Fødselsnummer"
+        />
+        <Textfield id={context.id + '-last-name'} label="Etternavn" />
+      </Card.Block>
+      <Card.Block>
+        <Button variant="secondary" data-size="sm">
+          Legg til rolle
+          <PlusIcon aria-hidden />
+        </Button>
+      </Card.Block>
+    </Card>
   ),
 };
 
@@ -259,103 +234,51 @@ export const WithLink: Story = {
     <>
       <Card data-color="support1" {...args}>
         <Card.Block>
-          <IllustrativeImg />
+          <img src={studentsImg} alt="" />
         </Card.Block>
         <Card.Block>
           <Heading>
-            <a href="https://udir.no" target="_blank" rel="noopener noreferrer">
-              Link Card
+            <a
+              href="https://www.udir.no/eksamen-og-prover/eksamen/ta-fag-som-privatist/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Påmelding til eksamen
             </a>
           </Heading>
           <Paragraph>
-            Most provide as with carried business are much better more the
-            perfected designer. Writing slightly explain desk unable at
-            supposedly about this
+            Du må melde deg på innen 1. februar for våreksamen og 15. september
+            for høsteksamen.
           </Paragraph>
-          <Paragraph data-size="sm">Footer text</Paragraph>
+          <Paragraph data-size="sm">Privatisteksamen</Paragraph>
         </Card.Block>
       </Card>
       <Card {...args} data-color="neutral">
         <Card.Block>
           <Heading>
-            <a href="https://udir.no" target="_blank" rel="noopener noreferrer">
-              Link Card
+            <a
+              href="https://www.udir.no/eksamen-og-prover/eksamen/ta-fag-som-privatist/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Påmelding til eksamen
             </a>
           </Heading>
           <Paragraph>
-            Most provide as with carried business are much better more the
-            perfected designer. Writing slightly explain desk unable at
-            supposedly about this
+            Du må melde deg på innen 1. februar for våreksamen og 15. september
+            for høsteksamen.
           </Paragraph>
-          <Paragraph data-size="sm">Footer text</Paragraph>
+          <Paragraph data-size="sm">Privatisteksamen</Paragraph>
         </Card.Block>
         <Card.Block>
-          <IllustrativeImg />
+          <img src={studentsImg} alt="" />
         </Card.Block>
       </Card>
     </>
   ),
 };
 
-export const AsLink: Story = {
-  render: (args) => (
-    <>
-      <Card {...args} data-color="support1" asChild>
-        <a href="https://udir.no" target="_blank" rel="noopener noreferrer">
-          <Card.Block>
-            <Heading>Link Card with blocks</Heading>
-          </Card.Block>
-          <Card.Block>
-            <Paragraph>
-              Most provide as with carried business are much better more the
-              perfected designer.
-            </Paragraph>
-          </Card.Block>
-        </a>
-      </Card>
-      <Card {...args} data-color="neutral" asChild>
-        <a href="https://udir.no" target="_blank" rel="noopener noreferrer">
-          <Heading>Link Card</Heading>
-          <Paragraph>
-            Most provide as with carried business are much better more the
-            perfected designer.
-          </Paragraph>
-        </a>
-      </Card>
-    </>
-  ),
-};
-
-export const AsButton: Story = {
-  render: (args) => (
-    <>
-      <Card {...args} data-color="support1" asChild>
-        <button type="button">
-          <Card.Block>
-            <Heading>Button Card with blocks</Heading>
-          </Card.Block>
-          <Card.Block>
-            <Paragraph>
-              Most provide as with carried business are much better more the
-              perfected designer.
-            </Paragraph>
-          </Card.Block>
-        </button>
-      </Card>
-      <Card {...args} data-color="neutral" asChild>
-        <button type="button">
-          <Heading>Link Card</Heading>
-          <Paragraph>
-            Most provide as with carried business are much better more the
-            perfected designer.
-          </Paragraph>
-        </button>
-      </Card>
-    </>
-  ),
-};
-
-export const AsGrid: Story = {
+export const Horizontal: Story = {
   parameters: {
     customStyles: {
       gridTemplateColumns: 'repeat(1fr)',
@@ -365,12 +288,11 @@ export const AsGrid: Story = {
     style: { display: 'grid', gridTemplateColumns: '1fr 1fr' },
     children: [
       <Card.Block>
-        <Heading>Button Card with blocks</Heading>
+        <Heading>Card med grid</Heading>
       </Card.Block>,
       <Card.Block>
         <Paragraph>
-          Most provide as with carried business are much better more the
-          perfected designer.
+          Eksempel på hvordan du kan bruke et Card horisontalt ved bruk av grid.
         </Paragraph>
       </Card.Block>,
     ],

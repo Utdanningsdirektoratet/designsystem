@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ToggleGroup } from './ToggleGroup';
 import { Card } from '@digdir/designsystemet-react';
-import { expect, within } from '@storybook/test';
+import { expect, within } from 'storybook/test';
 
 const meta: Meta<typeof ToggleGroup> = {
   component: ToggleGroup,

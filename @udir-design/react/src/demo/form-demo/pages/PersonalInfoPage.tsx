@@ -11,7 +11,11 @@ import {
   ValidationMessage,
 } from '@udir-design/react/alpha';
 import { Controller, useFormContext } from 'react-hook-form';
-import type { FormValues, PageProps } from '../FormDemo';
+import {
+  focusableFieldsetProps,
+  type FormValues,
+  type PageProps,
+} from '../FormDemo';
 
 const DATA_COUNTIES = [
   'Oslo',
@@ -65,18 +69,21 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
           control={control}
           rules={{ required: 'Velg et fylke' }}
           defaultValue=""
-          render={({ field }) => (
-            <Suggestion>
-              <Suggestion.Input
-                id="county"
-                {...field}
-                aria-invalid={!!errors.county}
-              />
+          render={({ field: { onChange, ...field } }) => (
+            <Suggestion
+              {...field}
+              id="county"
+              onValueChange={(v) => {
+                onChange(v.at(0)?.value);
+              }}
+            >
+              <Suggestion.Chips />
+              <Suggestion.Input aria-invalid={!!errors.county} />
               <Suggestion.Clear />
               <Suggestion.List>
                 <Suggestion.Empty>Ingen resultater</Suggestion.Empty>
                 {DATA_COUNTIES.map((county) => (
-                  <Suggestion.Option key={county} value={county}>
+                  <Suggestion.Option key={county} label={county} value={county}>
                     {county}
                     <div>Fylke</div>
                   </Suggestion.Option>
@@ -89,7 +96,7 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
           <ValidationMessage>{errors.county.message}</ValidationMessage>
         )}
       </Field>
-      <Fieldset id="educationLevel">
+      <Fieldset id="educationLevel" {...focusableFieldsetProps}>
         <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
         <Radio
           id="radio-kindergarten"

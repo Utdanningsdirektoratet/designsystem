@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { userEvent, within } from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { userEvent, waitFor, within } from 'storybook/test';
 import { type ChangeEvent, useState } from 'react';
-import { Suggestion } from './Suggestion';
+import { Suggestion, type SuggestionValues } from './Suggestion';
 import {
   Button,
   Divider,
@@ -52,7 +52,7 @@ type Story = StoryObj<typeof Suggestion>;
 
 async function testSuggestion(el: HTMLElement) {
   /* When in test mode, open suggestion by focusing input */
-  const input = within(el).getByRole('combobox');
+  const input = await waitFor(() => within(el).getByRole('combobox'));
   await userEvent.click(input);
 }
 
@@ -72,12 +72,13 @@ export const Preview: Story = {
       <Field>
         <Label>Velg en destinasjon</Label>
         <Suggestion {...args}>
+          <Suggestion.Chips />
           <Suggestion.Input id={ctx.id} />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
             {DATA_PLACES.map((place) => (
-              <Suggestion.Option key={place} value={place}>
+              <Suggestion.Option key={place} label={place} value={place}>
                 {place}
                 <div>Kommune</div>
               </Suggestion.Option>
@@ -89,42 +90,96 @@ export const Preview: Story = {
   },
 };
 
+export const Multiple: Story = {
+  ...Preview,
+  args: { multiple: true },
+};
+
 export const Controlled: Story = {
   render(args, ctx) {
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState<string[]>(['Oslo']);
 
     return (
       <>
         <Field>
-          <Label>Velg en destinasjon</Label>
-          <Suggestion {...args}>
-            <Suggestion.Input
-              id={ctx.id}
-              value={value}
-              onChange={(event) => setValue(event.target.value)}
-            />
+          <Label>Velg destinasjoner</Label>
+          <Suggestion
+            {...args}
+            value={value}
+            onValueChange={(items) => setValue(items.map((item) => item.value))}
+          >
+            <Suggestion.Chips />
+            <Suggestion.Input id={ctx.id} />
             <Suggestion.Clear />
             <Suggestion.List>
               <Suggestion.Empty>Tomt</Suggestion.Empty>
               {DATA_PLACES.map((place) => (
-                <Suggestion.Option key={place}>{place}</Suggestion.Option>
+                <Suggestion.Option key={place} label={place} value={place}>
+                  {place}
+                  <div>Kommune</div>
+                </Suggestion.Option>
               ))}
             </Suggestion.List>
           </Suggestion>
         </Field>
-
         <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
 
         <Paragraph style={{ margin: 'var(--ds-size-2) 0' }}>
-          Du har skrevet inn: {value}
+          Valgte reisemål: {value.join(', ')}
         </Paragraph>
 
         <Button
           onClick={() => {
-            setValue('Sogndal');
+            setValue(['Sogndal']);
           }}
         >
-          Sett verdi til Sogndal
+          Sett reisemål til Sogndal
+        </Button>
+      </>
+    );
+  },
+};
+
+export const ControlledMultiple: Story = {
+  render(args, ctx) {
+    const [value, setValue] = useState<string[]>(['Oslo']);
+
+    return (
+      <>
+        <Field>
+          <Label>Velg destinasjoner</Label>
+          <Suggestion
+            {...args}
+            multiple
+            value={value}
+            onValueChange={(items) => setValue(items.map((item) => item.value))}
+          >
+            <Suggestion.Chips />
+            <Suggestion.Input id={ctx.id} />
+            <Suggestion.Clear />
+            <Suggestion.List>
+              <Suggestion.Empty>Tomt</Suggestion.Empty>
+              {DATA_PLACES.map((place) => (
+                <Suggestion.Option key={place} label={place} value={place}>
+                  {place}
+                  <div>Kommune</div>
+                </Suggestion.Option>
+              ))}
+            </Suggestion.List>
+          </Suggestion>
+        </Field>
+        <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
+
+        <Paragraph style={{ margin: 'var(--ds-size-2) 0' }}>
+          Valgte reisemål: {value.join(', ')}
+        </Paragraph>
+
+        <Button
+          onClick={() => {
+            setValue(['Sogndal', 'Stavanger']);
+          }}
+        >
+          Sett reisemål til Sogndal, Stavanger
         </Button>
       </>
     );
@@ -136,8 +191,9 @@ export const DefaultValue: Story = {
     return (
       <Field>
         <Label>Velg en destinasjon</Label>
-        <Suggestion {...args}>
-          <Suggestion.Input id={ctx.id} defaultValue="Sogndal" />
+        <Suggestion {...args} defaultValue={['Sogndal']}>
+          <Suggestion.Chips />
+          <Suggestion.Input id={ctx.id} />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -162,12 +218,15 @@ export const CustomFilterAlt1: Story = {
             !input.value || index === Number(input.value) - 1
           }
         >
+          <Suggestion.Chips />
           <Suggestion.Input id={ctx.id} />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
-            {DATA_PLACES.map((text) => (
-              <Suggestion.Option key={text}>{text}</Suggestion.Option>
+            {DATA_PLACES.map((label) => (
+              <Suggestion.Option key={label} value={label.toLowerCase()}>
+                {label}
+              </Suggestion.Option>
             ))}
           </Suggestion.List>
         </Suggestion>
@@ -184,18 +243,18 @@ export const CustomFilterAlt2: Story = {
       <Field>
         <Label>Skriv inn et tall mellom 1-6</Label>
         <Suggestion {...args} filter={false}>
+          <Suggestion.Chips />
           <Suggestion.Input
             id={ctx.id}
-            value={value}
-            onChange={(event) => setValue(event.target.value)}
+            onInput={({ currentTarget }) => setValue(currentTarget.value)}
           />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
             {DATA_PLACES.filter(
               (_, index) => !value || index === Number(value) - 1,
-            ).map((text) => (
-              <Suggestion.Option key={text}>{text}</Suggestion.Option>
+            ).map((label) => (
+              <Suggestion.Option key={label}>{label}</Suggestion.Option>
             ))}
           </Suggestion.List>
         </Suggestion>
@@ -206,17 +265,19 @@ export const CustomFilterAlt2: Story = {
 
 export const AlwaysShowAll: Story = {
   render(args, ctx) {
-    const [value, setValue] = useState('Sogndal');
+    const [value, setValue] = useState<SuggestionValues>('Sogndal');
 
     return (
       <Field>
         <Label>Viser alle options også når valgt</Label>
-        <Suggestion {...args} filter={false}>
-          <Suggestion.Input
-            id={ctx.id}
-            value={value}
-            onChange={(event) => setValue(event.target.value)}
-          />
+        <Suggestion
+          {...args}
+          value={value}
+          filter={false}
+          onValueChange={(values) => setValue(values)}
+        >
+          <Suggestion.Chips />
+          <Suggestion.Input id={ctx.id} />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -235,12 +296,9 @@ export const FetchExternal: Story = {
     const [value, setValue] = useState('');
     const [options, setOptions] = useState<string[] | null>(null);
 
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-      const isTyping = (event.nativeEvent as InputEvent).inputType;
+    const handleInput = (event: ChangeEvent<HTMLInputElement>) => {
       const value = encodeURIComponent(event.target.value.trim());
       setValue(event.target.value);
-
-      if (!isTyping) return; // Prevent API call if clicking on items in list
       setOptions(null); // Clear options
 
       if (!value) return;
@@ -262,10 +320,11 @@ export const FetchExternal: Story = {
       <Field lang="en">
         <Label>Search for countries (in english)</Label>
         <Suggestion {...args} filter={false}>
-          <Suggestion.Input id={ctx.id} value={value} onChange={handleChange} />
+          <Suggestion.Chips />
+          <Suggestion.Input id={ctx.id} onInput={handleInput} />
           <Suggestion.Clear />
           <Suggestion.List singular="%d country" plural="%d countries">
-            {!!value && (
+            {value ? (
               <Suggestion.Empty>
                 {options ? (
                   'Ingen treff'
@@ -277,7 +336,7 @@ export const FetchExternal: Story = {
                   </span>
                 )}
               </Suggestion.Empty>
-            )}
+            ) : null}
             {options?.map((option) => (
               <Suggestion.Option key={option}>{option}</Suggestion.Option>
             ))}

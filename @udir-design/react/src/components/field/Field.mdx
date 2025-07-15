@@ -1,4 +1,4 @@
-import { Meta, Controls, Primary, Canvas } from '@storybook/blocks';
+import { Meta, Controls, Primary, Canvas } from '@storybook/addon-docs/blocks';
 
 import * as FieldStories from './Field.stories';
 
@@ -6,19 +6,54 @@ import * as FieldStories from './Field.stories';
 
 # Field
 
+`Field` er et hjelpemiddel for å automatisk koble et felt sammen med [`Label`](/docs/components-typography--docs#label), `Field.Description`, [`ValidationMessage`](/docs/components-typography--docs#validationmessage) og `Field.Counter`. `Field` kan brukes sammen med [`Input`](/docs/components-input--docs), [`Textarea`](/docs/components-textarea--docs) og [`Select`](/docs/components-select--docs). **OBS**: [`Textfield`](/docs/components-textfield--docs) har allerede `Field` innebygd, og kan derfor ikke brukes i en `Field`.
+
+**Passer til å**
+
+- sørge for at [`Label`](/docs/components-typography--docs#label), `Field.Description`, [`ValidationMessage`](/docs/components-typography--docs#validationmessage) og `Field.Counter` er riktig koblet til et felt
+
+**Passer ikke til å**
+
+- semantisk gruppere flere felt - bruk heller [`Fieldset`](/docs/components-fieldset--docs)
+
+## Slik bruker du Field
+
 <Primary />
 <Controls />
 
-## Prefix/Suffix
+```tsx
+<Field>
+  <Label>Kort beskrivelse</Label>
+  <Field.Description>Beskrivelse</Field.Description>
+  <Input />
+  <ValidationMessage>Feilmelding</ValidationMessage>
+</Field>
+```
 
-Prefixer og suffixer er nyttige for å vise enheter, valuta eller andre typer informasjon som er relevant for feltet.
+## Eksempler
+
+Eksemplene nedenfor viser hvordan du kan bruke `Field` for å få full kontroll over komponentenes oppsett og validering. Ved de fleste tilfeller vil du heller bruke [`Textfield`](/docs/components-textfield--docs) som har innebygde funksjoner for dette.
+
+### Prefix/Suffix
+
+Bruk `Field.Prefix` og `Field.Suffix` for å legge til ekstra informasjon før eller etter feltet. Dette kan være nyttig for å indikere enhet, valuta eller annen relevant informasjon som brukeren bør være oppmerksom på.
 Du skal **ikke** bruke disse alene, siden skjermlesere ikke leser dem opp.
-Det er viktig at samme informasjon som vises i prefixet eller suffixet også er inkludert i ledeteksten.
+Det er viktig at samme informasjon som vises i prefixet eller suffixet, også inkluderes i `label`.
 
 <Canvas of={FieldStories.Affix} />
 
-## Antall tegn
+### Antall tegn
 
-Bruk `Field.Counter` for å vise antall tegn som er skrevet i et tekstfelt.
+Bruk `Field.Counter` til å informere om antall tegn brukerne kan skrive i feltet.
 
 <Canvas of={FieldStories.Counter} />
+
+### Plassering
+
+Bruk `position="end"` når du ønsker å plassere [`Input`](/docs/components-input--docs) til høyre for `Label`. Dette kan være nyttig i innstillingsgrensesnitt, slik at brukeren først kan lese etiketten til venstre – som forklarer hva innstillingen gjelder – og deretter handlingselementet (bryteren) til høyre.
+
+<Canvas of={FieldStories.Position} />
+
+## Tilgjengelighet
+
+`Field` hjelper deg med å strukturere skjemafelt på en tilgjengelig og konsistent måte. Den kobler automatisk sammen [`Label`](/docs/components-typography--docs#label), `Field.Description`, [`ValidationMessage`](/docs/components-typography--docs#validationmessage) og `Field.Counter` med det tilhørende feltet via riktige ARIA-attributter.

@@ -160,51 +160,46 @@ exports[`Form Story 1`] = `
       <div>
         <label
           data-weight="medium"
-          for="county"
+          for="county-select"
         >
           Fylke
         </label>
-        <div>
+        <u-combobox id="county">
           <input
-            list="«re»"
             placeholder
-            id="county"
+            popovertarget="county-list"
             aria-invalid="false"
             type="text"
-            value
-            name="county"
-            popovertarget="«re»"
+            list="county-list"
+            aria-label=", "
             aria-autocomplete="list"
-            aria-controls="«re»"
-            aria-expanded="false"
+            aria-controls="county-list"
+            aria-expanded="true"
             autocomplete="off"
             role="combobox"
           >
-          <button
+          <del
             data-icon="true"
             data-variant="tertiary"
-            type="reset"
             aria-label="Tøm"
+            hidden
+            role="button"
           >
-          </button>
+          </del>
           <u-datalist
+            data-nofilter
             data-sr-singular="%d forslag"
             data-sr-plural="%d forslag"
-            id="«re»"
+            id="county-list"
+            popover="manual"
             hidden
             role="listbox"
             tabindex="-1"
+            aria-multiselectable="false"
+            style="width: 536px; translate: <removed>;"
           >
             <u-option
-              data-empty
-              role="none"
-              tabindex="-1"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Ingen resultater
-            </u-option>
-            <u-option
+              label="Oslo"
               value="Oslo"
               tabindex="-1"
               role="option"
@@ -217,6 +212,7 @@ exports[`Form Story 1`] = `
               </div>
             </u-option>
             <u-option
+              label="Viken"
               value="Viken"
               tabindex="-1"
               role="option"
@@ -229,6 +225,7 @@ exports[`Form Story 1`] = `
               </div>
             </u-option>
             <u-option
+              label="Innlandet"
               value="Innlandet"
               tabindex="-1"
               role="option"
@@ -241,6 +238,7 @@ exports[`Form Story 1`] = `
               </div>
             </u-option>
             <u-option
+              label="Vestfold og Telemark"
               value="Vestfold og Telemark"
               tabindex="-1"
               role="option"
@@ -253,6 +251,7 @@ exports[`Form Story 1`] = `
               </div>
             </u-option>
             <u-option
+              label="Agder"
               value="Agder"
               tabindex="-1"
               role="option"
@@ -265,6 +264,7 @@ exports[`Form Story 1`] = `
               </div>
             </u-option>
             <u-option
+              label="Rogaland"
               value="Rogaland"
               tabindex="-1"
               role="option"
@@ -277,6 +277,7 @@ exports[`Form Story 1`] = `
               </div>
             </u-option>
             <u-option
+              label="Vestland"
               value="Vestland"
               tabindex="-1"
               role="option"
@@ -289,6 +290,7 @@ exports[`Form Story 1`] = `
               </div>
             </u-option>
             <u-option
+              label="Møre og Romsdal"
               value="Møre og Romsdal"
               tabindex="-1"
               role="option"
@@ -301,6 +303,7 @@ exports[`Form Story 1`] = `
               </div>
             </u-option>
             <u-option
+              label="Trøndelag"
               value="Trøndelag"
               tabindex="-1"
               role="option"
@@ -313,6 +316,7 @@ exports[`Form Story 1`] = `
               </div>
             </u-option>
             <u-option
+              label="Nordland"
               value="Nordland"
               tabindex="-1"
               role="option"
@@ -325,6 +329,7 @@ exports[`Form Story 1`] = `
               </div>
             </u-option>
             <u-option
+              label="Troms og Finnmark"
               value="Troms og Finnmark"
               tabindex="-1"
               role="option"
@@ -337,9 +342,18 @@ exports[`Form Story 1`] = `
               </div>
             </u-option>
           </u-datalist>
-        </div>
+          <select
+            name="county"
+            hidden
+            id="county-select"
+          >
+          </select>
+        </u-combobox>
       </div>
-      <fieldset id="educationLevel">
+      <fieldset
+        id="educationLevel"
+        tabindex="-1"
+      >
         <legend data-weight="medium">
           Utdanningsnivå
         </legend>

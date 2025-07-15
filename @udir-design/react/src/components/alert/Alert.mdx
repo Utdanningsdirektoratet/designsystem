@@ -1,4 +1,10 @@
-import { Meta, Canvas, Source, Controls, Primary } from '@storybook/blocks';
+import {
+  Meta,
+  Canvas,
+  Source,
+  Controls,
+  Primary,
+} from '@storybook/addon-docs/blocks';
 import * as AlertStories from './Alert.stories';
 
 <Meta of={AlertStories} />
@@ -69,7 +75,7 @@ Dersom tittel og beskrivelse gjentar det samme er det bedre å bruke en enkel se
 
 ### Med lenke
 
-Du kan ha en lenke i Alert hvis det hjelper brukeren med å løse oppgaven. Men vær obs på at en lenke tar brukeren ut av tjenesten, så bruk lenke kun når det er absolutt nødvendig, for eksempel hvis du vil at brukeren skal åpne et skjema eller utføre en viktig oppgave.
+Du kan ha en lenke i Alert hvis det hjelper brukeren med å løse oppgaven. Men vær obs på at en lenke tar brukeren ut av konteksten. Bruk derfor lenke kun når det er absolutt nødvendig, for eksempel hvis du vil at brukeren skal åpne et skjema eller utføre en viktig oppgave.
 
 <Canvas of={AlertStories.WithLink} />
 

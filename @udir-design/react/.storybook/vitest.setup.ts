@@ -1,6 +1,6 @@
 import * as a11yAddonAnnotations from '@storybook/addon-a11y/preview';
 import { beforeAll, expect } from 'vitest';
-import { setProjectAnnotations } from '@storybook/react';
+import { setProjectAnnotations } from '@storybook/react-vite';
 import * as projectAnnotations from './preview';
 
 // This is an important step to apply the right configuration when testing your stories.
@@ -9,7 +9,7 @@ const project = setProjectAnnotations([
   a11yAddonAnnotations,
   projectAnnotations,
   {
-    async experimental_afterEach(storyContext) {
+    async afterEach(storyContext) {
       const canvasElement = storyContext.canvasElement as HTMLElement;
       const decorators = canvasElement.querySelectorAll(
         '[data-storybook-decorator]',
