@@ -10,7 +10,7 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/colors.d.ts",
+      "types": "./dist/types.d.ts",
       "default": "./dist/udir.css"
     }
   },
@@ -18,7 +18,7 @@
     "./dist"
   ],
   "dependencies": {
-    "@digdir/designsystemet-react": "1.1.5"
+    "@digdir/designsystemet": "1.1.6"
   },
   "devDependencies": {
     "@internal/build-tools": "workspace:*",
@@ -26,7 +26,7 @@
     "rimraf": "^6.0.1"
   },
   "scripts": {
-    "copy-css": "cp ../../design-tokens/dist/*.* ./dist/",
+    "copy-css": "cp ../../design-tokens/dist/*.* ./dist/ && rm ./dist/colors.d.ts",
     "postprocess-css": "../../@internal/build-tools/bin/postprocess-css-colors.ts ./dist/udir.css",
     "clean": "rimraf ./dist && mkdir ./dist",
     "build": "pnpm clean && pnpm copy-css && pnpm postprocess-css"
