@@ -4,6 +4,8 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+packageExtensionsChecksum: sha256-IQSNU9cJtri1P9xMWAvG91nRHacWCj8xtjZCK1etLxM=
+
 importers:
 
   .:
@@ -136,7 +138,7 @@ importers:
         version: 1.1.6(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@navikt/aksel-icons':
         specifier: ^7.25.1
-        version: 7.25.1
+        version: 7.25.1(react@19.1.0)
       '@udir-design/theme':
         specifier: workspace:*
         version: link:../theme
@@ -312,7 +314,7 @@ importers:
     dependencies:
       '@udir-design/react':
         specifier: workspace:*
-        version: link:../../@udir-design/react
+        version: file:@udir-design/react(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@udir-design/theme':
         specifier: workspace:*
         version: link:../../@udir-design/theme
@@ -325,6 +327,9 @@ importers:
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
+    dependenciesMeta:
+      '@udir-design/react':
+        injected: true
     devDependencies:
       '@types/react':
         specifier: ^18.3.23
@@ -343,7 +348,7 @@ importers:
     dependencies:
       '@udir-design/react':
         specifier: workspace:*
-        version: link:../../@udir-design/react
+        version: file:@udir-design/react(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@udir-design/theme':
         specifier: workspace:*
         version: link:../../@udir-design/theme
@@ -353,6 +358,9 @@ importers:
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
+    dependenciesMeta:
+      '@udir-design/react':
+        injected: true
     devDependencies:
       '@types/react':
         specifier: ^18.3.23
@@ -375,6 +383,9 @@ importers:
       vite-tsconfig-paths:
         specifier: ^5.1.4
         version: 5.1.4(typescript@5.8.3)(vite@7.0.5(@types/node@22.16.4)(jiti@2.4.2)(less@4.1.3)(sass@1.89.2)(stylus@0.64.0)(terser@5.39.0)(tsx@4.20.3)(yaml@2.8.0))
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.4(@types/debug@4.1.12)(@types/node@22.16.4)(@vitest/browser@3.2.4)(@vitest/ui@3.2.4)(jiti@2.4.2)(jsdom@26.1.0)(less@4.1.3)(msw@2.7.3(@types/node@22.16.4)(typescript@5.8.3))(sass@1.89.2)(stylus@0.64.0)(terser@5.39.0)(tsx@4.20.3)(yaml@2.8.0)
 
 packages:
 
@@ -1533,6 +1544,11 @@ packages:
 
   '@navikt/aksel-icons@7.25.1':
     resolution: {integrity: sha512-5byomSaGUhYsKYdBPAiy7fSelAYjNTYXk+TRKSHgAW8YXAny7tLPop1RkTrLhj7KtZxRxPBONsuYJYyPHNMvrw==}
+    peerDependencies:
+      react: '>=18.3.1 || ^19.0.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
 
   '@next/env@14.2.30':
     resolution: {integrity: sha512-KBiBKrDY6kxTQWGzKjQB7QirL3PiiOkV7KW98leHFjtVRKtft76Ra5qSA/SL75xT44dp6hOcqiiJ6iievLOYug==}
@@ -2512,6 +2528,16 @@ packages:
 
   '@u-elements/u-details@0.1.1':
     resolution: {integrity: sha512-VQDwumgWzXWe/vEUVs+jPvRVlNw+1epHjkNlCjx3IA5BSKSxAPRFZ47ew5iKuZhAKmK0wke0rreA7SO/pjZN6w==}
+
+  '@udir-design/react@file:@udir-design/react':
+    resolution: {directory: '@udir-design/react', type: directory}
+    peerDependencies:
+      '@types/react': ^18.3.7 || ^19.0.0
+      react: ^18.3.1 || ^19.0.0
+      react-dom: ^18.3.1 || ^19.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
 
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
@@ -7256,11 +7282,27 @@ snapshots:
 
   '@digdir/designsystemet-css@1.1.6': {}
 
+  '@digdir/designsystemet-react@1.1.6(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@floating-ui/dom': 1.7.2
+      '@floating-ui/react': 0.26.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@navikt/aksel-icons': 7.25.1(react@18.3.1)
+      '@radix-ui/react-slot': 1.2.3(@types/react@18.3.23)(react@18.3.1)
+      '@tanstack/react-virtual': 3.13.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@u-elements/u-combobox': 0.0.18
+      '@u-elements/u-datalist': 1.0.10
+      '@u-elements/u-details': 0.1.1
+      clsx: 2.1.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    transitivePeerDependencies:
+      - '@types/react'
+
   '@digdir/designsystemet-react@1.1.6(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@floating-ui/dom': 1.7.2
       '@floating-ui/react': 0.26.23(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@navikt/aksel-icons': 7.25.1
+      '@navikt/aksel-icons': 7.25.1(react@19.1.0)
       '@radix-ui/react-slot': 1.2.3(@types/react@19.1.8)(react@19.1.0)
       '@tanstack/react-virtual': 3.13.12(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@u-elements/u-combobox': 0.0.18
@@ -7441,11 +7483,25 @@ snapshots:
       '@floating-ui/core': 1.7.2
       '@floating-ui/utils': 0.2.10
 
+  '@floating-ui/react-dom@2.1.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@floating-ui/dom': 1.7.2
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
   '@floating-ui/react-dom@2.1.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@floating-ui/dom': 1.7.2
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
+
+  '@floating-ui/react@0.26.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@floating-ui/react-dom': 2.1.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@floating-ui/utils': 0.2.10
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      tabbable: 6.2.0
 
   '@floating-ui/react@0.26.23(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
@@ -7634,7 +7690,13 @@ snapshots:
       '@emnapi/runtime': 1.4.4
       '@tybys/wasm-util': 0.9.0
 
-  '@navikt/aksel-icons@7.25.1': {}
+  '@navikt/aksel-icons@7.25.1(react@18.3.1)':
+    optionalDependencies:
+      react: 18.3.1
+
+  '@navikt/aksel-icons@7.25.1(react@19.1.0)':
+    optionalDependencies:
+      react: 19.1.0
 
   '@next/env@14.2.30': {}
 
@@ -7704,7 +7766,7 @@ snapshots:
       ignore: 5.3.2
       minimatch: 9.0.3
       nx: 21.1.2(@swc-node/register@1.10.10(@swc/core@1.12.14(@swc/helpers@0.5.17))(@swc/types@0.1.23)(typescript@5.8.3))(@swc/core@1.12.14(@swc/helpers@0.5.17))
-      semver: 7.5.4
+      semver: 7.7.2
       tmp: 0.2.3
       tslib: 2.8.1
       yargs-parser: 21.1.1
@@ -8017,11 +8079,24 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
+  '@radix-ui/react-compose-refs@1.1.2(@types/react@18.3.23)(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+    optionalDependencies:
+      '@types/react': 18.3.23
+
   '@radix-ui/react-compose-refs@1.1.2(@types/react@19.1.8)(react@19.1.0)':
     dependencies:
       react: 19.1.0
     optionalDependencies:
       '@types/react': 19.1.8
+
+  '@radix-ui/react-slot@1.2.3(@types/react@18.3.23)(react@18.3.1)':
+    dependencies:
+      '@radix-ui/react-compose-refs': 1.1.2(@types/react@18.3.23)(react@18.3.1)
+      react: 18.3.1
+    optionalDependencies:
+      '@types/react': 18.3.23
 
   '@radix-ui/react-slot@1.2.3(@types/react@19.1.8)(react@19.1.0)':
     dependencies:
@@ -8317,6 +8392,12 @@ snapshots:
   '@swc/types@0.1.23':
     dependencies:
       '@swc/counter': 0.1.3
+
+  '@tanstack/react-virtual@3.13.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@tanstack/virtual-core': 3.13.12
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@tanstack/react-virtual@3.13.12(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
@@ -8616,6 +8697,18 @@ snapshots:
   '@u-elements/u-datalist@1.0.10': {}
 
   '@u-elements/u-details@0.1.1': {}
+
+  '@udir-design/react@file:@udir-design/react(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@digdir/designsystemet-css': 1.1.6
+      '@digdir/designsystemet-react': 1.1.6(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@navikt/aksel-icons': 7.25.1(react@18.3.1)
+      '@udir-design/theme': link:@udir-design/theme
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      tslib: 2.8.1
+    optionalDependencies:
+      '@types/react': 18.3.23
 
   '@ungap/structured-clone@1.3.0': {}
 
@@ -10669,7 +10762,7 @@ snapshots:
       lodash.isstring: 4.0.1
       lodash.once: 4.1.1
       ms: 2.1.3
-      semver: 7.5.4
+      semver: 7.7.2
 
   jsx-ast-utils@3.3.5:
     dependencies:
@@ -11458,7 +11551,7 @@ snapshots:
       bl: 4.1.0
       chalk: 4.1.2
       cli-cursor: 3.1.0
-      cli-spinners: 2.6.1
+      cli-spinners: 2.9.2
       is-interactive: 1.0.0
       log-symbols: 4.1.0
       strip-ansi: 6.0.1
