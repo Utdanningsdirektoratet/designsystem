@@ -72,7 +72,6 @@ export const Preview: Story = {
       <Field>
         <Label>Velg en destinasjon</Label>
         <Suggestion {...args}>
-          <Suggestion.Chips />
           <Suggestion.Input id={ctx.id} />
           <Suggestion.Clear />
           <Suggestion.List>
@@ -105,10 +104,11 @@ export const Controlled: Story = {
           <Label>Velg destinasjoner</Label>
           <Suggestion
             {...args}
-            value={value}
-            onValueChange={(items) => setValue(items.map((item) => item.value))}
+            selected={value}
+            onSelectedChange={(items) =>
+              setValue(items.map((item) => item.value))
+            }
           >
-            <Suggestion.Chips />
             <Suggestion.Input id={ctx.id} />
             <Suggestion.Clear />
             <Suggestion.List>
@@ -151,10 +151,11 @@ export const ControlledMultiple: Story = {
           <Suggestion
             {...args}
             multiple
-            value={value}
-            onValueChange={(items) => setValue(items.map((item) => item.value))}
+            selected={value}
+            onSelectedChange={(items) =>
+              setValue(items.map((item) => item.value))
+            }
           >
-            <Suggestion.Chips />
             <Suggestion.Input id={ctx.id} />
             <Suggestion.Clear />
             <Suggestion.List>
@@ -192,7 +193,6 @@ export const DefaultValue: Story = {
       <Field>
         <Label>Velg en destinasjon</Label>
         <Suggestion {...args} defaultValue={['Sogndal']}>
-          <Suggestion.Chips />
           <Suggestion.Input id={ctx.id} />
           <Suggestion.Clear />
           <Suggestion.List>
@@ -218,7 +218,6 @@ export const CustomFilterAlt1: Story = {
             !input.value || index === Number(input.value) - 1
           }
         >
-          <Suggestion.Chips />
           <Suggestion.Input id={ctx.id} />
           <Suggestion.Clear />
           <Suggestion.List>
@@ -243,7 +242,6 @@ export const CustomFilterAlt2: Story = {
       <Field>
         <Label>Skriv inn et tall mellom 1-6</Label>
         <Suggestion {...args} filter={false}>
-          <Suggestion.Chips />
           <Suggestion.Input
             id={ctx.id}
             onInput={({ currentTarget }) => setValue(currentTarget.value)}
@@ -272,11 +270,10 @@ export const AlwaysShowAll: Story = {
         <Label>Viser alle options også når valgt</Label>
         <Suggestion
           {...args}
-          value={value}
+          selected={value}
           filter={false}
-          onValueChange={(values) => setValue(values)}
+          onSelectedChange={(values) => setValue(values)}
         >
-          <Suggestion.Chips />
           <Suggestion.Input id={ctx.id} />
           <Suggestion.Clear />
           <Suggestion.List>
@@ -320,7 +317,6 @@ export const FetchExternal: Story = {
       <Field lang="en">
         <Label>Search for countries (in english)</Label>
         <Suggestion {...args} filter={false}>
-          <Suggestion.Chips />
           <Suggestion.Input id={ctx.id} onInput={handleInput} />
           <Suggestion.Clear />
           <Suggestion.List singular="%d country" plural="%d countries">

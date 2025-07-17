@@ -167,13 +167,13 @@ exports[`Form Story 1`] = `
         <u-combobox id="county">
           <input
             placeholder
-            popovertarget="county-list"
             aria-invalid="false"
             type="text"
-            list="county-list"
+            list=":u-datalist1"
             aria-label=", "
+            popovertarget=":u-datalist1"
             aria-autocomplete="list"
-            aria-controls="county-list"
+            aria-controls=":u-datalist1"
             aria-expanded="true"
             autocomplete="off"
             role="combobox"
@@ -190,12 +190,12 @@ exports[`Form Story 1`] = `
             data-nofilter
             data-sr-singular="%d forslag"
             data-sr-plural="%d forslag"
-            id="county-list"
             popover="manual"
             hidden
             role="listbox"
             tabindex="-1"
             aria-multiselectable="false"
+            id=":u-datalist1"
             style="width: 536px; translate: <removed>;"
           >
             <u-option
