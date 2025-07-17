@@ -35,7 +35,7 @@ exports[`Counter 1`] = `
   <textarea
     rows="2"
     id="counter"
-    aria-describedby="counter:validation:1  counter:description:1"
+    aria-describedby="counter:validation:1 counter:description:1"
   >
   </textarea>
   <div
@@ -106,7 +106,7 @@ exports[`Preview 1`] = `
     aria-invalid="true"
     type="text"
     value="ola nordmann@udir.no"
-    aria-describedby="preview:validation:1  preview:description:1"
+    aria-describedby="preview:validation:1 preview:description:1"
   >
   <p
     data-field="validation"

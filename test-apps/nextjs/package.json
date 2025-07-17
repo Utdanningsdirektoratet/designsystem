@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "typecheck": "tsc --build"
   },
   "dependencies": {
     "@udir-design/react": "workspace:*",
@@ -18,5 +19,10 @@
     "@types/react-dom": "^18.3.7",
     "eslint-config-next": "^14.2.30",
     "sass": "^1.89.2"
+  },
+  "dependenciesMeta": {
+    "@udir-design/react": {
+      "injected": true
+    }
   }
 }

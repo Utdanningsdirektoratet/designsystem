@@ -2,7 +2,8 @@
   "name": "test-app-vite",
   "type": "module",
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "typecheck": "tsc --build"
   },
   "dependencies": {
     "@udir-design/react": "workspace:*",
@@ -16,7 +17,13 @@
     "@vitejs/plugin-react": "^4.6.0",
     "@vitejs/plugin-react-swc": "^3.10.2",
     "sass": "^1.89.2",
-    "vite": "^7.0.4",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite": "^7.0.5",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.2.4"
+  },
+  "dependenciesMeta": {
+    "@udir-design/react": {
+      "injected": true
+    }
   }
 }
