@@ -58,7 +58,7 @@ export const Preview: Story = {
         await waitFor(() =>
           expect(input).toHaveAttribute(
             'aria-describedby',
-            validationMessage.id + '  ' + description.id,
+            `${validationMessage.id} ${description.id}`,
           ),
         );
       },

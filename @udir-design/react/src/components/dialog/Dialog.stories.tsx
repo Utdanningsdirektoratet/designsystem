@@ -322,7 +322,6 @@ export const DialogWithSuggestion: Story = {
             <Field>
               <Label>Velg en kommune</Label>
               <Suggestion>
-                <Suggestion.Chips />
                 <Suggestion.Input id={`${ctx.id}-input`} />
                 <Suggestion.Clear />
                 <Suggestion.List>
