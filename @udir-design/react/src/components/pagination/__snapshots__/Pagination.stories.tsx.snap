@@ -1,5 +1,55 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Mobile 1`] = `
+<nav aria-label="Sidenavigering">
+  <ul>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+        aria-label="Forrige side"
+      >
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+        aria-label="Side 2"
+      >
+        2
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="primary"
+        type="button"
+        aria-label="Side 3"
+      >
+        3
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+        aria-label="Side 4"
+      >
+        4
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+        aria-label="Neste side"
+      >
+      </button>
+    </li>
+  </ul>
+</nav>
+`;
+
 exports[`Preview 1`] = `
 <nav aria-label="Sidenavigering">
   <ul>
@@ -85,85 +135,95 @@ exports[`Preview 1`] = `
 `;
 
 exports[`With Anchor 1`] = `
-<nav aria-label="Sidenavigering">
-  <ul>
-    <li>
-      <a
-        href="#forrige-side"
-        aria-disabled="false"
-        data-variant="tertiary"
-        aria-label="Forrige side"
-      >
-        Forrige
-      </a>
-    </li>
-    <li>
-      <a
-        href="#side-1"
-        data-variant="tertiary"
-        aria-label="Side 1"
-      >
-        1
-      </a>
-    </li>
-    <li>
-      <a
-        href="#side-2"
-        data-variant="primary"
-        aria-label="Side 2"
-        aria-current="page"
-      >
-        2
-      </a>
-    </li>
-    <li>
-      <a
-        href="#side-3"
-        data-variant="tertiary"
-        aria-label="Side 3"
-      >
-        3
-      </a>
-    </li>
-    <li>
-      <a
-        href="#side-4"
-        data-variant="tertiary"
-        aria-label="Side 4"
-      >
-        4
-      </a>
-    </li>
-    <li>
-      <a
-        href="#side-5"
-        data-variant="tertiary"
-        aria-label="Side 5"
-      >
-        5
-      </a>
-    </li>
-    <li>
-    </li>
-    <li>
-      <a
-        href="#side-10"
-        data-variant="tertiary"
-        aria-label="Side 10"
-      >
-        10
-      </a>
-    </li>
-    <li>
-      <a
-        href="#neste-side"
-        aria-disabled="false"
-        data-variant="tertiary"
-        aria-label="Neste side"
-      >
-        Neste
-      </a>
-    </li>
-  </ul>
-</nav>
+<div style="gap: 70px; display: flex; flex-direction: column;">
+  <div>
+    <input
+      placeholder
+      aria-label="Søk"
+      type="search"
+      value="https://udir.design.no/pagination"
+    >
+  </div>
+  <nav aria-label="Sidenavigering">
+    <ul>
+      <li>
+        <a
+          href="#side-1"
+          aria-disabled="false"
+          data-variant="tertiary"
+          aria-label="Forrige side"
+        >
+          Forrige
+        </a>
+      </li>
+      <li>
+        <a
+          href="#side-1"
+          data-variant="tertiary"
+          aria-label="Side 1"
+        >
+          1
+        </a>
+      </li>
+      <li>
+        <a
+          href="#side-2"
+          data-variant="primary"
+          aria-label="Side 2"
+          aria-current="page"
+        >
+          2
+        </a>
+      </li>
+      <li>
+        <a
+          href="#side-3"
+          data-variant="tertiary"
+          aria-label="Side 3"
+        >
+          3
+        </a>
+      </li>
+      <li>
+        <a
+          href="#side-4"
+          data-variant="tertiary"
+          aria-label="Side 4"
+        >
+          4
+        </a>
+      </li>
+      <li>
+        <a
+          href="#side-5"
+          data-variant="tertiary"
+          aria-label="Side 5"
+        >
+          5
+        </a>
+      </li>
+      <li>
+      </li>
+      <li>
+        <a
+          href="#side-10"
+          data-variant="tertiary"
+          aria-label="Side 10"
+        >
+          10
+        </a>
+      </li>
+      <li>
+        <a
+          href="#side-3"
+          aria-disabled="false"
+          data-variant="tertiary"
+          aria-label="Neste side"
+        >
+          Neste
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
 `;
