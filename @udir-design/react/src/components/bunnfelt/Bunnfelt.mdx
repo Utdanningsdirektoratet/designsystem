@@ -1,0 +1,27 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import * as BunnfeltStories from './Bunnfelt.stories';
+
+<Meta of={BunnfeltStories} />
+
+# Bunnfelt
+
+`Bunnfelt` brukes nederst på siden for viktig informasjon og lenker.
+
+**Passer til å**
+
+- lenke til tilgjengelighetserklæring
+
+**Passer ikke til å**
+
+- bruke som en "ekstra" meny
+
+## Slik bruker du Bunnfelt
+
+<Primary />
+<Controls />
+
+```tsx
+import { Bunnfelt } from '@udir-design/react';
+
+<Bunnfelt>Lenke</Bunnfelt>;
+```
