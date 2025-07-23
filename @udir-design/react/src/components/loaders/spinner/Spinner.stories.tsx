@@ -3,13 +3,14 @@ import { Spinner } from './Spinner';
 
 const meta: Meta<typeof Spinner> = {
   component: Spinner,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     customStyles: {
-      display: 'grid',
+      display: 'flex',
       gap: '1rem',
-      gridTemplateColumns: 'repeat(3, auto)',
-      placeItems: 'center',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      alignItems: 'center',
     },
   },
 };
@@ -23,23 +24,9 @@ export const Preview: Story = {
   },
 };
 
-export const Variants: Story = {
-  args: {
-    'aria-label': 'Henter kaffe...',
-    'data-size': 'xl',
-  },
-  render: (args) => (
-    <>
-      <Spinner {...args} data-color="neutral" />
-      <Spinner {...args} data-color="accent" />
-      <Spinner {...args} data-color="support2" />
-    </>
-  ),
-};
-
 export const Sizes: Story = {
   args: {
-    'aria-label': 'Henter kaffe...',
+    'aria-label': 'Laster...',
   },
   render: (args) => (
     <>
@@ -49,6 +36,21 @@ export const Sizes: Story = {
       <Spinner {...args} data-size="md" />
       <Spinner {...args} data-size="lg" />
       <Spinner {...args} data-size="xl" />
+    </>
+  ),
+};
+
+export const Variants: Story = {
+  args: {
+    'aria-label': 'Laster...',
+    'data-size': 'xl',
+  },
+  render: (args) => (
+    <>
+      <Spinner {...args} data-color="neutral" />
+      <Spinner {...args} data-color="accent" />
+      <Spinner {...args} data-color="support1" />
+      <Spinner {...args} data-color="support2" />
     </>
   ),
 };
