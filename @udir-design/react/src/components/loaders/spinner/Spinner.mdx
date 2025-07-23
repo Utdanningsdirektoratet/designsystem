@@ -1,11 +1,24 @@
-import { Meta, Primary, Controls, Canvas } from '@storybook/blocks';
+import { Meta, Primary, Controls, Canvas } from '@storybook/addon-docs/blocks';
 import * as SpinnerStories from './Spinner.stories';
 
 <Meta of={SpinnerStories} />
 
 # Spinner
 
-`Spinner` brukes for å indikere at en handling pågår. Dette kan være når vi venter på at et skjema skal sendes inn.
+`Spinner` brukes for å indikere at en handling pågår. Dette kan for eksempel være når vi venter på at et skjema skal sendes inn.
+
+**Passer til å**
+
+- laste innhold på siden
+- fortelle brukeren at en handling midlertidig har stoppet applikasjonen
+- fortelle brukeren at data blir lagret eller oppdatert
+
+**Passer ikke til å**
+
+- laste når en innlasting tar mindre enn 1 sekund
+- fortelle brukeren at enkeltelementer på siden blir lastet inn (vurder [`Skeleton`](/docs/components-loaders-skeleton--docs))
+
+## Slik bruker du Spinner
 
 <Primary />
 <Controls />
@@ -17,24 +30,11 @@ Størrelsen vil være mindre i knapper, men større dersom den er ved et skjemaf
 
 <Canvas of={SpinnerStories.Sizes} />
 
-## Varianter
+## Farger
+
+Du kan bruke alle identitetsfargene på `Spinner`.
 
 <Canvas of={SpinnerStories.Variants} />
-
-## Retningslinjer for spinner
-
-`Spinner` brukes når vi venter på at en handling skal fullføres. Dette kan være når vi venter på at et skjema skal sendes inn.
-
-**Passer til å**
-
-- laste innhold på siden
-- fortelle brukeren at en handling midlertidig har stoppet applikasjonen
-- fortelle brukeren når lasting vil ta mer enn 1 sekund
-- fortelle brukeren at data blir lagret eller oppdatert
-
-**Passer ikke**
-
-- når en lasting tar mindre enn 1 sekund
 
 ## Tilgjengelighet
 
