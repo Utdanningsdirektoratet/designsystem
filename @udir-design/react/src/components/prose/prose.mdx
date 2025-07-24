@@ -1,0 +1,46 @@
+# Prose
+
+**Prose-komponenten** brukes for å vise lengre tekstinnhold med god lesbarhet og konsekvent spacing mellom elementer. Den egner seg godt på sider som inneholder artikler, hjelpetekster, informasjonsinnhold og lignende, der typografi og struktur er viktig.
+
+## Hensikt
+
+Når man setter opp mye innhold manuelt, er det lett å få ulik spacing og typografisk uorden. `Prose` sikrer:
+
+- Automatisk spacing mellom elementer
+- Skalerende spacing over overskrifter, avhengig av nivå
+- Forutsigbar lesbarhet og struktur
+- Konsistent vertikal rytme, uavhengig av komponentrekkefølge
+
+## Standard spacing
+
+Inne i en `Prose`-blokk er avstanden mellom elementer som avsnitt, lister, bilder og sitater automatisk satt til:
+
+```plaintext
+Mellomrom mellom elementer = size-6 = 24px (i data-size medium)
+```
+Dette sikrer jevn lufting og tydelig inndeling av tekstinnhold.
+
+## Spacing over prosa-overskrifter
+
+For å sikre god hierarki og visuell rytme i innholdet, bruker vi varierende spacing over overskrifter basert på nivået på overskriften.
+
+Spacing over overskrifter er kun nødvendig når det finnes innhold rett over – for eksempel tekst, bilde eller komponent. Den øverste overskriften på en side trenger ikke spacing over seg.
+
+| Overskriftsnivå | Token | Verdi i px (medium) | Kommentar |
+|-----------------|-------|---------------------|-----------|
+| `heading-xxlarge` | `size-6` | 24px | Brukes typisk som hovedtittel |
+| `heading-xlarge` | `size-5` | 20px | Seksjonstittel |
+| `heading-large` | `size-4` | 16px | Delseksjon |
+| `heading-medium` | `size-3` | 12px | Brødtekstnær heading |
+| `heading-small` | `size-2` | 8px | Subheading eller tilleggsnivå |
+| `heading-xsmall` | `size-1` | 4px | Ikke vanlig i brødtekst |
+| `heading-2xsmall` | `size-0` | 0px | Brukes kun i spesialtilfeller |
+
+Spacing legges kun over headingen, og ikke under. Dette skaper en visuell tilhørighet mellom heading og innholdet som følger.
+
+## Retningslinjer
+- Bruk Prose der det er mye brødtekst. Ikke bruk den til UI-tungt innhold med komponenter i flere kolonner.
+- Heading får spacing over seg kun når det finnes noe rett før (som et avsnitt eller annen komponent). Den første overskriften på en side skal ikke ha spacing over seg.
+- Unngå manuell marginstyring, bruk heller heading-nivåene og Prose-ens standard spacing for å sikre visuell rytme.
+- Kombiner gjerne med tekstkomponenter som Intro, Ingress og Blockquote for rikere typografisk variasjon.
+
