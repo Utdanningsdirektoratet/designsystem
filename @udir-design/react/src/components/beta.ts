@@ -7,6 +7,7 @@ export * from './avatar/Avatar';
 export * from './breadcrumbs/Breadcrumbs';
 export * from './button/Button';
 export * from './card/Card';
+export * from './chip/Chip';
 export * from './checkbox/Checkbox';
 export * from './details/Details';
 export * from './dialog/Dialog';

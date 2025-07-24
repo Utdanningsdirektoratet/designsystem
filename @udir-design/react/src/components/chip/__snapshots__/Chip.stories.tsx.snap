@@ -1,7 +1,131 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Button 1`] = `
+<div style="display: flex; flex-direction: column; gap: var(--ds-size-4);">
+  <div>
+    <input
+      placeholder
+      aria-label="søk"
+      type="search"
+      value="Skole"
+    >
+    <button
+      data-icon="true"
+      data-variant="tertiary"
+      type="reset"
+      aria-label="Tøm"
+    >
+    </button>
+    <button
+      data-variant="primary"
+      type="submit"
+    >
+      Søk
+    </button>
+  </div>
+  <div style="display: flex; gap: var(--ds-size-2);">
+    <p data-variant="default">
+      Hurtigsøk:
+    </p>
+    <button type="button">
+      Læreplaner
+    </button>
+    <button type="button">
+      Skole
+    </button>
+    <button type="button">
+      Eksamen
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Checkbox 1`] = `
+<label>
+  <input
+    aria-label="2020"
+    type="checkbox"
+  >
+  2020
+</label>
+<label>
+  <input
+    aria-label="2021"
+    type="checkbox"
+  >
+  2021
+</label>
+<label>
+  <input
+    aria-label="2022"
+    type="checkbox"
+  >
+  2022
+</label>
+<label>
+  <input
+    aria-label="2023"
+    type="checkbox"
+  >
+  2023
+</label>
+<label>
+  <input
+    aria-label="2024"
+    type="checkbox"
+  >
+  2024
+</label>
+<label>
+  <input
+    aria-label="2025"
+    type="checkbox"
+  >
+  2025
+</label>
+`;
+
 exports[`Preview 1`] = `
-<button type="button">
-  Chip.Button
+<label>
+  <input
+    type="radio"
+    value="nynorsk"
+    checked
+    name="my-radio"
+  >
+  Nynorsk
+</label>
+<label>
+  <input
+    type="radio"
+    value="bokmål"
+    name="my-radio"
+  >
+  Bokmål
+</label>
+<label>
+  <input
+    type="radio"
+    value="engelsk"
+    name="my-radio"
+  >
+  Engelsk
+</label>
+`;
+
+exports[`Removable 1`] = `
+<button
+  type="button"
+  data-removable="true"
+  aria-label="Slett Grunnskole"
+>
+  Grunnskole
+</button>
+<button
+  type="button"
+  data-removable="true"
+  aria-label="Slett Videregående"
+>
+  Videregående
 </button>
 `;
