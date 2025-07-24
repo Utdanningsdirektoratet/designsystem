@@ -1,13 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { within, expect, userEvent, waitFor } from 'storybook/test';
 import { Tooltip } from './Tooltip';
 import { Button } from '../button/Button';
-import { expect, userEvent, waitFor, within } from '@storybook/test';
+import { PlusCircleIcon, TrashIcon } from '@navikt/aksel-icons';
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
   tags: ['alpha'],
   parameters: {
-    customStyles: { margin: '2rem' },
+    customStyles: {
+      margin: '2rem',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
   },
 };
 
@@ -16,8 +22,12 @@ type Story = StoryObj<typeof Tooltip>;
 
 export const Preview: Story = {
   args: {
-    content: 'Tooltip tekst',
-    children: <Button>Hold peker over meg</Button>,
+    content: 'Legg til',
+    children: (
+      <Button aria-label="Legg til" variant="tertiary" icon>
+        <PlusCircleIcon aria-hidden />
+      </Button>
+    ),
   },
   play: async ({ canvasElement, step, args }) => {
     const canvas = within(canvasElement);
@@ -30,7 +40,7 @@ export const Preview: Story = {
 
     await step('Hovering over the button displays the tooltip', async () => {
       await userEvent.hover(trigger);
-      const tooltip = canvas.getByRole('tooltip');
+      const tooltip = canvas.queryByText(args.content);
       await waitFor(() => {
         expect(tooltip).toBeVisible();
       });
@@ -50,17 +60,14 @@ export const Preview: Story = {
   },
 };
 
-export const WithString: Story = {
-  args: {
-    content: 'Tooltip text',
-    children: 'Hold peker over meg',
-  },
-};
-
 export const Placement: Story = {
   args: {
-    content: 'Tooltip text',
+    content: 'Slett',
     placement: 'bottom',
-    children: 'Hold peker over meg',
+    children: (
+      <Button aria-label="Slett" data-color="danger" icon>
+        <TrashIcon aria-hidden />
+      </Button>
+    ),
   },
 };
