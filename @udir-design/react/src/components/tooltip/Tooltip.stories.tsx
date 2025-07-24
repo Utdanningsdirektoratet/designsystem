@@ -1,13 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { within, expect, userEvent, waitFor } from 'storybook/test';
 import { Tooltip } from './Tooltip';
 import { Button } from '../button/Button';
-import { expect, userEvent, waitFor, within } from '@storybook/test';
+import {
+  FilesIcon,
+  FloppydiskIcon,
+  PlusCircleIcon,
+  PrinterSmallIcon,
+  TrashIcon,
+} from '@navikt/aksel-icons';
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
   tags: ['alpha'],
   parameters: {
-    customStyles: { margin: '2rem' },
+    customStyles: {
+      margin: '2rem',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
   },
 };
 
@@ -16,9 +28,15 @@ type Story = StoryObj<typeof Tooltip>;
 
 export const Preview: Story = {
   args: {
-    content: 'Tooltip tekst',
-    children: <Button>Hold peker over meg</Button>,
+    content: 'Legg til',
   },
+  render: (args) => (
+    <Tooltip {...args}>
+      <Button aria-label="Legg til" variant="tertiary" icon>
+        <PlusCircleIcon aria-hidden />
+      </Button>
+    </Tooltip>
+  ),
   play: async ({ canvasElement, step, args }) => {
     const canvas = within(canvasElement);
     const trigger = canvas.getByRole('button');
@@ -30,7 +48,7 @@ export const Preview: Story = {
 
     await step('Hovering over the button displays the tooltip', async () => {
       await userEvent.hover(trigger);
-      const tooltip = canvas.getByRole('tooltip');
+      const tooltip = canvas.queryByText(args.content);
       await waitFor(() => {
         expect(tooltip).toBeVisible();
       });
@@ -50,17 +68,31 @@ export const Preview: Story = {
   },
 };
 
-export const WithString: Story = {
-  args: {
-    content: 'Tooltip text',
-    children: 'Hold peker over meg',
-  },
-};
-
 export const Placement: Story = {
-  args: {
-    content: 'Tooltip text',
-    placement: 'bottom',
-    children: 'Hold peker over meg',
+  render: (args) => {
+    return (
+      <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
+        <Tooltip placement="left" content="Slett">
+          <Button aria-label="Slett" icon variant="secondary">
+            <TrashIcon aria-hidden />
+          </Button>
+        </Tooltip>
+        <Tooltip placement="top" content="Lagre">
+          <Button aria-label="Lagre" icon variant="secondary">
+            <FloppydiskIcon aria-hidden />
+          </Button>
+        </Tooltip>
+        <Tooltip placement="bottom" content="ctrl + p">
+          <Button aria-label="Print" icon variant="secondary">
+            <PrinterSmallIcon aria-hidden />
+          </Button>
+        </Tooltip>
+        <Tooltip placement="right" content="Kopier">
+          <Button aria-label="Kopier" icon variant="secondary">
+            <FilesIcon aria-hidden />
+          </Button>
+        </Tooltip>
+      </div>
+    );
   },
 };
