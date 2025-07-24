@@ -3,7 +3,6 @@
  */
 
 export * from './badge/Badge';
-export * from './chip/Chip';
 export * from './dropdown/Dropdown';
 export * from './errorSummary/ErrorSummary';
 export * from './loaders';

@@ -1,12 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { within, expect, waitFor } from 'storybook/test';
 import { Chip } from './Chip';
-import { expect, fn, within } from '@storybook/test';
+import { Search } from '../beta';
+import { useState } from 'react';
+import { Paragraph } from '../alpha';
 
 const meta: Meta<typeof Chip.Radio> = {
   component: Chip.Radio,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
-    customStyles: { display: 'flex', gap: 'var(--ds-size-2)' },
+    customStyles: {
+      display: 'flex',
+      gap: 'var(--ds-size-2)',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
   },
 };
 
@@ -16,107 +24,217 @@ type Story = StoryObj<typeof Chip.Radio>;
 export const Preview: Story = {
   render: (args) => (
     <>
-      <Chip.Radio {...args} name="my-radio" value="nynorsk" defaultChecked>
-        Nynorsk
+      <Chip.Button
+        data-color={args['data-color']}
+        data-size={args['data-size']}
+        name="my-button"
+        value="button"
+      >
+        Button
+      </Chip.Button>
+      <Chip.Checkbox {...args} name="my-checkbox" value="checkbox">
+        Checkbox
+      </Chip.Checkbox>
+      <Chip.Radio {...args} name="my-radio" value="radio">
+        Radio
       </Chip.Radio>
-      <Chip.Radio {...args} name="my-radio" value="bokmål">
-        Bokmål
-      </Chip.Radio>
+      <Chip.Removable
+        data-color={args['data-color']}
+        data-size={args['data-size']}
+        name="my-removable"
+        value="removable"
+      >
+        Removable
+      </Chip.Removable>
     </>
   ),
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
-    const inputNynorsk = canvas.getByRole('radio', { name: 'Nynorsk' });
-    const inputBokmal = canvas.getByRole('radio', { name: 'Bokmål' });
+    const inputButton = canvas.getByRole('button', { name: 'Button' });
+    const inputCheckbox = canvas.getByRole('checkbox', { name: 'Checkbox' });
+    const inputRadio = canvas.getByRole('radio', { name: 'Radio' });
 
-    await step('Render label and input as native element', async () => {
-      const label = canvas.getByLabelText('Nynorsk');
+    await step('Render all labels and input as native element', async () => {
+      expect(inputButton).toBeInTheDocument();
+      expect(inputCheckbox).toBeInTheDocument();
+      expect(inputRadio).toBeInTheDocument();
+    });
+
+    await step('Render labels', async () => {
+      const label = canvas.getByLabelText('Radio');
       expect(label).toBeInTheDocument();
-      expect(inputNynorsk).toBeInTheDocument();
     });
 
-    await step('Select Nynorsk', async () => {
-      inputNynorsk.click();
-      expect(inputNynorsk).toBeChecked();
-      expect(inputBokmal).not.toBeChecked();
-    });
-
-    await step('Select Bokmal', async () => {
-      inputBokmal.click();
-      expect(inputNynorsk).not.toBeChecked();
-      expect(inputBokmal).toBeChecked();
+    await step('Select Checkbox', async () => {
+      inputCheckbox.click();
+      expect(inputCheckbox).toBeChecked();
+      expect(inputRadio).not.toBeChecked();
     });
   },
 };
 
 export const Checkbox: StoryObj<typeof Chip.Checkbox> = {
-  render: (args) => <Chip.Checkbox {...args}>Nynorsk</Chip.Checkbox>,
+  render: () => {
+    const options = ['2020', '2021', '2022', '2023', '2024', '2025'];
+
+    return (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 'var(--ds-size-4)',
+        }}
+      >
+        <Paragraph>Vis data for</Paragraph>
+        <div style={{ display: 'flex', gap: 'var(--ds-size-1)' }}>
+          {options.map((year) => (
+            <Chip.Checkbox aria-label={year}>{year}</Chip.Checkbox>
+          ))}
+        </div>
+      </div>
+    );
+  },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
-    const input = canvas.getByRole('checkbox');
+    const inputs = canvas.getAllByRole('checkbox');
 
     await step('Render label and input as native element', async () => {
-      const label = canvas.getByLabelText('Nynorsk');
+      const label = canvas.getByLabelText('2021');
       expect(label).toBeInTheDocument();
-      expect(input).toBeInTheDocument();
+      expect(inputs[0]).toBeInTheDocument();
     });
 
     await step('Toggle checkbox', async () => {
-      input.click();
-      expect(input).toBeChecked();
-      input.click();
-      expect(input).not.toBeChecked();
+      inputs[0].click();
+      expect(inputs[0]).toBeChecked();
+      inputs[0].click();
+      expect(inputs[0]).not.toBeChecked();
     });
   },
 };
 
-export const Removable: StoryObj<typeof Chip.Removable> = {
-  args: {
-    'aria-label': 'Slett Norge',
-    onClick: fn(),
+export const Radio: StoryObj<typeof Chip.Checkbox> = {
+  render: () => {
+    const options = ['Barnehage', 'Grunnskole', 'Videregående'];
+
+    return (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 'var(--ds-size-4)',
+        }}
+      >
+        <Paragraph>Vis data for</Paragraph>
+        <div style={{ display: 'flex', gap: 'var(--ds-size-1)' }}>
+          {options.map((grade) => (
+            <Chip.Radio name="my-radio" aria-label={grade}>
+              {grade}
+            </Chip.Radio>
+          ))}
+        </div>
+      </div>
+    );
   },
-  render: (args) => <Chip.Removable {...args}>Norge</Chip.Removable>,
-  play: async ({ canvasElement, step, args }) => {
+};
+
+export const Removable: StoryObj<typeof Chip.Removable> = {
+  render: () => {
+    const schoolOptions = ['Barnehage', 'Grunnskole', 'Videregående'];
+    const [filter, setFilter] = useState(schoolOptions);
+
+    return (
+      <>
+        {filter.map((item) => (
+          <Chip.Removable
+            aria-label={`Slett ${item}`}
+            onClick={() => {
+              setFilter((x) =>
+                x.length === 1 ? schoolOptions : x.filter((y) => y !== item),
+              );
+            }}
+          >
+            {item}
+          </Chip.Removable>
+        ))}
+      </>
+    );
+  },
+  play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
-    const button = canvas.getByRole('button');
+    const buttons = canvas.getAllByRole('button');
 
     await step('Render label and button as native element', async () => {
-      const label = canvas.getByText('Norge');
+      const label = canvas.getByText('Barnehage');
       expect(label).toBeInTheDocument();
-      expect(button).toBeInTheDocument();
+      expect(buttons[0]).toBeInTheDocument();
     });
 
     await step('Remove chip', async () => {
-      button.click();
-      expect(args.onClick).toHaveBeenCalled();
+      buttons[0].click();
+
+      await waitFor(() => {
+        const newButtons = canvas.getAllByRole('button');
+        expect(newButtons).toHaveLength(buttons.length - 1);
+      });
     });
   },
 };
 
 export const Button: StoryObj<typeof Chip.Button> = {
-  args: {
-    onClick: fn(),
+  render: () => {
+    const [inputValue, setInputValue] = useState('');
+
+    return (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 'var(--ds-size-4)',
+        }}
+      >
+        <Search>
+          <Search.Input
+            aria-label="søk"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+          <Search.Clear />
+          <Search.Button type="submit" />
+        </Search>
+        <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
+          <Paragraph>Hurtigsøk: </Paragraph>
+          <Chip.Button onClick={() => setInputValue('Læreplaner')}>
+            Læreplaner
+          </Chip.Button>
+          <Chip.Button onClick={() => setInputValue('Skole')}>
+            Skole
+          </Chip.Button>
+          <Chip.Button onClick={() => setInputValue('Engelsk')}>
+            Eksamen
+          </Chip.Button>
+        </div>
+      </div>
+    );
   },
-  render: (args) => (
-    <>
-      <Chip.Button {...args}>Søk etter nynorsk</Chip.Button>
-      <Chip.Button {...args}>Søk etter bokmål</Chip.Button>
-      <Chip.Button {...args}>Søk etter engelsk</Chip.Button>
-    </>
-  ),
-  play: async ({ canvasElement, step, args }) => {
+  play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
     const buttons = canvas.getAllByRole('button');
 
     await step('Render label and button as native element', async () => {
-      const label = canvas.getByText('Søk etter nynorsk');
+      const label = canvas.getByText('Skole');
       expect(label).toBeInTheDocument();
-      expect(buttons).toHaveLength(3);
+      expect(buttons).toHaveLength(4);
     });
 
     await step('Click button', async () => {
-      buttons[1].click();
-      expect(args.onClick).toHaveBeenCalled();
+      const skoleButton = canvas.getByText('Skole');
+      skoleButton.click();
+
+      await waitFor(() => {
+        const input = canvas.getByLabelText('søk') as HTMLInputElement;
+        expect(input.value).toBe('Skole');
+      });
     });
   },
 };
