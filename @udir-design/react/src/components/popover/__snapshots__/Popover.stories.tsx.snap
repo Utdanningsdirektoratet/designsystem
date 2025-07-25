@@ -128,7 +128,7 @@ exports[`Preview 1`] = `
   id=":r0:"
   popover="manual"
   data-placement="top"
-  style="--ds-popover-arrow-x: 87px; --ds-popover-arrow-y: 100%; translate: 513.086px 19px;"
+  style="--ds-popover-arrow-x: 82px; --ds-popover-arrow-y: 100%; translate: 518.453px 19px;"
 >
   popover content
 </div>
@@ -137,7 +137,7 @@ exports[`Preview 1`] = `
 exports[`Variants 1`] = `
 <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--ds-size-2); height: 100%; width: 100%;">
   <button
-    data-variant="primary"
+    data-variant="tertiary"
     type="button"
     popovertarget=":r4:"
   >
@@ -153,7 +153,7 @@ exports[`Variants 1`] = `
     neutralDefault
   </div>
   <button
-    data-variant="primary"
+    data-variant="tertiary"
     type="button"
     popovertarget=":r5:"
   >
@@ -170,7 +170,7 @@ exports[`Variants 1`] = `
     neutralTinted
   </div>
   <button
-    data-variant="primary"
+    data-variant="tertiary"
     type="button"
     popovertarget=":r6:"
   >
@@ -186,7 +186,7 @@ exports[`Variants 1`] = `
     dangerDefault
   </div>
   <button
-    data-variant="primary"
+    data-variant="tertiary"
     type="button"
     popovertarget=":r7:"
   >
@@ -203,7 +203,7 @@ exports[`Variants 1`] = `
     dangerTinted
   </div>
   <button
-    data-variant="primary"
+    data-variant="tertiary"
     type="button"
     popovertarget=":r8:"
   >
@@ -219,7 +219,7 @@ exports[`Variants 1`] = `
     infoDefault
   </div>
   <button
-    data-variant="primary"
+    data-variant="tertiary"
     type="button"
     popovertarget=":r9:"
   >
@@ -236,7 +236,7 @@ exports[`Variants 1`] = `
     infoTinted
   </div>
   <button
-    data-variant="primary"
+    data-variant="tertiary"
     type="button"
     popovertarget=":ra:"
   >
@@ -252,7 +252,7 @@ exports[`Variants 1`] = `
     warningDefault
   </div>
   <button
-    data-variant="primary"
+    data-variant="tertiary"
     type="button"
     popovertarget=":rb:"
   >

@@ -191,7 +191,7 @@ export const Variants: Story = {
       >
         {Object.entries(VariantsMap).map(([key, props], index) => (
           <Popover.TriggerContext key={key}>
-            <Popover.Trigger>popover</Popover.Trigger>
+            <Popover.Trigger variant="tertiary">popover</Popover.Trigger>
             <Popover
               {...args}
               open={open}
