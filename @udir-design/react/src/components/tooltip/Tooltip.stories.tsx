@@ -6,7 +6,7 @@ import { PlusCircleIcon, TrashIcon } from '@navikt/aksel-icons';
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     customStyles: {
       margin: '2rem',
