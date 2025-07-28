@@ -1,7 +1,37 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Colors 1`] = `
+<span data-color="neutral">
+  neutral
+</span>
+<span data-color="success">
+  success
+</span>
+<span data-color="warning">
+  warning
+</span>
+<span data-color="danger">
+  danger
+</span>
+<span data-color="info">
+  info
+</span>
+`;
+
 exports[`Preview 1`] = `
 <span>
-  Ny
+  New
+</span>
+`;
+
+exports[`Sizes 1`] = `
+<span data-size="sm">
+  sm
+</span>
+<span data-size="md">
+  md
+</span>
+<span data-size="lg">
+  lg
 </span>
 `;
