@@ -26,3 +26,4 @@ export * from './skeleton/Skeleton';
 export * from './spinner/Spinner';
 export * from './textarea/Textarea';
 export * from './textfield/Textfield';
+export * from './tooltip/Tooltip';

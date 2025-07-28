@@ -12,5 +12,4 @@ export * from './table/Table';
 export * from './tabs/Tabs';
 export * from './tag/Tag';
 export * from './toggleGroup/ToggleGroup';
-export * from './tooltip/Tooltip';
 export * from './typography';
