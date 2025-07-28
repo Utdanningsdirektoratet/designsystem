@@ -1,26 +1,72 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Article 1`] = `
+<div>
+  <img
+    alt="Bøker på et bord"
+    src="https://images.unsplash.com/photo-1635335874521-7987db781153?q=80&amp;w=2070&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;"
+  >
+  <div style="display: flex; gap: 10px; margin-top: var(--ds-size-4); margin-bottom: var(--ds-size-3);">
+    <h2>
+      Rådgivning for lærlinger
+    </h2>
+    <ul style="list-style: none; display: flex; gap: 10px; padding: 0px; margin: 0px;">
+      <li>
+        <span
+          data-color="accent"
+          data-size="sm"
+        >
+          Videregående
+        </span>
+      </li>
+      <li>
+        <span
+          data-color="support1"
+          data-size="sm"
+        >
+          Lærling
+        </span>
+      </li>
+    </ul>
+  </div>
+  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: var(--ds-size-2);">
+    <span
+      data-variant="circle"
+      data-initials="ON"
+      role="img"
+      aria-label="Kari Nordmann"
+      data-size="xs"
+    >
+    </span>
+    <p data-variant="default">
+      Ola Nordmann | 19.06.2025
+    </p>
+  </div>
+  <p data-variant="default">
+    Fylkeskommunen har plikt til å sørge for at både elever og de som har læretid i bedrift skal ha tilgang til rådgivning om utdannings- og yrkesvalg, samt rådgiving om sosiale og personlige forhold. Dette står i opplæringsloven §§ 16-1 og 16-2.
+  </p>
+</div>
+`;
+
 exports[`Colors 1`] = `
 <span data-color="neutral">
   neutral
 </span>
-<span data-color="success">
-  success
+<span data-color="accent">
+  accent
 </span>
-<span data-color="warning">
-  warning
+<span data-color="support1">
+  support1
 </span>
-<span data-color="danger">
-  danger
-</span>
-<span data-color="info">
-  info
+<span data-color="support2">
+  support2
 </span>
 `;
 
 exports[`Preview 1`] = `
-<span>
-  New
+<span data-color="success">
+  Ferdig
 </span>
 `;
 
@@ -33,5 +79,20 @@ exports[`Sizes 1`] = `
 </span>
 <span data-size="lg">
   lg
+</span>
+`;
+
+exports[`Status 1`] = `
+<span data-color="success">
+  success
+</span>
+<span data-color="warning">
+  warning
+</span>
+<span data-color="danger">
+  danger
+</span>
+<span data-color="info">
+  info
 </span>
 `;
