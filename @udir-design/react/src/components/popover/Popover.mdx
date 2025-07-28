@@ -62,8 +62,8 @@ Bruk `Popover` for å inkludere interaksjoner som knapper eller lenker. Et typis
 
 ### Kontrollert
 
-Dersom du sender inn `open`, så bruker du `Popover` kontrollert. Du kan bruke `onClose` for å få beskjed når `Popover` vil lukkes.
-Dette er nyttig dersom du har innhold som skal lukke `Popover` når du klikker på det.
+`open` propen kan brukes for å kontrollere tilstanden til `Popover`. Du kan også bruke `onClose` for å trigge andre effekter når `Popover` blir lukket.
+Disse kontrollmulighetene er nyttige dersom du for eksempel har annet innhold på siden som skal lukke `Popover` når du klikker på det.
 
 <Canvas of={PopoverStories.Controlled} />
 

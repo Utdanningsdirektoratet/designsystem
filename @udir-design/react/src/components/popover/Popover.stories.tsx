@@ -8,7 +8,7 @@ import { Paragraph } from '../alpha';
 
 const meta: Meta<typeof Popover> = {
   component: Popover,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     customStyles: {
       display: 'flex',
