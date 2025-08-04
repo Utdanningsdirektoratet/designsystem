@@ -19,4 +19,5 @@ export * from './list/List';
 export * from './radio/Radio';
 export * from './search/Search';
 export * from './select/Select';
+export * from './table';
 export * from './textfield/Textfield';
