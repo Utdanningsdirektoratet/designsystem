@@ -9,6 +9,7 @@ import {
   Label,
   Paragraph,
   Spinner,
+  Details,
 } from '@udir-design/react/alpha';
 import { useDebounceCallback } from '@digdir/designsystemet-react';
 
@@ -61,6 +62,13 @@ const DATA_PLACES = [
   'Trondheim',
   'Bergen',
   'Lillestrøm',
+];
+
+const DATA_PEOPLE = [
+  { label: 'Lars', value: '#004' },
+  { label: 'James', value: '#007' },
+  { label: 'Nina', value: '#113' },
+  { label: 'Tove', value: '#110' },
 ];
 
 export const Preview: Story = {
@@ -169,7 +177,6 @@ export const ControlledSingle: Story = {
             value={value === '' ? [] : [value]}
             onValueChange={(items) => setValue(items.at(0)?.value ?? '')}
           >
-            <Suggestion.Chips />
             <Suggestion.Input id={ctx.id} />
             <Suggestion.Clear />
             <Suggestion.List>
@@ -270,6 +277,7 @@ export const ControlledMultiple: Story = {
     );
   },
 };
+
 ControlledMultiple.play = async ({ canvasElement, step }) => {
   const getChipValues = async () =>
     waitFor(() =>
@@ -301,22 +309,58 @@ ControlledMultiple.play = async ({ canvasElement, step }) => {
   });
 };
 
-export const DefaultValue: Story = {
-  render(args, ctx) {
+export const ControlledIndependentLabelValue: Story = {
+  render: (args, ctx) => {
+    const [items, setItems] = useState<typeof DATA_PEOPLE>(
+      DATA_PEOPLE.slice(0, 1),
+    );
+
     return (
-      <Field>
-        <Label>Velg en destinasjon</Label>
-        <Suggestion {...args} defaultValue={['Sogndal']}>
-          <Suggestion.Input id={ctx.id} />
-          <Suggestion.Clear />
-          <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
-            {DATA_PLACES.map((place) => (
-              <Suggestion.Option key={place}>{place}</Suggestion.Option>
-            ))}
-          </Suggestion.List>
-        </Suggestion>
-      </Field>
+      <>
+        <Field>
+          <Label>Velg person</Label>
+          <Suggestion
+            {...args}
+            selected={items.slice(0, 1)}
+            onSelectedChange={(items) => setItems(items)}
+            filter={false}
+          >
+            <Suggestion.Input id={ctx.id} />
+            <Suggestion.Clear />
+            <Suggestion.List>
+              <Suggestion.Empty>Tomt</Suggestion.Empty>
+              {DATA_PEOPLE.map(({ label, value }) => (
+                <Suggestion.Option key={value} label={label} value={value}>
+                  {label}
+                </Suggestion.Option>
+              ))}
+            </Suggestion.List>
+          </Suggestion>
+        </Field>
+        <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
+
+        <div style={{ margin: 'var(--ds-size-2) 0' }}>
+          Valgt person:
+          <pre
+            style={{
+              fontSize: 14,
+              whiteSpace: 'pre-wrap',
+              width: 400,
+            }}
+          >
+            {JSON.stringify(items)}
+          </pre>
+        </div>
+
+        <Button
+          onClick={() => {
+            setItems(DATA_PEOPLE.slice(2, 3));
+          }}
+          variant="secondary"
+        >
+          Sett Nina
+        </Button>
+      </>
     );
   },
 };
@@ -464,23 +508,51 @@ FetchExternal.parameters = {
 };
 
 export const Multiple: Story = {
-  render: (args, ctx) => (
-    <Field>
-      <Label>Velg en destinasjon</Label>
-      <Suggestion {...args}>
-        <Suggestion.Input id={ctx.id} />
-        <Suggestion.Clear />
-        <Suggestion.List>
-          <Suggestion.Empty>Tomt</Suggestion.Empty>
-          {DATA_PLACES.map((place) => (
-            <Suggestion.Option key={place}>{place}</Suggestion.Option>
-          ))}
-        </Suggestion.List>
-      </Suggestion>
-    </Field>
-  ),
+  ...Preview,
+  args: { multiple: true },
 };
 
-Multiple.args = {
-  multiple: true,
+export const DefaultValue: Story = {
+  render(args, ctx) {
+    return (
+      <Field>
+        <Label>Velg en destinasjon</Label>
+        <Suggestion {...args} defaultValue={['Sogndal']}>
+          <Suggestion.Input id={ctx.id} />
+          <Suggestion.Clear />
+          <Suggestion.List>
+            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            {DATA_PLACES.map((place) => (
+              <Suggestion.Option key={place}>{place}</Suggestion.Option>
+            ))}
+          </Suggestion.List>
+        </Suggestion>
+      </Field>
+    );
+  },
+};
+
+export const InDetails: Story = {
+  render: (args, ctx) => {
+    return (
+      <Details>
+        <Details.Summary>Åpne details som har overflow: clip;</Details.Summary>
+        <Details.Content>
+          <Field>
+            <Label>Velg en destinasjon</Label>
+            <Suggestion {...args} autoFocus>
+              <Suggestion.Input id={ctx.id} />
+              <Suggestion.Clear />
+              <Suggestion.List>
+                <Suggestion.Empty>Tomt</Suggestion.Empty>
+                {DATA_PLACES.map((place) => (
+                  <Suggestion.Option key={place}>{place}</Suggestion.Option>
+                ))}
+              </Suggestion.List>
+            </Suggestion>
+          </Field>
+        </Details.Content>
+      </Details>
+    );
+  },
 };
