@@ -7,4 +7,12 @@
   --dsc-link-color--active: var(--ds-color-text-subtle);
   --dsc-link-color--hover: var(--ds-color-text-subtle);
   --dsc-link-color: var(--ds-color-text-default);
+  /* Set underline only to span if there is a span in link. To avoid underline on space between elements */
+  &:has(span) {
+    text-decoration: none;
+    > span {
+      text-decoration: underline;
+      margin-left: var(--ds-size-1);
+    }
+  }
 }
