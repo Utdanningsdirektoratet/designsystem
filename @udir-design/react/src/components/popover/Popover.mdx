@@ -1,0 +1,97 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import * as PopoverStories from './Popover.stories';
+
+<Meta of={PopoverStories} />
+
+# Popover
+
+`Popover` brukes til å vise tilleggsinformasjon, interaktive elementer eller korte forklaringer uten å navigere bort fra siden. Den er koblet til et spesifikt element.
+
+**Passer til å**
+
+- forklare ord eller konsepter som trenger mer enn en kort definisjon
+- gi mer omfattende informasjon (maksimalt ett avsnitt)
+- inkludere interaktivitet, som lenker, knapper eller valg
+
+**Passer ikke til å**
+
+- beskrive et symbol - bruk heller [`tooltip`](/docs/components-link--docs)
+- vise mye innhold
+
+## Slik bruker du `Popover`
+
+<Primary />
+<Controls />
+
+```tsx
+import { Popover } from '@udir-design/react';
+
+// med context
+<Popover.TriggerContext>
+  <Popover.Trigger>Trigger</Popover.Trigger>
+  <Popover>Content</Popover>
+</Popover.TriggerContext>
+
+// uten context med egen trigger
+<Button popovertarget="my-popover">Trigger</Button>
+<Popover id="my-popover">Content</Popover>
+```
+
+## Eksempler
+
+### Farger
+
+Du kan bruke alle tema-fargene på `Popover`, i tillegg til de semantiske fargene. Dette kan endres med `data-color`.
+Du kan også sette `variant` for å få tinted bakgrunnsfarge.
+
+<Canvas of={PopoverStories.ColorVariants} />
+
+<Canvas of={PopoverStories.Variants} />
+
+### Inline
+
+Bruk `inline={true}` (stiplet understrek) på `Popover.Trigger` for å indikere at et ord har en forklaring. Dette er nyttig dersom man for eksempel vil gi tilleggsinformasjon til et ord i en artikel. Popoveren kan inneholde en kort paragraf som utdyper ordets betydning.
+
+<Canvas of={PopoverStories.DottedUnderline} />
+
+### Interaktive elementer i en Popover
+
+Bruk `Popover` for å inkludere interaksjoner som knapper eller lenker. Et typisk brukstilfelle er å be brukeren bekrefte en handling, som sletting av en rad i en tabell.
+
+<Canvas of={PopoverStories.Interactive} />
+
+### Kontrollert
+
+`open` propen kan brukes for å kontrollere tilstanden til `Popover`. Du kan også bruke `onClose` for å trigge andre effekter når `Popover` blir lukket.
+Disse kontrollmulighetene er nyttige dersom du for eksempel har annet innhold på siden som skal lukke `Popover` når du klikker på det.
+
+<Canvas of={PopoverStories.Controlled} />
+
+### Auto Plassering
+
+Standard oppførsel er at `Popover` alltid vil prøve å være i viewporten, men ankret til triggeren.
+`Popover` har en `autoPlacement` prop som kan brukes til å slå av automatisk plassering. Standardverdien er `true`.
+
+## Retningslinjer
+
+`Popover` kan plasseres etter ønske. Hvis `Popover` blir for stor for den valgte retningen, justerer den automatisk plasseringen. Hvis du vil skru av auto plassering bruker du `autoPlacement={false}` .
+
+## Tekst i Popover
+
+Unngå lange tekster og kompliserte forklaringer. I noen tilfeller er det kanskje bedre å lenke til en annen side med utdypende informasjon om temaet.
+
+## Tilgjengelighet
+
+Det er innebygd tilgjengelighet i [Popover APIet](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API) i henhold til åpne/lukket tilstand og tastatur navigasjon.
+
+## React og `popovertarget`
+
+Når du bruker `Popover` uten `Popover.TriggerContext`, kobler du selv sammen utløseren og `Popover`.
+Da brukes `popovertarget`, slik at alle versjoner av React korrekt gjengir attributtet.
+Når du bruker `@udir-design/react` utvider vi `@types/react-dom` til å akseptere dette.
+
+## Polyfill
+
+`Popover` bruker [popover-APIet](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover). Dette apiet er klassifisert som [Baseline: Newly available](https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility) fra april 2024, da Firefox som siste nettleser la det til. I noen tilfeller kan en oppleve at brukere av ulike grunner er låst til eldre nettleserversjoner, og da kan det være aktuelt å legge til en polyfill for å sikre at `Popover` fungerer for alle.
+
+- [Popover-Polyfill](https://github.com/oddbird/popover-polyfill)
