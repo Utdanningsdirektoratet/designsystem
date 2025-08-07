@@ -1,7 +1,178 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Button 1`] = `
+<div style="display: flex; flex-direction: column; gap: var(--ds-size-4);">
+  <div>
+    <input
+      placeholder
+      aria-label="søk"
+      type="search"
+      value="Skole"
+    >
+    <button
+      data-icon="true"
+      data-variant="tertiary"
+      type="reset"
+      aria-label="Tøm"
+    >
+    </button>
+    <button
+      data-variant="primary"
+      type="submit"
+    >
+      Søk
+    </button>
+  </div>
+  <div style="display: flex; gap: var(--ds-size-2);">
+    <p data-variant="default">
+      Hurtigsøk:
+    </p>
+    <button type="button">
+      Læreplaner
+    </button>
+    <button type="button">
+      Skole
+    </button>
+    <button type="button">
+      Eksamen
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Checkbox 1`] = `
+<div style="display: flex; flex-direction: column; gap: var(--ds-size-4);">
+  <p data-variant="default">
+    Vis data for
+  </p>
+  <div style="display: flex; gap: var(--ds-size-1);">
+    <label>
+      <input
+        aria-label="2020"
+        type="checkbox"
+      >
+      2020
+    </label>
+    <label>
+      <input
+        aria-label="2021"
+        type="checkbox"
+      >
+      2021
+    </label>
+    <label>
+      <input
+        aria-label="2022"
+        type="checkbox"
+      >
+      2022
+    </label>
+    <label>
+      <input
+        aria-label="2023"
+        type="checkbox"
+      >
+      2023
+    </label>
+    <label>
+      <input
+        aria-label="2024"
+        type="checkbox"
+      >
+      2024
+    </label>
+    <label>
+      <input
+        aria-label="2025"
+        type="checkbox"
+      >
+      2025
+    </label>
+  </div>
+</div>
+`;
+
 exports[`Preview 1`] = `
-<button type="button">
-  Chip.Button
+<button
+  type="button"
+  name="my-button"
+  value="button"
+>
+  Button
+</button>
+<label>
+  <input
+    type="checkbox"
+    value="checkbox"
+    name="my-checkbox"
+  >
+  Checkbox
+</label>
+<label>
+  <input
+    type="radio"
+    value="radio"
+    name="my-radio"
+  >
+  Radio
+</label>
+<button
+  type="button"
+  data-removable="true"
+  name="my-removable"
+  value="removable"
+>
+  Removable
+</button>
+`;
+
+exports[`Radio 1`] = `
+<div style="display: flex; flex-direction: column; gap: var(--ds-size-4);">
+  <p data-variant="default">
+    Vis data for
+  </p>
+  <div style="display: flex; gap: var(--ds-size-1);">
+    <label>
+      <input
+        aria-label="Barnehage"
+        type="radio"
+        name="my-radio"
+      >
+      Barnehage
+    </label>
+    <label>
+      <input
+        aria-label="Grunnskole"
+        type="radio"
+        name="my-radio"
+      >
+      Grunnskole
+    </label>
+    <label>
+      <input
+        aria-label="Videregående"
+        type="radio"
+        name="my-radio"
+      >
+      Videregående
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Removable 1`] = `
+<button
+  type="button"
+  data-removable="true"
+  aria-label="Slett Grunnskole"
+>
+  Grunnskole
+</button>
+<button
+  type="button"
+  data-removable="true"
+  aria-label="Slett Videregående"
+>
+  Videregående
 </button>
 `;

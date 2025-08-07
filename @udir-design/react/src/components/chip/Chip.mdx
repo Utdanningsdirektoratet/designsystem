@@ -1,0 +1,85 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { ChipEx1 } from './docs/doAndDont';
+import * as ChipStories from './Chip.stories';
+
+<Meta of={ChipStories} />
+
+# Chip
+
+`Chip` er ein liten, interaktiv komponent som lèt brukarane styre korleis dei vil sjå innhald. For eksempel kan den brukast til å filtrere kategoriar i eit søkeresultat og vise kva for filter som er aktive.
+
+**Passar til å**
+
+- filtrere informasjon, for eksempel i lister eller tabellar
+- vise kva for val som er aktive
+
+**Passar ikkje til å**
+
+- indikere varsel for tal eller status (bruk heller [`Badge`](/docs/components-badge--docs))
+- merke innhald med kategori/emne som ikkje er interaktivt. Bruk heller [`Tag`](/docs/components-tag--docs)-komponenten dersom kategori/emne ikkje er klikkbart
+- brukast i menyar
+
+## Slik brukar du Chip
+
+<Primary />
+<Controls />
+
+```tsx
+import { Chip } from '@udir-design/react';
+
+// som radio
+<Chip.Radio name="my-chip" defaultChecked>
+  Bokmål
+</Chip.Radio>;
+
+// som checkbox
+<Chip.Checkbox name="my-chip" defaultChecked>
+  Barnehage
+</Chip.Checkbox>;
+
+// som removable
+<Chip.Removable>Grunnskole</Chip.Removable>;
+
+// som button
+<Chip.Button>Vidregående</Chip.Button>;
+```
+
+## Eksempel
+
+### Chip.Button
+
+`Chip.Button` kan brukast i gruppe for å vise valalternativ. I eksempelet under brukar vi det til søkeforslag som gjer det mogleg å utføre hurtigsøk.
+
+<Canvas of={ChipStories.Button} />
+
+### Chip.Checkbox
+
+`Chip.Checkbox` kan brukast som eit alternativ til `Checkbox`. I eksempelet brukar vi det til å filtrere data basert på år.
+
+<Canvas of={ChipStories.Checkbox} />
+
+### Chip.Radio
+
+`Chip.Radio` kan brukast som eit alternativ til `Radio` når brukaren kun kan bruke eit filter av ganga.
+
+<Canvas of={ChipStories.Radio} />
+
+### Chip.Removable
+
+`Chip.Removable` inneheld eit kryss som indikerer at filteret kan fjernast. Det er viktig å merke seg at `aria-label` må leggjast til dersom innhaldet i Chip ikkje forklarer at den kan fjernast. I dette eksempelet er det lagt til `aria-label="Slett {nivå}"`.
+
+<Canvas of={ChipStories.Removable} />
+
+## Retningslinjer
+
+Unngå å plassere `Chip` vertikalt. Skal du vise alternativ under kvarandre, bruk heller [`Checkbox`](/docs/components-checkbox--docs) eller [`Radio`](/docs/components-radio--docs). En gruppe med flere `Chip` kan brytast over fleire linjer.
+
+<ChipEx1 />
+
+## Tekst i Chip
+
+`Chip` bør ha så få ord som mogleg, helst berre eitt eller to.
+
+## Tilgjengelegheit
+
+Viss delar av ei side blir oppdaterte samtidig som brukarane gjer noko på sida, må vi passe på at brukarar med skjermlesarar får beskjed om det. Vi kan bruke ein `ARIA live region` til det, som kan vise tal på treff eller andre endringar.
