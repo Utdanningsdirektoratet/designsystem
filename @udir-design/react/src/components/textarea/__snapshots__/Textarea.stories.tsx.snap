@@ -1,17 +1,19 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Controlled 1`] = `
-<label
-  data-weight="medium"
-  for="textfield-controlled"
->
-  Beskriv bekymringen din
-</label>
-<textarea
-  id="textfield-controlled"
-  rows="4"
->
-</textarea>
+<div>
+  <label
+    data-weight="medium"
+    for="textfield-controlled"
+  >
+    Beskriv bekymringen din
+  </label>
+  <textarea
+    id="textfield-controlled"
+    rows="4"
+  >
+  </textarea>
+</div>
 <button
   data-variant="secondary"
   type="button"
@@ -21,28 +23,81 @@ exports[`Controlled 1`] = `
 </button>
 `;
 
+exports[`Disabled 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="textarea-disabled"
+  >
+    Disabled Textarea
+  </label>
+  <textarea
+    id="textarea-disabled"
+    disabled
+  >
+  </textarea>
+</div>
+`;
+
+exports[`Focused 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="my-textarea"
+  >
+    Label
+  </label>
+  <textarea
+    rows="3"
+    cols="20"
+    id="my-textarea"
+  >
+  </textarea>
+</div>
+`;
+
 exports[`Full Width 1`] = `
-<label
-  data-weight="medium"
-  for="my-textarea"
->
-  Beskriv bekymringen din
-</label>
-<textarea id="my-textarea">
-</textarea>
+<div>
+  <label
+    data-weight="medium"
+    for="my-textarea"
+  >
+    Beskriv bekymringen din
+  </label>
+  <textarea id="my-textarea">
+  </textarea>
+</div>
 `;
 
 exports[`Preview 1`] = `
-<label
-  data-weight="medium"
-  for="my-textarea"
->
-  Label
-</label>
-<textarea
-  rows="3"
-  cols="20"
-  id="my-textarea"
->
-</textarea>
+<div>
+  <label
+    data-weight="medium"
+    for="my-textarea"
+  >
+    Label
+  </label>
+  <textarea
+    rows="3"
+    cols="20"
+    id="my-textarea"
+  >
+  </textarea>
+</div>
+`;
+
+exports[`Read Only 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="textarea-readonly"
+  >
+    Read-Only Textarea
+  </label>
+  <textarea
+    id="textarea-readonly"
+    readonly
+  >
+  </textarea>
+</div>
 `;

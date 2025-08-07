@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Label } from '../typography/label/Label';
 import { useState } from 'react';
-import { Button, Textarea } from '@udir-design/react/alpha';
+import { Button, Field, Textarea } from '@udir-design/react/alpha';
 import { expect, userEvent, within } from 'storybook/test';
 
 const meta: Meta<typeof Textarea> = {
@@ -30,10 +30,10 @@ export const Preview: Story = {
     id: 'my-textarea',
   },
   render: (args) => (
-    <>
-      <Label htmlFor={args.id}>Label</Label>
+    <Field>
+      <Label>Label</Label>
       <Textarea {...args} />
-    </>
+    </Field>
   ),
   play: async ({ canvasElement, step, args }) => {
     const canvas = within(canvasElement);
@@ -80,10 +80,10 @@ export const FullWidth: Story = {
     },
   },
   render: (args) => (
-    <>
-      <Label htmlFor={args.id}>Beskriv bekymringen din</Label>
+    <Field>
+      <Label>Beskriv bekymringen din</Label>
       <Textarea {...args} />
-    </>
+    </Field>
   ),
 };
 
@@ -103,15 +103,17 @@ export const Controlled: Story = {
 
     return (
       <>
-        <Label htmlFor={args.id}>Beskriv bekymringen din</Label>
-        <Textarea
-          {...args}
-          rows={4}
-          value={value}
-          onChange={(
-            e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-          ) => setValue(e.target.value)}
-        />
+        <Field>
+          <Label>Beskriv bekymringen din</Label>
+          <Textarea
+            {...args}
+            rows={4}
+            value={value}
+            onChange={(
+              e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+            ) => setValue(e.target.value)}
+          />
+        </Field>
         <Button
           variant="secondary"
           onClick={() => setValue('')}
@@ -122,4 +124,40 @@ export const Controlled: Story = {
       </>
     );
   },
+};
+
+export const Disabled: Story = {
+  args: {
+    id: 'textarea-disabled',
+    disabled: true,
+  },
+  render: (args) => (
+    <Field>
+      <Label>Disabled Textarea</Label>
+      <Textarea {...args} />
+    </Field>
+  ),
+};
+
+export const ReadOnly: Story = {
+  args: {
+    id: 'textarea-readonly',
+    readOnly: true,
+  },
+  render: (args) => (
+    <Field>
+      <Label>Read-Only Textarea</Label>
+      <Textarea {...args} />
+    </Field>
+  ),
+};
+
+export const Focused: Story = {
+  args: Preview.args,
+  parameters: {
+    pseudo: {
+      focusVisible: true,
+    },
+  },
+  render: Preview.render,
 };
