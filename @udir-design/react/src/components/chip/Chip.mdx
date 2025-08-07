@@ -10,14 +10,14 @@ import * as ChipStories from './Chip.stories';
 
 **Passar til å**
 
-- filtrere informasjon, for eksempel i lister eller tabellar.
-- vise kva for val som er aktive.
+- filtrere informasjon, for eksempel i lister eller tabellar
+- vise kva for val som er aktive
 
 **Passar ikkje til å**
 
-- indikere varsel for tal eller status (bruk heller [`Badge`](/docs/components-badge--docs)).
-- merke innhald med kategori/emne som ikkje er interaktivt. Bruk heller [`Tag`](/docs/components-tag--docs)-komponenten dersom kategori/emne ikkje er klikkbart.
-- brukast i menyar.
+- indikere varsel for tal eller status (bruk heller [`Badge`](/docs/components-badge--docs))
+- merke innhald med kategori/emne som ikkje er interaktivt. Bruk heller [`Tag`](/docs/components-tag--docs)-komponenten dersom kategori/emne ikkje er klikkbart
+- brukast i menyar
 
 ## Slik brukar du Chip
 
@@ -44,17 +44,17 @@ import { Chip } from '@udir-design/react';
 <Chip.Button>Vidregående</Chip.Button>;
 ```
 
-## Varianter
+## Eksempel
 
 ### Chip.Button
 
-`Chip.Button` kan brukast i gruppe for å vise valalternativ.
+`Chip.Button` kan brukast i gruppe for å vise valalternativ. I eksempelet under brukar vi det til søkeforslag som gjer det mogleg å utføre hurtigsøk.
 
 <Canvas of={ChipStories.Button} />
 
 ### Chip.Checkbox
 
-`Chip.Checkbox` kan brukast som eit alternativ til `Checkbox`.
+`Chip.Checkbox` kan brukast som eit alternativ til `Checkbox`. I eksempelet brukar vi det til å filtrere data basert på år.
 
 <Canvas of={ChipStories.Checkbox} />
 
@@ -72,7 +72,7 @@ import { Chip } from '@udir-design/react';
 
 ## Retningslinjer
 
-Unngå å plassere `Chips` vertikalt. Skal du vise alternativ under kvarandre, bruk heller [`Checkbox`](/docs/components-checkbox--docs) eller [`Radio`](/docs/components-radio--docs). En gruppe med flere `Chips` kan brytast over fleire linjer.
+Unngå å plassere `Chip` vertikalt. Skal du vise alternativ under kvarandre, bruk heller [`Checkbox`](/docs/components-checkbox--docs) eller [`Radio`](/docs/components-radio--docs). En gruppe med flere `Chip` kan brytast over fleire linjer.
 
 <ChipEx1 />
 

@@ -8,10 +8,10 @@ import { Chip } from '@udir-design/react/beta';
 export const ChipEx1 = () => {
   return (
     <Stack style={{ margin: 'var(--ds-size-8) 0' }}>
-      <Do description="Ein gruppe med Chips plasseres horisontalt, om det er mange skal de brytes over flere linjer">
+      <Do description="Ein gruppe med Chip plasseres horisontalt, om det er mange skal de brytes over fleire linjer">
         <Ex1Do />
       </Do>
-      <Dont description="Unngå å plassere Chips vertikalt">
+      <Dont description="Unngå å plassere Chip vertikalt">
         <Ex1Dont />
       </Dont>
     </Stack>
