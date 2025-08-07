@@ -72,9 +72,9 @@ I mange tilfeller er det mer hensiktsmessig å utføre søkehandling mens bruker
 
 <Canvas of={SearchStories.LiveSearch} />
 
-### Kontrollere Search utenfra
+### Kontrollert tilstand
 
-`Search.Input` kan kontrolleres utenfra ved å bruke `value` og `onChange`. Dette er nyttig når du vil at `Search` skal oppdateres basert på endringer i andre komponenter eller tilstander.
+Tilstanden til `Search.Input` kan kontrolleres ved å bruke `value` og `onChange`. Dette er nyttig når du vil at `Search` skal oppdateres basert på endringer i andre komponenter eller tilstander.
 I dette tilfellet har vi brukt `Search` i et skjema hvor søk blir utført når brukeren trykker <kbd>Enter</kbd>, på "Søk"-knappen, eller en av hurtigsøk-knappene ([`Chip.Button`](/docs/components-chip--docs)).
 
 <Canvas of={SearchStories.Controlled} />
