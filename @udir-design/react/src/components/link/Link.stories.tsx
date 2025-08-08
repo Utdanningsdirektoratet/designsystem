@@ -42,7 +42,8 @@ export const WithIcon: Story = {
   },
   render: (args) => (
     <Link {...args}>
-      <EnvelopeClosedIcon aria-hidden /> Kontakt oss
+      <EnvelopeClosedIcon aria-hidden />
+      <span>Kontakt oss</span>
     </Link>
   ),
 };
@@ -66,7 +67,8 @@ export const File: Story = {
   },
   render: (args) => (
     <Link {...args}>
-      <FilePdfFillIcon aria-hidden /> Samisk i barnehagen (PDF, 299KB)
+      <FilePdfFillIcon aria-hidden />
+      <span>Samisk i barnehagen (PDF, 299KB)</span>
     </Link>
   ),
 };
