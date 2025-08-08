@@ -1,0 +1,35 @@
+.article {
+  padding: 24px;
+}
+
+.contentSpacing {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-13);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-3);
+}
+
+.contentWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: var(--ds-color-support2-surface-tinted);
+  border-color: var(--ds-color-support2-border-subtle);
+}
+
+.headingWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scrollButton {
+  margin: 0 auto;
+}
