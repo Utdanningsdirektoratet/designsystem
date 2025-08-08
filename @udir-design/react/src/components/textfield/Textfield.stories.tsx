@@ -172,10 +172,14 @@ export const Controlled: Story = {
             Tøm feltet
           </Button>
         </div>
-        <Divider />
-        <Paragraph>
-          Ditt brukernavn blir da: {value.replace(/\s/g, '').toLowerCase()}
-        </Paragraph>
+        {value && (
+          <>
+            <Divider />
+            <Paragraph>
+              Ditt brukernavn blir da: {value.replace(/\s/g, '').toLowerCase()}
+            </Paragraph>
+          </>
+        )}
       </>
     );
   },

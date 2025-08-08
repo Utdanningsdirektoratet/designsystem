@@ -414,11 +414,11 @@ export const DialogNonModal: Story = {
             Hva besvarelsen burde inneholde
           </Heading>
           <List.Unordered>
-            <List.Item>Intro til prosjektet</List.Item>
-            <List.Item>Oversikt over hva som er gjort i prosjektet</List.Item>
-            <List.Item>Beskrivelse av prosjektmålene</List.Item>
-            <List.Item>Metode for å oppnå prosjektmålene</List.Item>
-            <List.Item>Leveranse</List.Item>
+            <List.Item>intro til prosjektet</List.Item>
+            <List.Item>oversikt over hva som er gjort i prosjektet</List.Item>
+            <List.Item>beskrivelse av prosjektmålene</List.Item>
+            <List.Item>metode for å oppnå prosjektmålene</List.Item>
+            <List.Item>leveranse</List.Item>
           </List.Unordered>
         </Dialog>
       </>
