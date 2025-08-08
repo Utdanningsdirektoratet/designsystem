@@ -1,0 +1,109 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import * as SwitchStories from './Switch.stories';
+import {
+  SwitchExLabel,
+  SwitchExCheckbox,
+  SwitchExSaving,
+} from './docs/doAndDont';
+
+<Meta of={SwitchStories} />
+
+# Switch
+
+Vi bruker `Switch` til å gi brukerne et valg mellom to alternativer. Bryteren kan slås av eller på og skal alltid være innstilt med et standardvalg.
+
+**Passer til å**
+
+- aktivere eller deaktivere en tilstand umiddelbart
+- slå av eller på en funksjon, for eksempel varsler
+
+**Passer ikke til å**
+
+- gi flere alternativer enn to
+- brukes i skjemaer, bruk heller [`Checkbox`](/docs/components-checkbox--docs) eller [`Radio`](/docs/components-radio--docs)
+- gi valg som ikke lagres umiddelbart
+
+## Slik bruker du Switch
+
+<Primary />
+<Controls />
+
+```tsx
+import { Switch } from '@udir-design/react';
+
+<Switch label="Mørk modus" value="light" />;
+```
+
+## Eksempler
+
+### Switch med beskrivelse
+
+Du kan legge til en beskrivelse under `Switch` for å gi mer kontekst til brukeren.
+
+<Canvas of={SwitchStories.Description} />
+
+### Gruppering av flere Switch
+
+Bruk [`Fieldset`](/docs/components-fieldset--docs) for å gruppere flere `Switch` sammen. Dette gjør det enklere for brukeren å forstå at disse alternativene er relatert til hverandre.
+
+<Canvas of={SwitchStories.Group} />
+
+### Høyrejustert
+
+Det er mulig å plassere `Switch` på høyre siden av ledeteksten ved å bruke `position="end"`. Pass på at avstanden ikke blir for stor slik at det blir vanskelig å se hvilken tekst som hører til hvilken `Switch`.
+
+<Canvas of={SwitchStories.GroupEnd} />
+
+### Kontrollere Switch utenfra
+
+Du kan kontrollere `Switch` utenfra ved å bruke `checked` og `onChange`.
+I eksempelet under kontrolleres varsler basert på om noen av [`Checkbox`](/docs/components-checkbox--docs)-komponentene er valgt. Når ingen av dem er valgt, blir `Switch` deaktivert. Velger man å skru av eller på varsler med `Switch`, blir alle [`Checkbox`](/docs/components-checkbox--docs)-komponentene oppdatert tilsvarende.
+
+<Canvas of={SwitchStories.Controlled} />
+
+## Retningslinjer
+
+### Switch skal ha umiddelbar effekt
+
+`Switch` skal alltid ha en umiddelbar effekt når den endres. Dette betyr at endringen skjer med en gang, uten behov for å lagre eller bekrefte valget.
+
+<SwitchExSaving />
+
+### Ikke bruk som erstatning for Checkbox eller Radio
+
+`Switch` er ikke ment å brukes som en erstatning for [`Checkbox`](/docs/components-checkbox--docs) eller [`Radio`](/docs/components-radio--docs).
+
+<SwitchExCheckbox />
+
+### Ikke bruk deaktivert Switch
+
+Vi unngår deaktivert (`disabled`) `Switch` fordi de kan være vanskelige å oppfatte. Noen brukere vil ikke forstå hva den sier eller hvorfor den ikke er klikkbar. Hvis en `Switch` ikke er relevant, bør du helst fjerne den fremfor å deaktivere den. Tilby gjerne brukeren informasjon om hvorfor valget ikke er tilgjengelig.
+
+Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander) og hvilke alternativer som finnes.
+
+### Unngå skrivebeskyttede avmerkingsbokser
+
+`Switch` støtter `readOnly`-attributtet for å gjøre feltet skrivebeskyttet, og gir en visuell indikasjon
+som skiller seg fra redigerbare felter. Vi unngår likevel `readOnly` så langt det lar seg gjøre, fordi
+slike felter kan være forvirrende for noen brukere. Ikke alle vil skjønne hvorfor de ikke får til å
+endre innholdet i feltet.
+
+## Tekst i Switch
+
+### Label
+
+`label` til en switch må være kort og presis, ofte betyr det bare ett eller to ord. Unngå å inkludere statusen til en `Switch` i teksten, da dette skal være tydelig for brukeren når de ser på bryteren.
+
+<SwitchExLabel />
+
+### Plassering av teksten
+
+Som regel er det høyre som er den beste plasseringen for tekst. Dersom `Switch` er fast plassert på høyre side i grensesnittet kan det være bedre å plassere teksten på venstre side slik at alle knappene blir justert etter samme vertikale linje. Pass på at avstanden ikke blir for stor slik at det blir vanskelig å se hvilken tekst som hører til hvilken `Switch`.
+
+## Tilgjengelighet
+
+Sørg for at komponenten oppfører seg konsekvent gjennom en hel tjeneste.
+Hvis du har en gruppe med flere `Switch`, må du passe på at du er konsekvent med hvordan du formulerer tekstene til hver av dem også.
+
+Vi bruker `role="switch"` for å fortelle skjermlesere at dette er en `Switch`. Dette gjør at skjermlesere kan gi brukeren informasjonen de trenger og at den kan skrus av og på.
+Det er ikke lagt på `aria-checked` siden dette er ikke nødvendig når `Switch` er en input med `type="checkbox"`.
