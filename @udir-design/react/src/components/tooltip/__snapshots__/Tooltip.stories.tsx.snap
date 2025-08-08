@@ -1,20 +1,78 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Preview 1`] = `
+exports[`Placement 1`] = `
 <button
+  data-icon="true"
   data-variant="primary"
   type="button"
+  aria-label="Slett"
+  data-color="danger"
+  popovertarget="«r2»"
+  popovertargetaction="show"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
+</button>
+<span
+  role="tooltip"
+  id="«r2»"
+  popover="manual"
+  style="opacity: 0;"
+>
+  Slett
+</span>
+`;
+
+exports[`Preview 1`] = `
+<button
+  data-icon="true"
+  data-variant="tertiary"
+  type="button"
+  aria-label="Legg til"
   popovertarget="«r0»"
   popovertargetaction="show"
 >
-  Hold peker over meg
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M3.75 12a8.25 8.25 0 1 1 16.5 0 8.25 8.25 0 0 1-16.5 0M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25m0 4.5a.75.75 0 0 1 .75.75v3.75h3.75a.75.75 0 0 1 0 1.5h-3.75v3.75a.75.75 0 0 1-1.5 0v-3.75H7.5a.75.75 0 0 1 0-1.5h3.75V7.5a.75.75 0 0 1 .75-.75"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
 </button>
 <span
   role="tooltip"
   id="«r0»"
   popover="manual"
-  style="opacity: 0;"
+  style="opacity: 0; --dsc-tooltip-arrow-x: 40px; --dsc-tooltip-arrow-y: 100%; --_dsc-tooltip-safearea-height: var(--dsc-tooltip-arrow-size); --_dsc-tooltip-safearea-width: 100%; --_dsc-tooltip-safearea-translate: <removed>; translate: <removed>;"
 >
-  Tooltip tekst
+  Legg til
 </span>
 `;
