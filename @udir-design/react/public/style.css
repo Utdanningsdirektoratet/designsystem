@@ -1,8 +1,8 @@
 @import '@udir-design/theme';
 @import '@digdir/designsystemet-css';
+@import '../src/components/bunnfelt/bunnfelt.css';
 
 /* Use Digdir's "special case" for neutral link color as default, since neutral is our default */
-
 .ds-link {
   --dsc-link-color--active: var(--ds-color-text-subtle);
   --dsc-link-color--hover: var(--ds-color-text-subtle);

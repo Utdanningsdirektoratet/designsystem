@@ -17,3 +17,4 @@ export * from './tag/Tag';
 export * from './toggleGroup/ToggleGroup';
 export * from './tooltip/Tooltip';
 export * from './typography';
+export * from './bunnfelt';
