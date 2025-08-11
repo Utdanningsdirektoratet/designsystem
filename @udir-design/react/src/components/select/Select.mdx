@@ -52,9 +52,9 @@ Gruppering brukes for å organisere alternativer i kategorier, noe som gjør lan
 
 <Canvas of={SelectStories.WithOptgroup} />
 
-### Kontrollere Select utenfra
+### Kontrollert tilstand
 
-`Select` kan kontrolleres utenfra ved å bruke value og onChange. Dette er nyttig når du vil at `Select` skal oppdatere seg selv basert på endringer i andre komponenter eller tilstander.
+Tilstanden til `Select` kan kontrolleres ved å bruke value og onChange. Dette er nyttig når du vil at `Select` skal oppdatere seg selv basert på endringer i andre komponenter eller tilstander.
 For eksempel kan du filtrere alternativene i `Select` basert på brukerens valg i en annen komponent. I eksempelet nedenfor velger man fylke først slik at man ikke må bla gjennnom en lang liste med byer.
 
 <Canvas of={SelectStories.Controlled} />
