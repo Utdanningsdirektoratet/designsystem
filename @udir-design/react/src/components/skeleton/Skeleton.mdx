@@ -1,0 +1,53 @@
+import { Meta, Primary, Controls, Canvas } from '@storybook/addon-docs/blocks';
+import * as SkeletonStories from './Skeleton.stories';
+
+<Meta of={SkeletonStories} />
+
+# Skeleton
+
+`Skeleton` kan brukes for å indikere at innhold på en side laster. I motsetning til [`Spinner`](/docs/components-loaders-spinner--docs) kan `Skeleton` gi brukeren en indikasjon på hvordan siden kommer til å se ut.
+
+**Passer til å**
+
+- laste innhold på siden
+- fortelle brukeren at en handling midlertidig har stoppet applikasjonen
+- fortelle brukeren at data blir lagret eller oppdatert
+
+**Passer ikke til å**
+
+- laste når innlasting tar mindre enn 1 sekund
+
+## Slik bruker du Skeleton
+
+<Primary />
+<Controls />
+
+## Varianter av Skeleton
+
+Skeleton kommer i tre ulike varianter: `circle`, `rectangle`, og `text`
+
+<Canvas of={SkeletonStories.Components} />
+
+### Text
+
+`variant="text"` skalerer automatisk etter den lokale fontstørrelsen, enten den kommer fra `parent`, `children` , eller fordi typografi-komponenter er satt til Skeletons gjennom `asChild`-propen.
+For best mulig resultat anbefaler vi at du bruker flere `variant="text"` med `width` til det antallet bokstaver du antar vil oppstå.
+
+<Canvas of={SkeletonStories.Text} />
+
+## Eksempler
+
+Du kan bygge opp komponenter og seksjoner av siden din ved å bruke disse variantene som byggeklosser. Målet er at resultatet skal etterligne innholdet som lastes.
+
+<Canvas of={SkeletonStories.UsageExample} />
+
+<Canvas of={SkeletonStories.Cards} />
+
+### Skalering av komponenten
+
+Alle varianter av skeleton har `height` og `width` props, som kan brukes til å manuelt sette størrelser. Du kan oppgi størrelsene i `px`, `%`, eller andre enheter som kan settes direkte på style.
+For `variant="text"` holder det ofte å sette kun `width` til det antallet bokstaver du antar vil oppstå, da høyden automatisk skaleres etter tekstinnholdet.
+
+Skeleton vil også tilpasse seg etter `children` som du sender inn til komponenten, men barna vises ikke som selvstendige skeletons. I stedet vises ett stort skeleton med en høyde og bredde som matcher summen av samtlige barn.
+
+<Canvas of={SkeletonStories.Children} />

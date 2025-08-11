@@ -21,5 +21,7 @@ export * from './pagination/Pagination';
 export * from './radio/Radio';
 export * from './search/Search';
 export * from './select/Select';
+export * from './skeleton/Skeleton';
+export * from './spinner/Spinner';
 export * from './textarea/Textarea';
 export * from './textfield/Textfield';
