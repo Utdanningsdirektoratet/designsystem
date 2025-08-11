@@ -4,7 +4,7 @@ import {
   usePagination,
   UsePaginationProps,
 } from '@udir-design/react/alpha';
-import { Pagination } from '@udir-design/react/beta';
+import { Pagination } from './Pagination';
 import { useState } from 'react';
 import { useArgs } from 'storybook/internal/preview-api';
 import { expect, userEvent, within } from 'storybook/test';

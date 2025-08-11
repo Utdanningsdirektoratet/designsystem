@@ -4,10 +4,9 @@ import {
   FilterIcon,
   PlusCircleIcon,
 } from '@navikt/aksel-icons';
-import { Button, Card } from '../../beta';
+import { Avatar, Button, Card } from '../../beta';
 import { Skeleton } from './Skeleton';
 import { Heading, Paragraph } from '../../alpha';
-import { Avatar } from '@digdir/designsystemet-react';
 
 const meta: Meta<typeof Skeleton> = {
   component: Skeleton,
