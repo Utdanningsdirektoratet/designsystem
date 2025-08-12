@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
-import { Size } from '@digdir/designsystemet-react';
+import { Divider, Size } from '@digdir/designsystemet-react';
 import { Controls } from '../controls/Controls';
 import { ArticleDemo } from './ArticleDemo';
 
@@ -29,6 +29,7 @@ export const ArticleStory: Story = {
           setSize={setSize}
           setColorMode={setColorMode}
         />
+        <Divider />
         <ArticleDemo {...args} data-size={size} data-color-scheme={colorMode} />
       </div>
     );
