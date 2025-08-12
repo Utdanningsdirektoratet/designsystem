@@ -2,38 +2,38 @@
 
 exports[`Preview 1`] = `
 <p data-variant="default">
-  For å vise skiplinken, tab til dette eksempelet, eller klikk inni eksempelet og trykk
+  Tab til, eller klikk inni dette eksempelet og trykk
   <kbd>
     Tab
   </kbd>
   .
   <a href="#main-content">
-    Hopp til hovedinnhold
+    Hopp til hovedinnholdet
   </a>
 </p>
 <main
   id="main-content"
   tabindex="-1"
 >
-  Region som kan motta fokus fra skiplink.
+  Region som kan motta fokus fra SkipLink.
 </main>
 `;
 
 exports[`Tabbed 1`] = `
 <p data-variant="default">
-  For å vise skiplinken, tab til dette eksempelet, eller klikk inni eksempelet og trykk
+  Tab til, eller klikk inni dette eksempelet og trykk
   <kbd>
     Tab
   </kbd>
   .
   <a href="#main-content">
-    Hopp til hovedinnhold
+    Hopp til hovedinnholdet
   </a>
 </p>
 <main
   id="main-content"
   tabindex="-1"
 >
-  Region som kan motta fokus fra skiplink.
+  Region som kan motta fokus fra SkipLink.
 </main>
 `;
