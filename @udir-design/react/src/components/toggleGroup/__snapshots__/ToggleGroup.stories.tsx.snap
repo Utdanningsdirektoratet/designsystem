@@ -1,6 +1,418 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Preview 1`] = `
+exports[`Controlled 1`] = `
+<h1>
+  Retting av prøver
+</h1>
+<div
+  role="radiogroup"
+  tabindex="0"
+>
+  <button
+    data-variant="tertiary"
+    type="button"
+    value="answers"
+    id="togglegroup-item-«r19»"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-«r17»"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M5.75 20.25V3.75h12.5v16.5zm-.25-18c-.69 0-1.25.56-1.25 1.25v17c0 .69.56 1.25 1.25 1.25h13c.69 0 1.25-.56 1.25-1.25v-17c0-.69-.56-1.25-1.25-1.25zm5.45 3.9a.75.75 0 0 1 .15 1.05l-1.5 2a.75.75 0 0 1-1.13.08l-1-1a.75.75 0 0 1 1.06-1.06l.389.388L9.9 6.3a.75.75 0 0 1 1.05-.15M13 7.25a.75.75 0 0 0 0 1.5h2.5a.75.75 0 0 0 0-1.5zm-4 4a.75.75 0 0 0 0 1.5h.01a.75.75 0 0 0 0-1.5zm2.25.75a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 0 1.5H12a.75.75 0 0 1-.75-.75m0 4a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 0 1.5H12a.75.75 0 0 1-.75-.75m-3 0a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Ikke påbegynt
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    value="drafts"
+    id="togglegroup-item-«r1c»"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-«r17»"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M11.286 11.483a.75.75 0 0 1 .099-.33l4.5-7.795a2.75 2.75 0 0 1 4.763 2.75l-4.5 7.795a.75.75 0 0 1-.236.25l-3.732 2.465a.75.75 0 0 1-1.162-.671zm1.486.266-.167 2.79L14.937 13l3.028-5.243-2.165-1.25zm6.577-6.39-.634 1.097-2.165-1.25.634-1.098a1.25 1.25 0 1 1 2.165 1.25M12.5 4.75H5.75v15.5h11.5V15.5a.75.75 0 0 1 1.5 0v5c0 .69-.56 1.25-1.25 1.25h-12c-.69 0-1.25-.56-1.25-1.25v-16c0-.69.56-1.25 1.25-1.25h7a.75.75 0 0 1 0 1.5"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Under arbeid
+  </button>
+  <button
+    data-variant="primary"
+    type="button"
+    value="correctedAnswers"
+    id="togglegroup-item-«r1f»"
+    aria-checked="true"
+    aria-current="true"
+    role="radio"
+    name="togglegroup-name-«r17»"
+    data-roving-tabindex-item="true"
+    tabindex="0"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M3.75 12a8.25 8.25 0 1 1 16.5 0 8.25 8.25 0 0 1-16.5 0M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25m4.573 7.234a.75.75 0 1 0-1.146-.968l-4.973 5.877L8.03 11.97a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.102-.046z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Ferdig
+  </button>
+</div>
+<table style="table-layout: fixed;">
+  <thead>
+    <tr>
+      <th>
+        Navn
+      </th>
+      <th>
+        Fag
+      </th>
+      <th>
+        Karakter
+      </th>
+      <th style="text-align: right;">
+        Se retting
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Per Hansen
+      </td>
+      <td>
+        Naturfag
+      </td>
+      <td>
+        6
+      </td>
+      <td style="display: flex; justify-content: flex-end;">
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          aria-label="Se retting"
+          popovertarget="«r1h»"
+          popovertargetaction="show"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M14.087 6.874a.752.752 0 0 0-.117 1.156l3.22 3.22H5a.75.75 0 0 0 0 1.5h12.19l-3.22 3.22a.75.75 0 0 0 1.06 1.06l4.5-4.5a.75.75 0 0 0 0-1.06l-4.5-4.5a.75.75 0 0 0-.943-.096"
+            >
+            </path>
+          </svg>
+        </button>
+        <span
+          role="tooltip"
+          id="«r1h»"
+          popover="manual"
+          style="opacity: 0;"
+        >
+          Se retting
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Ola Nordmann
+      </td>
+      <td>
+        Engelsk
+      </td>
+      <td>
+        4
+      </td>
+      <td style="display: flex; justify-content: flex-end;">
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          aria-label="Se retting"
+          popovertarget="«r1j»"
+          popovertargetaction="show"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M14.087 6.874a.752.752 0 0 0-.117 1.156l3.22 3.22H5a.75.75 0 0 0 0 1.5h12.19l-3.22 3.22a.75.75 0 0 0 1.06 1.06l4.5-4.5a.75.75 0 0 0 0-1.06l-4.5-4.5a.75.75 0 0 0-.943-.096"
+            >
+            </path>
+          </svg>
+        </button>
+        <span
+          role="tooltip"
+          id="«r1j»"
+          popover="manual"
+          style="opacity: 0;"
+        >
+          Se retting
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Kari Nordmann
+      </td>
+      <td>
+        Engelsk
+      </td>
+      <td>
+        5
+      </td>
+      <td style="display: flex; justify-content: flex-end;">
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          aria-label="Se retting"
+          popovertarget="«r1l»"
+          popovertargetaction="show"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M14.087 6.874a.752.752 0 0 0-.117 1.156l3.22 3.22H5a.75.75 0 0 0 0 1.5h12.19l-3.22 3.22a.75.75 0 0 0 1.06 1.06l4.5-4.5a.75.75 0 0 0 0-1.06l-4.5-4.5a.75.75 0 0 0-.943-.096"
+            >
+            </path>
+          </svg>
+        </button>
+        <span
+          role="tooltip"
+          id="«r1l»"
+          popover="manual"
+          style="opacity: 0;"
+        >
+          Se retting
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button
+  data-variant="secondary"
+  type="button"
+  style="width: fit-content; margin-top: var(--ds-size-4);"
+>
+  Se nye besvarelser
+</button>
+`;
+
+exports[`Only Icons 1`] = `
+<div
+  role="radiogroup"
+  tabindex="0"
+>
+  <button
+    data-icon="true"
+    data-variant="primary"
+    type="button"
+    value="venstrestilt"
+    aria-label="Venstrestilt"
+    popovertarget="«rr»"
+    popovertargetaction="show"
+    id="togglegroup-item-«rt»"
+    aria-checked="true"
+    aria-current="true"
+    role="radio"
+    name="togglegroup-name-«rq»"
+    data-roving-tabindex-item="true"
+    tabindex="0"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4 3.25a.75.75 0 0 1 .75.75v16a.75.75 0 0 1-1.5 0V4A.75.75 0 0 1 4 3.25M6.25 6A.75.75 0 0 1 7 5.25h13a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-.75.75H7a.75.75 0 0 1-.75-.75zm1.5.75v2.5h11.5v-2.5zM7 13.25a.75.75 0 0 0-.75.75v4c0 .414.336.75.75.75h7a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 0-.75-.75zm.75 4v-2.5h5.5v2.5z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+  </button>
+  <span
+    role="tooltip"
+    id="«rr»"
+    popover="manual"
+    style="opacity: 0;"
+  >
+    Venstrestilt
+  </span>
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
+    value="midtstilt"
+    aria-label="Midtstilt"
+    popovertarget="«rv»"
+    popovertargetaction="show"
+    id="togglegroup-item-«r11»"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-«rq»"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M12 3.25a.75.75 0 0 1 .75.75v1.25h5.75a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-.75.75h-5.75v2.5h2.75a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-.75.75h-2.75V20a.75.75 0 0 1-1.5 0v-1.25H8.5a.75.75 0 0 1-.75-.75v-4a.75.75 0 0 1 .75-.75h2.75v-2.5H5.5a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75h5.75V4a.75.75 0 0 1 .75-.75m-.75 11.5h-2v2.5h2zm1.5 2.5h2v-2.5h-2zm-6.5-10.5h5v2.5h-5zm6.5 0v2.5h5v-2.5z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+  </button>
+  <span
+    role="tooltip"
+    id="«rv»"
+    popover="manual"
+    style="opacity: 0;"
+  >
+    Midtstilt
+  </span>
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
+    value="høyrestilt"
+    aria-label="Høyrestilt"
+    popovertarget="«r13»"
+    popovertargetaction="show"
+    id="togglegroup-item-«r15»"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-«rq»"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M20 20.75a.75.75 0 0 1-.75-.75V4a.75.75 0 0 1 1.5 0v16a.75.75 0 0 1-.75.75M17.75 10a.75.75 0 0 1-.75.75H4a.75.75 0 0 1-.75-.75V6A.75.75 0 0 1 4 5.25h13a.75.75 0 0 1 .75.75zm-1.5-.75v-2.5H4.75v2.5zm.75 9.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 0-.75-.75h-7a.75.75 0 0 0-.75.75v4c0 .414.336.75.75.75zm-.75-4v2.5h-5.5v-2.5z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+  </button>
+  <span
+    role="tooltip"
+    id="«r13»"
+    popover="manual"
+    style="opacity: 0;"
+  >
+    Høyrestilt
+  </span>
+</div>
+`;
+
+exports[`Only Text 1`] = `
+<label>
+  Filtrering av skjema
+</label>
 <div
   role="radiogroup"
   tabindex="0"
@@ -8,28 +420,78 @@ exports[`Preview 1`] = `
   <button
     data-variant="primary"
     type="button"
-    value="innboks"
-    id="togglegroup-item-«r2»"
+    value="personlig"
+    id="togglegroup-item-«rb»"
     aria-checked="true"
     aria-current="true"
     role="radio"
-    name="togglegroup-name-«r0»"
+    name="togglegroup-name-«r9»"
     data-roving-tabindex-item="true"
     tabindex="0"
   >
-    Innboks
+    Personlig
   </button>
   <button
     data-variant="tertiary"
     type="button"
-    value="utkast"
-    id="togglegroup-item-«r4»"
+    value="generelt"
+    id="togglegroup-item-«rd»"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-«r9»"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    Generelt
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    value="tilleggsinformasjon"
+    id="togglegroup-item-«rf»"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-«r9»"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    Tilleggsinformasjon
+  </button>
+</div>
+`;
+
+exports[`Preview 1`] = `
+<div
+  role="radiogroup"
+  tabindex="0"
+>
+  <button
+    data-variant="tertiary"
+    type="button"
+    value="innboks"
+    id="togglegroup-item-«r2»"
     aria-checked="false"
     aria-current="false"
     role="radio"
     name="togglegroup-name-«r0»"
     data-roving-tabindex-item="true"
     tabindex="-1"
+  >
+    Innboks
+  </button>
+  <button
+    data-variant="primary"
+    type="button"
+    value="utkast"
+    id="togglegroup-item-«r4»"
+    aria-checked="true"
+    aria-current="true"
+    role="radio"
+    name="togglegroup-name-«r0»"
+    data-roving-tabindex-item="true"
+    tabindex="0"
   >
     Utkast
   </button>
@@ -64,6 +526,110 @@ exports[`Preview 1`] = `
 </div>
 `;
 
+exports[`Text And Icons 1`] = `
+<div
+  role="radiogroup"
+  tabindex="0"
+>
+  <button
+    data-variant="primary"
+    type="button"
+    value="aktiv"
+    id="togglegroup-item-«ri»"
+    aria-checked="true"
+    aria-current="true"
+    role="radio"
+    name="togglegroup-name-«rg»"
+    data-roving-tabindex-item="true"
+    tabindex="0"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M3.75 12a8.25 8.25 0 1 1 16.5 0 8.25 8.25 0 0 1-16.5 0M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25m4.573 7.234a.75.75 0 1 0-1.146-.968l-4.973 5.877L8.03 11.97a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.102-.046z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Aktiv
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    value="advarsel"
+    id="togglegroup-item-«rl»"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-«rg»"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M12 2.25a.75.75 0 0 1 .656.387l9.527 17.25A.75.75 0 0 1 21.526 21H2.474a.75.75 0 0 1-.657-1.113l9.527-17.25A.75.75 0 0 1 12 2.25m8.255 17.25L12 4.551 3.745 19.5zM12 8.75a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-1.5 0v-4a.75.75 0 0 1 .75-.75m0 6.75a1 1 0 1 0 0 2 1 1 0 0 0 0-2"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Advarsel
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    value="kritisk"
+    id="togglegroup-item-«ro»"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-«rg»"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M8.272 2.25a.75.75 0 0 0-.53.22L2.47 7.742a.75.75 0 0 0-.22.53v7.456c0 .199.079.39.22.53l5.272 5.272c.14.141.331.22.53.22h7.456a.75.75 0 0 0 .53-.22l5.272-5.272a.75.75 0 0 0 .22-.53V8.272a.75.75 0 0 0-.22-.53L16.258 2.47a.75.75 0 0 0-.53-.22zM3.75 8.583 8.583 3.75h6.834l4.833 4.833v6.834l-4.833 4.833H8.583L3.75 15.417zm5.28-.613a.75.75 0 0 0-1.06 1.06L10.94 12l-2.97 2.97a.75.75 0 1 0 1.06 1.06L12 13.06l2.97 2.97a.75.75 0 1 0 1.06-1.06L13.06 12l2.97-2.97a.75.75 0 0 0-1.06-1.06L12 10.94z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+    Kritisk
+  </button>
+</div>
+`;
+
 exports[`Toggle Group In Color Context 1`] = `
 <div
   data-variant="tinted"
@@ -77,11 +643,11 @@ exports[`Toggle Group In Color Context 1`] = `
       data-variant="primary"
       type="button"
       value="innboks"
-      id="togglegroup-item-«rb»"
+      id="togglegroup-item-«r1p»"
       aria-checked="true"
       aria-current="true"
       role="radio"
-      name="togglegroup-name-«r9»"
+      name="togglegroup-name-«r1n»"
       data-roving-tabindex-item="true"
       tabindex="0"
     >
@@ -91,11 +657,11 @@ exports[`Toggle Group In Color Context 1`] = `
       data-variant="tertiary"
       type="button"
       value="utkast"
-      id="togglegroup-item-«rd»"
+      id="togglegroup-item-«r1r»"
       aria-checked="false"
       aria-current="false"
       role="radio"
-      name="togglegroup-name-«r9»"
+      name="togglegroup-name-«r1n»"
       data-roving-tabindex-item="true"
       tabindex="-1"
     >
@@ -105,11 +671,11 @@ exports[`Toggle Group In Color Context 1`] = `
       data-variant="tertiary"
       type="button"
       value="arkiv"
-      id="togglegroup-item-«rf»"
+      id="togglegroup-item-«r1t»"
       aria-checked="false"
       aria-current="false"
       role="radio"
-      name="togglegroup-name-«r9»"
+      name="togglegroup-name-«r1n»"
       data-roving-tabindex-item="true"
       tabindex="-1"
     >
@@ -119,11 +685,11 @@ exports[`Toggle Group In Color Context 1`] = `
       data-variant="tertiary"
       type="button"
       value="sendt"
-      id="togglegroup-item-«rh»"
+      id="togglegroup-item-«r1v»"
       aria-checked="false"
       aria-current="false"
       role="radio"
-      name="togglegroup-name-«r9»"
+      name="togglegroup-name-«r1n»"
       data-roving-tabindex-item="true"
       tabindex="-1"
     >
