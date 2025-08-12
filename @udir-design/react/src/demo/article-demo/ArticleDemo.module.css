@@ -1,0 +1,43 @@
+.article {
+  border-radius: var(--ds-border-radius-md);
+  border: 1px solid var(--ds-color-neutral-border-subtle);
+  padding: 24px;
+}
+
+.contentSpacing {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-13);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-3);
+}
+
+.contentWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: var(--ds-color-support2-background-tinted);
+  border-color: var(--ds-color-support2-border-subtle);
+}
+
+.changes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-3);
+}
+
+.headingWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scrollButton {
+  margin: 0 auto;
+}
