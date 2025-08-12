@@ -19,11 +19,6 @@
   margin: 0 auto;
 }
 
-.card {
-  background-color: var(--ds-color-support2-background-tinted);
-  border-color: var(--ds-color-support2-border-subtle);
-}
-
 .headingWrapper {
   display: flex;
   justify-content: space-between;

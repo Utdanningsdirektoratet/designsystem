@@ -177,7 +177,10 @@ exports[`Article Story 1`] = `
           Skriv ut denne siden
         </a>
       </div>
-      <div data-variant="default">
+      <div
+        data-variant="tinted"
+        data-color="support2"
+      >
         <h2 data-size="sm">
           Planleggingsverktøy
         </h2>

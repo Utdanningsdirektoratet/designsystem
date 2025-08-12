@@ -61,7 +61,7 @@ export const ArticleDemo = ({ ...props }: ArticleDemoProps) => {
             <PrinterSmallIcon aria-hidden /> Skriv ut denne siden
           </Link>
         </div>
-        <Card className={classes.card}>
+        <Card data-color="support2" variant="tinted">
           <Heading level={2} data-size="sm">
             Planleggingsverktøy
           </Heading>
