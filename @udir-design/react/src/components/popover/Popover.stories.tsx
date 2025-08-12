@@ -56,7 +56,7 @@ export const Preview: Story = {
 export const Interactive: Story = {
   render: () => (
     <Popover.TriggerContext>
-      <Popover.Trigger aria-label="Lukk">
+      <Popover.Trigger aria-label="Lukk" variant="secondary">
         Lukk <MultiplyIcon aria-hidden />
       </Popover.Trigger>
       <Popover>
