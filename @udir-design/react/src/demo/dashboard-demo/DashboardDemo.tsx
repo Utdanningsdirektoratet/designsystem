@@ -9,15 +9,19 @@ import { Settings } from './tabs/settings/Settings';
 
 type DashboardDemoProps = {
   setColorMode: React.Dispatch<React.SetStateAction<string>>;
+  page?: string;
 } & HTMLAttributes<HTMLDivElement>;
 
-export const DashboardDemo = ({ ...props }: DashboardDemoProps) => {
+export const DashboardDemo = ({
+  page = 'overview',
+  ...props
+}: DashboardDemoProps) => {
   return (
     <div {...props} className={cl(classes.card, classes.container)}>
       <Heading level={1} data-size="md">
         Schweigaardsgate skole
       </Heading>
-      <Tabs defaultValue="overview">
+      <Tabs defaultValue={page}>
         <Tabs.List>
           <Tabs.Tab value="overview">Oversikt</Tabs.Tab>
           <Tabs.Tab value="tests">Prøver</Tabs.Tab>

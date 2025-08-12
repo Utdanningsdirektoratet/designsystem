@@ -52,3 +52,17 @@ export const FormStory: Story = {
     );
   },
 };
+
+export const FormPage2: Story = {
+  ...FormStory,
+  args: {
+    page: 2,
+  },
+};
+
+export const FormPage3: Story = {
+  ...FormStory,
+  args: {
+    page: 3,
+  },
+};
