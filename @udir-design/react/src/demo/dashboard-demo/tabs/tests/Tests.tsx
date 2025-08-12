@@ -13,7 +13,9 @@ const tests = [
 
 const options = {
   title: {
-    text: '',
+    text: 'Prøver',
+    // hide title but keep fpr accessibility
+    style: { display: 'none' },
   },
   colors: [
     '#5BA27E',

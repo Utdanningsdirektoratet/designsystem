@@ -39,3 +39,24 @@ export const DashboardStory: Story = {
     );
   },
 };
+
+export const DashboardPage2: Story = {
+  ...DashboardStory,
+  args: {
+    page: 'tests',
+  },
+};
+
+export const DashboardPage3: Story = {
+  ...DashboardStory,
+  args: {
+    page: 'test-answers',
+  },
+};
+
+export const DashboardPage4: Story = {
+  ...DashboardStory,
+  args: {
+    page: 'settings',
+  },
+};

@@ -14,7 +14,9 @@ import { PersonalInfoPage } from './pages/PersonalInfoPage';
 import { RankingPage } from './pages/RankingPage';
 import { FinishPage } from './pages/FinishPage.tsx';
 
-type FormDemo = HTMLAttributes<HTMLDivElement>;
+type FormDemo = HTMLAttributes<HTMLDivElement> & {
+  page?: number;
+};
 
 export type FormValues = {
   firstName: string;
@@ -47,7 +49,7 @@ const pageFields: Record<number, (keyof FormValues)[]> = {
   3: ['addition', 'contactMethods'],
 };
 
-export const FormDemo = ({ ...props }: FormDemo) => {
+export const FormDemo = ({ page = 1, ...props }: FormDemo) => {
   const methods = useForm<FormValues>({
     mode: 'onChange',
     shouldFocusError: false, // We focus the ErrorSummary instead
@@ -59,7 +61,7 @@ export const FormDemo = ({ ...props }: FormDemo) => {
     formState: { errors },
   } = methods;
 
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(page);
   const [attemptedNext, setAttemptedNext] = useState(false);
   const totalPages = 3;
 
