@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Button, Textfield } from '@udir-design/react/alpha';
+import { Button, Textfield } from '@udir-design/react/beta';
 import { ErrorSummary } from './ErrorSummary';
 import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import { expect, userEvent, within } from 'storybook/test';
@@ -8,7 +8,7 @@ import { formatReactSource } from '.storybook/utils/sourceTransformers';
 
 const meta: Meta<typeof ErrorSummary> = {
   component: ErrorSummary,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     layout: 'centered',
   },
