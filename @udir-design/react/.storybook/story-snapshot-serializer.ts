@@ -1,5 +1,9 @@
 import { SnapshotSerializer } from 'vitest';
 import diffableHtml from 'diffable-html';
+import { fromHtml } from 'hast-util-from-html';
+import { toHtml } from 'hast-util-to-html';
+import { isElement } from 'hast-util-is-element';
+import { remove } from 'unist-util-remove';
 
 const CLASS_PATTERN = /class="[^"]+"/g;
 const TEST_ID_PATTERN = /data-testid="[^"]+"/g;
@@ -17,7 +21,19 @@ export default {
       .replace(DS_POPOVER_ARROW_PATTERN, '$1: <removed>;')
       // ensure dynamic translate doesn't break tests
       .replace(TRANSLATE_PATTERN, '$1: <removed>;');
-    return diffableHtml(cleaned).trim();
+
+    const tree = fromHtml(cleaned, { fragment: true });
+    // Remove Highcharts nodes, since they are subtly different on each render
+    remove(
+      tree,
+      (node) =>
+        isElement(node) && node.properties.dataHighchartsChart !== undefined,
+    );
+    const processed = toHtml(tree, {
+      characterReferences: { useNamedReferences: true },
+    });
+
+    return diffableHtml(processed).trim();
   },
   /**
    * Should this serializer be used?
