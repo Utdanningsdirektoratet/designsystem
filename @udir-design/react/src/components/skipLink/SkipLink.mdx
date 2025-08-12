@@ -5,7 +5,7 @@ import * as SkipLinkStories from './SkipLink.stories';
 
 # SkipLink
 
-Vi bruker snarvei-komponenten `SkipLink` for å hjelpe folk som bruker tastaturet til å navigere, slik at de enkelt kan gå til det viktigste innholdet på en side. Snarveien bør være det første elementet markøren går til når du navigerer med tastaturet, og teksten bør si tydelig hva snarveien fører til. Snarvei-komponenten er ikke synlig før et trykk på tastaturet aktiverer den.
+Vi bruker snarvei-komponenten `SkipLink` for å la folk som bruker tastaturet til å navigere enkelt nå det viktigste innholdet på en side. Snarveien bør være det første elementet markøren går til når du navigerer med tastaturet, og teksten bør si tydelig hva snarveien fører til. Snarvei-komponenten er ikke synlig før den får fokus fra tastaturet.
 
 **Passer til å**
 
@@ -19,10 +19,10 @@ Vi bruker snarvei-komponenten `SkipLink` for å hjelpe folk som bruker tastature
 ```tsx
 import { SkipLink } from '@udir-design/react';
 
-<SkipLink href='#main-content'>Hopp til hovedinnhold</SkipLink>
+<SkipLink href='#main-content'>Hopp til hovedinnholdet</SkipLink>
 
 <main id='main-content' tabIndex={-1} >
-  Region som kan motta fokus fra skiplink.
+  Region som kan motta fokus fra SkipLink.
 </main>
 ```
 

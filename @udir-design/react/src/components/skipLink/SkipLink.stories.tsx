@@ -6,7 +6,7 @@ import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBeha
 
 const meta: Meta<typeof SkipLink> = {
   component: SkipLink,
-  tags: ['alpha'],
+  tags: ['beta'],
   decorators: [withScrollHashBehavior],
 };
 
