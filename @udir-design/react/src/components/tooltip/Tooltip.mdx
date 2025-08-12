@@ -1,0 +1,80 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import * as TooltipStories from './Tooltip.stories.tsx';
+
+<Meta of={TooltipStories} />
+
+# Tooltip
+
+`Tooltip` viser kort informasjon når brukeren holder musepekeren over (`hover`) eller fokuserer på et element (`active`). Den brukes til sekundær informasjon, for eksempel til å forklare hva et ikon betyr.
+
+**Passer til å**
+
+- beskrive handlingen et interaktivt element utfører
+- vise tastatursnarveier
+
+**Passer ikke til å**
+
+- forklare noe i detaljer eller gi utdypende informasjon
+- vise skjult innhold, meldinger eller advarsler
+- være en erstatning for `alt`-tekst eller `title`
+- inneholde lenker eller andre interaktive elementer
+- vise tekst som allerede er synlig på siden
+
+## Slik bruker du Tooltip
+
+<Primary />
+<Controls />
+
+```tsx
+import { Tooltip } from '@udir-design/react';
+
+<Tooltip content="Cmd + P">
+  <Button>
+    <PrinterSmallIcon aria-hidden />
+  </Button>
+</Tooltip>;
+```
+
+## Eksempler
+
+### Plassering
+
+Vurder om `Tooltip` skal plasseres over, under eller ved siden av elementet.
+
+<Canvas of={TooltipStories.Placement} />
+
+## Retningslinjer
+
+`Tooltip` gir kort tilleggsinformasjon uten å forstyrre hovedinnholdet. `Tooltip` er ikke ment for informasjon som er essensiell for å fullføre oppgaven. Viktig innhold bør i stedet plasseres som `brødtekst` eller `hjelpetekst` på selve siden.
+
+`Tooltip` rendrer en `<span>`, så du kan bruke den i f.eks. `<div>`, men ikke inni `<svg>`.
+
+Hvis det er behov for å vise rikt innhold, for eksempel lengre tekster, bilder eller knapper, kan vi i stedet bruke en [`Popover`](/docs/components-popover--docs).
+
+## Tekst i Tooltip
+
+En `Tooltip` skal ikke inneholde mer enn en setning eller maks fire ord, for å unngå at de blokkerer annet viktig innhold på skjermen. `Tooltip` skal ikke gjenta tekst som allerede finnes på siden. De skal tilby ekstra hjelp eller forklaringer som ikke er åpenbare ved første øyekast.
+
+## Tilgjengelighet
+
+### Interaksjon med mus
+
+`Tooltip` vises når et element får hover, og blir borte når musen forlater elementet.
+
+### Interaksjon med tastatur
+
+`Tooltip` vises når et element får tastaturfokus, og forsvinner når fokus fjernes.
+
+### Interaksjon med touch
+
+På berøringsskjermer er `Tooltip` mindre egnet, fordi de vanligvis aktiveres ved `hover` eller `fokus`, som ikke støttes på disse enhetene. `Tooltip` vises i stedet kun når brukeren trykker på elementet, og forsvinner igjen når brukeren trykker utenfor elementet.
+
+## Kompatibilitet
+
+I Safari fungerer ikke fade-in animasjon.
+
+### Polyfill
+
+`Tooltip` bruker [popover](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover). Dette API-et er klassifisert som [Baseline: Newly available](https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility) fra april 2024, da Firefox som siste nettleser la det til. I noen tilfeller kan en oppleve at brukere av ulike grunner er låst til eldre nettleserversjoner, og da kan det være aktuelt å legge til en polyfill for å sikre at `Tooltip` fungerer for alle.
+
+- [Popover-Polyfill](https://github.com/oddbird/popover-polyfill)
