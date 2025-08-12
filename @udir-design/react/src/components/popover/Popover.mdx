@@ -44,11 +44,15 @@ import { Popover } from '@udir-design/react';
 Du kan bruke alle identitetsfargene på `Popover`, i tillegg til de semantiske fargene. Dette kan endres med `data-color`.
 Du kan også sette `variant=tinted` for å få valgt farge som bakgrunn.
 
+#### Identitetsfarger
+
 <Canvas of={PopoverStories.ColorVariants} />
+
+#### Semantiske farger
 
 <Canvas of={PopoverStories.Variants} />
 
-### Inline
+### Ordforklaring
 
 Bruk `inline={true}` (stiplet understrek) på `Popover.Trigger` for å indikere en ordforklaring. Dette er nyttig dersom man for eksempel vil gi tilleggsinformasjon til et ord i en artikel. Popoveren kan inneholde en kort tekst som utdyper ordets betydning.
 
@@ -60,7 +64,7 @@ Bruk `Popover` for å inkludere interaksjoner som knapper eller lenker.
 
 <Canvas of={PopoverStories.Interactive} />
 
-### Kontrollert
+### Kontrollert tilstand
 
 `open` propen kan brukes for å kontrollere tilstanden til `Popover`. Du kan også bruke `onClose` for å trigge andre effekter når `Popover` blir lukket.
 Disse kontrollmulighetene er nyttige dersom du for eksempel har annet innhold på siden som skal lukke `Popover` når du klikker på det.
@@ -81,6 +85,8 @@ Unngå lange tekster og kompliserte forklaringer. I noen tilfeller er det kanskj
 Det er innebygd tilgjengelighet i [Popover API-et](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API) i henhold til åpnet/lukket tilstand og tastaturnavigasjon.
 
 ## Kompatibilitet
+
+### Polyfill
 
 `Popover` bruker [Popover API-et](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover). Dette apiet er klassifisert som [Baseline: Newly available](https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility) fra april 2024, da Firefox som siste nettleser la det til. I noen tilfeller kan en oppleve at brukere av ulike grunner er låst til eldre nettleserversjoner, og da kan det være aktuelt å legge til en polyfill for å sikre at `Popover` fungerer for alle.
 
