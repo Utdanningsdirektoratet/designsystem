@@ -1,0 +1,330 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Article Story 1`] = `
+<div>
+  <div data-size="sm">
+    <fieldset>
+      <legend data-weight="medium">
+        Størrelse
+        <code data-size="xs">
+          (data-size)
+        </code>
+      </legend>
+      <div
+        role="radiogroup"
+        tabindex="0"
+      >
+        <button
+          data-variant="primary"
+          type="button"
+          value="sm"
+          id="togglegroup-item-«r2»"
+          aria-checked="true"
+          aria-current="true"
+          role="radio"
+          name="togglegroup-name-«r0»"
+          data-roving-tabindex-item="true"
+          tabindex="0"
+        >
+          sm
+        </button>
+        <button
+          data-variant="tertiary"
+          type="button"
+          value="md"
+          id="togglegroup-item-«r4»"
+          aria-checked="false"
+          aria-current="false"
+          role="radio"
+          name="togglegroup-name-«r0»"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+        >
+          md
+        </button>
+        <button
+          data-variant="tertiary"
+          type="button"
+          value="lg"
+          id="togglegroup-item-«r6»"
+          aria-checked="false"
+          aria-current="false"
+          role="radio"
+          name="togglegroup-name-«r0»"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+        >
+          lg
+        </button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend data-weight="medium">
+        Fargemodus
+        <code data-size="xs">
+          (data-color-scheme)
+        </code>
+      </legend>
+      <div
+        role="radiogroup"
+        tabindex="0"
+      >
+        <button
+          data-variant="tertiary"
+          type="button"
+          value="light"
+          id="togglegroup-item-«r9»"
+          aria-checked="false"
+          aria-current="false"
+          role="radio"
+          name="togglegroup-name-«r7»"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+        >
+          light
+        </button>
+        <button
+          data-variant="tertiary"
+          type="button"
+          value="dark"
+          id="togglegroup-item-«rb»"
+          aria-checked="false"
+          aria-current="false"
+          role="radio"
+          name="togglegroup-name-«r7»"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+        >
+          dark
+        </button>
+        <button
+          data-variant="primary"
+          type="button"
+          value="auto"
+          id="togglegroup-item-«rd»"
+          aria-checked="true"
+          aria-current="true"
+          role="radio"
+          name="togglegroup-name-«r7»"
+          data-roving-tabindex-item="true"
+          tabindex="0"
+        >
+          auto
+        </button>
+      </div>
+    </fieldset>
+  </div>
+  <hr aria-hidden="true">
+  <article
+    data-size="sm"
+    data-color-scheme="auto"
+  >
+    <nav aria-label="Du er her:">
+      <a aria-label="Tilbake til mer informasjon">
+        Mer informasjon
+      </a>
+      <ol>
+        <li>
+          <a href="https://www.udir.no/">
+            Generell informasjon
+          </a>
+        </li>
+        <li>
+          <a href="https://www.udir.no/laring-og-trivsel/lareplanverket/">
+            Mer informasjon
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/planleggingsverktoy-i-lareplanvisning/"
+            aria-current="page"
+          >
+            Læreplanverket
+          </a>
+        </li>
+      </ol>
+    </nav>
+    <div>
+      <div data-color="info">
+        Denne artikkelen er mer enn 2 år gammel
+      </div>
+      <div>
+        <h1 data-size="md">
+          Læreplanverket
+        </h1>
+        <a
+          href="#"
+          data-size="md"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M7 2.25a.75.75 0 0 0-.75.75v4.25H4A1.75 1.75 0 0 0 2.25 9v9c0 .414.336.75.75.75h3.25V21c0 .414.336.75.75.75h10a.75.75 0 0 0 .75-.75v-2.25H21a.75.75 0 0 0 .75-.75V9A1.75 1.75 0 0 0 20 7.25h-2.25V3a.75.75 0 0 0-.75-.75zM3.75 9A.25.25 0 0 1 4 8.75h16a.25.25 0 0 1 .25.25v8.25h-2.5V12a.75.75 0 0 0-.75-.75H7a.75.75 0 0 0-.75.75v5.25h-2.5zm12.5-1.75v-3.5h-8.5v3.5zm-8.5 5.5v7.5h8.5v-7.5zM9.25 15a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75m0 3a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H10a.75.75 0 0 1-.75-.75"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          Skriv ut denne siden
+        </a>
+      </div>
+      <div
+        data-variant="tinted"
+        data-color="support2"
+      >
+        <h2 data-size="sm">
+          Planleggingsverktøy
+        </h2>
+        <p data-variant="default">
+          Planleggingsverktøyet gir støtte til å ta i bruk læreplanene.
+        </p>
+      </div>
+      <section>
+        <h2 data-size="sm">
+          Hvordan bruke verktøyet
+        </h2>
+        <p data-variant="default">
+          Verktøyet kan brukes til å jobbe med de didaktiske spørsmålene hvorfor, hva og hvordan i planlegging av opplæring i tråd med læreplanverket.
+        </p>
+        <h3 data-size="xs">
+          Hvilke ressurser er tilgjengelige?
+        </h3>
+        <p data-variant="default">
+          Det finnes flere ressurser tilgjengelig for lærere som ønsker å forbedre sine planleggingsevner. Dette inkluderer maler, sjekklister og veiledninger som kan lastes ned fra vår nettside.
+        </p>
+        <h3 data-size="xs">
+          Hvordan involvere elever i planlegging?
+        </h3>
+        <p data-variant="default">
+          Å involvere elever i planleggingen av egne læringsmål kan øke motivasjonen. Dette kan gjøres gjennom workshops og tilbakemeldingsrunder der elevenes stemmer blir hørt.
+        </p>
+      </section>
+      <section>
+        <h2 data-size="sm">
+          Tilgang
+        </h2>
+        <p data-variant="default">
+          Skoleeiere, høgskoler, universitet og lærebedrifter som ønsker at lærere og ansatte skal ha tilgang til verktøyet, må signere databehandleravtale.
+        </p>
+        <h3 data-size="xs">
+          Lærere
+        </h3>
+        <p data-variant="default">
+          Lærere som ønsker å bruke verktøyet til undervisning må registrere seg og bekrefte sin identitet.
+        </p>
+        <h3 data-size="xs">
+          Studenter
+        </h3>
+        <p data-variant="default">
+          Studenter får tilgang til verktøyet gjennom lærerne sine, etter at de har fått bekreftet sin påmelding.
+        </p>
+        <h3 data-size="xs">
+          IT-ansvarlige
+        </h3>
+        <p data-variant="default">
+          IT-ansvarlige i institusjoner må sørge for at nødvendig infrastruktur er på plass for at verktøyet skal fungere optimalt.
+        </p>
+      </section>
+      <section>
+        <h2 data-size="sm">
+          Tekniske spørsmål
+        </h2>
+        <p data-variant="default">
+          Har du tekniske spørsmål, så send en e-post til lpv@udir.no. Hvis du bytter Feide-bruker, så hjelper vi deg også med å koble planer du allerede har til din nye Feide-bruker.
+        </p>
+      </section>
+      <div data-variant="default">
+        <div>
+          <h2 data-size="sm">
+            Endringer i verktøyet
+          </h2>
+          <p data-variant="default">
+            Vi går igjennom alle innspillene vi får, og med jevne mellomrom prioriterer vi hva vi gjør av endringer.
+          </p>
+        </div>
+        <u-details data-variant="default">
+          <u-summary
+            aria-expanded="false"
+            role="button"
+            slot="summary"
+            tabindex="0"
+          >
+            Oversikt - 19.11.2022
+          </u-summary>
+          <div>
+            Vi har lagt til en ny knapp hvor du får oversikt over hvilke deler av læreplanen du har brukt i planene dine.
+          </div>
+        </u-details>
+        <u-details data-variant="default">
+          <u-summary
+            aria-expanded="false"
+            role="button"
+            slot="summary"
+            tabindex="0"
+          >
+            Tilgang for instruktører i bedrift - 09.11.2022
+          </u-summary>
+          <div>
+            Vi har lagt til pålogging med ID-porten slik at også instruktører i bedrift kan bruke planleggingsverktøyet.
+          </div>
+        </u-details>
+        <u-details data-variant="default">
+          <u-summary
+            aria-expanded="false"
+            role="button"
+            slot="summary"
+            tabindex="0"
+          >
+            Invitere til flere planer - 25.01.2022
+          </u-summary>
+          <div>
+            Vi har fått innspill om at det er tungvindt å gå inn i en og en plan for å invitere samarbeidspartnere. Vi har lagt til mulighet for å invitere samarbeidspartnere til mange planer samtidig.
+          </div>
+        </u-details>
+        <u-details data-variant="default">
+          <u-summary
+            aria-expanded="false"
+            role="button"
+            slot="summary"
+            tabindex="0"
+          >
+            Velge språk - 10.01.2022
+          </u-summary>
+          <div>
+            Vi har lagt til funksjon for å velge språk slik at verktøyet er tilgjengelig på bokmål, nynorsk, nordsamisk, sørsamisk og lulesamisk. Det er mulig å velge språk på brukerinnstillinger og på hver enkelt plan.
+          </div>
+        </u-details>
+        <u-details data-variant="default">
+          <u-summary
+            aria-expanded="false"
+            role="button"
+            slot="summary"
+            tabindex="0"
+          >
+            Overføring av planer når en bruker slettes - 22.06.2022
+          </u-summary>
+          <div>
+            Tidligere var det slik at hvis en bruker slettet seg fra planleggingsverktøyet, så ble alle planene personen hadde opprettet også slettet. Vi fikk tilbakemelding om at dette var uheldig for samarbeidspartnerne. Vi har derfor endret dette. Nå er det slik: Den som har  opprettet en plan, har rollen som administrator. Hvis administrator av en plan slettes som bruker, blir ikke planen slettet hvis det er samarbeidspartnere på planen. Rollen som administrator blir overført til den samarbeidspartneren som står øverst på lista i planen. Samtykkeerklæringen er oppdatert i tråd med denne endringen. Det er fortsatt slik at både administrator og samarbeidspartnere kan endre en plan, men bare administrator kan slette den
+          </div>
+        </u-details>
+      </div>
+      <hr aria-hidden="true">
+      <button
+        data-variant="secondary"
+        type="button"
+      >
+        Tilbake til toppen
+      </button>
+    </div>
+  </article>
+</div>
+`;

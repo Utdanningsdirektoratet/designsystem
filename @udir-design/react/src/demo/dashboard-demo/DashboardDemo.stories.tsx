@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { DashboardDemo } from './DashboardDemo';
 import { useState } from 'react';
-import { Size } from '@digdir/designsystemet-react';
+import { Divider, Size } from '@digdir/designsystemet-react';
 import { Controls } from '../controls/Controls';
 
 const meta: Meta<typeof DashboardDemo> = {
@@ -29,6 +29,7 @@ export const DashboardStory: Story = {
           setSize={setSize}
           setColorMode={setColorMode}
         />
+        <Divider />
         <DashboardDemo
           {...args}
           data-size={size}
