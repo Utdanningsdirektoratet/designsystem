@@ -1,18 +1,518 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Preview 1`] = `
+exports[`Color Variants 1`] = `
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 100px; place-items: center; margin-top: var(--ds-size-12);">
+  <button
+    data-variant="tertiary"
+    type="button"
+    popovertarget="«rd»"
+  >
+    popover
+  </button>
+  <div
+    id="«rd»"
+    popover="manual"
+    data-variant="default"
+    data-color="neutral"
+    data-placement="top"
+    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  >
+    neutralDefault
+  </div>
+  <button
+    data-variant="tertiary"
+    type="button"
+    popovertarget="«re»"
+  >
+    popover
+  </button>
+  <div
+    id="«re»"
+    popover="manual"
+    data-variant="tinted"
+    data-color="neutral"
+    data-placement="top"
+    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  >
+    neutralTinted
+  </div>
+  <button
+    data-variant="tertiary"
+    type="button"
+    popovertarget="«rf»"
+  >
+    popover
+  </button>
+  <div
+    id="«rf»"
+    popover="manual"
+    data-variant="default"
+    data-color="accent"
+    data-placement="top"
+    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  >
+    accentDefault
+  </div>
+  <button
+    data-variant="tertiary"
+    type="button"
+    popovertarget="«rg»"
+  >
+    popover
+  </button>
+  <div
+    id="«rg»"
+    popover="manual"
+    data-variant="tinted"
+    data-color="accent"
+    data-placement="top"
+    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  >
+    accentTinted
+  </div>
+  <button
+    data-variant="tertiary"
+    type="button"
+    popovertarget="«rh»"
+  >
+    popover
+  </button>
+  <div
+    id="«rh»"
+    popover="manual"
+    data-variant="default"
+    data-color="support1"
+    data-placement="top"
+    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  >
+    support1Default
+  </div>
+  <button
+    data-variant="tertiary"
+    type="button"
+    popovertarget="«ri»"
+  >
+    popover
+  </button>
+  <div
+    id="«ri»"
+    popover="manual"
+    data-variant="tinted"
+    data-color="support1"
+    data-placement="top"
+    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  >
+    support1Tinted
+  </div>
+  <button
+    data-variant="tertiary"
+    type="button"
+    popovertarget="«rj»"
+  >
+    popover
+  </button>
+  <div
+    id="«rj»"
+    popover="manual"
+    data-variant="default"
+    data-color="support2"
+    data-placement="top"
+    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  >
+    support2Default
+  </div>
+  <button
+    data-variant="tertiary"
+    type="button"
+    popovertarget="«rk»"
+  >
+    popover
+  </button>
+  <div
+    id="«rk»"
+    popover="manual"
+    data-variant="tinted"
+    data-color="support2"
+    data-placement="top"
+    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  >
+    support2Tinted
+  </div>
+</div>
+`;
+
+exports[`Controlled 1`] = `
+<button
+  data-variant="tertiary"
+  type="button"
+  popovertarget="«rl»"
+>
+  Fjern
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      d="M18.03 7.03a.75.75 0 0 0-1.06-1.06L12 10.94 7.03 5.97a.75.75 0 0 0-1.06 1.06L10.94 12l-4.97 4.97a.75.75 0 1 0 1.06 1.06L12 13.06l4.97 4.97a.75.75 0 1 0 1.06-1.06L13.06 12z"
+    >
+    </path>
+  </svg>
+</button>
+<div
+  id="«rl»"
+  popover="manual"
+  data-variant="default"
+>
+  Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
+  <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
+    <button
+      data-variant="primary"
+      type="button"
+      data-size="sm"
+    >
+      Ja, fjern
+    </button>
+    <button
+      data-variant="tertiary"
+      type="button"
+      data-size="sm"
+    >
+      Avbryt
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Dotted Underline 1`] = `
+<p data-variant="default">
+  I aldersgruppen 1-5 år går 93 prosent av barna i barnehage. I aldersgruppen 3-5 år er andelen 97 prosent. Til sammenligning er
+  <button
+    popovertarget="«r4»"
+    data-popover="inline"
+  >
+    OECD
+  </button>
+  -gjennomsnittet for andelen 3-5-åringer i barnehage på 83 prosent (OECD 2021).
+</p>
+<div
+  id="«r4»"
+  popover="manual"
+  data-variant="default"
+  data-color="neutral"
+>
+  <p data-variant="default">
+    <strong>
+      Organisasjonen for økonomisk samarbeid og utvikling
+    </strong>
+    (OCED) er en internasjonal organisasjon som sammarbeider om å fremme økonomisk og sosial vekst og utvikling.
+  </p>
+</div>
+`;
+
+exports[`Interactive 1`] = `
 <button
   data-variant="primary"
   type="button"
+  popovertarget="«r2»"
+  aria-label="Lukk"
+>
+  Lukk
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      d="M18.03 7.03a.75.75 0 0 0-1.06-1.06L12 10.94 7.03 5.97a.75.75 0 0 0-1.06 1.06L10.94 12l-4.97 4.97a.75.75 0 1 0 1.06 1.06L12 13.06l4.97 4.97a.75.75 0 1 0 1.06-1.06L13.06 12z"
+    >
+    </path>
+  </svg>
+</button>
+<div
+  id="«r2»"
+  popover="manual"
+  data-variant="default"
+>
+  <p data-variant="default">
+    Vil du lagre endringene dine?
+  </p>
+  <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
+    <button
+      data-variant="primary"
+      type="button"
+      data-size="sm"
+    >
+      Lagre
+    </button>
+    <button
+      data-variant="tertiary"
+      type="button"
+      data-size="sm"
+    >
+      Ikke lagre
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Preview 1`] = `
+<button
+  data-variant="tertiary"
+  type="button"
   popovertarget="«r0»"
 >
-  My trigger!
+  Fjern
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      d="M18.03 7.03a.75.75 0 0 0-1.06-1.06L12 10.94 7.03 5.97a.75.75 0 0 0-1.06 1.06L10.94 12l-4.97 4.97a.75.75 0 1 0 1.06 1.06L12 13.06l4.97 4.97a.75.75 0 1 0 1.06-1.06L13.06 12z"
+    >
+    </path>
+  </svg>
 </button>
 <div
   id="«r0»"
   popover="manual"
   data-variant="default"
+  data-placement="bottom"
+  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
 >
-  popover content
+  Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
+  <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
+    <button
+      data-variant="primary"
+      type="button"
+      data-size="sm"
+    >
+      Ja, fjern
+    </button>
+    <button
+      data-variant="tertiary"
+      type="button"
+      data-size="sm"
+    >
+      Avbryt
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Variants 1`] = `
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 100px; place-items: center; margin-top: var(--ds-size-12);">
+  <button
+    data-variant="tertiary"
+    type="button"
+    popovertarget="«r5»"
+  >
+    popover
+  </button>
+  <div
+    id="«r5»"
+    popover="manual"
+    data-variant="default"
+    data-color="neutral"
+    data-placement="top"
+    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  >
+    neutralDefault
+  </div>
+  <button
+    data-variant="tertiary"
+    type="button"
+    popovertarget="«r6»"
+  >
+    popover
+  </button>
+  <div
+    id="«r6»"
+    popover="manual"
+    data-variant="tinted"
+    data-color="neutral"
+    data-placement="top"
+    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  >
+    neutralTinted
+  </div>
+  <button
+    data-variant="tertiary"
+    type="button"
+    popovertarget="«r7»"
+  >
+    popover
+  </button>
+  <div
+    id="«r7»"
+    popover="manual"
+    data-variant="default"
+    data-color="danger"
+    data-placement="top"
+    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  >
+    dangerDefault
+  </div>
+  <button
+    data-variant="tertiary"
+    type="button"
+    popovertarget="«r8»"
+  >
+    popover
+  </button>
+  <div
+    id="«r8»"
+    popover="manual"
+    data-variant="tinted"
+    data-color="danger"
+    data-placement="top"
+    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  >
+    dangerTinted
+  </div>
+  <button
+    data-variant="tertiary"
+    type="button"
+    popovertarget="«r9»"
+  >
+    popover
+  </button>
+  <div
+    id="«r9»"
+    popover="manual"
+    data-variant="default"
+    data-color="info"
+    data-placement="top"
+    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  >
+    infoDefault
+  </div>
+  <button
+    data-variant="tertiary"
+    type="button"
+    popovertarget="«ra»"
+  >
+    popover
+  </button>
+  <div
+    id="«ra»"
+    popover="manual"
+    data-variant="tinted"
+    data-color="info"
+    data-placement="top"
+    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  >
+    infoTinted
+  </div>
+  <button
+    data-variant="tertiary"
+    type="button"
+    popovertarget="«rb»"
+  >
+    popover
+  </button>
+  <div
+    id="«rb»"
+    popover="manual"
+    data-variant="default"
+    data-color="warning"
+    data-placement="top"
+    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  >
+    warningDefault
+  </div>
+  <button
+    data-variant="tertiary"
+    type="button"
+    popovertarget="«rc»"
+  >
+    popover
+  </button>
+  <div
+    id="«rc»"
+    popover="manual"
+    data-variant="tinted"
+    data-color="warning"
+    data-placement="top"
+    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  >
+    warningTinted
+  </div>
+</div>
+`;
+
+exports[`Without Context 1`] = `
+<button
+  data-variant="primary"
+  type="button"
+  popovertarget="my-popover"
+  aria-label="Slett rad"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-labelledby="title-«rn»"
+  >
+    <title id="title-«rn»">
+      Slett rad
+    </title>
+    <path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
+</button>
+<div
+  id="my-popover"
+  popover="manual"
+  data-variant="default"
+  data-color="neutral"
+>
+  <p data-variant="default">
+    Er du sikker på at du vil slette raden? Handlingen kan ikke angres.
+  </p>
+  <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
+    <button
+      data-variant="primary"
+      type="button"
+      data-size="sm"
+    >
+      Ja, slett den
+    </button>
+    <button
+      data-variant="tertiary"
+      type="button"
+      data-size="sm"
+    >
+      Avbryt
+    </button>
+  </div>
 </div>
 `;
