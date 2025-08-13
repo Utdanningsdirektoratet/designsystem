@@ -69,16 +69,15 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
           control={control}
           rules={{ required: 'Velg et fylke' }}
           defaultValue=""
-          render={({ field: { value, onChange, ...field } }) => (
+          render={({ field: { value, onChange, name: __name, ...field } }) => (
             <Suggestion
               {...field}
-              id="county"
               selected={value}
               onSelectedChange={(v) => {
                 onChange(v.at(0)?.value);
               }}
             >
-              <Suggestion.Input aria-invalid={!!errors.county} />
+              <Suggestion.Input aria-invalid={!!errors.county} id="county" />
               <Suggestion.Clear />
               <Suggestion.List>
                 <Suggestion.Empty>Ingen resultater</Suggestion.Empty>
