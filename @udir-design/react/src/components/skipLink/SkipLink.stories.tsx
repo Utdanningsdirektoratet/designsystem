@@ -6,7 +6,7 @@ import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBeha
 
 const meta: Meta<typeof SkipLink> = {
   component: SkipLink,
-  tags: ['alpha'],
+  tags: ['beta'],
   decorators: [withScrollHashBehavior],
 };
 
@@ -17,14 +17,14 @@ export const Preview: Story = {
   render: (args) => (
     <>
       <Paragraph>
-        For å vise skiplinken, tab til dette eksempelet, eller klikk inni
+        For å vise SkipLinken, tab til dette eksempelet, eller klikk inni
         eksempelet og trykk <kbd>Tab</kbd>.
         <SkipLink {...args} href="#main-content">
           Hopp til hovedinnhold
         </SkipLink>
       </Paragraph>
       <main id="main-content" tabIndex={-1}>
-        Region som kan motta fokus fra skiplink.
+        Region som kan motta fokus fra SkipLink.
       </main>
     </>
   ),
