@@ -3,7 +3,6 @@
  */
 
 export * from './badge/Badge';
-export * from './dropdown/Dropdown';
 export * from './popover/Popover';
 export * from './skipLink/SkipLink';
 export * from './suggestion/Suggestion';
