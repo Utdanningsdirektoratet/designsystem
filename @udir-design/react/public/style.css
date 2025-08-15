@@ -7,4 +7,21 @@
   --dsc-link-color--active: var(--ds-color-text-subtle);
   --dsc-link-color--hover: var(--ds-color-text-subtle);
   --dsc-link-color: var(--ds-color-text-default);
+
+  /*
+  * Ensure proper spacing if there are any svg or img.
+  * TODO: This has been added upstream, but not released yet.
+  *       Can be removed after upgrading to @digdir/designsystemet > 1.1.10.
+   */
+  &:has(> span) {
+    & > :is(img, svg) {
+      margin-inline: var(--ds-size-1);
+      &:first-child {
+        margin-inline-start: 0;
+      }
+      &:last-child {
+        margin-inline-end: 0;
+      }
+    }
+  }
 }
