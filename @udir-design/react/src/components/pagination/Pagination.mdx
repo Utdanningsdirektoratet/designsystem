@@ -11,19 +11,24 @@ import * as PaginationStories from './Pagination.stories';
 
 # Pagination
 
-`Pagination` er en liste av knapper som ofte brukes for å navigere mellom sider av informasjon. Komponenten kan brukes på forskjellige måter, se eksempler under [bruk](#bruk).
+`Pagination` er en liste med knapper som brukes for å navigere mellom ulike sider med innhold, for eksempel søkeresultater eller tabeller.
 
-Vær oppmerksom på:
+**Passer til å**
 
-- Knappene er som standard `button`-elementer.
-- Dersom du bruker paginering for å navigere mellom ulike sider i nettleseren, sørg for at pagineringsknappene blir `a`-elementer. Se eksempel [Paginering med lenker](#paginering-med-lenker).
+- navigere mellom relaterte sider
+- dele inn store mengder innhold i flere sider – for eksempel i tabeller
+
+**Passer ikke til å**
+
+- dele inn et skjema i steg
+- vise fremdrift
+
+## Slik bruker du Pagination
 
 <Primary />
 <Controls of={PaginationStories.Preview} />
 
-## Bruk
-
-`Pagination` er en kontrollert komponent. Det vil si at komponentens tilstand om hvilken side som er aktiv styres utenfra. Vi bruker `usePagination` sammen med de enkelte delkomponentene for å implementere funksjonaliteten.
+Komponentens tilstand om hvilken side som er aktiv styres programmatisk ved hjelp av `usePagination`.
 [Les mer om `usePagination`](/docs/utilities-usepagination--docs).
 
 ```tsx
@@ -65,8 +70,29 @@ const { pages, prevButtonProps, nextButtonProps, hasNext, hasPrevious } =
 </Pagination>;
 ```
 
-### Paginering med lenker
+## Eksempler
 
-Alle del-komponenter støtter `asChild` som kan brukes til å endre `Pagination.Button` til lenker (`a`).
+### Som lenker
+
+Vær oppmerksom på at knappene som standard er `<button>`-elementer. Hvis `Pagination` skal navigere til en ny URL, må knappene være lenker `<a>`.
+
+Alle del-komponenter støtter `asChild` som kan brukes til å endre `Pagination.Button` til lenker `<a>`.
 
 <Canvas of={PaginationStories.WithAnchor} />
+
+### Responsiv visning
+
+På små skjermer er det lurt å begrense antall synlige sidetall for å spare plass. Vis kun:
+
+- den aktive siden
+- én side før og etter
+
+<Canvas of={PaginationStories.Mobile} />
+
+## Retningslinjer
+
+Bruk `Pagination` når innholdet er for stort for én side, for eksempel ved søkeresultater eller lange lister, og brukeren trenger å navigere frem og tilbake. Vi deler kun opp innhold i flere sider når det forbedrer lastetiden eller brukervennligheten.
+
+Vi bruker et fast tekstmønster for `Pagination` med ord: «Forrige» og «Neste».
+
+Unngå derfor «Forrige side», «Neste side», «Gå tilbake», «Gå videre», «Videre» og «Tilbake».

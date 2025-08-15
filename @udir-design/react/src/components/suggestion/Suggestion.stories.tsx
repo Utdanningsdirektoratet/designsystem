@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { userEvent, waitFor, within } from 'storybook/test';
+import { expect, userEvent, waitFor, within } from 'storybook/test';
 import { type ChangeEvent, useState } from 'react';
 import { Suggestion, type SuggestionValues } from './Suggestion';
 import {
@@ -9,6 +9,7 @@ import {
   Label,
   Paragraph,
   Spinner,
+  Details,
 } from '@udir-design/react/alpha';
 import { useDebounceCallback } from '@digdir/designsystemet-react';
 
@@ -26,10 +27,6 @@ const meta: Meta<typeof Suggestion> = {
       // for some reason it says `aria-expanded` is not allowed
       config: {
         rules: [
-          {
-            id: 'aria-allowed-attr',
-            enabled: false,
-          },
           /* It does not like role="combobox" either */
           {
             id: 'aria-allowed-role',
@@ -51,8 +48,9 @@ export default meta;
 type Story = StoryObj<typeof Suggestion>;
 
 async function testSuggestion(el: HTMLElement) {
-  /* When in test mode, open suggestion by focusing input */
+  /* wait for role to be added */
   const input = await waitFor(() => within(el).getByRole('combobox'));
+  /* When in test mode, open suggestion by focusing input */
   await userEvent.click(input);
 }
 
@@ -64,6 +62,13 @@ const DATA_PLACES = [
   'Trondheim',
   'Bergen',
   'Lillestrøm',
+];
+
+const DATA_PEOPLE = [
+  { label: 'Lars', value: '#004' },
+  { label: 'James', value: '#007' },
+  { label: 'Nina', value: '#113' },
+  { label: 'Tove', value: '#110' },
 ];
 
 export const Preview: Story = {
@@ -89,19 +94,13 @@ export const Preview: Story = {
   },
 };
 
-export const Multiple: Story = {
-  ...Preview,
-  args: { multiple: true },
-};
-
-export const Controlled: Story = {
-  render(args, ctx) {
+export const ControlledSingleArray: Story = {
+  render: (args, ctx) => {
     const [value, setValue] = useState<string[]>(['Oslo']);
-
     return (
       <>
         <Field>
-          <Label>Velg destinasjoner</Label>
+          <Label>Velg destinasjon</Label>
           <Suggestion
             {...args}
             selected={value}
@@ -140,10 +139,102 @@ export const Controlled: Story = {
   },
 };
 
-export const ControlledMultiple: Story = {
-  render(args, ctx) {
-    const [value, setValue] = useState<string[]>(['Oslo']);
+ControlledSingleArray.play = async ({ canvasElement, step }) => {
+  const input = await waitFor(() =>
+    within(canvasElement).getByRole('combobox'),
+  );
+  const resultText = within(canvasElement).getByText('Valgte reisemål:', {
+    exact: false,
+  });
+  const button = within(canvasElement).getByText('Sett reisemål', {
+    exact: false,
+    selector: 'button',
+  });
 
+  await step('Initial state is rendered correctly', async () => {
+    await expect(resultText).toHaveTextContent('Oslo');
+    await waitFor(() => expect(input).toHaveValue('Oslo'));
+  });
+
+  await step('Controlled state change renders correctly', async () => {
+    await userEvent.click(button);
+    await expect(resultText).toHaveTextContent('Sogndal');
+    await waitFor(() => expect(input).toHaveValue('Sogndal'));
+  });
+};
+
+export const ControlledSingle: Story = {
+  render: (args, ctx) => {
+    const [value, setValue] = useState<string>('');
+
+    return (
+      <>
+        <Field>
+          <Label>Velg destinasjon</Label>
+          <Suggestion
+            {...args}
+            // Using an array value as a workaround for bug in Suggestion component when initial value is ""
+            value={value === '' ? [] : [value]}
+            onValueChange={(items) => setValue(items.at(0)?.value ?? '')}
+          >
+            <Suggestion.Input id={ctx.id} />
+            <Suggestion.Clear />
+            <Suggestion.List>
+              <Suggestion.Empty>Tomt</Suggestion.Empty>
+              {DATA_PLACES.map((place) => (
+                <Suggestion.Option key={place} label={place} value={place}>
+                  {place}
+                  <div>Kommune</div>
+                </Suggestion.Option>
+              ))}
+            </Suggestion.List>
+          </Suggestion>
+        </Field>
+        <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
+
+        <Paragraph style={{ margin: 'var(--ds-size-2) 0' }}>
+          Valgte reisemål: {value}
+        </Paragraph>
+
+        <Button
+          onClick={() => {
+            setValue('Sogndal');
+          }}
+        >
+          Sett reisemål til Sogndal
+        </Button>
+      </>
+    );
+  },
+};
+
+ControlledSingle.play = async ({ canvasElement, step }) => {
+  const input = await waitFor(() =>
+    within(canvasElement).getByRole('combobox'),
+  );
+  const resultText = within(canvasElement).getByText('Valgte reisemål:', {
+    exact: false,
+  });
+  const button = within(canvasElement).getByText('Sett reisemål', {
+    exact: false,
+    selector: 'button',
+  });
+
+  await step('Initial state is empty', async () => {
+    await expect(resultText).toHaveTextContent(/^Valgte reisemål:$/);
+    await waitFor(() => expect(input).toHaveValue(''));
+  });
+
+  await step('Controlled state change renders correctly', async () => {
+    await userEvent.click(button);
+    await expect(resultText).toHaveTextContent('Sogndal');
+    await waitFor(() => expect(input).toHaveValue('Sogndal'));
+  });
+};
+
+export const ControlledMultiple: Story = {
+  render: (args, ctx) => {
+    const [value, setValue] = useState<string[]>(['Oslo']);
     return (
       <>
         <Field>
@@ -187,22 +278,89 @@ export const ControlledMultiple: Story = {
   },
 };
 
-export const DefaultValue: Story = {
-  render(args, ctx) {
+ControlledMultiple.play = async ({ canvasElement, step }) => {
+  const getChipValues = async () =>
+    waitFor(() =>
+      within(canvasElement)
+        .getAllByLabelText('Press to remove', { exact: false })
+        .filter((el) => el instanceof HTMLDataElement)
+        .map((x) => x.value),
+    );
+  const resultText = within(canvasElement).getByText('Valgte reisemål:', {
+    exact: false,
+  });
+  const button = within(canvasElement).getByText('Sett reisemål', {
+    exact: false,
+    selector: 'button',
+  });
+
+  await step('Initial state is rendered correctly', async () => {
+    await expect(resultText).toHaveTextContent('Oslo');
+    await expect(await getChipValues()).toContain('Oslo');
+  });
+
+  await step('Controlled state change renders correctly', async () => {
+    await userEvent.click(button);
+    await expect(resultText).toHaveTextContent('Sogndal');
+    await expect(resultText).toHaveTextContent('Stavanger');
+    const chipValues = await getChipValues();
+    await expect(chipValues).toContain('Sogndal');
+    await expect(chipValues).toContain('Stavanger');
+  });
+};
+
+export const ControlledIndependentLabelValue: Story = {
+  render: (args, ctx) => {
+    const [items, setItems] = useState<typeof DATA_PEOPLE>(
+      DATA_PEOPLE.slice(0, 1),
+    );
+
     return (
-      <Field>
-        <Label>Velg en destinasjon</Label>
-        <Suggestion {...args} defaultValue={['Sogndal']}>
-          <Suggestion.Input id={ctx.id} />
-          <Suggestion.Clear />
-          <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
-            {DATA_PLACES.map((place) => (
-              <Suggestion.Option key={place}>{place}</Suggestion.Option>
-            ))}
-          </Suggestion.List>
-        </Suggestion>
-      </Field>
+      <>
+        <Field>
+          <Label>Velg person</Label>
+          <Suggestion
+            {...args}
+            selected={items.slice(0, 1)}
+            onSelectedChange={(items) => setItems(items)}
+            filter={false}
+          >
+            <Suggestion.Input id={ctx.id} />
+            <Suggestion.Clear />
+            <Suggestion.List>
+              <Suggestion.Empty>Tomt</Suggestion.Empty>
+              {DATA_PEOPLE.map(({ label, value }) => (
+                <Suggestion.Option key={value} label={label} value={value}>
+                  {label}
+                </Suggestion.Option>
+              ))}
+            </Suggestion.List>
+          </Suggestion>
+        </Field>
+        <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
+
+        <div style={{ margin: 'var(--ds-size-2) 0' }}>
+          Valgt person:
+          <pre
+            style={{
+              fontSize: 14,
+              whiteSpace: 'pre-wrap',
+              width: 400,
+            }}
+          >
+            {JSON.stringify(items)}
+          </pre>
+        </div>
+
+        <Button
+          onClick={() => {
+            setItems(DATA_PEOPLE.slice(2, 3));
+          }}
+          variant="secondary"
+        >
+          Sett Nina
+        </Button>
+      </>
     );
   },
 };
@@ -235,9 +393,8 @@ export const CustomFilterAlt1: Story = {
 };
 
 export const CustomFilterAlt2: Story = {
-  render(args, ctx) {
+  render: (args, ctx) => {
     const [value, setValue] = useState('');
-
     return (
       <Field>
         <Label>Skriv inn et tall mellom 1-6</Label>
@@ -262,9 +419,8 @@ export const CustomFilterAlt2: Story = {
 };
 
 export const AlwaysShowAll: Story = {
-  render(args, ctx) {
+  render: (args, ctx) => {
     const [value, setValue] = useState<SuggestionValues>('Sogndal');
-
     return (
       <Field>
         <Label>Viser alle options også når valgt</Label>
@@ -289,7 +445,7 @@ export const AlwaysShowAll: Story = {
 };
 
 export const FetchExternal: Story = {
-  render(args, ctx) {
+  render: (args, ctx) => {
     const [value, setValue] = useState('');
     const [options, setOptions] = useState<string[] | null>(null);
 
@@ -339,6 +495,64 @@ export const FetchExternal: Story = {
           </Suggestion.List>
         </Suggestion>
       </Field>
+    );
+  },
+};
+
+FetchExternal.parameters = {
+  docs: {
+    source: {
+      type: 'code',
+    },
+  },
+};
+
+export const Multiple: Story = {
+  ...Preview,
+  args: { multiple: true },
+};
+
+export const DefaultValue: Story = {
+  render(args, ctx) {
+    return (
+      <Field>
+        <Label>Velg en destinasjon</Label>
+        <Suggestion {...args} defaultValue={['Sogndal']}>
+          <Suggestion.Input id={ctx.id} />
+          <Suggestion.Clear />
+          <Suggestion.List>
+            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            {DATA_PLACES.map((place) => (
+              <Suggestion.Option key={place}>{place}</Suggestion.Option>
+            ))}
+          </Suggestion.List>
+        </Suggestion>
+      </Field>
+    );
+  },
+};
+
+export const InDetails: Story = {
+  render: (args, ctx) => {
+    return (
+      <Details>
+        <Details.Summary>Åpne details som har overflow: clip;</Details.Summary>
+        <Details.Content>
+          <Field>
+            <Label>Velg en destinasjon</Label>
+            <Suggestion {...args} autoFocus>
+              <Suggestion.Input id={ctx.id} />
+              <Suggestion.Clear />
+              <Suggestion.List>
+                <Suggestion.Empty>Tomt</Suggestion.Empty>
+                {DATA_PLACES.map((place) => (
+                  <Suggestion.Option key={place}>{place}</Suggestion.Option>
+                ))}
+              </Suggestion.List>
+            </Suggestion>
+          </Field>
+        </Details.Content>
+      </Details>
     );
   },
 };

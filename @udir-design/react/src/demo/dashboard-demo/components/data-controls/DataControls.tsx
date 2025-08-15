@@ -15,7 +15,7 @@ export const DataControls = ({ value, setValue }: DataControlsProps) => {
         <ToggleGroup.Item value="table">Vis som tabell</ToggleGroup.Item>
       </ToggleGroup>
       <Button variant="tertiary">
-        <DownloadIcon />
+        <DownloadIcon aria-hidden />
         Last ned PDF
       </Button>
     </div>

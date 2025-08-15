@@ -37,18 +37,21 @@ export const FinishPage = ({ showErrors }: PageProps) => {
           Velg ett eller flere alternativer
         </Fieldset.Description>
         <Checkbox
+          id="contactMethodsEmail"
           label="E-post"
           {...register('contactMethods', contactMethodsRules)}
           aria-invalid={isInvalid}
           value="epost"
         />
         <Checkbox
+          id="contactMethodsTelefon"
           label="Telefon"
           {...register('contactMethods', contactMethodsRules)}
           aria-invalid={isInvalid}
           value="telefon"
         />
         <Checkbox
+          id="contactMethodsSms"
           label="SMS"
           {...register('contactMethods', contactMethodsRules)}
           aria-invalid={isInvalid}

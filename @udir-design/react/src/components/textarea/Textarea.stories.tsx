@@ -1,13 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Label } from '../typography/label/Label';
 import { useState } from 'react';
-import { Button, Divider, Paragraph, Textarea } from '@udir-design/react/alpha';
+import { Button, Field, Textarea } from '@udir-design/react/alpha';
 import { expect, userEvent, within } from 'storybook/test';
 
 const meta: Meta<typeof Textarea> = {
   component: Textarea,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
+    layout: 'centered',
     customStyles: {
       display: 'flex',
       flexDirection: 'column',
@@ -24,13 +25,15 @@ export const Preview: Story = {
   args: {
     disabled: false,
     readOnly: false,
+    rows: 3,
+    cols: 20,
     id: 'my-textarea',
   },
   render: (args) => (
-    <>
-      <Label htmlFor={args.id}>Label</Label>
+    <Field>
+      <Label>Label</Label>
       <Textarea {...args} />
-    </>
+    </Field>
   ),
   play: async ({ canvasElement, step, args }) => {
     const canvas = within(canvasElement);
@@ -77,36 +80,84 @@ export const FullWidth: Story = {
     },
   },
   render: (args) => (
-    <>
-      <Label htmlFor={args.id}>Label</Label>
+    <Field>
+      <Label>Beskriv bekymringen din</Label>
       <Textarea {...args} />
-    </>
+    </Field>
   ),
 };
 
 export const Controlled: Story = {
   args: {
-    id: 'my-textarea',
+    id: 'textfield-controlled',
   },
-  render(args) {
+  parameters: {
+    customStyles: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 'var(--ds-size-2)',
+    },
+  },
+  render: (args) => {
     const [value, setValue] = useState(`${args.value || ''}`);
 
     return (
       <>
-        <Label htmlFor={args.id}>Kontroller meg!</Label>
-        <Textarea
-          onChange={(e) => setValue(e.target.value)}
-          value={value}
-          {...args}
-        />
-
-        <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
-
-        <Paragraph style={{ margin: 'var(--ds-size-2) 0' }}>
-          Du har skrevet inn: {value}
-        </Paragraph>
-        <Button onClick={() => setValue('Pizza')}>Jeg vil ha Pizza</Button>
+        <Field>
+          <Label>Beskriv bekymringen din</Label>
+          <Textarea
+            {...args}
+            rows={4}
+            value={value}
+            onChange={(
+              e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+            ) => setValue(e.target.value)}
+          />
+        </Field>
+        <Button
+          variant="secondary"
+          onClick={() => setValue('')}
+          style={{ marginTop: 'var(--ds-size-2)' }}
+        >
+          Tøm feltet
+        </Button>
       </>
     );
   },
+};
+
+export const Disabled: Story = {
+  args: {
+    id: 'textarea-disabled',
+    disabled: true,
+  },
+  render: (args) => (
+    <Field>
+      <Label>Disabled Textarea</Label>
+      <Textarea {...args} />
+    </Field>
+  ),
+};
+
+export const ReadOnly: Story = {
+  args: {
+    id: 'textarea-readonly',
+    readOnly: true,
+  },
+  render: (args) => (
+    <Field>
+      <Label>Read-Only Textarea</Label>
+      <Textarea {...args} />
+    </Field>
+  ),
+};
+
+export const Focused: Story = {
+  args: Preview.args,
+  parameters: {
+    pseudo: {
+      focusVisible: true,
+    },
+  },
+  render: Preview.render,
 };
