@@ -1,0 +1,68 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import * as TagStories from './Tag.stories';
+
+<Meta of={TagStories} />
+
+# Tag
+
+En `Tag` er en merkelapp som kan brukes til å kategorisere elementer eller kommunisere fremdrift, status eller prosess.
+`Tag` kan gi brukeren et raskere overblikk over innholdet når det har mange kategorier og det er hensiktsmessig å kunne skille mellom dem.
+
+**Passer til å**
+
+- kommunisere kategori, emne, status eller lignende
+
+**Passer ikke til å**
+
+- linke til andre sider (se [`Link`](/docs/components-link--docs))
+- utføre handlinger ved klikk (bruk heller [`Button`](/docs/components-button--docs))
+- la brukeren filtrere data (se [`Chip`](/docs/components-chip--docs))
+
+## Slik bruker du Tag
+
+<Primary />
+<Controls />
+
+```tsx
+import { Tag } from '@udir-design/react';
+
+<Tag>Prioritert</Tag>;
+```
+
+## Eksempler
+
+`Tag` kommer i flere størrelser.
+
+<Canvas of={TagStories.Sizes} />
+
+### Farger
+
+Du kan bruke alle identitetsfargene og de semantiske fargene på `Tag`.
+
+#### Identitetsfarger
+
+<Canvas of={TagStories.Colors} />
+
+#### Semantiske farger
+
+<Canvas of={TagStories.Status} />
+
+### Komponering
+
+<Canvas of={TagStories.Article} />
+
+## Retningslinjer
+
+`Tag` bør som regel plasseres bak tittelen eller navnet på tilhørende element. De bør ikke plasseres sammen med knapper da det kan forvirre brukeren.
+
+De bør brukes konsistent og unngås dersom informasjonen allerede er tydelig i konteksten.
+
+## Tekst i Tag
+
+Teksten i en `Tag` skal alltid ha stor forbokstav og små bokstaver på resten. Bruk korte etiketter, helst bare ett ord.
+
+Bruk ord og begreper som er gjenkjennelige for brukerne av løsningen.
+
+## Tilgjengelighet
+
+`Tag` har i seg selv ingen semantisk verdi. Hvis du vil bruke flere sammen bør du derfor bruke en `<ul>` med en `<li>` for hver tag for å sikre at hver `Tag` blir lest opp hver for seg og ikke som en del av en setning.
