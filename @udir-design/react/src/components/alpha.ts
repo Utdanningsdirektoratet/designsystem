@@ -13,3 +13,4 @@ export * from './tabs/Tabs';
 export * from './tag/Tag';
 export * from './toggleGroup/ToggleGroup';
 export * from './typography';
+export * from './footer';

@@ -1,0 +1,31 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import * as FooterStories from './Footer.stories';
+
+<Meta of={FooterStories} />
+
+# Footer
+
+`Footer` brukes nederst på siden for viktig informasjon og lenker.
+
+**Passer til å**
+
+- lenke til tilgjengelighetserklæring
+
+**Passer ikke til å**
+
+- bruke som en "ekstra" meny
+
+## Slik bruker du Footer
+
+<Primary />
+<Controls />
+
+```tsx
+import { Footer } from '@udir-design/react';
+
+<Footer>Lenke</Footer>;
+```
+
+<Canvas of={FooterStories.Rich} />
+
+## Retningslinjer
