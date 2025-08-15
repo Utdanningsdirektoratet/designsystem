@@ -3,7 +3,11 @@
  */
 
 export * from './badge/Badge';
+export * from './chip/Chip';
 export * from './dropdown/Dropdown';
+export * from './errorSummary/ErrorSummary';
+export * from './loaders';
+export * from './pagination/Pagination';
 export * from './popover/Popover';
 export * from './skipLink/SkipLink';
 export * from './suggestion/Suggestion';
@@ -11,5 +15,7 @@ export * from './switch/Switch';
 export * from './table/Table';
 export * from './tabs/Tabs';
 export * from './tag/Tag';
+export * from './textarea/Textarea';
 export * from './toggleGroup/ToggleGroup';
+export * from './tooltip/Tooltip';
 export * from './typography';
