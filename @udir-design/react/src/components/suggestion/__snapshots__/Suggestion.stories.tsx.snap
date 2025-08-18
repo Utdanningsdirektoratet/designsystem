@@ -1167,7 +1167,10 @@ exports[`Fetch External 1`] = `
 `;
 
 exports[`In Details 1`] = `
-<u-details data-variant="default">
+<u-details
+  data-variant="default"
+  role="group"
+>
   <u-summary
     aria-expanded="false"
     role="button"

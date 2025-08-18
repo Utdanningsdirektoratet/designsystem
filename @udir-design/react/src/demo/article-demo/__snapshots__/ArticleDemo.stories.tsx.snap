@@ -251,7 +251,10 @@ exports[`Article Story 1`] = `
             Vi går igjennom alle innspillene vi får, og med jevne mellomrom prioriterer vi hva vi gjør av endringer.
           </p>
         </div>
-        <u-details data-variant="default">
+        <u-details
+          data-variant="default"
+          role="group"
+        >
           <u-summary
             aria-expanded="false"
             role="button"
@@ -264,7 +267,10 @@ exports[`Article Story 1`] = `
             Vi har lagt til en ny knapp hvor du får oversikt over hvilke deler av læreplanen du har brukt i planene dine.
           </div>
         </u-details>
-        <u-details data-variant="default">
+        <u-details
+          data-variant="default"
+          role="group"
+        >
           <u-summary
             aria-expanded="false"
             role="button"
@@ -277,7 +283,10 @@ exports[`Article Story 1`] = `
             Vi har lagt til pålogging med ID-porten slik at også instruktører i bedrift kan bruke planleggingsverktøyet.
           </div>
         </u-details>
-        <u-details data-variant="default">
+        <u-details
+          data-variant="default"
+          role="group"
+        >
           <u-summary
             aria-expanded="false"
             role="button"
@@ -290,7 +299,10 @@ exports[`Article Story 1`] = `
             Vi har fått innspill om at det er tungvindt å gå inn i en og en plan for å invitere samarbeidspartnere. Vi har lagt til mulighet for å invitere samarbeidspartnere til mange planer samtidig.
           </div>
         </u-details>
-        <u-details data-variant="default">
+        <u-details
+          data-variant="default"
+          role="group"
+        >
           <u-summary
             aria-expanded="false"
             role="button"
@@ -303,7 +315,10 @@ exports[`Article Story 1`] = `
             Vi har lagt til funksjon for å velge språk slik at verktøyet er tilgjengelig på bokmål, nynorsk, nordsamisk, sørsamisk og lulesamisk. Det er mulig å velge språk på brukerinnstillinger og på hver enkelt plan.
           </div>
         </u-details>
-        <u-details data-variant="default">
+        <u-details
+          data-variant="default"
+          role="group"
+        >
           <u-summary
             aria-expanded="false"
             role="button"
