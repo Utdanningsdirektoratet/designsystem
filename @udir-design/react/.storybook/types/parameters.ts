@@ -7,8 +7,8 @@
  * See https://github.com/microsoft/TypeScript/issues/30511 for details.
  */
 
-import type {} from 'storybook/internal/types';
-import type { DocsParameters } from '@storybook/addon-docs';
+import type { Addon_OptionsParameter } from 'storybook/internal/types';
+import type { DocsTypes } from '@storybook/addon-docs';
 import type { A11yParameters } from '@storybook/addon-a11y';
 import type { CSSProperties, ReactNode } from 'react';
 import { ThemeVars } from 'storybook/theming';
@@ -38,7 +38,7 @@ export type MdxComponentOverrides = {
 } & Record<string, React.FC>;
 
 type SourceBlockParameters = NonNullable<DocsParams['source']>;
-
+type DocsParameters = Required<DocsTypes['parameters']>;
 type DocsParams = Required<DocsParameters>['docs'];
 // Use Partial here to make `of` not required when setting parameters.docs.{canvas,source}
 type DocsCanvasParams = Partial<DocsParams['canvas']>;
@@ -52,6 +52,7 @@ type DocsSourceParams = Partial<Omit<SourceBlockParameters, 'transform'>> & {
 
 declare module 'storybook/internal/types' {
   interface Parameters extends A11yParameters, DocsParameters {
+    options?: A11yParameters['options'] & Addon_OptionsParameter;
     /**
      * Set custom styling for the story's root element. The default styling is:
      * ```css
@@ -75,7 +76,7 @@ declare module 'storybook/internal/types' {
      */
     layout?: 'centered' | 'fullscreen' | 'padded';
 
-    a11y?: A11yParameters['a11y'] & {
+    a11y?: A11yParameters & {
       /**
        * - `'todo'` - show a11y violations in the test UI only
        * - `'error'` - fail CI on a11y violations
