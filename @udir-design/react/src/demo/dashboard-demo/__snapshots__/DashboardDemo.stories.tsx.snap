@@ -18,11 +18,11 @@ exports[`Dashboard Page 2 1`] = `
           data-variant="primary"
           type="button"
           value="sm"
-          id="togglegroup-item-«rk»"
+          id="togglegroup-item-«r14»"
           aria-checked="true"
           aria-current="true"
           role="radio"
-          name="togglegroup-name-«ri»"
+          name="togglegroup-name-«r12»"
           data-roving-tabindex-item="true"
           tabindex="0"
         >
@@ -32,11 +32,11 @@ exports[`Dashboard Page 2 1`] = `
           data-variant="tertiary"
           type="button"
           value="md"
-          id="togglegroup-item-«rm»"
+          id="togglegroup-item-«r16»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-«ri»"
+          name="togglegroup-name-«r12»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -46,11 +46,11 @@ exports[`Dashboard Page 2 1`] = `
           data-variant="tertiary"
           type="button"
           value="lg"
-          id="togglegroup-item-«ro»"
+          id="togglegroup-item-«r18»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-«ri»"
+          name="togglegroup-name-«r12»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -73,11 +73,11 @@ exports[`Dashboard Page 2 1`] = `
           data-variant="tertiary"
           type="button"
           value="light"
-          id="togglegroup-item-«rr»"
+          id="togglegroup-item-«r1b»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-«rp»"
+          name="togglegroup-name-«r19»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -87,11 +87,11 @@ exports[`Dashboard Page 2 1`] = `
           data-variant="tertiary"
           type="button"
           value="dark"
-          id="togglegroup-item-«rt»"
+          id="togglegroup-item-«r1d»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-«rp»"
+          name="togglegroup-name-«r19»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -101,11 +101,11 @@ exports[`Dashboard Page 2 1`] = `
           data-variant="primary"
           type="button"
           value="auto"
-          id="togglegroup-item-«rv»"
+          id="togglegroup-item-«r1f»"
           aria-checked="true"
           aria-current="true"
           role="radio"
-          name="togglegroup-name-«rp»"
+          name="togglegroup-name-«r19»"
           data-roving-tabindex-item="true"
           tabindex="0"
         >
@@ -128,47 +128,132 @@ exports[`Dashboard Page 2 1`] = `
         tabindex="0"
       >
         <button
+          id="tab-«r1g»"
           aria-selected="false"
-          id="tab-«r10»"
+          data-value="overview"
           role="tab"
           type="button"
           data-roving-tabindex-item="true"
           tabindex="-1"
+          aria-controls="tabpanel-«r1k»"
         >
           Oversikt
         </button>
         <button
+          id="tab-«r1h»"
           aria-selected="true"
-          id="tab-«r11»"
+          data-value="tests"
           role="tab"
           type="button"
           data-roving-tabindex-item="true"
           tabindex="0"
+          aria-controls="tabpanel-«r1l»"
         >
           Prøver
         </button>
         <button
+          id="tab-«r1i»"
           aria-selected="false"
-          id="tab-«r12»"
+          data-value="test-answers"
           role="tab"
           type="button"
           data-roving-tabindex-item="true"
           tabindex="-1"
+          aria-controls="tabpanel-«r1s»"
         >
           Prøvesvar
         </button>
         <button
+          id="tab-«r1j»"
           aria-selected="false"
-          id="tab-«r13»"
+          data-value="settings"
           role="tab"
           type="button"
           data-roving-tabindex-item="true"
           tabindex="-1"
+          aria-controls="tabpanel-«r23»"
         >
           Innstillinger
         </button>
       </div>
-      <div role="tabpanel">
+      <div
+        id="tabpanel-«r1k»"
+        role="tabpanel"
+        tabindex="0"
+        hidden
+        aria-labelledby="tab-«r1g»"
+      >
+        <p data-variant="default">
+          Her får du en oversikt over all den overordnede informasjonen.
+        </p>
+        <div>
+          <div>
+            <div data-variant="default">
+              <h2>
+                Viktige datoer
+              </h2>
+              <ul>
+                <li>
+                  Prøvestart: 12. april
+                </li>
+                <li>
+                  Prøvefrist: 5. mai
+                </li>
+                <li>
+                  Svarfrist: 28. mai
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h2>
+              Prøveoversikt
+            </h2>
+            <span
+              aria-hidden="true"
+              data-variant="rectangle"
+              style="width: 250px;"
+            >
+            </span>
+            <span
+              aria-hidden="true"
+              data-variant="rectangle"
+              style="width: 250px;"
+            >
+            </span>
+            <div>
+              <svg
+                aria-label="laster inn"
+                role="img"
+                viewbox="0 0 50 50"
+                data-size="lg"
+              >
+                <circle
+                  cx="25"
+                  cy="25"
+                  r="20"
+                  fill="none"
+                  stroke-width="5"
+                >
+                </circle>
+                <circle
+                  cx="25"
+                  cy="25"
+                  r="20"
+                  fill="none"
+                  stroke-width="5"
+                >
+                </circle>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="tabpanel-«r1l»"
+        role="tabpanel"
+        aria-labelledby="tab-«r1h»"
+      >
         <p data-variant="default">
           Oversikt over prøver for Schweigaardsgate skole.
         </p>
@@ -224,11 +309,11 @@ exports[`Dashboard Page 2 1`] = `
                   data-variant="primary"
                   type="button"
                   value="graph"
-                  id="togglegroup-item-«r16»"
+                  id="togglegroup-item-«r1o»"
                   aria-checked="true"
                   aria-current="true"
                   role="radio"
-                  name="togglegroup-name-«r14»"
+                  name="togglegroup-name-«r1m»"
                   data-roving-tabindex-item="true"
                   tabindex="0"
                 >
@@ -238,11 +323,11 @@ exports[`Dashboard Page 2 1`] = `
                   data-variant="tertiary"
                   type="button"
                   value="table"
-                  id="togglegroup-item-«r18»"
+                  id="togglegroup-item-«r1q»"
                   aria-checked="false"
                   aria-current="false"
                   role="radio"
-                  name="togglegroup-name-«r14»"
+                  name="togglegroup-name-«r1m»"
                   data-roving-tabindex-item="true"
                   tabindex="-1"
                 >
@@ -277,180 +362,13 @@ exports[`Dashboard Page 2 1`] = `
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Dashboard Page 3 1`] = `
-<div>
-  <div data-size="sm">
-    <fieldset>
-      <legend data-weight="medium">
-        Størrelse
-        <code data-size="xs">
-          (data-size)
-        </code>
-      </legend>
       <div
-        role="radiogroup"
-        tabindex="0"
+        id="tabpanel-«r1s»"
+        role="tabpanel"
+        hidden
+        aria-labelledby="tab-«r1i»"
+        style
       >
-        <button
-          data-variant="primary"
-          type="button"
-          value="sm"
-          id="togglegroup-item-«r1c»"
-          aria-checked="true"
-          aria-current="true"
-          role="radio"
-          name="togglegroup-name-«r1a»"
-          data-roving-tabindex-item="true"
-          tabindex="0"
-        >
-          sm
-        </button>
-        <button
-          data-variant="tertiary"
-          type="button"
-          value="md"
-          id="togglegroup-item-«r1e»"
-          aria-checked="false"
-          aria-current="false"
-          role="radio"
-          name="togglegroup-name-«r1a»"
-          data-roving-tabindex-item="true"
-          tabindex="-1"
-        >
-          md
-        </button>
-        <button
-          data-variant="tertiary"
-          type="button"
-          value="lg"
-          id="togglegroup-item-«r1g»"
-          aria-checked="false"
-          aria-current="false"
-          role="radio"
-          name="togglegroup-name-«r1a»"
-          data-roving-tabindex-item="true"
-          tabindex="-1"
-        >
-          lg
-        </button>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend data-weight="medium">
-        Fargemodus
-        <code data-size="xs">
-          (data-color-scheme)
-        </code>
-      </legend>
-      <div
-        role="radiogroup"
-        tabindex="0"
-      >
-        <button
-          data-variant="tertiary"
-          type="button"
-          value="light"
-          id="togglegroup-item-«r1j»"
-          aria-checked="false"
-          aria-current="false"
-          role="radio"
-          name="togglegroup-name-«r1h»"
-          data-roving-tabindex-item="true"
-          tabindex="-1"
-        >
-          light
-        </button>
-        <button
-          data-variant="tertiary"
-          type="button"
-          value="dark"
-          id="togglegroup-item-«r1l»"
-          aria-checked="false"
-          aria-current="false"
-          role="radio"
-          name="togglegroup-name-«r1h»"
-          data-roving-tabindex-item="true"
-          tabindex="-1"
-        >
-          dark
-        </button>
-        <button
-          data-variant="primary"
-          type="button"
-          value="auto"
-          id="togglegroup-item-«r1n»"
-          aria-checked="true"
-          aria-current="true"
-          role="radio"
-          name="togglegroup-name-«r1h»"
-          data-roving-tabindex-item="true"
-          tabindex="0"
-        >
-          auto
-        </button>
-      </div>
-    </fieldset>
-  </div>
-  <hr aria-hidden="true">
-  <div
-    data-size="sm"
-    data-color-scheme="auto"
-  >
-    <h1 data-size="md">
-      Schweigaardsgate skole
-    </h1>
-    <div>
-      <div
-        role="tablist"
-        tabindex="0"
-      >
-        <button
-          aria-selected="false"
-          id="tab-«r1o»"
-          role="tab"
-          type="button"
-          data-roving-tabindex-item="true"
-          tabindex="-1"
-        >
-          Oversikt
-        </button>
-        <button
-          aria-selected="false"
-          id="tab-«r1p»"
-          role="tab"
-          type="button"
-          data-roving-tabindex-item="true"
-          tabindex="-1"
-        >
-          Prøver
-        </button>
-        <button
-          aria-selected="true"
-          id="tab-«r1q»"
-          role="tab"
-          type="button"
-          data-roving-tabindex-item="true"
-          tabindex="0"
-        >
-          Prøvesvar
-        </button>
-        <button
-          aria-selected="false"
-          id="tab-«r1r»"
-          role="tab"
-          type="button"
-          data-roving-tabindex-item="true"
-          tabindex="-1"
-        >
-          Innstillinger
-        </button>
-      </div>
-      <div role="tabpanel">
         <p data-variant="default">
           Oversikt over prøvesvar for Schweigaardsgate skole.
         </p>
@@ -486,11 +404,11 @@ exports[`Dashboard Page 3 1`] = `
                   data-variant="primary"
                   type="button"
                   value="graph"
-                  id="togglegroup-item-«r1u»"
+                  id="togglegroup-item-«r1v»"
                   aria-checked="true"
                   aria-current="true"
                   role="radio"
-                  name="togglegroup-name-«r1s»"
+                  name="togglegroup-name-«r1t»"
                   data-roving-tabindex-item="true"
                   tabindex="0"
                 >
@@ -500,11 +418,11 @@ exports[`Dashboard Page 3 1`] = `
                   data-variant="tertiary"
                   type="button"
                   value="table"
-                  id="togglegroup-item-«r20»"
+                  id="togglegroup-item-«r21»"
                   aria-checked="false"
                   aria-current="false"
                   role="radio"
-                  name="togglegroup-name-«r1s»"
+                  name="togglegroup-name-«r1t»"
                   data-roving-tabindex-item="true"
                   tabindex="-1"
                 >
@@ -539,6 +457,912 @@ exports[`Dashboard Page 3 1`] = `
           </div>
         </div>
       </div>
+      <div
+        id="tabpanel-«r23»"
+        role="tabpanel"
+        hidden
+        aria-labelledby="tab-«r1j»"
+      >
+        <div>
+          <div>
+            <div data-variant="default">
+              <h2>
+                Viktige datoer
+              </h2>
+              <ul>
+                <li>
+                  Prøvestart: 12. april
+                </li>
+                <li>
+                  Prøvefrist: 5. mai
+                </li>
+                <li>
+                  Svarfrist: 28. mai
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Generelle innstillinger
+              </h2>
+              <div>
+                <input
+                  role="switch"
+                  id="dark-mode"
+                  type="checkbox"
+                  aria-describedby="dark-mode:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="dark-mode"
+                >
+                  Mørk modus
+                </label>
+                <div
+                  data-field="description"
+                  id="dark-mode:description:1"
+                >
+                  Et mørkere grensesnitt for å spare øynene.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="auto-updates"
+                  type="checkbox"
+                  value="auto-updates"
+                  checked
+                  aria-describedby="auto-updates:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="auto-updates"
+                >
+                  Automatiske oppdateringer
+                </label>
+                <div
+                  data-field="description"
+                  id="auto-updates:description:1"
+                >
+                  Bruk automatisk oppdateringer for å holde systemet oppdatert.
+                </div>
+              </div>
+            </div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Personvern
+              </h2>
+              <fieldset>
+                <legend data-weight="medium">
+                  Hvem kan se profilen din?
+                </legend>
+                <p data-variant="default">
+                  Velg hvem som har tilgang til å se profilen din.
+                </p>
+                <div>
+                  <input
+                    id="privacy-public"
+                    type="radio"
+                    value="public"
+                    checked
+                    name="privacy"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-public"
+                  >
+                    Alle
+                  </label>
+                </div>
+                <div>
+                  <input
+                    id="privacy-friends"
+                    type="radio"
+                    value="friends"
+                    name="privacy"
+                    aria-describedby="privacy-friends:description:1"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-friends"
+                  >
+                    Kun venner
+                  </label>
+                  <div
+                    data-field="description"
+                    id="privacy-friends:description:1"
+                  >
+                    Bare personer du har lagt til kan se profilen din.
+                  </div>
+                </div>
+                <div>
+                  <input
+                    id="privacy-private"
+                    type="radio"
+                    value="private"
+                    name="privacy"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-private"
+                  >
+                    Kun meg
+                  </label>
+                </div>
+                <p
+                  data-field="validation"
+                  hidden
+                  id="validation-privacy"
+                >
+                </p>
+              </fieldset>
+            </div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Varsler
+              </h2>
+              <div>
+                <input
+                  role="switch"
+                  id="sound-notifications"
+                  type="checkbox"
+                  value="sound-notifications"
+                  aria-describedby="sound-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="sound-notifications"
+                >
+                  Lydvarsler
+                </label>
+                <div
+                  data-field="description"
+                  id="sound-notifications:description:1"
+                >
+                  Spill av lyd når et varsel mottas.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="popup-notifications"
+                  type="checkbox"
+                  value="popup-notifications"
+                  aria-describedby="popup-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="popup-notifications"
+                >
+                  Popup-varsler
+                </label>
+                <div
+                  data-field="description"
+                  id="popup-notifications:description:1"
+                >
+                  Vis popup-varsler på skjermen.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="email-notifications"
+                  type="checkbox"
+                  value="email-notifications"
+                  aria-describedby="email-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="email-notifications"
+                >
+                  E-postvarsler
+                </label>
+                <div
+                  data-field="description"
+                  id="email-notifications:description:1"
+                >
+                  Tillat e-postvarsler for viktige oppdateringer.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dashboard Page 3 1`] = `
+<div>
+  <div data-size="sm">
+    <fieldset>
+      <legend data-weight="medium">
+        Størrelse
+        <code data-size="xs">
+          (data-size)
+        </code>
+      </legend>
+      <div
+        role="radiogroup"
+        tabindex="0"
+      >
+        <button
+          data-variant="primary"
+          type="button"
+          value="sm"
+          id="togglegroup-item-«r26»"
+          aria-checked="true"
+          aria-current="true"
+          role="radio"
+          name="togglegroup-name-«r24»"
+          data-roving-tabindex-item="true"
+          tabindex="0"
+        >
+          sm
+        </button>
+        <button
+          data-variant="tertiary"
+          type="button"
+          value="md"
+          id="togglegroup-item-«r28»"
+          aria-checked="false"
+          aria-current="false"
+          role="radio"
+          name="togglegroup-name-«r24»"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+        >
+          md
+        </button>
+        <button
+          data-variant="tertiary"
+          type="button"
+          value="lg"
+          id="togglegroup-item-«r2a»"
+          aria-checked="false"
+          aria-current="false"
+          role="radio"
+          name="togglegroup-name-«r24»"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+        >
+          lg
+        </button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend data-weight="medium">
+        Fargemodus
+        <code data-size="xs">
+          (data-color-scheme)
+        </code>
+      </legend>
+      <div
+        role="radiogroup"
+        tabindex="0"
+      >
+        <button
+          data-variant="tertiary"
+          type="button"
+          value="light"
+          id="togglegroup-item-«r2d»"
+          aria-checked="false"
+          aria-current="false"
+          role="radio"
+          name="togglegroup-name-«r2b»"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+        >
+          light
+        </button>
+        <button
+          data-variant="tertiary"
+          type="button"
+          value="dark"
+          id="togglegroup-item-«r2f»"
+          aria-checked="false"
+          aria-current="false"
+          role="radio"
+          name="togglegroup-name-«r2b»"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+        >
+          dark
+        </button>
+        <button
+          data-variant="primary"
+          type="button"
+          value="auto"
+          id="togglegroup-item-«r2h»"
+          aria-checked="true"
+          aria-current="true"
+          role="radio"
+          name="togglegroup-name-«r2b»"
+          data-roving-tabindex-item="true"
+          tabindex="0"
+        >
+          auto
+        </button>
+      </div>
+    </fieldset>
+  </div>
+  <hr aria-hidden="true">
+  <div
+    data-size="sm"
+    data-color-scheme="auto"
+  >
+    <h1 data-size="md">
+      Schweigaardsgate skole
+    </h1>
+    <div>
+      <div
+        role="tablist"
+        tabindex="0"
+      >
+        <button
+          id="tab-«r2i»"
+          aria-selected="false"
+          data-value="overview"
+          role="tab"
+          type="button"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+          aria-controls="tabpanel-«r2m»"
+        >
+          Oversikt
+        </button>
+        <button
+          id="tab-«r2j»"
+          aria-selected="false"
+          data-value="tests"
+          role="tab"
+          type="button"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+          aria-controls="tabpanel-«r2n»"
+        >
+          Prøver
+        </button>
+        <button
+          id="tab-«r2k»"
+          aria-selected="true"
+          data-value="test-answers"
+          role="tab"
+          type="button"
+          data-roving-tabindex-item="true"
+          tabindex="0"
+          aria-controls="tabpanel-«r2u»"
+        >
+          Prøvesvar
+        </button>
+        <button
+          id="tab-«r2l»"
+          aria-selected="false"
+          data-value="settings"
+          role="tab"
+          type="button"
+          data-roving-tabindex-item="true"
+          tabindex="-1"
+          aria-controls="tabpanel-«r35»"
+        >
+          Innstillinger
+        </button>
+      </div>
+      <div
+        id="tabpanel-«r2m»"
+        role="tabpanel"
+        tabindex="0"
+        hidden
+        aria-labelledby="tab-«r2i»"
+      >
+        <p data-variant="default">
+          Her får du en oversikt over all den overordnede informasjonen.
+        </p>
+        <div>
+          <div>
+            <div data-variant="default">
+              <h2>
+                Viktige datoer
+              </h2>
+              <ul>
+                <li>
+                  Prøvestart: 12. april
+                </li>
+                <li>
+                  Prøvefrist: 5. mai
+                </li>
+                <li>
+                  Svarfrist: 28. mai
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h2>
+              Prøveoversikt
+            </h2>
+            <span
+              aria-hidden="true"
+              data-variant="rectangle"
+              style="width: 250px;"
+            >
+            </span>
+            <span
+              aria-hidden="true"
+              data-variant="rectangle"
+              style="width: 250px;"
+            >
+            </span>
+            <div>
+              <svg
+                aria-label="laster inn"
+                role="img"
+                viewbox="0 0 50 50"
+                data-size="lg"
+              >
+                <circle
+                  cx="25"
+                  cy="25"
+                  r="20"
+                  fill="none"
+                  stroke-width="5"
+                >
+                </circle>
+                <circle
+                  cx="25"
+                  cy="25"
+                  r="20"
+                  fill="none"
+                  stroke-width="5"
+                >
+                </circle>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="tabpanel-«r2n»"
+        role="tabpanel"
+        hidden
+        aria-labelledby="tab-«r2j»"
+        style
+      >
+        <p data-variant="default">
+          Oversikt over prøver for Schweigaardsgate skole.
+        </p>
+        <div>
+          <div>
+            <div data-variant="default">
+              <h2>
+                Viktige datoer
+              </h2>
+              <ul>
+                <li>
+                  Prøvestart: 12. april
+                </li>
+                <li>
+                  Prøvefrist: 5. mai
+                </li>
+                <li>
+                  Svarfrist: 28. mai
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h2>
+              Prøver
+            </h2>
+            <div>
+              <a
+                href="/"
+                data-variant="default"
+                data-color="neutral"
+              >
+                <h2>
+                  Administrer prøve X
+                </h2>
+              </a>
+              <a
+                href="/"
+                data-variant="default"
+                data-color="neutral"
+              >
+                <h2>
+                  Administrer prøve Y
+                </h2>
+              </a>
+            </div>
+            <div>
+              <div
+                role="radiogroup"
+                tabindex="0"
+              >
+                <button
+                  data-variant="primary"
+                  type="button"
+                  value="graph"
+                  id="togglegroup-item-«r2q»"
+                  aria-checked="true"
+                  aria-current="true"
+                  role="radio"
+                  name="togglegroup-name-«r2o»"
+                  data-roving-tabindex-item="true"
+                  tabindex="0"
+                >
+                  Vis som graf
+                </button>
+                <button
+                  data-variant="tertiary"
+                  type="button"
+                  value="table"
+                  id="togglegroup-item-«r2s»"
+                  aria-checked="false"
+                  aria-current="false"
+                  role="radio"
+                  name="togglegroup-name-«r2o»"
+                  data-roving-tabindex-item="true"
+                  tabindex="-1"
+                >
+                  Vis som tabell
+                </button>
+              </div>
+              <button
+                data-variant="tertiary"
+                type="button"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                Last ned PDF
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="tabpanel-«r2u»"
+        role="tabpanel"
+        aria-labelledby="tab-«r2k»"
+      >
+        <p data-variant="default">
+          Oversikt over prøvesvar for Schweigaardsgate skole.
+        </p>
+        <div>
+          <div>
+            <div data-variant="default">
+              <h2>
+                Viktige datoer
+              </h2>
+              <ul>
+                <li>
+                  Prøvestart: 12. april
+                </li>
+                <li>
+                  Prøvefrist: 5. mai
+                </li>
+                <li>
+                  Svarfrist: 28. mai
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h2>
+              Karakterfordeling prøvesvar
+            </h2>
+            <div>
+              <div
+                role="radiogroup"
+                tabindex="0"
+              >
+                <button
+                  data-variant="primary"
+                  type="button"
+                  value="graph"
+                  id="togglegroup-item-«r31»"
+                  aria-checked="true"
+                  aria-current="true"
+                  role="radio"
+                  name="togglegroup-name-«r2v»"
+                  data-roving-tabindex-item="true"
+                  tabindex="0"
+                >
+                  Vis som graf
+                </button>
+                <button
+                  data-variant="tertiary"
+                  type="button"
+                  value="table"
+                  id="togglegroup-item-«r33»"
+                  aria-checked="false"
+                  aria-current="false"
+                  role="radio"
+                  name="togglegroup-name-«r2v»"
+                  data-roving-tabindex-item="true"
+                  tabindex="-1"
+                >
+                  Vis som tabell
+                </button>
+              </div>
+              <button
+                data-variant="tertiary"
+                type="button"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                Last ned PDF
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="tabpanel-«r35»"
+        role="tabpanel"
+        hidden
+        aria-labelledby="tab-«r2l»"
+      >
+        <div>
+          <div>
+            <div data-variant="default">
+              <h2>
+                Viktige datoer
+              </h2>
+              <ul>
+                <li>
+                  Prøvestart: 12. april
+                </li>
+                <li>
+                  Prøvefrist: 5. mai
+                </li>
+                <li>
+                  Svarfrist: 28. mai
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Generelle innstillinger
+              </h2>
+              <div>
+                <input
+                  role="switch"
+                  id="dark-mode"
+                  type="checkbox"
+                  aria-describedby="dark-mode:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="dark-mode"
+                >
+                  Mørk modus
+                </label>
+                <div
+                  data-field="description"
+                  id="dark-mode:description:1"
+                >
+                  Et mørkere grensesnitt for å spare øynene.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="auto-updates"
+                  type="checkbox"
+                  value="auto-updates"
+                  checked
+                  aria-describedby="auto-updates:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="auto-updates"
+                >
+                  Automatiske oppdateringer
+                </label>
+                <div
+                  data-field="description"
+                  id="auto-updates:description:1"
+                >
+                  Bruk automatisk oppdateringer for å holde systemet oppdatert.
+                </div>
+              </div>
+            </div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Personvern
+              </h2>
+              <fieldset>
+                <legend data-weight="medium">
+                  Hvem kan se profilen din?
+                </legend>
+                <p data-variant="default">
+                  Velg hvem som har tilgang til å se profilen din.
+                </p>
+                <div>
+                  <input
+                    id="privacy-public"
+                    type="radio"
+                    value="public"
+                    checked
+                    name="privacy"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-public"
+                  >
+                    Alle
+                  </label>
+                </div>
+                <div>
+                  <input
+                    id="privacy-friends"
+                    type="radio"
+                    value="friends"
+                    name="privacy"
+                    aria-describedby="privacy-friends:description:1"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-friends"
+                  >
+                    Kun venner
+                  </label>
+                  <div
+                    data-field="description"
+                    id="privacy-friends:description:1"
+                  >
+                    Bare personer du har lagt til kan se profilen din.
+                  </div>
+                </div>
+                <div>
+                  <input
+                    id="privacy-private"
+                    type="radio"
+                    value="private"
+                    name="privacy"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-private"
+                  >
+                    Kun meg
+                  </label>
+                </div>
+                <p
+                  data-field="validation"
+                  hidden
+                  id="validation-privacy"
+                >
+                </p>
+              </fieldset>
+            </div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Varsler
+              </h2>
+              <div>
+                <input
+                  role="switch"
+                  id="sound-notifications"
+                  type="checkbox"
+                  value="sound-notifications"
+                  aria-describedby="sound-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="sound-notifications"
+                >
+                  Lydvarsler
+                </label>
+                <div
+                  data-field="description"
+                  id="sound-notifications:description:1"
+                >
+                  Spill av lyd når et varsel mottas.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="popup-notifications"
+                  type="checkbox"
+                  value="popup-notifications"
+                  aria-describedby="popup-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="popup-notifications"
+                >
+                  Popup-varsler
+                </label>
+                <div
+                  data-field="description"
+                  id="popup-notifications:description:1"
+                >
+                  Vis popup-varsler på skjermen.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="email-notifications"
+                  type="checkbox"
+                  value="email-notifications"
+                  aria-describedby="email-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="email-notifications"
+                >
+                  E-postvarsler
+                </label>
+                <div
+                  data-field="description"
+                  id="email-notifications:description:1"
+                >
+                  Tillat e-postvarsler for viktige oppdateringer.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -562,11 +1386,11 @@ exports[`Dashboard Page 4 1`] = `
           data-variant="primary"
           type="button"
           value="sm"
-          id="togglegroup-item-«r24»"
+          id="togglegroup-item-«r38»"
           aria-checked="true"
           aria-current="true"
           role="radio"
-          name="togglegroup-name-«r22»"
+          name="togglegroup-name-«r36»"
           data-roving-tabindex-item="true"
           tabindex="0"
         >
@@ -576,11 +1400,11 @@ exports[`Dashboard Page 4 1`] = `
           data-variant="tertiary"
           type="button"
           value="md"
-          id="togglegroup-item-«r26»"
+          id="togglegroup-item-«r3a»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-«r22»"
+          name="togglegroup-name-«r36»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -590,11 +1414,11 @@ exports[`Dashboard Page 4 1`] = `
           data-variant="tertiary"
           type="button"
           value="lg"
-          id="togglegroup-item-«r28»"
+          id="togglegroup-item-«r3c»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-«r22»"
+          name="togglegroup-name-«r36»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -617,11 +1441,11 @@ exports[`Dashboard Page 4 1`] = `
           data-variant="tertiary"
           type="button"
           value="light"
-          id="togglegroup-item-«r2b»"
+          id="togglegroup-item-«r3f»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-«r29»"
+          name="togglegroup-name-«r3d»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -631,11 +1455,11 @@ exports[`Dashboard Page 4 1`] = `
           data-variant="tertiary"
           type="button"
           value="dark"
-          id="togglegroup-item-«r2d»"
+          id="togglegroup-item-«r3h»"
           aria-checked="false"
           aria-current="false"
           role="radio"
-          name="togglegroup-name-«r29»"
+          name="togglegroup-name-«r3d»"
           data-roving-tabindex-item="true"
           tabindex="-1"
         >
@@ -645,11 +1469,11 @@ exports[`Dashboard Page 4 1`] = `
           data-variant="primary"
           type="button"
           value="auto"
-          id="togglegroup-item-«r2f»"
+          id="togglegroup-item-«r3j»"
           aria-checked="true"
           aria-current="true"
           role="radio"
-          name="togglegroup-name-«r29»"
+          name="togglegroup-name-«r3d»"
           data-roving-tabindex-item="true"
           tabindex="0"
         >
@@ -672,47 +1496,342 @@ exports[`Dashboard Page 4 1`] = `
         tabindex="0"
       >
         <button
+          id="tab-«r3k»"
           aria-selected="false"
-          id="tab-«r2g»"
+          data-value="overview"
           role="tab"
           type="button"
           data-roving-tabindex-item="true"
           tabindex="-1"
+          aria-controls="tabpanel-«r3o»"
         >
           Oversikt
         </button>
         <button
+          id="tab-«r3l»"
           aria-selected="false"
-          id="tab-«r2h»"
+          data-value="tests"
           role="tab"
           type="button"
           data-roving-tabindex-item="true"
           tabindex="-1"
+          aria-controls="tabpanel-«r3p»"
         >
           Prøver
         </button>
         <button
+          id="tab-«r3m»"
           aria-selected="false"
-          id="tab-«r2i»"
+          data-value="test-answers"
           role="tab"
           type="button"
           data-roving-tabindex-item="true"
           tabindex="-1"
+          aria-controls="tabpanel-«r40»"
         >
           Prøvesvar
         </button>
         <button
+          id="tab-«r3n»"
           aria-selected="true"
-          id="tab-«r2j»"
+          data-value="settings"
           role="tab"
           type="button"
           data-roving-tabindex-item="true"
           tabindex="0"
+          aria-controls="tabpanel-«r47»"
         >
           Innstillinger
         </button>
       </div>
-      <div role="tabpanel">
+      <div
+        id="tabpanel-«r3o»"
+        role="tabpanel"
+        tabindex="0"
+        hidden
+        aria-labelledby="tab-«r3k»"
+      >
+        <p data-variant="default">
+          Her får du en oversikt over all den overordnede informasjonen.
+        </p>
+        <div>
+          <div>
+            <div data-variant="default">
+              <h2>
+                Viktige datoer
+              </h2>
+              <ul>
+                <li>
+                  Prøvestart: 12. april
+                </li>
+                <li>
+                  Prøvefrist: 5. mai
+                </li>
+                <li>
+                  Svarfrist: 28. mai
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h2>
+              Prøveoversikt
+            </h2>
+            <span
+              aria-hidden="true"
+              data-variant="rectangle"
+              style="width: 250px;"
+            >
+            </span>
+            <span
+              aria-hidden="true"
+              data-variant="rectangle"
+              style="width: 250px;"
+            >
+            </span>
+            <div>
+              <svg
+                aria-label="laster inn"
+                role="img"
+                viewbox="0 0 50 50"
+                data-size="lg"
+              >
+                <circle
+                  cx="25"
+                  cy="25"
+                  r="20"
+                  fill="none"
+                  stroke-width="5"
+                >
+                </circle>
+                <circle
+                  cx="25"
+                  cy="25"
+                  r="20"
+                  fill="none"
+                  stroke-width="5"
+                >
+                </circle>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="tabpanel-«r3p»"
+        role="tabpanel"
+        hidden
+        aria-labelledby="tab-«r3l»"
+        style
+      >
+        <p data-variant="default">
+          Oversikt over prøver for Schweigaardsgate skole.
+        </p>
+        <div>
+          <div>
+            <div data-variant="default">
+              <h2>
+                Viktige datoer
+              </h2>
+              <ul>
+                <li>
+                  Prøvestart: 12. april
+                </li>
+                <li>
+                  Prøvefrist: 5. mai
+                </li>
+                <li>
+                  Svarfrist: 28. mai
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h2>
+              Prøver
+            </h2>
+            <div>
+              <a
+                href="/"
+                data-variant="default"
+                data-color="neutral"
+              >
+                <h2>
+                  Administrer prøve X
+                </h2>
+              </a>
+              <a
+                href="/"
+                data-variant="default"
+                data-color="neutral"
+              >
+                <h2>
+                  Administrer prøve Y
+                </h2>
+              </a>
+            </div>
+            <div>
+              <div
+                role="radiogroup"
+                tabindex="0"
+              >
+                <button
+                  data-variant="primary"
+                  type="button"
+                  value="graph"
+                  id="togglegroup-item-«r3s»"
+                  aria-checked="true"
+                  aria-current="true"
+                  role="radio"
+                  name="togglegroup-name-«r3q»"
+                  data-roving-tabindex-item="true"
+                  tabindex="0"
+                >
+                  Vis som graf
+                </button>
+                <button
+                  data-variant="tertiary"
+                  type="button"
+                  value="table"
+                  id="togglegroup-item-«r3u»"
+                  aria-checked="false"
+                  aria-current="false"
+                  role="radio"
+                  name="togglegroup-name-«r3q»"
+                  data-roving-tabindex-item="true"
+                  tabindex="-1"
+                >
+                  Vis som tabell
+                </button>
+              </div>
+              <button
+                data-variant="tertiary"
+                type="button"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                Last ned PDF
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="tabpanel-«r40»"
+        role="tabpanel"
+        hidden
+        aria-labelledby="tab-«r3m»"
+        style
+      >
+        <p data-variant="default">
+          Oversikt over prøvesvar for Schweigaardsgate skole.
+        </p>
+        <div>
+          <div>
+            <div data-variant="default">
+              <h2>
+                Viktige datoer
+              </h2>
+              <ul>
+                <li>
+                  Prøvestart: 12. april
+                </li>
+                <li>
+                  Prøvefrist: 5. mai
+                </li>
+                <li>
+                  Svarfrist: 28. mai
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h2>
+              Karakterfordeling prøvesvar
+            </h2>
+            <div>
+              <div
+                role="radiogroup"
+                tabindex="0"
+              >
+                <button
+                  data-variant="primary"
+                  type="button"
+                  value="graph"
+                  id="togglegroup-item-«r43»"
+                  aria-checked="true"
+                  aria-current="true"
+                  role="radio"
+                  name="togglegroup-name-«r41»"
+                  data-roving-tabindex-item="true"
+                  tabindex="0"
+                >
+                  Vis som graf
+                </button>
+                <button
+                  data-variant="tertiary"
+                  type="button"
+                  value="table"
+                  id="togglegroup-item-«r45»"
+                  aria-checked="false"
+                  aria-current="false"
+                  role="radio"
+                  name="togglegroup-name-«r41»"
+                  data-roving-tabindex-item="true"
+                  tabindex="-1"
+                >
+                  Vis som tabell
+                </button>
+              </div>
+              <button
+                data-variant="tertiary"
+                type="button"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                Last ned PDF
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="tabpanel-«r47»"
+        role="tabpanel"
+        aria-labelledby="tab-«r3n»"
+      >
         <div>
           <div>
             <div data-variant="default">
@@ -1062,49 +2181,59 @@ exports[`Dashboard Story 1`] = `
         tabindex="0"
       >
         <button
-          aria-selected="true"
           id="tab-«re»"
+          aria-selected="true"
+          data-value="overview"
           role="tab"
           type="button"
           data-roving-tabindex-item="true"
           tabindex="0"
+          aria-controls="tabpanel-«ri»"
         >
           Oversikt
         </button>
         <button
-          aria-selected="false"
           id="tab-«rf»"
+          aria-selected="false"
+          data-value="tests"
           role="tab"
           type="button"
           data-roving-tabindex-item="true"
           tabindex="-1"
+          aria-controls="tabpanel-«rj»"
         >
           Prøver
         </button>
         <button
-          aria-selected="false"
           id="tab-«rg»"
+          aria-selected="false"
+          data-value="test-answers"
           role="tab"
           type="button"
           data-roving-tabindex-item="true"
           tabindex="-1"
+          aria-controls="tabpanel-«rq»"
         >
           Prøvesvar
         </button>
         <button
-          aria-selected="false"
           id="tab-«rh»"
+          aria-selected="false"
+          data-value="settings"
           role="tab"
           type="button"
           data-roving-tabindex-item="true"
           tabindex="-1"
+          aria-controls="tabpanel-«r11»"
         >
           Innstillinger
         </button>
       </div>
       <div
+        id="tabpanel-«ri»"
         role="tabpanel"
         tabindex="0"
+        aria-labelledby="tab-«re»"
       >
         <p data-variant="default">
           Her får du en oversikt over all den overordnede informasjonen.
@@ -1168,6 +2297,438 @@ exports[`Dashboard Story 1`] = `
                 >
                 </circle>
               </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="tabpanel-«rj»"
+        role="tabpanel"
+        hidden
+        aria-labelledby="tab-«rf»"
+        style
+      >
+        <p data-variant="default">
+          Oversikt over prøver for Schweigaardsgate skole.
+        </p>
+        <div>
+          <div>
+            <div data-variant="default">
+              <h2>
+                Viktige datoer
+              </h2>
+              <ul>
+                <li>
+                  Prøvestart: 12. april
+                </li>
+                <li>
+                  Prøvefrist: 5. mai
+                </li>
+                <li>
+                  Svarfrist: 28. mai
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h2>
+              Prøver
+            </h2>
+            <div>
+              <a
+                href="/"
+                data-variant="default"
+                data-color="neutral"
+              >
+                <h2>
+                  Administrer prøve X
+                </h2>
+              </a>
+              <a
+                href="/"
+                data-variant="default"
+                data-color="neutral"
+              >
+                <h2>
+                  Administrer prøve Y
+                </h2>
+              </a>
+            </div>
+            <div>
+              <div
+                role="radiogroup"
+                tabindex="0"
+              >
+                <button
+                  data-variant="primary"
+                  type="button"
+                  value="graph"
+                  id="togglegroup-item-«rm»"
+                  aria-checked="true"
+                  aria-current="true"
+                  role="radio"
+                  name="togglegroup-name-«rk»"
+                  data-roving-tabindex-item="true"
+                  tabindex="0"
+                >
+                  Vis som graf
+                </button>
+                <button
+                  data-variant="tertiary"
+                  type="button"
+                  value="table"
+                  id="togglegroup-item-«ro»"
+                  aria-checked="false"
+                  aria-current="false"
+                  role="radio"
+                  name="togglegroup-name-«rk»"
+                  data-roving-tabindex-item="true"
+                  tabindex="-1"
+                >
+                  Vis som tabell
+                </button>
+              </div>
+              <button
+                data-variant="tertiary"
+                type="button"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                Last ned PDF
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="tabpanel-«rq»"
+        role="tabpanel"
+        hidden
+        aria-labelledby="tab-«rg»"
+        style
+      >
+        <p data-variant="default">
+          Oversikt over prøvesvar for Schweigaardsgate skole.
+        </p>
+        <div>
+          <div>
+            <div data-variant="default">
+              <h2>
+                Viktige datoer
+              </h2>
+              <ul>
+                <li>
+                  Prøvestart: 12. april
+                </li>
+                <li>
+                  Prøvefrist: 5. mai
+                </li>
+                <li>
+                  Svarfrist: 28. mai
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h2>
+              Karakterfordeling prøvesvar
+            </h2>
+            <div>
+              <div
+                role="radiogroup"
+                tabindex="0"
+              >
+                <button
+                  data-variant="primary"
+                  type="button"
+                  value="graph"
+                  id="togglegroup-item-«rt»"
+                  aria-checked="true"
+                  aria-current="true"
+                  role="radio"
+                  name="togglegroup-name-«rr»"
+                  data-roving-tabindex-item="true"
+                  tabindex="0"
+                >
+                  Vis som graf
+                </button>
+                <button
+                  data-variant="tertiary"
+                  type="button"
+                  value="table"
+                  id="togglegroup-item-«rv»"
+                  aria-checked="false"
+                  aria-current="false"
+                  role="radio"
+                  name="togglegroup-name-«rr»"
+                  data-roving-tabindex-item="true"
+                  tabindex="-1"
+                >
+                  Vis som tabell
+                </button>
+              </div>
+              <button
+                data-variant="tertiary"
+                type="button"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                Last ned PDF
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="tabpanel-«r11»"
+        role="tabpanel"
+        hidden
+        aria-labelledby="tab-«rh»"
+      >
+        <div>
+          <div>
+            <div data-variant="default">
+              <h2>
+                Viktige datoer
+              </h2>
+              <ul>
+                <li>
+                  Prøvestart: 12. april
+                </li>
+                <li>
+                  Prøvefrist: 5. mai
+                </li>
+                <li>
+                  Svarfrist: 28. mai
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Generelle innstillinger
+              </h2>
+              <div>
+                <input
+                  role="switch"
+                  id="dark-mode"
+                  type="checkbox"
+                  aria-describedby="dark-mode:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="dark-mode"
+                >
+                  Mørk modus
+                </label>
+                <div
+                  data-field="description"
+                  id="dark-mode:description:1"
+                >
+                  Et mørkere grensesnitt for å spare øynene.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="auto-updates"
+                  type="checkbox"
+                  value="auto-updates"
+                  checked
+                  aria-describedby="auto-updates:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="auto-updates"
+                >
+                  Automatiske oppdateringer
+                </label>
+                <div
+                  data-field="description"
+                  id="auto-updates:description:1"
+                >
+                  Bruk automatisk oppdateringer for å holde systemet oppdatert.
+                </div>
+              </div>
+            </div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Personvern
+              </h2>
+              <fieldset>
+                <legend data-weight="medium">
+                  Hvem kan se profilen din?
+                </legend>
+                <p data-variant="default">
+                  Velg hvem som har tilgang til å se profilen din.
+                </p>
+                <div>
+                  <input
+                    id="privacy-public"
+                    type="radio"
+                    value="public"
+                    checked
+                    name="privacy"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-public"
+                  >
+                    Alle
+                  </label>
+                </div>
+                <div>
+                  <input
+                    id="privacy-friends"
+                    type="radio"
+                    value="friends"
+                    name="privacy"
+                    aria-describedby="privacy-friends:description:1"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-friends"
+                  >
+                    Kun venner
+                  </label>
+                  <div
+                    data-field="description"
+                    id="privacy-friends:description:1"
+                  >
+                    Bare personer du har lagt til kan se profilen din.
+                  </div>
+                </div>
+                <div>
+                  <input
+                    id="privacy-private"
+                    type="radio"
+                    value="private"
+                    name="privacy"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-private"
+                  >
+                    Kun meg
+                  </label>
+                </div>
+                <p
+                  data-field="validation"
+                  hidden
+                  id="validation-privacy"
+                >
+                </p>
+              </fieldset>
+            </div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Varsler
+              </h2>
+              <div>
+                <input
+                  role="switch"
+                  id="sound-notifications"
+                  type="checkbox"
+                  value="sound-notifications"
+                  aria-describedby="sound-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="sound-notifications"
+                >
+                  Lydvarsler
+                </label>
+                <div
+                  data-field="description"
+                  id="sound-notifications:description:1"
+                >
+                  Spill av lyd når et varsel mottas.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="popup-notifications"
+                  type="checkbox"
+                  value="popup-notifications"
+                  aria-describedby="popup-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="popup-notifications"
+                >
+                  Popup-varsler
+                </label>
+                <div
+                  data-field="description"
+                  id="popup-notifications:description:1"
+                >
+                  Vis popup-varsler på skjermen.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="email-notifications"
+                  type="checkbox"
+                  value="email-notifications"
+                  aria-describedby="email-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="email-notifications"
+                >
+                  E-postvarsler
+                </label>
+                <div
+                  data-field="description"
+                  id="email-notifications:description:1"
+                >
+                  Tillat e-postvarsler for viktige oppdateringer.
+                </div>
+              </div>
             </div>
           </div>
         </div>

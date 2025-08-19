@@ -268,10 +268,7 @@ export const DialogWithForm: Story = {
             >
               Send inn skjema
             </Button>
-            <Button
-              variant="secondary"
-              onClick={() => dialogRef.current?.close()}
-            >
+            <Button variant="secondary" data-command="close">
               Avbryt
             </Button>
           </div>
@@ -350,10 +347,7 @@ export const DialogWithSuggestion: Story = {
             >
               Send inn
             </Button>
-            <Button
-              variant="secondary"
-              onClick={() => dialogRef.current?.close()}
-            >
+            <Button variant="secondary" data-command="close">
               Avbryt
             </Button>
           </Dialog.Block>

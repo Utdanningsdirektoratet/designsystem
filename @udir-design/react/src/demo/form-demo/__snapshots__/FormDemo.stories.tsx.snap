@@ -346,17 +346,15 @@ exports[`Form Page 2 1`] = `
       </fieldset>
     </form>
     <dialog data-modal="true">
-      <form method="dialog">
-        <button
-          data-icon="true"
-          data-variant="tertiary"
-          type="submit"
-          aria-label="Lukk dialogvindu"
-          data-color="neutral"
-          name="close"
-        >
-        </button>
-      </form>
+      <button
+        data-icon="true"
+        data-variant="tertiary"
+        type="button"
+        aria-label="Lukk dialogvindu"
+        data-color="neutral"
+        data-command="close"
+      >
+      </button>
       <div>
         <h2 data-size="xs">
           Er du sikker på at du vil sende inn skjema?
@@ -639,17 +637,15 @@ exports[`Form Page 3 1`] = `
       </button>
     </form>
     <dialog data-modal="true">
-      <form method="dialog">
-        <button
-          data-icon="true"
-          data-variant="tertiary"
-          type="submit"
-          aria-label="Lukk dialogvindu"
-          data-color="neutral"
-          name="close"
-        >
-        </button>
-      </form>
+      <button
+        data-icon="true"
+        data-variant="tertiary"
+        type="button"
+        aria-label="Lukk dialogvindu"
+        data-color="neutral"
+        data-command="close"
+      >
+      </button>
       <div>
         <h2 data-size="xs">
           Er du sikker på at du vil sende inn skjema?
@@ -1169,17 +1165,15 @@ exports[`Form Story 1`] = `
       </div>
     </form>
     <dialog data-modal="true">
-      <form method="dialog">
-        <button
-          data-icon="true"
-          data-variant="tertiary"
-          type="submit"
-          aria-label="Lukk dialogvindu"
-          data-color="neutral"
-          name="close"
-        >
-        </button>
-      </form>
+      <button
+        data-icon="true"
+        data-variant="tertiary"
+        type="button"
+        aria-label="Lukk dialogvindu"
+        data-color="neutral"
+        data-command="close"
+      >
+      </button>
       <div>
         <h2 data-size="xs">
           Er du sikker på at du vil sende inn skjema?

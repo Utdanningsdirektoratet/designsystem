@@ -7,35 +7,68 @@ exports[`Preview 1`] = `
     tabindex="0"
   >
     <button
-      aria-selected="false"
       id="tab-«r0»"
+      aria-selected="false"
+      data-value="value1"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
       tabindex="-1"
+      aria-controls="tabpanel-«r3»"
     >
       Tab 1
     </button>
     <button
-      aria-selected="false"
       id="tab-«r1»"
+      aria-selected="false"
+      data-value="value2"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
       tabindex="-1"
+      aria-controls="tabpanel-«r4»"
     >
       Tab 2
     </button>
     <button
-      aria-selected="false"
       id="tab-«r2»"
+      aria-selected="false"
+      data-value="value3"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
       tabindex="-1"
+      aria-controls="tabpanel-«r5»"
     >
       Tab 3
     </button>
+  </div>
+  <div
+    id="tabpanel-«r3»"
+    role="tabpanel"
+    tabindex="0"
+    hidden
+    aria-labelledby="tab-«r0»"
+  >
+    content 1
+  </div>
+  <div
+    id="tabpanel-«r4»"
+    role="tabpanel"
+    tabindex="0"
+    hidden
+    aria-labelledby="tab-«r1»"
+  >
+    content 2
+  </div>
+  <div
+    id="tabpanel-«r5»"
+    role="tabpanel"
+    tabindex="0"
+    hidden
+    aria-labelledby="tab-«r2»"
+  >
+    content 3
   </div>
 </div>
 `;
