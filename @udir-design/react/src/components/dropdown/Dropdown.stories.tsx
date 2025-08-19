@@ -46,7 +46,7 @@ export const Preview: Story = {
   render: (args) => {
     return (
       <Dropdown.TriggerContext>
-        <Dropdown.Trigger data-color={args['data-color']}>
+        <Dropdown.Trigger>
           Last ned
           <DownloadIcon aria-hidden />
         </Dropdown.Trigger>
@@ -175,7 +175,7 @@ export const Controlled: Story = {
 
     return (
       <Dropdown.TriggerContext>
-        <Dropdown.Trigger onClick={() => setOpen(!open)}>
+        <Dropdown.Trigger onClick={() => setOpen(!open)} variant="secondary">
           Utdanningsløp
           {open ? (
             <ChevronUpIcon aria-hidden />
