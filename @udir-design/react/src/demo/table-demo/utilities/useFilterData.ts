@@ -20,6 +20,13 @@ export function useFilterData<T>(
           return itemValue.toLowerCase().includes(filterValue.toLowerCase());
         }
 
+        // If filterValue is an array
+        if (Array.isArray(filterValue) && typeof itemValue === 'string') {
+          return filterValue.some((f) =>
+            itemValue.toLowerCase().includes(f.toLowerCase()),
+          );
+        }
+
         // If other types, we do a strict comparison.
         return itemValue === filterValue;
       });
