@@ -287,17 +287,15 @@ exports[`Table Story 1`] = `
                   Slett
                 </span>
                 <dialog data-modal="true">
-                  <form method="dialog">
-                    <button
-                      data-icon="true"
-                      data-variant="tertiary"
-                      type="submit"
-                      aria-label="Lukk dialogvindu"
-                      data-color="neutral"
-                      name="close"
-                    >
-                    </button>
-                  </form>
+                  <button
+                    data-icon="true"
+                    data-variant="tertiary"
+                    type="button"
+                    aria-label="Lukk dialogvindu"
+                    data-color="neutral"
+                    data-command="close"
+                  >
+                  </button>
                   <div>
                     <h2 data-size="xs">
                       Er du sikker på at du vil slette Lise Nordmann?
@@ -397,17 +395,15 @@ exports[`Table Story 1`] = `
                   Slett
                 </span>
                 <dialog data-modal="true">
-                  <form method="dialog">
-                    <button
-                      data-icon="true"
-                      data-variant="tertiary"
-                      type="submit"
-                      aria-label="Lukk dialogvindu"
-                      data-color="neutral"
-                      name="close"
-                    >
-                    </button>
-                  </form>
+                  <button
+                    data-icon="true"
+                    data-variant="tertiary"
+                    type="button"
+                    aria-label="Lukk dialogvindu"
+                    data-color="neutral"
+                    data-command="close"
+                  >
+                  </button>
                   <div>
                     <h2 data-size="xs">
                       Er du sikker på at du vil slette Ola Nordmann?
@@ -507,17 +503,15 @@ exports[`Table Story 1`] = `
                   Slett
                 </span>
                 <dialog data-modal="true">
-                  <form method="dialog">
-                    <button
-                      data-icon="true"
-                      data-variant="tertiary"
-                      type="submit"
-                      aria-label="Lukk dialogvindu"
-                      data-color="neutral"
-                      name="close"
-                    >
-                    </button>
-                  </form>
+                  <button
+                    data-icon="true"
+                    data-variant="tertiary"
+                    type="button"
+                    aria-label="Lukk dialogvindu"
+                    data-color="neutral"
+                    data-command="close"
+                  >
+                  </button>
                   <div>
                     <h2 data-size="xs">
                       Er du sikker på at du vil slette Kari Nordmann?
@@ -617,17 +611,15 @@ exports[`Table Story 1`] = `
                   Slett
                 </span>
                 <dialog data-modal="true">
-                  <form method="dialog">
-                    <button
-                      data-icon="true"
-                      data-variant="tertiary"
-                      type="submit"
-                      aria-label="Lukk dialogvindu"
-                      data-color="neutral"
-                      name="close"
-                    >
-                    </button>
-                  </form>
+                  <button
+                    data-icon="true"
+                    data-variant="tertiary"
+                    type="button"
+                    aria-label="Lukk dialogvindu"
+                    data-color="neutral"
+                    data-command="close"
+                  >
+                  </button>
                   <div>
                     <h2 data-size="xs">
                       Er du sikker på at du vil slette Per Nordmann?
@@ -727,17 +719,15 @@ exports[`Table Story 1`] = `
                   Slett
                 </span>
                 <dialog data-modal="true">
-                  <form method="dialog">
-                    <button
-                      data-icon="true"
-                      data-variant="tertiary"
-                      type="submit"
-                      aria-label="Lukk dialogvindu"
-                      data-color="neutral"
-                      name="close"
-                    >
-                    </button>
-                  </form>
+                  <button
+                    data-icon="true"
+                    data-variant="tertiary"
+                    type="button"
+                    aria-label="Lukk dialogvindu"
+                    data-color="neutral"
+                    data-command="close"
+                  >
+                  </button>
                   <div>
                     <h2 data-size="xs">
                       Er du sikker på at du vil slette Anne Nordmann?
@@ -823,17 +813,15 @@ exports[`Table Story 1`] = `
           Eksporter liste
         </button>
         <dialog data-modal="true">
-          <form method="dialog">
-            <button
-              data-icon="true"
-              data-variant="tertiary"
-              type="submit"
-              aria-label="Lukk dialogvindu"
-              data-color="neutral"
-              name="close"
-            >
-            </button>
-          </form>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            aria-label="Lukk dialogvindu"
+            data-color="neutral"
+            data-command="close"
+          >
+          </button>
           <div>
             <h2 data-size="xs">
               Eksporter liste
