@@ -15,6 +15,14 @@ const meta: Meta<typeof Popover> = {
       justifyContent: 'center',
     },
   },
+  play: async (ctx) => {
+    // When not in Docs mode, automatically open the popover
+    const canvas = within(ctx.canvasElement);
+    const button = canvas.getByRole('button');
+    await userEvent.click(button);
+    const popover = ctx.canvasElement.querySelector('[popover]');
+    await expect(popover).toBeVisible();
+  },
 };
 
 export default meta;
@@ -44,12 +52,22 @@ export const Preview: Story = {
     </Popover.TriggerContext>
   ),
   play: async (ctx) => {
-    // When not in Docs mode, automatically open the popover
-    const canvas = within(ctx.canvasElement);
-    const button = canvas.getByRole('button');
+    const button = within(ctx.canvasElement).getByRole('button');
+
+    // Check open, click link and close with trigger
     await userEvent.click(button);
-    const popover = ctx.canvasElement.querySelector('[popover]');
-    await expect(popover).toBeVisible();
+    const dropdown = ctx.canvasElement.querySelector('[popover]');
+    await expect(dropdown).toBeVisible();
+    await userEvent.click(button);
+    await expect(dropdown).not.toBeVisible();
+
+    // Check close with click outside
+    await userEvent.click(button);
+    await expect(dropdown).toBeVisible();
+    await userEvent.click(ctx.canvasElement);
+    await expect(dropdown).not.toBeVisible();
+
+    await userEvent.click(button);
   },
 };
 
@@ -96,6 +114,24 @@ export const DottedUnderline: Story = {
       </Popover>
     </Popover.TriggerContext>
   ),
+  play: async (ctx) => {
+    const button = within(ctx.canvasElement).getByRole('button');
+
+    // Check open and close with trigger
+    await userEvent.click(button);
+    const dropdown = ctx.canvasElement.querySelector('[popover]');
+    await expect(dropdown).toBeVisible();
+    await userEvent.click(button);
+    await expect(dropdown).not.toBeVisible();
+
+    // Check close with click outside
+    await userEvent.click(button);
+    await expect(dropdown).toBeVisible();
+    await userEvent.click(ctx.canvasElement);
+    await expect(dropdown).not.toBeVisible();
+
+    await userEvent.click(button);
+  },
 };
 
 const ColorVariantsMap: {
@@ -134,11 +170,11 @@ const ColorVariantsMap: {
 const VariantsMap: {
   [key: string]: { [key: string]: string };
 } = {
-  neutralDefault: {
-    'data-color': 'neutral',
+  successDefault: {
+    'data-color': 'success',
   },
-  neutralTinted: {
-    'data-color': 'neutral',
+  successTinted: {
+    'data-color': 'success',
     variant: 'tinted',
   },
   dangerDefault: {
@@ -187,6 +223,9 @@ export const Variants: Story = {
       </div>
     );
   },
+  play: () => {
+    return;
+  },
 };
 
 export const ColorVariants: Story = {
@@ -211,6 +250,9 @@ export const ColorVariants: Story = {
         ))}
       </div>
     );
+  },
+  play: () => {
+    return;
   },
 };
 

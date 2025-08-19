@@ -169,6 +169,8 @@ exports[`Controlled 1`] = `
   id="«rl»"
   popover="manual"
   data-variant="default"
+  data-placement="bottom"
+  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
 >
   Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
   <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
@@ -206,6 +208,8 @@ exports[`Dotted Underline 1`] = `
   popover="manual"
   data-variant="default"
   data-color="neutral"
+  data-placement="bottom"
+  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
 >
   <p data-variant="default">
     <strong>
@@ -245,6 +249,8 @@ exports[`Interactive 1`] = `
   id="«r2»"
   popover="manual"
   data-variant="default"
+  data-placement="bottom"
+  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
 >
   <p data-variant="default">
     Vil du lagre endringene dine?
@@ -332,11 +338,11 @@ exports[`Variants 1`] = `
     id="«r5»"
     popover="manual"
     data-variant="default"
-    data-color="neutral"
+    data-color="success"
     data-placement="top"
     style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
   >
-    neutralDefault
+    successDefault
   </div>
   <button
     data-variant="tertiary"
@@ -349,11 +355,11 @@ exports[`Variants 1`] = `
     id="«r6»"
     popover="manual"
     data-variant="tinted"
-    data-color="neutral"
+    data-color="success"
     data-placement="top"
     style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
   >
-    neutralTinted
+    successTinted
   </div>
   <button
     data-variant="tertiary"
@@ -494,6 +500,8 @@ exports[`Without Context 1`] = `
   popover="manual"
   data-variant="default"
   data-color="neutral"
+  data-placement="bottom"
+  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
 >
   <p data-variant="default">
     Er du sikker på at du vil slette raden? Handlingen kan ikke angres.
