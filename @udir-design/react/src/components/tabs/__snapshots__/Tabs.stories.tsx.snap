@@ -7,12 +7,14 @@ exports[`Controlled 1`] = `
     tabindex="0"
   >
     <button
+      id="tab-«rr»"
       aria-selected="true"
-      id="tab-«ro»"
+      data-value="users"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
       tabindex="0"
+      aria-controls="tabpanel-«rv»"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -35,12 +37,14 @@ exports[`Controlled 1`] = `
       Brukere
     </button>
     <button
+      id="tab-«rt»"
       aria-selected="false"
-      id="tab-«rq»"
+      data-value="profile"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
       tabindex="-1"
+      aria-controls="tabpanel-«r10»"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +67,11 @@ exports[`Controlled 1`] = `
       Din profil
     </button>
   </div>
-  <div role="tabpanel">
+  <div
+    id="tabpanel-«rv»"
+    role="tabpanel"
+    aria-labelledby="tab-«rr»"
+  >
     <ul style="list-style: none; padding: 0px;">
       <li style="display: flex;">
         <button
@@ -87,7 +95,6 @@ exports[`Controlled 1`] = `
         >
           <span
             data-variant="circle"
-            data-initials="SS"
             role="img"
             aria-label="Bruker 2"
             data-color="support1"
@@ -103,7 +110,6 @@ exports[`Controlled 1`] = `
         >
           <span
             data-variant="circle"
-            data-initials="LL"
             role="img"
             aria-label="Bruker 3"
             data-color="support2"
@@ -113,6 +119,40 @@ exports[`Controlled 1`] = `
         </a>
       </li>
     </ul>
+  </div>
+  <div
+    id="tabpanel-«r10»"
+    role="tabpanel"
+    tabindex="0"
+    hidden
+    aria-labelledby="tab-«rt»"
+    style="display: flex; flex-direction: column;"
+  >
+    <div style="display: flex; align-items: center; gap: var(--ds-size-2);">
+      <span
+        data-variant="circle"
+        role="img"
+        aria-label="Bruker 1"
+        data-color="accent"
+      >
+      </span>
+      Hilde Hansen
+    </div>
+    <h3 style="margin-bottom: var(--ds-size-2); margin-top: var(--ds-size-4);">
+      Detaljer
+    </h3>
+    <p data-variant="default">
+      34 år
+    </p>
+    <p data-variant="default">
+      Mysen, Norge
+    </p>
+    <p data-variant="default">
+      Lærer
+    </p>
+    <p data-variant="default">
+      Mysen Videregående skole
+    </p>
   </div>
 </div>
 `;
@@ -124,8 +164,9 @@ exports[`Icons With Text 1`] = `
     tabindex="0"
   >
     <button
+      id="tab-«r9»"
       aria-selected="true"
-      id="tab-«r6»"
+      data-value="barnehage"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
@@ -152,8 +193,9 @@ exports[`Icons With Text 1`] = `
       Barnehage
     </button>
     <button
+      id="tab-«rb»"
       aria-selected="false"
-      id="tab-«r8»"
+      data-value="grunnskole"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
@@ -180,8 +222,9 @@ exports[`Icons With Text 1`] = `
       Grunnskole
     </button>
     <button
+      id="tab-«rd»"
       aria-selected="false"
-      id="tab-«ra»"
+      data-value="videregående"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
@@ -218,13 +261,14 @@ exports[`Only Icons 1`] = `
     tabindex="0"
   >
     <button
-      aria-label="Galleri"
-      popovertarget="«rc»"
-      popovertargetaction="show"
+      id="tab-«rg»"
       aria-selected="false"
-      id="tab-«rd»"
+      data-value="gallery"
       role="tab"
       type="button"
+      aria-label="Galleri"
+      popovertarget="«rf»"
+      popovertargetaction="show"
       data-roving-tabindex-item="true"
       tabindex="-1"
     >
@@ -249,20 +293,21 @@ exports[`Only Icons 1`] = `
     </button>
     <span
       role="tooltip"
-      id="«rc»"
+      id="«rf»"
       popover="manual"
       style="opacity: 0;"
     >
       Galleri
     </span>
     <button
-      aria-label="Profilen din"
-      popovertarget="«rf»"
-      popovertargetaction="show"
+      id="tab-«rj»"
       aria-selected="true"
-      id="tab-«rg»"
+      data-value="profile"
       role="tab"
       type="button"
+      aria-label="Profilen din"
+      popovertarget="«ri»"
+      popovertargetaction="show"
       data-roving-tabindex-item="true"
       tabindex="0"
     >
@@ -287,20 +332,21 @@ exports[`Only Icons 1`] = `
     </button>
     <span
       role="tooltip"
-      id="«rf»"
+      id="«ri»"
       popover="manual"
       style="opacity: 0;"
     >
       Profilen din
     </span>
     <button
-      aria-label="Varsler"
-      popovertarget="«ri»"
-      popovertargetaction="show"
+      id="tab-«rm»"
       aria-selected="false"
-      id="tab-«rj»"
+      data-value="notifications"
       role="tab"
       type="button"
+      aria-label="Varsler"
+      popovertarget="«rl»"
+      popovertargetaction="show"
       data-roving-tabindex-item="true"
       tabindex="-1"
     >
@@ -325,20 +371,21 @@ exports[`Only Icons 1`] = `
     </button>
     <span
       role="tooltip"
-      id="«ri»"
+      id="«rl»"
       popover="manual"
       style="opacity: 0;"
     >
       Varsler
     </span>
     <button
-      aria-label="Innstillinger"
-      popovertarget="«rl»"
-      popovertargetaction="show"
+      id="tab-«rp»"
       aria-selected="false"
-      id="tab-«rm»"
+      data-value="settings"
       role="tab"
       type="button"
+      aria-label="Innstillinger"
+      popovertarget="«ro»"
+      popovertargetaction="show"
       data-roving-tabindex-item="true"
       tabindex="-1"
     >
@@ -363,7 +410,7 @@ exports[`Only Icons 1`] = `
     </button>
     <span
       role="tooltip"
-      id="«rl»"
+      id="«ro»"
       popover="manual"
       style="opacity: 0;"
     >
@@ -380,8 +427,9 @@ exports[`Only Text 1`] = `
     tabindex="0"
   >
     <button
+      id="tab-«r6»"
       aria-selected="true"
-      id="tab-«r3»"
+      data-value="oversikt"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
@@ -390,8 +438,9 @@ exports[`Only Text 1`] = `
       Oversikt
     </button>
     <button
+      id="tab-«r7»"
       aria-selected="false"
-      id="tab-«r4»"
+      data-value="prøver"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
@@ -400,8 +449,9 @@ exports[`Only Text 1`] = `
       Prøver
     </button>
     <button
+      id="tab-«r8»"
       aria-selected="false"
-      id="tab-«r5»"
+      data-value="prøvesvar"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
@@ -420,14 +470,14 @@ exports[`Preview 1`] = `
     tabindex="0"
   >
     <button
-      aria-selected="true"
       id="tab-«r0»"
-      aria-selected="false"
+      aria-selected="true"
       data-value="value1"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
       tabindex="0"
+      aria-controls="tabpanel-«r3»"
     >
       Tab 1
     </button>
@@ -457,10 +507,30 @@ exports[`Preview 1`] = `
     </button>
   </div>
   <div
+    id="tabpanel-«r3»"
     role="tabpanel"
     tabindex="0"
+    aria-labelledby="tab-«r0»"
   >
     Innhold for Tab 1
+  </div>
+  <div
+    id="tabpanel-«r4»"
+    role="tabpanel"
+    tabindex="0"
+    aria-labelledby="tab-«r1»"
+    hidden
+  >
+    Innhold for Tab 2
+  </div>
+  <div
+    id="tabpanel-«r5»"
+    role="tabpanel"
+    tabindex="0"
+    aria-labelledby="tab-«r2»"
+    hidden
+  >
+    Innhold for Tab 3
   </div>
 </div>
 `;
