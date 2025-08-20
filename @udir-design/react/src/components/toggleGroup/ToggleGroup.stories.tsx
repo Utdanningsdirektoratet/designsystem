@@ -320,7 +320,7 @@ export const Controlled: Story = {
             variant="secondary"
             onClick={() => setValue('answers')}
           >
-            Se nye besvarelser
+            Se ikke påbegynt
           </Button>
         )}
       </>
