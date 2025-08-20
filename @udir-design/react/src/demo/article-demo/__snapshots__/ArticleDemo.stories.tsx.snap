@@ -119,6 +119,9 @@ exports[`Article Story 1`] = `
     data-size="sm"
     data-color-scheme="auto"
   >
+    <a href="#main-content">
+      Hopp til hovedinnholdet
+    </a>
     <nav aria-label="Du er her:">
       <a aria-label="Tilbake til mer informasjon">
         Mer informasjon
@@ -144,7 +147,10 @@ exports[`Article Story 1`] = `
         </li>
       </ol>
     </nav>
-    <div>
+    <div
+      id="main-content"
+      tabindex="-1"
+    >
       <div data-color="info">
         Denne artikkelen er mer enn 2 år gammel
       </div>

@@ -8,6 +8,7 @@ import {
   Heading,
   Link,
   Paragraph,
+  SkipLink,
 } from '@udir-design/react/alpha';
 import { HTMLAttributes } from 'react';
 import classes from './ArticleDemo.module.css';
@@ -22,6 +23,7 @@ type ArticleDemoProps = HTMLAttributes<HTMLDivElement>;
 export const ArticleDemo = ({ ...props }: ArticleDemoProps) => {
   return (
     <article {...props} className={cl(classes.article, classes.contentSpacing)}>
+      <SkipLink href="#main-content">Hopp til hovedinnholdet</SkipLink>
       <Breadcrumbs aria-label="Du er her:">
         <Breadcrumbs.Link aria-label="Tilbake til mer informasjon">
           Mer informasjon
@@ -44,7 +46,11 @@ export const ArticleDemo = ({ ...props }: ArticleDemoProps) => {
           </Breadcrumbs.Item>
         </Breadcrumbs.List>
       </Breadcrumbs>
-      <div className={cl(classes.contentWrapper, classes.contentSpacing)}>
+      <div
+        className={cl(classes.contentWrapper, classes.contentSpacing)}
+        id="main-content"
+        tabIndex={-1}
+      >
         <Alert>Denne artikkelen er mer enn 2 år gammel</Alert>
         <div className={classes.headingWrapper}>
           <Heading data-size="md" level={1}>
