@@ -260,9 +260,33 @@ exports[`Simple 1`] = `
           <button
             data-variant="primary"
             type="button"
+            popovertarget="«r1»"
           >
             Utfør
           </button>
+          <div
+            id="«r1»"
+            popover="manual"
+            data-variant="default"
+          >
+            Er du sikker på at du vil gjennomføre? Handlingen vil utføres på alle brukere.
+            <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
+              <button
+                data-variant="primary"
+                type="button"
+                data-size="sm"
+              >
+                Ja, utfør
+              </button>
+              <button
+                data-variant="tertiary"
+                type="button"
+                data-size="sm"
+              >
+                Avbryt
+              </button>
+            </div>
+          </div>
         </div>
         <div>
           <input
