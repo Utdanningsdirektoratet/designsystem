@@ -1,0 +1,72 @@
+import { forwardRef, HTMLAttributes } from 'react';
+import cl from 'clsx/lite';
+import mainLogo from '../../../assets/img/udir-main-logo.svg';
+import circleLogo from '../../../assets/img/udir-circle-logo.svg';
+import { useScrollDirection } from '../../utilities/useScrollDirection';
+import { Heading } from '../typography';
+import { CSSProperties } from 'react';
+
+export type HeaderProps = HTMLAttributes<HTMLElement> & {
+  /**
+   * The name of the application, displayed in the header.
+   */
+  applicationName: 'Utdanningsdirektoratet' | (string & {});
+  /**
+   * The URL the header logo links to. Set to `null` to disable the link.
+   * @default '/' (root of the site)
+   */
+  href?: string | null;
+  /**
+   * The maximum width of the header content.
+   * Can be any valid CSS width value, e.g. `1280px`, `100%`, etc.
+   * @default '1280px'
+   */
+  maxWidth?: string;
+  /**
+   * Whether the header should stick to the top of the screen. It will auto-hide on scroll down, and appear on scroll up.
+   * @default true
+   */
+  sticky?: boolean;
+};
+
+export const Header = forwardRef<HTMLElement, HeaderProps>(function Header(
+  {
+    applicationName,
+    children,
+    className,
+    href = '/',
+    maxWidth = '1280px',
+    sticky = true,
+    ...rest
+  },
+  ref,
+) {
+  const scrollDirection = useScrollDirection();
+  const dataScrollDirection = sticky ? scrollDirection : undefined;
+  const isMain = applicationName === 'Utdanningsdirektoratet';
+  const logo = isMain ? mainLogo : circleLogo;
+  const logoAlt = isMain ? 'Utdanningsdirektoratet' : '';
+  const LogoContainer = href !== null ? 'a' : 'div';
+
+  return (
+    <header
+      className={cl('uds-header', className)}
+      ref={ref}
+      data-scroll-direction={dataScrollDirection}
+      style={{ '--udsc-header-max-width': maxWidth } as CSSProperties}
+      {...rest}
+    >
+      <div>
+        <LogoContainer href={href as string} className="uds-header__logo">
+          <img src={logo} alt={logoAlt} />
+          {!isMain && (
+            <Heading data-size="xs" asChild>
+              <span>{applicationName}</span>
+            </Heading>
+          )}
+        </LogoContainer>
+        {children && <div className="uds-header__content">{children}</div>}
+      </div>
+    </header>
+  );
+});

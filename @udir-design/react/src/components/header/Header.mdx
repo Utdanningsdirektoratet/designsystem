@@ -1,0 +1,141 @@
+import { Meta, Controls, Primary, Canvas } from '@storybook/addon-docs/blocks';
+
+import * as HeaderStories from './Header.stories';
+
+<Meta of={HeaderStories} />
+
+# Header
+
+`Header` er toppfelt til alle Udirs tjenester. Den består av logo og tjenestenavn, med mulighet for å legge det du trenger å ha lett tilgjengelig for brukeren.
+Det er mulig å legge til alle typer komponenter som er i designsystemet. I tillegg har komponenten flere subkomponenter som kun brukes i `Header`. Se eksempler og retningslinjer for føringer og inspirasjon.
+
+**Passer til å**
+
+- brukes som toppfelt i alle Udirs tjenester
+- samle ofte brukte handlinger (søk, navigasjon, innlogging/utlogging, profil, varsler)
+
+**Passer ikke til å**
+
+- samle mye innhold/handlinger
+
+## Slik bruker du Header
+
+<Primary />
+<Controls />
+
+```tsx
+import { Header } from '@udir-design/react';
+
+<Header applicationName="Tjenestenavn" />;
+```
+
+## Eksempler
+
+`Header` kommer med Udirs logo. Navnet på tjenesten din legges inn som prop i `applicationName`. `Header` kan brukes med flere forskjellige kombinasjoner av subkomponenter. Noen av eksemplene under inneholder andre komponenter fra designsystemet, mens andre har subkomponenter som er spesifikke for `Header`.
+Komponentene legges inn som `children`. Innholdet er automatisk plassert mot høyre.
+
+Subkomponenter:
+
+- `Header.UserButton`
+- `Header.MenuButton`
+- `Header.Menu`
+- `Header.Search`
+
+### Lenker
+
+Ønsker du å legge til lenker i headeren, bruker du [`Link`](/docs/components-link--docs) som `children`. På samme måte kan du bruke alle andre komponenter fra designsystemet.
+
+<Canvas of={HeaderStories.WithLinks} />
+
+### Brukerprofil
+
+Subkomponenten `Header.UserButton` viser brukerinformasjon og kan knyttes til en meny med brukerrelaterte handlinger. Den har props for brukernavn, rolle og avatar og finnes i fargene `neutral` og `accent`. I eksempelet brukes [`Dropdown`](/docs/components-dropdown--docs) som brukermeny.
+
+<Canvas of={HeaderStories.WithUserButton} />
+
+### Megameny
+
+`Header.MenuButton` og `Header.Menu` brukes sammen for å lage en megameny. Megamenyen er en stor meny som kan inneholde mye innhold, typisk navigasjon.
+
+`Header.MenuButton` er en [`Button`](/docs/components-button--docs) med åpne/lukke-ikon. Teksten kan tilpasses ved bruk av `children`. `Header.Menu` er en [`Popover`](/docs/components-popover--docs) som inneholder menyinnholdet. Det vil si at du kan bruke egen knapp som `anchor` til menyen dersom du ønsker det. Det gjør du ved å gi menyen samme `id` som knappens `popovertarget`.
+
+<Canvas
+  story={{ inline: false, height: '400px' }}
+  of={HeaderStories.WithMegaMenu}
+/>
+
+### Enkel meny
+
+Ønsker du en enklere meny, kan du bruke `Header.MenuButton` sammen med en [`Dropdown`](/docs/components-dropdown--docs).
+
+<Canvas of={HeaderStories.WithSimpleMenu} />
+
+### Søk
+
+Dersom søke-funksjonalitet er viktig i tjenesten din kan det være hensiktsmessig å inkludere et søkefelt i `Header`. Du kan bruke [`Search`](/docs/components-search--docs) direkte, eller subkomponenten `Header.Search` som fremstår som en knapp som åpner søkefeltet.
+
+<Canvas of={HeaderStories.WithSearch} />
+
+### Responsivt innhold
+
+For å håndtere ulike skjermstørrelser og enheter er det satt opp noen predefinerte breakpoints for når innhold skal vises eller skjules. Dette brukes ved å sette `data-hide=[size]` eller `data-show=[size]` på komponentene du legger inn i `Header`. De tilgjengelige verdiene for `size` er:
+
+- `xs`: 480px
+- `sm`: 640px
+- `md`: 768px
+- `lg`: 1024px
+- `xl`: 1280px
+
+`data-hide` skjuler elementet på den angitte skjermstørrelsen og mindre (`<=`), mens `data-show` viser elementet fra den angitte skjermstørrelsen (`>`).
+
+I eksempelet under ønsker vi å flytte `Header.UserButton` fra `Header` til menyen på mindre skjermer. Da bruker vi `data-hide="md"` på `Header.UserButton` i `Header` for å skjule den fra og med `md` skjermstørrelse, og `data-show="md"` på `Header.UserButton` i `Header.Menu` for å vise den fra `md` skjermstørrelse.
+
+Åpne menyen og endre størrelsen på nettleservinduet for å se hvordan det fungerer.
+
+<Canvas
+  story={{ inline: false, height: '500px' }}
+  of={HeaderStories.Responsive}
+/>
+
+### Sammensatte eksempler
+
+#### Flere megamenyer
+
+Det er mulig å ha flere megamenyer i `Header`. Hensikten med flere menyer er å dele opp innholdet i mindre, mer håndterbare navigasjonslister/handlinger. Gi hver meny en unik `id` og knytt den til en knapp med samme `popovertarget`.
+
+<Canvas
+  story={{ inline: false, height: '400px' }}
+  of={HeaderStories.WithMegaMenus}
+/>
+
+#### Meny og lenker
+
+<Canvas
+  story={{ inline: false, height: '400px' }}
+  of={HeaderStories.WithLinksAndMenu}
+/>
+
+#### Udir.no
+
+<Canvas story={{ inline: false, height: '700px' }} of={HeaderStories.UdirNo} />
+
+## Retningslinjer
+
+### Innhold
+
+Unngå å samle for mye innhold i `Header`. Vurder hva du trenger å ha lett tilgjengelig for brukeren, og hva som kan plasseres andre steder i tjenesten.
+
+### Knappevarianter
+
+`Header` har ofte én eller flere knapper. Det er mulig å bruke alle varianter av [`Button`](/docs/components-button--docs). Vurderingen av hvilken variant som skal brukes skal baseres på hvor viktig handlingen er.
+`variant='primary'` brukes for eksempel på menyknappen til udir.no, fordi navigasjon anses som den viktigste handlingen. I andre systemer er det ofte handlinger på selve siden som er primæroppgaver. Da kan det være mer hensiktsmessig å bruke `variant='secondary'` eller `variant='tertiary'` på menyknappen.
+
+### Megameny
+
+### Responsivitet
+
+Sørg for at `Header` er responsiv og tilpasser seg ulike skjermstørrelser. Bruk `data-hide` og `data-show` for å kontrollere synligheten av elementer på forskjellige skjermstørrelser. Test `Header` på ulike enheter og skjermstørrelser for å sikre at det fungerer som forventet.
+
+## Kompatibilitet
+
+`Header.Menu` bruker [`Popover`](/docs/components-popover--docs) under panseret, se [dokumentasjon om kompatibilitet med Popover](/docs/components-popover--docs#kompatibilitet) for å sørge for at det fungerer som forventet i din applikasjon. Det gjelder også ved bruk av [`Dropdown`](/docs/components-dropdown--docs).
