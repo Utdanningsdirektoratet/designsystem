@@ -1,0 +1,39 @@
+import { Meta, Controls, Primary, Canvas } from '@storybook/addon-docs/blocks';
+
+import * as HeaderStories from './Header.stories';
+
+<Meta of={HeaderStories} />
+
+# Header
+
+## Slik bruker du Header
+
+<Primary />
+<Controls />
+
+<Canvas of={HeaderStories.Application} />
+
+<Canvas of={HeaderStories.WithLinks} />
+
+<Canvas of={HeaderStories.WithUserButton} />
+
+<Canvas
+  story={{ inline: false, height: '400px' }}
+  of={HeaderStories.WithMenuButton}
+/>
+
+<Canvas of={HeaderStories.WithSimpleMenu} />
+
+<Canvas
+  story={{ inline: false, height: '400px' }}
+  of={HeaderStories.WithLinksAndMenu}
+/>
+
+<Canvas
+  story={{ inline: false, height: '400px' }}
+  of={HeaderStories.FullHeader}
+/>
+
+<Canvas of={HeaderStories.WithSearch} />
+
+<Canvas story={{ inline: false, height: '400px' }} of={HeaderStories.UdirNo} />
