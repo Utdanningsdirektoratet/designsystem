@@ -230,10 +230,21 @@ exports[`Table Story 1`] = `
               <td>
                 <div>
                   <span
-                    data-variant="circle"
-                    role="img"
-                    aria-label="Lise Nordmann"
+                    data-overlap="circle"
+                    data-placement="top-right"
                   >
+                    <span
+                      data-variant="base"
+                      data-color="accent"
+                      data-size="md"
+                    >
+                    </span>
+                    <span
+                      data-variant="circle"
+                      role="img"
+                      aria-label="Ny elev Lise Nordmann"
+                    >
+                    </span>
                   </span>
                   Lise Nordmann
                 </div>
@@ -248,8 +259,8 @@ exports[`Table Story 1`] = `
                 22345678
               </td>
               <td>
-                <span data-color="info">
-                  Ny
+                <span data-color="warning">
+                  Ikke eksportert
                 </span>
               </td>
               <td>
@@ -338,10 +349,15 @@ exports[`Table Story 1`] = `
               <td>
                 <div>
                   <span
-                    data-variant="circle"
-                    role="img"
-                    aria-label="Ola Nordmann"
+                    data-overlap="circle"
+                    data-placement="top-right"
                   >
+                    <span
+                      data-variant="circle"
+                      role="img"
+                      aria-label="Ola Nordmann"
+                    >
+                    </span>
                   </span>
                   Ola Nordmann
                 </div>
@@ -446,10 +462,21 @@ exports[`Table Story 1`] = `
               <td>
                 <div>
                   <span
-                    data-variant="circle"
-                    role="img"
-                    aria-label="Kari Nordmann"
+                    data-overlap="circle"
+                    data-placement="top-right"
                   >
+                    <span
+                      data-variant="base"
+                      data-color="accent"
+                      data-size="md"
+                    >
+                    </span>
+                    <span
+                      data-variant="circle"
+                      role="img"
+                      aria-label="Ny elev Kari Nordmann"
+                    >
+                    </span>
                   </span>
                   Kari Nordmann
                 </div>
@@ -554,10 +581,15 @@ exports[`Table Story 1`] = `
               <td>
                 <div>
                   <span
-                    data-variant="circle"
-                    role="img"
-                    aria-label="Per Nordmann"
+                    data-overlap="circle"
+                    data-placement="top-right"
                   >
+                    <span
+                      data-variant="circle"
+                      role="img"
+                      aria-label="Per Nordmann"
+                    >
+                    </span>
                   </span>
                   Per Nordmann
                 </div>
@@ -572,8 +604,8 @@ exports[`Table Story 1`] = `
                 44332211
               </td>
               <td>
-                <span data-color="info">
-                  Ny
+                <span data-color="warning">
+                  Ikke eksportert
                 </span>
               </td>
               <td>
@@ -662,10 +694,15 @@ exports[`Table Story 1`] = `
               <td>
                 <div>
                   <span
-                    data-variant="circle"
-                    role="img"
-                    aria-label="Anne Nordmann"
+                    data-overlap="circle"
+                    data-placement="top-right"
                   >
+                    <span
+                      data-variant="circle"
+                      role="img"
+                      aria-label="Anne Nordmann"
+                    >
+                    </span>
                   </span>
                   Anne Nordmann
                 </div>

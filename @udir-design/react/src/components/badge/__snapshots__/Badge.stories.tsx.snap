@@ -384,8 +384,9 @@ exports[`In Tabs 1`] = `
     tabindex="0"
   >
     <button
-      aria-selected="true"
       id="tab-«r6»"
+      aria-selected="true"
+      data-value="value1"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
@@ -418,8 +419,9 @@ exports[`In Tabs 1`] = `
       </span>
     </button>
     <button
-      aria-selected="false"
       id="tab-«r8»"
+      aria-selected="false"
+      data-value="value2"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
@@ -452,8 +454,9 @@ exports[`In Tabs 1`] = `
       </span>
     </button>
     <button
-      aria-selected="false"
       id="tab-«ra»"
+      aria-selected="false"
+      data-value="value3"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"

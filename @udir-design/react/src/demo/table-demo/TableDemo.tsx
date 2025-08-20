@@ -2,6 +2,7 @@ import { HTMLAttributes, useMemo, useState } from 'react';
 import {
   Alert,
   Avatar,
+  Badge,
   Checkbox,
   Chip,
   Divider,
@@ -206,7 +207,18 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
                   </Table.Cell>
                   <Table.Cell>
                     <div className={classes.student}>
-                      <Avatar aria-label={student.name} />
+                      <Badge.Position placement="top-right" overlap="circle">
+                        {student.new && (
+                          <Badge data-color="accent" data-size="md" />
+                        )}
+                        <Avatar
+                          aria-label={
+                            student.new
+                              ? `Ny elev ${student.name}`
+                              : student.name
+                          }
+                        />
+                      </Badge.Position>
                       {student.name}
                     </div>
                   </Table.Cell>
