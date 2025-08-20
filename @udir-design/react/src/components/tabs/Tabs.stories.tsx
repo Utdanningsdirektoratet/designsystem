@@ -63,9 +63,9 @@ export const Preview: Story = {
         const panel1 = canvas.getByText(/innhold for tab 1/i);
         expect(panel1).toBeVisible();
         const panel2 = canvas.queryByText(/innhold for tab 2/i);
-        expect(panel2).not.toBeInTheDocument();
+        expect(panel2).not.toBeVisible();
         const panel3 = canvas.queryByText(/innhold for tab 3/i);
-        expect(panel3).not.toBeInTheDocument();
+        expect(panel3).not.toBeVisible();
       },
     );
 
@@ -231,11 +231,7 @@ export const Controlled: StoryFn<TabsProps> = (args) => {
                 gap: 'var(--ds-size-2)',
               }}
             >
-              <Avatar
-                aria-label="Bruker 2"
-                initials="SS"
-                data-color="support1"
-              />
+              <Avatar aria-label="Bruker 2" data-color="support1" />
               Stian Stølan
             </Link>
           </List.Item>
@@ -252,11 +248,7 @@ export const Controlled: StoryFn<TabsProps> = (args) => {
                 gap: 'var(--ds-size-2)',
               }}
             >
-              <Avatar
-                aria-label="Bruker 3"
-                initials="LL"
-                data-color="support2"
-              />
+              <Avatar aria-label="Bruker 3" data-color="support2" />
               Lina Larsen
             </Link>
           </List.Item>

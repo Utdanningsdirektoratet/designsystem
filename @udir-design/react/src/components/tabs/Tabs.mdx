@@ -13,6 +13,7 @@ import * as TabsStories from './Tabs.stories';
 # Tabs
 
 `Tabs` lar brukerne navigere mellom relaterte deler av innholdet, der én del vises om gangen. Dette er en effektiv måte å organisere og presentere relatert innhold på samme side.
+Vær oppmerksom på at alle `Tabs.Panel` lastes inn når komponenten vises. Du kan selv implementere lasting av hver `Tabs.Panel` ved behov.
 
 **Passer til å**
 
@@ -25,7 +26,6 @@ import * as TabsStories from './Tabs.stories';
 - gi en umiddelbar oversikt over innhold, da `Tabs` skjuler informasjon
 - presentere innhold som må sammenlignes på tvers av seksjoner
 - veilede brukeren gjennom en steg-for-steg-prosess der rekkefølgen er viktig
-- håndtere store mengder innhold som kan gjøre siden treg å laste
 - erstatte hovednavigasjon eller brukes til filtrering og sortering
 - være en løsning når innholdet like gjerne kan vises på én side eller fordeles på flere sider
 
@@ -53,9 +53,9 @@ import { Tabs } from '@udir-design/react';
 
 Tabbene i `Tabs` kan ha tre typer innhold:
 
-- Bare tekst.
-- Tekst med ikon til venstre for teksten.
-- Bare ikon med `Tooltip`.
+- bare tekst
+- tekst med ikon til venstre for teksten
+- bare ikon med `Tooltip`
 
 ### Bare tekst
 
@@ -94,8 +94,8 @@ Før du velger `Tabs`, vurder om det er bedre å:
 
 ### Endre URL
 
-Tabs bør ikke brukes til sidenavigasjon, da det vil være en uventet oppførsel som kan forvirre brukeren.
-Noen ganger kan det være nyttig å knytte valgt tab til URLen, uten at det teller som navigasjon. Det kan løses ved bruk av shallow-routing, noe de fleste routing-rammeverk støtter. Under er et eksempel med bruk av Nextjs.
+Tabs bør ikke ta brukeren til en ny side, da det vil være en uventet oppførsel som kan forvirre brukeren. En skjermleser vil også miste kontekst ved at den havner på toppen av siden etter ny innlasting.
+Noen ganger kan det likevel være nyttig å knytte valgt tab til en URL, uten at det teller som navigasjon. Det kan løses ved bruk av shallow-routing, noe de fleste routing-rammeverk støtter. Under er et eksempel med bruk av Nextjs.
 
 ```tsx
 <Tabs
@@ -113,11 +113,11 @@ Noen ganger kan det være nyttig å knytte valgt tab til URLen, uten at det tell
 
 ### Beste praksis
 
-- **Begrens antall `Tabs`** – for mange skaper dårlig oversikt, særlig på små skjermer.
-- **Bruk tydelig navn på en tab** – `Tabs` skjuler innhold, så taben må klart indikere hva brukeren får se.
-- **Plasser viktigst innhold først** – organiser `Tabs` etter brukerens behov.
-- **Hold `Tabs` på én linje** – lange `Tabs` eller for mange `Tabs` kan gjøre navigasjonen vanskelig.
-- **Unngå deaktiverte `Tabs`** – fjern deaktiverte `Tabs` eller forklar hvorfor de er tomme.
+- Begrens antall `Tabs` – for mange skaper dårlig oversikt, særlig på små skjermer.
+- Bruk tydelig navn på en tab – `Tabs` skjuler innhold, så taben må klart indikere hva brukeren får se.
+- Plasser viktigst innhold først – organiser `Tabs` etter brukerens behov.
+- Hold `Tabs` på én linje – lange `Tabs` eller for mange `Tabs` kan gjøre navigasjonen vanskelig.
+- Unngå deaktiverte `Tabs` – fjern deaktiverte `Tabs` eller forklar hvorfor de er tomme.
 
 ## Tekst i Tabs
 
@@ -130,7 +130,7 @@ Hvis det er behov for å gi en overordnet kontekst, kan en felles tittel plasser
 ## Tilgjengelighet
 
 - Hver tab må ha en unik tittel.
-- Ved bruk av ikoner, sørg for at de er dekorative (`aria-hidden`) eller har beskrivende titler.
+- Ved bruk av ikoner, sørg for at de har `aria-hidden`.
 - Dersom et `Tabs.Panel` ikke har fokuserbare elementer, får selve panelet fokus.
 
 ### Tastaturnavigasjon
