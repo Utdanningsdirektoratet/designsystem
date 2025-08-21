@@ -1063,6 +1063,12 @@ exports[`Form Story 1`] = `
               </div>
             </u-option>
           </u-datalist>
+          <select
+            name="county"
+            hidden
+            id="«re»"
+          >
+          </select>
         </u-combobox>
       </div>
       <fieldset
