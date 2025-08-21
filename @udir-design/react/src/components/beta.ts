@@ -16,6 +16,7 @@ export * from './divider/Divider';
 export * from './errorSummary/ErrorSummary';
 export * from './field/Field';
 export * from './fieldset/Fieldset';
+export * from './footer';
 export * from './input/Input';
 export * from './link/Link';
 export * from './list/List';
