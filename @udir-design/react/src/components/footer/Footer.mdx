@@ -1,0 +1,105 @@
+import { INITIAL_VIEWPORTS } from 'storybook/viewport';
+import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import * as FooterStories from './Footer.stories';
+
+<Meta of={FooterStories} />
+
+# Footer
+
+`Footer` markerer bunnen av siden og inneholder typisk lenker til essensiell informasjon. Den henger tett sammen med [`Header`](/docs/components-radio--docs) som tilsammen tydeliggjør Udir som avsender for tjenesten. `Footer` skal inkluderes i alle Udir sine tjenester.
+
+**Passer til å**
+
+- lenke til essensiell informasjon slik som tilgjengelighetserklæring og kontaktinfo
+
+## Slik bruker du Footer
+
+<Primary />
+<Controls />
+
+```tsx
+import { Footer } from '@udir-design/react';
+
+<Footer>
+  <Footer.List>
+    <Footer.Item href="https://www.udir.no/om-udir/personvernerklaring-udir/">
+      Om Udir
+    </Footer.Item>
+    <Footer.Item href="https://www.udir.no/">Kontakt oss</Footer.Item>
+  </Footer.List>
+  <Footer.List>
+    <Footer.Item href="https://www.udir.no/om-udir/personvernerklaring-udir/">
+      Personvern
+    </Footer.Item>
+    <Footer.Item href="https://www.udir.no/">Informasjonskapsler</Footer.Item>
+    <Footer.Item href="https://uustatus.no/nb/erklaringer/publisert/ce43e104-3893-45ac-90c8-45deb6f17624">
+      Tilgjengelighetserklæring
+    </Footer.Item>
+  </Footer.List>
+</Footer>;
+```
+
+## Eksempler
+
+Man kan i stor grad tilpasse footer til egen tjenestes behov. `Footer.List` oppretter en kolonne med lenker `Footer.Item`
+
+<Canvas of={FooterStories.Simple} />
+
+### Kun logo
+
+Dersom dere ikke har behov for informasjon i `Footer` kan den brukes uten innhold og fungere kun som en avslutning på siden.
+
+<Canvas of={FooterStories.Empty} />
+
+### Sosiale medier
+
+Ved å brukte `variant=socials` i en `Footer.Item` kan man liste ut lenker til sosiale medier inkludert ikoner. Disse vises horisontalt nederst til høyre i footer og er forbeholdt bruk på Udir.no.
+
+<Canvas story={{ inline: false, height: 600 }} of={FooterStories.Rich} />
+
+### Mobil
+
+I mobilvisning legges kolonnene under hverandre, med logo til slutt.
+
+<div
+  style={{
+    width: INITIAL_VIEWPORTS['iphone6'].styles.width,
+    justifySelf: 'center',
+  }}
+>
+  <Canvas
+    of={FooterStories.Rich}
+    story={{
+      inline: false,
+      height: INITIAL_VIEWPORTS['iphone6'].styles.height,
+    }}
+  />
+</div>
+
+## Retningslinjer
+
+Sosiale medier-lenker er kun tiltenkt bruk på Udir.no.
+
+Footer er i utgangspunktet ikke tenkt brukt til navigering slik som i en meny. Likevel, på lange sider med mye innhold kan det være aktuelt å inkludere noe global navigasjon siden det lar brukeren raskt hoppe til en annen side uten å måtte scrolle tilbake til toppen.
+
+Ut ifra løsningen eller tjenesten footeren opptrer i er det fritt å velge hvilke lenker/innhold som skal vises. Husk at footer alltid må inneholde lenke til personvern og tilgjengelighet.
+
+Footeren skal aldri inneholde lenker som ikke kan nås fra andre steder på nettsiden, med unntak av personvern og tilgjengelighet.
+
+Ikke bruk bilder eller andre ikoner i footeren
+Ikke skriv altfor lange lenker i footeren
+Ikke lenk til alt innholdet på nettsiden fra footeren
+
+### Kolonner
+
+Kolonnene er grupperinger av tema. Det vil si at du helst ikke skal bruke de for estetiske layouts.
+
+## Tilgjengelighet
+
+Alle tjenester må oppi tilgjengelighetserklæring blabla.
+
+## Mønstre
+
+Si noe om tjenester som er lenket til fra Udir.no? For å skape helhetlig opplevelse?
+
+Felles footere er et viktig steg på veien til helhetlig design i Udir sine tjenester. Derfor har vi definert typiske mønstre for å sørge for konsekvent bruk på tvers av løsninger.
