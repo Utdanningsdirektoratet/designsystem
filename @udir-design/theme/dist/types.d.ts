@@ -1,4 +1,4 @@
-/* build: v1.2.0 */
+/* build: v0.0.0-suggestion-multiple-intersection-props-20250821122524 */
 import type {} from '@digdir/designsystemet/types';
 
 // Augment types based on theme

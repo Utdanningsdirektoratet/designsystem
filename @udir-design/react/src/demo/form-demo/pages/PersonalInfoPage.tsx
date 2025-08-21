@@ -73,8 +73,8 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
             <Suggestion
               {...field}
               selected={value}
-              onSelectedChange={(v) => {
-                onChange(v.at(0)?.value);
+              onSelectedChange={(item) => {
+                onChange(item?.value);
               }}
             >
               <Suggestion.Input aria-invalid={!!errors.county} id="county" />
