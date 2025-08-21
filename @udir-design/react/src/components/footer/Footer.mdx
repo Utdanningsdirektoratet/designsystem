@@ -1,0 +1,73 @@
+import { INITIAL_VIEWPORTS } from 'storybook/viewport';
+import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import * as FooterStories from './Footer.stories';
+
+<Meta of={FooterStories} />
+
+# Footer
+
+`Footer` markerer bunnen av siden og inneholder lenker til essensiell informasjon. Den henger tett sammen med [`Header`](/docs/components-header--docs) som tilsammen tydeliggjør Udir som avsender for tjenesten. Innholdet skal være likt på alle tjenesten sine sider.
+
+`Footer` skal inkluderes i alle Udir sine tjenester.
+
+## Slik bruker du Footer
+
+<Primary />
+<Controls />
+
+```tsx
+import { Footer } from '@udir-design/react';
+
+<Footer>
+  <Footer.List>
+    <Footer.Item href="https://www.udir.no/om-udir/">Om tjenesten</Footer.Item>
+    <Footer.Item href="https://www.udir.no/om-udir/kontakt-oss/">
+      Kontakt oss
+    </Footer.Item>
+  </Footer.List>
+  <Footer.List>
+    <Footer.Item href="https://www.udir.no/om-udir/personvernerklaring-udir/">
+      Personvernerklæring
+    </Footer.Item>
+    <Footer.Item href="https://www.udir.no/">Informasjonskapsler</Footer.Item>
+    <Footer.Item href="https://uustatus.no/nb/erklaringer/publisert/ce43e104-3893-45ac-90c8-45deb6f17624">
+      Tilgjengelighetserklæring
+    </Footer.Item>
+  </Footer.List>
+</Footer>;
+```
+
+## Eksempler
+
+Sub-komponenten `Footer.List` oppretter en kolonne som kan fylles med med lenker: `Footer.Item`.
+
+### Kolonner
+
+En footer vil typisk bestå av 2 til 3 kolonner med lenker. Rekkefølgen man sender inn listene i bestemmer rekkefølgen de vises i Footeren.
+
+Informasjon om tjenesten og kontaktinformasjon skal alltid, der det er tilgjengelig, listes ut i kolonnen helt til venstre. For tjenester som er pålagt dette skal lenker til informasjonskapsler, personvern- og tilgjengelighetserklæring alltid ligge i kolonnen helt til høyre.
+
+Kolonnen i midten er ment for tjenestespesifikke lenker. Den skal kun inneholde lenker som også finnes andre steder på siden. Dette er fordi det vil være tungvindt for en bruker å måtte scrolle helt ned for å finne innholdet de leter etter.
+
+### Sosiale medier
+
+Om du skal inkludere lenker til sosiale medier i `Footer` bruker du `variant=socials` i en `Footer.List`. Inkluder et ikon i fargen neutral til venstre for lenken. Se [`Link`](/docs/components-link--docs#med-ikon) for korrekt bruk av lenke sammen med ikon. Disse lenkene vises horisontalt nederst til høyre i footer og er forbeholdt bruk på Udir.no.
+
+### Mobil
+
+I mobilvisning legges kolonnene under hverandre, med logo til slutt.
+
+<div
+  style={{
+    width: INITIAL_VIEWPORTS['iphone6'].styles.width,
+    justifySelf: 'center',
+  }}
+>
+  <Canvas
+    of={FooterStories.Preview}
+    story={{
+      inline: false,
+      height: INITIAL_VIEWPORTS['iphone6'].styles.height,
+    }}
+  />
+</div>
