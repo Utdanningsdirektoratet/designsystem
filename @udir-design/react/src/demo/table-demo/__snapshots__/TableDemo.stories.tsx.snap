@@ -128,30 +128,34 @@ exports[`Table Story 1`] = `
       <hr aria-hidden="true">
       <div>
         <div>
-          <div>
-            <label
-              data-weight="medium"
-              for="select-education-level"
-            >
-              Velg utdanningsnivå
+          <label data-weight="medium">
+            Filtrer på utdanningsnivå
+          </label>
+          <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
+            <label>
+              <input
+                type="checkbox"
+                value="Barnehage"
+                checked
+              >
+              Barnehage
             </label>
-            <select
-              aria-label="Velg utdanningsnivå"
-              id="select-education-level"
-            >
-              <option value="blank">
-                Alle nivåer
-              </option>
-              <option value="Barnehage">
-                Barnehage
-              </option>
-              <option value="Grunnskole">
-                Grunnskole
-              </option>
-              <option value="Videregående">
-                Videregående
-              </option>
-            </select>
+            <label>
+              <input
+                type="checkbox"
+                value="Grunnskole"
+                checked
+              >
+              Grunnskole
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                value="Videregående"
+                checked
+              >
+              Videregående
+            </label>
           </div>
         </div>
         <div>
