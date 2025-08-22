@@ -471,16 +471,14 @@ pnpm update -r --latest storybook "@storybook/*"
 ### Oppgradere Node.js
 
 > [!IMPORTANT]
-> Vi oppgradere kun til partallsversjoner av Node, siden dette er LTS-versjonene.
+> Vi oppgraderer kun til partallsversjoner av Node, siden dette er LTS-versjonene.
 
-For å endre hvilken versjon av Node som faktisk blir brukt, er det to steder som må oppdateres:
+For å endre hvilken versjon av Node som faktisk blir brukt setter vi `useNodeVersion` i `pnpm-workspace.yaml`.
+Dette leses av `pnpm`, som automatisk laster ned riktig versjon.
 
-- Feltet `use-node-version` i `.npmrc`, som leses av `pnpm`
-- Feltet `engines.node` i `package.json`, som leses av GitHub Actions
+Vi må også sørge for at versjonen av avhengigheten `@types/node` samsvarer med versjonen av Node som vi har spesifisert over.
 
-Vi krysser fingrene for at [denne PRen](https://github.com/actions/setup-node/pull/1149) i `actions/setup-node` blir merget, så kan vi fjerne `engines.node` og kun oppdatere `.npmrc`.
-
-I tillegg bør vi sørge for at versjonen av avhengigheten `@types/node` samsvarer med versjonen av Node som vi har spesifisert over.
+I tillegg finnes feltet `engines.node` i `package.json`, som leses av GitHub Actions. Denne trenger kun å være en versjon som inneholder `corepack`, for å installere `pnpm`, så vi trenger kun å oppdatere dette feltet når en node-versjon ikke lenger er støttet.
 
 ### Fikse sikkerhetsadvarsler
 
