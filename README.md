@@ -209,8 +209,8 @@ flowchart-elk BT
   %% nodes
   tokens(design-tokens)
   subgraph public [publiserte biblioteker]
-    theme(@udir-design/theme)
-    react(@udir-design/react)
+    theme("@udir-design/theme")
+    react("@udir-design/react")
   end
   subgraph apps [demo-applikasjoner]
     vite(test-apps/vite):::app
