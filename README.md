@@ -198,6 +198,7 @@ For å hjelpe oss med struktur og avhengigheter i monorepoet benytter vi verktø
 Monorepoet vårt består av
 
 - [`design-tokens`](./design-tokens/): Én kilde til sannhet for design-avgjørelser på tvers av design og kode. Figma-biblioteket vårt refererer også til disse.
+- [`@udir-design/css`](./@udir-design/css/): CSS-bibliotek som tigjengeliggjør styling for komponentene våre uten React. Selve CSS-koden ligger i `@udir-design/react/components/**/*.css`.
 - [`@udir-design/theme`](./@udir-design/theme/): CSS-bibliotek som definerer vårt tema — altså farger, størrelser, typografi osv.
 - [`@udir-design/react`](./@udir-design/react/): Komponentbibliotek for bruk med React, inkludert dokumentasjon.
 - [`test-apps/*`](./test-apps/): Ulike demo-applikasjoner for å teste at bibliotekene fungerer i forskjellige kontekster.
@@ -210,6 +211,7 @@ flowchart-elk BT
   tokens(design-tokens)
   subgraph public [publiserte biblioteker]
     theme("@udir-design/theme")
+    css("@udir-design/css")
     react("@udir-design/react")
   end
   subgraph apps [demo-applikasjoner]
@@ -219,7 +221,8 @@ flowchart-elk BT
 
   %% dependencies
   theme --> tokens
-  react --> theme
+  css --> theme
+  react --> css
   vite --> react
   nextjs --> react
 
@@ -235,6 +238,29 @@ flowchart-elk BT
 > [!CAUTION]
 > Denne dokumentasjonen inneholder foreløpig ingen informasjon om hvordan du går fram for å skrive tester.
 > Foreløpig kan du lese [Hva tester vi](#hva-tester-vi)-seksjonen, og be en kollega om hjelp om du står fast.
+
+### Mappestruktur
+
+Hver komponent skal ha en undermappe i `@udir-design/react/src/components`. F.eks:
+
+```
+@udir-design/react/src/components
+├── link
+│   ├── link.css          // Styling
+│   ├── Link.mdx          // Dokumentasjon
+│   ├── Link.stories.tsx  // Eksempler og tester, refereres til fra dokumentasjon
+│   └── Link.tsx          // Komponentkoden
+├── ...
+├── alpha.ts              // Eksporterer alle komponenter i alpha-fasen
+├── beta.ts               // Eksporterer alle komponenter i beta-fasen
+└── stable.ts             // Eksporterer alle stabile komponenter
+```
+
+En CSS-fil er kun nødvendig for våre egne komponenter, eller for å endre på styling fra Digdirs komponenter.
+CSS-filer skal **ikke** importeres eksplisitt. De blir automatisk plukket opp av byggesteget til `@udir-design/css` slik at stylingen er tilgjengelig også for bruk uten React.
+
+> [!IMPORTANT]
+> Komponenten må eksporteres fra riktig entry point – alpha, beta eller stable – basert på hvilken livsfase den er i.
 
 ### Git branching og commit-stil
 
