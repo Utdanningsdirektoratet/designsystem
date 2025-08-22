@@ -1,0 +1,86 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import * as BadgeStories from './Badge.stories';
+
+<Meta of={BadgeStories} />
+
+# Badge
+
+`Badge` er ein ikkje-interaktiv komponent som viser status med eller utan tal.
+
+**Passar til å**
+
+- vise antal nye meldingar, varsel eller oppgåver med tal
+- vise statusindikatorar i form av ein sirkel, som til dømes viser om ein person er opptatt, borte eller aktiv
+
+**Passar ikkje til å**
+
+- vise tekst – bruk [`Tag`](/docs/components-tag--docs) i staden
+- utføre interaktive handlingar – bruk [`Chip`](/docs/components-chip--docs) eller [`Button`](/docs/components-button--docs) i staden
+
+## Slik bruker du Badge
+
+<Primary />
+<Controls />
+
+```tsx
+import { Badge } from '@udir-design/react';
+
+/* Inline */
+<Badge />
+
+/* Flytende over element */
+<Badge.Position>
+  <Badge />
+  <Avatar />
+</Badge.Position>
+```
+
+## Variantar av Badge
+
+### Fargar
+
+`Badge` finst kun i neutral og accent, i tillegg til dei semantiske fargane. Du kan endre farga med `data-color`.
+Du kan òg setje `variant` direkte for å endre bakgrunnsfarga til `tinted` variant, som er noko lysare.
+
+<Canvas of={BadgeStories.ColorVariants} />
+
+<Canvas of={BadgeStories.SemanticColorVariants} />
+
+### Vise staus
+
+Dersom du ikkje sender inn `count`, blir berre ein sirkel vist. Dette kan brukast for å vise status.
+
+<Canvas of={BadgeStories.Status} />
+
+## Eksempel
+
+### Flytande over element
+
+Du kan setje plassering med `placement`. Dersom du plasserer `Badge` over eit sirkulært element kan du setje `overlap="circle"` for at badgen skal flyte over elementet.
+Det er vanleg å bruke raud farge på `Badge` som flyt over eit element.
+
+<Canvas of={BadgeStories.Floating} />
+
+Ikkje alle ikon har lik form, og då må du kanskje endre kor `Badge` skal plasserast. Dersom du ikkje får `Badge` til å liggje der du ynskjer, kan du bruke css-variablar for å overstyre plasseringa.
+Dette fungerer og når du bruker `overlap="circle"`.
+
+<Canvas of={BadgeStories.CustomPlacement} />
+
+### Inline
+
+Du kan òg bruke komponenten inline.
+
+<Canvas of={BadgeStories.InTabs} />
+
+## Retningslinjer
+
+Bruk `Badge` for å trekkje merksemd mot statusar, varslar eller tal.
+
+## Tekst i Badge
+
+Denne komponenten er ikkje meint for tekst. Om du treng å vise ord eller korte frasar, bør du heller bruke [`Tag`](/docs/components-tag--docs)-komponenten.
+
+## Tilgjengeligheit
+
+[Badge gir ingen informasjon til skjermlesarar](https://github.com/digdir/designsystemet/issues/3560).
+Sørg derfor for at elementet som `Badge` er plassert over, inneheld den same informasjonen ved å bruke `aria-label`.
