@@ -3,10 +3,12 @@ import { useState } from 'react';
 import { Divider, Size } from '@digdir/designsystemet-react';
 import { Controls } from '../controls/Controls';
 import { ArticleDemo } from './ArticleDemo';
+import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 
 const meta: Meta<typeof ArticleDemo> = {
   title: 'demo/Article Demo',
   component: ArticleDemo,
+  decorators: [withScrollHashBehavior],
 };
 
 export default meta;

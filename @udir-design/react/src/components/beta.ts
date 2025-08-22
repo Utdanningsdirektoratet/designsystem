@@ -24,6 +24,7 @@ export * from './radio/Radio';
 export * from './search/Search';
 export * from './select/Select';
 export * from './skeleton/Skeleton';
+export * from './skipLink/SkipLink';
 export * from './spinner/Spinner';
 export * from './tag/Tag';
 export * from './textarea/Textarea';
