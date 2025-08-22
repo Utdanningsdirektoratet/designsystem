@@ -135,11 +135,11 @@ importers:
   '@udir-design/react':
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.2.0
-        version: 1.2.0
+        specifier: 1.3.0
+        version: 1.3.0
       '@digdir/designsystemet-react':
-        specifier: 1.2.0
-        version: 1.2.0(@types/react@19.1.10)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: 1.3.0
+        version: 1.3.0(@types/react@19.1.10)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@navikt/aksel-icons':
         specifier: ^7.28.1
         version: 7.28.1(react@19.1.1)
@@ -298,8 +298,8 @@ importers:
   '@udir-design/theme':
     dependencies:
       '@digdir/designsystemet':
-        specifier: 1.2.0
-        version: 1.2.0
+        specifier: 1.3.0
+        version: 1.3.0
     devDependencies:
       '@internal/build-tools':
         specifier: workspace:*
@@ -314,8 +314,8 @@ importers:
   design-tokens:
     devDependencies:
       '@digdir/designsystemet':
-        specifier: 1.2.0
-        version: 1.2.0
+        specifier: 1.3.0
+        version: 1.3.0
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -1141,17 +1141,17 @@ packages:
     resolution: {integrity: sha512-Vd/9EVDiu6PPJt9yAh6roZP6El1xHrdvIVGjyBsHR0RYwNHgL7FJPyIIW4fANJNG6FtyZfvlRPpFI4ZM/lubvw==}
     engines: {node: '>=18'}
 
-  '@digdir/designsystemet-css@1.2.0':
-    resolution: {integrity: sha512-92Gh3GVucG7ticdD+fWmtzWlit3EdRu/ajXHdREaLF/6a2UX9ts5xHrN5GB/Jzmc3VfZS2LK6r+RCubQgC7C4g==}
+  '@digdir/designsystemet-css@1.3.0':
+    resolution: {integrity: sha512-jPEmibDKkXfGxdSU63fGH9vBrHdQl9colpsapRt08Sp+M8dLAKAeQSYf6ri9jiKc3fl/fBL5aUi/jNQIsRcCNg==}
 
-  '@digdir/designsystemet-react@1.2.0':
-    resolution: {integrity: sha512-SKs9aaGuocG/ge16cOtky1w62o5UpDxQ2hI+bo45T826KfnOs/cXzAgv9hc+BOA1HVeYdPWiPRhuMPk6/NTpwg==}
+  '@digdir/designsystemet-react@1.3.0':
+    resolution: {integrity: sha512-6LwhAkEsBuLyeaOdN6KS9FhUpWS8llNa1ml9pGI1DzwinaB00+HaL98MpMLYTmih7yz5GVh3flghLj4c8GChhg==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet@1.2.0':
-    resolution: {integrity: sha512-uxOeu6q6BGUbtQh+86tdCI+/PpmpBaMniStvdKSognDO0NARZGiGvfVjTnxMkEagNFlhfnQJ68RPRtm+a/iswg==}
+  '@digdir/designsystemet@1.3.0':
+    resolution: {integrity: sha512-P9rGv8dB3hVEHBkSfI8416x+3gk0owc0slZ7iuF/bw1evuldu4jdKAfnXNMRkIZ+x9VzRnQiWyqZM2JWdFvX7A==}
     engines: {node: '>=22.18.0'}
     hasBin: true
 
@@ -2581,14 +2581,14 @@ packages:
     resolution: {integrity: sha512-sOx1PKSuFwnIl7z4RN0Ls7N9AQawmR9r66eI5rFCzLDIs8HTIYrIpH9QjYWoX0lkgGrkLxXhi4QnK7MizPRrIg==}
     engines: {node: '>=20.0.0'}
 
-  '@u-elements/u-combobox@0.0.20':
-    resolution: {integrity: sha512-M3vVdXX8FKQssTwOyWNJtBwgG5JT4JgTckquFkoFjHUE5lcFsoBR3L+X48nCK+wv7UC2DOxuEL7OqMbmXtWh1Q==}
+  '@u-elements/u-combobox@1.0.1':
+    resolution: {integrity: sha512-mvRL+uI0m1XaESgNUdDK2zkC2K/6NQsHA9hHkLgXf7Rl2bs2LPm62WkUYRCsPhvzRTDcywMPjPvHYaj8zkkfAw==}
 
-  '@u-elements/u-datalist@1.0.13':
-    resolution: {integrity: sha512-dm3ljVfbfYe3Heos3acbtEOpWM6IQDT+wtB9ay0JLd4KVDIgBE0ZX4UX+lvu+GKP9ohL0h6yDXlKoo9ADw6eiA==}
+  '@u-elements/u-datalist@1.0.14':
+    resolution: {integrity: sha512-wgh7BMLySzPF3xcfxeNnZgy/JmFZOQVJVY+XwAiIBgDYkCWQqERJrHjxRHv8C6t4h2PWnO7mwDIqdLQHEq12XQ==}
 
-  '@u-elements/u-details@0.1.2':
-    resolution: {integrity: sha512-3IhSIvsSEPKIUDn5oR4pQ4cSoK4pnYTrtJcWLrNsXvT5G2+hW+6073A0hUraEPPTMENtJo6TRXZxNUj7rdwDuQ==}
+  '@u-elements/u-details@0.1.3':
+    resolution: {integrity: sha512-3DzAgUHvkbxY5NbRgQQ73qJOuXKACTZ16or1MFbD78rwbwqLUCBYqwW6XCEtHhVBLuVwlksIKXWh6Ln4EPPYJg==}
 
   '@udir-design/react@file:@udir-design/react':
     resolution: {directory: '@udir-design/react', type: directory}
@@ -7322,41 +7322,41 @@ snapshots:
 
   '@csstools/css-tokenizer@3.0.4': {}
 
-  '@digdir/designsystemet-css@1.2.0': {}
+  '@digdir/designsystemet-css@1.3.0': {}
 
-  '@digdir/designsystemet-react@1.2.0(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@digdir/designsystemet-react@1.3.0(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@floating-ui/dom': 1.7.3
       '@floating-ui/react': 0.26.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@navikt/aksel-icons': 7.28.1(react@18.3.1)
       '@radix-ui/react-slot': 1.2.3(@types/react@18.3.23)(react@18.3.1)
       '@tanstack/react-virtual': 3.13.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@u-elements/u-combobox': 0.0.20
-      '@u-elements/u-datalist': 1.0.13
-      '@u-elements/u-details': 0.1.2
+      '@u-elements/u-combobox': 1.0.1
+      '@u-elements/u-datalist': 1.0.14
+      '@u-elements/u-details': 0.1.3
       clsx: 2.1.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet-react@1.2.0(@types/react@19.1.10)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@digdir/designsystemet-react@1.3.0(@types/react@19.1.10)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@floating-ui/dom': 1.7.3
       '@floating-ui/react': 0.26.23(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@navikt/aksel-icons': 7.28.1(react@19.1.1)
       '@radix-ui/react-slot': 1.2.3(@types/react@19.1.10)(react@19.1.1)
       '@tanstack/react-virtual': 3.13.12(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      '@u-elements/u-combobox': 0.0.20
-      '@u-elements/u-datalist': 1.0.13
-      '@u-elements/u-details': 0.1.2
+      '@u-elements/u-combobox': 1.0.1
+      '@u-elements/u-datalist': 1.0.14
+      '@u-elements/u-details': 0.1.3
       clsx: 2.1.1
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet@1.2.0':
+  '@digdir/designsystemet@1.3.0':
     dependencies:
       '@commander-js/extra-typings': 14.0.0(commander@14.0.0)
       '@tokens-studio/sd-transforms': 1.3.0(style-dictionary@5.0.1)
@@ -8788,16 +8788,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@u-elements/u-combobox@0.0.20': {}
+  '@u-elements/u-combobox@1.0.1': {}
 
-  '@u-elements/u-datalist@1.0.13': {}
+  '@u-elements/u-datalist@1.0.14': {}
 
-  '@u-elements/u-details@0.1.2': {}
+  '@u-elements/u-details@0.1.3': {}
 
   '@udir-design/react@file:@udir-design/react(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@digdir/designsystemet-css': 1.2.0
-      '@digdir/designsystemet-react': 1.2.0(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@digdir/designsystemet-css': 1.3.0
+      '@digdir/designsystemet-react': 1.3.0(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@navikt/aksel-icons': 7.28.1(react@18.3.1)
       '@udir-design/theme': link:@udir-design/theme
       react: 18.3.1

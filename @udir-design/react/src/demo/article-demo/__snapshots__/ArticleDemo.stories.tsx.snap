@@ -260,8 +260,10 @@ exports[`Article Story 1`] = `
         <u-details
           data-variant="default"
           role="group"
+          aria-labelledby=":u-summary1"
         >
           <u-summary
+            id=":u-summary1"
             aria-expanded="false"
             role="button"
             slot="summary"
@@ -276,8 +278,10 @@ exports[`Article Story 1`] = `
         <u-details
           data-variant="default"
           role="group"
+          aria-labelledby=":u-summary2"
         >
           <u-summary
+            id=":u-summary2"
             aria-expanded="false"
             role="button"
             slot="summary"
@@ -292,8 +296,10 @@ exports[`Article Story 1`] = `
         <u-details
           data-variant="default"
           role="group"
+          aria-labelledby=":u-summary3"
         >
           <u-summary
+            id=":u-summary3"
             aria-expanded="false"
             role="button"
             slot="summary"
@@ -308,8 +314,10 @@ exports[`Article Story 1`] = `
         <u-details
           data-variant="default"
           role="group"
+          aria-labelledby=":u-summary4"
         >
           <u-summary
+            id=":u-summary4"
             aria-expanded="false"
             role="button"
             slot="summary"
@@ -324,8 +332,10 @@ exports[`Article Story 1`] = `
         <u-details
           data-variant="default"
           role="group"
+          aria-labelledby=":u-summary5"
         >
           <u-summary
+            id=":u-summary5"
             aria-expanded="false"
             role="button"
             slot="summary"

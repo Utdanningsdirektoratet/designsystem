@@ -264,8 +264,9 @@ exports[`Dialog With Suggestion 1`] = `
           placeholder
           id="undefined-input"
           type="text"
+          data-label="Velg en kommune"
           list=":u-datalist1"
-          aria-label="Velg en kommune"
+          aria-label="Velg en kommune​​​​​"
           popovertarget=":u-datalist1"
           aria-autocomplete="list"
           aria-controls=":u-datalist1"
