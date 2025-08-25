@@ -1,0 +1,17 @@
+{
+  "name": "@udir-design/css",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "@udir-design/css/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "cache": true,
+      "inputs": ["default", "^default"]
+    },
+    "watch": {
+      "continuous": true,
+      "inputs": ["default", "^default"]
+    }
+  }
+}

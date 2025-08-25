@@ -198,6 +198,7 @@ For å hjelpe oss med struktur og avhengigheter i monorepoet benytter vi verktø
 Monorepoet vårt består av
 
 - [`design-tokens`](./design-tokens/): Én kilde til sannhet for design-avgjørelser på tvers av design og kode. Figma-biblioteket vårt refererer også til disse.
+- [`@udir-design/css`](./@udir-design/css/): CSS-bibliotek som tigjengeliggjør styling for komponentene våre uten React. Selve CSS-koden ligger i `@udir-design/react/components/**/*.css`.
 - [`@udir-design/theme`](./@udir-design/theme/): CSS-bibliotek som definerer vårt tema — altså farger, størrelser, typografi osv.
 - [`@udir-design/react`](./@udir-design/react/): Komponentbibliotek for bruk med React, inkludert dokumentasjon.
 - [`test-apps/*`](./test-apps/): Ulike demo-applikasjoner for å teste at bibliotekene fungerer i forskjellige kontekster.
@@ -209,8 +210,9 @@ flowchart-elk BT
   %% nodes
   tokens(design-tokens)
   subgraph public [publiserte biblioteker]
-    theme(@udir-design/theme)
-    react(@udir-design/react)
+    theme("@udir-design/theme")
+    css("@udir-design/css")
+    react("@udir-design/react")
   end
   subgraph apps [demo-applikasjoner]
     vite(test-apps/vite):::app
@@ -219,7 +221,8 @@ flowchart-elk BT
 
   %% dependencies
   theme --> tokens
-  react --> theme
+  css --> theme
+  react --> css
   vite --> react
   nextjs --> react
 
@@ -235,6 +238,29 @@ flowchart-elk BT
 > [!CAUTION]
 > Denne dokumentasjonen inneholder foreløpig ingen informasjon om hvordan du går fram for å skrive tester.
 > Foreløpig kan du lese [Hva tester vi](#hva-tester-vi)-seksjonen, og be en kollega om hjelp om du står fast.
+
+### Mappestruktur
+
+Hver komponent skal ha en undermappe i `@udir-design/react/src/components`. F.eks:
+
+```
+@udir-design/react/src/components
+├── link
+│   ├── link.css          // Styling
+│   ├── Link.mdx          // Dokumentasjon
+│   ├── Link.stories.tsx  // Eksempler og tester, refereres til fra dokumentasjon
+│   └── Link.tsx          // Komponentkoden
+├── ...
+├── alpha.ts              // Eksporterer alle komponenter i alpha-fasen
+├── beta.ts               // Eksporterer alle komponenter i beta-fasen
+└── stable.ts             // Eksporterer alle stabile komponenter
+```
+
+En CSS-fil er kun nødvendig for våre egne komponenter, eller for å endre på styling fra Digdirs komponenter.
+CSS-filer skal **ikke** importeres eksplisitt. De blir automatisk plukket opp av byggesteget til `@udir-design/css` slik at stylingen er tilgjengelig også for bruk uten React.
+
+> [!IMPORTANT]
+> Komponenten må eksporteres fra riktig entry point – alpha, beta eller stable – basert på hvilken livsfase den er i.
 
 ### Git branching og commit-stil
 
@@ -445,16 +471,14 @@ pnpm update -r --latest storybook "@storybook/*"
 ### Oppgradere Node.js
 
 > [!IMPORTANT]
-> Vi oppgradere kun til partallsversjoner av Node, siden dette er LTS-versjonene.
+> Vi oppgraderer kun til partallsversjoner av Node, siden dette er LTS-versjonene.
 
-For å endre hvilken versjon av Node som faktisk blir brukt, er det to steder som må oppdateres:
+For å endre hvilken versjon av Node som faktisk blir brukt setter vi `useNodeVersion` i `pnpm-workspace.yaml`.
+Dette leses av `pnpm`, som automatisk laster ned riktig versjon.
 
-- Feltet `use-node-version` i `.npmrc`, som leses av `pnpm`
-- Feltet `engines.node` i `package.json`, som leses av GitHub Actions
+Vi må også sørge for at versjonen av avhengigheten `@types/node` samsvarer med versjonen av Node som vi har spesifisert over.
 
-Vi krysser fingrene for at [denne PRen](https://github.com/actions/setup-node/pull/1149) i `actions/setup-node` blir merget, så kan vi fjerne `engines.node` og kun oppdatere `.npmrc`.
-
-I tillegg bør vi sørge for at versjonen av avhengigheten `@types/node` samsvarer med versjonen av Node som vi har spesifisert over.
+I tillegg finnes feltet `engines.node` i `package.json`, som leses av GitHub Actions. Denne trenger kun å være en versjon som inneholder `corepack`, for å installere `pnpm`, så vi trenger kun å oppdatere dette feltet når en node-versjon ikke lenger er støttet.
 
 ### Fikse sikkerhetsadvarsler
 
