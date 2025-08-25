@@ -64,7 +64,8 @@ export const ArticleDemo = ({ ...props }: ArticleDemoProps) => {
               window.print();
             }}
           >
-            <PrinterSmallIcon aria-hidden /> Skriv ut denne siden
+            <PrinterSmallIcon aria-hidden />
+            <span>Skriv ut denne siden</span>
           </Link>
         </div>
         <Card data-color="support2" variant="tinted">
