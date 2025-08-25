@@ -4,14 +4,20 @@
   "sourceRoot": "@udir-design/css/src",
   "projectType": "library",
   "tags": [],
+  "namedInputs": {
+    "css": [
+      "{workspaceRoot}/@udir-design/react/src/components/**/*.css",
+      "!{workspaceRoot}/@udir-design/react/src/components/**/*.module.css"
+    ]
+  },
   "targets": {
     "build": {
       "cache": true,
-      "inputs": ["default", "^default"]
+      "inputs": ["css", "default", "^default"]
     },
     "watch": {
       "continuous": true,
-      "inputs": ["default", "^default"]
+      "inputs": ["css", "default", "^default"]
     }
   }
 }
