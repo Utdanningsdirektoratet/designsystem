@@ -29,5 +29,6 @@ export * from './skipLink/SkipLink';
 export * from './spinner/Spinner';
 export * from './tag/Tag';
 export * from './textarea/Textarea';
+export * from './table';
 export * from './textfield/Textfield';
 export * from './tooltip/Tooltip';

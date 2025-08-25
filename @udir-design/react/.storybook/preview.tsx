@@ -3,14 +3,8 @@ import './customTheme.scss';
 import { INITIAL_VIEWPORTS, type ViewportMap } from 'storybook/viewport';
 import { Preview } from '@storybook/react-vite';
 import customTheme from './customTheme';
-import {
-  Heading,
-  HeadingProps,
-  Link,
-  List,
-  Paragraph,
-  Table,
-} from '../src/alpha';
+import { Heading, HeadingProps, Link, List, Paragraph } from '../src/alpha';
+import { Table } from '../src/beta';
 import componentStyles from './componentOverrides.module.scss';
 import { customStylesDecorator } from './utils/customStylesDecorator';
 import { MdxComponentOverrides } from './types/parameters';
