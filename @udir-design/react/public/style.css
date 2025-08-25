@@ -1,6 +1,25 @@
 @import '@udir-design/theme';
 @import '@digdir/designsystemet-css';
 
+.ds-button {
+  &[data-variant='tertiary']:not([data-color='danger']),
+  &[data-variant='secondary']:not([data-color='danger']) {
+    --dsc-button-color: var(--ds-color-text-default);
+    --dsc-button-color--hover: var(--ds-color-text-subtle);
+  }
+}
+
+.ds-tabs {
+  --dsc-tabs-tab-color: var(--ds-color-text-default);
+  --dsc-tabs-tab-color--hover: var(--ds-color-text-sublte);
+  --dsc-tabs-list-border-color: var(--ds-color-border-subtle);
+
+  &[data-color='accent'] {
+    --dsc-tabs-tab-color: var(--ds-color-text-subtle);
+    --dsc-tabs-tab-color--hover: var(--ds-color-border-default);
+  }
+}
+
 /* Use Digdir's "special case" for neutral link color as default, since neutral is our default */
 
 .ds-link {
