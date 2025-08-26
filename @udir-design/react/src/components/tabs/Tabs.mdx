@@ -100,7 +100,7 @@ Noen ganger kan det likevel være nyttig å knytte valgt tab til en URL, uten at
 ```tsx
 <Tabs
   value={selectedTab}
-  onChange={() => router.push(url, undefined, { shallow: true })}
+  onChange={(tab) => router.push(url, tab, { shallow: true })}
 >
   <Tabs.List>
     <Tabs.Tab value="tab-1">Tab 1</Tabs.Tab>
