@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: stretch;
   flex-wrap: wrap;
-  margin: var(--ds-size-8) 0 !important;
+  margin: var(--ds-size-8) 0;
 }
 
 @media screen and (min-width: 600px) {
