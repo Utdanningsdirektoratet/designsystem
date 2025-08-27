@@ -3,7 +3,10 @@ import remarkGfm from 'remark-gfm';
 import { UserConfig } from 'vite';
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
+  stories: [
+    '../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))',
+    '../../../@udir-design/icons/**/*.@(mdx|stories.@(js|jsx|ts|tsx))',
+  ],
   addons: [
     '@storybook/addon-a11y',
     'storybook-addon-pseudo-states',
