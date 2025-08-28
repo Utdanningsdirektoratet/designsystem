@@ -1,1 +1,1 @@
-export * from './icons';
+export * from '@navikt/aksel-icons';
