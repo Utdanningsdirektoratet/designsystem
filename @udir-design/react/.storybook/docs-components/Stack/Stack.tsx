@@ -10,7 +10,7 @@ export const Stack = ({
   ...rest
 }: FlexContainerProps & HTMLAttributes<HTMLDivElement>) => (
   <div
-    className={classes.stack}
+    className={`${classes.stack} sb-unstyled`}
     style={{
       ...style,
       gap,
