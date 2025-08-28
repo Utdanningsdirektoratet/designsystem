@@ -6,6 +6,7 @@ import tsConfigPaths from 'vite-tsconfig-paths';
 import * as path from 'path';
 import pkg from './package.json';
 import * as R from 'ramda';
+import ts from 'typescript';
 
 const resolveAlias = (alias: string): string =>
   path.resolve(import.meta.dirname, alias);
@@ -43,6 +44,16 @@ export default defineConfig({
     dts({
       entryRoot: 'src',
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
+      afterDiagnostic: (diagnostics) => {
+        const errors = diagnostics.filter(
+          (x) => x.category === ts.DiagnosticCategory.Error,
+        );
+        if (errors.length > 0) {
+          throw new Error(
+            'Type error during .d.ts generation! See errors above.',
+          );
+        }
+      },
     }),
   ],
 

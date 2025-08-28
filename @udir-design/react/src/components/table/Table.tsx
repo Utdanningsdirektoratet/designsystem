@@ -2,7 +2,7 @@ import {
   Table as DigdirTable,
   type TableProps as DigdirTableProps,
 } from '@digdir/designsystemet-react';
-import { forwardRef } from 'react';
+import { forwardRef, ForwardRefExoticComponent } from 'react';
 
 export type TableProps = DigdirTableProps & {
   /**
@@ -17,7 +17,10 @@ export type TableProps = DigdirTableProps & {
   tintedRowHeader?: boolean;
 };
 
-export const Table = forwardRef<HTMLTableElement, TableProps>(function Table(
+export const Table: ForwardRefExoticComponent<TableProps> = forwardRef<
+  HTMLTableElement,
+  TableProps
+>(function Table(
   { children, tintedColumnHeader = false, tintedRowHeader = false, ...rest },
   ref,
 ) {
