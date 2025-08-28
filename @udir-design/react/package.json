@@ -32,7 +32,8 @@
     "./dist"
   ],
   "scripts": {
-    "build": "vite build && pnpm i",
+    "build": "vite build",
+    "inject": "pnpm i",
     "test": "vitest --project unit",
     "typecheck": "tsc --build",
     "dev": "storybook dev --port 6006",

@@ -31,9 +31,12 @@
     },
     "build": {
       "cache": true,
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "^inject"],
       "inputs": ["default", "^default"],
       "outputs": ["{projectRoot}/dist"]
+    },
+    "inject": {
+      "dependsOn": ["build"]
     },
     "test": {
       "dependsOn": ["build"]
