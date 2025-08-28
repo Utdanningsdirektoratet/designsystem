@@ -7,7 +7,7 @@ import {
   type PopoverTriggerProps,
 } from '@digdir/designsystemet-react';
 
-const Popover = Object.assign(DigdirPopover, {
+const Popover: typeof DigdirPopover = Object.assign(DigdirPopover, {
   Trigger: DigdirPopover.Trigger,
   TriggerContext: DigdirPopover.TriggerContext,
 });
