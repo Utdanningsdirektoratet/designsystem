@@ -1,0 +1,3253 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Preview 1`] = `
+<header>
+  <a href="/">
+    <img
+      alt
+      src="/assets/img/udir-circle-logo.png"
+    >
+    <h2 data-size="xs">
+      Tjenestenavn
+    </h2>
+  </a>
+</header>
+`;
+
+exports[`Responsive 1`] = `
+<header>
+  <a href="/">
+    <img
+      alt
+      src="/assets/img/udir-circle-logo.png"
+    >
+    <h2 data-size="xs">
+      Tjenestenavn
+    </h2>
+  </a>
+  <div>
+    <a
+      href="https://design.udir.no/"
+      data-hide="lg"
+    >
+      Komponenter
+    </a>
+    <a
+      href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209"
+      data-hide="lg"
+    >
+      Figma
+    </a>
+    <a
+      href="https://github.com/Utdanningsdirektoratet/designsystem"
+      data-hide="lg"
+    >
+      Github
+    </a>
+    <button
+      type="button"
+      data-color="neutral"
+      popovertarget="usermenu2"
+      data-hide="md"
+    >
+      <div>
+        <h3 data-size="2xs">
+          Stian Hansen
+        </h3>
+        <p
+          data-variant="default"
+          data-size="xs"
+        >
+          Admin
+        </p>
+      </div>
+      <span
+        data-variant="circle"
+        role="img"
+        aria-label="Stian Hansen"
+      >
+        <span>
+          SH
+        </span>
+      </span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+    </button>
+    <div
+      id="usermenu2"
+      popover="manual"
+      data-variant="default"
+    >
+      <h2>
+        Rolle
+      </h2>
+      <ul>
+        <li>
+          <button
+            data-variant="tertiary"
+            type="button"
+          >
+            Superadmin
+          </button>
+        </li>
+        <li>
+          <button
+            data-variant="tertiary"
+            type="button"
+          >
+            Admin
+          </button>
+        </li>
+        <li>
+          <button
+            data-variant="tertiary"
+            type="button"
+          >
+            Hovedbruker
+          </button>
+        </li>
+        <hr aria-hidden="true">
+        <li style="margin: var(--ds-size-2) 0;">
+          <button
+            data-variant="tertiary"
+            type="button"
+          >
+            Varsler
+            <span
+              data-count="8"
+              data-variant="base"
+            >
+            </span>
+          </button>
+        </li>
+        <li>
+          <button
+            data-variant="secondary"
+            type="button"
+          >
+            Logg ut
+          </button>
+        </li>
+      </ul>
+    </div>
+    <button
+      data-variant="tertiary"
+      type="button"
+      popovertarget="uds-header-menu"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M2.75 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17A.75.75 0 0 1 2.75 6m0 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17a.75.75 0 0 1-.75-.75m.75 5.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M6.53 5.47a.75.75 0 0 0-1.06 1.06L10.94 12l-5.47 5.47a.75.75 0 1 0 1.06 1.06L12 13.06l5.47 5.47a.75.75 0 1 0 1.06-1.06L13.06 12l5.47-5.47a.75.75 0 0 0-1.06-1.06L12 10.94z"
+        >
+        </path>
+      </svg>
+      Meny
+    </button>
+    <div
+      id="uds-header-menu"
+      popover="auto"
+      data-variant="default"
+    >
+      <button
+        type="button"
+        data-color="neutral"
+        popovertarget="usermenuInMenu"
+        data-show="md"
+        style="justify-self: end;"
+      >
+        <div>
+          <h3 data-size="2xs">
+            Stian Hansen
+          </h3>
+          <p
+            data-variant="default"
+            data-size="xs"
+          >
+            Admin
+          </p>
+        </div>
+        <span
+          data-variant="circle"
+          role="img"
+          aria-label="Stian Hansen"
+        >
+          <span>
+            SH
+          </span>
+        </span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </button>
+      <div
+        id="usermenuInMenu"
+        popover="manual"
+        data-variant="default"
+      >
+        <h2>
+          Rolle
+        </h2>
+        <ul>
+          <li>
+            <button
+              data-variant="tertiary"
+              type="button"
+            >
+              Superadmin
+            </button>
+          </li>
+          <li>
+            <button
+              data-variant="tertiary"
+              type="button"
+            >
+              Admin
+            </button>
+          </li>
+          <li>
+            <button
+              data-variant="tertiary"
+              type="button"
+            >
+              Hovedbruker
+            </button>
+          </li>
+          <hr aria-hidden="true">
+          <li style="margin: var(--ds-size-2) 0;">
+            <button
+              data-variant="tertiary"
+              type="button"
+            >
+              Varsler
+              <span
+                data-count="8"
+                data-variant="base"
+              >
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              data-variant="secondary"
+              type="button"
+            >
+              Logg ut
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); max-width: 800px; margin: 0px auto; padding: var(--ds-size-10); justify-items: center; row-gap: var(--ds-size-10); column-gap: ;">
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Designprofil
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.udir.no/om-udir/designprofil/identitet/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Identitet
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/om-udir/designprofil/farger/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Farger
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/om-udir/designprofil/typografi/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Typografi
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Illustrasjoner
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.figma.com/design/QeYBL9fzDCk87WNWcDSQi7/01-Illustrasjoner---barnehage?node-id=457-13863"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Illustrasjoner
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.figma.com/design/SSdGSjSYPDSyX2IfHLfmEL/Symbolbibliotek?node-id=0-1&amp;p=f&amp;m=dev"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Symboler
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.figma.com/design/W4tl2t6G22muQfVF8jGeQX/Ikonbibliotek?node-id=9-2879&amp;p=f&amp;m=dev"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Ikoner
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Nyttige lenker
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://design.udir.no/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Komponenter
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Figma
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/Utdanningsdirektoratet/designsystem"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Github
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`Udir No 1`] = `
+<header>
+  <a href="/">
+    <img
+      alt="Utdanningsdirektoratet"
+      src="/assets/img/udir-main-logo.png"
+    >
+  </a>
+  <div>
+    <div style="max-width: 280px;">
+      <input
+        placeholder="Søk"
+        aria-label="Søk"
+        type="search"
+      >
+      <button
+        data-icon="true"
+        data-variant="tertiary"
+        type="reset"
+        aria-label="Tøm"
+      >
+      </button>
+    </div>
+    <button
+      data-variant="primary"
+      type="button"
+      popovertarget="uds-header-menu"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M2.75 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17A.75.75 0 0 1 2.75 6m0 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17a.75.75 0 0 1-.75-.75m.75 5.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M6.53 5.47a.75.75 0 0 0-1.06 1.06L10.94 12l-5.47 5.47a.75.75 0 1 0 1.06 1.06L12 13.06l5.47 5.47a.75.75 0 1 0 1.06-1.06L13.06 12l5.47-5.47a.75.75 0 0 0-1.06-1.06L12 10.94z"
+        >
+        </path>
+      </svg>
+      Meny
+    </button>
+    <div
+      id="uds-header-menu"
+      popover="auto"
+      data-variant="default"
+    >
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr)); max-width: 1280px; margin: 0px auto; padding: var(--ds-size-10); row-gap: var(--ds-size-10); column-gap: ;">
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Utdanningsløpet
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Barnehage
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Grunnskole
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Videregående
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Opplæring i bedrift
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Voksenopplæring
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  SFO
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Kulturskolen
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Folkehøgskole
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Læring og trivsel
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Rammeplaner
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Læreplaner
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Skolemiljø
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Tilpasset opplæring
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Spesialpedagogikk
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Fravær
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Prøver og vurdering
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Eksamen
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Kartleggingsprøver
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Nasjonale prøver
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Vitnemål og kompetansebevis
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Realkompetansevurdering
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Kompetanse og tilskudd
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Lede kvalitetsutvikling
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Videreutdanning
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Kompetansetilbud
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Sikkerhet og beredskap
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Kvalitet i læremidler
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Digital praksis
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Tilskudd
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Tall og forskning
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Elevundersøkelsen
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Læringsundersøkelsen
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Foreldreundersøkelsen i barnehage
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Statistikk
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Forskning
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Internasjonale studier
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Kunnskapsoversikter
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Datainnsamling
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Regelverk og tilsyn
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Regelverk for barnehage
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Regelverk for skole og opplæring
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Tilsyn
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Melde bekymring
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`With Links 1`] = `
+<header>
+  <a href="/">
+    <img
+      alt
+      src="/assets/img/udir-circle-logo.png"
+    >
+    <h2 data-size="xs">
+      Tjenestenavn
+    </h2>
+  </a>
+  <div>
+    <a href="#">
+      Komponenter
+    </a>
+    <a href="#">
+      Figma
+    </a>
+    <a href="#">
+      Github
+    </a>
+  </div>
+</header>
+`;
+
+exports[`With Links And Menu 1`] = `
+<header>
+  <a href="/">
+    <img
+      alt
+      src="/assets/img/udir-circle-logo.png"
+    >
+    <h2 data-size="xs">
+      Tjenestenavn
+    </h2>
+  </a>
+  <div>
+    <a href="https://design.udir.no/">
+      Komponenter
+    </a>
+    <a href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209">
+      Figma
+    </a>
+    <a href="https://github.com/Utdanningsdirektoratet/designsystem">
+      Github
+    </a>
+    <button
+      data-variant="secondary"
+      type="button"
+      popovertarget="uds-header-menu"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M2.75 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17A.75.75 0 0 1 2.75 6m0 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17a.75.75 0 0 1-.75-.75m.75 5.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M6.53 5.47a.75.75 0 0 0-1.06 1.06L10.94 12l-5.47 5.47a.75.75 0 1 0 1.06 1.06L12 13.06l5.47 5.47a.75.75 0 1 0 1.06-1.06L13.06 12l5.47-5.47a.75.75 0 0 0-1.06-1.06L12 10.94z"
+        >
+        </path>
+      </svg>
+      Meny
+    </button>
+    <div
+      id="uds-header-menu"
+      popover="auto"
+      data-variant="default"
+    >
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); max-width: 800px; margin: 0px auto; padding: var(--ds-size-10); justify-items: center; row-gap: var(--ds-size-10); column-gap: ;">
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Designprofil
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.udir.no/om-udir/designprofil/identitet/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Identitet
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/om-udir/designprofil/farger/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Farger
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/om-udir/designprofil/typografi/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Typografi
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Illustrasjoner
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.figma.com/design/QeYBL9fzDCk87WNWcDSQi7/01-Illustrasjoner---barnehage?node-id=457-13863"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Illustrasjoner
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.figma.com/design/SSdGSjSYPDSyX2IfHLfmEL/Symbolbibliotek?node-id=0-1&amp;p=f&amp;m=dev"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Symboler
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.figma.com/design/W4tl2t6G22muQfVF8jGeQX/Ikonbibliotek?node-id=9-2879&amp;p=f&amp;m=dev"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Ikoner
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Nyttige lenker
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://design.udir.no/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Komponenter
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Figma
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/Utdanningsdirektoratet/designsystem"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Github
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`With Mega Menu 1`] = `
+<header>
+  <a href="/">
+    <img
+      alt
+      src="/assets/img/udir-circle-logo.png"
+    >
+    <h2 data-size="xs">
+      Tjenestenavn
+    </h2>
+  </a>
+  <div>
+    <button
+      data-variant="primary"
+      type="button"
+      popovertarget="uds-header-menu"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M2.75 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17A.75.75 0 0 1 2.75 6m0 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17a.75.75 0 0 1-.75-.75m.75 5.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M6.53 5.47a.75.75 0 0 0-1.06 1.06L10.94 12l-5.47 5.47a.75.75 0 1 0 1.06 1.06L12 13.06l5.47 5.47a.75.75 0 1 0 1.06-1.06L13.06 12l5.47-5.47a.75.75 0 0 0-1.06-1.06L12 10.94z"
+        >
+        </path>
+      </svg>
+      Meny
+    </button>
+    <div
+      id="uds-header-menu"
+      popover="auto"
+      data-variant="default"
+    >
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); max-width: 800px; margin: 0px auto; padding: var(--ds-size-10); justify-items: center; row-gap: var(--ds-size-10); column-gap: ;">
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Designprofil
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.udir.no/om-udir/designprofil/identitet/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Identitet
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/om-udir/designprofil/farger/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Farger
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/om-udir/designprofil/typografi/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Typografi
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Illustrasjoner
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.figma.com/design/QeYBL9fzDCk87WNWcDSQi7/01-Illustrasjoner---barnehage?node-id=457-13863"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Illustrasjoner
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.figma.com/design/SSdGSjSYPDSyX2IfHLfmEL/Symbolbibliotek?node-id=0-1&amp;p=f&amp;m=dev"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Symboler
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.figma.com/design/W4tl2t6G22muQfVF8jGeQX/Ikonbibliotek?node-id=9-2879&amp;p=f&amp;m=dev"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Ikoner
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Nyttige lenker
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://design.udir.no/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Komponenter
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Figma
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/Utdanningsdirektoratet/designsystem"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Github
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`With Mega Menus 1`] = `
+<header>
+  <a href="/">
+    <img
+      alt
+      src="/assets/img/udir-circle-logo.png"
+    >
+    <h2 data-size="xs">
+      Tjenestenavn
+    </h2>
+  </a>
+  <div>
+    <button
+      data-variant="tertiary"
+      type="button"
+      popovertarget="header-education-menu"
+    >
+      Utdanningsløpet
+    </button>
+    <div
+      id="header-education-menu"
+      popover="auto"
+      data-variant="default"
+    >
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); max-width: 800px; margin: 0px auto; padding: var(--ds-size-10); justify-items: center; row-gap: var(--ds-size-10); column-gap: ;">
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Utdanningsløpet
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.udir.no/utdanningslopet/barnehage/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Barnehage
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/utdanningslopet/grunnskole/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Grunnskole
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/utdanningslopet/videregaende-opplaring/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Videregående
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <button
+      data-variant="tertiary"
+      type="button"
+      popovertarget="header-learning-menu"
+    >
+      Læring og trivsel
+    </button>
+    <div
+      id="header-learning-menu"
+      popover="auto"
+      data-variant="default"
+    >
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); max-width: 800px; margin: 0px auto; padding: var(--ds-size-10); justify-items: center; row-gap: var(--ds-size-10); column-gap: ;">
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Læring og trivsel
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.udir.no/laring-og-trivsel/barnehagemiljo/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Barnehagemiljø
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/laring-og-trivsel/rammeplan-for-barnehagen/barnehagens-formal-og-innhold/omsorg/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Omsorg
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/laring-og-trivsel/rammeplan-for-barnehagen/barnehagens-formal-og-innhold/lek/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Lek
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <button
+      data-variant="secondary"
+      type="button"
+      popovertarget="uds-header-menu"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M2.75 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17A.75.75 0 0 1 2.75 6m0 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17a.75.75 0 0 1-.75-.75m.75 5.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M6.53 5.47a.75.75 0 0 0-1.06 1.06L10.94 12l-5.47 5.47a.75.75 0 1 0 1.06 1.06L12 13.06l5.47 5.47a.75.75 0 1 0 1.06-1.06L13.06 12l5.47-5.47a.75.75 0 0 0-1.06-1.06L12 10.94z"
+        >
+        </path>
+      </svg>
+      Meny
+    </button>
+    <div
+      id="uds-header-menu"
+      popover="auto"
+      data-variant="default"
+    >
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); max-width: 800px; margin: 0px auto; padding: var(--ds-size-10); justify-items: center; row-gap: var(--ds-size-10); column-gap: ;">
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Designprofil
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.udir.no/om-udir/designprofil/identitet/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Identitet
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/om-udir/designprofil/farger/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Farger
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/om-udir/designprofil/typografi/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Typografi
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Illustrasjoner
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.figma.com/design/QeYBL9fzDCk87WNWcDSQi7/01-Illustrasjoner---barnehage?node-id=457-13863"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Illustrasjoner
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.figma.com/design/SSdGSjSYPDSyX2IfHLfmEL/Symbolbibliotek?node-id=0-1&amp;p=f&amp;m=dev"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Symboler
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.figma.com/design/W4tl2t6G22muQfVF8jGeQX/Ikonbibliotek?node-id=9-2879&amp;p=f&amp;m=dev"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Ikoner
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Nyttige lenker
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://design.udir.no/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Komponenter
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Figma
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/Utdanningsdirektoratet/designsystem"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Github
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`With Search 1`] = `
+<header>
+  <a href="/">
+    <img
+      alt
+      src="/assets/img/udir-circle-logo.png"
+    >
+    <h2 data-size="xs">
+      Tjenestenavn
+    </h2>
+  </a>
+  <div>
+    <div data-size="md">
+      <input
+        placeholder="Søk"
+        aria-label="Søk"
+        type="search"
+        value
+      >
+      <button
+        data-icon="true"
+        data-variant="tertiary"
+        type="reset"
+        aria-label="Tøm"
+      >
+      </button>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`With Simple Menu 1`] = `
+<header>
+  <a href="/">
+    <img
+      alt
+      src="/assets/img/udir-circle-logo.png"
+    >
+    <h2 data-size="xs">
+      Tjenestenavn
+    </h2>
+  </a>
+  <div>
+    <button
+      data-variant="tertiary"
+      type="button"
+      popovertarget="header-simple-menu"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M2.75 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17A.75.75 0 0 1 2.75 6m0 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17a.75.75 0 0 1-.75-.75m.75 5.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M6.53 5.47a.75.75 0 0 0-1.06 1.06L10.94 12l-5.47 5.47a.75.75 0 1 0 1.06 1.06L12 13.06l5.47 5.47a.75.75 0 1 0 1.06-1.06L13.06 12l5.47-5.47a.75.75 0 0 0-1.06-1.06L12 10.94z"
+        >
+        </path>
+      </svg>
+      Meny
+    </button>
+    <div
+      id="header-simple-menu"
+      popover="manual"
+      data-variant="default"
+    >
+      <ul>
+        <h2>
+          Utdanning
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: var(--ds-size-1); margin-bottom: var(--ds-size-4);">
+          <li>
+            <a href="https://www.udir.no/utdanningslopet/barnehage/">
+              Barnehage
+            </a>
+          </li>
+          <li>
+            <a href="https://www.udir.no/utdanningslopet/grunnskole/">
+              Grunnskole
+            </a>
+          </li>
+          <li>
+            <a href="https://www.udir.no/utdanningslopet/videregaende-opplaring/">
+              Videregående
+            </a>
+          </li>
+        </div>
+        <h2>
+          Annen opplæring
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: var(--ds-size-1); margin-bottom: var(--ds-size-4);">
+          <li>
+            <a href="https://www.udir.no/utdanningslopet/sfo/">
+              SFO
+            </a>
+          </li>
+          <li>
+            <a href="https://www.udir.no/utdanningslopet/kulturskolen/">
+              Kulturskolen
+            </a>
+          </li>
+          <li>
+            <a href="https://www.udir.no/om-udir/tilskudd-og-prosjektmidler/tilskudd-for-folkehogskoler/">
+              Folkehøgskoler
+            </a>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`With User Button 1`] = `
+<header>
+  <a href="/">
+    <img
+      alt
+      src="/assets/img/udir-circle-logo.png"
+    >
+    <h2 data-size="xs">
+      Tjenestenavn
+    </h2>
+  </a>
+  <div>
+    <button
+      type="button"
+      data-color="accent"
+      popovertarget="usermenu"
+    >
+      <div>
+        <h3 data-size="2xs">
+          Stian Hansen
+        </h3>
+        <p
+          data-variant="default"
+          data-size="xs"
+        >
+          Admin
+        </p>
+      </div>
+      <span
+        data-variant="circle"
+        role="img"
+        aria-label="Stian Hansen"
+      >
+        <img
+          alt
+          aria-hidden="true"
+          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&amp;w=1480&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        >
+      </span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+    </button>
+  </div>
+</header>
+<div
+  id="usermenu"
+  popover="manual"
+  data-variant="default"
+>
+  <h2>
+    Rolle
+  </h2>
+  <ul>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Superadmin
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Admin
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Hovedbruker
+      </button>
+    </li>
+    <hr aria-hidden="true">
+    <li style="margin: var(--ds-size-2) 0;">
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Varsler
+        <span
+          data-count="8"
+          data-variant="base"
+        >
+        </span>
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="secondary"
+        type="button"
+      >
+        Logg ut
+      </button>
+    </li>
+  </ul>
+</div>
+`;
