@@ -8,7 +8,7 @@ import {
 } from '@storybook/addon-docs/blocks';
 import React from 'react';
 import * as IconsStories from './icons.stories';
-import * as Icons from './src/index';
+import { IconDisplay } from './IconDisplay';
 
 # Ikoner
 
@@ -16,12 +16,4 @@ Blabla dette er ikoner hentet fra oss. Vi lager egne også etter hver kanskje hm
 
 <Meta of={IconsStories} />
 
-<IconGallery>
-  {Object.entries(Icons).map(([key, Value]) => (
-    <React.Fragment key={key}>
-      <Value fontSize="3rem" aria-hidden title={key} />
-    </React.Fragment>
-  ))}
-</IconGallery>
-
-<Primary />
+<IconDisplay />

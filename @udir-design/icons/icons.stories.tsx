@@ -10,15 +10,23 @@ export default {
 
 type Story = StoryObj<typeof AirplaneIcon>;
 
-export const Preview: Story = {
+export const OutlineIcons: Story = {
   render: () => {
     return (
       <div className="icons">
-        {Object.entries(Icons).map(([key, Value]) => (
-          <React.Fragment key={key}>
-            <Value fontSize="3rem" aria-hidden title={key} />
-          </React.Fragment>
-        ))}
+        {Object.entries(Icons).map(
+          ([key, Value]) =>
+            !key.includes('Fill') && (
+              <React.Fragment key={key}>
+                <Value
+                  fontSize="3rem"
+                  aria-hidden
+                  title={key}
+                  className="icon-color"
+                />
+              </React.Fragment>
+            ),
+        )}
         <style>
           {`
           .icons{
@@ -32,20 +40,23 @@ export const Preview: Story = {
   },
 };
 
-export const IconsInverted: Story = {
+export const FillIcons: Story = {
   render: () => {
     return (
       <div className="icons">
-        {Object.entries(Icons).map(([key, Value]) => (
-          <React.Fragment key={key}>
-            <Value
-              fontSize="3rem"
-              aria-hidden
-              title={key}
-              className="icon-color"
-            />
-          </React.Fragment>
-        ))}
+        {Object.entries(Icons).map(
+          ([key, Value]) =>
+            key.includes('Fill') && (
+              <React.Fragment key={key}>
+                <Value
+                  fontSize="3rem"
+                  aria-hidden
+                  title={key}
+                  className="icon-color"
+                />
+              </React.Fragment>
+            ),
+        )}
         <style>
           {`
           .icons{

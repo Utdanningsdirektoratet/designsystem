@@ -366,9 +366,6 @@ importers:
 
   test-apps/nextjs:
     dependencies:
-      '@udir-design/icons':
-        specifier: workspace:*
-        version: link:../../@udir-design/icons
       '@udir-design/react':
         specifier: workspace:*
         version: file:@udir-design/react(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
