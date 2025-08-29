@@ -139,7 +139,7 @@ export const ColumnAndRowHeaders: Story = {
       >
         Svarprosent for elevundersøkelsen nasjonalt
       </caption>
-      <Table.Head style={{ textAlign: 'right' }}>
+      <Table.Head>
         <Table.Row>
           <Table.Cell />
           <Table.HeaderCell scope="col">2022–23</Table.HeaderCell>
@@ -147,41 +147,51 @@ export const ColumnAndRowHeaders: Story = {
           <Table.HeaderCell scope="col">2024–25</Table.HeaderCell>
         </Table.Row>
       </Table.Head>
-      <Table.Body
-        style={{ textAlign: 'right', fontFeatureSettings: "'tnum' 1" }}
-      >
+      <Table.Body style={{ textAlign: 'right' }}>
         <Table.Row>
-          <Table.HeaderCell scope="row">8. årstrinn</Table.HeaderCell>
+          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+            8. trinn
+          </Table.HeaderCell>
           <Table.Cell>88,5%</Table.Cell>
           <Table.Cell>86,3%</Table.Cell>
           <Table.Cell>85,3%</Table.Cell>
         </Table.Row>
         <Table.Row>
-          <Table.HeaderCell scope="row">9. årstrinn</Table.HeaderCell>
+          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+            9. trinn
+          </Table.HeaderCell>
           <Table.Cell>88,7%</Table.Cell>
           <Table.Cell>86,3%</Table.Cell>
           <Table.Cell>84,9%</Table.Cell>
         </Table.Row>
         <Table.Row>
-          <Table.HeaderCell scope="row">10. årstrinn</Table.HeaderCell>
+          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+            10. trinn
+          </Table.HeaderCell>
           <Table.Cell>89,7%</Table.Cell>
           <Table.Cell>87,3%</Table.Cell>
           <Table.Cell>85,7%</Table.Cell>
         </Table.Row>
         <Table.Row>
-          <Table.HeaderCell scope="row">Videregående trinn 1</Table.HeaderCell>
+          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+            Vg1
+          </Table.HeaderCell>
           <Table.Cell>84,8%</Table.Cell>
           <Table.Cell>82,8%</Table.Cell>
           <Table.Cell>83,1%</Table.Cell>
         </Table.Row>
         <Table.Row>
-          <Table.HeaderCell scope="row">Videregående trinn 2</Table.HeaderCell>
+          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+            Vg2
+          </Table.HeaderCell>
           <Table.Cell>82,5%</Table.Cell>
           <Table.Cell>80,0%</Table.Cell>
           <Table.Cell>80,3%</Table.Cell>
         </Table.Row>
         <Table.Row>
-          <Table.HeaderCell scope="row">Videregående trinn 3</Table.HeaderCell>
+          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+            Vg3
+          </Table.HeaderCell>
           <Table.Cell>79,9%</Table.Cell>
           <Table.Cell>75,7%</Table.Cell>
           <Table.Cell>76,9%</Table.Cell>
@@ -348,8 +358,8 @@ export const StickyHeader: Story = {
   },
   parameters: {
     customStyles: {
-      height: '280px',
-      width: '500px',
+      height: '400px',
+      width: '580px',
       overflow: 'auto',
       padding: 0,
     },
@@ -357,76 +367,79 @@ export const StickyHeader: Story = {
   render: (args) => {
     return (
       <Table {...args}>
+        <caption style={{ marginBottom: 'var(--ds-size-3)' }}>
+          Ansattes utdanning fordelt på eiertype (ordinære), 2021
+        </caption>
         <Table.Head>
           <Table.Row>
-            <Table.HeaderCell>Fylke</Table.HeaderCell>
-            <Table.HeaderCell>Oppholdsareal per barn</Table.HeaderCell>
-            <Table.HeaderCell>Åpningstid per dag</Table.HeaderCell>
-            <Table.HeaderCell>Kostpenger</Table.HeaderCell>
-            <Table.HeaderCell>Foreldrebetaling under makspris</Table.HeaderCell>
-            <Table.HeaderCell>Hatt tilsyn</Table.HeaderCell>
+            <Table.Cell></Table.Cell>
+            <Table.HeaderCell>5 store</Table.HeaderCell>
+            <Table.HeaderCell>Andre kjeder</Table.HeaderCell>
+            <Table.HeaderCell>Frittstående</Table.HeaderCell>
+            <Table.HeaderCell>Kommune</Table.HeaderCell>
+            <Table.HeaderCell>Totalt</Table.HeaderCell>
           </Table.Row>
         </Table.Head>
         <Table.Body style={{ textAlign: 'right' }}>
           <Table.Row>
             <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
-              Agder
+              Barnehagelærer
             </Table.HeaderCell>
-            <Table.Cell>5.9</Table.Cell>
-            <Table.Cell>9.4</Table.Cell>
-            <Table.Cell>400.6</Table.Cell>
-            <Table.Cell>4</Table.Cell>
-            <Table.Cell>66</Table.Cell>
+            <Table.Cell>42,9%</Table.Cell>
+            <Table.Cell>42,9%</Table.Cell>
+            <Table.Cell>43,8%</Table.Cell>
+            <Table.Cell>43,9%</Table.Cell>
+            <Table.Cell>43,6%</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
-              Akershus
+              Annen pedagogisk utdanning
             </Table.HeaderCell>
-            <Table.Cell>5.5</Table.Cell>
-            <Table.Cell>9.7</Table.Cell>
-            <Table.Cell>419.3</Table.Cell>
-            <Table.Cell>1</Table.Cell>
-            <Table.Cell>87</Table.Cell>
+            <Table.Cell>1,9%</Table.Cell>
+            <Table.Cell>2,8%</Table.Cell>
+            <Table.Cell>2,0%</Table.Cell>
+            <Table.Cell>1,3%</Table.Cell>
+            <Table.Cell>1,7%</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
-              Buskerud
+              Annen høyere utdanning
             </Table.HeaderCell>
-            <Table.Cell>5.7</Table.Cell>
-            <Table.Cell>9.8</Table.Cell>
-            <Table.Cell>377.1</Table.Cell>
-            <Table.Cell>9</Table.Cell>
-            <Table.Cell>18</Table.Cell>
+            <Table.Cell>2,2%</Table.Cell>
+            <Table.Cell>2,7%</Table.Cell>
+            <Table.Cell>2,2%</Table.Cell>
+            <Table.Cell>1,2%</Table.Cell>
+            <Table.Cell>1,8%</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
-              Finnmark
+              Barne- og ungdomsarbeider
             </Table.HeaderCell>
-            <Table.Cell>7.7</Table.Cell>
-            <Table.Cell>9.1</Table.Cell>
-            <Table.Cell>357.4</Table.Cell>
-            <Table.Cell>44</Table.Cell>
-            <Table.Cell>11</Table.Cell>
+            <Table.Cell>15,0%</Table.Cell>
+            <Table.Cell>16,4%</Table.Cell>
+            <Table.Cell>18,4%</Table.Cell>
+            <Table.Cell>27,7%</Table.Cell>
+            <Table.Cell>22,3%</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
-              Innlandet
+              Annet fagarbeider
             </Table.HeaderCell>
-            <Table.Cell>6.4</Table.Cell>
-            <Table.Cell>9.7</Table.Cell>
-            <Table.Cell>380.5</Table.Cell>
-            <Table.Cell>5</Table.Cell>
-            <Table.Cell>74</Table.Cell>
+            <Table.Cell>5,2%</Table.Cell>
+            <Table.Cell>4,6%</Table.Cell>
+            <Table.Cell>5,3%</Table.Cell>
+            <Table.Cell>5,3%</Table.Cell>
+            <Table.Cell>5,2%</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
-              Møre og Romsdal
+              Annen bakgrunn
             </Table.HeaderCell>
-            <Table.Cell>6.4</Table.Cell>
-            <Table.Cell>9.7</Table.Cell>
-            <Table.Cell>380.5</Table.Cell>
-            <Table.Cell>5</Table.Cell>
-            <Table.Cell>46</Table.Cell>
+            <Table.Cell>32,8%</Table.Cell>
+            <Table.Cell>30,5%</Table.Cell>
+            <Table.Cell>28,3%</Table.Cell>
+            <Table.Cell>20,6%</Table.Cell>
+            <Table.Cell>25,5%</Table.Cell>
           </Table.Row>
         </Table.Body>
       </Table>
@@ -448,15 +461,13 @@ export const WithFormElements: Story = {
             <Table.HeaderCell>
               <Checkbox
                 aria-label="Select all"
-                {
-                  ...(getCheckboxProps({
-                    allowIndeterminate: true,
-                    id: `${ctx.id}-selectAll`,
-                  }) as object) /* TODO: remove "as object" after next.49*/
-                }
+                {...getCheckboxProps({
+                  allowIndeterminate: true,
+                  id: `${ctx.id}-selectAll`,
+                })}
               />
             </Table.HeaderCell>
-            <Table.HeaderCell>#</Table.HeaderCell>
+            <Table.HeaderCell>nr.</Table.HeaderCell>
             <Table.HeaderCell>Spørsmål</Table.HeaderCell>
             <Table.HeaderCell>Alternativ 1</Table.HeaderCell>
             <Table.HeaderCell>Alternativ 2</Table.HeaderCell>
@@ -473,16 +484,14 @@ export const WithFormElements: Story = {
             <Table.Cell>
               <Checkbox
                 aria-label={`Check 1`}
-                {
-                  ...(getCheckboxProps({
-                    id: `${ctx.id}-select1`,
-                    value: '1',
-                  }) as object) /* TODO: remove "as object" after next.49*/
-                }
+                {...getCheckboxProps({
+                  id: `${ctx.id}-select1`,
+                  value: '1',
+                })}
               />
             </Table.Cell>
             <Table.Cell>1.</Table.Cell>
-            <Table.Cell>
+            <Table.Cell style={{ minWidth: 200 }}>
               <Textfield
                 data-size="sm"
                 value="Trives du på skolen?"
@@ -490,7 +499,7 @@ export const WithFormElements: Story = {
                 id={`${ctx.id}-textfield1-1`}
               />
             </Table.Cell>
-            <Table.Cell>
+            <Table.Cell style={{ minWidth: 200 }}>
               <Textfield
                 data-size="sm"
                 value="Trives ikke noe særlig"
@@ -498,7 +507,7 @@ export const WithFormElements: Story = {
                 id={`${ctx.id}-textfield1-2`}
               />
             </Table.Cell>
-            <Table.Cell>
+            <Table.Cell style={{ minWidth: 200 }}>
               <Textfield
                 value="Trives godt"
                 data-size="sm"
@@ -511,12 +520,10 @@ export const WithFormElements: Story = {
             <Table.Cell>
               <Checkbox
                 aria-label={`Check 1`}
-                {
-                  ...(getCheckboxProps({
-                    id: `${ctx.id}-select1`,
-                    value: '2',
-                  }) as object) /* TODO: remove "as object" after next.49*/
-                }
+                {...getCheckboxProps({
+                  id: `${ctx.id}-select1`,
+                  value: '2',
+                })}
               />
             </Table.Cell>
             <Table.Cell>2.</Table.Cell>
@@ -666,14 +673,20 @@ export const FixedTable: Story = {
           <Table.Head>
             <Table.Row>
               <Table.HeaderCell>Kommune</Table.HeaderCell>
-              <Table.HeaderCell>Tildeling</Table.HeaderCell>
+              <Table.HeaderCell>Tildeling (kr)</Table.HeaderCell>
             </Table.Row>
           </Table.Head>
           <Table.Body>
             {currentItems.map((item) => (
               <Table.Row key={item.id}>
                 <Table.Cell>{item.kommune}</Table.Cell>
-                <Table.Cell>{item.tildeling}</Table.Cell>
+                <Table.Cell
+                  style={{
+                    fontFeatureSettings: "'tnum' 1",
+                  }}
+                >
+                  {item.tildeling}
+                </Table.Cell>
               </Table.Row>
             ))}
           </Table.Body>
@@ -740,21 +753,21 @@ export const MultipleHeaderRows: Story = {
             <Table.HeaderCell scope={'row'} style={{ textAlign: 'left' }}>
               Idrettsfag
             </Table.HeaderCell>
-            <Table.Cell>0.5</Table.Cell>
-            <Table.Cell>1.0</Table.Cell>
-            <Table.Cell>5.7</Table.Cell>
-            <Table.Cell>46.0</Table.Cell>
-            <Table.Cell>46.9</Table.Cell>
+            <Table.Cell>0,5%</Table.Cell>
+            <Table.Cell>1,0%</Table.Cell>
+            <Table.Cell>5,7%</Table.Cell>
+            <Table.Cell>46,0%</Table.Cell>
+            <Table.Cell>46,9%</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.HeaderCell scope={'row'} style={{ textAlign: 'left' }}>
               Medier og kommunikasjon
             </Table.HeaderCell>
-            <Table.Cell>1.2</Table.Cell>
-            <Table.Cell>1.9</Table.Cell>
-            <Table.Cell>11.3</Table.Cell>
-            <Table.Cell>49.4</Table.Cell>
-            <Table.Cell>36.1</Table.Cell>
+            <Table.Cell>1,2%</Table.Cell>
+            <Table.Cell>1,9%</Table.Cell>
+            <Table.Cell>11,3%</Table.Cell>
+            <Table.Cell>49,4%</Table.Cell>
+            <Table.Cell>36,1%</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.HeaderCell scope={'row'} style={{ textAlign: 'left' }}>
@@ -762,19 +775,19 @@ export const MultipleHeaderRows: Story = {
             </Table.HeaderCell>
             <Table.Cell>-</Table.Cell>
             <Table.Cell>-</Table.Cell>
-            <Table.Cell>7.0</Table.Cell>
-            <Table.Cell>41.9</Table.Cell>
-            <Table.Cell>49.8</Table.Cell>
+            <Table.Cell>7,0%</Table.Cell>
+            <Table.Cell>41,9%</Table.Cell>
+            <Table.Cell>49,8%</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.HeaderCell scope={'row'} style={{ textAlign: 'left' }}>
               Studiespesialisering
             </Table.HeaderCell>
-            <Table.Cell>1.2</Table.Cell>
-            <Table.Cell>1.8</Table.Cell>
-            <Table.Cell>8.9</Table.Cell>
-            <Table.Cell>49.8</Table.Cell>
-            <Table.Cell>38.3</Table.Cell>
+            <Table.Cell>1,2%</Table.Cell>
+            <Table.Cell>1,8%</Table.Cell>
+            <Table.Cell>8,9%</Table.Cell>
+            <Table.Cell>49,8%</Table.Cell>
+            <Table.Cell>38,3%</Table.Cell>
           </Table.Row>
         </Table.Body>
       </Table>

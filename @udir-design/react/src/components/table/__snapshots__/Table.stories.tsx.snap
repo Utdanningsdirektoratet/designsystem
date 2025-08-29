@@ -10,7 +10,7 @@ exports[`Column And Row Headers 1`] = `
   <caption style="font-size: var(--ds-font-size-3); caption-side: bottom; text-align: center; font-weight: normal; margin-top: var(--ds-size-2);">
     Svarprosent for elevundersøkelsen nasjonalt
   </caption>
-  <thead style="text-align: right;">
+  <thead>
     <tr>
       <td>
       </td>
@@ -25,10 +25,13 @@ exports[`Column And Row Headers 1`] = `
       </th>
     </tr>
   </thead>
-  <tbody style="text-align: right; font-feature-settings: &quot;tnum&quot;;">
+  <tbody style="text-align: right;">
     <tr>
-      <th scope="row">
-        8. årstrinn
+      <th
+        scope="row"
+        style="text-align: left;"
+      >
+        8. trinn
       </th>
       <td>
         88,5%
@@ -41,8 +44,11 @@ exports[`Column And Row Headers 1`] = `
       </td>
     </tr>
     <tr>
-      <th scope="row">
-        9. årstrinn
+      <th
+        scope="row"
+        style="text-align: left;"
+      >
+        9. trinn
       </th>
       <td>
         88,7%
@@ -55,8 +61,11 @@ exports[`Column And Row Headers 1`] = `
       </td>
     </tr>
     <tr>
-      <th scope="row">
-        10. årstrinn
+      <th
+        scope="row"
+        style="text-align: left;"
+      >
+        10. trinn
       </th>
       <td>
         89,7%
@@ -69,8 +78,11 @@ exports[`Column And Row Headers 1`] = `
       </td>
     </tr>
     <tr>
-      <th scope="row">
-        Videregående trinn 1
+      <th
+        scope="row"
+        style="text-align: left;"
+      >
+        Vg1
       </th>
       <td>
         84,8%
@@ -83,8 +95,11 @@ exports[`Column And Row Headers 1`] = `
       </td>
     </tr>
     <tr>
-      <th scope="row">
-        Videregående trinn 2
+      <th
+        scope="row"
+        style="text-align: left;"
+      >
+        Vg2
       </th>
       <td>
         82,5%
@@ -97,8 +112,11 @@ exports[`Column And Row Headers 1`] = `
       </td>
     </tr>
     <tr>
-      <th scope="row">
-        Videregående trinn 3
+      <th
+        scope="row"
+        style="text-align: left;"
+      >
+        Vg3
       </th>
       <td>
         79,9%
@@ -129,7 +147,7 @@ exports[`Fixed Table 1`] = `
           Kommune
         </th>
         <th>
-          Tildeling
+          Tildeling (kr)
         </th>
       </tr>
     </thead>
@@ -138,7 +156,7 @@ exports[`Fixed Table 1`] = `
         <td>
           Bjerkreim kommune
         </td>
-        <td>
+        <td style="font-feature-settings: &quot;tnum&quot;;">
           330 000
         </td>
       </tr>
@@ -146,7 +164,7 @@ exports[`Fixed Table 1`] = `
         <td>
           Færder kommune
         </td>
-        <td>
+        <td style="font-feature-settings: &quot;tnum&quot;;">
           750 000
         </td>
       </tr>
@@ -154,7 +172,7 @@ exports[`Fixed Table 1`] = `
         <td>
           Gjøvik kommune
         </td>
-        <td>
+        <td style="font-feature-settings: &quot;tnum&quot;;">
           150 000
         </td>
       </tr>
@@ -162,7 +180,7 @@ exports[`Fixed Table 1`] = `
         <td>
           Hurdal kommune
         </td>
-        <td>
+        <td style="font-feature-settings: &quot;tnum&quot;;">
           550 000
         </td>
       </tr>
@@ -170,7 +188,7 @@ exports[`Fixed Table 1`] = `
         <td>
           Marker kommune
         </td>
-        <td>
+        <td style="font-feature-settings: &quot;tnum&quot;;">
           900 000
         </td>
       </tr>
@@ -278,19 +296,19 @@ exports[`Multiple Header Rows 1`] = `
         Idrettsfag
       </th>
       <td>
-        0.5
+        0,5%
       </td>
       <td>
-        1.0
+        1,0%
       </td>
       <td>
-        5.7
+        5,7%
       </td>
       <td>
-        46.0
+        46,0%
       </td>
       <td>
-        46.9
+        46,9%
       </td>
     </tr>
     <tr>
@@ -301,19 +319,19 @@ exports[`Multiple Header Rows 1`] = `
         Medier og kommunikasjon
       </th>
       <td>
-        1.2
+        1,2%
       </td>
       <td>
-        1.9
+        1,9%
       </td>
       <td>
-        11.3
+        11,3%
       </td>
       <td>
-        49.4
+        49,4%
       </td>
       <td>
-        36.1
+        36,1%
       </td>
     </tr>
     <tr>
@@ -330,13 +348,13 @@ exports[`Multiple Header Rows 1`] = `
         -
       </td>
       <td>
-        7.0
+        7,0%
       </td>
       <td>
-        41.9
+        41,9%
       </td>
       <td>
-        49.8
+        49,8%
       </td>
     </tr>
     <tr>
@@ -347,19 +365,19 @@ exports[`Multiple Header Rows 1`] = `
         Studiespesialisering
       </th>
       <td>
-        1.2
+        1,2%
       </td>
       <td>
-        1.8
+        1,8%
       </td>
       <td>
-        8.9
+        8,9%
       </td>
       <td>
-        49.8
+        49,8%
       </td>
       <td>
-        38.3
+        38,3%
       </td>
     </tr>
   </tbody>
@@ -658,25 +676,27 @@ exports[`Sticky Header 1`] = `
   data-tinted-column-header="true"
   data-tinted-row-header="true"
 >
+  <caption style="margin-bottom: var(--ds-size-3);">
+    Ansattes utdanning fordelt på eiertype (ordinære), 2021
+  </caption>
   <thead>
     <tr>
+      <td>
+      </td>
       <th>
-        Fylke
+        5 store
       </th>
       <th>
-        Oppholdsareal per barn
+        Andre kjeder
       </th>
       <th>
-        Åpningstid per dag
+        Frittstående
       </th>
       <th>
-        Kostpenger
+        Kommune
       </th>
       <th>
-        Foreldrebetaling under makspris
-      </th>
-      <th>
-        Hatt tilsyn
+        Totalt
       </th>
     </tr>
   </thead>
@@ -686,22 +706,22 @@ exports[`Sticky Header 1`] = `
         scope="row"
         style="text-align: left;"
       >
-        Agder
+        Barnehagelærer
       </th>
       <td>
-        5.9
+        42,9%
       </td>
       <td>
-        9.4
+        42,9%
       </td>
       <td>
-        400.6
+        43,8%
       </td>
       <td>
-        4
+        43,9%
       </td>
       <td>
-        66
+        43,6%
       </td>
     </tr>
     <tr>
@@ -709,22 +729,22 @@ exports[`Sticky Header 1`] = `
         scope="row"
         style="text-align: left;"
       >
-        Akershus
+        Annen pedagogisk utdanning
       </th>
       <td>
-        5.5
+        1,9%
       </td>
       <td>
-        9.7
+        2,8%
       </td>
       <td>
-        419.3
+        2,0%
       </td>
       <td>
-        1
+        1,3%
       </td>
       <td>
-        87
+        1,7%
       </td>
     </tr>
     <tr>
@@ -732,22 +752,22 @@ exports[`Sticky Header 1`] = `
         scope="row"
         style="text-align: left;"
       >
-        Buskerud
+        Annen høyere utdanning
       </th>
       <td>
-        5.7
+        2,2%
       </td>
       <td>
-        9.8
+        2,7%
       </td>
       <td>
-        377.1
+        2,2%
       </td>
       <td>
-        9
+        1,2%
       </td>
       <td>
-        18
+        1,8%
       </td>
     </tr>
     <tr>
@@ -755,22 +775,22 @@ exports[`Sticky Header 1`] = `
         scope="row"
         style="text-align: left;"
       >
-        Finnmark
+        Barne- og ungdomsarbeider
       </th>
       <td>
-        7.7
+        15,0%
       </td>
       <td>
-        9.1
+        16,4%
       </td>
       <td>
-        357.4
+        18,4%
       </td>
       <td>
-        44
+        27,7%
       </td>
       <td>
-        11
+        22,3%
       </td>
     </tr>
     <tr>
@@ -778,22 +798,22 @@ exports[`Sticky Header 1`] = `
         scope="row"
         style="text-align: left;"
       >
-        Innlandet
+        Annet fagarbeider
       </th>
       <td>
-        6.4
+        5,2%
       </td>
       <td>
-        9.7
+        4,6%
       </td>
       <td>
-        380.5
+        5,3%
       </td>
       <td>
-        5
+        5,3%
       </td>
       <td>
-        74
+        5,2%
       </td>
     </tr>
     <tr>
@@ -801,22 +821,22 @@ exports[`Sticky Header 1`] = `
         scope="row"
         style="text-align: left;"
       >
-        Møre og Romsdal
+        Annen bakgrunn
       </th>
       <td>
-        6.4
+        32,8%
       </td>
       <td>
-        9.7
+        30,5%
       </td>
       <td>
-        380.5
+        28,3%
       </td>
       <td>
-        5
+        20,6%
       </td>
       <td>
-        46
+        25,5%
       </td>
     </tr>
   </tbody>
@@ -910,7 +930,7 @@ exports[`With Form Elements 1`] = `
         </div>
       </th>
       <th>
-        #
+        nr.
       </th>
       <th>
         Spørsmål
@@ -939,7 +959,7 @@ exports[`With Form Elements 1`] = `
       <td>
         1.
       </td>
-      <td>
+      <td style="min-width: 200px;">
         <div data-size="sm">
           <div>
             <input
@@ -951,7 +971,7 @@ exports[`With Form Elements 1`] = `
           </div>
         </div>
       </td>
-      <td>
+      <td style="min-width: 200px;">
         <div data-size="sm">
           <div>
             <input
@@ -963,7 +983,7 @@ exports[`With Form Elements 1`] = `
           </div>
         </div>
       </td>
-      <td>
+      <td style="min-width: 200px;">
         <div data-size="sm">
           <div>
             <input

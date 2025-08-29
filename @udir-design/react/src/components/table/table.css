@@ -2,6 +2,10 @@
   --dsc-table-background--zebra: var(--ds-color-neutral-background-tinted);
   --dsc-table-header-background--sorted: var(--ds-color-surface-active);
 
+  td {
+    font-feature-settings: 'tnum' 1;
+  }
+
   &[data-zebra] > thead > tr > :is(th, td) {
     background: var(--ds-color-neutral-background-default);
   }
