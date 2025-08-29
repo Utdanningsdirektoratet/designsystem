@@ -171,6 +171,9 @@ importers:
       '@navikt/aksel-icons':
         specifier: ^7.29.0
         version: 7.29.0(react@19.1.1)
+      '@udir-design/react':
+        specifier: workspace:*
+        version: link:../react
       react:
         specifier: ^19.1.1
         version: 19.1.1

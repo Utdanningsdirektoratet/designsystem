@@ -2,9 +2,7 @@
   "name": "@udir-design/icons",
   "version": "0.0.0-semantically-released",
   "scripts": {
-    "copy-svg": "copyfiles -f icons/*.svg dist/svg/",
-    "build": "tsup src/index.ts --format esm,cjs --dts",
-    "watch": "pnpm build --watch"
+    "build": "tsup src/index.ts --format esm,cjs --dts"
   },
   "repository": {
     "type": "git",
@@ -24,7 +22,8 @@
   ],
   "dependencies": {
     "@navikt/aksel-icons": "^7.29.0",
-    "react": "^19.1.1"
+    "react": "^19.1.1",
+    "@udir-design/react": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.5.0"
