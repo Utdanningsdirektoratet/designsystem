@@ -254,13 +254,7 @@ export const Controlled: StoryFn<TabsProps> = (args) => {
           </List.Item>
         </List.Unordered>
       </Tabs.Panel>
-      <Tabs.Panel
-        value="profile"
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
+      <Tabs.Panel value="profile">
         <div
           style={{
             display: 'flex',
