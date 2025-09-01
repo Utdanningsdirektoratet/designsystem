@@ -13,7 +13,12 @@ import {
   Header,
 } from '@udir-design/react/alpha';
 import { useState } from 'react';
-import { ChevronRightIcon } from '@navikt/aksel-icons';
+import {
+  ChevronDownIcon,
+  ChevronRightIcon,
+  ChevronUpIcon,
+  LeaveIcon,
+} from '@navikt/aksel-icons';
 
 const meta: Meta<typeof Header> = {
   component: Header,
@@ -174,7 +179,7 @@ export const WithMegaMenu: Story = {
                 {column.links.map((link) => (
                   <ListItem key={link.title}>
                     <Link href={link.href} style={{ textDecoration: 'none' }}>
-                      <ChevronRightIcon />
+                      <ChevronRightIcon aria-hidden />
                       <span>{link.title}</span>
                     </Link>
                   </ListItem>
@@ -362,7 +367,7 @@ export const Responsive: Story = {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(12rem, 1fr))',
               maxWidth: '800px',
               margin: '0 auto',
               padding: 'var(--ds-size-10)',
@@ -372,7 +377,10 @@ export const Responsive: Story = {
             }}
           >
             {menuLinks.map((column) => (
-              <div key={column.heading}>
+              <div
+                key={column.heading}
+                data-show={column.heading === 'Nyttige lenker' ? 'lg' : ''}
+              >
                 <Heading
                   level={3}
                   data-size="xs"
@@ -384,7 +392,7 @@ export const Responsive: Story = {
                   {column.links.map((link) => (
                     <ListItem key={link.title}>
                       <Link href={link.href} style={{ textDecoration: 'none' }}>
-                        <ChevronRightIcon />
+                        <ChevronRightIcon aria-hidden />
                         <span>{link.title}</span>
                       </Link>
                     </ListItem>
@@ -401,7 +409,7 @@ export const Responsive: Story = {
 
 const educationLinks = [
   {
-    heading: 'Utdanningsløpet',
+    heading: 'Velg nivå',
     links: [
       {
         title: 'Barnehage',
@@ -417,11 +425,45 @@ const educationLinks = [
       },
     ],
   },
+  {
+    heading: 'Spesielt for',
+    links: [
+      {
+        title: 'Private barnehager',
+        href: 'https://www.udir.no/utdanningslopet/private-barnehager/',
+      },
+      {
+        title: 'Private skoler',
+        href: 'https://www.udir.no/utdanningslopet/spesielt-for-private-skoler/',
+      },
+      {
+        title: 'Voksenopplæring',
+        href: 'https://www.udir.no/laring-og-trivsel/voksenopplaring/',
+      },
+    ],
+  },
+  {
+    heading: 'Annen opplæring',
+    links: [
+      {
+        title: 'SFO',
+        href: 'https://www.udir.no/utdanningslopet/sfo/',
+      },
+      {
+        title: 'Kulturskolen',
+        href: 'https://www.udir.no/utdanningslopet/kulturskolen/',
+      },
+      {
+        title: 'Folkehøgskoler',
+        href: 'https://www.udir.no/om-udir/tilskudd-og-prosjektmidler/tilskudd-for-folkehogskoler/',
+      },
+    ],
+  },
 ];
 
 const learningLinks = [
   {
-    heading: 'Læring og trivsel',
+    heading: 'Barnehage',
     links: [
       {
         title: 'Barnehagemiljø',
@@ -437,128 +479,185 @@ const learningLinks = [
       },
     ],
   },
+  {
+    heading: 'Skole og fagopplæring',
+    links: [
+      {
+        title: 'Læreplanverket',
+        href: 'https://www.udir.no/laring-og-trivsel/lareplanverket/',
+      },
+      {
+        title: 'Tilpasset opplæring',
+        href: 'https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/tilpasset-opplaring/',
+      },
+      {
+        title: 'Vurderingspraksis',
+        href: 'https://www.udir.no/laring-og-trivsel/vurdering/',
+      },
+    ],
+  },
+  {
+    heading: 'Temasider',
+    links: [
+      {
+        title: 'Overganger',
+        href: 'https://www.udir.no/laring-og-trivsel/overganger-barn-elever-tilrettelegging/',
+      },
+      {
+        title: 'Spesialpedagogikk',
+        href: 'https://www.udir.no/laring-og-trivsel/spesialpedagogikk/',
+      },
+      {
+        title: 'Samisk',
+        href: 'https://www.udir.no/laring-og-trivsel/samisk/',
+      },
+    ],
+  },
 ];
 
 export const WithMegaMenus: Story = {
-  render: () => (
-    <Header applicationName="Tjenestenavn">
-      <Button popovertarget="header-education-menu" variant="tertiary">
-        Utdanningsløpet
-      </Button>
-      <Header.Menu id="header-education-menu">
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
-            maxWidth: '800px',
-            margin: '0 auto',
-            padding: 'var(--ds-size-10)',
-            justifyItems: 'center',
-            gap: 'var(--ds-size-4)',
-            rowGap: 'var(--ds-size-10)',
+  render() {
+    const [isEducationMenuOpen, setEducationMenuOpen] = useState(false);
+    const [isLearningMenuOpen, setLearningMenuOpen] = useState(false);
+    return (
+      <Header applicationName="Tjenestenavn">
+        <Button
+          popovertarget="header-education-menu"
+          variant="tertiary"
+          onClick={() => {
+            setEducationMenuOpen(!isEducationMenuOpen);
           }}
         >
-          {educationLinks.map((column) => (
-            <div key={column.heading}>
-              <Heading
-                level={3}
-                data-size="xs"
-                style={{ marginBottom: 'var(--ds-size-3)' }}
-              >
-                {column.heading}
-              </Heading>
-              <ListUnordered>
-                {column.links.map((link) => (
-                  <ListItem key={link.title}>
-                    <Link href={link.href} style={{ textDecoration: 'none' }}>
-                      <ChevronRightIcon />
-                      <span>{link.title}</span>
-                    </Link>
-                  </ListItem>
-                ))}
-              </ListUnordered>
-            </div>
-          ))}
-        </div>
-      </Header.Menu>
-      <Button popovertarget="header-learning-menu" variant="tertiary">
-        Læring og trivsel
-      </Button>
-      <Header.Menu id="header-learning-menu">
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
-            maxWidth: '800px',
-            margin: '0 auto',
-            padding: 'var(--ds-size-10)',
-            justifyItems: 'center',
-            gap: 'var(--ds-size-4)',
-            rowGap: 'var(--ds-size-10)',
+          Utdanningsløpet
+          {isEducationMenuOpen ? (
+            <ChevronUpIcon aria-hidden />
+          ) : (
+            <ChevronDownIcon aria-hidden />
+          )}
+        </Button>
+        <Header.Menu
+          id="header-education-menu"
+          open={isEducationMenuOpen}
+          onClose={() => setEducationMenuOpen(false)}
+        >
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
+              maxWidth: '800px',
+              margin: '0 auto',
+              padding: 'var(--ds-size-10)',
+              justifyItems: 'center',
+              gap: 'var(--ds-size-4)',
+              rowGap: 'var(--ds-size-10)',
+            }}
+          >
+            {educationLinks.map((column) => (
+              <div key={column.heading}>
+                <Heading
+                  level={3}
+                  data-size="xs"
+                  style={{ marginBottom: 'var(--ds-size-3)' }}
+                >
+                  {column.heading}
+                </Heading>
+                <ListUnordered>
+                  {column.links.map((link) => (
+                    <ListItem key={link.title}>
+                      <Link href={link.href} style={{ textDecoration: 'none' }}>
+                        <ChevronRightIcon aria-hidden />
+                        <span>{link.title}</span>
+                      </Link>
+                    </ListItem>
+                  ))}
+                </ListUnordered>
+              </div>
+            ))}
+          </div>
+        </Header.Menu>
+        <Button
+          popovertarget="header-learning-menu"
+          variant="tertiary"
+          onClick={() => {
+            setLearningMenuOpen(!isLearningMenuOpen);
           }}
         >
-          {learningLinks.map((column) => (
-            <div key={column.heading}>
-              <Heading
-                level={3}
-                data-size="xs"
-                style={{ marginBottom: 'var(--ds-size-3)' }}
-              >
-                {column.heading}
-              </Heading>
-              <ListUnordered>
-                {column.links.map((link) => (
-                  <ListItem key={link.title}>
-                    <Link href={link.href} style={{ textDecoration: 'none' }}>
-                      <ChevronRightIcon />
-                      <span>{link.title}</span>
-                    </Link>
-                  </ListItem>
-                ))}
-              </ListUnordered>
-            </div>
-          ))}
-        </div>
-      </Header.Menu>
-      <Header.MenuButton variant="secondary" />
-      <Header.Menu>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
-            maxWidth: '800px',
-            margin: '0 auto',
-            padding: 'var(--ds-size-10)',
-            justifyItems: 'center',
-            gap: 'var(--ds-size-4)',
-            rowGap: 'var(--ds-size-10)',
-          }}
+          Læring
+          {isLearningMenuOpen ? (
+            <ChevronUpIcon aria-hidden />
+          ) : (
+            <ChevronDownIcon aria-hidden />
+          )}
+        </Button>
+        <Header.Menu
+          id="header-learning-menu"
+          open={isLearningMenuOpen}
+          onClose={() => setLearningMenuOpen(false)}
         >
-          {menuLinks.map((column) => (
-            <div key={column.heading}>
-              <Heading
-                level={3}
-                data-size="xs"
-                style={{ marginBottom: 'var(--ds-size-3)' }}
-              >
-                {column.heading}
-              </Heading>
-              <ListUnordered>
-                {column.links.map((link) => (
-                  <ListItem key={link.title}>
-                    <Link href={link.href} style={{ textDecoration: 'none' }}>
-                      <ChevronRightIcon />
-                      <span>{link.title}</span>
-                    </Link>
-                  </ListItem>
-                ))}
-              </ListUnordered>
-            </div>
-          ))}
-        </div>
-      </Header.Menu>
-    </Header>
-  ),
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
+              maxWidth: '800px',
+              margin: '0 auto',
+              padding: 'var(--ds-size-10)',
+              justifyItems: 'center',
+              gap: 'var(--ds-size-4)',
+              rowGap: 'var(--ds-size-10)',
+            }}
+          >
+            {learningLinks.map((column) => (
+              <div key={column.heading}>
+                <Heading
+                  level={3}
+                  data-size="xs"
+                  style={{ marginBottom: 'var(--ds-size-3)' }}
+                >
+                  {column.heading}
+                </Heading>
+                <ListUnordered>
+                  {column.links.map((link) => (
+                    <ListItem key={link.title}>
+                      <Link href={link.href} style={{ textDecoration: 'none' }}>
+                        <ChevronRightIcon aria-hidden />
+                        <span>{link.title}</span>
+                      </Link>
+                    </ListItem>
+                  ))}
+                </ListUnordered>
+              </div>
+            ))}
+          </div>
+        </Header.Menu>
+        <Header.MenuButton variant="secondary" />
+        <Dropdown
+          id="uds-header-menu"
+          placement="bottom-end"
+          autoPlacement={false}
+        >
+          <Dropdown.List>
+            <Dropdown.Item>
+              <Dropdown.Button>
+                <Avatar aria-label="Kai Nordmann" />
+                Kai Nordmann
+              </Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item style={{ margin: 'var(--ds-size-2) 0' }}>
+              <Dropdown.Button>
+                Varsler <Badge count={8} />
+              </Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Button variant="tertiary">
+                <LeaveIcon aria-hidden />
+                Logg ut
+              </Button>
+            </Dropdown.Item>
+          </Dropdown.List>
+        </Dropdown>
+      </Header>
+    );
+  },
 };
 
 export const WithLinksAndMenu: Story = {
@@ -599,7 +698,7 @@ export const WithLinksAndMenu: Story = {
                   {column.links.map((link) => (
                     <ListItem key={link.title}>
                       <Link href={link.href} style={{ textDecoration: 'none' }}>
-                        <ChevronRightIcon />
+                        <ChevronRightIcon aria-hidden />
                         <span>{link.title}</span>
                       </Link>
                     </ListItem>
@@ -719,7 +818,7 @@ export const UdirNo: Story = {
                   {column.links.map((link) => (
                     <ListItem key={link.title}>
                       <Link href={link.href} style={{ textDecoration: 'none' }}>
-                        <ChevronRightIcon />
+                        <ChevronRightIcon aria-hidden />
                         <span>{link.title}</span>
                       </Link>
                     </ListItem>
