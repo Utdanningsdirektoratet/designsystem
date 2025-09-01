@@ -19,7 +19,12 @@ exports[`Checked 1`] = `
 
 exports[`Controlled 1`] = `
 <fieldset>
-  <div data-position="end">
+  <legend data-weight="medium">
+    <h2>
+      Innstillinger
+    </h2>
+  </legend>
+  <div>
     <input
       role="switch"
       id="components-switch--controlled"

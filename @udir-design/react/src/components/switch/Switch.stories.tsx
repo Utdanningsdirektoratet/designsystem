@@ -156,12 +156,14 @@ export const Controlled: StoryFn<SwitchProps> = (args, context) => {
   };
   return (
     <Fieldset>
+      <Fieldset.Legend>
+        <Heading level={2}>Innstillinger</Heading>
+      </Fieldset.Legend>
       <Switch
         {...args}
         id={context.id}
         checked={anyChecked}
         onChange={handleSwitchChange}
-        position="end"
       />
       <Fieldset.Description>
         Velg hvilke typer varsler du ønsker å motta.
