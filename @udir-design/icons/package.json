@@ -1,0 +1,36 @@
+{
+  "name": "@udir-design/icons",
+  "version": "0.0.0-semantically-released",
+  "scripts": {
+    "build": "tsup src/index.ts src/metadata.ts --format esm,cjs --dts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github:Utdanningsdirektoratet/designsystem",
+    "directory": "@udir-design/icons"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "default": "./dist/index.js"
+    },
+    "./metadata": {
+      "default": "./dist/metadata.js"
+    }
+  },
+  "files": [
+    "./dist"
+  ],
+  "dependencies": {
+    "@navikt/aksel-icons": "^7.32.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0"
+  }
+}
