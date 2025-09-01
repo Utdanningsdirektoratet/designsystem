@@ -295,8 +295,8 @@ exports[`Responsive 1`] = `
           </li>
         </ul>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); max-width: 800px; margin: 0px auto; padding: var(--ds-size-10); justify-items: center; row-gap: var(--ds-size-10); column-gap: ;">
-        <div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); max-width: 800px; margin: 0px auto; padding: var(--ds-size-10); justify-items: center; row-gap: var(--ds-size-10); column-gap: ;">
+        <div data-show>
           <h3
             data-size="xs"
             style="margin-bottom: var(--ds-size-3);"
@@ -317,6 +317,7 @@ exports[`Responsive 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -344,6 +345,7 @@ exports[`Responsive 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -371,6 +373,7 @@ exports[`Responsive 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -387,7 +390,7 @@ exports[`Responsive 1`] = `
             </li>
           </ul>
         </div>
-        <div>
+        <div data-show>
           <h3
             data-size="xs"
             style="margin-bottom: var(--ds-size-3);"
@@ -408,6 +411,7 @@ exports[`Responsive 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -435,6 +439,7 @@ exports[`Responsive 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -462,6 +467,7 @@ exports[`Responsive 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -478,7 +484,7 @@ exports[`Responsive 1`] = `
             </li>
           </ul>
         </div>
-        <div>
+        <div data-show="lg">
           <h3
             data-size="xs"
             style="margin-bottom: var(--ds-size-3);"
@@ -499,6 +505,7 @@ exports[`Responsive 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -526,6 +533,7 @@ exports[`Responsive 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -553,6 +561,7 @@ exports[`Responsive 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -666,6 +675,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -693,6 +703,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -720,6 +731,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -747,6 +759,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -774,6 +787,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -801,6 +815,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -828,6 +843,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -855,6 +871,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -892,6 +909,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -919,6 +937,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -946,6 +965,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -973,6 +993,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1000,6 +1021,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1027,6 +1049,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1064,6 +1087,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1091,6 +1115,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1118,6 +1143,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1145,6 +1171,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1172,6 +1199,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1209,6 +1237,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1236,6 +1265,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1263,6 +1293,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1290,6 +1321,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1317,6 +1349,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1344,6 +1377,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1371,6 +1405,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1408,6 +1443,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1435,6 +1471,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1462,6 +1499,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1489,6 +1527,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1516,6 +1555,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1543,6 +1583,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1570,6 +1611,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1597,6 +1639,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1634,6 +1677,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1661,6 +1705,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1688,6 +1733,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1715,6 +1761,7 @@ exports[`Udir No 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1851,6 +1898,7 @@ exports[`With Links And Menu 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1878,6 +1926,7 @@ exports[`With Links And Menu 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1905,6 +1954,7 @@ exports[`With Links And Menu 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1942,6 +1992,7 @@ exports[`With Links And Menu 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1969,6 +2020,7 @@ exports[`With Links And Menu 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -1996,6 +2048,7 @@ exports[`With Links And Menu 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -2033,6 +2086,7 @@ exports[`With Links And Menu 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -2060,6 +2114,7 @@ exports[`With Links And Menu 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -2087,6 +2142,7 @@ exports[`With Links And Menu 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -2189,6 +2245,7 @@ exports[`With Mega Menu 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -2216,6 +2273,7 @@ exports[`With Mega Menu 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -2243,6 +2301,7 @@ exports[`With Mega Menu 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -2280,6 +2339,7 @@ exports[`With Mega Menu 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -2307,6 +2367,7 @@ exports[`With Mega Menu 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -2334,6 +2395,7 @@ exports[`With Mega Menu 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -2371,6 +2433,7 @@ exports[`With Mega Menu 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -2398,6 +2461,7 @@ exports[`With Mega Menu 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -2425,6 +2489,7 @@ exports[`With Mega Menu 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -2465,6 +2530,24 @@ exports[`With Mega Menus 1`] = `
       popovertarget="header-education-menu"
     >
       Utdanningsløpet
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
     </button>
     <div
       id="header-education-menu"
@@ -2477,7 +2560,7 @@ exports[`With Mega Menus 1`] = `
             data-size="xs"
             style="margin-bottom: var(--ds-size-3);"
           >
-            Utdanningsløpet
+            Velg nivå
           </h3>
           <ul>
             <li>
@@ -2493,6 +2576,7 @@ exports[`With Mega Menus 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -2520,6 +2604,7 @@ exports[`With Mega Menus 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -2547,6 +2632,7 @@ exports[`With Mega Menus 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -2563,6 +2649,194 @@ exports[`With Mega Menus 1`] = `
             </li>
           </ul>
         </div>
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Spesielt for
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.udir.no/utdanningslopet/private-barnehager/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Private barnehager
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/utdanningslopet/spesielt-for-private-skoler/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Private skoler
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/laring-og-trivsel/voksenopplaring/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Voksenopplæring
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Annen opplæring
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.udir.no/utdanningslopet/sfo/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  SFO
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/utdanningslopet/kulturskolen/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Kulturskolen
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/om-udir/tilskudd-og-prosjektmidler/tilskudd-for-folkehogskoler/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Folkehøgskoler
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <button
@@ -2570,7 +2844,25 @@ exports[`With Mega Menus 1`] = `
       type="button"
       popovertarget="header-learning-menu"
     >
-      Læring og trivsel
+      Læring
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
     </button>
     <div
       id="header-learning-menu"
@@ -2583,7 +2875,7 @@ exports[`With Mega Menus 1`] = `
             data-size="xs"
             style="margin-bottom: var(--ds-size-3);"
           >
-            Læring og trivsel
+            Barnehage
           </h3>
           <ul>
             <li>
@@ -2599,6 +2891,7 @@ exports[`With Mega Menus 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -2626,6 +2919,7 @@ exports[`With Mega Menus 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -2653,6 +2947,7 @@ exports[`With Mega Menus 1`] = `
                   viewbox="0 0 24 24"
                   focusable="false"
                   role="img"
+                  aria-hidden="true"
                 >
                   <path
                     fill="currentColor"
@@ -2664,6 +2959,194 @@ exports[`With Mega Menus 1`] = `
                 </svg>
                 <span>
                   Lek
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Skole og fagopplæring
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.udir.no/laring-og-trivsel/lareplanverket/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Læreplanverket
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/tilpasset-opplaring/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Tilpasset opplæring
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/laring-og-trivsel/vurdering/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Vurderingspraksis
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Temasider
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.udir.no/laring-og-trivsel/overganger-barn-elever-tilrettelegging/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Overganger
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/laring-og-trivsel/spesialpedagogikk/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Spesialpedagogikk
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/laring-og-trivsel/samisk/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Samisk
                 </span>
               </a>
             </li>
@@ -2714,284 +3197,64 @@ exports[`With Mega Menus 1`] = `
     </button>
     <div
       id="uds-header-menu"
-      popover="auto"
+      popover="manual"
       data-variant="default"
     >
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); max-width: 800px; margin: 0px auto; padding: var(--ds-size-10); justify-items: center; row-gap: var(--ds-size-10); column-gap: ;">
-        <div>
-          <h3
-            data-size="xs"
-            style="margin-bottom: var(--ds-size-3);"
+      <ul>
+        <li>
+          <button
+            data-variant="tertiary"
+            type="button"
           >
-            Designprofil
-          </h3>
-          <ul>
-            <li>
-              <a
-                href="https://www.udir.no/om-udir/designprofil/identitet/"
-                style="text-decoration: none;"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
-                >
-                  <path
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                <span>
-                  Identitet
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.udir.no/om-udir/designprofil/farger/"
-                style="text-decoration: none;"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
-                >
-                  <path
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                <span>
-                  Farger
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.udir.no/om-udir/designprofil/typografi/"
-                style="text-decoration: none;"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
-                >
-                  <path
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                <span>
-                  Typografi
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3
-            data-size="xs"
-            style="margin-bottom: var(--ds-size-3);"
+            <span
+              data-variant="circle"
+              role="img"
+              aria-label="Kai Nordmann"
+            >
+            </span>
+            Kai Nordmann
+          </button>
+        </li>
+        <li style="margin: var(--ds-size-2) 0;">
+          <button
+            data-variant="tertiary"
+            type="button"
           >
-            Illustrasjoner
-          </h3>
-          <ul>
-            <li>
-              <a
-                href="https://www.figma.com/design/QeYBL9fzDCk87WNWcDSQi7/01-Illustrasjoner---barnehage?node-id=457-13863"
-                style="text-decoration: none;"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
-                >
-                  <path
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                <span>
-                  Illustrasjoner
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.figma.com/design/SSdGSjSYPDSyX2IfHLfmEL/Symbolbibliotek?node-id=0-1&amp;p=f&amp;m=dev"
-                style="text-decoration: none;"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
-                >
-                  <path
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                <span>
-                  Symboler
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.figma.com/design/W4tl2t6G22muQfVF8jGeQX/Ikonbibliotek?node-id=9-2879&amp;p=f&amp;m=dev"
-                style="text-decoration: none;"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
-                >
-                  <path
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                <span>
-                  Ikoner
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3
-            data-size="xs"
-            style="margin-bottom: var(--ds-size-3);"
+            Varsler
+            <span
+              data-count="8"
+              data-variant="base"
+            >
+            </span>
+          </button>
+        </li>
+        <li>
+          <button
+            data-variant="tertiary"
+            type="button"
           >
-            Nyttige lenker
-          </h3>
-          <ul>
-            <li>
-              <a
-                href="https://design.udir.no/"
-                style="text-decoration: none;"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M5 3.25A1.75 1.75 0 0 0 3.25 5v14c0 .966.784 1.75 1.75 1.75h3.5a.75.75 0 0 0 0-1.5H5a.25.25 0 0 1-.25-.25V5A.25.25 0 0 1 5 4.75h3.5a.75.75 0 0 0 0-1.5zm9.97 3.72a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H8.5a.75.75 0 0 1 0-1.5h9.69l-3.22-3.22a.75.75 0 0 1 0-1.06"
+                clip-rule="evenodd"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
-                >
-                  <path
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                <span>
-                  Komponenter
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209"
-                style="text-decoration: none;"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
-                >
-                  <path
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                <span>
-                  Figma
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/Utdanningsdirektoratet/designsystem"
-                style="text-decoration: none;"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
-                >
-                  <path
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                <span>
-                  Github
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+              </path>
+            </svg>
+            Logg ut
+          </button>
+        </li>
+      </ul>
     </div>
   </div>
 </header>
