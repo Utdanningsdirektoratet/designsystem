@@ -149,7 +149,7 @@ const preview: Preview = {
   parameters: {
     options: {
       storySort: {
-        order: ['Introduksjon', 'demo', 'components'],
+        order: ['Introduksjon', 'design-tokens', 'demo', 'components'],
       },
     },
 
