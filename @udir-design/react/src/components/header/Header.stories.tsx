@@ -11,6 +11,7 @@ import {
   ListItem,
   Heading,
   Header,
+  Paragraph,
 } from '@udir-design/react/alpha';
 import { useState } from 'react';
 import {
@@ -407,6 +408,121 @@ export const Responsive: Story = {
   },
 };
 
+export const AutoHideSticky: Story = {
+  parameters: {
+    customStyles: {
+      height: '1200px',
+      overflow: 'visible',
+    },
+  },
+  render() {
+    return (
+      <div>
+        <Header applicationName="Tjenestenavn">
+          <Link href="https://design.udir.no/">Komponenter</Link>
+          <Link href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209">
+            Figma
+          </Link>
+          <Link href="https://github.com/Utdanningsdirektoratet/designsystem">
+            Github
+          </Link>
+          <Header.MenuButton variant="secondary" />
+          <Header.Menu>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
+                maxWidth: '800px',
+                margin: '0 auto',
+                padding: 'var(--ds-size-10)',
+                justifyItems: 'center',
+                gap: 'var(--ds-size-4)',
+                rowGap: 'var(--ds-size-10)',
+              }}
+            >
+              {menuLinks.map((column) => (
+                <div key={column.heading}>
+                  <Heading
+                    level={3}
+                    data-size="xs"
+                    style={{ marginBottom: 'var(--ds-size-3)' }}
+                  >
+                    {column.heading}
+                  </Heading>
+                  <ListUnordered>
+                    {column.links.map((link) => (
+                      <ListItem key={link.title}>
+                        <Link
+                          href={link.href}
+                          style={{ textDecoration: 'none' }}
+                        >
+                          <ChevronRightIcon aria-hidden />
+                          <span>{link.title}</span>
+                        </Link>
+                      </ListItem>
+                    ))}
+                  </ListUnordered>
+                </div>
+              ))}
+            </div>
+          </Header.Menu>
+        </Header>
+        <div
+          style={{
+            padding: 'var(--ds-size-18)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'var(--ds-size-4)',
+            maxWidth: '800px',
+            margin: '0 auto',
+          }}
+        >
+          <Heading level={1} data-size="lg">
+            Demo av sticky scroll header
+          </Heading>
+          <Paragraph style={{ marginTop: 'var(--ds-size-3)' }}>
+            I denne demoen kan du teste hvordan headeren oppfører seg når du
+            scroller opp og ned. Den vil automatisk skjule seg når du scroller
+            nedover og vise seg igjen når du scroller oppover.
+          </Paragraph>
+          <Heading level={2} style={{ marginTop: 'var(--ds-size-5)' }}>
+            Container må ha <code>overflow='visible'</code>
+          </Heading>
+          <Paragraph>
+            Headeren er automatisk sticky med funksjonalitet for å skjule seg
+            ved scrolling. Dette gir en bedre brukeropplevelse ved at viktig
+            innhold alltid er tilgjengelig, samtidig som det gir mer plass til
+            innholdet under headeren. For at dette skal fungere må containeren
+            til Header ha <code>overflow='visible'</code>.
+          </Paragraph>
+
+          <Heading level={2} style={{ marginTop: 'var(--ds-size-5)' }}>
+            Hvordan fungerer autoskjuling?
+          </Heading>
+          <Paragraph>
+            Dette fungerer ved at headeren har en data-attributt som heter{' '}
+            <code>data-scroll-direction</code>. Den blir satt til{' '}
+            <code>"up"</code> når brukeren scroller oppover, og{' '}
+            <code>"down"</code> når brukeren scroller nedover. Det vil si at du
+            må selv må gi headeren din data-attributtet dersom du kun bruker
+            css-biblioteket.
+          </Paragraph>
+          <Divider style={{ marginTop: 'var(--ds-size-10)' }} />
+          <Paragraph
+            style={{
+              marginTop: 'var(--ds-size-22)',
+              marginBottom: 'var(--ds-size-22)',
+            }}
+          >
+            (Annet innhold)
+          </Paragraph>
+          <Divider />
+        </div>
+      </div>
+    );
+  },
+};
+
 const educationLinks = [
   {
     heading: 'Velg nivå',
@@ -655,59 +771,6 @@ export const WithMegaMenus: Story = {
             </Dropdown.Item>
           </Dropdown.List>
         </Dropdown>
-      </Header>
-    );
-  },
-};
-
-export const WithLinksAndMenu: Story = {
-  render() {
-    return (
-      <Header applicationName="Tjenestenavn">
-        <Link href="https://design.udir.no/">Komponenter</Link>
-        <Link href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209">
-          Figma
-        </Link>
-        <Link href="https://github.com/Utdanningsdirektoratet/designsystem">
-          Github
-        </Link>
-        <Header.MenuButton variant="secondary" />
-        <Header.Menu>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
-              maxWidth: '800px',
-              margin: '0 auto',
-              padding: 'var(--ds-size-10)',
-              justifyItems: 'center',
-              gap: 'var(--ds-size-4)',
-              rowGap: 'var(--ds-size-10)',
-            }}
-          >
-            {menuLinks.map((column) => (
-              <div key={column.heading}>
-                <Heading
-                  level={3}
-                  data-size="xs"
-                  style={{ marginBottom: 'var(--ds-size-3)' }}
-                >
-                  {column.heading}
-                </Heading>
-                <ListUnordered>
-                  {column.links.map((link) => (
-                    <ListItem key={link.title}>
-                      <Link href={link.href} style={{ textDecoration: 'none' }}>
-                        <ChevronRightIcon aria-hidden />
-                        <span>{link.title}</span>
-                      </Link>
-                    </ListItem>
-                  ))}
-                </ListUnordered>
-              </div>
-            ))}
-          </div>
-        </Header.Menu>
       </Header>
     );
   },
