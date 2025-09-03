@@ -23,7 +23,20 @@ export default [
   },
   {
     files: ['**/*.ts', '**/*.tsx'],
-    rules: {},
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['@udir-design/react', '@udir-design/react/*'],
+              message:
+                'Do not import from @udir-design/react module, use relative paths instead.',
+            },
+          ],
+        },
+      ],
+    },
     languageOptions: {
       parserOptions: {
         project: [
@@ -41,6 +54,7 @@ export default [
     // Storybook & docs-specific overrides
     files: ['**/*.stories.{ts,tsx}', '**/{.storybook,demo,docs}/**/*.{ts,tsx}'],
     rules: {
+      'no-restricted-imports': 'off',
       '@nx/enforce-module-boundaries': [
         'error',
         {
