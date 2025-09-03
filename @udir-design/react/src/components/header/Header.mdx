@@ -20,7 +20,10 @@ Det er mulig å legge til alle typer komponenter som er i designsystemet. I till
 
 ## Slik bruker du Header
 
-<Primary />
+<Canvas
+  story={{ inline: false, height: 'fit-content' }}
+  of={HeaderStories.Preview}
+/>
 <Controls />
 
 ```tsx
@@ -45,13 +48,19 @@ Subkomponenter:
 
 Ønsker du å legge til lenker i headeren, bruker du [`Link`](/docs/components-link--docs) som `children`. På samme måte kan du bruke alle andre komponenter fra designsystemet.
 
-<Canvas of={HeaderStories.WithLinks} />
+<Canvas
+  story={{ inline: false, height: 'fit-content' }}
+  of={HeaderStories.WithLinks}
+/>
 
 ### Brukerprofil
 
 Subkomponenten `Header.UserButton` viser brukerinformasjon og kan knyttes til en meny med brukerrelaterte handlinger. Den har props for brukernavn, rolle og avatar og finnes i fargene `neutral` og `accent`. I eksempelet brukes [`Dropdown`](/docs/components-dropdown--docs) som brukermeny.
 
-<Canvas of={HeaderStories.WithUserButton} />
+<Canvas
+  story={{ inline: false, height: '450px' }}
+  of={HeaderStories.WithUserButton}
+/>
 
 ### Megameny
 
@@ -68,13 +77,19 @@ Subkomponenten `Header.UserButton` viser brukerinformasjon og kan knyttes til en
 
 Ønsker du en enklere meny, kan du bruke `Header.MenuButton` sammen med en [`Dropdown`](/docs/components-dropdown--docs).
 
-<Canvas of={HeaderStories.WithSimpleMenu} />
+<Canvas
+  story={{ inline: false, height: '450px' }}
+  of={HeaderStories.WithSimpleMenu}
+/>
 
 ### Søk
 
 Dersom søke-funksjonalitet er viktig i tjenesten din kan det være hensiktsmessig å inkludere et søkefelt i `Header`. Du kan bruke [`Search`](/docs/components-search--docs) direkte, eller subkomponenten `Header.Search` som fremstår som en knapp som åpner søkefeltet.
 
-<Canvas of={HeaderStories.WithSearch} />
+<Canvas
+  story={{ inline: false, height: 'fit-content' }}
+  of={HeaderStories.WithSearch}
+/>
 
 ### Responsivt innhold
 
@@ -97,6 +112,17 @@ I eksempelet under ønsker vi å flytte `Header.UserButton` fra `Header` til men
   of={HeaderStories.Responsive}
 />
 
+### Autoskjuling av header på scroll
+
+`Header` er `sticky` med funksjonalitet for automatisk skjuling ved scrolling. Det vil si at når brukeren scroller nedover på siden, vil headeren skjule seg for å gi mer plass til innholdet. Når brukeren scroller opp igjen, vil headeren vises på nytt. Slik har brukeren alltid tilgang til viktig funksjonalitet, uavhengig av hvor langt ned på siden de har scrollet.
+
+Foreldreelementet får automatisk `overflow: visible`. Sørg for at dette ikke blir overskrevet.
+
+<Canvas
+  story={{ inline: false, height: '700px' }}
+  of={HeaderStories.AutoHideSticky}
+/>
+
 ### Sammensatte eksempler
 
 #### Flere megamenyer
@@ -106,13 +132,6 @@ Det er mulig å ha flere megamenyer i `Header`. Hensikten med flere menyer er å
 <Canvas
   story={{ inline: false, height: '400px' }}
   of={HeaderStories.WithMegaMenus}
-/>
-
-#### Meny og lenker
-
-<Canvas
-  story={{ inline: false, height: '400px' }}
-  of={HeaderStories.WithLinksAndMenu}
 />
 
 #### Udir.no
