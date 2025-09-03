@@ -1,4 +1,5 @@
 import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { OriginText } from '../Origin';
 import * as BadgeStories from './Badge.stories';
 
 <Meta of={BadgeStories} />
@@ -84,3 +85,9 @@ Denne komponenten er ikkje meint for tekst. Om du treng å vise ord eller korte 
 
 [Badge gir ingen informasjon til skjermlesarar](https://github.com/digdir/designsystemet/issues/3560).
 Sørg derfor for at elementet som `Badge` er plassert over, inneheld den same informasjonen ved å bruke `aria-label`.
+
+<OriginText
+  component="Badge"
+  digdir
+  details="Vi har begrenset fargevalg til semantiske- og Udirs hovedfarger."
+/>

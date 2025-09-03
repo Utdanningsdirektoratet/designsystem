@@ -5,7 +5,9 @@ import {
   Controls,
   Primary,
 } from '@storybook/addon-docs/blocks';
+import { Divider } from '../beta';
 import * as AlertStories from './Alert.stories';
+import { OriginText } from '../Origin';
 
 <Meta of={AlertStories} />
 
@@ -148,3 +150,5 @@ Ikke definer en _live region_ direkte på `Alert`. For statiske varsler har det 
 Definer en _live region_, f.eks. med `role="alert"`, for varsler som kan dukke opp dynamisk underveis som følge av brukerens handlinger eller andre faktorer. Dette vil også fungere på samme måte med `role="status"`.
 
 <Canvas of={AlertStories.CorrectLiveRegion} />
+
+<OriginText component="Alert" digdir />
