@@ -34,6 +34,7 @@
   "scripts": {
     "build": "vite build",
     "inject": "pnpm i",
+    "lint:cycles": "pnpm madge --circular ./src/alpha.ts",
     "test": "vitest --project unit",
     "typecheck": "tsc --build",
     "dev": "storybook dev --port 6006",
