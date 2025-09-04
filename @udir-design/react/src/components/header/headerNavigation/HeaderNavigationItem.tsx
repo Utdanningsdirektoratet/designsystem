@@ -1,5 +1,4 @@
 import { Link, LinkProps } from '../../link/Link';
-import { forwardRef } from 'react';
 import { normalizePath } from '../../../utilities/helpers/normalizePath';
 
 export type HeaderNavigationItemProps = LinkProps & {
@@ -9,10 +8,7 @@ export type HeaderNavigationItemProps = LinkProps & {
   active?: boolean;
 };
 
-export const HeaderNavigationItem = forwardRef<
-  HTMLLIElement,
-  HeaderNavigationItemProps
->(function HeaderNavigationItem({
+export const HeaderNavigationItem = function HeaderNavigationItem({
   active,
   href,
   children,
@@ -39,4 +35,4 @@ export const HeaderNavigationItem = forwardRef<
       </Link>
     </li>
   );
-});
+};
