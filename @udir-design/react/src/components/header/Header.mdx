@@ -1,13 +1,15 @@
 import { Meta, Controls, Primary, Canvas } from '@storybook/addon-docs/blocks';
 
 import * as HeaderStories from './Header.stories';
+import { Table } from '@udir-design/react/beta';
+import { Unstyled } from '@storybook/addon-docs/blocks';
 
 <Meta of={HeaderStories} />
 
 # Header
 
-`Header` er toppfelt til alle Udirs tjenester. Den består av logo og tjenestenavn, med mulighet for å legge det du trenger å ha lett tilgjengelig for brukeren.
-Det er mulig å legge til alle typer komponenter som er i designsystemet. I tillegg har komponenten flere subkomponenter som kun brukes i `Header`. Se eksempler og retningslinjer for føringer og inspirasjon.
+`Header` er toppfelt til alle Udirs tjenester. Den består av logosymbol og tjenestenavn, med mulighet for å legge til det brukeren trenger å ha lett tilgjengelig.
+Du bygger opp `Header` ved hjelp av subkomponenter og andre komponenter fra designsystemet. Under ser du eksempler på måter å sette sammen en header, som skal dekke de fleste tjenesters behov. Vi anbefaler at du tar utgangspunkt i disse eksemplene.
 
 **Passer til å**
 
@@ -16,14 +18,11 @@ Det er mulig å legge til alle typer komponenter som er i designsystemet. I till
 
 **Passer ikke til å**
 
-- samle mye innhold/handlinger
+- samle innhold som varierer fra side til side i tjenesten
 
 ## Slik bruker du Header
 
-<Canvas
-  story={{ inline: false, height: 'fit-content' }}
-  of={HeaderStories.Preview}
-/>
+<Primary />
 <Controls />
 
 ```tsx
@@ -34,77 +33,105 @@ import { Header } from '@udir-design/react';
 
 ## Eksempler
 
-`Header` kommer med Udirs logo. Navnet på tjenesten din legges inn som prop i `applicationName`. `Header` kan brukes med flere forskjellige kombinasjoner av subkomponenter. Noen av eksemplene under inneholder andre komponenter fra designsystemet, mens andre har subkomponenter som er spesifikke for `Header`.
+`Header` kommer med Udirs logosymbol. Navnet på tjenesten legges inn som prop i `applicationName`. Logosymbol og tjenestenavn fungerer som en lenke som går til forsiden av tjenesten (`'/'`). Lenken kan overstyres ved å sette `href` (`href=null` for å fjerne lenken). `Header` kan brukes med flere forskjellige kombinasjoner av subkomponenter. Noen av eksemplene under inneholder andre komponenter fra designsystemet, mens andre har subkomponenter som er spesifikke for `Header`.
 Komponentene legges inn som `children`. Innholdet er automatisk plassert mot høyre.
 
 Subkomponenter:
 
 - `Header.UserButton`
+- `Header.Search`
+- `Header.Navigation` med `Header.Navigation.Item`
 - `Header.MenuButton`
 - `Header.Menu`
-- `Header.Search`
-
-### Lenker
-
-Ønsker du å legge til lenker i headeren, bruker du [`Link`](/docs/components-link--docs) som `children`. På samme måte kan du bruke alle andre komponenter fra designsystemet.
-
-<Canvas
-  story={{ inline: false, height: 'fit-content' }}
-  of={HeaderStories.WithLinks}
-/>
+- `Header.ThemeMenuButton`
 
 ### Brukerprofil
 
 Subkomponenten `Header.UserButton` viser brukerinformasjon og kan knyttes til en meny med brukerrelaterte handlinger. Den har props for brukernavn, rolle og avatar og finnes i fargene `neutral` og `accent`. I eksempelet brukes [`Dropdown`](/docs/components-dropdown--docs) som brukermeny.
+På mindre skjermer flytter du enten `Header.UserButton` inn i `Header.Menu`, eller bytter ut `Header.UserButton` med en [`Avatar`](/docs/components-avatar--docs) som knapp.
 
 <Canvas
-  story={{ inline: false, height: '450px' }}
+  story={{ inline: false, height: '350px' }}
   of={HeaderStories.WithUserButton}
-/>
-
-### Megameny
-
-`Header.MenuButton` og `Header.Menu` brukes sammen for å lage en megameny. Megamenyen er en stor meny som kan inneholde mye innhold, typisk navigasjon.
-
-`Header.MenuButton` er en [`Button`](/docs/components-button--docs) med åpne/lukke-ikon. Teksten kan tilpasses ved bruk av `children`. `Header.Menu` er en [`Popover`](/docs/components-popover--docs) som inneholder menyinnholdet. Det vil si at du kan bruke egen knapp som `anchor` til menyen dersom du ønsker det. Det gjør du ved å gi menyen samme `id` som knappens `popovertarget`.
-
-<Canvas
-  story={{ inline: false, height: '400px' }}
-  of={HeaderStories.WithMegaMenu}
-/>
-
-### Enkel meny
-
-Ønsker du en enklere meny, kan du bruke `Header.MenuButton` sammen med en [`Dropdown`](/docs/components-dropdown--docs).
-
-<Canvas
-  story={{ inline: false, height: '450px' }}
-  of={HeaderStories.WithSimpleMenu}
 />
 
 ### Søk
 
-Dersom søke-funksjonalitet er viktig i tjenesten din kan det være hensiktsmessig å inkludere et søkefelt i `Header`. Du kan bruke [`Search`](/docs/components-search--docs) direkte, eller subkomponenten `Header.Search` som fremstår som en knapp som åpner søkefeltet.
+Dersom søke-funksjonalitet er viktig for brukerne av tjenesten, kan det være hensiktsmessig å inkludere et søkefelt i `Header`. Du kan bruke [`Search`](/docs/components-search--docs) direkte, eller subkomponenten `Header.Search` som fremstår som en knapp som åpner søkefeltet.
 
 <Canvas
   story={{ inline: false, height: 'fit-content' }}
   of={HeaderStories.WithSearch}
 />
 
+### Navigasjon
+
+Det er lagt opp til fire måter å håndtere navigasjon i `Header` på:
+
+1. Navigasjonslenker
+2. Meny
+3. Temameny
+4. Navigasjonslenker + meny
+
+#### Navigasjonslenker
+
+`Header.Navigation` med `Header.Navigation.Item` brukes til å navigere mellom hovedseksjoner i tjenesten. `Header.Navigation.Item` er en [`Link`](/docs/components-link--docs) med styling basert på hvor brukeren står i løsningen. Lenken brukeren står på får en tykkere underline.
+Unngå å bruke for mange lenker, og vurder om noen av lenkene heller kan plasseres i en meny. Aktiv lenke kan overstyres med `active` prop.
+
+<Canvas
+  story={{ inline: false, height: '300px' }}
+  of={HeaderStories.WithNavigationLinks}
+/>
+
+#### Meny
+
+`Header.MenuButton` og `Header.Menu` brukes sammen for å lage en meny. Menyen inneholder som regel navigasjon, men kan også inneholde andre handlinger. På mindre skjermer flytter du for eksempel navigasjonslenker og brukerprofil inn i menyen.
+
+`Header.MenuButton` er en [`Button`](/docs/components-button--docs) med åpne/lukke-ikon. Teksten kan tilpasses ved bruk av `children`. `Header.Menu` er en stor nedtrekksmeny som er basert på [`Popover`](/docs/components-popover--docs).
+
+<Canvas
+  story={{ inline: false, height: '400px' }}
+  of={HeaderStories.WithMenu}
+/>
+
+#### Temamenyer
+
+Bruk `Header.ThemeMenuButton` sammen med `Header.Menu` for å lage temameny. Temamenyer kan brukes for å dele opp innholdet i mindre, mer håndterbare navigasjonslister. Gi hver `Header.Menu` en unik `id` og knytt den til en `Header.ThemeMenuButton` med samme `popovertarget`.
+
+Temamenyer er best egnet når du har to-tre temaer som gjør det enklere for brukeren å navigere. Ikke bruk kun én temameny - da er det bedre å bruke en vanlig meny. Sørg for at temaene er tydelige og intuitive.
+
+<Canvas
+  story={{ inline: false, height: '400px' }}
+  of={HeaderStories.WithThemeMenus}
+/>
+
+#### Navigasjonslenker og meny
+
+Navigasjonslenker og meny er de eneste navigasjonselementene som kan kombineres i `Header`. Med denne kombinasjonen har brukerne alltid direkte tilgang til de viktigste sidene, samtidig som andre deler av tjenesten er tilgjengelige via menyen.
+
+<Canvas
+  story={{ inline: false, height: '400px' }}
+  of={HeaderStories.WithNavigationLinksAndMenu}
+/>
+
 ### Responsivt innhold
 
-For å håndtere ulike skjermstørrelser og enheter er det satt opp noen predefinerte breakpoints for når innhold skal vises eller skjules. Dette brukes ved å sette `data-hide=[size]` eller `data-show=[size]` på komponentene du legger inn i `Header`. De tilgjengelige verdiene for `size` er:
+For å håndtere ulike skjermstørrelser og enheter er det satt opp noen predefinerte breakpoints for når innhold skal vises eller skjules. Dette brukes ved å sette `data-show=[size]` eller `data-hide=[size]` på komponentene du legger inn i `Header`. De tilgjengelige verdiene for `size` er:
 
-- `xs`: 480px
-- `sm`: 640px
-- `md`: 768px
-- `lg`: 1024px
-- `xl`: 1280px
+- `'xs'`: 480px
+- `'sm'`: 640px
+- `'md'`: 768px
+- `'lg'`: 1024px
+- `'xl'`: 1280px
 
-`data-hide` skjuler elementet på den angitte skjermstørrelsen og mindre (`<=`), mens `data-show` viser elementet fra den angitte skjermstørrelsen (`>`).
+`data-show` viser elementet fra og med den angitte skjermstørrelsen, mens `data-hide` skjuler elementet fra og med den angitte skjermstørrelsen.
 
-I eksempelet under ønsker vi å flytte `Header.UserButton` fra `Header` til menyen på mindre skjermer. Da bruker vi `data-hide="md"` på `Header.UserButton` i `Header` for å skjule den fra og med `md` skjermstørrelse, og `data-show="md"` på `Header.UserButton` i `Header.Menu` for å vise den fra `md` skjermstørrelse.
+I eksempelet under "flytter" vi `Header.UserButton` fra `Header` til `Header.Menu` når skjermen blir liten. For å få til det bruker vi:
 
+- `data-show="md"` på `Header.UserButton` i `Header` -> da vises den i `Header` fra og med `"md"` skjermstørrelse.
+- `data-hide="md"` på `Header.UserButton` i `Header.Menu` -> da skjules den fra `Header.Menu` fra og med `"md"` skjermstørrelse.
+
+Resultatet er at knappen alltid finnes tilgjengelig for brukeren – bare på ulike steder avhengig av skjermstørrelsen.
 Åpne menyen og endre størrelsen på nettleservinduet for å se hvordan det fungerer.
 
 <Canvas
@@ -112,29 +139,20 @@ I eksempelet under ønsker vi å flytte `Header.UserButton` fra `Header` til men
   of={HeaderStories.Responsive}
 />
 
-### Autoskjuling av header på scroll
+### Header skjules og vises automatisk
 
-`Header` er `sticky` med funksjonalitet for automatisk skjuling ved scrolling. Det vil si at når brukeren scroller nedover på siden, vil headeren skjule seg for å gi mer plass til innholdet. Når brukeren scroller opp igjen, vil headeren vises på nytt. Slik har brukeren alltid tilgang til viktig funksjonalitet, uavhengig av hvor langt ned på siden de har scrollet.
+`Header` er `sticky` og skjules automatisk ved scrolling. Det vil si at når brukeren scroller nedover på siden, vil `Header` skjule seg for å gi mer plass til innholdet. Når brukeren starter å scrolle opp igjen, vil den vises igjen. Slik har brukerne alltid tilgang til viktig funksjonalitet, uavhengig av hvor langt ned på siden de har scrollet.
 
-Foreldreelementet får automatisk `overflow: visible`. Sørg for at dette ikke blir overskrevet.
+Foreldreelementet får automatisk `overflow: visible`. Sørg for at dette ikke blir overskrevet. Ønsker du at headeren skal bli igjen på toppen av siden, setter du `sticky=false`.
 
 <Canvas
   story={{ inline: false, height: '700px' }}
   of={HeaderStories.AutoHideSticky}
 />
 
-### Sammensatte eksempler
+### Udir.no
 
-#### Flere megamenyer
-
-Det er mulig å ha flere megamenyer i `Header`. Hensikten med flere menyer er å dele opp innholdet i mindre, mer håndterbare navigasjonslister/handlinger. Gi hver meny en unik `id` og knytt den til en knapp med samme `popovertarget`.
-
-<Canvas
-  story={{ inline: false, height: '400px' }}
-  of={HeaderStories.WithMegaMenus}
-/>
-
-#### Udir.no
+Udir.no er den eneste tjenesten som bruker hovedlogo i `Header`. Andre tjenester bruker logosymbol og tjenestenavn.
 
 <Canvas story={{ inline: false, height: '700px' }} of={HeaderStories.UdirNo} />
 
@@ -144,16 +162,87 @@ Det er mulig å ha flere megamenyer i `Header`. Hensikten med flere menyer er å
 
 Unngå å samle for mye innhold i `Header`. Vurder hva du trenger å ha lett tilgjengelig for brukeren, og hva som kan plasseres andre steder i tjenesten.
 
+### Navigasjon
+
+Velg navigasjonsløsning ut fra hvor mange sider tjenesten har, og hvordan brukeren skal orientere seg. Følgende tabell gir en oversikt over de ulike løsningene og når de passer best.
+
+<Unstyled>
+  <Table
+    border
+    tintedColumnHeader
+    tintedRowHeader
+    style={{ maxWidth: 'fit-content' }}
+  >
+    <Table.Head>
+      <Table.Row>
+        <Table.HeaderCell scope="col">Løsning</Table.HeaderCell>
+        <Table.HeaderCell scope="col">Kjennetegn</Table.HeaderCell>
+      </Table.Row>
+    </Table.Head>
+    <Table.Body>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Navigasjonslenker</Table.HeaderCell>
+        <Table.Cell>
+          <ul style={{ margin: 0, paddingLeft: '1.2rem' }}>
+            <li>2–4 hovedsider</li>
+            <li>Sidene er like viktige</li>
+            <li>Brukeren bytter ofte mellom dem</li>
+          </ul>
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Meny</Table.HeaderCell>
+        <Table.Cell>
+          <ul style={{ margin: 0, paddingLeft: '1.2rem' }}>
+            <li>4+ hovedsider</li>
+            <li>Flere nivåer i navigasjonen</li>
+            <li>Brukeren trenger handlinger</li>
+          </ul>
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Temameny</Table.HeaderCell>
+        <Table.Cell>
+          <ul style={{ margin: 0, paddingLeft: '1.2rem' }}>
+            <li>2–3 tydelige temaer for navigasjon</li>
+            <li>Mange sider ellers</li>
+            <li>Flere nivåer i navigasjonen</li>
+            <li>Brukeren trenger handlinger</li>
+          </ul>
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Lenker + meny</Table.HeaderCell>
+        <Table.Cell>
+          <ul style={{ margin: 0, paddingLeft: '1.2rem' }}>
+            <li>2–4 hovedsider</li>
+            <li>Brukeren bytter ofte mellom dem</li>
+            <li>Mange andre sider i tillegg</li>
+            <li>Flere nivåer i navigasjonen</li>
+            <li>Brukeren trenger handlinger</li>
+          </ul>
+        </Table.Cell>
+      </Table.Row>
+    </Table.Body>
+  </Table>
+</Unstyled>
+<br />
+
 ### Knappevarianter
 
-`Header` har ofte én eller flere knapper. Det er mulig å bruke alle varianter av [`Button`](/docs/components-button--docs). Vurderingen av hvilken variant som skal brukes skal baseres på hvor viktig handlingen er.
-`variant='primary'` brukes for eksempel på menyknappen til udir.no, fordi navigasjon anses som den viktigste handlingen. I andre systemer er det ofte handlinger på selve siden som er primæroppgaver. Da kan det være mer hensiktsmessig å bruke `variant='secondary'` eller `variant='tertiary'` på menyknappen.
-
-### Megameny
+Vurderingen av hvilken variant som brukes på knapper i `Header` skal baseres på hvor viktig handlingen er. Ofte vil `variant='tertiary'` være synlig nok. `variant='secondary'` kan vurderes dersom knappen skal være mer fremtredende.
 
 ### Responsivitet
 
-Sørg for at `Header` er responsiv og tilpasser seg ulike skjermstørrelser. Bruk `data-hide` og `data-show` for å kontrollere synligheten av elementer på forskjellige skjermstørrelser. Test `Header` på ulike enheter og skjermstørrelser for å sikre at det fungerer som forventet.
+Sørg for at `Header` er responsiv og tilpasser seg ulike skjermstørrelser. Bruk `data-show` og `data-hide` for å kontrollere synligheten av elementer på forskjellige skjermstørrelser. Test `Header` på ulike enheter og skjermstørrelser for å sikre at det fungerer som forventet.
+
+## Tilgjengelighet
+
+Bruk [`<nav>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/nav) rundt navigasjonsområder.
+
+- Knytt området til en overskrift med `aria-labelledby` og en `id` på overskriften.
+- Hvis navigasjonsområdet ikke har en overskrift, bruk `aria-label` i stedet.
+- Se meny-eksemplene over for hvordan dette kan gjøres i praksis.
 
 ## Kompatibilitet
 

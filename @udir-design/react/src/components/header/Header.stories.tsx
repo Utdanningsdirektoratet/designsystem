@@ -14,16 +14,12 @@ import {
   Paragraph,
 } from '@udir-design/react/alpha';
 import { useState } from 'react';
-import {
-  ChevronDownIcon,
-  ChevronRightIcon,
-  ChevronUpIcon,
-  LeaveIcon,
-} from '@navikt/aksel-icons';
+import { ArrowRightIcon, BriefcaseIcon, LeaveIcon } from '@navikt/aksel-icons';
+import styles from './header.stories.module.css';
 
 const meta: Meta<typeof Header> = {
   component: Header,
-  tags: ['beta'],
+  tags: ['alpha'],
   parameters: {
     layout: 'fullscreen',
     customStyles: {
@@ -38,18 +34,9 @@ type Story = StoryObj<typeof Header>;
 export const Preview: Story = {
   args: {
     applicationName: 'Tjenestenavn',
+    sticky: false,
   },
   render: (args) => <Header {...args} />,
-};
-
-export const WithLinks: Story = {
-  render: () => (
-    <Header applicationName="Tjenestenavn">
-      <Link href="#">Komponenter</Link>
-      <Link href="#">Figma</Link>
-      <Link href="#">Github</Link>
-    </Header>
-  ),
 };
 
 const profileImage =
@@ -57,45 +44,139 @@ const profileImage =
 
 export const WithUserButton: Story = {
   render: () => (
-    <>
-      <Header applicationName="Tjenestenavn">
-        <Header.UserButton
-          username="Stian Hansen"
-          userRole="Admin"
-          popovertarget="usermenu"
-          avatar={
-            <Avatar aria-label="Stian Hansen">
-              <img src={profileImage} alt="" />
-            </Avatar>
-          }
-          data-color="accent"
-        />
-      </Header>
+    <Header applicationName="Tjenestenavn">
+      <Header.UserButton
+        username="Stian Hansen"
+        userRole="Admin"
+        popovertarget="usermenu"
+        avatar={
+          <Avatar aria-label="Stian Hansen">
+            <img src={profileImage} alt="" />
+          </Avatar>
+        }
+        data-color="accent"
+        data-show="sm"
+      />
       <Dropdown id="usermenu" placement="bottom-end" autoPlacement={false}>
-        <Dropdown.Heading>Rolle</Dropdown.Heading>
         <Dropdown.List>
           <Dropdown.Item>
-            <Dropdown.Button>Superadmin</Dropdown.Button>
+            <Dropdown.Heading>Bytt profil</Dropdown.Heading>
           </Dropdown.Item>
           <Dropdown.Item>
-            <Dropdown.Button>Admin</Dropdown.Button>
-          </Dropdown.Item>
-          <Dropdown.Item>
-            <Dropdown.Button>Hovedbruker</Dropdown.Button>
-          </Dropdown.Item>
-
-          <Divider />
-          <Dropdown.Item style={{ margin: 'var(--ds-size-2) 0' }}>
             <Dropdown.Button>
-              Varsler <Badge count={8} />
+              <Avatar aria-label="Grålum kommune" data-color="support1">
+                <BriefcaseIcon />
+              </Avatar>
+              Grålum skole <Badge count={10} maxCount={9} />
             </Dropdown.Button>
           </Dropdown.Item>
+          <Divider />
           <Dropdown.Item>
-            <Button variant="secondary">Logg ut</Button>
+            <Button variant="tertiary">
+              <LeaveIcon aria-hidden />
+              Logg ut
+            </Button>
           </Dropdown.Item>
         </Dropdown.List>
       </Dropdown>
-    </>
+
+      {/* Small screen: swap UserButton with avatar button on "sm" */}
+      <Button popovertarget="usermenuSmall" variant="tertiary" data-hide="sm">
+        <Avatar aria-label="Stian Hansen">
+          <img src={profileImage} alt="" />
+        </Avatar>
+      </Button>
+      <Dropdown id="usermenuSmall" placement="bottom-end" autoPlacement={false}>
+        <Dropdown.List>
+          <Dropdown.Item>
+            <Dropdown.Heading>Bytt profil</Dropdown.Heading>
+          </Dropdown.Item>
+          <Dropdown.Item>
+            <Dropdown.Button>
+              <Avatar aria-label="Grålum kommune" data-color="support1">
+                <BriefcaseIcon />
+              </Avatar>
+              Grålum skole <Badge count={10} maxCount={9} />
+            </Dropdown.Button>
+          </Dropdown.Item>
+          <Divider />
+          <Dropdown.Item>
+            <Button variant="tertiary">
+              <LeaveIcon aria-hidden />
+              Logg ut
+            </Button>
+          </Dropdown.Item>
+        </Dropdown.List>
+      </Dropdown>
+    </Header>
+  ),
+};
+
+export const WithSearch: Story = {
+  render() {
+    const [value, setValue] = useState('');
+    return (
+      <Header applicationName="Tjenestenavn">
+        <Header.Search data-size="md">
+          <Search.Input
+            aria-label="Søk"
+            placeholder="Søk"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+          />
+          <Search.Clear onClick={() => setValue('')} />
+        </Header.Search>
+      </Header>
+    );
+  },
+};
+
+export const WithNavigationLinks: Story = {
+  render: () => (
+    <Header applicationName="Tjenestenavn">
+      <Header.Navigation data-show="xs">
+        <Header.Navigation.Item href="#">Link 1</Header.Navigation.Item>
+        <Header.Navigation.Item href="#" active>
+          Link 2
+        </Header.Navigation.Item>
+        <Header.Navigation.Item href="#">Link 3</Header.Navigation.Item>
+      </Header.Navigation>
+      <Header.MenuButton data-hide="xs" />
+      <Header.Menu>
+        <nav
+          aria-label="header-menu-navigation"
+          style={{
+            maxWidth: '800px',
+            display: 'flex',
+            padding: 'var(--ds-size-5) var(--ds-size-15) var(--ds-size-10)',
+            gap: 'var(--ds-size-4)',
+            rowGap: 'var(--ds-size-10)',
+          }}
+          className={styles.headerMenuSmall}
+        >
+          <ListUnordered>
+            <ListItem>
+              <Link href="#">
+                <ArrowRightIcon aria-hidden />
+                <span>Link 1</span>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="#">
+                <ArrowRightIcon aria-hidden />
+                <span>Link 2</span>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="#">
+                <ArrowRightIcon aria-hidden />
+                <span>Link 3</span>
+              </Link>
+            </ListItem>
+          </ListUnordered>
+        </nav>
+      </Header.Menu>
+    </Header>
   ),
 };
 
@@ -144,28 +225,29 @@ const menuLinks = [
       },
       {
         title: 'Github',
-        href: 'https://github.com/Utdanningsdirektoratet/designsystem',
+        href: '#',
       },
     ],
   },
 ];
 
-export const WithMegaMenu: Story = {
+export const WithMenu: Story = {
   render: () => (
     <Header applicationName="Tjenestenavn">
-      <Header.MenuButton variant="primary" />
+      <Header.MenuButton />
       <Header.Menu>
-        <div
+        <nav
+          aria-label="header-menu-navigation"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
             maxWidth: '800px',
             margin: '0 auto',
-            padding: 'var(--ds-size-10)',
-            justifyItems: 'center',
+            padding: 'var(--ds-size-5) var(--ds-size-15) var(--ds-size-10)',
             gap: 'var(--ds-size-4)',
             rowGap: 'var(--ds-size-10)',
           }}
+          className={styles.headerMenuSmall}
         >
           {menuLinks.map((column) => (
             <div key={column.heading}>
@@ -180,7 +262,7 @@ export const WithMegaMenu: Story = {
                 {column.links.map((link) => (
                   <ListItem key={link.title}>
                     <Link href={link.href} style={{ textDecoration: 'none' }}>
-                      <ChevronRightIcon aria-hidden />
+                      <ArrowRightIcon aria-hidden />
                       <span>{link.title}</span>
                     </Link>
                   </ListItem>
@@ -188,143 +270,322 @@ export const WithMegaMenu: Story = {
               </ListUnordered>
             </div>
           ))}
-        </div>
+        </nav>
       </Header.Menu>
     </Header>
   ),
 };
 
-export const WithSimpleMenu: Story = {
+const themeMenu1 = Array.from({ length: 3 }, (_, i) => ({
+  heading: `Overskrift ${i + 1}`,
+  links: Array.from({ length: i === 1 ? 4 : 3 }, (_, linkIndex) => ({
+    title: `Link ${linkIndex + 1}`,
+    href: '',
+  })),
+}));
+
+const themeMenu2 = Array.from({ length: 2 }, (_, i) => ({
+  heading: `Overskrift ${i + 4}`,
+  links: Array.from({ length: i === 1 ? 4 : 3 }, (_, linkIndex) => ({
+    title: `Link ${linkIndex + 1}`,
+    href: '',
+  })),
+}));
+
+export const WithThemeMenus: Story = {
   render() {
     return (
       <Header applicationName="Tjenestenavn">
-        <Header.MenuButton popovertarget="header-simple-menu" />
-        <Dropdown
-          id="header-simple-menu"
-          placement="bottom-end"
-          autoPlacement={false}
+        <Header.ThemeMenuButton
+          popovertarget="header-education-menu"
+          data-show="md"
         >
-          <Dropdown.List>
-            <Dropdown.Heading>Utdanning</Dropdown.Heading>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 'var(--ds-size-1)',
-                marginBottom: 'var(--ds-size-4)',
-              }}
-            >
-              <Dropdown.Item>
-                <Link href="https://www.udir.no/utdanningslopet/barnehage/">
-                  Barnehage
-                </Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link href="https://www.udir.no/utdanningslopet/grunnskole/">
-                  Grunnskole
-                </Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link href="https://www.udir.no/utdanningslopet/videregaende-opplaring/">
-                  Videregående
-                </Link>
-              </Dropdown.Item>
-            </div>
-            <Dropdown.Heading>Annen opplæring</Dropdown.Heading>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 'var(--ds-size-1)',
-                marginBottom: 'var(--ds-size-4)',
-              }}
-            >
-              <Dropdown.Item>
-                <Link href="https://www.udir.no/utdanningslopet/sfo/">SFO</Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link href="https://www.udir.no/utdanningslopet/kulturskolen/">
-                  Kulturskolen
-                </Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link href="https://www.udir.no/om-udir/tilskudd-og-prosjektmidler/tilskudd-for-folkehogskoler/">
-                  Folkehøgskoler
-                </Link>
-              </Dropdown.Item>
-            </div>
-          </Dropdown.List>
-        </Dropdown>
+          Temameny 1
+        </Header.ThemeMenuButton>
+        <Header.Menu id="header-education-menu">
+          <nav
+            aria-label="header-menu-theme1-navigation"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
+              maxWidth: '800px',
+              margin: '0 auto',
+              padding: 'var(--ds-size-5) var(--ds-size-15) var(--ds-size-10)',
+              justifyItems: 'center',
+              gap: 'var(--ds-size-4)',
+              rowGap: 'var(--ds-size-10)',
+            }}
+          >
+            {themeMenu1.map((column) => (
+              <div key={column.heading}>
+                <Heading
+                  level={3}
+                  data-size="xs"
+                  style={{ marginBottom: 'var(--ds-size-3)' }}
+                >
+                  {column.heading}
+                </Heading>
+                <ListUnordered>
+                  {column.links.map((link) => (
+                    <ListItem key={column.heading + link.title}>
+                      <Link href={link.href} style={{ textDecoration: 'none' }}>
+                        <ArrowRightIcon aria-hidden />
+                        <span>{link.title}</span>
+                      </Link>
+                    </ListItem>
+                  ))}
+                </ListUnordered>
+              </div>
+            ))}
+          </nav>
+        </Header.Menu>
+        <Header.ThemeMenuButton
+          popovertarget="header-learning-menu"
+          data-show="md"
+        >
+          Temameny 2
+        </Header.ThemeMenuButton>
+        <Header.Menu id="header-learning-menu">
+          <nav
+            aria-label="header-menu-theme2-navigation"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              maxWidth: '500px',
+              margin: '0 auto',
+              padding: 'var(--ds-size-5) var(--ds-size-15) var(--ds-size-10)',
+              justifyItems: 'center',
+              gap: 'var(--ds-size-4)',
+              rowGap: 'var(--ds-size-10)',
+            }}
+          >
+            {themeMenu2.map((column) => (
+              <div key={column.heading}>
+                <Heading
+                  level={3}
+                  data-size="xs"
+                  style={{ marginBottom: 'var(--ds-size-3)' }}
+                >
+                  {column.heading}
+                </Heading>
+                <ListUnordered>
+                  {column.links.map((link) => (
+                    <ListItem key={column.heading + link.title}>
+                      <Link href={link.href} style={{ textDecoration: 'none' }}>
+                        <ArrowRightIcon aria-hidden />
+                        <span>{link.title}</span>
+                      </Link>
+                    </ListItem>
+                  ))}
+                </ListUnordered>
+              </div>
+            ))}
+          </nav>
+        </Header.Menu>
+        <Header.MenuButton data-hide="md" />
+        <Header.Menu>
+          <nav
+            aria-label="header-menu-navigation"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
+              maxWidth: '800px',
+              margin: '0 auto',
+              padding: 'var(--ds-size-5) var(--ds-size-15) var(--ds-size-10)',
+              gap: 'var(--ds-size-4)',
+              rowGap: 'var(--ds-size-10)',
+            }}
+          >
+            {themeMenu1.map((column) => (
+              <div key={column.heading + 'mobile'}>
+                <Heading
+                  level={3}
+                  data-size="xs"
+                  style={{ marginBottom: 'var(--ds-size-3)' }}
+                >
+                  {column.heading}
+                </Heading>
+                <ListUnordered>
+                  {column.links.map((link) => (
+                    <ListItem key={column.heading + link.title + 'mobile'}>
+                      <Link href={link.href} style={{ textDecoration: 'none' }}>
+                        <ArrowRightIcon aria-hidden />
+                        <span>{link.title}</span>
+                      </Link>
+                    </ListItem>
+                  ))}
+                </ListUnordered>
+              </div>
+            ))}
+            {themeMenu2.map((column) => (
+              <div key={column.heading + 'mobile'}>
+                <Heading
+                  level={3}
+                  data-size="xs"
+                  style={{ marginBottom: 'var(--ds-size-3)' }}
+                >
+                  {column.heading}
+                </Heading>
+                <ListUnordered>
+                  {column.links.map((link) => (
+                    <ListItem key={column.heading + link.title + 'mobile'}>
+                      <Link href={link.href} style={{ textDecoration: 'none' }}>
+                        <ArrowRightIcon aria-hidden />
+                        <span>{link.title}</span>
+                      </Link>
+                    </ListItem>
+                  ))}
+                </ListUnordered>
+              </div>
+            ))}
+          </nav>
+        </Header.Menu>
       </Header>
     );
   },
 };
 
-export const WithSearch: Story = {
-  render() {
-    const [value, setValue] = useState('');
-    return (
-      <Header applicationName="Tjenestenavn">
-        <Header.Search data-size="md">
-          <Search.Input
-            aria-label="Søk"
-            placeholder="Søk"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          />
-          <Search.Clear onClick={() => setValue('')} />
-        </Header.Search>
-      </Header>
-    );
+const navAndMenuLinks = [
+  {
+    heading: 'Info om eksamen',
+    links: [
+      {
+        title: 'Skriftlig eksamen',
+        href: '',
+      },
+      {
+        title: 'Muntling eksamen',
+        href: '',
+      },
+      {
+        title: 'Privatisteksamen',
+        href: '',
+      },
+    ],
   },
+  {
+    heading: 'Retting av besvarelser',
+    links: [
+      {
+        title: 'Administrere besvarelser',
+        href: '',
+      },
+      {
+        title: 'Retting og vurdering',
+        href: '',
+      },
+    ],
+  },
+];
+
+export const WithNavigationLinksAndMenu: Story = {
+  render: () => (
+    <Header applicationName="Tjenestenavn">
+      <Header.Navigation data-show="sm">
+        <Header.Navigation.Item href="#" active>
+          Eksamen
+        </Header.Navigation.Item>
+        <Header.Navigation.Item href="#">Besvarelser</Header.Navigation.Item>
+      </Header.Navigation>
+      <Header.MenuButton />
+      <Header.Menu>
+        <nav
+          aria-label="header-menu-navigation"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(15rem, 1fr))',
+            maxWidth: '800px',
+            margin: '0 auto',
+            padding: 'var(--ds-size-5) var(--ds-size-10) var(--ds-size-10)',
+            gap: 'var(--ds-size-4)',
+            rowGap: 'var(--ds-size-10)',
+          }}
+          className={styles.headerMenuSmall}
+        >
+          {navAndMenuLinks.map((column) => (
+            <div key={column.heading}>
+              <Heading
+                level={3}
+                data-size="xs"
+                style={{ marginBottom: 'var(--ds-size-3)' }}
+              >
+                <Link
+                  href="#"
+                  style={{
+                    textDecoration: 'none',
+                  }}
+                >
+                  {column.heading}
+                </Link>
+              </Heading>
+              <ListUnordered>
+                {column.links.map((link) => (
+                  <ListItem key={link.title}>
+                    <Link href={link.href} style={{ textDecoration: 'none' }}>
+                      <ArrowRightIcon aria-hidden />
+                      <span>{link.title}</span>
+                    </Link>
+                  </ListItem>
+                ))}
+              </ListUnordered>
+            </div>
+          ))}
+        </nav>
+      </Header.Menu>
+    </Header>
+  ),
 };
+
+const responsiveLinks = ['Viktige lenker', 'Lenker', 'Andre lenker'].map(
+  (heading, index) => ({
+    heading,
+    links: Array.from(
+      { length: index === 1 ? 5 : index === 2 ? 4 : 3 },
+      (_, i) => ({
+        title: `Link ${i + 1}`,
+        href: '',
+      }),
+    ),
+  }),
+);
 
 export const Responsive: Story = {
   render() {
     return (
       <Header applicationName="Tjenestenavn">
-        <Link href="https://design.udir.no/" data-hide="lg">
-          Komponenter
-        </Link>
-        <Link
-          href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209"
-          data-hide="lg"
-        >
-          Figma
-        </Link>
-        <Link
-          href="https://github.com/Utdanningsdirektoratet/designsystem"
-          data-hide="lg"
-        >
-          Github
-        </Link>
+        <Header.Navigation data-show="lg">
+          <Header.Navigation.Item href="#">Link 1</Header.Navigation.Item>
+          <Header.Navigation.Item href="#" active>
+            Link 2
+          </Header.Navigation.Item>
+          <Header.Navigation.Item href="#">Link 3</Header.Navigation.Item>
+        </Header.Navigation>
         <Header.UserButton
           username="Stian Hansen"
           userRole="Admin"
           popovertarget="usermenu2"
-          data-hide="md"
+          data-show="md"
           avatar={<Avatar aria-label="Stian Hansen">SH</Avatar>}
         />
         <Dropdown id="usermenu2" placement="bottom-end" autoPlacement={false}>
-          <Dropdown.Heading>Rolle</Dropdown.Heading>
           <Dropdown.List>
             <Dropdown.Item>
-              <Dropdown.Button>Superadmin</Dropdown.Button>
+              <Dropdown.Heading>Bytt profil</Dropdown.Heading>
             </Dropdown.Item>
             <Dropdown.Item>
-              <Dropdown.Button>Admin</Dropdown.Button>
-            </Dropdown.Item>
-            <Dropdown.Item>
-              <Dropdown.Button>Hovedbruker</Dropdown.Button>
-            </Dropdown.Item>
-            <Divider />
-            <Dropdown.Item style={{ margin: 'var(--ds-size-2) 0' }}>
               <Dropdown.Button>
-                Varsler <Badge count={8} />
+                <Avatar aria-label="Grålum kommune" data-color="support1">
+                  <BriefcaseIcon />
+                </Avatar>
+                Grålum skole <Badge count={10} maxCount={9} />
               </Dropdown.Button>
             </Dropdown.Item>
+            <Divider />
             <Dropdown.Item>
-              <Button variant="secondary">Logg ut</Button>
+              <Button variant="tertiary">
+                <LeaveIcon aria-hidden />
+                Logg ut
+              </Button>
             </Dropdown.Item>
           </Dropdown.List>
         </Dropdown>
@@ -335,52 +596,52 @@ export const Responsive: Story = {
             userRole="Admin"
             popovertarget="usermenuInMenu"
             avatar={<Avatar aria-label="Stian Hansen">SH</Avatar>}
-            style={{ justifySelf: 'end' }}
-            data-show="md"
+            style={{ marginLeft: 'auto', marginRight: 'var(--ds-size-5)' }}
+            data-hide="md"
           />
           <Dropdown
             id="usermenuInMenu"
             placement="bottom-end"
             autoPlacement={false}
           >
-            <Dropdown.Heading>Rolle</Dropdown.Heading>
             <Dropdown.List>
               <Dropdown.Item>
-                <Dropdown.Button>Superadmin</Dropdown.Button>
+                <Dropdown.Heading>Bytt profil</Dropdown.Heading>
               </Dropdown.Item>
               <Dropdown.Item>
-                <Dropdown.Button>Admin</Dropdown.Button>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Dropdown.Button>Hovedbruker</Dropdown.Button>
-              </Dropdown.Item>
-              <Divider />
-              <Dropdown.Item style={{ margin: 'var(--ds-size-2) 0' }}>
                 <Dropdown.Button>
-                  Varsler <Badge count={8} />
+                  <Avatar aria-label="Grålum kommune" data-color="support1">
+                    <BriefcaseIcon />
+                  </Avatar>
+                  Grålum skole <Badge count={10} maxCount={9} />
                 </Dropdown.Button>
               </Dropdown.Item>
+              <Divider />
               <Dropdown.Item>
-                <Button variant="secondary">Logg ut</Button>
+                <Button variant="tertiary">
+                  <LeaveIcon aria-hidden />
+                  Logg ut
+                </Button>
               </Dropdown.Item>
             </Dropdown.List>
           </Dropdown>
-          <div
+          <nav
+            aria-label="header-menu-navigation"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(12rem, 1fr))',
               maxWidth: '800px',
               margin: '0 auto',
               padding: 'var(--ds-size-10)',
-              justifyItems: 'center',
               gap: 'var(--ds-size-4)',
               rowGap: 'var(--ds-size-10)',
             }}
+            className={styles.headerMenuSmall}
           >
-            {menuLinks.map((column) => (
+            {responsiveLinks.map((column) => (
               <div
                 key={column.heading}
-                data-show={column.heading === 'Nyttige lenker' ? 'lg' : ''}
+                data-hide={column.heading === 'Viktige lenker' ? 'lg' : ''}
               >
                 <Heading
                   level={3}
@@ -393,7 +654,7 @@ export const Responsive: Story = {
                   {column.links.map((link) => (
                     <ListItem key={link.title}>
                       <Link href={link.href} style={{ textDecoration: 'none' }}>
-                        <ChevronRightIcon aria-hidden />
+                        <ArrowRightIcon aria-hidden />
                         <span>{link.title}</span>
                       </Link>
                     </ListItem>
@@ -401,7 +662,7 @@ export const Responsive: Story = {
                 </ListUnordered>
               </div>
             ))}
-          </div>
+          </nav>
         </Header.Menu>
       </Header>
     );
@@ -417,31 +678,35 @@ export const AutoHideSticky: Story = {
   },
   render() {
     return (
-      <div>
+      <>
         <Header applicationName="Tjenestenavn">
-          <Link href="https://design.udir.no/">Komponenter</Link>
-          <Link href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209">
-            Figma
-          </Link>
-          <Link href="https://github.com/Utdanningsdirektoratet/designsystem">
-            Github
-          </Link>
+          <Header.Navigation data-show="md">
+            <Header.Navigation.Item href="#">Link 1</Header.Navigation.Item>
+            <Header.Navigation.Item href="#" active>
+              Link 2
+            </Header.Navigation.Item>
+            <Header.Navigation.Item href="#">Link 3</Header.Navigation.Item>
+          </Header.Navigation>
           <Header.MenuButton variant="secondary" />
           <Header.Menu>
-            <div
+            <nav
+              aria-label="header-menu-navigation"
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(12rem, 1fr))',
                 maxWidth: '800px',
                 margin: '0 auto',
-                padding: 'var(--ds-size-10)',
-                justifyItems: 'center',
+                padding: 'var(--ds-size-5) var(--ds-size-15) var(--ds-size-10)',
                 gap: 'var(--ds-size-4)',
                 rowGap: 'var(--ds-size-10)',
               }}
+              className={styles.headerMenuSmall}
             >
-              {menuLinks.map((column) => (
-                <div key={column.heading}>
+              {responsiveLinks.map((column) => (
+                <div
+                  key={column.heading}
+                  data-hide={column.heading === 'Viktige lenker' ? 'md' : ''}
+                >
                   <Heading
                     level={3}
                     data-size="xs"
@@ -456,7 +721,7 @@ export const AutoHideSticky: Story = {
                           href={link.href}
                           style={{ textDecoration: 'none' }}
                         >
-                          <ChevronRightIcon aria-hidden />
+                          <ArrowRightIcon aria-hidden />
                           <span>{link.title}</span>
                         </Link>
                       </ListItem>
@@ -464,7 +729,7 @@ export const AutoHideSticky: Story = {
                   </ListUnordered>
                 </div>
               ))}
-            </div>
+            </nav>
           </Header.Menu>
         </Header>
         <div
@@ -478,300 +743,73 @@ export const AutoHideSticky: Story = {
           }}
         >
           <Heading level={1} data-size="lg">
-            Demo av sticky scroll header
+            Samisk i skolen
           </Heading>
           <Paragraph style={{ marginTop: 'var(--ds-size-3)' }}>
-            I denne demoen kan du teste hvordan headeren oppfører seg når du
-            scroller opp og ned. Den vil automatisk skjule seg når du scroller
-            nedover og vise seg igjen når du scroller oppover.
+            Alle elever skal lære om samer og samiske forhold i skolen. Retten
+            til også å få undervisning i samiske språk og undervisning på samisk
+            i andre fag, er ulik innenfor og utenfor samiske distrikt. I de
+            samiske distriktene er norsk og samisk sidestilte i opplæringen.
           </Paragraph>
           <Heading level={2} style={{ marginTop: 'var(--ds-size-5)' }}>
-            Container må ha <code>overflow='visible'</code>
+            Rett til opplæring i samisk i videregående opplæring
           </Heading>
           <Paragraph>
-            Headeren er automatisk sticky med funksjonalitet for å skjule seg
-            ved scrolling. Dette gir en bedre brukeropplevelse ved at viktig
-            innhold alltid er tilgjengelig, samtidig som det gir mer plass til
-            innholdet under headeren. For at dette skal fungere må containeren
-            til Header ha <code>overflow='visible'</code>.
+            Det er innført en rett til opplæring i samisk i videregående
+            opplæring for alle elever som har hatt opplæring i eller på samisk i
+            grunnskolen. Dette gjelder uavhengig av om eleven har samisk
+            bakgrunn eller ikke.
           </Paragraph>
-
+          <Paragraph>
+            Bakgrunnen for rettigheten er at elever som har hatt opplæring i
+            samisk som første- eller andrespråk i grunnskolen får mulighet til å
+            fortsette med opplæringen i samisk, og sikre eleven et helhetlig
+            opplæringsløp. Det er ikke stilt krav om lengden på eller innholdet
+            i opplæringen i grunnskolen, eks. om eleven har hatt samisk som
+            første- eller andrespråk. Elevene har ikke rett til å velge et annet
+            samisk språk i videregående opplæring enn det elevene hadde på
+            grunnskolen.
+          </Paragraph>
+          <Paragraph>
+            Retten til opplæring i samisk for samiske elever i videregående
+            opplæring er videreført.
+          </Paragraph>
           <Heading level={2} style={{ marginTop: 'var(--ds-size-5)' }}>
-            Hvordan fungerer autoskjuling?
+            Tilbud om del av opplæringen i et samiskspråklig miljø
           </Heading>
           <Paragraph>
-            Dette fungerer ved at headeren har en data-attributt som heter{' '}
-            <code>data-scroll-direction</code>. Den blir satt til{' '}
-            <code>"up"</code> når brukeren scroller oppover, og{' '}
-            <code>"down"</code> når brukeren scroller nedover. Det vil si at du
-            må selv må gi headeren din data-attributtet dersom du kun bruker
-            css-biblioteket.
+            Det er tatt inn i loven at kommunen og fylkeskommunen skal gi eleven
+            tilbud om del av opplæringen i et samiskspråklig miljø dersom det er
+            nødvendig for at opplæringen skal være pedagogisk forsvarlig. Dette
+            står i § 3-2 for grunnskolen og § 6-2 for videregående opplæring.
+            Denne regelen tar i hovedsak sikte på tilfeller der opplæringen i
+            samisk blir gitt som fjernundervisning.
           </Paragraph>
-          <Divider style={{ marginTop: 'var(--ds-size-10)' }} />
+          <Paragraph>
+            Vurderingen av om det er «nødvendig for at opplæringen skal være
+            pedagogisk forsvarlig», handler om hvorvidt eleven skal kunne nå
+            kompetansemålene i læreplanen. Det kan ikke knyttes til ytre rammer
+            for eksempel hvor mange andre som snakker det samiskspråket i
+            området, økonomi og ressurser.
+          </Paragraph>
+          <Paragraph>
+            Hvor store deler av opplæringen i samisk det eventuelt er nødvendig
+            å gi i et samiskspråklig miljø, kommer an på en konkret vurdering av
+            om opplæringen gir eleven grunnlag for å nå kompetansemålene i
+            læreplanen eller ikke.
+          </Paragraph>
+          <Divider style={{ marginTop: 'var(--ds-size-30)' }} />
           <Paragraph
             style={{
-              marginTop: 'var(--ds-size-22)',
-              marginBottom: 'var(--ds-size-22)',
+              marginTop: 'calc(var(--ds-size-30) * 2)',
+              marginBottom: 'calc(var(--ds-size-30) * 2)',
             }}
           >
             (Annet innhold)
           </Paragraph>
           <Divider />
         </div>
-      </div>
-    );
-  },
-};
-
-const educationLinks = [
-  {
-    heading: 'Velg nivå',
-    links: [
-      {
-        title: 'Barnehage',
-        href: 'https://www.udir.no/utdanningslopet/barnehage/',
-      },
-      {
-        title: 'Grunnskole',
-        href: 'https://www.udir.no/utdanningslopet/grunnskole/',
-      },
-      {
-        title: 'Videregående',
-        href: 'https://www.udir.no/utdanningslopet/videregaende-opplaring/',
-      },
-    ],
-  },
-  {
-    heading: 'Spesielt for',
-    links: [
-      {
-        title: 'Private barnehager',
-        href: 'https://www.udir.no/utdanningslopet/private-barnehager/',
-      },
-      {
-        title: 'Private skoler',
-        href: 'https://www.udir.no/utdanningslopet/spesielt-for-private-skoler/',
-      },
-      {
-        title: 'Voksenopplæring',
-        href: 'https://www.udir.no/laring-og-trivsel/voksenopplaring/',
-      },
-    ],
-  },
-  {
-    heading: 'Annen opplæring',
-    links: [
-      {
-        title: 'SFO',
-        href: 'https://www.udir.no/utdanningslopet/sfo/',
-      },
-      {
-        title: 'Kulturskolen',
-        href: 'https://www.udir.no/utdanningslopet/kulturskolen/',
-      },
-      {
-        title: 'Folkehøgskoler',
-        href: 'https://www.udir.no/om-udir/tilskudd-og-prosjektmidler/tilskudd-for-folkehogskoler/',
-      },
-    ],
-  },
-];
-
-const learningLinks = [
-  {
-    heading: 'Barnehage',
-    links: [
-      {
-        title: 'Barnehagemiljø',
-        href: 'https://www.udir.no/laring-og-trivsel/barnehagemiljo/',
-      },
-      {
-        title: 'Omsorg',
-        href: 'https://www.udir.no/laring-og-trivsel/rammeplan-for-barnehagen/barnehagens-formal-og-innhold/omsorg/',
-      },
-      {
-        title: 'Lek',
-        href: 'https://www.udir.no/laring-og-trivsel/rammeplan-for-barnehagen/barnehagens-formal-og-innhold/lek/',
-      },
-    ],
-  },
-  {
-    heading: 'Skole og fagopplæring',
-    links: [
-      {
-        title: 'Læreplanverket',
-        href: 'https://www.udir.no/laring-og-trivsel/lareplanverket/',
-      },
-      {
-        title: 'Tilpasset opplæring',
-        href: 'https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/tilpasset-opplaring/',
-      },
-      {
-        title: 'Vurderingspraksis',
-        href: 'https://www.udir.no/laring-og-trivsel/vurdering/',
-      },
-    ],
-  },
-  {
-    heading: 'Temasider',
-    links: [
-      {
-        title: 'Overganger',
-        href: 'https://www.udir.no/laring-og-trivsel/overganger-barn-elever-tilrettelegging/',
-      },
-      {
-        title: 'Spesialpedagogikk',
-        href: 'https://www.udir.no/laring-og-trivsel/spesialpedagogikk/',
-      },
-      {
-        title: 'Samisk',
-        href: 'https://www.udir.no/laring-og-trivsel/samisk/',
-      },
-    ],
-  },
-];
-
-export const WithMegaMenus: Story = {
-  render() {
-    const [isEducationMenuOpen, setEducationMenuOpen] = useState(false);
-    const [isLearningMenuOpen, setLearningMenuOpen] = useState(false);
-    return (
-      <Header applicationName="Tjenestenavn">
-        <Button
-          popovertarget="header-education-menu"
-          variant="tertiary"
-          onClick={() => {
-            setEducationMenuOpen(!isEducationMenuOpen);
-          }}
-        >
-          Utdanningsløpet
-          {isEducationMenuOpen ? (
-            <ChevronUpIcon aria-hidden />
-          ) : (
-            <ChevronDownIcon aria-hidden />
-          )}
-        </Button>
-        <Header.Menu
-          id="header-education-menu"
-          open={isEducationMenuOpen}
-          onClose={() => setEducationMenuOpen(false)}
-        >
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
-              maxWidth: '800px',
-              margin: '0 auto',
-              padding: 'var(--ds-size-10)',
-              justifyItems: 'center',
-              gap: 'var(--ds-size-4)',
-              rowGap: 'var(--ds-size-10)',
-            }}
-          >
-            {educationLinks.map((column) => (
-              <div key={column.heading}>
-                <Heading
-                  level={3}
-                  data-size="xs"
-                  style={{ marginBottom: 'var(--ds-size-3)' }}
-                >
-                  {column.heading}
-                </Heading>
-                <ListUnordered>
-                  {column.links.map((link) => (
-                    <ListItem key={link.title}>
-                      <Link href={link.href} style={{ textDecoration: 'none' }}>
-                        <ChevronRightIcon aria-hidden />
-                        <span>{link.title}</span>
-                      </Link>
-                    </ListItem>
-                  ))}
-                </ListUnordered>
-              </div>
-            ))}
-          </div>
-        </Header.Menu>
-        <Button
-          popovertarget="header-learning-menu"
-          variant="tertiary"
-          onClick={() => {
-            setLearningMenuOpen(!isLearningMenuOpen);
-          }}
-        >
-          Læring
-          {isLearningMenuOpen ? (
-            <ChevronUpIcon aria-hidden />
-          ) : (
-            <ChevronDownIcon aria-hidden />
-          )}
-        </Button>
-        <Header.Menu
-          id="header-learning-menu"
-          open={isLearningMenuOpen}
-          onClose={() => setLearningMenuOpen(false)}
-        >
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
-              maxWidth: '800px',
-              margin: '0 auto',
-              padding: 'var(--ds-size-10)',
-              justifyItems: 'center',
-              gap: 'var(--ds-size-4)',
-              rowGap: 'var(--ds-size-10)',
-            }}
-          >
-            {learningLinks.map((column) => (
-              <div key={column.heading}>
-                <Heading
-                  level={3}
-                  data-size="xs"
-                  style={{ marginBottom: 'var(--ds-size-3)' }}
-                >
-                  {column.heading}
-                </Heading>
-                <ListUnordered>
-                  {column.links.map((link) => (
-                    <ListItem key={link.title}>
-                      <Link href={link.href} style={{ textDecoration: 'none' }}>
-                        <ChevronRightIcon aria-hidden />
-                        <span>{link.title}</span>
-                      </Link>
-                    </ListItem>
-                  ))}
-                </ListUnordered>
-              </div>
-            ))}
-          </div>
-        </Header.Menu>
-        <Header.MenuButton variant="secondary" />
-        <Dropdown
-          id="uds-header-menu"
-          placement="bottom-end"
-          autoPlacement={false}
-        >
-          <Dropdown.List>
-            <Dropdown.Item>
-              <Dropdown.Button>
-                <Avatar aria-label="Kai Nordmann" />
-                Kai Nordmann
-              </Dropdown.Button>
-            </Dropdown.Item>
-            <Dropdown.Item style={{ margin: 'var(--ds-size-2) 0' }}>
-              <Dropdown.Button>
-                Varsler <Badge count={8} />
-              </Dropdown.Button>
-            </Dropdown.Item>
-            <Dropdown.Item>
-              <Button variant="tertiary">
-                <LeaveIcon aria-hidden />
-                Logg ut
-              </Button>
-            </Dropdown.Item>
-          </Dropdown.List>
-        </Dropdown>
-      </Header>
+      </>
     );
   },
 };
@@ -850,24 +888,32 @@ const linksUdirNo = [
 export const UdirNo: Story = {
   render() {
     return (
-      <Header applicationName="Utdanningsdirektoratet">
-        <Search style={{ maxWidth: '280px' }}>
+      <Header
+        applicationName="Utdanningsdirektoratet"
+        href="https://www.udir.no/"
+      >
+        <Search style={{ maxWidth: '280px' }} data-show="sm">
           <Search.Input aria-label="Søk" placeholder="Søk" />
           <Search.Clear />
         </Search>
         <Header.MenuButton variant="primary" />
         <Header.Menu>
-          <div
+          <nav
+            aria-label="header-menu-navigation"
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(23rem, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(20rem, 1fr))',
               maxWidth: '1280px',
               margin: '0 auto',
-              padding: 'var(--ds-size-10)',
+              padding: 'var(--ds-size-10) var(--ds-size-15)',
               gap: 'var(--ds-size-4)',
               rowGap: 'var(--ds-size-10)',
             }}
           >
+            <Search style={{ maxWidth: '280px' }} data-hide="sm">
+              <Search.Input aria-label="Søk" placeholder="Søk" />
+              <Search.Clear />
+            </Search>
             {linksUdirNo.map((column) => (
               <div key={column.heading}>
                 <Heading
@@ -881,7 +927,7 @@ export const UdirNo: Story = {
                   {column.links.map((link) => (
                     <ListItem key={link.title}>
                       <Link href={link.href} style={{ textDecoration: 'none' }}>
-                        <ChevronRightIcon aria-hidden />
+                        <ArrowRightIcon aria-hidden />
                         <span>{link.title}</span>
                       </Link>
                     </ListItem>
@@ -889,7 +935,7 @@ export const UdirNo: Story = {
                 </ListUnordered>
               </div>
             ))}
-          </div>
+          </nav>
         </Header.Menu>
       </Header>
     );

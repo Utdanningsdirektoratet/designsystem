@@ -1,6 +1,6 @@
 import { Link, LinkProps } from '../../link/Link';
-import { forwardRef } from 'react';
 import { normalizePath } from '../../../utilities/helpers/normalizePath';
+import { forwardRef } from 'react';
 
 export type HeaderNavigationItemProps = LinkProps & {
   /**

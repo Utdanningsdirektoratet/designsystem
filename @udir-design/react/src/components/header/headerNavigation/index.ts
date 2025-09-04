@@ -12,8 +12,6 @@ const HeaderNavigation: HeaderNavigationType = Object.assign(
   },
 );
 
-HeaderNavigation.Item.displayName = 'Header.NavigationItem';
-
 export type { HeaderNavigationProps } from './HeaderNavigation';
 export type { HeaderNavigationItemProps } from './HeaderNavigationItem';
 export { HeaderNavigation, HeaderNavigationItem };
