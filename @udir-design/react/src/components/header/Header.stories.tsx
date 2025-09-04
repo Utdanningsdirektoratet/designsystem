@@ -23,7 +23,7 @@ import {
 
 const meta: Meta<typeof Header> = {
   component: Header,
-  tags: ['beta'],
+  tags: ['alpha'],
   parameters: {
     layout: 'fullscreen',
     customStyles: {
@@ -38,6 +38,7 @@ type Story = StoryObj<typeof Header>;
 export const Preview: Story = {
   args: {
     applicationName: 'Tjenestenavn',
+    sticky: false,
   },
   render: (args) => <Header {...args} />,
 };
@@ -57,20 +58,19 @@ const profileImage =
 
 export const WithUserButton: Story = {
   render: () => (
-    <>
-      <Header applicationName="Tjenestenavn">
-        <Header.UserButton
-          username="Stian Hansen"
-          userRole="Admin"
-          popovertarget="usermenu"
-          avatar={
-            <Avatar aria-label="Stian Hansen">
-              <img src={profileImage} alt="" />
-            </Avatar>
-          }
-          data-color="accent"
-        />
-      </Header>
+    <Header applicationName="Tjenestenavn">
+      <Header.UserButton
+        username="Stian Hansen"
+        userRole="Admin"
+        popovertarget="usermenu"
+        avatar={
+          <Avatar aria-label="Stian Hansen">
+            <img src={profileImage} alt="" />
+          </Avatar>
+        }
+        data-color="accent"
+      />
+
       <Dropdown id="usermenu" placement="bottom-end" autoPlacement={false}>
         <Dropdown.Heading>Rolle</Dropdown.Heading>
         <Dropdown.List>
@@ -95,7 +95,7 @@ export const WithUserButton: Story = {
           </Dropdown.Item>
         </Dropdown.List>
       </Dropdown>
-    </>
+    </Header>
   ),
 };
 
@@ -283,18 +283,18 @@ export const Responsive: Story = {
   render() {
     return (
       <Header applicationName="Tjenestenavn">
-        <Link href="https://design.udir.no/" data-hide="lg">
+        <Link href="https://design.udir.no/" data-show="lg">
           Komponenter
         </Link>
         <Link
           href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209"
-          data-hide="lg"
+          data-show="lg"
         >
           Figma
         </Link>
         <Link
           href="https://github.com/Utdanningsdirektoratet/designsystem"
-          data-hide="lg"
+          data-show="lg"
         >
           Github
         </Link>
@@ -302,7 +302,7 @@ export const Responsive: Story = {
           username="Stian Hansen"
           userRole="Admin"
           popovertarget="usermenu2"
-          data-hide="md"
+          data-show="md"
           avatar={<Avatar aria-label="Stian Hansen">SH</Avatar>}
         />
         <Dropdown id="usermenu2" placement="bottom-end" autoPlacement={false}>
@@ -335,8 +335,8 @@ export const Responsive: Story = {
             userRole="Admin"
             popovertarget="usermenuInMenu"
             avatar={<Avatar aria-label="Stian Hansen">SH</Avatar>}
-            style={{ justifySelf: 'end' }}
-            data-show="md"
+            style={{ marginLeft: 'auto', marginRight: 'var(--ds-size-5)' }}
+            data-hide="md"
           />
           <Dropdown
             id="usermenuInMenu"
@@ -380,7 +380,7 @@ export const Responsive: Story = {
             {menuLinks.map((column) => (
               <div
                 key={column.heading}
-                data-show={column.heading === 'Nyttige lenker' ? 'lg' : ''}
+                data-hide={column.heading === 'Nyttige lenker' ? 'lg' : ''}
               >
                 <Heading
                   level={3}
@@ -417,13 +417,21 @@ export const AutoHideSticky: Story = {
   },
   render() {
     return (
-      <div>
+      <>
         <Header applicationName="Tjenestenavn">
-          <Link href="https://design.udir.no/">Komponenter</Link>
-          <Link href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209">
+          <Link href="https://design.udir.no/" data-show="md">
+            Komponenter
+          </Link>
+          <Link
+            href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209"
+            data-show="md"
+          >
             Figma
           </Link>
-          <Link href="https://github.com/Utdanningsdirektoratet/designsystem">
+          <Link
+            href="https://github.com/Utdanningsdirektoratet/designsystem"
+            data-show="md"
+          >
             Github
           </Link>
           <Header.MenuButton variant="secondary" />
@@ -507,18 +515,18 @@ export const AutoHideSticky: Story = {
             må selv må gi headeren din data-attributtet dersom du kun bruker
             css-biblioteket.
           </Paragraph>
-          <Divider style={{ marginTop: 'var(--ds-size-10)' }} />
+          <Divider style={{ marginTop: 'var(--ds-size-30)' }} />
           <Paragraph
             style={{
-              marginTop: 'var(--ds-size-22)',
-              marginBottom: 'var(--ds-size-22)',
+              marginTop: 'calc(var(--ds-size-30) * 2)',
+              marginBottom: 'calc(var(--ds-size-30) * 2)',
             }}
           >
             (Annet innhold)
           </Paragraph>
           <Divider />
         </div>
-      </div>
+      </>
     );
   },
 };
@@ -644,12 +652,12 @@ export const WithMegaMenus: Story = {
             setEducationMenuOpen(!isEducationMenuOpen);
           }}
         >
-          Utdanningsløpet
           {isEducationMenuOpen ? (
             <ChevronUpIcon aria-hidden />
           ) : (
             <ChevronDownIcon aria-hidden />
           )}
+          Utdanningsløpet
         </Button>
         <Header.Menu
           id="header-education-menu"
@@ -698,12 +706,12 @@ export const WithMegaMenus: Story = {
             setLearningMenuOpen(!isLearningMenuOpen);
           }}
         >
-          Læring
           {isLearningMenuOpen ? (
             <ChevronUpIcon aria-hidden />
           ) : (
             <ChevronDownIcon aria-hidden />
           )}
+          Læring
         </Button>
         <Header.Menu
           id="header-learning-menu"
@@ -850,8 +858,11 @@ const linksUdirNo = [
 export const UdirNo: Story = {
   render() {
     return (
-      <Header applicationName="Utdanningsdirektoratet">
-        <Search style={{ maxWidth: '280px' }}>
+      <Header
+        applicationName="Utdanningsdirektoratet"
+        href="https://www.udir.no/"
+      >
+        <Search style={{ maxWidth: '280px' }} data-show="sm">
           <Search.Input aria-label="Søk" placeholder="Søk" />
           <Search.Clear />
         </Search>
@@ -868,6 +879,10 @@ export const UdirNo: Story = {
               rowGap: 'var(--ds-size-10)',
             }}
           >
+            <Search style={{ maxWidth: '280px' }} data-hide="sm">
+              <Search.Input aria-label="Søk" placeholder="Søk" />
+              <Search.Clear />
+            </Search>
             {linksUdirNo.map((column) => (
               <div key={column.heading}>
                 <Heading
