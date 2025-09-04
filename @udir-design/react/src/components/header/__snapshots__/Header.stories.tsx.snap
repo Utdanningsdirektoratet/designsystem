@@ -1,422 +1,420 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Auto Hide Sticky 1`] = `
-<div>
-  <header data-scroll-direction="up">
-    <a href="/">
-      <img
-        alt
-        src="/assets/img/udir-circle-logo.png"
-      >
-      <h2 data-size="xs">
-        Tjenestenavn
-      </h2>
-    </a>
-    <div>
-      <a href="https://design.udir.no/">
-        Komponenter
-      </a>
-      <a href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209">
-        Figma
-      </a>
-      <a href="https://github.com/Utdanningsdirektoratet/designsystem">
-        Github
-      </a>
-      <button
-        data-variant="secondary"
-        type="button"
-        popovertarget="uds-header-menu"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M2.75 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17A.75.75 0 0 1 2.75 6m0 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17a.75.75 0 0 1-.75-.75m.75 5.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            d="M6.53 5.47a.75.75 0 0 0-1.06 1.06L10.94 12l-5.47 5.47a.75.75 0 1 0 1.06 1.06L12 13.06l5.47 5.47a.75.75 0 1 0 1.06-1.06L13.06 12l5.47-5.47a.75.75 0 0 0-1.06-1.06L12 10.94z"
-          >
-          </path>
-        </svg>
-        Meny
-      </button>
-      <div
-        id="uds-header-menu"
-        popover="auto"
-        data-variant="default"
-      >
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); max-width: 800px; margin: 0px auto; padding: var(--ds-size-10); justify-items: center; row-gap: var(--ds-size-10); column-gap: ;">
-          <div>
-            <h3
-              data-size="xs"
-              style="margin-bottom: var(--ds-size-3);"
-            >
-              Designprofil
-            </h3>
-            <ul>
-              <li>
-                <a
-                  href="https://www.udir.no/om-udir/designprofil/identitet/"
-                  style="text-decoration: none;"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    fill="none"
-                    viewbox="0 0 24 24"
-                    focusable="false"
-                    role="img"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="currentColor"
-                      fill-rule="evenodd"
-                      d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
-                      clip-rule="evenodd"
-                    >
-                    </path>
-                  </svg>
-                  <span>
-                    Identitet
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.udir.no/om-udir/designprofil/farger/"
-                  style="text-decoration: none;"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    fill="none"
-                    viewbox="0 0 24 24"
-                    focusable="false"
-                    role="img"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="currentColor"
-                      fill-rule="evenodd"
-                      d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
-                      clip-rule="evenodd"
-                    >
-                    </path>
-                  </svg>
-                  <span>
-                    Farger
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.udir.no/om-udir/designprofil/typografi/"
-                  style="text-decoration: none;"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    fill="none"
-                    viewbox="0 0 24 24"
-                    focusable="false"
-                    role="img"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="currentColor"
-                      fill-rule="evenodd"
-                      d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
-                      clip-rule="evenodd"
-                    >
-                    </path>
-                  </svg>
-                  <span>
-                    Typografi
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3
-              data-size="xs"
-              style="margin-bottom: var(--ds-size-3);"
-            >
-              Illustrasjoner
-            </h3>
-            <ul>
-              <li>
-                <a
-                  href="https://www.figma.com/design/QeYBL9fzDCk87WNWcDSQi7/01-Illustrasjoner---barnehage?node-id=457-13863"
-                  style="text-decoration: none;"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    fill="none"
-                    viewbox="0 0 24 24"
-                    focusable="false"
-                    role="img"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="currentColor"
-                      fill-rule="evenodd"
-                      d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
-                      clip-rule="evenodd"
-                    >
-                    </path>
-                  </svg>
-                  <span>
-                    Illustrasjoner
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.figma.com/design/SSdGSjSYPDSyX2IfHLfmEL/Symbolbibliotek?node-id=0-1&amp;p=f&amp;m=dev"
-                  style="text-decoration: none;"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    fill="none"
-                    viewbox="0 0 24 24"
-                    focusable="false"
-                    role="img"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="currentColor"
-                      fill-rule="evenodd"
-                      d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
-                      clip-rule="evenodd"
-                    >
-                    </path>
-                  </svg>
-                  <span>
-                    Symboler
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.figma.com/design/W4tl2t6G22muQfVF8jGeQX/Ikonbibliotek?node-id=9-2879&amp;p=f&amp;m=dev"
-                  style="text-decoration: none;"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    fill="none"
-                    viewbox="0 0 24 24"
-                    focusable="false"
-                    role="img"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="currentColor"
-                      fill-rule="evenodd"
-                      d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
-                      clip-rule="evenodd"
-                    >
-                    </path>
-                  </svg>
-                  <span>
-                    Ikoner
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3
-              data-size="xs"
-              style="margin-bottom: var(--ds-size-3);"
-            >
-              Nyttige lenker
-            </h3>
-            <ul>
-              <li>
-                <a
-                  href="https://design.udir.no/"
-                  style="text-decoration: none;"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    fill="none"
-                    viewbox="0 0 24 24"
-                    focusable="false"
-                    role="img"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="currentColor"
-                      fill-rule="evenodd"
-                      d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
-                      clip-rule="evenodd"
-                    >
-                    </path>
-                  </svg>
-                  <span>
-                    Komponenter
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209"
-                  style="text-decoration: none;"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    fill="none"
-                    viewbox="0 0 24 24"
-                    focusable="false"
-                    role="img"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="currentColor"
-                      fill-rule="evenodd"
-                      d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
-                      clip-rule="evenodd"
-                    >
-                    </path>
-                  </svg>
-                  <span>
-                    Figma
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/Utdanningsdirektoratet/designsystem"
-                  style="text-decoration: none;"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    fill="none"
-                    viewbox="0 0 24 24"
-                    focusable="false"
-                    role="img"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="currentColor"
-                      fill-rule="evenodd"
-                      d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
-                      clip-rule="evenodd"
-                    >
-                    </path>
-                  </svg>
-                  <span>
-                    Github
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <div style="padding: var(--ds-size-18); display: flex; flex-direction: column; gap: var(--ds-size-4); max-width: 800px; margin: 0px auto;">
-    <h1 data-size="lg">
-      Demo av sticky scroll header
-    </h1>
-    <p
-      data-variant="default"
-      style="margin-top: var(--ds-size-3);"
-    >
-      I denne demoen kan du teste hvordan headeren oppfører seg når du scroller opp og ned. Den vil automatisk skjule seg når du scroller nedover og vise seg igjen når du scroller oppover.
-    </p>
-    <h2 style="margin-top: var(--ds-size-5);">
-      Container må ha
-      <code>
-        overflow='visible'
-      </code>
-    </h2>
-    <p data-variant="default">
-      Headeren er automatisk sticky med funksjonalitet for å skjule seg ved scrolling. Dette gir en bedre brukeropplevelse ved at viktig innhold alltid er tilgjengelig, samtidig som det gir mer plass til innholdet under headeren. For at dette skal fungere må containeren til Header ha
-      <code>
-        overflow='visible'
-      </code>
-      .
-    </p>
-    <h2 style="margin-top: var(--ds-size-5);">
-      Hvordan fungerer autoskjuling?
-    </h2>
-    <p data-variant="default">
-      Dette fungerer ved at headeren har en data-attributt som heter
-      <code>
-        data-scroll-direction
-      </code>
-      . Den blir satt til
-      <code>
-        "up"
-      </code>
-      når brukeren scroller oppover, og
-      <code>
-        "down"
-      </code>
-      når brukeren scroller nedover. Det vil si at du må selv må gi headeren din data-attributtet dersom du kun bruker css-biblioteket.
-    </p>
-    <hr
-      aria-hidden="true"
-      style="margin-top: var(--ds-size-10);"
-    >
-    <p
-      data-variant="default"
-      style="margin-top: var(--ds-size-22); margin-bottom: var(--ds-size-22);"
-    >
-      (Annet innhold)
-    </p>
-    <hr aria-hidden="true">
-  </div>
-</div>
-`;
-
-exports[`Preview 1`] = `
 <header data-scroll-direction="up">
   <a href="/">
     <img
       alt
-      src="/assets/img/udir-circle-logo.png"
+      src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
+    >
+    <h2 data-size="xs">
+      Tjenestenavn
+    </h2>
+  </a>
+  <div>
+    <a href="https://design.udir.no/">
+      Komponenter
+    </a>
+    <a href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209">
+      Figma
+    </a>
+    <a href="https://github.com/Utdanningsdirektoratet/designsystem">
+      Github
+    </a>
+    <button
+      data-variant="secondary"
+      type="button"
+      popovertarget="uds-header-menu"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M2.75 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17A.75.75 0 0 1 2.75 6m0 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17a.75.75 0 0 1-.75-.75m.75 5.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M6.53 5.47a.75.75 0 0 0-1.06 1.06L10.94 12l-5.47 5.47a.75.75 0 1 0 1.06 1.06L12 13.06l5.47 5.47a.75.75 0 1 0 1.06-1.06L13.06 12l5.47-5.47a.75.75 0 0 0-1.06-1.06L12 10.94z"
+        >
+        </path>
+      </svg>
+      Meny
+    </button>
+    <div
+      id="uds-header-menu"
+      popover="auto"
+      data-variant="default"
+    >
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); max-width: 800px; margin: 0px auto; padding: var(--ds-size-10); justify-items: center; row-gap: var(--ds-size-10); column-gap: ;">
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Designprofil
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.udir.no/om-udir/designprofil/identitet/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Identitet
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/om-udir/designprofil/farger/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Farger
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/om-udir/designprofil/typografi/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Typografi
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Illustrasjoner
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.figma.com/design/QeYBL9fzDCk87WNWcDSQi7/01-Illustrasjoner---barnehage?node-id=457-13863"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Illustrasjoner
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.figma.com/design/SSdGSjSYPDSyX2IfHLfmEL/Symbolbibliotek?node-id=0-1&amp;p=f&amp;m=dev"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Symboler
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.figma.com/design/W4tl2t6G22muQfVF8jGeQX/Ikonbibliotek?node-id=9-2879&amp;p=f&amp;m=dev"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Ikoner
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            data-size="xs"
+            style="margin-bottom: var(--ds-size-3);"
+          >
+            Nyttige lenker
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://design.udir.no/"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Komponenter
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Figma
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/Utdanningsdirektoratet/designsystem"
+                style="text-decoration: none;"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Github
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div style="padding: var(--ds-size-18); display: flex; flex-direction: column; gap: var(--ds-size-4); max-width: 800px; margin: 0px auto;">
+  <h1 data-size="lg">
+    Demo av sticky scroll header
+  </h1>
+  <p
+    data-variant="default"
+    style="margin-top: var(--ds-size-3);"
+  >
+    I denne demoen kan du teste hvordan headeren oppfører seg når du scroller opp og ned. Den vil automatisk skjule seg når du scroller nedover og vise seg igjen når du scroller oppover.
+  </p>
+  <h2 style="margin-top: var(--ds-size-5);">
+    Container må ha
+    <code>
+      overflow='visible'
+    </code>
+  </h2>
+  <p data-variant="default">
+    Headeren er automatisk sticky med funksjonalitet for å skjule seg ved scrolling. Dette gir en bedre brukeropplevelse ved at viktig innhold alltid er tilgjengelig, samtidig som det gir mer plass til innholdet under headeren. For at dette skal fungere må containeren til Header ha
+    <code>
+      overflow='visible'
+    </code>
+    .
+  </p>
+  <h2 style="margin-top: var(--ds-size-5);">
+    Hvordan fungerer autoskjuling?
+  </h2>
+  <p data-variant="default">
+    Dette fungerer ved at headeren har en data-attributt som heter
+    <code>
+      data-scroll-direction
+    </code>
+    . Den blir satt til
+    <code>
+      "up"
+    </code>
+    når brukeren scroller oppover, og
+    <code>
+      "down"
+    </code>
+    når brukeren scroller nedover. Det vil si at du må selv må gi headeren din data-attributtet dersom du kun bruker css-biblioteket.
+  </p>
+  <hr
+    aria-hidden="true"
+    style="margin-top: var(--ds-size-10);"
+  >
+  <p
+    data-variant="default"
+    style="margin-top: var(--ds-size-22); margin-bottom: var(--ds-size-22);"
+  >
+    (Annet innhold)
+  </p>
+  <hr aria-hidden="true">
+</div>
+`;
+
+exports[`Preview 1`] = `
+<header>
+  <a href="/">
+    <img
+      alt
+      src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
     >
     <h2 data-size="xs">
       Tjenestenavn
@@ -430,7 +428,7 @@ exports[`Responsive 1`] = `
   <a href="/">
     <img
       alt
-      src="/assets/img/udir-circle-logo.png"
+      src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
     >
     <h2 data-size="xs">
       Tjenestenavn
@@ -608,7 +606,7 @@ exports[`Responsive 1`] = `
         data-color="neutral"
         popovertarget="usermenuInMenu"
         data-show="md"
-        style="justify-self: end;"
+        style="margin-left: auto;"
       >
         <div>
           <h3 data-size="2xs">
@@ -1000,7 +998,7 @@ exports[`Udir No 1`] = `
   <a href="/">
     <img
       alt="Utdanningsdirektoratet"
-      src="/assets/img/udir-main-logo.png"
+      src="/assets/img/udir-main-logo.svg"
     >
   </a>
   <div>
@@ -2200,7 +2198,7 @@ exports[`With Links 1`] = `
   <a href="/">
     <img
       alt
-      src="/assets/img/udir-circle-logo.png"
+      src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
     >
     <h2 data-size="xs">
       Tjenestenavn
@@ -2225,7 +2223,7 @@ exports[`With Mega Menu 1`] = `
   <a href="/">
     <img
       alt
-      src="/assets/img/udir-circle-logo.png"
+      src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
     >
     <h2 data-size="xs">
       Tjenestenavn
@@ -2572,7 +2570,7 @@ exports[`With Mega Menus 1`] = `
   <a href="/">
     <img
       alt
-      src="/assets/img/udir-circle-logo.png"
+      src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
     >
     <h2 data-size="xs">
       Tjenestenavn
@@ -3320,7 +3318,7 @@ exports[`With Search 1`] = `
   <a href="/">
     <img
       alt
-      src="/assets/img/udir-circle-logo.png"
+      src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
     >
     <h2 data-size="xs">
       Tjenestenavn
@@ -3351,7 +3349,7 @@ exports[`With Simple Menu 1`] = `
   <a href="/">
     <img
       alt
-      src="/assets/img/udir-circle-logo.png"
+      src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
     >
     <h2 data-size="xs">
       Tjenestenavn
@@ -3456,7 +3454,7 @@ exports[`With User Button 1`] = `
   <a href="/">
     <img
       alt
-      src="/assets/img/udir-circle-logo.png"
+      src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
     >
     <h2 data-size="xs">
       Tjenestenavn

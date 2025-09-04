@@ -20,10 +20,7 @@ Det er mulig å legge til alle typer komponenter som er i designsystemet. I till
 
 ## Slik bruker du Header
 
-<Canvas
-  story={{ inline: false, height: 'fit-content' }}
-  of={HeaderStories.Preview}
-/>
+<Primary />
 <Controls />
 
 ```tsx
@@ -116,7 +113,7 @@ I eksempelet under ønsker vi å flytte `Header.UserButton` fra `Header` til men
 
 `Header` er `sticky` med funksjonalitet for automatisk skjuling ved scrolling. Det vil si at når brukeren scroller nedover på siden, vil headeren skjule seg for å gi mer plass til innholdet. Når brukeren scroller opp igjen, vil headeren vises på nytt. Slik har brukeren alltid tilgang til viktig funksjonalitet, uavhengig av hvor langt ned på siden de har scrollet.
 
-Foreldreelementet får automatisk `overflow: visible`. Sørg for at dette ikke blir overskrevet.
+Foreldreelementet får automatisk `overflow: visible`. Sørg for at dette ikke blir overskrevet. Ønsker du at headeren ikke skal animeres og bli på toppen av siden ved scroll, setter du `animateHeaderOnScroll=false`.
 
 <Canvas
   story={{ inline: false, height: '700px' }}

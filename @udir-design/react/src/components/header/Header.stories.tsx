@@ -38,6 +38,7 @@ type Story = StoryObj<typeof Header>;
 export const Preview: Story = {
   args: {
     applicationName: 'Tjenestenavn',
+    animateHeaderOnScroll: false,
   },
   render: (args) => <Header {...args} />,
 };
@@ -335,7 +336,7 @@ export const Responsive: Story = {
             userRole="Admin"
             popovertarget="usermenuInMenu"
             avatar={<Avatar aria-label="Stian Hansen">SH</Avatar>}
-            style={{ justifySelf: 'end' }}
+            style={{ marginLeft: 'auto' }}
             data-show="md"
           />
           <Dropdown
@@ -417,7 +418,7 @@ export const AutoHideSticky: Story = {
   },
   render() {
     return (
-      <div>
+      <>
         <Header applicationName="Tjenestenavn">
           <Link href="https://design.udir.no/">Komponenter</Link>
           <Link href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209">
@@ -518,7 +519,7 @@ export const AutoHideSticky: Story = {
           </Paragraph>
           <Divider />
         </div>
-      </div>
+      </>
     );
   },
 };
