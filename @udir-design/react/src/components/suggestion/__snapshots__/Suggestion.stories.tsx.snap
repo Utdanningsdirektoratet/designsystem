@@ -1002,10 +1002,8 @@ exports[`In Details 1`] = `
 <u-details
   data-variant="default"
   role="group"
-  aria-labelledby=":u-summary1"
 >
   <u-summary
-    id=":u-summary1"
     aria-expanded="false"
     role="button"
     slot="summary"

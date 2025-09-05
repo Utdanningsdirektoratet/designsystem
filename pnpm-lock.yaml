@@ -138,8 +138,8 @@ importers:
   '@udir-design/css':
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.3.0
-        version: 1.3.0
+        specifier: 1.4.0
+        version: 1.4.0
       '@udir-design/theme':
         specifier: workspace:*
         version: link:../theme
@@ -172,8 +172,8 @@ importers:
   '@udir-design/react':
     dependencies:
       '@digdir/designsystemet-react':
-        specifier: 1.3.0
-        version: 1.3.0(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: 1.4.0
+        version: 1.4.0(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@navikt/aksel-icons':
         specifier: ^7.29.0
         version: 7.29.0(react@19.1.1)
@@ -332,8 +332,8 @@ importers:
   '@udir-design/theme':
     dependencies:
       '@digdir/designsystemet':
-        specifier: 1.3.0
-        version: 1.3.0
+        specifier: 1.4.0
+        version: 1.4.0
     devDependencies:
       '@internal/build-tools':
         specifier: workspace:*
@@ -348,8 +348,8 @@ importers:
   design-tokens:
     devDependencies:
       '@digdir/designsystemet':
-        specifier: 1.3.0
-        version: 1.3.0
+        specifier: 1.4.0
+        version: 1.4.0
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -1191,18 +1191,18 @@ packages:
     resolution: {integrity: sha512-Y6+WUMsTFWE5jb20IFP4YGa5IrGY/+a/FbOSjDF/wz9gepU2hwCYSXRHP/vPwBvwcY3SVMASt4yXxbXNXigmZQ==}
     engines: {node: '>=18'}
 
-  '@digdir/designsystemet-css@1.3.0':
-    resolution: {integrity: sha512-jPEmibDKkXfGxdSU63fGH9vBrHdQl9colpsapRt08Sp+M8dLAKAeQSYf6ri9jiKc3fl/fBL5aUi/jNQIsRcCNg==}
+  '@digdir/designsystemet-css@1.4.0':
+    resolution: {integrity: sha512-VjsK5L+M3G3WJvpLOrEKlprNz1/f1YZ0rSTrYrOL7FEfbX7d4wT6Gnr1/MHSlPxGezDFZKF/7ow+44LYHd5hzA==}
 
-  '@digdir/designsystemet-react@1.3.0':
-    resolution: {integrity: sha512-6LwhAkEsBuLyeaOdN6KS9FhUpWS8llNa1ml9pGI1DzwinaB00+HaL98MpMLYTmih7yz5GVh3flghLj4c8GChhg==}
+  '@digdir/designsystemet-react@1.4.0':
+    resolution: {integrity: sha512-Vvqk4m+VkDDAQ2Rnd1yxA8wjlJzLcLRQvKz5HrhuxxsviWz8rPlrfx3SMP8rt5QFQxNKQfdlLYTy2KZkxLQJrA==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet@1.3.0':
-    resolution: {integrity: sha512-P9rGv8dB3hVEHBkSfI8416x+3gk0owc0slZ7iuF/bw1evuldu4jdKAfnXNMRkIZ+x9VzRnQiWyqZM2JWdFvX7A==}
-    engines: {node: '>=22.18.0'}
+  '@digdir/designsystemet@1.4.0':
+    resolution: {integrity: sha512-bzW6xi68Hp+hJkoU7e+Yb8rH6NeA+R6Taa7dmBjEmd2VlqXzpkwChfPcU5kqgGbcXGtJ45qMPTfCDzBU71i9kQ==}
+    engines: {node: '>=22.19.0'}
     hasBin: true
 
   '@emnapi/core@1.5.0':
@@ -2655,8 +2655,8 @@ packages:
   '@u-elements/u-datalist@1.0.14':
     resolution: {integrity: sha512-wgh7BMLySzPF3xcfxeNnZgy/JmFZOQVJVY+XwAiIBgDYkCWQqERJrHjxRHv8C6t4h2PWnO7mwDIqdLQHEq12XQ==}
 
-  '@u-elements/u-details@0.1.3':
-    resolution: {integrity: sha512-3DzAgUHvkbxY5NbRgQQ73qJOuXKACTZ16or1MFbD78rwbwqLUCBYqwW6XCEtHhVBLuVwlksIKXWh6Ln4EPPYJg==}
+  '@u-elements/u-details@0.1.4':
+    resolution: {integrity: sha512-9CH2mqBOkYBzBW4cNXlhDneTiA6Dw3uMnfo4rlzKv7udXy9F8FfYybRvQo899YbyZElPWNVu7lVJC7U0IgKPuw==}
 
   '@udir-design/react@file:@udir-design/react':
     resolution: {directory: '@udir-design/react', type: directory}
@@ -2839,14 +2839,8 @@ packages:
   '@volar/typescript@2.4.23':
     resolution: {integrity: sha512-lAB5zJghWxVPqfcStmAP1ZqQacMpe90UrP5RJ3arDyrhy4aCUQqmxPPLB2PWDKugvylmO41ljK7vZ+t6INMTag==}
 
-  '@vue/compiler-core@3.5.20':
-    resolution: {integrity: sha512-8TWXUyiqFd3GmP4JTX9hbiTFRwYHgVL/vr3cqhr4YQ258+9FADwvj7golk2sWNGHR67QgmCZ8gz80nQcMokhwg==}
-
   '@vue/compiler-core@3.5.21':
     resolution: {integrity: sha512-8i+LZ0vf6ZgII5Z9XmUvrCyEzocvWT+TeR2VBUVlzIH6Tyv57E20mPZ1bCS+tbejgUgmjrEh7q/0F0bibskAmw==}
-
-  '@vue/compiler-dom@3.5.20':
-    resolution: {integrity: sha512-whB44M59XKjqUEYOMPYU0ijUV0G+4fdrHVKDe32abNdX/kJe1NUEMqsi4cwzXa9kyM9w5S8WqFsrfo1ogtBZGQ==}
 
   '@vue/compiler-dom@3.5.21':
     resolution: {integrity: sha512-jNtbu/u97wiyEBJlJ9kmdw7tAr5Vy0Aj5CgQmo+6pxWNQhXZDPsRr1UWPN4v3Zf82s2H3kF51IbzZ4jMWAgPlQ==}
@@ -2868,9 +2862,6 @@ packages:
       typescript:
         optional: true
 
-  '@vue/shared@3.5.20':
-    resolution: {integrity: sha512-SoRGP596KU/ig6TfgkCMbXkr4YJ91n/QSdMuqeP5r3hVIYA3CPHUBCc7Skak0EAKV+5lL4KyIh61VA/pK1CIAA==}
-
   '@vue/shared@3.5.21':
     resolution: {integrity: sha512-+2k1EQpnYuVuu3N7atWyG3/xoFWIVJZq4Mz8XNOdScFI0etES75fbny/oU4lKWk/577P1zmg0ioYvpGEDZ3DLw==}
 
@@ -2881,8 +2872,8 @@ packages:
     resolution: {integrity: sha512-/HcYgtUSiJiot/XWGLOlGxPYUG65+/31V8oqk17vZLW1xlCoR4PampyePljOxY2n8/3jz9+tIFzICsyGujJZoA==}
     engines: {node: '>=18.12.0'}
 
-  '@zip.js/zip.js@2.7.72':
-    resolution: {integrity: sha512-3/A4JwrgkvGBlCxtItjxs8HrNbuTAAl/zlGkV6tC5Fb5k5nk4x2Dqxwl/YnUys5Ch+QB01eJ8Q5K/J2uXfy9Vw==}
+  '@zip.js/zip.js@2.7.73':
+    resolution: {integrity: sha512-I2UP8/rdQE5hTtVVL08B7P8XuwXiKuuMUPjNuFOVL/9b+8IsExR9S5jz2H58u0rJjU4M1BikLgqEMG8gZJZVBw==}
     engines: {bun: '>=0.7.0', deno: '>=1.0.0', node: '>=16.5.0'}
 
   '@zkochan/js-yaml@0.0.7':
@@ -6423,8 +6414,8 @@ packages:
     resolution: {integrity: sha512-hdF5ZgjTqgAntKkklYw0R03MG2x/bSzTtkxmIRw/sTNV8YXsCJ1tfLAX23lhxhHJlEf3CRCOCGGWw3vI3GaSPw==}
     engines: {node: '>=18'}
 
-  tree-dump@1.0.3:
-    resolution: {integrity: sha512-il+Cv80yVHFBwokQSfd4bldvr1Md951DpgAGfmhydt04L+YzHgubm2tQ7zueWDcGENKHq0ZvGFR/hjvNXilHEg==}
+  tree-dump@1.1.0:
+    resolution: {integrity: sha512-rMuvhU4MCDbcbnleZTFezWsaZXRFemSqAM+7jPnzUl1fo9w3YEKOxAeui0fz3OI4EU4hf23iyA7uQRVko+UaBA==}
     engines: {node: '>=10.0'}
     peerDependencies:
       tslib: '2'
@@ -7988,9 +7979,9 @@ snapshots:
       gonzales-pe: 4.3.0
       node-source-walk: 7.0.1
 
-  '@digdir/designsystemet-css@1.3.0': {}
+  '@digdir/designsystemet-css@1.4.0': {}
 
-  '@digdir/designsystemet-react@1.3.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@digdir/designsystemet-react@1.4.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@floating-ui/dom': 1.7.4
       '@floating-ui/react': 0.26.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -7999,14 +7990,14 @@ snapshots:
       '@tanstack/react-virtual': 3.13.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@u-elements/u-combobox': 1.0.1
       '@u-elements/u-datalist': 1.0.14
-      '@u-elements/u-details': 0.1.3
+      '@u-elements/u-details': 0.1.4
       clsx: 2.1.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet-react@1.3.0(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@digdir/designsystemet-react@1.4.0(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@floating-ui/dom': 1.7.4
       '@floating-ui/react': 0.26.23(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -8015,14 +8006,14 @@ snapshots:
       '@tanstack/react-virtual': 3.13.12(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@u-elements/u-combobox': 1.0.1
       '@u-elements/u-datalist': 1.0.14
-      '@u-elements/u-details': 0.1.3
+      '@u-elements/u-details': 0.1.4
       clsx: 2.1.1
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet@1.3.0':
+  '@digdir/designsystemet@1.4.0':
     dependencies:
       '@commander-js/extra-typings': 14.0.0(commander@14.0.0)
       '@tokens-studio/sd-transforms': 1.3.0(style-dictionary@5.0.4)
@@ -8504,7 +8495,7 @@ snapshots:
       ignore: 5.3.2
       minimatch: 9.0.3
       nx: 21.4.0(@swc-node/register@1.11.1(@swc/core@1.13.5(@swc/helpers@0.5.17))(@swc/types@0.1.24)(typescript@5.9.2))(@swc/core@1.13.5(@swc/helpers@0.5.17))
-      semver: 7.5.4
+      semver: 7.7.2
       tmp: 0.2.5
       tslib: 2.8.1
       yargs-parser: 21.1.1
@@ -9473,11 +9464,11 @@ snapshots:
 
   '@u-elements/u-datalist@1.0.14': {}
 
-  '@u-elements/u-details@0.1.3': {}
+  '@u-elements/u-details@0.1.4': {}
 
   '@udir-design/react@file:@udir-design/react(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@digdir/designsystemet-react': 1.3.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@digdir/designsystemet-react': 1.4.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@navikt/aksel-icons': 7.29.0(react@18.3.1)
       '@udir-design/css': link:@udir-design/css
       react: 18.3.1
@@ -9661,14 +9652,6 @@ snapshots:
       path-browserify: 1.0.1
       vscode-uri: 3.1.0
 
-  '@vue/compiler-core@3.5.20':
-    dependencies:
-      '@babel/parser': 7.28.3
-      '@vue/shared': 3.5.20
-      entities: 4.5.0
-      estree-walker: 2.0.2
-      source-map-js: 1.2.1
-
   '@vue/compiler-core@3.5.21':
     dependencies:
       '@babel/parser': 7.28.3
@@ -9676,11 +9659,6 @@ snapshots:
       entities: 4.5.0
       estree-walker: 2.0.2
       source-map-js: 1.2.1
-
-  '@vue/compiler-dom@3.5.20':
-    dependencies:
-      '@vue/compiler-core': 3.5.20
-      '@vue/shared': 3.5.20
 
   '@vue/compiler-dom@3.5.21':
     dependencies:
@@ -9712,17 +9690,15 @@ snapshots:
   '@vue/language-core@2.2.0(typescript@5.9.2)':
     dependencies:
       '@volar/language-core': 2.4.23
-      '@vue/compiler-dom': 3.5.20
+      '@vue/compiler-dom': 3.5.21
       '@vue/compiler-vue2': 2.7.16
-      '@vue/shared': 3.5.20
+      '@vue/shared': 3.5.21
       alien-signals: 0.4.14
       minimatch: 9.0.5
       muggle-string: 0.4.1
       path-browserify: 1.0.1
     optionalDependencies:
       typescript: 5.9.2
-
-  '@vue/shared@3.5.20': {}
 
   '@vue/shared@3.5.21': {}
 
@@ -9733,7 +9709,7 @@ snapshots:
       js-yaml: 3.14.1
       tslib: 2.8.1
 
-  '@zip.js/zip.js@2.7.72': {}
+  '@zip.js/zip.js@2.7.73': {}
 
   '@zkochan/js-yaml@0.0.7':
     dependencies:
@@ -11830,7 +11806,7 @@ snapshots:
       lodash.isstring: 4.0.1
       lodash.once: 4.1.1
       ms: 2.1.3
-      semver: 7.5.4
+      semver: 7.7.2
 
   jsx-ast-utils@3.3.5:
     dependencies:
@@ -12163,7 +12139,7 @@ snapshots:
       '@jsonjoy.com/util': 1.9.0(tslib@2.8.1)
       glob-to-regex.js: 1.0.1(tslib@2.8.1)
       thingies: 2.5.0(tslib@2.8.1)
-      tree-dump: 1.0.3(tslib@2.8.1)
+      tree-dump: 1.1.0(tslib@2.8.1)
       tslib: 2.8.1
 
   meow@12.1.1: {}
@@ -12659,7 +12635,7 @@ snapshots:
       bl: 4.1.0
       chalk: 4.1.2
       cli-cursor: 3.1.0
-      cli-spinners: 2.6.1
+      cli-spinners: 2.9.2
       is-interactive: 1.0.0
       log-symbols: 4.1.0
       strip-ansi: 6.0.1
@@ -13740,7 +13716,7 @@ snapshots:
       '@bundled-es-modules/deepmerge': 4.3.1
       '@bundled-es-modules/glob': 11.0.3
       '@bundled-es-modules/memfs': 4.17.0
-      '@zip.js/zip.js': 2.7.72
+      '@zip.js/zip.js': 2.7.73
       chalk: 5.6.0
       change-case: 5.4.4
       commander: 12.1.0
@@ -13897,7 +13873,7 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  tree-dump@1.0.3(tslib@2.8.1):
+  tree-dump@1.1.0(tslib@2.8.1):
     dependencies:
       tslib: 2.8.1
 
