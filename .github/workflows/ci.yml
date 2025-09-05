@@ -97,9 +97,6 @@ jobs:
         with:
           fetch-depth: 0
       - uses: ./.github/actions/pnpm-setup
-      # Storybook tests requires first installing browsers for Playwright
-      - name: Install Playwright browsers
-        run: pnpm exec playwright install --with-deps chromium
       - name: Run Storybook tests
         run: pnpm nx test:storybook
 
