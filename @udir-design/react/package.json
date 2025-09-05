@@ -40,7 +40,7 @@
     "dev": "storybook dev --port 6006",
     "build:storybook": "storybook build --stats-json",
     "serve:storybook": "pnpm dlx http-server ./storybook-static",
-    "test:storybook": "vitest --project storybook"
+    "test:storybook": "pnpm exec playwright install --with-deps chromium && pnpm vitest --project storybook"
   },
   "dependencies": {
     "@digdir/designsystemet-react": "1.3.0",
