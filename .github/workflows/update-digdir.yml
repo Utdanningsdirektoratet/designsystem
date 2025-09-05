@@ -15,8 +15,14 @@ jobs:
         run: echo "version=$(pnpm outdated -r '@digdir/*' --json | jq -r '."@digdir/designsystemet".latest // ""')" >> "$GITHUB_OUTPUT"
         id: digdir_info
       - name: Update @digdir/* packages
-        run: pnpm update -r --latest "@digdir/*"
         if: steps.digdir_info.outputs.version
+        run: pnpm update -r --latest "@digdir/*" && pnpm dedupe
+      - name: Rebuild theme
+        if: steps.digdir_info.outputs.version
+        run: pnpm nx run @udir-design/theme:build
+      - name: Update snapshots
+        if: steps.digdir_info.outputs.version
+        run: pnpm nx test:storybook -u
       - name: Create or update pull request
         if: steps.digdir_info.outputs.version
         uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8

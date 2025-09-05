@@ -25,7 +25,7 @@ jobs:
         if: steps.prettier_info.outputs.version
         id: prettier_run
         run: |
-          pnpm update -r --latest prettier
+          pnpm update -r --latest prettier && pnpm dedupe
           git commit --all -m "build: update prettier to ${{ steps.prettier_info.outputs.version }}"
           pnpm nx format:write --all
           echo has_changes="$(git diff --stat --exit-code)" >> "$GITHUB_OUTPUT"
