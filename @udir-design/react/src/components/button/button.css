@@ -1,0 +1,6 @@
+.ds-button {
+  &[data-variant='tertiary']:not([data-color='danger']),
+  &[data-variant='secondary']:not([data-color='danger']) {
+    --dsc-button-color: var(--ds-color-text-default);
+  }
+}

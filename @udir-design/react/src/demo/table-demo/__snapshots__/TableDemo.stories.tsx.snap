@@ -128,30 +128,34 @@ exports[`Table Story 1`] = `
       <hr aria-hidden="true">
       <div>
         <div>
-          <div>
-            <label
-              data-weight="medium"
-              for="select-education-level"
-            >
-              Velg utdanningsnivå
+          <label data-weight="medium">
+            Filtrer på utdanningsnivå
+          </label>
+          <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
+            <label>
+              <input
+                type="checkbox"
+                value="Barnehage"
+                checked
+              >
+              Barnehage
             </label>
-            <select
-              aria-label="Velg utdanningsnivå"
-              id="select-education-level"
-            >
-              <option value="blank">
-                Alle nivåer
-              </option>
-              <option value="Barnehage">
-                Barnehage
-              </option>
-              <option value="Grunnskole">
-                Grunnskole
-              </option>
-              <option value="Videregående">
-                Videregående
-              </option>
-            </select>
+            <label>
+              <input
+                type="checkbox"
+                value="Grunnskole"
+                checked
+              >
+              Grunnskole
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                value="Videregående"
+                checked
+              >
+              Videregående
+            </label>
           </div>
         </div>
         <div>
@@ -226,10 +230,21 @@ exports[`Table Story 1`] = `
               <td>
                 <div>
                   <span
-                    data-variant="circle"
-                    role="img"
-                    aria-label="Lise Nordmann"
+                    data-overlap="circle"
+                    data-placement="top-right"
                   >
+                    <span
+                      data-variant="base"
+                      data-color="accent"
+                      data-size="md"
+                    >
+                    </span>
+                    <span
+                      data-variant="circle"
+                      role="img"
+                      aria-label="Ny elev Lise Nordmann"
+                    >
+                    </span>
                   </span>
                   Lise Nordmann
                 </div>
@@ -244,8 +259,8 @@ exports[`Table Story 1`] = `
                 22345678
               </td>
               <td>
-                <span data-color="info">
-                  Ny
+                <span data-color="warning">
+                  Ikke eksportert
                 </span>
               </td>
               <td>
@@ -287,17 +302,15 @@ exports[`Table Story 1`] = `
                   Slett
                 </span>
                 <dialog data-modal="true">
-                  <form method="dialog">
-                    <button
-                      data-icon="true"
-                      data-variant="tertiary"
-                      type="submit"
-                      aria-label="Lukk dialogvindu"
-                      data-color="neutral"
-                      name="close"
-                    >
-                    </button>
-                  </form>
+                  <button
+                    data-icon="true"
+                    data-variant="tertiary"
+                    type="button"
+                    aria-label="Lukk dialogvindu"
+                    data-color="neutral"
+                    data-command="close"
+                  >
+                  </button>
                   <div>
                     <h2 data-size="xs">
                       Er du sikker på at du vil slette Lise Nordmann?
@@ -336,10 +349,15 @@ exports[`Table Story 1`] = `
               <td>
                 <div>
                   <span
-                    data-variant="circle"
-                    role="img"
-                    aria-label="Ola Nordmann"
+                    data-overlap="circle"
+                    data-placement="top-right"
                   >
+                    <span
+                      data-variant="circle"
+                      role="img"
+                      aria-label="Ola Nordmann"
+                    >
+                    </span>
                   </span>
                   Ola Nordmann
                 </div>
@@ -397,17 +415,15 @@ exports[`Table Story 1`] = `
                   Slett
                 </span>
                 <dialog data-modal="true">
-                  <form method="dialog">
-                    <button
-                      data-icon="true"
-                      data-variant="tertiary"
-                      type="submit"
-                      aria-label="Lukk dialogvindu"
-                      data-color="neutral"
-                      name="close"
-                    >
-                    </button>
-                  </form>
+                  <button
+                    data-icon="true"
+                    data-variant="tertiary"
+                    type="button"
+                    aria-label="Lukk dialogvindu"
+                    data-color="neutral"
+                    data-command="close"
+                  >
+                  </button>
                   <div>
                     <h2 data-size="xs">
                       Er du sikker på at du vil slette Ola Nordmann?
@@ -446,10 +462,21 @@ exports[`Table Story 1`] = `
               <td>
                 <div>
                   <span
-                    data-variant="circle"
-                    role="img"
-                    aria-label="Kari Nordmann"
+                    data-overlap="circle"
+                    data-placement="top-right"
                   >
+                    <span
+                      data-variant="base"
+                      data-color="accent"
+                      data-size="md"
+                    >
+                    </span>
+                    <span
+                      data-variant="circle"
+                      role="img"
+                      aria-label="Ny elev Kari Nordmann"
+                    >
+                    </span>
                   </span>
                   Kari Nordmann
                 </div>
@@ -507,17 +534,15 @@ exports[`Table Story 1`] = `
                   Slett
                 </span>
                 <dialog data-modal="true">
-                  <form method="dialog">
-                    <button
-                      data-icon="true"
-                      data-variant="tertiary"
-                      type="submit"
-                      aria-label="Lukk dialogvindu"
-                      data-color="neutral"
-                      name="close"
-                    >
-                    </button>
-                  </form>
+                  <button
+                    data-icon="true"
+                    data-variant="tertiary"
+                    type="button"
+                    aria-label="Lukk dialogvindu"
+                    data-color="neutral"
+                    data-command="close"
+                  >
+                  </button>
                   <div>
                     <h2 data-size="xs">
                       Er du sikker på at du vil slette Kari Nordmann?
@@ -556,10 +581,15 @@ exports[`Table Story 1`] = `
               <td>
                 <div>
                   <span
-                    data-variant="circle"
-                    role="img"
-                    aria-label="Per Nordmann"
+                    data-overlap="circle"
+                    data-placement="top-right"
                   >
+                    <span
+                      data-variant="circle"
+                      role="img"
+                      aria-label="Per Nordmann"
+                    >
+                    </span>
                   </span>
                   Per Nordmann
                 </div>
@@ -574,8 +604,8 @@ exports[`Table Story 1`] = `
                 44332211
               </td>
               <td>
-                <span data-color="info">
-                  Ny
+                <span data-color="warning">
+                  Ikke eksportert
                 </span>
               </td>
               <td>
@@ -617,17 +647,15 @@ exports[`Table Story 1`] = `
                   Slett
                 </span>
                 <dialog data-modal="true">
-                  <form method="dialog">
-                    <button
-                      data-icon="true"
-                      data-variant="tertiary"
-                      type="submit"
-                      aria-label="Lukk dialogvindu"
-                      data-color="neutral"
-                      name="close"
-                    >
-                    </button>
-                  </form>
+                  <button
+                    data-icon="true"
+                    data-variant="tertiary"
+                    type="button"
+                    aria-label="Lukk dialogvindu"
+                    data-color="neutral"
+                    data-command="close"
+                  >
+                  </button>
                   <div>
                     <h2 data-size="xs">
                       Er du sikker på at du vil slette Per Nordmann?
@@ -666,10 +694,15 @@ exports[`Table Story 1`] = `
               <td>
                 <div>
                   <span
-                    data-variant="circle"
-                    role="img"
-                    aria-label="Anne Nordmann"
+                    data-overlap="circle"
+                    data-placement="top-right"
                   >
+                    <span
+                      data-variant="circle"
+                      role="img"
+                      aria-label="Anne Nordmann"
+                    >
+                    </span>
                   </span>
                   Anne Nordmann
                 </div>
@@ -727,17 +760,15 @@ exports[`Table Story 1`] = `
                   Slett
                 </span>
                 <dialog data-modal="true">
-                  <form method="dialog">
-                    <button
-                      data-icon="true"
-                      data-variant="tertiary"
-                      type="submit"
-                      aria-label="Lukk dialogvindu"
-                      data-color="neutral"
-                      name="close"
-                    >
-                    </button>
-                  </form>
+                  <button
+                    data-icon="true"
+                    data-variant="tertiary"
+                    type="button"
+                    aria-label="Lukk dialogvindu"
+                    data-color="neutral"
+                    data-command="close"
+                  >
+                  </button>
                   <div>
                     <h2 data-size="xs">
                       Er du sikker på at du vil slette Anne Nordmann?
@@ -823,17 +854,15 @@ exports[`Table Story 1`] = `
           Eksporter liste
         </button>
         <dialog data-modal="true">
-          <form method="dialog">
-            <button
-              data-icon="true"
-              data-variant="tertiary"
-              type="submit"
-              aria-label="Lukk dialogvindu"
-              data-color="neutral"
-              name="close"
-            >
-            </button>
-          </form>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            aria-label="Lukk dialogvindu"
+            data-color="neutral"
+            data-command="close"
+          >
+          </button>
           <div>
             <h2 data-size="xs">
               Eksporter liste

@@ -1,0 +1,99 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import * as PopoverStories from './Popover.stories';
+
+<Meta of={PopoverStories} />
+
+# Popover
+
+`Popover` brukes til å vise tilleggsinformasjon, interaktive elementer eller korte forklaringer uten å navigere bort fra siden. Den er koblet til et spesifikt element.
+
+**Passer til å**
+
+- forklare ord eller konsepter som trenger mer enn en kort definisjon
+- gi mer omfattende informasjon (maksimalt ett avsnitt)
+- inkludere interaktivitet, som lenker, knapper eller valg
+
+**Passer ikke til å**
+
+- beskrive et symbol - bruk heller [`Tooltip`](/docs/components-tooltip--docs)
+- vise mye innhold
+
+## Slik bruker du Popover
+
+<Primary />
+<Controls />
+
+```tsx
+import { Popover } from '@udir-design/react';
+
+// med context
+<Popover.TriggerContext>
+  <Popover.Trigger>Trigger</Popover.Trigger>
+  <Popover>Content</Popover>
+</Popover.TriggerContext>
+
+// uten context med egen trigger
+<Button popovertarget="my-popover">Trigger</Button>
+<Popover id="my-popover">Content</Popover>
+```
+
+## Eksempler
+
+### Farger
+
+Du kan bruke alle identitetsfargene på `Popover`, i tillegg til de semantiske fargene. Dette kan endres med `data-color`.
+Du kan også sette `variant=tinted` for å få valgt farge som bakgrunn.
+
+#### Identitetsfarger
+
+<Canvas of={PopoverStories.ColorVariants} />
+
+#### Semantiske farger
+
+<Canvas of={PopoverStories.Variants} />
+
+### Ordforklaring
+
+Bruk `inline={true}` (stiplet understrek) på `Popover.Trigger` for å indikere en ordforklaring. Dette er nyttig dersom man for eksempel vil gi tilleggsinformasjon til et ord i en artikel. Popoveren kan inneholde en kort tekst som utdyper ordets betydning.
+
+<Canvas of={PopoverStories.DottedUnderline} />
+
+### Interaktive elementer i en Popover
+
+Bruk `Popover` for å inkludere interaksjoner som knapper eller lenker.
+
+<Canvas of={PopoverStories.Interactive} />
+
+### Kontrollert tilstand
+
+`open` propen kan brukes for å kontrollere tilstanden til `Popover`. Du kan også bruke `onClose` for å trigge andre effekter når `Popover` blir lukket.
+Disse kontrollmulighetene er nyttige dersom du for eksempel har annet innhold på siden som skal lukke `Popover` når du klikker på det.
+
+<Canvas of={PopoverStories.Controlled} />
+
+### Automatisk plassering
+
+Standard oppførsel er at `Popover` alltid vil prøve å være i skjermbildet, ankret til triggeren.
+`Popover` har en `autoPlacement` prop som kan brukes til å slå av automatisk plassering. Standardverdien er `true`.
+
+## Tekst i Popover
+
+Unngå lange tekster og kompliserte forklaringer. I noen tilfeller er det kanskje bedre å lenke til en annen side med utdypende informasjon om temaet.
+
+## Tilgjengelighet
+
+Det er innebygd tilgjengelighet i [Popover API-et](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API) i henhold til åpnet/lukket tilstand og tastaturnavigasjon.
+
+## Kompatibilitet
+
+### Polyfill
+
+`Popover` bruker [Popover API-et](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover). Dette apiet er klassifisert som [Baseline: Newly available](https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility) fra april 2024, da Firefox som siste nettleser la det til. I noen tilfeller kan en oppleve at brukere av ulike grunner er låst til eldre nettleserversjoner, og da kan det være aktuelt å legge til en polyfill for å sikre at `Popover` fungerer for alle.
+
+- [Popover-Polyfill](https://github.com/oddbird/popover-polyfill)
+
+### React og popovertarget
+
+Når du bruker `Popover` uten `Popover.TriggerContext`, kobler du selv sammen utløseren og `Popover`.
+Da brukes `popovertarget`, slik at alle versjoner av React korrekt gjengir attributtet.
+Når du bruker `@udir-design/react` utvider vi `@types/react-dom` til å akseptere dette.

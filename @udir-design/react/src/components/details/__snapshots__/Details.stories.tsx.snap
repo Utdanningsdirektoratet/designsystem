@@ -27,7 +27,10 @@ exports[`Controlled 1`] = `
   Åpne alle
 </button>
 <br>
-<u-details data-variant="default">
+<u-details
+  data-variant="default"
+  role="group"
+>
   <u-summary
     aria-expanded="false"
     role="button"
@@ -48,7 +51,10 @@ exports[`Controlled 1`] = `
     </p>
   </div>
 </u-details>
-<u-details data-variant="default">
+<u-details
+  data-variant="default"
+  role="group"
+>
   <u-summary
     aria-expanded="false"
     role="button"
@@ -72,7 +78,10 @@ exports[`Controlled 1`] = `
     </p>
   </div>
 </u-details>
-<u-details data-variant="default">
+<u-details
+  data-variant="default"
+  role="group"
+>
   <u-summary
     aria-expanded="false"
     role="button"
@@ -97,7 +106,10 @@ exports[`In Card 1`] = `
   data-variant="default"
   data-color="neutral"
 >
-  <u-details data-variant="default">
+  <u-details
+    data-variant="default"
+    role="group"
+  >
     <u-summary
       aria-expanded="false"
       role="button"
@@ -146,7 +158,10 @@ exports[`In Card With Color 1`] = `
   data-variant="tinted"
   data-color="accent"
 >
-  <u-details data-variant="default">
+  <u-details
+    data-variant="default"
+    role="group"
+  >
     <u-summary
       aria-expanded="false"
       role="button"
@@ -159,7 +174,10 @@ exports[`In Card With Color 1`] = `
       Føremålet med nasjonale prøver er å gi skolane kunnskap om elevane sine grunnleggjande ferdigheiter i lesing, rekning og engelsk. Informasjonen frå prøvene skal danne grunnlag for undervegsvurdering og kvalitetsutvikling på alle nivå i skolesystemet.
     </div>
   </u-details>
-  <u-details data-variant="default">
+  <u-details
+    data-variant="default"
+    role="group"
+  >
     <u-summary
       aria-expanded="false"
       role="button"
@@ -186,7 +204,10 @@ exports[`In Card With Color 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<u-details data-variant="default">
+<u-details
+  data-variant="default"
+  role="group"
+>
   <u-summary
     aria-expanded="false"
     role="button"
@@ -209,7 +230,10 @@ exports[`Pseudo States 1`] = `
   >
     Default
   </label>
-  <u-details data-variant="default">
+  <u-details
+    data-variant="default"
+    role="group"
+  >
     <u-summary
       aria-expanded="false"
       role="button"
@@ -228,7 +252,10 @@ exports[`Pseudo States 1`] = `
   >
     Hover
   </label>
-  <u-details data-variant="default">
+  <u-details
+    data-variant="default"
+    role="group"
+  >
     <u-summary
       aria-expanded="false"
       role="button"
@@ -247,7 +274,10 @@ exports[`Pseudo States 1`] = `
   >
     Focused
   </label>
-  <u-details data-variant="default">
+  <u-details
+    data-variant="default"
+    role="group"
+  >
     <u-summary
       aria-expanded="false"
       role="button"

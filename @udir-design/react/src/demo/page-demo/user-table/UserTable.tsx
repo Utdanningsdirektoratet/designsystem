@@ -5,6 +5,7 @@ import {
   Select,
   Search,
   Table,
+  Popover,
 } from '@udir-design/react/alpha';
 import styles from './UserTable.module.scss';
 
@@ -20,7 +21,27 @@ export function UserTable() {
             <Select.Option value="delete">Slett</Select.Option>
             <Select.Option value="update">Oppdater</Select.Option>
           </Select>
-          <Button className={styles.actionBtn}>Utfør</Button>
+          <Popover.TriggerContext>
+            <Popover.Trigger className={styles.actionBtn}>
+              Utfør
+            </Popover.Trigger>
+            <Popover>
+              Er du sikker på at du vil gjennomføre? Handlingen vil utføres på
+              alle brukere.
+              <div
+                style={{
+                  display: 'flex',
+                  gap: 'var(--ds-size-2)',
+                  marginTop: 'var(--ds-size-2)',
+                }}
+              >
+                <Button data-size="sm">Ja, utfør</Button>
+                <Button data-size="sm" variant="tertiary">
+                  Avbryt
+                </Button>
+              </div>
+            </Popover>
+          </Popover.TriggerContext>
         </div>
         <Search className={styles.tableSearch}>
           <Search.Input aria-label="Søk" />

@@ -2,14 +2,14 @@ import { HTMLAttributes, useMemo, useState } from 'react';
 import {
   Alert,
   Avatar,
+  Badge,
   Checkbox,
+  Chip,
   Divider,
   ErrorSummary,
-  Field,
   Heading,
   Label,
   Search,
-  Select,
   Table,
   Tag,
   useCheckboxGroup,
@@ -32,6 +32,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
   const [students, setStudents] = useState<Student[]>(STUDENTS);
   const [showErrorSummary, setShowErrorSummary] = useState(false);
   const [selectedStudentIds, setSelectedStudentIds] = useState<string[]>([]);
+  const levels = ['Barnehage', 'Grunnskole', 'Videregående'];
 
   // Merge selected students from different pages.
   const handleCheckboxChange = (newSelectedStudentIds: string[]) => {
@@ -51,14 +52,23 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
   });
 
   // Hook for filtering the users.
-  const { filteredData: filteredByEducation, updateFilter } =
-    useFilterData(students);
+  const {
+    filteredData: filteredByEducation,
+    filters,
+    updateFilter,
+  } = useFilterData(students, { educationLevel: levels });
 
   // Handle the change of the education filter.
-  const handleEducationFilterChange = (
-    e: React.ChangeEvent<HTMLSelectElement>,
-  ) => {
-    updateFilter('educationLevel', e.target.value);
+  const handleEducationFilterChange = (level: string) => {
+    const currentFilter = filters.educationLevel as string[];
+    if (currentFilter.includes(level)) {
+      updateFilter(
+        'educationLevel',
+        currentFilter.filter((filterItem) => filterItem !== level),
+      );
+    } else {
+      updateFilter('educationLevel', [...currentFilter, level]);
+    }
     setCurrentPage(1);
   };
 
@@ -114,19 +124,25 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
         <Divider />
         <div className={classes.tableHeader}>
           <div>
-            <Field>
-              <Label>Velg utdanningsnivå</Label>
-              <Select
-                aria-label="Velg utdanningsnivå"
-                onChange={handleEducationFilterChange}
-                id="select-education-level"
-              >
-                <Select.Option value="blank">Alle nivåer</Select.Option>
-                <Select.Option value="Barnehage">Barnehage</Select.Option>
-                <Select.Option value="Grunnskole">Grunnskole</Select.Option>
-                <Select.Option value="Videregående">Videregående</Select.Option>
-              </Select>
-            </Field>
+            <Label>Filtrer på utdanningsnivå</Label>
+            <div
+              style={{
+                display: 'flex',
+                gap: 'var(--ds-size-2)',
+                marginTop: 'var(--ds-size-2)',
+              }}
+            >
+              {levels.map((level) => (
+                <Chip.Checkbox
+                  key={level}
+                  value={level}
+                  defaultChecked
+                  onChange={(e) => handleEducationFilterChange(e.target.value)}
+                >
+                  {level}
+                </Chip.Checkbox>
+              ))}
+            </div>
           </div>
           <Search className={classes.tableSearch}>
             <Search.Input
@@ -191,7 +207,18 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
                   </Table.Cell>
                   <Table.Cell>
                     <div className={classes.student}>
-                      <Avatar aria-label={student.name} />
+                      <Badge.Position placement="top-right" overlap="circle">
+                        {student.new && (
+                          <Badge data-color="accent" data-size="md" />
+                        )}
+                        <Avatar
+                          aria-label={
+                            student.new
+                              ? `Ny elev ${student.name}`
+                              : student.name
+                          }
+                        />
+                      </Badge.Position>
                       {student.name}
                     </div>
                   </Table.Cell>

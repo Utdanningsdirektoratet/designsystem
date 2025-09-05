@@ -1,5 +1,257 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Checked 1`] = `
+<div>
+  <input
+    role="switch"
+    id="components-switch--checked"
+    type="checkbox"
+    checked
+  >
+  <label
+    data-weight="regular"
+    for="components-switch--checked"
+  >
+    En bryter
+  </label>
+</div>
+`;
+
+exports[`Controlled 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    <h2>
+      Innstillinger
+    </h2>
+  </legend>
+  <div>
+    <input
+      role="switch"
+      id="components-switch--controlled"
+      type="checkbox"
+      checked
+    >
+    <label
+      data-weight="regular"
+      for="components-switch--controlled"
+    >
+      Varsler
+    </label>
+  </div>
+  <p data-variant="default">
+    Velg hvilke typer varsler du ønsker å motta.
+  </p>
+  <div>
+    <input
+      id="components-switch--controlledlydvarsler"
+      type="checkbox"
+    >
+    <label
+      data-weight="regular"
+      for="components-switch--controlledlydvarsler"
+    >
+      Lydvarsler
+    </label>
+  </div>
+  <div>
+    <input
+      id="components-switch--controlledepostvarsler"
+      type="checkbox"
+      checked
+    >
+    <label
+      data-weight="regular"
+      for="components-switch--controlledepostvarsler"
+    >
+      Epostvarsler
+    </label>
+  </div>
+  <div>
+    <input
+      id="components-switch--controlledpopupvarsler"
+      type="checkbox"
+    >
+    <label
+      data-weight="regular"
+      for="components-switch--controlledpopupvarsler"
+    >
+      Popup-varsler
+    </label>
+  </div>
+</fieldset>
+`;
+
+exports[`Description 1`] = `
+<div>
+  <input
+    role="switch"
+    id="components-switch--description"
+    type="checkbox"
+    checked
+    aria-describedby="components-switch--description:description:1"
+  >
+  <label
+    data-weight="regular"
+    for="components-switch--description"
+  >
+    Åpen prøve
+  </label>
+  <div
+    data-field="description"
+    id="components-switch--description:description:1"
+  >
+    Prøven er åpen for alle som ønsker å delta.
+  </div>
+</div>
+`;
+
+exports[`Disabled 1`] = `
+<div>
+  <input
+    role="switch"
+    disabled
+    id="disabled-switch"
+    type="checkbox"
+  >
+  <label
+    data-weight="regular"
+    for="disabled-switch"
+  >
+    Disabled switch
+  </label>
+</div>
+`;
+
+exports[`Focused 1`] = `
+<div>
+  <input
+    role="switch"
+    id="focused-switch"
+    type="checkbox"
+  >
+  <label
+    data-weight="regular"
+    for="focused-switch"
+  >
+    En bryter
+  </label>
+</div>
+`;
+
+exports[`Group 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Varsler
+  </legend>
+  <div>
+    <input
+      role="switch"
+      id="components-switch--grouplydvarsler"
+      type="checkbox"
+      value="lydvarsler"
+      checked
+      aria-describedby="components-switch--grouplydvarsler:description:1"
+    >
+    <label
+      data-weight="regular"
+      for="components-switch--grouplydvarsler"
+    >
+      Lydvarsler
+    </label>
+    <div
+      data-field="description"
+      id="components-switch--grouplydvarsler:description:1"
+    >
+      Spill av lyd når et varsel mottas.
+    </div>
+  </div>
+  <div>
+    <input
+      role="switch"
+      id="components-switch--grouppopup-varsler"
+      type="checkbox"
+      value="popup-varsler"
+      aria-describedby="components-switch--grouppopup-varsler:description:1"
+    >
+    <label
+      data-weight="regular"
+      for="components-switch--grouppopup-varsler"
+    >
+      Popup-varsler
+    </label>
+    <div
+      data-field="description"
+      id="components-switch--grouppopup-varsler:description:1"
+    >
+      Vis popup-varsler på skjermen.
+    </div>
+  </div>
+  <div>
+    <input
+      role="switch"
+      id="components-switch--groupemail-varsler"
+      type="checkbox"
+      value="email-varsler"
+      aria-describedby="components-switch--groupemail-varsler:description:1"
+    >
+    <label
+      data-weight="regular"
+      for="components-switch--groupemail-varsler"
+    >
+      E-postvarsler
+    </label>
+    <div
+      data-field="description"
+      id="components-switch--groupemail-varsler:description:1"
+    >
+      Tillat e-postvarsler for viktige oppdateringer.
+    </div>
+  </div>
+</fieldset>
+`;
+
+exports[`Group End 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    <h2>
+      Innstillinger
+    </h2>
+  </legend>
+  <p data-variant="default">
+    Innstillinger som gjelder hele systemet.
+  </p>
+  <div data-position="end">
+    <input
+      role="switch"
+      id="components-switch--group-endmork-modus"
+      type="checkbox"
+      value="mork-modus"
+      checked
+    >
+    <label
+      data-weight="regular"
+      for="components-switch--group-endmork-modus"
+    >
+      Mørk modus
+    </label>
+  </div>
+  <div data-position="end">
+    <input
+      role="switch"
+      id="components-switch--group-endautomatiske-oppdateringer"
+      type="checkbox"
+      value="automatiske-oppdateringer"
+    >
+    <label
+      data-weight="regular"
+      for="components-switch--group-endautomatiske-oppdateringer"
+    >
+      Automatiske oppdateringer
+    </label>
+  </div>
+</fieldset>
+`;
+
 exports[`Preview 1`] = `
 <div>
   <input
@@ -12,6 +264,23 @@ exports[`Preview 1`] = `
     for="components-switch--preview"
   >
     En bryter
+  </label>
+</div>
+`;
+
+exports[`Read Only 1`] = `
+<div>
+  <input
+    role="switch"
+    readonly
+    id="readonly-switch"
+    type="checkbox"
+  >
+  <label
+    data-weight="regular"
+    for="readonly-switch"
+  >
+    Read-only switch
   </label>
 </div>
 `;

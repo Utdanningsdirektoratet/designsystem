@@ -4,7 +4,8 @@ export interface Student {
   edited: string;
   phone: string;
   educationLevel: 'Barnehage' | 'Grunnskole' | 'Videregående';
-  status: 'Ny' | 'Eksportert' | 'Ikke eksportert';
+  status: 'Eksportert' | 'Ikke eksportert';
+  new: boolean;
 }
 
 export const STUDENTS: Student[] = [
@@ -14,7 +15,8 @@ export const STUDENTS: Student[] = [
     edited: '01.01.2023',
     phone: '22345678',
     educationLevel: 'Barnehage',
-    status: 'Ny',
+    status: 'Ikke eksportert',
+    new: true,
   },
   {
     id: 2,
@@ -23,6 +25,7 @@ export const STUDENTS: Student[] = [
     phone: '87654321',
     educationLevel: 'Grunnskole',
     status: 'Eksportert',
+    new: false,
   },
   {
     id: 3,
@@ -31,6 +34,7 @@ export const STUDENTS: Student[] = [
     phone: '11223344',
     educationLevel: 'Videregående',
     status: 'Ikke eksportert',
+    new: true,
   },
   {
     id: 4,
@@ -38,7 +42,8 @@ export const STUDENTS: Student[] = [
     edited: '01.04.2023',
     phone: '44332211',
     educationLevel: 'Barnehage',
-    status: 'Ny',
+    status: 'Ikke eksportert',
+    new: false,
   },
   {
     id: 5,
@@ -47,6 +52,7 @@ export const STUDENTS: Student[] = [
     phone: '55667788',
     educationLevel: 'Grunnskole',
     status: 'Eksportert',
+    new: false,
   },
   {
     id: 6,
@@ -55,6 +61,7 @@ export const STUDENTS: Student[] = [
     phone: '99887766',
     educationLevel: 'Videregående',
     status: 'Ikke eksportert',
+    new: false,
   },
   {
     id: 7,
@@ -62,7 +69,8 @@ export const STUDENTS: Student[] = [
     edited: '01.07.2023',
     phone: '22334455',
     educationLevel: 'Barnehage',
-    status: 'Ny',
+    status: 'Ikke eksportert',
+    new: true,
   },
   {
     id: 8,
@@ -71,6 +79,7 @@ export const STUDENTS: Student[] = [
     phone: '66778899',
     educationLevel: 'Grunnskole',
     status: 'Eksportert',
+    new: false,
   },
   {
     id: 9,
@@ -79,6 +88,7 @@ export const STUDENTS: Student[] = [
     phone: '33445566',
     educationLevel: 'Videregående',
     status: 'Ikke eksportert',
+    new: true,
   },
   {
     id: 10,
@@ -86,7 +96,8 @@ export const STUDENTS: Student[] = [
     edited: '01.10.2023',
     phone: '77889900',
     educationLevel: 'Barnehage',
-    status: 'Ny',
+    status: 'Ikke eksportert',
+    new: true,
   },
   {
     id: 11,
@@ -95,6 +106,7 @@ export const STUDENTS: Student[] = [
     phone: '11224466',
     educationLevel: 'Grunnskole',
     status: 'Eksportert',
+    new: false,
   },
   {
     id: 12,
@@ -103,5 +115,6 @@ export const STUDENTS: Student[] = [
     phone: '66554433',
     educationLevel: 'Videregående',
     status: 'Ikke eksportert',
+    new: false,
   },
 ];

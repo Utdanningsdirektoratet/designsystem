@@ -1,5 +1,467 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Controlled 1`] = `
+<div>
+  <div
+    role="tablist"
+    tabindex="0"
+  >
+    <button
+      id="tab-«rr»"
+      aria-selected="true"
+      data-value="users"
+      role="tab"
+      type="button"
+      data-roving-tabindex-item="true"
+      tabindex="0"
+      aria-controls="tabpanel-«rv»"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M9 3.75a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5M3.75 7.5a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0M9 15.75A5.25 5.25 0 0 0 3.75 21a.75.75 0 0 1-1.5 0 6.75 6.75 0 0 1 13.5 0 .75.75 0 0 1-1.5 0A5.25 5.25 0 0 0 9 15.75m7.214-10.824a.75.75 0 1 0-.428 1.438A2.752 2.752 0 0 1 15 11.75a.75.75 0 0 0-.75.75v1a.75.75 0 0 0 .75.75 4.25 4.25 0 0 1 4.25 4.25.75.75 0 0 0 1.5 0 5.75 5.75 0 0 0-4.206-5.539 4.251 4.251 0 0 0-.33-8.035"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+      Brukere
+    </button>
+    <button
+      id="tab-«rt»"
+      aria-selected="false"
+      data-value="profile"
+      role="tab"
+      type="button"
+      data-roving-tabindex-item="true"
+      tabindex="-1"
+      aria-controls="tabpanel-«r10»"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M8.25 7.5a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0M12 2.25a5.25 5.25 0 1 0 0 10.5 5.25 5.25 0 0 0 0-10.5M8.288 17.288A5.25 5.25 0 0 1 17.25 21a.75.75 0 0 0 1.5 0 6.75 6.75 0 0 0-13.5 0 .75.75 0 0 0 1.5 0 5.25 5.25 0 0 1 1.538-3.712"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+      Din profil
+    </button>
+  </div>
+  <div
+    id="tabpanel-«rv»"
+    role="tabpanel"
+    aria-labelledby="tab-«rr»"
+  >
+    <ul style="list-style: none; padding: 0px;">
+      <li style="display: flex;">
+        <button
+          data-variant="secondary"
+          type="button"
+        >
+          <span
+            data-variant="circle"
+            role="img"
+            aria-label="Bruker 1"
+            data-color="accent"
+          >
+          </span>
+          Hilde Hansen (deg)
+        </button>
+      </li>
+      <li style="display: flex;">
+        <a
+          href="#"
+          style="align-items: center; display: flex; gap: var(--ds-size-2);"
+        >
+          <span
+            data-variant="circle"
+            role="img"
+            aria-label="Bruker 2"
+            data-color="support1"
+          >
+          </span>
+          Stian Stølan
+        </a>
+      </li>
+      <li style="display: flex;">
+        <a
+          href="#"
+          style="align-items: center; display: flex; gap: var(--ds-size-2);"
+        >
+          <span
+            data-variant="circle"
+            role="img"
+            aria-label="Bruker 3"
+            data-color="support2"
+          >
+          </span>
+          Lina Larsen
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div
+    id="tabpanel-«r10»"
+    role="tabpanel"
+    tabindex="0"
+    hidden
+    aria-labelledby="tab-«rt»"
+  >
+    <div style="display: flex; align-items: center; gap: var(--ds-size-2);">
+      <span
+        data-variant="circle"
+        role="img"
+        aria-label="Bruker 1"
+        data-color="accent"
+      >
+      </span>
+      Hilde Hansen
+    </div>
+    <h3 style="margin-bottom: var(--ds-size-2); margin-top: var(--ds-size-4);">
+      Detaljer
+    </h3>
+    <p data-variant="default">
+      34 år
+    </p>
+    <p data-variant="default">
+      Mysen, Norge
+    </p>
+    <p data-variant="default">
+      Lærer
+    </p>
+    <p data-variant="default">
+      Mysen Videregående skole
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Icons With Text 1`] = `
+<div>
+  <div
+    role="tablist"
+    tabindex="0"
+  >
+    <button
+      id="tab-«r9»"
+      aria-selected="true"
+      data-value="barnehage"
+      role="tab"
+      type="button"
+      data-roving-tabindex-item="true"
+      tabindex="0"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M7.25 8.5a4.75 4.75 0 1 1 9.5 0 4.75 4.75 0 0 1-9.5 0M12 2.25a6.25 6.25 0 1 0 0 12.5 6.25 6.25 0 0 0 0-12.5m-1.5 5.5a.75.75 0 0 0 0 1.5h.01a.75.75 0 0 0 0-1.5zm2.25.75a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 0 1.5h-.01a.75.75 0 0 1-.75-.75m-3.402 9.848A3.75 3.75 0 0 1 15.75 21a.75.75 0 0 0 1.5 0 5.25 5.25 0 1 0-10.5 0 .75.75 0 0 0 1.5 0 3.75 3.75 0 0 1 1.098-2.652"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+      Barnehage
+    </button>
+    <button
+      id="tab-«rb»"
+      aria-selected="false"
+      data-value="grunnskole"
+      role="tab"
+      type="button"
+      data-roving-tabindex-item="true"
+      tabindex="-1"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M4.25 4c0-.966.784-1.75 1.75-1.75h12c.966 0 1.75.784 1.75 1.75v16A1.75 1.75 0 0 1 18 21.75H6A1.75 1.75 0 0 1 4.25 20zM6 3.75a.25.25 0 0 0-.25.25v16c0 .138.112.25.25.25h12a.25.25 0 0 0 .25-.25V4a.25.25 0 0 0-.25-.25zM8 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0m1 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-1 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0m4-7a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-1 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0m1 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2m2-5a1 1 0 1 1 2 0 1 1 0 0 1-2 0m1 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-1 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0M8.5 6.25a.75.75 0 0 0 0 1.5h7a.75.75 0 0 0 0-1.5z"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+      Grunnskole
+    </button>
+    <button
+      id="tab-«rd»"
+      aria-selected="false"
+      data-value="videregående"
+      role="tab"
+      type="button"
+      data-roving-tabindex-item="true"
+      tabindex="-1"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M11.695 4.315a.75.75 0 0 1 .61 0l8.984 3.993A.75.75 0 0 1 21.75 9v7a.75.75 0 0 1-1.5 0v-5.846l-1.5.667V16a.75.75 0 0 1-.415.67l-.186.094a13.75 13.75 0 0 1-12.298 0l-.186-.093A.75.75 0 0 1 5.25 16v-5.18L2.695 9.686a.75.75 0 0 1 0-1.37zm.61 9.37 4.945-2.198v4.047a12.25 12.25 0 0 1-10.5 0v-4.047l4.945 2.198a.75.75 0 0 0 .61 0M4.847 9 12 12.18 19.153 9 12 5.82z"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+      Videregående
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Only Icons 1`] = `
+<div>
+  <div
+    role="tablist"
+    tabindex="0"
+  >
+    <button
+      id="tab-«rg»"
+      aria-selected="false"
+      data-value="gallery"
+      role="tab"
+      type="button"
+      aria-label="Galleri"
+      popovertarget="«rf»"
+      popovertargetaction="show"
+      data-roving-tabindex-item="true"
+      tabindex="-1"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M4 5.75a.25.25 0 0 0-.25.25v12c0 .138.112.25.25.25h5.599l3.777-5.666a.75.75 0 0 1 1.248 0l3.777 5.666H20a.25.25 0 0 0 .25-.25V6a.25.25 0 0 0-.25-.25zm12.599 12.5L14 14.352l-2.599 3.898zM2.25 6c0-.966.784-1.75 1.75-1.75h16c.966 0 1.75.784 1.75 1.75v12A1.75 1.75 0 0 1 20 19.75H4A1.75 1.75 0 0 1 2.25 18zM8 8.75a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5M5.25 10a2.75 2.75 0 1 1 5.5 0 2.75 2.75 0 0 1-5.5 0"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+    </button>
+    <span
+      role="tooltip"
+      id="«rf»"
+      popover="manual"
+      style="opacity: 0;"
+    >
+      Galleri
+    </span>
+    <button
+      id="tab-«rj»"
+      aria-selected="true"
+      data-value="profile"
+      role="tab"
+      type="button"
+      aria-label="Profilen din"
+      popovertarget="«ri»"
+      popovertargetaction="show"
+      data-roving-tabindex-item="true"
+      tabindex="0"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M8.25 7.5a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0M12 2.25a5.25 5.25 0 1 0 0 10.5 5.25 5.25 0 0 0 0-10.5M8.288 17.288A5.25 5.25 0 0 1 17.25 21a.75.75 0 0 0 1.5 0 6.75 6.75 0 0 0-13.5 0 .75.75 0 0 0 1.5 0 5.25 5.25 0 0 1 1.538-3.712"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+    </button>
+    <span
+      role="tooltip"
+      id="«ri»"
+      popover="manual"
+      style="opacity: 0;"
+    >
+      Profilen din
+    </span>
+    <button
+      id="tab-«rm»"
+      aria-selected="false"
+      data-value="notifications"
+      role="tab"
+      type="button"
+      aria-label="Varsler"
+      popovertarget="«rl»"
+      popovertargetaction="show"
+      data-roving-tabindex-item="true"
+      tabindex="-1"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M12.75 6.063a1.75 1.75 0 1 1 3.5 0 1.75 1.75 0 0 1-3.5 0m1.75-3.25a3.25 3.25 0 1 0 0 6.5 3.25 3.25 0 0 0 0-6.5M9.877 4.676a.75.75 0 0 1-.42.975c-.977.388-1.505 1.03-1.81 1.836-.32.845-.397 1.877-.397 3.013v3c0 1.191-.576 2.58-1.08 3.585q-.178.358-.349.665H18.18a19 19 0 0 1-.35-.665c-.503-1.006-1.079-2.394-1.079-3.585v-3a.75.75 0 0 1 1.5 0v3c0 .809.424 1.92.92 2.915a18 18 0 0 0 .936 1.641l.014.022.004.005a.752.752 0 0 1-.624 1.167h-4.338a3.25 3.25 0 0 1-6.324 0H4.5a.75.75 0 0 1-.624-1.166l.004-.006.014-.022.06-.091c.05-.081.125-.2.215-.35.18-.301.42-.722.66-1.2.497-.994.921-2.106.921-2.915v-3c0-1.163.07-2.429.494-3.545.438-1.156 1.25-2.138 2.659-2.698a.75.75 0 0 1 .974.42m.542 14.574h3.162a1.75 1.75 0 0 1-1.581 1 1.75 1.75 0 0 1-1.581-1"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+    </button>
+    <span
+      role="tooltip"
+      id="«rl»"
+      popover="manual"
+      style="opacity: 0;"
+    >
+      Varsler
+    </span>
+    <button
+      id="tab-«rp»"
+      aria-selected="false"
+      data-value="settings"
+      role="tab"
+      type="button"
+      aria-label="Innstillinger"
+      popovertarget="«ro»"
+      popovertargetaction="show"
+      data-roving-tabindex-item="true"
+      tabindex="-1"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M10.543 2.25a.75.75 0 0 0-.729.573l-.459 1.89q-.326.119-.637.265l-1.675-1.02a.75.75 0 0 0-.92.11L4.066 6.121a.75.75 0 0 0-.11.92l1.02 1.676q-.146.311-.264.637l-1.89.46a.75.75 0 0 0-.573.728v2.914a.75.75 0 0 0 .573.729l1.89.459q.118.326.265.637l-1.02 1.675a.75.75 0 0 0 .11.92l2.054 2.056a.75.75 0 0 0 .92.11l1.676-1.02q.311.145.637.264l.46 1.89a.75.75 0 0 0 .728.573h2.914a.75.75 0 0 0 .729-.573l.459-1.89q.326-.119.637-.264l1.675 1.02a.75.75 0 0 0 .92-.11l2.056-2.055a.75.75 0 0 0 .11-.92l-1.02-1.676a8 8 0 0 0 .264-.637l1.89-.46a.75.75 0 0 0 .573-.728v-2.914a.75.75 0 0 0-.573-.729l-1.89-.459a8 8 0 0 0-.265-.637l1.02-1.675a.75.75 0 0 0-.11-.92l-2.054-2.056a.75.75 0 0 0-.92-.11l-1.676 1.02a8 8 0 0 0-.637-.264l-.46-1.89a.75.75 0 0 0-.728-.573zm.172 3.221.418-1.721h1.734l.418 1.721a.75.75 0 0 0 .513.541q.611.184 1.163.483a.75.75 0 0 0 .747-.02l1.526-.93 1.221 1.22-.93 1.527a.75.75 0 0 0-.02.747q.298.552.483 1.163a.75.75 0 0 0 .541.513l1.721.418v1.734l-1.72.418a.75.75 0 0 0-.542.513 6.2 6.2 0 0 1-.483 1.163.75.75 0 0 0 .02.747l.93 1.526-1.22 1.221-1.527-.93a.75.75 0 0 0-.747-.02 6.2 6.2 0 0 1-1.163.483.75.75 0 0 0-.513.541l-.418 1.721h-1.734l-.418-1.72a.75.75 0 0 0-.513-.542 6.2 6.2 0 0 1-1.163-.483.75.75 0 0 0-.747.02l-1.526.93-1.221-1.22.93-1.527a.75.75 0 0 0 .02-.747 6.2 6.2 0 0 1-.483-1.163.75.75 0 0 0-.541-.513l-1.721-.418v-1.734l1.721-.418a.75.75 0 0 0 .541-.513q.185-.611.483-1.163a.75.75 0 0 0-.02-.747l-.93-1.526 1.22-1.221 1.527.93a.75.75 0 0 0 .747.02q.551-.298 1.163-.483a.75.75 0 0 0 .513-.541M10.25 12a1.75 1.75 0 1 1 3.5 0 1.75 1.75 0 0 1-3.5 0M12 8.75a3.25 3.25 0 1 0 0 6.5 3.25 3.25 0 0 0 0-6.5"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+    </button>
+    <span
+      role="tooltip"
+      id="«ro»"
+      popover="manual"
+      style="opacity: 0;"
+    >
+      Innstillinger
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Only Text 1`] = `
+<div>
+  <div
+    role="tablist"
+    tabindex="0"
+  >
+    <button
+      id="tab-«r6»"
+      aria-selected="true"
+      data-value="oversikt"
+      role="tab"
+      type="button"
+      data-roving-tabindex-item="true"
+      tabindex="0"
+    >
+      Oversikt
+    </button>
+    <button
+      id="tab-«r7»"
+      aria-selected="false"
+      data-value="prøver"
+      role="tab"
+      type="button"
+      data-roving-tabindex-item="true"
+      tabindex="-1"
+    >
+      Prøver
+    </button>
+    <button
+      id="tab-«r8»"
+      aria-selected="false"
+      data-value="prøvesvar"
+      role="tab"
+      type="button"
+      data-roving-tabindex-item="true"
+      tabindex="-1"
+    >
+      Prøvesvar
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Preview 1`] = `
 <div>
   <div
@@ -7,35 +469,67 @@ exports[`Preview 1`] = `
     tabindex="0"
   >
     <button
-      aria-selected="false"
       id="tab-«r0»"
+      aria-selected="true"
+      data-value="value1"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
-      tabindex="-1"
+      tabindex="0"
+      aria-controls="tabpanel-«r3»"
     >
       Tab 1
     </button>
     <button
-      aria-selected="false"
       id="tab-«r1»"
+      aria-selected="false"
+      data-value="value2"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
       tabindex="-1"
+      aria-controls="tabpanel-«r4»"
     >
       Tab 2
     </button>
     <button
-      aria-selected="false"
       id="tab-«r2»"
+      aria-selected="false"
+      data-value="value3"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
       tabindex="-1"
+      aria-controls="tabpanel-«r5»"
     >
       Tab 3
     </button>
+  </div>
+  <div
+    id="tabpanel-«r3»"
+    role="tabpanel"
+    tabindex="0"
+    aria-labelledby="tab-«r0»"
+  >
+    Innhold for Tab 1
+  </div>
+  <div
+    id="tabpanel-«r4»"
+    role="tabpanel"
+    tabindex="0"
+    aria-labelledby="tab-«r1»"
+    hidden
+  >
+    Innhold for Tab 2
+  </div>
+  <div
+    id="tabpanel-«r5»"
+    role="tabpanel"
+    tabindex="0"
+    aria-labelledby="tab-«r2»"
+    hidden
+  >
+    Innhold for Tab 3
   </div>
 </div>
 `;

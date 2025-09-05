@@ -1,0 +1,23 @@
+{
+  "name": "@udir-design/css",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "@udir-design/css/src",
+  "projectType": "library",
+  "tags": [],
+  "namedInputs": {
+    "css": [
+      "{workspaceRoot}/@udir-design/react/src/components/**/*.css",
+      "!{workspaceRoot}/@udir-design/react/src/components/**/*.module.css"
+    ]
+  },
+  "targets": {
+    "build": {
+      "cache": true,
+      "inputs": ["css", "default", "^default"]
+    },
+    "watch": {
+      "continuous": true,
+      "inputs": ["css", "default", "^default"]
+    }
+  }
+}

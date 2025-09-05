@@ -135,7 +135,7 @@ export const AsLink: Story = {
       style={{ display: 'flex', gap: 'var(--ds-size-2)', alignItems: 'center' }}
     >
       <Avatar {...args} />
-      Ola Nordmann
+      <span>Ola Nordmann</span>
     </Link>
   ),
 };

@@ -1,17 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import {
-  Checkbox,
-  Table,
-  TableHeaderCellProps,
-  Textfield,
-} from '@udir-design/react/alpha';
+import { Checkbox, Tag, Textfield } from '@udir-design/react/alpha';
+import { Table, TableHeaderCellProps } from '@udir-design/react/beta';
 import { useState } from 'react';
-import { useCheckboxGroup } from '@udir-design/react/alpha';
+import { useCheckboxGroup, Heading } from '@udir-design/react/alpha';
 import { expect, within } from 'storybook/test';
+import { Pagination, usePagination } from '@digdir/designsystemet-react';
 
 const meta: Meta<typeof Table> = {
   component: Table,
-  tags: ['alpha'],
+  tags: ['beta'],
   parameters: {
     customStyles: {
       width: 'fit-content',
@@ -25,39 +22,94 @@ type Story = StoryObj<typeof Table>;
 
 export const Preview: Story = {
   args: {
-    zebra: true,
+    zebra: false,
     stickyHeader: false,
-    border: true,
-    hover: true,
+    border: false,
+    hover: false,
+    tintedColumnHeader: false,
+    tintedRowHeader: false,
+    'data-color': 'neutral',
   },
   render: (args) => {
+    const [sortField, setSortField] = useState<
+      keyof (typeof dummyData)[0] | null
+    >(null);
+    const [sortDirection, setSortDirection] =
+      useState<TableHeaderCellProps['sort']>(undefined);
+    const handleSort = (field: keyof (typeof dummyData)[0]) => {
+      if (sortField === field && sortDirection === 'descending') {
+        setSortField(null);
+        setSortDirection(undefined);
+      } else {
+        setSortField(field);
+        setSortDirection(
+          sortField === field && sortDirection === 'ascending'
+            ? 'descending'
+            : 'ascending',
+        );
+      }
+    };
+    const sortedData = [...dummyData].sort((a, b) => {
+      if (sortField === null) return 0;
+      if (a[sortField] < b[sortField])
+        return sortDirection === 'ascending' ? -1 : 1;
+      if (a[sortField] > b[sortField])
+        return sortDirection === 'ascending' ? 1 : -1;
+      return 0;
+    });
+    const { getCheckboxProps } = useCheckboxGroup({
+      name: 'my-checkbox',
+    });
     return (
       <Table {...args}>
-        <caption>Table caption</caption>
+        <caption>Sensur FSP6236 Tegnspråk III</caption>
         <Table.Head>
           <Table.Row>
-            <Table.HeaderCell>Header 1</Table.HeaderCell>
-            <Table.HeaderCell>Header 2</Table.HeaderCell>
-            <Table.HeaderCell>Header 3</Table.HeaderCell>
+            <Table.HeaderCell>
+              <Checkbox
+                aria-label="Velg alle ansatte"
+                id="checkbox-select-all"
+                {...getCheckboxProps({
+                  allowIndeterminate: true,
+                })}
+              />
+            </Table.HeaderCell>
+            <Table.HeaderCell
+              sort={sortField === 'navn' ? sortDirection : 'none'}
+              onClick={() => handleSort('navn')}
+            >
+              Navn
+            </Table.HeaderCell>
+            <Table.HeaderCell>E-post</Table.HeaderCell>
+            <Table.HeaderCell>Status</Table.HeaderCell>
+            <Table.HeaderCell>Besvarelser</Table.HeaderCell>
           </Table.Row>
         </Table.Head>
         <Table.Body>
-          <Table.Row>
-            <Table.Cell>Cell 1</Table.Cell>
-            <Table.Cell>Cell 2</Table.Cell>
-            <Table.Cell>Cell 3</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>Cell 4</Table.Cell>
-            <Table.Cell>Cell 5</Table.Cell>
-            <Table.Cell>Cell 6</Table.Cell>
-          </Table.Row>
+          {sortedData.map((row) => (
+            <Table.Row key={row.id}>
+              <Table.Cell>
+                <Checkbox
+                  id={'checkbox-' + row.id}
+                  aria-label={`Velg ${row}`}
+                  {...getCheckboxProps(String(row.id))}
+                />
+              </Table.Cell>
+              <Table.Cell>{row.navn}</Table.Cell>
+              <Table.Cell>{row.epost}</Table.Cell>
+              <Table.Cell>
+                <Tag data-color={tagColor(row.status)}>{row.status}</Tag>
+              </Table.Cell>
+              <Table.Cell style={{ textAlign: 'right' }}>
+                {row.prover}
+              </Table.Cell>
+            </Table.Row>
+          ))}
         </Table.Body>
         <Table.Foot>
           <Table.Row>
-            <Table.Cell>Footer 1</Table.Cell>
-            <Table.Cell>Footer 2</Table.Cell>
-            <Table.Cell>Footer 3</Table.Cell>
+            <Table.Cell colSpan={4}>Totalt gjenstår</Table.Cell>
+            <Table.Cell style={{ textAlign: 'right' }}>68</Table.Cell>
           </Table.Row>
         </Table.Foot>
       </Table>
@@ -67,13 +119,15 @@ export const Preview: Story = {
 
 export const ColumnAndRowHeaders: Story = {
   args: {
-    zebra: true,
+    zebra: false,
     stickyHeader: false,
     border: false,
     hover: true,
+    tintedColumnHeader: true,
+    tintedRowHeader: true,
   },
   render: (args) => (
-    <Table {...args}>
+    <Table {...args} data-color="accent">
       <caption
         style={{
           fontSize: 'var(--ds-font-size-3)',
@@ -85,7 +139,7 @@ export const ColumnAndRowHeaders: Story = {
       >
         Svarprosent for elevundersøkelsen nasjonalt
       </caption>
-      <Table.Head style={{ textAlign: 'right' }}>
+      <Table.Head>
         <Table.Row>
           <Table.Cell />
           <Table.HeaderCell scope="col">2022–23</Table.HeaderCell>
@@ -93,41 +147,51 @@ export const ColumnAndRowHeaders: Story = {
           <Table.HeaderCell scope="col">2024–25</Table.HeaderCell>
         </Table.Row>
       </Table.Head>
-      <Table.Body
-        style={{ textAlign: 'right', fontFeatureSettings: "'tnum' 1" }}
-      >
+      <Table.Body style={{ textAlign: 'right' }}>
         <Table.Row>
-          <Table.HeaderCell scope="row">8. årstrinn</Table.HeaderCell>
+          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+            8. trinn
+          </Table.HeaderCell>
           <Table.Cell>88,5%</Table.Cell>
           <Table.Cell>86,3%</Table.Cell>
           <Table.Cell>85,3%</Table.Cell>
         </Table.Row>
         <Table.Row>
-          <Table.HeaderCell scope="row">9. årstrinn</Table.HeaderCell>
+          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+            9. trinn
+          </Table.HeaderCell>
           <Table.Cell>88,7%</Table.Cell>
           <Table.Cell>86,3%</Table.Cell>
           <Table.Cell>84,9%</Table.Cell>
         </Table.Row>
         <Table.Row>
-          <Table.HeaderCell scope="row">10. årstrinn</Table.HeaderCell>
+          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+            10. trinn
+          </Table.HeaderCell>
           <Table.Cell>89,7%</Table.Cell>
           <Table.Cell>87,3%</Table.Cell>
           <Table.Cell>85,7%</Table.Cell>
         </Table.Row>
         <Table.Row>
-          <Table.HeaderCell scope="row">Videregående trinn 1</Table.HeaderCell>
+          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+            Vg1
+          </Table.HeaderCell>
           <Table.Cell>84,8%</Table.Cell>
           <Table.Cell>82,8%</Table.Cell>
           <Table.Cell>83,1%</Table.Cell>
         </Table.Row>
         <Table.Row>
-          <Table.HeaderCell scope="row">Videregående trinn 2</Table.HeaderCell>
+          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+            Vg2
+          </Table.HeaderCell>
           <Table.Cell>82,5%</Table.Cell>
           <Table.Cell>80,0%</Table.Cell>
           <Table.Cell>80,3%</Table.Cell>
         </Table.Row>
         <Table.Row>
-          <Table.HeaderCell scope="row">Videregående trinn 3</Table.HeaderCell>
+          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+            Vg3
+          </Table.HeaderCell>
           <Table.Cell>79,9%</Table.Cell>
           <Table.Cell>75,7%</Table.Cell>
           <Table.Cell>76,9%</Table.Cell>
@@ -140,29 +204,63 @@ export const ColumnAndRowHeaders: Story = {
 const dummyData = [
   {
     id: 1,
-    navn: 'Lise Nordmann',
-    epost: 'lise@nordmann.no',
+    navn: 'Rita Nordmann',
+    epost: 'rita@nordmann.no',
     telefon: '22345678',
+    rolle: 'Rektor',
+    prover: 19,
+    status: 'I arbeid',
   },
   {
     id: 2,
     navn: 'Kari Nordmann',
     epost: 'kari@nordmann.no',
     telefon: '87654321',
+    rolle: 'Lektor',
+    prover: 0,
+    status: 'Ferdig',
   },
   {
     id: 3,
     navn: 'Ola Nordmann',
     epost: 'ola@nordmann.no',
     telefon: '32345678',
+    rolle: 'Lektor',
+    prover: 14,
+    status: 'I arbeid',
   },
   {
     id: 4,
-    navn: 'Per Nordmann',
-    epost: 'per@nordmann.no',
+    navn: 'Kai Nordmann',
+    epost: 'kai@nordmann.no',
+    telefon: '62353278',
+    rolle: 'Lektor',
+    prover: 35,
+    status: 'Ikke begynt',
+  },
+  {
+    id: 5,
+    navn: 'Mateo Nordmann',
+    epost: 'mateo@nordmann.no',
     telefon: '12345678',
+    rolle: 'Ass. rektor',
+    prover: 0,
+    status: 'Ferdig',
   },
 ];
+
+const tagColor = (status: string) => {
+  switch (status) {
+    case 'Ikke begynt':
+      return 'warning';
+    case 'I arbeid':
+      return 'info';
+    case 'Ferdig':
+      return 'success';
+    default:
+      return 'info';
+  }
+};
 
 export const Sortable: Story = {
   render(args) {
@@ -214,6 +312,13 @@ export const Sortable: Story = {
             >
               Telefon
             </Table.HeaderCell>
+            <Table.HeaderCell
+              data-testid="sortable-th-rolle"
+              sort={sortField === 'rolle' ? sortDirection : 'none'}
+              onClick={() => handleSort('rolle')}
+            >
+              Rolle
+            </Table.HeaderCell>
           </Table.Row>
         </Table.Head>
         <Table.Body>
@@ -222,6 +327,7 @@ export const Sortable: Story = {
               <Table.Cell>{row.navn}</Table.Cell>
               <Table.Cell>{row.epost}</Table.Cell>
               <Table.Cell>{row.telefon}</Table.Cell>
+              <Table.Cell>{row.rolle}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
@@ -245,31 +351,101 @@ export const StickyHeader: Story = {
   args: {
     tabIndex: 0,
     stickyHeader: true,
-  },
-  parameters: {
-    customStyles: { height: '280px', overflow: 'auto', padding: 0 },
+    zebra: true,
+    tintedColumnHeader: true,
+    tintedRowHeader: true,
+    'data-color': 'support1',
   },
   render: (args) => {
-    const rows = Array.from({ length: 50 }, (_, i) => i + 1);
     return (
-      <Table {...args}>
-        <Table.Head>
-          <Table.Row>
-            <Table.HeaderCell>Header 1</Table.HeaderCell>
-            <Table.HeaderCell>Header 2</Table.HeaderCell>
-            <Table.HeaderCell>Header 3</Table.HeaderCell>
-          </Table.Row>
-        </Table.Head>
-        <Table.Body>
-          {rows.map((row) => (
-            <Table.Row key={row}>
-              <Table.Cell>{`Cell ${row}1`}</Table.Cell>
-              <Table.Cell>{`Cell ${row}2`}</Table.Cell>
-              <Table.Cell>{`Cell ${row}3`}</Table.Cell>
-            </Table.Row>
-          ))}
-        </Table.Body>
-      </Table>
+      <>
+        <Heading style={{ marginBottom: 'var(--ds-size-3)' }}>
+          Ansattes utdanning fordelt på eiertype (ordinære), 2021
+        </Heading>
+        <div
+          style={{
+            height: '420px',
+            width: '580px',
+            overflow: 'auto',
+            padding: 0,
+          }}
+        >
+          <Table {...args}>
+            <Table.Head>
+              <Table.Row>
+                <Table.Cell></Table.Cell>
+                <Table.HeaderCell>5 store</Table.HeaderCell>
+                <Table.HeaderCell>Andre kjeder</Table.HeaderCell>
+                <Table.HeaderCell>Frittstående</Table.HeaderCell>
+                <Table.HeaderCell>Kommune</Table.HeaderCell>
+                <Table.HeaderCell>Totalt</Table.HeaderCell>
+              </Table.Row>
+            </Table.Head>
+            <Table.Body style={{ textAlign: 'right' }}>
+              <Table.Row>
+                <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+                  Barnehagelærer
+                </Table.HeaderCell>
+                <Table.Cell>42,9%</Table.Cell>
+                <Table.Cell>42,9%</Table.Cell>
+                <Table.Cell>43,8%</Table.Cell>
+                <Table.Cell>43,9%</Table.Cell>
+                <Table.Cell>43,6%</Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+                  Annen pedagogisk utdanning
+                </Table.HeaderCell>
+                <Table.Cell>1,9%</Table.Cell>
+                <Table.Cell>2,8%</Table.Cell>
+                <Table.Cell>2,0%</Table.Cell>
+                <Table.Cell>1,3%</Table.Cell>
+                <Table.Cell>1,7%</Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+                  Annen høyere utdanning
+                </Table.HeaderCell>
+                <Table.Cell>2,2%</Table.Cell>
+                <Table.Cell>2,7%</Table.Cell>
+                <Table.Cell>2,2%</Table.Cell>
+                <Table.Cell>1,2%</Table.Cell>
+                <Table.Cell>1,8%</Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+                  Barne- og ungdomsarbeider
+                </Table.HeaderCell>
+                <Table.Cell>15,0%</Table.Cell>
+                <Table.Cell>16,4%</Table.Cell>
+                <Table.Cell>18,4%</Table.Cell>
+                <Table.Cell>27,7%</Table.Cell>
+                <Table.Cell>22,3%</Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+                  Annet fagarbeider
+                </Table.HeaderCell>
+                <Table.Cell>5,2%</Table.Cell>
+                <Table.Cell>4,6%</Table.Cell>
+                <Table.Cell>5,3%</Table.Cell>
+                <Table.Cell>5,3%</Table.Cell>
+                <Table.Cell>5,2%</Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+                  Annen bakgrunn
+                </Table.HeaderCell>
+                <Table.Cell>32,8%</Table.Cell>
+                <Table.Cell>30,5%</Table.Cell>
+                <Table.Cell>28,3%</Table.Cell>
+                <Table.Cell>20,6%</Table.Cell>
+                <Table.Cell>25,5%</Table.Cell>
+              </Table.Row>
+            </Table.Body>
+          </Table>
+        </div>
+      </>
     );
   },
 };
@@ -288,105 +464,334 @@ export const WithFormElements: Story = {
             <Table.HeaderCell>
               <Checkbox
                 aria-label="Select all"
-                {
-                  ...(getCheckboxProps({
-                    allowIndeterminate: true,
-                    id: `${ctx.id}-selectAll`,
-                  }) as object) /* TODO: remove "as object" after next.49*/
-                }
+                {...getCheckboxProps({
+                  allowIndeterminate: true,
+                  id: `${ctx.id}-selectAll`,
+                })}
               />
             </Table.HeaderCell>
-            <Table.HeaderCell>Header 1</Table.HeaderCell>
-            <Table.HeaderCell>Header 2</Table.HeaderCell>
-            <Table.HeaderCell>Header 3</Table.HeaderCell>
+            <Table.HeaderCell>nr.</Table.HeaderCell>
+            <Table.HeaderCell>Spørsmål</Table.HeaderCell>
+            <Table.HeaderCell>Alternativ 1</Table.HeaderCell>
+            <Table.HeaderCell>Alternativ 2</Table.HeaderCell>
           </Table.Row>
         </Table.Head>
-        <Table.Body>
-          {[1, 2, 3].map((row) => (
-            <Table.Row key={row}>
-              <Table.Cell>
-                <Checkbox
-                  aria-label={`Check ${row}`}
-                  {
-                    ...(getCheckboxProps({
-                      id: `${ctx.id}-select${row}`,
-                      value: String(row),
-                    }) as object) /* TODO: remove "as object" after next.49*/
-                  }
-                />
-              </Table.Cell>
-              <Table.Cell style={{ textAlign: 'right' }}>{row}</Table.Cell>
-              <Table.Cell style={{ textAlign: 'right' }}>{row}</Table.Cell>
-              <Table.Cell>
-                <Textfield
-                  data-size="sm"
-                  aria-label={`Textfield ${row}`}
-                  id={`${ctx.id}-textfield${row}`}
-                />
-              </Table.Cell>
-            </Table.Row>
-          ))}
+        <Table.Body
+          style={{
+            alignContent: 'start',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <Table.Row>
+            <Table.Cell>
+              <Checkbox
+                aria-label={`Check 1`}
+                {...getCheckboxProps({
+                  id: `${ctx.id}-select1`,
+                  value: '1',
+                })}
+              />
+            </Table.Cell>
+            <Table.Cell>1.</Table.Cell>
+            <Table.Cell style={{ minWidth: 200 }}>
+              <Textfield
+                data-size="sm"
+                value="Trives du på skolen?"
+                aria-label={`Textfield 1-1`}
+                id={`${ctx.id}-textfield1-1`}
+              />
+            </Table.Cell>
+            <Table.Cell style={{ minWidth: 200 }}>
+              <Textfield
+                data-size="sm"
+                value="Trives ikke noe særlig"
+                aria-label={`Textfield 1-2`}
+                id={`${ctx.id}-textfield1-2`}
+              />
+            </Table.Cell>
+            <Table.Cell style={{ minWidth: 200 }}>
+              <Textfield
+                value="Trives godt"
+                data-size="sm"
+                aria-label={`Textfield 1-3`}
+                id={`${ctx.id}-textfield1-3`}
+              />
+            </Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>
+              <Checkbox
+                aria-label={`Check 1`}
+                {...getCheckboxProps({
+                  id: `${ctx.id}-select1`,
+                  value: '2',
+                })}
+              />
+            </Table.Cell>
+            <Table.Cell>2.</Table.Cell>
+            <Table.Cell>
+              <Textfield
+                data-size="sm"
+                value="Har du opplevd mobbing?"
+                aria-label={`Textfield 1-1`}
+                id={`${ctx.id}-textfield1-1`}
+                style={{ width: 250 }}
+              />
+            </Table.Cell>
+            <Table.Cell>
+              <Textfield
+                data-size="sm"
+                value="Sjelden"
+                aria-label={`Textfield 1-2`}
+                id={`${ctx.id}-textfield1-2`}
+              />
+            </Table.Cell>
+            <Table.Cell>
+              <Textfield
+                cols={3}
+                value="Ofte"
+                data-size="sm"
+                aria-label={`Textfield 1-3`}
+                id={`${ctx.id}-textfield1-3`}
+              />
+            </Table.Cell>
+          </Table.Row>
         </Table.Body>
       </Table>
     );
   },
 };
 
+const dummyDataKommune = [
+  {
+    id: 1,
+    kommune: 'Bjerkreim kommune',
+    tildeling: '330 000',
+  },
+  {
+    id: 2,
+    kommune: 'Færder kommune',
+    tildeling: '750 000',
+  },
+  {
+    id: 3,
+    kommune: 'Gjøvik kommune',
+    tildeling: '150 000',
+  },
+  {
+    id: 4,
+    kommune: 'Hurdal kommune',
+    tildeling: '550 000',
+  },
+  {
+    id: 5,
+    kommune: 'Marker kommune',
+    tildeling: '900 000',
+  },
+  {
+    id: 6,
+    kommune: 'Nordreisa kommune',
+    tildeling: '304 000',
+  },
+  {
+    id: 7,
+    kommune: 'Osen kommune',
+    tildeling: '251 722',
+  },
+  {
+    id: 8,
+    kommune: 'Rana kommune',
+    tildeling: '700 000',
+  },
+  {
+    id: 9,
+    kommune: 'Randaberg kommune',
+    tildeling: '800 000',
+  },
+  {
+    id: 10,
+    kommune: 'Risør kommune',
+    tildeling: '450 000',
+  },
+  {
+    id: 11,
+    kommune: 'Tinn kommune',
+    tildeling: '179 200',
+  },
+  {
+    id: 12,
+    kommune: 'Bømlo kommune',
+    tildeling: '391 500',
+  },
+  {
+    id: 13,
+    kommune: 'Gjesdal kommune',
+    tildeling: '380 000',
+  },
+  {
+    id: 14,
+    kommune: 'Haugesund kommune',
+    tildeling: '3 000 000',
+  },
+  {
+    id: 15,
+    kommune: 'Karmøy kommune',
+    tildeling: '525 000',
+  },
+];
+
 export const FixedTable: Story = {
   render: (args) => {
-    const rows = Array.from({ length: 3 }, (_, i) => i + 1);
+    const [page, setCurrentPage] = useState(1);
+    const { pages, nextButtonProps, prevButtonProps } = usePagination({
+      currentPage: page,
+      totalPages: 3,
+      showPages: 3,
+      setCurrentPage: (page) => {
+        setCurrentPage(page);
+      },
+    });
+    const itemsPerPage = 5;
+
+    // Calculate the start and end index for slicing the data
+    const indexOfLastItem = page * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = dummyDataKommune.slice(
+      indexOfFirstItem,
+      indexOfLastItem,
+    );
+
     return (
-      <Table
-        {...args}
-        style={{
-          tableLayout: 'fixed',
-        }}
-      >
-        <Table.Head>
-          <Table.Row>
-            <Table.HeaderCell>Header 1</Table.HeaderCell>
-            <Table.HeaderCell>Header 2</Table.HeaderCell>
-            <Table.HeaderCell>Header 3</Table.HeaderCell>
-          </Table.Row>
-        </Table.Head>
-        <Table.Body>
-          {rows.map((row) => (
-            <Table.Row key={row}>
-              <Table.Cell>{`Cell ${row}1`}</Table.Cell>
-              <Table.Cell>{`Cell ${row}2`}</Table.Cell>
-              <Table.Cell>{`Cell ${row}3`}</Table.Cell>
+      <div>
+        <Table
+          {...args}
+          id="myTable"
+          style={{
+            tableLayout: 'fixed',
+            marginBottom: '12px',
+          }}
+        >
+          <caption>Tildeling skolebibliotek 2024</caption>
+          <Table.Head>
+            <Table.Row>
+              <Table.HeaderCell>Kommune</Table.HeaderCell>
+              <Table.HeaderCell>Tildeling (kr)</Table.HeaderCell>
             </Table.Row>
-          ))}
-        </Table.Body>
-      </Table>
+          </Table.Head>
+          <Table.Body>
+            {currentItems.map((item) => (
+              <Table.Row key={item.id}>
+                <Table.Cell>{item.kommune}</Table.Cell>
+                <Table.Cell
+                  style={{
+                    fontFeatureSettings: "'tnum' 1",
+                  }}
+                >
+                  {item.tildeling}
+                </Table.Cell>
+              </Table.Row>
+            ))}
+          </Table.Body>
+        </Table>
+        <Pagination>
+          <Pagination.List>
+            <Pagination.Item>
+              <Pagination.Button aria-label="Forrige side" {...prevButtonProps}>
+                Forrige
+              </Pagination.Button>
+            </Pagination.Item>
+            {pages.map(({ page, itemKey, buttonProps }) => (
+              <Pagination.Item key={itemKey}>
+                {typeof page === 'number' && (
+                  <Pagination.Button
+                    aria-label={`Side ${page}`}
+                    {...buttonProps}
+                  >
+                    {page}
+                  </Pagination.Button>
+                )}
+              </Pagination.Item>
+            ))}
+            <Pagination.Item>
+              <Pagination.Button aria-label="Neste side" {...nextButtonProps}>
+                Neste
+              </Pagination.Button>
+            </Pagination.Item>
+          </Pagination.List>
+        </Pagination>
+      </div>
     );
   },
 };
 
 export const MultipleHeaderRows: Story = {
+  args: {
+    zebra: true,
+    tintedColumnHeader: true,
+    tintedRowHeader: true,
+    'data-color': 'support1',
+  },
   render: (args) => {
-    const rows = Array.from({ length: 50 }, (_, i) => i + 1);
     return (
       <Table {...args}>
         <Table.Head>
           <Table.Row>
-            <Table.HeaderCell>Header 1</Table.HeaderCell>
-            <Table.HeaderCell colSpan={2}>Header 2</Table.HeaderCell>
+            <Table.Cell />
+            <Table.HeaderCell colSpan={5} style={{ textAlign: 'center' }}>
+              Trives du på skolen?
+            </Table.HeaderCell>
           </Table.Row>
           <Table.Row>
-            <Table.HeaderCell>Header 3</Table.HeaderCell>
-            <Table.HeaderCell>Header 4</Table.HeaderCell>
-            <Table.HeaderCell>Header 5</Table.HeaderCell>
+            <Table.Cell />
+            <Table.HeaderCell>Trives ikke i det hele tatt</Table.HeaderCell>
+            <Table.HeaderCell>Trives ikke noe særlig</Table.HeaderCell>
+            <Table.HeaderCell>Trives litt</Table.HeaderCell>
+            <Table.HeaderCell>Trives godt</Table.HeaderCell>
+            <Table.HeaderCell>Trives svært godt</Table.HeaderCell>
           </Table.Row>
         </Table.Head>
-        <Table.Body>
-          {rows.map((row) => (
-            <Table.Row key={row}>
-              <Table.Cell>{`Cell ${row}1`}</Table.Cell>
-              <Table.Cell>{`Cell ${row}2`}</Table.Cell>
-              <Table.Cell>{`Cell ${row}3`}</Table.Cell>
-            </Table.Row>
-          ))}
+        <Table.Body style={{ textAlign: 'right' }}>
+          <Table.Row>
+            <Table.HeaderCell scope={'row'} style={{ textAlign: 'left' }}>
+              Idrettsfag
+            </Table.HeaderCell>
+            <Table.Cell>0,5%</Table.Cell>
+            <Table.Cell>1,0%</Table.Cell>
+            <Table.Cell>5,7%</Table.Cell>
+            <Table.Cell>46,0%</Table.Cell>
+            <Table.Cell>46,9%</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.HeaderCell scope={'row'} style={{ textAlign: 'left' }}>
+              Medier og kommunikasjon
+            </Table.HeaderCell>
+            <Table.Cell>1,2%</Table.Cell>
+            <Table.Cell>1,9%</Table.Cell>
+            <Table.Cell>11,3%</Table.Cell>
+            <Table.Cell>49,4%</Table.Cell>
+            <Table.Cell>36,1%</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.HeaderCell scope={'row'} style={{ textAlign: 'left' }}>
+              Musikk, dans og drama
+            </Table.HeaderCell>
+            <Table.Cell>-</Table.Cell>
+            <Table.Cell>-</Table.Cell>
+            <Table.Cell>7,0%</Table.Cell>
+            <Table.Cell>41,9%</Table.Cell>
+            <Table.Cell>49,8%</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.HeaderCell scope={'row'} style={{ textAlign: 'left' }}>
+              Studiespesialisering
+            </Table.HeaderCell>
+            <Table.Cell>1,2%</Table.Cell>
+            <Table.Cell>1,8%</Table.Cell>
+            <Table.Cell>8,9%</Table.Cell>
+            <Table.Cell>49,8%</Table.Cell>
+            <Table.Cell>38,3%</Table.Cell>
+          </Table.Row>
         </Table.Body>
       </Table>
     );
@@ -396,66 +801,30 @@ export const MultipleHeaderRows: Story = {
 export const WithBorder: Story = {
   args: {
     border: true,
+    tintedColumnHeader: true,
+    tintedRowHeader: true,
+    'data-color': 'support2',
   },
   render: (args) => {
-    const rows = Array.from({ length: 3 }, (_, i) => i + 1);
     return (
       <div style={{ display: 'grid', gap: '1rem' }}>
         <Table {...args}>
-          <Table.Body>
-            {rows.map((row) => (
-              <Table.Row key={row}>
-                <Table.Cell>{`Cell ${row}1`}</Table.Cell>
-                <Table.Cell>{`Cell ${row}2`}</Table.Cell>
-                <Table.Cell>{`Cell ${row}3`}</Table.Cell>
-              </Table.Row>
-            ))}
-          </Table.Body>
-          <Table.Body>
-            {rows.map((row) => (
-              <Table.Row key={row}>
-                <Table.Cell>{`Cell ${row}1`}</Table.Cell>
-                <Table.Cell>{`Cell ${row}2`}</Table.Cell>
-                <Table.Cell>{`Cell ${row}3`}</Table.Cell>
-              </Table.Row>
-            ))}
-          </Table.Body>
-        </Table>
-        <Table {...args}>
           <Table.Head>
             <Table.Row>
-              <Table.HeaderCell>Header 3</Table.HeaderCell>
-              <Table.HeaderCell>Header 4</Table.HeaderCell>
-              <Table.HeaderCell>Header 5</Table.HeaderCell>
+              <Table.HeaderCell>Navn</Table.HeaderCell>
+              <Table.HeaderCell>Rolle</Table.HeaderCell>
+              <Table.HeaderCell>Epost</Table.HeaderCell>
             </Table.Row>
           </Table.Head>
           <Table.Body>
-            {rows.map((row) => (
-              <Table.Row key={row}>
-                <Table.Cell>{`Cell ${row}1`}</Table.Cell>
-                <Table.Cell>{`Cell ${row}2`}</Table.Cell>
-                <Table.Cell>{`Cell ${row}3`}</Table.Cell>
+            {dummyData.map((row) => (
+              <Table.Row key={row.id}>
+                <Table.Cell>{row.navn}</Table.Cell>
+                <Table.Cell>{row.rolle}</Table.Cell>
+                <Table.Cell>{row.epost}</Table.Cell>
               </Table.Row>
             ))}
           </Table.Body>
-        </Table>
-        <Table {...args}>
-          <Table.Body>
-            {rows.map((row) => (
-              <Table.Row key={row}>
-                <Table.Cell>{`Cell ${row}1`}</Table.Cell>
-                <Table.Cell>{`Cell ${row}2`}</Table.Cell>
-                <Table.Cell>{`Cell ${row}3`}</Table.Cell>
-              </Table.Row>
-            ))}
-          </Table.Body>
-          <Table.Foot>
-            <Table.Row>
-              <Table.HeaderCell>Footer 1</Table.HeaderCell>
-              <Table.HeaderCell>Footer 2</Table.HeaderCell>
-              <Table.HeaderCell>Footer 3</Table.HeaderCell>
-            </Table.Row>
-          </Table.Foot>
         </Table>
       </div>
     );

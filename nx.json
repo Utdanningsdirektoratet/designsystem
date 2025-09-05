@@ -29,11 +29,17 @@
       "cache": true,
       "dependsOn": ["build"]
     },
+    "lint:cyles": {
+      "cache": true
+    },
     "build": {
       "cache": true,
-      "dependsOn": ["^build"],
+      "dependsOn": ["lint:cycles", "^build", "^inject"],
       "inputs": ["default", "^default"],
       "outputs": ["{projectRoot}/dist"]
+    },
+    "inject": {
+      "dependsOn": ["build"]
     },
     "test": {
       "dependsOn": ["build"]

@@ -12,17 +12,15 @@ exports[`Backdrop Closedby Any 1`] = `
   data-modal="true"
   open
 >
-  <form method="dialog">
-    <button
-      data-icon="true"
-      data-variant="tertiary"
-      type="submit"
-      aria-label="Lukk dialogvindu"
-      data-color="neutral"
-      name="close"
-    >
-    </button>
-  </form>
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
+    aria-label="Lukk dialogvindu"
+    data-color="neutral"
+    data-command="close"
+  >
+  </button>
   <h2>
     Dialog med
     <code>
@@ -66,17 +64,15 @@ exports[`Dialog Non Modal 1`] = `
   open
   style="width: 300px; left: 80%;"
 >
-  <form method="dialog">
-    <button
-      data-icon="true"
-      data-variant="tertiary"
-      type="submit"
-      aria-label="Lukk dialogvindu"
-      data-color="neutral"
-      name="close"
-    >
-    </button>
-  </form>
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
+    aria-label="Lukk dialogvindu"
+    data-color="neutral"
+    data-command="close"
+  >
+  </button>
   <h2 style="margin-bottom: var(--ds-size-2);">
     Hva besvarelsen burde inneholde
   </h2>
@@ -112,17 +108,15 @@ exports[`Dialog With Form 1`] = `
   data-modal="true"
   open
 >
-  <form method="dialog">
-    <button
-      data-icon="true"
-      data-variant="tertiary"
-      type="submit"
-      aria-label="Lukk dialogvindu"
-      data-color="neutral"
-      name="close"
-    >
-    </button>
-  </form>
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
+    aria-label="Lukk dialogvindu"
+    data-color="neutral"
+    data-command="close"
+  >
+  </button>
   <h2 style="margin-bottom: var(--ds-size-2);">
     Skjemainnsending
   </h2>
@@ -152,6 +146,7 @@ exports[`Dialog With Form 1`] = `
     <button
       data-variant="secondary"
       type="button"
+      data-command="close"
     >
       Avbryt
     </button>
@@ -172,17 +167,15 @@ exports[`Dialog With Max Width 1`] = `
   open
   style="max-width: 1200px;"
 >
-  <form method="dialog">
-    <button
-      data-icon="true"
-      data-variant="tertiary"
-      type="submit"
-      aria-label="Lukk dialogvindu"
-      data-color="neutral"
-      name="close"
-    >
-    </button>
-  </form>
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
+    aria-label="Lukk dialogvindu"
+    data-color="neutral"
+    data-command="close"
+  >
+  </button>
   <h2 style="margin-bottom: var(--ds-size-2);">
     Dialog som er veldig bred
   </h2>
@@ -203,17 +196,15 @@ exports[`Dialog With Open Prop 1`] = `
   data-modal="true"
   open
 >
-  <form method="dialog">
-    <button
-      data-icon="true"
-      data-variant="tertiary"
-      type="submit"
-      aria-label="Lukk dialogvindu"
-      data-color="neutral"
-      name="close"
-    >
-    </button>
-  </form>
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
+    aria-label="Lukk dialogvindu"
+    data-color="neutral"
+    data-command="close"
+  >
+  </button>
   <p
     data-variant="default"
     data-size="sm"
@@ -246,17 +237,15 @@ exports[`Dialog With Suggestion 1`] = `
   open
   style="overflow: visible;"
 >
-  <form method="dialog">
-    <button
-      data-icon="true"
-      data-variant="tertiary"
-      type="submit"
-      aria-label="Lukk dialogvindu"
-      data-color="neutral"
-      name="close"
-    >
-    </button>
-  </form>
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
+    aria-label="Lukk dialogvindu"
+    data-color="neutral"
+    data-command="close"
+  >
+  </button>
   <div>
     <h2>
       Dialog med innhold utenfor
@@ -275,8 +264,9 @@ exports[`Dialog With Suggestion 1`] = `
           placeholder
           id="undefined-input"
           type="text"
+          data-label="Velg en kommune"
           list=":u-datalist1"
-          aria-label="Velg en kommune"
+          aria-label="Velg en kommune​​​​​"
           popovertarget=":u-datalist1"
           aria-autocomplete="list"
           aria-controls=":u-datalist1"
@@ -409,6 +399,7 @@ exports[`Dialog With Suggestion 1`] = `
     <button
       data-variant="secondary"
       type="button"
+      data-command="close"
     >
       Avbryt
     </button>
@@ -428,17 +419,15 @@ exports[`Preview 1`] = `
   data-modal="true"
   open
 >
-  <form method="dialog">
-    <button
-      data-icon="true"
-      data-variant="tertiary"
-      type="submit"
-      aria-label="Lukk dialogvindu"
-      data-color="neutral"
-      name="close"
-    >
-    </button>
-  </form>
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
+    aria-label="Lukk dialogvindu"
+    data-color="neutral"
+    data-command="close"
+  >
+  </button>
   <h2 style="margin-bottom: var(--ds-size-2);">
     Dialog header
   </h2>
@@ -469,17 +458,15 @@ exports[`With Header And Footer 1`] = `
   data-modal="true"
   open
 >
-  <form method="dialog">
-    <button
-      data-icon="true"
-      data-variant="tertiary"
-      type="submit"
-      aria-label="Lukk dialogvindu"
-      data-color="neutral"
-      name="close"
-    >
-    </button>
-  </form>
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
+    aria-label="Lukk dialogvindu"
+    data-color="neutral"
+    data-command="close"
+  >
+  </button>
   <div>
     <p
       data-variant="default"
@@ -519,17 +506,15 @@ exports[`Without Dialog Trigger Context 1`] = `
   data-modal="true"
   open
 >
-  <form method="dialog">
-    <button
-      data-icon="true"
-      data-variant="tertiary"
-      type="submit"
-      aria-label="Lukk dialogvindu"
-      data-color="neutral"
-      name="close"
-    >
-    </button>
-  </form>
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
+    aria-label="Lukk dialogvindu"
+    data-color="neutral"
+    data-command="close"
+  >
+  </button>
   <p
     data-variant="default"
     data-size="sm"
