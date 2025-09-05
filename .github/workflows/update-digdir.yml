@@ -16,7 +16,7 @@ jobs:
         id: digdir_info
       - name: Update @digdir/* packages
         if: steps.digdir_info.outputs.version
-        run: pnpm update -r --latest "@digdir/*"
+        run: pnpm update -r --latest "@digdir/*" && pnpm dedupe
       - name: Rebuild theme
         if: steps.digdir_info.outputs.version
         run: pnpm nx run @udir-design/theme:build
