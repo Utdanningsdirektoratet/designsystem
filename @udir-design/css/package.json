@@ -5,6 +5,9 @@
     "url": "github:Utdanningsdirektoratet/designsystem",
     "directory": "@udir-design/css"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "version": "0.0.0-semantically-released",
   "type": "module",
