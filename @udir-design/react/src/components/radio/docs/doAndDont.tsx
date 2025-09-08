@@ -230,3 +230,47 @@ const ExLangStyleDont = () => {
     </Fieldset>
   );
 };
+
+export const DisabledEx = () => {
+  return (
+    <Stack>
+      <Dont description="Ikke bruk deaktivert Radio.">
+        <ExRadioDisabled />
+      </Dont>
+    </Stack>
+  );
+};
+
+const ExRadioDisabled = () => {
+  return (
+    <Radio
+      name="ex-radio-disabled"
+      label="Disabled"
+      value="disabled"
+      description="Description"
+      disabled
+    />
+  );
+};
+
+export const ReadOnlyEx = () => {
+  return (
+    <Stack>
+      <Dont description="Unngå skrivebeskyttet Radio.">
+        <ExRadioReadOnly />
+      </Dont>
+    </Stack>
+  );
+};
+
+const ExRadioReadOnly = () => {
+  return (
+    <Radio
+      name="ex-radio-readonly"
+      label="Read only"
+      value="readonly"
+      description="Description"
+      readOnly
+    />
+  );
+};
