@@ -236,3 +236,47 @@ const Ex3Dont = () => {
     </Fieldset>
   );
 };
+
+export const DisabledEx = () => {
+  return (
+    <Stack>
+      <Dont description="Ikke bruk deaktivert Checkbox.">
+        <ExCheckboxDisabled />
+      </Dont>
+    </Stack>
+  );
+};
+
+const ExCheckboxDisabled = () => {
+  return (
+    <Checkbox
+      name="ex-checkbox-disabled-group"
+      label="Disabled"
+      value="disabled"
+      description="Description"
+      disabled
+    />
+  );
+};
+
+export const ReadOnlyEx = () => {
+  return (
+    <Stack>
+      <Dont description="Unngå skrivebeskyttet Checkbox.">
+        <ExCheckboxReadOnly />
+      </Dont>
+    </Stack>
+  );
+};
+
+const ExCheckboxReadOnly = () => {
+  return (
+    <Checkbox
+      name="ex-checkbox-readonly-group"
+      label="Read only"
+      value="readonly"
+      description="Description"
+      readOnly
+    />
+  );
+};

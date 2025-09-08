@@ -72,7 +72,7 @@ export const Preview: Story = {
 
 export const Checked: Story = {
   ...Preview,
-  args: { ...Preview.args, checked: true },
+  args: { ...Preview.args, defaultChecked: true },
   play: () => {
     // Do nothing
   },
@@ -82,7 +82,7 @@ export const Description: Story = {
   args: {
     label: 'Åpen prøve',
     description: 'Prøven er åpen for alle som ønsker å delta.',
-    checked: true,
+    defaultChecked: true,
     id: 'switch-with-description',
   },
   render: (args, context) => <Switch {...args} id={context.id} />,
@@ -96,7 +96,7 @@ export const Group: Story = {
         label="Lydvarsler"
         description="Spill av lyd når et varsel mottas."
         value="lydvarsler"
-        checked
+        defaultChecked
         {...args}
         id={context.id + 'lydvarsler'}
       />
@@ -133,7 +133,7 @@ export const GroupEnd: Story = {
       <Switch
         label="Mørk modus"
         value="mork-modus"
-        checked
+        defaultChecked
         {...args}
         id={context.id + 'mork-modus'}
       />
@@ -224,7 +224,7 @@ export const SwitchInColorContext: Story = {
   args: {
     label: 'Radio',
     description: 'Description',
-    checked: true,
+    defaultChecked: true,
     id: 'switch-in-color-context',
   },
   render: (args) => (

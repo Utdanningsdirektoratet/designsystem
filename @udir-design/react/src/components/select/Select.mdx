@@ -1,5 +1,6 @@
 import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
 import * as SelectStories from './Select.stories';
+import { DisabledEx, ReadOnlyEx } from './docs/doAndDont';
 
 <Meta of={SelectStories} />
 
@@ -75,12 +76,16 @@ Vi unngår deaktivert (`disabled`) `Select` fordi de kan være vanskelige å opp
 
 Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander) og hvilke alternativer som finnes.
 
+<DisabledEx />
+
 ### Unngå skrivebeskyttet Select
 
 `Select` støtter `readOnly`-attributtet for å gjøre feltet skrivebeskyttet, og gir en visuell indikasjon
 som skiller seg fra redigerbare felter. Vi unngår likevel `readOnly` så langt det lar seg gjøre, fordi
 slike felter kan være forvirrende for noen brukere. Ikke alle vil skjønne hvorfor de ikke får til å
 endre innholdet i feltet.
+
+<ReadOnlyEx />
 
 ## Tekst i Select
 

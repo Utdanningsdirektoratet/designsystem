@@ -1,5 +1,6 @@
 import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
 import * as TextfieldStories from './Textfield.stories';
+import { DisabledEx, ReadOnlyEx } from './docs/doAndDont';
 
 <Meta of={TextfieldStories} />
 
@@ -93,12 +94,16 @@ Vi unngår deaktivert (`disabled`) `Textfield` fordi de kan være vanskelige å 
 
 Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander) og hvilke alternativer som finnes.
 
+<DisabledEx />
+
 ### Unngå skrivebeskyttet Textfield
 
 `Textfield` støtter `readOnly`-attributtet for å gjøre feltet skrivebeskyttet, og gir en visuell indikasjon
 som skiller seg fra redigerbare felter. Vi unngår likevel `readOnly` så langt det lar seg gjøre, fordi
 slike felter kan være forvirrende for noen brukere. Ikke alle vil skjønne hvorfor de ikke får til å
 endre innholdet i feltet.
+
+<ReadOnlyEx />
 
 ## Tekst i Textfield
 
