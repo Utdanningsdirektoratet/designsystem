@@ -14,8 +14,13 @@ import { CSSProperties } from 'react';
 
 const meta: Meta<typeof Badge> = {
   component: Badge,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+      details:
+        'Vi har begrenset fargevalg til semantiske farger og Udirs hovedfarger.',
+    },
     customStyles: {
       display: 'flex',
       flexDirection: 'row',

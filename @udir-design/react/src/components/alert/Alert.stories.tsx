@@ -9,7 +9,10 @@ type Story = StoryObj<typeof Alert>;
 
 const meta: Meta<typeof Alert> = {
   component: Alert,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
+  parameters: {
+    componentOrigin: { originator: 'digdir' },
+  },
 };
 
 export default meta;

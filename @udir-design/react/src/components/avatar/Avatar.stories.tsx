@@ -4,8 +4,13 @@ import { BriefcaseIcon, ChevronUpIcon } from '@navikt/aksel-icons';
 
 const meta: Meta<typeof Avatar> = {
   component: Avatar,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+      details:
+        'Vi har fjernet muligheten til å endre formen for en mer konsekvent brukeropplevelse på tvers av tjenester.',
+    },
     layout: 'padded',
     customStyles: {
       display: 'flex',
