@@ -1,11 +1,8 @@
-import { useState } from 'react';
 import * as Icons from '@udir-design/icons';
 import { AkselIcon } from '@udir-design/icons/metadata';
-import { useDebounceCallback } from '@digdir/designsystemet-react';
-import { categorizeIcons, searchIcons } from './IconDisplay.utils';
-import { IconPageSidebar } from './IconSidebar';
-import { Button, Search } from 'src/components/beta';
-import { ToggleGroup, Heading, Paragraph } from 'src/components/alpha';
+import { Button } from 'src/components/beta';
+import { Heading, Paragraph } from 'src/components/alpha';
+import styles from './icons.module.css';
 
 const Translations: Record<string, string> = {
   Accessibility: 'Tilgjenglighet',
@@ -26,60 +23,24 @@ const Translations: Record<string, string> = {
   Workplace: 'Arbeidsplass',
 };
 
-export const IconDisplay = () => {
-  const [inputValue, setInputValue] = useState('');
-  const [searchTerm, setSearchTerm] = useState<string>('');
-  const [iconToggle, setIconToggle] = useState<'fill' | 'stroke'>('stroke');
-  const setSearchTermDebounced = useDebounceCallback(setSearchTerm, 500);
-  const [selectedIcon, setSelectedIcon] = useState<AkselIcon | null>(null);
+type IconCategory = {
+  category: string;
+  icons: AkselIcon[];
+};
 
-  function resetIcon() {
-    setSelectedIcon(null);
-  }
-
-  const iconsWithCategories = categorizeIcons(
-    searchIcons({ query: searchTerm ?? '', toggle: iconToggle ?? 'stroke' }),
-  );
-
+export const IconDisplay = ({
+  icons,
+  selectedIcon,
+  setSelectedIcon,
+}: {
+  icons: IconCategory[];
+  selectedIcon: AkselIcon | null;
+  setSelectedIcon: React.Dispatch<React.SetStateAction<AkselIcon | null>>;
+}) => {
   return (
-    <div>
-      <div
-        style={{
-          display: 'flex',
-          gap: 'var(--ds-size-6)',
-          marginBottom: 'var(--ds-size-10)',
-          marginTop: 'var(--ds-size-6)',
-        }}
-      >
-        <form>
-          <Search>
-            <Search.Input
-              aria-label="Søk"
-              value={inputValue}
-              onChange={(e) => {
-                const newValue = e.target.value;
-                setInputValue(newValue);
-                // Don't search while typing
-                setSearchTerm('');
-                // Search after stopped typing
-                setSearchTermDebounced(newValue);
-              }}
-            />
-            <Search.Clear />
-          </Search>
-        </form>
-        <ToggleGroup
-          defaultValue="stroke"
-          onChange={(value) => {
-            setIconToggle(value as 'fill' | 'stroke');
-          }}
-        >
-          <ToggleGroup.Item value="stroke">Outline</ToggleGroup.Item>
-          <ToggleGroup.Item value="fill">Fill</ToggleGroup.Item>
-        </ToggleGroup>
-      </div>
-      {iconsWithCategories.length === 0 && <Paragraph>Send innspill</Paragraph>}
-      {iconsWithCategories.map((section) => {
+    <div className={styles.iconSection}>
+      {icons.length === 0 && <Paragraph>Send innspill</Paragraph>}
+      {icons.map((section) => {
         return (
           <div key={section.category}>
             <Heading
@@ -122,7 +83,6 @@ export const IconDisplay = () => {
           </div>
         );
       })}
-      <IconPageSidebar icon={selectedIcon} resetIcon={resetIcon} />
     </div>
   );
 };

@@ -1,7 +1,8 @@
 import { AkselIcon } from '@udir-design/icons/metadata';
-import * as Icons from '@udir-design/icons';
-import { Card, Dialog, Tag } from 'src/components/beta';
-import { Heading, Paragraph } from 'src/components/alpha';
+import { Card, Dialog } from 'src/components/beta';
+import { useEffect, useState } from 'react';
+import { IconInformation } from './IconInformation';
+import { PackageInformation } from './PackageInformation';
 
 export function IconPageSidebar({
   icon,
@@ -10,16 +11,23 @@ export function IconPageSidebar({
   icon?: AkselIcon | null;
   resetIcon: () => void;
 }) {
+  const size = useWindowSize();
+
   if (!icon) {
-    return null;
+    return (
+      <Card>
+        <PackageInformation />
+      </Card>
+    );
   }
 
-  const Icon = Icons[
-    `${icon.id}Icon` as keyof typeof Icons
-  ] as React.ForwardRefExoticComponent<
-    React.SVGProps<SVGSVGElement> & React.RefAttributes<SVGSVGElement>
-  >;
-
+  if (size.width && size.width > 740) {
+    return (
+      <Card>
+        <IconInformation icon={icon} />
+      </Card>
+    );
+  }
   return (
     <Dialog
       onClose={() => resetIcon()}
@@ -27,43 +35,35 @@ export function IconPageSidebar({
       modal={false}
       open={Boolean(icon)}
     >
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 'var(--ds-size-3)',
-        }}
-      >
-        <div style={{ display: 'flex' }}>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <Heading level={3}>{icon.name}</Heading>
-            <span style={{ display: 'flex' }}>
-              <Icons.ArrowDownRightIcon fontSize="1.5rem" aria-hidden />
-              <Paragraph>{icon?.sub_category}</Paragraph>
-            </span>
-          </div>
-          <Icon fontSize="5rem" />
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: 'var(--ds-size-2)',
-          }}
-        >
-          {icon.keywords.map((keyword) => (
-            <Tag key={keyword}>{keyword}</Tag>
-          ))}
-        </div>
-        <Card>
-          <Heading level={4}>Import</Heading>
-          <code>{`import { ${icon.name} } from '@udir-design/icons';`}</code>
-        </Card>
-        <Card>
-          <Heading level={4}>React</Heading>
-          <code>{`<${icon.name} />`}</code>
-        </Card>
-      </div>
+      <IconInformation icon={icon} />
     </Dialog>
   );
+}
+
+function useWindowSize() {
+  const [windowSize, setWindowSize] = useState<{
+    width: number | undefined;
+    height: number | undefined;
+  }>({
+    width: undefined,
+    height: undefined,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []); // Empty array ensures that effect is only run on mount and unmount
+
+  return windowSize;
 }
