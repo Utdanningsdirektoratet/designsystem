@@ -3,6 +3,7 @@ import { Card } from './components/card/Card';
 import { Heading, HeadingProps } from './components/typography/heading/Heading';
 import { Paragraph } from './components/typography/paragraph/Paragraph';
 import styles from './ResourceLinks.module.css';
+import { ArrowRightIcon } from '@navikt/aksel-icons';
 
 export function LandingResourceLinks() {
   const domainUrl = window.location.origin;
@@ -55,16 +56,29 @@ export function LandingResourceLinks() {
   );
 }
 
-export function ComponentResourceLinks() {
+export function ComponentResourceLink() {
   return (
-    <div className={styles.wrapper}>
-      <ResourceLink
-        href="https://www.figma.com/design/6cS3POn7y9Zost26ofJh0a/Komponentbibliotek--beta-?m=auto&node-id=4-476&t=m9jA1aHGUTH3tuve-1"
-        illustration={figmaIllustration}
-        headingLevel={2}
-        heading="Komponenter i Figma"
-        paragraph="Oversikten over komponentene finnes også tilgjengelig i Figma."
-      />
+    <div className={styles.horisontalWrapper}>
+      <Card style={{ display: 'flex', width: 'fit-content' }}>
+        <Card.Block className={styles.illustration} style={{ height: 150 }}>
+          {figmaIllustration}
+        </Card.Block>
+        <Card.Block>
+          <Heading level={2}>
+            <a href="https://www.figma.com/design/6cS3POn7y9Zost26ofJh0a/Komponentbibliotek--beta-?m=auto&node-id=4-476&t=m9jA1aHGUTH3tuve-1">
+              Komponenter i Figma
+            </a>
+          </Heading>
+          <Paragraph style={{ lineBreak: 'auto' }}>
+            Oversikten over komponentene finnes også tilgjengelig i Figma.
+          </Paragraph>
+          <ArrowRightIcon
+            title="a11y-title"
+            fontSize="1.5rem"
+            className={styles.icon}
+          />
+        </Card.Block>
+      </Card>
     </div>
   );
 }
