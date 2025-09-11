@@ -21,8 +21,11 @@ const schoolSuppliesImg =
 
 const meta: Meta<typeof Card> = {
   component: Card,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+    },
     customStyles: {
       width: '100%',
       maxWidth: 800,

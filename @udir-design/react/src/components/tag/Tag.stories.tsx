@@ -6,8 +6,11 @@ import { Avatar } from '../beta';
 
 const meta: Meta<typeof Tag> = {
   component: Tag,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+    },
     customStyles: {
       display: 'flex',
       flexDirection: 'row',

@@ -8,8 +8,11 @@ import { Paragraph } from '../alpha';
 
 const meta: Meta<typeof Popover> = {
   component: Popover,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+    },
     customStyles: {
       display: 'flex',
       justifyContent: 'center',

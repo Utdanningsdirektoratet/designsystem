@@ -8,8 +8,11 @@ import { formatReactSource } from '.storybook/utils/sourceTransformers';
 
 const meta: Meta<typeof ErrorSummary> = {
   component: ErrorSummary,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+    },
     layout: 'centered',
   },
   decorators: [withScrollHashBehavior],

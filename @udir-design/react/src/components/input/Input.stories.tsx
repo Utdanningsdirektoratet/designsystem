@@ -18,7 +18,7 @@ type Story = StoryObj<typeof Input>;
 
 export default {
   component: Input,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   argTypes: {
     role: {
       control: 'radio',
@@ -27,6 +27,10 @@ export default {
     },
   },
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+      details: 'Vi har fjernet mulighet for fargevalg.',
+    },
     layout: 'centered',
   },
 } satisfies Meta;

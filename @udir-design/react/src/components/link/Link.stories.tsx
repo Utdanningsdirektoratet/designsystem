@@ -6,8 +6,12 @@ EnvelopeClosedIcon.displayName = 'EnvelopeClosedIcon';
 
 const meta: Meta<typeof Link> = {
   component: Link,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+      details: 'Vi har fjernet mulighet for fargevalg.',
+    },
     layout: 'centered',
   },
 };

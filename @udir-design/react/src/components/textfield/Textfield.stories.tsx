@@ -6,7 +6,7 @@ import { Button, Divider, Paragraph } from '@udir-design/react/alpha';
 
 const meta: Meta<typeof Textfield> = {
   component: Textfield,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   argTypes: {
     multiline: {
       type: 'boolean',
@@ -41,6 +41,9 @@ const meta: Meta<typeof Textfield> = {
     },
   },
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+    },
     layout: 'centered',
   },
 };

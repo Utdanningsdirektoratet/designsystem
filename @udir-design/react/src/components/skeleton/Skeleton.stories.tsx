@@ -10,8 +10,11 @@ import { Heading, Paragraph } from '../../alpha';
 
 const meta: Meta<typeof Skeleton> = {
   component: Skeleton,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+    },
     layout: 'centered',
     a11y: {
       config: {

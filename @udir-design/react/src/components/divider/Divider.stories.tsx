@@ -11,7 +11,12 @@ import {
 
 const meta: Meta<typeof Divider> = {
   component: Divider,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
+  parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+    },
+  },
 };
 
 export default meta;

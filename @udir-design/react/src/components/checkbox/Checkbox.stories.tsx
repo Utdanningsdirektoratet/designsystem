@@ -17,7 +17,13 @@ import { formatReactSource } from '.storybook/utils/sourceTransformers';
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
+  parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+      details: 'Vi har fjernet mulighet for fargevalg.',
+    },
+  },
 };
 
 export default meta;
