@@ -138,7 +138,7 @@ const detailsColorDecorator: Decorator = (Story) => {
     <div>
       <Stack
         direction="row"
-        data-size="xs"
+        data-size="sm"
         style={{ marginBottom: 'var(--ds-size-5)' }}
       >
         <Fieldset>
