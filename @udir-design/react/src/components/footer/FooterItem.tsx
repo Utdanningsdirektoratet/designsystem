@@ -17,7 +17,9 @@ export const FooterItem = forwardRef<HTMLLIElement, FooterItemProps>(
 
     return (
       <li className={cl(`uds-footer__item`, className)} ref={ref} {...rest}>
-        <Component href={href}>{children}</Component>
+        <Component className="uds-footer__link" href={href}>
+          {children}
+        </Component>
       </li>
     );
   },
