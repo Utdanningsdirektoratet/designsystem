@@ -23,7 +23,7 @@ export const Controls = ({
       <Fieldset>
         <Fieldset.Legend>
           Størrelse
-          <code data-size="xs">(data-size)</code>
+          <code data-size="sm">(data-size)</code>
         </Fieldset.Legend>
         <ToggleGroup value={size} onChange={(val) => setSize(val as Size)}>
           {sizes.map((size) => (
@@ -36,7 +36,7 @@ export const Controls = ({
       <Fieldset>
         <Fieldset.Legend>
           Fargemodus
-          <code data-size="xs">(data-color-scheme)</code>
+          <code data-size="sm">(data-color-scheme)</code>
         </Fieldset.Legend>
         <ToggleGroup value={colorMode} onChange={setColorMode}>
           {colorModes.map((colorMode) => (
