@@ -3,6 +3,14 @@
   left: 0;
   bottom: 0;
   width: 100%;
+
+  a {
+    color: var(--ds-color-text-neutral);
+
+    &:hover {
+      color: var(--ds-color-text-subtle);
+    }
+  }
 }
 
 .uds-footer > div {
