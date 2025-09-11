@@ -53,7 +53,7 @@ export const Preview: Story = {
         expect(tooltip).toBeVisible();
       });
       await userEvent.unhover(trigger);
-      expect(tooltip).not.toBeVisible();
+      await waitFor(() => expect(tooltip).not.toBeVisible());
     });
 
     await step('Focus on the button displays the tooltip', async () => {
@@ -63,7 +63,7 @@ export const Preview: Story = {
         expect(tooltip).toBeVisible();
       });
       await userEvent.tab();
-      expect(tooltip).not.toBeVisible();
+      await waitFor(() => expect(tooltip).not.toBeVisible());
     });
   },
 };
