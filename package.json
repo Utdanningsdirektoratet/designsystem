@@ -55,12 +55,13 @@
       "@swc/core",
       "esbuild",
       "msw",
+      "nx",
+      "oxc-resolver",
       "style-dictionary",
       "unrs-resolver"
     ],
     "onlyBuiltDependencies": [
-      "just-pnpm",
-      "nx"
+      "just-pnpm"
     ],
     "overrides": {
       "@eslint/plugin-kit@<0.3.4": ">=0.3.4",
