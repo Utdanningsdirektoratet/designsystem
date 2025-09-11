@@ -13,29 +13,22 @@ export function IconPageSidebar({
 }) {
   const size = useWindowSize();
 
-  if (!icon) {
+  if (size.width && size.width > 992) {
     return (
-      <Card>
-        <PackageInformation />
-      </Card>
-    );
-  }
-
-  if (size.width && size.width > 740) {
-    return (
-      <Card>
-        <IconInformation icon={icon} />
+      <Card className="sidebar">
+        {icon ? <IconInformation icon={icon} /> : <PackageInformation />}
       </Card>
     );
   }
   return (
     <Dialog
       onClose={() => resetIcon()}
-      aria-label={`${icon.name} ikon`}
+      aria-label={icon ? `${icon.name} ikon` : 'Informasjon'}
       modal={false}
       open={Boolean(icon)}
+      className="modal"
     >
-      <IconInformation icon={icon} />
+      {icon ? <IconInformation icon={icon} /> : <PackageInformation />}
     </Dialog>
   );
 }

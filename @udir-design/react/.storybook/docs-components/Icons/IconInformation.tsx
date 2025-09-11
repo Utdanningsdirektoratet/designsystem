@@ -23,21 +23,30 @@ export function IconInformation({ icon }: { icon?: AkselIcon | null }) {
         gap: 'var(--ds-size-3)',
       }}
     >
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <Heading level={3}>{icon.name}</Heading>
-          <span style={{ display: 'flex' }}>
+          <span
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          >
             <Icons.ArrowDownRightIcon fontSize="1.5rem" aria-hidden />
-            <Paragraph>{icon?.sub_category}</Paragraph>
+            <Paragraph style={{ marginBlock: '0px' }}>
+              {icon?.sub_category}
+            </Paragraph>
           </span>
         </div>
-        <Icon fontSize="5rem" />
+        <Icon fontSize="3.5rem" />
       </div>
       <div
         style={{
           display: 'flex',
           flexWrap: 'wrap',
           gap: 'var(--ds-size-2)',
+          marginTop: 'var(--ds-size-3)',
+          marginBottom: 'var(--ds-size-2)',
         }}
       >
         {icon.keywords.map((keyword) => (

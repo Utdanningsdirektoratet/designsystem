@@ -1,4 +1,4 @@
-import { Heading } from 'src/components/alpha';
+import { Paragraph } from 'src/components/alpha';
 import { Button, Card } from 'src/components/beta';
 import { FilesIcon } from '@udir-design/icons';
 
@@ -16,15 +16,23 @@ export const CodeBlock = ({ heading, code }: Props) => {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          padding: 'var(--ds-size-4)',
+          padding: 'var(--ds-size-2)',
+          paddingInline: 'var(--ds-size-6)',
+          maxHeight: '80px',
         }}
       >
-        <Heading level={3}>{heading}</Heading>
-        <Button variant="tertiary" aria-label="Kopier" icon>
+        <Paragraph style={{ marginBlock: '0px' }}>{heading}</Paragraph>
+        <Button
+          variant="tertiary"
+          aria-label="Kopier"
+          data-size="sm"
+          icon
+          style={{ marginTop: '0px' }}
+        >
           <FilesIcon />
         </Button>
       </Card.Block>
-      <Card.Block>
+      <Card.Block style={{ overflow: 'auto' }}>
         <pre>
           <code
             style={{
