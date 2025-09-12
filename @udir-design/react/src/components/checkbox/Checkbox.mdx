@@ -14,6 +14,8 @@ import {
   CheckboxEx3,
   CheckboxExConversation,
   CheckboxExFilter,
+  DisabledEx,
+  ReadOnlyEx,
 } from './docs/doAndDont';
 
 <Meta of={CheckboxStories} />
@@ -100,18 +102,22 @@ se godt nok, er en horisontal liste ekstra vanskelig.
 
 <CheckboxEx1 />
 
-### Ikke bruk deaktiverte avmerkingsbokser
+### Ikke bruk deaktivert Checkbox
 
-Vi unngår deaktiverte (`disabled`) avmerkingsbokser fordi de kan være vanskelige å oppfatte. Noen brukere vil ikke forstå hva avmerkingsboksen sier eller hvorfor den ikke er klikkbar. Hvis en avmerkingsboks eller gruppe med avmerkingsbokser ikke er relevant, bør du helst fjerne valgene fremfor å deaktivere dem. Tilby gjerne brukeren informasjon om hvorfor valgene ikke er tilgjengelig.
+Vi unngår deaktiverte (`disabled`) `Checkbox` fordi de kan være vanskelige å oppfatte. Noen brukere vil ikke forstå hva `Checkbox` sier eller hvorfor den ikke er klikkbar. Hvis en `Checkbox` eller gruppe med `Checkbox` ikke er relevant, bør du helst fjerne valgene fremfor å deaktivere dem. Tilby gjerne brukeren informasjon om hvorfor valgene ikke er tilgjengelig.
 
 Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander) og hvilke alternativer som finnes.
 
-### Unngå skrivebeskyttede avmerkingsbokser
+<DisabledEx />
+
+### Unngå skrivebeskyttet Checkbox
 
 `Checkbox` støtter `readOnly`-attributtet for å gjøre feltet skrivebeskyttet, og gir en visuell indikasjon
 som skiller seg fra redigerbare felter. Vi unngår likevel `readOnly` så langt det lar seg gjøre, fordi
 slike felter kan være forvirrende for noen brukere. Ikke alle vil skjønne hvorfor de ikke får til å
 endre innholdet i feltet.
+
+<ReadOnlyEx />
 
 ## Tekst i Checkbox
 

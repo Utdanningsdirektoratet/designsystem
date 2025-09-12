@@ -1,0 +1,52 @@
+import { Stack, Dont } from '.storybook/docs-components';
+import { Textfield } from '@udir-design/react/alpha';
+
+export const DisabledEx = () => {
+  return (
+    <Stack>
+      <Dont description="Ikke bruk deaktivert Textfield.">
+        <ExSwitchDisabled />
+      </Dont>
+    </Stack>
+  );
+};
+
+const ExSwitchDisabled = () => {
+  return (
+    <Stack style={{ margin: 'var(--ds-size-2) 0' }}>
+      <Textfield id="textfield-disabled" label="Disabled Textfield" disabled />
+      <Textfield
+        id="textarea-disabled"
+        label="Disabled Textarea"
+        multiline
+        rows={4}
+        disabled
+      />
+    </Stack>
+  );
+};
+
+export const ReadOnlyEx = () => {
+  return (
+    <Stack>
+      <Dont description="Unngå skrivebeskyttet Textfield.">
+        <ExSwitchReadOnly />
+      </Dont>
+    </Stack>
+  );
+};
+
+const ExSwitchReadOnly = () => {
+  return (
+    <Stack style={{ margin: 'var(--ds-size-2) 0' }}>
+      <Textfield id="textfield-readonly" label="ReadOnly Textfield" readOnly />
+      <Textfield
+        id="textarea-readonly"
+        label="ReadOnly Textarea"
+        multiline
+        rows={4}
+        readOnly
+      />
+    </Stack>
+  );
+};
