@@ -1,0 +1,31 @@
+.wrapper {
+  @media (min-width: 992px) {
+    display: flex;
+    gap: var(--ds-size-10);
+  }
+}
+
+.headerContent {
+  display: flex;
+  gap: var(--ds-size-6);
+  margin-bottom: var(--ds-size-10);
+  margin-top: var(--ds-size-6);
+}
+
+.iconSection {
+  flex: 1 0 60%;
+}
+
+.infoSection {
+  padding-top: var(--ds-size-10);
+  flex: 1 0 35%;
+  position: sticky;
+  top: var(--ds-size-10);
+  height: min-content;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar {
+  width: 100%;
+}
