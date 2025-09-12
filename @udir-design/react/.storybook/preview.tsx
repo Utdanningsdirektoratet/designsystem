@@ -84,24 +84,20 @@ export const componentOverrides: MdxComponentOverrides = {
   p: (props) => (
     <Paragraph
       {...props}
-      className="sb-unstyled"
-      style={{
-        backgroundColor: 'transparent',
-        marginBottom: 'var(--ds-size-2)',
-      }}
+      className={`sb-unstyled ${componentStyles.paragraph}`}
     />
   ),
   ol: (props) => (
     <List.Ordered
       {...props}
-      style={{ maxWidth: '70ch', marginBottom: 'var(--ds-size-2)' }}
+      style={{ maxWidth: '70ch', marginBottom: 'var(--ds-size-6)' }}
       className="sb-unstyled"
     />
   ),
   ul: (props) => (
     <List.Unordered
       {...props}
-      style={{ maxWidth: '70ch', marginBottom: 'var(--ds-size-2)' }}
+      style={{ maxWidth: '70ch', marginBottom: 'var(--ds-size-6)' }}
       className="sb-unstyled"
     />
   ),
