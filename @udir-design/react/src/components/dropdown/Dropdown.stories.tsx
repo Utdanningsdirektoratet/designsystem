@@ -18,8 +18,12 @@ import { Button, Dropdown, Avatar, Divider } from '../beta';
 
 const meta: Meta<typeof Dropdown> = {
   component: Dropdown,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+      details: 'Vi har fjernet mulighet for fargevalg.',
+    },
     layout: 'fullscreen',
     customStyles: {
       alignItems: 'start',

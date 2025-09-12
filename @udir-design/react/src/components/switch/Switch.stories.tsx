@@ -8,8 +8,12 @@ import { formatReactSource } from '.storybook/utils/sourceTransformers';
 
 const meta: Meta<typeof Switch> = {
   component: Switch,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+      details: 'Vi har fjernet mulighet for fargevalg.',
+    },
     layout: 'centered',
   },
   argTypes: {

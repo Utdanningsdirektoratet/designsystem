@@ -18,8 +18,12 @@ import { useDebounceCallback } from '@digdir/designsystemet-react';
 
 const meta: Meta<typeof Suggestion> = {
   component: Suggestion,
-  tags: ['alpha'],
+  tags: ['alpha', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+      details: 'Vi har fjernet mulighet for fargevalg.',
+    },
     layout: 'centered',
     customStyles: {
       /* add height by default */

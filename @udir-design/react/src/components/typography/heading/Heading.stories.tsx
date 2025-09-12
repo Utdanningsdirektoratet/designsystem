@@ -3,7 +3,12 @@ import { Heading } from './Heading';
 
 const meta: Meta<typeof Heading> = {
   component: Heading,
-  tags: ['alpha', '!autodocs'],
+  tags: ['alpha', '!autodocs', 'digdir'],
+  parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+    },
+  },
   title: 'Components/Typography/Heading',
 };
 

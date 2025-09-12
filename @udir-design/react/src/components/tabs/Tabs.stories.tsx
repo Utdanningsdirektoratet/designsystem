@@ -27,8 +27,11 @@ import { formatReactSource } from '.storybook/utils/sourceTransformers';
 
 const meta: Meta<typeof Tabs> = {
   component: Tabs,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+    },
     layout: 'centered',
   },
 };

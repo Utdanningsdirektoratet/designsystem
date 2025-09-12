@@ -16,8 +16,12 @@ import { useDebounceCallback } from '@digdir/designsystemet-react';
 
 const meta: Meta<typeof Search> = {
   component: Search,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+      details: 'Vi har fjernet mulighet for fargevalg.',
+    },
     layout: 'centered',
   },
 };

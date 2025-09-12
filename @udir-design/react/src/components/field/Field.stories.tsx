@@ -10,8 +10,12 @@ import { expect, waitFor } from 'storybook/test';
 
 const meta: Meta<typeof Field> = {
   component: Field,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+      details: 'Vi har fjernet mulighet for fargevalg.',
+    },
     layout: 'centered',
   },
 };

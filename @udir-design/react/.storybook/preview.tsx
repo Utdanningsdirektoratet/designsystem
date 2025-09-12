@@ -11,6 +11,7 @@ import { MdxComponentOverrides } from './types/parameters';
 import { Children, MouseEventHandler } from 'react';
 import { LinkIcon } from '@navikt/aksel-icons';
 import { hideTocForIds } from './utils/HideToc';
+import { DocsContainer } from './doc-blocks/DocsContainer';
 
 // See the complete list of available devices in INITIAL_VIEWPORTS here:
 // https://storybook.js.org/docs/essentials/viewport#use-a-detailed-set-of-devices
@@ -152,6 +153,7 @@ const preview: Preview = {
     },
 
     docs: {
+      container: DocsContainer,
       // Configure the table of contents
       toc: {
         title: 'På denne siden',
