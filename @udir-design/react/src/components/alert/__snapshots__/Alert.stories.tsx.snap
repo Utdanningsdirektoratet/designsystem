@@ -14,88 +14,64 @@ exports[`Correct Live Region 1`] = `
 
 exports[`No Heading 1`] = `
 <div data-color="warning">
-  <p data-variant="default">
-    Du har 7 dager igjen på å fullføre søknaden.
-  </p>
+  Du har 7 dager igjen på å fullføre søknaden.
 </div>
 `;
 
 exports[`Preview 1`] = `
 <div data-color="info">
+  <h3 data-size="xs">
+    Overskrift
+  </h3>
   En beskjed det er viktig at brukeren ser
 </div>
 `;
 
 exports[`Variant Danger 1`] = `
 <div data-color="danger">
-  <h2
-    data-size="xs"
-    style="margin-bottom: var(--ds-size-2);"
-  >
+  <h2 data-size="xs">
     Det har skjedd en feil
   </h2>
-  <p data-variant="default">
-    Vi klarer ikke å hente informasjonen du ser etter akkurat nå. Prøv igjen litt senere. Hvis vi fortsatt ikke klarer å vise informasjonen du trenger, tar du kontakt med kundeservice på telefon 85 44 32 66.
-  </p>
+  Vi klarer ikke å hente informasjonen du ser etter akkurat nå. Prøv igjen litt senere. Hvis vi fortsatt ikke klarer å vise informasjonen du trenger, tar du kontakt med kundeservice på telefon 85 44 32 66.
 </div>
 `;
 
 exports[`Variant Info 1`] = `
 <div data-color="info">
-  <h2
-    data-size="xs"
-    style="margin-bottom: var(--ds-size-2);"
-  >
+  <h2 data-size="xs">
     Har du husket å melde deg på privatisteksamen?
   </h2>
-  <p data-variant="default">
-    Du må melde deg på innen 1. februar for våreksamen.
-  </p>
+  Du må melde deg på innen 1. februar for våreksamen.
 </div>
 `;
 
 exports[`Variant Success 1`] = `
 <div data-color="success">
-  <h2
-    data-size="xs"
-    style="margin-bottom: var(--ds-size-2);"
-  >
+  <h2 data-size="xs">
     Du har levert søknaden din!
   </h2>
-  <p data-variant="default">
-    Vi har mottatt søknaden din, og vil behandle den i løpet av få dager.
-  </p>
+  Vi har mottatt søknaden din, og vil behandle den i løpet av få dager.
 </div>
 `;
 
 exports[`Variant Warning 1`] = `
 <div data-color="warning">
-  <h2
-    data-size="xs"
-    style="margin-bottom: var(--ds-size-2);"
-  >
+  <h2 data-size="xs">
     Vi har tekniske problemer
   </h2>
-  <p data-variant="default">
-    Det gjør at du kan bli avbrutt mens du fyller ut skjemaet. Vi jobber med å rette problemene.
-  </p>
+  Det gjør at du kan bli avbrutt mens du fyller ut skjemaet. Vi jobber med å rette problemene.
 </div>
 `;
 
 exports[`With Link 1`] = `
 <div data-color="warning">
-  <h2
-    data-size="xs"
-    style="margin-bottom: var(--ds-size-2);"
-  >
+  <h2 data-size="xs">
     Søknadsfristen går ut om 3 dager
   </h2>
-  <p data-variant="default">
-    Fristen for å søke opptak til utdanning er 15. april.
-    <a href="https://udir.no/">
-      Søk nå
-    </a>
-  </p>
+  Fristen for å søke opptak til utdanning er 15. april.
+  <a href="https://udir.no/">
+    Søk nå
+  </a>
 </div>
 `;
 
