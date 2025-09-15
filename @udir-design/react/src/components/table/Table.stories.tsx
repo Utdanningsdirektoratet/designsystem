@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Checkbox, Tag, Textfield } from '@udir-design/react/alpha';
 import { Table, TableHeaderCellProps } from '@udir-design/react/beta';
-import { useState } from 'react';
+import { useMemo, useState, useCallback } from 'react';
 import { useCheckboxGroup, Heading } from '@udir-design/react/alpha';
 import { expect, within } from 'storybook/test';
 import { Pagination, usePagination } from '@digdir/designsystemet-react';
+import { ChevronDownIcon, ChevronRightIcon } from '@navikt/aksel-icons';
 
 const meta: Meta<typeof Table> = {
   component: Table,
@@ -131,79 +132,89 @@ export const ColumnAndRowHeaders: Story = {
     tintedColumnHeader: true,
     tintedRowHeader: true,
   },
-  render: (args) => (
-    <Table {...args} data-color="accent">
-      <caption
-        style={{
-          fontSize: 'var(--ds-font-size-3)',
-          captionSide: 'bottom',
-          textAlign: 'center',
-          fontWeight: 'normal',
-          marginTop: 'var(--ds-size-2)',
-        }}
-      >
-        Svarprosent for elevundersøkelsen nasjonalt
-      </caption>
-      <Table.Head>
-        <Table.Row>
-          <Table.Cell />
-          <Table.HeaderCell scope="col">2022–23</Table.HeaderCell>
-          <Table.HeaderCell scope="col">2023–24</Table.HeaderCell>
-          <Table.HeaderCell scope="col">2024–25</Table.HeaderCell>
-        </Table.Row>
-      </Table.Head>
-      <Table.Body style={{ textAlign: 'right' }}>
-        <Table.Row>
-          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
-            8. trinn
-          </Table.HeaderCell>
-          <Table.Cell>88,5%</Table.Cell>
-          <Table.Cell>86,3%</Table.Cell>
-          <Table.Cell>85,3%</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
-            9. trinn
-          </Table.HeaderCell>
-          <Table.Cell>88,7%</Table.Cell>
-          <Table.Cell>86,3%</Table.Cell>
-          <Table.Cell>84,9%</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
-            10. trinn
-          </Table.HeaderCell>
-          <Table.Cell>89,7%</Table.Cell>
-          <Table.Cell>87,3%</Table.Cell>
-          <Table.Cell>85,7%</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
-            Vg1
-          </Table.HeaderCell>
-          <Table.Cell>84,8%</Table.Cell>
-          <Table.Cell>82,8%</Table.Cell>
-          <Table.Cell>83,1%</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
-            Vg2
-          </Table.HeaderCell>
-          <Table.Cell>82,5%</Table.Cell>
-          <Table.Cell>80,0%</Table.Cell>
-          <Table.Cell>80,3%</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
-            Vg3
-          </Table.HeaderCell>
-          <Table.Cell>79,9%</Table.Cell>
-          <Table.Cell>75,7%</Table.Cell>
-          <Table.Cell>76,9%</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    </Table>
-  ),
+  render: (args) => {
+    return (
+      <Table {...args} data-color="accent">
+        <caption
+          style={{
+            fontSize: 'var(--ds-font-size-3)',
+            captionSide: 'bottom',
+            textAlign: 'center',
+            fontWeight: 'normal',
+            marginTop: 'var(--ds-size-2)',
+          }}
+        >
+          Svarprosent for elevundersøkelsen nasjonalt
+        </caption>
+        <Table.Head>
+          <Table.Row>
+            <Table.Cell />
+            <Table.HeaderCell scope="col">2022–23</Table.HeaderCell>
+            <Table.HeaderCell scope="col">2023–24</Table.HeaderCell>
+            <Table.HeaderCell scope="col">2024–25</Table.HeaderCell>
+          </Table.Row>
+        </Table.Head>
+        <Table.Body style={{ textAlign: 'right' }}>
+          <Table.Row>
+            <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+              <ChevronDownIcon aria-hidden /> 8. trinn
+            </Table.HeaderCell>
+            <Table.Cell>88,5%</Table.Cell>
+            <Table.Cell>86,3%</Table.Cell>
+            <Table.Cell>85,3%</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+              Fra Oslo
+            </Table.HeaderCell>
+            <Table.Cell>30,5%</Table.Cell>
+            <Table.Cell>1,3%</Table.Cell>
+            <Table.Cell>23,3%</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+              9. trinn
+            </Table.HeaderCell>
+            <Table.Cell>88,7%</Table.Cell>
+            <Table.Cell>86,3%</Table.Cell>
+            <Table.Cell>84,9%</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+              10. trinn
+            </Table.HeaderCell>
+            <Table.Cell>89,7%</Table.Cell>
+            <Table.Cell>87,3%</Table.Cell>
+            <Table.Cell>85,7%</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+              Vg1
+            </Table.HeaderCell>
+            <Table.Cell>84,8%</Table.Cell>
+            <Table.Cell>82,8%</Table.Cell>
+            <Table.Cell>83,1%</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+              Vg2
+            </Table.HeaderCell>
+            <Table.Cell>82,5%</Table.Cell>
+            <Table.Cell>80,0%</Table.Cell>
+            <Table.Cell>80,3%</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+              Vg3
+            </Table.HeaderCell>
+            <Table.Cell>79,9%</Table.Cell>
+            <Table.Cell>75,7%</Table.Cell>
+            <Table.Cell>76,9%</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table>
+    );
+  },
 };
 
 const dummyData = [
@@ -834,4 +845,165 @@ export const WithBorder: Story = {
       </div>
     );
   },
+};
+
+type Node = {
+  id: string;
+  label: string; // e.g. "8. trinn", "Fra Oslo"
+  values: React.ReactNode[]; // per-column values (excluding the row header cell)
+  children?: Node[];
+};
+
+type TreeTableProps = {
+  columns: string[]; // headers for the non-header columns
+  data: Node[]; // tree data
+};
+
+export function TreeTable({ columns, data, ...args }: TreeTableProps) {
+  const [open, setOpen] = useState<Set<string>>(new Set());
+
+  const toggle = useCallback(
+    (id: string) =>
+      setOpen((prev) => {
+        const next = new Set(prev);
+        next.has(id) ? next.delete(id) : next.add(id);
+        return next;
+      }),
+    [],
+  );
+
+  const rows = useMemo(() => {
+    const renderRows = (node: Node, depth = 0): React.ReactNode => {
+      const isOpen = open.has(node.id);
+      const hasChildren = !!node.children?.length;
+
+      return (
+        <>
+          <Table.Row key={node.id}>
+            <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+              {hasChildren ? (
+                <button
+                  type="button"
+                  onClick={() => hasChildren && toggle(node.id)}
+                  aria-expanded={hasChildren ? isOpen : undefined}
+                  aria-controls={
+                    hasChildren ? `rowgroup-${node.id}` : undefined
+                  }
+                  style={{
+                    all: 'unset',
+                    cursor: hasChildren ? 'pointer' : 'default',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    paddingLeft: `calc(var(--ds-size-3) * ${depth})`,
+                  }}
+                >
+                  {isOpen ? (
+                    <ChevronDownIcon aria-hidden />
+                  ) : (
+                    <ChevronRightIcon aria-hidden />
+                  )}
+                  {node.label}
+                </button>
+              ) : (
+                <span
+                  style={{ paddingLeft: `calc(var(--ds-size-7) * ${depth})` }}
+                >
+                  {node.label}
+                </span>
+              )}
+            </Table.HeaderCell>
+
+            {node.values.map((v, i) => (
+              <Table.Cell
+                key={`${node.id}-c${i}`}
+                style={{ textAlign: 'right' }}
+              >
+                {v}
+              </Table.Cell>
+            ))}
+          </Table.Row>
+
+          {hasChildren && isOpen && node.children && (
+            <>{node.children.map((child) => renderRows(child, depth + 1))}</>
+          )}
+        </>
+      );
+    };
+
+    return data?.map((node) => renderRows(node)) || [];
+  }, [data, open, toggle]);
+
+  return (
+    <Table data-color="accent" {...args}>
+      <caption
+        style={{
+          fontSize: 'var(--ds-font-size-3)',
+          captionSide: 'bottom',
+          textAlign: 'center',
+          fontWeight: 'normal',
+          marginTop: 'var(--ds-size-2)',
+        }}
+      >
+        Svarprosent for elevundersøkelsen nasjonalt
+      </caption>
+
+      <Table.Head>
+        <Table.Row>
+          <Table.Cell />
+          {columns?.map((c, i) => (
+            <Table.HeaderCell key={i} scope="col">
+              {c}
+            </Table.HeaderCell>
+          ))}
+        </Table.Row>
+      </Table.Head>
+
+      <Table.Body style={{ textAlign: 'right' }}>{rows}</Table.Body>
+    </Table>
+  );
+}
+
+const columns = ['2022–23', '2023–24', '2024–25'];
+
+const data: Node[] = [
+  {
+    id: '8trinn',
+    label: '8. trinn',
+    values: ['88,5%', '86,3%', '85,3%'],
+    children: [
+      {
+        id: '8trinn-oslo',
+        label: 'Fra Oslo',
+        values: ['30,5%', '1,3%', '23,3%'],
+        children: [
+          {
+            id: '8trinn-oslo-sentrum',
+            label: 'Sentrum',
+            values: ['15,1%', '0,7%', '11,0%'],
+          },
+          {
+            id: '8trinn-oslo-øst',
+            label: 'Øst',
+            values: ['15,4%', '0,6%', '12,3%'],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '9trinn',
+    label: '9. trinn',
+    values: ['88,7%', '86,3%', '84,9%'],
+  },
+];
+
+export const TreeStructuredTable: Story = {
+  args: {
+    zebra: true,
+    tintedColumnHeader: true,
+    tintedRowHeader: true,
+    'data-color': 'support1',
+  },
+  render: (args) => <TreeTable columns={columns} data={data} {...args} />,
 };
