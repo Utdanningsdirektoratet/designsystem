@@ -1,6 +1,7 @@
 import { Pagination, usePagination } from '@digdir/designsystemet-react';
-import { useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { expect, within } from 'storybook/test';
+import { ChevronDownIcon, ChevronRightIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
 import { Checkbox } from '../checkbox/Checkbox';
@@ -838,4 +839,165 @@ export const WithBorder = meta.story({
       </div>
     );
   },
+});
+
+type Node = {
+  id: string;
+  label: string; // e.g. "8. trinn", "Fra Oslo"
+  values: React.ReactNode[]; // per-column values (excluding the row header cell)
+  children?: Node[];
+};
+
+type TreeTableProps = {
+  columns: string[]; // headers for the non-header columns
+  data: Node[]; // tree data
+};
+
+export function TreeTable({ columns, data, ...args }: TreeTableProps) {
+  const [open, setOpen] = useState<Set<string>>(new Set());
+
+  const toggle = useCallback(
+    (id: string) =>
+      setOpen((prev) => {
+        const next = new Set(prev);
+        next.has(id) ? next.delete(id) : next.add(id);
+        return next;
+      }),
+    [],
+  );
+
+  const rows = useMemo(() => {
+    const renderRows = (node: Node, depth = 0): React.ReactNode => {
+      const isOpen = open.has(node.id);
+      const hasChildren = !!node.children?.length;
+
+      return (
+        <>
+          <Table.Row key={node.id}>
+            <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+              {hasChildren ? (
+                <button
+                  type="button"
+                  onClick={() => hasChildren && toggle(node.id)}
+                  aria-expanded={hasChildren ? isOpen : undefined}
+                  aria-controls={
+                    hasChildren ? `rowgroup-${node.id}` : undefined
+                  }
+                  style={{
+                    all: 'unset',
+                    cursor: hasChildren ? 'pointer' : 'default',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    paddingLeft: `calc(var(--ds-size-3) * ${depth})`,
+                  }}
+                >
+                  {isOpen ? (
+                    <ChevronDownIcon aria-hidden />
+                  ) : (
+                    <ChevronRightIcon aria-hidden />
+                  )}
+                  {node.label}
+                </button>
+              ) : (
+                <span
+                  style={{ paddingLeft: `calc(var(--ds-size-7) * ${depth})` }}
+                >
+                  {node.label}
+                </span>
+              )}
+            </Table.HeaderCell>
+
+            {node.values.map((v, i) => (
+              <Table.Cell
+                key={`${node.id}-c${i}`}
+                style={{ textAlign: 'right' }}
+              >
+                {v}
+              </Table.Cell>
+            ))}
+          </Table.Row>
+
+          {hasChildren && isOpen && node.children && (
+            <>{node.children.map((child) => renderRows(child, depth + 1))}</>
+          )}
+        </>
+      );
+    };
+
+    return data?.map((node) => renderRows(node)) || [];
+  }, [data, open, toggle]);
+
+  return (
+    <Table data-color="accent" {...args}>
+      <caption
+        style={{
+          fontSize: 'var(--ds-font-size-3)',
+          captionSide: 'bottom',
+          textAlign: 'center',
+          fontWeight: 'normal',
+          marginTop: 'var(--ds-size-2)',
+        }}
+      >
+        Svarprosent for elevundersøkelsen nasjonalt
+      </caption>
+
+      <Table.Head>
+        <Table.Row>
+          <Table.Cell />
+          {columns?.map((c, i) => (
+            <Table.HeaderCell key={i} scope="col">
+              {c}
+            </Table.HeaderCell>
+          ))}
+        </Table.Row>
+      </Table.Head>
+
+      <Table.Body style={{ textAlign: 'right' }}>{rows}</Table.Body>
+    </Table>
+  );
+}
+
+const columns = ['2022–23', '2023–24', '2024–25'];
+
+const data: Node[] = [
+  {
+    id: '8trinn',
+    label: '8. trinn',
+    values: ['88,5%', '86,3%', '85,3%'],
+    children: [
+      {
+        id: '8trinn-oslo',
+        label: 'Fra Oslo',
+        values: ['30,5%', '1,3%', '23,3%'],
+        children: [
+          {
+            id: '8trinn-oslo-sentrum',
+            label: 'Sentrum',
+            values: ['15,1%', '0,7%', '11,0%'],
+          },
+          {
+            id: '8trinn-oslo-øst',
+            label: 'Øst',
+            values: ['15,4%', '0,6%', '12,3%'],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '9trinn',
+    label: '9. trinn',
+    values: ['88,7%', '86,3%', '84,9%'],
+  },
+];
+
+export const TreeStructuredTable = meta.story({
+  args: {
+    zebra: true,
+    tintedColumnHeader: true,
+    tintedRowHeader: true,
+    'data-color': 'support1',
+  },
+  render: (args) => <TreeTable columns={columns} data={data} {...args} />,
 });
