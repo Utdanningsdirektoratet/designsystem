@@ -1,0 +1,56 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as Stories from './useDrilldownTable.stories';
+import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/CssLanguageVariables';
+
+<Meta of={Stories} />
+
+# useDrilldownTable
+
+En React-hook for å håndtere skjermleserstøtte i drilldown-tabeller (tabeller med hierarkiske tabellrader).
+
+For hver `<Table.Row>` med `data-level` i den tilknyttede `<Table.Body>` legger hooken automatisk inn en visuelt skjult nivåbeskrivelse og setter `aria-describedby` på riktig element, slik at skjermlesere annonserer hvilket nivå raden befinner seg på.
+
+Se [`Table` – Hierarkiske data](/docs/components-table--docs#hierarkiske-data-drilldown) for veiledning om struktur og begrensninger med denne fremgangsmåten.
+
+<Canvas of={Stories.Preview} />
+
+## Bruk
+
+Opprett en ref og send den som parameter til hooken, og send den deretter på `<Table.Body>`.
+Sett `data-level` på hver `<Table.Row>`: 1 for toppnivå, 2 for første undernivå osv.
+
+```tsx
+import { useRef } from 'react';
+import { Table } from '@udir-design/react';
+import { useDrilldownTable } from '@udir-design/react/alpha';
+
+const tbodyRef = useRef<HTMLTableSectionElement>(null);
+useDrilldownTable(tbodyRef);
+
+<Table.Body ref={tbodyRef}>
+  <Table.Row id="rad-1" data-level={1}>
+    <Table.HeaderCell scope="row">
+      <button type="button" aria-expanded={isOpen} onClick={toggle}>
+        Rad med undernivåer
+      </button>
+    </Table.HeaderCell>
+    <Table.Cell>Verdi</Table.Cell>
+  </Table.Row>
+  <Table.Row id="rad-1-1" data-level={2}>
+    <Table.HeaderCell scope="row">Underrad</Table.HeaderCell>
+    <Table.Cell>Verdi</Table.Cell>
+  </Table.Row>
+</Table.Body>;
+```
+
+### Rad-ID
+
+Hooken bruker `id`-attributtet på `<Table.Row>` som grunnlag for `aria-describedby`. Sett `id` eksplisitt for å kontrollere hvilken id som brukes. Uten `id` genereres en stabil id automatisk.
+
+## Språkstøtte
+
+Nivåteksten ("Nivå 1", "Level 1" osv.) styres av CSS-variabelen `--udsc-table-level-prefix` og arver `lang`-attributtet fra nærmeste foreldreelement. [Slik støtter du flere språk](/docs/components-språkstøtte--docs).
+
+Følgende tekstvariabler er tilgjengelige for overstyring:
+
+<CssLanguageVariables variables={['--udsc-table-level-prefix']} />

@@ -1,6 +1,7 @@
 import { Pagination, usePagination } from '@digdir/designsystemet-react';
+import type React from 'react';
 import { useState } from 'react';
-import { expect, within } from 'storybook/test';
+import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
 import { Checkbox } from '../checkbox/Checkbox';
@@ -848,3 +849,88 @@ export const WithBorder = meta.story({
     );
   },
 });
+
+const expandableData = [
+  {
+    id: 1,
+    navn: 'Rita Nordmann',
+    rolle: 'Rektor',
+    epost: 'rita@nordmann.no',
+    detaljer:
+      'Rita har vært rektor i 12 år og har ansvar for 45 ansatte. Hun leder skolens pedagogiske utviklingsarbeid.',
+  },
+  {
+    id: 2,
+    navn: 'Kari Nordmann',
+    rolle: 'Lektor',
+    epost: 'kari@nordmann.no',
+    detaljer:
+      'Kari underviser i norsk og samfunnsfag for 8.–10. trinn. Hun er også kontaktlærer for 9A.',
+  },
+  {
+    id: 3,
+    navn: 'Ola Nordmann',
+    rolle: 'Lektor',
+    epost: 'ola@nordmann.no',
+    detaljer:
+      'Ola underviser i matematikk og naturfag. Han er ansvarlig for skolens realfagssatsing.',
+  },
+];
+
+export const ExpandableRows = meta.story({
+  render: (args) => (
+    <Table {...args} style={{ tableLayout: 'fixed', width: '600px' }}>
+      <Table.Head>
+        <Table.Row>
+          <Table.HeaderCell>Navn</Table.HeaderCell>
+          <Table.HeaderCell>Rolle</Table.HeaderCell>
+          <Table.HeaderCell>Epost</Table.HeaderCell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        {expandableData.map((row) => (
+          <ExpandableTableRow key={row.id} row={row} />
+        ))}
+      </Table.Body>
+    </Table>
+  ),
+  async play({ canvasElement, step }) {
+    const canvas = within(canvasElement);
+
+    await step('Detail row is hidden when collapsed', () => {
+      const button = canvas.getAllByRole('button')[0];
+      expect(button).toHaveAttribute('aria-expanded', 'false');
+    });
+
+    await step('Detail row is shown when expanded', async () => {
+      const button = canvas.getAllByRole('button')[0];
+      await userEvent.click(button);
+      expect(button).toHaveAttribute('aria-expanded', 'true');
+    });
+  },
+});
+
+function ExpandableTableRow({ row }: { row: (typeof expandableData)[number] }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <>
+      <Table.Row>
+        <Table.Cell>
+          <button
+            type="button"
+            aria-expanded={expanded}
+            onClick={() => setExpanded(!expanded)}
+          >
+            {row.navn}
+          </button>
+        </Table.Cell>
+        <Table.Cell>{row.rolle}</Table.Cell>
+        <Table.Cell>{row.epost}</Table.Cell>
+      </Table.Row>
+      <Table.Row hidden={!expanded}>
+        <Table.Cell colSpan={3}>{row.detaljer}</Table.Cell>
+      </Table.Row>
+    </>
+  );
+}

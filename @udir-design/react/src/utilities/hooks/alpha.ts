@@ -5,6 +5,7 @@
  * @module
  */
 
+export { useDrilldownTable } from './useDrilldownTable/useDrilldownTable';
 export {
   type FormNavigationState,
   type GetFormNavigationStepProps,
