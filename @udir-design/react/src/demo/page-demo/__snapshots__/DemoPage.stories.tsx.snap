@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Simple 1`] = `
-<div>
+<div data-size>
   <h2>
     Velkommen!
   </h2>
@@ -306,102 +306,104 @@ exports[`Simple 1`] = `
           </button>
         </div>
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th aria-sort="none">
-              <button type="button">
-                Navn
-              </button>
-            </th>
-            <th>
-              Epost
-            </th>
-            <th aria-sort="none">
-              <button type="button">
-                Telefon
-              </button>
-            </th>
-            <th aria-sort="none">
-              <button type="button">
-                Ansattnr
-              </button>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              Tom Bombadil
-            </td>
-            <td>
-              tom.bombadill@post.no
-            </td>
-            <td>
-              22345678
-            </td>
-            <td>
-              0001
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Samvis Gamgod
-            </td>
-            <td>
-              samvis.gamgod@post.no
-            </td>
-            <td>
-              87654321
-            </td>
-            <td>
-              0002
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Harry Goatleaf
-            </td>
-            <td>
-              harry.goatleaf@post.no
-            </td>
-            <td>
-              55654321
-            </td>
-            <td>
-              0003
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Frodo Baggins
-            </td>
-            <td>
-              frodo.baggins@post.no
-            </td>
-            <td>
-              87904721
-            </td>
-            <td>
-              0004
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Fréaláf Hildason
-            </td>
-            <td>
-              frealaf.hildason@post.no
-            </td>
-            <td>
-              09873940
-            </td>
-            <td>
-              0005
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th aria-sort="none">
+                <button type="button">
+                  Navn
+                </button>
+              </th>
+              <th>
+                Epost
+              </th>
+              <th aria-sort="none">
+                <button type="button">
+                  Telefon
+                </button>
+              </th>
+              <th aria-sort="none">
+                <button type="button">
+                  Ansattnr
+                </button>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Tom Bombadil
+              </td>
+              <td>
+                tom.bombadill@post.no
+              </td>
+              <td>
+                22345678
+              </td>
+              <td>
+                0001
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Samvis Gamgod
+              </td>
+              <td>
+                samvis.gamgod@post.no
+              </td>
+              <td>
+                87654321
+              </td>
+              <td>
+                0002
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Harry Goatleaf
+              </td>
+              <td>
+                harry.goatleaf@post.no
+              </td>
+              <td>
+                55654321
+              </td>
+              <td>
+                0003
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Frodo Baggins
+              </td>
+              <td>
+                frodo.baggins@post.no
+              </td>
+              <td>
+                87904721
+              </td>
+              <td>
+                0004
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Fréaláf Hildason
+              </td>
+              <td>
+                frealaf.hildason@post.no
+              </td>
+              <td>
+                09873940
+              </td>
+              <td>
+                0005
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

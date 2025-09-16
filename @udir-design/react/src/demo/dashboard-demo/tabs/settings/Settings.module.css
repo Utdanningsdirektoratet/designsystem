@@ -1,7 +1,16 @@
+.settingsContainer {
+  container-type: inline-size;
+}
+
 .settings {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-flow: column;
   gap: var(--ds-size-2);
+
+  @container (min-width: 39em) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .card {

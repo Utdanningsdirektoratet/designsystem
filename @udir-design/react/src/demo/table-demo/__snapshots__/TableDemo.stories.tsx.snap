@@ -18,7 +18,7 @@ exports[`Table Story 1`] = `
         <label data-weight="medium">
           Filtrer på utdanningsnivå
         </label>
-        <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
+        <div>
           <label>
             <input
               type="checkbox"
@@ -683,56 +683,6 @@ exports[`Table Story 1`] = `
       </table>
     </div>
     <div>
-      <nav aria-label="Sidenavigering">
-        <ul>
-          <li>
-            <button
-              aria-disabled="true"
-              data-variant="tertiary"
-              type="button"
-            >
-              Forrige
-            </button>
-          </li>
-          <li>
-            <button
-              data-variant="primary"
-              type="button"
-              aria-current="page"
-              aria-label="Side 1"
-            >
-              1
-            </button>
-          </li>
-          <li>
-            <button
-              data-variant="tertiary"
-              type="button"
-              aria-label="Side 2"
-            >
-              2
-            </button>
-          </li>
-          <li>
-            <button
-              data-variant="tertiary"
-              type="button"
-              aria-label="Side 3"
-            >
-              3
-            </button>
-          </li>
-          <li>
-            <button
-              aria-disabled="false"
-              data-variant="tertiary"
-              type="button"
-            >
-              Neste
-            </button>
-          </li>
-        </ul>
-      </nav>
       <button
         data-variant="primary"
         type="button"
@@ -809,6 +759,60 @@ exports[`Table Story 1`] = `
           </div>
         </div>
       </dialog>
+      <nav aria-label="Sidenavigering">
+        <ul>
+          <li>
+            <button
+              aria-disabled="true"
+              data-variant="tertiary"
+              type="button"
+            >
+              <span>
+                Forrige
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              data-variant="primary"
+              type="button"
+              aria-current="page"
+              aria-label="Side 1"
+            >
+              1
+            </button>
+          </li>
+          <li>
+            <button
+              data-variant="tertiary"
+              type="button"
+              aria-label="Side 2"
+            >
+              2
+            </button>
+          </li>
+          <li>
+            <button
+              data-variant="tertiary"
+              type="button"
+              aria-label="Side 3"
+            >
+              3
+            </button>
+          </li>
+          <li>
+            <button
+              aria-disabled="false"
+              data-variant="tertiary"
+              type="button"
+            >
+              <span>
+                Neste
+              </span>
+            </button>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </div>

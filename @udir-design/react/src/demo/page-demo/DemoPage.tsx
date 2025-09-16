@@ -7,11 +7,11 @@ import { BreadcrumbsDemo } from './breadcrumbs/BreadcrumbsDemo';
 import styles from './DemoPage.module.scss';
 import { DemoProps } from '../demoProps';
 
-type Props = DemoProps;
+type Props = Omit<DemoProps, 'data-size'>;
 
 export function DemoPage(props: Props) {
   return (
-    <div className={styles.page} {...props}>
+    <div className={styles.page} {...props} data-size="">
       <Heading>Velkommen! </Heading>
       <Paragraph>
         På denne demosiden hvor vi har laget noen eksempler på komponentene i

@@ -23,7 +23,7 @@ export const DashboardDemo = ({
       <Heading level={1} data-size="md">
         Schweigaardsgate skole
       </Heading>
-      <Tabs defaultValue={page}>
+      <Tabs defaultValue={page} className={classes.tabs}>
         <Tabs.List>
           <Tabs.Tab value="overview">Oversikt</Tabs.Tab>
           <Tabs.Tab value="tests">Prøver</Tabs.Tab>

@@ -30,7 +30,10 @@ export const ExportDialog = ({ handleExport }: ExportDialogProps) => {
 
   return (
     <Dialog.TriggerContext>
-      <Dialog.Trigger onClick={() => handleExport(dialogExportRef)}>
+      <Dialog.Trigger
+        onClick={() => handleExport(dialogExportRef)}
+        className={classes.exportButton}
+      >
         Eksporter liste
       </Dialog.Trigger>
       <Dialog ref={dialogExportRef}>

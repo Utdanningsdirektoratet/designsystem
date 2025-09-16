@@ -2,11 +2,35 @@
   display: flex;
   flex-direction: column;
   gap: var(--ds-size-4);
-  min-height: 800px;
+  min-height: 50rem;
 }
 
 .card {
-  padding: 24px;
+  padding: var(--ds-size-3);
+  :global(.ds-tabs) {
+    --dsc-tabs-tab-padding: var(--ds-size-2) var(--ds-size-3);
+    --dsc-tabs-content-padding: var(--ds-size-2) var(--ds-size-3);
+  }
+
+  @media (min-width: 48rem) {
+    padding: var(--ds-size-6);
+    :global(.ds-tabs) {
+      --dsc-tabs-tab-padding: var(--ds-size-3) var(--ds-size-5);
+      --dsc-tabs-content-padding: var(--ds-size-4) var(--ds-size-5);
+    }
+  }
+}
+
+.tabs {
+  container-type: inline-size;
+
+  @container (max-width: 25.5rem) {
+    [role='tablist'] {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+  }
 }
 
 .components {

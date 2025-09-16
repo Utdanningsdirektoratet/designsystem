@@ -270,7 +270,9 @@ exports[`Form Page 2 1`] = `
           data-variant="tertiary"
           type="button"
         >
-          Forrige
+          <span>
+            Forrige
+          </span>
         </button>
       </li>
       <li>
@@ -307,7 +309,9 @@ exports[`Form Page 2 1`] = `
           data-variant="tertiary"
           type="button"
         >
-          Neste
+          <span>
+            Neste
+          </span>
         </button>
       </li>
     </ul>
@@ -447,7 +451,9 @@ exports[`Form Page 3 1`] = `
           data-variant="tertiary"
           type="button"
         >
-          Forrige
+          <span>
+            Forrige
+          </span>
         </button>
       </li>
       <li>
@@ -484,7 +490,9 @@ exports[`Form Page 3 1`] = `
           data-variant="tertiary"
           type="button"
         >
-          Neste
+          <span>
+            Neste
+          </span>
         </button>
       </li>
     </ul>
@@ -577,7 +585,7 @@ exports[`Form Story 1`] = `
           tabindex="-1"
           aria-multiselectable="false"
           id=":u-datalist1"
-          style="width: 1088px; translate: <removed>;"
+          style="width: 592px; translate: <removed>;"
         >
           <u-option
             label="Oslo"
@@ -868,7 +876,9 @@ exports[`Form Story 1`] = `
           data-variant="tertiary"
           type="button"
         >
-          Forrige
+          <span>
+            Forrige
+          </span>
         </button>
       </li>
       <li>
@@ -905,7 +915,9 @@ exports[`Form Story 1`] = `
           data-variant="tertiary"
           type="button"
         >
-          Neste
+          <span>
+            Neste
+          </span>
         </button>
       </li>
     </ul>

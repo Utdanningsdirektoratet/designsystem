@@ -17,7 +17,6 @@ export const Simple: Story = {
       padding: 0,
     },
     args: {
-      'data-size': 'md',
       'data-color-scheme': 'auto',
     },
   },
