@@ -24,7 +24,14 @@ export const DocsContainer = ({
     if (!firstStory) {
       return;
     }
-    setComponentName((firstStory.component as ComponentType).displayName ?? '');
+    if (firstStory.component) {
+      setComponentName(
+        (firstStory.component as ComponentType).displayName ?? '',
+      );
+    } else {
+      const i = firstStory.title.lastIndexOf('/');
+      setComponentName(firstStory.title.substring(i + 1) ?? '');
+    }
     setComponentOrigin(
       (firstStory.parameters as ComponentOriginParameters).componentOrigin,
     );
