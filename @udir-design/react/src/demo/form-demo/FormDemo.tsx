@@ -13,10 +13,12 @@ import PaginationControls from './PaginationControls';
 import { PersonalInfoPage } from './pages/PersonalInfoPage';
 import { RankingPage } from './pages/RankingPage';
 import { FinishPage } from './pages/FinishPage.tsx';
+import { DemoProps } from '../demoProps';
 
-type FormDemo = HTMLAttributes<HTMLDivElement> & {
-  page?: number;
-};
+type FormDemo = DemoProps &
+  HTMLAttributes<HTMLDivElement> & {
+    page?: number;
+  };
 
 export type FormValues = {
   firstName: string;

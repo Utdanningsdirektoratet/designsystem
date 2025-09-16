@@ -6,9 +6,11 @@ import { Overview } from './tabs/overview/Overview';
 import { Tests } from './tabs/tests/Tests';
 import { TestAnswers } from './tabs/test-answers/TestAnswers';
 import { Settings } from './tabs/settings/Settings';
+import { Size } from '@digdir/designsystemet-react';
 
 type DashboardDemoProps = {
-  setColorMode: React.Dispatch<React.SetStateAction<string>>;
+  'data-size': Size;
+  setColorMode: React.Dispatch<React.SetStateAction<'light' | 'dark'>>;
   page?: string;
 } & HTMLAttributes<HTMLDivElement>;
 

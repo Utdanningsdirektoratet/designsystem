@@ -5,12 +5,9 @@ import { UserTable } from './user-table/UserTable';
 import { Heading, Paragraph } from '../../components/alpha';
 import { BreadcrumbsDemo } from './breadcrumbs/BreadcrumbsDemo';
 import styles from './DemoPage.module.scss';
-import { Size } from '@digdir/designsystemet-react';
+import { DemoProps } from '../demoProps';
 
-export type Props = {
-  'data-color-scheme': 'auto' | 'dark' | 'light'; // TODO: type should come from @digdir, must be added there
-  'data-size': Size;
-};
+type Props = DemoProps;
 
 export function DemoPage(props: Props) {
   return (

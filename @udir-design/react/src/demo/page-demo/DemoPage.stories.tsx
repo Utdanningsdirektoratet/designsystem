@@ -11,13 +11,14 @@ export default meta;
 type Story = StoryObj<typeof DemoPage>;
 
 export const Simple: Story = {
-  args: {
-    'data-size': 'sm',
-    'data-color-scheme': 'auto',
-  },
   parameters: {
+    layout: 'fullscreen',
     customStyles: {
       padding: 0,
+    },
+    args: {
+      'data-size': 'md',
+      'data-color-scheme': 'auto',
     },
   },
 };

@@ -13,7 +13,7 @@ import { TabStructure } from '../../components/tab-structure/TabStructure';
 export const Settings = ({
   setColorMode,
 }: {
-  setColorMode: React.Dispatch<React.SetStateAction<string>>;
+  setColorMode: React.Dispatch<React.SetStateAction<'light' | 'dark'>>;
 }) => {
   return (
     <TabStructure tab="settings">

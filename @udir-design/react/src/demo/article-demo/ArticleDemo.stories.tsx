@@ -1,7 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { useState } from 'react';
-import { Divider, Size } from '@digdir/designsystemet-react';
-import { Controls } from '../controls/Controls';
 import { ArticleDemo } from './ArticleDemo';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 
@@ -16,24 +13,16 @@ type Story = StoryObj<typeof ArticleDemo>;
 
 export const ArticleStory: Story = {
   parameters: {
+    layout: 'fullscreen',
     customStyles: {
       padding: 0,
     },
   },
+  args: {
+    'data-size': 'md',
+    'data-color-scheme': 'auto',
+  },
   render(args) {
-    const [size, setSize] = useState<Size>('sm');
-    const [colorMode, setColorMode] = useState('auto');
-    return (
-      <div>
-        <Controls
-          size={size}
-          colorMode={colorMode}
-          setSize={setSize}
-          setColorMode={setColorMode}
-        />
-        <Divider />
-        <ArticleDemo {...args} data-size={size} data-color-scheme={colorMode} />
-      </div>
-    );
+    return <ArticleDemo {...args} />;
   },
 };

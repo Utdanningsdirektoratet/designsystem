@@ -22,8 +22,9 @@ import useSortableData from './utilities/useSortableData';
 import { useFilterData } from './utilities/useFilterData';
 import { ExportDialog } from './components/ExportDialog';
 import { DeleteDialog } from './components/DeleteDialog';
+import { DemoProps } from '../demoProps';
 
-type TableDemoProps = HTMLAttributes<HTMLDivElement>;
+type TableDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
 
 export const TableDemo = ({ ...props }: TableDemoProps) => {
   const itemsPerPage = 5;

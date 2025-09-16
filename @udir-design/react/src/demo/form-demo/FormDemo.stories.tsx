@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { FormDemo } from './FormDemo';
-import { useState } from 'react';
-import { Size } from '@digdir/designsystemet-react';
-import { Controls } from '../controls/Controls';
-import classes from './FormDemo.module.css';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 
 const meta: Meta<typeof FormDemo> = {
   title: 'Demo/Form Demo',
   component: FormDemo,
   parameters: {
+    layout: 'fullscreen',
+    customStyles: {
+      padding: 0,
+    },
     a11y: {
       config: {
         rules: [
@@ -35,27 +35,21 @@ export const FormStory: Story = {
       padding: 0,
     },
   },
+  args: {
+    'data-size': 'md',
+    'data-color-scheme': 'auto',
+  },
   decorators: [withScrollHashBehavior],
   render(args) {
-    const [size, setSize] = useState<Size>('sm');
-    const [colorMode, setColorMode] = useState('auto');
-    return (
-      <div className={classes.root}>
-        <Controls
-          size={size}
-          colorMode={colorMode}
-          setSize={setSize}
-          setColorMode={setColorMode}
-        />
-        <FormDemo {...args} data-size={size} data-color-scheme={colorMode} />
-      </div>
-    );
+    return <FormDemo {...args} />;
   },
 };
 
 export const FormPage2: Story = {
   ...FormStory,
   args: {
+    'data-size': 'md',
+    'data-color-scheme': 'auto',
     page: 2,
   },
 };
@@ -63,6 +57,8 @@ export const FormPage2: Story = {
 export const FormPage3: Story = {
   ...FormStory,
   args: {
+    'data-size': 'md',
+    'data-color-scheme': 'auto',
     page: 3,
   },
 };
