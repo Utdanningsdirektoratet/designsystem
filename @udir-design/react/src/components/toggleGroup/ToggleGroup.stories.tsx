@@ -19,7 +19,7 @@ import {
   NotePencilIcon,
   TasklistIcon,
   XMarkOctagonIcon,
-} from '@navikt/aksel-icons';
+} from '@udir-design/icons';
 import { useState } from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
 import { demoChromaticModes } from 'src/demo/demoParameters';

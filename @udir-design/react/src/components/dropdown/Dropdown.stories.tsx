@@ -11,7 +11,7 @@ import {
   LinkIcon,
   MenuElipsisVerticalIcon,
   TrashFillIcon,
-} from '@navikt/aksel-icons';
+} from '@udir-design/icons';
 import { useState } from 'react';
 import { Badge } from '@udir-design/react/alpha';
 import { Button, Dropdown, Avatar, Divider } from '../beta';

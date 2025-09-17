@@ -3,7 +3,7 @@ import { Card } from './components/card/Card';
 import { Heading, HeadingProps } from './components/typography/heading/Heading';
 import { Paragraph } from './components/typography/paragraph/Paragraph';
 import styles from './ResourceLinks.module.css';
-import { ArrowRightIcon } from '@navikt/aksel-icons';
+import { ArrowRightIcon } from '@udir-design/icons';
 
 export function LandingResourceLinks() {
   const domainUrl = window.location.origin;

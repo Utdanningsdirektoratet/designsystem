@@ -8,7 +8,7 @@ import {
   ImageIcon,
   PersonGroupIcon,
   PersonIcon,
-} from '@navikt/aksel-icons';
+} from '@udir-design/icons';
 import { useState } from 'react';
 
 import { expect, userEvent, within } from 'storybook/test';

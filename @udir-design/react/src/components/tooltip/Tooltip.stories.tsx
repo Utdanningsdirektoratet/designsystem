@@ -8,7 +8,7 @@ import {
   PlusCircleIcon,
   PrinterSmallIcon,
   TrashIcon,
-} from '@navikt/aksel-icons';
+} from '@udir-design/icons';
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
