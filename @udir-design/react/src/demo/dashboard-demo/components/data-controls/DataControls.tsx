@@ -1,5 +1,5 @@
 import { ToggleGroup, Button } from '@udir-design/react/alpha';
-import { DownloadIcon } from '@navikt/aksel-icons';
+import { DownloadIcon } from '@udir-design/icons';
 import classes from './DataControls.module.css';
 
 type DataControlsProps = {

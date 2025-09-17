@@ -13,7 +13,7 @@ import {
 } from '@udir-design/react/alpha';
 import { expect, userEvent, within } from 'storybook/test';
 import { Stack } from '.storybook/docs-components';
-import { ChevronDownUpIcon, ChevronUpDownIcon } from '@navikt/aksel-icons';
+import { ChevronDownUpIcon, ChevronUpDownIcon } from '@udir-design/icons';
 
 export default {
   component: Details,
