@@ -1,4 +1,4 @@
-import { CheckmarkIcon, XMarkIcon } from '@navikt/aksel-icons';
+import { CheckmarkIcon, XMarkIcon } from '@udir-design/icons';
 import cl from 'clsx';
 import { Heading, Paragraph } from '../../../src/components/beta';
 import styles from './DoAndDont.module.css';
