@@ -2,8 +2,14 @@
   grid-column: span 2;
 }
 
+.tableWrapper {
+  overflow-x: auto;
+}
+
 .actionAndSearch {
   display: flex;
+  flex-flow: wrap;
+  gap: var(--ds-size-2);
   justify-content: space-between;
   margin-top: var(--ds-size-4);
 }
@@ -18,9 +24,13 @@
 }
 
 .tableSearch {
-  width: 260px;
+  width: 16.24rem;
 }
 
 .table {
   margin-top: var(--ds-size-4);
+
+  th {
+    white-space: nowrap;
+  }
 }

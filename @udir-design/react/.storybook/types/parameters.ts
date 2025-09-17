@@ -17,7 +17,7 @@ import type { CSSProperties, ReactNode } from 'react';
 import { ThemeVars } from 'storybook/theming';
 import { StoryContext } from '@storybook/react-vite';
 
-type ChromaticViewport = {
+export type ChromaticViewport = {
   width?: number | `${string}px`;
   height?: number | `${string}px`;
 };

@@ -40,7 +40,7 @@
     "lint:cycles": "pnpm madge --circular ./src/alpha.ts",
     "test": "vitest --project unit",
     "typecheck": "tsc --build",
-    "dev": "storybook dev --port 6006",
+    "dev": "storybook dev --port 6005",
     "build:storybook": "storybook build --stats-json",
     "serve:storybook": "pnpm dlx http-server ./storybook-static",
     "test:storybook": "pnpm exec playwright install --with-deps chromium && pnpm vitest --project storybook"

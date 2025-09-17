@@ -6,9 +6,11 @@ import { Overview } from './tabs/overview/Overview';
 import { Tests } from './tabs/tests/Tests';
 import { TestAnswers } from './tabs/test-answers/TestAnswers';
 import { Settings } from './tabs/settings/Settings';
+import { Size } from '@digdir/designsystemet-react';
 
 type DashboardDemoProps = {
-  setColorMode: React.Dispatch<React.SetStateAction<string>>;
+  'data-size': Size;
+  setColorMode: React.Dispatch<React.SetStateAction<'light' | 'dark'>>;
   page?: string;
 } & HTMLAttributes<HTMLDivElement>;
 
@@ -21,7 +23,7 @@ export const DashboardDemo = ({
       <Heading level={1} data-size="md">
         Schweigaardsgate skole
       </Heading>
-      <Tabs defaultValue={page}>
+      <Tabs defaultValue={page} className={classes.tabs}>
         <Tabs.List>
           <Tabs.Tab value="overview">Oversikt</Tabs.Tab>
           <Tabs.Tab value="tests">Prøver</Tabs.Tab>

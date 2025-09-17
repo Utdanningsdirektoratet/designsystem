@@ -1,36 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { TableDemo } from './TableDemo';
-import { useState } from 'react';
-import { Size } from '@digdir/designsystemet-react';
-import { Controls } from '../controls/Controls';
+import { demoParameters } from '../demoParameters';
 
 const meta: Meta<typeof TableDemo> = {
   title: 'demo/Table Demo',
   component: TableDemo,
+  parameters: {
+    ...demoParameters,
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof TableDemo>;
 
 export const TableStory: Story = {
-  parameters: {
-    customStyles: {
-      padding: 0,
-    },
+  args: {
+    'data-size': 'md',
+    'data-color-scheme': 'auto',
   },
   render(args) {
-    const [size, setSize] = useState<Size>('sm');
-    const [colorMode, setColorMode] = useState('auto');
-    return (
-      <div>
-        <Controls
-          size={size}
-          colorMode={colorMode}
-          setSize={setSize}
-          setColorMode={setColorMode}
-        />
-        <TableDemo {...args} data-size={size} data-color-scheme={colorMode} />
-      </div>
-    );
+    return <TableDemo {...args} />;
   },
 };

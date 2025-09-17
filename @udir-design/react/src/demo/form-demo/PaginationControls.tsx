@@ -1,4 +1,5 @@
 import { Pagination, usePagination } from '@udir-design/react/alpha';
+import styles from './PaginationControls.module.scss';
 
 export interface PaginationControlsProps {
   currentPage: number;
@@ -25,7 +26,7 @@ const PaginationControls = ({
       <Pagination.List>
         <Pagination.Item>
           <Pagination.Button {...pagination.prevButtonProps}>
-            Forrige
+            <span className={styles.buttonText}>Forrige</span>
           </Pagination.Button>
         </Pagination.Item>
         {pagination.pages.map(({ itemKey, buttonProps, page }) => (
@@ -39,7 +40,7 @@ const PaginationControls = ({
         ))}
         <Pagination.Item>
           <Pagination.Button {...pagination.nextButtonProps}>
-            Neste
+            <span className={styles.buttonText}>Neste</span>
           </Pagination.Button>
         </Pagination.Item>
       </Pagination.List>
