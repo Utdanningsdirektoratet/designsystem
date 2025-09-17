@@ -1,7 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Simple 1`] = `
-<div data-size>
+<div
+  data-color-scheme="auto"
+  data-size
+>
   <h2>
     Velkommen!
   </h2>

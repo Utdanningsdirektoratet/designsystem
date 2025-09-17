@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { DashboardDemo } from './DashboardDemo';
 import { useState } from 'react';
-import { demoChromaticModes } from '../demoChromaticModes';
+import { demoParameters } from '../demoParameters';
 
 const meta: Meta<typeof DashboardDemo> = {
   title: 'Demo/Dashboard Demo',
   component: DashboardDemo,
   parameters: {
-    chromatic: { modes: demoChromaticModes },
+    ...demoParameters,
   },
 };
 
@@ -15,14 +15,8 @@ export default meta;
 type Story = StoryObj<typeof DashboardDemo>;
 
 export const DashboardStory: Story = {
-  parameters: {
-    layout: 'fullscreen',
-    customStyles: {
-      padding: 0,
-    },
-    args: {
-      'data-size': 'md',
-    },
+  args: {
+    'data-size': 'md',
   },
   render: function Render(args) {
     const [colorMode, setColorMode] = useState<'light' | 'dark'>('light');
