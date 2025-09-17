@@ -4,7 +4,7 @@ import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBeha
 import { demoParameters } from '../demoParameters';
 
 const meta: Meta<typeof FormDemo> = {
-  title: 'Demo/Form Demo',
+  title: 'demo/Form Demo',
   component: FormDemo,
   parameters: {
     ...demoParameters,

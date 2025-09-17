@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { demoParameters } from '../demoParameters';
 
 const meta: Meta<typeof DashboardDemo> = {
-  title: 'Demo/Dashboard Demo',
+  title: 'demo/Dashboard Demo',
   component: DashboardDemo,
   parameters: {
     ...demoParameters,
