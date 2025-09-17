@@ -1,10 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { DashboardDemo } from './DashboardDemo';
 import { useState } from 'react';
+import { demoChromaticModes } from '../demoChromaticModes';
 
 const meta: Meta<typeof DashboardDemo> = {
   title: 'Demo/Dashboard Demo',
   component: DashboardDemo,
+  parameters: {
+    chromatic: { modes: demoChromaticModes },
+  },
 };
 
 export default meta;

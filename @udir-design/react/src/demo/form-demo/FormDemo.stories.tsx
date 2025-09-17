@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { FormDemo } from './FormDemo';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
+import { demoChromaticModes } from '../demoChromaticModes';
 
 const meta: Meta<typeof FormDemo> = {
   title: 'Demo/Form Demo',
@@ -10,6 +11,7 @@ const meta: Meta<typeof FormDemo> = {
     customStyles: {
       padding: 0,
     },
+    chromatic: { modes: demoChromaticModes },
     a11y: {
       config: {
         rules: [

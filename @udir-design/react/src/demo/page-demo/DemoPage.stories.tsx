@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { DemoPage } from './DemoPage';
+import { demoChromaticModes } from '../demoChromaticModes';
 
 const meta: Meta<typeof DemoPage> = {
   title: 'demo/Page Demo',
   component: DemoPage,
+  parameters: { chromatic: { modes: demoChromaticModes } },
 };
 
 export default meta;
