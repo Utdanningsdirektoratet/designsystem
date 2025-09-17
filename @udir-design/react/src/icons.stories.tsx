@@ -5,7 +5,12 @@ import { AirplaneIcon } from '@udir-design/icons';
 
 export default {
   title: 'Ikoner',
-  parameters: { html: { disable: true } },
+  parameters: {
+    componentOrigin: {
+      originator: 'nav',
+    },
+    html: { disable: true },
+  },
 } as Meta<typeof AirplaneIcon>;
 
 type Story = StoryObj<typeof AirplaneIcon>;
