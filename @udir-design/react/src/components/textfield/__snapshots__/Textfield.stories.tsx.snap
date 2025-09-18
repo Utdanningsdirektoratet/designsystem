@@ -101,13 +101,13 @@ exports[`Disabled 1`] = `
 <div>
   <label
     data-weight="medium"
-    for="textarea-disabled"
+    for="multiline-textfield-disabled"
   >
-    Disabled Textarea
+    Disabled multiline Textfield
   </label>
   <div>
     <textarea
-      id="textarea-disabled"
+      id="multiline-textfield-disabled"
       rows="4"
       disabled
     >
@@ -169,13 +169,13 @@ exports[`Read Only 1`] = `
 <div>
   <label
     data-weight="medium"
-    for="textarea-readonly"
+    for="multiline-textfield-readonly"
   >
-    ReadOnly Textarea
+    ReadOnly multiline Textfield
   </label>
   <div>
     <textarea
-      id="textarea-readonly"
+      id="multiline-textfield-readonly"
       rows="4"
       readonly
     >
