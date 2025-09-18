@@ -10,3 +10,7 @@ export {
   type UseRadioGroupProps,
   useRadioGroup,
 } from './useRadioGroup/useRadioGroup';
+export {
+  type UsePopulateTocProps,
+  usePopulateToc,
+} from './usePopulateToc/usePopulateToc';

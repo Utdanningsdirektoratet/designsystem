@@ -1,0 +1,69 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Canvas,
+  ArgTypes,
+} from '@storybook/addon-docs/blocks';
+import * as TableOfContentStories from './TableOfContents.stories';
+import { HideToc } from '../../../.storybook/utils/HideToc';
+
+<HideToc />
+
+<Meta of={TableOfContentStories} />
+
+# Table Of Contents
+
+`TableOfContents` gir brukeren bedre oversikt over innhold i lengre artikler. Den lar brukeren enkelt navigere til de ulike overskriftene på en side.
+
+**Passer til å**
+
+- gi en oversikt over innhold på sider med mye innhold
+- la brukeren navigere til overskrifter på en side
+
+**Passer ikke til å**
+
+- lenke til innhold som ikke er `Headings`
+
+## Slik bruker du Table Of Contents
+
+<Primary />
+<Controls />
+
+```jsx
+import { TableOfContents, usePopulateToc } from '@udir-design/react';
+
+// med usePopulateToc()
+<TableOfContents headings={usePopulateToc()} />;
+
+// med hardkodede headings
+const h = [
+  {
+    name: 'Heading 2',
+    level: 2,
+    id: 'heading-2'
+  },
+  {
+    name: 'Heading 3',
+    level: 2,
+    id: 'heading-3'
+  }
+]
+<TableOfContents headings={h} />;
+```
+
+## Eksempler
+
+Når man scroller vil innholdsfortegnelsen kollapse og legge seg øverst. Slik kan brukeren alltid få oversikt over innholdet på en side uten å måtte scrolle helt opp igjen.
+
+<Canvas of={TableOfContentStories.Sticky} />
+
+### Generere innhold automatisk
+
+Bruk `usePopulateToc` for å fylle `TableOfContents` med alle headings `h2` - `h4`, med en id, i dokumentet.
+
+<Canvas of={TableOfContentStories.Automatic} />
+
+## Retningslinjer
+
+`h1` skal ikke inngå i en `TableOfContents`.

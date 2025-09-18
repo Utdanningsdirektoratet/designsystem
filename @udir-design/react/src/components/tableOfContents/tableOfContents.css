@@ -1,0 +1,38 @@
+.uds-tableofcontents {
+  padding: var(--ds-size-6);
+  min-width: 300px;
+  width: fit-content;
+
+  & h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: var(--ds-size-4);
+  }
+
+  & a {
+    --dsc-link-color--visited: var(--dsc-link-color);
+  }
+
+  & ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    & li:not(:last-child) {
+      margin-bottom: var(--ds-size-4);
+    }
+  }
+
+  & li.level-3 {
+    margin-left: 1rem;
+  }
+
+  & li.level-4,
+  li.level-5,
+  li.level-6 {
+    margin-left: 2rem;
+  }
+}
