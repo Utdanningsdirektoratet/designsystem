@@ -16,8 +16,8 @@ const ExSwitchDisabled = () => {
     <Stack style={{ margin: 'var(--ds-size-2) 0' }}>
       <Textfield id="textfield-disabled" label="Disabled Textfield" disabled />
       <Textfield
-        id="textarea-disabled"
-        label="Disabled Textarea"
+        id="multiline-textfield-disabled"
+        label="Disabled multiline Textfield"
         multiline
         rows={4}
         disabled
@@ -41,8 +41,8 @@ const ExSwitchReadOnly = () => {
     <Stack style={{ margin: 'var(--ds-size-2) 0' }}>
       <Textfield id="textfield-readonly" label="ReadOnly Textfield" readOnly />
       <Textfield
-        id="textarea-readonly"
-        label="ReadOnly Textarea"
+        id="multiline-textfield-readonly"
+        label="ReadOnly multiline Textfield"
         multiline
         rows={4}
         readOnly
