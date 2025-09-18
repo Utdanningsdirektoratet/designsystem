@@ -3,22 +3,26 @@ import { useEffect, useState } from 'react';
 
 export type UsePopulateTocProps = {
   /**
-   * The document to generate headings from
+   * The container to generate headings from
+   * @default document
    */
-  container?: HTMLElement | null;
+  container?: HTMLElement | Document;
 };
 
-export const usePopulateToc = ({ container }: UsePopulateTocProps = {}) => {
-  const [hmm, setHmm] = useState<TocHeading[]>([]);
+export const usePopulateToc = ({
+  container = document,
+}: UsePopulateTocProps = {}) => {
+  const [headings, setHeadings] = useState<TocHeading[]>([]);
 
   const headerTags = 'h2,h3,h4';
 
   useEffect(() => {
-    const el = container ?? document;
-
-    const headings = Array.from(el.querySelectorAll(headerTags))
+    const sectionHeadings = Array.from(container.querySelectorAll(headerTags))
       .filter((node) => !node.hasAttribute('data-toc-ignore'))
-      .map((node) => {
+      .flatMap((node) => {
+        if (!node.id) {
+          return [];
+        }
         const level = parseInt(
           node.tagName.toLowerCase()[1],
         ) as TocHeading['level'];
@@ -28,8 +32,7 @@ export const usePopulateToc = ({ container }: UsePopulateTocProps = {}) => {
 
         return { level, name, id };
       });
-
-    setHmm(headings);
+    setHeadings(sectionHeadings);
   }, [container]);
-  return hmm;
+  return headings;
 };
