@@ -1,4 +1,9 @@
-import { Radio, Divider, Fieldset } from '@udir-design/react/alpha';
+import {
+  Radio,
+  Divider,
+  Fieldset,
+  useRadioGroup,
+} from '@udir-design/react/alpha';
 import { Do, Dont, Stack } from '.storybook/docs-components';
 
 export const RadioExConversation = () => {
@@ -241,15 +246,30 @@ export const DisabledEx = () => {
   );
 };
 
+const ageGroups = [
+  { value: '10-20', label: '10-20 år' },
+  { value: '21-45', label: '21-45 år' },
+  { value: '46-80', label: '46-80 år' },
+];
+
 const ExRadioDisabled = () => {
+  const { getRadioProps } = useRadioGroup({
+    disabled: true,
+  });
   return (
-    <Radio
-      name="ex-radio-disabled"
-      label="Disabled"
-      value="disabled"
-      description="Description"
-      disabled
-    />
+    <Fieldset>
+      <Fieldset.Legend>Velg din aldersgruppe.</Fieldset.Legend>
+      <Fieldset.Description>
+        Informasjonen blir brukt til å tilpasse innholdet på siden.
+      </Fieldset.Description>
+      {ageGroups.map((group) => (
+        <Radio
+          key={group.value}
+          label={group.label}
+          {...getRadioProps(group.value)}
+        />
+      ))}
+    </Fieldset>
   );
 };
 
@@ -264,13 +284,22 @@ export const ReadOnlyEx = () => {
 };
 
 const ExRadioReadOnly = () => {
+  const { getRadioProps } = useRadioGroup({
+    readOnly: true,
+  });
   return (
-    <Radio
-      name="ex-radio-readonly"
-      label="Read only"
-      value="readonly"
-      description="Description"
-      readOnly
-    />
+    <Fieldset>
+      <Fieldset.Legend>Velg din aldersgruppe.</Fieldset.Legend>
+      <Fieldset.Description>
+        Informasjonen blir brukt til å tilpasse innholdet på siden.
+      </Fieldset.Description>
+      {ageGroups.map((group) => (
+        <Radio
+          key={group.value}
+          label={group.label}
+          {...getRadioProps(group.value)}
+        />
+      ))}
+    </Fieldset>
   );
 };

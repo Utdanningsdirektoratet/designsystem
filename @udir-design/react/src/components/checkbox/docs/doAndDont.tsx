@@ -1,4 +1,10 @@
-import { Checkbox, Divider, Fieldset, Heading } from '@udir-design/react/alpha';
+import {
+  Checkbox,
+  Divider,
+  Fieldset,
+  Heading,
+  useCheckboxGroup,
+} from '@udir-design/react/alpha';
 import { Do, Dont, Stack } from '.storybook/docs-components';
 
 export const CheckboxExConversation = () => {
@@ -248,14 +254,22 @@ export const DisabledEx = () => {
 };
 
 const ExCheckboxDisabled = () => {
+  const { getCheckboxProps } = useCheckboxGroup({
+    value: ['epost'],
+    disabled: true,
+  });
   return (
-    <Checkbox
-      name="ex-checkbox-disabled-group"
-      label="Disabled"
-      value="disabled"
-      description="Description"
-      disabled
-    />
+    <Fieldset>
+      <Fieldset.Legend>
+        Hvordan vil du helst at vi skal kontakte deg?
+      </Fieldset.Legend>
+      <Fieldset.Description>
+        Velg de alternativene som er relevante for deg.
+      </Fieldset.Description>
+      <Checkbox label="E-post" {...getCheckboxProps('epost')} />
+      <Checkbox label="Telefon" {...getCheckboxProps('telefon')} />
+      <Checkbox label="SMS" {...getCheckboxProps('sms')} />
+    </Fieldset>
   );
 };
 
@@ -270,13 +284,21 @@ export const ReadOnlyEx = () => {
 };
 
 const ExCheckboxReadOnly = () => {
+  const { getCheckboxProps } = useCheckboxGroup({
+    value: ['epost'],
+    readOnly: true,
+  });
   return (
-    <Checkbox
-      name="ex-checkbox-readonly-group"
-      label="Read only"
-      value="readonly"
-      description="Description"
-      readOnly
-    />
+    <Fieldset>
+      <Fieldset.Legend>
+        Hvordan vil du helst at vi skal kontakte deg?
+      </Fieldset.Legend>
+      <Fieldset.Description>
+        Velg de alternativene som er relevante for deg.
+      </Fieldset.Description>
+      <Checkbox label="E-post" {...getCheckboxProps('epost')} />
+      <Checkbox label="Telefon" {...getCheckboxProps('telefon')} />
+      <Checkbox label="SMS" {...getCheckboxProps('sms')} />
+    </Fieldset>
   );
 };
