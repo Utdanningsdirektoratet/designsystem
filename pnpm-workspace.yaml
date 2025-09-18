@@ -13,6 +13,4 @@ packageExtensions:
         optional: true
 minimumReleaseAge: 1440 # packages must be at least 1 day old, to allow time for supply-chain attacks to be detected
 minimumReleaseAgeExclude:
-  - '@digdir/designsystemet'
-  - '@digdir/designsystemet-css'
-  - '@digdir/designsystemet-react'
+  - '@digdir/*'
