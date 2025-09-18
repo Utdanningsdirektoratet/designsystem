@@ -40,6 +40,19 @@ Alternativt eksempel: importer stilsettet fra din primære css-fil
 @import '@udir-design/react/style.css';
 ```
 
+### Konfigurere standard typografi
+
+Biblioteket setter ingen globale stiler. For å få en konsistent typografi på nettsiden må du derfor selv sette en standard typografistil for HTML som ikke bruker komponenter fra biblioteket.
+
+Dette gjøres slik:
+
+```css
+body {
+  font-family: 'Inter', sans-serif;
+  font-feature-settings: 'cv05' 1; /* Enable lowercase l with tail */
+}
+```
+
 ### Skru på typedefinisjoner for `data-color`
 
 Dersom du bryker TypeScript, bør du legge til typene for `@udir-design/theme` og `@udir-design/react/html` i din `tsconfig.json`. Dette gir typesjekking og autocomplete for Udirs farger og størrelser (`data-color` og `data-size` properties), både i bibliotekets komponenter og vanlige HTML-tags.
@@ -82,19 +95,6 @@ Dette må passes inn med din eksisterende tsconfig, her er et eksempel på en ek
     "src/**/*.test.jsx",
   ],
   "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
-}
-```
-
-### Konfigurere standard typografi
-
-Biblioteket setter ingen globale stiler. For å få en konsistent typografi på nettsiden må du derfor selv sette en standard typografistil for HTML som ikke bruker komponenter fra biblioteket.
-
-Dette gjøres slik:
-
-```css
-body {
-  font-family: 'Inter', sans-serif;
-  font-feature-settings: 'cv05' 1; /* Enable lowercase l with tail */
 }
 ```
 
