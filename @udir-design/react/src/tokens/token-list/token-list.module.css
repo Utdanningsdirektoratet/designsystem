@@ -1,0 +1,41 @@
+.tokensContainer {
+  max-width: 700px;
+}
+
+.tokens {
+  margin-block-start: var(--ds-size-8);
+}
+
+.section {
+  margin-block-end: var(--ds-size-22);
+}
+
+h2,
+h3,
+h4,
+h5 {
+  margin-block: 1.5rem;
+}
+
+h5 {
+  margin-block-end: 0;
+}
+
+p {
+  margin-block: 1rem;
+}
+
+.input {
+  max-width: 400px;
+}
+
+caption {
+  margin-bottom: var(--ds-size-2);
+}
+
+.tokensContainer code {
+  padding: 0.2em 0.5em;
+  margin: 1px;
+  white-space: break-spaces;
+  background-color: var(--ds-color-neutral-surface-tinted);
+}
