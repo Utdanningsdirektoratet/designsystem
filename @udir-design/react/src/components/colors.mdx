@@ -1,30 +1,49 @@
 # Farger
 
-Vi deler fargene i designsystemet inn i to hovedgrupper: identitetsfarger og semantiske farger.
+Vi deler fargene i designsystemet inn i to hovedgrupper: Farger for digitale tjenester og identitetsfarger.
 
-## Identitetsfarger
+## Farger for digitale tjenester
 
-(preview av fargene)
-
-Identitetsfargene utgjør det visuelle uttrykket til merkevaren i brukergrensesnittet, og brukes på elementer som knapper, bakgrunner, lenker, ikoner og lignende. Designteamet har definert hvordan og hvor disse fargene kan brukes:
+Farger for digitale tjenester brukes i digitale brukergrensesnitt. De er definert som brand-farger og globale farger. Disse fargene er testet for kontrast og tilgjengelighet og skal alltid implementeres ved bruk av tokens, ikke hardkodede verdier. De gir forutsigbarhet og konsistens på tvers av komponenter og plattformer. Disse fargene brukes på for eksempel komponenter som knapper, bakgrunner, lenker, ikoner og lignende. Designteamet har definert hvordan og hvor disse fargene kan brukes:
 
 - For mange komponenter er spesifikke fargevalg forhåndsbestemt.
 
 - For andre komponenter og flater er det mer fleksibilitet, og designeren må ta valg ut ifra hensikt og visuell helhet.
 
-Identitetsfargene er med på å skape gjenkjennelighet og opplevelsen av et helhetlig produkt.
+Identitetsfargene utgjør det visuelle uttrykket til merkevaren i brukergrensesnittet og er med på å skape gjenkjennelighet og opplevelsen av et helhetlig produkt.
 
-## Semantiske farger
+// Bruk og fleksibilitet - Noe om hvor man kan bruke accent, neutral, support. Noen steder har Designteamet definert valg. Andre steder er det opp til systemet/tjenesten å velge
 
-(preview av fargene)
+### Brand-farger
 
-De semantiske fargene har et funksjonelt formål, og brukes til å formidle tilstand og hensikt. De følger følgende konvensjoner:
+Brand-fargene er versjoner av identitetsfargene som er tilpasset interaktive flater. På den måten opprettholder vi både merkevaregjenkjennelse og god brukeropplevelse i digitale produkter.
 
-- **Rød** = `danger`
-- **Gul** = `warning`
-- **Grønn** = `success`
+// Noe om de forskjellige brand-fargene - accent, neutral, support 1, support 2
+
+### Globale farger
+
+Globale farger er farger med funksjonell betydning og formål, og brukes til å formilde tilstand og hensikt, for info, suksess, fare og varsel. Disse brukes konsekvent i komponenter som meldingsbokser, varsler og statusindikatorer for å skape gjenkjennelighet og tydelig kommunikasjon. De har tilhørende nyanser og kontrastversjoner slik at de kan tilpasses både bakgrunn, tekst og ikoner.
+Disse fargene følger vanlig konvensjonell betydning:
+
 - **Blå** = `info`
+- **Grønn** = `success`
+- **Gul** = `warning`
+- **Rød* = `danger`
 
 Disse fargene er tilgjengelig i komponenter der det er relevant (for eksempel varsler, statusindikatorer og meldingskomponenter), men skal brukes med omhu.
 
-Semantiske farger **skal ikke brukes som dekor** eller fordi de «ser fine ut». De skal kun benyttes i kontekst der innholdet har tilsvarende funksjon – som varsler, statusendringer eller brukerhandlinger som krever oppmerksomhet.
+Semantiske farger **skal ikke brukes som dekor** eller fordi de «ser fine ut». De skal kun benyttes i kontekst der innholdet har tilsvarende funksjon – som varsler, eller statusendringer.
+
+(preview av fargetokens gruppert i brand-farger og globale farger)
+
+## Identitetsfarger
+
+I tillegg til fargene som er tilgjengelig som tokens for digitale brukergrensenitt, så har Udir identitetsfarger. Disse fargene brukes blant annet til illustrasjoner, malverk, pamfletter, bærenett og plakater. Alle identitetsfargene har hver sin palett, slik at de er fleksible i bruk.
+
+## Hovedfarger
+
+Hovedfargene til Udir er Udir-grønn og Udir-sort. Begge fargene er å finne i logoen.
+
+## Støttefarger
+
+Støttefargene til Udir er Udir-blå og Udir-brun. Disse fargene brukes for å gi variasjon og støtte til hovedfargene.
