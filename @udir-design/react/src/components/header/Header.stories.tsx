@@ -89,6 +89,21 @@ export const WithUserButton: Story = {
       <Dropdown id="usermenuSmall" placement="bottom-end" autoPlacement={false}>
         <Dropdown.List>
           <Dropdown.Item>
+            <Dropdown.Heading>Detaljer</Dropdown.Heading>
+          </Dropdown.Item>
+          <Dropdown.Item style={{ marginLeft: 'var(--ds-size-4)' }}>
+            <Paragraph>Stian Hansen</Paragraph>
+          </Dropdown.Item>
+          <Dropdown.Item
+            style={{
+              marginLeft: 'var(--ds-size-4)',
+              marginBottom: 'var(--ds-size-4)',
+            }}
+          >
+            <Paragraph>Admin</Paragraph>
+          </Dropdown.Item>
+          <Divider />
+          <Dropdown.Item>
             <Dropdown.Heading>Bytt profil</Dropdown.Heading>
           </Dropdown.Item>
           <Dropdown.Item>

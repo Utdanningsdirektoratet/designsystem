@@ -4550,6 +4550,22 @@ exports[`With User Button 1`] = `
         <ul>
           <li>
             <h2>
+              Detaljer
+            </h2>
+          </li>
+          <li style="margin-left: var(--ds-size-4);">
+            <p data-variant="default">
+              Stian Hansen
+            </p>
+          </li>
+          <li style="margin-left: var(--ds-size-4); margin-bottom: var(--ds-size-4);">
+            <p data-variant="default">
+              Admin
+            </p>
+          </li>
+          <hr aria-hidden="true">
+          <li>
+            <h2>
               Bytt profil
             </h2>
           </li>
