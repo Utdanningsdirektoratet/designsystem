@@ -33,3 +33,4 @@ export * from './textarea/Textarea';
 export * from './table';
 export * from './textfield/Textfield';
 export * from './tooltip/Tooltip';
+export * from './typography';

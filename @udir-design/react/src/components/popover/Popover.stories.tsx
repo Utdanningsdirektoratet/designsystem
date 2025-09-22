@@ -3,8 +3,7 @@ import { expect, userEvent, within } from 'storybook/test';
 import { MultiplyIcon, TrashIcon } from '@navikt/aksel-icons';
 import { useState } from 'react';
 import { Popover } from './Popover';
-import { Button } from '../beta';
-import { Paragraph } from '../alpha';
+import { Button, Paragraph } from '../beta';
 
 const meta: Meta<typeof Popover> = {
   component: Popover,
