@@ -1,0 +1,76 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Canvas,
+  ArgTypes,
+} from '@storybook/addon-docs/blocks';
+import * as TableOfContentStories from './TableOfContents.stories';
+
+<Meta of={TableOfContentStories} />
+
+# Table Of Contents
+
+`TableOfContents` gir brukeren bedre oversikt over innhold i lengre artikler. Komponenten inneholder lenker som scroller ned til den valgte overskriften.
+
+**Passer til å**
+
+- gi et overblikk på sider med mye innhold
+- la brukeren navigere til overskrifter på en side
+
+**Passer ikke til å**
+
+- lenke til innhold som ikke er en [`Heading`](/docs/components-typography--docs)
+
+## Slik bruker du Table Of Contents
+
+<Primary />
+<Controls />
+
+```jsx
+import { TableOfContents, useTableOfContents } from '@udir-design/react';
+
+// med useTableOfContents()
+<TableOfContents {...useTableOfContents()} />;
+
+// med hardkodede headings
+const h = [
+  {
+    name: 'Første overskrift',
+    level: 2,
+    id: 'forste-overskrift'
+  },
+  {
+    name: 'Andre overskrift',
+    level: 2,
+    id: 'andre-overskrift'
+  }
+]
+<TableOfContents headings={h} />;
+```
+
+## Eksempler
+
+### Generere overskrifter automatisk
+
+Hooken [`useTableOfContents`](/docs/utilities-usetableofcontents--docs) kan brukes for å automatisk fylle `TableOfContents` med alle overskrifter som har en id, i dokumentet. Du kan velge om den skal ta med kun `h2` eller både `h2` og `h3`.
+
+Dersom det er enkelte overskrifter du ikke vil inkludere i innholdsfortegnelsen kan du bruke `data-toc-ignore` på `Heading`.
+
+<Canvas
+  of={TableOfContentStories.Automatic}
+  story={{ inline: false, height: '450px' }}
+/>
+
+### Legge til overskrifter manuelt
+
+Dersom du har behov for full kontroll over innholdet i `TableOfContents` kan du lage en liste av objekter som inneholder `name`, `level` og `id`. Id brukes til å lenke til riktig overskrift, så det er viktig at denne stemmer overens med overskriftens id i dokumentet.
+
+<Canvas
+  of={TableOfContentStories.Manual}
+  story={{ inline: false, height: '450px' }}
+/>
+
+## Retningslinjer
+
+`h1` skal ikke inngå i en `TableOfContents`.
