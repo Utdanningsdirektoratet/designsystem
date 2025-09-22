@@ -70,3 +70,31 @@ const ExSwitchSavingDont = () => {
     </Fieldset>
   );
 };
+
+export const DisabledEx = () => {
+  return (
+    <Stack>
+      <Dont description="Ikke bruk deaktivert Switch.">
+        <ExSwitchDisabled />
+      </Dont>
+    </Stack>
+  );
+};
+
+const ExSwitchDisabled = () => {
+  return <Switch label="Mørk modus" value="dark" disabled />;
+};
+
+export const ReadOnlyEx = () => {
+  return (
+    <Stack>
+      <Dont description="Unngå skrivebeskyttet Switch.">
+        <ExSwitchReadOnly />
+      </Dont>
+    </Stack>
+  );
+};
+
+const ExSwitchReadOnly = () => {
+  return <Switch label="Mørk modus" value="dark" readOnly />;
+};
