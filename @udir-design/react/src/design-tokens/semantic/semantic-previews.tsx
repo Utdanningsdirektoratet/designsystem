@@ -49,7 +49,7 @@ export const BorderRadius = ({ value }: { value: string }) => {
 
 export const Opacity = ({ value }: { value: string }) => {
   return (
-    <div style={{ opacity: value }} lang='en'>
+    <div style={{ opacity: value }} lang="en">
       opacity
     </div>
   );

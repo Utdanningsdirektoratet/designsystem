@@ -1,6 +1,6 @@
 export const LineHeight = ({ value }: { value: string }) => {
   return (
-    <div style={{ lineHeight: value }} lang='en'>
+    <div style={{ lineHeight: value }} lang="en">
       line <br /> height
     </div>
   );
@@ -12,7 +12,7 @@ export const FontSize = ({ value }: { value: string }) => {
 
 export const FontWeight = ({ value }: { value: string; text: string }) => {
   return (
-    <div style={{ fontWeight: value }} lang='en'>
+    <div style={{ fontWeight: value }} lang="en">
       weight
     </div>
   );
@@ -23,7 +23,7 @@ export const FontFamily = ({ value }: { value: string }) => {
 
 export const LetterSpacing = ({ value }: { value: string }) => {
   return (
-    <div style={{ letterSpacing: value }} lang='en'>
+    <div style={{ letterSpacing: value }} lang="en">
       letter spacing
     </div>
   );
