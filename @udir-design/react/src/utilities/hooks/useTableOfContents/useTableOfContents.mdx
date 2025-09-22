@@ -1,0 +1,51 @@
+import {
+  Meta,
+  Primary,
+  ArgTypes,
+  Controls,
+  Canvas,
+} from '@storybook/addon-docs/blocks';
+import * as Stories from './useTableOfContents.stories';
+import { useTableOfContents } from './useTableOfContents';
+
+<Meta of={Stories} />
+
+# useTableOfContents
+
+En React-hook for å hente ut overskrifter til en `TableOfContents`.
+
+<Canvas story={{ inline: false, height: '300px' }} of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+## Container
+
+`document` er default scope for å hente ut overskrifter. Dersom man ønsker å overskrive dette, f.eks. om vi kun ønsker å liste ut overskrifter inkludert i storyen under kan man bruke containerRef for å avgrense området hooken henter overskrifter fra.
+
+```tsx
+const containerRef = useRef<HTMLDivElement>(null);
+
+return (
+  <div ref={containerRef}>
+    <TableOfContents {...useTableOfContents({ containerRef })} />
+    <Heading level={2} id="heading-2" data-size="lg">
+      Heading 2
+    </Heading>
+  </div>
+);
+```
+
+## Velge overskrifter
+
+Som default inkluderes overskrifter som har en id og nivå `h2` eller `h3`. Dersom du kun ønsker å inkludere nivå `h2` kan du spesifisere dette med `headingSelector`.
+
+```tsx
+<TableOfContents {...useTableOfContents({ headingSelector: 'h2' })} />
+```
+
+<Canvas of={Stories.Container} />
+
+## Utelat overskrifter
+
+Dersom du ønsker å utelate enkelte overskrifter fra `useTableOfContents` kan du bruke `data-toc-ignore` på `Heading`.
+
+<Canvas of={Stories.TocIgnore} story={{ inline: false, height: '450px' }} />
