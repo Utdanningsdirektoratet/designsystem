@@ -50,8 +50,8 @@ export const WithUserButton: Story = {
         userRole="Admin"
         popovertarget="usermenu"
         avatar={
-          <Avatar aria-label="Stian Hansen">
-            <img src={profileImage} alt="" />
+          <Avatar aria-hidden>
+            <img src={profileImage} alt="Stian Hansen" />
           </Avatar>
         }
         data-color="accent"
@@ -64,7 +64,7 @@ export const WithUserButton: Story = {
           </Dropdown.Item>
           <Dropdown.Item>
             <Dropdown.Button>
-              <Avatar aria-label="Grålum kommune" data-color="support1">
+              <Avatar aria-hidden data-color="support1">
                 <BriefcaseIcon />
               </Avatar>
               Grålum skole <Badge count={10} maxCount={9} />
@@ -93,7 +93,7 @@ export const WithUserButton: Story = {
           </Dropdown.Item>
           <Dropdown.Item>
             <Dropdown.Button>
-              <Avatar aria-label="Grålum kommune" data-color="support1">
+              <Avatar aria-hidden data-color="support1">
                 <BriefcaseIcon />
               </Avatar>
               Grålum skole <Badge count={10} maxCount={9} />
@@ -565,7 +565,7 @@ export const Responsive: Story = {
           userRole="Admin"
           popovertarget="usermenu2"
           data-show="md"
-          avatar={<Avatar aria-label="Stian Hansen">SH</Avatar>}
+          avatar={<Avatar aria-hidden>SH</Avatar>}
         />
         <Dropdown id="usermenu2" placement="bottom-end" autoPlacement={false}>
           <Dropdown.List>
@@ -574,7 +574,7 @@ export const Responsive: Story = {
             </Dropdown.Item>
             <Dropdown.Item>
               <Dropdown.Button>
-                <Avatar aria-label="Grålum kommune" data-color="support1">
+                <Avatar aria-hidden data-color="support1">
                   <BriefcaseIcon />
                 </Avatar>
                 Grålum skole <Badge count={10} maxCount={9} />
@@ -595,7 +595,7 @@ export const Responsive: Story = {
             username="Stian Hansen"
             userRole="Admin"
             popovertarget="usermenuInMenu"
-            avatar={<Avatar aria-label="Stian Hansen">SH</Avatar>}
+            avatar={<Avatar aria-hidden>SH</Avatar>}
             style={{ marginLeft: 'auto', marginRight: 'var(--ds-size-5)' }}
             data-hide="md"
           />
@@ -610,7 +610,7 @@ export const Responsive: Story = {
               </Dropdown.Item>
               <Dropdown.Item>
                 <Dropdown.Button>
-                  <Avatar aria-label="Grålum kommune" data-color="support1">
+                  <Avatar aria-hidden data-color="support1">
                     <BriefcaseIcon />
                   </Avatar>
                   Grålum skole <Badge count={10} maxCount={9} />
