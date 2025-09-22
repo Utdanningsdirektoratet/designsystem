@@ -1,0 +1,78 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Preview 1`] = `
+<div>
+  <h1 data-size="2xl">
+    Heading
+  </h1>
+  <p
+    data-variant="default"
+    data-size="xl"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+  </p>
+  <h2 data-size="xl">
+    Heading
+  </h2>
+  <p data-variant="default">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+  </p>
+  <h3 data-size="lg">
+    Heading
+  </h3>
+  <p data-variant="default">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+  </p>
+  <h4 data-size="md">
+    Heading
+  </h4>
+  <p data-variant="default">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+  </p>
+  <h5 data-size="sm">
+    Heading
+  </h5>
+  <p data-variant="default">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+  </p>
+  <h6 data-size="xs">
+    Heading
+  </h6>
+  <p data-variant="default">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+  </p>
+  <h6 data-size="2xs">
+    Heading
+  </h6>
+  <p data-variant="default">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+  </p>
+  <h3 data-size="lg">
+    Paragraph size
+  </h3>
+  <p
+    data-variant="default"
+    data-size="lg"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+  </p>
+  <p
+    data-variant="default"
+    data-size="md"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+  </p>
+  <p
+    data-variant="default"
+    data-size="sm"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+  </p>
+  <p
+    data-variant="default"
+    data-size="xs"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+  </p>
+</div>
+`;
