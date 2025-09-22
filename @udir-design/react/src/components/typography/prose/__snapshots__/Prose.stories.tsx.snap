@@ -1,9 +1,9 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Preview 1`] = `
+exports[`Headings 1`] = `
 <div>
   <h1 data-size="2xl">
-    Heading
+    Heading xxl
   </h1>
   <p
     data-variant="default"
@@ -12,67 +12,225 @@ exports[`Preview 1`] = `
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
   </p>
   <h2 data-size="xl">
-    Heading
+    Heading xl
   </h2>
   <p data-variant="default">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
   </p>
   <h3 data-size="lg">
-    Heading
+    Heading lg
   </h3>
   <p data-variant="default">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
   </p>
   <h4 data-size="md">
-    Heading
+    Heading md
   </h4>
   <p data-variant="default">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
   </p>
   <h5 data-size="sm">
-    Heading
+    Heading sm
   </h5>
   <p data-variant="default">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
   </p>
   <h6 data-size="xs">
-    Heading
+    Heading xs
   </h6>
   <p data-variant="default">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
   </p>
   <h6 data-size="2xs">
-    Heading
+    Heading xxs
   </h6>
   <p data-variant="default">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
   </p>
-  <h3 data-size="lg">
-    Paragraph size
-  </h3>
-  <p
-    data-variant="default"
-    data-size="lg"
-  >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
-  </p>
-  <p
-    data-variant="default"
-    data-size="md"
-  >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
-  </p>
-  <p
-    data-variant="default"
-    data-size="sm"
-  >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
-  </p>
-  <p
-    data-variant="default"
-    data-size="xs"
-  >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
-  </p>
+</div>
+`;
+
+exports[`Preview 1`] = `
+<div style="display: flex; justify-content: center; flex: 1 1 0%;">
+  <div style="width: 800px;">
+    <div data-color="info">
+      Denne artikkelen er mer enn 2 år gammel
+    </div>
+    <h1 data-size="xl">
+      Tilskudd til skolebibliotek
+    </h1>
+    <p
+      data-variant="default"
+      data-size="lg"
+    >
+      Kommuner kan søke om tilskudd for å styrke skolebibliotekene i grunnskolen. Tilskuddet skal bidra til bedre leseferdigheter, økt leselyst hos elevene og til å fremme kritisk tenkning. Tiltak i levekårsutsatte områder vil prioriteres.
+    </p>
+    <div>
+      <hr aria-hidden="true">
+      Tilskuddsordning | Sist endret: 29.05.2024
+      <hr aria-hidden="true">
+    </div>
+    <h2 data-size="lg">
+      Resultat fra årets behandling
+    </h2>
+    <p data-variant="default">
+      Søknadsbehandlingen for tilskudd til skolebibliotek for 2024 er ferdigstilt.
+    </p>
+    <p data-variant="default">
+      Årets søkere vil snart få svar fra Utdanningsdirektoratet om utfallet av søknadsbehandlingen.
+    </p>
+    <table id="myTable">
+      <caption>
+        Tildeling skolebibliotek 2024
+      </caption>
+      <thead>
+        <tr>
+          <th>
+            Kommune
+          </th>
+          <th>
+            Tildeling (kr)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Bjerkreim kommune
+          </td>
+          <td style="font-feature-settings: &quot;tnum&quot;;">
+            330 000
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Færder kommune
+          </td>
+          <td style="font-feature-settings: &quot;tnum&quot;;">
+            750 000
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Gjøvik kommune
+          </td>
+          <td style="font-feature-settings: &quot;tnum&quot;;">
+            150 000
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Hurdal kommune
+          </td>
+          <td style="font-feature-settings: &quot;tnum&quot;;">
+            550 000
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Marker kommune
+          </td>
+          <td style="font-feature-settings: &quot;tnum&quot;;">
+            900 000
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Nordreisa kommune
+          </td>
+          <td style="font-feature-settings: &quot;tnum&quot;;">
+            304 000
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p data-variant="default">
+      Formålet med tilskuddsordningen er å styrke skolebibliotek i grunnskolen. Styrkingen av skolebibliotekene skal bidra til å utvikle språkferdighetene og leseferdighetene, øke leselyst hos elevene og til å fremme kritisk tenkning.
+    </p>
+    <p data-variant="default">
+      Ordningen skal også bidra til sosial utjevning. Skolebiblioteket skal være en inkluderende arena for læring og leseglede for alle elevgrupper og i alle fag. Tiltak som gjelder skolebibliotek i levekårsutsatte områder, skal prioriteres.
+    </p>
+    <h2 data-size="lg">
+      Kriterier for å få tilskudd
+    </h2>
+    <p data-variant="default">
+      Det er kommunen som søker om tilskudd. Enkeltskoler kan ikke søke om midler.
+    </p>
+    <p data-variant="default">
+      Søknaden må gjelde tilskudd til personalressurser eller utvikling av kompetanse for å legge til rette for lesing, leselyst og kildekritikk i regi av skolebibliotekene. Midler kan ikke gå til innkjøp av utstyr og bøker.
+    </p>
+    <p data-variant="default">
+      Krav til innhold i søknaden:
+    </p>
+    <ul>
+      <li>
+        en prosjektbeskrivelse som viser hvordan prosjektet skal bidra til å styrke skolebibliotekenes arbeid med lesing, leselyst og kildekritikk, og hvordan prosjektet kan kobles til årets
+      </li>
+      <li>
+        en plan for bruk av skolebibliotek som en del av opplæringen i kommunen (se på ressurssiden skolebibliotek.no)
+      </li>
+      <li>
+        en plan for videreføring etter endt prosjektperiode
+      </li>
+      <li>
+        en egenfinansiering på minst 30 %
+      </li>
+      <li>
+        informasjon om kvalitet og tilgjengelighet i skolebibliotekene (jf. opplæringsforskriften § 11-2)
+      </li>
+      <li>
+        en beskrivelse av hvordan elevmedvirkning blir ivaretatt
+      </li>
+    </ul>
+    <h3 data-size="md">
+      Hvordan vurderer vi søknaden?
+    </h3>
+    <p data-variant="default">
+      Utdanningsdirektoratet gjør en skjønnsmessig vurdering av søknaden basert på hvordan prosjektbeskrivelsen svarer på kriterier for ordningen og eventuelle prioriteringer.
+    </p>
+    <p data-variant="default">
+      Søknader som er ufullstendige med hensyn til kriteriene ovenfor, kan bli avslått. Vi behandler ikke søknader som kommer til oss etter søknadsfristen.
+    </p>
+    <div>
+      <u-details
+        data-variant="default"
+        role="group"
+      >
+        <u-summary
+          aria-expanded="false"
+          role="button"
+          slot="summary"
+          tabindex="0"
+        >
+          Tildeling skolebibliotek 2023
+        </u-summary>
+        <div>
+          Du kan
+          <a href="https://www.udir.no/om-udir/tilskudd-og-prosjektmidler/midler-kommuner/sok-om-tilskudd-til-skolebibliotek/">
+            lese om tidligere tildeling her.
+          </a>
+        </div>
+      </u-details>
+      <u-details
+        data-variant="default"
+        role="group"
+      >
+        <u-summary
+          aria-expanded="false"
+          role="button"
+          slot="summary"
+          tabindex="0"
+        >
+          Tildeling skolebibliotek 2022
+        </u-summary>
+        <div>
+          Du kan
+          <a href="https://www.udir.no/om-udir/tilskudd-og-prosjektmidler/midler-kommuner/sok-om-tilskudd-til-skolebibliotek/">
+            lese om tidligere tildeling her.
+          </a>
+        </div>
+      </u-details>
+    </div>
+  </div>
 </div>
 `;
