@@ -1,1256 +1,926 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Form Page 2 1`] = `
-<div>
-  <div data-size="sm">
-    <fieldset>
-      <legend data-weight="medium">
-        Størrelse
-        <code data-size="sm">
-          (data-size)
-        </code>
-      </legend>
-      <div
-        role="radiogroup"
-        tabindex="0"
-      >
-        <button
-          data-variant="primary"
-          type="button"
-          value="sm"
-          id="togglegroup-item-«rh»"
-          aria-checked="true"
-          aria-current="true"
-          role="radio"
-          name="togglegroup-name-«rf»"
-          data-roving-tabindex-item="true"
-          tabindex="0"
-        >
-          sm
-        </button>
-        <button
-          data-variant="tertiary"
-          type="button"
-          value="md"
-          id="togglegroup-item-«rj»"
-          aria-checked="false"
-          aria-current="false"
-          role="radio"
-          name="togglegroup-name-«rf»"
-          data-roving-tabindex-item="true"
-          tabindex="-1"
-        >
-          md
-        </button>
-        <button
-          data-variant="tertiary"
-          type="button"
-          value="lg"
-          id="togglegroup-item-«rl»"
-          aria-checked="false"
-          aria-current="false"
-          role="radio"
-          name="togglegroup-name-«rf»"
-          data-roving-tabindex-item="true"
-          tabindex="-1"
-        >
-          lg
-        </button>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend data-weight="medium">
-        Fargemodus
-        <code data-size="sm">
-          (data-color-scheme)
-        </code>
-      </legend>
-      <div
-        role="radiogroup"
-        tabindex="0"
-      >
-        <button
-          data-variant="tertiary"
-          type="button"
-          value="light"
-          id="togglegroup-item-«ro»"
-          aria-checked="false"
-          aria-current="false"
-          role="radio"
-          name="togglegroup-name-«rm»"
-          data-roving-tabindex-item="true"
-          tabindex="-1"
-        >
-          light
-        </button>
-        <button
-          data-variant="tertiary"
-          type="button"
-          value="dark"
-          id="togglegroup-item-«rq»"
-          aria-checked="false"
-          aria-current="false"
-          role="radio"
-          name="togglegroup-name-«rm»"
-          data-roving-tabindex-item="true"
-          tabindex="-1"
-        >
-          dark
-        </button>
-        <button
-          data-variant="primary"
-          type="button"
-          value="auto"
-          id="togglegroup-item-«rs»"
-          aria-checked="true"
-          aria-current="true"
-          role="radio"
-          name="togglegroup-name-«rm»"
-          data-roving-tabindex-item="true"
-          tabindex="0"
-        >
-          auto
-        </button>
-      </div>
-    </fieldset>
+<div
+  data-size="md"
+  data-color-scheme="auto"
+>
+  <h1 data-size="md">
+    Skjema
+  </h1>
+  <div data-color="info">
+    Ditt svar i skjemaet lagres automatisk, så du kan fortsette på et senere tidspunkt.
   </div>
-  <div
-    data-size="sm"
-    data-color-scheme="auto"
-  >
-    <h1 data-size="md">
-      Skjema
-    </h1>
-    <div data-color="info">
-      Ditt svar i skjemaet lagres automatisk, så du kan fortsette på et senere tidspunkt.
-    </div>
-    <form>
-      <h2 data-size="sm">
-        Valgmuligheter
+  <form>
+    <h2 data-size="sm">
+      Valgmuligheter
+    </h2>
+    <fieldset
+      aria-invalid="false"
+      id="rankings"
+      tabindex="-1"
+    >
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Påstander
+            </th>
+            <th>
+              Uenig
+            </th>
+            <th>
+              Nøytral
+            </th>
+            <th>
+              Enig
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Jeg føler meg trygg på skolen
+            </td>
+            <td>
+              <div>
+                <input
+                  id="rankings.Jeg føler meg trygg på skolen-Uenig"
+                  aria-label="Uenig i påstand Jeg føler meg trygg på skolen"
+                  type="radio"
+                  value="Uenig"
+                  name="rankings.Jeg føler meg trygg på skolen"
+                >
+              </div>
+            </td>
+            <td>
+              <div>
+                <input
+                  id="rankings.Jeg føler meg trygg på skolen-Nøytral"
+                  aria-label="Nøytral i påstand Jeg føler meg trygg på skolen"
+                  type="radio"
+                  value="Nøytral"
+                  name="rankings.Jeg føler meg trygg på skolen"
+                >
+              </div>
+            </td>
+            <td>
+              <div>
+                <input
+                  id="rankings.Jeg føler meg trygg på skolen-Enig"
+                  aria-label="Enig i påstand Jeg føler meg trygg på skolen"
+                  type="radio"
+                  value="Enig"
+                  name="rankings.Jeg føler meg trygg på skolen"
+                >
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Jeg har det bra på skolen
+            </td>
+            <td>
+              <div>
+                <input
+                  id="rankings.Jeg har det bra på skolen-Uenig"
+                  aria-label="Uenig i påstand Jeg har det bra på skolen"
+                  type="radio"
+                  value="Uenig"
+                  name="rankings.Jeg har det bra på skolen"
+                >
+              </div>
+            </td>
+            <td>
+              <div>
+                <input
+                  id="rankings.Jeg har det bra på skolen-Nøytral"
+                  aria-label="Nøytral i påstand Jeg har det bra på skolen"
+                  type="radio"
+                  value="Nøytral"
+                  name="rankings.Jeg har det bra på skolen"
+                >
+              </div>
+            </td>
+            <td>
+              <div>
+                <input
+                  id="rankings.Jeg har det bra på skolen-Enig"
+                  aria-label="Enig i påstand Jeg har det bra på skolen"
+                  type="radio"
+                  value="Enig"
+                  name="rankings.Jeg har det bra på skolen"
+                >
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Jeg har venner på skolen
+            </td>
+            <td>
+              <div>
+                <input
+                  id="rankings.Jeg har venner på skolen-Uenig"
+                  aria-label="Uenig i påstand Jeg har venner på skolen"
+                  type="radio"
+                  value="Uenig"
+                  name="rankings.Jeg har venner på skolen"
+                >
+              </div>
+            </td>
+            <td>
+              <div>
+                <input
+                  id="rankings.Jeg har venner på skolen-Nøytral"
+                  aria-label="Nøytral i påstand Jeg har venner på skolen"
+                  type="radio"
+                  value="Nøytral"
+                  name="rankings.Jeg har venner på skolen"
+                >
+              </div>
+            </td>
+            <td>
+              <div>
+                <input
+                  id="rankings.Jeg har venner på skolen-Enig"
+                  aria-label="Enig i påstand Jeg har venner på skolen"
+                  type="radio"
+                  value="Enig"
+                  name="rankings.Jeg har venner på skolen"
+                >
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Jeg har en god relasjon til lærerne mine
+            </td>
+            <td>
+              <div>
+                <input
+                  id="rankings.Jeg har en god relasjon til lærerne mine-Uenig"
+                  aria-label="Uenig i påstand Jeg har en god relasjon til lærerne mine"
+                  type="radio"
+                  value="Uenig"
+                  name="rankings.Jeg har en god relasjon til lærerne mine"
+                >
+              </div>
+            </td>
+            <td>
+              <div>
+                <input
+                  id="rankings.Jeg har en god relasjon til lærerne mine-Nøytral"
+                  aria-label="Nøytral i påstand Jeg har en god relasjon til lærerne mine"
+                  type="radio"
+                  value="Nøytral"
+                  name="rankings.Jeg har en god relasjon til lærerne mine"
+                >
+              </div>
+            </td>
+            <td>
+              <div>
+                <input
+                  id="rankings.Jeg har en god relasjon til lærerne mine-Enig"
+                  aria-label="Enig i påstand Jeg har en god relasjon til lærerne mine"
+                  type="radio"
+                  value="Enig"
+                  name="rankings.Jeg har en god relasjon til lærerne mine"
+                >
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Jeg har en god relasjon til medelevene mine
+            </td>
+            <td>
+              <div>
+                <input
+                  id="rankings.Jeg har en god relasjon til medelevene mine-Uenig"
+                  aria-label="Uenig i påstand Jeg har en god relasjon til medelevene mine"
+                  type="radio"
+                  value="Uenig"
+                  name="rankings.Jeg har en god relasjon til medelevene mine"
+                >
+              </div>
+            </td>
+            <td>
+              <div>
+                <input
+                  id="rankings.Jeg har en god relasjon til medelevene mine-Nøytral"
+                  aria-label="Nøytral i påstand Jeg har en god relasjon til medelevene mine"
+                  type="radio"
+                  value="Nøytral"
+                  name="rankings.Jeg har en god relasjon til medelevene mine"
+                >
+              </div>
+            </td>
+            <td>
+              <div>
+                <input
+                  id="rankings.Jeg har en god relasjon til medelevene mine-Enig"
+                  aria-label="Enig i påstand Jeg har en god relasjon til medelevene mine"
+                  type="radio"
+                  value="Enig"
+                  name="rankings.Jeg har en god relasjon til medelevene mine"
+                >
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+  </form>
+  <dialog data-modal="true">
+    <button
+      data-icon="true"
+      data-variant="tertiary"
+      type="button"
+      aria-label="Lukk dialogvindu"
+      data-color="neutral"
+      data-command="close"
+    >
+    </button>
+    <div>
+      <h2 data-size="xs">
+        Er du sikker på at du vil sende inn skjema?
       </h2>
-      <fieldset
-        aria-invalid="false"
-        id="rankings"
-        tabindex="-1"
-      >
-        <table style="table-layout: fixed;">
-          <thead>
-            <tr>
-              <th>
-                Påstander
-              </th>
-              <th>
-                Uenig
-              </th>
-              <th>
-                Nøytral
-              </th>
-              <th>
-                Enig
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                Jeg føler meg trygg på skolen
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg føler meg trygg på skolen-Uenig"
-                    aria-label="Uenig i påstand Jeg føler meg trygg på skolen"
-                    type="radio"
-                    value="Uenig"
-                    name="rankings.Jeg føler meg trygg på skolen"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg føler meg trygg på skolen-Nøytral"
-                    aria-label="Nøytral i påstand Jeg føler meg trygg på skolen"
-                    type="radio"
-                    value="Nøytral"
-                    name="rankings.Jeg føler meg trygg på skolen"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg føler meg trygg på skolen-Enig"
-                    aria-label="Enig i påstand Jeg føler meg trygg på skolen"
-                    type="radio"
-                    value="Enig"
-                    name="rankings.Jeg føler meg trygg på skolen"
-                  >
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Jeg har det bra på skolen
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har det bra på skolen-Uenig"
-                    aria-label="Uenig i påstand Jeg har det bra på skolen"
-                    type="radio"
-                    value="Uenig"
-                    name="rankings.Jeg har det bra på skolen"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har det bra på skolen-Nøytral"
-                    aria-label="Nøytral i påstand Jeg har det bra på skolen"
-                    type="radio"
-                    value="Nøytral"
-                    name="rankings.Jeg har det bra på skolen"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har det bra på skolen-Enig"
-                    aria-label="Enig i påstand Jeg har det bra på skolen"
-                    type="radio"
-                    value="Enig"
-                    name="rankings.Jeg har det bra på skolen"
-                  >
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Jeg har venner på skolen
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har venner på skolen-Uenig"
-                    aria-label="Uenig i påstand Jeg har venner på skolen"
-                    type="radio"
-                    value="Uenig"
-                    name="rankings.Jeg har venner på skolen"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har venner på skolen-Nøytral"
-                    aria-label="Nøytral i påstand Jeg har venner på skolen"
-                    type="radio"
-                    value="Nøytral"
-                    name="rankings.Jeg har venner på skolen"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har venner på skolen-Enig"
-                    aria-label="Enig i påstand Jeg har venner på skolen"
-                    type="radio"
-                    value="Enig"
-                    name="rankings.Jeg har venner på skolen"
-                  >
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Jeg har en god relasjon til lærerne mine
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har en god relasjon til lærerne mine-Uenig"
-                    aria-label="Uenig i påstand Jeg har en god relasjon til lærerne mine"
-                    type="radio"
-                    value="Uenig"
-                    name="rankings.Jeg har en god relasjon til lærerne mine"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har en god relasjon til lærerne mine-Nøytral"
-                    aria-label="Nøytral i påstand Jeg har en god relasjon til lærerne mine"
-                    type="radio"
-                    value="Nøytral"
-                    name="rankings.Jeg har en god relasjon til lærerne mine"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har en god relasjon til lærerne mine-Enig"
-                    aria-label="Enig i påstand Jeg har en god relasjon til lærerne mine"
-                    type="radio"
-                    value="Enig"
-                    name="rankings.Jeg har en god relasjon til lærerne mine"
-                  >
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Jeg har en god relasjon til medelevene mine
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har en god relasjon til medelevene mine-Uenig"
-                    aria-label="Uenig i påstand Jeg har en god relasjon til medelevene mine"
-                    type="radio"
-                    value="Uenig"
-                    name="rankings.Jeg har en god relasjon til medelevene mine"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har en god relasjon til medelevene mine-Nøytral"
-                    aria-label="Nøytral i påstand Jeg har en god relasjon til medelevene mine"
-                    type="radio"
-                    value="Nøytral"
-                    name="rankings.Jeg har en god relasjon til medelevene mine"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har en god relasjon til medelevene mine-Enig"
-                    aria-label="Enig i påstand Jeg har en god relasjon til medelevene mine"
-                    type="radio"
-                    value="Enig"
-                    name="rankings.Jeg har en god relasjon til medelevene mine"
-                  >
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </fieldset>
-    </form>
-    <dialog data-modal="true">
+    </div>
+    <div>
       <button
-        data-icon="true"
-        data-variant="tertiary"
-        type="button"
-        aria-label="Lukk dialogvindu"
-        data-color="neutral"
-        data-command="close"
+        data-variant="primary"
+        type="submit"
       >
+        Send inn skjema
       </button>
-      <div>
-        <h2 data-size="xs">
-          Er du sikker på at du vil sende inn skjema?
-        </h2>
-      </div>
-      <div>
+      <button
+        data-variant="secondary"
+        type="button"
+      >
+        Avbryt
+      </button>
+    </div>
+  </dialog>
+  <nav aria-label="Sidenavigering">
+    <ul>
+      <li>
         <button
-          data-variant="primary"
-          type="submit"
-        >
-          Send inn skjema
-        </button>
-        <button
-          data-variant="secondary"
+          aria-disabled="false"
+          data-variant="tertiary"
           type="button"
         >
-          Avbryt
-        </button>
-      </div>
-    </dialog>
-    <nav aria-label="Sidenavigering">
-      <ul>
-        <li>
-          <button
-            aria-disabled="false"
-            data-variant="tertiary"
-            type="button"
-          >
+          <span>
             Forrige
-          </button>
-        </li>
-        <li>
-          <button
-            data-variant="tertiary"
-            type="button"
-            aria-label="Side 1"
-          >
-            1
-          </button>
-        </li>
-        <li>
-          <button
-            data-variant="primary"
-            type="button"
-            aria-current="page"
-            aria-label="Side 2"
-          >
-            2
-          </button>
-        </li>
-        <li>
-          <button
-            data-variant="tertiary"
-            type="button"
-            aria-label="Side 3"
-          >
-            3
-          </button>
-        </li>
-        <li>
-          <button
-            aria-disabled="false"
-            data-variant="tertiary"
-            type="button"
-          >
+          </span>
+        </button>
+      </li>
+      <li>
+        <button
+          data-variant="tertiary"
+          type="button"
+          aria-label="Side 1"
+        >
+          1
+        </button>
+      </li>
+      <li>
+        <button
+          data-variant="primary"
+          type="button"
+          aria-current="page"
+          aria-label="Side 2"
+        >
+          2
+        </button>
+      </li>
+      <li>
+        <button
+          data-variant="tertiary"
+          type="button"
+          aria-label="Side 3"
+        >
+          3
+        </button>
+      </li>
+      <li>
+        <button
+          aria-disabled="false"
+          data-variant="tertiary"
+          type="button"
+        >
+          <span>
             Neste
-          </button>
-        </li>
-      </ul>
-    </nav>
-  </div>
+          </span>
+        </button>
+      </li>
+    </ul>
+  </nav>
 </div>
 `;
 
 exports[`Form Page 3 1`] = `
-<div>
-  <div data-size="sm">
-    <fieldset>
-      <legend data-weight="medium">
-        Størrelse
-        <code data-size="sm">
-          (data-size)
-        </code>
-      </legend>
-      <div
-        role="radiogroup"
-        tabindex="0"
-      >
-        <button
-          data-variant="primary"
-          type="button"
-          value="sm"
-          id="togglegroup-item-«rv»"
-          aria-checked="true"
-          aria-current="true"
-          role="radio"
-          name="togglegroup-name-«rt»"
-          data-roving-tabindex-item="true"
-          tabindex="0"
-        >
-          sm
-        </button>
-        <button
-          data-variant="tertiary"
-          type="button"
-          value="md"
-          id="togglegroup-item-«r11»"
-          aria-checked="false"
-          aria-current="false"
-          role="radio"
-          name="togglegroup-name-«rt»"
-          data-roving-tabindex-item="true"
-          tabindex="-1"
-        >
-          md
-        </button>
-        <button
-          data-variant="tertiary"
-          type="button"
-          value="lg"
-          id="togglegroup-item-«r13»"
-          aria-checked="false"
-          aria-current="false"
-          role="radio"
-          name="togglegroup-name-«rt»"
-          data-roving-tabindex-item="true"
-          tabindex="-1"
-        >
-          lg
-        </button>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend data-weight="medium">
-        Fargemodus
-        <code data-size="sm">
-          (data-color-scheme)
-        </code>
-      </legend>
-      <div
-        role="radiogroup"
-        tabindex="0"
-      >
-        <button
-          data-variant="tertiary"
-          type="button"
-          value="light"
-          id="togglegroup-item-«r16»"
-          aria-checked="false"
-          aria-current="false"
-          role="radio"
-          name="togglegroup-name-«r14»"
-          data-roving-tabindex-item="true"
-          tabindex="-1"
-        >
-          light
-        </button>
-        <button
-          data-variant="tertiary"
-          type="button"
-          value="dark"
-          id="togglegroup-item-«r18»"
-          aria-checked="false"
-          aria-current="false"
-          role="radio"
-          name="togglegroup-name-«r14»"
-          data-roving-tabindex-item="true"
-          tabindex="-1"
-        >
-          dark
-        </button>
-        <button
-          data-variant="primary"
-          type="button"
-          value="auto"
-          id="togglegroup-item-«r1a»"
-          aria-checked="true"
-          aria-current="true"
-          role="radio"
-          name="togglegroup-name-«r14»"
-          data-roving-tabindex-item="true"
-          tabindex="0"
-        >
-          auto
-        </button>
-      </div>
-    </fieldset>
+<div
+  data-size="md"
+  data-color-scheme="auto"
+>
+  <h1 data-size="md">
+    Skjema
+  </h1>
+  <div data-color="info">
+    Ditt svar i skjemaet lagres automatisk, så du kan fortsette på et senere tidspunkt.
   </div>
-  <div
-    data-size="sm"
-    data-color-scheme="auto"
-  >
-    <h1 data-size="md">
-      Skjema
-    </h1>
-    <div data-color="info">
-      Ditt svar i skjemaet lagres automatisk, så du kan fortsette på et senere tidspunkt.
-    </div>
-    <form>
-      <h2 data-size="sm">
-        Avslutning
-      </h2>
-      <div>
-        <label
-          data-weight="medium"
-          for="addition"
-        >
-          Har du noe annet du ønsker å nevne?
-        </label>
-        <div>
-          <textarea
-            id="addition"
-            rows="4"
-            name="addition"
-          >
-          </textarea>
-        </div>
-      </div>
-      <fieldset
-        id="contactMethods"
-        tabindex="-1"
+  <form>
+    <h2 data-size="sm">
+      Avslutning
+    </h2>
+    <div>
+      <label
+        data-weight="medium"
+        for="addition"
       >
-        <legend data-weight="medium">
-          Hvordan ønsker du at vi skal kontakte deg?
-        </legend>
-        <p data-variant="default">
-          Velg ett eller flere alternativer
-        </p>
-        <div>
-          <input
-            id="contactMethodsEmail"
-            aria-invalid="false"
-            type="checkbox"
-            value="epost"
-            name="contactMethods"
-          >
-          <label
-            data-weight="regular"
-            for="contactMethodsEmail"
-          >
-            E-post
-          </label>
-        </div>
-        <div>
-          <input
-            id="contactMethodsTelefon"
-            aria-invalid="false"
-            type="checkbox"
-            value="telefon"
-            name="contactMethods"
-          >
-          <label
-            data-weight="regular"
-            for="contactMethodsTelefon"
-          >
-            Telefon
-          </label>
-        </div>
-        <div>
-          <input
-            id="contactMethodsSms"
-            aria-invalid="false"
-            type="checkbox"
-            value="sms"
-            name="contactMethods"
-          >
-          <label
-            data-weight="regular"
-            for="contactMethodsSms"
-          >
-            SMS
-          </label>
-        </div>
-      </fieldset>
+        Har du noe annet du ønsker å nevne?
+      </label>
+      <div>
+        <textarea
+          id="addition"
+          rows="4"
+          name="addition"
+        >
+        </textarea>
+      </div>
+    </div>
+    <fieldset
+      id="contactMethods"
+      tabindex="-1"
+    >
+      <legend data-weight="medium">
+        Hvordan ønsker du at vi skal kontakte deg?
+      </legend>
+      <p data-variant="default">
+        Velg ett eller flere alternativer
+      </p>
+      <div>
+        <input
+          id="contactMethodsEmail"
+          aria-invalid="false"
+          type="checkbox"
+          value="epost"
+          name="contactMethods"
+        >
+        <label
+          data-weight="regular"
+          for="contactMethodsEmail"
+        >
+          E-post
+        </label>
+      </div>
+      <div>
+        <input
+          id="contactMethodsTelefon"
+          aria-invalid="false"
+          type="checkbox"
+          value="telefon"
+          name="contactMethods"
+        >
+        <label
+          data-weight="regular"
+          for="contactMethodsTelefon"
+        >
+          Telefon
+        </label>
+      </div>
+      <div>
+        <input
+          id="contactMethodsSms"
+          aria-invalid="false"
+          type="checkbox"
+          value="sms"
+          name="contactMethods"
+        >
+        <label
+          data-weight="regular"
+          for="contactMethodsSms"
+        >
+          SMS
+        </label>
+      </div>
+    </fieldset>
+    <button
+      data-variant="primary"
+      type="button"
+    >
+      Send inn skjema
+    </button>
+  </form>
+  <dialog data-modal="true">
+    <button
+      data-icon="true"
+      data-variant="tertiary"
+      type="button"
+      aria-label="Lukk dialogvindu"
+      data-color="neutral"
+      data-command="close"
+    >
+    </button>
+    <div>
+      <h2 data-size="xs">
+        Er du sikker på at du vil sende inn skjema?
+      </h2>
+    </div>
+    <div>
       <button
         data-variant="primary"
-        type="button"
+        type="submit"
       >
         Send inn skjema
       </button>
-    </form>
-    <dialog data-modal="true">
       <button
-        data-icon="true"
-        data-variant="tertiary"
+        data-variant="secondary"
         type="button"
-        aria-label="Lukk dialogvindu"
-        data-color="neutral"
-        data-command="close"
       >
+        Avbryt
       </button>
-      <div>
-        <h2 data-size="xs">
-          Er du sikker på at du vil sende inn skjema?
-        </h2>
-      </div>
-      <div>
+    </div>
+  </dialog>
+  <nav aria-label="Sidenavigering">
+    <ul>
+      <li>
         <button
-          data-variant="primary"
-          type="submit"
-        >
-          Send inn skjema
-        </button>
-        <button
-          data-variant="secondary"
+          aria-disabled="false"
+          data-variant="tertiary"
           type="button"
         >
-          Avbryt
-        </button>
-      </div>
-    </dialog>
-    <nav aria-label="Sidenavigering">
-      <ul>
-        <li>
-          <button
-            aria-disabled="false"
-            data-variant="tertiary"
-            type="button"
-          >
+          <span>
             Forrige
-          </button>
-        </li>
-        <li>
-          <button
-            data-variant="tertiary"
-            type="button"
-            aria-label="Side 1"
-          >
-            1
-          </button>
-        </li>
-        <li>
-          <button
-            data-variant="tertiary"
-            type="button"
-            aria-label="Side 2"
-          >
-            2
-          </button>
-        </li>
-        <li>
-          <button
-            data-variant="primary"
-            type="button"
-            aria-current="page"
-            aria-label="Side 3"
-          >
-            3
-          </button>
-        </li>
-        <li>
-          <button
-            aria-disabled="true"
-            data-variant="tertiary"
-            type="button"
-          >
+          </span>
+        </button>
+      </li>
+      <li>
+        <button
+          data-variant="tertiary"
+          type="button"
+          aria-label="Side 1"
+        >
+          1
+        </button>
+      </li>
+      <li>
+        <button
+          data-variant="tertiary"
+          type="button"
+          aria-label="Side 2"
+        >
+          2
+        </button>
+      </li>
+      <li>
+        <button
+          data-variant="primary"
+          type="button"
+          aria-current="page"
+          aria-label="Side 3"
+        >
+          3
+        </button>
+      </li>
+      <li>
+        <button
+          aria-disabled="true"
+          data-variant="tertiary"
+          type="button"
+        >
+          <span>
             Neste
-          </button>
-        </li>
-      </ul>
-    </nav>
-  </div>
+          </span>
+        </button>
+      </li>
+    </ul>
+  </nav>
 </div>
 `;
 
 exports[`Form Story 1`] = `
-<div>
-  <div data-size="sm">
-    <fieldset>
-      <legend data-weight="medium">
-        Størrelse
-        <code data-size="sm">
-          (data-size)
-        </code>
-      </legend>
-      <div
-        role="radiogroup"
-        tabindex="0"
-      >
-        <button
-          data-variant="primary"
-          type="button"
-          value="sm"
-          id="togglegroup-item-«r2»"
-          aria-checked="true"
-          aria-current="true"
-          role="radio"
-          name="togglegroup-name-«r0»"
-          data-roving-tabindex-item="true"
-          tabindex="0"
-        >
-          sm
-        </button>
-        <button
-          data-variant="tertiary"
-          type="button"
-          value="md"
-          id="togglegroup-item-«r4»"
-          aria-checked="false"
-          aria-current="false"
-          role="radio"
-          name="togglegroup-name-«r0»"
-          data-roving-tabindex-item="true"
-          tabindex="-1"
-        >
-          md
-        </button>
-        <button
-          data-variant="tertiary"
-          type="button"
-          value="lg"
-          id="togglegroup-item-«r6»"
-          aria-checked="false"
-          aria-current="false"
-          role="radio"
-          name="togglegroup-name-«r0»"
-          data-roving-tabindex-item="true"
-          tabindex="-1"
-        >
-          lg
-        </button>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend data-weight="medium">
-        Fargemodus
-        <code data-size="sm">
-          (data-color-scheme)
-        </code>
-      </legend>
-      <div
-        role="radiogroup"
-        tabindex="0"
-      >
-        <button
-          data-variant="tertiary"
-          type="button"
-          value="light"
-          id="togglegroup-item-«r9»"
-          aria-checked="false"
-          aria-current="false"
-          role="radio"
-          name="togglegroup-name-«r7»"
-          data-roving-tabindex-item="true"
-          tabindex="-1"
-        >
-          light
-        </button>
-        <button
-          data-variant="tertiary"
-          type="button"
-          value="dark"
-          id="togglegroup-item-«rb»"
-          aria-checked="false"
-          aria-current="false"
-          role="radio"
-          name="togglegroup-name-«r7»"
-          data-roving-tabindex-item="true"
-          tabindex="-1"
-        >
-          dark
-        </button>
-        <button
-          data-variant="primary"
-          type="button"
-          value="auto"
-          id="togglegroup-item-«rd»"
-          aria-checked="true"
-          aria-current="true"
-          role="radio"
-          name="togglegroup-name-«r7»"
-          data-roving-tabindex-item="true"
-          tabindex="0"
-        >
-          auto
-        </button>
-      </div>
-    </fieldset>
+<div
+  data-size="md"
+  data-color-scheme="auto"
+>
+  <h1 data-size="md">
+    Skjema
+  </h1>
+  <div data-color="info">
+    Ditt svar i skjemaet lagres automatisk, så du kan fortsette på et senere tidspunkt.
   </div>
-  <div
-    data-size="sm"
-    data-color-scheme="auto"
-  >
-    <h1 data-size="md">
-      Skjema
-    </h1>
-    <div data-color="info">
-      Ditt svar i skjemaet lagres automatisk, så du kan fortsette på et senere tidspunkt.
-    </div>
-    <form>
-      <h2 data-size="sm">
-        Personinformasjon
-      </h2>
+  <form>
+    <h2 data-size="sm">
+      Personinformasjon
+    </h2>
+    <div>
+      <label
+        data-weight="medium"
+        for="firstName"
+      >
+        Fornavn
+      </label>
       <div>
-        <label
-          data-weight="medium"
-          for="firstName"
-        >
-          Fornavn
-        </label>
-        <div>
-          <input
-            id="firstName"
-            type="text"
-            name="firstName"
-          >
-        </div>
-      </div>
-      <div>
-        <label
-          data-weight="medium"
-          for="lastName"
-        >
-          Etternavn
-        </label>
         <input
-          id="lastName"
-          aria-invalid="false"
+          id="firstName"
           type="text"
-          name="lastName"
+          name="firstName"
         >
       </div>
-      <div>
-        <label
-          data-weight="medium"
-          for="county"
-        >
-          Fylke
-        </label>
-        <u-combobox>
-          <input
-            placeholder
-            aria-invalid="false"
-            id="county"
-            type="text"
-            data-label="Fylke"
-            list=":u-datalist1"
-            aria-label="Fylke​​​​​"
-            popovertarget=":u-datalist1"
-            aria-autocomplete="list"
-            aria-controls=":u-datalist1"
-            aria-expanded="true"
-            autocomplete="off"
-            role="combobox"
-          >
-          <del
-            data-icon="true"
-            data-variant="tertiary"
-            aria-label="Tøm"
-            hidden
-            role="button"
-          >
-          </del>
-          <u-datalist
-            data-nofilter
-            data-sr-singular="%d forslag"
-            data-sr-plural="%d forslag"
-            popover="manual"
-            hidden
-            role="listbox"
-            tabindex="-1"
-            aria-multiselectable="false"
-            id=":u-datalist1"
-            style="width: 536px; translate: <removed>;"
-          >
-            <u-option
-              label="Oslo"
-              value="Oslo"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Oslo
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Viken"
-              value="Viken"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Viken
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Innlandet"
-              value="Innlandet"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Innlandet
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Vestfold og Telemark"
-              value="Vestfold og Telemark"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Vestfold og Telemark
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Agder"
-              value="Agder"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Agder
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Rogaland"
-              value="Rogaland"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Rogaland
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Vestland"
-              value="Vestland"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Vestland
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Møre og Romsdal"
-              value="Møre og Romsdal"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Møre og Romsdal
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Trøndelag"
-              value="Trøndelag"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Trøndelag
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Nordland"
-              value="Nordland"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Nordland
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Troms og Finnmark"
-              value="Troms og Finnmark"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Troms og Finnmark
-              <div>
-                Fylke
-              </div>
-            </u-option>
-          </u-datalist>
-          <select
-            name="county"
-            hidden
-            id="«re»"
-          >
-          </select>
-        </u-combobox>
-      </div>
-      <fieldset
-        id="educationLevel"
-        tabindex="-1"
+    </div>
+    <div>
+      <label
+        data-weight="medium"
+        for="lastName"
       >
-        <legend data-weight="medium">
-          Utdanningsnivå
-        </legend>
-        <div>
-          <input
-            id="radio-kindergarten"
-            type="radio"
-            value="kindergarten"
-            name="educationLevel"
-          >
-          <label
-            data-weight="regular"
-            for="radio-kindergarten"
-          >
-            Barnehage
-          </label>
-        </div>
-        <div>
-          <input
-            id="radio-primary"
-            type="radio"
-            value="primary"
-            name="educationLevel"
-          >
-          <label
-            data-weight="regular"
-            for="radio-primary"
-          >
-            Grunnskole
-          </label>
-        </div>
-        <div>
-          <input
-            id="radio-secondary"
-            type="radio"
-            value="secondary"
-            name="educationLevel"
-          >
-          <label
-            data-weight="regular"
-            for="radio-secondary"
-          >
-            Videregående
-          </label>
-        </div>
-        <div>
-          <input
-            id="radio-higher"
-            type="radio"
-            value="higher"
-            name="educationLevel"
-          >
-          <label
-            data-weight="regular"
-            for="radio-higher"
-          >
-            Høyere utdanning
-          </label>
-        </div>
-      </fieldset>
-      <div>
-        <label
-          data-weight="medium"
-          for="ageGroup"
-        >
-          Aldersgruppe
-        </label>
-        <select
-          id="ageGroup"
-          aria-label="Velg aldersgruppe"
-          name="ageGroup"
+        Etternavn
+      </label>
+      <input
+        id="lastName"
+        aria-invalid="false"
+        type="text"
+        name="lastName"
+      >
+    </div>
+    <div>
+      <label
+        data-weight="medium"
+        for="county"
+      >
+        Fylke
+      </label>
+      <u-combobox>
+        <input
+          placeholder
           aria-invalid="false"
+          id="county"
+          type="text"
+          data-label="Fylke"
+          list=":u-datalist1"
+          aria-label="Fylke​​​​​"
+          popovertarget=":u-datalist1"
+          aria-autocomplete="list"
+          aria-controls=":u-datalist1"
+          aria-expanded="true"
+          autocomplete="off"
+          role="combobox"
         >
-          <option
-            value="blank"
-            disabled
-            selected
+        <del
+          data-icon="true"
+          data-variant="tertiary"
+          aria-label="Tøm"
+          hidden
+          role="button"
+        >
+        </del>
+        <u-datalist
+          data-nofilter
+          data-sr-singular="%d forslag"
+          data-sr-plural="%d forslag"
+          popover="manual"
+          hidden
+          role="listbox"
+          tabindex="-1"
+          aria-multiselectable="false"
+          id=":u-datalist1"
+          style="width: 592px; translate: <removed>;"
+        >
+          <u-option
+            label="Oslo"
+            value="Oslo"
+            tabindex="-1"
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
           >
-            Velg aldersgruppe
-          </option>
-          <option value="kindergarten">
-            3-5 år
-          </option>
-          <option value="kids">
-            6-12 år
-          </option>
-          <option value="youth">
-            13-20 år
-          </option>
-          <option value="adult">
-            21 år og eldre
-          </option>
-        </select>
-      </div>
-    </form>
-    <dialog data-modal="true">
-      <button
-        data-icon="true"
-        data-variant="tertiary"
-        type="button"
-        aria-label="Lukk dialogvindu"
-        data-color="neutral"
-        data-command="close"
-      >
-      </button>
-      <div>
-        <h2 data-size="xs">
-          Er du sikker på at du vil sende inn skjema?
-        </h2>
-      </div>
-      <div>
-        <button
-          data-variant="primary"
-          type="submit"
+            Oslo
+            <div>
+              Fylke
+            </div>
+          </u-option>
+          <u-option
+            label="Viken"
+            value="Viken"
+            tabindex="-1"
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+          >
+            Viken
+            <div>
+              Fylke
+            </div>
+          </u-option>
+          <u-option
+            label="Innlandet"
+            value="Innlandet"
+            tabindex="-1"
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+          >
+            Innlandet
+            <div>
+              Fylke
+            </div>
+          </u-option>
+          <u-option
+            label="Vestfold og Telemark"
+            value="Vestfold og Telemark"
+            tabindex="-1"
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+          >
+            Vestfold og Telemark
+            <div>
+              Fylke
+            </div>
+          </u-option>
+          <u-option
+            label="Agder"
+            value="Agder"
+            tabindex="-1"
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+          >
+            Agder
+            <div>
+              Fylke
+            </div>
+          </u-option>
+          <u-option
+            label="Rogaland"
+            value="Rogaland"
+            tabindex="-1"
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+          >
+            Rogaland
+            <div>
+              Fylke
+            </div>
+          </u-option>
+          <u-option
+            label="Vestland"
+            value="Vestland"
+            tabindex="-1"
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+          >
+            Vestland
+            <div>
+              Fylke
+            </div>
+          </u-option>
+          <u-option
+            label="Møre og Romsdal"
+            value="Møre og Romsdal"
+            tabindex="-1"
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+          >
+            Møre og Romsdal
+            <div>
+              Fylke
+            </div>
+          </u-option>
+          <u-option
+            label="Trøndelag"
+            value="Trøndelag"
+            tabindex="-1"
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+          >
+            Trøndelag
+            <div>
+              Fylke
+            </div>
+          </u-option>
+          <u-option
+            label="Nordland"
+            value="Nordland"
+            tabindex="-1"
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+          >
+            Nordland
+            <div>
+              Fylke
+            </div>
+          </u-option>
+          <u-option
+            label="Troms og Finnmark"
+            value="Troms og Finnmark"
+            tabindex="-1"
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+          >
+            Troms og Finnmark
+            <div>
+              Fylke
+            </div>
+          </u-option>
+        </u-datalist>
+        <select
+          name="county"
+          hidden
+          id="«r0»"
         >
-          Send inn skjema
-        </button>
+        </select>
+      </u-combobox>
+    </div>
+    <fieldset
+      id="educationLevel"
+      tabindex="-1"
+    >
+      <legend data-weight="medium">
+        Utdanningsnivå
+      </legend>
+      <div>
+        <input
+          id="radio-kindergarten"
+          type="radio"
+          value="kindergarten"
+          name="educationLevel"
+        >
+        <label
+          data-weight="regular"
+          for="radio-kindergarten"
+        >
+          Barnehage
+        </label>
+      </div>
+      <div>
+        <input
+          id="radio-primary"
+          type="radio"
+          value="primary"
+          name="educationLevel"
+        >
+        <label
+          data-weight="regular"
+          for="radio-primary"
+        >
+          Grunnskole
+        </label>
+      </div>
+      <div>
+        <input
+          id="radio-secondary"
+          type="radio"
+          value="secondary"
+          name="educationLevel"
+        >
+        <label
+          data-weight="regular"
+          for="radio-secondary"
+        >
+          Videregående
+        </label>
+      </div>
+      <div>
+        <input
+          id="radio-higher"
+          type="radio"
+          value="higher"
+          name="educationLevel"
+        >
+        <label
+          data-weight="regular"
+          for="radio-higher"
+        >
+          Høyere utdanning
+        </label>
+      </div>
+    </fieldset>
+    <div>
+      <label
+        data-weight="medium"
+        for="ageGroup"
+      >
+        Aldersgruppe
+      </label>
+      <select
+        id="ageGroup"
+        aria-label="Velg aldersgruppe"
+        name="ageGroup"
+        aria-invalid="false"
+      >
+        <option
+          value="blank"
+          disabled
+          selected
+        >
+          Velg aldersgruppe
+        </option>
+        <option value="kindergarten">
+          3-5 år
+        </option>
+        <option value="kids">
+          6-12 år
+        </option>
+        <option value="youth">
+          13-20 år
+        </option>
+        <option value="adult">
+          21 år og eldre
+        </option>
+      </select>
+    </div>
+  </form>
+  <dialog data-modal="true">
+    <button
+      data-icon="true"
+      data-variant="tertiary"
+      type="button"
+      aria-label="Lukk dialogvindu"
+      data-color="neutral"
+      data-command="close"
+    >
+    </button>
+    <div>
+      <h2 data-size="xs">
+        Er du sikker på at du vil sende inn skjema?
+      </h2>
+    </div>
+    <div>
+      <button
+        data-variant="primary"
+        type="submit"
+      >
+        Send inn skjema
+      </button>
+      <button
+        data-variant="secondary"
+        type="button"
+      >
+        Avbryt
+      </button>
+    </div>
+  </dialog>
+  <nav aria-label="Sidenavigering">
+    <ul>
+      <li>
         <button
-          data-variant="secondary"
+          aria-disabled="true"
+          data-variant="tertiary"
           type="button"
         >
-          Avbryt
-        </button>
-      </div>
-    </dialog>
-    <nav aria-label="Sidenavigering">
-      <ul>
-        <li>
-          <button
-            aria-disabled="true"
-            data-variant="tertiary"
-            type="button"
-          >
+          <span>
             Forrige
-          </button>
-        </li>
-        <li>
-          <button
-            data-variant="primary"
-            type="button"
-            aria-current="page"
-            aria-label="Side 1"
-          >
-            1
-          </button>
-        </li>
-        <li>
-          <button
-            data-variant="tertiary"
-            type="button"
-            aria-label="Side 2"
-          >
-            2
-          </button>
-        </li>
-        <li>
-          <button
-            data-variant="tertiary"
-            type="button"
-            aria-label="Side 3"
-          >
-            3
-          </button>
-        </li>
-        <li>
-          <button
-            aria-disabled="false"
-            data-variant="tertiary"
-            type="button"
-          >
+          </span>
+        </button>
+      </li>
+      <li>
+        <button
+          data-variant="primary"
+          type="button"
+          aria-current="page"
+          aria-label="Side 1"
+        >
+          1
+        </button>
+      </li>
+      <li>
+        <button
+          data-variant="tertiary"
+          type="button"
+          aria-label="Side 2"
+        >
+          2
+        </button>
+      </li>
+      <li>
+        <button
+          data-variant="tertiary"
+          type="button"
+          aria-label="Side 3"
+        >
+          3
+        </button>
+      </li>
+      <li>
+        <button
+          aria-disabled="false"
+          data-variant="tertiary"
+          type="button"
+        >
+          <span>
             Neste
-          </button>
-        </li>
-      </ul>
-    </nav>
-  </div>
+          </span>
+        </button>
+      </li>
+    </ul>
+  </nav>
 </div>
 `;

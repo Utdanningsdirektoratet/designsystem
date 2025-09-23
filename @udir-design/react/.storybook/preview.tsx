@@ -11,10 +11,12 @@ import { MdxComponentOverrides } from './types/parameters';
 import { Children, MouseEventHandler } from 'react';
 import { LinkIcon } from '@navikt/aksel-icons';
 import { hideTocForIds } from './utils/HideToc';
+import { DocsContainer } from './doc-blocks/DocsContainer';
 
 // See the complete list of available devices in INITIAL_VIEWPORTS here:
 // https://storybook.js.org/docs/essentials/viewport#use-a-detailed-set-of-devices
 const storybookViewports: ViewportMap = {
+  minimum: INITIAL_VIEWPORTS['iphone5'],
   iphone6: INITIAL_VIEWPORTS['iphone6'],
   ipad: INITIAL_VIEWPORTS['ipad'],
   desktop: {
@@ -84,24 +86,20 @@ export const componentOverrides: MdxComponentOverrides = {
   p: (props) => (
     <Paragraph
       {...props}
-      className="sb-unstyled"
-      style={{
-        backgroundColor: 'transparent',
-        marginBottom: 'var(--ds-size-2)',
-      }}
+      className={`sb-unstyled ${componentStyles.paragraph}`}
     />
   ),
   ol: (props) => (
     <List.Ordered
       {...props}
-      style={{ maxWidth: '70ch', marginBottom: 'var(--ds-size-2)' }}
+      style={{ maxWidth: '70ch', marginBottom: 'var(--ds-size-6)' }}
       className="sb-unstyled"
     />
   ),
   ul: (props) => (
     <List.Unordered
       {...props}
-      style={{ maxWidth: '70ch', marginBottom: 'var(--ds-size-2)' }}
+      style={{ maxWidth: '70ch', marginBottom: 'var(--ds-size-6)' }}
       className="sb-unstyled"
     />
   ),
@@ -156,6 +154,7 @@ const preview: Preview = {
     },
 
     docs: {
+      container: DocsContainer,
       // Configure the table of contents
       toc: {
         title: 'På denne siden',

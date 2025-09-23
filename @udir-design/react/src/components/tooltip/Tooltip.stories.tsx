@@ -12,8 +12,11 @@ import {
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+    },
     customStyles: {
       margin: '2rem',
       display: 'flex',

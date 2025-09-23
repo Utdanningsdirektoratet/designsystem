@@ -22,8 +22,9 @@ import useSortableData from './utilities/useSortableData';
 import { useFilterData } from './utilities/useFilterData';
 import { ExportDialog } from './components/ExportDialog';
 import { DeleteDialog } from './components/DeleteDialog';
+import { DemoProps } from '../demoProps';
 
-type TableDemoProps = HTMLAttributes<HTMLDivElement>;
+type TableDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
 
 export const TableDemo = ({ ...props }: TableDemoProps) => {
   const itemsPerPage = 5;
@@ -125,13 +126,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
         <div className={classes.tableHeader}>
           <div>
             <Label>Filtrer på utdanningsnivå</Label>
-            <div
-              style={{
-                display: 'flex',
-                gap: 'var(--ds-size-2)',
-                marginTop: 'var(--ds-size-2)',
-              }}
-            >
+            <div className={classes.tableFilter}>
               {levels.map((level) => (
                 <Chip.Checkbox
                   key={level}
@@ -242,12 +237,12 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
           </Table>
         </div>
         <div className={classes.tableFooter}>
+          <ExportDialog handleExport={handleExport} />
           <PaginationControls
             currentPage={currentPage}
             totalPages={totalPages}
             setCurrentPage={setCurrentPage}
           />
-          <ExportDialog handleExport={handleExport} />
         </div>
         {showErrorSummary && (
           <ErrorSummary>

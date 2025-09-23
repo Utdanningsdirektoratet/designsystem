@@ -17,8 +17,9 @@ import { section1, section2, section3 } from './strings/sections';
 import { changes } from './strings/changes';
 import cl from 'clsx';
 import { PrinterSmallIcon } from '@navikt/aksel-icons';
+import { DemoProps } from '../demoProps';
 
-type ArticleDemoProps = HTMLAttributes<HTMLDivElement>;
+type ArticleDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
 
 export const ArticleDemo = ({ ...props }: ArticleDemoProps) => {
   return (

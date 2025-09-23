@@ -8,8 +8,11 @@ import { useState } from 'react';
 
 const meta: Meta<typeof Select> = {
   component: Select,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+    },
     layout: 'centered',
   },
 };

@@ -1,7 +1,6 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
-
 import { Button, Heading, Link, Paragraph } from '@udir-design/react/alpha';
-import { Alert } from './Alert';
+import { Alert } from './';
 import { within, expect } from 'storybook/test';
 import { useState } from 'react';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
@@ -10,7 +9,10 @@ type Story = StoryObj<typeof Alert>;
 
 const meta: Meta<typeof Alert> = {
   component: Alert,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
+  parameters: {
+    componentOrigin: { originator: 'digdir' },
+  },
 };
 
 export default meta;
@@ -18,10 +20,14 @@ export default meta;
 export const Preview: Story = {
   args: {
     'data-color': 'info',
-    children: 'En beskjed det er viktig at brukeren ser',
   },
-  render: (args) => <Alert data-testid="alert-preview" {...args} />,
-  play: async ({ canvasElement, args, step }) => {
+  render: (args) => (
+    <Alert data-testid="alert-preview" {...args}>
+      <Alert.Heading level={3}>Overskrift</Alert.Heading>
+      En beskjed det er viktig at brukeren ser
+    </Alert>
+  ),
+  play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
     const alert = canvas.getByTestId('alert-preview');
     await step('Alert is rendered ', async () => {
@@ -31,7 +37,9 @@ export const Preview: Story = {
       await expect(alert).toHaveAttribute('data-color', 'info');
     });
     await step('Alert has correct text', async () => {
-      await expect(alert).toHaveTextContent(args.children as string);
+      await expect(alert).toHaveTextContent(
+        'En beskjed det er viktig at brukeren ser',
+      );
     });
   },
 };
@@ -39,114 +47,76 @@ export const Preview: Story = {
 export const VariantInfo: Story = {
   args: {
     'data-color': 'info',
-    children: [
-      <Heading
-        level={2}
-        data-size="xs"
-        style={{
-          marginBottom: 'var(--ds-size-2)',
-        }}
-      >
-        Har du husket å melde deg på privatisteksamen?
-      </Heading>,
-      <Paragraph>
-        Du må melde deg på innen 1. februar for våreksamen.
-      </Paragraph>,
-    ],
   },
+  render: (args) => (
+    <Alert {...args}>
+      <Alert.Heading level={2}>
+        Har du husket å melde deg på privatisteksamen?
+      </Alert.Heading>
+      Du må melde deg på innen 1. februar for våreksamen.
+    </Alert>
+  ),
 };
 
 export const VariantSuccess: Story = {
   args: {
     'data-color': 'success',
-    children: [
-      <Heading
-        level={2}
-        data-size="xs"
-        style={{
-          marginBottom: 'var(--ds-size-2)',
-        }}
-      >
-        Du har levert søknaden din!
-      </Heading>,
-      <Paragraph>
-        Vi har mottatt søknaden din, og vil behandle den i løpet av få dager.
-      </Paragraph>,
-    ],
   },
+  render: (args) => (
+    <Alert {...args}>
+      <Alert.Heading level={2}>Du har levert søknaden din!</Alert.Heading>
+      Vi har mottatt søknaden din, og vil behandle den i løpet av få dager.
+    </Alert>
+  ),
 };
 
 export const VariantWarning: Story = {
   args: {
     'data-color': 'warning',
-    children: [
-      <Heading
-        level={2}
-        data-size="xs"
-        style={{
-          marginBottom: 'var(--ds-size-2)',
-        }}
-      >
-        Vi har tekniske problemer
-      </Heading>,
-      <Paragraph>
-        Det gjør at du kan bli avbrutt mens du fyller ut skjemaet. Vi jobber med
-        å rette problemene.
-      </Paragraph>,
-    ],
   },
+  render: (args) => (
+    <Alert {...args}>
+      <Alert.Heading level={2}>Vi har tekniske problemer</Alert.Heading>
+      Det gjør at du kan bli avbrutt mens du fyller ut skjemaet. Vi jobber med å
+      rette problemene.
+    </Alert>
+  ),
 };
 
 export const VariantDanger: Story = {
   args: {
     'data-color': 'danger',
-    children: [
-      <Heading
-        level={2}
-        data-size="xs"
-        style={{
-          marginBottom: 'var(--ds-size-2)',
-        }}
-      >
-        Det har skjedd en feil
-      </Heading>,
-      <Paragraph>
-        Vi klarer ikke å hente informasjonen du ser etter akkurat nå. Prøv igjen
-        litt senere. Hvis vi fortsatt ikke klarer å vise informasjonen du
-        trenger, tar du kontakt med kundeservice på telefon 85 44 32 66.
-      </Paragraph>,
-    ],
   },
+  render: (args) => (
+    <Alert {...args}>
+      <Alert.Heading level={2}>Det har skjedd en feil</Alert.Heading>
+      Vi klarer ikke å hente informasjonen du ser etter akkurat nå. Prøv igjen
+      litt senere. Hvis vi fortsatt ikke klarer å vise informasjonen du trenger,
+      tar du kontakt med kundeservice på telefon 85 44 32 66.
+    </Alert>
+  ),
 };
 
 export const NoHeading: Story = {
   args: {
     'data-color': 'warning',
-    children: [
-      <Paragraph>Du har 7 dager igjen på å fullføre søknaden.</Paragraph>,
-    ],
   },
+  render: (args) => (
+    <Alert {...args}>Du har 7 dager igjen på å fullføre søknaden.</Alert>
+  ),
 };
 
 export const WithLink: Story = {
   args: {
     'data-color': 'warning',
-    children: [
-      <Heading
-        level={2}
-        data-size="xs"
-        style={{
-          marginBottom: 'var(--ds-size-2)',
-        }}
-      >
-        Søknadsfristen går ut om 3 dager
-      </Heading>,
-      <Paragraph>
-        Fristen for å søke opptak til utdanning er 15. april.{' '}
-        <Link href="https://udir.no/">Søk nå</Link>
-      </Paragraph>,
-    ],
   },
+  render: (args) => (
+    <Alert {...args}>
+      <Alert.Heading level={2}>Søknadsfristen går ut om 3 dager</Alert.Heading>
+      Fristen for å søke opptak til utdanning er 15. april.{' '}
+      <Link href="https://udir.no/">Søk nå</Link>
+    </Alert>
+  ),
 };
 
 export const WrongLiveRegion: StoryFn<typeof Alert> = () => {
@@ -159,15 +129,7 @@ export const WrongLiveRegion: StoryFn<typeof Alert> = () => {
           // Feil bruk: role="alert" ligger på selve varselet
           role="alert"
         >
-          <Heading
-            level={2}
-            data-size="xs"
-            style={{
-              marginBottom: 'var(--ds-size-2)',
-            }}
-          >
-            Vi klarer ikke lagre skjemaet
-          </Heading>
+          <Heading level={2}>Vi klarer ikke lagre skjemaet</Heading>
           <Paragraph>
             Vi har mistet forbindelsen med serveren og får ikke lagret skjemaet.
             Vent litt og prøv en gang til.
@@ -211,15 +173,9 @@ export const CorrectLiveRegion: StoryFn<typeof Alert> = () => {
       <div role="alert">
         {showAlert && (
           <Alert data-color="warning">
-            <Heading
-              level={2}
-              data-size="xs"
-              style={{
-                marginBottom: 'var(--ds-size-2)',
-              }}
-            >
+            <Alert.Heading level={2}>
               Vi klarer ikke lagre skjemaet
-            </Heading>
+            </Alert.Heading>
             <Paragraph>
               Vi har mistet forbindelsen med serveren og får ikke lagret
               skjemaet. Vent litt og prøv en gang til.

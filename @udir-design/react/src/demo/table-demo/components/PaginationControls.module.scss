@@ -1,0 +1,21 @@
+.pagination {
+  container-type: inline-size;
+  margin-left: calc(-1 * var(--ds-size-4));
+  width: calc(100% - var(--table-demo-footer--one-line, 160px));
+  > ul {
+    justify-content: var(--table-demo-footer--wrapped, space-between);
+  }
+}
+.buttonText {
+  @container (max-width: 26.25rem) {
+    // Only visible for screen readers
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}

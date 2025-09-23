@@ -16,8 +16,12 @@ import { useRef, useState } from 'react';
 
 const meta: Meta<typeof Dialog> = {
   component: Dialog,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+      details: 'Vi har fjernet mulighet for fargevalg.',
+    },
     customStyles: {
       display: 'grid',
       alignItems: 'start',

@@ -3,7 +3,13 @@ import { List, Heading, Link } from '@udir-design/react/alpha';
 
 const meta: Meta<typeof List.Unordered> = {
   component: List.Unordered,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
+  parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+      details: 'Vi har fjernet mulighet for fargevalg.',
+    },
+  },
 };
 
 export default meta;

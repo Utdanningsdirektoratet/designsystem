@@ -7,8 +7,11 @@ import { Paragraph } from '../alpha';
 
 const meta: Meta<typeof Chip.Radio> = {
   component: Chip.Radio,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+    },
     customStyles: {
       display: 'flex',
       gap: 'var(--ds-size-2)',

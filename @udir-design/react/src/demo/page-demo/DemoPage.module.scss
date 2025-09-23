@@ -1,17 +1,39 @@
 .page {
+  --ds-size: var(--ds-size--sm);
   background-color: var(--ds-color-neutral-background-tinted);
-  padding: var(--ds-size-8);
+  padding: calc(var(--ds-size-3) + 0.3rem);
+  @media (min-width: 25.5rem) {
+    --ds-size: var(--ds-size--md);
+    padding: var(--ds-size-4);
+  }
+  @media (min-width: 48rem) {
+    padding: var(--ds-size-6);
+  }
 }
 
 .examples {
   margin-top: var(--ds-size-8);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--ds-size-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-3);
+
+  @media (min-width: 25.5rem) {
+    gap: var(--ds-size-6);
+  }
+
+  @media (min-width: 48rem) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   > div {
     background-color: var(--ds-color-neutral-background-default);
     border-radius: var(--ds-border-radius-lg);
     padding: var(--ds-size-6);
+    margin-inline: calc(-1 * var(--ds-size-3));
+
+    @media (min-width: 25.5rem) {
+      margin-inline: 0;
+    }
   }
 }

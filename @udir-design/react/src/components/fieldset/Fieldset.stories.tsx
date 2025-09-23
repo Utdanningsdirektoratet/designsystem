@@ -9,8 +9,12 @@ import {
 
 const meta: Meta<typeof Fieldset> = {
   component: Fieldset,
-  tags: ['beta'],
+  tags: ['beta', 'didir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+      details: 'Vi har fjernet mulighet for fargevalg.',
+    },
     layout: 'centered',
   },
 };

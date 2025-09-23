@@ -34,7 +34,10 @@ Vi bruker `Alert` til å gi brukeren informasjon som det er ekstra viktig at de 
 ```tsx
 import { Alert } from '@udir-design/react';
 
-<Alert>En beskjed det er viktig at brukeren ser</Alert>;
+<Alert>
+  <Alert.Heading>Overskrift</Alert.Heading>
+  En beskjed det er viktig at brukeren ser
+</Alert>;
 ```
 
 ## Eksempler
@@ -67,7 +70,7 @@ Bruk `danger` for å informere om noe som er kritisk eller som hindrer brukeren 
 
 ### Med og uten overskrift
 
-Hvis meldingen er lenger enn en setning kan det være nyttig å bruke en overskrift til å fremheve det viktigste. Dette kan gjøres ved bruk av [typografi-komponentene](/docs/components-typography--docs). Husk å velge riktig overskriftsnivå ut fra plassen `Alert` har i innholdsstrukturen på siden.
+Hvis meldingen er lenger enn en setning kan det være nyttig å bruke en overskrift til å fremheve det viktigste. Dette kan gjøres ved bruk av subkomponenten `Alert.Heading`. Husk å velge riktig overskriftsnivå ut fra plassen `Alert` har i innholdsstrukturen på siden.
 
 Dersom tittel og beskrivelse gjentar det samme er det bedre å bruke en enkel setning uten overskrift.
 

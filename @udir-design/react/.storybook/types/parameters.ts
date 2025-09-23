@@ -7,14 +7,17 @@
  * See https://github.com/microsoft/TypeScript/issues/30511 for details.
  */
 
-import type { Addon_OptionsParameter } from 'storybook/internal/types';
+import type {
+  Addon_OptionsParameter,
+  Parameters,
+} from 'storybook/internal/types';
 import type { DocsTypes } from '@storybook/addon-docs';
 import type { A11yParameters } from '@storybook/addon-a11y';
 import type { CSSProperties, ReactNode } from 'react';
 import { ThemeVars } from 'storybook/theming';
 import { StoryContext } from '@storybook/react-vite';
 
-type ChromaticViewport = {
+export type ChromaticViewport = {
   width?: number | `${string}px`;
   height?: number | `${string}px`;
 };
@@ -49,6 +52,22 @@ type DocsSourceParams = Partial<Omit<SourceBlockParameters, 'transform'>> & {
     storyContext: StoryContext,
   ) => string | Promise<string>; // original type doesn't allow Promise, although support for this was added in 9.0.0. See https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#parametersdocssourceformat-removal
 };
+
+export type ComponentOrigin = {
+  originator: 'self' | 'digdir';
+  details?: string;
+};
+export type ComponentOriginParameters = {
+  componentOrigin: ComponentOrigin;
+};
+
+declare module 'storybook/internal/csf' {
+  interface ComponentAnnotations {
+    parameters?: Parameters & Partial<ComponentOriginParameters>;
+    // TODO: should just be this when all story files are updated
+    // parameters: Parameters & ComponentOriginParameters;
+  }
+}
 
 declare module 'storybook/internal/types' {
   interface Parameters extends A11yParameters, DocsParameters {

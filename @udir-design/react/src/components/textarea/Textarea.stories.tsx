@@ -6,8 +6,11 @@ import { expect, userEvent, within } from 'storybook/test';
 
 const meta: Meta<typeof Textarea> = {
   component: Textarea,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+    },
     layout: 'centered',
     customStyles: {
       display: 'flex',

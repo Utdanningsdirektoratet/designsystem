@@ -1,4 +1,10 @@
-import { Checkbox, Divider, Fieldset, Heading } from '@udir-design/react/alpha';
+import {
+  Checkbox,
+  Divider,
+  Fieldset,
+  Heading,
+  useCheckboxGroup,
+} from '@udir-design/react/alpha';
 import { Do, Dont, Stack } from '.storybook/docs-components';
 
 export const CheckboxExConversation = () => {
@@ -233,6 +239,66 @@ const Ex3Dont = () => {
       <Checkbox label="Møter" value="moter" />
       <Checkbox label="Lunsjen er best" value="lunsj" />
       <Checkbox label="Jeg liker å møte kolleger" value="kolleger" />
+    </Fieldset>
+  );
+};
+
+export const DisabledEx = () => {
+  return (
+    <Stack>
+      <Dont description="Ikke bruk deaktivert Checkbox.">
+        <ExCheckboxDisabled />
+      </Dont>
+    </Stack>
+  );
+};
+
+const ExCheckboxDisabled = () => {
+  const { getCheckboxProps } = useCheckboxGroup({
+    value: ['epost'],
+    disabled: true,
+  });
+  return (
+    <Fieldset>
+      <Fieldset.Legend>
+        Hvordan vil du helst at vi skal kontakte deg?
+      </Fieldset.Legend>
+      <Fieldset.Description>
+        Velg de alternativene som er relevante for deg.
+      </Fieldset.Description>
+      <Checkbox label="E-post" {...getCheckboxProps('epost')} />
+      <Checkbox label="Telefon" {...getCheckboxProps('telefon')} />
+      <Checkbox label="SMS" {...getCheckboxProps('sms')} />
+    </Fieldset>
+  );
+};
+
+export const ReadOnlyEx = () => {
+  return (
+    <Stack>
+      <Dont description="Unngå skrivebeskyttet Checkbox.">
+        <ExCheckboxReadOnly />
+      </Dont>
+    </Stack>
+  );
+};
+
+const ExCheckboxReadOnly = () => {
+  const { getCheckboxProps } = useCheckboxGroup({
+    value: ['epost'],
+    readOnly: true,
+  });
+  return (
+    <Fieldset>
+      <Fieldset.Legend>
+        Hvordan vil du helst at vi skal kontakte deg?
+      </Fieldset.Legend>
+      <Fieldset.Description>
+        Velg de alternativene som er relevante for deg.
+      </Fieldset.Description>
+      <Checkbox label="E-post" {...getCheckboxProps('epost')} />
+      <Checkbox label="Telefon" {...getCheckboxProps('telefon')} />
+      <Checkbox label="SMS" {...getCheckboxProps('sms')} />
     </Fieldset>
   );
 };

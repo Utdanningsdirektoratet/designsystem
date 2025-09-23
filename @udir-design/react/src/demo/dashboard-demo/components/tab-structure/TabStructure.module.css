@@ -8,9 +8,14 @@
 }
 
 .overviewContent {
-  display: grid;
-  grid-template-columns: 0.75fr 2fr;
+  display: flex;
+  flex-flow: column;
   gap: var(--ds-size-10);
+
+  @media (min-width: 48rem) {
+    display: grid;
+    grid-template-columns: 0.75fr 2fr;
+  }
 }
 
 .cards {

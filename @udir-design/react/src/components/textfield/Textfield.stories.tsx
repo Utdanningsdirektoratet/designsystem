@@ -6,7 +6,7 @@ import { Button, Divider, Paragraph } from '@udir-design/react/alpha';
 
 const meta: Meta<typeof Textfield> = {
   component: Textfield,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   argTypes: {
     multiline: {
       type: 'boolean',
@@ -41,6 +41,9 @@ const meta: Meta<typeof Textfield> = {
     },
   },
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+    },
     layout: 'centered',
   },
 };
@@ -202,8 +205,8 @@ export const Disabled: Story = {
           disabled
         />
         <Textfield
-          id="textarea-disabled"
-          label="Disabled Textarea"
+          id="multiline-textfield-disabled"
+          label="Disabled multiline Textfield"
           multiline
           rows={4}
           disabled
@@ -230,8 +233,8 @@ export const ReadOnly: Story = {
           readOnly
         />
         <Textfield
-          id="textarea-readonly"
-          label="ReadOnly Textarea"
+          id="multiline-textfield-readonly"
+          label="ReadOnly multiline Textfield"
           multiline
           rows={4}
           readOnly

@@ -19,7 +19,12 @@ export type Story = StoryObj<typeof Button>;
 
 const meta: Meta<typeof Button> = {
   component: Button,
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+      details: 'Vi har begrenset fargevalg til neutral og danger.',
+    },
     customStyles: {
       display: 'flex',
       flexDirection: 'row',
@@ -29,7 +34,6 @@ const meta: Meta<typeof Button> = {
       gap: 'var(--ds-size-4)',
     },
   },
-  tags: ['beta'],
 };
 
 export default meta;

@@ -11,8 +11,12 @@ import { expect, userEvent, within } from 'storybook/test';
 
 const meta: Meta<typeof Pagination> = {
   component: Pagination,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+      details: 'Vi har fjernet mulighet for fargevalg.',
+    },
     layout: 'centered',
   },
 };

@@ -22,7 +22,8 @@ addons.setConfig({
         text: 'Alpha',
         style: {
           backgroundColor: 'var(--ds-color-danger-surface-tinted)',
-          borderColor: 'var(--ds-color-danger-border-subtle)',
+          borderColor: 'var(--ds-color-danger-surface-tinted)',
+          borderRadius: 'var(--ds-border-radius-sm)',
           color: 'var(--ds-color-danger-text-default)',
         },
       },
@@ -33,7 +34,8 @@ addons.setConfig({
         text: 'Beta',
         style: {
           backgroundColor: 'var(--ds-color-warning-surface-tinted)',
-          borderColor: 'var(--ds-color-warning-border-subtle)',
+          borderColor: 'var(--ds-color-warning-surface-tinted)',
+          borderRadius: 'var(--ds-border-radius-sm)',
           color: 'var(--ds-color-warning-text-default)',
         },
       },

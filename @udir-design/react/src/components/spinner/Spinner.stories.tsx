@@ -3,8 +3,11 @@ import { Spinner } from './Spinner';
 
 const meta: Meta<typeof Spinner> = {
   component: Spinner,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+    },
     customStyles: {
       display: 'flex',
       gap: '1rem',

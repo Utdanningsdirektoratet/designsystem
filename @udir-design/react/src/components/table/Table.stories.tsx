@@ -8,8 +8,13 @@ import { Pagination, usePagination } from '@digdir/designsystemet-react';
 
 const meta: Meta<typeof Table> = {
   component: Table,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+      details:
+        'Vi har lagt til mulighet for bakgrunnsfarge på overskriftsrader og kolonner, samt andre mindre designjusteringer.',
+    },
     customStyles: {
       width: 'fit-content',
       margin: '0 auto',

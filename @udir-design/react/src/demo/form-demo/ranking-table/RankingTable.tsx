@@ -40,6 +40,7 @@ export const RankingTable = ({
       aria-invalid={!!error}
       aria-describedby={error ? errorId : undefined}
       id="rankings"
+      className={classes.fieldset}
       {...focusableFieldsetProps}
     >
       {title && (
@@ -47,7 +48,7 @@ export const RankingTable = ({
           <Heading level={2}>{title}</Heading>
         </Fieldset.Legend>
       )}
-      <Table style={{ tableLayout: 'fixed' }}>
+      <Table className={classes.table}>
         <Table.Head>
           <Table.Row>
             <Table.HeaderCell className={classes.assertions}>

@@ -21,8 +21,11 @@ const schoolSuppliesImg =
 
 const meta: Meta<typeof Card> = {
   component: Card,
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+    },
     customStyles: {
       width: '100%',
       maxWidth: 800,
@@ -279,22 +282,46 @@ export const WithLink: Story = {
 };
 
 export const Horizontal: Story = {
-  parameters: {
-    customStyles: {
-      gridTemplateColumns: 'repeat(1fr)',
-    },
-  },
-  args: {
-    style: { display: 'grid', gridTemplateColumns: '1fr 1fr' },
-    children: [
-      <Card.Block>
-        <Heading>Card med grid</Heading>
-      </Card.Block>,
-      <Card.Block>
-        <Paragraph>
-          Eksempel på hvordan du kan bruke et Card horisontalt ved bruk av grid.
-        </Paragraph>
-      </Card.Block>,
-    ],
+  render: () => {
+    const url =
+      'https://www.udir.no/contentassets/0ae1c5846c254b9f8800c59c393fd03d/skolemiljo.png';
+    return (
+      <Card
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'auto 350px',
+          width: '550px',
+        }}
+      >
+        <Card.Block>
+          <img
+            src={url}
+            alt="Barn som spiser lunsj"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              display: 'block',
+            }}
+          />
+        </Card.Block>
+        <Card.Block>
+          <Heading>
+            <a
+              href="https://www.udir.no/laring-og-trivsel/skolemiljo/slik-kan-skolen-handtere-et-utrygt-skolemiljo/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hva gjør du når en elev ikke har det trygt og godt på skolen?
+            </a>
+          </Heading>
+          <Paragraph>
+            Hvis dere mistenker eller kjenner til at en elev ikke har det trygt
+            og godt, skal dere snarest undersøke saken. Vi har laget råd om hva
+            dere kan gjøre.
+          </Paragraph>
+        </Card.Block>
+      </Card>
+    );
   },
 };

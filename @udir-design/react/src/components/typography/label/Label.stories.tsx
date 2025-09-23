@@ -3,7 +3,12 @@ import { Label } from './Label';
 
 const meta: Meta<typeof Label> = {
   component: Label,
-  tags: ['alpha', '!autodocs'],
+  tags: ['alpha', '!autodocs', 'digdir'],
+  parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+    },
+  },
   title: 'Components/Typography/Label',
 };
 
