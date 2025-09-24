@@ -7,4 +7,3 @@ export * from './suggestion/Suggestion';
 export * from './switch/Switch';
 export * from './tabs/Tabs';
 export * from './toggleGroup/ToggleGroup';
-export * from './typography';
