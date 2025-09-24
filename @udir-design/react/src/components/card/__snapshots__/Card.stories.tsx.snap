@@ -115,13 +115,13 @@ exports[`Composed 1`] = `
 exports[`Horizontal 1`] = `
 <div
   data-variant="default"
-  style="display: grid; grid-template-columns: auto 350px; width: 550px;"
+  style="display: grid; grid-auto-flow: column; width: 700px;"
 >
   <div>
     <img
       alt="Barn som spiser lunsj"
       src="https://www.udir.no/contentassets/0ae1c5846c254b9f8800c59c393fd03d/skolemiljo.png"
-      style="width: 100%; height: 100%; object-fit: cover; display: block;"
+      style="height: 100%; object-fit: cover;"
     >
   </div>
   <div>
