@@ -11,9 +11,9 @@ exports[`Auto Hide Sticky 1`] = `
         alt
         src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
       >
-      <h2 data-size="xs">
+      <span data-size="xs">
         Tjenestenavn
-      </h2>
+      </span>
     </a>
     <div>
       <nav
@@ -94,9 +94,12 @@ exports[`Auto Hide Sticky 1`] = `
         data-variant="default"
       >
         <nav
-          aria-label="header-menu-navigation"
+          aria-labelledby="header-menu-navigation"
           style="display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); max-width: 800px; margin: 0px auto; padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10); row-gap: var(--ds-size-10); column-gap: ;"
         >
+          <h2 id="header-menu-navigation">
+            Menynavigasjon
+          </h2>
           <div data-hide="md">
             <h3
               data-size="xs"
@@ -500,9 +503,9 @@ exports[`Preview 1`] = `
         alt
         src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
       >
-      <h2 data-size="xs">
+      <span data-size="xs">
         Tjenestenavn
-      </h2>
+      </span>
     </a>
   </div>
 </header>
@@ -519,9 +522,9 @@ exports[`Responsive 1`] = `
         alt
         src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
       >
-      <h2 data-size="xs">
+      <span data-size="xs">
         Tjenestenavn
-      </h2>
+      </span>
     </a>
     <div>
       <nav
@@ -885,9 +888,12 @@ exports[`Responsive 1`] = `
           </ul>
         </div>
         <nav
-          aria-label="header-menu-navigation"
+          aria-labelledby="header-menu-navigation"
           style="display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); max-width: 800px; margin: 0px auto; padding: var(--ds-size-10); row-gap: var(--ds-size-10); column-gap: ;"
         >
+          <h2 id="header-menu-navigation">
+            Menynavigasjon
+          </h2>
           <div data-hide="lg">
             <h3
               data-size="xs"
@@ -1314,7 +1320,7 @@ exports[`Udir No 1`] = `
         data-variant="default"
       >
         <nav
-          aria-label="header-menu-navigation"
+          aria-labelledby="header-menu-navigation"
           style="display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); max-width: 1280px; margin: 0px auto; padding: var(--ds-size-10) var(--ds-size-15); row-gap: var(--ds-size-10); column-gap: ;"
         >
           <div
@@ -1334,6 +1340,9 @@ exports[`Udir No 1`] = `
             >
             </button>
           </div>
+          <h2 id="header-menu-navigation">
+            Menynavigasjon
+          </h2>
           <div>
             <h3
               data-size="xs"
@@ -2400,9 +2409,9 @@ exports[`With Menu 1`] = `
         alt
         src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
       >
-      <h2 data-size="xs">
+      <span data-size="xs">
         Tjenestenavn
-      </h2>
+      </span>
     </a>
     <div>
       <button
@@ -2452,9 +2461,12 @@ exports[`With Menu 1`] = `
         data-variant="default"
       >
         <nav
-          aria-label="header-menu-navigation"
+          aria-labelledby="header-menu-navigation"
           style="display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); max-width: 800px; margin: 0px auto; padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10); row-gap: var(--ds-size-10); column-gap: ;"
         >
+          <h2 id="header-menu-navigation">
+            Menynavigasjon
+          </h2>
           <div>
             <h3
               data-size="xs"
@@ -2737,9 +2749,9 @@ exports[`With Navigation Links 1`] = `
         alt
         src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
       >
-      <h2 data-size="xs">
+      <span data-size="xs">
         Tjenestenavn
-      </h2>
+      </span>
     </a>
     <div>
       <nav
@@ -2913,9 +2925,9 @@ exports[`With Navigation Links And Menu 1`] = `
         alt
         src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
       >
-      <h2 data-size="xs">
+      <span data-size="xs">
         Tjenestenavn
-      </h2>
+      </span>
     </a>
     <div>
       <nav
@@ -2988,9 +3000,12 @@ exports[`With Navigation Links And Menu 1`] = `
         data-variant="default"
       >
         <nav
-          aria-label="header-menu-navigation"
+          aria-labelledby="header-menu-navigation"
           style="display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); max-width: 800px; margin: 0px auto; padding: var(--ds-size-5) var(--ds-size-10) var(--ds-size-10); row-gap: var(--ds-size-10); column-gap: ;"
         >
+          <h2 id="header-menu-navigation">
+            Menynavigasjon
+          </h2>
           <div>
             <h3
               data-size="xs"
@@ -3169,15 +3184,12 @@ exports[`With Search 1`] = `
         alt
         src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
       >
-      <h2 data-size="xs">
+      <span data-size="xs">
         Tjenestenavn
-      </h2>
+      </span>
     </a>
     <div>
-      <div
-        data-variant="collapsed"
-        data-size="md"
-      >
+      <div data-size="md">
         <input
           placeholder="Søk"
           aria-label="Søk"
@@ -3208,9 +3220,9 @@ exports[`With Theme Menus 1`] = `
         alt
         src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
       >
-      <h2 data-size="xs">
+      <span data-size="xs">
         Tjenestenavn
-      </h2>
+      </span>
     </a>
     <div>
       <button
@@ -3263,9 +3275,12 @@ exports[`With Theme Menus 1`] = `
         data-variant="default"
       >
         <nav
-          aria-label="header-menu-theme1-navigation"
+          aria-labelledby="header-menu-theme1-navigation"
           style="display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); max-width: 800px; margin: 0px auto; padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10); justify-items: center; row-gap: var(--ds-size-10); column-gap: ;"
         >
+          <h2 id="header-menu-theme1-navigation">
+            Temameny 1 navigasjon
+          </h2>
           <div>
             <h3
               data-size="xs"
@@ -3608,9 +3623,12 @@ exports[`With Theme Menus 1`] = `
         data-variant="default"
       >
         <nav
-          aria-label="header-menu-theme2-navigation"
+          aria-labelledby="header-menu-theme2-navigation"
           style="display: grid; grid-template-columns: 1fr 1fr; max-width: 500px; margin: 0px auto; padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10); justify-items: center; row-gap: var(--ds-size-10); column-gap: ;"
         >
+          <h2 id="header-menu-theme2-navigation">
+            Temameny 2 navigasjon
+          </h2>
           <div>
             <h3
               data-size="xs"
@@ -3863,9 +3881,12 @@ exports[`With Theme Menus 1`] = `
         data-variant="default"
       >
         <nav
-          aria-label="header-menu-navigation"
+          aria-labelledby="header-menu-navigation"
           style="display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); max-width: 800px; margin: 0px auto; padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10); row-gap: var(--ds-size-10); column-gap: ;"
         >
+          <h2 id="header-menu-navigation">
+            Menynavigasjon
+          </h2>
           <div>
             <h3
               data-size="xs"
@@ -4376,9 +4397,9 @@ exports[`With User Button 1`] = `
         alt
         src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
       >
-      <h2 data-size="xs">
+      <span data-size="xs">
         Tjenestenavn
-      </h2>
+      </span>
     </a>
     <div>
       <button

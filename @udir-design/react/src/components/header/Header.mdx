@@ -238,11 +238,21 @@ Sørg for at `Header` er responsiv og tilpasser seg ulike skjermstørrelser. Bru
 
 ## Tilgjengelighet
 
-Bruk [`<nav>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/nav) rundt navigasjonsområder.
+Bruk [`<nav>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/nav) rundt navigasjonsområder som plasseres i `Header.Menu`.
 
-- Knytt området til en overskrift med `aria-labelledby` og en `id` på overskriften.
-- Hvis navigasjonsområdet ikke har en overskrift, bruk `aria-label` i stedet.
-- Se meny-eksemplene over for hvordan dette kan gjøres i praksis.
+- Koble `<nav>` til en overskrift ved å bruke `aria-labelledby` og tilsvarende `id` på overskriften.
+- Hvis navigasjonsområdet ikke har en overskrift, legg til en skjult `<h2>` med relevant tittel. Bruk klassen `ds-sr-only` for å skjule den visuelt.
+
+```tsx
+<nav aria-labelledby="header-menu-navigation">
+  <h2 id="header-menu-navigation" className="ds-sr-only">
+    Menynavigasjon
+  </h2>
+  <ListUnordered>{/* liste med lenker */}</ListUnordered>
+</nav>
+```
+
+Se meny-eksemplene for hvordan dette kan gjøres i praksis.
 
 ## Kompatibilitet
 

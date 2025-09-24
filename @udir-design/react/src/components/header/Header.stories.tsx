@@ -252,7 +252,7 @@ export const WithMenu: Story = {
       <Header.MenuButton />
       <Header.Menu>
         <nav
-          aria-label="header-menu-navigation"
+          aria-labelledby="header-menu-navigation"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
@@ -264,6 +264,9 @@ export const WithMenu: Story = {
           }}
           className={styles.headerMenuSmall}
         >
+          <h2 id="header-menu-navigation" className="ds-sr-only">
+            Menynavigasjon
+          </h2>
           {menuLinks.map((column) => (
             <div key={column.heading}>
               <Heading
@@ -319,7 +322,7 @@ export const WithThemeMenus: Story = {
         </Header.ThemeMenuButton>
         <Header.Menu id="header-education-menu">
           <nav
-            aria-label="header-menu-theme1-navigation"
+            aria-labelledby="header-menu-theme1-navigation"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
@@ -331,6 +334,9 @@ export const WithThemeMenus: Story = {
               rowGap: 'var(--ds-size-10)',
             }}
           >
+            <h2 id="header-menu-theme1-navigation" className="ds-sr-only">
+              Temameny 1 navigasjon
+            </h2>
             {themeMenu1.map((column) => (
               <div key={column.heading}>
                 <Heading
@@ -362,7 +368,7 @@ export const WithThemeMenus: Story = {
         </Header.ThemeMenuButton>
         <Header.Menu id="header-learning-menu">
           <nav
-            aria-label="header-menu-theme2-navigation"
+            aria-labelledby="header-menu-theme2-navigation"
             style={{
               display: 'grid',
               gridTemplateColumns: '1fr 1fr',
@@ -374,6 +380,9 @@ export const WithThemeMenus: Story = {
               rowGap: 'var(--ds-size-10)',
             }}
           >
+            <h2 id="header-menu-theme2-navigation" className="ds-sr-only">
+              Temameny 2 navigasjon
+            </h2>
             {themeMenu2.map((column) => (
               <div key={column.heading}>
                 <Heading
@@ -400,7 +409,7 @@ export const WithThemeMenus: Story = {
         <Header.MenuButton data-hide="md" />
         <Header.Menu>
           <nav
-            aria-label="header-menu-navigation"
+            aria-labelledby="header-menu-navigation"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
@@ -411,6 +420,9 @@ export const WithThemeMenus: Story = {
               rowGap: 'var(--ds-size-10)',
             }}
           >
+            <h2 id="header-menu-navigation" className="ds-sr-only">
+              Menynavigasjon
+            </h2>
             {themeMenu1.map((column) => (
               <div key={column.heading + 'mobile'}>
                 <Heading
@@ -505,7 +517,7 @@ export const WithNavigationLinksAndMenu: Story = {
       <Header.MenuButton />
       <Header.Menu>
         <nav
-          aria-label="header-menu-navigation"
+          aria-labelledby="header-menu-navigation"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(15rem, 1fr))',
@@ -517,6 +529,9 @@ export const WithNavigationLinksAndMenu: Story = {
           }}
           className={styles.headerMenuSmall}
         >
+          <h2 id="header-menu-navigation" className="ds-sr-only">
+            Menynavigasjon
+          </h2>
           {navAndMenuLinks.map((column) => (
             <div key={column.heading}>
               <Heading
@@ -641,7 +656,7 @@ export const Responsive: Story = {
             </Dropdown.List>
           </Dropdown>
           <nav
-            aria-label="header-menu-navigation"
+            aria-labelledby="header-menu-navigation"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(12rem, 1fr))',
@@ -653,6 +668,9 @@ export const Responsive: Story = {
             }}
             className={styles.headerMenuSmall}
           >
+            <h2 id="header-menu-navigation" className="ds-sr-only">
+              Menynavigasjon
+            </h2>
             {responsiveLinks.map((column) => (
               <div
                 key={column.heading}
@@ -705,7 +723,7 @@ export const AutoHideSticky: Story = {
           <Header.MenuButton variant="secondary" />
           <Header.Menu>
             <nav
-              aria-label="header-menu-navigation"
+              aria-labelledby="header-menu-navigation"
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(12rem, 1fr))',
@@ -717,6 +735,9 @@ export const AutoHideSticky: Story = {
               }}
               className={styles.headerMenuSmall}
             >
+              <h2 id="header-menu-navigation" className="ds-sr-only">
+                Menynavigasjon
+              </h2>
               {responsiveLinks.map((column) => (
                 <div
                   key={column.heading}
@@ -914,7 +935,7 @@ export const UdirNo: Story = {
         <Header.MenuButton variant="primary" />
         <Header.Menu>
           <nav
-            aria-label="header-menu-navigation"
+            aria-labelledby="header-menu-navigation"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(20rem, 1fr))',
@@ -929,6 +950,9 @@ export const UdirNo: Story = {
               <Search.Input aria-label="Søk" placeholder="Søk" />
               <Search.Clear />
             </Search>
+            <h2 id="header-menu-navigation" className="ds-sr-only">
+              Menynavigasjon
+            </h2>
             {linksUdirNo.map((column) => (
               <div key={column.heading}>
                 <Heading
