@@ -1,0 +1,19 @@
+.root {
+  margin-top: var(--ds-size-10);
+}
+
+.filterSection {
+  display: flex;
+  gap: var(--ds-size-6);
+  margin-top: var(--ds-size-6);
+}
+
+.iconSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-10);
+
+  @media (min-width: 992px) {
+    flex-direction: row;
+  }
+}
