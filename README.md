@@ -34,6 +34,9 @@ I dette repositoriet lever den delen av designsystemet som implementeres i kode:
   - [Oppsett lokalt](#oppsett-lokalt)
   - [Monorepo - enkelt forklart](#monorepo---enkelt-forklart)
   - [Hvordan jobbe med kodebasen](#hvordan-jobbe-med-kodebasen)
+  - [Hvordan legge til nye prosjekter i arbeidsområdet](#hvordan-legge-til-nye-prosjekter-i-arbeidsområdet)
+  - [Hvordan legge til avhengigheter mellom prosjekter](#hvordan-legge-til-avhengigheter-mellom-prosjekter)
+  - [Hvordan legge til nye eksterne avhengigheter](#hvordan-legge-til-nye-eksterne-avhengigheter)
   - [Hvordan oppgradere avhengigheter](#hvordan-oppgradere-avhengigheter)
   - [Hvordan publisere en ny versjon](#hvordan-publisere-en-ny-versjon)
   - [Oversikt over verktøy](#oversikt-over-verktøy)
@@ -235,10 +238,6 @@ flowchart-elk BT
 
 ## Hvordan jobbe med kodebasen
 
-> [!CAUTION]
-> Denne dokumentasjonen inneholder foreløpig ingen informasjon om hvordan du går fram for å skrive tester.
-> Foreløpig kan du lese [Hva tester vi](#hva-tester-vi)-seksjonen, og be en kollega om hjelp om du står fast.
-
 ### Mappestruktur
 
 Hver komponent skal ha en undermappe i `@udir-design/react/src/components`. F.eks:
@@ -381,6 +380,42 @@ Les mer i Nx sin dokumentasjon:
 
 - [Explore your Workspace](https://nx.dev/features/explore-graph)
 - [Run Tasks](https://nx.dev/features/run-tasks).
+
+### Testing
+
+> [!CAUTION]
+> Denne dokumentasjonen inneholder foreløpig ingen informasjon om hvordan du går fram for å skrive tester.
+> Foreløpig kan du lese [Hva tester vi](#hva-tester-vi)-seksjonen, og be en kollega om hjelp om du står fast.
+
+#### Snapshottester
+
+Det gjøres snapshottester av alle stories. Dette kan genereres med kommandoen:
+
+```bash
+pnpm nx test:storybook --update
+```
+
+### Pull request prosessen
+
+## Hvordan legge til nye prosjekter i arbeidsområdet
+
+Når du lager et nytt prosjekt i repoet ... blablabla
+
+Du trenger
+
+- `package.json`
+- `tsconfig.json` ???
+- Oppdatere eventuelle [avhengigheter mellom prosjekter](#hvordan-legge-til-avhengigheter-mellom-prosjekter)
+
+## Hvordan legge til avhengigheter mellom prosjekter
+
+## Hvordan legge til nye eksterne avhengigheter
+
+Legg til nye eksterne avhengigheter med
+
+```
+pnpm add <package>
+```
 
 ## Hvordan oppgradere avhengigheter
 
