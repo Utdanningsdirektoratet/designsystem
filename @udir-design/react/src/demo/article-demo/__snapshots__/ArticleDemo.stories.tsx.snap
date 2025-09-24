@@ -235,4 +235,43 @@ exports[`Article Story 1`] = `
     </button>
   </div>
 </article>
+<footer style="--udsc-header-max-width: 1280px;">
+  <div>
+    <ul data-variant="simple">
+      <li>
+        <a href="https://www.udir.no/om-udir/personvernerklaring-udir/">
+          Om Udir
+        </a>
+      </li>
+      <li>
+        <a href="https://www.udir.no/">
+          Kontakt oss
+        </a>
+      </li>
+    </ul>
+    <ul data-variant="simple">
+      <li>
+        <a href="https://www.udir.no/om-udir/personvernerklaring-udir/">
+          Personvern
+        </a>
+      </li>
+      <li>
+        <a href="https://www.udir.no/">
+          Informasjonskapsler
+        </a>
+      </li>
+      <li>
+        <a href="https://uustatus.no/nb/erklaringer/publisert/ce43e104-3893-45ac-90c8-45deb6f17624">
+          Tilgjengelighetserklæring
+        </a>
+      </li>
+    </ul>
+    <a href="https://udir.no">
+      <img
+        alt="Utdanningsdirektoratet"
+        src="/assets/img/logo.svg"
+      >
+    </a>
+  </div>
+</footer>
 `;
