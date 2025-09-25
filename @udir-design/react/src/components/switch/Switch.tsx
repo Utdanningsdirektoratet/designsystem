@@ -2,10 +2,12 @@ import {
   Switch as DigdirSwitch,
   type SwitchProps as DigdirSwitchProps,
 } from '@digdir/designsystemet-react';
-import { ForwardRefExoticComponent } from 'react';
+import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 
 type SwitchProps = Omit<DigdirSwitchProps, 'data-color'>;
 
-const Switch = DigdirSwitch as ForwardRefExoticComponent<SwitchProps>;
+const Switch = DigdirSwitch as ForwardRefExoticComponent<
+  SwitchProps & RefAttributes<ComponentRef<typeof DigdirSwitch>>
+>;
 
 export { Switch, SwitchProps };

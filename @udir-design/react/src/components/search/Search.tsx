@@ -8,11 +8,13 @@ import {
   SearchButton,
   type SearchButtonProps,
 } from '@digdir/designsystemet-react';
-import { ForwardRefExoticComponent } from 'react';
+import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 
 type SearchProps = Omit<DigdirSearchProps, 'data-color'>;
 
-const Search = DigdirSearch as ForwardRefExoticComponent<SearchProps> &
+const Search = DigdirSearch as ForwardRefExoticComponent<
+  SearchProps & RefAttributes<ComponentRef<typeof DigdirSearch>>
+> &
   Pick<typeof DigdirSearch, 'Clear' | 'Input' | 'Button'>;
 
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets

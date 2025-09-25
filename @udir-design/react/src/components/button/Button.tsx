@@ -2,7 +2,7 @@ import {
   Button as DigdirButton,
   type ButtonProps as DigdirButtonProps,
 } from '@digdir/designsystemet-react';
-import { ForwardRefExoticComponent } from 'react';
+import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 
 type ButtonProps = Omit<DigdirButtonProps, 'data-color'> & {
   /**
@@ -11,6 +11,8 @@ type ButtonProps = Omit<DigdirButtonProps, 'data-color'> & {
   'data-color'?: 'neutral' | 'danger';
 };
 
-const Button = DigdirButton as ForwardRefExoticComponent<ButtonProps>;
+const Button = DigdirButton as ForwardRefExoticComponent<
+  ButtonProps & RefAttributes<ComponentRef<typeof DigdirButton>>
+>;
 
 export { Button, ButtonProps };

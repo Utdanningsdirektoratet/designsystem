@@ -7,15 +7,17 @@ import {
   ListUnordered as DigdirListUnordered,
   type ListUnorderedProps as DigdirListUnorderedProps,
 } from '@digdir/designsystemet-react';
-import { ForwardRefExoticComponent } from 'react';
+import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 
 type ListOrderedProps = Omit<DigdirListOrderedProps, 'data-color'>;
 type ListUnorderedProps = Omit<DigdirListUnorderedProps, 'data-color'>;
 
-const ListOrdered =
-  DigdirListOrdered as ForwardRefExoticComponent<ListOrderedProps>;
-const ListUnordered =
-  DigdirListUnordered as ForwardRefExoticComponent<ListUnorderedProps>;
+const ListOrdered = DigdirListOrdered as ForwardRefExoticComponent<
+  ListOrderedProps & RefAttributes<ComponentRef<typeof DigdirListOrdered>>
+>;
+const ListUnordered = DigdirListUnordered as ForwardRefExoticComponent<
+  ListUnorderedProps & RefAttributes<ComponentRef<typeof DigdirListUnordered>>
+>;
 
 const List = Object.assign(DigdirList, {
   Item: ListItem,

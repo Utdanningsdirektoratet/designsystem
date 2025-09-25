@@ -8,13 +8,14 @@ import {
   BreadcrumbsList,
   type BreadcrumbsListProps,
 } from '@digdir/designsystemet-react';
-import { ForwardRefExoticComponent } from 'react';
+import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 
 type BreadcrumbsProps = Omit<DigdirBreadcrumbsProps, 'data-color'>;
 
-const Breadcrumbs =
-  DigdirBreadcrumbs as ForwardRefExoticComponent<BreadcrumbsProps> &
-    Pick<typeof DigdirBreadcrumbs, 'Item' | 'Link' | 'List'>;
+const Breadcrumbs = DigdirBreadcrumbs as ForwardRefExoticComponent<
+  BreadcrumbsProps & RefAttributes<ComponentRef<typeof DigdirBreadcrumbs>>
+> &
+  Pick<typeof DigdirBreadcrumbs, 'Item' | 'Link' | 'List'>;
 
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 Breadcrumbs.displayName = 'Breadcrumbs';
