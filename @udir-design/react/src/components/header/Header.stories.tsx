@@ -16,6 +16,7 @@ import {
 import { useState } from 'react';
 import { ArrowRightIcon, BriefcaseIcon, LeaveIcon } from '@navikt/aksel-icons';
 import styles from './header.stories.module.css';
+import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 
 const meta: Meta<typeof Header> = {
   component: Header,
@@ -26,6 +27,10 @@ const meta: Meta<typeof Header> = {
       padding: 0,
     },
   },
+  args: {
+    applicationName: 'Tjenestenavn',
+  },
+  decorators: [withResponsiveDataSize],
 };
 
 export default meta;
@@ -33,7 +38,6 @@ type Story = StoryObj<typeof Header>;
 
 export const Preview: Story = {
   args: {
-    applicationName: 'Tjenestenavn',
     sticky: false,
   },
   render: (args) => <Header {...args} />,
@@ -43,8 +47,8 @@ const profileImage =
   'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
 export const WithUserButton: Story = {
-  render: () => (
-    <Header applicationName="Tjenestenavn">
+  render: (args) => (
+    <Header {...args}>
       <Header.UserButton
         username="Stian Hansen"
         userRole="Admin"
@@ -128,11 +132,11 @@ export const WithUserButton: Story = {
 };
 
 export const WithSearch: Story = {
-  render() {
+  render(args) {
     const [value, setValue] = useState('');
     return (
-      <Header applicationName="Tjenestenavn">
-        <Header.Search data-size="md">
+      <Header {...args}>
+        <Header.Search>
           <Search.Input
             aria-label="Søk"
             placeholder="Søk"
@@ -147,8 +151,8 @@ export const WithSearch: Story = {
 };
 
 export const WithNavigationLinks: Story = {
-  render: () => (
-    <Header applicationName="Tjenestenavn">
+  render: (args) => (
+    <Header {...args}>
       <Header.Navigation data-show="xs">
         <Header.Navigation.Item href="#">Link 1</Header.Navigation.Item>
         <Header.Navigation.Item href="#" active>
@@ -247,8 +251,8 @@ const menuLinks = [
 ];
 
 export const WithMenu: Story = {
-  render: () => (
-    <Header applicationName="Tjenestenavn">
+  render: (args) => (
+    <Header {...args}>
       <Header.MenuButton />
       <Header.Menu>
         <nav
@@ -311,9 +315,9 @@ const themeMenu2 = Array.from({ length: 2 }, (_, i) => ({
 }));
 
 export const WithThemeMenus: Story = {
-  render() {
+  render(args) {
     return (
-      <Header applicationName="Tjenestenavn">
+      <Header {...args}>
         <Header.ThemeMenuButton
           popovertarget="header-education-menu"
           data-show="md"
@@ -506,8 +510,8 @@ const navAndMenuLinks = [
 ];
 
 export const WithNavigationLinksAndMenu: Story = {
-  render: () => (
-    <Header applicationName="Tjenestenavn">
+  render: (args) => (
+    <Header {...args}>
       <Header.Navigation data-show="sm">
         <Header.Navigation.Item href="#" active>
           Eksamen
@@ -580,9 +584,9 @@ const responsiveLinks = ['Viktige lenker', 'Lenker', 'Andre lenker'].map(
 );
 
 export const Responsive: Story = {
-  render() {
+  render(args) {
     return (
-      <Header applicationName="Tjenestenavn">
+      <Header {...args}>
         <Header.Navigation data-show="lg">
           <Header.Navigation.Item href="#">Link 1</Header.Navigation.Item>
           <Header.Navigation.Item href="#" active>
@@ -626,8 +630,8 @@ export const Responsive: Story = {
             userRole="Admin"
             popovertarget="usermenuInMenu"
             avatar={<Avatar aria-hidden>SH</Avatar>}
-            style={{ marginLeft: 'auto', marginRight: 'var(--ds-size-5)' }}
             data-hide="md"
+            style={{ width: 'stretch', margin: '0 var(--ds-size-5)' }}
           />
           <Dropdown
             id="usermenuInMenu"
@@ -709,10 +713,10 @@ export const AutoHideSticky: Story = {
       overflow: 'visible',
     },
   },
-  render() {
+  render(args) {
     return (
       <>
-        <Header applicationName="Tjenestenavn">
+        <Header {...args}>
           <Header.Navigation data-show="md">
             <Header.Navigation.Item href="#">Link 1</Header.Navigation.Item>
             <Header.Navigation.Item href="#" active>
@@ -922,6 +926,10 @@ const linksUdirNo = [
 ];
 
 export const UdirNo: Story = {
+  args: {
+    applicationName: 'Utdanningsdirektoratet',
+    href: 'https://www.udir.no/',
+  },
   render() {
     return (
       <Header
@@ -934,6 +942,16 @@ export const UdirNo: Story = {
         </Search>
         <Header.MenuButton variant="primary" />
         <Header.Menu>
+          <Search
+            style={{
+              width: 'stretch',
+              margin: 'var(--ds-size-5) var(--ds-size-5) 0',
+            }}
+            data-hide="sm"
+          >
+            <Search.Input aria-label="Søk" placeholder="Søk" />
+            <Search.Clear />
+          </Search>
           <nav
             aria-labelledby="header-menu-navigation"
             style={{
@@ -946,10 +964,6 @@ export const UdirNo: Story = {
               rowGap: 'var(--ds-size-10)',
             }}
           >
-            <Search style={{ maxWidth: '280px' }} data-hide="sm">
-              <Search.Input aria-label="Søk" placeholder="Søk" />
-              <Search.Clear />
-            </Search>
             <h2 id="header-menu-navigation" className="ds-sr-only">
               Menynavigasjon
             </h2>
