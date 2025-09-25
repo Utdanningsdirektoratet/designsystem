@@ -13,11 +13,13 @@ import {
   DropdownButton,
   type DropdownButtonProps,
 } from '@digdir/designsystemet-react';
-import { ForwardRefExoticComponent } from 'react';
+import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 
 type DropdownProps = Omit<DigdirDropdownProps, 'data-color'>;
 
-const Dropdown = DigdirDropdown as ForwardRefExoticComponent<DropdownProps> &
+const Dropdown = DigdirDropdown as ForwardRefExoticComponent<
+  DropdownProps & RefAttributes<ComponentRef<typeof DigdirDropdown>>
+> &
   Pick<
     typeof DigdirDropdown,
     'TriggerContext' | 'Trigger' | 'List' | 'Item' | 'Heading' | 'Button'

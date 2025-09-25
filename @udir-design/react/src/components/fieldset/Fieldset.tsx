@@ -6,10 +6,12 @@ import {
   FieldsetLegend,
   type FieldsetLegendProps,
 } from '@digdir/designsystemet-react';
-import { ForwardRefExoticComponent } from 'react';
+import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 
 type FieldsetProps = Omit<DigdirFieldsetProps, 'data-color'>;
-const Fieldset = DigdirFieldset as ForwardRefExoticComponent<FieldsetProps> &
+const Fieldset = DigdirFieldset as ForwardRefExoticComponent<
+  FieldsetProps & RefAttributes<ComponentRef<typeof DigdirFieldset>>
+> &
   Pick<typeof DigdirFieldset, 'Legend' | 'Description'>;
 
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets

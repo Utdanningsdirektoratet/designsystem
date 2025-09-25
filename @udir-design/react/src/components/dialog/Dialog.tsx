@@ -8,12 +8,12 @@ import {
   DialogTrigger,
   type DialogTriggerProps,
 } from '@digdir/designsystemet-react';
-import { ForwardRefExoticComponent, RefAttributes } from 'react';
+import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 
 type DialogProps = Omit<DigdirDialogProps, 'data-color'>;
 
 const Dialog = DigdirDialog as ForwardRefExoticComponent<
-  DialogProps & RefAttributes<HTMLDialogElement>
+  DialogProps & RefAttributes<ComponentRef<typeof DigdirDialog>>
 > &
   Pick<typeof DigdirDialog, 'Block' | 'TriggerContext' | 'Trigger'>;
 
