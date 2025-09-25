@@ -7,9 +7,8 @@ import {
   VideoIcon,
   FloppydiskFillIcon,
 } from '@navikt/aksel-icons';
-import { Tabs } from '../alpha';
 import { Badge } from './Badge';
-import { Avatar, Button } from '../beta';
+import { Avatar, Button, Tabs } from '../beta';
 import { CSSProperties } from 'react';
 
 const meta: Meta<typeof Badge> = {

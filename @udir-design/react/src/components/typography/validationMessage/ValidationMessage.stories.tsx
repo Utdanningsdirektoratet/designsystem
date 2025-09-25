@@ -3,7 +3,7 @@ import { ValidationMessage } from './ValidationMessage';
 
 const meta: Meta<typeof ValidationMessage> = {
   component: ValidationMessage,
-  tags: ['alpha', '!autodocs', 'digdir'],
+  tags: ['beta', '!autodocs', 'digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

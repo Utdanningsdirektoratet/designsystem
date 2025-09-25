@@ -3,7 +3,7 @@ import { Paragraph } from './Paragraph';
 
 const meta: Meta<typeof Paragraph> = {
   component: Paragraph,
-  tags: ['alpha', '!autodocs', 'digdir'],
+  tags: ['beta', '!autodocs', 'digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
