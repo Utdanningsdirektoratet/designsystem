@@ -1,5 +1,6 @@
 .size {
-  @media (max-width: 480px) {
-    --ds-size: var(--ds-size--sm);
+  --ds-size: var(--ds-size--sm);
+  @media (min-width: 30rem) {
+    --ds-size: var(--ds-size--md);
   }
 }
