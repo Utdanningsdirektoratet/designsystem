@@ -236,7 +236,18 @@ Vurderingen av hvilken variant som brukes på knapper i `Header` skal baseres p�
 
 Sørg for at `Header` er responsiv og tilpasser seg ulike skjermstørrelser. Bruk `data-show` og `data-hide` for å kontrollere synligheten av elementer på forskjellige skjermstørrelser. Test `Header` på ulike enheter og skjermstørrelser for å sikre at det fungerer som forventet.
 
-`Header` og alle underkomponenter tilpasser seg automatisk til mindre skjermer i eksemplene. På skjermer under 480px får komponentene `data-size="sm"` for kompakt visning. Dette styres av en størrelsesmodus som kan settes på hele systemet. [Les mer om hvordan du setter størrelsesmoduser hos Digdir](https://www.designsystemet.no/no/fundamentals/code/sizes).
+I eksemplene tilpasser vi `Header` og alle underkomponenter til mindre skjermer gjennom `data-show`, `data-hide` og CSS media queries. På skjermer smalere enn 30rem (480px) får eksemplene størrelsesmodus `"sm"` for en mer kompakt visning:
+
+```css
+.example {
+  --ds-size: var(--ds-size--sm);
+  @media (min-width: 30rem) {
+    --ds-size: var(--ds-size--md);
+  }
+}
+```
+
+[Les mer om hvordan du setter størrelsesmoduser hos Digdir](https://www.designsystemet.no/no/fundamentals/code/sizes).
 
 ## Tilgjengelighet
 
