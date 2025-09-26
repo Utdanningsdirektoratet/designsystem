@@ -8,7 +8,7 @@ exports[`As Link 1`] = `
   <span
     data-variant="circle"
     role="img"
-    aria-label="Ola Nordmann"
+    aria-hidden="true"
   >
   </span>
   <span>
@@ -109,7 +109,7 @@ exports[`In Dropdown 1`] = `
     data-variant="circle"
     data-initials="ON"
     role="img"
-    aria-label="Ola Nordmann"
+    aria-hidden="true"
     data-size="sm"
   >
   </span>
@@ -164,7 +164,7 @@ exports[`In Dropdown 1`] = `
             data-variant="circle"
             data-initials="ON"
             role="img"
-            aria-label="Ola Nordmann"
+            aria-hidden="true"
             data-size="xs"
           >
           </span>
@@ -180,9 +180,9 @@ exports[`In Dropdown 1`] = `
         <span
           data-variant="circle"
           role="img"
-          aria-label="Sogndal Kommune"
           data-size="xs"
           data-color="support1"
+          aria-hidden="true"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

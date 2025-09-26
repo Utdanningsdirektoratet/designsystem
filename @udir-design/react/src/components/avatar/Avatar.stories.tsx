@@ -86,12 +86,7 @@ export const InDropdown: Story = {
   render: (args) => (
     <Dropdown.TriggerContext>
       <Dropdown.Trigger variant="tertiary">
-        <Avatar
-          {...args}
-          aria-label="Ola Nordmann"
-          data-size="sm"
-          initials="ON"
-        />
+        <Avatar {...args} aria-hidden data-size="sm" initials="ON" />
         Ola Nordmann
         <ChevronUpIcon aria-hidden />
       </Dropdown.Trigger>
@@ -102,23 +97,14 @@ export const InDropdown: Story = {
             <Dropdown.Button>
               <Badge.Position overlap="circle">
                 <Badge data-color="danger" data-size="sm" />
-                <Avatar
-                  {...args}
-                  aria-label="Ola Nordmann"
-                  data-size="xs"
-                  initials="ON"
-                />
+                <Avatar {...args} aria-hidden data-size="xs" initials="ON" />
               </Badge.Position>
               Ola Nordmann
             </Dropdown.Button>
           </Dropdown.Item>
           <Dropdown.Item>
             <Dropdown.Button>
-              <Avatar
-                data-size="xs"
-                data-color="support1"
-                aria-label="Sogndal Kommune"
-              >
+              <Avatar data-size="xs" data-color="support1" aria-hidden>
                 <BriefcaseIcon />
               </Avatar>
               Sogndal kommune
@@ -132,7 +118,7 @@ export const InDropdown: Story = {
 
 export const AsLink: Story = {
   args: {
-    'aria-label': 'Ola Nordmann',
+    'aria-hidden': true,
   },
   render: (args) => (
     <Link
