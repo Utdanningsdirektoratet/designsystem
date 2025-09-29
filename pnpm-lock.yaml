@@ -138,8 +138,8 @@ importers:
   '@udir-design/css':
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.5.0
-        version: 1.5.0
+        specifier: 1.6.0
+        version: 1.6.0
       '@udir-design/theme':
         specifier: workspace:*
         version: link:../theme
@@ -172,8 +172,8 @@ importers:
   '@udir-design/react':
     dependencies:
       '@digdir/designsystemet-react':
-        specifier: 1.5.0
-        version: 1.5.0(@types/react@19.1.14)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: 1.6.0
+        version: 1.6.0(@types/react@19.1.14)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@navikt/aksel-icons':
         specifier: ^7.31.0
         version: 7.31.0(react@19.1.1)
@@ -332,8 +332,8 @@ importers:
   '@udir-design/theme':
     dependencies:
       '@digdir/designsystemet':
-        specifier: 1.5.0
-        version: 1.5.0
+        specifier: 1.6.0
+        version: 1.6.0
     devDependencies:
       '@internal/build-tools':
         specifier: workspace:*
@@ -348,8 +348,8 @@ importers:
   design-tokens:
     devDependencies:
       '@digdir/designsystemet':
-        specifier: 1.5.0
-        version: 1.5.0
+        specifier: 1.6.0
+        version: 1.6.0
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -1203,18 +1203,18 @@ packages:
     resolution: {integrity: sha512-Y6+WUMsTFWE5jb20IFP4YGa5IrGY/+a/FbOSjDF/wz9gepU2hwCYSXRHP/vPwBvwcY3SVMASt4yXxbXNXigmZQ==}
     engines: {node: '>=18'}
 
-  '@digdir/designsystemet-css@1.5.0':
-    resolution: {integrity: sha512-cfDfgTXBru+N9gi8T9PGXEonrbK7sCqKxT21Pv6YijekzDI5bQVjBb2oFFvqzgMbCbsiS+lFqYhOJ8XwvP5Vyw==}
+  '@digdir/designsystemet-css@1.6.0':
+    resolution: {integrity: sha512-I6bT2S4uKxTFEgi+y8/kGIloxMlW/4dKUhBDHi+nqmQFaBW7SK85/+y7xboQdjgmhFdLq9Uu2bfn6K1O/1fatQ==}
 
-  '@digdir/designsystemet-react@1.5.0':
-    resolution: {integrity: sha512-Tsbn9mpFe1t0Su+oOfF0Z18U1xaiYffxp/RcTIWFCr83Ab6wfK/g3egEWRXOCZJTDbqdXvnwzZ07qrz5cFR/XQ==}
+  '@digdir/designsystemet-react@1.6.0':
+    resolution: {integrity: sha512-zaggFLCc64+zrVMcruj7ck5yPvpYx6LT7P7rUfzvSyMHu1vIw0W01YBp6omAv7vJi6qZ7gu1QAFQiADGmditlg==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet@1.5.0':
-    resolution: {integrity: sha512-TsYyqIuyl7fRyfRH1bKKxirrGeriL1uCnCCoY/ZUHY6dq9FsK7DthiB2GAnRv4IiyKSgYwU/LW9yJO+8CR+4Yw==}
-    engines: {node: '>=22.19.0'}
+  '@digdir/designsystemet@1.6.0':
+    resolution: {integrity: sha512-czTQnEndW71HX60uXyRQpMzVv172mLimh8uU9vkilYArhh3O31ea1Pymwn2NIBeqat2/0A1DF/P+SIEcmewNaQ==}
+    engines: {node: '>=20 <25'}
     hasBin: true
 
   '@emnapi/core@1.5.0':
@@ -8064,9 +8064,9 @@ snapshots:
       gonzales-pe: 4.3.0
       node-source-walk: 7.0.1
 
-  '@digdir/designsystemet-css@1.5.0': {}
+  '@digdir/designsystemet-css@1.6.0': {}
 
-  '@digdir/designsystemet-react@1.5.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@digdir/designsystemet-react@1.6.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@floating-ui/dom': 1.7.4
       '@floating-ui/react': 0.26.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -8082,7 +8082,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet-react@1.5.0(@types/react@19.1.14)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@digdir/designsystemet-react@1.6.0(@types/react@19.1.14)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@floating-ui/dom': 1.7.4
       '@floating-ui/react': 0.26.23(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -8098,7 +8098,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet@1.5.0':
+  '@digdir/designsystemet@1.6.0':
     dependencies:
       '@commander-js/extra-typings': 14.0.0(commander@14.0.1)
       '@tokens-studio/sd-transforms': 1.3.0(style-dictionary@5.0.4)
@@ -9569,7 +9569,7 @@ snapshots:
 
   '@udir-design/react@file:@udir-design/react(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@digdir/designsystemet-react': 1.5.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@digdir/designsystemet-react': 1.6.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@navikt/aksel-icons': 7.31.0(react@18.3.1)
       '@udir-design/css': link:@udir-design/css
       react: 18.3.1

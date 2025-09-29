@@ -5,7 +5,7 @@ import * as ToggleGroupStories from './ToggleGroup.stories';
 
 # ToggleGroup
 
-Med `ToggleGroup` kan brukerne velge alternativer som påvirker innholdet på en side. Komponenten består av en gruppe knapper som henger sammen, der kun én knapp er mulig å velge om gangen.
+Med `ToggleGroup` kan brukerne velge alternativer som påvirker innholdet på en side. Komponenten består av en gruppe knapper som henger sammen, der kun én knapp er mulig å velge om gangen. `ToggleGroup` har variantene `primary` og `secondary`.
 
 **Passer til å**
 
@@ -34,6 +34,22 @@ import { ToggleGroup } from '@udir-design/react';
   <ToggleGroup.Item value="value3">Option 3</ToggleGroup.Item>
 </ToggleGroup>;
 ```
+
+## Varianter av ToggleGroup
+
+`ToggleGroup` har to varianter, `primary` og `secondary`. Hvilken man bruker avhenger av hvor framtredende valgene skal være.
+
+### Primary ToggleGroup
+
+Dette er den mest framtredende varianten.
+
+<Canvas of={ToggleGroupStories.Primary} />
+
+### Secondary ToggleGroup
+
+Denne varianten kan brukes for å tone ned viktigheten av valgene i forhold til andre valg eller handlinger på siden.
+
+<Canvas of={ToggleGroupStories.Secondary} />
 
 ## Eksempler
 
