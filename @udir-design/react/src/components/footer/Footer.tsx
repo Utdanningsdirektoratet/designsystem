@@ -20,7 +20,7 @@ export const Footer = forwardRef<HTMLDivElement, FooterProps>(function Footer(
     <footer
       className={cl(`uds-footer`, className)}
       ref={ref}
-      style={{ '--udsc-header-max-width': maxWidth } as CSSProperties}
+      style={{ '--udsc-footer-max-width': maxWidth } as CSSProperties}
       {...rest}
     >
       <div>
