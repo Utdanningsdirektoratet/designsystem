@@ -46,7 +46,7 @@
     "test:storybook": "pnpm exec playwright install --with-deps chromium && pnpm vitest --project storybook"
   },
   "dependencies": {
-    "@digdir/designsystemet-react": "1.5.0",
+    "@digdir/designsystemet-react": "1.6.0",
     "@navikt/aksel-icons": "^7.31.0",
     "@udir-design/css": "workspace:*",
     "tslib": "^2.8.1"

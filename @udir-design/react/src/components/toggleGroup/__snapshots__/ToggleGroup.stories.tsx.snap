@@ -6,17 +6,18 @@ exports[`Controlled 1`] = `
 </h1>
 <div
   role="radiogroup"
+  data-variant="primary"
   tabindex="0"
 >
   <button
     data-variant="tertiary"
     type="button"
     value="answers"
-    id="togglegroup-item-«r19»"
+    id="togglegroup-item-«r1r»"
     aria-checked="false"
     aria-current="false"
     role="radio"
-    name="togglegroup-name-«r17»"
+    name="togglegroup-name-«r1p»"
     data-roving-tabindex-item="true"
     tabindex="-1"
   >
@@ -44,11 +45,11 @@ exports[`Controlled 1`] = `
     data-variant="tertiary"
     type="button"
     value="drafts"
-    id="togglegroup-item-«r1c»"
+    id="togglegroup-item-«r1u»"
     aria-checked="false"
     aria-current="false"
     role="radio"
-    name="togglegroup-name-«r17»"
+    name="togglegroup-name-«r1p»"
     data-roving-tabindex-item="true"
     tabindex="-1"
   >
@@ -76,11 +77,11 @@ exports[`Controlled 1`] = `
     data-variant="primary"
     type="button"
     value="correctedAnswers"
-    id="togglegroup-item-«r1f»"
+    id="togglegroup-item-«r21»"
     aria-checked="true"
     aria-current="true"
     role="radio"
-    name="togglegroup-name-«r17»"
+    name="togglegroup-name-«r1p»"
     data-roving-tabindex-item="true"
     tabindex="0"
   >
@@ -139,7 +140,7 @@ exports[`Controlled 1`] = `
           data-variant="tertiary"
           type="button"
           aria-label="Se retting"
-          popovertarget="«r1h»"
+          popovertarget="«r23»"
           popovertargetaction="show"
         >
           <svg
@@ -161,7 +162,7 @@ exports[`Controlled 1`] = `
         </button>
         <span
           role="tooltip"
-          id="«r1h»"
+          id="«r23»"
           popover="manual"
           style="opacity: 0;"
         >
@@ -185,7 +186,7 @@ exports[`Controlled 1`] = `
           data-variant="tertiary"
           type="button"
           aria-label="Se retting"
-          popovertarget="«r1j»"
+          popovertarget="«r25»"
           popovertargetaction="show"
         >
           <svg
@@ -207,7 +208,7 @@ exports[`Controlled 1`] = `
         </button>
         <span
           role="tooltip"
-          id="«r1j»"
+          id="«r25»"
           popover="manual"
           style="opacity: 0;"
         >
@@ -231,7 +232,7 @@ exports[`Controlled 1`] = `
           data-variant="tertiary"
           type="button"
           aria-label="Se retting"
-          popovertarget="«r1l»"
+          popovertarget="«r27»"
           popovertargetaction="show"
         >
           <svg
@@ -253,7 +254,7 @@ exports[`Controlled 1`] = `
         </button>
         <span
           role="tooltip"
-          id="«r1l»"
+          id="«r27»"
           popover="manual"
           style="opacity: 0;"
         >
@@ -275,6 +276,7 @@ exports[`Controlled 1`] = `
 exports[`Only Icons 1`] = `
 <div
   role="radiogroup"
+  data-variant="primary"
   tabindex="0"
 >
   <button
@@ -283,13 +285,13 @@ exports[`Only Icons 1`] = `
     type="button"
     value="venstrestilt"
     aria-label="Venstrestilt"
-    popovertarget="«rr»"
+    popovertarget="«r1d»"
     popovertargetaction="show"
-    id="togglegroup-item-«rt»"
+    id="togglegroup-item-«r1f»"
     aria-checked="true"
     aria-current="true"
     role="radio"
-    name="togglegroup-name-«rq»"
+    name="togglegroup-name-«r1c»"
     data-roving-tabindex-item="true"
     tabindex="0"
   >
@@ -314,7 +316,7 @@ exports[`Only Icons 1`] = `
   </button>
   <span
     role="tooltip"
-    id="«rr»"
+    id="«r1d»"
     popover="manual"
     style="opacity: 0;"
   >
@@ -326,13 +328,13 @@ exports[`Only Icons 1`] = `
     type="button"
     value="midtstilt"
     aria-label="Midtstilt"
-    popovertarget="«rv»"
+    popovertarget="«r1h»"
     popovertargetaction="show"
-    id="togglegroup-item-«r11»"
+    id="togglegroup-item-«r1j»"
     aria-checked="false"
     aria-current="false"
     role="radio"
-    name="togglegroup-name-«rq»"
+    name="togglegroup-name-«r1c»"
     data-roving-tabindex-item="true"
     tabindex="-1"
   >
@@ -357,7 +359,7 @@ exports[`Only Icons 1`] = `
   </button>
   <span
     role="tooltip"
-    id="«rv»"
+    id="«r1h»"
     popover="manual"
     style="opacity: 0;"
   >
@@ -369,13 +371,13 @@ exports[`Only Icons 1`] = `
     type="button"
     value="høyrestilt"
     aria-label="Høyrestilt"
-    popovertarget="«r13»"
+    popovertarget="«r1l»"
     popovertargetaction="show"
-    id="togglegroup-item-«r15»"
+    id="togglegroup-item-«r1n»"
     aria-checked="false"
     aria-current="false"
     role="radio"
-    name="togglegroup-name-«rq»"
+    name="togglegroup-name-«r1c»"
     data-roving-tabindex-item="true"
     tabindex="-1"
   >
@@ -400,7 +402,7 @@ exports[`Only Icons 1`] = `
   </button>
   <span
     role="tooltip"
-    id="«r13»"
+    id="«r1l»"
     popover="manual"
     style="opacity: 0;"
   >
@@ -415,17 +417,18 @@ exports[`Only Text 1`] = `
 </label>
 <div
   role="radiogroup"
+  data-variant="primary"
   tabindex="0"
 >
   <button
     data-variant="primary"
     type="button"
     value="personlig"
-    id="togglegroup-item-«rb»"
+    id="togglegroup-item-«rt»"
     aria-checked="true"
     aria-current="true"
     role="radio"
-    name="togglegroup-name-«r9»"
+    name="togglegroup-name-«rr»"
     data-roving-tabindex-item="true"
     tabindex="0"
   >
@@ -435,11 +438,11 @@ exports[`Only Text 1`] = `
     data-variant="tertiary"
     type="button"
     value="generelt"
-    id="togglegroup-item-«rd»"
+    id="togglegroup-item-«rv»"
     aria-checked="false"
     aria-current="false"
     role="radio"
-    name="togglegroup-name-«r9»"
+    name="togglegroup-name-«rr»"
     data-roving-tabindex-item="true"
     tabindex="-1"
   >
@@ -449,11 +452,11 @@ exports[`Only Text 1`] = `
     data-variant="tertiary"
     type="button"
     value="tilleggsinformasjon"
-    id="togglegroup-item-«rf»"
+    id="togglegroup-item-«r11»"
     aria-checked="false"
     aria-current="false"
     role="radio"
-    name="togglegroup-name-«r9»"
+    name="togglegroup-name-«rr»"
     data-roving-tabindex-item="true"
     tabindex="-1"
   >
@@ -465,6 +468,7 @@ exports[`Only Text 1`] = `
 exports[`Preview 1`] = `
 <div
   role="radiogroup"
+  data-variant="primary"
   tabindex="0"
 >
   <button
@@ -526,20 +530,151 @@ exports[`Preview 1`] = `
 </div>
 `;
 
+exports[`Primary 1`] = `
+<div
+  role="radiogroup"
+  data-variant="primary"
+  tabindex="0"
+>
+  <button
+    data-variant="primary"
+    type="button"
+    value="innboks"
+    id="togglegroup-item-«rb»"
+    aria-checked="true"
+    aria-current="true"
+    role="radio"
+    name="togglegroup-name-«r9»"
+    data-roving-tabindex-item="true"
+    tabindex="0"
+  >
+    Innboks
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    value="utkast"
+    id="togglegroup-item-«rd»"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-«r9»"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    Utkast
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    value="arkiv"
+    id="togglegroup-item-«rf»"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-«r9»"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    Arkiv
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    value="sendt"
+    id="togglegroup-item-«rh»"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-«r9»"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    Sendt
+  </button>
+</div>
+`;
+
+exports[`Secondary 1`] = `
+<div
+  role="radiogroup"
+  data-variant="secondary"
+  tabindex="0"
+>
+  <button
+    data-variant="secondary"
+    type="button"
+    value="innboks"
+    id="togglegroup-item-«rk»"
+    aria-checked="true"
+    aria-current="true"
+    role="radio"
+    name="togglegroup-name-«ri»"
+    data-roving-tabindex-item="true"
+    tabindex="0"
+  >
+    Innboks
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    value="utkast"
+    id="togglegroup-item-«rm»"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-«ri»"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    Utkast
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    value="arkiv"
+    id="togglegroup-item-«ro»"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-«ri»"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    Arkiv
+  </button>
+  <button
+    data-variant="tertiary"
+    type="button"
+    value="sendt"
+    id="togglegroup-item-«rq»"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-«ri»"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    Sendt
+  </button>
+</div>
+`;
+
 exports[`Text And Icons 1`] = `
 <div
   role="radiogroup"
+  data-variant="primary"
   tabindex="0"
 >
   <button
     data-variant="primary"
     type="button"
     value="aktiv"
-    id="togglegroup-item-«ri»"
+    id="togglegroup-item-«r14»"
     aria-checked="true"
     aria-current="true"
     role="radio"
-    name="togglegroup-name-«rg»"
+    name="togglegroup-name-«r12»"
     data-roving-tabindex-item="true"
     tabindex="0"
   >
@@ -567,11 +702,11 @@ exports[`Text And Icons 1`] = `
     data-variant="tertiary"
     type="button"
     value="advarsel"
-    id="togglegroup-item-«rl»"
+    id="togglegroup-item-«r17»"
     aria-checked="false"
     aria-current="false"
     role="radio"
-    name="togglegroup-name-«rg»"
+    name="togglegroup-name-«r12»"
     data-roving-tabindex-item="true"
     tabindex="-1"
   >
@@ -599,11 +734,11 @@ exports[`Text And Icons 1`] = `
     data-variant="tertiary"
     type="button"
     value="kritisk"
-    id="togglegroup-item-«ro»"
+    id="togglegroup-item-«r1a»"
     aria-checked="false"
     aria-current="false"
     role="radio"
-    name="togglegroup-name-«rg»"
+    name="togglegroup-name-«r12»"
     data-roving-tabindex-item="true"
     tabindex="-1"
   >
@@ -637,17 +772,18 @@ exports[`Toggle Group In Color Context 1`] = `
 >
   <div
     role="radiogroup"
+    data-variant="primary"
     tabindex="0"
   >
     <button
       data-variant="primary"
       type="button"
       value="innboks"
-      id="togglegroup-item-«r1p»"
+      id="togglegroup-item-«r2b»"
       aria-checked="true"
       aria-current="true"
       role="radio"
-      name="togglegroup-name-«r1n»"
+      name="togglegroup-name-«r29»"
       data-roving-tabindex-item="true"
       tabindex="0"
     >
@@ -657,11 +793,11 @@ exports[`Toggle Group In Color Context 1`] = `
       data-variant="tertiary"
       type="button"
       value="utkast"
-      id="togglegroup-item-«r1r»"
+      id="togglegroup-item-«r2d»"
       aria-checked="false"
       aria-current="false"
       role="radio"
-      name="togglegroup-name-«r1n»"
+      name="togglegroup-name-«r29»"
       data-roving-tabindex-item="true"
       tabindex="-1"
     >
@@ -671,11 +807,11 @@ exports[`Toggle Group In Color Context 1`] = `
       data-variant="tertiary"
       type="button"
       value="arkiv"
-      id="togglegroup-item-«r1t»"
+      id="togglegroup-item-«r2f»"
       aria-checked="false"
       aria-current="false"
       role="radio"
-      name="togglegroup-name-«r1n»"
+      name="togglegroup-name-«r29»"
       data-roving-tabindex-item="true"
       tabindex="-1"
     >
@@ -685,11 +821,11 @@ exports[`Toggle Group In Color Context 1`] = `
       data-variant="tertiary"
       type="button"
       value="sendt"
-      id="togglegroup-item-«r1v»"
+      id="togglegroup-item-«r2h»"
       aria-checked="false"
       aria-current="false"
       role="radio"
-      name="togglegroup-name-«r1n»"
+      name="togglegroup-name-«r29»"
       data-roving-tabindex-item="true"
       tabindex="-1"
     >

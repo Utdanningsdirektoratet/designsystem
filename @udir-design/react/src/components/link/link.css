@@ -1,6 +1,12 @@
-/* Use Digdir's "special case" for neutral link color as default, since neutral is our default */
 .ds-link {
+  /* Use Digdir's "special case" for neutral link color as default, since neutral is our default */
   --dsc-link-color--active: var(--ds-color-text-subtle);
   --dsc-link-color--hover: var(--ds-color-text-subtle);
   --dsc-link-color: var(--ds-color-text-default);
+
+  /* Focus style: use sharp corners on the outline, and remove text underline */
+  --dsc-link-border-radius: 0;
+  &:focus-visible {
+    text-decoration: none;
+  }
 }
