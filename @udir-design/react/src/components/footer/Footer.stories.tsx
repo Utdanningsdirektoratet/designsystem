@@ -1,9 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Footer } from './';
+import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 
 const meta: Meta<typeof Footer> = {
   component: Footer,
   tags: ['alpha', 'udir'],
+  parameters: {
+    componentOrigin: {
+      originator: 'self',
+    },
+    layout: 'fullscreen',
+    customStyles: {
+      padding: 0,
+    },
+  },
+  decorators: [withResponsiveDataSize],
 };
 
 export default meta;
@@ -13,27 +24,17 @@ export const Preview: Story = {
   render: () => (
     <Footer>
       <Footer.List>
-        <Footer.Item href="https://www.udir.no/om-udir/personvernerklaring-udir/">
-          Om tjenesten
-        </Footer.Item>
-        <Footer.Item href="https://www.udir.no/om-udir/kontakt-oss/">
-          Kontakt oss
-        </Footer.Item>
+        <Footer.Item href="#">Om tjenesten</Footer.Item>
+        <Footer.Item href="#">Kontakt oss</Footer.Item>
       </Footer.List>
       <Footer.List>
         <Footer.Item href="#">Lenke</Footer.Item>
         <Footer.Item href="#">Lenke</Footer.Item>
       </Footer.List>
       <Footer.List>
-        <Footer.Item href="https://www.udir.no/om-udir/personvernerklaring-udir/">
-          Personvernerklæring
-        </Footer.Item>
-        <Footer.Item href="https://www.udir.no/">
-          Informasjonskapsler
-        </Footer.Item>
-        <Footer.Item href="https://uustatus.no/nb/erklaringer/publisert/ce43e104-3893-45ac-90c8-45deb6f17624">
-          Tilgjengelighetserklæring
-        </Footer.Item>
+        <Footer.Item href="#">Personvernerklæring</Footer.Item>
+        <Footer.Item href="#">Informasjonskapsler</Footer.Item>
+        <Footer.Item href="#">Tilgjengelighetserklæring</Footer.Item>
       </Footer.List>
     </Footer>
   ),
@@ -43,10 +44,8 @@ export const Udirno: Story = {
   render: () => (
     <Footer data-size="md">
       <Footer.List>
-        <Footer.Item href="https://www.udir.no/om-udir/">
-          Om tjenesten
-        </Footer.Item>
-        <Footer.Item href="https://www.udir.no/">Kontakt oss</Footer.Item>
+        <Footer.Item href="#">Om tjenesten</Footer.Item>
+        <Footer.Item href="#">Kontakt oss</Footer.Item>
       </Footer.List>
       <Footer.List>
         <Footer.Item href="#">Høringer</Footer.Item>
@@ -54,15 +53,9 @@ export const Udirno: Story = {
         <Footer.Item href="#">Nyhetsvarsel</Footer.Item>
       </Footer.List>
       <Footer.List>
-        <Footer.Item href="https://www.udir.no/om-udir/personvernerklaring-udir/">
-          Personvernerklæring
-        </Footer.Item>
-        <Footer.Item href="https://www.udir.no/">
-          Informasjonskapsler
-        </Footer.Item>
-        <Footer.Item href="https://uustatus.no/nb/erklaringer/publisert/ce43e104-3893-45ac-90c8-45deb6f17624">
-          Tilgjengelighetserklæring
-        </Footer.Item>
+        <Footer.Item href="#">Personvernerklæring</Footer.Item>
+        <Footer.Item href="#">Informasjonskapsler</Footer.Item>
+        <Footer.Item href="#">Tilgjengelighetserklæring</Footer.Item>
       </Footer.List>
       <Footer.List variant="social">
         <Footer.Item href="#">
@@ -86,21 +79,13 @@ export const Tjeneste: Story = {
   render: () => (
     <Footer data-size="md">
       <Footer.List>
-        <Footer.Item href="https://www.udir.no/om-udir/">
-          Om tjenesten
-        </Footer.Item>
-        <Footer.Item href="https://www.udir.no/">Kontakt oss</Footer.Item>
+        <Footer.Item href="#">Om tjenesten</Footer.Item>
+        <Footer.Item href="#">Kontakt oss</Footer.Item>
       </Footer.List>
       <Footer.List>
-        <Footer.Item href="https://www.udir.no/om-udir/personvernerklaring-udir/">
-          Personvernerklæring
-        </Footer.Item>
-        <Footer.Item href="https://www.udir.no/">
-          Informasjonskapsler
-        </Footer.Item>
-        <Footer.Item href="https://uustatus.no/nb/erklaringer/publisert/ce43e104-3893-45ac-90c8-45deb6f17624">
-          Tilgjengelighetserklæring
-        </Footer.Item>
+        <Footer.Item href="#">Personvernerklæring</Footer.Item>
+        <Footer.Item href="#">Informasjonskapsler</Footer.Item>
+        <Footer.Item href="#">Tilgjengelighetserklæring</Footer.Item>
       </Footer.List>
     </Footer>
   ),
