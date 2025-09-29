@@ -24,11 +24,8 @@ type ArticleDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
 
 export const ArticleDemo = ({ ...props }: ArticleDemoProps) => {
   return (
-    <>
-      <article
-        {...props}
-        className={cl(classes.article, classes.contentSpacing)}
-      >
+    <div {...props}>
+      <article className={cl(classes.article, classes.contentSpacing)}>
         <SkipLink href="#main-content">Hopp til hovedinnholdet</SkipLink>
         <Breadcrumbs aria-label="Du er her:">
           <Breadcrumbs.Link aria-label="Tilbake til mer informasjon">
@@ -133,6 +130,6 @@ export const ArticleDemo = ({ ...props }: ArticleDemoProps) => {
           </Footer.Item>
         </Footer.List>
       </Footer>
-    </>
+    </div>
   );
 };

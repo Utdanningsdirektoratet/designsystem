@@ -1,5 +1,5 @@
 import { CSSProperties, forwardRef, HTMLAttributes } from 'react';
-import logo from '../../../assets/img/logo.svg';
+import logo from '../../../assets/img/udir-main-logo.svg';
 import cl from 'clsx/lite';
 
 export type FooterProps = HTMLAttributes<HTMLDivElement> & {
