@@ -4,7 +4,7 @@ import { Paragraph } from '../../components/typography/paragraph/Paragraph';
 import { Search } from '../../components/search/Search';
 import { Label } from '../../components/typography/label/Label';
 import { useDebounceCallback } from '@digdir/designsystemet-react';
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import { ColorTokensTable } from '../color/color-table';
 import colorTokens from '../design-tokens/color.json';
 import semanticTokens from '../design-tokens/semantic.json';
@@ -16,6 +16,7 @@ import type { PreviewToken } from '../types';
 import { TypographyTable } from '../typography/typography-table';
 import classes from './token-list.module.css';
 import { labels } from '../strings';
+import { has, includes, pick } from '../utilities/search-utitilites';
 
 const tokenSearchFilter = (token: PreviewToken, searchValue: string) =>
   `${token.variable}${token.value}`
@@ -45,25 +46,63 @@ export const TokenList = () => {
 
   const debouncedCallback = useDebounceCallback((value: string) => {
     setValue(value);
-  }, 1000);
+  }, 500);
+
+  const headingMatches = {
+    colors: includes(labels['token-preview']['colors'], value),
+    typography: includes(labels['token-preview'].typography, value),
+    semantic: includes(labels['token-preview'].semantic, value),
+  };
 
   const filteredColorTokens = filteredRecord(colorTokens, value);
-  const colorTokensCount = Object.keys(filteredColorTokens);
-  const filteredTypographyTokens = Object.entries(
-    filteredRecord(typographyTokens, value),
+  const filteredTypeScaleTokens = typeScaleTokens.filter((t) =>
+    tokenSearchFilter(t, value),
   );
-  const filteredSemanticTokens = semanticTokens.filter((token) =>
-    tokenSearchFilter(token, value),
+  const filteredTypographyGroups = filteredRecord(typographyTokens, value);
+  const filteredTypographyCombined = [
+    ...filteredTypeScaleTokens,
+    ...Object.values(filteredTypographyGroups).flat(),
+  ];
+  const filteredSemanticTokens = semanticTokens.filter((t) =>
+    tokenSearchFilter(t, value),
   );
-  const filteredSizeTokens = sizeTokens.filter((token) =>
-    tokenSearchFilter(token, value),
+  const filteredSizeTokens = sizeTokens.filter((t) =>
+    tokenSearchFilter(t, value),
+  );
+  const filteredSemanticAndSize = [
+    ...filteredSizeTokens,
+    ...filteredSemanticTokens,
+  ];
+
+  // all (unfiltered)
+  const allTypography = [
+    ...Object.values(typographyTokens).flat(),
+    ...typeScaleTokens,
+  ];
+  const allSemanticAndSize = [...sizeTokens, ...semanticTokens];
+
+  const displayColorTokens = pick(
+    headingMatches.colors,
+    colorTokens,
+    filteredColorTokens,
+  );
+  const displayTypographyTokens = pick(
+    headingMatches.typography,
+    allTypography,
+    filteredTypographyCombined,
+  );
+  const displaySemanticTokens = pick(
+    headingMatches.semantic,
+    allSemanticAndSize,
+    filteredSemanticAndSize,
   );
 
-  const noSearchResult =
-    filteredSemanticTokens.length +
-      filteredTypographyTokens.length +
-      colorTokensCount.length ===
-    0;
+  const showColors = headingMatches.colors || has(filteredColorTokens);
+  const showTypography =
+    headingMatches.typography || filteredTypographyCombined.length > 0;
+  const showSemantic =
+    headingMatches.semantic || filteredSemanticAndSize.length > 0;
+  const noSearchResult = !(showColors || showTypography || showSemantic);
 
   return (
     <div className={classes.tokensContainer}>
@@ -77,9 +116,8 @@ export const TokenList = () => {
           <Search.Clear />
         </Search>
       </Field>
-
       <div className={classes.tokens}>
-        {colorTokensCount.length > 0 && (
+        {showColors && (
           <>
             <Heading
               level={2}
@@ -90,29 +128,25 @@ export const TokenList = () => {
             </Heading>
             <Paragraph>{labels['token-preview'].color.description}</Paragraph>
             <div className={classes.section}>
-              <ColorTokensTable colorTokens={filteredColorTokens} />
+              <ColorTokensTable colorTokens={displayColorTokens} />
             </div>
           </>
         )}
-
-        {filteredTypographyTokens.length > 0 &&
-          filteredTypographyTokens.map(([name, tokens]) => {
-            return (
-              <Fragment key={name}>
-                <Heading
-                  level={2}
-                  data-size="lg"
-                  id={labels['token-preview'].typography + 'heading'}
-                >
-                  {labels['token-preview'].typography}
-                </Heading>
-                <div className={classes.section}>
-                  <TypographyTable tokens={[...tokens, ...typeScaleTokens]} />
-                </div>
-              </Fragment>
-            );
-          })}
-        {filteredSemanticTokens.length > 0 && (
+        {showTypography && (
+          <>
+            <Heading
+              level={2}
+              data-size="lg"
+              id={labels['token-preview'].typography + 'heading'}
+            >
+              {labels['token-preview'].typography}
+            </Heading>
+            <div className={classes.section}>
+              <TypographyTable tokens={displayTypographyTokens} />
+            </div>
+          </>
+        )}
+        {showSemantic && (
           <>
             <Heading
               level={2}
@@ -123,13 +157,10 @@ export const TokenList = () => {
             </Heading>
             <Paragraph>{labels['token-preview'].size.description}</Paragraph>
             <div className={classes.section}>
-              <SemanticTokensTable
-                tokens={[...filteredSizeTokens, ...filteredSemanticTokens]}
-              />
+              <SemanticTokensTable tokens={displaySemanticTokens} />
             </div>
           </>
         )}
-
         {noSearchResult && (
           <Paragraph>{labels['token-preview']['no-results']}</Paragraph>
         )}
