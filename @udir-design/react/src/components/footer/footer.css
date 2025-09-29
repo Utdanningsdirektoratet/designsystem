@@ -13,18 +13,18 @@
     max-width: var(--udsc-footer-max-width, 1280px);
     margin: 0 auto;
 
-    @media (min-width: 600px) {
+    @media (min-width: 768px) {
       padding: var(--ds-size-4);
       gap: var(--ds-size-5);
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 768px) {
       padding: var(--ds-size-15);
     }
   }
 
   /* Empty block after regular lists, before logo and social to force new line */
-  @media (min-width: 1024px) {
+  @media (min-width: 700px) {
     > div::after {
       content: '';
       flex-basis: 100%;
