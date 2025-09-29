@@ -13,13 +13,13 @@
     "node": ">= 22.14.0 < 25"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
-    "@commitlint/types": "^19.8.1",
+    "@commitlint/cli": "^20.0.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@commitlint/types": "^20.0.0",
     "@eslint/compat": "^1.3.2",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.36.0",
-    "@nx/azure-cache": "^3.1.1",
+    "@nx/azure-cache": "^4.0.0",
     "@nx/eslint": "21.4.0",
     "@nx/eslint-plugin": "21.4.0",
     "@swc-node/register": "^1.11.1",
