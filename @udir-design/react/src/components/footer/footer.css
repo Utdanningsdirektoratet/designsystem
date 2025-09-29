@@ -4,81 +4,81 @@
   bottom: 0;
   width: 100%;
 
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: var(--ds-size-4);
+    gap: var(--ds-size-8);
+    max-width: var(--udsc-footer-max-width, 1280px);
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+      padding: var(--ds-size-4);
+      gap: var(--ds-size-5);
+    }
+
+    @media (min-width: 768px) {
+      padding: var(--ds-size-15);
+    }
+  }
+
+  /* Empty block after regular lists, before logo and social to force new line */
+  @media (min-width: 700px) {
+    > div::after {
+      content: '';
+      flex-basis: 100%;
+      height: 0;
+      order: 1;
+    }
+  }
+
   & .ds-link {
     --dsc-link-color--visited: var(--dsc-link-color);
   }
-}
 
-.uds-footer > div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: var(--ds-size-4);
-  gap: var(--ds-size-8);
-  max-width: var(--udsc-header-max-width, 1280px);
-  margin: 0 auto;
-
-  @media (min-width: 600px) {
-    padding: var(--ds-size-4);
-    gap: var(--ds-size-5);
+  li :is(img, svg) {
+    height: var(--ds-size-6);
+    width: var(--ds-size-6);
+    align-self: center;
   }
 
-  @media (min-width: 1024px) {
-    padding: var(--ds-size-15);
-  }
-}
+  .uds-footer__logo {
+    width: 180px;
+    height: 54px;
+    order: 2;
 
-/* Empty block after regular lists, before logo and social to force new line */
-@media (min-width: 1024px) {
-  .uds-footer > div::after {
-    content: '';
-    flex-basis: 100%;
-    height: 0;
-    order: 1;
-  }
-}
-
-.uds-footer__list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-3);
-  flex: 1 1 100%;
-  order: 0;
-  word-break: break-word;
-
-  @media (min-width: 600px) {
-    flex: 0 1 auto;
+    @composes ds-focus from '@digdir/designsystemet-css/base.css';
   }
 
-  &[data-variant='social'] {
+  .uds-footer__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    align-self: flex-end;
-    gap: var(--ds-size-2);
-    flex: 2 1 100%;
+    flex-direction: column;
+    gap: var(--ds-size-3);
+    flex: 1 1 100%;
     order: 0;
+    word-break: break-word;
 
     @media (min-width: 600px) {
-      flex-direction: row;
-      gap: var(--ds-size-3);
       flex: 0 1 auto;
-      order: 3;
+    }
+
+    &[data-variant='social'] {
+      display: flex;
+      align-self: flex-end;
+      gap: var(--ds-size-2);
+      flex: 2 1 100%;
+      order: 0;
+
+      @media (min-width: 600px) {
+        flex-direction: row;
+        gap: var(--ds-size-3);
+        flex: 0 1 auto;
+        order: 3;
+      }
     }
   }
-}
-
-li :is(img, svg) {
-  height: var(--ds-size-6);
-  width: var(--ds-size-6);
-  align-self: center;
-}
-
-.uds-footer__logo {
-  width: 180px;
-  height: 54px;
-  order: 2;
-
-  @composes ds-focus from '@digdir/designsystemet-css/base.css';
 }
