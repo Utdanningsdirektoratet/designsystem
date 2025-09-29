@@ -1,0 +1,6 @@
+.size {
+  --ds-size: var(--ds-size--sm);
+  @media (min-width: 30rem) {
+    --ds-size: var(--ds-size--md);
+  }
+}
