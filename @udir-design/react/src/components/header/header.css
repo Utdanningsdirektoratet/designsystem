@@ -212,18 +212,23 @@
       padding: 0;
     }
 
-    a {
+    .ds-link {
       text-decoration-color: var(--ds-color-border-default);
       white-space: nowrap;
 
       &:hover {
         text-decoration-color: var(--ds-color-border-subtle);
+        text-decoration-thickness: var(--ds-border-width-focus);
+      }
+
+      &:active {
+        text-decoration-color: var(--ds-color-border-strong);
       }
 
       &[aria-current='page'] {
-        text-decoration-thickness: var(
-          --dsc-link-text-decoration-thickness--hover
-        );
+        text-decoration-thickness: var(--ds-border-width-focus);
+        color: var(--dsc-link-color);
+        text-decoration-color: var(--ds-color-border-default);
       }
     }
   }
