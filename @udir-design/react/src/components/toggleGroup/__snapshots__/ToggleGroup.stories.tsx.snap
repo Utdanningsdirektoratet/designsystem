@@ -6,7 +6,6 @@ exports[`Controlled 1`] = `
 </h1>
 <div
   role="radiogroup"
-  data-variant="primary"
   tabindex="0"
 >
   <button
@@ -276,7 +275,6 @@ exports[`Controlled 1`] = `
 exports[`Only Icons 1`] = `
 <div
   role="radiogroup"
-  data-variant="primary"
   tabindex="0"
 >
   <button
@@ -417,7 +415,6 @@ exports[`Only Text 1`] = `
 </label>
 <div
   role="radiogroup"
-  data-variant="primary"
   tabindex="0"
 >
   <button
@@ -468,7 +465,6 @@ exports[`Only Text 1`] = `
 exports[`Preview 1`] = `
 <div
   role="radiogroup"
-  data-variant="primary"
   tabindex="0"
 >
   <button
@@ -533,7 +529,7 @@ exports[`Preview 1`] = `
 exports[`Primary 1`] = `
 <div
   role="radiogroup"
-  data-variant="primary"
+  variant="primary"
   tabindex="0"
 >
   <button
@@ -598,11 +594,11 @@ exports[`Primary 1`] = `
 exports[`Secondary 1`] = `
 <div
   role="radiogroup"
-  data-variant="secondary"
+  variant="secondary"
   tabindex="0"
 >
   <button
-    data-variant="secondary"
+    data-variant="primary"
     type="button"
     value="innboks"
     id="togglegroup-item-«rk»"
@@ -663,7 +659,6 @@ exports[`Secondary 1`] = `
 exports[`Text And Icons 1`] = `
 <div
   role="radiogroup"
-  data-variant="primary"
   tabindex="0"
 >
   <button
@@ -772,7 +767,6 @@ exports[`Toggle Group In Color Context 1`] = `
 >
   <div
     role="radiogroup"
-    data-variant="primary"
     tabindex="0"
   >
     <button
