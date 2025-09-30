@@ -30,6 +30,7 @@ export default defineConfig({
   cacheDir: '../../node_modules/.vite/@udir-design/react',
   resolve: {
     alias: resolveAliases({
+      src: 'src',
       '.storybook': '.storybook',
       '@udir-design/react/alpha': 'src/alpha',
       '@udir-design/react/beta': 'src/beta',
