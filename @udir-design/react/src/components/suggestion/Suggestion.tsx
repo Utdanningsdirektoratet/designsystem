@@ -14,7 +14,7 @@ import {
   type SuggestionSingleProps as DigdirSuggestionSingleProps,
   type SuggestionMultipleProps as DigdirSuggestionMultipleProps,
 } from '@digdir/designsystemet-react';
-import { ForwardRefExoticComponent } from 'react';
+import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 
 type SuggestionSingleProps = Omit<DigdirSuggestionSingleProps, 'data-color'>;
 type SuggestionMultipleProps = Omit<
@@ -23,12 +23,13 @@ type SuggestionMultipleProps = Omit<
 >;
 type SuggestionProps = SuggestionSingleProps | SuggestionMultipleProps;
 
-const Suggestion =
-  DigdirSuggestion as ForwardRefExoticComponent<SuggestionProps> &
-    Pick<
-      typeof DigdirSuggestion,
-      'Clear' | 'Empty' | 'Input' | 'List' | 'Option'
-    >;
+const Suggestion = DigdirSuggestion as ForwardRefExoticComponent<
+  SuggestionProps & RefAttributes<ComponentRef<typeof DigdirSuggestion>>
+> &
+  Pick<
+    typeof DigdirSuggestion,
+    'Clear' | 'Empty' | 'Input' | 'List' | 'Option'
+  >;
 
 Suggestion.displayName = 'Suggestion';
 SuggestionClear.displayName = 'Suggestion.Clear';

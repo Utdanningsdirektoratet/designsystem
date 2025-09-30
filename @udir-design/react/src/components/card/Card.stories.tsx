@@ -289,8 +289,8 @@ export const Horizontal: Story = {
       <Card
         style={{
           display: 'grid',
-          gridTemplateColumns: 'auto 350px',
-          width: '550px',
+          gridAutoFlow: 'column',
+          width: '700px',
         }}
       >
         <Card.Block>
@@ -298,10 +298,8 @@ export const Horizontal: Story = {
             src={url}
             alt="Barn som spiser lunsj"
             style={{
-              width: '100%',
               height: '100%',
               objectFit: 'cover',
-              display: 'block',
             }}
           />
         </Card.Block>

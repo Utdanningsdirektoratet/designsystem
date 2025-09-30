@@ -105,6 +105,16 @@ export const Preview: Story = {
   },
 };
 
+export const Primary: Story = {
+  args: { defaultValue: 'innboks', variant: 'primary' },
+  render: Preview.render,
+};
+
+export const Secondary: Story = {
+  args: { defaultValue: 'innboks', variant: 'secondary' },
+  render: Preview.render,
+};
+
 export const OnlyText: Story = {
   args: {},
   parameters: {

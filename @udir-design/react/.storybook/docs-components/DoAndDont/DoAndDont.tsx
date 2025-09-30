@@ -1,6 +1,6 @@
 import { CheckmarkIcon, XMarkIcon } from '@navikt/aksel-icons';
 import cl from 'clsx';
-import { Heading, Paragraph } from '../../../src/components/alpha';
+import { Heading, Paragraph } from '../../../src/components/beta';
 import styles from './DoAndDont.module.css';
 
 const Wrapper = ({ variant, description, children }: WrapperProps) => {

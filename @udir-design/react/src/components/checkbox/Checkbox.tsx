@@ -2,10 +2,12 @@ import {
   Checkbox as DigdirCheckbox,
   type CheckboxProps as DigdirCheckboxProps,
 } from '@digdir/designsystemet-react';
-import { ForwardRefExoticComponent } from 'react';
+import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 
 type CheckboxProps = Omit<DigdirCheckboxProps, 'data-color'>;
 
-const Checkbox = DigdirCheckbox as ForwardRefExoticComponent<CheckboxProps>;
+const Checkbox = DigdirCheckbox as ForwardRefExoticComponent<
+  CheckboxProps & RefAttributes<ComponentRef<typeof DigdirCheckbox>>
+>;
 
 export { Checkbox, CheckboxProps };

@@ -2,7 +2,7 @@ import { FrequentQuestions } from './frequent-questions/FrequentQuestions';
 import { Login } from './login/Login';
 import { Shoppinglist } from '../page-demo/shoppinglist/Shoppinglist';
 import { UserTable } from './user-table/UserTable';
-import { Heading, Paragraph } from '../../components/alpha';
+import { Heading, Paragraph } from '../../components/beta';
 import { BreadcrumbsDemo } from './breadcrumbs/BreadcrumbsDemo';
 import styles from './DemoPage.module.scss';
 import { DemoProps } from '../demoProps';

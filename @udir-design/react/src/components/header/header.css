@@ -1,0 +1,336 @@
+.uds-header {
+  --udsc-header-height: var(--ds-size-12);
+  --udsc-header-padding: var(--ds-size-5);
+  @media (max-width: 480px) {
+    --udsc-header-padding: var(--ds-size-4);
+  }
+
+  height: var(--udsc-header-height);
+  padding: var(--udsc-header-padding);
+  background-color: var(--ds-color-background-default);
+  transform: translateY(0);
+  z-index: 10;
+
+  > div {
+    display: flex;
+    height: 100%;
+    gap: var(--ds-size-8);
+    align-content: center;
+    justify-content: space-between;
+    max-width: var(--udsc-header-max-width, 1280px);
+    margin: 0 auto;
+  }
+
+  .ds-link {
+    --dsc-link-color--visited: var(--dsc-link-color);
+  }
+
+  .uds-header__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ds-size-3);
+    text-decoration: none;
+    color: var(--dsc-link-color);
+
+    > img {
+      height: var(--ds-size-12);
+    }
+
+    @composes ds-focus from '@digdir/designsystemet-css/base.css';
+  }
+
+  .uds-header__content {
+    display: flex;
+    gap: var(--ds-size-8);
+    align-items: center;
+  }
+
+  .uds-header__search {
+    width: var(--ds-size-22);
+    transition: width 300ms ease-out;
+
+    ::placeholder {
+      color: var(--ds-color-text-default);
+    }
+
+    > input {
+      padding-right: var(--ds-size-1);
+    }
+
+    &:focus-within,
+    &:has(input:not(:placeholder-shown)) {
+      ::placeholder {
+        color: var(--ds-color-text-subtle);
+      }
+      width: calc(var(--ds-size-18) * 4);
+      > input {
+        padding-right: var(--ds-size-10);
+      }
+    }
+
+    &:not(:focus-within):not(:has(input:not(:placeholder-shown))) {
+      @media (hover: hover) and (pointer: fine) {
+        &:hover > input {
+          background-color: var(--ds-color-surface-hover);
+          color: var(--ds-color-text-subtle);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .uds-header__menu-button {
+    > svg:first-child {
+      display: block;
+    }
+
+    > svg:nth-child(2) {
+      display: none;
+    }
+
+    &:has(+ [popover]:popover-open) {
+      > svg:first-child {
+        display: none;
+      }
+      > svg:nth-child(2) {
+        display: block;
+      }
+    }
+  }
+
+  .uds-header__menu {
+    all: unset;
+    display: none;
+    position: fixed;
+    width: 100%;
+    border: none;
+    top: calc(var(--udsc-header-padding) - var(--ds-size-3));
+    max-height: 0;
+    overflow: hidden;
+    background-color: var(--ds-color-background-default);
+    left: 0;
+
+    & ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    /* Remove popover arrow */
+    &::before {
+      display: none;
+    }
+
+    /* Animate dropdown menu */
+    transition:
+      max-height 500ms ease,
+      overlay 500ms,
+      display 500ms;
+    transition-behavior: allow-discrete;
+    animation: 1.3s delay-overflow;
+
+    &:popover-open {
+      max-height: calc(
+        95% - (var(--udsc-header-height) + (var(--udsc-header-padding) * 2))
+      );
+      overflow: auto;
+      display: block;
+      @starting-style {
+        & {
+          max-height: 0;
+          display: block;
+        }
+      }
+    }
+  }
+
+  .uds-header__user-button {
+    all: unset;
+    display: flex;
+    width: fit-content;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--ds-size-2);
+    background-color: transparent;
+    padding: var(--ds-size-2) var(--ds-size-4) var(--ds-size-2) var(--ds-size-8);
+    cursor: pointer;
+
+    &[data-color='accent'] {
+      background-color: var(--ds-color-surface-tinted);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--ds-color-surface-hover);
+      }
+    }
+
+    &:active {
+      background-color: var(--ds-color-surface-active);
+    }
+
+    > div:first-child {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    > svg {
+      margin-left: var(--ds-size-1);
+    }
+
+    > svg:nth-last-child(2) {
+      display: block;
+      font-size: var(--ds-size-6);
+    }
+
+    > svg:last-child {
+      display: none;
+      font-size: var(--ds-size-6);
+    }
+
+    &:has(+ [popover]:popover-open) {
+      > svg:nth-last-child(2) {
+        display: none;
+      }
+      > svg:last-child {
+        display: block;
+      }
+    }
+
+    @composes ds-focus from '@digdir/designsystemet-css/base.css';
+  }
+
+  .uds-header__navigation {
+    ul {
+      display: flex;
+      align-items: center;
+      gap: var(--ds-size-8);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration-color: var(--ds-color-border-default);
+      white-space: nowrap;
+
+      &:hover {
+        text-decoration-color: var(--ds-color-border-subtle);
+      }
+
+      &[aria-current='page'] {
+        text-decoration-thickness: var(
+          --dsc-link-text-decoration-thickness--hover
+        );
+      }
+    }
+  }
+
+  /* Sticky auto hide header */
+  &[data-scroll-direction] {
+    position: sticky;
+    top: 0;
+    transition: transform 200ms ease;
+  }
+  &[data-scroll-direction='down'] {
+    transform: translateY(
+      calc(-1 * var(--udsc-header-height) - (var(--udsc-header-padding) * 2))
+    );
+  }
+  &[data-scroll-direction='up'] {
+    transform: translateY(0);
+  }
+
+  /* Show element from size */
+  [data-show='xs'] {
+    @media (max-width: 480px) {
+      display: none;
+    }
+  }
+  [data-show='sm'] {
+    @media (max-width: 640px) {
+      display: none;
+    }
+  }
+  [data-show='md'] {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  [data-show='lg'] {
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+  [data-show='xl'] {
+    @media (max-width: 1280px) {
+      display: none;
+    }
+  }
+
+  /* Hide element from size */
+  [data-hide='xs'] {
+    @media (width > 480px) {
+      display: none;
+    }
+  }
+  [data-hide='sm'] {
+    @media (width > 640px) {
+      display: none;
+    }
+  }
+  [data-hide='md'] {
+    @media (width > 768px) {
+      display: none;
+    }
+  }
+  [data-hide='lg'] {
+    @media (width > 1024px) {
+      display: none;
+    }
+  }
+  [data-hide='xl'] {
+    @media (width > 1280px) {
+      display: none;
+    }
+  }
+}
+
+@keyframes delay-overflow {
+  from {
+    overflow: hidden;
+  }
+}
+
+/* Overlay on background when menu is open */
+:has(> .uds-header .uds-header__menu)::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 0.5);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 300ms ease-in-out,
+    visibility 0s linear 300ms;
+}
+
+:has(> .uds-header .uds-header__menu:popover-open)::before {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 300ms ease-in-out;
+}
+
+/* Parent needs overflow: visible for sticky header to work */
+:has(> .uds-header) {
+  overflow: visible;
+}
+
+/* Prevent body from scrolling when menu is open */
+body:has(.uds-header .uds-header__menu:popover-open) {
+  overflow: hidden;
+}
