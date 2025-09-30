@@ -1,5 +1,5 @@
 import { SeverityColors } from '@digdir/designsystemet-react/colors';
-import { Alert, Heading } from '../../../src/alpha';
+import { Alert } from '../../../src/alpha';
 import styles from './SimpleAlert.module.scss';
 
 export const SimpleAlert: React.FC<
@@ -10,15 +10,9 @@ export const SimpleAlert: React.FC<
 > = ({ type, heading, children }) => (
   <Alert data-color={type} className={`sb-unstyled ${styles.simpleAlert}`}>
     {heading && (
-      <Heading
-        asChild
-        data-size="xs"
-        style={{
-          marginBottom: 'var(--ds-size-2)',
-        }}
-      >
+      <Alert.Heading asChild>
         <p>{heading}</p>
-      </Heading>
+      </Alert.Heading>
     )}
     {children}
   </Alert>
