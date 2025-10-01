@@ -119,12 +119,21 @@ importers:
 
   '@internal/build-tools':
     devDependencies:
+      '@types/madge':
+        specifier: ^5.0.3
+        version: 5.0.3
       '@types/micromatch':
         specifier: ^4.0.9
         version: 4.0.9
       '@types/yargs':
         specifier: ^17.0.33
         version: 17.0.33
+      fast-glob:
+        specifier: ^3.3.3
+        version: 3.3.3
+      madge:
+        specifier: ^8.0.0
+        version: 8.0.0(typescript@5.9.2)
       micromatch:
         specifier: ^4.0.8
         version: 4.0.8
@@ -2589,6 +2598,9 @@ packages:
 
   '@types/junit-report-builder@3.0.2':
     resolution: {integrity: sha512-R5M+SYhMbwBeQcNXYWNCZkl09vkVfAtcPIaCGdzIkkbeaTrVbGQ7HVgi4s+EmM/M1K4ZuWQH0jGcvMvNePfxYA==}
+
+  '@types/madge@5.0.3':
+    resolution: {integrity: sha512-NlQJd0qRAoyu+pawTDhLxkW940QT2dqASfwd2g/xEZu2F4Xjwa7TVRSPdbmZwUF1ygvAh0/nepeN7JjwEuOXCA==}
 
   '@types/mdast@4.0.4':
     resolution: {integrity: sha512-kGaNbPh1k7AFzgpud/gMdvIm5xuECykRR+JnWKQno9TAXVa6WIVCGTPvYGekIDL4uwCZQSYbUxNBSb1aUo79oA==}
@@ -9398,6 +9410,10 @@ snapshots:
   '@types/json5@0.0.29': {}
 
   '@types/junit-report-builder@3.0.2': {}
+
+  '@types/madge@5.0.3':
+    dependencies:
+      '@types/node': 24.5.2
 
   '@types/mdast@4.0.4':
     dependencies:

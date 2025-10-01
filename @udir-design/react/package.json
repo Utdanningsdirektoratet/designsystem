@@ -38,6 +38,7 @@
     "build": "vite build",
     "inject": "pnpm i",
     "lint:cycles": "pnpm madge --circular ./src/alpha.ts",
+    "check-disallowed-imports": "../../@internal/build-tools/bin/check-disallowed-imports.ts --baseDir .",
     "test": "vitest --project unit",
     "typecheck": "tsc --build",
     "dev": "storybook dev --port 6005",

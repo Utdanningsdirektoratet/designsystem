@@ -34,7 +34,12 @@
     },
     "build": {
       "cache": true,
-      "dependsOn": ["lint:cycles", "^build", "^inject"],
+      "dependsOn": [
+        "lint:cycles",
+        "check-disallowed-imports",
+        "^build",
+        "^inject"
+      ],
       "inputs": ["default", "^default"],
       "outputs": ["{projectRoot}/dist"]
     },

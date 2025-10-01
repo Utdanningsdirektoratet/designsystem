@@ -4,8 +4,11 @@
   "type": "module",
   "private": true,
   "devDependencies": {
+    "@types/madge": "^5.0.3",
     "@types/micromatch": "^4.0.9",
     "@types/yargs": "^17.0.33",
+    "fast-glob": "^3.3.3",
+    "madge": "^8.0.0",
     "micromatch": "^4.0.8",
     "tsx": "^4.20.6",
     "yargs": "^18.0.0"
