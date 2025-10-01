@@ -89,6 +89,8 @@ Unngå å bruke for mange lenker, og vurder om noen av lenkene heller kan plasse
 
 `Header.MenuButton` er en [`Button`](/docs/components-button--docs) med åpne/lukke-ikon. Teksten kan tilpasses ved bruk av `children`. `Header.Menu` er en stor nedtrekksmeny som er basert på [`Popover`](/docs/components-popover--docs).
 
+Eksempelet under viser hvordan du kan sette opp en meny med navigasjon. Her ser du også at overskrifter kan fungere som lenker.
+
 <Canvas
   story={{ inline: false, height: '400px' }}
   of={HeaderStories.WithMenu}
@@ -118,11 +120,11 @@ Navigasjonslenker og meny er de eneste navigasjonselementene som kan kombineres 
 
 For å håndtere ulike skjermstørrelser og enheter er det satt opp noen predefinerte breakpoints for når innhold skal vises eller skjules. Dette brukes ved å sette `data-show=[size]` eller `data-hide=[size]` på komponentene du legger inn i `Header`. De tilgjengelige verdiene for `size` er:
 
-- `'xs'`: 480px
-- `'sm'`: 640px
-- `'md'`: 768px
-- `'lg'`: 1024px
-- `'xl'`: 1280px
+- `'xs'`: 30rem (480px)
+- `'sm'`: 40rem (640px)
+- `'md'`: 48rem (768px)
+- `'lg'`: 64rem (1024px)
+- `'xl'`: 80rem (1280px)
 
 `data-show` viser elementet fra og med den angitte skjermstørrelsen, mens `data-hide` skjuler elementet fra og med den angitte skjermstørrelsen.
 
@@ -173,6 +175,7 @@ Velg navigasjonsløsning ut fra hvor mange sider tjenesten har, og hvordan bruke
     tintedRowHeader
     style={{ maxWidth: 'fit-content' }}
   >
+    <caption className="ds-sr-only">Oversikt over navigasjonsløsninger</caption>
     <Table.Head>
       <Table.Row>
         <Table.HeaderCell scope="col">Løsning</Table.HeaderCell>
@@ -196,7 +199,6 @@ Velg navigasjonsløsning ut fra hvor mange sider tjenesten har, og hvordan bruke
           <ul style={{ margin: 0, paddingLeft: '1.2rem' }}>
             <li>4+ hovedsider</li>
             <li>Flere nivåer i navigasjonen</li>
-            <li>Brukeren trenger handlinger</li>
           </ul>
         </Table.Cell>
       </Table.Row>
@@ -207,19 +209,19 @@ Velg navigasjonsløsning ut fra hvor mange sider tjenesten har, og hvordan bruke
             <li>2–3 tydelige temaer for navigasjon</li>
             <li>Mange sider ellers</li>
             <li>Flere nivåer i navigasjonen</li>
-            <li>Brukeren trenger handlinger</li>
           </ul>
         </Table.Cell>
       </Table.Row>
       <Table.Row>
-        <Table.HeaderCell scope="row">Lenker + meny</Table.HeaderCell>
+        <Table.HeaderCell scope="row">
+          Navigasjonslenker + meny
+        </Table.HeaderCell>
         <Table.Cell>
           <ul style={{ margin: 0, paddingLeft: '1.2rem' }}>
             <li>2–4 hovedsider</li>
             <li>Brukeren bytter ofte mellom dem</li>
             <li>Mange andre sider i tillegg</li>
             <li>Flere nivåer i navigasjonen</li>
-            <li>Brukeren trenger handlinger</li>
           </ul>
         </Table.Cell>
       </Table.Row>
