@@ -19,11 +19,11 @@
   }
 
   &[data-tinted-column-header] {
-    --dsc-table-header-background: var(--ds-color-surface-tinted);
+    --dsc-table-header-background: rgb(251, 215, 221);
   }
 
   &[data-tinted-row-header] th[scope='row'] {
-    background-color: var(--ds-color-surface-tinted);
+    background-color: rgb(251, 215, 221);
   }
 
   &[data-sticky-header] {
