@@ -5,6 +5,7 @@ import {
   type ToggleGroupItemProps,
 } from '@digdir/designsystemet-react';
 import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
+import './togglegroup.css';
 
 type ToggleGroupProps = Omit<DigdirToggleGroupProps, 'data-color'>;
 
