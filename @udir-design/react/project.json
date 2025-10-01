@@ -8,7 +8,11 @@
   "targets": {
     "dev": {
       "continuous": true,
-      "dependsOn": ["build", "^watch", "lint:cycles"]
+      "dependsOn": [
+        "build",
+        { "projects": "!css", "target": "^watch" },
+        "lint:cycles"
+      ]
     },
     "build:storybook": {
       "inputs": ["default", "^default", "{workspaceRoot}/README.md"],

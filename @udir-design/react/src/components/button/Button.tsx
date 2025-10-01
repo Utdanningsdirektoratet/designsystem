@@ -3,6 +3,7 @@ import {
   type ButtonProps as DigdirButtonProps,
 } from '@digdir/designsystemet-react';
 import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
+import './button.css';
 
 type ButtonProps = Omit<DigdirButtonProps, 'data-color'> & {
   /**

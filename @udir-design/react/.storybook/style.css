@@ -1,4 +1,12 @@
-@import '../public/style.css';
+/*
+  We import only the external css, without the component css (../../css/src/index.css)
+  Instead, we let the component css be imported from the component tsx file.
+  This is to ensure that Chromatic can re-snapshot only changed components, by
+  analyzing the imports. E.g:
+    - Table.tsx imports './table.css'
+    - If table.css changes, Table stories must be re-snapshotted
+*/
+@import '../../css/src/external.css';
 
 body {
   font-family: 'Inter', sans-serif;

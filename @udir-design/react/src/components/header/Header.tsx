@@ -5,6 +5,7 @@ import circleLogo from '../../../assets/img/udir-circle-logo.svg';
 import { useScrollDirection } from '../../utilities/useScrollDirection';
 import { Heading } from '../typography';
 import { CSSProperties } from 'react';
+import './header.css';
 
 export type HeaderProps = HTMLAttributes<HTMLElement> & {
   /**
