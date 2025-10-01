@@ -32,6 +32,7 @@ const config: StorybookConfig = {
 
   async viteFinal(cfg, opts) {
     const { mergeConfig } = await import('vite');
+    process.env['IS_STORYBOOK'] = 'true';
     return mergeConfig(cfg, {
       optimizeDeps: {
         /*

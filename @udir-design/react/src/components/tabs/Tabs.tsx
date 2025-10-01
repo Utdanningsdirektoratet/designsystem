@@ -8,6 +8,7 @@ import {
   TabsList,
   type TabsListProps,
 } from '@digdir/designsystemet-react';
+import './tabs.css';
 
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 Tabs.displayName = 'Tabs';

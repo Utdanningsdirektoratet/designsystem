@@ -3,6 +3,7 @@ import {
   type TableProps as DigdirTableProps,
 } from '@digdir/designsystemet-react';
 import { forwardRef, ForwardRefExoticComponent } from 'react';
+import './table.css';
 
 export type TableProps = DigdirTableProps & {
   /**

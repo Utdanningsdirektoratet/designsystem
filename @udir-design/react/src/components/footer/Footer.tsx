@@ -1,6 +1,7 @@
 import { CSSProperties, forwardRef, HTMLAttributes } from 'react';
 import logo from '../../../assets/img/udir-main-logo.svg';
 import cl from 'clsx/lite';
+import './footer.css';
 
 export type FooterProps = HTMLAttributes<HTMLDivElement> & {
   /**
