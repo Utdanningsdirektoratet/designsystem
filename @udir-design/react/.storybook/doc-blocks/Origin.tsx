@@ -9,7 +9,9 @@ export function OriginText({ component, originator, details }: OriginProps) {
   const baseText =
     originator === 'digdir'
       ? ' bygger på en komponent fra Digdirs designsystem.'
-      : ' er egenutviklet.';
+      : originator === 'nav'
+        ? ' bygger på Navs designsystem.'
+        : ' er egenutviklet.';
 
   const fullText = details ? `${baseText} ${details}` : baseText;
 

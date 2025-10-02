@@ -1,0 +1,9 @@
+.root {
+  padding-top: var(--ds-size-10);
+  flex: 1 0 35%;
+  position: sticky;
+  top: var(--ds-size-10);
+  height: min-content;
+  max-height: 100vh;
+  overflow-y: auto;
+}

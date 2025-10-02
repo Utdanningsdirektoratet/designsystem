@@ -1,0 +1,36 @@
+.headings {
+  margin-top: var(--ds-size-6);
+  margin-bottom: var(--ds-size-4);
+}
+
+.iconSection {
+  @media (min-width: 992px) {
+    flex: 1 0 60%;
+  }
+}
+
+.iconGrid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  gap: var(--ds-size-4);
+}
+
+.noResults {
+  margin-top: var(--ds-size-10);
+  display: flex;
+  flex-direction: row;
+
+  & .illustration {
+    width: 100%;
+
+    & svg {
+      width: 100%;
+      height: auto;
+      aspect-ratio: initial;
+    }
+  }
+  & h2 {
+    margin-bottom: var(--ds-size-2);
+  }
+}

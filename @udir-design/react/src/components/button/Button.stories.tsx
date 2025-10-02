@@ -12,7 +12,7 @@ import {
   PlusCircleIcon,
   PrinterSmallIcon,
   TrashIcon,
-} from '@navikt/aksel-icons';
+} from '@udir-design/icons';
 import { Card, Label, Tooltip } from '@udir-design/react/alpha';
 
 export type Story = StoryObj<typeof Button>;

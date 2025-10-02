@@ -1,0 +1,23 @@
+.root {
+  .headerSection {
+    background-color: var(--ds-color-surface-tinted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--ds-size-2);
+    padding-inline: var(--ds-size-4);
+  }
+
+  & button {
+    margin-top: 0;
+  }
+
+  .codeSection {
+    overflow: auto;
+
+    & code {
+      font-family: courier new;
+      background-color: transparent;
+    }
+  }
+}

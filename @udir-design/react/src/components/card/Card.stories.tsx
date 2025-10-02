@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { PlusIcon, TrashFillIcon } from '@navikt/aksel-icons';
+import { PlusIcon, TrashFillIcon } from '@udir-design/icons';
 import {
   Button,
   Card,

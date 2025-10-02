@@ -6,7 +6,7 @@ import {
   PencilIcon,
   VideoIcon,
   FloppydiskFillIcon,
-} from '@navikt/aksel-icons';
+} from '@udir-design/icons';
 import { Badge } from './Badge';
 import { Avatar, Button, Tabs } from '../beta';
 import { CSSProperties } from 'react';
