@@ -9,28 +9,30 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding: var(--ds-size-4);
-    gap: var(--ds-size-8);
-    max-width: var(--udsc-footer-max-width, 1280px);
+    max-width: var(--udsc-footer-max-width, 80rem);
     margin: 0 auto;
 
-    @media (min-width: 768px) {
-      padding: var(--ds-size-4);
-      gap: var(--ds-size-5);
+    & .uds-footer__list {
+      margin-bottom: var(--ds-size-10);
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 40rem) {
+      & .uds-footer__list[data-variant='social'] {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (min-width: 48rem) {
       padding: var(--ds-size-15);
     }
   }
 
   /* Empty block after regular lists, before logo and social to force new line */
-  @media (min-width: 700px) {
-    > div::after {
-      content: '';
-      flex-basis: 100%;
-      height: 0;
-      order: 1;
-    }
+  > div::after {
+    content: '';
+    flex-basis: 100%;
+    height: 0;
+    order: 1;
   }
 
   & .ds-link {
@@ -44,9 +46,18 @@
   }
 
   .uds-footer__logo {
-    width: 180px;
-    height: 54px;
     order: 2;
+
+    > img {
+      height: var(--ds-size-12);
+    }
+
+    > img:first-of-type {
+      display: block;
+    }
+    > img:last-of-type {
+      display: none;
+    }
 
     @composes ds-focus from '@digdir/designsystemet-css/base.css';
   }
@@ -62,7 +73,7 @@
     order: 0;
     word-break: break-word;
 
-    @media (min-width: 600px) {
+    @media (min-width: 40rem) {
       flex: 0 1 auto;
     }
 
@@ -73,12 +84,32 @@
       flex: 2 1 100%;
       order: 0;
 
-      @media (min-width: 600px) {
+      @media (min-width: 40rem) {
         flex-direction: row;
         gap: var(--ds-size-3);
         flex: 0 1 auto;
         order: 3;
       }
+    }
+  }
+}
+
+[data-color-scheme='dark'] .uds-footer__logo {
+  > img:first-of-type {
+    display: none;
+  }
+  > img:last-of-type {
+    display: block;
+  }
+}
+
+[data-color-scheme='auto'] {
+  @media (prefers-color-scheme: dark) {
+    .uds-footer__logo > img:first-of-type {
+      display: none;
+    }
+    .uds-footer__logo > img:last-of-type {
+      display: block;
     }
   }
 }

@@ -42,7 +42,7 @@ export const Preview: Story = {
 
 export const Udirno: Story = {
   render: () => (
-    <Footer data-size="md">
+    <Footer>
       <Footer.List>
         <Footer.Item href="#">Om tjenesten</Footer.Item>
         <Footer.Item href="#">Kontakt oss</Footer.Item>
@@ -77,7 +77,7 @@ export const Udirno: Story = {
 
 export const Tjeneste: Story = {
   render: () => (
-    <Footer data-size="md">
+    <Footer>
       <Footer.List>
         <Footer.Item href="#">Om tjenesten</Footer.Item>
         <Footer.Item href="#">Kontakt oss</Footer.Item>

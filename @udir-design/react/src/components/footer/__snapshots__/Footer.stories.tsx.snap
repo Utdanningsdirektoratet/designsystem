@@ -2,7 +2,7 @@
 
 exports[`Preview 1`] = `
 <div data-size="auto">
-  <footer style="--udsc-footer-max-width: 1280px;">
+  <footer style="--udsc-footer-max-width: 80rem;">
     <div>
       <ul data-variant="simple">
         <li>
@@ -49,6 +49,10 @@ exports[`Preview 1`] = `
         <img
           alt="Utdanningsdirektoratet"
           src="/assets/img/udir-main-logo.svg"
+        >
+        <img
+          alt="Utdanningsdirektoratet"
+          src="/assets/img/udir-main-logo-dark-mode.svg"
         >
       </a>
     </div>
@@ -58,10 +62,7 @@ exports[`Preview 1`] = `
 
 exports[`Tjeneste 1`] = `
 <div data-size="auto">
-  <footer
-    data-size="md"
-    style="--udsc-footer-max-width: 1280px;"
-  >
+  <footer style="--udsc-footer-max-width: 80rem;">
     <div>
       <ul data-variant="simple">
         <li>
@@ -97,6 +98,10 @@ exports[`Tjeneste 1`] = `
           alt="Utdanningsdirektoratet"
           src="/assets/img/udir-main-logo.svg"
         >
+        <img
+          alt="Utdanningsdirektoratet"
+          src="/assets/img/udir-main-logo-dark-mode.svg"
+        >
       </a>
     </div>
   </footer>
@@ -105,10 +110,7 @@ exports[`Tjeneste 1`] = `
 
 exports[`Udirno 1`] = `
 <div data-size="auto">
-  <footer
-    data-size="md"
-    style="--udsc-footer-max-width: 1280px;"
-  >
+  <footer style="--udsc-footer-max-width: 80rem;">
     <div>
       <ul data-variant="simple">
         <li>
@@ -254,6 +256,10 @@ exports[`Udirno 1`] = `
         <img
           alt="Utdanningsdirektoratet"
           src="/assets/img/udir-main-logo.svg"
+        >
+        <img
+          alt="Utdanningsdirektoratet"
+          src="/assets/img/udir-main-logo-dark-mode.svg"
         >
       </a>
     </div>
