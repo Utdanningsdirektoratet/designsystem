@@ -22,7 +22,7 @@ export type HeaderProps = HTMLAttributes<HTMLElement> & {
   /**
    * The maximum width of the header content.
    * Can be any valid CSS width value, e.g. `1280px`, `100%`, etc.
-   * @default '1280px'
+   * @default '80rem'
    */
   maxWidth?: string;
   /**
@@ -38,7 +38,7 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(function Header(
     children,
     className,
     href = '/',
-    maxWidth = '1280px',
+    maxWidth = '80rem',
     sticky = true,
     ...rest
   },
