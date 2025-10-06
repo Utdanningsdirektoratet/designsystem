@@ -5,11 +5,17 @@ export interface OriginProps extends ComponentOrigin {
   component: string;
 }
 
-export function OriginText({ component, originator, details }: OriginProps) {
-  const baseText =
-    originator === 'digdir'
-      ? ' bygger på en komponent fra Digdirs designsystem.'
-      : ' er egenutviklet.';
+export function OriginText({
+  component,
+  originator,
+  details,
+  demo,
+}: OriginProps) {
+  const digdirText = demo
+    ? ' er basert på et eksempel fra Digdir.'
+    : ' bygger på en komponent fra Digdirs designsystem.';
+  const selfText = ' er egenutviklet.';
+  const baseText = originator === 'digdir' ? digdirText : selfText;
 
   const fullText = details ? `${baseText} ${details}` : baseText;
 

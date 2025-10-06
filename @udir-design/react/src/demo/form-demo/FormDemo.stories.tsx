@@ -8,6 +8,10 @@ const meta: Meta<typeof FormDemo> = {
   component: FormDemo,
   parameters: {
     ...demoParameters,
+    componentOrigin: {
+      originator: 'self',
+      demo: true,
+    },
     a11y: {
       config: {
         rules: [

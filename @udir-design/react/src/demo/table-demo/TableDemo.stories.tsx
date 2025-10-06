@@ -7,6 +7,10 @@ const meta: Meta<typeof TableDemo> = {
   component: TableDemo,
   parameters: {
     ...demoParameters,
+    componentOrigin: {
+      originator: 'self',
+      demo: true,
+    },
   },
 };
 

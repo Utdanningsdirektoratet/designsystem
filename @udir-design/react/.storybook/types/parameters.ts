@@ -56,6 +56,7 @@ type DocsSourceParams = Partial<Omit<SourceBlockParameters, 'transform'>> & {
 export type ComponentOrigin = {
   originator: 'self' | 'digdir';
   details?: string;
+  demo?: boolean;
 };
 export type ComponentOriginParameters = {
   componentOrigin: ComponentOrigin;
@@ -63,9 +64,7 @@ export type ComponentOriginParameters = {
 
 declare module 'storybook/internal/csf' {
   interface ComponentAnnotations {
-    parameters?: Parameters & Partial<ComponentOriginParameters>;
-    // TODO: should just be this when all story files are updated
-    // parameters: Parameters & ComponentOriginParameters;
+    parameters: Parameters & ComponentOriginParameters;
   }
 }
 

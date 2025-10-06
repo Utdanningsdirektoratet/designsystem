@@ -2,7 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Heading, Paragraph } from '@udir-design/react/alpha';
 
-const meta: Meta = {};
+const meta: Meta = {
+  parameters: {
+    componentOrigin: {
+      originator: 'digdir',
+    },
+  },
+};
 
 type Story = StoryObj;
 

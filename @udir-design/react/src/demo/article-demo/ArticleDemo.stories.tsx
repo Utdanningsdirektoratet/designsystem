@@ -9,6 +9,10 @@ const meta: Meta<typeof ArticleDemo> = {
   decorators: [withScrollHashBehavior],
   parameters: {
     ...demoParameters,
+    componentOrigin: {
+      originator: 'self',
+      details: 'Eksempelet er hentet fra udir.no',
+    },
   },
 };
 
