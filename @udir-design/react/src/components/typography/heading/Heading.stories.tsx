@@ -9,6 +9,12 @@ const meta: Meta<typeof Heading> = {
       originator: 'digdir',
     },
   },
+  argTypes: {
+    'data-size': {
+      options: ['2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'],
+      control: { type: 'select' },
+    },
+  },
   title: 'Components/Typography/Heading',
 };
 
