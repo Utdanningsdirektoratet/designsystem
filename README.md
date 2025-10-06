@@ -34,6 +34,9 @@ I dette repositoriet lever den delen av designsystemet som implementeres i kode:
   - [Oppsett lokalt](#oppsett-lokalt)
   - [Monorepo - enkelt forklart](#monorepo---enkelt-forklart)
   - [Hvordan jobbe med kodebasen](#hvordan-jobbe-med-kodebasen)
+  - [Hvordan legge til nye prosjekter i arbeidsområdet](#hvordan-legge-til-nye-prosjekter-i-arbeidsområdet)
+  - [Hvordan legge til avhengigheter mellom prosjekter](#hvordan-legge-til-avhengigheter-mellom-prosjekter)
+  - [Hvordan legge til nye eksterne avhengigheter](#hvordan-legge-til-nye-eksterne-avhengigheter)
   - [Hvordan oppgradere avhengigheter](#hvordan-oppgradere-avhengigheter)
   - [Hvordan oppdatere symboler](#hvordan-oppdatere-symboler)
   - [Hvordan publisere en ny versjon](#hvordan-publisere-en-ny-versjon)
@@ -239,10 +242,6 @@ flowchart-elk BT
 
 ## Hvordan jobbe med kodebasen
 
-> [!CAUTION]
-> Denne dokumentasjonen inneholder foreløpig ingen informasjon om hvordan du går fram for å skrive tester.
-> Foreløpig kan du lese [Hva tester vi](#hva-tester-vi)-seksjonen, og be en kollega om hjelp om du står fast.
-
 ### Mappestruktur
 
 Hver komponent skal ha en undermappe i `@udir-design/react/src/components`. F.eks:
@@ -385,6 +384,73 @@ Les mer i Nx sin dokumentasjon:
 
 - [Explore your Workspace](https://nx.dev/features/explore-graph)
 - [Run Tasks](https://nx.dev/features/run-tasks).
+
+### Testing
+
+Følgende kommando kjører enhets-, uu- og snapshottest samlet.
+
+```bash
+pnpm nx test:storybook
+```
+
+#### Enhetstester
+
+Vi bruker playwright til å skrive interaksjonstester for komponenter. Testene simulerer interaksjon med komponenten, og defineres som en del av eksemplene for en komponent i Storybook. En komponent skal testes i alle relevante tilstander, og vi skal dekke alle relevante brukerinteraksjoner.
+
+> [!TIP]
+> For `Popover` burde man for eksempel teste i både åpen og lukket tilstand, samt sjekke at den kan lukkes både med knapp og ved å trykke utenfor boksen.
+
+#### Automatiske tester
+
+Hvert eksempel i Storybook får automatisk en snapshottest, en visuell test, og en regelbasert UU-test. Disse testene generes med kommandoen
+
+```bash
+pnpm nx test:storybook --update
+```
+
+#### Systemtest
+
+Alle unike komponenter skal inngå i minst én demo-side for å kunne gjennomføre systemtest.
+
+### Pull request prosessen
+
+Alle kodeendringer må gjennom en peer review prosess i github. Alle pull requests må ha minst en approval for å kunne merges. Tillegg må pull requesten "bestå" alle automatiserte tester.
+
+En kodeendring som sendes til peer review setter i gang kjøring av tester. Dette skjer i GitHub Actions. Ved visuelle endringer må det både gjennomføres kodegjennomgang på Github og visuell gjennomgang i Chromatic. Lenker til dette inngår som en del av checksene for pull requesten i github.
+
+Testene utføres også automatisk før publisering av kodebibliotekene, og publiseringen vil bli avbrutt dersom testene feiler.
+
+## Hvordan legge til nye prosjekter i arbeidsområdet
+
+Når du lager et nytt prosjekt i repoet [...]
+
+Du trenger
+
+- `package.json`
+- `tsconfig.json` ???
+- Oppdatere eventuelle [avhengigheter mellom prosjekter](#hvordan-legge-til-avhengigheter-mellom-prosjekter)
+
+## Hvordan legge til avhengigheter mellom prosjekter
+
+Dersom noen av prosjektene er avhengige av hverandre, slik som f.eks. `@udir-design/react` er avhenging av `@udir-design/css` legges prosjektet til i `package.json` som en dependency på følgende måte:
+
+```json
+"dependencies": {
+    "@udir-design/css": "workspace:*"
+  },
+```
+
+Pass på å ikke lage sykliske avhengigheter. Dette vil typisk oppdages av linter.
+
+## Hvordan legge til nye eksterne avhengigheter
+
+Legg til nye eksterne avhengigheter med kommandoen
+
+```bash
+pnpm add <package>
+```
+
+Sørg også for å oppdatere / sjekke at alt blir riktig i [...].
 
 ## Hvordan oppgradere avhengigheter
 
