@@ -5,7 +5,10 @@ import { type UsePaginationProps, usePagination } from './usePagination';
 
 const meta: Meta = {
   title: 'Utilities/usePagination',
-  parameters: { chromatic: { disableSnapshot: true } },
+  parameters: {
+    componentOrigin: { originator: 'digdir' },
+    chromatic: { disableSnapshot: true },
+  },
   argTypes: {
     currentPage: {
       control: {

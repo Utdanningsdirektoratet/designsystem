@@ -22,6 +22,9 @@ const meta: Meta<typeof Header> = {
   component: Header,
   tags: ['alpha'],
   parameters: {
+    componentOrigin: {
+      originator: 'self',
+    },
     layout: 'fullscreen',
     customStyles: {
       padding: 0,

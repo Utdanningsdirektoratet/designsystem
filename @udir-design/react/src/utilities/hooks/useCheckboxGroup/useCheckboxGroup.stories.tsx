@@ -11,7 +11,10 @@ import {
 
 const meta: Meta = {
   title: 'Utilities/useCheckboxGroup',
-  parameters: { chromatic: { disableSnapshot: true } },
+  parameters: {
+    componentOrigin: { originator: 'digdir' },
+    chromatic: { disableSnapshot: true },
+  },
   argTypes: {
     name: {
       table: { type: { summary: 'string' } },
