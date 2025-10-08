@@ -9,7 +9,7 @@ Udirs ikonbibliotek er basert på [navikt/aksel](https://aksel.nav.no/komponente
 ## Installere biblioteket
 
 ```bash
-npm add @udir-design/icons
+npm add @udir-design/icons@beta
 ```
 
 ## Ta i bruk
