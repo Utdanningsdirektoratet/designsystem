@@ -1,0 +1,7 @@
+.ds-dialog {
+  @media (max-width: 40rem) {
+    min-width: calc(100% - 4px);
+    max-width: calc(100% - 4px);
+    border-radius: var(--ds-border-radius-lg);
+  }
+}
