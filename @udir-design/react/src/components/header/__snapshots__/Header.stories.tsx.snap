@@ -4,13 +4,17 @@ exports[`Auto Hide Sticky 1`] = `
 <div data-size="auto">
   <header
     data-scroll-direction="up"
-    style="--udsc-header-max-width: 1280px;"
+    style="--udsc-header-max-width: 80rem;"
   >
     <div>
       <a href="/">
         <img
           alt
           src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
+        >
+        <img
+          alt
+          src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-2&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-3&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
         >
         <span data-size="xs">
           Tjenestenavn
@@ -27,7 +31,7 @@ exports[`Auto Hide Sticky 1`] = `
                 href="#"
                 aria-current="page"
               >
-                Link 1
+                Navlink 1
               </a>
             </li>
             <li>
@@ -35,7 +39,7 @@ exports[`Auto Hide Sticky 1`] = `
                 href="#"
                 aria-current="page"
               >
-                Link 2
+                Navlink 2
               </a>
             </li>
             <li>
@@ -43,7 +47,7 @@ exports[`Auto Hide Sticky 1`] = `
                 href="#"
                 aria-current="page"
               >
-                Link 3
+                Navlink 3
               </a>
             </li>
           </ul>
@@ -106,7 +110,7 @@ exports[`Auto Hide Sticky 1`] = `
                 data-size="xs"
                 style="margin-bottom: var(--ds-size-3);"
               >
-                Viktige lenker
+                Navlinker
               </h3>
               <ul>
                 <li>
@@ -131,7 +135,7 @@ exports[`Auto Hide Sticky 1`] = `
                       </path>
                     </svg>
                     <span>
-                      Link 1
+                      Navlink 1
                     </span>
                   </a>
                 </li>
@@ -157,7 +161,7 @@ exports[`Auto Hide Sticky 1`] = `
                       </path>
                     </svg>
                     <span>
-                      Link 2
+                      Navlink 2
                     </span>
                   </a>
                 </li>
@@ -183,7 +187,7 @@ exports[`Auto Hide Sticky 1`] = `
                       </path>
                     </svg>
                     <span>
-                      Link 3
+                      Navlink 3
                     </span>
                   </a>
                 </li>
@@ -194,7 +198,7 @@ exports[`Auto Hide Sticky 1`] = `
                 data-size="xs"
                 style="margin-bottom: var(--ds-size-3);"
               >
-                Lenker
+                Overskrift 1
               </h3>
               <ul>
                 <li>
@@ -334,7 +338,7 @@ exports[`Auto Hide Sticky 1`] = `
                 data-size="xs"
                 style="margin-bottom: var(--ds-size-3);"
               >
-                Andre lenker
+                Overskrift 2
               </h3>
               <ul>
                 <li>
@@ -499,12 +503,16 @@ exports[`Auto Hide Sticky 1`] = `
 
 exports[`Preview 1`] = `
 <div data-size="auto">
-  <header style="--udsc-header-max-width: 1280px;">
+  <header style="--udsc-header-max-width: 80rem;">
     <div>
       <a href="/">
         <img
           alt
           src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
+        >
+        <img
+          alt
+          src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-2&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-3&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
         >
         <span data-size="xs">
           Tjenestenavn
@@ -519,13 +527,17 @@ exports[`Responsive 1`] = `
 <div data-size="auto">
   <header
     data-scroll-direction="up"
-    style="--udsc-header-max-width: 1280px;"
+    style="--udsc-header-max-width: 80rem;"
   >
     <div>
       <a href="/">
         <img
           alt
           src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
+        >
+        <img
+          alt
+          src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-2&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-3&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
         >
         <span data-size="xs">
           Tjenestenavn
@@ -542,7 +554,7 @@ exports[`Responsive 1`] = `
                 href="#"
                 aria-current="page"
               >
-                Link 1
+                Navlink 1
               </a>
             </li>
             <li>
@@ -550,7 +562,7 @@ exports[`Responsive 1`] = `
                 href="#"
                 aria-current="page"
               >
-                Link 2
+                Navlink 2
               </a>
             </li>
             <li>
@@ -558,7 +570,7 @@ exports[`Responsive 1`] = `
                 href="#"
                 aria-current="page"
               >
-                Link 3
+                Navlink 3
               </a>
             </li>
           </ul>
@@ -646,7 +658,6 @@ exports[`Responsive 1`] = `
                   data-variant="circle"
                   role="img"
                   aria-hidden="true"
-                  data-color="support1"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -834,7 +845,6 @@ exports[`Responsive 1`] = `
                     data-variant="circle"
                     role="img"
                     aria-hidden="true"
-                    data-color="support1"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -904,7 +914,7 @@ exports[`Responsive 1`] = `
                 data-size="xs"
                 style="margin-bottom: var(--ds-size-3);"
               >
-                Viktige lenker
+                Navlinker
               </h3>
               <ul>
                 <li>
@@ -929,7 +939,7 @@ exports[`Responsive 1`] = `
                       </path>
                     </svg>
                     <span>
-                      Link 1
+                      Navlink 1
                     </span>
                   </a>
                 </li>
@@ -955,7 +965,7 @@ exports[`Responsive 1`] = `
                       </path>
                     </svg>
                     <span>
-                      Link 2
+                      Navlink 2
                     </span>
                   </a>
                 </li>
@@ -981,7 +991,7 @@ exports[`Responsive 1`] = `
                       </path>
                     </svg>
                     <span>
-                      Link 3
+                      Navlink 3
                     </span>
                   </a>
                 </li>
@@ -992,7 +1002,7 @@ exports[`Responsive 1`] = `
                 data-size="xs"
                 style="margin-bottom: var(--ds-size-3);"
               >
-                Lenker
+                Overskrift 1
               </h3>
               <ul>
                 <li>
@@ -1132,7 +1142,7 @@ exports[`Responsive 1`] = `
                 data-size="xs"
                 style="margin-bottom: var(--ds-size-3);"
               >
-                Andre lenker
+                Overskrift 2
               </h3>
               <ul>
                 <li>
@@ -1253,13 +1263,17 @@ exports[`Udir No 1`] = `
 <div data-size="auto">
   <header
     data-scroll-direction="up"
-    style="--udsc-header-max-width: 1280px;"
+    style="--udsc-header-max-width: 80rem;"
   >
     <div>
       <a href="https://www.udir.no/">
         <img
           alt="Utdanningsdirektoratet"
           src="/assets/img/udir-main-logo.svg"
+        >
+        <img
+          alt="Utdanningsdirektoratet"
+          src="/assets/img/udir-main-logo-dark-mode.svg"
         >
       </a>
       <div>
@@ -2410,13 +2424,17 @@ exports[`With Menu 1`] = `
 <div data-size="auto">
   <header
     data-scroll-direction="up"
-    style="--udsc-header-max-width: 1280px;"
+    style="--udsc-header-max-width: 80rem;"
   >
     <div>
       <a href="/">
         <img
           alt
           src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
+        >
+        <img
+          alt
+          src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-2&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-3&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
         >
         <span data-size="xs">
           Tjenestenavn
@@ -2481,7 +2499,9 @@ exports[`With Menu 1`] = `
                 data-size="xs"
                 style="margin-bottom: var(--ds-size-3);"
               >
-                Designprofil
+                <a href="#">
+                  Designprofil
+                </a>
               </h3>
               <ul>
                 <li>
@@ -2569,7 +2589,9 @@ exports[`With Menu 1`] = `
                 data-size="xs"
                 style="margin-bottom: var(--ds-size-3);"
               >
-                Illustrasjoner
+                <a href="#">
+                  Illustrasjoner
+                </a>
               </h3>
               <ul>
                 <li>
@@ -2657,7 +2679,9 @@ exports[`With Menu 1`] = `
                 data-size="xs"
                 style="margin-bottom: var(--ds-size-3);"
               >
-                Nyttige lenker
+                <a href="#">
+                  Nyttige lenker
+                </a>
               </h3>
               <ul>
                 <li>
@@ -2752,13 +2776,17 @@ exports[`With Navigation Links 1`] = `
 <div data-size="auto">
   <header
     data-scroll-direction="up"
-    style="--udsc-header-max-width: 1280px;"
+    style="--udsc-header-max-width: 80rem;"
   >
     <div>
       <a href="/">
         <img
           alt
           src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
+        >
+        <img
+          alt
+          src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-2&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-3&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
         >
         <span data-size="xs">
           Tjenestenavn
@@ -2767,7 +2795,7 @@ exports[`With Navigation Links 1`] = `
       <div>
         <nav
           aria-label="header-navigation"
-          data-show="xs"
+          data-show="sm"
         >
           <ul>
             <li>
@@ -2775,7 +2803,7 @@ exports[`With Navigation Links 1`] = `
                 href="#"
                 aria-current="page"
               >
-                Link 1
+                Navlink 1
               </a>
             </li>
             <li>
@@ -2783,7 +2811,7 @@ exports[`With Navigation Links 1`] = `
                 href="#"
                 aria-current="page"
               >
-                Link 2
+                Navlink 2
               </a>
             </li>
             <li>
@@ -2791,7 +2819,7 @@ exports[`With Navigation Links 1`] = `
                 href="#"
                 aria-current="page"
               >
-                Link 3
+                Navlink 3
               </a>
             </li>
           </ul>
@@ -2800,7 +2828,7 @@ exports[`With Navigation Links 1`] = `
           data-variant="tertiary"
           type="button"
           popovertarget="uds-header-menu"
-          data-hide="xs"
+          data-hide="sm"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2867,7 +2895,7 @@ exports[`With Navigation Links 1`] = `
                     </path>
                   </svg>
                   <span>
-                    Link 1
+                    Navlink 1
                   </span>
                 </a>
               </li>
@@ -2890,7 +2918,7 @@ exports[`With Navigation Links 1`] = `
                     </path>
                   </svg>
                   <span>
-                    Link 2
+                    Navlink 2
                   </span>
                 </a>
               </li>
@@ -2913,7 +2941,7 @@ exports[`With Navigation Links 1`] = `
                     </path>
                   </svg>
                   <span>
-                    Link 3
+                    Navlink 3
                   </span>
                 </a>
               </li>
@@ -2930,13 +2958,17 @@ exports[`With Navigation Links And Menu 1`] = `
 <div data-size="auto">
   <header
     data-scroll-direction="up"
-    style="--udsc-header-max-width: 1280px;"
+    style="--udsc-header-max-width: 80rem;"
   >
     <div>
       <a href="/">
         <img
           alt
           src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
+        >
+        <img
+          alt
+          src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-2&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-3&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
         >
         <span data-size="xs">
           Tjenestenavn
@@ -2953,7 +2985,7 @@ exports[`With Navigation Links And Menu 1`] = `
                 href="#"
                 aria-current="page"
               >
-                Eksamen
+                Navlink 1
               </a>
             </li>
             <li>
@@ -2961,7 +2993,7 @@ exports[`With Navigation Links And Menu 1`] = `
                 href="#"
                 aria-current="page"
               >
-                Besvarelser
+                Navlink 2
               </a>
             </li>
           </ul>
@@ -3014,27 +3046,22 @@ exports[`With Navigation Links And Menu 1`] = `
         >
           <nav
             aria-labelledby="header-menu-navigation"
-            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); max-width: 800px; margin: 0px auto; padding: var(--ds-size-5) var(--ds-size-10) var(--ds-size-10); row-gap: var(--ds-size-10); column-gap: ;"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); max-width: 800px; margin: 0px auto; padding: var(--ds-size-5) var(--ds-size-10) var(--ds-size-10); row-gap: var(--ds-size-10); column-gap: ;"
           >
             <h2 id="header-menu-navigation">
               Menynavigasjon
             </h2>
-            <div>
+            <div data-hide="sm">
               <h3
                 data-size="xs"
                 style="margin-bottom: var(--ds-size-3);"
               >
-                <a
-                  href="#"
-                  style="text-decoration: none;"
-                >
-                  Info om eksamen
-                </a>
+                Navlinker
               </h3>
               <ul>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3054,13 +3081,13 @@ exports[`With Navigation Links And Menu 1`] = `
                       </path>
                     </svg>
                     <span>
-                      Skriftlig eksamen
+                      Navlink 1
                     </span>
                   </a>
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3080,33 +3107,7 @@ exports[`With Navigation Links And Menu 1`] = `
                       </path>
                     </svg>
                     <span>
-                      Muntling eksamen
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href
-                    style="text-decoration: none;"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="1em"
-                      height="1em"
-                      fill="none"
-                      viewbox="0 0 24 24"
-                      focusable="false"
-                      role="img"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M14.087 6.873a.75.75 0 0 1 .943.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .117-1.157"
-                      >
-                      </path>
-                    </svg>
-                    <span>
-                      Privatisteksamen
+                      Navlink 2
                     </span>
                   </a>
                 </li>
@@ -3117,17 +3118,12 @@ exports[`With Navigation Links And Menu 1`] = `
                 data-size="xs"
                 style="margin-bottom: var(--ds-size-3);"
               >
-                <a
-                  href="#"
-                  style="text-decoration: none;"
-                >
-                  Retting av besvarelser
-                </a>
+                Overskrift 1
               </h3>
               <ul>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3147,13 +3143,13 @@ exports[`With Navigation Links And Menu 1`] = `
                       </path>
                     </svg>
                     <span>
-                      Administrere besvarelser
+                      Link 1
                     </span>
                   </a>
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3173,7 +3169,235 @@ exports[`With Navigation Links And Menu 1`] = `
                       </path>
                     </svg>
                     <span>
-                      Retting og vurdering
+                      Link 2
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    style="text-decoration: none;"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="none"
+                      viewbox="0 0 24 24"
+                      focusable="false"
+                      role="img"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M14.087 6.873a.75.75 0 0 1 .943.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .117-1.157"
+                      >
+                      </path>
+                    </svg>
+                    <span>
+                      Link 3
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3
+                data-size="xs"
+                style="margin-bottom: var(--ds-size-3);"
+              >
+                Overskrift 2
+              </h3>
+              <ul>
+                <li>
+                  <a
+                    href="#"
+                    style="text-decoration: none;"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="none"
+                      viewbox="0 0 24 24"
+                      focusable="false"
+                      role="img"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M14.087 6.873a.75.75 0 0 1 .943.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .117-1.157"
+                      >
+                      </path>
+                    </svg>
+                    <span>
+                      Link 1
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    style="text-decoration: none;"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="none"
+                      viewbox="0 0 24 24"
+                      focusable="false"
+                      role="img"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M14.087 6.873a.75.75 0 0 1 .943.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .117-1.157"
+                      >
+                      </path>
+                    </svg>
+                    <span>
+                      Link 2
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    style="text-decoration: none;"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="none"
+                      viewbox="0 0 24 24"
+                      focusable="false"
+                      role="img"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M14.087 6.873a.75.75 0 0 1 .943.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .117-1.157"
+                      >
+                      </path>
+                    </svg>
+                    <span>
+                      Link 3
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    style="text-decoration: none;"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="none"
+                      viewbox="0 0 24 24"
+                      focusable="false"
+                      role="img"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M14.087 6.873a.75.75 0 0 1 .943.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .117-1.157"
+                      >
+                      </path>
+                    </svg>
+                    <span>
+                      Link 4
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3
+                data-size="xs"
+                style="margin-bottom: var(--ds-size-3);"
+              >
+                Overskrift 3
+              </h3>
+              <ul>
+                <li>
+                  <a
+                    href="#"
+                    style="text-decoration: none;"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="none"
+                      viewbox="0 0 24 24"
+                      focusable="false"
+                      role="img"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M14.087 6.873a.75.75 0 0 1 .943.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .117-1.157"
+                      >
+                      </path>
+                    </svg>
+                    <span>
+                      Link 1
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    style="text-decoration: none;"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="none"
+                      viewbox="0 0 24 24"
+                      focusable="false"
+                      role="img"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M14.087 6.873a.75.75 0 0 1 .943.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .117-1.157"
+                      >
+                      </path>
+                    </svg>
+                    <span>
+                      Link 2
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    style="text-decoration: none;"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="none"
+                      viewbox="0 0 24 24"
+                      focusable="false"
+                      role="img"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M14.087 6.873a.75.75 0 0 1 .943.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .117-1.157"
+                      >
+                      </path>
+                    </svg>
+                    <span>
+                      Link 3
                     </span>
                   </a>
                 </li>
@@ -3191,13 +3415,17 @@ exports[`With Search 1`] = `
 <div data-size="auto">
   <header
     data-scroll-direction="up"
-    style="--udsc-header-max-width: 1280px;"
+    style="--udsc-header-max-width: 80rem;"
   >
     <div>
       <a href="/">
         <img
           alt
           src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
+        >
+        <img
+          alt
+          src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-2&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-3&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
         >
         <span data-size="xs">
           Tjenestenavn
@@ -3229,13 +3457,17 @@ exports[`With Theme Menus 1`] = `
 <div data-size="auto">
   <header
     data-scroll-direction="up"
-    style="--udsc-header-max-width: 1280px;"
+    style="--udsc-header-max-width: 80rem;"
   >
     <div>
       <a href="/">
         <img
           alt
           src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
+        >
+        <img
+          alt
+          src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-2&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-3&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
         >
         <span data-size="xs">
           Tjenestenavn
@@ -3308,7 +3540,7 @@ exports[`With Theme Menus 1`] = `
               <ul>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3334,7 +3566,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3360,7 +3592,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3396,7 +3628,7 @@ exports[`With Theme Menus 1`] = `
               <ul>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3422,7 +3654,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3448,7 +3680,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3474,7 +3706,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3510,7 +3742,7 @@ exports[`With Theme Menus 1`] = `
               <ul>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3536,7 +3768,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3562,7 +3794,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3656,7 +3888,7 @@ exports[`With Theme Menus 1`] = `
               <ul>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3682,7 +3914,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3708,7 +3940,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3744,7 +3976,7 @@ exports[`With Theme Menus 1`] = `
               <ul>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3770,7 +4002,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3796,7 +4028,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3822,7 +4054,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3914,7 +4146,7 @@ exports[`With Theme Menus 1`] = `
               <ul>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3940,7 +4172,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -3966,7 +4198,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -4002,7 +4234,7 @@ exports[`With Theme Menus 1`] = `
               <ul>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -4028,7 +4260,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -4054,7 +4286,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -4080,7 +4312,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -4116,7 +4348,7 @@ exports[`With Theme Menus 1`] = `
               <ul>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -4142,7 +4374,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -4168,7 +4400,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -4204,7 +4436,7 @@ exports[`With Theme Menus 1`] = `
               <ul>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -4230,7 +4462,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -4256,7 +4488,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -4292,7 +4524,7 @@ exports[`With Theme Menus 1`] = `
               <ul>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -4318,7 +4550,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -4344,7 +4576,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -4370,7 +4602,7 @@ exports[`With Theme Menus 1`] = `
                 </li>
                 <li>
                   <a
-                    href
+                    href="#"
                     style="text-decoration: none;"
                   >
                     <svg
@@ -4408,13 +4640,17 @@ exports[`With User Button 1`] = `
 <div data-size="auto">
   <header
     data-scroll-direction="up"
-    style="--udsc-header-max-width: 1280px;"
+    style="--udsc-header-max-width: 80rem;"
   >
     <div>
       <a href="/">
         <img
           alt
           src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
+        >
+        <img
+          alt
+          src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-2&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-3&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
         >
         <span data-size="xs">
           Tjenestenavn
@@ -4506,7 +4742,6 @@ exports[`With User Button 1`] = `
                   data-variant="circle"
                   role="img"
                   aria-hidden="true"
-                  data-color="support1"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4618,7 +4853,6 @@ exports[`With User Button 1`] = `
                   data-variant="circle"
                   role="img"
                   aria-hidden="true"
-                  data-color="support1"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
