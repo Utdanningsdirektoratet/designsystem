@@ -2,16 +2,20 @@ import Fuse from 'fuse.js';
 import meta, { AkselIcon } from '@udir-design/icons/metadata';
 import { Translations } from './Translations';
 
-export const strokeIcons = Object.values(meta).filter(
-  (x) => x.variant.toLowerCase() === 'stroke',
-);
+type UdirIcon = AkselIcon & { category_no: string };
+
+export const strokeIcons: UdirIcon[] = Object.values(meta)
+  .filter((x) => x.variant.toLowerCase() === 'stroke')
+  .map((x) => ({ ...x, category_no: Translations[x.category] }));
 
 /* Some icons are mistakenly labeled with "filled", so we need to handle both "fill" and "filled" */
-export const fillIcons = Object.values(meta).filter(
-  (iconMetadata, _, iconArray) =>
-    iconMetadata.variant.toLowerCase().startsWith('fill') ||
-    noFill(iconMetadata, iconArray),
-);
+export const fillIcons: UdirIcon[] = Object.values(meta)
+  .filter(
+    (iconMetadata, _, iconArray) =>
+      iconMetadata.variant.toLowerCase().startsWith('fill') ||
+      noFill(iconMetadata, iconArray),
+  )
+  .map((x) => ({ ...x, category_no: Translations[x.category] }));
 
 /**
  * For icons with no fill variant, we want to show the stroke variant
@@ -31,16 +35,16 @@ function noFill(icon: AkselIcon, icons: AkselIcon[]) {
   return !foundFill;
 }
 
-export function categorizeIcons(icons: AkselIcon[]): {
+export function categorizeIcons(icons: UdirIcon[]): {
   category: string;
-  icons: AkselIcon[];
+  icons: UdirIcon[];
 }[] {
-  const categoryMap = new Map<string, AkselIcon[]>();
+  const categoryMap = new Map<string, UdirIcon[]>();
 
   for (const icon of icons) {
-    const category = categoryMap.get(Translations[icon.category]);
+    const category = categoryMap.get(icon.category_no);
     if (!category) {
-      categoryMap.set(Translations[icon.category], [icon]);
+      categoryMap.set(icon.category_no, [icon]);
     } else {
       category.push(icon);
     }
@@ -52,11 +56,12 @@ export function categorizeIcons(icons: AkselIcon[]): {
 }
 
 /* --------------------------- Fuse search config --------------------------- */
-function fuseSearch(icons: AkselIcon[]) {
+function fuseSearch(icons: UdirIcon[]) {
   return new Fuse(icons, {
     threshold: 0.2,
     keys: [
       { name: 'name', weight: 3 },
+      { name: 'category_no', weight: 2 },
       { name: 'category', weight: 2 },
       { name: 'sub_category', weight: 2 },
       { name: 'keywords', weight: 3 },
