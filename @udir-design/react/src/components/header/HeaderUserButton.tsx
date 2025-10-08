@@ -1,5 +1,5 @@
 import { forwardRef, HTMLAttributes } from 'react';
-import { ChevronDownIcon, ChevronUpIcon } from '@navikt/aksel-icons';
+import { ChevronDownIcon, ChevronUpIcon } from '@udir-design/icons';
 import cl from 'clsx/lite';
 import { Heading, Paragraph } from '../typography';
 

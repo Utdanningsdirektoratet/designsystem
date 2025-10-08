@@ -14,7 +14,7 @@ import {
   Paragraph,
 } from '@udir-design/react/alpha';
 import { useState } from 'react';
-import { ArrowRightIcon, BriefcaseIcon, LeaveIcon } from '@navikt/aksel-icons';
+import { ArrowRightIcon, BriefcaseIcon, LeaveIcon } from '@udir-design/icons';
 import styles from './header.stories.module.css';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 

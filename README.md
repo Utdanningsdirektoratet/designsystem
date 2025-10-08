@@ -200,7 +200,8 @@ Monorepoet vårt består av
 - [`design-tokens`](./design-tokens/): Én kilde til sannhet for design-avgjørelser på tvers av design og kode. Figma-biblioteket vårt refererer også til disse.
 - [`@udir-design/css`](./@udir-design/css/): CSS-bibliotek som tigjengeliggjør styling for komponentene våre uten React. Selve CSS-koden ligger i `@udir-design/react/components/**/*.css`.
 - [`@udir-design/theme`](./@udir-design/theme/): CSS-bibliotek som definerer vårt tema — altså farger, størrelser, typografi osv.
-- [`@udir-design/react`](./@udir-design/react/): Komponentbibliotek for bruk med React, inkludert dokumentasjon.
+- [`@udir-design/icons`](./@udir-design/icons/): Ikonbibliotek for bruk med React
+- [`@udir-design/react`](./@udir-design/react/): Komponentbibliotek for bruk med React, og dokumentasjon for designsystemet.
 - [`test-apps/*`](./test-apps/): Ulike demo-applikasjoner for å teste at bibliotekene fungerer i forskjellige kontekster.
 
 Avhengighetsforholdene kan illustreres slik:
@@ -212,6 +213,7 @@ flowchart-elk BT
   subgraph public [publiserte biblioteker]
     theme("@udir-design/theme")
     css("@udir-design/css")
+    icons("@udir-design/icons")
     react("@udir-design/react")
   end
   subgraph apps [demo-applikasjoner]
@@ -223,6 +225,7 @@ flowchart-elk BT
   theme --> tokens
   css --> theme
   react --> css
+  react --> icons
   vite --> react
   nextjs --> react
 

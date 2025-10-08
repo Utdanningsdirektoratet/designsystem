@@ -1,4 +1,4 @@
-import { ChevronDownIcon, ChevronUpIcon } from '@navikt/aksel-icons';
+import { ChevronDownIcon, ChevronUpIcon } from '@udir-design/icons';
 import cl from 'clsx/lite';
 import { Button, ButtonProps } from '../button/Button';
 import { forwardRef } from 'react';
