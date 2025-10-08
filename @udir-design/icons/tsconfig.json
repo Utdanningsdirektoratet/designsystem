@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./dist",
+    "moduleResolution": "Node",
+    "composite": true
+  },
+  "include": ["./src"]
+}

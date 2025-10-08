@@ -11,7 +11,7 @@ import {
   ComponentIcon,
   RectangleSectionsIcon,
   WrenchIcon,
-} from '@navikt/aksel-icons';
+} from '@udir-design/icons';
 
 addons.setConfig({
   theme: customTheme,

@@ -1,4 +1,4 @@
-import { TrashFillIcon } from '@navikt/aksel-icons';
+import { TrashFillIcon } from '@udir-design/icons';
 import { Button, Dialog, Heading, Tooltip } from '@udir-design/react/alpha';
 import { Student } from '../data/students';
 import cl from 'clsx/lite';

@@ -49,6 +49,7 @@
     "@digdir/designsystemet-react": "1.6.0",
     "@navikt/aksel-icons": "^7.31.0",
     "@udir-design/css": "workspace:*",
+    "@udir-design/icons": "workspace:*",
     "tslib": "^2.8.1"
   },
   "devDependencies": {
@@ -72,6 +73,7 @@
     "clsx": "2.1.1",
     "diffable-html": "^6.0.1",
     "eslint-plugin-storybook": "^9.1.8",
+    "fuse.js": "^7.1.0",
     "hast-util-from-html": "^2.0.3",
     "hast-util-is-element": "^3.0.0",
     "hast-util-to-html": "^9.0.5",

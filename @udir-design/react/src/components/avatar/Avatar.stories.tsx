@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Avatar, Badge, Dropdown, Link } from '@udir-design/react/alpha';
-import { BriefcaseIcon, ChevronUpIcon } from '@navikt/aksel-icons';
+import { BriefcaseIcon, ChevronUpIcon } from '@udir-design/icons';
 
 const meta: Meta<typeof Avatar> = {
   component: Avatar,

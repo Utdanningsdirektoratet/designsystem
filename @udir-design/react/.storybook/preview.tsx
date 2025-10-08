@@ -9,7 +9,7 @@ import componentStyles from './componentOverrides.module.scss';
 import { customStylesDecorator } from './utils/customStylesDecorator';
 import { MdxComponentOverrides } from './types/parameters';
 import { Children, MouseEventHandler } from 'react';
-import { LinkIcon } from '@navikt/aksel-icons';
+import { LinkIcon } from '@udir-design/icons';
 import { hideTocForIds } from './utils/HideToc';
 import { DocsContainer } from './doc-blocks/DocsContainer';
 

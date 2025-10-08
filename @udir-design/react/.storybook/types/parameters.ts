@@ -54,7 +54,7 @@ type DocsSourceParams = Partial<Omit<SourceBlockParameters, 'transform'>> & {
 };
 
 export type ComponentOrigin = {
-  originator: 'self' | 'digdir';
+  originator: 'self' | 'digdir' | 'nav';
   details?: string;
   demo?: boolean;
 };

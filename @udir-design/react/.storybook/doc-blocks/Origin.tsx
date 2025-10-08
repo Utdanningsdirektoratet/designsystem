@@ -15,7 +15,13 @@ export function OriginText({
     ? ' er basert på et eksempel fra Digdir.'
     : ' bygger på en komponent fra Digdirs designsystem.';
   const selfText = ' er egenutviklet.';
-  const baseText = originator === 'digdir' ? digdirText : selfText;
+  const navText = ' bygger på Navs designsystem';
+  const baseText =
+    originator === 'digdir'
+      ? digdirText
+      : originator === 'nav'
+        ? navText
+        : selfText;
 
   const fullText = details ? `${baseText} ${details}` : baseText;
 
