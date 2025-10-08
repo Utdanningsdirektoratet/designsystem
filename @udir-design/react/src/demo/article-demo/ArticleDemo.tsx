@@ -6,6 +6,7 @@ import {
   Details,
   Divider,
   Footer,
+  Header,
   Heading,
   Link,
   Paragraph,
@@ -25,6 +26,7 @@ type ArticleDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
 export const ArticleDemo = ({ ...props }: ArticleDemoProps) => {
   return (
     <div {...props}>
+      <Header applicationName="Artikkeldemo" />
       <article className={cl(classes.article, classes.contentSpacing)}>
         <SkipLink href="#main-content">Hopp til hovedinnholdet</SkipLink>
         <Breadcrumbs aria-label="Du er her:">
