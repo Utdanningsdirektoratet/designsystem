@@ -177,14 +177,14 @@ exports[`Simple 1`] = `
       </div>
       <a
         href="#"
-        popovertarget="«r0»"
+        popovertarget="_r_0_"
         popovertargetaction="show"
       >
         Glemt passord?
       </a>
       <span
         role="tooltip"
-        id="«r0»"
+        id="_r_0_"
         popover="manual"
         style="opacity: 0;"
       >
@@ -260,12 +260,12 @@ exports[`Simple 1`] = `
           <button
             data-variant="primary"
             type="button"
-            popovertarget="«r1»"
+            popovertarget="_r_1_"
           >
             Utfør
           </button>
           <div
-            id="«r1»"
+            id="_r_1_"
             popover="manual"
             data-variant="default"
           >
