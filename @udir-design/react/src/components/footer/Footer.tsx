@@ -4,7 +4,7 @@ import logoDark from '../../../assets/img/udir-main-logo-dark-mode.svg';
 import logo from '../../../assets/img/udir-main-logo.svg';
 import './footer.css';
 
-export type FooterProps = HTMLAttributes<HTMLDivElement> & {
+export type FooterProps = HTMLAttributes<HTMLElement> & {
   /**
    * The maximum width of the footer content.
    * Can be any valid CSS width value, e.g. `1280px`, `100%`, etc.
@@ -14,7 +14,7 @@ export type FooterProps = HTMLAttributes<HTMLDivElement> & {
   maxWidth?: string;
 };
 
-export const Footer = forwardRef<HTMLDivElement, FooterProps>(function Footer(
+export const Footer = forwardRef<HTMLElement, FooterProps>(function Footer(
   { children, className, maxWidth = '80rem', ...rest },
   ref,
 ) {
