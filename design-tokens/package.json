@@ -13,7 +13,7 @@
     "clean": "rimraf dist"
   },
   "devDependencies": {
-    "@digdir/designsystemet": "1.6.0",
-    "rimraf": "^6.0.1"
+    "@digdir/designsystemet": "catalog:",
+    "rimraf": "catalog:"
   }
 }
