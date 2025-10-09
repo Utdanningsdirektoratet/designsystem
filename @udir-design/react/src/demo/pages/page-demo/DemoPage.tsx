@@ -6,6 +6,7 @@ import styles from './DemoPage.module.scss';
 import { BreadcrumbsDemo } from './breadcrumbs/BreadcrumbsDemo';
 import { FrequentQuestions } from './frequent-questions/FrequentQuestions';
 import { Login } from './login/Login';
+import { Shoppinglist } from './shoppinglist/Shoppinglist';
 import { UserTable } from './user-table/UserTable';
 
 type Props = Omit<DemoProps, 'data-size'>;
