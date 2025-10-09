@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { FormDemo } from './FormDemo';
+import { FormDemo } from './pages/form-demo/FormDemo';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
-import { demoParameters } from '../demoParameters';
+import { demoParameters } from './demoParameters';
 
 const meta: Meta<typeof FormDemo> = {
   title: 'demo/Form Demo',
