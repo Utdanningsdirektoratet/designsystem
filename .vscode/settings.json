@@ -7,5 +7,13 @@
   "files.associations": {
     "nx.json": "jsonc",
     "project.json": "jsonc"
+  },
+  "typescript.preferences.autoImportSpecifierExcludeRegexes": [
+    "(/)?node_modules/",
+    "(/)?dist/",
+    "^((src|\\.{1,2})/)((\\.{1,2}/)|\\w+/)*(alpha|beta|stable)"
+  ],
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

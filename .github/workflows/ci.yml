@@ -124,6 +124,7 @@ jobs:
           exitOnceUploaded: true
           onlyChanged: true
           externals: 'design-tokens/src/**'
+          untraced: '@udir-design/react/.storybook/docs/**'
 
   release:
     needs: [main, storybook-tests, chromatic]

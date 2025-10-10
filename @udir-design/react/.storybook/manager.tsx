@@ -5,7 +5,7 @@ import {
   renderLabel,
   type TagBadgeParameters,
 } from 'storybook-addon-tag-badges';
-import customTheme from './customTheme';
+import customTheme from './docs/customTheme';
 import './style.css';
 import {
   ComponentIcon,

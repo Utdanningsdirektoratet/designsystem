@@ -35,7 +35,7 @@ export default defineConfig({
       '@udir-design/react/alpha': 'src/alpha',
       '@udir-design/react/beta': 'src/beta',
       // the root (stable) export must be last to not interfere with the aliases above
-      '@udir-design/react': 'src/index',
+      '@udir-design/react': 'src/stable',
     }),
   },
 
@@ -75,7 +75,7 @@ export default defineConfig({
     },
     lib: {
       entry: {
-        index: 'src/index.ts',
+        stable: 'src/stable.ts',
         alpha: 'src/alpha.ts',
         beta: 'src/beta.ts',
       },

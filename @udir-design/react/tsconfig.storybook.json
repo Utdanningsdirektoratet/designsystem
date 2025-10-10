@@ -4,12 +4,7 @@
     "emitDecoratorMetadata": true,
     "outDir": "../../dist/out-tsc",
     "baseUrl": "./",
-    "types": ["vite/client", "../theme/dist/types", "./dist/html"],
-    "paths": {
-      "@udir-design/react": ["src/index"],
-      "@udir-design/react/alpha": ["src/alpha"],
-      "@udir-design/react/beta": ["src/beta"]
-    }
+    "types": ["vite/client", "../theme/dist/types", "./dist/html"]
   },
   "files": [],
   "exclude": [
