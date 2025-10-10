@@ -3,15 +3,10 @@ import {
   type DropdownProps as DigdirDropdownProps,
   DropdownTrigger,
   DropdownTriggerContext,
-  type DropdownTriggerContextProps,
   DropdownHeading,
-  type DropdownHeadingProps,
   DropdownItem,
-  type DropdownItemProps,
   DropdownList,
-  type DropdownListProps,
   DropdownButton,
-  type DropdownButtonProps,
 } from '@digdir/designsystemet-react';
 import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 import './dropdown.css';
@@ -31,16 +26,18 @@ Dropdown.displayName = 'Dropdown';
 
 export {
   Dropdown,
-  DropdownProps,
   DropdownTrigger,
   DropdownTriggerContext,
-  DropdownTriggerContextProps,
   DropdownHeading,
-  DropdownHeadingProps,
   DropdownItem,
-  DropdownItemProps,
   DropdownButton,
-  DropdownButtonProps,
   DropdownList,
-  DropdownListProps,
 };
+export type {
+  DropdownProps,
+  DropdownTriggerContextProps,
+  DropdownHeadingProps,
+  DropdownItemProps,
+  DropdownButtonProps,
+  DropdownListProps,
+} from '@digdir/designsystemet-react';

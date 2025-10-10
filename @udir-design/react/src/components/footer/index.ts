@@ -13,6 +13,8 @@ const Footer: Footer = Object.assign(FooterRoot, {
 });
 
 Footer.displayName = 'Footer';
+Footer.Item.displayName = 'Footer.Item';
+Footer.List.displayName = 'Footer.List';
 
 export type { FooterProps } from './Footer';
 export type { FooterItemProps } from './FooterItem';

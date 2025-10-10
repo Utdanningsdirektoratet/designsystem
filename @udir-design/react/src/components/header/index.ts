@@ -25,6 +25,12 @@ const Header: Header = Object.assign(HeaderRoot, {
 });
 
 Header.displayName = 'Header';
+Header.UserButton.displayName = 'Header.UserButton';
+Header.MenuButton.displayName = 'Header.MenuButton';
+Header.ThemeMenuButton.displayName = 'Header.ThemeMenuButton';
+Header.Navigation.displayName = 'Header.Navigation';
+Header.Menu.displayName = 'Header.Menu';
+Header.Search.displayName = 'Header.Search';
 
 export type { HeaderProps } from './Header';
 export type { HeaderUserButtonProps } from './HeaderUserButton';
