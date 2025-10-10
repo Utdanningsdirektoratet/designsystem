@@ -1,4 +1,4 @@
-import { Stack, Dont } from '.storybook/docs-components';
+import { Stack, Dont } from '.storybook/docs/components';
 import { Field, Label, Select } from '@udir-design/react/alpha';
 
 type County =

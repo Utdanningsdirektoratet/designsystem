@@ -1,4 +1,4 @@
-import { Stack, Dont } from '.storybook/docs-components';
+import { Stack, Dont } from '.storybook/docs/components';
 import { Textfield } from '@udir-design/react/alpha';
 
 export const DisabledEx = () => {

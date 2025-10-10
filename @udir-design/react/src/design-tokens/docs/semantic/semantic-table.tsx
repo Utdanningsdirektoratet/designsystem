@@ -1,6 +1,6 @@
 import { groupBy } from 'ramda';
 import { type HTMLAttributes, useState } from 'react';
-import { capitalizeString } from '../../utilities/helpers/stringHelpers';
+import { capitalizeString } from 'src/utilities/helpers/stringHelpers';
 import type { PreviewToken } from '../types';
 import {
   BorderRadius,
@@ -12,11 +12,11 @@ import {
 } from './semantic-previews';
 import classes from './semantic.module.css';
 import { labels } from '../strings';
-import { Field } from '../../components/field/Field';
-import { Heading } from '../../components/typography/heading/Heading';
-import { Table } from '../../components/table';
-import { Select } from '../../components/select/Select';
-import { Label } from '../../components/typography/label/Label';
+import { Field } from 'src/components/field/Field';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Table } from 'src/components/table';
+import { Select } from 'src/components/select/Select';
+import { Label } from 'src/components/typography/label/Label';
 import { Size } from '@digdir/designsystemet-react';
 
 type TokenTableProps = {

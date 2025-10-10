@@ -5,7 +5,7 @@ import {
   PersonPlusIcon,
   PlusIcon,
 } from '@udir-design/icons';
-import { Do, Dont, Stack } from '.storybook/docs-components';
+import { Do, Dont, Stack } from '.storybook/docs/components';
 import { Button } from '@udir-design/react/alpha';
 
 /*

@@ -1,8 +1,8 @@
-import { Field } from '../../components/field/Field';
-import { Heading } from '../../components/typography/heading/Heading';
-import { Paragraph } from '../../components/typography/paragraph/Paragraph';
-import { Search } from '../../components/search/Search';
-import { Label } from '../../components/typography/label/Label';
+import { Field } from 'src/components/field/Field';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Search } from 'src/components/search/Search';
+import { Label } from 'src/components/typography/label/Label';
 import { useDebounceCallback } from '@digdir/designsystemet-react';
 import { useState } from 'react';
 import { ColorTokensTable } from '../color/color-table';
