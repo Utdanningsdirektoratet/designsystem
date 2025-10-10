@@ -7,5 +7,8 @@
   "files.associations": {
     "nx.json": "jsonc",
     "project.json": "jsonc"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

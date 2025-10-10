@@ -1,4 +1,4 @@
-import { Do, Dont, Stack } from '.storybook/docs-components';
+import { Do, Dont, Stack } from '.storybook/docs/components';
 import { Button, Heading } from '@digdir/designsystemet-react';
 import { Fieldset, Switch } from '@udir-design/react/alpha';
 

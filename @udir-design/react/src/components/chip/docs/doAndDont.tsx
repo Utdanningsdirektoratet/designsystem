@@ -1,4 +1,4 @@
-import { Do, Dont, Stack } from '.storybook/docs-components';
+import { Do, Dont, Stack } from '.storybook/docs/components';
 import { Chip } from '@udir-design/react/beta';
 
 /*
