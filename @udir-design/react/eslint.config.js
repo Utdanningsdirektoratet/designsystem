@@ -1,19 +1,13 @@
-import { FlatCompat } from '@eslint/eslintrc';
+import { defineConfig } from 'eslint/config';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import baseConfig from '../../eslint.config.js';
 import storybook from 'eslint-plugin-storybook';
-import eslintjs from '@eslint/js';
-const { configs } = eslintjs;
+import nxEslintPlugin from '@nx/eslint-plugin';
 
-const compat = new FlatCompat({
-  baseDirectory: import.meta.dirname,
-  recommendedConfig: configs.recommended,
-});
-
-export default [
-  ...baseConfig,
-  ...compat.extends('plugin:@nx/react'),
-  ...storybook.configs['flat/recommended'],
+export default defineConfig(
+  baseConfig,
+  nxEslintPlugin.configs['flat/react'],
+  storybook.configs['flat/recommended'],
   {
     ignores: ['!.storybook'],
   },
@@ -24,6 +18,7 @@ export default [
   {
     files: ['**/*.ts', '**/*.tsx'],
     rules: {
+      'no-redeclare': 'off',
       'no-restricted-imports': [
         'error',
         {
@@ -63,4 +58,4 @@ export default [
       ],
     },
   },
-];
+);
