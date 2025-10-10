@@ -8,17 +8,17 @@
   "dependencies": {
     "@udir-design/react": "workspace:*",
     "@udir-design/theme": "workspace:*",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "catalog:react18",
+    "react-dom": "catalog:react18"
   },
   "devDependencies": {
-    "@types/react": "^18.3.24",
-    "@types/react-dom": "^18.3.7",
-    "@vitejs/plugin-react-swc": "^4.1.0",
-    "sass": "^1.93.2",
-    "vite": "^7.1.7",
-    "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.2.4"
+    "@types/react": "catalog:react18",
+    "@types/react-dom": "catalog:react18",
+    "@vitejs/plugin-react-swc": "catalog:",
+    "sass": "catalog:",
+    "vite": "catalog:",
+    "vite-tsconfig-paths": "catalog:",
+    "vitest": "catalog:"
   },
   "dependenciesMeta": {
     "@udir-design/react": {

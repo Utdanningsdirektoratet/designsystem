@@ -20,18 +20,18 @@
     "./dist"
   ],
   "dependencies": {
-    "@digdir/designsystemet-css": "1.6.0",
+    "@digdir/designsystemet-css": "catalog:",
     "@udir-design/theme": "workspace:*"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "cssnano": "^7.1.1",
-    "postcss": "^8.5.6",
-    "postcss-cli": "^11.0.1",
-    "postcss-import": "^16.1.1",
-    "postcss-import-ext-glob": "^2.1.1",
-    "postcss-load-config": "^6.0.1",
-    "postcss-nesting": "^13.0.2"
+    "autoprefixer": "catalog:",
+    "cssnano": "catalog:",
+    "postcss": "catalog:",
+    "postcss-cli": "catalog:",
+    "postcss-import": "catalog:",
+    "postcss-import-ext-glob": "catalog:",
+    "postcss-load-config": "catalog:",
+    "postcss-nesting": "catalog:"
   },
   "scripts": {
     "build": "postcss src/index.css -o dist/index.css",

@@ -28,9 +28,9 @@
     "./dist"
   ],
   "dependencies": {
-    "@navikt/aksel-icons": "^7.32.0"
+    "@navikt/aksel-icons": "catalog:"
   },
   "devDependencies": {
-    "tsup": "^8.5.0"
+    "tsup": "catalog:"
   }
 }
