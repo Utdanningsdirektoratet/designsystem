@@ -1,11 +1,14 @@
-import {
-  Card,
-  type CardProps,
-  CardBlock,
-  type CardBlockProps,
-} from '@digdir/designsystemet-react';
+import { Card as CardRoot, CardBlock } from '@digdir/designsystemet-react';
 
-// For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
+type Card = typeof CardRoot & {
+  Block: typeof CardBlock;
+};
+
+const Card: Card = Object.assign(CardRoot, {
+  Block: CardBlock,
+});
+
 Card.displayName = 'Card';
 
-export { Card, CardProps, CardBlock, CardBlockProps };
+export { Card, CardBlock };
+export type { CardProps, CardBlockProps } from '@digdir/designsystemet-react';

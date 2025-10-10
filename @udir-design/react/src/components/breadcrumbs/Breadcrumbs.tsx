@@ -2,11 +2,8 @@ import {
   Breadcrumbs as DigdirBreadcrumbs,
   type BreadcrumbsProps as DigdirBreadcrumbsProps,
   BreadcrumbsItem,
-  type BreadcrumbsItemProps,
   BreadcrumbsLink,
-  type BreadcrumbsLinkProps,
   BreadcrumbsList,
-  type BreadcrumbsListProps,
 } from '@digdir/designsystemet-react';
 import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 
@@ -20,13 +17,10 @@ const Breadcrumbs = DigdirBreadcrumbs as ForwardRefExoticComponent<
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 Breadcrumbs.displayName = 'Breadcrumbs';
 
-export {
-  Breadcrumbs,
+export { Breadcrumbs, BreadcrumbsItem, BreadcrumbsLink, BreadcrumbsList };
+export type {
   BreadcrumbsProps,
-  BreadcrumbsItem,
   BreadcrumbsItemProps,
-  BreadcrumbsLink,
   BreadcrumbsLinkProps,
-  BreadcrumbsList,
   BreadcrumbsListProps,
-};
+} from '@digdir/designsystemet-react';

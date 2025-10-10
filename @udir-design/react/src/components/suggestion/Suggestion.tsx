@@ -32,11 +32,6 @@ const Suggestion = DigdirSuggestion as ForwardRefExoticComponent<
   >;
 
 Suggestion.displayName = 'Suggestion';
-SuggestionClear.displayName = 'Suggestion.Clear';
-SuggestionEmpty.displayName = 'Suggestion.Empty';
-SuggestionInput.displayName = 'Suggestion.Input';
-SuggestionList.displayName = 'Suggestion.List';
-SuggestionOption.displayName = 'Suggestion.Option';
 
 export {
   Suggestion,
