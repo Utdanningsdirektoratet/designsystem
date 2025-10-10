@@ -5,7 +5,7 @@ import mainLogoDark from '../../../assets/img/udir-main-logo-dark-mode.svg';
 import circleLogoLight from '../../../assets/img/udir-circle-logo.svg';
 import circleLogoDark from '../../../assets/img/udir-circle-logo-dark-mode.svg';
 import { useScrollDirection } from '../../utilities/useScrollDirection';
-import { Heading } from '../typography';
+import { Heading } from '../typography/heading/Heading';
 import { CSSProperties } from 'react';
 import './header.css';
 

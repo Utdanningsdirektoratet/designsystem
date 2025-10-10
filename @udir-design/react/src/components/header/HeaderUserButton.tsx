@@ -1,7 +1,8 @@
 import { forwardRef, HTMLAttributes } from 'react';
 import { ChevronDownIcon, ChevronUpIcon } from '@udir-design/icons';
 import cl from 'clsx/lite';
-import { Heading, Paragraph } from '../typography';
+import { Heading } from '../typography/heading/Heading';
+import { Paragraph } from '../typography/paragraph/Paragraph';
 
 export type HeaderUserButtonProps = HTMLAttributes<HTMLButtonElement> & {
   /**
