@@ -22,8 +22,8 @@ export const CodeBlock = ({ heading, code }: Props) => {
           <FilesIcon />
         </Button>
       </Card.Block>
-      <Card.Block className={styles.codeSection}>
-        <pre>
+      <Card.Block>
+        <pre className={styles.codeSection}>
           <code>{code}</code>
         </pre>
       </Card.Block>

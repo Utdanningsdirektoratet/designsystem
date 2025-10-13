@@ -13,8 +13,8 @@
   }
 
   .codeSection {
-    overflow: auto;
-
+    white-space: pre-wrap;
+    word-break: break-all;
     & code {
       font-family: courier new;
       background-color: transparent;
