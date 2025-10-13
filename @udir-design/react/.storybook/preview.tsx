@@ -9,7 +9,7 @@ import componentStyles from './componentOverrides.module.scss';
 import { customStylesDecorator } from './utils/customStylesDecorator';
 import { MdxComponentOverrides } from './types/parameters';
 import { Children, MouseEventHandler } from 'react';
-import { LinkIcon } from '@navikt/aksel-icons';
+import { LinkIcon } from '@udir-design/icons';
 import { hideTocForIds } from './utils/HideToc';
 import { DocsContainer } from './doc-blocks/DocsContainer';
 
@@ -92,24 +92,16 @@ export const componentOverrides: MdxComponentOverrides = {
   ol: (props) => (
     <List.Ordered
       {...props}
-      style={{ maxWidth: '70ch', marginBottom: 'var(--ds-size-6)' }}
-      className="sb-unstyled"
+      className={`sb-unstyled ${componentStyles.list}`}
     />
   ),
   ul: (props) => (
     <List.Unordered
       {...props}
-      style={{ maxWidth: '70ch', marginBottom: 'var(--ds-size-6)' }}
-      className="sb-unstyled"
+      className={`sb-unstyled ${componentStyles.list}`}
     />
   ),
-  li: (props) => (
-    <List.Item
-      {...props}
-      className="sb-unstyled"
-      style={{ maxWidth: '70ch', marginTop: 'var(--ds-size-1)' }}
-    />
-  ),
+  li: (props) => <List.Item {...props} className="sb-unstyled" />,
   a: ({ children = '', ...props }) => {
     // if link starts with /, add current path to link
     const href = getPath(props.href);

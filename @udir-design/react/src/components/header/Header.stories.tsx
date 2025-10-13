@@ -14,7 +14,7 @@ import {
   Paragraph,
 } from '@udir-design/react/alpha';
 import { useState } from 'react';
-import { ArrowRightIcon, BriefcaseIcon, LeaveIcon } from '@navikt/aksel-icons';
+import { ArrowRightIcon, BriefcaseIcon, LeaveIcon } from '@udir-design/icons';
 import styles from './header.stories.module.css';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 
@@ -22,6 +22,9 @@ const meta: Meta<typeof Header> = {
   component: Header,
   tags: ['alpha'],
   parameters: {
+    componentOrigin: {
+      originator: 'self',
+    },
     layout: 'fullscreen',
     customStyles: {
       padding: 0,
@@ -68,7 +71,7 @@ export const WithUserButton: Story = {
           </Dropdown.Item>
           <Dropdown.Item>
             <Dropdown.Button>
-              <Avatar aria-hidden data-color="support1">
+              <Avatar aria-hidden>
                 <BriefcaseIcon />
               </Avatar>
               Grålum skole <Badge count={10} maxCount={9} />
@@ -112,7 +115,7 @@ export const WithUserButton: Story = {
           </Dropdown.Item>
           <Dropdown.Item>
             <Dropdown.Button>
-              <Avatar aria-hidden data-color="support1">
+              <Avatar aria-hidden>
                 <BriefcaseIcon />
               </Avatar>
               Grålum skole <Badge count={10} maxCount={9} />
@@ -153,14 +156,14 @@ export const WithSearch: Story = {
 export const WithNavigationLinks: Story = {
   render: (args) => (
     <Header {...args}>
-      <Header.Navigation data-show="xs">
-        <Header.Navigation.Item href="#">Link 1</Header.Navigation.Item>
+      <Header.Navigation data-show="sm">
+        <Header.Navigation.Item href="#">Navlink 1</Header.Navigation.Item>
         <Header.Navigation.Item href="#" active>
-          Link 2
+          Navlink 2
         </Header.Navigation.Item>
-        <Header.Navigation.Item href="#">Link 3</Header.Navigation.Item>
+        <Header.Navigation.Item href="#">Navlink 3</Header.Navigation.Item>
       </Header.Navigation>
-      <Header.MenuButton data-hide="xs" />
+      <Header.MenuButton data-hide="sm" />
       <Header.Menu>
         <nav
           aria-label="header-menu-navigation"
@@ -177,19 +180,19 @@ export const WithNavigationLinks: Story = {
             <ListItem>
               <Link href="#">
                 <ArrowRightIcon aria-hidden />
-                <span>Link 1</span>
+                <span>Navlink 1</span>
               </Link>
             </ListItem>
             <ListItem>
               <Link href="#">
                 <ArrowRightIcon aria-hidden />
-                <span>Link 2</span>
+                <span>Navlink 2</span>
               </Link>
             </ListItem>
             <ListItem>
               <Link href="#">
                 <ArrowRightIcon aria-hidden />
-                <span>Link 3</span>
+                <span>Navlink 3</span>
               </Link>
             </ListItem>
           </ListUnordered>
@@ -278,7 +281,7 @@ export const WithMenu: Story = {
                 data-size="xs"
                 style={{ marginBottom: 'var(--ds-size-3)' }}
               >
-                {column.heading}
+                <Link href="#">{column.heading}</Link>
               </Heading>
               <ListUnordered>
                 {column.links.map((link) => (
@@ -302,7 +305,7 @@ const themeMenu1 = Array.from({ length: 3 }, (_, i) => ({
   heading: `Overskrift ${i + 1}`,
   links: Array.from({ length: i === 1 ? 4 : 3 }, (_, linkIndex) => ({
     title: `Link ${linkIndex + 1}`,
-    href: '',
+    href: '#',
   })),
 }));
 
@@ -310,7 +313,7 @@ const themeMenu2 = Array.from({ length: 2 }, (_, i) => ({
   heading: `Overskrift ${i + 4}`,
   links: Array.from({ length: i === 1 ? 4 : 3 }, (_, linkIndex) => ({
     title: `Link ${linkIndex + 1}`,
-    href: '',
+    href: '#',
   })),
 }));
 
@@ -476,47 +479,22 @@ export const WithThemeMenus: Story = {
   },
 };
 
-const navAndMenuLinks = [
-  {
-    heading: 'Info om eksamen',
-    links: [
-      {
-        title: 'Skriftlig eksamen',
-        href: '',
-      },
-      {
-        title: 'Muntling eksamen',
-        href: '',
-      },
-      {
-        title: 'Privatisteksamen',
-        href: '',
-      },
-    ],
-  },
-  {
-    heading: 'Retting av besvarelser',
-    links: [
-      {
-        title: 'Administrere besvarelser',
-        href: '',
-      },
-      {
-        title: 'Retting og vurdering',
-        href: '',
-      },
-    ],
-  },
-];
+const navAndMenuLinks = Array.from({ length: 3 }, (_, i) => ({
+  heading: `Overskrift ${i + 1}`,
+  links: Array.from({ length: i === 1 ? 4 : 3 }, (_, linkIndex) => ({
+    title: `Link ${linkIndex + 1}`,
+    href: '#',
+  })),
+}));
 
 export const WithNavigationLinksAndMenu: Story = {
   render: (args) => (
     <Header {...args}>
       <Header.Navigation data-show="sm">
         <Header.Navigation.Item href="#" active>
-          Eksamen
+          Navlink 1
         </Header.Navigation.Item>
-        <Header.Navigation.Item href="#">Besvarelser</Header.Navigation.Item>
+        <Header.Navigation.Item href="#">Navlink 2</Header.Navigation.Item>
       </Header.Navigation>
       <Header.MenuButton />
       <Header.Menu>
@@ -524,7 +502,7 @@ export const WithNavigationLinksAndMenu: Story = {
           aria-labelledby="header-menu-navigation"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(15rem, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(13rem, 1fr))',
             maxWidth: '800px',
             margin: '0 auto',
             padding: 'var(--ds-size-5) var(--ds-size-10) var(--ds-size-10)',
@@ -536,6 +514,29 @@ export const WithNavigationLinksAndMenu: Story = {
           <h2 id="header-menu-navigation" className="ds-sr-only">
             Menynavigasjon
           </h2>
+          <div data-hide="sm">
+            <Heading
+              level={3}
+              data-size="xs"
+              style={{ marginBottom: 'var(--ds-size-3)' }}
+            >
+              Navlinker
+            </Heading>
+            <ListUnordered>
+              <ListItem>
+                <Link href="#" style={{ textDecoration: 'none' }}>
+                  <ArrowRightIcon aria-hidden />
+                  <span>Navlink 1</span>
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link href="#" style={{ textDecoration: 'none' }}>
+                  <ArrowRightIcon aria-hidden />
+                  <span>Navlink 2</span>
+                </Link>
+              </ListItem>
+            </ListUnordered>
+          </div>
           {navAndMenuLinks.map((column) => (
             <div key={column.heading}>
               <Heading
@@ -543,14 +544,7 @@ export const WithNavigationLinksAndMenu: Story = {
                 data-size="xs"
                 style={{ marginBottom: 'var(--ds-size-3)' }}
               >
-                <Link
-                  href="#"
-                  style={{
-                    textDecoration: 'none',
-                  }}
-                >
-                  {column.heading}
-                </Link>
+                {column.heading}
               </Heading>
               <ListUnordered>
                 {column.links.map((link) => (
@@ -570,13 +564,13 @@ export const WithNavigationLinksAndMenu: Story = {
   ),
 };
 
-const responsiveLinks = ['Viktige lenker', 'Lenker', 'Andre lenker'].map(
+const responsiveLinks = ['Navlinker', 'Overskrift 1', 'Overskrift 2'].map(
   (heading, index) => ({
     heading,
     links: Array.from(
       { length: index === 1 ? 5 : index === 2 ? 4 : 3 },
       (_, i) => ({
-        title: `Link ${i + 1}`,
+        title: heading === 'Navlinker' ? `Navlink ${i + 1}` : `Link ${i + 1}`,
         href: '',
       }),
     ),
@@ -588,11 +582,11 @@ export const Responsive: Story = {
     return (
       <Header {...args}>
         <Header.Navigation data-show="lg">
-          <Header.Navigation.Item href="#">Link 1</Header.Navigation.Item>
+          <Header.Navigation.Item href="#">Navlink 1</Header.Navigation.Item>
           <Header.Navigation.Item href="#" active>
-            Link 2
+            Navlink 2
           </Header.Navigation.Item>
-          <Header.Navigation.Item href="#">Link 3</Header.Navigation.Item>
+          <Header.Navigation.Item href="#">Navlink 3</Header.Navigation.Item>
         </Header.Navigation>
         <Header.UserButton
           username="Stian Hansen"
@@ -608,7 +602,7 @@ export const Responsive: Story = {
             </Dropdown.Item>
             <Dropdown.Item>
               <Dropdown.Button>
-                <Avatar aria-hidden data-color="support1">
+                <Avatar aria-hidden>
                   <BriefcaseIcon />
                 </Avatar>
                 Grålum skole <Badge count={10} maxCount={9} />
@@ -644,7 +638,7 @@ export const Responsive: Story = {
               </Dropdown.Item>
               <Dropdown.Item>
                 <Dropdown.Button>
-                  <Avatar aria-hidden data-color="support1">
+                  <Avatar aria-hidden>
                     <BriefcaseIcon />
                   </Avatar>
                   Grålum skole <Badge count={10} maxCount={9} />
@@ -678,7 +672,7 @@ export const Responsive: Story = {
             {responsiveLinks.map((column) => (
               <div
                 key={column.heading}
-                data-hide={column.heading === 'Viktige lenker' ? 'lg' : ''}
+                data-hide={column.heading === 'Navlinker' ? 'lg' : ''}
               >
                 <Heading
                   level={3}
@@ -718,11 +712,11 @@ export const AutoHideSticky: Story = {
       <>
         <Header {...args}>
           <Header.Navigation data-show="md">
-            <Header.Navigation.Item href="#">Link 1</Header.Navigation.Item>
+            <Header.Navigation.Item href="#">Navlink 1</Header.Navigation.Item>
             <Header.Navigation.Item href="#" active>
-              Link 2
+              Navlink 2
             </Header.Navigation.Item>
-            <Header.Navigation.Item href="#">Link 3</Header.Navigation.Item>
+            <Header.Navigation.Item href="#">Navlink 3</Header.Navigation.Item>
           </Header.Navigation>
           <Header.MenuButton variant="secondary" />
           <Header.Menu>
@@ -745,7 +739,7 @@ export const AutoHideSticky: Story = {
               {responsiveLinks.map((column) => (
                 <div
                   key={column.heading}
-                  data-hide={column.heading === 'Viktige lenker' ? 'md' : ''}
+                  data-hide={column.heading === 'Navlinker' ? 'md' : ''}
                 >
                   <Heading
                     level={3}

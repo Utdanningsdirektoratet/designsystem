@@ -1,5 +1,5 @@
 /// <reference types='vitest' />
-import { defineConfig } from 'vite';
+import { createFilter, defineConfig, Plugin } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import dts from 'vite-plugin-dts';
 import tsConfigPaths from 'vite-tsconfig-paths';
@@ -30,6 +30,7 @@ export default defineConfig({
   cacheDir: '../../node_modules/.vite/@udir-design/react',
   resolve: {
     alias: resolveAliases({
+      src: 'src',
       '.storybook': '.storybook',
       '@udir-design/react/alpha': 'src/alpha',
       '@udir-design/react/beta': 'src/beta',
@@ -39,6 +40,7 @@ export default defineConfig({
   },
 
   plugins: [
+    processComponentCss(),
     react(),
     tsConfigPaths(),
     dts({
@@ -88,3 +90,27 @@ export default defineConfig({
     },
   },
 });
+
+function processComponentCss(): Plugin {
+  const componentBase = '**/@udir-design/react/src/components';
+  const include = `${componentBase}/**/*.css`;
+  const exclude = `${componentBase}/**/*.module.css`;
+  const filter = createFilter(include, exclude);
+
+  return {
+    name: 'udir-process-component-css',
+    transform(code, id) {
+      if (!filter(id)) return;
+
+      const isStorybook = process.env.IS_STORYBOOK === 'true';
+      if (isStorybook) {
+        // Ensure the loaded css is wrapped in a layer, as @udir-design/css/src/index.css does
+        return `@layer udir.components {\n${code}\n}`;
+      } else {
+        // Remove the css from the @udir-design/react bundle by returning an empty string.
+        // Consumers will load it from @udir-design/css instead.
+        return '';
+      }
+    },
+  };
+}

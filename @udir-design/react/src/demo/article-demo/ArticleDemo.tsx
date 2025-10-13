@@ -6,6 +6,7 @@ import {
   Details,
   Divider,
   Footer,
+  Header,
   Heading,
   Link,
   Paragraph,
@@ -17,7 +18,7 @@ import { ContentSection } from './content-section/ContentSection';
 import { section1, section2, section3 } from './strings/sections';
 import { changes } from './strings/changes';
 import cl from 'clsx';
-import { PrinterSmallIcon } from '@navikt/aksel-icons';
+import { PrinterSmallIcon } from '@udir-design/icons';
 import { DemoProps } from '../demoProps';
 
 type ArticleDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
@@ -25,6 +26,7 @@ type ArticleDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
 export const ArticleDemo = ({ ...props }: ArticleDemoProps) => {
   return (
     <div {...props}>
+      <Header applicationName="Artikkeldemo" />
       <article className={cl(classes.article, classes.contentSpacing)}>
         <SkipLink href="#main-content">Hopp til hovedinnholdet</SkipLink>
         <Breadcrumbs aria-label="Du er her:">

@@ -1,10 +1,13 @@
 import { forwardRef, HTMLAttributes } from 'react';
 import cl from 'clsx/lite';
-import mainLogo from '../../../assets/img/udir-main-logo.svg';
-import circleLogo from '../../../assets/img/udir-circle-logo.svg';
+import mainLogoLight from '../../../assets/img/udir-main-logo.svg';
+import mainLogoDark from '../../../assets/img/udir-main-logo-dark-mode.svg';
+import circleLogoLight from '../../../assets/img/udir-circle-logo.svg';
+import circleLogoDark from '../../../assets/img/udir-circle-logo-dark-mode.svg';
 import { useScrollDirection } from '../../utilities/useScrollDirection';
 import { Heading } from '../typography';
 import { CSSProperties } from 'react';
+import './header.css';
 
 export type HeaderProps = HTMLAttributes<HTMLElement> & {
   /**
@@ -19,7 +22,7 @@ export type HeaderProps = HTMLAttributes<HTMLElement> & {
   /**
    * The maximum width of the header content.
    * Can be any valid CSS width value, e.g. `1280px`, `100%`, etc.
-   * @default '1280px'
+   * @default '80rem'
    */
   maxWidth?: string;
   /**
@@ -35,7 +38,7 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(function Header(
     children,
     className,
     href = '/',
-    maxWidth = '1280px',
+    maxWidth = '80rem',
     sticky = true,
     ...rest
   },
@@ -44,7 +47,8 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(function Header(
   const scrollDirection = useScrollDirection();
   const dataScrollDirection = sticky ? scrollDirection : undefined;
   const isMain = applicationName === 'Utdanningsdirektoratet';
-  const logo = isMain ? mainLogo : circleLogo;
+  const logo = isMain ? mainLogoLight : circleLogoLight;
+  const logoDark = isMain ? mainLogoDark : circleLogoDark;
   const logoAlt = isMain ? 'Utdanningsdirektoratet' : '';
   const LogoContainer = href !== null ? 'a' : 'div';
 
@@ -59,6 +63,7 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(function Header(
       <div>
         <LogoContainer href={href as string} className="uds-header__logo">
           <img src={logo} alt={logoAlt} />
+          <img src={logoDark} alt={logoAlt} />
           {!isMain && (
             <Heading data-size="xs" asChild>
               <span>{applicationName}</span>

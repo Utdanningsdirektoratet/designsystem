@@ -1,0 +1,18 @@
+export const Translations: Record<string, string> = {
+  Accessibility: 'Tilgjenglighet',
+  Arrows: 'Piler',
+  Development: 'Utvikling',
+  'Files and application': 'Filer og applikasjoner',
+  Home: 'Hjem',
+  Interface: 'Brukerflate',
+  'Law and security': 'Lover og sikkerhet',
+  Media: 'Media',
+  Money: 'Penger',
+  'Nature and animals': 'Natur og dyr',
+  People: 'Mennesker',
+  'Statistics and math': 'Statistikk og matte',
+  Status: 'Status',
+  Transportation: 'Transport',
+  Wellness: 'Velvære',
+  Workplace: 'Arbeidsplass',
+};

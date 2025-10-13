@@ -14,6 +14,7 @@ import {
   type DropdownButtonProps,
 } from '@digdir/designsystemet-react';
 import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
+import './dropdown.css';
 
 type DropdownProps = Omit<DigdirDropdownProps, 'data-color'>;
 

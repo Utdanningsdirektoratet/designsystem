@@ -81,7 +81,7 @@ exports[`Controlled 1`] = `
 <p
   data-field="validation"
   hidden
-  id="«r5»"
+  id="_r_5_"
 >
 </p>
 <hr aria-hidden="true">
@@ -174,7 +174,7 @@ exports[`Disabled 1`] = `
   <p
     data-field="validation"
     hidden
-    id="«r9»"
+    id="_r_9_"
   >
   </p>
 </fieldset>
@@ -257,7 +257,7 @@ exports[`Group 1`] = `
   <p
     data-field="validation"
     hidden
-    id="«r1»"
+    id="_r_1_"
   >
   </p>
 </fieldset>
@@ -478,7 +478,7 @@ exports[`Read Only 1`] = `
   <p
     data-field="validation"
     hidden
-    id="«r7»"
+    id="_r_7_"
   >
   </p>
 </fieldset>
@@ -495,7 +495,7 @@ exports[`With Error 1`] = `
   <div>
     <input
       id="components-checkbox--with-error-email"
-      aria-describedby="«r3»"
+      aria-describedby="_r_3_"
       aria-invalid="true"
       type="checkbox"
       value="epost"
@@ -512,7 +512,7 @@ exports[`With Error 1`] = `
   <div>
     <input
       id="components-checkbox--with-error-telefon"
-      aria-describedby="«r3»"
+      aria-describedby="_r_3_"
       aria-invalid="true"
       type="checkbox"
       value="telefon"
@@ -528,7 +528,7 @@ exports[`With Error 1`] = `
   <div>
     <input
       id="components-checkbox--with-error-sms"
-      aria-describedby="«r3»"
+      aria-describedby="_r_3_"
       aria-invalid="true"
       type="checkbox"
       value="sms"
@@ -543,7 +543,7 @@ exports[`With Error 1`] = `
   </div>
   <p
     data-field="validation"
-    id="«r3»"
+    id="_r_3_"
   >
     Du må velge minst to kontaktalternativ
   </p>

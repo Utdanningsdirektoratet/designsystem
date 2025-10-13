@@ -8,6 +8,10 @@ const meta: Meta<typeof DemoPage> = {
   component: DemoPage,
   parameters: {
     ...demoParameters,
+    componentOrigin: {
+      originator: 'digdir',
+      demo: true,
+    },
   },
 };
 

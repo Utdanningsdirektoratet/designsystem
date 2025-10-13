@@ -4,10 +4,10 @@
   "type": "module",
   "private": true,
   "devDependencies": {
-    "@types/micromatch": "^4.0.9",
-    "@types/yargs": "^17.0.33",
-    "micromatch": "^4.0.8",
-    "tsx": "^4.20.6",
-    "yargs": "^18.0.0"
+    "@types/micromatch": "catalog:",
+    "@types/yargs": "catalog:",
+    "micromatch": "catalog:",
+    "tsx": "catalog:",
+    "yargs": "catalog:"
   }
 }

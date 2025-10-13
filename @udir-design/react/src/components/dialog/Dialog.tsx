@@ -9,6 +9,7 @@ import {
   type DialogTriggerProps,
 } from '@digdir/designsystemet-react';
 import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
+import './dialog.css';
 
 type DialogProps = Omit<DigdirDialogProps, 'data-color'>;
 

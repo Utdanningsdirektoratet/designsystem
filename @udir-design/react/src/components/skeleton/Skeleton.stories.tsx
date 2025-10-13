@@ -3,7 +3,7 @@ import {
   ArrowsUpDownIcon,
   FilterIcon,
   PlusCircleIcon,
-} from '@navikt/aksel-icons';
+} from '@udir-design/icons';
 import { Avatar, Button, Card } from '../../beta';
 import { Skeleton } from './Skeleton';
 import { Heading, Paragraph } from '../../alpha';

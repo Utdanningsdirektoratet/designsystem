@@ -1,0 +1,25 @@
+import {
+  Meta,
+  Canvas,
+  Controls,
+  Primary,
+  IconGallery,
+  ArgTypes,
+} from '@storybook/addon-docs/blocks';
+import React from 'react';
+import * as IconsStories from './icons.stories';
+import { Unstyled } from '@storybook/addon-docs/blocks';
+import { IconDisplay } from '../.storybook/docs-components/Icons/IconDisplay';
+import { HideToc } from '../.storybook/utils/HideToc';
+
+<HideToc />
+
+# Ikoner
+
+Ikoner kan brukes for å raskt identifisere interaktive elementer og skille mellom kategorier. Ikonene finnes foreløpig kun gjennom Udirs designsystem som react-komponenter. Dersom dere har behov utover dette kan det [lastes ned svg-versjoner av ikonene i Figma](https://www.figma.com/design/W4tl2t6G22muQfVF8jGeQX/Ikonbibliotek?node-id=9-2879&t=Etoosk6XSt9FhmCk-1).
+
+<Meta of={IconsStories} />
+
+<Unstyled>
+  <IconDisplay />
+</Unstyled>

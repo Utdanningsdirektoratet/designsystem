@@ -9,7 +9,10 @@ import type { UseRadioGroupProps } from './useRadioGroup';
 
 export default {
   title: 'Utilities/useRadioGroup',
-  parameters: { chromatic: { disableSnapshot: true } },
+  parameters: {
+    componentOrigin: { originator: 'digdir' },
+    chromatic: { disableSnapshot: true },
+  },
   argTypes: {
     name: {
       table: { type: { summary: 'string' } },

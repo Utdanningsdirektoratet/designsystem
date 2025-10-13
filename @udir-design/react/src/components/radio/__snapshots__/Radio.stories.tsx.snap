@@ -13,7 +13,7 @@ exports[`Controlled 1`] = `
       id="components-radio--controlled-kindergarten"
       type="radio"
       value="kindergarten"
-      name="«r5»"
+      name="_r_5_"
     >
     <label
       data-weight="regular"
@@ -27,7 +27,7 @@ exports[`Controlled 1`] = `
       id="components-radio--controlled-primary"
       type="radio"
       value="primary"
-      name="«r5»"
+      name="_r_5_"
     >
     <label
       data-weight="regular"
@@ -41,7 +41,7 @@ exports[`Controlled 1`] = `
       id="components-radio--controlled-secondary"
       type="radio"
       value="secondary"
-      name="«r5»"
+      name="_r_5_"
     >
     <label
       data-weight="regular"
@@ -55,7 +55,7 @@ exports[`Controlled 1`] = `
       id="components-radio--controlled-higher"
       type="radio"
       value="higher"
-      name="«r5»"
+      name="_r_5_"
     >
     <label
       data-weight="regular"
@@ -150,7 +150,7 @@ exports[`Disabled 1`] = `
   <p
     data-field="validation"
     hidden
-    id="«r6»"
+    id="_r_6_"
   >
   </p>
 </fieldset>
@@ -232,7 +232,7 @@ exports[`Group 1`] = `
   <p
     data-field="validation"
     hidden
-    id="«r0»"
+    id="_r_0_"
   >
   </p>
 </fieldset>
@@ -386,7 +386,7 @@ exports[`Read Only 1`] = `
   <p
     data-field="validation"
     hidden
-    id="«r8»"
+    id="_r_8_"
   >
   </p>
 </fieldset>
@@ -403,7 +403,7 @@ exports[`With Error 1`] = `
   <div>
     <input
       id="components-radio--with-error-10-20"
-      aria-describedby="«r2»"
+      aria-describedby="_r_2_"
       aria-invalid="true"
       type="radio"
       value="10-20"
@@ -419,7 +419,7 @@ exports[`With Error 1`] = `
   <div>
     <input
       id="components-radio--with-error-21-45"
-      aria-describedby="«r2»"
+      aria-describedby="_r_2_"
       aria-invalid="true"
       type="radio"
       value="21-45"
@@ -435,7 +435,7 @@ exports[`With Error 1`] = `
   <div>
     <input
       id="components-radio--with-error-46-80"
-      aria-describedby="«r2»"
+      aria-describedby="_r_2_"
       aria-invalid="true"
       type="radio"
       value="46-80"
@@ -450,7 +450,7 @@ exports[`With Error 1`] = `
   </div>
   <p
     data-field="validation"
-    id="«r2»"
+    id="_r_2_"
   >
     Du må velge en aldersgruppe
   </p>

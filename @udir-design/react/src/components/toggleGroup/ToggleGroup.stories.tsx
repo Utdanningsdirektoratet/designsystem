@@ -19,9 +19,10 @@ import {
   NotePencilIcon,
   TasklistIcon,
   XMarkOctagonIcon,
-} from '@navikt/aksel-icons';
+} from '@udir-design/icons';
 import { useState } from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
+import { demoChromaticModes } from 'src/demo/demoParameters';
 
 const meta: Meta<typeof ToggleGroup> = {
   component: ToggleGroup,
@@ -242,6 +243,12 @@ const testsData: Record<
 
 export const Controlled: Story = {
   parameters: {
+    chromatic: {
+      modes: {
+        minimum: demoChromaticModes.minimum,
+        desktop: demoChromaticModes.desktop,
+      },
+    },
     customStyles: {
       display: 'flex',
       flexDirection: 'column',

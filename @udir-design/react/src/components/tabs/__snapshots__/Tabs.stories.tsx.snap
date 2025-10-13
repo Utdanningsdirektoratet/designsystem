@@ -7,14 +7,14 @@ exports[`Controlled 1`] = `
     tabindex="0"
   >
     <button
-      id="tab-«rr»"
+      id="tab-_r_r_"
       aria-selected="true"
       data-value="users"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
       tabindex="0"
-      aria-controls="tabpanel-«rv»"
+      aria-controls="tabpanel-_r_v_"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -37,14 +37,14 @@ exports[`Controlled 1`] = `
       Brukere
     </button>
     <button
-      id="tab-«rt»"
+      id="tab-_r_t_"
       aria-selected="false"
       data-value="profile"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
       tabindex="-1"
-      aria-controls="tabpanel-«r10»"
+      aria-controls="tabpanel-_r_10_"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -68,9 +68,9 @@ exports[`Controlled 1`] = `
     </button>
   </div>
   <div
-    id="tabpanel-«rv»"
+    id="tabpanel-_r_v_"
     role="tabpanel"
-    aria-labelledby="tab-«rr»"
+    aria-labelledby="tab-_r_r_"
   >
     <ul style="list-style: none; padding: 0px;">
       <li style="display: flex;">
@@ -121,11 +121,11 @@ exports[`Controlled 1`] = `
     </ul>
   </div>
   <div
-    id="tabpanel-«r10»"
+    id="tabpanel-_r_10_"
     role="tabpanel"
     tabindex="0"
     hidden
-    aria-labelledby="tab-«rt»"
+    aria-labelledby="tab-_r_t_"
   >
     <div style="display: flex; align-items: center; gap: var(--ds-size-2);">
       <span
@@ -163,7 +163,7 @@ exports[`Icons With Text 1`] = `
     tabindex="0"
   >
     <button
-      id="tab-«r9»"
+      id="tab-_r_9_"
       aria-selected="true"
       data-value="barnehage"
       role="tab"
@@ -192,7 +192,7 @@ exports[`Icons With Text 1`] = `
       Barnehage
     </button>
     <button
-      id="tab-«rb»"
+      id="tab-_r_b_"
       aria-selected="false"
       data-value="grunnskole"
       role="tab"
@@ -221,7 +221,7 @@ exports[`Icons With Text 1`] = `
       Grunnskole
     </button>
     <button
-      id="tab-«rd»"
+      id="tab-_r_d_"
       aria-selected="false"
       data-value="videregående"
       role="tab"
@@ -260,13 +260,13 @@ exports[`Only Icons 1`] = `
     tabindex="0"
   >
     <button
-      id="tab-«rg»"
+      id="tab-_r_g_"
       aria-selected="false"
       data-value="gallery"
       role="tab"
       type="button"
       aria-label="Galleri"
-      popovertarget="«rf»"
+      popovertarget="_r_f_"
       popovertargetaction="show"
       data-roving-tabindex-item="true"
       tabindex="-1"
@@ -292,20 +292,20 @@ exports[`Only Icons 1`] = `
     </button>
     <span
       role="tooltip"
-      id="«rf»"
+      id="_r_f_"
       popover="manual"
       style="opacity: 0;"
     >
       Galleri
     </span>
     <button
-      id="tab-«rj»"
+      id="tab-_r_j_"
       aria-selected="true"
       data-value="profile"
       role="tab"
       type="button"
       aria-label="Profilen din"
-      popovertarget="«ri»"
+      popovertarget="_r_i_"
       popovertargetaction="show"
       data-roving-tabindex-item="true"
       tabindex="0"
@@ -331,20 +331,20 @@ exports[`Only Icons 1`] = `
     </button>
     <span
       role="tooltip"
-      id="«ri»"
+      id="_r_i_"
       popover="manual"
       style="opacity: 0;"
     >
       Profilen din
     </span>
     <button
-      id="tab-«rm»"
+      id="tab-_r_m_"
       aria-selected="false"
       data-value="notifications"
       role="tab"
       type="button"
       aria-label="Varsler"
-      popovertarget="«rl»"
+      popovertarget="_r_l_"
       popovertargetaction="show"
       data-roving-tabindex-item="true"
       tabindex="-1"
@@ -370,20 +370,20 @@ exports[`Only Icons 1`] = `
     </button>
     <span
       role="tooltip"
-      id="«rl»"
+      id="_r_l_"
       popover="manual"
       style="opacity: 0;"
     >
       Varsler
     </span>
     <button
-      id="tab-«rp»"
+      id="tab-_r_p_"
       aria-selected="false"
       data-value="settings"
       role="tab"
       type="button"
       aria-label="Innstillinger"
-      popovertarget="«ro»"
+      popovertarget="_r_o_"
       popovertargetaction="show"
       data-roving-tabindex-item="true"
       tabindex="-1"
@@ -409,7 +409,7 @@ exports[`Only Icons 1`] = `
     </button>
     <span
       role="tooltip"
-      id="«ro»"
+      id="_r_o_"
       popover="manual"
       style="opacity: 0;"
     >
@@ -426,7 +426,7 @@ exports[`Only Text 1`] = `
     tabindex="0"
   >
     <button
-      id="tab-«r6»"
+      id="tab-_r_6_"
       aria-selected="true"
       data-value="oversikt"
       role="tab"
@@ -437,7 +437,7 @@ exports[`Only Text 1`] = `
       Oversikt
     </button>
     <button
-      id="tab-«r7»"
+      id="tab-_r_7_"
       aria-selected="false"
       data-value="prøver"
       role="tab"
@@ -448,7 +448,7 @@ exports[`Only Text 1`] = `
       Prøver
     </button>
     <button
-      id="tab-«r8»"
+      id="tab-_r_8_"
       aria-selected="false"
       data-value="prøvesvar"
       role="tab"
@@ -469,64 +469,64 @@ exports[`Preview 1`] = `
     tabindex="0"
   >
     <button
-      id="tab-«r0»"
+      id="tab-_r_0_"
       aria-selected="true"
       data-value="value1"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
       tabindex="0"
-      aria-controls="tabpanel-«r3»"
+      aria-controls="tabpanel-_r_3_"
     >
       Tab 1
     </button>
     <button
-      id="tab-«r1»"
+      id="tab-_r_1_"
       aria-selected="false"
       data-value="value2"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
       tabindex="-1"
-      aria-controls="tabpanel-«r4»"
+      aria-controls="tabpanel-_r_4_"
     >
       Tab 2
     </button>
     <button
-      id="tab-«r2»"
+      id="tab-_r_2_"
       aria-selected="false"
       data-value="value3"
       role="tab"
       type="button"
       data-roving-tabindex-item="true"
       tabindex="-1"
-      aria-controls="tabpanel-«r5»"
+      aria-controls="tabpanel-_r_5_"
     >
       Tab 3
     </button>
   </div>
   <div
-    id="tabpanel-«r3»"
+    id="tabpanel-_r_3_"
     role="tabpanel"
     tabindex="0"
-    aria-labelledby="tab-«r0»"
+    aria-labelledby="tab-_r_0_"
   >
     Innhold for Tab 1
   </div>
   <div
-    id="tabpanel-«r4»"
+    id="tabpanel-_r_4_"
     role="tabpanel"
     tabindex="0"
-    aria-labelledby="tab-«r1»"
+    aria-labelledby="tab-_r_1_"
     hidden
   >
     Innhold for Tab 2
   </div>
   <div
-    id="tabpanel-«r5»"
+    id="tabpanel-_r_5_"
     role="tabpanel"
     tabindex="0"
-    aria-labelledby="tab-«r2»"
+    aria-labelledby="tab-_r_2_"
     hidden
   >
     Innhold for Tab 3

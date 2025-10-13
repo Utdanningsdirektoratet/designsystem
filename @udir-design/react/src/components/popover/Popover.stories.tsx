@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, userEvent, within } from 'storybook/test';
-import { MultiplyIcon, TrashIcon } from '@navikt/aksel-icons';
+import { MultiplyIcon, TrashIcon } from '@udir-design/icons';
 import { useState } from 'react';
 import { Popover } from './Popover';
 import { Button, Paragraph } from '../beta';

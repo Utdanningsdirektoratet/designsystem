@@ -3,6 +3,7 @@ import {
   type LinkProps as DigdirLinkProps,
 } from '@digdir/designsystemet-react';
 import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
+import './link.css';
 
 type LinkProps = Omit<DigdirLinkProps, 'data-color'>;
 

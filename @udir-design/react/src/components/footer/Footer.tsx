@@ -1,19 +1,21 @@
 import { CSSProperties, forwardRef, HTMLAttributes } from 'react';
 import logo from '../../../assets/img/udir-main-logo.svg';
+import logoDark from '../../../assets/img/udir-main-logo-dark-mode.svg';
 import cl from 'clsx/lite';
+import './footer.css';
 
 export type FooterProps = HTMLAttributes<HTMLDivElement> & {
   /**
    * The maximum width of the footer content.
    * Can be any valid CSS width value, e.g. `1280px`, `100%`, etc.
    * Should be the same as for header content.
-   * @default '1280px'
+   * @default '80rem'
    */
   maxWidth?: string;
 };
 
 export const Footer = forwardRef<HTMLDivElement, FooterProps>(function Footer(
-  { children, className, maxWidth = '1280px', ...rest },
+  { children, className, maxWidth = '80rem', ...rest },
   ref,
 ) {
   return (
@@ -27,6 +29,7 @@ export const Footer = forwardRef<HTMLDivElement, FooterProps>(function Footer(
         {children}
         <a href="https://udir.no" className="uds-footer__logo">
           <img src={logo} alt="Utdanningsdirektoratet" />
+          <img src={logoDark} alt="Utdanningsdirektoratet" />
         </a>
       </div>
     </footer>
