@@ -1,19 +1,4 @@
 import { HTMLAttributes, useMemo, useState } from 'react';
-import {
-  Alert,
-  Avatar,
-  Badge,
-  Checkbox,
-  Chip,
-  Divider,
-  ErrorSummary,
-  Heading,
-  Label,
-  Search,
-  Table,
-  Tag,
-  useCheckboxGroup,
-} from '@udir-design/react/alpha';
 import classes from './TableDemo.module.css';
 import cl from 'clsx/lite';
 import { Student, STUDENTS } from './data/students';
@@ -23,6 +8,19 @@ import { useFilterData } from './utilities/useFilterData';
 import { ExportDialog } from './components/ExportDialog';
 import { DeleteDialog } from './components/DeleteDialog';
 import { DemoProps } from '../demoProps';
+import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
+import { Alert } from 'src/components/alert';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Divider } from 'src/components/divider/Divider';
+import { Label } from 'src/components/typography/label/Label';
+import { Chip } from 'src/components/chip/Chip';
+import { Search } from 'src/components/search/Search';
+import { Table } from 'src/components/table';
+import { Checkbox } from 'src/components/checkbox/Checkbox';
+import { Badge } from 'src/components/badge/Badge';
+import { Avatar } from 'src/components/avatar/Avatar';
+import { Tag } from 'src/components/tag/Tag';
+import { ErrorSummary } from 'src/components/errorSummary/ErrorSummary';
 
 type TableDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
 

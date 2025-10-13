@@ -1,6 +1,6 @@
 import { SeverityColors } from '@digdir/designsystemet-react/colors';
-import { Alert } from '../../../src/alpha';
 import styles from './SimpleAlert.module.scss';
+import { Alert } from 'src/components/alert';
 
 export const SimpleAlert: React.FC<
   React.PropsWithChildren<{

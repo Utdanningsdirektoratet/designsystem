@@ -1,5 +1,5 @@
-import { Stack, Dont } from '.storybook/docs-components';
-import { Textfield } from '@udir-design/react/alpha';
+import { Stack, Dont } from '.storybook/docs/components';
+import { Textfield } from '../Textfield';
 
 export const DisabledEx = () => {
   return (

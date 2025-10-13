@@ -11,12 +11,12 @@
   "license": "MIT",
   "version": "0.0.0-semantically-released",
   "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/stable.js",
+  "types": "./dist/stable.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": "./dist/stable.js",
+      "require": "./dist/stable.cjs"
     },
     "./alpha": {
       "import": "./dist/alpha.js",

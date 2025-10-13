@@ -1,5 +1,6 @@
 import { ComponentOrigin } from '.storybook/types/parameters';
-import { Heading, Paragraph } from '../../src/components/typography';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 
 export interface OriginProps extends ComponentOrigin {
   component: string;

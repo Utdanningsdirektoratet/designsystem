@@ -1,18 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn, userEvent, within } from 'storybook/test';
 import { Search } from './Search';
+import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Divider } from '../divider/Divider';
+import { Chip } from '../chip/Chip';
+import { Skeleton } from '../skeleton/Skeleton';
+import { Spinner } from '../spinner/Spinner';
 import { useState } from 'react';
-import {
-  Chip,
-  Divider,
-  Field,
-  Label,
-  Paragraph,
-  Skeleton,
-  Spinner,
-} from '@udir-design/react/alpha';
 import { assertExists } from '../../utilities/helpers/assertExists';
 import { useDebounceCallback } from '@digdir/designsystemet-react';
+import { Field } from '../field/Field';
+import { Label } from '../typography/label/Label';
 
 const meta: Meta<typeof Search> = {
   component: Search,

@@ -1,13 +1,11 @@
 import React from 'react';
-import {
-  Heading,
-  Button,
-  Select,
-  Search,
-  Table,
-  Popover,
-} from '@udir-design/react/alpha';
 import styles from './UserTable.module.scss';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Select } from 'src/components/select/Select';
+import { Popover } from 'src/components/popover/Popover';
+import { Button } from 'src/components/button/Button';
+import { Search } from 'src/components/search/Search';
+import { Table } from 'src/components/table';
 
 export function UserTable() {
   return (

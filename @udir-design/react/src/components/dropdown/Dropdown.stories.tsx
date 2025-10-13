@@ -13,8 +13,11 @@ import {
   TrashFillIcon,
 } from '@udir-design/icons';
 import { useState } from 'react';
-import { Badge } from '@udir-design/react/alpha';
-import { Button, Dropdown, Avatar, Divider } from '../beta';
+import { Dropdown } from './Dropdown';
+import { Button } from '../button/Button';
+import { Avatar } from '../avatar/Avatar';
+import { Divider } from '../divider/Divider';
+import { Badge } from '../badge/Badge';
 
 const meta: Meta<typeof Dropdown> = {
   component: Dropdown,

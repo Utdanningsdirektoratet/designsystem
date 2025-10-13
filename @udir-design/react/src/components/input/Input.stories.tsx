@@ -1,18 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useEffect, useState } from 'react';
-
-import {
-  Button,
-  Divider,
-  Field,
-  Heading,
-  Input,
-  Label,
-  Paragraph,
-  ValidationMessage,
-} from '@udir-design/react/alpha';
 import { Size } from '@digdir/designsystemet-react';
 import { expect, userEvent, within } from 'storybook/test';
+import { Input } from './Input';
+import { Field } from '../field/Field';
+import { Label } from '../typography/label/Label';
+import { Button } from '../button/Button';
+import { Divider } from '../divider/Divider';
+import { Heading } from '../typography/heading/Heading';
+import { Paragraph } from '../typography/paragraph/Paragraph';
+import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
 
 type Story = StoryObj<typeof Input>;
 

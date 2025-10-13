@@ -10,10 +10,10 @@ import type { RemarkHeadingIdOptions } from 'remark-heading-id';
 import remarkStringify from 'remark-stringify';
 import { unified } from 'unified';
 import { applyTo, dropWhile, pipe, takeWhile } from 'ramda';
-import { componentOverrides } from '../preview';
+import { componentOverrides } from '../ComponentOverrides';
 import { SeverityColors } from '@digdir/designsystemet-react/colors';
-import { Alert } from '../../src/components/alert/Alert';
-import { Heading as H } from '../../src/components/typography/heading/Heading';
+import { Alert } from '../../../src/components/alert/Alert';
+import { Heading as H } from '../../../src/components/typography/heading/Heading';
 import { Fragment, useMemo } from 'react';
 import componentStyles from '../componentOverrides.module.scss';
 

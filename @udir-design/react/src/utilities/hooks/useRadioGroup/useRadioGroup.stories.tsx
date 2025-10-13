@@ -1,11 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import {
-  Fieldset,
-  Radio,
-  useRadioGroup,
-  ValidationMessage,
-} from '@udir-design/react/alpha';
-import type { UseRadioGroupProps } from './useRadioGroup';
+import { useRadioGroup, type UseRadioGroupProps } from './useRadioGroup';
+import { ValidationMessage } from 'src/components/typography/validationMessage/ValidationMessage';
+import { Fieldset } from 'src/components/fieldset/Fieldset';
+import { Radio } from 'src/components/radio/Radio';
 
 export default {
   title: 'Utilities/useRadioGroup',

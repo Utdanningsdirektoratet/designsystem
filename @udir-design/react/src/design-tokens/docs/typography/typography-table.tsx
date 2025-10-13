@@ -1,8 +1,8 @@
-import { Heading } from '../../components/typography/heading/Heading';
-import { Table } from '../../components/table';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Table } from 'src/components/table';
 import * as R from 'ramda';
 import type { HTMLAttributes } from 'react';
-import { capitalizeString } from '../../utilities/helpers/stringHelpers';
+import { capitalizeString } from 'src/utilities/helpers/stringHelpers';
 import {
   FontFamily,
   FontSize,

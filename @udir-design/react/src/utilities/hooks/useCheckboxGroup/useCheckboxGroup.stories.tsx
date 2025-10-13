@@ -1,13 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import {
-  Checkbox,
-  Fieldset,
-  ValidationMessage,
-} from '@udir-design/react/alpha';
-import {
   type UseCheckboxGroupProps,
   useCheckboxGroup,
 } from './useCheckboxGroup';
+import { ValidationMessage } from 'src/components/typography/validationMessage/ValidationMessage';
+import { Fieldset } from 'src/components/fieldset/Fieldset';
+import { Checkbox } from 'src/components/checkbox/Checkbox';
 
 const meta: Meta = {
   title: 'Utilities/useCheckboxGroup',

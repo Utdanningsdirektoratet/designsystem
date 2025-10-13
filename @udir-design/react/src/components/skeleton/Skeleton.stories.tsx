@@ -4,9 +4,12 @@ import {
   FilterIcon,
   PlusCircleIcon,
 } from '@udir-design/icons';
-import { Avatar, Button, Card } from '../../beta';
 import { Skeleton } from './Skeleton';
-import { Heading, Paragraph } from '../../alpha';
+import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Heading } from '../typography/heading/Heading';
+import { Button } from '../button/Button';
+import { Card } from '../card/Card';
+import { Avatar } from '../avatar/Avatar';
 
 const meta: Meta<typeof Skeleton> = {
   component: Skeleton,

@@ -1,10 +1,11 @@
 import { useRef, useState } from 'react';
-import { Heading, Table } from '@udir-design/react/alpha';
 import { TabStructure } from '../../components/tab-structure/TabStructure';
 import classes from './TestAnswers.module.css';
 import HighchartsReact from 'highcharts-react-official';
 import * as Highcharts from 'highcharts';
 import { DataControls } from '../../components/data-controls/DataControls';
+import { Table } from 'src/components/table';
+import { Heading } from 'src/components/typography/heading/Heading';
 
 const characterDistribution = [
   { name: '6', value: 450 },

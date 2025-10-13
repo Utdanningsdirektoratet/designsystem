@@ -1,7 +1,10 @@
 import { JSX } from 'react';
-import { Card } from './components/card/Card';
-import { Heading, HeadingProps } from './components/typography/heading/Heading';
-import { Paragraph } from './components/typography/paragraph/Paragraph';
+import { Card } from 'src/components/card/Card';
+import {
+  Heading,
+  HeadingProps,
+} from 'src/components/typography/heading/Heading';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import styles from './ResourceLinks.module.css';
 import { ArrowRightIcon } from '@udir-design/icons';
 
