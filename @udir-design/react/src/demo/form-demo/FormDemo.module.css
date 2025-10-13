@@ -9,6 +9,10 @@
   @media (min-width: 48rem) {
     padding: var(--ds-size-6);
   }
+
+  :global(.ds-alert) {
+    --dsc-alert-padding-inline-end: var(--ds-size-3);
+  }
 }
 
 .form {
@@ -20,16 +24,12 @@
   padding: var(--ds-size-3);
 }
 
-:global(.ds-alert) {
-  --dsc-alert-padding-inline-end: var(--ds-size-3);
-}
-
 @container (min-width: 23.5rem) {
   .form {
     padding: var(--ds-size-6);
   }
 
-  :global(.ds-alert) {
+  .container :global(.ds-alert) {
     --dsc-alert-padding-inline-end: var(--ds-size-6);
   }
 }
