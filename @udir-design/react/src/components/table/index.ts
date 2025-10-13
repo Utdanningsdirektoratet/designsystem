@@ -1,19 +1,13 @@
 import {
   Table as DigdirTable,
   TableBody,
-  type TableBodyProps,
   TableCell,
-  type TableCellProps,
   TableHead,
-  type TableHeadProps,
   TableHeaderCell,
-  type TableHeaderCellProps,
   TableRow,
-  type TableRowProps,
   TableFoot,
-  type TableFootProps,
 } from '@digdir/designsystemet-react';
-import { Table as TableRoot, type TableProps } from './Table';
+import { Table as TableRoot } from './Table';
 
 const Table = Object.assign(TableRoot, {
   Head: DigdirTable.Head,
@@ -28,17 +22,19 @@ Table.displayName = 'Table';
 
 export {
   Table,
-  TableProps,
   TableBody,
-  TableBodyProps,
   TableCell,
-  TableCellProps,
   TableHead,
-  TableHeadProps,
   TableHeaderCell,
-  TableHeaderCellProps,
   TableRow,
-  TableRowProps,
   TableFoot,
-  TableFootProps,
 };
+export type {
+  TableProps,
+  TableBodyProps,
+  TableCellProps,
+  TableHeadProps,
+  TableHeaderCellProps,
+  TableRowProps,
+  TableFootProps,
+} from '@digdir/designsystemet-react';
