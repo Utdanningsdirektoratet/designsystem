@@ -1,5 +1,5 @@
 import { Do, Dont, Stack } from '.storybook/docs/components';
-import { Chip } from '@udir-design/react/beta';
+import { Chip } from '../Chip';
 
 /*
  * Dos and donts

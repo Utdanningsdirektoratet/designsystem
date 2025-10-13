@@ -1,8 +1,9 @@
 import { AkselIcon } from '@udir-design/icons/metadata';
 import * as Icons from '@udir-design/icons';
-import { Tag, Heading } from 'src/components/beta';
 import { CodeBlock } from './CodeBlock';
 import styles from './iconInformation.module.css';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Tag } from 'src/components/tag/Tag';
 
 export function IconInformation({ icon }: { icon: AkselIcon }) {
   const Icon = Icons[

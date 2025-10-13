@@ -8,8 +8,10 @@ import {
   FloppydiskFillIcon,
 } from '@udir-design/icons';
 import { Badge } from './Badge';
-import { Avatar, Button, Tabs } from '../beta';
 import { CSSProperties } from 'react';
+import { Avatar } from '../avatar/Avatar';
+import { Button } from '../button/Button';
+import { Tabs } from '../tabs/Tabs';
 
 const meta: Meta<typeof Badge> = {
   component: Badge,

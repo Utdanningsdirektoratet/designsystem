@@ -1,5 +1,6 @@
-import { Pagination, usePagination } from '@udir-design/react/alpha';
+import { Pagination } from 'src/components/pagination/Pagination';
 import styles from './PaginationControls.module.scss';
+import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
 
 export interface PaginationControlsProps {
   currentPage: number;

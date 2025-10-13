@@ -1,17 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { PlusIcon, TrashFillIcon } from '@udir-design/icons';
-import {
-  Button,
-  Card,
-  Field,
-  Heading,
-  Label,
-  Paragraph,
-  Select,
-  Textfield,
-} from '@udir-design/react/alpha';
 import { Color } from '@digdir/designsystemet-react/colors';
 import { Fragment } from 'react/jsx-runtime';
+import { Card } from './Card';
+import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Heading } from '../typography/heading/Heading';
+import { Label } from '../typography/label/Label';
+import { Button } from '../button/Button';
+import { Field } from '../field/Field';
+import { Select } from '../select/Select';
+import { Textfield } from '../textfield/Textfield';
 
 const studentsImg =
   'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';

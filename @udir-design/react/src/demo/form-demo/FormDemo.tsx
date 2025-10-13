@@ -1,12 +1,4 @@
 import { HTMLAttributes, useRef, useState } from 'react';
-import {
-  Alert,
-  Button,
-  Dialog,
-  ErrorSummary,
-  FieldsetProps,
-  Heading,
-} from '@udir-design/react/alpha';
 import classes from './FormDemo.module.css';
 import { FormProvider, useForm } from 'react-hook-form';
 import PaginationControls from './PaginationControls';
@@ -14,6 +6,12 @@ import { PersonalInfoPage } from './pages/PersonalInfoPage';
 import { RankingPage } from './pages/RankingPage';
 import { FinishPage } from './pages/FinishPage.tsx';
 import { DemoProps } from '../demoProps';
+import { FieldsetProps } from 'src/components/fieldset/Fieldset';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Alert } from 'src/components/alert';
+import { Button } from 'src/components/button/Button';
+import { Dialog } from 'src/components/dialog/Dialog';
+import { ErrorSummary } from 'src/components/errorSummary/ErrorSummary';
 
 type FormDemo = DemoProps &
   HTMLAttributes<HTMLDivElement> & {

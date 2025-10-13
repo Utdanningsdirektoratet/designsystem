@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import { Button, Textfield } from '@udir-design/react/beta';
 import { ErrorSummary } from './ErrorSummary';
 import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import { expect, userEvent, within } from 'storybook/test';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
+import { Textfield } from '../textfield/Textfield';
+import { Button } from '../button/Button';
 
 const meta: Meta<typeof ErrorSummary> = {
   component: ErrorSummary,

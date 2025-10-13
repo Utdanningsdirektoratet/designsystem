@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { within, expect, waitFor } from 'storybook/test';
 import { Chip } from './Chip';
-import { Search, Paragraph } from '../beta';
 import { useState } from 'react';
+import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Search } from '../search/Search';
 
 const meta: Meta<typeof Chip.Radio> = {
   component: Chip.Radio,

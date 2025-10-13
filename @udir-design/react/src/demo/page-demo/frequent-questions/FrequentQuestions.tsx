@@ -1,5 +1,7 @@
-import { Card, Heading, Paragraph } from '@udir-design/react/alpha';
+import { Heading } from 'src/components/typography/heading/Heading';
 import styles from './FrequentQuestions.module.scss';
+import { Card } from 'src/components/card/Card';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 
 export const FrequentQuestions = () => {
   return (

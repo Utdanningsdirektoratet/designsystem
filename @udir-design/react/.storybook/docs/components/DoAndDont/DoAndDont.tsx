@@ -1,7 +1,8 @@
 import { CheckmarkIcon, XMarkIcon } from '@udir-design/icons';
 import cl from 'clsx';
-import { Heading, Paragraph } from '../../../../src/components/beta';
 import styles from './DoAndDont.module.css';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 
 const Wrapper = ({ variant, description, children }: WrapperProps) => {
   const icon = variant === 'do' ? <CheckmarkIcon /> : <XMarkIcon />;

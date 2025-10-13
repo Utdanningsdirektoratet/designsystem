@@ -13,7 +13,9 @@ import {
   PrinterSmallIcon,
   TrashIcon,
 } from '@udir-design/icons';
-import { Card, Label, Tooltip } from '@udir-design/react/alpha';
+import { Tooltip } from '../tooltip/Tooltip';
+import { Card } from '../card/Card';
+import { Label } from '../typography/label/Label';
 
 export type Story = StoryObj<typeof Button>;
 

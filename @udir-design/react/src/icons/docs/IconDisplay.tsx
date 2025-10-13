@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { AkselIcon } from '@udir-design/icons/metadata';
 import { categorizeIcons, searchIcons } from './IconDisplay.utils';
 import { IconPageSidebar } from './IconSidebar';
-import { Search, ToggleGroup } from 'src/components/beta';
 import styles from './iconDisplay.module.css';
 import { CategorizedIcons } from './CategorizedIcons';
+import { Search } from 'src/components/search/Search';
+import { ToggleGroup } from 'src/components/toggleGroup/ToggleGroup';
 
 export const IconDisplay = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');

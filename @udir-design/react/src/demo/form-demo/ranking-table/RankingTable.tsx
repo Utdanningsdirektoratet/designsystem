@@ -1,17 +1,15 @@
 import { useFormContext } from 'react-hook-form';
 import {
-  Heading,
-  Table,
-  Radio,
-  ValidationMessage,
-  Fieldset,
-} from '@udir-design/react/alpha';
-import {
   focusableFieldsetProps,
   type FormValues,
   type PageProps,
 } from '../FormDemo';
 import classes from './RankingTable.module.css';
+import { Fieldset } from 'src/components/fieldset/Fieldset';
+import { Table } from 'src/components/table';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Radio } from 'src/components/radio/Radio';
+import { ValidationMessage } from 'src/components/typography/validationMessage/ValidationMessage';
 
 type RankingTableProps = {
   title?: string;

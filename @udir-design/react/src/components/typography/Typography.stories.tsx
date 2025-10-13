@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-
-import { Heading, Paragraph } from '@udir-design/react/alpha';
+import { Heading } from './heading/Heading';
+import { Paragraph } from './paragraph/Paragraph';
 
 const meta: Meta = {
   parameters: {

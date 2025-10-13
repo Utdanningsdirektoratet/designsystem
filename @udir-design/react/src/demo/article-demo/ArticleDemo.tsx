@@ -1,17 +1,3 @@
-import {
-  Alert,
-  Breadcrumbs,
-  Button,
-  Card,
-  Details,
-  Divider,
-  Footer,
-  Header,
-  Heading,
-  Link,
-  Paragraph,
-  SkipLink,
-} from '@udir-design/react/alpha';
 import { HTMLAttributes } from 'react';
 import classes from './ArticleDemo.module.css';
 import { ContentSection } from './content-section/ContentSection';
@@ -20,6 +6,18 @@ import { changes } from './strings/changes';
 import cl from 'clsx';
 import { PrinterSmallIcon } from '@udir-design/icons';
 import { DemoProps } from '../demoProps';
+import { Header } from 'src/components/header';
+import { SkipLink } from 'src/components/skipLink/SkipLink';
+import { Breadcrumbs } from 'src/components/breadcrumbs/Breadcrumbs';
+import { Alert } from 'src/components/alert';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Link } from 'src/components/link/Link';
+import { Card } from 'src/components/card/Card';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Details } from 'src/components/details/Details';
+import { Divider } from 'src/components/divider/Divider';
+import { Button } from 'src/components/button/Button';
+import { Footer } from 'src/components/footer';
 
 type ArticleDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
 

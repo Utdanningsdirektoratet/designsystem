@@ -1,18 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import {
-  Button,
-  Heading,
-  Paragraph,
-  Textfield,
-  Dialog,
-  Field,
-  Label,
-  Suggestion,
-  List,
-  Textarea,
-} from '@udir-design/react/alpha';
 import { expect, userEvent, within } from 'storybook/test';
 import { useRef, useState } from 'react';
+import { Dialog } from './Dialog';
+import { Heading } from '../typography/heading/Heading';
+import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Button } from '../button/Button';
+import { Textfield } from '../textfield/Textfield';
+import { Suggestion } from '../suggestion/Suggestion';
+import { Label } from '../typography/label/Label';
+import { Field } from '../field/Field';
+import { List } from '../list/List';
+import { Textarea } from '../textarea/Textarea';
 
 const meta: Meta<typeof Dialog> = {
   component: Dialog,

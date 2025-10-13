@@ -1,9 +1,15 @@
-import { Heading, HeadingProps, Link, List, Paragraph } from '../../src/alpha';
-import { Table } from '../../src/beta';
 import componentStyles from './componentOverrides.module.scss';
 import { MdxComponentOverrides } from '../types/parameters';
 import { Children, MouseEventHandler } from 'react';
 import { LinkIcon } from '@udir-design/icons';
+import {
+  Heading,
+  HeadingProps,
+} from 'src/components/typography/heading/Heading';
+import { Link } from 'src/components/link/Link';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { List } from 'src/components/list/List';
+import { Table } from 'src/components/table';
 
 const getPath = (href: string | undefined): string => {
   if (!href) {

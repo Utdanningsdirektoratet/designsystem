@@ -2,10 +2,11 @@ import { FrequentQuestions } from './frequent-questions/FrequentQuestions';
 import { Login } from './login/Login';
 import { Shoppinglist } from '../page-demo/shoppinglist/Shoppinglist';
 import { UserTable } from './user-table/UserTable';
-import { Heading, Paragraph } from '../../components/beta';
 import { BreadcrumbsDemo } from './breadcrumbs/BreadcrumbsDemo';
 import styles from './DemoPage.module.scss';
 import { DemoProps } from '../demoProps';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 
 type Props = Omit<DemoProps, 'data-size'>;
 

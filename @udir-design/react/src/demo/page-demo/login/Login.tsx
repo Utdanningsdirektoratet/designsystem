@@ -1,12 +1,10 @@
 import React from 'react';
-import {
-  Heading,
-  Textfield,
-  Tooltip,
-  Link,
-  Button,
-} from '@udir-design/react/alpha';
 import styles from './Login.module.scss';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Textfield } from 'src/components/textfield/Textfield';
+import { Tooltip } from 'src/components/tooltip/Tooltip';
+import { Link } from 'src/components/link/Link';
+import { Button } from 'src/components/button/Button';
 
 export function Login() {
   return (

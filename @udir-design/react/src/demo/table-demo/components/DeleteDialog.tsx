@@ -1,9 +1,12 @@
 import { TrashFillIcon } from '@udir-design/icons';
-import { Button, Dialog, Heading, Tooltip } from '@udir-design/react/alpha';
 import { Student } from '../data/students';
 import cl from 'clsx/lite';
 import classes from '../TableDemo.module.css';
 import { useRef } from 'react';
+import { Dialog } from 'src/components/dialog/Dialog';
+import { Tooltip } from 'src/components/tooltip/Tooltip';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Button } from 'src/components/button/Button';
 
 type DeleteDialogProps = {
   student: Student;

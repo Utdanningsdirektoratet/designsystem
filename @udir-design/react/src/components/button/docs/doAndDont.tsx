@@ -6,7 +6,7 @@ import {
   PlusIcon,
 } from '@udir-design/icons';
 import { Do, Dont, Stack } from '.storybook/docs/components';
-import { Button } from '@udir-design/react/alpha';
+import { Button } from '../Button';
 
 /*
  * Dos and donts

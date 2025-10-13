@@ -2,7 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import { Textfield } from './Textfield';
 import { useState } from 'react';
-import { Button, Divider, Paragraph } from '@udir-design/react/alpha';
+import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Divider } from '../divider/Divider';
+import { Button } from '../button/Button';
 
 const meta: Meta<typeof Textfield> = {
   component: Textfield,

@@ -1,13 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import {
-  Button,
-  ToggleGroup,
-  Tooltip,
-  Card,
-  Heading,
-  Table,
-} from '@udir-design/react/alpha';
-import {
   AlignCenterIcon,
   AlignLeftIcon,
   AlignRightIcon,
@@ -23,6 +15,12 @@ import {
 import { useState } from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
 import { demoChromaticModes } from 'src/demo/demoParameters';
+import { ToggleGroup } from './ToggleGroup';
+import { Tooltip } from '../tooltip/Tooltip';
+import { Table } from '../table';
+import { Card } from '../card/Card';
+import { Button } from '../button/Button';
+import { Heading } from '../typography/heading/Heading';
 
 const meta: Meta<typeof ToggleGroup> = {
   component: ToggleGroup,

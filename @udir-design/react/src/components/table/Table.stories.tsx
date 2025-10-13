@@ -1,10 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Checkbox, Tag, Textfield } from '@udir-design/react/alpha';
-import { Table, TableHeaderCellProps } from '@udir-design/react/beta';
 import { useState } from 'react';
-import { useCheckboxGroup, Heading } from '@udir-design/react/alpha';
 import { expect, within } from 'storybook/test';
 import { Pagination, usePagination } from '@digdir/designsystemet-react';
+import { Table, TableHeaderCellProps } from '.';
+import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
+import { Checkbox } from '../checkbox/Checkbox';
+import { Textfield } from '../textfield/Textfield';
+import { Heading } from '../typography/heading/Heading';
+import { Tag } from '../tag/Tag';
 
 const meta: Meta<typeof Table> = {
   component: Table,

@@ -1,14 +1,12 @@
-import {
-  Card,
-  Fieldset,
-  Heading,
-  Radio,
-  Switch,
-  ValidationMessage,
-} from '@udir-design/react/alpha';
 import cl from 'clsx/lite';
 import classes from './Settings.module.css';
 import { TabStructure } from '../../components/tab-structure/TabStructure';
+import { Card } from 'src/components/card/Card';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Switch } from 'src/components/switch/Switch';
+import { Fieldset } from 'src/components/fieldset/Fieldset';
+import { Radio } from 'src/components/radio/Radio';
+import { ValidationMessage } from 'src/components/typography/validationMessage/ValidationMessage';
 
 export const Settings = ({
   setColorMode,

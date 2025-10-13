@@ -1,6 +1,7 @@
-import { Heading, Paragraph } from 'src/components/beta';
 import styles from './packageInformation.module.css';
 import { CodeBlock } from './CodeBlock';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 
 export function PackageInformation() {
   return (

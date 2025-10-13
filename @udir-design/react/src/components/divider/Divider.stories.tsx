@@ -1,13 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-
 import { Divider } from './Divider';
-import {
-  Heading,
-  Link,
-  ListItem,
-  ListUnordered,
-  Paragraph,
-} from '@udir-design/react/alpha';
+import { Heading } from '../typography/heading/Heading';
+import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Link } from '../link/Link';
+import { List } from '../list/List';
 
 const meta: Meta<typeof Divider> = {
   component: Divider,
@@ -52,28 +48,28 @@ export const Preview: Story = {
       </Paragraph>
       <Divider {...args} style={{ margin: 'var(--ds-size-4) 0' }} />
       <Heading level={2}>Se også</Heading>
-      <ListUnordered
+      <List.Unordered
         style={{
           listStyle: 'none',
           padding: 0,
         }}
       >
-        <ListItem>
+        <List.Item>
           <Link href="https://www.udir.no/kvalitet-og-kompetanse/hva-er-kvalitet/#a190252">
             Kvalitet i SFO
           </Link>
-        </ListItem>
-        <ListItem>
+        </List.Item>
+        <List.Item>
           <Link href="https://www.udir.no/kvalitet-og-kompetanse/hva-er-kvalitet/#a190241">
             Kvalitet i grunnopplæringen
           </Link>
-        </ListItem>
-        <ListItem>
+        </List.Item>
+        <List.Item>
           <Link href="https://www.udir.no/kvalitet-og-kompetanse/hva-er-kvalitet/#a190254">
             Kvalitet i PP-tjenesten
           </Link>
-        </ListItem>
-      </ListUnordered>
+        </List.Item>
+      </List.Unordered>
     </>
   ),
 };
