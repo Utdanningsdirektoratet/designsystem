@@ -1,6 +1,6 @@
 import { Skeleton } from 'src/components/skeleton/Skeleton';
-import classes from './Loading.module.css';
 import { Spinner } from 'src/components/spinner/Spinner';
+import classes from './Loading.module.css';
 
 export const Loading = () => {
   return (

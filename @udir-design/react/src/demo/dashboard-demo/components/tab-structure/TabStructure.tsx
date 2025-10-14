@@ -1,9 +1,9 @@
+import { Card } from 'src/components/card/Card';
+import { List } from 'src/components/list/List';
+import { Tabs } from 'src/components/tabs/Tabs';
+import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import classes from './TabStructure.module.css';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { List } from 'src/components/list/List';
-import { Card } from 'src/components/card/Card';
-import { Tabs } from 'src/components/tabs/Tabs';
 
 const dates = [
   { date: '12. april', event: 'Prøvestart' },

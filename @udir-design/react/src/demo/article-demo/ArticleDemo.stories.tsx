@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { ArticleDemo } from './ArticleDemo';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import { demoParameters } from '../demoParameters';
+import { ArticleDemo } from './ArticleDemo';
 
 const meta: Meta<typeof ArticleDemo> = {
   title: 'demo/Article Demo',

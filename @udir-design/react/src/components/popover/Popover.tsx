@@ -1,9 +1,9 @@
 import {
   Popover as DigdirPopover,
   type PopoverProps,
+  PopoverTrigger,
   PopoverTriggerContext,
   type PopoverTriggerContextProps,
-  PopoverTrigger,
   type PopoverTriggerProps,
 } from '@digdir/designsystemet-react';
 
@@ -18,8 +18,8 @@ Popover.displayName = 'Popover';
 export {
   Popover,
   PopoverProps,
+  PopoverTrigger,
   PopoverTriggerContext,
   PopoverTriggerContextProps,
-  PopoverTrigger,
   PopoverTriggerProps,
 };

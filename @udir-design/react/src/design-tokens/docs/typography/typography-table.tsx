@@ -1,8 +1,9 @@
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Table } from 'src/components/table';
 import * as R from 'ramda';
 import type { HTMLAttributes } from 'react';
+import { Table } from 'src/components/table';
+import { Heading } from 'src/components/typography/heading/Heading';
 import { capitalizeString } from 'src/utilities/helpers/stringHelpers';
+import { labels } from '../strings';
 import {
   FontFamily,
   FontSize,
@@ -10,7 +11,6 @@ import {
   LetterSpacing,
   LineHeight,
 } from './typography-previews';
-import { labels } from '../strings';
 import classes from './typography.module.css';
 
 type TokenTableProps = {

@@ -1,8 +1,8 @@
 import { Parameters } from '@storybook/react-vite';
 import { DocsContainer } from '.storybook/docs/components/DocsContainer';
 import customTheme from '.storybook/docs/customTheme';
-import { hideTocForIds } from './components/HideToc';
 import { componentOverrides } from './ComponentOverrides';
+import { hideTocForIds } from './components/HideToc';
 
 export const docsParameters: Required<Parameters>['docs'] = {
   container: DocsContainer,

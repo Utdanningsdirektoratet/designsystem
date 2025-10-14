@@ -1,14 +1,14 @@
 import {
   Field as DigdirField,
-  type FieldProps as DigdirFieldProps,
   FieldAffix,
   type FieldAffixProps,
+  FieldAffixes,
+  type FieldAffixesProps,
   FieldCounter,
   type FieldCounterProps,
   FieldDescription,
   type FieldDescriptionProps,
-  FieldAffixes,
-  type FieldAffixesProps,
+  type FieldProps as DigdirFieldProps,
 } from '@digdir/designsystemet-react';
 import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 
@@ -24,13 +24,13 @@ Field.displayName = 'Field';
 
 export {
   Field,
-  FieldProps,
   FieldAffix,
   FieldAffixProps,
+  FieldAffixes,
+  FieldAffixesProps,
   FieldCounter,
   FieldCounterProps,
   FieldDescription,
   FieldDescriptionProps,
-  FieldAffixes,
-  FieldAffixesProps,
+  FieldProps,
 };

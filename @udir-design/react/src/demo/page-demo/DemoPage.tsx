@@ -1,12 +1,12 @@
-import { FrequentQuestions } from './frequent-questions/FrequentQuestions';
-import { Login } from './login/Login';
-import { Shoppinglist } from '../page-demo/shoppinglist/Shoppinglist';
-import { UserTable } from './user-table/UserTable';
-import { BreadcrumbsDemo } from './breadcrumbs/BreadcrumbsDemo';
-import styles from './DemoPage.module.scss';
-import { DemoProps } from '../demoProps';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { DemoProps } from '../demoProps';
+import { Shoppinglist } from '../page-demo/shoppinglist/Shoppinglist';
+import styles from './DemoPage.module.scss';
+import { BreadcrumbsDemo } from './breadcrumbs/BreadcrumbsDemo';
+import { FrequentQuestions } from './frequent-questions/FrequentQuestions';
+import { Login } from './login/Login';
+import { UserTable } from './user-table/UserTable';
 
 type Props = Omit<DemoProps, 'data-size'>;
 

@@ -1,22 +1,22 @@
-import { Field } from 'src/components/field/Field';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
-import { Search } from 'src/components/search/Search';
-import { Label } from 'src/components/typography/label/Label';
 import { useDebounceCallback } from '@digdir/designsystemet-react';
 import { useState } from 'react';
+import { Field } from 'src/components/field/Field';
+import { Search } from 'src/components/search/Search';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Label } from 'src/components/typography/label/Label';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import { ColorTokensTable } from '../color/color-table';
 import colorTokens from '../design-tokens/color.json';
 import semanticTokens from '../design-tokens/semantic.json';
-import typographyTokens from '../design-tokens/typography.json';
 import sizeTokens from '../design-tokens/size.json';
 import typeScaleTokens from '../design-tokens/type-scale.json';
+import typographyTokens from '../design-tokens/typography.json';
 import { SemanticTokensTable } from '../semantic/semantic-table';
+import { labels } from '../strings';
 import type { PreviewToken } from '../types';
 import { TypographyTable } from '../typography/typography-table';
-import classes from './token-list.module.css';
-import { labels } from '../strings';
 import { has, includes, pick } from '../utilities/search-utitilites';
+import classes from './token-list.module.css';
 
 const tokenSearchFilter = (token: PreviewToken, searchValue: string) =>
   `${token.variable}${token.value}`

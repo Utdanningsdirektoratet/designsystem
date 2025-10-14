@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import { MultiplyIcon, TrashIcon } from '@udir-design/icons';
-import { useState } from 'react';
-import { Popover } from './Popover';
 import { Button } from '../button/Button';
 import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Popover } from './Popover';
 
 const meta: Meta<typeof Popover> = {
   component: Popover,

@@ -1,6 +1,6 @@
 import { Pagination } from 'src/components/pagination/Pagination';
-import styles from './PaginationControls.module.scss';
 import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
+import styles from './PaginationControls.module.scss';
 
 export interface PaginationControlsProps {
   currentPage: number;

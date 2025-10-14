@@ -1,8 +1,8 @@
 import {
   ToggleGroup as DigdirToggleGroup,
-  type ToggleGroupProps as DigdirToggleGroupProps,
   ToggleGroupItem,
   type ToggleGroupItemProps,
+  type ToggleGroupProps as DigdirToggleGroupProps,
 } from '@digdir/designsystemet-react';
 import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 
@@ -15,4 +15,4 @@ const ToggleGroup = DigdirToggleGroup as ForwardRefExoticComponent<
 
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 ToggleGroup.displayName = 'ToggleGroup';
-export { ToggleGroup, ToggleGroupProps, ToggleGroupItem, ToggleGroupItemProps };
+export { ToggleGroup, ToggleGroupItem, ToggleGroupItemProps, ToggleGroupProps };

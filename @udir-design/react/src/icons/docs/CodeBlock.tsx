@@ -1,8 +1,8 @@
 import { FilesIcon } from '@udir-design/icons';
-import styles from './codeBlock.module.css';
+import { Button } from 'src/components/button/Button';
 import { Card } from 'src/components/card/Card';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
-import { Button } from 'src/components/button/Button';
+import styles from './codeBlock.module.css';
 
 interface Props {
   heading: string;

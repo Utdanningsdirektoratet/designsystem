@@ -1,7 +1,7 @@
-import { useArgs } from 'storybook/preview-api';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { type UsePaginationProps, usePagination } from './usePagination';
+import { useArgs } from 'storybook/preview-api';
 import { Pagination } from 'src/components/pagination/Pagination';
+import { type UsePaginationProps, usePagination } from './usePagination';
 
 const meta: Meta = {
   title: 'Utilities/usePagination',

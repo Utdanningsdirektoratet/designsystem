@@ -1,12 +1,12 @@
 import * as Icons from '@udir-design/icons';
 import { AkselIcon } from '@udir-design/icons/metadata';
-import { Heading } from 'src/components/typography/heading/Heading';
 import { Button } from 'src/components/button/Button';
 import { Card } from 'src/components/card/Card';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import { Link } from 'src/components/link/Link';
-import styles from './categorizedIcons.module.css';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import { Translations } from './Translations';
+import styles from './categorizedIcons.module.css';
 
 type CategoryWithIcons = {
   category: string;

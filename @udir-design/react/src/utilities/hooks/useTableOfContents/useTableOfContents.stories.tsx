@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import {
-  useTableOfContents,
-  type useTableOfContentsProps,
-} from './useTableOfContents';
-import styles from './docs/UseTableOfContents.module.css';
 import { useRef } from 'react';
 import { expect, within } from 'storybook/test';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import { TableOfContents } from 'src/components/tableOfContents/TableOfContents';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import styles from './docs/UseTableOfContents.module.css';
+import {
+  useTableOfContents,
+  type useTableOfContentsProps,
+} from './useTableOfContents';
 
 export default {
   title: 'Utilities/useTableOfContents',

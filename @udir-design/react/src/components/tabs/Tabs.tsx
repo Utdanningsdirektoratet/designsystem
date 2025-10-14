@@ -1,12 +1,12 @@
 import {
   Tabs,
+  TabsList,
+  type TabsListProps,
+  TabsPanel,
+  type TabsPanelProps,
   type TabsProps,
   TabsTab,
   type TabsTabProps,
-  TabsPanel,
-  type TabsPanelProps,
-  TabsList,
-  type TabsListProps,
 } from '@digdir/designsystemet-react';
 import './tabs.css';
 
@@ -15,11 +15,11 @@ Tabs.displayName = 'Tabs';
 
 export {
   Tabs,
+  TabsList,
+  TabsListProps,
+  TabsPanel,
+  TabsPanelProps,
   TabsProps,
   TabsTab,
   TabsTabProps,
-  TabsPanel,
-  TabsPanelProps,
-  TabsList,
-  TabsListProps,
 };

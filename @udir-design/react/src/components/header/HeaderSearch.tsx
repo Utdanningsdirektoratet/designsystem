@@ -1,6 +1,6 @@
+import cl from 'clsx/lite';
 import { forwardRef } from 'react';
 import { Search, SearchProps } from '../search/Search';
-import cl from 'clsx/lite';
 
 export type HeaderSearchProps = SearchProps;
 

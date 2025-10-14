@@ -1,12 +1,12 @@
 import {
   Pagination as DigdirPagination,
-  type PaginationProps as DigdirPaginationProps,
   PaginationButton,
   type PaginationButtonProps,
   PaginationItem,
   type PaginationItemProps,
   PaginationList,
   type PaginationListProps,
+  type PaginationProps as DigdirPaginationProps,
 } from '@digdir/designsystemet-react';
 import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 
@@ -22,11 +22,11 @@ Pagination.displayName = 'Pagination';
 
 export {
   Pagination,
-  PaginationProps,
   PaginationButton,
   PaginationButtonProps,
   PaginationItem,
   PaginationItemProps,
   PaginationList,
   PaginationListProps,
+  PaginationProps,
 };

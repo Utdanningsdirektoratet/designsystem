@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './BreadcrumbsDemo.module.scss';
 import { Breadcrumbs } from 'src/components/breadcrumbs/Breadcrumbs';
+import styles from './BreadcrumbsDemo.module.scss';
 
 export function BreadcrumbsDemo() {
   return (

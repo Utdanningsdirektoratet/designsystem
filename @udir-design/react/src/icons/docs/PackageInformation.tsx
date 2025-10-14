@@ -1,7 +1,7 @@
-import styles from './packageInformation.module.css';
-import { CodeBlock } from './CodeBlock';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { CodeBlock } from './CodeBlock';
+import styles from './packageInformation.module.css';
 
 export function PackageInformation() {
   return (

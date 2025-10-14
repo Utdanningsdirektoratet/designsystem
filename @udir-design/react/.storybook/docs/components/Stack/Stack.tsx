@@ -1,5 +1,4 @@
 import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
-
 import classes from './Stack.module.css';
 
 export const Stack = ({

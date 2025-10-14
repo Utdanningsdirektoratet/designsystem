@@ -1,6 +1,13 @@
+import { Size } from '@digdir/designsystemet-react';
 import { groupBy } from 'ramda';
 import { type HTMLAttributes, useState } from 'react';
+import { Field } from 'src/components/field/Field';
+import { Select } from 'src/components/select/Select';
+import { Table } from 'src/components/table';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Label } from 'src/components/typography/label/Label';
 import { capitalizeString } from 'src/utilities/helpers/stringHelpers';
+import { labels } from '../strings';
 import type { PreviewToken } from '../types';
 import {
   BorderRadius,
@@ -11,13 +18,6 @@ import {
   Size as SizePreview,
 } from './semantic-previews';
 import classes from './semantic.module.css';
-import { labels } from '../strings';
-import { Field } from 'src/components/field/Field';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Table } from 'src/components/table';
-import { Select } from 'src/components/select/Select';
-import { Label } from 'src/components/typography/label/Label';
-import { Size } from '@digdir/designsystemet-react';
 
 type TokenTableProps = {
   tokens: PreviewToken[];

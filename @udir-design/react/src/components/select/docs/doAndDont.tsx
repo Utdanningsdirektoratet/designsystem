@@ -1,4 +1,4 @@
-import { Stack, Dont } from '.storybook/docs/components';
+import { Dont, Stack } from '.storybook/docs/components';
 import { Field } from 'src/components/field/Field';
 import { Label } from 'src/components/typography/label/Label';
 import { Select } from '../Select';

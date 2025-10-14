@@ -1,13 +1,13 @@
+import { type HTMLAttributes, useState } from 'react';
 import { Field } from 'src/components/field/Field';
+import { Select } from 'src/components/select/Select';
+import { Table } from 'src/components/table';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Label } from 'src/components/typography/label/Label';
-import { Table } from 'src/components/table';
-import { Select } from 'src/components/select/Select';
-import { type HTMLAttributes, useState } from 'react';
 import { capitalizeString } from 'src/utilities/helpers/stringHelpers';
+import { labels } from '../strings';
 import type { PreviewToken } from '../types';
 import { ColorDark, ColorLight } from './color-previews';
-import { labels } from '../strings';
 import classes from './color.module.css';
 
 type TokenTableProps = {

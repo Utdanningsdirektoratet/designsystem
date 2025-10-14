@@ -1,20 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-
 import { useState } from 'react';
 import { ArrowRightIcon, BriefcaseIcon, LeaveIcon } from '@udir-design/icons';
-import styles from './header.stories.module.css';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
-import { Dropdown } from '../dropdown/Dropdown';
 import { Avatar } from '../avatar/Avatar';
 import { Badge } from '../badge/Badge';
-import { Header } from '.';
-import { Divider } from '../divider/Divider';
 import { Button } from '../button/Button';
-import { Paragraph } from '../typography/paragraph/Paragraph';
-import { Search } from '../search/Search';
-import { List } from '../list/List';
+import { Divider } from '../divider/Divider';
+import { Dropdown } from '../dropdown/Dropdown';
 import { Link } from '../link/Link';
+import { List } from '../list/List';
+import { Search } from '../search/Search';
 import { Heading } from '../typography/heading/Heading';
+import { Paragraph } from '../typography/paragraph/Paragraph';
+import styles from './header.stories.module.css';
+import { Header } from '.';
 
 const meta: Meta<typeof Header> = {
   component: Header,

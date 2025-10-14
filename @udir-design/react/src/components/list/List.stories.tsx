@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { List } from './List';
-import { Heading } from '../typography/heading/Heading';
 import { Link } from '../link/Link';
+import { Heading } from '../typography/heading/Heading';
+import { List } from './List';
 
 const meta: Meta<typeof List.Unordered> = {
   component: List.Unordered,

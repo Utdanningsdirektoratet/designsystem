@@ -1,12 +1,12 @@
 import {
   Search as DigdirSearch,
-  type SearchProps as DigdirSearchProps,
+  SearchButton,
+  type SearchButtonProps,
   SearchClear,
   type SearchClearProps,
   SearchInput,
   type SearchInputProps,
-  SearchButton,
-  type SearchButtonProps,
+  type SearchProps as DigdirSearchProps,
 } from '@digdir/designsystemet-react';
 import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 
@@ -22,11 +22,11 @@ Search.displayName = 'Search';
 
 export {
   Search,
-  SearchProps,
+  SearchButton,
+  SearchButtonProps,
   SearchClear,
   SearchClearProps,
   SearchInput,
   SearchInputProps,
-  SearchButton,
-  SearchButtonProps,
+  SearchProps,
 };

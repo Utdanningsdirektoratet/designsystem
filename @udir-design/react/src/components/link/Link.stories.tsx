@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Link } from './Link';
 import { EnvelopeClosedIcon, FilePdfFillIcon } from '@udir-design/icons';
 import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Link } from './Link';
+
 EnvelopeClosedIcon.displayName = 'EnvelopeClosedIcon';
 
 const meta: Meta<typeof Link> = {

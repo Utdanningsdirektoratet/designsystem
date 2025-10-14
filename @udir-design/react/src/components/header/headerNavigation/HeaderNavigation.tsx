@@ -1,5 +1,5 @@
-import { forwardRef, HTMLAttributes } from 'react';
 import cl from 'clsx/lite';
+import { HTMLAttributes, forwardRef } from 'react';
 
 export type HeaderNavigationProps = HTMLAttributes<HTMLDivElement>;
 

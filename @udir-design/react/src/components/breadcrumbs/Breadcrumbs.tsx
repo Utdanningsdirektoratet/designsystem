@@ -1,12 +1,12 @@
 import {
   Breadcrumbs as DigdirBreadcrumbs,
-  type BreadcrumbsProps as DigdirBreadcrumbsProps,
   BreadcrumbsItem,
   type BreadcrumbsItemProps,
   BreadcrumbsLink,
   type BreadcrumbsLinkProps,
   BreadcrumbsList,
   type BreadcrumbsListProps,
+  type BreadcrumbsProps as DigdirBreadcrumbsProps,
 } from '@digdir/designsystemet-react';
 import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 
@@ -22,11 +22,11 @@ Breadcrumbs.displayName = 'Breadcrumbs';
 
 export {
   Breadcrumbs,
-  BreadcrumbsProps,
   BreadcrumbsItem,
   BreadcrumbsItemProps,
   BreadcrumbsLink,
   BreadcrumbsLinkProps,
   BreadcrumbsList,
   BreadcrumbsListProps,
+  BreadcrumbsProps,
 };

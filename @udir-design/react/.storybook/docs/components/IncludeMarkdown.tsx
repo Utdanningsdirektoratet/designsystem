@@ -1,20 +1,20 @@
-import { renderToStaticMarkup } from 'react-dom/server';
+import { SeverityColors } from '@digdir/designsystemet-react/colors';
 import { Markdown, Unstyled } from '@storybook/addon-docs/blocks';
+import { toHtml } from 'hast-util-to-html';
 import type { Heading, Root, RootContent, Text } from 'mdast';
 import { toHast } from 'mdast-util-to-hast';
-import { toHtml } from 'hast-util-to-html';
-import { visit } from 'unist-util-visit';
-import remarkParse from 'remark-parse';
+import { applyTo, dropWhile, pipe, takeWhile } from 'ramda';
+import { Fragment, useMemo } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
 import remarkHeadingId from 'remark-heading-id';
 import type { RemarkHeadingIdOptions } from 'remark-heading-id';
+import remarkParse from 'remark-parse';
 import remarkStringify from 'remark-stringify';
 import { unified } from 'unified';
-import { applyTo, dropWhile, pipe, takeWhile } from 'ramda';
-import { componentOverrides } from '../ComponentOverrides';
-import { SeverityColors } from '@digdir/designsystemet-react/colors';
+import { visit } from 'unist-util-visit';
 import { Alert } from '../../../src/components/alert/Alert';
 import { Heading as H } from '../../../src/components/typography/heading/Heading';
-import { Fragment, useMemo } from 'react';
+import { componentOverrides } from '../ComponentOverrides';
 import componentStyles from '../componentOverrides.module.scss';
 
 interface Props {

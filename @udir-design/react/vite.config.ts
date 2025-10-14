@@ -1,12 +1,12 @@
 /// <reference types='vitest' />
-import { createFilter, defineConfig, Plugin } from 'vite';
+import * as path from 'node:path';
 import react from '@vitejs/plugin-react-swc';
-import dts from 'vite-plugin-dts';
-import tsConfigPaths from 'vite-tsconfig-paths';
-import * as path from 'path';
-import pkg from './package.json';
 import * as R from 'ramda';
 import ts from 'typescript';
+import { Plugin, createFilter, defineConfig } from 'vite';
+import dts from 'vite-plugin-dts';
+import tsConfigPaths from 'vite-tsconfig-paths';
+import pkg from './package.json';
 
 const resolveAlias = (alias: string): string =>
   path.resolve(import.meta.dirname, alias);
