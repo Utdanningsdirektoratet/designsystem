@@ -1,10 +1,10 @@
-import { FileCsvFillIcon, FilePdfFillIcon } from '@udir-design/icons';
-import classes from '../TableDemo.module.css';
 import { useRef, useState } from 'react';
-import { Dialog } from 'src/components/dialog/Dialog';
+import { FileCsvFillIcon, FilePdfFillIcon } from '@udir-design/icons';
 import { Button } from 'src/components/button/Button';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Dialog } from 'src/components/dialog/Dialog';
 import { Heading } from 'src/components/typography/heading/Heading';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import classes from '../TableDemo.module.css';
 
 type ExportDialogProps = {
   handleExport: (

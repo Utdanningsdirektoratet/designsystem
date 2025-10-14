@@ -1,8 +1,8 @@
 import {
   Details,
-  type DetailsProps,
   DetailsContent,
   type DetailsContentProps,
+  type DetailsProps,
   DetailsSummary,
   type DetailsSummaryProps,
 } from '@digdir/designsystemet-react';
@@ -12,9 +12,9 @@ Details.displayName = 'Details';
 
 export {
   Details,
-  DetailsProps,
   DetailsContent,
   DetailsContentProps,
+  DetailsProps,
   DetailsSummary,
   DetailsSummaryProps,
 };

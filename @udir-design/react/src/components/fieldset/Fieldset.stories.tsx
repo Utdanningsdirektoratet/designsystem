@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Fieldset } from './Fieldset';
-import { Radio } from '../radio/Radio';
 import { Checkbox } from '../checkbox/Checkbox';
-import { Heading } from '../typography/heading/Heading';
+import { Radio } from '../radio/Radio';
 import { Textfield } from '../textfield/Textfield';
+import { Heading } from '../typography/heading/Heading';
+import { Fieldset } from './Fieldset';
 
 const meta: Meta<typeof Fieldset> = {
   component: Fieldset,

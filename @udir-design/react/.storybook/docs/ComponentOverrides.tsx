@@ -1,15 +1,15 @@
-import componentStyles from './componentOverrides.module.scss';
-import { MdxComponentOverrides } from '../types/parameters';
 import { Children, MouseEventHandler } from 'react';
 import { LinkIcon } from '@udir-design/icons';
+import { Link } from 'src/components/link/Link';
+import { List } from 'src/components/list/List';
+import { Table } from 'src/components/table';
 import {
   Heading,
   HeadingProps,
 } from 'src/components/typography/heading/Heading';
-import { Link } from 'src/components/link/Link';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
-import { List } from 'src/components/list/List';
-import { Table } from 'src/components/table';
+import { MdxComponentOverrides } from '../types/parameters';
+import componentStyles from './componentOverrides.module.scss';
 
 const getPath = (href: string | undefined): string => {
   if (!href) {

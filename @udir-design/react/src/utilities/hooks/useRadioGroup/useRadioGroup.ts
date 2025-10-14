@@ -1,5 +1,6 @@
 import {
-  useRadioGroup,
   type UseRadioGroupProps,
+  useRadioGroup,
 } from '@digdir/designsystemet-react';
-export { useRadioGroup, UseRadioGroupProps };
+
+export { UseRadioGroupProps, useRadioGroup };

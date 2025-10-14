@@ -4,14 +4,14 @@ import {
   type TableBodyProps,
   TableCell,
   type TableCellProps,
+  TableFoot,
+  type TableFootProps,
   TableHead,
   type TableHeadProps,
   TableHeaderCell,
   type TableHeaderCellProps,
   TableRow,
   type TableRowProps,
-  TableFoot,
-  type TableFootProps,
 } from '@digdir/designsystemet-react';
 import { Table as TableRoot, type TableProps } from './Table';
 
@@ -28,17 +28,17 @@ Table.displayName = 'Table';
 
 export {
   Table,
-  TableProps,
   TableBody,
   TableBodyProps,
   TableCell,
   TableCellProps,
+  TableFoot,
+  TableFootProps,
   TableHead,
   TableHeadProps,
   TableHeaderCell,
   TableHeaderCellProps,
+  TableProps,
   TableRow,
   TableRowProps,
-  TableFoot,
-  TableFootProps,
 };

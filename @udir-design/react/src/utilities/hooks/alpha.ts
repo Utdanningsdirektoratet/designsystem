@@ -7,6 +7,6 @@ export {
   usePagination,
 } from './usePagination/usePagination';
 export {
-  type useTableOfContentsProps,
   useTableOfContents,
+  type useTableOfContentsProps,
 } from './useTableOfContents/useTableOfContents';

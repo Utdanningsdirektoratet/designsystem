@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import styles from './docs/TableOfContents.module.css';
-import { within, expect } from 'storybook/test';
+import { expect, within } from 'storybook/test';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
-import { TableOfContents } from './TableOfContents';
+import { useTableOfContents } from 'src/utilities/hooks/useTableOfContents/useTableOfContents';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
-import { useTableOfContents } from 'src/utilities/hooks/useTableOfContents/useTableOfContents';
+import { TableOfContents } from './TableOfContents';
+import styles from './docs/TableOfContents.module.css';
 
 const meta: Meta<typeof TableOfContents> = {
   component: TableOfContents,

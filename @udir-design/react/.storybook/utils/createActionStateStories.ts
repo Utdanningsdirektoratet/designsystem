@@ -1,6 +1,6 @@
 import type { StoryObj } from '@storybook/react-vite';
 import type {} from 'storybook/internal/types';
-import { userEvent, within, expect } from 'storybook/test';
+import { expect, userEvent, within } from 'storybook/test';
 
 export function createActionStateStories<Story extends StoryObj>(story: Story) {
   const hovered: Story = {

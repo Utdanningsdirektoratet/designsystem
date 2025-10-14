@@ -1,23 +1,23 @@
-import { HTMLAttributes } from 'react';
-import classes from './ArticleDemo.module.css';
-import { ContentSection } from './content-section/ContentSection';
-import { section1, section2, section3 } from './strings/sections';
-import { changes } from './strings/changes';
 import cl from 'clsx';
+import { HTMLAttributes } from 'react';
 import { PrinterSmallIcon } from '@udir-design/icons';
-import { DemoProps } from '../demoProps';
-import { Header } from 'src/components/header';
-import { SkipLink } from 'src/components/skipLink/SkipLink';
-import { Breadcrumbs } from 'src/components/breadcrumbs/Breadcrumbs';
 import { Alert } from 'src/components/alert';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Link } from 'src/components/link/Link';
+import { Breadcrumbs } from 'src/components/breadcrumbs/Breadcrumbs';
+import { Button } from 'src/components/button/Button';
 import { Card } from 'src/components/card/Card';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import { Details } from 'src/components/details/Details';
 import { Divider } from 'src/components/divider/Divider';
-import { Button } from 'src/components/button/Button';
 import { Footer } from 'src/components/footer';
+import { Header } from 'src/components/header';
+import { Link } from 'src/components/link/Link';
+import { SkipLink } from 'src/components/skipLink/SkipLink';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { DemoProps } from '../demoProps';
+import classes from './ArticleDemo.module.css';
+import { ContentSection } from './content-section/ContentSection';
+import { changes } from './strings/changes';
+import { section1, section2, section3 } from './strings/sections';
 
 type ArticleDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
 

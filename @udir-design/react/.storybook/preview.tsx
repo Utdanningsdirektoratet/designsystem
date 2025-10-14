@@ -1,9 +1,9 @@
 import './style.css';
 import './docs/customTheme.scss';
-import { INITIAL_VIEWPORTS, type ViewportMap } from 'storybook/viewport';
 import { Preview } from '@storybook/react-vite';
-import { customStylesDecorator } from './utils/customStylesDecorator';
+import { INITIAL_VIEWPORTS, type ViewportMap } from 'storybook/viewport';
 import { docsParameters } from './docs/parameters';
+import { customStylesDecorator } from './utils/customStylesDecorator';
 
 // See the complete list of available devices in INITIAL_VIEWPORTS here:
 // https://storybook.js.org/docs/essentials/viewport#use-a-detailed-set-of-devices

@@ -1,8 +1,7 @@
-import { defineConfig } from 'eslint/config';
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import baseConfig from '../../eslint.config.js';
-import storybook from 'eslint-plugin-storybook';
 import nxEslintPlugin from '@nx/eslint-plugin';
+import { defineConfig } from 'eslint/config';
+import storybook from 'eslint-plugin-storybook';
+import baseConfig, { importOrderConfig } from '../../eslint.config.js';
 
 const commonRestrictedImports = [
   {
@@ -21,15 +20,11 @@ const commonRestrictedImports = [
 ];
 
 export default defineConfig(
-  baseConfig,
   nxEslintPlugin.configs['flat/react'],
   storybook.configs['flat/recommended'],
+  baseConfig,
   {
     ignores: ['!.storybook'],
-  },
-  {
-    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
-    rules: {},
   },
   {
     files: ['**/*.ts', '**/*.tsx'],
@@ -39,6 +34,16 @@ export default defineConfig(
         'error',
         {
           patterns: commonRestrictedImports,
+        },
+      ],
+      'import/order': [
+        'error',
+        {
+          ...importOrderConfig,
+          pathGroups: [
+            ...importOrderConfig.pathGroups,
+            { pattern: '.storybook/**', group: 'internal' },
+          ],
         },
       ],
     },

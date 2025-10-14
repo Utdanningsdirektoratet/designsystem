@@ -1,12 +1,12 @@
 import {
-  ComponentOrigin,
-  ComponentOriginParameters,
-} from '.storybook/types/parameters';
-import {
   DocsContainer as OriginalDocsContainer,
   type DocsContainerProps,
 } from '@storybook/addon-docs/blocks';
 import { ComponentType, useState } from 'react';
+import {
+  ComponentOrigin,
+  ComponentOriginParameters,
+} from '.storybook/types/parameters';
 import { OriginText } from './Origin';
 
 export const DocsContainer = ({

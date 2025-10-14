@@ -1,12 +1,12 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
+import { useState } from 'react';
+import { expect, within } from 'storybook/test';
+import { formatReactSource } from '.storybook/utils/sourceTransformers';
+import { Button } from '../button/Button';
 import { Link } from '../link/Link';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
-import { Button } from '../button/Button';
 import { Alert } from './';
-import { within, expect } from 'storybook/test';
-import { useState } from 'react';
-import { formatReactSource } from '.storybook/utils/sourceTransformers';
 
 type Story = StoryObj<typeof Alert>;
 

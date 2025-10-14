@@ -1,12 +1,12 @@
-import { useEffect, useRef, useState } from 'react';
-import classes from './Overview.module.css';
 import * as Highcharts from 'highcharts';
 import { HighchartsReact } from 'highcharts-react-official';
-import { TabStructure } from '../../components/tab-structure/TabStructure';
-import { DataControls } from '../../components/data-controls/DataControls';
-import { Loading } from '../../components/loading/Loading';
+import { useEffect, useRef, useState } from 'react';
 import { Table } from 'src/components/table';
 import { Heading } from 'src/components/typography/heading/Heading';
+import { DataControls } from '../../components/data-controls/DataControls';
+import { Loading } from '../../components/loading/Loading';
+import { TabStructure } from '../../components/tab-structure/TabStructure';
+import classes from './Overview.module.css';
 
 const testOverview = [
   { year: '2022', sent: 3500, received: 2000 },

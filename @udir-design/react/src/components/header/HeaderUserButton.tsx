@@ -1,6 +1,6 @@
-import { forwardRef, HTMLAttributes } from 'react';
-import { ChevronDownIcon, ChevronUpIcon } from '@udir-design/icons';
 import cl from 'clsx/lite';
+import { HTMLAttributes, forwardRef } from 'react';
+import { ChevronDownIcon, ChevronUpIcon } from '@udir-design/icons';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 

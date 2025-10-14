@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { within, expect, userEvent, waitFor } from 'storybook/test';
-import { Tooltip } from './Tooltip';
-import { Button } from '../button/Button';
+import { expect, userEvent, waitFor, within } from 'storybook/test';
 import {
   FilesIcon,
   FloppydiskIcon,
@@ -9,6 +7,8 @@ import {
   PrinterSmallIcon,
   TrashIcon,
 } from '@udir-design/icons';
+import { Button } from '../button/Button';
+import { Tooltip } from './Tooltip';
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,

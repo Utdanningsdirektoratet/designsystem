@@ -1,13 +1,13 @@
+import { Pagination, usePagination } from '@digdir/designsystemet-react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { expect, within } from 'storybook/test';
-import { Pagination, usePagination } from '@digdir/designsystemet-react';
-import { Table, TableHeaderCellProps } from '.';
 import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
 import { Checkbox } from '../checkbox/Checkbox';
+import { Tag } from '../tag/Tag';
 import { Textfield } from '../textfield/Textfield';
 import { Heading } from '../typography/heading/Heading';
-import { Tag } from '../tag/Tag';
+import { Table, TableHeaderCellProps } from '.';
 
 const meta: Meta<typeof Table> = {
   component: Table,

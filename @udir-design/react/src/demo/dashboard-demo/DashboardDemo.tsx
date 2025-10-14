@@ -1,13 +1,13 @@
-import { HTMLAttributes } from 'react';
-import cl from 'clsx/lite';
-import classes from './DashboardDemo.module.css';
-import { Overview } from './tabs/overview/Overview';
-import { Tests } from './tabs/tests/Tests';
-import { TestAnswers } from './tabs/test-answers/TestAnswers';
-import { Settings } from './tabs/settings/Settings';
 import { Size } from '@digdir/designsystemet-react';
+import cl from 'clsx/lite';
+import { HTMLAttributes } from 'react';
 import { Tabs } from 'src/components/tabs/Tabs';
 import { Heading } from 'src/components/typography/heading/Heading';
+import classes from './DashboardDemo.module.css';
+import { Overview } from './tabs/overview/Overview';
+import { Settings } from './tabs/settings/Settings';
+import { TestAnswers } from './tabs/test-answers/TestAnswers';
+import { Tests } from './tabs/tests/Tests';
 
 type DashboardDemoProps = {
   'data-size': Size;

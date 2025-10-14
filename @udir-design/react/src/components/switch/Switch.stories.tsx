@@ -1,13 +1,13 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
-import { Switch } from './Switch';
-import { expect, fn, userEvent, within } from 'storybook/test';
 import { useState } from 'react';
+import { expect, fn, userEvent, within } from 'storybook/test';
+import { formatReactSource } from '.storybook/utils/sourceTransformers';
+import { Card } from '../card/Card';
+import { Checkbox } from '../checkbox/Checkbox';
+import { Fieldset } from '../fieldset/Fieldset';
 import { Heading } from '../typography/heading/Heading';
 import { SwitchProps } from './Switch';
-import { formatReactSource } from '.storybook/utils/sourceTransformers';
-import { Fieldset } from '../fieldset/Fieldset';
-import { Checkbox } from '../checkbox/Checkbox';
-import { Card } from '../card/Card';
+import { Switch } from './Switch';
 
 const meta: Meta<typeof Switch> = {
   component: Switch,

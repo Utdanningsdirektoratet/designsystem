@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { SkipLink } from './SkipLink';
-import { Paragraph } from '../typography/paragraph/Paragraph';
 import { expect, userEvent, within } from 'storybook/test';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
+import { Paragraph } from '../typography/paragraph/Paragraph';
+import { SkipLink } from './SkipLink';
 
 const meta: Meta<typeof SkipLink> = {
   component: SkipLink,

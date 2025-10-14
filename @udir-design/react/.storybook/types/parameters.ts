@@ -7,15 +7,15 @@
  * See https://github.com/microsoft/TypeScript/issues/30511 for details.
  */
 
+import type { A11yParameters } from '@storybook/addon-a11y';
+import type { DocsTypes } from '@storybook/addon-docs';
+import { StoryContext } from '@storybook/react-vite';
+import type { CSSProperties, ReactNode } from 'react';
 import type {
   Addon_OptionsParameter,
   Parameters,
 } from 'storybook/internal/types';
-import type { DocsTypes } from '@storybook/addon-docs';
-import type { A11yParameters } from '@storybook/addon-a11y';
-import type { CSSProperties, ReactNode } from 'react';
 import { ThemeVars } from 'storybook/theming';
-import { StoryContext } from '@storybook/react-vite';
 
 export type ChromaticViewport = {
   width?: number | `${string}px`;

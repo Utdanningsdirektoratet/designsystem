@@ -1,17 +1,17 @@
 import React from 'react';
 import { addons } from 'storybook/manager-api';
 import {
+  type TagBadgeParameters,
   defaultConfig,
   renderLabel,
-  type TagBadgeParameters,
 } from 'storybook-addon-tag-badges';
-import customTheme from './docs/customTheme';
-import './style.css';
 import {
   ComponentIcon,
   RectangleSectionsIcon,
   WrenchIcon,
 } from '@udir-design/icons';
+import customTheme from './docs/customTheme';
+import './style.css';
 
 addons.setConfig({
   theme: customTheme,

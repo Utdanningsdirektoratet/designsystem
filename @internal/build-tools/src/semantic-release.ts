@@ -1,12 +1,12 @@
-import process from 'node:process';
 import { execSync } from 'node:child_process';
+import process from 'node:process';
+import micromatch from 'micromatch';
 import {
   releaseChangelog as nxCreateChangelog,
   releasePublish as nxPublishRelease,
   releaseVersion as nxUpdateVersion,
 } from 'nx/release';
 import { VersionOptions } from 'nx/src/command-line/release/command-object';
-import micromatch from 'micromatch';
 
 export interface ReleaseConfig {
   /**

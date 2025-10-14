@@ -1,4 +1,5 @@
 import { JSX } from 'react';
+import { ArrowRightIcon } from '@udir-design/icons';
 import { Card } from 'src/components/card/Card';
 import {
   Heading,
@@ -6,7 +7,6 @@ import {
 } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import styles from './ResourceLinks.module.css';
-import { ArrowRightIcon } from '@udir-design/icons';
 
 export function LandingResourceLinks() {
   const domainUrl = window.location.origin;

@@ -1,16 +1,16 @@
+import { useDebounceCallback } from '@digdir/designsystemet-react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { useState } from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
-import { Search } from './Search';
-import { Paragraph } from '../typography/paragraph/Paragraph';
-import { Divider } from '../divider/Divider';
+import { assertExists } from '../../utilities/helpers/assertExists';
 import { Chip } from '../chip/Chip';
+import { Divider } from '../divider/Divider';
+import { Field } from '../field/Field';
 import { Skeleton } from '../skeleton/Skeleton';
 import { Spinner } from '../spinner/Spinner';
-import { useState } from 'react';
-import { assertExists } from '../../utilities/helpers/assertExists';
-import { useDebounceCallback } from '@digdir/designsystemet-react';
-import { Field } from '../field/Field';
 import { Label } from '../typography/label/Label';
+import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Search } from './Search';
 
 const meta: Meta<typeof Search> = {
   component: Search,

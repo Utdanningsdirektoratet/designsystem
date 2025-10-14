@@ -1,10 +1,10 @@
-import { AkselIcon } from '@udir-design/icons/metadata';
 import { useEffect, useState } from 'react';
-import { IconInformation } from './IconInformation';
-import styles from './iconSidebar.module.css';
-import { PackageInformation } from './PackageInformation';
-import { Dialog } from 'src/components/dialog/Dialog';
+import { AkselIcon } from '@udir-design/icons/metadata';
 import { Card } from 'src/components/card/Card';
+import { Dialog } from 'src/components/dialog/Dialog';
+import { IconInformation } from './IconInformation';
+import { PackageInformation } from './PackageInformation';
+import styles from './iconSidebar.module.css';
 
 export function IconPageSidebar({
   icon,

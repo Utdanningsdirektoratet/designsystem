@@ -1,20 +1,20 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { expect, userEvent, waitFor, within } from 'storybook/test';
-import { type ChangeEvent, useState } from 'react';
 import { useDebounceCallback } from '@digdir/designsystemet-react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { type ChangeEvent, useState } from 'react';
+import { expect, userEvent, waitFor, within } from 'storybook/test';
+import { Button } from '../button/Button';
+import { Details } from '../details/Details';
+import { Divider } from '../divider/Divider';
+import { Field } from '../field/Field';
+import { Spinner } from '../spinner/Spinner';
+import { Label } from '../typography/label/Label';
+import { Paragraph } from '../typography/paragraph/Paragraph';
 import {
   Suggestion,
   SuggestionMultipleProps,
   SuggestionSingleProps,
 } from './Suggestion';
 import type { SuggestionItem } from './Suggestion';
-import { Label } from '../typography/label/Label';
-import { Field } from '../field/Field';
-import { Button } from '../button/Button';
-import { Divider } from '../divider/Divider';
-import { Paragraph } from '../typography/paragraph/Paragraph';
-import { Details } from '../details/Details';
-import { Spinner } from '../spinner/Spinner';
 
 const meta: Meta<typeof Suggestion> = {
   component: Suggestion,

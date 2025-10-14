@@ -1,13 +1,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
 import postcss from 'postcss';
 import atImport from 'postcss-import';
 import atImportGlob from 'postcss-import-ext-glob';
 import nesting from 'postcss-nesting';
-import cssnano from 'cssnano';
-import autoprefixer from 'autoprefixer';
 import pkg from './package.json' with { type: 'json' };
-import { fileURLToPath } from 'node:url';
 
 const dependencies = Object.keys({
   ...pkg.dependencies,

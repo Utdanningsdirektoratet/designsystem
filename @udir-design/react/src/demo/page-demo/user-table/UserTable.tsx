@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './UserTable.module.scss';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Select } from 'src/components/select/Select';
-import { Popover } from 'src/components/popover/Popover';
 import { Button } from 'src/components/button/Button';
+import { Popover } from 'src/components/popover/Popover';
 import { Search } from 'src/components/search/Search';
+import { Select } from 'src/components/select/Select';
 import { Table } from 'src/components/table';
+import { Heading } from 'src/components/typography/heading/Heading';
+import styles from './UserTable.module.scss';
 
 export function UserTable() {
   return (

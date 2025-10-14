@@ -1,8 +1,8 @@
-import classes from '../ArticleDemo.module.css';
 import { Fragment } from 'react/jsx-runtime';
-import { SectionItem } from '../strings/sections';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import classes from '../ArticleDemo.module.css';
+import { SectionItem } from '../strings/sections';
 
 export interface ContentSectionProps {
   section: SectionItem[];
