@@ -5,7 +5,7 @@ import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBeha
 import { TableOfContents } from 'src/components/tableOfContents/TableOfContents';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
-import styles from './docs/UseTableOfContents.module.css';
+import { Prose } from 'src/components/typography/prose/Prose';
 import {
   useTableOfContents,
   type useTableOfContentsProps,
@@ -44,7 +44,7 @@ type Story = StoryObj<useTableOfContentsProps>;
 export const Default: Story = {
   render() {
     return (
-      <div className={styles.prose}>
+      <Prose>
         <TableOfContents {...useTableOfContents()} data-testid="toc" />
         <Heading
           level={2}
@@ -60,7 +60,7 @@ export const Default: Story = {
         <Heading level={2} id="second-heading" data-size="md">
           Andre overskrift (h2)
         </Heading>
-      </div>
+      </Prose>
     );
   },
   play: async ({ canvasElement, step }) => {
@@ -87,7 +87,7 @@ export const Container: Story = {
   render() {
     const containerRef = useRef<HTMLDivElement>(null);
     return (
-      <div ref={containerRef} className={styles.prose}>
+      <Prose ref={containerRef}>
         <Heading level={1} id="sidetittel" data-size="lg">
           Sidetittel (h1)
         </Heading>
@@ -149,7 +149,7 @@ export const Container: Story = {
           Cras consequat ex nec pellentesque pharetra. Vivamus facilisis
           consequat velit sit amet pretium.
         </Paragraph>
-      </div>
+      </Prose>
     );
   },
 };
@@ -157,7 +157,7 @@ export const Container: Story = {
 export const TocIgnore: Story = {
   render() {
     return (
-      <div className={styles.prose}>
+      <Prose>
         <TableOfContents {...useTableOfContents()} />
         <Heading level={2} id="inkluder-overskrift-1" data-size="md">
           Inkluder første overskrift (h2)
@@ -173,7 +173,7 @@ export const TocIgnore: Story = {
         <Heading level={2} id="inkluder-overskrift-3" data-size="md">
           Inkluder tredje overskrift (h2)
         </Heading>
-      </div>
+      </Prose>
     );
   },
 };
