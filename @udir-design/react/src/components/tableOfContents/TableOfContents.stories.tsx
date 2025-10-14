@@ -4,8 +4,8 @@ import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBeha
 import { useTableOfContents } from 'src/utilities/hooks/useTableOfContents/useTableOfContents';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Prose } from '../typography/prose/Prose';
 import { TableOfContents } from './TableOfContents';
-import styles from './docs/TableOfContents.module.css';
 
 const meta: Meta<typeof TableOfContents> = {
   component: TableOfContents,
@@ -120,7 +120,7 @@ export const Automatic: Story = {
   },
   render: (args) => {
     return (
-      <div className={styles.prose}>
+      <Prose>
         <Heading level={1} id="heading-1" data-size="lg">
           Sidetittel (h1)
         </Heading>
@@ -182,7 +182,7 @@ export const Automatic: Story = {
           Cras consequat ex nec pellentesque pharetra. Vivamus facilisis
           consequat velit sit amet pretium.
         </Paragraph>
-      </div>
+      </Prose>
     );
   },
 };
@@ -196,7 +196,7 @@ export const Manual: Story = {
     'data-color': 'support1',
   },
   render: (args) => (
-    <div className={styles.prose}>
+    <Prose>
       <Heading level={1} data-size="lg">
         Sidetittel (h1)
       </Heading>
@@ -230,6 +230,6 @@ export const Manual: Story = {
         finibus ut, consequat sit amet metus. Suspendisse nisl massa, egestas eu
         justo eu, luctus volutpat ante.
       </Paragraph>
-    </div>
+    </Prose>
   ),
 };
