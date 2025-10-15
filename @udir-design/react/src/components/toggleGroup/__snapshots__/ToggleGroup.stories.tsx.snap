@@ -13,11 +13,11 @@ exports[`Controlled 1`] = `
     data-variant="tertiary"
     type="button"
     value="answers"
-    id="togglegroup-item-_r_1r_"
+    id="togglegroup-item-_r_28_"
     aria-checked="false"
     aria-current="false"
     role="radio"
-    name="togglegroup-name-_r_1p_"
+    name="togglegroup-name-_r_26_"
     data-roving-tabindex-item="true"
     tabindex="-1"
   >
@@ -45,11 +45,11 @@ exports[`Controlled 1`] = `
     data-variant="tertiary"
     type="button"
     value="drafts"
-    id="togglegroup-item-_r_1u_"
+    id="togglegroup-item-_r_2b_"
     aria-checked="false"
     aria-current="false"
     role="radio"
-    name="togglegroup-name-_r_1p_"
+    name="togglegroup-name-_r_26_"
     data-roving-tabindex-item="true"
     tabindex="-1"
   >
@@ -77,11 +77,11 @@ exports[`Controlled 1`] = `
     data-variant="primary"
     type="button"
     value="correctedAnswers"
-    id="togglegroup-item-_r_21_"
+    id="togglegroup-item-_r_2e_"
     aria-checked="true"
     aria-current="true"
     role="radio"
-    name="togglegroup-name-_r_1p_"
+    name="togglegroup-name-_r_26_"
     data-roving-tabindex-item="true"
     tabindex="0"
   >
@@ -140,7 +140,7 @@ exports[`Controlled 1`] = `
           data-variant="tertiary"
           type="button"
           aria-label="Se retting"
-          popovertarget="_r_23_"
+          popovertarget="_r_2g_"
           popovertargetaction="show"
         >
           <svg
@@ -162,7 +162,7 @@ exports[`Controlled 1`] = `
         </button>
         <span
           role="tooltip"
-          id="_r_23_"
+          id="_r_2g_"
           popover="manual"
           style="opacity: 0;"
         >
@@ -186,7 +186,7 @@ exports[`Controlled 1`] = `
           data-variant="tertiary"
           type="button"
           aria-label="Se retting"
-          popovertarget="_r_25_"
+          popovertarget="_r_2i_"
           popovertargetaction="show"
         >
           <svg
@@ -208,7 +208,7 @@ exports[`Controlled 1`] = `
         </button>
         <span
           role="tooltip"
-          id="_r_25_"
+          id="_r_2i_"
           popover="manual"
           style="opacity: 0;"
         >
@@ -232,7 +232,7 @@ exports[`Controlled 1`] = `
           data-variant="tertiary"
           type="button"
           aria-label="Se retting"
-          popovertarget="_r_27_"
+          popovertarget="_r_2k_"
           popovertargetaction="show"
         >
           <svg
@@ -254,7 +254,7 @@ exports[`Controlled 1`] = `
         </button>
         <span
           role="tooltip"
-          id="_r_27_"
+          id="_r_2k_"
           popover="manual"
           style="opacity: 0;"
         >
@@ -660,6 +660,144 @@ exports[`Secondary 1`] = `
 </div>
 `;
 
+exports[`Secondary Only Icons 1`] = `
+<div
+  role="radiogroup"
+  data-variant="secondary"
+  tabindex="0"
+>
+  <button
+    data-icon="true"
+    data-variant="secondary"
+    type="button"
+    value="venstrestilt"
+    aria-label="Venstrestilt"
+    popovertarget="_r_1q_"
+    popovertargetaction="show"
+    id="togglegroup-item-_r_1s_"
+    aria-checked="true"
+    aria-current="true"
+    role="radio"
+    name="togglegroup-name-_r_1p_"
+    data-roving-tabindex-item="true"
+    tabindex="0"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M4 3.25a.75.75 0 0 1 .75.75v16a.75.75 0 0 1-1.5 0V4A.75.75 0 0 1 4 3.25M6.25 6A.75.75 0 0 1 7 5.25h13a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-.75.75H7a.75.75 0 0 1-.75-.75zm1.5.75v2.5h11.5v-2.5zM7 13.25a.75.75 0 0 0-.75.75v4c0 .414.336.75.75.75h7a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 0-.75-.75zm.75 4v-2.5h5.5v2.5z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+  </button>
+  <span
+    role="tooltip"
+    id="_r_1q_"
+    popover="manual"
+    style="opacity: 0;"
+  >
+    Venstrestilt
+  </span>
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
+    value="midtstilt"
+    aria-label="Midtstilt"
+    popovertarget="_r_1u_"
+    popovertargetaction="show"
+    id="togglegroup-item-_r_20_"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-_r_1p_"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M12 3.25a.75.75 0 0 1 .75.75v1.25h5.75a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-.75.75h-5.75v2.5h2.75a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-.75.75h-2.75V20a.75.75 0 0 1-1.5 0v-1.25H8.5a.75.75 0 0 1-.75-.75v-4a.75.75 0 0 1 .75-.75h2.75v-2.5H5.5a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75h5.75V4a.75.75 0 0 1 .75-.75m-.75 11.5h-2v2.5h2zm1.5 2.5h2v-2.5h-2zm-6.5-10.5h5v2.5h-5zm6.5 0v2.5h5v-2.5z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+  </button>
+  <span
+    role="tooltip"
+    id="_r_1u_"
+    popover="manual"
+    style="opacity: 0;"
+  >
+    Midtstilt
+  </span>
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
+    value="høyrestilt"
+    aria-label="Høyrestilt"
+    popovertarget="_r_22_"
+    popovertargetaction="show"
+    id="togglegroup-item-_r_24_"
+    aria-checked="false"
+    aria-current="false"
+    role="radio"
+    name="togglegroup-name-_r_1p_"
+    data-roving-tabindex-item="true"
+    tabindex="-1"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M20 20.75a.75.75 0 0 1-.75-.75V4a.75.75 0 0 1 1.5 0v16a.75.75 0 0 1-.75.75M17.75 10a.75.75 0 0 1-.75.75H4a.75.75 0 0 1-.75-.75V6A.75.75 0 0 1 4 5.25h13a.75.75 0 0 1 .75.75zm-1.5-.75v-2.5H4.75v2.5zm.75 9.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 0-.75-.75h-7a.75.75 0 0 0-.75.75v4c0 .414.336.75.75.75zm-.75-4v2.5h-5.5v-2.5z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+  </button>
+  <span
+    role="tooltip"
+    id="_r_22_"
+    popover="manual"
+    style="opacity: 0;"
+  >
+    Høyrestilt
+  </span>
+</div>
+`;
+
 exports[`Text And Icons 1`] = `
 <div
   role="radiogroup"
@@ -779,11 +917,11 @@ exports[`Toggle Group In Color Context 1`] = `
       data-variant="primary"
       type="button"
       value="innboks"
-      id="togglegroup-item-_r_2b_"
+      id="togglegroup-item-_r_2o_"
       aria-checked="true"
       aria-current="true"
       role="radio"
-      name="togglegroup-name-_r_29_"
+      name="togglegroup-name-_r_2m_"
       data-roving-tabindex-item="true"
       tabindex="0"
     >
@@ -793,11 +931,11 @@ exports[`Toggle Group In Color Context 1`] = `
       data-variant="tertiary"
       type="button"
       value="utkast"
-      id="togglegroup-item-_r_2d_"
+      id="togglegroup-item-_r_2q_"
       aria-checked="false"
       aria-current="false"
       role="radio"
-      name="togglegroup-name-_r_29_"
+      name="togglegroup-name-_r_2m_"
       data-roving-tabindex-item="true"
       tabindex="-1"
     >
@@ -807,11 +945,11 @@ exports[`Toggle Group In Color Context 1`] = `
       data-variant="tertiary"
       type="button"
       value="arkiv"
-      id="togglegroup-item-_r_2f_"
+      id="togglegroup-item-_r_2s_"
       aria-checked="false"
       aria-current="false"
       role="radio"
-      name="togglegroup-name-_r_29_"
+      name="togglegroup-name-_r_2m_"
       data-roving-tabindex-item="true"
       tabindex="-1"
     >
@@ -821,11 +959,11 @@ exports[`Toggle Group In Color Context 1`] = `
       data-variant="tertiary"
       type="button"
       value="sendt"
-      id="togglegroup-item-_r_2h_"
+      id="togglegroup-item-_r_2u_"
       aria-checked="false"
       aria-current="false"
       role="radio"
-      name="togglegroup-name-_r_29_"
+      name="togglegroup-name-_r_2m_"
       data-roving-tabindex-item="true"
       tabindex="-1"
     >
