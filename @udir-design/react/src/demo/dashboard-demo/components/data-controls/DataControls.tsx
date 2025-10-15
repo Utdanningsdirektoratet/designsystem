@@ -11,7 +11,11 @@ type DataControlsProps = {
 export const DataControls = ({ value, setValue }: DataControlsProps) => {
   return (
     <div className={classes.container}>
-      <ToggleGroup defaultValue={value} onChange={setValue}>
+      <ToggleGroup
+        defaultValue={value}
+        onChange={setValue}
+        className={classes.toggleGroup}
+      >
         <ToggleGroup.Item value="graph">Vis som graf</ToggleGroup.Item>
         <ToggleGroup.Item value="table">Vis som tabell</ToggleGroup.Item>
       </ToggleGroup>

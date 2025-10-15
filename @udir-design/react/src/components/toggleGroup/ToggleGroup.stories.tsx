@@ -184,6 +184,11 @@ export const OnlyIcons: Story = {
   ),
 };
 
+export const SecondaryOnlyIcons: Story = {
+  args: { ...OnlyIcons.args, variant: 'secondary' },
+  render: OnlyIcons.render,
+};
+
 const testsData: Record<
   string,
   Array<{ name: string; subject: string; grade?: string; delivered?: Date }>
