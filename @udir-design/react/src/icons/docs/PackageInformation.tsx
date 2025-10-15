@@ -14,7 +14,7 @@ export function PackageInformation() {
           </Paragraph>
         </div>
       </div>
-      <CodeBlock heading="Import" code="npm install @udir-design/icons@beta" />
+      <CodeBlock heading="Import" code="npm add @udir-design/icons@beta" />
       <CodeBlock
         heading="React"
         code={`import { FilterIcon } from

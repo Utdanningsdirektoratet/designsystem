@@ -1,28 +1,29 @@
+import type { Dispatch, SetStateAction } from 'react';
 import { useEffect, useState } from 'react';
-import type { AkselIcon } from '@udir-design/icons/metadata';
 import { Card } from 'src/components/card/Card';
 import { Dialog } from 'src/components/dialog/Dialog';
+import type { UdirIcon } from './IconDisplay.utils';
 import { IconInformation } from './IconInformation';
 import { PackageInformation } from './PackageInformation';
 import styles from './iconSidebar.module.css';
 
 export function IconPageSidebar({
   icon,
-  resetIcon,
+  setSelectedIcon,
 }: {
-  icon?: AkselIcon | null;
-  resetIcon: () => void;
+  icon?: UdirIcon | null;
+  setSelectedIcon: Dispatch<SetStateAction<UdirIcon | null>>;
 }) {
   const size = useWindowSize();
 
   if (icon && size.width < 992) {
     return (
       <Dialog
-        onClose={() => resetIcon()}
+        onClose={() => setSelectedIcon(null)}
         aria-label={`${icon.name} ikon`}
         modal={false}
         open={Boolean(icon)}
-        className="modal"
+        className={styles.dialog}
       >
         <IconInformation icon={icon} />
       </Dialog>
