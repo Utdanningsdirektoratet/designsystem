@@ -41,7 +41,7 @@ export const Preview: Story = {
       </Search>
     </form>
   ),
-  play: async ({ canvasElement, step, args }) => {
+  play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
     const input = canvas.getByRole('searchbox');
 

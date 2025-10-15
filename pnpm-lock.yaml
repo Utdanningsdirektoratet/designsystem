@@ -285,6 +285,9 @@ catalogs:
     tsx:
       specifier: ^4.20.6
       version: 4.20.6
+    type-fest:
+      specifier: ^5.1.0
+      version: 5.1.0
     typescript:
       specifier: ^5.9.3
       version: 5.9.3
@@ -645,6 +648,9 @@ importers:
       storybook-addon-tag-badges:
         specifier: 'catalog:'
         version: 2.0.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@9.1.10(@testing-library/dom@10.4.1)(msw@2.7.3(@types/node@24.7.2)(typescript@5.9.3))(prettier@3.6.2)(vite@7.1.9(@types/node@24.7.2)(jiti@2.6.1)(less@4.1.3)(sass@1.93.2)(stylus@0.64.0)(terser@5.39.0)(tsx@4.20.6)(yaml@2.8.1)))
+      type-fest:
+        specifier: 'catalog:'
+        version: 5.1.0
       unified:
         specifier: 'catalog:'
         version: 11.0.5
@@ -6790,6 +6796,10 @@ packages:
   tabbable@6.2.0:
     resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
 
+  tagged-tag@1.0.0:
+    resolution: {integrity: sha512-yEFYrVhod+hdNyx7g5Bnkkb0G6si8HJurOoOEgC8B/O0uXLHlaey/65KRv6cuWBNhBgHKAROVpc7QyYqE5gFng==}
+    engines: {node: '>=20'}
+
   tapable@2.3.0:
     resolution: {integrity: sha512-g9ljZiwki/LfxmQADO3dEY1CbpmXT5Hm2fJ+QaGKwSXUylMybePR7/67YW7jOrrvjEgL1Fmz5kzyAjWVWLlucg==}
     engines: {node: '>=6'}
@@ -7002,6 +7012,10 @@ packages:
   type-fest@4.41.0:
     resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
     engines: {node: '>=16'}
+
+  type-fest@5.1.0:
+    resolution: {integrity: sha512-wQ531tuWvB6oK+pchHIu5lHe5f5wpSCqB8Kf4dWQRbOYc9HTge7JL0G4Qd44bh6QuJCccIzL3bugb8GI0MwHrg==}
+    engines: {node: '>=20'}
 
   typed-array-buffer@1.0.3:
     resolution: {integrity: sha512-nAYYwfY3qnzX30IkA6AQZjVbtK6duGontcQm1WSG1MD94YLqK0515GNApXkoxKOWMusVssAHWLh9SeaoefYFGw==}
@@ -14375,6 +14389,8 @@ snapshots:
 
   tabbable@6.2.0: {}
 
+  tagged-tag@1.0.0: {}
+
   tapable@2.3.0: {}
 
   tar-stream@2.2.0:
@@ -14596,6 +14612,10 @@ snapshots:
 
   type-fest@4.41.0:
     optional: true
+
+  type-fest@5.1.0:
+    dependencies:
+      tagged-tag: 1.0.0
 
   typed-array-buffer@1.0.3:
     dependencies:

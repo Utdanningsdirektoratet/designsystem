@@ -88,7 +88,7 @@ export const WithForm: Story = {
   ),
 };
 
-export const ShowHide: StoryFn<typeof ErrorSummary> = (args) => {
+export const ShowHide: StoryFn<typeof ErrorSummary> = () => {
   const [show, setShow] = useState(false);
   const summaryRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
