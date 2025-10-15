@@ -2,7 +2,7 @@ import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import {
-  BellDotIcon,
+  BellIcon,
   CalculatorIcon,
   ChildEyesIcon,
   CogIcon,
@@ -174,7 +174,7 @@ export const OnlyIcons: Story = {
         </Tooltip>
         <Tooltip content="Varsler">
           <Tabs.Tab value="notifications" aria-label="Varsler">
-            <BellDotIcon aria-hidden />
+            <BellIcon aria-hidden />
           </Tabs.Tab>
         </Tooltip>
         <Tooltip content="Innstillinger">

@@ -7,9 +7,7 @@ import {
   AlignRightIcon,
   ArrowRightIcon,
   CheckmarkCircleIcon,
-  DocPencilIcon,
   ExclamationmarkTriangleIcon,
-  NotePencilDashIcon,
   NotePencilIcon,
   TasklistIcon,
   XMarkOctagonIcon,
@@ -266,7 +264,7 @@ export const Controlled: Story = {
       answers: { text: 'Start retting', icon: <NotePencilIcon aria-hidden /> },
       drafts: {
         text: 'Rediger utkast',
-        icon: <NotePencilDashIcon aria-hidden />,
+        icon: <NotePencilIcon aria-hidden />,
       },
       correctedAnswers: {
         text: 'Se retting',
@@ -286,7 +284,7 @@ export const Controlled: Story = {
             Ikke påbegynt
           </ToggleGroup.Item>
           <ToggleGroup.Item value="drafts">
-            <DocPencilIcon aria-hidden />
+            <NotePencilIcon aria-hidden />
             Under arbeid
           </ToggleGroup.Item>
           <ToggleGroup.Item value="correctedAnswers">

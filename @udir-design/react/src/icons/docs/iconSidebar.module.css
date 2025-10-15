@@ -1,9 +1,14 @@
 .root {
   padding-top: var(--ds-size-10);
-  flex: 1 0 35%;
+  flex: 1 0 40%;
   position: sticky;
-  top: var(--ds-size-10);
   height: min-content;
-  max-height: 100vh;
+  margin-top: var(--ds-size-6);
+  top: var(--ds-size-6);
+  max-height: calc(100vh - var(--ds-size-12));
   overflow-y: auto;
+}
+
+.dialog {
+  z-index: 100;
 }

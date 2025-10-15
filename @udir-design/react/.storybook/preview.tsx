@@ -31,6 +31,7 @@ const preview: Preview = {
           'Introduksjon',
           'design-tokens',
           ['Oversikt', '*'],
+          'Ikoner og symboler',
           'demo',
           'components',
         ],

@@ -17,14 +17,13 @@ npm add @udir-design/icons@beta
 Nå kan du importere og bruke ikoner, for eksempel slik:
 
 ```tsx
-import { ChevronDownIcon, TrashIcon, FilterIcon } from '@udir-design/icons';
+import { ChevronDownIcon, TrashIcon } from '@udir-design/icons';
 
 function MyComponent() {
   return (
     <div>
-      <FilterIcon />
       <TrashIcon aria-hidden />
-      <ChevronDownIcon title="Åpne panel" />
+      <ChevronDownIcon aria-label="Åpne panel" />
     </div>
   );
 }
