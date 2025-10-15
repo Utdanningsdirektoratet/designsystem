@@ -26,12 +26,11 @@ export type HeaderUserButtonProps = HTMLAttributes<HTMLButtonElement> & {
 
 export const HeaderUserButton = forwardRef<
   HTMLButtonElement,
-  HeaderUserButtonProps
+  Omit<HeaderUserButtonProps, 'children'>
 >(function HeaderUserButton(
   {
     username,
     userRole,
-    children,
     className,
     avatar,
     'data-color': dataColor = 'neutral',

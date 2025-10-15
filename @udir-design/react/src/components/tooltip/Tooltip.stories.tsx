@@ -72,7 +72,7 @@ export const Preview: Story = {
 };
 
 export const Placement: Story = {
-  render: (args) => {
+  render: () => {
     return (
       <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
         <Tooltip placement="left" content="Slett">

@@ -12,7 +12,7 @@ export type AlertHeadingProps = HeadingProps;
  * </Alert>
  */
 export const AlertHeading = forwardRef<HTMLHeadingElement, AlertHeadingProps>(
-  function AlertHeading({ className, ...rest }, ref) {
-    return <Heading ref={ref} data-size="xs" {...rest} />;
+  function AlertHeading(props, ref) {
+    return <Heading ref={ref} data-size="xs" {...props} />;
   },
 );

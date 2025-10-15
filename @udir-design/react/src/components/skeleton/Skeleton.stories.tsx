@@ -107,7 +107,7 @@ const StudentData = [
 ];
 
 export const Cards: Story = {
-  render: (args) => {
+  render: () => {
     return (
       <div
         style={{

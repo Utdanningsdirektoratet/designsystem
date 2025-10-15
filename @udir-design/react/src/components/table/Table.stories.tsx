@@ -342,7 +342,7 @@ export const Sortable: Story = {
       </Table>
     );
   },
-  async play({ canvasElement, args, step }) {
+  async play({ canvasElement, step }) {
     const canvas = within(canvasElement);
     await step('Sortable headings should have aria-sort and a button', () => {
       const ths = canvas.getAllByTestId(/^sortable-th/);

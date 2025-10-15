@@ -92,7 +92,7 @@ export const Description: Story = {
 };
 
 export const Group: Story = {
-  render: ({ 'aria-label': a, 'aria-labelledby': b, ...args }, context) => (
+  render: ({ ...args }, context) => (
     <Fieldset>
       <Fieldset.Legend>Varsler</Fieldset.Legend>
       <Switch

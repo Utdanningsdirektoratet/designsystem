@@ -12,10 +12,7 @@ export type HeaderNavigationItemProps = LinkProps & {
 export const HeaderNavigationItem = forwardRef<
   HTMLAnchorElement,
   HeaderNavigationItemProps
->(function HeaderNavigationItem(
-  { active, href, children, className, ...rest },
-  ref,
-) {
+>(function HeaderNavigationItem({ active, href, children, ...rest }, ref) {
   let isActive = active;
   if (isActive === undefined && typeof window !== 'undefined') {
     const current = normalizePath(window.location.pathname);
