@@ -85,38 +85,40 @@ export const Overview = (props: HighchartsReact.Props) => {
     switch (value) {
       case 'table':
         return (
-          <Table zebra className={classes.table}>
-            <Table.Head>
-              <Table.Row>
-                <Table.HeaderCell>År</Table.HeaderCell>
-                <Table.HeaderCell className={classes.rightAlign}>
-                  Utsendte prøver
-                </Table.HeaderCell>
-                <Table.HeaderCell className={classes.rightAlign}>
-                  Prøvesvar
-                </Table.HeaderCell>
-                <Table.HeaderCell className={classes.rightAlign}>
-                  Ikke svart
-                </Table.HeaderCell>
-              </Table.Row>
-            </Table.Head>
-            <Table.Body>
-              {testOverview.map((item, index) => (
-                <Table.Row key={index}>
-                  <Table.Cell>{item.year}</Table.Cell>
-                  <Table.Cell className={classes.rightAlign}>
-                    {item.sent}
-                  </Table.Cell>
-                  <Table.Cell className={classes.rightAlign}>
-                    {item.received}
-                  </Table.Cell>
-                  <Table.Cell className={classes.rightAlign}>
-                    {item.sent - item.received}
-                  </Table.Cell>
+          <div className={classes.tableWrapper}>
+            <Table zebra className={classes.table}>
+              <Table.Head>
+                <Table.Row>
+                  <Table.HeaderCell>År</Table.HeaderCell>
+                  <Table.HeaderCell className={classes.rightAlign}>
+                    Utsendte prøver
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className={classes.rightAlign}>
+                    Prøvesvar
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className={classes.rightAlign}>
+                    Ikke svart
+                  </Table.HeaderCell>
                 </Table.Row>
-              ))}
-            </Table.Body>
-          </Table>
+              </Table.Head>
+              <Table.Body>
+                {testOverview.map((item, index) => (
+                  <Table.Row key={index}>
+                    <Table.Cell>{item.year}</Table.Cell>
+                    <Table.Cell className={classes.rightAlign}>
+                      {item.sent}
+                    </Table.Cell>
+                    <Table.Cell className={classes.rightAlign}>
+                      {item.received}
+                    </Table.Cell>
+                    <Table.Cell className={classes.rightAlign}>
+                      {item.sent - item.received}
+                    </Table.Cell>
+                  </Table.Row>
+                ))}
+              </Table.Body>
+            </Table>
+          </div>
         );
       default:
         return (
