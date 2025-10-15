@@ -4,12 +4,10 @@ import { Link, LinkProps } from '../link/Link';
 export type FooterItemProps = LinkProps;
 
 export const FooterItem = forwardRef<HTMLAnchorElement, FooterItemProps>(
-  function FooterItem({ href, asChild, children, ...rest }, ref) {
+  function FooterItem(props, ref) {
     return (
       <li>
-        <Link href={href} ref={ref} {...rest}>
-          {children}
-        </Link>
+        <Link ref={ref} {...props} />
       </li>
     );
   },
