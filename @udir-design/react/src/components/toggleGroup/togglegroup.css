@@ -1,0 +1,6 @@
+:is(.ds-togglegroup, .ds-toggle-group) {
+  button {
+    height: var(--dsc-togglegroup-button-size);
+    white-space: nowrap;
+  }
+}
