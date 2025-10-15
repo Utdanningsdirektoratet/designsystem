@@ -1,6 +1,7 @@
-import { Heading, Paragraph } from '@udir-design/react/alpha';
-import classes from '../ArticleDemo.module.css';
 import { Fragment } from 'react/jsx-runtime';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import classes from '../ArticleDemo.module.css';
 import { SectionItem } from '../strings/sections';
 
 export interface ContentSectionProps {

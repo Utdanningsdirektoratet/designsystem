@@ -1,15 +1,13 @@
-import {
-  Checkbox,
-  Fieldset,
-  Heading,
-  Textfield,
-  ValidationMessage,
-} from '@udir-design/react/alpha';
 import { useFormContext } from 'react-hook-form';
+import { Checkbox } from 'src/components/checkbox/Checkbox';
+import { Fieldset } from 'src/components/fieldset/Fieldset';
+import { Textfield } from 'src/components/textfield/Textfield';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { ValidationMessage } from 'src/components/typography/validationMessage/ValidationMessage';
 import {
-  focusableFieldsetProps,
   type FormValues,
   type PageProps,
+  focusableFieldsetProps,
 } from '../FormDemo';
 
 export const FinishPage = ({ showErrors }: PageProps) => {

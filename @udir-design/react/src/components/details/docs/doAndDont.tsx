@@ -1,5 +1,9 @@
-import { Do, Dont, Stack } from '.storybook/docs-components';
-import { Card, Details, Heading, Link, List } from '@udir-design/react/alpha';
+import { Do, Dont, Stack } from '.storybook/docs/components';
+import { Card } from 'src/components/card/Card';
+import { Link } from 'src/components/link/Link';
+import { List } from 'src/components/list/List';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Details } from '../Details';
 
 export const DetailsEx1 = () => {
   return (

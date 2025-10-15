@@ -1,11 +1,11 @@
 import {
   Dialog as DigdirDialog,
-  type DialogProps as DigdirDialogProps,
   DialogBlock,
   type DialogBlockProps,
+  type DialogProps as DigdirDialogProps,
+  DialogTrigger,
   DialogTriggerContext,
   type DialogTriggerContextProps,
-  DialogTrigger,
   type DialogTriggerProps,
 } from '@digdir/designsystemet-react';
 import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
@@ -23,11 +23,11 @@ Dialog.displayName = 'Dialog';
 
 export {
   Dialog,
-  DialogProps,
   DialogBlock,
   DialogBlockProps,
+  DialogProps,
+  DialogTrigger,
   DialogTriggerContext,
   DialogTriggerContextProps,
-  DialogTrigger,
   DialogTriggerProps,
 };

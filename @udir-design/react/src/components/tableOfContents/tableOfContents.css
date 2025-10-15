@@ -1,0 +1,39 @@
+.uds-table-of-contents {
+  width: 100%;
+
+  & .ds-link {
+    --dsc-link-color--visited: var(--dsc-link-color);
+    text-decoration: none;
+  }
+
+  & ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    .ds-link {
+      display: flex;
+      width: fit-content;
+
+      & svg {
+        flex-shrink: 0;
+        width: var(--ds-size-6);
+        height: var(--ds-size-6);
+        align-self: flex-start;
+      }
+    }
+
+    .ds-link:hover {
+      text-decoration: underline;
+    }
+
+    & li:not(:last-child) {
+      margin-bottom: var(--ds-size-3);
+    }
+  }
+
+  & li.level-3,
+  li.level-4 {
+    margin-left: var(--ds-size-3);
+  }
+}

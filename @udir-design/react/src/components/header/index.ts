@@ -1,10 +1,10 @@
 import { Header as HeaderRoot } from './Header';
 import { HeaderMenu } from './HeaderMenu';
 import { HeaderMenuButton } from './HeaderMenuButton';
-import { HeaderNavigation } from './headerNavigation';
 import { HeaderSearch } from './HeaderSearch';
 import { HeaderThemeMenuButton } from './HeaderThemeMenuButton';
 import { HeaderUserButton } from './HeaderUserButton';
+import { HeaderNavigation } from './headerNavigation';
 
 type HeaderProps = typeof HeaderRoot & {
   UserButton: typeof HeaderUserButton;
@@ -40,10 +40,10 @@ export type { HeaderMenuProps } from './HeaderMenu';
 export type { HeaderSearchProps } from './HeaderSearch';
 export {
   Header,
-  HeaderUserButton,
-  HeaderMenuButton,
-  HeaderThemeMenuButton,
-  HeaderNavigation,
   HeaderMenu,
+  HeaderMenuButton,
+  HeaderNavigation,
   HeaderSearch,
+  HeaderThemeMenuButton,
+  HeaderUserButton,
 };

@@ -1,0 +1,382 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Headings 1`] = `
+<div style="display: flex; justify-content: center;">
+  <div style="max-width: 50rem;">
+    <h1 data-size="2xl">
+      Heading xxl
+    </h1>
+    <p
+      data-variant="default"
+      data-size="xl"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+    </p>
+    <h2 data-size="xl">
+      Heading xl
+    </h2>
+    <p data-variant="default">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+    </p>
+    <h3 data-size="lg">
+      Heading lg
+    </h3>
+    <p data-variant="default">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+    </p>
+    <h4 data-size="md">
+      Heading md
+    </h4>
+    <p data-variant="default">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+    </p>
+    <h5 data-size="sm">
+      Heading sm
+    </h5>
+    <p data-variant="default">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+    </p>
+    <h6 data-size="xs">
+      Heading xs
+    </h6>
+    <p data-variant="default">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+    </p>
+    <h6 data-size="2xs">
+      Heading xxs
+    </h6>
+    <p data-variant="default">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Preview 1`] = `
+<div style="display: flex; justify-content: center;">
+  <div style="max-width: 50rem;">
+    <div data-color="info">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </div>
+    <h1 data-size="lg">
+      Sidetittel (h1)
+    </h1>
+    <p
+      data-variant="default"
+      data-size="lg"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae lacus ullamcorper, malesuada risus sed, consequat est. Donec lobortis leo et condimentum consequat.
+    </p>
+    <div>
+      <hr aria-hidden="true">
+      Lorem ipsum | Sist endret: 29.05.2024
+      <hr aria-hidden="true">
+    </div>
+    <div
+      data-variant="tinted"
+      data-color="accent"
+    >
+      <u-details
+        open
+        data-variant="default"
+        role="group"
+      >
+        <u-summary
+          aria-expanded="true"
+          role="button"
+          slot="summary"
+          tabindex="0"
+        >
+          Innhold på denne siden
+        </u-summary>
+        <div>
+          <ol>
+            <li>
+              <a href="#first-heading">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Første overskrift (h2)
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#first-subheading">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Første underoverskrift (h3)
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#second-subheading">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Andre underoverskrift (h3)
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#second-heading">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Andre overskrift (h2)
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#third-heading">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Tredje overskrift (h2)
+                </span>
+              </a>
+            </li>
+          </ol>
+        </div>
+      </u-details>
+    </div>
+    <h2
+      data-size="md"
+      id="first-heading"
+      tabindex="-1"
+    >
+      Første overskrift (h2)
+    </h2>
+    <p data-variant="default">
+      Aenean vehicula leo et euismod rutrum. Donec eget orci est. Vivamus sapien magna, dictum at velit quis, mattis molestie eros. Vivamus vitae purus purus. Maecenas mollis elementum aliquam. Donec efficitur urna sed ante consectetur, in scelerisque lectus tristique. Ut et nunc turpis. Mauris faucibus sagittis est nec mollis. Pellentesque sollicitudin nisl mauris, at dapibus mi vestibulum non.
+    </p>
+    <h3
+      data-size="sm"
+      id="first-subheading"
+      tabindex="-1"
+    >
+      Første underoverskrift (h3)
+    </h3>
+    <p data-variant="default">
+      Maecenas nibh justo, lobortis in volutpat eget, tempor et tortor. Curabitur tristique tellus at ligula congue, a tincidunt turpis tincidunt. Aliquam erat volutpat. Ut ac semper neque.
+    </p>
+    <h3
+      data-size="sm"
+      id="second-subheading"
+      tabindex="-1"
+    >
+      Andre underoverskrift (h3)
+    </h3>
+    <p data-variant="default">
+      In quis fermentum enim, a rhoncus dui. Quisque in placerat nisi. Praesent sollicitudin ante eu lacus sagittis aliquet. Cras ut gravida nisi. In sed sapien eu nulla rhoncus fringilla. Mauris nec orci mollis, tincidunt purus a, tempor mauris. Integer faucibus nisi a sem laoreet dapibus sed a tellus. Proin sit amet velit vel lacus faucibus laoreet. Vivamus in rutrum enim. Fusce nulla nisl, iaculis vitae quam sit amet, vehicula semper sem.
+    </p>
+    <table
+      data-zebra="true"
+      data-color="accent"
+      data-tinted-column-header="true"
+    >
+      <caption>
+        Tabelloverskrift
+      </caption>
+      <thead>
+        <tr>
+          <th>
+            Radoverskrift
+          </th>
+          <th>
+            Radoverskrift
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Lorem ipsum
+          </td>
+          <td>
+            330 000
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Lorem ipsum
+          </td>
+          <td>
+            750 000
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Lorem ipsum
+          </td>
+          <td>
+            150 000
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Lorem ipsum
+          </td>
+          <td>
+            550 000
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h2
+      data-size="md"
+      id="second-heading"
+      tabindex="-1"
+    >
+      Andre overskrift (h2)
+    </h2>
+    <p data-variant="default">
+      Suspendisse lobortis nunc vitae nisi volutpat, vitae interdum sem faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse turpis nisi, blandit ut gravida sed, efficitur ac ligula.
+    </p>
+    <ul>
+      <li>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </li>
+      <li>
+        Phasellus sit amet mauris ac massa convallis egestas at eu sapien.
+      </li>
+      <li>
+        Nullam ac eros vulputate, tempus tellus cursus, volutpat nisi.
+      </li>
+      <li>
+        Nullam consectetur nunc a pretium pellentesque.
+      </li>
+      <li>
+        Aliquam cursus sapien nec tincidunt porta.
+      </li>
+    </ul>
+    <h2
+      data-size="md"
+      id="third-heading"
+      tabindex="-1"
+    >
+      Tredje overskrift (h2)
+    </h2>
+    <p data-variant="default">
+      Praesent eros elit, aliquet at auctor vel, pulvinar id augue. Suspendisse eu orci sit amet turpis mattis blandit sit amet ut massa. Aenean vel consequat ex. Nunc luctus nulla a diam iaculis iaculis. Aliquam suscipit arcu vel luctus posuere.
+    </p>
+    <p data-variant="default">
+      Ut sit amet scelerisque odio, a ullamcorper quam. Praesent ornare diam sit amet magna feugiat, nec aliquet arcu pharetra. Cras condimentum tempus augue, in posuere dolor fermentum quis.
+    </p>
+    <div>
+      <u-details
+        data-variant="default"
+        role="group"
+      >
+        <u-summary
+          aria-expanded="false"
+          role="button"
+          slot="summary"
+          tabindex="0"
+        >
+          Første details
+        </u-summary>
+        <div>
+          <p data-variant="default">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae lacus ullamcorper, malesuada risus sed, consequat est. Donec lobortis leo et condimentum consequat. Aenean vehicula leo et euismod rutrum. Donec eget orci est.
+          </p>
+          <p
+            data-variant="default"
+            style="margin-top: var(--ds-size-5);"
+          >
+            Vivamus sapien magna, dictum at velit quis, mattis molestie eros. Vivamus vitae purus purus. Maecenas mollis elementum aliquam. Donec efficitur urna sed ante consectetur, in scelerisque lectus tristique.
+          </p>
+        </div>
+      </u-details>
+      <u-details
+        data-variant="default"
+        role="group"
+      >
+        <u-summary
+          aria-expanded="false"
+          role="button"
+          slot="summary"
+          tabindex="0"
+        >
+          Andre details
+        </u-summary>
+        <div>
+          <p data-variant="default">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae lacus ullamcorper, malesuada risus sed, consequat est. Donec lobortis leo et condimentum consequat. Aenean vehicula leo et euismod rutrum. Donec eget orci est.
+          </p>
+        </div>
+      </u-details>
+    </div>
+  </div>
+</div>
+`;

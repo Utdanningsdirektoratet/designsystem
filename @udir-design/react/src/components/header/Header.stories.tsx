@@ -1,22 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import {
-  Link,
-  Avatar,
-  Badge,
-  Button,
-  Divider,
-  Dropdown,
-  Search,
-  ListUnordered,
-  ListItem,
-  Heading,
-  Header,
-  Paragraph,
-} from '@udir-design/react/alpha';
 import { useState } from 'react';
 import { ArrowRightIcon, BriefcaseIcon, LeaveIcon } from '@udir-design/icons';
-import styles from './header.stories.module.css';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
+import { Avatar } from '../avatar/Avatar';
+import { Badge } from '../badge/Badge';
+import { Button } from '../button/Button';
+import { Divider } from '../divider/Divider';
+import { Dropdown } from '../dropdown/Dropdown';
+import { Link } from '../link/Link';
+import { List } from '../list/List';
+import { Search } from '../search/Search';
+import { Heading } from '../typography/heading/Heading';
+import { Paragraph } from '../typography/paragraph/Paragraph';
+import styles from './header.stories.module.css';
+import { Header } from '.';
 
 const meta: Meta<typeof Header> = {
   component: Header,
@@ -176,26 +173,26 @@ export const WithNavigationLinks: Story = {
           }}
           className={styles.headerMenuSmall}
         >
-          <ListUnordered>
-            <ListItem>
+          <List.Unordered>
+            <List.Item>
               <Link href="#">
                 <ArrowRightIcon aria-hidden />
                 <span>Navlink 1</span>
               </Link>
-            </ListItem>
-            <ListItem>
+            </List.Item>
+            <List.Item>
               <Link href="#">
                 <ArrowRightIcon aria-hidden />
                 <span>Navlink 2</span>
               </Link>
-            </ListItem>
-            <ListItem>
+            </List.Item>
+            <List.Item>
               <Link href="#">
                 <ArrowRightIcon aria-hidden />
                 <span>Navlink 3</span>
               </Link>
-            </ListItem>
-          </ListUnordered>
+            </List.Item>
+          </List.Unordered>
         </nav>
       </Header.Menu>
     </Header>
@@ -283,16 +280,16 @@ export const WithMenu: Story = {
               >
                 <Link href="#">{column.heading}</Link>
               </Heading>
-              <ListUnordered>
+              <List.Unordered>
                 {column.links.map((link) => (
-                  <ListItem key={link.title}>
+                  <List.Item key={link.title}>
                     <Link href={link.href} style={{ textDecoration: 'none' }}>
                       <ArrowRightIcon aria-hidden />
                       <span>{link.title}</span>
                     </Link>
-                  </ListItem>
+                  </List.Item>
                 ))}
-              </ListUnordered>
+              </List.Unordered>
             </div>
           ))}
         </nav>
@@ -353,16 +350,16 @@ export const WithThemeMenus: Story = {
                 >
                   {column.heading}
                 </Heading>
-                <ListUnordered>
+                <List.Unordered>
                   {column.links.map((link) => (
-                    <ListItem key={column.heading + link.title}>
+                    <List.Item key={column.heading + link.title}>
                       <Link href={link.href} style={{ textDecoration: 'none' }}>
                         <ArrowRightIcon aria-hidden />
                         <span>{link.title}</span>
                       </Link>
-                    </ListItem>
+                    </List.Item>
                   ))}
-                </ListUnordered>
+                </List.Unordered>
               </div>
             ))}
           </nav>
@@ -399,16 +396,16 @@ export const WithThemeMenus: Story = {
                 >
                   {column.heading}
                 </Heading>
-                <ListUnordered>
+                <List.Unordered>
                   {column.links.map((link) => (
-                    <ListItem key={column.heading + link.title}>
+                    <List.Item key={column.heading + link.title}>
                       <Link href={link.href} style={{ textDecoration: 'none' }}>
                         <ArrowRightIcon aria-hidden />
                         <span>{link.title}</span>
                       </Link>
-                    </ListItem>
+                    </List.Item>
                   ))}
-                </ListUnordered>
+                </List.Unordered>
               </div>
             ))}
           </nav>
@@ -439,16 +436,16 @@ export const WithThemeMenus: Story = {
                 >
                   {column.heading}
                 </Heading>
-                <ListUnordered>
+                <List.Unordered>
                   {column.links.map((link) => (
-                    <ListItem key={column.heading + link.title + 'mobile'}>
+                    <List.Item key={column.heading + link.title + 'mobile'}>
                       <Link href={link.href} style={{ textDecoration: 'none' }}>
                         <ArrowRightIcon aria-hidden />
                         <span>{link.title}</span>
                       </Link>
-                    </ListItem>
+                    </List.Item>
                   ))}
-                </ListUnordered>
+                </List.Unordered>
               </div>
             ))}
             {themeMenu2.map((column) => (
@@ -460,16 +457,16 @@ export const WithThemeMenus: Story = {
                 >
                   {column.heading}
                 </Heading>
-                <ListUnordered>
+                <List.Unordered>
                   {column.links.map((link) => (
-                    <ListItem key={column.heading + link.title + 'mobile'}>
+                    <List.Item key={column.heading + link.title + 'mobile'}>
                       <Link href={link.href} style={{ textDecoration: 'none' }}>
                         <ArrowRightIcon aria-hidden />
                         <span>{link.title}</span>
                       </Link>
-                    </ListItem>
+                    </List.Item>
                   ))}
-                </ListUnordered>
+                </List.Unordered>
               </div>
             ))}
           </nav>
@@ -522,20 +519,20 @@ export const WithNavigationLinksAndMenu: Story = {
             >
               Navlinker
             </Heading>
-            <ListUnordered>
-              <ListItem>
+            <List.Unordered>
+              <List.Item>
                 <Link href="#" style={{ textDecoration: 'none' }}>
                   <ArrowRightIcon aria-hidden />
                   <span>Navlink 1</span>
                 </Link>
-              </ListItem>
-              <ListItem>
+              </List.Item>
+              <List.Item>
                 <Link href="#" style={{ textDecoration: 'none' }}>
                   <ArrowRightIcon aria-hidden />
                   <span>Navlink 2</span>
                 </Link>
-              </ListItem>
-            </ListUnordered>
+              </List.Item>
+            </List.Unordered>
           </div>
           {navAndMenuLinks.map((column) => (
             <div key={column.heading}>
@@ -546,16 +543,16 @@ export const WithNavigationLinksAndMenu: Story = {
               >
                 {column.heading}
               </Heading>
-              <ListUnordered>
+              <List.Unordered>
                 {column.links.map((link) => (
-                  <ListItem key={link.title}>
+                  <List.Item key={link.title}>
                     <Link href={link.href} style={{ textDecoration: 'none' }}>
                       <ArrowRightIcon aria-hidden />
                       <span>{link.title}</span>
                     </Link>
-                  </ListItem>
+                  </List.Item>
                 ))}
-              </ListUnordered>
+              </List.Unordered>
             </div>
           ))}
         </nav>
@@ -681,16 +678,16 @@ export const Responsive: Story = {
                 >
                   {column.heading}
                 </Heading>
-                <ListUnordered>
+                <List.Unordered>
                   {column.links.map((link) => (
-                    <ListItem key={link.title}>
+                    <List.Item key={link.title}>
                       <Link href={link.href} style={{ textDecoration: 'none' }}>
                         <ArrowRightIcon aria-hidden />
                         <span>{link.title}</span>
                       </Link>
-                    </ListItem>
+                    </List.Item>
                   ))}
-                </ListUnordered>
+                </List.Unordered>
               </div>
             ))}
           </nav>
@@ -748,9 +745,9 @@ export const AutoHideSticky: Story = {
                   >
                     {column.heading}
                   </Heading>
-                  <ListUnordered>
+                  <List.Unordered>
                     {column.links.map((link) => (
-                      <ListItem key={link.title}>
+                      <List.Item key={link.title}>
                         <Link
                           href={link.href}
                           style={{ textDecoration: 'none' }}
@@ -758,9 +755,9 @@ export const AutoHideSticky: Story = {
                           <ArrowRightIcon aria-hidden />
                           <span>{link.title}</span>
                         </Link>
-                      </ListItem>
+                      </List.Item>
                     ))}
-                  </ListUnordered>
+                  </List.Unordered>
                 </div>
               ))}
             </nav>
@@ -970,16 +967,16 @@ export const UdirNo: Story = {
                 >
                   {column.heading}
                 </Heading>
-                <ListUnordered>
+                <List.Unordered>
                   {column.links.map((link) => (
-                    <ListItem key={link.title}>
+                    <List.Item key={link.title}>
                       <Link href={link.href} style={{ textDecoration: 'none' }}>
                         <ArrowRightIcon aria-hidden />
                         <span>{link.title}</span>
                       </Link>
-                    </ListItem>
+                    </List.Item>
                   ))}
-                </ListUnordered>
+                </List.Unordered>
               </div>
             ))}
           </nav>

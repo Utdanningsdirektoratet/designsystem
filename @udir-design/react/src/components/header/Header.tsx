@@ -1,12 +1,12 @@
-import { forwardRef, HTMLAttributes } from 'react';
 import cl from 'clsx/lite';
-import mainLogoLight from '../../../assets/img/udir-main-logo.svg';
-import mainLogoDark from '../../../assets/img/udir-main-logo-dark-mode.svg';
-import circleLogoLight from '../../../assets/img/udir-circle-logo.svg';
-import circleLogoDark from '../../../assets/img/udir-circle-logo-dark-mode.svg';
-import { useScrollDirection } from '../../utilities/useScrollDirection';
-import { Heading } from '../typography';
+import { HTMLAttributes, forwardRef } from 'react';
 import { CSSProperties } from 'react';
+import circleLogoDark from '../../../assets/img/udir-circle-logo-dark-mode.svg';
+import circleLogoLight from '../../../assets/img/udir-circle-logo.svg';
+import mainLogoDark from '../../../assets/img/udir-main-logo-dark-mode.svg';
+import mainLogoLight from '../../../assets/img/udir-main-logo.svg';
+import { useScrollDirection } from '../../utilities/useScrollDirection';
+import { Heading } from '../typography/heading/Heading';
 import './header.css';
 
 export type HeaderProps = HTMLAttributes<HTMLElement> & {

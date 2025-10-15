@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-
-import { DemoPage } from './DemoPage';
 import { demoParameters } from '../demoParameters';
+import { DemoPage } from './DemoPage';
 
 const meta: Meta<typeof DemoPage> = {
   title: 'demo/Page Demo',

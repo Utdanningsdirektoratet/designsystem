@@ -1,9 +1,9 @@
-import { SnapshotSerializer } from 'vitest';
 import diffableHtml from 'diffable-html';
 import { fromHtml } from 'hast-util-from-html';
-import { toHtml } from 'hast-util-to-html';
 import { isElement } from 'hast-util-is-element';
+import { toHtml } from 'hast-util-to-html';
 import { remove } from 'unist-util-remove';
+import { SnapshotSerializer } from 'vitest';
 
 const CLASS_PATTERN = /class="[^"]+"/g;
 const TEST_ID_PATTERN = /data-testid="[^"]+"/g;

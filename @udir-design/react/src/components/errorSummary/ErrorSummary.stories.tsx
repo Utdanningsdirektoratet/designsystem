@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
-import { Button, Textfield } from '@udir-design/react/beta';
-import { ErrorSummary } from './ErrorSummary';
 import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
+import { useEffect, useRef, useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
+import { Button } from '../button/Button';
+import { Textfield } from '../textfield/Textfield';
+import { ErrorSummary } from './ErrorSummary';
 
 const meta: Meta<typeof ErrorSummary> = {
   component: ErrorSummary,
@@ -87,7 +88,7 @@ export const WithForm: Story = {
   ),
 };
 
-export const ShowHide: StoryFn<typeof ErrorSummary> = (args) => {
+export const ShowHide: StoryFn<typeof ErrorSummary> = () => {
   const [show, setShow] = useState(false);
   const summaryRef = useRef<HTMLDivElement>(null);
   useEffect(() => {

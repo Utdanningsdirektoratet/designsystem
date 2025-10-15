@@ -4,9 +4,12 @@ import {
   FilterIcon,
   PlusCircleIcon,
 } from '@udir-design/icons';
-import { Avatar, Button, Card } from '../../beta';
+import { Avatar } from '../avatar/Avatar';
+import { Button } from '../button/Button';
+import { Card } from '../card/Card';
+import { Heading } from '../typography/heading/Heading';
+import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Skeleton } from './Skeleton';
-import { Heading, Paragraph } from '../../alpha';
 
 const meta: Meta<typeof Skeleton> = {
   component: Skeleton,
@@ -104,7 +107,7 @@ const StudentData = [
 ];
 
 export const Cards: Story = {
-  render: (args) => {
+  render: () => {
     return (
       <div
         style={{

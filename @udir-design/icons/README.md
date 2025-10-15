@@ -30,4 +30,4 @@ function MyComponent() {
 }
 ```
 
-Oversikt over hvilke ikoner som finnes, og bruksdokumentasjon for disse, finner du [i vår Storybook](https://wwww.design.udir.no).
+Oversikt over hvilke ikoner som finnes, og bruksdokumentasjon for disse, finner du [i vår Storybook](https://design.udir.no).

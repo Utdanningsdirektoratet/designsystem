@@ -1,9 +1,8 @@
-import { defineConfig } from 'eslint/config';
+import { fixupConfigRules } from '@eslint/compat';
 import { FlatCompat } from '@eslint/eslintrc';
 import eslintJs from '@eslint/js';
-import { fixupConfigRules } from '@eslint/compat';
 import nxEslintPlugin from '@nx/eslint-plugin';
-// eslint-disable-next-line @nx/enforce-module-boundaries
+import { defineConfig } from 'eslint/config';
 import baseConfig from '../../eslint.config.js';
 
 const { configs } = eslintJs;
@@ -15,11 +14,17 @@ const compat = new FlatCompat({
 
 const eslintConfig = defineConfig(
   fixupConfigRules(compat.extends('next')),
-
   fixupConfigRules(compat.extends('next/core-web-vitals')),
-
-  baseConfig,
   nxEslintPlugin.configs['flat/react-typescript'],
+  baseConfig.map((x) => ({
+    ...x,
+    ...(x.plugins && {
+      plugins: Object.fromEntries(
+        // nextjs bundles its own version of the import plugin in a way that is incompatible with the base config
+        Object.entries(x.plugins).filter(([key]) => key !== 'import'),
+      ),
+    }),
+  })),
   { ignores: ['.next/**/*'] },
 );
 export default eslintConfig;

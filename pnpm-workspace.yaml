@@ -15,6 +15,7 @@ catalog:
   '@eslint/eslintrc': ^3.3.1
   '@eslint/js': ^9.37.0
   '@navikt/aksel-icons': ^7.32.1
+  '@next/eslint-plugin-next': ^14.2.33
   '@nx/azure-cache': ^4.0.0
   '@nx/eslint': 21.4.0
   '@nx/eslint-plugin': 21.4.0
@@ -97,6 +98,7 @@ catalog:
   tslib: ^2.8.1
   tsup: ^8.5.0
   tsx: ^4.20.6
+  type-fest: ^5.1.0
   typescript: ^5.9.3
   typescript-eslint: ^8.46.0
   unified: ^11.0.5

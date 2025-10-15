@@ -30,10 +30,13 @@ const config: StorybookConfig = {
     },
   },
 
-  async viteFinal(cfg, opts) {
+  async viteFinal(cfg) {
     const { mergeConfig } = await import('vite');
     process.env['IS_STORYBOOK'] = 'true';
     return mergeConfig(cfg, {
+      build: {
+        cssCodeSplit: false,
+      },
       optimizeDeps: {
         /*
         Sometimes we get a message like this, and then tests fail:

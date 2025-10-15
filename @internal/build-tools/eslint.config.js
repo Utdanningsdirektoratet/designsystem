@@ -1,9 +1,9 @@
 import { resolve } from 'node:path';
-// eslint-disable-next-line @nx/enforce-module-boundaries
+import { defineConfig } from 'eslint/config';
 import baseConfig from '../../eslint.config.js';
 
-export default [
-  ...baseConfig,
+export default defineConfig(
+  baseConfig,
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     rules: {},
@@ -21,4 +21,4 @@ export default [
     files: ['**/*.js', '**/*.jsx'],
     rules: {},
   },
-];
+);

@@ -1,12 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import {
-  Button,
-  ToggleGroup,
-  Tooltip,
-  Card,
-  Heading,
-  Table,
-} from '@udir-design/react/alpha';
+import { useState } from 'react';
+import { expect, fn, userEvent, within } from 'storybook/test';
 import {
   AlignCenterIcon,
   AlignLeftIcon,
@@ -20,9 +14,13 @@ import {
   TasklistIcon,
   XMarkOctagonIcon,
 } from '@udir-design/icons';
-import { useState } from 'react';
-import { expect, fn, userEvent, within } from 'storybook/test';
 import { demoChromaticModes } from 'src/demo/demoParameters';
+import { Button } from '../button/Button';
+import { Card } from '../card/Card';
+import { Table } from '../table';
+import { Tooltip } from '../tooltip/Tooltip';
+import { Heading } from '../typography/heading/Heading';
+import { ToggleGroup } from './ToggleGroup';
 
 const meta: Meta<typeof ToggleGroup> = {
   component: ToggleGroup,
@@ -184,6 +182,11 @@ export const OnlyIcons: Story = {
       </Tooltip>
     </ToggleGroup>
   ),
+};
+
+export const SecondaryOnlyIcons: Story = {
+  args: { ...OnlyIcons.args, variant: 'secondary' },
+  render: OnlyIcons.render,
 };
 
 const testsData: Record<

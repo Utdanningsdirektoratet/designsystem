@@ -4,6 +4,10 @@
   gap: var(--ds-size-6);
 }
 
+.tableWrapper {
+  overflow-x: auto;
+}
+
 .table {
   width: fit-content;
 }

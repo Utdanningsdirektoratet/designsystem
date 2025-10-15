@@ -1,5 +1,15 @@
 .container {
+  container-type: inline-size;
   display: flex;
   gap: var(--ds-size-2);
   flex-flow: wrap;
+}
+
+.toggleGroup {
+  @container (max-width: 18.75rem) {
+    grid-auto-flow: row;
+    width: 100%;
+    max-width: unset;
+    height: auto;
+  }
 }

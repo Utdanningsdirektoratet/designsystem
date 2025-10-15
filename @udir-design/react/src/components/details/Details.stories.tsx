@@ -1,19 +1,16 @@
 import type { Decorator, Meta, StoryObj } from '@storybook/react-vite';
 import { createElement, useState } from 'react';
-import {
-  Button,
-  Card,
-  CardProps,
-  Details,
-  Fieldset,
-  Label,
-  Link,
-  List,
-  ToggleGroup,
-} from '@udir-design/react/alpha';
 import { expect, userEvent, within } from 'storybook/test';
-import { Stack } from '.storybook/docs-components';
 import { ChevronDownUpIcon, ChevronUpDownIcon } from '@udir-design/icons';
+import { Stack } from '.storybook/docs/components';
+import { Button } from '../button/Button';
+import { Card, CardProps } from '../card/Card';
+import { Fieldset } from '../fieldset/Fieldset';
+import { Link } from '../link/Link';
+import { List } from '../list/List';
+import { ToggleGroup } from '../toggleGroup/ToggleGroup';
+import { Label } from '../typography/label/Label';
+import { Details } from './Details';
 
 export default {
   component: Details,

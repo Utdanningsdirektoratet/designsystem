@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { within, expect, userEvent, fn } from 'storybook/test';
-import { Button } from './Button';
+import { expect, fn, userEvent, within } from 'storybook/test';
 import {
   ArrowForwardIcon,
   ArrowRightIcon,
@@ -13,7 +12,10 @@ import {
   PrinterSmallIcon,
   TrashIcon,
 } from '@udir-design/icons';
-import { Card, Label, Tooltip } from '@udir-design/react/alpha';
+import { Card } from '../card/Card';
+import { Tooltip } from '../tooltip/Tooltip';
+import { Label } from '../typography/label/Label';
+import { Button } from './Button';
 
 export type Story = StoryObj<typeof Button>;
 

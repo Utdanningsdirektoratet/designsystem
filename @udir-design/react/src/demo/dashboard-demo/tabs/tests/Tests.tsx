@@ -1,10 +1,12 @@
+import * as Highcharts from 'highcharts';
+import HighchartsReact from 'highcharts-react-official';
 import { useRef, useState } from 'react';
-import { Heading, Table, Card } from '@udir-design/react/alpha';
+import { Card } from 'src/components/card/Card';
+import { Table } from 'src/components/table';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { DataControls } from '../../components/data-controls/DataControls';
 import { TabStructure } from '../../components/tab-structure/TabStructure';
 import classes from './Tests.module.css';
-import HighchartsReact from 'highcharts-react-official';
-import * as Highcharts from 'highcharts';
-import { DataControls } from '../../components/data-controls/DataControls';
 
 const tests = [
   { name: 'Utsendte', value: 3500 },

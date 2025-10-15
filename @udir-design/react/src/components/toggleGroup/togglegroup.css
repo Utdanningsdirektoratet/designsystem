@@ -1,0 +1,19 @@
+:is(.ds-togglegroup, .ds-toggle-group) {
+  box-sizing: border-box;
+  height: var(--dsc-togglegroup-button-size);
+  button {
+    height: 100%;
+    white-space: nowrap;
+    min-height: unset;
+
+    &[data-icon] {
+      height: 100%;
+    }
+
+    &[data-variant='secondary'] {
+      button[aria-checked='true'] {
+        --dsc-button-border-color: var(--ds-color-text-default);
+      }
+    }
+  }
+}

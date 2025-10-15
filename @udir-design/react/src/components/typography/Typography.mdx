@@ -1,12 +1,10 @@
 import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 
-import * as TypographyStories from './Typography.stories';
 import * as HeadingStories from './heading/Heading.stories';
 import * as ParagraphStories from './paragraph/Paragraph.stories';
 import * as LabelStories from './label/Label.stories';
 import * as ValidationMessageStories from './validationMessage/ValidationMessage.stories';
-
-<Meta of={TypographyStories} />
+import * as ProseStories from './prose/Prose.stories';
 
 # Typography
 
@@ -16,6 +14,7 @@ Typografi er en viktig del av det å bygge opp innhold på en nettside. Det er a
 - [`Paragraph`](#paragraph)
 - [`Label`](#label)
 - [`ValidationMessage`](#validationmessage)
+- [`Prose`](#prose)
 
 ## Bruk
 
@@ -64,8 +63,10 @@ Det skal kun vere én `<h1>` tag per side, men det kan vere flere h2-h6. Det er 
 <Canvas of={ValidationMessageStories.Preview} />
 <Controls of={ValidationMessageStories.Preview} />
 
-## Eksempel
+## Prose
 
-Eksempel på hvordan du kan kombinere de ulike typografi-komponentene. Du må selv passe på at du legger ønsket avstand mellom dem.
+`Prose` brukes for å vise innhold med god lesbarhet og konsekvent spacing mellom elementer. Den egner seg særlig godt på sider der typografi og struktur er viktig.
 
-<Canvas of={TypographyStories.EksempelTekst} />
+Alle elementer i en `Prose` får `margin-bottom: var(--ds-size-5)` som sikrer konsistent vertikal rytme. Unntaket er `Heading`-komponenter som får en litt mindre bunnmargin for å skape visuell tilhørighet mellom overskrift og innhold. Av samme grunn brukes varierende margins over overskrifter. Avstanden i `margin-top` er bestemt av `data-size` for `Heading`.
+
+<Canvas of={ProseStories.Preview} story={{ inline: false, height: '700px' }} />

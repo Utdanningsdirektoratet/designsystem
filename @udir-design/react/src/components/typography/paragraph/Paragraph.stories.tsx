@@ -9,6 +9,12 @@ const meta: Meta<typeof Paragraph> = {
       originator: 'digdir',
     },
   },
+  argTypes: {
+    'data-size': {
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
+      control: { type: 'radio' },
+    },
+  },
   title: 'Components/Typography/Paragraph',
 };
 

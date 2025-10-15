@@ -1,17 +1,17 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
-import {
-  Button,
-  Card,
-  Divider,
-  Fieldset,
-  Paragraph,
-  Radio,
-  ValidationMessage,
-  useRadioGroup,
-  UseRadioGroupProps,
-} from '@udir-design/react/alpha';
 import { expect, fn, userEvent, waitFor, within } from 'storybook/test';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
+import {
+  UseRadioGroupProps,
+  useRadioGroup,
+} from 'src/utilities/hooks/useRadioGroup/useRadioGroup';
+import { Button } from '../button/Button';
+import { Card } from '../card/Card';
+import { Divider } from '../divider/Divider';
+import { Fieldset } from '../fieldset/Fieldset';
+import { Paragraph } from '../typography/paragraph/Paragraph';
+import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
+import { Radio } from './Radio';
 
 const meta: Meta<typeof Radio> = {
   component: Radio,

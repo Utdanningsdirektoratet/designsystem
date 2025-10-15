@@ -1,7 +1,7 @@
 'use client';
 
-import styles from './page.module.scss';
 import { Button } from '@udir-design/react/alpha';
+import styles from './page.module.scss';
 
 export default function Index() {
   return (

@@ -8,6 +8,7 @@
     "typecheck": "tsc --build"
   },
   "dependencies": {
+    "@next/eslint-plugin-next": "catalog:",
     "@udir-design/react": "workspace:*",
     "@udir-design/theme": "workspace:*",
     "next": "catalog:",

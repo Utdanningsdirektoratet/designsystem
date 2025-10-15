@@ -1,20 +1,18 @@
-import {
-  Field,
-  Fieldset,
-  Heading,
-  Input,
-  Label,
-  Radio,
-  Select,
-  Suggestion,
-  Textfield,
-  ValidationMessage,
-} from '@udir-design/react/alpha';
 import { Controller, useFormContext } from 'react-hook-form';
+import { Field } from 'src/components/field/Field';
+import { Fieldset } from 'src/components/fieldset/Fieldset';
+import { Input } from 'src/components/input/Input';
+import { Radio } from 'src/components/radio/Radio';
+import { Select } from 'src/components/select/Select';
+import { Suggestion } from 'src/components/suggestion/Suggestion';
+import { Textfield } from 'src/components/textfield/Textfield';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Label } from 'src/components/typography/label/Label';
+import { ValidationMessage } from 'src/components/typography/validationMessage/ValidationMessage';
 import {
-  focusableFieldsetProps,
   type FormValues,
   type PageProps,
+  focusableFieldsetProps,
 } from '../FormDemo';
 
 const DATA_COUNTIES = [

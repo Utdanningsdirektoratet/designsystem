@@ -1,19 +1,19 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
-import {
-  Button,
-  Card,
-  Checkbox,
-  Divider,
-  Fieldset,
-  Paragraph,
-  Table,
-  UseCheckboxGroupProps,
-  ValidationMessage,
-  useCheckboxGroup,
-  Chip,
-} from '@udir-design/react/alpha';
 import { expect, fn, userEvent, waitFor, within } from 'storybook/test';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
+import {
+  UseCheckboxGroupProps,
+  useCheckboxGroup,
+} from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
+import { Button } from '../button/Button';
+import { Card } from '../card/Card';
+import { Chip } from '../chip/Chip';
+import { Divider } from '../divider/Divider';
+import { Fieldset } from '../fieldset/Fieldset';
+import { Table } from '../table';
+import { Paragraph } from '../typography/paragraph/Paragraph';
+import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
+import { Checkbox } from './Checkbox';
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,

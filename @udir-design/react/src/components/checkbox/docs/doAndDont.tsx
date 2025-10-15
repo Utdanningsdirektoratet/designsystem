@@ -1,11 +1,9 @@
-import {
-  Checkbox,
-  Divider,
-  Fieldset,
-  Heading,
-  useCheckboxGroup,
-} from '@udir-design/react/alpha';
-import { Do, Dont, Stack } from '.storybook/docs-components';
+import { Do, Dont, Stack } from '.storybook/docs/components';
+import { Divider } from 'src/components/divider/Divider';
+import { Fieldset } from 'src/components/fieldset/Fieldset';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
+import { Checkbox } from '../Checkbox';
 
 export const CheckboxExConversation = () => {
   return (

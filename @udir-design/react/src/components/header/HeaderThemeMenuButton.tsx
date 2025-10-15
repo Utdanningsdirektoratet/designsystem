@@ -1,7 +1,7 @@
-import { ChevronDownIcon, ChevronUpIcon } from '@udir-design/icons';
 import cl from 'clsx/lite';
-import { Button, ButtonProps } from '../button/Button';
 import { forwardRef } from 'react';
+import { ChevronDownIcon, ChevronUpIcon } from '@udir-design/icons';
+import { Button, ButtonProps } from '../button/Button';
 
 export type HeaderThemeMenuButtonProps = ButtonProps;
 

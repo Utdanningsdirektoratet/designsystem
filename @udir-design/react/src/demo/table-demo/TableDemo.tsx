@@ -1,28 +1,26 @@
-import { HTMLAttributes, useMemo, useState } from 'react';
-import {
-  Alert,
-  Avatar,
-  Badge,
-  Checkbox,
-  Chip,
-  Divider,
-  ErrorSummary,
-  Heading,
-  Label,
-  Search,
-  Table,
-  Tag,
-  useCheckboxGroup,
-} from '@udir-design/react/alpha';
-import classes from './TableDemo.module.css';
 import cl from 'clsx/lite';
-import { Student, STUDENTS } from './data/students';
-import PaginationControls from './components/PaginationControls';
-import useSortableData from './utilities/useSortableData';
-import { useFilterData } from './utilities/useFilterData';
-import { ExportDialog } from './components/ExportDialog';
-import { DeleteDialog } from './components/DeleteDialog';
+import { HTMLAttributes, useMemo, useState } from 'react';
+import { Alert } from 'src/components/alert';
+import { Avatar } from 'src/components/avatar/Avatar';
+import { Badge } from 'src/components/badge/Badge';
+import { Checkbox } from 'src/components/checkbox/Checkbox';
+import { Chip } from 'src/components/chip/Chip';
+import { Divider } from 'src/components/divider/Divider';
+import { ErrorSummary } from 'src/components/errorSummary/ErrorSummary';
+import { Search } from 'src/components/search/Search';
+import { Table } from 'src/components/table';
+import { Tag } from 'src/components/tag/Tag';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Label } from 'src/components/typography/label/Label';
+import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
 import { DemoProps } from '../demoProps';
+import classes from './TableDemo.module.css';
+import { DeleteDialog } from './components/DeleteDialog';
+import { ExportDialog } from './components/ExportDialog';
+import PaginationControls from './components/PaginationControls';
+import { STUDENTS, Student } from './data/students';
+import { useFilterData } from './utilities/useFilterData';
+import useSortableData from './utilities/useSortableData';
 
 type TableDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
 

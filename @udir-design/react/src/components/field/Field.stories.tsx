@@ -1,12 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import {
-  Field,
-  Input,
-  Textarea,
-  ValidationMessage,
-} from '@udir-design/react/alpha';
-import { Label } from '../typography/label/Label';
 import { expect, waitFor } from 'storybook/test';
+import { Input } from '../input/Input';
+import { Textarea } from '../textarea/Textarea';
+import { Label } from '../typography/label/Label';
+import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
+import { Field } from './Field';
 
 const meta: Meta<typeof Field> = {
   component: Field,

@@ -1,4 +1,6 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
+import { useState } from 'react';
+import { expect, userEvent, within } from 'storybook/test';
 import {
   BellDotIcon,
   CalculatorIcon,
@@ -9,21 +11,15 @@ import {
   PersonGroupIcon,
   PersonIcon,
 } from '@udir-design/icons';
-import { useState } from 'react';
-
-import { expect, userEvent, within } from 'storybook/test';
-import {
-  Button,
-  Tooltip,
-  Tabs,
-  Avatar,
-  List,
-  Link,
-  Paragraph,
-  Heading,
-  TabsProps,
-} from '@udir-design/react/alpha';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
+import { Avatar } from '../avatar/Avatar';
+import { Button } from '../button/Button';
+import { Link } from '../link/Link';
+import { List } from '../list/List';
+import { Tooltip } from '../tooltip/Tooltip';
+import { Heading } from '../typography/heading/Heading';
+import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Tabs, TabsProps } from './Tabs';
 
 const meta: Meta<typeof Tabs> = {
   component: Tabs,

@@ -1,10 +1,10 @@
 import {
   Fieldset as DigdirFieldset,
-  type FieldsetProps as DigdirFieldsetProps,
   FieldsetDescription,
   type FieldsetDescriptionProps,
   FieldsetLegend,
   type FieldsetLegendProps,
+  type FieldsetProps as DigdirFieldsetProps,
 } from '@digdir/designsystemet-react';
 import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 
@@ -19,9 +19,9 @@ Fieldset.displayName = 'Fieldset';
 
 export {
   Fieldset,
-  FieldsetProps,
-  FieldsetLegend,
-  FieldsetLegendProps,
   FieldsetDescription,
   FieldsetDescriptionProps,
+  FieldsetLegend,
+  FieldsetLegendProps,
+  FieldsetProps,
 };

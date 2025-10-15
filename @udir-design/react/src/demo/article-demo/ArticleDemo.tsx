@@ -1,25 +1,23 @@
-import {
-  Alert,
-  Breadcrumbs,
-  Button,
-  Card,
-  Details,
-  Divider,
-  Footer,
-  Header,
-  Heading,
-  Link,
-  Paragraph,
-  SkipLink,
-} from '@udir-design/react/alpha';
+import cl from 'clsx';
 import { HTMLAttributes } from 'react';
+import { PrinterSmallIcon } from '@udir-design/icons';
+import { Alert } from 'src/components/alert';
+import { Breadcrumbs } from 'src/components/breadcrumbs/Breadcrumbs';
+import { Button } from 'src/components/button/Button';
+import { Card } from 'src/components/card/Card';
+import { Details } from 'src/components/details/Details';
+import { Divider } from 'src/components/divider/Divider';
+import { Footer } from 'src/components/footer';
+import { Header } from 'src/components/header';
+import { Link } from 'src/components/link/Link';
+import { SkipLink } from 'src/components/skipLink/SkipLink';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { DemoProps } from '../demoProps';
 import classes from './ArticleDemo.module.css';
 import { ContentSection } from './content-section/ContentSection';
-import { section1, section2, section3 } from './strings/sections';
 import { changes } from './strings/changes';
-import cl from 'clsx';
-import { PrinterSmallIcon } from '@udir-design/icons';
-import { DemoProps } from '../demoProps';
+import { section1, section2, section3 } from './strings/sections';
 
 type ArticleDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
 

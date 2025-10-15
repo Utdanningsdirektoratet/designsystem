@@ -1,15 +1,19 @@
-import type { StoryContext } from '@storybook/react-vite';
+import type { Parameters } from '@storybook/react-vite';
 import type { Plugin } from 'prettier';
 import * as EstreePlugin from 'prettier/plugins/estree';
 import * as HtmlPlugin from 'prettier/plugins/html';
 import * as TypescriptPlugin from 'prettier/plugins/typescript';
 import { format as prettierFormat } from 'prettier/standalone';
+import type { RequiredDeep } from 'type-fest';
+
+type SourceTransformer =
+  RequiredDeep<Parameters>['docs']['source']['transform'];
 
 /**
  * Use this as parameters.docs.source.transform as needed to better format React code.
  * Not enabled by default to avoid unnecessary performance hit.
  */
-export const formatReactSource = async (src: string, ctx: StoryContext) => {
+export const formatReactSource: SourceTransformer = async (src) => {
   return formatWithPrettier('typescript', src);
 };
 

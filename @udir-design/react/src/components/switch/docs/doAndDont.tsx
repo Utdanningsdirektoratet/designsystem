@@ -1,6 +1,7 @@
-import { Do, Dont, Stack } from '.storybook/docs-components';
 import { Button, Heading } from '@digdir/designsystemet-react';
-import { Fieldset, Switch } from '@udir-design/react/alpha';
+import { Do, Dont, Stack } from '.storybook/docs/components';
+import { Fieldset } from 'src/components/fieldset/Fieldset';
+import { Switch } from '../Switch';
 
 export const SwitchExLabel = () => {
   return (

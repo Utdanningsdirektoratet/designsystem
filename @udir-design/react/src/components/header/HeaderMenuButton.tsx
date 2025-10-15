@@ -1,7 +1,7 @@
-import { MenuHamburgerIcon, XMarkIcon } from '@udir-design/icons';
 import cl from 'clsx/lite';
-import { Button, ButtonProps } from '../button/Button';
 import { forwardRef } from 'react';
+import { MenuHamburgerIcon, XMarkIcon } from '@udir-design/icons';
+import { Button, ButtonProps } from '../button/Button';
 
 export type HeaderMenuButtonProps = ButtonProps;
 

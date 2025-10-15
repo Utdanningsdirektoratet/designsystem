@@ -1,10 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Checkbox, Tag, Textfield } from '@udir-design/react/alpha';
-import { Table, TableHeaderCellProps } from '@udir-design/react/beta';
-import { useState } from 'react';
-import { useCheckboxGroup, Heading } from '@udir-design/react/alpha';
-import { expect, within } from 'storybook/test';
 import { Pagination, usePagination } from '@digdir/designsystemet-react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { useState } from 'react';
+import { expect, within } from 'storybook/test';
+import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
+import { Checkbox } from '../checkbox/Checkbox';
+import { Tag } from '../tag/Tag';
+import { Textfield } from '../textfield/Textfield';
+import { Heading } from '../typography/heading/Heading';
+import { Table, TableHeaderCellProps } from '.';
 
 const meta: Meta<typeof Table> = {
   component: Table,
@@ -339,7 +342,7 @@ export const Sortable: Story = {
       </Table>
     );
   },
-  async play({ canvasElement, args, step }) {
+  async play({ canvasElement, step }) {
     const canvas = within(canvasElement);
     await step('Sortable headings should have aria-sort and a button', () => {
       const ths = canvas.getAllByTestId(/^sortable-th/);

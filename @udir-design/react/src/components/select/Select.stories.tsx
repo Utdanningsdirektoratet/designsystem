@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { expect, userEvent, waitFor, within } from 'storybook/test';
-import { Select } from './Select';
-import { Label } from '../typography/label/Label';
-import { Field } from '../field/Field';
-import { Heading, ValidationMessage } from '@udir-design/react/alpha';
 import { useState } from 'react';
+import { expect, userEvent, waitFor, within } from 'storybook/test';
+import { Field } from '../field/Field';
+import { Heading } from '../typography/heading/Heading';
+import { Label } from '../typography/label/Label';
+import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
+import { Select } from './Select';
 
 const meta: Meta<typeof Select> = {
   component: Select,

@@ -1,12 +1,12 @@
 /// <reference types='vitest' />
-import { createFilter, defineConfig, Plugin } from 'vite';
+import * as path from 'node:path';
 import react from '@vitejs/plugin-react-swc';
-import dts from 'vite-plugin-dts';
-import tsConfigPaths from 'vite-tsconfig-paths';
-import * as path from 'path';
-import pkg from './package.json';
 import * as R from 'ramda';
 import ts from 'typescript';
+import { Plugin, createFilter, defineConfig } from 'vite';
+import dts from 'vite-plugin-dts';
+import tsConfigPaths from 'vite-tsconfig-paths';
+import pkg from './package.json';
 
 const resolveAlias = (alias: string): string =>
   path.resolve(import.meta.dirname, alias);
@@ -35,7 +35,7 @@ export default defineConfig({
       '@udir-design/react/alpha': 'src/alpha',
       '@udir-design/react/beta': 'src/beta',
       // the root (stable) export must be last to not interfere with the aliases above
-      '@udir-design/react': 'src/index',
+      '@udir-design/react': 'src/stable',
     }),
   },
 
@@ -75,7 +75,7 @@ export default defineConfig({
     },
     lib: {
       entry: {
-        index: 'src/index.ts',
+        stable: 'src/stable.ts',
         alpha: 'src/alpha.ts',
         beta: 'src/beta.ts',
       },

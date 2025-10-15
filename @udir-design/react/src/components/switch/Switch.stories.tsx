@@ -1,10 +1,13 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
-import { Switch } from './Switch';
-import { expect, fn, userEvent, within } from 'storybook/test';
 import { useState } from 'react';
-import { Checkbox, Fieldset, Heading, Card } from '@udir-design/react/alpha';
-import { SwitchProps } from '@digdir/designsystemet-react';
+import { expect, fn, userEvent, within } from 'storybook/test';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
+import { Card } from '../card/Card';
+import { Checkbox } from '../checkbox/Checkbox';
+import { Fieldset } from '../fieldset/Fieldset';
+import { Heading } from '../typography/heading/Heading';
+import { SwitchProps } from './Switch';
+import { Switch } from './Switch';
 
 const meta: Meta<typeof Switch> = {
   component: Switch,
@@ -89,7 +92,7 @@ export const Description: Story = {
 };
 
 export const Group: Story = {
-  render: ({ 'aria-label': a, 'aria-labelledby': b, ...args }, context) => (
+  render: ({ ...args }, context) => (
     <Fieldset>
       <Fieldset.Legend>Varsler</Fieldset.Legend>
       <Switch

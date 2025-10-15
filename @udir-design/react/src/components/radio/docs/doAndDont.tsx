@@ -1,10 +1,8 @@
-import {
-  Radio,
-  Divider,
-  Fieldset,
-  useRadioGroup,
-} from '@udir-design/react/alpha';
-import { Do, Dont, Stack } from '.storybook/docs-components';
+import { Do, Dont, Stack } from '.storybook/docs/components';
+import { Divider } from 'src/components/divider/Divider';
+import { Fieldset } from 'src/components/fieldset/Fieldset';
+import { useRadioGroup } from 'src/utilities/hooks/useRadioGroup/useRadioGroup';
+import { Radio } from '../Radio';
 
 export const RadioExConversation = () => {
   return (

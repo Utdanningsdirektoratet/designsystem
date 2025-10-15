@@ -1,6 +1,6 @@
+import { Heading } from '@digdir/designsystemet-react';
 import type { PageProps } from '../FormDemo';
 import { RankingTable } from '../ranking-table/RankingTable';
-import { Heading } from '@digdir/designsystemet-react';
 
 const DATA_RANKINGS = ['Uenig', 'Nøytral', 'Enig'];
 

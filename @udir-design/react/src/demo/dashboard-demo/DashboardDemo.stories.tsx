@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { DashboardDemo } from './DashboardDemo';
 import { useState } from 'react';
 import { demoParameters } from '../demoParameters';
+import { DashboardDemo } from './DashboardDemo';
 
 const meta: Meta<typeof DashboardDemo> = {
   title: 'demo/Dashboard Demo',

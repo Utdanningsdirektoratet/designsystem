@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
-import { cwd } from 'node:process';
 import { resolve } from 'node:path';
+import { cwd } from 'node:process';
 
 /*
  * A list of selectors that should reset the color palette to "neutral"

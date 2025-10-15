@@ -1,11 +1,12 @@
-import { Heading, Table } from '@udir-design/react/alpha';
-import { useEffect, useRef, useState } from 'react';
-import classes from './Overview.module.css';
 import * as Highcharts from 'highcharts';
 import { HighchartsReact } from 'highcharts-react-official';
-import { TabStructure } from '../../components/tab-structure/TabStructure';
+import { useEffect, useRef, useState } from 'react';
+import { Table } from 'src/components/table';
+import { Heading } from 'src/components/typography/heading/Heading';
 import { DataControls } from '../../components/data-controls/DataControls';
 import { Loading } from '../../components/loading/Loading';
+import { TabStructure } from '../../components/tab-structure/TabStructure';
+import classes from './Overview.module.css';
 
 const testOverview = [
   { year: '2022', sent: 3500, received: 2000 },
@@ -84,38 +85,40 @@ export const Overview = (props: HighchartsReact.Props) => {
     switch (value) {
       case 'table':
         return (
-          <Table zebra className={classes.table}>
-            <Table.Head>
-              <Table.Row>
-                <Table.HeaderCell>År</Table.HeaderCell>
-                <Table.HeaderCell className={classes.rightAlign}>
-                  Utsendte prøver
-                </Table.HeaderCell>
-                <Table.HeaderCell className={classes.rightAlign}>
-                  Prøvesvar
-                </Table.HeaderCell>
-                <Table.HeaderCell className={classes.rightAlign}>
-                  Ikke svart
-                </Table.HeaderCell>
-              </Table.Row>
-            </Table.Head>
-            <Table.Body>
-              {testOverview.map((item, index) => (
-                <Table.Row key={index}>
-                  <Table.Cell>{item.year}</Table.Cell>
-                  <Table.Cell className={classes.rightAlign}>
-                    {item.sent}
-                  </Table.Cell>
-                  <Table.Cell className={classes.rightAlign}>
-                    {item.received}
-                  </Table.Cell>
-                  <Table.Cell className={classes.rightAlign}>
-                    {item.sent - item.received}
-                  </Table.Cell>
+          <div className={classes.tableWrapper}>
+            <Table zebra className={classes.table}>
+              <Table.Head>
+                <Table.Row>
+                  <Table.HeaderCell>År</Table.HeaderCell>
+                  <Table.HeaderCell className={classes.rightAlign}>
+                    Utsendte prøver
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className={classes.rightAlign}>
+                    Prøvesvar
+                  </Table.HeaderCell>
+                  <Table.HeaderCell className={classes.rightAlign}>
+                    Ikke svart
+                  </Table.HeaderCell>
                 </Table.Row>
-              ))}
-            </Table.Body>
-          </Table>
+              </Table.Head>
+              <Table.Body>
+                {testOverview.map((item, index) => (
+                  <Table.Row key={index}>
+                    <Table.Cell>{item.year}</Table.Cell>
+                    <Table.Cell className={classes.rightAlign}>
+                      {item.sent}
+                    </Table.Cell>
+                    <Table.Cell className={classes.rightAlign}>
+                      {item.received}
+                    </Table.Cell>
+                    <Table.Cell className={classes.rightAlign}>
+                      {item.sent - item.received}
+                    </Table.Cell>
+                  </Table.Row>
+                ))}
+              </Table.Body>
+            </Table>
+          </div>
         );
       default:
         return (

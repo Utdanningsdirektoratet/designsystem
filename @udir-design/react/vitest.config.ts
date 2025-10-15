@@ -1,7 +1,7 @@
-import { coverageConfigDefaults, defineConfig } from 'vitest/config';
-import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
-import viteConfig from './vite.config';
 import path from 'node:path';
+import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
+import { coverageConfigDefaults, defineConfig } from 'vitest/config';
+import viteConfig from './vite.config';
 
 export default defineConfig({
   test: {

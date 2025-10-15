@@ -1,7 +1,8 @@
-import { forwardRef, HTMLAttributes } from 'react';
-import { ChevronDownIcon, ChevronUpIcon } from '@udir-design/icons';
 import cl from 'clsx/lite';
-import { Heading, Paragraph } from '../typography';
+import { HTMLAttributes, forwardRef } from 'react';
+import { ChevronDownIcon, ChevronUpIcon } from '@udir-design/icons';
+import { Heading } from '../typography/heading/Heading';
+import { Paragraph } from '../typography/paragraph/Paragraph';
 
 export type HeaderUserButtonProps = HTMLAttributes<HTMLButtonElement> & {
   /**
@@ -25,12 +26,11 @@ export type HeaderUserButtonProps = HTMLAttributes<HTMLButtonElement> & {
 
 export const HeaderUserButton = forwardRef<
   HTMLButtonElement,
-  HeaderUserButtonProps
+  Omit<HeaderUserButtonProps, 'children'>
 >(function HeaderUserButton(
   {
     username,
     userRole,
-    children,
     className,
     avatar,
     'data-color': dataColor = 'neutral',

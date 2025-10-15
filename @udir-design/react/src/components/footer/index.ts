@@ -18,4 +18,4 @@ Footer.Item.displayName = 'Footer.Item';
 export type { FooterProps } from './Footer';
 export type { FooterItemProps } from './FooterItem';
 export type { FooterListProps } from './FooterList';
-export { Footer, FooterList, FooterItem };
+export { Footer, FooterItem, FooterList };

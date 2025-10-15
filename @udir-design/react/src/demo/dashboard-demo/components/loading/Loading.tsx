@@ -1,4 +1,5 @@
-import { Skeleton, Spinner } from '@udir-design/react/alpha';
+import { Skeleton } from 'src/components/skeleton/Skeleton';
+import { Spinner } from 'src/components/spinner/Spinner';
 import classes from './Loading.module.css';
 
 export const Loading = () => {

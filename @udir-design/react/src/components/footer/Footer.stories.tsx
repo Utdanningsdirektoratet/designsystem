@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Footer } from './';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
+import { Footer } from './';
 
 const meta: Meta<typeof Footer> = {
   component: Footer,

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { within, expect, userEvent } from 'storybook/test';
+import { useState } from 'react';
+import { expect, userEvent, within } from 'storybook/test';
 import {
   ArrowDownIcon,
   ArrowUpIcon,
@@ -12,9 +13,11 @@ import {
   MenuElipsisVerticalIcon,
   TrashFillIcon,
 } from '@udir-design/icons';
-import { useState } from 'react';
-import { Badge } from '@udir-design/react/alpha';
-import { Button, Dropdown, Avatar, Divider } from '../beta';
+import { Avatar } from '../avatar/Avatar';
+import { Badge } from '../badge/Badge';
+import { Button } from '../button/Button';
+import { Divider } from '../divider/Divider';
+import { Dropdown } from './Dropdown';
 
 const meta: Meta<typeof Dropdown> = {
   component: Dropdown,
