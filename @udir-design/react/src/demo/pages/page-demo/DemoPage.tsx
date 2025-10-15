@@ -1,5 +1,5 @@
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Heading } from '../../../components/typography/heading/Heading';
+import { Paragraph } from '../../../components/typography/paragraph/Paragraph';
 import { DemoProps } from '../demoProps';
 import styles from './DemoPage.module.scss';
 import { BreadcrumbsDemo } from './breadcrumbs/BreadcrumbsDemo';

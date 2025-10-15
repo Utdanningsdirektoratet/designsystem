@@ -1,7 +1,7 @@
 import React from 'react';
-import { Checkbox } from 'src/components/checkbox/Checkbox';
-import { Divider } from 'src/components/divider/Divider';
-import { Fieldset } from 'src/components/fieldset/Fieldset';
+import { Checkbox } from '../../../../components/checkbox/Checkbox';
+import { Divider } from '../../../../components/divider/Divider';
+import { Fieldset } from '../../../../components/fieldset/Fieldset';
 
 export function Shoppinglist() {
   return (

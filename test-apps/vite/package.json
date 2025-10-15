@@ -7,10 +7,12 @@
     "typecheck": "tsc --build"
   },
   "dependencies": {
+    "@udir-design/icons": "workspace:*",
     "@udir-design/react": "workspace:*",
     "@udir-design/theme": "workspace:*",
     "react": "catalog:",
-    "react-dom": "catalog:"
+    "react-dom": "catalog:",
+    "react-router-dom": "catalog:"
   },
   "devDependencies": {
     "@types/react": "catalog:",

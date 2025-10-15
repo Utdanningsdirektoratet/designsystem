@@ -1,8 +1,8 @@
-import { Card } from 'src/components/card/Card';
-import { List } from 'src/components/list/List';
-import { Tabs } from 'src/components/tabs/Tabs';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Card } from '../../../../../components/card/Card';
+import { List } from '../../../../../components/list/List';
+import { Tabs } from '../../../../../components/tabs/Tabs';
+import { Heading } from '../../../../../components/typography/heading/Heading';
+import { Paragraph } from '../../../../../components/typography/paragraph/Paragraph';
 import classes from './TabStructure.module.css';
 
 const dates = [

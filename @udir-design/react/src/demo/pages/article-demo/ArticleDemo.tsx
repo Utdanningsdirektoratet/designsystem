@@ -1,18 +1,16 @@
 import cl from 'clsx';
 import { HTMLAttributes } from 'react';
 import { PrinterSmallIcon } from '@udir-design/icons';
-import { Alert } from 'src/components/alert';
-import { Breadcrumbs } from 'src/components/breadcrumbs/Breadcrumbs';
-import { Button } from 'src/components/button/Button';
-import { Card } from 'src/components/card/Card';
-import { Details } from 'src/components/details/Details';
-import { Divider } from 'src/components/divider/Divider';
-import { Footer } from 'src/components/footer';
-import { Header } from 'src/components/header';
-import { Link } from 'src/components/link/Link';
-import { SkipLink } from 'src/components/skipLink/SkipLink';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Alert } from '../../../components/alert/Alert';
+import { Breadcrumbs } from '../../../components/breadcrumbs/Breadcrumbs';
+import { Button } from '../../../components/button/Button';
+import { Card } from '../../../components/card/Card';
+import { Details } from '../../../components/details/Details';
+import { Divider } from '../../../components/divider/Divider';
+import { Link } from '../../../components/link/Link';
+import { SkipLink } from '../../../components/skipLink/SkipLink';
+import { Heading } from '../../../components/typography/heading/Heading';
+import { Paragraph } from '../../../components/typography/paragraph/Paragraph';
 import { DemoProps } from '../demoProps';
 import classes from './ArticleDemo.module.css';
 import { ContentSection } from './content-section/ContentSection';
@@ -24,7 +22,6 @@ type ArticleDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
 export const ArticleDemo = ({ ...props }: ArticleDemoProps) => {
   return (
     <div {...props}>
-      <Header applicationName="Artikkeldemo" />
       <article className={cl(classes.article, classes.contentSpacing)}>
         <SkipLink href="#main-content">Hopp til hovedinnholdet</SkipLink>
         <Breadcrumbs aria-label="Du er her:">
@@ -100,6 +97,7 @@ export const ArticleDemo = ({ ...props }: ArticleDemoProps) => {
             ))}
           </Card>
           <Divider />
+          {/* TODO: Funker ikke for skjermleser :eyes: */}
           <Button
             variant="secondary"
             onClick={() =>
@@ -111,25 +109,6 @@ export const ArticleDemo = ({ ...props }: ArticleDemoProps) => {
           </Button>
         </div>
       </article>
-      <Footer>
-        <Footer.List>
-          <Footer.Item href="https://www.udir.no/om-udir/personvernerklaring-udir/">
-            Om Udir
-          </Footer.Item>
-          <Footer.Item href="https://www.udir.no/">Kontakt oss</Footer.Item>
-        </Footer.List>
-        <Footer.List>
-          <Footer.Item href="https://www.udir.no/om-udir/personvernerklaring-udir/">
-            Personvern
-          </Footer.Item>
-          <Footer.Item href="https://www.udir.no/">
-            Informasjonskapsler
-          </Footer.Item>
-          <Footer.Item href="https://uustatus.no/nb/erklaringer/publisert/ce43e104-3893-45ac-90c8-45deb6f17624">
-            Tilgjengelighetserklæring
-          </Footer.Item>
-        </Footer.List>
-      </Footer>
     </div>
   );
 };

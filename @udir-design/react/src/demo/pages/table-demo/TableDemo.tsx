@@ -1,18 +1,18 @@
 import cl from 'clsx/lite';
 import { HTMLAttributes, useMemo, useState } from 'react';
-import { Alert } from 'src/components/alert';
-import { Avatar } from 'src/components/avatar/Avatar';
-import { Badge } from 'src/components/badge/Badge';
-import { Checkbox } from 'src/components/checkbox/Checkbox';
-import { Chip } from 'src/components/chip/Chip';
-import { Divider } from 'src/components/divider/Divider';
-import { ErrorSummary } from 'src/components/errorSummary/ErrorSummary';
-import { Search } from 'src/components/search/Search';
-import { Table } from 'src/components/table';
-import { Tag } from 'src/components/tag/Tag';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Label } from 'src/components/typography/label/Label';
-import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
+import { Alert } from '../../../components/alert';
+import { Avatar } from '../../../components/avatar/Avatar';
+import { Badge } from '../../../components/badge/Badge';
+import { Checkbox } from '../../../components/checkbox/Checkbox';
+import { Chip } from '../../../components/chip/Chip';
+import { Divider } from '../../../components/divider/Divider';
+import { ErrorSummary } from '../../../components/errorSummary/ErrorSummary';
+import { Search } from '../../../components/search/Search';
+import { Table } from '../../../components/table';
+import { Tag } from '../../../components/tag/Tag';
+import { Heading } from '../../../components/typography/heading/Heading';
+import { Label } from '../../../components/typography/label/Label';
+import { useCheckboxGroup } from '../../../utilities/hooks/useCheckboxGroup/useCheckboxGroup';
 import { DemoProps } from '../demoProps';
 import classes from './TableDemo.module.css';
 import { DeleteDialog } from './components/DeleteDialog';
@@ -200,6 +200,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
                   </Table.Cell>
                   <Table.Cell>
                     <div className={classes.student}>
+                      {/* TODO: Fjerne badge og heller bruke i header */}
                       <Badge.Position placement="top-right" overlap="circle">
                         {student.new && (
                           <Badge data-color="accent" data-size="md" />

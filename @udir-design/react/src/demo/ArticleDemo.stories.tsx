@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import { demoParameters } from './demoParameters';
 import { ArticleDemo } from './pages/article-demo/ArticleDemo';
+import { FooterDemo } from './pages/footer';
+import { HeaderDemo } from './pages/header';
 
 const meta: Meta<typeof ArticleDemo> = {
   title: 'demo/Article Demo',
@@ -25,6 +27,12 @@ export const ArticleStory: Story = {
     'data-color-scheme': 'auto',
   },
   render(args) {
-    return <ArticleDemo {...args} />;
+    return (
+      <>
+        <HeaderDemo applicationName="Artikkeldemo" />
+        <ArticleDemo {...args} />
+        <FooterDemo />
+      </>
+    );
   },
 };
