@@ -11,11 +11,6 @@ on:
         required: true
       NX_KEY:
         required: true
-      NPM_ACCESS_TOKEN:
-        description: |
-          A granular access token created on npmjs.com with
-          read and write access to the @udir-design scope
-        required: true
 
 env:
   AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
@@ -31,7 +26,7 @@ jobs:
       actions: read
       contents: write # needs to read contents, and publish tags / github releases
       pull-requests: write # needed to comment on pull requests
-      id-token: write # needed for provenance data generation
+      id-token: write # needed for trusted publishing to npm and provenance data generation
     steps:
       - name: Configure git user
         run: |
@@ -72,5 +67,3 @@ jobs:
         # See https://docs.github.com/en/actions/use-cases-and-examples/publishing-packages/publishing-nodejs-packages
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
