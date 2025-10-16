@@ -92,6 +92,210 @@ exports[`Article Story 1`] = `
           </span>
         </a>
       </div>
+      <div data-variant="default">
+        <u-details
+          open
+          data-variant="default"
+          role="group"
+        >
+          <u-summary
+            aria-expanded="true"
+            role="button"
+            slot="summary"
+            tabindex="0"
+          >
+            Innhold på denne siden
+          </u-summary>
+          <div>
+            <ol>
+              <li>
+                <a href="#how-to">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    fill="none"
+                    viewbox="0 0 24 24"
+                    focusable="false"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                    >
+                    </path>
+                  </svg>
+                  <span>
+                    Hvordan bruke verktøyet
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#what-resources">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    fill="none"
+                    viewbox="0 0 24 24"
+                    focusable="false"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                    >
+                    </path>
+                  </svg>
+                  <span>
+                    Hvilke ressurser er tilgjengelige?
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#involve-students">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    fill="none"
+                    viewbox="0 0 24 24"
+                    focusable="false"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                    >
+                    </path>
+                  </svg>
+                  <span>
+                    Hvordan involvere elever i planlegging?
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#access">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    fill="none"
+                    viewbox="0 0 24 24"
+                    focusable="false"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                    >
+                    </path>
+                  </svg>
+                  <span>
+                    Tilgang
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#teachers">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    fill="none"
+                    viewbox="0 0 24 24"
+                    focusable="false"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                    >
+                    </path>
+                  </svg>
+                  <span>
+                    Lærere
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#students">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    fill="none"
+                    viewbox="0 0 24 24"
+                    focusable="false"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                    >
+                    </path>
+                  </svg>
+                  <span>
+                    Studenter
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#it">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    fill="none"
+                    viewbox="0 0 24 24"
+                    focusable="false"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                    >
+                    </path>
+                  </svg>
+                  <span>
+                    IT-ansvarlige
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#technical-questions">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    fill="none"
+                    viewbox="0 0 24 24"
+                    focusable="false"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                    >
+                    </path>
+                  </svg>
+                  <span>
+                    Tekniske spørsmål
+                  </span>
+                </a>
+              </li>
+            </ol>
+          </div>
+        </u-details>
+      </div>
       <div
         data-variant="tinted"
         data-color="support2"
@@ -104,19 +308,31 @@ exports[`Article Story 1`] = `
         </p>
       </div>
       <section>
-        <h2 data-size="sm">
+        <h2
+          data-size="sm"
+          id="how-to"
+          tabindex="-1"
+        >
           Hvordan bruke verktøyet
         </h2>
         <p data-variant="default">
           Verktøyet kan brukes til å jobbe med de didaktiske spørsmålene hvorfor, hva og hvordan i planlegging av opplæring i tråd med læreplanverket.
         </p>
-        <h3 data-size="xs">
+        <h3
+          data-size="xs"
+          id="what-resources"
+          tabindex="-1"
+        >
           Hvilke ressurser er tilgjengelige?
         </h3>
         <p data-variant="default">
           Det finnes flere ressurser tilgjengelig for lærere som ønsker å forbedre sine planleggingsevner. Dette inkluderer maler, sjekklister og veiledninger som kan lastes ned fra vår nettside.
         </p>
-        <h3 data-size="xs">
+        <h3
+          data-size="xs"
+          id="involve-students"
+          tabindex="-1"
+        >
           Hvordan involvere elever i planlegging?
         </h3>
         <p data-variant="default">
@@ -124,25 +340,41 @@ exports[`Article Story 1`] = `
         </p>
       </section>
       <section>
-        <h2 data-size="sm">
+        <h2
+          data-size="sm"
+          id="access"
+          tabindex="-1"
+        >
           Tilgang
         </h2>
         <p data-variant="default">
           Skoleeiere, høgskoler, universitet og lærebedrifter som ønsker at lærere og ansatte skal ha tilgang til verktøyet, må signere databehandleravtale.
         </p>
-        <h3 data-size="xs">
+        <h3
+          data-size="xs"
+          id="teachers"
+          tabindex="-1"
+        >
           Lærere
         </h3>
         <p data-variant="default">
           Lærere som ønsker å bruke verktøyet til undervisning må registrere seg og bekrefte sin identitet.
         </p>
-        <h3 data-size="xs">
+        <h3
+          data-size="xs"
+          id="students"
+          tabindex="-1"
+        >
           Studenter
         </h3>
         <p data-variant="default">
           Studenter får tilgang til verktøyet gjennom lærerne sine, etter at de har fått bekreftet sin påmelding.
         </p>
-        <h3 data-size="xs">
+        <h3
+          data-size="xs"
+          id="it"
+          tabindex="-1"
+        >
           IT-ansvarlige
         </h3>
         <p data-variant="default">
@@ -150,7 +382,11 @@ exports[`Article Story 1`] = `
         </p>
       </section>
       <section>
-        <h2 data-size="sm">
+        <h2
+          data-size="sm"
+          id="technical-questions"
+          tabindex="-1"
+        >
           Tekniske spørsmål
         </h2>
         <p data-variant="default">

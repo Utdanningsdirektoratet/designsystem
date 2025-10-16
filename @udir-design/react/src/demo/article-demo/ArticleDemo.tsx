@@ -1,5 +1,5 @@
 import cl from 'clsx';
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, useRef } from 'react';
 import { PrinterSmallIcon } from '@udir-design/icons';
 import { Alert } from 'src/components/alert';
 import { Breadcrumbs } from 'src/components/breadcrumbs/Breadcrumbs';
@@ -11,8 +11,10 @@ import { Footer } from 'src/components/footer';
 import { Header } from 'src/components/header';
 import { Link } from 'src/components/link/Link';
 import { SkipLink } from 'src/components/skipLink/SkipLink';
+import { TableOfContents } from 'src/components/tableOfContents/TableOfContents';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { useTableOfContents } from 'src/utilities/hooks/useTableOfContents/useTableOfContents';
 import { DemoProps } from '../demoProps';
 import classes from './ArticleDemo.module.css';
 import { ContentSection } from './content-section/ContentSection';
@@ -22,6 +24,7 @@ import { section1, section2, section3 } from './strings/sections';
 type ArticleDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
 
 export const ArticleDemo = ({ ...props }: ArticleDemoProps) => {
+  const containerRef = useRef<HTMLDivElement>(null);
   return (
     <div {...props}>
       <Header applicationName="Artikkeldemo" />
@@ -53,6 +56,7 @@ export const ArticleDemo = ({ ...props }: ArticleDemoProps) => {
           className={cl(classes.contentWrapper, classes.contentSpacing)}
           id="main-content"
           tabIndex={-1}
+          ref={containerRef}
         >
           <Alert>Denne artikkelen er mer enn 2 år gammel</Alert>
           <div className={classes.headingWrapper}>
@@ -71,6 +75,7 @@ export const ArticleDemo = ({ ...props }: ArticleDemoProps) => {
               <span>Skriv ut denne siden</span>
             </Link>
           </div>
+          <TableOfContents {...useTableOfContents({ containerRef })} />
           <Card data-color="support2" variant="tinted">
             <Heading level={2} data-size="sm">
               Planleggingsverktøy
