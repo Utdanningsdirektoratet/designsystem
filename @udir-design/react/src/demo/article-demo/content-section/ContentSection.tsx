@@ -12,7 +12,7 @@ export const ContentSection = ({ section }: ContentSectionProps) => (
   <section className={classes.content}>
     {section.map(({ heading, paragraph }, i) => (
       <Fragment key={i}>
-        <Heading data-size={heading.size} level={heading.level}>
+        <Heading data-size={heading.size} level={heading.level} id={heading.id}>
           {heading.text}
         </Heading>
         <Paragraph>{paragraph}</Paragraph>
