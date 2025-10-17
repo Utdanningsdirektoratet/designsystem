@@ -9,13 +9,15 @@
   },
   "dependencies": {
     "@udir-design/react": "workspace:*",
+    "@udir-design/symbols": "workspace:*",
     "@udir-design/theme": "workspace:*",
     "next": "^14.2.33",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/react": "^18.3.24",
+    "@navikt/aksel-icons": "^7.32.1",
+    "@types/react": "^18.3.26",
     "@types/react-dom": "^18.3.7",
     "eslint-config-next": "^14.2.33",
     "sass": "^1.93.2"
