@@ -1,0 +1,8 @@
+.ds-field > .ds-label + :is(.ds-field-affixes, .ds-input, .ds-suggestion) {
+  margin-top: 0;
+}
+
+.ds-field > .ds-label:has(+ .ds-field-affixes, + .ds-input, + .ds-suggestion) {
+  display: block;
+  padding-bottom: var(--dsc-field-content-spacing);
+}

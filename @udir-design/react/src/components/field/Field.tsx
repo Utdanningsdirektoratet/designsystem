@@ -11,6 +11,7 @@ import {
   type FieldProps as DigdirFieldProps,
 } from '@digdir/designsystemet-react';
 import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
+import './field.css';
 
 type FieldProps = Omit<DigdirFieldProps, 'data-color'>;
 
