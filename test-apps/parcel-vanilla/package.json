@@ -1,0 +1,21 @@
+{
+  "name": "test-app-parcel-vanilla",
+  "private": true,
+  "version": "0.0.0",
+  "source": "src/index.html",
+  "@parcel/resolver-default": {
+    "packageExports": true
+  },
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "dependencies": {
+    "@digdir/designsystemet-css": "catalog:",
+    "@udir-design/css": "workspace:*",
+    "@udir-design/theme": "workspace:*"
+  },
+  "devDependencies": {
+    "parcel": "^2.14.0"
+  }
+}

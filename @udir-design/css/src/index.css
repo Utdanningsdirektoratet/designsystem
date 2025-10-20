@@ -1,2 +1,2 @@
 @import './external.css';
-@import-glob '../../react/src/components/**/*.!(module.)css' layer(udir.components);
+@import './components.css';

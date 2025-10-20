@@ -1,0 +1,13 @@
+html {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: var(--ds-color-neutral-background-default);
+}
+
+body {
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-feature-settings: 'cv05' 1; /* Enable lowercase l with tail */
+}

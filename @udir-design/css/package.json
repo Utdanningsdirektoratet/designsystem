@@ -12,9 +12,8 @@
   "version": "0.0.0-semantically-released",
   "type": "module",
   "exports": {
-    ".": {
-      "default": "./dist/index.css"
-    }
+    ".": "./dist/index.css",
+    "./components.css": "./dist/components.css"
   },
   "files": [
     "./dist"
@@ -28,13 +27,12 @@
     "cssnano": "catalog:",
     "postcss": "catalog:",
     "postcss-cli": "catalog:",
-    "postcss-import": "catalog:",
-    "postcss-import-ext-glob": "catalog:",
+    "postcss-easy-import": "catalog:",
     "postcss-load-config": "catalog:",
     "postcss-nesting": "catalog:"
   },
   "scripts": {
-    "build": "postcss src/index.css -o dist/index.css",
+    "build": "postcss src/*.css --dir dist/",
     "watch": "pnpm build --watch"
   }
 }
