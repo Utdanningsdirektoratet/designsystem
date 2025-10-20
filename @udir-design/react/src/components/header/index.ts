@@ -1,9 +1,9 @@
 import { Header as HeaderRoot } from './Header';
-import { HeaderMenu } from './HeaderMenu';
 import { HeaderMenuButton } from './HeaderMenuButton';
 import { HeaderSearch } from './HeaderSearch';
 import { HeaderThemeMenuButton } from './HeaderThemeMenuButton';
 import { HeaderUserButton } from './HeaderUserButton';
+import { HeaderMenu } from './headerMenu';
 import { HeaderNavigation } from './headerNavigation';
 
 type HeaderProps = typeof HeaderRoot & {
@@ -36,7 +36,7 @@ export type { HeaderUserButtonProps } from './HeaderUserButton';
 export type { HeaderMenuButtonProps } from './HeaderMenuButton';
 export type { HeaderThemeMenuButtonProps } from './HeaderThemeMenuButton';
 export type { HeaderNavigationProps } from './headerNavigation';
-export type { HeaderMenuProps } from './HeaderMenu';
+export type { HeaderMenuProps } from './headerMenu';
 export type { HeaderSearchProps } from './HeaderSearch';
 export {
   Header,
