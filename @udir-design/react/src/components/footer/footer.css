@@ -4,49 +4,55 @@
   bottom: 0;
   width: 100%;
 
-  > div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: var(--ds-size-4);
-    max-width: var(--udsc-footer-max-width, 80rem);
-    margin: 0 auto;
-
-    & .uds-footer__list {
-      margin-bottom: var(--ds-size-10);
-    }
-
-    @media (min-width: 40rem) {
-      & .uds-footer__list[data-variant='social'] {
-        margin-bottom: 0;
-      }
-    }
-
-    @media (min-width: 48rem) {
-      padding: var(--ds-size-15);
-    }
-  }
-
-  /* Empty block after regular lists, before logo and social to force new line */
-  > div::after {
-    content: '';
-    flex-basis: 100%;
-    height: 0;
-    order: 1;
-  }
-
   & .ds-link {
     --dsc-link-color--visited: var(--dsc-link-color);
   }
 
+  /* sizing of socials icons */
   li :is(img, svg) {
     height: var(--ds-size-6);
     width: var(--ds-size-6);
     align-self: center;
   }
 
+  > div {
+    margin: 0 auto;
+    position: relative;
+    padding-inline: var(--ds-size-4);
+    padding-block: var(--ds-size-10);
+    max-width: var(--udsc-footer-max-width, 80rem);
+    gap: var(--ds-size-18);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-right: calc(10.5rem + var(--ds-size-22));
+  }
+
+  .uds-footer__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--ds-size-3);
+    hyphens: auto;
+    order: 0;
+
+    &[data-variant='social'] {
+      display: flex;
+      position: absolute;
+      bottom: var(--ds-size-10);
+      right: var(--ds-size-4);
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+
   .uds-footer__logo {
-    order: 2;
+    position: absolute;
+    top: var(--ds-size-10);
+    right: var(--ds-size-4);
+    height: fit-content;
 
     > img {
       height: var(--ds-size-12);
@@ -61,38 +67,56 @@
 
     @composes ds-focus from '@digdir/designsystemet-css/base.css';
   }
+}
+/* Extra padding when social links are present */
+.uds-footer:has(.uds-footer__list[data-variant='social']) > div {
+  padding-block-end: 8rem;
 
-  .uds-footer__list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--ds-size-3);
-    flex: 1 1 100%;
-    order: 0;
-    word-break: break-word;
+  @media (max-width: 40rem) {
+    padding-block-end: var(--ds-size-10);
+  }
+}
 
-    @media (min-width: 40rem) {
-      flex: 0 1 auto;
+@media (max-width: 64rem) {
+  .uds-footer {
+    > div {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+      gap: var(--ds-size-10);
+    }
+  }
+}
+
+/* Flow in a single column for smaller screens */
+
+@media (max-width: 40rem) {
+  .uds-footer {
+    > div {
+      display: flex;
+      flex-direction: column;
+      padding-inline: var(--ds-size-4);
+      gap: var(--ds-size-10);
     }
 
-    &[data-variant='social'] {
-      display: flex;
-      align-self: flex-end;
-      gap: var(--ds-size-2);
-      flex: 2 1 100%;
-      order: 0;
+    .uds-footer__list {
+      &[data-variant='social'] {
+        flex-direction: column;
+        position: initial;
+      }
+    }
 
-      @media (min-width: 40rem) {
-        flex-direction: row;
-        gap: var(--ds-size-3);
-        flex: 0 1 auto;
-        order: 3;
+    .uds-footer__logo {
+      position: relative;
+      top: initial;
+      right: initial;
+      > img {
+        height: var(--ds-size-10);
       }
     }
   }
 }
+
+/* logo in dark mode */
 
 [data-color-scheme='dark'] .uds-footer__logo {
   > img:first-of-type {
