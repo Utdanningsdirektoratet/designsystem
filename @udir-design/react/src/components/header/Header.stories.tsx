@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
-import { ArrowRightIcon, BriefcaseIcon, LeaveIcon } from '@udir-design/icons';
+import { BriefcaseIcon, LeaveIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import { Avatar } from '../avatar/Avatar';
 import { Badge } from '../badge/Badge';
@@ -174,24 +174,9 @@ export const WithNavigationLinks: Story = {
           className={styles.headerMenuSmall}
         >
           <List.Unordered>
-            <List.Item>
-              <Link href="#">
-                <ArrowRightIcon aria-hidden />
-                <span>Navlink 1</span>
-              </Link>
-            </List.Item>
-            <List.Item>
-              <Link href="#">
-                <ArrowRightIcon aria-hidden />
-                <span>Navlink 2</span>
-              </Link>
-            </List.Item>
-            <List.Item>
-              <Link href="#">
-                <ArrowRightIcon aria-hidden />
-                <span>Navlink 3</span>
-              </Link>
-            </List.Item>
+            <Header.Menu.Link href="#">Navlink 1</Header.Menu.Link>
+            <Header.Menu.Link href="#">Navlink 2</Header.Menu.Link>
+            <Header.Menu.Link href="#">Navlink 3</Header.Menu.Link>
           </List.Unordered>
         </nav>
       </Header.Menu>
@@ -282,12 +267,12 @@ export const WithMenu: Story = {
               </Heading>
               <List.Unordered>
                 {column.links.map((link) => (
-                  <List.Item key={link.title}>
-                    <Link href={link.href} style={{ textDecoration: 'none' }}>
-                      <ArrowRightIcon aria-hidden />
-                      <span>{link.title}</span>
-                    </Link>
-                  </List.Item>
+                  <Header.Menu.Link
+                    key={column.heading + link.title}
+                    href={link.href}
+                  >
+                    {link.title}
+                  </Header.Menu.Link>
                 ))}
               </List.Unordered>
             </div>
@@ -352,12 +337,12 @@ export const WithThemeMenus: Story = {
                 </Heading>
                 <List.Unordered>
                   {column.links.map((link) => (
-                    <List.Item key={column.heading + link.title}>
-                      <Link href={link.href} style={{ textDecoration: 'none' }}>
-                        <ArrowRightIcon aria-hidden />
-                        <span>{link.title}</span>
-                      </Link>
-                    </List.Item>
+                    <Header.Menu.Link
+                      key={column.heading + link.title}
+                      href={link.href}
+                    >
+                      {link.title}
+                    </Header.Menu.Link>
                   ))}
                 </List.Unordered>
               </div>
@@ -398,12 +383,12 @@ export const WithThemeMenus: Story = {
                 </Heading>
                 <List.Unordered>
                   {column.links.map((link) => (
-                    <List.Item key={column.heading + link.title}>
-                      <Link href={link.href} style={{ textDecoration: 'none' }}>
-                        <ArrowRightIcon aria-hidden />
-                        <span>{link.title}</span>
-                      </Link>
-                    </List.Item>
+                    <Header.Menu.Link
+                      key={column.heading + link.title}
+                      href={link.href}
+                    >
+                      {link.title}
+                    </Header.Menu.Link>
                   ))}
                 </List.Unordered>
               </div>
@@ -438,12 +423,12 @@ export const WithThemeMenus: Story = {
                 </Heading>
                 <List.Unordered>
                   {column.links.map((link) => (
-                    <List.Item key={column.heading + link.title + 'mobile'}>
-                      <Link href={link.href} style={{ textDecoration: 'none' }}>
-                        <ArrowRightIcon aria-hidden />
-                        <span>{link.title}</span>
-                      </Link>
-                    </List.Item>
+                    <Header.Menu.Link
+                      key={column.heading + link.title + 'mobile'}
+                      href={link.href}
+                    >
+                      {link.title}
+                    </Header.Menu.Link>
                   ))}
                 </List.Unordered>
               </div>
@@ -459,12 +444,12 @@ export const WithThemeMenus: Story = {
                 </Heading>
                 <List.Unordered>
                   {column.links.map((link) => (
-                    <List.Item key={column.heading + link.title + 'mobile'}>
-                      <Link href={link.href} style={{ textDecoration: 'none' }}>
-                        <ArrowRightIcon aria-hidden />
-                        <span>{link.title}</span>
-                      </Link>
-                    </List.Item>
+                    <Header.Menu.Link
+                      key={column.heading + link.title + 'mobile'}
+                      href={link.href}
+                    >
+                      {link.title}
+                    </Header.Menu.Link>
                   ))}
                 </List.Unordered>
               </div>
@@ -520,18 +505,8 @@ export const WithNavigationLinksAndMenu: Story = {
               Navlinker
             </Heading>
             <List.Unordered>
-              <List.Item>
-                <Link href="#" style={{ textDecoration: 'none' }}>
-                  <ArrowRightIcon aria-hidden />
-                  <span>Navlink 1</span>
-                </Link>
-              </List.Item>
-              <List.Item>
-                <Link href="#" style={{ textDecoration: 'none' }}>
-                  <ArrowRightIcon aria-hidden />
-                  <span>Navlink 2</span>
-                </Link>
-              </List.Item>
+              <Header.Menu.Link href="#">Navlink 1</Header.Menu.Link>
+              <Header.Menu.Link href="#">Navlink 2</Header.Menu.Link>
             </List.Unordered>
           </div>
           {navAndMenuLinks.map((column) => (
@@ -545,12 +520,12 @@ export const WithNavigationLinksAndMenu: Story = {
               </Heading>
               <List.Unordered>
                 {column.links.map((link) => (
-                  <List.Item key={link.title}>
-                    <Link href={link.href} style={{ textDecoration: 'none' }}>
-                      <ArrowRightIcon aria-hidden />
-                      <span>{link.title}</span>
-                    </Link>
-                  </List.Item>
+                  <Header.Menu.Link
+                    key={column.heading + link.title}
+                    href={link.href}
+                  >
+                    {link.title}
+                  </Header.Menu.Link>
                 ))}
               </List.Unordered>
             </div>
@@ -680,12 +655,12 @@ export const Responsive: Story = {
                 </Heading>
                 <List.Unordered>
                   {column.links.map((link) => (
-                    <List.Item key={link.title}>
-                      <Link href={link.href} style={{ textDecoration: 'none' }}>
-                        <ArrowRightIcon aria-hidden />
-                        <span>{link.title}</span>
-                      </Link>
-                    </List.Item>
+                    <Header.Menu.Link
+                      key={column.heading + link.title}
+                      href={link.href}
+                    >
+                      {link.title}
+                    </Header.Menu.Link>
                   ))}
                 </List.Unordered>
               </div>
@@ -747,15 +722,12 @@ export const AutoHideSticky: Story = {
                   </Heading>
                   <List.Unordered>
                     {column.links.map((link) => (
-                      <List.Item key={link.title}>
-                        <Link
-                          href={link.href}
-                          style={{ textDecoration: 'none' }}
-                        >
-                          <ArrowRightIcon aria-hidden />
-                          <span>{link.title}</span>
-                        </Link>
-                      </List.Item>
+                      <Header.Menu.Link
+                        key={column.heading + link.title}
+                        href={link.href}
+                      >
+                        {link.title}
+                      </Header.Menu.Link>
                     ))}
                   </List.Unordered>
                 </div>
@@ -947,7 +919,8 @@ export const UdirNo: Story = {
             aria-labelledby="header-menu-navigation"
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(20rem, 1fr))',
+              gridTemplateColumns:
+                'repeat(auto-fit, minmax(min(100%, 20rem), 1fr))',
               maxWidth: '1280px',
               margin: '0 auto',
               padding: 'var(--ds-size-10) var(--ds-size-15)',
@@ -969,12 +942,9 @@ export const UdirNo: Story = {
                 </Heading>
                 <List.Unordered>
                   {column.links.map((link) => (
-                    <List.Item key={link.title}>
-                      <Link href={link.href} style={{ textDecoration: 'none' }}>
-                        <ArrowRightIcon aria-hidden />
-                        <span>{link.title}</span>
-                      </Link>
-                    </List.Item>
+                    <Header.Menu.Link key={link.title} href={link.href}>
+                      {link.title}
+                    </Header.Menu.Link>
                   ))}
                 </List.Unordered>
               </div>
