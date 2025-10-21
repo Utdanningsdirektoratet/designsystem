@@ -8,7 +8,7 @@ export function PackageInformation() {
     <div className={styles.root}>
       <div>
         <div>
-          <Heading level={2}>React komponenter</Heading>
+          <Heading level={2}>React-komponenter</Heading>
           <Paragraph className={styles.ingress}>
             Slik kommer du i gang med å bruke ikonbiblioteket.
           </Paragraph>
@@ -17,13 +17,13 @@ export function PackageInformation() {
       <CodeBlock heading="Import" code="npm install @udir-design/icons@beta" />
       <CodeBlock
         heading="React"
-        code={`import { FilterIcon } from "@udir-design/icons";
+        code={`import { FilterIcon } from
+"@udir-design/icons";
 
 function MyComponent () {
   return (
     <div>
-      <FilterIcon />
-      />
+      <FilterIcon aria-hidden />
     </div>
   )
 }`}
