@@ -338,6 +338,7 @@
   transition:
     opacity 300ms ease-in-out,
     visibility 0s linear 300ms;
+  z-index: 9;
 }
 
 :has(> .uds-header .uds-header__menu:popover-open)::before {
