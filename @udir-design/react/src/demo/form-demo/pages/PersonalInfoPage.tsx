@@ -1,10 +1,10 @@
 import { Controller, useFormContext } from 'react-hook-form';
 import { Field } from 'src/components/field/Field';
 import { Fieldset } from 'src/components/fieldset/Fieldset';
-import { Input } from 'src/components/input/Input';
 import { Radio } from 'src/components/radio/Radio';
 import { Select } from 'src/components/select/Select';
 import { Suggestion } from 'src/components/suggestion/Suggestion';
+import { Tag } from 'src/components/tag/Tag';
 import { Textfield } from 'src/components/textfield/Textfield';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Label } from 'src/components/typography/label/Label';
@@ -41,27 +41,44 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
       </Heading>
       <Textfield
         id="firstName"
-        label="Fornavn"
+        label={
+          <>
+            Fornavn <Tag data-color="warning">Må fylles ut</Tag>
+          </>
+        }
         {...register('firstName', {
           required: 'Fyll ut fornavn',
         })}
         error={errors.firstName?.message}
       />
+      <Textfield
+        id="middleName"
+        label={
+          <>
+            Mellomnavn <Tag data-color="info">Valgfritt</Tag>
+          </>
+        }
+        {...register('middleName')}
+        error={errors.middleName?.message}
+      />
+      <Textfield
+        id="lastName"
+        label={
+          <>
+            Etternavn <Tag data-color="warning">Må fylles ut</Tag>
+          </>
+        }
+        {...register('lastName', {
+          required: 'Fyll ut etternavn',
+        })}
+        description="Skriv etternavnet ditt slik det står i passet"
+        error={errors.lastName?.message}
+      />
       <Field>
-        <Label>Etternavn</Label>
-        <Input
-          id="lastName"
-          {...register('lastName', {
-            required: 'Fyll ut etternavn',
-          })}
-          aria-invalid={!!errors.lastName}
-        />
-        {errors.lastName && (
-          <ValidationMessage>{errors.lastName.message}</ValidationMessage>
-        )}
-      </Field>
-      <Field>
-        <Label>Fylke</Label>
+        <Label>
+          Hvilket fylke underviser du i?{' '}
+          <Tag data-color="warning">Må fylles ut</Tag>
+        </Label>
         <Controller
           name="county"
           control={control}
@@ -94,7 +111,13 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
         )}
       </Field>
       <Fieldset id="educationLevel" {...focusableFieldsetProps}>
-        <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
+        <Fieldset.Legend>
+          Utdanningsnivå <Tag data-color="warning">Må fylles ut</Tag>
+        </Fieldset.Legend>
+        <Fieldset.Description>
+          Velg det høyeste utdanningsnivået du har fullført
+        </Fieldset.Description>
+
         <Radio
           id="radio-kindergarten"
           label="Barnehage"
@@ -124,7 +147,12 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
         )}
       </Fieldset>
       <Field>
-        <Label>Aldersgruppe</Label>
+        <Label>
+          Aldersgruppe <Tag data-color="warning">Må fylles ut</Tag>
+        </Label>
+        <Field.Description>
+          Hvilken aldersgruppe underviser du?
+        </Field.Description>
         <Select
           id="ageGroup"
           aria-label="Velg aldersgruppe"

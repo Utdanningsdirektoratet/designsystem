@@ -1,8 +1,26 @@
-.ds-field > .ds-label + :is(.ds-field-affixes, .ds-input, .ds-suggestion) {
+.ds-field > * + * {
+  /* Remove margin-top from Designsystemet styles */
   margin-top: 0;
 }
 
-.ds-field > .ds-label:has(+ .ds-field-affixes, + .ds-input, + .ds-suggestion) {
-  display: block;
+.ds-field > .ds-label {
+  display: inline-block;
+  /* Use padding to extend the click zone down to the field */
   padding-bottom: var(--dsc-field-content-spacing);
+}
+.ds-field > .ds-input:is([type='checkbox'], [type='radio']) + .ds-label {
+  /* ...but don't add this padding to radio/checkbox, since the labels are inline */
+  padding-bottom: 0;
+}
+
+.ds-field
+  > *:not(:last-child, :is(.ds-label, [type='checkbox'], [type='radio'])) {
+  /* Use margin-bottom instead of -top to work with the .ds-label padding above */
+  margin-bottom: var(--dsc-field-content-spacing);
+}
+
+.ds-field > [data-field='description'],
+.ds-field > div:has([data-field='description']) {
+  /* Recreate the "no space between label and description" behavior */
+  margin-top: calc(-1 * var(--dsc-field-content-spacing));
 }

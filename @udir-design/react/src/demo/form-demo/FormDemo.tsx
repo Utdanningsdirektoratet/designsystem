@@ -20,6 +20,7 @@ type FormDemo = DemoProps &
 
 export type FormValues = {
   firstName: string;
+  middleName: string;
   lastName: string;
   county: string;
   educationLevel: string;
