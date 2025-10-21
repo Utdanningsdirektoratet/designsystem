@@ -26,7 +26,7 @@ Last inn fonten Inter, f.eks. ved å plassere følgende i din `index.html` `<hea
 
 ### Laste inn stilsettet
 
-Du må laste inn bibliotekets stilsett enten, som ligger i `@udir-design/react/style.css`.
+Du må laste inn bibliotekets stilsett, som ligger i `@udir-design/react/style.css`.
 
 Eksempel: importer stilsettet fra ditt JavaScript- eller TypeScript-entrypoint
 
