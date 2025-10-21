@@ -2,7 +2,8 @@
   "name": "@udir-design/icons",
   "version": "0.0.0-semantically-released",
   "scripts": {
-    "build": "tsup src/index.ts src/metadata.ts --format esm,cjs --dts"
+    "copy-icons": "cp -r ./node_modules/@navikt/aksel-icons/dist/svg ./dist/",
+    "build": "tsup src/index.ts src/metadata.ts --format esm,cjs --dts && pnpm copy-icons"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,8 @@
     },
     "./metadata": {
       "default": "./dist/metadata.js"
-    }
+    },
+    "./svg/*.svg": "./dist/svg/*.svg"
   },
   "files": [
     "./dist"
