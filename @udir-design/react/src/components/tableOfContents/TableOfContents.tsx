@@ -40,7 +40,14 @@ export const TableOfContents = forwardRef<HTMLDivElement, TableOfContentsProps>(
             <ol>
               {headings.map((header) => (
                 <li key={header.id} className={`level-${header.level}`}>
-                  <Link href={`#${header.id}`}>
+                  <Link
+                    href={`#${header.id}`}
+                    onClick={() => {
+                      document
+                        .querySelector(`#${header.id}`)
+                        ?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                  >
                     <ArrowDownRightIcon aria-hidden />
                     <span>{header.name}</span>
                   </Link>
