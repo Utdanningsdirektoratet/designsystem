@@ -1,6 +1,6 @@
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
-import { Popover, PopoverProps } from '../popover/Popover';
+import { Popover, PopoverProps } from '../../popover/Popover';
 
 export type HeaderMenuProps = Omit<
   PopoverProps,
