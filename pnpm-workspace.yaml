@@ -93,6 +93,7 @@ catalog:
   storybook: ^9.1.10
   storybook-addon-pseudo-states: ^9.1.10
   storybook-addon-tag-badges: ^2.0.2
+  svgo: ^4.0.0
   ts-node: ^10.9.2
   tslib: ^2.8.1
   tsup: ^8.5.0
@@ -128,8 +129,11 @@ minimumReleaseAgeExclude:
 packageExtensions:
   '@navikt/aksel-icons':
     peerDependencies:
-      react: '>=18.3.1 || ^19.0.0'
+      '@types/react': ^18.3.11 || ^19.0.0'
+      react: '^18.3.1 || ^19.0.0'
     peerDependenciesMeta:
+      '@types/react':
+        optional: true
       react:
         optional: true
 

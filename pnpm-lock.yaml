@@ -270,6 +270,9 @@ catalogs:
     storybook-addon-tag-badges:
       specifier: ^2.0.2
       version: 2.0.2
+    svgo:
+      specifier: ^4.0.0
+      version: 4.0.0
     ts-node:
       specifier: ^10.9.2
       version: 10.9.2
@@ -333,7 +336,7 @@ overrides:
   '@eslint/plugin-kit@<0.3.4': '>=0.3.4'
   tmp@<=0.2.3: '>=0.2.4'
 
-packageExtensionsChecksum: sha256-IQSNU9cJtri1P9xMWAvG91nRHacWCj8xtjZCK1etLxM=
+packageExtensionsChecksum: sha256-flIOz4f0q/s3iAtJtNvIIB3eviI1NJv50IqSETROLII=
 
 importers:
 
@@ -495,8 +498,11 @@ importers:
     dependencies:
       '@navikt/aksel-icons':
         specifier: 'catalog:'
-        version: 7.32.1(react@19.2.0)
+        version: 7.32.1(@types/react@19.2.2)(react@19.2.0)
     devDependencies:
+      svgo:
+        specifier: 'catalog:'
+        version: 4.0.0
       tsup:
         specifier: 'catalog:'
         version: 8.5.0(@microsoft/api-extractor@7.53.1(@types/node@24.7.2))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1)
@@ -737,6 +743,9 @@ importers:
       '@udir-design/css':
         specifier: workspace:*
         version: link:../../@udir-design/css
+      '@udir-design/icons':
+        specifier: workspace:*
+        version: link:../../@udir-design/icons
       '@udir-design/theme':
         specifier: workspace:*
         version: link:../../@udir-design/theme
@@ -747,6 +756,9 @@ importers:
 
   test-apps/vite:
     dependencies:
+      '@udir-design/icons':
+        specifier: workspace:*
+        version: file:@udir-design/icons(@types/react@18.3.26)(react@18.3.1)
       '@udir-design/react':
         specifier: workspace:*
         version: file:@udir-design/react(@types/react@18.3.26)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -760,6 +772,8 @@ importers:
         specifier: catalog:react18
         version: 18.3.1(react@18.3.1)
     dependenciesMeta:
+      '@udir-design/icons':
+        injected: true
       '@udir-design/react':
         injected: true
     devDependencies:
@@ -2061,8 +2075,11 @@ packages:
   '@navikt/aksel-icons@7.32.1':
     resolution: {integrity: sha512-CSu9KU7J8lvlDriTxQK3VXwsZV+fv6zSMi71ausWFP5xmjJKRQkTOHdZpzeOef3bj460LZ+qhsKD8+Eds+tuEQ==}
     peerDependencies:
-      react: '>=18.3.1 || ^19.0.0'
+      '@types/react': ^18.3.11 || ^19.0.0'
+      react: ^18.3.1 || ^19.0.0
     peerDependenciesMeta:
+      '@types/react':
+        optional: true
       react:
         optional: true
 
@@ -3447,6 +3464,9 @@ packages:
 
   '@u-elements/u-details@0.1.5':
     resolution: {integrity: sha512-08sBhbc4u3VFlXIvH//m2yCDBHOJlQigs8QiKVLAVk2hMSg+fcRPggcgeBmtVPuy7iN3u/VURP6G2Ajlfbr6xg==}
+
+  '@udir-design/icons@file:@udir-design/icons':
+    resolution: {directory: '@udir-design/icons', type: directory}
 
   '@udir-design/react@file:@udir-design/react':
     resolution: {directory: '@udir-design/react', type: directory}
@@ -9076,7 +9096,7 @@ snapshots:
     dependencies:
       '@floating-ui/dom': 1.7.4
       '@floating-ui/react': 0.26.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@navikt/aksel-icons': 7.32.1(react@18.3.1)
+      '@navikt/aksel-icons': 7.32.1(@types/react@18.3.26)(react@18.3.1)
       '@radix-ui/react-slot': 1.2.3(@types/react@18.3.26)(react@18.3.1)
       '@tanstack/react-virtual': 3.13.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@u-elements/u-combobox': 1.0.2
@@ -9092,7 +9112,7 @@ snapshots:
     dependencies:
       '@floating-ui/dom': 1.7.4
       '@floating-ui/react': 0.26.23(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@navikt/aksel-icons': 7.32.1(react@19.2.0)
+      '@navikt/aksel-icons': 7.32.1(@types/react@19.2.2)(react@19.2.0)
       '@radix-ui/react-slot': 1.2.3(@types/react@19.2.2)(react@19.2.0)
       '@tanstack/react-virtual': 3.13.12(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@u-elements/u-combobox': 1.0.2
@@ -9568,12 +9588,14 @@ snapshots:
       '@tybys/wasm-util': 0.10.1
     optional: true
 
-  '@navikt/aksel-icons@7.32.1(react@18.3.1)':
+  '@navikt/aksel-icons@7.32.1(@types/react@18.3.26)(react@18.3.1)':
     optionalDependencies:
+      '@types/react': 18.3.26
       react: 18.3.1
 
-  '@navikt/aksel-icons@7.32.1(react@19.2.0)':
+  '@navikt/aksel-icons@7.32.1(@types/react@19.2.2)(react@19.2.0)':
     optionalDependencies:
+      '@types/react': 19.2.2
       react: 19.2.0
 
   '@next/env@14.2.33': {}
@@ -11211,6 +11233,13 @@ snapshots:
   '@u-elements/u-datalist@1.0.14': {}
 
   '@u-elements/u-details@0.1.5': {}
+
+  '@udir-design/icons@file:@udir-design/icons(@types/react@18.3.26)(react@18.3.1)':
+    dependencies:
+      '@navikt/aksel-icons': 7.32.1(@types/react@18.3.26)(react@18.3.1)
+    transitivePeerDependencies:
+      - '@types/react'
+      - react
 
   '@udir-design/react@file:@udir-design/react(@types/react@18.3.26)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
