@@ -12,8 +12,10 @@ import { List } from '../list/List';
 import { Search } from '../search/Search';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
-import styles from './header.stories.module.css';
 import { Header } from '.';
+import styles from './header.stories.module.css';
+import withNavigationLinksSrc from './docs/withNavigationLinks/src';
+import { WithNavigationLinksExample } from './docs/withNavigationLinks/story';
 
 const meta: Meta<typeof Header> = {
   component: Header,
@@ -151,52 +153,10 @@ export const WithSearch: Story = {
 };
 
 export const WithNavigationLinks: Story = {
-  render: (args) => (
-    <Header {...args}>
-      <Header.Navigation data-show="sm">
-        <Header.Navigation.Item href="#">Navlink 1</Header.Navigation.Item>
-        <Header.Navigation.Item href="#" active>
-          Navlink 2
-        </Header.Navigation.Item>
-        <Header.Navigation.Item href="#">Navlink 3</Header.Navigation.Item>
-      </Header.Navigation>
-      <Header.MenuButton data-hide="sm" />
-      <Header.Menu>
-        <nav
-          aria-label="header-menu-navigation"
-          style={{
-            maxWidth: '800px',
-            display: 'flex',
-            padding: 'var(--ds-size-5) var(--ds-size-15) var(--ds-size-10)',
-            gap: 'var(--ds-size-4)',
-            rowGap: 'var(--ds-size-10)',
-          }}
-          className={styles.headerMenuSmall}
-        >
-          <List.Unordered>
-            <List.Item>
-              <Link href="#">
-                <ArrowRightIcon aria-hidden />
-                <span>Navlink 1</span>
-              </Link>
-            </List.Item>
-            <List.Item>
-              <Link href="#">
-                <ArrowRightIcon aria-hidden />
-                <span>Navlink 2</span>
-              </Link>
-            </List.Item>
-            <List.Item>
-              <Link href="#">
-                <ArrowRightIcon aria-hidden />
-                <span>Navlink 3</span>
-              </Link>
-            </List.Item>
-          </List.Unordered>
-        </nav>
-      </Header.Menu>
-    </Header>
-  ),
+  parameters: {
+    docs: { source: { code: withNavigationLinksSrc.tsx } },
+  },
+  render: WithNavigationLinksExample,
 };
 
 const menuLinks = [

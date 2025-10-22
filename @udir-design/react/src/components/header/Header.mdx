@@ -1,8 +1,15 @@
-import { Meta, Controls, Primary, Canvas } from '@storybook/addon-docs/blocks';
+import {
+  Meta,
+  Controls,
+  Primary,
+  Canvas,
+  Source,
+} from '@storybook/addon-docs/blocks';
 
 import * as HeaderStories from './Header.stories';
 import { Table } from '@udir-design/react/beta';
 import { Unstyled } from '@storybook/addon-docs/blocks';
+import withNavigationLinksSrc from './docs/withNavigationLinks/src';
 
 <Meta of={HeaderStories} />
 
@@ -82,6 +89,7 @@ Unngå å bruke for mange lenker, og vurder om noen av lenkene heller kan plasse
   story={{ inline: false, height: '300px' }}
   of={HeaderStories.WithNavigationLinks}
 />
+<Source code={withNavigationLinksSrc.css} language="css" />
 
 #### Meny
 

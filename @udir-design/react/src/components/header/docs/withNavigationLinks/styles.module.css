@@ -1,0 +1,12 @@
+.menuNav {
+  max-width: 800px;
+  display: flex;
+  padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
+  column-gap: var(--ds-size-4);
+  row-gap: var(--ds-size-10);
+  justify-items: center;
+
+  @media (max-width: 550px) {
+    justify-items: flex-start;
+  }
+}
