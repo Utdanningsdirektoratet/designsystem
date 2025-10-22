@@ -907,7 +907,7 @@ export const UdirNo: Story = {
         <Header.Menu>
           <Search
             style={{
-              width: 'stretch',
+              width: 'auto',
               margin: 'var(--ds-size-5) var(--ds-size-5) 0',
             }}
             data-hide="sm"
