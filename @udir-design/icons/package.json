@@ -2,8 +2,10 @@
   "name": "@udir-design/icons",
   "version": "0.0.0-semantically-released",
   "scripts": {
-    "copy-icons": "cp -r ./node_modules/@navikt/aksel-icons/dist/svg ./dist/",
-    "build": "tsup src/index.ts src/metadata.ts --format esm,cjs --dts && pnpm copy-icons",
+    "copy-aksel-icons": "svgo --config svgo.config.aksel.mjs -f ./node_modules/@navikt/aksel-icons/dist/svg -o ./dist/svg",
+    "copy-style": "cp src/style.css dist/",
+    "compile": "tsup src/index.ts src/metadata.ts --format esm,cjs --dts",
+    "build": "pnpm compile && pnpm copy-aksel-icons && pnpm copy-style",
     "inject": "pnpm i"
   },
   "repository": {
@@ -19,12 +21,9 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
-      "default": "./dist/index.js"
-    },
-    "./metadata": {
-      "default": "./dist/metadata.js"
-    },
+    ".": "./dist/index.js",
+    "./metadata": "./dist/metadata.js",
+    "./style.css": "./dist/style.css",
     "./svg/*.svg": "./dist/svg/*.svg"
   },
   "files": [
@@ -34,6 +33,7 @@
     "@navikt/aksel-icons": "catalog:"
   },
   "devDependencies": {
+    "svgo": "catalog:",
     "tsup": "catalog:"
   }
 }
