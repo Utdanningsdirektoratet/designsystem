@@ -1,0 +1,6 @@
+@layer udir.icons {
+  svg:has(use[href$='#root']) {
+    width: 1em;
+    height: 1em;
+  }
+}

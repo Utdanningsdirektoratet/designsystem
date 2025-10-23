@@ -2,10 +2,12 @@
   "name": "test-app-vite",
   "type": "module",
   "scripts": {
+    "dev": "vite",
     "build": "vite build",
     "typecheck": "tsc --build"
   },
   "dependencies": {
+    "@udir-design/icons": "workspace:*",
     "@udir-design/react": "workspace:*",
     "@udir-design/theme": "workspace:*",
     "react": "catalog:react18",
@@ -21,6 +23,9 @@
     "vitest": "catalog:"
   },
   "dependenciesMeta": {
+    "@udir-design/icons": {
+      "injected": true
+    },
     "@udir-design/react": {
       "injected": true
     }

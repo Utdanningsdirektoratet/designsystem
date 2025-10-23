@@ -121,6 +121,16 @@
       margin: 0;
       padding: 0;
       list-style: none;
+      .uds-header__menu-link {
+        text-decoration: none;
+        display: flex;
+        gap: var(--ds-size-1);
+        width: fit-content;
+        & > svg {
+          transform: translateY(var(--ds-size-1));
+          flex-shrink: 0;
+        }
+      }
     }
 
     /* Remove popover arrow */
@@ -328,6 +338,7 @@
   transition:
     opacity 300ms ease-in-out,
     visibility 0s linear 300ms;
+  z-index: 9;
 }
 
 :has(> .uds-header .uds-header__menu:popover-open)::before {
