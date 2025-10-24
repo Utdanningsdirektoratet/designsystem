@@ -32,9 +32,11 @@ function MyComponent() {
 
 ## Ta i bruk uten React
 
-SVG-filene er mulig å importere og bruke fra vanlig HTML dersom du bruker en bundler som kan resolve npm imports.
+SVG-filene er mulig å importere og bruke fra vanlig HTML og CSS dersom du bruker en bundler som kan resolve npm imports.
 
 ### Med Parcel som bundler
+
+#### Bruk i HTML
 
 ```css
 /* css */
@@ -53,6 +55,48 @@ SVG-filene er mulig å importere og bruke fra vanlig HTML dersom du bruker en bu
 <svg aria-hidden class="my-icon">
   <use href="npm:@udir-design/icons/dist/svg/Airplane.svg#root" />
 </svg>
+```
+
+Dersom HTML-en blir generert dynamisk, kan du f.eks. gjøre slik:
+
+```js
+/* JavaScript */
+// Nødvendig for riktig dimensjoner på ikon
+import '@udir-design/icons/dist/style.css';
+
+const ArrowRight = new URL(
+  'npm:@udir-design/icons/dist/svg/ArrowRight.svg',
+  import.meta.url,
+);
+
+document.body.innerHTML += `
+<a class="ds-link" href="#">
+  <svg aria-hidden>
+    <use href="${ArrowRight}#root" />
+  </svg
+  ><span>Lenke lagt til dynamisk med JavaScript</span>
+</a>`;
+```
+
+#### Bruk i CSS
+
+Du kan bruke SVG-filene direkte i CSS, men må då ta ansvar for ein del styling selv.
+
+Et eksempel er å automatisk legge til ikon på et element med en viss klasse.
+
+```css
+/* css */
+
+.myClass::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background: currentColor;
+  mask: center / 100% no-repeat
+    url('npm:@udir-design/icons/dist/svg/PencilWriting.svg');
+  vertical-align: middle;
+}
 ```
 
 ## Dokumentasjon

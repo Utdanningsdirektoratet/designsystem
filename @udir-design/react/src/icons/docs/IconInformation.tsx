@@ -36,10 +36,9 @@ import ${icon.name}Svg from
     svg: `
 <!-- Bruk kan variere avhengig av ditt
   oppsett, men kan f.eks være slik: -->
-<img
-  src={${icon.name}Svg}
-  alt="En tittel for skjermleser"
-/>
+<svg aria-label="En tittel for skjermleser">
+  <use href="@udir-design/react/svg/${icon.name}.svg#root" />
+</svg>
 `.trim(),
   };
 
