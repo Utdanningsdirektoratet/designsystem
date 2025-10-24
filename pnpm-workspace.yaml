@@ -72,6 +72,7 @@ catalog:
   micromatch: ^4.0.8
   next: ^14.2.33
   nx: 21.4.0
+  parcel: ^2.16.0
   playwright: ^1.56.0
   postcss: ^8.5.6
   postcss-cli: ^11.0.1
@@ -129,8 +130,8 @@ minimumReleaseAgeExclude:
 packageExtensions:
   '@navikt/aksel-icons':
     peerDependencies:
-      '@types/react': ^18.3.11 || ^19.0.0'
-      react: '^18.3.1 || ^19.0.0'
+      '@types/react': ^18.3.11 || ^19.0.0
+      react: ^18.3.1 || ^19.0.0
     peerDependenciesMeta:
       '@types/react':
         optional: true
