@@ -1,9 +1,13 @@
 import cl from 'clsx/lite';
 import { HTMLAttributes, forwardRef } from 'react';
 import './formNavigation.css';
-import { XMarkIcon } from '@udir-design/icons/dist';
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  XMarkIcon,
+} from '@udir-design/icons/dist';
 
-export type FormNavigationProps = HTMLAttributes<HTMLDivElement> & {
+export type FormNavigationProps = HTMLAttributes<HTMLDetailsElement> & {
   /**
    * The title to be displayed in the FormNavigation component.
    */
@@ -14,30 +18,34 @@ export type FormNavigationProps = HTMLAttributes<HTMLDivElement> & {
   icon: React.ReactNode;
 
   state: 'idle' | 'completed' | 'invalid';
-  isOpen?: boolean;
 };
 
-export const FormNavigation = forwardRef<HTMLDivElement, FormNavigationProps>(
-  function FormNavigation(
-    { title, icon, state = 'idle', children, className, ...rest },
-    ref,
-  ) {
-    return (
-      <div
-        data-state={state}
-        className={cl('uds-form-navigation', className)}
-        ref={ref}
-        {...rest}
-      >
+export const FormNavigation = forwardRef<
+  HTMLDetailsElement,
+  FormNavigationProps
+>(function FormNavigation(
+  { title, icon, state = 'idle', children, className, ...rest },
+  ref,
+) {
+  return (
+    <u-details
+      data-state={state}
+      className={cl('uds-form-navigation', className)}
+      ref={ref}
+      {...rest}
+    >
+      <u-summary>
         <button>
           <div>
             {icon}
             <XMarkIcon aria-hidden />
           </div>
           {title}
+          <ChevronDownIcon aria-hidden />
+          <ChevronUpIcon aria-hidden />
         </button>
-        {children}
-      </div>
-    );
-  },
-);
+      </u-summary>
+      {children}
+    </u-details>
+  );
+});
