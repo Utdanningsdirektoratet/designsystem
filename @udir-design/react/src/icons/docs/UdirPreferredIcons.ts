@@ -1,8 +1,5 @@
 // List of Icons we want the systems to use when there are several options
-export const udirPreferredIcons: string[] = [
-  'AlignCenter',
-  'AlignLeft',
-  'AlignRight',
+export const udirPreferredIcons = [
   'ArrowDown',
   'ArrowLeft',
   'ArrowRedo',
@@ -13,7 +10,6 @@ export const udirPreferredIcons: string[] = [
   'ArrowUp',
   'Bell',
   'Briefcase',
-  'Calculator',
   'Calendar',
   'Chat2',
   'CheckmarkCircle',
@@ -32,9 +28,9 @@ export const udirPreferredIcons: string[] = [
   'Files',
   'Filter',
   'Floppydisk',
-  'HatSchool',
   'Image',
   'InformationSquare',
+  'Language',
   'Leave',
   'Link',
   'MenuElipsisVertical',
@@ -49,7 +45,7 @@ export const udirPreferredIcons: string[] = [
   'Trash',
   'XMark',
   'XMarkOctagon',
-];
+] as const;
 
 export type DoDont = {
   type: 'do' | 'dont';
@@ -57,7 +53,9 @@ export type DoDont = {
 };
 
 // guidelines describing correct use case for preferred icons
-export const guidelinesRecord: Record<string, DoDont[]> = {
+export const guidelinesRecord: Partial<
+  Record<(typeof udirPreferredIcons)[number], DoDont[]>
+> = {
   ArrowDownRight: [
     {
       type: 'do',
@@ -68,6 +66,12 @@ export const guidelinesRecord: Record<string, DoDont[]> = {
     {
       type: 'do',
       description: 'Bruk til å indikere at man kan gå tilbake',
+    },
+  ],
+  ArrowRedo: [
+    {
+      type: 'dont',
+      description: 'Ikke bruk til å indikere at noe kan videresendes',
     },
   ],
   ArrowsUpDown: [
@@ -83,31 +87,47 @@ export const guidelinesRecord: Record<string, DoDont[]> = {
   Bell: [
     {
       type: 'do',
-      description: 'Bruk til å indikere varslinger',
+      description: 'Bruk til å indikere visning av varslinger',
+    },
+    {
+      type: 'dont',
+      description:
+        'Ikke bruk til å indikere en status, bruk heller komponenten Badge',
     },
   ],
   ChevronDown: [
     {
       type: 'do',
-      description: 'Bruk til å indikere at et område er utvidbart',
+      description: 'Bruk til å indikere at et område kan utvides',
+    },
+  ],
+  ChevronDownUp: [
+    {
+      type: 'do',
+      description:
+        'Bruk til å indikere at man kan lukke alle utvidbare felter som er åpne',
     },
   ],
   ChevronRight: [
     {
       type: 'do',
-      description: 'Bruk til å indikere at et område er utvidbart',
+      description: 'Bruk til å indikere at et område kan utvides',
     },
   ],
   ChevronUp: [
     {
       type: 'do',
-      description: 'Bruk til å indikere at et utvidbart område er åpent',
+      description: 'Bruk til å indikere at et utvidbart område kan lukkes',
     },
   ],
   ChevronUpDown: [
     {
       type: 'do',
       description: 'Bruk til å indikere at man kan sortere en kolonne',
+    },
+    {
+      type: 'do',
+      description: 'Bruk til å indikere at man kan åpne alle utvidbare felter',
     },
   ],
   Cog: [
@@ -145,7 +165,7 @@ export const guidelinesRecord: Record<string, DoDont[]> = {
   File: [
     {
       type: 'do',
-      description: 'Bruk til å indikere at en lenke peker til en fil',
+      description: 'Bruk til å indikere en fil',
     },
   ],
   Files: [
@@ -170,6 +190,12 @@ export const guidelinesRecord: Record<string, DoDont[]> = {
       description: 'Ikke bruk til å indikere en fil',
     },
   ],
+  Language: [
+    {
+      type: 'do',
+      description: 'Bruk til å indikere språkinnstillinger',
+    },
+  ],
   Leave: [
     {
       type: 'do',
@@ -191,6 +217,12 @@ export const guidelinesRecord: Record<string, DoDont[]> = {
         'Ikke bruk til å indikere at noe kan flyttes med drag and drop',
     },
   ],
+  MenuHamburger: [
+    {
+      type: 'do',
+      description: 'Bruk til å indikere en nedtrekksmeny',
+    },
+  ],
   NotePencil: [
     {
       type: 'do',
@@ -210,19 +242,39 @@ export const guidelinesRecord: Record<string, DoDont[]> = {
   Plus: [
     {
       type: 'dont',
-      description: 'Ikke bruk til å indikere at et område er utvidbart',
+      description: 'Ikke bruk til å indikere at et område kan utvides',
     },
   ],
   PlusCircle: [
     {
       type: 'dont',
-      description: 'Ikke bruk til å indikere at et område er utvidbart',
+      description: 'Ikke bruk til å indikere at et område kan utvides',
+    },
+  ],
+  PrinterSmall: [
+    {
+      type: 'do',
+      description: 'Bruk til å indikere at man kan printe ut innhold',
+    },
+    {
+      type: 'dont',
+      description: 'Ikke bruk til å indikere at man kan kopiere innhold',
+    },
+  ],
+  Trash: [
+    {
+      type: 'do',
+      description: 'Bruk til å indikere at man kan slette innhold',
     },
   ],
   XMark: [
     {
       type: 'do',
       description: 'Bruk til å indikere at man kan lukke et vindu',
+    },
+    {
+      type: 'do',
+      description: 'Bruk til å indikere at en hamburgermeny er åpen',
     },
   ],
   XMarkOctagon: [

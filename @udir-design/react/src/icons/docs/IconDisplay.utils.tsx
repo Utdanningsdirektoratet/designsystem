@@ -57,9 +57,17 @@ export function categorizeIcons(icons: UdirIcon[]): {
   const categoryMap = new Map<string, UdirIcon[]>();
   for (const icon of icons) {
     const oftenUsed = udirPreferredIcons.includes(
-      icon.name.replace('Fill', '') || icon.name.replace('Filled', ''),
+      (icon.name.replace('Fill', '') ||
+        icon.name.replace('Filled', '')) as (typeof udirPreferredIcons)[number],
     );
-    const guidelines = guidelinesRecord[icon.name];
+    const guidelines =
+      guidelinesRecord[
+        (icon.name.replace('Fill', '') ||
+          icon.name.replace(
+            'Filled',
+            '',
+          )) as (typeof udirPreferredIcons)[number]
+      ];
 
     const extendedIcon = { ...icon, oftenUsed, guidelines };
 
