@@ -52,6 +52,7 @@
     "tslib": "catalog:"
   },
   "devDependencies": {
+    "@hookform/resolvers": "catalog:",
     "@storybook/addon-a11y": "catalog:",
     "@storybook/addon-docs": "catalog:",
     "@storybook/addon-vitest": "catalog:",
@@ -62,6 +63,7 @@
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@types/remark-heading-id": "catalog:",
+    "@u-elements/u-details": "catalog:",
     "@vitejs/plugin-react-swc": "catalog:",
     "@vitest/browser": "catalog:",
     "@vitest/coverage-v8": "catalog:",
@@ -101,7 +103,8 @@
     "vite": "catalog:",
     "vite-plugin-dts": "catalog:",
     "vite-tsconfig-paths": "catalog:",
-    "vitest": "catalog:"
+    "vitest": "catalog:",
+    "zod": "catalog:"
   },
   "peerDependencies": {
     "@types/react": "^18.3.7 || ^19.0.0",

@@ -1,0 +1,107 @@
+.uds-form-navigation {
+  --uds-form-navigation-connector: var(--ds-size-6);
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  gap: var(--uds-form-navigation-connector);
+
+  & button {
+    all: unset;
+    width: fit-content;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--ds-size-2);
+    position: relative;
+
+    > div {
+      position: relative;
+      border: 2px solid var(--ds-color-border-default);
+      width: var(--ds-size-5);
+      height: var(--ds-size-5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--ds-border-radius-full);
+      background: var(--ds-color-surface-default);
+      z-index: 1;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: calc(100% + 3px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: var(--uds-form-navigation-connector);
+        background-color: var(--ds-color-border-default);
+      }
+    }
+  }
+
+  > button:first-of-type {
+    margin-left: 0;
+
+    > div {
+      width: var(--ds-size-6);
+      height: var(--ds-size-6);
+      border-radius: var(--ds-border-radius-sm);
+
+      svg:last-of-type {
+        display: none;
+      }
+
+      &::after {
+        height: calc(
+          var(--uds-form-navigation-connector) - var(--ds-size-1) / 2
+        );
+        top: calc(100% + 4px);
+      }
+    }
+  }
+
+  &[data-state='invalid'] > button:first-of-type > div {
+    background-color: var(--ds-color-danger-surface-tinted);
+    border-color: var(--ds-color-danger-border-default);
+    svg:last-of-type {
+      display: block;
+    }
+    svg:first-of-type {
+      display: none;
+    }
+  }
+
+  &[data-state='completed'] > button:first-of-type > div {
+    background-color: var(--ds-color-accent-surface-tinted);
+    border-color: var(--ds-color-accent-border-default);
+  }
+
+  & button:not(:first-of-type) {
+    margin-left: calc(var(--ds-size-1) / 2);
+
+    > div svg {
+      display: none;
+    }
+
+    &[data-state='active'] > div > svg:first-of-type {
+      display: block;
+    }
+    &[data-state='completed'] > div > svg:nth-of-type(2) {
+      display: block;
+    }
+    &[data-state='invalid'] > div {
+      border-color: var(--ds-color-danger-border-default);
+
+      > svg:last-of-type {
+        display: block;
+        color: var(--ds-color-danger-text-default);
+      }
+    }
+  }
+
+  & button:last-of-type {
+    > div::after {
+      display: none;
+    }
+  }
+}
