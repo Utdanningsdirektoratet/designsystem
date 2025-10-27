@@ -59,7 +59,10 @@ export function categorizeIcons(icons: UdirIcon[]): {
     const oftenUsed = udirPreferredIcons.includes(
       icon.name.replace('Fill', '') || icon.name.replace('Filled', ''),
     );
-    const guidelines = guidelinesRecord[icon.name];
+    const guidelines =
+      guidelinesRecord[
+        icon.name.replace('Fill', '') || icon.name.replace('Filled', '')
+      ];
 
     const extendedIcon = { ...icon, oftenUsed, guidelines };
 
