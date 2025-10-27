@@ -31,7 +31,10 @@ export const Preview: Story = {
 };
 
 export const FormNavigationStory: Story = {
-  args: { title: 'Form navigation', icon: <TasklistIcon aria-hidden /> },
+  args: {
+    title: 'Form navigation',
+    icon: <TasklistIcon aria-hidden />,
+  },
   render(args) {
     const { getItemProps } = useFormNavigation({ value: 0 });
     return (

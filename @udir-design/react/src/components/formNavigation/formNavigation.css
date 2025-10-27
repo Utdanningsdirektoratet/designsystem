@@ -1,5 +1,5 @@
 .uds-form-navigation {
-  --uds-form-navigation-connector: var(--ds-size-4);
+  --uds-form-navigation-connector: var(--ds-size-3);
 
   @media (prefers-reduced-motion: no-preference) {
     interpolate-size: allow-keywords;
@@ -29,18 +29,8 @@
     align-items: center;
     gap: var(--ds-size-2);
     position: relative;
-
-    > div {
-      position: relative;
-      border: 2px solid var(--ds-color-border-default);
-      width: var(--ds-size-5);
-      height: var(--ds-size-5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: var(--ds-border-radius-full);
-      background: var(--ds-color-surface-default);
-      z-index: 1;
+    &:hover {
+      color: var(--ds-color-text-subtle);
     }
   }
 
@@ -48,20 +38,14 @@
     > button:first-of-type {
       margin-left: 0;
 
-      > div {
-        width: var(--ds-size-6);
-        height: var(--ds-size-6);
-        border-radius: var(--ds-border-radius-sm);
-
-        > svg:last-of-type {
-          display: none;
-        }
+      > svg:last-of-type {
+        display: none;
       }
     }
   }
 
   &[open] > u-summary > button {
-    > svg:first-of-type {
+    > svg:nth-last-child(2) {
       display: none;
     }
     > svg:last-of-type {
@@ -70,7 +54,7 @@
   }
 
   &:not([open]) > u-summary > button {
-    > svg:first-of-type {
+    > svg:nth-last-child(2) {
       display: block;
     }
     > svg:last-of-type {
@@ -82,34 +66,27 @@
     display: none;
   }
 
-  &[data-state='invalid'] > u-summary > button:first-of-type > div {
-    background-color: var(--ds-color-danger-surface-tinted);
-    border-color: var(--ds-color-danger-border-default);
-    svg:last-of-type {
-      display: block;
-    }
-    svg:first-of-type {
-      display: none;
-    }
+  &[data-state='invalid'] > u-summary > button {
+    color: var(--ds-color-danger-text-subtle);
   }
 
-  &[data-state='completed'] > u-summary > button:first-of-type > div {
-    background-color: var(--ds-color-accent-surface-tinted);
-    border-color: var(--ds-color-accent-border-default);
+  &[data-state='completed'] > u-summary > button {
+    color: var(--ds-color-success-text-subtle);
   }
 
   > button {
-    margin-left: calc(var(--ds-size-1) / 2);
-
     > div {
+      position: relative;
       &::before {
         content: '';
         position: absolute;
-        bottom: calc(100% + 3px);
+        bottom: calc(
+          100% + (var(--uds-form-navigation-connector) / 2) - var(--ds-size-1)
+        );
         left: 50%;
         transform: translateX(-50%);
-        width: 2px;
-        height: var(--uds-form-navigation-connector);
+        width: 1px;
+        height: var(--ds-size-4);
         background-color: var(--ds-color-border-default);
       }
       > svg {
@@ -117,25 +94,33 @@
       }
     }
 
-    &[data-state='active'] > div > svg:first-of-type {
+    &[data-state='idle'] > div > svg:first-of-type {
       display: block;
     }
-    &[data-state='completed'] > div > svg:nth-of-type(2) {
+    &[data-state='active'] > div > svg:nth-of-type(2) {
       display: block;
     }
-    &[data-state='invalid'] > div {
-      border-color: var(--ds-color-danger-border-default);
-
+    &[data-state='completed'] > div > svg:nth-of-type(3) {
+      display: block;
+      color: var(--ds-color-success-text-subtle);
+    }
+    &[data-state='invalid'] > div > svg:last-of-type {
+      display: block;
+      color: var(--ds-color-danger-text-subtle);
+    }
+    &:hover > div {
+      > svg:first-of-type,
+      > svg:nth-of-type(3),
       > svg:last-of-type {
+        display: none;
+      }
+      > svg:nth-of-type(2) {
         display: block;
-        color: var(--ds-color-danger-text-default);
       }
     }
+
+    @composes ds-focus from '@digdir/designsystemet-css/base.css';
   }
 
-  /* & > button:first-of-type {
-    > div::before {
-      display: none;
-    }
-  } */
+  @composes ds-focus from '@digdir/designsystemet-css/base.css';
 }

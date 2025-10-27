@@ -183,6 +183,7 @@ export const FormDemo = ({ page = 1, ...props }) => {
           icon={<TasklistIcon aria-hidden />}
           state="idle"
           className={classes.navigation}
+          open={true}
         >
           <FormNavigationItem
             {...nav.getItemProps({

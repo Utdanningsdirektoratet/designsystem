@@ -1,8 +1,9 @@
 import { HTMLAttributes, forwardRef } from 'react';
 import {
-  CheckmarkIcon,
+  CheckmarkCircleIcon,
   CircleFillIcon,
-  XMarkIcon,
+  CircleIcon,
+  XMarkOctagonIcon,
 } from '@udir-design/icons/dist';
 
 export type FormNavigationState = 'idle' | 'active' | 'completed' | 'invalid';
@@ -18,9 +19,10 @@ export const FormNavigationItem = forwardRef<
   return (
     <button data-state={state} ref={ref} {...rest}>
       <div>
+        <CircleIcon aria-hidden />
         <CircleFillIcon aria-hidden />
-        <CheckmarkIcon aria-hidden />
-        <XMarkIcon aria-hidden />
+        <CheckmarkCircleIcon aria-hidden />
+        <XMarkOctagonIcon aria-hidden />
       </div>
       {children}
     </button>

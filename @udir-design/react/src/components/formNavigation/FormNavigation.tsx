@@ -1,11 +1,7 @@
 import cl from 'clsx/lite';
 import { HTMLAttributes, forwardRef } from 'react';
 import './formNavigation.css';
-import {
-  ChevronDownIcon,
-  ChevronUpIcon,
-  XMarkIcon,
-} from '@udir-design/icons/dist';
+import { ChevronDownIcon, ChevronUpIcon } from '@udir-design/icons/dist';
 
 export type FormNavigationProps = HTMLAttributes<HTMLDetailsElement> & {
   /**
@@ -16,8 +12,14 @@ export type FormNavigationProps = HTMLAttributes<HTMLDetailsElement> & {
    * The icon to be displayed alongside the title.
    */
   icon: React.ReactNode;
-
+  /**
+   * The current state of the FormNavigation component.
+   */
   state: 'idle' | 'completed' | 'invalid';
+  /**
+   * Whether the FormNavigation is open or closed
+   */
+  open?: boolean;
 };
 
 export const FormNavigation = forwardRef<
@@ -36,10 +38,7 @@ export const FormNavigation = forwardRef<
     >
       <u-summary>
         <button>
-          <div>
-            {icon}
-            <XMarkIcon aria-hidden />
-          </div>
+          {icon}
           {title}
           <ChevronDownIcon aria-hidden />
           <ChevronUpIcon aria-hidden />
