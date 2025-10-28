@@ -1,7 +1,7 @@
 import { create } from 'storybook/theming';
 
 export default create({
-  brandImage: '/img/udir-logo.png',
+  brandImage: './img/udir-logo.png',
   fontBase: '"Inter", sans-serif',
   // Colors
   base: 'light',
