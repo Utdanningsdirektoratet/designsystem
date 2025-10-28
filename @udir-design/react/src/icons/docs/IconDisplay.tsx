@@ -29,7 +29,7 @@ export const IconDisplay = () => {
   return (
     <div className={styles.root}>
       <div className={styles.filterSection}>
-        <form>
+        <div>
           <Search>
             <Search.Input
               aria-label="Søk"
@@ -40,7 +40,7 @@ export const IconDisplay = () => {
             />
             <Search.Clear />
           </Search>
-        </form>
+        </div>
         <ToggleGroup
           defaultValue="stroke"
           onChange={(value) => {

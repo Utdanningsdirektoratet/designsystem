@@ -1,5 +1,4 @@
 import type { Dispatch, SetStateAction } from 'react';
-import { useEffect, useState } from 'react';
 import { Card } from 'src/components/card/Card';
 import { Dialog } from 'src/components/dialog/Dialog';
 import type { UdirIcon } from './IconDisplay.utils';
@@ -14,10 +13,21 @@ export function IconPageSidebar({
   icon?: UdirIcon | null;
   setSelectedIcon: Dispatch<SetStateAction<UdirIcon | null>>;
 }) {
-  const size = useWindowSize();
-
-  if (icon && size.width < 992) {
+  if (!icon) {
     return (
+      <Card className={styles.card}>
+        <PackageInformation />
+      </Card>
+    );
+  }
+
+  return (
+    <>
+      {/* Hidden on smaller screens */}
+      <Card className={`${styles.card} ${styles.icon}`}>
+        <IconInformation icon={icon} />
+      </Card>
+      {/* Hidden on bigger screens */}
       <Dialog
         onClose={() => setSelectedIcon(null)}
         aria-label={`${icon.name} ikon`}
@@ -27,38 +37,6 @@ export function IconPageSidebar({
       >
         <IconInformation icon={icon} />
       </Dialog>
-    );
-  }
-
-  return (
-    <Card className={styles.root}>
-      {icon ? <IconInformation icon={icon} /> : <PackageInformation />}
-    </Card>
+    </>
   );
-}
-
-function useWindowSize() {
-  const [windowSize, setWindowSize] = useState<{
-    width: number;
-    height: number;
-  }>({
-    width: typeof window !== 'undefined' ? window.innerWidth : 900,
-    height: typeof window !== 'undefined' ? window.innerHeight : 800,
-  });
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-
-    window.addEventListener('resize', handleResize);
-    handleResize();
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return windowSize;
 }
