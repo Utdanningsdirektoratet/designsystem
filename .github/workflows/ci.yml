@@ -162,7 +162,7 @@ jobs:
         run: pnpm nx build:storybook
 
       - shell: bash
-        run: echo "DESTINATION_PATH=${BRANCH/release\//}" >> $GITHUB_ENV
+        run: echo "DESTINATION_PATH=${${{ github.ref_name }}/release\//}" >> $GITHUB_ENV
       - uses: azure/cli@9f7ce6f37c31b777ec6c6b6d1dfe7db79f497956 # v2.2.0
         name: Empty target directory
         env:
