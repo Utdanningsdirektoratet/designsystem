@@ -42,6 +42,7 @@
       "dependsOn": ["build"]
     },
     "test": {
+      "cache": true,
       "dependsOn": ["build"]
     }
   },
