@@ -170,6 +170,7 @@ jobs:
         env:
           AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.DOCS_STORAGE_CONNECTION_STRING}}
         with:
+          azcliversion: 2.78.0
           inlineScript: |
             az storage blob delete-batch --account-name stdesignsystemdocs -s '$web' --pattern "$DESTINATION_PATH/*"
       - uses: azure/cli@9f7ce6f37c31b777ec6c6b6d1dfe7db79f497956 # v2.2.0
@@ -177,5 +178,6 @@ jobs:
         env:
           AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.DOCS_STORAGE_CONNECTION_STRING}}
         with:
+          azcliversion: 2.78.0
           inlineScript: |
             az storage blob upload-batch --account-name stdesignsystemdocs -s @udir-design/react/storybook-static -d '$web' --destination-path $DESTINATION_PATH
