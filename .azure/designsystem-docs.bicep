@@ -33,6 +33,15 @@ resource frontDoorEndpoint 'Microsoft.Cdn/profiles/afdEndpoints@2025-06-01' = {
 }
 
 @onlyIfNotExists()
+resource frontDoorCustomDomain 'Microsoft.Cdn/profiles/customDomains@2025-06-01' = {
+  parent: frontDoorProfile
+  name: 'design-udir-no'
+  properties: {
+    hostName: 'design.udir.no'
+  }
+}
+
+@onlyIfNotExists()
 resource frontDoorOriginGroup 'Microsoft.Cdn/profiles/originGroups@2025-06-01' = {
   parent: frontDoorProfile
   name: 'default'
@@ -70,6 +79,9 @@ resource frontDoorRoute 'Microsoft.Cdn/profiles/afdEndpoints/routes@2025-06-01' 
   name: 'default'
   dependsOn: [frontDoorOrigin]
   properties: {
+    customDomains: [
+      { id: frontDoorCustomDomain.id }
+    ]
     originGroup: {
       id: frontDoorOriginGroup.id
     }
