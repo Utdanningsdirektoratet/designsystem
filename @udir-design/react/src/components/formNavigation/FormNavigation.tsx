@@ -1,7 +1,7 @@
 import cl from 'clsx/lite';
 import { HTMLAttributes, forwardRef } from 'react';
 import './formNavigation.css';
-import { ChevronDownIcon, ChevronUpIcon } from '@udir-design/icons/dist';
+import { ChevronDownIcon, ChevronUpIcon } from '@udir-design/icons';
 
 export type FormNavigationProps = HTMLAttributes<HTMLDetailsElement> & {
   /**

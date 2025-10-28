@@ -68,7 +68,7 @@ const FormSchema = z.object({
 
 export type FormValues = z.infer<typeof FormSchema>;
 
-export const FormDemo = ({ page = 1, ...props }) => {
+export const FormDemo2 = ({ page = 1, ...props }) => {
   const methods = useForm<FormValues>({
     resolver: zodResolver(FormSchema),
     mode: 'onChange',

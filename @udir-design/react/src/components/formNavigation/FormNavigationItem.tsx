@@ -4,7 +4,7 @@ import {
   CircleFillIcon,
   CircleIcon,
   XMarkOctagonIcon,
-} from '@udir-design/icons/dist';
+} from '@udir-design/icons';
 
 export type FormNavigationState = 'idle' | 'active' | 'completed' | 'invalid';
 

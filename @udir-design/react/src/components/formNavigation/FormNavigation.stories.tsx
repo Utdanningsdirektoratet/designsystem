@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { TasklistIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import { useFormNavigation } from '../../utilities/hooks/useFormNavigation/useFormNavigation';
-import { FormDemo } from './FormNavigationExample';
+import { FormDemo2 } from './FormNavigationExample';
 import { FormNavigation, FormNavigationItem } from '.';
 
 const meta: Meta<typeof FormNavigation> = {
@@ -55,6 +55,6 @@ export const FormNavigationStory: Story = {
 export const FormNavigationExample: Story = {
   args: { title: 'Form navigation', icon: <TasklistIcon aria-hidden /> },
   render() {
-    return <FormDemo data-size={'sm'} data-color-scheme={'auto'} />;
+    return <FormDemo2 data-size={'sm'} data-color-scheme={'auto'} />;
   },
 };
