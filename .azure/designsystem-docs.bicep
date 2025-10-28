@@ -87,13 +87,18 @@ resource frontDoorRoute 'Microsoft.Cdn/profiles/afdEndpoints/routes@2025-06-01' 
   }
 }
 
-type redirectRuleType = { name: string, from: string?, to: string? }
+type redirectRuleType = {
+  name: string
+  from: string?
+  to: string?
+  type: ('PermanentRedirect' | 'TemporaryRedirect')?
+}
 var redirectRuleDefs redirectRuleType[] = [
   { name: 'main' }
   { name: 'alpha' }
   { name: 'beta' }
   { name: 'latest' }
-  { name: 'root', from: '/', to: '/beta/' }
+  { name: 'root', from: '/', to: '/beta/', type: 'TemporaryRedirect' }
 ]
 
 @onlyIfNotExists()
@@ -117,7 +122,7 @@ resource redirectRules 'Microsoft.Cdn/profiles/ruleSets/rules@2025-06-01' = [
         {
           name: 'UrlRedirect'
           parameters: {
-            redirectType: 'PermanentRedirect'
+            redirectType: rule.?type ?? 'PermanentRedirect'
             destinationProtocol: 'Https'
             typeName: 'DeliveryRuleUrlRedirectActionParameters'
             customPath: rule.?to ?? '/${rule.name}/'
