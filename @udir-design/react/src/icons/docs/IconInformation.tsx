@@ -55,7 +55,7 @@ import ${icon.name}Svg from
             Bruksområder
           </Heading>
           {icon.guidelines?.map((item) => (
-            <div className={styles.dodont}>
+            <div className={styles.dodont} key={item.description}>
               {item.type === 'do' ? (
                 <Icons.CheckmarkCircleFillIcon className={styles.doIcon} />
               ) : (
