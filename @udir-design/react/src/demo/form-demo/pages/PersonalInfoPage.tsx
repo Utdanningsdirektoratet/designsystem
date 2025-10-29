@@ -45,6 +45,7 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
         {...register('firstName', {
           required: 'Fyll ut fornavn',
         })}
+        autoComplete="given-name"
         error={errors.firstName?.message}
       />
       <Field>
@@ -54,6 +55,7 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
           {...register('lastName', {
             required: 'Fyll ut etternavn',
           })}
+          autoComplete="family-name"
           aria-invalid={!!errors.lastName}
         />
         {errors.lastName && (
