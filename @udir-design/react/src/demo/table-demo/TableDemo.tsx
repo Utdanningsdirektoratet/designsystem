@@ -7,11 +7,11 @@ import { Checkbox } from 'src/components/checkbox/Checkbox';
 import { Chip } from 'src/components/chip/Chip';
 import { Divider } from 'src/components/divider/Divider';
 import { ErrorSummary } from 'src/components/errorSummary/ErrorSummary';
+import { Fieldset } from 'src/components/fieldset/Fieldset';
 import { Search } from 'src/components/search/Search';
 import { Table } from 'src/components/table';
 import { Tag } from 'src/components/tag/Tag';
 import { Heading } from 'src/components/typography/heading/Heading';
-import { Label } from 'src/components/typography/label/Label';
 import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
 import { DemoProps } from '../demoProps';
 import classes from './TableDemo.module.css';
@@ -122,8 +122,8 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
         </Heading>
         <Divider />
         <div className={classes.tableHeader}>
-          <div>
-            <Label>Filtrer på utdanningsnivå</Label>
+          <Fieldset>
+            <Fieldset.Legend>Filtrer på utdanningsnivå</Fieldset.Legend>
             <div className={classes.tableFilter}>
               {levels.map((level) => (
                 <Chip.Checkbox
@@ -136,7 +136,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
                 </Chip.Checkbox>
               ))}
             </div>
-          </div>
+          </Fieldset>
           <Search className={classes.tableSearch}>
             <Search.Input
               name="search"
