@@ -3,7 +3,6 @@ import type { HTMLAttributes } from 'react';
 import { useMemo, useState } from 'react';
 import { Alert } from '../../../components/alert';
 import { Avatar } from '../../../components/avatar/Avatar';
-import { Badge } from '../../../components/badge/Badge';
 import { Checkbox } from '../../../components/checkbox/Checkbox';
 import { Chip } from '../../../components/chip/Chip';
 import { Divider } from '../../../components/divider/Divider';
@@ -202,19 +201,11 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
                   </Table.Cell>
                   <Table.Cell>
                     <div className={classes.student}>
-                      {/* TODO: Fjerne badge og heller bruke i header */}
-                      <Badge.Position placement="top-right" overlap="circle">
-                        {student.new && (
-                          <Badge data-color="accent" data-size="md" />
-                        )}
-                        <Avatar
-                          aria-label={
-                            student.new
-                              ? `Ny elev ${student.name}`
-                              : student.name
-                          }
-                        />
-                      </Badge.Position>
+                      <Avatar
+                        aria-label={
+                          student.new ? `Ny elev ${student.name}` : student.name
+                        }
+                      />
                       {student.name}
                     </div>
                   </Table.Cell>
