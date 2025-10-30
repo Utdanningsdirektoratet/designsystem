@@ -1,10 +1,19 @@
 import {
-  Details,
+  Details as DetailsRoot,
   DetailsContent,
   DetailsSummary,
 } from '@digdir/designsystemet-react';
 
-// For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
+type Details = typeof DetailsRoot & {
+  Summary: typeof DetailsSummary;
+  Content: typeof DetailsContent;
+};
+
+const Details: Details = Object.assign(DetailsRoot, {
+  Summary: DetailsSummary,
+  Content: DetailsContent,
+});
+
 Details.displayName = 'Details';
 
 export { Details, DetailsContent, DetailsSummary };

@@ -16,4 +16,5 @@ const Button = DigdirButton as ForwardRefExoticComponent<
   ButtonProps & RefAttributes<ComponentRef<typeof DigdirButton>>
 >;
 
-export { Button, ButtonProps };
+export { Button };
+export type { ButtonProps };

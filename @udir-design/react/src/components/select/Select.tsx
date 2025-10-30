@@ -1,10 +1,19 @@
 import {
-  Select,
+  Select as SelectRoot,
   SelectOptgroup,
   SelectOption,
 } from '@digdir/designsystemet-react';
 
-// For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
+type Select = typeof SelectRoot & {
+  Option: typeof SelectOption;
+  Optgroup: typeof SelectOptgroup;
+};
+
+const Select: Select = Object.assign(SelectRoot, {
+  Option: SelectOption,
+  Optgroup: SelectOptgroup,
+});
+
 Select.displayName = 'Select';
 
 export { Select, SelectOptgroup, SelectOption };

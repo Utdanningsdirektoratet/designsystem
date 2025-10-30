@@ -6,7 +6,7 @@ import { HeaderUserButton } from './HeaderUserButton';
 import { HeaderMenu } from './headerMenu';
 import { HeaderNavigation } from './headerNavigation';
 
-type HeaderProps = typeof HeaderRoot & {
+type Header = typeof HeaderRoot & {
   UserButton: typeof HeaderUserButton;
   MenuButton: typeof HeaderMenuButton;
   ThemeMenuButton: typeof HeaderThemeMenuButton;
@@ -15,7 +15,7 @@ type HeaderProps = typeof HeaderRoot & {
   Search: typeof HeaderSearch;
 };
 
-const Header: HeaderProps = Object.assign(HeaderRoot, {
+const Header: Header = Object.assign(HeaderRoot, {
   UserButton: HeaderUserButton,
   MenuButton: HeaderMenuButton,
   ThemeMenuButton: HeaderThemeMenuButton,
@@ -24,6 +24,7 @@ const Header: HeaderProps = Object.assign(HeaderRoot, {
   Search: HeaderSearch,
 });
 
+Header.displayName = 'Header';
 Header.UserButton.displayName = 'Header.UserButton';
 Header.MenuButton.displayName = 'Header.MenuButton';
 Header.ThemeMenuButton.displayName = 'Header.ThemeMenuButton';
