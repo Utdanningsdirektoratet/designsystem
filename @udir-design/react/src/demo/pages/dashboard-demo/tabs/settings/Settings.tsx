@@ -1,10 +1,10 @@
 import cl from 'clsx/lite';
-import { Card } from 'src/components/card/Card';
-import { Fieldset } from 'src/components/fieldset/Fieldset';
-import { Radio } from 'src/components/radio/Radio';
-import { Switch } from 'src/components/switch/Switch';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { ValidationMessage } from 'src/components/typography/validationMessage/ValidationMessage';
+import { Card } from '../../../../../components/card/Card';
+import { Fieldset } from '../../../../../components/fieldset/Fieldset';
+import { Radio } from '../../../../../components/radio/Radio';
+import { Switch } from '../../../../../components/switch/Switch';
+import { Heading } from '../../../../../components/typography/heading/Heading';
+import { ValidationMessage } from '../../../../../components/typography/validationMessage/ValidationMessage';
 import { TabStructure } from '../../components/tab-structure/TabStructure';
 import classes from './Settings.module.css';
 
@@ -37,7 +37,7 @@ export const Settings = ({
               description="Bruk automatisk oppdateringer for å holde systemet oppdatert."
               label="Automatiske oppdateringer"
               value="auto-updates"
-              checked
+              defaultChecked
             />
           </Card>
           <Card className={classes.card} variant="tinted" data-color="support1">

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button } from 'src/components/button/Button';
-import { Link } from 'src/components/link/Link';
-import { Textfield } from 'src/components/textfield/Textfield';
-import { Tooltip } from 'src/components/tooltip/Tooltip';
-import { Heading } from 'src/components/typography/heading/Heading';
+import { Button } from '../../../../components/button/Button';
+import { Link } from '../../../../components/link/Link';
+import { Textfield } from '../../../../components/textfield/Textfield';
+import { Tooltip } from '../../../../components/tooltip/Tooltip';
+import { Heading } from '../../../../components/typography/heading/Heading';
 import styles from './Login.module.scss';
 
 export function Login() {

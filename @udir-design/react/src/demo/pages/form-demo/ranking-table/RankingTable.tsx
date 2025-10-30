@@ -1,9 +1,9 @@
 import { useFormContext } from 'react-hook-form';
-import { Fieldset } from 'src/components/fieldset/Fieldset';
-import { Radio } from 'src/components/radio/Radio';
-import { Table } from 'src/components/table';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { ValidationMessage } from 'src/components/typography/validationMessage/ValidationMessage';
+import { Fieldset } from '../../../../components/fieldset/Fieldset';
+import { Radio } from '../../../../components/radio/Radio';
+import { Table } from '../../../../components/table';
+import { Heading } from '../../../../components/typography/heading/Heading';
+import { ValidationMessage } from '../../../../components/typography/validationMessage/ValidationMessage';
 import {
   type FormValues,
   type PageProps,

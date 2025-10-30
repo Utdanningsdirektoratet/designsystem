@@ -1,14 +1,14 @@
 import { Controller, useFormContext } from 'react-hook-form';
-import { Field } from 'src/components/field/Field';
-import { Fieldset } from 'src/components/fieldset/Fieldset';
-import { Input } from 'src/components/input/Input';
-import { Radio } from 'src/components/radio/Radio';
-import { Select } from 'src/components/select/Select';
-import { Suggestion } from 'src/components/suggestion/Suggestion';
-import { Textfield } from 'src/components/textfield/Textfield';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Label } from 'src/components/typography/label/Label';
-import { ValidationMessage } from 'src/components/typography/validationMessage/ValidationMessage';
+import { Field } from '../../../../components/field/Field';
+import { Fieldset } from '../../../../components/fieldset/Fieldset';
+import { Input } from '../../../../components/input/Input';
+import { Radio } from '../../../../components/radio/Radio';
+import { Select } from '../../../../components/select/Select';
+import { Suggestion } from '../../../../components/suggestion/Suggestion';
+import { Textfield } from '../../../../components/textfield/Textfield';
+import { Heading } from '../../../../components/typography/heading/Heading';
+import { Label } from '../../../../components/typography/label/Label';
+import { ValidationMessage } from '../../../../components/typography/validationMessage/ValidationMessage';
 import {
   type FormValues,
   type PageProps,

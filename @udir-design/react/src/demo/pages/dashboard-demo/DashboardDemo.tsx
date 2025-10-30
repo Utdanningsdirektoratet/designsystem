@@ -1,8 +1,8 @@
 import { Size } from '@digdir/designsystemet-react';
 import cl from 'clsx/lite';
 import { HTMLAttributes } from 'react';
-import { Tabs } from 'src/components/tabs/Tabs';
-import { Heading } from 'src/components/typography/heading/Heading';
+import { Tabs } from '../../../components/tabs/Tabs';
+import { Heading } from '../../../components/typography/heading/Heading';
 import classes from './DashboardDemo.module.css';
 import { Overview } from './tabs/overview/Overview';
 import { Settings } from './tabs/settings/Settings';

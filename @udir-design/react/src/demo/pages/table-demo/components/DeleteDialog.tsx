@@ -1,10 +1,10 @@
 import cl from 'clsx/lite';
 import { useRef } from 'react';
 import { TrashFillIcon } from '@udir-design/icons';
-import { Button } from 'src/components/button/Button';
-import { Dialog } from 'src/components/dialog/Dialog';
-import { Tooltip } from 'src/components/tooltip/Tooltip';
-import { Heading } from 'src/components/typography/heading/Heading';
+import { Button } from '../../../../components/button/Button';
+import { Dialog } from '../../../../components/dialog/Dialog';
+import { Tooltip } from '../../../../components/tooltip/Tooltip';
+import { Heading } from '../../../../components/typography/heading/Heading';
 import classes from '../TableDemo.module.css';
 import { Student } from '../data/students';
 

@@ -9,7 +9,6 @@
 }
 
 .card {
-  container-type: inline-size;
   background-color: var(--ds-color-neutral-background-tinted);
   border-radius: var(--ds-border-radius-md);
   padding: var(--ds-size-3);
@@ -72,14 +71,6 @@
   /* --table-demo-export-button-width: 160px; */
   --table-demo-footer--one-line: ;
   --table-demo-footer--wrapped: initial;
-
-  @container (min-width: 28.5rem) {
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    gap: 0;
-    --table-demo-footer--one-line: initial;
-    --table-demo-footer--wrapped: ;
-  }
 }
 
 .tableSearch {
