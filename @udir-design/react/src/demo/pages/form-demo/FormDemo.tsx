@@ -1,12 +1,12 @@
 import type { HTMLAttributes } from 'react';
 import { useRef, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import { Alert } from 'src/components/alert';
-import { Button } from 'src/components/button/Button';
-import { Dialog } from 'src/components/dialog/Dialog';
-import { ErrorSummary } from 'src/components/errorSummary/ErrorSummary';
-import type { FieldsetProps } from 'src/components/fieldset/Fieldset';
-import { Heading } from 'src/components/typography/heading/Heading';
+import { Alert } from '../../../components/alert';
+import { Button } from '../../../components/button/Button';
+import { Dialog } from '../../../components/dialog/Dialog';
+import { ErrorSummary } from '../../../components/errorSummary/ErrorSummary';
+import type { FieldsetProps } from '../../../components/fieldset/Fieldset';
+import { Heading } from '../../../components/typography/heading/Heading';
 import type { DemoProps } from '../demoProps';
 import classes from './FormDemo.module.css';
 import PaginationControls from './PaginationControls';

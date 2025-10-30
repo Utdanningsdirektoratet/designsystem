@@ -1,5 +1,4 @@
 .container {
-  container-type: inline-size;
   max-width: 40rem;
   margin: auto;
   display: flex;
@@ -10,7 +9,7 @@
     padding: var(--ds-size-6);
   }
 
-  :global(.ds-alert) {
+  .ds-alert :global {
     --dsc-alert-padding-inline-end: var(--ds-size-3);
   }
 }
@@ -24,12 +23,16 @@
   padding: var(--ds-size-3);
 }
 
+.ds-alert :global {
+  --dsc-alert-padding-inline-end: var(--ds-size-3);
+}
+
 @container (min-width: 23.5rem) {
   .form {
     padding: var(--ds-size-6);
   }
 
-  .container :global(.ds-alert) {
+  .ds-alert :global {
     --dsc-alert-padding-inline-end: var(--ds-size-6);
   }
 }

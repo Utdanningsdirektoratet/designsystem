@@ -1,9 +1,9 @@
 import { useFormContext } from 'react-hook-form';
-import { Checkbox } from 'src/components/checkbox/Checkbox';
-import { Fieldset } from 'src/components/fieldset/Fieldset';
-import { Textfield } from 'src/components/textfield/Textfield';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { ValidationMessage } from 'src/components/typography/validationMessage/ValidationMessage';
+import { Checkbox } from '../../../../components/checkbox/Checkbox';
+import { Fieldset } from '../../../../components/fieldset/Fieldset';
+import { Textfield } from '../../../../components/textfield/Textfield';
+import { Heading } from '../../../../components/typography/heading/Heading';
+import { ValidationMessage } from '../../../../components/typography/validationMessage/ValidationMessage';
 import {
   type FormValues,
   type PageProps,

@@ -1,6 +1,6 @@
-import { Card } from 'src/components/card/Card';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Card } from '../../../../components/card/Card';
+import { Heading } from '../../../../components/typography/heading/Heading';
+import { Paragraph } from '../../../../components/typography/paragraph/Paragraph';
 import styles from './FrequentQuestions.module.scss';
 
 export const FrequentQuestions = () => {

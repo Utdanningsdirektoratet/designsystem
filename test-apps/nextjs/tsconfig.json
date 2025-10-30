@@ -10,6 +10,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
+    "paths": {
+      "@udir-design/demos/*": ["../../@udir-design/react/src/demo/pages/*"]
+    },
     "plugins": [
       {
         "name": "next"

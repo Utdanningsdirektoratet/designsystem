@@ -1,9 +1,9 @@
 import * as Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { useRef, useState } from 'react';
-import { Card } from 'src/components/card/Card';
-import { Table } from 'src/components/table';
-import { Heading } from 'src/components/typography/heading/Heading';
+import { Card } from '../../../../../components/card/Card';
+import { Table } from '../../../../../components/table';
+import { Heading } from '../../../../../components/typography/heading/Heading';
 import { DataControls } from '../../components/data-controls/DataControls';
 import { TabStructure } from '../../components/tab-structure/TabStructure';
 import classes from './Tests.module.css';
