@@ -13,7 +13,11 @@ import {
   DropdownTriggerContext,
   type DropdownTriggerContextProps,
 } from '@digdir/designsystemet-react';
-import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
+import type {
+  ComponentRef,
+  ForwardRefExoticComponent,
+  RefAttributes,
+} from 'react';
 import './dropdown.css';
 
 type DropdownProps = Omit<DigdirDropdownProps, 'data-color'>;
@@ -29,18 +33,20 @@ const Dropdown = DigdirDropdown as ForwardRefExoticComponent<
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 Dropdown.displayName = 'Dropdown';
 
+export type {
+  DropdownButtonProps,
+  DropdownHeadingProps,
+  DropdownItemProps,
+  DropdownListProps,
+  DropdownProps,
+  DropdownTriggerContextProps,
+};
 export {
   Dropdown,
   DropdownButton,
-  DropdownButtonProps,
   DropdownHeading,
-  DropdownHeadingProps,
   DropdownItem,
-  DropdownItemProps,
   DropdownList,
-  DropdownListProps,
-  DropdownProps,
   DropdownTrigger,
   DropdownTriggerContext,
-  DropdownTriggerContextProps,
 };

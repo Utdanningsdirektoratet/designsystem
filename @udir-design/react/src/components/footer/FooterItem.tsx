@@ -1,5 +1,6 @@
 import { forwardRef } from 'react';
-import { Link, LinkProps } from '../link/Link';
+import type { LinkProps } from '../link/Link';
+import { Link } from '../link/Link';
 
 export type FooterItemProps = LinkProps;
 

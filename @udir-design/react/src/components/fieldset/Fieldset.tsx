@@ -6,7 +6,11 @@ import {
   type FieldsetLegendProps,
   type FieldsetProps as DigdirFieldsetProps,
 } from '@digdir/designsystemet-react';
-import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
+import type {
+  ComponentRef,
+  ForwardRefExoticComponent,
+  RefAttributes,
+} from 'react';
 
 type FieldsetProps = Omit<DigdirFieldsetProps, 'data-color'>;
 const Fieldset = DigdirFieldset as ForwardRefExoticComponent<
@@ -17,11 +21,5 @@ const Fieldset = DigdirFieldset as ForwardRefExoticComponent<
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 Fieldset.displayName = 'Fieldset';
 
-export {
-  Fieldset,
-  FieldsetDescription,
-  FieldsetDescriptionProps,
-  FieldsetLegend,
-  FieldsetLegendProps,
-  FieldsetProps,
-};
+export type { FieldsetDescriptionProps, FieldsetLegendProps, FieldsetProps };
+export { Fieldset, FieldsetDescription, FieldsetLegend };

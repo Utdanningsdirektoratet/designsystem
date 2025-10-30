@@ -10,11 +10,5 @@ import {
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 Details.displayName = 'Details';
 
-export {
-  Details,
-  DetailsContent,
-  DetailsContentProps,
-  DetailsProps,
-  DetailsSummary,
-  DetailsSummaryProps,
-};
+export type { DetailsContentProps, DetailsProps, DetailsSummaryProps };
+export { Details, DetailsContent, DetailsSummary };

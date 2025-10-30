@@ -1,6 +1,6 @@
 import './style.css';
 import './docs/customTheme.scss';
-import { Preview } from '@storybook/react-vite';
+import type { Preview } from '@storybook/react-vite';
 import { INITIAL_VIEWPORTS, type ViewportMap } from 'storybook/viewport';
 import { docsParameters } from './docs/parameters';
 import { customStylesDecorator } from './utils/customStylesDecorator';

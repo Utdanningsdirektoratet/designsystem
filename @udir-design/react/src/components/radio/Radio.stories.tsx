@@ -1,10 +1,8 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import { expect, fn, userEvent, waitFor, within } from 'storybook/test';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
-import {
-  UseRadioGroupProps,
-  useRadioGroup,
-} from 'src/utilities/hooks/useRadioGroup/useRadioGroup';
+import type { UseRadioGroupProps } from 'src/utilities/hooks/useRadioGroup/useRadioGroup';
+import { useRadioGroup } from 'src/utilities/hooks/useRadioGroup/useRadioGroup';
 import { Button } from '../button/Button';
 import { Card } from '../card/Card';
 import { Divider } from '../divider/Divider';

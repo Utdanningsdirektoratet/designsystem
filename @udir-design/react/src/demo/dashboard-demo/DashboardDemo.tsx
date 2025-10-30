@@ -1,6 +1,6 @@
-import { Size } from '@digdir/designsystemet-react';
+import type { Size } from '@digdir/designsystemet-react';
 import cl from 'clsx/lite';
-import { HTMLAttributes } from 'react';
+import type { HTMLAttributes } from 'react';
 import { Tabs } from 'src/components/tabs/Tabs';
 import { Heading } from 'src/components/typography/heading/Heading';
 import classes from './DashboardDemo.module.css';

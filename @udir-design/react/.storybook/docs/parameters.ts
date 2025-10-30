@@ -1,4 +1,4 @@
-import { Parameters } from '@storybook/react-vite';
+import type { Parameters } from '@storybook/react-vite';
 import { DocsContainer } from '.storybook/docs/components/DocsContainer';
 import customTheme from '.storybook/docs/customTheme';
 import { componentOverrides } from './ComponentOverrides';

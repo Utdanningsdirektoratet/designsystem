@@ -9,13 +9,13 @@
 
 import type { A11yParameters } from '@storybook/addon-a11y';
 import type { DocsTypes } from '@storybook/addon-docs';
-import { StoryContext } from '@storybook/react-vite';
+import type { StoryContext } from '@storybook/react-vite';
 import type { CSSProperties, ReactNode } from 'react';
 import type {
   Addon_OptionsParameter,
   Parameters,
 } from 'storybook/internal/types';
-import { ThemeVars } from 'storybook/theming';
+import type { ThemeVars } from 'storybook/theming';
 
 export type ChromaticViewport = {
   width?: number | `${string}px`;

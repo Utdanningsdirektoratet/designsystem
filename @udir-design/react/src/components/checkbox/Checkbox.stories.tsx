@@ -1,10 +1,8 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import { expect, fn, userEvent, waitFor, within } from 'storybook/test';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
-import {
-  UseCheckboxGroupProps,
-  useCheckboxGroup,
-} from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
+import type { UseCheckboxGroupProps } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
+import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
 import { Button } from '../button/Button';
 import { Card } from '../card/Card';
 import { Chip } from '../chip/Chip';

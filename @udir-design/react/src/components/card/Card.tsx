@@ -8,4 +8,5 @@ import {
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 Card.displayName = 'Card';
 
-export { Card, CardBlock, CardBlockProps, CardProps };
+export type { CardBlockProps, CardProps };
+export { Card, CardBlock };

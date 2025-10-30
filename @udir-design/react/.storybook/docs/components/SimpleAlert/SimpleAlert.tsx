@@ -1,4 +1,4 @@
-import { SeverityColors } from '@digdir/designsystemet-react/colors';
+import type { SeverityColors } from '@digdir/designsystemet-react/colors';
 import { Alert } from 'src/components/alert';
 import styles from './SimpleAlert.module.scss';
 

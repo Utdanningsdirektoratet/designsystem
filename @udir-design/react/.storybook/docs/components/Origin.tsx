@@ -1,4 +1,4 @@
-import { ComponentOrigin } from '.storybook/types/parameters';
+import type { ComponentOrigin } from '.storybook/types/parameters';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 

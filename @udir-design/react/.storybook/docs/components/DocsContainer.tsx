@@ -2,8 +2,9 @@ import {
   DocsContainer as OriginalDocsContainer,
   type DocsContainerProps,
 } from '@storybook/addon-docs/blocks';
-import { ComponentType, useState } from 'react';
-import {
+import type { ComponentType } from 'react';
+import { useState } from 'react';
+import type {
   ComponentOrigin,
   ComponentOriginParameters,
 } from '.storybook/types/parameters';

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AkselIcon } from '@udir-design/icons/metadata';
+import type { AkselIcon } from '@udir-design/icons/metadata';
 import { Search } from 'src/components/search/Search';
 import { ToggleGroup } from 'src/components/toggleGroup/ToggleGroup';
 import { CategorizedIcons } from './CategorizedIcons';

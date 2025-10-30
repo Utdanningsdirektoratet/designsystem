@@ -3,7 +3,8 @@ import { expect, within } from 'storybook/test';
 import { Avatar } from '../avatar/Avatar';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
-import { Tag, TagProps } from './Tag';
+import type { TagProps } from './Tag';
+import { Tag } from './Tag';
 
 const meta: Meta<typeof Tag> = {
   component: Tag,

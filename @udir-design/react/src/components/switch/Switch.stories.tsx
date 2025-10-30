@@ -6,7 +6,7 @@ import { Card } from '../card/Card';
 import { Checkbox } from '../checkbox/Checkbox';
 import { Fieldset } from '../fieldset/Fieldset';
 import { Heading } from '../typography/heading/Heading';
-import { SwitchProps } from './Switch';
+import type { SwitchProps } from './Switch';
 import { Switch } from './Switch';
 
 const meta: Meta<typeof Switch> = {

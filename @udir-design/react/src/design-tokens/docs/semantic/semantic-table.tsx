@@ -1,4 +1,4 @@
-import { Size } from '@digdir/designsystemet-react';
+import type { Size } from '@digdir/designsystemet-react';
 import { groupBy } from 'ramda';
 import { type HTMLAttributes, useState } from 'react';
 import { Field } from 'src/components/field/Field';
