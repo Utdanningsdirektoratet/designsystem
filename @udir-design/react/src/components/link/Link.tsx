@@ -11,4 +11,5 @@ const Link = DigdirLink as ForwardRefExoticComponent<
   LinkProps & RefAttributes<ComponentRef<typeof DigdirLink>>
 >;
 
-export { Link, LinkProps };
+export { Link };
+export type { LinkProps };

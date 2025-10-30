@@ -1,11 +1,8 @@
 import {
   Search as DigdirSearch,
   SearchButton,
-  type SearchButtonProps,
   SearchClear,
-  type SearchClearProps,
   SearchInput,
-  type SearchInputProps,
   type SearchProps as DigdirSearchProps,
 } from '@digdir/designsystemet-react';
 import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
@@ -20,13 +17,10 @@ const Search = DigdirSearch as ForwardRefExoticComponent<
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 Search.displayName = 'Search';
 
-export {
-  Search,
-  SearchButton,
+export { Search, SearchButton, SearchClear, SearchInput };
+export type { SearchProps };
+export type {
   SearchButtonProps,
-  SearchClear,
   SearchClearProps,
-  SearchInput,
   SearchInputProps,
-  SearchProps,
-};
+} from '@digdir/designsystemet-react';

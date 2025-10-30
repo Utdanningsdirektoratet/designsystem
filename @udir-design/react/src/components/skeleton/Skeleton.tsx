@@ -10,4 +10,5 @@ const Skeleton: React.ForwardRefExoticComponent<
   SkeletonProps & RefAttributes<ComponentRef<typeof DigdirSkeleton>>
 > = DigdirSkeleton;
 
-export { Skeleton, SkeletonProps };
+export { Skeleton };
+export type { SkeletonProps };
