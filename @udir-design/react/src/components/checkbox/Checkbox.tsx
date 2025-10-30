@@ -10,4 +10,5 @@ const Checkbox = DigdirCheckbox as ForwardRefExoticComponent<
   CheckboxProps & RefAttributes<ComponentRef<typeof DigdirCheckbox>>
 >;
 
-export { Checkbox, CheckboxProps };
+export { Checkbox };
+export type { CheckboxProps };

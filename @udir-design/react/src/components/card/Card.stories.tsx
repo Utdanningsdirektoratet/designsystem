@@ -41,12 +41,14 @@ type Story = StoryObj<typeof Card>;
 export const Preview: Story = {
   args: {
     'data-color': 'neutral',
-    children: [
-      <Heading>Tittel</Heading>,
-      <Paragraph>Innhold</Paragraph>,
-      <Paragraph data-size="sm">Fotnote</Paragraph>,
-    ],
   },
+  render: (args) => (
+    <Card {...args}>
+      <Heading>Tittel</Heading>
+      <Paragraph>Innhold</Paragraph>
+      <Paragraph data-size="sm">Fotnote</Paragraph>
+    </Card>
+  ),
 };
 
 const VariantsMap: Record<

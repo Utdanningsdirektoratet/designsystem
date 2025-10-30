@@ -10,4 +10,5 @@ const Radio = DigdirRadio as ForwardRefExoticComponent<
   RadioProps & RefAttributes<ComponentRef<typeof DigdirRadio>>
 >;
 
-export { Radio, RadioProps };
+export { Radio };
+export type { RadioProps };

@@ -10,4 +10,5 @@ const SkipLink: React.ForwardRefExoticComponent<
   SkipLinkProps & RefAttributes<ComponentRef<typeof DigdirSkipLink>>
 > = DigdirSkipLink;
 
-export { SkipLink, SkipLinkProps };
+export { SkipLink };
+export { SkipLinkProps };

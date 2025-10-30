@@ -1,3 +1,4 @@
-import { Tag, type TagProps } from '@digdir/designsystemet-react';
+import { Tag } from '@digdir/designsystemet-react';
 
-export { Tag, TagProps };
+export { Tag };
+export type { TagProps } from '@digdir/designsystemet-react';

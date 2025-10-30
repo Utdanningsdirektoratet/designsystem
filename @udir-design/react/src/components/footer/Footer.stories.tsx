@@ -21,8 +21,8 @@ export default meta;
 type Story = StoryObj<typeof Footer>;
 
 export const Preview: Story = {
-  render: () => (
-    <Footer>
+  render: (args) => (
+    <Footer {...args}>
       <Footer.List>
         <Footer.Item href="#">Om tjenesten</Footer.Item>
         <Footer.Item href="#">Kontakt oss</Footer.Item>

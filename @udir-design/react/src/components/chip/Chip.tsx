@@ -1,26 +1,26 @@
 import {
-  Chip,
+  Chip as ChipRoot,
   ChipButton,
-  type ChipButtonProps,
   ChipCheckbox,
-  type ChipCheckboxProps,
   ChipRadio,
-  type ChipRadioProps,
   ChipRemovable,
-  type ChipRemovableProps,
 } from '@digdir/designsystemet-react';
 
-// For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
+type Chip = typeof ChipRoot;
+
+const Chip: Chip = Object.assign(ChipRoot, {
+  Button: ChipButton,
+  Checkbox: ChipCheckbox,
+  Radio: ChipRadio,
+  Removable: ChipRemovable,
+});
+
 Chip.Button.displayName = 'Chip.Button';
 
-export {
-  Chip,
-  ChipButton,
+export { Chip, ChipButton, ChipCheckbox, ChipRadio, ChipRemovable };
+export type {
   ChipButtonProps,
-  ChipCheckbox,
   ChipCheckboxProps,
-  ChipRadio,
   ChipRadioProps,
-  ChipRemovable,
   ChipRemovableProps,
-};
+} from '@digdir/designsystemet-react';
