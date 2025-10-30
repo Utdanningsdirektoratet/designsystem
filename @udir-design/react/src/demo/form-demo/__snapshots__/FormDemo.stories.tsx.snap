@@ -525,6 +525,7 @@ exports[`Form Story 1`] = `
       <div>
         <input
           id="firstName"
+          autocomplete="given-name"
           type="text"
           name="firstName"
         >
@@ -539,6 +540,7 @@ exports[`Form Story 1`] = `
       </label>
       <input
         id="lastName"
+        autocomplete="family-name"
         aria-invalid="false"
         type="text"
         name="lastName"

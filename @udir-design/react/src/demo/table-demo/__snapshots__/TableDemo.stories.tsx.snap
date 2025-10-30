@@ -14,10 +14,10 @@ exports[`Table Story 1`] = `
     </h2>
     <hr aria-hidden="true">
     <div>
-      <div>
-        <label data-weight="medium">
+      <fieldset>
+        <legend data-weight="medium">
           Filtrer på utdanningsnivå
-        </label>
+        </legend>
         <div>
           <label>
             <input
@@ -44,7 +44,7 @@ exports[`Table Story 1`] = `
             Videregående
           </label>
         </div>
-      </div>
+      </fieldset>
       <div>
         <input
           placeholder="Søk"
