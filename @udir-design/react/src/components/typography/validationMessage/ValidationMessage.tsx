@@ -1,6 +1,4 @@
-import {
-  ValidationMessage,
-  type ValidationMessageProps,
-} from '@digdir/designsystemet-react';
+import { ValidationMessage } from '@digdir/designsystemet-react';
 
-export { ValidationMessage, ValidationMessageProps };
+export { ValidationMessage };
+export type { ValidationMessageProps } from '@digdir/designsystemet-react';

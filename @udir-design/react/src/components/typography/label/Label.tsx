@@ -10,4 +10,5 @@ const Label = DigdirLabel as ForwardRefExoticComponent<
   LabelProps & RefAttributes<ComponentRef<typeof DigdirLabel>>
 >;
 
-export { Label, LabelProps };
+export { Label };
+export type { LabelProps };

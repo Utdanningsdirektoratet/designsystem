@@ -1,25 +1,18 @@
 import {
   Tabs,
   TabsList,
-  type TabsListProps,
   TabsPanel,
-  type TabsPanelProps,
-  type TabsProps,
   TabsTab,
-  type TabsTabProps,
 } from '@digdir/designsystemet-react';
 import './tabs.css';
 
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 Tabs.displayName = 'Tabs';
 
-export {
-  Tabs,
-  TabsList,
+export { Tabs, TabsList, TabsPanel, TabsTab };
+export type {
   TabsListProps,
-  TabsPanel,
   TabsPanelProps,
   TabsProps,
-  TabsTab,
   TabsTabProps,
-};
+} from '@digdir/designsystemet-react';

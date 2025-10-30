@@ -3,4 +3,5 @@ import {
   useCheckboxGroup,
 } from '@digdir/designsystemet-react';
 
-export { UseCheckboxGroupProps, useCheckboxGroup };
+export { useCheckboxGroup };
+export type { UseCheckboxGroupProps };

@@ -1,3 +1,4 @@
-import { Textarea, type TextareaProps } from '@digdir/designsystemet-react';
+import { Textarea } from '@digdir/designsystemet-react';
 
-export { Textarea, TextareaProps };
+export { Textarea };
+export type { TextareaProps } from '@digdir/designsystemet-react';

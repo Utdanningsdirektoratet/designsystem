@@ -3,4 +3,5 @@ import {
   useRadioGroup,
 } from '@digdir/designsystemet-react';
 
-export { UseRadioGroupProps, useRadioGroup };
+export { useRadioGroup };
+export type { UseRadioGroupProps };

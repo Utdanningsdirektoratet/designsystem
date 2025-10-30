@@ -28,12 +28,5 @@ const List = Object.assign(DigdirList, {
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 List.Item.displayName = 'List.Item';
 
-export {
-  List,
-  ListItem,
-  ListItemProps,
-  ListOrdered,
-  ListOrderedProps,
-  ListUnordered,
-  ListUnorderedProps,
-};
+export { List, ListItem, ListOrdered, ListUnordered };
+export type { ListItemProps, ListOrderedProps, ListUnorderedProps };

@@ -1,3 +1,4 @@
-import { Tooltip, type TooltipProps } from '@digdir/designsystemet-react';
+import { Tooltip } from '@digdir/designsystemet-react';
 
-export { Tooltip, TooltipProps };
+export { Tooltip };
+export type { TooltipProps } from '@digdir/designsystemet-react';

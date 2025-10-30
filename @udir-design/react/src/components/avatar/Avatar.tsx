@@ -9,4 +9,5 @@ const Avatar = DigdirAvatar as ForwardRefExoticComponent<
   AvatarProps & RefAttributes<ComponentRef<typeof DigdirAvatar>>
 >;
 
-export { Avatar, AvatarProps };
+export { Avatar };
+export type { AvatarProps };

@@ -22,4 +22,5 @@ const Badge = DigdirBadge as ForwardRefExoticComponent<
 > &
   Pick<typeof DigdirBadge, 'Position'>;
 
-export { Badge, BadgeProps };
+export { Badge };
+export type { BadgeProps };

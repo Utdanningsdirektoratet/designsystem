@@ -10,4 +10,5 @@ const Input = DigdirInput as ForwardRefExoticComponent<
   InputProps & RefAttributes<ComponentRef<typeof DigdirInput>>
 >;
 
-export { Input, InputProps };
+export { Input };
+export type { InputProps };
