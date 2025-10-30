@@ -1,9 +1,7 @@
 import { PencilWritingIcon } from '@udir-design/icons';
 import { Button } from '@udir-design/react/alpha';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.scss';
 
-export function App() {
+export function Home() {
   return (
     <div>
       <h1>Test app for SPA setup with @udir-design/react</h1>
@@ -15,4 +13,4 @@ export function App() {
   );
 }
 
-export default App;
+export default Home;
