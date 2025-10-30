@@ -10,4 +10,5 @@ const Switch = DigdirSwitch as ForwardRefExoticComponent<
   SwitchProps & RefAttributes<ComponentRef<typeof DigdirSwitch>>
 >;
 
-export { Switch, SwitchProps };
+export { Switch };
+export type { SwitchProps };

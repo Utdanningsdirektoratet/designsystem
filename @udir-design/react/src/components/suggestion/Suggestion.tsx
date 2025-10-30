@@ -5,13 +5,7 @@ import {
   EXPERIMENTAL_SuggestionInput as SuggestionInput,
   EXPERIMENTAL_SuggestionList as SuggestionList,
   EXPERIMENTAL_SuggestionOption as SuggestionOption,
-  type SuggestionClearProps,
-  type SuggestionEmptyProps,
-  type SuggestionInputProps,
-  type SuggestionItem,
-  type SuggestionListProps,
   type SuggestionMultipleProps as DigdirSuggestionMultipleProps,
-  type SuggestionOptionProps,
   type SuggestionSingleProps as DigdirSuggestionSingleProps,
 } from '@digdir/designsystemet-react';
 import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
@@ -32,26 +26,22 @@ const Suggestion = DigdirSuggestion as ForwardRefExoticComponent<
   >;
 
 Suggestion.displayName = 'Suggestion';
-SuggestionClear.displayName = 'Suggestion.Clear';
-SuggestionEmpty.displayName = 'Suggestion.Empty';
-SuggestionInput.displayName = 'Suggestion.Input';
-SuggestionList.displayName = 'Suggestion.List';
-SuggestionOption.displayName = 'Suggestion.Option';
 
 export {
   Suggestion,
   SuggestionClear,
-  type SuggestionClearProps,
   SuggestionEmpty,
-  type SuggestionEmptyProps,
   SuggestionInput,
-  type SuggestionInputProps,
-  type SuggestionItem,
   SuggestionList,
-  type SuggestionListProps,
-  type SuggestionMultipleProps,
   SuggestionOption,
-  type SuggestionOptionProps,
-  type SuggestionProps,
-  type SuggestionSingleProps,
 };
+export type { SuggestionMultipleProps, SuggestionSingleProps };
+export type {
+  SuggestionClearProps,
+  SuggestionEmptyProps,
+  SuggestionInputProps,
+  SuggestionItem,
+  SuggestionListProps,
+  SuggestionOptionProps,
+  SuggestionProps,
+} from '@digdir/designsystemet-react';

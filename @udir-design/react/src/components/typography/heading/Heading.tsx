@@ -1,11 +1,9 @@
 import {
   Heading as DigdirHeading,
-  type HeadingProps as DigdirHeadingProps,
+  HeadingProps,
 } from '@digdir/designsystemet-react';
 import { forwardRef } from 'react';
 import './heading.css';
-
-export type HeadingProps = DigdirHeadingProps;
 
 export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
   function Heading({ children, id, ...rest }, ref) {
@@ -21,3 +19,5 @@ export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
     );
   },
 );
+
+export type { HeadingProps };

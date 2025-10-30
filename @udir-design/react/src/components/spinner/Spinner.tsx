@@ -1,3 +1,4 @@
-import { Spinner, type SpinnerProps } from '@digdir/designsystemet-react';
+import { Spinner } from '@digdir/designsystemet-react';
 
-export { Spinner, SpinnerProps };
+export { Spinner };
+export type { SpinnerProps } from '@digdir/designsystemet-react';

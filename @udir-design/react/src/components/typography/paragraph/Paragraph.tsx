@@ -1,3 +1,4 @@
-import { Paragraph, type ParagraphProps } from '@digdir/designsystemet-react';
+import { Paragraph } from '@digdir/designsystemet-react';
 
-export { Paragraph, ParagraphProps };
+export { Paragraph };
+export type { ParagraphProps } from '@digdir/designsystemet-react';

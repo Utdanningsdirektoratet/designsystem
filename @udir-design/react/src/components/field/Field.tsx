@@ -1,11 +1,8 @@
 import {
   Field as DigdirField,
   FieldAffix,
-  type FieldAffixProps,
   FieldAffixes,
-  type FieldAffixesProps,
   FieldCounter,
-  type FieldCounterProps,
   FieldDescription,
   type FieldDescriptionProps,
   type FieldProps as DigdirFieldProps,
@@ -22,15 +19,11 @@ const Field = DigdirField as ForwardRefExoticComponent<
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 Field.displayName = 'Field';
 
-export {
-  Field,
-  FieldAffix,
+export { Field, FieldAffix, FieldAffixes, FieldCounter, FieldDescription };
+export type {
   FieldAffixProps,
-  FieldAffixes,
   FieldAffixesProps,
-  FieldCounter,
   FieldCounterProps,
-  FieldDescription,
   FieldDescriptionProps,
   FieldProps,
-};
+} from '@digdir/designsystemet-react';

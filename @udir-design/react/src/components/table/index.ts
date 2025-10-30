@@ -1,17 +1,11 @@
 import {
   Table as DigdirTable,
   TableBody,
-  type TableBodyProps,
   TableCell,
-  type TableCellProps,
   TableFoot,
-  type TableFootProps,
   TableHead,
-  type TableHeadProps,
   TableHeaderCell,
-  type TableHeaderCellProps,
   TableRow,
-  type TableRowProps,
 } from '@digdir/designsystemet-react';
 import { Table as TableRoot, type TableProps } from './Table';
 
@@ -29,16 +23,18 @@ Table.displayName = 'Table';
 export {
   Table,
   TableBody,
-  TableBodyProps,
   TableCell,
-  TableCellProps,
   TableFoot,
-  TableFootProps,
   TableHead,
-  TableHeadProps,
   TableHeaderCell,
+  TableRow,
+};
+export type {
+  TableBodyProps,
+  TableCellProps,
+  TableFootProps,
+  TableHeadProps,
   TableHeaderCellProps,
   TableProps,
-  TableRow,
   TableRowProps,
-};
+} from '@digdir/designsystemet-react';
