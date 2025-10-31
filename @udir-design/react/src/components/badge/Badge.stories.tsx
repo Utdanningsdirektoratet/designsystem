@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { CSSProperties } from 'react';
 import {
-  ChatIcon,
+  Chat2Icon,
   EnvelopeClosedFillIcon,
+  EnvelopeClosedIcon,
   FloppydiskFillIcon,
-  InboxIcon,
-  PencilIcon,
   VideoIcon,
 } from '@udir-design/icons';
 import { Avatar } from '../avatar/Avatar';
@@ -151,12 +150,10 @@ export const InTabs: Story = {
     <Tabs defaultValue="value1">
       <Tabs.List>
         <Tabs.Tab value="value1">
-          <InboxIcon aria-hidden />
-          Innboks
+          Nye saker
           <Badge {...args} count={64} maxCount={10} />
         </Tabs.Tab>
         <Tabs.Tab value="value2">
-          <PencilIcon aria-hidden />
           Pågående saker
           <Badge {...args} count={2} />
         </Tabs.Tab>
@@ -178,13 +175,13 @@ export const InButton: Story = {
       <Button icon variant="tertiary">
         <Badge.Position>
           <Badge {...args} count={1000} maxCount={99} />
-          <InboxIcon title="Innboks" />
+          <EnvelopeClosedIcon title="Innboks" />
         </Badge.Position>
       </Button>
       <Button icon variant="tertiary">
         <Badge.Position>
           <Badge {...args} count={10} />
-          <ChatIcon title="Meldinger" />
+          <Chat2Icon title="Meldinger" />
         </Badge.Position>
       </Button>
       <Button icon variant="tertiary">

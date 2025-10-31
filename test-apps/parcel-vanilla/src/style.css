@@ -11,3 +11,26 @@ body {
   font-family: 'Inter', sans-serif;
   font-feature-settings: 'cv05' 1; /* Enable lowercase l with tail */
 }
+
+.idea-box {
+  background: var(--ds-color-support2-surface-tinted);
+  padding: var(--ds-size-4);
+  border: 1px solid var(--ds-color-support2-border-subtle);
+}
+.idea-box::before {
+  display: inline-block;
+  content: '';
+  width: 1em;
+  height: 1em;
+  margin-inline-end: var(--ds-size-2);
+  background: currentColor;
+  mask: center / 100% no-repeat
+    url('npm:@udir-design/icons/dist/svg/LightBulb.svg');
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+
+#dynamic-content {
+  margin-block-start: var(--ds-size-6);
+}

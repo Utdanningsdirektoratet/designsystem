@@ -10,18 +10,34 @@
       href="https://altinncdn.no/fonts/inter/v4/inter.css"
     />
     <link rel="stylesheet" href="style.css" />
-    <script type="module" src="index.js"></script>
   </head>
   <body>
-    <div class="ds-card uds-prose" data-color="accent" data-variant="tinted">
-      <h1 class="ds-heading" data-size="md">Parcel Vanilla App</h1>
-      <p>Edit <code>src/index.html</code> to get started!</p>
+    <div
+      id="app"
+      class="ds-card uds-prose"
+      data-color="accent"
+      data-variant="tinted"
+    >
+      <h1 class="ds-heading" data-size="md">Vanilla html/css/js med Parcel</h1>
+      <p>
+        Eksempel på bruk av Udirs designsystem-biblioteker uten React, med
+        Parcel som bundler.
+      </p>
       <button type="button" class="ds-button">
         <svg>
           <use href="npm:@udir-design/icons/dist/svg/PencilWriting.svg#root" />
         </svg>
-        Click me
+        Knapp med SVG-ikon
       </button>
+      <a class="ds-link" href="/underside">
+        <svg>
+          <use
+            href="npm:@udir-design/icons/dist/svg/ArrowRight.svg#root"
+          /></svg
+        ><span>Lenke med SVG-ikon</span>
+      </a>
+      <div class="idea-box">Du kan også bruke ikon i CSS</div>
     </div>
+    <script type="module" src="index.js"></script>
   </body>
 </html>
