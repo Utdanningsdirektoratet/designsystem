@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { AkselIcon } from '@udir-design/icons/metadata';
+import type { AkselIcon } from '@udir-design/icons/metadata';
 import { Card } from 'src/components/card/Card';
 import { Dialog } from 'src/components/dialog/Dialog';
 import { IconInformation } from './IconInformation';

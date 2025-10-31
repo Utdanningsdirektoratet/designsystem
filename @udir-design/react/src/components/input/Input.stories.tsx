@@ -1,4 +1,4 @@
-import { Size } from '@digdir/designsystemet-react';
+import type { Size } from '@digdir/designsystemet-react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useEffect, useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';

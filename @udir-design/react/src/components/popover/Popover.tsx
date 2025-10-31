@@ -15,11 +15,5 @@ const Popover: typeof DigdirPopover = Object.assign(DigdirPopover, {
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 Popover.displayName = 'Popover';
 
-export {
-  Popover,
-  PopoverProps,
-  PopoverTrigger,
-  PopoverTriggerContext,
-  PopoverTriggerContextProps,
-  PopoverTriggerProps,
-};
+export type { PopoverProps, PopoverTriggerContextProps, PopoverTriggerProps };
+export { Popover, PopoverTrigger, PopoverTriggerContext };

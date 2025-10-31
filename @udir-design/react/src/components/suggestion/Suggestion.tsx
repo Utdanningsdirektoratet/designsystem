@@ -14,7 +14,11 @@ import {
   type SuggestionOptionProps,
   type SuggestionSingleProps as DigdirSuggestionSingleProps,
 } from '@digdir/designsystemet-react';
-import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
+import type {
+  ComponentRef,
+  ForwardRefExoticComponent,
+  RefAttributes,
+} from 'react';
 
 type SuggestionSingleProps = Omit<DigdirSuggestionSingleProps, 'data-color'>;
 type SuggestionMultipleProps = Omit<

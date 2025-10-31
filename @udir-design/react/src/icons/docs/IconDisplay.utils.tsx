@@ -1,5 +1,6 @@
 import Fuse from 'fuse.js';
-import meta, { AkselIcon } from '@udir-design/icons/metadata';
+import type { AkselIcon } from '@udir-design/icons/metadata';
+import meta from '@udir-design/icons/metadata';
 import { Translations } from './Translations';
 
 type UdirIcon = AkselIcon & { category_no: string };

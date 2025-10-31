@@ -1,5 +1,6 @@
 import cl from 'clsx/lite';
-import { HTMLAttributes, useMemo, useState } from 'react';
+import type { HTMLAttributes } from 'react';
+import { useMemo, useState } from 'react';
 import { Alert } from 'src/components/alert';
 import { Avatar } from 'src/components/avatar/Avatar';
 import { Badge } from 'src/components/badge/Badge';
@@ -13,12 +14,13 @@ import { Table } from 'src/components/table';
 import { Tag } from 'src/components/tag/Tag';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
-import { DemoProps } from '../demoProps';
+import type { DemoProps } from '../demoProps';
 import classes from './TableDemo.module.css';
 import { DeleteDialog } from './components/DeleteDialog';
 import { ExportDialog } from './components/ExportDialog';
 import PaginationControls from './components/PaginationControls';
-import { STUDENTS, Student } from './data/students';
+import type { Student } from './data/students';
+import { STUDENTS } from './data/students';
 import { useFilterData } from './utilities/useFilterData';
 import useSortableData from './utilities/useSortableData';
 

@@ -4,7 +4,11 @@ import {
   type ToggleGroupItemProps,
   type ToggleGroupProps as DigdirToggleGroupProps,
 } from '@digdir/designsystemet-react';
-import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
+import type {
+  ComponentRef,
+  ForwardRefExoticComponent,
+  RefAttributes,
+} from 'react';
 import './togglegroup.css';
 
 type ToggleGroupProps = Omit<DigdirToggleGroupProps, 'data-color'>;
@@ -16,4 +20,5 @@ const ToggleGroup = DigdirToggleGroup as ForwardRefExoticComponent<
 
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 ToggleGroup.displayName = 'ToggleGroup';
-export { ToggleGroup, ToggleGroupItem, ToggleGroupItemProps, ToggleGroupProps };
+export type { ToggleGroupItemProps, ToggleGroupProps };
+export { ToggleGroup, ToggleGroupItem };

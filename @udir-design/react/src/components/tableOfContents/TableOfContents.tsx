@@ -1,7 +1,7 @@
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
 import { ArrowDownRightIcon } from '@udir-design/icons';
-import { CardProps as DigdirCardProps } from '../card/Card';
+import type { CardProps as DigdirCardProps } from '../card/Card';
 import { Card } from '../card/Card';
 import { Details } from '../details/Details';
 import { Link } from '../link/Link';

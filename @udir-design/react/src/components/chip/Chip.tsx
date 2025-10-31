@@ -13,14 +13,10 @@ import {
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 Chip.Button.displayName = 'Chip.Button';
 
-export {
-  Chip,
-  ChipButton,
+export type {
   ChipButtonProps,
-  ChipCheckbox,
   ChipCheckboxProps,
-  ChipRadio,
   ChipRadioProps,
-  ChipRemovable,
   ChipRemovableProps,
 };
+export { Chip, ChipButton, ChipCheckbox, ChipRadio, ChipRemovable };

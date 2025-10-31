@@ -3,4 +3,4 @@
  * Only stable components should be exported here.
  */
 
-export * from './components/stable';
+export type * from './components/stable';

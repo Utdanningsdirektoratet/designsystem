@@ -3,4 +3,5 @@ import {
   usePagination,
 } from '@digdir/designsystemet-react';
 
-export { UsePaginationProps, usePagination };
+export type { UsePaginationProps };
+export { usePagination };

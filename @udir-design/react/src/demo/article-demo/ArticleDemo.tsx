@@ -1,5 +1,6 @@
 import cl from 'clsx';
-import { HTMLAttributes, useRef } from 'react';
+import type { HTMLAttributes } from 'react';
+import { useRef } from 'react';
 import { PrinterSmallIcon } from '@udir-design/icons';
 import { Alert } from 'src/components/alert';
 import { Breadcrumbs } from 'src/components/breadcrumbs/Breadcrumbs';
@@ -15,7 +16,7 @@ import { TableOfContents } from 'src/components/tableOfContents/TableOfContents'
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import { useTableOfContents } from 'src/utilities/hooks/useTableOfContents/useTableOfContents';
-import { DemoProps } from '../demoProps';
+import type { DemoProps } from '../demoProps';
 import classes from './ArticleDemo.module.css';
 import { ContentSection } from './content-section/ContentSection';
 import { changes } from './strings/changes';

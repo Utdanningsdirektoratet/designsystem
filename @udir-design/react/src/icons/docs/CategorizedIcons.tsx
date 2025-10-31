@@ -1,5 +1,5 @@
 import * as Icons from '@udir-design/icons';
-import { AkselIcon } from '@udir-design/icons/metadata';
+import type { AkselIcon } from '@udir-design/icons/metadata';
 import { Button } from 'src/components/button/Button';
 import { Card } from 'src/components/card/Card';
 import { Link } from 'src/components/link/Link';

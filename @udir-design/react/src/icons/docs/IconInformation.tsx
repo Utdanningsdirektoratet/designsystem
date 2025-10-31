@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import * as Icons from '@udir-design/icons';
-import { AkselIcon } from '@udir-design/icons/metadata';
+import type { AkselIcon } from '@udir-design/icons/metadata';
 import { Tag } from 'src/components/tag/Tag';
 import { ToggleGroup } from 'src/components/toggleGroup/ToggleGroup';
 import { Heading } from 'src/components/typography/heading/Heading';

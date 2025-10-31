@@ -19,7 +19,8 @@ import { List } from '../list/List';
 import { Tooltip } from '../tooltip/Tooltip';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
-import { Tabs, TabsProps } from './Tabs';
+import type { TabsProps } from './Tabs';
+import { Tabs } from './Tabs';
 
 const meta: Meta<typeof Tabs> = {
   component: Tabs,
