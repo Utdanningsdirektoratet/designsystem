@@ -549,6 +549,16 @@ const responsiveLinks = ['Navlinker', 'Overskrift 1', 'Overskrift 2'].map(
   }),
 );
 
+export const WithTag: Story = {
+  render(args) {
+    return (
+      <Header {...args}>
+        <Header.Tag data-color="accent">Dev</Header.Tag>
+      </Header>
+    );
+  },
+};
+
 export const Responsive: Story = {
   render(args) {
     return (
