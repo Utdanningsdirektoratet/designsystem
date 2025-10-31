@@ -266,9 +266,9 @@ exports[`Form Page 2 1`] = `
     <ul>
       <li>
         <button
-          aria-disabled="false"
           data-variant="tertiary"
           type="button"
+          aria-hidden="false"
         >
           <span>
             Forrige
@@ -305,9 +305,9 @@ exports[`Form Page 2 1`] = `
       </li>
       <li>
         <button
-          aria-disabled="false"
           data-variant="tertiary"
           type="button"
+          aria-hidden="false"
         >
           <span>
             Neste
@@ -447,9 +447,9 @@ exports[`Form Page 3 1`] = `
     <ul>
       <li>
         <button
-          aria-disabled="false"
           data-variant="tertiary"
           type="button"
+          aria-hidden="false"
         >
           <span>
             Forrige
@@ -486,9 +486,9 @@ exports[`Form Page 3 1`] = `
       </li>
       <li>
         <button
-          aria-disabled="true"
           data-variant="tertiary"
           type="button"
+          aria-hidden="true"
         >
           <span>
             Neste
@@ -874,9 +874,9 @@ exports[`Form Story 1`] = `
     <ul>
       <li>
         <button
-          aria-disabled="true"
           data-variant="tertiary"
           type="button"
+          aria-hidden="true"
         >
           <span>
             Forrige
@@ -913,9 +913,9 @@ exports[`Form Story 1`] = `
       </li>
       <li>
         <button
-          aria-disabled="false"
           data-variant="tertiary"
           type="button"
+          aria-hidden="false"
         >
           <span>
             Neste
