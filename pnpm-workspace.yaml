@@ -19,6 +19,7 @@ catalog:
   '@nx/azure-cache': ^4.0.0
   '@nx/eslint': 21.4.0
   '@nx/eslint-plugin': 21.4.0
+  '@radix-ui/react-slot': ^1.2.3
   '@storybook/addon-a11y': ^9.1.10
   '@storybook/addon-docs': ^9.1.10
   '@storybook/addon-vitest': ^9.1.10
@@ -130,7 +131,7 @@ packageExtensions:
   '@navikt/aksel-icons':
     peerDependencies:
       '@types/react': ^18.3.11 || ^19.0.0'
-      react: '^18.3.1 || ^19.0.0'
+      react: ^18.3.1 || ^19.0.0
     peerDependenciesMeta:
       '@types/react':
         optional: true
