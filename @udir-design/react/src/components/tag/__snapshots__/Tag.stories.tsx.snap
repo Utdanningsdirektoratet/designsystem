@@ -64,6 +64,56 @@ exports[`Colors 1`] = `
 </span>
 `;
 
+exports[`Icon 1`] = `
+<span style="padding-inline-start: var(--ds-size-1);">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-hidden="true"
+    style="margin-inline-end: var(--ds-size-1);"
+  >
+    <path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M19 4.25h-5.475l-.026-.041c-.281-.422-.78-.709-1.499-.709s-1.218.287-1.499.709l-.026.041H5a.75.75 0 0 0-.75.75v14c0 .414.336.75.75.75h14a.75.75 0 0 0 .75-.75V5a.75.75 0 0 0-.75-.75m-13.25 14V5.75h12.5v12.5zm4-9.125a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m4.5 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M8.25 15a.75.75 0 0 1 .75-.75h6a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
+  Teksten er KI-generert
+</span>
+<span
+  data-color="support1"
+  style="padding-inline-start: var(--ds-size-1);"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-hidden="true"
+    style="margin-inline-end: var(--ds-size-1);"
+  >
+    <path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M11.997 2.25A3.747 3.747 0 0 0 8.75 7.864a3.292 3.292 0 0 0-.376 6.218l4.486 1.848a2.245 2.245 0 0 1-.857 4.32A2.25 2.25 0 0 1 9.75 18a.75.75 0 0 0-1.5 0 3.75 3.75 0 0 0 3.753 3.75 3.747 3.747 0 0 0 3.247-5.614 3.293 3.293 0 0 0 .376-6.218L11.14 8.07a2.245 2.245 0 0 1 .857-4.32A2.25 2.25 0 0 1 14.25 6a.75.75 0 0 0 1.5 0 3.75 3.75 0 0 0-3.753-3.75m1.2 12.196.057.018.511.184a1.793 1.793 0 0 0 1.29-3.344l-4.251-1.75-.058-.018-.51-.184a1.793 1.793 0 0 0-1.29 3.344z"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
+  Privatskoleloven
+</span>
+`;
+
 exports[`Preview 1`] = `
 <span data-color="success">
   Ferdig
