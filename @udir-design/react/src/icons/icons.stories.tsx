@@ -4,7 +4,7 @@ import * as Icons from '@udir-design/icons';
 import type { AirplaneIcon } from '@udir-design/icons';
 
 export default {
-  title: 'Ikoner og symboler/Ikoner',
+  title: 'iconsandsymbols/Ikoner',
   parameters: {
     componentOrigin: {
       originator: 'nav',
