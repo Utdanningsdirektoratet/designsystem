@@ -1,0 +1,36 @@
+import { Unstyled } from '@storybook/addon-docs/blocks';
+import { SpacingGuidelines } from './SpacingGuidelines';
+import image from '../../public/img/size-component.png';
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="design-tokens/Sizing og spacing" />
+
+# Sizing og spacing
+
+Vi bruker størrelsesvariabler (design tokens) for å definere spacing (mellomrom) og sizing (bredder og høyder) på en konsistent måte. Verdien til størrelsesvariabler settes av `data-size`-attributtet.
+
+> 1rem tilsvarer 16px i vår standardkonfigurasjon (`data-size="medium"`).
+
+For bruk av størrelsesvariabler i kode, se [størrelser i kode hos Digdir](https://designsystemet.no/no/fundamentals/code/sizes/).
+
+## Sizing
+
+De fleste komponentene i designsystemet finnes i tre anbefalte størrelser: `Small`, `Medium` og `Large`.
+
+<img
+  src={image}
+  aria-label="Visuell fremstilling av størrelsene small, medium og large"
+  style={{ marginBlock: 'var(--ds-size-5)' }}
+/>
+
+For å opprettholde et helhetlig og oversiktlig design anbefales det å bruke faste størrelser innenfor en gitt nettside eller kontekst. Mange ulike kombinasjoner av størrelser kan føre til et rotete og uoversiktlig design.
+
+I enkelte tilfeller kan komponenter i ulike størrelser kombineres for å skape bedre visuelle hierarkier og brukervennlighet.
+
+## Spacing
+
+Størrelsesvariablene kan brukes til avstander slik som for eksempel marger og avstand mellom avsnitt i tekst. Under følger noen føringer for anbefalt størrelsesvariabel i ulike kontekster.
+
+<Unstyled>
+  <SpacingGuidelines />
+</Unstyled>
