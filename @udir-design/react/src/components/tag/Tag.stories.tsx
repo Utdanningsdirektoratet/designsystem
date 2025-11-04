@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
+import { ParagraphIcon, RobotIcon } from '@udir-design/icons';
 import { Avatar } from '../avatar/Avatar';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
@@ -50,6 +51,36 @@ export const Sizes: Story = {
           {size}
         </Tag>
       ))}
+    </>
+  ),
+};
+
+export const Icon: Story = {
+  render: () => (
+    <>
+      <Tag
+        style={{
+          paddingInlineStart: 'var(--ds-size-1)',
+        }}
+      >
+        <RobotIcon
+          aria-hidden
+          style={{ marginInlineEnd: 'var(--ds-size-1)' }}
+        />
+        Teksten er KI-generert
+      </Tag>
+      <Tag
+        data-color="support1"
+        style={{
+          paddingInlineStart: 'var(--ds-size-1)',
+        }}
+      >
+        <ParagraphIcon
+          aria-hidden
+          style={{ marginInlineEnd: 'var(--ds-size-1)' }}
+        />
+        Privatskoleloven
+      </Tag>
     </>
   ),
 };
