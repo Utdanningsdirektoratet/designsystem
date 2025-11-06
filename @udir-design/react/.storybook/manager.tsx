@@ -7,6 +7,7 @@ import {
 } from 'storybook-addon-tag-badges';
 import {
   ComponentIcon,
+  ImageIcon,
   RectangleSectionsIcon,
   WrenchIcon,
 } from '@udir-design/icons';
@@ -45,6 +46,14 @@ addons.setConfig({
   sidebar: {
     renderLabel(item) {
       if (item.type === 'root') {
+        if (item.id === 'iconsandsymbols') {
+          return (
+            <>
+              <ImageIcon aria-hidden fontSize={18} />
+              Ikoner og symboler
+            </>
+          );
+        }
         if (item.id === 'demo') {
           return (
             <>

@@ -1,29 +1,35 @@
 import { useState } from 'react';
-import type { AkselIcon } from '@udir-design/icons/metadata';
 import { Search } from 'src/components/search/Search';
 import { ToggleGroup } from 'src/components/toggleGroup/ToggleGroup';
 import { CategorizedIcons } from './CategorizedIcons';
-import { categorizeIcons, searchIcons } from './IconDisplay.utils';
+import type { UdirIcon } from './IconDisplay.utils';
+import {
+  categorizeIcons,
+  getUdirPreferredIcons,
+  searchIcons,
+} from './IconDisplay.utils';
 import { IconPageSidebar } from './IconSidebar';
 import styles from './iconDisplay.module.css';
 
 export const IconDisplay = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [iconToggle, setIconToggle] = useState<'fill' | 'stroke'>('stroke');
-  const [selectedIcon, setSelectedIcon] = useState<AkselIcon | null>(null);
-
-  function resetIcon() {
-    setSelectedIcon(null);
-  }
+  const [selectedIcon, setSelectedIcon] = useState<UdirIcon | null>(null);
 
   const iconsWithCategories = categorizeIcons(
     searchIcons({ query: searchTerm, toggle: iconToggle }),
   );
+  const udirPreferredIcons = getUdirPreferredIcons(iconsWithCategories);
+
+  const allIconsWithCategories = [
+    ...udirPreferredIcons,
+    ...iconsWithCategories,
+  ];
 
   return (
     <div className={styles.root}>
       <div className={styles.filterSection}>
-        <form>
+        <div>
           <Search>
             <Search.Input
               aria-label="Søk"
@@ -34,7 +40,7 @@ export const IconDisplay = () => {
             />
             <Search.Clear />
           </Search>
-        </form>
+        </div>
         <ToggleGroup
           defaultValue="stroke"
           onChange={(value) => {
@@ -47,11 +53,14 @@ export const IconDisplay = () => {
       </div>
       <div className={styles.iconSection}>
         <CategorizedIcons
-          icons={iconsWithCategories}
+          icons={allIconsWithCategories}
           selectedIcon={selectedIcon}
           setSelectedIcon={setSelectedIcon}
         />
-        <IconPageSidebar icon={selectedIcon} resetIcon={resetIcon} />
+        <IconPageSidebar
+          icon={selectedIcon}
+          setSelectedIcon={setSelectedIcon}
+        />
       </div>
     </div>
   );

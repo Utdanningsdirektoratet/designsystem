@@ -207,6 +207,9 @@ catalogs:
     nx:
       specifier: 21.4.0
       version: 21.4.0
+    parcel:
+      specifier: ^2.16.0
+      version: 2.16.0
     playwright:
       specifier: ^1.56.0
       version: 1.56.0
@@ -336,7 +339,7 @@ overrides:
   '@eslint/plugin-kit@<0.3.4': '>=0.3.4'
   tmp@<=0.2.3: '>=0.2.4'
 
-packageExtensionsChecksum: sha256-flIOz4f0q/s3iAtJtNvIIB3eviI1NJv50IqSETROLII=
+packageExtensionsChecksum: sha256-LMeXZzq7zvEM75wWqXhoH5AKiX4vxXAjdihGHRrb69w=
 
 importers:
 
@@ -751,7 +754,7 @@ importers:
         version: link:../../@udir-design/theme
     devDependencies:
       parcel:
-        specifier: ^2.14.0
+        specifier: 'catalog:'
         version: 2.16.0(@swc/helpers@0.5.17)
 
   test-apps/vite:
@@ -2075,7 +2078,7 @@ packages:
   '@navikt/aksel-icons@7.32.1':
     resolution: {integrity: sha512-CSu9KU7J8lvlDriTxQK3VXwsZV+fv6zSMi71ausWFP5xmjJKRQkTOHdZpzeOef3bj460LZ+qhsKD8+Eds+tuEQ==}
     peerDependencies:
-      '@types/react': ^18.3.11 || ^19.0.0'
+      '@types/react': ^18.3.11 || ^19.0.0
       react: ^18.3.1 || ^19.0.0
     peerDependenciesMeta:
       '@types/react':

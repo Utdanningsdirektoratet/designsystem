@@ -2,12 +2,22 @@ import Fuse from 'fuse.js';
 import type { AkselIcon } from '@udir-design/icons/metadata';
 import meta from '@udir-design/icons/metadata';
 import { Translations } from './Translations';
+import type { DoDont } from './UdirPreferredIcons';
+import { guidelinesRecord, udirPreferredIcons } from './UdirPreferredIcons';
 
-type UdirIcon = AkselIcon & { category_no: string };
+export type UdirIcon = AkselIcon & {
+  category_no: string;
+  oftenUsed: boolean;
+  guidelines?: DoDont[];
+};
 
 export const strokeIcons: UdirIcon[] = Object.values(meta)
   .filter((x) => x.variant.toLowerCase() === 'stroke')
-  .map((x) => ({ ...x, category_no: Translations[x.category] }));
+  .map((x) => ({
+    ...x,
+    category_no: Translations[x.category],
+    oftenUsed: false,
+  }));
 
 /* Some icons are mistakenly labeled with "filled", so we need to handle both "fill" and "filled" */
 export const fillIcons: UdirIcon[] = Object.values(meta)
@@ -16,7 +26,11 @@ export const fillIcons: UdirIcon[] = Object.values(meta)
       iconMetadata.variant.toLowerCase().startsWith('fill') ||
       noFill(iconMetadata, iconArray),
   )
-  .map((x) => ({ ...x, category_no: Translations[x.category] }));
+  .map((x) => ({
+    ...x,
+    category_no: Translations[x.category],
+    oftenUsed: false,
+  }));
 
 /**
  * For icons with no fill variant, we want to show the stroke variant
@@ -41,19 +55,60 @@ export function categorizeIcons(icons: UdirIcon[]): {
   icons: UdirIcon[];
 }[] {
   const categoryMap = new Map<string, UdirIcon[]>();
-
   for (const icon of icons) {
+    const oftenUsed = udirPreferredIcons.includes(
+      (icon.name.replace('Fill', '') ||
+        icon.name.replace('Filled', '')) as (typeof udirPreferredIcons)[number],
+    );
+    const guidelines =
+      guidelinesRecord[
+        (icon.name.replace('Fill', '') ||
+          icon.name.replace(
+            'Filled',
+            '',
+          )) as (typeof udirPreferredIcons)[number]
+      ];
+
+    const extendedIcon = { ...icon, oftenUsed, guidelines };
+
     const category = categoryMap.get(icon.category_no);
+
     if (!category) {
-      categoryMap.set(icon.category_no, [icon]);
+      categoryMap.set(icon.category_no, [extendedIcon]);
     } else {
-      category.push(icon);
+      category.push(extendedIcon);
     }
   }
 
   return Array.from(categoryMap.entries())
     .map(([category, _icons]) => ({ category, icons: _icons }))
     .sort((a, b) => a.category.localeCompare(b.category));
+}
+
+export function getUdirPreferredIcons(
+  categoriesWithIcons: { category: string; icons: UdirIcon[] }[],
+): {
+  category: string;
+  icons: UdirIcon[];
+}[] {
+  const categoryMap = new Map<string, UdirIcon[]>();
+  for (const category of categoriesWithIcons) {
+    for (const icon of category.icons) {
+      const category = categoryMap.get('Foretrukket hos Udir');
+      if (icon.oftenUsed) {
+        if (!category) {
+          categoryMap.set('Foretrukket hos Udir', [icon]);
+        } else {
+          category.push(icon);
+        }
+      }
+    }
+  }
+
+  return Array.from(categoryMap.entries()).map(([category, _icons]) => ({
+    category,
+    icons: _icons.sort((a, b) => a.name.localeCompare(b.name)),
+  }));
 }
 
 /* --------------------------- Fuse search config --------------------------- */
