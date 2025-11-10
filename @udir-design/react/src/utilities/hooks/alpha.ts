@@ -3,10 +3,6 @@
  */
 
 export {
-  type UsePaginationProps,
-  usePagination,
-} from './usePagination/usePagination';
-export {
   useTableOfContents,
   type useTableOfContentsProps,
 } from './useTableOfContents/useTableOfContents';
