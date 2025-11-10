@@ -198,10 +198,10 @@ exports[`Fixed Table 1`] = `
     <ul>
       <li>
         <button
-          aria-disabled="true"
           data-variant="tertiary"
           type="button"
           aria-label="Forrige side"
+          aria-hidden="true"
         >
           Forrige
         </button>
@@ -236,10 +236,10 @@ exports[`Fixed Table 1`] = `
       </li>
       <li>
         <button
-          aria-disabled="false"
           data-variant="tertiary"
           type="button"
           aria-label="Neste side"
+          aria-hidden="false"
         >
           Neste
         </button>
