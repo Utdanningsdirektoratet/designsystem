@@ -256,7 +256,7 @@
     top: 0;
     transition: transform 200ms ease;
   }
-  &[data-scroll-direction='down'] {
+  &[data-scroll-direction='down']:not(:has([popover]:popover-open)) {
     transform: translateY(
       calc(-1 * var(--udsc-header-height) - (var(--udsc-header-padding) * 2))
     );
