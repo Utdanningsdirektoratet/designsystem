@@ -35,22 +35,24 @@ exports[`Counter 1`] = `
   <textarea
     rows="2"
     id="counter"
-    aria-describedby="counter:validation:1 counter:description:1"
+    aria-describedby="counter:description:1"
   >
   </textarea>
-  <div
-    data-field="description"
-    aria-live="polite"
-    id="counter:description:1"
-  >
+  <div aria-live="polite">
   </div>
   <p
     data-variant="default"
-    data-field="validation"
-    id="counter:validation:1"
+    aria-hidden="true"
   >
     10 tegn igjen
   </p>
+  <div
+    aria-hidden="true"
+    data-field="description"
+    id="counter:description:1"
+  >
+    Maks 10 tegn tillatt.
+  </div>
 </div>
 `;
 

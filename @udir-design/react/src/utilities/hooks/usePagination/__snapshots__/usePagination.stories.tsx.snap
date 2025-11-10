@@ -5,10 +5,10 @@ exports[`Preview 1`] = `
   <ul>
     <li>
       <button
-        aria-disabled="false"
         data-variant="tertiary"
         type="button"
         aria-label="Forrige side"
+        aria-hidden="false"
       >
         Forrige
       </button>
@@ -72,10 +72,10 @@ exports[`Preview 1`] = `
     </li>
     <li>
       <button
-        aria-disabled="false"
         data-variant="tertiary"
         type="button"
         aria-label="Neste side"
+        aria-hidden="false"
       >
         Neste
       </button>
