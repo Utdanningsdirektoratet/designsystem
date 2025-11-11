@@ -8,7 +8,7 @@
     "build": "pnpm nx format:check && pnpm nx affected -t typecheck lint test build build:storybook"
   },
   "private": true,
-  "packageManager": "pnpm@10.18.2+sha512.9fb969fa749b3ade6035e0f109f0b8a60b5d08a1a87fdf72e337da90dcc93336e2280ca4e44f2358a649b83c17959e9993e777c2080879f3801e6f0d999ad3dd",
+  "packageManager": "pnpm@10.21.0+sha512.da3337267e400fdd3d479a6c68079ac6db01d8ca4f67572083e722775a796788a7a9956613749e000fac20d424b594f7a791a5f4e2e13581c5ef947f26968a40",
   "engines": {
     "node": ">= 24.6.0 < 25"
   },
