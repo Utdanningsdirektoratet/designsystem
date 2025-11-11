@@ -1,0 +1,49 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import * as ToastStories from './Toast.stories';
+
+<Meta of={ToastStories} />
+
+# Toast
+
+En `Toast` viser midlertidige meldinger som bekrefter en handling eller gir en tilbakemelding. Den skal ikke forstyrre brukeropplevelsen og kan forsvinne automatisk eller krysses ut.
+
+**Passer til å**
+
+- gi oppdateringer uten å forstyrre arbeidsflyten
+- bekrefte vellykkede handlinger, som lagring eller sending
+- varsle om feil, handlinger som ikke kunne bli gjennomført
+
+**Passer ikke til å**
+
+- vise omfattende informasjon
+- vise permanente meldinger, bruk heller [`Alert`](/docs/components-alert--docs)
+- be brukeren om handling, bruk heller [`Dialog`](/docs/components-dialog--docs)
+
+## Slik bruker du Toast
+
+<Primary />
+<Controls />
+
+```tsx
+import { toast } from '@udir-design/react';
+
+toast.show({
+  message: `En ny rad ble lagt til`,
+});
+```
+
+## Eksempler
+
+Toast brukes litt annerledes enn en gjennomsnittlig komponent. Se eksemplene under.
+
+### Automatisk lukking
+
+Toast som skjules som default automatisk etter 3000 millisekunder. Med `toast({ timeout })` kan du endre antall millisekunder, eller sette `false` får å unngå at toasten lukkes automatisk.
+
+<Canvas of={ToastStories.AutoClose} />
+
+### Lukkekryss
+
+Med `toast({ dismissable: true })` kan man gi `Toast` et lukkekryss.
+
+<Canvas of={ToastStories.Dismissable} />
