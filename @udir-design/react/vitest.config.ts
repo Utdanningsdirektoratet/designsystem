@@ -9,9 +9,26 @@ export default defineConfig({
     cache: {
       dir: '../../node_modules/.vitest/@udir-design/react',
     },
-    reporters: ['default'],
+    reporters: [
+      'default',
+      [
+        'html',
+        {
+          addFileAttribute: true,
+          classnameTemplate: '{filename}',
+        },
+      ],
+      [
+        'json',
+        {
+          addFileAttribute: true,
+          classnameTemplate: '{filename}',
+        },
+      ],
+    ],
     coverage: {
       reportsDirectory: '../../coverage/@udir-design/react',
+      reporter: [['json', { file: 'test-coverage.json' }]],
       provider: 'v8',
       exclude: [
         ...coverageConfigDefaults.exclude,
