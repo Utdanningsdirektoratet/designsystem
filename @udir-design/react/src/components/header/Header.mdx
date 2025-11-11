@@ -42,7 +42,7 @@ Subkomponenter:
 - `Header.Search`
 - `Header.Navigation` med `Header.Navigation.Item`
 - `Header.MenuButton`
-- `Header.Menu`
+- `Header.Menu` med `Header.Menu.Link`
 - `Header.ThemeMenuButton`
 
 ### Brukerprofil
@@ -87,7 +87,7 @@ Unngå å bruke for mange lenker, og vurder om noen av lenkene heller kan plasse
 
 `Header.MenuButton` og `Header.Menu` brukes sammen for å lage en meny. Menyen inneholder som regel navigasjon, men kan også inneholde andre handlinger. På mindre skjermer flytter du for eksempel navigasjonslenker og brukerprofil inn i menyen.
 
-`Header.MenuButton` er en [`Button`](/docs/components-button--docs) med åpne/lukke-ikon. Teksten kan tilpasses ved bruk av `children`. `Header.Menu` er en stor nedtrekksmeny som er basert på [`Popover`](/docs/components-popover--docs).
+`Header.MenuButton` er en [`Button`](/docs/components-button--docs) med åpne/lukke-ikon. Teksten kan tilpasses ved bruk av `children`. `Header.Menu` er en stor nedtrekksmeny som er basert på [`Popover`](/docs/components-popover--docs). Bruk `Header.Menu.Link` for lenker i menyen. Merk at lenkene legges i en [`List`](/docs/components-list--docs), men skal ikke pakkes inn i en `List.Item`.
 
 Eksempelet under viser hvordan du kan sette opp en meny med navigasjon. Her ser du også at overskrifter kan fungere som lenker.
 
@@ -263,7 +263,7 @@ Bruk [`<nav>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Eleme
   <h2 id="header-menu-navigation" className="ds-sr-only">
     Menynavigasjon
   </h2>
-  <ListUnordered>{/* liste med lenker */}</ListUnordered>
+  <List.Unordered>{/* liste med lenker */}</List.Unordered>
 </nav>
 ```
 
