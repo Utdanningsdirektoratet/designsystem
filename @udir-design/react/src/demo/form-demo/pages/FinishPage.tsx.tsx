@@ -13,7 +13,6 @@ import {
 export const FinishPage = ({ showErrors }: PageProps) => {
   const { register, formState } = useFormContext<FormValues>();
   const errors = showErrors ? formState.errors : {};
-  const contactMethodsRules = { required: 'Velg hvordan vi kan kontakte deg' };
   const isInvalid = !!errors.contactMethods;
   return (
     <>
@@ -25,6 +24,7 @@ export const FinishPage = ({ showErrors }: PageProps) => {
         label="Har du noe annet du ønsker å nevne?"
         multiline
         rows={4}
+        autoFocus
         {...register('addition')}
       />
       <Fieldset id="contactMethods" {...focusableFieldsetProps}>
@@ -37,21 +37,21 @@ export const FinishPage = ({ showErrors }: PageProps) => {
         <Checkbox
           id="contactMethodsEmail"
           label="E-post"
-          {...register('contactMethods', contactMethodsRules)}
+          {...register('contactMethods')}
           aria-invalid={isInvalid}
           value="epost"
         />
         <Checkbox
           id="contactMethodsTelefon"
           label="Telefon"
-          {...register('contactMethods', contactMethodsRules)}
+          {...register('contactMethods')}
           aria-invalid={isInvalid}
           value="telefon"
         />
         <Checkbox
           id="contactMethodsSms"
           label="SMS"
-          {...register('contactMethods', contactMethodsRules)}
+          {...register('contactMethods')}
           aria-invalid={isInvalid}
           value="sms"
         />

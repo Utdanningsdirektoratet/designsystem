@@ -2,9 +2,9 @@ import { Heading } from '@digdir/designsystemet-react';
 import type { PageProps } from '../FormDemo';
 import { RankingTable } from '../ranking-table/RankingTable';
 
-const DATA_RANKINGS = ['Uenig', 'Nøytral', 'Enig'];
+export const DATA_RANKINGS = ['Uenig', 'Nøytral', 'Enig'];
 
-const DATA_ASSERTIONS = [
+export const DATA_ASSERTIONS = [
   'Jeg føler meg trygg på skolen',
   'Jeg har det bra på skolen',
   'Jeg har venner på skolen',
@@ -15,7 +15,7 @@ const DATA_ASSERTIONS = [
 export const RankingPage = (pageProps: PageProps) => (
   <>
     <Heading level={2} data-size="sm">
-      Valgmuligheter
+      Rangering
     </Heading>
     <RankingTable
       assertions={DATA_ASSERTIONS}
