@@ -20,16 +20,24 @@ const data = [
     comment: 'For god lesbarhet på større skjermer',
   },
   {
-    use: 'Sidemarg ved interntjenester',
-    token: '--ds-size-5',
-    px: '20px',
-    comment: 'Gjelder høyre og venstre marg',
+    use: 'Maks bredde for innhold',
+    token: '80rem',
+    px: '1280px',
+    comment: 'Kan gjøres unntak ved f.eks. fagsystemer som trenger mer plass',
   },
   {
-    use: 'Sidemarg ved publikumstjenester',
+    use: 'Sidemarg ved fagsystemer',
+    token: '--ds-size-5',
+    px: '20px',
+    comment:
+      'Når brukeren er godt kjent med systemet kan man utnytte hele bredden for mest mulig funksjonalitet per flate',
+  },
+  {
+    use: 'Sidemarg ved andre digitale tjenester',
     token: '--ds-size-16',
     px: '64px',
-    comment: 'Gir mer luft og bedre tilgjengelighet',
+    comment:
+      'Mer luft gjør det mer brukervennlig der brukerne ikke er så kjent med tjenesten',
   },
 ];
 
