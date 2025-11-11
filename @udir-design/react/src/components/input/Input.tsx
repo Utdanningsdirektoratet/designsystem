@@ -7,6 +7,7 @@ import type {
   ForwardRefExoticComponent,
   RefAttributes,
 } from 'react';
+import './input.css';
 
 type InputProps = Omit<DigdirInputProps, 'data-color'>;
 
