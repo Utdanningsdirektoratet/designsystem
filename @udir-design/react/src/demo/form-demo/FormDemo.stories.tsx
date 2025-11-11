@@ -11,6 +11,9 @@ const meta: Meta<typeof FormDemo> = {
     componentOrigin: {
       originator: 'self',
     },
+    customStyles: {
+      margin: '0 1rem',
+    },
     a11y: {
       config: {
         rules: [
@@ -28,7 +31,13 @@ const meta: Meta<typeof FormDemo> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof FormDemo>;
+type Story = StoryObj<typeof FormDemo> & {
+  args: {
+    'data-size'?: string;
+    'data-color-scheme'?: string;
+    page?: string;
+  };
+};
 
 export const FormStory: Story = {
   args: {
@@ -46,7 +55,7 @@ export const FormPage2: Story = {
   args: {
     'data-size': 'md',
     'data-color-scheme': 'auto',
-    page: 2,
+    page: 'ranking',
   },
 };
 
@@ -55,6 +64,15 @@ export const FormPage3: Story = {
   args: {
     'data-size': 'md',
     'data-color-scheme': 'auto',
-    page: 3,
+    page: 'finish',
+  },
+};
+
+export const FormPage4: Story = {
+  ...FormStory,
+  args: {
+    'data-size': 'md',
+    'data-color-scheme': 'auto',
+    page: 'deliver',
   },
 };

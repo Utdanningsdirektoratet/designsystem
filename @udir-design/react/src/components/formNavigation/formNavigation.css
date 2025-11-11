@@ -1,0 +1,206 @@
+.uds-form-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+
+  .uds-form-navigation__step {
+    all: unset;
+    width: fit-content;
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: var(--ds-size-2);
+    position: relative;
+    &:hover {
+      color: var(--ds-color-text-subtle);
+    }
+    & :where(img, svg) {
+      flex-shrink: 0;
+      font-size: 1.3em;
+    }
+
+    &[data-state='active'] {
+      text-decoration: underline;
+    }
+    &[data-state='invalid'] {
+      color: var(--ds-color-danger-text-subtle);
+      &:hover {
+        color: var(--ds-color-danger-text-default);
+      }
+    }
+    &[data-state='completed'] {
+      color: var(--ds-color-success-text-subtle);
+      &:hover {
+        color: var(--ds-color-success-text-default);
+      }
+    }
+    @composes ds-focus from '@digdir/designsystemet-css/base.css';
+  }
+
+  .uds-form-navigation__group {
+    --uds-form-navigation-connector: var(--ds-size-3);
+    @media (prefers-reduced-motion: no-preference) {
+      interpolate-size: allow-keywords;
+    }
+
+    width: fit-content;
+
+    &::part(details-content) {
+      block-size: 0;
+      overflow-y: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: var(--uds-form-navigation-connector);
+      transition:
+        content-visibility 400ms allow-discrete,
+        height 400ms;
+    }
+
+    &[open]::part(details-content) {
+      height: auto;
+    }
+
+    /* Make sure focusstyles inside u-details dont get clipped */
+    &[open]:has(:focus-visible:not(u-summary, u-summary *))::part(
+        details-content
+      ) {
+      overflow: visible;
+    }
+
+    & button,
+    & u-summary {
+      all: unset;
+      width: fit-content;
+      cursor: pointer;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: var(--ds-size-2);
+      position: relative;
+      &:hover {
+        color: var(--ds-color-text-subtle);
+      }
+      & :where(img, svg) {
+        flex-shrink: 0;
+        font-size: 1.3em;
+      }
+      @composes ds-focus from '@digdir/designsystemet-css/base.css';
+    }
+
+    > u-summary {
+      > svg:last-of-type,
+      > svg:nth-of-type(2),
+      svg:nth-of-type(3) {
+        display: none;
+      }
+    }
+
+    &[open] > u-summary {
+      > svg:nth-last-child(2) {
+        display: none;
+      }
+      > svg:last-of-type {
+        display: block;
+      }
+    }
+
+    &:not([open]) > u-summary {
+      > svg:nth-last-child(2) {
+        display: block;
+      }
+      > svg:last-of-type {
+        display: none;
+      }
+    }
+
+    > u-summary::before {
+      display: none;
+    }
+
+    &[data-state='invalid'] {
+      > u-summary {
+        color: var(--ds-color-danger-text-subtle);
+        &:hover {
+          color: var(--ds-color-danger-text-default);
+        }
+      }
+      &:not([open]) > u-summary > svg {
+        &:nth-of-type(3) {
+          display: block;
+        }
+        &:first-of-type {
+          display: none;
+        }
+      }
+    }
+
+    &[data-state='completed'] {
+      > u-summary {
+        color: var(--ds-color-success-text-subtle);
+        &:hover {
+          color: var(--ds-color-success-text-default);
+        }
+      }
+      &:not([open]) > u-summary > svg {
+        &:nth-of-type(2) {
+          display: block;
+        }
+        &:first-of-type {
+          display: none;
+        }
+      }
+    }
+
+    > button {
+      > div {
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: calc(
+            100% + (var(--uds-form-navigation-connector) / 2) - var(--ds-size-1)
+          );
+          left: 50%;
+          transform: translateX(-50%);
+          width: 1px;
+          height: var(--uds-form-navigation-connector);
+          background-color: var(--ds-color-border-default);
+        }
+        > svg {
+          display: none;
+        }
+      }
+
+      &[data-state='idle'] > div > svg:first-of-type {
+        display: block;
+      }
+      &[data-state='active'] > div > svg:nth-of-type(2) {
+        display: block;
+      }
+      &[data-state='completed'] > div > svg:nth-of-type(3) {
+        display: block;
+        color: var(--ds-color-success-text-subtle);
+      }
+      &[data-state='invalid'] > div > svg:last-of-type {
+        display: block;
+        color: var(--ds-color-danger-text-subtle);
+      }
+
+      &:hover > div {
+        > svg:first-of-type,
+        > svg:nth-of-type(3),
+        > svg:last-of-type {
+          display: none;
+        }
+        > svg:nth-of-type(2) {
+          display: block;
+        }
+      }
+
+      &:first-of-type {
+        margin-top: var(--uds-form-navigation-connector);
+      }
+    }
+  }
+}
