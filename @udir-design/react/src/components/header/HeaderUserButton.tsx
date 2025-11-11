@@ -48,7 +48,7 @@ export const HeaderUserButton = forwardRef<
       {...rest}
     >
       <div>
-        <Heading data-size="2xs" level={3}>
+        <Heading data-size="2xs" level={3} title={username}>
           {username}
         </Heading>
         {userRole && <Paragraph data-size="xs">{userRole}</Paragraph>}
