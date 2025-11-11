@@ -178,3 +178,31 @@ export const Article: Story = {
     </div>
   ),
 };
+
+export const VariantOutline: Story = {
+  parameters: {
+    customStyles: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(4, max-content)',
+      gap: 'var(--ds-size-2)',
+      height: '100%',
+      width: '100%',
+      placeItems: 'left',
+    },
+  },
+  render: () => {
+    return (
+      <>
+        {colorVariants.concat(colorStatusVariants).map((color) => (
+          <Tag
+            key={color}
+            data-color={color as TagProps['data-color']}
+            variant="outline"
+          >
+            {color}
+          </Tag>
+        ))}
+      </>
+    );
+  },
+};

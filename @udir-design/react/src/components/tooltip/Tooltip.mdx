@@ -43,6 +43,12 @@ Vurder om `Tooltip` skal plasseres over, under eller ved siden av elementet.
 
 <Canvas of={TooltipStories.Placement} />
 
+### Tilgjengelig label eller description
+
+Dersom det ikke er tekst i trigger-elementet, vil tooltip-innholdet bli brukt som tilgjengelig tekst (label). I motsatt fall fungerer det som tilleggsinformasjon (description). Teknisk skjer dette ved at vi automatisk setter enten `aria-labelledby` eller `aria-describedby`. Du kan overstyre dette ved å bruke `type`-prop'en på `Tooltip`.
+
+<Canvas of={TooltipStories.Aria} />
+
 ## Retningslinjer
 
 `Tooltip` gir kort tilleggsinformasjon uten å forstyrre hovedinnholdet. `Tooltip` er ikke ment for informasjon som er essensiell for å fullføre oppgaven. Viktig innhold bør i stedet plasseres som `brødtekst` eller `hjelpetekst` på selve siden.

@@ -299,17 +299,17 @@ export const IconOnly: Story = {
   render: (args) => (
     <>
       <Tooltip content="Legg til ny">
-        <Button aria-label="Legg til ny" {...args}>
+        <Button {...args}>
           <PlusCircleIcon aria-hidden />
         </Button>
       </Tooltip>
       <Tooltip content="Varslinger">
-        <Button aria-label="Varslinger" {...args}>
+        <Button {...args}>
           <BellIcon aria-hidden />
         </Button>
       </Tooltip>
       <Tooltip content="Instillinger">
-        <Button aria-label="Innstillinger" {...args}>
+        <Button {...args}>
           <CogIcon aria-hidden />
         </Button>
       </Tooltip>

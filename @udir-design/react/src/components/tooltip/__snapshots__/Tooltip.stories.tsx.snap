@@ -1,14 +1,71 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Aria 1`] = `
+<div style="display: flex; gap: var(--ds-size-2);">
+  <button
+    data-icon="true"
+    data-variant="primary"
+    type="button"
+    popovertarget="_r_a_"
+    popovertargetaction="show"
+    aria-labelledby="_r_a_"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M8.25 3.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l5 5c.141.14.22.331.22.53v8.5c0 .69-.56 1.25-1.25 1.25h-9c-.69 0-1.25-.56-1.25-1.25zm6.25 5.25c-.69 0-1.25-.56-1.25-1.25V3.75h-3.5v12.5h8.5v-7.5zm.25-3.94 2.44 2.44h-2.44zM6.502 7.75H5.75v12.5h8.5v-.748a.75.75 0 0 1 1.5 0v.998c0 .69-.56 1.25-1.25 1.25h-9c-.69 0-1.25-.56-1.25-1.25v-13c0-.69.56-1.25 1.25-1.25h1.002a.75.75 0 1 1 0 1.5"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
+  </button>
+  <span
+    role="tooltip"
+    id="_r_a_"
+    popover="manual"
+    style="opacity: 0;"
+  >
+    Jeg er hovedinformasjon (aria-labelledby)
+  </span>
+  <button
+    data-variant="primary"
+    type="button"
+    popovertarget="_r_c_"
+    popovertargetaction="show"
+    aria-labelledby="_r_c_"
+  >
+    Tekst i trigger
+  </button>
+  <span
+    role="tooltip"
+    id="_r_c_"
+    popover="manual"
+    style="opacity: 0;"
+  >
+    Jeg er tillegsinformasjon (aria-describedby)
+  </span>
+</div>
+`;
+
 exports[`Placement 1`] = `
 <div style="display: flex; gap: var(--ds-size-2);">
   <button
     data-icon="true"
     data-variant="secondary"
     type="button"
-    aria-label="Slett"
     popovertarget="_r_2_"
     popovertargetaction="show"
+    aria-labelledby="_r_2_"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -41,9 +98,9 @@ exports[`Placement 1`] = `
     data-icon="true"
     data-variant="secondary"
     type="button"
-    aria-label="Lagre"
     popovertarget="_r_4_"
     popovertargetaction="show"
+    aria-labelledby="_r_4_"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -76,9 +133,9 @@ exports[`Placement 1`] = `
     data-icon="true"
     data-variant="secondary"
     type="button"
-    aria-label="Print"
     popovertarget="_r_6_"
     popovertargetaction="show"
+    aria-labelledby="_r_6_"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -111,9 +168,9 @@ exports[`Placement 1`] = `
     data-icon="true"
     data-variant="secondary"
     type="button"
-    aria-label="Kopier"
     popovertarget="_r_8_"
     popovertargetaction="show"
+    aria-labelledby="_r_8_"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -150,9 +207,9 @@ exports[`Preview 1`] = `
   data-icon="true"
   data-variant="tertiary"
   type="button"
-  aria-label="Legg til"
   popovertarget="_r_0_"
   popovertargetaction="show"
+  aria-labelledby="_r_0_"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
