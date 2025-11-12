@@ -47,10 +47,10 @@ Subkomponenter:
 
 ### Brukerprofil
 
-Subkomponenten `Header.UserButton` viser brukerinformasjon og kan knyttes til en meny med brukerrelaterte handlinger. Den har props for brukernavn, rolle og avatar og finnes i fargene `neutral` og `accent`. I eksempelet brukes [`Dropdown`](/docs/components-dropdown--docs) som brukermeny.
+Subkomponenten `Header.UserButton` viser brukerinformasjon og kan knyttes til en meny med brukerrelaterte handlinger. Den har props for navn, beskrivelse og avatar og finnes i fargene `neutral` og `accent`. I eksempelet brukes [`Dropdown`](/docs/components-dropdown--docs) som brukermeny.
 På mindre skjermer flytter du enten `Header.UserButton` inn i `Header.Menu`, eller bytter ut `Header.UserButton` med en [`Avatar`](/docs/components-avatar--docs) som knapp. Du kan også benytte `Avatar` som en knapp på større skjermer dersom det blir trangt med andre elementer i Header.
 
-`Header.UserButton` har en maksbredde på `16rem`. Hvis brukernavnet er lengre enn dette, vil det bli avkortet med ellipse (`...`). Vi anbefaler å korte ned lange brukernavn for å unngå dette, for eksempel ved å ekskludere mellomnavn.
+`Header.UserButton` har en maksbredde på `16rem`. Hvis navnet er lengre enn knappen, vil det bli avkortet med ellipse (`...`). Vi anbefaler å korte ned lange navn for å unngå dette, for eksempel ved å ekskludere mellomnavn.
 
 <Canvas
   story={{ inline: false, height: '350px' }}
