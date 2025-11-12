@@ -10,7 +10,6 @@ const meta: Meta<typeof FormDemo> = {
     ...demoParameters,
     componentOrigin: {
       originator: 'self',
-      demo: true,
     },
     a11y: {
       config: {
