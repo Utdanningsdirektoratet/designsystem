@@ -232,7 +232,10 @@ exports[`Form Page 2 1`] = `
       </table>
     </fieldset>
   </form>
-  <dialog data-modal="true">
+  <dialog
+    data-modal="true"
+    closedby="closerequest"
+  >
     <button
       data-icon="true"
       data-variant="tertiary"
@@ -413,7 +416,10 @@ exports[`Form Page 3 1`] = `
       Send inn skjema
     </button>
   </form>
-  <dialog data-modal="true">
+  <dialog
+    data-modal="true"
+    closedby="closerequest"
+  >
     <button
       data-icon="true"
       data-variant="tertiary"
@@ -840,7 +846,10 @@ exports[`Form Story 1`] = `
       </select>
     </div>
   </form>
-  <dialog data-modal="true">
+  <dialog
+    data-modal="true"
+    closedby="closerequest"
+  >
     <button
       data-icon="true"
       data-variant="tertiary"

@@ -146,7 +146,10 @@ exports[`Table Story 1`] = `
               22345678
             </td>
             <td>
-              <span data-color="warning">
+              <span
+                data-variant="default"
+                data-color="warning"
+              >
                 Ikke eksportert
               </span>
             </td>
@@ -160,6 +163,7 @@ exports[`Table Story 1`] = `
                 aria-label="Slett"
                 popovertarget="_r_2_"
                 popovertargetaction="show"
+                aria-labelledby="_r_2_"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -188,7 +192,10 @@ exports[`Table Story 1`] = `
               >
                 Slett
               </span>
-              <dialog data-modal="true">
+              <dialog
+                data-modal="true"
+                closedby="closerequest"
+              >
                 <button
                   data-icon="true"
                   data-variant="tertiary"
@@ -259,7 +266,10 @@ exports[`Table Story 1`] = `
               87654321
             </td>
             <td>
-              <span data-color="success">
+              <span
+                data-variant="default"
+                data-color="success"
+              >
                 Eksportert
               </span>
             </td>
@@ -273,6 +283,7 @@ exports[`Table Story 1`] = `
                 aria-label="Slett"
                 popovertarget="_r_4_"
                 popovertargetaction="show"
+                aria-labelledby="_r_4_"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -301,7 +312,10 @@ exports[`Table Story 1`] = `
               >
                 Slett
               </span>
-              <dialog data-modal="true">
+              <dialog
+                data-modal="true"
+                closedby="closerequest"
+              >
                 <button
                   data-icon="true"
                   data-variant="tertiary"
@@ -378,7 +392,10 @@ exports[`Table Story 1`] = `
               11223344
             </td>
             <td>
-              <span data-color="warning">
+              <span
+                data-variant="default"
+                data-color="warning"
+              >
                 Ikke eksportert
               </span>
             </td>
@@ -392,6 +409,7 @@ exports[`Table Story 1`] = `
                 aria-label="Slett"
                 popovertarget="_r_6_"
                 popovertargetaction="show"
+                aria-labelledby="_r_6_"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -420,7 +438,10 @@ exports[`Table Story 1`] = `
               >
                 Slett
               </span>
-              <dialog data-modal="true">
+              <dialog
+                data-modal="true"
+                closedby="closerequest"
+              >
                 <button
                   data-icon="true"
                   data-variant="tertiary"
@@ -491,7 +512,10 @@ exports[`Table Story 1`] = `
               44332211
             </td>
             <td>
-              <span data-color="warning">
+              <span
+                data-variant="default"
+                data-color="warning"
+              >
                 Ikke eksportert
               </span>
             </td>
@@ -505,6 +529,7 @@ exports[`Table Story 1`] = `
                 aria-label="Slett"
                 popovertarget="_r_8_"
                 popovertargetaction="show"
+                aria-labelledby="_r_8_"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -533,7 +558,10 @@ exports[`Table Story 1`] = `
               >
                 Slett
               </span>
-              <dialog data-modal="true">
+              <dialog
+                data-modal="true"
+                closedby="closerequest"
+              >
                 <button
                   data-icon="true"
                   data-variant="tertiary"
@@ -604,7 +632,10 @@ exports[`Table Story 1`] = `
               55667788
             </td>
             <td>
-              <span data-color="success">
+              <span
+                data-variant="default"
+                data-color="success"
+              >
                 Eksportert
               </span>
             </td>
@@ -618,6 +649,7 @@ exports[`Table Story 1`] = `
                 aria-label="Slett"
                 popovertarget="_r_a_"
                 popovertargetaction="show"
+                aria-labelledby="_r_a_"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -646,7 +678,10 @@ exports[`Table Story 1`] = `
               >
                 Slett
               </span>
-              <dialog data-modal="true">
+              <dialog
+                data-modal="true"
+                closedby="closerequest"
+              >
                 <button
                   data-icon="true"
                   data-variant="tertiary"
@@ -690,7 +725,10 @@ exports[`Table Story 1`] = `
       >
         Eksporter liste
       </button>
-      <dialog data-modal="true">
+      <dialog
+        data-modal="true"
+        closedby="closerequest"
+      >
         <button
           data-icon="true"
           data-variant="tertiary"
