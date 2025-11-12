@@ -14,6 +14,7 @@ exports[`Article 1`] = `
     <ul style="list-style: none; display: flex; gap: 10px; padding: 0px; margin: 0px;">
       <li>
         <span
+          data-variant="default"
           data-color="accent"
           data-size="sm"
         >
@@ -22,6 +23,7 @@ exports[`Article 1`] = `
       </li>
       <li>
         <span
+          data-variant="default"
           data-color="support1"
           data-size="sm"
         >
@@ -50,22 +52,37 @@ exports[`Article 1`] = `
 `;
 
 exports[`Colors 1`] = `
-<span data-color="neutral">
+<span
+  data-variant="default"
+  data-color="neutral"
+>
   neutral
 </span>
-<span data-color="accent">
+<span
+  data-variant="default"
+  data-color="accent"
+>
   accent
 </span>
-<span data-color="support1">
+<span
+  data-variant="default"
+  data-color="support1"
+>
   support1
 </span>
-<span data-color="support2">
+<span
+  data-variant="default"
+  data-color="support2"
+>
   support2
 </span>
 `;
 
 exports[`Icon 1`] = `
-<span style="padding-inline-start: var(--ds-size-1);">
+<span
+  data-variant="default"
+  style="padding-inline-start: var(--ds-size-1);"
+>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -93,6 +110,7 @@ exports[`Icon 1`] = `
   Teksten er KI-generert
 </span>
 <span
+  data-variant="default"
   data-color="support1"
   style="padding-inline-start: var(--ds-size-1);"
 >
@@ -120,34 +138,58 @@ exports[`Icon 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<span data-color="success">
+<span
+  data-variant="default"
+  data-color="success"
+>
   Ferdig
 </span>
 `;
 
 exports[`Sizes 1`] = `
-<span data-size="sm">
+<span
+  data-variant="default"
+  data-size="sm"
+>
   sm
 </span>
-<span data-size="md">
+<span
+  data-variant="default"
+  data-size="md"
+>
   md
 </span>
-<span data-size="lg">
+<span
+  data-variant="default"
+  data-size="lg"
+>
   lg
 </span>
 `;
 
 exports[`Status 1`] = `
-<span data-color="success">
+<span
+  data-variant="default"
+  data-color="success"
+>
   success
 </span>
-<span data-color="warning">
+<span
+  data-variant="default"
+  data-color="warning"
+>
   warning
 </span>
-<span data-color="danger">
+<span
+  data-variant="default"
+  data-color="danger"
+>
   danger
 </span>
-<span data-color="info">
+<span
+  data-variant="default"
+  data-color="info"
+>
   info
 </span>
 `;
