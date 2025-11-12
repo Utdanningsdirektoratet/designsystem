@@ -163,22 +163,22 @@ export const OnlyIcons: Story = {
     <Tabs {...args}>
       <Tabs.List>
         <Tooltip content="Galleri">
-          <Tabs.Tab value="gallery" aria-label="Galleri">
+          <Tabs.Tab value="gallery">
             <ImageIcon aria-hidden />
           </Tabs.Tab>
         </Tooltip>
         <Tooltip content="Profilen din">
-          <Tabs.Tab value="profile" aria-label="Profilen din">
+          <Tabs.Tab value="profile">
             <PersonIcon aria-hidden />
           </Tabs.Tab>
         </Tooltip>
         <Tooltip content="Varsler">
-          <Tabs.Tab value="notifications" aria-label="Varsler">
+          <Tabs.Tab value="notifications">
             <BellIcon aria-hidden />
           </Tabs.Tab>
         </Tooltip>
         <Tooltip content="Innstillinger">
-          <Tabs.Tab value="settings" aria-label="Innstillinger">
+          <Tabs.Tab value="settings">
             <CogIcon aria-hidden />
           </Tabs.Tab>
         </Tooltip>

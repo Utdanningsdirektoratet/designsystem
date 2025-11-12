@@ -164,17 +164,17 @@ export const OnlyIcons: Story = {
   render: (args) => (
     <ToggleGroup {...args}>
       <Tooltip content="Venstrestilt">
-        <ToggleGroup.Item value="venstrestilt" icon aria-label="Venstrestilt">
+        <ToggleGroup.Item value="venstrestilt" icon>
           <AlignLeftIcon aria-hidden />
         </ToggleGroup.Item>
       </Tooltip>
       <Tooltip content="Midtstilt">
-        <ToggleGroup.Item value="midtstilt" icon aria-label="Midtstilt">
+        <ToggleGroup.Item value="midtstilt" icon>
           <AlignCenterIcon aria-hidden />
         </ToggleGroup.Item>
       </Tooltip>
       <Tooltip content="Høyrestilt">
-        <ToggleGroup.Item value="høyrestilt" icon aria-label="Høyrestilt">
+        <ToggleGroup.Item value="høyrestilt" icon>
           <AlignRightIcon aria-hidden />
         </ToggleGroup.Item>
       </Tooltip>
@@ -323,11 +323,7 @@ export const Controlled: Story = {
                   }}
                 >
                   <Tooltip content={actionText(value)}>
-                    <Button
-                      variant="tertiary"
-                      icon
-                      aria-label={actionText(value)}
-                    >
+                    <Button variant="tertiary" icon>
                       {actionValue(value)}
                     </Button>
                   </Tooltip>

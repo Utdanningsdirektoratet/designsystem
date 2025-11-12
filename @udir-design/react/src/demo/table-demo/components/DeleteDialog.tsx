@@ -18,12 +18,7 @@ export const DeleteDialog = ({ student, handleDelete }: DeleteDialogProps) => {
   return (
     <Dialog.TriggerContext>
       <Tooltip content="Slett">
-        <Dialog.Trigger
-          data-color="danger"
-          icon
-          variant="tertiary"
-          aria-label="Slett"
-        >
+        <Dialog.Trigger data-color="danger" icon variant="tertiary">
           <TrashFillIcon aria-hidden />
         </Dialog.Trigger>
       </Tooltip>
