@@ -9,7 +9,6 @@ const meta: Meta<typeof TableDemo> = {
     ...demoParameters,
     componentOrigin: {
       originator: 'self',
-      demo: true,
     },
   },
 };

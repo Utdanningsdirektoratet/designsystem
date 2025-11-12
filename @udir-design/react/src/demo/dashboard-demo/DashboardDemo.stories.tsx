@@ -10,7 +10,6 @@ const meta: Meta<typeof DashboardDemo> = {
     ...demoParameters,
     componentOrigin: {
       originator: 'self',
-      demo: true,
     },
   },
 };
