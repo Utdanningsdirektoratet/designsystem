@@ -5,6 +5,7 @@ import type { AirplaneIcon } from '@udir-design/icons';
 
 export default {
   title: 'iconsandsymbols/Ikoner',
+  tags: ['!autodocs'],
   parameters: {
     componentOrigin: {
       originator: 'nav',
