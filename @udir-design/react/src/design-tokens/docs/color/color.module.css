@@ -20,3 +20,85 @@
 .input {
   max-width: 200px;
 }
+
+/** 
+* CSS for color documentation page
+*/
+
+.root {
+  display: flex;
+  gap: var(--ds-size-8);
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+
+  & > * > h4 {
+    flex: 2;
+    margin-block: 0;
+    margin-block-end: var(--ds-size-2);
+  }
+}
+
+.description {
+  margin-block-end: var(--ds-size-5);
+}
+
+.colorSquare {
+  height: var(--ds-size-15);
+  width: var(--ds-size-15);
+  border-radius: var(--ds-border-radius-md);
+  display: inline-block;
+  border: 1px solid var(--ds-color-neutral-border-default);
+}
+
+.colorContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 75px;
+  text-align: center;
+  align-items: center;
+}
+
+.semanticGrid {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--ds-size-5);
+  row-gap: var(--ds-size-6);
+  justify-content: flex-start;
+
+  & > * > p {
+    margin-block: var(--ds-size-1);
+    word-break: break-word;
+  }
+}
+
+.category {
+  background: white;
+  padding-inline: var(--ds-size-1);
+  z-index: 10;
+}
+
+.valueGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: var(--ds-size-2);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    left: auto;
+    width: 90%;
+    height: 0.7rem;
+    border-width: 2px 2px 0px 2px;
+    border-style: solid;
+    border-color: var(--ds-color-neutral-border-default);
+  }
+}
+
+.shadesContainer {
+  display: flex;
+  gap: var(--ds-size-2);
+}
