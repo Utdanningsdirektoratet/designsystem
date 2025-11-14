@@ -116,6 +116,12 @@ Navigasjonslenker og meny er de eneste navigasjonselementene som kan kombineres 
   of={HeaderStories.WithNavigationLinksAndMenu}
 />
 
+### Utviklingsmiljø
+
+Bruk `Tag` til å indikere at en tjeneste vises i et annet kjøretidsmiljø enn produksjon, f.eks. dev, test eller qa. Den skal alltid ligge som første element og vil da automatisk legges til venstre, inntil logo.
+
+<Canvas story={{ inline: false, height: '150px' }} of={HeaderStories.WithTag} />
+
 ### Responsivt innhold
 
 For å håndtere ulike skjermstørrelser og enheter er det satt opp noen predefinerte breakpoints for når innhold skal vises eller skjules. Dette brukes ved å sette `data-show=[size]` eller `data-hide=[size]` på komponentene du legger inn i `Header`. De tilgjengelige verdiene for `size` er:
