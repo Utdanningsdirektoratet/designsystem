@@ -50,6 +50,12 @@
     display: flex;
     gap: var(--ds-size-8);
     align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+
+    > .ds-tag {
+      margin-right: auto;
+    }
   }
 
   .uds-header__search {

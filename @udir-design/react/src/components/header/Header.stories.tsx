@@ -10,6 +10,7 @@ import { Dropdown } from '../dropdown/Dropdown';
 import { Link } from '../link/Link';
 import { List } from '../list/List';
 import { Search } from '../search/Search';
+import { Tag } from '../tag/Tag';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import styles from './header.stories.module.css';
@@ -548,6 +549,16 @@ const responsiveLinks = ['Navlinker', 'Overskrift 1', 'Overskrift 2'].map(
     ),
   }),
 );
+
+export const WithTag: Story = {
+  render(args) {
+    return (
+      <Header {...args}>
+        <Tag data-color="accent">Dev</Tag>
+      </Header>
+    );
+  },
+};
 
 export const Responsive: Story = {
   render(args) {
