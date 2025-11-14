@@ -9,7 +9,6 @@ const meta: Meta<typeof DemoPage> = {
     ...demoParameters,
     componentOrigin: {
       originator: 'digdir',
-      demo: true,
     },
   },
 };
