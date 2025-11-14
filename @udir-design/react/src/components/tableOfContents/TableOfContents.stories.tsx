@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { mergeDeepRight } from 'ramda';
 import { expect, within } from 'storybook/test';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import { useTableOfContents } from 'src/utilities/hooks/useTableOfContents/useTableOfContents';
@@ -233,3 +234,7 @@ export const Manual: Story = {
     </Prose>
   ),
 };
+
+export const DefaultClosed: Story = mergeDeepRight(Automatic, {
+  args: { defaultClosed: true },
+});
