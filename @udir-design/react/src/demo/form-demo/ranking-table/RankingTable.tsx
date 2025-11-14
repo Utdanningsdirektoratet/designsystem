@@ -24,7 +24,6 @@ export const RankingTable = ({
   showErrors,
 }: RankingTableProps) => {
   const errorId = 'rankings-error';
-  const assertionRules = { required: 'Du må besvare alle påstandene' };
   const { register, formState, getFieldState } = useFormContext<FormValues>();
 
   const rawRankingErrors = formState.errors.rankings;
@@ -67,10 +66,10 @@ export const RankingTable = ({
             return (
               <Table.Row key={rowIndex}>
                 <Table.Cell>{assertion}</Table.Cell>
-
                 {rankings.map((ranking, colIndex) => (
                   <Table.Cell key={colIndex} className={classes.cell}>
                     <Radio
+                      autoFocus={rowIndex === 0 && colIndex === 0}
                       id={`${fieldName}-${ranking}`}
                       aria-label={`${ranking} i påstand ${assertion}`}
                       value={ranking}
@@ -80,7 +79,7 @@ export const RankingTable = ({
                           ? `${errorId}-${rowIndex}`
                           : undefined
                       }
-                      {...register(fieldName, assertionRules)}
+                      {...register(fieldName)}
                     />
                   </Table.Cell>
                 ))}

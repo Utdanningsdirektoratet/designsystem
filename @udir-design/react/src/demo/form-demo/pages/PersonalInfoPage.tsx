@@ -32,8 +32,6 @@ const DATA_COUNTIES = [
 export const PersonalInfoPage = ({ showErrors }: PageProps) => {
   const { register, control, formState } = useFormContext<FormValues>();
   const errors = showErrors ? formState.errors : {};
-
-  const educationLevelRules = { required: 'Velg et utdanningsnivå' };
   return (
     <>
       <Heading level={2} data-size="sm">
@@ -42,19 +40,16 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
       <Textfield
         id="firstName"
         label="Fornavn"
-        {...register('firstName', {
-          required: 'Fyll ut fornavn',
-        })}
+        {...register('firstName')}
         autoComplete="given-name"
         error={errors.firstName?.message}
+        autoFocus
       />
       <Field>
         <Label>Etternavn</Label>
         <Input
           id="lastName"
-          {...register('lastName', {
-            required: 'Fyll ut etternavn',
-          })}
+          {...register('lastName')}
           autoComplete="family-name"
           aria-invalid={!!errors.lastName}
         />
@@ -67,7 +62,6 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
         <Controller
           name="county"
           control={control}
-          rules={{ required: 'Velg et fylke' }}
           defaultValue=""
           render={({ field: { value, onChange, ...field } }) => (
             <Suggestion
@@ -101,25 +95,25 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
           id="radio-kindergarten"
           label="Barnehage"
           value="kindergarten"
-          {...register('educationLevel', educationLevelRules)}
+          {...register('educationLevel')}
         />
         <Radio
           id="radio-primary"
           label="Grunnskole"
           value="primary"
-          {...register('educationLevel', educationLevelRules)}
+          {...register('educationLevel')}
         />
         <Radio
           id="radio-secondary"
           label="Videregående"
           value="secondary"
-          {...register('educationLevel', educationLevelRules)}
+          {...register('educationLevel')}
         />
         <Radio
           id="radio-higher"
           label="Høyere utdanning"
           value="higher"
-          {...register('educationLevel', educationLevelRules)}
+          {...register('educationLevel')}
         />
         {errors.educationLevel && (
           <ValidationMessage>{errors.educationLevel.message}</ValidationMessage>
@@ -130,9 +124,7 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
         <Select
           id="ageGroup"
           aria-label="Velg aldersgruppe"
-          {...register('ageGroup', {
-            validate: (value) => value !== 'blank' || 'Velg en aldersgruppe',
-          })}
+          {...register('ageGroup')}
           aria-invalid={!!errors.ageGroup}
           defaultValue="blank"
         >
