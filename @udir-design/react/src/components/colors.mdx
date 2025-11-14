@@ -1,0 +1,75 @@
+# Farger
+
+Vi deler fargene i designsystemet inn i to hovedgrupper: Farger for digitale tjenester og identitetsfarger.
+
+## Farger for digitale tjenester
+
+Farger for digitale tjenester brukes i digitale brukergrensesnitt. De er definert som brand-farger og status-farger. Disse fargene er testet for kontrast og tilgjengelighet og skal alltid implementeres ved bruk av tokens, ikke hardkodede verdier. De gir forutsigbarhet og konsistens på tvers av komponenter og plattformer. Disse fargene brukes på for eksempel komponenter som knapper, bakgrunner, lenker, ikoner og lignende. Designteamet har definert hvordan og hvor disse fargene kan brukes:
+
+- For mange komponenter er spesifikke fargevalg forhåndsbestemt. Dette gjelder for eksempel [Alert], som skal bruke status-fargene for å indikere status på varselet.
+
+- For andre komponenter og flater er det mer fleksibilitet, og designeren må ta valg ut ifra hensikt og visuell helhet. Dette gjelder for eksempel card.
+
+### Brand-farger
+Brand-fargene utgjør det visuelle uttrykket til merkevaren i brukergrensesnittet og er med på å skape gjenkjennelighet og opplevelsen av et helhetlig produkt.
+
+Brand-fargene er versjoner av identitetsfargene som er tilpasset interaktive flater. På den måten opprettholder vi både merkevaregjenkjennelse og god brukeropplevelse i digitale produkter.
+
+Brand-fargene består av:
+
+- **Accent**: Brukes for å fremheve viktige elementer og handlinger.
+- **Neutral**: Brukes for bakgrunner og mindre fremtredende elementer.
+- **Support 1**: Brukes for å gi støtte til hovedinnholdet.
+- **Support 2**: Brukes for å gi ekstra støtte og variasjon.
+
+### Status-farger
+
+Status-farger er farger med funksjonell betydning og formål, og brukes til å formidle tilstand og hensikt, for info, suksess, fare og varsel. Disse brukes konsekvent i komponenter som meldingsbokser, varsler og statusindikatorer for å skape gjenkjennelighet og tydelig kommunikasjon. De har tilhørende nyanser og kontrastversjoner slik at de kan tilpasses både bakgrunn, tekst og ikoner.
+Disse fargene følger vanlig konvensjonell betydning:
+
+- **Blå** = `info`
+- **Grønn** = `success`
+- **Gul** = `warning`
+- **Rød** = `danger`
+
+Disse fargene er tilgjengelig for komponenter der det er relevant, for eksempel [Alert]. og [Tag]. Status-farger skal ikke brukes som dekor** eller fordi de «ser fine ut». De skal kun benyttes i kontekst der innholdet har tilsvarende funksjon.
+
+(visning av fargetokens gruppert i brand-farger og status-farger)
+
+
+## Identitetsfarger
+
+Identitetsfargene er Udirs merkevarefarger og brukes på tvers av både digitale og fysiske flater. Disse fargene brukes blant annet til illustrasjoner, malverk, pamfletter, bannere og plakater.
+
+### Forholdet mellom identitetsfarger og brand-farger
+
+Brand-fargene for digitale tjenester er basert på identitetsfargene, men er tilpasset interaktive flater med hensyn til tilgjengelighet og lesbarhet. Identitetsfargene gir mer frihet og kan brukes i fullstendig palett der tilgjengelighetskrav ikke er like strenge (som i illustrasjoner og trykkemateriell).
+
+### Når skal identitetsfargene brukes?
+
+Bruk identitetsfargene når du:
+- Lager illustrasjoner og dekorativt visuelt innhold
+- Designer trykte materialer som plakater og brosjyrer
+
+**Ikke bruk identitetsfargene direkte i UI-komponenter.** Der skal du bruke farger for digitale flater via tokens.
+
+### Identitetsfargepaletten
+
+Identitetsfargene består av:
+
+- **Udir-grønn**: Primærfargen i Udirs visuelle identitet. Udir-grønn 7 er hovednyansen og finnes i logoen.
+- **Udir-sort**: Sekundærfargen i Udirs visuelle identitet. Udir-sort 9 er hovednyansen og finnes i logoen.
+- **Udir-blå**: Støttefarge som gir variasjon og harmonerer godt med hovedfargene. Udir-blå 5 er hovednyansen.
+- **Udir-brun**: Støttefarge som gir variasjon og harmonerer godt med hovedfargene. Udir-brun 5 er hovednyansen.
+
+Alle identitetsfargene har en palett fra lys til mørk, slik at de er fleksible i bruk. De lysere nyansene brukes typisk på bakgrunnsflater, mens de mørkere nyansene brukes på fremtredende elementer.
+
+(visning av identitetsfargene)
+
+#### Hovedfarger
+
+Hovedfargene til Udir er **Udir-grønn** og **Udir-sort**. Begge fargene er å finne i logoen og er bærerne av Udirs visuelle identitet.
+
+#### Støttefarger
+
+Støttefargene til Udir er **Udir-blå** og **Udir-brun**. Disse fargene brukes for å gi variasjon og støtte til hovedfargene, og bidrar til et mer dynamisk og variert visuelt uttrykk.
