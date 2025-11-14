@@ -165,6 +165,7 @@
     all: unset;
     display: flex;
     width: fit-content;
+    max-width: 16rem;
     flex-shrink: 0;
     align-items: center;
     justify-content: flex-end;
@@ -191,10 +192,19 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
+      min-width: 0;
+      .ds-heading,
+      .ds-paragraph {
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
 
     > svg {
       margin-left: var(--ds-size-1);
+      flex-shrink: 0;
     }
 
     > svg:nth-last-child(2) {
@@ -256,7 +266,7 @@
     top: 0;
     transition: transform 200ms ease;
   }
-  &[data-scroll-direction='down'] {
+  &[data-scroll-direction='down']:not(:has([popover]:popover-open)) {
     transform: translateY(
       calc(-1 * var(--udsc-header-height) - (var(--udsc-header-padding) * 2))
     );

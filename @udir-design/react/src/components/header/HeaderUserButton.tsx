@@ -7,13 +7,13 @@ import { Paragraph } from '../typography/paragraph/Paragraph';
 
 export type HeaderUserButtonProps = HTMLAttributes<HTMLButtonElement> & {
   /**
-   * The username of the logged in user.
+   * The name of the logged in user.
    */
-  username: string;
+  name: string;
   /**
-   * The role of the logged in user.
+   * Description of the logged in user, e.g. user role.
    */
-  userRole?: string;
+  description?: string;
   /**
    * The avatar of the logged in user. Use <Avatar /> component.
    */
@@ -30,8 +30,8 @@ export const HeaderUserButton = forwardRef<
   Omit<HeaderUserButtonProps, 'children'>
 >(function HeaderUserButton(
   {
-    username,
-    userRole,
+    name,
+    description,
     className,
     avatar,
     'data-color': dataColor = 'neutral',
@@ -48,10 +48,10 @@ export const HeaderUserButton = forwardRef<
       {...rest}
     >
       <div>
-        <Heading data-size="2xs" level={3}>
-          {username}
+        <Heading data-size="2xs" level={3} title={name}>
+          {name}
         </Heading>
-        {userRole && <Paragraph data-size="xs">{userRole}</Paragraph>}
+        {description && <Paragraph data-size="xs">{description}</Paragraph>}
       </div>
       {avatar && avatar}
       <ChevronDownIcon aria-hidden />

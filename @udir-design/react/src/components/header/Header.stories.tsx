@@ -50,8 +50,8 @@ export const WithUserButton: Story = {
   render: (args) => (
     <Header {...args}>
       <Header.UserButton
-        username="Stian Hansen"
-        userRole="Admin"
+        name="Stian Hansen"
+        description="Admin"
         popovertarget="usermenu"
         avatar={
           <Avatar aria-hidden>
@@ -561,8 +561,8 @@ export const Responsive: Story = {
           <Header.Navigation.Item href="#">Navlink 3</Header.Navigation.Item>
         </Header.Navigation>
         <Header.UserButton
-          username="Stian Hansen"
-          userRole="Admin"
+          name="Stian Hansen"
+          description="Admin"
           popovertarget="usermenu2"
           data-show="md"
           avatar={<Avatar aria-hidden>SH</Avatar>}
@@ -592,8 +592,8 @@ export const Responsive: Story = {
         <Header.MenuButton />
         <Header.Menu>
           <Header.UserButton
-            username="Stian Hansen"
-            userRole="Admin"
+            name="Stian Hansen"
+            description="Admin"
             popovertarget="usermenuInMenu"
             avatar={<Avatar aria-hidden>SH</Avatar>}
             data-hide="md"
