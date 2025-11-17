@@ -1,0 +1,60 @@
+import {
+  Meta,
+  Canvas,
+  Controls,
+  Primary,
+  ArgTypes,
+} from '@storybook/addon-docs/blocks';
+import * as LogoStories from './Logo.stories';
+
+<Meta of={LogoStories} />
+
+# Logo
+
+`Logo` er Udirs hovedlogo. I denne varianten er navnet Utdanningsdirektoratet skrevet fullt ut. Det er denne logoen vi i hovedsak bruker i ekstern kommunikasjon. Den sikrer at brukeren forstår hvem som er avsender uten å måtte kjenne til forkortelsen av navnet vårt.
+
+## Slik bruker du Logo
+
+<Canvas of={LogoStories.Preview} />
+<Controls of={LogoStories.Preview} />
+
+```tsx
+import { Logo } from '@udir-design/react';
+
+<Logo />;
+```
+
+# LogoSymbol
+
+`LogoSymbol` er en U. Logosymbolet er ikke en egen logo, og skal kun brukes når det ut fra konteksten allerede er tydelig at Utdanningsdirektoratet er avsender eller sammen med tjenestenavn slik som i [`Header`](/docs/components-header--docs).
+
+## Slik bruker du LogoSymbol
+
+<Canvas of={LogoStories.Symbol} />
+<Controls of={LogoStories.Symbol} />
+
+```tsx
+import { LogoSymbol } from '@udir-design/react';
+
+<LogoSymbol />;
+```
+
+## Eksempler
+
+### Mørk modus
+
+Både `Logo` og `LogoSymbol` har innebygd støtte for fargemodus `light`, `dark` og `auto`. Dette kan overstyres ved å sette `data-color-scheme` for komponenten eller en foreldre-komponent.
+
+<Canvas of={LogoStories.DarkMode} />
+
+### Størrelse og padding
+
+Du kan endre størrelse for logo med parameteret `size`, som endrer høyeden på logoen. Bredden skalerer automatisk.
+
+Fordi retningslinjene for klarering er ulike for `Logo` og `LogoSymbol` har de ulik default-padding. Du kan endre padding med propertien `padding`, gitt at det følger retningslinjene.
+
+<Canvas of={LogoStories.Variables} />
+
+## Retningslinjer for bruk
+
+Les om [retningslinjer for bruk av logo](https://www.udir.no/om-udir/designprofil/logo/) på Udir.no.
