@@ -1,5 +1,6 @@
 import cl from 'clsx/lite';
-import { HTMLAttributes, useMemo, useState } from 'react';
+import type { HTMLAttributes } from 'react';
+import { useMemo, useState } from 'react';
 import { Alert } from 'src/components/alert';
 import { Avatar } from 'src/components/avatar/Avatar';
 import { Badge } from 'src/components/badge/Badge';
@@ -7,18 +8,19 @@ import { Checkbox } from 'src/components/checkbox/Checkbox';
 import { Chip } from 'src/components/chip/Chip';
 import { Divider } from 'src/components/divider/Divider';
 import { ErrorSummary } from 'src/components/errorSummary/ErrorSummary';
+import { Fieldset } from 'src/components/fieldset/Fieldset';
 import { Search } from 'src/components/search/Search';
 import { Table } from 'src/components/table';
 import { Tag } from 'src/components/tag/Tag';
 import { Heading } from 'src/components/typography/heading/Heading';
-import { Label } from 'src/components/typography/label/Label';
 import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
-import { DemoProps } from '../demoProps';
+import type { DemoProps } from '../demoProps';
 import classes from './TableDemo.module.css';
 import { DeleteDialog } from './components/DeleteDialog';
 import { ExportDialog } from './components/ExportDialog';
 import PaginationControls from './components/PaginationControls';
-import { STUDENTS, Student } from './data/students';
+import type { Student } from './data/students';
+import { STUDENTS } from './data/students';
 import { useFilterData } from './utilities/useFilterData';
 import useSortableData from './utilities/useSortableData';
 
@@ -89,10 +91,8 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
   const totalPages = Math.ceil(sortedData.length / itemsPerPage);
 
   // Get the users for the current page from the sorted list.
-  const currentUsers = useMemo(() => {
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    return sortedData.slice(startIndex, startIndex + itemsPerPage);
-  }, [currentPage, sortedData]);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentUsers = sortedData.slice(startIndex, startIndex + itemsPerPage);
 
   const isStudentsSelected = selectedStudentIds.length > 0;
 
@@ -122,8 +122,8 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
         </Heading>
         <Divider />
         <div className={classes.tableHeader}>
-          <div>
-            <Label>Filtrer på utdanningsnivå</Label>
+          <Fieldset>
+            <Fieldset.Legend>Filtrer på utdanningsnivå</Fieldset.Legend>
             <div className={classes.tableFilter}>
               {levels.map((level) => (
                 <Chip.Checkbox
@@ -136,7 +136,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
                 </Chip.Checkbox>
               ))}
             </div>
-          </div>
+          </Fieldset>
           <Search className={classes.tableSearch}>
             <Search.Input
               name="search"

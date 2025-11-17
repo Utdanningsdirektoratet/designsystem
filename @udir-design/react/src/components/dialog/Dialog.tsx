@@ -8,7 +8,11 @@ import {
   type DialogTriggerContextProps,
   type DialogTriggerProps,
 } from '@digdir/designsystemet-react';
-import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
+import type {
+  ComponentRef,
+  ForwardRefExoticComponent,
+  RefAttributes,
+} from 'react';
 import './dialog.css';
 
 type DialogProps = Omit<DigdirDialogProps, 'data-color'>;
@@ -21,13 +25,10 @@ const Dialog = DigdirDialog as ForwardRefExoticComponent<
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 Dialog.displayName = 'Dialog';
 
-export {
-  Dialog,
-  DialogBlock,
+export type {
   DialogBlockProps,
   DialogProps,
-  DialogTrigger,
-  DialogTriggerContext,
   DialogTriggerContextProps,
   DialogTriggerProps,
 };
+export { Dialog, DialogBlock, DialogTrigger, DialogTriggerContext };

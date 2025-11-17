@@ -2,10 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { useArgs } from 'storybook/internal/preview-api';
 import { expect, userEvent, within } from 'storybook/test';
-import {
-  UsePaginationProps,
-  usePagination,
-} from 'src/utilities/hooks/usePagination/usePagination';
+import type { UsePaginationProps } from 'src/utilities/hooks/usePagination/usePagination';
+import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
 import { Search } from '../search/Search';
 import { Pagination } from './Pagination';
 

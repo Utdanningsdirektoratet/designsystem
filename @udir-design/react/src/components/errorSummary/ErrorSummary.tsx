@@ -12,13 +12,15 @@ import {
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 ErrorSummary.displayName = 'ErrorSummary';
 
+export type {
+  ErrorSummaryHeadingProps,
+  ErrorSummaryItemProps,
+  ErrorSummaryListProps,
+  ErrorSummaryProps,
+};
 export {
   ErrorSummary,
   ErrorSummaryHeading,
-  ErrorSummaryHeadingProps,
   ErrorSummaryItem,
-  ErrorSummaryItemProps,
   ErrorSummaryList,
-  ErrorSummaryListProps,
-  ErrorSummaryProps,
 };

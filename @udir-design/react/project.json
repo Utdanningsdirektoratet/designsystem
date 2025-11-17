@@ -25,7 +25,16 @@
       "dependsOn": ["build:storybook"]
     },
     "test:storybook": {
-      "dependsOn": ["build"]
+      "cache": true,
+      "dependsOn": ["build"],
+      "outputs": [
+        "{projectRoot}/test-reports/storybook.json",
+        "{projectRoot}/test-reports/storybook"
+      ]
+    },
+    "view-test-report:storybook": {
+      "continuous": true,
+      "dependsOn": ["test:storybook"]
     }
   }
 }

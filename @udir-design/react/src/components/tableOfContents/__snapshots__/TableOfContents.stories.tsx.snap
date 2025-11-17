@@ -153,6 +153,158 @@ exports[`Automatic 1`] = `
 </div>
 `;
 
+exports[`Default Closed 1`] = `
+<div>
+  <h1
+    data-size="lg"
+    id="heading-1"
+    tabindex="-1"
+  >
+    Sidetittel (h1)
+  </h1>
+  <p
+    data-variant="default"
+    data-size="lg"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dui nunc, maximus vitae finibus ut, consequat sit amet metus. Suspendisse nisl massa, egestas eu justo eu, luctus volutpat ante. Aliquam congue consectetur arcu, at pharetra nunc ultricies in. Sed aliquam mi a odio varius, in eleifend orci elementum.
+  </p>
+  <div
+    data-variant="tinted"
+    data-color="accent"
+  >
+    <u-details
+      data-variant="default"
+      role="group"
+    >
+      <u-summary
+        aria-expanded="false"
+        role="button"
+        slot="summary"
+        tabindex="0"
+      >
+        Innhold på denne siden
+      </u-summary>
+      <div>
+        <ol>
+          <li>
+            <a href="#heading-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="none"
+                viewbox="0 0 24 24"
+                focusable="false"
+                role="img"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                >
+                </path>
+              </svg>
+              <span>
+                Første overskrift (h2)
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#heading-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="none"
+                viewbox="0 0 24 24"
+                focusable="false"
+                role="img"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                >
+                </path>
+              </svg>
+              <span>
+                Første underoverskrift (h3)
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#heading-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="none"
+                viewbox="0 0 24 24"
+                focusable="false"
+                role="img"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                >
+                </path>
+              </svg>
+              <span>
+                Andre overskrift (h2)
+              </span>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </u-details>
+  </div>
+  <h2
+    data-size="md"
+    id="heading-2"
+    tabindex="-1"
+  >
+    Første overskrift (h2)
+  </h2>
+  <p data-variant="default">
+    Vestibulum ut mauris quis elit hendrerit luctus. Curabitur sit amet mauris id nisi vehicula accumsan. Curabitur lobortis dolor sed nunc consectetur, vel lobortis felis rhoncus. Etiam elit dolor, convallis id felis in, vulputate condimentum turpis.
+  </p>
+  <p data-variant="default">
+    Vestibulum volutpat augue sed dui tristique, eget accumsan massa laoreet. Sed consequat, ex ullamcorper tempus faucibus, nibh quam dignissim augue, iaculis vestibulum arcu magna id mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sollicitudin massa id leo auctor viverra vel vitae felis. Mauris vehicula porttitor congue.
+  </p>
+  <h3
+    data-size="sm"
+    id="heading-3"
+    tabindex="-1"
+  >
+    Første underoverskrift (h3)
+  </h3>
+  <p data-variant="default">
+    Suspendisse in vulputate dui, sed rutrum arcu. Nunc vitae fermentum nunc, ut dignissim quam. Fusce at dolor venenatis nulla gravida ornare. Proin pulvinar tincidunt nisl, eu venenatis elit consequat et. Suspendisse blandit felis quis ante hendrerit, vitae aliquet odio lobortis. Vivamus at ex id magna cursus consectetur id luctus elit. Vivamus vitae ex vel sapien convallis commodo in quis eros. Nunc a volutpat urna.
+  </p>
+  <h4
+    data-size="xs"
+    id="heading-4"
+    tabindex="-1"
+  >
+    Første underunderoverskrift (h4)
+  </h4>
+  <p data-variant="default">
+    Donec at pellentesque lacus. Integer pretium, nulla vitae tincidunt tincidunt, mauris augue facilisis sapien, eget pulvinar odio ex accumsan nulla. Proin venenatis rhoncus suscipit. Proin ac ex viverra, laoreet enim at, tempor elit. Nunc diam eros, congue pharetra ligula in, luctus molestie nibh. Donec placerat ac lacus a feugiat. Sed justo elit, vestibulum id iaculis fermentum, ornare a nisi.
+  </p>
+  <h2
+    data-size="md"
+    id="heading-5"
+    tabindex="-1"
+  >
+    Andre overskrift (h2)
+  </h2>
+  <p data-variant="default">
+    Quisque lacinia sodales purus non lobortis. Quisque bibendum, nulla ut viverra tempor, nisl nibh dictum tellus, ac dapibus quam est non dui. Integer fringilla commodo lectus ut suscipit. Nulla at porttitor eros. Cras consequat ex nec pellentesque pharetra. Vivamus facilisis consequat velit sit amet pretium.
+  </p>
+</div>
+`;
+
 exports[`Manual 1`] = `
 <div>
   <h1 data-size="lg">

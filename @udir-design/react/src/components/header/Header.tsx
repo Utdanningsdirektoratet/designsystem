@@ -1,6 +1,7 @@
 import cl from 'clsx/lite';
-import { HTMLAttributes, forwardRef } from 'react';
-import { CSSProperties } from 'react';
+import { forwardRef } from 'react';
+import type { HTMLAttributes } from 'react';
+import type { CSSProperties } from 'react';
 import circleLogoDark from '../../../assets/img/udir-circle-logo-dark-mode.svg';
 import circleLogoLight from '../../../assets/img/udir-circle-logo.svg';
 import mainLogoDark from '../../../assets/img/udir-main-logo-dark-mode.svg';

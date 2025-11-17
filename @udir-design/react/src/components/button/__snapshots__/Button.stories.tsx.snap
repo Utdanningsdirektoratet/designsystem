@@ -8,27 +8,6 @@ exports[`As Link 1`] = `
   data-variant="primary"
 >
   Gå til udir.no
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
-    aria-labelledby="title-_r_v_"
-  >
-    <title id="title-_r_v_">
-      Ekstern lenke
-    </title>
-    <path
-      fill="currentColor"
-      fill-rule="evenodd"
-      d="M20.532 3.471A.75.75 0 0 1 20.75 4v7.5a.75.75 0 0 1-1.5 0V5.81l-8.72 8.72a.75.75 0 1 1-1.06-1.06l8.72-8.72H12.5a.75.75 0 0 1 0-1.5H20c.206 0 .393.083.529.218l.001.002zM4.75 9A.25.25 0 0 1 5 8.75h7a.75.75 0 0 0 0-1.5H5A1.75 1.75 0 0 0 3.25 9v10c0 .966.784 1.75 1.75 1.75h10A1.75 1.75 0 0 0 16.75 19v-7a.75.75 0 0 0-1.5 0v7a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
-      clip-rule="evenodd"
-    >
-    </path>
-  </svg>
 </a>
 `;
 
@@ -506,10 +485,10 @@ exports[`Icon Only 1`] = `
   data-icon="true"
   data-variant="tertiary"
   type="button"
-  aria-label="Legg til ny"
   data-color="neutral"
-  popovertarget="_r_18_"
+  popovertarget="_r_17_"
   popovertargetaction="show"
+  aria-labelledby="_r_17_"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -532,7 +511,7 @@ exports[`Icon Only 1`] = `
 </button>
 <span
   role="tooltip"
-  id="_r_18_"
+  id="_r_17_"
   popover="manual"
   style="opacity: 0;"
 >
@@ -542,10 +521,10 @@ exports[`Icon Only 1`] = `
   data-icon="true"
   data-variant="tertiary"
   type="button"
-  aria-label="Varslinger"
   data-color="neutral"
-  popovertarget="_r_1a_"
+  popovertarget="_r_19_"
   popovertargetaction="show"
+  aria-labelledby="_r_19_"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -568,7 +547,7 @@ exports[`Icon Only 1`] = `
 </button>
 <span
   role="tooltip"
-  id="_r_1a_"
+  id="_r_19_"
   popover="manual"
   style="opacity: 0;"
 >
@@ -578,10 +557,10 @@ exports[`Icon Only 1`] = `
   data-icon="true"
   data-variant="tertiary"
   type="button"
-  aria-label="Innstillinger"
   data-color="neutral"
-  popovertarget="_r_1c_"
+  popovertarget="_r_1b_"
   popovertargetaction="show"
+  aria-labelledby="_r_1b_"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -604,7 +583,7 @@ exports[`Icon Only 1`] = `
 </button>
 <span
   role="tooltip"
-  id="_r_1c_"
+  id="_r_1b_"
   popover="manual"
   style="opacity: 0;"
 >
@@ -627,9 +606,9 @@ exports[`Icons 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-_r_12_"
+    aria-labelledby="title-_r_11_"
   >
-    <title id="title-_r_12_">
+    <title id="title-_r_11_">
       Innstillinger
     </title>
     <path
@@ -680,9 +659,9 @@ exports[`Icons 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-_r_14_"
+    aria-labelledby="title-_r_13_"
   >
-    <title id="title-_r_14_">
+    <title id="title-_r_13_">
       Innstillinger
     </title>
     <path
@@ -733,9 +712,9 @@ exports[`Icons 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-_r_16_"
+    aria-labelledby="title-_r_15_"
   >
-    <title id="title-_r_16_">
+    <title id="title-_r_15_">
       Innstillinger
     </title>
     <path
@@ -789,9 +768,9 @@ exports[`Icons Only Primary 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-_r_1e_"
+    aria-labelledby="title-_r_1d_"
   >
-    <title id="title-_r_1e_">
+    <title id="title-_r_1d_">
       Innstillinger
     </title>
     <path
@@ -817,9 +796,9 @@ exports[`Icons Only Primary 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-_r_1f_"
+    aria-labelledby="title-_r_1e_"
   >
-    <title id="title-_r_1f_">
+    <title id="title-_r_1e_">
       Innstillinger
     </title>
     <path
@@ -845,9 +824,9 @@ exports[`Icons Only Primary 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-_r_1g_"
+    aria-labelledby="title-_r_1f_"
   >
-    <title id="title-_r_1g_">
+    <title id="title-_r_1f_">
       Innstillinger
     </title>
     <path
@@ -998,7 +977,7 @@ exports[`Neutral 1`] = `
     <path
       fill="currentColor"
       fill-rule="evenodd"
-      d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
+      d="M16.97 2.97a2.871 2.871 0 1 1 4.06 4.06l-1.5 1.5-4.333 4.333a1.75 1.75 0 0 1-.684.423l-4.276 1.425a.75.75 0 0 1-.949-.948l1.426-4.276c.086-.258.23-.492.423-.684l4.33-4.33.003-.003.003-.003zM16 6.06l-3.803 3.803a.25.25 0 0 0-.06.098l-.951 2.853 2.853-.95a.25.25 0 0 0 .098-.061L17.939 8zm3 .88L17.06 5l.97-.97a1.371 1.371 0 0 1 1.94 1.94zM3.25 5c0-.966.784-1.75 1.75-1.75h7a.75.75 0 0 1 0 1.5H5a.25.25 0 0 0-.25.25v14c0 .138.112.25.25.25h14a.25.25 0 0 0 .25-.25v-7a.75.75 0 0 1 1.5 0v7A1.75 1.75 0 0 1 19 20.75H5A1.75 1.75 0 0 1 3.25 19z"
       clip-rule="evenodd"
     >
     </path>
@@ -1083,7 +1062,7 @@ exports[`Neutral Pseudo States 1`] = `
       <path
         fill="currentColor"
         fill-rule="evenodd"
-        d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
+        d="M16.97 2.97a2.871 2.871 0 1 1 4.06 4.06l-1.5 1.5-4.333 4.333a1.75 1.75 0 0 1-.684.423l-4.276 1.425a.75.75 0 0 1-.949-.948l1.426-4.276c.086-.258.23-.492.423-.684l4.33-4.33.003-.003.003-.003zM16 6.06l-3.803 3.803a.25.25 0 0 0-.06.098l-.951 2.853 2.853-.95a.25.25 0 0 0 .098-.061L17.939 8zm3 .88L17.06 5l.97-.97a1.371 1.371 0 0 1 1.94 1.94zM3.25 5c0-.966.784-1.75 1.75-1.75h7a.75.75 0 0 1 0 1.5H5a.25.25 0 0 0-.25.25v14c0 .138.112.25.25.25h14a.25.25 0 0 0 .25-.25v-7a.75.75 0 0 1 1.5 0v7A1.75 1.75 0 0 1 19 20.75H5A1.75 1.75 0 0 1 3.25 19z"
         clip-rule="evenodd"
       >
       </path>
@@ -1164,7 +1143,7 @@ exports[`Neutral Pseudo States 1`] = `
       <path
         fill="currentColor"
         fill-rule="evenodd"
-        d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
+        d="M16.97 2.97a2.871 2.871 0 1 1 4.06 4.06l-1.5 1.5-4.333 4.333a1.75 1.75 0 0 1-.684.423l-4.276 1.425a.75.75 0 0 1-.949-.948l1.426-4.276c.086-.258.23-.492.423-.684l4.33-4.33.003-.003.003-.003zM16 6.06l-3.803 3.803a.25.25 0 0 0-.06.098l-.951 2.853 2.853-.95a.25.25 0 0 0 .098-.061L17.939 8zm3 .88L17.06 5l.97-.97a1.371 1.371 0 0 1 1.94 1.94zM3.25 5c0-.966.784-1.75 1.75-1.75h7a.75.75 0 0 1 0 1.5H5a.25.25 0 0 0-.25.25v14c0 .138.112.25.25.25h14a.25.25 0 0 0 .25-.25v-7a.75.75 0 0 1 1.5 0v7A1.75 1.75 0 0 1 19 20.75H5A1.75 1.75 0 0 1 3.25 19z"
         clip-rule="evenodd"
       >
       </path>
@@ -1245,7 +1224,7 @@ exports[`Neutral Pseudo States 1`] = `
       <path
         fill="currentColor"
         fill-rule="evenodd"
-        d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
+        d="M16.97 2.97a2.871 2.871 0 1 1 4.06 4.06l-1.5 1.5-4.333 4.333a1.75 1.75 0 0 1-.684.423l-4.276 1.425a.75.75 0 0 1-.949-.948l1.426-4.276c.086-.258.23-.492.423-.684l4.33-4.33.003-.003.003-.003zM16 6.06l-3.803 3.803a.25.25 0 0 0-.06.098l-.951 2.853 2.853-.95a.25.25 0 0 0 .098-.061L17.939 8zm3 .88L17.06 5l.97-.97a1.371 1.371 0 0 1 1.94 1.94zM3.25 5c0-.966.784-1.75 1.75-1.75h7a.75.75 0 0 1 0 1.5H5a.25.25 0 0 0-.25.25v14c0 .138.112.25.25.25h14a.25.25 0 0 0 .25-.25v-7a.75.75 0 0 1 1.5 0v7A1.75 1.75 0 0 1 19 20.75H5A1.75 1.75 0 0 1 3.25 19z"
         clip-rule="evenodd"
       >
       </path>
@@ -1326,7 +1305,7 @@ exports[`Neutral Pseudo States 1`] = `
       <path
         fill="currentColor"
         fill-rule="evenodd"
-        d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
+        d="M16.97 2.97a2.871 2.871 0 1 1 4.06 4.06l-1.5 1.5-4.333 4.333a1.75 1.75 0 0 1-.684.423l-4.276 1.425a.75.75 0 0 1-.949-.948l1.426-4.276c.086-.258.23-.492.423-.684l4.33-4.33.003-.003.003-.003zM16 6.06l-3.803 3.803a.25.25 0 0 0-.06.098l-.951 2.853 2.853-.95a.25.25 0 0 0 .098-.061L17.939 8zm3 .88L17.06 5l.97-.97a1.371 1.371 0 0 1 1.94 1.94zM3.25 5c0-.966.784-1.75 1.75-1.75h7a.75.75 0 0 1 0 1.5H5a.25.25 0 0 0-.25.25v14c0 .138.112.25.25.25h14a.25.25 0 0 0 .25-.25v-7a.75.75 0 0 1 1.5 0v7A1.75 1.75 0 0 1 19 20.75H5A1.75 1.75 0 0 1 3.25 19z"
         clip-rule="evenodd"
       >
       </path>
@@ -1406,7 +1385,7 @@ exports[`Tertiary 1`] = `
     <path
       fill="currentColor"
       fill-rule="evenodd"
-      d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
+      d="M16.97 2.97a2.871 2.871 0 1 1 4.06 4.06l-1.5 1.5-4.333 4.333a1.75 1.75 0 0 1-.684.423l-4.276 1.425a.75.75 0 0 1-.949-.948l1.426-4.276c.086-.258.23-.492.423-.684l4.33-4.33.003-.003.003-.003zM16 6.06l-3.803 3.803a.25.25 0 0 0-.06.098l-.951 2.853 2.853-.95a.25.25 0 0 0 .098-.061L17.939 8zm3 .88L17.06 5l.97-.97a1.371 1.371 0 0 1 1.94 1.94zM3.25 5c0-.966.784-1.75 1.75-1.75h7a.75.75 0 0 1 0 1.5H5a.25.25 0 0 0-.25.25v14c0 .138.112.25.25.25h14a.25.25 0 0 0 .25-.25v-7a.75.75 0 0 1 1.5 0v7A1.75 1.75 0 0 1 19 20.75H5A1.75 1.75 0 0 1 3.25 19z"
       clip-rule="evenodd"
     >
     </path>

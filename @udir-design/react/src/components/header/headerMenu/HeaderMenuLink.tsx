@@ -1,7 +1,8 @@
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
 import { ArrowRightIcon } from '@udir-design/icons';
-import { Link, LinkProps } from '../../link/Link';
+import type { LinkProps } from '../../link/Link';
+import { Link } from '../../link/Link';
 
 export type HeaderMenuLinkProps = LinkProps;
 

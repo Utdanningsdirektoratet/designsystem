@@ -6,8 +6,7 @@ import {
   ArrowUndoIcon,
   BellIcon,
   CogIcon,
-  ExternalLinkIcon,
-  PencilWritingIcon,
+  NotePencilIcon,
   PlusCircleIcon,
   PrinterSmallIcon,
   TrashIcon,
@@ -82,7 +81,7 @@ export const Secondary: Story = {
 export const Tertiary: Story = {
   args: {
     variant: 'tertiary',
-    children: [<PencilWritingIcon aria-hidden />, 'Rediger'],
+    children: [<NotePencilIcon aria-hidden />, 'Rediger'],
   },
 };
 
@@ -98,7 +97,7 @@ export const Neutral: Story = {
           Skriv ut
         </Button>
         <Button variant="secondary" {...args}>
-          <PencilWritingIcon aria-hidden />
+          <NotePencilIcon aria-hidden />
           Rediger
         </Button>
         <Button variant="tertiary" {...args}>
@@ -160,7 +159,6 @@ export const AsLink: Story = {
     children: (
       <a target="_blank" rel="noreferrer" href="https://www.udir.no/">
         Gå til udir.no
-        <ExternalLinkIcon title="Ekstern lenke" />
       </a>
     ),
   },
@@ -301,17 +299,17 @@ export const IconOnly: Story = {
   render: (args) => (
     <>
       <Tooltip content="Legg til ny">
-        <Button aria-label="Legg til ny" {...args}>
+        <Button {...args}>
           <PlusCircleIcon aria-hidden />
         </Button>
       </Tooltip>
       <Tooltip content="Varslinger">
-        <Button aria-label="Varslinger" {...args}>
+        <Button {...args}>
           <BellIcon aria-hidden />
         </Button>
       </Tooltip>
       <Tooltip content="Instillinger">
-        <Button aria-label="Innstillinger" {...args}>
+        <Button {...args}>
           <CogIcon aria-hidden />
         </Button>
       </Tooltip>

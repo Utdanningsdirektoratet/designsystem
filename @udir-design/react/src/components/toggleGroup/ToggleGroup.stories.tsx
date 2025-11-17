@@ -7,9 +7,7 @@ import {
   AlignRightIcon,
   ArrowRightIcon,
   CheckmarkCircleIcon,
-  DocPencilIcon,
   ExclamationmarkTriangleIcon,
-  NotePencilDashIcon,
   NotePencilIcon,
   TasklistIcon,
   XMarkOctagonIcon,
@@ -166,17 +164,17 @@ export const OnlyIcons: Story = {
   render: (args) => (
     <ToggleGroup {...args}>
       <Tooltip content="Venstrestilt">
-        <ToggleGroup.Item value="venstrestilt" icon aria-label="Venstrestilt">
+        <ToggleGroup.Item value="venstrestilt" icon>
           <AlignLeftIcon aria-hidden />
         </ToggleGroup.Item>
       </Tooltip>
       <Tooltip content="Midtstilt">
-        <ToggleGroup.Item value="midtstilt" icon aria-label="Midtstilt">
+        <ToggleGroup.Item value="midtstilt" icon>
           <AlignCenterIcon aria-hidden />
         </ToggleGroup.Item>
       </Tooltip>
       <Tooltip content="Høyrestilt">
-        <ToggleGroup.Item value="høyrestilt" icon aria-label="Høyrestilt">
+        <ToggleGroup.Item value="høyrestilt" icon>
           <AlignRightIcon aria-hidden />
         </ToggleGroup.Item>
       </Tooltip>
@@ -266,7 +264,7 @@ export const Controlled: Story = {
       answers: { text: 'Start retting', icon: <NotePencilIcon aria-hidden /> },
       drafts: {
         text: 'Rediger utkast',
-        icon: <NotePencilDashIcon aria-hidden />,
+        icon: <NotePencilIcon aria-hidden />,
       },
       correctedAnswers: {
         text: 'Se retting',
@@ -286,7 +284,7 @@ export const Controlled: Story = {
             Ikke påbegynt
           </ToggleGroup.Item>
           <ToggleGroup.Item value="drafts">
-            <DocPencilIcon aria-hidden />
+            <NotePencilIcon aria-hidden />
             Under arbeid
           </ToggleGroup.Item>
           <ToggleGroup.Item value="correctedAnswers">
@@ -325,11 +323,7 @@ export const Controlled: Story = {
                   }}
                 >
                   <Tooltip content={actionText(value)}>
-                    <Button
-                      variant="tertiary"
-                      icon
-                      aria-label={actionText(value)}
-                    >
+                    <Button variant="tertiary" icon>
                       {actionValue(value)}
                     </Button>
                   </Tooltip>

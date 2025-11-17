@@ -232,7 +232,10 @@ exports[`Form Page 2 1`] = `
       </table>
     </fieldset>
   </form>
-  <dialog data-modal="true">
+  <dialog
+    data-modal="true"
+    closedby="closerequest"
+  >
     <button
       data-icon="true"
       data-variant="tertiary"
@@ -266,9 +269,9 @@ exports[`Form Page 2 1`] = `
     <ul>
       <li>
         <button
-          aria-disabled="false"
           data-variant="tertiary"
           type="button"
+          aria-hidden="false"
         >
           <span>
             Forrige
@@ -305,9 +308,9 @@ exports[`Form Page 2 1`] = `
       </li>
       <li>
         <button
-          aria-disabled="false"
           data-variant="tertiary"
           type="button"
+          aria-hidden="false"
         >
           <span>
             Neste
@@ -413,7 +416,10 @@ exports[`Form Page 3 1`] = `
       Send inn skjema
     </button>
   </form>
-  <dialog data-modal="true">
+  <dialog
+    data-modal="true"
+    closedby="closerequest"
+  >
     <button
       data-icon="true"
       data-variant="tertiary"
@@ -447,9 +453,9 @@ exports[`Form Page 3 1`] = `
     <ul>
       <li>
         <button
-          aria-disabled="false"
           data-variant="tertiary"
           type="button"
+          aria-hidden="false"
         >
           <span>
             Forrige
@@ -486,9 +492,9 @@ exports[`Form Page 3 1`] = `
       </li>
       <li>
         <button
-          aria-disabled="true"
           data-variant="tertiary"
           type="button"
+          aria-hidden="true"
         >
           <span>
             Neste
@@ -525,6 +531,7 @@ exports[`Form Story 1`] = `
       <div>
         <input
           id="firstName"
+          autocomplete="given-name"
           type="text"
           name="firstName"
         >
@@ -539,6 +546,7 @@ exports[`Form Story 1`] = `
       </label>
       <input
         id="lastName"
+        autocomplete="family-name"
         aria-invalid="false"
         type="text"
         name="lastName"
@@ -838,7 +846,10 @@ exports[`Form Story 1`] = `
       </select>
     </div>
   </form>
-  <dialog data-modal="true">
+  <dialog
+    data-modal="true"
+    closedby="closerequest"
+  >
     <button
       data-icon="true"
       data-variant="tertiary"
@@ -872,9 +883,9 @@ exports[`Form Story 1`] = `
     <ul>
       <li>
         <button
-          aria-disabled="true"
           data-variant="tertiary"
           type="button"
+          aria-hidden="true"
         >
           <span>
             Forrige
@@ -911,9 +922,9 @@ exports[`Form Story 1`] = `
       </li>
       <li>
         <button
-          aria-disabled="false"
           data-variant="tertiary"
           type="button"
+          aria-hidden="false"
         >
           <span>
             Neste

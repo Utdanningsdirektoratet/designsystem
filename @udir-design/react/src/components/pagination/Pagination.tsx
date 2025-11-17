@@ -8,7 +8,11 @@ import {
   type PaginationListProps,
   type PaginationProps as DigdirPaginationProps,
 } from '@digdir/designsystemet-react';
-import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
+import type {
+  ComponentRef,
+  ForwardRefExoticComponent,
+  RefAttributes,
+} from 'react';
 
 type PaginationProps = Omit<DigdirPaginationProps, 'data-color'>;
 
@@ -20,13 +24,10 @@ const Pagination = DigdirPagination as ForwardRefExoticComponent<
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 Pagination.displayName = 'Pagination';
 
-export {
-  Pagination,
-  PaginationButton,
+export type {
   PaginationButtonProps,
-  PaginationItem,
   PaginationItemProps,
-  PaginationList,
   PaginationListProps,
   PaginationProps,
 };
+export { Pagination, PaginationButton, PaginationItem, PaginationList };

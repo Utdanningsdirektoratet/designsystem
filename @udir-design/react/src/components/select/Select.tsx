@@ -10,11 +10,5 @@ import {
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 Select.displayName = 'Select';
 
-export {
-  Select,
-  SelectOptgroup,
-  SelectOptgroupProps,
-  SelectOption,
-  SelectOptionProps,
-  SelectProps,
-};
+export type { SelectOptgroupProps, SelectOptionProps, SelectProps };
+export { Select, SelectOptgroup, SelectOption };

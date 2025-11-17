@@ -35,7 +35,7 @@ export const Preview: Story = {
   },
   render: (args) => (
     <Tooltip {...args}>
-      <Button aria-label="Legg til" variant="tertiary" icon>
+      <Button variant="tertiary" icon>
         <PlusCircleIcon aria-hidden />
       </Button>
     </Tooltip>
@@ -76,26 +76,41 @@ export const Placement: Story = {
     return (
       <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
         <Tooltip placement="left" content="Slett">
-          <Button aria-label="Slett" icon variant="secondary">
+          <Button icon variant="secondary">
             <TrashIcon aria-hidden />
           </Button>
         </Tooltip>
         <Tooltip placement="top" content="Lagre">
-          <Button aria-label="Lagre" icon variant="secondary">
+          <Button icon variant="secondary">
             <FloppydiskIcon aria-hidden />
           </Button>
         </Tooltip>
         <Tooltip placement="bottom" content="ctrl + p">
-          <Button aria-label="Print" icon variant="secondary">
+          <Button icon variant="secondary">
             <PrinterSmallIcon aria-hidden />
           </Button>
         </Tooltip>
         <Tooltip placement="right" content="Kopier">
-          <Button aria-label="Kopier" icon variant="secondary">
+          <Button icon variant="secondary">
             <FilesIcon aria-hidden />
           </Button>
         </Tooltip>
       </div>
     );
   },
+};
+
+export const Aria: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
+      <Tooltip content="Jeg er hovedinformasjon (aria-labelledby)">
+        <Button icon>
+          <FilesIcon aria-hidden />
+        </Button>
+      </Tooltip>
+      <Tooltip content="Jeg er tillegsinformasjon (aria-describedby)">
+        <Button>Tekst i trigger</Button>
+      </Tooltip>
+    </div>
+  ),
 };

@@ -1,4 +1,4 @@
-import { SeverityColors } from '@digdir/designsystemet-react/colors';
+import type { SeverityColors } from '@digdir/designsystemet-react/colors';
 import { Markdown, Unstyled } from '@storybook/addon-docs/blocks';
 import { toHtml } from 'hast-util-to-html';
 import type { Heading, Root, RootContent, Text } from 'mdast';

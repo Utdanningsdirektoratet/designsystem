@@ -35,17 +35,31 @@ import { Tag } from '@udir-design/react';
 
 <Canvas of={TagStories.Sizes} />
 
+### Ikoner
+
+Du kan bruke ikoner i `Tag` for å gi ekstra visuell informasjon. Du må selv bestemme mellomrom mellom tekst og ikon. Vi anbefaler at padding fra Tag til ytterkanten er den samme som marginen mellom ikonet og teksten, se eksempelet under.
+
+<Canvas of={TagStories.Icon} />
+
 ### Farger
 
-Du kan bruke alle identitetsfargene og de semantiske fargene på `Tag`.
+Du kan bruke alle identitetsfargene og varselfargene på `Tag`.
 
 #### Identitetsfarger
 
 <Canvas of={TagStories.Colors} />
 
-#### Semantiske farger
+#### Varselfarger
 
 <Canvas of={TagStories.Status} />
+
+### Varianter
+
+På noen bakgrunnsfarger kan `Tag` være lite synlig. Ved å sette `variant="outline"` får taggen en
+kantlinje som gjør den mer synlig. Dette bør kun brukes i de tilfellene kontrasten mot bakgrunn ellers
+ville vært for dårlig, siden outline også gjør at noen lettere kan forveksle tag med en knapp.
+
+<Canvas of={TagStories.VariantOutline} />
 
 ### Komponering
 

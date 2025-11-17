@@ -48,6 +48,7 @@ storybook-static
 build-storybook.log
 .env.*
 **/vite.config.*.timestamp*
+test-reports/
 
 # Next.js
 .next

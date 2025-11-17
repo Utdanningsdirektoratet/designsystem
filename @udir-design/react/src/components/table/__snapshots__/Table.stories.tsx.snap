@@ -198,10 +198,10 @@ exports[`Fixed Table 1`] = `
     <ul>
       <li>
         <button
-          aria-disabled="true"
           data-variant="tertiary"
           type="button"
           aria-label="Forrige side"
+          aria-hidden="true"
         >
           Forrige
         </button>
@@ -236,10 +236,10 @@ exports[`Fixed Table 1`] = `
       </li>
       <li>
         <button
-          aria-disabled="false"
           data-variant="tertiary"
           type="button"
           aria-label="Neste side"
+          aria-hidden="false"
         >
           Neste
         </button>
@@ -438,7 +438,10 @@ exports[`Preview 1`] = `
         rita@nordmann.no
       </td>
       <td>
-        <span data-color="info">
+        <span
+          data-variant="default"
+          data-color="info"
+        >
           I arbeid
         </span>
       </td>
@@ -465,7 +468,10 @@ exports[`Preview 1`] = `
         kari@nordmann.no
       </td>
       <td>
-        <span data-color="success">
+        <span
+          data-variant="default"
+          data-color="success"
+        >
           Ferdig
         </span>
       </td>
@@ -492,7 +498,10 @@ exports[`Preview 1`] = `
         ola@nordmann.no
       </td>
       <td>
-        <span data-color="info">
+        <span
+          data-variant="default"
+          data-color="info"
+        >
           I arbeid
         </span>
       </td>
@@ -519,7 +528,10 @@ exports[`Preview 1`] = `
         kai@nordmann.no
       </td>
       <td>
-        <span data-color="warning">
+        <span
+          data-variant="default"
+          data-color="warning"
+        >
           Ikke begynt
         </span>
       </td>
@@ -546,7 +558,10 @@ exports[`Preview 1`] = `
         mateo@nordmann.no
       </td>
       <td>
-        <span data-color="success">
+        <span
+          data-variant="default"
+          data-color="success"
+        >
           Ferdig
         </span>
       </td>

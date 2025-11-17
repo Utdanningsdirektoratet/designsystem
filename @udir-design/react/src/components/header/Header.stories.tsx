@@ -10,6 +10,7 @@ import { Dropdown } from '../dropdown/Dropdown';
 import { Link } from '../link/Link';
 import { List } from '../list/List';
 import { Search } from '../search/Search';
+import { Tag } from '../tag/Tag';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import styles from './header.stories.module.css';
@@ -50,8 +51,8 @@ export const WithUserButton: Story = {
   render: (args) => (
     <Header {...args}>
       <Header.UserButton
-        username="Stian Hansen"
-        userRole="Admin"
+        name="Stian Hansen"
+        description="Admin"
         popovertarget="usermenu"
         avatar={
           <Avatar aria-hidden>
@@ -549,6 +550,16 @@ const responsiveLinks = ['Navlinker', 'Overskrift 1', 'Overskrift 2'].map(
   }),
 );
 
+export const WithTag: Story = {
+  render(args) {
+    return (
+      <Header {...args}>
+        <Tag data-color="accent">Dev</Tag>
+      </Header>
+    );
+  },
+};
+
 export const Responsive: Story = {
   render(args) {
     return (
@@ -561,8 +572,8 @@ export const Responsive: Story = {
           <Header.Navigation.Item href="#">Navlink 3</Header.Navigation.Item>
         </Header.Navigation>
         <Header.UserButton
-          username="Stian Hansen"
-          userRole="Admin"
+          name="Stian Hansen"
+          description="Admin"
           popovertarget="usermenu2"
           data-show="md"
           avatar={<Avatar aria-hidden>SH</Avatar>}
@@ -592,8 +603,8 @@ export const Responsive: Story = {
         <Header.MenuButton />
         <Header.Menu>
           <Header.UserButton
-            username="Stian Hansen"
-            userRole="Admin"
+            name="Stian Hansen"
+            description="Admin"
             popovertarget="usermenuInMenu"
             avatar={<Avatar aria-hidden>SH</Avatar>}
             data-hide="md"

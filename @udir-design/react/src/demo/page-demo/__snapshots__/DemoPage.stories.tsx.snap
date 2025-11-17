@@ -156,6 +156,7 @@ exports[`Simple 1`] = `
           <input
             id="name"
             placeholder="Ola Normann"
+            autocomplete="name"
             type="text"
           >
         </div>
@@ -171,6 +172,7 @@ exports[`Simple 1`] = `
           <input
             id="email"
             placeholder="ola@norge.no"
+            autocomplete="email"
             type="email"
           >
         </div>
@@ -179,6 +181,7 @@ exports[`Simple 1`] = `
         href="#"
         popovertarget="_r_0_"
         popovertargetaction="show"
+        aria-describedby="_r_0_"
       >
         Glemt passord?
       </a>

@@ -7,7 +7,11 @@ import {
   ListUnordered as DigdirListUnordered,
   type ListUnorderedProps as DigdirListUnorderedProps,
 } from '@digdir/designsystemet-react';
-import { ComponentRef, ForwardRefExoticComponent, RefAttributes } from 'react';
+import type {
+  ComponentRef,
+  ForwardRefExoticComponent,
+  RefAttributes,
+} from 'react';
 
 type ListOrderedProps = Omit<DigdirListOrderedProps, 'data-color'>;
 type ListUnorderedProps = Omit<DigdirListUnorderedProps, 'data-color'>;
@@ -28,12 +32,5 @@ const List = Object.assign(DigdirList, {
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 List.Item.displayName = 'List.Item';
 
-export {
-  List,
-  ListItem,
-  ListItemProps,
-  ListOrdered,
-  ListOrderedProps,
-  ListUnordered,
-  ListUnorderedProps,
-};
+export type { ListItemProps, ListOrderedProps, ListUnorderedProps };
+export { List, ListItem, ListOrdered, ListUnordered };

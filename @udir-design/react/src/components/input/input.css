@@ -1,0 +1,38 @@
+/* This file can be removed when we update to Designsystemet > 1.7.1 */
+
+.ds-input {
+  &:not(:focus-visible, :disabled, [readonly]):hover {
+    outline-color: unset;
+    outline-width: unset;
+    outline-style: unset;
+
+    &:is(:checked, :indeterminate:where([type='checkbox'])):not(
+        [aria-invalid='true']
+      ) {
+      outline-color: unset;
+    }
+
+    &:is([aria-invalid='true']) {
+      outline-color: unset;
+    }
+  }
+
+  /* only hover effect on input, but with label if it is a radio or checkbox */
+  :has(label):not(:has(label:hover))
+    &:not(:focus-visible, :disabled, :read-only):hover,
+  &:read-only:not(:focus-visible, :disabled, [readonly]):hover {
+    outline-color: var(--dsc-input-outline-color--hover);
+    outline-width: var(--dsc-input-outline-width--hover);
+    outline-style: var(--dsc-input-outline-style--hover);
+
+    &:is(:checked, :indeterminate:where([type='checkbox'])):not(
+        [aria-invalid='true']
+      ) {
+      outline-color: var(--dsc-input-outline-color--toggle--hover);
+    }
+
+    &:is([aria-invalid='true']) {
+      outline-color: var(--dsc-input-accent-color--invalid);
+    }
+  }
+}

@@ -1,16 +1,17 @@
+import type { Dispatch, SetStateAction } from 'react';
 import * as Icons from '@udir-design/icons';
-import { AkselIcon } from '@udir-design/icons/metadata';
 import { Button } from 'src/components/button/Button';
 import { Card } from 'src/components/card/Card';
 import { Link } from 'src/components/link/Link';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import type { UdirIcon } from './IconDisplay.utils';
 import { Translations } from './Translations';
 import styles from './categorizedIcons.module.css';
 
 type CategoryWithIcons = {
   category: string;
-  icons: AkselIcon[];
+  icons: UdirIcon[];
 };
 
 export const CategorizedIcons = ({
@@ -19,8 +20,8 @@ export const CategorizedIcons = ({
   setSelectedIcon,
 }: {
   icons: CategoryWithIcons[];
-  selectedIcon: AkselIcon | null;
-  setSelectedIcon: React.Dispatch<React.SetStateAction<AkselIcon | null>>;
+  selectedIcon: UdirIcon | null;
+  setSelectedIcon: Dispatch<SetStateAction<UdirIcon | null>>;
 }) => {
   return (
     <div className={styles.iconSection}>
@@ -39,11 +40,11 @@ export const CategorizedIcons = ({
                 }
                 return (
                   <Button
-                    key={icon.id}
+                    key={icon.id + section.category}
                     variant="tertiary"
                     data-size="lg"
                     onClick={() => {
-                      selectedIcon === icon
+                      selectedIcon?.id === icon.id
                         ? setSelectedIcon(null)
                         : setSelectedIcon(icon);
                     }}

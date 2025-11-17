@@ -29,6 +29,8 @@ export default defineConfig(
   {
     files: ['**/*.ts', '**/*.tsx'],
     rules: {
+      '@typescript-eslint/consistent-type-exports': 'error',
+      '@typescript-eslint/consistent-type-imports': 'error',
       'no-redeclare': 'off',
       'no-restricted-imports': [
         'error',

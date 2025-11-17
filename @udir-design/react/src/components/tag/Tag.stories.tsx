@@ -1,9 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
+import { ParagraphIcon, RobotIcon } from '@udir-design/icons';
 import { Avatar } from '../avatar/Avatar';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
-import { Tag, TagProps } from './Tag';
+import type { TagProps } from './Tag';
+import { Tag } from './Tag';
 
 const meta: Meta<typeof Tag> = {
   component: Tag,
@@ -49,6 +51,36 @@ export const Sizes: Story = {
           {size}
         </Tag>
       ))}
+    </>
+  ),
+};
+
+export const Icon: Story = {
+  render: () => (
+    <>
+      <Tag
+        style={{
+          paddingInlineStart: 'var(--ds-size-1)',
+        }}
+      >
+        <RobotIcon
+          aria-hidden
+          style={{ marginInlineEnd: 'var(--ds-size-1)' }}
+        />
+        Teksten er KI-generert
+      </Tag>
+      <Tag
+        data-color="support1"
+        style={{
+          paddingInlineStart: 'var(--ds-size-1)',
+        }}
+      >
+        <ParagraphIcon
+          aria-hidden
+          style={{ marginInlineEnd: 'var(--ds-size-1)' }}
+        />
+        Privatskoleloven
+      </Tag>
     </>
   ),
 };
@@ -145,4 +177,32 @@ export const Article: Story = {
       </Paragraph>
     </div>
   ),
+};
+
+export const VariantOutline: Story = {
+  parameters: {
+    customStyles: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(4, max-content)',
+      gap: 'var(--ds-size-2)',
+      height: '100%',
+      width: '100%',
+      placeItems: 'left',
+    },
+  },
+  render: () => {
+    return (
+      <>
+        {colorVariants.concat(colorStatusVariants).map((color) => (
+          <Tag
+            key={color}
+            data-color={color as TagProps['data-color']}
+            variant="outline"
+          >
+            {color}
+          </Tag>
+        ))}
+      </>
+    );
+  },
 };

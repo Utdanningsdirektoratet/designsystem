@@ -6,7 +6,7 @@ import { Dialog } from 'src/components/dialog/Dialog';
 import { Tooltip } from 'src/components/tooltip/Tooltip';
 import { Heading } from 'src/components/typography/heading/Heading';
 import classes from '../TableDemo.module.css';
-import { Student } from '../data/students';
+import type { Student } from '../data/students';
 
 type DeleteDialogProps = {
   student: Student;
@@ -18,12 +18,7 @@ export const DeleteDialog = ({ student, handleDelete }: DeleteDialogProps) => {
   return (
     <Dialog.TriggerContext>
       <Tooltip content="Slett">
-        <Dialog.Trigger
-          data-color="danger"
-          icon
-          variant="tertiary"
-          aria-label="Slett"
-        >
+        <Dialog.Trigger data-color="danger" icon variant="tertiary">
           <TrashFillIcon aria-hidden />
         </Dialog.Trigger>
       </Tooltip>

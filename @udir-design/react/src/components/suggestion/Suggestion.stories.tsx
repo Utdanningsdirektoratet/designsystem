@@ -9,12 +9,12 @@ import { Field } from '../field/Field';
 import { Spinner } from '../spinner/Spinner';
 import { Label } from '../typography/label/Label';
 import { Paragraph } from '../typography/paragraph/Paragraph';
-import {
-  Suggestion,
+import { Suggestion } from './Suggestion';
+import type {
+  SuggestionItem,
   SuggestionMultipleProps,
   SuggestionSingleProps,
 } from './Suggestion';
-import type { SuggestionItem } from './Suggestion';
 
 const meta: Meta<typeof Suggestion> = {
   component: Suggestion,

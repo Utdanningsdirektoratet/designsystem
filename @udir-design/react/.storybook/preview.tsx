@@ -1,6 +1,6 @@
 import './style.css';
 import './docs/customTheme.scss';
-import { Preview } from '@storybook/react-vite';
+import type { Preview } from '@storybook/react-vite';
 import { INITIAL_VIEWPORTS, type ViewportMap } from 'storybook/viewport';
 import { docsParameters } from './docs/parameters';
 import { customStylesDecorator } from './utils/customStylesDecorator';
@@ -27,7 +27,15 @@ const preview: Preview = {
   parameters: {
     options: {
       storySort: {
-        order: ['Introduksjon', 'design-tokens', 'demo', 'components'],
+        order: [
+          'Introduksjon',
+          'design-tokens',
+          ['Oversikt', '*'],
+          'iconsandsymbols',
+          ['Retningslinjer', 'Ikoner'],
+          'demo',
+          'components',
+        ],
       },
     },
 

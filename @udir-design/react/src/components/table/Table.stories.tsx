@@ -7,7 +7,8 @@ import { Checkbox } from '../checkbox/Checkbox';
 import { Tag } from '../tag/Tag';
 import { Textfield } from '../textfield/Textfield';
 import { Heading } from '../typography/heading/Heading';
-import { Table, TableHeaderCellProps } from '.';
+import type { TableHeaderCellProps } from '.';
+import { Table } from '.';
 
 const meta: Meta<typeof Table> = {
   component: Table,

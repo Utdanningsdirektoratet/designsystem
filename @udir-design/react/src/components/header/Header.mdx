@@ -42,13 +42,15 @@ Subkomponenter:
 - `Header.Search`
 - `Header.Navigation` med `Header.Navigation.Item`
 - `Header.MenuButton`
-- `Header.Menu`
+- `Header.Menu` med `Header.Menu.Link`
 - `Header.ThemeMenuButton`
 
 ### Brukerprofil
 
-Subkomponenten `Header.UserButton` viser brukerinformasjon og kan knyttes til en meny med brukerrelaterte handlinger. Den har props for brukernavn, rolle og avatar og finnes i fargene `neutral` og `accent`. I eksempelet brukes [`Dropdown`](/docs/components-dropdown--docs) som brukermeny.
-På mindre skjermer flytter du enten `Header.UserButton` inn i `Header.Menu`, eller bytter ut `Header.UserButton` med en [`Avatar`](/docs/components-avatar--docs) som knapp.
+Subkomponenten `Header.UserButton` viser brukerinformasjon og kan knyttes til en meny med brukerrelaterte handlinger. Den har props for navn, beskrivelse og avatar og finnes i fargene `neutral` og `accent`. I eksempelet brukes [`Dropdown`](/docs/components-dropdown--docs) som brukermeny.
+På mindre skjermer flytter du enten `Header.UserButton` inn i `Header.Menu`, eller bytter ut `Header.UserButton` med en [`Avatar`](/docs/components-avatar--docs) som knapp. Du kan også benytte `Avatar` som en knapp på større skjermer dersom det blir trangt med andre elementer i Header.
+
+`Header.UserButton` har en maksbredde på `16rem`. Hvis navnet er lengre enn knappen, vil det bli avkortet med ellipse (`...`). Vi anbefaler å korte ned lange navn for å unngå dette, for eksempel ved å ekskludere mellomnavn.
 
 <Canvas
   story={{ inline: false, height: '350px' }}
@@ -87,7 +89,7 @@ Unngå å bruke for mange lenker, og vurder om noen av lenkene heller kan plasse
 
 `Header.MenuButton` og `Header.Menu` brukes sammen for å lage en meny. Menyen inneholder som regel navigasjon, men kan også inneholde andre handlinger. På mindre skjermer flytter du for eksempel navigasjonslenker og brukerprofil inn i menyen.
 
-`Header.MenuButton` er en [`Button`](/docs/components-button--docs) med åpne/lukke-ikon. Teksten kan tilpasses ved bruk av `children`. `Header.Menu` er en stor nedtrekksmeny som er basert på [`Popover`](/docs/components-popover--docs).
+`Header.MenuButton` er en [`Button`](/docs/components-button--docs) med åpne/lukke-ikon. Teksten kan tilpasses ved bruk av `children`. `Header.Menu` er en stor nedtrekksmeny som er basert på [`Popover`](/docs/components-popover--docs). Bruk `Header.Menu.Link` for lenker i menyen. Merk at lenkene legges i en [`List`](/docs/components-list--docs), men hver enkelt lenke skal ikke pakkes inn i en `List.Item`.
 
 Eksempelet under viser hvordan du kan sette opp en meny med navigasjon. Her ser du også at overskrifter kan fungere som lenker.
 
@@ -115,6 +117,12 @@ Navigasjonslenker og meny er de eneste navigasjonselementene som kan kombineres 
   story={{ inline: false, height: '400px' }}
   of={HeaderStories.WithNavigationLinksAndMenu}
 />
+
+### Utviklingsmiljø
+
+Bruk `Tag` til å indikere at en tjeneste vises i et annet kjøretidsmiljø enn produksjon, f.eks. dev, test eller qa. Den skal alltid ligge som første element og vil da automatisk legges til venstre, inntil logo.
+
+<Canvas story={{ inline: false, height: '150px' }} of={HeaderStories.WithTag} />
 
 ### Responsivt innhold
 
@@ -263,7 +271,7 @@ Bruk [`<nav>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Eleme
   <h2 id="header-menu-navigation" className="ds-sr-only">
     Menynavigasjon
   </h2>
-  <ListUnordered>{/* liste med lenker */}</ListUnordered>
+  <List.Unordered>{/* liste med lenker */}</List.Unordered>
 </nav>
 ```
 

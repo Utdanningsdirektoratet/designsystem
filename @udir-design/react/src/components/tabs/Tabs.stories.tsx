@@ -2,7 +2,7 @@ import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import {
-  BellDotIcon,
+  BellIcon,
   CalculatorIcon,
   ChildEyesIcon,
   CogIcon,
@@ -19,7 +19,8 @@ import { List } from '../list/List';
 import { Tooltip } from '../tooltip/Tooltip';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
-import { Tabs, TabsProps } from './Tabs';
+import type { TabsProps } from './Tabs';
+import { Tabs } from './Tabs';
 
 const meta: Meta<typeof Tabs> = {
   component: Tabs,
@@ -162,22 +163,22 @@ export const OnlyIcons: Story = {
     <Tabs {...args}>
       <Tabs.List>
         <Tooltip content="Galleri">
-          <Tabs.Tab value="gallery" aria-label="Galleri">
+          <Tabs.Tab value="gallery">
             <ImageIcon aria-hidden />
           </Tabs.Tab>
         </Tooltip>
         <Tooltip content="Profilen din">
-          <Tabs.Tab value="profile" aria-label="Profilen din">
+          <Tabs.Tab value="profile">
             <PersonIcon aria-hidden />
           </Tabs.Tab>
         </Tooltip>
         <Tooltip content="Varsler">
-          <Tabs.Tab value="notifications" aria-label="Varsler">
-            <BellDotIcon aria-hidden />
+          <Tabs.Tab value="notifications">
+            <BellIcon aria-hidden />
           </Tabs.Tab>
         </Tooltip>
         <Tooltip content="Innstillinger">
-          <Tabs.Tab value="settings" aria-label="Innstillinger">
+          <Tabs.Tab value="settings">
             <CogIcon aria-hidden />
           </Tabs.Tab>
         </Tooltip>

@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import * as Icons from '@udir-design/icons';
-import { AirplaneIcon } from '@udir-design/icons';
+import type { AirplaneIcon } from '@udir-design/icons';
 
 export default {
-  title: 'Ikoner',
+  title: 'iconsandsymbols/Ikoner',
+  tags: ['!autodocs'],
   parameters: {
     componentOrigin: {
       originator: 'nav',

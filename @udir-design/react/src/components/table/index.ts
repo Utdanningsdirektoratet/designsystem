@@ -26,19 +26,21 @@ const Table = Object.assign(TableRoot, {
 
 Table.displayName = 'Table';
 
+export type {
+  TableBodyProps,
+  TableCellProps,
+  TableFootProps,
+  TableHeadProps,
+  TableHeaderCellProps,
+  TableProps,
+  TableRowProps,
+};
 export {
   Table,
   TableBody,
-  TableBodyProps,
   TableCell,
-  TableCellProps,
   TableFoot,
-  TableFootProps,
   TableHead,
-  TableHeadProps,
   TableHeaderCell,
-  TableHeaderCellProps,
-  TableProps,
   TableRow,
-  TableRowProps,
 };
