@@ -19,7 +19,7 @@ const meta: Meta<typeof Badge> = {
     componentOrigin: {
       originator: 'digdir',
       details:
-        'Vi har begrenset fargevalg til semantiske farger og Udirs hovedfarger.',
+        'Vi har begrenset fargevalg til varselfarger og Udirs hovedfarger.',
     },
     customStyles: {
       display: 'flex',
