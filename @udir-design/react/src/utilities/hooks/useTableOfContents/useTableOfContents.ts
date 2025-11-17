@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { TocHeading } from '../../../components/tableOfContents/TableOfContents';
 
 export type useTableOfContentsProps = {
@@ -11,7 +11,7 @@ export type useTableOfContentsProps = {
   /**
    * The RefObject of the element
    * to extract headings from
-   * @deafult document
+   * @default document
    */
   containerRef?: React.RefObject<HTMLElement | null>;
 };
@@ -25,27 +25,30 @@ export const useTableOfContents = ({
   headingSelector = 'h2,h3',
 }: useTableOfContentsProps = {}): useTableOfContentsReturn => {
   const [headings, setHeadings] = useState<TocHeading[]>([]);
+  // setState in an effect is fine if the value comes from a ref. Otherwise the react compiler complains.
+  // See https://react.dev/reference/eslint-plugin-react-hooks/lints/set-state-in-effect#valid
+  const bodyRef = useRef(document.body);
 
   useEffect(() => {
-    const container = containerRef?.current ?? document;
-    const sectionHeadings = Array.from(
-      container.querySelectorAll(headingSelector),
-    )
-      .filter((node) => !node.hasAttribute('data-toc-ignore'))
-      .flatMap((node) => {
-        if (!node.id) {
-          return [];
-        }
-        const level = parseInt(
-          node.tagName.toLowerCase()[1],
-        ) as TocHeading['level'];
-        const id = node.id;
+    const ref = containerRef ?? bodyRef;
+    if (ref?.current) {
+      const sectionHeadings = Array.from(ref.current.querySelectorAll('h2,h3'))
+        .filter((node) => !node.hasAttribute('data-toc-ignore'))
+        .flatMap((node) => {
+          if (!node.id) {
+            return [];
+          }
+          const level = parseInt(
+            node.tagName.toLowerCase()[1],
+          ) as TocHeading['level'];
+          const id = node.id;
 
-        const name = (node as HTMLElement).innerText;
+          const name = (node as HTMLElement).innerText;
 
-        return { level, name, id };
-      });
-    setHeadings(sectionHeadings);
+          return { level, name, id };
+        });
+      setHeadings(sectionHeadings);
+    }
   }, [containerRef, headingSelector]);
   return { headings: headings };
 };
