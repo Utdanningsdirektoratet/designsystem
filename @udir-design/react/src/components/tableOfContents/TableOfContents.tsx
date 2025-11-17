@@ -19,14 +19,21 @@ export type TableOfContentsProps = Omit<
 > & {
   /**
    * Headings to be displayed
-   * in the tableOfContents
+   * in the TableOfContents
    */
   headings: TocHeading[];
   'data-color'?: 'neutral' | 'accent' | 'support1';
+  /* Defaults the TableOfContents to closed
+   * @default false
+   */
+  defaultClosed?: boolean;
 };
 
 export const TableOfContents = forwardRef<HTMLDivElement, TableOfContentsProps>(
-  function TableOfContents({ headings, variant, className, ...rest }, ref) {
+  function TableOfContents(
+    { headings, variant, defaultClosed = false, className, ...rest },
+    ref,
+  ) {
     return (
       <Card
         variant={variant}
@@ -34,7 +41,7 @@ export const TableOfContents = forwardRef<HTMLDivElement, TableOfContentsProps>(
         ref={ref}
         {...rest}
       >
-        <Details defaultOpen>
+        <Details defaultOpen={!defaultClosed}>
           <Details.Summary>Innhold på denne siden</Details.Summary>
           <Details.Content>
             <ol>
