@@ -1,4 +1,5 @@
 import type { ComponentOrigin } from '.storybook/types/parameters';
+import { Link } from 'src/components/link/Link';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 
@@ -16,7 +17,15 @@ export function OriginText({
     ? ' er basert på et eksempel fra Digdir.'
     : ' bygger på en komponent fra Digdirs designsystem.';
   const selfText = ' er egenutviklet.';
-  const navText = ' bygger på Navs designsystem';
+  const navText = (
+    <div style={{ display: 'inline' }}>
+      {' bygger på '}
+      <Link href="https://aksel.nav.no/komponenter/ikoner">
+        Navs ikonbibliotek Aksel
+      </Link>
+      .
+    </div>
+  );
   const baseText =
     originator === 'digdir'
       ? digdirText
@@ -24,7 +33,13 @@ export function OriginText({
         ? navText
         : selfText;
 
-  const fullText = details ? `${baseText} ${details}` : baseText;
+  const fullText = details ? (
+    <>
+      {baseText} {details}
+    </>
+  ) : (
+    baseText
+  );
 
   return (
     <>
