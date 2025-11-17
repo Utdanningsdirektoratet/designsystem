@@ -114,6 +114,8 @@ export const FormDemo = ({ page = 1, ...props }: FormDemo) => {
           senere tidspunkt.
         </Alert>
 
+        {/* False positive - https://github.com/facebook/react/pull/35062 */}
+        {/* eslint-disable-next-line react-hooks/refs */}
         <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
           {renderCurrentPage()}
           {currentPage === totalPages && (
@@ -143,6 +145,8 @@ export const FormDemo = ({ page = 1, ...props }: FormDemo) => {
             </Heading>
           </Dialog.Block>
           <Dialog.Block className={classes.dialogActions}>
+            {/* False positive - https://github.com/facebook/react/pull/35062 */}
+            {/* eslint-disable-next-line react-hooks/refs */}
             <Button type="submit" onClick={handleSubmit(onSubmit)}>
               Send inn skjema
             </Button>

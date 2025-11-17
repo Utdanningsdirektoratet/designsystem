@@ -91,10 +91,8 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
   const totalPages = Math.ceil(sortedData.length / itemsPerPage);
 
   // Get the users for the current page from the sorted list.
-  const currentUsers = useMemo(() => {
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    return sortedData.slice(startIndex, startIndex + itemsPerPage);
-  }, [currentPage, sortedData]);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentUsers = sortedData.slice(startIndex, startIndex + itemsPerPage);
 
   const isStudentsSelected = selectedStudentIds.length > 0;
 
