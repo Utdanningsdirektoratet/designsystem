@@ -5,6 +5,7 @@ import { Input } from 'src/components/input/Input';
 import { Radio } from 'src/components/radio/Radio';
 import { Select } from 'src/components/select/Select';
 import { Suggestion } from 'src/components/suggestion/Suggestion';
+import { Tag } from 'src/components/tag/Tag';
 import { Textfield } from 'src/components/textfield/Textfield';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Label } from 'src/components/typography/label/Label';
@@ -41,20 +42,34 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
       </Heading>
       <Textfield
         id="firstName"
-        label="Fornavn"
+        label={
+          <>
+            Fornavn{' '}
+            <Tag data-color="warning" aria-hidden>
+              Må fylles ut
+            </Tag>
+          </>
+        }
         {...register('firstName', {
           required: 'Fyll ut fornavn',
         })}
+        aria-required
         autoComplete="given-name"
         error={errors.firstName?.message}
       />
       <Field>
-        <Label>Etternavn</Label>
+        <Label>
+          Etternavn{' '}
+          <Tag data-color="warning" aria-hidden>
+            Må fylles ut
+          </Tag>
+        </Label>
         <Input
           id="lastName"
           {...register('lastName', {
             required: 'Fyll ut etternavn',
           })}
+          required
           autoComplete="family-name"
           aria-invalid={!!errors.lastName}
         />
@@ -63,7 +78,11 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
         )}
       </Field>
       <Field>
-        <Label>Fylke</Label>
+        <Label>
+          Fylke{' '}
+          <style>{`label > .ds-tag:empty::after { content: 'Valgfritt' / '' }`}</style>
+          <Tag data-color="info" />
+        </Label>
         <Controller
           name="county"
           control={control}
@@ -77,7 +96,11 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
                 onChange(item?.value);
               }}
             >
-              <Suggestion.Input aria-invalid={!!errors.county} id="county" />
+              <Suggestion.Input
+                aria-invalid={!!errors.county}
+                id="county"
+                required={false}
+              />
               <Suggestion.Clear />
               <Suggestion.List>
                 <Suggestion.Empty>Ingen resultater</Suggestion.Empty>
@@ -96,7 +119,9 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
         )}
       </Field>
       <Fieldset id="educationLevel" {...focusableFieldsetProps}>
-        <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
+        <Fieldset.Legend>
+          Utdanningsnivå <Tag data-color="warning">Må fylles ut</Tag>
+        </Fieldset.Legend>
         <Radio
           id="radio-kindergarten"
           label="Barnehage"
