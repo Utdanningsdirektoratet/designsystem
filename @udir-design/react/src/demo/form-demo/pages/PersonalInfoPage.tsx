@@ -1,11 +1,11 @@
 import { Controller, useFormContext } from 'react-hook-form';
 import { Field } from 'src/components/field/Field';
+import { FieldNecessity } from 'src/components/field/FieldNecessity';
 import { Fieldset } from 'src/components/fieldset/Fieldset';
 import { Input } from 'src/components/input/Input';
 import { Radio } from 'src/components/radio/Radio';
 import { Select } from 'src/components/select/Select';
 import { Suggestion } from 'src/components/suggestion/Suggestion';
-import { Tag } from 'src/components/tag/Tag';
 import { Textfield } from 'src/components/textfield/Textfield';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Label } from 'src/components/typography/label/Label';
@@ -44,10 +44,7 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
         id="firstName"
         label={
           <>
-            Fornavn{' '}
-            <Tag data-color="warning" aria-hidden>
-              Må fylles ut
-            </Tag>
+            Fornavn <FieldNecessity />
           </>
         }
         {...register('firstName', {
@@ -59,10 +56,7 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
       />
       <Field>
         <Label>
-          Etternavn{' '}
-          <Tag data-color="warning" aria-hidden>
-            Må fylles ut
-          </Tag>
+          Etternavn <FieldNecessity />
         </Label>
         <Input
           id="lastName"
@@ -79,9 +73,7 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
       </Field>
       <Field>
         <Label>
-          Fylke{' '}
-          <style>{`label > .ds-tag:empty::after { content: 'Valgfritt' / '' }`}</style>
-          <Tag data-color="info" />
+          Fylke <FieldNecessity />
         </Label>
         <Controller
           name="county"
@@ -120,30 +112,34 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
       </Field>
       <Fieldset id="educationLevel" {...focusableFieldsetProps}>
         <Fieldset.Legend>
-          Utdanningsnivå <Tag data-color="warning">Må fylles ut</Tag>
+          Utdanningsnivå <FieldNecessity />
         </Fieldset.Legend>
         <Radio
           id="radio-kindergarten"
           label="Barnehage"
           value="kindergarten"
+          required
           {...register('educationLevel', educationLevelRules)}
         />
         <Radio
           id="radio-primary"
           label="Grunnskole"
           value="primary"
+          required
           {...register('educationLevel', educationLevelRules)}
         />
         <Radio
           id="radio-secondary"
           label="Videregående"
           value="secondary"
+          required
           {...register('educationLevel', educationLevelRules)}
         />
         <Radio
           id="radio-higher"
           label="Høyere utdanning"
           value="higher"
+          required
           {...register('educationLevel', educationLevelRules)}
         />
         {errors.educationLevel && (
@@ -151,7 +147,9 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
         )}
       </Fieldset>
       <Field>
-        <Label>Aldersgruppe</Label>
+        <Label>
+          Aldersgruppe <FieldNecessity />
+        </Label>
         <Select
           id="ageGroup"
           aria-label="Velg aldersgruppe"
@@ -160,6 +158,7 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
           })}
           aria-invalid={!!errors.ageGroup}
           defaultValue="blank"
+          required
         >
           <Select.Option value="blank" disabled>
             Velg aldersgruppe
