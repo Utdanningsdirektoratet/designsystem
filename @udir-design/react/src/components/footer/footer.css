@@ -2,7 +2,8 @@
   background-color: var(--ds-color-accent-surface-tinted);
   left: 0;
   bottom: 0;
-  width: 100%;
+  padding-inline: var(--ds-size-5);
+  padding-block: var(--ds-size-10);
 
   & .ds-link {
     --dsc-link-color--visited: var(--dsc-link-color);
@@ -18,9 +19,8 @@
   > div {
     margin: 0 auto;
     position: relative;
-    padding-inline: var(--ds-size-4);
-    padding-block: var(--ds-size-10);
     max-width: var(--udsc-footer-max-width, 80rem);
+    box-sizing: border-box;
     gap: var(--ds-size-18);
     display: flex;
     flex-wrap: wrap;
@@ -41,8 +41,8 @@
     &[data-variant='social'] {
       display: flex;
       position: absolute;
-      bottom: var(--ds-size-10);
-      right: var(--ds-size-4);
+      bottom: 0;
+      right: 0;
       flex-direction: row;
       justify-content: flex-end;
     }
@@ -50,8 +50,8 @@
 
   .uds-footer__logo {
     position: absolute;
-    top: var(--ds-size-10);
-    right: var(--ds-size-4);
+    top: 0;
+    right: 0;
     height: fit-content;
 
     > img {
@@ -70,10 +70,8 @@
 }
 /* Extra padding when social links are present */
 .uds-footer:has(.uds-footer__list[data-variant='social']) > div {
-  padding-block-end: 8rem;
-
-  @media (max-width: 40rem) {
-    padding-block-end: var(--ds-size-10);
+  @media (min-width: 40rem) {
+    padding-block-end: var(--ds-size-22);
   }
 }
 
@@ -94,7 +92,7 @@
     > div {
       display: flex;
       flex-direction: column;
-      padding-inline: var(--ds-size-4);
+      padding-inline: var(--ds-size-0);
       gap: var(--ds-size-10);
     }
 
