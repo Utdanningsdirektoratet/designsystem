@@ -3,11 +3,9 @@ import cl from 'clsx/lite';
 import { forwardRef } from 'react';
 import type { HTMLAttributes } from 'react';
 import type { CSSProperties } from 'react';
-import circleLogoDark from '../../../assets/img/udir-circle-logo-dark-mode.svg';
-import circleLogoLight from '../../../assets/img/udir-circle-logo.svg';
-import mainLogoDark from '../../../assets/img/udir-main-logo-dark-mode.svg';
-import mainLogoLight from '../../../assets/img/udir-main-logo.svg';
 import { useScrollDirection } from '../../utilities/useScrollDirection';
+import { Logo } from '../logo/Logo';
+import { LogoSymbol } from '../logo/LogoSymbol';
 import { Heading } from '../typography/heading/Heading';
 import './header.css';
 
@@ -53,9 +51,6 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(function Header(
   const scrollDirection = useScrollDirection();
   const dataScrollDirection = sticky ? scrollDirection : undefined;
   const isMain = applicationName === 'Utdanningsdirektoratet';
-  const logo = isMain ? mainLogoLight : circleLogoLight;
-  const logoDark = isMain ? mainLogoDark : circleLogoDark;
-  const logoAlt = isMain ? 'Utdanningsdirektoratet' : '';
   const LogoContainer = href !== null ? 'a' : 'div';
 
   return (
@@ -68,8 +63,7 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(function Header(
     >
       <div>
         <LogoContainer href={href as string} className="uds-header__logo">
-          <img src={logo} alt={logoAlt} />
-          <img src={logoDark} alt={logoAlt} />
+          {isMain ? <Logo padding="0" /> : <LogoSymbol padding="0" />}
           {!isMain && (
             <Heading data-size="xs" asChild>
               <span>{applicationName}</span>

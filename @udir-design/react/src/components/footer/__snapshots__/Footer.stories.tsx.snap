@@ -46,14 +46,16 @@ exports[`Preview 1`] = `
         </li>
       </ul>
       <a href="https://udir.no">
-        <img
-          alt="Utdanningsdirektoratet"
-          src="/assets/img/udir-main-logo.svg"
-        >
-        <img
-          alt="Utdanningsdirektoratet"
-          src="/assets/img/udir-main-logo-dark-mode.svg"
-        >
+        <div style="--uds-logo-padding: 0;">
+          <img
+            alt="Utdanningsdirektoratet"
+            src="/assets/img/udir-main-logo.svg"
+          >
+          <img
+            alt="Utdanningsdirektoratet"
+            src="/assets/img/udir-main-logo-dark-mode.svg"
+          >
+        </div>
       </a>
     </div>
   </footer>
@@ -94,14 +96,16 @@ exports[`Tjeneste 1`] = `
         </li>
       </ul>
       <a href="https://udir.no">
-        <img
-          alt="Utdanningsdirektoratet"
-          src="/assets/img/udir-main-logo.svg"
-        >
-        <img
-          alt="Utdanningsdirektoratet"
-          src="/assets/img/udir-main-logo-dark-mode.svg"
-        >
+        <div style="--uds-logo-padding: 0;">
+          <img
+            alt="Utdanningsdirektoratet"
+            src="/assets/img/udir-main-logo.svg"
+          >
+          <img
+            alt="Utdanningsdirektoratet"
+            src="/assets/img/udir-main-logo-dark-mode.svg"
+          >
+        </div>
       </a>
     </div>
   </footer>
@@ -281,14 +285,16 @@ exports[`Udirno 1`] = `
         </li>
       </ul>
       <a href="https://udir.no">
-        <img
-          alt="Utdanningsdirektoratet"
-          src="/assets/img/udir-main-logo.svg"
-        >
-        <img
-          alt="Utdanningsdirektoratet"
-          src="/assets/img/udir-main-logo-dark-mode.svg"
-        >
+        <div style="--uds-logo-padding: 0;">
+          <img
+            alt="Utdanningsdirektoratet"
+            src="/assets/img/udir-main-logo.svg"
+          >
+          <img
+            alt="Utdanningsdirektoratet"
+            src="/assets/img/udir-main-logo-dark-mode.svg"
+          >
+        </div>
       </a>
     </div>
   </footer>
