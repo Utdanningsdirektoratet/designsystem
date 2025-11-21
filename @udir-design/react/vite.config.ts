@@ -60,6 +60,10 @@ export default defineConfig({
     }),
   ],
 
+  css: {
+    postcss: '../css',
+  },
+
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [ nxViteTsPaths() ],
