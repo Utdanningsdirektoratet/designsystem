@@ -1,0 +1,21 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="bruksmønstre/Obligatoriske felt" tags={['alpha']} />
+
+# Obligatoriske og valgfrie skjemafelt
+
+Det er flere måter å markere obligatoriske skjemafelt på som oppfyller kravene til merking. Klarer vi å gjøre dette mer likt på tvers blir det lettere for brukerne å forstå og kjenne igjen mønsteret på tvers av løsningene våre.
+
+Udir følger [Digdirs bruksmønster for obligatoriske skjemafelter](https://designsystemet.no/no/patterns/required-and-optional-fields).
+
+## Presiseringer
+
+Mønsteret skal følges i sin helhet, men her følger noen presiseringer av hvordan mønsteret skal tolkes.
+
+### Antall spørsmål per side
+
+En av retningslinjene i mønsteret tar for seg at det skal være ett spørsmål per skjemaside. Dette er ikke tilfellet, og vil bli justert. Hensikten med retningslinjen er at det helst skal være ett overordnet tema per side, som navn eller personopplysninger. Da kan man for eksempel samle fornavn og etternavn på samme side som to separate input-felt.
+
+### Kombinasjon av obligatoriske og valgfrie
+
+Slik det fremkommer hos Digdir må man, ved tilfeller der man har valgfrie og obligatoriske felter på samme side, markere absolutt alle feltene. Dette er fordi det er sånn UUtilsynet har tolket WCAG retningslinjene. Det er en pågående samtale med UUtilsynet for å få oppklart dette. Enn så lenge _må man markere absolutt alle feltene der det er en kombinasjon av obligatoriske og valgfrie_.
