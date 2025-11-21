@@ -15,7 +15,7 @@ export const IconEx1 = () => {
     <Stack style={{ margin: 'var(--ds-size-8) 0' }}>
       <Do
         description={
-          'Bruk ikoner markert med "Ofte brukt hos Udir" dersom de dekker behovet'
+          'Bruk ikoner markert med "Foretrukket hos Udir" dersom de dekker behovet'
         }
       >
         <Ex1Do />
