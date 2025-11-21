@@ -7,16 +7,8 @@ export interface OriginProps extends ComponentOrigin {
   component: string;
 }
 
-export function OriginText({
-  component,
-  originator,
-  details,
-  demo,
-}: OriginProps) {
-  const digdirText = demo
-    ? ' er basert på et eksempel fra Digdir.'
-    : ' bygger på en komponent fra Digdirs designsystem.';
-  const selfText = ' er egenutviklet.';
+export function OriginText({ component, originator, details }: OriginProps) {
+  const digdirText = ' bygger på arbeid gjort i Digdirs designsystem.';
   const navText = (
     <div style={{ display: 'inline' }}>
       {' bygger på '}
@@ -26,6 +18,7 @@ export function OriginText({
       .
     </div>
   );
+  const selfText = ' er utarbeidet av Udir.';
   const baseText =
     originator === 'digdir'
       ? digdirText

@@ -8,6 +8,7 @@ import {
 import {
   ComponentIcon,
   ImageIcon,
+  LayersIcon,
   RectangleSectionsIcon,
   WrenchIcon,
 } from '@udir-design/icons';
@@ -59,6 +60,14 @@ addons.setConfig({
             <>
               <RectangleSectionsIcon aria-hidden fontSize={18} />
               Demosider
+            </>
+          );
+        }
+        if (item.id === 'bruksmønstre') {
+          return (
+            <>
+              <LayersIcon aria-hidden fontSize={18} />
+              Bruksmønstre
             </>
           );
         }
