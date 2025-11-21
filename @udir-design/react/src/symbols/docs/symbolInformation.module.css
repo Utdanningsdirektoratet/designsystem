@@ -1,0 +1,59 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+  overflow-wrap: anywhere;
+
+  & .dodont {
+    text-decoration: none;
+    display: flex;
+    gap: var(--ds-size-1);
+    width: fit-content;
+    & .dontIcon {
+      color: var(--ds-color-danger-base-default);
+      transform: translateY(var(--ds-size-1));
+      flex-shrink: 0;
+    }
+    & .doIcon {
+      color: var(--ds-color-success-base-default);
+      transform: translateY(var(--ds-size-1));
+      flex-shrink: 0;
+    }
+  }
+}
+
+.headingSection {
+  display: flex;
+  justify-content: flex-start;
+  gap: var(--ds-size-6);
+}
+
+.usecaseSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+}
+
+.codeSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+}
+
+.tagsSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-size-2);
+}
+
+.symbolPreview {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
