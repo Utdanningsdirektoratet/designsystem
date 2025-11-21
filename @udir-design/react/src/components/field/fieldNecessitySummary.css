@@ -1,0 +1,43 @@
+.ds-field-necessity-summary {
+  --ds-field-necessity-summary-all-required-text: 'Alle felt må fylles ut';
+  --ds-field-necessity-summary-all-optional-text: 'Alle felt er valgfri';
+  @composes ds-tag from '@digdir/designsystemet-css/tag.css';
+
+  /* repeat some code from DS because composes doesn't include nested rules */
+  &[data-variant='outline'] {
+    --dsc-tag-border-color: var(--ds-color-border-subtle);
+  }
+
+  @media (forced-colors: active) {
+    border-width: var(--ds-border-width-default);
+    border-style: solid;
+    border-color: CanvasText;
+  }
+  /* end of repeated code */
+
+  display: none;
+
+  &:empty::after {
+    content: var(--ds-field-necessity-summary-text);
+  }
+
+  &[data-required='true'] {
+    --ds-color-surface-tinted: var(--ds-color-warning-surface-tinted);
+    --ds-color-text-default: var(--ds-color-warning-text-default);
+    --ds-color-border-subtle: var(--ds-color-warning-border-subtle);
+    --ds-field-necessity-summary-text: var(
+      --ds-field-necessity-summary-all-required-text
+    );
+    display: inline-flex;
+  }
+
+  &[data-required='false'] {
+    --ds-color-surface-tinted: var(--ds-color-info-surface-tinted);
+    --ds-color-text-default: var(--ds-color-info-text-default);
+    --ds-color-border-subtle: var(--ds-color-info-border-subtle);
+    --ds-field-necessity-summary-text: var(
+      --ds-field-necessity-summary-all-optional-text
+    );
+    display: inline-flex;
+  }
+}

@@ -1,6 +1,7 @@
 import { Controller, useFormContext } from 'react-hook-form';
 import { Field } from 'src/components/field/Field';
 import { FieldNecessity } from 'src/components/field/FieldNecessity';
+import { FieldNecessitySummary } from 'src/components/field/FieldNecessitySummary';
 import { Fieldset } from 'src/components/fieldset/Fieldset';
 import { Input } from 'src/components/input/Input';
 import { Radio } from 'src/components/radio/Radio';
@@ -40,6 +41,7 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
       <Heading level={2} data-size="sm">
         Personinformasjon
       </Heading>
+      <FieldNecessitySummary data-required />
       <Textfield
         id="firstName"
         label={
@@ -50,7 +52,7 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
         {...register('firstName', {
           required: 'Fyll ut fornavn',
         })}
-        aria-required
+        required
         autoComplete="given-name"
         error={errors.firstName?.message}
       />
@@ -91,7 +93,7 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
               <Suggestion.Input
                 aria-invalid={!!errors.county}
                 id="county"
-                required={false}
+                required
               />
               <Suggestion.Clear />
               <Suggestion.List>

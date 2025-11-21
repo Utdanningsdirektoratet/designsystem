@@ -16,6 +16,7 @@
   /* end of repeated code */
 
   display: none;
+  font-weight: var(--ds-font-weight-regular);
 }
 
 .ds-field-necessity:empty::after {
@@ -23,31 +24,40 @@
 }
 
 /* required input fields */
-.ds-field:has(:required, [aria-required='true']) .ds-field-necessity,
+.ds-field:has(:required, [aria-required='true']),
 /* fieldsets where all inputs are required */ 
-.ds-fieldset:has(:required, [aria-required='true']):not(
-    :has(:optional:not([aria-required='true']), [aria-required='false'])
-  )
+.ds-fieldset:has(input:required, [aria-required='true']):not(
+    :has(input:optional:not([aria-required='true']), [aria-required='false'])
+  ) {
   .ds-field-necessity {
-  --ds-color-surface-tinted: var(--ds-color-warning-surface-tinted);
-  --ds-color-text-default: var(--ds-color-warning-text-default);
-  --ds-color-border-subtle: var(--ds-color-warning-border-subtle);
-  --ds-field-necessity-text: var(--ds-field-necessity-required-text);
-  display: inline-flex;
+    --ds-color-surface-tinted: var(--ds-color-warning-surface-tinted);
+    --ds-color-text-default: var(--ds-color-warning-text-default);
+    --ds-color-border-subtle: var(--ds-color-warning-border-subtle);
+    --ds-field-necessity-text: var(--ds-field-necessity-required-text);
+    display: var(--ds-field-necessity-display--required, inline-flex);
+  }
 }
 
 /* optional input fields */
-.ds-field:has(:optional:not([aria-required='true']), [aria-required='false'])
-  .ds-field-necessity,
+.ds-field:has(:optional:not([aria-required='true']), [aria-required='false']),
 /* fieldsets where all inputs are optional */
 .ds-fieldset:has(
     :optional:not([aria-required='true']),
     [aria-required='false']
-  ):not(:has(:required, [aria-required='true']))
+  ):not(:has(:required, [aria-required='true'])) {
   .ds-field-necessity {
-  --ds-color-surface-tinted: var(--ds-color-info-surface-tinted);
-  --ds-color-text-default: var(--ds-color-info-text-default);
-  --ds-color-border-subtle: var(--ds-color-info-border-subtle);
-  --ds-field-necessity-text: var(--ds-field-necessity-optional-text);
-  display: inline-flex;
+    --ds-color-surface-tinted: var(--ds-color-info-surface-tinted);
+    --ds-color-text-default: var(--ds-color-info-text-default);
+    --ds-color-border-subtle: var(--ds-color-info-border-subtle);
+    --ds-field-necessity-text: var(--ds-field-necessity-optional-text);
+    display: var(--ds-field-necessity-display--optional, inline-flex);
+  }
+}
+
+[data-hide-required='true'] {
+  --ds-field-necessity-display--required: none;
+}
+
+[data-hide-optional='true'] {
+  --ds-field-necessity-display--optional: none;
 }
