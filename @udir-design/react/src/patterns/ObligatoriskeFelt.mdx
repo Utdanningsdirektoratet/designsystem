@@ -4,18 +4,34 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 # Obligatoriske og valgfrie skjemafelt
 
-Det er flere måter å markere obligatoriske skjemafelt på som oppfyller kravene til merking. Klarer vi å gjøre dette mer likt på tvers blir det lettere for brukerne å forstå og kjenne igjen mønsteret på tvers av løsningene våre.
+Det er flere måter å markere obligatoriske skjemafelt som oppfyller kravene til merking. Klarer vi å gjøre dette mer likt på tvers blir det lettere for brukerne å forstå og kjenne igjen mønsteret på tvers av løsningene våre.
 
-Udir følger [Digdirs bruksmønster for obligatoriske skjemafelter](https://designsystemet.no/no/patterns/required-and-optional-fields).
+Udir følger [bruksmønsteret for obligatoriske skjemafelter hos designsystemet.no](https://designsystemet.no/no/patterns/required-and-optional-fields) med noen endringer.
 
-## Presiseringer
+## Endringer hos Udir
 
-Mønsteret skal følges i sin helhet, men her følger noen presiseringer av hvordan mønsteret skal tolkes.
+Mønsteret skal følges slik det står hos Designsystemet, med unntak av følgende endringer.
 
 ### Antall spørsmål per side
 
-En av retningslinjene i mønsteret tar for seg at det skal være ett spørsmål per skjemaside. Dette er ikke tilfellet, og vil bli justert. Hensikten med retningslinjen er at det helst skal være ett overordnet tema per side, som navn eller personopplysninger. Da kan man for eksempel samle fornavn og etternavn på samme side som to separate input-felt.
+Vi anbefaler ikke nødvendigvis å ha ett spørsmål per side. Vi anbefaler heller ett **tema** per side. For eksempel kan én side handle om personopplysninger, og inneholde flere felt for navn og adresse. I et stort skjema er det på samme måte naturlig å ha flere felt per skjemaside, så lenge man passer på at spørsmålene relaterer til samme tema. På den måten slipper brukerne å kontekstsvitsje for mye.
 
-### Kombinasjon av obligatoriske og valgfrie
+#### Bakgrunn for endringen
 
-Slik det fremkommer hos Digdir må man, ved tilfeller der man har valgfrie og obligatoriske felter på samme side, markere absolutt alle feltene. Dette er fordi det er sånn UUtilsynet har tolket WCAG retningslinjene. Det er en pågående samtale med UUtilsynet for å få oppklart dette. Enn så lenge _må man markere absolutt alle feltene der det er en kombinasjon av obligatoriske og valgfrie_.
+Mønsteret hos Designsystemet gir inntrykk av at det aller helst bør være kun ett skjemafelt per skjemaside. Hensikten med retningslinjen er å redusere kognitiv belastning for den som fyller ut skjemaet.
+
+Vi har tatt opp dette med Designsystemet, og muntlig fått bekreftet at ett tema per skjemaside ivaretar hensikten. Designsystemet kommer til å justere teksten hos seg på sikt.
+
+### Kombinasjon av obligatoriske og valgfrie felt
+
+Vi anbefaler å **ikke** markere valgfrie felt, men **kun obligatoriske felt**, når disse opptrer i kombinasjon.
+
+#### Bakgrunn for endringen
+
+Slik det fremkommer hos Designsystemet bør man, ved tilfeller der man har både valgfrie og obligatoriske felt på samme side, markere absolutt alle feltene. Vi mener at Designsystemets anbefalning her gjør at både valgfrie og obligatoriske felt får like mye oppmerksomhet, og dermed mister merkingen av obligatoriske felt en del av effekten.
+
+Designsystemets anbefalning er strengere enn [uutilsynet sin tolkning av WCAG-kravet 3.3.2 "Ledetekster eller instruksjoner"](https://www.uutilsynet.no/wcag-standarden/332-ledetekster-eller-instruksjoner-niva/117#tilsynets_tolking) (se boks "Krav til samsvar"), som bare sier at obligatoriske felt må markeres dersom det er en kombinasjon av valgfrie og obligatoriske.
+
+Legg merke til at uutilsynets krav om ledetekst eller instruksjon "når innholdet krever inndata fra brukeren" kombinert med kravet "ledetekst eller instruksjon er plassert i eller rett ved inndataelement" betyr at det **ikke** er tilstrekkelig å skrive f.eks. "Alle felt må fylles ut med mindre de er markert med _Valgfri_".
+
+Vi har en pågående dialog med Designsystemet for å se om mønsteret deres skal justeres.
