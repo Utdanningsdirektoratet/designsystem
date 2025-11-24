@@ -16,7 +16,7 @@
   "types": "./dist/index.d.ts",
   "tsup": {
     "entry": [
-      "src/**/*.{ts,tsx}"
+      "tmp/**/*.{ts,tsx}"
     ],
     "format": [
       "cjs",
@@ -58,13 +58,13 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "generate": "svgr symbols --typescript --ext tsx --no-prettier --index-template config/index-template.js --out-dir src && prettier --write ./src",
+    "generate": "svgr symbols --typescript --ext tsx --no-prettier --index-template config/index-template.js --out-dir tmp && prettier --write ./tmp",
     "update:metadata": "node config/metadata.js",
-    "copy:utils": "shx mkdir -p src/util && shx cp -r util/* src/util || exit 0",
+    "copy:utils": "shx mkdir -p tmp/util && shx cp -r util/* tmp/util || exit 0",
     "copy:svgs": "shx mkdir -p dist/svg && svgo --config=config/svgo.config.js -f symbols -o dist/svg",
     "prebuild": "pnpm run copy:utils && pnpm run generate",
     "build": "tsup",
-    "postbuild": "pnpm run update:metadata && pnpm run copy:svgs",
+    "postbuild": "pnpm run update:metadata && pnpm run copy:svgs && shx rm -rf tmp",
     "fetch-new:symbols": "tsx config/figma/index.ts",
     "generate:pngs": "node config/svg-to-png.js"
   },
