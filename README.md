@@ -35,6 +35,7 @@ I dette repositoriet lever den delen av designsystemet som implementeres i kode:
   - [Monorepo - enkelt forklart](#monorepo---enkelt-forklart)
   - [Hvordan jobbe med kodebasen](#hvordan-jobbe-med-kodebasen)
   - [Hvordan oppgradere avhengigheter](#hvordan-oppgradere-avhengigheter)
+  - [Hvordan oppdatere symboler](#hvordan-oppdatere-symboler)
   - [Hvordan publisere en ny versjon](#hvordan-publisere-en-ny-versjon)
   - [Oversikt over verktøy](#oversikt-over-verktøy)
 - [Thanks](#thanks)
@@ -498,6 +499,36 @@ Vi kan da be `pnpm` overstyre installerte transitive avhengigheter:
 ```sh
 pnpm audit --fix
 pnpm install
+```
+
+## Hvordan oppdatere symboler
+
+### Nytt symbol i Figma
+
+Nytt symbol legges til i [Symbolbiblioteket i Figma](https://www.figma.com/design/SSdGSjSYPDSyX2IfHLfmEL/Symbolbibliotek?node-id=0-1&p=f&m=dev).
+
+### Oppdatere symboler i @udir-design/symbols
+
+Nedlasting av oppdaterte symboler fra Figma gjøres i et lokalt repo av [Udirs Designsystem](https://github.com/Utdanningsdirektoratet/designsystem).
+
+`.env.local` må inneholde en gyldig Figma-token: `FIGMA_TOKEN={token}`.
+
+Kjør følgende kommando i `designsystem/@udir-design/symbols`:
+
+```bash
+pnpm nx fetch-new:symbols
+```
+
+### Generere PNG
+
+Biblioteket inneholder et byggeverktøy for å generere opp 500x500 PNG-er med en ramme rundt selve symbolet. Disse er ment for bruk av symboler utenfor digitale tjenester (f.eks. PowerPoint-presentasjoner).
+
+Generering av PNG-er gjøres i et lokalt repo av [Udirs Designsystem](https://github.com/Utdanningsdirektoratet/designsystem).
+
+Kjør følgende kommando i `designsystem/@udir-design/symbols`:
+
+```bash
+pnpm nx generate:pngs
 ```
 
 ## Hvordan publisere en ny versjon

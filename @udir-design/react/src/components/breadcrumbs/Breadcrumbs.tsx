@@ -13,6 +13,7 @@ import type {
   ForwardRefExoticComponent,
   RefAttributes,
 } from 'react';
+import './breadcrumbs.css';
 
 type BreadcrumbsProps = Omit<DigdirBreadcrumbsProps, 'data-color'>;
 

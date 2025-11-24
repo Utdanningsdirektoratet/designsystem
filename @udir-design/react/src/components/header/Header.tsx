@@ -1,3 +1,4 @@
+import type { Size } from '@digdir/designsystemet-react';
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
 import type { HTMLAttributes } from 'react';
@@ -31,6 +32,10 @@ export type HeaderProps = HTMLAttributes<HTMLElement> & {
    * @default true
    */
   sticky?: boolean;
+  /**
+   * Changes size for descendant Designsystemet components. Select from predefined sizes.
+   */
+  'data-size'?: Size;
 };
 
 export const Header = forwardRef<HTMLElement, HeaderProps>(function Header(

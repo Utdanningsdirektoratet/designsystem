@@ -34,6 +34,8 @@ const preview: Preview = {
           'iconsandsymbols',
           ['Retningslinjer', 'Ikoner'],
           'demo',
+          'patterns',
+          ['Introduksjon', '*'],
           'components',
         ],
       },

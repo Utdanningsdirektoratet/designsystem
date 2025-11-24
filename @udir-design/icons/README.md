@@ -52,7 +52,7 @@ SVG-filene er mulig å importere og bruke fra vanlig HTML og CSS dersom du bruke
 ```html
 <!-- html -->
 <svg aria-hidden class="my-icon">
-  <use href="npm:@udir-design/icons/dist/svg/Airplane.svg#root" />
+  <use href="npm:@udir-design/icons/dist/svg/Airplane.svg#icon" />
 </svg>
 ```
 
@@ -71,7 +71,7 @@ const ArrowRight = new URL(
 document.body.innerHTML += `
 <a class="ds-link" href="#">
   <svg aria-hidden>
-    <use href="${ArrowRight}#root" />
+    <use href="${ArrowRight}#icon" />
   </svg
   ><span>Lenke lagt til dynamisk med JavaScript</span>
 </a>`;

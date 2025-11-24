@@ -1,0 +1,37 @@
+.headings {
+  margin-top: var(--ds-size-8);
+  margin-bottom: var(--ds-size-4);
+}
+
+.symbolSection {
+  @media (min-width: 47rem) {
+    flex: 1 0 50%;
+  }
+}
+
+.symbolGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+  gap: var(--ds-size-4);
+  align-items: center;
+  margin-top: var(--ds-size-10);
+}
+
+.noResults {
+  margin-top: var(--ds-size-10);
+  display: flex;
+  flex-direction: row;
+
+  & .illustration {
+    width: 100%;
+
+    & svg {
+      width: 100%;
+      height: auto;
+      aspect-ratio: initial;
+    }
+  }
+  & h2 {
+    margin-bottom: var(--ds-size-2);
+  }
+}
