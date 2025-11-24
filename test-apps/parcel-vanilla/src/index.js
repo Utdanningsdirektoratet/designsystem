@@ -13,7 +13,7 @@ if (container) {
   container.innerHTML += `
 <a class="ds-link" href="#">
   <svg aria-hidden>
-    <use href="${ArrowRightUrl}#root"/>
+    <use href="${ArrowRightUrl}#icon"/>
   </svg
   ><span>Lenke lagt til dynamisk med JavaScript</span>
 </a>`;

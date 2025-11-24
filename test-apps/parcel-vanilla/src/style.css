@@ -12,11 +12,20 @@ body {
   font-feature-settings: 'cv05' 1; /* Enable lowercase l with tail */
 }
 
+.symbol-box {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-2);
+  border: 1px solid var(--ds-color-border-default);
+  padding: var(--ds-size-4);
+}
+
 .idea-box {
   background: var(--ds-color-support2-surface-tinted);
   padding: var(--ds-size-4);
   border: 1px solid var(--ds-color-support2-border-subtle);
 }
+
 .idea-box::before {
   display: inline-block;
   content: '';

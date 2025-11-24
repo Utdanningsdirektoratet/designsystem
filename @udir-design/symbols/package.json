@@ -1,0 +1,88 @@
+{
+  "name": "@udir-design/symbols",
+  "version": "0.0.0-semantically-released",
+  "license": "MIT",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github:Utdanningsdirektoratet/designsystem",
+    "directory": "@udir-design/symbols"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "tsup": {
+    "entry": [
+      "tmp/**/*.{ts,tsx}"
+    ],
+    "format": [
+      "cjs",
+      "esm"
+    ],
+    "dts": true,
+    "sourcemap": true,
+    "clean": true,
+    "external": [
+      "react"
+    ]
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./metadata": {
+      "import": {
+        "types": "./dist/metadata.d.ts",
+        "default": "./dist/metadata.mjs"
+      },
+      "require": {
+        "types": "./dist/metadata.d.ts",
+        "default": "./dist/metadata.cjs"
+      }
+    },
+    "./svg/*.svg": "./dist/svg/*.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "generate": "svgr symbols --typescript --ext tsx --no-prettier --index-template config/index-template.js --out-dir tmp && prettier --write ./tmp",
+    "update:metadata": "node config/metadata.js",
+    "copy:utils": "shx mkdir -p tmp/util && shx cp -r util/* tmp/util || exit 0",
+    "copy:svgs": "shx mkdir -p dist/svg && svgo --config=config/svgo.config.js -f symbols -o dist/svg",
+    "prebuild": "pnpm run copy:utils && pnpm run generate",
+    "build": "tsup",
+    "postbuild": "pnpm run update:metadata && pnpm run copy:svgs && shx rm -rf tmp",
+    "fetch-new:symbols": "tsx config/figma/index.ts",
+    "generate:pngs": "node config/svg-to-png.js"
+  },
+  "devDependencies": {
+    "@babel/types": "catalog:",
+    "@figma/rest-api-spec": "catalog:",
+    "@svgr/cli": "catalog:",
+    "@svgr/core": "catalog:",
+    "@types/react": "catalog:",
+    "fast-glob": "catalog:",
+    "js-yaml": "catalog:",
+    "lodash-es": "catalog:",
+    "prettier": "catalog:",
+    "react": "catalog:",
+    "sharp": "catalog:",
+    "shx": "catalog:",
+    "svgo": "catalog:",
+    "tsup": "catalog:",
+    "typescript": "catalog:"
+  }
+}

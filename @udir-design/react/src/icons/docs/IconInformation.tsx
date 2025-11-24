@@ -32,7 +32,7 @@ import ${icon.name}Svg from
 <!-- Bruk kan variere avhengig av ditt
   oppsett, men kan f.eks være slik: -->
 <svg aria-label="En tittel for skjermleser">
-  <use href="@udir-design/react/svg/${icon.name}.svg#root" />
+  <use href="@udir-design/react/svg/${icon.name}.svg#icon" />
 </svg>
 `.trim(),
   };

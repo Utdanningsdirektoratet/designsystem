@@ -1,0 +1,25 @@
+import {
+  Meta,
+  Canvas,
+  Controls,
+  Primary,
+  IconGallery,
+  ArgTypes,
+} from '@storybook/addon-docs/blocks';
+import React from 'react';
+import * as SymbolsStories from './Symbols.stories';
+import { Unstyled } from '@storybook/addon-docs/blocks';
+import { SymbolDisplay } from './docs/SymbolDisplay';
+import { HideToc } from '.storybook/docs/components';
+
+<HideToc />
+
+# Symboler
+
+Symboler gir visuell støtte til å oppfatte et innhold og bør stå sammen med tekst. De er tilgjengelig både som React-komponenter og som svg-filer. Vi anbefaler å bruke React-komponentene når du bruker React. Trykk på ett av symbolene i galleriet under for å se flere varianter og hvordan de brukes i kode.
+
+<Meta of={SymbolsStories} />
+
+<Unstyled>
+  <SymbolDisplay />
+</Unstyled>
