@@ -365,6 +365,7 @@ catalogs:
 overrides:
   '@eslint/plugin-kit@<0.3.4': '>=0.3.4'
   tmp@<=0.2.3: '>=0.2.4'
+  glob@>=10.2.0 <10.5.0: ^10.5.0
 
 packageExtensionsChecksum: sha256-LMeXZzq7zvEM75wWqXhoH5AKiX4vxXAjdihGHRrb69w=
 
@@ -5625,11 +5626,6 @@ packages:
     peerDependencies:
       tslib: '2'
 
-  glob@10.3.10:
-    resolution: {integrity: sha512-fa46+tv1Ak0UPK1TOy/pZrIybNNt4HCv7SDzwyfiOZkvZLEbjsZkJBPtDHVshZjbecAoAGSC20MjLDG/qr679g==}
-    engines: {node: '>=16 || 14 >=14.17'}
-    hasBin: true
-
   glob@10.5.0:
     resolution: {integrity: sha512-DfXN8DfhJ7NH3Oe7cFmu3NCu1wKbkReJ8TorzSAFbSKrlNaQSKfIzqYqVY8zlbs2NLBbWpRiU52GX2PbaBVNkg==}
     hasBin: true
@@ -6083,10 +6079,6 @@ packages:
   iterator.prototype@1.1.5:
     resolution: {integrity: sha512-H0dkQoCa3b2VEeKQBOxFph+JAbcrQdE7KC0UkqwpLmv2EC4P41QXP+rqo9wYodACiG5/WM5s9oDApTU8utwj9g==}
     engines: {node: '>= 0.4'}
-
-  jackspeak@2.3.6:
-    resolution: {integrity: sha512-N3yCS/NegsOBokc8GAdM8UcmfsKiSS8cipheD/nivzr700H+nsMOxJjQnvwOcRYVuFkdH0wGUvW2WbXGmrZGbQ==}
-    engines: {node: '>=14'}
 
   jackspeak@3.4.3:
     resolution: {integrity: sha512-OGlZQpz2yfahA/Rd1Y8Cd9SIEsqvXkLVoSw/cgwhnhFMDbsQFeZYoJJ7bIZBS9BcamUW96asq/npPWugM+RQBw==}
@@ -10418,7 +10410,7 @@ snapshots:
 
   '@next/eslint-plugin-next@14.2.33':
     dependencies:
-      glob: 10.3.10
+      glob: 10.5.0
 
   '@next/swc-darwin-arm64@14.2.33':
     optional: true
@@ -14071,14 +14063,6 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  glob@10.3.10:
-    dependencies:
-      foreground-child: 3.3.1
-      jackspeak: 2.3.6
-      minimatch: 9.0.5
-      minipass: 7.1.2
-      path-scurry: 1.11.1
-
   glob@10.5.0:
     dependencies:
       foreground-child: 3.3.1
@@ -14545,12 +14529,6 @@ snapshots:
       get-proto: 1.0.1
       has-symbols: 1.1.0
       set-function-name: 2.0.2
-
-  jackspeak@2.3.6:
-    dependencies:
-      '@isaacs/cliui': 8.0.2
-    optionalDependencies:
-      '@pkgjs/parseargs': 0.11.0
 
   jackspeak@3.4.3:
     dependencies:
