@@ -63,7 +63,7 @@ addons.setConfig({
             </>
           );
         }
-        if (item.id === 'bruksmønstre') {
+        if (item.id === 'patterns') {
           return (
             <>
               <LayersIcon aria-hidden fontSize={18} />
