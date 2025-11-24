@@ -10,6 +10,7 @@ import {
   ImageIcon,
   LayersIcon,
   RectangleSectionsIcon,
+  TokenIcon,
   WrenchIcon,
 } from '@udir-design/icons';
 import customTheme from './docs/customTheme';
@@ -60,6 +61,14 @@ addons.setConfig({
             <>
               <RectangleSectionsIcon aria-hidden fontSize={18} />
               Demosider
+            </>
+          );
+        }
+        if (item.id === 'design-tokens') {
+          return (
+            <>
+              <TokenIcon aria-hidden fontSize={18} />
+              Design tokens
             </>
           );
         }
