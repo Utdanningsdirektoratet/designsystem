@@ -1,0 +1,7 @@
+.ds-breadcrumbs {
+  .ds-link {
+    &:visited {
+      color: var(--dsc-link-color);
+    }
+  }
+}
