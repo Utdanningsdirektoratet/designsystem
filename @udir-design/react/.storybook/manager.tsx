@@ -1,4 +1,6 @@
+import './style.css';
 import React from 'react';
+import type { DocsIndexEntry } from 'storybook/internal/types';
 import { addons } from 'storybook/manager-api';
 import {
   type TagBadgeParameters,
@@ -14,7 +16,6 @@ import {
   WrenchIcon,
 } from '@udir-design/icons';
 import customTheme from './docs/customTheme';
-import './style.css';
 
 addons.setConfig({
   theme: customTheme,
@@ -98,7 +99,26 @@ addons.setConfig({
         }
       }
       if (item.type === 'docs' && item.name === 'Docs') {
-        return 'Dokumentasjon';
+        if (
+          // A docs page generated for a stories file always has sibling pages
+          item.importPath.includes('.stories.') ||
+          // When a docs page imports stories, we know it has sibling pages
+          (item as unknown as DocsIndexEntry).storiesImports.length
+        ) {
+          // Rename the "Docs" page to "Dokumentasjon". Unfortunately we can't show the full hierarchical name
+          // in the mobile navigation, since in this case `item.name` will also be shown in the sidebar tree navigation.
+          item.name = 'Dokumentasjon';
+        } else {
+          // When a docs page doesn't have sibling pages, `item.name` is only shown in the mobile navigation.
+          // This means we can rename it to show the full hierarchical name, which makes more sense
+          // in context of Storybooks mobile navigation and has no impact on the desktop view.
+          item.name = item.title
+            .replaceAll('/', ' › ')
+            .replace('bruksmønstre', 'Bruksmønstre')
+            .replace('components', 'Komponenter')
+            .replace('design-tokens', 'Design tokens')
+            .replace('utilities', 'Hjelpeverktøy');
+        }
       }
       return renderLabel(item);
     },
