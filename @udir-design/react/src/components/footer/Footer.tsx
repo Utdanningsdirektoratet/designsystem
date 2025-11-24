@@ -1,3 +1,4 @@
+import type { Size } from '@digdir/designsystemet-react';
 import cl from 'clsx/lite';
 import type { CSSProperties, HTMLAttributes } from 'react';
 import { forwardRef } from 'react';
@@ -13,6 +14,10 @@ export type FooterProps = HTMLAttributes<HTMLElement> & {
    * @default '80rem'
    */
   maxWidth?: string;
+  /**
+   * Changes size for descendant Designsystemet components. Select from predefined sizes.
+   */
+  'data-size'?: Size;
 };
 
 export const Footer = forwardRef<HTMLElement, FooterProps>(function Footer(
