@@ -1,8 +1,50 @@
 version: 2
 updates:
-  - package-ecosystem: 'github-actions'
+  - package-ecosystem: github-actions
     directory: /
     open-pull-requests-limit: 5
     rebase-strategy: auto
     schedule:
-      interval: 'weekly'
+      interval: weekly
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: sunday
+      time: '23:00'
+      timezone: Europe/Oslo
+    cooldown:
+      default-days: 1
+    ignore:
+      # Some updates require more care, so we handle these ourself
+      - dependency-name: '@digdir/*'
+      - dependency-name: prettier
+      - dependency-name: nx
+        update-types: [version-update:semver-major]
+      - dependency-name: '@nx/*'
+        update-types: [version-update:semver-major]
+      - dependency-name: storybook
+        update-types: [version-update:semver-major]
+      - dependency-name: '@storybook/*'
+        update-types: [version-update:semver-major]
+    # Grouping based on dependency type and semver version
+    groups:
+      dev-patch-minor:
+        dependency-type: development
+        update-types:
+          - patch
+          - minor
+      dev-major:
+        dependency-type: development
+        update-types:
+          - major
+      prod-patch-minor:
+        dependency-type: production
+        update-types:
+          - patch
+          - minor
+      prod-major:
+        dependency-type: production
+        update-types:
+          - major
