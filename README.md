@@ -420,11 +420,16 @@ pnpm update -r --latest "@digdir/*"
 
 `nx` har sin egen oppdateringskommando, som også klargjør migreringer i de tilfellene det er relevant.
 
+Før den kan kjøres må vi **midlertidig** skru av sjekken for at pnpm er i bruk ved å redigere
+`package.json` i rot av repoet, og endre `devEngines.packageManager.onFail` fra `"error"` til `"warn"`. **Denne endringen skal ikke sjekkes inn!**
+
 ```sh
 pnpm nx migrate latest
-pnpm nx --run-migrations # kun dersom migrations.json ble opprettet
 pnpm install --no-frozen-lockfile
+pnpm nx --run-migrations # kun dersom migrations.json ble opprettet
 ```
+
+Husk å sette `devEngines.packageManager.onFail` tilbake til `"error"` før du committer endringene!
 
 ### `prettier`
 
