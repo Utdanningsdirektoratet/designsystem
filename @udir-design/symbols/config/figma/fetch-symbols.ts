@@ -32,29 +32,31 @@ export const fetchSymbols = async (): Promise<PublishedComponent[]> => {
   }
 
   if (data.meta.components.length === 0) {
-    throw new Error('No published icons found');
+    throw new Error('No published symbols found');
   }
 
-  /* Filters out any 'random' icons not meant for the icon-library */
-  const validIcons = data.meta.components.filter((icon) => {
-    const validIcon =
-      !!icon.containing_frame?.pageName && !!icon.containing_frame?.name;
+  /* Filters out any 'random' symbols not meant for the symbol-library */
+  const validSymbols = data.meta.components.filter((symbol) => {
+    const validSymbol =
+      !!symbol.containing_frame?.pageName && !!symbol.containing_frame?.name;
 
-    if (!validIcon) {
-      console.warn(`Ignoring icon '${icon.name}' as it is missing metadata`);
+    if (!validSymbol) {
+      console.warn(
+        `Ignoring symbol '${symbol.name}' as it is missing metadata`,
+      );
     }
-    return validIcon;
+    return validSymbol;
   });
 
   console.info(
-    `Found ${validIcons.length} published icons in Figma. ${
-      data.meta.components.length - validIcons.length
-    } icons were ignored due to missing metadata.`,
+    `Found ${validSymbols.length} published symbols in Figma. ${
+      data.meta.components.length - validSymbols.length
+    } symbols were ignored due to missing metadata.`,
   );
 
   console.groupEnd();
 
-  return validIcons;
+  return validSymbols;
 };
 
 export const fetchDownloadUrls = async (
