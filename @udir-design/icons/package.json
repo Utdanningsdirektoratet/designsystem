@@ -35,5 +35,11 @@
   "devDependencies": {
     "svgo": "catalog:",
     "tsup": "catalog:"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "onFail": "error"
+    }
   }
 }

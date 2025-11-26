@@ -33,5 +33,11 @@
     "postprocess-css": "../../@internal/build-tools/bin/postprocess-css-colors.ts ./dist/index.css",
     "clean": "rimraf ./dist && mkdir ./dist",
     "build": "pnpm clean && pnpm copy-css && pnpm postprocess-css"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "onFail": "error"
+    }
   }
 }

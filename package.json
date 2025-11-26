@@ -37,7 +37,6 @@
     "eslint-plugin-react-hooks": "catalog:",
     "husky": "catalog:",
     "jsdom": "catalog:",
-    "just-pnpm": "catalog:",
     "madge": "catalog:",
     "nx": "catalog:",
     "playwright": "catalog:",
@@ -61,13 +60,16 @@
       "style-dictionary",
       "unrs-resolver"
     ],
-    "onlyBuiltDependencies": [
-      "just-pnpm"
-    ],
     "overrides": {
       "@eslint/plugin-kit@<0.3.4": ">=0.3.4",
       "tmp@<=0.2.3": ">=0.2.4",
       "glob@>=10.2.0 <10.5.0": "^10.5.0"
+    }
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "onFail": "error"
     }
   }
 }

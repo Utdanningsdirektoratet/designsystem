@@ -115,5 +115,11 @@
     "@types/react": {
       "optional": true
     }
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "onFail": "error"
+    }
   }
 }
