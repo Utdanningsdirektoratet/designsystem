@@ -204,9 +204,6 @@ catalogs:
     jsdom:
       specifier: ^27.2.0
       version: 27.2.0
-    just-pnpm:
-      specifier: 1.0.2
-      version: 1.0.2
     lodash-es:
       specifier: ^4.17.21
       version: 4.17.21
@@ -445,9 +442,6 @@ importers:
       jsdom:
         specifier: 'catalog:'
         version: 27.2.0
-      just-pnpm:
-        specifier: 'catalog:'
-        version: 1.0.2
       madge:
         specifier: 'catalog:'
         version: 8.0.0(typescript@5.9.3)
@@ -6184,10 +6178,6 @@ packages:
   junit-report-builder@5.1.1:
     resolution: {integrity: sha512-ZNOIIGMzqCGcHQEA2Q4rIQQ3Df6gSIfne+X9Rly9Bc2y55KxAZu8iGv+n2pP0bLf0XAOctJZgeloC54hWzCahQ==}
     engines: {node: '>=16'}
-
-  just-pnpm@1.0.2:
-    resolution: {integrity: sha512-a/LtVYjTy1Z1yBl3kFEsic313J8MZ29ZEAFrw1snFOY7/x6Afy1VO2zAgtAlUjIgexOt8TRCRCXo1J+PABIo/Q==}
-    hasBin: true
 
   jwa@1.4.2:
     resolution: {integrity: sha512-eeH5JO+21J78qMvTIDdBXidBd6nG2kZjg5Ohz/1fpa28Z4CcsWUzJ1ZZyFq/3z3N17aZy+ZuBoHljASbL1WfOw==}
@@ -14658,8 +14648,6 @@ snapshots:
       lodash: 4.17.21
       make-dir: 3.1.0
       xmlbuilder: 15.1.1
-
-  just-pnpm@1.0.2: {}
 
   jwa@1.4.2:
     dependencies:
