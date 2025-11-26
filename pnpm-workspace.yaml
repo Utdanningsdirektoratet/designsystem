@@ -16,11 +16,11 @@ catalog:
   '@eslint/eslintrc': ^3.3.1
   '@eslint/js': ^9.39.1
   '@figma/rest-api-spec': ^0.34.0
-  '@navikt/aksel-icons': ^7.33.5
+  '@navikt/aksel-icons': ^7.34.0
   '@next/eslint-plugin-next': ^14.2.33
   '@nx/azure-cache': ^4.0.0
-  '@nx/eslint': 21.4.0
-  '@nx/eslint-plugin': 21.4.0
+  '@nx/eslint': 21.6.9
+  '@nx/eslint-plugin': 21.6.9
   '@storybook/addon-a11y': ^9.1.16
   '@storybook/addon-docs': ^9.1.16
   '@storybook/addon-vitest': ^9.1.16
@@ -40,8 +40,8 @@ catalog:
   '@types/react-dom': ^19.2.3
   '@types/remark-heading-id': ^1.0.0
   '@types/yargs': ^17.0.35
-  '@typescript-eslint/eslint-plugin': ^8.47.0
-  '@typescript-eslint/parser': ^8.47.0
+  '@typescript-eslint/eslint-plugin': ^8.48.0
+  '@typescript-eslint/parser': ^8.48.0
   '@vitejs/plugin-react-swc': ^4.2.2
   '@vitest/browser': ^3.2.4
   '@vitest/coverage-v8': ^3.2.4
@@ -55,7 +55,7 @@ catalog:
   diffable-html: ^6.0.1
   eslint: ^9.39.1
   eslint-config-next: ^14.2.33
-  eslint-config-prettier: 10.1.1
+  eslint-config-prettier: 10.1.8
   eslint-plugin-import: ^2.32.0
   eslint-plugin-jsx-a11y: ^6.10.2
   eslint-plugin-react: ^7.37.5
@@ -74,19 +74,19 @@ catalog:
   lodash-es: ^4.17.21
   madge: ^8.0.0
   markdown-to-jsx: ^7.7.17
-  mdast-util-to-hast: ^13.2.0
+  mdast-util-to-hast: ^13.2.1
   micromatch: ^4.0.8
   next: ^14.2.33
-  nx: 21.4.0
+  nx: 21.6.9
   parcel: ^2.16.1
-  playwright: ^1.56.1
+  playwright: ^1.57.0
   postcss: ^8.5.6
   postcss-cli: ^11.0.1
   postcss-easy-import: ^4.0.0
   postcss-load-config: ^6.0.1
   postcss-nesting: ^13.0.2
   prettier: 3.6.2
-  ramda: ^0.31.3
+  ramda: ^0.32.0
   react: ^19.2.0
   react-dom: ^19.2.0
   react-hook-form: ^7.66.1
@@ -109,7 +109,7 @@ catalog:
   tsx: ^4.20.6
   type-fest: ^5.2.0
   typescript: ^5.9.3
-  typescript-eslint: ^8.47.0
+  typescript-eslint: ^8.48.0
   unified: ^11.0.5
   unist-util-remove: ^4.0.0
   unist-util-visit: ^5.0.0
