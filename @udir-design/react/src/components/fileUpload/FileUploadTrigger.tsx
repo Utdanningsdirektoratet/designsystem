@@ -1,0 +1,101 @@
+import type { Size } from '@digdir/designsystemet-react';
+import cl from 'clsx/lite';
+import type { InputHTMLAttributes, ReactNode } from 'react';
+import { forwardRef, useRef } from 'react';
+import { UploadIcon } from '@udir-design/icons';
+import { Button } from '../button/Button';
+import { Field, FieldDescription } from '../field/Field';
+import type { InputProps } from '../input/Input';
+import { Label } from '../typography/label/Label';
+import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
+import './fileUpload.css';
+
+type InputProps_ = Omit<
+  InputProps,
+  'prefix' | 'className' | 'style' | 'data-color' | 'type' | 'data-size'
+>;
+
+export type FileUploadProps = InputHTMLAttributes<HTMLInputElement> & {
+  /**
+   * Toggle loading state.
+   *
+   * @default false
+   */
+  loading?: boolean;
+  /**
+   * Changes size for descendant Designsystemet components.
+   * Select from predefined sizes.
+   */
+  'data-size'?: Size;
+  /**
+   * Label
+   */
+  label?: ReactNode;
+  /**
+   * Description
+   */
+  description?: ReactNode;
+  /**
+   * Error message for field
+   */
+  error?: ReactNode;
+  /**
+   * Props for the input field
+   */
+  inputProps?: InputProps_;
+};
+
+export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
+  function FileUploadTrigger({
+    className,
+    multiple,
+    'data-size': size,
+    loading,
+    label,
+    style,
+    error,
+    description,
+    inputProps,
+    ...rest
+  }) {
+    const fileInputRef = useRef<HTMLInputElement>(null);
+
+    return (
+      <Field
+        className={cl(`uds-file-upload`, className)}
+        data-size={size}
+        style={style}
+        {...rest}
+      >
+        {!!label && <Label>{label}</Label>}
+        {!!description && <FieldDescription>{description}</FieldDescription>}
+        <Button
+          variant="secondary"
+          loading={loading}
+          onClick={() => {
+            if (!loading) {
+              fileInputRef.current?.click();
+            }
+          }}
+        >
+          {!loading ? (
+            <>
+              <UploadIcon aria-hidden />
+              {multiple ? 'Legg til filer' : 'Legg til fil'}
+            </>
+          ) : (
+            'Laster opp'
+          )}
+        </Button>
+        <input
+          type="file"
+          ref={fileInputRef}
+          multiple={Boolean(multiple) || undefined}
+          id="uds-trigger-input"
+          {...inputProps}
+        />
+        {!!error && <ValidationMessage>{error}</ValidationMessage>}
+      </Field>
+    );
+  },
+);
