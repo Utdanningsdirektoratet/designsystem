@@ -70,6 +70,10 @@ const options = {
       })),
     },
   ],
+  accessibility: {
+    description:
+      'Sektordiagram som viser fordeling av prøver med antall utsendte og påbegynte prøver.',
+  },
 };
 
 export const Tests = (props: HighchartsReact.Props) => {
