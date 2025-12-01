@@ -1,0 +1,80 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Example 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Velg din aldersgruppe.
+  </legend>
+  <div>
+    <input
+      id="components-radio--group-10-20"
+      type="radio"
+      value="10-20"
+      name="my-group"
+    >
+    <label
+      data-weight="regular"
+      for="components-radio--group-10-20"
+    >
+      10-20 år
+    </label>
+  </div>
+  <div>
+    <input
+      id="components-radio--group-21-45"
+      type="radio"
+      value="21-45"
+      name="my-group"
+    >
+    <label
+      data-weight="regular"
+      for="components-radio--group-21-45"
+    >
+      21-45 år
+    </label>
+  </div>
+  <div>
+    <input
+      id="components-radio--group-46-80"
+      type="radio"
+      value="46-80"
+      name="my-group"
+    >
+    <label
+      data-weight="regular"
+      for="components-radio--group-46-80"
+    >
+      46-80 år
+    </label>
+  </div>
+  <u-details role="group">
+    <u-summary
+      aria-expanded="false"
+      role="button"
+      slot="summary"
+      tabindex="0"
+    >
+      Grunnen til at vi spør om dette
+    </u-summary>
+    <div>
+      Informasjonen blir brukt til å tilpasse innholdet på siden.
+    </div>
+  </u-details>
+</fieldset>
+`;
+
+exports[`Preview 1`] = `
+<u-details role="group">
+  <u-summary
+    aria-expanded="false"
+    role="button"
+    slot="summary"
+    tabindex="0"
+  >
+    Dette er en ReadMore
+  </u-summary>
+  <div>
+    Dette er innhold i en Readmore
+  </div>
+</u-details>
+`;
