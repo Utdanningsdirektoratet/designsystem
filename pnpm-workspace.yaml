@@ -12,12 +12,12 @@ catalog:
   '@digdir/designsystemet': 1.7.3
   '@digdir/designsystemet-css': 1.7.3
   '@digdir/designsystemet-react': 1.7.3
-  '@eslint/compat': ^1.4.1
+  '@eslint/compat': ^2.0.0
   '@eslint/eslintrc': ^3.3.1
   '@eslint/js': ^9.39.1
   '@figma/rest-api-spec': ^0.34.0
   '@navikt/aksel-icons': ^7.34.0
-  '@next/eslint-plugin-next': ^14.2.33
+  '@next/eslint-plugin-next': ^16.0.6
   '@nx/azure-cache': ^5.0.0
   '@nx/eslint': 22.1.1
   '@nx/eslint-plugin': 22.1.1
@@ -36,16 +36,16 @@ catalog:
   '@types/micromatch': ^4.0.10
   '@types/node': ^24.10.1
   '@types/ramda': ^0.30.2
-  '@types/react': ^19.2.6
+  '@types/react': ^19.2.7
   '@types/react-dom': ^19.2.3
   '@types/remark-heading-id': ^1.0.0
   '@types/yargs': ^17.0.35
   '@typescript-eslint/eslint-plugin': ^8.48.0
   '@typescript-eslint/parser': ^8.48.0
   '@vitejs/plugin-react-swc': ^4.2.2
-  '@vitest/browser': ^3.2.4
-  '@vitest/coverage-v8': ^3.2.4
-  '@vitest/ui': ^3.2.4
+  '@vitest/browser': ^4.0.14
+  '@vitest/coverage-v8': ^4.0.14
+  '@vitest/ui': ^4.0.14
   autoprefixer: ^10.4.22
   axe-core: ^4.11.0
   axe-playwright: ^2.2.2
@@ -54,13 +54,13 @@ catalog:
   cssnano: ^7.1.2
   diffable-html: ^6.0.1
   eslint: ^9.39.1
-  eslint-config-next: ^14.2.33
+  eslint-config-next: ^16.0.6
   eslint-config-prettier: 10.1.8
   eslint-plugin-import: ^2.32.0
   eslint-plugin-jsx-a11y: ^6.10.2
   eslint-plugin-react: ^7.37.5
   eslint-plugin-react-hooks: ^7.0.1
-  eslint-plugin-storybook: ^9.1.16
+  eslint-plugin-storybook: ^10.1.2
   fast-glob: ^3.3.3
   fuse.js: ^7.1.0
   hast-util-from-html: ^2.0.3
@@ -73,10 +73,10 @@ catalog:
   jsdom: ^27.2.0
   lodash-es: ^4.17.21
   madge: ^8.0.0
-  markdown-to-jsx: ^7.7.17
+  markdown-to-jsx: ^9.3.0
   mdast-util-to-hast: ^13.2.1
   micromatch: ^4.0.8
-  next: ^14.2.33
+  next: ^16.0.6
   nx: 22.1.1
   parcel: ^2.16.1
   playwright: ^1.57.0
@@ -100,8 +100,8 @@ catalog:
   sharp: ^0.34.5
   shx: ^0.4.0
   storybook: ^9.1.16
-  storybook-addon-pseudo-states: ^9.1.16
-  storybook-addon-tag-badges: ^2.0.4
+  storybook-addon-pseudo-states: ^10.1.2
+  storybook-addon-tag-badges: ^3.0.2
   svgo: 4.0.0
   ts-node: ^10.9.2
   tslib: ^2.8.1
@@ -116,7 +116,7 @@ catalog:
   vite: ^7.2.4
   vite-plugin-dts: ^4.5.4
   vite-tsconfig-paths: ^5.1.4
-  vitest: ^3.2.4
+  vitest: ^4.0.14
   yargs: ^18.0.0
 
 catalogMode: strict
