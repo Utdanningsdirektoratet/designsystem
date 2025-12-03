@@ -126,12 +126,12 @@ exports[`Focused 1`] = `
 <div>
   <input
     role="switch"
-    id="focused-switch"
+    id="components-switch--focused"
     type="checkbox"
   >
   <label
     data-weight="regular"
-    for="focused-switch"
+    for="components-switch--focused"
   >
     En bryter
   </label>
