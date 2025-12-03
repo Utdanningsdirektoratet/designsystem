@@ -1,0 +1,62 @@
+.page {
+  display: flex;
+  gap: var(--ds-size-10);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+  width: 18rem;
+}
+
+.navigation {
+  padding-top: 1.5rem;
+  position: sticky;
+  @media (min-width: 768px) {
+    padding-top: 3rem;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+}
+
+.desktop {
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+.mobile {
+  display: block;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.navigationButtons {
+  display: flex;
+  gap: var(--ds-size-2);
+  width: 100%;
+  margin-top: var(--ds-size-2);
+  > button {
+    flex: 1;
+  }
+}
+
+.allStatesContainer {
+  display: flex;
+  column-gap: 4rem;
+  row-gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.allStatesPage {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}

@@ -1,0 +1,152 @@
+import {
+  Meta,
+  Primary,
+  ArgTypes,
+  Controls,
+} from '@storybook/addon-docs/blocks';
+
+import * as Stories from './useFormNavigation.stories';
+import { useFormNavigation } from './useFormNavigation';
+
+<Meta of={Stories} />
+
+# useFormNavigation
+
+En React-hook for å håndtere navigasjon i [`FormNavigation`](/docs/components-formnavigation--docs).
+
+<Primary />
+<Controls of={Stories.Preview} />
+
+I respons får du objektet:
+
+```ts
+{
+  /* Aktivt steg */
+  id: TId | null, // Aktivt steg-ID (eller null hvis ingen aktiv)
+  setId: Dispatch<SetStateAction<TId | null>>, // Overstyr aktivt steg-ID
+
+  /* Håndtering av tilstand */
+  markCompleted: (id: TId) => void, // Marker et steg som fullført
+  markInvalid: (id: TId) => void, // Marker et steg som ugyldig
+  resetStep: (id: TId) => void, // Tilbakestill et steg til "idle"
+  reset: () => void, // Tilbakestill alle steg til "idle"
+
+  /* Navigasjon, brukes for eksempel til forrige/neste-knapper */
+  prev: () => boolean, // Går til forrige steg, returnerer false hvis det ikke finnes
+  next: () => boolean, // Går til neste steg, returnerer false hvis det ikke finnes
+  hasPrev: () => boolean, // Indikerer om det finnes et forrige steg
+  hasNext: () => boolean, // Indikerer om det finnes et neste steg
+
+  /** Props du kan spre på FormNavigationStep for et gitt steg-ID eller props-objekt */
+  getStepProps: (
+    propsOrId: TId | GetFormNavigationStepProps<TId>,
+  ) => GetFormNavigationStepProps<TId> & {
+    state: FormNavigationState; // Stegets avledede state ("idle" | "active" | "completed" | "invalid")
+  },
+
+  /** Props du kan spre på FormNavigationGroup for en gitt liste av steg-IDer */
+  getGroupProps: (ids: TId[]) => {
+    state: Exclude<FormNavigationState, 'active'>;
+    activeStepLabel?: string;
+  };
+}
+```
+
+## Bruk
+
+Send inn `value` til `useFormNavigation` for å sette første aktive steg. Deretter bruker du `getStepProps` for å spre nødvendige props på hvert `FormNavigation.Step`. Bruk `getGroupProps` for å spre nødvendige props på `FormNavigation.Group`.
+
+Sett `label` i `getStepProps` for hvert steg dersom du ønsker å vise aktivt steg in en lukket gruppe. Da vil `label` på hvert steg overstyre eventuelle `children` i `FormNavigation.Step`.
+
+```tsx
+type StepId = 'infopage' | 'step-1' | 'step-2';
+
+const { getStepProps, getGroupProps } = useFormNavigation<StepId>({
+  value: 'infopage',
+});
+
+const group = getGroupProps(['step-1', 'step-2']);
+const step1 = getStepProps({ stepId: 'step-1', label: 'Første steg' });
+const step2 = getStepProps({ stepId: 'step-2', label: 'Andre steg' });
+
+return (
+  <FormNavigation>
+    <FormNavigation.Step {...getStepProps('infopage')}>
+      Infoside
+    </FormNavigation.Step>
+    <FormNavigation.Group title="Seksjon" {...group}>
+      <FormNavigation.Step {...step1} />
+      <FormNavigation.Step {...step2} />
+    </FormNavigation.Group>
+  </FormNavigation>
+);
+```
+
+### Visning av sider
+
+For å vise innholdet til den aktive siden, kan du bruke `id` fra hooken.
+
+```tsx
+const { id } = useFormNavigation({ value: 'info' });
+return (
+  <>
+    <FormNavigation>
+      {...}
+    </FormNavigation>
+
+    {...}
+
+    {id === 'info' && <InfoPage />}
+    {id === 'step 1' && <Step1Page />}
+    {id === 'step 2' && <Step2Page />}
+  </>
+);
+```
+
+### Håndtering av tilstand
+
+Validering av skjema håndteres utenfor hooken, slik at du kan tilpasse valideringslogikken etter behov. Når brukeren prøver å gå videre til neste steg, kan du validere det nåværende steget og bruke `markInvalid` eller `markCompleted` basert på resultatet. Dette kan gjøres i `onChange` som du sender til hooken.
+
+```tsx
+const onStepChange = (nextId: StepId, prevId: StepId | null) => {
+  if (!prevId) return;
+  const isValid = validateStep(prevId);
+  if (isValid) {
+    markCompleted(prevId);
+  } else {
+    markInvalid(prevId);
+  }
+};
+
+const { markCompleted, markInvalid } = useFormNavigation<StepId>({
+  value: 'step-1',
+  onChange: onStepChange,
+});
+```
+
+### Navigasjonskontroller
+
+Bruk `prev`, `next`, `hasPrev` og `hasNext` for å lage navigasjonsknapper for skjemaet ditt.
+
+```tsx
+const { prev, next, hasPrev, hasNext } = useFormNavigation({
+    value: 'step-1',
+});
+
+return (
+    <>
+        {...}
+
+        {hasPrev() && (
+            <Button variant="secondary" onClick={prev}>
+                Forrige
+            </Button>
+        )}
+        {hasNext() && (
+            <Button variant="secondary" onClick={next}>
+                Neste
+            </Button>
+        )}
+    </>
+);
+```
