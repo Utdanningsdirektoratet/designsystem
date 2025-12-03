@@ -303,9 +303,6 @@ catalogs:
     storybook-addon-pseudo-states:
       specifier: ^10.1.2
       version: 10.1.2
-    storybook-addon-tag-badges:
-      specifier: ^3.0.2
-      version: 3.0.2
     svgo:
       specifier: 4.0.0
       version: 4.0.0
@@ -693,9 +690,6 @@ importers:
       storybook-addon-pseudo-states:
         specifier: 'catalog:'
         version: 10.1.2(storybook@10.1.2(@testing-library/dom@10.4.1)(prettier@3.7.3)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
-      storybook-addon-tag-badges:
-        specifier: 'catalog:'
-        version: 3.0.2(storybook@10.1.2(@testing-library/dom@10.4.1)(prettier@3.7.3)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
       type-fest:
         specifier: 'catalog:'
         version: 5.2.0
@@ -7790,12 +7784,6 @@ packages:
     resolution: {integrity: sha512-EIS4ZrBfPzTOvFuSg7t+40xryKbWczoiU8tFwkThN23fi/LdD0rTu0tkvVwoAXU+gPjjvUxcmAgLN9upBUMSIA==}
     peerDependencies:
       storybook: ^10.1.2
-
-  storybook-addon-tag-badges@3.0.2:
-    resolution: {integrity: sha512-Mmy9do18kgCcukKjSofNs9/J4txSGdkw0kJLYv/ZHRvemRshdI/AbYw5LEQNpiJRueuormto+Svbdcmlq0GdTw==}
-    engines: {node: '>=20'}
-    peerDependencies:
-      storybook: ^10.0.0
 
   storybook@10.1.2:
     resolution: {integrity: sha512-yFL15WVQJeagmptyRadd2cwJlMVCo6xPoTPt/R+lQXIJmsTDHOFl5cZooIsvgALe3hTi5hsuVL3pG2bPEUuYGg==}
@@ -16584,10 +16572,6 @@ snapshots:
   stoppable@1.1.0: {}
 
   storybook-addon-pseudo-states@10.1.2(storybook@10.1.2(@testing-library/dom@10.4.1)(prettier@3.7.3)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)):
-    dependencies:
-      storybook: 10.1.2(@testing-library/dom@10.4.1)(prettier@3.7.3)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-
-  storybook-addon-tag-badges@3.0.2(storybook@10.1.2(@testing-library/dom@10.4.1)(prettier@3.7.3)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)):
     dependencies:
       storybook: 10.1.2(@testing-library/dom@10.4.1)(prettier@3.7.3)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
 
