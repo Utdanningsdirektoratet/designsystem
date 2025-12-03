@@ -147,4 +147,8 @@ packageExtensions:
       react:
         optional: true
 
+trustPolicy: no-downgrade
+
 useNodeVersion: 24.10.0
+
+verifyDepsBeforeRun: prompt
