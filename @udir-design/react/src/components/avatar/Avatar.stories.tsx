@@ -1,11 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { BriefcaseIcon, ChevronUpIcon } from '@udir-design/icons';
+import preview from '.storybook/preview';
 import { Badge } from '../badge/Badge';
 import { Dropdown } from '../dropdown/Dropdown';
 import { Link } from '../link/Link';
 import { Avatar } from './Avatar';
 
-const meta: Meta<typeof Avatar> = {
+const meta = preview.meta({
   component: Avatar,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -22,22 +22,19 @@ const meta: Meta<typeof Avatar> = {
       alignItems: 'center',
     },
   },
-};
+});
 
 const profileImage =
   'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
-export default meta;
-type Story = StoryObj<typeof Avatar>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     'aria-label': 'Ola Nordmann',
     children: '',
   },
-};
+});
 
-export const Content: Story = {
+export const Content = meta.story({
   args: { 'aria-label': 'Ola Nordmann' },
   render: (args) => (
     <>
@@ -51,9 +48,9 @@ export const Content: Story = {
       </Avatar>
     </>
   ),
-};
+});
 
-export const Sizes: Story = {
+export const Sizes = meta.story({
   render: (args) => (
     <>
       <Avatar {...args} data-size="xs" aria-label="extra small" initials="xs" />
@@ -66,9 +63,9 @@ export const Sizes: Story = {
       <Avatar {...args} data-size="lg" aria-label="large" />
     </>
   ),
-};
+});
 
-export const ColorVariants: Story = {
+export const ColorVariants = meta.story({
   render: (args) => (
     <>
       <Avatar {...args} data-color="neutral" aria-label="color neutral" />
@@ -77,9 +74,9 @@ export const ColorVariants: Story = {
       <Avatar {...args} data-color="support2" aria-label="color support2" />
     </>
   ),
-};
+});
 
-export const InDropdown: Story = {
+export const InDropdown = meta.story({
   parameters: {
     layout: 'fullscreen',
     customStyles: {
@@ -117,9 +114,9 @@ export const InDropdown: Story = {
       </Dropdown>
     </Dropdown.TriggerContext>
   ),
-};
+});
 
-export const AsLink: Story = {
+export const AsLink = meta.story({
   args: {
     'aria-hidden': true,
   },
@@ -132,4 +129,4 @@ export const AsLink: Story = {
       <span>Ola Nordmann</span>
     </Link>
   ),
-};
+});

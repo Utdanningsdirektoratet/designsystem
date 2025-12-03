@@ -1,10 +1,13 @@
-import type { Parameters } from '@storybook/react-vite';
+import type { DocsTypes } from '@storybook/addon-docs';
 import { DocsContainer } from '.storybook/docs/components/DocsContainer';
 import customTheme from '.storybook/docs/customTheme';
+import type { MdxComponentOverrides } from '.storybook/types';
 import { componentOverrides } from './ComponentOverrides';
 import { hideTocForIds } from './components/HideToc';
 
-export const docsParameters: Required<Parameters>['docs'] = {
+export const docsParameters: DocsTypes['parameters']['docs'] & {
+  components?: MdxComponentOverrides;
+} = {
   container: DocsContainer,
   // Configure the table of contents
   toc: {

@@ -1,7 +1,7 @@
 import { Pagination, usePagination } from '@digdir/designsystemet-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { expect, within } from 'storybook/test';
+import preview from '.storybook/preview';
 import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
 import { Checkbox } from '../checkbox/Checkbox';
 import { Tag } from '../tag/Tag';
@@ -10,7 +10,7 @@ import { Heading } from '../typography/heading/Heading';
 import type { TableHeaderCellProps } from '.';
 import { Table } from '.';
 
-const meta: Meta<typeof Table> = {
+const meta = preview.meta({
   component: Table,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -24,12 +24,9 @@ const meta: Meta<typeof Table> = {
       margin: '0 auto',
     },
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Table>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     zebra: false,
     stickyHeader: false,
@@ -124,9 +121,9 @@ export const Preview: Story = {
       </Table>
     );
   },
-};
+});
 
-export const ColumnAndRowHeaders: Story = {
+export const ColumnAndRowHeaders = meta.story({
   args: {
     zebra: false,
     stickyHeader: false,
@@ -208,7 +205,7 @@ export const ColumnAndRowHeaders: Story = {
       </Table.Body>
     </Table>
   ),
-};
+});
 
 const dummyData = [
   {
@@ -271,7 +268,7 @@ const tagColor = (status: string) => {
   }
 };
 
-export const Sortable: Story = {
+export const Sortable = meta.story({
   render(args) {
     const [sortField, setSortField] = useState<
       keyof (typeof dummyData)[0] | null
@@ -354,9 +351,9 @@ export const Sortable: Story = {
       });
     });
   },
-};
+});
 
-export const StickyHeader: Story = {
+export const StickyHeader = meta.story({
   args: {
     tabIndex: 0,
     stickyHeader: true,
@@ -457,9 +454,9 @@ export const StickyHeader: Story = {
       </>
     );
   },
-};
+});
 
-export const WithFormElements: Story = {
+export const WithFormElements = meta.story({
   render(args, ctx) {
     const { getCheckboxProps } = useCheckboxGroup({
       name: `${ctx.id}-checkboxGroup`,
@@ -570,7 +567,7 @@ export const WithFormElements: Story = {
       </Table>
     );
   },
-};
+});
 
 const dummyDataKommune = [
   {
@@ -650,7 +647,7 @@ const dummyDataKommune = [
   },
 ];
 
-export const FixedTable: Story = {
+export const FixedTable = meta.story({
   render: (args) => {
     const [page, setCurrentPage] = useState(1);
     const { pages, nextButtonProps, prevButtonProps } = usePagination({
@@ -732,9 +729,9 @@ export const FixedTable: Story = {
       </div>
     );
   },
-};
+});
 
-export const MultipleHeaderRows: Story = {
+export const MultipleHeaderRows = meta.story({
   args: {
     zebra: true,
     tintedColumnHeader: true,
@@ -805,9 +802,9 @@ export const MultipleHeaderRows: Story = {
       </Table>
     );
   },
-};
+});
 
-export const WithBorder: Story = {
+export const WithBorder = meta.story({
   args: {
     border: true,
     tintedColumnHeader: true,
@@ -838,4 +835,4 @@ export const WithBorder: Story = {
       </div>
     );
   },
-};
+});

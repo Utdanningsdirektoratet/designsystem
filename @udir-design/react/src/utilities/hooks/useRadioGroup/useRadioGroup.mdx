@@ -16,7 +16,7 @@ import { useRadioGroup } from './useRadioGroup';
 En React-hook for å koble sammen en gruppe av radioknapper.
 
 <Primary />
-<Controls of={Stories.Default} />
+<Controls />
 
 ## Bruk
 
@@ -59,3 +59,26 @@ return (
   </Fieldset>
 );
 ```
+
+### Gruppering av valg
+
+Bruk `Fieldset` og `useRadioGroup` for gruppering av radioknapper.
+
+<Canvas of={Stories.Group} />
+
+[Les mer om `useRadioGroup`](/docs/utilities-useradiogroup--docs)
+
+### Vise feilmelding
+
+Bruk `error` på `Fieldset` for å vise feilmelding.
+
+Her må du bruke `Fieldset` for å gjøre innholdet tilgjengelig og aktivere riktig stil.
+
+<Canvas of={Stories.WithError} />
+
+### Kontrollert tilstand
+
+Du kan bruke `useRadioGroup` og `setValue` for å kontrollere hvilket alternativ som er valgt.
+Her er et forenklet eksempel på dette.
+
+<Canvas of={Stories.Controlled} />
