@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import preview from '.storybook/preview';
 import { Paragraph } from './Paragraph';
 
-const meta: Meta<typeof Paragraph> = {
+const meta = preview.meta({
   component: Paragraph,
   tags: ['beta', '!autodocs', 'digdir'],
   parameters: {
@@ -16,15 +16,12 @@ const meta: Meta<typeof Paragraph> = {
     },
   },
   title: 'Components/Typography/Paragraph',
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Paragraph>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     children:
       'Personvernerklæringen gir informasjon om hvilke personopplysninger vi behandler, hvordan disse blir behandlet og hvilke rettigheter du har.',
     variant: 'default',
   },
-};
+});

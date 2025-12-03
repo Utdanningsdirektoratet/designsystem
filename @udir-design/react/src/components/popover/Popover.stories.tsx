@@ -1,12 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import { MultiplyIcon, TrashIcon } from '@udir-design/icons';
+import preview from '.storybook/preview';
 import { Button } from '../button/Button';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Popover } from './Popover';
 
-const meta: Meta<typeof Popover> = {
+const meta = preview.meta({
   component: Popover,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -26,12 +26,9 @@ const meta: Meta<typeof Popover> = {
     const popover = ctx.canvasElement.querySelector('[popover]');
     await expect(popover).toBeVisible();
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Popover>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   render: (args) => (
     <Popover.TriggerContext>
       <Popover.Trigger variant="tertiary">
@@ -72,9 +69,9 @@ export const Preview: Story = {
 
     await userEvent.click(button);
   },
-};
+});
 
-export const Interactive: Story = {
+export const Interactive = meta.story({
   render: () => (
     <Popover.TriggerContext>
       <Popover.Trigger aria-label="Lukk" variant="secondary">
@@ -97,9 +94,9 @@ export const Interactive: Story = {
       </Popover>
     </Popover.TriggerContext>
   ),
-};
+});
 
-export const DottedUnderline: Story = {
+export const DottedUnderline = meta.story({
   render: () => (
     <Popover.TriggerContext>
       <Paragraph>
@@ -135,7 +132,7 @@ export const DottedUnderline: Story = {
 
     await userEvent.click(button);
   },
-};
+});
 
 const ColorVariantsMap: {
   [key: string]: { [key: string]: string };
@@ -203,7 +200,7 @@ const VariantsMap: {
   },
 };
 
-export const Variants: Story = {
+export const Variants = meta.story({
   render: () => {
     return (
       <div
@@ -229,9 +226,9 @@ export const Variants: Story = {
   play: () => {
     return;
   },
-};
+});
 
-export const ColorVariants: Story = {
+export const ColorVariants = meta.story({
   render: () => {
     return (
       <div
@@ -257,9 +254,9 @@ export const ColorVariants: Story = {
   play: () => {
     return;
   },
-};
+});
 
-export const Controlled: Story = {
+export const Controlled = meta.story({
   render: (args) => {
     const [open, setOpen] = useState(false);
 
@@ -292,9 +289,9 @@ export const Controlled: Story = {
       </Popover.TriggerContext>
     );
   },
-};
+});
 
-export const WithoutContext: Story = {
+export const WithoutContext = meta.story({
   render: () => {
     const [open, setOpen] = useState(false);
 
@@ -332,4 +329,4 @@ export const WithoutContext: Story = {
       </>
     );
   },
-};
+});

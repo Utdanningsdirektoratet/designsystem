@@ -1,12 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
+import preview from '.storybook/preview';
 import { Button } from '../button/Button';
 import { Divider } from '../divider/Divider';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Textfield } from './Textfield';
 
-const meta: Meta<typeof Textfield> = {
+const meta = preview.meta({
   component: Textfield,
   tags: ['beta', 'digdir'],
   argTypes: {
@@ -48,12 +48,9 @@ const meta: Meta<typeof Textfield> = {
     },
     layout: 'centered',
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Textfield>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     label: 'Label',
     disabled: false,
@@ -110,18 +107,18 @@ export const Preview: Story = {
       );
     }
   },
-};
+});
 
-export const Rows: Story = {
+export const Rows = meta.story({
   args: {
     label: 'Beskrivelse',
     multiline: true,
     rows: 4,
     id: 'textfield-rows',
   },
-};
+});
 
-export const Affix: Story = {
+export const Affix = meta.story({
   args: {
     prefix: 'NOK',
     suffix: 'pr. mnd',
@@ -129,18 +126,18 @@ export const Affix: Story = {
     id: 'textfield-affix',
     inputMode: 'numeric',
   },
-};
+});
 
-export const Counter: Story = {
+export const Counter = meta.story({
   args: {
     counter: 10,
     label: 'Hvor mange kroner koster det per måned?',
     id: 'textfield-counter',
     inputMode: 'numeric',
   },
-};
+});
 
-export const Controlled: Story = {
+export const Controlled = meta.story({
   args: {
     label: 'Fullt navn',
     multiline: false,
@@ -188,9 +185,9 @@ export const Controlled: Story = {
       </>
     );
   },
-};
+});
 
-export const Disabled: Story = {
+export const Disabled = meta.story({
   parameters: {
     customStyles: {
       display: 'flex',
@@ -216,9 +213,9 @@ export const Disabled: Story = {
       </>
     );
   },
-};
+});
 
-export const ReadOnly: Story = {
+export const ReadOnly = meta.story({
   parameters: {
     customStyles: {
       display: 'flex',
@@ -244,13 +241,13 @@ export const ReadOnly: Story = {
       </>
     );
   },
-};
+});
 
-export const Focused: Story = {
-  args: Preview.args,
+export const Focused = meta.story({
+  args: Preview.input.args,
   parameters: {
     pseudo: {
       focusVisible: true,
     },
   },
-};
+});
