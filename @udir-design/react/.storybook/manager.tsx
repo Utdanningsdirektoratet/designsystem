@@ -46,6 +46,11 @@ addons.setConfig({
     },
     ...defaultConfig,
   ] satisfies TagBadgeParameters,
+  /*
+    TODO: Sidebar config no longer works, is overwritten by storybook-addon-tag-badges
+          This is due to addons being run after manager in Storybook 10.
+          Issue: https://github.com/Sidnioulz/storybook-addon-tag-badges/issues/128
+  */
   sidebar: {
     renderLabel(item) {
       if (item.type === 'root') {
