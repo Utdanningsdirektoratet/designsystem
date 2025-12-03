@@ -7,6 +7,7 @@ import type { PreviewAddon } from 'storybook/internal/csf';
 import { INITIAL_VIEWPORTS, type ViewportMap } from 'storybook/viewport';
 import storybookAddonPseudoStates from 'storybook-addon-pseudo-states';
 import { docsParameters } from './docs/parameters';
+import { testLifecycleHooks } from './preview-test';
 import type {
   ChromaticParameters,
   ComponentOriginParameters,
@@ -78,6 +79,7 @@ export default definePreview({
     addonDocs(),
     customParametersAddon(),
   ],
+  ...testLifecycleHooks,
 });
 
 interface CustomTypes {
