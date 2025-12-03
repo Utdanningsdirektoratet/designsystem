@@ -1,8 +1,17 @@
 import './style.css';
 import './docs/customTheme.scss';
-import type { Preview } from '@storybook/react-vite';
+import addonA11y from '@storybook/addon-a11y';
+import addonDocs from '@storybook/addon-docs';
+import { definePreview } from '@storybook/react-vite';
+import type { PreviewAddon } from 'storybook/internal/csf';
 import { INITIAL_VIEWPORTS, type ViewportMap } from 'storybook/viewport';
+import storybookAddonPseudoStates from 'storybook-addon-pseudo-states';
 import { docsParameters } from './docs/parameters';
+import type {
+  ChromaticParameters,
+  ComponentOriginParameters,
+  CustomStylesParameters,
+} from './types';
 import { customStylesDecorator } from './utils/customStylesDecorator';
 
 // See the complete list of available devices in INITIAL_VIEWPORTS here:
@@ -22,8 +31,9 @@ const chromaticViewports = {
   desktop: { viewport: { width: 1200 } },
 };
 
-const preview: Preview = {
+export default definePreview({
   tags: ['autodocs', 'a11y-test'],
+
   parameters: {
     options: {
       storySort: {
@@ -55,10 +65,26 @@ const preview: Preview = {
       test: 'error',
     },
   },
+
   initialGlobals: {
     viewport: { value: 'desktop' },
   },
-  decorators: customStylesDecorator,
-};
 
-export default preview;
+  decorators: [customStylesDecorator],
+
+  addons: [
+    addonA11y(),
+    storybookAddonPseudoStates(),
+    addonDocs(),
+    customParametersAddon(),
+  ],
+});
+
+interface CustomTypes {
+  parameters: ComponentOriginParameters &
+    CustomStylesParameters &
+    ChromaticParameters;
+}
+function customParametersAddon(): PreviewAddon<CustomTypes> {
+  return {};
+}

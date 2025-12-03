@@ -1,7 +1,7 @@
 import { useDebounceCallback } from '@digdir/designsystemet-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { type ChangeEvent, useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
+import preview from '.storybook/preview';
 import { Button } from '../button/Button';
 import { Details } from '../details/Details';
 import { Divider } from '../divider/Divider';
@@ -16,7 +16,7 @@ import type {
   SuggestionSingleProps,
 } from './Suggestion';
 
-const meta: Meta<typeof Suggestion> = {
+const meta = preview.meta({
   component: Suggestion,
   tags: ['alpha', 'digdir'],
   parameters: {
@@ -48,13 +48,7 @@ const meta: Meta<typeof Suggestion> = {
     // Refactored out the play function for easier reuse in the InModal story
     await testSuggestion(storyRoot);
   },
-};
-
-export default meta;
-
-type Story<T extends { multiple: boolean } = { multiple: false }> = StoryObj<
-  T['multiple'] extends true ? SuggestionMultipleProps : SuggestionSingleProps
->;
+});
 
 async function testSuggestion(el: HTMLElement) {
   /* wait for role to be added */
@@ -80,7 +74,7 @@ const DATA_PEOPLE = [
   { label: 'Tove', value: '#110' },
 ];
 
-export const Preview: Story = {
+export const Preview = meta.story({
   render(args, ctx) {
     return (
       <Field>
@@ -101,9 +95,9 @@ export const Preview: Story = {
       </Field>
     );
   },
-};
+});
 
-export const ControlledSingle: Story = {
+export const ControlledSingle = meta.story({
   render: (args, ctx) => {
     const [value, setValue] = useState<string>('');
 
@@ -112,7 +106,7 @@ export const ControlledSingle: Story = {
         <Field>
           <Label>Velg destinasjon</Label>
           <Suggestion
-            {...args}
+            {...(args as SuggestionSingleProps)}
             selected={value}
             onSelectedChange={(item) => setValue(item?.value ?? '')}
           >
@@ -145,33 +139,32 @@ export const ControlledSingle: Story = {
       </>
     );
   },
-};
+  play: async ({ canvasElement, step }) => {
+    const input = await waitFor(() =>
+      within(canvasElement).getByRole('combobox'),
+    );
+    const resultText = within(canvasElement).getByText('Valgte reisemål:', {
+      exact: false,
+    });
+    const button = within(canvasElement).getByText('Sett reisemål', {
+      exact: false,
+      selector: 'button',
+    });
 
-ControlledSingle.play = async ({ canvasElement, step }) => {
-  const input = await waitFor(() =>
-    within(canvasElement).getByRole('combobox'),
-  );
-  const resultText = within(canvasElement).getByText('Valgte reisemål:', {
-    exact: false,
-  });
-  const button = within(canvasElement).getByText('Sett reisemål', {
-    exact: false,
-    selector: 'button',
-  });
+    await step('Initial state is empty', async () => {
+      await expect(resultText).toHaveTextContent(/^Valgte reisemål:$/);
+      await waitFor(() => expect(input).toHaveValue(''));
+    });
 
-  await step('Initial state is empty', async () => {
-    await expect(resultText).toHaveTextContent(/^Valgte reisemål:$/);
-    await waitFor(() => expect(input).toHaveValue(''));
-  });
+    await step('Controlled state change renders correctly', async () => {
+      await userEvent.click(button);
+      await expect(resultText).toHaveTextContent('Sogndal');
+      await waitFor(() => expect(input).toHaveValue('Sogndal'));
+    });
+  },
+});
 
-  await step('Controlled state change renders correctly', async () => {
-    await userEvent.click(button);
-    await expect(resultText).toHaveTextContent('Sogndal');
-    await waitFor(() => expect(input).toHaveValue('Sogndal'));
-  });
-};
-
-export const ControlledMultiple: Story<{ multiple: true }> = {
+export const ControlledMultiple = meta.story({
   render: (args, ctx) => {
     const [value, setValue] = useState<string[]>(['Oslo']);
     return (
@@ -179,7 +172,7 @@ export const ControlledMultiple: Story<{ multiple: true }> = {
         <Field>
           <Label>Velg destinasjoner</Label>
           <Suggestion
-            {...args}
+            {...(args as SuggestionMultipleProps)}
             multiple
             selected={value}
             onSelectedChange={(items) =>
@@ -215,40 +208,39 @@ export const ControlledMultiple: Story<{ multiple: true }> = {
       </>
     );
   },
-};
+  play: async ({ canvasElement, step }) => {
+    const getChipValues = async () =>
+      waitFor(() =>
+        within(canvasElement)
+          .getAllByLabelText('Press to remove', { exact: false })
+          .filter((el) => el instanceof HTMLDataElement)
+          .map((x) => x.value),
+      );
+    const resultText = within(canvasElement).getByText('Valgte reisemål:', {
+      exact: false,
+    });
+    const button = within(canvasElement).getByText('Sett reisemål', {
+      exact: false,
+      selector: 'button',
+    });
 
-ControlledMultiple.play = async ({ canvasElement, step }) => {
-  const getChipValues = async () =>
-    waitFor(() =>
-      within(canvasElement)
-        .getAllByLabelText('Press to remove', { exact: false })
-        .filter((el) => el instanceof HTMLDataElement)
-        .map((x) => x.value),
-    );
-  const resultText = within(canvasElement).getByText('Valgte reisemål:', {
-    exact: false,
-  });
-  const button = within(canvasElement).getByText('Sett reisemål', {
-    exact: false,
-    selector: 'button',
-  });
+    await step('Initial state is rendered correctly', async () => {
+      await expect(resultText).toHaveTextContent('Oslo');
+      await expect(await getChipValues()).toContain('Oslo');
+    });
 
-  await step('Initial state is rendered correctly', async () => {
-    await expect(resultText).toHaveTextContent('Oslo');
-    await expect(await getChipValues()).toContain('Oslo');
-  });
+    await step('Controlled state change renders correctly', async () => {
+      await userEvent.click(button);
+      await expect(resultText).toHaveTextContent('Sogndal');
+      await expect(resultText).toHaveTextContent('Stavanger');
+      const chipValues = await getChipValues();
+      await expect(chipValues).toContain('Sogndal');
+      await expect(chipValues).toContain('Stavanger');
+    });
+  },
+});
 
-  await step('Controlled state change renders correctly', async () => {
-    await userEvent.click(button);
-    await expect(resultText).toHaveTextContent('Sogndal');
-    await expect(resultText).toHaveTextContent('Stavanger');
-    const chipValues = await getChipValues();
-    await expect(chipValues).toContain('Sogndal');
-    await expect(chipValues).toContain('Stavanger');
-  });
-};
-
-export const ControlledIndependentLabelValue: Story = {
+export const ControlledIndependentLabelValue = meta.story({
   render: (args, ctx) => {
     const [item, setItem] = useState<SuggestionItem | undefined>(
       DATA_PEOPLE[0],
@@ -259,7 +251,7 @@ export const ControlledIndependentLabelValue: Story = {
         <Field>
           <Label>Velg person</Label>
           <Suggestion
-            {...args}
+            {...(args as SuggestionSingleProps)}
             selected={item}
             onSelectedChange={setItem}
             filter={false}
@@ -302,9 +294,9 @@ export const ControlledIndependentLabelValue: Story = {
       </>
     );
   },
-};
+});
 
-export const CustomFilterAlt1: Story = {
+export const CustomFilterAlt1 = meta.story({
   render(args, ctx) {
     return (
       <Field>
@@ -329,9 +321,9 @@ export const CustomFilterAlt1: Story = {
       </Field>
     );
   },
-};
+});
 
-export const CustomFilterAlt2: Story = {
+export const CustomFilterAlt2 = meta.story({
   render: (args, ctx) => {
     const [value, setValue] = useState('');
     return (
@@ -355,16 +347,16 @@ export const CustomFilterAlt2: Story = {
       </Field>
     );
   },
-};
+});
 
-export const AlwaysShowAll: Story = {
+export const AlwaysShowAll = meta.story({
   render: (args, ctx) => {
     const [value, setValue] = useState<string | undefined>('Sogndal');
     return (
       <Field>
         <Label>Viser alle options også når valgt</Label>
         <Suggestion
-          {...args}
+          {...(args as SuggestionSingleProps)}
           selected={value}
           filter={false}
           onSelectedChange={(item) => setValue(item?.value)}
@@ -381,9 +373,9 @@ export const AlwaysShowAll: Story = {
       </Field>
     );
   },
-};
+});
 
-export const FetchExternal: Story = {
+export const FetchExternal = meta.story({
   render: (args, ctx) => {
     const [value, setValue] = useState('');
     const [options, setOptions] = useState<string[] | null>(null);
@@ -436,27 +428,26 @@ export const FetchExternal: Story = {
       </Field>
     );
   },
-};
-
-FetchExternal.parameters = {
-  docs: {
-    source: {
-      type: 'code',
+  parameters: {
+    docs: {
+      source: {
+        type: 'code',
+      },
     },
   },
-};
+});
 
-export const Multiple: Story<{ multiple: true }> = {
-  ...(Preview as Story<{ multiple: true }>),
-  args: { multiple: true },
-};
+export const Multiple = Preview.extend({ args: { multiple: true } });
 
-export const DefaultValue: Story = {
+export const DefaultValue = meta.story({
   render(args, ctx) {
     return (
       <Field>
         <Label>Velg en destinasjon</Label>
-        <Suggestion {...args} defaultSelected={'Sogndal'}>
+        <Suggestion
+          {...(args as SuggestionSingleProps)}
+          defaultSelected={'Sogndal'}
+        >
           <Suggestion.Input id={ctx.id} />
           <Suggestion.Clear />
           <Suggestion.List>
@@ -469,9 +460,9 @@ export const DefaultValue: Story = {
       </Field>
     );
   },
-};
+});
 
-export const InDetails: Story = {
+export const InDetails = meta.story({
   render: (args, ctx) => {
     return (
       <Details>
@@ -494,4 +485,4 @@ export const InDetails: Story = {
       </Details>
     );
   },
-};
+});

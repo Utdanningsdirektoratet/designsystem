@@ -7,7 +7,7 @@ import { useState } from 'react';
 import type {
   ComponentOrigin,
   ComponentOriginParameters,
-} from '.storybook/types/parameters';
+} from '.storybook/types';
 import { OriginText } from './Origin';
 
 export const DocsContainer = ({

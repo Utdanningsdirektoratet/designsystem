@@ -15,7 +15,7 @@ import { usePagination } from './usePagination';
 En React-hook for å håndtere paginering.
 
 <Primary />
-<Controls of={Stories.Preview} />
+<Controls />
 
 I respons får du objektet:
 
@@ -66,3 +66,11 @@ Legg merke til at vi sjekker `typeof` på `page`. Dette er fordi ellipser skal v
   ));
 }
 ```
+
+### Som lenker
+
+Vær oppmerksom på at knappene som standard er `<button>`-elementer. Hvis `Pagination` skal navigere til en ny URL, må knappene være lenker `<a>`.
+
+Alle del-komponenter støtter `asChild` som kan brukes til å endre `Pagination.Button` til lenker `<a>`.
+
+<Canvas of={Stories.WithAnchor} />

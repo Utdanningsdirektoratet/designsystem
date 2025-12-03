@@ -1,4 +1,4 @@
-import type { Parameters } from '@storybook/react-vite';
+import type { DocsTypes } from '@storybook/addon-docs';
 import type { Plugin } from 'prettier';
 import * as EstreePlugin from 'prettier/plugins/estree';
 import * as HtmlPlugin from 'prettier/plugins/html';
@@ -7,7 +7,7 @@ import { format as prettierFormat } from 'prettier/standalone';
 import type { RequiredDeep } from 'type-fest';
 
 type SourceTransformer =
-  RequiredDeep<Parameters>['docs']['source']['transform'];
+  RequiredDeep<DocsTypes>['parameters']['docs']['source']['transform'];
 
 /**
  * Use this as parameters.docs.source.transform as needed to better format React code.

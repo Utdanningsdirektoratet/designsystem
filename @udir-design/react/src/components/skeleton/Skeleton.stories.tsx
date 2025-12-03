@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import {
   ArrowsUpDownIcon,
   FilterIcon,
   PlusCircleIcon,
 } from '@udir-design/icons';
+import preview from '.storybook/preview';
 import { Avatar } from '../avatar/Avatar';
 import { Button } from '../button/Button';
 import { Card } from '../card/Card';
@@ -11,7 +11,7 @@ import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Skeleton } from './Skeleton';
 
-const meta: Meta<typeof Skeleton> = {
+const meta = preview.meta({
   component: Skeleton,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -26,19 +26,16 @@ const meta: Meta<typeof Skeleton> = {
       },
     },
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Skeleton>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     width: 200,
     height: 100,
   },
-};
+});
 
-export const Components: Story = {
+export const Components = meta.story({
   args: {
     height: 50,
   },
@@ -59,7 +56,7 @@ export const Components: Story = {
       </div>
     );
   },
-};
+});
 
 const StudentData = [
   {
@@ -106,7 +103,7 @@ const StudentData = [
   },
 ];
 
-export const Cards: Story = {
+export const Cards = meta.story({
   render: () => {
     return (
       <div
@@ -157,12 +154,12 @@ export const Cards: Story = {
       </div>
     );
   },
-};
+});
 
 const schoolImage =
   'https://images.unsplash.com/photo-1516383607781-913a19294fd1?q=80&w=2374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
-export const UsageExample: Story = {
+export const UsageExample = meta.story({
   render: (args) => {
     return (
       <div
@@ -218,9 +215,9 @@ export const UsageExample: Story = {
       </div>
     );
   },
-};
+});
 
-export const Children: Story = {
+export const Children = meta.story({
   args: {
     variant: 'rectangle',
     children: [
@@ -233,9 +230,9 @@ export const Children: Story = {
       <Button>Knapp</Button>,
     ],
   },
-};
+});
 
-export const Text: Story = {
+export const Text = meta.story({
   args: {
     variant: 'text',
   },
@@ -266,4 +263,4 @@ export const Text: Story = {
       </div>
     </div>
   ),
-};
+});

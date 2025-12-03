@@ -1,5 +1,4 @@
-import type { Parameters } from 'storybook/internal/types';
-import type { ChromaticViewport } from '.storybook/types/parameters';
+import type { ChromaticViewport, Parameters } from '.storybook/types';
 
 export const demoChromaticModes = {
   desktop: { viewport: { width: 1200 } },

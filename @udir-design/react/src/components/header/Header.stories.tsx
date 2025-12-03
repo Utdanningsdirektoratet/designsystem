@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { BriefcaseIcon, LeaveIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
+import preview from '.storybook/preview';
 import { Avatar } from '../avatar/Avatar';
 import { Badge } from '../badge/Badge';
 import { Button } from '../button/Button';
@@ -16,7 +16,7 @@ import { Paragraph } from '../typography/paragraph/Paragraph';
 import styles from './header.stories.module.css';
 import { Header } from '.';
 
-const meta: Meta<typeof Header> = {
+const meta = preview.meta({
   component: Header,
   tags: ['alpha'],
   parameters: {
@@ -32,22 +32,19 @@ const meta: Meta<typeof Header> = {
     applicationName: 'Tjenestenavn',
   },
   decorators: [withResponsiveDataSize],
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Header>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     sticky: false,
   },
   render: (args) => <Header {...args} />,
-};
+});
 
 const profileImage =
   'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
-export const WithUserButton: Story = {
+export const WithUserButton = meta.story({
   render: (args) => (
     <Header {...args}>
       <Header.UserButton
@@ -130,9 +127,9 @@ export const WithUserButton: Story = {
       </Dropdown>
     </Header>
   ),
-};
+});
 
-export const WithSearch: Story = {
+export const WithSearch = meta.story({
   render(args) {
     const [value, setValue] = useState('');
     return (
@@ -149,9 +146,9 @@ export const WithSearch: Story = {
       </Header>
     );
   },
-};
+});
 
-export const WithNavigationLinks: Story = {
+export const WithNavigationLinks = meta.story({
   render: (args) => (
     <Header {...args}>
       <Header.Navigation data-show="sm">
@@ -183,7 +180,7 @@ export const WithNavigationLinks: Story = {
       </Header.Menu>
     </Header>
   ),
-};
+});
 
 const menuLinks = [
   {
@@ -236,7 +233,7 @@ const menuLinks = [
   },
 ];
 
-export const WithMenu: Story = {
+export const WithMenu = meta.story({
   render: (args) => (
     <Header {...args}>
       <Header.MenuButton />
@@ -282,7 +279,7 @@ export const WithMenu: Story = {
       </Header.Menu>
     </Header>
   ),
-};
+});
 
 const themeMenu1 = Array.from({ length: 3 }, (_, i) => ({
   heading: `Overskrift ${i + 1}`,
@@ -300,7 +297,7 @@ const themeMenu2 = Array.from({ length: 2 }, (_, i) => ({
   })),
 }));
 
-export const WithThemeMenus: Story = {
+export const WithThemeMenus = meta.story({
   render(args) {
     return (
       <Header {...args}>
@@ -460,7 +457,7 @@ export const WithThemeMenus: Story = {
       </Header>
     );
   },
-};
+});
 
 const navAndMenuLinks = Array.from({ length: 3 }, (_, i) => ({
   heading: `Overskrift ${i + 1}`,
@@ -470,7 +467,7 @@ const navAndMenuLinks = Array.from({ length: 3 }, (_, i) => ({
   })),
 }));
 
-export const WithNavigationLinksAndMenu: Story = {
+export const WithNavigationLinksAndMenu = meta.story({
   render: (args) => (
     <Header {...args}>
       <Header.Navigation data-show="sm">
@@ -535,7 +532,7 @@ export const WithNavigationLinksAndMenu: Story = {
       </Header.Menu>
     </Header>
   ),
-};
+});
 
 const responsiveLinks = ['Navlinker', 'Overskrift 1', 'Overskrift 2'].map(
   (heading, index) => ({
@@ -550,7 +547,7 @@ const responsiveLinks = ['Navlinker', 'Overskrift 1', 'Overskrift 2'].map(
   }),
 );
 
-export const WithTag: Story = {
+export const WithTag = meta.story({
   render(args) {
     return (
       <Header {...args}>
@@ -558,9 +555,9 @@ export const WithTag: Story = {
       </Header>
     );
   },
-};
+});
 
-export const Responsive: Story = {
+export const Responsive = meta.story({
   render(args) {
     return (
       <Header {...args}>
@@ -681,9 +678,9 @@ export const Responsive: Story = {
       </Header>
     );
   },
-};
+});
 
-export const AutoHideSticky: Story = {
+export const AutoHideSticky = meta.story({
   parameters: {
     customStyles: {
       height: '1200px',
@@ -826,7 +823,7 @@ export const AutoHideSticky: Story = {
       </>
     );
   },
-};
+});
 
 const linksUdirNo = [
   {
@@ -899,7 +896,7 @@ const linksUdirNo = [
   },
 ];
 
-export const UdirNo: Story = {
+export const UdirNo = meta.story({
   args: {
     applicationName: 'Utdanningsdirektoratet',
     href: 'https://www.udir.no/',
@@ -965,4 +962,4 @@ export const UdirNo: Story = {
       </Header>
     );
   },
-};
+});
