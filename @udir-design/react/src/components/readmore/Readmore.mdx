@@ -1,0 +1,42 @@
+import { Meta, Controls, Primary, Canvas } from '@storybook/addon-docs/blocks';
+
+import * as ReadmoreStories from './Readmore.stories';
+
+<Meta of={ReadmoreStories} />
+
+# Readmore
+
+Readmore består av en knapp som åpner/lukker et tekstpanel med utdypende forklaring.
+
+**Passer til å**
+
+- Begrunne spørsmål
+- Forklare vanskelige begreper eller ord
+
+**Passer ikke til å**
+
+- vise viktig informasjon
+- vise mye- eller rikt innhold
+
+## Slik bruker du Readmore
+
+<Primary />
+<Controls />
+
+## Eksempel
+
+<Canvas of={ReadmoreStories.Example} />
+
+## Retningslinjer
+
+### Tekst på knappen
+
+Teksten på knappen skal skrives slik at bruker forstår hva som vises i panelet som åpnes. Ofte refererer dette til teksten som ligger over knappen. F.eks.: Grunnen til at vi spør om dette.
+
+Teksten på knappen bør ikke skrives som et spørsmål (Hvorfor spør vi om dette?). Det forvirret brukerne.
+
+Det er enklere å forstå hva ReadMore skal forklare om teksten på knappen er kort, helst én linje.
+
+### Plassering i skjema
+
+Bruker du ReadMore for å forklare noe knyttet til et skjemaelement plasserer du det under skjemaelementet.
