@@ -7,7 +7,6 @@ export default defineMain({
   addons: [
     '@storybook/addon-a11y',
     'storybook-addon-pseudo-states',
-    'storybook-addon-tag-badges',
     '@storybook/addon-vitest',
     {
       name: '@storybook/addon-docs',
