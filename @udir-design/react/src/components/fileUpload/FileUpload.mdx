@@ -1,0 +1,60 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import * as FileUploadStories from './FileUpload.stories';
+
+<Meta of={FileUploadStories} />
+
+# FileUpload
+
+`FileUpload` er et sett med delkomponenter som brukes når det skal lastes opp filer.
+
+**Passer til å**
+
+- brukes til opplasting av filer
+- å gi brukeren muligheten til å vise filen før innsending
+- å vise eventuelle feilmeldinger
+
+**Passer ikke til å**
+
+- håndtere opplasting av sensitive filer uten ekstra sikkerhetstiltak
+- gjennomføre alidering og virussjekk av filer
+
+## Slik bruker du FileUpload
+
+<Primary />
+<Controls />
+
+```tsx
+import { FileUpload } from '@udir-design/react';
+
+/* Egen logikk */
+
+<FileUpload.Trigger />;
+```
+
+## Eksempler
+
+Du må [selv håndtere input av filer](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/file) med `input` slik som i eksemplene under.
+
+### Drop Zone
+
+I dette eksempelet bruker vi biblioteket [`react-dropzone`](https://react-dropzone.js.org/).
+
+<Canvas of={FileUploadStories.ExampleDropZone} />
+
+### Knapp
+
+Ved bruk av varianten `Trigger` har man ikke samme behov for et ekstern bibliotek. Bruk heller propertien `onChange` til å håndtere endringer i `<input>`-feltet.
+
+<Canvas of={FileUploadStories.ExampleTrigger} />
+
+### Vedlegg
+
+Delkomponenten `FileUpload.Item` brukes til å vise status for filer som er lastet opp. Du kan bruke propertien `error` til å vise feilmeldinger, f.eks. dersom filformatet ikke er riktig.
+
+<Canvas of={FileUploadStories.ExampleItems} />
+
+### Loading state
+
+Begge varianter av komponenten har en `loading` tilstand.
+
+<Canvas of={FileUploadStories.Loading} />
