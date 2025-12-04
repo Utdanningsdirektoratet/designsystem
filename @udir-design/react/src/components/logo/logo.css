@@ -1,0 +1,39 @@
+.uds-logo {
+  --uds-logo-size: var(--ds-size-12);
+  --uds-logo-padding: var(--ds-size-5);
+
+  width: fit-content;
+  height: fit-content;
+  padding: var(--uds-logo-padding);
+
+  > img {
+    height: var(--uds-logo-size);
+    width: auto;
+  }
+
+  > img:first-of-type {
+    display: block;
+  }
+  > img:last-of-type {
+    display: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    > img:first-of-type {
+      display: none;
+    }
+
+    > img:last-of-type {
+      display: block;
+    }
+  }
+}
+
+[data-color-scheme='dark'] .uds-logo {
+  > img:first-of-type {
+    display: none;
+  }
+  > img:last-of-type {
+    display: block;
+  }
+}
