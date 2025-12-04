@@ -1,0 +1,53 @@
+.uds-progressBar {
+  --uds-progressBar-progress: 10%;
+  --uds-progressBar-padding: var(--ds-size-8);
+  --uds-progressBar-height: var(--ds-size-3);
+  --uds-progressBar-width: calc(100% - var(--uds-progressBar-padding));
+  --uds-progressBar-background: var(--ds-color-surface-tinted);
+  --uds-progressBar-border-color: var(--ds-color-border-default);
+  --uds-progressBar-foreground: var(--ds-color-neutral-base-default);
+
+  width: var(--uds-progressBar-width);
+  padding-inline: var(--uds-progressBar-padding);
+  box-sizing: border-box;
+
+  & > div:first-of-type {
+    display: flex;
+    justify-content: space-between;
+    margin-block-end: var(--ds-size-1);
+  }
+
+  & > u-progress {
+    border-radius: var(--ds-border-radius-full);
+    background: var(--uds-progressBar-background);
+    border: 1px solid var(--uds-progressBar-border-color);
+    height: var(--uds-progressBar-height);
+    position: relative;
+    width: 100%;
+
+    &::before {
+      content: '';
+      display: block;
+      background: var(--uds-progressBar-foreground);
+      border-radius: var(--ds-border-radius-full);
+      border: 1px solid var(--uds-progressBar-border-color);
+      width: var(--uds-progressBar-progress);
+      min-width: var(--ds-size-4);
+      max-width: 100%;
+      height: 100%;
+      transition: 0.5s;
+      /* avoid being placed offset due to border of background bar */
+      position: absolute;
+      top: -1px;
+      left: -1px;
+    }
+  }
+  /**
+   * Colors
+   */
+  &[data-color] {
+    --uds-progressBar-background: var(--ds-color-surface-tinted);
+    --uds-progressBar-border-color: var(--ds-color-border-default);
+    --uds-progressBar-foreground: var(--ds-color-base-default);
+  }
+}
