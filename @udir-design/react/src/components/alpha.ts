@@ -12,5 +12,5 @@ export * from './typography/prose/Prose';
 export * from './suggestion/Suggestion';
 export * from './switch/Switch';
 export * from './tableOfContents/TableOfContents';
-export * from './toast/Toast';
+export * from './toast/toasts';
 export * from './readMore/ReadMore';

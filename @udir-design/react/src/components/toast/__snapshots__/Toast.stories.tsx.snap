@@ -2,27 +2,29 @@
 
 exports[`Auto Close 1`] = `
 <button
-  data-variant="primary"
+  data-variant="secondary"
   type="button"
 >
-  Åpne toast
+  Vis timeout
 </button>
 `;
 
 exports[`Dismissable 1`] = `
 <button
-  data-variant="primary"
+  data-variant="secondary"
   type="button"
 >
-  Åpne toast
+  Vis dismissable
 </button>
 `;
 
 exports[`Preview 1`] = `
 <dialog
+  open
+  aria-busy="false"
   data-color="info"
   data-icon="true"
-  data-dismissable="false"
+  data-dismissable="true"
   data-timeout="false"
   data-size="md"
   style="position: relative; inset: initial;"
@@ -53,4 +55,49 @@ exports[`Preview 1`] = `
     </svg>
   </button>
 </dialog>
+`;
+
+exports[`Promises 1`] = `
+<button
+  data-variant="secondary"
+  type="button"
+>
+  Lagre eksamen
+</button>
+`;
+
+exports[`Updates 1`] = `
+<button
+  data-variant="secondary"
+  type="button"
+>
+  Last data
+</button>
+`;
+
+exports[`Variants 1`] = `
+<button
+  data-variant="secondary"
+  type="button"
+>
+  Vis info
+</button>
+<button
+  data-variant="secondary"
+  type="button"
+>
+  Vis success
+</button>
+<button
+  data-variant="secondary"
+  type="button"
+>
+  Vis warning
+</button>
+<button
+  data-variant="secondary"
+  type="button"
+>
+  Vis danger
+</button>
 `;

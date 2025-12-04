@@ -16,7 +16,7 @@ export type ToastProps = HTMLAttributes<HTMLDialogElement> & {
   /**
    * Function for closing the toast
    */
-  close: () => void;
+  onClose: () => void;
   /**
    * Sets color and icon.
    *
@@ -31,7 +31,7 @@ export type ToastProps = HTMLAttributes<HTMLDialogElement> & {
   /**
    * If the user should be able
    * to dismiss the toast
-   * @default false
+   * @default true
    */
   dismissable?: boolean;
   /**
@@ -46,6 +46,10 @@ export type ToastProps = HTMLAttributes<HTMLDialogElement> & {
    * @default true
    */
   icon?: boolean;
+  /** If the toast is in a busy state
+   * @default false
+   */
+  busy?: boolean;
 };
 
 /** React component */
@@ -54,32 +58,30 @@ export const Toast = forwardRef<HTMLDialogElement, ToastProps>(function Toast(
     className,
     message,
     'data-color': color = 'info',
-    close,
+    onClose,
     icon = true,
-    dismissable = false,
+    dismissable = true,
     timeout = 3000,
+    busy = false,
     ...rest
   },
   ref,
 ) {
-  if (timeout) {
-    setTimeout(() => {
-      close();
-    }, timeout);
-  }
-
   return (
     <dialog
+      open
       className={cl(`uds-toast`, className)}
+      aria-busy={busy}
       data-color={color}
       data-icon={icon}
       data-dismissable={dismissable}
       data-timeout={timeout}
       ref={ref}
+      style={{ '--uds-toast-timeout': `${timeout}ms` } as React.CSSProperties}
       {...rest}
     >
       <Paragraph>{message}</Paragraph>
-      <Button aria-label="Lukk" variant="tertiary" onClick={() => close()}>
+      <Button aria-label="Lukk" variant="tertiary" onClick={() => onClose()}>
         <XMarkIcon aria-hidden />
       </Button>
     </dialog>
