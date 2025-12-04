@@ -11,6 +11,30 @@ exports[`Form Page 2 1`] = `
   <div data-color="info">
     Ditt svar i skjemaet lagres automatisk, så du kan fortsette på et senere tidspunkt.
   </div>
+  <div
+    data-color="support1"
+    style="--uds-progressBar-progress: 67%;"
+  >
+    <label
+      data-weight="medium"
+      for="progressBar"
+    >
+      Side 2 av 3
+    </label>
+    <u-progress
+      value="2"
+      id="progressBar"
+      aria-busy="false"
+      aria-label="Side 2 av 3"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow="67"
+      role="progressbar"
+      max="3"
+      style="--percentage: 67%;"
+    >
+    </u-progress>
+  </div>
   <form>
     <h2 data-size="sm">
       Valgmuligheter
@@ -265,60 +289,52 @@ exports[`Form Page 2 1`] = `
       </button>
     </div>
   </dialog>
-  <nav aria-label="Sidenavigering">
-    <ul>
-      <li>
-        <button
-          data-variant="tertiary"
-          type="button"
-          aria-hidden="false"
+  <div style="display: flex; justify-content: flex-end; gap: var(--ds-size-4);">
+    <button
+      data-variant="tertiary"
+      type="button"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M8.97 6.97a.75.75 0 1 1 1.06 1.06l-3.22 3.22H19a.75.75 0 0 1 0 1.5H6.81l3.22 3.22a.75.75 0 1 1-1.06 1.06l-4.5-4.5a.75.75 0 0 1 0-1.06z"
         >
-          <span>
-            Forrige
-          </span>
-        </button>
-      </li>
-      <li>
-        <button
-          data-variant="tertiary"
-          type="button"
-          aria-label="Side 1"
+        </path>
+      </svg>
+      Forrige
+    </button>
+    <button
+      data-variant="secondary"
+      type="button"
+    >
+      Neste
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
         >
-          1
-        </button>
-      </li>
-      <li>
-        <button
-          data-variant="primary"
-          type="button"
-          aria-current="page"
-          aria-label="Side 2"
-        >
-          2
-        </button>
-      </li>
-      <li>
-        <button
-          data-variant="tertiary"
-          type="button"
-          aria-label="Side 3"
-        >
-          3
-        </button>
-      </li>
-      <li>
-        <button
-          data-variant="tertiary"
-          type="button"
-          aria-hidden="false"
-        >
-          <span>
-            Neste
-          </span>
-        </button>
-      </li>
-    </ul>
-  </nav>
+        </path>
+      </svg>
+    </button>
+  </div>
 </div>
 `;
 
@@ -332,6 +348,30 @@ exports[`Form Page 3 1`] = `
   </h1>
   <div data-color="info">
     Ditt svar i skjemaet lagres automatisk, så du kan fortsette på et senere tidspunkt.
+  </div>
+  <div
+    data-color="support1"
+    style="--uds-progressBar-progress: 100%;"
+  >
+    <label
+      data-weight="medium"
+      for="progressBar"
+    >
+      Side 3 av 3
+    </label>
+    <u-progress
+      value="3"
+      id="progressBar"
+      aria-busy="false"
+      aria-label="Side 3 av 3"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow="100"
+      role="progressbar"
+      max="3"
+      style="--percentage: 100%;"
+    >
+    </u-progress>
   </div>
   <form>
     <h2 data-size="sm">
@@ -449,60 +489,52 @@ exports[`Form Page 3 1`] = `
       </button>
     </div>
   </dialog>
-  <nav aria-label="Sidenavigering">
-    <ul>
-      <li>
-        <button
-          data-variant="tertiary"
-          type="button"
-          aria-hidden="false"
+  <div style="display: flex; justify-content: flex-end; gap: var(--ds-size-4);">
+    <button
+      data-variant="tertiary"
+      type="button"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M8.97 6.97a.75.75 0 1 1 1.06 1.06l-3.22 3.22H19a.75.75 0 0 1 0 1.5H6.81l3.22 3.22a.75.75 0 1 1-1.06 1.06l-4.5-4.5a.75.75 0 0 1 0-1.06z"
         >
-          <span>
-            Forrige
-          </span>
-        </button>
-      </li>
-      <li>
-        <button
-          data-variant="tertiary"
-          type="button"
-          aria-label="Side 1"
+        </path>
+      </svg>
+      Forrige
+    </button>
+    <button
+      data-variant="secondary"
+      type="button"
+    >
+      Neste
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
         >
-          1
-        </button>
-      </li>
-      <li>
-        <button
-          data-variant="tertiary"
-          type="button"
-          aria-label="Side 2"
-        >
-          2
-        </button>
-      </li>
-      <li>
-        <button
-          data-variant="primary"
-          type="button"
-          aria-current="page"
-          aria-label="Side 3"
-        >
-          3
-        </button>
-      </li>
-      <li>
-        <button
-          data-variant="tertiary"
-          type="button"
-          aria-hidden="true"
-        >
-          <span>
-            Neste
-          </span>
-        </button>
-      </li>
-    </ul>
-  </nav>
+        </path>
+      </svg>
+    </button>
+  </div>
 </div>
 `;
 
@@ -516,6 +548,30 @@ exports[`Form Story 1`] = `
   </h1>
   <div data-color="info">
     Ditt svar i skjemaet lagres automatisk, så du kan fortsette på et senere tidspunkt.
+  </div>
+  <div
+    data-color="support1"
+    style="--uds-progressBar-progress: 33%;"
+  >
+    <label
+      data-weight="medium"
+      for="progressBar"
+    >
+      Side 1 av 3
+    </label>
+    <u-progress
+      value="1"
+      id="progressBar"
+      aria-busy="false"
+      aria-label="Side 1 av 3"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow="33"
+      role="progressbar"
+      max="3"
+      style="--percentage: 33%;"
+    >
+    </u-progress>
   </div>
   <form>
     <h2 data-size="sm">
@@ -879,59 +935,51 @@ exports[`Form Story 1`] = `
       </button>
     </div>
   </dialog>
-  <nav aria-label="Sidenavigering">
-    <ul>
-      <li>
-        <button
-          data-variant="tertiary"
-          type="button"
-          aria-hidden="true"
+  <div style="display: flex; justify-content: flex-end; gap: var(--ds-size-4);">
+    <button
+      data-variant="tertiary"
+      type="button"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M8.97 6.97a.75.75 0 1 1 1.06 1.06l-3.22 3.22H19a.75.75 0 0 1 0 1.5H6.81l3.22 3.22a.75.75 0 1 1-1.06 1.06l-4.5-4.5a.75.75 0 0 1 0-1.06z"
         >
-          <span>
-            Forrige
-          </span>
-        </button>
-      </li>
-      <li>
-        <button
-          data-variant="primary"
-          type="button"
-          aria-current="page"
-          aria-label="Side 1"
+        </path>
+      </svg>
+      Forrige
+    </button>
+    <button
+      data-variant="secondary"
+      type="button"
+    >
+      Neste
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
         >
-          1
-        </button>
-      </li>
-      <li>
-        <button
-          data-variant="tertiary"
-          type="button"
-          aria-label="Side 2"
-        >
-          2
-        </button>
-      </li>
-      <li>
-        <button
-          data-variant="tertiary"
-          type="button"
-          aria-label="Side 3"
-        >
-          3
-        </button>
-      </li>
-      <li>
-        <button
-          data-variant="tertiary"
-          type="button"
-          aria-hidden="false"
-        >
-          <span>
-            Neste
-          </span>
-        </button>
-      </li>
-    </ul>
-  </nav>
+        </path>
+      </svg>
+    </button>
+  </div>
 </div>
 `;

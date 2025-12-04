@@ -1,15 +1,16 @@
 import type { HTMLAttributes } from 'react';
 import { useRef, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
+import { ArrowLeftIcon, ArrowRightIcon } from '@udir-design/icons';
 import { Alert } from 'src/components/alert';
 import { Button } from 'src/components/button/Button';
 import { Dialog } from 'src/components/dialog/Dialog';
 import { ErrorSummary } from 'src/components/errorSummary/ErrorSummary';
 import type { FieldsetProps } from 'src/components/fieldset/Fieldset';
+import { ProgressBar } from 'src/components/progressBar/ProgressBar';
 import { Heading } from 'src/components/typography/heading/Heading';
 import type { DemoProps } from '../demoProps';
 import classes from './FormDemo.module.css';
-import PaginationControls from './PaginationControls';
 import { FinishPage } from './pages/FinishPage.tsx';
 import { PersonalInfoPage } from './pages/PersonalInfoPage';
 import { RankingPage } from './pages/RankingPage';
@@ -113,6 +114,12 @@ export const FormDemo = ({ page = 1, ...props }: FormDemo) => {
           Ditt svar i skjemaet lagres automatisk, så du kan fortsette på et
           senere tidspunkt.
         </Alert>
+        <ProgressBar
+          value={currentPage}
+          max={totalPages}
+          label="Side"
+          data-color="support1"
+        />
 
         {/* False positive - https://github.com/facebook/react/pull/35062 */}
         {/* eslint-disable-next-line react-hooks/refs */}
@@ -185,14 +192,28 @@ export const FormDemo = ({ page = 1, ...props }: FormDemo) => {
             </ErrorSummary.List>
           </ErrorSummary>
         )}
-        <PaginationControls
-          currentPage={currentPage}
-          totalPages={totalPages}
-          setCurrentPage={(page) => {
-            handleNextPage(page);
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+            gap: 'var(--ds-size-4)',
           }}
-          className={classes.pagination}
-        />
+        >
+          <Button
+            variant="tertiary"
+            onClick={() => handleNextPage(currentPage - 1)}
+          >
+            <ArrowLeftIcon aria-hidden />
+            Forrige
+          </Button>
+          <Button
+            variant="secondary"
+            onClick={() => handleNextPage(currentPage + 1)}
+          >
+            Neste
+            <ArrowRightIcon aria-hidden />
+          </Button>
+        </div>
       </div>
     </FormProvider>
   );
