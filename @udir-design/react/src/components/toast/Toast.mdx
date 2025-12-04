@@ -27,23 +27,48 @@ En `Toast` viser midlertidige meldinger som bekrefter en handling eller gir en t
 ```tsx
 import { toast } from '@udir-design/react';
 
-toast.show({
-  message: `En ny rad ble lagt til`,
+toast(`En ny rad ble lagt til`);
+toast.info(`Ny oppdatering tilgjengelig`);
+toast.success(`Endringene dine ble lagret`);
+toast.warning(`Noe gikk galt, prøv igjen`);
+toast.danger(`Kunne ikke koble til serveren`);
+toast.promise(fetchData(), {
+  loading: 'Laster data...',
+  success: 'Data lastet!',
+  error: 'Kunne ikke laste data',
 });
 ```
 
 ## Eksempler
 
-Toast brukes litt annerledes enn en gjennomsnittlig komponent. Se eksemplene under.
+`Toast` brukes ved å kalle `toast()`-funksjonen med en meldingstekst og eventuelle `options`. Tilgjengelige `options` er listet over som props for Toast.
+
+### Varianter
+
+Med `toast.info()`, `toast.success()`, `toast.warning()` og `toast.danger()` kan du vise toast i forskjellige farger og ikoner som indikerer type melding.
+
+<Canvas of={ToastStories.Variants} />
 
 ### Automatisk lukking
 
-Toast som skjules som default automatisk etter 3000 millisekunder. Med `toast({ timeout })` kan du endre antall millisekunder, eller sette `false` får å unngå at toasten lukkes automatisk.
+Toast skjules som standard automatisk etter 3000 millisekunder. Med `{ timeout }` kan du endre antall millisekunder, eller sette `false` får å unngå at toasten lukkes automatisk.
 
 <Canvas of={ToastStories.AutoClose} />
 
 ### Lukkekryss
 
-Med `toast({ dismissable: true })` kan man gi `Toast` et lukkekryss.
+`Toast` har lukkekryss som standard. Med `{ dismissable: false }` kan man fjerne lukkekrysset. I de fleste tilfeller bør brukeren kunne lukke toasten manuelt.
 
 <Canvas of={ToastStories.Dismissable} />
+
+### Lasting
+
+`toast.Promise` viser en `Toast` som indikerer lasting mens en asynkron handling pågår. Når handlingen er fullført, oppdateres `Toast` til å vise enten en suksess- eller feilmelding. Test det ved å klikke en del ganger på knappen under.
+
+<Canvas of={ToastStories.Promises} />
+
+### Programmatisk oppdatering
+
+Du kan også oppdatere en `Toast` programmatisk ved å lagre ID-en som returneres av `toast()` og sende den inn i `options`.
+
+<Canvas of={ToastStories.Updates} />
