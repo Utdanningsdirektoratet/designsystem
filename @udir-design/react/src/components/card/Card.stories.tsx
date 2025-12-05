@@ -1,4 +1,4 @@
-import type { Color } from '@digdir/designsystemet-react/colors';
+import type { Color } from '@digdir/designsystemet-types';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Fragment } from 'react/jsx-runtime';
 import { PlusIcon, TrashFillIcon } from '@udir-design/icons';
