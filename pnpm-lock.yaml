@@ -247,8 +247,8 @@ catalogs:
       specifier: ^13.0.2
       version: 13.0.2
     prettier:
-      specifier: 3.7.3
-      version: 3.7.3
+      specifier: 3.7.4
+      version: 3.7.4
     ramda:
       specifier: ^0.32.0
       version: 0.32.0
@@ -453,7 +453,7 @@ importers:
         version: 1.57.0
       prettier:
         specifier: 'catalog:'
-        version: 3.7.3
+        version: 3.7.4
       ts-node:
         specifier: 'catalog:'
         version: 10.9.2(@swc/core@1.15.3(@swc/helpers@0.5.17))(@types/node@24.10.1)(typescript@5.9.3)
@@ -729,7 +729,7 @@ importers:
         version: 4.17.21
       prettier:
         specifier: 'catalog:'
-        version: 3.7.3
+        version: 3.7.4
       react:
         specifier: 'catalog:'
         version: 19.2.0
@@ -7316,11 +7316,6 @@ packages:
   prettier@2.8.8:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
-    hasBin: true
-
-  prettier@3.7.3:
-    resolution: {integrity: sha512-QgODejq9K3OzoBbuyobZlUhznP5SKwPqp+6Q6xw6o8gnhr4O85L2U915iM2IDcfF2NPXVaM9zlo9tdwipnYwzg==}
-    engines: {node: '>=14'}
     hasBin: true
 
   prettier@3.7.4:
@@ -16030,8 +16025,6 @@ snapshots:
   prelude-ls@1.2.1: {}
 
   prettier@2.8.8: {}
-
-  prettier@3.7.3: {}
 
   prettier@3.7.4: {}
 
