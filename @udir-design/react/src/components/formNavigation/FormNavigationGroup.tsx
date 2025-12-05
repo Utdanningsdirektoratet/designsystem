@@ -1,16 +1,6 @@
 import cl from 'clsx/lite';
 import type { HTMLAttributes } from 'react';
 import { forwardRef } from 'react';
-import {
-  CheckmarkCircleFillIcon,
-  CheckmarkCircleIcon,
-  ChevronDownIcon,
-  ChevronUpIcon,
-  TasklistFillIcon,
-  TasklistIcon,
-  XMarkOctagonFillIcon,
-  XMarkOctagonIcon,
-} from '@udir-design/icons';
 import type { FormNavigationState } from './FormNavigation';
 import '@u-elements/u-details';
 
@@ -58,18 +48,7 @@ export const FormNavigationGroup = forwardRef<
       {...rest}
     >
       <u-summary aria-invalid={state === 'invalid' || undefined}>
-        <TasklistIcon data-icon="group-idle" aria-hidden />
-        <TasklistFillIcon data-icon="group-active" aria-hidden />
-        <CheckmarkCircleIcon data-icon="group-completed" aria-hidden />
-        <CheckmarkCircleFillIcon
-          data-icon="group-completed-active"
-          aria-hidden
-        />
-        <XMarkOctagonIcon data-icon="group-invalid" aria-hidden />
-        <XMarkOctagonFillIcon data-icon="group-invalid-active" aria-hidden />
         <span>{title}</span>
-        <ChevronDownIcon data-icon="chevron-down" aria-hidden />
-        <ChevronUpIcon data-icon="chevron-up" aria-hidden />
       </u-summary>
       {children}
     </u-details>
