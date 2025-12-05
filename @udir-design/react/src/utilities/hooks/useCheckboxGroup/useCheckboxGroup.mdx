@@ -16,7 +16,7 @@ import { useCheckboxGroup } from './useCheckboxGroup';
 En React-hook for å koble sammen en gruppe av avmerkingsbokser.
 
 <Primary />
-<Controls of={Stories.Default} />
+<Controls />
 
 I respons får du objektet:
 
@@ -74,3 +74,31 @@ return (
   </Fieldset>
 );
 ```
+
+### Velge alle alternativer med en overordnet avmerkingsboks
+
+Legg inn `allowIndeterminate: true` i `getCheckboxProps` for å opprette en overordnet avmerkingsboks som både kan velge og fjerne alle alternativer.
+Dette aktiverer en ekstra tilstand, `indeterminate`, ved siden av `checked` og `unchecked`. Den vises med en horisontal strek og signaliserer at én eller flere avmerkingsbokser er markert i gruppen.
+
+<Canvas of={Stories.IndeterminateInTable} />
+
+### Vise feilmelding
+
+Bruk `error` på `Fieldset` for å vise feilmelding.
+
+Her må du bruke `Fieldset` for å gjøre innholdet tilgjengelig og aktivere riktig stil.
+
+<Canvas of={Stories.WithError} />
+
+### Gruppering av flere valg
+
+Bruk `Fieldset` og `useCheckboxGroup` for gruppering av flere valg.
+
+<Canvas of={Stories.Group} />
+
+### Kontrollert tilstand
+
+Bruk `useCheckboxGroup` og `setValue` for å kontrollere hvilke alternativer som er valgt.
+I eksempelet under kontrollerer vi hvilke `Checkbox` som er valgt med både [`Button`](/docs/components-button--docs) og [`Chip`](/docs/components-chip--docs).
+
+<Canvas of={Stories.Controlled} />

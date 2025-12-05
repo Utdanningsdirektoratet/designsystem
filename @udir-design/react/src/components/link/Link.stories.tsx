@@ -1,11 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { EnvelopeClosedIcon, FilePdfFillIcon } from '@udir-design/icons';
+import preview from '.storybook/preview';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Link } from './Link';
 
 EnvelopeClosedIcon.displayName = 'EnvelopeClosedIcon';
 
-const meta: Meta<typeof Link> = {
+const meta = preview.meta({
   component: Link,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -15,21 +15,21 @@ const meta: Meta<typeof Link> = {
     },
     layout: 'centered',
   },
-};
-
-export default meta;
-type Story = StoryObj<typeof Link>;
+  args: {
+    children: undefined,
+  },
+});
 
 const udirLink = 'https://udir.no/';
 
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     href: udirLink,
     children: 'Gå til udir.no',
   },
-};
+});
 
-export const InText: Story = {
+export const InText = meta.story({
   render: (args) => (
     <Paragraph>
       Designsystemet må ses i sammenheng med{' '}
@@ -39,9 +39,9 @@ export const InText: Story = {
       .
     </Paragraph>
   ),
-};
+});
 
-export const WithIcon: Story = {
+export const WithIcon = meta.story({
   args: {
     href: 'mailto:designsystem@digdir.no',
   },
@@ -51,9 +51,9 @@ export const WithIcon: Story = {
       <span>Kontakt oss</span>
     </Link>
   ),
-};
+});
 
-export const LongLink: Story = {
+export const LongLink = meta.story({
   parameters: {
     customStyles: { width: '200px' },
   },
@@ -64,9 +64,9 @@ export const LongLink: Story = {
       </Link>
     </Paragraph>
   ),
-};
+});
 
-export const File: Story = {
+export const File = meta.story({
   args: {
     href: 'https://www.udir.no/api/PdfApi/PrintPageAsPdfDocument/224209',
   },
@@ -76,13 +76,13 @@ export const File: Story = {
       <span>Samisk i barnehagen (PDF, 299KB)</span>
     </Link>
   ),
-};
+});
 
-export const Focused: Story = {
-  args: Preview.args,
+export const Focused = meta.story({
+  args: Preview.input.args,
   parameters: {
     pseudo: {
       focusVisible: true,
     },
   },
-};
+});

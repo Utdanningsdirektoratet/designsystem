@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import * as Symbols from '@udir-design/symbols';
 import type { AnalyseFillSymbol } from '@udir-design/symbols';
+import preview from '.storybook/preview';
 
-export default {
+const meta = preview.meta({
   title: 'iconsandsymbols/Symboler',
   tags: ['!autodocs'],
   parameters: {
@@ -12,14 +12,12 @@ export default {
     },
     html: { disable: true },
   },
-} as Meta<typeof AnalyseFillSymbol>;
-
-type Story = StoryObj<typeof AnalyseFillSymbol>;
+});
 
 type Symbol = typeof AnalyseFillSymbol;
 const typedSymbols = Symbols as Record<string, Symbol>;
 
-export const AllSymbols: Story = {
+export const AllSymbols = meta.story({
   render: () => {
     return (
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
@@ -33,4 +31,4 @@ export const AllSymbols: Story = {
       </div>
     );
   },
-};
+});
