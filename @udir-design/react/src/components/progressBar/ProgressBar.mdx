@@ -1,0 +1,45 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Canvas,
+  ArgTypes,
+} from '@storybook/addon-docs/blocks';
+import * as ProgressBarStories from './ProgressBar.stories';
+
+<Meta of={ProgressBarStories} />
+
+# ProgressBar
+
+`ProgressBar` viser fremgang i enkle skjemaer.
+
+**Passer til å**
+
+- brukes i skjemaer uten gruppering der spørsmålene er frivillige
+
+**Passer ikke til å**
+
+- brukes i skjemaer med validering, bruk heller [`FormProgress`](/link/kommer/)
+
+## Slik bruker du ProgressBar
+
+<Primary />
+<Controls />
+
+```tsx
+import { ProgressBar } from '@udir-design/react';
+
+<ProgressBar current={2} max={10} />;
+```
+
+## Eksempler
+
+Eksempelet under viser et skjema med 10 sider som bruker progress bar for å vise fremgang.
+
+<Canvas of={ProgressBarStories.FormExample} />
+
+### Opplasting
+
+`ProgressBar` kan også brukes til å vise fremgang f.eks. ved nedlasting eller opplasing av innhold.
+
+<Canvas of={ProgressBarStories.LoadExample} />
