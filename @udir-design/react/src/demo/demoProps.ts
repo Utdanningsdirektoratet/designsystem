@@ -1,4 +1,4 @@
-import type { Size } from '@digdir/designsystemet-react';
+import type { Size } from '@digdir/designsystemet-types';
 
 export interface DemoProps {
   'data-size': Size;

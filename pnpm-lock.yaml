@@ -27,6 +27,9 @@ catalogs:
     '@digdir/designsystemet-react':
       specifier: 1.8.0
       version: 1.8.0
+    '@digdir/designsystemet-types':
+      specifier: ^1.8.0
+      version: 1.8.0
     '@eslint/compat':
       specifier: ^1.4.1
       version: 1.4.1
@@ -537,6 +540,9 @@ importers:
       '@digdir/designsystemet-react':
         specifier: 'catalog:'
         version: 1.8.0(@types/react@19.2.6)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@digdir/designsystemet-types':
+        specifier: 'catalog:'
+        version: 1.8.0
       '@udir-design/css':
         specifier: workspace:*
         version: link:../css
@@ -751,7 +757,7 @@ importers:
 
   '@udir-design/theme':
     dependencies:
-      '@digdir/designsystemet':
+      '@digdir/designsystemet-types':
         specifier: 'catalog:'
         version: 1.8.0
     devDependencies:
@@ -12126,6 +12132,7 @@ snapshots:
   '@udir-design/react@file:@udir-design/react(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@digdir/designsystemet-react': 1.8.0(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@digdir/designsystemet-types': 1.8.0
       '@udir-design/css': link:@udir-design/css
       '@udir-design/icons': link:@udir-design/icons
       react: 18.3.1

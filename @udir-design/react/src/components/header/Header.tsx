@@ -1,4 +1,4 @@
-import type { Size } from '@digdir/designsystemet-react';
+import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
 import type { HTMLAttributes } from 'react';

@@ -1,4 +1,4 @@
-import type { Size } from '@digdir/designsystemet-react';
+import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
 import type { HTMLAttributes } from 'react';
 import { Tabs } from 'src/components/tabs/Tabs';
