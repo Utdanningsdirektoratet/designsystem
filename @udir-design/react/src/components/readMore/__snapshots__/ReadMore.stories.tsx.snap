@@ -1,0 +1,66 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Example 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Trenger eleven individuelt tilrettelagt opplæring?
+  </legend>
+  <div>
+    <input
+      id="components-radio--group-ja"
+      type="radio"
+      value="ja"
+      name="my-group"
+    >
+    <label
+      data-weight="regular"
+      for="components-radio--group-ja"
+    >
+      Ja
+    </label>
+  </div>
+  <div>
+    <input
+      id="components-radio--group-nei"
+      type="radio"
+      value="nei"
+      name="my-group"
+    >
+    <label
+      data-weight="regular"
+      for="components-radio--group-nei"
+    >
+      Nei
+    </label>
+  </div>
+  <u-details role="group">
+    <u-summary
+      aria-expanded="false"
+      role="button"
+      slot="summary"
+      tabindex="0"
+    >
+      Dette er individuelt tilrettelagt opplæring
+    </u-summary>
+    <div>
+      Elever som ikke har eller kan få tilfredsstillende utbytte av det ordinære opplæringstilbudet har rett til individuell tilrettelegging. Før det fattes vedtak om individuell tilrettelagt opplæring skal det foreligge en sakkyndig vurdering utarbeidet av Pedagogisk-psykologisk tjeneste.
+    </div>
+  </u-details>
+</fieldset>
+`;
+
+exports[`Preview 1`] = `
+<u-details role="group">
+  <u-summary
+    aria-expanded="false"
+    role="button"
+    slot="summary"
+    tabindex="0"
+  >
+    Dette er en ReadMore
+  </u-summary>
+  <div>
+    Dette er innhold i en ReadMore
+  </div>
+</u-details>
+`;
