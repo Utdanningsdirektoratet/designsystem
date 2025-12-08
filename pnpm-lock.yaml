@@ -120,6 +120,9 @@ catalogs:
     '@typescript-eslint/parser':
       specifier: ^8.48.0
       version: 8.48.0
+    '@u-elements/u-details':
+      specifier: ^0.1.5
+      version: 0.1.5
     '@vitejs/plugin-react-swc':
       specifier: ^4.2.2
       version: 4.2.2
@@ -543,6 +546,9 @@ importers:
       '@digdir/designsystemet-types':
         specifier: 'catalog:'
         version: 1.8.0
+      '@u-elements/u-details':
+        specifier: 'catalog:'
+        version: 0.1.5
       '@udir-design/css':
         specifier: workspace:*
         version: link:../css
@@ -12133,6 +12139,7 @@ snapshots:
     dependencies:
       '@digdir/designsystemet-react': 1.8.0(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@digdir/designsystemet-types': 1.8.0
+      '@u-elements/u-details': 0.1.5
       '@udir-design/css': link:@udir-design/css
       '@udir-design/icons': link:@udir-design/icons
       react: 18.3.1
