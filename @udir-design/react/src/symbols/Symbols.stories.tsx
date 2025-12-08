@@ -26,7 +26,7 @@ export const AllSymbols: Story = {
         {Object.entries(typedSymbols).map(([key, Component]) => {
           return (
             <React.Fragment key={key}>
-              <Component fontSize="3rem" aria-hidden />
+              <Component aria-hidden />
             </React.Fragment>
           );
         })}

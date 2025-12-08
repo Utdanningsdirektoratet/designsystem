@@ -23,7 +23,6 @@ import ${icon.name}Svg from
 
   const usageCode = {
     react: `
-<!-- Uten tilhørende synlig tekst -->
 <${icon.name}Icon
   aria-label="En tittel for skjermleser"
 />
