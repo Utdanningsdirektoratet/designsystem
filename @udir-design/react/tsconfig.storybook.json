@@ -3,7 +3,10 @@
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "outDir": "../../dist/out-tsc",
-    "baseUrl": "./",
+    "paths": {
+      "src/*": ["./src/*"],
+      ".storybook/*": ["./.storybook/*"]
+    },
     "types": ["vite/client", "../theme/dist/types", "./dist/html"]
   },
   "files": [],
