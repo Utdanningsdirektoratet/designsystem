@@ -30,7 +30,6 @@ import ${currentVariant.name}Svg from
 
   const usageCode = {
     react: `
-<!-- Uten tilhørende synlig tekst -->
 <${currentVariant.name}Symbol
   aria-label="En tittel for skjermleser"
 />
