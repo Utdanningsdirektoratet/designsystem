@@ -15,11 +15,5 @@
   "devDependencies": {
     "@digdir/designsystemet": "catalog:",
     "rimraf": "catalog:"
-  },
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "onFail": "error"
-    }
   }
 }

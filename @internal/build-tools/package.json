@@ -9,11 +9,5 @@
     "micromatch": "catalog:",
     "tsx": "catalog:",
     "yargs": "catalog:"
-  },
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "onFail": "error"
-    }
   }
 }
