@@ -34,11 +34,5 @@
   "scripts": {
     "build": "postcss src/*.css --dir dist/",
     "watch": "pnpm build --watch"
-  },
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "onFail": "error"
-    }
   }
 }
