@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import preview from '.storybook/preview';
 import { Spinner } from './Spinner';
 
-const meta: Meta<typeof Spinner> = {
+const meta = preview.meta({
   component: Spinner,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -16,18 +16,15 @@ const meta: Meta<typeof Spinner> = {
       alignItems: 'center',
     },
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Spinner>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     'aria-label': 'Laster...',
   },
-};
+});
 
-export const Sizes: Story = {
+export const Sizes = meta.story({
   args: {
     'aria-label': 'Laster...',
   },
@@ -41,9 +38,9 @@ export const Sizes: Story = {
       <Spinner {...args} data-size="xl" />
     </>
   ),
-};
+});
 
-export const Variants: Story = {
+export const Variants = meta.story({
   args: {
     'aria-label': 'Laster...',
     'data-size': 'xl',
@@ -56,4 +53,4 @@ export const Variants: Story = {
       <Spinner {...args} data-color="support2" />
     </>
   ),
-};
+});

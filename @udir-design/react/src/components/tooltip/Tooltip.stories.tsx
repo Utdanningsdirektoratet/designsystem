@@ -1,4 +1,3 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import {
   FilesIcon,
@@ -7,10 +6,11 @@ import {
   PrinterSmallIcon,
   TrashIcon,
 } from '@udir-design/icons';
+import preview from '.storybook/preview';
 import { Button } from '../button/Button';
 import { Tooltip } from './Tooltip';
 
-const meta: Meta<typeof Tooltip> = {
+const meta = preview.meta({
   component: Tooltip,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -24,12 +24,13 @@ const meta: Meta<typeof Tooltip> = {
       alignItems: 'center',
     },
   },
-};
+  args: {
+    // Children is required in Tooltip props, so we must set something
+    children: undefined,
+  },
+});
 
-export default meta;
-type Story = StoryObj<typeof Tooltip>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     content: 'Legg til',
   },
@@ -69,9 +70,9 @@ export const Preview: Story = {
       await waitFor(() => expect(tooltip).not.toBeVisible());
     });
   },
-};
+});
 
-export const Placement: Story = {
+export const Placement = meta.story({
   render: () => {
     return (
       <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
@@ -98,9 +99,9 @@ export const Placement: Story = {
       </div>
     );
   },
-};
+});
 
-export const Aria: Story = {
+export const Aria = meta.story({
   render: () => (
     <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
       <Tooltip content="Jeg er hovedinformasjon (aria-labelledby)">
@@ -113,4 +114,4 @@ export const Aria: Story = {
       </Tooltip>
     </div>
   ),
-};
+});

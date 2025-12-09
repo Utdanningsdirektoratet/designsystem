@@ -1,13 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
-import { useArgs } from 'storybook/internal/preview-api';
 import { expect, userEvent, within } from 'storybook/test';
-import type { UsePaginationProps } from 'src/utilities/hooks/usePagination/usePagination';
+import preview from '.storybook/preview';
 import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
 import { Search } from '../search/Search';
 import { Pagination } from './Pagination';
 
-const meta: Meta<typeof Pagination> = {
+const meta = preview.meta({
   component: Pagination,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -17,12 +15,9 @@ const meta: Meta<typeof Pagination> = {
     },
     layout: 'centered',
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Pagination>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   render(args) {
     const [page, setCurrentPage] = useState(4);
     const { pages, nextButtonProps, prevButtonProps } = usePagination({
@@ -95,104 +90,9 @@ export const Preview: Story = {
       },
     );
   },
-};
+});
 
-type WithAnchorPaginationProps = UsePaginationProps & {
-  url: string;
-};
-
-export const WithAnchor: StoryObj<WithAnchorPaginationProps> = {
-  args: {
-    currentPage: 2,
-    totalPages: 10,
-    showPages: 7,
-    url: 'https://udir.design.no/pagination',
-  },
-  render(args) {
-    const [, updateArgs] = useArgs();
-    const { pages, nextButtonProps, prevButtonProps } = usePagination({
-      ...args,
-    });
-    const handleAnchorClick = (
-      e: React.MouseEvent<HTMLAnchorElement>,
-      page: number,
-    ) => {
-      e.preventDefault();
-      if (page === 0 || page > args.totalPages) {
-        return;
-      }
-      const newUrl = `https://udir.design.no/pagination#side-${page}`;
-      updateArgs({ currentPage: page, url: newUrl });
-      return;
-    };
-
-    return (
-      <div
-        style={{
-          gap: 70,
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
-        <Search>
-          <Search.Input aria-label="Søk" value={args.url} />
-        </Search>
-        <Pagination aria-label="Sidenavigering">
-          <Pagination.List>
-            <Pagination.Item>
-              <Pagination.Button
-                asChild
-                aria-label="Forrige side"
-                {...prevButtonProps}
-              >
-                <a
-                  onClick={(e) => handleAnchorClick(e, args.currentPage - 1)}
-                  href={`#side-${args.currentPage - 1}`}
-                >
-                  Forrige
-                </a>
-              </Pagination.Button>
-            </Pagination.Item>
-            {pages.map(({ page, itemKey, buttonProps }) => (
-              <Pagination.Item key={itemKey}>
-                {typeof page === 'number' && (
-                  <Pagination.Button
-                    asChild
-                    aria-label={`Side ${page}`}
-                    {...buttonProps}
-                  >
-                    <a
-                      href={`#side-${page}`}
-                      onClick={(e) => handleAnchorClick(e, page)}
-                    >
-                      {page}
-                    </a>
-                  </Pagination.Button>
-                )}
-              </Pagination.Item>
-            ))}
-            <Pagination.Item>
-              <Pagination.Button
-                asChild
-                aria-label="Neste side"
-                {...nextButtonProps}
-              >
-                <a
-                  onClick={(e) => handleAnchorClick(e, args.currentPage + 1)}
-                  href={`#side-${args.currentPage + 1}`}
-                >
-                  Neste
-                </a>
-              </Pagination.Button>
-            </Pagination.Item>
-          </Pagination.List>
-        </Pagination>
-      </div>
-    );
-  },
-};
-
-export const Mobile: Story = {
+export const Mobile = meta.story({
   render() {
     return (
       <Pagination>
@@ -224,4 +124,92 @@ export const Mobile: Story = {
       </Pagination>
     );
   },
-};
+});
+
+export const WithAnchor = meta.story({
+  render() {
+    const [page, setCurrentPage] = useState(4);
+    const { pages, nextButtonProps, prevButtonProps } = usePagination({
+      currentPage: page,
+      totalPages: 10,
+      showPages: 7,
+      setCurrentPage,
+    });
+
+    const [url, setUrl] = useState<string>('https://udir.design.no/pagination');
+    const handleAnchorClick = (
+      e: React.MouseEvent<HTMLAnchorElement>,
+      page: number,
+    ) => {
+      e.preventDefault();
+      const newUrl = `https://udir.design.no/pagination#side-${page}`;
+      setUrl(newUrl);
+      setCurrentPage(page);
+      return;
+    };
+
+    return (
+      <div
+        style={{
+          gap: 70,
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        <Search>
+          <Search.Input aria-label="Søk" value={url} />
+        </Search>
+        <Pagination aria-label="Sidenavigering">
+          <Pagination.List>
+            <Pagination.Item>
+              <Pagination.Button
+                asChild
+                aria-label="Forrige side"
+                {...prevButtonProps}
+              >
+                <a
+                  onClick={(e) => handleAnchorClick(e, page - 1)}
+                  href={`#side-${page - 1}`}
+                >
+                  Forrige
+                </a>
+              </Pagination.Button>
+            </Pagination.Item>
+            {pages.map(({ page, itemKey, buttonProps }) => (
+              <Pagination.Item key={itemKey}>
+                {typeof page === 'number' && (
+                  <Pagination.Button
+                    asChild
+                    aria-label={`Side ${page}`}
+                    {...buttonProps}
+                  >
+                    <a
+                      href={`#side-${page}`}
+                      onClick={(e) => handleAnchorClick(e, page)}
+                    >
+                      {page}
+                    </a>
+                  </Pagination.Button>
+                )}
+              </Pagination.Item>
+            ))}
+            <Pagination.Item>
+              <Pagination.Button
+                asChild
+                aria-label="Neste side"
+                {...nextButtonProps}
+              >
+                <a
+                  onClick={(e) => handleAnchorClick(e, page + 1)}
+                  href={`#side-${page + 1}`}
+                >
+                  Neste
+                </a>
+              </Pagination.Button>
+            </Pagination.Item>
+          </Pagination.List>
+        </Pagination>
+      </div>
+    );
+  },
+});

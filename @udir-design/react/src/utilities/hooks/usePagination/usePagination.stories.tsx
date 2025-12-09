@@ -1,9 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useArgs } from 'storybook/preview-api';
+import preview from '.storybook/preview';
+import type { DecoratorType } from '.storybook/types';
 import { Pagination } from 'src/components/pagination/Pagination';
 import { type UsePaginationProps, usePagination } from './usePagination';
 
-const meta: Meta = {
+const meta = preview.meta<
+  UsePaginationProps,
+  DecoratorType,
+  Partial<UsePaginationProps>
+>({
   title: 'Utilities/usePagination',
   parameters: {
     componentOrigin: { originator: 'digdir' },
@@ -43,13 +48,9 @@ const meta: Meta = {
       type: { name: 'function' },
     },
   },
-};
+});
 
-export default meta;
-
-type Story = StoryObj<UsePaginationProps>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     currentPage: 2,
     totalPages: 10,
@@ -88,4 +89,4 @@ export const Preview: Story = {
       </Pagination>
     );
   },
-};
+});

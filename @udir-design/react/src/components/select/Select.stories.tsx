@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
+import preview from '.storybook/preview';
 import { Field } from '../field/Field';
 import { Heading } from '../typography/heading/Heading';
 import { Label } from '../typography/label/Label';
 import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
 import { Select } from './Select';
 
-const meta: Meta<typeof Select> = {
+const meta = preview.meta({
   component: Select,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -16,10 +16,7 @@ const meta: Meta<typeof Select> = {
     },
     layout: 'centered',
   },
-};
-
-export default meta;
-type Story = StoryObj<typeof Select>;
+});
 
 type County =
   | 'Akershus'
@@ -39,7 +36,7 @@ const counties: County[] = [
   'Rogaland',
 ];
 
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     'aria-invalid': false,
     width: 'full',
@@ -96,9 +93,9 @@ export const Preview: Story = {
     );
     await userEvent.keyboard('{Tab}');
   },
-};
+});
 
-export const WithError: Story = {
+export const WithError = meta.story({
   args: {
     'aria-invalid': true,
   },
@@ -116,7 +113,7 @@ export const WithError: Story = {
       <ValidationMessage>Velg et fylke</ValidationMessage>
     </Field>
   ),
-};
+});
 
 const educationalLevels = {
   barneskole: [
@@ -132,7 +129,7 @@ const educationalLevels = {
   videregående: ['Vg1', 'Vg2', 'Vg3'],
 };
 
-export const WithOptgroup: Story = {
+export const WithOptgroup = meta.story({
   render: (args, context) => (
     <Field>
       <Label>Klassetrinn</Label>
@@ -153,7 +150,7 @@ export const WithOptgroup: Story = {
       </Select>
     </Field>
   ),
-};
+});
 
 type Cities = Record<County, string[]>;
 const Cities: Cities = {
@@ -223,7 +220,7 @@ const Cities: Cities = {
 };
 type SelectedCounty = County | '';
 
-export const Controlled: Story = {
+export const Controlled = meta.story({
   parameters: {
     customStyles: {
       display: 'flex',
@@ -294,18 +291,18 @@ export const Controlled: Story = {
       </>
     );
   },
-};
+});
 
-export const Disabled: Story = {
+export const Disabled = meta.story({
   args: {
     disabled: true,
   },
-  render: Preview.render,
-};
+  render: Preview.input.render,
+});
 
-export const ReadOnly: Story = {
+export const ReadOnly = meta.story({
   args: {
     readOnly: true,
   },
-  render: Preview.render,
-};
+  render: Preview.input.render,
+});

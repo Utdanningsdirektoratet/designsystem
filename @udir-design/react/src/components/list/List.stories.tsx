@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import preview from '.storybook/preview';
 import { Link } from '../link/Link';
 import { Heading } from '../typography/heading/Heading';
 import { List } from './List';
 
-const meta: Meta<typeof List.Unordered> = {
+const meta = preview.meta({
   component: List.Unordered,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -12,13 +12,9 @@ const meta: Meta<typeof List.Unordered> = {
       details: 'Vi har fjernet mulighet for fargevalg.',
     },
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof List.Unordered>;
-type OrderedStory = StoryObj<typeof List.Ordered>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   render: (args) => (
     <List.Unordered {...args}>
       <List.Item>listepunkt 1</List.Item>
@@ -26,9 +22,9 @@ export const Preview: Story = {
       <List.Item>listepunkt 3</List.Item>
     </List.Unordered>
   ),
-};
+});
 
-export const Ordered: Story = {
+export const Ordered = meta.story({
   render: () => (
     <>
       <Heading
@@ -46,9 +42,9 @@ export const Ordered: Story = {
       </List.Ordered>
     </>
   ),
-};
+});
 
-export const Unordered: Story = {
+export const Unordered = meta.story({
   render: (args) => (
     <>
       <Heading
@@ -73,13 +69,13 @@ export const Unordered: Story = {
       </List.Unordered>
     </>
   ),
-};
+});
 
-export const Indented: OrderedStory = {
+export const Indented = meta.story({
   args: {
     style: { marginTop: 'var(--ds-size-2)' },
   },
-  render: (args) => (
+  render: ({ ref: _ref, ...args }) => (
     <>
       <Heading level={2} data-size="xs">
         Innhold
@@ -113,7 +109,7 @@ export const Indented: OrderedStory = {
       </List.Ordered>
     </>
   ),
-};
+});
 
 const designLinks = [
   {
@@ -130,7 +126,7 @@ const designLinks = [
   },
 ];
 
-export const WithLinks: Story = {
+export const WithLinks = meta.story({
   args: {
     style: { listStyle: 'none', padding: 0 },
   },
@@ -145,7 +141,7 @@ export const WithLinks: Story = {
       ))}
     </List.Unordered>
   ),
-};
+});
 
 const navLinks = [
   {
@@ -162,7 +158,7 @@ const navLinks = [
   },
 ];
 
-export const AsNav: Story = {
+export const AsNav = meta.story({
   args: {
     style: { listStyle: 'none', padding: 0 },
   },
@@ -179,4 +175,4 @@ export const AsNav: Story = {
       </List.Unordered>
     </nav>
   ),
-};
+});

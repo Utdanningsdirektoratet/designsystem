@@ -7,7 +7,7 @@ import { Table } from 'src/components/table';
 import type { HeadingProps } from 'src/components/typography/heading/Heading';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
-import type { MdxComponentOverrides } from '../types/parameters';
+import type { MdxComponentOverrides } from '../types';
 import componentStyles from './componentOverrides.module.scss';
 
 const getPath = (href: string | undefined): string => {

@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, userEvent, within } from 'storybook/test';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
+import preview from '.storybook/preview';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { SkipLink } from './SkipLink';
 
-const meta: Meta<typeof SkipLink> = {
+const meta = preview.meta({
   component: SkipLink,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -14,12 +14,14 @@ const meta: Meta<typeof SkipLink> = {
     },
   },
   decorators: [withScrollHashBehavior],
-};
+  args: {
+    // Shared defaults for required props
+    children: undefined,
+    href: '#',
+  },
+});
 
-export default meta;
-type Story = StoryObj<typeof SkipLink>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   render: (args) => (
     <>
       <Paragraph>
@@ -45,14 +47,14 @@ export const Preview: Story = {
     await expect(mainContent).toHaveFocus();
     await userEvent.keyboard('{Tab}');
   },
-};
+});
 
-export const Tabbed: Story = {
-  ...Preview,
+export const Tabbed = meta.story({
+  ...Preview.input,
   play: async () => {
     await userEvent.tab();
   },
-};
+});
 
 function isVisibleOnScreen(el: Element) {
   const { height, width } = el.getBoundingClientRect();
