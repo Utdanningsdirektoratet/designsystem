@@ -84,11 +84,5 @@
     "svgo": "catalog:",
     "tsup": "catalog:",
     "typescript": "catalog:"
-  },
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "onFail": "error"
-    }
   }
 }
