@@ -52,7 +52,8 @@
     "@digdir/designsystemet-types": "catalog:",
     "@udir-design/css": "workspace:*",
     "@udir-design/icons": "workspace:*",
-    "tslib": "catalog:"
+    "tslib": "catalog:",
+    "@u-elements/u-details": "catalog:"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "catalog:",
