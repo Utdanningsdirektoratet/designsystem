@@ -15,10 +15,7 @@ import { AnalyseFillSymbol } from
 
 function MyComponent () {
   return (
-    <Button>
-      <AnalyseFillSymbol aria-hidden />
-      Filtrer
-    </Button>
+    <AnalyseFillSymbol aria-hidden />
   )
 }
 `.trim(),

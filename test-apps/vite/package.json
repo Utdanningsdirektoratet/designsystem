@@ -30,5 +30,11 @@
     "@udir-design/react": {
       "injected": true
     }
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "onFail": "error"
+    }
   }
 }

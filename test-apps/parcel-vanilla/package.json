@@ -19,5 +19,11 @@
   },
   "devDependencies": {
     "parcel": "catalog:"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "onFail": "error"
+    }
   }
 }

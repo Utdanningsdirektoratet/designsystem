@@ -16,6 +16,7 @@ export default defineConfig({
         {
           addFileAttribute: true,
           classnameTemplate: '{filename}',
+          outputFile: './test-reports/index.html',
         },
       ],
       [

@@ -49,9 +49,11 @@
   },
   "dependencies": {
     "@digdir/designsystemet-react": "catalog:",
+    "@digdir/designsystemet-types": "catalog:",
     "@udir-design/css": "workspace:*",
     "@udir-design/icons": "workspace:*",
-    "tslib": "catalog:"
+    "tslib": "catalog:",
+    "@u-elements/u-details": "catalog:"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "catalog:",
@@ -114,6 +116,12 @@
   "peerDependenciesMeta": {
     "@types/react": {
       "optional": true
+    }
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "onFail": "error"
     }
   }
 }

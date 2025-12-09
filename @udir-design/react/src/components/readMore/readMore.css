@@ -1,0 +1,66 @@
+.uds-readmore {
+  --uds-readmore-icon-gap: var(--ds-size-2);
+  --uds-readmore-icon-size: var(--ds-size-6);
+  --uds-readmore-icon-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06'/%3E%3C/svg%3E");
+  --uds-readmore-padding: var(--ds-size-2);
+  --uds-readmore-size: var(--ds-size-10);
+  --uds-readmore-summary-color: var(--ds-color-info-text-subtle);
+  --uds-readmore-summary-background--hover: var(--ds-color-info-surface-tinted);
+
+  margin-inline-start: calc(var(--uds-readmore-padding) * -1);
+
+  & > :is(summary, u-summary) {
+    color: var(--uds-readmore-summary-color);
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    list-style: none;
+    min-height: var(--uds-readmore-size);
+    gap: var(--uds-readmore-icon-gap);
+    outline: none;
+    padding: var(--uds-readmore-padding);
+    position: relative;
+    width: fit-content;
+
+    @composes ds-focus from '@digdir/designsystemet-css/base.css';
+
+    &:not([hidden]) {
+      display: flex;
+    }
+
+    &:hover {
+      background: var(--uds-readmore-summary-background--hover);
+    }
+
+    &::before {
+      all: unset;
+      display: inline-block;
+      content: '';
+      background: currentcolor;
+      flex-shrink: 0;
+      height: var(--uds-readmore-icon-size);
+      width: var(--uds-readmore-icon-size);
+      mask: 50% / contain no-repeat var(--uds-readmore-icon-url);
+    }
+  }
+
+  & > div {
+    position: relative;
+    padding-inline-start: var(--ds-size-10);
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0 var(--ds-size-5);
+      transform: translateX(-50%);
+      width: var(--ds-border-width-default);
+      background-color: var(--ds-color-border-subtle);
+    }
+  }
+
+  &[open] > :is(summary, u-summary) {
+    &::before {
+      rotate: 180deg;
+    }
+  }
+}
