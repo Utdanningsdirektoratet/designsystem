@@ -1,0 +1,108 @@
+import { Meta, Controls, Primary, Canvas } from '@storybook/addon-docs/blocks';
+import { INITIAL_VIEWPORTS } from 'storybook/viewport';
+import * as FormNavigationStories from './FormNavigation.stories';
+import {
+  InformationSquareIcon,
+  BriefcaseIcon,
+  PersonIcon,
+  SealCheckmarkIcon,
+  PaperplaneIcon,
+  TasklistIcon,
+  BulletListIcon,
+  UploadIcon,
+} from '@udir-design/icons';
+import { Unstyled } from '@storybook/addon-docs/blocks';
+
+<Meta of={FormNavigationStories} />
+
+# Form Navigation
+
+`FormNavigation` er en navigasjonskomponent som hjelper brukere å bevege seg gjennom ulike seksjoner og steg av et skjema. Den gir en oversikt over fremdriften og lar brukere enkelt hoppe mellom forskjellige deler av skjemaet. Du bygger opp navigasjonen ved hjelp av subkomponenter og [`useFormNavigation`](/docs/utilities-useformnavigation--docs) for å håndtere tilstander og interaksjoner.
+
+**Passer til å**
+
+- navigere i flertrinns skjemaer
+- gi brukere en oversikt over fremdriften i et skjema
+
+**Passer ikke til å**
+
+- navigere utenfor skjemaer (bruk heller [`Pagination`](/docs/components-pagination--docs))
+
+<Primary />
+<Controls />
+
+## Eksempler
+
+Subkomponenter:
+
+- `FormNavigation.Group`
+- `FormNavigation.Step`
+
+### Enkeltsteg
+
+`FormNavigation.Step` er et steg som representerer en side i skjemaet. En side i skjemaet inneholder informasjon eller spørsmål relatert til ett tema. Et steg kan også brukes som informasjonsside, oppsummeringsside, innsendingside og bekreftelsesside.
+
+Tittel legges inn som `children`. Bruk `variant`-propen for å automatisk få riktige ikoner som passer til typen steg (`variant='info' | 'summary' | 'submission' | 'confirmation' | 'default'`).
+
+<Canvas of={FormNavigationStories.SingleStep} />
+
+### Gruppering av steg
+
+`FormNavigation.Group` er en gruppe av steg som representerer en samling av relaterte sider i skjemaet. Bruk `FormNavigation.Step` som `children`. Grupper brukes for å organisere skjemaet i logiske seksjoner, som gjør det enklere for brukeren å forstå strukturen.
+
+Navnet på gruppen settes i `title`-propen. I lengre skjemaer kan du spare plass ved å lukke enkelte grupper. Dette styres med `open`-propen. Du kan også bruke `activeStepLabel`-propen for å vise hvilket steg i gruppen som er aktivt når gruppen er lukket. Dette håndteres automatisk ved bruk av [`useFormNavigation`](/docs/utilities-useformnavigation--docs) dersom du setter `label` i `getStepProps` på `FormNavigation.Step`.
+
+<Canvas of={FormNavigationStories.Grouping} />
+
+### Tilstander
+
+Farger og ikoner baserer seg på tilstanden til hvert steg eller gruppe (`state = "idle" | "active" | "completed" | "invalid"`).
+
+- `idle`: Standardtilstand for steg og grupper.
+- `active`: Fylt sirkel - Indikerer det nåværende steget brukeren befinner seg på.
+- `completed`: Grønn tekst og check-ikon - Indikerer steg eller grupper som er fullført.
+- `invalid`: Rød tekst og kryss-ikon - Indikerer steg eller grupper som inneholder feil eller mangler.
+
+<Canvas of={FormNavigationStories.States} />
+
+### Håndtering av tilstand
+
+Bruk react-hooken [`useFormNavigation`](/docs/utilities-useformnavigation--docs) for å håndtere tilstanden til navigasjonen. Hooken gir deg funksjonalitet for å håndtere aktiv side, fullførte sider, feilmarkering og navigasjonskontroller. Validering av skjema håndteres utenfor hooken, slik at du kan tilpasse valideringslogikken etter behov. Se [dokumentasjon om `useFormNavigation`](/docs/utilities-useformnavigation--docs) for mer detaljert informasjon.
+
+<Canvas of={FormNavigationStories.Full} />
+
+### Mobilvisning
+
+Bruk [`Dialog`](/docs/components-dialog--docs) for å vise `FormNavigation` på mindre skjermer. Du må selv definere breakpoints for når komponenten skal veksle mellom mobilvisning og vanlig visning.
+
+<div
+  style={{
+    width: INITIAL_VIEWPORTS['iphone6'].styles.width,
+    justifySelf: 'center',
+  }}
+>
+  <Canvas
+    of={FormNavigationStories.Full}
+    story={{
+      inline: false,
+      height: '600px',
+    }}
+  />
+</div>
+
+## Retningslinjer
+
+### Skjemahåndtering
+
+Skjemahåndtering bør implementeres ved hjelp av en skjemabibliotek som [react-hook-form](https://react-hook-form.com/) eller [formik](https://formik.org/), sammen med et valideringsbibliotek som [zod](https://zod.dev/) eller [yup](https://github.com/jquense/yup). Dette gir en strukturert tilnærming til håndtering av skjemaets tilstand, validering og innsending. I eksemplene brukes react-hook-form med zod.
+
+### Visning av feilmeldinger
+
+Feilmeldinger håndteres ved hjelp av valgfri skjemavalidering, sammen med inline feilmeldinger ved skjemafelter, og [`ErrorSummary`](/docs/components-errorsummary--docs) for oppsummering av feil.
+
+- Feilmeldinger skal vises ved hvert enkelt skjemafelt. Bruk `error`-prop på skjemafeltkomponenter.
+- Feilmeldinger skal vanligvis først vises når brukeren har forsøkt å sende inn skjemaet. Dette er for å unngå forvirring under utfylling.
+- Sider som inneholder flere felter, skal ha en [`ErrorSummary`](/docs/components-errorsummary--docs) som oppsummerer feilene på den aktuelle siden. Det er ikke nødvendig dersom siden kun inneholder ett felt.
+- Bruk en [`ErrorSummary`](/docs/components-errorsummary--docs) på innleveringssiden for å gi en oversikt over alle feil i skjemaet. Dette hjelper brukeren med å raskt identifisere og navigere til feilene som må rettes opp.
+- Lenkene i [`ErrorSummary`](/docs/components-errorsummary--docs) skal navigere til riktig side og fokusere de respektive feltene når de klikkes.
+- Bruk `markInvalid` og `markCompleted` fra [`useFormNavigation`](/docs/utilities-useformnavigation--docs) for å oppdatere stegenes tilstand basert på valideringsresultatene.

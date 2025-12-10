@@ -11,6 +11,9 @@ const meta: Meta<typeof FormDemo> = {
     componentOrigin: {
       originator: 'self',
     },
+    customStyles: {
+      margin: '0 1rem',
+    },
     a11y: {
       config: {
         rules: [
@@ -44,7 +47,7 @@ export const FormPage2: Story = {
   ...FormStory,
   args: {
     'data-color-scheme': 'light',
-    page: 2,
+    page: 'ranking',
   },
 };
 
@@ -52,6 +55,14 @@ export const FormPage3: Story = {
   ...FormStory,
   args: {
     'data-color-scheme': 'light',
-    page: 3,
+    page: 'finish',
+  },
+};
+
+export const FormPage4: Story = {
+  ...FormStory,
+  args: {
+    'data-color-scheme': 'light',
+    page: 'deliver',
   },
 };
