@@ -533,8 +533,8 @@ exports[`All States 1`] = `
       <div>
         <u-details
           data-state="idle"
-          data-active-step-label="Første steg"
           role="group"
+          data-active-step-label="Første steg"
         >
           <u-summary
             aria-expanded="false"
@@ -584,8 +584,8 @@ exports[`All States 1`] = `
       <div>
         <u-details
           data-state="completed"
-          data-active-step-label="Første steg"
           role="group"
+          data-active-step-label="Første steg"
         >
           <u-summary
             aria-expanded="false"
@@ -635,8 +635,8 @@ exports[`All States 1`] = `
       <div>
         <u-details
           data-state="invalid"
-          data-active-step-label="Første steg"
           role="group"
+          data-active-step-label="Første steg"
         >
           <u-summary
             aria-invalid
@@ -982,8 +982,8 @@ exports[`Grouping 1`] = `
     <u-details
       data-state="idle"
       open
-      data-active-step-label="Første steg"
       role="group"
+      data-active-step-label="Første steg"
     >
       <u-summary
         aria-expanded="true"
@@ -1073,6 +1073,7 @@ exports[`Simple Navigation 1`] = `
         data-state="idle"
         open
         role="group"
+        data-active-step-label="Steg 1"
       >
         <u-summary
           aria-expanded="true"
@@ -1274,8 +1275,8 @@ exports[`States 1`] = `
     <u-details
       data-state="idle"
       open
-      data-active-step-label="Tredje steg"
       role="group"
+      data-active-step-label="Tredje steg"
     >
       <u-summary
         aria-expanded="true"

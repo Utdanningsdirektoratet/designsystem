@@ -50,7 +50,7 @@ Tittel legges inn som `children`. Bruk `variant`-propen for å automatisk få ri
 
 `FormNavigation.Group` er en gruppe av steg som representerer en samling av relaterte sider i skjemaet. Bruk `FormNavigation.Step` som `children`. Grupper brukes for å organisere skjemaet i logiske seksjoner, som gjør det enklere for brukeren å forstå strukturen.
 
-Navnet på gruppen settes i `title`-propen. I lengre skjemaer kan du spare plass ved å lukke enkelte grupper. Dette styres med `open`-propen. Du kan også bruke `activeStepLabel`-propen for å vise hvilket steg i gruppen som er aktivt når gruppen er lukket. Dette håndteres automatisk ved bruk av [`useFormNavigation`](/docs/utilities-useformnavigation--docs) dersom du setter `label` i `getStepProps` på `FormNavigation.Step`.
+Navnet på gruppen settes i `title`-propen. I lengre skjemaer kan du spare plass ved å lukke enkelte grupper. Dette styres med `open`-propen. Hvilket steg i gruppen som er aktivt vises også når gruppen er lukket.
 
 <Canvas of={FormNavigationStories.Grouping} />
 

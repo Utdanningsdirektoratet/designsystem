@@ -114,10 +114,7 @@ export const States: Story = {
         <FormNavigation.Step state="invalid">Andre steg</FormNavigation.Step>
         <FormNavigation.Step state="invalid">Tredje steg</FormNavigation.Step>
       </FormNavigation.Group>
-      <FormNavigation.Group
-        title="Tredje seksjon"
-        activeStepLabel="Tredje steg"
-      >
+      <FormNavigation.Group title="Tredje seksjon">
         <FormNavigation.Step state="completed">Første steg</FormNavigation.Step>
         <FormNavigation.Step state="completed">Andre steg</FormNavigation.Step>
         <FormNavigation.Step state="active">Tredje steg</FormNavigation.Step>
@@ -297,11 +294,7 @@ export const AllStates: Story = {
         </FormNavigation>
 
         <FormNavigation {...args}>
-          <FormNavigation.Group
-            title="Seksjon"
-            open={false}
-            activeStepLabel="Første steg"
-          >
+          <FormNavigation.Group title="Seksjon" open={false}>
             <FormNavigation.Step state="active">
               Første steg
             </FormNavigation.Step>
@@ -312,12 +305,7 @@ export const AllStates: Story = {
         </FormNavigation>
 
         <FormNavigation {...args}>
-          <FormNavigation.Group
-            title="Seksjon"
-            state="completed"
-            open={false}
-            activeStepLabel="Første steg"
-          >
+          <FormNavigation.Group title="Seksjon" state="completed" open={false}>
             <FormNavigation.Step state="active">
               Første steg
             </FormNavigation.Step>
@@ -334,12 +322,7 @@ export const AllStates: Story = {
         </FormNavigation>
 
         <FormNavigation {...args}>
-          <FormNavigation.Group
-            title="Seksjon"
-            state="invalid"
-            open={false}
-            activeStepLabel="Første steg"
-          >
+          <FormNavigation.Group title="Seksjon" state="invalid" open={false}>
             <FormNavigation.Step state="active">
               Første steg
             </FormNavigation.Step>
@@ -535,6 +518,7 @@ const heading = (stepId: StepId) => {
 };
 
 export const Full: Story = {
+  parameters: { docs: { source: { type: 'code' } } },
   args: { className: classes.navigation },
   render(args) {
     const onStepChange = async (_nextId: StepId, prevId: StepId | null) => {

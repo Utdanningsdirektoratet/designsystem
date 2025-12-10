@@ -13,6 +13,8 @@ export type FormNavigationStepProps = HTMLAttributes<HTMLButtonElement> & {
   variant?: 'info' | 'summary' | 'submission' | 'confirmation' | 'default';
 };
 
+export const STEP_STATE_ATTRIBUTE = 'data-state';
+
 export const FormNavigationStep = forwardRef<
   HTMLButtonElement,
   FormNavigationStepProps
@@ -23,7 +25,7 @@ export const FormNavigationStep = forwardRef<
   return (
     <button
       className="uds-form-navigation__step"
-      data-state={state}
+      {...{ [STEP_STATE_ATTRIBUTE]: state }}
       data-variant={variant}
       aria-current={state === 'active' ? 'step' : undefined}
       aria-invalid={state === 'invalid' || undefined}
