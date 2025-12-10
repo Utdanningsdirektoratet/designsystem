@@ -32,17 +32,6 @@
     text-decoration: none;
     color: var(--dsc-link-color);
 
-    > img {
-      height: var(--ds-size-12);
-    }
-
-    > img:first-of-type {
-      display: block;
-    }
-    > img:last-of-type {
-      display: none;
-    }
-
     @composes ds-focus from '@digdir/designsystemet-css/base.css';
   }
 
@@ -372,24 +361,4 @@
 /* Prevent body from scrolling when menu is open */
 body:has(.uds-header .uds-header__menu:popover-open) {
   overflow: hidden;
-}
-
-[data-color-scheme='dark'] .uds-header__logo {
-  > img:first-of-type {
-    display: none;
-  }
-  > img:last-of-type {
-    display: block;
-  }
-}
-
-[data-color-scheme='auto'] {
-  @media (prefers-color-scheme: dark) {
-    .uds-header__logo > img:first-of-type {
-      display: none;
-    }
-    .uds-header__logo > img:last-of-type {
-      display: block;
-    }
-  }
 }
