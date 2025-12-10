@@ -1,3 +1,13 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import {
+  ColorDisplay,
+  identityColors,
+  brandColors,
+  severityColors,
+} from './docs/color/color-display';
+
+<Meta title="design-tokens/Farger" />
+
 # Farger
 
 Vi deler fargene i designsystemet inn i to hovedgrupper: Farger for digitale tjenester og identitetsfarger.
@@ -11,6 +21,7 @@ Farger for digitale tjenester brukes i digitale brukergrensesnitt. De er definer
 - For andre komponenter og flater er det mer fleksibilitet, og designeren må ta valg ut ifra hensikt og visuell helhet. Dette gjelder for eksempel card.
 
 ### Brand-farger
+
 (vurdere annet ord enn "brand"?)
 Brand-fargene utgjør det visuelle uttrykket til merkevaren i brukergrensesnittet og er med på å skape gjenkjennelighet og opplevelsen av et helhetlig produkt.
 
@@ -37,6 +48,9 @@ Disse fargene er tilgjengelig for komponenter der det er relevant, for eksempel 
 
 (visning av fargetokens gruppert i brand-farger og status-farger)
 
+<ColorDisplay colorPalette={brandColors} />
+
+<ColorDisplay colorPalette={severityColors} />
 
 ## Identitetsfarger
 
@@ -49,6 +63,7 @@ Brand-fargene for digitale tjenester er basert på identitetsfargene, men er til
 ### Når skal identitetsfargene brukes?
 
 Bruk identitetsfargene når du:
+
 - Lager illustrasjoner og dekorativt visuelt innhold
 - Designer trykte materialer som plakater og brosjyrer
 
@@ -66,6 +81,8 @@ Identitetsfargene består av:
 Alle identitetsfargene har en palett fra lys til mørk, slik at de er fleksible i bruk. De lysere nyansene brukes typisk på bakgrunnsflater, mens de mørkere nyansene brukes på fremtredende elementer.
 
 (visning av identitetsfargene)
+
+<ColorDisplay colorPalette={identityColors} />
 
 #### Hovedfarger
 
