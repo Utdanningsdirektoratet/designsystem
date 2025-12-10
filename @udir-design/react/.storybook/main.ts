@@ -1,13 +1,12 @@
-import type { StorybookConfig } from '@storybook/react-vite';
+import { defineMain } from '@storybook/react-vite/node';
 import remarkGfm from 'remark-gfm';
 import type { Plugin, UserConfig } from 'vite';
 
-const config: StorybookConfig = {
+export default defineMain({
   stories: ['../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
   addons: [
     '@storybook/addon-a11y',
     'storybook-addon-pseudo-states',
-    'storybook-addon-tag-badges',
     '@storybook/addon-vitest',
     {
       name: '@storybook/addon-docs',
@@ -74,8 +73,7 @@ const config: StorybookConfig = {
       shouldRemoveUndefinedFromOptional: true,
     },
   },
-};
-export default config;
+});
 
 /**
  * Fixes path to vite-inject-mocker-entry.js so it works when Storybook is hosted on a subpath

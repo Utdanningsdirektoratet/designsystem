@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import preview from '.storybook/preview';
 import { Heading } from './Heading';
 
-const meta: Meta<typeof Heading> = {
+const meta = preview.meta({
   component: Heading,
   tags: ['beta', '!autodocs', 'digdir'],
   parameters: {
@@ -16,13 +16,10 @@ const meta: Meta<typeof Heading> = {
     },
   },
   title: 'Components/Typography/Heading',
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Heading>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     children: 'Heading',
   },
-};
+});

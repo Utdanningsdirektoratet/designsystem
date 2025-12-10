@@ -5,6 +5,7 @@ import {
   Canvas,
   ArgTypes,
 } from '@storybook/addon-docs/blocks';
+import * as usePagination from '../../utilities/hooks/usePagination/usePagination.stories';
 import * as PaginationStories from './Pagination.stories';
 
 <Meta of={PaginationStories} />
@@ -16,7 +17,7 @@ import * as PaginationStories from './Pagination.stories';
 **Passer til å**
 
 - navigere mellom relaterte sider
-- dele inn store mengder innhold i flere sider – for eksempel i tabeller
+- dele inn store mengder innhold i flere sider - for eksempel i tabeller
 
 **Passer ikke til å**
 
@@ -26,7 +27,7 @@ import * as PaginationStories from './Pagination.stories';
 ## Slik bruker du Pagination
 
 <Primary />
-<Controls of={PaginationStories.Preview} />
+<Controls />
 
 Komponentens tilstand om hvilken side som er aktiv styres programmatisk ved hjelp av `usePagination`.
 [Les mer om `usePagination`](/docs/utilities-usepagination--docs).
@@ -78,7 +79,7 @@ Vær oppmerksom på at knappene som standard er `<button>`-elementer. Hvis `Pagi
 
 Alle del-komponenter støtter `asChild` som kan brukes til å endre `Pagination.Button` til lenker `<a>`.
 
-<Canvas of={PaginationStories.WithAnchor} />
+Se [eksempel på dette i dokumentasjonen til UsePagionation](/docs/utilities-usepagination--docs).
 
 ### Responsiv visning
 

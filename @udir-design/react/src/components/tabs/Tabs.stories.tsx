@@ -1,4 +1,3 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import {
@@ -11,6 +10,7 @@ import {
   PersonGroupIcon,
   PersonIcon,
 } from '@udir-design/icons';
+import preview from '.storybook/preview';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
 import { Avatar } from '../avatar/Avatar';
 import { Button } from '../button/Button';
@@ -19,10 +19,9 @@ import { List } from '../list/List';
 import { Tooltip } from '../tooltip/Tooltip';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
-import type { TabsProps } from './Tabs';
 import { Tabs } from './Tabs';
 
-const meta: Meta<typeof Tabs> = {
+const meta = preview.meta({
   component: Tabs,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -31,12 +30,9 @@ const meta: Meta<typeof Tabs> = {
     },
     layout: 'centered',
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Tabs>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     defaultValue: 'value1',
     children: [
@@ -110,9 +106,9 @@ export const Preview: Story = {
       expect(panel1).toBeVisible();
     });
   },
-};
+});
 
-export const OnlyText: Story = {
+export const OnlyText = meta.story({
   args: {
     defaultValue: 'oversikt',
   },
@@ -127,9 +123,9 @@ export const OnlyText: Story = {
       </Tabs>
     );
   },
-};
+});
 
-export const IconsWithText: Story = {
+export const IconsWithText = meta.story({
   args: {
     defaultValue: 'barnehage',
   },
@@ -153,9 +149,9 @@ export const IconsWithText: Story = {
       </Tabs>
     );
   },
-};
+});
 
-export const OnlyIcons: Story = {
+export const OnlyIcons = meta.story({
   args: {
     defaultValue: 'profile',
   },
@@ -185,107 +181,108 @@ export const OnlyIcons: Story = {
       </Tabs.List>
     </Tabs>
   ),
-};
+});
 
-export const Controlled: StoryFn<TabsProps> = (args) => {
-  const [tab, setTab] = useState('users');
-  return (
-    <Tabs {...args} value={tab} onChange={setTab}>
-      <Tabs.List>
-        <Tabs.Tab value="users">
-          <PersonGroupIcon aria-hidden />
-          Brukere
-        </Tabs.Tab>
-        <Tabs.Tab value="profile">
-          <PersonIcon aria-hidden />
-          Din profil
-        </Tabs.Tab>
-      </Tabs.List>
-      <Tabs.Panel value="users">
-        <List.Unordered
-          style={{
-            listStyle: 'none',
-            padding: 0,
-          }}
-        >
-          <List.Item
+export const Controlled = meta.story({
+  render: (args) => {
+    const [tab, setTab] = useState('users');
+    return (
+      <Tabs {...args} value={tab} onChange={setTab}>
+        <Tabs.List>
+          <Tabs.Tab value="users">
+            <PersonGroupIcon aria-hidden />
+            Brukere
+          </Tabs.Tab>
+          <Tabs.Tab value="profile">
+            <PersonIcon aria-hidden />
+            Din profil
+          </Tabs.Tab>
+        </Tabs.List>
+        <Tabs.Panel value="users">
+          <List.Unordered
             style={{
-              display: 'flex',
+              listStyle: 'none',
+              padding: 0,
             }}
           >
-            <Button variant="secondary" onClick={() => setTab('profile')}>
-              <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde Hansen
-              (deg)
-            </Button>
-          </List.Item>
-          <List.Item
-            style={{
-              display: 'flex',
-            }}
-          >
-            <Link
-              href="#"
+            <List.Item
               style={{
-                alignItems: 'center',
                 display: 'flex',
-                gap: 'var(--ds-size-2)',
               }}
             >
-              <Avatar aria-label="Bruker 2" data-color="support1" />
-              Stian Stølan
-            </Link>
-          </List.Item>
-          <List.Item
-            style={{
-              display: 'flex',
-            }}
-          >
-            <Link
-              href="#"
+              <Button variant="secondary" onClick={() => setTab('profile')}>
+                <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde
+                Hansen (deg)
+              </Button>
+            </List.Item>
+            <List.Item
               style={{
-                alignItems: 'center',
                 display: 'flex',
-                gap: 'var(--ds-size-2)',
               }}
             >
-              <Avatar aria-label="Bruker 3" data-color="support2" />
-              Lina Larsen
-            </Link>
-          </List.Item>
-        </List.Unordered>
-      </Tabs.Panel>
-      <Tabs.Panel value="profile">
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 'var(--ds-size-2)',
-          }}
-        >
-          <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde Hansen
-        </div>
+              <Link
+                href="#"
+                style={{
+                  alignItems: 'center',
+                  display: 'flex',
+                  gap: 'var(--ds-size-2)',
+                }}
+              >
+                <Avatar aria-label="Bruker 2" data-color="support1" />
+                Stian Stølan
+              </Link>
+            </List.Item>
+            <List.Item
+              style={{
+                display: 'flex',
+              }}
+            >
+              <Link
+                href="#"
+                style={{
+                  alignItems: 'center',
+                  display: 'flex',
+                  gap: 'var(--ds-size-2)',
+                }}
+              >
+                <Avatar aria-label="Bruker 3" data-color="support2" />
+                Lina Larsen
+              </Link>
+            </List.Item>
+          </List.Unordered>
+        </Tabs.Panel>
+        <Tabs.Panel value="profile">
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 'var(--ds-size-2)',
+            }}
+          >
+            <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde Hansen
+          </div>
 
-        <Heading
-          level={3}
-          style={{
-            marginBottom: 'var(--ds-size-2)',
-            marginTop: 'var(--ds-size-4)',
-          }}
-        >
-          Detaljer
-        </Heading>
-        <Paragraph>34 år</Paragraph>
-        <Paragraph>Mysen, Norge</Paragraph>
-        <Paragraph>Lærer</Paragraph>
-        <Paragraph>Mysen Videregående skole</Paragraph>
-      </Tabs.Panel>
-    </Tabs>
-  );
-};
-
-Controlled.parameters = {
-  customStyles: {
-    width: '500px',
+          <Heading
+            level={3}
+            style={{
+              marginBottom: 'var(--ds-size-2)',
+              marginTop: 'var(--ds-size-4)',
+            }}
+          >
+            Detaljer
+          </Heading>
+          <Paragraph>34 år</Paragraph>
+          <Paragraph>Mysen, Norge</Paragraph>
+          <Paragraph>Lærer</Paragraph>
+          <Paragraph>Mysen Videregående skole</Paragraph>
+        </Tabs.Panel>
+      </Tabs>
+    );
   },
-  docs: { source: { type: 'code', transform: formatReactSource } },
-};
+  parameters: {
+    customStyles: {
+      width: '500px',
+    },
+    docs: { source: { type: 'code', transform: formatReactSource } },
+  },
+});
