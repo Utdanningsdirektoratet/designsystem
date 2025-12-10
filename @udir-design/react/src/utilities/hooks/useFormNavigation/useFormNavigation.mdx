@@ -65,8 +65,6 @@ const { getStepProps, getGroupProps } = useFormNavigation<StepId>({
 });
 
 const group = getGroupProps(['step-1', 'step-2']);
-const step1 = getStepProps({ stepId: 'step-1', label: 'Første steg' });
-const step2 = getStepProps({ stepId: 'step-2', label: 'Andre steg' });
 
 return (
   <FormNavigation>
@@ -74,8 +72,12 @@ return (
       Infoside
     </FormNavigation.Step>
     <FormNavigation.Group title="Seksjon" {...group}>
-      <FormNavigation.Step {...step1} />
-      <FormNavigation.Step {...step2} />
+      <FormNavigation.Step {...getStepProps('step-1')}>
+        Første steg
+      </FormNavigation.Step>
+      <FormNavigation.Step {...getStepProps('step-2')}>
+        Andre steg
+      </FormNavigation.Step>
     </FormNavigation.Group>
   </FormNavigation>
 );

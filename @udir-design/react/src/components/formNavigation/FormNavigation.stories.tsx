@@ -67,16 +67,18 @@ export const Grouping: Story = {
     const { getStepProps, getGroupProps } = useFormNavigation({
       value: 'step1',
     });
-    const step1 = getStepProps({ stepId: 'step1', label: 'Første steg' });
-    const step2 = getStepProps({ stepId: 'step2', label: 'Andre steg' });
     return (
       <FormNavigation {...args}>
         <FormNavigation.Group
           title="Seksjon"
           {...getGroupProps(['step1', 'step2'])}
         >
-          <FormNavigation.Step {...step1} />
-          <FormNavigation.Step {...step2} />
+          <FormNavigation.Step {...getStepProps('step1')}>
+            Første steg
+          </FormNavigation.Step>
+          <FormNavigation.Step {...getStepProps('step2')}>
+            Andre steg
+          </FormNavigation.Step>
         </FormNavigation.Group>
       </FormNavigation>
     );
@@ -604,26 +606,26 @@ export const Full: Story = {
           title="Første seksjon"
           {...getGroupProps(['step1', 'step2'])}
         >
-          <FormNavigation.Step
-            {...getStepProps({ stepId: 'step1', label: 'Første steg' })}
-          ></FormNavigation.Step>
-          <FormNavigation.Step
-            {...getStepProps({ stepId: 'step2', label: 'Andre steg' })}
-          ></FormNavigation.Step>
+          <FormNavigation.Step {...getStepProps('step1')}>
+            Første steg
+          </FormNavigation.Step>
+          <FormNavigation.Step {...getStepProps('step2')}>
+            Andre steg
+          </FormNavigation.Step>
         </FormNavigation.Group>
         <FormNavigation.Group
           title="Andre seksjon"
           {...getGroupProps(['step3', 'step4', 'step5'])}
         >
-          <FormNavigation.Step
-            {...getStepProps({ stepId: 'step3', label: 'Første steg' })}
-          />
-          <FormNavigation.Step
-            {...getStepProps({ stepId: 'step4', label: 'Andre steg' })}
-          />
-          <FormNavigation.Step
-            {...getStepProps({ stepId: 'step5', label: 'Tredje steg' })}
-          />
+          <FormNavigation.Step {...getStepProps('step3')}>
+            Første steg
+          </FormNavigation.Step>
+          <FormNavigation.Step {...getStepProps('step4')}>
+            Andre steg
+          </FormNavigation.Step>
+          <FormNavigation.Step {...getStepProps('step5')}>
+            Tredje steg
+          </FormNavigation.Step>
         </FormNavigation.Group>
         <FormNavigation.Step
           variant="submission"

@@ -59,8 +59,6 @@ export const Preview: Story = {
     });
 
     const group = getGroupProps(['step1', 'step2']);
-    const step1 = getStepProps({ stepId: 'step1', label: 'Første steg' });
-    const step2 = getStepProps({ stepId: 'step2', label: 'Andre steg' });
 
     return (
       <FormNavigation {...args}>
@@ -68,8 +66,12 @@ export const Preview: Story = {
           Infoside
         </FormNavigation.Step>
         <FormNavigation.Group title="Seksjon" {...group}>
-          <FormNavigation.Step {...step1} />
-          <FormNavigation.Step {...step2} />
+          <FormNavigation.Step {...getStepProps('step1')}>
+            Første steg
+          </FormNavigation.Step>
+          <FormNavigation.Step {...getStepProps('step2')}>
+            Andre steg
+          </FormNavigation.Step>
         </FormNavigation.Group>
       </FormNavigation>
     );
