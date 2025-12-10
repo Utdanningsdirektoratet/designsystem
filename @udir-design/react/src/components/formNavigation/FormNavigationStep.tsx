@@ -7,11 +7,11 @@ export type FormNavigationStepProps = Omit<
   'children'
 > & {
   /**
-   * The current state of the FormNavigationStep component.
+   * The current state of the FormNavigation.Step component.
    */
   state?: FormNavigationState;
   /**
-   * The variant style of the FormNavigationStep component. Only affects visual styling.
+   * The variant style of the FormNavigation.Step component. Only affects visual styling.
    */
   variant?: 'info' | 'summary' | 'submission' | 'confirmation' | 'default';
   /**

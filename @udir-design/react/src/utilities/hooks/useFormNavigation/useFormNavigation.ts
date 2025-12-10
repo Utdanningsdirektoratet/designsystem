@@ -83,17 +83,17 @@ type UseFormNavigationReturn<TId extends string = string> = {
    */
   hasNext: () => boolean;
   /**
-   * Give props to `FormNavigationStep`.
+   * Give props to `FormNavigation.Step`.
    * @example
-   * <FormNavigationStep {...getStepProps(0)}>Første</FormNavigationStep>
+   * <FormNavigation.Step {...getStepProps(0)}>Første</FormNavigation.Step>
    */
   getStepProps: (
     propsOrId: TId | GetFormNavigationStepProps<TId>,
   ) => GetFormNavigationStepProps<TId> & { state: FormNavigationState };
   /**
-   * Give props to `FormNavigationGroup`.
+   * Give props to `FormNavigation.Group`.
    * @example
-   * <FormNavigationGroup {...getGroupProps(["step-1", "step-2"])}>Gruppe</FormNavigationGroup>
+   * <FormNavigation.Group {...getGroupProps(["step-1", "step-2"])}>Gruppe</FormNavigation.Group>
    */
   getGroupProps: (ids: TId[]) => {
     state: Exclude<FormNavigationState, 'active'>;
@@ -110,7 +110,7 @@ export function useFormNavigation<TId extends string>(
 ): UseFormNavigationReturn<TId>;
 
 /**
- * useFormNavigation – lightweight management for FormNavigation + FormNavigationStep
+ * useFormNavigation – lightweight management for FormNavigation + FormNavigation.Step
  */
 export function useFormNavigation<TId extends string = string>({
   value: initialId = null,

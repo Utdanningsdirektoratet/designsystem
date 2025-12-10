@@ -37,14 +37,14 @@ I respons får du objektet:
   hasPrev: () => boolean, // Indikerer om det finnes et forrige steg
   hasNext: () => boolean, // Indikerer om det finnes et neste steg
 
-  /** Props du kan spre på FormNavigationStep for et gitt steg-ID eller props-objekt */
+  /** Props du kan spre på FormNavigation.Step for et gitt steg-ID eller props-objekt */
   getStepProps: (
     propsOrId: TId | GetFormNavigationStepProps<TId>,
   ) => GetFormNavigationStepProps<TId> & {
     state: FormNavigationState; // Stegets avledede state ("idle" | "active" | "completed" | "invalid")
   },
 
-  /** Props du kan spre på FormNavigationGroup for en gitt liste av steg-IDer */
+  /** Props du kan spre på FormNavigation.Group for en gitt liste av steg-IDer */
   getGroupProps: (ids: TId[]) => {
     state: Exclude<FormNavigationState, 'active'>;
   };
