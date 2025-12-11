@@ -18,7 +18,6 @@ type Story = StoryObj<typeof TableDemo>;
 
 export const TableStory: Story = {
   args: {
-    'data-size': 'md',
     'data-color-scheme': 'auto',
   },
   render(args) {

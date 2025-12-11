@@ -105,7 +105,7 @@ export const FormDemo = ({ page = 1, ...props }: FormDemo) => {
 
   return (
     <FormProvider {...methods}>
-      <div {...props} className={classes.container}>
+      <div {...props} className={classes.container} data-size="auto">
         <Heading level={1} data-size="md">
           Skjema
         </Heading>

@@ -28,7 +28,7 @@ type ArticleDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
 export const ArticleDemo = ({ ...props }: ArticleDemoProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   return (
-    <div {...props}>
+    <div {...props} data-size="auto">
       <SkipLink href="#main-content">Hopp til hovedinnholdet</SkipLink>
       <Header applicationName="Artikkeldemo">
         <Header.MenuButton />

@@ -21,7 +21,6 @@ type Story = StoryObj<typeof ArticleDemo>;
 
 export const ArticleStory: Story = {
   args: {
-    'data-size': 'md',
     'data-color-scheme': 'auto',
   },
   parameters: {
