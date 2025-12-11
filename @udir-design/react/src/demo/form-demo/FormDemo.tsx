@@ -10,17 +10,19 @@ import { Dialog } from 'src/components/dialog/Dialog';
 import type { FieldsetProps } from 'src/components/fieldset/Fieldset';
 import { FormNavigation } from 'src/components/formNavigation';
 import { Heading } from 'src/components/typography/heading/Heading';
-import { FinishPage } from '../../demo/form-demo/pages/FinishPage.tsx';
-import { PersonalInfoPage } from '../../demo/form-demo/pages/PersonalInfoPage';
+import type { GetStepId } from 'src/utilities/form/navigation';
+import { defineSteps, getStepIds } from 'src/utilities/form/navigation';
+import { useFormNavigation } from 'src/utilities/hooks/useFormNavigation/useFormNavigation';
+import type { DemoProps } from '../demoProps.js';
+import { ErrorSummaryContent } from './ErrorSummaryContent';
+import classes from './FormDemo.module.css';
+import { FinishPage } from './pages/FinishPage.tsx';
+import { PersonalInfoPage } from './pages/PersonalInfoPage';
 import {
   DATA_ASSERTIONS,
   DATA_RANKINGS,
   RankingPage,
-} from '../../demo/form-demo/pages/RankingPage';
-import { useFormNavigation } from '../../utilities/hooks/useFormNavigation/useFormNavigation';
-import type { DemoProps } from '../demoProps.js';
-import { ErrorSummaryContent } from './ErrorSummaryContent';
-import classes from './FormDemo.module.css';
+} from './pages/RankingPage';
 
 export type PageProps = {
   showErrors: boolean;
@@ -35,12 +37,13 @@ export const focusableFieldsetProps: Partial<FieldsetProps> = {
   },
 };
 
-const pageFields: Record<PageId, (keyof FormValues)[]> = {
+const pageFields = defineSteps({
   personal: ['firstName', 'lastName', 'county', 'educationLevel', 'ageGroup'],
   ranking: ['rankings'],
   finish: ['addition', 'contactMethods'],
   deliver: [],
-};
+});
+const stepIds = getStepIds(pageFields);
 
 const FormSchema = z.object({
   firstName: z.string().min(1, 'Fyll ut fornavn'),
@@ -74,7 +77,7 @@ const FormSchema = z.object({
 
 export type FormValues = z.infer<typeof FormSchema>;
 
-export type PageId = 'personal' | 'ranking' | 'finish' | 'deliver';
+export type PageId = GetStepId<typeof pageFields>;
 
 export const FormDemo = ({
   page = 'personal',
@@ -148,8 +151,8 @@ export const FormDemo = ({
       dialogDeliverRef.current?.showModal();
     },
     () => {
-      (Object.keys(pageFields) as PageId[]).forEach((pid) => {
-        if (stepHasError(pid)) markInvalid(pid);
+      stepIds.forEach((stepId) => {
+        if (stepHasError(stepId)) markInvalid(stepId);
       });
       errorSummaryRef.current?.focus();
     },
