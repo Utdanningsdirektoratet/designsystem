@@ -60,7 +60,7 @@ export const HeaderMenu = forwardRef<HTMLDivElement, HeaderMenuProps>(
           const next = e.relatedTarget as Element | null;
           // Ignore blur when focus goes to the trigger button
           if (next?.closest(`[popovertarget="${id}"]`)) return;
-          if (!next || !pop.contains(next)) {
+          if (next && !pop.contains(next)) {
             closeInternal();
           }
         }}
