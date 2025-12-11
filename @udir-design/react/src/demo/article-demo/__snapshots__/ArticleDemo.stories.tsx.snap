@@ -5,6 +5,9 @@ exports[`Article Story 1`] = `
   data-size="md"
   data-color-scheme="auto"
 >
+  <a href="#main-content">
+    Hopp til hovedinnholdet
+  </a>
   <header
     data-scroll-direction="up"
     style="--udsc-header-max-width: 80rem;"
@@ -23,12 +26,150 @@ exports[`Article Story 1`] = `
           Artikkeldemo
         </span>
       </a>
+      <div>
+        <button
+          data-variant="tertiary"
+          type="button"
+          popovertarget="uds-header-menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M2.75 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17A.75.75 0 0 1 2.75 6m0 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17a.75.75 0 0 1-.75-.75m.75 5.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M6.53 5.47a.75.75 0 0 0-1.06 1.06L10.94 12l-5.47 5.47a.75.75 0 1 0 1.06 1.06L12 13.06l5.47 5.47a.75.75 0 1 0 1.06-1.06L13.06 12l5.47-5.47a.75.75 0 0 0-1.06-1.06L12 10.94z"
+            >
+            </path>
+          </svg>
+          Meny
+        </button>
+        <div
+          id="uds-header-menu"
+          popover="auto"
+          data-variant="default"
+          style="padding: var(--udsc-header-padding);"
+        >
+          <nav aria-labelledby="header-menu-navigation">
+            <h2 id="header-menu-navigation">
+              Menynavigasjon
+            </h2>
+            <ul>
+              <li>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    fill="none"
+                    viewbox="0 0 24 24"
+                    focusable="false"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+                    >
+                    </path>
+                  </svg>
+                  Navigasjonslenke 1
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    fill="none"
+                    viewbox="0 0 24 24"
+                    focusable="false"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+                    >
+                    </path>
+                  </svg>
+                  Navigasjonslenke 2
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    fill="none"
+                    viewbox="0 0 24 24"
+                    focusable="false"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+                    >
+                    </path>
+                  </svg>
+                  Navigasjonslenke 3
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    fill="none"
+                    viewbox="0 0 24 24"
+                    focusable="false"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+                    >
+                    </path>
+                  </svg>
+                  Navigasjonslenke 4
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
   </header>
   <article>
-    <a href="#main-content">
-      Hopp til hovedinnholdet
-    </a>
     <nav aria-label="Du er her:">
       <a aria-label="Tilbake til mer informasjon">
         Mer informasjon

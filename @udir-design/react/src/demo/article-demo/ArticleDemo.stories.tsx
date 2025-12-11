@@ -24,6 +24,14 @@ export const ArticleStory: Story = {
     'data-size': 'md',
     'data-color-scheme': 'auto',
   },
+  parameters: {
+    docs: {
+      story: {
+        inline: false,
+        height: '800px',
+      },
+    },
+  },
   render(args) {
     return <ArticleDemo {...args} />;
   },
