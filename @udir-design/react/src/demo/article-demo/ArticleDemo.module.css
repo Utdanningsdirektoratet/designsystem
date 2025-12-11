@@ -1,5 +1,15 @@
+[data-size='auto'] {
+  --ds-size: var(--ds-size--sm);
+  @media (min-width: 25.5rem) {
+    --ds-size: var(--ds-size--md);
+  }
+}
+
 .article {
   padding: var(--ds-size-3);
+  @media (min-width: 25.5rem) {
+    padding: var(--ds-size-4);
+  }
   @media (min-width: 48rem) {
     padding: var(--ds-size-6);
   }

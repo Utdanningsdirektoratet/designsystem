@@ -114,7 +114,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
   };
 
   return (
-    <div {...props}>
+    <div {...props} data-size="auto">
       <div className={cl(classes.card)}>
         <Alert>Elevlisten vil bli oppdatert ved semesterstart.</Alert>
         <Heading data-size="md" className={classes.cardTitle}>

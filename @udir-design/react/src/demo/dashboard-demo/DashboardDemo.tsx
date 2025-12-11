@@ -20,7 +20,11 @@ export const DashboardDemo = ({
   ...props
 }: DashboardDemoProps) => {
   return (
-    <div {...props} className={cl(classes.card, classes.container)}>
+    <div
+      {...props}
+      className={cl(classes.card, classes.container)}
+      data-size="auto"
+    >
       <Heading level={1} data-size="md">
         Schweigaardsgate skole
       </Heading>

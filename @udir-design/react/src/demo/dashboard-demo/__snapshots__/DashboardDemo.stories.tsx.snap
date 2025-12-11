@@ -1,7 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Dashboard Page 2 1`] = `
-<div data-color-scheme="light">
+<div
+  data-color-scheme="light"
+  data-size="auto"
+>
   <h1 data-size="md">
     Schweigaardsgate skole
   </h1>
@@ -571,7 +574,10 @@ exports[`Dashboard Page 2 1`] = `
 `;
 
 exports[`Dashboard Page 3 1`] = `
-<div data-color-scheme="light">
+<div
+  data-color-scheme="light"
+  data-size="auto"
+>
   <h1 data-size="md">
     Schweigaardsgate skole
   </h1>
@@ -1141,7 +1147,10 @@ exports[`Dashboard Page 3 1`] = `
 `;
 
 exports[`Dashboard Page 4 1`] = `
-<div data-color-scheme="light">
+<div
+  data-color-scheme="light"
+  data-size="auto"
+>
   <h1 data-size="md">
     Schweigaardsgate skole
   </h1>
@@ -1713,8 +1722,8 @@ exports[`Dashboard Page 4 1`] = `
 
 exports[`Dashboard Story 1`] = `
 <div
-  data-size="md"
   data-color-scheme="light"
+  data-size="auto"
 >
   <h1 data-size="md">
     Schweigaardsgate skole

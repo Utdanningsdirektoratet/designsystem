@@ -32,8 +32,7 @@ type Story = StoryObj<typeof FormDemo>;
 
 export const FormStory: Story = {
   args: {
-    'data-size': 'md',
-    'data-color-scheme': 'auto',
+    'data-color-scheme': 'light',
   },
   decorators: [withScrollHashBehavior],
   render(args) {
@@ -44,8 +43,7 @@ export const FormStory: Story = {
 export const FormPage2: Story = {
   ...FormStory,
   args: {
-    'data-size': 'md',
-    'data-color-scheme': 'auto',
+    'data-color-scheme': 'light',
     page: 2,
   },
 };
@@ -53,8 +51,7 @@ export const FormPage2: Story = {
 export const FormPage3: Story = {
   ...FormStory,
   args: {
-    'data-size': 'md',
-    'data-color-scheme': 'auto',
+    'data-color-scheme': 'light',
     page: 3,
   },
 };

@@ -8,7 +8,7 @@ import { FrequentQuestions } from './frequent-questions/FrequentQuestions';
 import { Login } from './login/Login';
 import { UserTable } from './user-table/UserTable';
 
-type Props = Omit<DemoProps, 'data-size'>;
+type Props = DemoProps;
 
 export function DemoPage(props: Props) {
   return (

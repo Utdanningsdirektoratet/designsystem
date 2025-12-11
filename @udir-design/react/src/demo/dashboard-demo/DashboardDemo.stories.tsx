@@ -18,9 +18,6 @@ export default meta;
 type Story = StoryObj<typeof DashboardDemo>;
 
 export const DashboardStory: Story = {
-  args: {
-    'data-size': 'md',
-  },
   render: function Render(args) {
     const [colorMode, setColorMode] = useState<'light' | 'dark'>('light');
     return (
