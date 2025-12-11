@@ -1,9 +1,8 @@
 import { Meta } from '@storybook/addon-docs/blocks';
 import {
   ColorDisplay,
-  identityColors,
-  brandColors,
-  severityColors,
+  IdentityColors,
+  BrandColors,
 } from './docs/color/color-display';
 
 <Meta title="design-tokens/Farger" />
@@ -44,13 +43,11 @@ Disse fargene følger vanlig konvensjonell betydning:
 - **Gul** = `warning`
 - **Rød** = `danger`
 
-Disse fargene er tilgjengelig for komponenter der det er relevant, for eksempel [Alert]. og [Tag]. Varsel-farger skal ikke brukes som dekor eller fordi de ser fine ut. De skal kun benyttes i kontekst der innholdet har tilsvarende funksjon.
+Disse fargene er tilgjengelig for komponenter der det er relevant, for eksempel [`Alert`](/docs/components-alert--docs) og [`Tag`](/docs/components-tag--docs). Varsel-farger skal ikke brukes som dekor eller fordi de ser fine ut. De skal kun benyttes i kontekst der innholdet har tilsvarende funksjon.
 
 (visning av fargetokens gruppert i brand-farger og status-farger)
 
-<ColorDisplay colorPalette={brandColors} />
-
-<ColorDisplay colorPalette={severityColors} />
+<BrandColors />
 
 ## Identitetsfarger
 
@@ -82,7 +79,7 @@ Alle identitetsfargene har en palett fra lys til mørk, slik at de er fleksible 
 
 (visning av identitetsfargene)
 
-<ColorDisplay colorPalette={identityColors} />
+<IdentityColors />
 
 #### Hovedfarger
 
