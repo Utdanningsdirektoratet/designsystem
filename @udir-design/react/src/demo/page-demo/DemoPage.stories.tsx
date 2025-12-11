@@ -18,6 +18,6 @@ type Story = StoryObj<typeof DemoPage>;
 
 export const Simple: Story = {
   args: {
-    'data-color-scheme': 'auto',
+    'data-color-scheme': 'light',
   },
 };

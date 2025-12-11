@@ -21,7 +21,7 @@ type Story = StoryObj<typeof ArticleDemo>;
 
 export const ArticleStory: Story = {
   args: {
-    'data-color-scheme': 'auto',
+    'data-color-scheme': 'light',
   },
   parameters: {
     docs: {
