@@ -1,3 +1,10 @@
+[data-size='auto'] {
+  --ds-size: var(--ds-size--sm);
+  @media (min-width: 25.5rem) {
+    --ds-size: var(--ds-size--md);
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;

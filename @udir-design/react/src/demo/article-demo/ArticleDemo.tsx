@@ -11,6 +11,7 @@ import { Divider } from 'src/components/divider/Divider';
 import { Footer } from 'src/components/footer';
 import { Header } from 'src/components/header';
 import { Link } from 'src/components/link/Link';
+import { List } from 'src/components/list/List';
 import { SkipLink } from 'src/components/skipLink/SkipLink';
 import { TableOfContents } from 'src/components/tableOfContents/TableOfContents';
 import { Heading } from 'src/components/typography/heading/Heading';
@@ -27,10 +28,25 @@ type ArticleDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
 export const ArticleDemo = ({ ...props }: ArticleDemoProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   return (
-    <div {...props}>
-      <Header applicationName="Artikkeldemo" />
+    <div {...props} data-size="auto">
+      <SkipLink href="#main-content">Hopp til hovedinnholdet</SkipLink>
+      <Header applicationName="Artikkeldemo">
+        <Header.MenuButton />
+        <Header.Menu style={{ padding: 'var(--udsc-header-padding)' }}>
+          <nav aria-labelledby="header-menu-navigation">
+            <h2 id="header-menu-navigation" className="ds-sr-only">
+              Menynavigasjon
+            </h2>
+            <List.Unordered>
+              <Header.Menu.Link href="#">Navigasjonslenke 1</Header.Menu.Link>
+              <Header.Menu.Link href="#">Navigasjonslenke 2</Header.Menu.Link>
+              <Header.Menu.Link href="#">Navigasjonslenke 3</Header.Menu.Link>
+              <Header.Menu.Link href="#">Navigasjonslenke 4</Header.Menu.Link>
+            </List.Unordered>
+          </nav>
+        </Header.Menu>
+      </Header>
       <article className={cl(classes.article, classes.contentSpacing)}>
-        <SkipLink href="#main-content">Hopp til hovedinnholdet</SkipLink>
         <Breadcrumbs aria-label="Du er her:">
           <Breadcrumbs.Link aria-label="Tilbake til mer informasjon">
             Mer informasjon

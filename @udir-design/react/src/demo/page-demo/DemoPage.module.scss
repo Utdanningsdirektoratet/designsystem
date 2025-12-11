@@ -1,9 +1,14 @@
-.page {
+[data-size='auto'] {
   --ds-size: var(--ds-size--sm);
+  @media (min-width: 25.5rem) {
+    --ds-size: var(--ds-size--md);
+  }
+}
+
+.page {
   background-color: var(--ds-color-neutral-background-tinted);
   padding: calc(var(--ds-size-3) + 0.3rem);
   @media (min-width: 25.5rem) {
-    --ds-size: var(--ds-size--md);
     padding: var(--ds-size-4);
   }
   @media (min-width: 48rem) {
