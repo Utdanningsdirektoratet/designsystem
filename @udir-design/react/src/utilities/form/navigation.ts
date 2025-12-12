@@ -1,7 +1,7 @@
-type FormFieldsByStep<TStepId extends string, TFieldId extends string> = Record<
-  TStepId,
-  TFieldId[]
->;
+export type FormFieldsByStep<
+  TStepId extends string,
+  TFieldId extends string,
+> = Record<TStepId, TFieldId[]>;
 
 /**
  * Define the grouping of form fields per step with proper typing.

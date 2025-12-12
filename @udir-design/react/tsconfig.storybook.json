@@ -4,7 +4,12 @@
     "emitDecoratorMetadata": true,
     "outDir": "../../dist/out-tsc",
     "baseUrl": "./",
-    "types": ["vite/client", "../theme/dist/types", "./dist/html"]
+    "types": ["vite/client", "../theme/dist/types", "./dist/html"],
+    "paths": {
+      "@udir-design/react/utilities/form/alpha": [
+        "./src/utilities/form/alpha.ts"
+      ]
+    }
   },
   "files": [],
   "exclude": [
