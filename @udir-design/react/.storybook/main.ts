@@ -52,6 +52,14 @@ const config: StorybookConfig = {
         */
         include: ['react/jsx-dev-runtime'],
       },
+      server: {
+        proxy: {
+          '/typedoc': {
+            target: 'http://localhost:8090',
+            rewrite: (path) => path.replace(/^\/typedoc/, ''),
+          },
+        },
+      },
     } satisfies UserConfig);
   },
 

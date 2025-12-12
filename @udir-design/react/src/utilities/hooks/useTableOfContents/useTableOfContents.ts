@@ -5,7 +5,7 @@ export type useTableOfContentsProps = {
   /**
    * Which headings to include
    * in the TableOfContents
-   * @deafult 'h2,h3'
+   * @default 'h2,h3'
    */
   headingSelector?: 'h2' | 'h2,h3';
   /**
@@ -16,7 +16,7 @@ export type useTableOfContentsProps = {
   containerRef?: React.RefObject<HTMLElement | null>;
 };
 
-type useTableOfContentsReturn = {
+export type useTableOfContentsReturn = {
   headings: TocHeading[];
 };
 

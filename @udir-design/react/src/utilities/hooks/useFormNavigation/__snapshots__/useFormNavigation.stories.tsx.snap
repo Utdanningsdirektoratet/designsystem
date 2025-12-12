@@ -1,0 +1,49 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Preview 1`] = `
+<div data-size="auto">
+  <div>
+    <button
+      data-state="active"
+      data-variant="default"
+      aria-current="step"
+    >
+      <div>
+      </div>
+      Infoside
+    </button>
+    <u-details
+      data-state="idle"
+      open
+      role="group"
+    >
+      <u-summary
+        aria-expanded="true"
+        role="button"
+        slot="summary"
+        tabindex="0"
+      >
+        <span>
+          Seksjon
+        </span>
+      </u-summary>
+      <button
+        data-state="idle"
+        data-variant="default"
+      >
+        <div>
+        </div>
+        Første steg
+      </button>
+      <button
+        data-state="idle"
+        data-variant="default"
+      >
+        <div>
+        </div>
+        Andre steg
+      </button>
+    </u-details>
+  </div>
+</div>
+`;
