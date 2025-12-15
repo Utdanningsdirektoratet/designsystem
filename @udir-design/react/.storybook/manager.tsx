@@ -6,7 +6,7 @@ import {
   type TagBadgeParameters,
   defaultConfig,
   renderLabel,
-} from 'storybook-addon-tag-badges';
+} from 'storybook-addon-tag-badges/manager-helpers';
 import {
   ComponentIcon,
   ImageIcon,
