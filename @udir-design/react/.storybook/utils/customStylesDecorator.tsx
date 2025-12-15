@@ -1,4 +1,5 @@
 import type { Decorator } from '@storybook/react-vite';
+import type { Parameters } from '.storybook/types';
 
 /**
  * This decorator is used to customize the style of the root story element.
@@ -35,7 +36,8 @@ import type { Decorator } from '@storybook/react-vite';
  * > those styles, wrap the story in a decorator that adds slight padding.
  */
 export const customStylesDecorator: Decorator = (Story, ctx) => {
-  const { docs, story, ...style } = ctx.parameters.customStyles ?? {};
+  const { docs, story, ...style } =
+    (ctx.parameters as Parameters).customStyles ?? {};
 
   return (
     <div

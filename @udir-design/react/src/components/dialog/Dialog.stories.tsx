@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useRef, useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
+import preview from '.storybook/preview';
 import { Button } from '../button/Button';
 import { Field } from '../field/Field';
 import { List } from '../list/List';
@@ -12,7 +12,21 @@ import { Label } from '../typography/label/Label';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Dialog } from './Dialog';
 
-const meta: Meta<typeof Dialog> = {
+async function defaultPlay(canvasElement: HTMLElement) {
+  // When not in Docs mode, automatically open the dialog
+  const canvas = within(canvasElement);
+  const button = canvas.getByRole('button');
+  await userEvent.click(button);
+  // Wait for dialog to fade in before running tests
+  const dialog = canvas.getByRole('dialog');
+  await new Promise<void>((resolve) => {
+    dialog.addEventListener('animationend', () => {
+      resolve();
+    });
+  });
+}
+
+const meta = preview.meta({
   component: Dialog,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -38,25 +52,10 @@ const meta: Meta<typeof Dialog> = {
       },
     },
   },
-  play: async (ctx) => {
-    // When not in Docs mode, automatically open the dialog
-    const canvas = within(ctx.canvasElement);
-    const button = canvas.getByRole('button');
-    await userEvent.click(button);
-    // Wait for dialog to fade in before running tests
-    const dialog = canvas.getByRole('dialog');
-    await new Promise<void>((resolve) => {
-      dialog.addEventListener('animationend', () => {
-        resolve();
-      });
-    });
-  },
-};
+  play: async (ctx) => defaultPlay(ctx.canvasElement),
+});
 
-export default meta;
-type Story = StoryObj<typeof Dialog>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: { closedby: 'any' },
   render: (args) => (
     <Dialog.TriggerContext>
@@ -74,7 +73,7 @@ export const Preview: Story = {
     </Dialog.TriggerContext>
   ),
   play: async (ctx) => {
-    await meta.play?.(ctx);
+    await defaultPlay(ctx.canvasElement);
     const canvas = within(ctx.canvasElement);
     const dialog = canvas.getByRole('dialog');
     const button = canvas.getByRole('button', {
@@ -114,9 +113,9 @@ export const Preview: Story = {
     });
     await userEvent.click(button);
   },
-};
+});
 
-export const WithoutDialogTriggerContext: Story = {
+export const WithoutDialogTriggerContext = meta.story({
   render(args) {
     const dialogRef = useRef<HTMLDialogElement>(null);
     return (
@@ -141,9 +140,9 @@ export const WithoutDialogTriggerContext: Story = {
       </>
     );
   },
-};
+});
 
-export const DialogWithOpenProp: Story = {
+export const DialogWithOpenProp = meta.story({
   render(args) {
     const [open, setOpen] = useState(false);
 
@@ -166,9 +165,9 @@ export const DialogWithOpenProp: Story = {
       </>
     );
   },
-};
+});
 
-export const BackdropClosedbyAny: Story = {
+export const BackdropClosedbyAny = meta.story({
   render() {
     const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -188,9 +187,9 @@ export const BackdropClosedbyAny: Story = {
       </Dialog.TriggerContext>
     );
   },
-};
+});
 
-export const WithHeaderAndFooter: Story = {
+export const WithHeaderAndFooter = meta.story({
   render: () => (
     <Dialog.TriggerContext>
       <Dialog.Trigger>Gå til neste</Dialog.Trigger>
@@ -228,9 +227,9 @@ export const WithHeaderAndFooter: Story = {
       </Dialog>
     </Dialog.TriggerContext>
   ),
-};
+});
 
-export const DialogWithForm: Story = {
+export const DialogWithForm = meta.story({
   render(args, context) {
     const dialogRef = useRef<HTMLDialogElement>(null);
     const [input, setInput] = useState('');
@@ -278,9 +277,9 @@ export const DialogWithForm: Story = {
       </Dialog.TriggerContext>
     );
   },
-};
+});
 
-export const DialogWithMaxWidth: Story = {
+export const DialogWithMaxWidth = meta.story({
   render: () => (
     <Dialog.TriggerContext>
       <Dialog.Trigger variant="secondary">Åpne Dialog</Dialog.Trigger>
@@ -295,7 +294,7 @@ export const DialogWithMaxWidth: Story = {
       </Dialog>
     </Dialog.TriggerContext>
   ),
-};
+});
 
 const DATA_PLACES = [
   'Sogndal',
@@ -307,7 +306,7 @@ const DATA_PLACES = [
   'Lillestrøm',
 ];
 
-export const DialogWithSuggestion: Story = {
+export const DialogWithSuggestion = meta.story({
   render(ctx) {
     const dialogRef = useRef<HTMLDialogElement>(null);
     return (
@@ -376,9 +375,9 @@ export const DialogWithSuggestion: Story = {
       },
     },
   },
-};
+});
 
-export const DialogNonModal: Story = {
+export const DialogNonModal = meta.story({
   parameters: {
     customStyles: {
       display: 'flex',
@@ -421,7 +420,7 @@ export const DialogNonModal: Story = {
     );
   },
   play: async (ctx) => {
-    await meta.play?.(ctx);
+    await defaultPlay(ctx.canvasElement);
     const canvas = within(ctx.canvasElement);
     const dialog = canvas.getByRole('dialog');
 
@@ -438,4 +437,4 @@ export const DialogNonModal: Story = {
       },
     );
   },
-};
+});

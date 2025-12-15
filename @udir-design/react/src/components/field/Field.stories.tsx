@@ -1,12 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, waitFor } from 'storybook/test';
+import preview from '.storybook/preview';
 import { Input } from '../input/Input';
 import { Textarea } from '../textarea/Textarea';
 import { Label } from '../typography/label/Label';
 import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
 import { Field } from './Field';
 
-const meta: Meta<typeof Field> = {
+const meta = preview.meta({
   component: Field,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -16,12 +16,9 @@ const meta: Meta<typeof Field> = {
     },
     layout: 'centered',
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Field>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   render: () => (
     <Field>
       <Label>E-post</Label>
@@ -66,9 +63,9 @@ export const Preview: Story = {
       },
     );
   },
-};
+});
 
-export const Affix: Story = {
+export const Affix = meta.story({
   render: () => (
     <Field>
       <Label>Hvor mange kroner koster det per måned?</Label>
@@ -79,9 +76,9 @@ export const Affix: Story = {
       </Field.Affixes>
     </Field>
   ),
-};
+});
 
-export const Counter: Story = {
+export const Counter = meta.story({
   render: () => (
     <Field>
       <Label>Legg til en beskrivelse</Label>
@@ -101,9 +98,9 @@ export const Counter: Story = {
       await waitFor(() => expect(label).toHaveAttribute('for', textarea.id));
     });
   },
-};
+});
 
-export const Position: Story = {
+export const Position = meta.story({
   render: () => (
     <div
       style={{
@@ -136,17 +133,16 @@ export const Position: Story = {
       await waitFor(() => expect(label).toHaveAttribute('for', checkbox.id));
     });
   },
-};
-
-Position.decorators = [
-  (Story) => (
-    <div
-      style={{
-        maxWidth: 200,
-        margin: 'auto',
-      }}
-    >
-      <Story />
-    </div>
-  ),
-];
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          maxWidth: 200,
+          margin: 'auto',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
+});

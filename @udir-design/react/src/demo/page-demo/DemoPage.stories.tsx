@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import preview from '.storybook/preview';
 import { demoParameters } from '../demoParameters';
 import { DemoPage } from './DemoPage';
 
-const meta: Meta<typeof DemoPage> = {
+const meta = preview.meta({
   title: 'demo/Page Demo',
   component: DemoPage,
   parameters: {
@@ -11,13 +11,10 @@ const meta: Meta<typeof DemoPage> = {
       originator: 'digdir',
     },
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof DemoPage>;
-
-export const Simple: Story = {
+export const Simple = meta.story({
   args: {
     'data-color-scheme': 'light',
   },
-};
+});

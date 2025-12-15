@@ -1,4 +1,3 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
 import {
@@ -12,6 +11,7 @@ import {
   TasklistIcon,
   XMarkOctagonIcon,
 } from '@udir-design/icons';
+import preview from '.storybook/preview';
 import { demoChromaticModes } from 'src/demo/demoParameters';
 import { Button } from '../button/Button';
 import { Card } from '../card/Card';
@@ -20,7 +20,7 @@ import { Tooltip } from '../tooltip/Tooltip';
 import { Heading } from '../typography/heading/Heading';
 import { ToggleGroup } from './ToggleGroup';
 
-const meta: Meta<typeof ToggleGroup> = {
+const meta = preview.meta({
   component: ToggleGroup,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -30,12 +30,9 @@ const meta: Meta<typeof ToggleGroup> = {
     },
     layout: 'centered',
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof ToggleGroup>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     defaultValue: 'innboks',
     onChange: fn(),
@@ -100,19 +97,19 @@ export const Preview: Story = {
       },
     );
   },
-};
+});
 
-export const Primary: Story = {
+export const Primary = meta.story({
   args: { defaultValue: 'innboks', variant: 'primary' },
-  render: Preview.render,
-};
+  render: Preview.input.render,
+});
 
-export const Secondary: Story = {
+export const Secondary = meta.story({
   args: { defaultValue: 'innboks', variant: 'secondary' },
-  render: Preview.render,
-};
+  render: Preview.input.render,
+});
 
-export const OnlyText: Story = {
+export const OnlyText = meta.story({
   args: {},
   parameters: {
     customStyles: {
@@ -133,9 +130,9 @@ export const OnlyText: Story = {
       </ToggleGroup>
     </>
   ),
-};
+});
 
-export const TextAndIcons: Story = {
+export const TextAndIcons = meta.story({
   args: {
     defaultValue: 'option-1',
   },
@@ -155,9 +152,9 @@ export const TextAndIcons: Story = {
       </ToggleGroup.Item>
     </ToggleGroup>
   ),
-};
+});
 
-export const OnlyIcons: Story = {
+export const OnlyIcons = meta.story({
   args: {
     defaultValue: 'venstrestilt',
   },
@@ -180,12 +177,12 @@ export const OnlyIcons: Story = {
       </Tooltip>
     </ToggleGroup>
   ),
-};
+});
 
-export const SecondaryOnlyIcons: Story = {
-  args: { ...OnlyIcons.args, variant: 'secondary' },
-  render: OnlyIcons.render,
-};
+export const SecondaryOnlyIcons = meta.story({
+  args: { ...OnlyIcons.input.args, variant: 'secondary' },
+  render: OnlyIcons.input.render,
+});
 
 const testsData: Record<
   string,
@@ -242,7 +239,7 @@ const testsData: Record<
   ],
 };
 
-export const Controlled: Story = {
+export const Controlled = meta.story({
   parameters: {
     chromatic: {
       modes: {
@@ -344,13 +341,13 @@ export const Controlled: Story = {
       </>
     );
   },
-};
+});
 
-export const ToggleGroupInColorContext: Story = {
-  args: Preview.args,
-  render: (args, context) => (
+export const ToggleGroupInColorContext = meta.story({
+  args: Preview.input.args,
+  render: (args) => (
     <Card data-color="accent" variant="tinted">
-      {Preview.render?.(args, context)}
+      {Preview.input.render(args)}
     </Card>
   ),
   play: async ({ canvasElement, step }) => {
@@ -367,4 +364,4 @@ export const ToggleGroupInColorContext: Story = {
       },
     );
   },
-};
+});

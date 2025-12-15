@@ -1,7 +1,7 @@
-import type { Size } from '@digdir/designsystemet-types';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Size } from '@digdir/designsystemet-react';
 import { useEffect, useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
+import preview from '.storybook/preview';
 import { Button } from '../button/Button';
 import { Divider } from '../divider/Divider';
 import { Field } from '../field/Field';
@@ -11,9 +11,7 @@ import { Paragraph } from '../typography/paragraph/Paragraph';
 import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
 import { Input } from './Input';
 
-type Story = StoryObj<typeof Input>;
-
-export default {
+const meta = preview.meta({
   component: Input,
   tags: ['beta', 'digdir'],
   argTypes: {
@@ -30,9 +28,9 @@ export default {
     },
     layout: 'centered',
   },
-} satisfies Meta;
+});
 
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     'aria-invalid': false,
     disabled: false,
@@ -75,9 +73,9 @@ export const Preview: Story = {
       );
     }
   },
-};
+});
 
-export const HtmlSize: Story = {
+export const HtmlSize = meta.story({
   args: {
     size: 10,
   },
@@ -87,9 +85,9 @@ export const HtmlSize: Story = {
       <Input {...args} id={context.id} />
     </Field>
   ),
-};
+});
 
-export const Controlled: Story = {
+export const Controlled = meta.story({
   parameters: {
     customStyles: {
       display: 'flex',
@@ -133,7 +131,7 @@ export const Controlled: Story = {
       </>
     );
   },
-};
+});
 
 const sizes: Size[] = ['sm', 'md', 'lg'];
 const sizenames = {
@@ -142,7 +140,7 @@ const sizenames = {
   lg: 'Large',
 };
 
-export const Text: Story = {
+export const Text = meta.story({
   args: {
     value: 'Value',
   },
@@ -190,9 +188,9 @@ export const Text: Story = {
       </div>
     );
   },
-};
+});
 
-export const InputTypes: Story = {
+export const InputTypes = meta.story({
   parameters: {
     customStyles: {
       display: 'flex',
@@ -229,9 +227,9 @@ export const InputTypes: Story = {
       </>
     );
   },
-};
+});
 
-export const Radio: Story = {
+export const Radio = meta.story({
   args: {
     type: 'radio',
   },
@@ -291,9 +289,9 @@ export const Radio: Story = {
       </div>
     );
   },
-};
+});
 
-export const Checkbox: Story = {
+export const Checkbox = meta.story({
   args: {
     type: 'checkbox',
   },
@@ -378,9 +376,9 @@ export const Checkbox: Story = {
       </div>
     );
   },
-};
+});
 
-export const Switch: Story = {
+export const Switch = meta.story({
   args: {
     type: 'checkbox',
     role: 'switch',
@@ -442,4 +440,4 @@ export const Switch: Story = {
       </div>
     );
   },
-};
+});

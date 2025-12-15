@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import preview from '.storybook/preview';
 import { Fieldset } from '../fieldset/Fieldset';
 import { Radio } from '../radio/Radio';
 import { ReadMore } from './ReadMore';
 
-const meta: Meta<typeof ReadMore> = {
+const meta = preview.meta({
   component: ReadMore,
   tags: ['alpha', 'udir'],
   parameters: {
@@ -11,21 +11,18 @@ const meta: Meta<typeof ReadMore> = {
       originator: 'self',
     },
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof ReadMore>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     summary: 'Dette er en ReadMore',
   },
   render: (args) => (
     <ReadMore {...args}>Dette er innhold i en ReadMore</ReadMore>
   ),
-};
+});
 
-export const Example: Story = {
+export const Example = meta.story({
   args: {
     summary: 'Dette er individuelt tilrettelagt opplæring',
   },
@@ -55,4 +52,4 @@ export const Example: Story = {
       </ReadMore>
     </Fieldset>
   ),
-};
+});

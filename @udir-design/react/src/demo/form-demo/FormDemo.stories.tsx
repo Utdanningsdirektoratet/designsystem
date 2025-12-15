@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
+import preview from '.storybook/preview';
 import { demoParameters } from '../demoParameters';
 import { FormDemo } from './FormDemo';
 
-const meta: Meta<typeof FormDemo> = {
+const meta = preview.meta({
   title: 'demo/Form Demo',
   component: FormDemo,
   parameters: {
@@ -25,12 +25,9 @@ const meta: Meta<typeof FormDemo> = {
       },
     },
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof FormDemo>;
-
-export const FormStory: Story = {
+export const FormStory = meta.story({
   args: {
     'data-color-scheme': 'light',
   },
@@ -38,20 +35,20 @@ export const FormStory: Story = {
   render(args) {
     return <FormDemo {...args} />;
   },
-};
+});
 
-export const FormPage2: Story = {
-  ...FormStory,
+export const FormPage2 = meta.story({
+  ...FormStory.input,
   args: {
     'data-color-scheme': 'light',
     page: 2,
   },
-};
+});
 
-export const FormPage3: Story = {
-  ...FormStory,
+export const FormPage3 = meta.story({
+  ...FormStory.input,
   args: {
     'data-color-scheme': 'light',
     page: 3,
   },
-};
+});

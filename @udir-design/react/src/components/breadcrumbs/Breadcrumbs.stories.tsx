@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
+import preview from '.storybook/preview';
 import { Breadcrumbs } from './Breadcrumbs';
 
-export default {
+const meta = preview.meta({
   component: Breadcrumbs,
   tags: ['beta', 'udir'],
   parameters: {
@@ -10,11 +10,9 @@ export default {
       originator: 'digdir',
     },
   },
-} as Meta<typeof Breadcrumbs>;
+});
 
-type Story = StoryObj<typeof Breadcrumbs>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     'aria-label': 'Du er her:',
   },
@@ -64,9 +62,9 @@ export const Preview: Story = {
       await expect(canvas.getAllByRole('listitem')).toHaveLength(3);
     });
   },
-};
+});
 
-export const ListOnly: Story = {
+export const ListOnly = meta.story({
   args: {
     'aria-label': 'Du er her:',
   },
@@ -88,9 +86,9 @@ export const ListOnly: Story = {
       </Breadcrumbs.List>
     </Breadcrumbs>
   ),
-};
+});
 
-export const BackOnly: Story = {
+export const BackOnly = meta.story({
   args: {
     children: [
       <Breadcrumbs.Link href="#" aria-label="Tilbake til Eksamen">
@@ -98,9 +96,9 @@ export const BackOnly: Story = {
       </Breadcrumbs.Link>,
     ],
   },
-};
+});
 
-export const LongItems: Story = {
+export const LongItems = meta.story({
   render: (args) => (
     <Breadcrumbs {...args}>
       <Breadcrumbs.Link
@@ -137,11 +135,11 @@ export const LongItems: Story = {
       </Breadcrumbs.List>
     </Breadcrumbs>
   ),
-};
+});
 
-export const MobileViewport: Story = {
-  ...Preview,
+export const MobileViewport = meta.story({
+  ...Preview.input,
   globals: {
     viewport: { value: 'iphone6' },
   },
-};
+});

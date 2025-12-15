@@ -1,11 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import preview from '.storybook/preview';
 import { Link } from '../link/Link';
 import { List } from '../list/List';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Divider } from './Divider';
 
-const meta: Meta<typeof Divider> = {
+const meta = preview.meta({
   component: Divider,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -13,12 +13,9 @@ const meta: Meta<typeof Divider> = {
       originator: 'digdir',
     },
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Divider>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   parameters: {
     customStyles: {
       display: 'flex',
@@ -72,4 +69,4 @@ export const Preview: Story = {
       </List.Unordered>
     </>
   ),
-};
+});

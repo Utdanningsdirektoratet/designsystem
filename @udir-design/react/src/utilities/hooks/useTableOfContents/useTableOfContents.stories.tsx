@@ -1,7 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useRef } from 'react';
 import { expect, within } from 'storybook/test';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
+import preview from '.storybook/preview';
+import type { DecoratorType } from '.storybook/types';
 import { TableOfContents } from 'src/components/tableOfContents/TableOfContents';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
@@ -11,7 +12,11 @@ import {
   type useTableOfContentsProps,
 } from './useTableOfContents';
 
-export default {
+const meta = preview.meta<
+  useTableOfContentsProps,
+  DecoratorType,
+  useTableOfContentsProps
+>({
   title: 'Utilities/useTableOfContents',
   parameters: {
     chromatic: { disableSnapshot: true },
@@ -37,11 +42,9 @@ export default {
       },
     },
   },
-} as Meta;
+});
 
-type Story = StoryObj<useTableOfContentsProps>;
-
-export const Default: Story = {
+export const Default = meta.story({
   render() {
     return (
       <Prose>
@@ -81,9 +84,9 @@ export const Default: Story = {
       ]);
     });
   },
-};
+});
 
-export const Container: Story = {
+export const Container = meta.story({
   render() {
     const containerRef = useRef<HTMLDivElement>(null);
     return (
@@ -152,9 +155,9 @@ export const Container: Story = {
       </Prose>
     );
   },
-};
+});
 
-export const TocIgnore: Story = {
+export const TocIgnore = meta.story({
   render() {
     return (
       <Prose>
@@ -176,4 +179,4 @@ export const TocIgnore: Story = {
       </Prose>
     );
   },
-};
+});
