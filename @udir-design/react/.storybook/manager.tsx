@@ -114,7 +114,7 @@ addons.setConfig({
           // in context of Storybooks mobile navigation and has no impact on the desktop view.
           item.name = item.title
             .replaceAll('/', ' › ')
-            .replace('bruksmønstre', 'Bruksmønstre')
+            .replace('patterns', 'Bruksmønstre')
             .replace('components', 'Komponenter')
             .replace('design-tokens', 'Design tokens')
             .replace('utilities', 'Hjelpeverktøy');
