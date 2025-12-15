@@ -12,14 +12,16 @@ export default defineConfig({
     },
     reporters: [
       'default',
-      [
-        'html',
-        {
-          addFileAttribute: true,
-          classnameTemplate: '{filename}',
-          outputFile: './test-reports/index.html',
-        },
-      ],
+      // html reporter has a bug in 4.0.15, which is fixed but not yet released
+      // https://github.com/vitest-dev/vitest/issues/9190
+      // [
+      //   'html',
+      //   {
+      //     addFileAttribute: true,
+      //     classnameTemplate: '{filename}',
+      //     outputFile: './test-reports/index.html',
+      //   },
+      // ],
       [
         'json',
         {
