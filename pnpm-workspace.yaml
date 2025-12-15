@@ -51,6 +51,7 @@ catalog:
   autoprefixer: ^10.4.22
   axe-core: ^4.11.0
   axe-playwright: ^2.2.2
+  camelcase: ^9.0.0
   chromatic: ^13.3.4
   clsx: 2.1.1
   cssnano: ^7.1.2
@@ -153,6 +154,8 @@ trustPolicy: no-downgrade
 
 trustPolicyExclude:
   - semver@6.3.1
+  - eslint-import-resolver-typescript@3.10.1
+  - detect-port@1.6.1
 
 useNodeVersion: 24.10.0
 

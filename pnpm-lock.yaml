@@ -144,6 +144,9 @@ catalogs:
     axe-playwright:
       specifier: ^2.2.2
       version: 2.2.2
+    camelcase:
+      specifier: ^9.0.0
+      version: 9.0.0
     chromatic:
       specifier: ^13.3.4
       version: 13.3.4
@@ -615,6 +618,9 @@ importers:
       axe-playwright:
         specifier: 'catalog:'
         version: 2.2.2(playwright@1.57.0)
+      camelcase:
+        specifier: 'catalog:'
+        version: 9.0.0
       chromatic:
         specifier: 'catalog:'
         version: 13.3.4
@@ -4589,6 +4595,10 @@ packages:
   camelcase@6.3.0:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
+
+  camelcase@9.0.0:
+    resolution: {integrity: sha512-TO9xmyXTZ9HUHI8M1OnvExxYB0eYVS/1e5s7IDMTAoIcwUd+aNcFODs6Xk83mobk0velyHFQgA1yIrvYc6wclw==}
+    engines: {node: '>=20'}
 
   caniuse-api@3.0.0:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
@@ -12857,6 +12867,8 @@ snapshots:
   callsites@3.1.0: {}
 
   camelcase@6.3.0: {}
+
+  camelcase@9.0.0: {}
 
   caniuse-api@3.0.0:
     dependencies:
