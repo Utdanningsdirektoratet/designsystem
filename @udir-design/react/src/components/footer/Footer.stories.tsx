@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
+import preview from '.storybook/preview';
 import { Footer } from './';
 
-const meta: Meta<typeof Footer> = {
+const meta = preview.meta({
   component: Footer,
   tags: ['alpha', 'udir'],
   parameters: {
@@ -15,12 +15,9 @@ const meta: Meta<typeof Footer> = {
     },
   },
   decorators: [withResponsiveDataSize],
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Footer>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   render: () => (
     <Footer>
       <Footer.List>
@@ -38,9 +35,9 @@ export const Preview: Story = {
       </Footer.List>
     </Footer>
   ),
-};
+});
 
-export const Udirno: Story = {
+export const Udirno = meta.story({
   render: () => (
     <Footer>
       <Footer.List>
@@ -73,9 +70,9 @@ export const Udirno: Story = {
       </Footer.List>
     </Footer>
   ),
-};
+});
 
-export const Tjeneste: Story = {
+export const Tjeneste = meta.story({
   render: () => (
     <Footer>
       <Footer.List>
@@ -89,7 +86,7 @@ export const Tjeneste: Story = {
       </Footer.List>
     </Footer>
   ),
-};
+});
 
 const Facebook = () => {
   return (

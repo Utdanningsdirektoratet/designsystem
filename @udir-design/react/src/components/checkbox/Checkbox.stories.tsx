@@ -1,19 +1,10 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import { expect, fn, userEvent, waitFor, within } from 'storybook/test';
-import { formatReactSource } from '.storybook/utils/sourceTransformers';
-import type { UseCheckboxGroupProps } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
-import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
-import { Button } from '../button/Button';
+import preview from '.storybook/preview';
 import { Card } from '../card/Card';
-import { Chip } from '../chip/Chip';
-import { Divider } from '../divider/Divider';
 import { Fieldset } from '../fieldset/Fieldset';
-import { Table } from '../table';
-import { Paragraph } from '../typography/paragraph/Paragraph';
-import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
 import { Checkbox } from './Checkbox';
 
-const meta: Meta<typeof Checkbox> = {
+const meta = preview.meta({
   component: Checkbox,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -22,13 +13,9 @@ const meta: Meta<typeof Checkbox> = {
       details: 'Vi har fjernet mulighet for fargevalg.',
     },
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Checkbox>;
-type GroupStory = StoryObj<UseCheckboxGroupProps>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     label: 'Checkbox label',
     description: 'Description',
@@ -81,50 +68,9 @@ export const Preview: Story = {
 
     userEvent.tab();
   },
-};
+});
 
-export const Group: GroupStory = {
-  args: {
-    name: 'my-group',
-    disabled: false,
-    error: '',
-  },
-  render(args, context) {
-    const { getCheckboxProps, validationMessageProps } = useCheckboxGroup({
-      value: ['epost'],
-      ...args,
-    });
-
-    return (
-      <Fieldset>
-        <Fieldset.Legend>
-          Hvordan vil du helst at vi skal kontakte deg?
-        </Fieldset.Legend>
-        <Fieldset.Description>
-          Velg de alternativene som er relevante for deg.
-        </Fieldset.Description>
-        <Checkbox
-          id={context.id + '-email'}
-          label="E-post"
-          {...getCheckboxProps('epost')}
-        />
-        <Checkbox
-          id={context.id + '-telefon'}
-          label="Telefon"
-          {...getCheckboxProps('telefon')}
-        />
-        <Checkbox
-          id={context.id + '-sms'}
-          label="SMS"
-          {...getCheckboxProps('sms')}
-        />
-        <ValidationMessage {...validationMessageProps} />
-      </Fieldset>
-    );
-  },
-};
-
-export const OneOption: Story = {
+export const OneOption = meta.story({
   args: {
     label: 'Jeg bekrefter at jeg er over 18 år',
     value: 'samtykke',
@@ -139,175 +85,9 @@ export const OneOption: Story = {
       <Checkbox id={context.id} {...args} />
     </Fieldset>
   ),
-};
+});
 
-export const WithError: GroupStory = {
-  args: {
-    ...Group.args,
-    name: 'my-error',
-    error: 'Du må velge minst to kontaktalternativ', // TODO: useCheckbox when hook is ready
-  },
-  render: Group.render,
-};
-
-type Choices = {
-  [key: string]: {
-    label: string;
-  };
-};
-
-export const Controlled: StoryFn<UseCheckboxGroupProps> = (args, context) => {
-  const choices: Choices = {
-    barnehage: { label: 'Barnehage' },
-    grunnskole: { label: 'Grunnskole' },
-    videregaende: { label: 'Videregående' },
-  };
-  const { getCheckboxProps, validationMessageProps, value, setValue } =
-    useCheckboxGroup({
-      name: 'my-controlled',
-      value: ['barnehage', 'videregaende'],
-      ...args,
-    });
-
-  const toggle = (haystack: string[], needle: string) =>
-    haystack.includes(needle)
-      ? haystack.filter((value) => value !== needle)
-      : haystack.concat(needle);
-
-  const isFiltered = value.length > 0;
-
-  return (
-    <>
-      <Fieldset>
-        <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
-        {Object.entries(choices).map(([value, { label }]) => (
-          <Checkbox
-            key={value}
-            id={`${context.id}-${value}`}
-            label={label}
-            {...getCheckboxProps(value)}
-          />
-        ))}
-      </Fieldset>
-      <ValidationMessage {...validationMessageProps} />
-      <Divider />
-      <Paragraph>(Annet innhold)</Paragraph>
-      <Divider />
-      <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
-        <Paragraph>
-          {isFiltered ? 'Viser innhold for:' : 'Viser alt innhold'}
-        </Paragraph>
-        {isFiltered &&
-          value.map((v) => (
-            <Chip.Removable
-              key={v}
-              aria-label={`Slett ${choices[v].label}`}
-              onClick={() => setValue(toggle(value, v))}
-            >
-              {choices[v].label}
-            </Chip.Removable>
-          ))}
-      </div>
-      {isFiltered && (
-        <Button
-          style={{ width: 'fit-content' }}
-          variant="secondary"
-          onClick={() => setValue([])}
-        >
-          Tøm filtre
-        </Button>
-      )}
-    </>
-  );
-};
-
-Controlled.parameters = {
-  customStyles: {
-    display: 'flex',
-    gap: 'var(--ds-size-4)',
-    flexDirection: 'column',
-  },
-  docs: { source: { type: 'code', transform: formatReactSource } },
-};
-
-export const ReadOnly: GroupStory = {
-  args: {
-    ...Group.args,
-    name: 'my-readonly',
-    readOnly: true,
-  },
-  render: Group.render,
-};
-
-export const Disabled: GroupStory = {
-  args: {
-    ...Group.args,
-    name: 'my-disabled',
-    disabled: true,
-  },
-  render: Group.render,
-};
-
-export const IndeterminateInTable: GroupStory = {
-  render(args, context) {
-    const { getCheckboxProps } = useCheckboxGroup({
-      name: context.id,
-      value: ['2', '3'],
-      ...args,
-    });
-    const people = [
-      { id: 1, name: 'Lise Nordmann', education: 'Barnehage' },
-      { id: 2, name: 'Ola Nordmann', education: 'Grunnskole' },
-      { id: 3, name: 'Kari Nordmann', education: 'Videregående' },
-      { id: 4, name: 'Per Nordmann', education: 'Barnehage' },
-    ];
-    return (
-      <Table>
-        <colgroup>
-          {/* ensure the first column only takes up the necessary space */}
-          <col style={{ width: '1px' }} />
-          <col style={{ width: '10em' }} />
-          <col />
-        </colgroup>
-        <Table.Head>
-          <Table.Row>
-            <Table.HeaderCell>
-              <Checkbox
-                id={context.id + '-all'}
-                aria-label="Velg alle"
-                {...getCheckboxProps({
-                  allowIndeterminate: true,
-                  value: 'all',
-                })}
-              />
-            </Table.HeaderCell>
-            <Table.HeaderCell>Navn</Table.HeaderCell>
-            <Table.HeaderCell>Utdanningsnivå</Table.HeaderCell>
-          </Table.Row>
-        </Table.Head>
-        <Table.Body>
-          {people.map((person) => (
-            <Table.Row key={person.name}>
-              <Table.Cell>
-                <Checkbox
-                  id={`${context.id}-${person.id}`}
-                  aria-labelledby={`${context.id}-${person.id}-name`}
-                  {...getCheckboxProps(person.id.toString())}
-                />
-              </Table.Cell>
-              <Table.Cell id={`${context.id}-${person.id}-name`}>
-                {person.name}
-              </Table.Cell>
-              <Table.Cell>{person.education}</Table.Cell>
-            </Table.Row>
-          ))}
-        </Table.Body>
-      </Table>
-    );
-  },
-};
-
-export const CheckboxInColorContext: Story = {
+export const CheckboxInColorContext = meta.story({
   args: {
     label: 'Checkbox label',
     description: 'Description',
@@ -331,13 +111,21 @@ export const CheckboxInColorContext: Story = {
       },
     );
   },
-};
+});
 
-export const Focused: Story = {
-  args: Preview.args,
+export const Focused = meta.story({
+  args: {
+    label: 'Checkbox label',
+    description: 'Description',
+    disabled: false,
+    readOnly: false,
+    value: 'value',
+    onChange: fn(),
+    id: 'checkbox-preview',
+  },
   parameters: {
     pseudo: {
       focusVisible: true,
     },
   },
-};
+});

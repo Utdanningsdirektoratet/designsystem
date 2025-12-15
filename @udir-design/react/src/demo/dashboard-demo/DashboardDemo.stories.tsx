@@ -1,24 +1,24 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { ComponentProps, FunctionComponent } from 'react';
 import { useState } from 'react';
+import preview from '.storybook/preview';
 import { demoParameters } from '../demoParameters';
 import { DashboardDemo } from './DashboardDemo';
 
-const meta: Meta<typeof DashboardDemo> = {
+const meta = preview.meta({
   title: 'demo/Dashboard Demo',
-  component: DashboardDemo,
+  component: DashboardDemo as FunctionComponent<
+    Omit<ComponentProps<typeof DashboardDemo>, 'setColorMode'>
+  >,
   parameters: {
     ...demoParameters,
     componentOrigin: {
       originator: 'self',
     },
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof DashboardDemo>;
-
-export const DashboardStory: Story = {
-  render: function Render(args) {
+export const DashboardStory = meta.story({
+  render: (args) => {
     const [colorMode, setColorMode] = useState<'light' | 'dark'>('light');
     return (
       <DashboardDemo
@@ -28,25 +28,22 @@ export const DashboardStory: Story = {
       />
     );
   },
-};
+});
 
-export const DashboardPage2: Story = {
-  ...DashboardStory,
+export const DashboardPage2 = DashboardStory.extend({
   args: {
     page: 'tests',
   },
-};
+});
 
-export const DashboardPage3: Story = {
-  ...DashboardStory,
+export const DashboardPage3 = DashboardStory.extend({
   args: {
     page: 'test-answers',
   },
-};
+});
 
-export const DashboardPage4: Story = {
-  ...DashboardStory,
+export const DashboardPage4 = DashboardStory.extend({
   args: {
     page: 'settings',
   },
-};
+});

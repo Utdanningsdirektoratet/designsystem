@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import preview from '.storybook/preview';
 import { Alert } from 'src/components/alert';
 import { Details } from 'src/components/details/Details';
 import { Divider } from 'src/components/divider/Divider';
@@ -10,7 +10,7 @@ import { Heading } from '../heading/Heading';
 import { Paragraph } from '../paragraph/Paragraph';
 import { Prose } from './Prose';
 
-const meta: Meta<typeof Prose> = {
+const meta = preview.meta({
   component: Prose,
   tags: ['alpha', '!autodocs', 'udir'],
   parameters: {
@@ -19,12 +19,9 @@ const meta: Meta<typeof Prose> = {
     },
   },
   title: 'Components/Typography/Prose',
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Prose>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   render: () => {
     return (
       <div
@@ -176,7 +173,7 @@ export const Preview: Story = {
       </div>
     );
   },
-};
+});
 
 const dummyData = [
   {
@@ -201,7 +198,7 @@ const dummyData = [
   },
 ];
 
-export const Headings: Story = {
+export const Headings = meta.story({
   render: () => {
     return (
       <div
@@ -285,4 +282,4 @@ export const Headings: Story = {
       </div>
     );
   },
-};
+});

@@ -148,7 +148,7 @@ exports[`With Anchor 1`] = `
     <ul>
       <li>
         <a
-          href="#side-1"
+          href="#side-3"
           data-variant="tertiary"
           aria-label="Forrige side"
           aria-hidden="false"
@@ -168,9 +168,8 @@ exports[`With Anchor 1`] = `
       <li>
         <a
           href="#side-2"
-          data-variant="primary"
+          data-variant="tertiary"
           aria-label="Side 2"
-          aria-current="page"
         >
           2
         </a>
@@ -187,8 +186,9 @@ exports[`With Anchor 1`] = `
       <li>
         <a
           href="#side-4"
-          data-variant="tertiary"
+          data-variant="primary"
           aria-label="Side 4"
+          aria-current="page"
         >
           4
         </a>
@@ -215,7 +215,7 @@ exports[`With Anchor 1`] = `
       </li>
       <li>
         <a
-          href="#side-3"
+          href="#side-5"
           data-variant="tertiary"
           aria-label="Neste side"
           aria-hidden="false"

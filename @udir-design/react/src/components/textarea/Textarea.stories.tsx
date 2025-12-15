@@ -1,12 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
+import preview from '.storybook/preview';
 import { Button } from '../button/Button';
 import { Field } from '../field/Field';
 import { Label } from '../typography/label/Label';
 import { Textarea } from './Textarea';
 
-const meta: Meta<typeof Textarea> = {
+const meta = preview.meta({
   component: Textarea,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -21,12 +21,9 @@ const meta: Meta<typeof Textarea> = {
       maxWidth: '20rem',
     },
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Textarea>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     disabled: false,
     readOnly: false,
@@ -73,9 +70,9 @@ export const Preview: Story = {
       );
     }
   },
-};
+});
 
-export const FullWidth: Story = {
+export const FullWidth = meta.story({
   args: {
     id: 'my-textarea',
   },
@@ -90,9 +87,9 @@ export const FullWidth: Story = {
       <Textarea {...args} />
     </Field>
   ),
-};
+});
 
-export const Controlled: Story = {
+export const Controlled = meta.story({
   args: {
     id: 'textfield-controlled',
   },
@@ -129,9 +126,9 @@ export const Controlled: Story = {
       </>
     );
   },
-};
+});
 
-export const Disabled: Story = {
+export const Disabled = meta.story({
   args: {
     id: 'textarea-disabled',
     disabled: true,
@@ -142,9 +139,9 @@ export const Disabled: Story = {
       <Textarea {...args} />
     </Field>
   ),
-};
+});
 
-export const ReadOnly: Story = {
+export const ReadOnly = meta.story({
   args: {
     id: 'textarea-readonly',
     readOnly: true,
@@ -155,14 +152,14 @@ export const ReadOnly: Story = {
       <Textarea {...args} />
     </Field>
   ),
-};
+});
 
-export const Focused: Story = {
-  args: Preview.args,
+export const Focused = meta.story({
+  args: Preview.input.args,
   parameters: {
     pseudo: {
       focusVisible: true,
     },
   },
-  render: Preview.render,
-};
+  render: Preview.input.render,
+});

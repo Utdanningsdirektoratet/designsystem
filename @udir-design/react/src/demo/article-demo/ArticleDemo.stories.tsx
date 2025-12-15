@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
+import preview from '.storybook/preview';
 import { demoParameters } from '../demoParameters';
 import { ArticleDemo } from './ArticleDemo';
 
-const meta: Meta<typeof ArticleDemo> = {
+const meta = preview.meta({
   title: 'demo/Article Demo',
   component: ArticleDemo,
   decorators: [withScrollHashBehavior],
@@ -14,12 +14,9 @@ const meta: Meta<typeof ArticleDemo> = {
       details: 'Eksempelet er hentet fra udir.no',
     },
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof ArticleDemo>;
-
-export const ArticleStory: Story = {
+export const ArticleStory = meta.story({
   args: {
     'data-color-scheme': 'light',
   },
@@ -34,4 +31,4 @@ export const ArticleStory: Story = {
   render(args) {
     return <ArticleDemo {...args} />;
   },
-};
+});

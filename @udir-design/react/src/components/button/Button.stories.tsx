@@ -1,4 +1,3 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn, userEvent, within } from 'storybook/test';
 import {
   ArrowForwardIcon,
@@ -11,14 +10,13 @@ import {
   PrinterSmallIcon,
   TrashIcon,
 } from '@udir-design/icons';
+import preview from '.storybook/preview';
 import { Card } from '../card/Card';
 import { Tooltip } from '../tooltip/Tooltip';
 import { Label } from '../typography/label/Label';
 import { Button } from './Button';
 
-export type Story = StoryObj<typeof Button>;
-
-const meta: Meta<typeof Button> = {
+const meta = preview.meta({
   component: Button,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -35,17 +33,15 @@ const meta: Meta<typeof Button> = {
       gap: 'var(--ds-size-4)',
     },
   },
-};
+});
 
-export default meta;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     disabled: false,
     variant: 'primary',
     icon: false,
-    children: 'Knapp',
     onClick: fn(),
+    children: 'Knapp',
   },
   play: async ({ canvasElement, args, step }) => {
     const canvas = within(canvasElement);
@@ -62,30 +58,30 @@ export const Preview: Story = {
     });
     await userEvent.tab();
   },
-};
+});
 
-export const Primary: Story = {
+export const Primary = meta.story({
   args: {
     variant: 'primary',
     children: 'Lagre',
   },
-};
+});
 
-export const Secondary: Story = {
+export const Secondary = meta.story({
   args: {
     variant: 'secondary',
     children: 'Avbryt',
   },
-};
+});
 
-export const Tertiary: Story = {
+export const Tertiary = meta.story({
   args: {
     variant: 'tertiary',
     children: [<NotePencilIcon aria-hidden />, 'Rediger'],
   },
-};
+});
 
-export const Neutral: Story = {
+export const Neutral = meta.story({
   args: {
     'data-color': 'neutral',
   },
@@ -107,11 +103,9 @@ export const Neutral: Story = {
       </>
     );
   },
-};
+});
 
-export const NeutralPseudoStates: Story = makePseudoStatesStory(Neutral);
-
-export const Danger: Story = {
+export const Danger = meta.story({
   args: {
     'data-color': 'danger',
   },
@@ -133,11 +127,9 @@ export const Danger: Story = {
       </>
     );
   },
-};
+});
 
-export const DangerPseudoStates: Story = makePseudoStatesStory(Danger);
-
-export const CombinedColors: Story = {
+export const CombinedColors = meta.story({
   render: (args) => (
     <>
       <Button variant="primary" data-color="neutral" {...args}>
@@ -151,9 +143,9 @@ export const CombinedColors: Story = {
       </Button>
     </>
   ),
-};
+});
 
-export const AsLink: Story = {
+export const AsLink = meta.story({
   args: {
     asChild: true,
     children: (
@@ -162,9 +154,9 @@ export const AsLink: Story = {
       </a>
     ),
   },
-};
+});
 
-export const TextAndIcon: Story = {
+export const TextAndIcon = meta.story({
   args: {
     'data-color': 'neutral',
   },
@@ -182,9 +174,9 @@ export const TextAndIcon: Story = {
       </>
     );
   },
-};
+});
 
-export const Loading: Story = {
+export const Loading = meta.story({
   args: {
     loading: true,
     onClick: fn(),
@@ -220,9 +212,9 @@ export const Loading: Story = {
       await userEvent.tab({ shift: true });
     });
   },
-};
+});
 
-export const Disabled: Story = {
+export const Disabled = meta.story({
   args: {
     disabled: true,
     onClick: fn(),
@@ -255,9 +247,9 @@ export const Disabled: Story = {
       expect(button).not.toHaveFocus();
     });
   },
-};
+});
 
-export const Icons: Story = {
+export const Icons = meta.story({
   args: {
     variant: 'primary',
   },
@@ -288,9 +280,9 @@ export const Icons: Story = {
       </>
     );
   },
-};
+});
 
-export const IconOnly: Story = {
+export const IconOnly = meta.story({
   args: {
     variant: 'tertiary',
     'data-color': 'neutral',
@@ -315,15 +307,15 @@ export const IconOnly: Story = {
       </Tooltip>
     </>
   ),
-};
-IconOnly.parameters = {
-  customStyles: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, auto)',
+  parameters: {
+    customStyles: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, auto)',
+    },
   },
-};
+});
 
-export const IconsOnlyPrimary: Story = {
+export const IconsOnlyPrimary = meta.story({
   args: {
     variant: 'primary',
     icon: true,
@@ -343,9 +335,9 @@ export const IconsOnlyPrimary: Story = {
       </>
     );
   },
-};
+});
 
-export const ButtonInColorContext: Story = {
+export const ButtonInColorContext = meta.story({
   render: (args) => (
     <Card data-color="accent" variant="tinted">
       <Button {...args}>Knapp</Button>
@@ -363,9 +355,11 @@ export const ButtonInColorContext: Story = {
       },
     );
   },
-};
+});
 
-function makePseudoStatesStory(originalStory: Story): Story {
+type Story = ReturnType<typeof meta.story>;
+
+function makePseudoStatesStory(originalStory: Story): Story['input'] {
   return {
     render: (args, ctx) => (
       <div
@@ -378,18 +372,24 @@ function makePseudoStatesStory(originalStory: Story): Story {
         }}
       >
         <Label data-size="sm">Default</Label>
-        {originalStory.render?.(args, ctx)}
+        {originalStory.input.render?.(args, ctx)}
         <Label data-size="sm">Hover</Label>
-        {originalStory.render?.({ ...args, className: 'hover' }, ctx)}
+        {originalStory.input.render?.({ ...args, className: 'hover' }, ctx)}
         <Label data-size="sm">Pressed</Label>
-        {originalStory.render?.({ ...args, className: 'hover active' }, ctx)}
+        {originalStory.input.render?.(
+          { ...args, className: 'hover active' },
+          ctx,
+        )}
         <Label data-size="sm">Focused</Label>
-        {originalStory.render?.({ ...args, className: 'focusVisible' }, ctx)}
+        {originalStory.input.render?.(
+          { ...args, className: 'focusVisible' },
+          ctx,
+        )}
       </div>
     ),
-    args: originalStory.args,
+    args: originalStory.composed.args,
     parameters: {
-      ...originalStory.parameters,
+      ...originalStory.composed.parameters,
       pseudo: {
         hover: ['.hover'],
         active: ['.active'],
@@ -398,3 +398,7 @@ function makePseudoStatesStory(originalStory: Story): Story {
     },
   };
 }
+
+export const DangerPseudoStates = meta.story(makePseudoStatesStory(Danger));
+
+export const NeutralPseudoStates = meta.story(makePseudoStatesStory(Neutral));

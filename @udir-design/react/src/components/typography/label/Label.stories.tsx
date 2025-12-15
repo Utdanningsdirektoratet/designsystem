@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import preview from '.storybook/preview';
 import { Label } from './Label';
 
-const meta: Meta<typeof Label> = {
+const meta = preview.meta({
   component: Label,
   tags: ['beta', '!autodocs', 'digdir'],
   parameters: {
@@ -10,14 +10,11 @@ const meta: Meta<typeof Label> = {
     },
   },
   title: 'Components/Typography/Label',
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Label>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     children: 'Vennligst skriv inn fødselsnummer. 11 tegn',
     weight: 'medium',
   },
-};
+});

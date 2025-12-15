@@ -1,14 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ChangeEvent } from 'react';
 import { useState } from 'react';
 import type { FileRejection, FileWithPath } from 'react-dropzone';
 import { useDropzone } from 'react-dropzone';
+import preview from '.storybook/preview';
 import { Heading } from '../typography/heading/Heading';
 import { FileUpload } from './index';
 
-export type Story = StoryObj<typeof FileUpload.Trigger>;
-
-const meta: Meta<typeof FileUpload.Trigger> = {
+const meta = preview.meta({
   component: FileUpload.Trigger,
   tags: ['alpha', 'udir'],
   parameters: {
@@ -17,11 +15,9 @@ const meta: Meta<typeof FileUpload.Trigger> = {
       details: 'Deler av implementasjonen er inspirert av Navs designsystem.',
     },
   },
-};
+});
 
-export default meta;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     'data-size': 'md',
     label: 'Label',
@@ -33,9 +29,9 @@ export const Preview: Story = {
       <FileUpload.Dropzone {...args} id="dropzone" />
     </div>
   ),
-};
+});
 
-export const ExampleDropZone: Story = {
+export const ExampleDropZone = meta.story({
   args: {
     id: 'dokumentasjon-dropzone',
   },
@@ -116,7 +112,7 @@ export const ExampleDropZone: Story = {
       </div>
     );
   },
-};
+});
 
 const ErrorMessages = new Map<string, string>([
   ['file-invalid-type', 'Filformatet støttes ikke'],
@@ -125,7 +121,7 @@ const ErrorMessages = new Map<string, string>([
   ['too-many-files', 'Du har lastet opp for mange filer'],
 ]);
 
-export const ExampleTrigger: Story = {
+export const ExampleTrigger = meta.story({
   args: {
     label: 'Last opp profilbilde',
     description: 'Du kan laste opp filer i PNG- og JPEG-format.',
@@ -165,9 +161,9 @@ export const ExampleTrigger: Story = {
       </div>
     );
   },
-};
+});
 
-export const ExampleItems: Story = {
+export const ExampleItems = meta.story({
   render: () => {
     const dummyFiles: File[] = [
       new File(['abc'.repeat(100000)], 'eksempel1.pdf'),
@@ -238,9 +234,9 @@ export const ExampleItems: Story = {
       </div>
     );
   },
-};
+});
 
-export const Upload: Story = {
+export const Upload = meta.story({
   render: () => {
     const [file, setFile] = useState<File | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
@@ -286,4 +282,4 @@ export const Upload: Story = {
       </div>
     );
   },
-};
+});

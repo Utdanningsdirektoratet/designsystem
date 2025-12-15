@@ -1,7 +1,7 @@
 import { useDebounceCallback } from '@digdir/designsystemet-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
+import preview from '.storybook/preview';
 import { assertExists } from '../../utilities/helpers/assertExists';
 import { Chip } from '../chip/Chip';
 import { Divider } from '../divider/Divider';
@@ -12,7 +12,7 @@ import { Label } from '../typography/label/Label';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Search } from './Search';
 
-const meta: Meta<typeof Search> = {
+const meta = preview.meta({
   component: Search,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -22,16 +22,13 @@ const meta: Meta<typeof Search> = {
     },
     layout: 'centered',
   },
-};
-
-export default meta;
-type Story = StoryObj<typeof Search>;
+});
 
 const onSubmit = fn<React.FormEventHandler<HTMLFormElement>>((e) => {
   e.preventDefault();
 });
 
-export const Preview: Story = {
+export const Preview = meta.story({
   render: (args) => (
     <form onSubmit={onSubmit}>
       <Search {...args}>
@@ -76,9 +73,9 @@ export const Preview: Story = {
 
     await userEvent.keyboard('{Tab}');
   },
-};
+});
 
-export const Controlled: Story = {
+export const Controlled = meta.story({
   parameters: {
     customStyles: {
       minHeight: '600px',
@@ -176,9 +173,9 @@ export const Controlled: Story = {
       </>
     );
   },
-};
+});
 
-export const Variants: Story = {
+export const Variants = meta.story({
   render: () => (
     <div>
       <Search>
@@ -203,9 +200,9 @@ export const Variants: Story = {
       </Search>
     </div>
   ),
-};
+});
 
-export const WithLabel: Story = {
+export const WithLabel = meta.story({
   render: (args, context) => (
     <Field>
       <Label>Søk i læreplaner</Label>
@@ -216,9 +213,9 @@ export const WithLabel: Story = {
       </Search>
     </Field>
   ),
-};
+});
 
-export const Form: Story = {
+export const Form = meta.story({
   render() {
     const [value, setValue] = useState<string>();
     const [submittedValue, setSubmittedValue] = useState<string>();
@@ -250,9 +247,9 @@ export const Form: Story = {
       </>
     );
   },
-};
+});
 
-export const LiveSearch: Story = {
+export const LiveSearch = meta.story({
   parameters: {
     customStyles: {
       display: 'flex',
@@ -298,4 +295,4 @@ export const LiveSearch: Story = {
       </>
     );
   },
-};
+});

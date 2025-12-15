@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, within } from 'storybook/test';
 import { ParagraphIcon, RobotIcon } from '@udir-design/icons';
+import preview from '.storybook/preview';
 import { Avatar } from '../avatar/Avatar';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import type { TagProps } from './Tag';
 import { Tag } from './Tag';
 
-const meta: Meta<typeof Tag> = {
+const meta = preview.meta({
   component: Tag,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -23,12 +23,9 @@ const meta: Meta<typeof Tag> = {
       gap: 'var(--ds-size-4)',
     },
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Tag>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     children: 'Ferdig',
     'data-color': 'success',
@@ -40,10 +37,10 @@ export const Preview: Story = {
       expect(tag).toBeTruthy();
     });
   },
-};
+});
 
 const sizes: TagProps['data-size'][] = ['sm', 'md', 'lg'];
-export const Sizes: Story = {
+export const Sizes = meta.story({
   render: (args) => (
     <>
       {sizes.map((size) => (
@@ -53,9 +50,9 @@ export const Sizes: Story = {
       ))}
     </>
   ),
-};
+});
 
-export const Icon: Story = {
+export const Icon = meta.story({
   render: () => (
     <>
       <Tag
@@ -83,12 +80,12 @@ export const Icon: Story = {
       </Tag>
     </>
   ),
-};
+});
 
 const colorStatusVariants = ['success', 'warning', 'danger', 'info'];
 const colorVariants = ['neutral', 'accent', 'support1', 'support2'];
 
-export const Colors: Story = {
+export const Colors = meta.story({
   render: (args) => (
     <>
       {colorVariants.map((color) => (
@@ -98,9 +95,9 @@ export const Colors: Story = {
       ))}
     </>
   ),
-};
+});
 
-export const Status: Story = {
+export const Status = meta.story({
   render: (args) => (
     <>
       {colorStatusVariants.map((color) => (
@@ -110,12 +107,12 @@ export const Status: Story = {
       ))}
     </>
   ),
-};
+});
 
 const electricianImage =
   'https://images.unsplash.com/photo-1635335874521-7987db781153?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
-export const Article: Story = {
+export const Article = meta.story({
   render: () => (
     <div>
       <img
@@ -177,9 +174,9 @@ export const Article: Story = {
       </Paragraph>
     </div>
   ),
-};
+});
 
-export const VariantOutline: Story = {
+export const VariantOutline = meta.story({
   parameters: {
     customStyles: {
       display: 'grid',
@@ -205,4 +202,4 @@ export const VariantOutline: Story = {
       </>
     );
   },
-};
+});

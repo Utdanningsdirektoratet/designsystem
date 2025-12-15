@@ -1,4 +1,3 @@
-import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
 import type { HTMLAttributes } from 'react';
 import { Tabs } from 'src/components/tabs/Tabs';
@@ -10,7 +9,6 @@ import { TestAnswers } from './tabs/test-answers/TestAnswers';
 import { Tests } from './tabs/tests/Tests';
 
 type DashboardDemoProps = {
-  'data-size': Size;
   setColorMode: React.Dispatch<React.SetStateAction<'light' | 'dark'>>;
   page?: string;
 } & HTMLAttributes<HTMLDivElement>;
