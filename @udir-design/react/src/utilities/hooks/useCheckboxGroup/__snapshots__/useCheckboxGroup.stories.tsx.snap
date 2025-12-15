@@ -1,5 +1,94 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Controlled 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Utdanningsnivå
+  </legend>
+  <div>
+    <input
+      id="utilities-usecheckboxgroup--controlled-barnehage"
+      type="checkbox"
+      value="barnehage"
+      checked
+      name="my-controlled"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-usecheckboxgroup--controlled-barnehage"
+    >
+      Barnehage
+    </label>
+  </div>
+  <div>
+    <input
+      id="utilities-usecheckboxgroup--controlled-grunnskole"
+      type="checkbox"
+      value="grunnskole"
+      name="my-controlled"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-usecheckboxgroup--controlled-grunnskole"
+    >
+      Grunnskole
+    </label>
+  </div>
+  <div>
+    <input
+      id="utilities-usecheckboxgroup--controlled-videregaende"
+      type="checkbox"
+      value="videregaende"
+      checked
+      name="my-controlled"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-usecheckboxgroup--controlled-videregaende"
+    >
+      Videregående
+    </label>
+  </div>
+</fieldset>
+<p
+  data-field="validation"
+  hidden
+  id="_r_r_"
+>
+</p>
+<hr aria-hidden="true">
+<p data-variant="default">
+  (Annet innhold)
+</p>
+<hr aria-hidden="true">
+<div style="display: flex; gap: var(--ds-size-2);">
+  <p data-variant="default">
+    Viser innhold for:
+  </p>
+  <button
+    type="button"
+    data-removable="true"
+    aria-label="Slett Barnehage"
+  >
+    Barnehage
+  </button>
+  <button
+    type="button"
+    data-removable="true"
+    aria-label="Slett Videregående"
+  >
+    Videregående
+  </button>
+</div>
+<button
+  data-variant="secondary"
+  type="button"
+  style="width: fit-content;"
+>
+  Tøm filtre
+</button>
+`;
+
 exports[`Default 1`] = `
 <fieldset>
   <div>
@@ -8,7 +97,7 @@ exports[`Default 1`] = `
       type="checkbox"
       value="epost"
       checked
-      name="_r_0_"
+      name="_r_2_"
     >
     <label
       data-weight="regular"
@@ -22,7 +111,7 @@ exports[`Default 1`] = `
       id="utilities-usecheckboxgroup--default-telefon"
       type="checkbox"
       value="telefon"
-      name="_r_0_"
+      name="_r_2_"
     >
     <label
       data-weight="regular"
@@ -36,7 +125,7 @@ exports[`Default 1`] = `
       id="utilities-usecheckboxgroup--default-sms"
       type="checkbox"
       value="sms"
-      name="_r_0_"
+      name="_r_2_"
     >
     <label
       data-weight="regular"
@@ -48,8 +137,371 @@ exports[`Default 1`] = `
   <p
     data-field="validation"
     hidden
-    id="_r_1_"
+    id="_r_3_"
   >
+  </p>
+</fieldset>
+`;
+
+exports[`Disabled 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Hvordan vil du helst at vi skal kontakte deg?
+  </legend>
+  <p data-variant="default">
+    Velg de alternativene som er relevante for deg.
+  </p>
+  <div>
+    <input
+      id="utilities-usecheckboxgroup--disabled-email"
+      disabled
+      type="checkbox"
+      value="epost"
+      checked
+      name="my-disabled"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-usecheckboxgroup--disabled-email"
+    >
+      E-post
+    </label>
+  </div>
+  <div>
+    <input
+      id="utilities-usecheckboxgroup--disabled-telefon"
+      disabled
+      type="checkbox"
+      value="telefon"
+      name="my-disabled"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-usecheckboxgroup--disabled-telefon"
+    >
+      Telefon
+    </label>
+  </div>
+  <div>
+    <input
+      id="utilities-usecheckboxgroup--disabled-sms"
+      disabled
+      type="checkbox"
+      value="sms"
+      name="my-disabled"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-usecheckboxgroup--disabled-sms"
+    >
+      SMS
+    </label>
+  </div>
+  <p
+    data-field="validation"
+    hidden
+    id="_r_j_"
+  >
+  </p>
+</fieldset>
+`;
+
+exports[`Group 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Hvordan vil du helst at vi skal kontakte deg?
+  </legend>
+  <p data-variant="default">
+    Velg de alternativene som er relevante for deg.
+  </p>
+  <div>
+    <input
+      id="utilities-usecheckboxgroup--group-email"
+      type="checkbox"
+      value="epost"
+      checked
+      name="my-group"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-usecheckboxgroup--group-email"
+    >
+      E-post
+    </label>
+  </div>
+  <div>
+    <input
+      id="utilities-usecheckboxgroup--group-telefon"
+      type="checkbox"
+      value="telefon"
+      name="my-group"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-usecheckboxgroup--group-telefon"
+    >
+      Telefon
+    </label>
+  </div>
+  <div>
+    <input
+      id="utilities-usecheckboxgroup--group-sms"
+      type="checkbox"
+      value="sms"
+      name="my-group"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-usecheckboxgroup--group-sms"
+    >
+      SMS
+    </label>
+  </div>
+  <p
+    data-field="validation"
+    hidden
+    id="_r_7_"
+  >
+  </p>
+</fieldset>
+`;
+
+exports[`Indeterminate In Table 1`] = `
+<table>
+  <colgroup>
+    <col style="width: 1px;">
+    <col style="width: 10em;">
+    <col>
+  </colgroup>
+  <thead>
+    <tr>
+      <th>
+        <div>
+          <input
+            id="utilities-usecheckboxgroup--indeterminate-in-table-all"
+            aria-label="Velg alle"
+            type="checkbox"
+            value="all"
+            name="utilities-usecheckboxgroup--indeterminate-in-table"
+          >
+        </div>
+      </th>
+      <th>
+        Navn
+      </th>
+      <th>
+        Utdanningsnivå
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div>
+          <input
+            id="utilities-usecheckboxgroup--indeterminate-in-table-1"
+            aria-labelledby="utilities-usecheckboxgroup--indeterminate-in-table-1-name"
+            type="checkbox"
+            value="1"
+            name="utilities-usecheckboxgroup--indeterminate-in-table"
+          >
+        </div>
+      </td>
+      <td id="utilities-usecheckboxgroup--indeterminate-in-table-1-name">
+        Lise Nordmann
+      </td>
+      <td>
+        Barnehage
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div>
+          <input
+            id="utilities-usecheckboxgroup--indeterminate-in-table-2"
+            aria-labelledby="utilities-usecheckboxgroup--indeterminate-in-table-2-name"
+            type="checkbox"
+            value="2"
+            checked
+            name="utilities-usecheckboxgroup--indeterminate-in-table"
+          >
+        </div>
+      </td>
+      <td id="utilities-usecheckboxgroup--indeterminate-in-table-2-name">
+        Ola Nordmann
+      </td>
+      <td>
+        Grunnskole
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div>
+          <input
+            id="utilities-usecheckboxgroup--indeterminate-in-table-3"
+            aria-labelledby="utilities-usecheckboxgroup--indeterminate-in-table-3-name"
+            type="checkbox"
+            value="3"
+            checked
+            name="utilities-usecheckboxgroup--indeterminate-in-table"
+          >
+        </div>
+      </td>
+      <td id="utilities-usecheckboxgroup--indeterminate-in-table-3-name">
+        Kari Nordmann
+      </td>
+      <td>
+        Videregående
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div>
+          <input
+            id="utilities-usecheckboxgroup--indeterminate-in-table-4"
+            aria-labelledby="utilities-usecheckboxgroup--indeterminate-in-table-4-name"
+            type="checkbox"
+            value="4"
+            name="utilities-usecheckboxgroup--indeterminate-in-table"
+          >
+        </div>
+      </td>
+      <td id="utilities-usecheckboxgroup--indeterminate-in-table-4-name">
+        Per Nordmann
+      </td>
+      <td>
+        Barnehage
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Read Only 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Hvordan vil du helst at vi skal kontakte deg?
+  </legend>
+  <p data-variant="default">
+    Velg de alternativene som er relevante for deg.
+  </p>
+  <div>
+    <input
+      id="utilities-usecheckboxgroup--read-only-email"
+      readonly
+      type="checkbox"
+      value="epost"
+      checked
+      name="my-readonly"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-usecheckboxgroup--read-only-email"
+    >
+      E-post
+    </label>
+  </div>
+  <div>
+    <input
+      id="utilities-usecheckboxgroup--read-only-telefon"
+      readonly
+      type="checkbox"
+      value="telefon"
+      name="my-readonly"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-usecheckboxgroup--read-only-telefon"
+    >
+      Telefon
+    </label>
+  </div>
+  <div>
+    <input
+      id="utilities-usecheckboxgroup--read-only-sms"
+      readonly
+      type="checkbox"
+      value="sms"
+      name="my-readonly"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-usecheckboxgroup--read-only-sms"
+    >
+      SMS
+    </label>
+  </div>
+  <p
+    data-field="validation"
+    hidden
+    id="_r_f_"
+  >
+  </p>
+</fieldset>
+`;
+
+exports[`With Error 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Hvordan vil du helst at vi skal kontakte deg?
+  </legend>
+  <p data-variant="default">
+    Velg de alternativene som er relevante for deg.
+  </p>
+  <div>
+    <input
+      id="utilities-usecheckboxgroup--with-error-email"
+      aria-describedby="_r_b_"
+      aria-invalid="true"
+      type="checkbox"
+      value="epost"
+      checked
+      name="my-error"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-usecheckboxgroup--with-error-email"
+    >
+      E-post
+    </label>
+  </div>
+  <div>
+    <input
+      id="utilities-usecheckboxgroup--with-error-telefon"
+      aria-describedby="_r_b_"
+      aria-invalid="true"
+      type="checkbox"
+      value="telefon"
+      name="my-error"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-usecheckboxgroup--with-error-telefon"
+    >
+      Telefon
+    </label>
+  </div>
+  <div>
+    <input
+      id="utilities-usecheckboxgroup--with-error-sms"
+      aria-describedby="_r_b_"
+      aria-invalid="true"
+      type="checkbox"
+      value="sms"
+      name="my-error"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-usecheckboxgroup--with-error-sms"
+    >
+      SMS
+    </label>
+  </div>
+  <p
+    data-field="validation"
+    id="_r_b_"
+  >
+    Du må velge minst to kontaktalternativ
   </p>
 </fieldset>
 `;
