@@ -34,8 +34,8 @@ const data = [
   },
   {
     use: 'Sidemarg ved andre digitale tjenester',
-    token: '--ds-size-16',
-    px: '64px',
+    token: '--ds-size-15',
+    px: '60px',
     comment:
       'Mer luft gjør det mer brukervennlig der brukerne ikke er så kjent med tjenesten',
   },
