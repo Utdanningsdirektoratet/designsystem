@@ -120,7 +120,7 @@ addons.setConfig({
 
       // Add Tag component to tags that need it
       const badge = getBadgeFromTags(item.tags);
-      if (badge) {
+      if (badge && item.type !== 'story') {
         return (
           <>
             <span>{item.name}</span>
