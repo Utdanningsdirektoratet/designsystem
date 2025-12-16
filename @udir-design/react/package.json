@@ -40,7 +40,7 @@
     "lint:cycles": "pnpm madge --circular ./src/alpha.ts",
     "test:all": "vitest --outputFile.json test-reports/all.json",
     "test": "vitest --project unit --outputFile.json test-reports/unit.json",
-    "typecheck": "tsc --build",
+    "typecheck": "tsgo --build",
     "dev": "storybook dev --port 6005",
     "build:storybook": "storybook build --stats-json",
     "serve:storybook": "pnpm dlx http-server ./storybook-static",
