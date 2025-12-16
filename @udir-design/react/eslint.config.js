@@ -48,6 +48,7 @@ export default defineConfig(
           ],
         },
       ],
+      'react/forward-ref-uses-ref': ['error'],
     },
     languageOptions: {
       parserOptions: {
