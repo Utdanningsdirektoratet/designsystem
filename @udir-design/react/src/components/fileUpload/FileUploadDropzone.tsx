@@ -14,23 +14,27 @@ export type FileUploadDropzoneProps = FileUploadProps;
 export const FileUploadDropzone = forwardRef<
   HTMLInputElement,
   FileUploadDropzoneProps
->(function FileUploadDropzone({
-  className,
-  multiple,
-  'data-size': size,
-  label,
-  style,
-  error,
-  description,
-  inputProps,
-  id,
-  ...rest
-}) {
+>(function FileUploadDropzone(
+  {
+    className,
+    multiple,
+    'data-size': size,
+    label,
+    style,
+    error,
+    description,
+    inputProps,
+    id,
+    ...rest
+  },
+  ref,
+) {
   return (
     <Field
       className={cl(`uds-file-upload`, className)}
       data-size={size}
       style={style}
+      ref={ref}
       {...rest}
     >
       {!!label && <Label>{label}</Label>}

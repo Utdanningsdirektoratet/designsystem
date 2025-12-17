@@ -44,18 +44,21 @@ export type FileUploadProps = InputHTMLAttributes<HTMLInputElement> & {
 };
 
 export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
-  function FileUploadTrigger({
-    className,
-    multiple,
-    'data-size': size,
-    label,
-    style,
-    error,
-    description,
-    inputProps,
-    id,
-    ...rest
-  }) {
+  function FileUploadTrigger(
+    {
+      className,
+      multiple,
+      'data-size': size,
+      label,
+      style,
+      error,
+      description,
+      inputProps,
+      id,
+      ...rest
+    },
+    ref,
+  ) {
     const fileInputRef = useRef<HTMLInputElement>(null);
 
     return (
@@ -63,6 +66,7 @@ export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
         className={cl(`uds-file-upload`, className)}
         data-size={size}
         style={style}
+        ref={ref}
         {...rest}
       >
         {!!label && <Label>{label}</Label>}
