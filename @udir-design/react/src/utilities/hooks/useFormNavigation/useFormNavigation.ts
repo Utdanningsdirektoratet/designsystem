@@ -39,10 +39,6 @@ export type GetFormNavigationStepProps<TId extends string = string> = Omit<
    * Override state manually (usually not necessary).
    */
   state?: FormNavigationState;
-  /**
-   * Label for the step.
-   */
-  label?: string;
 };
 
 type UseFormNavigationReturn<TId extends string = string> = {
@@ -157,15 +153,7 @@ export function useFormNavigation<TId extends string = string>({
         ? ({ stepId: propsOrId } as GetFormNavigationStepProps<TId>)
         : propsOrId;
 
-    const {
-      ref,
-      stepId,
-      state: stateOverride,
-      onClick,
-      children,
-      label,
-      ...rest
-    } = props;
+    const { ref, stepId, state: stateOverride, onClick, ...rest } = props;
 
     if (!stepId) {
       throw new Error('getStepProps krever en stepId');
@@ -190,7 +178,6 @@ export function useFormNavigation<TId extends string = string>({
       ref,
       onClick: handleClick,
       state,
-      children: children ?? label,
     };
   };
 

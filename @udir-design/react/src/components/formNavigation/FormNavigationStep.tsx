@@ -2,7 +2,10 @@ import type { HTMLAttributes } from 'react';
 import { forwardRef } from 'react';
 import type { FormNavigationState } from './FormNavigation';
 
-export type FormNavigationStepProps = HTMLAttributes<HTMLButtonElement> & {
+export type FormNavigationStepProps = Omit<
+  HTMLAttributes<HTMLButtonElement>,
+  'children'
+> & {
   /**
    * The current state of the FormNavigationStep component.
    */
@@ -11,6 +14,10 @@ export type FormNavigationStepProps = HTMLAttributes<HTMLButtonElement> & {
    * The variant style of the FormNavigationStep component. Only affects visual styling.
    */
   variant?: 'info' | 'summary' | 'submission' | 'confirmation' | 'default';
+  /**
+   * The label shown for this step
+   */
+  children: string;
 };
 
 export const STEP_STATE_ATTRIBUTE = 'data-state';
