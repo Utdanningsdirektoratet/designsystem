@@ -1,6 +1,9 @@
 import type { Decorator } from '@storybook/react-vite';
 
 const handleScrollHash = (event: MouseEvent) => {
+  if (event.defaultPrevented) {
+    return;
+  }
   const anchor = (event.target as Element).closest<HTMLAnchorElement>(
     'a[href^="#"]',
   );

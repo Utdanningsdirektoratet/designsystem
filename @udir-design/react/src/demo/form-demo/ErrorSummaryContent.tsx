@@ -65,7 +65,7 @@ export function ErrorSummaryContent({
                     const pageId = findPageForField(fieldName);
                     if (!pageId) return;
                     setId(pageId);
-                    setTimeout(() => {
+                    window.setTimeout(() => {
                       const el = document.getElementById(fieldName);
                       el?.focus();
                     }, 50);
