@@ -76,6 +76,7 @@
 .navigateButtons {
   display: flex;
   gap: var(--ds-size-2);
+  white-space: nowrap;
 }
 
 .desktop {
