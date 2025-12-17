@@ -1,4 +1,5 @@
 .uds-form-navigation {
+  --uds-form-navigation-active-text-stroke: 0.025em;
   --uds-form-navigation-completed-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.75 12C3.75 7.44365 7.44365 3.75 12 3.75C16.5563 3.75 20.25 7.44365 20.25 12C20.25 16.5563 16.5563 20.25 12 20.25C7.44365 20.25 3.75 16.5563 3.75 12ZM12 2.25C6.61522 2.25 2.25 6.61522 2.25 12C2.25 17.3848 6.61522 21.75 12 21.75C17.3848 21.75 21.75 17.3848 21.75 12C21.75 6.61522 17.3848 2.25 12 2.25ZM16.5725 9.48444C16.8401 9.16824 16.8007 8.695 16.4845 8.42745C16.1683 8.15989 15.695 8.19932 15.4275 8.51553L10.454 14.3933L8.03033 11.9697C7.73744 11.6768 7.26256 11.6768 6.96967 11.9697C6.67678 12.2625 6.67678 12.7374 6.96967 13.0303L9.96967 16.0303C10.118 16.1786 10.3216 16.2581 10.5312 16.2493C10.7407 16.2406 10.9371 16.1446 11.0725 15.9844L16.5725 9.48444Z' fill='%23202733'/%3E%3C/svg%3E%0A");
   --uds-form-navigation-completed-active-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 21.75C17.3848 21.75 21.75 17.3848 21.75 12C21.75 6.61522 17.3848 2.25 12 2.25C6.61522 2.25 2.25 6.61522 2.25 12C2.25 17.3848 6.61522 21.75 12 21.75ZM16.9536 9.27485C17.2434 8.93229 17.2007 8.41962 16.8582 8.12977C16.5156 7.83991 16.0029 7.88263 15.7131 8.22519L10.3251 14.5928L7.69952 11.9672C7.38222 11.6499 6.86778 11.6499 6.55048 11.9672C6.23317 12.2845 6.23317 12.7989 6.55048 13.1162L9.80048 16.3662C9.96114 16.5269 10.1817 16.6129 10.4088 16.6035C10.6358 16.594 10.8485 16.49 10.9953 16.3165L16.9536 9.27485Z' fill='%23202733'/%3E%3C/svg%3E%0A");
   --uds-form-navigation-invalid-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.27208 2.25C8.07317 2.25 7.8824 2.32902 7.74175 2.46967L2.46967 7.74175C2.32902 7.8824 2.25 8.07317 2.25 8.27208V15.7279C2.25 15.9268 2.32902 16.1176 2.46967 16.2583L7.74175 21.5303C7.8824 21.671 8.07316 21.75 8.27208 21.75H15.7279C15.9268 21.75 16.1176 21.671 16.2583 21.5303L21.5303 16.2583C21.671 16.1176 21.75 15.9268 21.75 15.7279V8.27208C21.75 8.07317 21.671 7.8824 21.5303 7.74175L16.2583 2.46967C16.1176 2.32902 15.9268 2.25 15.7279 2.25H8.27208ZM3.75 8.58274L8.58274 3.75H15.4173L20.25 8.58274V15.4173L15.4173 20.25H8.58274L3.75 15.4173V8.58274ZM9.03033 7.96967C8.73744 7.67678 8.26256 7.67678 7.96967 7.96967C7.67678 8.26256 7.67678 8.73744 7.96967 9.03033L10.9393 12L7.96967 14.9697C7.67678 15.2626 7.67678 15.7374 7.96967 16.0303C8.26256 16.3232 8.73744 16.3232 9.03033 16.0303L12 13.0607L14.9697 16.0303C15.2626 16.3232 15.7374 16.3232 16.0303 16.0303C16.3232 15.7374 16.3232 15.2626 16.0303 14.9697L13.0607 12L16.0303 9.03033C16.3232 8.73744 16.3232 8.26256 16.0303 7.96967C15.7374 7.67678 15.2626 7.67678 14.9697 7.96967L12 10.9393L9.03033 7.96967Z' fill='%23202733'/%3E%3C/svg%3E%0A");
@@ -103,7 +104,11 @@
 
     /* ACTIVE */
     &[data-state='active'] {
-      font-weight: var(--ds-font-weight-medium);
+      /*
+       Using -webkit-text-stroke to simulate `font-weight: var(--ds-font-weight-medium);`
+       in order to prevent layout shift when closing and opening the step group
+       */
+      -webkit-text-stroke: var(--uds-form-navigation-active-text-stroke);
 
       &[data-variant='default'] {
         --uds-form-navigation__step-icon-url: var(
@@ -322,7 +327,11 @@
 
       &:not([open]) {
         span {
-          font-weight: var(--ds-font-weight-medium);
+          /*
+           Using -webkit-text-stroke to simulate `font-weight: var(--ds-font-weight-medium);`
+           in order to prevent layout shift when closing and opening the step group
+           */
+          -webkit-text-stroke: var(--uds-form-navigation-active-text-stroke);
         }
 
         &::after {
