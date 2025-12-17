@@ -1,0 +1,27 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+import { Link } from 'src/components/link/Link';
+import example from './docs/example.ts?raw';
+
+<Meta title="Utilities/Hjelpefunksjoner for skjema" />
+
+# Hjelpefunksjoner for skjema
+
+Disse hjelpefunksjonene er nyttig å bruke sammen med [`FormNavigation`](/docs/components-formnavigation--docs) og [`useFormNavigation`](/docs/utilities-useformnavigation--docs).
+
+Les også <Link href="./typedoc/modules/utilities_form_alpha.html" target="_none">detaljert dokumentasjon generert fra kildekoden (på engelsk)</Link>
+
+## Bruk
+
+- `defineSteps` gir deg et objekt med informasjon om hvilke skjemafelt som hører til hvilket steg
+- `GetStepId` lar deg utlede en TypeScript-type for stegidentifikatorer
+- `getStepIds` gir deg en liste med alle stegidentifikatorer
+- `GetFieldId` lar deg utlede en TypeScript-type for feltidentifikatorer
+- `getFieldIds` gir deg en liste med alle feltidentifikatorer
+- `makeStepFinder` gir deg en funksjon som du kan bruke for å hente steget som et gitt felt tilhører
+
+## Eksempel
+
+<Source
+  code={example.replace('/* eslint-disable no-restricted-imports */\n', '')}
+  language="typescript"
+/>

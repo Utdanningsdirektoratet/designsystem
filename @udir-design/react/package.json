@@ -47,17 +47,20 @@
     "typecheck": "tsgo --build",
     "dev": "storybook dev --port 6005",
     "build:storybook": "storybook build --stats-json",
-    "serve:storybook": "pnpm dlx http-server ./storybook-static",
+    "build:docs": "typedoc",
+    "watch:typedoc": "typedoc --watch --tsconfig tsconfig.lib.json",
+    "serve:typedoc": "pnpm dlx http-server --port=8090 -c-1 ./storybook-static/typedoc",
+    "serve:docs": "pnpm dlx http-server ./storybook-static",
     "test:storybook": "pnpm exec playwright install --with-deps chromium && vitest --project storybook --outputFile.json test-reports/storybook.json --outputFile.html test-reports/storybook/index.html",
     "view-test-report:storybook": "pnpm dlx http-server ./test-reports/storybook"
   },
   "dependencies": {
     "@digdir/designsystemet-react": "catalog:",
     "@digdir/designsystemet-types": "catalog:",
+    "@u-elements/u-details": "catalog:",
     "@udir-design/css": "workspace:*",
     "@udir-design/icons": "workspace:*",
-    "tslib": "catalog:",
-    "@u-elements/u-details": "catalog:"
+    "tslib": "catalog:"
   },
   "devDependencies": {
     "@hookform/resolvers": "catalog:",
@@ -107,6 +110,7 @@
     "storybook": "catalog:",
     "storybook-addon-pseudo-states": "catalog:",
     "type-fest": "catalog:",
+    "typedoc": "catalog:",
     "unified": "catalog:",
     "unist-util-remove": "catalog:",
     "unist-util-visit": "catalog:",

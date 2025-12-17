@@ -41,7 +41,7 @@ export type GetFormNavigationStepProps<TId extends string = string> = Omit<
   state?: FormNavigationState;
 };
 
-type UseFormNavigationReturn<TId extends string = string> = {
+export type UseFormNavigationReturn<TId extends string = string> = {
   /**
    * Active step ID
    */
@@ -85,7 +85,9 @@ type UseFormNavigationReturn<TId extends string = string> = {
   /**
    * Give props to `FormNavigation.Step`.
    * @example
-   * <FormNavigation.Step {...getStepProps(0)}>Første</FormNavigation.Step>
+   * ```tsx
+   * <FormNavigation.Step {...getStepProps('step-1')}>Første</FormNavigation.Step>
+   * ```
    */
   getStepProps: (
     propsOrId: TId | GetFormNavigationStepProps<TId>,
@@ -93,7 +95,9 @@ type UseFormNavigationReturn<TId extends string = string> = {
   /**
    * Give props to `FormNavigation.Group`.
    * @example
+   * ```tsx
    * <FormNavigation.Group {...getGroupProps(["step-1", "step-2"])}>Gruppe</FormNavigation.Group>
+   * ```
    */
   getGroupProps: (ids: TId[]) => {
     state: Exclude<FormNavigationState, 'active'>;

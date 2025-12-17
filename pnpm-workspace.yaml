@@ -17,8 +17,8 @@ catalog:
   '@eslint/eslintrc': ^3.3.1
   '@eslint/js': ^9.39.1
   '@figma/rest-api-spec': ^0.34.0
-  '@navikt/aksel-icons': ^7.34.0
   '@hookform/resolvers': 5.2.2
+  '@navikt/aksel-icons': ^7.34.0
   '@next/eslint-plugin-next': ^14.2.33
   '@nx/azure-cache': ^5.0.0
   '@nx/eslint': 22.1.1
@@ -114,6 +114,7 @@ catalog:
   tsup: ^8.5.1
   tsx: ^4.20.6
   type-fest: ^5.2.0
+  typedoc: ^0.28.15
   typescript: ^5.9.3
   typescript-eslint: ^8.48.0
   unified: ^11.0.5

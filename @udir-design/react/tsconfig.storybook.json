@@ -5,7 +5,10 @@
     "outDir": "../../dist/out-tsc",
     "paths": {
       "src/*": ["./src/*"],
-      ".storybook/*": ["./.storybook/*"]
+      ".storybook/*": ["./.storybook/*"],
+      "@udir-design/react/utilities/form/alpha": [
+        "./src/utilities/form/alpha.ts"
+      ]
     },
     "types": ["vite/client", "../theme/dist/types", "./dist/html"]
   },
