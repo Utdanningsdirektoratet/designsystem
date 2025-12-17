@@ -18,6 +18,7 @@ const meta = preview.meta<
   useTableOfContentsProps
 >({
   title: 'Utilities/useTableOfContents',
+  tags: ['alpha'],
   parameters: {
     chromatic: { disableSnapshot: true },
     tags: ['alpha', 'udir'],
