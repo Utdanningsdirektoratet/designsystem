@@ -6,7 +6,13 @@ import z from 'zod';
 import { BulletListIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
-import { useFormNavigation } from '../../utilities/hooks/useFormNavigation/useFormNavigation';
+import type { GetStepId } from 'src/utilities/form/navigation';
+import {
+  defineSteps,
+  getStepIds,
+  makeStepFinder,
+} from 'src/utilities/form/navigation';
+import { useFormNavigation } from 'src/utilities/hooks/useFormNavigation/useFormNavigation';
 import { Button } from '../button/Button';
 import { Dialog } from '../dialog/Dialog';
 import { Textfield } from '../textfield/Textfield';
@@ -458,15 +464,6 @@ export const SimpleNavigation = meta.story({
   },
 });
 
-type StepId =
-  | 'step1'
-  | 'step2'
-  | 'step3'
-  | 'step4'
-  | 'step5'
-  | 'submission'
-  | 'confirmation';
-
 const Schema = z.object({
   q1: z.string().min(1, 'Fyll ut første spørsmål'),
   q2: z.string().min(1, 'Fyll ut andre spørsmål'),
@@ -479,7 +476,7 @@ const Schema = z.object({
 
 type FormValuesGroups = z.infer<typeof Schema>;
 
-const stepFieldsById: Record<StepId, (keyof FormValuesGroups)[]> = {
+const fieldsByStep = defineSteps({
   step1: ['q1', 'q2'],
   step2: ['q3'],
   step3: ['q4', 'q5'],
@@ -487,18 +484,11 @@ const stepFieldsById: Record<StepId, (keyof FormValuesGroups)[]> = {
   step5: ['q7'],
   submission: [],
   confirmation: [],
-};
+});
+const stepIds = getStepIds(fieldsByStep);
+const findStepForField = makeStepFinder(fieldsByStep);
 
-const findStepForField = (
-  field: keyof FormValuesGroups,
-): StepId | undefined => {
-  for (const [stepId, fields] of Object.entries(stepFieldsById) as [
-    StepId,
-    (keyof FormValuesGroups)[],
-  ][]) {
-    if (fields.includes(field)) return stepId;
-  }
-};
+type StepId = GetStepId<typeof fieldsByStep>;
 
 const heading = (stepId: StepId) => {
   switch (stepId) {
@@ -523,7 +513,7 @@ export const Full = meta.story({
     const onStepChange = async (_nextId: StepId, prevId: StepId | null) => {
       if (!prevId) return;
       dialogRef.current?.close();
-      const fields = stepFieldsById[prevId];
+      const fields = fieldsByStep[prevId];
       if (fields.length === 0) return;
       const ok = await trigger(fields, { shouldFocus: false });
       if (ok) markCompleted(prevId);
@@ -573,7 +563,7 @@ export const Full = meta.story({
     } = methods;
 
     const stepHasError = (stepId: StepId): boolean => {
-      const fields = stepFieldsById[stepId] ?? [];
+      const fields = fieldsByStep[stepId] ?? [];
       return fields.some((name) => !!getFieldState(name).error);
     };
 
@@ -582,7 +572,7 @@ export const Full = meta.story({
     };
 
     const onInvalid = () => {
-      (Object.keys(stepFieldsById) as StepId[]).forEach((id) => {
+      stepIds.forEach((id) => {
         if (stepHasError(id)) markInvalid(id);
       });
     };
@@ -780,9 +770,7 @@ export const Full = meta.story({
                               href={`#${field}`}
                               onClick={(e) => {
                                 e.preventDefault();
-                                const stepId = findStepForField(
-                                  field as keyof FormValuesGroups,
-                                );
+                                const stepId = findStepForField(field);
                                 if (stepId && stepId !== id) {
                                   setId(stepId);
                                 }
