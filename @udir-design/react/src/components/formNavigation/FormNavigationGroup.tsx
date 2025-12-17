@@ -7,15 +7,15 @@ import { STEP_STATE_ATTRIBUTE } from './FormNavigationStep';
 
 export type FormNavigationGroupProps = HTMLAttributes<HTMLDetailsElement> & {
   /**
-   * The title to be displayed in the FormNavigationGroup component.
+   * The title to be displayed in the FormNavigation.Group component.
    */
   title: string;
   /**
-   * The current state of the FormNavigationGroup component.
+   * The current state of the FormNavigation.Group component.
    */
   state?: Exclude<FormNavigationState, 'active'>;
   /**
-   * Whether the FormNavigationGroup is open or closed
+   * Whether the FormNavigation.Group is open or closed
    */
   open?: boolean;
 };
