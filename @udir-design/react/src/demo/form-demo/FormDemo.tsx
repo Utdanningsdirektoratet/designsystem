@@ -10,8 +10,12 @@ import { Dialog } from 'src/components/dialog/Dialog';
 import type { FieldsetProps } from 'src/components/fieldset/Fieldset';
 import { FormNavigation } from 'src/components/formNavigation';
 import { Heading } from 'src/components/typography/heading/Heading';
-import type { GetStepId } from 'src/utilities/form/navigation';
-import { defineSteps, getStepIds } from 'src/utilities/form/navigation';
+import type { GetFieldId, GetStepId } from 'src/utilities/form/navigation';
+import {
+  defineSteps,
+  getStepIds,
+  makeStepFinder,
+} from 'src/utilities/form/navigation';
 import { useFormNavigation } from 'src/utilities/hooks/useFormNavigation/useFormNavigation';
 import type { DemoProps } from '../demoProps.js';
 import { ErrorSummaryContent } from './ErrorSummaryContent';
@@ -43,6 +47,10 @@ const pageFields = defineSteps({
   finish: ['addition', 'contactMethods'],
   deliver: [],
 });
+export type PageFields = typeof pageFields;
+
+export const findPageForField = makeStepFinder(pageFields);
+
 const stepIds = getStepIds(pageFields);
 
 const FormSchema = z.object({
@@ -64,7 +72,7 @@ const FormSchema = z.object({
       for (const assertion of DATA_ASSERTIONS) {
         if (r[assertion] == null) {
           ctx.addIssue({
-            code: z.ZodIssueCode.custom,
+            code: 'custom',
             message: 'Du må besvare alle påstandene',
             path: [assertion],
           });
@@ -76,8 +84,8 @@ const FormSchema = z.object({
 });
 
 export type FormValues = z.infer<typeof FormSchema>;
-
 export type PageId = GetStepId<typeof pageFields>;
+export type FieldId = GetFieldId<typeof pageFields>;
 
 export const FormDemo = ({
   page = 'personal',
