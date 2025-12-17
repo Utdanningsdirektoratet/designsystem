@@ -101,7 +101,6 @@ type UseFormNavigationReturn<TId extends string = string> = {
    */
   getGroupProps: (ids: TId[]) => {
     state: Exclude<FormNavigationState, 'active'>;
-    activeStepLabel?: string;
   };
 };
 
@@ -128,8 +127,6 @@ export function useFormNavigation<TId extends string = string>({
   const [stepStates, setStepStates] = useState<
     Record<TId, Exclude<FormNavigationState, 'active'>>
   >({} as Record<TId, Exclude<FormNavigationState, 'active'>>);
-
-  const stepLabelsRef = useRef<Record<TId, string>>({} as Record<TId, string>);
 
   const renderOrderRef = useRef<TId[]>([]);
 
@@ -178,10 +175,6 @@ export function useFormNavigation<TId extends string = string>({
       renderOrderRef.current.push(stepId);
     }
 
-    if (label) {
-      stepLabelsRef.current[stepId] = label;
-    }
-
     const derivedState: FormNavigationState =
       stepId === activeId ? 'active' : (stepStates[stepId] ?? 'idle');
     const state = stateOverride ?? derivedState;
@@ -216,13 +209,8 @@ export function useFormNavigation<TId extends string = string>({
     ids,
   ) => {
     const state = deriveNavigationState(ids);
-    let activeStepLabel: string | undefined;
-    if (activeId && ids.includes(activeId)) {
-      activeStepLabel = stepLabelsRef.current[activeId];
-    }
     return {
       state,
-      activeStepLabel,
     };
   };
 
