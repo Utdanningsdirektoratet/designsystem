@@ -1,198 +1,296 @@
+import { Paragraph } from '@digdir/designsystemet-react';
+import { zodResolver } from '@hookform/resolvers/zod';
 import type { HTMLAttributes } from 'react';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import { Alert } from 'src/components/alert';
+import { z } from 'zod';
+import { BulletListIcon } from '@udir-design/icons';
 import { Button } from 'src/components/button/Button';
 import { Dialog } from 'src/components/dialog/Dialog';
-import { ErrorSummary } from 'src/components/errorSummary/ErrorSummary';
 import type { FieldsetProps } from 'src/components/fieldset/Fieldset';
+import { FormNavigation } from 'src/components/formNavigation';
 import { Heading } from 'src/components/typography/heading/Heading';
-import type { DemoProps } from '../demoProps';
+import { FinishPage } from '../../demo/form-demo/pages/FinishPage.tsx';
+import { PersonalInfoPage } from '../../demo/form-demo/pages/PersonalInfoPage';
+import {
+  DATA_ASSERTIONS,
+  DATA_RANKINGS,
+  RankingPage,
+} from '../../demo/form-demo/pages/RankingPage';
+import { useFormNavigation } from '../../utilities/hooks/useFormNavigation/useFormNavigation';
+import type { DemoProps } from '../demoProps.js';
+import { ErrorSummaryContent } from './ErrorSummaryContent';
 import classes from './FormDemo.module.css';
-import PaginationControls from './PaginationControls';
-import { FinishPage } from './pages/FinishPage.tsx';
-import { PersonalInfoPage } from './pages/PersonalInfoPage';
-import { RankingPage } from './pages/RankingPage';
-
-type FormDemo = DemoProps &
-  HTMLAttributes<HTMLDivElement> & {
-    page?: number;
-  };
-
-export type FormValues = {
-  firstName: string;
-  lastName: string;
-  county: string;
-  educationLevel: string;
-  ageGroup: string;
-  rankings: Record<string, string>;
-  addition: string;
-  contactMethods: string[];
-};
 
 export type PageProps = {
   showErrors: boolean;
 };
 
 export const focusableFieldsetProps: Partial<FieldsetProps> = {
-  tabIndex: -1, // Needed to be focusable from ErrorSummary
+  tabIndex: -1,
   onFocus: (event) => {
     if (event.target === event.currentTarget) {
-      // Focus the first input within the fieldset when the fieldset gets focus from the ErrorSummary
       event.target.querySelector('input')?.focus();
     }
   },
 };
 
-const pageFields: Record<number, (keyof FormValues)[]> = {
-  1: ['firstName', 'lastName', 'county', 'educationLevel', 'ageGroup'],
-  2: ['rankings'],
-  3: ['addition', 'contactMethods'],
+const pageFields: Record<PageId, (keyof FormValues)[]> = {
+  personal: ['firstName', 'lastName', 'county', 'educationLevel', 'ageGroup'],
+  ranking: ['rankings'],
+  finish: ['addition', 'contactMethods'],
+  deliver: [],
 };
 
-export const FormDemo = ({ page = 1, ...props }: FormDemo) => {
+const FormSchema = z.object({
+  firstName: z.string().min(1, 'Fyll ut fornavn'),
+  lastName: z.string().min(1, 'Fyll ut etternavn'),
+  county: z.string().min(1, 'Velg et fylke'),
+  educationLevel: z
+    .string()
+    .nullable()
+    .refine((v) => v !== null && v.length > 0, {
+      message: 'Velg et utdanningsnivå',
+    }),
+  ageGroup: z.string().refine((v) => v !== 'blank', {
+    message: 'Velg en aldersgruppe',
+  }),
+  rankings: z
+    .record(z.string(), z.enum(DATA_RANKINGS).nullish())
+    .superRefine((r, ctx) => {
+      for (const assertion of DATA_ASSERTIONS) {
+        if (r[assertion] == null) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: 'Du må besvare alle påstandene',
+            path: [assertion],
+          });
+        }
+      }
+    }),
+  addition: z.string().optional(),
+  contactMethods: z.array(z.string()).min(1, 'Velg minst én kontaktmåte'),
+});
+
+export type FormValues = z.infer<typeof FormSchema>;
+
+export type PageId = 'personal' | 'ranking' | 'finish' | 'deliver';
+
+export const FormDemo = ({
+  page = 'personal',
+  ...props
+}: {
+  page?: PageId;
+} & HTMLAttributes<HTMLDivElement> &
+  DemoProps) => {
   const methods = useForm<FormValues>({
+    resolver: zodResolver(FormSchema),
     mode: 'onChange',
-    shouldFocusError: false, // We focus the ErrorSummary instead
+    shouldFocusError: false,
+    shouldUnregister: false,
+    defaultValues: {
+      firstName: '',
+      lastName: '',
+      county: '',
+      educationLevel: '',
+      ageGroup: 'blank',
+      rankings: Object.fromEntries(DATA_ASSERTIONS.map((a) => [a, undefined])),
+      addition: '',
+      contactMethods: [],
+    },
   });
   const {
     handleSubmit,
     trigger,
-    reset,
-    formState: { errors },
+    reset: resetForm,
+    formState: { errors, isSubmitted },
+    getFieldState,
   } = methods;
 
-  const [currentPage, setCurrentPage] = useState(page);
-  const [attemptedNext, setAttemptedNext] = useState(false);
-  const totalPages = 3;
-
-  const onSubmit = (data: FormValues) => {
-    console.log(data);
-    dialogRef.current?.close();
-    reset();
-    setCurrentPage(1);
-    setAttemptedNext(false);
+  const onStepChange = async (_nextId: PageId, prevId: PageId | null) => {
+    if (!prevId) return;
+    dialogMobileRef.current?.close();
+    const fields = pageFields[prevId];
+    if (fields.length === 0) return;
+    const ok = await trigger(fields, { shouldFocus: false });
+    if (ok) markCompleted(prevId);
+    else if (isSubmitted) markInvalid(prevId);
   };
 
-  const dialogRef = useRef<HTMLDialogElement>(null);
+  const {
+    getStepProps,
+    getGroupProps,
+    id,
+    markCompleted,
+    markInvalid,
+    reset: resetNavigation,
+    setId,
+    next,
+    prev,
+    hasNext,
+    hasPrev,
+  } = useFormNavigation<PageId>({
+    value: page,
+    onChange: onStepChange,
+  });
+
+  const dialogMobileRef = useRef<HTMLDialogElement>(null);
+  const dialogDeliverRef = useRef<HTMLDialogElement>(null);
   const errorSummaryRef = useRef<HTMLDivElement>(null);
 
-  const handleNextPage = async (targetPage: number) => {
-    setAttemptedNext(true);
-    // Only validate if you're moving forward
-    if (targetPage > currentPage) {
-      const valid = await trigger(pageFields[currentPage]);
-      if (!valid) {
-        errorSummaryRef.current?.focus();
-        return;
-      }
-    }
-    setCurrentPage(targetPage);
-    setAttemptedNext(false);
+  const stepHasError = (pageId: PageId): boolean => {
+    const fields = pageFields[pageId] ?? [];
+    return fields.some((name) => !!getFieldState(name).error);
   };
 
+  const onDeliver = handleSubmit(
+    () => {
+      dialogDeliverRef.current?.showModal();
+    },
+    () => {
+      (Object.keys(pageFields) as PageId[]).forEach((pid) => {
+        if (stepHasError(pid)) markInvalid(pid);
+      });
+      errorSummaryRef.current?.focus();
+    },
+  );
+
+  const onSubmit = () => {
+    dialogDeliverRef.current?.close();
+    resetForm();
+    resetNavigation();
+    setId('personal');
+  };
+
+  const formNavigationContent = (
+    <FormNavigation>
+      <FormNavigation.Group
+        title="Skoleundersøkelse"
+        className={classes.navigation}
+        open={true}
+        {...getGroupProps(['personal', 'ranking', 'finish', 'deliver'])}
+      >
+        <FormNavigation.Step {...getStepProps('personal')}>
+          Personopplysninger
+        </FormNavigation.Step>
+        <FormNavigation.Step {...getStepProps('ranking')}>
+          Rangering
+        </FormNavigation.Step>
+        <FormNavigation.Step {...getStepProps('finish')}>
+          Avslutning
+        </FormNavigation.Step>
+        <FormNavigation.Step variant="submission" {...getStepProps('deliver')}>
+          Innsending
+        </FormNavigation.Step>
+      </FormNavigation.Group>
+    </FormNavigation>
+  );
+
   const renderCurrentPage = () => {
-    const props = { showErrors: attemptedNext };
-    switch (currentPage) {
-      case 1:
+    const props = { showErrors: isSubmitted };
+    switch (id) {
+      case 'personal':
         return <PersonalInfoPage {...props} />;
-      case 2:
+      case 'ranking':
         return <RankingPage {...props} />;
-      case 3:
+      case 'finish':
         return <FinishPage {...props} />;
+      case 'deliver':
+        return <DeliverPage />;
     }
   };
+
+  const DeliverPage = () => {
+    return (
+      <>
+        <Heading level={2}>Innsending</Heading>
+        <Paragraph>Send inn skjema til Udir.</Paragraph>
+      </>
+    );
+  };
+
+  const hasErrors = isSubmitted && Object.keys(errors).length > 0;
 
   return (
     <FormProvider {...methods}>
-      <div {...props} className={classes.container} data-size="auto">
-        <Heading level={1} data-size="md">
-          Skjema
-        </Heading>
-        <Alert>
-          Ditt svar i skjemaet lagres automatisk, så du kan fortsette på et
-          senere tidspunkt.
-        </Alert>
-
-        {/* False positive - https://github.com/facebook/react/pull/35062 */}
-        {/* eslint-disable-next-line react-hooks/refs */}
-        <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
-          {renderCurrentPage()}
-          {currentPage === totalPages && (
-            <Button
-              onClick={() => {
-                setAttemptedNext(true);
-                handleSubmit(
-                  () => {
-                    // onValid
-                    dialogRef.current?.showModal();
-                  },
-                  () => {
-                    // onInvalid
-                    errorSummaryRef.current?.focus();
-                  },
-                )();
-              }}
-            >
-              Send inn skjema
-            </Button>
-          )}
-        </form>
-        <Dialog ref={dialogRef}>
-          <Dialog.Block>
-            <Heading data-size="xs">
-              Er du sikker på at du vil sende inn skjema?
-            </Heading>
-          </Dialog.Block>
-          <Dialog.Block className={classes.dialogActions}>
-            {/* False positive - https://github.com/facebook/react/pull/35062 */}
-            {/* eslint-disable-next-line react-hooks/refs */}
-            <Button type="submit" onClick={handleSubmit(onSubmit)}>
-              Send inn skjema
-            </Button>
-            <Button
-              onClick={() => dialogRef.current?.close()}
+      <div className={classes.page} data-size="auto">
+        <div className={classes.desktop}>{formNavigationContent}</div>
+        <div className={classes.mobile}>
+          <Dialog.TriggerContext>
+            <Dialog.Trigger
+              data-color={hasErrors ? 'danger' : 'neutral'}
               variant="secondary"
             >
-              Avbryt
-            </Button>
-          </Dialog.Block>
-        </Dialog>
-        {attemptedNext && Object.keys(errors).length > 0 && (
-          <ErrorSummary ref={errorSummaryRef}>
-            <ErrorSummary.Heading>
-              For å gå videre må du rette opp følgende feil:
-            </ErrorSummary.Heading>
-            <ErrorSummary.List>
-              {errors.rankings && Object.values(errors.rankings)[0] && (
-                <ErrorSummary.Item key="rankings">
-                  <ErrorSummary.Link href="#rankings">
-                    {Object.values(errors.rankings)[0]?.message}
-                  </ErrorSummary.Link>
-                </ErrorSummary.Item>
+              <BulletListIcon aria-hidden />
+              Naviger
+            </Dialog.Trigger>
+            <Dialog
+              closedby="any"
+              ref={dialogMobileRef}
+              style={{ width: 'fit-content', minWidth: '20rem' }}
+            >
+              <Heading level={2}>Skjemanavigasjon</Heading>
+              {formNavigationContent}
+            </Dialog>
+          </Dialog.TriggerContext>
+        </div>
+        <div {...props} className={classes.container}>
+          <Heading level={1} data-size="md">
+            Skoleundersøkelse
+          </Heading>
+          <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
+            {renderCurrentPage()}
+            <div className={classes.navigateButtons}>
+              {hasPrev() && (
+                <Button variant="secondary" onClick={prev} style={{ flex: 1 }}>
+                  Forrige
+                </Button>
               )}
-              {Object.entries(errors)
-                .filter(([fieldName]) => fieldName !== 'rankings')
-                .map(([fieldName, error]) => (
-                  <ErrorSummary.Item key={fieldName}>
-                    <ErrorSummary.Link href={`#${fieldName}`}>
-                      {typeof error?.message === 'string'
-                        ? error.message
-                        : 'Feltet er påkrevd'}
-                    </ErrorSummary.Link>
-                  </ErrorSummary.Item>
-                ))}
-            </ErrorSummary.List>
-          </ErrorSummary>
-        )}
-        <PaginationControls
-          currentPage={currentPage}
-          totalPages={totalPages}
-          setCurrentPage={(page) => {
-            handleNextPage(page);
-          }}
-          className={classes.pagination}
-        />
+              {hasNext() && (
+                <Button variant="secondary" onClick={next} style={{ flex: 1 }}>
+                  Neste
+                </Button>
+              )}
+              {id === 'deliver' && (
+                <Button style={{ flex: 2 }} onClick={onDeliver}>
+                  Send inn skjema
+                </Button>
+              )}
+            </div>
+            <Dialog
+              closeButton={false}
+              ref={dialogDeliverRef}
+              style={{ width: 'fit-content' }}
+            >
+              <Dialog.Block className={classes.dialog}>
+                <Heading data-size="xs">
+                  Er du sikker på at du vil sende inn skjema?
+                </Heading>
+                <div className={classes.dialogActions}>
+                  <Button
+                    onClick={() => dialogDeliverRef.current?.close()}
+                    variant="secondary"
+                    style={{ flex: 1 }}
+                  >
+                    Avbryt
+                  </Button>
+                  <Button autoFocus type="submit" style={{ flex: 2 }}>
+                    Send inn
+                  </Button>
+                </div>
+              </Dialog.Block>
+            </Dialog>
+          </form>
+
+          <ErrorSummaryContent
+            attemptedSubmit={isSubmitted}
+            currentPage={id}
+            errors={errors}
+            errorSummaryRef={errorSummaryRef}
+            pageFields={pageFields}
+            setId={setId}
+          />
+        </div>
       </div>
     </FormProvider>
   );

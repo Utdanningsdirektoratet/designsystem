@@ -5,14 +5,31 @@
   }
 }
 
+.page {
+  display: flex;
+  gap: var(--ds-size-6);
+  flex-direction: column;
+  @media (min-width: 48rem) {
+    flex-direction: row;
+  }
+}
+
+.navigation {
+  @media (min-width: 48rem) {
+    padding-top: 3rem;
+  }
+  padding-top: 1.5rem;
+  position: sticky;
+}
+
 .container {
   container-type: inline-size;
   max-width: 40rem;
-  margin: auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: var(--ds-size-4);
-  padding: var(--ds-size-3);
+
   @media (min-width: 48rem) {
     padding: var(--ds-size-6);
   }
@@ -41,12 +58,37 @@
   }
 }
 
+.dialog {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+}
+
 .dialogActions {
   display: flex;
-  justify-content: flex-end;
   gap: var(--ds-size-2);
 }
 
 .pagination {
   align-self: center;
+}
+
+.navigateButtons {
+  display: flex;
+  gap: var(--ds-size-2);
+}
+
+.desktop {
+  display: none;
+  @media (min-width: 48rem) {
+    display: block;
+    padding-top: 5rem;
+  }
+}
+
+.mobile {
+  display: block;
+  @media (min-width: 48rem) {
+    display: none;
+  }
 }

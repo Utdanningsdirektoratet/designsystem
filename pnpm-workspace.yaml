@@ -18,6 +18,7 @@ catalog:
   '@eslint/js': ^9.39.1
   '@figma/rest-api-spec': ^0.34.0
   '@navikt/aksel-icons': ^7.34.0
+  '@hookform/resolvers': 5.2.2
   '@next/eslint-plugin-next': ^14.2.33
   '@nx/azure-cache': ^5.0.0
   '@nx/eslint': 22.1.1
@@ -123,6 +124,7 @@ catalog:
   vite-tsconfig-paths: ^5.1.4
   vitest: ^4.0.15
   yargs: ^18.0.0
+  zod: ^4.1.12
 
 catalogMode: strict
 

@@ -3,6 +3,10 @@
  */
 
 export {
+  type UseFormNavigationProps,
+  useFormNavigation,
+} from './useFormNavigation/useFormNavigation';
+export {
   useTableOfContents,
   type useTableOfContentsProps,
 } from './useTableOfContents/useTableOfContents';

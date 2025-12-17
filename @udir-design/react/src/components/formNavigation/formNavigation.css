@@ -1,0 +1,297 @@
+.uds-form-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+
+  .uds-form-navigation__step {
+    all: unset;
+    width: fit-content;
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: var(--ds-size-2);
+    position: relative;
+
+    &:hover {
+      color: var(--ds-color-text-subtle);
+    }
+
+    & :where(img, svg) {
+      flex-shrink: 0;
+      font-size: 1.3em;
+    }
+
+    > div {
+      > svg {
+        display: none;
+      }
+    }
+
+    /**
+      * State styles
+      */
+    /* Idle */
+    &[data-state='idle'] {
+      &[data-variant='default'] svg[data-icon='idle'],
+      &[data-variant='info'] svg[data-icon='info'],
+      &[data-variant='summary'] svg[data-icon='summary'],
+      &[data-variant='submission'] svg[data-icon='submission'],
+      &[data-variant='confirmation'] svg[data-icon='confirmation'] {
+        display: block;
+      }
+      &:hover {
+        &[data-variant='default'] svg[data-icon='active'],
+        &[data-variant='info'] svg[data-icon='info-active'],
+        &[data-variant='summary'] svg[data-icon='summary-active'],
+        &[data-variant='submission'] svg[data-icon='submission-active'],
+        &[data-variant='confirmation'] svg[data-icon='confirmation-active'] {
+          display: block;
+        }
+        svg {
+          &[data-icon='idle'],
+          &[data-icon='info'],
+          &[data-icon='summary'],
+          &[data-icon='submission'],
+          &[data-icon='confirmation'] {
+            display: none;
+          }
+        }
+      }
+    }
+
+    /* Active */
+    &[data-state='active'] {
+      font-weight: var(--ds-font-weight-medium);
+      &[data-variant='default'] svg[data-icon='active'],
+      &[data-variant='info'] svg[data-icon='info-active'],
+      &[data-variant='summary'] svg[data-icon='summary-active'],
+      &[data-variant='submission'] svg[data-icon='submission-active'],
+      &[data-variant='confirmation'] svg[data-icon='confirmation-active'] {
+        display: block;
+      }
+    }
+
+    /* Completed and invalid */
+    &[data-state='completed'],
+    &[data-state='invalid'] {
+      &:hover svg[data-icon='active'] {
+        display: block;
+      }
+    }
+    &[data-state='completed'] svg[data-icon='completed'] {
+      display: block;
+      color: var(--ds-color-success-text-subtle);
+    }
+    &[data-state='invalid'] svg[data-icon='invalid'] {
+      display: block;
+      color: var(--ds-color-danger-text-subtle);
+    }
+
+    /* Hide the normal icon on hover */
+    &[data-state='completed']:hover svg[data-icon='completed'],
+    &[data-state='invalid']:hover svg[data-icon='invalid'] {
+      display: none;
+    }
+
+    @composes ds-focus from '@digdir/designsystemet-css/base.css';
+  }
+
+  .uds-form-navigation__group {
+    --uds-form-navigation-connector: var(--ds-size-3);
+    @media (prefers-reduced-motion: no-preference) {
+      interpolate-size: allow-keywords;
+    }
+
+    width: fit-content;
+
+    /* Details content - container for the steps inside the group */
+    &::part(details-content) {
+      block-size: 0;
+      overflow-y: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: var(--uds-form-navigation-connector);
+      transition:
+        content-visibility 400ms allow-discrete,
+        height 400ms;
+    }
+
+    &[open]::part(details-content) {
+      height: auto;
+    }
+
+    /* Make sure focusstyles for steps inside details-content dont get clipped */
+    &[open]:has(:focus-visible:not(u-summary, u-summary *))::part(
+        details-content
+      ) {
+      overflow: visible;
+    }
+
+    /* Summary - title button of the group */
+    & u-summary {
+      all: unset;
+      width: fit-content;
+      cursor: pointer;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: var(--ds-size-2);
+      position: relative;
+      &:hover {
+        color: var(--ds-color-text-subtle);
+      }
+      & :where(img, svg) {
+        flex-shrink: 0;
+        font-size: 1.3em;
+      }
+      @composes ds-focus from '@digdir/designsystemet-css/base.css';
+    }
+
+    svg:not([data-icon='group-idle']) {
+      display: none;
+    }
+
+    /* Chevron toggle */
+    &[open] svg {
+      &[data-icon='chevron-down'] {
+        display: none;
+      }
+      &[data-icon='chevron-up'] {
+        display: block;
+      }
+    }
+    &:not([open]) svg {
+      &[data-icon='chevron-down'] {
+        display: block;
+      }
+      &[data-icon='chevron-up'] {
+        display: none;
+      }
+    }
+
+    > u-summary::before {
+      display: none;
+    }
+
+    /**
+      * State styles
+      */
+    /* idle with active step */
+    &[data-state='idle']:has(
+        > .uds-form-navigation__step[data-state='active']
+      ):not([open])
+      svg {
+      &[data-icon='group-active'] {
+        display: block;
+      }
+      &[data-icon='group-idle'] {
+        display: none;
+      }
+    }
+
+    /* invalid */
+    &[data-state='invalid'] {
+      > u-summary {
+        color: var(--ds-color-danger-text-subtle);
+        &:hover {
+          color: var(--ds-color-danger-text-default);
+        }
+      }
+      &:not([open]) svg {
+        &[data-icon='group-invalid'] {
+          display: block;
+        }
+        &[data-icon='group-idle'] {
+          display: none;
+        }
+      }
+      /* Override when active step inside group */
+      &:has(> .uds-form-navigation__step[data-state='active']):not([open]) svg {
+        &[data-icon='group-invalid-active'] {
+          display: block;
+        }
+        &[data-icon='group-invalid'] {
+          display: none;
+        }
+      }
+    }
+
+    /* completed */
+    &[data-state='completed'] {
+      > u-summary {
+        color: var(--ds-color-success-text-subtle);
+        &:hover {
+          color: var(--ds-color-success-text-default);
+        }
+      }
+      &:not([open]) svg {
+        &[data-icon='group-completed'] {
+          display: block;
+        }
+        &[data-icon='group-idle'] {
+          display: none;
+        }
+      }
+      /* Override when active step inside group */
+      &:has(> .uds-form-navigation__step[data-state='active']):not([open]) svg {
+        &[data-icon='group-completed-active'] {
+          display: block;
+        }
+        &[data-icon='group-completed'] {
+          display: none;
+        }
+      }
+    }
+
+    /* Active step label */
+    &:has(> .uds-form-navigation__step[data-state='active']) {
+      &::after {
+        content: attr(data-active-step-label);
+        display: block;
+        color: var(--ds-color-text-subtle);
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 300ms ease;
+      }
+
+      &:not([open]) {
+        span {
+          font-weight: var(--ds-font-weight-medium);
+        }
+
+        &::after {
+          margin-top: var(--ds-size-1);
+          margin-left: calc(1.3em + var(--ds-size-2));
+          opacity: 1;
+          max-height: 3rem;
+          transition-delay: 300ms;
+        }
+      }
+    }
+
+    /* Connector - line between steps */
+    > .uds-form-navigation__step {
+      > div {
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: calc(
+            100% + (var(--uds-form-navigation-connector) / 2) - var(--ds-size-1)
+          );
+          left: 50%;
+          transform: translateX(-50%);
+          width: 1px;
+          height: var(--uds-form-navigation-connector);
+          background-color: var(--ds-color-border-default);
+        }
+      }
+
+      &:first-of-type {
+        margin-top: var(--uds-form-navigation-connector);
+      }
+    }
+  }
+}

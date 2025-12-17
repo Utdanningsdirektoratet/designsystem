@@ -11,6 +11,9 @@ const meta = preview.meta({
     componentOrigin: {
       originator: 'self',
     },
+    customStyles: {
+      margin: '0 1rem',
+    },
     a11y: {
       config: {
         rules: [
@@ -41,7 +44,7 @@ export const FormPage2 = meta.story({
   ...FormStory.input,
   args: {
     'data-color-scheme': 'light',
-    page: 2,
+    page: 'ranking',
   },
 });
 
@@ -49,6 +52,14 @@ export const FormPage3 = meta.story({
   ...FormStory.input,
   args: {
     'data-color-scheme': 'light',
-    page: 3,
+    page: 'finish',
+  },
+});
+
+export const FormPage4 = meta.story({
+  ...FormStory.input,
+  args: {
+    'data-color-scheme': 'light',
+    page: 'deliver',
   },
 });

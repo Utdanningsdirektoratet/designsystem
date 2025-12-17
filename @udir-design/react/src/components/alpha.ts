@@ -5,6 +5,7 @@
 export * from './fileUpload';
 export * from './footer';
 export * from './header';
+export * from './formNavigation';
 export * from './typography/prose/Prose';
 export * from './suggestion/Suggestion';
 export * from './switch/Switch';
