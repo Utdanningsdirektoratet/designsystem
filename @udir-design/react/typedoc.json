@@ -1,0 +1,16 @@
+{
+  "cleanOutputDir": true,
+  "displayBasePath": "./src",
+  "entryPoints": [
+    "./src/utilities/hooks/alpha.ts",
+    "./src/utilities/hooks/beta.ts",
+    "./src/utilities/form/alpha.ts"
+  ],
+  "out": "storybook-static/typedoc",
+  "visibilityFilters": {
+    "protected": false,
+    "private": false,
+    "inherited": true,
+    "external": true
+  }
+}

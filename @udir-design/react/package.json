@@ -26,6 +26,10 @@
       "import": "./dist/beta.js",
       "require": "./dist/beta.cjs"
     },
+    "./utilities/form/alpha": {
+      "import": "./dist/utilities/form/alpha.js",
+      "require": "./dist/utilities/form/alpha.cjs"
+    },
     "./html": {
       "types": "./dist/html.d.ts"
     },
@@ -43,19 +47,23 @@
     "typecheck": "tsgo --build",
     "dev": "storybook dev --port 6005",
     "build:storybook": "storybook build --stats-json",
-    "serve:storybook": "pnpm dlx http-server ./storybook-static",
+    "build:docs": "typedoc",
+    "watch:typedoc": "typedoc --watch --tsconfig tsconfig.lib.json",
+    "serve:typedoc": "pnpm dlx http-server --port=8090 -c-1 ./storybook-static/typedoc",
+    "serve:docs": "pnpm dlx http-server ./storybook-static",
     "test:storybook": "pnpm exec playwright install --with-deps chromium && vitest --project storybook --outputFile.json test-reports/storybook.json --outputFile.html test-reports/storybook/index.html",
     "view-test-report:storybook": "pnpm dlx http-server ./test-reports/storybook"
   },
   "dependencies": {
     "@digdir/designsystemet-react": "catalog:",
     "@digdir/designsystemet-types": "catalog:",
+    "@u-elements/u-details": "catalog:",
     "@udir-design/css": "workspace:*",
     "@udir-design/icons": "workspace:*",
-    "tslib": "catalog:",
-    "@u-elements/u-details": "catalog:"
+    "tslib": "catalog:"
   },
   "devDependencies": {
+    "@hookform/resolvers": "catalog:",
     "@storybook/addon-a11y": "catalog:",
     "@storybook/addon-docs": "catalog:",
     "@storybook/addon-vitest": "catalog:",
@@ -102,13 +110,15 @@
     "storybook": "catalog:",
     "storybook-addon-pseudo-states": "catalog:",
     "type-fest": "catalog:",
+    "typedoc": "catalog:",
     "unified": "catalog:",
     "unist-util-remove": "catalog:",
     "unist-util-visit": "catalog:",
     "vite": "catalog:",
     "vite-plugin-dts": "catalog:",
     "vite-tsconfig-paths": "catalog:",
-    "vitest": "catalog:"
+    "vitest": "catalog:",
+    "zod": "catalog:"
   },
   "peerDependencies": {
     "@types/react": "^18.3.7 || ^19.0.0",

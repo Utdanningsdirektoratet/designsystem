@@ -1,0 +1,372 @@
+.uds-form-navigation {
+  --uds-form-navigation-active-text-stroke: 0.025em;
+  --uds-form-navigation-completed-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.75 12C3.75 7.44365 7.44365 3.75 12 3.75C16.5563 3.75 20.25 7.44365 20.25 12C20.25 16.5563 16.5563 20.25 12 20.25C7.44365 20.25 3.75 16.5563 3.75 12ZM12 2.25C6.61522 2.25 2.25 6.61522 2.25 12C2.25 17.3848 6.61522 21.75 12 21.75C17.3848 21.75 21.75 17.3848 21.75 12C21.75 6.61522 17.3848 2.25 12 2.25ZM16.5725 9.48444C16.8401 9.16824 16.8007 8.695 16.4845 8.42745C16.1683 8.15989 15.695 8.19932 15.4275 8.51553L10.454 14.3933L8.03033 11.9697C7.73744 11.6768 7.26256 11.6768 6.96967 11.9697C6.67678 12.2625 6.67678 12.7374 6.96967 13.0303L9.96967 16.0303C10.118 16.1786 10.3216 16.2581 10.5312 16.2493C10.7407 16.2406 10.9371 16.1446 11.0725 15.9844L16.5725 9.48444Z' fill='%23202733'/%3E%3C/svg%3E%0A");
+  --uds-form-navigation-completed-active-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 21.75C17.3848 21.75 21.75 17.3848 21.75 12C21.75 6.61522 17.3848 2.25 12 2.25C6.61522 2.25 2.25 6.61522 2.25 12C2.25 17.3848 6.61522 21.75 12 21.75ZM16.9536 9.27485C17.2434 8.93229 17.2007 8.41962 16.8582 8.12977C16.5156 7.83991 16.0029 7.88263 15.7131 8.22519L10.3251 14.5928L7.69952 11.9672C7.38222 11.6499 6.86778 11.6499 6.55048 11.9672C6.23317 12.2845 6.23317 12.7989 6.55048 13.1162L9.80048 16.3662C9.96114 16.5269 10.1817 16.6129 10.4088 16.6035C10.6358 16.594 10.8485 16.49 10.9953 16.3165L16.9536 9.27485Z' fill='%23202733'/%3E%3C/svg%3E%0A");
+  --uds-form-navigation-invalid-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.27208 2.25C8.07317 2.25 7.8824 2.32902 7.74175 2.46967L2.46967 7.74175C2.32902 7.8824 2.25 8.07317 2.25 8.27208V15.7279C2.25 15.9268 2.32902 16.1176 2.46967 16.2583L7.74175 21.5303C7.8824 21.671 8.07316 21.75 8.27208 21.75H15.7279C15.9268 21.75 16.1176 21.671 16.2583 21.5303L21.5303 16.2583C21.671 16.1176 21.75 15.9268 21.75 15.7279V8.27208C21.75 8.07317 21.671 7.8824 21.5303 7.74175L16.2583 2.46967C16.1176 2.32902 15.9268 2.25 15.7279 2.25H8.27208ZM3.75 8.58274L8.58274 3.75H15.4173L20.25 8.58274V15.4173L15.4173 20.25H8.58274L3.75 15.4173V8.58274ZM9.03033 7.96967C8.73744 7.67678 8.26256 7.67678 7.96967 7.96967C7.67678 8.26256 7.67678 8.73744 7.96967 9.03033L10.9393 12L7.96967 14.9697C7.67678 15.2626 7.67678 15.7374 7.96967 16.0303C8.26256 16.3232 8.73744 16.3232 9.03033 16.0303L12 13.0607L14.9697 16.0303C15.2626 16.3232 15.7374 16.3232 16.0303 16.0303C16.3232 15.7374 16.3232 15.2626 16.0303 14.9697L13.0607 12L16.0303 9.03033C16.3232 8.73744 16.3232 8.26256 16.0303 7.96967C15.7374 7.67678 15.2626 7.67678 14.9697 7.96967L12 10.9393L9.03033 7.96967Z' fill='%23202733'/%3E%3C/svg%3E%0A");
+  --uds-form-navigation-invalid-active-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.74175 2.46967C7.8824 2.32902 8.07317 2.25 8.27208 2.25L15.7279 2.25C15.9268 2.25 16.1176 2.32902 16.2583 2.46967L21.5303 7.74175C21.671 7.8824 21.75 8.07317 21.75 8.27208V15.7279C21.75 15.9268 21.671 16.1176 21.5303 16.2583L16.2583 21.5303C16.1176 21.671 15.9268 21.75 15.7279 21.75H8.27208C8.07316 21.75 7.8824 21.671 7.74175 21.5303L2.46967 16.2583C2.32902 16.1176 2.25 15.9268 2.25 15.7279L2.25 8.27208C2.25 8.07317 2.32902 7.8824 2.46967 7.74175L7.74175 2.46967ZM9.03033 7.96967C8.73744 7.67678 8.26256 7.67678 7.96967 7.96967C7.67678 8.26256 7.67678 8.73744 7.96967 9.03033L10.9393 12L7.96967 14.9697C7.67678 15.2626 7.67678 15.7374 7.96967 16.0303C8.26256 16.3232 8.73744 16.3232 9.03033 16.0303L12 13.0607L14.9697 16.0303C15.2626 16.3232 15.7374 16.3232 16.0303 16.0303C16.3232 15.7374 16.3232 15.2626 16.0303 14.9697L13.0607 12L16.0303 9.03033C16.3232 8.73744 16.3232 8.26256 16.0303 7.96967C15.7374 7.67678 15.2626 7.67678 14.9697 7.96967L12 10.9393L9.03033 7.96967Z' fill='%23202733'/%3E%3C/svg%3E%0A");
+  --uds-form-navigation-icon-size: 1.3em;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+
+  .uds-form-navigation__step {
+    --uds-form-navigation__step-idle-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 3.75C7.44365 3.75 3.75 7.44365 3.75 12C3.75 16.5563 7.44365 20.25 12 20.25C16.5563 20.25 20.25 16.5563 20.25 12C20.25 7.44365 16.5563 3.75 12 3.75ZM2.25 12C2.25 6.61522 6.61522 2.25 12 2.25C17.3848 2.25 21.75 6.61522 21.75 12C21.75 17.3848 17.3848 21.75 12 21.75C6.61522 21.75 2.25 17.3848 2.25 12Z' fill='%23202733'/%3E%3C/svg%3E%0A");
+    --uds-form-navigation__step-active-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.5 12C1.5 6.20101 6.20101 1.5 12 1.5C17.799 1.5 22.5 6.20101 22.5 12C22.5 17.799 17.799 22.5 12 22.5C6.20101 22.5 1.5 17.799 1.5 12Z' fill='%23202733'/%3E%3C/svg%3E");
+    --uds-form-navigation__step-info-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4 3.25C3.58579 3.25 3.25 3.58579 3.25 4V20C3.25 20.4142 3.58579 20.75 4 20.75H20C20.4142 20.75 20.75 20.4142 20.75 20V4C20.75 3.58579 20.4142 3.25 20 3.25H4ZM4.75 19.25V4.75H19.25V19.25H4.75ZM11 7.75C11 7.19772 11.4477 6.75 12 6.75C12.5523 6.75 13 7.19772 13 7.75C13 8.30228 12.5523 8.75 12 8.75C11.4477 8.75 11 8.30228 11 7.75ZM10.5 10C10.0858 10 9.75 10.3358 9.75 10.75C9.75 11.1642 10.0858 11.5 10.5 11.5H11.25V15.5H10.5C10.0858 15.5 9.75 15.8358 9.75 16.25C9.75 16.6642 10.0858 17 10.5 17H12H13.5C13.9142 17 14.25 16.6642 14.25 16.25C14.25 15.8358 13.9142 15.5 13.5 15.5H12.75V10.75C12.75 10.3358 12.4142 10 12 10H10.5Z' fill='%23202733'/%3E%3C/svg%3E%0A");
+    --uds-form-navigation__step-info-active-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.25 4C3.25 3.58579 3.58579 3.25 4 3.25H20C20.4142 3.25 20.75 3.58579 20.75 4V20C20.75 20.4142 20.4142 20.75 20 20.75H4C3.58579 20.75 3.25 20.4142 3.25 20V4ZM11 7.75C11 7.19772 11.4477 6.75 12 6.75C12.5523 6.75 13 7.19772 13 7.75C13 8.30228 12.5523 8.75 12 8.75C11.4477 8.75 11 8.30228 11 7.75ZM9.75 10.75C9.75 10.3358 10.0858 10 10.5 10H12C12.4142 10 12.75 10.3358 12.75 10.75V15.5H13.5C13.9142 15.5 14.25 15.8358 14.25 16.25C14.25 16.6642 13.9142 17 13.5 17H12H10.5C10.0858 17 9.75 16.6642 9.75 16.25C9.75 15.8358 10.0858 15.5 10.5 15.5H11.25V11.5H10.5C10.0858 11.5 9.75 11.1642 9.75 10.75Z' fill='%23202733'/%3E%3C/svg%3E%0A");
+    --uds-form-navigation__step-summary-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.25 3C8.25 2.58579 8.58579 2.25 9 2.25H15C15.4142 2.25 15.75 2.58579 15.75 3V4.25H18C18.4142 4.25 18.75 4.58579 18.75 5V21C18.75 21.4142 18.4142 21.75 18 21.75H6C5.58579 21.75 5.25 21.4142 5.25 21V5C5.25 4.58579 5.58579 4.25 6 4.25H8.25V3ZM15.75 6C15.75 6.41421 15.4142 6.75 15 6.75H9C8.58579 6.75 8.25 6.41421 8.25 6V5.75H6.75V20.25H17.25V5.75H15.75V6ZM14.25 5.25H9.75V3.75H14.25V5.25ZM9 9.25C8.58579 9.25 8.25 9.58579 8.25 10C8.25 10.4142 8.58579 10.75 9 10.75H15C15.4142 10.75 15.75 10.4142 15.75 10C15.75 9.58579 15.4142 9.25 15 9.25H9ZM9 12.25C8.58579 12.25 8.25 12.5858 8.25 13C8.25 13.4142 8.58579 13.75 9 13.75H15C15.4142 13.75 15.75 13.4142 15.75 13C15.75 12.5858 15.4142 12.25 15 12.25H9ZM8.25 16C8.25 15.5858 8.58579 15.25 9 15.25H13C13.4142 15.25 13.75 15.5858 13.75 16C13.75 16.4142 13.4142 16.75 13 16.75H9C8.58579 16.75 8.25 16.4142 8.25 16Z' fill='%23202733'/%3E%3C/svg%3E%0A");
+    --uds-form-navigation__step-summary-active-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.5 2.25C9.08579 2.25 8.75 2.58579 8.75 3V5.5C8.75 5.91421 9.08579 6.25 9.5 6.25H14.5C14.9142 6.25 15.25 5.91421 15.25 5.5V3C15.25 2.58579 14.9142 2.25 14.5 2.25H9.5ZM7.5 4.25H6C5.58579 4.25 5.25 4.58579 5.25 5V21C5.25 21.4142 5.58579 21.75 6 21.75H18C18.4142 21.75 18.75 21.4142 18.75 21V5C18.75 4.58579 18.4142 4.25 18 4.25H16.5C16.3619 4.25 16.25 4.36193 16.25 4.5V6.5C16.25 6.91421 15.9142 7.25 15.5 7.25H8.5C8.08579 7.25 7.75 6.91421 7.75 6.5V4.5C7.75 4.36193 7.63807 4.25 7.5 4.25ZM8.25 11C8.25 10.5858 8.58579 10.25 9 10.25H15C15.4142 10.25 15.75 10.5858 15.75 11C15.75 11.4142 15.4142 11.75 15 11.75H9C8.58579 11.75 8.25 11.4142 8.25 11ZM9 13.25C8.58579 13.25 8.25 13.5858 8.25 14C8.25 14.4142 8.58579 14.75 9 14.75H15C15.4142 14.75 15.75 14.4142 15.75 14C15.75 13.5858 15.4142 13.25 15 13.25H9ZM8.25 17C8.25 16.5858 8.58579 16.25 9 16.25H13C13.4142 16.25 13.75 16.5858 13.75 17C13.75 17.4142 13.4142 17.75 13 17.75H9C8.58579 17.75 8.25 17.4142 8.25 17Z' fill='%23202733'/%3E%3C/svg%3E%0A");
+    --uds-form-navigation__step-submission-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.31716 4.32036C6.04299 4.19241 5.71878 4.24174 5.49506 4.44544C5.27134 4.64914 5.19193 4.96732 5.29369 5.25225L7.7036 12L5.29369 18.7477C5.19193 19.0327 5.27134 19.3509 5.49506 19.5546C5.71878 19.7583 6.04299 19.8076 6.31716 19.6796L21.3172 12.6796C21.5812 12.5564 21.75 12.2914 21.75 12C21.75 11.7086 21.5812 11.4436 21.3172 11.3204L6.31716 4.32036ZM9.02854 11.25L7.31038 6.43916L19.2265 12L7.31038 17.5608L9.02854 12.75H12.5C12.9142 12.75 13.25 12.4142 13.25 12C13.25 11.5858 12.9142 11.25 12.5 11.25H9.02854Z' fill='%23202733'/%3E%3C/svg%3E%0A");
+    --uds-form-navigation__step-submission-active-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.31719 4.32038C6.04302 4.19243 5.71881 4.24175 5.49509 4.44545C5.27137 4.64915 5.19196 4.96733 5.29372 5.25227L7.31726 10.9182C7.38833 11.1172 7.57682 11.25 7.78813 11.25H13C13.4142 11.25 13.75 11.5858 13.75 12C13.75 12.4142 13.4142 12.75 13 12.75H7.78814C7.57683 12.75 7.38834 12.8828 7.31727 13.0818L5.29372 18.7478C5.19196 19.0327 5.27137 19.3509 5.49509 19.5546C5.71881 19.7583 6.04302 19.8076 6.31719 19.6797L21.3172 12.6797C21.5812 12.5564 21.75 12.2914 21.75 12C21.75 11.7086 21.5812 11.4436 21.3172 11.3204L6.31719 4.32038Z' fill='%23202733'/%3E%3C/svg%3E%0A");
+    --uds-form-navigation__step-confirmation-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.0091 3.05126C12.9222 1.88827 11.0778 1.88827 9.99089 3.05126L9.20244 3.89486C8.95602 4.15852 8.60767 4.30281 8.24698 4.29063L7.09295 4.25162C5.502 4.19786 4.19787 5.50199 4.25164 7.09294L4.29064 8.24697C4.30283 8.60766 4.15853 8.95601 3.89487 9.20243L3.05127 9.99087C1.88828 11.0778 1.88828 12.9221 3.05127 14.0091L3.89487 14.7975C4.15853 15.044 4.30283 15.3923 4.29064 15.753L4.25164 16.907C4.19787 18.498 5.502 19.8021 7.09295 19.7483L8.24698 19.7093C8.60767 19.6972 8.95602 19.8414 9.20244 20.1051L9.99089 20.9487C11.0778 22.1117 12.9222 22.1117 14.0091 20.9487L14.7976 20.1051C15.044 19.8414 15.3923 19.6972 15.753 19.7093L16.907 19.7483C18.498 19.8021 19.8021 18.498 19.7484 16.907L19.7094 15.753C19.6972 15.3923 19.8415 15.044 20.1051 14.7975L20.9487 14.0091C22.1117 12.9221 22.1117 11.0778 20.9487 9.99087L20.1051 9.20243C19.8415 8.95601 19.6972 8.60766 19.7094 8.24697L19.7484 7.09294C19.8021 5.50199 18.498 4.19786 16.907 4.25162L15.753 4.29063C15.3923 4.30281 15.044 4.15852 14.7976 3.89486L14.0091 3.05126ZM11.0868 4.07549C11.5808 3.54686 12.4192 3.54686 12.9132 4.07549L13.7017 4.91909C14.2438 5.49914 15.0102 5.81659 15.8037 5.78977L16.9577 5.75077C17.6809 5.72633 18.2737 6.31912 18.2492 7.04228L18.2102 8.19631C18.1834 8.98981 18.5008 9.75618 19.0809 10.2983L19.9245 11.0868C20.4531 11.5808 20.4531 12.4192 19.9245 12.9132L19.0809 13.7017C18.5008 14.2438 18.1834 15.0102 18.2102 15.8037L18.2492 16.9577C18.2737 17.6809 17.6809 18.2736 16.9577 18.2492L15.8037 18.2102C15.0102 18.1834 14.2438 18.5008 13.7017 19.0809L12.9132 19.9245C12.4192 20.4531 11.5808 20.4531 11.0868 19.9245L10.2983 19.0809C9.75619 18.5008 8.98982 18.1834 8.19632 18.2102L7.04229 18.2492C6.31913 18.2736 5.72634 17.6809 5.75078 16.9577L5.78978 15.8037C5.8166 15.0102 5.49916 14.2438 4.91911 13.7017L4.0755 12.9132C3.54687 12.4192 3.54687 11.5808 4.0755 11.0868L4.91911 10.2983C5.49916 9.75618 5.8166 8.98981 5.78978 8.19631L5.75078 7.04228C5.72634 6.31912 6.31913 5.72633 7.04229 5.75077L8.19632 5.78977C8.98982 5.81659 9.75619 5.49915 10.2983 4.91909L11.0868 4.07549ZM15.7803 10.2803C16.0732 9.98744 16.0732 9.51256 15.7803 9.21967C15.4874 8.92678 15.0126 8.92678 14.7197 9.21967L11 12.9393L9.28033 11.2197C8.98743 10.9268 8.51256 10.9268 8.21967 11.2197C7.92677 11.5126 7.92677 11.9874 8.21967 12.2803L10.4697 14.5303C10.7626 14.8232 11.2374 14.8232 11.5303 14.5303L15.7803 10.2803Z' fill='%23202733'/%3E%3C/svg%3E%0A");
+    --uds-form-navigation__step-confirmation-active-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.0088 3.0512C12.9218 1.88821 11.0775 1.88821 9.99057 3.0512L9.20212 3.8948C8.9557 4.15846 8.60735 4.30275 8.24667 4.29056L7.09263 4.25156C5.50168 4.1978 4.19755 5.50193 4.25132 7.09288L4.29032 8.24691C4.30251 8.60759 4.15822 8.95594 3.89456 9.20237L3.05096 9.99081C1.88796 11.0778 1.88796 12.9221 3.05096 14.009L3.89456 14.7975C4.15822 15.0439 4.30251 15.3923 4.29032 15.7529L4.25132 16.907C4.19755 18.4979 5.50168 19.8021 7.09263 19.7483L8.24667 19.7093C8.60735 19.6971 8.9557 19.8414 9.20212 20.105L9.99057 20.9487C11.0775 22.1116 12.9218 22.1116 14.0088 20.9487L14.7972 20.105C15.0437 19.8414 15.392 19.6971 15.7527 19.7093L16.9067 19.7483C18.4977 19.8021 19.8018 18.4979 19.748 16.907L19.709 15.7529C19.6969 15.3923 19.8411 15.0439 20.1048 14.7975L20.9484 14.009C22.1114 12.9221 22.1114 11.0778 20.9484 9.99081L20.1048 9.20237C19.8411 8.95594 19.6969 8.60759 19.709 8.24691L19.748 7.09288C19.8018 5.50192 18.4977 4.1978 16.9067 4.25156L15.7527 4.29056C15.392 4.30275 15.0437 4.15846 14.7972 3.8948L14.0088 3.0512ZM15.7803 10.2803C16.0732 9.98744 16.0732 9.51256 15.7803 9.21967C15.4874 8.92678 15.0126 8.92678 14.7197 9.21967L11 12.9393L9.28033 11.2197C8.98744 10.9268 8.51256 10.9268 8.21967 11.2197C7.92678 11.5126 7.92678 11.9874 8.21967 12.2803L10.4697 14.5303C10.7626 14.8232 11.2374 14.8232 11.5303 14.5303L15.7803 10.2803Z' fill='%23202733'/%3E%3C/svg%3E%0A");
+
+    all: unset;
+    width: fit-content;
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: var(--ds-size-2);
+    position: relative;
+
+    > div::after {
+      content: '';
+      display: block;
+      width: var(--uds-form-navigation-icon-size);
+      height: var(--uds-form-navigation-icon-size);
+      background: currentColor;
+      mask-image: var(--uds-form-navigation__step-icon-url);
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+    }
+
+    &:hover {
+      color: var(--ds-color-text-subtle);
+    }
+
+    /* IDLE */
+    &[data-state='idle'] {
+      &[data-variant='default'] {
+        --uds-form-navigation__step-icon-url: var(
+          --uds-form-navigation__step-idle-icon-url
+        );
+        &:hover {
+          --uds-form-navigation__step-icon-url: var(
+            --uds-form-navigation__step-active-icon-url
+          );
+        }
+      }
+      &[data-variant='info'] {
+        --uds-form-navigation__step-icon-url: var(
+          --uds-form-navigation__step-info-icon-url
+        );
+        &:hover {
+          --uds-form-navigation__step-icon-url: var(
+            --uds-form-navigation__step-info-active-icon-url
+          );
+        }
+      }
+      &[data-variant='summary'] {
+        --uds-form-navigation__step-icon-url: var(
+          --uds-form-navigation__step-summary-icon-url
+        );
+        &:hover {
+          --uds-form-navigation__step-icon-url: var(
+            --uds-form-navigation__step-summary-active-icon-url
+          );
+        }
+      }
+      &[data-variant='submission'] {
+        --uds-form-navigation__step-icon-url: var(
+          --uds-form-navigation__step-submission-icon-url
+        );
+        &:hover {
+          --uds-form-navigation__step-icon-url: var(
+            --uds-form-navigation__step-submission-active-icon-url
+          );
+        }
+      }
+      &[data-variant='confirmation'] {
+        --uds-form-navigation__step-icon-url: var(
+          --uds-form-navigation__step-confirmation-icon-url
+        );
+
+        &:hover {
+          --uds-form-navigation__step-icon-url: var(
+            --uds-form-navigation__step-confirmation-active-icon-url
+          );
+        }
+      }
+    }
+
+    /* ACTIVE */
+    &[data-state='active'] {
+      /*
+       Using -webkit-text-stroke to simulate `font-weight: var(--ds-font-weight-medium);`
+       in order to prevent layout shift when closing and opening the step group
+       */
+      -webkit-text-stroke: var(--uds-form-navigation-active-text-stroke);
+
+      &[data-variant='default'] {
+        --uds-form-navigation__step-icon-url: var(
+          --uds-form-navigation__step-active-icon-url
+        );
+      }
+      &[data-variant='info'] {
+        --uds-form-navigation__step-icon-url: var(
+          --uds-form-navigation__step-info-active-icon-url
+        );
+      }
+      &[data-variant='summary'] {
+        --uds-form-navigation__step-icon-url: var(
+          --uds-form-navigation__step-summary-active-icon-url
+        );
+      }
+      &[data-variant='submission'] {
+        --uds-form-navigation__step-icon-url: var(
+          --uds-form-navigation__step-submission-active-icon-url
+        );
+      }
+      &[data-variant='confirmation'] {
+        --uds-form-navigation__step-icon-url: var(
+          --uds-form-navigation__step-confirmation-active-icon-url
+        );
+      }
+    }
+
+    /* COMPLETED */
+    &[data-state='completed'] {
+      color: var(--ds-color-success-text-subtle);
+      --uds-form-navigation__step-icon-url: var(
+        --uds-form-navigation-completed-icon-url
+      );
+      &:hover {
+        color: var(--ds-color-success-text-default);
+        --uds-form-navigation__step-icon-url: var(
+          --uds-form-navigation-completed-active-icon-url
+        );
+      }
+    }
+
+    /* INVALID */
+    &[data-state='invalid'] {
+      color: var(--ds-color-danger-text-subtle);
+      --uds-form-navigation__step-icon-url: var(
+        --uds-form-navigation-invalid-icon-url
+      );
+      &:hover {
+        color: var(--ds-color-danger-text-default);
+        --uds-form-navigation__step-icon-url: var(
+          --uds-form-navigation-invalid-active-icon-url
+        );
+      }
+    }
+
+    @composes ds-focus from '@digdir/designsystemet-css/base.css';
+  }
+
+  .uds-form-navigation__group {
+    --uds-form-navigation__group-icon-url: var(
+      --uds-form-navigation__group-idle-icon-url
+    );
+    --uds-form-navigation__group-idle-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.75 20.25V3.75H18.25V20.25H5.75ZM5.5 2.25C4.80964 2.25 4.25 2.80964 4.25 3.5V20.5C4.25 21.1904 4.80964 21.75 5.5 21.75H18.5C19.1904 21.75 19.75 21.1904 19.75 20.5V3.5C19.75 2.80964 19.1904 2.25 18.5 2.25H5.5ZM10.95 6.15004C11.2814 6.39857 11.3485 6.86867 11.1 7.20004L9.6 9.20004C9.46955 9.37398 9.27004 9.48274 9.05317 9.49816C8.8363 9.51357 8.62341 9.43411 8.46967 9.28037L7.46967 8.28037C7.17678 7.98748 7.17678 7.51261 7.46967 7.21971C7.76256 6.92682 8.23744 6.92682 8.53033 7.21971L8.91885 7.60824L9.9 6.30004C10.1485 5.96867 10.6186 5.90152 10.95 6.15004ZM13 7.25C12.5858 7.25 12.25 7.58579 12.25 8C12.25 8.41421 12.5858 8.75 13 8.75H15.5C15.9142 8.75 16.25 8.41421 16.25 8C16.25 7.58579 15.9142 7.25 15.5 7.25H13ZM9 11.25C8.58579 11.25 8.25 11.5858 8.25 12C8.25 12.4142 8.58579 12.75 9 12.75H9.01C9.42421 12.75 9.76 12.4142 9.76 12C9.76 11.5858 9.42421 11.25 9.01 11.25H9ZM11.25 12C11.25 11.5858 11.5858 11.25 12 11.25H15.5C15.9142 11.25 16.25 11.5858 16.25 12C16.25 12.4142 15.9142 12.75 15.5 12.75H12C11.5858 12.75 11.25 12.4142 11.25 12ZM11.25 16C11.25 15.5858 11.5858 15.25 12 15.25H15.5C15.9142 15.25 16.25 15.5858 16.25 16C16.25 16.4142 15.9142 16.75 15.5 16.75H12C11.5858 16.75 11.25 16.4142 11.25 16ZM8.25 16C8.25 15.5858 8.58579 15.25 9 15.25H9.01C9.42421 15.25 9.76 15.5858 9.76 16C9.76 16.4142 9.42421 16.75 9.01 16.75H9C8.58579 16.75 8.25 16.4142 8.25 16Z' fill='%23202733'/%3E%3C/svg%3E%0A");
+    --uds-form-navigation__group-active-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.25 3.5C4.25 2.80964 4.80964 2.25 5.5 2.25H18.5C19.1904 2.25 19.75 2.80964 19.75 3.5V20.5C19.75 21.1904 19.1904 21.75 18.5 21.75H5.5C4.80964 21.75 4.25 21.1904 4.25 20.5V3.5ZM11.25 16C11.25 15.5858 11.5858 15.25 12 15.25H15.5C15.9142 15.25 16.25 15.5858 16.25 16C16.25 16.4142 15.9142 16.75 15.5 16.75H12C11.5858 16.75 11.25 16.4142 11.25 16ZM12 11.25C11.5858 11.25 11.25 11.5858 11.25 12C11.25 12.4142 11.5858 12.75 12 12.75H15.5C15.9142 12.75 16.25 12.4142 16.25 12C16.25 11.5858 15.9142 11.25 15.5 11.25H12ZM8.25 12C8.25 11.5858 8.58579 11.25 9 11.25H9.01C9.42421 11.25 9.76 11.5858 9.76 12C9.76 12.4142 9.42421 12.75 9.01 12.75H9C8.58579 12.75 8.25 12.4142 8.25 12ZM9 15.25C8.58579 15.25 8.25 15.5858 8.25 16C8.25 16.4142 8.58579 16.75 9 16.75H9.01C9.42421 16.75 9.76 16.4142 9.76 16C9.76 15.5858 9.42421 15.25 9.01 15.25H9ZM12.25 8C12.25 7.58579 12.5858 7.25 13 7.25H15.5C15.9142 7.25 16.25 7.58579 16.25 8C16.25 8.41421 15.9142 8.75 15.5 8.75H13C12.5858 8.75 12.25 8.41421 12.25 8ZM11.1 7.20004C11.3485 6.86867 11.2814 6.39857 10.95 6.15004C10.6186 5.90152 10.1485 5.96867 9.9 6.30004L8.91885 7.60824L8.53033 7.21971C8.23744 6.92682 7.76256 6.92682 7.46967 7.21971C7.17678 7.51261 7.17678 7.98748 7.46967 8.28037L8.46967 9.28037C8.62341 9.43411 8.8363 9.51357 9.05317 9.49816C9.27004 9.48274 9.46955 9.37398 9.6 9.20004L11.1 7.20004Z' fill='%23202733'/%3E%3C/svg%3E%0A");
+    --uds-form-navigation__group-chevron-icon-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06'/%3E%3C/svg%3E");
+    --uds-form-navigation-connector: var(--ds-size-3);
+    @media (prefers-reduced-motion: no-preference) {
+      interpolate-size: allow-keywords;
+    }
+
+    width: fit-content;
+
+    /* Details content - container for the steps inside the group */
+    &::part(details-content) {
+      block-size: 0;
+      overflow-y: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: var(--uds-form-navigation-connector);
+      transition:
+        content-visibility 400ms allow-discrete,
+        height 400ms;
+    }
+
+    &[open]::part(details-content) {
+      height: auto;
+    }
+
+    /* Make sure focusstyles for steps inside details-content dont get clipped */
+    &[open]:has(:focus-visible:not(u-summary, u-summary *))::part(
+        details-content
+      ) {
+      overflow: visible;
+    }
+
+    /* Summary - title button of the group */
+    & u-summary {
+      all: unset;
+      width: fit-content;
+      cursor: pointer;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: var(--ds-size-2);
+      position: relative;
+      &:hover {
+        color: var(--ds-color-text-subtle);
+      }
+
+      /* Group icon */
+      &::before {
+        all: unset;
+        content: '';
+        display: block;
+        width: var(--uds-form-navigation-icon-size);
+        height: var(--uds-form-navigation-icon-size);
+        background: currentColor;
+        mask-image: var(--uds-form-navigation__group-icon-url);
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+      }
+
+      /* Chevron icon */
+      &::after {
+        all: unset;
+        content: '';
+        display: block;
+        width: var(--uds-form-navigation-icon-size);
+        height: var(--uds-form-navigation-icon-size);
+        background: currentColor;
+        mask-image: var(--uds-form-navigation__group-chevron-icon-url);
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+      }
+
+      @composes ds-focus from '@digdir/designsystemet-css/base.css';
+    }
+
+    /* Chevron toggle */
+    &[open] > u-summary::after {
+      rotate: 180deg;
+    }
+
+    /**
+      * Group state styles
+      */
+    &[data-state='invalid'] > u-summary {
+      color: var(--ds-color-danger-text-subtle);
+      &:hover {
+        color: var(--ds-color-danger-text-default);
+      }
+    }
+
+    &[data-state='completed'] > u-summary {
+      color: var(--ds-color-success-text-subtle);
+      &:hover {
+        color: var(--ds-color-success-text-default);
+      }
+    }
+
+    &:not([open]) {
+      /* IDLE */
+      &[data-state='idle'] {
+        --uds-form-navigation__group-icon-url: var(
+          --uds-form-navigation__group-idle-icon-url
+        );
+
+        &:has(> .uds-form-navigation__step[data-state='active']) {
+          --uds-form-navigation__group-icon-url: var(
+            --uds-form-navigation__group-active-icon-url
+          );
+        }
+      }
+
+      /* INVALID */
+      &[data-state='invalid'] {
+        --uds-form-navigation__group-icon-url: var(
+          --uds-form-navigation-invalid-icon-url
+        );
+
+        &:has(> .uds-form-navigation__step[data-state='active']) {
+          --uds-form-navigation__group-icon-url: var(
+            --uds-form-navigation-invalid-active-icon-url
+          );
+        }
+      }
+
+      /* COMPLETED */
+      &[data-state='completed'] {
+        --uds-form-navigation__group-icon-url: var(
+          --uds-form-navigation-completed-icon-url
+        );
+
+        &:has(> .uds-form-navigation__step[data-state='active']) {
+          --uds-form-navigation__group-icon-url: var(
+            --uds-form-navigation-completed-active-icon-url
+          );
+        }
+      }
+    }
+
+    /* Active step label */
+    &:has(> .uds-form-navigation__step[data-state='active']) {
+      &::after {
+        content: attr(data-active-step-label);
+        display: block;
+        color: var(--ds-color-text-subtle);
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 300ms ease;
+      }
+
+      &:not([open]) {
+        span {
+          /*
+           Using -webkit-text-stroke to simulate `font-weight: var(--ds-font-weight-medium);`
+           in order to prevent layout shift when closing and opening the step group
+           */
+          -webkit-text-stroke: var(--uds-form-navigation-active-text-stroke);
+        }
+
+        &::after {
+          margin-top: var(--ds-size-1);
+          margin-left: calc(
+            var(--uds-form-navigation-icon-size) + var(--ds-size-2)
+          );
+          opacity: 1;
+          max-height: 3rem;
+          transition-delay: 300ms;
+        }
+      }
+    }
+
+    /* Connector - line between steps */
+    > .uds-form-navigation__step {
+      > div {
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: calc(
+            100% + (var(--uds-form-navigation-connector) / 2) - var(--ds-size-1)
+          );
+          left: 50%;
+          transform: translateX(-50%);
+          width: 1px;
+          height: var(--uds-form-navigation-connector);
+          background-color: var(--ds-color-border-default);
+        }
+      }
+
+      &:first-of-type {
+        margin-top: var(--uds-form-navigation-connector);
+      }
+    }
+  }
+}
