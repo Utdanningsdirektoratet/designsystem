@@ -1,4 +1,5 @@
 import * as Highcharts from 'highcharts';
+import 'highcharts/modules/accessibility';
 import { HighchartsReact } from 'highcharts-react-official';
 import { useEffect, useRef, useState } from 'react';
 import { Table } from 'src/components/table';
@@ -21,7 +22,9 @@ const differenceData = testOverview.map((item) => item.sent - item.received);
 
 const options: Highcharts.Options = {
   title: {
-    text: '',
+    text: 'Prøveoversikt',
+    // hide title but keep for accessibility
+    style: { display: 'none' },
   },
   colors: [
     '#5BA27E',
@@ -43,7 +46,7 @@ const options: Highcharts.Options = {
   yAxis: {
     min: 0,
     title: {
-      text: 'Antall',
+      text: 'Antall prøver',
     },
   },
   series: [
@@ -65,6 +68,10 @@ const options: Highcharts.Options = {
   ],
   tooltip: {
     pointFormat: '{series.name}: <b>{point.y}</b>',
+  },
+  accessibility: {
+    description:
+      'Søylediagram som viser antall utsendte prøver, mottatte prøvesvar og antall som ikke har svart for årene 2022, 2023 og 2024.',
   },
 };
 

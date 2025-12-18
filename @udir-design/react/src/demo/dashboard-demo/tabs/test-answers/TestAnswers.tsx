@@ -50,7 +50,7 @@ const options = {
   },
   series: [
     {
-      name: 'Antall',
+      name: 'Antall prøvesvar',
       data: characterDistribution.map((item) => ({
         name: item.name,
         y: item.value,
@@ -58,6 +58,10 @@ const options = {
       })),
     },
   ],
+  accessibility: {
+    description:
+      'Sektordiagram som viser fordeling av prøvesvar med antall per karakter fra 1 til 6.',
+  },
 };
 
 export const TestAnswers = (props: HighchartsReact.Props) => {
