@@ -2,9 +2,9 @@ import preview from '.storybook/preview';
 import { Logo } from './Logo';
 
 const meta = preview.meta({
-  title: 'Components/Logo',
+  title: 'Components/Logo/Logo',
   component: Logo,
-  tags: ['alpha', 'udir'],
+  tags: ['alpha', 'udir', '!autodocs'],
   parameters: {
     componentOrigin: {
       originator: 'self',
