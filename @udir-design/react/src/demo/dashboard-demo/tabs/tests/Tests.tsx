@@ -12,8 +12,9 @@ const tests = [
   { name: 'Utsendte', value: 3500 },
   { name: 'Påbegynte', value: 2000 },
 ];
+const total = tests.map((x) => x.value).reduce((x, y) => x + y);
 
-const options = {
+const options: Highcharts.Options = {
   title: {
     text: 'Prøver',
     // hide title but keep for accessibility
@@ -33,18 +34,19 @@ const options = {
     type: 'pie',
     style: { fontFamily: 'Inter, sans-serif' },
   },
-  plotOptions: {
-    pie: {
+  series: [
+    {
+      name: 'Antall',
+      type: 'pie',
+      innerSize: '75%',
       cursor: 'pointer',
-    },
-    series: {
       dataLabels: [
         {
           enabled: true,
           distance: 10,
           format: '{point.name}: {point.y}',
           style: {
-            fontWeight: 500,
+            fontWeight: '500',
           },
         },
         {
@@ -57,22 +59,24 @@ const options = {
           },
         },
       ],
-    },
-  },
-  series: [
-    {
-      innerSize: '75%',
-      name: 'Antall',
-      data: tests.map((item) => ({
-        name: item.name,
-        y: item.value,
-        selected: true,
-      })),
+
+      data: tests.map(
+        (item): Highcharts.PointOptionsObject => ({
+          name: item.name,
+          y: item.value,
+          selected: true,
+          accessibility: {
+            // Adds percentage readout for screen readers, since we have it visually
+            description: `${Math.round((item.value / total) * 100)}%`,
+          },
+        }),
+      ),
     },
   ],
   accessibility: {
+    typeDescription: 'Sektordiagram',
     description:
-      'Sektordiagram som viser fordeling av prøver med antall utsendte og påbegynte prøver.',
+      'Diagrammet viser fordeling av prøver med antall utsendte og påbegynte prøver.',
   },
 };
 

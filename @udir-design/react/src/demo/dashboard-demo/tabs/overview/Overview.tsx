@@ -43,6 +43,7 @@ const options: Highcharts.Options = {
   },
   xAxis: {
     categories: categories,
+    title: { text: 'Årstall' },
   },
   yAxis: {
     min: 0,
@@ -71,8 +72,9 @@ const options: Highcharts.Options = {
     pointFormat: '{series.name}: <b>{point.y}</b>',
   },
   accessibility: {
+    typeDescription: 'Stolpe- og linjediagram',
     description:
-      'Søylediagram som viser antall utsendte prøver, mottatte prøvesvar og antall som ikke har svart for årene 2022, 2023 og 2024.',
+      'Diagrammet viser antall utsendte prøver, mottatte prøvesvar og antall som ikke har svart for årene 2022, 2023 og 2024.',
   },
 };
 
