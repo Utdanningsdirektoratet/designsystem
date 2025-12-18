@@ -1,4 +1,5 @@
 import { Controller, useFormContext } from 'react-hook-form';
+import { counties } from '.storybook/data';
 import { Field } from 'src/components/field/Field';
 import { Fieldset } from 'src/components/fieldset/Fieldset';
 import { Input } from 'src/components/input/Input';
@@ -14,20 +15,6 @@ import {
   type PageProps,
   focusableFieldsetProps,
 } from '../FormDemo';
-
-const DATA_COUNTIES = [
-  'Oslo',
-  'Viken',
-  'Innlandet',
-  'Vestfold og Telemark',
-  'Agder',
-  'Rogaland',
-  'Vestland',
-  'Møre og Romsdal',
-  'Trøndelag',
-  'Nordland',
-  'Troms og Finnmark',
-];
 
 export const PersonalInfoPage = ({ showErrors }: PageProps) => {
   const { register, control, formState } = useFormContext<FormValues>();
@@ -74,7 +61,7 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
               <Suggestion.Clear />
               <Suggestion.List>
                 <Suggestion.Empty>Ingen resultater</Suggestion.Empty>
-                {DATA_COUNTIES.map((county) => (
+                {counties.map((county) => (
                   <Suggestion.Option key={county} label={county} value={county}>
                     {county}
                     <div>Fylke</div>
