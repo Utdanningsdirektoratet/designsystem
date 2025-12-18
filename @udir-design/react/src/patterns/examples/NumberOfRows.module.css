@@ -1,0 +1,29 @@
+.student {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-3);
+  padding: var(--ds-size-1) 0;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  justify-content: space-between;
+  margin-block-start: var(--ds-size-4);
+}
+
+.selectField {
+  flex-direction: row;
+  display: flex;
+
+  & > label {
+    white-space: nowrap;
+    align-self: center;
+    margin-inline-end: var(--ds-size-3);
+  }
+}
+
+.nowShowing {
+  margin-block-start: var(--ds-size-2);
+}

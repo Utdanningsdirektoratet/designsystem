@@ -8,7 +8,7 @@ export interface PaginationControlsProps {
   setCurrentPage: (page: number) => void;
 }
 
-const PaginationControls = ({
+export const PaginationControls = ({
   currentPage,
   totalPages,
   setCurrentPage,
