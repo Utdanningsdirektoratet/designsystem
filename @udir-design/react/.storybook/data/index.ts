@@ -1,20 +1,20 @@
 // Source: https://www.regjeringen.no/no/dokumenter/prop.-127-s-20212022/id2917434/?ch=3#kap3-4
 export const counties = [
-  'Akershus',
-  'Oslo',
-  'Vestland',
-  'Rogaland',
-  'Trøndelag',
-  'Innlandet',
   'Agder',
-  'Østfold',
-  'Møre og Romsdal',
+  'Akershus',
   'Buskerud',
-  'Vestfold',
+  'Finnmark',
+  'Innlandet',
+  'Møre og Romsdal',
   'Nordland',
+  'Oslo',
+  'Rogaland',
   'Telemark',
   'Troms',
-  'Finnmark',
+  'Trøndelag',
+  'Vestfold',
+  'Vestland',
+  'Østfold',
 ] as const;
 
 export type County = (typeof counties)[number];
