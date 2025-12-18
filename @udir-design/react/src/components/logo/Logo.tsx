@@ -1,4 +1,3 @@
-import type { Size } from '@digdir/designsystemet-react';
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
 import type { HTMLAttributes } from 'react';
@@ -7,11 +6,6 @@ import mainLogoLight from '../../../assets/img/udir-main-logo.svg';
 import './logo.css';
 
 export type LogoProps = HTMLAttributes<HTMLElement> & {
-  /**
-   * Changes size for descendant Designsystemet components.
-   * Select from predefined sizes.
-   */
-  'data-size'?: Size;
   /**
    * Changes height of the logo, the width
    * scales accordingly
