@@ -1,5 +1,6 @@
 import * as Highcharts from 'highcharts';
 import 'highcharts/modules/accessibility';
+import 'highcharts/i18n/nb-NO';
 import { HighchartsReact } from 'highcharts-react-official';
 import { useEffect, useRef, useState } from 'react';
 import { Table } from 'src/components/table';
