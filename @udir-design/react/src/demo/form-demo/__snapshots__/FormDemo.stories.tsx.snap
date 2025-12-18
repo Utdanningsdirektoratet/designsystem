@@ -1158,6 +1158,19 @@ exports[`Form Story 1`] = `
             style="width: 592px; translate: <removed>;"
           >
             <u-option
+              label="Akershus"
+              value="Akershus"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Akershus
+              <div>
+                Fylke
+              </div>
+            </u-option>
+            <u-option
               label="Oslo"
               value="Oslo"
               tabindex="-1"
@@ -1166,71 +1179,6 @@ exports[`Form Story 1`] = `
               aria-selected="false"
             >
               Oslo
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Viken"
-              value="Viken"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Viken
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Innlandet"
-              value="Innlandet"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Innlandet
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Vestfold og Telemark"
-              value="Vestfold og Telemark"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Vestfold og Telemark
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Agder"
-              value="Agder"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Agder
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Rogaland"
-              value="Rogaland"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Rogaland
               <div>
                 Fylke
               </div>
@@ -1249,14 +1197,14 @@ exports[`Form Story 1`] = `
               </div>
             </u-option>
             <u-option
-              label="Møre og Romsdal"
-              value="Møre og Romsdal"
+              label="Rogaland"
+              value="Rogaland"
               tabindex="-1"
               role="option"
               aria-disabled="false"
               aria-selected="false"
             >
-              Møre og Romsdal
+              Rogaland
               <div>
                 Fylke
               </div>
@@ -1275,6 +1223,84 @@ exports[`Form Story 1`] = `
               </div>
             </u-option>
             <u-option
+              label="Innlandet"
+              value="Innlandet"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Innlandet
+              <div>
+                Fylke
+              </div>
+            </u-option>
+            <u-option
+              label="Agder"
+              value="Agder"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Agder
+              <div>
+                Fylke
+              </div>
+            </u-option>
+            <u-option
+              label="Østfold"
+              value="Østfold"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Østfold
+              <div>
+                Fylke
+              </div>
+            </u-option>
+            <u-option
+              label="Møre og Romsdal"
+              value="Møre og Romsdal"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Møre og Romsdal
+              <div>
+                Fylke
+              </div>
+            </u-option>
+            <u-option
+              label="Buskerud"
+              value="Buskerud"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Buskerud
+              <div>
+                Fylke
+              </div>
+            </u-option>
+            <u-option
+              label="Vestfold"
+              value="Vestfold"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Vestfold
+              <div>
+                Fylke
+              </div>
+            </u-option>
+            <u-option
               label="Nordland"
               value="Nordland"
               tabindex="-1"
@@ -1288,14 +1314,40 @@ exports[`Form Story 1`] = `
               </div>
             </u-option>
             <u-option
-              label="Troms og Finnmark"
-              value="Troms og Finnmark"
+              label="Telemark"
+              value="Telemark"
               tabindex="-1"
               role="option"
               aria-disabled="false"
               aria-selected="false"
             >
-              Troms og Finnmark
+              Telemark
+              <div>
+                Fylke
+              </div>
+            </u-option>
+            <u-option
+              label="Troms"
+              value="Troms"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Troms
+              <div>
+                Fylke
+              </div>
+            </u-option>
+            <u-option
+              label="Finnmark"
+              value="Finnmark"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Finnmark
               <div>
                 Fylke
               </div>

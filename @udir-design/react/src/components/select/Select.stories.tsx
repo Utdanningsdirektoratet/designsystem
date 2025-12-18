@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
+import type { County } from '.storybook/data';
+import { citiesPerCounty as cities, counties } from '.storybook/data';
 import preview from '.storybook/preview';
 import { Field } from '../field/Field';
 import { Heading } from '../typography/heading/Heading';
@@ -17,24 +19,6 @@ const meta = preview.meta({
     layout: 'centered',
   },
 });
-
-type County =
-  | 'Akershus'
-  | 'Agder'
-  | 'Buskerud'
-  | 'Finnmark'
-  | 'Innlandet'
-  | 'Nordland'
-  | 'Rogaland';
-const counties: County[] = [
-  'Akershus',
-  'Agder',
-  'Buskerud',
-  'Finnmark',
-  'Innlandet',
-  'Nordland',
-  'Rogaland',
-];
 
 export const Preview = meta.story({
   args: {
@@ -152,72 +136,6 @@ export const WithOptgroup = meta.story({
   ),
 });
 
-type Cities = Record<County, string[]>;
-const Cities: Cities = {
-  Akershus: [
-    'Oslo',
-    'Bærum',
-    'Lillestrøm',
-    'Asker',
-    'Lørenskog',
-    'Skedsmokorset',
-    'Oppegård',
-  ],
-  Agder: [
-    'Kristiansand',
-    'Arendal',
-    'Grimstad',
-    'Lillesand',
-    'Farsund',
-    'Flekkefjord',
-    'Søgne',
-  ],
-  Buskerud: [
-    'Drammen',
-    'Kongsberg',
-    'Hønefoss',
-    'Mjøndalen',
-    'Lierbyen',
-    'Ringerike',
-    'Hole',
-  ],
-  Finnmark: [
-    'Alta',
-    'Hammerfest',
-    'Vardo',
-    'Kirkenes',
-    'Kautokeino',
-    'Båtsfjord',
-    'Mehamn',
-  ],
-  Innlandet: [
-    'Lillehammer',
-    'Gjøvik',
-    'Hamar',
-    'Elverum',
-    'Otta',
-    'Kongsvinger',
-    'Rena',
-  ],
-  Nordland: [
-    'Bodø',
-    'Narvik',
-    'Mo i Rana',
-    'Fauske',
-    'Svolvær',
-    'Stokmarknes',
-    'Brønnøysund',
-  ],
-  Rogaland: [
-    'Stavanger',
-    'Sandnes',
-    'Haugesund',
-    'Bryne',
-    'Egersund',
-    'Sauda',
-    'Åkrehamn',
-  ],
-};
 type SelectedCounty = County | '';
 
 export const Controlled = meta.story({
@@ -235,7 +153,7 @@ export const Controlled = meta.story({
     const handleCountyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
       const newCounty = e.target.value as County;
       setSelectedCounty(newCounty);
-      if (!Cities[newCounty].some((c) => c.toLowerCase() === selectedCity)) {
+      if (!cities[newCounty].some((c) => c.toLowerCase() === selectedCity)) {
         setSelectedCity('');
       }
     };
@@ -243,8 +161,8 @@ export const Controlled = meta.story({
     const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
       const newCity = e.target.value;
       setSelectedCity(newCity);
-      const newCounty = (Object.keys(Cities) as County[]).find((f) =>
-        Cities[f].some((c) => c.toLowerCase() === newCity),
+      const newCounty = (Object.keys(cities) as County[]).find((f) =>
+        cities[f].some((c) => c.toLowerCase() === newCity),
       );
       if (newCounty && newCounty !== selectedCounty) {
         setSelectedCounty(newCounty);
@@ -263,7 +181,7 @@ export const Controlled = meta.story({
             onChange={handleCountyChange}
           >
             <Select.Option value="">Velg et fylke &hellip;</Select.Option>
-            {(Object.keys(Cities) as County[]).map((f) => (
+            {counties.map((f) => (
               <Select.Option key={f} value={f}>
                 {f}
               </Select.Option>
@@ -280,7 +198,7 @@ export const Controlled = meta.story({
           >
             <Select.Option value="">Velg en by &hellip;</Select.Option>
             {selectedCounty
-              ? Cities[selectedCounty].map((city) => (
+              ? cities[selectedCounty].map((city) => (
                   <Select.Option key={city} value={city.toLowerCase()}>
                     {city}
                   </Select.Option>
