@@ -63,3 +63,11 @@ export const FormPage4 = meta.story({
     page: 'deliver',
   },
 });
+
+export const FormPage5 = meta.story({
+  ...FormStory.input,
+  args: {
+    'data-color-scheme': 'light',
+    page: 'confirmation',
+  },
+});

@@ -46,6 +46,7 @@ const pageFields = defineSteps({
   ranking: ['rankings'],
   finish: ['addition', 'contactMethods'],
   deliver: [],
+  confirmation: [],
 });
 export type PageFields = typeof pageFields;
 
@@ -179,7 +180,13 @@ export const FormDemo = ({
         title="Skoleundersøkelse"
         className={classes.navigation}
         open={true}
-        {...getGroupProps(['personal', 'ranking', 'finish', 'deliver'])}
+        {...getGroupProps([
+          'personal',
+          'ranking',
+          'finish',
+          'deliver',
+          'confirmation',
+        ])}
       >
         <FormNavigation.Step {...getStepProps('personal')}>
           Personopplysninger
@@ -192,6 +199,12 @@ export const FormDemo = ({
         </FormNavigation.Step>
         <FormNavigation.Step variant="submission" {...getStepProps('deliver')}>
           Innsending
+        </FormNavigation.Step>
+        <FormNavigation.Step
+          variant="confirmation"
+          {...getStepProps('confirmation')}
+        >
+          Kvittering
         </FormNavigation.Step>
       </FormNavigation.Group>
     </FormNavigation>
@@ -208,6 +221,8 @@ export const FormDemo = ({
         return <FinishPage {...props} />;
       case 'deliver':
         return <DeliverPage />;
+      case 'confirmation':
+        return <ConfirmationPage />;
     }
   };
 
@@ -219,6 +234,17 @@ export const FormDemo = ({
       </>
     );
   };
+
+  const ConfirmationPage = () => (
+    <>
+      <Heading level={2} data-size="sm">
+        Kvittering
+      </Heading>
+      <Paragraph>
+        Ditt svar er mottat, takk for at du svarte på undersøkelsen.
+      </Paragraph>
+    </>
+  );
 
   const hasErrors = isSubmitted && Object.keys(errors).length > 0;
 
@@ -252,12 +278,12 @@ export const FormDemo = ({
           <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
             {renderCurrentPage()}
             <div className={classes.navigateButtons}>
-              {hasPrev() && (
+              {hasPrev() && id !== 'confirmation' && (
                 <Button variant="secondary" onClick={prev} style={{ flex: 1 }}>
                   Forrige
                 </Button>
               )}
-              {hasNext() && (
+              {hasNext() && id !== 'deliver' && (
                 <Button variant="secondary" onClick={next} style={{ flex: 1 }}>
                   Neste
                 </Button>
