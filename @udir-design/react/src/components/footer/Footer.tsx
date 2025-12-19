@@ -2,9 +2,8 @@ import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
 import type { CSSProperties, HTMLAttributes } from 'react';
 import { forwardRef } from 'react';
-import logoDark from '../../../assets/img/udir-main-logo-dark-mode.svg';
-import logo from '../../../assets/img/udir-main-logo.svg';
 import './footer.css';
+import { Logo } from '../logo/Logo';
 
 export type FooterProps = HTMLAttributes<HTMLElement> & {
   /**
@@ -34,8 +33,7 @@ export const Footer = forwardRef<HTMLElement, FooterProps>(function Footer(
       <div>
         {children}
         <a href="https://udir.no" className="uds-footer__logo">
-          <img src={logo} alt="Utdanningsdirektoratet" />
-          <img src={logoDark} alt="Utdanningsdirektoratet" />
+          <Logo padding="0" />
         </a>
       </div>
     </footer>
