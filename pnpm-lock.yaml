@@ -19,17 +19,17 @@ catalogs:
       specifier: ^20.0.0
       version: 20.0.0
     '@digdir/designsystemet':
-      specifier: 1.8.0
-      version: 1.8.0
+      specifier: 1.9.0
+      version: 1.9.0
     '@digdir/designsystemet-css':
-      specifier: 1.8.0
-      version: 1.8.0
+      specifier: 1.9.0
+      version: 1.9.0
     '@digdir/designsystemet-react':
-      specifier: 1.8.0
-      version: 1.8.0
+      specifier: 1.9.0
+      version: 1.9.0
     '@digdir/designsystemet-types':
-      specifier: ^1.8.0
-      version: 1.8.0
+      specifier: ^1.9.0
+      version: 1.9.0
     '@eslint/compat':
       specifier: ^1.4.1
       version: 1.4.1
@@ -47,7 +47,7 @@ catalogs:
       version: 5.2.2
     '@navikt/aksel-icons':
       specifier: ^7.34.0
-      version: 7.35.0
+      version: 7.35.3
     '@next/eslint-plugin-next':
       specifier: ^14.2.33
       version: 14.2.33
@@ -368,7 +368,7 @@ catalogs:
       version: 18.0.0
     zod:
       specifier: ^4.1.12
-      version: 4.1.13
+      version: 4.2.1
   react18:
     '@types/react':
       specifier: ^18.3.27
@@ -521,7 +521,7 @@ importers:
     dependencies:
       '@digdir/designsystemet-css':
         specifier: 'catalog:'
-        version: 1.8.0
+        version: 1.9.0
       '@udir-design/theme':
         specifier: workspace:*
         version: link:../theme
@@ -552,7 +552,7 @@ importers:
     dependencies:
       '@navikt/aksel-icons':
         specifier: 'catalog:'
-        version: 7.35.0(@types/react@19.2.7)(react@19.2.0)
+        version: 7.35.3(@types/react@19.2.7)(react@19.2.0)
     devDependencies:
       svgo:
         specifier: 'catalog:'
@@ -565,10 +565,10 @@ importers:
     dependencies:
       '@digdir/designsystemet-react':
         specifier: 'catalog:'
-        version: 1.8.0(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 1.9.0(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@digdir/designsystemet-types':
         specifier: 'catalog:'
-        version: 1.8.0
+        version: 1.9.0
       '@u-elements/u-details':
         specifier: 'catalog:'
         version: 0.1.5
@@ -749,7 +749,7 @@ importers:
         version: 4.0.15(@types/node@24.10.1)(@vitest/browser-playwright@4.0.15)(@vitest/ui@4.0.15)(jiti@2.6.1)(jsdom@27.2.0)(less@4.1.3)(lightningcss@1.30.2)(msw@2.7.3(@types/node@24.10.1)(typescript@5.9.3))(sass@1.94.2)(stylus@0.64.0)(terser@5.39.0)(tsx@4.20.6)(yaml@2.8.1)
       zod:
         specifier: 'catalog:'
-        version: 4.1.13
+        version: 4.2.1
 
   '@udir-design/symbols':
     devDependencies:
@@ -803,7 +803,7 @@ importers:
     dependencies:
       '@digdir/designsystemet-types':
         specifier: 'catalog:'
-        version: 1.8.0
+        version: 1.9.0
     devDependencies:
       '@internal/build-tools':
         specifier: workspace:*
@@ -819,7 +819,7 @@ importers:
     devDependencies:
       '@digdir/designsystemet':
         specifier: 'catalog:'
-        version: 1.8.0
+        version: 1.9.0
       rimraf:
         specifier: 'catalog:'
         version: 6.1.2
@@ -868,7 +868,7 @@ importers:
     dependencies:
       '@digdir/designsystemet-css':
         specifier: 'catalog:'
-        version: 1.8.0
+        version: 1.9.0
       '@udir-design/css':
         specifier: workspace:*
         version: link:../../@udir-design/css
@@ -1706,20 +1706,20 @@ packages:
     resolution: {integrity: sha512-Y6+WUMsTFWE5jb20IFP4YGa5IrGY/+a/FbOSjDF/wz9gepU2hwCYSXRHP/vPwBvwcY3SVMASt4yXxbXNXigmZQ==}
     engines: {node: '>=18'}
 
-  '@digdir/designsystemet-css@1.8.0':
-    resolution: {integrity: sha512-TlOh9ZzOOpXEGXbBneNQmZebBN9Kx4jf4IHLmu77EpZ2nezZniw0YG5zvUOrzDtSYDxgeFp4VcqltMn8bbY1ow==}
+  '@digdir/designsystemet-css@1.9.0':
+    resolution: {integrity: sha512-0vnCjgncLrGT1ldXzyc0qJ3rZpf/iin/2ZP7hCxxkgfP/BKgb3UBpnc6ZzkC8vvrFq1s3LMEy9udCTD4LVtQZQ==}
 
-  '@digdir/designsystemet-react@1.8.0':
-    resolution: {integrity: sha512-LdyiMMFeX/cnJMRzMe8XtSwqOmN7VIYFROBJfcc2sRvps1oQDGWFEjkprvgNVIOzHdC3MSLfZ5isEJI0+nM2Ig==}
+  '@digdir/designsystemet-react@1.9.0':
+    resolution: {integrity: sha512-/RapjnOUUy4pzLXnDi5qMp3xiAaFCwb8v8/STFNDhA8SFDGSjsanRzNb8YNFZSqE9bXh/ZhAdVMZM2RJu9b7AQ==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet-types@1.8.0':
-    resolution: {integrity: sha512-hTiJfW/759f44VCyvoCJEfpi7BUFMe4f+5YC9KkOwGoo2v3umgAU8+uUJU3xvq+kJR6sJn7HaOFrpfInVSGAEg==}
+  '@digdir/designsystemet-types@1.9.0':
+    resolution: {integrity: sha512-JgdtlQNKAM49vIWFmXyZwM5CzQxHOsf/oL90xswG7ZtI5XFZVX1jc3ItAWa+hkIZFpdPGdzPuUcotxK+tQt2SQ==}
 
-  '@digdir/designsystemet@1.8.0':
-    resolution: {integrity: sha512-Rj3zdOQEt7jFO+0dcdA7ZJ0lVk3nAEPB1Qokum6tPql9+nR1QNqLWkItyAAsqX6ZJ9pNPD4AgMDbI0oRrakhcg==}
+  '@digdir/designsystemet@1.9.0':
+    resolution: {integrity: sha512-PI+Ab92rFptoNt4sLJKHNxVXKm5IeNC5GcxYObGjcvR18T18vtRsz7g7xH4E+ks2lbl9MUf/4sFR62Z2KGWMoA==}
     engines: {node: '>=20 <25'}
     hasBin: true
 
@@ -2523,8 +2523,8 @@ packages:
   '@napi-rs/wasm-runtime@1.0.7':
     resolution: {integrity: sha512-SeDnOO0Tk7Okiq6DbXmmBODgOAb9dp9gjlphokTUxmt8U3liIP1ZsozBahH69j/RJv+Rfs6IwUKHTgQYJ/HBAw==}
 
-  '@navikt/aksel-icons@7.35.0':
-    resolution: {integrity: sha512-k3nyJqDeP08OEg54vImzo9hL/ZNzCuIqaxwKw9POrl/vD5f4JeobVO3kZE0PyuGK3+zkcQFIGLHVWA4RMSTbeg==}
+  '@navikt/aksel-icons@7.35.3':
+    resolution: {integrity: sha512-iUn0K+LYeowLs+pCGfFOdMHzOowWJzM62BcAetg/o7hYPHHklEBfuVlbRw44D1as8qisHhJ89TGCRc2/Qjk3Mg==}
     peerDependencies:
       '@types/react': ^18.3.11 || ^19.0.0
       react: ^18.3.1 || ^19.0.0
@@ -3764,14 +3764,14 @@ packages:
   '@swc/types@0.1.25':
     resolution: {integrity: sha512-iAoY/qRhNH8a/hBvm3zKj9qQ4oc2+3w1unPJa2XvTK3XjeLXtzcCingVPw/9e5mn1+0yPqxcBGp9Jf0pkfMb1g==}
 
-  '@tanstack/react-virtual@3.13.12':
-    resolution: {integrity: sha512-Gd13QdxPSukP8ZrkbgS2RwoZseTTbQPLnQEn7HY/rqtM+8Zt95f7xKC7N0EsKs7aoz0WzZ+fditZux+F8EzYxA==}
+  '@tanstack/react-virtual@3.13.13':
+    resolution: {integrity: sha512-4o6oPMDvQv+9gMi8rE6gWmsOjtUZUYIJHv7EB+GblyYdi8U6OqLl8rhHWIUZSL1dUU2dPwTdTgybCKf9EjIrQg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  '@tanstack/virtual-core@3.13.12':
-    resolution: {integrity: sha512-1YBOJfRHV4sXUmWsFSf5rQor4Ss82G8dQWLRbnk3GA4jeP8hQt1hxXh0tmflpC0dz3VgEv/1+qwPyLeWkQuPFA==}
+  '@tanstack/virtual-core@3.13.13':
+    resolution: {integrity: sha512-uQFoSdKKf5S8k51W5t7b2qpfkyIbdHMzAn+AMQvHPxKUPeo1SsGaA4JRISQT87jm28b7z8OEqPcg1IOZagQHcA==}
 
   '@testing-library/dom@10.4.1':
     resolution: {integrity: sha512-o4PXJQidqJl82ckFaXUeoAW+XysPLauYI43Abki5hABd853iMhitooc6znOnczgbTYmEP6U6/y1ZyKAIsvMKGg==}
@@ -3802,8 +3802,8 @@ packages:
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
 
-  '@tokens-studio/sd-transforms@2.0.2':
-    resolution: {integrity: sha512-ul37oAtMg3KDZS4fgvpTyFH7fvyhhRZmLrKfd4vAiyvgbio6mC7H7AqE9at1vj0hg86IBPlUU3aDS6aVSnVbyQ==}
+  '@tokens-studio/sd-transforms@2.0.3':
+    resolution: {integrity: sha512-PyrmRb7FuJBHzsbuWNk/O06hJbaZ+RL7chmK7PRbEptaSruhANai7Kxja5CiYnTcxOj373uRMDPxoFwCHaVpvA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       style-dictionary: ^5.0.0
@@ -4069,8 +4069,8 @@ packages:
     resolution: {integrity: sha512-IlqQ/Gv22xUC1r/WQm4StLkYQmaaTsXAhUVsNE0+xiyf0yRFiH5++q78U3bw6bLKDCTmh0uqKB9eG9+Bt75Dkg==}
     engines: {node: '>=20.0.0'}
 
-  '@u-elements/u-combobox@1.0.4':
-    resolution: {integrity: sha512-YX4kGqpc4TkCG6f9yM6wcAgS8zG9LYUvqecb0MOs/Q7NiQlkAe085Fh0Ir8PJDRyxVrQKFt2DyGybVOF0/7uEw==}
+  '@u-elements/u-combobox@1.0.5':
+    resolution: {integrity: sha512-43c9Z9DIKxK+xcLhUVDZCzRRPCZNMJlFrNwF6jaCUw119RcyGMAt38Lc0giXqxvkrxKIBVBTYwMiTA+iDEvm6g==}
 
   '@u-elements/u-datalist@1.0.14':
     resolution: {integrity: sha512-wgh7BMLySzPF3xcfxeNnZgy/JmFZOQVJVY+XwAiIBgDYkCWQqERJrHjxRHv8C6t4h2PWnO7mwDIqdLQHEq12XQ==}
@@ -4322,8 +4322,8 @@ packages:
     resolution: {integrity: sha512-/HcYgtUSiJiot/XWGLOlGxPYUG65+/31V8oqk17vZLW1xlCoR4PampyePljOxY2n8/3jz9+tIFzICsyGujJZoA==}
     engines: {node: '>=18.12.0'}
 
-  '@zip.js/zip.js@2.8.10':
-    resolution: {integrity: sha512-WVywWK8HSttmFFYSih7lUjjaV4zGzMxy992y0tHrZY4Wf9x/uNBA/XJ50RvfGjuuJKti4yueEHA2ol2pOq6VDg==}
+  '@zip.js/zip.js@2.8.11':
+    resolution: {integrity: sha512-0fztsk/0ryJ+2PPr9EyXS5/Co7OK8q3zY/xOoozEWaUsL5x+C0cyZ4YyMuUffOO2Dx/rAdq4JMPqW0VUtm+vzA==}
     engines: {bun: '>=0.7.0', deno: '>=1.0.0', node: '>=18.0.0'}
 
   '@zkochan/js-yaml@0.0.7':
@@ -5569,8 +5569,8 @@ packages:
     resolution: {integrity: sha512-JhFGDVJ7tmDJItKhYgJCGLOWjuK9vPxiXoUFLwLDc99NlmklilbiQJwoctZtt13+xMw91MCk/REan6MWHqDjyA==}
     engines: {node: '>=12.0.0'}
 
-  expr-eval-fork@3.0.0:
-    resolution: {integrity: sha512-29S+IZ2g8qSk5q7gOUYozO7zi4mj/sCVo+HB2h0f0ER4ZCZr9b/+5SWIedvV0SHq3IxBW2/TJrPn77YxMsoVwg==}
+  expr-eval-fork@3.0.1:
+    resolution: {integrity: sha512-JRex9aykIt6AqhcQK+u1bFcBy2f+muwJoGCtAZmOC0yrktaCegtH42sLnZdNsD2/Ko9j+3pLWi4nIkNQez02bg==}
     engines: {node: '>=16.9.0'}
 
   exsolve@1.0.8:
@@ -8825,8 +8825,8 @@ packages:
     peerDependencies:
       zod: ^3.25.0 || ^4.0.0
 
-  zod@4.1.13:
-    resolution: {integrity: sha512-AvvthqfqrAhNH9dnfmrfKzX5upOdjUVJYFqNSlkmGf64gRaTzlPwz99IHYnVs28qYAybvAlBV+H7pn0saFY4Ig==}
+  zod@4.2.1:
+    resolution: {integrity: sha512-0wZ1IRqGGhMP76gLqz8EyfBXKk0J2qo2+H3fi4mcUP/KtTocoX08nmIAHl1Z2kJIZbZee8KOpBCSNPRgauucjw==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -9899,17 +9899,17 @@ snapshots:
       gonzales-pe: 4.3.0
       node-source-walk: 7.0.1
 
-  '@digdir/designsystemet-css@1.8.0': {}
+  '@digdir/designsystemet-css@1.9.0': {}
 
-  '@digdir/designsystemet-react@1.8.0(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@digdir/designsystemet-react@1.9.0(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@digdir/designsystemet-types': 1.8.0
+      '@digdir/designsystemet-types': 1.9.0
       '@floating-ui/dom': 1.7.4
       '@floating-ui/react': 0.26.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@navikt/aksel-icons': 7.35.0(@types/react@18.3.27)(react@18.3.1)
+      '@navikt/aksel-icons': 7.35.3(@types/react@18.3.27)(react@18.3.1)
       '@radix-ui/react-slot': 1.2.4(@types/react@18.3.27)(react@18.3.1)
-      '@tanstack/react-virtual': 3.13.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@u-elements/u-combobox': 1.0.4
+      '@tanstack/react-virtual': 3.13.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@u-elements/u-combobox': 1.0.5
       '@u-elements/u-datalist': 1.0.14
       '@u-elements/u-details': 0.1.5
       clsx: 2.1.1
@@ -9918,15 +9918,15 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet-react@1.8.0(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@digdir/designsystemet-react@1.9.0(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
-      '@digdir/designsystemet-types': 1.8.0
+      '@digdir/designsystemet-types': 1.9.0
       '@floating-ui/dom': 1.7.4
       '@floating-ui/react': 0.26.23(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@navikt/aksel-icons': 7.35.0(@types/react@19.2.7)(react@19.2.0)
+      '@navikt/aksel-icons': 7.35.3(@types/react@19.2.7)(react@19.2.0)
       '@radix-ui/react-slot': 1.2.4(@types/react@19.2.7)(react@19.2.0)
-      '@tanstack/react-virtual': 3.13.12(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@u-elements/u-combobox': 1.0.4
+      '@tanstack/react-virtual': 3.13.13(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@u-elements/u-combobox': 1.0.5
       '@u-elements/u-datalist': 1.0.14
       '@u-elements/u-details': 0.1.5
       clsx: 2.1.1
@@ -9935,13 +9935,13 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet-types@1.8.0': {}
+  '@digdir/designsystemet-types@1.9.0': {}
 
-  '@digdir/designsystemet@1.8.0':
+  '@digdir/designsystemet@1.9.0':
     dependencies:
       '@commander-js/extra-typings': 14.0.0(commander@14.0.2)
-      '@digdir/designsystemet-types': 1.8.0
-      '@tokens-studio/sd-transforms': 2.0.2(style-dictionary@5.1.1)
+      '@digdir/designsystemet-types': 1.9.0
+      '@tokens-studio/sd-transforms': 2.0.3(style-dictionary@5.1.1)
       apca-w3: 0.1.9
       change-case: 5.4.4
       chroma-js: 3.2.0
@@ -9954,8 +9954,8 @@ snapshots:
       postcss: 8.5.6
       ramda: 0.32.0
       style-dictionary: 5.1.1
-      zod: 4.1.13
-      zod-validation-error: 4.0.2(zod@4.1.13)
+      zod: 4.2.1
+      zod-validation-error: 4.0.2(zod@4.2.1)
 
   '@emnapi/core@1.7.1':
     dependencies:
@@ -10590,12 +10590,12 @@ snapshots:
       '@tybys/wasm-util': 0.10.1
     optional: true
 
-  '@navikt/aksel-icons@7.35.0(@types/react@18.3.27)(react@18.3.1)':
+  '@navikt/aksel-icons@7.35.3(@types/react@18.3.27)(react@18.3.1)':
     optionalDependencies:
       '@types/react': 18.3.27
       react: 18.3.1
 
-  '@navikt/aksel-icons@7.35.0(@types/react@19.2.7)(react@19.2.0)':
+  '@navikt/aksel-icons@7.35.3(@types/react@19.2.7)(react@19.2.0)':
     optionalDependencies:
       '@types/react': 19.2.7
       react: 19.2.0
@@ -12057,19 +12057,19 @@ snapshots:
     dependencies:
       '@swc/counter': 0.1.3
 
-  '@tanstack/react-virtual@3.13.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/react-virtual@3.13.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@tanstack/virtual-core': 3.13.12
+      '@tanstack/virtual-core': 3.13.13
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@tanstack/react-virtual@3.13.12(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@tanstack/react-virtual@3.13.13(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
-      '@tanstack/virtual-core': 3.13.12
+      '@tanstack/virtual-core': 3.13.13
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
 
-  '@tanstack/virtual-core@3.13.12': {}
+  '@tanstack/virtual-core@3.13.13': {}
 
   '@testing-library/dom@10.4.1':
     dependencies:
@@ -12105,13 +12105,13 @@ snapshots:
     dependencies:
       '@testing-library/dom': 10.4.1
 
-  '@tokens-studio/sd-transforms@2.0.2(style-dictionary@5.1.1)':
+  '@tokens-studio/sd-transforms@2.0.3(style-dictionary@5.1.1)':
     dependencies:
       '@bundled-es-modules/deepmerge': 4.3.1
       '@bundled-es-modules/postcss-calc-ast-parser': 0.1.6
       '@tokens-studio/types': 0.5.2
       colorjs.io: 0.5.2
-      expr-eval-fork: 3.0.0
+      expr-eval-fork: 3.0.1
       is-mergeable-object: 1.1.1
       style-dictionary: 5.1.1
 
@@ -12403,7 +12403,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@u-elements/u-combobox@1.0.4': {}
+  '@u-elements/u-combobox@1.0.5': {}
 
   '@u-elements/u-datalist@1.0.14': {}
 
@@ -12411,15 +12411,15 @@ snapshots:
 
   '@udir-design/icons@file:@udir-design/icons(@types/react@18.3.27)(react@18.3.1)':
     dependencies:
-      '@navikt/aksel-icons': 7.35.0(@types/react@18.3.27)(react@18.3.1)
+      '@navikt/aksel-icons': 7.35.3(@types/react@18.3.27)(react@18.3.1)
     transitivePeerDependencies:
       - '@types/react'
       - react
 
   '@udir-design/react@file:@udir-design/react(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@digdir/designsystemet-react': 1.8.0(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@digdir/designsystemet-types': 1.8.0
+      '@digdir/designsystemet-react': 1.9.0(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@digdir/designsystemet-types': 1.9.0
       '@u-elements/u-details': 0.1.5
       '@udir-design/css': link:@udir-design/css
       '@udir-design/icons': link:@udir-design/icons
@@ -12698,7 +12698,7 @@ snapshots:
       js-yaml: 3.14.2
       tslib: 2.8.1
 
-  '@zip.js/zip.js@2.8.10': {}
+  '@zip.js/zip.js@2.8.11': {}
 
   '@zkochan/js-yaml@0.0.7':
     dependencies:
@@ -14019,8 +14019,8 @@ snapshots:
       '@babel/parser': 7.28.5
       eslint: 9.39.1(jiti@2.6.1)
       hermes-parser: 0.25.1
-      zod: 4.1.13
-      zod-validation-error: 4.0.2(zod@4.1.13)
+      zod: 4.2.1
+      zod-validation-error: 4.0.2(zod@4.2.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -14157,7 +14157,7 @@ snapshots:
 
   expect-type@1.2.2: {}
 
-  expr-eval-fork@3.0.0: {}
+  expr-eval-fork@3.0.1: {}
 
   exsolve@1.0.8: {}
 
@@ -17114,7 +17114,7 @@ snapshots:
       '@bundled-es-modules/deepmerge': 4.3.1
       '@bundled-es-modules/glob': 11.0.3
       '@bundled-es-modules/memfs': 4.17.0
-      '@zip.js/zip.js': 2.8.10
+      '@zip.js/zip.js': 2.8.11
       chalk: 5.6.2
       change-case: 5.4.4
       commander: 12.1.0
@@ -17910,10 +17910,10 @@ snapshots:
   yoctocolors-cjs@2.1.3:
     optional: true
 
-  zod-validation-error@4.0.2(zod@4.1.13):
+  zod-validation-error@4.0.2(zod@4.2.1):
     dependencies:
-      zod: 4.1.13
+      zod: 4.2.1
 
-  zod@4.1.13: {}
+  zod@4.2.1: {}
 
   zwitch@2.0.4: {}

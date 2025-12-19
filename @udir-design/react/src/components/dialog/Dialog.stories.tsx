@@ -1,15 +1,20 @@
+import type { ChangeEvent } from 'react';
 import { useRef, useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { Button } from '../button/Button';
+import { Checkbox } from '../checkbox/Checkbox';
 import { Field } from '../field/Field';
+import { Fieldset } from '../fieldset/Fieldset';
 import { List } from '../list/List';
+import { Radio } from '../radio/Radio';
 import { Suggestion } from '../suggestion/Suggestion';
 import { Textarea } from '../textarea/Textarea';
 import { Textfield } from '../textfield/Textfield';
 import { Heading } from '../typography/heading/Heading';
 import { Label } from '../typography/label/Label';
 import { Paragraph } from '../typography/paragraph/Paragraph';
+import type { DialogProps } from './Dialog';
 import { Dialog } from './Dialog';
 
 async function defaultPlay(canvasElement: HTMLElement) {
@@ -435,6 +440,72 @@ export const DialogNonModal = meta.story({
         await userEvent.click(document.body);
         await expect(dialog).toHaveAttribute('open');
       },
+    );
+  },
+});
+
+export const Drawer = meta.story({
+  render() {
+    const [placement, setPlacement] =
+      useState<DialogProps['placement']>('bottom');
+    const [modal, setModal] = useState(true);
+    return (
+      <>
+        <Checkbox
+          label="Modal"
+          checked={modal}
+          id="modal-checkbox"
+          style={{ marginBottom: 'var(--ds-size-4)' }}
+          onChange={(e) => setModal(e.target.checked)}
+        />
+        <Fieldset
+          onChange={(e: ChangeEvent<HTMLFieldSetElement>) => {
+            const target = e.target as unknown as HTMLInputElement;
+            setPlacement(target.value as DialogProps['placement']);
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: 'var(--ds-size-5)',
+              marginBottom: 'var(--ds-size-8)',
+            }}
+          >
+            <Radio
+              name="drawer"
+              label="Midten"
+              value="center"
+              id="center-radio"
+            />
+            <Radio name="drawer" label="Topp" value="top" id="top-radio" />
+            <Radio
+              name="drawer"
+              label="Bunn"
+              value="bottom"
+              id="bottom-radio"
+            />
+            <Radio name="drawer" label="Venstre" value="left" id="left-radio" />
+            <Radio name="drawer" label="Høyre" value="right" id="right-radio" />
+          </div>
+        </Fieldset>
+        <Dialog.TriggerContext>
+          <Dialog.Trigger>Open Dialog</Dialog.Trigger>
+          <Dialog
+            modal={modal}
+            closedby="any"
+            placement={placement}
+            style={{ zIndex: '10' }}
+          >
+            <Dialog.Block>
+              <Paragraph>
+                This is a {modal ? 'modal' : 'non-modal'} Dialog with{' '}
+                <code>placement="{placement}"</code>
+              </Paragraph>
+            </Dialog.Block>
+          </Dialog>
+        </Dialog.TriggerContext>
+      </>
     );
   },
 });
