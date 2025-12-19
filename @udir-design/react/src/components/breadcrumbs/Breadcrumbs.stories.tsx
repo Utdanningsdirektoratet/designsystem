@@ -4,7 +4,7 @@ import { Breadcrumbs } from './Breadcrumbs';
 
 const meta = preview.meta({
   component: Breadcrumbs,
-  tags: ['beta', 'udir'],
+  tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
