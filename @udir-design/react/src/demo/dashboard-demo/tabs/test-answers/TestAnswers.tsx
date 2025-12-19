@@ -16,7 +16,7 @@ const characterDistribution = [
   { name: '1', value: 90 },
 ];
 
-const options = {
+const options: Highcharts.Options = {
   title: {
     text: 'Karakterfordeling',
     // hide title but keep for accessibility
@@ -36,21 +36,19 @@ const options = {
     type: 'pie',
     style: { fontFamily: 'Inter, sans-serif' },
   },
-  plotOptions: {
-    pie: {
+  series: [
+    {
+      name: 'Antall prøvesvar',
+      type: 'pie',
       cursor: 'pointer',
       dataLabels: {
         enabled: true,
         format: 'Karakter {point.name}',
         style: {
-          fontWeight: 500,
+          fontWeight: '500',
         },
       },
-    },
-  },
-  series: [
-    {
-      name: 'Antall',
+
       data: characterDistribution.map((item) => ({
         name: item.name,
         y: item.value,
@@ -58,6 +56,11 @@ const options = {
       })),
     },
   ],
+  accessibility: {
+    typeDescription: 'Sektordiagram',
+    description:
+      'Diagrammet viser fordeling av prøvesvar med antall per karakter fra 1 til 6.',
+  },
 };
 
 export const TestAnswers = (props: HighchartsReact.Props) => {
