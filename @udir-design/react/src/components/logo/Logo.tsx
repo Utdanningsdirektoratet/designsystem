@@ -20,18 +20,16 @@ export type LogoProps = HTMLAttributes<HTMLElement> & {
   padding?: string;
 };
 
-export const Logo = forwardRef<HTMLElement, LogoProps>(function Header({
-  className,
-  size,
-  padding,
-  style,
-  ...rest
-}) {
+export const Logo = forwardRef<HTMLDivElement, LogoProps>(function Header(
+  { className, size, padding, style, ...rest },
+  ref,
+) {
   const logoAlt = 'Utdanningsdirektoratet';
 
   return (
     <div
       className={cl('uds-logo', className)}
+      ref={ref}
       {...rest}
       style={
         {

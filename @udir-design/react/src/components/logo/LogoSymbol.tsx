@@ -14,19 +14,17 @@ export type LogoSymbolProps = Omit<LogoProps, 'padding'> & {
   padding?: string;
 };
 
-export const LogoSymbol = forwardRef<HTMLElement, LogoSymbolProps>(
-  function Header({
-    className,
-    size,
-    padding = 'var(--ds-size-3)',
-    style,
-    ...rest
-  }) {
+export const LogoSymbol = forwardRef<HTMLDivElement, LogoSymbolProps>(
+  function Header(
+    { className, size, padding = 'var(--ds-size-3)', style, ...rest },
+    ref,
+  ) {
     const logoAlt = 'Utdanningsdirektoratet';
 
     return (
       <div
         className={cl('uds-logo', className)}
+        ref={ref}
         {...rest}
         style={
           {
