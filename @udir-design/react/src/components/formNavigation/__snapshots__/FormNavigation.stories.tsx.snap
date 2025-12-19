@@ -818,6 +818,7 @@ exports[`Full 1`] = `
           Naviger
         </button>
         <dialog
+          data-placement="center"
           data-modal="true"
           closedby="any"
           style="width: fit-content; min-width: 20rem;"

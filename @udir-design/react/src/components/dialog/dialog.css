@@ -1,7 +1,21 @@
 .ds-dialog {
-  @media (max-width: 40rem) {
-    min-width: calc(100% - 4px);
-    max-width: calc(100% - 4px);
-    border-radius: var(--ds-border-radius-lg);
+  min-width: unset;
+  max-width: var(--dsc-dialog-placement-inline-max-width);
+
+  &[data-placement='left'],
+  &[data-placement='right'] {
+    --dsc-dialog-placement-inline-max-width: min(80%, 40rem);
+  }
+  &[data-placement='top'],
+  &[data-placement='bottom'] {
+    --dsc-dialog-placement-inline-max-width: calc(100vw - 5px);
+  }
+
+  &[data-placement='center'] {
+    @media (max-width: 40rem) {
+      min-width: calc(100% - 4px);
+      max-width: calc(100% - 4px);
+      border-radius: var(--ds-border-radius-lg);
+    }
   }
 }
