@@ -13,12 +13,12 @@
     "@udir-design/theme": "workspace:*",
     "@udir-design/symbols": "workspace:*",
     "next": "catalog:",
-    "react": "catalog:react18",
-    "react-dom": "catalog:react18"
+    "react": "catalog:",
+    "react-dom": "catalog:"
   },
   "devDependencies": {
-    "@types/react": "catalog:react18",
-    "@types/react-dom": "catalog:react18",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
     "eslint-config-next": "catalog:",
     "sass": "catalog:"
   },

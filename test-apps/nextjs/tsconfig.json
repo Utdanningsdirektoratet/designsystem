@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "allowJs": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -19,7 +19,8 @@
     "skipLibCheck": true,
     "module": "esnext",
     "moduleResolution": "bundler",
-    "types": ["@udir-design/theme", "@udir-design/react/html"]
+    "types": ["@udir-design/theme", "@udir-design/react/html"],
+    "target": "ES2017"
   },
   "include": [
     "**/*.ts",
@@ -29,7 +30,8 @@
     "../../test-apps/nextjs/.next/types/**/*.ts",
     "../../dist/test-apps/nextjs/.next/types/**/*.ts",
     "next-env.d.ts",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": ["node_modules", "jest.config.ts", "**/*.spec.ts", "**/*.test.ts"]
 }
