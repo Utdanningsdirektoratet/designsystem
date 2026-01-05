@@ -11,6 +11,7 @@ import {
   TrashIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
+import { makeStoryTransformer } from '.storybook/utils/makeStoryTransformer';
 import { Card } from '../card/Card';
 import { Tooltip } from '../tooltip/Tooltip';
 import { Label } from '../typography/label/Label';
@@ -357,11 +358,10 @@ export const ButtonInColorContext = meta.story({
   },
 });
 
-type Story = ReturnType<typeof meta.story>;
-
-function makePseudoStatesStory(originalStory: Story): Story['input'] {
-  return {
-    render: (args, ctx) => (
+const makePseudoStatesStory = makeStoryTransformer((originalStory) => ({
+  render: (args, ctx) => {
+    const argsObj = args as object;
+    return (
       <div
         style={{
           display: 'grid',
@@ -372,32 +372,32 @@ function makePseudoStatesStory(originalStory: Story): Story['input'] {
         }}
       >
         <Label data-size="sm">Default</Label>
-        {originalStory.input.render?.(args, ctx)}
+        {originalStory.input.render?.(argsObj, ctx)}
         <Label data-size="sm">Hover</Label>
-        {originalStory.input.render?.({ ...args, className: 'hover' }, ctx)}
+        {originalStory.input.render?.({ ...argsObj, className: 'hover' }, ctx)}
         <Label data-size="sm">Pressed</Label>
         {originalStory.input.render?.(
-          { ...args, className: 'hover active' },
+          { ...argsObj, className: 'hover active' },
           ctx,
         )}
         <Label data-size="sm">Focused</Label>
         {originalStory.input.render?.(
-          { ...args, className: 'focusVisible' },
+          { ...argsObj, className: 'focusVisible' },
           ctx,
         )}
       </div>
-    ),
-    args: originalStory.composed.args,
-    parameters: {
-      ...originalStory.composed.parameters,
-      pseudo: {
-        hover: ['.hover'],
-        active: ['.active'],
-        focusVisible: ['.focusVisible'],
-      },
+    );
+  },
+  args: originalStory.composed.args,
+  parameters: {
+    ...originalStory.composed.parameters,
+    pseudo: {
+      hover: ['.hover'],
+      active: ['.active'],
+      focusVisible: ['.focusVisible'],
     },
-  };
-}
+  },
+}));
 
 export const DangerPseudoStates = meta.story(makePseudoStatesStory(Danger));
 

@@ -4,6 +4,7 @@ import { expect, userEvent, within } from 'storybook/test';
 import { ChevronDownUpIcon, ChevronUpDownIcon } from '@udir-design/icons';
 import { Stack } from '.storybook/docs/components';
 import preview from '.storybook/preview';
+import { makeStoryTransformer } from '.storybook/utils/makeStoryTransformer';
 import { Button } from '../button/Button';
 import type { CardProps } from '../card/Card';
 import { Card } from '../card/Card';
@@ -308,11 +309,10 @@ export const Controlled = meta.story({
   },
 });
 
-type Story = ReturnType<typeof meta.story>;
-
-function makePseudoStatesStory(originalStory: Story): Story['input'] {
-  return {
-    render: (args, ctx) => (
+const makePseudoStatesStory = makeStoryTransformer((originalStory) => ({
+  render: (args, ctx) => {
+    const argsObj = args as object;
+    return (
       <div
         style={{
           display: 'flex',
@@ -323,23 +323,24 @@ function makePseudoStatesStory(originalStory: Story): Story['input'] {
         <Label data-size="sm">Default</Label>
         {originalStory.input.render?.(args, ctx)}
         <Label data-size="sm">Hover</Label>
-        {originalStory.input.render?.({ ...args, className: 'hover' }, ctx)}
+        {originalStory.input.render?.({ ...argsObj, className: 'hover' }, ctx)}
         <Label data-size="sm">Focused</Label>
         {originalStory.input.render?.(
-          { ...args, className: 'focusVisible' },
+          { ...argsObj, className: 'focusVisible' },
           ctx,
         )}
       </div>
-    ),
-    args: originalStory.composed.args,
-    parameters: {
-      ...originalStory.composed.parameters,
-      pseudo: {
-        hover: ['.hover > u-summary'],
-        focusVisible: ['.focusVisible > u-summary'],
-      },
+    );
+  },
+  args: originalStory.composed.args,
+  parameters: {
+    ...originalStory.composed.parameters,
+    pseudo: {
+      hover: ['.hover > u-summary'],
+      focusVisible: ['.focusVisible > u-summary'],
     },
-  };
-}
+  },
+}));
 
+/* @ts-expect-error render method inconsistency */
 export const PseudoStates = meta.story(makePseudoStatesStory(Preview));
