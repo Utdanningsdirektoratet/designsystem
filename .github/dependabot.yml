@@ -28,6 +28,8 @@ updates:
         update-types: [version-update:semver-major]
       - dependency-name: '@storybook/*'
         update-types: [version-update:semver-major]
+      - dependency-name: '@types/node'
+        update-types: [version-update:semver-major]
     # Grouping based on dependency type and semver version
     groups:
       dev-patch-minor:
