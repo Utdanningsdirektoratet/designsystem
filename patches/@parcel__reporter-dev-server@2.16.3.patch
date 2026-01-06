@@ -1,0 +1,158 @@
+diff --git a/src/HMRServer.js b/src/HMRServer.js
+index 37103a135d05eeffb9aa2eb91b1b5b015982ec38..b536e84dab418f55bb834351b4b3df1521b14f43 100644
+--- a/src/HMRServer.js
++++ b/src/HMRServer.js
+@@ -14,7 +14,7 @@ import type {
+   Request,
+   Response,
+ } from './types.js.flow';
+-import {setHeaders, SOURCES_ENDPOINT} from './Server';
++import {setHeaders, verifyOrigin, SOURCES_ENDPOINT} from './Server';
+ 
+ import nullthrows from 'nullthrows';
+ import url, {fileURLToPath} from 'url';
+@@ -110,7 +110,7 @@ export default class HMRServer {
+         outputFS: this.options.outputFS,
+         cacheDir: this.options.cacheDir,
+         listener: (req, res) => {
+-          setHeaders(res);
++          setHeaders(req.headers.origin, this.options.host, res);
+           if (req.method === 'OPTIONS') {
+             res.statusCode = 200;
+             res.end();
+@@ -128,7 +128,17 @@ export default class HMRServer {
+     } else {
+       this.options.addMiddleware?.((req, res) => this.handle(req, res));
+     }
+-    this.wss = new WebSocket.Server({server});
++    this.wss = new WebSocket.Server({
++      server,
++      verifyClient: info => {
++        // Validate Origin header to prevent Cross-Site WebSocket Hijacking.
++        // If there is no Origin header, assume this request is from Node.js or another non-browser client.
++        if (!info.origin) {
++          return true;
++        }
++        return verifyOrigin(info.origin, this.options.host);
++      },
++    });
+ 
+     this.wss.on('connection', ws => {
+       if (this.unresolvedError) {
+diff --git a/src/Server.js b/src/Server.js
+index c290b2076b67c6e98b82dbdec49ce003171e7483..42deb36befb31a53395c8ebc9348aee93cd93bfc 100644
+--- a/src/Server.js
++++ b/src/Server.js
+@@ -31,9 +31,39 @@ import serveHandler from 'serve-handler';
+ import {createProxyMiddleware} from 'http-proxy-middleware';
+ import {URL} from 'url';
+ import fresh from 'fresh';
++import os from 'os';
++
++// Default allowed hosts include `localhost` and all local ip addresses.
++let defaultAllowedHostsCache = null;
++export function getDefaultAllowedHosts(): string[] {
++  if (!defaultAllowedHostsCache) {
++    defaultAllowedHostsCache = ['localhost'];
++    let interfaces = os.networkInterfaces();
++    for (let name in interfaces) {
++      for (let addr of interfaces[name]) {
++        defaultAllowedHostsCache.push(
++          addr.family === 'IPv6' ? `[${addr.address}]` : addr.address,
++        );
++      }
++    }
++  }
++
++  return defaultAllowedHostsCache;
++}
++
++export function setHeaders(
++  origin: ?string,
++  allowedHostname: ?string,
++  res: Response,
++) {
++  res.setHeader('Cache-Control', 'max-age=0, must-revalidate');
++
++  // Add CORS headers if the Origin header is valid.
++  if (!origin || !verifyOrigin(origin, allowedHostname)) {
++    return;
++  }
+ 
+-export function setHeaders(res: Response) {
+-  res.setHeader('Access-Control-Allow-Origin', '*');
++  res.setHeader('Access-Control-Allow-Origin', origin);
+   res.setHeader(
+     'Access-Control-Allow-Methods',
+     'GET, HEAD, PUT, PATCH, POST, DELETE',
+@@ -42,7 +72,53 @@ export function setHeaders(res: Response) {
+     'Access-Control-Allow-Headers',
+     'Origin, X-Requested-With, Content-Type, Accept, Content-Type',
+   );
+-  res.setHeader('Cache-Control', 'max-age=0, must-revalidate');
++}
++
++export function verifyOrigin(
++  origin: string,
++  allowedHostname: ?string,
++): boolean {
++  try {
++    let url = new URL(origin);
++    if (
++      url.protocol === 'file:' ||
++      url.protocol === 'chrome-extension:' ||
++      url.protocol === 'moz-extension:'
++    ) {
++      return true;
++    }
++
++    return verifyHost(url.hostname, allowedHostname);
++  } catch {
++    return false;
++  }
++}
++
++export function verifyHost(
++  requestHost: string,
++  allowedHostname: ?string,
++): boolean {
++  // IPv6 address
++  if (requestHost[0] === '[') {
++    let index = requestHost.indexOf(']');
++    if (index < 0) {
++      return false;
++    }
++
++    requestHost = requestHost.slice(0, index + 1);
++  } else {
++    // Remove port
++    let index = requestHost.indexOf(':');
++    if (index >= 0) {
++      requestHost = requestHost.slice(0, index);
++    }
++  }
++
++  if (allowedHostname) {
++    return requestHost === allowedHostname;
++  }
++
++  return getDefaultAllowedHosts().includes(requestHost);
+ }
+ 
+ const SLASH_REGEX = /\//g;
+@@ -479,7 +555,14 @@ export default class Server {
+ 
+     const app = connect();
+     app.use((req, res, next) => {
+-      setHeaders(res);
++      // Validate the Host header to prevent DNS rebinding attacks.
++      if (!verifyHost(req.headers.host, this.options.host)) {
++        res.statusCode = 403;
++        res.end('Host not allowed.');
++        return;
++      }
++
++      setHeaders(req.headers.origin, this.options.host, res);
+       if (req.method === 'OPTIONS') {
+         res.statusCode = 200;
+         res.end();

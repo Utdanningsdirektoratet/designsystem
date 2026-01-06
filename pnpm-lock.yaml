@@ -389,6 +389,11 @@ overrides:
 
 packageExtensionsChecksum: sha256-LMeXZzq7zvEM75wWqXhoH5AKiX4vxXAjdihGHRrb69w=
 
+patchedDependencies:
+  '@parcel/reporter-dev-server@2.16.3':
+    hash: 58a0264e37fdbd4d3082cc3f6948205bc99f474f0d6e167f06ff1112f0d2fae8
+    path: patches/@parcel__reporter-dev-server@2.16.3.patch
+
 importers:
 
   .:
@@ -10720,7 +10725,7 @@ snapshots:
       '@parcel/packager-raw': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
       '@parcel/packager-svg': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
       '@parcel/packager-wasm': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
-      '@parcel/reporter-dev-server': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
+      '@parcel/reporter-dev-server': 2.16.3(patch_hash=58a0264e37fdbd4d3082cc3f6948205bc99f474f0d6e167f06ff1112f0d2fae8)(@parcel/core@2.16.3(@swc/helpers@0.5.18))
       '@parcel/resolver-default': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
       '@parcel/runtime-browser-hmr': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
       '@parcel/runtime-js': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
@@ -10988,7 +10993,7 @@ snapshots:
       - '@parcel/core'
       - napi-wasm
 
-  '@parcel/reporter-dev-server@2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))':
+  '@parcel/reporter-dev-server@2.16.3(patch_hash=58a0264e37fdbd4d3082cc3f6948205bc99f474f0d6e167f06ff1112f0d2fae8)(@parcel/core@2.16.3(@swc/helpers@0.5.18))':
     dependencies:
       '@parcel/codeframe': 2.16.3
       '@parcel/plugin': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
@@ -15728,7 +15733,7 @@ snapshots:
       '@parcel/logger': 2.16.3
       '@parcel/package-manager': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))(@swc/helpers@0.5.18)
       '@parcel/reporter-cli': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
-      '@parcel/reporter-dev-server': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
+      '@parcel/reporter-dev-server': 2.16.3(patch_hash=58a0264e37fdbd4d3082cc3f6948205bc99f474f0d6e167f06ff1112f0d2fae8)(@parcel/core@2.16.3(@swc/helpers@0.5.18))
       '@parcel/reporter-tracer': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
       '@parcel/utils': 2.16.3
       chalk: 4.1.2
