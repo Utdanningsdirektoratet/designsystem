@@ -31,8 +31,8 @@ catalogs:
       specifier: ^1.9.0
       version: 1.9.0
     '@eslint/compat':
-      specifier: ^1.4.1
-      version: 1.4.1
+      specifier: ^2.0.0
+      version: 2.0.0
     '@eslint/eslintrc':
       specifier: ^3.3.3
       version: 3.3.3
@@ -229,8 +229,8 @@ catalogs:
       specifier: ^8.0.0
       version: 8.0.0
     markdown-to-jsx:
-      specifier: ^7.7.17
-      version: 7.7.17
+      specifier: ^9.5.0
+      version: 9.5.0
     mdast-util-to-hast:
       specifier: ^13.2.1
       version: 13.2.1
@@ -331,8 +331,8 @@ catalogs:
       specifier: ^4.21.0
       version: 4.21.0
     type-fest:
-      specifier: ^5.2.0
-      version: 5.2.0
+      specifier: ^5.3.1
+      version: 5.3.1
     typedoc:
       specifier: ^0.28.15
       version: 0.28.15
@@ -358,8 +358,8 @@ catalogs:
       specifier: ^4.5.4
       version: 4.5.4
     vite-tsconfig-paths:
-      specifier: ^5.1.4
-      version: 5.1.4
+      specifier: ^6.0.3
+      version: 6.0.3
     vitest:
       specifier: ^4.0.16
       version: 4.0.16
@@ -407,7 +407,7 @@ importers:
         version: 20.2.0
       '@eslint/compat':
         specifier: 'catalog:'
-        version: 1.4.1(eslint@9.39.2(jiti@2.6.1))
+        version: 2.0.0(eslint@9.39.2(jiti@2.6.1))
       '@eslint/eslintrc':
         specifier: 'catalog:'
         version: 3.3.3
@@ -674,7 +674,7 @@ importers:
         version: 3.2.3(highcharts@12.4.0)(react@19.2.0)
       markdown-to-jsx:
         specifier: 'catalog:'
-        version: 7.7.17(react@19.2.0)
+        version: 9.5.0(react@19.2.0)
       mdast-util-to-hast:
         specifier: 'catalog:'
         version: 13.2.1
@@ -722,7 +722,7 @@ importers:
         version: 10.1.11(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
       type-fest:
         specifier: 'catalog:'
-        version: 5.2.0
+        version: 5.3.1
       typedoc:
         specifier: 'catalog:'
         version: 0.28.15(typescript@5.9.3)
@@ -743,7 +743,7 @@ importers:
         version: 4.5.4(@types/node@24.10.4)(rollup@4.53.2)(typescript@5.9.3)(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.1)(less@4.1.3)(lightningcss@1.30.2)(sass@1.97.1)(stylus@0.64.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.1))
       vite-tsconfig-paths:
         specifier: 'catalog:'
-        version: 5.1.4(typescript@5.9.3)(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.1)(less@4.1.3)(lightningcss@1.30.2)(sass@1.97.1)(stylus@0.64.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.1))
+        version: 6.0.3(typescript@5.9.3)(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.1)(less@4.1.3)(lightningcss@1.30.2)(sass@1.97.1)(stylus@0.64.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.1))
       vitest:
         specifier: 'catalog:'
         version: 4.0.16(@types/node@24.10.4)(@vitest/browser-playwright@4.0.16)(@vitest/ui@4.0.16)(jiti@2.6.1)(jsdom@27.4.0)(less@4.1.3)(lightningcss@1.30.2)(msw@2.7.3(@types/node@24.10.4)(typescript@5.9.3))(sass@1.97.1)(stylus@0.64.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.1)
@@ -929,7 +929,7 @@ importers:
         version: 7.3.0(@types/node@24.10.4)(jiti@2.6.1)(less@4.1.3)(lightningcss@1.30.2)(sass@1.97.1)(stylus@0.64.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.1)
       vite-tsconfig-paths:
         specifier: 'catalog:'
-        version: 5.1.4(typescript@5.9.3)(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.1)(less@4.1.3)(lightningcss@1.30.2)(sass@1.97.1)(stylus@0.64.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.1))
+        version: 6.0.3(typescript@5.9.3)(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.1)(less@4.1.3)(lightningcss@1.30.2)(sass@1.97.1)(stylus@0.64.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.1))
       vitest:
         specifier: 'catalog:'
         version: 4.0.16(@types/node@24.10.4)(@vitest/browser-playwright@4.0.16)(@vitest/ui@4.0.16)(jiti@2.6.1)(jsdom@27.4.0)(less@4.1.3)(lightningcss@1.30.2)(msw@2.7.3(@types/node@24.10.4)(typescript@5.9.3))(sass@1.97.1)(stylus@0.64.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.1)
@@ -1901,9 +1901,9 @@ packages:
     resolution: {integrity: sha512-EriSTlt5OC9/7SXkRSCAhfSxxoSUgBm33OH+IkwbdpgoqsSsUg7y3uh+IICI/Qg4BBWr3U2i39RpmycbxMq4ew==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
 
-  '@eslint/compat@1.4.1':
-    resolution: {integrity: sha512-cfO82V9zxxGBxcQDr1lfaYB7wykTa0b00mGa36FrJl7iTFd0Z2cHfEYuxcBRP/iNijCsWsEkA+jzT8hGYmv33w==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+  '@eslint/compat@2.0.0':
+    resolution: {integrity: sha512-T9AfE1G1uv4wwq94ozgTGio5EUQBqAVe1X9qsQtSNVEYW6j3hvtZVm8Smr4qL1qDPFg+lOB2cL5RxTRMzq4CTA==}
+    engines: {node: ^20.19.0 || ^22.13.0 || >=24}
     peerDependencies:
       eslint: ^8.40 || 9
     peerDependenciesMeta:
@@ -1921,6 +1921,10 @@ packages:
   '@eslint/core@0.17.0':
     resolution: {integrity: sha512-yL/sLrpmtDaFEiUj1osRP4TI2MDz1AddJL+jZ7KSqvBuliN4xqYY54IfdN8qD8Toa6g1iloph1fxQNkjOxrrpQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@eslint/core@1.0.0':
+    resolution: {integrity: sha512-PRfWP+8FOldvbApr6xL7mNCw4cJcSTq4GA7tYbgq15mRb0kWKO/wEB2jr+uwjFH3sZvEZneZyCUGTxsv4Sahyw==}
+    engines: {node: ^20.19.0 || ^22.13.0 || >=24}
 
   '@eslint/eslintrc@3.3.3':
     resolution: {integrity: sha512-Kr+LPIUVKz2qkx1HAMH8q1q6azbqBAsXJUxBl/ODDuVPX45Z9DfwB8tPjTi6nNZ8BuM3nbJxC5zCAg5elnBUTQ==}
@@ -6467,13 +6471,22 @@ packages:
   markdown-table@3.0.4:
     resolution: {integrity: sha512-wiYz4+JrLyb/DqW2hkFJxP7Vd7JuTDm77fvbM8VfEQdmSMqcImWeeRbHwZjBjIFki/VaMK2BhFi7oUUZeM5bqw==}
 
-  markdown-to-jsx@7.7.17:
-    resolution: {integrity: sha512-7mG/1feQ0TX5I7YyMZVDgCC/y2I3CiEhIRQIhyov9nGBP5eoVrOXXHuL5ZP8GRfxVZKRiXWJgwXkb9It+nQZfQ==}
-    engines: {node: '>= 10'}
+  markdown-to-jsx@9.5.0:
+    resolution: {integrity: sha512-6PhWz9md8btrE52LDM4KHSzXf2HKCG+2oGNVw/eQhMP6h51dfZVHb9mt1zWYvQ7wM+xOK8WWaijzEhjB0qIpUg==}
+    engines: {node: '>= 18'}
     peerDependencies:
-      react: '>= 0.14.0'
+      react: '>= 16.0.0'
+      react-native: '*'
+      solid-js: '>=1.0.0'
+      vue: '>=3.0.0'
     peerDependenciesMeta:
       react:
+        optional: true
+      react-native:
+        optional: true
+      solid-js:
+        optional: true
+      vue:
         optional: true
 
   math-intrinsics@1.1.0:
@@ -8211,8 +8224,8 @@ packages:
     resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
     engines: {node: '>=16'}
 
-  type-fest@5.2.0:
-    resolution: {integrity: sha512-xxCJm+Bckc6kQBknN7i9fnP/xobQRsRQxR01CztFkp/h++yfVxUUcmMgfR2HttJx/dpWjS9ubVuyspJv24Q9DA==}
+  type-fest@5.3.1:
+    resolution: {integrity: sha512-VCn+LMHbd4t6sF3wfU/+HKT63C9OoyrSIf4b+vtWHpt2U7/4InZG467YDNMFMR70DdHjAdpPWmw2lzRdg0Xqqg==}
     engines: {node: '>=20'}
 
   typed-array-buffer@1.0.3:
@@ -8395,8 +8408,8 @@ packages:
       vite:
         optional: true
 
-  vite-tsconfig-paths@5.1.4:
-    resolution: {integrity: sha512-cYj0LRuLV2c2sMqhqhGpaO3LretdtMn/BVX4cPLanIZuwwrkVl+lK84E/miEXkCHWXuq65rhNN4rXsBcOB3S4w==}
+  vite-tsconfig-paths@6.0.3:
+    resolution: {integrity: sha512-7bL7FPX/DSviaZGYUKowWF1AiDVWjMjxNbE8lyaVGDezkedWqfGhlnQ4BZXre0ZN5P4kAgIJfAlgFDVyjrCIyg==}
     peerDependencies:
       vite: '*'
     peerDependenciesMeta:
@@ -9881,9 +9894,9 @@ snapshots:
 
   '@eslint-community/regexpp@4.12.2': {}
 
-  '@eslint/compat@1.4.1(eslint@9.39.2(jiti@2.6.1))':
+  '@eslint/compat@2.0.0(eslint@9.39.2(jiti@2.6.1))':
     dependencies:
-      '@eslint/core': 0.17.0
+      '@eslint/core': 1.0.0
     optionalDependencies:
       eslint: 9.39.2(jiti@2.6.1)
 
@@ -9900,6 +9913,10 @@ snapshots:
       '@eslint/core': 0.17.0
 
   '@eslint/core@0.17.0':
+    dependencies:
+      '@types/json-schema': 7.0.15
+
+  '@eslint/core@1.0.0':
     dependencies:
       '@types/json-schema': 7.0.15
 
@@ -14981,7 +14998,7 @@ snapshots:
 
   markdown-table@3.0.4: {}
 
-  markdown-to-jsx@7.7.17(react@19.2.0):
+  markdown-to-jsx@9.5.0(react@19.2.0):
     optionalDependencies:
       react: 19.2.0
 
@@ -17141,7 +17158,7 @@ snapshots:
   type-fest@4.41.0:
     optional: true
 
-  type-fest@5.2.0:
+  type-fest@5.3.1:
     dependencies:
       tagged-tag: 1.0.0
 
@@ -17396,7 +17413,7 @@ snapshots:
       - rollup
       - supports-color
 
-  vite-tsconfig-paths@5.1.4(typescript@5.9.3)(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.1)(less@4.1.3)(lightningcss@1.30.2)(sass@1.97.1)(stylus@0.64.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.1)):
+  vite-tsconfig-paths@6.0.3(typescript@5.9.3)(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.1)(less@4.1.3)(lightningcss@1.30.2)(sass@1.97.1)(stylus@0.64.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.1)):
     dependencies:
       debug: 4.4.3
       globrex: 0.1.2
