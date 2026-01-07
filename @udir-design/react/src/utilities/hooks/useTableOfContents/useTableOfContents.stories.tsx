@@ -18,10 +18,9 @@ const meta = preview.meta<
   useTableOfContentsProps
 >({
   title: 'Utilities/useTableOfContents',
-  tags: ['alpha'],
+  tags: ['beta', 'udir'],
   parameters: {
     chromatic: { disableSnapshot: true },
-    tags: ['alpha', 'udir'],
     componentOrigin: {
       originator: 'self',
     },
