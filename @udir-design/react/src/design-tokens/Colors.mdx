@@ -1,0 +1,41 @@
+import { Meta, Unstyled } from '@storybook/addon-docs/blocks';
+import {
+  ColorDisplay,
+  SeverityColors,
+  BrandColors,
+} from './docs/color/color-display';
+
+<Meta title="design-tokens/Farger" />
+<Unstyled>
+
+# Farger
+
+Vi deler fargene i designsystemet inn i tre grupper: Farger for brukergrensesnitt, datavisualisering, og for andre flater.
+
+## Farger for brukergrensesnitt
+
+Fargene for brukergrensesnitt er delt opp i underkategorier for identitetsfarger og varselfarger. Disse fargene er testet for kontrast og tilgjengelighet, og de gir forutsigbarhet og konsistens på tvers av komponenter og plattformer. Når du bruker fargene skal du alltid referere til design tokens, ikke hardkodede verdier.
+
+Farger i denne gruppen brukes for eksempel på komponenter som knapper, bakgrunner, lenker, ikoner og lignende. Designteamet har definert hvordan og hvor disse fargene kan brukes:
+
+- Mange komponenter er kun tilgjengelig i et relevant utvalg av fargene. Dette gjelder for eksempel [`Alert`](/docs/components-alert--docs), som skal bruke varselfargene for å indikere status på varselet.
+
+- Andre komponenter og egendefinerte flater har mer fleksibilitet, og designeren må ta valg ut ifra hensikt og visuell helhet. Dette gjelder for eksempel card.
+
+### Identitetsfarger
+
+Identitetsfargene tar utgangspunkt i Udirs visuelle identitet, men nyansene er tilpasset interaktive flater. På den måten opprettholder vi både tydelig identitet og god brukeropplevelse i digitale tjenester.
+
+<BrandColors />
+
+### Varselfarger
+
+Varselfargene brukes til å formidle varsler av typen info, suksess, advarsel eller fare. Disse fargene er tilgjengelig for komponenter der det er relevant, for eksempel [`Alert`](/docs/components-alert--docs) og [`Tag`](/docs/components-tag--docs). Varselfarger skal ikke brukes som dekor eller fordi de ser fine ut. De skal kun benyttes i kontekst der innholdet har tilsvarende funksjon.
+
+<SeverityColors />
+
+## Farger for andre flater
+
+Dersom du skal lage illustrasjoner, trykksaker eller lignende, kan du lese mer om [fargepaletter for øvrige bruksområder](https://www.udir.no/om-udir/designprofil/farger/) på Udir.no.
+
+</Unstyled>
