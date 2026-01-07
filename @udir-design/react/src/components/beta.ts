@@ -28,6 +28,7 @@ export * from './select/Select';
 export * from './skeleton/Skeleton';
 export * from './skipLink/SkipLink';
 export * from './spinner/Spinner';
+export * from './tableOfContents/TableOfContents';
 export * from './tabs/Tabs';
 export * from './tag/Tag';
 export * from './textarea/Textarea';

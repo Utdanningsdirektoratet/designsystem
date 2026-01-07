@@ -10,7 +10,7 @@ import { TableOfContents } from './TableOfContents';
 
 const meta = preview.meta({
   component: TableOfContents,
-  tags: ['alpha', 'udir'],
+  tags: ['beta', 'udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',
