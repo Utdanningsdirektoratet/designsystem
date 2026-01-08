@@ -10,5 +10,4 @@ export * from './logo';
 export * from './typography/prose/Prose';
 export * from './suggestion/Suggestion';
 export * from './switch/Switch';
-export * from './tableOfContents/TableOfContents';
 export * from './readMore/ReadMore';

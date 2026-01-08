@@ -12,8 +12,3 @@ export {
   type UseFormNavigationReturn,
   useFormNavigation,
 } from './useFormNavigation/useFormNavigation';
-export {
-  useTableOfContents,
-  type useTableOfContentsProps,
-  type useTableOfContentsReturn,
-} from './useTableOfContents/useTableOfContents';
