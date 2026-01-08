@@ -1,5 +1,4 @@
-import type { Size } from '@digdir/designsystemet-react';
-import type { SeverityColors } from '@digdir/designsystemet-react/colors';
+import type { SeverityColors } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
 import { type HTMLAttributes, forwardRef } from 'react';
 import { XMarkIcon } from '@udir-design/icons';
@@ -23,11 +22,6 @@ export type ToastProps = HTMLAttributes<HTMLDialogElement> & {
    * @default 'info'
    */
   'data-color'?: SeverityColors;
-  /**
-   * Changes size for descendant Designsystemet components. Select from predefined sizes.
-   * @default 'md'
-   */
-  'data-size'?: Size;
   /**
    * If the user should be able
    * to dismiss the toast

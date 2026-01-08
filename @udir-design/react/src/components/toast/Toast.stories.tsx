@@ -27,7 +27,6 @@ export const Preview = meta.story({
   args: {
     message: 'En ny rad ble lagt til',
     'data-color': 'info',
-    'data-size': 'md',
     icon: true,
     timeout: false,
     onClose: () => console.log('Lukk toast'),
