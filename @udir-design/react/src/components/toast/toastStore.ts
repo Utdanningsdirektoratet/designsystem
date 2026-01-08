@@ -1,5 +1,4 @@
-import type { Size } from '@digdir/designsystemet-react';
-import type { SeverityColors } from '@digdir/designsystemet-react/colors';
+import type { SeverityColors } from '@digdir/designsystemet-types';
 
 export type ToastOptions = {
   id?: string;
@@ -10,7 +9,6 @@ export type ToastOptions = {
   busy?: boolean;
   onClose?: () => void;
   'data-color'?: SeverityColors;
-  'data-size'?: Size;
 };
 
 export type ToastData = ToastOptions & {
