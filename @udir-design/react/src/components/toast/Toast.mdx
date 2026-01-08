@@ -27,7 +27,6 @@ En `Toast` viser midlertidige meldinger som bekrefter en handling eller gir en t
 ```tsx
 import { toast } from '@udir-design/react';
 
-toast(`En ny rad ble lagt til`);
 toast.info(`Ny oppdatering tilgjengelig`);
 toast.success(`Endringene dine ble lagret`);
 toast.warning(`Noe gikk galt, prøv igjen`);
@@ -41,7 +40,7 @@ toast.promise(fetchData(), {
 
 ## Eksempler
 
-`Toast` brukes ved å kalle `toast()`-funksjonen med en meldingstekst og eventuelle `options`. Tilgjengelige `options` er listet over som props for Toast.
+`Toast` brukes ved å kalle en av `toast.*`-funksjonene med en meldingstekst og eventuelle `options`. Tilgjengelige `options` er listet over som props for Toast.
 
 ### Varianter
 

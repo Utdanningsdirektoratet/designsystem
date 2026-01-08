@@ -26,7 +26,7 @@ type PromiseOptions = Omit<ToastOptions, 'message'> & {
   error: string;
 };
 
-const core = {
+export const toast = {
   show(options: ToastOptions): string | undefined {
     if (typeof document === 'undefined') {
       if (process.env.NODE_ENV !== 'production') {
@@ -47,7 +47,7 @@ const core = {
   },
 
   success(message: string, opt: ToastVariantOptions = {}): string | undefined {
-    return core.show({
+    return toast.show({
       message,
       'data-color': 'success',
       ...opt,
@@ -55,7 +55,7 @@ const core = {
   },
 
   danger(message: string, opt: ToastVariantOptions = {}): string | undefined {
-    return core.show({
+    return toast.show({
       message,
       'data-color': 'danger',
       ...opt,
@@ -63,7 +63,7 @@ const core = {
   },
 
   info(message: string, opt: ToastVariantOptions = {}): string | undefined {
-    return core.show({
+    return toast.show({
       message,
       'data-color': 'info',
       ...opt,
@@ -71,7 +71,7 @@ const core = {
   },
 
   warning(message: string, opt: ToastVariantOptions = {}): string | undefined {
-    return core.show({
+    return toast.show({
       message,
       'data-color': 'warning',
       ...opt,
@@ -84,7 +84,7 @@ const core = {
   ): Promise<T> {
     const { loading, success, error, ...rest } = props;
 
-    const id = core.show({
+    const id = toast.show({
       message: loading,
       busy: true,
       dismissable: false,
@@ -94,22 +94,16 @@ const core = {
     try {
       const result = await action();
       if (id) {
-        core.success(success, { id, busy: false, dismissable: true });
+        toast.success(success, { id, busy: false, dismissable: true });
       }
       return result;
     } catch (err) {
       if (id) {
-        core.danger(error, { id, busy: false, dismissable: true });
+        toast.danger(error, { id, busy: false, dismissable: true });
       }
       throw err;
     }
   },
 };
-
-export const toast = Object.assign(
-  (message: string, opt: Omit<ToastOptions, 'message'> = {}) =>
-    core.show({ message, icon: false, ...opt }),
-  core,
-);
 
 export type ToastFn = typeof toast;
