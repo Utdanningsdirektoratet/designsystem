@@ -18,6 +18,9 @@ const meta = preview.meta({
       flexWrap: 'wrap',
     },
   },
+  argTypes: {
+    'data-color': { table: { disable: true } },
+  },
 });
 
 export const Preview = meta.story({
@@ -73,7 +76,7 @@ export const AutoClose = meta.story({
       <Button
         variant="secondary"
         onClick={() =>
-          toast('Jeg forsvinner', { timeout: 2000, dismissable: false })
+          toast.info('Jeg forsvinner', { timeout: 2000, dismissable: false })
         }
       >
         Vis timeout
@@ -130,11 +133,12 @@ export const Promises = meta.story({
 
 export const Updates = meta.story({
   render: () => {
+    const updateType: 'info' | 'success' = 'info';
     return (
       <Button
         variant="secondary"
         onClick={async () => {
-          const id = toast.info('Laster data…', {
+          const id = toast[updateType]('Laster data…', {
             busy: true,
             dismissable: false,
           });
