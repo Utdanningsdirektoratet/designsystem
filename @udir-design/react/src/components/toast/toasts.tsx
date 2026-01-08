@@ -11,9 +11,13 @@ function ensureViewportMounted(): void {
   if (typeof document === 'undefined') return;
   if (root) return;
 
-  const container = document.createElement('div');
-  container.id = 'uds-toast-root';
-  document.body.appendChild(container);
+  const id = 'uds-toast-root';
+  let container = document.getElementById(id);
+  if (!container) {
+    container = document.createElement('div');
+    container.id = id;
+    document.body.appendChild(container);
+  }
 
   root = createRoot(container);
   root.render(<ToastViewport />);
