@@ -104,7 +104,7 @@ exports[`All States 1`] = `
         >
           <div>
           </div>
-          Bekreftelse
+          Kvittering
         </button>
         <button
           data-state="active"
@@ -113,7 +113,7 @@ exports[`All States 1`] = `
         >
           <div>
           </div>
-          Bekreftelse
+          Kvittering
         </button>
       </div>
     </div>
@@ -782,10 +782,11 @@ exports[`Full 1`] = `
         <button
           data-state="idle"
           data-variant="confirmation"
+          disabled
         >
           <div>
           </div>
-          Bekreftelse
+          Kvittering
         </button>
       </div>
     </div>
@@ -921,10 +922,11 @@ exports[`Full 1`] = `
             <button
               data-state="idle"
               data-variant="confirmation"
+              disabled
             >
               <div>
               </div>
-              Bekreftelse
+              Kvittering
             </button>
           </div>
         </dialog>
@@ -1317,6 +1319,14 @@ exports[`States 1`] = `
     </u-details>
     <button
       data-state="idle"
+      data-variant="summary"
+    >
+      <div>
+      </div>
+      Oppsummering
+    </button>
+    <button
+      data-state="idle"
       data-variant="submission"
     >
       <div>
@@ -1329,15 +1339,7 @@ exports[`States 1`] = `
     >
       <div>
       </div>
-      Bekreftelse
-    </button>
-    <button
-      data-state="idle"
-      data-variant="summary"
-    >
-      <div>
-      </div>
-      Oppsummering
+      Kvittering
     </button>
   </div>
 </div>
