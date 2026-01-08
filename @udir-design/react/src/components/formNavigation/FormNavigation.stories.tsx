@@ -124,11 +124,11 @@ export const States = meta.story({
         <FormNavigation.Step state="completed">Andre steg</FormNavigation.Step>
         <FormNavigation.Step state="active">Tredje steg</FormNavigation.Step>
       </FormNavigation.Group>
+      <FormNavigation.Step variant="summary">Oppsummering</FormNavigation.Step>
       <FormNavigation.Step variant="submission">Innsending</FormNavigation.Step>
       <FormNavigation.Step variant="confirmation">
-        Bekreftelse
+        Kvittering
       </FormNavigation.Step>
-      <FormNavigation.Step variant="summary">Oppsummering</FormNavigation.Step>
     </FormNavigation>
   ),
 });
@@ -171,10 +171,10 @@ export const AllStates = meta.story({
 
         <FormNavigation {...args}>
           <FormNavigation.Step variant="confirmation">
-            Bekreftelse
+            Kvittering
           </FormNavigation.Step>
           <FormNavigation.Step state="active" variant="confirmation">
-            Bekreftelse
+            Kvittering
           </FormNavigation.Step>
         </FormNavigation>
       </div>
