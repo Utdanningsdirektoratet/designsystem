@@ -4,9 +4,8 @@ import type { HTMLAttributes } from 'react';
 import { forwardRef } from 'react';
 import './progressBar.css';
 import '@u-elements/u-progress';
-import { Label } from '../typography/label/Label';
 
-export type ProgressBarProps = HTMLAttributes<HTMLLabelElement> & {
+export type ProgressBarProps = HTMLAttributes<HTMLDivElement> & {
   /**
    * Changes size for descendant Designsystemet components.
    * Select from predefined sizes.
@@ -38,7 +37,7 @@ export type ProgressBarProps = HTMLAttributes<HTMLLabelElement> & {
   percentage?: boolean;
 };
 
-export const ProgressBar = forwardRef<HTMLLabelElement, ProgressBarProps>(
+export const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
   function ProgressBar(
     { className, max, value, label, percentage = false, ...rest },
     ref,
@@ -46,16 +45,10 @@ export const ProgressBar = forwardRef<HTMLLabelElement, ProgressBarProps>(
     const progress = ((value / max) * 100).toFixed(0);
     const progressText = percentage ? `${progress}%` : `${value} av ${max}`;
     return (
-      <Label
-        className={cl(`uds-progressBar`, className)}
-        htmlFor="progressBar"
-        aria-live="polite"
-        ref={ref}
-        {...rest}
-      >
-        {`${label} ${progressText}`}
-        <u-progress value={value} max={max} id="progressBar" />
-      </Label>
+      <div className={cl(`uds-progressBar`, className)} ref={ref} {...rest}>
+        <span>{`${label} ${progressText}`}</span>
+        <u-progress value={value} max={max} aria-hidden />
+      </div>
     );
   },
 );
