@@ -30,6 +30,7 @@ import {
 
 export type PageProps = {
   showErrors: boolean;
+  isSubmitSuccessful: boolean;
 };
 
 export const focusableFieldsetProps: Partial<FieldsetProps> = {
@@ -46,6 +47,7 @@ const pageFields = defineSteps({
   ranking: ['rankings'],
   finish: ['addition', 'contactMethods'],
   deliver: [],
+  confirmation: [],
 });
 export type PageFields = typeof pageFields;
 
@@ -114,7 +116,7 @@ export const FormDemo = ({
     handleSubmit,
     trigger,
     reset: resetForm,
-    formState: { errors, isSubmitted },
+    formState: { errors, isSubmitted, isSubmitSuccessful },
     getFieldState,
   } = methods;
 
@@ -179,7 +181,13 @@ export const FormDemo = ({
         title="Skoleundersøkelse"
         className={classes.navigation}
         open={true}
-        {...getGroupProps(['personal', 'ranking', 'finish', 'deliver'])}
+        {...getGroupProps([
+          'personal',
+          'ranking',
+          'finish',
+          'deliver',
+          'confirmation',
+        ])}
       >
         <FormNavigation.Step {...getStepProps('personal')}>
           Personopplysninger
@@ -193,12 +201,22 @@ export const FormDemo = ({
         <FormNavigation.Step variant="submission" {...getStepProps('deliver')}>
           Innsending
         </FormNavigation.Step>
+        <FormNavigation.Step
+          variant="confirmation"
+          {...getStepProps('confirmation')}
+          disabled={!isSubmitSuccessful}
+        >
+          Kvittering
+        </FormNavigation.Step>
       </FormNavigation.Group>
     </FormNavigation>
   );
 
   const renderCurrentPage = () => {
-    const props = { showErrors: isSubmitted };
+    const props = {
+      showErrors: isSubmitted,
+      isSubmitSuccessful: isSubmitSuccessful,
+    };
     switch (id) {
       case 'personal':
         return <PersonalInfoPage {...props} />;
@@ -208,6 +226,8 @@ export const FormDemo = ({
         return <FinishPage {...props} />;
       case 'deliver':
         return <DeliverPage />;
+      case 'confirmation':
+        return <ConfirmationPage />;
     }
   };
 
@@ -219,6 +239,17 @@ export const FormDemo = ({
       </>
     );
   };
+
+  const ConfirmationPage = () => (
+    <>
+      <Heading level={2} data-size="sm">
+        Kvittering
+      </Heading>
+      <Paragraph>
+        Ditt svar er mottat, takk for at du svarte på undersøkelsen.
+      </Paragraph>
+    </>
+  );
 
   const hasErrors = isSubmitted && Object.keys(errors).length > 0;
 
@@ -252,12 +283,12 @@ export const FormDemo = ({
           <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
             {renderCurrentPage()}
             <div className={classes.navigateButtons}>
-              {hasPrev() && (
+              {hasPrev() && id !== 'confirmation' && (
                 <Button variant="secondary" onClick={prev} style={{ flex: 1 }}>
                   Forrige
                 </Button>
               )}
-              {hasNext() && (
+              {hasNext() && id !== 'deliver' && (
                 <Button variant="secondary" onClick={next} style={{ flex: 1 }}>
                   Neste
                 </Button>
