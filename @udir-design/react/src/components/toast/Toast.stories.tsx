@@ -69,6 +69,23 @@ export const Variants = meta.story({
   },
 });
 
+export const Dismissable = meta.story({
+  render: () => {
+    let counter = 1;
+    return (
+      <Button
+        variant="secondary"
+        onClick={() => {
+          toast.success(`Toast nummer ${counter}`);
+          counter += 1;
+        }}
+      >
+        Vis dismissable
+      </Button>
+    );
+  },
+});
+
 export const AutoClose = meta.story({
   render: () => {
     return (
@@ -79,25 +96,6 @@ export const AutoClose = meta.story({
         }
       >
         Vis timeout
-      </Button>
-    );
-  },
-});
-
-export const Dismissable = meta.story({
-  render: () => {
-    let counter = 1;
-    return (
-      <Button
-        variant="secondary"
-        onClick={() => {
-          toast.success(`Toast nummer ${counter}`, {
-            timeout: false,
-          });
-          counter += 1;
-        }}
-      >
-        Vis dismissable
       </Button>
     );
   },

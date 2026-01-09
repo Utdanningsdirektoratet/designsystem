@@ -48,21 +48,21 @@ Med `toast.info()`, `toast.success()`, `toast.warning()` og `toast.danger()` kan
 
 <Canvas of={ToastStories.Variants} />
 
-### Automatisk lukking
-
-Toast skjules som standard automatisk etter 3000 millisekunder. Med `{ timeout }` kan du endre antall millisekunder, eller sette `false` får å unngå at toasten lukkes automatisk.
-
-<Canvas of={ToastStories.AutoClose} />
-
 ### Lukkekryss
 
-`Toast` har lukkekryss som standard. Med `{ dismissable: false }` kan man fjerne lukkekrysset. I de fleste tilfeller bør brukeren kunne lukke toasten manuelt.
+`Toast` har lukkekryss som standard. Sett `{ dismissable: false }` for å fjerne lukkekrysset. I de fleste tilfeller bør brukeren kunne lukke toasten manuelt.
 
 <Canvas of={ToastStories.Dismissable} />
 
+### Automatisk lukking
+
+Toast skjules som standard automatisk etter 3000 millisekunder. Med `{ timeout }` kan du endre antall millisekunder, eller sette `{ timeout: false }` for å unngå at toasten lukkes automatisk.
+
+<Canvas of={ToastStories.AutoClose} />
+
 ### Lasting
 
-`toast.Promise` viser en `Toast` som indikerer lasting mens en asynkron handling pågår. Når handlingen er fullført, oppdateres `Toast` til å vise enten en suksess- eller feilmelding. Test det ved å klikke en del ganger på knappen under.
+`toast.promise` viser en `Toast` som indikerer lasting mens en asynkron handling pågår. Når handlingen er fullført, oppdateres `Toast` til å vise enten en suksess- eller feilmelding. Test det ved å klikke en del ganger på knappen under.
 
 <Canvas of={ToastStories.Promises} />
 
