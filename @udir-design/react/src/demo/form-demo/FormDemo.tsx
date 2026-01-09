@@ -30,6 +30,7 @@ import {
 
 export type PageProps = {
   showErrors: boolean;
+  isSubmitSuccessful: boolean;
 };
 
 export const focusableFieldsetProps: Partial<FieldsetProps> = {
@@ -115,7 +116,7 @@ export const FormDemo = ({
     handleSubmit,
     trigger,
     reset: resetForm,
-    formState: { errors, isSubmitted },
+    formState: { errors, isSubmitted, isSubmitSuccessful },
     getFieldState,
   } = methods;
 
@@ -203,6 +204,7 @@ export const FormDemo = ({
         <FormNavigation.Step
           variant="confirmation"
           {...getStepProps('confirmation')}
+          disabled={!isSubmitSuccessful}
         >
           Kvittering
         </FormNavigation.Step>
@@ -211,7 +213,10 @@ export const FormDemo = ({
   );
 
   const renderCurrentPage = () => {
-    const props = { showErrors: isSubmitted };
+    const props = {
+      showErrors: isSubmitted,
+      isSubmitSuccessful: isSubmitSuccessful,
+    };
     switch (id) {
       case 'personal':
         return <PersonalInfoPage {...props} />;
