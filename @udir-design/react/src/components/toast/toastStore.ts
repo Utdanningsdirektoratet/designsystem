@@ -39,9 +39,7 @@ class ToastStore {
   show = (options: ToastOptions): string => {
     const id = options.id ?? `toast-${++toastCounter}`;
 
-    const existingIndex = this.toasts.findIndex((t) => t.id === id);
-    const existing =
-      existingIndex !== -1 ? this.toasts[existingIndex] : undefined;
+    const existing = this.toasts.find((t) => t.id === id);
 
     const toast: ToastData = {
       icon: true,
@@ -54,10 +52,8 @@ class ToastStore {
     };
 
     // If a toast with this ID exists, update it; otherwise insert a new one (immutably).
-    if (existingIndex >= 0) {
-      this.toasts = this.toasts.map((t, i) =>
-        i === existingIndex ? toast : t,
-      );
+    if (existing) {
+      this.toasts = this.toasts.map((t) => (t.id === existing.id ? toast : t));
     } else {
       this.toasts = [toast, ...this.toasts];
     }
