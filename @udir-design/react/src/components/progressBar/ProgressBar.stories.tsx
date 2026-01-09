@@ -1,9 +1,5 @@
-import { useEffect, useState } from 'react';
-import {
-  ArrowCirclepathIcon,
-  ArrowLeftIcon,
-  ArrowRightIcon,
-} from '@udir-design/icons';
+import { useState } from 'react';
+import { ArrowLeftIcon, ArrowRightIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { Button } from '../button/Button';
 import { Fieldset } from '../fieldset/Fieldset';
@@ -126,60 +122,6 @@ export const FormExample = meta.story({
           )}
         </div>
       </div>
-    );
-  },
-});
-
-export const LoadExample = meta.story({
-  args: {
-    'data-color': 'support1',
-    percentage: true,
-    label: 'Laster...',
-    value: 1,
-    max: 100,
-  },
-  render: (args) => {
-    const [progress, setProgress] = useState<number>(1);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-      if (!loading) return;
-
-      const id = setInterval(() => {
-        setProgress((prev) => {
-          if (prev >= 100) {
-            setLoading(false);
-            return prev;
-          }
-          return prev + 1;
-        });
-      }, 100);
-
-      return () => clearInterval(id);
-    }, [loading]);
-
-    const reload = () => {
-      setLoading(false);
-      setProgress(1);
-      setTimeout(() => {
-        setLoading(true);
-      }, 500);
-    };
-
-    return (
-      <>
-        <ProgressBar {...args} value={progress} />
-        <Button
-          variant="secondary"
-          onClick={() => reload()}
-          style={{
-            marginBlockStart: 'var(--ds-size-4)',
-          }}
-        >
-          <ArrowCirclepathIcon aria-hidden />
-          Last på nytt
-        </Button>
-      </>
     );
   },
 });
