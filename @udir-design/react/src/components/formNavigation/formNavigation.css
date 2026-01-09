@@ -165,6 +165,21 @@
       }
     }
 
+    /* DISABLED */
+    &:disabled {
+      cursor: not-allowed;
+      opacity: var(--ds-opacity-disabled);
+
+      /* Avoid hover effect on icon when disabled */
+      &[data-variant='confirmation'] {
+        &:hover {
+          --uds-form-navigation__step-icon-url: var(
+            --uds-form-navigation__step-confirmation-icon-url
+          );
+        }
+      }
+    }
+
     @composes ds-focus from '@digdir/designsystemet-css/base.css';
   }
 

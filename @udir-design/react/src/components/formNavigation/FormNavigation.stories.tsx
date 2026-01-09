@@ -124,11 +124,11 @@ export const States = meta.story({
         <FormNavigation.Step state="completed">Andre steg</FormNavigation.Step>
         <FormNavigation.Step state="active">Tredje steg</FormNavigation.Step>
       </FormNavigation.Group>
+      <FormNavigation.Step variant="summary">Oppsummering</FormNavigation.Step>
       <FormNavigation.Step variant="submission">Innsending</FormNavigation.Step>
       <FormNavigation.Step variant="confirmation">
-        Bekreftelse
+        Kvittering
       </FormNavigation.Step>
-      <FormNavigation.Step variant="summary">Oppsummering</FormNavigation.Step>
     </FormNavigation>
   ),
 });
@@ -171,10 +171,10 @@ export const AllStates = meta.story({
 
         <FormNavigation {...args}>
           <FormNavigation.Step variant="confirmation">
-            Bekreftelse
+            Kvittering
           </FormNavigation.Step>
           <FormNavigation.Step state="active" variant="confirmation">
-            Bekreftelse
+            Kvittering
           </FormNavigation.Step>
         </FormNavigation>
       </div>
@@ -622,9 +622,10 @@ export const Full = meta.story({
         </FormNavigation.Step>
         <FormNavigation.Step
           variant="confirmation"
+          disabled={!isSubmitSuccessful}
           {...getStepProps('confirmation')}
         >
-          Bekreftelse
+          Kvittering
         </FormNavigation.Step>
       </FormNavigation>
     );
@@ -669,12 +670,14 @@ export const Full = meta.story({
                     label="Første spørsmål"
                     {...register('q1')}
                     error={formErrors.q1?.message}
+                    readOnly={isSubmitSuccessful}
                   />
                   <Textfield
                     id="q2"
                     label="Andre spørsmål"
                     {...register('q2')}
                     error={formErrors.q2?.message}
+                    readOnly={isSubmitSuccessful}
                   />
                 </>
               )}
@@ -684,6 +687,7 @@ export const Full = meta.story({
                   label="Tredje spørsmål"
                   {...register('q3')}
                   error={formErrors.q3?.message}
+                  readOnly={isSubmitSuccessful}
                   autoFocus
                 />
               )}
@@ -694,6 +698,7 @@ export const Full = meta.story({
                     label="Fjerde spørsmål"
                     {...register('q4')}
                     error={formErrors.q4?.message}
+                    readOnly={isSubmitSuccessful}
                     autoFocus
                   />
                   <Textfield
@@ -701,6 +706,7 @@ export const Full = meta.story({
                     label="Femte spørsmål"
                     {...register('q5')}
                     error={formErrors.q5?.message}
+                    readOnly={isSubmitSuccessful}
                   />
                 </>
               )}
@@ -710,6 +716,7 @@ export const Full = meta.story({
                   label="Sjette spørsmål"
                   {...register('q6')}
                   error={formErrors.q6?.message}
+                  readOnly={isSubmitSuccessful}
                   autoFocus
                 />
               )}
@@ -719,6 +726,7 @@ export const Full = meta.story({
                   label="Syvende spørsmål"
                   {...register('q7')}
                   error={formErrors.q7?.message}
+                  readOnly={isSubmitSuccessful}
                   autoFocus
                 />
               )}
@@ -747,7 +755,7 @@ export const Full = meta.story({
                     Forrige
                   </Button>
                 )}
-                {hasNext() && (
+                {hasNext() && (isSubmitSuccessful || id !== 'submission') && (
                   <Button variant="secondary" onClick={next}>
                     Neste
                   </Button>

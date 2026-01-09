@@ -1,9 +1,9 @@
-import type { HTMLAttributes } from 'react';
+import type { ButtonHTMLAttributes } from 'react';
 import { forwardRef } from 'react';
 import type { FormNavigationState } from './FormNavigation';
 
 export type FormNavigationStepProps = Omit<
-  HTMLAttributes<HTMLButtonElement>,
+  ButtonHTMLAttributes<HTMLButtonElement>,
   'children'
 > & {
   /**
