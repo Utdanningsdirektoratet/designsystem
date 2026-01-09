@@ -1,0 +1,73 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import * as ToastStories from './Toast.stories';
+
+<Meta of={ToastStories} />
+
+# Toast
+
+En `Toast` viser midlertidige meldinger som bekrefter en handling eller gir en tilbakemelding. Den skal ikke forstyrre brukeropplevelsen og kan forsvinne automatisk eller krysses ut.
+
+**Passer til å**
+
+- gi oppdateringer uten å forstyrre arbeidsflyten
+- bekrefte vellykkede handlinger, som lagring eller sending
+- varsle om feil, handlinger som ikke kunne bli gjennomført
+
+**Passer ikke til å**
+
+- vise omfattende informasjon
+- vise permanente meldinger, bruk heller [`Alert`](/docs/components-alert--docs)
+- be brukeren om handling, bruk heller [`Dialog`](/docs/components-dialog--docs)
+
+## Slik bruker du Toast
+
+<Primary />
+<Controls />
+
+```tsx
+import { toast } from '@udir-design/react';
+
+toast.info(`Ny oppdatering tilgjengelig`);
+toast.success(`Endringene dine ble lagret`);
+toast.warning(`Noe gikk galt, prøv igjen`);
+toast.danger(`Kunne ikke koble til serveren`);
+toast.promise(fetchData(), {
+  loading: 'Laster data...',
+  success: 'Data lastet!',
+  error: 'Kunne ikke laste data',
+});
+```
+
+## Eksempler
+
+`Toast` brukes ved å kalle en av `toast.*`-funksjonene med en meldingstekst og eventuelle `options`. Tilgjengelige `options` er listet over som props for Toast.
+
+### Varianter
+
+Med `toast.info()`, `toast.success()`, `toast.warning()` og `toast.danger()` kan du vise toast i forskjellige farger og ikoner som indikerer type melding.
+
+<Canvas of={ToastStories.Variants} />
+
+### Lukkekryss
+
+`Toast` har lukkekryss som standard. Sett `{ dismissable: false }` for å fjerne lukkekrysset. I de fleste tilfeller bør brukeren kunne lukke toasten manuelt.
+
+<Canvas of={ToastStories.Dismissable} />
+
+### Automatisk lukking
+
+Toast skjules som standard automatisk etter 3000 millisekunder. Med `{ timeout }` kan du endre antall millisekunder, eller sette `{ timeout: false }` for å unngå at toasten lukkes automatisk.
+
+<Canvas of={ToastStories.AutoClose} />
+
+### Lasting
+
+`toast.promise` viser en `Toast` som indikerer lasting mens en asynkron handling pågår. Når handlingen er fullført, oppdateres `Toast` til å vise enten en suksess- eller feilmelding. Test det ved å klikke en del ganger på knappen under.
+
+<Canvas of={ToastStories.Promises} />
+
+### Programmatisk oppdatering
+
+Du kan også oppdatere en `Toast` programmatisk ved å lagre ID-en som returneres av `toast()` og sende den inn i `options`.
+
+<Canvas of={ToastStories.Updates} />
