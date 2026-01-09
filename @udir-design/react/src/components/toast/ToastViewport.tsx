@@ -29,7 +29,6 @@ export function ToastViewport({ gap = 0.5 }: ToastViewportProps) {
           timeout={toast.timeout}
           busy={toast.busy}
           data-color={toast['data-color']}
-          data-size={toast['data-size']}
           style={{
             translate: `0 calc(-1 * (${gap}rem + 100%) * ${index})`,
           }}
