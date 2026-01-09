@@ -10,6 +10,7 @@ const meta = preview.meta({
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {
+      name: 'Chip',
       originator: 'digdir',
     },
     customStyles: {

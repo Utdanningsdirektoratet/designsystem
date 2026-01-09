@@ -7,7 +7,12 @@ export interface OriginProps extends ComponentOrigin {
   component: string;
 }
 
-export function OriginText({ component, originator, details }: OriginProps) {
+export function OriginText({
+  component,
+  name,
+  originator,
+  details,
+}: OriginProps) {
   const digdirText = ' bygger på arbeid gjort i Digdirs designsystem.';
   const navText = (
     <div style={{ display: 'inline' }}>
@@ -48,7 +53,7 @@ export function OriginText({ component, originator, details }: OriginProps) {
         Kilde
       </Heading>
       <Paragraph className="sb-unstyled">
-        <code className="css-b5rkn5">{component}</code>
+        <code className="css-b5rkn5">{name ?? component}</code>
         {fullText}
       </Paragraph>
     </>
