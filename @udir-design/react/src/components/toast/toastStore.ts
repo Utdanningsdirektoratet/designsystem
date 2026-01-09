@@ -1,18 +1,57 @@
 import type { SeverityColors } from '@digdir/designsystemet-types';
 
+/**
+ * Config options for showing a toast
+ */
 export type ToastOptions = {
+  /**
+   * Optional ID for updating/dismissing.
+   */
   id?: string;
+  /**
+   * Message to be displayed.
+   */
   message: string;
-  timeout?: number | false; // ms; false = no auto-close
+  /**
+   * Auto-dismiss timeout in milliseconds.
+   * Set to false to disable auto-close.
+   */
+  timeout?: number | false;
+  /**
+   * If the user should be able
+   * to dismiss the toast.
+   */
   dismissable?: boolean;
+  /**
+   * If an icon should be shown.
+   */
   icon?: boolean;
+  /**
+   * If the toast is in a busy state.
+   */
   busy?: boolean;
+  /**
+   * Function for closing the toast.
+   */
   onClose?: () => void;
+  /**
+   * Data attribute for setting color and icon.
+   */
   'data-color'?: SeverityColors;
 };
 
+/**
+ * Internal toast representation stored in the ToastStore.
+ * Extends ToastOptions with guaranteed fields.
+ */
 export type ToastData = ToastOptions & {
+  /**
+   * Unique toast ID
+   */
   id: string;
+  /**
+   * Timestamp when the toast was created
+   */
   createdAt: number;
 };
 
