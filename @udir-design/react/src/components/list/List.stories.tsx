@@ -8,6 +8,7 @@ const meta = preview.meta({
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {
+      name: 'List',
       originator: 'digdir',
       details: 'Vi har fjernet mulighet for fargevalg.',
     },

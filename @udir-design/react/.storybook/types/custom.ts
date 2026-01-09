@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react';
 
 export type ComponentOrigin = {
+  name?: string;
   originator: 'self' | 'digdir' | 'nav';
   details?: string;
 };
