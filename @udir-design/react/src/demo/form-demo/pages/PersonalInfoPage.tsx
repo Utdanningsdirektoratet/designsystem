@@ -25,11 +25,11 @@ export const PersonalInfoPage = ({
   return (
     <>
       <Heading level={2} data-size="sm">
-        Personinformasjon
+        Om søker og prosjektet
       </Heading>
       <Textfield
         id="firstName"
-        label="Fornavn"
+        label="Navn på kontaktperson"
         {...register('firstName')}
         autoComplete="given-name"
         error={errors.firstName?.message}
