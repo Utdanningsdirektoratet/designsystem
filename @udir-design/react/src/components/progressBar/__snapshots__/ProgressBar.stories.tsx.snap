@@ -1,0 +1,239 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Form Example 1`] = `
+<div style="display: flex; flex-direction: column; gap: var(--ds-size-6);">
+  <fieldset id="rankings">
+    <legend data-weight="medium">
+      <h4>
+        Skjema
+      </h4>
+    </legend>
+    <div
+      data-color="accent"
+      tabindex="-1"
+      aria-label="Skjemafremgang"
+      style="margin-inline: var(--ds-size-8);"
+    >
+      <span>
+        Side 1 av 7
+      </span>
+      <u-progress
+        value="1"
+        id=":u-progress2"
+        aria-busy="false"
+        aria-label
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="14"
+        role="progressbar"
+        max="7"
+        aria-hidden="true"
+        style="--percentage: 14%;"
+      >
+        <template shadowrootmode="open">
+          <slot hidden>
+          </slot>
+          <style>
+            :host(:not([hidden])) { box-sizing: border-box; border: 1px solid; display: inline-block; height: .5em; width: 10em; overflow: hidden }
+:host::before { content: ''; display: block; height: 100%; background: currentColor; width: var(--percentage, 0%); transition: width .2s }
+:host(:not([value])) { background: linear-gradient(90deg,currentColor 25%, transparent 50%, currentColor 75%) 50%/400% }
+@media (prefers-reduced-motion: no-preference) { :host { animation: indeterminate 2s linear infinite }  }
+@keyframes indeterminate { from { background-position-x: 100% } to { background-position-x: 0 } }
+          </style>
+        </template>
+      </u-progress>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Påstander
+          </th>
+          <th>
+            Uenig
+          </th>
+          <th>
+            Nøytral
+          </th>
+          <th>
+            Enig
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Første påstand
+          </td>
+          <td>
+            <div>
+              <input
+                id="rankings.Første påstand-Uenig"
+                aria-label="Uenig i påstand Første påstand"
+                type="radio"
+                value="Uenig"
+                name="rankings.Første påstand"
+              >
+            </div>
+          </td>
+          <td>
+            <div>
+              <input
+                id="rankings.Første påstand-Nøytral"
+                aria-label="Nøytral i påstand Første påstand"
+                type="radio"
+                value="Nøytral"
+                name="rankings.Første påstand"
+              >
+            </div>
+          </td>
+          <td>
+            <div>
+              <input
+                id="rankings.Første påstand-Enig"
+                aria-label="Enig i påstand Første påstand"
+                type="radio"
+                value="Enig"
+                name="rankings.Første påstand"
+              >
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Andre påstand
+          </td>
+          <td>
+            <div>
+              <input
+                id="rankings.Andre påstand-Uenig"
+                aria-label="Uenig i påstand Andre påstand"
+                type="radio"
+                value="Uenig"
+                name="rankings.Andre påstand"
+              >
+            </div>
+          </td>
+          <td>
+            <div>
+              <input
+                id="rankings.Andre påstand-Nøytral"
+                aria-label="Nøytral i påstand Andre påstand"
+                type="radio"
+                value="Nøytral"
+                name="rankings.Andre påstand"
+              >
+            </div>
+          </td>
+          <td>
+            <div>
+              <input
+                id="rankings.Andre påstand-Enig"
+                aria-label="Enig i påstand Andre påstand"
+                type="radio"
+                value="Enig"
+                name="rankings.Andre påstand"
+              >
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Tredje påstand
+          </td>
+          <td>
+            <div>
+              <input
+                id="rankings.Tredje påstand-Uenig"
+                aria-label="Uenig i påstand Tredje påstand"
+                type="radio"
+                value="Uenig"
+                name="rankings.Tredje påstand"
+              >
+            </div>
+          </td>
+          <td>
+            <div>
+              <input
+                id="rankings.Tredje påstand-Nøytral"
+                aria-label="Nøytral i påstand Tredje påstand"
+                type="radio"
+                value="Nøytral"
+                name="rankings.Tredje påstand"
+              >
+            </div>
+          </td>
+          <td>
+            <div>
+              <input
+                id="rankings.Tredje påstand-Enig"
+                aria-label="Enig i påstand Tredje påstand"
+                type="radio"
+                value="Enig"
+                name="rankings.Tredje påstand"
+              >
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+  <div style="display: flex; justify-content: flex-start; gap: var(--ds-size-4);">
+    <button
+      data-variant="secondary"
+      type="button"
+    >
+      Neste
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+        >
+        </path>
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Preview 1`] = `
+<div>
+  <span>
+    Steg 3 av 10
+  </span>
+  <u-progress
+    value="3"
+    id=":u-progress1"
+    aria-busy="false"
+    aria-label
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="30"
+    role="progressbar"
+    max="10"
+    aria-hidden="true"
+    style="--percentage: 30%;"
+  >
+    <template shadowrootmode="open">
+      <slot hidden>
+      </slot>
+      <style>
+        :host(:not([hidden])) { box-sizing: border-box; border: 1px solid; display: inline-block; height: .5em; width: 10em; overflow: hidden }
+:host::before { content: ''; display: block; height: 100%; background: currentColor; width: var(--percentage, 0%); transition: width .2s }
+:host(:not([value])) { background: linear-gradient(90deg,currentColor 25%, transparent 50%, currentColor 75%) 50%/400% }
+@media (prefers-reduced-motion: no-preference) { :host { animation: indeterminate 2s linear infinite }  }
+@keyframes indeterminate { from { background-position-x: 100% } to { background-position-x: 0 } }
+      </style>
+    </template>
+  </u-progress>
+</div>
+`;
