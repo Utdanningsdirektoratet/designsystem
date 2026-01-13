@@ -44,7 +44,7 @@ export const FormPage2 = meta.story({
   ...FormStory.input,
   args: {
     'data-color-scheme': 'light',
-    page: 'ranking',
+    page: 'project',
   },
 });
 
@@ -52,7 +52,7 @@ export const FormPage3 = meta.story({
   ...FormStory.input,
   args: {
     'data-color-scheme': 'light',
-    page: 'finish',
+    page: 'documentation',
   },
 });
 

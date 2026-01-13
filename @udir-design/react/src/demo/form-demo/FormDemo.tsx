@@ -1,10 +1,15 @@
 import { Paragraph } from '@digdir/designsystemet-react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { HTMLAttributes } from 'react';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { BulletListIcon } from '@udir-design/icons';
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  BulletListIcon,
+  PaperplaneIcon,
+} from '@udir-design/icons';
 import { Button } from 'src/components/button/Button';
 import { Dialog } from 'src/components/dialog/Dialog';
 import type { FieldsetProps } from 'src/components/fieldset/Fieldset';
@@ -20,16 +25,13 @@ import { useFormNavigation } from 'src/utilities/hooks/useFormNavigation/useForm
 import type { DemoProps } from '../demoProps.js';
 import { ErrorSummaryContent } from './ErrorSummaryContent';
 import classes from './FormDemo.module.css';
-import { FinishPage } from './pages/FinishPage.tsx';
+import { DocumentationPage } from './pages/DocumentationPage';
 import { PersonalInfoPage } from './pages/PersonalInfoPage';
-import {
-  DATA_ASSERTIONS,
-  DATA_RANKINGS,
-  RankingPage,
-} from './pages/RankingPage';
+import { ProjectPage } from './pages/ProjectPage.tsx.js';
 
 export type PageProps = {
   showErrors: boolean;
+  isSubmitSuccessful: boolean;
 };
 
 export const focusableFieldsetProps: Partial<FieldsetProps> = {
@@ -42,9 +44,15 @@ export const focusableFieldsetProps: Partial<FieldsetProps> = {
 };
 
 const pageFields = defineSteps({
-  personal: ['firstName', 'lastName', 'county', 'educationLevel', 'ageGroup'],
-  ranking: ['rankings'],
-  finish: ['addition', 'contactMethods'],
+  personal: ['firstName', 'lastName', 'contactMethods'],
+  project: [
+    'projectTitle',
+    'projectDescription',
+    'projectCategory',
+    'county',
+    'ageGroup',
+  ],
+  documentation: ['documentation', 'addition'],
   deliver: [],
   confirmation: [],
 });
@@ -57,31 +65,21 @@ const stepIds = getStepIds(pageFields);
 const FormSchema = z.object({
   firstName: z.string().min(1, 'Fyll ut fornavn'),
   lastName: z.string().min(1, 'Fyll ut etternavn'),
-  county: z.string().min(1, 'Velg et fylke'),
-  educationLevel: z
+  contactMethods: z.array(z.string()).min(1, 'Velg minst én kontaktmåte'),
+  projectTitle: z.string().min(1, 'Fyll ut tittel på prosjektet'),
+  projectDescription: z.string().min(1, 'Fyll ut beskrivelse av prosjektet'),
+  projectCategory: z
     .string()
     .nullable()
     .refine((v) => v !== null && v.length > 0, {
-      message: 'Velg et utdanningsnivå',
+      message: 'Velg en kategori for prosjektet',
     }),
+  county: z.string().min(1, 'Velg et gjennomføringsfylke'),
   ageGroup: z.string().refine((v) => v !== 'blank', {
     message: 'Velg en aldersgruppe',
   }),
-  rankings: z
-    .record(z.string(), z.enum(DATA_RANKINGS).nullish())
-    .superRefine((r, ctx) => {
-      for (const assertion of DATA_ASSERTIONS) {
-        if (r[assertion] == null) {
-          ctx.addIssue({
-            code: 'custom',
-            message: 'Du må besvare alle påstandene',
-            path: [assertion],
-          });
-        }
-      }
-    }),
+  documentation: z.array(z.instanceof(File)).min(1, 'Last opp dokumentasjon'),
   addition: z.string().optional(),
-  contactMethods: z.array(z.string()).min(1, 'Velg minst én kontaktmåte'),
 });
 
 export type FormValues = z.infer<typeof FormSchema>;
@@ -103,21 +101,24 @@ export const FormDemo = ({
     defaultValues: {
       firstName: '',
       lastName: '',
-      county: '',
-      educationLevel: '',
-      ageGroup: 'blank',
-      rankings: Object.fromEntries(DATA_ASSERTIONS.map((a) => [a, undefined])),
-      addition: '',
       contactMethods: [],
+      projectTitle: '',
+      projectDescription: '',
+      projectCategory: '',
+      county: '',
+      ageGroup: 'blank',
+      documentation: [],
+      addition: '',
     },
   });
   const {
     handleSubmit,
     trigger,
-    reset: resetForm,
-    formState: { errors, isSubmitted },
+    formState: { errors, isSubmitSuccessful },
     getFieldState,
   } = methods;
+
+  const [attemptedSubmit, setAttemptedSubmit] = useState(false);
 
   const onStepChange = async (_nextId: PageId, prevId: PageId | null) => {
     if (!prevId) return;
@@ -126,7 +127,7 @@ export const FormDemo = ({
     if (fields.length === 0) return;
     const ok = await trigger(fields, { shouldFocus: false });
     if (ok) markCompleted(prevId);
-    else if (isSubmitted) markInvalid(prevId);
+    else if (attemptedSubmit) markInvalid(prevId);
   };
 
   const {
@@ -135,7 +136,6 @@ export const FormDemo = ({
     id,
     markCompleted,
     markInvalid,
-    reset: resetNavigation,
     setId,
     next,
     prev,
@@ -155,47 +155,47 @@ export const FormDemo = ({
     return fields.some((name) => !!getFieldState(name).error);
   };
 
-  const onDeliver = handleSubmit(
-    () => {
+  const onDeliver = async () => {
+    setAttemptedSubmit(true);
+    const isValid = await trigger(undefined, { shouldFocus: false });
+
+    if (isValid) {
       dialogDeliverRef.current?.showModal();
-    },
-    () => {
+    } else {
       stepIds.forEach((stepId) => {
         if (stepHasError(stepId)) markInvalid(stepId);
       });
       errorSummaryRef.current?.focus();
-    },
-  );
+    }
+  };
 
   const onSubmit = () => {
     dialogDeliverRef.current?.close();
-    resetForm();
-    resetNavigation();
-    setId('personal');
+    setId('confirmation');
   };
 
   const formNavigationContent = (
     <FormNavigation>
       <FormNavigation.Group
-        title="Skoleundersøkelse"
+        title="Testsøknad"
         className={classes.navigation}
         open={true}
         {...getGroupProps([
           'personal',
-          'ranking',
-          'finish',
+          'project',
+          'documentation',
           'deliver',
           'confirmation',
         ])}
       >
         <FormNavigation.Step {...getStepProps('personal')}>
-          Personopplysninger
+          Kontaktinfo
         </FormNavigation.Step>
-        <FormNavigation.Step {...getStepProps('ranking')}>
-          Rangering
+        <FormNavigation.Step {...getStepProps('project')}>
+          Prosjektet
         </FormNavigation.Step>
-        <FormNavigation.Step {...getStepProps('finish')}>
-          Avslutning
+        <FormNavigation.Step {...getStepProps('documentation')}>
+          Dokumentasjon
         </FormNavigation.Step>
         <FormNavigation.Step variant="submission" {...getStepProps('deliver')}>
           Innsending
@@ -203,6 +203,7 @@ export const FormDemo = ({
         <FormNavigation.Step
           variant="confirmation"
           {...getStepProps('confirmation')}
+          disabled={!isSubmitSuccessful}
         >
           Kvittering
         </FormNavigation.Step>
@@ -211,14 +212,17 @@ export const FormDemo = ({
   );
 
   const renderCurrentPage = () => {
-    const props = { showErrors: isSubmitted };
+    const props = {
+      showErrors: attemptedSubmit,
+      isSubmitSuccessful: isSubmitSuccessful,
+    };
     switch (id) {
       case 'personal':
         return <PersonalInfoPage {...props} />;
-      case 'ranking':
-        return <RankingPage {...props} />;
-      case 'finish':
-        return <FinishPage {...props} />;
+      case 'project':
+        return <ProjectPage {...props} />;
+      case 'documentation':
+        return <DocumentationPage {...props} />;
       case 'deliver':
         return <DeliverPage />;
       case 'confirmation':
@@ -230,23 +234,28 @@ export const FormDemo = ({
     return (
       <>
         <Heading level={2}>Innsending</Heading>
-        <Paragraph>Send inn skjema til Udir.</Paragraph>
+        <Paragraph>
+          {isSubmitSuccessful
+            ? 'Du har allerede sendt inn søknaden.'
+            : 'Send inn søknaden.'}
+        </Paragraph>
       </>
     );
   };
 
   const ConfirmationPage = () => (
-    <>
+    <div className={classes.confirmation}>
       <Heading level={2} data-size="sm">
         Kvittering
       </Heading>
+      <Paragraph data-size="xl">Takk!</Paragraph>
       <Paragraph>
-        Ditt svar er mottat, takk for at du svarte på undersøkelsen.
+        Vi har mottatt din søknad. Du hører tilbake innen en måned.
       </Paragraph>
-    </>
+    </div>
   );
 
-  const hasErrors = isSubmitted && Object.keys(errors).length > 0;
+  const hasErrors = attemptedSubmit && Object.keys(errors).length > 0;
 
   return (
     <FormProvider {...methods}>
@@ -273,26 +282,39 @@ export const FormDemo = ({
         </div>
         <div {...props} className={classes.container}>
           <Heading level={1} data-size="md">
-            Skoleundersøkelse
+            Testsøknad
           </Heading>
           <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
             {renderCurrentPage()}
             <div className={classes.navigateButtons}>
               {hasPrev() && id !== 'confirmation' && (
                 <Button variant="secondary" onClick={prev} style={{ flex: 1 }}>
+                  <ArrowLeftIcon aria-hidden />
                   Forrige
                 </Button>
               )}
-              {hasNext() && id !== 'deliver' && (
+              {hasNext() && id !== 'deliver' && id !== 'confirmation' && (
                 <Button variant="secondary" onClick={next} style={{ flex: 1 }}>
                   Neste
+                  <ArrowRightIcon aria-hidden />
                 </Button>
               )}
-              {id === 'deliver' && (
-                <Button style={{ flex: 2 }} onClick={onDeliver}>
-                  Send inn skjema
-                </Button>
-              )}
+              {id === 'deliver' &&
+                (!isSubmitSuccessful ? (
+                  <Button style={{ flex: 2 }} onClick={onDeliver}>
+                    Send inn skjema
+                    <PaperplaneIcon aria-hidden />
+                  </Button>
+                ) : (
+                  <Button
+                    variant="secondary"
+                    onClick={next}
+                    style={{ flex: 1 }}
+                  >
+                    Neste
+                    <ArrowRightIcon aria-hidden />
+                  </Button>
+                ))}
             </div>
             <Dialog
               closeButton={false}
@@ -313,6 +335,7 @@ export const FormDemo = ({
                   </Button>
                   <Button autoFocus type="submit" style={{ flex: 2 }}>
                     Send inn
+                    <PaperplaneIcon aria-hidden />
                   </Button>
                 </div>
               </Dialog.Block>
@@ -320,7 +343,7 @@ export const FormDemo = ({
           </form>
 
           <ErrorSummaryContent
-            attemptedSubmit={isSubmitted}
+            attemptedSubmit={attemptedSubmit}
             currentPage={id}
             errors={errors}
             errorSummaryRef={errorSummaryRef}

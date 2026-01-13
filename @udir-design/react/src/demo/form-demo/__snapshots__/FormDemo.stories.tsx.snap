@@ -8,7 +8,7 @@ exports[`Form Page 2 1`] = `
         data-state="idle"
         open
         role="group"
-        data-active-step-label="Rangering"
+        data-active-step-label="Prosjektet"
       >
         <u-summary
           aria-expanded="true"
@@ -17,7 +17,7 @@ exports[`Form Page 2 1`] = `
           tabindex="0"
         >
           <span>
-            Skoleundersøkelse
+            Testsøknad
           </span>
         </u-summary>
         <button
@@ -26,7 +26,7 @@ exports[`Form Page 2 1`] = `
         >
           <div>
           </div>
-          Personopplysninger
+          Kontaktinfo
         </button>
         <button
           data-state="active"
@@ -35,7 +35,7 @@ exports[`Form Page 2 1`] = `
         >
           <div>
           </div>
-          Rangering
+          Prosjektet
         </button>
         <button
           data-state="idle"
@@ -43,7 +43,7 @@ exports[`Form Page 2 1`] = `
         >
           <div>
           </div>
-          Avslutning
+          Dokumentasjon
         </button>
         <button
           data-state="idle"
@@ -56,6 +56,7 @@ exports[`Form Page 2 1`] = `
         <button
           data-state="idle"
           data-variant="confirmation"
+          disabled
         >
           <div>
           </div>
@@ -114,7 +115,7 @@ exports[`Form Page 2 1`] = `
           data-state="idle"
           open
           role="group"
-          data-active-step-label="Rangering"
+          data-active-step-label="Prosjektet"
         >
           <u-summary
             aria-expanded="true"
@@ -123,7 +124,7 @@ exports[`Form Page 2 1`] = `
             tabindex="0"
           >
             <span>
-              Skoleundersøkelse
+              Testsøknad
             </span>
           </u-summary>
           <button
@@ -132,7 +133,7 @@ exports[`Form Page 2 1`] = `
           >
             <div>
             </div>
-            Personopplysninger
+            Kontaktinfo
           </button>
           <button
             data-state="active"
@@ -141,7 +142,7 @@ exports[`Form Page 2 1`] = `
           >
             <div>
             </div>
-            Rangering
+            Prosjektet
           </button>
           <button
             data-state="idle"
@@ -149,7 +150,7 @@ exports[`Form Page 2 1`] = `
           >
             <div>
             </div>
-            Avslutning
+            Dokumentasjon
           </button>
           <button
             data-state="idle"
@@ -162,6 +163,7 @@ exports[`Form Page 2 1`] = `
           <button
             data-state="idle"
             data-variant="confirmation"
+            disabled
           >
             <div>
             </div>
@@ -173,234 +175,381 @@ exports[`Form Page 2 1`] = `
   </div>
   <div data-color-scheme="light">
     <h1 data-size="md">
-      Skoleundersøkelse
+      Testsøknad
     </h1>
     <form>
       <h2 data-size="sm">
-        Rangering
+        Prosjektet
       </h2>
+      <div>
+        <label
+          data-weight="medium"
+          for="projectTitle"
+        >
+          Tittel på prosjektet
+        </label>
+        <div>
+          <input
+            id="projectTitle"
+            type="text"
+            name="projectTitle"
+          >
+        </div>
+      </div>
+      <div>
+        <label
+          data-weight="medium"
+          for="projectDescription"
+        >
+          Beskrivelse av prosjektet
+        </label>
+        <div>
+          <textarea
+            id="projectDescription"
+            rows="4"
+            name="projectDescription"
+          >
+          </textarea>
+        </div>
+      </div>
       <fieldset
-        aria-invalid="false"
-        id="rankings"
+        id="projectCategory"
         tabindex="-1"
       >
-        <table>
-          <thead>
-            <tr>
-              <th>
-                Påstander
-              </th>
-              <th>
-                Uenig
-              </th>
-              <th>
-                Nøytral
-              </th>
-              <th>
-                Enig
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                Jeg føler meg trygg på skolen
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg føler meg trygg på skolen-Uenig"
-                    aria-label="Uenig i påstand Jeg føler meg trygg på skolen"
-                    type="radio"
-                    value="Uenig"
-                    name="rankings.Jeg føler meg trygg på skolen"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg føler meg trygg på skolen-Nøytral"
-                    aria-label="Nøytral i påstand Jeg føler meg trygg på skolen"
-                    type="radio"
-                    value="Nøytral"
-                    name="rankings.Jeg føler meg trygg på skolen"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg føler meg trygg på skolen-Enig"
-                    aria-label="Enig i påstand Jeg føler meg trygg på skolen"
-                    type="radio"
-                    value="Enig"
-                    name="rankings.Jeg føler meg trygg på skolen"
-                  >
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Jeg har det bra på skolen
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har det bra på skolen-Uenig"
-                    aria-label="Uenig i påstand Jeg har det bra på skolen"
-                    type="radio"
-                    value="Uenig"
-                    name="rankings.Jeg har det bra på skolen"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har det bra på skolen-Nøytral"
-                    aria-label="Nøytral i påstand Jeg har det bra på skolen"
-                    type="radio"
-                    value="Nøytral"
-                    name="rankings.Jeg har det bra på skolen"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har det bra på skolen-Enig"
-                    aria-label="Enig i påstand Jeg har det bra på skolen"
-                    type="radio"
-                    value="Enig"
-                    name="rankings.Jeg har det bra på skolen"
-                  >
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Jeg har venner på skolen
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har venner på skolen-Uenig"
-                    aria-label="Uenig i påstand Jeg har venner på skolen"
-                    type="radio"
-                    value="Uenig"
-                    name="rankings.Jeg har venner på skolen"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har venner på skolen-Nøytral"
-                    aria-label="Nøytral i påstand Jeg har venner på skolen"
-                    type="radio"
-                    value="Nøytral"
-                    name="rankings.Jeg har venner på skolen"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har venner på skolen-Enig"
-                    aria-label="Enig i påstand Jeg har venner på skolen"
-                    type="radio"
-                    value="Enig"
-                    name="rankings.Jeg har venner på skolen"
-                  >
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Jeg har en god relasjon til lærerne mine
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har en god relasjon til lærerne mine-Uenig"
-                    aria-label="Uenig i påstand Jeg har en god relasjon til lærerne mine"
-                    type="radio"
-                    value="Uenig"
-                    name="rankings.Jeg har en god relasjon til lærerne mine"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har en god relasjon til lærerne mine-Nøytral"
-                    aria-label="Nøytral i påstand Jeg har en god relasjon til lærerne mine"
-                    type="radio"
-                    value="Nøytral"
-                    name="rankings.Jeg har en god relasjon til lærerne mine"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har en god relasjon til lærerne mine-Enig"
-                    aria-label="Enig i påstand Jeg har en god relasjon til lærerne mine"
-                    type="radio"
-                    value="Enig"
-                    name="rankings.Jeg har en god relasjon til lærerne mine"
-                  >
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Jeg har en god relasjon til medelevene mine
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har en god relasjon til medelevene mine-Uenig"
-                    aria-label="Uenig i påstand Jeg har en god relasjon til medelevene mine"
-                    type="radio"
-                    value="Uenig"
-                    name="rankings.Jeg har en god relasjon til medelevene mine"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har en god relasjon til medelevene mine-Nøytral"
-                    aria-label="Nøytral i påstand Jeg har en god relasjon til medelevene mine"
-                    type="radio"
-                    value="Nøytral"
-                    name="rankings.Jeg har en god relasjon til medelevene mine"
-                  >
-                </div>
-              </td>
-              <td>
-                <div>
-                  <input
-                    id="rankings.Jeg har en god relasjon til medelevene mine-Enig"
-                    aria-label="Enig i påstand Jeg har en god relasjon til medelevene mine"
-                    type="radio"
-                    value="Enig"
-                    name="rankings.Jeg har en god relasjon til medelevene mine"
-                  >
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <legend data-weight="medium">
+          Kategori
+        </legend>
+        <p data-variant="default">
+          Hvilken kategori hører prosjektet til?
+        </p>
+        <div>
+          <input
+            id="radio-learning"
+            type="radio"
+            value="Learning"
+            name="projectCategory"
+          >
+          <label
+            data-weight="regular"
+            for="radio-learning"
+          >
+            Opplæring
+          </label>
+        </div>
+        <div>
+          <input
+            id="radio-social"
+            type="radio"
+            value="social"
+            name="projectCategory"
+          >
+          <label
+            data-weight="regular"
+            for="radio-social"
+          >
+            Sosialt
+          </label>
+        </div>
+        <div>
+          <input
+            id="radio-activity"
+            type="radio"
+            value="activity"
+            name="projectCategory"
+          >
+          <label
+            data-weight="regular"
+            for="radio-activity"
+          >
+            Aktivitet
+          </label>
+        </div>
+        <u-details role="group">
+          <u-summary
+            aria-expanded="false"
+            role="button"
+            slot="summary"
+            tabindex="0"
+          >
+            Grunnen til at vi spør om dette
+          </u-summary>
+          <div>
+            Tilskuddsordningen skal dekke et bredt spekter av tilbud. For å ha oversikt over fordelingen av budsjettposten trenger vi å vite hvilket tilbud det søkes om å utvide.
+          </div>
+        </u-details>
       </fieldset>
+      <div>
+        <label
+          data-weight="medium"
+          for="county"
+        >
+          Gjennomføringssted
+        </label>
+        <div
+          data-field="description"
+          id="county:description:1"
+        >
+          Hvilket fylke vil prosjektet gjennomføres i?
+        </div>
+        <u-combobox>
+          <input
+            placeholder
+            aria-invalid="false"
+            id="county"
+            type="text"
+            aria-describedby="county:description:1"
+            data-label="Gjennomføringssted"
+            list=":u-datalist1"
+            aria-label="Gjennomføringssted​​​​​"
+            popovertarget=":u-datalist1"
+            aria-autocomplete="list"
+            aria-controls=":u-datalist1"
+            aria-expanded="true"
+            autocomplete="off"
+            role="combobox"
+          >
+          <del
+            data-icon="true"
+            data-variant="tertiary"
+            aria-label="Tøm"
+            hidden
+            role="button"
+          >
+          </del>
+          <u-datalist
+            data-nofilter
+            data-sr-singular="%d forslag"
+            data-sr-plural="%d forslag"
+            popover="manual"
+            hidden
+            role="listbox"
+            tabindex="-1"
+            aria-multiselectable="false"
+            id=":u-datalist1"
+            style="width: 592px; translate: <removed>;"
+          >
+            <u-option
+              label="Agder"
+              value="Agder"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Agder
+            </u-option>
+            <u-option
+              label="Akershus"
+              value="Akershus"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Akershus
+            </u-option>
+            <u-option
+              label="Buskerud"
+              value="Buskerud"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Buskerud
+            </u-option>
+            <u-option
+              label="Finnmark"
+              value="Finnmark"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Finnmark
+            </u-option>
+            <u-option
+              label="Innlandet"
+              value="Innlandet"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Innlandet
+            </u-option>
+            <u-option
+              label="Møre og Romsdal"
+              value="Møre og Romsdal"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Møre og Romsdal
+            </u-option>
+            <u-option
+              label="Nordland"
+              value="Nordland"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Nordland
+            </u-option>
+            <u-option
+              label="Oslo"
+              value="Oslo"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Oslo
+            </u-option>
+            <u-option
+              label="Rogaland"
+              value="Rogaland"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Rogaland
+            </u-option>
+            <u-option
+              label="Telemark"
+              value="Telemark"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Telemark
+            </u-option>
+            <u-option
+              label="Troms"
+              value="Troms"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Troms
+            </u-option>
+            <u-option
+              label="Trøndelag"
+              value="Trøndelag"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Trøndelag
+            </u-option>
+            <u-option
+              label="Vestfold"
+              value="Vestfold"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Vestfold
+            </u-option>
+            <u-option
+              label="Vestland"
+              value="Vestland"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Vestland
+            </u-option>
+            <u-option
+              label="Østfold"
+              value="Østfold"
+              tabindex="-1"
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+            >
+              Østfold
+            </u-option>
+          </u-datalist>
+          <select
+            name="county"
+            hidden
+            id="_r_4_"
+          >
+          </select>
+        </u-combobox>
+      </div>
+      <div>
+        <label
+          data-weight="medium"
+          for="ageGroup"
+        >
+          Aldersgruppe
+        </label>
+        <div
+          data-field="description"
+          id="ageGroup:description:1"
+        >
+          Hvilken aldersgruppe er prosjektet rettet mot?
+        </div>
+        <select
+          id="ageGroup"
+          aria-label="Velg aldersgruppe"
+          name="ageGroup"
+          aria-invalid="false"
+          aria-describedby="ageGroup:description:1"
+        >
+          <option
+            value="blank"
+            disabled
+            selected
+          >
+            Velg aldersgruppe
+          </option>
+          <option value="kindergarten">
+            3-5 år
+          </option>
+          <option value="kids">
+            6-12 år
+          </option>
+          <option value="youth">
+            13-15 år
+          </option>
+          <option value="adult">
+            16-19 år
+          </option>
+        </select>
+      </div>
       <div>
         <button
           data-variant="secondary"
           type="button"
           style="flex: 1 1 0%;"
         >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M8.97 6.97a.75.75 0 1 1 1.06 1.06l-3.22 3.22H19a.75.75 0 0 1 0 1.5H6.81l3.22 3.22a.75.75 0 1 1-1.06 1.06l-4.5-4.5a.75.75 0 0 1 0-1.06z"
+            >
+            </path>
+          </svg>
           Forrige
         </button>
         <button
@@ -409,6 +558,22 @@ exports[`Form Page 2 1`] = `
           style="flex: 1 1 0%;"
         >
           Neste
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+            >
+            </path>
+          </svg>
         </button>
       </div>
       <dialog
@@ -435,6 +600,24 @@ exports[`Form Page 2 1`] = `
               style="flex: 2 1 0%;"
             >
               Send inn
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="none"
+                viewbox="0 0 24 24"
+                focusable="false"
+                role="img"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M6.317 4.32a.75.75 0 0 0-1.023.932L7.704 12l-2.41 6.748a.75.75 0 0 0 1.023.932l15-7a.75.75 0 0 0 0-1.36zm2.712 6.93L7.31 6.44 19.227 12 7.31 17.56l1.719-4.81H12.5a.75.75 0 0 0 0-1.5z"
+                  clip-rule="evenodd"
+                >
+                </path>
+              </svg>
             </button>
           </div>
         </div>
@@ -452,7 +635,7 @@ exports[`Form Page 3 1`] = `
         data-state="idle"
         open
         role="group"
-        data-active-step-label="Avslutning"
+        data-active-step-label="Dokumentasjon"
       >
         <u-summary
           aria-expanded="true"
@@ -461,7 +644,7 @@ exports[`Form Page 3 1`] = `
           tabindex="0"
         >
           <span>
-            Skoleundersøkelse
+            Testsøknad
           </span>
         </u-summary>
         <button
@@ -470,7 +653,7 @@ exports[`Form Page 3 1`] = `
         >
           <div>
           </div>
-          Personopplysninger
+          Kontaktinfo
         </button>
         <button
           data-state="idle"
@@ -478,7 +661,7 @@ exports[`Form Page 3 1`] = `
         >
           <div>
           </div>
-          Rangering
+          Prosjektet
         </button>
         <button
           data-state="active"
@@ -487,7 +670,7 @@ exports[`Form Page 3 1`] = `
         >
           <div>
           </div>
-          Avslutning
+          Dokumentasjon
         </button>
         <button
           data-state="idle"
@@ -500,6 +683,7 @@ exports[`Form Page 3 1`] = `
         <button
           data-state="idle"
           data-variant="confirmation"
+          disabled
         >
           <div>
           </div>
@@ -558,7 +742,7 @@ exports[`Form Page 3 1`] = `
           data-state="idle"
           open
           role="group"
-          data-active-step-label="Avslutning"
+          data-active-step-label="Dokumentasjon"
         >
           <u-summary
             aria-expanded="true"
@@ -567,7 +751,7 @@ exports[`Form Page 3 1`] = `
             tabindex="0"
           >
             <span>
-              Skoleundersøkelse
+              Testsøknad
             </span>
           </u-summary>
           <button
@@ -576,7 +760,7 @@ exports[`Form Page 3 1`] = `
           >
             <div>
             </div>
-            Personopplysninger
+            Kontaktinfo
           </button>
           <button
             data-state="idle"
@@ -584,7 +768,7 @@ exports[`Form Page 3 1`] = `
           >
             <div>
             </div>
-            Rangering
+            Prosjektet
           </button>
           <button
             data-state="active"
@@ -593,7 +777,7 @@ exports[`Form Page 3 1`] = `
           >
             <div>
             </div>
-            Avslutning
+            Dokumentasjon
           </button>
           <button
             data-state="idle"
@@ -606,6 +790,7 @@ exports[`Form Page 3 1`] = `
           <button
             data-state="idle"
             data-variant="confirmation"
+            disabled
           >
             <div>
             </div>
@@ -617,90 +802,111 @@ exports[`Form Page 3 1`] = `
   </div>
   <div data-color-scheme="light">
     <h1 data-size="md">
-      Skoleundersøkelse
+      Testsøknad
     </h1>
     <form>
       <h2 data-size="sm">
-        Avslutning
+        Dokumentasjon
       </h2>
+      <div
+        role="presentation"
+        tabindex="0"
+        aria-invalid="false"
+      >
+        <label
+          data-weight="medium"
+          for="dokumentasjon-dropzone"
+        >
+          Last opp dokumentasjon
+        </label>
+        <div
+          data-field="description"
+          id="dokumentasjon-dropzone:description:1"
+        >
+          Du kan laste opp filer i PDF-format. Filer kan være opptil 25 MB.
+        </div>
+        <div data-variant="default">
+          Dra og slipp filer her
+          <span style="display: block;">
+            eller
+          </span>
+          <button
+            data-variant="secondary"
+            type="button"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+            Velg filer
+          </button>
+        </div>
+        <input
+          id="dokumentasjon-dropzone"
+          accept="application/pdf"
+          multiple
+          tabindex="-1"
+          type="file"
+          aria-describedby="dokumentasjon-dropzone:description:1"
+          style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+      </div>
       <div>
         <label
           data-weight="medium"
           for="addition"
         >
-          Har du noe annet du ønsker å nevne?
+          Kommentarer til dokumentasjon
         </label>
-        <div>
-          <textarea
-            id="addition"
-            rows="4"
-            name="addition"
-          >
-          </textarea>
+        <div
+          data-field="description"
+          id="addition:description:1"
+        >
+          Ytterlige kommentarer til dokumentasjonen du har lastet opp.
         </div>
+        <textarea
+          id="addition"
+          name="addition"
+          aria-describedby="addition:description:1"
+        >
+        </textarea>
       </div>
-      <fieldset
-        id="contactMethods"
-        tabindex="-1"
-      >
-        <legend data-weight="medium">
-          Hvordan ønsker du at vi skal kontakte deg?
-        </legend>
-        <p data-variant="default">
-          Velg ett eller flere alternativer
-        </p>
-        <div>
-          <input
-            id="contactMethodsEmail"
-            aria-invalid="false"
-            type="checkbox"
-            value="epost"
-            name="contactMethods"
-          >
-          <label
-            data-weight="regular"
-            for="contactMethodsEmail"
-          >
-            E-post
-          </label>
-        </div>
-        <div>
-          <input
-            id="contactMethodsTelefon"
-            aria-invalid="false"
-            type="checkbox"
-            value="telefon"
-            name="contactMethods"
-          >
-          <label
-            data-weight="regular"
-            for="contactMethodsTelefon"
-          >
-            Telefon
-          </label>
-        </div>
-        <div>
-          <input
-            id="contactMethodsSms"
-            aria-invalid="false"
-            type="checkbox"
-            value="sms"
-            name="contactMethods"
-          >
-          <label
-            data-weight="regular"
-            for="contactMethodsSms"
-          >
-            SMS
-          </label>
-        </div>
-      </fieldset>
       <div>
         <button
           data-variant="secondary"
           type="button"
           style="flex: 1 1 0%;"
         >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M8.97 6.97a.75.75 0 1 1 1.06 1.06l-3.22 3.22H19a.75.75 0 0 1 0 1.5H6.81l3.22 3.22a.75.75 0 1 1-1.06 1.06l-4.5-4.5a.75.75 0 0 1 0-1.06z"
+            >
+            </path>
+          </svg>
           Forrige
         </button>
         <button
@@ -709,6 +915,22 @@ exports[`Form Page 3 1`] = `
           style="flex: 1 1 0%;"
         >
           Neste
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+            >
+            </path>
+          </svg>
         </button>
       </div>
       <dialog
@@ -735,6 +957,24 @@ exports[`Form Page 3 1`] = `
               style="flex: 2 1 0%;"
             >
               Send inn
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="none"
+                viewbox="0 0 24 24"
+                focusable="false"
+                role="img"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M6.317 4.32a.75.75 0 0 0-1.023.932L7.704 12l-2.41 6.748a.75.75 0 0 0 1.023.932l15-7a.75.75 0 0 0 0-1.36zm2.712 6.93L7.31 6.44 19.227 12 7.31 17.56l1.719-4.81H12.5a.75.75 0 0 0 0-1.5z"
+                  clip-rule="evenodd"
+                >
+                </path>
+              </svg>
             </button>
           </div>
         </div>
@@ -761,7 +1001,7 @@ exports[`Form Page 4 1`] = `
           tabindex="0"
         >
           <span>
-            Skoleundersøkelse
+            Testsøknad
           </span>
         </u-summary>
         <button
@@ -770,7 +1010,7 @@ exports[`Form Page 4 1`] = `
         >
           <div>
           </div>
-          Personopplysninger
+          Kontaktinfo
         </button>
         <button
           data-state="idle"
@@ -778,7 +1018,7 @@ exports[`Form Page 4 1`] = `
         >
           <div>
           </div>
-          Rangering
+          Prosjektet
         </button>
         <button
           data-state="idle"
@@ -786,7 +1026,7 @@ exports[`Form Page 4 1`] = `
         >
           <div>
           </div>
-          Avslutning
+          Dokumentasjon
         </button>
         <button
           data-state="active"
@@ -800,6 +1040,7 @@ exports[`Form Page 4 1`] = `
         <button
           data-state="idle"
           data-variant="confirmation"
+          disabled
         >
           <div>
           </div>
@@ -867,7 +1108,7 @@ exports[`Form Page 4 1`] = `
             tabindex="0"
           >
             <span>
-              Skoleundersøkelse
+              Testsøknad
             </span>
           </u-summary>
           <button
@@ -876,7 +1117,7 @@ exports[`Form Page 4 1`] = `
           >
             <div>
             </div>
-            Personopplysninger
+            Kontaktinfo
           </button>
           <button
             data-state="idle"
@@ -884,7 +1125,7 @@ exports[`Form Page 4 1`] = `
           >
             <div>
             </div>
-            Rangering
+            Prosjektet
           </button>
           <button
             data-state="idle"
@@ -892,7 +1133,7 @@ exports[`Form Page 4 1`] = `
           >
             <div>
             </div>
-            Avslutning
+            Dokumentasjon
           </button>
           <button
             data-state="active"
@@ -906,6 +1147,7 @@ exports[`Form Page 4 1`] = `
           <button
             data-state="idle"
             data-variant="confirmation"
+            disabled
           >
             <div>
             </div>
@@ -917,14 +1159,14 @@ exports[`Form Page 4 1`] = `
   </div>
   <div data-color-scheme="light">
     <h1 data-size="md">
-      Skoleundersøkelse
+      Testsøknad
     </h1>
     <form>
       <h2>
         Innsending
       </h2>
       <p data-variant="default">
-        Send inn skjema til Udir.
+        Send inn søknaden.
       </p>
       <div>
         <button
@@ -932,6 +1174,22 @@ exports[`Form Page 4 1`] = `
           type="button"
           style="flex: 1 1 0%;"
         >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M8.97 6.97a.75.75 0 1 1 1.06 1.06l-3.22 3.22H19a.75.75 0 0 1 0 1.5H6.81l3.22 3.22a.75.75 0 1 1-1.06 1.06l-4.5-4.5a.75.75 0 0 1 0-1.06z"
+            >
+            </path>
+          </svg>
           Forrige
         </button>
         <button
@@ -940,6 +1198,24 @@ exports[`Form Page 4 1`] = `
           style="flex: 2 1 0%;"
         >
           Send inn skjema
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M6.317 4.32a.75.75 0 0 0-1.023.932L7.704 12l-2.41 6.748a.75.75 0 0 0 1.023.932l15-7a.75.75 0 0 0 0-1.36zm2.712 6.93L7.31 6.44 19.227 12 7.31 17.56l1.719-4.81H12.5a.75.75 0 0 0 0-1.5z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
         </button>
       </div>
       <dialog
@@ -966,6 +1242,24 @@ exports[`Form Page 4 1`] = `
               style="flex: 2 1 0%;"
             >
               Send inn
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="none"
+                viewbox="0 0 24 24"
+                focusable="false"
+                role="img"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M6.317 4.32a.75.75 0 0 0-1.023.932L7.704 12l-2.41 6.748a.75.75 0 0 0 1.023.932l15-7a.75.75 0 0 0 0-1.36zm2.712 6.93L7.31 6.44 19.227 12 7.31 17.56l1.719-4.81H12.5a.75.75 0 0 0 0-1.5z"
+                  clip-rule="evenodd"
+                >
+                </path>
+              </svg>
             </button>
           </div>
         </div>
@@ -992,7 +1286,7 @@ exports[`Form Page 5 1`] = `
           tabindex="0"
         >
           <span>
-            Skoleundersøkelse
+            Testsøknad
           </span>
         </u-summary>
         <button
@@ -1001,7 +1295,7 @@ exports[`Form Page 5 1`] = `
         >
           <div>
           </div>
-          Personopplysninger
+          Kontaktinfo
         </button>
         <button
           data-state="idle"
@@ -1009,7 +1303,7 @@ exports[`Form Page 5 1`] = `
         >
           <div>
           </div>
-          Rangering
+          Prosjektet
         </button>
         <button
           data-state="idle"
@@ -1017,7 +1311,7 @@ exports[`Form Page 5 1`] = `
         >
           <div>
           </div>
-          Avslutning
+          Dokumentasjon
         </button>
         <button
           data-state="idle"
@@ -1031,6 +1325,7 @@ exports[`Form Page 5 1`] = `
           data-state="active"
           data-variant="confirmation"
           aria-current="step"
+          disabled
         >
           <div>
           </div>
@@ -1098,7 +1393,7 @@ exports[`Form Page 5 1`] = `
             tabindex="0"
           >
             <span>
-              Skoleundersøkelse
+              Testsøknad
             </span>
           </u-summary>
           <button
@@ -1107,7 +1402,7 @@ exports[`Form Page 5 1`] = `
           >
             <div>
             </div>
-            Personopplysninger
+            Kontaktinfo
           </button>
           <button
             data-state="idle"
@@ -1115,7 +1410,7 @@ exports[`Form Page 5 1`] = `
           >
             <div>
             </div>
-            Rangering
+            Prosjektet
           </button>
           <button
             data-state="idle"
@@ -1123,7 +1418,7 @@ exports[`Form Page 5 1`] = `
           >
             <div>
             </div>
-            Avslutning
+            Dokumentasjon
           </button>
           <button
             data-state="idle"
@@ -1137,6 +1432,7 @@ exports[`Form Page 5 1`] = `
             data-state="active"
             data-variant="confirmation"
             aria-current="step"
+            disabled
           >
             <div>
             </div>
@@ -1148,15 +1444,23 @@ exports[`Form Page 5 1`] = `
   </div>
   <div data-color-scheme="light">
     <h1 data-size="md">
-      Skoleundersøkelse
+      Testsøknad
     </h1>
     <form>
-      <h2 data-size="sm">
-        Kvittering
-      </h2>
-      <p data-variant="default">
-        Ditt svar er mottat, takk for at du svarte på undersøkelsen.
-      </p>
+      <div>
+        <h2 data-size="sm">
+          Kvittering
+        </h2>
+        <p
+          data-variant="default"
+          data-size="xl"
+        >
+          Takk!
+        </p>
+        <p data-variant="default">
+          Vi har mottatt din søknad. Du hører tilbake innen en måned.
+        </p>
+      </div>
       <div>
       </div>
       <dialog
@@ -1183,6 +1487,24 @@ exports[`Form Page 5 1`] = `
               style="flex: 2 1 0%;"
             >
               Send inn
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="none"
+                viewbox="0 0 24 24"
+                focusable="false"
+                role="img"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M6.317 4.32a.75.75 0 0 0-1.023.932L7.704 12l-2.41 6.748a.75.75 0 0 0 1.023.932l15-7a.75.75 0 0 0 0-1.36zm2.712 6.93L7.31 6.44 19.227 12 7.31 17.56l1.719-4.81H12.5a.75.75 0 0 0 0-1.5z"
+                  clip-rule="evenodd"
+                >
+                </path>
+              </svg>
             </button>
           </div>
         </div>
@@ -1200,7 +1522,7 @@ exports[`Form Story 1`] = `
         data-state="idle"
         open
         role="group"
-        data-active-step-label="Personopplysninger"
+        data-active-step-label="Kontaktinfo"
       >
         <u-summary
           aria-expanded="true"
@@ -1209,7 +1531,7 @@ exports[`Form Story 1`] = `
           tabindex="0"
         >
           <span>
-            Skoleundersøkelse
+            Testsøknad
           </span>
         </u-summary>
         <button
@@ -1219,7 +1541,7 @@ exports[`Form Story 1`] = `
         >
           <div>
           </div>
-          Personopplysninger
+          Kontaktinfo
         </button>
         <button
           data-state="idle"
@@ -1227,7 +1549,7 @@ exports[`Form Story 1`] = `
         >
           <div>
           </div>
-          Rangering
+          Prosjektet
         </button>
         <button
           data-state="idle"
@@ -1235,7 +1557,7 @@ exports[`Form Story 1`] = `
         >
           <div>
           </div>
-          Avslutning
+          Dokumentasjon
         </button>
         <button
           data-state="idle"
@@ -1248,6 +1570,7 @@ exports[`Form Story 1`] = `
         <button
           data-state="idle"
           data-variant="confirmation"
+          disabled
         >
           <div>
           </div>
@@ -1306,7 +1629,7 @@ exports[`Form Story 1`] = `
           data-state="idle"
           open
           role="group"
-          data-active-step-label="Personopplysninger"
+          data-active-step-label="Kontaktinfo"
         >
           <u-summary
             aria-expanded="true"
@@ -1315,7 +1638,7 @@ exports[`Form Story 1`] = `
             tabindex="0"
           >
             <span>
-              Skoleundersøkelse
+              Testsøknad
             </span>
           </u-summary>
           <button
@@ -1325,7 +1648,7 @@ exports[`Form Story 1`] = `
           >
             <div>
             </div>
-            Personopplysninger
+            Kontaktinfo
           </button>
           <button
             data-state="idle"
@@ -1333,7 +1656,7 @@ exports[`Form Story 1`] = `
           >
             <div>
             </div>
-            Rangering
+            Prosjektet
           </button>
           <button
             data-state="idle"
@@ -1341,7 +1664,7 @@ exports[`Form Story 1`] = `
           >
             <div>
             </div>
-            Avslutning
+            Dokumentasjon
           </button>
           <button
             data-state="idle"
@@ -1354,6 +1677,7 @@ exports[`Form Story 1`] = `
           <button
             data-state="idle"
             data-variant="confirmation"
+            disabled
           >
             <div>
             </div>
@@ -1365,11 +1689,11 @@ exports[`Form Story 1`] = `
   </div>
   <div data-color-scheme="light">
     <h1 data-size="md">
-      Skoleundersøkelse
+      Testsøknad
     </h1>
     <form>
       <h2 data-size="sm">
-        Personinformasjon
+        Kontaktinfo
       </h2>
       <div>
         <label
@@ -1402,351 +1726,62 @@ exports[`Form Story 1`] = `
           name="lastName"
         >
       </div>
-      <div>
-        <label
-          data-weight="medium"
-          for="county"
-        >
-          Fylke
-        </label>
-        <u-combobox>
-          <input
-            placeholder
-            aria-invalid="false"
-            id="county"
-            type="text"
-            data-label="Fylke"
-            list=":u-datalist1"
-            aria-label="Fylke​​​​​"
-            popovertarget=":u-datalist1"
-            aria-autocomplete="list"
-            aria-controls=":u-datalist1"
-            aria-expanded="true"
-            autocomplete="off"
-            role="combobox"
-          >
-          <del
-            data-icon="true"
-            data-variant="tertiary"
-            aria-label="Tøm"
-            hidden
-            role="button"
-          >
-          </del>
-          <u-datalist
-            data-nofilter
-            data-sr-singular="%d forslag"
-            data-sr-plural="%d forslag"
-            popover="manual"
-            hidden
-            role="listbox"
-            tabindex="-1"
-            aria-multiselectable="false"
-            id=":u-datalist1"
-            style="width: 592px; translate: <removed>;"
-          >
-            <u-option
-              label="Agder"
-              value="Agder"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Agder
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Akershus"
-              value="Akershus"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Akershus
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Buskerud"
-              value="Buskerud"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Buskerud
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Finnmark"
-              value="Finnmark"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Finnmark
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Innlandet"
-              value="Innlandet"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Innlandet
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Møre og Romsdal"
-              value="Møre og Romsdal"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Møre og Romsdal
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Nordland"
-              value="Nordland"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Nordland
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Oslo"
-              value="Oslo"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Oslo
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Rogaland"
-              value="Rogaland"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Rogaland
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Telemark"
-              value="Telemark"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Telemark
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Troms"
-              value="Troms"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Troms
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Trøndelag"
-              value="Trøndelag"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Trøndelag
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Vestfold"
-              value="Vestfold"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Vestfold
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Vestland"
-              value="Vestland"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Vestland
-              <div>
-                Fylke
-              </div>
-            </u-option>
-            <u-option
-              label="Østfold"
-              value="Østfold"
-              tabindex="-1"
-              role="option"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              Østfold
-              <div>
-                Fylke
-              </div>
-            </u-option>
-          </u-datalist>
-          <select
-            name="county"
-            hidden
-            id="_r_1_"
-          >
-          </select>
-        </u-combobox>
-      </div>
       <fieldset
-        id="educationLevel"
+        id="contactMethods"
         tabindex="-1"
       >
         <legend data-weight="medium">
-          Utdanningsnivå
+          Hvordan ønsker du at vi skal kontakte deg?
         </legend>
+        <p data-variant="default">
+          Velg ett eller flere alternativer
+        </p>
         <div>
           <input
-            id="radio-kindergarten"
-            type="radio"
-            value="kindergarten"
-            name="educationLevel"
+            id="contactMethodsEmail"
+            aria-invalid="false"
+            type="checkbox"
+            value="epost"
+            name="contactMethods"
           >
           <label
             data-weight="regular"
-            for="radio-kindergarten"
+            for="contactMethodsEmail"
           >
-            Barnehage
+            E-post
           </label>
         </div>
         <div>
           <input
-            id="radio-primary"
-            type="radio"
-            value="primary"
-            name="educationLevel"
+            id="contactMethodsTelefon"
+            aria-invalid="false"
+            type="checkbox"
+            value="telefon"
+            name="contactMethods"
           >
           <label
             data-weight="regular"
-            for="radio-primary"
+            for="contactMethodsTelefon"
           >
-            Grunnskole
+            Telefon
           </label>
         </div>
         <div>
           <input
-            id="radio-secondary"
-            type="radio"
-            value="secondary"
-            name="educationLevel"
+            id="contactMethodsSms"
+            aria-invalid="false"
+            type="checkbox"
+            value="sms"
+            name="contactMethods"
           >
           <label
             data-weight="regular"
-            for="radio-secondary"
+            for="contactMethodsSms"
           >
-            Videregående
-          </label>
-        </div>
-        <div>
-          <input
-            id="radio-higher"
-            type="radio"
-            value="higher"
-            name="educationLevel"
-          >
-          <label
-            data-weight="regular"
-            for="radio-higher"
-          >
-            Høyere utdanning
+            SMS
           </label>
         </div>
       </fieldset>
-      <div>
-        <label
-          data-weight="medium"
-          for="ageGroup"
-        >
-          Aldersgruppe
-        </label>
-        <select
-          id="ageGroup"
-          aria-label="Velg aldersgruppe"
-          name="ageGroup"
-          aria-invalid="false"
-        >
-          <option
-            value="blank"
-            disabled
-            selected
-          >
-            Velg aldersgruppe
-          </option>
-          <option value="kindergarten">
-            3-5 år
-          </option>
-          <option value="kids">
-            6-12 år
-          </option>
-          <option value="youth">
-            13-20 år
-          </option>
-          <option value="adult">
-            21 år og eldre
-          </option>
-        </select>
-      </div>
       <div>
         <button
           data-variant="secondary"
@@ -1754,6 +1789,22 @@ exports[`Form Story 1`] = `
           style="flex: 1 1 0%;"
         >
           Neste
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+            >
+            </path>
+          </svg>
         </button>
       </div>
       <dialog
@@ -1780,6 +1831,24 @@ exports[`Form Story 1`] = `
               style="flex: 2 1 0%;"
             >
               Send inn
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="none"
+                viewbox="0 0 24 24"
+                focusable="false"
+                role="img"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M6.317 4.32a.75.75 0 0 0-1.023.932L7.704 12l-2.41 6.748a.75.75 0 0 0 1.023.932l15-7a.75.75 0 0 0 0-1.36zm2.712 6.93L7.31 6.44 19.227 12 7.31 17.56l1.719-4.81H12.5a.75.75 0 0 0 0-1.5z"
+                  clip-rule="evenodd"
+                >
+                </path>
+              </svg>
             </button>
           </div>
         </div>

@@ -1,11 +1,8 @@
-import { Controller, useFormContext } from 'react-hook-form';
-import { counties } from '.storybook/data';
+import { useFormContext } from 'react-hook-form';
+import { Checkbox } from 'src/components/checkbox/Checkbox';
 import { Field } from 'src/components/field/Field';
 import { Fieldset } from 'src/components/fieldset/Fieldset';
 import { Input } from 'src/components/input/Input';
-import { Radio } from 'src/components/radio/Radio';
-import { Select } from 'src/components/select/Select';
-import { Suggestion } from 'src/components/suggestion/Suggestion';
 import { Textfield } from 'src/components/textfield/Textfield';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Label } from 'src/components/typography/label/Label';
@@ -16,13 +13,17 @@ import {
   focusableFieldsetProps,
 } from '../FormDemo';
 
-export const PersonalInfoPage = ({ showErrors }: PageProps) => {
-  const { register, control, formState } = useFormContext<FormValues>();
+export const PersonalInfoPage = ({
+  showErrors,
+  isSubmitSuccessful,
+}: PageProps) => {
+  const { register, formState } = useFormContext<FormValues>();
   const errors = showErrors ? formState.errors : {};
+  const isInvalid = !!errors.contactMethods;
   return (
     <>
       <Heading level={2} data-size="sm">
-        Personinformasjon
+        Kontaktinfo
       </Heading>
       <Textfield
         id="firstName"
@@ -30,6 +31,7 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
         {...register('firstName')}
         autoComplete="given-name"
         error={errors.firstName?.message}
+        readOnly={isSubmitSuccessful}
       />
       <Field>
         <Label>Etternavn</Label>
@@ -38,94 +40,47 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
           {...register('lastName')}
           autoComplete="family-name"
           aria-invalid={!!errors.lastName}
+          readOnly={isSubmitSuccessful}
         />
         {errors.lastName && (
           <ValidationMessage>{errors.lastName.message}</ValidationMessage>
         )}
       </Field>
-      <Field>
-        <Label>Fylke</Label>
-        <Controller
-          name="county"
-          control={control}
-          defaultValue=""
-          render={({ field: { value, onChange, ...field } }) => (
-            <Suggestion
-              {...field}
-              selected={value}
-              onSelectedChange={(item) => {
-                onChange(item?.value);
-              }}
-            >
-              <Suggestion.Input aria-invalid={!!errors.county} id="county" />
-              <Suggestion.Clear />
-              <Suggestion.List>
-                <Suggestion.Empty>Ingen resultater</Suggestion.Empty>
-                {counties.map((county) => (
-                  <Suggestion.Option key={county} label={county} value={county}>
-                    {county}
-                    <div>Fylke</div>
-                  </Suggestion.Option>
-                ))}
-              </Suggestion.List>
-            </Suggestion>
-          )}
+      <Fieldset id="contactMethods" {...focusableFieldsetProps}>
+        <Fieldset.Legend>
+          Hvordan ønsker du at vi skal kontakte deg?
+        </Fieldset.Legend>
+        <Fieldset.Description>
+          Velg ett eller flere alternativer
+        </Fieldset.Description>
+        <Checkbox
+          id="contactMethodsEmail"
+          label="E-post"
+          {...register('contactMethods')}
+          aria-invalid={isInvalid}
+          readOnly={isSubmitSuccessful}
+          value="epost"
         />
-        {errors.county && (
-          <ValidationMessage>{errors.county.message}</ValidationMessage>
-        )}
-      </Field>
-      <Fieldset id="educationLevel" {...focusableFieldsetProps}>
-        <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
-        <Radio
-          id="radio-kindergarten"
-          label="Barnehage"
-          value="kindergarten"
-          {...register('educationLevel')}
+        <Checkbox
+          id="contactMethodsTelefon"
+          label="Telefon"
+          {...register('contactMethods')}
+          aria-invalid={isInvalid}
+          readOnly={isSubmitSuccessful}
+          value="telefon"
         />
-        <Radio
-          id="radio-primary"
-          label="Grunnskole"
-          value="primary"
-          {...register('educationLevel')}
+        <Checkbox
+          id="contactMethodsSms"
+          label="SMS"
+          {...register('contactMethods')}
+          aria-invalid={isInvalid}
+          readOnly={isSubmitSuccessful}
+          value="sms"
         />
-        <Radio
-          id="radio-secondary"
-          label="Videregående"
-          value="secondary"
-          {...register('educationLevel')}
-        />
-        <Radio
-          id="radio-higher"
-          label="Høyere utdanning"
-          value="higher"
-          {...register('educationLevel')}
-        />
-        {errors.educationLevel && (
-          <ValidationMessage>{errors.educationLevel.message}</ValidationMessage>
+        {errors.contactMethods && (
+          <ValidationMessage>{errors.contactMethods.message}</ValidationMessage>
         )}
       </Fieldset>
-      <Field>
-        <Label>Aldersgruppe</Label>
-        <Select
-          id="ageGroup"
-          aria-label="Velg aldersgruppe"
-          {...register('ageGroup')}
-          aria-invalid={!!errors.ageGroup}
-          defaultValue="blank"
-        >
-          <Select.Option value="blank" disabled>
-            Velg aldersgruppe
-          </Select.Option>
-          <Select.Option value="kindergarten">3-5 år</Select.Option>
-          <Select.Option value="kids">6-12 år</Select.Option>
-          <Select.Option value="youth">13-20 år</Select.Option>
-          <Select.Option value="adult">21 år og eldre</Select.Option>
-        </Select>
-        {errors.ageGroup && (
-          <ValidationMessage>{errors.ageGroup.message}</ValidationMessage>
-        )}
-      </Field>
     </>
   );
 };

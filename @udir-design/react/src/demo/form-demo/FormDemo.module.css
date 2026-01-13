@@ -12,6 +12,16 @@
   @media (min-width: 48rem) {
     flex-direction: row;
   }
+
+  .confirmation {
+    gap: 0;
+    h2 {
+      margin-block-end: var(--ds-size-4);
+    }
+    p {
+      margin-block: var(--ds-size-2);
+    }
+  }
 }
 
 .navigation {
