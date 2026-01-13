@@ -16,23 +16,27 @@ import {
   focusableFieldsetProps,
 } from '../FormDemo';
 
-export const PersonalInfoPage = ({ showErrors }: PageProps) => {
+export const PersonalInfoPage = ({
+  showErrors,
+  isSubmitSuccessful,
+}: PageProps) => {
   const { register, control, formState } = useFormContext<FormValues>();
   const errors = showErrors ? formState.errors : {};
   return (
     <>
       <Heading level={2} data-size="sm">
-        Personinformasjon
+        Om søker og prosjektet
       </Heading>
       <Textfield
         id="firstName"
-        label="Fornavn"
+        label="Navn på kontaktperson"
         {...register('firstName')}
         autoComplete="given-name"
         error={errors.firstName?.message}
+        readOnly={isSubmitSuccessful}
       />
       <Field>
-        <Label>Etternavn</Label>
+        <Label>Epostadresse til kontaktperson</Label>
         <Input
           id="lastName"
           {...register('lastName')}
@@ -113,6 +117,7 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
           {...register('ageGroup')}
           aria-invalid={!!errors.ageGroup}
           defaultValue="blank"
+          //readOnly={isSubmitted}
         >
           <Select.Option value="blank" disabled>
             Velg aldersgruppe
