@@ -1,0 +1,51 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Canvas,
+  ArgTypes,
+} from '@storybook/addon-docs/blocks';
+import * as ProgressBarStories from './ProgressBar.stories';
+
+<Meta of={ProgressBarStories} />
+
+# ProgressBar
+
+`ProgressBar` viser fremgang i en prosess. Den kan for eksempel brukes i skjemaer med flere sider for å vise hvor mange sider som er fullført.
+
+**Passer til å**
+
+- brukes i skjemaer uten gruppering der spørsmålene er frivillige
+
+**Passer ikke til å**
+
+- brukes i skjemaer med validering, bruk heller [`FormNavigation`](#)
+
+## Slik bruker du ProgressBar
+
+<Primary />
+<Controls />
+
+```tsx
+import { ProgressBar } from '@udir-design/react';
+
+<ProgressBar value={2} max={10} />;
+```
+
+## Eksempler
+
+Eksempelet under viser et skjema med 7 sider som bruker `ProgressBar` for å vise fremgang.
+I dette eksempelet setter vi fokuset tilbake til `ProgressBar` når vi bytter side, slik at
+skjermleser leser opp elementet og tastaturnavigasjon tar deg videre til skjemafeltene.
+
+<Canvas of={ProgressBarStories.FormExample} />
+
+## Tilgjengelighet
+
+Det grafiske elementet i `ProgressBar` er skjult for skjermleser. Sørg for at teksten i komponenten gir tilstrekkelig informasjon for skjermleserbrukere. Du kan i tillegg bruke `aria-label` for å gi en beskrivelse av hvilken fremgang `ProgressBar` viser, denne blir lest opp før resten av teksten i komponenten.
+
+Det er viktig å informere brukeren når `ProgressBar` endrer seg som følge av en annen handling. Hvordan man gjør det er avhengig av kontekst. I eksempelet der vi bruker `ProgressBar` for å vise fremgang i skjema løser vi dette ved å flytte fokus tilbake til `ProgressBar` når brukeren navigerer.
+
+### Lasting
+
+Dersom du har behov for å bruke `ProgressBar` for å vise fremgang ved lasting av innhold vil vi gjerne høre fra deg, slik at vi kan komme fram til en god måte å gjøre dette og ta vare på tilgjengelighet.

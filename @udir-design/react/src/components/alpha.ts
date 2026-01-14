@@ -7,6 +7,7 @@ export * from './footer';
 export * from './header';
 export * from './formNavigation';
 export * from './logo';
+export * from './progressBar/ProgressBar';
 export * from './typography/prose/Prose';
 export * from './suggestion/Suggestion';
 export * from './switch/Switch';
