@@ -4,4 +4,23 @@
       color: var(--dsc-link-color);
     }
   }
+
+  /* Override display to match header "sm" breakpoint */
+  & > :is(ol, ul):not(:only-child),
+  & > :is(:not(ol, ul)):not(:only-child) {
+    display: revert;
+  }
+  & > :is(ol, ul):not([hidden]) {
+    display: flex;
+  }
+  @media (width > 40rem) {
+    & > :is(:not(ol, ul)):not(:only-child) {
+      display: none;
+    }
+  }
+  @media (max-width: 40rem) {
+    & > :is(ol, ul):not(:only-child) {
+      display: none;
+    }
+  }
 }

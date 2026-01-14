@@ -3,7 +3,13 @@
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "outDir": "../../dist/out-tsc",
-    "baseUrl": "./",
+    "paths": {
+      "src/*": ["./src/*"],
+      ".storybook/*": ["./.storybook/*"],
+      "@udir-design/react/utilities/form/alpha": [
+        "./src/utilities/form/alpha.ts"
+      ]
+    },
     "types": ["vite/client", "../theme/dist/types", "./dist/html"]
   },
   "files": [],

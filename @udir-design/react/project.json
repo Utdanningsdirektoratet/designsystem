@@ -11,7 +11,8 @@
       "dependsOn": [
         "build",
         { "projects": "!css", "target": "^watch" },
-        "lint:cycles"
+        "lint:cycles",
+        "serve:typedoc"
       ]
     },
     "build:storybook": {
@@ -20,9 +21,21 @@
       "cache": true,
       "outputs": ["{projectRoot}/storybook-static"]
     },
-    "serve:storybook": {
+    "build:docs": {
+      "dependsOn": ["build:storybook"],
+      "cache": true,
+      "outputs": ["{projectRoot}/storybook-static/typedoc"]
+    },
+    "serve:docs": {
       "continuous": true,
-      "dependsOn": ["build:storybook"]
+      "dependsOn": ["build:storybook", "build:docs"]
+    },
+    "watch:typedoc": {
+      "continuous": true
+    },
+    "serve:typedoc": {
+      "continuous": true,
+      "dependsOn": ["watch:typedoc"]
     },
     "test:storybook": {
       "cache": true,

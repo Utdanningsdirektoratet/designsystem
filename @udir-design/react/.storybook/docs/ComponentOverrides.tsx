@@ -7,7 +7,7 @@ import { Table } from 'src/components/table';
 import type { HeadingProps } from 'src/components/typography/heading/Heading';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
-import type { MdxComponentOverrides } from '../types/parameters';
+import type { MdxComponentOverrides } from '../types';
 import componentStyles from './componentOverrides.module.scss';
 
 const getPath = (href: string | undefined): string => {
@@ -17,9 +17,10 @@ const getPath = (href: string | undefined): string => {
 
   // if link starts with /, add current path to link
   if (href.startsWith('/')) {
-    const { origin = '' } = document.location;
+    // Get location from window.parent instead of document, otherwise pathname is iframe.html
+    const { origin = '', pathname } = window.parent.location;
 
-    return `${origin}/?path=${href}`;
+    return `${origin}${pathname}?path=${href}`;
   }
 
   return href;

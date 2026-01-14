@@ -9,6 +9,7 @@ exports[`Backdrop Closedby Any 1`] = `
   Åpne Dialog
 </button>
 <dialog
+  data-placement="center"
   data-modal="true"
   closedby="any"
   open
@@ -61,6 +62,7 @@ exports[`Dialog Non Modal 1`] = `
   Åpne skrivetips
 </button>
 <dialog
+  data-placement="center"
   data-modal="false"
   closedby="closerequest"
   open
@@ -107,6 +109,7 @@ exports[`Dialog With Form 1`] = `
   Send inn skjema
 </button>
 <dialog
+  data-placement="center"
   data-modal="true"
   closedby="any"
   open
@@ -166,6 +169,7 @@ exports[`Dialog With Max Width 1`] = `
   Åpne Dialog
 </button>
 <dialog
+  data-placement="center"
   data-modal="true"
   closedby="closerequest"
   open
@@ -197,6 +201,7 @@ exports[`Dialog With Open Prop 1`] = `
   Open Dialog with prop
 </button>
 <dialog
+  data-placement="center"
   data-modal="true"
   closedby="closerequest"
   open
@@ -238,6 +243,7 @@ exports[`Dialog With Suggestion 1`] = `
   Åpne Dialog
 </button>
 <dialog
+  data-placement="center"
   data-modal="true"
   closedby="closerequest"
   open
@@ -413,6 +419,128 @@ exports[`Dialog With Suggestion 1`] = `
 </dialog>
 `;
 
+exports[`Drawer 1`] = `
+<div style="margin-bottom: var(--ds-size-4);">
+  <input
+    id="modal-checkbox"
+    type="checkbox"
+    checked
+  >
+  <label
+    data-weight="regular"
+    for="modal-checkbox"
+  >
+    Modal
+  </label>
+</div>
+<fieldset>
+  <div style="display: flex; flex-wrap: wrap; gap: var(--ds-size-5); margin-bottom: var(--ds-size-8);">
+    <div>
+      <input
+        id="center-radio"
+        type="radio"
+        value="center"
+        name="drawer"
+      >
+      <label
+        data-weight="regular"
+        for="center-radio"
+      >
+        Midten
+      </label>
+    </div>
+    <div>
+      <input
+        id="top-radio"
+        type="radio"
+        value="top"
+        name="drawer"
+      >
+      <label
+        data-weight="regular"
+        for="top-radio"
+      >
+        Topp
+      </label>
+    </div>
+    <div>
+      <input
+        id="bottom-radio"
+        type="radio"
+        value="bottom"
+        name="drawer"
+      >
+      <label
+        data-weight="regular"
+        for="bottom-radio"
+      >
+        Bunn
+      </label>
+    </div>
+    <div>
+      <input
+        id="left-radio"
+        type="radio"
+        value="left"
+        name="drawer"
+      >
+      <label
+        data-weight="regular"
+        for="left-radio"
+      >
+        Venstre
+      </label>
+    </div>
+    <div>
+      <input
+        id="right-radio"
+        type="radio"
+        value="right"
+        name="drawer"
+      >
+      <label
+        data-weight="regular"
+        for="right-radio"
+      >
+        Høyre
+      </label>
+    </div>
+  </div>
+</fieldset>
+<button
+  data-variant="primary"
+  type="button"
+  aria-haspopup="dialog"
+>
+  Open Dialog
+</button>
+<dialog
+  data-placement="bottom"
+  data-modal="true"
+  closedby="any"
+  open
+  style="z-index: 10;"
+>
+  <button
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
+    aria-label="Lukk dialogvindu"
+    data-color="neutral"
+    data-command="close"
+  >
+  </button>
+  <div>
+    <p data-variant="default">
+      This is a modal Dialog with
+      <code>
+        placement="bottom"
+      </code>
+    </p>
+  </div>
+</dialog>
+`;
+
 exports[`Preview 1`] = `
 <button
   data-variant="primary"
@@ -422,6 +550,7 @@ exports[`Preview 1`] = `
   Åpne Dialog
 </button>
 <dialog
+  data-placement="center"
   data-modal="true"
   closedby="any"
   open
@@ -462,6 +591,7 @@ exports[`With Header And Footer 1`] = `
   Gå til neste
 </button>
 <dialog
+  data-placement="center"
   data-modal="true"
   closedby="closerequest"
   open
@@ -511,6 +641,7 @@ exports[`Without Dialog Trigger Context 1`] = `
   Åpne Dialog
 </button>
 <dialog
+  data-placement="center"
   data-modal="true"
   closedby="closerequest"
   open

@@ -1,4 +1,3 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { CSSProperties } from 'react';
 import {
   Chat2Icon,
@@ -7,12 +6,13 @@ import {
   FloppydiskFillIcon,
   VideoIcon,
 } from '@udir-design/icons';
+import preview from '.storybook/preview';
 import { Avatar } from '../avatar/Avatar';
 import { Button } from '../button/Button';
 import { Tabs } from '../tabs/Tabs';
 import { Badge } from './Badge';
 
-const meta: Meta<typeof Badge> = {
+const meta = preview.meta({
   component: Badge,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -28,19 +28,16 @@ const meta: Meta<typeof Badge> = {
       alignItems: 'center',
     },
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Badge>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     count: 10,
     maxCount: 9,
   },
-};
+});
 
-export const Floating: Story = {
+export const Floating = meta.story({
   args: { 'data-color': 'danger' },
   parameters: {
     customStyles: {
@@ -112,9 +109,9 @@ export const Floating: Story = {
       </Badge.Position>
     </>
   ),
-};
+});
 
-export const CustomPlacement: Story = {
+export const CustomPlacement = meta.story({
   args: { 'data-color': 'danger' },
   render: (args) => (
     <Badge.Position placement="top-right">
@@ -130,9 +127,9 @@ export const CustomPlacement: Story = {
       <EnvelopeClosedFillIcon title="Meldinger" />
     </Badge.Position>
   ),
-};
+});
 
-export const Status: Story = {
+export const Status = meta.story({
   args: { 'data-color': 'danger' },
   render: (args) => (
     <div>
@@ -142,9 +139,9 @@ export const Status: Story = {
       </Badge.Position>
     </div>
   ),
-};
+});
 
-export const InTabs: Story = {
+export const InTabs = meta.story({
   args: { 'data-color': 'accent' },
   render: (args) => (
     <Tabs defaultValue="value1">
@@ -161,9 +158,9 @@ export const InTabs: Story = {
       </Tabs.List>
     </Tabs>
   ),
-};
+});
 
-export const InButton: Story = {
+export const InButton = meta.story({
   args: { 'data-color': 'danger' },
   render: (args) => (
     <div
@@ -192,7 +189,7 @@ export const InButton: Story = {
       </Button>
     </div>
   ),
-};
+});
 
 const ColorsMap: {
   [key: string]: { [key: string]: string };
@@ -246,7 +243,7 @@ const SemanticColorsMap: {
   },
 };
 
-export const ColorVariants: Story = {
+export const ColorVariants = meta.story({
   render: () => (
     <div
       style={{
@@ -263,9 +260,9 @@ export const ColorVariants: Story = {
       ))}
     </div>
   ),
-};
+});
 
-export const SemanticColorVariants: Story = {
+export const SemanticColorVariants = meta.story({
   render: () => (
     <div
       style={{
@@ -282,4 +279,4 @@ export const SemanticColorVariants: Story = {
       ))}
     </div>
   ),
-};
+});

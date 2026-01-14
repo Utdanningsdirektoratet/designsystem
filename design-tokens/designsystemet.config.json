@@ -5,11 +5,19 @@
   "themes": {
     "udir": {
       "colors": {
-        "main": { "accent": "#76c69d" },
+        "main": {
+          "accent": "#76c69d"
+        },
         "neutral": "#303030",
         "support": {
           "support1": "#bed5e8",
           "support2": "#e5ceae"
+        }
+      },
+      "overrides": {
+        "severity": {
+          "info": "#209bf9",
+          "success": "#21CC39"
         }
       },
       "typography": {

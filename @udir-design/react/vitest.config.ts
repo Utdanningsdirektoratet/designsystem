@@ -1,5 +1,6 @@
 import path from 'node:path';
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
+import { playwright } from '@vitest/browser-playwright';
 import { coverageConfigDefaults, defineConfig } from 'vitest/config';
 import viteConfig from './vite.config';
 
@@ -11,14 +12,16 @@ export default defineConfig({
     },
     reporters: [
       'default',
-      [
-        'html',
-        {
-          addFileAttribute: true,
-          classnameTemplate: '{filename}',
-          outputFile: './test-reports/index.html',
-        },
-      ],
+      // html reporter has a bug in 4.0.15, which is fixed but not yet released
+      // https://github.com/vitest-dev/vitest/issues/9190
+      // [
+      //   'html',
+      //   {
+      //     addFileAttribute: true,
+      //     classnameTemplate: '{filename}',
+      //     outputFile: './test-reports/index.html',
+      //   },
+      // ],
       [
         'json',
         {
@@ -40,7 +43,7 @@ export default defineConfig({
         '**/storybook-static/**',
       ],
     },
-    workspace: [
+    projects: [
       {
         test: {
           name: 'unit',
@@ -64,7 +67,7 @@ export default defineConfig({
           browser: {
             enabled: true,
             instances: [{ browser: 'chromium' }],
-            provider: 'playwright',
+            provider: playwright(),
             headless: true,
           },
           setupFiles: ['./.storybook/vitest.setup.ts'],

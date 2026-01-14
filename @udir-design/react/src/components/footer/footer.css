@@ -54,17 +54,6 @@
     right: 0;
     height: fit-content;
 
-    > img {
-      height: var(--ds-size-12);
-    }
-
-    > img:first-of-type {
-      display: block;
-    }
-    > img:last-of-type {
-      display: none;
-    }
-
     @composes ds-focus from '@digdir/designsystemet-css/base.css';
   }
 }
@@ -107,31 +96,9 @@
       position: relative;
       top: initial;
       right: initial;
-      > img {
-        height: var(--ds-size-10);
+      .uds-logo {
+        --uds-logo-size: var(--ds-size-10);
       }
-    }
-  }
-}
-
-/* logo in dark mode */
-
-[data-color-scheme='dark'] .uds-footer__logo {
-  > img:first-of-type {
-    display: none;
-  }
-  > img:last-of-type {
-    display: block;
-  }
-}
-
-[data-color-scheme='auto'] {
-  @media (prefers-color-scheme: dark) {
-    .uds-footer__logo > img:first-of-type {
-      display: none;
-    }
-    .uds-footer__logo > img:last-of-type {
-      display: block;
     }
   }
 }

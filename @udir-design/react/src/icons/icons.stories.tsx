@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import * as Icons from '@udir-design/icons';
 import type { AirplaneIcon } from '@udir-design/icons';
+import preview from '.storybook/preview';
 
-export default {
+const meta = preview.meta({
   title: 'iconsandsymbols/Ikoner',
   tags: ['!autodocs'],
   parameters: {
@@ -12,13 +12,12 @@ export default {
     },
     html: { disable: true },
   },
-} as Meta<typeof AirplaneIcon>;
+});
 
-type Story = StoryObj<typeof AirplaneIcon>;
 type Icon = typeof AirplaneIcon;
 const typedIcons = Icons as Record<string, Icon>;
 
-export const OutlineIcons: Story = {
+export const OutlineIcons = meta.story({
   render: () => {
     return (
       <div className="icons">
@@ -42,9 +41,9 @@ export const OutlineIcons: Story = {
       </div>
     );
   },
-};
+});
 
-export const FillIcons: Story = {
+export const FillIcons = meta.story({
   render: () => {
     return (
       <div className="icons">
@@ -72,4 +71,4 @@ export const FillIcons: Story = {
       </div>
     );
   },
-};
+});

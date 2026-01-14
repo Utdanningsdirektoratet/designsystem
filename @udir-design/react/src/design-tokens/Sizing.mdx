@@ -3,19 +3,15 @@ import { SpacingGuidelines } from './SpacingGuidelines';
 import image from '../../public/img/size-component.png';
 import { Meta } from '@storybook/addon-docs/blocks';
 
-<Meta title="design-tokens/Sizing og spacing" />
+<Meta title="design-tokens/Størrelser og responsivitet" />
 
-# Sizing og spacing
+# Størrelser
 
-Vi bruker størrelsesvariabler (design tokens) for å definere spacing (mellomrom) og sizing (bredder og høyder) på en konsistent måte. Verdien til størrelsesvariabler settes av `data-size`-attributtet.
+Vi bruker størrelsesvariabler (design tokens) for å definere spacing (mellomrom), sizing (bredder og høyder) og fontstørrelser på en konsistent måte. Verdien til størrelsesvariabler avhenger av hvilken størrelsesmodus som er aktiv. Du kan endre størrelsesmodus ved å sette `data-size`-attributtet i kode eller size mode i Figma.
 
-> 1rem tilsvarer 16px i vår standardkonfigurasjon (`data-size="medium"`).
+> 1rem tilsvarer 16px i størrelsesmodus medium, som er default.
 
-For bruk av størrelsesvariabler i kode, se [størrelser i kode hos Digdir](https://designsystemet.no/no/fundamentals/code/sizes/).
-
-## Sizing
-
-De fleste komponentene i designsystemet finnes i tre anbefalte størrelser: `Small`, `Medium` og `Large`.
+Komponentene endrer størrelse basert på hvilken størrelsesmodus som er aktiv: small, medium eller large.
 
 <img
   src={image}
@@ -23,9 +19,38 @@ De fleste komponentene i designsystemet finnes i tre anbefalte størrelser: `Sma
   style={{ marginBlock: 'var(--ds-size-5)' }}
 />
 
-For å opprettholde et helhetlig og oversiktlig design anbefales det å bruke faste størrelser innenfor en gitt nettside eller kontekst. Mange ulike kombinasjoner av størrelser kan føre til et rotete og uoversiktlig design.
+For å skape et helhetlig og oversiktlig design anbefaler vi å bruke én størrelsesmodus innenfor en gitt nettside eller kontekst. Mange ulike kombinasjoner kan føre til et rotete og uoversiktlig grensesnitt. I enkelte tilfeller kan komponenter i ulike størrelser kombineres for å skape bedre visuelle hierarkier og brukervennlighet.
 
-I enkelte tilfeller kan komponenter i ulike størrelser kombineres for å skape bedre visuelle hierarkier og brukervennlighet.
+## Responsivitet i kode
+
+For å styre størrelsesmodus i kode kan man sette `data-size=` `'sm'`, `'md'` eller `'lg'`, typisk på et rot-element, men det er ofte lurt å sette størrelsesmodus basert på brukerens skjermstørrelse. Det kan man gjøre slik:
+
+```css
+[data-size='auto'] {
+  --ds-size: var(--ds-size--sm);
+
+  @media (min-width: 600px) {
+    --ds-size: var(--ds-size--md);
+  }
+  @media (min-width: 992px) {
+    --ds-size: var(--ds-size--lg);
+  }
+}
+```
+
+Dersom du trenger å bruke en annen størrelsesmodus for et område, kan du bruke `data-size`. Dette overstyrer størrelsesmodusen som eventuelt er satt høyere opp i hierarkiet. Dersom du har behov for at komponentene i dette området også skal skalere basert på skjermstørrelse, kan du definere egne breakpoints.
+
+```css
+.my-css-class[data-size='auto'] {
+  --ds-size: var(--ds-size--md);
+
+  @media (min-width: 600px) {
+    --ds-size: var(--ds-size--lg);
+  }
+}
+```
+
+For `Avatar`, `Heading`, `Paragraph` og `Spinner` betyr ikke `data-size` størrelsesmodus, men komponentstørrelse. De vil alltid skalere basert på nærmeste størrelsesmodus. Les om dette og andre teknsike detaljer i [dokumentasjonen hos Digdir](https://designsystemet.no/no/fundamentals/code/sizes/).
 
 ## Spacing
 

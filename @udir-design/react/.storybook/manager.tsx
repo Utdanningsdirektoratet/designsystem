@@ -3,11 +3,6 @@ import React from 'react';
 import type { DocsIndexEntry } from 'storybook/internal/types';
 import { addons } from 'storybook/manager-api';
 import {
-  type TagBadgeParameters,
-  defaultConfig,
-  renderLabel,
-} from 'storybook-addon-tag-badges';
-import {
   ComponentIcon,
   ImageIcon,
   LayersIcon,
@@ -15,37 +10,38 @@ import {
   TokenIcon,
   WrenchIcon,
 } from '@udir-design/icons';
+import { type TagProps } from 'src/components/tag/Tag';
 import customTheme from './docs/customTheme';
+
+const tagBadges = {
+  alpha: {
+    text: 'Alpha',
+    color: 'danger',
+  },
+  beta: {
+    text: 'Beta',
+    color: 'warning',
+  },
+} satisfies Record<string, { text: string; color: TagProps['data-color'] }>;
+
+type TagWithBadge = keyof typeof tagBadges;
+
+const isTagBadge = (tag: string): tag is TagWithBadge =>
+  tagBadges[tag as TagWithBadge] !== undefined;
+
+const getBadgeFromTags = (tags: string[]) => {
+  const typedTag = tags.find(isTagBadge);
+  if (!typedTag) {
+    return;
+  }
+  return {
+    tag: typedTag,
+    ...tagBadges[typedTag],
+  };
+};
 
 addons.setConfig({
   theme: customTheme,
-  tagBadges: [
-    {
-      tags: 'alpha',
-      badge: {
-        text: 'Alpha',
-        style: {
-          backgroundColor: 'var(--ds-color-danger-surface-tinted)',
-          borderColor: 'var(--ds-color-danger-surface-tinted)',
-          borderRadius: 'var(--ds-border-radius-sm)',
-          color: 'var(--ds-color-danger-text-default)',
-        },
-      },
-    },
-    {
-      tags: 'beta',
-      badge: {
-        text: 'Beta',
-        style: {
-          backgroundColor: 'var(--ds-color-warning-surface-tinted)',
-          borderColor: 'var(--ds-color-warning-surface-tinted)',
-          borderRadius: 'var(--ds-border-radius-sm)',
-          color: 'var(--ds-color-warning-text-default)',
-        },
-      },
-    },
-    ...defaultConfig,
-  ] satisfies TagBadgeParameters,
   sidebar: {
     renderLabel(item) {
       if (item.type === 'root') {
@@ -98,6 +94,7 @@ addons.setConfig({
           );
         }
       }
+
       if (item.type === 'docs' && item.name === 'Docs') {
         if (
           // A docs page generated for a stories file always has sibling pages
@@ -114,13 +111,30 @@ addons.setConfig({
           // in context of Storybooks mobile navigation and has no impact on the desktop view.
           item.name = item.title
             .replaceAll('/', ' › ')
-            .replace('bruksmønstre', 'Bruksmønstre')
+            .replace('patterns', 'Bruksmønstre')
             .replace('components', 'Komponenter')
             .replace('design-tokens', 'Design tokens')
             .replace('utilities', 'Hjelpeverktøy');
         }
       }
-      return renderLabel(item);
+
+      // Add Tag component to tags that need it
+      const badge = getBadgeFromTags(item.tags);
+      if (badge && item.type !== 'story') {
+        return (
+          <>
+            <span>{item.name}</span>
+            <span
+              className="ds-tag storybook-tag-badge"
+              data-size="custom"
+              data-variant="outline"
+              data-color={badge.color}
+            >
+              {badge.text}
+            </span>
+          </>
+        );
+      }
     },
   },
 });

@@ -1,4 +1,3 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import {
@@ -13,13 +12,14 @@ import {
   MenuElipsisVerticalIcon,
   TrashFillIcon,
 } from '@udir-design/icons';
+import preview from '.storybook/preview';
 import { Avatar } from '../avatar/Avatar';
 import { Badge } from '../badge/Badge';
 import { Button } from '../button/Button';
 import { Divider } from '../divider/Divider';
 import { Dropdown } from './Dropdown';
 
-const meta: Meta<typeof Dropdown> = {
+const meta = preview.meta({
   component: Dropdown,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -41,12 +41,9 @@ const meta: Meta<typeof Dropdown> = {
     const popover = ctx.canvasElement.querySelector('[popover]');
     await expect(popover).toBeVisible();
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Dropdown>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     placement: 'bottom-end',
   },
@@ -93,9 +90,9 @@ export const Preview: Story = {
 
     await userEvent.click(button);
   },
-};
+});
 
-export const Icons: Story = {
+export const Icons = meta.story({
   render: (args) => {
     return (
       <Dropdown.TriggerContext>
@@ -127,9 +124,9 @@ export const Icons: Story = {
       </Dropdown.TriggerContext>
     );
   },
-};
+});
 
-export const Avatars: Story = {
+export const Avatars = meta.story({
   render: (args) => {
     const [open, setOpen] = useState(false);
 
@@ -174,9 +171,9 @@ export const Avatars: Story = {
       </Dropdown.TriggerContext>
     );
   },
-};
+});
 
-export const Controlled: Story = {
+export const Controlled = meta.story({
   render: function Render(args) {
     const [open, setOpen] = useState(false);
 
@@ -225,9 +222,9 @@ export const Controlled: Story = {
       </Dropdown.TriggerContext>
     );
   },
-};
+});
 
-export const WithoutTrigger: Story = {
+export const WithoutTrigger = meta.story({
   render: () => {
     return (
       <>
@@ -267,4 +264,4 @@ export const WithoutTrigger: Story = {
     await expect(dropdown).not.toBeVisible();
     await userEvent.click(button);
   },
-};
+});

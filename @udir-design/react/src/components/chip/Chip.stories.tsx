@@ -1,15 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { expect, waitFor, within } from 'storybook/test';
+import preview from '.storybook/preview';
 import { Search } from '../search/Search';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Chip } from './Chip';
 
-const meta: Meta<typeof Chip.Radio> = {
+const meta = preview.meta({
   component: Chip.Radio,
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {
+      name: 'Chip',
       originator: 'digdir',
     },
     customStyles: {
@@ -19,12 +20,9 @@ const meta: Meta<typeof Chip.Radio> = {
       alignItems: 'center',
     },
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Chip.Radio>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   render: (args) => (
     <>
       <Chip.Button
@@ -74,9 +72,9 @@ export const Preview: Story = {
       expect(inputRadio).not.toBeChecked();
     });
   },
-};
+});
 
-export const Checkbox: StoryObj<typeof Chip.Checkbox> = {
+export const Checkbox = meta.story({
   render: () => {
     const options = ['2020', '2021', '2022', '2023', '2024', '2025'];
 
@@ -114,9 +112,9 @@ export const Checkbox: StoryObj<typeof Chip.Checkbox> = {
       expect(inputs[0]).not.toBeChecked();
     });
   },
-};
+});
 
-export const Radio: StoryObj<typeof Chip.Checkbox> = {
+export const Radio = meta.story({
   render: () => {
     const options = ['Barnehage', 'Grunnskole', 'Videregående'];
 
@@ -139,9 +137,9 @@ export const Radio: StoryObj<typeof Chip.Checkbox> = {
       </div>
     );
   },
-};
+});
 
-export const Removable: StoryObj<typeof Chip.Removable> = {
+export const Removable = meta.story({
   render: () => {
     const schoolOptions = ['Barnehage', 'Grunnskole', 'Videregående'];
     const [filter, setFilter] = useState(schoolOptions);
@@ -182,9 +180,9 @@ export const Removable: StoryObj<typeof Chip.Removable> = {
       });
     });
   },
-};
+});
 
-export const Button: StoryObj<typeof Chip.Button> = {
+export const Button = meta.story({
   render: () => {
     const [inputValue, setInputValue] = useState('');
 
@@ -240,4 +238,4 @@ export const Button: StoryObj<typeof Chip.Button> = {
       });
     });
   },
-};
+});

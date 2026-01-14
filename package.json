@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "build": "pnpm nx format:check && pnpm nx affected -t typecheck lint test build build:storybook"
+    "build": "pnpm nx format:check && pnpm nx affected -t typecheck lint test build build:docs"
   },
   "private": true,
-  "packageManager": "pnpm@10.22.0+sha512.bf049efe995b28f527fd2b41ae0474ce29186f7edcb3bf545087bd61fbbebb2bf75362d1307fda09c2d288e1e499787ac12d4fcb617a974718a6051f2eee741c",
+  "packageManager": "pnpm@10.27.0+sha512.72d699da16b1179c14ba9e64dc71c9a40988cbdc65c264cb0e489db7de917f20dcf4d64d8723625f2969ba52d4b7e2a1170682d9ac2a5dcaeaab732b7e16f04a",
   "engines": {
     "node": ">= 24.6.0 < 25"
   },
@@ -29,6 +29,7 @@
     "@types/node": "catalog:",
     "@typescript-eslint/eslint-plugin": "catalog:",
     "@typescript-eslint/parser": "catalog:",
+    "@typescript/native-preview": "catalog:",
     "eslint": "catalog:",
     "eslint-config-prettier": "catalog:",
     "eslint-plugin-import": "catalog:",
@@ -65,7 +66,20 @@
     "overrides": {
       "@eslint/plugin-kit@<0.3.4": ">=0.3.4",
       "tmp@<=0.2.3": ">=0.2.4",
-      "glob@>=10.2.0 <10.5.0": "^10.5.0"
+      "glob@>=10.2.0 <10.5.0": "^10.5.0",
+      "semver@<7": "^6.3.1",
+      "chokidar@>=4.0.0 <5": "^5.0.0",
+      "jws@=4.0.0": ">=4.0.1",
+      "jws@<3.2.3": ">=3.2.3",
+      "qs@<6.14.1": ">=6.14.1"
+    },
+    "patchedDependencies": {
+      "@parcel/reporter-dev-server@2.16.3": "patches/@parcel__reporter-dev-server@2.16.3.patch"
+    },
+    "auditConfig": {
+      "ignoreCves": [
+        "CVE-2025-56648"
+      ]
     }
   }
 }

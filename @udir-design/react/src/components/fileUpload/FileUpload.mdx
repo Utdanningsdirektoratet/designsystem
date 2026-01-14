@@ -1,0 +1,75 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import * as FileUploadStories from './FileUpload.stories';
+
+<Meta of={FileUploadStories} />
+
+# FileUpload
+
+`FileUpload` er et sett med delkomponenter som brukes når det skal lastes opp filer. Du må selv håndtere opplasting og validering av filer
+
+**Passer til å**
+
+- laste opp filer
+- gi brukeren muligheten til å vise hvilke filer som er lastet opp
+- vise eventuelle feilmeldinger
+
+## Slik bruker du FileUpload
+
+<Primary />
+<Controls />
+
+```tsx
+import { FileUpload } from '@udir-design/react';
+
+/* Egen logikk */
+
+<FileUpload.Trigger />;
+```
+
+## Eksempler
+
+Det finnes flere måter å håndtere opplasting av filer. Se eksempler på dette under.
+
+### Dra og slipp
+
+Varianten `FileUpload.Dropzone`er et stipla område med en knapp inni, ment å bruke for dra og slipp ved filopplasting. I dette eksempelet bruker vi [biblioteket `react-dropzone`](https://react-dropzone.js.org/). Komponenten er utviklet slik at den støtter dette biblioteket, men man står fritt til å velge løsningen man selv ønsker.
+
+<Canvas of={FileUploadStories.ExampleDropZone} />
+
+### Knapp
+
+Varianten `FileUpload.Trigger` er en knapp som åpner nettleserens filvelger. Du kan styre hva som skal skje når brukeren velger en fil med `onChange`.
+
+<Canvas of={FileUploadStories.ExampleTrigger} />
+
+### Vedlegg
+
+Delkomponenten `FileUpload.Item` brukes til å vise status for filer som er lastet opp. Du kan bruke `error` til å vise feilmeldinger, for eksempel dersom filformatet ikke er riktig.
+
+Filnavnet er en [`Link`](/docs/components-link--docs) med `download`-attributtet, slik at brukeren kan laste ned en kopi av filen ved å klikke på navnet.
+
+<Canvas of={FileUploadStories.ExampleItems} />
+
+### Tilstand for lasting
+
+`FileUpload.Item` har en `loading` tilstand som eksempelvis kan brukes om det tar lang tid å laste opp en fil.
+
+<Canvas of={FileUploadStories.Upload} />
+
+## Tekst i FileUpload
+
+I både `FileUpload.Dropzone` og `FileUpload.Trigger` bruker du `label` og `description` til å beskrive hva slags filer brukeren kan laste opp. Det skal som hovedregel være en `label` på `FileUpload`.
+
+- Hold label kort, unngå at den går over to linjer.
+- Start label med "Last opp".
+- Unngå å bruke kolon etter label.
+
+Beskriv hva slags filer som kan lastes opp. Skriv hver begrensning i separate setninger og bruk positiv formulering. Under følger noen eksempler.
+
+- Du kan laste opp dokumenter i PDF- eller Word-format.
+- Filer kan være opptil 10 MB.
+- Du kan legge ved opptil 5 filer.
+
+## Error Summary
+
+Ved bruk av `ErrorSummary` bør feil med flere filer oppsummeres i ett punkt, med lenke til knappen på den første filen med feil. Hvis alle feilede filer er samlet under én overskrift, kan dere eventuelt lenke til den overskriften.

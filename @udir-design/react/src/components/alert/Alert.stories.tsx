@@ -1,6 +1,6 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { expect, within } from 'storybook/test';
+import preview from '.storybook/preview';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
 import { Button } from '../button/Button';
 import { Link } from '../link/Link';
@@ -8,19 +8,15 @@ import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Alert } from './';
 
-type Story = StoryObj<typeof Alert>;
-
-const meta: Meta<typeof Alert> = {
+const meta = preview.meta({
   component: Alert,
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: { originator: 'digdir' },
   },
-};
+});
 
-export default meta;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     'data-color': 'info',
   },
@@ -45,9 +41,9 @@ export const Preview: Story = {
       );
     });
   },
-};
+});
 
-export const VariantInfo: Story = {
+export const VariantInfo = meta.story({
   args: {
     'data-color': 'info',
   },
@@ -59,9 +55,9 @@ export const VariantInfo: Story = {
       Du må melde deg på innen 1. februar for våreksamen.
     </Alert>
   ),
-};
+});
 
-export const VariantSuccess: Story = {
+export const VariantSuccess = meta.story({
   args: {
     'data-color': 'success',
   },
@@ -71,9 +67,9 @@ export const VariantSuccess: Story = {
       Vi har mottatt søknaden din, og vil behandle den i løpet av få dager.
     </Alert>
   ),
-};
+});
 
-export const VariantWarning: Story = {
+export const VariantWarning = meta.story({
   args: {
     'data-color': 'warning',
   },
@@ -84,9 +80,9 @@ export const VariantWarning: Story = {
       rette problemene.
     </Alert>
   ),
-};
+});
 
-export const VariantDanger: Story = {
+export const VariantDanger = meta.story({
   args: {
     'data-color': 'danger',
   },
@@ -98,18 +94,18 @@ export const VariantDanger: Story = {
       tar du kontakt med kundeservice på telefon 85 44 32 66.
     </Alert>
   ),
-};
+});
 
-export const NoHeading: Story = {
+export const NoHeading = meta.story({
   args: {
     'data-color': 'warning',
   },
   render: (args) => (
     <Alert {...args}>Du har 7 dager igjen på å fullføre søknaden.</Alert>
   ),
-};
+});
 
-export const WithLink: Story = {
+export const WithLink = meta.story({
   args: {
     'data-color': 'warning',
   },
@@ -120,80 +116,85 @@ export const WithLink: Story = {
       <Link href="https://udir.no/">Søk nå</Link>
     </Alert>
   ),
-};
+});
 
-export const WrongLiveRegion: StoryFn<typeof Alert> = () => {
-  const [showAlert, setShowAlert] = useState(false);
-  return (
-    <>
-      {showAlert && (
-        <Alert
-          data-color="warning"
-          // Feil bruk: role="alert" ligger på selve varselet
-          role="alert"
-        >
-          <Heading level={2}>Vi klarer ikke lagre skjemaet</Heading>
-          <Paragraph>
-            Vi har mistet forbindelsen med serveren og får ikke lagret skjemaet.
-            Vent litt og prøv en gang til.
-          </Paragraph>
-        </Alert>
-      )}
-      <Button
-        data-size="sm"
-        variant="secondary"
-        onClick={() => setShowAlert((value) => !value)}
-      >
-        {showAlert ? 'Skjul varsel' : 'Handling som fører til varsel'}
-      </Button>
-    </>
-  );
-};
-WrongLiveRegion.parameters = {
-  docs: {
-    canvas: {
-      sourceState: 'shown',
+export const WrongLiveRegion = meta.story({
+  parameters: {
+    docs: {
+      canvas: {
+        sourceState: 'shown',
+      },
+      source: {
+        // Ensure we show the actual code, and not the initially rendered output
+        type: 'code',
+        transform: formatReactSource,
+      },
     },
-    source: {
-      // Ensure we show the actual code, and not the initially rendered output
-      type: 'code',
-      transform: formatReactSource,
+    customStyles: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 'var(--ds-size-2)',
+      alignItems: 'start',
     },
   },
-  customStyles: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 'var(--ds-size-2)',
-    alignItems: 'start',
-  },
-};
-
-export const CorrectLiveRegion: StoryFn<typeof Alert> = () => {
-  const [showAlert, setShowAlert] = useState(false);
-  return (
-    <>
-      {/* Korrekt bruk: role="alert" ligger på elementet der varselet dukker opp */}
-      <div role="alert">
+  render: () => {
+    const [showAlert, setShowAlert] = useState(false);
+    return (
+      <>
         {showAlert && (
-          <Alert data-color="warning">
-            <Alert.Heading level={2}>
-              Vi klarer ikke lagre skjemaet
-            </Alert.Heading>
+          <Alert
+            data-color="warning"
+            // Feil bruk: role="alert" ligger på selve varselet
+            role="alert"
+          >
+            <Heading level={2}>Vi klarer ikke lagre skjemaet</Heading>
             <Paragraph>
               Vi har mistet forbindelsen med serveren og får ikke lagret
               skjemaet. Vent litt og prøv en gang til.
             </Paragraph>
           </Alert>
         )}
-      </div>
-      <Button
-        data-size="sm"
-        variant="secondary"
-        onClick={() => setShowAlert((value) => !value)}
-      >
-        {showAlert ? 'Skjul varsel' : 'Handling som fører til varsel'}
-      </Button>
-    </>
-  );
-};
-CorrectLiveRegion.parameters = WrongLiveRegion.parameters;
+        <Button
+          data-size="sm"
+          variant="secondary"
+          onClick={() => setShowAlert((value) => !value)}
+        >
+          {showAlert ? 'Skjul varsel' : 'Handling som fører til varsel'}
+        </Button>
+      </>
+    );
+  },
+});
+
+// Can't use WrongLiveRegion.extend because then the code example doesn't show up
+export const CorrectLiveRegion = meta.story({
+  ...WrongLiveRegion.input,
+  render: () => {
+    const [showAlert, setShowAlert] = useState(false);
+    return (
+      <>
+        {/* Korrekt bruk: role="alert" ligger på elementet der varselet dukker opp */}
+        <div role="alert">
+          {showAlert && (
+            <Alert data-color="warning">
+              <Alert.Heading level={2}>
+                Vi klarer ikke lagre skjemaet
+              </Alert.Heading>
+              <Paragraph>
+                Vi har mistet forbindelsen med serveren og får ikke lagret
+                skjemaet. Vent litt og prøv en gang til.
+              </Paragraph>
+            </Alert>
+          )}
+        </div>
+        <Button
+          data-size="sm"
+          variant="secondary"
+          onClick={() => setShowAlert((value) => !value)}
+        >
+          {showAlert ? 'Skjul varsel' : 'Handling som fører til varsel'}
+        </Button>
+      </>
+    );
+  },
+});

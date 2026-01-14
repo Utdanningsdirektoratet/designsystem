@@ -1,25 +1,8 @@
+import { counties } from '.storybook/data';
 import { Dont, Stack } from '.storybook/docs/components';
 import { Field } from 'src/components/field/Field';
 import { Label } from 'src/components/typography/label/Label';
 import { Select } from '../Select';
-
-type County =
-  | 'Akershus'
-  | 'Agder'
-  | 'Buskerud'
-  | 'Finnmark'
-  | 'Innlandet'
-  | 'Nordland'
-  | 'Rogaland';
-const counties: County[] = [
-  'Akershus',
-  'Agder',
-  'Buskerud',
-  'Finnmark',
-  'Innlandet',
-  'Nordland',
-  'Rogaland',
-];
 
 export const DisabledEx = () => {
   return (

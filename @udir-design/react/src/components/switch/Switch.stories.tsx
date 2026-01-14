@@ -1,15 +1,14 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
+import preview from '.storybook/preview';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
 import { Card } from '../card/Card';
 import { Checkbox } from '../checkbox/Checkbox';
 import { Fieldset } from '../fieldset/Fieldset';
 import { Heading } from '../typography/heading/Heading';
-import type { SwitchProps } from './Switch';
 import { Switch } from './Switch';
 
-const meta: Meta<typeof Switch> = {
+const meta = preview.meta({
   component: Switch,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -28,12 +27,9 @@ const meta: Meta<typeof Switch> = {
       control: 'text',
     },
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Switch>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     label: 'En bryter',
     onChange: fn(),
@@ -71,17 +67,17 @@ export const Preview: Story = {
       },
     );
   },
-};
+});
 
-export const Checked: Story = {
-  ...Preview,
-  args: { ...Preview.args, defaultChecked: true },
+export const Checked = meta.story({
+  ...Preview.input,
+  args: { ...Preview.input.args, defaultChecked: true },
   play: () => {
     // Do nothing
   },
-};
+});
 
-export const Description: Story = {
+export const Description = meta.story({
   args: {
     label: 'Åpen prøve',
     description: 'Prøven er åpen for alle som ønsker å delta.',
@@ -89,9 +85,9 @@ export const Description: Story = {
     id: 'switch-with-description',
   },
   render: (args, context) => <Switch {...args} id={context.id} />,
-};
+});
 
-export const Group: Story = {
+export const Group = meta.story({
   render: ({ ...args }, context) => (
     <Fieldset>
       <Fieldset.Legend>Varsler</Fieldset.Legend>
@@ -119,9 +115,9 @@ export const Group: Story = {
       />
     </Fieldset>
   ),
-};
+});
 
-export const GroupEnd: Story = {
+export const GroupEnd = meta.story({
   args: {
     position: 'end',
   },
@@ -148,82 +144,83 @@ export const GroupEnd: Story = {
       />
     </Fieldset>
   ),
-};
+});
 
-export const Controlled: StoryFn<SwitchProps> = (args, context) => {
-  const [lydvarsler, setLydvarsler] = useState(false);
-  const [epostvarsler, setEpostvarsler] = useState(true);
-  const [popupvarsler, setPopupvarsler] = useState(false);
-  const anyChecked = lydvarsler || epostvarsler || popupvarsler;
-  const handleSwitchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const checked = e.target.checked;
-    setLydvarsler(checked);
-    setEpostvarsler(checked);
-    setPopupvarsler(checked);
-  };
-  return (
-    <Fieldset>
-      <Fieldset.Legend>
-        <Heading level={2}>Innstillinger</Heading>
-      </Fieldset.Legend>
-      <Switch
-        {...args}
-        id={context.id}
-        checked={anyChecked}
-        onChange={handleSwitchChange}
-      />
-      <Fieldset.Description>
-        Velg hvilke typer varsler du ønsker å motta.
-      </Fieldset.Description>
-      <Checkbox
-        id={context.id + 'lydvarsler'}
-        label="Lydvarsler"
-        checked={lydvarsler}
-        onChange={(e) => setLydvarsler(e.target.checked)}
-      />
-      <Checkbox
-        id={context.id + 'epostvarsler'}
-        label="Epostvarsler"
-        checked={epostvarsler}
-        onChange={(e) => setEpostvarsler(e.target.checked)}
-      />
-      <Checkbox
-        id={context.id + 'popupvarsler'}
-        label="Popup-varsler"
-        checked={popupvarsler}
-        onChange={(e) => setPopupvarsler(e.target.checked)}
-      />
-    </Fieldset>
-  );
-};
+export const Controlled = meta.story({
+  render: (args, context) => {
+    const [lydvarsler, setLydvarsler] = useState(false);
+    const [epostvarsler, setEpostvarsler] = useState(true);
+    const [popupvarsler, setPopupvarsler] = useState(false);
+    const anyChecked = lydvarsler || epostvarsler || popupvarsler;
+    const handleSwitchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const checked = e.target.checked;
+      setLydvarsler(checked);
+      setEpostvarsler(checked);
+      setPopupvarsler(checked);
+    };
+    return (
+      <Fieldset>
+        <Fieldset.Legend>
+          <Heading level={2}>Innstillinger</Heading>
+        </Fieldset.Legend>
+        <Switch
+          {...args}
+          id={context.id}
+          checked={anyChecked}
+          onChange={handleSwitchChange}
+        />
+        <Fieldset.Description>
+          Velg hvilke typer varsler du ønsker å motta.
+        </Fieldset.Description>
+        <Checkbox
+          id={context.id + 'lydvarsler'}
+          label="Lydvarsler"
+          checked={lydvarsler}
+          onChange={(e) => setLydvarsler(e.target.checked)}
+        />
+        <Checkbox
+          id={context.id + 'epostvarsler'}
+          label="Epostvarsler"
+          checked={epostvarsler}
+          onChange={(e) => setEpostvarsler(e.target.checked)}
+        />
+        <Checkbox
+          id={context.id + 'popupvarsler'}
+          label="Popup-varsler"
+          checked={popupvarsler}
+          onChange={(e) => setPopupvarsler(e.target.checked)}
+        />
+      </Fieldset>
+    );
+  },
+  args: {
+    label: 'Varsler',
+    id: 'controlled-switch',
+  },
+  parameters: {
+    docs: { source: { type: 'code', transform: formatReactSource } },
+  },
+});
 
-Controlled.args = {
-  label: 'Varsler',
-  id: 'controlled-switch',
-};
-
-Controlled.parameters = {
-  docs: { source: { type: 'code', transform: formatReactSource } },
-};
-
-export const Disabled: Story = {
+export const Disabled = meta.story({
   args: { label: 'Disabled switch', disabled: true, id: 'disabled-switch' },
-};
+});
 
-export const ReadOnly: Story = {
+export const ReadOnly = meta.story({
   args: { label: 'Read-only switch', readOnly: true, id: 'readonly-switch' },
-};
+});
 
-export const Focused: Story = {
-  args: { ...Preview.args, id: 'focused-switch' },
+export const Focused = Preview.extend({
+  args: { id: 'focused-switch' },
   parameters: {
     pseudo: {
       focusVisible: true,
     },
   },
-};
+  play: undefined,
+});
 
-export const SwitchInColorContext: Story = {
+export const SwitchInColorContext = meta.story({
   args: {
     label: 'Radio',
     description: 'Description',
@@ -247,4 +244,4 @@ export const SwitchInColorContext: Story = {
       },
     );
   },
-};
+});

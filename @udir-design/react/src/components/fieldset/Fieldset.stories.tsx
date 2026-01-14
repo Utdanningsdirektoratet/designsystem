@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import preview from '.storybook/preview';
 import { Checkbox } from '../checkbox/Checkbox';
 import { Radio } from '../radio/Radio';
 import { Textfield } from '../textfield/Textfield';
 import { Heading } from '../typography/heading/Heading';
 import { Fieldset } from './Fieldset';
 
-const meta: Meta<typeof Fieldset> = {
+const meta = preview.meta({
   component: Fieldset,
-  tags: ['beta', 'didir'],
+  tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
@@ -15,12 +15,9 @@ const meta: Meta<typeof Fieldset> = {
     },
     layout: 'centered',
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Fieldset>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   render: (args, context) => (
     <Fieldset {...args}>
       <Fieldset.Legend>Hvilken fjordarm bor du ved?</Fieldset.Legend>
@@ -47,18 +44,18 @@ export const Preview: Story = {
       />
     </Fieldset>
   ),
-};
+});
 
-export const WithCheckbox: Story = {
+export const WithCheckbox = meta.story({
   render: (args, context) => (
     <Fieldset {...args}>
       <Fieldset.Legend>Godtar du vilkårene?</Fieldset.Legend>
       <Checkbox id={`${context.id}-checkbox`} label="Ja, jeg godtar" />
     </Fieldset>
   ),
-};
+});
 
-export const WithTextfield: Story = {
+export const WithTextfield = meta.story({
   render: (args, context) => (
     <Fieldset {...args}>
       <Fieldset.Legend>
@@ -90,9 +87,9 @@ export const WithTextfield: Story = {
       />
     </Fieldset>
   ),
-};
+});
 
-export const LegendAsHeading: Story = {
+export const LegendAsHeading = meta.story({
   render: (args, context) => (
     <Fieldset {...args}>
       <Fieldset.Legend>
@@ -121,4 +118,4 @@ export const LegendAsHeading: Story = {
       />
     </Fieldset>
   ),
-};
+});

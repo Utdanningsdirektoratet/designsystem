@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import preview from '.storybook/preview';
 import { demoParameters } from '../demoParameters';
 import { TableDemo } from './TableDemo';
 
-const meta: Meta<typeof TableDemo> = {
+const meta = preview.meta({
   title: 'demo/Table Demo',
   component: TableDemo,
   parameters: {
@@ -11,16 +11,13 @@ const meta: Meta<typeof TableDemo> = {
       originator: 'self',
     },
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof TableDemo>;
-
-export const TableStory: Story = {
+export const TableStory = meta.story({
   args: {
     'data-color-scheme': 'light',
   },
   render(args) {
     return <TableDemo {...args} />;
   },
-};
+});

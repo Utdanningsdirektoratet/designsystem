@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Dark Mode 1`] = `
+<div data-color-scheme="dark">
+  <div>
+    <img
+      alt="Utdanningsdirektoratet"
+      src="/assets/img/udir-main-logo.svg"
+    >
+    <img
+      alt="Utdanningsdirektoratet"
+      src="/assets/img/udir-main-logo-dark-mode.svg"
+    >
+  </div>
+</div>
+`;
+
+exports[`Preview 1`] = `
+<div>
+  <img
+    alt="Utdanningsdirektoratet"
+    src="/assets/img/udir-main-logo.svg"
+  >
+  <img
+    alt="Utdanningsdirektoratet"
+    src="/assets/img/udir-main-logo-dark-mode.svg"
+  >
+</div>
+`;

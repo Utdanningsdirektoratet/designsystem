@@ -56,7 +56,7 @@ Hvis brukeren skal bekrefte noe, men ikke velge noe, kan en `Checkbox` stå alen
 
 Bruk `Fieldset` og `useCheckboxGroup` for gruppering av flere valg.
 
-<Canvas of={CheckboxStories.Group} />
+<Canvas of={useCheckboxGroupStories.Group} />
 
 [Les mer om `useCheckboxGroup`](/docs/utilities-usecheckboxgroup--docs)
 
@@ -65,7 +65,7 @@ Bruk `Fieldset` og `useCheckboxGroup` for gruppering av flere valg.
 Legg inn `allowIndeterminate: true` i `getCheckboxProps` for å opprette en overordnet avmerkingsboks som både kan velge og fjerne alle alternativer.
 Dette aktiverer en ekstra tilstand, `indeterminate`, ved siden av `checked` og `unchecked`. Den vises med en horisontal strek og signaliserer at én eller flere avmerkingsbokser er markert i gruppen.
 
-<Canvas of={CheckboxStories.IndeterminateInTable} />
+<Canvas of={useCheckboxGroupStories.IndeterminateInTable} />
 
 ### Vise feilmelding
 
@@ -73,14 +73,14 @@ Bruk `error` på `Fieldset` for å vise feilmelding.
 
 Her må du bruke `Fieldset` for å gjøre innholdet tilgjengelig og aktivere riktig stil.
 
-<Canvas of={CheckboxStories.WithError} />
+<Canvas of={useCheckboxGroupStories.WithError} />
 
 ### Kontrollert tilstand
 
 Bruk `useCheckboxGroup` og `setValue` for å kontrollere hvilke alternativer som er valgt.
 I eksempelet under kontrollerer vi hvilke `Checkbox` som er valgt med både [`Button`](/docs/components-button--docs) og [`Chip`](/docs/components-chip--docs).
 
-<Canvas of={CheckboxStories.Controlled} />
+<Canvas of={useCheckboxGroupStories.Controlled} />
 
 ## Retningslinjer
 

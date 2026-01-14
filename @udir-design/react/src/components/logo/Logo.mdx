@@ -1,0 +1,55 @@
+import {
+  Meta,
+  Canvas,
+  Controls,
+  Primary,
+  ArgTypes,
+} from '@storybook/addon-docs/blocks';
+import * as LogoStories from './Logo.stories';
+import * as LogoSymbolStories from './LogoSymbol.stories';
+
+# Logo
+
+De fleste systemer trenger ikke logo fordi [`Header`](/docs/components-header--docs) og [`Footer`](/docs/components-footer--docs) tydeliggjør Udir som avsender. Hvis du alikevel skulle ha behov for å bruke logo, skal `Logo` eller `LogoSymbol` brukes i henhold til retningslinjene under.
+
+## Slik bruker du Logo
+
+<Canvas of={LogoStories.Preview} />
+<Controls of={LogoStories.Preview} />
+
+```tsx
+import { Logo } from '@udir-design/react';
+
+<Logo />;
+```
+
+## Slik bruker du LogoSymbol
+
+<Canvas of={LogoSymbolStories.Preview} />
+<Controls of={LogoSymbolStories.Preview} />
+
+```tsx
+import { LogoSymbol } from '@udir-design/react';
+
+<LogoSymbol />;
+```
+
+## Eksempler
+
+### Mørk modus
+
+Både `Logo` og `LogoSymbol` har innebygd støtte for fargemodus `light`, `dark` og `auto`. Dette kan overstyres ved å sette `data-color-scheme` for komponenten eller en foreldre-komponent.
+
+<Canvas of={LogoStories.DarkMode} />
+
+### Størrelse
+
+Du kan endre størrelse for logo med parameteret `size`, som endrer høyeden på logoen. Bredden skalerer automatisk.
+
+### Favikon
+
+Det er logosymbolet som skal brukes som favikon i nettlesere. Bruk varianten med grønn sirkel. Den fungerer best på de fleste bakgrunner. Man kan finne [nedlastbare filer til favikon på Udir.no](https://www.udir.no/om-udir/designprofil/logo/).
+
+## Retningslinjer for bruk
+
+Les om [retningslinjer for bruk av logo](https://www.udir.no/om-udir/designprofil/logo/) på Udir.no.

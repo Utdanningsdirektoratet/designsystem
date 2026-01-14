@@ -1,8 +1,10 @@
-import type { Decorator, Meta, StoryObj } from '@storybook/react-vite';
+import type { Decorator } from '@storybook/react-vite';
 import { createElement, useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import { ChevronDownUpIcon, ChevronUpDownIcon } from '@udir-design/icons';
 import { Stack } from '.storybook/docs/components';
+import preview from '.storybook/preview';
+import { makeStoryTransformer } from '.storybook/utils/makeStoryTransformer';
 import { Button } from '../button/Button';
 import type { CardProps } from '../card/Card';
 import { Card } from '../card/Card';
@@ -13,7 +15,7 @@ import { ToggleGroup } from '../toggleGroup/ToggleGroup';
 import { Label } from '../typography/label/Label';
 import { Details } from './Details';
 
-export default {
+const meta = preview.meta({
   component: Details,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -21,15 +23,13 @@ export default {
       originator: 'digdir',
     },
   },
-} as Meta<typeof Details>;
-
-type Story = StoryObj<typeof Details>;
+});
 
 const previewSummary = 'Kva er nasjonale prøver?';
 const previewContent =
   'Føremålet med nasjonale prøver er å gi skolane kunnskap om elevane sine grunnleggjande ferdigheiter i lesing, rekning og engelsk. Informasjonen frå prøvene skal danne grunnlag for undervegsvurdering og kvalitetsutvikling på alle nivå i skolesystemet.';
 
-export const Preview: Story = {
+export const Preview = meta.story({
   render: (args) => {
     return (
       <Details {...args}>
@@ -82,9 +82,9 @@ export const Preview: Story = {
     });
     await userEvent.keyboard('{Tab}');
   },
-};
+});
 
-export const InCard: Story = {
+export const InCard = meta.story({
   render: (args) => {
     return (
       <Card data-color="neutral">
@@ -116,7 +116,7 @@ export const InCard: Story = {
       </Card>
     );
   },
-};
+});
 
 const detailsColorDecorator: Decorator = (Story) => {
   const [card, setCard] = useState<Required<CardProps>['variant'] | 'none'>(
@@ -182,7 +182,7 @@ const detailsColorDecorator: Decorator = (Story) => {
   );
 };
 
-export const InCardWithColor: Story = {
+export const InCardWithColor = meta.story({
   decorators: [detailsColorDecorator],
   render: (args) => {
     return (
@@ -215,9 +215,9 @@ export const InCardWithColor: Story = {
       </>
     );
   },
-};
+});
 
-export const Controlled: Story = {
+export const Controlled = meta.story({
   render() {
     const [open1, setOpen1] = useState(false);
     const [open2, setOpen2] = useState(false);
@@ -307,13 +307,12 @@ export const Controlled: Story = {
       </>
     );
   },
-};
+});
 
-export const PseudoStates: Story = makePseudoStatesStory(Preview);
-
-function makePseudoStatesStory(originalStory: Story): Story {
-  return {
-    render: (args, ctx) => (
+const makePseudoStatesStory = makeStoryTransformer((originalStory) => ({
+  render: (args, ctx) => {
+    const argsObj = args as object;
+    return (
       <div
         style={{
           display: 'flex',
@@ -322,20 +321,26 @@ function makePseudoStatesStory(originalStory: Story): Story {
         }}
       >
         <Label data-size="sm">Default</Label>
-        {originalStory.render?.(args, ctx)}
+        {originalStory.input.render?.(args, ctx)}
         <Label data-size="sm">Hover</Label>
-        {originalStory.render?.({ ...args, className: 'hover' }, ctx)}
+        {originalStory.input.render?.({ ...argsObj, className: 'hover' }, ctx)}
         <Label data-size="sm">Focused</Label>
-        {originalStory.render?.({ ...args, className: 'focusVisible' }, ctx)}
+        {originalStory.input.render?.(
+          { ...argsObj, className: 'focusVisible' },
+          ctx,
+        )}
       </div>
-    ),
-    args: originalStory.args,
-    parameters: {
-      ...originalStory.parameters,
-      pseudo: {
-        hover: ['.hover > u-summary'],
-        focusVisible: ['.focusVisible > u-summary'],
-      },
+    );
+  },
+  args: originalStory.composed.args,
+  parameters: {
+    ...originalStory.composed.parameters,
+    pseudo: {
+      hover: ['.hover > u-summary'],
+      focusVisible: ['.focusVisible > u-summary'],
     },
-  };
-}
+  },
+}));
+
+/* @ts-expect-error render method inconsistency */
+export const PseudoStates = meta.story(makePseudoStatesStory(Preview));

@@ -1,18 +1,37 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { ChangeEvent } from 'react';
 import { useRef, useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
+import preview from '.storybook/preview';
 import { Button } from '../button/Button';
+import { Checkbox } from '../checkbox/Checkbox';
 import { Field } from '../field/Field';
+import { Fieldset } from '../fieldset/Fieldset';
 import { List } from '../list/List';
+import { Radio } from '../radio/Radio';
 import { Suggestion } from '../suggestion/Suggestion';
 import { Textarea } from '../textarea/Textarea';
 import { Textfield } from '../textfield/Textfield';
 import { Heading } from '../typography/heading/Heading';
 import { Label } from '../typography/label/Label';
 import { Paragraph } from '../typography/paragraph/Paragraph';
+import type { DialogProps } from './Dialog';
 import { Dialog } from './Dialog';
 
-const meta: Meta<typeof Dialog> = {
+async function defaultPlay(canvasElement: HTMLElement) {
+  // When not in Docs mode, automatically open the dialog
+  const canvas = within(canvasElement);
+  const button = canvas.getByRole('button');
+  await userEvent.click(button);
+  // Wait for dialog to fade in before running tests
+  const dialog = canvas.getByRole('dialog');
+  await new Promise<void>((resolve) => {
+    dialog.addEventListener('animationend', () => {
+      resolve();
+    });
+  });
+}
+
+const meta = preview.meta({
   component: Dialog,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -38,25 +57,10 @@ const meta: Meta<typeof Dialog> = {
       },
     },
   },
-  play: async (ctx) => {
-    // When not in Docs mode, automatically open the dialog
-    const canvas = within(ctx.canvasElement);
-    const button = canvas.getByRole('button');
-    await userEvent.click(button);
-    // Wait for dialog to fade in before running tests
-    const dialog = canvas.getByRole('dialog');
-    await new Promise<void>((resolve) => {
-      dialog.addEventListener('animationend', () => {
-        resolve();
-      });
-    });
-  },
-};
+  play: async (ctx) => defaultPlay(ctx.canvasElement),
+});
 
-export default meta;
-type Story = StoryObj<typeof Dialog>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: { closedby: 'any' },
   render: (args) => (
     <Dialog.TriggerContext>
@@ -74,7 +78,7 @@ export const Preview: Story = {
     </Dialog.TriggerContext>
   ),
   play: async (ctx) => {
-    await meta.play?.(ctx);
+    await defaultPlay(ctx.canvasElement);
     const canvas = within(ctx.canvasElement);
     const dialog = canvas.getByRole('dialog');
     const button = canvas.getByRole('button', {
@@ -114,9 +118,9 @@ export const Preview: Story = {
     });
     await userEvent.click(button);
   },
-};
+});
 
-export const WithoutDialogTriggerContext: Story = {
+export const WithoutDialogTriggerContext = meta.story({
   render(args) {
     const dialogRef = useRef<HTMLDialogElement>(null);
     return (
@@ -141,9 +145,9 @@ export const WithoutDialogTriggerContext: Story = {
       </>
     );
   },
-};
+});
 
-export const DialogWithOpenProp: Story = {
+export const DialogWithOpenProp = meta.story({
   render(args) {
     const [open, setOpen] = useState(false);
 
@@ -166,9 +170,9 @@ export const DialogWithOpenProp: Story = {
       </>
     );
   },
-};
+});
 
-export const BackdropClosedbyAny: Story = {
+export const BackdropClosedbyAny = meta.story({
   render() {
     const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -188,9 +192,9 @@ export const BackdropClosedbyAny: Story = {
       </Dialog.TriggerContext>
     );
   },
-};
+});
 
-export const WithHeaderAndFooter: Story = {
+export const WithHeaderAndFooter = meta.story({
   render: () => (
     <Dialog.TriggerContext>
       <Dialog.Trigger>Gå til neste</Dialog.Trigger>
@@ -228,9 +232,9 @@ export const WithHeaderAndFooter: Story = {
       </Dialog>
     </Dialog.TriggerContext>
   ),
-};
+});
 
-export const DialogWithForm: Story = {
+export const DialogWithForm = meta.story({
   render(args, context) {
     const dialogRef = useRef<HTMLDialogElement>(null);
     const [input, setInput] = useState('');
@@ -278,9 +282,9 @@ export const DialogWithForm: Story = {
       </Dialog.TriggerContext>
     );
   },
-};
+});
 
-export const DialogWithMaxWidth: Story = {
+export const DialogWithMaxWidth = meta.story({
   render: () => (
     <Dialog.TriggerContext>
       <Dialog.Trigger variant="secondary">Åpne Dialog</Dialog.Trigger>
@@ -295,7 +299,7 @@ export const DialogWithMaxWidth: Story = {
       </Dialog>
     </Dialog.TriggerContext>
   ),
-};
+});
 
 const DATA_PLACES = [
   'Sogndal',
@@ -307,7 +311,7 @@ const DATA_PLACES = [
   'Lillestrøm',
 ];
 
-export const DialogWithSuggestion: Story = {
+export const DialogWithSuggestion = meta.story({
   render(ctx) {
     const dialogRef = useRef<HTMLDialogElement>(null);
     return (
@@ -376,9 +380,9 @@ export const DialogWithSuggestion: Story = {
       },
     },
   },
-};
+});
 
-export const DialogNonModal: Story = {
+export const DialogNonModal = meta.story({
   parameters: {
     customStyles: {
       display: 'flex',
@@ -421,7 +425,7 @@ export const DialogNonModal: Story = {
     );
   },
   play: async (ctx) => {
-    await meta.play?.(ctx);
+    await defaultPlay(ctx.canvasElement);
     const canvas = within(ctx.canvasElement);
     const dialog = canvas.getByRole('dialog');
 
@@ -438,4 +442,70 @@ export const DialogNonModal: Story = {
       },
     );
   },
-};
+});
+
+export const Drawer = meta.story({
+  render() {
+    const [placement, setPlacement] =
+      useState<DialogProps['placement']>('bottom');
+    const [modal, setModal] = useState(true);
+    return (
+      <>
+        <Checkbox
+          label="Modal"
+          checked={modal}
+          id="modal-checkbox"
+          style={{ marginBottom: 'var(--ds-size-4)' }}
+          onChange={(e) => setModal(e.target.checked)}
+        />
+        <Fieldset
+          onChange={(e: ChangeEvent<HTMLFieldSetElement>) => {
+            const target = e.target as unknown as HTMLInputElement;
+            setPlacement(target.value as DialogProps['placement']);
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: 'var(--ds-size-5)',
+              marginBottom: 'var(--ds-size-8)',
+            }}
+          >
+            <Radio
+              name="drawer"
+              label="Midten"
+              value="center"
+              id="center-radio"
+            />
+            <Radio name="drawer" label="Topp" value="top" id="top-radio" />
+            <Radio
+              name="drawer"
+              label="Bunn"
+              value="bottom"
+              id="bottom-radio"
+            />
+            <Radio name="drawer" label="Venstre" value="left" id="left-radio" />
+            <Radio name="drawer" label="Høyre" value="right" id="right-radio" />
+          </div>
+        </Fieldset>
+        <Dialog.TriggerContext>
+          <Dialog.Trigger>Open Dialog</Dialog.Trigger>
+          <Dialog
+            modal={modal}
+            closedby="any"
+            placement={placement}
+            style={{ zIndex: '10' }}
+          >
+            <Dialog.Block>
+              <Paragraph>
+                This is a {modal ? 'modal' : 'non-modal'} Dialog with{' '}
+                <code>placement="{placement}"</code>
+              </Paragraph>
+            </Dialog.Block>
+          </Dialog>
+        </Dialog.TriggerContext>
+      </>
+    );
+  },
+});

@@ -1,7 +1,7 @@
-import type { Color } from '@digdir/designsystemet-types';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Color } from '@digdir/designsystemet-react/colors';
 import { Fragment } from 'react/jsx-runtime';
 import { PlusIcon, TrashFillIcon } from '@udir-design/icons';
+import preview from '.storybook/preview';
 import { Button } from '../button/Button';
 import { Field } from '../field/Field';
 import { Select } from '../select/Select';
@@ -17,7 +17,7 @@ const studentsImg =
 const schoolSuppliesImg =
   'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1644&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
-const meta: Meta<typeof Card> = {
+const meta = preview.meta({
   component: Card,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -33,12 +33,13 @@ const meta: Meta<typeof Card> = {
       gridTemplateColumns: 'repeat(auto-fit, minmax(280px , 320px))',
     },
   },
-};
+  args: {
+    // Children is required in Card props, so we must set something
+    children: undefined,
+  },
+});
 
-export default meta;
-type Story = StoryObj<typeof Card>;
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     'data-color': 'neutral',
     children: [
@@ -47,7 +48,7 @@ export const Preview: Story = {
       <Paragraph data-size="sm">Fotnote</Paragraph>,
     ],
   },
-};
+});
 
 const VariantsMap: Record<
   string,
@@ -87,7 +88,7 @@ const VariantsMap: Record<
   },
 };
 
-export const Variants: Story = {
+export const Variants = meta.story({
   render: (args) => (
     <>
       {Object.entries(VariantsMap).map(([key, value]) => (
@@ -106,9 +107,9 @@ export const Variants: Story = {
       ))}
     </>
   ),
-};
+});
 
-export const Media: Story = {
+export const Media = meta.story({
   render: (args) => (
     <>
       <Card {...args}>
@@ -145,9 +146,9 @@ export const Media: Story = {
       </Card>
     </>
   ),
-};
+});
 
-export const Video: Story = {
+export const Video = meta.story({
   args: {
     'data-color': 'neutral',
     children: [
@@ -177,7 +178,7 @@ export const Video: Story = {
       </Card.Block>,
     ],
   },
-};
+});
 
 const options = [
   { value: 'lærer', label: 'Lærer' },
@@ -185,7 +186,7 @@ const options = [
   { value: 'forelder', label: 'Forelder' },
 ];
 
-export const Composed: Story = {
+export const Composed = meta.story({
   render: (args, context) => (
     <Card {...args}>
       <Card.Block>
@@ -228,9 +229,9 @@ export const Composed: Story = {
       </Card.Block>
     </Card>
   ),
-};
+});
 
-export const WithLink: Story = {
+export const WithLink = meta.story({
   render: (args) => (
     <>
       <Card data-color="support1" {...args}>
@@ -277,9 +278,9 @@ export const WithLink: Story = {
       </Card>
     </>
   ),
-};
+});
 
-export const Horizontal: Story = {
+export const Horizontal = meta.story({
   render: () => {
     const url =
       'https://www.udir.no/contentassets/0ae1c5846c254b9f8800c59c393fd03d/skolemiljo.png';
@@ -320,4 +321,4 @@ export const Horizontal: Story = {
       </Card>
     );
   },
-};
+});

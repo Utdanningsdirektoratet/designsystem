@@ -1,13 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
+import type { County } from '.storybook/data';
+import { citiesPerCounty as cities, counties } from '.storybook/data';
+import preview from '.storybook/preview';
 import { Field } from '../field/Field';
 import { Heading } from '../typography/heading/Heading';
 import { Label } from '../typography/label/Label';
 import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
 import { Select } from './Select';
 
-const meta: Meta<typeof Select> = {
+const meta = preview.meta({
   component: Select,
   tags: ['beta', 'digdir'],
   parameters: {
@@ -16,30 +18,9 @@ const meta: Meta<typeof Select> = {
     },
     layout: 'centered',
   },
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof Select>;
-
-type County =
-  | 'Akershus'
-  | 'Agder'
-  | 'Buskerud'
-  | 'Finnmark'
-  | 'Innlandet'
-  | 'Nordland'
-  | 'Rogaland';
-const counties: County[] = [
-  'Akershus',
-  'Agder',
-  'Buskerud',
-  'Finnmark',
-  'Innlandet',
-  'Nordland',
-  'Rogaland',
-];
-
-export const Preview: Story = {
+export const Preview = meta.story({
   args: {
     'aria-invalid': false,
     width: 'full',
@@ -96,9 +77,9 @@ export const Preview: Story = {
     );
     await userEvent.keyboard('{Tab}');
   },
-};
+});
 
-export const WithError: Story = {
+export const WithError = meta.story({
   args: {
     'aria-invalid': true,
   },
@@ -116,7 +97,7 @@ export const WithError: Story = {
       <ValidationMessage>Velg et fylke</ValidationMessage>
     </Field>
   ),
-};
+});
 
 const educationalLevels = {
   barneskole: [
@@ -132,7 +113,7 @@ const educationalLevels = {
   videregående: ['Vg1', 'Vg2', 'Vg3'],
 };
 
-export const WithOptgroup: Story = {
+export const WithOptgroup = meta.story({
   render: (args, context) => (
     <Field>
       <Label>Klassetrinn</Label>
@@ -153,77 +134,11 @@ export const WithOptgroup: Story = {
       </Select>
     </Field>
   ),
-};
+});
 
-type Cities = Record<County, string[]>;
-const Cities: Cities = {
-  Akershus: [
-    'Oslo',
-    'Bærum',
-    'Lillestrøm',
-    'Asker',
-    'Lørenskog',
-    'Skedsmokorset',
-    'Oppegård',
-  ],
-  Agder: [
-    'Kristiansand',
-    'Arendal',
-    'Grimstad',
-    'Lillesand',
-    'Farsund',
-    'Flekkefjord',
-    'Søgne',
-  ],
-  Buskerud: [
-    'Drammen',
-    'Kongsberg',
-    'Hønefoss',
-    'Mjøndalen',
-    'Lierbyen',
-    'Ringerike',
-    'Hole',
-  ],
-  Finnmark: [
-    'Alta',
-    'Hammerfest',
-    'Vardo',
-    'Kirkenes',
-    'Kautokeino',
-    'Båtsfjord',
-    'Mehamn',
-  ],
-  Innlandet: [
-    'Lillehammer',
-    'Gjøvik',
-    'Hamar',
-    'Elverum',
-    'Otta',
-    'Kongsvinger',
-    'Rena',
-  ],
-  Nordland: [
-    'Bodø',
-    'Narvik',
-    'Mo i Rana',
-    'Fauske',
-    'Svolvær',
-    'Stokmarknes',
-    'Brønnøysund',
-  ],
-  Rogaland: [
-    'Stavanger',
-    'Sandnes',
-    'Haugesund',
-    'Bryne',
-    'Egersund',
-    'Sauda',
-    'Åkrehamn',
-  ],
-};
 type SelectedCounty = County | '';
 
-export const Controlled: Story = {
+export const Controlled = meta.story({
   parameters: {
     customStyles: {
       display: 'flex',
@@ -238,7 +153,7 @@ export const Controlled: Story = {
     const handleCountyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
       const newCounty = e.target.value as County;
       setSelectedCounty(newCounty);
-      if (!Cities[newCounty].some((c) => c.toLowerCase() === selectedCity)) {
+      if (!cities[newCounty].some((c) => c.toLowerCase() === selectedCity)) {
         setSelectedCity('');
       }
     };
@@ -246,8 +161,8 @@ export const Controlled: Story = {
     const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
       const newCity = e.target.value;
       setSelectedCity(newCity);
-      const newCounty = (Object.keys(Cities) as County[]).find((f) =>
-        Cities[f].some((c) => c.toLowerCase() === newCity),
+      const newCounty = (Object.keys(cities) as County[]).find((f) =>
+        cities[f].some((c) => c.toLowerCase() === newCity),
       );
       if (newCounty && newCounty !== selectedCounty) {
         setSelectedCounty(newCounty);
@@ -266,7 +181,7 @@ export const Controlled: Story = {
             onChange={handleCountyChange}
           >
             <Select.Option value="">Velg et fylke &hellip;</Select.Option>
-            {(Object.keys(Cities) as County[]).map((f) => (
+            {counties.map((f) => (
               <Select.Option key={f} value={f}>
                 {f}
               </Select.Option>
@@ -283,7 +198,7 @@ export const Controlled: Story = {
           >
             <Select.Option value="">Velg en by &hellip;</Select.Option>
             {selectedCounty
-              ? Cities[selectedCounty].map((city) => (
+              ? cities[selectedCounty].map((city) => (
                   <Select.Option key={city} value={city.toLowerCase()}>
                     {city}
                   </Select.Option>
@@ -294,18 +209,18 @@ export const Controlled: Story = {
       </>
     );
   },
-};
+});
 
-export const Disabled: Story = {
+export const Disabled = meta.story({
   args: {
     disabled: true,
   },
-  render: Preview.render,
-};
+  render: Preview.input.render,
+});
 
-export const ReadOnly: Story = {
+export const ReadOnly = meta.story({
   args: {
     readOnly: true,
   },
-  render: Preview.render,
-};
+  render: Preview.input.render,
+});

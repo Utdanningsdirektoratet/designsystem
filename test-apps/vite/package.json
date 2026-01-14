@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "typecheck": "tsc --build"
+    "typecheck": "tsgo --build"
   },
   "dependencies": {
     "@udir-design/icons": "workspace:*",
