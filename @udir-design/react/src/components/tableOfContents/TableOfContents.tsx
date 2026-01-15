@@ -1,3 +1,4 @@
+import type { Color } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
 import { ArrowDownRightIcon } from '@udir-design/icons';
@@ -22,7 +23,7 @@ export type TableOfContentsProps = Omit<
    * in the TableOfContents
    */
   headings: TocHeading[];
-  'data-color'?: 'neutral' | 'accent' | 'support1';
+  'data-color'?: Color;
   /* Defaults the TableOfContents to closed
    * @default false
    */
