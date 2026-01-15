@@ -3,7 +3,6 @@ import type { HTMLAttributes } from 'react';
 import { useMemo, useState } from 'react';
 import { Alert } from 'src/components/alert';
 import { Avatar } from 'src/components/avatar/Avatar';
-import { Badge } from 'src/components/badge/Badge';
 import { Checkbox } from 'src/components/checkbox/Checkbox';
 import { Chip } from 'src/components/chip/Chip';
 import { Divider } from 'src/components/divider/Divider';
@@ -200,18 +199,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
                   </Table.Cell>
                   <Table.Cell>
                     <div className={classes.student}>
-                      <Badge.Position placement="top-right" overlap="circle">
-                        {student.new && (
-                          <Badge data-color="accent" data-size="md" />
-                        )}
-                        <Avatar
-                          aria-label={
-                            student.new
-                              ? `Ny elev ${student.name}`
-                              : student.name
-                          }
-                        />
-                      </Badge.Position>
+                      <Avatar aria-label={student.name} />
                       {student.name}
                     </div>
                   </Table.Cell>
