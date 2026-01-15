@@ -12,13 +12,7 @@ type BadgeProps = Omit<DigdirBadgeProps, 'data-color'> & {
   /**
    * Change the color scheme of badge
    */
-  'data-color'?:
-    | 'neutral'
-    | 'accent'
-    | 'success'
-    | 'danger'
-    | 'info'
-    | 'warning';
+  'data-color'?: 'neutral' | 'success' | 'danger' | 'info' | 'warning';
 };
 
 const Badge = DigdirBadge as ForwardRefExoticComponent<
