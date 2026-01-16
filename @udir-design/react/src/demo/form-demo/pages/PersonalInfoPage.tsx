@@ -71,7 +71,6 @@ export const PersonalInfoPage = ({
                 {counties.map((county) => (
                   <Suggestion.Option key={county} label={county} value={county}>
                     {county}
-                    <div>Fylke</div>
                   </Suggestion.Option>
                 ))}
               </Suggestion.List>

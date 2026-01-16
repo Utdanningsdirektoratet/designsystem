@@ -64,12 +64,7 @@ const FormSchema = z.object({
   ageGroup: z.string().refine((v) => v !== 'blank', {
     message: 'Velg en aldersgruppe',
   }),
-  documentation: z
-    .custom<FileList>()
-    .transform((files) => Array.from(files))
-    .refine((files) => files.length > 0, {
-      message: 'Last opp dokumentasjon',
-    }),
+  documentation: z.array(z.instanceof(File)).min(1, 'Last opp dokumentasjon'),
   addition: z.string().optional(),
   contactMethods: z.array(z.string()).min(1, 'Velg minst én kontaktmåte'),
 });
@@ -96,7 +91,7 @@ export const FormDemo = ({
       county: '',
       educationLevel: '',
       ageGroup: 'blank',
-      documentation: undefined,
+      documentation: [],
       addition: '',
       contactMethods: [],
     },
@@ -115,6 +110,7 @@ export const FormDemo = ({
     const fields = pageFields[prevId];
     if (fields.length === 0) return;
     const ok = await trigger(fields, { shouldFocus: false });
+    console.log('ok: ', ok);
     if (ok) markCompleted(prevId);
     else if (isSubmitted) markInvalid(prevId);
   };
