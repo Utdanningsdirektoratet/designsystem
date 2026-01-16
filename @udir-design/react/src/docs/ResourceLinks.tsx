@@ -32,7 +32,7 @@ export function LandingResourceLinks() {
         paragraph="Oversikt over farger, typografi, stil og tone, etc."
       />
       <ResourceLink
-        href="https://www.figma.com/design/QeYBL9fzDCk87WNWcDSQi7/Illustrasjonsbibliotek?node-id=457-13863&node-type=canvas&t=pu6b4dYoQf1IMO4C-0"
+        href="https://www.figma.com/files/1290654482467394866/project/437326546"
         illustration={figmaIllustration}
         headingLevel={3}
         heading="Illustrasjoner i Figma"
