@@ -20,16 +20,13 @@ import { useFormNavigation } from 'src/utilities/hooks/useFormNavigation/useForm
 import type { DemoProps } from '../demoProps.js';
 import { ErrorSummaryContent } from './ErrorSummaryContent';
 import classes from './FormDemo.module.css';
+import { DocumentationPage } from './pages/DocumentationPage';
 import { FinishPage } from './pages/FinishPage.tsx';
 import { PersonalInfoPage } from './pages/PersonalInfoPage';
-import {
-  DATA_ASSERTIONS,
-  DATA_RANKINGS,
-  RankingPage,
-} from './pages/RankingPage';
 
 export type PageProps = {
   showErrors: boolean;
+  isSubmitSuccessful: boolean;
 };
 
 export const focusableFieldsetProps: Partial<FieldsetProps> = {
@@ -43,9 +40,10 @@ export const focusableFieldsetProps: Partial<FieldsetProps> = {
 
 const pageFields = defineSteps({
   personal: ['firstName', 'lastName', 'county', 'educationLevel', 'ageGroup'],
-  ranking: ['rankings'],
+  documentation: ['documentation'],
   finish: ['addition', 'contactMethods'],
   deliver: [],
+  confirmation: [],
 });
 export type PageFields = typeof pageFields;
 
@@ -66,19 +64,7 @@ const FormSchema = z.object({
   ageGroup: z.string().refine((v) => v !== 'blank', {
     message: 'Velg en aldersgruppe',
   }),
-  rankings: z
-    .record(z.string(), z.enum(DATA_RANKINGS).nullish())
-    .superRefine((r, ctx) => {
-      for (const assertion of DATA_ASSERTIONS) {
-        if (r[assertion] == null) {
-          ctx.addIssue({
-            code: 'custom',
-            message: 'Du må besvare alle påstandene',
-            path: [assertion],
-          });
-        }
-      }
-    }),
+  documentation: z.array(z.instanceof(File)).min(1, 'Last opp dokumentasjon'),
   addition: z.string().optional(),
   contactMethods: z.array(z.string()).min(1, 'Velg minst én kontaktmåte'),
 });
@@ -105,7 +91,7 @@ export const FormDemo = ({
       county: '',
       educationLevel: '',
       ageGroup: 'blank',
-      rankings: Object.fromEntries(DATA_ASSERTIONS.map((a) => [a, undefined])),
+      documentation: [],
       addition: '',
       contactMethods: [],
     },
@@ -114,7 +100,7 @@ export const FormDemo = ({
     handleSubmit,
     trigger,
     reset: resetForm,
-    formState: { errors, isSubmitted },
+    formState: { errors, isSubmitted, isSubmitSuccessful },
     getFieldState,
   } = methods;
 
@@ -124,6 +110,7 @@ export const FormDemo = ({
     const fields = pageFields[prevId];
     if (fields.length === 0) return;
     const ok = await trigger(fields, { shouldFocus: false });
+    console.log('ok: ', ok);
     if (ok) markCompleted(prevId);
     else if (isSubmitted) markInvalid(prevId);
   };
@@ -151,6 +138,7 @@ export const FormDemo = ({
 
   const stepHasError = (pageId: PageId): boolean => {
     const fields = pageFields[pageId] ?? [];
+    console.log('Fields: ', fields);
     return fields.some((name) => !!getFieldState(name).error);
   };
 
@@ -176,16 +164,22 @@ export const FormDemo = ({
   const formNavigationContent = (
     <FormNavigation>
       <FormNavigation.Group
-        title="Skoleundersøkelse"
+        title="Testsøknad"
         className={classes.navigation}
         open={true}
-        {...getGroupProps(['personal', 'ranking', 'finish', 'deliver'])}
+        {...getGroupProps([
+          'personal',
+          'documentation',
+          'finish',
+          'deliver',
+          'confirmation',
+        ])}
       >
         <FormNavigation.Step {...getStepProps('personal')}>
           Personopplysninger
         </FormNavigation.Step>
-        <FormNavigation.Step {...getStepProps('ranking')}>
-          Rangering
+        <FormNavigation.Step {...getStepProps('documentation')}>
+          Dokumentasjon
         </FormNavigation.Step>
         <FormNavigation.Step {...getStepProps('finish')}>
           Avslutning
@@ -193,21 +187,33 @@ export const FormDemo = ({
         <FormNavigation.Step variant="submission" {...getStepProps('deliver')}>
           Innsending
         </FormNavigation.Step>
+        <FormNavigation.Step
+          variant="confirmation"
+          {...getStepProps('confirmation')}
+          disabled={!isSubmitSuccessful}
+        >
+          Kvittering
+        </FormNavigation.Step>
       </FormNavigation.Group>
     </FormNavigation>
   );
 
   const renderCurrentPage = () => {
-    const props = { showErrors: isSubmitted };
+    const props = {
+      showErrors: isSubmitted,
+      isSubmitSuccessful: isSubmitSuccessful,
+    };
     switch (id) {
       case 'personal':
         return <PersonalInfoPage {...props} />;
-      case 'ranking':
-        return <RankingPage {...props} />;
+      case 'documentation':
+        return <DocumentationPage {...props} />;
       case 'finish':
         return <FinishPage {...props} />;
       case 'deliver':
         return <DeliverPage />;
+      case 'confirmation':
+        return <ConfirmationPage />;
     }
   };
 
@@ -219,6 +225,17 @@ export const FormDemo = ({
       </>
     );
   };
+
+  const ConfirmationPage = () => (
+    <>
+      <Heading level={2} data-size="sm">
+        Kvittering
+      </Heading>
+      <Paragraph>
+        Ditt svar er mottat, takk for at du svarte på undersøkelsen.
+      </Paragraph>
+    </>
+  );
 
   const hasErrors = isSubmitted && Object.keys(errors).length > 0;
 
@@ -247,17 +264,17 @@ export const FormDemo = ({
         </div>
         <div {...props} className={classes.container}>
           <Heading level={1} data-size="md">
-            Skoleundersøkelse
+            Testsøknad
           </Heading>
           <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
             {renderCurrentPage()}
             <div className={classes.navigateButtons}>
-              {hasPrev() && (
+              {hasPrev() && id !== 'confirmation' && (
                 <Button variant="secondary" onClick={prev} style={{ flex: 1 }}>
                   Forrige
                 </Button>
               )}
-              {hasNext() && (
+              {hasNext() && id !== 'deliver' && (
                 <Button variant="secondary" onClick={next} style={{ flex: 1 }}>
                   Neste
                 </Button>

@@ -4,6 +4,7 @@ import { Field } from 'src/components/field/Field';
 import { Fieldset } from 'src/components/fieldset/Fieldset';
 import { Input } from 'src/components/input/Input';
 import { Radio } from 'src/components/radio/Radio';
+import { ReadMore } from 'src/components/readMore/ReadMore';
 import { Select } from 'src/components/select/Select';
 import { Suggestion } from 'src/components/suggestion/Suggestion';
 import { Textfield } from 'src/components/textfield/Textfield';
@@ -16,23 +17,28 @@ import {
   focusableFieldsetProps,
 } from '../FormDemo';
 
-export const PersonalInfoPage = ({ showErrors }: PageProps) => {
+export const PersonalInfoPage = ({
+  showErrors,
+  isSubmitSuccessful,
+}: PageProps) => {
   const { register, control, formState } = useFormContext<FormValues>();
   const errors = showErrors ? formState.errors : {};
   return (
     <>
       <Heading level={2} data-size="sm">
-        Personinformasjon
+        Personopplysninger
       </Heading>
       <Textfield
         id="firstName"
-        label="Fornavn"
+        label="Navn på kontaktperson"
         {...register('firstName')}
         autoComplete="given-name"
         error={errors.firstName?.message}
+        readOnly={isSubmitSuccessful}
       />
       <Field>
-        <Label>Etternavn</Label>
+        <Label>Epostadresse</Label>
+        {/* oppdater id osv */}
         <Input
           id="lastName"
           {...register('lastName')}
@@ -44,7 +50,8 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
         )}
       </Field>
       <Field>
-        <Label>Fylke</Label>
+        <Label>Fødested</Label>
+        <Field.Description>Hvilket fylke ble du født i?</Field.Description>
         <Controller
           name="county"
           control={control}
@@ -64,7 +71,6 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
                 {counties.map((county) => (
                   <Suggestion.Option key={county} label={county} value={county}>
                     {county}
-                    <div>Fylke</div>
                   </Suggestion.Option>
                 ))}
               </Suggestion.List>
@@ -74,6 +80,11 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
         {errors.county && (
           <ValidationMessage>{errors.county.message}</ValidationMessage>
         )}
+        <ReadMore summary="Slik finner du fødested">
+          Via Helsenorge kan du få innsyn i enkelte opplysninger om din fødsel,
+          slik som fødested, dersom du er født etter 1967. Du kan og få innsyn i
+          fødselsopplysninger om barn under 16 år som du har foreldreansvar for.
+        </ReadMore>
       </Field>
       <Fieldset id="educationLevel" {...focusableFieldsetProps}>
         <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
@@ -113,6 +124,7 @@ export const PersonalInfoPage = ({ showErrors }: PageProps) => {
           {...register('ageGroup')}
           aria-invalid={!!errors.ageGroup}
           defaultValue="blank"
+          //readOnly={isSubmitted}
         >
           <Select.Option value="blank" disabled>
             Velg aldersgruppe
