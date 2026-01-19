@@ -1,0 +1,6 @@
+.form-summary-size {
+  @media (min-width: 30rem) {
+    width: fit-content;
+    min-width: 30rem;
+  }
+}
