@@ -18,6 +18,33 @@
     display: none;
   }
 
+  /* Different color modes set on the component */
+
+  &[data-color-scheme='auto'] {
+    @media (prefers-color-scheme: dark) {
+      > img:first-of-type {
+        display: none;
+      }
+
+      > img:last-of-type {
+        display: block;
+      }
+    }
+  }
+
+  &[data-color-scheme='dark'] {
+    > img:first-of-type {
+      display: none;
+    }
+    > img:last-of-type {
+      display: block;
+    }
+  }
+}
+
+/* Different color modes infered from parent component */
+
+[data-color-scheme='auto'] .uds-logo {
   @media (prefers-color-scheme: dark) {
     > img:first-of-type {
       display: none;
