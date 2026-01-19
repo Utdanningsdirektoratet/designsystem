@@ -36,6 +36,7 @@ export const udirPreferredIcons = [
   'MenuElipsisVertical',
   'MenuHamburger',
   'NotePencil',
+  'Paperplane',
   'PersonGroup',
   'Person',
   'PersonPlus',
@@ -231,6 +232,12 @@ export const guidelinesRecord: Partial<
     {
       type: 'do',
       description: 'Bruk til å indikere at man kan starte på et utkast',
+    },
+  ],
+  Paperplane: [
+    {
+      type: 'do',
+      description: 'Bruk til å indikere innseding av skjema',
     },
   ],
   Person: [
