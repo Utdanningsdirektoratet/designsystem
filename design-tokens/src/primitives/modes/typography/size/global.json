@@ -16,43 +16,43 @@
   "font-size": {
     "1": {
       "$type": "fontSizes",
-      "$value": "roundTo({font-scale._base} / pow({font-scale._ratio}, 3), 0)"
+      "$value": "{font-scale._base} / pow({font-scale._ratio}, 3)"
     },
     "2": {
       "$type": "fontSizes",
-      "$value": "roundTo({font-scale._base} / pow({font-scale._ratio}, 2), 0)"
+      "$value": "{font-scale._base} / pow({font-scale._ratio}, 2)"
     },
     "3": {
       "$type": "fontSizes",
-      "$value": "roundTo({font-scale._base} / pow({font-scale._ratio}, 1), 0)"
+      "$value": "{font-scale._base} / pow({font-scale._ratio}, 1)"
     },
     "4": {
       "$type": "fontSizes",
-      "$value": "roundTo({font-scale._base} * pow({font-scale._ratio}, 0), 0)"
+      "$value": "{font-scale._base} * pow({font-scale._ratio}, 0)"
     },
     "5": {
       "$type": "fontSizes",
-      "$value": "roundTo({font-scale._base} * pow({font-scale._ratio}, 1), 0)"
+      "$value": "{font-scale._base} * pow({font-scale._ratio}, 1)"
     },
     "6": {
       "$type": "fontSizes",
-      "$value": "roundTo({font-scale._base} * pow({font-scale._ratio}, 2), 0)"
+      "$value": "{font-scale._base} * pow({font-scale._ratio}, 2)"
     },
     "7": {
       "$type": "fontSizes",
-      "$value": "roundTo({font-scale._base} * pow({font-scale._ratio}, 3), 0)"
+      "$value": "{font-scale._base} * pow({font-scale._ratio}, 3)"
     },
     "8": {
       "$type": "fontSizes",
-      "$value": "roundTo({font-scale._base} * pow({font-scale._ratio}, 5), 0)"
+      "$value": "{font-scale._base} * pow({font-scale._ratio}, 5)"
     },
     "9": {
       "$type": "fontSizes",
-      "$value": "roundTo({font-scale._base} * pow({font-scale._ratio}, 7), 0)"
+      "$value": "{font-scale._base} * pow({font-scale._ratio}, 7)"
     },
     "10": {
       "$type": "fontSizes",
-      "$value": "roundTo({font-scale._base} * pow({font-scale._ratio}, 9), 0)"
+      "$value": "{font-scale._base} * pow({font-scale._ratio}, 9)"
     }
   },
   "letter-spacing": {
