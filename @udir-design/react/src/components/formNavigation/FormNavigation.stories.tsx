@@ -1,20 +1,17 @@
 import { ErrorSummary, Paragraph } from '@digdir/designsystemet-react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRef } from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
+import { FormProvider, useForm, useWatch } from 'react-hook-form';
 import z from 'zod';
-import { BulletListIcon } from '@udir-design/icons';
+import { BulletListIcon, PaperplaneIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
-import type { GetStepId } from 'src/utilities/form/navigation';
-import {
-  defineSteps,
-  getStepIds,
-  makeStepFinder,
-} from 'src/utilities/form/navigation';
+import type { FormPlan, GetStepId } from 'src/utilities/form/navigation';
+import { defineFormPlan } from 'src/utilities/form/navigation';
 import { useFormNavigation } from 'src/utilities/hooks/useFormNavigation/useFormNavigation';
 import { Button } from '../button/Button';
 import { Dialog } from '../dialog/Dialog';
+import { FormSummary } from '../formSummary';
 import { Textfield } from '../textfield/Textfield';
 import { Heading } from '../typography/heading/Heading';
 import classes from './formNavigation.stories.module.css';
@@ -476,45 +473,104 @@ const Schema = z.object({
 
 type FormValuesGroups = z.infer<typeof Schema>;
 
-const fieldsByStep = defineSteps({
-  step1: ['q1', 'q2'],
-  step2: ['q3'],
-  step3: ['q4', 'q5'],
-  step4: ['q6'],
-  step5: ['q7'],
-  submission: [],
-  confirmation: [],
-});
-const stepIds = getStepIds(fieldsByStep);
-const findStepForField = makeStepFinder(fieldsByStep);
+const {
+  plan,
+  defaultValues,
+  fieldsByStep,
+  stepIds,
+  findStepForField,
+  getStep,
+} = defineFormPlan([
+  {
+    sectionTitle: 'Første seksjon',
+    steps: [
+      {
+        id: 'step1',
+        title: 'Første steg',
+        fields: [
+          { name: 'q1', label: 'Første spørsmål' },
+          { name: 'q2', label: 'Andre spørsmål' },
+        ],
+      },
+      {
+        id: 'step2',
+        title: 'Andre steg',
+        fields: [{ name: 'q3', label: 'Tredje spørsmål' }],
+      },
+    ],
+  },
+  {
+    sectionTitle: 'Andre seksjon',
+    steps: [
+      {
+        id: 'step3',
+        title: 'Første steg',
+        fields: [
+          { name: 'q4', label: 'Fjerde spørsmål' },
+          { name: 'q5', label: 'Femte spørsmål' },
+        ],
+      },
+      {
+        id: 'step4',
+        title: 'Andre steg',
+        fields: [{ name: 'q6', label: 'Sjette spørsmål' }],
+      },
+      {
+        id: 'step5',
+        title: 'Tredje steg',
+        fields: [{ name: 'q7', label: 'Syvende spørsmål' }],
+      },
+    ],
+  },
+  { id: 'submission', title: 'Innsending', fields: [], variant: 'submission' },
+  {
+    id: 'confirmation',
+    title: 'Bekreftelse',
+    fields: [],
+    variant: 'confirmation',
+  },
+] as const satisfies FormPlan<string, string, keyof FormValuesGroups>);
 
 type StepId = GetStepId<typeof fieldsByStep>;
 
-const heading = (stepId: StepId) => {
-  switch (stepId) {
-    case 'submission':
-      return 'Innsending';
-    case 'confirmation':
-      return 'Bekreftelse';
-    case 'step1':
-    case 'step2':
-      return 'Første seksjon';
-    case 'step3':
-    case 'step4':
-    case 'step5':
-      return 'Andre seksjon';
-  }
-};
+const sectionTitleByStepId = new Map<StepId, string>();
+
+const heading = (stepId: StepId) =>
+  sectionTitleByStepId.get(stepId) ?? getStep(stepId)?.title ?? 'Skjema';
 
 export const Full = meta.story({
   parameters: { docs: { source: { type: 'code' } } },
   args: { className: classes.navigation },
   render(args) {
+    const dialogRef = useRef<HTMLDialogElement>(null);
+
+    const methods = useForm<FormValuesGroups>({
+      mode: 'onChange',
+      shouldFocusError: false,
+      shouldUnregister: false,
+      resolver: zodResolver(Schema),
+      defaultValues,
+    });
+
+    const {
+      register,
+      handleSubmit,
+      trigger,
+      reset: resetForm,
+      formState: { errors, isSubmitted, isSubmitSuccessful },
+      getFieldState,
+    } = methods;
+
+    const formErrors = isSubmitted ? errors : {};
+    const values = useWatch<FormValuesGroups>({ control: methods.control });
+
     const onStepChange = async (_nextId: StepId, prevId: StepId | null) => {
       if (!prevId) return;
       dialogRef.current?.close();
+
       const fields = fieldsByStep[prevId];
-      if (fields.length === 0) return;
+      if (!fields || fields.length === 0) return;
+
       const ok = await trigger(fields, { shouldFocus: false });
       if (ok) markCompleted(prevId);
       else if (isSubmitted) markInvalid(prevId);
@@ -537,31 +593,6 @@ export const Full = meta.story({
       onChange: onStepChange,
     });
 
-    const methods = useForm<FormValuesGroups>({
-      mode: 'onChange',
-      shouldFocusError: false,
-      shouldUnregister: false,
-      resolver: zodResolver(Schema),
-      defaultValues: {
-        q1: '',
-        q2: '',
-        q3: '',
-        q4: '',
-        q5: '',
-        q6: '',
-        q7: '',
-      },
-    });
-
-    const {
-      register,
-      handleSubmit,
-      trigger,
-      reset: resetForm,
-      formState: { errors, isSubmitted, isSubmitSuccessful },
-      getFieldState,
-    } = methods;
-
     const stepHasError = (stepId: StepId): boolean => {
       const fields = fieldsByStep[stepId] ?? [];
       return fields.some((name) => !!getFieldState(name).error);
@@ -572,68 +603,174 @@ export const Full = meta.story({
     };
 
     const onInvalid = () => {
-      stepIds.forEach((id) => {
-        if (stepHasError(id)) markInvalid(id);
+      stepIds.forEach((sid) => {
+        if (stepHasError(sid as StepId)) markInvalid(sid as StepId);
       });
     };
 
     const reset = () => {
-      resetForm();
+      resetForm(defaultValues);
       resetNavigation();
       setId('step1');
     };
 
-    const formErrors = isSubmitted ? errors : {};
+    const goToStep = (stepId: StepId) => {
+      setId(stepId);
 
-    const dialogRef = useRef<HTMLDialogElement>(null);
+      requestAnimationFrame(() => {
+        const fields = fieldsByStep[stepId];
+        if (!fields || fields.length === 0) return;
+        document.getElementById(fields[0])?.focus();
+      });
+    };
 
     const formNavigationContent = (
       <FormNavigation {...args}>
-        <FormNavigation.Group
-          title="Første seksjon"
-          {...getGroupProps(['step1', 'step2'])}
-        >
-          <FormNavigation.Step {...getStepProps('step1')}>
-            Første steg
-          </FormNavigation.Step>
-          <FormNavigation.Step {...getStepProps('step2')}>
-            Andre steg
-          </FormNavigation.Step>
-        </FormNavigation.Group>
-        <FormNavigation.Group
-          title="Andre seksjon"
-          {...getGroupProps(['step3', 'step4', 'step5'])}
-        >
-          <FormNavigation.Step {...getStepProps('step3')}>
-            Første steg
-          </FormNavigation.Step>
-          <FormNavigation.Step {...getStepProps('step4')}>
-            Andre steg
-          </FormNavigation.Step>
-          <FormNavigation.Step {...getStepProps('step5')}>
-            Tredje steg
-          </FormNavigation.Step>
-        </FormNavigation.Group>
-        <FormNavigation.Step
-          variant="submission"
-          {...getStepProps('submission')}
-        >
-          Innsending
-        </FormNavigation.Step>
-        <FormNavigation.Step
-          variant="confirmation"
-          disabled={!isSubmitSuccessful}
-          {...getStepProps('confirmation')}
-        >
-          Kvittering
-        </FormNavigation.Step>
+        {plan.map((item) => {
+          if ('steps' in item) {
+            const stepIds = item.steps.map((s) => s.id) as StepId[];
+
+            return (
+              <FormNavigation.Group
+                key={item.sectionTitle}
+                title={item.sectionTitle}
+                {...getGroupProps(stepIds)}
+              >
+                {stepIds.map((stepId) => {
+                  const step = getStep(stepId);
+                  return (
+                    <FormNavigation.Step
+                      key={stepId}
+                      variant={step?.variant}
+                      {...getStepProps(stepId)}
+                    >
+                      {step?.title ?? String(stepId)}
+                    </FormNavigation.Step>
+                  );
+                })}
+              </FormNavigation.Group>
+            );
+          }
+
+          const stepId = item.id as StepId;
+          const step = getStep(stepId);
+
+          return (
+            <FormNavigation.Step
+              key={stepId}
+              variant={step?.variant}
+              {...getStepProps(stepId)}
+              disabled={stepId === 'confirmation' && !isSubmitSuccessful}
+            >
+              {item.title}
+            </FormNavigation.Step>
+          );
+        })}
       </FormNavigation>
     );
+
+    const renderSummary = () => (
+      <FormSummary>
+        <FormSummary.Section title="Oppsummering" level={1} />
+
+        {plan.map((item) => {
+          if ('steps' in item) {
+            return (
+              <FormSummary.Section
+                key={item.sectionTitle}
+                title={item.sectionTitle}
+                level={2}
+              >
+                {item.steps
+                  .filter((step) => step.fields.length > 0)
+                  .map((step) => (
+                    <FormSummary.Section
+                      key={step.id}
+                      title={step.title}
+                      level={3}
+                      onEdit={() => goToStep(step.id as StepId)}
+                    >
+                      <FormSummary.Fields>
+                        {step.fields.map((f) => {
+                          const value = values?.[f.name];
+                          const error = formErrors?.[f.name]?.message as
+                            | string
+                            | undefined;
+
+                          return (
+                            <FormSummary.Field key={f.name}>
+                              <FormSummary.Field.Label>
+                                {f.label}
+                              </FormSummary.Field.Label>
+                              <FormSummary.Field.Answer error={error}>
+                                {typeof value === 'string' && value.trim()
+                                  ? value
+                                  : 'Ikke besvart'}
+                              </FormSummary.Field.Answer>
+                            </FormSummary.Field>
+                          );
+                        })}
+                      </FormSummary.Fields>
+                    </FormSummary.Section>
+                  ))}
+              </FormSummary.Section>
+            );
+          }
+          return null;
+        })}
+      </FormSummary>
+    );
+
+    const renderSubmission = () => (
+      <Paragraph>
+        {isSubmitSuccessful
+          ? 'Skjemaet er sendt inn!'
+          : 'Se over svarene dine og trykk på knappen for å sende inn skjema.'}
+      </Paragraph>
+    );
+
+    const renderConfirmation = () =>
+      isSubmitSuccessful ? (
+        <>
+          <Paragraph>Skjemaet er sendt inn!</Paragraph>
+          <Button autoFocus variant="secondary" onClick={reset}>
+            Start på nytt
+          </Button>
+        </>
+      ) : (
+        <Paragraph>Du har ikke sendt inn skjemaet enda.</Paragraph>
+      );
+
+    const renderStepContent = (stepId: StepId | null) => {
+      if (!stepId) return null;
+
+      if (stepId === 'submission') return renderSubmission();
+      if (stepId === 'confirmation') return renderConfirmation();
+
+      const step = getStep(stepId);
+      if (!step) return null;
+
+      return (
+        <>
+          {step.fields.map((f) => (
+            <Textfield
+              key={f.name}
+              id={f.name}
+              label={f.label}
+              {...register(f.name)}
+              error={formErrors?.[f.name]?.message}
+              readOnly={isSubmitSuccessful}
+            />
+          ))}
+        </>
+      );
+    };
 
     return (
       <FormProvider {...methods}>
         <div className={classes.page}>
           <div className={classes.desktop}>{formNavigationContent}</div>
+
           <div className={classes.container}>
             <div className={classes.mobile}>
               <Dialog.TriggerContext>
@@ -646,6 +783,7 @@ export const Full = meta.story({
                   <BulletListIcon aria-hidden />
                   Naviger
                 </Dialog.Trigger>
+
                 <Dialog
                   closedby="any"
                   ref={dialogRef}
@@ -656,99 +794,17 @@ export const Full = meta.story({
                 </Dialog>
               </Dialog.TriggerContext>
             </div>
+
             <Heading level={2} data-size="sm">
               {id && heading(id)}
             </Heading>
+
             <form
               className={classes.form}
               onSubmit={handleSubmit(onValid, onInvalid)}
             >
-              {id === 'step1' && (
-                <>
-                  <Textfield
-                    id="q1"
-                    label="Første spørsmål"
-                    {...register('q1')}
-                    error={formErrors.q1?.message}
-                    readOnly={isSubmitSuccessful}
-                  />
-                  <Textfield
-                    id="q2"
-                    label="Andre spørsmål"
-                    {...register('q2')}
-                    error={formErrors.q2?.message}
-                    readOnly={isSubmitSuccessful}
-                  />
-                </>
-              )}
-              {id === 'step2' && (
-                <Textfield
-                  id="q3"
-                  label="Tredje spørsmål"
-                  {...register('q3')}
-                  error={formErrors.q3?.message}
-                  readOnly={isSubmitSuccessful}
-                  autoFocus
-                />
-              )}
-              {id === 'step3' && (
-                <>
-                  <Textfield
-                    id="q4"
-                    label="Fjerde spørsmål"
-                    {...register('q4')}
-                    error={formErrors.q4?.message}
-                    readOnly={isSubmitSuccessful}
-                    autoFocus
-                  />
-                  <Textfield
-                    id="q5"
-                    label="Femte spørsmål"
-                    {...register('q5')}
-                    error={formErrors.q5?.message}
-                    readOnly={isSubmitSuccessful}
-                  />
-                </>
-              )}
-              {id === 'step4' && (
-                <Textfield
-                  id="q6"
-                  label="Sjette spørsmål"
-                  {...register('q6')}
-                  error={formErrors.q6?.message}
-                  readOnly={isSubmitSuccessful}
-                  autoFocus
-                />
-              )}
-              {id === 'step5' && (
-                <Textfield
-                  id="q7"
-                  label="Syvende spørsmål"
-                  {...register('q7')}
-                  error={formErrors.q7?.message}
-                  readOnly={isSubmitSuccessful}
-                  autoFocus
-                />
-              )}
-              {id === 'submission' && (
-                <Paragraph>
-                  {isSubmitSuccessful
-                    ? 'Skjemaet er sendt inn!'
-                    : 'Trykk på knappen for å sende inn skjema.'}
-                </Paragraph>
-              )}
-              {id === 'confirmation' ? (
-                isSubmitSuccessful ? (
-                  <>
-                    <Paragraph>Skjemaet er sendt inn!</Paragraph>
-                    <Button autoFocus variant="secondary" onClick={reset}>
-                      Start på nytt
-                    </Button>
-                  </>
-                ) : (
-                  <Paragraph>Du har ikke sendt inn skjemaet enda.</Paragraph>
-                )
-              ) : null}
+              {renderStepContent(id)}
+              {id === 'submission' && !isSubmitSuccessful && renderSummary()}
               <div className={classes.navigationButtons}>
                 {hasPrev() && (
                   <Button variant="secondary" onClick={prev}>
@@ -760,44 +816,43 @@ export const Full = meta.story({
                     Neste
                   </Button>
                 )}
-              </div>
-              {id === 'submission' && !isSubmitSuccessful && (
-                <>
-                  <Button type="submit" autoFocus>
-                    Send inn skjema
+                {id === 'submission' && !isSubmitSuccessful && (
+                  <Button type="submit" style={{ flex: 2 }}>
+                    Send inn skjema <PaperplaneIcon aria-hidden />
                   </Button>
-                  {Object.entries(formErrors).length > 0 && (
-                    <ErrorSummary>
-                      <ErrorSummary.Heading>
-                        Rett opp følgende feil:
-                      </ErrorSummary.Heading>
-                      <ErrorSummary.List>
-                        {Object.entries(formErrors).map(([field, error]) => (
-                          <ErrorSummary.Item key={field}>
-                            <ErrorSummary.Link
-                              href={`#${field}`}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                const stepId = findStepForField(field);
-                                if (stepId && stepId !== id) {
-                                  setId(stepId);
-                                }
-                                requestAnimationFrame(() => {
-                                  const el = document.getElementById(field);
-                                  el?.focus();
-                                });
-                              }}
-                            >
-                              {(error as { message?: string })?.message ??
-                                'Du må fylle ut dette feltet'}
-                            </ErrorSummary.Link>
-                          </ErrorSummary.Item>
-                        ))}
-                      </ErrorSummary.List>
-                    </ErrorSummary>
-                  )}
-                </>
-              )}
+                )}
+              </div>
+              {id === 'submission' &&
+                !isSubmitSuccessful &&
+                Object.entries(formErrors).length > 0 && (
+                  <ErrorSummary>
+                    <ErrorSummary.Heading>
+                      Rett opp følgende feil:
+                    </ErrorSummary.Heading>
+                    <ErrorSummary.List>
+                      {Object.entries(formErrors).map(([field, error]) => (
+                        <ErrorSummary.Item key={field}>
+                          <ErrorSummary.Link
+                            href={`#${field}`}
+                            onClick={(e) => {
+                              e.preventDefault();
+
+                              const stepId = findStepForField(field);
+                              if (stepId && stepId !== id) setId(stepId);
+
+                              requestAnimationFrame(() => {
+                                document.getElementById(field)?.focus();
+                              });
+                            }}
+                          >
+                            {(error as { message?: string })?.message ??
+                              'Du må fylle ut dette feltet'}
+                          </ErrorSummary.Link>
+                        </ErrorSummary.Item>
+                      ))}
+                    </ErrorSummary.List>
+                  </ErrorSummary>
+                )}
             </form>
           </div>
         </div>

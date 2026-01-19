@@ -4,9 +4,11 @@ exports[`Error States 1`] = `
 <div data-size="auto">
   <div data-variant="tinted">
     <div>
-      <h1>
-        Oppsummering
-      </h1>
+      <div>
+        <h1>
+          Oppsummering
+        </h1>
+      </div>
     </div>
     <div>
       <div>
@@ -43,26 +45,22 @@ exports[`Error States 1`] = `
             Fornavn
           </dt>
           <dd>
-            <a href="#">
-              Fyll ut fornavn
-            </a>
+            Ikke besvart
+            <p data-field="validation">
+              Fornavn må fylles ut
+            </p>
           </dd>
-          <p data-field="validation">
-            Fornavn må fylles ut
-          </p>
         </div>
         <div>
           <dt>
             Etternavn
           </dt>
           <dd>
-            <a href="#">
-              Fyll ut etternavn
-            </a>
+            Ikke besvart
+            <p data-field="validation">
+              Etternavn må fylles ut
+            </p>
           </dd>
-          <p data-field="validation">
-            Etternavn må fylles ut
-          </p>
         </div>
         <div>
           <dt>
@@ -70,17 +68,19 @@ exports[`Error States 1`] = `
           </dt>
           <dd>
             32.01.1990
+            <p data-field="validation">
+              Ugyldig dato
+            </p>
           </dd>
-          <p data-field="validation">
-            Ugyldig dato
-          </p>
         </div>
       </dl>
     </div>
     <div>
-      <h2>
-        Barn
-      </h2>
+      <div>
+        <h2>
+          Barn
+        </h2>
+      </div>
       <div>
         <div>
           <h3>
@@ -213,13 +213,11 @@ exports[`Error States 1`] = `
             Gateadresse
           </dt>
           <dd>
-            <a href="#">
-              Fyll ut gateadresse
-            </a>
+            Ikke besvart
+            <p data-field="validation">
+              Gateadresse må fylles ut
+            </p>
           </dd>
-          <p data-field="validation">
-            Gateadresse må fylles ut
-          </p>
         </div>
         <div>
           <dt>
@@ -247,9 +245,11 @@ exports[`Nested Sections 1`] = `
 <div data-size="auto">
   <div data-variant="tinted">
     <div>
-      <h1>
-        Oppsummering
-      </h1>
+      <div>
+        <h1>
+          Oppsummering
+        </h1>
+      </div>
     </div>
     <div>
       <div>
@@ -308,9 +308,11 @@ exports[`Nested Sections 1`] = `
       </dl>
     </div>
     <div>
-      <h2>
-        Barn
-      </h2>
+      <div>
+        <h2>
+          Barn
+        </h2>
+      </div>
       <div>
         <div>
           <h3>
@@ -472,9 +474,11 @@ exports[`Preview 1`] = `
 <div data-size="auto">
   <div data-variant="tinted">
     <div>
-      <h1>
-        Oppsummering
-      </h1>
+      <div>
+        <h1>
+          Oppsummering
+        </h1>
+      </div>
     </div>
     <div>
       <div>
@@ -581,9 +585,11 @@ exports[`Preview 1`] = `
       </dl>
     </div>
     <div>
-      <h2>
-        Tredje seksjon
-      </h2>
+      <div>
+        <h2>
+          Tredje seksjon
+        </h2>
+      </div>
       <div>
         <div>
           <h3>
