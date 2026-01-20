@@ -5,7 +5,13 @@ exports[`Auto Close 1`] = `
   data-variant="secondary"
   type="button"
 >
-  Vis timeout
+  Vis med automatisk lukking
+</button>
+<button
+  data-variant="secondary"
+  type="button"
+>
+  Vis uten automatisk lukking
 </button>
 `;
 
@@ -14,7 +20,13 @@ exports[`Dismissable 1`] = `
   data-variant="secondary"
   type="button"
 >
-  Vis dismissable
+  Vis med lukkekryss
+</button>
+<button
+  data-variant="secondary"
+  type="button"
+>
+  Vis uten lukkekryss
 </button>
 `;
 

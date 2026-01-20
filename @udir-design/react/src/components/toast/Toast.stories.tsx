@@ -73,15 +73,26 @@ export const Dismissable = meta.story({
   render: () => {
     let counter = 1;
     return (
-      <Button
-        variant="secondary"
-        onClick={() => {
-          toast.success(`Toast nummer ${counter}`);
-          counter += 1;
-        }}
-      >
-        Vis dismissable
-      </Button>
+      <>
+        <Button
+          variant="secondary"
+          onClick={() => {
+            toast.success(`Toast nummer ${counter}`);
+            counter += 1;
+          }}
+        >
+          Vis med lukkekryss
+        </Button>
+        <Button
+          variant="secondary"
+          onClick={() => {
+            toast.success(`Toast nummer ${counter}`, { dismissable: false });
+            counter += 1;
+          }}
+        >
+          Vis uten lukkekryss
+        </Button>
+      </>
     );
   },
 });
@@ -89,14 +100,27 @@ export const Dismissable = meta.story({
 export const AutoClose = meta.story({
   render: () => {
     return (
-      <Button
-        variant="secondary"
-        onClick={() =>
-          toast.info('Jeg forsvinner', { timeout: 2000, dismissable: false })
-        }
-      >
-        Vis timeout
-      </Button>
+      <>
+        <Button
+          variant="secondary"
+          onClick={() =>
+            toast.info('Jeg forsvinner', { timeout: 2000, dismissable: false })
+          }
+        >
+          Vis med automatisk lukking
+        </Button>
+        <Button
+          variant="secondary"
+          onClick={() =>
+            toast.info('Jeg forsvinner ikke automatisk', {
+              timeout: false,
+              dismissable: true,
+            })
+          }
+        >
+          Vis uten automatisk lukking
+        </Button>
+      </>
     );
   },
 });
