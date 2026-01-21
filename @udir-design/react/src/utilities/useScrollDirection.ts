@@ -2,9 +2,16 @@ import { useEffect, useRef, useState } from 'react';
 
 type Dir = 'up' | 'down';
 
-export function useScrollDirection(): Dir {
+type ScrollDirection = {
+  dir: Dir;
+  isAtTop: boolean;
+};
+
+export function useScrollDirection(): ScrollDirection {
   const [dir, setDir] = useState<Dir>('up');
+  const [isAtTop, setIsAtTop] = useState(true);
   const dirRef = useRef<Dir>('up');
+  const topRef = useRef(true);
   const raf = useRef<number | null>(null);
 
   useEffect(() => {
@@ -28,6 +35,13 @@ export function useScrollDirection(): Dir {
 
       lastY = y;
       lastT = now;
+
+      // top state
+      const atTop = y <= 0;
+      if (atTop !== topRef.current) {
+        topRef.current = atTop;
+        setIsAtTop(atTop);
+      }
 
       // keep visible near the top
       if (y <= START_AT) {
@@ -65,5 +79,5 @@ export function useScrollDirection(): Dir {
     };
   }, []);
 
-  return dir;
+  return { dir, isAtTop };
 }

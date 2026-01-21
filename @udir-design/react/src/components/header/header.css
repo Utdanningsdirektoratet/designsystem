@@ -255,16 +255,27 @@
     }
   }
 
+  /* Shadow when not on top */
+  &[data-top='true'] {
+    box-shadow: none;
+  }
+  &[data-top='false'] {
+    box-shadow: var(--ds-shadow-sm);
+  }
+
   /* Sticky auto hide header */
   &[data-scroll-direction] {
     position: sticky;
     top: 0;
-    transition: transform 200ms ease;
+    transition:
+      transform 200ms ease,
+      box-shadow 200ms ease;
   }
   &[data-scroll-direction='down']:not(:has([popover]:popover-open)) {
     transform: translateY(
       calc(-1 * var(--udsc-header-height) - (var(--udsc-header-padding) * 2))
     );
+    box-shadow: none;
   }
   &[data-scroll-direction='up'] {
     transform: translateY(0);

@@ -48,8 +48,9 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(function Header(
   },
   ref,
 ) {
-  const scrollDirection = useScrollDirection();
-  const dataScrollDirection = sticky ? scrollDirection : undefined;
+  const { dir, isAtTop } = useScrollDirection();
+  const dataScrollDirection = sticky ? dir : undefined;
+  const dataTop = sticky ? isAtTop : undefined;
   const isMain = applicationName === 'Utdanningsdirektoratet';
   const LogoContainer = href !== null ? 'a' : 'div';
 
@@ -58,6 +59,7 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(function Header(
       className={cl('uds-header', className)}
       ref={ref}
       data-scroll-direction={dataScrollDirection}
+      data-top={dataTop}
       style={{ '--udsc-header-max-width': maxWidth } as CSSProperties}
       {...rest}
     >
