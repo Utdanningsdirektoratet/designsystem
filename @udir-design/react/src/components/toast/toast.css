@@ -1,0 +1,143 @@
+.uds-toast {
+  /* default color/variant: info */
+  --uds-toast-background: var(--ds-color-info-surface-tinted);
+  --uds-toast-border-color: var(--ds-color-border-default);
+  --uds-toast-border-width: var(--ds-border-width-default);
+  --uds-toast-border-style: solid;
+  --uds-toast-border-radius: var(--ds-border-radius-md);
+  --uds-toast-button-hover: var(--ds-color-info-surface-hover);
+  --uds-toast-button-active: var(--ds-color-info-surface-active);
+  --uds-toast-icon-color: var(--ds-color-info-text-subtle);
+  --uds-toast-icon-url: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fillRule='evenodd' d='M4 3.25C3.58579 3.25 3.25 3.58579 3.25 4V20C3.25 20.4142 3.58579 20.75 4 20.75H20C20.4142 20.75 20.75 20.4142 20.75 20V4C20.75 3.58579 20.4142 3.25 20 3.25H4ZM4.75 19.25V4.75H19.25V19.25H4.75ZM11 7.75C11 7.19772 11.4477 6.75 12 6.75C12.5523 6.75 13 7.19772 13 7.75C13 8.30228 12.5523 8.75 12 8.75C11.4477 8.75 11 8.30228 11 7.75ZM10.5 10C10.0858 10 9.75 10.3358 9.75 10.75C9.75 11.1642 10.0858 11.5 10.5 11.5H11.25V15.5H10.5C10.0858 15.5 9.75 15.8358 9.75 16.25C9.75 16.6642 10.0858 17 10.5 17H12H13.5C13.9142 17 14.25 16.6642 14.25 16.25C14.25 15.8358 13.9142 15.5 13.5 15.5H12.75V10.75C12.75 10.3358 12.4142 10 12 10H10.5Z'/%3E%3C/svg%3E");
+  --uds-toast-color: var(--ds-color-info-text-default);
+  --uds-toast-spacing: var(--ds-size-2);
+  --uds-toast-icon-size: var(--ds-size-6);
+  --uds-toast-padding-inline-end: var(--ds-size-4);
+  --uds-toast-padding-block: var(--ds-size-2);
+
+  background: var(--uds-toast-background);
+  border-radius: var(--uds-toast-border-radius);
+  border-width: var(--uds-toast-border-width);
+  border-style: var(--uds-toast-border-style);
+  border-color: var(--uds-toast-border-color);
+  box-sizing: border-box;
+  color: var(--uds-toast-color);
+  height: var(--ds-size-12);
+  padding-block: var(--uds-toast-padding-block);
+  padding-inline-start: var(--uds-toast-padding-inline-end);
+  padding-inline-end: var(--uds-toast-padding-inline-end);
+  box-shadow: var(--ds-shadow-md);
+  position: fixed;
+  inset: auto 0 var(--ds-size-6) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--uds-toast-spacing);
+  z-index: 99999;
+
+  /** Animation */
+  transition: translate 0.4s;
+  animation: uds-toast-close 200ms ease-out forwards;
+  &[open] {
+    animation:
+      uds-toast-open 200ms ease-out forwards,
+      uds-toast-timeout 1ms var(--uds-toast-timeout, 3000ms) forwards;
+  }
+  &[data-timeout='false'],
+  &[aria-busy='true'],
+  &[open]:hover {
+    animation-play-state: running, paused;
+  }
+
+  /** Adjust button styling to fit toast */
+  .ds-button {
+    display: inline-flex;
+    --dsc-button-color: var(--uds-toast-icon-color);
+    --dsc-button-padding: var(--ds-size-1);
+    --dsc-button-background--active: var(--uds-toast-button-active);
+    --dsc-button-background--hover: var(--uds-toast-button-hover);
+    --dsc-button-size: var(--ds-size-8);
+  }
+
+  &[data-dismissable='false'] {
+    .ds-button {
+      display: none;
+    }
+  }
+
+  /** Add icon */
+  &[data-icon='true'] {
+    padding-inline-start: calc(
+      var(--uds-toast-padding-inline-end) + var(--uds-toast-icon-size) +
+        var(--uds-toast-spacing)
+    );
+
+    & > p::before {
+      background: var(--uds-toast-icon-color);
+      content: '';
+      height: var(--uds-toast-icon-size);
+      margin-inline: calc(
+        (var(--uds-toast-icon-size) + var(--uds-toast-spacing)) * -1
+      ); /* Using margin instead of top/left to avoid position: relative and to support dir="rtl" */
+      mask: center / contain no-repeat var(--uds-toast-icon-url);
+      position: absolute;
+      translate: 0 calc((1lh - var(--uds-toast-icon-size)) / 2); /* Center icon to line height */
+      width: var(--uds-toast-icon-size);
+
+      @media (forced-colors: active) {
+        background: CanvasText;
+      }
+    }
+  }
+
+  /** Adjust colors and icon based on data-color */
+  &[data-color] {
+    --uds-toast-background: var(--ds-color-surface-tinted);
+    --uds-toast-border-color: var(--ds-color-border-default);
+    --uds-toast-icon-color: var(--ds-color-text-subtle);
+    --uds-toast-color: var(--ds-color-text-default);
+  }
+
+  &[data-color='success'] {
+    --uds-toast-icon-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fillRule='evenodd' d='M3.75 12C3.75 7.44365 7.44365 3.75 12 3.75C16.5563 3.75 20.25 7.44365 20.25 12C20.25 16.5563 16.5563 20.25 12 20.25C7.44365 20.25 3.75 16.5563 3.75 12ZM12 2.25C6.61522 2.25 2.25 6.61522 2.25 12C2.25 17.3848 6.61522 21.75 12 21.75C17.3848 21.75 21.75 17.3848 21.75 12C21.75 6.61522 17.3848 2.25 12 2.25ZM16.5725 9.48444C16.8401 9.16824 16.8007 8.695 16.4845 8.42745C16.1683 8.15989 15.695 8.19932 15.4275 8.51553L10.454 14.3933L8.03033 11.9697C7.73744 11.6768 7.26256 11.6768 6.96967 11.9697C6.67678 12.2625 6.67678 12.7374 6.96967 13.0303L9.96967 16.0303C10.118 16.1786 10.3216 16.2581 10.5312 16.2493C10.7407 16.2406 10.9371 16.1446 11.0725 15.9844L16.5725 9.48444Z'/%3E%3C/svg%3E");
+    --uds-toast-button-hover: var(--ds-color-success-surface-hover);
+    --uds-toast-button-active: var(--ds-color-success-surface-active);
+  }
+
+  &[data-color='danger'] {
+    --uds-toast-icon-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fillRule='evenodd' clipRule='evenodd' d='M8.27208 2.25c-.19891 0-.38968.07902-.53033.21967L2.46967 7.74175A.75.75 0 0 0 2.25 8.27208v7.45582c0 .19891.07902.38968.21967.53033l5.27208 5.27208c.14065.14065.33142.21967.53033.21967h7.45582c.19891 0 .38968-.07902.53033-.21967l5.27208-5.27208A.75.75 0 0 0 21.75 15.7279V8.27208a.75.75 0 0 0-.21967-.53033L16.2583 2.46967A.75.75 0 0 0 15.7279 2.25H8.27208ZM3.75 8.58274 8.58274 3.75h6.83456L20.25 8.58274v6.83456L15.4173 20.25H8.58274L3.75 15.4173V8.58274ZM9.03033 7.96967a.75.75 0 0 0-1.06066 1.06066L10.9393 12l-2.96963 2.9697a.75.75 0 1 0 1.06066 1.0606L12 13.0607l2.9697 2.9696a.75.75 0 1 0 1.0606-1.0606L13.0607 12l2.9696-2.96967a.75.75 0 1 0-1.0606-1.06066L12 10.9393 9.03033 7.96967Z'/%3E%3C/svg%3E");
+    --uds-toast-button-hover: var(--ds-color-danger-surface-hover);
+    --uds-toast-button-active: var(--ds-color-danger-surface-active);
+  }
+
+  &[data-color='warning'] {
+    --uds-toast-icon-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fillRule='evenodd' d='M12 2.25C12.2731 2.25 12.5245 2.3984 12.6565 2.63743L22.1828 19.8874C22.3111 20.1198 22.3071 20.4026 22.1722 20.6312C22.0373 20.8597 21.7917 21 21.5263 21H2.47372C2.20832 21 1.96268 20.8597 1.8278 20.6312C1.69292 20.4026 1.68888 20.1198 1.81718 19.8874L11.3435 2.63743C11.4755 2.3984 11.7269 2.25 12 2.25ZM20.2553 19.5L12 4.55142L3.74467 19.5H20.2553ZM12 8.75C12.4142 8.75 12.75 9.08579 12.75 9.5V13.5C12.75 13.9142 12.4142 14.25 12 14.25C11.5858 14.25 11.25 13.9142 11.25 13.5V9.5C11.25 9.08579 11.5858 8.75 12 8.75ZM12 15.5C11.4477 15.5 11 15.9477 11 16.5C11 17.0523 11.4477 17.5 12 17.5C12.5523 17.5 13 17.0523 13 16.5C13 15.9477 12.5523 15.5 12 15.5Z'/%3E%3C/svg%3E");
+    --uds-toast-button-hover: var(--ds-color-warning-surface-hover);
+    --uds-toast-button-active: var(--ds-color-warning-surface-active);
+  }
+
+  &[aria-busy='true'] {
+    --uds-toast-icon-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' fill='none' stroke='currentcolor' stroke-width='5' stroke-linecap='round'%3E%3Cstyle%3E @keyframes rotate %7B to %7B rotate:360deg %7D %7D @keyframes stroke %7B 50%25 %7Bstroke-dasharray:100,200;stroke-dashoffset:-15;transform:rotate(0deg)%7D to %7Bstroke-dasharray:1,200;stroke-dashoffset:-120;transform:rotate(15deg)%7D %7D circle:last-child%7Banimation:stroke ease-in-out infinite 2s,rotate linear infinite 2s;transform-origin:center%7D%3C/style%3E%3Ccircle cx='25' cy='25' r='20' opacity='.1'%3E%3C/circle%3E%3Ccircle cx='25' cy='25' r='20' stroke-dasharray='1, 200'%3E%3C/circle%3E%3C/svg%3E") !important;
+  }
+}
+
+@keyframes uds-toast-open {
+  from {
+    opacity: 0;
+    transform: translateY(var(--ds-size-6)) scale(0.6);
+  }
+}
+
+@keyframes uds-toast-timeout {
+  /* no-op; we only need it so animationend fires */
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes uds-toast-close {
+  to {
+    opacity: 0;
+    transform: translateY(var(--ds-size-2));
+    visibility: hidden;
+  }
+}
