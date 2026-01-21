@@ -15,7 +15,13 @@
     "skipDefaultLibCheck": true,
     "paths": {
       "@udir-design/react": ["./@udir-design/react/src/index.ts"],
-      "@udir-design/theme": ["./@udir-design/theme/src/index.ts"]
+      "@udir-design/theme": ["./@udir-design/theme/src/index.ts"],
+      "@udir-design/icons": ["./@udir-design/icons/src/index.ts"],
+      "@udir-design/icons/metadata": ["./@udir-design/icons/src/metadata.ts"],
+      "@udir-design/symbols": ["./@udir-design/symbols/generated-src/index.ts"],
+      "@udir-design/symbols/metadata": [
+        "./@udir-design/symbols/generated-src/metadata.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
