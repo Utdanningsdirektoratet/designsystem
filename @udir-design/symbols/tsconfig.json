@@ -11,6 +11,6 @@
     "declaration": true,
     "noEmit": true
   },
-  "include": ["tmp/**/*"],
+  "include": ["generated-src/**/*"],
   "exclude": ["dist", "node_modules"]
 }

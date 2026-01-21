@@ -31,17 +31,7 @@ ymlList.forEach((file) => {
 });
 
 writeFileSync(
-  resolve(__dirname, '../dist/metadata.js'),
-  `const metadata = ${JSON.stringify(metadata)};\n\n module.exports = metadata;`,
-);
-
-writeFileSync(
-  resolve(__dirname, '../dist/metadata.mjs'),
-  `const metadata = ${JSON.stringify(metadata)};\n\n export default metadata;`,
-);
-
-writeFileSync(
-  resolve(__dirname, '../dist/metadata.d.ts'),
+  resolve(__dirname, '../generated-src/metadata.ts'),
   `export type UdirSymbol = {
     id: string;
     name: string;
@@ -49,17 +39,17 @@ writeFileSync(
     sub_category: string;
     keywords: string[];
     variant: string;
-    updated_at: Date;
-    created_at: Date;
+    updated_at: string;
+    created_at: string;
   }
 
   type UdirSymbolName = ${Object.keys(metadata)
     .map((symbol) => `"${symbol}"`)
     .join(' | ')};
 
-  declare const metadata: {
+  const metadata: {
     [key in UdirSymbolName]: UdirSymbol;
-  };
+  } = ${JSON.stringify(metadata)};
 
   export default metadata;`,
 );

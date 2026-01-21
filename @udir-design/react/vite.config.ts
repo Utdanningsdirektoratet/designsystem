@@ -39,6 +39,8 @@ export default defineConfig({
       '@udir-design/react': 'src/stable',
       '@udir-design/icons/metadata': '../icons/src/metadata',
       '@udir-design/icons': '../icons/src/index',
+      '@udir-design/symbols/metadata': '../symbols/generated-src/metadata',
+      '@udir-design/symbols': '../symbols/generated-src/index',
     }),
   },
 
