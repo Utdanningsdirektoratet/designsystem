@@ -39,12 +39,11 @@ import { Badge } from '@udir-design/react';
 
 ### Fargar
 
-`Badge` finst kun i neutral og accent, i tillegg til varselfargane. Du kan endre fargen med `data-color`.
-Du kan òg setje `variant` direkte for å endre bakgrunnsfargen til `tinted` variant, som er noko lysare.
+`Badge` finst i neutral, i tillegg til varselfargane. Du kan endre fargen med `data-color`. Du kan òg setje `variant` direkte for å endre bakgrunnsfargen til `tinted` variant, som er noko lysare.
+
+Fordi raud er godt etablert som farge for å indikere notifikasjonar, vik den tilrådde bruken her noko frå standard semantikk for varselfargar. For notifikasjonar plasserte på ikon eller avatarar blir fargen `danger` tilrådd. Ved bruk inline er hovudregelen å nytte `neutral`. I enkelte tilfelle kan det vere aktuelt å nytte dei andre varselfargane.
 
 <Canvas of={BadgeStories.ColorVariants} />
-
-<Canvas of={BadgeStories.SemanticColorVariants} />
 
 ### Vise staus
 
@@ -57,7 +56,7 @@ Dersom du ikkje sender inn `count`, blir berre ein sirkel vist. Dette kan brukas
 ### Flytande over element
 
 Du kan setje plassering med `placement`. Dersom du plasserer `Badge` over eit sirkulært element kan du setje `overlap="circle"` for at badgen skal flyte over elementet.
-Det er vanleg å bruke raud farge på `Badge` som flyt over eit element.
+Det er vanleg å bruke raud farge, altså `data-color="danger"` på `Badge` som flyt over eit element.
 
 <Canvas of={BadgeStories.Floating} />
 
@@ -71,6 +70,10 @@ Dette fungerer og når du bruker `overlap="circle"`.
 Du kan òg bruke komponenten inline.
 
 <Canvas of={BadgeStories.InTabs} />
+
+Under ser du et eksempel på bruk av varselfargene til `Badge` inline.
+
+<Canvas of={BadgeStories.SystemAlerts} />
 
 ## Retningslinjer
 

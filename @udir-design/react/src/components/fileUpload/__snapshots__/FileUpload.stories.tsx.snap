@@ -442,7 +442,7 @@ exports[`Example Trigger 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<div style="display: flex; justify-content: center;">
+<div style="display: flex; gap: var(--ds-size-18); justify-content: center;">
   <div data-size="md">
     <label
       data-weight="medium"

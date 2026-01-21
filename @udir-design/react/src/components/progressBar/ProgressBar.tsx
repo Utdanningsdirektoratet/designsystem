@@ -1,6 +1,7 @@
 import './progressBar.css';
 import '@u-elements/u-progress';
 import { type Size } from '@digdir/designsystemet-react';
+import type { Color } from '@digdir/designsystemet-types';
 import { UHTMLProgressShadowRoot } from '@u-elements/u-progress';
 import cl from 'clsx/lite';
 import type { HTMLAttributes } from 'react';
@@ -18,7 +19,7 @@ export type ProgressBarProps = Omit<
   /**
    * Changes color of the bar and background
    */
-  'data-color'?: 'neutral' | 'support1' | 'accent';
+  'data-color'?: Color;
   /**
    * Total number of steps in the process
    */

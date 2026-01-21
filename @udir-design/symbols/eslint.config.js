@@ -10,4 +10,7 @@ export default defineConfig(
   includeIgnoreFile(gitignorePath),
   nxEslintPlugin.configs['flat/react'],
   baseConfig,
+  {
+    ignores: ['./generated-src'],
+  },
 );

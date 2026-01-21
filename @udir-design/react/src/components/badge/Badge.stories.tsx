@@ -9,7 +9,12 @@ import {
 import preview from '.storybook/preview';
 import { Avatar } from '../avatar/Avatar';
 import { Button } from '../button/Button';
+import { Card } from '../card/Card';
+import { Details } from '../details/Details';
 import { Tabs } from '../tabs/Tabs';
+import { Tag } from '../tag/Tag';
+import { Heading } from '../typography/heading/Heading';
+import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Badge } from './Badge';
 
 const meta = preview.meta({
@@ -142,7 +147,7 @@ export const Status = meta.story({
 });
 
 export const InTabs = meta.story({
-  args: { 'data-color': 'accent' },
+  args: { 'data-color': 'neutral' },
   render: (args) => (
     <Tabs defaultValue="value1">
       <Tabs.List>
@@ -201,18 +206,6 @@ const ColorsMap: {
     'data-color': 'neutral',
     'data-variant': 'tinted',
   },
-  accentBase: {
-    'data-color': 'accent',
-  },
-  accentTinted: {
-    'data-color': 'accent',
-    'data-variant': 'tinted',
-  },
-};
-
-const SemanticColorsMap: {
-  [key: string]: { [key: string]: string };
-} = {
   dangerBase: {
     'data-color': 'danger',
   },
@@ -262,21 +255,81 @@ export const ColorVariants = meta.story({
   ),
 });
 
-export const SemanticColorVariants = meta.story({
+export const SystemAlerts = meta.story({
   render: () => (
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(4, 60px)',
-        gap: 'var(--ds-size-2)',
-        justifyContent: 'center',
-        height: '100%',
-        width: '100%',
-      }}
-    >
-      {Object.entries(SemanticColorsMap).map(([key, value]) => (
-        <Badge key={key} {...value} count={15} maxCount={9} />
-      ))}
+    <div style={{ display: 'flex', flexDirection: 'column', width: '30rem' }}>
+      <Heading style={{ marginBlockEnd: 'var(--ds-size-4' }}>
+        Systemvarsler
+      </Heading>
+      <Details>
+        <Details.Summary>
+          Kritisk <Badge count={2} maxCount={9} data-color="danger" />
+        </Details.Summary>
+        <Details.Content
+          style={{
+            gap: 'var(--ds-size-4)',
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          {Array.from({ length: 2 }, (_) => (
+            <Varsel importance="danger" />
+          ))}
+        </Details.Content>
+      </Details>
+      <Details>
+        <Details.Summary>
+          Advarsler <Badge count={6} maxCount={9} data-color="warning" />
+        </Details.Summary>
+        <Details.Content
+          style={{
+            gap: 'var(--ds-size-4)',
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          {Array.from({ length: 6 }, (_) => (
+            <Varsel importance="warning" />
+          ))}
+        </Details.Content>
+      </Details>
+      <Details>
+        <Details.Summary>
+          Andre hendelser <Badge count={11} maxCount={9} data-color="info" />
+        </Details.Summary>
+        <Details.Content>
+          <Details.Content
+            style={{
+              gap: 'var(--ds-size-4)',
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+          >
+            {Array.from({ length: 11 }, (_) => (
+              <Varsel importance="info" />
+            ))}
+          </Details.Content>
+        </Details.Content>
+      </Details>
     </div>
   ),
 });
+
+function Varsel({ importance }: { importance: 'danger' | 'warning' | 'info' }) {
+  const tagText = importance === 'danger' ? 'Kritisk' : 'Advarsler';
+  return (
+    <Card>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Heading level={3} data-size="xs">
+          Varsel
+        </Heading>
+        {importance !== 'info' && (
+          <Tag data-color={importance} data-size="sm">
+            {tagText}
+          </Tag>
+        )}
+      </div>
+      <Paragraph>Dette er et varsel.</Paragraph>
+    </Card>
+  );
+}

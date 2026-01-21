@@ -1,0 +1,184 @@
+'use client';
+import React, { type Ref, type SVGProps, forwardRef } from 'react';
+import { useId } from './util/useId';
+interface SVGRProps {
+  title?: string;
+  titleId?: string;
+}
+interface SVGRProps {
+  size?: number | string;
+}
+const SvgSaksOgBlomstFill = forwardRef(
+  (
+    {
+      size,
+      title,
+      titleId: _titleId,
+      ...props
+    }: SVGProps<SVGSVGElement> & SVGRProps,
+    ref: Ref<SVGSVGElement>,
+  ) => {
+    let titleId: string | undefined = useId();
+    titleId = title ? (_titleId ? _titleId : 'title-' + titleId) : undefined;
+    const __srcW = 41;
+    const __srcH = 42;
+    const __isWide = false;
+    const __sizeProps = (() => {
+      if (props?.width != null || props?.height != null) return {};
+      const v = size ?? (__isWide ? __srcW : __srcH); // set size based on original aspect ratio
+      return __isWide
+        ? {
+            style: {
+              width: v,
+            },
+          }
+        : {
+            style: {
+              height: v,
+            },
+          };
+    })();
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 41 42"
+        {...__sizeProps}
+        focusable="false"
+        role="img"
+        ref={ref}
+        aria-labelledby={titleId}
+        {...props}
+      >
+        {title ? <title id={titleId}>{title}</title> : null}
+        <path
+          fill="#BED5E8"
+          stroke="#303030"
+          strokeMiterlimit={10}
+          strokeWidth={0.4}
+          d="M19.876 22.918 27.2 34.73s.776 1.449 2.1 1.67L23.19 23.714l11.682 7.3s.105-.832-.666-1.434c-.692-.542-10.689-7.932-12.673-9.393l-1.657 2.732zm-2.58-11.65s-.78-1.56.46-4.135c1.795-3.723-2.202-7.726-5.896-5.486C9.117 3.31 9.064 8.13 13.073 9.343c1.32.4 2.52.165 3.988 3.29 1.506 3.202 2.258 5.376.077 5.943-1.746.453-6.64-2.638-7.533-3.494-1.48-1.419-.534-2.484-2.126-4.2-1.367-1.475-5.137-1.627-6.091.987-1.026 2.813.035 5 2.587 5.578 2.89.654 3.194-2.183 6.394-.633 3.43 1.66 8.719 4.857 8.719 4.857l.55.887 1.666-2.61-4.006-8.677zm-6.628-6.502c.239-1.913 1.924-3.277 3.766-3.047 1.841.23 3.14 1.966 2.9 3.879-.238 1.913-1.923 3.277-3.765 3.048-1.841-.23-3.14-1.967-2.9-3.88ZM4.292 16.733a3.105 3.105 0 1 1 .77-6.163 3.105 3.105 0 0 1-.77 6.163ZM18.5 20.18a.543.543 0 0 1 .608-.472c.3.038.51.308.472.608a.54.54 0 0 1-.608.471.54.54 0 0 1-.472-.607Z"
+        />
+        <path
+          fill="#76C69D"
+          stroke="#303030"
+          strokeMiterlimit={10}
+          strokeWidth={0.4}
+          d="M10.742 40.68s9.143-22.018 14.392-24.876c0 0-4.627 2.642-13.669 25.196l-.723-.318z"
+        />
+        <path
+          fill="#76C69D"
+          stroke="#303030"
+          strokeMiterlimit={10}
+          strokeWidth={0.4}
+          d="M13.663 35.738s3.12.852 5.636.62c2.295-.21 1.825-2.604 4.748-2.672 0 0-.226-1.502-2.486-2.27-3.455-1.173-3.57-.067-4.88.68-2.067 1.179-3.018 3.642-3.018 3.642ZM14.704 31.708s-2.65-1.856-4.08-3.94c-1.303-1.9.837-3.067-.976-5.36 0 0 1.3-.786 3.334.462 3.11 1.908 2.331 2.703 2.596 4.188.415 2.343-.872 4.649-.872 4.649z"
+        />
+        <path
+          fill="#F2E8DA"
+          stroke="#303030"
+          strokeMiterlimit={10}
+          strokeWidth={0.4}
+          d="M32.127 5.027s2.842-3.854 4.47 1.375c0 0 4.69 1.873.624 4.533 0 0 4.618 2.346-.023 4.665 0 0 .082 4.445-4.18 2.042 0 0-.809 4.76-4.477 1.573 0 0-4.604 1.493-3.275-3.58 0 0-4.142 1.215-2.859-3.672 0 0-2.429-4.399 2.404-4.063 0 0-2.912-3.95 2.702-3.888 0 0 3.28-3.843 4.61 1.017z"
+        />
+        <path
+          fill="#7F99AE"
+          stroke="#303030"
+          strokeMiterlimit={10}
+          strokeWidth={0.2}
+          d="M29.411 11.67a.411.411 0 1 0 0-.822.411.411 0 0 0 0 .823Z"
+        />
+        <path
+          fill="#BED5E8"
+          stroke="#303030"
+          strokeMiterlimit={10}
+          strokeWidth={0.2}
+          d="M30.245 12.892a.514.514 0 1 0 0-1.029.514.514 0 0 0 0 1.029Z"
+        />
+        <path
+          fill="#7F99AE"
+          stroke="#303030"
+          strokeMiterlimit={10}
+          strokeWidth={0.2}
+          d="M31.445 12.24a.417.417 0 1 0 0-.834.417.417 0 0 0 0 .834Z"
+        />
+        <path
+          fill="#BED5E8"
+          stroke="#303030"
+          strokeMiterlimit={10}
+          strokeWidth={0.2}
+          d="M30.663 11.204a.602.602 0 1 0 0-1.204.602.602 0 0 0 0 1.204Z"
+        />
+        <path
+          fill="#D6B689"
+          stroke="#303030"
+          strokeMiterlimit={10}
+          strokeWidth={0.2}
+          d="M35.48 17.293c-2.606 1.248-3.318-4.504-3.318-4.504s6.233 3.108 3.319 4.504Z"
+        />
+        <path
+          fill="#BFA687"
+          stroke="#303030"
+          strokeMiterlimit={10}
+          strokeWidth={0.2}
+          d="M38.202 13.593c-1.418 2.52-5.304-1.78-5.304-1.78s6.888-1.036 5.304 1.78Z"
+        />
+        <path
+          fill="#D6B689"
+          stroke="#303030"
+          strokeMiterlimit={10}
+          strokeWidth={0.2}
+          d="M37.833 8.445c.451 2.855-5.266 1.893-5.266 1.893s4.76-5.083 5.266-1.893Z"
+        />
+        <path
+          fill="#BFA687"
+          stroke="#303030"
+          strokeMiterlimit={10}
+          strokeWidth={0.2}
+          d="M35.068 4.78c2.008 2.08-3.224 4.574-3.224 4.574s.978-6.895 3.224-4.573Z"
+        />
+        <path
+          fill="#D6B689"
+          stroke="#303030"
+          strokeMiterlimit={10}
+          strokeWidth={0.2}
+          d="M29.852 3.523c2.85.481.117 5.594.117 5.594s-3.302-6.132-.117-5.594Z"
+        />
+        <path
+          fill="#BFA687"
+          stroke="#303030"
+          strokeMiterlimit={10}
+          strokeWidth={0.2}
+          d="M25.497 4.977c2.609-1.242 3.308 4.511 3.308 4.511s-6.225-3.123-3.308-4.51Z"
+        />
+        <path
+          fill="#D6B689"
+          stroke="#303030"
+          strokeMiterlimit={10}
+          strokeWidth={0.2}
+          d="M22.736 9.396c1.272-2.596 5.396 1.478 5.396 1.478s-6.819 1.423-5.396-1.478Z"
+        />
+        <path
+          fill="#BFA687"
+          stroke="#303030"
+          strokeMiterlimit={10}
+          strokeWidth={0.2}
+          d="M22.892 13.986c-.448-2.855 5.265-1.889 5.265-1.889s-4.764 5.08-5.265 1.89Z"
+        />
+        <path
+          fill="#D6B689"
+          stroke="#303030"
+          strokeMiterlimit={10}
+          strokeWidth={0.2}
+          d="M26.149 18.284c-2.117-1.968 2.974-4.738 2.974-4.738s-.608 6.938-2.974 4.738Z"
+        />
+        <path
+          fill="#BFA687"
+          stroke="#303030"
+          strokeMiterlimit={10}
+          strokeWidth={0.2}
+          d="M30.586 19.461c-2.862-.395-.286-5.587-.286-5.587s3.486 6.03.286 5.587Z"
+        />
+      </svg>
+    );
+  },
+);
+export default SvgSaksOgBlomstFill;

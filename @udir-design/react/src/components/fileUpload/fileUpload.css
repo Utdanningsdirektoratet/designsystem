@@ -3,7 +3,7 @@
   width: fit-content;
 
   & > input {
-    opacity: 0;
+    @composes ds-sr-only from '@digdir/designsystemet-css/base.css';
   }
 
   &[aria-busy='true'] {

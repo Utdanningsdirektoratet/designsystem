@@ -17,13 +17,49 @@ exports[`Color Variants 1`] = `
   <span
     data-count="9+"
     data-variant="base"
-    data-color="accent"
+    data-color="danger"
   >
   </span>
   <span
     data-count="9+"
     data-variant="tinted"
-    data-color="accent"
+    data-color="danger"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="base"
+    data-color="info"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="tinted"
+    data-color="info"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="base"
+    data-color="warning"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="tinted"
+    data-color="warning"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="base"
+    data-color="success"
+  >
+  </span>
+  <span
+    data-count="9+"
+    data-variant="tinted"
+    data-color="success"
   >
   </span>
 </div>
@@ -396,7 +432,7 @@ exports[`In Tabs 1`] = `
       <span
         data-count="10+"
         data-variant="base"
-        data-color="accent"
+        data-color="neutral"
       >
       </span>
     </button>
@@ -413,7 +449,7 @@ exports[`In Tabs 1`] = `
       <span
         data-count="2"
         data-variant="base"
-        data-color="accent"
+        data-color="neutral"
       >
       </span>
     </button>
@@ -438,59 +474,6 @@ exports[`Preview 1`] = `
   data-variant="base"
 >
 </span>
-`;
-
-exports[`Semantic Color Variants 1`] = `
-<div style="display: grid; grid-template-columns: repeat(4, 60px); gap: var(--ds-size-2); justify-content: center; height: 100%; width: 100%;">
-  <span
-    data-count="9+"
-    data-variant="base"
-    data-color="danger"
-  >
-  </span>
-  <span
-    data-count="9+"
-    data-variant="tinted"
-    data-color="danger"
-  >
-  </span>
-  <span
-    data-count="9+"
-    data-variant="base"
-    data-color="info"
-  >
-  </span>
-  <span
-    data-count="9+"
-    data-variant="tinted"
-    data-color="info"
-  >
-  </span>
-  <span
-    data-count="9+"
-    data-variant="base"
-    data-color="warning"
-  >
-  </span>
-  <span
-    data-count="9+"
-    data-variant="tinted"
-    data-color="warning"
-  >
-  </span>
-  <span
-    data-count="9+"
-    data-variant="base"
-    data-color="success"
-  >
-  </span>
-  <span
-    data-count="9+"
-    data-variant="tinted"
-    data-color="success"
-  >
-  </span>
-</div>
 `;
 
 exports[`Status 1`] = `
@@ -527,5 +510,324 @@ exports[`Status 1`] = `
       </path>
     </svg>
   </span>
+</div>
+`;
+
+exports[`System Alerts 1`] = `
+<div style="display: flex; flex-direction: column; width: 30rem;">
+  <h2 style="margin-block-end: var(--ds-size-4;">
+    Systemvarsler
+  </h2>
+  <u-details
+    data-variant="default"
+    role="group"
+  >
+    <u-summary
+      aria-expanded="false"
+      role="button"
+      slot="summary"
+      tabindex="0"
+    >
+      Kritisk
+      <span
+        data-count="2"
+        data-variant="base"
+        data-color="danger"
+      >
+      </span>
+    </u-summary>
+    <div style="gap: var(--ds-size-4); display: flex; flex-direction: column;">
+      <div data-variant="default">
+        <div style="display: flex; justify-content: space-between;">
+          <h3 data-size="xs">
+            Varsel
+          </h3>
+          <span
+            data-variant="default"
+            data-color="danger"
+            data-size="sm"
+          >
+            Kritisk
+          </span>
+        </div>
+        <p data-variant="default">
+          Dette er et varsel.
+        </p>
+      </div>
+      <div data-variant="default">
+        <div style="display: flex; justify-content: space-between;">
+          <h3 data-size="xs">
+            Varsel
+          </h3>
+          <span
+            data-variant="default"
+            data-color="danger"
+            data-size="sm"
+          >
+            Kritisk
+          </span>
+        </div>
+        <p data-variant="default">
+          Dette er et varsel.
+        </p>
+      </div>
+    </div>
+  </u-details>
+  <u-details
+    data-variant="default"
+    role="group"
+  >
+    <u-summary
+      aria-expanded="false"
+      role="button"
+      slot="summary"
+      tabindex="0"
+    >
+      Advarsler
+      <span
+        data-count="6"
+        data-variant="base"
+        data-color="warning"
+      >
+      </span>
+    </u-summary>
+    <div style="gap: var(--ds-size-4); display: flex; flex-direction: column;">
+      <div data-variant="default">
+        <div style="display: flex; justify-content: space-between;">
+          <h3 data-size="xs">
+            Varsel
+          </h3>
+          <span
+            data-variant="default"
+            data-color="warning"
+            data-size="sm"
+          >
+            Advarsler
+          </span>
+        </div>
+        <p data-variant="default">
+          Dette er et varsel.
+        </p>
+      </div>
+      <div data-variant="default">
+        <div style="display: flex; justify-content: space-between;">
+          <h3 data-size="xs">
+            Varsel
+          </h3>
+          <span
+            data-variant="default"
+            data-color="warning"
+            data-size="sm"
+          >
+            Advarsler
+          </span>
+        </div>
+        <p data-variant="default">
+          Dette er et varsel.
+        </p>
+      </div>
+      <div data-variant="default">
+        <div style="display: flex; justify-content: space-between;">
+          <h3 data-size="xs">
+            Varsel
+          </h3>
+          <span
+            data-variant="default"
+            data-color="warning"
+            data-size="sm"
+          >
+            Advarsler
+          </span>
+        </div>
+        <p data-variant="default">
+          Dette er et varsel.
+        </p>
+      </div>
+      <div data-variant="default">
+        <div style="display: flex; justify-content: space-between;">
+          <h3 data-size="xs">
+            Varsel
+          </h3>
+          <span
+            data-variant="default"
+            data-color="warning"
+            data-size="sm"
+          >
+            Advarsler
+          </span>
+        </div>
+        <p data-variant="default">
+          Dette er et varsel.
+        </p>
+      </div>
+      <div data-variant="default">
+        <div style="display: flex; justify-content: space-between;">
+          <h3 data-size="xs">
+            Varsel
+          </h3>
+          <span
+            data-variant="default"
+            data-color="warning"
+            data-size="sm"
+          >
+            Advarsler
+          </span>
+        </div>
+        <p data-variant="default">
+          Dette er et varsel.
+        </p>
+      </div>
+      <div data-variant="default">
+        <div style="display: flex; justify-content: space-between;">
+          <h3 data-size="xs">
+            Varsel
+          </h3>
+          <span
+            data-variant="default"
+            data-color="warning"
+            data-size="sm"
+          >
+            Advarsler
+          </span>
+        </div>
+        <p data-variant="default">
+          Dette er et varsel.
+        </p>
+      </div>
+    </div>
+  </u-details>
+  <u-details
+    data-variant="default"
+    role="group"
+  >
+    <u-summary
+      aria-expanded="false"
+      role="button"
+      slot="summary"
+      tabindex="0"
+    >
+      Andre hendelser
+      <span
+        data-count="9+"
+        data-variant="base"
+        data-color="info"
+      >
+      </span>
+    </u-summary>
+    <div>
+      <div style="gap: var(--ds-size-4); display: flex; flex-direction: column;">
+        <div data-variant="default">
+          <div style="display: flex; justify-content: space-between;">
+            <h3 data-size="xs">
+              Varsel
+            </h3>
+          </div>
+          <p data-variant="default">
+            Dette er et varsel.
+          </p>
+        </div>
+        <div data-variant="default">
+          <div style="display: flex; justify-content: space-between;">
+            <h3 data-size="xs">
+              Varsel
+            </h3>
+          </div>
+          <p data-variant="default">
+            Dette er et varsel.
+          </p>
+        </div>
+        <div data-variant="default">
+          <div style="display: flex; justify-content: space-between;">
+            <h3 data-size="xs">
+              Varsel
+            </h3>
+          </div>
+          <p data-variant="default">
+            Dette er et varsel.
+          </p>
+        </div>
+        <div data-variant="default">
+          <div style="display: flex; justify-content: space-between;">
+            <h3 data-size="xs">
+              Varsel
+            </h3>
+          </div>
+          <p data-variant="default">
+            Dette er et varsel.
+          </p>
+        </div>
+        <div data-variant="default">
+          <div style="display: flex; justify-content: space-between;">
+            <h3 data-size="xs">
+              Varsel
+            </h3>
+          </div>
+          <p data-variant="default">
+            Dette er et varsel.
+          </p>
+        </div>
+        <div data-variant="default">
+          <div style="display: flex; justify-content: space-between;">
+            <h3 data-size="xs">
+              Varsel
+            </h3>
+          </div>
+          <p data-variant="default">
+            Dette er et varsel.
+          </p>
+        </div>
+        <div data-variant="default">
+          <div style="display: flex; justify-content: space-between;">
+            <h3 data-size="xs">
+              Varsel
+            </h3>
+          </div>
+          <p data-variant="default">
+            Dette er et varsel.
+          </p>
+        </div>
+        <div data-variant="default">
+          <div style="display: flex; justify-content: space-between;">
+            <h3 data-size="xs">
+              Varsel
+            </h3>
+          </div>
+          <p data-variant="default">
+            Dette er et varsel.
+          </p>
+        </div>
+        <div data-variant="default">
+          <div style="display: flex; justify-content: space-between;">
+            <h3 data-size="xs">
+              Varsel
+            </h3>
+          </div>
+          <p data-variant="default">
+            Dette er et varsel.
+          </p>
+        </div>
+        <div data-variant="default">
+          <div style="display: flex; justify-content: space-between;">
+            <h3 data-size="xs">
+              Varsel
+            </h3>
+          </div>
+          <p data-variant="default">
+            Dette er et varsel.
+          </p>
+        </div>
+        <div data-variant="default">
+          <div style="display: flex; justify-content: space-between;">
+            <h3 data-size="xs">
+              Varsel
+            </h3>
+          </div>
+          <p data-variant="default">
+            Dette er et varsel.
+          </p>
+        </div>
+      </div>
+    </div>
+  </u-details>
 </div>
 `;
