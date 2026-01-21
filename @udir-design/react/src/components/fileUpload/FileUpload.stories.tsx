@@ -24,7 +24,13 @@ export const Preview = meta.story({
     description: 'Beskrivelse',
   },
   render: (args) => (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <div
+      style={{
+        display: 'flex',
+        gap: 'var(--ds-size-18)',
+        justifyContent: 'center',
+      }}
+    >
       <FileUpload.Trigger {...args} id="trigger" />
       <FileUpload.Dropzone {...args} id="dropzone" />
     </div>
