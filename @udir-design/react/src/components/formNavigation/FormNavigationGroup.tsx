@@ -2,7 +2,7 @@ import cl from 'clsx/lite';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
 import type { FormNavigationState } from './FormNavigation';
-import '@u-elements/u-details';
+import '@u-elements/u-details/polyfill';
 import { STEP_STATE_ATTRIBUTE } from './FormNavigationStep';
 
 export type FormNavigationGroupProps = HTMLAttributes<HTMLDetailsElement> & {
@@ -69,18 +69,18 @@ export const FormNavigationGroup = forwardRef<
   }, []);
 
   return (
-    <u-details
+    <details
       data-state={state}
-      class={cl('uds-form-navigation__group', className)}
+      className={cl('uds-form-navigation__group', className)}
       ref={innerRef}
       open={open}
       {...rest}
     >
-      <u-summary aria-invalid={state === 'invalid' || undefined}>
+      <summary aria-invalid={state === 'invalid' || undefined}>
         <span>{title}</span>
-      </u-summary>
+      </summary>
       {children}
-    </u-details>
+    </details>
   );
 });
 

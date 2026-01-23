@@ -198,7 +198,7 @@
     width: fit-content;
 
     /* Details content - container for the steps inside the group */
-    &::part(details-content) {
+    &::details-content {
       block-size: 0;
       overflow-y: hidden;
       display: flex;
@@ -209,19 +209,17 @@
         height 400ms;
     }
 
-    &[open]::part(details-content) {
+    &[open]::details-content {
       height: auto;
     }
 
     /* Make sure focusstyles for steps inside details-content dont get clipped */
-    &[open]:has(:focus-visible:not(u-summary, u-summary *))::part(
-        details-content
-      ) {
+    &[open]:has(:focus-visible:not(summary, summary *))::details-content {
       overflow: visible;
     }
 
     /* Summary - title button of the group */
-    & u-summary {
+    & summary {
       all: unset;
       width: fit-content;
       cursor: pointer;
@@ -266,21 +264,21 @@
     }
 
     /* Chevron toggle */
-    &[open] > u-summary::after {
+    &[open] > summary::after {
       rotate: 180deg;
     }
 
     /**
       * Group state styles
       */
-    &[data-state='invalid'] > u-summary {
+    &[data-state='invalid'] > summary {
       color: var(--ds-color-danger-text-subtle);
       &:hover {
         color: var(--ds-color-danger-text-default);
       }
     }
 
-    &[data-state='completed'] > u-summary {
+    &[data-state='completed'] > summary {
       color: var(--ds-color-success-text-subtle);
       &:hover {
         color: var(--ds-color-success-text-default);
