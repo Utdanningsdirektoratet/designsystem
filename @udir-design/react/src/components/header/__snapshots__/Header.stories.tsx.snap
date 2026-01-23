@@ -100,6 +100,8 @@ exports[`Auto Hide Sticky 1`] = `
           id="uds-header-menu"
           popover="auto"
           data-variant="default"
+          data-placement="bottom"
+          style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
         >
           <nav
             aria-labelledby="header-menu-navigation"
@@ -421,7 +423,11 @@ exports[`Auto Hide Sticky 1`] = `
       Tilbud om del av opplæringen i et samiskspråklig miljø
     </h2>
     <p data-variant="default">
-      Det er tatt inn i loven at kommunen og fylkeskommunen skal gi eleven tilbud om del av opplæringen i et samiskspråklig miljø dersom det er nødvendig for at opplæringen skal være pedagogisk forsvarlig. Dette står i § 3-2 for grunnskolen og § 6-2 for videregående opplæring. Denne regelen tar i hovedsak sikte på tilfeller der opplæringen i samisk blir gitt som fjernundervisning.
+      Det er tatt inn i loven at kommunen og fylkeskommunen skal gi eleven tilbud om del av opplæringen i et samiskspråklig miljø dersom det er nødvendig for at opplæringen skal være pedagogisk forsvarlig. Dette står i
+      <a href="#">
+        § 3-2 for grunnskolen og § 6-2 for videregående opplæring
+      </a>
+      Denne regelen tar i hovedsak sikte på tilfeller der opplæringen i samisk blir gitt som fjernundervisning.
     </p>
     <p data-variant="default">
       Vurderingen av om det er «nødvendig for at opplæringen skal være pedagogisk forsvarlig», handler om hvorvidt eleven skal kunne nå kompetansemålene i læreplanen. Det kan ikke knyttes til ytre rammer for eksempel hvor mange andre som snakker det samiskspråket i området, økonomi og ressurser.
@@ -4209,6 +4215,8 @@ exports[`With User Button 1`] = `
           id="usermenu"
           popover="manual"
           data-variant="default"
+          data-placement="bottom"
+          style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
         >
           <ul>
             <li>
