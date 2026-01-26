@@ -29,6 +29,8 @@ export const FileUploadDropzone = forwardRef<
   },
   ref,
 ) {
+  const mult = multiple === true || inputProps?.multiple === true;
+
   return (
     <Field
       className={cl(`uds-file-upload`, className)}
@@ -41,11 +43,11 @@ export const FileUploadDropzone = forwardRef<
       {!!description && <FieldDescription>{description}</FieldDescription>}
       <Card>
         <>
-          {multiple ? 'Dra og slipp filer her' : 'Dra og slipp filen her'}
+          {mult ? 'Dra og slipp filer her' : 'Dra og slipp filen her'}
           <span style={{ display: 'block' }}>eller</span>
           <Button variant="secondary">
             <UploadIcon aria-hidden />
-            {multiple ? 'Velg filer' : 'Velg fil'}
+            {mult ? 'Velg filer' : 'Velg fil'}
           </Button>
         </>
       </Card>

@@ -24,7 +24,7 @@ const getMessage = (
   if (err.message) {
     return getMessage(err.message);
   }
-  // nested message, e.g. on ranking page
+  // nested message
   const nested = Object.values(err as Record<string, string | FieldError>)[0];
   return getMessage(nested);
 };
