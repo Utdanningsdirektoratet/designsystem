@@ -9,10 +9,10 @@ catalog:
   '@commitlint/cli': ^20.3.1
   '@commitlint/config-conventional': ^20.3.1
   '@commitlint/types': ^20.3.1
-  '@digdir/designsystemet': 1.9.0
-  '@digdir/designsystemet-css': 1.9.0
-  '@digdir/designsystemet-react': 1.9.0
-  '@digdir/designsystemet-types': ^1.9.0
+  '@digdir/designsystemet': 1.11.0
+  '@digdir/designsystemet-css': 1.11.0
+  '@digdir/designsystemet-react': 1.11.0
+  '@digdir/designsystemet-types': ^1.11.0
   '@eslint/compat': ^2.0.1
   '@eslint/eslintrc': ^3.3.3
   '@eslint/js': ^9.39.2
@@ -142,6 +142,7 @@ minimumReleaseAge: 1440
 
 minimumReleaseAgeExclude:
   - '@digdir/*'
+  - '@u-elements/*'
 
 packageExtensions:
   '@navikt/aksel-icons':
