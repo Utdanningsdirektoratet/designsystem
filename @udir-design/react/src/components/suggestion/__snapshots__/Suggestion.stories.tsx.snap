@@ -13,9 +13,11 @@ exports[`Always Show All 1`] = `
     <data
       data-removable="true"
       value="Sogndal"
-      role="button"
+      aria-label="Sogndal, Press to remove"
+      aria-selected="true"
+      role="option"
+      slot="items"
       tabindex="-1"
-      aria-label="Sogndal, Press to remove, 1 of 1"
     >
       Sogndal
     </data>
@@ -134,9 +136,11 @@ exports[`Controlled Independent Label Value 1`] = `
     <data
       data-removable="true"
       value="#004"
-      role="button"
+      aria-label="Lars, Press to remove"
+      aria-selected="true"
+      role="option"
+      slot="items"
       tabindex="-1"
-      aria-label="Lars, Press to remove, 1 of 1"
     >
       Lars
     </data>
@@ -251,18 +255,22 @@ exports[`Controlled Multiple 1`] = `
     <data
       data-removable="true"
       value="Sogndal"
-      role="button"
+      aria-label="Sogndal, Press to remove"
+      aria-selected="true"
+      role="option"
+      slot="items"
       tabindex="-1"
-      aria-label="Sogndal, Press to remove, 1 of 2"
     >
       Sogndal
     </data>
     <data
       data-removable="true"
       value="Stavanger"
-      role="button"
+      aria-label="Stavanger, Press to remove"
+      aria-selected="true"
+      role="option"
+      slot="items"
       tabindex="-1"
-      aria-label="Stavanger, Press to remove, 2 of 2"
     >
       Stavanger
     </data>
@@ -426,9 +434,11 @@ exports[`Controlled Single 1`] = `
     <data
       data-removable="true"
       value="Sogndal"
-      role="button"
+      aria-label="Sogndal, Press to remove"
+      aria-selected="true"
+      role="option"
+      slot="items"
       tabindex="-1"
-      aria-label="Sogndal, Press to remove, 1 of 1"
     >
       Sogndal
     </data>
@@ -835,9 +845,11 @@ exports[`Default Value 1`] = `
     <data
       data-removable="true"
       value="Sogndal"
-      role="button"
+      aria-label="Sogndal, Press to remove"
+      aria-selected="true"
+      role="option"
+      slot="items"
       tabindex="-1"
-      aria-label="Sogndal, Press to remove, 1 of 1"
     >
       Sogndal
     </data>
@@ -1140,6 +1152,7 @@ exports[`Multiple 1`] = `
       aria-expanded="true"
       autocomplete="off"
       role="combobox"
+      form="#"
     >
     <del
       data-icon="true"
