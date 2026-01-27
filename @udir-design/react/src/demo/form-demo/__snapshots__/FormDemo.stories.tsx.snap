@@ -4,22 +4,16 @@ exports[`Form Page 2 1`] = `
 <div data-size="auto">
   <div>
     <div>
-      <u-details
+      <details
         data-state="idle"
         open
-        role="group"
         data-active-step-label="Prosjektet"
       >
-        <u-summary
-          aria-expanded="true"
-          role="button"
-          slot="summary"
-          tabindex="0"
-        >
+        <summary>
           <span>
             Testsøknad
           </span>
-        </u-summary>
+        </summary>
         <button
           data-state="idle"
           data-variant="default"
@@ -62,7 +56,7 @@ exports[`Form Page 2 1`] = `
           </div>
           Kvittering
         </button>
-      </u-details>
+      </details>
     </div>
   </div>
   <div>
@@ -111,22 +105,16 @@ exports[`Form Page 2 1`] = `
         Skjemanavigasjon
       </h2>
       <div>
-        <u-details
+        <details
           data-state="idle"
           open
-          role="group"
           data-active-step-label="Prosjektet"
         >
-          <u-summary
-            aria-expanded="true"
-            role="button"
-            slot="summary"
-            tabindex="0"
-          >
+          <summary>
             <span>
               Testsøknad
             </span>
-          </u-summary>
+          </summary>
           <button
             data-state="idle"
             data-variant="default"
@@ -169,7 +157,7 @@ exports[`Form Page 2 1`] = `
             </div>
             Kvittering
           </button>
-        </u-details>
+        </details>
       </div>
     </dialog>
   </div>
@@ -264,19 +252,14 @@ exports[`Form Page 2 1`] = `
             Aktivitet
           </label>
         </div>
-        <u-details role="group">
-          <u-summary
-            aria-expanded="false"
-            role="button"
-            slot="summary"
-            tabindex="0"
-          >
+        <details>
+          <summary>
             Grunnen til at vi spør om dette
-          </u-summary>
+          </summary>
           <div>
             Tilskuddsordningen skal dekke et bredt spekter av tilbud. For å ha oversikt over fordelingen av budsjettposten trenger vi å vite hvilket tilbud det søkes om å utvide.
           </div>
-        </u-details>
+        </details>
       </fieldset>
       <div>
         <label
@@ -631,22 +614,16 @@ exports[`Form Page 3 1`] = `
 <div data-size="auto">
   <div>
     <div>
-      <u-details
+      <details
         data-state="idle"
         open
-        role="group"
         data-active-step-label="Dokumentasjon"
       >
-        <u-summary
-          aria-expanded="true"
-          role="button"
-          slot="summary"
-          tabindex="0"
-        >
+        <summary>
           <span>
             Testsøknad
           </span>
-        </u-summary>
+        </summary>
         <button
           data-state="idle"
           data-variant="default"
@@ -689,7 +666,7 @@ exports[`Form Page 3 1`] = `
           </div>
           Kvittering
         </button>
-      </u-details>
+      </details>
     </div>
   </div>
   <div>
@@ -738,22 +715,16 @@ exports[`Form Page 3 1`] = `
         Skjemanavigasjon
       </h2>
       <div>
-        <u-details
+        <details
           data-state="idle"
           open
-          role="group"
           data-active-step-label="Dokumentasjon"
         >
-          <u-summary
-            aria-expanded="true"
-            role="button"
-            slot="summary"
-            tabindex="0"
-          >
+          <summary>
             <span>
               Testsøknad
             </span>
-          </u-summary>
+          </summary>
           <button
             data-state="idle"
             data-variant="default"
@@ -796,7 +767,7 @@ exports[`Form Page 3 1`] = `
             </div>
             Kvittering
           </button>
-        </u-details>
+        </details>
       </div>
     </dialog>
   </div>
@@ -988,22 +959,16 @@ exports[`Form Page 4 1`] = `
 <div data-size="auto">
   <div>
     <div>
-      <u-details
+      <details
         data-state="idle"
         open
-        role="group"
         data-active-step-label="Innsending"
       >
-        <u-summary
-          aria-expanded="true"
-          role="button"
-          slot="summary"
-          tabindex="0"
-        >
+        <summary>
           <span>
             Testsøknad
           </span>
-        </u-summary>
+        </summary>
         <button
           data-state="idle"
           data-variant="default"
@@ -1046,7 +1011,7 @@ exports[`Form Page 4 1`] = `
           </div>
           Kvittering
         </button>
-      </u-details>
+      </details>
     </div>
   </div>
   <div>
@@ -1095,22 +1060,16 @@ exports[`Form Page 4 1`] = `
         Skjemanavigasjon
       </h2>
       <div>
-        <u-details
+        <details
           data-state="idle"
           open
-          role="group"
           data-active-step-label="Innsending"
         >
-          <u-summary
-            aria-expanded="true"
-            role="button"
-            slot="summary"
-            tabindex="0"
-          >
+          <summary>
             <span>
               Testsøknad
             </span>
-          </u-summary>
+          </summary>
           <button
             data-state="idle"
             data-variant="default"
@@ -1153,7 +1112,7 @@ exports[`Form Page 4 1`] = `
             </div>
             Kvittering
           </button>
-        </u-details>
+        </details>
       </div>
     </dialog>
   </div>
@@ -1273,22 +1232,16 @@ exports[`Form Page 5 1`] = `
 <div data-size="auto">
   <div>
     <div>
-      <u-details
+      <details
         data-state="idle"
         open
-        role="group"
         data-active-step-label="Kvittering"
       >
-        <u-summary
-          aria-expanded="true"
-          role="button"
-          slot="summary"
-          tabindex="0"
-        >
+        <summary>
           <span>
             Testsøknad
           </span>
-        </u-summary>
+        </summary>
         <button
           data-state="idle"
           data-variant="default"
@@ -1331,7 +1284,7 @@ exports[`Form Page 5 1`] = `
           </div>
           Kvittering
         </button>
-      </u-details>
+      </details>
     </div>
   </div>
   <div>
@@ -1380,22 +1333,16 @@ exports[`Form Page 5 1`] = `
         Skjemanavigasjon
       </h2>
       <div>
-        <u-details
+        <details
           data-state="idle"
           open
-          role="group"
           data-active-step-label="Kvittering"
         >
-          <u-summary
-            aria-expanded="true"
-            role="button"
-            slot="summary"
-            tabindex="0"
-          >
+          <summary>
             <span>
               Testsøknad
             </span>
-          </u-summary>
+          </summary>
           <button
             data-state="idle"
             data-variant="default"
@@ -1438,7 +1385,7 @@ exports[`Form Page 5 1`] = `
             </div>
             Kvittering
           </button>
-        </u-details>
+        </details>
       </div>
     </dialog>
   </div>
@@ -1518,22 +1465,16 @@ exports[`Form Story 1`] = `
 <div data-size="auto">
   <div>
     <div>
-      <u-details
+      <details
         data-state="idle"
         open
-        role="group"
         data-active-step-label="Kontaktinfo"
       >
-        <u-summary
-          aria-expanded="true"
-          role="button"
-          slot="summary"
-          tabindex="0"
-        >
+        <summary>
           <span>
             Testsøknad
           </span>
-        </u-summary>
+        </summary>
         <button
           data-state="active"
           data-variant="default"
@@ -1576,7 +1517,7 @@ exports[`Form Story 1`] = `
           </div>
           Kvittering
         </button>
-      </u-details>
+      </details>
     </div>
   </div>
   <div>
@@ -1625,22 +1566,16 @@ exports[`Form Story 1`] = `
         Skjemanavigasjon
       </h2>
       <div>
-        <u-details
+        <details
           data-state="idle"
           open
-          role="group"
           data-active-step-label="Kontaktinfo"
         >
-          <u-summary
-            aria-expanded="true"
-            role="button"
-            slot="summary"
-            tabindex="0"
-          >
+          <summary>
             <span>
               Testsøknad
             </span>
-          </u-summary>
+          </summary>
           <button
             data-state="active"
             data-variant="default"
@@ -1683,7 +1618,7 @@ exports[`Form Story 1`] = `
             </div>
             Kvittering
           </button>
-        </u-details>
+        </details>
       </div>
     </dialog>
   </div>

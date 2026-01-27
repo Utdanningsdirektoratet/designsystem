@@ -12,21 +12,15 @@ exports[`Preview 1`] = `
       </div>
       Infoside
     </button>
-    <u-details
+    <details
       data-state="idle"
       open
-      role="group"
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         <span>
           Seksjon
         </span>
-      </u-summary>
+      </summary>
       <button
         data-state="idle"
         data-variant="default"
@@ -43,7 +37,7 @@ exports[`Preview 1`] = `
         </div>
         Andre steg
       </button>
-    </u-details>
+    </details>
   </div>
 </div>
 `;

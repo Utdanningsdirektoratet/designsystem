@@ -9,7 +9,7 @@
 
   margin-inline-start: calc(var(--uds-readmore-padding) * -1);
 
-  & > :is(summary, u-summary) {
+  & > :is(summary) {
     color: var(--uds-readmore-summary-color);
     align-items: center;
     box-sizing: border-box;
@@ -58,7 +58,7 @@
     }
   }
 
-  &[open] > :is(summary, u-summary) {
+  &[open] > :is(summary) {
     &::before {
       rotate: 180deg;
     }

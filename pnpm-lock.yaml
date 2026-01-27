@@ -127,8 +127,8 @@ catalogs:
       specifier: 7.0.0-dev.20260119.1
       version: 7.0.0-dev.20260119.1
     '@u-elements/u-details':
-      specifier: ^0.1.5
-      version: 0.1.5
+      specifier: ^0.2.1
+      version: 0.2.1
     '@u-elements/u-progress':
       specifier: ^0.0.6
       version: 0.0.6
@@ -583,7 +583,7 @@ importers:
         version: 1.9.0
       '@u-elements/u-details':
         specifier: 'catalog:'
-        version: 0.1.5
+        version: 0.2.1
       '@u-elements/u-progress':
         specifier: 'catalog:'
         version: 0.0.6
@@ -3948,6 +3948,9 @@ packages:
 
   '@u-elements/u-details@0.1.5':
     resolution: {integrity: sha512-08sBhbc4u3VFlXIvH//m2yCDBHOJlQigs8QiKVLAVk2hMSg+fcRPggcgeBmtVPuy7iN3u/VURP6G2Ajlfbr6xg==}
+
+  '@u-elements/u-details@0.2.1':
+    resolution: {integrity: sha512-ugzflbOjHQgst07IoTFzikYmvVEILQQvrayd+N29XxIbpabIoRbYLr6h389PG9dIg4tRO3Lw/qT4uTcDWX+Syg==}
 
   '@u-elements/u-progress@0.0.6':
     resolution: {integrity: sha512-WJUxmHPgkgi/hKaOsjSJc5XGbfSg1/fgTs9SynmLRFn+1Dxaq7JPu98JqKPQLMDCVLaSY+Iz4EKJawgmNolbvA==}
@@ -12179,6 +12182,8 @@ snapshots:
 
   '@u-elements/u-details@0.1.5': {}
 
+  '@u-elements/u-details@0.2.1': {}
+
   '@u-elements/u-progress@0.0.6': {}
 
   '@udir-design/icons@file:@udir-design/icons(@types/react@18.3.27)(react@18.3.1)':
@@ -12192,7 +12197,7 @@ snapshots:
     dependencies:
       '@digdir/designsystemet-react': 1.9.0(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@digdir/designsystemet-types': 1.9.0
-      '@u-elements/u-details': 0.1.5
+      '@u-elements/u-details': 0.2.1
       '@u-elements/u-progress': 0.0.6
       '@udir-design/css': link:@udir-design/css
       '@udir-design/icons': link:@udir-design/icons
@@ -12206,7 +12211,7 @@ snapshots:
     dependencies:
       '@digdir/designsystemet-react': 1.9.0(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@digdir/designsystemet-types': 1.9.0
-      '@u-elements/u-details': 0.1.5
+      '@u-elements/u-details': 0.2.1
       '@u-elements/u-progress': 0.0.6
       '@udir-design/css': link:@udir-design/css
       '@udir-design/icons': link:@udir-design/icons

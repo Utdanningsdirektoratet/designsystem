@@ -1,6 +1,6 @@
 import type { Size } from '@digdir/designsystemet-react';
 import cl from 'clsx/lite';
-import '@u-elements/u-details';
+import '@u-elements/u-details/polyfill';
 import type { HTMLAttributes, ReactNode } from 'react';
 import { forwardRef } from 'react';
 import './readMore.css';
@@ -37,10 +37,10 @@ export type ReadMoreProps = HTMLAttributes<HTMLDetailsElement> & {
 export const ReadMore = forwardRef<HTMLDetailsElement, ReadMoreProps>(
   function ReadMore({ className, summary, children, ...rest }, ref) {
     return (
-      <u-details className={cl('uds-readmore', className)} ref={ref} {...rest}>
-        <u-summary>{summary}</u-summary>
+      <details className={cl('uds-readmore', className)} ref={ref} {...rest}>
+        <summary>{summary}</summary>
         <div>{children}</div>
-      </u-details>
+      </details>
     );
   },
 );
