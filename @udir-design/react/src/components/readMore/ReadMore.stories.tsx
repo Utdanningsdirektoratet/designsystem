@@ -1,3 +1,4 @@
+import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { Fieldset } from '../fieldset/Fieldset';
 import { Radio } from '../radio/Radio';
@@ -20,6 +21,43 @@ export const Preview = meta.story({
   render: (args) => (
     <ReadMore {...args}>Dette er innhold i en ReadMore</ReadMore>
   ),
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const readmore = canvasElement.querySelector('u-details');
+    const summary = canvas.getByRole('button');
+    const content = canvas.getByText('Dette er innhold i en ReadMore');
+
+    await step('Check that readmore is rendered', async () => {
+      expect(readmore).toBeTruthy();
+    });
+
+    await step('Check that content is rendered', async () => {
+      expect(content).toBeTruthy();
+    });
+
+    await step('Initial state: readmore is closed', async () => {
+      expect(readmore).not.toHaveAttribute('open');
+    });
+
+    await step('Click summary to open readmore', async () => {
+      await userEvent.click(summary);
+      expect(readmore).toHaveAttribute('open');
+    });
+
+    await step('Click summary to close readmore', async () => {
+      await userEvent.click(summary);
+      expect(readmore).not.toHaveAttribute('open');
+    });
+
+    await step('Keyboard interaction toggles readmore', async () => {
+      summary.focus();
+      await userEvent.keyboard('{Enter}');
+      expect(readmore).toHaveAttribute('open');
+
+      await userEvent.keyboard('{Enter}');
+      expect(readmore).not.toHaveAttribute('open');
+    });
+  },
 });
 
 export const Example = meta.story({
