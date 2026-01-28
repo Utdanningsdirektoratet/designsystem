@@ -113,6 +113,8 @@ type UdirSymbolName =
   | 'HjerteOutline'
   | 'HodetelefonerFill'
   | 'HodetelefonerOutline'
+  | 'HolderHenderFill'
+  | 'HolderHenderOutline'
   | 'HusBlå'
   | 'HusBrun'
   | 'HusGrønn'
@@ -398,6 +400,8 @@ type UdirSymbolName =
   | 'TennisballOutline'
   | 'TimeglassFill'
   | 'TimeglassOutline'
+  | 'TomStolFill'
+  | 'TomStolOutline'
   | 'TrehjulsykkelFill'
   | 'TrehjulsykkelOutline'
   | 'TrådsnelleFill'
@@ -1129,7 +1133,7 @@ const metadata: {
     sub_category: 'Firkant og firkant kryssende form',
     keywords: ['FirkantOgFirkantKryssendeFormFill'],
     variant: 'Fill',
-    updated_at: '26.11.2025',
+    updated_at: '27.01.2026',
     created_at: '26.11.2025',
   },
   FirkantOgFirkantKryssendeFormOutline: {
@@ -1139,7 +1143,7 @@ const metadata: {
     sub_category: 'Firkant og firkant kryssende form',
     keywords: ['FirkantOgFirkantKryssendeFormOutline'],
     variant: 'Outline',
-    updated_at: '26.11.2025',
+    updated_at: '27.01.2026',
     created_at: '26.11.2025',
   },
   FlyFill: {
@@ -1452,6 +1456,26 @@ const metadata: {
     updated_at: '17.11.2025',
     created_at: '29.01.2025',
   },
+  HolderHenderFill: {
+    id: 'HolderHenderFill',
+    name: 'HolderHenderFill',
+    category: 'Symboler',
+    sub_category: 'Holder hender',
+    keywords: ['HolderHenderFill'],
+    variant: 'Fill',
+    updated_at: '28.01.2026',
+    created_at: '27.01.2026',
+  },
+  HolderHenderOutline: {
+    id: 'HolderHenderOutline',
+    name: 'HolderHenderOutline',
+    category: 'Symboler',
+    sub_category: 'Holder hender',
+    keywords: ['HolderHenderOutline'],
+    variant: 'Outline',
+    updated_at: '28.01.2026',
+    created_at: '27.01.2026',
+  },
   HusBlå: {
     id: 'HusBlå',
     name: 'HusBlå',
@@ -1499,7 +1523,7 @@ const metadata: {
     sub_category: 'Hånd',
     keywords: ['HåndHudtone1'],
     variant: 'Hudtone 1',
-    updated_at: '17.11.2025',
+    updated_at: '27.01.2026',
     created_at: '29.01.2025',
   },
   HåndHudtone2: {
@@ -1509,7 +1533,7 @@ const metadata: {
     sub_category: 'Hånd',
     keywords: ['HåndHudtone2'],
     variant: 'Hudtone 2',
-    updated_at: '17.11.2025',
+    updated_at: '27.01.2026',
     created_at: '03.11.2025',
   },
   HåndHudtone3: {
@@ -1519,7 +1543,7 @@ const metadata: {
     sub_category: 'Hånd',
     keywords: ['HåndHudtone3'],
     variant: 'Hudtone 3',
-    updated_at: '17.11.2025',
+    updated_at: '27.01.2026',
     created_at: '03.11.2025',
   },
   HåndHudtone4: {
@@ -1529,7 +1553,7 @@ const metadata: {
     sub_category: 'Hånd',
     keywords: ['HåndHudtone4'],
     variant: 'Hudtone 4',
-    updated_at: '17.11.2025',
+    updated_at: '27.01.2026',
     created_at: '03.11.2025',
   },
   HåndOutline: {
@@ -1539,7 +1563,7 @@ const metadata: {
     sub_category: 'Hånd',
     keywords: ['HåndOutline'],
     variant: 'Outline',
-    updated_at: '17.11.2025',
+    updated_at: '27.01.2026',
     created_at: '29.01.2025',
   },
   HåndSomPekerHudtone1: {
@@ -3399,7 +3423,7 @@ const metadata: {
     sub_category: 'Sirkel og firkant kryssende form',
     keywords: ['SirkelOgFirkantKryssendeFormFill'],
     variant: 'Fill',
-    updated_at: '26.11.2025',
+    updated_at: '27.01.2026',
     created_at: '26.11.2025',
   },
   SirkelOgFirkantKryssendeFormOutline: {
@@ -3409,7 +3433,7 @@ const metadata: {
     sub_category: 'Sirkel og firkant kryssende form',
     keywords: ['SirkelOgFirkantKryssendeFormOutline'],
     variant: 'Outline',
-    updated_at: '26.11.2025',
+    updated_at: '27.01.2026',
     created_at: '26.11.2025',
   },
   SkoleFill: {
@@ -3559,7 +3583,7 @@ const metadata: {
     sub_category: 'Sommerfugl',
     keywords: ['SommerfuglBlå'],
     variant: 'Blå',
-    updated_at: '17.11.2025',
+    updated_at: '27.01.2026',
     created_at: '20.06.2025',
   },
   SommerfuglBrun: {
@@ -3569,7 +3593,7 @@ const metadata: {
     sub_category: 'Sommerfugl',
     keywords: ['SommerfuglBrun'],
     variant: 'Brun',
-    updated_at: '17.11.2025',
+    updated_at: '27.01.2026',
     created_at: '20.06.2025',
   },
   SommerfuglGrønn: {
@@ -3579,7 +3603,7 @@ const metadata: {
     sub_category: 'Sommerfugl',
     keywords: ['SommerfuglGrønn'],
     variant: 'Grønn',
-    updated_at: '17.11.2025',
+    updated_at: '27.01.2026',
     created_at: '20.06.2025',
   },
   SommerfuglOutline: {
@@ -3589,7 +3613,7 @@ const metadata: {
     sub_category: 'Sommerfugl',
     keywords: ['SommerfuglOutline'],
     variant: 'Outline',
-    updated_at: '17.11.2025',
+    updated_at: '27.01.2026',
     created_at: '20.06.2025',
   },
   SommerfuglSort: {
@@ -3599,7 +3623,7 @@ const metadata: {
     sub_category: 'Sommerfugl',
     keywords: ['SommerfuglSort'],
     variant: 'Sort',
-    updated_at: '17.11.2025',
+    updated_at: '27.01.2026',
     created_at: '20.06.2025',
   },
   SprøyteFill: {
@@ -4019,7 +4043,7 @@ const metadata: {
     sub_category: 'Tegnspråk a',
     keywords: ['TegnspråkAHudtone1'],
     variant: 'Hudtone 1',
-    updated_at: '17.11.2025',
+    updated_at: '27.01.2026',
     created_at: '08.10.2025',
   },
   TegnspråkAHudtone2: {
@@ -4029,7 +4053,7 @@ const metadata: {
     sub_category: 'Tegnspråk a',
     keywords: ['TegnspråkAHudtone2'],
     variant: 'Hudtone 2',
-    updated_at: '17.11.2025',
+    updated_at: '27.01.2026',
     created_at: '03.11.2025',
   },
   TegnspråkAHudtone3: {
@@ -4039,7 +4063,7 @@ const metadata: {
     sub_category: 'Tegnspråk a',
     keywords: ['TegnspråkAHudtone3'],
     variant: 'Hudtone 3',
-    updated_at: '17.11.2025',
+    updated_at: '27.01.2026',
     created_at: '03.11.2025',
   },
   TegnspråkAHudtone4: {
@@ -4049,7 +4073,7 @@ const metadata: {
     sub_category: 'Tegnspråk a',
     keywords: ['TegnspråkAHudtone4'],
     variant: 'Hudtone 4',
-    updated_at: '17.11.2025',
+    updated_at: '27.01.2026',
     created_at: '03.11.2025',
   },
   TegnspråkAOutline: {
@@ -4059,7 +4083,7 @@ const metadata: {
     sub_category: 'Tegnspråk a',
     keywords: ['TegnspråkAOutline'],
     variant: 'Outline',
-    updated_at: '17.11.2025',
+    updated_at: '27.01.2026',
     created_at: '08.10.2025',
   },
   TegnspråkBHudtone1: {
@@ -4301,6 +4325,26 @@ const metadata: {
     variant: 'Outline',
     updated_at: '17.11.2025',
     created_at: '11.06.2024',
+  },
+  TomStolFill: {
+    id: 'TomStolFill',
+    name: 'TomStolFill',
+    category: 'Symboler',
+    sub_category: 'Tom stol',
+    keywords: ['TomStolFill'],
+    variant: 'Fill',
+    updated_at: '28.01.2026',
+    created_at: '27.01.2026',
+  },
+  TomStolOutline: {
+    id: 'TomStolOutline',
+    name: 'TomStolOutline',
+    category: 'Symboler',
+    sub_category: 'Tom stol',
+    keywords: ['TomStolOutline'],
+    variant: 'Outline',
+    updated_at: '28.01.2026',
+    created_at: '27.01.2026',
   },
   TrehjulsykkelFill: {
     id: 'TrehjulsykkelFill',

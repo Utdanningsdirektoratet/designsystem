@@ -20,8 +20,8 @@ const SvgSirkelOgFirkantKryssendeFormOutline = forwardRef(
   ) => {
     let titleId: string | undefined = useId();
     titleId = title ? (_titleId ? _titleId : 'title-' + titleId) : undefined;
-    const __srcW = 40;
-    const __srcH = 40;
+    const __srcW = 42;
+    const __srcH = 42;
     const __isWide = true;
     const __sizeProps = (() => {
       if (props?.width != null || props?.height != null) return {};
@@ -42,7 +42,7 @@ const SvgSirkelOgFirkantKryssendeFormOutline = forwardRef(
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
-        viewBox="0 0 40 40"
+        viewBox="0 0 42 42"
         {...__sizeProps}
         focusable="false"
         role="img"
@@ -54,15 +54,15 @@ const SvgSirkelOgFirkantKryssendeFormOutline = forwardRef(
         <rect
           width={24.173}
           height={24.173}
-          x={15.627}
-          y={15.627}
+          x={16.627}
+          y={16.627}
           stroke="#303030"
           strokeWidth={0.4}
           rx={0.8}
         />
         <circle
-          cx={15.427}
-          cy={15.427}
+          cx={16.427}
+          cy={16.427}
           r={15.227}
           stroke="#303030"
           strokeWidth={0.4}
