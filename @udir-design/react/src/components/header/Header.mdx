@@ -124,6 +124,22 @@ Bruk `Tag` til å indikere at en tjeneste vises i et annet kjøretidsmiljø enn 
 
 <Canvas story={{ inline: false, height: '150px' }} of={HeaderStories.WithTag} />
 
+### Språkvelger
+
+Bruk `Button` sammen med `Dropdown` for å lage en språkvelger i `Header`.
+
+<Canvas
+  story={{ inline: false, height: '350px' }}
+  of={HeaderStories.WithLanguagePicker}
+/>
+
+Dersom det bare finnes to språk i tjenesten, kan du bruke en `Button` som bytter språk ved klikk.
+
+<Canvas
+  story={{ inline: false, height: '150px' }}
+  of={HeaderStories.WithTwoLanguages}
+/>
+
 ### Responsivt innhold
 
 For å håndtere ulike skjermstørrelser og enheter er det satt opp noen predefinerte breakpoints for når innhold skal vises eller skjules. Dette brukes ved å sette `data-show=[size]` eller `data-hide=[size]` på komponentene du legger inn i `Header`. De tilgjengelige verdiene for `size` er:
