@@ -31,7 +31,7 @@ exports[`Form Example 1`] = `
         style="--percentage: 14%;"
       >
         <template shadowrootmode="open">
-          <slot hidden>
+          <slot>
           </slot>
           <style>
             :host(:not([hidden])) { box-sizing: border-box; border: 1px solid; display: inline-block; height: .5em; width: 10em; overflow: hidden }
@@ -224,7 +224,7 @@ exports[`Preview 1`] = `
     style="--percentage: 30%;"
   >
     <template shadowrootmode="open">
-      <slot hidden>
+      <slot>
       </slot>
       <style>
         :host(:not([hidden])) { box-sizing: border-box; border: 1px solid; display: inline-block; height: .5em; width: 10em; overflow: hidden }
