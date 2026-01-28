@@ -173,6 +173,34 @@ export const Avatars = meta.story({
   },
 });
 
+export const Selected = meta.story({
+  args: {
+    placement: 'bottom-end',
+  },
+  render: (args) => {
+    return (
+      <Dropdown.TriggerContext>
+        <Dropdown.Trigger variant="secondary">
+          Velg bakgrunnsfarge
+        </Dropdown.Trigger>
+        <Dropdown {...args}>
+          <Dropdown.List>
+            <Dropdown.Item>
+              <Dropdown.Button>Blå</Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item aria-current="true">
+              <Dropdown.Button>Grønn</Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Dropdown.Button>Svart</Dropdown.Button>
+            </Dropdown.Item>
+          </Dropdown.List>
+        </Dropdown>
+      </Dropdown.TriggerContext>
+    );
+  },
+});
+
 export const Controlled = meta.story({
   render: function Render(args) {
     const [open, setOpen] = useState(false);

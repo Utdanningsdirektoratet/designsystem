@@ -70,6 +70,12 @@ Fordi `Dropdown` bruker popover API-et, kan du også bruke `Dropdown` uten `Drop
 
 <Canvas of={DropdownStories.WithoutTrigger} />
 
+### Vis aktivt element
+
+Du kan bruke `aria-current="true"` på et `Dropdown.Item` for å indikere hvilket element som er aktivt/valgt.
+
+<Canvas of={DropdownStories.Selected} />
+
 ## Tilgjengelighet
 
 Det er innebygd tilgjengelighet i `Dropdown.Trigger` med `aria-expanded={true/false}` i henhold til åpnet/lukket tilstand, og `aria-haspopup='menu'`. Du kan lese mer om Popover API-et i mozilla sin [dokumentasjon](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API).
