@@ -27,6 +27,8 @@ export const Preview = meta.story({
     const summary = canvasElement.querySelector('summary');
     const content = canvas.getByText('Dette er innhold i en ReadMore');
 
+    if (!summary) throw new Error('<summary> not found');
+
     await step('Check that readmore is rendered', async () => {
       expect(readmore).toBeTruthy();
     });
