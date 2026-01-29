@@ -20,8 +20,8 @@ const SvgFirkantOgFirkantKryssendeFormOutline = forwardRef(
   ) => {
     let titleId: string | undefined = useId();
     titleId = title ? (_titleId ? _titleId : 'title-' + titleId) : undefined;
-    const __srcW = 40;
-    const __srcH = 40;
+    const __srcW = 42;
+    const __srcH = 42;
     const __isWide = true;
     const __sizeProps = (() => {
       if (props?.width != null || props?.height != null) return {};
@@ -42,7 +42,7 @@ const SvgFirkantOgFirkantKryssendeFormOutline = forwardRef(
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
-        viewBox="0 0 40 40"
+        viewBox="0 0 42 42"
         {...__sizeProps}
         focusable="false"
         role="img"
@@ -54,8 +54,8 @@ const SvgFirkantOgFirkantKryssendeFormOutline = forwardRef(
         <rect
           width={26.267}
           height={26.267}
-          x={13.533}
-          y={13.533}
+          x={14.533}
+          y={14.533}
           stroke="#303030"
           strokeWidth={0.4}
           rx={0.8}
@@ -63,8 +63,8 @@ const SvgFirkantOgFirkantKryssendeFormOutline = forwardRef(
         <rect
           width={26.267}
           height={26.267}
-          x={0.2}
-          y={0.2}
+          x={1.2}
+          y={1.2}
           stroke="#303030"
           strokeWidth={0.4}
           rx={0.8}
