@@ -141,6 +141,11 @@ export const WithUserButton = meta.story({
       </Dropdown>
     </Header>
   ),
+});
+
+// Additional story for testing because we render the story inline in docs: https://github.com/storybookjs/storybook/issues/22893
+export const WithUserButton_Test = meta.story({
+  render: WithUserButton.input.render,
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
     const userButton = canvas.getByRole('button', {
@@ -853,6 +858,11 @@ export const AutoHideSticky = meta.story({
       </>
     );
   },
+});
+
+// Additional story for testing because we render the story inline in docs: https://github.com/storybookjs/storybook/issues/22893
+export const AutoHideSticky_Test = meta.story({
+  render: AutoHideSticky.input.render,
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
     const menuButton = canvas.getByRole('button');
