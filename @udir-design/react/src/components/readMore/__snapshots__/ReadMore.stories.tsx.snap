@@ -33,34 +33,24 @@ exports[`Example 1`] = `
       Nei
     </label>
   </div>
-  <u-details role="group">
-    <u-summary
-      aria-expanded="false"
-      role="button"
-      slot="summary"
-      tabindex="0"
-    >
+  <details>
+    <summary>
       Dette er individuelt tilrettelagt opplæring
-    </u-summary>
+    </summary>
     <div>
       Elever som ikke har eller kan få tilfredsstillende utbytte av det ordinære opplæringstilbudet har rett til individuell tilrettelegging. Før det fattes vedtak om individuell tilrettelagt opplæring skal det foreligge en sakkyndig vurdering utarbeidet av Pedagogisk-psykologisk tjeneste.
     </div>
-  </u-details>
+  </details>
 </fieldset>
 `;
 
 exports[`Preview 1`] = `
-<u-details role="group">
-  <u-summary
-    aria-expanded="false"
-    role="button"
-    slot="summary"
-    tabindex="0"
-  >
+<details>
+  <summary>
     Dette er en ReadMore
-  </u-summary>
+  </summary>
   <div>
     Dette er innhold i en ReadMore
   </div>
-</u-details>
+</details>
 `;

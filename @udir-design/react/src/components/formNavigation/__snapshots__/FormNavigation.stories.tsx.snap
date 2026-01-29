@@ -119,21 +119,15 @@ exports[`All States 1`] = `
     </div>
     <div>
       <div>
-        <u-details
+        <details
           data-state="idle"
           open
-          role="group"
         >
-          <u-summary
-            aria-expanded="true"
-            role="button"
-            slot="summary"
-            tabindex="0"
-          >
+          <summary>
             <span>
               Seksjon
             </span>
-          </u-summary>
+          </summary>
           <button
             data-state="idle"
             data-variant="default"
@@ -166,24 +160,18 @@ exports[`All States 1`] = `
             </div>
             Fjerde steg
           </button>
-        </u-details>
+        </details>
       </div>
       <div>
-        <u-details
+        <details
           data-state="idle"
           open
-          role="group"
         >
-          <u-summary
-            aria-expanded="true"
-            role="button"
-            slot="summary"
-            tabindex="0"
-          >
+          <summary>
             <span>
               Seksjon
             </span>
-          </u-summary>
+          </summary>
           <button
             data-state="completed"
             data-variant="default"
@@ -216,24 +204,18 @@ exports[`All States 1`] = `
             </div>
             Fjerde steg
           </button>
-        </u-details>
+        </details>
       </div>
       <div>
-        <u-details
+        <details
           data-state="completed"
           open
-          role="group"
         >
-          <u-summary
-            aria-expanded="true"
-            role="button"
-            slot="summary"
-            tabindex="0"
-          >
+          <summary>
             <span>
               Seksjon
             </span>
-          </u-summary>
+          </summary>
           <button
             data-state="completed"
             data-variant="default"
@@ -266,25 +248,18 @@ exports[`All States 1`] = `
             </div>
             Fjerde steg
           </button>
-        </u-details>
+        </details>
       </div>
       <div>
-        <u-details
+        <details
           data-state="invalid"
           open
-          role="group"
         >
-          <u-summary
-            aria-invalid
-            aria-expanded="true"
-            role="button"
-            slot="summary"
-            tabindex="0"
-          >
+          <summary aria-invalid="true">
             <span>
               Seksjon
             </span>
-          </u-summary>
+          </summary>
           <button
             data-state="invalid"
             data-variant="default"
@@ -321,25 +296,18 @@ exports[`All States 1`] = `
             </div>
             Fjerde steg
           </button>
-        </u-details>
+        </details>
       </div>
       <div>
-        <u-details
+        <details
           data-state="invalid"
           open
-          role="group"
         >
-          <u-summary
-            aria-invalid
-            aria-expanded="true"
-            role="button"
-            slot="summary"
-            tabindex="0"
-          >
+          <summary aria-invalid="true">
             <span>
               Seksjon
             </span>
-          </u-summary>
+          </summary>
           <button
             data-state="completed"
             data-variant="default"
@@ -374,28 +342,151 @@ exports[`All States 1`] = `
             </div>
             Fjerde steg
           </button>
-        </u-details>
+        </details>
       </div>
     </div>
     <div>
       <div>
-        <u-details
+        <details data-state="idle">
+          <summary>
+            <span>
+              Seksjon
+            </span>
+          </summary>
+          <button
+            data-state="idle"
+            data-variant="default"
+          >
+            <div>
+            </div>
+            Første steg
+          </button>
+          <button
+            data-state="idle"
+            data-variant="default"
+          >
+            <div>
+            </div>
+            Andre steg
+          </button>
+          <button
+            data-state="idle"
+            data-variant="default"
+          >
+            <div>
+            </div>
+            Tredje steg
+          </button>
+          <button
+            data-state="idle"
+            data-variant="default"
+          >
+            <div>
+            </div>
+            Fjerde steg
+          </button>
+        </details>
+      </div>
+      <div>
+        <details data-state="completed">
+          <summary>
+            <span>
+              Seksjon
+            </span>
+          </summary>
+          <button
+            data-state="completed"
+            data-variant="default"
+          >
+            <div>
+            </div>
+            Første steg
+          </button>
+          <button
+            data-state="completed"
+            data-variant="default"
+          >
+            <div>
+            </div>
+            Andre steg
+          </button>
+          <button
+            data-state="completed"
+            data-variant="default"
+          >
+            <div>
+            </div>
+            Tredje steg
+          </button>
+          <button
+            data-state="completed"
+            data-variant="default"
+          >
+            <div>
+            </div>
+            Fjerde steg
+          </button>
+        </details>
+      </div>
+      <div>
+        <details data-state="invalid">
+          <summary aria-invalid="true">
+            <span>
+              Seksjon
+            </span>
+          </summary>
+          <button
+            data-state="invalid"
+            data-variant="default"
+            aria-invalid="true"
+          >
+            <div>
+            </div>
+            Første steg
+          </button>
+          <button
+            data-state="invalid"
+            data-variant="default"
+            aria-invalid="true"
+          >
+            <div>
+            </div>
+            Andre steg
+          </button>
+          <button
+            data-state="invalid"
+            data-variant="default"
+            aria-invalid="true"
+          >
+            <div>
+            </div>
+            Tredje steg
+          </button>
+          <button
+            data-state="invalid"
+            data-variant="default"
+            aria-invalid="true"
+          >
+            <div>
+            </div>
+            Fjerde steg
+          </button>
+        </details>
+      </div>
+      <div>
+        <details
           data-state="idle"
-          role="group"
+          data-active-step-label="Første steg"
         >
-          <u-summary
-            aria-expanded="false"
-            role="button"
-            slot="summary"
-            tabindex="0"
-          >
+          <summary>
             <span>
               Seksjon
             </span>
-          </u-summary>
+          </summary>
           <button
-            data-state="idle"
+            data-state="active"
             data-variant="default"
+            aria-current="step"
           >
             <div>
             </div>
@@ -425,26 +516,22 @@ exports[`All States 1`] = `
             </div>
             Fjerde steg
           </button>
-        </u-details>
+        </details>
       </div>
       <div>
-        <u-details
+        <details
           data-state="completed"
-          role="group"
+          data-active-step-label="Første steg"
         >
-          <u-summary
-            aria-expanded="false"
-            role="button"
-            slot="summary"
-            tabindex="0"
-          >
+          <summary>
             <span>
               Seksjon
             </span>
-          </u-summary>
+          </summary>
           <button
-            data-state="completed"
+            data-state="active"
             data-variant="default"
+            aria-current="step"
           >
             <div>
             </div>
@@ -474,181 +561,18 @@ exports[`All States 1`] = `
             </div>
             Fjerde steg
           </button>
-        </u-details>
+        </details>
       </div>
       <div>
-        <u-details
+        <details
           data-state="invalid"
-          role="group"
-        >
-          <u-summary
-            aria-invalid
-            aria-expanded="false"
-            role="button"
-            slot="summary"
-            tabindex="0"
-          >
-            <span>
-              Seksjon
-            </span>
-          </u-summary>
-          <button
-            data-state="invalid"
-            data-variant="default"
-            aria-invalid="true"
-          >
-            <div>
-            </div>
-            Første steg
-          </button>
-          <button
-            data-state="invalid"
-            data-variant="default"
-            aria-invalid="true"
-          >
-            <div>
-            </div>
-            Andre steg
-          </button>
-          <button
-            data-state="invalid"
-            data-variant="default"
-            aria-invalid="true"
-          >
-            <div>
-            </div>
-            Tredje steg
-          </button>
-          <button
-            data-state="invalid"
-            data-variant="default"
-            aria-invalid="true"
-          >
-            <div>
-            </div>
-            Fjerde steg
-          </button>
-        </u-details>
-      </div>
-      <div>
-        <u-details
-          data-state="idle"
-          role="group"
           data-active-step-label="Første steg"
         >
-          <u-summary
-            aria-expanded="false"
-            role="button"
-            slot="summary"
-            tabindex="0"
-          >
+          <summary aria-invalid="true">
             <span>
               Seksjon
             </span>
-          </u-summary>
-          <button
-            data-state="active"
-            data-variant="default"
-            aria-current="step"
-          >
-            <div>
-            </div>
-            Første steg
-          </button>
-          <button
-            data-state="idle"
-            data-variant="default"
-          >
-            <div>
-            </div>
-            Andre steg
-          </button>
-          <button
-            data-state="idle"
-            data-variant="default"
-          >
-            <div>
-            </div>
-            Tredje steg
-          </button>
-          <button
-            data-state="idle"
-            data-variant="default"
-          >
-            <div>
-            </div>
-            Fjerde steg
-          </button>
-        </u-details>
-      </div>
-      <div>
-        <u-details
-          data-state="completed"
-          role="group"
-          data-active-step-label="Første steg"
-        >
-          <u-summary
-            aria-expanded="false"
-            role="button"
-            slot="summary"
-            tabindex="0"
-          >
-            <span>
-              Seksjon
-            </span>
-          </u-summary>
-          <button
-            data-state="active"
-            data-variant="default"
-            aria-current="step"
-          >
-            <div>
-            </div>
-            Første steg
-          </button>
-          <button
-            data-state="completed"
-            data-variant="default"
-          >
-            <div>
-            </div>
-            Andre steg
-          </button>
-          <button
-            data-state="completed"
-            data-variant="default"
-          >
-            <div>
-            </div>
-            Tredje steg
-          </button>
-          <button
-            data-state="completed"
-            data-variant="default"
-          >
-            <div>
-            </div>
-            Fjerde steg
-          </button>
-        </u-details>
-      </div>
-      <div>
-        <u-details
-          data-state="invalid"
-          role="group"
-          data-active-step-label="Første steg"
-        >
-          <u-summary
-            aria-invalid
-            aria-expanded="false"
-            role="button"
-            slot="summary"
-            tabindex="0"
-          >
-            <span>
-              Seksjon
-            </span>
-          </u-summary>
+          </summary>
           <button
             data-state="active"
             data-variant="default"
@@ -685,7 +609,7 @@ exports[`All States 1`] = `
             </div>
             Fjerde steg
           </button>
-        </u-details>
+        </details>
       </div>
     </div>
   </div>
@@ -697,22 +621,16 @@ exports[`Full 1`] = `
   <div>
     <div>
       <div>
-        <u-details
+        <details
           data-state="idle"
           open
-          role="group"
           data-active-step-label="Første steg"
         >
-          <u-summary
-            aria-expanded="true"
-            role="button"
-            slot="summary"
-            tabindex="0"
-          >
+          <summary>
             <span>
               Første seksjon
             </span>
-          </u-summary>
+          </summary>
           <button
             data-state="active"
             data-variant="default"
@@ -730,22 +648,16 @@ exports[`Full 1`] = `
             </div>
             Andre steg
           </button>
-        </u-details>
-        <u-details
+        </details>
+        <details
           data-state="idle"
           open
-          role="group"
         >
-          <u-summary
-            aria-expanded="true"
-            role="button"
-            slot="summary"
-            tabindex="0"
-          >
+          <summary>
             <span>
               Andre seksjon
             </span>
-          </u-summary>
+          </summary>
           <button
             data-state="idle"
             data-variant="default"
@@ -770,7 +682,7 @@ exports[`Full 1`] = `
             </div>
             Tredje steg
           </button>
-        </u-details>
+        </details>
         <button
           data-state="idle"
           data-variant="submission"
@@ -837,22 +749,16 @@ exports[`Full 1`] = `
             Naviger
           </h2>
           <div>
-            <u-details
+            <details
               data-state="idle"
               open
-              role="group"
               data-active-step-label="Første steg"
             >
-              <u-summary
-                aria-expanded="true"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
+              <summary>
                 <span>
                   Første seksjon
                 </span>
-              </u-summary>
+              </summary>
               <button
                 data-state="active"
                 data-variant="default"
@@ -870,22 +776,16 @@ exports[`Full 1`] = `
                 </div>
                 Andre steg
               </button>
-            </u-details>
-            <u-details
+            </details>
+            <details
               data-state="idle"
               open
-              role="group"
             >
-              <u-summary
-                aria-expanded="true"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
+              <summary>
                 <span>
                   Andre seksjon
                 </span>
-              </u-summary>
+              </summary>
               <button
                 data-state="idle"
                 data-variant="default"
@@ -910,7 +810,7 @@ exports[`Full 1`] = `
                 </div>
                 Tredje steg
               </button>
-            </u-details>
+            </details>
             <button
               data-state="idle"
               data-variant="submission"
@@ -982,22 +882,16 @@ exports[`Full 1`] = `
 exports[`Grouping 1`] = `
 <div data-size="auto">
   <div>
-    <u-details
+    <details
       data-state="idle"
       open
-      role="group"
       data-active-step-label="Første steg"
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         <span>
           Seksjon
         </span>
-      </u-summary>
+      </summary>
       <button
         data-state="active"
         data-variant="default"
@@ -1015,7 +909,7 @@ exports[`Grouping 1`] = `
         </div>
         Andre steg
       </button>
-    </u-details>
+    </details>
   </div>
 </div>
 `;
@@ -1032,21 +926,15 @@ exports[`Preview 1`] = `
       </div>
       Steg
     </button>
-    <u-details
+    <details
       data-state="idle"
       open
-      role="group"
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         <span>
           Seksjon
         </span>
-      </u-summary>
+      </summary>
       <button
         data-state="idle"
         data-variant="default"
@@ -1063,7 +951,7 @@ exports[`Preview 1`] = `
         </div>
         Andre steg
       </button>
-    </u-details>
+    </details>
   </div>
 </div>
 `;
@@ -1072,22 +960,16 @@ exports[`Simple Navigation 1`] = `
 <div data-size="auto">
   <div>
     <div>
-      <u-details
+      <details
         data-state="idle"
         open
-        role="group"
         data-active-step-label="Steg 1"
       >
-        <u-summary
-          aria-expanded="true"
-          role="button"
-          slot="summary"
-          tabindex="0"
-        >
+        <summary>
           <span>
             Seksjon
           </span>
-        </u-summary>
+        </summary>
         <button
           data-state="active"
           data-variant="default"
@@ -1113,7 +995,7 @@ exports[`Simple Navigation 1`] = `
           </div>
           Innsending
         </button>
-      </u-details>
+      </details>
     </div>
     <div>
       <h2 data-size="sm">
@@ -1192,21 +1074,15 @@ exports[`States 1`] = `
       </div>
       Frittstående steg
     </button>
-    <u-details
+    <details
       data-state="completed"
       open
-      role="group"
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         <span>
           Første seksjon
         </span>
-      </u-summary>
+      </summary>
       <button
         data-state="idle"
         data-variant="info"
@@ -1231,23 +1107,16 @@ exports[`States 1`] = `
         </div>
         Andre steg
       </button>
-    </u-details>
-    <u-details
+    </details>
+    <details
       data-state="invalid"
       open
-      role="group"
     >
-      <u-summary
-        aria-invalid
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary aria-invalid="true">
         <span>
           Andre seksjon
         </span>
-      </u-summary>
+      </summary>
       <button
         data-state="completed"
         data-variant="default"
@@ -1274,23 +1143,17 @@ exports[`States 1`] = `
         </div>
         Tredje steg
       </button>
-    </u-details>
-    <u-details
+    </details>
+    <details
       data-state="idle"
       open
-      role="group"
       data-active-step-label="Tredje steg"
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         <span>
           Tredje seksjon
         </span>
-      </u-summary>
+      </summary>
       <button
         data-state="completed"
         data-variant="default"
@@ -1316,7 +1179,7 @@ exports[`States 1`] = `
         </div>
         Tredje steg
       </button>
-    </u-details>
+    </details>
     <button
       data-state="idle"
       data-variant="summary"

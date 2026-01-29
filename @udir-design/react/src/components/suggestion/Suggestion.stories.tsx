@@ -30,14 +30,22 @@ const meta = preview.meta({
       height: '320px',
     },
     a11y: {
-      // TODO: these rules should be enabled after figuring out why they occur.
-      // for some reason it says `aria-expanded` is not allowed
       config: {
         rules: [
-          /* It does not like role="combobox" either */
+          // Axe can't find listbox inside shadow-dom, and thus thinks <data> elements
+          // (chips for selected items) don't have an appropriate parent element
+          {
+            id: 'aria-required-parent',
+            matches: (element) =>
+              !(
+                element instanceof HTMLDataElement &&
+                element.className === 'ds-chip'
+              ),
+          },
+          /* Axe does not like role="combobox" on input elements either */
           {
             id: 'aria-allowed-role',
-            enabled: false,
+            matches: (element) => !(element instanceof HTMLInputElement),
           },
         ],
       },
@@ -242,9 +250,7 @@ export const ControlledMultiple = meta.story({
 
 export const ControlledIndependentLabelValue = meta.story({
   render: (args, ctx) => {
-    const [item, setItem] = useState<SuggestionItem | undefined>(
-      DATA_PEOPLE[0],
-    );
+    const [item, setItem] = useState<SuggestionItem | null>(DATA_PEOPLE[0]);
 
     return (
       <>
