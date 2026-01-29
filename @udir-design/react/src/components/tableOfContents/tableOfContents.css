@@ -28,12 +28,12 @@
     }
 
     & li:not(:last-child) {
-      margin-bottom: var(--ds-size-3);
+      margin-block-end: var(--ds-size-3);
     }
   }
 
   & li.level-3,
   li.level-4 {
-    margin-left: var(--ds-size-3);
+    margin-inline-start: var(--ds-size-3);
   }
 }

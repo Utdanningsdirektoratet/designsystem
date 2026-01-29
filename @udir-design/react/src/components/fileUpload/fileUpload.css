@@ -70,10 +70,10 @@
   }
 
   & > div > .ds-button {
-    margin-left: auto;
+    margin-inline-start: auto;
   }
 
   > * + * {
-    margin-top: 0;
+    margin-block-start: 0;
   }
 }
