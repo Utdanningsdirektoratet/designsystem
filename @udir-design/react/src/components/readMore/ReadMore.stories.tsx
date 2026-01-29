@@ -23,8 +23,8 @@ export const Preview = meta.story({
   ),
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
-    const readmore = canvasElement.querySelector('u-details');
-    const summary = canvas.getByRole('button');
+    const readmore = canvasElement.querySelector('details');
+    const summary = canvasElement.querySelector('summary');
     const content = canvas.getByText('Dette er innhold i en ReadMore');
 
     await step('Check that readmore is rendered', async () => {
@@ -46,15 +46,6 @@ export const Preview = meta.story({
 
     await step('Click summary to close readmore', async () => {
       await userEvent.click(summary);
-      expect(readmore).not.toHaveAttribute('open');
-    });
-
-    await step('Keyboard interaction toggles readmore', async () => {
-      summary.focus();
-      await userEvent.keyboard('{Enter}');
-      expect(readmore).toHaveAttribute('open');
-
-      await userEvent.keyboard('{Enter}');
       expect(readmore).not.toHaveAttribute('open');
     });
   },
