@@ -29,26 +29,19 @@ export type ProgressBarProps = Omit<
    */
   value: number;
   /**
-   * Text to display before the current step number
+   * Format the label text with `value`, `max` and `percentage` as arguments: `label: ({ value, max, percentage }) => \`Steg ${value} av ${max}\``
    */
-  prefix?: string;
-  /**
-   * Show the progress as a percentage instead of step numbers
-   * @default false
-   */
-  percentage?: boolean;
+  label?: (args: { value: number; max: number; percentage: number }) => string;
 };
 
 export const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
-  function ProgressBar(
-    { className, max, value, prefix = '', percentage = false, ...rest },
-    ref,
-  ) {
-    const progress = ((value / max) * 100).toFixed(0);
-    const progressText = percentage ? `${progress}%` : `${value} av ${max}`;
+  function ProgressBar({ className, max, value, label, ...rest }, ref) {
+    const percentage = max > 0 ? Math.round((value / max) * 100) : 0;
+    const labelText =
+      label?.({ value, max, percentage }) ?? `${value} av ${max}`;
     return (
       <div className={cl(`uds-progressBar`, className)} ref={ref} {...rest}>
-        <span>{`${prefix} ${progressText}`}</span>
+        <span>{labelText}</span>
         <u-progress
           value={value}
           max={max}
