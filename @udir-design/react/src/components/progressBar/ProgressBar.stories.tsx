@@ -23,7 +23,7 @@ export const Preview = meta.story({
   args: {
     value: 3,
     max: 10,
-    label: ({ value, max }) => `Steg ${value} av ${max}`,
+    progressText: ({ value, max }) => `Steg ${value} av ${max}`,
   },
   render: (args) => <ProgressBar {...args} />,
   play: async ({ canvasElement, step, args }) => {
@@ -47,7 +47,7 @@ export const Percentage = meta.story({
   args: {
     value: 2,
     max: 10,
-    label: ({ percentage }) => `${percentage}%`,
+    progressText: ({ percentage }) => `${percentage}%`,
   },
   render: (args) => <ProgressBar {...args} />,
   play: async ({ canvasElement, step }) => {
@@ -72,7 +72,7 @@ const DATA_ASSERTIONS = [
 export const FormExample = meta.story({
   args: {
     'data-color': 'accent',
-    label: ({ value, max }) => `Side ${value} av ${max}`,
+    progressText: ({ value, max }) => `Side ${value} av ${max}`,
     value: 1,
     max: 7,
   },
