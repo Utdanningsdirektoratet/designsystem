@@ -525,7 +525,7 @@ const {
   { id: 'submission', title: 'Innsending', fields: [], variant: 'submission' },
   {
     id: 'confirmation',
-    title: 'Bekreftelse',
+    title: 'Kvittering',
     fields: [],
     variant: 'confirmation',
   },
