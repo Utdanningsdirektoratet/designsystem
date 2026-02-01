@@ -46,8 +46,8 @@ catalogs:
       specifier: 5.2.2
       version: 5.2.2
     '@navikt/aksel-icons':
-      specifier: ^8.1.0
-      version: 8.1.0
+      specifier: ^8.2.0
+      version: 8.2.0
     '@next/eslint-plugin-next':
       specifier: ^16.1.4
       version: 16.1.4
@@ -331,8 +331,8 @@ catalogs:
       specifier: ^4.21.0
       version: 4.21.0
     type-fest:
-      specifier: ^5.4.1
-      version: 5.4.1
+      specifier: ^5.4.3
+      version: 5.4.3
     typedoc:
       specifier: ^0.28.16
       version: 0.28.16
@@ -564,7 +564,7 @@ importers:
     dependencies:
       '@navikt/aksel-icons':
         specifier: 'catalog:'
-        version: 8.1.0(@types/react@19.2.7)(react@19.2.0)
+        version: 8.2.0(@types/react@19.2.7)(react@19.2.0)
     devDependencies:
       svgo:
         specifier: 'catalog:'
@@ -734,7 +734,7 @@ importers:
         version: 10.2.0(storybook@10.2.0(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
       type-fest:
         specifier: 'catalog:'
-        version: 5.4.1
+        version: 5.4.3
       typedoc:
         specifier: 'catalog:'
         version: 0.28.16(typescript@5.9.3)
@@ -1032,6 +1032,10 @@ packages:
 
   '@babel/code-frame@7.28.6':
     resolution: {integrity: sha512-JYgintcMjRiCvS8mMECzaEn+m3PfoQiyqukOMCCVQtoJGYJw8j/8LBJEiqkHLkfwCcs74E3pbAUFNg7d9VNJ+Q==}
+    engines: {node: '>=6.9.0'}
+
+  '@babel/code-frame@7.29.0':
+    resolution: {integrity: sha512-9NhCeYjq9+3uxgdtp20LSiJXJvN0FeCtNGpJxuMFZ1Kv3cWUNb6DOhJwUvcVCzKGR66cw4njwM6hrJLqgOwbcw==}
     engines: {node: '>=6.9.0'}
 
   '@babel/compat-data@7.28.5':
@@ -2487,8 +2491,8 @@ packages:
       react:
         optional: true
 
-  '@navikt/aksel-icons@8.1.0':
-    resolution: {integrity: sha512-3rDxnZaFdxVv3/S6GRxgYl3KQpPcaUhS2DD0Kop1HtDT4QiYVIDcVD42y+L/AjuTT7YbGqJUJB1z8ufXlb+AsQ==}
+  '@navikt/aksel-icons@8.2.0':
+    resolution: {integrity: sha512-oDNNNyafke41foUxHC7cDODXz3Lrx9GberqCU0ia5MdZsMWPnHwGd+jIyP7DT9UNTAxMUMpZ/kqq173g8ECyEw==}
     peerDependencies:
       '@types/react': ^18.3.11 || ^19.0.0
       react: ^18.3.1 || ^19.0.0
@@ -8325,8 +8329,8 @@ packages:
     resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
     engines: {node: '>=16'}
 
-  type-fest@5.4.1:
-    resolution: {integrity: sha512-xygQcmneDyzsEuKZrFbRMne5HDqMs++aFzefrJTgEIKjQ3rekM+RPfFCVq2Gp1VIDqddoYeppCj4Pcb+RZW0GQ==}
+  type-fest@5.4.3:
+    resolution: {integrity: sha512-AXSAQJu79WGc79/3e9/CR77I/KQgeY1AhNvcShIH4PTcGYyC4xv6H4R4AUOwkPS5799KlVDAu8zExeCrkGquiA==}
     engines: {node: '>=20'}
 
   typed-array-buffer@1.0.3:
@@ -8921,6 +8925,12 @@ snapshots:
       - supports-color
 
   '@babel/code-frame@7.28.6':
+    dependencies:
+      '@babel/helper-validator-identifier': 7.28.5
+      js-tokens: 4.0.0
+      picocolors: 1.1.1
+
+  '@babel/code-frame@7.29.0':
     dependencies:
       '@babel/helper-validator-identifier': 7.28.5
       js-tokens: 4.0.0
@@ -10555,12 +10565,12 @@ snapshots:
       '@types/react': 19.2.7
       react: 19.2.0
 
-  '@navikt/aksel-icons@8.1.0(@types/react@18.3.27)(react@18.3.1)':
+  '@navikt/aksel-icons@8.2.0(@types/react@18.3.27)(react@18.3.1)':
     optionalDependencies:
       '@types/react': 18.3.27
       react: 18.3.1
 
-  '@navikt/aksel-icons@8.1.0(@types/react@19.2.7)(react@19.2.0)':
+  '@navikt/aksel-icons@8.2.0(@types/react@19.2.7)(react@19.2.0)':
     optionalDependencies:
       '@types/react': 19.2.7
       react: 19.2.0
@@ -12037,7 +12047,7 @@ snapshots:
 
   '@testing-library/dom@10.4.1':
     dependencies:
-      '@babel/code-frame': 7.28.6
+      '@babel/code-frame': 7.29.0
       '@babel/runtime': 7.28.6
       '@types/aria-query': 5.0.4
       aria-query: 5.3.0
@@ -12382,7 +12392,7 @@ snapshots:
 
   '@udir-design/icons@file:@udir-design/icons(@types/react@18.3.27)(react@18.3.1)':
     dependencies:
-      '@navikt/aksel-icons': 8.1.0(@types/react@18.3.27)(react@18.3.1)
+      '@navikt/aksel-icons': 8.2.0(@types/react@18.3.27)(react@18.3.1)
     transitivePeerDependencies:
       - '@types/react'
       - react
@@ -17353,7 +17363,7 @@ snapshots:
   type-fest@4.41.0:
     optional: true
 
-  type-fest@5.4.1:
+  type-fest@5.4.3:
     dependencies:
       tagged-tag: 1.0.0
 
