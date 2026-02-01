@@ -5,32 +5,32 @@ packages:
   - test-apps/*
 
 catalog:
-  '@babel/types': ^7.28.6
-  '@commitlint/cli': ^20.3.1
-  '@commitlint/config-conventional': ^20.3.1
-  '@commitlint/types': ^20.3.1
+  '@babel/types': ^7.29.0
+  '@commitlint/cli': ^20.4.0
+  '@commitlint/config-conventional': ^20.4.0
+  '@commitlint/types': ^20.4.0
   '@digdir/designsystemet': 1.11.0
   '@digdir/designsystemet-css': 1.11.0
   '@digdir/designsystemet-react': 1.11.0
   '@digdir/designsystemet-types': ^1.11.0
-  '@eslint/compat': ^2.0.1
+  '@eslint/compat': ^2.0.2
   '@eslint/eslintrc': ^3.3.3
   '@eslint/js': ^9.39.2
   '@figma/rest-api-spec': ^0.36.0
   '@hookform/resolvers': 5.2.2
   '@navikt/aksel-icons': ^8.1.0
-  '@next/eslint-plugin-next': ^16.1.4
+  '@next/eslint-plugin-next': ^16.1.6
   '@nx/azure-cache': ^5.0.0
-  '@nx/eslint': 22.4.1
-  '@nx/eslint-plugin': 22.4.1
-  '@storybook/addon-a11y': ^10.2.0
-  '@storybook/addon-docs': ^10.2.0
-  '@storybook/addon-vitest': ^10.2.0
-  '@storybook/react-vite': ^10.2.0
+  '@nx/eslint': 22.4.4
+  '@nx/eslint-plugin': 22.4.4
+  '@storybook/addon-a11y': ^10.2.3
+  '@storybook/addon-docs': ^10.2.3
+  '@storybook/addon-vitest': ^10.2.3
+  '@storybook/react-vite': ^10.2.3
   '@svgr/cli': 8.1.0
   '@svgr/core': ^8.1.0
   '@swc-node/register': ^1.11.1
-  '@swc/core': ^1.15.10
+  '@swc/core': ^1.15.11
   '@swc/helpers': ^0.5.18
   '@testing-library/react': ^16.3.2
   '@types/diffable-html': ^5.0.2
@@ -42,8 +42,8 @@ catalog:
   '@types/react-dom': ^19.2.3
   '@types/remark-heading-id': ^1.0.0
   '@types/yargs': ^17.0.35
-  '@typescript-eslint/eslint-plugin': ^8.53.1
-  '@typescript-eslint/parser': ^8.53.1
+  '@typescript-eslint/eslint-plugin': ^8.54.0
+  '@typescript-eslint/parser': ^8.54.0
   '@typescript/native-preview': 7.0.0-dev.20260126.1
   '@u-elements/u-details': ^0.2.2
   '@u-elements/u-progress': ^0.0.7
@@ -52,7 +52,7 @@ catalog:
   '@vitest/browser-playwright': ^4.0.18
   '@vitest/coverage-v8': ^4.0.18
   '@vitest/ui': ^4.0.18
-  autoprefixer: ^10.4.23
+  autoprefixer: ^10.4.24
   axe-core: ^4.11.1
   axe-playwright: ^2.2.2
   camelcase: ^9.0.0
@@ -61,13 +61,13 @@ catalog:
   cssnano: ^7.1.2
   diffable-html: ^6.0.1
   eslint: ^9.39.2
-  eslint-config-next: ^16.1.5
+  eslint-config-next: ^16.1.6
   eslint-config-prettier: 10.1.8
   eslint-plugin-import: ^2.32.0
   eslint-plugin-jsx-a11y: ^6.10.2
   eslint-plugin-react: ^7.37.5
   eslint-plugin-react-hooks: ^7.0.1
-  eslint-plugin-storybook: ^10.2.0
+  eslint-plugin-storybook: ^10.2.3
   fast-glob: ^3.3.3
   fuse.js: ^7.1.0
   hast-util-from-html: ^2.0.3
@@ -82,10 +82,10 @@ catalog:
   madge: ^8.0.0
   mdast-util-to-hast: ^13.2.1
   micromatch: ^4.0.8
-  next: ^16.1.5
-  nx: 22.4.1
+  next: ^16.1.6
+  nx: 22.4.4
   parcel: ^2.16.3
-  playwright: ^1.58.0
+  playwright: ^1.58.1
   postcss: ^8.5.6
   postcss-cli: ^11.0.1
   postcss-easy-import: ^4.0.0
@@ -95,7 +95,7 @@ catalog:
   ramda: ^0.32.0
   react: ^19.2.0
   react-dom: ^19.2.0
-  react-dropzone: ^14.3.8
+  react-dropzone: ^14.4.0
   react-hook-form: ^7.71.1
   react-style-stringify: ^1.2.0
   remark-gfm: ^4.0.1
@@ -106,8 +106,8 @@ catalog:
   sass: ^1.97.3
   sharp: ^0.34.5
   shx: ^0.4.0
-  storybook: ^10.2.0
-  storybook-addon-pseudo-states: ^10.2.0
+  storybook: ^10.2.3
+  storybook-addon-pseudo-states: ^10.2.3
   svgo: 4.0.0
   ts-node: ^10.9.2
   tslib: ^2.8.1
@@ -116,7 +116,7 @@ catalog:
   type-fest: ^5.4.1
   typedoc: ^0.28.16
   typescript: ^5.9.3
-  typescript-eslint: ^8.53.1
+  typescript-eslint: ^8.54.0
   unified: ^11.0.5
   unist-util-remove: ^4.0.0
   unist-util-visit: ^5.1.0
