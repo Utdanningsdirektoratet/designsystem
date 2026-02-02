@@ -18,7 +18,6 @@ function ensureViewportMounted(): void {
     container.id = id;
     container.setAttribute('role', 'status');
     container.setAttribute('aria-live', 'polite');
-    container.setAttribute('aria-atomic', 'true');
     document.body.appendChild(container);
   }
 

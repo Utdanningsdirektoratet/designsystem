@@ -1,4 +1,5 @@
 import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { SimpleAlert } from '.storybook/docs/components';
 import * as ToastStories from './Toast.stories';
 
 <Meta of={ToastStories} />
@@ -7,15 +8,30 @@ import * as ToastStories from './Toast.stories';
 
 En `Toast` viser midlertidige meldinger som bekrefter en handling eller gir en tilbakemelding. Den skal ikke forstyrre brukeropplevelsen og kan forsvinne automatisk eller krysses ut.
 
+<SimpleAlert type="warning">
+Før du vurderer å bruke `Toast`, tenk over om behovet kan løses på andre måter. Når du bruker `Toast` risikerer du at brukeren ikke får med seg meldingen, og selv om meldingen blir lest opp av skjermleser har `Toast` andre utfordringer med tilgjengelighet. [GitHub har en god artikkel om hvorfor Toast er problematisk](https://primer.style/accessibility/patterns/accessible-notifications-and-messages/#toasts)
+
+Eksempler på bedre alternativer:
+
+- For å bekrefte innsending av skjema, bruk heller en kvitteringside
+- For å bekrefte lagring av data, bruk f.eks.
+  - en melding ved siden av lagreknappen dersom lagring blir satt i gang av brukeren
+  - en statusbar med "sist lagret \<dato og klokkeslett\>" dersom lagring blir gjennomført automatisk av systemet
+- Ofte er en oppdatering av grensesnittet i seg selv nok, f.eks.
+  - en "legg til rad"-knapp som får en ny rad til å dukke opp
+  - en "lagre"-knapp som setter skjemaet i lesemodus
+
+</SimpleAlert>
+
 **Passer til å**
 
 - gi oppdateringer uten å forstyrre arbeidsflyten
-- bekrefte vellykkede handlinger, som lagring eller sending
-- varsle om feil, handlinger som ikke kunne bli gjennomført
+- bekrefte vellykkede handlinger, som lagring eller sending, dersom dette ellers ikke er tydelig i brukergrensesnittet
 
 **Passer ikke til å**
 
 - vise omfattende informasjon
+- varsle om feil, f.eks. handlinger som ikke kunne bli gjennomført, bruk heller [`Alert`](/docs/components-alert--docs)
 - vise permanente meldinger, bruk heller [`Alert`](/docs/components-alert--docs)
 - be brukeren om handling, bruk heller [`Dialog`](/docs/components-dialog--docs)
 
