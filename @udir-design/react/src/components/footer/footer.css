@@ -4,6 +4,7 @@
   inset-block-end: 0;
   padding-inline: var(--ds-size-5);
   padding-block: var(--ds-size-10);
+  min-height: 4.25rem;
 
   & .ds-link {
     --dsc-link-color--visited: var(--dsc-link-color);
