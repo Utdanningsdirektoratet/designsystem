@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
-import { BriefcaseIcon, LeaveIcon } from '@udir-design/icons';
+import { BriefcaseIcon, LanguageIcon, LeaveIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
 import { Avatar } from '../avatar/Avatar';
@@ -584,6 +584,57 @@ export const WithTag = meta.story({
     return (
       <Header {...args}>
         <Tag data-color="accent">Dev</Tag>
+      </Header>
+    );
+  },
+});
+
+export const WithLanguagePicker = meta.story({
+  render(args) {
+    return (
+      <Header {...args}>
+        <Button variant="tertiary" popoverTarget="language-picker" lang="en">
+          <LanguageIcon aria-hidden />
+          Language
+        </Button>
+        <Dropdown id="language-picker">
+          <Dropdown.List>
+            <Dropdown.Item>
+              <Dropdown.Button lang="nb">Bokmål</Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item aria-current="true">
+              <Dropdown.Button lang="nn">Nynorsk</Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Dropdown.Button lang="se">Davvisámegiella</Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Dropdown.Button lang="en">English</Dropdown.Button>
+            </Dropdown.Item>
+          </Dropdown.List>
+        </Dropdown>
+      </Header>
+    );
+  },
+});
+
+export const WithTwoLanguages = meta.story({
+  render(args) {
+    const [language, setLanguage] = useState<'nb' | 'nn'>('nb');
+    const text = {
+      nn: 'Bytt til bokmål',
+      nb: 'Bytt til nynorsk',
+    };
+    return (
+      <Header {...args}>
+        <Button
+          variant="tertiary"
+          lang={language}
+          onClick={() => setLanguage((prev) => (prev === 'nb' ? 'nn' : 'nb'))}
+        >
+          <LanguageIcon aria-hidden />
+          {text[language]}
+        </Button>
       </Header>
     );
   },

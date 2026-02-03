@@ -132,7 +132,7 @@ exports[`Controlled 1`] = `
 <button
   data-variant="secondary"
   type="button"
-  popovertarget="_r_a_"
+  popovertarget="_r_b_"
 >
   Utdanningsløp
   <svg
@@ -155,7 +155,7 @@ exports[`Controlled 1`] = `
   </svg>
 </button>
 <div
-  id="_r_a_"
+  id="_r_b_"
   popover="manual"
   data-variant="default"
   data-placement="bottom"
@@ -339,6 +339,50 @@ exports[`Preview 1`] = `
         type="button"
       >
         .docx
+      </button>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Selected 1`] = `
+<button
+  data-variant="secondary"
+  type="button"
+  popovertarget="_r_a_"
+>
+  Velg bakgrunnsfarge
+</button>
+<div
+  id="_r_a_"
+  popover="manual"
+  data-variant="default"
+  data-placement="bottom"
+  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+>
+  <ul>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Blå
+      </button>
+    </li>
+    <li aria-current="true">
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Grønn
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Svart
       </button>
     </li>
   </ul>
