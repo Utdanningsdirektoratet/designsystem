@@ -28,8 +28,8 @@
       transition: 0.5s;
       /* avoid being placed offset due to border of background bar */
       position: absolute;
-      top: -1px;
-      left: -1px;
+      inset-block-start: -1px;
+      inset-inline-start: -1px;
     }
   }
   /**

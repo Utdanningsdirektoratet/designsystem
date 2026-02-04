@@ -30,7 +30,7 @@
     th[scope='row'] {
       background-color: var(--ds-color-neutral-background-default);
       position: sticky;
-      left: 0;
+      inset-inline-start: 0;
     }
 
     &[data-tinted-column-header] > thead > tr > :is(th, td) {

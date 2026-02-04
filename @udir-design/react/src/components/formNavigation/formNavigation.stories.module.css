@@ -11,10 +11,10 @@
 }
 
 .navigation {
-  padding-top: 1.5rem;
+  padding-block-start: 1.5rem;
   position: sticky;
   @media (min-width: 768px) {
-    padding-top: 3rem;
+    padding-block-start: 3rem;
   }
 }
 
@@ -42,7 +42,7 @@
   display: flex;
   gap: var(--ds-size-2);
   width: 100%;
-  margin-top: var(--ds-size-2);
+  margin-block-start: var(--ds-size-2);
   > button {
     flex: 1;
   }

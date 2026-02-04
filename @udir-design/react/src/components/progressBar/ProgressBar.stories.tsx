@@ -103,18 +103,28 @@ export const FormExample = meta.story({
         }}
       >
         <Fieldset id="rankings">
-          <Fieldset.Legend>
-            <Heading level={4}>Skjema</Heading>
-          </Fieldset.Legend>
-          <ProgressBar
-            {...args}
-            tabIndex={-1}
-            ref={progressRef}
-            value={page}
-            style={{ marginInline: 'var(--ds-size-8)' }}
-            aria-label="Skjemafremgang"
-          />
-          <Table>
+          <div
+            style={{
+              display: 'flex',
+              width: '100%',
+              justifyContent: 'space-between',
+              alignItems: 'flex-end',
+              marginBlockEnd: 'var(--ds-size-4)',
+            }}
+          >
+            <Fieldset.Legend>
+              <Heading level={4}>Skjema</Heading>
+            </Fieldset.Legend>
+            <ProgressBar
+              {...args}
+              tabIndex={-1}
+              ref={progressRef}
+              value={page}
+              style={{ width: '30%' }}
+              aria-label="Skjemafremgang"
+            />
+          </div>
+          <Table border>
             <Table.Head>
               <Table.Row>
                 <Table.HeaderCell>Påstander</Table.HeaderCell>
