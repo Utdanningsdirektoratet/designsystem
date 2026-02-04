@@ -16,7 +16,7 @@ import { Label } from '../typography/label/Label';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import type { DialogProps } from './Dialog';
 import { Dialog } from './Dialog';
-import styles from './dialog.stories.module.css';
+import styles from './dialog.stories.module.scss';
 
 async function defaultPlay(canvasElement: HTMLElement) {
   // When not in Docs mode, automatically open the dialog
