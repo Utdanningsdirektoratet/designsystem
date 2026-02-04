@@ -1,14 +1,24 @@
 .ds-dialog {
-  min-width: unset;
-  max-width: var(--dsc-dialog-placement-inline-max-width);
+  @media (max-width: 40rem) {
+    min-width: unset;
+    max-width: var(--dsc-dialog-placement-inline-max-width);
 
-  &[data-placement='left'],
-  &[data-placement='right'] {
-    --dsc-dialog-placement-inline-max-width: min(80%, 40rem);
+    &[data-placement='left'],
+    &[data-placement='right'] {
+      --dsc-dialog-placement-inline-max-width: min(80%, 40rem);
+    }
+    &[data-placement='top'],
+    &[data-placement='bottom'] {
+      --dsc-dialog-placement-inline-max-width: calc(100vw - 5px);
+    }
   }
+
+  /* Bug on macOS breaks border radius on full width dialogs: https://github.com/digdir/designsystemet/issues/4441 */
   &[data-placement='top'],
   &[data-placement='bottom'] {
-    --dsc-dialog-placement-inline-max-width: calc(100vw - 5px);
+    @media (min-width: 40.001rem) {
+      border-radius: 0;
+    }
   }
 
   &[data-placement='center'] {

@@ -16,6 +16,7 @@ import { Label } from '../typography/label/Label';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import type { DialogProps } from './Dialog';
 import { Dialog } from './Dialog';
+import styles from './dialog.stories.module.scss';
 
 async function defaultPlay(canvasElement: HTMLElement) {
   // When not in Docs mode, automatically open the dialog
@@ -63,19 +64,23 @@ const meta = preview.meta({
 export const Preview = meta.story({
   args: { closedby: 'any' },
   render: (args) => (
-    <Dialog.TriggerContext>
-      <Dialog.Trigger data-size={args['data-size']}>Åpne Dialog</Dialog.Trigger>
-      <Dialog {...args}>
-        <Heading style={{ marginBottom: 'var(--ds-size-2)' }}>
-          Dialog header
-        </Heading>
-        <Paragraph style={{ marginBottom: 'var(--ds-size-2)' }}>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
-          doloremque obcaecati assumenda odio ducimus sunt et.
-        </Paragraph>
-        <Paragraph data-size="sm">Dialog footer</Paragraph>
-      </Dialog>
-    </Dialog.TriggerContext>
+    <div className={styles.disableStorybookScale}>
+      <Dialog.TriggerContext>
+        <Dialog.Trigger data-size={args['data-size']}>
+          Åpne Dialog
+        </Dialog.Trigger>
+        <Dialog {...args} style={{ zIndex: 10 }}>
+          <Heading style={{ marginBottom: 'var(--ds-size-2)' }}>
+            Dialog header
+          </Heading>
+          <Paragraph style={{ marginBottom: 'var(--ds-size-2)' }}>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
+            doloremque obcaecati assumenda odio ducimus sunt et.
+          </Paragraph>
+          <Paragraph data-size="sm">Dialog footer</Paragraph>
+        </Dialog>
+      </Dialog.TriggerContext>
+    </div>
   ),
   play: async (ctx) => {
     await defaultPlay(ctx.canvasElement);
@@ -450,7 +455,14 @@ export const Drawer = meta.story({
       useState<DialogProps['placement']>('bottom');
     const [modal, setModal] = useState(true);
     return (
-      <>
+      <div
+        className={styles.disableStorybookScale}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
         <Checkbox
           label="Modal"
           checked={modal}
@@ -505,7 +517,7 @@ export const Drawer = meta.story({
             </Dialog.Block>
           </Dialog>
         </Dialog.TriggerContext>
-      </>
+      </div>
     );
   },
 });
