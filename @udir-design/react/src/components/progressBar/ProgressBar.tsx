@@ -50,6 +50,7 @@ export const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
           value={value}
           max={max}
           aria-hidden="true"
+          aria-label="..." // only because ARC Toolkit reports empty label as an error, but this will never be read
           // Ensure shadow dom is server rendered
           // see https://u-elements.github.io/u-elements/elements/u-progress#server-side-rendering
           dangerouslySetInnerHTML={{ __html: UHTMLProgressShadowRoot }}
