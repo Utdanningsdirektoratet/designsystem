@@ -4,13 +4,15 @@ import { type Size } from '@digdir/designsystemet-react';
 import type { Color } from '@digdir/designsystemet-types';
 import { UHTMLProgressShadowRoot } from '@u-elements/u-progress';
 import cl from 'clsx/lite';
-import type { AriaRole, HTMLAttributes } from 'react';
-import { forwardRef } from 'react';
+import type { HTMLAttributes } from 'react';
+import { forwardRef, useId } from 'react';
+import { Label } from '../typography/label/Label';
 
 export type ProgressBarProps = Omit<
   HTMLAttributes<HTMLDivElement>,
-  'children'
+  'children' | 'role'
 > & {
+  label?: string;
   /**
    * Changes size for descendant Designsystemet components.
    * Select from predefined sizes.
@@ -38,56 +40,35 @@ export type ProgressBarProps = Omit<
   }) => string;
 };
 
-// https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label#associated_roles
-const nonNameableAriaRoles: AriaRole[] = [
-  'caption',
-  'code',
-  'definition',
-  'deletion',
-  'emphasis',
-  'generic',
-  'insertion',
-  'mark',
-  'paragraph',
-  'presentation',
-  'none',
-  'strong',
-  'subscript',
-  'suggestion',
-  'superscript',
-  'term',
-  'time',
-];
-
 export const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
   function ProgressBar(
-    { className, max, value, progressText, 'aria-label': ariaLabel, ...rest },
+    {
+      className,
+      max,
+      value,
+      progressText,
+      id: explicitId,
+      label,
+      'aria-label': ariaLabel,
+      ...rest
+    },
     ref,
   ) {
-    let screenreaderText: string | undefined;
-    // aria-label is not permitted on div without a role, and only certain roles can use it.
-    if (!rest.role || (nonNameableAriaRoles.includes(rest.role) && ariaLabel)) {
-      screenreaderText = ariaLabel;
-    }
+    const fallbackId = useId();
+    const id = explicitId ?? fallbackId;
     const percentage = max > 0 ? Math.round((value / max) * 100) : 0;
     const text =
       progressText?.({ value, max, percentage }) ?? `${value} av ${max}`;
     return (
-      <div
-        className={cl(`uds-progressBar`, className)}
-        ref={ref}
-        aria-label={screenreaderText ? undefined : ariaLabel}
-        {...rest}
-      >
-        {screenreaderText && (
-          <span className="ds-sr-only">{screenreaderText}</span>
-        )}
-        <span>{text}</span>
+      <div className={cl(`uds-progressBar`, className)} ref={ref} {...rest}>
+        {label && <Label htmlFor={id}>{label}</Label>}
+        <div aria-hidden="true">{text}</div>
         <u-progress
+          id={id}
           value={value}
           max={max}
-          aria-hidden="true"
-          aria-label="..." // only because ARC Toolkit reports empty label as an error, but this will never be read
+          aria-label={ariaLabel}
+          aria-valuetext={text}
           // Ensure shadow dom is server rendered
           // see https://u-elements.github.io/u-elements/elements/u-progress#server-side-rendering
           dangerouslySetInnerHTML={{ __html: UHTMLProgressShadowRoot }}

@@ -180,3 +180,64 @@ export const FormExample = meta.story({
     );
   },
 });
+
+export const WithLabel = meta.story({
+  args: {
+    'data-color': 'accent',
+    progressText: ({ value, max }) => `Side ${value} av ${max}`,
+    value: 1,
+    max: 7,
+  },
+  render: (args, context) => {
+    const [page, setPage] = useState<number>(1);
+    const progressRef = useRef<HTMLDivElement>(null);
+
+    const nextPage = () => {
+      if (page < args.max) {
+        setPage(page + 1);
+        progressRef.current?.focus();
+      }
+    };
+
+    const prevPage = () => {
+      if (page > 1) {
+        setPage(page - 1);
+        progressRef.current?.focus();
+      }
+    };
+
+    return (
+      <>
+        <ProgressBar
+          {...args}
+          id={context.id + '-progress'}
+          tabIndex={-1}
+          ref={progressRef}
+          value={page}
+          style={{ width: '30%' }}
+          label="Skjemafremgang"
+        />
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'flex-start',
+            gap: 'var(--ds-size-4)',
+          }}
+        >
+          {page > 1 && (
+            <Button variant="tertiary" onClick={() => prevPage()}>
+              <ArrowLeftIcon aria-hidden />
+              Forrige
+            </Button>
+          )}
+          {page < 10 && (
+            <Button variant="secondary" onClick={() => nextPage()}>
+              Neste
+              <ArrowRightIcon aria-hidden />
+            </Button>
+          )}
+        </div>
+      </>
+    );
+  },
+});

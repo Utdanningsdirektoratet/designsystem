@@ -8,12 +8,11 @@
   --uds-progressBar-foreground: var(--ds-color-neutral-base-default);
   --uds-progressBar-focus-border-radius: var(--ds-border-radius-md);
 
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-2);
   border-radius: var(--uds-progressBar-focus-border-radius);
+  font-weight: normal;
 
   & > u-progress {
+    margin-block-start: var(--ds-size-2);
     position: relative;
     height: var(--uds-progressBar-height);
     width: 100%;

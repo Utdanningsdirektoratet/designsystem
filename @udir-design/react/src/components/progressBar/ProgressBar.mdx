@@ -34,15 +34,25 @@ import { ProgressBar } from '@udir-design/react';
 
 ## Eksempler
 
+### Skjema
+
 Eksempelet under viser et skjema med 7 sider som bruker `ProgressBar` for å vise fremgang.
 I dette eksempelet setter vi fokuset tilbake til `ProgressBar` når vi bytter side, slik at
 skjermleser leser opp elementet og tastaturnavigasjon tar deg videre til skjemafeltene.
 
 <Canvas of={ProgressBarStories.FormExample} />
 
+### Bruk av label
+
+Dersom plasseringen i forrige eksempel ikke var nok for å tydeligjøre hva `ProgressBar` viser, kan man bruke en synlig `label`.
+
+<Canvas of={ProgressBarStories.WithLabel} />
+
 ## Tilgjengelighet
 
-Det grafiske elementet i `ProgressBar` er skjult for skjermleser. Sørg for at teksten i komponenten gir tilstrekkelig informasjon for skjermleserbrukere. Du kan i tillegg bruke `aria-label` for å gi en beskrivelse av hvilken fremgang `ProgressBar` viser, denne blir lest opp før resten av teksten i komponenten.
+Sørg for at teksten i komponenten gir tilstrekkelig informasjon for skjermleserbrukere. Disse vil få lest opp den synlige teksten over selve det grafiske elementet, i tillegg til hvor mange prosent dette utgjør.
+
+Du må bruke enten `label` eller `aria-label` for å gi en tilgjengelig beskrivelse av hvilken fremgang `ProgressBar` viser. `aria-label` er tilstrekkelig dersom formålet med `ProgressBar` kommer tydelig frem av den visuelle plasseringen.
 
 Det er viktig å informere brukeren når `ProgressBar` endrer seg som følge av en annen handling. Hvordan man gjør det er avhengig av kontekst. I eksempelet der vi bruker `ProgressBar` for å vise fremgang i skjema løser vi dette ved å flytte fokus tilbake til `ProgressBar` når brukeren navigerer.
 
