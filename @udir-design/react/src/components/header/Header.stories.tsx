@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { BriefcaseIcon, LeaveIcon } from '@udir-design/icons';
+import { expect, userEvent, waitFor, within } from 'storybook/test';
+import { BriefcaseIcon, LanguageIcon, LeaveIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
 import { Avatar } from '../avatar/Avatar';
@@ -38,7 +39,15 @@ export const Preview = meta.story({
   args: {
     sticky: false,
   },
-  render: (args) => <Header {...args} />,
+  render: (args) => <Header {...args} data-testid="header" />,
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const header = canvas.getByTestId('header');
+
+    await step('Header is rendered', async () => {
+      await expect(header).toBeInTheDocument;
+    });
+  },
 });
 
 const profileImage =
@@ -59,7 +68,12 @@ export const WithUserButton = meta.story({
         data-color="accent"
         data-show="sm"
       />
-      <Dropdown id="usermenu" placement="bottom-end" autoPlacement={false}>
+      <Dropdown
+        id="usermenu"
+        placement="bottom-end"
+        autoPlacement={false}
+        data-testid="dropdown"
+      >
         <Dropdown.List>
           <Dropdown.Item>
             <Dropdown.Heading>Bytt profil</Dropdown.Heading>
@@ -127,6 +141,24 @@ export const WithUserButton = meta.story({
       </Dropdown>
     </Header>
   ),
+});
+
+// Additional story for testing because we render the story inline in docs: https://github.com/storybookjs/storybook/issues/22893
+export const WithUserButton_Test = meta.story({
+  render: WithUserButton.input.render,
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const userButton = canvas.getByRole('button', {
+      name: /Stian Hansen/i,
+    });
+    const dropdown = canvas.getByTestId('dropdown');
+
+    await step('Userbutton opens dropdown', async () => {
+      await expect(dropdown).not.toBeVisible();
+      await userEvent.click(userButton);
+      await expect(dropdown).toBeVisible();
+    });
+  },
 });
 
 export const WithSearch = meta.story({
@@ -557,6 +589,57 @@ export const WithTag = meta.story({
   },
 });
 
+export const WithLanguagePicker = meta.story({
+  render(args) {
+    return (
+      <Header {...args}>
+        <Button variant="tertiary" popoverTarget="language-picker" lang="en">
+          <LanguageIcon aria-hidden />
+          Language
+        </Button>
+        <Dropdown id="language-picker">
+          <Dropdown.List>
+            <Dropdown.Item>
+              <Dropdown.Button lang="nb">Bokmål</Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item aria-current="true">
+              <Dropdown.Button lang="nn">Nynorsk</Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Dropdown.Button lang="se">Davvisámegiella</Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Dropdown.Button lang="en">English</Dropdown.Button>
+            </Dropdown.Item>
+          </Dropdown.List>
+        </Dropdown>
+      </Header>
+    );
+  },
+});
+
+export const WithTwoLanguages = meta.story({
+  render(args) {
+    const [language, setLanguage] = useState<'nb' | 'nn'>('nb');
+    const text = {
+      nn: 'Bytt til bokmål',
+      nb: 'Bytt til nynorsk',
+    };
+    return (
+      <Header {...args}>
+        <Button
+          variant="tertiary"
+          lang={language}
+          onClick={() => setLanguage((prev) => (prev === 'nb' ? 'nn' : 'nb'))}
+        >
+          <LanguageIcon aria-hidden />
+          {text[language]}
+        </Button>
+      </Header>
+    );
+  },
+});
+
 export const Responsive = meta.story({
   render(args) {
     return (
@@ -699,7 +782,7 @@ export const AutoHideSticky = meta.story({
             <Header.Navigation.Item href="#">Navlink 3</Header.Navigation.Item>
           </Header.Navigation>
           <Header.MenuButton variant="secondary" />
-          <Header.Menu>
+          <Header.Menu data-testid="header-menu">
             <nav
               aria-labelledby="header-menu-navigation"
               style={{
@@ -792,7 +875,10 @@ export const AutoHideSticky = meta.story({
             Det er tatt inn i loven at kommunen og fylkeskommunen skal gi eleven
             tilbud om del av opplæringen i et samiskspråklig miljø dersom det er
             nødvendig for at opplæringen skal være pedagogisk forsvarlig. Dette
-            står i § 3-2 for grunnskolen og § 6-2 for videregående opplæring.
+            står i{' '}
+            <Link href="#">
+              § 3-2 for grunnskolen og § 6-2 for videregående opplæring
+            </Link>{' '}
             Denne regelen tar i hovedsak sikte på tilfeller der opplæringen i
             samisk blir gitt som fjernundervisning.
           </Paragraph>
@@ -822,6 +908,41 @@ export const AutoHideSticky = meta.story({
         </div>
       </>
     );
+  },
+});
+
+// Additional story for testing because we render the story inline in docs: https://github.com/storybookjs/storybook/issues/22893
+export const AutoHideSticky_Test = meta.story({
+  render: AutoHideSticky.input.render,
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const menuButton = canvas.getByRole('button');
+    const menu = canvas.getByTestId('header-menu');
+
+    await step('Tabing through menu works as expected', async () => {
+      await expect(menu).not.toBeVisible();
+
+      // tab to menu and open with keyboard
+      for (let i = 0; i < 5; i++) {
+        await userEvent.keyboard('{Tab}');
+      }
+      await userEvent.keyboard('{Enter}');
+      await expect(menu).toBeVisible();
+
+      // tab out of menu to close
+      for (let i = 0; i < 10; i++) {
+        await userEvent.keyboard('{Tab}');
+      }
+      await waitFor(() => {
+        expect(menu).not.toBeVisible();
+      });
+    });
+
+    await step('Can open the menu with button', async () => {
+      await expect(menu).not.toBeVisible();
+      await userEvent.click(menuButton);
+      await expect(menu).toBeVisible();
+    });
   },
 });
 

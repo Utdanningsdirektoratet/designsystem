@@ -1,0 +1,4 @@
+/* Disable Storybook's scaling for this story to ensure correct dialog placement */
+:has(> :global(.innerZoomElementWrapper) .disableStorybookScale) {
+  transform: none;
+}

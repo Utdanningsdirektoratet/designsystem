@@ -1,9 +1,10 @@
 .uds-footer {
   background-color: var(--ds-color-accent-surface-tinted);
-  left: 0;
-  bottom: 0;
+  inset-inline-start: 0;
+  inset-block-end: 0;
   padding-inline: var(--ds-size-5);
   padding-block: var(--ds-size-10);
+  min-height: 4.25rem;
 
   & .ds-link {
     --dsc-link-color--visited: var(--dsc-link-color);
@@ -25,7 +26,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    padding-right: calc(10.5rem + var(--ds-size-22));
+    padding-inline-end: calc(10.5rem + var(--ds-size-22));
   }
 
   .uds-footer__list {
@@ -41,8 +42,8 @@
     &[data-variant='social'] {
       display: flex;
       position: absolute;
-      bottom: 0;
-      right: 0;
+      inset-block-end: 0;
+      inset-inline-end: 0;
       flex-direction: row;
       justify-content: flex-end;
     }
@@ -50,8 +51,8 @@
 
   .uds-footer__logo {
     position: absolute;
-    top: 0;
-    right: 0;
+    inset-block-start: 0;
+    inset-inline-end: 0;
     height: fit-content;
 
     @composes ds-focus from '@digdir/designsystemet-css/base.css';
@@ -94,8 +95,8 @@
 
     .uds-footer__logo {
       position: relative;
-      top: initial;
-      right: initial;
+      inset-block-start: initial;
+      inset-inline-end: initial;
       .uds-logo {
         --uds-logo-size: var(--ds-size-10);
       }

@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { expect, within } from 'storybook/test';
 import { ArrowLeftIcon, ArrowRightIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { Button } from '../button/Button';
@@ -22,9 +23,39 @@ export const Preview = meta.story({
   args: {
     value: 3,
     max: 10,
-    prefix: 'Steg',
+    progressText: ({ value, max }) => `Steg ${value} av ${max}`,
   },
   render: (args) => <ProgressBar {...args} />,
+  play: async ({ canvasElement, step, args }) => {
+    const canvas = within(canvasElement);
+
+    await step('Label is rendered correctly', async () => {
+      expect(canvas.getByText('Steg 3 av 10')).toBeInTheDocument();
+    });
+
+    await step('u-progress is rendered with correct attributes', async () => {
+      const el = canvasElement.querySelector('u-progress');
+      expect(el).toBeTruthy();
+      expect(el).toHaveAttribute('value', String(args.value));
+      expect(el).toHaveAttribute('max', String(args.max));
+      expect(el).toHaveAttribute('aria-hidden', 'true');
+    });
+  },
+});
+
+export const Percentage = meta.story({
+  args: {
+    value: 2,
+    max: 10,
+    progressText: ({ percentage }) => `${percentage}%`,
+  },
+  render: (args) => <ProgressBar {...args} />,
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    await step('Percentage is rendered', async () => {
+      expect(canvas.getByText('20%')).toBeInTheDocument();
+    });
+  },
 });
 
 const DATA_RANKINGS = ['Uenig', 'Nøytral', 'Enig'];
@@ -41,7 +72,7 @@ const DATA_ASSERTIONS = [
 export const FormExample = meta.story({
   args: {
     'data-color': 'accent',
-    prefix: 'Side',
+    progressText: ({ value, max }) => `Side ${value} av ${max}`,
     value: 1,
     max: 7,
   },
@@ -72,18 +103,28 @@ export const FormExample = meta.story({
         }}
       >
         <Fieldset id="rankings">
-          <Fieldset.Legend>
-            <Heading level={4}>Skjema</Heading>
-          </Fieldset.Legend>
-          <ProgressBar
-            {...args}
-            tabIndex={-1}
-            ref={progressRef}
-            value={page}
-            style={{ marginInline: 'var(--ds-size-8)' }}
-            aria-label="Skjemafremgang"
-          />
-          <Table>
+          <div
+            style={{
+              display: 'flex',
+              width: '100%',
+              justifyContent: 'space-between',
+              alignItems: 'flex-end',
+              marginBlockEnd: 'var(--ds-size-4)',
+            }}
+          >
+            <Fieldset.Legend>
+              <Heading level={4}>Skjema</Heading>
+            </Fieldset.Legend>
+            <ProgressBar
+              {...args}
+              tabIndex={-1}
+              ref={progressRef}
+              value={page}
+              style={{ width: '30%' }}
+              aria-label="Skjemafremgang"
+            />
+          </div>
+          <Table border>
             <Table.Head>
               <Table.Row>
                 <Table.HeaderCell>Påstander</Table.HeaderCell>

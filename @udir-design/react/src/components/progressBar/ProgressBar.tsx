@@ -4,7 +4,7 @@ import { type Size } from '@digdir/designsystemet-react';
 import type { Color } from '@digdir/designsystemet-types';
 import { UHTMLProgressShadowRoot } from '@u-elements/u-progress';
 import cl from 'clsx/lite';
-import type { HTMLAttributes } from 'react';
+import type { AriaRole, HTMLAttributes } from 'react';
 import { forwardRef } from 'react';
 
 export type ProgressBarProps = Omit<
@@ -29,30 +29,65 @@ export type ProgressBarProps = Omit<
    */
   value: number;
   /**
-   * Text to display before the current step number
+   * Format the progress text with `value`, `max` and `percentage` as arguments: `progressText: ({ value, max, percentage }) => \`Steg ${value} av ${max}\``
    */
-  prefix?: string;
-  /**
-   * Show the progress as a percentage instead of step numbers
-   * @default false
-   */
-  percentage?: boolean;
+  progressText?: (args: {
+    value: number;
+    max: number;
+    percentage: number;
+  }) => string;
 };
+
+// https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label#associated_roles
+const nonNameableAriaRoles: AriaRole[] = [
+  'caption',
+  'code',
+  'definition',
+  'deletion',
+  'emphasis',
+  'generic',
+  'insertion',
+  'mark',
+  'paragraph',
+  'presentation',
+  'none',
+  'strong',
+  'subscript',
+  'suggestion',
+  'superscript',
+  'term',
+  'time',
+];
 
 export const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
   function ProgressBar(
-    { className, max, value, prefix = '', percentage = false, ...rest },
+    { className, max, value, progressText, 'aria-label': ariaLabel, ...rest },
     ref,
   ) {
-    const progress = ((value / max) * 100).toFixed(0);
-    const progressText = percentage ? `${progress}%` : `${value} av ${max}`;
+    let screenreaderText: string | undefined;
+    // aria-label is not permitted on div without a role, and only certain roles can use it.
+    if (!rest.role || (nonNameableAriaRoles.includes(rest.role) && ariaLabel)) {
+      screenreaderText = ariaLabel;
+    }
+    const percentage = max > 0 ? Math.round((value / max) * 100) : 0;
+    const text =
+      progressText?.({ value, max, percentage }) ?? `${value} av ${max}`;
     return (
-      <div className={cl(`uds-progressBar`, className)} ref={ref} {...rest}>
-        <span>{`${prefix} ${progressText}`}</span>
+      <div
+        className={cl(`uds-progressBar`, className)}
+        ref={ref}
+        aria-label={screenreaderText ? undefined : ariaLabel}
+        {...rest}
+      >
+        {screenreaderText && (
+          <span className="ds-sr-only">{screenreaderText}</span>
+        )}
+        <span>{text}</span>
         <u-progress
           value={value}
           max={max}
           aria-hidden="true"
+          aria-label="..." // only because ARC Toolkit reports empty label as an error, but this will never be read
           // Ensure shadow dom is server rendered
           // see https://u-elements.github.io/u-elements/elements/u-progress#server-side-rendering
           dangerouslySetInnerHTML={{ __html: UHTMLProgressShadowRoot }}

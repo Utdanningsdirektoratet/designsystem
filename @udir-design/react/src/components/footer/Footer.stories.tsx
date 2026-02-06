@@ -1,3 +1,4 @@
+import { expect, userEvent, within } from 'storybook/test';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
 import { Footer } from './';
@@ -19,9 +20,11 @@ const meta = preview.meta({
 
 export const Preview = meta.story({
   render: () => (
-    <Footer>
+    <Footer data-testid="footer">
       <Footer.List>
-        <Footer.Item href="#">Om tjenesten</Footer.Item>
+        <Footer.Item href="#" data-testid="footer-item-1">
+          Om tjenesten
+        </Footer.Item>
         <Footer.Item href="#">Kontakt oss</Footer.Item>
       </Footer.List>
       <Footer.List>
@@ -35,6 +38,19 @@ export const Preview = meta.story({
       </Footer.List>
     </Footer>
   ),
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const footer = canvas.getByTestId('footer');
+
+    await step('Footer is rendered', async () => {
+      expect(footer).toBeInTheDocument();
+    });
+
+    await step('Footer content can be reached by keyboard', async () => {
+      await userEvent.keyboard('{Tab}');
+      expect(canvas.getByTestId('footer-item-1')).toHaveFocus();
+    });
+  },
 });
 
 export const Udirno = meta.story({

@@ -3,47 +3,51 @@
 exports[`Form Example 1`] = `
 <div style="display: flex; flex-direction: column; gap: var(--ds-size-6);">
   <fieldset id="rankings">
-    <legend data-weight="medium">
-      <h4>
-        Skjema
-      </h4>
-    </legend>
-    <div
-      data-color="accent"
-      tabindex="-1"
-      aria-label="Skjemafremgang"
-      style="margin-inline: var(--ds-size-8);"
-    >
-      <span>
-        Side 1 av 7
-      </span>
-      <u-progress
-        value="1"
-        id=":u-progress2"
-        aria-busy="false"
-        aria-label
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="14"
-        role="progressbar"
-        max="7"
-        aria-hidden="true"
-        style="--percentage: 14%;"
+    <div style="display: flex; width: 100%; justify-content: space-between; align-items: flex-end; margin-block-end: var(--ds-size-4);">
+      <legend data-weight="medium">
+        <h4>
+          Skjema
+        </h4>
+      </legend>
+      <div
+        data-color="accent"
+        tabindex="-1"
+        style="width: 30%;"
       >
-        <template shadowrootmode="open">
-          <slot>
-          </slot>
-          <style>
-            :host(:not([hidden])) { box-sizing: border-box; border: 1px solid; display: inline-block; height: .5em; width: 10em; overflow: hidden }
+        <span>
+          Skjemafremgang
+        </span>
+        <span>
+          Side 1 av 7
+        </span>
+        <u-progress
+          value="1"
+          id=":u-progress3"
+          aria-busy="false"
+          aria-label="..."
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="14"
+          role="progressbar"
+          max="7"
+          aria-hidden="true"
+          style="--percentage: 14%;"
+        >
+          <template shadowrootmode="open">
+            <slot>
+            </slot>
+            <style>
+              :host(:not([hidden])) { box-sizing: border-box; border: 1px solid; display: inline-block; height: .5em; width: 10em; overflow: hidden }
 :host::before { content: ''; display: block; height: 100%; background: currentColor; width: var(--percentage, 0%); transition: width .2s }
 :host(:not([value])) { background: linear-gradient(90deg,currentColor 25%, transparent 50%, currentColor 75%) 50%/400% }
 @media (prefers-reduced-motion: no-preference) { :host { animation: indeterminate 2s linear infinite }  }
 @keyframes indeterminate { from { background-position-x: 100% } to { background-position-x: 0 } }
-          </style>
-        </template>
-      </u-progress>
+            </style>
+          </template>
+        </u-progress>
+      </div>
     </div>
-    <table>
+    <table data-border="true">
       <thead>
         <tr>
           <th>
@@ -205,6 +209,39 @@ exports[`Form Example 1`] = `
 </div>
 `;
 
+exports[`Percentage 1`] = `
+<div>
+  <span>
+    20%
+  </span>
+  <u-progress
+    value="2"
+    id=":u-progress2"
+    aria-busy="false"
+    aria-label="..."
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="20"
+    role="progressbar"
+    max="10"
+    aria-hidden="true"
+    style="--percentage: 20%;"
+  >
+    <template shadowrootmode="open">
+      <slot>
+      </slot>
+      <style>
+        :host(:not([hidden])) { box-sizing: border-box; border: 1px solid; display: inline-block; height: .5em; width: 10em; overflow: hidden }
+:host::before { content: ''; display: block; height: 100%; background: currentColor; width: var(--percentage, 0%); transition: width .2s }
+:host(:not([value])) { background: linear-gradient(90deg,currentColor 25%, transparent 50%, currentColor 75%) 50%/400% }
+@media (prefers-reduced-motion: no-preference) { :host { animation: indeterminate 2s linear infinite }  }
+@keyframes indeterminate { from { background-position-x: 100% } to { background-position-x: 0 } }
+      </style>
+    </template>
+  </u-progress>
+</div>
+`;
+
 exports[`Preview 1`] = `
 <div>
   <span>
@@ -214,7 +251,7 @@ exports[`Preview 1`] = `
     value="3"
     id=":u-progress1"
     aria-busy="false"
-    aria-label
+    aria-label="..."
     aria-valuemax="100"
     aria-valuemin="0"
     aria-valuenow="30"

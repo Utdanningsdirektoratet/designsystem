@@ -420,166 +420,171 @@ exports[`Dialog With Suggestion 1`] = `
 `;
 
 exports[`Drawer 1`] = `
-<div style="margin-bottom: var(--ds-size-4);">
-  <input
-    id="modal-checkbox"
-    type="checkbox"
-    checked
-  >
-  <label
-    data-weight="regular"
-    for="modal-checkbox"
-  >
-    Modal
-  </label>
-</div>
-<fieldset>
-  <div style="display: flex; flex-wrap: wrap; gap: var(--ds-size-5); margin-bottom: var(--ds-size-8);">
-    <div>
-      <input
-        id="center-radio"
-        type="radio"
-        value="center"
-        name="drawer"
-      >
-      <label
-        data-weight="regular"
-        for="center-radio"
-      >
-        Midten
-      </label>
-    </div>
-    <div>
-      <input
-        id="top-radio"
-        type="radio"
-        value="top"
-        name="drawer"
-      >
-      <label
-        data-weight="regular"
-        for="top-radio"
-      >
-        Topp
-      </label>
-    </div>
-    <div>
-      <input
-        id="bottom-radio"
-        type="radio"
-        value="bottom"
-        name="drawer"
-      >
-      <label
-        data-weight="regular"
-        for="bottom-radio"
-      >
-        Bunn
-      </label>
-    </div>
-    <div>
-      <input
-        id="left-radio"
-        type="radio"
-        value="left"
-        name="drawer"
-      >
-      <label
-        data-weight="regular"
-        for="left-radio"
-      >
-        Venstre
-      </label>
-    </div>
-    <div>
-      <input
-        id="right-radio"
-        type="radio"
-        value="right"
-        name="drawer"
-      >
-      <label
-        data-weight="regular"
-        for="right-radio"
-      >
-        Høyre
-      </label>
-    </div>
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <div style="margin-bottom: var(--ds-size-4);">
+    <input
+      id="modal-checkbox"
+      type="checkbox"
+      checked
+    >
+    <label
+      data-weight="regular"
+      for="modal-checkbox"
+    >
+      Modal
+    </label>
   </div>
-</fieldset>
-<button
-  data-variant="primary"
-  type="button"
-  aria-haspopup="dialog"
->
-  Open Dialog
-</button>
-<dialog
-  data-placement="bottom"
-  data-modal="true"
-  closedby="any"
-  open
-  style="z-index: 10;"
->
+  <fieldset>
+    <div style="display: flex; flex-wrap: wrap; gap: var(--ds-size-5); margin-bottom: var(--ds-size-8);">
+      <div>
+        <input
+          id="center-radio"
+          type="radio"
+          value="center"
+          name="drawer"
+        >
+        <label
+          data-weight="regular"
+          for="center-radio"
+        >
+          Midten
+        </label>
+      </div>
+      <div>
+        <input
+          id="top-radio"
+          type="radio"
+          value="top"
+          name="drawer"
+        >
+        <label
+          data-weight="regular"
+          for="top-radio"
+        >
+          Topp
+        </label>
+      </div>
+      <div>
+        <input
+          id="bottom-radio"
+          type="radio"
+          value="bottom"
+          name="drawer"
+        >
+        <label
+          data-weight="regular"
+          for="bottom-radio"
+        >
+          Bunn
+        </label>
+      </div>
+      <div>
+        <input
+          id="left-radio"
+          type="radio"
+          value="left"
+          name="drawer"
+        >
+        <label
+          data-weight="regular"
+          for="left-radio"
+        >
+          Venstre
+        </label>
+      </div>
+      <div>
+        <input
+          id="right-radio"
+          type="radio"
+          value="right"
+          name="drawer"
+        >
+        <label
+          data-weight="regular"
+          for="right-radio"
+        >
+          Høyre
+        </label>
+      </div>
+    </div>
+  </fieldset>
   <button
-    data-icon="true"
-    data-variant="tertiary"
+    data-variant="primary"
     type="button"
-    aria-label="Lukk dialogvindu"
-    data-color="neutral"
-    data-command="close"
+    aria-haspopup="dialog"
   >
+    Open Dialog
   </button>
-  <div>
-    <p data-variant="default">
-      This is a modal Dialog with
-      <code>
-        placement="bottom"
-      </code>
-    </p>
-  </div>
-</dialog>
+  <dialog
+    data-placement="bottom"
+    data-modal="true"
+    closedby="any"
+    open
+    style="z-index: 10;"
+  >
+    <button
+      data-icon="true"
+      data-variant="tertiary"
+      type="button"
+      aria-label="Lukk dialogvindu"
+      data-color="neutral"
+      data-command="close"
+    >
+    </button>
+    <div>
+      <p data-variant="default">
+        This is a modal Dialog with
+        <code>
+          placement="bottom"
+        </code>
+      </p>
+    </div>
+  </dialog>
+</div>
 `;
 
 exports[`Preview 1`] = `
-<button
-  data-variant="primary"
-  type="button"
-  aria-haspopup="dialog"
->
-  Åpne Dialog
-</button>
-<dialog
-  data-placement="center"
-  data-modal="true"
-  closedby="any"
-  open
->
+<div>
   <button
-    data-icon="true"
-    data-variant="tertiary"
+    data-variant="primary"
     type="button"
-    aria-label="Lukk dialogvindu"
-    data-color="neutral"
-    data-command="close"
+    aria-haspopup="dialog"
   >
+    Åpne Dialog
   </button>
-  <h2 style="margin-bottom: var(--ds-size-2);">
-    Dialog header
-  </h2>
-  <p
-    data-variant="default"
-    style="margin-bottom: var(--ds-size-2);"
+  <dialog
+    data-placement="center"
+    data-modal="true"
+    closedby="any"
+    open
+    style="z-index: 10;"
   >
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
-  </p>
-  <p
-    data-variant="default"
-    data-size="sm"
-  >
-    Dialog footer
-  </p>
-</dialog>
+    <button
+      data-icon="true"
+      data-variant="tertiary"
+      type="button"
+      aria-label="Lukk dialogvindu"
+      data-color="neutral"
+      data-command="close"
+    >
+    </button>
+    <h2 style="margin-bottom: var(--ds-size-2);">
+      Dialog header
+    </h2>
+    <p
+      data-variant="default"
+      style="margin-bottom: var(--ds-size-2);"
+    >
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+    </p>
+    <p
+      data-variant="default"
+      data-size="sm"
+    >
+      Dialog footer
+    </p>
+  </dialog>
+</div>
 `;
 
 exports[`With Header And Footer 1`] = `
