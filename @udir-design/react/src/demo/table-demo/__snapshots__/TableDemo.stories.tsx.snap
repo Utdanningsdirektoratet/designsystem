@@ -765,9 +765,9 @@ exports[`Table Story 1`] = `
         <ul>
           <li>
             <button
+              aria-disabled="true"
               data-variant="tertiary"
               type="button"
-              aria-hidden="true"
             >
               <span>
                 Forrige
@@ -806,7 +806,6 @@ exports[`Table Story 1`] = `
             <button
               data-variant="tertiary"
               type="button"
-              aria-hidden="false"
             >
               <span>
                 Neste
