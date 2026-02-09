@@ -9,6 +9,7 @@ export const createConfig = (scheme: ColorScheme): Config => ({
     css: {
       transformGroup: 'tokens-studio',
       transforms: ['name/kebab'],
+      prefix: 'uds-data-color',
       buildPath: 'dist/',
       selector:
         scheme === 'light'
