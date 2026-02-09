@@ -1,7 +1,7 @@
 // process/sd.config.js
-import { basename } from 'path';
-import * as SDmod from 'style-dictionary';
+import { basename } from 'node:path';
 import { register } from '@tokens-studio/sd-transforms';
+import * as SDmod from 'style-dictionary';
 import { colorScheme } from './formats.js';
 
 const StyleDictionary = SDmod.default || SDmod;

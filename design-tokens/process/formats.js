@@ -1,5 +1,4 @@
 import * as R from 'ramda';
-
 import { createPropertyFormatter } from 'style-dictionary/utils';
 
 
