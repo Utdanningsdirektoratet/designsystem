@@ -1,13 +1,13 @@
 @layer ds.theme.color-scheme.light {
 :root, [data-color-scheme="light"] {
-  --uds-data-color-qualitative-1: #5ba27e;
-  --uds-data-color-qualitative-2: #6c7c94;
-  --uds-data-color-qualitative-3: #bb893e;
-  --uds-data-color-qualitative-4: #353535;
-  --uds-data-color-qualitative-5: #30a1bb;
-  --uds-data-color-qualitative-6: #255f41;
-  --uds-data-color-qualitative-7: #9d5f32;
-  --uds-data-color-qualitative-8: #949494;
+  --uds-data-color-categorical-1: #5ba27e;
+  --uds-data-color-categorical-2: #6c7c94;
+  --uds-data-color-categorical-3: #bb893e;
+  --uds-data-color-categorical-4: #353535;
+  --uds-data-color-categorical-5: #30a1bb;
+  --uds-data-color-categorical-6: #255f41;
+  --uds-data-color-categorical-7: #9d5f32;
+  --uds-data-color-categorical-8: #949494;
   --uds-data-color-sequential-monochromatic-1: #5ba27e;
   --uds-data-color-sequential-monochromatic-2: #427c5e;
   --uds-data-color-sequential-monochromatic-3: #36674e;
@@ -30,14 +30,14 @@
 
 @layer ds.theme.color-scheme.dark {
 [data-color-scheme="dark"] {
-  --uds-data-color-qualitative-1: #76c69d;
-  --uds-data-color-qualitative-2: #bed5e8;
-  --uds-data-color-qualitative-3: #bd965e;
-  --uds-data-color-qualitative-4: #f9f9f9;
-  --uds-data-color-qualitative-5: #5db6cb;
-  --uds-data-color-qualitative-6: #d2ebde;
-  --uds-data-color-qualitative-7: #b36234;
-  --uds-data-color-qualitative-8: #c4c4c4;
+  --uds-data-color-categorical-1: #76c69d;
+  --uds-data-color-categorical-2: #bed5e8;
+  --uds-data-color-categorical-3: #bd965e;
+  --uds-data-color-categorical-4: #f9f9f9;
+  --uds-data-color-categorical-5: #5db6cb;
+  --uds-data-color-categorical-6: #d2ebde;
+  --uds-data-color-categorical-7: #b36234;
+  --uds-data-color-categorical-8: #c4c4c4;
   --uds-data-color-sequential-monochromatic-1: #5ba27e;
   --uds-data-color-sequential-monochromatic-2: #427c5e;
   --uds-data-color-sequential-monochromatic-3: #36674e;
