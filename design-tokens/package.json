@@ -9,7 +9,7 @@
   },
   "scripts": {
     "create": "designsystemet tokens create",
-    "build": "pnpm clean && designsystemet tokens build -t ./src -o ./dist",
+    "build": "pnpm clean && designsystemet tokens build -t ./src -o ./dist && pnpm build:data-css",
     "clean": "rimraf dist",
     "build:data-css": "node process/build-data-css.mjs"
   },
