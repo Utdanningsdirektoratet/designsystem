@@ -1,7 +1,6 @@
 import * as R from 'ramda';
 import { createPropertyFormatter } from 'style-dictionary/utils';
 
-
 const prefersColorScheme = (colorScheme, content) => `
 @media (prefers-color-scheme: ${colorScheme}) {
   [data-color-scheme="auto"] ${content}
@@ -25,7 +24,9 @@ export const colorScheme = {
     });
 
     const colorSchemeProperty =
-      colorScheme_ === 'dark' || colorScheme_ === 'light' ? `\n  color-scheme: ${colorScheme_};\n` : '';
+      colorScheme_ === 'dark' || colorScheme_ === 'light'
+        ? `\n  color-scheme: ${colorScheme_};\n`
+        : '';
 
     const formattedTokens = allTokens.map(format).join('\n');
     const content = `{\n${formattedTokens}\n${colorSchemeProperty}}\n`;

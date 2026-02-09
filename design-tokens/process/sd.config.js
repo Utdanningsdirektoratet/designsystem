@@ -17,17 +17,18 @@ export default {
   platforms: {
     css: {
       transformGroup: 'tokens-studio',
-      transforms:     ['name/kebab'],
-      buildPath:      'dist/',
-      selector:       isLight
-                          ? ':root, [data-color-scheme="light"]'
-                          : '[data-color-scheme="dark"]',
-      layer:          `ds.theme.color-scheme.${scheme}`,
+      transforms: ['name/kebab'],
+      buildPath: 'dist/',
+      selector: isLight
+        ? ':root, [data-color-scheme="light"]'
+        : '[data-color-scheme="dark"]',
+      layer: `ds.theme.color-scheme.${scheme}`,
       files: [
         {
           destination: `udir-data-${scheme}.css`,
-          format:      colorScheme.name,
-          filter:      t => basename(t.filePath).toLowerCase() === `${scheme}.json`,
+          format: colorScheme.name,
+          filter: (t) =>
+            basename(t.filePath).toLowerCase() === `${scheme}.json`,
         },
       ],
     },
