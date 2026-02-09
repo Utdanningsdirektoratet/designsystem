@@ -1,3 +1,4 @@
+import './badge.css';
 import {
   Badge as DigdirBadge,
   type BadgeProps as DigdirBadgeProps,

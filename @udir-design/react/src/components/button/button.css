@@ -3,4 +3,25 @@
   &[data-variant='secondary']:not([data-color='danger']) {
     --dsc-button-color: var(--ds-color-text-default);
   }
+
+  /* Fix scaling of icons & spinner in button in Safari */
+  &,
+  &[data-icon] {
+    :where(img, svg) {
+      /* because font-size is set to 1em upstream, scaling doesn't work in Safari */
+      /* override font-size with ch instead of em to fix scaling */
+      font-size: 1.83184ex;
+      width: auto;
+    }
+  }
+  & :where(img, svg) {
+    height: 1.3em;
+  }
+  &[data-icon] :where(img, svg) {
+    height: 1.5em;
+  }
+  .ds-spinner {
+    height: 1.4em;
+  }
+  /* END fix scaling */
 }

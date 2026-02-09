@@ -25,7 +25,12 @@ export const OutlineIcons = meta.story({
           return (
             !key.includes('Fill') && (
               <React.Fragment key={key}>
-                <Component fontSize="3rem" aria-hidden className="icon-color" />
+                <Component
+                  height="3rem"
+                  width="3rem"
+                  aria-hidden
+                  className="icon-color"
+                />
               </React.Fragment>
             )
           );

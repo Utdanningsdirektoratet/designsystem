@@ -48,7 +48,7 @@ addons.setConfig({
         if (item.id === 'iconsandsymbols') {
           return (
             <>
-              <ImageIcon aria-hidden fontSize={18} />
+              <ImageIcon aria-hidden className="sidebar-subheading-icon" />
               Ikoner og symboler
             </>
           );
@@ -56,7 +56,10 @@ addons.setConfig({
         if (item.id === 'demo') {
           return (
             <>
-              <RectangleSectionsIcon aria-hidden fontSize={18} />
+              <RectangleSectionsIcon
+                aria-hidden
+                className="sidebar-subheading-icon"
+              />
               Demosider
             </>
           );
@@ -64,7 +67,7 @@ addons.setConfig({
         if (item.id === 'design-tokens') {
           return (
             <>
-              <TokenIcon aria-hidden fontSize={18} />
+              <TokenIcon aria-hidden className="sidebar-subheading-icon" />
               Design tokens
             </>
           );
@@ -72,7 +75,7 @@ addons.setConfig({
         if (item.id === 'patterns') {
           return (
             <>
-              <LayersIcon aria-hidden fontSize={18} />
+              <LayersIcon aria-hidden className="sidebar-subheading-icon" />
               Bruksmønstre
             </>
           );
@@ -80,7 +83,7 @@ addons.setConfig({
         if (item.id === 'components') {
           return (
             <>
-              <ComponentIcon aria-hidden fontSize={18} />
+              <ComponentIcon aria-hidden className="sidebar-subheading-icon" />
               Komponenter
             </>
           );
@@ -88,7 +91,7 @@ addons.setConfig({
         if (item.id === 'utilities') {
           return (
             <>
-              <WrenchIcon aria-hidden fontSize={18} />
+              <WrenchIcon aria-hidden className="sidebar-subheading-icon" />
               Hjelpeverktøy
             </>
           );

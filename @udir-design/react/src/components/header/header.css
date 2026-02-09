@@ -204,12 +204,14 @@
 
     > svg:nth-last-child(2) {
       display: block;
-      font-size: var(--ds-size-6);
+      width: auto;
+      height: var(--ds-size-6);
     }
 
     > svg:last-child {
       display: none;
-      font-size: var(--ds-size-6);
+      width: auto;
+      height: var(--ds-size-6);
     }
 
     &:has(+ [popover]:popover-open) {

@@ -51,7 +51,8 @@
   }
 
   & > div > svg {
-    font-size: var(--ds-size-10);
+    width: auto;
+    height: var(--ds-size-10);
     margin-inline-end: var(--ds-size-3);
     align-self: center;
   }

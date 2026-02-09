@@ -1,0 +1,5 @@
+/* Necessary here due to setting width/height in .ds-button :where(img, svg) */
+.ds-avatar :is(img, svg) {
+  width: 100%;
+  height: 100%;
+}

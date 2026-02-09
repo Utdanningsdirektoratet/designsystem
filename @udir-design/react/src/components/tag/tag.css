@@ -1,0 +1,5 @@
+.ds-tag :where(img, svg) {
+  font-size: 1.83184ex;
+  height: 1.25em; /* Auto scale icon based on font-size */
+  width: auto;
+}

@@ -1,3 +1,4 @@
+import './avatar.css';
 import {
   Avatar as DigdirAvatar,
   type AvatarProps as DigdirAvatarProps,
