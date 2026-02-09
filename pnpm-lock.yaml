@@ -845,6 +845,9 @@ importers:
       '@tokens-studio/sd-transforms':
         specifier: 'catalog:'
         version: 2.0.3(style-dictionary@5.2.0(tslib@2.8.1))
+      '@types/ramda':
+        specifier: 'catalog:'
+        version: 0.31.1
       rimraf:
         specifier: 'catalog:'
         version: 6.1.2

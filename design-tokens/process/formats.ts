@@ -1,13 +1,16 @@
 import * as R from 'ramda';
+import type { Format } from 'style-dictionary/types';
 import { createPropertyFormatter } from 'style-dictionary/utils';
 
-const prefersColorScheme = (colorScheme, content) => `
+export type ColorScheme = 'light' | 'dark';
+
+const prefersColorScheme = (colorScheme: ColorScheme, content: string) => `
 @media (prefers-color-scheme: ${colorScheme}) {
   [data-color-scheme="auto"] ${content}
 }
 `;
 
-export const colorScheme = {
+export const colorScheme: Format = {
   name: 'ds/css-colorscheme',
   format: async ({ dictionary, options, platform }) => {
     const { allTokens } = dictionary;

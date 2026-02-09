@@ -11,11 +11,12 @@
     "create": "designsystemet tokens create",
     "build": "pnpm clean && designsystemet tokens build -t ./src -o ./dist && pnpm build:data-css",
     "clean": "rimraf dist",
-    "build:data-css": "node process/build-data-css.mjs"
+    "build:data-css": "./process/build-data-css.ts"
   },
   "devDependencies": {
     "@digdir/designsystemet": "catalog:",
     "@tokens-studio/sd-transforms": "catalog:",
+    "@types/ramda": "catalog:",
     "rimraf": "catalog:",
     "style-dictionary": "catalog:"
   },
