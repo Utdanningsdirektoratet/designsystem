@@ -1,0 +1,60 @@
+@layer ds.theme.color-scheme.light {
+:root, [data-color-scheme="light"] {
+  --uds-data-color-categorical-1: #5ba27e;
+  --uds-data-color-categorical-2: #6c7c94;
+  --uds-data-color-categorical-3: #bb893e;
+  --uds-data-color-categorical-4: #353535;
+  --uds-data-color-categorical-5: #30a1bb;
+  --uds-data-color-categorical-6: #255f41;
+  --uds-data-color-categorical-7: #9d5f32;
+  --uds-data-color-categorical-8: #949494;
+  --uds-data-color-sequential-monochromatic-1: #5ba27e;
+  --uds-data-color-sequential-monochromatic-2: #427c5e;
+  --uds-data-color-sequential-monochromatic-3: #36674e;
+  --uds-data-color-sequential-monochromatic-4: #254b38;
+  --uds-data-color-sequential-monochromatic-5: #1e422f;
+  --uds-data-color-sequential-monochromatic-6: #163626;
+  --uds-data-color-sequential-monochromatic-7: #112e1f;
+  --uds-data-color-sequential-monochromatic-8: #0b1e15;
+  --uds-data-color-sequential-divergent-1: #1e422f;
+  --uds-data-color-sequential-divergent-2: #36674e;
+  --uds-data-color-sequential-divergent-3: #5ba27e;
+  --uds-data-color-sequential-divergent-4: #dedede;
+  --uds-data-color-sequential-divergent-5: #6c7c94;
+  --uds-data-color-sequential-divergent-6: #485970;
+  --uds-data-color-sequential-divergent-7: #2e3c51;
+}
+ 
+}
+
+
+@layer ds.theme.color-scheme.dark {
+[data-color-scheme="dark"] {
+  --uds-data-color-categorical-1: #76c69d;
+  --uds-data-color-categorical-2: #bed5e8;
+  --uds-data-color-categorical-3: #bd965e;
+  --uds-data-color-categorical-4: #f9f9f9;
+  --uds-data-color-categorical-5: #5db6cb;
+  --uds-data-color-categorical-6: #d2ebde;
+  --uds-data-color-categorical-7: #b36234;
+  --uds-data-color-categorical-8: #c4c4c4;
+  --uds-data-color-sequential-monochromatic-1: #5ba27e;
+  --uds-data-color-sequential-monochromatic-2: #427c5e;
+  --uds-data-color-sequential-monochromatic-3: #36674e;
+  --uds-data-color-sequential-monochromatic-4: #254b38;
+  --uds-data-color-sequential-monochromatic-5: #1e422f;
+  --uds-data-color-sequential-monochromatic-6: #163626;
+  --uds-data-color-sequential-monochromatic-7: #112e1f;
+  --uds-data-color-sequential-monochromatic-8: #0b1e15;
+  --uds-data-color-sequential-divergent-1: #1e422f;
+  --uds-data-color-sequential-divergent-2: #36674e;
+  --uds-data-color-sequential-divergent-3: #5ba27e;
+  --uds-data-color-sequential-divergent-4: #dedede;
+  --uds-data-color-sequential-divergent-5: #6c7c94;
+  --uds-data-color-sequential-divergent-6: #485970;
+  --uds-data-color-sequential-divergent-7: #2e3c51;
+}
+ 
+}
+
+

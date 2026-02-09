@@ -15,7 +15,8 @@
     ".": {
       "types": "./dist/types.d.ts",
       "default": "./dist/index.css"
-    }
+    },
+    "./dataviz.css": "./dist/dataviz.css"
   },
   "files": [
     "./dist"

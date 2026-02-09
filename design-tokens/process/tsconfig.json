@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "allowJs": false,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "moduleResolution": "nodenext",
+    "module": "node20",
+    "target": "esnext"
+  },
+  "extends": "../../tsconfig.base.json"
+}
