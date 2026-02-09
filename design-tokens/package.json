@@ -11,7 +11,7 @@
     "create": "designsystemet tokens create",
     "build": "pnpm clean && designsystemet tokens build -t ./src -o ./dist && pnpm build:data-css",
     "clean": "rimraf dist",
-    "build:data-css": "./process/build-data-css.ts"
+    "build:data-css": "./process/build-dataviz-css.ts"
   },
   "devDependencies": {
     "@digdir/designsystemet": "catalog:",

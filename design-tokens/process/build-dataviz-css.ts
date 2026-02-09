@@ -12,7 +12,7 @@ register(StyleDictionary);
 StyleDictionary.registerFormat(colorScheme);
 
 const DIST = path.resolve('dist');
-const OUT = path.join(DIST, 'udir-data.css');
+const OUT = path.join(DIST, 'dataviz.css');
 
 // 1) clear or create the combined file
 await writeFile(OUT, '', 'utf8');
@@ -27,7 +27,7 @@ for (const scheme of colorSchemes) {
   await sd.buildAllPlatforms();
 
   // 3) read that file and append to the combined one
-  const tmpFile = path.join(DIST, `udir-data-${scheme}.css`);
+  const tmpFile = path.join(DIST, `dataviz-${scheme}.css`);
   const css = await readFile(tmpFile, 'utf8');
   await appendFile(OUT, css + '\n\n', 'utf8');
 

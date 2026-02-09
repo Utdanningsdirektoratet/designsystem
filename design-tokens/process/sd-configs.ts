@@ -18,7 +18,7 @@ export const createConfig = (scheme: ColorScheme): Config => ({
       layer: `ds.theme.color-scheme.${scheme}`,
       files: [
         {
-          destination: `udir-data-${scheme}.css`,
+          destination: `dataviz-${scheme}.css`,
           format: colorScheme.name,
           filter: (t) =>
             basename(t.filePath).toLowerCase() === `${scheme}.json`,
