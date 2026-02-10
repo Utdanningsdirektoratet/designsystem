@@ -7,9 +7,22 @@ import { Link } from '../link/Link';
 import { Heading } from '../typography/heading/Heading';
 
 export type FormSummarySectionProps = CardBlockProps & {
+  /**
+   * Title of the section.
+   */
   title: string;
+  /**
+   * Heading level for the section title.
+   * @default 3
+   */
   level?: 3 | 4 | 5;
+  /**
+   * URL for the edit action link.
+   */
   editHref?: string;
+  /**
+   * Click handler for the edit action button. If provided, this will take precedence over `editHref`.
+   */
   onEdit?: () => void;
 };
 
