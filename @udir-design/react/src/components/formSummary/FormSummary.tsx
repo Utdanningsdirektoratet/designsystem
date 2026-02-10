@@ -7,7 +7,14 @@ import { Card } from '../card/Card';
 import { Heading } from '../typography/heading/Heading';
 
 export type FormSummaryProps = Omit<CardProps, 'variant' | 'asChild'> & {
+  /*
+   * Title of the summary.
+   */
   title: string;
+  /*
+   * Heading level for the title.
+   * @default 2
+   */
   level?: 2 | 3;
 };
 

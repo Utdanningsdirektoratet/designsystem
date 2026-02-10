@@ -3,7 +3,9 @@ import { forwardRef } from 'react';
 import { ValidationMessage } from '../../typography/validationMessage/ValidationMessage';
 
 export type FormSummaryFieldAnswerProps = HTMLAttributes<HTMLElement> & {
-  /** Error message for field */
+  /**
+   * Error message for field
+   */
   error?: string;
 };
 
