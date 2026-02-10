@@ -74,8 +74,9 @@ export function ComponentResourceLink() {
             Oversikten over komponentene finnes også tilgjengelig i Figma.
           </Paragraph>
           <ArrowRightIcon
-            title="a11y-title"
-            fontSize="1.5rem"
+            aria-hidden
+            height="1.5rem"
+            width="auto"
             className={styles.icon}
           />
         </Card.Block>
