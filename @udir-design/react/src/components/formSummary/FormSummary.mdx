@@ -23,6 +23,38 @@ import { Unstyled } from '@storybook/addon-docs/blocks';
 <Primary />
 <Controls />
 
+```tsx
+import { FormSummary } from '@udir-design/react';
+
+<FormSummary title="Oppsummering">
+  <FormSummary.Section title="Personalia" editHref="/edit-personalia">
+    <FormSummary.Fields>
+      <FormSummary.Field>
+        <FormSummary.Field.Label>Navn</FormSummary.Field.Label>
+        <FormSummary.Field.Answer>Ola Nordmann</FormSummary.Field.Answer>
+      </FormSummary.Field>
+      <FormSummary.Field>
+        <FormSummary.Field.Label>Fødselsdato</FormSummary.Field.Label>
+        <FormSummary.Field.Answer>01.01.1990</FormSummary.Field.Answer>
+      </FormSummary.Field>
+    </FormSummary.Fields>
+  </FormSummary.Section>
+
+  <FormSummary.Section title="Adresse" editHref="/edit-address">
+    <FormSummary.Fields>
+      <FormSummary.Field>
+        <FormSummary.Field.Label>Gateadresse</FormSummary.Field.Label>
+        <FormSummary.Field.Answer>Storgata 1</FormSummary.Field.Answer>
+      </FormSummary.Field>
+      <FormSummary.Field>
+        <FormSummary.Field.Label>Postnummer</FormSummary.Field.Label>
+        <FormSummary.Field.Answer>0123</FormSummary.Field.Answer>
+      </FormSummary.Field>
+    </FormSummary.Fields>
+  </FormSummary.Section>
+</FormSummary>;
+```
+
 ## Eksempler
 
 `FormSummary` bygges opp med flere subkomponenter for å strukturere innholdet.
@@ -48,5 +80,3 @@ For å gruppere i underseksjoner legger du `FormSummary.Section` inne i en annen
 Bruk `error`-prop på `FormSummary.Field.Answer` for å vise feilmeldinger knyttet til spesifikke felt i oppsummeringen.
 
 <Canvas of={FormSummaryStories.ErrorStates} />
-
-## Retningslinjer
