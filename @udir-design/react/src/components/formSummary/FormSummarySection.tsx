@@ -8,7 +8,7 @@ import { Heading } from '../typography/heading/Heading';
 
 export type FormSummarySectionProps = CardBlockProps & {
   title: string;
-  level?: 1 | 2 | 3 | 4;
+  level?: 3 | 4 | 5;
   editHref?: string;
   onEdit?: () => void;
 };
@@ -17,7 +17,7 @@ export const FormSummarySection = forwardRef<
   HTMLDivElement,
   FormSummarySectionProps
 >(function FormSummarySection(
-  { children, className, title, level = 2, editHref, onEdit, ...rest },
+  { children, className, title, level = 3, editHref, onEdit, ...rest },
   ref,
 ) {
   const hasEditAction = Boolean(editHref || onEdit);

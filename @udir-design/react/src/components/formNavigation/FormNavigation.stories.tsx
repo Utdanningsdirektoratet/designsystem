@@ -670,16 +670,14 @@ export const Full = meta.story({
     );
 
     const renderSummary = () => (
-      <FormSummary>
-        <FormSummary.Section title="Oppsummering" level={1} />
-
+      <FormSummary title="Oppsummering">
         {plan.map((item) => {
           if ('steps' in item) {
             return (
               <FormSummary.Section
                 key={item.sectionTitle}
                 title={item.sectionTitle}
-                level={2}
+                level={3}
               >
                 {item.steps
                   .filter((step) => step.fields.length > 0)
@@ -687,7 +685,7 @@ export const Full = meta.story({
                     <FormSummary.Section
                       key={step.id}
                       title={step.title}
-                      level={3}
+                      level={4}
                       onEdit={() => goToStep(step.id as StepId)}
                     >
                       <FormSummary.Fields>
