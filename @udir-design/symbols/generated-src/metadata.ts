@@ -5,7 +5,6 @@ export type UdirSymbol = {
   sub_category: string;
   keywords: string[];
   variant: string;
-  updated_at: string;
   created_at: string;
 };
 
@@ -457,7 +456,6 @@ const metadata: {
     sub_category: 'Abc',
     keywords: ['AbcFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '10.02.2026',
   },
   AbcOutline: {
@@ -467,7 +465,6 @@ const metadata: {
     sub_category: 'Abc',
     keywords: ['AbcOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '10.02.2026',
   },
   AnalyseFill: {
@@ -477,7 +474,6 @@ const metadata: {
     sub_category: 'Analyse',
     keywords: ['AnalyseFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   AnalyseOutline: {
@@ -487,7 +483,6 @@ const metadata: {
     sub_category: 'Analyse',
     keywords: ['AnalyseOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BadeballFill: {
@@ -497,7 +492,6 @@ const metadata: {
     sub_category: 'Badeball',
     keywords: ['BadeballFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BadeballOutline: {
@@ -507,7 +501,6 @@ const metadata: {
     sub_category: 'Badeball',
     keywords: ['BadeballOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BallongBlå: {
@@ -517,7 +510,6 @@ const metadata: {
     sub_category: 'Ballong',
     keywords: ['BallongBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   BallongBrun: {
@@ -527,7 +519,6 @@ const metadata: {
     sub_category: 'Ballong',
     keywords: ['BallongBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   BallongGrønn: {
@@ -537,7 +528,6 @@ const metadata: {
     sub_category: 'Ballong',
     keywords: ['BallongGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BallongOutline: {
@@ -547,7 +537,6 @@ const metadata: {
     sub_category: 'Ballong',
     keywords: ['BallongOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BallongerFill: {
@@ -557,7 +546,6 @@ const metadata: {
     sub_category: 'Ballonger',
     keywords: ['BallongerFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BallongerOutline: {
@@ -567,7 +555,6 @@ const metadata: {
     sub_category: 'Ballonger',
     keywords: ['BallongerOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BamseFill: {
@@ -577,7 +564,6 @@ const metadata: {
     sub_category: 'Bamse',
     keywords: ['BamseFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   BamseOutline: {
@@ -587,7 +573,6 @@ const metadata: {
     sub_category: 'Bamse',
     keywords: ['BamseOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   BarnehageFill: {
@@ -597,7 +582,6 @@ const metadata: {
     sub_category: 'Barnehage',
     keywords: ['BarnehageFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BarnehageOutline: {
@@ -607,7 +591,6 @@ const metadata: {
     sub_category: 'Barnehage',
     keywords: ['BarnehageOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '04.02.2026',
   },
   BilleFill: {
@@ -617,7 +600,6 @@ const metadata: {
     sub_category: 'Bille',
     keywords: ['BilleFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   BilleOutline: {
@@ -627,7 +609,6 @@ const metadata: {
     sub_category: 'Bille',
     keywords: ['BilleOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   BlokkFill: {
@@ -637,7 +618,6 @@ const metadata: {
     sub_category: 'Blokk',
     keywords: ['BlokkFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BlokkOutline: {
@@ -647,7 +627,6 @@ const metadata: {
     sub_category: 'Blokk',
     keywords: ['BlokkOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BlomstFill: {
@@ -657,7 +636,6 @@ const metadata: {
     sub_category: 'Blomst',
     keywords: ['BlomstFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BlomstOutline: {
@@ -667,7 +645,6 @@ const metadata: {
     sub_category: 'Blomst',
     keywords: ['BlomstOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BlyantFill: {
@@ -677,7 +654,6 @@ const metadata: {
     sub_category: 'Blyant',
     keywords: ['BlyantFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BlyantOgLinjalFill: {
@@ -687,7 +663,6 @@ const metadata: {
     sub_category: 'Blyant og linjal',
     keywords: ['BlyantOgLinjalFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BlyantOgLinjalOutline: {
@@ -697,7 +672,6 @@ const metadata: {
     sub_category: 'Blyant og linjal',
     keywords: ['BlyantOgLinjalOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BlyantOutline: {
@@ -707,7 +681,6 @@ const metadata: {
     sub_category: 'Blyant',
     keywords: ['BlyantOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Bok1Blå: {
@@ -717,7 +690,6 @@ const metadata: {
     sub_category: 'Bok 1',
     keywords: ['Bok1Blå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   Bok1Brun: {
@@ -727,7 +699,6 @@ const metadata: {
     sub_category: 'Bok 1',
     keywords: ['Bok1Brun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   Bok1Grønn: {
@@ -737,7 +708,6 @@ const metadata: {
     sub_category: 'Bok 1',
     keywords: ['Bok1Grønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Bok1Outline: {
@@ -747,7 +717,6 @@ const metadata: {
     sub_category: 'Bok 1',
     keywords: ['Bok1Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Bok2Blå: {
@@ -757,7 +726,6 @@ const metadata: {
     sub_category: 'Bok 2',
     keywords: ['Bok2Blå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   Bok2Brun: {
@@ -767,7 +735,6 @@ const metadata: {
     sub_category: 'Bok 2',
     keywords: ['Bok2Brun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   Bok2Grønn: {
@@ -777,7 +744,6 @@ const metadata: {
     sub_category: 'Bok 2',
     keywords: ['Bok2Grønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Bok2Outline: {
@@ -787,7 +753,6 @@ const metadata: {
     sub_category: 'Bok 2',
     keywords: ['Bok2Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BrillerFill: {
@@ -797,7 +762,6 @@ const metadata: {
     sub_category: 'Briller',
     keywords: ['BrillerFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BrillerOutline: {
@@ -807,7 +771,6 @@ const metadata: {
     sub_category: 'Briller',
     keywords: ['BrillerOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BursdagskroneBlå: {
@@ -817,7 +780,6 @@ const metadata: {
     sub_category: 'Bursdagskrone',
     keywords: ['BursdagskroneBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BursdagskroneBrun: {
@@ -827,7 +789,6 @@ const metadata: {
     sub_category: 'Bursdagskrone',
     keywords: ['BursdagskroneBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BursdagskroneGrønn: {
@@ -837,7 +798,6 @@ const metadata: {
     sub_category: 'Bursdagskrone',
     keywords: ['BursdagskroneGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   BursdagskroneOutline: {
@@ -847,7 +807,6 @@ const metadata: {
     sub_category: 'Bursdagskrone',
     keywords: ['BursdagskroneOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Bygning1Fill: {
@@ -857,7 +816,6 @@ const metadata: {
     sub_category: 'Bygning 1',
     keywords: ['Bygning1Fill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '26.02.2025',
   },
   Bygning1Outline: {
@@ -867,7 +825,6 @@ const metadata: {
     sub_category: 'Bygning 1',
     keywords: ['Bygning1Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '26.02.2025',
   },
   Bygning2Fill: {
@@ -877,7 +834,6 @@ const metadata: {
     sub_category: 'Bygning 2',
     keywords: ['Bygning2Fill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '27.02.2025',
   },
   Bygning2Outline: {
@@ -887,7 +843,6 @@ const metadata: {
     sub_category: 'Bygning 2',
     keywords: ['Bygning2Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '27.02.2025',
   },
   BålFill: {
@@ -897,7 +852,6 @@ const metadata: {
     sub_category: 'Bål',
     keywords: ['BålFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '04.02.2026',
   },
   BålOutline: {
@@ -907,7 +861,6 @@ const metadata: {
     sub_category: 'Bål',
     keywords: ['BålOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '04.02.2026',
   },
   BøkerFill: {
@@ -917,7 +870,6 @@ const metadata: {
     sub_category: 'Bøker',
     keywords: ['BøkerFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   BøkerOutline: {
@@ -927,7 +879,6 @@ const metadata: {
     sub_category: 'Bøker',
     keywords: ['BøkerOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   CheckmarkFill: {
@@ -937,7 +888,6 @@ const metadata: {
     sub_category: 'Checkmark',
     keywords: ['CheckmarkFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '10.02.2026',
   },
   CheckmarkOutline: {
@@ -947,7 +897,6 @@ const metadata: {
     sub_category: 'Checkmark',
     keywords: ['CheckmarkOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '10.02.2026',
   },
   ChipFill: {
@@ -957,7 +906,6 @@ const metadata: {
     sub_category: 'Chip',
     keywords: ['ChipFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   ChipOutline: {
@@ -967,7 +915,6 @@ const metadata: {
     sub_category: 'Chip',
     keywords: ['ChipOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   DatamaskinFill: {
@@ -977,7 +924,6 @@ const metadata: {
     sub_category: 'Datamaskin',
     keywords: ['DatamaskinFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   DatamaskinOutline: {
@@ -987,7 +933,6 @@ const metadata: {
     sub_category: 'Datamaskin',
     keywords: ['DatamaskinOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   DiagramFill: {
@@ -997,7 +942,6 @@ const metadata: {
     sub_category: 'Diagram',
     keywords: ['DiagramFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   DiagramOutline: {
@@ -1007,7 +951,6 @@ const metadata: {
     sub_category: 'Diagram',
     keywords: ['DiagramOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   DiodeBlå: {
@@ -1017,7 +960,6 @@ const metadata: {
     sub_category: 'Diode',
     keywords: ['DiodeBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   DiodeBrun: {
@@ -1027,7 +969,6 @@ const metadata: {
     sub_category: 'Diode',
     keywords: ['DiodeBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   DiodeGrønn: {
@@ -1037,7 +978,6 @@ const metadata: {
     sub_category: 'Diode',
     keywords: ['DiodeGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   DiodeOutline: {
@@ -1047,7 +987,6 @@ const metadata: {
     sub_category: 'Diode',
     keywords: ['DiodeOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   DommerhammerFill: {
@@ -1057,7 +996,6 @@ const metadata: {
     sub_category: 'Dommerhammer',
     keywords: ['DommerhammerFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   DommerhammerOutline: {
@@ -1067,7 +1005,6 @@ const metadata: {
     sub_category: 'Dommerhammer',
     keywords: ['DommerhammerOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   DukkeFill: {
@@ -1077,7 +1014,6 @@ const metadata: {
     sub_category: 'Dukke',
     keywords: ['DukkeFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   DukkeOutline: {
@@ -1087,7 +1023,6 @@ const metadata: {
     sub_category: 'Dukke',
     keywords: ['DukkeOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   FargeskalaFill: {
@@ -1097,7 +1032,6 @@ const metadata: {
     sub_category: 'Fargeskala',
     keywords: ['FargeskalaFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   FargeskalaOutline: {
@@ -1107,7 +1041,6 @@ const metadata: {
     sub_category: 'Fargeskala',
     keywords: ['FargeskalaOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   FastnøkkelBlå: {
@@ -1117,7 +1050,6 @@ const metadata: {
     sub_category: 'Fastnøkkel',
     keywords: ['FastnøkkelBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   FastnøkkelBrun: {
@@ -1127,7 +1059,6 @@ const metadata: {
     sub_category: 'Fastnøkkel',
     keywords: ['FastnøkkelBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   FastnøkkelGrønn: {
@@ -1137,7 +1068,6 @@ const metadata: {
     sub_category: 'Fastnøkkel',
     keywords: ['FastnøkkelGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   FastnøkkelOgVernebrillerFill: {
@@ -1147,7 +1077,6 @@ const metadata: {
     sub_category: 'Fastnøkkel og vernebriller',
     keywords: ['FastnøkkelOgVernebrillerFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   FastnøkkelOgVernebrillerOutline: {
@@ -1157,7 +1086,6 @@ const metadata: {
     sub_category: 'Fastnøkkel og vernebriller',
     keywords: ['FastnøkkelOgVernebrillerOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   FastnøkkelOutline: {
@@ -1167,7 +1095,6 @@ const metadata: {
     sub_category: 'Fastnøkkel',
     keywords: ['FastnøkkelOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   FilmklapperFill: {
@@ -1177,7 +1104,6 @@ const metadata: {
     sub_category: 'Filmklapper',
     keywords: ['FilmklapperFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   FilmklapperOgDatamaskinFill: {
@@ -1187,7 +1113,6 @@ const metadata: {
     sub_category: 'Filmklapper og datamaskin',
     keywords: ['FilmklapperOgDatamaskinFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   FilmklapperOgDatamaskinOutline: {
@@ -1197,7 +1122,6 @@ const metadata: {
     sub_category: 'Filmklapper og datamaskin',
     keywords: ['FilmklapperOgDatamaskinOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   FilmklapperOutline: {
@@ -1207,7 +1131,6 @@ const metadata: {
     sub_category: 'Filmklapper',
     keywords: ['FilmklapperOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   FirkantOgFirkantKryssendeFormFill: {
@@ -1217,7 +1140,6 @@ const metadata: {
     sub_category: 'Firkant og firkant kryssende form',
     keywords: ['FirkantOgFirkantKryssendeFormFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '26.11.2025',
   },
   FirkantOgFirkantKryssendeFormOutline: {
@@ -1227,7 +1149,6 @@ const metadata: {
     sub_category: 'Firkant og firkant kryssende form',
     keywords: ['FirkantOgFirkantKryssendeFormOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '26.11.2025',
   },
   FlyFill: {
@@ -1237,7 +1158,6 @@ const metadata: {
     sub_category: 'Fly',
     keywords: ['FlyFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   FlyOutline: {
@@ -1247,7 +1167,6 @@ const metadata: {
     sub_category: 'Fly',
     keywords: ['FlyOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   ForbindelserFill1: {
@@ -1257,7 +1176,6 @@ const metadata: {
     sub_category: 'Forbindelser',
     keywords: ['ForbindelserFill1'],
     variant: 'Fill1',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   ForbindelserFill2: {
@@ -1267,7 +1185,6 @@ const metadata: {
     sub_category: 'Forbindelser',
     keywords: ['ForbindelserFill2'],
     variant: 'Fill2',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   ForbindelserOutline: {
@@ -1277,7 +1194,6 @@ const metadata: {
     sub_category: 'Forbindelser',
     keywords: ['ForbindelserOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   ForstørrelsesglassFill: {
@@ -1287,7 +1203,6 @@ const metadata: {
     sub_category: 'Forstørrelsesglass',
     keywords: ['ForstørrelsesglassFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   ForstørrelsesglassOutline: {
@@ -1297,7 +1212,6 @@ const metadata: {
     sub_category: 'Forstørrelsesglass',
     keywords: ['ForstørrelsesglassOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   FotballFill: {
@@ -1307,7 +1221,6 @@ const metadata: {
     sub_category: 'Fotball',
     keywords: ['FotballFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   FotballOutline: {
@@ -1317,7 +1230,6 @@ const metadata: {
     sub_category: 'Fotball',
     keywords: ['FotballOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HammerFill: {
@@ -1327,7 +1239,6 @@ const metadata: {
     sub_category: 'Hammer',
     keywords: ['HammerFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HammerOgLinjalFill: {
@@ -1337,7 +1248,6 @@ const metadata: {
     sub_category: 'Hammer og linjal',
     keywords: ['HammerOgLinjalFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HammerOgLinjalOutline: {
@@ -1347,7 +1257,6 @@ const metadata: {
     sub_category: 'Hammer og linjal',
     keywords: ['HammerOgLinjalOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HammerOutline: {
@@ -1357,7 +1266,6 @@ const metadata: {
     sub_category: 'Hammer',
     keywords: ['HammerOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HelsekorsBlå: {
@@ -1367,7 +1275,6 @@ const metadata: {
     sub_category: 'Helsekors',
     keywords: ['HelsekorsBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   HelsekorsBrun: {
@@ -1377,7 +1284,6 @@ const metadata: {
     sub_category: 'Helsekors',
     keywords: ['HelsekorsBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   HelsekorsGrønn: {
@@ -1387,7 +1293,6 @@ const metadata: {
     sub_category: 'Helsekors',
     keywords: ['HelsekorsGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HelsekorsOutline: {
@@ -1397,7 +1302,6 @@ const metadata: {
     sub_category: 'Helsekors',
     keywords: ['HelsekorsOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HendelseFill: {
@@ -1407,7 +1311,6 @@ const metadata: {
     sub_category: 'Hendelse',
     keywords: ['HendelseFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HendelseMedDatoFill: {
@@ -1417,7 +1320,6 @@ const metadata: {
     sub_category: 'Hendelse med dato',
     keywords: ['HendelseMedDatoFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '08.10.2025',
   },
   HendelseMedDatoOutline: {
@@ -1427,7 +1329,6 @@ const metadata: {
     sub_category: 'Hendelse med dato',
     keywords: ['HendelseMedDatoOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '08.10.2025',
   },
   HendelseOutline: {
@@ -1437,7 +1338,6 @@ const metadata: {
     sub_category: 'Hendelse',
     keywords: ['HendelseOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HighfiveFill: {
@@ -1447,7 +1347,6 @@ const metadata: {
     sub_category: 'Highfive',
     keywords: ['HighfiveFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   HighfiveOutline: {
@@ -1457,7 +1356,6 @@ const metadata: {
     sub_category: 'Highfive',
     keywords: ['HighfiveOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   HjerneFill: {
@@ -1467,7 +1365,6 @@ const metadata: {
     sub_category: 'Hjerne',
     keywords: ['HjerneFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HjerneOutline: {
@@ -1477,7 +1374,6 @@ const metadata: {
     sub_category: 'Hjerne',
     keywords: ['HjerneOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HjerteBlå: {
@@ -1487,7 +1383,6 @@ const metadata: {
     sub_category: 'Hjerte',
     keywords: ['HjerteBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   HjerteBrun: {
@@ -1497,7 +1392,6 @@ const metadata: {
     sub_category: 'Hjerte',
     keywords: ['HjerteBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   HjerteGrønn: {
@@ -1507,7 +1401,6 @@ const metadata: {
     sub_category: 'Hjerte',
     keywords: ['HjerteGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HjerteOutline: {
@@ -1517,7 +1410,6 @@ const metadata: {
     sub_category: 'Hjerte',
     keywords: ['HjerteOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HodetelefonerFill: {
@@ -1527,7 +1419,6 @@ const metadata: {
     sub_category: 'Hodetelefoner',
     keywords: ['HodetelefonerFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HodetelefonerOutline: {
@@ -1537,7 +1428,6 @@ const metadata: {
     sub_category: 'Hodetelefoner',
     keywords: ['HodetelefonerOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HolderHenderFill: {
@@ -1547,7 +1437,6 @@ const metadata: {
     sub_category: 'Holder hender',
     keywords: ['HolderHenderFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '27.01.2026',
   },
   HolderHenderOutline: {
@@ -1557,7 +1446,6 @@ const metadata: {
     sub_category: 'Holder hender',
     keywords: ['HolderHenderOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '27.01.2026',
   },
   HusBlå: {
@@ -1567,7 +1455,6 @@ const metadata: {
     sub_category: 'Hus',
     keywords: ['HusBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   HusBrun: {
@@ -1577,7 +1464,6 @@ const metadata: {
     sub_category: 'Hus',
     keywords: ['HusBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   HusGrønn: {
@@ -1587,7 +1473,6 @@ const metadata: {
     sub_category: 'Hus',
     keywords: ['HusGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HusOutline: {
@@ -1597,7 +1482,6 @@ const metadata: {
     sub_category: 'Hus',
     keywords: ['HusOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HåndHudtone1: {
@@ -1607,7 +1491,6 @@ const metadata: {
     sub_category: 'Hånd',
     keywords: ['HåndHudtone1'],
     variant: 'Hudtone 1',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HåndHudtone2: {
@@ -1617,7 +1500,6 @@ const metadata: {
     sub_category: 'Hånd',
     keywords: ['HåndHudtone2'],
     variant: 'Hudtone 2',
-    updated_at: '10.02.2026',
     created_at: '03.11.2025',
   },
   HåndHudtone3: {
@@ -1627,7 +1509,6 @@ const metadata: {
     sub_category: 'Hånd',
     keywords: ['HåndHudtone3'],
     variant: 'Hudtone 3',
-    updated_at: '10.02.2026',
     created_at: '03.11.2025',
   },
   HåndHudtone4: {
@@ -1637,7 +1518,6 @@ const metadata: {
     sub_category: 'Hånd',
     keywords: ['HåndHudtone4'],
     variant: 'Hudtone 4',
-    updated_at: '10.02.2026',
     created_at: '03.11.2025',
   },
   HåndOutline: {
@@ -1647,7 +1527,6 @@ const metadata: {
     sub_category: 'Hånd',
     keywords: ['HåndOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HåndSomPekerHudtone1: {
@@ -1657,7 +1536,6 @@ const metadata: {
     sub_category: 'Hånd som peker',
     keywords: ['HåndSomPekerHudtone1'],
     variant: 'Hudtone 1',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HåndSomPekerHudtone2: {
@@ -1667,7 +1545,6 @@ const metadata: {
     sub_category: 'Hånd som peker',
     keywords: ['HåndSomPekerHudtone2'],
     variant: 'Hudtone 2',
-    updated_at: '10.02.2026',
     created_at: '03.11.2025',
   },
   HåndSomPekerHudtone3: {
@@ -1677,7 +1554,6 @@ const metadata: {
     sub_category: 'Hånd som peker',
     keywords: ['HåndSomPekerHudtone3'],
     variant: 'Hudtone 3',
-    updated_at: '10.02.2026',
     created_at: '03.11.2025',
   },
   HåndSomPekerHudtone4: {
@@ -1687,7 +1563,6 @@ const metadata: {
     sub_category: 'Hånd som peker',
     keywords: ['HåndSomPekerHudtone4'],
     variant: 'Hudtone 4',
-    updated_at: '10.02.2026',
     created_at: '03.11.2025',
   },
   HåndSomPekerOutline: {
@@ -1697,7 +1572,6 @@ const metadata: {
     sub_category: 'Hånd som peker',
     keywords: ['HåndSomPekerOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HåndtrykkFill: {
@@ -1707,7 +1581,6 @@ const metadata: {
     sub_category: 'Håndtrykk',
     keywords: ['HåndtrykkFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HåndtrykkOutline: {
@@ -1717,7 +1590,6 @@ const metadata: {
     sub_category: 'Håndtrykk',
     keywords: ['HåndtrykkOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HøygaffelFill: {
@@ -1727,7 +1599,6 @@ const metadata: {
     sub_category: 'Høygaffel',
     keywords: ['HøygaffelFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HøygaffelOgKornFill: {
@@ -1737,7 +1608,6 @@ const metadata: {
     sub_category: 'Høygaffel og korn',
     keywords: ['HøygaffelOgKornFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HøygaffelOgKornOutline: {
@@ -1747,7 +1617,6 @@ const metadata: {
     sub_category: 'Høygaffel og korn',
     keywords: ['HøygaffelOgKornOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   HøygaffelOutline: {
@@ -1757,7 +1626,6 @@ const metadata: {
     sub_category: 'Høygaffel',
     keywords: ['HøygaffelOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   InfotegnFill: {
@@ -1767,7 +1635,6 @@ const metadata: {
     sub_category: 'Infotegn',
     keywords: ['InfotegnFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '10.02.2026',
   },
   InfotegnOutline: {
@@ -1777,7 +1644,6 @@ const metadata: {
     sub_category: 'Infotegn',
     keywords: ['InfotegnOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '10.02.2026',
   },
   InnstillingerFill: {
@@ -1787,7 +1653,6 @@ const metadata: {
     sub_category: 'Innstillinger',
     keywords: ['InnstillingerFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '12.06.2024',
   },
   InnstillingerOutline: {
@@ -1797,7 +1662,6 @@ const metadata: {
     sub_category: 'Innstillinger',
     keywords: ['InnstillingerOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '12.06.2024',
   },
   IterativProsess1Fill: {
@@ -1807,7 +1671,6 @@ const metadata: {
     sub_category: 'Iterativ prosess 1',
     keywords: ['IterativProsess1Fill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   IterativProsess1Outline: {
@@ -1817,7 +1680,6 @@ const metadata: {
     sub_category: 'Iterativ prosess 1',
     keywords: ['IterativProsess1Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   IterativProsess2Fill: {
@@ -1827,7 +1689,6 @@ const metadata: {
     sub_category: 'Iterativ prosess 2',
     keywords: ['IterativProsess2Fill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   IterativProsess2Outline: {
@@ -1837,7 +1698,6 @@ const metadata: {
     sub_category: 'Iterativ prosess 2',
     keywords: ['IterativProsess2Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   KalenderFill: {
@@ -1847,7 +1707,6 @@ const metadata: {
     sub_category: 'Kalender',
     keywords: ['KalenderFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   KalenderOutline: {
@@ -1857,7 +1716,6 @@ const metadata: {
     sub_category: 'Kalender',
     keywords: ['KalenderOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   KalkulatorFill: {
@@ -1867,7 +1725,6 @@ const metadata: {
     sub_category: 'Kalkulator',
     keywords: ['KalkulatorFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   KalkulatorOutline: {
@@ -1877,7 +1734,6 @@ const metadata: {
     sub_category: 'Kalkulator',
     keywords: ['KalkulatorOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   KameraFill: {
@@ -1887,7 +1743,6 @@ const metadata: {
     sub_category: 'Kamera',
     keywords: ['KameraFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   KameraOutline: {
@@ -1897,7 +1752,6 @@ const metadata: {
     sub_category: 'Kamera',
     keywords: ['KameraOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   KlokkeFill: {
@@ -1907,7 +1761,6 @@ const metadata: {
     sub_category: 'Klokke',
     keywords: ['KlokkeFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   KlokkeOutline: {
@@ -1917,7 +1770,6 @@ const metadata: {
     sub_category: 'Klokke',
     keywords: ['KlokkeOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   KnektBlyantFill: {
@@ -1927,7 +1779,6 @@ const metadata: {
     sub_category: 'Knekt blyant',
     keywords: ['KnektBlyantFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '08.10.2025',
   },
   KnektBlyantOutline: {
@@ -1937,7 +1788,6 @@ const metadata: {
     sub_category: 'Knekt blyant',
     keywords: ['KnektBlyantOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '08.10.2025',
   },
   KokkehattFill: {
@@ -1947,7 +1797,6 @@ const metadata: {
     sub_category: 'Kokkehatt',
     keywords: ['KokkehattFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   KokkehattOgStekespadeFill: {
@@ -1957,7 +1806,6 @@ const metadata: {
     sub_category: 'Kokkehatt og stekespade',
     keywords: ['KokkehattOgStekespadeFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   KokkehattOgStekespadeOutline: {
@@ -1967,7 +1815,6 @@ const metadata: {
     sub_category: 'Kokkehatt og stekespade',
     keywords: ['KokkehattOgStekespadeOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   KokkehattOutline: {
@@ -1977,7 +1824,6 @@ const metadata: {
     sub_category: 'Kokkehatt',
     keywords: ['KokkehattOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   KornaksFill: {
@@ -1987,7 +1833,6 @@ const metadata: {
     sub_category: 'Kornaks',
     keywords: ['KornaksFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   KornaksOutline: {
@@ -1997,7 +1842,6 @@ const metadata: {
     sub_category: 'Kornaks',
     keywords: ['KornaksOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   KulerammeFill: {
@@ -2007,7 +1851,6 @@ const metadata: {
     sub_category: 'Kuleramme',
     keywords: ['KulerammeFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   KulerammeOutline: {
@@ -2017,7 +1860,6 @@ const metadata: {
     sub_category: 'Kuleramme',
     keywords: ['KulerammeOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   KunstigIntelligensFill: {
@@ -2027,7 +1869,6 @@ const metadata: {
     sub_category: 'Kunstig intelligens',
     keywords: ['KunstigIntelligensFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   KunstigIntelligensOutline: {
@@ -2037,7 +1878,6 @@ const metadata: {
     sub_category: 'Kunstig intelligens',
     keywords: ['KunstigIntelligensOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   LegoklossBlå: {
@@ -2047,7 +1887,6 @@ const metadata: {
     sub_category: 'Legokloss',
     keywords: ['LegoklossBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   LegoklossBrun: {
@@ -2057,7 +1896,6 @@ const metadata: {
     sub_category: 'Legokloss',
     keywords: ['LegoklossBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   LegoklossGrønn: {
@@ -2067,7 +1905,6 @@ const metadata: {
     sub_category: 'Legokloss',
     keywords: ['LegoklossGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   LegoklossOutline: {
@@ -2077,7 +1914,6 @@ const metadata: {
     sub_category: 'Legokloss',
     keywords: ['LegoklossOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   LegoklossSort: {
@@ -2087,7 +1923,6 @@ const metadata: {
     sub_category: 'Legokloss',
     keywords: ['LegoklossSort'],
     variant: 'Sort',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   LekekasseFill: {
@@ -2097,7 +1932,6 @@ const metadata: {
     sub_category: 'Lekekasse',
     keywords: ['LekekasseFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   LekekasseOutline: {
@@ -2107,7 +1941,6 @@ const metadata: {
     sub_category: 'Lekekasse',
     keywords: ['LekekasseOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   LekerFill: {
@@ -2117,7 +1950,6 @@ const metadata: {
     sub_category: 'Leker',
     keywords: ['LekerFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   LekerOutline: {
@@ -2127,7 +1959,6 @@ const metadata: {
     sub_category: 'Leker',
     keywords: ['LekerOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   LinjalFill: {
@@ -2137,7 +1968,6 @@ const metadata: {
     sub_category: 'Linjal',
     keywords: ['LinjalFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '27.02.2025',
   },
   LinjalOutline: {
@@ -2147,7 +1977,6 @@ const metadata: {
     sub_category: 'Linjal',
     keywords: ['LinjalOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '27.02.2025',
   },
   LoggInnBlå: {
@@ -2157,7 +1986,6 @@ const metadata: {
     sub_category: 'Logg inn',
     keywords: ['LoggInnBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '10.02.2026',
   },
   LoggInnBrun: {
@@ -2167,7 +1995,6 @@ const metadata: {
     sub_category: 'Logg inn',
     keywords: ['LoggInnBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '10.02.2026',
   },
   LoggInnGrønn: {
@@ -2177,7 +2004,6 @@ const metadata: {
     sub_category: 'Logg inn',
     keywords: ['LoggInnGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '10.02.2026',
   },
   LoggInnOutline: {
@@ -2187,7 +2013,6 @@ const metadata: {
     sub_category: 'Logg inn',
     keywords: ['LoggInnOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '10.02.2026',
   },
   LovbokBlå: {
@@ -2197,7 +2022,6 @@ const metadata: {
     sub_category: 'Lovbok',
     keywords: ['LovbokBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   LovbokBrun: {
@@ -2207,7 +2031,6 @@ const metadata: {
     sub_category: 'Lovbok',
     keywords: ['LovbokBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   LovbokGrønn: {
@@ -2217,7 +2040,6 @@ const metadata: {
     sub_category: 'Lovbok',
     keywords: ['LovbokGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   LovbokOutline: {
@@ -2227,7 +2049,6 @@ const metadata: {
     sub_category: 'Lovbok',
     keywords: ['LovbokOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   LovverkBlå: {
@@ -2237,7 +2058,6 @@ const metadata: {
     sub_category: 'Lovverk',
     keywords: ['LovverkBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   LovverkBrun: {
@@ -2247,7 +2067,6 @@ const metadata: {
     sub_category: 'Lovverk',
     keywords: ['LovverkBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   LovverkGrønn: {
@@ -2257,7 +2076,6 @@ const metadata: {
     sub_category: 'Lovverk',
     keywords: ['LovverkGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   LovverkOutline: {
@@ -2267,7 +2085,6 @@ const metadata: {
     sub_category: 'Lovverk',
     keywords: ['LovverkOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   LyspæreFill: {
@@ -2277,7 +2094,6 @@ const metadata: {
     sub_category: 'Lyspære',
     keywords: ['LyspæreFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   LyspæreOutline: {
@@ -2287,7 +2103,6 @@ const metadata: {
     sub_category: 'Lyspære',
     keywords: ['LyspæreOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   MarihøneFill: {
@@ -2297,7 +2112,6 @@ const metadata: {
     sub_category: 'Marihøne',
     keywords: ['MarihøneFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MarihøneOutline: {
@@ -2307,7 +2121,6 @@ const metadata: {
     sub_category: 'Marihøne',
     keywords: ['MarihøneOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatpakkeFill: {
@@ -2317,7 +2130,6 @@ const metadata: {
     sub_category: 'Matpakke',
     keywords: ['MatpakkeFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   MatpakkeOutline: {
@@ -2327,7 +2139,6 @@ const metadata: {
     sub_category: 'Matpakke',
     keywords: ['MatpakkeOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   MatteDeletegnBlå: {
@@ -2337,7 +2148,6 @@ const metadata: {
     sub_category: 'Matte deletegn',
     keywords: ['MatteDeletegnBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatteDeletegnBrun: {
@@ -2347,7 +2157,6 @@ const metadata: {
     sub_category: 'Matte deletegn',
     keywords: ['MatteDeletegnBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatteDeletegnGrønn: {
@@ -2357,7 +2166,6 @@ const metadata: {
     sub_category: 'Matte deletegn',
     keywords: ['MatteDeletegnGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatteDeletegnOutline: {
@@ -2367,7 +2175,6 @@ const metadata: {
     sub_category: 'Matte deletegn',
     keywords: ['MatteDeletegnOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatteDeletegnSort: {
@@ -2377,7 +2184,6 @@ const metadata: {
     sub_category: 'Matte deletegn',
     keywords: ['MatteDeletegnSort'],
     variant: 'Sort',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatteErLikTegnBlå: {
@@ -2387,7 +2193,6 @@ const metadata: {
     sub_category: 'Matte er lik tegn',
     keywords: ['MatteErLikTegnBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatteErLikTegnBrun: {
@@ -2397,7 +2202,6 @@ const metadata: {
     sub_category: 'Matte er lik tegn',
     keywords: ['MatteErLikTegnBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatteErLikTegnGrønn: {
@@ -2407,7 +2211,6 @@ const metadata: {
     sub_category: 'Matte er lik tegn',
     keywords: ['MatteErLikTegnGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatteErLikTegnOutline: {
@@ -2417,7 +2220,6 @@ const metadata: {
     sub_category: 'Matte er lik tegn',
     keywords: ['MatteErLikTegnOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatteErLikTegnSort: {
@@ -2427,7 +2229,6 @@ const metadata: {
     sub_category: 'Matte er lik tegn',
     keywords: ['MatteErLikTegnSort'],
     variant: 'Sort',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatteGangetegnBlå: {
@@ -2437,7 +2238,6 @@ const metadata: {
     sub_category: 'Matte gangetegn',
     keywords: ['MatteGangetegnBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatteGangetegnBrun: {
@@ -2447,7 +2247,6 @@ const metadata: {
     sub_category: 'Matte gangetegn',
     keywords: ['MatteGangetegnBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatteGangetegnGrønn: {
@@ -2457,7 +2256,6 @@ const metadata: {
     sub_category: 'Matte gangetegn',
     keywords: ['MatteGangetegnGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatteGangetegnOutline: {
@@ -2467,7 +2265,6 @@ const metadata: {
     sub_category: 'Matte gangetegn',
     keywords: ['MatteGangetegnOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatteGangetegnSort: {
@@ -2477,7 +2274,6 @@ const metadata: {
     sub_category: 'Matte gangetegn',
     keywords: ['MatteGangetegnSort'],
     variant: 'Sort',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatteMinustegnBlå: {
@@ -2487,7 +2283,6 @@ const metadata: {
     sub_category: 'Matte minustegn',
     keywords: ['MatteMinustegnBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatteMinustegnBrun: {
@@ -2497,7 +2292,6 @@ const metadata: {
     sub_category: 'Matte minustegn',
     keywords: ['MatteMinustegnBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatteMinustegnGrønn: {
@@ -2507,7 +2301,6 @@ const metadata: {
     sub_category: 'Matte minustegn',
     keywords: ['MatteMinustegnGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatteMinustegnOutline: {
@@ -2517,7 +2310,6 @@ const metadata: {
     sub_category: 'Matte minustegn',
     keywords: ['MatteMinustegnOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MatteMinustegnSort: {
@@ -2527,7 +2319,6 @@ const metadata: {
     sub_category: 'Matte minustegn',
     keywords: ['MatteMinustegnSort'],
     variant: 'Sort',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MattePlusstegnBlå: {
@@ -2537,7 +2328,6 @@ const metadata: {
     sub_category: 'Matte plusstegn',
     keywords: ['MattePlusstegnBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MattePlusstegnBrun: {
@@ -2547,7 +2337,6 @@ const metadata: {
     sub_category: 'Matte plusstegn',
     keywords: ['MattePlusstegnBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MattePlusstegnGrønn: {
@@ -2557,7 +2346,6 @@ const metadata: {
     sub_category: 'Matte plusstegn',
     keywords: ['MattePlusstegnGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MattePlusstegnOutline: {
@@ -2567,7 +2355,6 @@ const metadata: {
     sub_category: 'Matte plusstegn',
     keywords: ['MattePlusstegnOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MattePlusstegnSort: {
@@ -2577,7 +2364,6 @@ const metadata: {
     sub_category: 'Matte plusstegn',
     keywords: ['MattePlusstegnSort'],
     variant: 'Sort',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   MedaljeFill: {
@@ -2587,7 +2373,6 @@ const metadata: {
     sub_category: 'Medalje',
     keywords: ['MedaljeFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   MedaljeOutline: {
@@ -2597,7 +2382,6 @@ const metadata: {
     sub_category: 'Medalje',
     keywords: ['MedaljeOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   MegafonFill: {
@@ -2607,7 +2391,6 @@ const metadata: {
     sub_category: 'Megafon',
     keywords: ['MegafonFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   MegafonOutline: {
@@ -2617,7 +2400,6 @@ const metadata: {
     sub_category: 'Megafon',
     keywords: ['MegafonOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske10Fill: {
@@ -2627,7 +2409,6 @@ const metadata: {
     sub_category: 'Menneske 10',
     keywords: ['Menneske10Fill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '27.02.2025',
   },
   Menneske10Outline: {
@@ -2637,7 +2418,6 @@ const metadata: {
     sub_category: 'Menneske 10',
     keywords: ['Menneske10Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '27.02.2025',
   },
   Menneske11Fill: {
@@ -2647,7 +2427,6 @@ const metadata: {
     sub_category: 'Menneske 11',
     keywords: ['Menneske11Fill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '27.02.2025',
   },
   Menneske11Outline: {
@@ -2657,7 +2436,6 @@ const metadata: {
     sub_category: 'Menneske 11',
     keywords: ['Menneske11Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '27.02.2025',
   },
   Menneske1Blå: {
@@ -2667,7 +2445,6 @@ const metadata: {
     sub_category: 'Menneske 1',
     keywords: ['Menneske1Blå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske1Brun: {
@@ -2677,7 +2454,6 @@ const metadata: {
     sub_category: 'Menneske 1',
     keywords: ['Menneske1Brun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske1Grønn: {
@@ -2687,7 +2463,6 @@ const metadata: {
     sub_category: 'Menneske 1',
     keywords: ['Menneske1Grønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske1Outline: {
@@ -2697,7 +2472,6 @@ const metadata: {
     sub_category: 'Menneske 1',
     keywords: ['Menneske1Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske1Sort: {
@@ -2707,7 +2481,6 @@ const metadata: {
     sub_category: 'Menneske 1',
     keywords: ['Menneske1Sort'],
     variant: 'Sort',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske2Blå: {
@@ -2717,7 +2490,6 @@ const metadata: {
     sub_category: 'Menneske 2',
     keywords: ['Menneske2Blå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske2Brun: {
@@ -2727,7 +2499,6 @@ const metadata: {
     sub_category: 'Menneske 2',
     keywords: ['Menneske2Brun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske2Grønn: {
@@ -2737,7 +2508,6 @@ const metadata: {
     sub_category: 'Menneske 2',
     keywords: ['Menneske2Grønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske2Outline: {
@@ -2747,7 +2517,6 @@ const metadata: {
     sub_category: 'Menneske 2',
     keywords: ['Menneske2Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske2Sort: {
@@ -2757,7 +2526,6 @@ const metadata: {
     sub_category: 'Menneske 2',
     keywords: ['Menneske2Sort'],
     variant: 'Sort',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske3Blå: {
@@ -2767,7 +2535,6 @@ const metadata: {
     sub_category: 'Menneske 3',
     keywords: ['Menneske3Blå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske3Brun: {
@@ -2777,7 +2544,6 @@ const metadata: {
     sub_category: 'Menneske 3',
     keywords: ['Menneske3Brun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske3Grønn: {
@@ -2787,7 +2553,6 @@ const metadata: {
     sub_category: 'Menneske 3',
     keywords: ['Menneske3Grønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske3Outline: {
@@ -2797,7 +2562,6 @@ const metadata: {
     sub_category: 'Menneske 3',
     keywords: ['Menneske3Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske3Sort: {
@@ -2807,7 +2571,6 @@ const metadata: {
     sub_category: 'Menneske 3',
     keywords: ['Menneske3Sort'],
     variant: 'Sort',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske4Blå: {
@@ -2817,7 +2580,6 @@ const metadata: {
     sub_category: 'Menneske 4',
     keywords: ['Menneske4Blå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske4Brun: {
@@ -2827,7 +2589,6 @@ const metadata: {
     sub_category: 'Menneske 4',
     keywords: ['Menneske4Brun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske4Grønn: {
@@ -2837,7 +2598,6 @@ const metadata: {
     sub_category: 'Menneske 4',
     keywords: ['Menneske4Grønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske4Outline: {
@@ -2847,7 +2607,6 @@ const metadata: {
     sub_category: 'Menneske 4',
     keywords: ['Menneske4Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske4Sort: {
@@ -2857,7 +2616,6 @@ const metadata: {
     sub_category: 'Menneske 4',
     keywords: ['Menneske4Sort'],
     variant: 'Sort',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske5Blå: {
@@ -2867,7 +2625,6 @@ const metadata: {
     sub_category: 'Menneske 5',
     keywords: ['Menneske5Blå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske5Brun: {
@@ -2877,7 +2634,6 @@ const metadata: {
     sub_category: 'Menneske 5',
     keywords: ['Menneske5Brun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske5Grønn: {
@@ -2887,7 +2643,6 @@ const metadata: {
     sub_category: 'Menneske 5',
     keywords: ['Menneske5Grønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske5Outline: {
@@ -2897,7 +2652,6 @@ const metadata: {
     sub_category: 'Menneske 5',
     keywords: ['Menneske5Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske5Sort: {
@@ -2907,7 +2661,6 @@ const metadata: {
     sub_category: 'Menneske 5',
     keywords: ['Menneske5Sort'],
     variant: 'Sort',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Menneske6Fill: {
@@ -2917,7 +2670,6 @@ const metadata: {
     sub_category: 'Menneske 6',
     keywords: ['Menneske6Fill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '27.02.2025',
   },
   Menneske6Outline: {
@@ -2927,7 +2679,6 @@ const metadata: {
     sub_category: 'Menneske 6',
     keywords: ['Menneske6Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '27.02.2025',
   },
   Menneske7Fill: {
@@ -2937,7 +2688,6 @@ const metadata: {
     sub_category: 'Menneske 7',
     keywords: ['Menneske7Fill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '27.02.2025',
   },
   Menneske7Outline: {
@@ -2947,7 +2697,6 @@ const metadata: {
     sub_category: 'Menneske 7',
     keywords: ['Menneske7Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '27.02.2025',
   },
   Menneske8Fill: {
@@ -2957,7 +2706,6 @@ const metadata: {
     sub_category: 'Menneske 8',
     keywords: ['Menneske8Fill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '27.02.2025',
   },
   Menneske8Outline: {
@@ -2967,7 +2715,6 @@ const metadata: {
     sub_category: 'Menneske 8',
     keywords: ['Menneske8Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '27.02.2025',
   },
   Menneske9Fill: {
@@ -2977,7 +2724,6 @@ const metadata: {
     sub_category: 'Menneske 9',
     keywords: ['Menneske9Fill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '27.02.2025',
   },
   Menneske9Outline: {
@@ -2987,7 +2733,6 @@ const metadata: {
     sub_category: 'Menneske 9',
     keywords: ['Menneske9Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '27.02.2025',
   },
   Mennesker1Fill: {
@@ -2997,7 +2742,6 @@ const metadata: {
     sub_category: 'Mennesker 1',
     keywords: ['Mennesker1Fill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '04.02.2026',
   },
   Mennesker1Outline: {
@@ -3007,7 +2751,6 @@ const metadata: {
     sub_category: 'Mennesker 1',
     keywords: ['Mennesker1Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '04.02.2026',
   },
   Mennesker2Fill: {
@@ -3017,7 +2760,6 @@ const metadata: {
     sub_category: 'Mennesker 2',
     keywords: ['Mennesker2Fill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '04.02.2026',
   },
   Mennesker2Outline: {
@@ -3027,7 +2769,6 @@ const metadata: {
     sub_category: 'Mennesker 2',
     keywords: ['Mennesker2Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '04.02.2026',
   },
   MikrofonFill: {
@@ -3037,7 +2778,6 @@ const metadata: {
     sub_category: 'Mikrofon',
     keywords: ['MikrofonFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   MikrofonOutline: {
@@ -3047,7 +2787,6 @@ const metadata: {
     sub_category: 'Mikrofon',
     keywords: ['MikrofonOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   MobilFill: {
@@ -3057,7 +2796,6 @@ const metadata: {
     sub_category: 'Mobil',
     keywords: ['MobilFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   MobilOutline: {
@@ -3067,7 +2805,6 @@ const metadata: {
     sub_category: 'Mobil',
     keywords: ['MobilOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   MobilfriFill: {
@@ -3077,7 +2814,6 @@ const metadata: {
     sub_category: 'Mobilfri',
     keywords: ['MobilfriFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   MobilfriOutline: {
@@ -3087,7 +2823,6 @@ const metadata: {
     sub_category: 'Mobilfri',
     keywords: ['MobilfriOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   MålskiveFill: {
@@ -3097,7 +2832,6 @@ const metadata: {
     sub_category: 'Målskive',
     keywords: ['MålskiveFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '10.02.2026',
   },
   MålskiveOutline: {
@@ -3107,7 +2841,6 @@ const metadata: {
     sub_category: 'Målskive',
     keywords: ['MålskiveOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '10.02.2026',
   },
   NettbrettFill: {
@@ -3117,7 +2850,6 @@ const metadata: {
     sub_category: 'Nettbrett',
     keywords: ['NettbrettFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '12.06.2024',
   },
   NettbrettOutline: {
@@ -3127,7 +2859,6 @@ const metadata: {
     sub_category: 'Nettbrett',
     keywords: ['NettbrettOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '12.06.2024',
   },
   NotatarkFill: {
@@ -3137,7 +2868,6 @@ const metadata: {
     sub_category: 'Notatark',
     keywords: ['NotatarkFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   NotatarkOutline: {
@@ -3147,7 +2877,6 @@ const metadata: {
     sub_category: 'Notatark',
     keywords: ['NotatarkOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   NotearkFill: {
@@ -3157,7 +2886,6 @@ const metadata: {
     sub_category: 'Noteark',
     keywords: ['NotearkFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   NotearkOutline: {
@@ -3167,7 +2895,6 @@ const metadata: {
     sub_category: 'Noteark',
     keywords: ['NotearkOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   NyhetFill: {
@@ -3177,7 +2904,6 @@ const metadata: {
     sub_category: 'Nyhet',
     keywords: ['NyhetFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   NyhetOutline: {
@@ -3187,7 +2913,6 @@ const metadata: {
     sub_category: 'Nyhet',
     keywords: ['NyhetOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   PalettFill: {
@@ -3197,7 +2922,6 @@ const metadata: {
     sub_category: 'Palett',
     keywords: ['PalettFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   PalettOutline: {
@@ -3207,7 +2931,6 @@ const metadata: {
     sub_category: 'Palett',
     keywords: ['PalettOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   ParagraftegnBlå: {
@@ -3217,7 +2940,6 @@ const metadata: {
     sub_category: 'Paragraftegn',
     keywords: ['ParagraftegnBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   ParagraftegnBrun: {
@@ -3227,7 +2949,6 @@ const metadata: {
     sub_category: 'Paragraftegn',
     keywords: ['ParagraftegnBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   ParagraftegnGrønn: {
@@ -3237,7 +2958,6 @@ const metadata: {
     sub_category: 'Paragraftegn',
     keywords: ['ParagraftegnGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   ParagraftegnOutline: {
@@ -3247,7 +2967,6 @@ const metadata: {
     sub_category: 'Paragraftegn',
     keywords: ['ParagraftegnOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   PenalFill: {
@@ -3257,7 +2976,6 @@ const metadata: {
     sub_category: 'Penal',
     keywords: ['PenalFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   PenalOutline: {
@@ -3267,7 +2985,6 @@ const metadata: {
     sub_category: 'Penal',
     keywords: ['PenalOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   PenalhusFill: {
@@ -3277,7 +2994,6 @@ const metadata: {
     sub_category: 'Penalhus',
     keywords: ['PenalhusFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   PenalhusOutline: {
@@ -3287,7 +3003,6 @@ const metadata: {
     sub_category: 'Penalhus',
     keywords: ['PenalhusOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   PengerFill: {
@@ -3297,7 +3012,6 @@ const metadata: {
     sub_category: 'Penger',
     keywords: ['PengerFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   PengerOutline: {
@@ -3307,7 +3021,6 @@ const metadata: {
     sub_category: 'Penger',
     keywords: ['PengerOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   PenselFill: {
@@ -3317,7 +3030,6 @@ const metadata: {
     sub_category: 'Pensel',
     keywords: ['PenselFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   PenselOutline: {
@@ -3327,7 +3039,6 @@ const metadata: {
     sub_category: 'Pensel',
     keywords: ['PenselOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   PilerFill: {
@@ -3337,7 +3048,6 @@ const metadata: {
     sub_category: 'Piler',
     keywords: ['PilerFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   PilerOutline: {
@@ -3347,7 +3057,6 @@ const metadata: {
     sub_category: 'Piler',
     keywords: ['PilerOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   PrøveFill: {
@@ -3357,7 +3066,6 @@ const metadata: {
     sub_category: 'Prøve',
     keywords: ['PrøveFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   PrøveOutline: {
@@ -3367,7 +3075,6 @@ const metadata: {
     sub_category: 'Prøve',
     keywords: ['PrøveOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   Puslespill1Fill: {
@@ -3377,7 +3084,6 @@ const metadata: {
     sub_category: 'Puslespill 1',
     keywords: ['Puslespill1Fill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Puslespill1Outline: {
@@ -3387,7 +3093,6 @@ const metadata: {
     sub_category: 'Puslespill 1',
     keywords: ['Puslespill1Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Puslespill2Fill: {
@@ -3397,7 +3102,6 @@ const metadata: {
     sub_category: 'Puslespill 2',
     keywords: ['Puslespill2Fill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Puslespill2Outline: {
@@ -3407,7 +3111,6 @@ const metadata: {
     sub_category: 'Puslespill 2',
     keywords: ['Puslespill2Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   PuslespillbrikkeBlå: {
@@ -3417,7 +3120,6 @@ const metadata: {
     sub_category: 'Puslespillbrikke',
     keywords: ['PuslespillbrikkeBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   PuslespillbrikkeBrun: {
@@ -3427,7 +3129,6 @@ const metadata: {
     sub_category: 'Puslespillbrikke',
     keywords: ['PuslespillbrikkeBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   PuslespillbrikkeGrønn: {
@@ -3437,7 +3138,6 @@ const metadata: {
     sub_category: 'Puslespillbrikke',
     keywords: ['PuslespillbrikkeGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   PuslespillbrikkeOutline: {
@@ -3447,7 +3147,6 @@ const metadata: {
     sub_category: 'Puslespillbrikke',
     keywords: ['PuslespillbrikkeOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Puslespillbrikker1Fill: {
@@ -3457,7 +3156,6 @@ const metadata: {
     sub_category: 'Puslespillbrikker 1',
     keywords: ['Puslespillbrikker1Fill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Puslespillbrikker1Outline: {
@@ -3467,7 +3165,6 @@ const metadata: {
     sub_category: 'Puslespillbrikker 1',
     keywords: ['Puslespillbrikker1Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Puslespillbrikker2Fill: {
@@ -3477,7 +3174,6 @@ const metadata: {
     sub_category: 'Puslespillbrikker 2',
     keywords: ['Puslespillbrikker2Fill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Puslespillbrikker2Outline: {
@@ -3487,7 +3183,6 @@ const metadata: {
     sub_category: 'Puslespillbrikker 2',
     keywords: ['Puslespillbrikker2Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   RegnbueFill: {
@@ -3497,7 +3192,6 @@ const metadata: {
     sub_category: 'Regnbue',
     keywords: ['RegnbueFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '12.06.2024',
   },
   RegnbueOutline: {
@@ -3507,7 +3201,6 @@ const metadata: {
     sub_category: 'Regnbue',
     keywords: ['RegnbueOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '12.06.2024',
   },
   SaksFill: {
@@ -3517,7 +3210,6 @@ const metadata: {
     sub_category: 'Saks',
     keywords: ['SaksFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   SaksOgBlomstFill: {
@@ -3527,7 +3219,6 @@ const metadata: {
     sub_category: 'Saks og blomst',
     keywords: ['SaksOgBlomstFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   SaksOgBlomstOutline: {
@@ -3537,7 +3228,6 @@ const metadata: {
     sub_category: 'Saks og blomst',
     keywords: ['SaksOgBlomstOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   SaksOutline: {
@@ -3547,7 +3237,6 @@ const metadata: {
     sub_category: 'Saks',
     keywords: ['SaksOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   SamiskSolBlå: {
@@ -3557,7 +3246,6 @@ const metadata: {
     sub_category: 'Samisk sol',
     keywords: ['SamiskSolBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   SamiskSolBrun: {
@@ -3567,7 +3255,6 @@ const metadata: {
     sub_category: 'Samisk sol',
     keywords: ['SamiskSolBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   SamiskSolGrønn: {
@@ -3577,7 +3264,6 @@ const metadata: {
     sub_category: 'Samisk sol',
     keywords: ['SamiskSolGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   SamiskSolOutline: {
@@ -3587,7 +3273,6 @@ const metadata: {
     sub_category: 'Samisk sol',
     keywords: ['SamiskSolOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   SamiskSolSort: {
@@ -3597,7 +3282,6 @@ const metadata: {
     sub_category: 'Samisk sol',
     keywords: ['SamiskSolSort'],
     variant: 'Sort',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   SikkerhetFill: {
@@ -3607,7 +3291,6 @@ const metadata: {
     sub_category: 'Sikkerhet',
     keywords: ['SikkerhetFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   SikkerhetOutline: {
@@ -3617,7 +3300,6 @@ const metadata: {
     sub_category: 'Sikkerhet',
     keywords: ['SikkerhetOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   SirkelOgFirkantKryssendeFormFill: {
@@ -3627,7 +3309,6 @@ const metadata: {
     sub_category: 'Sirkel og firkant kryssende form',
     keywords: ['SirkelOgFirkantKryssendeFormFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '26.11.2025',
   },
   SirkelOgFirkantKryssendeFormOutline: {
@@ -3637,7 +3318,6 @@ const metadata: {
     sub_category: 'Sirkel og firkant kryssende form',
     keywords: ['SirkelOgFirkantKryssendeFormOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '26.11.2025',
   },
   SkoleFill: {
@@ -3647,7 +3327,6 @@ const metadata: {
     sub_category: 'Skole',
     keywords: ['SkoleFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   SkoleOutline: {
@@ -3657,7 +3336,6 @@ const metadata: {
     sub_category: 'Skole',
     keywords: ['SkoleOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   SkolesekkFill: {
@@ -3667,7 +3345,6 @@ const metadata: {
     sub_category: 'Skolesekk',
     keywords: ['SkolesekkFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   SkolesekkOutline: {
@@ -3677,7 +3354,6 @@ const metadata: {
     sub_category: 'Skolesekk',
     keywords: ['SkolesekkOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   SnakkebobleHøyreBlå: {
@@ -3687,7 +3363,6 @@ const metadata: {
     sub_category: 'Snakkeboble høyre',
     keywords: ['SnakkebobleHøyreBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   SnakkebobleHøyreBrun: {
@@ -3697,7 +3372,6 @@ const metadata: {
     sub_category: 'Snakkeboble høyre',
     keywords: ['SnakkebobleHøyreBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   SnakkebobleHøyreGrønn: {
@@ -3707,7 +3381,6 @@ const metadata: {
     sub_category: 'Snakkeboble høyre',
     keywords: ['SnakkebobleHøyreGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   SnakkebobleHøyreOutline: {
@@ -3717,7 +3390,6 @@ const metadata: {
     sub_category: 'Snakkeboble høyre',
     keywords: ['SnakkebobleHøyreOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   SnakkebobleHøyreSort: {
@@ -3727,7 +3399,6 @@ const metadata: {
     sub_category: 'Snakkeboble høyre',
     keywords: ['SnakkebobleHøyreSort'],
     variant: 'Sort',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   SnakkebobleVenstreBlå: {
@@ -3737,7 +3408,6 @@ const metadata: {
     sub_category: 'Snakkeboble venstre',
     keywords: ['SnakkebobleVenstreBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   SnakkebobleVenstreBrun: {
@@ -3747,7 +3417,6 @@ const metadata: {
     sub_category: 'Snakkeboble venstre',
     keywords: ['SnakkebobleVenstreBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   SnakkebobleVenstreGrønn: {
@@ -3757,7 +3426,6 @@ const metadata: {
     sub_category: 'Snakkeboble venstre',
     keywords: ['SnakkebobleVenstreGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   SnakkebobleVenstreOutline: {
@@ -3767,7 +3435,6 @@ const metadata: {
     sub_category: 'Snakkeboble venstre',
     keywords: ['SnakkebobleVenstreOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   SnakkebobleVenstreSort: {
@@ -3777,7 +3444,6 @@ const metadata: {
     sub_category: 'Snakkeboble venstre',
     keywords: ['SnakkebobleVenstreSort'],
     variant: 'Sort',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   SommerfuglBlå: {
@@ -3787,7 +3453,6 @@ const metadata: {
     sub_category: 'Sommerfugl',
     keywords: ['SommerfuglBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   SommerfuglBrun: {
@@ -3797,7 +3462,6 @@ const metadata: {
     sub_category: 'Sommerfugl',
     keywords: ['SommerfuglBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   SommerfuglGrønn: {
@@ -3807,7 +3471,6 @@ const metadata: {
     sub_category: 'Sommerfugl',
     keywords: ['SommerfuglGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   SommerfuglOutline: {
@@ -3817,7 +3480,6 @@ const metadata: {
     sub_category: 'Sommerfugl',
     keywords: ['SommerfuglOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   SommerfuglSort: {
@@ -3827,7 +3489,6 @@ const metadata: {
     sub_category: 'Sommerfugl',
     keywords: ['SommerfuglSort'],
     variant: 'Sort',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   SprøyteFill: {
@@ -3837,7 +3498,6 @@ const metadata: {
     sub_category: 'Sprøyte',
     keywords: ['SprøyteFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   SprøyteOutline: {
@@ -3847,7 +3507,6 @@ const metadata: {
     sub_category: 'Sprøyte',
     keywords: ['SprøyteOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   SprøytePlussOgHjerteFill: {
@@ -3857,7 +3516,6 @@ const metadata: {
     sub_category: 'Sprøyte, pluss og hjerte',
     keywords: ['SprøytePlussOgHjerteFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   SprøytePlussOgHjerteOutline: {
@@ -3867,7 +3525,6 @@ const metadata: {
     sub_category: 'Sprøyte, pluss og hjerte',
     keywords: ['SprøytePlussOgHjerteOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   SpørsmålstegnBlå: {
@@ -3877,7 +3534,6 @@ const metadata: {
     sub_category: 'Spørsmålstegn',
     keywords: ['SpørsmålstegnBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   SpørsmålstegnBrun: {
@@ -3887,7 +3543,6 @@ const metadata: {
     sub_category: 'Spørsmålstegn',
     keywords: ['SpørsmålstegnBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   SpørsmålstegnGrønn: {
@@ -3897,7 +3552,6 @@ const metadata: {
     sub_category: 'Spørsmålstegn',
     keywords: ['SpørsmålstegnGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   SpørsmålstegnOutline: {
@@ -3907,7 +3561,6 @@ const metadata: {
     sub_category: 'Spørsmålstegn',
     keywords: ['SpørsmålstegnOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   StatistikkFill: {
@@ -3917,7 +3570,6 @@ const metadata: {
     sub_category: 'Statistikk',
     keywords: ['StatistikkFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   StatistikkOutline: {
@@ -3927,7 +3579,6 @@ const metadata: {
     sub_category: 'Statistikk',
     keywords: ['StatistikkOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   StekespadeBlå: {
@@ -3937,7 +3588,6 @@ const metadata: {
     sub_category: 'Stekespade',
     keywords: ['StekespadeBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   StekespadeBrun: {
@@ -3947,7 +3597,6 @@ const metadata: {
     sub_category: 'Stekespade',
     keywords: ['StekespadeBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   StekespadeGrønn: {
@@ -3957,7 +3606,6 @@ const metadata: {
     sub_category: 'Stekespade',
     keywords: ['StekespadeGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   StekespadeOutline: {
@@ -3967,7 +3615,6 @@ const metadata: {
     sub_category: 'Stekespade',
     keywords: ['StekespadeOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   StjerneBlå: {
@@ -3977,7 +3624,6 @@ const metadata: {
     sub_category: 'Stjerne',
     keywords: ['StjerneBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   StjerneBrun: {
@@ -3987,7 +3633,6 @@ const metadata: {
     sub_category: 'Stjerne',
     keywords: ['StjerneBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   StjerneGrønn: {
@@ -3997,7 +3642,6 @@ const metadata: {
     sub_category: 'Stjerne',
     keywords: ['StjerneGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   StjerneOutline: {
@@ -4007,7 +3651,6 @@ const metadata: {
     sub_category: 'Stjerne',
     keywords: ['StjerneOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   StjerneSort: {
@@ -4017,7 +3660,6 @@ const metadata: {
     sub_category: 'Stjerne',
     keywords: ['StjerneSort'],
     variant: 'Sort',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   StolpediagramAFill: {
@@ -4027,7 +3669,6 @@ const metadata: {
     sub_category: 'Stolpediagram a',
     keywords: ['StolpediagramAFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   StolpediagramAOutline: {
@@ -4037,7 +3678,6 @@ const metadata: {
     sub_category: 'Stolpediagram a',
     keywords: ['StolpediagramAOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   StolpediagramBFill: {
@@ -4047,7 +3687,6 @@ const metadata: {
     sub_category: 'Stolpediagram b',
     keywords: ['StolpediagramBFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   StolpediagramBOutline: {
@@ -4057,7 +3696,6 @@ const metadata: {
     sub_category: 'Stolpediagram b',
     keywords: ['StolpediagramBOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   StøpselBlå: {
@@ -4067,7 +3705,6 @@ const metadata: {
     sub_category: 'Støpsel',
     keywords: ['StøpselBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   StøpselBrun: {
@@ -4077,7 +3714,6 @@ const metadata: {
     sub_category: 'Støpsel',
     keywords: ['StøpselBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '14.03.2025',
   },
   StøpselGrønn: {
@@ -4087,7 +3723,6 @@ const metadata: {
     sub_category: 'Støpsel',
     keywords: ['StøpselGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   StøpselOgDiodeFill: {
@@ -4097,7 +3732,6 @@ const metadata: {
     sub_category: 'Støpsel og diode',
     keywords: ['StøpselOgDiodeFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   StøpselOgDiodeOutline: {
@@ -4107,7 +3741,6 @@ const metadata: {
     sub_category: 'Støpsel og diode',
     keywords: ['StøpselOgDiodeOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   StøpselOutline: {
@@ -4117,7 +3750,6 @@ const metadata: {
     sub_category: 'Støpsel',
     keywords: ['StøpselOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   SykkelFill: {
@@ -4127,7 +3759,6 @@ const metadata: {
     sub_category: 'Sykkel',
     keywords: ['SykkelFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   SykkelOutline: {
@@ -4137,7 +3768,6 @@ const metadata: {
     sub_category: 'Sykkel',
     keywords: ['SykkelOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   TabellFill: {
@@ -4147,7 +3777,6 @@ const metadata: {
     sub_category: 'Tabell',
     keywords: ['TabellFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   TabellOutline: {
@@ -4157,7 +3786,6 @@ const metadata: {
     sub_category: 'Tabell',
     keywords: ['TabellOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   TannhjulFill: {
@@ -4167,7 +3795,6 @@ const metadata: {
     sub_category: 'Tannhjul',
     keywords: ['TannhjulFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   TannhjulOutline: {
@@ -4177,7 +3804,6 @@ const metadata: {
     sub_category: 'Tannhjul',
     keywords: ['TannhjulOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   Tape1Fill: {
@@ -4187,7 +3813,6 @@ const metadata: {
     sub_category: 'Tape 1',
     keywords: ['Tape1Fill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   Tape1Outline: {
@@ -4197,7 +3822,6 @@ const metadata: {
     sub_category: 'Tape 1',
     keywords: ['Tape1Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   Tape2Fill: {
@@ -4207,7 +3831,6 @@ const metadata: {
     sub_category: 'Tape 2',
     keywords: ['Tape2Fill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   Tape2Outline: {
@@ -4217,7 +3840,6 @@ const metadata: {
     sub_category: 'Tape 2',
     keywords: ['Tape2Outline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   TegneverktøyFill: {
@@ -4227,7 +3849,6 @@ const metadata: {
     sub_category: 'Tegneverktøy',
     keywords: ['TegneverktøyFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   TegneverktøyOutline: {
@@ -4237,7 +3858,6 @@ const metadata: {
     sub_category: 'Tegneverktøy',
     keywords: ['TegneverktøyOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   TegnspråkAHudtone1: {
@@ -4247,7 +3867,6 @@ const metadata: {
     sub_category: 'Tegnspråk a',
     keywords: ['TegnspråkAHudtone1'],
     variant: 'Hudtone 1',
-    updated_at: '10.02.2026',
     created_at: '08.10.2025',
   },
   TegnspråkAHudtone2: {
@@ -4257,7 +3876,6 @@ const metadata: {
     sub_category: 'Tegnspråk a',
     keywords: ['TegnspråkAHudtone2'],
     variant: 'Hudtone 2',
-    updated_at: '10.02.2026',
     created_at: '03.11.2025',
   },
   TegnspråkAHudtone3: {
@@ -4267,7 +3885,6 @@ const metadata: {
     sub_category: 'Tegnspråk a',
     keywords: ['TegnspråkAHudtone3'],
     variant: 'Hudtone 3',
-    updated_at: '10.02.2026',
     created_at: '03.11.2025',
   },
   TegnspråkAHudtone4: {
@@ -4277,7 +3894,6 @@ const metadata: {
     sub_category: 'Tegnspråk a',
     keywords: ['TegnspråkAHudtone4'],
     variant: 'Hudtone 4',
-    updated_at: '10.02.2026',
     created_at: '03.11.2025',
   },
   TegnspråkAOutline: {
@@ -4287,7 +3903,6 @@ const metadata: {
     sub_category: 'Tegnspråk a',
     keywords: ['TegnspråkAOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '08.10.2025',
   },
   TegnspråkBHudtone1: {
@@ -4297,7 +3912,6 @@ const metadata: {
     sub_category: 'Tegnspråk b',
     keywords: ['TegnspråkBHudtone1'],
     variant: 'Hudtone 1',
-    updated_at: '10.02.2026',
     created_at: '08.10.2025',
   },
   TegnspråkBHudtone2: {
@@ -4307,7 +3921,6 @@ const metadata: {
     sub_category: 'Tegnspråk b',
     keywords: ['TegnspråkBHudtone2'],
     variant: 'Hudtone 2',
-    updated_at: '10.02.2026',
     created_at: '03.11.2025',
   },
   TegnspråkBHudtone3: {
@@ -4317,7 +3930,6 @@ const metadata: {
     sub_category: 'Tegnspråk b',
     keywords: ['TegnspråkBHudtone3'],
     variant: 'Hudtone 3',
-    updated_at: '10.02.2026',
     created_at: '03.11.2025',
   },
   TegnspråkBHudtone4: {
@@ -4327,7 +3939,6 @@ const metadata: {
     sub_category: 'Tegnspråk b',
     keywords: ['TegnspråkBHudtone4'],
     variant: 'Hudtone 4',
-    updated_at: '10.02.2026',
     created_at: '03.11.2025',
   },
   TegnspråkBOutline: {
@@ -4337,7 +3948,6 @@ const metadata: {
     sub_category: 'Tegnspråk b',
     keywords: ['TegnspråkBOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '08.10.2025',
   },
   TegnspråkCHudtone1: {
@@ -4347,7 +3957,6 @@ const metadata: {
     sub_category: 'Tegnspråk c',
     keywords: ['TegnspråkCHudtone1'],
     variant: 'Hudtone 1',
-    updated_at: '10.02.2026',
     created_at: '08.10.2025',
   },
   TegnspråkCHudtone2: {
@@ -4357,7 +3966,6 @@ const metadata: {
     sub_category: 'Tegnspråk c',
     keywords: ['TegnspråkCHudtone2'],
     variant: 'Hudtone 2',
-    updated_at: '10.02.2026',
     created_at: '03.11.2025',
   },
   TegnspråkCHudtone3: {
@@ -4367,7 +3975,6 @@ const metadata: {
     sub_category: 'Tegnspråk c',
     keywords: ['TegnspråkCHudtone3'],
     variant: 'Hudtone 3',
-    updated_at: '10.02.2026',
     created_at: '03.11.2025',
   },
   TegnspråkCHudtone4: {
@@ -4377,7 +3984,6 @@ const metadata: {
     sub_category: 'Tegnspråk c',
     keywords: ['TegnspråkCHudtone4'],
     variant: 'Hudtone 4',
-    updated_at: '10.02.2026',
     created_at: '03.11.2025',
   },
   TegnspråkCOutline: {
@@ -4387,7 +3993,6 @@ const metadata: {
     sub_category: 'Tegnspråk c',
     keywords: ['TegnspråkCOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '08.10.2025',
   },
   TenkebobleHøyreBlå: {
@@ -4397,7 +4002,6 @@ const metadata: {
     sub_category: 'Tenkeboble høyre',
     keywords: ['TenkebobleHøyreBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   TenkebobleHøyreBrun: {
@@ -4407,7 +4011,6 @@ const metadata: {
     sub_category: 'Tenkeboble høyre',
     keywords: ['TenkebobleHøyreBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   TenkebobleHøyreGrønn: {
@@ -4417,7 +4020,6 @@ const metadata: {
     sub_category: 'Tenkeboble høyre',
     keywords: ['TenkebobleHøyreGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   TenkebobleHøyreOutline: {
@@ -4427,7 +4029,6 @@ const metadata: {
     sub_category: 'Tenkeboble høyre',
     keywords: ['TenkebobleHøyreOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   TenkebobleHøyreSort: {
@@ -4437,7 +4038,6 @@ const metadata: {
     sub_category: 'Tenkeboble høyre',
     keywords: ['TenkebobleHøyreSort'],
     variant: 'Sort',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   TenkebobleVenstreBlå: {
@@ -4447,7 +4047,6 @@ const metadata: {
     sub_category: 'Tenkeboble venstre',
     keywords: ['TenkebobleVenstreBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   TenkebobleVenstreBrun: {
@@ -4457,7 +4056,6 @@ const metadata: {
     sub_category: 'Tenkeboble venstre',
     keywords: ['TenkebobleVenstreBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   TenkebobleVenstreGrønn: {
@@ -4467,7 +4065,6 @@ const metadata: {
     sub_category: 'Tenkeboble venstre',
     keywords: ['TenkebobleVenstreGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   TenkebobleVenstreOutline: {
@@ -4477,7 +4074,6 @@ const metadata: {
     sub_category: 'Tenkeboble venstre',
     keywords: ['TenkebobleVenstreOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   TenkebobleVenstreSort: {
@@ -4487,7 +4083,6 @@ const metadata: {
     sub_category: 'Tenkeboble venstre',
     keywords: ['TenkebobleVenstreSort'],
     variant: 'Sort',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   TennisballFill: {
@@ -4497,7 +4092,6 @@ const metadata: {
     sub_category: 'Tennisball',
     keywords: ['TennisballFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   TennisballOutline: {
@@ -4507,7 +4101,6 @@ const metadata: {
     sub_category: 'Tennisball',
     keywords: ['TennisballOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   TimeglassFill: {
@@ -4517,7 +4110,6 @@ const metadata: {
     sub_category: 'Timeglass',
     keywords: ['TimeglassFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   TimeglassOutline: {
@@ -4527,7 +4119,6 @@ const metadata: {
     sub_category: 'Timeglass',
     keywords: ['TimeglassOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   TomStolFill: {
@@ -4537,7 +4128,6 @@ const metadata: {
     sub_category: 'Tom stol',
     keywords: ['TomStolFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '27.01.2026',
   },
   TomStolOutline: {
@@ -4547,7 +4137,6 @@ const metadata: {
     sub_category: 'Tom stol',
     keywords: ['TomStolOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '27.01.2026',
   },
   TreFill: {
@@ -4557,7 +4146,6 @@ const metadata: {
     sub_category: 'Tre',
     keywords: ['TreFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '04.02.2026',
   },
   TreOutline: {
@@ -4567,7 +4155,6 @@ const metadata: {
     sub_category: 'Tre',
     keywords: ['TreOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '04.02.2026',
   },
   TrehjulsykkelFill: {
@@ -4577,7 +4164,6 @@ const metadata: {
     sub_category: 'Trehjulsykkel',
     keywords: ['TrehjulsykkelFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   TrehjulsykkelOutline: {
@@ -4587,7 +4173,6 @@ const metadata: {
     sub_category: 'Trehjulsykkel',
     keywords: ['TrehjulsykkelOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   TrådsnelleFill: {
@@ -4597,7 +4182,6 @@ const metadata: {
     sub_category: 'Trådsnelle',
     keywords: ['TrådsnelleFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   TrådsnelleOgBlyantFill: {
@@ -4607,7 +4191,6 @@ const metadata: {
     sub_category: 'Trådsnelle og blyant',
     keywords: ['TrådsnelleOgBlyantFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   TrådsnelleOgBlyantOutline: {
@@ -4617,7 +4200,6 @@ const metadata: {
     sub_category: 'Trådsnelle og blyant',
     keywords: ['TrådsnelleOgBlyantOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   TrådsnelleOutline: {
@@ -4627,7 +4209,6 @@ const metadata: {
     sub_category: 'Trådsnelle',
     keywords: ['TrådsnelleOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   VerdenFill: {
@@ -4637,7 +4218,6 @@ const metadata: {
     sub_category: 'Verden',
     keywords: ['VerdenFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   VerdenOgHodetelefonerFill: {
@@ -4647,7 +4227,6 @@ const metadata: {
     sub_category: 'Verden og hodetelefoner',
     keywords: ['VerdenOgHodetelefonerFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   VerdenOgHodetelefonerOutline: {
@@ -4657,7 +4236,6 @@ const metadata: {
     sub_category: 'Verden og hodetelefoner',
     keywords: ['VerdenOgHodetelefonerOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   VerdenOutline: {
@@ -4667,7 +4245,6 @@ const metadata: {
     sub_category: 'Verden',
     keywords: ['VerdenOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   VerktøyFill: {
@@ -4677,7 +4254,6 @@ const metadata: {
     sub_category: 'Verktøy',
     keywords: ['VerktøyFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '12.06.2024',
   },
   VerktøyOutline: {
@@ -4687,7 +4263,6 @@ const metadata: {
     sub_category: 'Verktøy',
     keywords: ['VerktøyOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '12.06.2024',
   },
   VernebrillerFill: {
@@ -4697,7 +4272,6 @@ const metadata: {
     sub_category: 'Vernebriller',
     keywords: ['VernebrillerFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   VernebrillerOutline: {
@@ -4707,7 +4281,6 @@ const metadata: {
     sub_category: 'Vernebriller',
     keywords: ['VernebrillerOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   VinkellinjalFill: {
@@ -4717,7 +4290,6 @@ const metadata: {
     sub_category: 'Vinkellinjal',
     keywords: ['VinkellinjalFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   VinkellinjalOutline: {
@@ -4727,7 +4299,6 @@ const metadata: {
     sub_category: 'Vinkellinjal',
     keywords: ['VinkellinjalOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '20.06.2025',
   },
   VitnemålFill: {
@@ -4737,7 +4308,6 @@ const metadata: {
     sub_category: 'Vitnemål',
     keywords: ['VitnemålFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   VitnemålOutline: {
@@ -4747,7 +4317,6 @@ const metadata: {
     sub_category: 'Vitnemål',
     keywords: ['VitnemålOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '11.06.2024',
   },
   ÅpenDørBlå: {
@@ -4757,7 +4326,6 @@ const metadata: {
     sub_category: 'Åpen dør',
     keywords: ['ÅpenDørBlå'],
     variant: 'Blå',
-    updated_at: '10.02.2026',
     created_at: '10.02.2026',
   },
   ÅpenDørBrun: {
@@ -4767,7 +4335,6 @@ const metadata: {
     sub_category: 'Åpen dør',
     keywords: ['ÅpenDørBrun'],
     variant: 'Brun',
-    updated_at: '10.02.2026',
     created_at: '10.02.2026',
   },
   ÅpenDørGrønn: {
@@ -4777,7 +4344,6 @@ const metadata: {
     sub_category: 'Åpen dør',
     keywords: ['ÅpenDørGrønn'],
     variant: 'Grønn',
-    updated_at: '10.02.2026',
     created_at: '10.02.2026',
   },
   ÅpenDørOutline: {
@@ -4787,7 +4353,6 @@ const metadata: {
     sub_category: 'Åpen dør',
     keywords: ['ÅpenDørOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '10.02.2026',
   },
   ØreFill: {
@@ -4797,7 +4362,6 @@ const metadata: {
     sub_category: 'Øre',
     keywords: ['ØreFill'],
     variant: 'Fill',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
   ØreOutline: {
@@ -4807,7 +4371,6 @@ const metadata: {
     sub_category: 'Øre',
     keywords: ['ØreOutline'],
     variant: 'Outline',
-    updated_at: '10.02.2026',
     created_at: '29.01.2025',
   },
 };
