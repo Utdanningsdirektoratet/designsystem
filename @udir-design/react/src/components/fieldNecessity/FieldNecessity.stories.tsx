@@ -1,9 +1,12 @@
 import type { StoryContext } from '@storybook/react-vite';
 import preview from '.storybook/preview';
+import { formatReactSource } from '.storybook/utils/sourceTransformers';
 import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
+import { useRadioGroup } from 'src/utilities/hooks/useRadioGroup/useRadioGroup';
 import { Card } from '../card/Card';
 import { Checkbox } from '../checkbox/Checkbox';
 import { Fieldset } from '../fieldset/Fieldset';
+import { Radio } from '../radio/Radio';
 import { Textfield } from '../textfield/Textfield';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
@@ -104,16 +107,9 @@ export const AllOptional = meta.story({
 });
 
 export const SingleOptionalField = meta.story({
-  args: { showSummary: false },
+  args: { showSummary: false, showOptional: true },
   render: (args, context) => (
-    <FieldNecessity
-      {...args}
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        rowGap: 'var(--ds-size-4)',
-      }}
-    >
+    <FieldNecessity {...args}>
       <Textfield
         id={id(context, 'comments')}
         multiline
@@ -126,14 +122,7 @@ export const SingleOptionalField = meta.story({
 export const SingleRequiredField = meta.story({
   args: { showSummary: false },
   render: (args, context) => (
-    <FieldNecessity
-      {...args}
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        rowGap: 'var(--ds-size-4)',
-      }}
-    >
+    <FieldNecessity {...args}>
       <Textfield
         id={id(context, 'events')}
         multiline
@@ -145,21 +134,18 @@ export const SingleRequiredField = meta.story({
 });
 
 export const FieldsetCheckboxes = meta.story({
+  parameters: {
+    docs: { source: { type: 'code', transform: formatReactSource } },
+  },
   args: { showSummary: false },
   render: (args, context) => {
     const { getCheckboxProps, validationMessageProps } = useCheckboxGroup({
       required: true,
+      name: 'checkbox-group',
     });
 
     return (
-      <FieldNecessity
-        {...args}
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          rowGap: 'var(--ds-size-4)',
-        }}
-      >
+      <FieldNecessity {...args}>
         <Fieldset>
           <Fieldset.Legend>
             Hvordan vil du helst at vi skal kontakte deg?
@@ -189,17 +175,45 @@ export const FieldsetCheckboxes = meta.story({
   },
 });
 
+export const FieldsetRadios = meta.story({
+  parameters: {
+    docs: { source: { type: 'code', transform: formatReactSource } },
+  },
+  args: { showSummary: false },
+  render: (args, context) => {
+    const ageGroups = [
+      { value: '10-20', label: '10-20 år' },
+      { value: '21-45', label: '21-45 år' },
+      { value: '46-80', label: '46-80 år' },
+    ];
+    const { getRadioProps, validationMessageProps } = useRadioGroup({
+      required: true,
+      name: 'radio-group',
+    });
+
+    return (
+      <FieldNecessity {...args}>
+        <Fieldset>
+          <Fieldset.Legend>Velg din aldersgruppe</Fieldset.Legend>
+          {ageGroups.map((group) => (
+            <Radio
+              key={group.value}
+              id={id(context, group.value)}
+              label={group.label}
+              {...getRadioProps(group.value)}
+            />
+          ))}
+          <ValidationMessage {...validationMessageProps} />
+        </Fieldset>
+      </FieldNecessity>
+    );
+  },
+});
+
 export const IndividualCheckboxes = meta.story({
   render: (args, context) => {
     return (
-      <FieldNecessity
-        {...args}
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          rowGap: 'var(--ds-size-4)',
-        }}
-      >
+      <FieldNecessity {...args}>
         <Checkbox
           id={id(context, 'terms-conditions')}
           label="Jeg bekrefter at opplysningene i søknaden er korrekt"
