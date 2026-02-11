@@ -181,7 +181,9 @@ exports[`Form Page 2 1`] = `
           data-weight="medium"
           for="projectTitle"
         >
-          Tittel på prosjektet
+          <span>
+            Tittel på prosjektet
+          </span>
         </label>
         <div>
           <input
@@ -197,7 +199,9 @@ exports[`Form Page 2 1`] = `
           data-weight="medium"
           for="projectDescription"
         >
-          Beskrivelse av prosjektet
+          <span>
+            Beskrivelse av prosjektet
+          </span>
         </label>
         <div>
           <textarea
@@ -214,7 +218,9 @@ exports[`Form Page 2 1`] = `
         tabindex="-1"
       >
         <legend data-weight="medium">
-          Kategori
+          <span>
+            Kategori
+          </span>
         </legend>
         <p data-variant="default">
           Hvilken kategori hører prosjektet til?
@@ -231,7 +237,9 @@ exports[`Form Page 2 1`] = `
             data-weight="regular"
             for="radio-learning"
           >
-            Opplæring
+            <span>
+              Opplæring
+            </span>
           </label>
         </div>
         <div>
@@ -246,7 +254,9 @@ exports[`Form Page 2 1`] = `
             data-weight="regular"
             for="radio-social"
           >
-            Sosialt
+            <span>
+              Sosialt
+            </span>
           </label>
         </div>
         <div>
@@ -261,7 +271,9 @@ exports[`Form Page 2 1`] = `
             data-weight="regular"
             for="radio-activity"
           >
-            Aktivitet
+            <span>
+              Aktivitet
+            </span>
           </label>
         </div>
         <details>
@@ -278,7 +290,9 @@ exports[`Form Page 2 1`] = `
           data-weight="medium"
           for="county"
         >
-          Gjennomføringssted
+          <span>
+            Gjennomføringssted
+          </span>
         </label>
         <div
           data-field="description"
@@ -488,7 +502,9 @@ exports[`Form Page 2 1`] = `
           data-weight="medium"
           for="ageGroup"
         >
-          Aldersgruppe
+          <span>
+            Aldersgruppe
+          </span>
         </label>
         <div
           data-field="description"
@@ -809,7 +825,9 @@ exports[`Form Page 3 1`] = `
           data-weight="medium"
           for="dokumentasjon-dropzone"
         >
-          Last opp dokumentasjon
+          <span>
+            Last opp dokumentasjon
+          </span>
         </label>
         <div
           data-field="description"
@@ -863,7 +881,9 @@ exports[`Form Page 3 1`] = `
           data-weight="medium"
           for="addition"
         >
-          Kommentarer til dokumentasjon
+          <span>
+            Kommentarer til dokumentasjon
+          </span>
         </label>
         <div
           data-field="description"
@@ -1674,7 +1694,9 @@ exports[`Form Story 1`] = `
           data-weight="medium"
           for="firstName"
         >
-          Fornavn
+          <span>
+            Fornavn
+          </span>
         </label>
         <div>
           <input
@@ -1691,7 +1713,9 @@ exports[`Form Story 1`] = `
           data-weight="medium"
           for="lastName"
         >
-          Etternavn
+          <span>
+            Etternavn
+          </span>
         </label>
         <input
           id="lastName"
@@ -1707,7 +1731,9 @@ exports[`Form Story 1`] = `
         tabindex="-1"
       >
         <legend data-weight="medium">
-          Hvordan ønsker du at vi skal kontakte deg?
+          <span>
+            Hvordan ønsker du at vi skal kontakte deg?
+          </span>
         </legend>
         <p data-variant="default">
           Velg ett eller flere alternativer
@@ -1725,7 +1751,9 @@ exports[`Form Story 1`] = `
             data-weight="regular"
             for="contactMethodsEmail"
           >
-            E-post
+            <span>
+              E-post
+            </span>
           </label>
         </div>
         <div>
@@ -1741,7 +1769,9 @@ exports[`Form Story 1`] = `
             data-weight="regular"
             for="contactMethodsTelefon"
           >
-            Telefon
+            <span>
+              Telefon
+            </span>
           </label>
         </div>
         <div>
@@ -1757,7 +1787,9 @@ exports[`Form Story 1`] = `
             data-weight="regular"
             for="contactMethodsSms"
           >
-            SMS
+            <span>
+              SMS
+            </span>
           </label>
         </div>
       </fieldset>

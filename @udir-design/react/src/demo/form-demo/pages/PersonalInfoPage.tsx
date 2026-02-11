@@ -29,7 +29,7 @@ export const PersonalInfoPage = ({
       <FieldNecessity.Summary />
       <Textfield
         id="firstName"
-        label="Fornavn"
+        label={<span>Fornavn</span>}
         {...register('firstName')}
         autoComplete="given-name"
         error={errors.firstName?.message}
@@ -37,7 +37,9 @@ export const PersonalInfoPage = ({
         required
       />
       <Field>
-        <Label>Etternavn</Label>
+        <Label>
+          <span>Etternavn</span>
+        </Label>
         <Input
           id="lastName"
           {...register('lastName')}
@@ -52,14 +54,14 @@ export const PersonalInfoPage = ({
       </Field>
       <Fieldset id="contactMethods" {...focusableFieldsetProps}>
         <Fieldset.Legend>
-          Hvordan ønsker du at vi skal kontakte deg?
+          <span>Hvordan ønsker du at vi skal kontakte deg?</span>
         </Fieldset.Legend>
         <Fieldset.Description>
           Velg ett eller flere alternativer
         </Fieldset.Description>
         <Checkbox
           id="contactMethodsEmail"
-          label="E-post"
+          label={<span>E-post</span>}
           {...register('contactMethods')}
           aria-invalid={isInvalid}
           readOnly={isSubmitSuccessful}
@@ -68,7 +70,7 @@ export const PersonalInfoPage = ({
         />
         <Checkbox
           id="contactMethodsTelefon"
-          label="Telefon"
+          label={<span>Telefon</span>}
           {...register('contactMethods')}
           aria-invalid={isInvalid}
           readOnly={isSubmitSuccessful}
@@ -77,7 +79,7 @@ export const PersonalInfoPage = ({
         />
         <Checkbox
           id="contactMethodsSms"
-          label="SMS"
+          label={<span>SMS</span>}
           {...register('contactMethods')}
           aria-invalid={isInvalid}
           readOnly={isSubmitSuccessful}

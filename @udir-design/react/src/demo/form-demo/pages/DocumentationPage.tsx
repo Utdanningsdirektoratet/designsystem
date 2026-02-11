@@ -56,7 +56,7 @@ export const DocumentationPage = ({
       <FieldNecessity.Summary />
       <FileUpload.Dropzone
         id="dokumentasjon-dropzone"
-        label="Last opp dokumentasjon"
+        label={<span>Last opp dokumentasjon</span>}
         description="Du kan laste opp filer i PDF-format. Filer kan være opptil 25 MB."
         {...getRootProps()}
         error={errors.documentation?.message}
@@ -97,7 +97,9 @@ export const DocumentationPage = ({
         </>
       )}
       <Field>
-        <Label>Kommentarer til dokumentasjon</Label>
+        <Label>
+          <span>Kommentarer til dokumentasjon</span>
+        </Label>
         <Field.Description>
           Ytterlige kommentarer til dokumentasjonen du har lastet opp.
         </Field.Description>

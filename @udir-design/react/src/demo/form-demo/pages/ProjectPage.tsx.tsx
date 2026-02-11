@@ -28,14 +28,14 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
       <FieldNecessity.Summary />
       <Textfield
         id="projectTitle"
-        label="Tittel på prosjektet"
+        label={<span>Tittel på prosjektet</span>}
         {...register('projectTitle')}
         error={errors.projectTitle?.message}
         readOnly={isSubmitSuccessful}
         required
       />
       <Textfield
-        label="Beskrivelse av prosjektet"
+        label={<span>Beskrivelse av prosjektet</span>}
         id="projectDescription"
         multiline
         rows={4}
@@ -45,13 +45,15 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
         required
       />
       <Fieldset id="projectCategory" {...focusableFieldsetProps}>
-        <Fieldset.Legend>Kategori</Fieldset.Legend>
+        <Fieldset.Legend>
+          <span>Kategori</span>
+        </Fieldset.Legend>
         <Fieldset.Description>
           Hvilken kategori hører prosjektet til?
         </Fieldset.Description>
         <Radio
           id="radio-learning"
-          label="Opplæring"
+          label={<span>Opplæring</span>}
           value="Learning"
           readOnly={isSubmitSuccessful}
           {...register('projectCategory')}
@@ -59,7 +61,7 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
         />
         <Radio
           id="radio-social"
-          label="Sosialt"
+          label={<span>Sosialt</span>}
           value="social"
           readOnly={isSubmitSuccessful}
           {...register('projectCategory')}
@@ -67,7 +69,7 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
         />
         <Radio
           id="radio-activity"
-          label="Aktivitet"
+          label={<span>Aktivitet</span>}
           value="activity"
           readOnly={isSubmitSuccessful}
           {...register('projectCategory')}
@@ -85,7 +87,9 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
         )}
       </Fieldset>
       <Field>
-        <Label>Gjennomføringssted</Label>
+        <Label>
+          <span>Gjennomføringssted</span>
+        </Label>
         <Field.Description>
           Hvilket fylke vil prosjektet gjennomføres i?
         </Field.Description>
@@ -124,7 +128,9 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
         )}
       </Field>
       <Field>
-        <Label>Aldersgruppe</Label>
+        <Label>
+          <span>Aldersgruppe</span>
+        </Label>
         <Field.Description>
           Hvilken aldersgruppe er prosjektet rettet mot?
         </Field.Description>
