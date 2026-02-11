@@ -26,10 +26,18 @@
   &[data-show-required='true'],
   &[data-show-optional='true'] {
     .ds-label {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      column-gap: var(--ds-size-2);
+      > :last-child {
+        /* If the label has a non-text element, add spacing to that element */
+        margin-right: var(--ds-size-2);
+      }
+      &:not(:has(> :last-child)) {
+        /* If the label doesn't have a non-text element, add spacing to the necessity tag */
+        &::after {
+          margin-left: var(--ds-size-2);
+        }
+        /* Try to keep the tag on the same line as the last word to avoid indented tag */
+        text-wrap: pretty;
+      }
     }
   }
 

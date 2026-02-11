@@ -12,7 +12,9 @@ exports[`All Optional 1`] = `
       data-weight="medium"
       for="all-optional-opinion"
     >
-      Hva synes du om skjemaet?
+      <span>
+        Hva synes du om skjemaet?
+      </span>
     </label>
     <div>
       <textarea id="all-optional-opinion">
@@ -24,7 +26,9 @@ exports[`All Optional 1`] = `
       data-weight="medium"
       for="all-optional-other"
     >
-      Har du noen andre innspill?
+      <span>
+        Har du noen andre innspill?
+      </span>
     </label>
     <div>
       <textarea id="all-optional-other">
@@ -46,7 +50,9 @@ exports[`All Required 1`] = `
       data-weight="medium"
       for="all-required-first"
     >
-      Fornavn
+      <span>
+        Fornavn
+      </span>
     </label>
     <div>
       <input
@@ -61,7 +67,9 @@ exports[`All Required 1`] = `
       data-weight="medium"
       for="all-required-last"
     >
-      Etternavn
+      <span>
+        Etternavn
+      </span>
     </label>
     <div>
       <input
@@ -79,11 +87,12 @@ exports[`Fieldset Checkboxes 1`] = `
   data-show-required="true"
   data-show-optional="false"
   data-show-summary="false"
-  style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
 >
   <fieldset>
     <legend data-weight="medium">
-      Hvordan vil du helst at vi skal kontakte deg?
+      <span>
+        Hvordan vil du helst at vi skal kontakte deg?
+      </span>
     </legend>
     <p data-variant="default">
       Velg de alternativene som er relevante for deg.
@@ -94,13 +103,15 @@ exports[`Fieldset Checkboxes 1`] = `
         required
         type="checkbox"
         value="epost"
-        name="_r_2_"
+        name="checkbox-group"
       >
       <label
         data-weight="regular"
         for="fieldset-checkboxes-email"
       >
-        E-post
+        <span>
+          E-post
+        </span>
       </label>
     </div>
     <div>
@@ -109,13 +120,15 @@ exports[`Fieldset Checkboxes 1`] = `
         required
         type="checkbox"
         value="telefon"
-        name="_r_2_"
+        name="checkbox-group"
       >
       <label
         data-weight="regular"
         for="fieldset-checkboxes-telefon"
       >
-        Telefon
+        <span>
+          Telefon
+        </span>
       </label>
     </div>
     <div>
@@ -124,13 +137,15 @@ exports[`Fieldset Checkboxes 1`] = `
         required
         type="checkbox"
         value="sms"
-        name="_r_2_"
+        name="checkbox-group"
       >
       <label
         data-weight="regular"
         for="fieldset-checkboxes-sms"
       >
-        SMS
+        <span>
+          SMS
+        </span>
       </label>
     </div>
     <p
@@ -143,24 +158,92 @@ exports[`Fieldset Checkboxes 1`] = `
 </div>
 `;
 
+exports[`Fieldset Radios 1`] = `
+<div
+  data-show-required="true"
+  data-show-optional="false"
+  data-show-summary="false"
+>
+  <fieldset>
+    <legend data-weight="medium">
+      <span>
+        Velg din aldersgruppe
+      </span>
+    </legend>
+    <div>
+      <input
+        id="fieldset-radios-10-20"
+        required
+        type="radio"
+        value="10-20"
+        name="radio-group"
+      >
+      <label
+        data-weight="regular"
+        for="fieldset-radios-10-20"
+      >
+        10-20 år
+      </label>
+    </div>
+    <div>
+      <input
+        id="fieldset-radios-21-45"
+        required
+        type="radio"
+        value="21-45"
+        name="radio-group"
+      >
+      <label
+        data-weight="regular"
+        for="fieldset-radios-21-45"
+      >
+        21-45 år
+      </label>
+    </div>
+    <div>
+      <input
+        id="fieldset-radios-46-80"
+        required
+        type="radio"
+        value="46-80"
+        name="radio-group"
+      >
+      <label
+        data-weight="regular"
+        for="fieldset-radios-46-80"
+      >
+        46-80 år
+      </label>
+    </div>
+    <p
+      data-field="validation"
+      hidden
+      id="_r_6_"
+    >
+    </p>
+  </fieldset>
+</div>
+`;
+
 exports[`Individual Checkboxes 1`] = `
 <div
   data-show-required="true"
   data-show-optional="false"
   data-show-summary="true"
-  style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
 >
   <div>
     <input
-      id="components-fieldnecessity--individual-checkboxes-terms-conditions"
+      id="individual-checkboxes-terms-conditions"
       required
       type="checkbox"
     >
     <label
       data-weight="regular"
-      for="components-fieldnecessity--individual-checkboxes-terms-conditions"
+      for="individual-checkboxes-terms-conditions"
     >
-      Jeg bekrefter at opplysningene i søknaden er korrekt
+      <span>
+        Jeg bekrefter at opplysningene i søknaden er korrekt
+      </span>
     </label>
   </div>
   <div>
@@ -172,7 +255,9 @@ exports[`Individual Checkboxes 1`] = `
       data-weight="regular"
       for="individual-checkboxes-contact"
     >
-      Jeg er villig til å delta i en spørreundersøkelse i etterkant av søknadsprosessen
+      <span>
+        Jeg er villig til å delta i en spørreundersøkelse i etterkant av søknadsprosessen
+      </span>
     </label>
   </div>
 </div>
@@ -198,7 +283,9 @@ exports[`Manual Summary Placement 1`] = `
       data-weight="medium"
       for="manual-summary-placement-first"
     >
-      Fornavn
+      <span>
+        Fornavn
+      </span>
     </label>
     <div>
       <input
@@ -213,7 +300,9 @@ exports[`Manual Summary Placement 1`] = `
       data-weight="medium"
       for="manual-summary-placement-middle"
     >
-      Etternavn
+      <span>
+        Etternavn
+      </span>
     </label>
     <div>
       <input
@@ -228,7 +317,9 @@ exports[`Manual Summary Placement 1`] = `
       data-weight="medium"
       for="manual-summary-placement-last"
     >
-      E-postadresse
+      <span>
+        E-postadresse
+      </span>
     </label>
     <div>
       <input
@@ -255,7 +346,9 @@ exports[`Outline 1`] = `
         data-weight="medium"
         for="outline-first"
       >
-        Fornavn
+        <span>
+          Fornavn
+        </span>
       </label>
       <div>
         <input
@@ -270,7 +363,9 @@ exports[`Outline 1`] = `
         data-weight="medium"
         for="outline-middle"
       >
-        Mellomnavn
+        <span>
+          Mellomnavn
+        </span>
       </label>
       <div>
         <input
@@ -284,7 +379,9 @@ exports[`Outline 1`] = `
         data-weight="medium"
         for="outline-last"
       >
-        Etternavn
+        <span>
+          Etternavn
+        </span>
       </label>
       <div>
         <input
@@ -310,7 +407,9 @@ exports[`Preview 1`] = `
       data-weight="medium"
       for="preview-first"
     >
-      Fornavn
+      <span>
+        Fornavn
+      </span>
     </label>
     <div>
       <input
@@ -325,7 +424,9 @@ exports[`Preview 1`] = `
       data-weight="medium"
       for="preview-middle"
     >
-      Mellomnavn
+      <span>
+        Mellomnavn
+      </span>
     </label>
     <div>
       <input
@@ -339,7 +440,9 @@ exports[`Preview 1`] = `
       data-weight="medium"
       for="preview-last"
     >
-      Etternavn
+      <span>
+        Etternavn
+      </span>
     </label>
     <div>
       <input
@@ -355,16 +458,17 @@ exports[`Preview 1`] = `
 exports[`Single Optional Field 1`] = `
 <div
   data-show-required="true"
-  data-show-optional="false"
+  data-show-optional="true"
   data-show-summary="false"
-  style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
 >
   <div>
     <label
       data-weight="medium"
       for="single-optional-field-comments"
     >
-      Har du noen kommentarer?
+      <span>
+        Har du noen kommentarer?
+      </span>
     </label>
     <div>
       <textarea id="single-optional-field-comments">
@@ -379,14 +483,15 @@ exports[`Single Required Field 1`] = `
   data-show-required="true"
   data-show-optional="false"
   data-show-summary="false"
-  style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
 >
   <div>
     <label
       data-weight="medium"
       for="single-required-field-events"
     >
-      Beskriv hendelsesforløpet
+      <span>
+        Beskriv hendelsesforløpet
+      </span>
     </label>
     <div>
       <textarea

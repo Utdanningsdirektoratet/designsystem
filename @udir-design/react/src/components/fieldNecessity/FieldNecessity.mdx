@@ -21,12 +21,15 @@ import { Field } from '@digdir/designsystemet-react';
 import { FieldNecessity } from '@udir-design/react';
 
 <FieldNecessity>
-  <Textfield label="Fornavn" required />
-  <Textfield label="Etternavn" required />
+  <Textfield label={<span>Fornavn</span>} required />
+  <Textfield label={<span>Etternavn</span>} required />
 </FieldNecessity>;
 ```
 
 Komponenten leser attributtene `required` eller `aria-required` på skjemafeltene du legger inni komponenten for å bestemme hvilken markering som skal vises.
+
+**Legg merke til:** du bør legge en `<span>` rundt `label`-teksten for å få penest mulig resultat. Uten dette
+vil du kunne komme i situasjoner der feltmarkeringen får et innrykk når den havner på en egen linje.
 
 ## Eksempler
 

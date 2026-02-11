@@ -39,9 +39,17 @@ export const Preview = meta.story({
         rowGap: 'var(--ds-size-4)',
       }}
     >
-      <Textfield id={id(context, 'first')} label="Fornavn" required />
-      <Textfield id={id(context, 'middle')} label="Mellomnavn" />
-      <Textfield id={id(context, 'last')} label="Etternavn" required />
+      <Textfield
+        id={id(context, 'first')}
+        label={<span>Fornavn</span>}
+        required
+      />
+      <Textfield id={id(context, 'middle')} label={<span>Mellomnavn</span>} />
+      <Textfield
+        id={id(context, 'last')}
+        label={<span>Etternavn</span>}
+        required
+      />
     </FieldNecessity>
   ),
 });
@@ -58,9 +66,17 @@ export const Outline = meta.story({
           rowGap: 'var(--ds-size-4)',
         }}
       >
-        <Textfield id={id(context, 'first')} label="Fornavn" required />
-        <Textfield id={id(context, 'middle')} label="Mellomnavn" />
-        <Textfield id={id(context, 'last')} label="Etternavn" required />
+        <Textfield
+          id={id(context, 'first')}
+          label={<span>Fornavn</span>}
+          required
+        />
+        <Textfield id={id(context, 'middle')} label={<span>Mellomnavn</span>} />
+        <Textfield
+          id={id(context, 'last')}
+          label={<span>Etternavn</span>}
+          required
+        />
       </FieldNecessity>
     </Card>
   ),
@@ -76,8 +92,16 @@ export const AllRequired = meta.story({
         rowGap: 'var(--ds-size-4)',
       }}
     >
-      <Textfield id={id(context, 'first')} label="Fornavn" required />
-      <Textfield id={id(context, 'last')} label="Etternavn" required />
+      <Textfield
+        id={id(context, 'first')}
+        label={<span>Fornavn</span>}
+        required
+      />
+      <Textfield
+        id={id(context, 'last')}
+        label={<span>Etternavn</span>}
+        required
+      />
     </FieldNecessity>
   ),
 });
@@ -95,12 +119,12 @@ export const AllOptional = meta.story({
       <Textfield
         id={id(context, 'opinion')}
         multiline
-        label="Hva synes du om skjemaet?"
+        label={<span>Hva synes du om skjemaet?</span>}
       />
       <Textfield
         id={id(context, 'other')}
         multiline
-        label="Har du noen andre innspill?"
+        label={<span>Har du noen andre innspill?</span>}
       />
     </FieldNecessity>
   ),
@@ -113,7 +137,7 @@ export const SingleOptionalField = meta.story({
       <Textfield
         id={id(context, 'comments')}
         multiline
-        label="Har du noen kommentarer?"
+        label={<span>Har du noen kommentarer?</span>}
       />
     </FieldNecessity>
   ),
@@ -126,7 +150,7 @@ export const SingleRequiredField = meta.story({
       <Textfield
         id={id(context, 'events')}
         multiline
-        label="Beskriv hendelsesforløpet"
+        label={<span>Beskriv hendelsesforløpet</span>}
         required
       />
     </FieldNecessity>
@@ -148,24 +172,24 @@ export const FieldsetCheckboxes = meta.story({
       <FieldNecessity {...args}>
         <Fieldset>
           <Fieldset.Legend>
-            Hvordan vil du helst at vi skal kontakte deg?
+            <span>Hvordan vil du helst at vi skal kontakte deg?</span>
           </Fieldset.Legend>
           <Fieldset.Description>
             Velg de alternativene som er relevante for deg.
           </Fieldset.Description>
           <Checkbox
             id={id(context, 'email')}
-            label="E-post"
+            label={<span>E-post</span>}
             {...getCheckboxProps('epost')}
           />
           <Checkbox
             id={id(context, 'telefon')}
-            label="Telefon"
+            label={<span>Telefon</span>}
             {...getCheckboxProps('telefon')}
           />
           <Checkbox
             id={id(context, 'sms')}
-            label="SMS"
+            label={<span>SMS</span>}
             {...getCheckboxProps('sms')}
           />
           <ValidationMessage {...validationMessageProps} />
@@ -194,7 +218,9 @@ export const FieldsetRadios = meta.story({
     return (
       <FieldNecessity {...args}>
         <Fieldset>
-          <Fieldset.Legend>Velg din aldersgruppe</Fieldset.Legend>
+          <Fieldset.Legend>
+            <span>Velg din aldersgruppe</span>
+          </Fieldset.Legend>
           {ageGroups.map((group) => (
             <Radio
               key={group.value}
@@ -216,12 +242,19 @@ export const IndividualCheckboxes = meta.story({
       <FieldNecessity {...args}>
         <Checkbox
           id={id(context, 'terms-conditions')}
-          label="Jeg bekrefter at opplysningene i søknaden er korrekt"
+          label={
+            <span>Jeg bekrefter at opplysningene i søknaden er korrekt</span>
+          }
           required
         />
         <Checkbox
           id={id(context, 'contact')}
-          label="Jeg er villig til å delta i en spørreundersøkelse i etterkant av søknadsprosessen"
+          label={
+            <span>
+              Jeg er villig til å delta i en spørreundersøkelse i etterkant av
+              søknadsprosessen
+            </span>
+          }
         />
       </FieldNecessity>
     );
@@ -245,9 +278,21 @@ export const ManualSummaryPlacement = meta.story({
         Vi trenger å vite hvordan vi kan kontakte deg i etterkant av søknaden.
       </Paragraph>
       <FieldNecessity.Summary />
-      <Textfield id={id(context, 'first')} label="Fornavn" required />
-      <Textfield id={id(context, 'middle')} label="Etternavn" required />
-      <Textfield id={id(context, 'last')} label="E-postadresse" required />
+      <Textfield
+        id={id(context, 'first')}
+        label={<span>Fornavn</span>}
+        required
+      />
+      <Textfield
+        id={id(context, 'middle')}
+        label={<span>Etternavn</span>}
+        required
+      />
+      <Textfield
+        id={id(context, 'last')}
+        label={<span>E-postadresse</span>}
+        required
+      />
     </FieldNecessity>
   ),
 });
