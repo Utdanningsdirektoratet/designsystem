@@ -12,6 +12,7 @@ import {
 } from '@udir-design/icons';
 import { Button } from 'src/components/button/Button';
 import { Dialog } from 'src/components/dialog/Dialog';
+import { FieldNecessity } from 'src/components/fieldNecessity/index.js';
 import type { FieldsetProps } from 'src/components/fieldset/Fieldset';
 import { FormNavigation } from 'src/components/formNavigation';
 import { Heading } from 'src/components/typography/heading/Heading';
@@ -284,28 +285,21 @@ export const FormDemo = ({
           <Heading level={1} data-size="md">
             Testsøknad
           </Heading>
-          <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
-            {renderCurrentPage()}
-            <div className={classes.navigateButtons}>
-              {hasPrev() && id !== 'confirmation' && (
-                <Button variant="secondary" onClick={prev} style={{ flex: 1 }}>
-                  <ArrowLeftIcon aria-hidden />
-                  Forrige
-                </Button>
-              )}
-              {hasNext() && id !== 'deliver' && id !== 'confirmation' && (
-                <Button variant="secondary" onClick={next} style={{ flex: 1 }}>
-                  Neste
-                  <ArrowRightIcon aria-hidden />
-                </Button>
-              )}
-              {id === 'deliver' &&
-                (!isSubmitSuccessful ? (
-                  <Button style={{ flex: 2 }} onClick={onDeliver}>
-                    Send inn skjema
-                    <PaperplaneIcon aria-hidden />
+          <FieldNecessity variant="outline" asChild>
+            <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
+              {renderCurrentPage()}
+              <div className={classes.navigateButtons}>
+                {hasPrev() && id !== 'confirmation' && (
+                  <Button
+                    variant="secondary"
+                    onClick={prev}
+                    style={{ flex: 1 }}
+                  >
+                    <ArrowLeftIcon aria-hidden />
+                    Forrige
                   </Button>
-                ) : (
+                )}
+                {hasNext() && id !== 'deliver' && id !== 'confirmation' && (
                   <Button
                     variant="secondary"
                     onClick={next}
@@ -314,33 +308,50 @@ export const FormDemo = ({
                     Neste
                     <ArrowRightIcon aria-hidden />
                   </Button>
-                ))}
-            </div>
-            <Dialog
-              closeButton={false}
-              ref={dialogDeliverRef}
-              style={{ width: 'fit-content' }}
-            >
-              <Dialog.Block className={classes.dialog}>
-                <Heading data-size="xs">
-                  Er du sikker på at du vil sende inn skjema?
-                </Heading>
-                <div className={classes.dialogActions}>
-                  <Button
-                    onClick={() => dialogDeliverRef.current?.close()}
-                    variant="secondary"
-                    style={{ flex: 1 }}
-                  >
-                    Avbryt
-                  </Button>
-                  <Button autoFocus type="submit" style={{ flex: 2 }}>
-                    Send inn
-                    <PaperplaneIcon aria-hidden />
-                  </Button>
-                </div>
-              </Dialog.Block>
-            </Dialog>
-          </form>
+                )}
+                {id === 'deliver' &&
+                  (!isSubmitSuccessful ? (
+                    <Button style={{ flex: 2 }} onClick={onDeliver}>
+                      Send inn skjema
+                      <PaperplaneIcon aria-hidden />
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="secondary"
+                      onClick={next}
+                      style={{ flex: 1 }}
+                    >
+                      Neste
+                      <ArrowRightIcon aria-hidden />
+                    </Button>
+                  ))}
+              </div>
+              <Dialog
+                closeButton={false}
+                ref={dialogDeliverRef}
+                style={{ width: 'fit-content' }}
+              >
+                <Dialog.Block className={classes.dialog}>
+                  <Heading data-size="xs">
+                    Er du sikker på at du vil sende inn skjema?
+                  </Heading>
+                  <div className={classes.dialogActions}>
+                    <Button
+                      onClick={() => dialogDeliverRef.current?.close()}
+                      variant="secondary"
+                      style={{ flex: 1 }}
+                    >
+                      Avbryt
+                    </Button>
+                    <Button autoFocus type="submit" style={{ flex: 2 }}>
+                      Send inn
+                      <PaperplaneIcon aria-hidden />
+                    </Button>
+                  </div>
+                </Dialog.Block>
+              </Dialog>
+            </form>
+          </FieldNecessity>
 
           <ErrorSummaryContent
             attemptedSubmit={attemptedSubmit}
