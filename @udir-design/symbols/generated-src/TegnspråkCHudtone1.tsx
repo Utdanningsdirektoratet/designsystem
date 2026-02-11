@@ -8,7 +8,7 @@ interface SVGRProps {
 interface SVGRProps {
   size?: number | string;
 }
-const SvgTegnsprkGHudtone2 = forwardRef(
+const SvgTegnsprkCHudtone1 = forwardRef(
   (
     {
       size,
@@ -51,9 +51,9 @@ const SvgTegnsprkGHudtone2 = forwardRef(
         {...props}
       >
         {title ? <title id={titleId}>{title}</title> : null}
-        <g clipPath="url(#Tegnspr\xE5kGHudtone2_svg__a)">
+        <g clipPath="url(#Tegnspr\xE5kCHudtone1_svg__a)">
           <path
-            fill="#937A57"
+            fill="#ECDBC2"
             d="M5.164 27.455c.617 3.089-1.596 6.279-2.78 7.488-.458.51-1.516 2.238-1.37 2.964.145.725 13.058 3.482 14.025 3.047s.914-1.306 1.252-3.047c.339-1.741 3.246-5.804 5.083-6.336s8.125-7.835 9.963-8.415 5.133-4.744 6.876-6.503c1.587-1.601-.931-2.831-2.813-2.492-2.535.455-6.142 3.337-6.723 4.352s-2.128.484-2.756.484c-.109 0-.187-.027-.242-.087-.265-.286 0-1.316 0-3.637 0-2.244-2.193-3.353-3.289-3.627.048-1.064.252-3.463.677-4.546.228-.58.385-.761.71-.816.435-.074 1.169.076 2.772-.2 2.805-.484 2.66-1.693 3.047-2.567S27.275 1.972 25.68 1.15s-5.848 1.98-6.93 2.367c-1.08.386-1.62 5.95-1.852 6.568s-1.621-.077-3.088 0-4.863 3.397-5.712 4.323c-.85.926-3.706 9.187-2.933 13.047"
           />
           <path
@@ -64,7 +64,7 @@ const SvgTegnsprkGHudtone2 = forwardRef(
           />
         </g>
         <defs>
-          <clipPath id="Tegnspr\xE5kGHudtone2_svg__a">
+          <clipPath id="Tegnspr\xE5kCHudtone1_svg__a">
             <path fill="#fff" d="M0 0h39.715v42H0z" />
           </clipPath>
         </defs>
@@ -72,4 +72,4 @@ const SvgTegnsprkGHudtone2 = forwardRef(
     );
   },
 );
-export default SvgTegnsprkGHudtone2;
+export default SvgTegnsprkCHudtone1;
