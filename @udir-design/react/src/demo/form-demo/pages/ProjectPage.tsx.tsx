@@ -1,6 +1,7 @@
 import { Controller, useFormContext } from 'react-hook-form';
 import { counties } from '.storybook/data';
 import { Field } from 'src/components/field/Field';
+import { FieldNecessity } from 'src/components/fieldNecessity';
 import { Fieldset } from 'src/components/fieldset/Fieldset';
 import { Radio } from 'src/components/radio/Radio';
 import { ReadMore } from 'src/components/readMore/ReadMore';
@@ -24,12 +25,14 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
       <Heading level={2} data-size="sm">
         Prosjektet
       </Heading>
+      <FieldNecessity.Summary />
       <Textfield
         id="projectTitle"
         label="Tittel på prosjektet"
         {...register('projectTitle')}
         error={errors.projectTitle?.message}
         readOnly={isSubmitSuccessful}
+        required
       />
       <Textfield
         label="Beskrivelse av prosjektet"
@@ -39,6 +42,7 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
         {...register('projectDescription')}
         error={errors.projectDescription?.message}
         readOnly={isSubmitSuccessful}
+        required
       />
       <Fieldset id="projectCategory" {...focusableFieldsetProps}>
         <Fieldset.Legend>Kategori</Fieldset.Legend>
@@ -51,6 +55,7 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
           value="Learning"
           readOnly={isSubmitSuccessful}
           {...register('projectCategory')}
+          required
         />
         <Radio
           id="radio-social"
@@ -58,6 +63,7 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
           value="social"
           readOnly={isSubmitSuccessful}
           {...register('projectCategory')}
+          required
         />
         <Radio
           id="radio-activity"
@@ -65,6 +71,7 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
           value="activity"
           readOnly={isSubmitSuccessful}
           {...register('projectCategory')}
+          required
         />
         <ReadMore summary="Grunnen til at vi spør om dette">
           Tilskuddsordningen skal dekke et bredt spekter av tilbud. For å ha
@@ -98,6 +105,7 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
                 aria-invalid={!!errors.county}
                 id="county"
                 readOnly={isSubmitSuccessful}
+                required
               />
               <Suggestion.Clear />
               <Suggestion.List>
@@ -127,6 +135,7 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
           aria-invalid={!!errors.ageGroup}
           defaultValue="blank"
           readOnly={isSubmitSuccessful}
+          required
         >
           <Select.Option value="blank" disabled>
             Velg aldersgruppe

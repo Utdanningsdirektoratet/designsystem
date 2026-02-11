@@ -1,0 +1,197 @@
+/* Translations are defined outside component class so users can easily add translations */
+:root,
+[lang='nb'] {
+  --ds-field-necessity-required-text: 'Må fylles ut';
+  --ds-field-necessity-optional-text: 'Valgfritt';
+  --ds-field-necessity-all-required-text: 'Alle felt må fylles ut';
+  --ds-field-necessity-all-optional-text: 'Alle felt er valgfri';
+}
+
+[lang='nn'] {
+  --ds-field-necessity-required-text: 'Må fyllast ut';
+  --ds-field-necessity-optional-text: 'Valfritt';
+  --ds-field-necessity-all-required-text: 'Alle felt må fyllast ut';
+  --ds-field-necessity-all-optional-text: 'Alle felt er valfri';
+}
+
+[lang='en'] {
+  --ds-field-necessity-required-text: 'Required';
+  --ds-field-necessity-optional-text: 'Optional';
+  --ds-field-necessity-all-required-text: 'All fields are required';
+  --ds-field-necessity-all-optional-text: 'All fields are optional';
+}
+
+.ds-field-necessity {
+  /* When we are showing tags for individual fields, we need to adjust the label styling */
+  &[data-show-required='true'],
+  &[data-show-optional='true'] {
+    .ds-label {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      column-gap: var(--ds-size-2);
+    }
+  }
+
+  /****
+   * Necessity tags on individual fields and fieldsets
+   *****/
+
+  .ds-label:is(label, legend)::after {
+    content: var(--ds-field-necessity-text) / var(--ds-field-necessity-alt-text);
+  }
+
+  /* required input fields */
+  .ds-field:has(:required, [aria-required='true']),
+  /* fieldsets where all inputs are required */ 
+  .ds-fieldset:has(input:required, [aria-required='true']):not(
+    :has(input:optional:not([aria-required='true']), [aria-required='false'])
+  ) {
+    .ds-label:is(label, legend)::after {
+      --dsc-tag-background: var(--ds-color-warning-surface-tinted);
+      --dsc-tag-color: var(--ds-color-warning-text-default);
+      --dsc-tag-border-color--outline: var(--ds-color-warning-border-subtle);
+      --ds-field-necessity-text: var(--ds-field-necessity-required-text);
+      --ds-field-necessity-alt-text: ''; /* required fields are already announced by screen reader */
+      display: var(--ds-field-necessity-display--required, none);
+    }
+    /* Hide individual field labels nested in fieldset when all are required */
+    .ds-field label.ds-label::after {
+      display: none;
+    }
+  }
+
+  /* optional input fields */
+  .ds-field:has(:optional:not([aria-required='true']), [aria-required='false']),
+  /* fieldsets where all inputs are optional */
+  .ds-fieldset:has(
+    :optional:not([aria-required='true']),
+    [aria-required='false']
+  ):not(:has(:required, [aria-required='true'])) {
+    .ds-label:is(label, legend)::after {
+      --dsc-tag-background: var(--ds-color-info-surface-tinted);
+      --dsc-tag-color: var(--ds-color-info-text-default);
+      --dsc-tag-border-color--outline: var(--ds-color-info-border-subtle);
+      --ds-field-necessity-text: var(--ds-field-necessity-optional-text);
+      --ds-field-necessity-alt-text: var(--ds-field-necessity-text);
+      display: var(--ds-field-necessity-display--optional, none);
+    }
+    /* Hide individual field labels nested in fieldset when all are optional */
+    .ds-field label.ds-label::after {
+      display: none;
+    }
+  }
+
+  &[data-show-required='true'] {
+    --ds-field-necessity-display--required: inline-flex;
+  }
+
+  &[data-show-optional='true'] {
+    --ds-field-necessity-display--optional: inline-flex;
+  }
+
+  /******
+   * Summary tag if all fields are required or all are optional
+   ******/
+  &[data-show-summary='true']:has(input, textarea) {
+    /* manually placed summary tag */
+    .ds-field-necessity-summary::before,
+    /* automatically placed summary, if no manually placed exists */
+    &:not(:has(.ds-field-necessity-summary))::before {
+      content: var(--ds-field-necessity-summary-text);
+    }
+
+    /* All fields are required */
+    &:has(:is(input, textarea):required, [aria-required='true']):not(
+        :has(
+          :is(input, textarea):optional:not([aria-required='true']),
+          [aria-required='false']
+        )
+      ) {
+      .ds-field-necessity-summary,
+      &:not(:has(.ds-field-necessity-summary))::before {
+        --dsc-tag-background: var(--ds-color-warning-surface-tinted);
+        --dsc-tag-color: var(--ds-color-warning-text-default);
+        --dsc-tag-border-color--outline: var(--ds-color-warning-border-subtle);
+        --ds-field-necessity-summary-text: var(
+          --ds-field-necessity-all-required-text
+        );
+        display: inline-flex;
+      }
+      /* Hide individual necessity tags when all are required */
+      .ds-label:is(label, legend)::after {
+        --ds-field-necessity-display--required: none;
+      }
+    }
+
+    /* All fields are optional */
+    &:has(:optional:not([aria-required='true']), [aria-required='false']):not(
+        :has(:required, [aria-required='true'])
+      ) {
+      .ds-field-necessity-summary,
+      &:not(:has(.ds-field-necessity-summary))::before {
+        --dsc-tag-background: var(--ds-color-info-surface-tinted);
+        --dsc-tag-color: var(--ds-color-info-text-default);
+        --dsc-tag-border-color--outline: var(--ds-color-info-border-subtle);
+        --ds-field-necessity-summary-text: var(
+          --ds-field-necessity-all-optional-text
+        );
+        display: inline-flex;
+      }
+      /* Hide individual necessity tags when all are optional */
+      .ds-label:is(label, legend)::after {
+        --ds-field-necessity-display--optional: none;
+      }
+    }
+  }
+
+  /***
+   * Shared
+   ***/
+  .ds-field-necessity-summary,
+  &:not(:has(.ds-field-necessity-summary))::before,
+  .ds-label:is(label, legend)::after {
+    /* copied from .ds-tag */
+    --dsc-tag-background: var(--ds-color-surface-tinted);
+    --dsc-tag-color: var(--ds-color-text-default);
+    --dsc-tag-min-height: var(--ds-size-8);
+    --dsc-tag-padding: 0 var(--ds-size-2);
+    --dsc-tag-border-width: var(--ds-border-width-default);
+    --dsc-tag-border-color: transparent;
+    --dsc-tag-border-style: solid;
+
+    align-items: center;
+    background: var(--dsc-tag-background);
+    border-radius: var(--ds-border-radius-sm);
+    border-width: var(--dsc-tag-border-width);
+    border-color: var(--dsc-tag-border-color);
+    border-style: var(--dsc-tag-border-style);
+    box-sizing: border-box;
+    color: var(--dsc-tag-color);
+    height: fit-content; /* In case placed in display: flex */
+    font-size: var(--ds-body-sm-font-size);
+    line-height: var(--ds-line-height-sm);
+    min-height: var(--dsc-tag-min-height);
+    padding: var(--dsc-tag-padding);
+    width: max-content;
+    word-break: break-word;
+
+    @media (forced-colors: active) {
+      border-width: var(--ds-border-width-default);
+      border-style: solid;
+      border-color: CanvasText;
+    }
+    /* end of copied code */
+
+    display: none;
+    font-weight: var(--ds-font-weight-regular);
+  }
+
+  &[data-variant='outline'] {
+    .ds-field-necessity-summary,
+    &:not(:has(.ds-field-necessity-summary))::before,
+    .ds-label:is(label, legend)::after {
+      --dsc-tag-border-color: var(--dsc-tag-border-color--outline);
+    }
+  }
+}

@@ -165,10 +165,17 @@ exports[`Form Page 2 1`] = `
     <h1 data-size="md">
       Testsøknad
     </h1>
-    <form>
+    <form
+      data-variant="outline"
+      data-show-required="true"
+      data-show-optional="false"
+      data-show-summary="true"
+    >
       <h2 data-size="sm">
         Prosjektet
       </h2>
+      <div>
+      </div>
       <div>
         <label
           data-weight="medium"
@@ -179,6 +186,7 @@ exports[`Form Page 2 1`] = `
         <div>
           <input
             id="projectTitle"
+            required
             type="text"
             name="projectTitle"
           >
@@ -196,6 +204,7 @@ exports[`Form Page 2 1`] = `
             id="projectDescription"
             rows="4"
             name="projectDescription"
+            required
           >
           </textarea>
         </div>
@@ -213,6 +222,7 @@ exports[`Form Page 2 1`] = `
         <div>
           <input
             id="radio-learning"
+            required
             type="radio"
             value="Learning"
             name="projectCategory"
@@ -227,6 +237,7 @@ exports[`Form Page 2 1`] = `
         <div>
           <input
             id="radio-social"
+            required
             type="radio"
             value="social"
             name="projectCategory"
@@ -241,6 +252,7 @@ exports[`Form Page 2 1`] = `
         <div>
           <input
             id="radio-activity"
+            required
             type="radio"
             value="activity"
             name="projectCategory"
@@ -279,6 +291,7 @@ exports[`Form Page 2 1`] = `
             placeholder
             aria-invalid="false"
             id="county"
+            required
             type="text"
             aria-describedby="county:description:1"
             data-label="Gjennomføringssted"
@@ -488,6 +501,7 @@ exports[`Form Page 2 1`] = `
           aria-label="Velg aldersgruppe"
           name="ageGroup"
           aria-invalid="false"
+          required
           aria-describedby="ageGroup:description:1"
         >
           <option
@@ -775,10 +789,17 @@ exports[`Form Page 3 1`] = `
     <h1 data-size="md">
       Testsøknad
     </h1>
-    <form>
+    <form
+      data-variant="outline"
+      data-show-required="true"
+      data-show-optional="false"
+      data-show-summary="true"
+    >
       <h2 data-size="sm">
         Dokumentasjon
       </h2>
+      <div>
+      </div>
       <div
         role="presentation"
         tabindex="0"
@@ -831,6 +852,7 @@ exports[`Form Page 3 1`] = `
           accept="application/pdf"
           multiple
           tabindex="-1"
+          required
           type="file"
           aria-describedby="dokumentasjon-dropzone:description:1"
           style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
@@ -1120,7 +1142,12 @@ exports[`Form Page 4 1`] = `
     <h1 data-size="md">
       Testsøknad
     </h1>
-    <form>
+    <form
+      data-variant="outline"
+      data-show-required="true"
+      data-show-optional="false"
+      data-show-summary="true"
+    >
       <h2>
         Innsending
       </h2>
@@ -1393,7 +1420,12 @@ exports[`Form Page 5 1`] = `
     <h1 data-size="md">
       Testsøknad
     </h1>
-    <form>
+    <form
+      data-variant="outline"
+      data-show-required="true"
+      data-show-optional="false"
+      data-show-summary="true"
+    >
       <div>
         <h2 data-size="sm">
           Kvittering
@@ -1626,10 +1658,17 @@ exports[`Form Story 1`] = `
     <h1 data-size="md">
       Testsøknad
     </h1>
-    <form>
+    <form
+      data-variant="outline"
+      data-show-required="true"
+      data-show-optional="false"
+      data-show-summary="true"
+    >
       <h2 data-size="sm">
         Kontaktinfo
       </h2>
+      <div>
+      </div>
       <div>
         <label
           data-weight="medium"
@@ -1641,6 +1680,7 @@ exports[`Form Story 1`] = `
           <input
             id="firstName"
             autocomplete="given-name"
+            required
             type="text"
             name="firstName"
           >
@@ -1655,6 +1695,7 @@ exports[`Form Story 1`] = `
         </label>
         <input
           id="lastName"
+          required
           autocomplete="family-name"
           aria-invalid="false"
           type="text"
@@ -1675,6 +1716,7 @@ exports[`Form Story 1`] = `
           <input
             id="contactMethodsEmail"
             aria-invalid="false"
+            required
             type="checkbox"
             value="epost"
             name="contactMethods"
@@ -1690,6 +1732,7 @@ exports[`Form Story 1`] = `
           <input
             id="contactMethodsTelefon"
             aria-invalid="false"
+            required
             type="checkbox"
             value="telefon"
             name="contactMethods"
@@ -1705,6 +1748,7 @@ exports[`Form Story 1`] = `
           <input
             id="contactMethodsSms"
             aria-invalid="false"
+            required
             type="checkbox"
             value="sms"
             name="contactMethods"

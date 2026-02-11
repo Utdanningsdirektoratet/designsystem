@@ -1,0 +1,400 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`All Optional 1`] = `
+<div
+  data-show-required="true"
+  data-show-optional="false"
+  data-show-summary="true"
+  style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
+>
+  <div>
+    <label
+      data-weight="medium"
+      for="all-optional-opinion"
+    >
+      Hva synes du om skjemaet?
+    </label>
+    <div>
+      <textarea id="all-optional-opinion">
+      </textarea>
+    </div>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for="all-optional-other"
+    >
+      Har du noen andre innspill?
+    </label>
+    <div>
+      <textarea id="all-optional-other">
+      </textarea>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`All Required 1`] = `
+<div
+  data-show-required="true"
+  data-show-optional="false"
+  data-show-summary="true"
+  style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
+>
+  <div>
+    <label
+      data-weight="medium"
+      for="all-required-first"
+    >
+      Fornavn
+    </label>
+    <div>
+      <input
+        id="all-required-first"
+        required
+        type="text"
+      >
+    </div>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for="all-required-last"
+    >
+      Etternavn
+    </label>
+    <div>
+      <input
+        id="all-required-last"
+        required
+        type="text"
+      >
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Fieldset Checkboxes 1`] = `
+<div
+  data-show-required="true"
+  data-show-optional="false"
+  data-show-summary="false"
+  style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
+>
+  <fieldset>
+    <legend data-weight="medium">
+      Hvordan vil du helst at vi skal kontakte deg?
+    </legend>
+    <p data-variant="default">
+      Velg de alternativene som er relevante for deg.
+    </p>
+    <div>
+      <input
+        id="fieldset-checkboxes-email"
+        required
+        type="checkbox"
+        value="epost"
+        name="_r_2_"
+      >
+      <label
+        data-weight="regular"
+        for="fieldset-checkboxes-email"
+      >
+        E-post
+      </label>
+    </div>
+    <div>
+      <input
+        id="fieldset-checkboxes-telefon"
+        required
+        type="checkbox"
+        value="telefon"
+        name="_r_2_"
+      >
+      <label
+        data-weight="regular"
+        for="fieldset-checkboxes-telefon"
+      >
+        Telefon
+      </label>
+    </div>
+    <div>
+      <input
+        id="fieldset-checkboxes-sms"
+        required
+        type="checkbox"
+        value="sms"
+        name="_r_2_"
+      >
+      <label
+        data-weight="regular"
+        for="fieldset-checkboxes-sms"
+      >
+        SMS
+      </label>
+    </div>
+    <p
+      data-field="validation"
+      hidden
+      id="_r_3_"
+    >
+    </p>
+  </fieldset>
+</div>
+`;
+
+exports[`Individual Checkboxes 1`] = `
+<div
+  data-show-required="true"
+  data-show-optional="false"
+  data-show-summary="true"
+  style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
+>
+  <div>
+    <input
+      id="components-fieldnecessity--individual-checkboxes-terms-conditions"
+      required
+      type="checkbox"
+    >
+    <label
+      data-weight="regular"
+      for="components-fieldnecessity--individual-checkboxes-terms-conditions"
+    >
+      Jeg bekrefter at opplysningene i søknaden er korrekt
+    </label>
+  </div>
+  <div>
+    <input
+      id="individual-checkboxes-contact"
+      type="checkbox"
+    >
+    <label
+      data-weight="regular"
+      for="individual-checkboxes-contact"
+    >
+      Jeg er villig til å delta i en spørreundersøkelse i etterkant av søknadsprosessen
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Manual Summary Placement 1`] = `
+<div
+  data-show-required="true"
+  data-show-optional="false"
+  data-show-summary="true"
+  style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
+>
+  <h2 data-size="md">
+    Kontaktinformasjon
+  </h2>
+  <p data-variant="default">
+    Vi trenger å vite hvordan vi kan kontakte deg i etterkant av søknaden.
+  </p>
+  <div>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for="manual-summary-placement-first"
+    >
+      Fornavn
+    </label>
+    <div>
+      <input
+        id="manual-summary-placement-first"
+        required
+        type="text"
+      >
+    </div>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for="manual-summary-placement-middle"
+    >
+      Etternavn
+    </label>
+    <div>
+      <input
+        id="manual-summary-placement-middle"
+        required
+        type="text"
+      >
+    </div>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for="manual-summary-placement-last"
+    >
+      E-postadresse
+    </label>
+    <div>
+      <input
+        id="manual-summary-placement-last"
+        required
+        type="text"
+      >
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Outline 1`] = `
+<div data-variant="tinted">
+  <div
+    data-variant="outline"
+    data-show-required="true"
+    data-show-optional="false"
+    data-show-summary="true"
+    style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
+  >
+    <div>
+      <label
+        data-weight="medium"
+        for="outline-first"
+      >
+        Fornavn
+      </label>
+      <div>
+        <input
+          id="outline-first"
+          required
+          type="text"
+        >
+      </div>
+    </div>
+    <div>
+      <label
+        data-weight="medium"
+        for="outline-middle"
+      >
+        Mellomnavn
+      </label>
+      <div>
+        <input
+          id="outline-middle"
+          type="text"
+        >
+      </div>
+    </div>
+    <div>
+      <label
+        data-weight="medium"
+        for="outline-last"
+      >
+        Etternavn
+      </label>
+      <div>
+        <input
+          id="outline-last"
+          required
+          type="text"
+        >
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Preview 1`] = `
+<div
+  data-show-required="true"
+  data-show-optional="false"
+  data-show-summary="true"
+  style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
+>
+  <div>
+    <label
+      data-weight="medium"
+      for="preview-first"
+    >
+      Fornavn
+    </label>
+    <div>
+      <input
+        id="preview-first"
+        required
+        type="text"
+      >
+    </div>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for="preview-middle"
+    >
+      Mellomnavn
+    </label>
+    <div>
+      <input
+        id="preview-middle"
+        type="text"
+      >
+    </div>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for="preview-last"
+    >
+      Etternavn
+    </label>
+    <div>
+      <input
+        id="preview-last"
+        required
+        type="text"
+      >
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Single Optional Field 1`] = `
+<div
+  data-show-required="true"
+  data-show-optional="false"
+  data-show-summary="false"
+  style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
+>
+  <div>
+    <label
+      data-weight="medium"
+      for="single-optional-field-comments"
+    >
+      Har du noen kommentarer?
+    </label>
+    <div>
+      <textarea id="single-optional-field-comments">
+      </textarea>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Single Required Field 1`] = `
+<div
+  data-show-required="true"
+  data-show-optional="false"
+  data-show-summary="false"
+  style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
+>
+  <div>
+    <label
+      data-weight="medium"
+      for="single-required-field-events"
+    >
+      Beskriv hendelsesforløpet
+    </label>
+    <div>
+      <textarea
+        id="single-required-field-events"
+        required
+      >
+      </textarea>
+    </div>
+  </div>
+</div>
+`;

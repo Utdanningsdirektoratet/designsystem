@@ -3,6 +3,7 @@ import type { FileRejection, FileWithPath } from 'react-dropzone';
 import { useDropzone } from 'react-dropzone';
 import { useFormContext } from 'react-hook-form';
 import { Field } from 'src/components/field/Field';
+import { FieldNecessity } from 'src/components/fieldNecessity';
 import { FileUpload } from 'src/components/fileUpload';
 import { Textarea } from 'src/components/textarea/Textarea';
 import { Heading } from 'src/components/typography/heading/Heading';
@@ -52,13 +53,14 @@ export const DocumentationPage = ({
       <Heading level={2} data-size="sm">
         Dokumentasjon
       </Heading>
+      <FieldNecessity.Summary />
       <FileUpload.Dropzone
         id="dokumentasjon-dropzone"
         label="Last opp dokumentasjon"
         description="Du kan laste opp filer i PDF-format. Filer kan være opptil 25 MB."
         {...getRootProps()}
         error={errors.documentation?.message}
-        inputProps={getInputProps()}
+        inputProps={getInputProps({ required: true })}
         aria-invalid={!!errors.documentation}
         readOnly={isSubmitSuccessful}
       />

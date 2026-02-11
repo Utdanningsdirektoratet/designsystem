@@ -1,6 +1,7 @@
 import { useFormContext } from 'react-hook-form';
 import { Checkbox } from 'src/components/checkbox/Checkbox';
 import { Field } from 'src/components/field/Field';
+import { FieldNecessity } from 'src/components/fieldNecessity';
 import { Fieldset } from 'src/components/fieldset/Fieldset';
 import { Input } from 'src/components/input/Input';
 import { Textfield } from 'src/components/textfield/Textfield';
@@ -25,6 +26,7 @@ export const PersonalInfoPage = ({
       <Heading level={2} data-size="sm">
         Kontaktinfo
       </Heading>
+      <FieldNecessity.Summary />
       <Textfield
         id="firstName"
         label="Fornavn"
@@ -32,12 +34,14 @@ export const PersonalInfoPage = ({
         autoComplete="given-name"
         error={errors.firstName?.message}
         readOnly={isSubmitSuccessful}
+        required
       />
       <Field>
         <Label>Etternavn</Label>
         <Input
           id="lastName"
           {...register('lastName')}
+          required
           autoComplete="family-name"
           aria-invalid={!!errors.lastName}
           readOnly={isSubmitSuccessful}
@@ -60,6 +64,7 @@ export const PersonalInfoPage = ({
           aria-invalid={isInvalid}
           readOnly={isSubmitSuccessful}
           value="epost"
+          required
         />
         <Checkbox
           id="contactMethodsTelefon"
@@ -68,6 +73,7 @@ export const PersonalInfoPage = ({
           aria-invalid={isInvalid}
           readOnly={isSubmitSuccessful}
           value="telefon"
+          required
         />
         <Checkbox
           id="contactMethodsSms"
@@ -76,6 +82,7 @@ export const PersonalInfoPage = ({
           aria-invalid={isInvalid}
           readOnly={isSubmitSuccessful}
           value="sms"
+          required
         />
         {errors.contactMethods && (
           <ValidationMessage>{errors.contactMethods.message}</ValidationMessage>

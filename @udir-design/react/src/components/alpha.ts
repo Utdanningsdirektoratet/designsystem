@@ -5,6 +5,7 @@
 export * from './fileUpload';
 export * from './footer';
 export * from './header';
+export * from './fieldNecessity';
 export * from './formNavigation';
 export * from './logo';
 export * from './progressBar/ProgressBar';
