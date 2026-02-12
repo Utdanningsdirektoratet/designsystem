@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import { BriefcaseIcon, LanguageIcon, LeaveIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
+import { formatReactSource } from '.storybook/utils/sourceTransformers';
 import { Avatar } from '../avatar/Avatar';
 import { Badge } from '../badge/Badge';
 import { Button } from '../button/Button';
@@ -590,27 +591,51 @@ export const WithTag = meta.story({
 });
 
 export const WithLanguagePicker = meta.story({
+  parameters: {
+    docs: { source: { type: 'code', transform: formatReactSource } },
+  },
   render(args) {
+    const languages = ['nb', 'nn', 'se', 'en'] as const;
+    type Language = (typeof languages)[number];
+
+    const languageText: Record<Language, string> = {
+      nb: 'Bokmål',
+      nn: 'Nynorsk',
+      se: 'Davvisámegiella',
+      en: 'English',
+    };
+    const [currentLang, setCurrentLang] = useState<Language>('nn');
+    const buttonRef = useRef<HTMLButtonElement>(null);
+
     return (
       <Header {...args}>
-        <Button variant="tertiary" popoverTarget="language-picker" lang="en">
+        <Button
+          variant="tertiary"
+          popoverTarget="language-picker"
+          lang="en"
+          ref={buttonRef}
+        >
           <LanguageIcon aria-hidden />
           Language
         </Button>
         <Dropdown id="language-picker">
           <Dropdown.List>
-            <Dropdown.Item>
-              <Dropdown.Button lang="nb">Bokmål</Dropdown.Button>
-            </Dropdown.Item>
-            <Dropdown.Item aria-current="true">
-              <Dropdown.Button lang="nn">Nynorsk</Dropdown.Button>
-            </Dropdown.Item>
-            <Dropdown.Item>
-              <Dropdown.Button lang="se">Davvisámegiella</Dropdown.Button>
-            </Dropdown.Item>
-            <Dropdown.Item>
-              <Dropdown.Button lang="en">English</Dropdown.Button>
-            </Dropdown.Item>
+            {languages.map((lang) => (
+              <Dropdown.Item
+                {...(currentLang === lang && { 'aria-current': true })}
+              >
+                <Dropdown.Button
+                  lang={lang}
+                  onClick={() => {
+                    setCurrentLang(lang);
+                    buttonRef.current?.click();
+                    buttonRef.current?.focus();
+                  }}
+                >
+                  {languageText[lang]}
+                </Dropdown.Button>
+              </Dropdown.Item>
+            ))}
           </Dropdown.List>
         </Dropdown>
       </Header>
