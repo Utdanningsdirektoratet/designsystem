@@ -7,6 +7,7 @@ import * as TypescriptPlugin from 'prettier/plugins/typescript';
 import { format as prettierFormat } from 'prettier/standalone';
 import type { StoryContext } from 'storybook/internal/types';
 import type { RequiredDeep } from 'type-fest';
+import type { Parameters } from '.storybook/types';
 
 type SourceTransformer =
   RequiredDeep<DocsTypes>['parameters']['docs']['source']['transform'];
@@ -63,3 +64,8 @@ async function formatWithPrettier(
     plugins: parserPlugins[format],
   });
 }
+
+/** Set parameters.docs to this for better (but static) code examples when using hooks etc */
+export const advancedCodeDocs = {
+  source: { type: 'code', transform: formatReactSource },
+} satisfies Parameters['docs'];
