@@ -3,7 +3,7 @@ import { expect, userEvent, waitFor, within } from 'storybook/test';
 import { BriefcaseIcon, LanguageIcon, LeaveIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
-import { formatReactSource } from '.storybook/utils/sourceTransformers';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Avatar } from '../avatar/Avatar';
 import { Badge } from '../badge/Badge';
 import { Button } from '../button/Button';
@@ -15,7 +15,7 @@ import { Search } from '../search/Search';
 import { Tag } from '../tag/Tag';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
-import styles from './header.stories.module.css';
+import { Prose } from '../typography/prose/Prose';
 import { Header } from '.';
 
 const meta = preview.meta({
@@ -60,7 +60,7 @@ export const WithUserButton = meta.story({
       <Header.UserButton
         name="Stian Hansen"
         description="Admin"
-        popovertarget="usermenu"
+        popoverTarget="usermenu"
         avatar={
           <Avatar aria-hidden>
             <img src={profileImage} alt="Stian Hansen" />
@@ -98,7 +98,7 @@ export const WithUserButton = meta.story({
       </Dropdown>
 
       {/* Small screen: swap UserButton with avatar button on "sm" */}
-      <Button popovertarget="usermenuSmall" variant="tertiary" data-hide="sm">
+      <Button popoverTarget="usermenuSmall" variant="tertiary" data-hide="sm">
         <Avatar aria-label="Stian Hansen">
           <img src={profileImage} alt="" />
         </Avatar>
@@ -163,6 +163,7 @@ export const WithUserButton_Test = meta.story({
 });
 
 export const WithSearch = meta.story({
+  parameters: { docs: advancedCodeDocs },
   render(args) {
     const [value, setValue] = useState('');
     return (
@@ -183,35 +184,42 @@ export const WithSearch = meta.story({
 
 export const WithNavigationLinks = meta.story({
   render: (args) => (
-    <Header {...args}>
-      <Header.Navigation data-show="sm">
-        <Header.Navigation.Item href="#">Navlink 1</Header.Navigation.Item>
-        <Header.Navigation.Item href="#" active>
-          Navlink 2
-        </Header.Navigation.Item>
-        <Header.Navigation.Item href="#">Navlink 3</Header.Navigation.Item>
-      </Header.Navigation>
-      <Header.MenuButton data-hide="sm" />
-      <Header.Menu>
-        <nav
-          aria-label="header-menu-navigation"
-          style={{
-            maxWidth: '800px',
-            display: 'flex',
-            padding: 'var(--ds-size-5) var(--ds-size-15) var(--ds-size-10)',
-            gap: 'var(--ds-size-4)',
-            rowGap: 'var(--ds-size-10)',
-          }}
-          className={styles.headerMenuSmall}
-        >
-          <List.Unordered>
-            <Header.Menu.Link href="#">Navlink 1</Header.Menu.Link>
-            <Header.Menu.Link href="#">Navlink 2</Header.Menu.Link>
-            <Header.Menu.Link href="#">Navlink 3</Header.Menu.Link>
-          </List.Unordered>
-        </nav>
-      </Header.Menu>
-    </Header>
+    <>
+      <style>
+        {`
+  /* Styles defined in application-specific css */
+  .withNavLinks-header-menu-nav {
+    max-width: 800px;
+    display: flex;
+    padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
+    gap: var(--ds-size-4);
+    row-gap: var(--ds-size-10);
+    justify-items: center;
+  }`}
+      </style>
+      <Header {...args}>
+        <Header.Navigation data-show="sm">
+          <Header.Navigation.Item href="#">Navlink 1</Header.Navigation.Item>
+          <Header.Navigation.Item href="#" active>
+            Navlink 2
+          </Header.Navigation.Item>
+          <Header.Navigation.Item href="#">Navlink 3</Header.Navigation.Item>
+        </Header.Navigation>
+        <Header.MenuButton data-hide="sm" />
+        <Header.Menu>
+          <nav
+            aria-label="Menynavigasjon"
+            className="withNavLinks-header-menu-nav"
+          >
+            <List.Unordered>
+              <Header.Menu.Link href="#">Navlink 1</Header.Menu.Link>
+              <Header.Menu.Link href="#">Navlink 2</Header.Menu.Link>
+              <Header.Menu.Link href="#">Navlink 3</Header.Menu.Link>
+            </List.Unordered>
+          </nav>
+        </Header.Menu>
+      </Header>
+    </>
   ),
 });
 
@@ -268,49 +276,61 @@ const menuLinks = [
 
 export const WithMenu = meta.story({
   render: (args) => (
-    <Header {...args}>
-      <Header.MenuButton />
-      <Header.Menu>
-        <nav
-          aria-labelledby="header-menu-navigation"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
-            maxWidth: '800px',
-            margin: '0 auto',
-            padding: 'var(--ds-size-5) var(--ds-size-15) var(--ds-size-10)',
-            gap: 'var(--ds-size-4)',
-            rowGap: 'var(--ds-size-10)',
-          }}
-          className={styles.headerMenuSmall}
-        >
-          <h2 id="header-menu-navigation" className="ds-sr-only">
-            Menynavigasjon
-          </h2>
-          {menuLinks.map((column) => (
-            <div key={column.heading}>
-              <Heading
-                level={3}
-                data-size="xs"
-                style={{ marginBottom: 'var(--ds-size-3)' }}
-              >
-                <Link href="#">{column.heading}</Link>
-              </Heading>
-              <List.Unordered>
-                {column.links.map((link) => (
-                  <Header.Menu.Link
-                    key={column.heading + link.title}
-                    href={link.href}
-                  >
-                    {link.title}
-                  </Header.Menu.Link>
-                ))}
-              </List.Unordered>
-            </div>
-          ))}
-        </nav>
-      </Header.Menu>
-    </Header>
+    <>
+      <style>
+        {`
+        /* Styles defined in application-specific css */
+        .withMenu-header-menu-nav {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+          max-width: 800px;
+          margin: 0 auto;
+          padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
+          gap: var(--ds-size-4);
+          row-gap: var(--ds-size-10);
+          justify-items: center;
+        }
+        @media (max-width: 34.375rem) {
+          .withMenu-header-menu-nav {
+            justify-items: flex-start;
+          }
+        }`}
+      </style>
+      <Header {...args}>
+        <Header.MenuButton />
+        <Header.Menu>
+          <nav
+            aria-labelledby="header-menu-navigation"
+            className="withMenu-header-menu-nav"
+          >
+            <h2 id="header-menu-navigation" className="ds-sr-only">
+              Menynavigasjon
+            </h2>
+            {menuLinks.map((column) => (
+              <div key={column.heading}>
+                <Heading
+                  level={3}
+                  data-size="xs"
+                  style={{ marginBottom: 'var(--ds-size-3)' }}
+                >
+                  <Link href="#">{column.heading}</Link>
+                </Heading>
+                <List.Unordered>
+                  {column.links.map((link) => (
+                    <Header.Menu.Link
+                      key={column.heading + link.title}
+                      href={link.href}
+                    >
+                      {link.title}
+                    </Header.Menu.Link>
+                  ))}
+                </List.Unordered>
+              </div>
+            ))}
+          </nav>
+        </Header.Menu>
+      </Header>
+    </>
   ),
 });
 
@@ -333,161 +353,154 @@ const themeMenu2 = Array.from({ length: 2 }, (_, i) => ({
 export const WithThemeMenus = meta.story({
   render(args) {
     return (
-      <Header {...args}>
-        <Header.ThemeMenuButton
-          popovertarget="header-education-menu"
-          data-show="md"
-        >
-          Temameny 1
-        </Header.ThemeMenuButton>
-        <Header.Menu id="header-education-menu">
-          <nav
-            aria-labelledby="header-menu-theme1-navigation"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
-              maxWidth: '800px',
-              margin: '0 auto',
-              padding: 'var(--ds-size-5) var(--ds-size-15) var(--ds-size-10)',
-              justifyItems: 'center',
-              gap: 'var(--ds-size-4)',
-              rowGap: 'var(--ds-size-10)',
-            }}
+      <>
+        <style>
+          {`
+  /* Styles defined in application-specific css */
+  :is(#header-education-menu, #header-learning-menu, #header-mobile-menu) > nav {
+    display: grid;
+    margin: 0 auto;
+    padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
+    gap: var(--ds-size-4);
+    row-gap: var(--ds-size-10);
+  }
+  :is(#header-education-menu, #header-mobile-menu) > nav {
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    max-width: 800px;
+  }
+  :is(#header-education-menu, #header-learning-menu) > nav {
+    justify-items: center;
+  }
+  #header-learning-menu > nav {
+    grid-template-columns: 1fr 1fr;
+    max-width: 500px;
+  }
+  `}
+        </style>
+        <Header {...args}>
+          <Header.ThemeMenuButton
+            popoverTarget="header-education-menu"
+            data-show="md"
           >
-            <h2 id="header-menu-theme1-navigation" className="ds-sr-only">
-              Temameny 1 navigasjon
-            </h2>
-            {themeMenu1.map((column) => (
-              <div key={column.heading}>
-                <Heading
-                  level={3}
-                  data-size="xs"
-                  style={{ marginBottom: 'var(--ds-size-3)' }}
-                >
-                  {column.heading}
-                </Heading>
-                <List.Unordered>
-                  {column.links.map((link) => (
-                    <Header.Menu.Link
-                      key={column.heading + link.title}
-                      href={link.href}
-                    >
-                      {link.title}
-                    </Header.Menu.Link>
-                  ))}
-                </List.Unordered>
-              </div>
-            ))}
-          </nav>
-        </Header.Menu>
-        <Header.ThemeMenuButton
-          popovertarget="header-learning-menu"
-          data-show="md"
-        >
-          Temameny 2
-        </Header.ThemeMenuButton>
-        <Header.Menu id="header-learning-menu">
-          <nav
-            aria-labelledby="header-menu-theme2-navigation"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              maxWidth: '500px',
-              margin: '0 auto',
-              padding: 'var(--ds-size-5) var(--ds-size-15) var(--ds-size-10)',
-              justifyItems: 'center',
-              gap: 'var(--ds-size-4)',
-              rowGap: 'var(--ds-size-10)',
-            }}
+            Temameny 1
+          </Header.ThemeMenuButton>
+          <Header.Menu id="header-education-menu">
+            <nav aria-labelledby="header-menu-theme1-navigation">
+              <h2 id="header-menu-theme1-navigation" className="ds-sr-only">
+                Temameny 1 navigasjon
+              </h2>
+              {themeMenu1.map((column) => (
+                <div key={column.heading}>
+                  <Heading
+                    level={3}
+                    data-size="xs"
+                    style={{ marginBottom: 'var(--ds-size-3)' }}
+                  >
+                    {column.heading}
+                  </Heading>
+                  <List.Unordered>
+                    {column.links.map((link) => (
+                      <Header.Menu.Link
+                        key={column.heading + link.title}
+                        href={link.href}
+                      >
+                        {link.title}
+                      </Header.Menu.Link>
+                    ))}
+                  </List.Unordered>
+                </div>
+              ))}
+            </nav>
+          </Header.Menu>
+          <Header.ThemeMenuButton
+            popoverTarget="header-learning-menu"
+            data-show="md"
           >
-            <h2 id="header-menu-theme2-navigation" className="ds-sr-only">
-              Temameny 2 navigasjon
-            </h2>
-            {themeMenu2.map((column) => (
-              <div key={column.heading}>
-                <Heading
-                  level={3}
-                  data-size="xs"
-                  style={{ marginBottom: 'var(--ds-size-3)' }}
-                >
-                  {column.heading}
-                </Heading>
-                <List.Unordered>
-                  {column.links.map((link) => (
-                    <Header.Menu.Link
-                      key={column.heading + link.title}
-                      href={link.href}
-                    >
-                      {link.title}
-                    </Header.Menu.Link>
-                  ))}
-                </List.Unordered>
-              </div>
-            ))}
-          </nav>
-        </Header.Menu>
-        <Header.MenuButton data-hide="md" />
-        <Header.Menu>
-          <nav
-            aria-labelledby="header-menu-navigation"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
-              maxWidth: '800px',
-              margin: '0 auto',
-              padding: 'var(--ds-size-5) var(--ds-size-15) var(--ds-size-10)',
-              gap: 'var(--ds-size-4)',
-              rowGap: 'var(--ds-size-10)',
-            }}
-          >
-            <h2 id="header-menu-navigation" className="ds-sr-only">
-              Menynavigasjon
-            </h2>
-            {themeMenu1.map((column) => (
-              <div key={column.heading + 'mobile'}>
-                <Heading
-                  level={3}
-                  data-size="xs"
-                  style={{ marginBottom: 'var(--ds-size-3)' }}
-                >
-                  {column.heading}
-                </Heading>
-                <List.Unordered>
-                  {column.links.map((link) => (
-                    <Header.Menu.Link
-                      key={column.heading + link.title + 'mobile'}
-                      href={link.href}
-                    >
-                      {link.title}
-                    </Header.Menu.Link>
-                  ))}
-                </List.Unordered>
-              </div>
-            ))}
-            {themeMenu2.map((column) => (
-              <div key={column.heading + 'mobile'}>
-                <Heading
-                  level={3}
-                  data-size="xs"
-                  style={{ marginBottom: 'var(--ds-size-3)' }}
-                >
-                  {column.heading}
-                </Heading>
-                <List.Unordered>
-                  {column.links.map((link) => (
-                    <Header.Menu.Link
-                      key={column.heading + link.title + 'mobile'}
-                      href={link.href}
-                    >
-                      {link.title}
-                    </Header.Menu.Link>
-                  ))}
-                </List.Unordered>
-              </div>
-            ))}
-          </nav>
-        </Header.Menu>
-      </Header>
+            Temameny 2
+          </Header.ThemeMenuButton>
+          <Header.Menu id="header-learning-menu">
+            <nav aria-labelledby="header-menu-theme2-navigation">
+              <h2 id="header-menu-theme2-navigation" className="ds-sr-only">
+                Temameny 2 navigasjon
+              </h2>
+              {themeMenu2.map((column) => (
+                <div key={column.heading}>
+                  <Heading
+                    level={3}
+                    data-size="xs"
+                    style={{ marginBottom: 'var(--ds-size-3)' }}
+                  >
+                    {column.heading}
+                  </Heading>
+                  <List.Unordered>
+                    {column.links.map((link) => (
+                      <Header.Menu.Link
+                        key={column.heading + link.title}
+                        href={link.href}
+                      >
+                        {link.title}
+                      </Header.Menu.Link>
+                    ))}
+                  </List.Unordered>
+                </div>
+              ))}
+            </nav>
+          </Header.Menu>
+          <Header.MenuButton
+            data-hide="md"
+            popoverTarget="header-mobile-menu"
+          />
+          <Header.Menu id="header-mobile-menu">
+            <nav aria-labelledby="header-menu-navigation">
+              <h2 id="header-menu-navigation" className="ds-sr-only">
+                Menynavigasjon
+              </h2>
+              {themeMenu1.map((column) => (
+                <div key={column.heading + 'mobile'}>
+                  <Heading
+                    level={3}
+                    data-size="xs"
+                    style={{ marginBottom: 'var(--ds-size-3)' }}
+                  >
+                    {column.heading}
+                  </Heading>
+                  <List.Unordered>
+                    {column.links.map((link) => (
+                      <Header.Menu.Link
+                        key={column.heading + link.title + 'mobile'}
+                        href={link.href}
+                      >
+                        {link.title}
+                      </Header.Menu.Link>
+                    ))}
+                  </List.Unordered>
+                </div>
+              ))}
+              {themeMenu2.map((column) => (
+                <div key={column.heading + 'mobile'}>
+                  <Heading
+                    level={3}
+                    data-size="xs"
+                    style={{ marginBottom: 'var(--ds-size-3)' }}
+                  >
+                    {column.heading}
+                  </Heading>
+                  <List.Unordered>
+                    {column.links.map((link) => (
+                      <Header.Menu.Link
+                        key={column.heading + link.title + 'mobile'}
+                        href={link.href}
+                      >
+                        {link.title}
+                      </Header.Menu.Link>
+                    ))}
+                  </List.Unordered>
+                </div>
+              ))}
+            </nav>
+          </Header.Menu>
+        </Header>
+      </>
     );
   },
 });
@@ -502,68 +515,81 @@ const navAndMenuLinks = Array.from({ length: 3 }, (_, i) => ({
 
 export const WithNavigationLinksAndMenu = meta.story({
   render: (args) => (
-    <Header {...args}>
-      <Header.Navigation data-show="sm">
-        <Header.Navigation.Item href="#" active>
-          Navlink 1
-        </Header.Navigation.Item>
-        <Header.Navigation.Item href="#">Navlink 2</Header.Navigation.Item>
-      </Header.Navigation>
-      <Header.MenuButton />
-      <Header.Menu>
-        <nav
-          aria-labelledby="header-menu-navigation"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(13rem, 1fr))',
-            maxWidth: '800px',
-            margin: '0 auto',
-            padding: 'var(--ds-size-5) var(--ds-size-10) var(--ds-size-10)',
-            gap: 'var(--ds-size-4)',
-            rowGap: 'var(--ds-size-10)',
-          }}
-          className={styles.headerMenuSmall}
-        >
-          <h2 id="header-menu-navigation" className="ds-sr-only">
-            Menynavigasjon
-          </h2>
-          <div data-hide="sm">
-            <Heading
-              level={3}
-              data-size="xs"
-              style={{ marginBottom: 'var(--ds-size-3)' }}
-            >
-              Navlinker
-            </Heading>
-            <List.Unordered>
-              <Header.Menu.Link href="#">Navlink 1</Header.Menu.Link>
-              <Header.Menu.Link href="#">Navlink 2</Header.Menu.Link>
-            </List.Unordered>
-          </div>
-          {navAndMenuLinks.map((column) => (
-            <div key={column.heading}>
+    <>
+      <style>
+        {`
+  /* Styles defined in application-specific css */
+  .withNavLinksAndMenu-header-menu-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--ds-size-5) var(--ds-size-10) var(--ds-size-10);
+    gap: var(--ds-size-4);
+    row-gap: var(--ds-size-10);
+    justify-items: center;
+  }
+  @media (max-width: 34.375rem) {
+    .withNavLinksAndMenu-header-menu-nav {
+      justify-items: flex-start;
+    }
+  }
+  `}
+      </style>
+      <Header {...args}>
+        <Header.Navigation data-show="sm">
+          <Header.Navigation.Item href="#" active>
+            Navlink 1
+          </Header.Navigation.Item>
+          <Header.Navigation.Item href="#">Navlink 2</Header.Navigation.Item>
+        </Header.Navigation>
+        <Header.MenuButton />
+        <Header.Menu>
+          <nav
+            aria-labelledby="header-menu-navigation"
+            className="withNavLinksAndMenu-header-menu-nav"
+          >
+            <h2 id="header-menu-navigation" className="ds-sr-only">
+              Menynavigasjon
+            </h2>
+            <div data-hide="sm">
               <Heading
                 level={3}
                 data-size="xs"
                 style={{ marginBottom: 'var(--ds-size-3)' }}
               >
-                {column.heading}
+                Navlinker
               </Heading>
               <List.Unordered>
-                {column.links.map((link) => (
-                  <Header.Menu.Link
-                    key={column.heading + link.title}
-                    href={link.href}
-                  >
-                    {link.title}
-                  </Header.Menu.Link>
-                ))}
+                <Header.Menu.Link href="#">Navlink 1</Header.Menu.Link>
+                <Header.Menu.Link href="#">Navlink 2</Header.Menu.Link>
               </List.Unordered>
             </div>
-          ))}
-        </nav>
-      </Header.Menu>
-    </Header>
+            {navAndMenuLinks.map((column) => (
+              <div key={column.heading}>
+                <Heading
+                  level={3}
+                  data-size="xs"
+                  style={{ marginBottom: 'var(--ds-size-3)' }}
+                >
+                  {column.heading}
+                </Heading>
+                <List.Unordered>
+                  {column.links.map((link) => (
+                    <Header.Menu.Link
+                      key={column.heading + link.title}
+                      href={link.href}
+                    >
+                      {link.title}
+                    </Header.Menu.Link>
+                  ))}
+                </List.Unordered>
+              </div>
+            ))}
+          </nav>
+        </Header.Menu>
+      </Header>
+    </>
   ),
 });
 
@@ -592,7 +618,7 @@ export const WithTag = meta.story({
 
 export const WithLanguagePicker = meta.story({
   parameters: {
-    docs: { source: { type: 'code', transform: formatReactSource } },
+    docs: advancedCodeDocs,
   },
   render(args) {
     const languages = ['nb', 'nn', 'se', 'en'] as const;
@@ -643,6 +669,9 @@ export const WithLanguagePicker = meta.story({
 });
 
 export const WithTwoLanguages = meta.story({
+  parameters: {
+    docs: advancedCodeDocs,
+  },
   render(args) {
     const [language, setLanguage] = useState<'nb' | 'nn'>('nb');
     const text = {
@@ -667,58 +696,43 @@ export const WithTwoLanguages = meta.story({
 export const Responsive = meta.story({
   render(args) {
     return (
-      <Header {...args}>
-        <Header.Navigation data-show="lg">
-          <Header.Navigation.Item href="#">Navlink 1</Header.Navigation.Item>
-          <Header.Navigation.Item href="#" active>
-            Navlink 2
-          </Header.Navigation.Item>
-          <Header.Navigation.Item href="#">Navlink 3</Header.Navigation.Item>
-        </Header.Navigation>
-        <Header.UserButton
-          name="Stian Hansen"
-          description="Admin"
-          popovertarget="usermenu2"
-          data-show="md"
-          avatar={<Avatar aria-hidden>SH</Avatar>}
-        />
-        <Dropdown id="usermenu2" placement="bottom-end" autoPlacement={false}>
-          <Dropdown.List>
-            <Dropdown.Item>
-              <Dropdown.Heading>Bytt profil</Dropdown.Heading>
-            </Dropdown.Item>
-            <Dropdown.Item>
-              <Dropdown.Button>
-                <Avatar aria-hidden>
-                  <BriefcaseIcon />
-                </Avatar>
-                Grålum skole <Badge count={10} maxCount={9} />
-              </Dropdown.Button>
-            </Dropdown.Item>
-            <Divider />
-            <Dropdown.Item>
-              <Button variant="tertiary">
-                <LeaveIcon aria-hidden />
-                Logg ut
-              </Button>
-            </Dropdown.Item>
-          </Dropdown.List>
-        </Dropdown>
-        <Header.MenuButton />
-        <Header.Menu>
+      <>
+        <style>
+          {`
+  /* Styles defined in application-specific css */
+  .responsive-header-menu-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--ds-size-10);
+    gap: var(--ds-size-4);
+    row-gap: var(--ds-size-10);
+    justify-items: center;
+  }
+  @media (max-width: 34.375rem) {
+    .responsive-header-menu-nav {
+      justify-items: flex-start;
+    }
+  }
+  `}
+        </style>
+        <Header {...args}>
+          <Header.Navigation data-show="lg">
+            <Header.Navigation.Item href="#">Navlink 1</Header.Navigation.Item>
+            <Header.Navigation.Item href="#" active>
+              Navlink 2
+            </Header.Navigation.Item>
+            <Header.Navigation.Item href="#">Navlink 3</Header.Navigation.Item>
+          </Header.Navigation>
           <Header.UserButton
             name="Stian Hansen"
             description="Admin"
-            popovertarget="usermenuInMenu"
+            popoverTarget="usermenu2"
+            data-show="md"
             avatar={<Avatar aria-hidden>SH</Avatar>}
-            data-hide="md"
-            style={{ width: 'stretch', margin: '0 var(--ds-size-5)' }}
           />
-          <Dropdown
-            id="usermenuInMenu"
-            placement="bottom-end"
-            autoPlacement={false}
-          >
+          <Dropdown id="usermenu2" placement="bottom-end" autoPlacement={false}>
             <Dropdown.List>
               <Dropdown.Item>
                 <Dropdown.Heading>Bytt profil</Dropdown.Heading>
@@ -740,49 +754,77 @@ export const Responsive = meta.story({
               </Dropdown.Item>
             </Dropdown.List>
           </Dropdown>
-          <nav
-            aria-labelledby="header-menu-navigation"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(12rem, 1fr))',
-              maxWidth: '800px',
-              margin: '0 auto',
-              padding: 'var(--ds-size-10)',
-              gap: 'var(--ds-size-4)',
-              rowGap: 'var(--ds-size-10)',
-            }}
-            className={styles.headerMenuSmall}
-          >
-            <h2 id="header-menu-navigation" className="ds-sr-only">
-              Menynavigasjon
-            </h2>
-            {responsiveLinks.map((column) => (
-              <div
-                key={column.heading}
-                data-hide={column.heading === 'Navlinker' ? 'lg' : ''}
-              >
-                <Heading
-                  level={3}
-                  data-size="xs"
-                  style={{ marginBottom: 'var(--ds-size-3)' }}
+          <Header.MenuButton />
+          <Header.Menu>
+            <Header.UserButton
+              name="Stian Hansen"
+              description="Admin"
+              popoverTarget="usermenuInMenu"
+              avatar={<Avatar aria-hidden>SH</Avatar>}
+              data-hide="md"
+              style={{ width: 'stretch', margin: '0 var(--ds-size-5)' }}
+            />
+            <Dropdown
+              id="usermenuInMenu"
+              placement="bottom-end"
+              autoPlacement={false}
+            >
+              <Dropdown.List>
+                <Dropdown.Item>
+                  <Dropdown.Heading>Bytt profil</Dropdown.Heading>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Dropdown.Button>
+                    <Avatar aria-hidden>
+                      <BriefcaseIcon />
+                    </Avatar>
+                    Grålum skole <Badge count={10} maxCount={9} />
+                  </Dropdown.Button>
+                </Dropdown.Item>
+                <Divider />
+                <Dropdown.Item>
+                  <Button variant="tertiary">
+                    <LeaveIcon aria-hidden />
+                    Logg ut
+                  </Button>
+                </Dropdown.Item>
+              </Dropdown.List>
+            </Dropdown>
+            <nav
+              aria-labelledby="header-menu-navigation"
+              className="responsive-header-menu-nav"
+            >
+              <h2 id="header-menu-navigation" className="ds-sr-only">
+                Menynavigasjon
+              </h2>
+              {responsiveLinks.map((column) => (
+                <div
+                  key={column.heading}
+                  data-hide={column.heading === 'Navlinker' ? 'lg' : ''}
                 >
-                  {column.heading}
-                </Heading>
-                <List.Unordered>
-                  {column.links.map((link) => (
-                    <Header.Menu.Link
-                      key={column.heading + link.title}
-                      href={link.href}
-                    >
-                      {link.title}
-                    </Header.Menu.Link>
-                  ))}
-                </List.Unordered>
-              </div>
-            ))}
-          </nav>
-        </Header.Menu>
-      </Header>
+                  <Heading
+                    level={3}
+                    data-size="xs"
+                    style={{ marginBottom: 'var(--ds-size-3)' }}
+                  >
+                    {column.heading}
+                  </Heading>
+                  <List.Unordered>
+                    {column.links.map((link) => (
+                      <Header.Menu.Link
+                        key={column.heading + link.title}
+                        href={link.href}
+                      >
+                        {link.title}
+                      </Header.Menu.Link>
+                    ))}
+                  </List.Unordered>
+                </div>
+              ))}
+            </nav>
+          </Header.Menu>
+        </Header>
+      </>
     );
   },
 });
@@ -797,6 +839,41 @@ export const AutoHideSticky = meta.story({
   render(args) {
     return (
       <>
+        <style>
+          {`
+  /* Styles defined in application-specific css */
+  .autoHideSticky-header-menu-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
+    gap: var(--ds-size-4);
+    row-gap: var(--ds-size-10);
+    justify-items: center;
+  }
+  @media (max-width: 34.375rem) {
+    .autoHideSticky-header-menu-nav {
+      justify-items: flex-start;
+    }
+  }
+  main {
+    padding: var(--ds-size-18);
+    display: flex;
+    flex-direction: column;
+    gap: var(--ds-size-4);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  main hr {
+    margin-top: var(--ds-size-30);
+  }
+  main hr + p {
+    margin-top: calc(var(--ds-size-30) * 2);
+    margin-bottom: calc(var(--ds-size-30) * 2);
+  }
+  `}
+        </style>
         <Header {...args}>
           <Header.Navigation data-show="md">
             <Header.Navigation.Item href="#">Navlink 1</Header.Navigation.Item>
@@ -809,16 +886,7 @@ export const AutoHideSticky = meta.story({
           <Header.Menu data-testid="header-menu">
             <nav
               aria-labelledby="header-menu-navigation"
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(12rem, 1fr))',
-                maxWidth: '800px',
-                margin: '0 auto',
-                padding: 'var(--ds-size-5) var(--ds-size-15) var(--ds-size-10)',
-                gap: 'var(--ds-size-4)',
-                rowGap: 'var(--ds-size-10)',
-              }}
-              className={styles.headerMenuSmall}
+              className="autoHideSticky-header-menu-nav"
             >
               <h2 id="header-menu-navigation" className="ds-sr-only">
                 Menynavigasjon
@@ -850,86 +918,73 @@ export const AutoHideSticky = meta.story({
             </nav>
           </Header.Menu>
         </Header>
-        <div
-          style={{
-            padding: 'var(--ds-size-18)',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 'var(--ds-size-4)',
-            maxWidth: '800px',
-            margin: '0 auto',
-          }}
-        >
-          <Heading level={1} data-size="lg">
-            Samisk i skolen
-          </Heading>
-          <Paragraph style={{ marginTop: 'var(--ds-size-3)' }}>
-            Alle elever skal lære om samer og samiske forhold i skolen. Retten
-            til også å få undervisning i samiske språk og undervisning på samisk
-            i andre fag, er ulik innenfor og utenfor samiske distrikt. I de
-            samiske distriktene er norsk og samisk sidestilte i opplæringen.
-          </Paragraph>
-          <Heading level={2} style={{ marginTop: 'var(--ds-size-5)' }}>
-            Rett til opplæring i samisk i videregående opplæring
-          </Heading>
-          <Paragraph>
-            Det er innført en rett til opplæring i samisk i videregående
-            opplæring for alle elever som har hatt opplæring i eller på samisk i
-            grunnskolen. Dette gjelder uavhengig av om eleven har samisk
-            bakgrunn eller ikke.
-          </Paragraph>
-          <Paragraph>
-            Bakgrunnen for rettigheten er at elever som har hatt opplæring i
-            samisk som første- eller andrespråk i grunnskolen får mulighet til å
-            fortsette med opplæringen i samisk, og sikre eleven et helhetlig
-            opplæringsløp. Det er ikke stilt krav om lengden på eller innholdet
-            i opplæringen i grunnskolen, eks. om eleven har hatt samisk som
-            første- eller andrespråk. Elevene har ikke rett til å velge et annet
-            samisk språk i videregående opplæring enn det elevene hadde på
-            grunnskolen.
-          </Paragraph>
-          <Paragraph>
-            Retten til opplæring i samisk for samiske elever i videregående
-            opplæring er videreført.
-          </Paragraph>
-          <Heading level={2} style={{ marginTop: 'var(--ds-size-5)' }}>
-            Tilbud om del av opplæringen i et samiskspråklig miljø
-          </Heading>
-          <Paragraph>
-            Det er tatt inn i loven at kommunen og fylkeskommunen skal gi eleven
-            tilbud om del av opplæringen i et samiskspråklig miljø dersom det er
-            nødvendig for at opplæringen skal være pedagogisk forsvarlig. Dette
-            står i{' '}
-            <Link href="#">
-              § 3-2 for grunnskolen og § 6-2 for videregående opplæring
-            </Link>{' '}
-            Denne regelen tar i hovedsak sikte på tilfeller der opplæringen i
-            samisk blir gitt som fjernundervisning.
-          </Paragraph>
-          <Paragraph>
-            Vurderingen av om det er «nødvendig for at opplæringen skal være
-            pedagogisk forsvarlig», handler om hvorvidt eleven skal kunne nå
-            kompetansemålene i læreplanen. Det kan ikke knyttes til ytre rammer
-            for eksempel hvor mange andre som snakker det samiskspråket i
-            området, økonomi og ressurser.
-          </Paragraph>
-          <Paragraph>
-            Hvor store deler av opplæringen i samisk det eventuelt er nødvendig
-            å gi i et samiskspråklig miljø, kommer an på en konkret vurdering av
-            om opplæringen gir eleven grunnlag for å nå kompetansemålene i
-            læreplanen eller ikke.
-          </Paragraph>
-          <Divider style={{ marginTop: 'var(--ds-size-30)' }} />
-          <Paragraph
-            style={{
-              marginTop: 'calc(var(--ds-size-30) * 2)',
-              marginBottom: 'calc(var(--ds-size-30) * 2)',
-            }}
-          >
-            (Annet innhold)
-          </Paragraph>
-          <Divider />
-        </div>
+        <main>
+          <Prose>
+            <Heading level={1} data-size="lg">
+              Samisk i skolen
+            </Heading>
+            <Paragraph>
+              Alle elever skal lære om samer og samiske forhold i skolen. Retten
+              til også å få undervisning i samiske språk og undervisning på
+              samisk i andre fag, er ulik innenfor og utenfor samiske distrikt.
+              I de samiske distriktene er norsk og samisk sidestilte i
+              opplæringen.
+            </Paragraph>
+            <Heading level={2}>
+              Rett til opplæring i samisk i videregående opplæring
+            </Heading>
+            <Paragraph>
+              Det er innført en rett til opplæring i samisk i videregående
+              opplæring for alle elever som har hatt opplæring i eller på samisk
+              i grunnskolen. Dette gjelder uavhengig av om eleven har samisk
+              bakgrunn eller ikke.
+            </Paragraph>
+            <Paragraph>
+              Bakgrunnen for rettigheten er at elever som har hatt opplæring i
+              samisk som første- eller andrespråk i grunnskolen får mulighet til
+              å fortsette med opplæringen i samisk, og sikre eleven et helhetlig
+              opplæringsløp. Det er ikke stilt krav om lengden på eller
+              innholdet i opplæringen i grunnskolen, eks. om eleven har hatt
+              samisk som første- eller andrespråk. Elevene har ikke rett til å
+              velge et annet samisk språk i videregående opplæring enn det
+              elevene hadde på grunnskolen.
+            </Paragraph>
+            <Paragraph>
+              Retten til opplæring i samisk for samiske elever i videregående
+              opplæring er videreført.
+            </Paragraph>
+            <Heading level={2}>
+              Tilbud om del av opplæringen i et samiskspråklig miljø
+            </Heading>
+            <Paragraph>
+              Det er tatt inn i loven at kommunen og fylkeskommunen skal gi
+              eleven tilbud om del av opplæringen i et samiskspråklig miljø
+              dersom det er nødvendig for at opplæringen skal være pedagogisk
+              forsvarlig. Dette står i{' '}
+              <Link href="#">
+                § 3-2 for grunnskolen og § 6-2 for videregående opplæring
+              </Link>{' '}
+              Denne regelen tar i hovedsak sikte på tilfeller der opplæringen i
+              samisk blir gitt som fjernundervisning.
+            </Paragraph>
+            <Paragraph>
+              Vurderingen av om det er «nødvendig for at opplæringen skal være
+              pedagogisk forsvarlig», handler om hvorvidt eleven skal kunne nå
+              kompetansemålene i læreplanen. Det kan ikke knyttes til ytre
+              rammer for eksempel hvor mange andre som snakker det samiskspråket
+              i området, økonomi og ressurser.
+            </Paragraph>
+            <Paragraph>
+              Hvor store deler av opplæringen i samisk det eventuelt er
+              nødvendig å gi i et samiskspråklig miljø, kommer an på en konkret
+              vurdering av om opplæringen gir eleven grunnlag for å nå
+              kompetansemålene i læreplanen eller ikke.
+            </Paragraph>
+            <Divider />
+            <Paragraph>(Annet innhold)</Paragraph>
+            <Divider />
+          </Prose>
+        </main>
       </>
     );
   },
@@ -1042,69 +1097,75 @@ const linksUdirNo = [
 ];
 
 export const UdirNo = meta.story({
-  args: {
-    applicationName: 'Utdanningsdirektoratet',
-    href: 'https://www.udir.no/',
+  parameters: {
+    docs: { source: { type: 'dynamic' } },
   },
   render() {
     return (
-      <Header
-        applicationName="Utdanningsdirektoratet"
-        href="https://www.udir.no/"
-      >
-        <Search style={{ maxWidth: '280px' }} data-show="sm">
-          <Search.Input aria-label="Søk" placeholder="Søk" />
-          <Search.Clear />
-        </Search>
-        <Header.MenuButton variant="primary" />
-        <Header.Menu>
-          <Search
-            style={{
-              width: 'auto',
-              margin: 'var(--ds-size-5) var(--ds-size-5) 0',
-            }}
-            data-hide="sm"
-          >
+      <>
+        <style>
+          {`
+  /* Styles defined in application-specific css */
+  .udirNo-header-menu-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: var(--ds-size-10) var(--ds-size-15);
+    gap: var(--ds-size-4);
+    row-gap: var(--ds-size-10);
+  }
+  `}
+        </style>
+        <Header
+          applicationName="Utdanningsdirektoratet"
+          href="https://www.udir.no/"
+        >
+          <Search style={{ maxWidth: '280px' }} data-show="sm">
             <Search.Input aria-label="Søk" placeholder="Søk" />
             <Search.Clear />
           </Search>
-          <nav
-            aria-labelledby="header-menu-navigation"
-            style={{
-              display: 'grid',
-              gridTemplateColumns:
-                'repeat(auto-fit, minmax(min(100%, 20rem), 1fr))',
-              maxWidth: '1280px',
-              margin: '0 auto',
-              padding: 'var(--ds-size-10) var(--ds-size-15)',
-              gap: 'var(--ds-size-4)',
-              rowGap: 'var(--ds-size-10)',
-            }}
-          >
-            <h2 id="header-menu-navigation" className="ds-sr-only">
-              Menynavigasjon
-            </h2>
-            {linksUdirNo.map((column) => (
-              <div key={column.heading}>
-                <Heading
-                  level={3}
-                  data-size="xs"
-                  style={{ marginBottom: 'var(--ds-size-3)' }}
-                >
-                  {column.heading}
-                </Heading>
-                <List.Unordered>
-                  {column.links.map((link) => (
-                    <Header.Menu.Link key={link.title} href={link.href}>
-                      {link.title}
-                    </Header.Menu.Link>
-                  ))}
-                </List.Unordered>
-              </div>
-            ))}
-          </nav>
-        </Header.Menu>
-      </Header>
+          <Header.MenuButton variant="primary" />
+          <Header.Menu>
+            <Search
+              style={{
+                width: 'auto',
+                margin: 'var(--ds-size-5) var(--ds-size-5) 0',
+              }}
+              data-hide="sm"
+            >
+              <Search.Input aria-label="Søk" placeholder="Søk" />
+              <Search.Clear />
+            </Search>
+            <nav
+              aria-labelledby="header-menu-navigation"
+              className="udirNo-header-menu-nav"
+            >
+              <h2 id="header-menu-navigation" className="ds-sr-only">
+                Menynavigasjon
+              </h2>
+              {linksUdirNo.map((column) => (
+                <div key={column.heading}>
+                  <Heading
+                    level={3}
+                    data-size="xs"
+                    style={{ marginBottom: 'var(--ds-size-3)' }}
+                  >
+                    {column.heading}
+                  </Heading>
+                  <List.Unordered>
+                    {column.links.map((link) => (
+                      <Header.Menu.Link key={link.title} href={link.href}>
+                        {link.title}
+                      </Header.Menu.Link>
+                    ))}
+                  </List.Unordered>
+                </div>
+              ))}
+            </nav>
+          </Header.Menu>
+        </Header>
+      </>
     );
   },
 });

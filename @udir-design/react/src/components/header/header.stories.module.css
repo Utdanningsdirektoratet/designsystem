@@ -1,6 +1,0 @@
-.headerMenuSmall {
-  justify-items: center;
-  @media (max-width: 550px) {
-    justify-items: flex-start;
-  }
-}
