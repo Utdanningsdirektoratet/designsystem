@@ -20,7 +20,7 @@ export const formatReactSource: SourceTransformer = async (
   ctx: StoryContext,
 ) => {
   const extractedRenderMatches = src.match(
-    /(^ +)(render:)( (?:.|\n)+)(^\1[})])/m,
+    /(^ +)(render[:(])( ?(?:.|\n)+)(^\1[})])/m,
   );
   const fullMatch = extractedRenderMatches?.[0];
   const endingMatch = extractedRenderMatches?.[4];
@@ -36,12 +36,12 @@ export const formatReactSource: SourceTransformer = async (
     );
     const extractedRender = matchLines
       .slice(0, firstEndingMatchLocation + 1)
-      .join('\n');
+      .join('\n')
+      .trim();
     const storyNamePascal = camelcase(ctx.name, { pascalCase: true });
-    srcToFormat = extractedRender.replace(
-      'render:',
-      `const ${storyNamePascal} =`,
-    );
+    srcToFormat = extractedRender
+      .replace(/^render:/, `const ${storyNamePascal} =`)
+      .replace(/^render\(/, `function ${storyNamePascal}(`);
   }
 
   return formatWithPrettier('typescript', srcToFormat);
