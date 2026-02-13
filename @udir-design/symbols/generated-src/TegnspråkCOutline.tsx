@@ -8,7 +8,7 @@ interface SVGRProps {
 interface SVGRProps {
   size?: number | string;
 }
-const SvgTegnsprkGOutline = forwardRef(
+const SvgTegnsprkCOutline = forwardRef(
   (
     {
       size,
@@ -30,11 +30,13 @@ const SvgTegnsprkGOutline = forwardRef(
         ? {
             style: {
               width: v,
+              height: 'auto',
             },
           }
         : {
             style: {
               height: v,
+              width: 'auto',
             },
           };
     })();
@@ -51,7 +53,7 @@ const SvgTegnsprkGOutline = forwardRef(
         {...props}
       >
         {title ? <title id={titleId}>{title}</title> : null}
-        <g clipPath="url(#Tegnspr\xE5kGOutline_svg__a)">
+        <g clipPath="url(#Tegnspr\xE5kCOutline_svg__a)">
           <path
             stroke="#303030"
             strokeLinecap="round"
@@ -60,7 +62,7 @@ const SvgTegnsprkGOutline = forwardRef(
           />
         </g>
         <defs>
-          <clipPath id="Tegnspr\xE5kGOutline_svg__a">
+          <clipPath id="Tegnspr\xE5kCOutline_svg__a">
             <path fill="#fff" d="M0 0h39.715v42H0z" />
           </clipPath>
         </defs>
@@ -68,4 +70,4 @@ const SvgTegnsprkGOutline = forwardRef(
     );
   },
 );
-export default SvgTegnsprkGOutline;
+export default SvgTegnsprkCOutline;

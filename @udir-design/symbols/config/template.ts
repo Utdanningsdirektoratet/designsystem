@@ -165,7 +165,7 @@ const ${variables.componentName} = forwardRef((${variables.props}) => {
   const __sizeProps = (() => {
     if (props?.width != null || props?.height != null) return {};
     const v = size ?? (__isWide ? __srcW : __srcH);   // set size based on original aspect ratio
-    return __isWide ? { style: { width: v } } : { style: { height: v } }; 
+    return __isWide ? { style: { width: v, height: "auto" } } : { style: { height: v, width: "auto" } }; 
   })();
 
 

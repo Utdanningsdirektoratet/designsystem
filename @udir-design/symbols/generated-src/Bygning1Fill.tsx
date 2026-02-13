@@ -30,11 +30,13 @@ const SvgBygning1Fill = forwardRef(
         ? {
             style: {
               width: v,
+              height: 'auto',
             },
           }
         : {
             style: {
               height: v,
+              width: 'auto',
             },
           };
     })();

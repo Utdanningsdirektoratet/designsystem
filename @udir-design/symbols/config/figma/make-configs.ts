@@ -11,7 +11,6 @@ export type SymbolYml = {
   sub_category: string;
   keywords: string[];
   variant: string;
-  updated_at: string;
   created_at: string;
 };
 
@@ -43,12 +42,6 @@ export const makeConfig = (
       variant: upperFirst(
         symbol.name.includes('Style=') ? symbol.name.replace('Style=', '') : '',
       ),
-      updated_at: new Date(symbol.updated_at)
-        .toISOString()
-        .split('T')[0]
-        .split('-')
-        .reverse()
-        .join('.'),
       created_at: new Date(symbol.created_at)
         .toISOString()
         .split('T')[0]
