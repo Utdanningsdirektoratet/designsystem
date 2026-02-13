@@ -1,9 +1,11 @@
 import type { Color } from '@digdir/designsystemet-react/colors';
+import { useEffect, useRef } from 'react';
 import { Fragment } from 'react/jsx-runtime';
 import { PlusIcon, TrashFillIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { Button } from '../button/Button';
 import { Field } from '../field/Field';
+import { Link } from '../link/Link';
 import { Select } from '../select/Select';
 import { Textfield } from '../textfield/Textfield';
 import { Heading } from '../typography/heading/Heading';
@@ -278,6 +280,55 @@ export const WithLink = meta.story({
       </Card>
     </>
   ),
+});
+
+export const WithMultipleLinks = meta.story({
+  render: (args) => {
+    const cardRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+      const cleanup: Array<() => void> = [];
+      if (cardRef.current) {
+        cardRef.current
+          .querySelectorAll<HTMLElement>(':is(a, button)')
+          .forEach((el) => {
+            const listener = (e: PointerEvent): void => e.stopPropagation();
+            el.addEventListener('click', listener);
+            cleanup.push(() => el.removeEventListener('click', listener));
+          });
+      }
+      return () => cleanup.forEach((fn) => fn());
+    }, []);
+    return (
+      <Card data-color="support1" {...args} ref={cardRef}>
+        <Card.Block>
+          <img src={studentsImg} alt="" />
+        </Card.Block>
+        <Card.Block>
+          <Heading>
+            <a
+              href="https://www.udir.no/eksamen-og-prover/eksamen/ta-fag-som-privatist/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Påmelding til eksamen
+            </a>
+          </Heading>
+          <Paragraph>
+            Du må melde deg på innen 1. februar for våreksamen og 15. september
+            for høsteksamen.
+          </Paragraph>
+          <Paragraph>
+            Hvis det er noe du lurer på om privatisteksamen skal du kontakte
+            fylkeskommunen.{' '}
+            <Link href="https://www.udir.no/eksamen-og-prover/eksamen/privatist/sporsmal-om-privatisteksamen/">
+              Fylkeskommunen har ansvar for gjennomføring av privatisteksamen.
+            </Link>
+          </Paragraph>
+          <Paragraph data-size="sm">Privatisteksamen</Paragraph>
+        </Card.Block>
+      </Card>
+    );
+  },
 });
 
 export const Horizontal = meta.story({
