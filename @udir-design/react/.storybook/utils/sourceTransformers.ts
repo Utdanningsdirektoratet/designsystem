@@ -7,6 +7,7 @@ import * as TypescriptPlugin from 'prettier/plugins/typescript';
 import { format as prettierFormat } from 'prettier/standalone';
 import type { StoryContext } from 'storybook/internal/types';
 import type { RequiredDeep } from 'type-fest';
+import type { Parameters } from '.storybook/types';
 
 type SourceTransformer =
   RequiredDeep<DocsTypes>['parameters']['docs']['source']['transform'];
@@ -20,7 +21,7 @@ export const formatReactSource: SourceTransformer = async (
   ctx: StoryContext,
 ) => {
   const extractedRenderMatches = src.match(
-    /(^ +)(render:)( (?:.|\n)+)(^\1[})])/m,
+    /(^ +)(render[:(])( ?(?:.|\n)+)(^\1[})])/m,
   );
   const fullMatch = extractedRenderMatches?.[0];
   const endingMatch = extractedRenderMatches?.[4];
@@ -36,12 +37,12 @@ export const formatReactSource: SourceTransformer = async (
     );
     const extractedRender = matchLines
       .slice(0, firstEndingMatchLocation + 1)
-      .join('\n');
+      .join('\n')
+      .trim();
     const storyNamePascal = camelcase(ctx.name, { pascalCase: true });
-    srcToFormat = extractedRender.replace(
-      'render:',
-      `const ${storyNamePascal} =`,
-    );
+    srcToFormat = extractedRender
+      .replace(/^render:/, `const ${storyNamePascal} =`)
+      .replace(/^render\(/, `function ${storyNamePascal}(`);
   }
 
   return formatWithPrettier('typescript', srcToFormat);
@@ -63,3 +64,8 @@ async function formatWithPrettier(
     plugins: parserPlugins[format],
   });
 }
+
+/** Set parameters.docs to this for better (but static) code examples when using hooks etc */
+export const advancedCodeDocs = {
+  source: { type: 'code', transform: formatReactSource },
+} satisfies Parameters['docs'];
