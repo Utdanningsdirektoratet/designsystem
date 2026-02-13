@@ -8,19 +8,13 @@ Det er flere måter å markere obligatoriske skjemafelt som oppfyller kravene ti
 
 Udir følger [bruksmønsteret for obligatoriske skjemafelt i Digdirs designsystem](https://designsystemet.no/no/patterns/required-and-optional-fields) med noen endringer.
 
+## Implementasjon av mønsteret
+
+Vi har laget [komponenten `FieldNecessity`](/docs/components-fieldnecessity--docs), som automatisk implementerer dette mønsteret. Ved å legge `FieldNecessity` rundt skjemafeltene, og markere de påkrevde feltene med `required`, vil markeringen bli håndtert i henhold til mønsteret.
+
 ## Endringer hos Udir
 
 Mønsteret skal følges slik det står i Digdirs designsystem, med unntak av følgende endringer.
-
-### Antall spørsmål per side
-
-Vi anbefaler ikke nødvendigvis å ha ett spørsmål per side. Vi anbefaler heller ett **tema** per side. For eksempel kan én side handle om personopplysninger, og inneholde flere felt for navn og adresse. I et stort skjema er det på samme måte naturlig å ha flere felt per skjemaside, så lenge man passer på at spørsmålene relaterer til samme tema. På den måten slipper brukerne å kontekstsvitsje for mye.
-
-#### Bakgrunn for endringen
-
-Mønsteret i Digdirs designsystem gir inntrykk av at det aller helst bør være kun ett skjemafelt per skjemaside. Hensikten med retningslinjen er å redusere kognitiv belastning for den som fyller ut skjemaet.
-
-Vi har tatt opp dette med Digdir, og muntlig fått bekreftet at ett tema per skjemaside ivaretar hensikten. De kommer til å justere teksten hos seg på sikt.
 
 ### Kombinasjon av obligatoriske og valgfrie felt
 
