@@ -1,3 +1,4 @@
+import { RovingFocusItem, RovingFocusRoot } from '@digdir/designsystemet-react';
 import { useRef, useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import { BriefcaseIcon, LanguageIcon, LeaveIcon } from '@udir-design/icons';
@@ -631,38 +632,72 @@ export const WithLanguagePicker = meta.story({
       en: 'English',
     };
     const [currentLang, setCurrentLang] = useState<Language>('nn');
+    const [isOpen, setIsOpen] = useState(false);
     const buttonRef = useRef<HTMLButtonElement>(null);
+    const dropdownRef = useRef<HTMLDivElement>(null);
 
     return (
       <Header {...args}>
-        <Button
-          variant="tertiary"
-          popoverTarget="language-picker"
-          lang="en"
-          ref={buttonRef}
-        >
-          <LanguageIcon aria-hidden />
-          Language
-        </Button>
-        <Dropdown id="language-picker">
-          <Dropdown.List>
-            {languages.map((lang) => (
-              <Dropdown.Item
-                {...(currentLang === lang && { 'aria-current': true })}
-              >
-                <Dropdown.Button
-                  lang={lang}
-                  onClick={() => {
-                    setCurrentLang(lang);
-                    buttonRef.current?.click();
-                  }}
-                >
-                  {languageText[lang]}
-                </Dropdown.Button>
-              </Dropdown.Item>
-            ))}
-          </Dropdown.List>
-        </Dropdown>
+        <Dropdown.TriggerContext>
+          <Dropdown.Trigger
+            variant="tertiary"
+            lang="en"
+            ref={buttonRef}
+            onClick={() => {
+              if (!isOpen) {
+                setIsOpen(true);
+                requestAnimationFrame(() => {
+                  const current =
+                    dropdownRef.current?.querySelector<HTMLElement>(
+                      '[aria-current="true"] > :first-child',
+                    );
+                  console.log(current);
+                  current?.focus();
+                });
+              } else {
+                setIsOpen(false);
+              }
+            }}
+          >
+            <LanguageIcon aria-hidden />
+            Language
+          </Dropdown.Trigger>
+          <Dropdown
+            id="language-picker"
+            ref={dropdownRef}
+            open={isOpen}
+            onClose={() => {
+              setIsOpen(false);
+            }}
+          >
+            <RovingFocusRoot
+              orientation="vertical"
+              activeValue={currentLang}
+              asChild
+            >
+              <Dropdown.List>
+                {languages.map((lang) => (
+                  <Dropdown.Item
+                    {...(currentLang === lang && { 'aria-current': true })}
+                  >
+                    <RovingFocusItem asChild value={lang}>
+                      <Dropdown.Button
+                        lang={lang}
+                        onClick={() => {
+                          setCurrentLang(lang);
+                          setIsOpen(false);
+                          buttonRef.current?.focus();
+                        }}
+                      >
+                        {languageText[lang]}
+                      </Dropdown.Button>
+                    </RovingFocusItem>
+                  </Dropdown.Item>
+                ))}
+              </Dropdown.List>
+            </RovingFocusRoot>
+          </Dropdown>
+        </Dropdown.TriggerContext>
       </Header>
     );
   },
