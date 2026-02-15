@@ -21,13 +21,13 @@ catalog:
   '@navikt/aksel-icons': ^8.3.0
   '@next/eslint-plugin-next': ^16.1.6
   '@nx/azure-cache': ^5.0.0
-  '@nx/eslint': 22.4.5
-  '@nx/eslint-plugin': 22.4.5
+  '@nx/eslint': 22.5.1
+  '@nx/eslint-plugin': 22.5.1
   '@radix-ui/react-slot': ^1.2.4
-  '@storybook/addon-a11y': ^10.2.7
-  '@storybook/addon-docs': ^10.2.7
-  '@storybook/addon-vitest': ^10.2.7
-  '@storybook/react-vite': ^10.2.7
+  '@storybook/addon-a11y': ^10.2.8
+  '@storybook/addon-docs': ^10.2.8
+  '@storybook/addon-vitest': ^10.2.8
+  '@storybook/react-vite': ^10.2.8
   '@svgr/cli': 8.1.0
   '@svgr/core': ^8.1.0
   '@swc-node/register': ^1.11.1
@@ -38,14 +38,14 @@ catalog:
   '@types/diffable-html': ^5.0.2
   '@types/mdast': ^4.0.4
   '@types/micromatch': ^4.0.10
-  '@types/node': ^24.10.11
+  '@types/node': ^24.10.13
   '@types/ramda': ^0.31.1
   '@types/react': ^19.2.6
   '@types/react-dom': ^19.2.3
   '@types/remark-heading-id': ^1.0.0
   '@types/yargs': ^17.0.35
-  '@typescript-eslint/eslint-plugin': ^8.54.0
-  '@typescript-eslint/parser': ^8.54.0
+  '@typescript-eslint/eslint-plugin': ^8.55.0
+  '@typescript-eslint/parser': ^8.55.0
   '@typescript/native-preview': 7.0.0-dev.20260208.1
   '@u-elements/u-details': ^0.2.2
   '@u-elements/u-progress': ^0.0.7
@@ -58,7 +58,7 @@ catalog:
   axe-core: ^4.11.1
   axe-playwright: ^2.2.2
   camelcase: ^9.0.0
-  chromatic: ^15.0.0
+  chromatic: ^15.1.0
   clsx: 2.1.1
   cssnano: ^7.1.2
   diffable-html: ^6.0.1
@@ -69,7 +69,7 @@ catalog:
   eslint-plugin-jsx-a11y: ^6.10.2
   eslint-plugin-react: ^7.37.5
   eslint-plugin-react-hooks: ^7.0.1
-  eslint-plugin-storybook: ^10.2.7
+  eslint-plugin-storybook: ^10.2.8
   fast-glob: ^3.3.3
   fuse.js: ^7.1.0
   hast-util-from-html: ^2.0.3
@@ -85,7 +85,7 @@ catalog:
   mdast-util-to-hast: ^13.2.1
   micromatch: ^4.0.8
   next: ^16.1.6
-  nx: 22.4.5
+  nx: 22.5.1
   parcel: ^2.16.3
   playwright: ^1.58.2
   postcss: ^8.5.6
@@ -108,24 +108,24 @@ catalog:
   sass: ^1.97.3
   sharp: ^0.34.5
   shx: ^0.4.0
-  storybook: ^10.2.7
-  storybook-addon-pseudo-states: ^10.2.7
-  style-dictionary: ^5.2.0
+  storybook: ^10.2.8
+  storybook-addon-pseudo-states: ^10.2.8
+  style-dictionary: ^5.3.0
   svgo: 4.0.0
   ts-node: ^10.9.2
   tslib: ^2.8.1
   tsup: ^8.5.1
   tsx: ^4.21.0
   type-fest: ^5.4.4
-  typedoc: ^0.28.16
+  typedoc: ^0.28.17
   typescript: ^5.9.3
-  typescript-eslint: ^8.54.0
+  typescript-eslint: ^8.55.0
   unified: ^11.0.5
   unist-util-remove: ^4.0.0
   unist-util-visit: ^5.1.0
   vite: ^7.3.1
   vite-plugin-dts: ^4.5.4
-  vite-tsconfig-paths: ^6.1.0
+  vite-tsconfig-paths: ^6.1.1
   vitest: ^4.0.18
   yargs: ^18.0.0
   zod: ^4.3.5
