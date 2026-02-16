@@ -57,7 +57,7 @@
   gap: var(--ds-size-8);
   padding: var(--ds-size-3);
 
-  :global(.ds-field-necessity-summary) {
+  :global(.uds-field-necessity-summary) {
     margin-block-start: calc(-1 * var(--ds-size-6));
     margin-block-end: calc(-1 * var(--ds-size-2));
   }
