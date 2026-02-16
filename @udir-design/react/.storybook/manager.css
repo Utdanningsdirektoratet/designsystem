@@ -1,0 +1,22 @@
+.storybook-tag-badge {
+  --ds-size-mode-font-size: 0.85;
+  margin-left: auto;
+  margin-right: 34px;
+  min-height: 18px;
+}
+
+.sidebar-subheading-icon {
+  height: 1.125rem;
+  width: auto;
+}
+
+[aria-controls='storybook-mobile-menu'] .uds-sb-sidebar-name {
+  display: none;
+}
+.uds-sb-mobile-nav-button {
+  display: none;
+  margin-right: var(--ds-size-2);
+}
+[aria-controls='storybook-mobile-menu'] .uds-sb-mobile-nav-button {
+  display: inline;
+}
