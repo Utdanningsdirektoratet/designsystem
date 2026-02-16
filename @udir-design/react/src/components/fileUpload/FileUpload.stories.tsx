@@ -2,6 +2,7 @@ import type { ChangeEvent } from 'react';
 import { useState } from 'react';
 import type { FileRejection, FileWithPath } from 'react-dropzone';
 import { useDropzone } from 'react-dropzone';
+import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { Heading } from '../typography/heading/Heading';
 import { FileUpload } from './index';
@@ -83,6 +84,7 @@ export const ExampleDropZone = meta.story({
           description="Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB."
           multiple
           inputProps={getInputProps()}
+          data-testid="dropzone"
           {...getRootProps()}
           {...args}
         />
@@ -117,6 +119,28 @@ export const ExampleDropZone = meta.story({
         )}
       </div>
     );
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = canvasElement as HTMLElement;
+    const dropzone = canvas.querySelector('input') as HTMLInputElement;
+    const dummyFile = new File(['abc'.repeat(100000)], 'eksempel1.pdf', {
+      type: 'application/pdf',
+    });
+
+    await step('Elements should exist', async () => {
+      await expect(dropzone).toBeTruthy();
+    });
+
+    await step('File can be uploaded', async () => {
+      await userEvent.upload(dropzone, dummyFile);
+
+      await expect(dropzone.files).toHaveLength(1);
+      await expect(dropzone.files?.[0].name).toBe(dummyFile.name);
+
+      await expect(
+        await within(canvasElement).findByText(dummyFile.name),
+      ).toBeInTheDocument();
+    });
   },
 });
 
@@ -154,6 +178,7 @@ export const ExampleTrigger = meta.story({
         <FileUpload.Trigger
           inputProps={{ accept: 'image/png, image/jpeg' }}
           onChange={(e) => handleOnChange(e)}
+          data-testid="trigger"
           {...args}
         />
         {file && (
@@ -166,6 +191,24 @@ export const ExampleTrigger = meta.story({
         )}
       </div>
     );
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = canvasElement as HTMLElement;
+    const trigger = canvas.querySelector('input') as HTMLInputElement;
+    const dummyFile = new File(['abc'.repeat(100000)], 'eksempel1.png', {
+      type: 'image/png',
+    });
+
+    await step('Elements should exist', async () => {
+      await expect(trigger).toBeTruthy();
+    });
+
+    await step('File can be uploaded', async () => {
+      await userEvent.upload(trigger, dummyFile);
+      await expect(
+        await within(canvasElement).findByText(dummyFile.name),
+      ).toBeInTheDocument();
+    });
   },
 });
 

@@ -58,6 +58,93 @@ exports[`Example Drop Zone 1`] = `
       style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
     >
   </div>
+  <h3 data-size="2xs">
+    Vedlegg (1):
+  </h3>
+  <div
+    data-variant="default"
+    aria-invalid="false"
+  >
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
+        >
+        </path>
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+      <div>
+        <a
+          href="#"
+          download="eksempel1.pdf"
+        >
+          eksempel1.pdf
+        </a>
+        <p
+          data-variant="default"
+          data-size="sm"
+        >
+          0.29 MB
+        </p>
+      </div>
+      <button
+        data-icon="true"
+        data-variant="tertiary"
+        type="button"
+        popovertarget="_r_4_"
+        popovertargetaction="show"
+        aria-labelledby="_r_4_"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </button>
+      <span
+        role="tooltip"
+        id="_r_4_"
+        popover="manual"
+        style="opacity: 0;"
+      >
+        Fjern filen
+      </span>
+    </div>
+    <div
+      aria-relevant="additions removals"
+      aria-live="polite"
+    >
+    </div>
+  </div>
 </div>
 `;
 
@@ -112,9 +199,9 @@ exports[`Example Items 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_5_"
+        popovertarget="_r_b_"
         popovertargetaction="show"
-        aria-labelledby="_r_5_"
+        aria-labelledby="_r_b_"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +224,7 @@ exports[`Example Items 1`] = `
       </button>
       <span
         role="tooltip"
-        id="_r_5_"
+        id="_r_b_"
         popover="manual"
         style="opacity: 0;"
       >
@@ -196,9 +283,9 @@ exports[`Example Items 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_8_"
+        popovertarget="_r_e_"
         popovertargetaction="show"
-        aria-labelledby="_r_8_"
+        aria-labelledby="_r_e_"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -221,7 +308,7 @@ exports[`Example Items 1`] = `
       </button>
       <span
         role="tooltip"
-        id="_r_8_"
+        id="_r_e_"
         popover="manual"
         style="opacity: 0;"
       >
@@ -330,9 +417,9 @@ exports[`Example Items 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_b_"
+        popovertarget="_r_h_"
         popovertargetaction="show"
-        aria-labelledby="_r_b_"
+        aria-labelledby="_r_h_"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -355,7 +442,7 @@ exports[`Example Items 1`] = `
       </button>
       <span
         role="tooltip"
-        id="_r_b_"
+        id="_r_h_"
         popover="manual"
         style="opacity: 0;"
       >
@@ -437,6 +524,88 @@ exports[`Example Trigger 1`] = `
       type="file"
       aria-describedby="profilbilde:description:1"
     >
+  </div>
+  <h3 data-size="2xs">
+    Vedlegg (1):
+  </h3>
+  <div
+    data-variant="default"
+    aria-invalid="false"
+  >
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M6.5 3.25c-.69 0-1.25.56-1.25 1.25v15c0 .69.56 1.25 1.25 1.25h11c.69 0 1.25-.56 1.25-1.25V8a.75.75 0 0 0-.22-.53l-4-4a.75.75 0 0 0-.53-.22zm10.75 15.763V8.75H14.5c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v14.5h1.855l3.777-5.666a.75.75 0 0 1 1.248 0zm-6.842.237h5.197l-2.599-3.898zm5.781-12L14.75 5.81v1.44zM10 9.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m-2.25.75a2.25 2.25 0 1 1 4.5 0 2.25 2.25 0 0 1-4.5 0"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+      <div>
+        <a
+          href="#"
+          download="eksempel1.png"
+        >
+          eksempel1.png
+        </a>
+        <p
+          data-variant="default"
+          data-size="sm"
+        >
+          0.29 MB
+        </p>
+      </div>
+      <button
+        data-icon="true"
+        data-variant="tertiary"
+        type="button"
+        popovertarget="_r_8_"
+        popovertargetaction="show"
+        aria-labelledby="_r_8_"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </button>
+      <span
+        role="tooltip"
+        id="_r_8_"
+        popover="manual"
+        style="opacity: 0;"
+      >
+        Fjern filen
+      </span>
+    </div>
+    <div
+      aria-relevant="additions removals"
+      aria-live="polite"
+    >
+    </div>
   </div>
 </div>
 `;
