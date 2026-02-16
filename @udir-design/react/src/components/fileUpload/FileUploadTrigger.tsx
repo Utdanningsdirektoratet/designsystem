@@ -50,7 +50,6 @@ export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
       multiple,
       'data-size': size,
       label,
-      style,
       error,
       description,
       inputProps,
@@ -65,7 +64,6 @@ export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
       <Field
         className={cl(`uds-file-upload`, className)}
         data-size={size}
-        style={style}
         ref={ref}
         {...rest}
       >

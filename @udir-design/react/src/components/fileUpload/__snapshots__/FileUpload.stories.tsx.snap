@@ -19,8 +19,8 @@ exports[`Example Drop Zone 1`] = `
       Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
     </div>
     <div data-variant="default">
-      <span style="display: block;">
-      </span>
+      <div>
+      </div>
       <button
         data-variant="secondary"
         type="button"
@@ -494,8 +494,8 @@ exports[`Preview 1`] = `
       Beskrivelse
     </div>
     <div data-variant="default">
-      <span style="display: block;">
-      </span>
+      <div>
+      </div>
       <button
         data-variant="secondary"
         type="button"

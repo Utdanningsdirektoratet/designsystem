@@ -20,7 +20,6 @@ export const FileUploadDropzone = forwardRef<
     multiple,
     'data-size': size,
     label,
-    style,
     error,
     description,
     inputProps,
@@ -35,21 +34,18 @@ export const FileUploadDropzone = forwardRef<
     <Field
       className={cl(`uds-file-upload`, className)}
       data-size={size}
-      style={style}
       ref={ref}
       {...rest}
     >
       {!!label && <Label>{label}</Label>}
       {!!description && <FieldDescription>{description}</FieldDescription>}
       <Card>
-        <>
+        {/* Text in css */}
+        <div>{/* Text in css */}</div>
+        <Button variant="secondary">
+          <UploadIcon aria-hidden />
           {/* Text in css */}
-          <span style={{ display: 'block' }}></span>
-          <Button variant="secondary">
-            <UploadIcon aria-hidden />
-            {/* Text in css */}
-          </Button>
-        </>
+        </Button>
       </Card>
       <input type="file" id={id} multiple={mult} {...inputProps} />
       {!!error && <ValidationMessage>{error}</ValidationMessage>}
