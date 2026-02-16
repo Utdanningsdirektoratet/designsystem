@@ -12,18 +12,23 @@ import classes from './color.module.css';
 
 type TokenTableProps = {
   colorTokens: Record<string, PreviewToken[]>;
+  selectLabel: string;
 } & HTMLAttributes<HTMLDivElement>;
 
-export const ColorTokensTable = ({ colorTokens }: TokenTableProps) => {
+export const ColorTokensTable = ({
+  colorTokens,
+  selectLabel,
+}: TokenTableProps) => {
   const colors = Object.keys(colorTokens);
-  const [selectedColor, setSelectedColor] =
-    useState<(typeof colors)[number]>('neutral');
+  const [selectedColor, setSelectedColor] = useState<(typeof colors)[number]>(
+    colors[0],
+  );
   const tokens = colorTokens[selectedColor] || [];
 
   return (
     <div data-color={selectedColor}>
       <Field className={classes.input}>
-        <Label>{labels['token-preview'].color['select-label']}</Label>
+        <Label>{selectLabel}</Label>
         <Select
           value={selectedColor || ''}
           onChange={(e) =>
