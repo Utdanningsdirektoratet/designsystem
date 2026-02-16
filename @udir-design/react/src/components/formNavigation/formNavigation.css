@@ -358,7 +358,12 @@
           );
           opacity: 1;
           height: auto;
-          transition-delay: 300ms;
+
+          @media (prefers-reduced-motion: no-preference) {
+            @supports (interpolate-size: allow-keywords) {
+              transition-delay: 300ms;
+            }
+          }
         }
       }
     }
