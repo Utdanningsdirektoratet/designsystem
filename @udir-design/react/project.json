@@ -5,6 +5,17 @@
   "projectType": "library",
   "tags": [],
   "// targets": "to see all targets run: nx show project @udir-design/react --web",
+  "namedInputs": {
+    "production": [
+      "default",
+      "!{projectRoot}/vitest.config.ts",
+      "!{projectRoot}/.storybook/**/*",
+      "!{projectRoot}/**/*.mdx",
+      "!{projectRoot}/**/*.stories.*",
+      "!{projectRoot}/src/**/demo/**/*",
+      "!{projectRoot}/src/**/docs/**/*"
+    ]
+  },
   "targets": {
     "dev": {
       "continuous": true,
@@ -14,6 +25,16 @@
         "lint:cycles",
         "serve:typedoc"
       ]
+    },
+    "lint:cyles": {
+      "cache": true,
+      "inputs": ["production"]
+    },
+    "build": {
+      "cache": true,
+      "dependsOn": ["lint:cycles", "^build"],
+      "inputs": ["production", "^default"],
+      "outputs": ["{projectRoot}/dist"]
     },
     "build:storybook": {
       "inputs": ["default", "^default", "{workspaceRoot}/README.md"],
