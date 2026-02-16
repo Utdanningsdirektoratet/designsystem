@@ -7,7 +7,9 @@ import { HideToc } from '.storybook/docs/components';
 
 Udirs designsystem støtter flerspråklige løsninger. I de fleste komponentene håndterer du språkvalg selv ved å sende inn tekst som props eller children.
 
-Noen komponenter har tekst som er forhåndsdefinert. Disse komponentene vil automatisk bruke riktig språk basert på hva [`lang`-attributtet](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/lang) i løsningen er satt til. Støttede språk er `"nb"` (norsk bokmål) eller `"en"` (engelsk). Det vil fungere å sette `lang` på hvilken som helst forelder, men gjerne sett det på `<html>` for å sikre konsistens.
+Noen komponenter har tekst som er forhåndsdefinert. Disse komponentene vil bruke riktig språk dersom [`lang`-attributtet](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/lang) i løsningen er satt til et språk vi har oversettelser for.
+
+Det vil fungere å sette `lang` på hvilken som helst forelder, men gjerne sett det på `<html>` for å sikre konsistens.
 
 ```jsx
 <div lang="en">
@@ -15,15 +17,17 @@ Noen komponenter har tekst som er forhåndsdefinert. Disse komponentene vil auto
 </div>
 ```
 
-Ønsker du å støtte flere språk i disse komponentene, kan du overstyre standardtekstene i CSS-variabler. Det gjør du ved å overstyre variablene i `lang`-attributtet for ønsket språk:
+Komponentene med forhåndsdefinert tekst støtter språkene `"nb"` (norsk bokmål) eller `"en"` (engelsk). Ønsker du å støtte andre språk i disse komponentene, kan du sette standardtekstene gjennom CSS-variabler. Det gjør du ved å overstyre variablene i `lang`-attributtet for ønsket språk:
 
 ```css
+/* Oversettelser for nordsamisk */
 [lang='se'] {
   --udsc-fileUpload-uploading-text: 'Viežžamin…';
   --udsc-fileUpload-addFile-text: 'Lasit fiilla';
+  /* ...flere tekstvariabler... */
 }
 ```
 
 Se hvilke tekstvariabler som er tilgjengelige for overstyring i dokumentasjonen for komponentene:
 
-- [FileUpload](/docs/components-fileupload--docs)
+- [FileUpload](/docs/components-fileupload--docs#språkstøtte)
