@@ -12,18 +12,17 @@ import type { FileUploadProps } from './FileUploadTrigger';
 export type FileUploadDropzoneProps = FileUploadProps;
 
 export const FileUploadDropzone = forwardRef<
-  HTMLInputElement,
+  HTMLDivElement,
   FileUploadDropzoneProps
 >(function FileUploadDropzone(
   {
     className,
-    multiple,
     'data-size': size,
     label,
     error,
+    multiple,
     description,
     inputProps,
-    id,
     ...rest
   },
   ref,
@@ -59,7 +58,7 @@ export const FileUploadDropzone = forwardRef<
           {/* Text in css */}
         </Button>
       </Card>
-      <input type="file" id={id} multiple={mult} {...inputProps} />
+      <input type="file" {...inputProps} />
       {!!error && <ValidationMessage>{error}</ValidationMessage>}
     </Field>
   );
