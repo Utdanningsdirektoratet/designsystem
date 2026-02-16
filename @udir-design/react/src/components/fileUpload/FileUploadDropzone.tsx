@@ -1,6 +1,6 @@
 import cl from 'clsx/lite';
 import { forwardRef, useEffect, useRef } from 'react';
-import { UploadIcon } from '@udir-design/icons';
+import { CircleSlashIcon, UploadIcon } from '@udir-design/icons';
 import { Button } from '../button/Button';
 import { Card } from '../card/Card';
 import './fileUpload.css';
@@ -26,7 +26,6 @@ export const FileUploadDropzone = forwardRef<
   },
   ref,
 ) {
-  const disabled = inputProps?.readOnly ?? inputProps?.max === 0;
   const buttonRef = useRef<HTMLButtonElement>(null);
   const cssVar = inputProps?.multiple
     ? '--udsc-fileUpload-chooseFiles-text'
@@ -40,6 +39,7 @@ export const FileUploadDropzone = forwardRef<
       .trim();
     buttonRef.current.setAttribute('aria-label', buttonAriaLabel);
   }, [cssVar]);
+
   return (
     <Field
       className={cl(`uds-file-upload`, className)}
@@ -51,23 +51,27 @@ export const FileUploadDropzone = forwardRef<
       {!!description && <Field.Description>{description}</Field.Description>}
       <Card>
         {/* Text in css */}
-        <div>{/* Text in css */}</div>
-        <Button variant="secondary" ref={buttonRef}>
-          <UploadIcon aria-hidden />
-          {/* Text in css */}
-        </Button>
+        {inputProps?.readOnly ? (
+          <>
+            <div>{/* Text in css */}</div>
+            <CircleSlashIcon />
+          </>
+        ) : (
+          <>
+            <div>{/* Text in css */}</div>
+            <Button variant="secondary" ref={buttonRef}>
+              <UploadIcon aria-hidden />
+              {/* Text in css */}
+            </Button>
+          </>
+        )}
       </Card>
       <input
         type="file"
-        {...inputProps}
         readOnly={inputProps?.readOnly}
-        disabled={disabled}
-        onClick={(e) => {
-          if (inputProps?.readOnly) {
-            e.preventDefault();
-          }
-          inputProps?.onClick?.(e);
-        }}
+        onClick={inputProps?.readOnly ? (e) => e.preventDefault() : undefined}
+        id={inputProps?.id}
+        {...inputProps}
       />
       {!!error && <ValidationMessage>{error}</ValidationMessage>}
     </Field>

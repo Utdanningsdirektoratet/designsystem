@@ -24,18 +24,71 @@ export const Preview = meta.story({
     label: 'Label',
     description: 'Beskrivelse',
   },
-  render: (args) => (
-    <div
-      style={{
-        display: 'flex',
-        gap: 'var(--ds-size-18)',
-        justifyContent: 'center',
-      }}
-    >
-      <FileUpload.Trigger {...args} inputProps={{ id: 'trigger' }} />
-      <FileUpload.Dropzone {...args} inputProps={{ id: 'dropzone' }} />
-    </div>
-  ),
+  render: (args) => {
+    const { getRootProps, getInputProps } = useDropzone({
+      onDropAccepted: (files) => {
+        window.alert(
+          `Accepted dropped file(s):\n  - ${files.map((x) => x.name).join(',\n  - ')}`,
+        );
+      },
+      onDropRejected: (rej) => {
+        window.alert(
+          `Rejected dropped file(s):\n  - ${rej.map((x) => `${x.file.name} (reason: ${x.errors.map((err) => err.message).join(', ')})`).join(',\n  - ')}`,
+        );
+      },
+      accept: {
+        'application/pdf': [],
+      },
+    });
+    return (
+      <div
+        style={{
+          display: 'flex',
+          gap: 'var(--ds-size-18)',
+          justifyContent: 'center',
+        }}
+      >
+        <FileUpload.Trigger
+          {...args}
+          inputProps={{ ...args.inputProps, id: 'trigger' }}
+        />
+        <FileUpload.Dropzone
+          {...getRootProps(args)}
+          inputProps={getInputProps({ ...args.inputProps, id: 'dropzone' })}
+        />
+      </div>
+    );
+  },
+});
+
+export const Readonly = meta.story({
+  render: (args) => {
+    return (
+      <div
+        style={{
+          background: 'var(--ds-color-neutral-surface-tinted)',
+          display: 'flex',
+          gap: 'var(--ds-size-12)',
+          justifyContent: 'center',
+          padding: 'var(--ds-size-8)',
+          borderRadius: 'var(--ds-border-radius-md)',
+        }}
+      >
+        <FileUpload.Trigger
+          {...args}
+          inputProps={{ readOnly: true }}
+          label="Lesemodus"
+          description="Beskrivelse for Trigger"
+        />
+        <FileUpload.Dropzone
+          {...args}
+          inputProps={{ readOnly: true, max: 2 }}
+          label="Lesemodus"
+          description="Beskrivelse for Dropzone"
+        />
+      </div>
+    );
+  },
 });
 
 export const ExampleDropZone = meta.story({
@@ -214,9 +267,10 @@ export const ExampleItems = meta.story({
       new File(['abc'.repeat(100000)], 'eksempel1.pdf'),
       new File(['abc'.repeat(10000)], 'eksempel2.docx'),
       new File(['abc'.repeat(1000000)], 'eksempel3.png'),
+      new File(['abc'.repeat(123000)], 'eksempel4.pdf'),
     ];
     const dummyRejected: File[] = [
-      new File(['abc'.repeat(288000)], 'eksempel4.tsx'),
+      new File(['abc'.repeat(288000)], 'eksempel5.tsx'),
     ];
 
     const [files, setFiles] = useState<File[]>(dummyFiles);
@@ -251,7 +305,8 @@ export const ExampleItems = meta.story({
               <FileUpload.Item
                 key={index}
                 file={file}
-                loading={index === 2 && true}
+                readonly={index === 2 && true}
+                loading={index === 3 && true}
                 onRemove={() => removeFile(file)}
               />
             ))}

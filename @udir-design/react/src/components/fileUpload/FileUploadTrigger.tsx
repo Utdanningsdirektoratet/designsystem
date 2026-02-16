@@ -77,6 +77,7 @@ export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
         {!!label && <Label>{label}</Label>}
         {!!description && <Field.Description>{description}</Field.Description>}
         <Button
+          disabled={inputProps?.readOnly}
           variant="secondary"
           onClick={() => {
             fileInputRef.current?.click();
@@ -90,6 +91,7 @@ export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
           type="file"
           ref={fileInputRef}
           readOnly={inputProps?.readOnly}
+          onClick={inputProps?.readOnly ? (e) => e.preventDefault() : undefined}
           multiple={Boolean(inputProps?.multiple) || undefined}
           id={inputProps?.id}
           {...inputProps}
