@@ -918,9 +918,8 @@ exports[`Preview 1`] = `
 <div data-size="auto">
   <div>
     <button
-      data-state="active"
+      data-state="idle"
       data-variant="default"
-      aria-current="step"
     >
       <div>
       </div>
@@ -928,6 +927,7 @@ exports[`Preview 1`] = `
     </button>
     <details
       data-state="idle"
+      data-active-step-label="Første steg"
       open
     >
       <summary>
@@ -936,8 +936,9 @@ exports[`Preview 1`] = `
         </span>
       </summary>
       <button
-        data-state="idle"
+        data-state="active"
         data-variant="default"
+        aria-current="step"
       >
         <div>
         </div>

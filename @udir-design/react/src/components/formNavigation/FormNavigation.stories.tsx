@@ -2,6 +2,7 @@ import { ErrorSummary, Paragraph } from '@digdir/designsystemet-react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRef } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
+import { expect, userEvent, within } from 'storybook/test';
 import z from 'zod';
 import { BulletListIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
@@ -44,15 +45,16 @@ export const Preview = meta.story({
       value: 'step',
     });
     return (
-      <FormNavigation {...args}>
+      <FormNavigation {...args} data-testid="form-navigation">
         <FormNavigation.Step {...getStepProps('step')}>
           Steg
         </FormNavigation.Step>
         <FormNavigation.Group
           title="Seksjon"
+          data-testid="group"
           {...getGroupProps(['step-1', 'step-2'])}
         >
-          <FormNavigation.Step {...getStepProps('step-1')}>
+          <FormNavigation.Step {...getStepProps('step-1')} data-testid="step1">
             Første steg
           </FormNavigation.Step>
           <FormNavigation.Step {...getStepProps('step-2')}>
@@ -61,6 +63,34 @@ export const Preview = meta.story({
         </FormNavigation.Group>
       </FormNavigation>
     );
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const navigation = canvas.getByTestId('form-navigation');
+    const step1 = canvas.getByTestId('step1');
+    const group = canvas.getByTestId('group');
+    const summary = canvas.getByText('Seksjon');
+
+    await step('FormNavigation should exist', async () => {
+      expect(navigation).toBeTruthy();
+    });
+
+    await step('Can click step 1', async () => {
+      await userEvent.click(step1);
+      await expect(step1).toHaveFocus();
+    });
+
+    await step('Initial state is open', async () => {
+      await expect(group).toHaveAttribute('open');
+    });
+
+    await step('Can close section', async () => {
+      await userEvent.click(group);
+      await userEvent.click(summary);
+      await expect(group).not.toHaveAttribute('open');
+    });
+
+    await userEvent.click(summary);
   },
 });
 
