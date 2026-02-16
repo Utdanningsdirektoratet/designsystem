@@ -37,30 +37,24 @@ export type FileUploadProps = InputHTMLAttributes<HTMLInputElement> & {
    * Props for the input field
    */
   inputProps?: InputProps_;
-  /**
-   * Id for the input field
-   */
-  id?: string;
 };
 
 export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
   function FileUploadTrigger(
     {
       className,
-      multiple,
       'data-size': size,
       label,
       error,
       description,
       inputProps,
-      id,
       ...rest
     },
     ref,
   ) {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
-    const cssVar = multiple
+    const cssVar = inputProps?.multiple
       ? '--udsc-fileUpload-addFiles-text'
       : '--udsc-fileUpload-addFile-text';
     // This is to make sure accessibility tests pass. Not actually necessary to make screenreaders announce the button.
@@ -95,8 +89,9 @@ export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
         <input
           type="file"
           ref={fileInputRef}
-          multiple={Boolean(multiple) || undefined}
-          id={id}
+          readOnly={inputProps?.readOnly}
+          multiple={Boolean(inputProps?.multiple) || undefined}
+          id={inputProps?.id}
           {...inputProps}
         />
         {!!error && <ValidationMessage>{error}</ValidationMessage>}

@@ -32,16 +32,13 @@ export const Preview = meta.story({
         justifyContent: 'center',
       }}
     >
-      <FileUpload.Trigger {...args} id="trigger" />
-      <FileUpload.Dropzone {...args} id="dropzone" />
+      <FileUpload.Trigger {...args} inputProps={{ id: 'trigger' }} />
+      <FileUpload.Dropzone {...args} inputProps={{ id: 'dropzone' }} />
     </div>
   ),
 });
 
 export const ExampleDropZone = meta.story({
-  args: {
-    id: 'dokumentasjon-dropzone',
-  },
   render: (args) => {
     const [files, setFiles] = useState<File[]>([]);
     const [rejected, setRejected] = useState<FileRejection[]>([]);
@@ -155,7 +152,6 @@ export const ExampleTrigger = meta.story({
   args: {
     label: 'Last opp profilbilde',
     description: 'Du kan laste opp filer i PNG- og JPEG-format.',
-    id: 'profilbilde',
   },
   render: (args) => {
     const [file, setFile] = useState<File | null>(null);
@@ -313,8 +309,8 @@ export const Upload = meta.story({
         <FileUpload.Trigger
           label="Last opp rapport"
           description="Du kan legge ved 1 fil."
-          id="rapport"
           onChange={handleOnChange}
+          inputProps={{ id: 'rapport' }}
         />
         {file && (
           <>

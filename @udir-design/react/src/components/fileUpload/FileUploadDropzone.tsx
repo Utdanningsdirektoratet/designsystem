@@ -12,25 +12,23 @@ import type { FileUploadProps } from './FileUploadTrigger';
 export type FileUploadDropzoneProps = FileUploadProps;
 
 export const FileUploadDropzone = forwardRef<
-  HTMLInputElement,
+  HTMLDivElement,
   FileUploadDropzoneProps
 >(function FileUploadDropzone(
   {
     className,
-    multiple,
     'data-size': size,
     label,
     error,
     description,
     inputProps,
-    id,
     ...rest
   },
   ref,
 ) {
-  const mult = multiple === true || inputProps?.multiple === true;
+  const disabled = inputProps?.readOnly ?? inputProps?.max === 0;
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const cssVar = mult
+  const cssVar = inputProps?.multiple
     ? '--udsc-fileUpload-chooseFiles-text'
     : '--udsc-fileUpload-chooseFile-text';
   // This is to make sure accessibility tests pass. Not actually necessary to make screenreaders announce the button.
@@ -59,7 +57,18 @@ export const FileUploadDropzone = forwardRef<
           {/* Text in css */}
         </Button>
       </Card>
-      <input type="file" id={id} multiple={mult} {...inputProps} />
+      <input
+        type="file"
+        {...inputProps}
+        readOnly={inputProps?.readOnly}
+        disabled={disabled}
+        onClick={(e) => {
+          if (inputProps?.readOnly) {
+            e.preventDefault();
+          }
+          inputProps?.onClick?.(e);
+        }}
+      />
       {!!error && <ValidationMessage>{error}</ValidationMessage>}
     </Field>
   );
