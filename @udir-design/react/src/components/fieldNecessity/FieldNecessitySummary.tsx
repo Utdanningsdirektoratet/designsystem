@@ -8,7 +8,7 @@ export const FieldNecessitySummary = forwardRef<
 >(function FieldNecessity({ className, ...props }, ref) {
   return (
     <div
-      className={clsx(className, 'ds-field-necessity-summary')}
+      className={clsx(className, 'uds-field-necessity-summary')}
       ref={ref}
       {...props}
     />
