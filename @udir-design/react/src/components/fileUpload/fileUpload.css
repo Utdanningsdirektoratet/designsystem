@@ -30,7 +30,6 @@
     --udsc-fileUpload-chooseFile-text
   );
   --udsc-fileUpload-dropzone-text: var(--udsc-fileUpload-dropFile-text);
-  --udsc-fileUpload-dropzone-text-or: var(--udsc-fileUpload-or-text);
   width: fit-content;
 
   & > input {
@@ -76,7 +75,7 @@
       content: var(--udsc-fileUpload-dropzone-text);
     }
     & > span::before {
-      content: var(--udsc-fileUpload-dropzone-text-or);
+      content: var(--udsc-fileUpload-or-text);
     }
     & > .ds-button::after {
       content: var(--udsc-fileUpload-dropzone-button-text);
