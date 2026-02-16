@@ -54,7 +54,19 @@
     }
   }
 
-  &:not([aria-busy='true']) {
+  &:has(input[readOnly]) {
+    & > :is(.ds-card, .ds-button) {
+      display: none;
+    }
+    &::after {
+      display: block;
+      content: 'Feltet er skrivebeskyttet, du kan ikke laste opp filer';
+      color: var(--ds-color-neutral-text-subtle);
+      margin-block-start: var(--ds-size-2);
+    }
+  }
+
+  &:not([aria-busy='true']):not(:has(input[readOnly])) {
     &:hover {
       & > .ds-card {
         cursor: pointer;

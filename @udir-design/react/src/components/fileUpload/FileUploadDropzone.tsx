@@ -58,7 +58,16 @@ export const FileUploadDropzone = forwardRef<
           {/* Text in css */}
         </Button>
       </Card>
-      <input type="file" {...inputProps} />
+      <input
+        type="file"
+        {...inputProps}
+        onClick={(e) => {
+          if (inputProps?.readOnly) {
+            e.preventDefault();
+          }
+          inputProps?.onClick?.(e);
+        }}
+      />
       {!!error && <ValidationMessage>{error}</ValidationMessage>}
     </Field>
   );
