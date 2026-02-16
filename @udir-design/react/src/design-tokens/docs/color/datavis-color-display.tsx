@@ -1,11 +1,18 @@
 import { Card } from 'src/components/card/Card';
-import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import {
-  datavisColors,
-  datavisSeqDivergentColors,
-  datavisSeqMonoColors,
-} from './colors';
+  getCategoricalColors,
+  getSequentialDivergentColors,
+  getSequentialMonochromaticColors,
+} from 'src/utilities/dataVisualization';
+
+const datavisColors = getCategoricalColors().map((value, index) => ({
+  number: String(index + 1),
+  value,
+}));
+
+const datavisSeqMonoColors = getSequentialMonochromaticColors();
+const datavisSeqDivergentColors = getSequentialDivergentColors();
 
 export const DatavisColorDisplay = () => {
   return (
@@ -15,6 +22,7 @@ export const DatavisColorDisplay = () => {
         width: '100%',
         gap: 'var(--ds-size-1)',
         flexWrap: 'wrap',
+        marginBlockEnd: 'var(--ds-size-8)',
       }}
     >
       {datavisColors.map((color) => (
@@ -52,7 +60,7 @@ export const DatavisValueColorDisplay = () => {
         <div
           style={{
             background: color.value,
-            color: '#fff',
+            color: 'var(--ds-color-neutral-base-contrast-default)',
             padding: 'var(--ds-size-3) var(--ds-size-3)',
             display: 'flex',
             width: 'var(--ds-size-22)',
@@ -61,7 +69,7 @@ export const DatavisValueColorDisplay = () => {
             borderRadius: 'var(--ds-border-radius-md)',
           }}
         >
-          <Paragraph data-size="xs">{color.value}</Paragraph>
+          <Paragraph data-size="xs">{color.number}</Paragraph>
         </div>
       ))}
     </div>
@@ -71,13 +79,6 @@ export const DatavisValueColorDisplay = () => {
 export const DatavisSeqColorDisplay = () => {
   return (
     <div style={{ marginBlockEnd: 'var(--ds-size-8)' }}>
-      <Heading
-        data-size="sm"
-        level={3}
-        style={{ marginBlockEnd: 'var(--ds-size-4)' }}
-      >
-        Alternativ 1
-      </Heading>
       <div
         style={{
           display: 'flex',
@@ -86,11 +87,11 @@ export const DatavisSeqColorDisplay = () => {
           flexWrap: 'wrap',
         }}
       >
-        {datavisSeqMonoColors.map((color) => (
+        {datavisSeqMonoColors.map((color, index) => (
           <div
             style={{
               background: color,
-              color: '#fff',
+              color: 'var(--ds-color-neutral-base-contrast-default)',
               padding: 'var(--ds-size-3) var(--ds-size-3)',
               display: 'flex',
               width: 'var(--ds-size-22)',
@@ -99,7 +100,7 @@ export const DatavisSeqColorDisplay = () => {
               borderRadius: 'var(--ds-border-radius-md)',
             }}
           >
-            <Paragraph data-size="xs">{color}</Paragraph>
+            <Paragraph data-size="xs">{index + 1}</Paragraph>
           </div>
         ))}
       </div>
@@ -110,13 +111,6 @@ export const DatavisSeqColorDisplay = () => {
 export const DatavisSeqDivColorDisplay = () => {
   return (
     <div style={{ marginBlockEnd: 'var(--ds-size-8)' }}>
-      <Heading
-        data-size="sm"
-        level={3}
-        style={{ marginBlockEnd: 'var(--ds-size-4)' }}
-      >
-        Alternativ 1
-      </Heading>
       <div
         style={{
           display: 'flex',
@@ -125,11 +119,11 @@ export const DatavisSeqDivColorDisplay = () => {
           flexWrap: 'wrap',
         }}
       >
-        {datavisSeqDivergentColors.map((color) => (
+        {datavisSeqDivergentColors.map((color, index) => (
           <div
             style={{
               background: color,
-              color: color === '#DEDEDE' ? '#000' : '#fff',
+              color: 'var(--ds-color-neutral-base-contrast-default)',
               padding: 'var(--ds-size-3) var(--ds-size-3)',
               display: 'flex',
               width: 'var(--ds-size-22)',
@@ -138,7 +132,7 @@ export const DatavisSeqDivColorDisplay = () => {
               borderRadius: 'var(--ds-border-radius-md)',
             }}
           >
-            <Paragraph data-size="xs">{color}</Paragraph>
+            <Paragraph data-size="xs">{index + 1}</Paragraph>
           </div>
         ))}
       </div>
@@ -151,15 +145,9 @@ export const DatavisGradient = () => {
     <div
       style={{
         width: '100%',
+        marginBlockEnd: 'var(--ds-size-8)',
       }}
     >
-      <Heading
-        data-size="sm"
-        level={3}
-        style={{ marginBlockEnd: 'var(--ds-size-4)' }}
-      >
-        Alternativ 2
-      </Heading>
       <div
         style={{
           minHeight: '5rem',
@@ -176,15 +164,9 @@ export const DatavisDivGradient = () => {
     <div
       style={{
         width: '100%',
+        marginBlockEnd: 'var(--ds-size-8)',
       }}
     >
-      <Heading
-        data-size="sm"
-        level={3}
-        style={{ marginBlockEnd: 'var(--ds-size-4)' }}
-      >
-        Alternativ 2
-      </Heading>
       <div
         style={{
           minHeight: '5rem',
