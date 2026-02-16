@@ -78,7 +78,7 @@ export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
           }}
         >
           <UploadIcon aria-hidden />
-          {multiple ? 'Legg til filer' : 'Legg til fil'}
+          {/* Text in css */}
         </Button>
         <input
           type="file"

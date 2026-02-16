@@ -3,7 +3,7 @@ import { HideToc } from '.storybook/docs/components';
 
 <HideToc />
 
-# Skal løsningen støtte flere språk?
+# Slik støtter du flere språk
 
 Udirs designsystem støtter flerspråklige løsninger. I de fleste komponentene håndterer du språkvalg selv ved å sende inn tekst som props eller children.
 
@@ -12,20 +12,18 @@ Noen komponenter har tekst som er forhåndsdefinert. Disse komponentene vil auto
 ```jsx
 <div lang="en">
   <FileUpload />
-  <ProgressBar />
 </div>
 ```
 
 Ønsker du å støtte flere språk i disse komponentene, kan du overstyre standardtekstene i CSS-variabler. Det gjør du ved å overstyre variablene i `lang`-attributtet for ønsket språk:
 
 ```css
-[lang='fr'] {
-  --udsc-text-fileUpload-uploading: 'Téléchargement...';
-  --udsc-text-fileUpload-removeFile: 'Supprimer le fichier';
+[lang='se'] {
+  --udsc-fileUpload-uploading-text: 'Viežžamin…';
+  --udsc-fileUpload-addFile-text: 'Lasit fiilla';
 }
 ```
 
 Se hvilke tekstvariabler som er tilgjengelige for overstyring i dokumentasjonen for komponentene:
 
 - [FileUpload](/docs/components-fileupload--docs)
-- [ProgressBar](/docs/components-progressbar--docs)

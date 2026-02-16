@@ -86,7 +86,8 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
               {file.name}
             </Link>
             <Paragraph data-size="sm">
-              {loading ? 'Laster opp...' : formatFileSize(file)}
+              {/* Loading text in css */}
+              {!loading && formatFileSize(file)}
             </Paragraph>
           </div>
           {!loading && (

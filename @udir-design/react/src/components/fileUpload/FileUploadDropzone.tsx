@@ -43,15 +43,15 @@ export const FileUploadDropzone = forwardRef<
       {!!description && <FieldDescription>{description}</FieldDescription>}
       <Card>
         <>
-          {mult ? 'Dra og slipp filer her' : 'Dra og slipp filen her'}
-          <span style={{ display: 'block' }}>eller</span>
+          {/* Text in css */}
+          <span style={{ display: 'block' }}></span>
           <Button variant="secondary">
             <UploadIcon aria-hidden />
-            {mult ? 'Velg filer' : 'Velg fil'}
+            {/* Text in css */}
           </Button>
         </>
       </Card>
-      <input type="file" id={id} {...inputProps} />
+      <input type="file" id={id} multiple={mult} {...inputProps} />
       {!!error && <ValidationMessage>{error}</ValidationMessage>}
     </Field>
   );

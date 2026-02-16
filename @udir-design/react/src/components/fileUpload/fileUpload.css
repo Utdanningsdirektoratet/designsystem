@@ -1,5 +1,34 @@
+:root,
+[lang='nb'] {
+  --udsc-fileUpload-addFile-text: 'Legg til fil';
+  --udsc-fileUpload-addFiles-text: 'Legg til filer';
+  --udsc-fileUpload-chooseFile-text: 'Velg fil';
+  --udsc-fileUpload-chooseFiles-text: 'Velg filer';
+  --udsc-fileUpload-dropFile-text: 'Dra og slipp filen her';
+  --udsc-fileUpload-dropFiles-text: 'Dra og slipp filer her';
+  --udsc-fileUpload-or-text: 'eller';
+  --udsc-fileUpload-uploading-text: 'Laster opp...';
+}
+
+[lang='en'] {
+  --udsc-fileUpload-addFile-text: 'Add file';
+  --udsc-fileUpload-addFiles-text: 'Add files';
+  --udsc-fileUpload-chooseFile-text: 'Choose file';
+  --udsc-fileUpload-chooseFiles-text: 'Choose files';
+  --udsc-fileUpload-dropFile-text: 'Drag and drop file here';
+  --udsc-fileUpload-dropFiles-text: 'Drag and drop files here';
+  --udsc-fileUpload-or-text: 'or';
+  --udsc-fileUpload-uploading-text: 'Uploading...';
+}
+
 /* FileUpload.Dropzone and FileUpload.Trigger */
 .uds-file-upload {
+  --udsc-fileUpload-button-text: var(--udsc-fileUpload-addFile-text);
+  --udsc-fileUpload-dropzone-button-text: var(
+    --udsc-fileUpload-chooseFile-text
+  );
+  --udsc-fileUpload-dropzone-text: var(--udsc-fileUpload-dropFile-text);
+  --udsc-fileUpload-dropzone-text-or: var(--udsc-fileUpload-or-text);
   width: fit-content;
 
   & > input {
@@ -25,6 +54,33 @@
     }
   }
 
+  /* Text for multiple files */
+  &:has(input[type='file'][multiple]) {
+    --udsc-fileUpload-button-text: var(--udsc-fileUpload-addFiles-text);
+    --udsc-fileUpload-dropzone-button-text: var(
+      --udsc-fileUpload-chooseFiles-text
+    );
+    --udsc-fileUpload-dropzone-text: var(--udsc-fileUpload-dropFiles-text);
+  }
+
+  /* Trigger texts */
+  & > .ds-button::after {
+    content: var(--udsc-fileUpload-button-text);
+  }
+
+  /* Dropzone texts */
+  & > .ds-card {
+    &::before {
+      content: var(--udsc-fileUpload-dropzone-text);
+    }
+    & > span::before {
+      content: var(--udsc-fileUpload-dropzone-text-or);
+    }
+    & > .ds-button::after {
+      content: var(--udsc-fileUpload-dropzone-button-text);
+    }
+  }
+
   & > .ds-card {
     margin-block-start: var(--ds-size-2);
     width: 100%;
@@ -43,6 +99,11 @@
   flex-direction: column;
   align-items: flex-start;
   max-width: 30rem;
+
+  /* Uploading text in the paragraph after link */
+  &[aria-busy='true'] .ds-link + .ds-paragraph::before {
+    content: var(--udsc-fileUpload-uploading-text);
+  }
 
   & > div {
     display: flex;
