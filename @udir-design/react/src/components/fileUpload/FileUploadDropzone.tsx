@@ -4,7 +4,7 @@ import { UploadIcon } from '@udir-design/icons';
 import { Button } from '../button/Button';
 import { Card } from '../card/Card';
 import './fileUpload.css';
-import { Field, FieldDescription } from '../field/Field';
+import { Field } from '../field/Field';
 import { Label } from '../typography/label/Label';
 import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
 import type { FileUploadProps } from './FileUploadTrigger';
@@ -40,7 +40,7 @@ export const FileUploadDropzone = forwardRef<
       {...rest}
     >
       {!!label && <Label>{label}</Label>}
-      {!!description && <FieldDescription>{description}</FieldDescription>}
+      {!!description && <Field.Description>{description}</Field.Description>}
       <Card>
         <>
           {mult ? 'Dra og slipp filer her' : 'Dra og slipp filen her'}
