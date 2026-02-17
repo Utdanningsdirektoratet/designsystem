@@ -24,6 +24,7 @@ exports[`Example Drop Zone 1`] = `
       <button
         data-variant="secondary"
         type="button"
+        aria-label="Velg filer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -406,6 +407,7 @@ exports[`Example Trigger 1`] = `
     <button
       data-variant="secondary"
       type="button"
+      aria-label="Legg til fil"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -454,6 +456,7 @@ exports[`Preview 1`] = `
     <button
       data-variant="secondary"
       type="button"
+      aria-label="Legg til fil"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -499,6 +502,7 @@ exports[`Preview 1`] = `
       <button
         data-variant="secondary"
         type="button"
+        aria-label="Velg fil"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -547,6 +551,7 @@ exports[`Upload 1`] = `
     <button
       data-variant="secondary"
       type="button"
+      aria-label="Legg til fil"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

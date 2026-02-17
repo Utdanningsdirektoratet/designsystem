@@ -1,7 +1,7 @@
 import type { Size } from '@digdir/designsystemet-react';
 import cl from 'clsx/lite';
 import type { InputHTMLAttributes, ReactNode } from 'react';
-import { forwardRef, useRef } from 'react';
+import { forwardRef, useEffect, useRef } from 'react';
 import { UploadIcon } from '@udir-design/icons';
 import { Button } from '../button/Button';
 import { Field, FieldDescription } from '../field/Field';
@@ -59,6 +59,19 @@ export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
     ref,
   ) {
     const fileInputRef = useRef<HTMLInputElement>(null);
+    const buttonRef = useRef<HTMLButtonElement>(null);
+    const cssVar = multiple
+      ? '--udsc-fileUpload-addFiles-text'
+      : '--udsc-fileUpload-addFile-text';
+    // This is to make sure accessibility tests pass. Not actually necessary to make screenreaders announce the button.
+    useEffect(() => {
+      if (typeof window === 'undefined' || !buttonRef.current) return;
+      const buttonAriaLabel = getComputedStyle(buttonRef.current)
+        .getPropertyValue(cssVar)
+        .replace(/^["']|["']$/g, '')
+        .trim();
+      buttonRef.current.setAttribute('aria-label', buttonAriaLabel);
+    }, [cssVar]);
 
     return (
       <Field
@@ -74,6 +87,7 @@ export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
           onClick={() => {
             fileInputRef.current?.click();
           }}
+          ref={buttonRef}
         >
           <UploadIcon aria-hidden />
           {/* Text in css */}

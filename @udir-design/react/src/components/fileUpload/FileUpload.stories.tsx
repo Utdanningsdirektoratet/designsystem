@@ -14,18 +14,6 @@ const meta = preview.meta({
       originator: 'self',
       details: 'Deler av implementasjonen er inspirert av Navs designsystem.',
     },
-    a11y: {
-      // Axe reports that buttons have no accessible name when the label is provided via CSS.
-      // Disable this rule until the issue have been resolved in axe-core and propagated to @storybook/addon-a11y.
-      config: {
-        rules: [
-          {
-            id: 'button-name',
-            enabled: false,
-          },
-        ],
-      },
-    },
   },
 });
 
