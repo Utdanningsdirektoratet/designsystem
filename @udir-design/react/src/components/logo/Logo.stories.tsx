@@ -4,7 +4,7 @@ import { Logo } from './Logo';
 const meta = preview.meta({
   title: 'Components/Logo/Logo',
   component: Logo,
-  tags: ['alpha', 'udir', '!autodocs'],
+  tags: ['alpha', 'udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',

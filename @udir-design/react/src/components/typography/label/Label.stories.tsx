@@ -3,7 +3,7 @@ import { Label } from './Label';
 
 const meta = preview.meta({
   component: Label,
-  tags: ['beta', '!autodocs', 'digdir'],
+  tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

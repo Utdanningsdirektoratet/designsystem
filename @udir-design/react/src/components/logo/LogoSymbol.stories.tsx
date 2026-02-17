@@ -3,7 +3,7 @@ import { LogoSymbol } from './LogoSymbol';
 
 const meta = preview.meta({
   component: LogoSymbol,
-  tags: ['alpha', 'udir', '!autodocs'],
+  tags: ['alpha', 'udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',
