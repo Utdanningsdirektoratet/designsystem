@@ -109,9 +109,14 @@ addons.setConfig({
         (item.type === 'docs' && item.name === 'Docs') ||
         item.type === 'story'
       ) {
-        const prettyName =
-          // For docs, use the parent's name
-          item.type === 'docs' ? item.title.split('/').at(-1) : item.name;
+        let prettyName = item.name;
+        if (item.type === 'docs') {
+          prettyName = item.title.includes('components')
+            ? // For component docs, rename "Docs" to "Dokumentasjon"
+              'Dokumentasjon'
+            : // For non-component docs, use the parent's name
+              (item.title.split('/').at(-1) ?? item.name);
+        }
         let hierarchicalName = item.title
           .replaceAll('/', ' › ')
           .replace('iconsandsymbols', 'Ikoner og symboler')
