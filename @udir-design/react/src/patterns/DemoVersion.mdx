@@ -1,3 +1,8 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import * as DemoVersionStories from './DemoVersion.stories';
+
+<Meta of={DemoVersionStories} />
+
 # Demo- og testversjoner av tjenester
 
 For å gjøre det enklere for brukere å vite hvilken versjon av en tjeneste de befinner seg i, har vi laget et bruksmønster for demo- og testversjoner. Dette sikrer at brukere ikke misforstår om de er i en reell tjeneste eller en demoversjon.
@@ -14,7 +19,7 @@ Bruk dette mønsteret når:
 
 ### Vedvarende banner
 
-Et vedvarende banner bør vises øverst og nederst på siden. Dette sikrer at brukeren alltid er klar over at de er i demomodus, selv etter at de har glemt informasjonen fra dialogen.
+Et vedvarende banner bør vises øverst og nederst på siden. Dette sikrer at brukeren alltid er klar over at de er i demomodus, selv etter at de har glemt informasjonen fra dialogen. [Bruk komponenten `DemoBanner`](/docs/components-demobanner--docs) for å enkelt implementere dette.
 
 ### Dialog ved oppstart
 
@@ -22,4 +27,4 @@ Vis en dialog når brukeren først går inn i demo-modusen. Dialogen bør ha en 
 
 Behovet for bruk av dialog ved oppstart vil variere fra tjeneste til tjeneste. I noen tilfeller kan det være tilstrekkelig med kun et vedvarende banner. Noen tjenester blir brukt ofte av de samme brukerne, og da kan en dialog ved hver oppstart bli forstyrrende, mens tjenester som brukes sjeldnere kan ha behov for det, siden faren for at brukeren misforstår at de er i feil versjon er større.
 
-// egen stories fil med demo av banner og dialog
+<Primary />
