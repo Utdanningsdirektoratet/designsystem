@@ -17,7 +17,7 @@ const meta = preview.meta<
   Partial<UseRadioGroupProps>
 >({
   title: 'Utilities/useRadioGroup',
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: { originator: 'digdir' },
     chromatic: { disableSnapshot: true },

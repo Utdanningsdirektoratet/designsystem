@@ -40,7 +40,7 @@ const chromaticViewports = {
 };
 
 export default definePreview({
-  tags: ['autodocs', 'a11y-test'],
+  tags: ['a11y-test'],
 
   parameters: {
     options: {

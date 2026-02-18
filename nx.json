@@ -30,12 +30,9 @@
       "cache": true,
       "dependsOn": ["build"]
     },
-    "lint:cyles": {
-      "cache": true
-    },
     "build": {
       "cache": true,
-      "dependsOn": ["lint:cycles", "^build", "^inject"],
+      "dependsOn": ["^build", "^inject"],
       "inputs": ["default", "^default"],
       "outputs": ["{projectRoot}/dist"]
     },
