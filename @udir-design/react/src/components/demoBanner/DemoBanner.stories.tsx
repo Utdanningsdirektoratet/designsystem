@@ -1,32 +1,113 @@
 import { expect, within } from 'storybook/test';
 import preview from '.storybook/preview';
-import { Divider } from '../divider/Divider';
 import { Footer } from '../footer';
 import { Header } from '../header';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { DemoBanner } from './DemoBanner';
+import { Card } from '../card/Card';
+import { Link } from '../link/Link';
+import { Laering3 } from 'src/patterns/DemoVersion.stories';
 
 const meta = preview.meta({
   component: DemoBanner,
-  tags: ['alpha', 'digdir'],
-  parameters: {
-    componentOrigin: { originator: 'digdir' },
-  },
+  tags: ['alpha', 'udir'],
 });
 
 export const Preview = meta.story({
-  args: {},
   parameters: {
     layout: 'fullscreen',
     customStyles: {
-      height: '1200px',
+      height: 'auto',
       overflow: 'visible',
       padding: 0,
     },
   },
-  render: () => (
-    <DemoBanner data-testid="banner">
+  render: (args) => (
+    <DemoBanner
+      data-testid="banner"
+      {...args}
+      style={{
+        background: 'var(--ds-color-accent-background-tinted)',
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
+      <Header applicationName="Demoheader" />
+      <div
+        style={{
+          paddingBlockStart: 'var(--ds-size-10)',
+          paddingBlockEnd: 'var(--ds-size-18)',
+          paddingInline: 'var(--ds-size-18)',
+          margin: '0 auto',
+          maxWidth: '1200px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: 'var(--ds-size-4)',
+          flex: 1,
+        }}
+      >
+        <div
+          style={{
+            width: '50%',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'var(--ds-size-6)',
+          }}
+        >
+          <Heading level={1} data-size="lg">
+            Velkommen til "Tjenestenavn"
+          </Heading>
+          <Paragraph style={{ marginTop: 'var(--ds-size-3)' }}>
+            Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
+            mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
+            fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
+            vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor
+            ornare leo, non suscipit magna interdum eu.
+          </Paragraph>
+          <Card style={{ maxWidth: '300px' }}>
+            <Heading level={2}>
+              <a href="#">Logg inn</a>
+            </Heading>
+          </Card>
+          <Link href="#" style={{ width: 'fit-content' }}>
+            Lorem ipsum dolor sit amet consectetur.
+          </Link>
+        </div>
+        <div style={{ width: '400px' }}>
+          <Laering3 style={{ width: '100%', height: 'fit-content' }} />
+        </div>
+      </div>
+      <Footer>
+        <Footer.List>
+          <Footer.Item href="#">Tilgjengelighet</Footer.Item>
+          <Footer.Item href="#">Informasjonskapsler</Footer.Item>
+        </Footer.List>
+      </Footer>
+    </DemoBanner>
+  ),
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const banner = canvas.getByTestId('banner');
+
+    await step('Banner is rendered', async () => {
+      await expect(banner).toBeTruthy();
+    });
+  },
+});
+
+export const WithScroll = meta.story({
+  parameters: {
+    layout: 'fullscreen',
+    customStyles: {
+      height: 'auto',
+      overflow: 'visible',
+      padding: 0,
+    },
+  },
+  render: (args) => (
+    <DemoBanner data-testid="banner" {...args}>
       <Header applicationName="Demoheader" />
       <div
         style={{
@@ -80,28 +161,6 @@ export const Preview = meta.story({
           Denne regelen tar i hovedsak sikte på tilfeller der opplæringen i
           samisk blir gitt som fjernundervisning.
         </Paragraph>
-        <Paragraph>
-          Vurderingen av om det er «nødvendig for at opplæringen skal være
-          pedagogisk forsvarlig», handler om hvorvidt eleven skal kunne nå
-          kompetansemålene i læreplanen. Det kan ikke knyttes til ytre rammer
-          for eksempel hvor mange andre som snakker det samiskspråket i området,
-          økonomi og ressurser.
-        </Paragraph>
-        <Paragraph>
-          Hvor store deler av opplæringen i samisk det eventuelt er nødvendig å
-          gi i et samiskspråklig miljø, kommer an på en konkret vurdering av om
-          opplæringen gir eleven grunnlag for å nå kompetansemålene i læreplanen
-          eller ikke.
-        </Paragraph>
-        <Divider style={{ marginTop: 'var(--ds-size-30)' }} />
-        <Paragraph
-          style={{
-            marginTop: 'calc(var(--ds-size-30) * 2)',
-            marginBottom: 'calc(var(--ds-size-30) * 2)',
-          }}
-        >
-          (Annet innhold)
-        </Paragraph>
       </div>
       <Footer>
         <Footer.List>
@@ -110,11 +169,4 @@ export const Preview = meta.story({
       </Footer>
     </DemoBanner>
   ),
-  play: async ({ canvasElement, step }) => {
-    const canvas = within(canvasElement);
-    const banner = canvas.getByTestId('banner');
-    await step('Banner is rendered', async () => {
-      await expect(banner).toBeTruthy();
-    });
-  },
 });
