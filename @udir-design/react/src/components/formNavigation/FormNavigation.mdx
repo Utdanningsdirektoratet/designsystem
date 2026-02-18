@@ -108,3 +108,7 @@ Feilmeldinger håndteres ved hjelp av valgfri skjemavalidering, sammen med inlin
 - Bruk en [`ErrorSummary`](/docs/components-errorsummary--docs) på innleveringssiden for å gi en oversikt over alle feil i skjemaet. Dette hjelper brukeren med å raskt identifisere og navigere til feilene som må rettes opp.
 - Lenkene i [`ErrorSummary`](/docs/components-errorsummary--docs) skal navigere til riktig side og fokusere de respektive feltene når de klikkes.
 - Bruk `markInvalid` og `markCompleted` fra [`useFormNavigation`](/docs/utilities-useformnavigation--docs) for å oppdatere stegenes tilstand basert på valideringsresultatene.
+
+### Tekst i FormNavigation
+
+For å skille stegene fra hverandre og unngå forvirring, bør du unngå stegtitler som starter på samme måte. F.ek.s "Program for ..." i flere steg.
