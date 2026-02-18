@@ -1,7 +1,7 @@
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
-import { demoParameters } from '../demoParameters';
-import { ArticleDemo } from './ArticleDemo';
+import { demoParameters } from './demoParameters';
+import { ArticleDemo } from './pages/article-demo/ArticleDemo';
 
 const meta = preview.meta({
   title: 'demo/Article Demo',

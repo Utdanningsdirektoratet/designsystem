@@ -23,11 +23,11 @@ import {
   makeStepFinder,
 } from 'src/utilities/form/navigation';
 import { useFormNavigation } from 'src/utilities/hooks/useFormNavigation/useFormNavigation';
-import type { DemoProps } from '../demoProps.js';
-import { ErrorSummaryContent } from './ErrorSummaryContent';
+import type { DemoProps } from '../../demoProps.js';
+import { ErrorSummaryContent } from './ErrorSummaryContent.js';
 import classes from './FormDemo.module.css';
-import { DocumentationPage } from './pages/DocumentationPage';
-import { PersonalInfoPage } from './pages/PersonalInfoPage';
+import { DocumentationPage } from './pages/DocumentationPage.js';
+import { PersonalInfoPage } from './pages/PersonalInfoPage.js';
 import { ProjectPage } from './pages/ProjectPage.tsx.js';
 
 export type PageProps = {

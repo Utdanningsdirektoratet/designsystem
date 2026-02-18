@@ -10,6 +10,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
+    "paths": {
+      "@udir-design/demos/*": ["../../@udir-design/react/src/demo/pages/*"],
+      ".storybook/*": ["../../@udir-design/react/.storybook/*"],
+      "src/components/*": ["../../@udir-design/react/src/components/*"],
+      "src/utilities/*": ["../../@udir-design/react/src/utilities/*"]
+    },
     "plugins": [
       {
         "name": "next"

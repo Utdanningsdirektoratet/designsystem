@@ -1,7 +1,14 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "rootDir": "../../",
     "outDir": "../../dist/out-tsc",
+    "paths": {
+      "@udir-design/demos/*": ["../../@udir-design/react/src/demo/pages/*"],
+      ".storybook/*": ["../../@udir-design/react/.storybook/*"],
+      "src/components/*": ["../../@udir-design/react/src/components/*"],
+      "src/utilities/*": ["../../@udir-design/react/src/utilities/*"]
+    },
     "types": [
       "node",
       "vite/client",

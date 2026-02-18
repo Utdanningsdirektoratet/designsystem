@@ -13,7 +13,7 @@ import { Table } from 'src/components/table';
 import { Tag } from 'src/components/tag/Tag';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
-import type { DemoProps } from '../demoProps';
+import type { DemoProps } from '../../demoProps';
 import classes from './TableDemo.module.css';
 import { DeleteDialog } from './components/DeleteDialog';
 import { ExportDialog } from './components/ExportDialog';

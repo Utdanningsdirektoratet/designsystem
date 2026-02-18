@@ -17,7 +17,7 @@ import { TableOfContents } from 'src/components/tableOfContents/TableOfContents'
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import { useTableOfContents } from 'src/utilities/hooks/useTableOfContents/useTableOfContents';
-import type { DemoProps } from '../demoProps';
+import type { DemoProps } from '../../demoProps';
 import classes from './ArticleDemo.module.css';
 import { ContentSection } from './content-section/ContentSection';
 import { changes } from './strings/changes';

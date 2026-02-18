@@ -1,7 +1,7 @@
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
-import { demoParameters } from '../demoParameters';
-import { FormDemo } from './FormDemo';
+import { demoParameters } from './demoParameters';
+import { FormDemo } from './pages/form-demo/FormDemo';
 
 const meta = preview.meta({
   title: 'demo/Form Demo',

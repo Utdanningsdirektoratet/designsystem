@@ -1,6 +1,6 @@
 import preview from '.storybook/preview';
-import { demoParameters } from '../demoParameters';
-import { DemoPage } from './DemoPage';
+import { demoParameters } from './demoParameters';
+import { DemoPage } from './pages/page-demo/DemoPage';
 
 const meta = preview.meta({
   title: 'demo/Page Demo',
