@@ -50,7 +50,7 @@ export const FieldNecessityComponent = forwardRef<
   const Component = asChild ? Slot : 'div';
   return (
     <Component
-      className={clsx(className, 'ds-field-necessity')}
+      className={clsx(className, 'uds-field-necessity')}
       ref={ref}
       data-variant={variant}
       data-show-required={showRequired}

@@ -836,13 +836,12 @@ exports[`Form Page 3 1`] = `
           Du kan laste opp filer i PDF-format. Filer kan være opptil 25 MB.
         </div>
         <div data-variant="default">
-          Dra og slipp filer her
-          <span style="display: block;">
-            eller
-          </span>
+          <div>
+          </div>
           <button
             data-variant="secondary"
             type="button"
+            aria-label="Velg filer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -862,13 +861,12 @@ exports[`Form Page 3 1`] = `
               >
               </path>
             </svg>
-            Velg filer
           </button>
         </div>
         <input
           id="dokumentasjon-dropzone"
-          accept="application/pdf"
           multiple
+          accept="application/pdf"
           tabindex="-1"
           required
           type="file"
