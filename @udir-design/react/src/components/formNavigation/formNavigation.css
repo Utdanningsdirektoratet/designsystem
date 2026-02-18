@@ -373,6 +373,12 @@
       white-space: normal;
       align-items: flex-start;
 
+      /* Center the icon on first line of the step label */
+      > div::after {
+        position: relative;
+        top: 2px;
+      }
+
       &:first-of-type {
         margin-block-start: var(--uds-form-navigation-connector);
 
@@ -381,7 +387,7 @@
           position: absolute;
           inset-inline-start: var(--ds-size-3);
           inset-block-end: calc(
-            100% + (var(--uds-form-navigation-connector) / 2) - var(--ds-size-1)
+            100% + (var(--uds-form-navigation-connector) / 2) - 5px
           );
           height: var(--uds-form-navigation-connector);
           transform: translateX(-50%);
@@ -393,10 +399,8 @@
       &::after {
         content: '';
         position: absolute;
-        inset-block-start: calc(var(--uds-form-navigation-icon-size) + 2px);
-        inset-block-end: calc(
-          -1 * var(--uds-form-navigation-connector) + var(--ds-size-1)
-        );
+        inset-block-start: calc(var(--uds-form-navigation-icon-size) + 4px);
+        inset-block-end: calc(-1 * var(--uds-form-navigation-connector));
         inset-inline-start: var(--ds-size-3);
         transform: translateX(-50%);
         min-height: var(--uds-form-navigation-connector);
