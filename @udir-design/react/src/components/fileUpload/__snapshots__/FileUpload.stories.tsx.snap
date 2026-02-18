@@ -19,13 +19,12 @@ exports[`Example Drop Zone 1`] = `
       Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
     </div>
     <div data-variant="default">
-      Dra og slipp filer her
-      <span style="display: block;">
-        eller
-      </span>
+      <div>
+      </div>
       <button
         data-variant="secondary"
         type="button"
+        aria-label="Velg filer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -45,13 +44,12 @@ exports[`Example Drop Zone 1`] = `
           >
           </path>
         </svg>
-        Velg filer
       </button>
     </div>
     <input
       id="dokumentasjon-dropzone"
-      accept="application/pdf"
       multiple
+      accept="application/pdf"
       tabindex="-1"
       type="file"
       aria-describedby="dokumentasjon-dropzone:description:1"
@@ -273,7 +271,6 @@ exports[`Example Items 1`] = `
           data-variant="default"
           data-size="sm"
         >
-          Laster opp...
         </p>
       </div>
     </div>
@@ -410,6 +407,7 @@ exports[`Example Trigger 1`] = `
     <button
       data-variant="secondary"
       type="button"
+      aria-label="Legg til fil"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -429,7 +427,6 @@ exports[`Example Trigger 1`] = `
         >
         </path>
       </svg>
-      Legg til fil
     </button>
     <input
       id="profilbilde"
@@ -459,6 +456,7 @@ exports[`Preview 1`] = `
     <button
       data-variant="secondary"
       type="button"
+      aria-label="Legg til fil"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -478,7 +476,6 @@ exports[`Preview 1`] = `
         >
         </path>
       </svg>
-      Legg til fil
     </button>
     <input
       id="trigger"
@@ -500,13 +497,12 @@ exports[`Preview 1`] = `
       Beskrivelse
     </div>
     <div data-variant="default">
-      Dra og slipp filen her
-      <span style="display: block;">
-        eller
-      </span>
+      <div>
+      </div>
       <button
         data-variant="secondary"
         type="button"
+        aria-label="Velg fil"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -526,7 +522,6 @@ exports[`Preview 1`] = `
           >
           </path>
         </svg>
-        Velg fil
       </button>
     </div>
     <input
@@ -556,6 +551,7 @@ exports[`Upload 1`] = `
     <button
       data-variant="secondary"
       type="button"
+      aria-label="Legg til fil"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -575,7 +571,6 @@ exports[`Upload 1`] = `
         >
         </path>
       </svg>
-      Legg til fil
     </button>
     <input
       id="rapport"

@@ -88,6 +88,36 @@ export const Grouping = meta.story({
   },
 });
 
+export const LongStepNames = meta.story({
+  args: {},
+  render(args) {
+    const { getStepProps, getGroupProps } = useFormNavigation({
+      value: 'step1',
+    });
+    return (
+      <FormNavigation {...args} style={{ width: '200px' }}>
+        <FormNavigation.Group
+          title="Utdanningsprogram"
+          {...getGroupProps(['step1', 'step2'])}
+        >
+          <FormNavigation.Step {...getStepProps('step1')}>
+            Bygg- og anleggsteknikk
+          </FormNavigation.Step>
+          <FormNavigation.Step {...getStepProps('step2')}>
+            Elektro og datateknologi
+          </FormNavigation.Step>
+          <FormNavigation.Step {...getStepProps('step3')}>
+            Håndverk, design og produktutvikling
+          </FormNavigation.Step>
+          <FormNavigation.Step {...getStepProps('step4')}>
+            Naturbruk
+          </FormNavigation.Step>
+        </FormNavigation.Group>
+      </FormNavigation>
+    );
+  },
+});
+
 export const SingleStep = meta.story({
   args: {},
   render: (args) => (

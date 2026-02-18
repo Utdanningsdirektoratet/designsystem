@@ -165,20 +165,30 @@ exports[`Form Page 2 1`] = `
     <h1 data-size="md">
       Testsøknad
     </h1>
-    <form>
+    <form
+      data-variant="outline"
+      data-show-required="true"
+      data-show-optional="false"
+      data-show-summary="true"
+    >
       <h2 data-size="sm">
         Prosjektet
       </h2>
+      <div>
+      </div>
       <div>
         <label
           data-weight="medium"
           for="projectTitle"
         >
-          Tittel på prosjektet
+          <span>
+            Tittel på prosjektet
+          </span>
         </label>
         <div>
           <input
             id="projectTitle"
+            required
             type="text"
             name="projectTitle"
           >
@@ -189,13 +199,16 @@ exports[`Form Page 2 1`] = `
           data-weight="medium"
           for="projectDescription"
         >
-          Beskrivelse av prosjektet
+          <span>
+            Beskrivelse av prosjektet
+          </span>
         </label>
         <div>
           <textarea
             id="projectDescription"
             rows="4"
             name="projectDescription"
+            required
           >
           </textarea>
         </div>
@@ -205,7 +218,9 @@ exports[`Form Page 2 1`] = `
         tabindex="-1"
       >
         <legend data-weight="medium">
-          Kategori
+          <span>
+            Kategori
+          </span>
         </legend>
         <p data-variant="default">
           Hvilken kategori hører prosjektet til?
@@ -213,6 +228,7 @@ exports[`Form Page 2 1`] = `
         <div>
           <input
             id="radio-learning"
+            required
             type="radio"
             value="Learning"
             name="projectCategory"
@@ -221,12 +237,15 @@ exports[`Form Page 2 1`] = `
             data-weight="regular"
             for="radio-learning"
           >
-            Opplæring
+            <span>
+              Opplæring
+            </span>
           </label>
         </div>
         <div>
           <input
             id="radio-social"
+            required
             type="radio"
             value="social"
             name="projectCategory"
@@ -235,12 +254,15 @@ exports[`Form Page 2 1`] = `
             data-weight="regular"
             for="radio-social"
           >
-            Sosialt
+            <span>
+              Sosialt
+            </span>
           </label>
         </div>
         <div>
           <input
             id="radio-activity"
+            required
             type="radio"
             value="activity"
             name="projectCategory"
@@ -249,7 +271,9 @@ exports[`Form Page 2 1`] = `
             data-weight="regular"
             for="radio-activity"
           >
-            Aktivitet
+            <span>
+              Aktivitet
+            </span>
           </label>
         </div>
         <details>
@@ -266,7 +290,9 @@ exports[`Form Page 2 1`] = `
           data-weight="medium"
           for="county"
         >
-          Gjennomføringssted
+          <span>
+            Gjennomføringssted
+          </span>
         </label>
         <div
           data-field="description"
@@ -279,6 +305,7 @@ exports[`Form Page 2 1`] = `
             placeholder
             aria-invalid="false"
             id="county"
+            required
             type="text"
             aria-describedby="county:description:1"
             data-label="Gjennomføringssted"
@@ -475,7 +502,9 @@ exports[`Form Page 2 1`] = `
           data-weight="medium"
           for="ageGroup"
         >
-          Aldersgruppe
+          <span>
+            Aldersgruppe
+          </span>
         </label>
         <div
           data-field="description"
@@ -488,6 +517,7 @@ exports[`Form Page 2 1`] = `
           aria-label="Velg aldersgruppe"
           name="ageGroup"
           aria-invalid="false"
+          required
           aria-describedby="ageGroup:description:1"
         >
           <option
@@ -775,10 +805,17 @@ exports[`Form Page 3 1`] = `
     <h1 data-size="md">
       Testsøknad
     </h1>
-    <form>
+    <form
+      data-variant="outline"
+      data-show-required="true"
+      data-show-optional="false"
+      data-show-summary="true"
+    >
       <h2 data-size="sm">
         Dokumentasjon
       </h2>
+      <div>
+      </div>
       <div
         role="presentation"
         tabindex="0"
@@ -788,7 +825,9 @@ exports[`Form Page 3 1`] = `
           data-weight="medium"
           for="dokumentasjon-dropzone"
         >
-          Last opp dokumentasjon
+          <span>
+            Last opp dokumentasjon
+          </span>
         </label>
         <div
           data-field="description"
@@ -797,13 +836,12 @@ exports[`Form Page 3 1`] = `
           Du kan laste opp filer i PDF-format. Filer kan være opptil 25 MB.
         </div>
         <div data-variant="default">
-          Dra og slipp filer her
-          <span style="display: block;">
-            eller
-          </span>
+          <div>
+          </div>
           <button
             data-variant="secondary"
             type="button"
+            aria-label="Velg filer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -823,14 +861,14 @@ exports[`Form Page 3 1`] = `
               >
               </path>
             </svg>
-            Velg filer
           </button>
         </div>
         <input
           id="dokumentasjon-dropzone"
-          accept="application/pdf"
           multiple
+          accept="application/pdf"
           tabindex="-1"
+          required
           type="file"
           aria-describedby="dokumentasjon-dropzone:description:1"
           style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
@@ -841,7 +879,9 @@ exports[`Form Page 3 1`] = `
           data-weight="medium"
           for="addition"
         >
-          Kommentarer til dokumentasjon
+          <span>
+            Kommentarer til dokumentasjon
+          </span>
         </label>
         <div
           data-field="description"
@@ -1120,7 +1160,12 @@ exports[`Form Page 4 1`] = `
     <h1 data-size="md">
       Testsøknad
     </h1>
-    <form>
+    <form
+      data-variant="outline"
+      data-show-required="true"
+      data-show-optional="false"
+      data-show-summary="true"
+    >
       <h2>
         Innsending
       </h2>
@@ -1393,7 +1438,12 @@ exports[`Form Page 5 1`] = `
     <h1 data-size="md">
       Testsøknad
     </h1>
-    <form>
+    <form
+      data-variant="outline"
+      data-show-required="true"
+      data-show-optional="false"
+      data-show-summary="true"
+    >
       <div>
         <h2 data-size="sm">
           Kvittering
@@ -1626,21 +1676,31 @@ exports[`Form Story 1`] = `
     <h1 data-size="md">
       Testsøknad
     </h1>
-    <form>
+    <form
+      data-variant="outline"
+      data-show-required="true"
+      data-show-optional="false"
+      data-show-summary="true"
+    >
       <h2 data-size="sm">
         Kontaktinfo
       </h2>
+      <div>
+      </div>
       <div>
         <label
           data-weight="medium"
           for="firstName"
         >
-          Fornavn
+          <span>
+            Fornavn
+          </span>
         </label>
         <div>
           <input
             id="firstName"
             autocomplete="given-name"
+            required
             type="text"
             name="firstName"
           >
@@ -1651,10 +1711,13 @@ exports[`Form Story 1`] = `
           data-weight="medium"
           for="lastName"
         >
-          Etternavn
+          <span>
+            Etternavn
+          </span>
         </label>
         <input
           id="lastName"
+          required
           autocomplete="family-name"
           aria-invalid="false"
           type="text"
@@ -1666,7 +1729,9 @@ exports[`Form Story 1`] = `
         tabindex="-1"
       >
         <legend data-weight="medium">
-          Hvordan ønsker du at vi skal kontakte deg?
+          <span>
+            Hvordan ønsker du at vi skal kontakte deg?
+          </span>
         </legend>
         <p data-variant="default">
           Velg ett eller flere alternativer
@@ -1675,6 +1740,7 @@ exports[`Form Story 1`] = `
           <input
             id="contactMethodsEmail"
             aria-invalid="false"
+            required
             type="checkbox"
             value="epost"
             name="contactMethods"
@@ -1683,13 +1749,16 @@ exports[`Form Story 1`] = `
             data-weight="regular"
             for="contactMethodsEmail"
           >
-            E-post
+            <span>
+              E-post
+            </span>
           </label>
         </div>
         <div>
           <input
             id="contactMethodsTelefon"
             aria-invalid="false"
+            required
             type="checkbox"
             value="telefon"
             name="contactMethods"
@@ -1698,13 +1767,16 @@ exports[`Form Story 1`] = `
             data-weight="regular"
             for="contactMethodsTelefon"
           >
-            Telefon
+            <span>
+              Telefon
+            </span>
           </label>
         </div>
         <div>
           <input
             id="contactMethodsSms"
             aria-invalid="false"
+            required
             type="checkbox"
             value="sms"
             name="contactMethods"
@@ -1713,7 +1785,9 @@ exports[`Form Story 1`] = `
             data-weight="regular"
             for="contactMethodsSms"
           >
-            SMS
+            <span>
+              SMS
+            </span>
           </label>
         </div>
       </fieldset>

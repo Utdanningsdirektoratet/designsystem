@@ -3,9 +3,11 @@ import './docs/customTheme.scss';
 import addonA11y from '@storybook/addon-a11y';
 import addonDocs from '@storybook/addon-docs';
 import { definePreview } from '@storybook/react-vite';
+import * as R from 'ramda';
 import type { PreviewAddon } from 'storybook/internal/csf';
 import { INITIAL_VIEWPORTS, type ViewportMap } from 'storybook/viewport';
 import storybookAddonPseudoStates from 'storybook-addon-pseudo-states';
+import * as icons from '@udir-design/icons';
 import { docsParameters } from './docs/parameters';
 import { testLifecycleHooks } from './preview-test';
 import type {
@@ -14,6 +16,11 @@ import type {
   CustomStylesParameters,
 } from './types';
 import { customStylesDecorator } from './utils/customStylesDecorator';
+
+// Fix icons being displayed as React.ForwardRef in Storybook code examples
+for (const iconName of R.keys(icons)) {
+  icons[iconName].displayName = iconName;
+}
 
 // See the complete list of available devices in INITIAL_VIEWPORTS here:
 // https://storybook.js.org/docs/essentials/viewport#use-a-detailed-set-of-devices
@@ -33,7 +40,7 @@ const chromaticViewports = {
 };
 
 export default definePreview({
-  tags: ['autodocs', 'a11y-test'],
+  tags: ['a11y-test'],
 
   parameters: {
     options: {

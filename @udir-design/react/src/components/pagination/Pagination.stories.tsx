@@ -148,6 +148,9 @@ export const WithAnchor = meta.story({
       return;
     };
 
+    const prevDisabled = prevButtonProps?.['aria-disabled'];
+    const nextDisabled = nextButtonProps?.['aria-disabled'];
+
     return (
       <div
         style={{
@@ -168,7 +171,10 @@ export const WithAnchor = meta.story({
                 {...prevButtonProps}
               >
                 <a
-                  onClick={(e) => handleAnchorClick(e, page - 1)}
+                  onClick={(e) => {
+                    if (prevDisabled) return;
+                    handleAnchorClick(e, page - 1);
+                  }}
                   href={`#side-${page - 1}`}
                 >
                   Forrige
@@ -200,7 +206,10 @@ export const WithAnchor = meta.story({
                 {...nextButtonProps}
               >
                 <a
-                  onClick={(e) => handleAnchorClick(e, page + 1)}
+                  onClick={(e) => {
+                    if (nextDisabled) return;
+                    handleAnchorClick(e, page + 1);
+                  }}
                   href={`#side-${page + 1}`}
                 >
                   Neste

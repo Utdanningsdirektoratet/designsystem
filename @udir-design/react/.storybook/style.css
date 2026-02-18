@@ -7,15 +7,9 @@
     - If table.css changes, Table stories must be re-snapshotted
 */
 @import '../../css/src/external.css';
+@import '../../theme/dist/dataviz.css';
 
 body {
   font-family: 'Inter', sans-serif;
   font-feature-settings: 'cv05' 1; /* Enable lowercase l with tail */
-}
-
-.storybook-tag-badge {
-  --ds-size-mode-font-size: 0.85;
-  margin-left: auto;
-  margin-right: 34px;
-  min-height: 18px;
 }

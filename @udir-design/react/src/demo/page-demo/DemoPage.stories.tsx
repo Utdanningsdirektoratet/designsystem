@@ -13,7 +13,7 @@ const meta = preview.meta({
   },
 });
 
-export const Simple = meta.story({
+export const PageStory = meta.story({
   args: {
     'data-color-scheme': 'light',
   },

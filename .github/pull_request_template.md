@@ -7,6 +7,7 @@
 - [ ] Dokumentasjonen er oppdatert om nødvendig
 - [ ] Commitmeldingene gir mening i kontekst av changelog
 - [ ] Komponenten er eksportert fra riktig fil
+- [ ] Komponenten fungerer godt med `dir="rtl"`
 - [ ] Komponenten er testet i test-app
 - [ ] Komponenten er testet med skjermleser og/eller annet UU-verktøy
 - [ ] Komponenten har tester i Storybook

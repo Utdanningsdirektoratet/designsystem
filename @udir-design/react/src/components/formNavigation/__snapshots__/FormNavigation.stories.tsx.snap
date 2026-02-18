@@ -914,6 +914,57 @@ exports[`Grouping 1`] = `
 </div>
 `;
 
+exports[`Long Step Names 1`] = `
+<div data-size="auto">
+  <div style="width: 200px;">
+    <details
+      data-state="idle"
+      open
+      data-active-step-label="Bygg- og anleggsteknikk"
+    >
+      <summary>
+        <span>
+          Utdanningsprogram
+        </span>
+      </summary>
+      <button
+        data-state="active"
+        data-variant="default"
+        aria-current="step"
+      >
+        <div>
+        </div>
+        Bygg- og anleggsteknikk
+      </button>
+      <button
+        data-state="idle"
+        data-variant="default"
+      >
+        <div>
+        </div>
+        Elektro og datateknologi
+      </button>
+      <button
+        data-state="idle"
+        data-variant="default"
+      >
+        <div>
+        </div>
+        Håndverk, design og produktutvikling
+      </button>
+      <button
+        data-state="idle"
+        data-variant="default"
+      >
+        <div>
+        </div>
+        Naturbruk
+      </button>
+    </details>
+  </div>
+</div>
+`;
+
 exports[`Preview 1`] = `
 <div data-size="auto">
   <div>

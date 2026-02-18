@@ -10,7 +10,7 @@ const meta = preview.meta<
   Partial<UsePaginationProps>
 >({
   title: 'Utilities/usePagination',
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: { originator: 'digdir' },
     chromatic: { disableSnapshot: true },

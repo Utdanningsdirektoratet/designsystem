@@ -39,7 +39,6 @@ writeFileSync(
     sub_category: string;
     keywords: string[];
     variant: string;
-    updated_at: string;
     created_at: string;
   }
 

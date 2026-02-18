@@ -21,7 +21,7 @@ const meta = preview.meta<
   Partial<UseCheckboxGroupProps>
 >({
   title: 'Utilities/useCheckboxGroup',
-  tags: ['beta'],
+  tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: { originator: 'digdir' },
     chromatic: { disableSnapshot: true },

@@ -3,8 +3,6 @@ import preview from '.storybook/preview';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Link } from './Link';
 
-EnvelopeClosedIcon.displayName = 'EnvelopeClosedIcon';
-
 const meta = preview.meta({
   component: Link,
   tags: ['beta', 'digdir'],

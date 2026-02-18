@@ -30,11 +30,13 @@ const SvgTrdsnelleOgBlyantFill = forwardRef(
         ? {
             style: {
               width: v,
+              height: 'auto',
             },
           }
         : {
             style: {
               height: v,
+              width: 'auto',
             },
           };
     })();

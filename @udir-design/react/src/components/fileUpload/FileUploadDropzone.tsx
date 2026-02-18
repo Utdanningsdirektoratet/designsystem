@@ -1,5 +1,5 @@
 import cl from 'clsx/lite';
-import { forwardRef } from 'react';
+import { forwardRef, useEffect, useRef } from 'react';
 import { UploadIcon } from '@udir-design/icons';
 import { Button } from '../button/Button';
 import { Card } from '../card/Card';
@@ -20,7 +20,6 @@ export const FileUploadDropzone = forwardRef<
     multiple,
     'data-size': size,
     label,
-    style,
     error,
     description,
     inputProps,
@@ -30,28 +29,37 @@ export const FileUploadDropzone = forwardRef<
   ref,
 ) {
   const mult = multiple === true || inputProps?.multiple === true;
-
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const cssVar = mult
+    ? '--udsc-fileUpload-chooseFiles-text'
+    : '--udsc-fileUpload-chooseFile-text';
+  // This is to make sure accessibility tests pass. Not actually necessary to make screenreaders announce the button.
+  useEffect(() => {
+    if (typeof window === 'undefined' || !buttonRef.current) return;
+    const buttonAriaLabel = getComputedStyle(buttonRef.current)
+      .getPropertyValue(cssVar)
+      .replace(/^["']|["']$/g, '')
+      .trim();
+    buttonRef.current.setAttribute('aria-label', buttonAriaLabel);
+  }, [cssVar]);
   return (
     <Field
       className={cl(`uds-file-upload`, className)}
       data-size={size}
-      style={style}
       ref={ref}
       {...rest}
     >
       {!!label && <Label>{label}</Label>}
       {!!description && <FieldDescription>{description}</FieldDescription>}
       <Card>
-        <>
-          {mult ? 'Dra og slipp filer her' : 'Dra og slipp filen her'}
-          <span style={{ display: 'block' }}>eller</span>
-          <Button variant="secondary">
-            <UploadIcon aria-hidden />
-            {mult ? 'Velg filer' : 'Velg fil'}
-          </Button>
-        </>
+        {/* Text in css */}
+        <div>{/* Text in css */}</div>
+        <Button variant="secondary" ref={buttonRef}>
+          <UploadIcon aria-hidden />
+          {/* Text in css */}
+        </Button>
       </Card>
-      <input type="file" id={id} {...inputProps} />
+      <input type="file" id={id} multiple={mult} {...inputProps} />
       {!!error && <ValidationMessage>{error}</ValidationMessage>}
     </Field>
   );

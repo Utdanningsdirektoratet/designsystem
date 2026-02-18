@@ -1,6 +1,7 @@
 import './style.css';
+import './manager.css';
 import React from 'react';
-import type { DocsIndexEntry } from 'storybook/internal/types';
+import type { API_HashEntry } from 'storybook/internal/types';
 import { addons } from 'storybook/manager-api';
 import {
   ComponentIcon,
@@ -48,7 +49,7 @@ addons.setConfig({
         if (item.id === 'iconsandsymbols') {
           return (
             <>
-              <ImageIcon aria-hidden fontSize={18} />
+              <ImageIcon aria-hidden className="sidebar-subheading-icon" />
               Ikoner og symboler
             </>
           );
@@ -56,7 +57,10 @@ addons.setConfig({
         if (item.id === 'demo') {
           return (
             <>
-              <RectangleSectionsIcon aria-hidden fontSize={18} />
+              <RectangleSectionsIcon
+                aria-hidden
+                className="sidebar-subheading-icon"
+              />
               Demosider
             </>
           );
@@ -64,7 +68,7 @@ addons.setConfig({
         if (item.id === 'design-tokens') {
           return (
             <>
-              <TokenIcon aria-hidden fontSize={18} />
+              <TokenIcon aria-hidden className="sidebar-subheading-icon" />
               Design tokens
             </>
           );
@@ -72,7 +76,7 @@ addons.setConfig({
         if (item.id === 'patterns') {
           return (
             <>
-              <LayersIcon aria-hidden fontSize={18} />
+              <LayersIcon aria-hidden className="sidebar-subheading-icon" />
               Bruksmønstre
             </>
           );
@@ -80,7 +84,7 @@ addons.setConfig({
         if (item.id === 'components') {
           return (
             <>
-              <ComponentIcon aria-hidden fontSize={18} />
+              <ComponentIcon aria-hidden className="sidebar-subheading-icon" />
               Komponenter
             </>
           );
@@ -88,53 +92,82 @@ addons.setConfig({
         if (item.id === 'utilities') {
           return (
             <>
-              <WrenchIcon aria-hidden fontSize={18} />
+              <WrenchIcon aria-hidden className="sidebar-subheading-icon" />
               Hjelpeverktøy
             </>
           );
         }
       }
 
-      if (item.type === 'docs' && item.name === 'Docs') {
-        if (
-          // A docs page generated for a stories file always has sibling pages
-          item.importPath.includes('.stories.') ||
-          // When a docs page imports stories, we know it has sibling pages
-          (item as unknown as DocsIndexEntry).storiesImports.length
-        ) {
-          // Rename the "Docs" page to "Dokumentasjon". Unfortunately we can't show the full hierarchical name
-          // in the mobile navigation, since in this case `item.name` will also be shown in the sidebar tree navigation.
-          item.name = 'Dokumentasjon';
-        } else {
-          // When a docs page doesn't have sibling pages, `item.name` is only shown in the mobile navigation.
-          // This means we can rename it to show the full hierarchical name, which makes more sense
-          // in context of Storybooks mobile navigation and has no impact on the desktop view.
-          item.name = item.title
-            .replaceAll('/', ' › ')
-            .replace('patterns', 'Bruksmønstre')
-            .replace('components', 'Komponenter')
-            .replace('design-tokens', 'Design tokens')
-            .replace('utilities', 'Hjelpeverktøy');
+      if (item.type === 'group' && item.parent === 'patterns') {
+        // Trick Storybook into rendering grouped pattern documentation like a component instead of a folder.
+        // That way, it automatically opens the primary documentation page when opening the group.
+        item.type = 'component' as 'group';
+      }
+
+      if (
+        (item.type === 'docs' && item.name === 'Docs') ||
+        item.type === 'story'
+      ) {
+        let prettyName = item.name;
+        if (item.type === 'docs') {
+          prettyName = item.title.includes('components')
+            ? // For component docs, rename "Docs" to "Dokumentasjon"
+              'Dokumentasjon'
+            : // For non-component docs, use the parent's name
+              (item.title.split('/').at(-1) ?? item.name);
         }
+        let hierarchicalName = item.title
+          .replaceAll('/', ' › ')
+          .replace('iconsandsymbols', 'Ikoner og symboler')
+          .replace('patterns', 'Bruksmønstre')
+          .replace('components', 'Komponenter')
+          .replace('design-tokens', 'Design tokens')
+          .replace('utilities', 'Hjelpeverktøy');
+        if (item.type === 'story') {
+          // For stories, add the story name as well
+          hierarchicalName += ` › ${item.name}`;
+        }
+        return (
+          <RenderWithTagBadge item={item}>
+            {/* Show the hierarchical name on the button to open the nav menu on mobile */}
+            <span className="uds-sb-mobile-nav-button">{hierarchicalName}</span>
+            {/* Show the pretty name in the sidebar */}
+            <span className="uds-sb-sidebar-name">{prettyName}</span>
+          </RenderWithTagBadge>
+        );
       }
 
       // Add Tag component to tags that need it
-      const badge = getBadgeFromTags(item.tags);
-      if (badge && item.type !== 'story') {
-        return (
-          <>
-            <span>{item.name}</span>
-            <span
-              className="ds-tag storybook-tag-badge"
-              data-size="custom"
-              data-variant="outline"
-              data-color={badge.color}
-            >
-              {badge.text}
-            </span>
-          </>
-        );
-      }
+      return <RenderWithTagBadge item={item} />;
     },
   },
 });
+
+function RenderWithTagBadge({
+  item,
+  children,
+}: {
+  item: API_HashEntry;
+  children?: React.ReactNode;
+}) {
+  // Add Tag component to tags that need it
+  const badge = getBadgeFromTags(item.tags);
+  if (badge && item.type !== 'story') {
+    return (
+      <>
+        <span>{children ?? item.name}</span>
+        <span
+          className="ds-tag storybook-tag-badge"
+          data-size="custom"
+          data-variant="outline"
+          data-color={badge.color}
+        >
+          {badge.text}
+        </span>
+      </>
+    );
+  } else {
+    return children ?? item.name;
+  }
+}

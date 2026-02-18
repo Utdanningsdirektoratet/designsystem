@@ -9,11 +9,18 @@
   },
   "scripts": {
     "create": "designsystemet tokens create",
-    "build": "pnpm clean && designsystemet tokens build -t ./src -o ./dist",
-    "clean": "rimraf dist"
+    "build": "pnpm clean && designsystemet tokens build -t ./src -o ./dist && pnpm build:data-css",
+    "clean": "rimraf dist",
+    "build:data-css": "./process/build-dataviz-css.ts"
   },
   "devDependencies": {
     "@digdir/designsystemet": "catalog:",
-    "rimraf": "catalog:"
+    "@tokens-studio/sd-transforms": "catalog:",
+    "@types/ramda": "catalog:",
+    "rimraf": "catalog:",
+    "style-dictionary": "catalog:"
+  },
+  "dependencies": {
+    "ramda": "catalog:"
   }
 }

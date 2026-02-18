@@ -3,7 +3,7 @@ import { Paragraph } from './Paragraph';
 
 const meta = preview.meta({
   component: Paragraph,
-  tags: ['beta', '!autodocs', 'digdir'],
+  tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Simple 1`] = `
+exports[`Page Story 1`] = `
 <div
   data-color-scheme="light"
   data-size
@@ -199,6 +199,49 @@ exports[`Simple 1`] = `
       >
         Opprett ny bruker
       </button>
+    </div>
+    <div>
+      <h2>
+        Naviger frem og tilbake
+      </h2>
+      <div>
+        <span>
+          Side 1 av 8
+        </span>
+        <u-progress
+          value="1"
+          id=":u-progress1"
+          aria-busy="false"
+          aria-label="..."
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="13"
+          role="progressbar"
+          max="8"
+          aria-hidden="true"
+          style="--percentage: 13%;"
+        >
+          <template shadowrootmode="open">
+            <slot>
+            </slot>
+            <style>
+              :host(:not([hidden])) { box-sizing: border-box; border: 1px solid; display: inline-block; height: .5em; width: 10em; overflow: hidden }
+:host::before { content: ''; display: block; height: 100%; background: currentColor; width: var(--percentage, 0%); transition: width .2s }
+:host(:not([value])) { background: linear-gradient(90deg,currentColor 25%, transparent 50%, currentColor 75%) 50%/400% }
+@media (prefers-reduced-motion: no-preference) { :host { animation: indeterminate 2s linear infinite }  }
+@keyframes indeterminate { from { background-position-x: 100% } to { background-position-x: 0 } }
+            </style>
+          </template>
+        </u-progress>
+      </div>
+      <div>
+        <button
+          data-variant="secondary"
+          type="button"
+        >
+          Neste
+        </button>
+      </div>
     </div>
     <div>
       <h2>

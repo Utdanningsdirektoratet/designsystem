@@ -1,0 +1,39 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta tags={['beta']} />
+
+# Unngå bruk av toast
+
+En _toast_ er ofte brukt for å vise midlertidige meldinger som bekrefter en handling eller gir en tilbakemelding. De forsvinner ofte automatisk etter en viss tid, eller de kan krysses ut.
+
+Det kan være fristende å bruke dette interaksjonsmønsteret, men det kommer med store utfordringer knyttet til universell utforming. Vi velger derfor å ikke tilby toast som en komponent i Udirs designsystem.
+
+## Problemer med toast
+
+Når du bruker en toast risikerer du alltid at brukerene ikke får med seg meldingen:
+
+- Dersom meldingen skal forsvinne av seg selv, kan den være vanskelig å få med seg for folk med nedsatt reaksjonsevne.
+- Vi kan ikke automatisk flytte fokus til meldingen når den dukker opp, siden dette ville forstyrre brukeropplevelsen. Meldingen vil vanligvis ligge før eller etter ordinært innhold i fokusrekkefølgen, så det er også vanskelig å navigere til den med tastatur eller skjermleser. Dermed er det vanskelig å interagere med f.eks. en knapp for å skjule meldingen.
+- Av samme grunn er det ingen enkel måte å få meldingen lest opp på nytt dersom brukeren ikke får den med seg første gang, eller om meldingen blir avbrutt av navigasjon, tastetrykk, eller viktigere meldinger.
+- Meldingen vil ofte opptre langt unna emnet den omhandler eller handlingen som fikk meldingen til å dukke opp, som er veldig problematisk for folk med snevert synsfelt.
+
+I tillegg kan meldingen legge seg på toppen av fokuserbart innhold og dermed gjøre tjenesten vanskeligere å bruke.
+
+[GitHubs designsystem har en god artikkel om hvorfor toast er problematisk](https://primer.style/accessibility/patterns/accessible-notifications-and-messages/#toasts).
+
+## Alternativer til toast
+
+Det finnes som regel bedre alternativer enn en toast for å kommunisere med brukerne våre:
+
+- For feiltilstander er det alltid bedre å bruke en [`Alert`](/docs/components-alert--docs) der feilen oppsto. Den er en vanleg del av tekst- og fokusflyten og kan ligge der til feilen er rettet.
+- For å bekrefte innsending av skjema, bruk heller en kvitteringside.
+- For å bekrefte lagring av data, bruk f.eks.
+  - en [`ValidationMessage`](/docs/components-typography--docs#validationmessage) av type `success` ved lagreknappen, dersom lagring ble satt i gang av brukeren
+  - en statusbar med "sist lagret \<dato og klokkeslett\>" eller "sist lagret for \<x\> sekunder siden" dersom lagring blir gjennomført automatisk av systemet
+
+Fordelen med disse alternativene er at meldinen er en del av den vanlege sidestukturen, opptrer nærme der den er relevant, og er lett å navigere seg til med tastatur eller skjermleser.
+
+Ofte er også en oppdatering av grensesnittet i seg selv nok kommunikasjon. Her er noen eksempler som ikke krever en separat bekreftelsesmelding:
+
+- En knapp for å legge til rad, som får en ny rad til å dukke opp – så lenge man passer på å scrolle tabellen til der den nye raden dukker opp, og kanskje animerer innsetting av raden.
+- En lagreknapp som setter skjemaet i lesemodus etter lagring.

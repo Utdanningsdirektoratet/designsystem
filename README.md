@@ -261,7 +261,8 @@ Hver komponent skal ha en undermappe i `@udir-design/react/src/components`. F.ek
 ```
 
 En CSS-fil er kun nødvendig for våre egne komponenter, eller for å endre på styling fra Digdirs komponenter.
-CSS-filer skal **ikke** importeres eksplisitt. De blir automatisk plukket opp av byggesteget til `@udir-design/css` slik at stylingen er tilgjengelig også for bruk uten React.
+CSS-filer må importeres eksplisitt fra en relevant komponent for at stylingen skal dukke opp i Storybook, men vi bundler ikke med CSSen som del av React-biblioteket.
+Isteden blir CSS-filene automatisk plukket opp av byggesteget til `@udir-design/css` slik at stylingen er tilgjengelig også for bruk uten React.
 
 > [!IMPORTANT]
 > Komponenten må eksporteres fra riktig entry point – alpha, beta eller stable – basert på hvilken livsfase den er i.
