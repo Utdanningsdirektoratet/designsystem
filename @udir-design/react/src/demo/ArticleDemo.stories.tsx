@@ -1,8 +1,23 @@
 import './demoSizing.css';
+import { SkipLink } from '@digdir/designsystemet-react';
+import type { HTMLAttributes } from 'react';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
 import { demoParameters } from './demoParameters';
-import { ArticleDemo } from './pages/article-demo/ArticleDemo';
+import type { DemoProps } from './demoProps';
+import { ArticleDemo as ArticleDemoPage } from './pages/article-demo/ArticleDemo';
+import { FooterDemo } from './pages/footer';
+import { HeaderDemo } from './pages/header';
+
+type ArticleDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
+const ArticleDemo = (props: ArticleDemoProps) => (
+  <div {...props} data-size="auto">
+    <SkipLink href="#main-content">Hopp til hovedinnholdet</SkipLink>
+    <HeaderDemo applicationName="Artikkeldemo" />
+    <ArticleDemoPage />
+    <FooterDemo />
+  </div>
+);
 
 const meta = preview.meta({
   title: 'demo/Article Demo',
@@ -28,8 +43,5 @@ export const ArticleStory = meta.story({
         height: '800px',
       },
     },
-  },
-  render(args) {
-    return <ArticleDemo {...args} />;
   },
 });
