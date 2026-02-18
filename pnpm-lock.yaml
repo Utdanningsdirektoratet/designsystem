@@ -47,7 +47,7 @@ catalogs:
       version: 5.2.2
     '@navikt/aksel-icons':
       specifier: ^8.3.0
-      version: 8.3.0
+      version: 8.5.0
     '@next/eslint-plugin-next':
       specifier: ^16.1.6
       version: 16.1.6
@@ -288,6 +288,9 @@ catalogs:
     react-hook-form:
       specifier: ^7.71.1
       version: 7.71.1
+    react-router-dom:
+      specifier: ^7.13.0
+      version: 7.13.0
     react-style-stringify:
       specifier: ^1.2.0
       version: 1.2.0
@@ -560,7 +563,7 @@ importers:
     dependencies:
       '@navikt/aksel-icons':
         specifier: 'catalog:'
-        version: 8.3.0(@types/react@19.2.7)(react@19.2.0)
+        version: 8.5.0(@types/react@19.2.7)(react@19.2.0)
     devDependencies:
       svgo:
         specifier: 'catalog:'
@@ -933,6 +936,9 @@ importers:
       react-dom:
         specifier: 'catalog:'
         version: 19.2.0(react@19.2.0)
+      react-router-dom:
+        specifier: 'catalog:'
+        version: 7.13.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
     dependenciesMeta:
       '@udir-design/icons':
         injected: true
@@ -2502,8 +2508,8 @@ packages:
       react:
         optional: true
 
-  '@navikt/aksel-icons@8.3.0':
-    resolution: {integrity: sha512-IDwQLQqOZiUH78g1nnvNl06m+1B4rDn1o0E747Xe9IuqQgX2qafr6HAe5g0WUxCe2y6O6uxAcOoHFZlyXqeIcg==}
+  '@navikt/aksel-icons@8.5.0':
+    resolution: {integrity: sha512-yEF3acxTDpP7Bn8XjtYvwTqTUH8gyIeyG+MFEqQz13U4SI5O942vU76BtV5p3YRKKmd92D3vh/sER3Vs5Qq2DQ==}
     peerDependencies:
       '@types/react': ^18.3.11 || ^19.0.0
       react: ^18.3.1 || ^19.0.0
@@ -4855,6 +4861,10 @@ packages:
   cookie@0.7.2:
     resolution: {integrity: sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==}
     engines: {node: '>= 0.6'}
+
+  cookie@1.1.1:
+    resolution: {integrity: sha512-ei8Aos7ja0weRpFzJnEA9UHJ/7XQmqglbRwnf2ATjcB9Wq874VKH9kfjjirM6UhU2/E5fFYadylyhFldcqSidQ==}
+    engines: {node: '>=18'}
 
   copy-anything@2.0.6:
     resolution: {integrity: sha512-1j20GZTsvKNkc4BY3NpMOM8tt///wY3FpIzozTOFO2ffuZcV61nojHXVKIy3WM+7ADCy5FVhdZYHYDdgTU0yJw==}
@@ -7541,6 +7551,23 @@ packages:
     resolution: {integrity: sha512-FPvF2XxTSikpJxcr+bHut2H4gJ17+18Uy20D5/F+SKzFap62R3cM5wH6b8WN3LyGSYeQilLEcJcR1fjBSI2S1A==}
     engines: {node: '>=0.10.0'}
 
+  react-router-dom@7.13.0:
+    resolution: {integrity: sha512-5CO/l5Yahi2SKC6rGZ+HDEjpjkGaG/ncEP7eWFTvFxbHP8yeeI0PxTDjimtpXYlR3b3i9/WIL4VJttPrESIf2g==}
+    engines: {node: '>=20.0.0'}
+    peerDependencies:
+      react: '>=18'
+      react-dom: '>=18'
+
+  react-router@7.13.0:
+    resolution: {integrity: sha512-PZgus8ETambRT17BUm/LL8lX3Of+oiLaPuVTRH3l1eLvSPpKO3AvhAEb5N7ihAFZQrYDqkvvWfFh9p0z9VsjLw==}
+    engines: {node: '>=20.0.0'}
+    peerDependencies:
+      react: '>=18'
+      react-dom: '>=18'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+
   react-style-stringify@1.2.0:
     resolution: {integrity: sha512-88JZckqgbfXJaGcDQoTFKRmBwHBF0Ddaxz3PL9Q+vywAJruBY+NdN+ZiKSBe7r/pWtjbt0naZdtH5oNI1X3FLA==}
     engines: {node: '>=14.0.0'}
@@ -7743,6 +7770,9 @@ packages:
     resolution: {integrity: sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==}
     engines: {node: '>=10'}
     hasBin: true
+
+  set-cookie-parser@2.7.2:
+    resolution: {integrity: sha512-oeM1lpU/UvhTxw+g3cIfxXHyJRc/uidd3yK1P242gzHds0udQBYzs3y8j4gCCW+ZJ7ad0yctld8RYO+bdurlvw==}
 
   set-function-length@1.2.2:
     resolution: {integrity: sha512-pgRc4hJ4/sNjWCSS9AmnS40x3bNMDTknHgL5UaMBTMyJnU90EgWh1Rz+MC9eFu4BuN/UwZjKQuY/1v3rM7HMfg==}
@@ -10453,7 +10483,7 @@ snapshots:
       '@types/react': 19.2.7
       react: 19.2.0
 
-  '@navikt/aksel-icons@8.3.0(@types/react@19.2.7)(react@19.2.0)':
+  '@navikt/aksel-icons@8.5.0(@types/react@19.2.7)(react@19.2.0)':
     optionalDependencies:
       '@types/react': 19.2.7
       react: 19.2.0
@@ -13063,6 +13093,8 @@ snapshots:
 
   cookie@0.7.2:
     optional: true
+
+  cookie@1.1.1: {}
 
   copy-anything@2.0.6:
     dependencies:
@@ -16255,6 +16287,20 @@ snapshots:
 
   react-refresh@0.16.0: {}
 
+  react-router-dom@7.13.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+    dependencies:
+      react: 19.2.0
+      react-dom: 19.2.0(react@19.2.0)
+      react-router: 7.13.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+
+  react-router@7.13.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+    dependencies:
+      cookie: 1.1.1
+      react: 19.2.0
+      set-cookie-parser: 2.7.2
+    optionalDependencies:
+      react-dom: 19.2.0(react@19.2.0)
+
   react-style-stringify@1.2.0:
     dependencies:
       '@emotion/unitless': 0.10.0
@@ -16502,6 +16548,8 @@ snapshots:
       lru-cache: 6.0.0
 
   semver@7.7.3: {}
+
+  set-cookie-parser@2.7.2: {}
 
   set-function-length@1.2.2:
     dependencies:
