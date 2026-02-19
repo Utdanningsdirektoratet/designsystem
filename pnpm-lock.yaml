@@ -853,6 +853,9 @@ importers:
       '@next/eslint-plugin-next':
         specifier: 'catalog:'
         version: 16.1.6
+      '@udir-design/icons':
+        specifier: workspace:*
+        version: link:../../@udir-design/icons
       '@udir-design/react':
         specifier: workspace:*
         version: file:@udir-design/react(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
