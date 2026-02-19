@@ -3,11 +3,11 @@ import { SkipLink } from '@digdir/designsystemet-react';
 import type { HTMLAttributes } from 'react';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
+import { ArticleDemo as ArticleDemoPage } from '../../demo-pages/article-demo/ArticleDemo';
+import { FooterDemo } from './components/footer';
+import { HeaderDemo } from './components/header';
 import { demoParameters } from './demoParameters';
 import type { DemoProps } from './demoProps';
-import { ArticleDemo as ArticleDemoPage } from './pages/article-demo/ArticleDemo';
-import { FooterDemo } from './pages/footer';
-import { HeaderDemo } from './pages/header';
 
 type ArticleDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
 const ArticleDemo = (props: ArticleDemoProps) => (

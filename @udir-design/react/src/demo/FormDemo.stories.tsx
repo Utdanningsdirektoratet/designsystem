@@ -1,12 +1,13 @@
 import './demoSizing.css';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
+import { FormDemo } from '../../demo-pages/form-demo/FormDemo';
 import { demoParameters } from './demoParameters';
-import { FormDemo } from './pages/form-demo/FormDemo';
+import type { DemoProps } from './demoProps';
 
 const meta = preview.meta({
   title: 'demo/Form Demo',
-  component: FormDemo,
+  component: FormDemo as React.FC<DemoProps>,
   parameters: {
     ...demoParameters,
     componentOrigin: {

@@ -30,6 +30,8 @@
     "src/**/*.test.js"
   ],
   "include": [
+    "demo-pages/**/*.ts",
+    "demo-pages/**/*.tsx",
     "src/**/*.stories.ts",
     "src/**/*.stories.js",
     "src/**/*.stories.jsx",

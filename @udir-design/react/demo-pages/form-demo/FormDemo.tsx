@@ -23,7 +23,6 @@ import {
   makeStepFinder,
 } from 'src/utilities/form/navigation';
 import { useFormNavigation } from 'src/utilities/hooks/useFormNavigation/useFormNavigation';
-import type { DemoProps } from '../../demoProps';
 import { ErrorSummaryContent } from './ErrorSummaryContent';
 import classes from './FormDemo.module.css';
 import { DocumentationPage } from './pages/DocumentationPage';
@@ -92,8 +91,7 @@ export const FormDemo = ({
   ...props
 }: {
   page?: PageId;
-} & HTMLAttributes<HTMLDivElement> &
-  DemoProps) => {
+} & HTMLAttributes<HTMLDivElement>) => {
   const methods = useForm<FormValues>({
     resolver: zodResolver(FormSchema),
     mode: 'onChange',

@@ -2,8 +2,8 @@ import './demoSizing.css';
 import type { ComponentProps, FunctionComponent } from 'react';
 import { useState } from 'react';
 import preview from '.storybook/preview';
+import { DashboardDemo } from '../../demo-pages/dashboard-demo/DashboardDemo';
 import { demoParameters } from './demoParameters';
-import { DashboardDemo } from './pages/dashboard-demo/DashboardDemo';
 
 const meta = preview.meta({
   title: 'demo/Dashboard Demo',

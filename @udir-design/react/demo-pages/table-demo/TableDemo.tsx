@@ -13,7 +13,6 @@ import { Table } from 'src/components/table';
 import { Tag } from 'src/components/tag/Tag';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
-import type { DemoProps } from '../../demoProps';
 import classes from './TableDemo.module.css';
 import { DeleteDialog } from './components/DeleteDialog';
 import { ExportDialog } from './components/ExportDialog';
@@ -23,7 +22,7 @@ import { STUDENTS } from './data/students';
 import { useFilterData } from './utilities/useFilterData';
 import useSortableData from './utilities/useSortableData';
 
-type TableDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
+type TableDemoProps = HTMLAttributes<HTMLDivElement>;
 
 export const TableDemo = ({ ...props }: TableDemoProps) => {
   const itemsPerPage = 5;

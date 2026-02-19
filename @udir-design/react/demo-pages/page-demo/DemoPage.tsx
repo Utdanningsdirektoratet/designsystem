@@ -1,6 +1,6 @@
+import type { HTMLAttributes } from 'react';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
-import type { DemoProps } from '../../demoProps';
 import styles from './DemoPage.module.scss';
 import { BreadcrumbsDemo } from './breadcrumbs/BreadcrumbsDemo';
 import { FrequentQuestions } from './frequent-questions/FrequentQuestions';
@@ -9,7 +9,7 @@ import { Progress } from './progress/Progress';
 import { Shoppinglist } from './shoppinglist/Shoppinglist';
 import { UserTable } from './user-table/UserTable';
 
-type Props = DemoProps;
+type Props = HTMLAttributes<HTMLDivElement>;
 
 export function DemoPage(props: Props) {
   return (

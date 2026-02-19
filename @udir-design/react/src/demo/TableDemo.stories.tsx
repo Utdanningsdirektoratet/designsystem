@@ -1,11 +1,12 @@
 import './demoSizing.css';
 import preview from '.storybook/preview';
+import { TableDemo } from '../../demo-pages/table-demo/TableDemo';
 import { demoParameters } from './demoParameters';
-import { TableDemo } from './pages/table-demo/TableDemo';
+import type { DemoProps } from './demoProps';
 
 const meta = preview.meta({
   title: 'demo/Table Demo',
-  component: TableDemo,
+  component: TableDemo as React.FC<DemoProps>,
   parameters: {
     ...demoParameters,
     componentOrigin: {

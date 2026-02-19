@@ -1,11 +1,12 @@
 import './demoSizing.css';
 import preview from '.storybook/preview';
+import { DemoPage } from '../../demo-pages/page-demo/DemoPage';
 import { demoParameters } from './demoParameters';
-import { DemoPage } from './pages/page-demo/DemoPage';
+import type { DemoProps } from './demoProps';
 
 const meta = preview.meta({
   title: 'demo/Page Demo',
-  component: DemoPage,
+  component: DemoPage as React.FC<DemoProps>,
   parameters: {
     ...demoParameters,
     componentOrigin: {

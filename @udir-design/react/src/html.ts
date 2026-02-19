@@ -7,6 +7,7 @@ declare global {
     interface HTMLAttributes<T> {
       'data-size'?: Size | (string & {});
       'data-color'?: Color | (string & {});
+      'data-color-scheme'?: 'light' | 'dark' | 'auto';
     }
   }
 }

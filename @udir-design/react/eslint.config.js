@@ -22,7 +22,8 @@ const commonRestrictedImports = [
 const restrictBarrelImports = {
   regex: '^((src|\\.{1,2})\\/)((\\.{1,2}\\/)|\\w+\\/)*(alpha|beta|stable)',
   // group: ['**/alpha', '**/beta', '**/stable'],
-  message: 'Do not import from barrel files.',
+  message:
+    'Do not import from barrel files. It can make the library hard to tree-shake and prohibits tools like Chromatic from performing dependency analysis.',
 };
 
 export default defineConfig(
@@ -87,7 +88,7 @@ export default defineConfig(
   },
   {
     // Overrides for demo pages shared with test-apps
-    files: ['src/demo/pages/**/*.{ts,tsx}'],
+    files: ['demo-pages/**/*.{ts,tsx}'],
     rules: {
       'no-restricted-imports': [
         'error',
@@ -99,6 +100,16 @@ export default defineConfig(
               group: ['**/*.js'],
               message:
                 'Files shared with test-apps cannot import with .js extension.',
+            },
+            {
+              group: ['../**/src/components/*'],
+              message:
+                "Files shared with test-apps cannot import library components from relative paths. Import from 'src/components/...' instead.",
+            },
+            {
+              group: ['../**/src/utilities/*'],
+              message:
+                "Files shared with test-apps cannot import library utilities from relative paths. Import from 'src/utilities/...' instead.",
             },
           ],
         },

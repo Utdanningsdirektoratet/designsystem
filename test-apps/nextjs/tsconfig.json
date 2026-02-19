@@ -11,10 +11,13 @@
     "isolatedModules": true,
     "incremental": true,
     "paths": {
-      "@udir-design/demos/*": ["../../@udir-design/react/src/demo/pages/*"],
+      "@udir-design/demos/*": ["../../@udir-design/react/demo-pages/*"],
       ".storybook/*": ["../../@udir-design/react/.storybook/*"],
-      "src/components/*": ["../../@udir-design/react/src/components/*"],
-      "src/utilities/*": ["../../@udir-design/react/src/utilities/*"]
+      "src/components/*": ["./node_modules/@udir-design/react/dist/alpha"],
+      "src/utilities/form/*": [
+        "./node_modules/@udir-design/react/dist/utilities/form/alpha"
+      ],
+      "src/utilities/*": ["./node_modules/@udir-design/react/dist/alpha"]
     },
     "plugins": [
       {
