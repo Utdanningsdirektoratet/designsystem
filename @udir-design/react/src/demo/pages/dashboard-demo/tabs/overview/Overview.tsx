@@ -1,12 +1,10 @@
 import * as Highcharts from 'highcharts';
-import 'highcharts/modules/accessibility';
-import 'highcharts/i18n/nb-NO';
 import { HighchartsReact } from 'highcharts-react-official';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { Table } from 'src/components/table';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { DataControls } from '../../components/data-controls/DataControls';
-import { Loading } from '../../components/loading/Loading';
+import { LoadChart } from '../../components/loading/LoadChart';
 import { TabStructure } from '../../components/tab-structure/TabStructure';
 import classes from './Overview.module.css';
 
@@ -81,15 +79,6 @@ const options: Highcharts.Options = {
 export const Overview = (props: HighchartsReact.Props) => {
   const [dataVisualization, setDataVisualization] = useState('graph');
   const chartComponentRef = useRef<HighchartsReact.RefObject>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   const renderDataVisualization = (value: string) => {
     switch (value) {
@@ -148,16 +137,13 @@ export const Overview = (props: HighchartsReact.Props) => {
     >
       <div className={classes.visualization}>
         <Heading>Prøveoversikt</Heading>
-        {loading && <Loading />}
-        {!loading && (
-          <>
-            <DataControls
-              value={dataVisualization}
-              setValue={setDataVisualization}
-            />
-            {renderDataVisualization(dataVisualization)}
-          </>
-        )}
+        <LoadChart>
+          <DataControls
+            value={dataVisualization}
+            setValue={setDataVisualization}
+          />
+          {renderDataVisualization(dataVisualization)}
+        </LoadChart>
       </div>
     </TabStructure>
   );

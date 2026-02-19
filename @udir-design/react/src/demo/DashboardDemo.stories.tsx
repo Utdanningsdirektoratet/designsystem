@@ -1,3 +1,4 @@
+import './demoSizing.css';
 import type { ComponentProps, FunctionComponent } from 'react';
 import { useState } from 'react';
 import preview from '.storybook/preview';

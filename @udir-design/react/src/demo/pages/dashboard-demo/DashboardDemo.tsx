@@ -1,5 +1,5 @@
 import cl from 'clsx/lite';
-import type { HTMLAttributes } from 'react';
+import { type HTMLAttributes } from 'react';
 import { Tabs } from 'src/components/tabs/Tabs';
 import { Heading } from 'src/components/typography/heading/Heading';
 import classes from './DashboardDemo.module.css';
@@ -15,6 +15,7 @@ type DashboardDemoProps = {
 
 export const DashboardDemo = ({
   page = 'overview',
+  setColorMode,
   ...props
 }: DashboardDemoProps) => {
   return (
@@ -37,7 +38,7 @@ export const DashboardDemo = ({
         <Overview />
         <Tests />
         <TestAnswers />
-        <Settings setColorMode={props.setColorMode} />
+        <Settings setColorMode={setColorMode} />
       </Tabs>
     </div>
   );

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { TocHeading } from '../../../components/tableOfContents/TableOfContents';
 
 export type useTableOfContentsProps = {
@@ -25,12 +25,11 @@ export const useTableOfContents = ({
   headingSelector = 'h2,h3',
 }: useTableOfContentsProps = {}): useTableOfContentsReturn => {
   const [headings, setHeadings] = useState<TocHeading[]>([]);
-  // setState in an effect is fine if the value comes from a ref. Otherwise the react compiler complains.
-  // See https://react.dev/reference/eslint-plugin-react-hooks/lints/set-state-in-effect#valid
-  const bodyRef = useRef(document.body);
 
   useEffect(() => {
-    const ref = containerRef ?? bodyRef;
+    // setState in an effect is fine if the value comes from a ref. Otherwise the react compiler complains.
+    // See https://react.dev/reference/eslint-plugin-react-hooks/lints/set-state-in-effect#valid
+    const ref = containerRef ?? { current: document.body };
     if (ref?.current) {
       const sectionHeadings = Array.from(ref.current.querySelectorAll('h2,h3'))
         .filter((node) => !node.hasAttribute('data-toc-ignore'))

@@ -5,6 +5,7 @@ import { Card } from 'src/components/card/Card';
 import { Table } from 'src/components/table';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { DataControls } from '../../components/data-controls/DataControls';
+import { LoadChart } from '../../components/loading/LoadChart';
 import { TabStructure } from '../../components/tab-structure/TabStructure';
 import classes from './Tests.module.css';
 
@@ -137,11 +138,13 @@ export const Tests = (props: HighchartsReact.Props) => {
             </a>
           </Card>
         </div>
-        <DataControls
-          value={dataVisualization}
-          setValue={setDataVisualization}
-        />
-        {renderDataVisualization(dataVisualization)}
+        <LoadChart>
+          <DataControls
+            value={dataVisualization}
+            setValue={setDataVisualization}
+          />
+          {renderDataVisualization(dataVisualization)}
+        </LoadChart>
       </div>
     </TabStructure>
   );

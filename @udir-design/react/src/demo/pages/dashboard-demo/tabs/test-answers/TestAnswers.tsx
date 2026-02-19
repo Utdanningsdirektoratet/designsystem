@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import { Table } from 'src/components/table';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { DataControls } from '../../components/data-controls/DataControls';
+import { LoadChart } from '../../components/loading/LoadChart';
 import { TabStructure } from '../../components/tab-structure/TabStructure';
 import classes from './TestAnswers.module.css';
 
@@ -108,11 +109,13 @@ export const TestAnswers = (props: HighchartsReact.Props) => {
     >
       <div className={classes.visualization}>
         <Heading>Karakterfordeling prøvesvar</Heading>
-        <DataControls
-          value={dataVisualization}
-          setValue={setDataVisualization}
-        />
-        {renderDataVisualization(dataVisualization)}
+        <LoadChart>
+          <DataControls
+            value={dataVisualization}
+            setValue={setDataVisualization}
+          />
+          {renderDataVisualization(dataVisualization)}
+        </LoadChart>
       </div>
     </TabStructure>
   );

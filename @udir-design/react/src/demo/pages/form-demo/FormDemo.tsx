@@ -12,7 +12,7 @@ import {
 } from '@udir-design/icons';
 import { Button } from 'src/components/button/Button';
 import { Dialog } from 'src/components/dialog/Dialog';
-import { FieldNecessity } from 'src/components/fieldNecessity/index.js';
+import { FieldNecessity } from 'src/components/fieldNecessity';
 import type { FieldsetProps } from 'src/components/fieldset/Fieldset';
 import { FormNavigation } from 'src/components/formNavigation';
 import { Heading } from 'src/components/typography/heading/Heading';
@@ -23,12 +23,12 @@ import {
   makeStepFinder,
 } from 'src/utilities/form/navigation';
 import { useFormNavigation } from 'src/utilities/hooks/useFormNavigation/useFormNavigation';
-import type { DemoProps } from '../../demoProps.js';
-import { ErrorSummaryContent } from './ErrorSummaryContent.js';
+import type { DemoProps } from '../../demoProps';
+import { ErrorSummaryContent } from './ErrorSummaryContent';
 import classes from './FormDemo.module.css';
-import { DocumentationPage } from './pages/DocumentationPage.js';
-import { PersonalInfoPage } from './pages/PersonalInfoPage.js';
-import { ProjectPage } from './pages/ProjectPage.tsx.js';
+import { DocumentationPage } from './pages/DocumentationPage';
+import { PersonalInfoPage } from './pages/PersonalInfoPage';
+import { ProjectPage } from './pages/ProjectPage';
 
 export type PageProps = {
   showErrors: boolean;

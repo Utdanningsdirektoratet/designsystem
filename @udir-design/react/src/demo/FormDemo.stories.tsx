@@ -1,3 +1,4 @@
+import './demoSizing.css';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
 import { demoParameters } from './demoParameters';

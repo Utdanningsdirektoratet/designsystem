@@ -1,3 +1,4 @@
+import './demoSizing.css';
 import preview from '.storybook/preview';
 import { demoParameters } from './demoParameters';
 import { TableDemo } from './pages/table-demo/TableDemo';
