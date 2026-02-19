@@ -3,7 +3,7 @@ import {
   DatavisValueColorDisplay,
   DatavisSeqColorDisplay,
   DatavisSeqDivColorDisplay,
-} from '../../design-tokens/docs/color/datavis-color-display';
+} from '../../design-tokens/docs/color/dataviz-color-display';
 
 <Meta title="Utilities/Hjelpefunksjoner for datavisualisering" />
 
@@ -18,7 +18,9 @@ Verktøy for å bruke datavisualiseringsfarger i diagrammer og grafer. Disse fun
 
 > Se [Farger for datavisualisering](/docs/design-tokens-farger--docs#farger-for-datavisualisering) for retningslinjer om når og hvordan de ulike palettene skal brukes.
 
-**Viktig:** Importer CSS for datavisualiseringsfarger i applikasjonen din:
+## Oppsett
+
+Importer CSS for datavisualiseringsfarger i applikasjonen din:
 
 ```tsx
 import '@udir-design/theme/dataviz.css';
@@ -81,7 +83,11 @@ const colors = getSequentialDivergentColors();
 
 ---
 
-## Highcharts-tema
+## Highcharts
+
+> **Tips:** Se [Dashboard-demoen](/docs/demo-dashboard-demo--docs) for komplette eksempler med Highcharts.
+
+### Tema
 
 Ferdigkonfigurert tema for Highcharts med kategorisk fargepalett og typografi fra designsystemet.
 
@@ -115,6 +121,8 @@ export function MyChart() {
   return <HighchartsReact highcharts={Highcharts} options={options} />;
 }
 ```
+
+### Sekvensielle paletter i Highcharts
 
 For sekvensielle paletter i Highcharts, bruk `getSequentialMonochromaticColors()` eller `getSequentialDivergentColors()` for å generere en fargeskala og angi den i `colorAxis`:
 
@@ -156,15 +164,15 @@ const options: Highcharts.Options = {
 };
 ```
 
-**Språkstøtte:** Highcharts har noen få innebygde språkpakker. Engelsk er standard. Importer andre du trenger:
+### Språkpakker
+
+Highcharts har noen få innebygde språkpakker. Engelsk er standard. Importer andre du trenger:
 
 ```tsx
 import 'highcharts/i18n/nb-NO'; // Norsk Bokmål
 
 // Se alle tilgjengelige språk: node_modules/highcharts/i18n/
 ```
-
-> **Tips:** Se [Dashboard-demoen](/docs/demo-dashboard-demo--docs) for komplette eksempler med Highcharts.
 
 ## Bruk med andre diagrambiblioteker
 
