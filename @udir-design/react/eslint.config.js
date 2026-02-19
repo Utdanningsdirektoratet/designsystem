@@ -19,6 +19,13 @@ const commonRestrictedImports = [
   },
 ];
 
+const restrictBarrelImports = {
+  regex: '^((src|\\.{1,2})\\/)((\\.{1,2}\\/)|\\w+\\/)*(alpha|beta|stable)',
+  // group: ['**/alpha', '**/beta', '**/stable'],
+  message:
+    'Do not import from barrel files. It can make the library hard to tree-shake and prohibits tools like Chromatic from performing dependency analysis.',
+};
+
 export default defineConfig(
   nxEslintPlugin.configs['flat/react'],
   storybook.configs['flat/recommended'],
@@ -66,15 +73,7 @@ export default defineConfig(
       'no-restricted-imports': [
         'error',
         {
-          patterns: [
-            ...commonRestrictedImports,
-            {
-              regex:
-                '^((src|\\.{1,2})\\/)((\\.{1,2}\\/)|\\w+\\/)*(alpha|beta|stable)',
-              // group: ['**/alpha', '**/beta', '**/stable'],
-              message: 'Do not import from barrel files.',
-            },
-          ],
+          patterns: [...commonRestrictedImports, restrictBarrelImports],
         },
       ],
     },
@@ -86,5 +85,35 @@ export default defineConfig(
   {
     // Storybook & docs-specific overrides
     files: ['**/*.stories.{ts,tsx}', '**/{.storybook,demo,docs}/**/*.{ts,tsx}'],
+  },
+  {
+    // Overrides for demo pages shared with test-apps
+    files: ['demo-pages/**/*.{ts,tsx}'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            ...commonRestrictedImports,
+            restrictBarrelImports,
+            {
+              group: ['**/*.js'],
+              message:
+                'Files shared with test-apps cannot import with .js extension.',
+            },
+            {
+              group: ['../**/src/components/*'],
+              message:
+                "Files shared with test-apps cannot import library components from relative paths. Import from 'src/components/...' instead.",
+            },
+            {
+              group: ['../**/src/utilities/*'],
+              message:
+                "Files shared with test-apps cannot import library utilities from relative paths. Import from 'src/utilities/...' instead.",
+            },
+          ],
+        },
+      ],
+    },
   },
 );

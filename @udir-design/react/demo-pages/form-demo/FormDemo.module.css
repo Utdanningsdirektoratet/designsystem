@@ -1,0 +1,103 @@
+.page {
+  display: flex;
+  gap: var(--ds-size-6);
+  flex-direction: column;
+  @media (min-width: 48rem) {
+    flex-direction: row;
+  }
+
+  .confirmation {
+    gap: 0;
+    h2 {
+      margin-block-end: var(--ds-size-4);
+    }
+    p {
+      margin-block: var(--ds-size-2);
+    }
+  }
+}
+
+.navigation {
+  @media (min-width: 48rem) {
+    padding-top: 3rem;
+  }
+  padding-top: 1.5rem;
+  position: sticky;
+}
+
+.container {
+  container-type: inline-size;
+  max-width: 40rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+
+  @media (min-width: 48rem) {
+    padding: var(--ds-size-6);
+  }
+
+  :global(.ds-alert) {
+    --dsc-alert-padding-inline-end: var(--ds-size-3);
+  }
+}
+
+.form {
+  background-color: var(--ds-color-neutral-surface-tinted);
+  border-radius: var(--ds-border-radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-8);
+  padding: var(--ds-size-3);
+
+  :global(.uds-field-necessity-summary) {
+    margin-block-start: calc(-1 * var(--ds-size-6));
+    margin-block-end: calc(-1 * var(--ds-size-2));
+  }
+}
+
+@container (min-width: 23.5rem) {
+  .form {
+    padding: var(--ds-size-6);
+  }
+
+  .container :global(.ds-alert) {
+    --dsc-alert-padding-inline-end: var(--ds-size-6);
+  }
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+}
+
+.dialogActions {
+  display: flex;
+  gap: var(--ds-size-2);
+}
+
+.pagination {
+  align-self: center;
+}
+
+.navigateButtons {
+  display: flex;
+  gap: var(--ds-size-2);
+  white-space: nowrap;
+}
+
+.desktop {
+  display: none;
+  @media (min-width: 48rem) {
+    display: block;
+    padding-top: 5rem;
+  }
+}
+
+.mobile {
+  display: block;
+  @media (min-width: 48rem) {
+    display: none;
+  }
+}

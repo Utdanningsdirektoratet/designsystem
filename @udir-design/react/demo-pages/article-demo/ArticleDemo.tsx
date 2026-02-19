@@ -1,0 +1,111 @@
+import cl from 'clsx';
+import { useRef } from 'react';
+import { PrinterSmallIcon } from '@udir-design/icons';
+import { Alert } from 'src/components/alert';
+import { Breadcrumbs } from 'src/components/breadcrumbs/Breadcrumbs';
+import { Button } from 'src/components/button/Button';
+import { Card } from 'src/components/card/Card';
+import { Details } from 'src/components/details/Details';
+import { Divider } from 'src/components/divider/Divider';
+import { Link } from 'src/components/link/Link';
+import { TableOfContents } from 'src/components/tableOfContents/TableOfContents';
+import { Heading } from 'src/components/typography/heading/Heading';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { useTableOfContents } from 'src/utilities/hooks/useTableOfContents/useTableOfContents';
+import classes from './ArticleDemo.module.css';
+import { ContentSection } from './content-section/ContentSection';
+import { changes } from './strings/changes';
+import { section1, section2, section3 } from './strings/sections';
+
+export const ArticleDemo = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  return (
+    <article className={cl(classes.article, classes.contentSpacing)}>
+      <Breadcrumbs aria-label="Du er her:">
+        <Breadcrumbs.Link aria-label="Tilbake til mer informasjon">
+          Mer informasjon
+        </Breadcrumbs.Link>
+        <Breadcrumbs.List>
+          <Breadcrumbs.Item>
+            <Breadcrumbs.Link href="https://www.udir.no/">
+              Generell informasjon
+            </Breadcrumbs.Link>
+          </Breadcrumbs.Item>
+          <Breadcrumbs.Item>
+            <Breadcrumbs.Link href="https://www.udir.no/laring-og-trivsel/lareplanverket/">
+              Mer informasjon
+            </Breadcrumbs.Link>
+          </Breadcrumbs.Item>
+          <Breadcrumbs.Item>
+            <Breadcrumbs.Link href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/planleggingsverktoy-i-lareplanvisning/">
+              Læreplanverket
+            </Breadcrumbs.Link>
+          </Breadcrumbs.Item>
+        </Breadcrumbs.List>
+      </Breadcrumbs>
+      <div
+        className={cl(classes.contentWrapper, classes.contentSpacing)}
+        id="main-content"
+        tabIndex={-1}
+        ref={containerRef}
+      >
+        <Alert>Denne artikkelen er mer enn 2 år gammel</Alert>
+        <div className={classes.headingWrapper}>
+          <Heading data-size="md" level={1}>
+            Læreplanverket
+          </Heading>
+          <Link
+            href="#"
+            data-size="md"
+            onClick={(e) => {
+              e.preventDefault();
+              window.print();
+            }}
+          >
+            <PrinterSmallIcon aria-hidden />
+            <span>Skriv ut denne siden</span>
+          </Link>
+        </div>
+        <TableOfContents {...useTableOfContents({ containerRef })} />
+        <Card data-color="support2" variant="tinted">
+          <Heading level={2} data-size="sm">
+            Planleggingsverktøy
+          </Heading>
+          <Paragraph>
+            Planleggingsverktøyet gir støtte til å ta i bruk læreplanene.
+          </Paragraph>
+        </Card>
+        <ContentSection section={section1} />
+        <ContentSection section={section2} />
+        <ContentSection section={section3} />
+        <Card>
+          <Card.Block>
+            <Heading level={2} data-size="sm">
+              Endringer i verktøyet
+            </Heading>
+            <Paragraph>
+              Vi går igjennom alle innspillene vi får, og med jevne mellomrom
+              prioriterer vi hva vi gjør av endringer.
+            </Paragraph>
+          </Card.Block>
+          {changes.map(({ summary, content }, i) => (
+            <Details key={i}>
+              <Details.Summary>{summary}</Details.Summary>
+              <Details.Content>{content}</Details.Content>
+            </Details>
+          ))}
+        </Card>
+        <Divider />
+        <Button
+          variant="secondary"
+          onClick={() =>
+            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+          }
+          className={classes.scrollButton}
+        >
+          Tilbake til toppen
+        </Button>
+      </div>
+    </article>
+  );
+};

@@ -11,12 +11,13 @@
     "@udir-design/react": "workspace:*",
     "@udir-design/theme": "workspace:*",
     "@udir-design/symbols": "workspace:*",
-    "react": "catalog:react18",
-    "react-dom": "catalog:react18"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-router-dom": "catalog:"
   },
   "devDependencies": {
-    "@types/react": "catalog:react18",
-    "@types/react-dom": "catalog:react18",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
     "@vitejs/plugin-react-swc": "catalog:",
     "sass": "catalog:",
     "vite": "catalog:",
