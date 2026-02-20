@@ -3,6 +3,7 @@
   margin-left: auto;
   margin-right: 34px;
   min-height: 18px;
+  flex-shrink: 0;
 }
 
 .sidebar-subheading-icon {
