@@ -1,3 +1,4 @@
+import { execSync } from 'node:child_process';
 import { defineMain } from '@storybook/react-vite/node';
 import remarkGfm from 'remark-gfm';
 import type { Plugin, UserConfig } from 'vite';
@@ -5,6 +6,7 @@ import type { Plugin, UserConfig } from 'vite';
 export default defineMain({
   stories: ['../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
   addons: [
+    'storybook-addon-source-link',
     '@storybook/addon-a11y',
     'storybook-addon-pseudo-states',
     '@storybook/addon-vitest',
@@ -32,6 +34,13 @@ export default defineMain({
   async viteFinal(cfg) {
     const { mergeConfig } = await import('vite');
     process.env['IS_STORYBOOK'] = 'true';
+    const branchName = execSync('git rev-parse --abbrev-ref HEAD')
+      .toString()
+      .trimEnd();
+    const commitHash = execSync('git rev-parse HEAD').toString().trimEnd();
+    process.env.VITE_GIT_BRANCH_NAME = branchName;
+    process.env.VITE_GIT_COMMIT_HASH = commitHash;
+
     return mergeConfig(cfg, {
       build: {
         cssCodeSplit: false,

@@ -324,6 +324,9 @@ catalogs:
     storybook-addon-pseudo-states:
       specifier: ^10.2.10
       version: 10.2.10
+    storybook-addon-source-link:
+      specifier: ^2.0.1
+      version: 2.0.1
     style-dictionary:
       specifier: ^5.3.1
       version: 5.3.1
@@ -734,6 +737,9 @@ importers:
       storybook-addon-pseudo-states:
         specifier: 'catalog:'
         version: 10.2.10(storybook@10.2.10(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
+      storybook-addon-source-link:
+        specifier: 'catalog:'
+        version: 2.0.1(@types/react@19.2.14)(esbuild@0.27.0)(rollup@4.53.2)(storybook@10.2.10(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(less@4.1.3)(lightningcss@1.30.2)(sass@1.97.3)(stylus@0.64.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.1))
       type-fest:
         specifier: 'catalog:'
         version: 5.4.4
@@ -3524,6 +3530,13 @@ packages:
 
   '@storybook/global@5.0.0':
     resolution: {integrity: sha512-FcOqPAXACP0I3oJ/ws6/rrPT9WGhu915Cg8D02a9YxLo0DE9zI+a9A5gRGvmQ09fiWPukqI8ZAEoQEdWUKMQdQ==}
+
+  '@storybook/icons@1.6.0':
+    resolution: {integrity: sha512-hcFZIjW8yQz8O8//2WTIXylm5Xsgc+lW9ISLgUk1xGmptIJQRdlhVIXCpSyLrQaaRiyhQRaVg7l3BD9S216BHw==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
 
   '@storybook/icons@2.0.1':
     resolution: {integrity: sha512-/smVjw88yK3CKsiuR71vNgWQ9+NuY2L+e8X7IMrFjexjm6ZR8ULrV2DRkTA61aV6ryefslzHEGDInGpnNeIocg==}
@@ -7916,6 +7929,11 @@ packages:
     peerDependencies:
       storybook: ^10.2.10
 
+  storybook-addon-source-link@2.0.1:
+    resolution: {integrity: sha512-CK8v2dLFk+QtjzNuSsOY+Bc48nzj6SUdpzyq9999kXto/5Bko9XQcG6QY8bqcw21qhXSKH/DA4spYOvpsU6oaQ==}
+    peerDependencies:
+      storybook: ^10.0.0
+
   storybook@10.2.10:
     resolution: {integrity: sha512-N4U42qKgzMHS7DjqLz5bY4P7rnvJtYkWFCyKspZr3FhPUuy6CWOae3aYC2BjXkHrdug0Jyta6VxFTuB1tYUKhg==}
     hasBin: true
@@ -11703,6 +11721,11 @@ snapshots:
       vite: 7.3.1(@types/node@24.10.13)(jiti@2.6.1)(less@4.1.3)(lightningcss@1.30.2)(sass@1.97.3)(stylus@0.64.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.1)
 
   '@storybook/global@5.0.0': {}
+
+  '@storybook/icons@1.6.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
 
   '@storybook/icons@2.0.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
@@ -16730,6 +16753,20 @@ snapshots:
   storybook-addon-pseudo-states@10.2.10(storybook@10.2.10(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)):
     dependencies:
       storybook: 10.2.10(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+
+  storybook-addon-source-link@2.0.1(@types/react@19.2.14)(esbuild@0.27.0)(rollup@4.53.2)(storybook@10.2.10(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(less@4.1.3)(lightningcss@1.30.2)(sass@1.97.3)(stylus@0.64.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.1)):
+    dependencies:
+      '@storybook/addon-docs': 10.2.10(@types/react@19.2.14)(esbuild@0.27.0)(rollup@4.53.2)(storybook@10.2.10(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(less@4.1.3)(lightningcss@1.30.2)(sass@1.97.3)(stylus@0.64.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.1))
+      '@storybook/icons': 1.6.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+      storybook: 10.2.10(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+    transitivePeerDependencies:
+      - '@types/react'
+      - esbuild
+      - rollup
+      - vite
+      - webpack
 
   storybook@10.2.10(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
     dependencies:
