@@ -15,10 +15,10 @@ catalog:
   '@digdir/designsystemet-types': ^1.11.0
   '@eslint/compat': ^2.0.2
   '@eslint/eslintrc': ^3.3.3
-  '@eslint/js': ^9.39.2
+  '@eslint/js': ^10.0.1
   '@figma/rest-api-spec': ^0.36.0
   '@hookform/resolvers': 5.2.2
-  '@navikt/aksel-icons': ^8.3.0
+  '@navikt/aksel-icons': ^8.5.2
   '@next/eslint-plugin-next': ^16.1.6
   '@nx/azure-cache': ^5.0.0
   '@nx/eslint': 22.5.1
@@ -62,7 +62,7 @@ catalog:
   clsx: 2.1.1
   cssnano: ^7.1.2
   diffable-html: ^6.0.1
-  eslint: ^9.39.2
+  eslint: ^10.0.0
   eslint-config-next: ^16.1.6
   eslint-config-prettier: 10.1.8
   eslint-plugin-import: ^2.32.0
@@ -97,7 +97,7 @@ catalog:
   ramda: ^0.32.0
   react: ^19.2.4
   react-dom: ^19.2.4
-  react-dropzone: ^14.4.0
+  react-dropzone: ^15.0.0
   react-hook-form: ^7.71.1
   react-router-dom: ^7.13.0
   react-style-stringify: ^1.2.0
