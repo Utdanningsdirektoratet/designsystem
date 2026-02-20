@@ -1,13 +1,13 @@
 import { expect, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { Laering3 } from 'src/patterns/DemoVersion.stories';
+import { Card } from '../card/Card';
 import { Footer } from '../footer';
 import { Header } from '../header';
+import { Link } from '../link/Link';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { DemoBanner } from './DemoBanner';
-import { Card } from '../card/Card';
-import { Link } from '../link/Link';
-import { Laering3 } from 'src/patterns/DemoVersion.stories';
 
 const meta = preview.meta({
   component: DemoBanner,
@@ -34,7 +34,7 @@ export const Preview = meta.story({
         flexDirection: 'column',
       }}
     >
-      <Header applicationName="Demoheader" />
+      <Header applicationName="Tjenestenavn" />
       <div
         style={{
           paddingBlockStart: 'var(--ds-size-10)',
@@ -57,7 +57,7 @@ export const Preview = meta.story({
           }}
         >
           <Heading level={1} data-size="lg">
-            Velkommen til "Tjenestenavn"
+            Lorem ipsum dolor sit amet consectetur
           </Heading>
           <Paragraph style={{ marginTop: 'var(--ds-size-3)' }}>
             Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
@@ -108,7 +108,7 @@ export const WithScroll = meta.story({
   },
   render: (args) => (
     <DemoBanner data-testid="banner" {...args}>
-      <Header applicationName="Demoheader" />
+      <Header applicationName="Tjenestenavn" />
       <div
         style={{
           padding: 'var(--ds-size-18)',

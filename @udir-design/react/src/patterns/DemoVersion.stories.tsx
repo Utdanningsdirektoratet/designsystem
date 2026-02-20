@@ -1,5 +1,5 @@
+import type { CSSProperties } from 'react';
 import preview from '.storybook/preview';
-import { CSSProperties } from 'react';
 import { Alert } from 'src/components/alert';
 import { Button } from 'src/components/button/Button';
 import { Card } from 'src/components/card/Card';
@@ -12,7 +12,7 @@ import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 
 const meta = preview.meta({
-  title: 'patterns/Demo- og testversjoner av tjenester',
+  title: 'patterns/Demoversjon av tjenester',
   tags: ['alpha', 'udir'],
   parameters: {
     componentOrigin: { originator: 'self' },
@@ -39,7 +39,7 @@ export const Preview = meta.story({
         flexDirection: 'column',
       }}
     >
-      <Header applicationName="Demoheader" />
+      <Header applicationName="Tjenestenavn" />
       <div
         style={{
           paddingBlockStart: 'var(--ds-size-10)',
@@ -62,7 +62,7 @@ export const Preview = meta.story({
           }}
         >
           <Heading level={1} data-size="lg">
-            Velkommen til "Tjenestenavn"
+            Lorem ipsum dolor sit amet consectetur
           </Heading>
           <Paragraph style={{ marginTop: 'var(--ds-size-3)' }}>
             Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
@@ -86,7 +86,7 @@ export const Preview = meta.story({
       </div>
       <Dialog open={true} style={{ maxWidth: '650px' }}>
         <Heading style={{ marginBlockEnd: 'var(--ds-size-4)' }}>
-          Velkommen til "Tjenestenavn"-demo
+          Lorem ipsum dolor sit amet consectetur
         </Heading>
         <Paragraph style={{ marginBlockEnd: 'var(--ds-size-3)' }}>
           Lorem ipsum dolor sit lorem a amet, consectetur adipiscing elit, sed

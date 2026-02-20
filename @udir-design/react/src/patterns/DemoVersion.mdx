@@ -17,14 +17,17 @@ Bruk dette mønsteret når:
 - Handlinger i tjenesten ikke får faktiske konsekvenser
 - Brukeren utforsker funksjonalitet før de tar i bruk den virkelige tjenesten
 
-### Vedvarende banner
+## Vedvarende banner
 
 Et vedvarende banner bør vises øverst og nederst på siden. Dette sikrer at brukeren alltid er klar over at de er i demomodus, selv etter at de har glemt informasjonen fra dialogen. [Bruk komponenten `DemoBanner`](/docs/components-demobanner--docs) for å enkelt implementere dette.
 
-### Dialog ved oppstart
+## Dialog ved oppstart
 
 Vis en dialog når brukeren først går inn i demo-modusen. Dialogen bør ha en tydelig overskrift, kort forklare hva demo/test/eksempel innebærer, og opplyse om at data ikke lagres eller sendes inn.
 
 Behovet for bruk av dialog ved oppstart vil variere fra tjeneste til tjeneste. I noen tilfeller kan det være tilstrekkelig med kun et vedvarende banner. Noen tjenester blir brukt ofte av de samme brukerne, og da kan en dialog ved hver oppstart bli forstyrrende, mens tjenester som brukes sjeldnere kan ha behov for det, siden faren for at brukeren misforstår at de er i feil versjon er større.
 
-<Primary />
+<Canvas
+  story={{ inline: false, height: '800px' }}
+  of={DemoVersionStories.Preview}
+/>
