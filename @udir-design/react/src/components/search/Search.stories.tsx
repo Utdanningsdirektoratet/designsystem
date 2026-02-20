@@ -24,7 +24,7 @@ const meta = preview.meta({
   },
 });
 
-const onSubmit = fn<React.FormEventHandler<HTMLFormElement>>((e) => {
+const onSubmit = fn<React.SubmitEventHandler<HTMLFormElement>>((e) => {
   e.preventDefault();
 });
 
@@ -88,7 +88,7 @@ export const Controlled = meta.story({
     const [inputValue, setInputValue] = useState('');
     const [searchTerm, setSearchTerm] = useState<string>('');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = (e: React.SubmitEvent) => {
       e.preventDefault();
       setSearchTerm(inputValue);
     };

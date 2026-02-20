@@ -1,5 +1,5 @@
 import { useDebounceCallback } from '@digdir/designsystemet-react';
-import { type ChangeEvent, useState } from 'react';
+import { type InputEvent, useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { Button } from '../button/Button';
@@ -386,9 +386,9 @@ export const FetchExternal = meta.story({
     const [value, setValue] = useState('');
     const [options, setOptions] = useState<string[] | null>(null);
 
-    const handleInput = (event: ChangeEvent<HTMLInputElement>) => {
-      const value = encodeURIComponent(event.target.value.trim());
-      setValue(event.target.value);
+    const handleInput = (event: InputEvent<HTMLInputElement>) => {
+      const value = encodeURIComponent(event.currentTarget.value.trim());
+      setValue(event.currentTarget.value);
       setOptions(null); // Clear options
 
       if (!value) return;
