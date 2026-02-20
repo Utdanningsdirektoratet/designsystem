@@ -73,7 +73,7 @@ export const Preview = meta.story({
           </Paragraph>
           <Card style={{ maxWidth: '300px' }}>
             <Heading level={2}>
-              <a href="#">Logg inn</a>
+              <a href="/">Logg inn</a>
             </Heading>
           </Card>
           <Link href="#" style={{ width: 'fit-content' }}>
