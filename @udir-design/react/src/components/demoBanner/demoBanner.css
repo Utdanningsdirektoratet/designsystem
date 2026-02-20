@@ -16,12 +16,9 @@
     &::after {
       content: var(--udsc-demo-banner-text);
       display: block;
-      margin-inline-start: -9999px;
-      margin-inline-end: -9999px;
-      margin-block-start: var(--ds-size-5);
-      @media (max-width: 30rem) {
-        margin-block-start: var(--ds-size-4);
-      }
+      margin-inline-start: calc(-1 * var(--udsc-header-padding));
+      margin-inline-end: calc(-1 * var(--udsc-header-padding));
+      margin-block-start: var(--udsc-header-padding);
     }
   }
 
