@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as PopoverStories from './Popover.stories';
 
 <Meta of={PopoverStories} />
@@ -20,7 +20,7 @@ import * as PopoverStories from './Popover.stories';
 
 ## Slik bruker du Popover
 
-<Primary />
+<Canvas of={PopoverStories.Preview} withToolbar />
 <Controls />
 
 ```tsx

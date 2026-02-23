@@ -1,4 +1,4 @@
-import { Meta, Controls, Primary, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Controls, Canvas } from '@storybook/addon-docs/blocks';
 import { INITIAL_VIEWPORTS } from 'storybook/viewport';
 import * as FormNavigationStories from './FormNavigation.stories';
 import {
@@ -28,7 +28,7 @@ import { Unstyled } from '@storybook/addon-docs/blocks';
 
 - navigere utenfor skjemaer (bruk heller [`Pagination`](/docs/components-pagination--docs))
 
-<Primary />
+<Canvas of={FormNavigationStories.Preview} withToolbar />
 <Controls />
 
 ## Eksempler

@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as AvatarStories from './Avatar.stories';
 
 <Meta of={AvatarStories} />
@@ -18,7 +18,7 @@ import * as AvatarStories from './Avatar.stories';
 
 ## Slik bruker du Avatar
 
-<Primary />
+<Canvas of={AvatarStories.Preview} withToolbar />
 <Controls />
 
 ```tsx

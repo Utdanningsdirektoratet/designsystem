@@ -1,9 +1,4 @@
-import {
-  Meta,
-  Primary,
-  ArgTypes,
-  Controls,
-} from '@storybook/addon-docs/blocks';
+import { Meta, ArgTypes, Canvas, Controls } from '@storybook/addon-docs/blocks';
 
 import { SimpleAlert } from '.storybook/docs/components';
 import * as Stories from './useRadioGroup.stories';
@@ -15,7 +10,7 @@ import { useRadioGroup } from './useRadioGroup';
 
 En React-hook for å koble sammen en gruppe av radioknapper.
 
-<Primary />
+<Canvas of={Stories.Preview} withToolbar />
 <Controls />
 
 ## Bruk

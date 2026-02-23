@@ -1,4 +1,4 @@
-import { Meta, Controls, Primary, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Controls, Canvas } from '@storybook/addon-docs/blocks';
 
 import * as HeaderStories from './Header.stories';
 import { Table } from '@udir-design/react/beta';
@@ -22,7 +22,7 @@ Du bygger opp `Header` ved hjelp av subkomponenter og andre komponenter fra desi
 
 ## Slik bruker du Header
 
-<Primary />
+<Canvas of={HeaderStories.Preview} withToolbar />
 <Controls />
 
 ```tsx

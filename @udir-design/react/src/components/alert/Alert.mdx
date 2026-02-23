@@ -1,10 +1,4 @@
-import {
-  Meta,
-  Canvas,
-  Source,
-  Controls,
-  Primary,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Source, Controls } from '@storybook/addon-docs/blocks';
 import * as AlertStories from './Alert.stories';
 
 <Meta of={AlertStories} />
@@ -28,7 +22,7 @@ Vi bruker `Alert` til å gi brukeren informasjon som det er ekstra viktig at de 
 
 ## Slik bruker du Alert
 
-<Primary />
+<Canvas of={AlertStories.Preview} withToolbar />
 <Controls />
 
 ```tsx

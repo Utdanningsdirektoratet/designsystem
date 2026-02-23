@@ -1,5 +1,5 @@
 import { INITIAL_VIEWPORTS } from 'storybook/viewport';
-import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as FooterStories from './Footer.stories';
 
 <Meta of={FooterStories} />
@@ -12,7 +12,7 @@ import * as FooterStories from './Footer.stories';
 
 ## Slik bruker du Footer
 
-<Primary />
+<Canvas of={FooterStories.Preview} withToolbar />
 <Controls />
 
 ```tsx

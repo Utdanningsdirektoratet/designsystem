@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as BadgeStories from './Badge.stories';
 
 <Meta of={BadgeStories} />
@@ -19,7 +19,7 @@ import * as BadgeStories from './Badge.stories';
 
 ## Slik bruker du Badge
 
-<Primary />
+<Canvas of={BadgeStories.Preview} withToolbar />
 <Controls />
 
 ```tsx

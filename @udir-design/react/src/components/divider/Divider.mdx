@@ -1,4 +1,4 @@
-import { Meta, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as DividerStories from './Divider.stories';
 
 <Meta of={DividerStories} />
@@ -18,7 +18,7 @@ import * as DividerStories from './Divider.stories';
 
 ## Slik bruker du Divider
 
-<Primary />
+<Canvas of={DividerStories.Preview} withToolbar />
 <Controls />
 
 ```tsx

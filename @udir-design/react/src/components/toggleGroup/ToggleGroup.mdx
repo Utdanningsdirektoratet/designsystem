@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as ToggleGroupStories from './ToggleGroup.stories';
 
 <Meta of={ToggleGroupStories} />
@@ -20,7 +20,7 @@ Med `ToggleGroup` kan brukerne velge alternativer som påvirker innholdet på en
 
 ## Slik bruker du ToggleGroup
 
-<Primary />
+<Canvas of={ToggleGroupStories.Preview} withToolbar />
 <Controls />
 
 Plasser helst innholdet du skal styre rett etter `ToggleGroup` i DOM-en. Hvis ikke, bør du bruke `aria-controls` på `ToggleGroup` for å knytte komponenten til den containeren for innholdet som endrer seg.

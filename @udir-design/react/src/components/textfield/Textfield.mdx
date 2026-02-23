@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as TextfieldStories from './Textfield.stories';
 import { DisabledEx, ReadOnlyEx } from './docs/doAndDont';
 
@@ -19,7 +19,7 @@ Den har innebygget `label`, `description`, `validationmessage`, `affix` og `coun
 
 ## Slik bruker du Textfield
 
-<Primary />
+<Canvas of={TextfieldStories.Preview} withToolbar />
 <Controls />
 
 ```tsx

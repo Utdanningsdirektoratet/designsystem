@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as DropdownStories from './Dropdown.stories';
 import { Dropdown } from './Dropdown';
 
@@ -19,7 +19,7 @@ Dropdown er en generisk nedtrekksliste. Den legger grunnmuren for å bygge menye
 
 ## Slik bruker du Dropdown
 
-<Primary />
+<Canvas of={DropdownStories.Preview} withToolbar />
 <Controls />
 
 ```tsx

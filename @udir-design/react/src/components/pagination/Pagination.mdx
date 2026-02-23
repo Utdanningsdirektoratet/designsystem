@@ -1,10 +1,4 @@
-import {
-  Meta,
-  Controls,
-  Primary,
-  Canvas,
-  ArgTypes,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Controls, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as usePagination from '../../utilities/hooks/usePagination/usePagination.stories';
 import * as PaginationStories from './Pagination.stories';
 
@@ -26,7 +20,7 @@ import * as PaginationStories from './Pagination.stories';
 
 ## Slik bruker du Pagination
 
-<Primary />
+<Canvas of={PaginationStories.Preview} withToolbar />
 <Controls of={PaginationStories.Preview} />
 
 Komponentens tilstand om hvilken side som er aktiv styres programmatisk ved hjelp av `usePagination`.

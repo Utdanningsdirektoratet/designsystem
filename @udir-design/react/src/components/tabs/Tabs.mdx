@@ -1,10 +1,4 @@
-import {
-  Meta,
-  Canvas,
-  Controls,
-  Primary,
-  ArgTypes,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
 import { Tabs, TabsTab, TabsPanel } from './Tabs';
 import * as TabsStories from './Tabs.stories';
 
@@ -31,7 +25,7 @@ Vær oppmerksom på at alle `Tabs.Panel` lastes inn når komponenten vises. Du k
 
 ## Slik bruker du Tabs
 
-<Primary />
+<Canvas of={TabsStories.Preview} withToolbar />
 <Controls />
 
 ```tsx

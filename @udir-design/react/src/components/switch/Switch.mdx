@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as SwitchStories from './Switch.stories';
 import {
   SwitchExLabel,
@@ -27,7 +27,7 @@ Vi bruker `Switch` til å gi brukerne et valg mellom to alternativer. Bryteren k
 
 ## Slik bruker du Switch
 
-<Primary />
+<Canvas of={SwitchStories.Preview} withToolbar />
 <Controls />
 
 ```tsx

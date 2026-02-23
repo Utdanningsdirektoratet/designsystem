@@ -1,10 +1,4 @@
-import {
-  Meta,
-  Primary,
-  Controls,
-  Canvas,
-  ArgTypes,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Controls, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as DialogStories from './Dialog.stories';
 import { Dialog } from './Dialog';
 
@@ -16,7 +10,7 @@ import { Dialog } from './Dialog';
 
 ## Slik bruker du Dialog
 
-<Primary />
+<Canvas of={DialogStories.Preview} withToolbar />
 <Controls />
 
 Du bytter mellom modal og ikke-modal dialog ved å bruke `modal`-propen, som er satt til `true` som standard. Vi overstyrer hvordan `open` fungerer basert på verdien til `modal`.

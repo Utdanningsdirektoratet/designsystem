@@ -1,10 +1,4 @@
-import {
-  Meta,
-  Primary,
-  Controls,
-  Canvas,
-  ArgTypes,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Controls, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as TableOfContentStories from './TableOfContents.stories';
 
 <Meta of={TableOfContentStories} />
@@ -24,7 +18,7 @@ import * as TableOfContentStories from './TableOfContents.stories';
 
 ## Slik bruker du Table Of Contents
 
-<Primary />
+<Canvas of={TableOfContentStories.Preview} withToolbar />
 <Controls />
 
 ```jsx

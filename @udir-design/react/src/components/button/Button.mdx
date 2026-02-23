@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import { Do, Dont, Stack, SimpleAlert } from '.storybook/docs/components';
 import { Button } from './Button';
 import * as ButtonStories from './Button.stories';
@@ -22,7 +22,7 @@ Knapper lar brukerne utføre handlinger. Vi har variantene `primary`, `secondary
 
 ## Slik bruker du Button
 
-<Primary />
+<Canvas of={ButtonStories.Preview} withToolbar />
 <Controls />
 
 ```tsx

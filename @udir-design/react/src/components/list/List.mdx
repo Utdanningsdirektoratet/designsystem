@@ -1,10 +1,4 @@
-import {
-  Meta,
-  Primary,
-  Controls,
-  Canvas,
-  ArgTypes,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Controls, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as ListStories from './List.stories';
 
 <Meta of={ListStories} />
@@ -26,7 +20,7 @@ Listen kan være både sortert og usortert ved å bruke `List.Ordered` eller `Li
 
 ## Slik bruker du List
 
-<Primary />
+<Canvas of={ListStories.Preview} withToolbar />
 <Controls />
 
 ```tsx
