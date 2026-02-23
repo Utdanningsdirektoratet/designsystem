@@ -1126,7 +1126,7 @@ export const UdirNo = meta.story({
             <Search.Input aria-label="Søk" placeholder="Søk" />
             <Search.Clear />
           </Search>
-          <Header.MenuButton variant="primary" />
+          <Header.MenuButton variant="secondary" />
           <Header.Menu>
             <Search
               style={{
