@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as FieldNecessityStories from './FieldNecessity.stories';
 import { Field } from '@digdir/designsystemet-react';
 import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/CssLanguageVariables';
@@ -15,8 +15,8 @@ import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/Cs
 
 ## Slik bruker du FieldNecessity
 
-<Primary />
-<Controls />
+<Canvas of={FieldNecessityStories.Preview} withToolbar />
+<Controls of={FieldNecessityStories.Preview} />
 
 ```tsx
 import { FieldNecessity } from '@udir-design/react';

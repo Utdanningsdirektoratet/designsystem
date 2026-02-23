@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import { ChipEx1 } from './docs/doAndDont';
 import * as ChipStories from './Chip.stories';
 
@@ -21,8 +21,8 @@ import * as ChipStories from './Chip.stories';
 
 ## Slik brukar du Chip
 
-<Primary />
-<Controls />
+<Canvas of={ChipStories.Preview} withToolbar />
+<Controls of={ChipStories.Preview} />
 
 ```tsx
 import { Chip } from '@udir-design/react';

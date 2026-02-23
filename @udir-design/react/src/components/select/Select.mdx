@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as SelectStories from './Select.stories';
 import { DisabledEx, ReadOnlyEx } from './docs/doAndDont';
 
@@ -23,8 +23,8 @@ For eksempel er det ikke mulig å overstyre formateringen av alternativene.
 
 ## Slik bruker du Select
 
-<Primary />
-<Controls />
+<Canvas of={SelectStories.Preview} withToolbar />
+<Controls of={SelectStories.Preview} />
 
 ```tsx
 import { Select, Field } from '@udir-design/react';

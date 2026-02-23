@@ -1,4 +1,4 @@
-import { Meta, Primary, Controls, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Controls, Canvas } from '@storybook/addon-docs/blocks';
 import * as SpinnerStories from './Spinner.stories';
 
 <Meta of={SpinnerStories} />
@@ -20,8 +20,8 @@ import * as SpinnerStories from './Spinner.stories';
 
 ## Slik bruker du Spinner
 
-<Primary />
-<Controls />
+<Canvas of={SpinnerStories.Preview} withToolbar />
+<Controls of={SpinnerStories.Preview} />
 
 ## Størrelser
 

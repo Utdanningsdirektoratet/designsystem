@@ -1,10 +1,4 @@
-import {
-  Meta,
-  Canvas,
-  Controls,
-  Primary,
-  ArgTypes,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as SuggestionStories from './Suggestion.stories';
 import { SuggestionList } from './Suggestion';
 import { Alert } from '@udir-design/react/alpha';
@@ -20,8 +14,8 @@ import { Alert } from '@udir-design/react/alpha';
 
 Søkbar "select" med mulighet for flervalg/multiselect. Bruk dersom `Select` ikke er tilstrekkelig.
 
-<Primary />
-<Controls />
+<Canvas of={SuggestionStories.Preview} withToolbar />
+<Controls of={SuggestionStories.Preview} />
 
 ## Bruk
 

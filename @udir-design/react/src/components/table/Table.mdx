@@ -1,10 +1,4 @@
-import {
-  Meta,
-  Primary,
-  Controls,
-  Canvas,
-  ArgTypes,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Controls, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
 
 import * as TableStories from './Table.stories';
 
@@ -30,8 +24,8 @@ Tabeller gjør det enklere for brukerne å skanne og sammenligne informasjon.
 
 ## Slik bruker du Table
 
-<Primary />
-<Controls />
+<Canvas of={TableStories.Preview} withToolbar />
+<Controls of={TableStories.Preview} />
 
 ```jsx
 import { Table } from '@udir-design/react';

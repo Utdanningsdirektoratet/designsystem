@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as CardStories from './Card.stories';
 
 <Meta of={CardStories} />
@@ -19,8 +19,8 @@ Vi bruker `Card` til å fremheve informasjon eller oppgaver som hører sammen. `
 
 ## Slik bruker du Card
 
-<Primary />
-<Controls />
+<Canvas of={CardStories.Preview} withToolbar />
+<Controls of={CardStories.Preview} />
 
 ```tsx
 import { Card } from '@udir-design/react';

@@ -1,10 +1,4 @@
-import {
-  Meta,
-  Primary,
-  Controls,
-  Canvas,
-  ArgTypes,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Controls, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as TableOfContentStories from './TableOfContents.stories';
 
 <Meta of={TableOfContentStories} />
@@ -24,8 +18,8 @@ import * as TableOfContentStories from './TableOfContents.stories';
 
 ## Slik bruker du Table Of Contents
 
-<Primary />
-<Controls />
+<Canvas of={TableOfContentStories.Preview} withToolbar />
+<Controls of={TableOfContentStories.Preview} />
 
 ```jsx
 import { TableOfContents, useTableOfContents } from '@udir-design/react';

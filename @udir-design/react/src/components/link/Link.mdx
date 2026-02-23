@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as LinkStories from './Link.stories';
 
 <Meta of={LinkStories} />
@@ -21,8 +21,8 @@ Komponenten er basert på [anchor HTML-taggen](https://developer.mozilla.org/en-
 
 ## Slik bruker du Link
 
-<Primary />
-<Controls />
+<Canvas of={LinkStories.Preview} withToolbar />
+<Controls of={LinkStories.Preview} />
 
 ```tsx
 import { Link } from '@udir-design/react';

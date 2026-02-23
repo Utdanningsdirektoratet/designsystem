@@ -38,6 +38,9 @@ export const Preview = meta.story({
       </Footer.List>
     </Footer>
   ),
+});
+
+export const PreviewTest = Preview.extend({
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
     const footer = canvas.getByTestId('footer');

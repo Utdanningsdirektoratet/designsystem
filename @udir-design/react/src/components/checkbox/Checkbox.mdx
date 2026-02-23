@@ -1,10 +1,4 @@
-import {
-  Meta,
-  Canvas,
-  Controls,
-  Primary,
-  ArgTypes,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
 import { Do, Dont, Stack } from '.storybook/docs/components';
 import * as CheckboxStories from './Checkbox.stories';
 import * as useCheckboxGroupStories from '../../utilities/hooks/useCheckboxGroup/useCheckboxGroup.stories';
@@ -35,8 +29,8 @@ Vi bruker `Checkbox` (avmerkingsboks) for å gi brukerne valg, der de kan velge 
 
 ## Slik bruker du Checkbox
 
-<Primary />
-<Controls />
+<Canvas of={CheckboxStories.Preview} withToolbar />
+<Controls of={CheckboxStories.Preview} />
 
 ```tsx
 import { Checkbox } from '@udir-design/react';

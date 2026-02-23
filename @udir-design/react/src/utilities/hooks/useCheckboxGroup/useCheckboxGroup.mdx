@@ -1,9 +1,4 @@
-import {
-  Meta,
-  Primary,
-  ArgTypes,
-  Controls,
-} from '@storybook/addon-docs/blocks';
+import { Meta, ArgTypes, Canvas, Controls } from '@storybook/addon-docs/blocks';
 
 import { SimpleAlert } from '.storybook/docs/components';
 import * as Stories from './useCheckboxGroup.stories';
@@ -15,8 +10,8 @@ import { useCheckboxGroup } from './useCheckboxGroup';
 
 En React-hook for å koble sammen en gruppe av avmerkingsbokser.
 
-<Primary />
-<Controls />
+<Canvas of={Stories.Default} withToolbar />
+<Controls of={Stories.Default} />
 
 I respons får du objektet:
 
