@@ -19,17 +19,17 @@ catalogs:
       specifier: ^20.4.0
       version: 20.4.0
     '@digdir/designsystemet':
-      specifier: 1.11.0
-      version: 1.11.0
+      specifier: 1.11.1
+      version: 1.11.1
     '@digdir/designsystemet-css':
-      specifier: 1.11.0
-      version: 1.11.0
+      specifier: 1.11.1
+      version: 1.11.1
     '@digdir/designsystemet-react':
-      specifier: 1.11.0
-      version: 1.11.0
+      specifier: 1.11.1
+      version: 1.11.1
     '@digdir/designsystemet-types':
-      specifier: ^1.11.0
-      version: 1.11.0
+      specifier: ^1.11.1
+      version: 1.11.1
     '@eslint/compat':
       specifier: ^2.0.2
       version: 2.0.2
@@ -532,7 +532,7 @@ importers:
     dependencies:
       '@digdir/designsystemet-css':
         specifier: 'catalog:'
-        version: 1.11.0
+        version: 1.11.1
       '@udir-design/theme':
         specifier: workspace:*
         version: link:../theme
@@ -576,10 +576,10 @@ importers:
     dependencies:
       '@digdir/designsystemet-react':
         specifier: 'catalog:'
-        version: 1.11.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        version: 1.11.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@digdir/designsystemet-types':
         specifier: 'catalog:'
-        version: 1.11.0
+        version: 1.11.1
       '@radix-ui/react-slot':
         specifier: 'catalog:'
         version: 1.2.4(@types/react@19.2.14)(react@19.2.4)
@@ -817,7 +817,7 @@ importers:
     dependencies:
       '@digdir/designsystemet-types':
         specifier: 'catalog:'
-        version: 1.11.0
+        version: 1.11.1
     devDependencies:
       '@internal/build-tools':
         specifier: workspace:*
@@ -837,7 +837,7 @@ importers:
     devDependencies:
       '@digdir/designsystemet':
         specifier: 'catalog:'
-        version: 1.11.0(tslib@2.8.1)
+        version: 1.11.1(tslib@2.8.1)
       '@tokens-studio/sd-transforms':
         specifier: 'catalog:'
         version: 2.0.3(style-dictionary@5.3.1(tslib@2.8.1))
@@ -898,7 +898,7 @@ importers:
     dependencies:
       '@digdir/designsystemet-css':
         specifier: 'catalog:'
-        version: 1.11.0
+        version: 1.11.1
       '@udir-design/css':
         specifier: workspace:*
         version: link:../../@udir-design/css
@@ -1742,20 +1742,20 @@ packages:
     resolution: {integrity: sha512-Y6+WUMsTFWE5jb20IFP4YGa5IrGY/+a/FbOSjDF/wz9gepU2hwCYSXRHP/vPwBvwcY3SVMASt4yXxbXNXigmZQ==}
     engines: {node: '>=18'}
 
-  '@digdir/designsystemet-css@1.11.0':
-    resolution: {integrity: sha512-fbLs5nrDyCdoIZAJMErj9+P4dmA+u2q3n+y2fWHRYK2U1Bs8hWKF47M3EhtqVCbmJIUhhI0SvRp8vb72Fa+WLQ==}
+  '@digdir/designsystemet-css@1.11.1':
+    resolution: {integrity: sha512-X5jfIQUNi2FDo9IZtFKe2Di34wRhTVaGhsLsyOBLFdefVmKStXYaH8fDTXxcOAVbbGwyseXr3nJeOUKVwjVgmw==}
 
-  '@digdir/designsystemet-react@1.11.0':
-    resolution: {integrity: sha512-JoCTcKxD3MiMakyfv458TVvA6YIfjSoDOUkBcSbLC7sp+WrczjA9lJN+NsCv2PNTb6kGLJ2WPwNhhx+6i8dlJQ==}
+  '@digdir/designsystemet-react@1.11.1':
+    resolution: {integrity: sha512-42F8E+Reo1/rDG/eS3HVocUvu4rSOWRm3K09tNkPdWFhWI1Byj6NV1KvUP5LaUAV8ehqA2oT3T5MQuO0543sjQ==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet-types@1.11.0':
-    resolution: {integrity: sha512-9kgM+cADYmroibCSH5VWqkXw6gEYXN+vV1glmRWhHvMq6veiD4BpBgsVAs2tDi972+SIvyo8VMPriva+XEobug==}
+  '@digdir/designsystemet-types@1.11.1':
+    resolution: {integrity: sha512-sCPTFx1FplAfFIO8LMP68ts3HeUFgw/5Py9D+d5y4CPFJzxYk05/Bk7fHiKbVr57ZhbkKO4C88o7B2s63bOTlg==}
 
-  '@digdir/designsystemet@1.11.0':
-    resolution: {integrity: sha512-pQTfjCJ5X4dY0pGxUvkI7xD1YbiKKilsy9c1BLUgqg30+aK2P1W6ngD8DSDec09X3AvCBxLwJV7bK4Jg3jNBnw==}
+  '@digdir/designsystemet@1.11.1':
+    resolution: {integrity: sha512-6GiCW21F3VQCLYUCiasnc+FFlAPGtb70p8m8P+5RBVUSYmvR8FMACsMdoM7Ag4vz2T9BasEz0osJtTrolTQQOg==}
     engines: {node: '>=20 <25'}
     hasBin: true
 
@@ -1990,14 +1990,14 @@ packages:
   '@figma/rest-api-spec@0.36.0':
     resolution: {integrity: sha512-OyAjMF3ON2k6aVm61H4MrjSNwJ9Q4w2tYGa6qoUG6tVaNk9eMe/JcCKKYgLPfR9PKfKyoxV/xwn9/HBW3C3bKQ==}
 
-  '@floating-ui/core@1.7.3':
-    resolution: {integrity: sha512-sGnvb5dmrJaKEZ+LDIpguvdX3bDlEllmv4/ClQ9awcmCZrlx5jQyyMWFM5kBI+EyNOCDDiKk8il0zeuX3Zlg/w==}
+  '@floating-ui/core@1.7.4':
+    resolution: {integrity: sha512-C3HlIdsBxszvm5McXlB8PeOEWfBhcGBTZGkGlWc2U0KFY5IwG5OQEuQ8rq52DZmcHDlPLd+YFBK+cZcytwIFWg==}
 
-  '@floating-ui/dom@1.7.4':
-    resolution: {integrity: sha512-OOchDgh4F2CchOX94cRVqhvy7b3AFb+/rQXyswmzmGakRfkMgoWVjfnLWkRirfLEfuD4ysVW16eXzwt3jHIzKA==}
+  '@floating-ui/dom@1.7.5':
+    resolution: {integrity: sha512-N0bD2kIPInNHUHehXhMke1rBGs1dwqvC9O9KYMyyjK7iXt7GAhnro7UlcuYcGdS/yYOlq0MAVgrow8IbWJwyqg==}
 
-  '@floating-ui/react-dom@2.1.6':
-    resolution: {integrity: sha512-4JX6rEatQEvlmgU80wZyq9RT96HZJa88q8hp0pBd+LrczeDI4o6uA2M+uvxngVHo4Ihr8uibXxH6+70zhAFrVw==}
+  '@floating-ui/react-dom@2.1.7':
+    resolution: {integrity: sha512-0tLRojf/1Go2JgEVm+3Frg9A3IW8bJgKgdO0BN5RkF//ufuz2joZM63Npau2ff3J6lUVYgDSNzNkR+aH3IVfjg==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2499,17 +2499,6 @@ packages:
 
   '@napi-rs/wasm-runtime@1.0.7':
     resolution: {integrity: sha512-SeDnOO0Tk7Okiq6DbXmmBODgOAb9dp9gjlphokTUxmt8U3liIP1ZsozBahH69j/RJv+Rfs6IwUKHTgQYJ/HBAw==}
-
-  '@navikt/aksel-icons@7.40.0':
-    resolution: {integrity: sha512-1xuhplMhKCEPn2iMFypMVgkRNxUd5iupQ7HP2itdQCkK3K2mm2b8HsDwL9d7YDWcxowq5ff7ewpKgQFPn6o1UQ==}
-    peerDependencies:
-      '@types/react': ^18.3.11 || ^19.0.0
-      react: ^18.3.1 || ^19.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      react:
-        optional: true
 
   '@navikt/aksel-icons@8.5.2':
     resolution: {integrity: sha512-czUQLDZrzIRHELj3HIRdVuQSXiimPn84UZcLuQQq/J29yx2BPg2CmkbzY5v2hTx0kLawFzWSp4fAWsplOIp5gg==}
@@ -4299,8 +4288,8 @@ packages:
     resolution: {integrity: sha512-ueEepnujpqee2o5aIYnvHU6C0A42MNdsIDeqy5BydrkuC5R1ZuUFnm27EeFJGoEHJQgn3uleRvmTXaJgfXbt4g==}
     engines: {node: '>=0.4.0'}
 
-  acorn@8.15.0:
-    resolution: {integrity: sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg==}
+  acorn@8.16.0:
+    resolution: {integrity: sha512-UVJyE9MttOsBQIDKw1skb9nAwQuR5wuGD3+82K6JgJlm/Y+KI92oNsMNGZCYdDsVtRHSak0pcV5Dno5+4jh9sw==}
     engines: {node: '>=0.4.0'}
     hasBin: true
 
@@ -4805,8 +4794,8 @@ packages:
     resolution: {integrity: sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==}
     engines: {node: '>=18'}
 
-  commander@14.0.2:
-    resolution: {integrity: sha512-TywoWNNRbhoD0BXs1P3ZEScW8W5iKrnbithIl0YH+uCmBd0QpPOA8yc82DS3BIE5Ma6FnBVUsJ7wVUDz4dvOWQ==}
+  commander@14.0.3:
+    resolution: {integrity: sha512-H+y0Jo/T1RZ9qPP4Eh1pkcQcLRglraJaSLoyOtHxu6AapkjWVCy2Sit1QQ4x3Dng8qDlSsZEet7g5Pq06MvTgw==}
     engines: {node: '>=20'}
 
   commander@2.20.3:
@@ -9658,9 +9647,9 @@ snapshots:
       tough-cookie: 4.1.4
     optional: true
 
-  '@commander-js/extra-typings@14.0.0(commander@14.0.2)':
+  '@commander-js/extra-typings@14.0.0(commander@14.0.3)':
     dependencies:
-      commander: 14.0.2
+      commander: 14.0.3
 
   '@commitlint/cli@20.4.1(@types/node@24.10.13)(typescript@5.9.3)':
     dependencies:
@@ -9810,16 +9799,16 @@ snapshots:
       gonzales-pe: 4.3.0
       node-source-walk: 7.0.1
 
-  '@digdir/designsystemet-css@1.11.0':
+  '@digdir/designsystemet-css@1.11.1':
     dependencies:
-      '@digdir/designsystemet-types': 1.11.0
+      '@digdir/designsystemet-types': 1.11.1
 
-  '@digdir/designsystemet-react@1.11.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@digdir/designsystemet-react@1.11.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@digdir/designsystemet-types': 1.11.0
-      '@floating-ui/dom': 1.7.4
+      '@digdir/designsystemet-types': 1.11.1
+      '@floating-ui/dom': 1.7.5
       '@floating-ui/react': 0.26.23(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@navikt/aksel-icons': 7.40.0(@types/react@19.2.14)(react@19.2.4)
+      '@navikt/aksel-icons': 8.5.2(@types/react@19.2.14)(react@19.2.4)
       '@radix-ui/react-slot': 1.2.4(@types/react@19.2.14)(react@19.2.4)
       '@tanstack/react-virtual': 3.13.18(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@u-elements/u-combobox': 1.0.7
@@ -9831,16 +9820,16 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet-types@1.11.0': {}
+  '@digdir/designsystemet-types@1.11.1': {}
 
-  '@digdir/designsystemet@1.11.0(tslib@2.8.1)':
+  '@digdir/designsystemet@1.11.1(tslib@2.8.1)':
     dependencies:
-      '@commander-js/extra-typings': 14.0.0(commander@14.0.2)
-      '@digdir/designsystemet-types': 1.11.0
+      '@commander-js/extra-typings': 14.0.0(commander@14.0.3)
+      '@digdir/designsystemet-types': 1.11.1
       '@tokens-studio/sd-transforms': 2.0.3(style-dictionary@5.3.1(tslib@2.8.1))
       chroma-js: 3.2.0
       colorjs.io: 0.6.1
-      commander: 14.0.2
+      commander: 14.0.3
       fast-glob: 3.3.3
       hsluv: 1.0.1
       object-hash: 3.0.0
@@ -10006,24 +9995,24 @@ snapshots:
 
   '@figma/rest-api-spec@0.36.0': {}
 
-  '@floating-ui/core@1.7.3':
+  '@floating-ui/core@1.7.4':
     dependencies:
       '@floating-ui/utils': 0.2.10
 
-  '@floating-ui/dom@1.7.4':
+  '@floating-ui/dom@1.7.5':
     dependencies:
-      '@floating-ui/core': 1.7.3
+      '@floating-ui/core': 1.7.4
       '@floating-ui/utils': 0.2.10
 
-  '@floating-ui/react-dom@2.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@floating-ui/react-dom@2.1.7(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@floating-ui/dom': 1.7.4
+      '@floating-ui/dom': 1.7.5
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
 
   '@floating-ui/react@0.26.23(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@floating-ui/react-dom': 2.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@floating-ui/react-dom': 2.1.7(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@floating-ui/utils': 0.2.10
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
@@ -10490,11 +10479,6 @@ snapshots:
       '@emnapi/runtime': 1.7.1
       '@tybys/wasm-util': 0.10.1
     optional: true
-
-  '@navikt/aksel-icons@7.40.0(@types/react@19.2.14)(react@19.2.4)':
-    optionalDependencies:
-      '@types/react': 19.2.14
-      react: 19.2.4
 
   '@navikt/aksel-icons@8.5.2(@types/react@19.2.14)(react@19.2.4)':
     optionalDependencies:
@@ -12277,8 +12261,8 @@ snapshots:
 
   '@udir-design/react@file:@udir-design/react(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@digdir/designsystemet-react': 1.11.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@digdir/designsystemet-types': 1.11.0
+      '@digdir/designsystemet-react': 1.11.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@digdir/designsystemet-types': 1.11.1
       '@radix-ui/react-slot': 1.2.4(@types/react@19.2.14)(react@19.2.4)
       '@u-elements/u-details': 0.2.2
       '@u-elements/u-progress': 0.0.7
@@ -12553,15 +12537,15 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  acorn-jsx@5.3.2(acorn@8.15.0):
+  acorn-jsx@5.3.2(acorn@8.16.0):
     dependencies:
-      acorn: 8.15.0
+      acorn: 8.16.0
 
   acorn-walk@8.3.4:
     dependencies:
-      acorn: 8.15.0
+      acorn: 8.16.0
 
-  acorn@8.15.0: {}
+  acorn@8.16.0: {}
 
   address@1.2.2: {}
 
@@ -13064,7 +13048,7 @@ snapshots:
 
   commander@12.1.0: {}
 
-  commander@14.0.2: {}
+  commander@14.0.3: {}
 
   commander@2.20.3:
     optional: true
@@ -13917,14 +13901,14 @@ snapshots:
 
   espree@10.4.0:
     dependencies:
-      acorn: 8.15.0
-      acorn-jsx: 5.3.2(acorn@8.15.0)
+      acorn: 8.16.0
+      acorn-jsx: 5.3.2(acorn@8.16.0)
       eslint-visitor-keys: 4.2.1
 
   espree@9.6.1:
     dependencies:
-      acorn: 8.15.0
-      acorn-jsx: 5.3.2(acorn@8.15.0)
+      acorn: 8.16.0
+      acorn-jsx: 5.3.2(acorn@8.16.0)
       eslint-visitor-keys: 3.4.3
 
   esprima@4.0.1: {}
@@ -14730,7 +14714,7 @@ snapshots:
 
   jsonc-eslint-parser@2.4.1:
     dependencies:
-      acorn: 8.15.0
+      acorn: 8.16.0
       eslint-visitor-keys: 3.4.3
       espree: 9.6.1
       semver: 7.7.3
@@ -15415,7 +15399,7 @@ snapshots:
 
   mlly@1.8.0:
     dependencies:
-      acorn: 8.15.0
+      acorn: 8.16.0
       pathe: 2.0.3
       pkg-types: 1.3.1
       ufo: 1.6.1
@@ -17001,7 +16985,7 @@ snapshots:
   terser@5.39.0:
     dependencies:
       '@jridgewell/source-map': 0.3.11
-      acorn: 8.15.0
+      acorn: 8.16.0
       commander: 2.20.3
       source-map-support: 0.5.21
     optional: true
@@ -17110,7 +17094,7 @@ snapshots:
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
       '@types/node': 24.10.13
-      acorn: 8.15.0
+      acorn: 8.16.0
       acorn-walk: 8.3.4
       arg: 4.1.3
       create-require: 1.1.1
@@ -17327,7 +17311,7 @@ snapshots:
   unplugin@2.3.11:
     dependencies:
       '@jridgewell/remapping': 2.3.5
-      acorn: 8.15.0
+      acorn: 8.16.0
       picomatch: 4.0.3
       webpack-virtual-modules: 0.6.2
 
