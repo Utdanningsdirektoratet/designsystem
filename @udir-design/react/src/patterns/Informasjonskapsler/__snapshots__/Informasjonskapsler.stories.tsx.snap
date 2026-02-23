@@ -1,107 +1,137 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Drawer 1`] = `
-<dialog
-  data-placement="bottom"
-  data-modal="false"
-  closedby="closerequest"
-  open
->
-  <button
-    data-icon="true"
-    data-variant="tertiary"
-    type="button"
-    aria-label="Lukk dialogvindu"
-    data-color="neutral"
-    data-command="close"
+<div data-size="auto">
+  <style>
+    /* Styles defined in application-specific css */
+            .cookies-buttons {
+              display: flex;
+              gap: var(--ds-size-4);
+              flex-wrap: wrap;
+            }
+            @media (max-width: 40rem) {
+              .cookies-buttons > button {
+          flex: 1 1 auto;
+              }
+            }
+  </style>
+  <dialog
+    data-placement="bottom"
+    data-modal="false"
+    closedby="closerequest"
+    open
   >
-  </button>
-  <div>
-    <h2>
-      Hjelp oss å forbedre nettsiden
-    </h2>
-    <p data-variant="default">
-      Nødvendige informasjonskapsler sørger for at nettstedet fungerer og er sikkert, og kan ikke velges bort. Andre brukes til statistikk, analyse, og å forbedre brukeropplevelsen. Godkjenner du alle, hjelper du oss å lage bedre nettsider og tjenester.
-      <a href="#">
-        Om informasjonskapslene.
-      </a>
-    </p>
-    <p data-variant="default">
-      Du kan når som helst endre samtykket ditt via lenken i bunnmenyen.
-    </p>
-  </div>
-  <div style="display: flex; gap: var(--ds-size-4);">
     <button
-      data-variant="secondary"
+      data-icon="true"
+      data-variant="tertiary"
       type="button"
+      aria-label="Lukk dialogvindu"
+      data-color="neutral"
+      data-command="close"
     >
-      Godta alle
     </button>
-    <button
-      data-variant="secondary"
-      type="button"
-    >
-      Tilpass valg
-    </button>
-    <button
-      data-variant="secondary"
-      type="button"
-    >
-      Godta bare nødvendige
-    </button>
-  </div>
-</dialog>
+    <div>
+      <h2>
+        Hjelp oss å forbedre nettsiden
+      </h2>
+      <p data-variant="default">
+        Nødvendige informasjonskapsler sørger for at nettstedet fungerer og er sikkert, og kan ikke velges bort. Andre brukes til statistikk, analyse, og å forbedre brukeropplevelsen. Godkjenner du alle, hjelper du oss å lage bedre nettsider og tjenester.
+        <a href="#">
+          Om informasjonskapslene.
+        </a>
+      </p>
+      <p data-variant="default">
+        Du kan når som helst endre samtykket ditt via lenken i bunnmenyen.
+      </p>
+    </div>
+    <div>
+      <button
+        data-variant="secondary"
+        type="button"
+      >
+        Godta alle
+      </button>
+      <button
+        data-variant="secondary"
+        type="button"
+      >
+        Tilpass valg
+      </button>
+      <button
+        data-variant="secondary"
+        type="button"
+      >
+        Godta bare nødvendige
+      </button>
+    </div>
+  </dialog>
+</div>
 `;
 
 exports[`Preview 1`] = `
-<dialog
-  data-placement="center"
-  data-modal="false"
-  closedby="closerequest"
-  open
->
-  <button
-    data-icon="true"
-    data-variant="tertiary"
-    type="button"
-    aria-label="Lukk dialogvindu"
-    data-color="neutral"
-    data-command="close"
+<div data-size="auto">
+  <style>
+    /* Styles defined in application-specific css */
+            .cookies-buttons {
+              display: flex;
+              gap: var(--ds-size-4);
+              flex-wrap: wrap;
+            }
+            @media (max-width: 40rem) {
+              .cookies-buttons > button {
+          flex: 1 1 auto;
+              }
+            }
+  </style>
+  <dialog
+    data-placement="center"
+    data-modal="false"
+    closedby="closerequest"
+    open
   >
-  </button>
-  <div>
-    <h2>
-      Hjelp oss å forbedre nettsiden
-    </h2>
-    <p data-variant="default">
-      Nødvendige informasjonskapsler sørger for at nettstedet fungerer og er sikkert, og kan ikke velges bort. Andre brukes til statistikk, analyse, og å forbedre brukeropplevelsen. Godkjenner du alle, hjelper du oss å lage bedre nettsider og tjenester.
-      <a href="#">
-        Om informasjonskapslene.
-      </a>
-    </p>
-    <p data-variant="default">
-      Du kan når som helst endre samtykket ditt via lenken i bunnmenyen.
-    </p>
-  </div>
-  <div style="display: flex; gap: var(--ds-size-4);">
     <button
-      data-variant="secondary"
+      data-icon="true"
+      data-variant="tertiary"
       type="button"
+      aria-label="Lukk dialogvindu"
+      data-color="neutral"
+      data-command="close"
     >
-      Godta alle
     </button>
-    <button
-      data-variant="secondary"
-      type="button"
-    >
-      Tilpass valg
-    </button>
-    <button
-      data-variant="secondary"
-      type="button"
-    >
-      Godta bare nødvendige
-    </button>
-  </div>
-</dialog>
+    <div>
+      <h2>
+        Hjelp oss å forbedre nettsiden
+      </h2>
+      <p data-variant="default">
+        Nødvendige informasjonskapsler sørger for at nettstedet fungerer og er sikkert, og kan ikke velges bort. Andre brukes til statistikk, analyse, og å forbedre brukeropplevelsen. Godkjenner du alle, hjelper du oss å lage bedre nettsider og tjenester.
+        <a href="#">
+          Om informasjonskapslene.
+        </a>
+      </p>
+      <p data-variant="default">
+        Du kan når som helst endre samtykket ditt via lenken i bunnmenyen.
+      </p>
+    </div>
+    <div>
+      <button
+        data-variant="secondary"
+        type="button"
+      >
+        Godta alle
+      </button>
+      <button
+        data-variant="secondary"
+        type="button"
+      >
+        Tilpass valg
+      </button>
+      <button
+        data-variant="secondary"
+        type="button"
+      >
+        Godta bare nødvendige
+      </button>
+    </div>
+  </dialog>
+</div>
 `;

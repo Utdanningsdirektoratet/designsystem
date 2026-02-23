@@ -1,4 +1,5 @@
 import { Button, Link, Paragraph } from '@digdir/designsystemet-react';
+import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
 import { Dialog } from 'src/components/dialog/Dialog';
 import { Heading } from 'src/components/typography/heading/Heading';
@@ -11,32 +12,50 @@ const meta = preview.meta({
       originator: 'self',
     },
   },
+  decorators: [withResponsiveDataSize],
 });
 
 export const Preview = meta.story({
   args: {},
   render: (args) => {
     return (
-      <Dialog open={true} modal={false} {...args}>
-        <Prose>
-          <Heading>Hjelp oss å forbedre nettsiden</Heading>
-          <Paragraph>
-            Nødvendige informasjonskapsler sørger for at nettstedet fungerer og
-            er sikkert, og kan ikke velges bort. Andre brukes til statistikk,
-            analyse, og å forbedre brukeropplevelsen. Godkjenner du alle,
-            hjelper du oss å lage bedre nettsider og tjenester.{' '}
-            <Link href="#">Om informasjonskapslene.</Link>
-          </Paragraph>
-          <Paragraph>
-            Du kan når som helst endre samtykket ditt via lenken i bunnmenyen.
-          </Paragraph>
-        </Prose>
-        <div style={{ display: 'flex', gap: 'var(--ds-size-4)' }}>
-          <Button variant="secondary">Godta alle</Button>
-          <Button variant="secondary">Tilpass valg</Button>
-          <Button variant="secondary">Godta bare nødvendige</Button>
-        </div>
-      </Dialog>
+      <>
+        <style>
+          {`
+            /* Styles defined in application-specific css */
+            .cookies-buttons {
+              display: flex;
+              gap: var(--ds-size-4);
+              flex-wrap: wrap;
+            }
+            @media (max-width: 40rem) {
+              .cookies-buttons > button {
+          flex: 1 1 auto;
+              }
+            }
+          `}
+        </style>
+        <Dialog open={true} modal={false} {...args}>
+          <Prose>
+            <Heading>Hjelp oss å forbedre nettsiden</Heading>
+            <Paragraph>
+              Nødvendige informasjonskapsler sørger for at nettstedet fungerer
+              og er sikkert, og kan ikke velges bort. Andre brukes til
+              statistikk, analyse, og å forbedre brukeropplevelsen. Godkjenner
+              du alle, hjelper du oss å lage bedre nettsider og tjenester.{' '}
+              <Link href="#">Om informasjonskapslene.</Link>
+            </Paragraph>
+            <Paragraph>
+              Du kan når som helst endre samtykket ditt via lenken i bunnmenyen.
+            </Paragraph>
+          </Prose>
+          <div className="cookies-buttons">
+            <Button variant="secondary">Godta alle</Button>
+            <Button variant="secondary">Tilpass valg</Button>
+            <Button variant="secondary">Godta bare nødvendige</Button>
+          </div>
+        </Dialog>
+      </>
     );
   },
 });
