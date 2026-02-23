@@ -4,7 +4,7 @@ import type { InputHTMLAttributes, ReactNode } from 'react';
 import { forwardRef, useEffect, useRef } from 'react';
 import { UploadIcon } from '@udir-design/icons';
 import { Button } from '../button/Button';
-import { Field, FieldDescription } from '../field/Field';
+import { Field } from '../field/Field';
 import type { InputProps } from '../input/Input';
 import { Label } from '../typography/label/Label';
 import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
@@ -81,7 +81,7 @@ export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
         {...rest}
       >
         {!!label && <Label>{label}</Label>}
-        {!!description && <FieldDescription>{description}</FieldDescription>}
+        {!!description && <Field.Description>{description}</Field.Description>}
         <Button
           variant="secondary"
           onClick={() => {
