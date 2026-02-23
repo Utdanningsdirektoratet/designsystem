@@ -11,7 +11,7 @@ import { Dialog } from './Dialog';
 ## Slik bruker du Dialog
 
 <Canvas of={DialogStories.Preview} withToolbar />
-<Controls />
+<Controls of={DialogStories.Preview} />
 
 Du bytter mellom modal og ikke-modal dialog ved å bruke `modal`-propen, som er satt til `true` som standard. Vi overstyrer hvordan `open` fungerer basert på verdien til `modal`.
 
