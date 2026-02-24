@@ -2,6 +2,7 @@
  * This file exports the components that are in the alpha stage of development
  */
 
+export * from './demoBanner/DemoBanner';
 export * from './fileUpload';
 export * from './footer';
 export * from './header';

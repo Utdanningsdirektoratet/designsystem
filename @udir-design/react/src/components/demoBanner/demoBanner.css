@@ -1,0 +1,30 @@
+.uds-demo-banner {
+  /* Parent needs overflow: visible for sticky banner to work */
+  overflow: visible;
+
+  > .uds-header::after,
+  > div:last-child {
+    background: var(--ds-color-warning-base-default);
+    padding: var(--ds-size-2) var(--ds-size-4);
+    text-align: center;
+    position: sticky;
+  }
+
+  > .uds-header {
+    margin-block-end: calc(1lh + (var(--ds-size-2) * 2));
+
+    &::after {
+      content: var(--udsc-demo-banner-text);
+      display: block;
+      margin-inline-start: calc(-1 * var(--udsc-header-padding));
+      margin-inline-end: calc(-1 * var(--udsc-header-padding));
+      margin-block-start: var(--udsc-header-padding);
+    }
+  }
+
+  > div {
+    &:last-child {
+      inset-block-end: 0;
+    }
+  }
+}
