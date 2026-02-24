@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Alert } from 'src/components/alert';
 import { Button } from 'src/components/button/Button';
 import { Card } from 'src/components/card/Card';
@@ -22,6 +23,7 @@ const meta = preview.meta({
 export const Preview = meta.story({
   args: {},
   parameters: {
+    docs: advancedCodeDocs,
     layout: 'fullscreen',
     customStyles: {
       height: 'auto',
@@ -29,87 +31,103 @@ export const Preview = meta.story({
       padding: 0,
     },
   },
-  render: () => (
-    <DemoBanner
-      data-testid="banner"
-      style={{
-        background: 'var(--ds-color-accent-background-tinted)',
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
-      <Header applicationName="Tjenestenavn" />
-      <div
+  decorators: (Story, context) => {
+    // Hacky way to detect docs mode in iframe-rendered story
+    const isInDocsPage =
+      window.parent.location.search.includes('viewMode=docs');
+    if (isInDocsPage) {
+      // Set viewMode since Storybook doesn't detect it properly when rendered with "inline: false" (iframe mode)
+      context.viewMode = 'docs';
+    }
+    return <Story />;
+  },
+  render: (_args, context) => {
+    return (
+      <DemoBanner
         style={{
-          paddingBlockStart: 'var(--ds-size-10)',
-          paddingBlockEnd: 'var(--ds-size-18)',
-          paddingInline: 'var(--ds-size-18)',
-          margin: '0 auto',
-          maxWidth: '1200px',
+          background: 'var(--ds-color-accent-background-tinted)',
+          minHeight: '100vh',
           display: 'flex',
-          justifyContent: 'space-between',
-          gap: 'var(--ds-size-4)',
-          flex: 1,
+          flexDirection: 'column',
         }}
       >
+        <Header applicationName="Tjenestenavn" />
         <div
           style={{
-            width: '50%',
+            paddingBlockStart: 'var(--ds-size-10)',
+            paddingBlockEnd: 'var(--ds-size-18)',
+            paddingInline: 'var(--ds-size-18)',
+            margin: '0 auto',
+            maxWidth: '1200px',
             display: 'flex',
-            flexDirection: 'column',
-            gap: 'var(--ds-size-6)',
+            justifyContent: 'space-between',
+            gap: 'var(--ds-size-4)',
+            flex: 1,
           }}
         >
-          <Heading level={1} data-size="lg">
+          <div
+            style={{
+              width: '50%',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 'var(--ds-size-6)',
+            }}
+          >
+            <Heading level={1} data-size="lg">
+              Lorem ipsum dolor sit amet consectetur
+            </Heading>
+            <Paragraph style={{ marginTop: 'var(--ds-size-3)' }}>
+              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
+              mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
+              fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
+              vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum
+              auctor ornare leo, non suscipit magna interdum eu.
+            </Paragraph>
+            <Card style={{ maxWidth: '300px' }}>
+              <Heading level={2}>
+                <a href="/">Logg inn</a>
+              </Heading>
+            </Card>
+            <Link href="#" style={{ width: 'fit-content' }}>
+              Lorem ipsum dolor sit amet consectetur.
+            </Link>
+          </div>
+          <div style={{ width: '400px' }}>
+            <Laering3 style={{ width: '100%', height: 'fit-content' }} />
+          </div>
+        </div>
+        <Dialog
+          open={true}
+          style={{ maxWidth: '650px' }}
+          // Render the dialog as inert in docs page, so it doesn't steal focus
+          {...(context.viewMode === 'docs' && { inert: true })}
+        >
+          <Heading style={{ marginBlockEnd: 'var(--ds-size-4)' }}>
             Lorem ipsum dolor sit amet consectetur
           </Heading>
-          <Paragraph style={{ marginTop: 'var(--ds-size-3)' }}>
-            Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
-            mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
-            fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
-            vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor
-            ornare leo, non suscipit magna interdum eu.
+          <Paragraph style={{ marginBlockEnd: 'var(--ds-size-3)' }}>
+            Lorem ipsum dolor sit lorem a amet, consectetur adipiscing elit, sed
+            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad.
           </Paragraph>
-          <Card style={{ maxWidth: '300px' }}>
-            <Heading level={2}>
-              <a href="/">Logg inn</a>
-            </Heading>
-          </Card>
-          <Link href="#" style={{ width: 'fit-content' }}>
-            Lorem ipsum dolor sit amet consectetur.
-          </Link>
-        </div>
-        <div style={{ width: '400px' }}>
-          <Laering3 style={{ width: '100%', height: 'fit-content' }} />
-        </div>
-      </div>
-      <Dialog open={true} style={{ maxWidth: '650px' }}>
-        <Heading style={{ marginBlockEnd: 'var(--ds-size-4)' }}>
-          Lorem ipsum dolor sit amet consectetur
-        </Heading>
-        <Paragraph style={{ marginBlockEnd: 'var(--ds-size-3)' }}>
-          Lorem ipsum dolor sit lorem a amet, consectetur adipiscing elit, sed
-          do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          ad.
-        </Paragraph>
-        <Alert
-          data-color="warning"
-          style={{ marginBlockEnd: 'var(--ds-size-3)' }}
-        >
-          Dette er kun en demo. Dine data vil ikke lagres og du risikerer å
-          måtte fylle ut på nytt.
-        </Alert>
-        <Button data-command="close">Fortsett til demo</Button>
-      </Dialog>
-      <Footer>
-        <Footer.List>
-          <Footer.Item href="#">Tilgjengelighet</Footer.Item>
-          <Footer.Item href="#">Informasjonskapsler</Footer.Item>
-        </Footer.List>
-      </Footer>
-    </DemoBanner>
-  ),
+          <Alert
+            data-color="warning"
+            style={{ marginBlockEnd: 'var(--ds-size-3)' }}
+          >
+            Dette er kun en demo. Dine data vil ikke lagres og du risikerer å
+            måtte fylle ut på nytt.
+          </Alert>
+          <Button data-command="close">Fortsett til demo</Button>
+        </Dialog>
+        <Footer>
+          <Footer.List>
+            <Footer.Item href="#">Tilgjengelighet</Footer.Item>
+            <Footer.Item href="#">Informasjonskapsler</Footer.Item>
+          </Footer.List>
+        </Footer>
+      </DemoBanner>
+    );
+  },
 });
 
 export const Laering3 = ({ style }: { style?: CSSProperties }) => {
