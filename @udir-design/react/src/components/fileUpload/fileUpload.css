@@ -11,6 +11,18 @@
   --udsc-fileUpload-removeFile-text: 'Fjern filen';
 }
 
+[lang='nn'] {
+  --udsc-fileUpload-addFile-text: 'Legg til fil';
+  --udsc-fileUpload-addFiles-text: 'Legg til filer';
+  --udsc-fileUpload-chooseFile-text: 'Vel fil';
+  --udsc-fileUpload-chooseFiles-text: 'Vel filer';
+  --udsc-fileUpload-dropFile-text: 'Dra og slepp fila her';
+  --udsc-fileUpload-dropFiles-text: 'Dra og slepp filer her';
+  --udsc-fileUpload-or-text: 'eller';
+  --udsc-fileUpload-uploading-text: 'Lastar opp...';
+  --udsc-fileUpload-removeFile-text: 'Fjern fila';
+}
+
 [lang='en'] {
   --udsc-fileUpload-addFile-text: 'Add file';
   --udsc-fileUpload-addFiles-text: 'Add files';
