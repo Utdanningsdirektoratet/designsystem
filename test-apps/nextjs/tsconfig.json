@@ -17,6 +17,9 @@
       "src/utilities/form/*": [
         "./node_modules/@udir-design/react/dist/utilities/form/alpha"
       ],
+      "src/utilities/dataVisualization": [
+        "./node_modules/@udir-design/react/dist/utilities/dataVisualization/alpha"
+      ],
       "src/utilities/*": ["./node_modules/@udir-design/react/dist/alpha"]
     },
     "plugins": [
