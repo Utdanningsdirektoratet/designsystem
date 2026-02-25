@@ -1,5 +1,4 @@
 import * as Highcharts from 'highcharts';
-import 'highcharts/i18n/nb-NO';
 import HighchartsReact from 'highcharts-react-official';
 import { useRef, useState } from 'react';
 import { Table } from 'src/components/table';
