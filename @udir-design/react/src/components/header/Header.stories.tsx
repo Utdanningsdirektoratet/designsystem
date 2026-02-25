@@ -51,6 +51,13 @@ export const Preview = meta.story({
   },
 });
 
+export const LongApplicationName = meta.story({
+  args: {
+    applicationName: 'Foreldre\u00ADundersøkelsen i barnehage',
+  },
+  render: Preview.input.render,
+});
+
 const profileImage =
   'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
