@@ -1,0 +1,2113 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Dashboard Page 2 1`] = `
+<div
+  data-color-scheme="light"
+  data-size="auto"
+  lang="nb"
+>
+  <h1 data-size="md">
+    Schweigaardsgate skole
+  </h1>
+  <div>
+    <div
+      role="tablist"
+      tabindex="0"
+    >
+      <button
+        id="tab-_r_8_"
+        aria-selected="false"
+        data-value="overview"
+        role="tab"
+        type="button"
+        data-roving-tabindex-item="true"
+        tabindex="-1"
+        aria-controls="tabpanel-_r_c_"
+      >
+        Oversikt
+      </button>
+      <button
+        id="tab-_r_9_"
+        aria-selected="true"
+        data-value="tests"
+        role="tab"
+        type="button"
+        data-roving-tabindex-item="true"
+        tabindex="0"
+        aria-controls="tabpanel-_r_d_"
+      >
+        Prøver
+      </button>
+      <button
+        id="tab-_r_a_"
+        aria-selected="false"
+        data-value="test-answers"
+        role="tab"
+        type="button"
+        data-roving-tabindex-item="true"
+        tabindex="-1"
+        aria-controls="tabpanel-_r_e_"
+      >
+        Prøvesvar
+      </button>
+      <button
+        id="tab-_r_b_"
+        aria-selected="false"
+        data-value="settings"
+        role="tab"
+        type="button"
+        data-roving-tabindex-item="true"
+        tabindex="-1"
+        aria-controls="tabpanel-_r_f_"
+      >
+        Innstillinger
+      </button>
+    </div>
+    <div
+      id="tabpanel-_r_c_"
+      role="tabpanel"
+      tabindex="0"
+      hidden
+      aria-labelledby="tab-_r_8_"
+    >
+      <p data-variant="default">
+        Her får du en oversikt over all den overordnede informasjonen.
+      </p>
+      <div>
+        <div>
+          <div data-variant="default">
+            <h2>
+              Viktige datoer
+            </h2>
+            <ul>
+              <li>
+                Prøvestart: 12. april
+              </li>
+              <li>
+                Prøvefrist: 5. mai
+              </li>
+              <li>
+                Svarfrist: 28. mai
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h2>
+            Prøveoversikt
+          </h2>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <div>
+            <svg
+              aria-label="laster inn"
+              role="img"
+              viewbox="0 0 50 50"
+              data-size="lg"
+            >
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="tabpanel-_r_d_"
+      role="tabpanel"
+      aria-labelledby="tab-_r_9_"
+    >
+      <p data-variant="default">
+        Oversikt over prøver for Schweigaardsgate skole.
+      </p>
+      <div>
+        <div>
+          <div data-variant="default">
+            <h2>
+              Viktige datoer
+            </h2>
+            <ul>
+              <li>
+                Prøvestart: 12. april
+              </li>
+              <li>
+                Prøvefrist: 5. mai
+              </li>
+              <li>
+                Svarfrist: 28. mai
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h2>
+            Prøver
+          </h2>
+          <div>
+            <a
+              href="/"
+              data-variant="default"
+              data-color="neutral"
+            >
+              <h2>
+                Administrer prøve X
+              </h2>
+            </a>
+            <a
+              href="/"
+              data-variant="default"
+              data-color="neutral"
+            >
+              <h2>
+                Administrer prøve Y
+              </h2>
+            </a>
+          </div>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <div>
+            <svg
+              aria-label="laster inn"
+              role="img"
+              viewbox="0 0 50 50"
+              data-size="lg"
+            >
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="tabpanel-_r_e_"
+      role="tabpanel"
+      tabindex="0"
+      hidden
+      aria-labelledby="tab-_r_a_"
+    >
+      <p data-variant="default">
+        Oversikt over prøvesvar for Schweigaardsgate skole.
+      </p>
+      <div>
+        <div>
+          <div data-variant="default">
+            <h2>
+              Viktige datoer
+            </h2>
+            <ul>
+              <li>
+                Prøvestart: 12. april
+              </li>
+              <li>
+                Prøvefrist: 5. mai
+              </li>
+              <li>
+                Svarfrist: 28. mai
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h2>
+            Karakterfordeling prøvesvar
+          </h2>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <div>
+            <svg
+              aria-label="laster inn"
+              role="img"
+              viewbox="0 0 50 50"
+              data-size="lg"
+            >
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="tabpanel-_r_f_"
+      role="tabpanel"
+      hidden
+      aria-labelledby="tab-_r_b_"
+    >
+      <div>
+        <div>
+          <div data-variant="default">
+            <h2>
+              Viktige datoer
+            </h2>
+            <ul>
+              <li>
+                Prøvestart: 12. april
+              </li>
+              <li>
+                Prøvefrist: 5. mai
+              </li>
+              <li>
+                Svarfrist: 28. mai
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Generelle innstillinger
+              </h2>
+              <div>
+                <input
+                  role="switch"
+                  id="dark-mode"
+                  type="checkbox"
+                  aria-describedby="dark-mode:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="dark-mode"
+                >
+                  Mørk modus
+                </label>
+                <div
+                  data-field="description"
+                  id="dark-mode:description:1"
+                >
+                  Et mørkere grensesnitt for å spare øynene.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="auto-updates"
+                  type="checkbox"
+                  value="auto-updates"
+                  checked
+                  aria-describedby="auto-updates:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="auto-updates"
+                >
+                  Automatiske oppdateringer
+                </label>
+                <div
+                  data-field="description"
+                  id="auto-updates:description:1"
+                >
+                  Bruk automatisk oppdateringer for å holde systemet oppdatert.
+                </div>
+              </div>
+            </div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Personvern
+              </h2>
+              <fieldset>
+                <legend data-weight="medium">
+                  Hvem kan se profilen din?
+                </legend>
+                <p data-variant="default">
+                  Velg hvem som har tilgang til å se profilen din.
+                </p>
+                <div>
+                  <input
+                    id="privacy-public"
+                    type="radio"
+                    value="public"
+                    checked
+                    name="privacy"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-public"
+                  >
+                    Alle
+                  </label>
+                </div>
+                <div>
+                  <input
+                    id="privacy-friends"
+                    type="radio"
+                    value="friends"
+                    name="privacy"
+                    aria-describedby="privacy-friends:description:1"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-friends"
+                  >
+                    Kun venner
+                  </label>
+                  <div
+                    data-field="description"
+                    id="privacy-friends:description:1"
+                  >
+                    Bare personer du har lagt til kan se profilen din.
+                  </div>
+                </div>
+                <div>
+                  <input
+                    id="privacy-private"
+                    type="radio"
+                    value="private"
+                    name="privacy"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-private"
+                  >
+                    Kun meg
+                  </label>
+                </div>
+                <p
+                  data-field="validation"
+                  hidden
+                  id="validation-privacy"
+                >
+                </p>
+              </fieldset>
+            </div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Varsler
+              </h2>
+              <div>
+                <input
+                  role="switch"
+                  id="sound-notifications"
+                  type="checkbox"
+                  value="sound-notifications"
+                  aria-describedby="sound-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="sound-notifications"
+                >
+                  Lydvarsler
+                </label>
+                <div
+                  data-field="description"
+                  id="sound-notifications:description:1"
+                >
+                  Spill av lyd når et varsel mottas.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="popup-notifications"
+                  type="checkbox"
+                  value="popup-notifications"
+                  aria-describedby="popup-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="popup-notifications"
+                >
+                  Popup-varsler
+                </label>
+                <div
+                  data-field="description"
+                  id="popup-notifications:description:1"
+                >
+                  Vis popup-varsler på skjermen.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="email-notifications"
+                  type="checkbox"
+                  value="email-notifications"
+                  aria-describedby="email-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="email-notifications"
+                >
+                  E-postvarsler
+                </label>
+                <div
+                  data-field="description"
+                  id="email-notifications:description:1"
+                >
+                  Tillat e-postvarsler for viktige oppdateringer.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dashboard Page 3 1`] = `
+<div
+  data-color-scheme="light"
+  data-size="auto"
+  lang="nb"
+>
+  <h1 data-size="md">
+    Schweigaardsgate skole
+  </h1>
+  <div>
+    <div
+      role="tablist"
+      tabindex="0"
+    >
+      <button
+        id="tab-_r_g_"
+        aria-selected="false"
+        data-value="overview"
+        role="tab"
+        type="button"
+        data-roving-tabindex-item="true"
+        tabindex="-1"
+        aria-controls="tabpanel-_r_k_"
+      >
+        Oversikt
+      </button>
+      <button
+        id="tab-_r_h_"
+        aria-selected="false"
+        data-value="tests"
+        role="tab"
+        type="button"
+        data-roving-tabindex-item="true"
+        tabindex="-1"
+        aria-controls="tabpanel-_r_l_"
+      >
+        Prøver
+      </button>
+      <button
+        id="tab-_r_i_"
+        aria-selected="true"
+        data-value="test-answers"
+        role="tab"
+        type="button"
+        data-roving-tabindex-item="true"
+        tabindex="0"
+        aria-controls="tabpanel-_r_m_"
+      >
+        Prøvesvar
+      </button>
+      <button
+        id="tab-_r_j_"
+        aria-selected="false"
+        data-value="settings"
+        role="tab"
+        type="button"
+        data-roving-tabindex-item="true"
+        tabindex="-1"
+        aria-controls="tabpanel-_r_n_"
+      >
+        Innstillinger
+      </button>
+    </div>
+    <div
+      id="tabpanel-_r_k_"
+      role="tabpanel"
+      tabindex="0"
+      hidden
+      aria-labelledby="tab-_r_g_"
+    >
+      <p data-variant="default">
+        Her får du en oversikt over all den overordnede informasjonen.
+      </p>
+      <div>
+        <div>
+          <div data-variant="default">
+            <h2>
+              Viktige datoer
+            </h2>
+            <ul>
+              <li>
+                Prøvestart: 12. april
+              </li>
+              <li>
+                Prøvefrist: 5. mai
+              </li>
+              <li>
+                Svarfrist: 28. mai
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h2>
+            Prøveoversikt
+          </h2>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <div>
+            <svg
+              aria-label="laster inn"
+              role="img"
+              viewbox="0 0 50 50"
+              data-size="lg"
+            >
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="tabpanel-_r_l_"
+      role="tabpanel"
+      hidden
+      aria-labelledby="tab-_r_h_"
+    >
+      <p data-variant="default">
+        Oversikt over prøver for Schweigaardsgate skole.
+      </p>
+      <div>
+        <div>
+          <div data-variant="default">
+            <h2>
+              Viktige datoer
+            </h2>
+            <ul>
+              <li>
+                Prøvestart: 12. april
+              </li>
+              <li>
+                Prøvefrist: 5. mai
+              </li>
+              <li>
+                Svarfrist: 28. mai
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h2>
+            Prøver
+          </h2>
+          <div>
+            <a
+              href="/"
+              data-variant="default"
+              data-color="neutral"
+            >
+              <h2>
+                Administrer prøve X
+              </h2>
+            </a>
+            <a
+              href="/"
+              data-variant="default"
+              data-color="neutral"
+            >
+              <h2>
+                Administrer prøve Y
+              </h2>
+            </a>
+          </div>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <div>
+            <svg
+              aria-label="laster inn"
+              role="img"
+              viewbox="0 0 50 50"
+              data-size="lg"
+            >
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="tabpanel-_r_m_"
+      role="tabpanel"
+      tabindex="0"
+      aria-labelledby="tab-_r_i_"
+    >
+      <p data-variant="default">
+        Oversikt over prøvesvar for Schweigaardsgate skole.
+      </p>
+      <div>
+        <div>
+          <div data-variant="default">
+            <h2>
+              Viktige datoer
+            </h2>
+            <ul>
+              <li>
+                Prøvestart: 12. april
+              </li>
+              <li>
+                Prøvefrist: 5. mai
+              </li>
+              <li>
+                Svarfrist: 28. mai
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h2>
+            Karakterfordeling prøvesvar
+          </h2>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <div>
+            <svg
+              aria-label="laster inn"
+              role="img"
+              viewbox="0 0 50 50"
+              data-size="lg"
+            >
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="tabpanel-_r_n_"
+      role="tabpanel"
+      hidden
+      aria-labelledby="tab-_r_j_"
+    >
+      <div>
+        <div>
+          <div data-variant="default">
+            <h2>
+              Viktige datoer
+            </h2>
+            <ul>
+              <li>
+                Prøvestart: 12. april
+              </li>
+              <li>
+                Prøvefrist: 5. mai
+              </li>
+              <li>
+                Svarfrist: 28. mai
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Generelle innstillinger
+              </h2>
+              <div>
+                <input
+                  role="switch"
+                  id="dark-mode"
+                  type="checkbox"
+                  aria-describedby="dark-mode:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="dark-mode"
+                >
+                  Mørk modus
+                </label>
+                <div
+                  data-field="description"
+                  id="dark-mode:description:1"
+                >
+                  Et mørkere grensesnitt for å spare øynene.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="auto-updates"
+                  type="checkbox"
+                  value="auto-updates"
+                  checked
+                  aria-describedby="auto-updates:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="auto-updates"
+                >
+                  Automatiske oppdateringer
+                </label>
+                <div
+                  data-field="description"
+                  id="auto-updates:description:1"
+                >
+                  Bruk automatisk oppdateringer for å holde systemet oppdatert.
+                </div>
+              </div>
+            </div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Personvern
+              </h2>
+              <fieldset>
+                <legend data-weight="medium">
+                  Hvem kan se profilen din?
+                </legend>
+                <p data-variant="default">
+                  Velg hvem som har tilgang til å se profilen din.
+                </p>
+                <div>
+                  <input
+                    id="privacy-public"
+                    type="radio"
+                    value="public"
+                    checked
+                    name="privacy"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-public"
+                  >
+                    Alle
+                  </label>
+                </div>
+                <div>
+                  <input
+                    id="privacy-friends"
+                    type="radio"
+                    value="friends"
+                    name="privacy"
+                    aria-describedby="privacy-friends:description:1"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-friends"
+                  >
+                    Kun venner
+                  </label>
+                  <div
+                    data-field="description"
+                    id="privacy-friends:description:1"
+                  >
+                    Bare personer du har lagt til kan se profilen din.
+                  </div>
+                </div>
+                <div>
+                  <input
+                    id="privacy-private"
+                    type="radio"
+                    value="private"
+                    name="privacy"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-private"
+                  >
+                    Kun meg
+                  </label>
+                </div>
+                <p
+                  data-field="validation"
+                  hidden
+                  id="validation-privacy"
+                >
+                </p>
+              </fieldset>
+            </div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Varsler
+              </h2>
+              <div>
+                <input
+                  role="switch"
+                  id="sound-notifications"
+                  type="checkbox"
+                  value="sound-notifications"
+                  aria-describedby="sound-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="sound-notifications"
+                >
+                  Lydvarsler
+                </label>
+                <div
+                  data-field="description"
+                  id="sound-notifications:description:1"
+                >
+                  Spill av lyd når et varsel mottas.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="popup-notifications"
+                  type="checkbox"
+                  value="popup-notifications"
+                  aria-describedby="popup-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="popup-notifications"
+                >
+                  Popup-varsler
+                </label>
+                <div
+                  data-field="description"
+                  id="popup-notifications:description:1"
+                >
+                  Vis popup-varsler på skjermen.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="email-notifications"
+                  type="checkbox"
+                  value="email-notifications"
+                  aria-describedby="email-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="email-notifications"
+                >
+                  E-postvarsler
+                </label>
+                <div
+                  data-field="description"
+                  id="email-notifications:description:1"
+                >
+                  Tillat e-postvarsler for viktige oppdateringer.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dashboard Page 4 1`] = `
+<div
+  data-color-scheme="light"
+  data-size="auto"
+  lang="nb"
+>
+  <h1 data-size="md">
+    Schweigaardsgate skole
+  </h1>
+  <div>
+    <div
+      role="tablist"
+      tabindex="0"
+    >
+      <button
+        id="tab-_r_o_"
+        aria-selected="false"
+        data-value="overview"
+        role="tab"
+        type="button"
+        data-roving-tabindex-item="true"
+        tabindex="-1"
+        aria-controls="tabpanel-_r_s_"
+      >
+        Oversikt
+      </button>
+      <button
+        id="tab-_r_p_"
+        aria-selected="false"
+        data-value="tests"
+        role="tab"
+        type="button"
+        data-roving-tabindex-item="true"
+        tabindex="-1"
+        aria-controls="tabpanel-_r_t_"
+      >
+        Prøver
+      </button>
+      <button
+        id="tab-_r_q_"
+        aria-selected="false"
+        data-value="test-answers"
+        role="tab"
+        type="button"
+        data-roving-tabindex-item="true"
+        tabindex="-1"
+        aria-controls="tabpanel-_r_u_"
+      >
+        Prøvesvar
+      </button>
+      <button
+        id="tab-_r_r_"
+        aria-selected="true"
+        data-value="settings"
+        role="tab"
+        type="button"
+        data-roving-tabindex-item="true"
+        tabindex="0"
+        aria-controls="tabpanel-_r_v_"
+      >
+        Innstillinger
+      </button>
+    </div>
+    <div
+      id="tabpanel-_r_s_"
+      role="tabpanel"
+      tabindex="0"
+      hidden
+      aria-labelledby="tab-_r_o_"
+    >
+      <p data-variant="default">
+        Her får du en oversikt over all den overordnede informasjonen.
+      </p>
+      <div>
+        <div>
+          <div data-variant="default">
+            <h2>
+              Viktige datoer
+            </h2>
+            <ul>
+              <li>
+                Prøvestart: 12. april
+              </li>
+              <li>
+                Prøvefrist: 5. mai
+              </li>
+              <li>
+                Svarfrist: 28. mai
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h2>
+            Prøveoversikt
+          </h2>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <div>
+            <svg
+              aria-label="laster inn"
+              role="img"
+              viewbox="0 0 50 50"
+              data-size="lg"
+            >
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="tabpanel-_r_t_"
+      role="tabpanel"
+      hidden
+      aria-labelledby="tab-_r_p_"
+    >
+      <p data-variant="default">
+        Oversikt over prøver for Schweigaardsgate skole.
+      </p>
+      <div>
+        <div>
+          <div data-variant="default">
+            <h2>
+              Viktige datoer
+            </h2>
+            <ul>
+              <li>
+                Prøvestart: 12. april
+              </li>
+              <li>
+                Prøvefrist: 5. mai
+              </li>
+              <li>
+                Svarfrist: 28. mai
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h2>
+            Prøver
+          </h2>
+          <div>
+            <a
+              href="/"
+              data-variant="default"
+              data-color="neutral"
+            >
+              <h2>
+                Administrer prøve X
+              </h2>
+            </a>
+            <a
+              href="/"
+              data-variant="default"
+              data-color="neutral"
+            >
+              <h2>
+                Administrer prøve Y
+              </h2>
+            </a>
+          </div>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <div>
+            <svg
+              aria-label="laster inn"
+              role="img"
+              viewbox="0 0 50 50"
+              data-size="lg"
+            >
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="tabpanel-_r_u_"
+      role="tabpanel"
+      tabindex="0"
+      hidden
+      aria-labelledby="tab-_r_q_"
+    >
+      <p data-variant="default">
+        Oversikt over prøvesvar for Schweigaardsgate skole.
+      </p>
+      <div>
+        <div>
+          <div data-variant="default">
+            <h2>
+              Viktige datoer
+            </h2>
+            <ul>
+              <li>
+                Prøvestart: 12. april
+              </li>
+              <li>
+                Prøvefrist: 5. mai
+              </li>
+              <li>
+                Svarfrist: 28. mai
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h2>
+            Karakterfordeling prøvesvar
+          </h2>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <div>
+            <svg
+              aria-label="laster inn"
+              role="img"
+              viewbox="0 0 50 50"
+              data-size="lg"
+            >
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="tabpanel-_r_v_"
+      role="tabpanel"
+      aria-labelledby="tab-_r_r_"
+    >
+      <div>
+        <div>
+          <div data-variant="default">
+            <h2>
+              Viktige datoer
+            </h2>
+            <ul>
+              <li>
+                Prøvestart: 12. april
+              </li>
+              <li>
+                Prøvefrist: 5. mai
+              </li>
+              <li>
+                Svarfrist: 28. mai
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Generelle innstillinger
+              </h2>
+              <div>
+                <input
+                  role="switch"
+                  id="dark-mode"
+                  type="checkbox"
+                  aria-describedby="dark-mode:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="dark-mode"
+                >
+                  Mørk modus
+                </label>
+                <div
+                  data-field="description"
+                  id="dark-mode:description:1"
+                >
+                  Et mørkere grensesnitt for å spare øynene.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="auto-updates"
+                  type="checkbox"
+                  value="auto-updates"
+                  checked
+                  aria-describedby="auto-updates:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="auto-updates"
+                >
+                  Automatiske oppdateringer
+                </label>
+                <div
+                  data-field="description"
+                  id="auto-updates:description:1"
+                >
+                  Bruk automatisk oppdateringer for å holde systemet oppdatert.
+                </div>
+              </div>
+            </div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Personvern
+              </h2>
+              <fieldset>
+                <legend data-weight="medium">
+                  Hvem kan se profilen din?
+                </legend>
+                <p data-variant="default">
+                  Velg hvem som har tilgang til å se profilen din.
+                </p>
+                <div>
+                  <input
+                    id="privacy-public"
+                    type="radio"
+                    value="public"
+                    checked
+                    name="privacy"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-public"
+                  >
+                    Alle
+                  </label>
+                </div>
+                <div>
+                  <input
+                    id="privacy-friends"
+                    type="radio"
+                    value="friends"
+                    name="privacy"
+                    aria-describedby="privacy-friends:description:1"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-friends"
+                  >
+                    Kun venner
+                  </label>
+                  <div
+                    data-field="description"
+                    id="privacy-friends:description:1"
+                  >
+                    Bare personer du har lagt til kan se profilen din.
+                  </div>
+                </div>
+                <div>
+                  <input
+                    id="privacy-private"
+                    type="radio"
+                    value="private"
+                    name="privacy"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-private"
+                  >
+                    Kun meg
+                  </label>
+                </div>
+                <p
+                  data-field="validation"
+                  hidden
+                  id="validation-privacy"
+                >
+                </p>
+              </fieldset>
+            </div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Varsler
+              </h2>
+              <div>
+                <input
+                  role="switch"
+                  id="sound-notifications"
+                  type="checkbox"
+                  value="sound-notifications"
+                  aria-describedby="sound-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="sound-notifications"
+                >
+                  Lydvarsler
+                </label>
+                <div
+                  data-field="description"
+                  id="sound-notifications:description:1"
+                >
+                  Spill av lyd når et varsel mottas.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="popup-notifications"
+                  type="checkbox"
+                  value="popup-notifications"
+                  aria-describedby="popup-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="popup-notifications"
+                >
+                  Popup-varsler
+                </label>
+                <div
+                  data-field="description"
+                  id="popup-notifications:description:1"
+                >
+                  Vis popup-varsler på skjermen.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="email-notifications"
+                  type="checkbox"
+                  value="email-notifications"
+                  aria-describedby="email-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="email-notifications"
+                >
+                  E-postvarsler
+                </label>
+                <div
+                  data-field="description"
+                  id="email-notifications:description:1"
+                >
+                  Tillat e-postvarsler for viktige oppdateringer.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dashboard Story 1`] = `
+<div
+  data-color-scheme="light"
+  data-size="auto"
+  lang="nb"
+>
+  <h1 data-size="md">
+    Schweigaardsgate skole
+  </h1>
+  <div>
+    <div
+      role="tablist"
+      tabindex="0"
+    >
+      <button
+        id="tab-_r_0_"
+        aria-selected="true"
+        data-value="overview"
+        role="tab"
+        type="button"
+        data-roving-tabindex-item="true"
+        tabindex="0"
+        aria-controls="tabpanel-_r_4_"
+      >
+        Oversikt
+      </button>
+      <button
+        id="tab-_r_1_"
+        aria-selected="false"
+        data-value="tests"
+        role="tab"
+        type="button"
+        data-roving-tabindex-item="true"
+        tabindex="-1"
+        aria-controls="tabpanel-_r_5_"
+      >
+        Prøver
+      </button>
+      <button
+        id="tab-_r_2_"
+        aria-selected="false"
+        data-value="test-answers"
+        role="tab"
+        type="button"
+        data-roving-tabindex-item="true"
+        tabindex="-1"
+        aria-controls="tabpanel-_r_6_"
+      >
+        Prøvesvar
+      </button>
+      <button
+        id="tab-_r_3_"
+        aria-selected="false"
+        data-value="settings"
+        role="tab"
+        type="button"
+        data-roving-tabindex-item="true"
+        tabindex="-1"
+        aria-controls="tabpanel-_r_7_"
+      >
+        Innstillinger
+      </button>
+    </div>
+    <div
+      id="tabpanel-_r_4_"
+      role="tabpanel"
+      tabindex="0"
+      aria-labelledby="tab-_r_0_"
+    >
+      <p data-variant="default">
+        Her får du en oversikt over all den overordnede informasjonen.
+      </p>
+      <div>
+        <div>
+          <div data-variant="default">
+            <h2>
+              Viktige datoer
+            </h2>
+            <ul>
+              <li>
+                Prøvestart: 12. april
+              </li>
+              <li>
+                Prøvefrist: 5. mai
+              </li>
+              <li>
+                Svarfrist: 28. mai
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h2>
+            Prøveoversikt
+          </h2>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <div>
+            <svg
+              aria-label="laster inn"
+              role="img"
+              viewbox="0 0 50 50"
+              data-size="lg"
+            >
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="tabpanel-_r_5_"
+      role="tabpanel"
+      hidden
+      aria-labelledby="tab-_r_1_"
+    >
+      <p data-variant="default">
+        Oversikt over prøver for Schweigaardsgate skole.
+      </p>
+      <div>
+        <div>
+          <div data-variant="default">
+            <h2>
+              Viktige datoer
+            </h2>
+            <ul>
+              <li>
+                Prøvestart: 12. april
+              </li>
+              <li>
+                Prøvefrist: 5. mai
+              </li>
+              <li>
+                Svarfrist: 28. mai
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h2>
+            Prøver
+          </h2>
+          <div>
+            <a
+              href="/"
+              data-variant="default"
+              data-color="neutral"
+            >
+              <h2>
+                Administrer prøve X
+              </h2>
+            </a>
+            <a
+              href="/"
+              data-variant="default"
+              data-color="neutral"
+            >
+              <h2>
+                Administrer prøve Y
+              </h2>
+            </a>
+          </div>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <div>
+            <svg
+              aria-label="laster inn"
+              role="img"
+              viewbox="0 0 50 50"
+              data-size="lg"
+            >
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="tabpanel-_r_6_"
+      role="tabpanel"
+      tabindex="0"
+      hidden
+      aria-labelledby="tab-_r_2_"
+    >
+      <p data-variant="default">
+        Oversikt over prøvesvar for Schweigaardsgate skole.
+      </p>
+      <div>
+        <div>
+          <div data-variant="default">
+            <h2>
+              Viktige datoer
+            </h2>
+            <ul>
+              <li>
+                Prøvestart: 12. april
+              </li>
+              <li>
+                Prøvefrist: 5. mai
+              </li>
+              <li>
+                Svarfrist: 28. mai
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h2>
+            Karakterfordeling prøvesvar
+          </h2>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <span
+            aria-hidden="true"
+            data-variant="rectangle"
+            style="width: 15.625rem;"
+          >
+          </span>
+          <div>
+            <svg
+              aria-label="laster inn"
+              role="img"
+              viewbox="0 0 50 50"
+              data-size="lg"
+            >
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="5"
+              >
+              </circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="tabpanel-_r_7_"
+      role="tabpanel"
+      hidden
+      aria-labelledby="tab-_r_3_"
+    >
+      <div>
+        <div>
+          <div data-variant="default">
+            <h2>
+              Viktige datoer
+            </h2>
+            <ul>
+              <li>
+                Prøvestart: 12. april
+              </li>
+              <li>
+                Prøvefrist: 5. mai
+              </li>
+              <li>
+                Svarfrist: 28. mai
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Generelle innstillinger
+              </h2>
+              <div>
+                <input
+                  role="switch"
+                  id="dark-mode"
+                  type="checkbox"
+                  aria-describedby="dark-mode:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="dark-mode"
+                >
+                  Mørk modus
+                </label>
+                <div
+                  data-field="description"
+                  id="dark-mode:description:1"
+                >
+                  Et mørkere grensesnitt for å spare øynene.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="auto-updates"
+                  type="checkbox"
+                  value="auto-updates"
+                  checked
+                  aria-describedby="auto-updates:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="auto-updates"
+                >
+                  Automatiske oppdateringer
+                </label>
+                <div
+                  data-field="description"
+                  id="auto-updates:description:1"
+                >
+                  Bruk automatisk oppdateringer for å holde systemet oppdatert.
+                </div>
+              </div>
+            </div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Personvern
+              </h2>
+              <fieldset>
+                <legend data-weight="medium">
+                  Hvem kan se profilen din?
+                </legend>
+                <p data-variant="default">
+                  Velg hvem som har tilgang til å se profilen din.
+                </p>
+                <div>
+                  <input
+                    id="privacy-public"
+                    type="radio"
+                    value="public"
+                    checked
+                    name="privacy"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-public"
+                  >
+                    Alle
+                  </label>
+                </div>
+                <div>
+                  <input
+                    id="privacy-friends"
+                    type="radio"
+                    value="friends"
+                    name="privacy"
+                    aria-describedby="privacy-friends:description:1"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-friends"
+                  >
+                    Kun venner
+                  </label>
+                  <div
+                    data-field="description"
+                    id="privacy-friends:description:1"
+                  >
+                    Bare personer du har lagt til kan se profilen din.
+                  </div>
+                </div>
+                <div>
+                  <input
+                    id="privacy-private"
+                    type="radio"
+                    value="private"
+                    name="privacy"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="privacy-private"
+                  >
+                    Kun meg
+                  </label>
+                </div>
+                <p
+                  data-field="validation"
+                  hidden
+                  id="validation-privacy"
+                >
+                </p>
+              </fieldset>
+            </div>
+            <div
+              data-variant="tinted"
+              data-color="support1"
+            >
+              <h2>
+                Varsler
+              </h2>
+              <div>
+                <input
+                  role="switch"
+                  id="sound-notifications"
+                  type="checkbox"
+                  value="sound-notifications"
+                  aria-describedby="sound-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="sound-notifications"
+                >
+                  Lydvarsler
+                </label>
+                <div
+                  data-field="description"
+                  id="sound-notifications:description:1"
+                >
+                  Spill av lyd når et varsel mottas.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="popup-notifications"
+                  type="checkbox"
+                  value="popup-notifications"
+                  aria-describedby="popup-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="popup-notifications"
+                >
+                  Popup-varsler
+                </label>
+                <div
+                  data-field="description"
+                  id="popup-notifications:description:1"
+                >
+                  Vis popup-varsler på skjermen.
+                </div>
+              </div>
+              <div>
+                <input
+                  role="switch"
+                  id="email-notifications"
+                  type="checkbox"
+                  value="email-notifications"
+                  aria-describedby="email-notifications:description:1"
+                >
+                <label
+                  data-weight="regular"
+                  for="email-notifications"
+                >
+                  E-postvarsler
+                </label>
+                <div
+                  data-field="description"
+                  id="email-notifications:description:1"
+                >
+                  Tillat e-postvarsler for viktige oppdateringer.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

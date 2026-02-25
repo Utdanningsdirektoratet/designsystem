@@ -1,0 +1,38 @@
+.article {
+  padding: var(--ds-size-3);
+  @media (min-width: 25.5rem) {
+    padding: var(--ds-size-4);
+  }
+  @media (min-width: 48rem) {
+    padding: var(--ds-size-6);
+  }
+}
+
+.contentSpacing {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-13);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-3);
+}
+
+.contentWrapper {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.headingWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: wrap;
+  gap: var(--ds-size-1) var(--ds-size-4);
+}
+
+.scrollButton {
+  margin: 0 auto;
+}

@@ -1,10 +1,4 @@
-import {
-  Meta,
-  Canvas,
-  Controls,
-  Primary,
-  ArgTypes,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as RadioStories from './Radio.stories';
 import * as useRadioGroupStories from '../../utilities/hooks/useRadioGroup/useRadioGroup.stories';
 import {
@@ -34,8 +28,8 @@ Vi bruker `Radio` (radioknapp) for å gi brukerne valg, der de kan velge mellom 
 
 ## Slik bruker du Radio
 
-<Primary />
-<Controls />
+<Canvas of={RadioStories.Preview} withToolbar />
+<Controls of={RadioStories.Preview} />
 
 ```tsx
 import { Radio } from '@udir-design/react';

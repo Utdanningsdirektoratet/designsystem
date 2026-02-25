@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as FieldNecessityStories from './FieldNecessity.stories';
 import { Field } from '@digdir/designsystemet-react';
 import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/CssLanguageVariables';
@@ -15,8 +15,8 @@ import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/Cs
 
 ## Slik bruker du FieldNecessity
 
-<Primary />
-<Controls />
+<Canvas of={FieldNecessityStories.Preview} withToolbar />
+<Controls of={FieldNecessityStories.Preview} />
 
 ```tsx
 import { FieldNecessity } from '@udir-design/react';
@@ -91,27 +91,15 @@ Oppsummeringen vil alltid leses av skjermlesere dersom den er synlig.
 
 ## Språkstøtte
 
-Komponenten har innebygget støtte for bokmål og engelsk. [Slik støtter du flere språk](/docs/components-språkstøtte--docs).
+Komponenten har innebygget støtte for bokmål, nynorsk og engelsk. [Slik støtter du flere språk](/docs/components-språkstøtte--docs).
 
 Følgende tekstvariabler er tilgjengelige for overstyring:
 
 <CssLanguageVariables
-  variables={{
-    '--udsc-fieldNecessity-required-text': {
-      nb: 'Må fylles ut',
-      en: 'Required',
-    },
-    '--udsc-fieldNecessity-optional-text': {
-      nb: 'Valgfritt',
-      en: 'Optional',
-    },
-    '--udsc-fieldNecessity-all-required-text': {
-      nb: 'Alle felt må fylles ut',
-      en: 'All fields are required',
-    },
-    '--udsc-fieldNecessity-all-optional-text': {
-      nb: 'Alle felt er valgfri',
-      en: 'All fields are optional',
-    },
-  }}
+  variables={[
+    '--udsc-fieldNecessity-required-text',
+    '--udsc-fieldNecessity-optional-text',
+    '--udsc-fieldNecessity-all-required-text',
+    '--udsc-fieldNecessity-all-optional-text',
+  ]}
 />

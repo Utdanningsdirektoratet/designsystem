@@ -1,4 +1,4 @@
-import { Meta, Controls, Primary, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Controls, Canvas } from '@storybook/addon-docs/blocks';
 import * as FieldsetStories from './Fieldset.stories';
 
 <Meta of={FieldsetStories} />
@@ -18,8 +18,8 @@ import * as FieldsetStories from './Fieldset.stories';
 
 ## Slik bruker du Fieldset
 
-<Primary />
-<Controls />
+<Canvas of={FieldsetStories.Preview} withToolbar />
+<Controls of={FieldsetStories.Preview} />
 
 ```tsx
 import { Fieldset } from '@udir-design/react';

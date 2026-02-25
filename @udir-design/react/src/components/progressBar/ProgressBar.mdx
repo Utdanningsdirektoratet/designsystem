@@ -1,10 +1,4 @@
-import {
-  Meta,
-  Primary,
-  Controls,
-  Canvas,
-  ArgTypes,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Controls, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as ProgressBarStories from './ProgressBar.stories';
 
 <Meta of={ProgressBarStories} />
@@ -23,8 +17,8 @@ import * as ProgressBarStories from './ProgressBar.stories';
 
 ## Slik bruker du ProgressBar
 
-<Primary />
-<Controls />
+<Canvas of={ProgressBarStories.Preview} withToolbar />
+<Controls of={ProgressBarStories.Preview} />
 
 ```tsx
 import { ProgressBar } from '@udir-design/react';

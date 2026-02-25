@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as InputStories from './Input.stories';
 
 <Meta of={InputStories} />
@@ -19,8 +19,8 @@ Se også [`Textfield`](/docs/components-textfield--docs) som er en gruppering av
 
 ## Slik bruker du Input
 
-<Primary />
-<Controls />
+<Canvas of={InputStories.Preview} withToolbar />
+<Controls of={InputStories.Preview} />
 
 ```tsx
 import { Input } from '@udir-design/react';

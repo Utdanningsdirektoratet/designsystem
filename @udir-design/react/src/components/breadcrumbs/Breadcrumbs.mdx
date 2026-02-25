@@ -1,4 +1,4 @@
-import { Meta, Controls, Primary, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Controls, Canvas } from '@storybook/addon-docs/blocks';
 import * as BreadcrumbsStories from './Breadcrumbs.stories';
 
 <Meta of={BreadcrumbsStories} />
@@ -18,8 +18,8 @@ Vi bruker `Breadcrumbs` til å hjelpe brukerne å forstå hvor de er i en hierar
 
 ## Slik bruker du Breadcrumbs
 
-<Primary />
-<Controls />
+<Canvas of={BreadcrumbsStories.Preview} withToolbar />
+<Controls of={BreadcrumbsStories.Preview} />
 
 ```tsx
 <Breadcrumbs aria-label="Du er her:">

@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as TagStories from './Tag.stories';
 
 <Meta of={TagStories} />
@@ -20,8 +20,8 @@ En `Tag` er en merkelapp som kan brukes til å kategorisere elementer eller komm
 
 ## Slik bruker du Tag
 
-<Primary />
-<Controls />
+<Canvas of={TagStories.Preview} withToolbar />
+<Controls of={TagStories.Preview} />
 
 ```tsx
 import { Tag } from '@udir-design/react';

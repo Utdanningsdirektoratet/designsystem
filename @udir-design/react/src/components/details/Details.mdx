@@ -1,10 +1,4 @@
-import {
-  Meta,
-  Canvas,
-  Controls,
-  Primary,
-  ArgTypes,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as DetailsStories from './Details.stories';
 import { Details } from './Details';
 import { DetailsEx1, DetailsEx2 } from './docs/doAndDont';
@@ -38,8 +32,8 @@ Med `Details` kan du presentere mye innhold på liten plass i én eller flere ra
 
 ## Slik bruker du Details
 
-<Primary />
-<Controls />
+<Canvas of={DetailsStories.Preview} withToolbar />
+<Controls of={DetailsStories.Preview} />
 
 ```tsx
 /* Uten ramme */

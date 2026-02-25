@@ -1,4 +1,4 @@
-import { Meta, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as SkipLinkStories from './SkipLink.stories';
 
 <Meta of={SkipLinkStories} />
@@ -13,8 +13,8 @@ Vi bruker snarvei-komponenten `SkipLink` for å la folk som bruker tastaturet ti
 
 ## Slik bruker du SkipLink
 
-<Primary />
-<Controls />
+<Canvas of={SkipLinkStories.Preview} withToolbar />
+<Controls of={SkipLinkStories.Preview} />
 
 ```tsx
 import { SkipLink } from '@udir-design/react';

@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as FileUploadStories from './FileUpload.stories';
 import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/CssLanguageVariables';
 
@@ -16,8 +16,8 @@ import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/Cs
 
 ## Slik bruker du FileUpload
 
-<Primary />
-<Controls />
+<Canvas of={FileUploadStories.Preview} withToolbar />
+<Controls of={FileUploadStories.Preview} />
 
 ```tsx
 import { FileUpload } from '@udir-design/react';
@@ -77,43 +77,19 @@ Ved bruk av `ErrorSummary` bør feil med flere filer oppsummeres i ett punkt, me
 
 ## Språkstøtte
 
-Komponenten har innebygget støtte for bokmål og engelsk. [Slik støtter du flere språk](/docs/components-språkstøtte--docs).
+Komponenten har innebygget støtte for bokmål, nynorsk og engelsk. [Slik støtter du flere språk](/docs/components-språkstøtte--docs).
 
 Følgende tekstvariabler er tilgjengelige for overstyring:
 
 <CssLanguageVariables
-  variables={{
-    '--udsc-fileUpload-addFile-text': {
-      nb: 'Legg til fil',
-      en: 'Add file',
-    },
-    '--udsc-fileUpload-addFiles-text': {
-      nb: 'Legg til filer',
-      en: 'Add files',
-    },
-    '--udsc-fileUpload-chooseFile-text': {
-      nb: 'Velg fil',
-      en: 'Choose file',
-    },
-    '--udsc-fileUpload-chooseFiles-text': {
-      nb: 'Velg filer',
-      en: 'Choose files',
-    },
-    '--udsc-fileUpload-dropFile-text': {
-      nb: 'Dra og slipp fil her',
-      en: 'Drag and drop file here',
-    },
-    '--udsc-fileUpload-dropFiles-text': {
-      nb: 'Dra og slipp filer her',
-      en: 'Drag and drop files here',
-    },
-    '--udsc-fileUpload-or-text': {
-      nb: 'eller',
-      en: 'or',
-    },
-    '--udsc-fileUpload-uploading-text': {
-      nb: 'Laster opp...',
-      en: 'Uploading...',
-    },
-  }}
+  variables={[
+    '--udsc-fileUpload-addFile-text',
+    '--udsc-fileUpload-addFiles-text',
+    '--udsc-fileUpload-chooseFile-text',
+    '--udsc-fileUpload-chooseFiles-text',
+    '--udsc-fileUpload-dropFile-text',
+    '--udsc-fileUpload-dropFiles-text',
+    '--udsc-fileUpload-or-text',
+    '--udsc-fileUpload-uploading-text',
+  ]}
 />

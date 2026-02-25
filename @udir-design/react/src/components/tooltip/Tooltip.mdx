@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as TooltipStories from './Tooltip.stories.tsx';
 
 <Meta of={TooltipStories} />
@@ -22,8 +22,8 @@ import * as TooltipStories from './Tooltip.stories.tsx';
 
 ## Slik bruker du Tooltip
 
-<Primary />
-<Controls />
+<Canvas of={TooltipStories.Preview} withToolbar />
+<Controls of={TooltipStories.Preview} />
 
 ```tsx
 import { Tooltip } from '@udir-design/react';

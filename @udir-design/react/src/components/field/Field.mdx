@@ -1,4 +1,4 @@
-import { Meta, Controls, Primary, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Controls, Canvas } from '@storybook/addon-docs/blocks';
 
 import * as FieldStories from './Field.stories';
 
@@ -18,8 +18,8 @@ import * as FieldStories from './Field.stories';
 
 ## Slik bruker du Field
 
-<Primary />
-<Controls />
+<Canvas of={FieldStories.Preview} withToolbar />
+<Controls of={FieldStories.Preview} />
 
 ```tsx
 <Field>

@@ -1,4 +1,4 @@
-import { Meta, Primary, Controls, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Controls, Canvas } from '@storybook/addon-docs/blocks';
 import * as SkeletonStories from './Skeleton.stories';
 
 <Meta of={SkeletonStories} />
@@ -19,8 +19,8 @@ import * as SkeletonStories from './Skeleton.stories';
 
 ## Slik bruker du Skeleton
 
-<Primary />
-<Controls />
+<Canvas of={SkeletonStories.Preview} withToolbar />
+<Controls of={SkeletonStories.Preview} />
 
 ## Varianter av Skeleton
 

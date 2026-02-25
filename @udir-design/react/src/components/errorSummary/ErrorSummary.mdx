@@ -1,10 +1,4 @@
-import {
-  Meta,
-  Controls,
-  Primary,
-  ArgTypes,
-  Canvas,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Controls, ArgTypes, Canvas } from '@storybook/addon-docs/blocks';
 
 import * as ErrorSummaryStories from './ErrorSummary.stories';
 
@@ -28,8 +22,8 @@ mangler som må rettes på en side eller i et steg for å komme videre.
 
 ## Slik bruker du ErrorSummary
 
-<Primary />
-<Controls />
+<Canvas of={ErrorSummaryStories.Preview} withToolbar />
+<Controls of={ErrorSummaryStories.Preview} />
 
 `ErrorSummary` består av flere delkomponenter som må brukes riktig.
 

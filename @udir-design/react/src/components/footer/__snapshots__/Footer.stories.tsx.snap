@@ -62,6 +62,68 @@ exports[`Preview 1`] = `
 </div>
 `;
 
+exports[`Preview Test 1`] = `
+<div data-size="auto">
+  <footer style="--udsc-footer-max-width: 80rem;">
+    <div>
+      <ul data-variant="simple">
+        <li>
+          <a href="#">
+            Om tjenesten
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Kontakt oss
+          </a>
+        </li>
+      </ul>
+      <ul data-variant="simple">
+        <li>
+          <a href="#">
+            Lenke
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Lenke
+          </a>
+        </li>
+      </ul>
+      <ul data-variant="simple">
+        <li>
+          <a href="#">
+            Personvernerklæring
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Informasjonskapsler
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Tilgjengelighetserklæring
+          </a>
+        </li>
+      </ul>
+      <a href="https://udir.no">
+        <div style="--uds-logo-padding: 0;">
+          <img
+            alt="Utdanningsdirektoratet"
+            src="/assets/img/udir-main-logo.svg"
+          >
+          <img
+            alt="Utdanningsdirektoratet"
+            src="/assets/img/udir-main-logo-dark-mode.svg"
+          >
+        </div>
+      </a>
+    </div>
+  </footer>
+</div>
+`;
+
 exports[`Tjeneste 1`] = `
 <div data-size="auto">
   <footer style="--udsc-footer-max-width: 80rem;">

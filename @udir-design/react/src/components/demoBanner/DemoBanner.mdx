@@ -1,0 +1,39 @@
+import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
+import * as DemoBannerStories from './DemoBanner.stories';
+
+<Meta of={DemoBannerStories} />
+
+# DemoBanner
+
+`DemoBanner` brukes for å tydeliggjøre for sluttbruker at man er i en demo-versjon av en applikasjon. Dette er viktig å tydeliggjøre for å unngå at brukere fullfører demo-versjon av prøver, undersøkelser eller lignende. Les om [bruksmønster for markering av demo-versjoner](/docs/patterns-demoversjon-av-tjenester--docs).
+
+**Passer til å**
+
+- Markere at man er i en demo-versjon av en applikasjon hvor data ikke lagres
+
+**Passer ikke til å**
+
+- Markere hvilket utviklingsmiljø man er i - bruk heller en [`Tag` i `Header`](/docs/components-header--docs#utviklingsmilj%C3%B8)
+
+## Slik bruker du DemoBanner
+
+<Primary />
+<Controls />
+
+```tsx
+import { DemoBanner } from '@udir-design/react';
+
+<DemoBanner>
+  <Header />
+  {/* Innhold på siden */}
+  <Footer />
+</DemoBanner>;
+```
+
+## Tekst i DemoBanner
+
+Dersom du skal støtte flere språk eller ønsker en annen tekst i banneret, kan du selv overstyre default med propertien `text`.
+
+## Innhold på siden
+
+Vær oppmerksom på at den øverste delen av `DemoBanner` legges under header med en ekstra margin for å unngå at den overlapper med øvring innhold på siden. Den nederste delen legges over annet innhold. Sørg for at det ikke er viktig innhold i bunnen av siden som kan bli dekket av banneret.
