@@ -946,6 +946,14 @@ exports[`Auto Hide Sticky Test 1`] = `
 
 exports[`Long Application Name 1`] = `
 <div data-size="auto">
+  <style>
+    /* Styles defined in application-specific css */
+        @media (max-width: 22.74rem) {
+        .uds-header {
+          --udsc-header-height: var(--ds-size-25);
+        }
+      }
+  </style>
   <header
     data-scroll-direction="up"
     data-top="true"

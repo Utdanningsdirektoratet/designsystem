@@ -110,7 +110,13 @@
     position: fixed;
     width: 100%;
     border: none;
-    inset-block-start: calc(var(--udsc-header-padding) - var(--ds-size-3));
+    /* Position menu at the bottom edge of the header content.
+    paddingY = (headerHeight - headerContentHeight) / 2
+    Round down to whole px to avoid subpixel jitter, then offset by trigger size. */
+    inset-block-start: calc(
+      round(down, (var(--udsc-header-height) - var(--ds-size-12)) / 2, 1px) -
+        var(--ds-size-3)
+    );
     max-height: 0;
     overflow: hidden;
     background-color: var(--ds-color-background-default);
