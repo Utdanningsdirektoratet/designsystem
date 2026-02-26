@@ -245,9 +245,10 @@ export const ExampleItems = meta.story({
       new File(['abc'.repeat(100000)], 'eksempel1.pdf'),
       new File(['abc'.repeat(10000)], 'eksempel2.docx'),
       new File(['abc'.repeat(1000000)], 'eksempel3.png'),
+      new File(['abc'.repeat(123000)], 'eksempel4.pdf'),
     ];
     const dummyRejected: File[] = [
-      new File(['abc'.repeat(288000)], 'eksempel4.tsx'),
+      new File(['abc'.repeat(288000)], 'eksempel5.tsx'),
     ];
 
     const [files, setFiles] = useState<File[]>(dummyFiles);
@@ -282,7 +283,8 @@ export const ExampleItems = meta.story({
               <FileUpload.Item
                 key={index}
                 file={file}
-                loading={index === 2 && true}
+                readonly={index === 2 && true}
+                loading={index === 3 && true}
                 onRemove={() => removeFile(file)}
               />
             ))}

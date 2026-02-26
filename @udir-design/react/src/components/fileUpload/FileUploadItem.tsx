@@ -48,6 +48,10 @@ export interface FileUploadItemProps extends Omit<
    * @default false
    */
   loading?: boolean;
+  /**
+   * @default false
+   */
+  readonly?: boolean;
 }
 
 export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
@@ -56,6 +60,7 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
       file,
       error,
       loading,
+      readonly = false,
       className,
       'data-size': size,
       onRemove,
@@ -74,6 +79,7 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
         .trim();
       setTooltipContent(content);
     }, []);
+
     return (
       <Card
         className={cl('uds-file-upload__item', className)}
@@ -84,10 +90,11 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
         {...rest}
       >
         <div>
-          <Icon file={file} showError={Boolean(error)} loading={loading} />
+          <div>
+            <Icon file={file} showError={Boolean(error)} loading={loading} />
+          </div>
           <div>
             <Link
-              href="#"
               download={file.name}
               onClick={(event) => {
                 event.preventDefault();
@@ -101,7 +108,7 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
               {!loading && formatFileSize(file)}
             </Paragraph>
           </div>
-          {!loading && (
+          {!loading && !readonly && (
             <Tooltip content={tooltipContent} ref={tooltipRef}>
               <Button
                 icon

@@ -54,19 +54,26 @@
     }
   }
 
-  &:has(input[readOnly]) {
-    & > :is(.ds-card, .ds-button) {
-      display: none;
-    }
-    &::after {
-      display: block;
-      content: 'Feltet er skrivebeskyttet, du kan ikke laste opp filer';
-      color: var(--ds-color-neutral-text-subtle);
-      margin-block-start: var(--ds-size-2);
-    }
+  /* 
+  * We dont want the label and description to look disabled 
+  * when the input is disabled, because it is treated as readonly
+  */
+  &:has(
+      [aria-disabled='true']:not(
+        u-option,
+        [role='option'][aria-disabled='true']
+      ),
+      :disabled:not(option)
+    )
+    > label,
+  [data-field='description'] {
+    cursor: not-allowed;
+    opacity: 1;
   }
 
-  &:not([aria-busy='true']):not(:has(input[readOnly])) {
+  &:not([aria-busy='true']):not(:has(input[readOnly])):not(
+      :has(input[disabled])
+    ) {
     &:hover {
       & > .ds-card {
         cursor: pointer;

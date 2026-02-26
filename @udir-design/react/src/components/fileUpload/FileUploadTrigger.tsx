@@ -41,6 +41,10 @@ export type FileUploadProps = InputHTMLAttributes<HTMLInputElement> & {
    * Id for the input field
    */
   id?: string;
+  /**
+   * @default false
+   */
+  readonly?: boolean;
 };
 
 export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
@@ -52,6 +56,7 @@ export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
       label,
       error,
       description,
+      readonly = false,
       inputProps,
       id,
       ...rest
@@ -83,6 +88,7 @@ export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
         {!!label && <Label>{label}</Label>}
         {!!description && <Field.Description>{description}</Field.Description>}
         <Button
+          disabled={inputProps?.readOnly ?? readonly}
           variant="secondary"
           onClick={() => {
             fileInputRef.current?.click();

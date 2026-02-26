@@ -1,6 +1,6 @@
 import cl from 'clsx/lite';
 import { forwardRef, useEffect, useRef } from 'react';
-import { UploadIcon } from '@udir-design/icons';
+import { CircleSlashIcon, UploadIcon } from '@udir-design/icons';
 import { Button } from '../button/Button';
 import { Card } from '../card/Card';
 import './fileUpload.css';
@@ -22,6 +22,7 @@ export const FileUploadDropzone = forwardRef<
     error,
     multiple,
     description,
+    readonly = false,
     inputProps,
     ...rest
   },
@@ -41,6 +42,9 @@ export const FileUploadDropzone = forwardRef<
       .trim();
     buttonRef.current.setAttribute('aria-label', buttonAriaLabel);
   }, [cssVar]);
+
+  const disabled = inputProps?.readOnly ?? readonly;
+
   return (
     <Field
       className={cl(`uds-file-upload`, className)}
@@ -54,15 +58,16 @@ export const FileUploadDropzone = forwardRef<
         {/* Text in css */}
         <div>{/* Text in css */}</div>
         <Button variant="secondary" ref={buttonRef}>
-          <UploadIcon aria-hidden />
+          {disabled ? <CircleSlashIcon /> : <UploadIcon aria-hidden />}
           {/* Text in css */}
         </Button>
       </Card>
       <input
         type="file"
         {...inputProps}
+        disabled={disabled}
         onClick={(e) => {
-          if (inputProps?.readOnly) {
+          if (disabled) {
             e.preventDefault();
           }
           inputProps?.onClick?.(e);
