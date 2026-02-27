@@ -142,11 +142,40 @@ catalogs:
 
 cleanupUnusedCatalogs: true
 
+ignoredBuiltDependencies:
+  - '@bundled-es-modules/glob'
+  - '@parcel/watcher'
+  - '@swc/core'
+  - esbuild
+  - lmdb
+  - msgpackr-extract
+  - msw
+  - nx
+  - oxc-resolver
+  - sharp
+  - style-dictionary
+  - unrs-resolver
+
 minimumReleaseAge: 1440
 
 minimumReleaseAgeExclude:
   - '@digdir/*'
   - '@u-elements/*'
+
+overrides:
+  '@eslint/plugin-kit@<0.3.4': '>=0.3.4'
+  chokidar@>=4.0.0 <5: ^5.0.0
+  glob@>=10.2.0 <10.5.0: ^10.5.0
+  jws@<3.2.3: '>=3.2.3'
+  jws@=4.0.0: '>=4.0.1'
+  minimatch@>=10.0.0 <10.2.1: '>=10.2.1'
+  minimatch@>=10.0.0 <10.2.3: '>=10.2.3'
+  minimatch@>=9.0.0 <9.0.6: '>=9.0.6'
+  minimatch@>=9.0.0 <9.0.7: '>=9.0.7'
+  qs@<6.14.1: '>=6.14.1'
+  semver@<7: ^7
+  tmp@<=0.2.3: '>=0.2.4'
+  unist-util-visit@<5: ^5.0.0
 
 packageExtensions:
   '@navikt/aksel-icons':
@@ -158,6 +187,9 @@ packageExtensions:
         optional: true
       react:
         optional: true
+
+patchedDependencies:
+  remark-heading-id@1.0.1: patches/remark-heading-id@1.0.1.patch
 
 trustPolicy: no-downgrade
 
