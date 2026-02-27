@@ -1,0 +1,49 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import * as InformasjonskapslerStories from './Informasjonskapsler.stories';
+
+<Meta title="patterns/Informasjonskapsler" />
+
+# Informasjonskapsler
+
+Tjenester som bruker informasjonskapsler må informere brukerne og gi mulighet til å på forhånd velge hvilke informasjonskapsler som settes.
+
+Designsystemet gir **ikke** føringer for hvilken **teknisk løsning** systemene bruker for håndtering av informasjonskapsler, verken når det gjelder egenutviklede løsninger eller bruk av tredjepart. Kontakt Udirs Plattformteam ved valg av teknisk løsning for ditt system.
+
+Designsystemet gir føringer for **den visuelle utformingen** av valg for informasjonskapsler for de tjenestene som bruker egenutviklede løsninger for å håndtere informasjonskapsler. Den visuelle utformingen bør være som beskrevet under.
+
+## Dialog
+
+Valg for informasjonskapsler skal vises i en [`ikke-modal Dialog`](/docs/components-dialog--docs#ikke-modal-dialog) som er synlig ved første besøk på tjenesten. Den kan plasseres i midten eller nederst i vinduet, men skal ikke blokkere kritisk innhold.
+
+<Canvas
+  of={InformasjonskapslerStories.Preview}
+  story={{ inline: false, height: '450px' }}
+/>
+
+`Dialog` vises som et banner dersom det er plassert nederst i vinduet.
+
+<Canvas
+  of={InformasjonskapslerStories.Drawer}
+  story={{ inline: false, height: '450px' }}
+/>
+
+## Valgalternativer
+
+Knappene i dialogen skal være tydelige valgalternativer for brukeren. Valgene skal være likestilte slik at det er like enkelt å velge det ene som det andre.
+
+- **Godta alle** – Bruker tillater alle informasjonskapsler ved å klikke på denne.
+- **Tilpass valg** - Gir brukeren mulighet til å skille mellom statistiske og funksjonelle informasjonskapsler (hvis tjenesten har begge typer).
+- **Avvis valgfrie** – Avviser alle informasjonskapsler som ikke er nødvendige for at tjenesten skal fungere.
+
+Dialogen skal også inneholde et lukkekryss slik at brukeren kjapt kan lukke dialogen uten å ta stilling til valgene. Trykker brukeren på lukkekrysset, skal det tolkes som at brukeren avviser alle informasjonskapsler som ikke er nødvendige for at tjenesten skal fungere.
+
+## Tekst
+
+Teksten om informasjonskapsler skal være enkel og forståelig for målgruppen. Teksten bør inneholde informasjon som gjør at leseren forstår hva et samtykke innebærer, lenke til utdypende informasjon om informasjonskapsler for den spesifikke tjenesten, og informasjon om hvordan de kan endre samtykket.
+
+Innholdet i teksten er avhengig av hvilke informasjonskapsler tjenesten bruker. Ta gjerne utgangspunkt i eksempelet og tilpass det til tjenesten deres. Les mer om hva som kreves for at et [samtykke til bruk av valgfrie informasjonskapsler (datatilsynet.no)](https://www.datatilsynet.no/personvern-pa-ulike-omrader/internett-og-apper/bruk-av-informasjonskapsler-og-andre-sporingsteknologier/1-gi-klar-og-forstaelig-informasjon-i-samtykkeboksen/) skal være gyldig.
+
+Bruk en lenke i teksten for å gi brukeren tilgang til detaljert informasjon om informasjonskapsler i den spesifikke tjenesten. Lenken "Om informasjonskapslene" i eksempelet fører til en side som beskriver tjenestens egne informasjonskapsler, ikke generelle opplysninger om informasjonskapsler.
+
+For å være sikker på at det tekstlige innholdet er korrekt, anbefaler vi at dere kontakter internjuridisk for å få det kvalitetssikret.
