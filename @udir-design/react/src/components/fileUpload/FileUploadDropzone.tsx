@@ -65,6 +65,7 @@ export const FileUploadDropzone = forwardRef<
       <input
         type="file"
         {...inputProps}
+        readOnly={disabled}
         disabled={disabled}
         onClick={(e) => {
           if (disabled) {

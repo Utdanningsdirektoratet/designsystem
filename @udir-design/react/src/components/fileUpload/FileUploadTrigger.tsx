@@ -101,6 +101,7 @@ export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
         <input
           type="file"
           ref={fileInputRef}
+          readOnly={inputProps?.readOnly ?? readonly}
           multiple={Boolean(multiple) || undefined}
           id={id}
           {...inputProps}

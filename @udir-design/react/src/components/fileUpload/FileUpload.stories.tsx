@@ -61,11 +61,31 @@ export const Preview = meta.story({
   },
 });
 
-export const Readonly = Preview.extend({
-  args: {
-    inputProps: {
-      readOnly: true,
-    },
+export const Readonly = meta.story({
+  render: (args) => {
+    return (
+      <div
+        style={{
+          background: 'var(--ds-color-neutral-surface-tinted)',
+          display: 'flex',
+          gap: 'var(--ds-size-12)',
+          justifyContent: 'center',
+          padding: 'var(--ds-size-8)',
+          borderRadius: 'var(--ds-border-radius-md)',
+        }}
+      >
+        <FileUpload.Trigger
+          readonly
+          label="Lesemodus"
+          description="Beskrivelse for Trigger"
+        />
+        <FileUpload.Dropzone
+          readonly
+          label="Lesemodus"
+          description="Beskrivelse for Dropzone"
+        />
+      </div>
+    );
   },
 });
 
@@ -73,6 +93,14 @@ export const ExampleDropZone = meta.story({
   render: (args) => {
     const [files, setFiles] = useState<File[]>([]);
     const [rejected, setRejected] = useState<FileRejection[]>([]);
+    const [maxFiles, setMaxFiles] = useState<number>(2);
+    // const max = () => {
+    //   const max = 2;
+    //   if (max - files.length > 0) {
+    //     return max - files.length
+    //   }
+    //   return 0;
+    // }
 
     const removeFile = (fileToRemove: File) => {
       setFiles((prevItems) =>
@@ -91,9 +119,20 @@ export const ExampleDropZone = meta.story({
         setFiles((prev) => [...prev, ...file]);
       },
       onDropRejected: (rej) => {
-        setRejected((prev) => [...prev, ...rej]);
+        console.log(rej);
+        const newRej = rej.map((rejected) => {
+          console.log(rejected.errors);
+          return {
+            ...rejected,
+            errors: rejected.errors.filter((err) => {
+              console.log(err.code);
+              return true;
+            }),
+          };
+        });
+        setRejected((prev) => [...prev, ...newRej]);
       },
-      maxSize: 524288,
+      maxFiles: 2 - files.length,
       accept: {
         'application/pdf': [],
       },
