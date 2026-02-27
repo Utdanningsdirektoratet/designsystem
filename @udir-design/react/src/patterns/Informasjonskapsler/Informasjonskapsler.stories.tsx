@@ -37,7 +37,7 @@ export const Preview = meta.story({
         </style>
         <Dialog open={true} modal={false} {...args}>
           <Prose>
-            <Heading>Hjelp oss å forbedre nettsiden</Heading>
+            <Heading>Vi bruker informasjonskapsler</Heading>
             <Paragraph>
               Nødvendige informasjonskapsler sørger for at nettstedet fungerer
               og er sikkert, og kan ikke velges bort. Andre brukes til
@@ -52,7 +52,7 @@ export const Preview = meta.story({
           <div className="cookies-buttons">
             <Button variant="secondary">Godta alle</Button>
             <Button variant="secondary">Tilpass valg</Button>
-            <Button variant="secondary">Godta bare nødvendige</Button>
+            <Button variant="secondary">Avvis valgfrie</Button>
           </div>
         </Dialog>
       </>
