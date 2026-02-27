@@ -52,6 +52,10 @@ export interface FileUploadItemProps extends Omit<
    * @default false
    */
   readonly?: boolean;
+  /**
+   * href to file location
+   */
+  href?: string;
 }
 
 export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
@@ -60,6 +64,7 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
       file,
       error,
       loading,
+      href,
       readonly = false,
       className,
       'data-size': size,
@@ -94,15 +99,7 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
             <Icon file={file} showError={Boolean(error)} loading={loading} />
           </div>
           <div>
-            <Link
-              download={file.name}
-              onClick={(event) => {
-                event.preventDefault();
-                downloadFile(file);
-              }}
-            >
-              {file.name}
-            </Link>
+            <FileName file={file} href={href} />
             <Paragraph data-size="sm">
               {/* Loading text in css */}
               {!loading && formatFileSize(file)}
@@ -197,4 +194,27 @@ const downloadFile = (file: File): void => {
   a.click();
 
   URL.revokeObjectURL(url);
+};
+
+interface FileNameProps {
+  file: File;
+  href?: string;
+}
+
+const FileName = ({ file, href }: FileNameProps) => {
+  if (href) {
+    return <Link href={href}>{file.name}</Link>;
+  }
+
+  return (
+    <Link
+      download={file.name}
+      onClick={(event) => {
+        event.preventDefault();
+        downloadFile(file);
+      }}
+    >
+      {file.name}
+    </Link>
+  );
 };
