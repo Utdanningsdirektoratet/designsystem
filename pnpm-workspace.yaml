@@ -161,11 +161,6 @@ packageExtensions:
 
 trustPolicy: no-downgrade
 
-trustPolicyExclude:
-  - semver@6.3.1
-  - eslint-import-resolver-typescript@3.10.1
-  - detect-port@1.6.1
-
 useNodeVersion: 24.10.0
 
 verifyDepsBeforeRun: prompt

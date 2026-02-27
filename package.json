@@ -67,7 +67,7 @@
       "@eslint/plugin-kit@<0.3.4": ">=0.3.4",
       "tmp@<=0.2.3": ">=0.2.4",
       "glob@>=10.2.0 <10.5.0": "^10.5.0",
-      "semver@<7": "^6.3.1",
+      "semver@<7": "^7",
       "chokidar@>=4.0.0 <5": "^5.0.0",
       "jws@=4.0.0": ">=4.0.1",
       "jws@<3.2.3": ">=3.2.3",
@@ -80,11 +80,6 @@
     },
     "patchedDependencies": {
       "remark-heading-id@1.0.1": "patches/remark-heading-id@1.0.1.patch"
-    },
-    "auditConfig": {
-      "ignoreCves": [
-        "CVE-2025-56648"
-      ]
     }
   }
 }
