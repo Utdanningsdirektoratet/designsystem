@@ -54,7 +54,26 @@
     }
   }
 
-  &:not([aria-busy='true']) {
+  /* 
+  * We dont want the label and description to look disabled 
+  * when the input is disabled, because it is treated as readonly
+  */
+  &:has(
+      [aria-disabled='true']:not(
+        u-option,
+        [role='option'][aria-disabled='true']
+      ),
+      :disabled:not(option)
+    )
+    > label,
+  [data-field='description'] {
+    cursor: not-allowed;
+    opacity: 1;
+  }
+
+  &:not([aria-busy='true']):not(:has(input[readOnly])):not(
+      :has(input[disabled])
+    ) {
     &:hover {
       & > .ds-card {
         cursor: pointer;
@@ -112,6 +131,7 @@
   flex-direction: column;
   align-items: flex-start;
   max-width: 30rem;
+  word-break: break-all;
 
   /* Uploading text in the paragraph after link */
   &[aria-busy='true'] .ds-link + .ds-paragraph::before {
@@ -124,7 +144,7 @@
     width: 100%;
   }
 
-  & > div > svg {
+  & > div > div > svg {
     width: auto;
     height: var(--ds-size-10);
     margin-inline-end: var(--ds-size-3);

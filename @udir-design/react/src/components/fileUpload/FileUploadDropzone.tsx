@@ -1,6 +1,6 @@
 import cl from 'clsx/lite';
 import { forwardRef, useEffect, useRef } from 'react';
-import { UploadIcon } from '@udir-design/icons';
+import { CircleSlashIcon, UploadIcon } from '@udir-design/icons';
 import { Button } from '../button/Button';
 import { Card } from '../card/Card';
 import './fileUpload.css';
@@ -12,18 +12,18 @@ import type { FileUploadProps } from './FileUploadTrigger';
 export type FileUploadDropzoneProps = FileUploadProps;
 
 export const FileUploadDropzone = forwardRef<
-  HTMLInputElement,
+  HTMLDivElement,
   FileUploadDropzoneProps
 >(function FileUploadDropzone(
   {
     className,
-    multiple,
     'data-size': size,
     label,
     error,
+    multiple,
     description,
+    readonly = false,
     inputProps,
-    id,
     ...rest
   },
   ref,
@@ -42,6 +42,9 @@ export const FileUploadDropzone = forwardRef<
       .trim();
     buttonRef.current.setAttribute('aria-label', buttonAriaLabel);
   }, [cssVar]);
+
+  const disabled = inputProps?.readOnly ?? readonly;
+
   return (
     <Field
       className={cl(`uds-file-upload`, className)}
@@ -55,11 +58,22 @@ export const FileUploadDropzone = forwardRef<
         {/* Text in css */}
         <div>{/* Text in css */}</div>
         <Button variant="secondary" ref={buttonRef}>
-          <UploadIcon aria-hidden />
+          {disabled ? <CircleSlashIcon /> : <UploadIcon aria-hidden />}
           {/* Text in css */}
         </Button>
       </Card>
-      <input type="file" id={id} multiple={mult} {...inputProps} />
+      <input
+        type="file"
+        {...inputProps}
+        readOnly={disabled}
+        disabled={disabled}
+        onClick={(e) => {
+          if (disabled) {
+            e.preventDefault();
+          }
+          inputProps?.onClick?.(e);
+        }}
+      />
       {!!error && <ValidationMessage>{error}</ValidationMessage>}
     </Field>
   );

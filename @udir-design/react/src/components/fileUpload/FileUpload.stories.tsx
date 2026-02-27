@@ -24,27 +24,83 @@ export const Preview = meta.story({
     label: 'Label',
     description: 'Beskrivelse',
   },
-  render: (args) => (
-    <div
-      style={{
-        display: 'flex',
-        gap: 'var(--ds-size-18)',
-        justifyContent: 'center',
-      }}
-    >
-      <FileUpload.Trigger {...args} id="trigger" />
-      <FileUpload.Dropzone {...args} id="dropzone" />
-    </div>
-  ),
+  render: (args) => {
+    const { getRootProps, getInputProps } = useDropzone({
+      onDropAccepted: (files) => {
+        window.alert(
+          `Accepted dropped file(s):\n  - ${files.map((x) => x.name).join(',\n  - ')}`,
+        );
+      },
+      onDropRejected: (rej) => {
+        window.alert(
+          `Rejected dropped file(s):\n  - ${rej.map((x) => `${x.file.name} (reason: ${x.errors.map((err) => err.message).join(', ')})`).join(',\n  - ')}`,
+        );
+      },
+      accept: {
+        'application/pdf': [],
+      },
+    });
+    return (
+      <div
+        style={{
+          display: 'flex',
+          gap: 'var(--ds-size-18)',
+          justifyContent: 'center',
+        }}
+      >
+        <FileUpload.Trigger
+          {...args}
+          inputProps={{ ...args.inputProps, id: 'trigger' }}
+        />
+        <FileUpload.Dropzone
+          {...getRootProps(args)}
+          inputProps={getInputProps({ ...args.inputProps, id: 'dropzone' })}
+        />
+      </div>
+    );
+  },
+});
+
+export const Readonly = meta.story({
+  render: (args) => {
+    return (
+      <div
+        style={{
+          background: 'var(--ds-color-neutral-surface-tinted)',
+          display: 'flex',
+          gap: 'var(--ds-size-12)',
+          justifyContent: 'center',
+          padding: 'var(--ds-size-8)',
+          borderRadius: 'var(--ds-border-radius-md)',
+        }}
+      >
+        <FileUpload.Trigger
+          readonly
+          label="Lesemodus"
+          description="Beskrivelse for Trigger"
+        />
+        <FileUpload.Dropzone
+          readonly
+          label="Lesemodus"
+          description="Beskrivelse for Dropzone"
+        />
+      </div>
+    );
+  },
 });
 
 export const ExampleDropZone = meta.story({
-  args: {
-    id: 'dokumentasjon-dropzone',
-  },
   render: (args) => {
     const [files, setFiles] = useState<File[]>([]);
     const [rejected, setRejected] = useState<FileRejection[]>([]);
+    const [maxFiles, setMaxFiles] = useState<number>(2);
+    // const max = () => {
+    //   const max = 2;
+    //   if (max - files.length > 0) {
+    //     return max - files.length
+    //   }
+    //   return 0;
+    // }
 
     const removeFile = (fileToRemove: File) => {
       setFiles((prevItems) =>
@@ -63,9 +119,20 @@ export const ExampleDropZone = meta.story({
         setFiles((prev) => [...prev, ...file]);
       },
       onDropRejected: (rej) => {
-        setRejected((prev) => [...prev, ...rej]);
+        console.log(rej);
+        const newRej = rej.map((rejected) => {
+          console.log(rejected.errors);
+          return {
+            ...rejected,
+            errors: rejected.errors.filter((err) => {
+              console.log(err.code);
+              return true;
+            }),
+          };
+        });
+        setRejected((prev) => [...prev, ...newRej]);
       },
-      maxSize: 524288,
+      maxFiles: 2 - files.length,
       accept: {
         'application/pdf': [],
       },
@@ -155,7 +222,6 @@ export const ExampleTrigger = meta.story({
   args: {
     label: 'Last opp profilbilde',
     description: 'Du kan laste opp filer i PNG- og JPEG-format.',
-    id: 'profilbilde',
   },
   render: (args) => {
     const [file, setFile] = useState<File | null>(null);
@@ -218,9 +284,10 @@ export const ExampleItems = meta.story({
       new File(['abc'.repeat(100000)], 'eksempel1.pdf'),
       new File(['abc'.repeat(10000)], 'eksempel2.docx'),
       new File(['abc'.repeat(1000000)], 'eksempel3.png'),
+      new File(['abc'.repeat(123000)], 'eksempel4.pdf'),
     ];
     const dummyRejected: File[] = [
-      new File(['abc'.repeat(288000)], 'eksempel4.tsx'),
+      new File(['abc'.repeat(288000)], 'eksempel5.tsx'),
     ];
 
     const [files, setFiles] = useState<File[]>(dummyFiles);
@@ -255,7 +322,8 @@ export const ExampleItems = meta.story({
               <FileUpload.Item
                 key={index}
                 file={file}
-                loading={index === 2 && true}
+                readonly={index === 2 && true}
+                loading={index === 3 && true}
                 onRemove={() => removeFile(file)}
               />
             ))}
@@ -313,8 +381,8 @@ export const Upload = meta.story({
         <FileUpload.Trigger
           label="Last opp rapport"
           description="Du kan legge ved 1 fil."
-          id="rapport"
           onChange={handleOnChange}
+          inputProps={{ id: 'rapport' }}
         />
         {file && (
           <>

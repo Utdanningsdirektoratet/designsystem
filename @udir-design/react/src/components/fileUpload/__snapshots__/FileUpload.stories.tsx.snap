@@ -8,13 +8,13 @@ exports[`Example Drop Zone 1`] = `
   >
     <label
       data-weight="medium"
-      for="dokumentasjon-dropzone"
+      for=":mm4l1uxykj4"
     >
       Last opp dokumentasjon
     </label>
     <div
       data-field="description"
-      id="dokumentasjon-dropzone:description:1"
+      id=":mm4l1uxykj4:description:1"
     >
       Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
     </div>
@@ -47,12 +47,12 @@ exports[`Example Drop Zone 1`] = `
       </button>
     </div>
     <input
-      id="dokumentasjon-dropzone"
-      multiple
       accept="application/pdf"
+      multiple
       tabindex="-1"
       type="file"
-      aria-describedby="dokumentasjon-dropzone:description:1"
+      id=":mm4l1uxykj4"
+      aria-describedby=":mm4l1uxykj4:description:1"
       style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
     >
   </div>
@@ -64,34 +64,33 @@ exports[`Example Drop Zone 1`] = `
     aria-invalid="false"
   >
     <div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1em"
-        height="1em"
-        fill="none"
-        viewbox="0 0 24 24"
-        focusable="false"
-        role="img"
-        aria-hidden="true"
-      >
-        <path
-          fill="currentColor"
-          d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
-        >
-        </path>
-        <path
-          fill="currentColor"
-          fill-rule="evenodd"
-          d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
-          clip-rule="evenodd"
-        >
-        </path>
-      </svg>
       <div>
-        <a
-          href="#"
-          download="eksempel1.pdf"
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
         >
+          <path
+            fill="currentColor"
+            d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
+          >
+          </path>
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </div>
+      <div>
+        <a download="eksempel1.pdf">
           eksempel1.pdf
         </a>
         <p
@@ -105,9 +104,9 @@ exports[`Example Drop Zone 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_4_"
+        popovertarget="_r_6_"
         popovertargetaction="show"
-        aria-labelledby="_r_4_"
+        aria-labelledby="_r_6_"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +129,7 @@ exports[`Example Drop Zone 1`] = `
       </button>
       <span
         role="tooltip"
-        id="_r_4_"
+        id="_r_6_"
         popover="manual"
         style="opacity: 0;"
       >
@@ -149,41 +148,40 @@ exports[`Example Drop Zone 1`] = `
 exports[`Example Items 1`] = `
 <div style="display: flex; flex-direction: column; gap: var(--ds-size-3);">
   <h3 data-size="2xs">
-    Vedlegg (3):
+    Vedlegg (4):
   </h3>
   <div
     data-variant="default"
     aria-invalid="false"
   >
     <div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1em"
-        height="1em"
-        fill="none"
-        viewbox="0 0 24 24"
-        focusable="false"
-        role="img"
-        aria-hidden="true"
-      >
-        <path
-          fill="currentColor"
-          d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
-        >
-        </path>
-        <path
-          fill="currentColor"
-          fill-rule="evenodd"
-          d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
-          clip-rule="evenodd"
-        >
-        </path>
-      </svg>
       <div>
-        <a
-          href="#"
-          download="eksempel1.pdf"
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
         >
+          <path
+            fill="currentColor"
+            d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
+          >
+          </path>
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </div>
+      <div>
+        <a download="eksempel1.pdf">
           eksempel1.pdf
         </a>
         <p
@@ -197,9 +195,9 @@ exports[`Example Items 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_b_"
+        popovertarget="_r_d_"
         popovertargetaction="show"
-        aria-labelledby="_r_b_"
+        aria-labelledby="_r_d_"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -222,7 +220,7 @@ exports[`Example Items 1`] = `
       </button>
       <span
         role="tooltip"
-        id="_r_b_"
+        id="_r_d_"
         popover="manual"
         style="opacity: 0;"
       >
@@ -240,34 +238,33 @@ exports[`Example Items 1`] = `
     aria-invalid="false"
   >
     <div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1em"
-        height="1em"
-        fill="none"
-        viewbox="0 0 24 24"
-        focusable="false"
-        role="img"
-        aria-hidden="true"
-      >
-        <path
-          fill="currentColor"
-          d="M12.47 18q-.153.16-.468.16t-.476-.16q-.154-.17-.154-.47v-2.17q0-.308.154-.469t.476-.16.476.16.154.47v2.17q0 .3-.161.468M7.595 14.87a.73.73 0 0 1 .518.182.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.61v-3.15z"
-        >
-        </path>
-        <path
-          fill="currentColor"
-          fill-rule="evenodd"
-          d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-3.637 13.071q.378.19.889.19.517 0 .889-.19.378-.195.58-.539.21-.35.21-.812v-2.17q0-.462-.21-.805a1.35 1.35 0 0 0-.58-.539 1.9 1.9 0 0 0-.89-.196q-.51 0-.888.196a1.4 1.4 0 0 0-.588.54 1.55 1.55 0 0 0-.203.804v2.17q0 .462.203.812.21.343.588.54m-2.594-4.788a2 2 0 0 0-.924-.203h-1.66V19h1.66q.531 0 .924-.203.398-.21.616-.58.224-.372.224-.862v-1.827a1.6 1.6 0 0 0-.224-.86 1.47 1.47 0 0 0-.616-.575m7.918 4.977q-.511 0-.896-.189a1.5 1.5 0 0 1-.602-.539 1.55 1.55 0 0 1-.21-.812v-2.17q0-.469.21-.812.217-.343.602-.532.385-.196.896-.196.518 0 .896.196.385.189.595.532.217.344.217.812h-1.05q0-.308-.175-.469-.168-.16-.483-.16t-.49.16q-.168.16-.168.47v2.17q0 .3.168.468.175.16.49.161.315 0 .483-.16.175-.17.175-.47h1.05q0 .462-.217.812-.21.343-.595.54-.378.188-.896.188"
-          clip-rule="evenodd"
-        >
-        </path>
-      </svg>
       <div>
-        <a
-          href="#"
-          download="eksempel2.docx"
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
         >
+          <path
+            fill="currentColor"
+            d="M12.47 18q-.153.16-.468.16t-.476-.16q-.154-.17-.154-.47v-2.17q0-.308.154-.469t.476-.16.476.16.154.47v2.17q0 .3-.161.468M7.595 14.87a.73.73 0 0 1 .518.182.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.61v-3.15z"
+          >
+          </path>
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-3.637 13.071q.378.19.889.19.517 0 .889-.19.378-.195.58-.539.21-.35.21-.812v-2.17q0-.462-.21-.805a1.35 1.35 0 0 0-.58-.539 1.9 1.9 0 0 0-.89-.196q-.51 0-.888.196a1.4 1.4 0 0 0-.588.54 1.55 1.55 0 0 0-.203.804v2.17q0 .462.203.812.21.343.588.54m-2.594-4.788a2 2 0 0 0-.924-.203h-1.66V19h1.66q.531 0 .924-.203.398-.21.616-.58.224-.372.224-.862v-1.827a1.6 1.6 0 0 0-.224-.86 1.47 1.47 0 0 0-.616-.575m7.918 4.977q-.511 0-.896-.189a1.5 1.5 0 0 1-.602-.539 1.55 1.55 0 0 1-.21-.812v-2.17q0-.469.21-.812.217-.343.602-.532.385-.196.896-.196.518 0 .896.196.385.189.595.532.217.344.217.812h-1.05q0-.308-.175-.469-.168-.16-.483-.16t-.49.16q-.168.16-.168.47v2.17q0 .3.168.468.175.16.49.161.315 0 .483-.16.175-.17.175-.47h1.05q0 .462-.217.812-.21.343-.595.54-.378.188-.896.188"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </div>
+      <div>
+        <a download="eksempel2.docx">
           eksempel2.docx
         </a>
         <p
@@ -281,9 +278,9 @@ exports[`Example Items 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_e_"
+        popovertarget="_r_g_"
         popovertargetaction="show"
-        aria-labelledby="_r_e_"
+        aria-labelledby="_r_g_"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -306,7 +303,7 @@ exports[`Example Items 1`] = `
       </button>
       <span
         role="tooltip"
-        id="_r_e_"
+        id="_r_g_"
         popover="manual"
         style="opacity: 0;"
       >
@@ -322,37 +319,79 @@ exports[`Example Items 1`] = `
   <div
     data-variant="default"
     aria-invalid="false"
+  >
+    <div>
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M6.5 3.25c-.69 0-1.25.56-1.25 1.25v15c0 .69.56 1.25 1.25 1.25h11c.69 0 1.25-.56 1.25-1.25V8a.75.75 0 0 0-.22-.53l-4-4a.75.75 0 0 0-.53-.22zm10.75 15.763V8.75H14.5c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v14.5h1.855l3.777-5.666a.75.75 0 0 1 1.248 0zm-6.842.237h5.197l-2.599-3.898zm5.781-12L14.75 5.81v1.44zM10 9.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m-2.25.75a2.25 2.25 0 1 1 4.5 0 2.25 2.25 0 0 1-4.5 0"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </div>
+      <div>
+        <a download="eksempel3.png">
+          eksempel3.png
+        </a>
+        <p
+          data-variant="default"
+          data-size="sm"
+        >
+          2.86 MB
+        </p>
+      </div>
+    </div>
+    <div
+      aria-relevant="additions removals"
+      aria-live="polite"
+    >
+    </div>
+  </div>
+  <div
+    data-variant="default"
+    aria-invalid="false"
     aria-busy="true"
   >
     <div>
-      <svg
-        aria-label="spinner"
-        role="img"
-        viewbox="0 0 50 50"
-      >
-        <circle
-          cx="25"
-          cy="25"
-          r="20"
-          fill="none"
-          stroke-width="5"
-        >
-        </circle>
-        <circle
-          cx="25"
-          cy="25"
-          r="20"
-          fill="none"
-          stroke-width="5"
-        >
-        </circle>
-      </svg>
       <div>
-        <a
-          href="#"
-          download="eksempel3.png"
+        <svg
+          aria-label="spinner"
+          role="img"
+          viewbox="0 0 50 50"
         >
-          eksempel3.png
+          <circle
+            cx="25"
+            cy="25"
+            r="20"
+            fill="none"
+            stroke-width="5"
+          >
+          </circle>
+          <circle
+            cx="25"
+            cy="25"
+            r="20"
+            fill="none"
+            stroke-width="5"
+          >
+          </circle>
+        </svg>
+      </div>
+      <div>
+        <a download="eksempel4.pdf">
+          eksempel4.pdf
         </a>
         <p
           data-variant="default"
@@ -378,30 +417,29 @@ exports[`Example Items 1`] = `
     aria-invalid="true"
   >
     <div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1em"
-        height="1em"
-        fill="none"
-        viewbox="0 0 24 24"
-        focusable="false"
-        role="img"
-        aria-hidden="true"
-      >
-        <path
-          fill="currentColor"
-          fill-rule="evenodd"
-          d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v11.5c0 .69-.56 1.25-1.25 1.25h-11c-.69 0-1.25-.56-1.25-1.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v14.5h10.5V8.75zm.25-2.94 1.44 1.44h-1.44zm-.72 6.16a.75.75 0 0 1 0 1.06l-.97.97.97.97a.75.75 0 1 1-1.06 1.06l-.97-.97-.97.97a.75.75 0 1 1-1.06-1.06l.97-.97-.97-.97a.75.75 0 1 1 1.06-1.06l.97.97.97-.97a.75.75 0 0 1 1.06 0"
-          clip-rule="evenodd"
-        >
-        </path>
-      </svg>
       <div>
-        <a
-          href="#"
-          download="eksempel4.tsx"
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
         >
-          eksempel4.tsx
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v11.5c0 .69-.56 1.25-1.25 1.25h-11c-.69 0-1.25-.56-1.25-1.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v14.5h10.5V8.75zm.25-2.94 1.44 1.44h-1.44zm-.72 6.16a.75.75 0 0 1 0 1.06l-.97.97.97.97a.75.75 0 1 1-1.06 1.06l-.97-.97-.97.97a.75.75 0 1 1-1.06-1.06l.97-.97-.97-.97a.75.75 0 1 1 1.06-1.06l.97.97.97-.97a.75.75 0 0 1 1.06 0"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </div>
+      <div>
+        <a download="eksempel5.tsx">
+          eksempel5.tsx
         </a>
         <p
           data-variant="default"
@@ -414,9 +452,9 @@ exports[`Example Items 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_h_"
+        popovertarget="_r_k_"
         popovertargetaction="show"
-        aria-labelledby="_r_h_"
+        aria-labelledby="_r_k_"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -439,7 +477,7 @@ exports[`Example Items 1`] = `
       </button>
       <span
         role="tooltip"
-        id="_r_h_"
+        id="_r_k_"
         popover="manual"
         style="opacity: 0;"
       >
@@ -481,13 +519,13 @@ exports[`Example Trigger 1`] = `
   <div>
     <label
       data-weight="medium"
-      for="profilbilde"
+      for=":mm4l1v41cw2"
     >
       Last opp profilbilde
     </label>
     <div
       data-field="description"
-      id="profilbilde:description:1"
+      id=":mm4l1v41cw2:description:1"
     >
       Du kan laste opp filer i PNG- og JPEG-format.
     </div>
@@ -516,10 +554,10 @@ exports[`Example Trigger 1`] = `
       </svg>
     </button>
     <input
-      id="profilbilde"
       accept="image/png, image/jpeg"
       type="file"
-      aria-describedby="profilbilde:description:1"
+      id=":mm4l1v41cw2"
+      aria-describedby=":mm4l1v41cw2:description:1"
     >
   </div>
   <h3 data-size="2xs">
@@ -530,29 +568,28 @@ exports[`Example Trigger 1`] = `
     aria-invalid="false"
   >
     <div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1em"
-        height="1em"
-        fill="none"
-        viewbox="0 0 24 24"
-        focusable="false"
-        role="img"
-        aria-hidden="true"
-      >
-        <path
-          fill="currentColor"
-          fill-rule="evenodd"
-          d="M6.5 3.25c-.69 0-1.25.56-1.25 1.25v15c0 .69.56 1.25 1.25 1.25h11c.69 0 1.25-.56 1.25-1.25V8a.75.75 0 0 0-.22-.53l-4-4a.75.75 0 0 0-.53-.22zm10.75 15.763V8.75H14.5c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v14.5h1.855l3.777-5.666a.75.75 0 0 1 1.248 0zm-6.842.237h5.197l-2.599-3.898zm5.781-12L14.75 5.81v1.44zM10 9.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m-2.25.75a2.25 2.25 0 1 1 4.5 0 2.25 2.25 0 0 1-4.5 0"
-          clip-rule="evenodd"
-        >
-        </path>
-      </svg>
       <div>
-        <a
-          href="#"
-          download="eksempel1.png"
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
         >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M6.5 3.25c-.69 0-1.25.56-1.25 1.25v15c0 .69.56 1.25 1.25 1.25h11c.69 0 1.25-.56 1.25-1.25V8a.75.75 0 0 0-.22-.53l-4-4a.75.75 0 0 0-.53-.22zm10.75 15.763V8.75H14.5c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v14.5h1.855l3.777-5.666a.75.75 0 0 1 1.248 0zm-6.842.237h5.197l-2.599-3.898zm5.781-12L14.75 5.81v1.44zM10 9.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m-2.25.75a2.25 2.25 0 1 1 4.5 0 2.25 2.25 0 0 1-4.5 0"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </div>
+      <div>
+        <a download="eksempel1.png">
           eksempel1.png
         </a>
         <p
@@ -566,9 +603,9 @@ exports[`Example Trigger 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_8_"
+        popovertarget="_r_a_"
         popovertargetaction="show"
-        aria-labelledby="_r_8_"
+        aria-labelledby="_r_a_"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -591,7 +628,7 @@ exports[`Example Trigger 1`] = `
       </button>
       <span
         role="tooltip"
-        id="_r_8_"
+        id="_r_a_"
         popover="manual"
         style="opacity: 0;"
       >
@@ -652,7 +689,11 @@ exports[`Preview 1`] = `
       aria-describedby="trigger:description:1"
     >
   </div>
-  <div data-size="md">
+  <div
+    data-size="md"
+    role="presentation"
+    tabindex="0"
+  >
     <label
       data-weight="medium"
       for="dropzone"
@@ -671,7 +712,7 @@ exports[`Preview 1`] = `
       <button
         data-variant="secondary"
         type="button"
-        aria-label="Velg fil"
+        aria-label="Velg filer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -694,9 +735,119 @@ exports[`Preview 1`] = `
       </button>
     </div>
     <input
+      accept="application/pdf"
+      multiple
+      tabindex="-1"
       id="dropzone"
       type="file"
       aria-describedby="dropzone:description:1"
+      style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+    >
+  </div>
+</div>
+`;
+
+exports[`Readonly 1`] = `
+<div style="display: flex; gap: var(--ds-size-18); justify-content: center;">
+  <div data-size="md">
+    <label
+      data-weight="medium"
+      for="trigger"
+    >
+      Label
+    </label>
+    <div
+      data-field="description"
+      id="trigger:description:1"
+    >
+      Beskrivelse
+    </div>
+    <button
+      data-variant="secondary"
+      type="button"
+      disabled
+      aria-label="Legg til fil"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
+    </button>
+    <input
+      id="trigger"
+      readonly
+      type="file"
+      aria-describedby="trigger:description:1"
+    >
+  </div>
+  <div
+    data-size="md"
+    role="presentation"
+    tabindex="0"
+  >
+    <label
+      data-weight="medium"
+      for="dropzone"
+    >
+      Label
+    </label>
+    <div
+      data-field="description"
+      id="dropzone:description:1"
+    >
+      Beskrivelse
+    </div>
+    <div data-variant="default">
+      <div>
+      </div>
+      <button
+        data-variant="secondary"
+        type="button"
+        aria-label="Velg filer"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M5.098 5.114A9.72 9.72 0 0 0 2.25 12c0 5.385 4.365 9.75 9.75 9.75s9.75-4.365 9.75-9.75S17.385 2.25 12 2.25a9.72 9.72 0 0 0-6.886 2.848l-.008.008zm1.623.546a8.25 8.25 0 0 1 11.62 11.62zM5.66 6.72l11.62 11.62A8.25 8.25 0 0 1 5.66 6.72"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </button>
+    </div>
+    <input
+      accept="application/pdf"
+      multiple
+      tabindex="-1"
+      readonly
+      id="dropzone"
+      disabled
+      type="file"
+      aria-describedby="dropzone:description:1"
+      style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
     >
   </div>
 </div>

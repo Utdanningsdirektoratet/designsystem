@@ -48,6 +48,14 @@ export interface FileUploadItemProps extends Omit<
    * @default false
    */
   loading?: boolean;
+  /**
+   * @default false
+   */
+  readonly?: boolean;
+  /**
+   * href to file location
+   */
+  href?: string;
 }
 
 export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
@@ -56,6 +64,8 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
       file,
       error,
       loading,
+      href,
+      readonly = false,
       className,
       'data-size': size,
       onRemove,
@@ -74,6 +84,7 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
         .trim();
       setTooltipContent(content);
     }, []);
+
     return (
       <Card
         className={cl('uds-file-upload__item', className)}
@@ -84,24 +95,17 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
         {...rest}
       >
         <div>
-          <Icon file={file} showError={Boolean(error)} loading={loading} />
           <div>
-            <Link
-              href="#"
-              download={file.name}
-              onClick={(event) => {
-                event.preventDefault();
-                downloadFile(file);
-              }}
-            >
-              {file.name}
-            </Link>
+            <Icon file={file} showError={Boolean(error)} loading={loading} />
+          </div>
+          <div>
+            <FileName file={file} href={href} />
             <Paragraph data-size="sm">
               {/* Loading text in css */}
               {!loading && formatFileSize(file)}
             </Paragraph>
           </div>
-          {!loading && (
+          {!loading && !readonly && (
             <Tooltip content={tooltipContent} ref={tooltipRef}>
               <Button
                 icon
@@ -190,4 +194,27 @@ const downloadFile = (file: File): void => {
   a.click();
 
   URL.revokeObjectURL(url);
+};
+
+interface FileNameProps {
+  file: File;
+  href?: string;
+}
+
+const FileName = ({ file, href }: FileNameProps) => {
+  if (href) {
+    return <Link href={href}>{file.name}</Link>;
+  }
+
+  return (
+    <Link
+      download={file.name}
+      onClick={(event) => {
+        event.preventDefault();
+        downloadFile(file);
+      }}
+    >
+      {file.name}
+    </Link>
+  );
 };
