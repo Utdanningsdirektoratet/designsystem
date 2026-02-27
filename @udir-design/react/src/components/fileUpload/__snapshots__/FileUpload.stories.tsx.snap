@@ -8,13 +8,13 @@ exports[`Example Drop Zone 1`] = `
   >
     <label
       data-weight="medium"
-      for=":mm3l4h4xq7t"
+      for=":mm4l1uxykj4"
     >
       Last opp dokumentasjon
     </label>
     <div
       data-field="description"
-      id=":mm3l4h4xq7t:description:1"
+      id=":mm4l1uxykj4:description:1"
     >
       Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
     </div>
@@ -51,8 +51,8 @@ exports[`Example Drop Zone 1`] = `
       multiple
       tabindex="-1"
       type="file"
-      id=":mm3l4h4xq7t"
-      aria-describedby=":mm3l4h4xq7t:description:1"
+      id=":mm4l1uxykj4"
+      aria-describedby=":mm4l1uxykj4:description:1"
       style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
     >
   </div>
@@ -519,13 +519,13 @@ exports[`Example Trigger 1`] = `
   <div>
     <label
       data-weight="medium"
-      for=":mm3l4habfmv"
+      for=":mm4l1v41cw2"
     >
       Last opp profilbilde
     </label>
     <div
       data-field="description"
-      id=":mm3l4habfmv:description:1"
+      id=":mm4l1v41cw2:description:1"
     >
       Du kan laste opp filer i PNG- og JPEG-format.
     </div>
@@ -556,8 +556,8 @@ exports[`Example Trigger 1`] = `
     <input
       accept="image/png, image/jpeg"
       type="file"
-      id=":mm3l4habfmv"
-      aria-describedby=":mm3l4habfmv:description:1"
+      id=":mm4l1v41cw2"
+      aria-describedby=":mm4l1v41cw2:description:1"
     >
   </div>
   <h3 data-size="2xs">
