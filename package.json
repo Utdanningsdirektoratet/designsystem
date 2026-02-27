@@ -72,7 +72,11 @@
       "jws@=4.0.0": ">=4.0.1",
       "jws@<3.2.3": ">=3.2.3",
       "qs@<6.14.1": ">=6.14.1",
-      "unist-util-visit@<5": "^5.0.0"
+      "unist-util-visit@<5": "^5.0.0",
+      "minimatch@>=9.0.0 <9.0.6": ">=9.0.6",
+      "minimatch@>=10.0.0 <10.2.1": ">=10.2.1",
+      "minimatch@>=9.0.0 <9.0.7": ">=9.0.7",
+      "minimatch@>=10.0.0 <10.2.3": ">=10.2.3"
     },
     "patchedDependencies": {
       "remark-heading-id@1.0.1": "patches/remark-heading-id@1.0.1.patch"
