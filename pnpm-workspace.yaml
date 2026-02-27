@@ -6,46 +6,46 @@ packages:
 
 catalog:
   '@babel/types': ^7.29.0
-  '@commitlint/cli': ^20.4.1
-  '@commitlint/config-conventional': ^20.4.1
+  '@commitlint/cli': ^20.4.2
+  '@commitlint/config-conventional': ^20.4.2
   '@commitlint/types': ^20.4.0
   '@digdir/designsystemet': 1.11.0
   '@digdir/designsystemet-css': 1.11.0
   '@digdir/designsystemet-react': 1.11.0
-  '@digdir/designsystemet-types': ^1.11.0
+  '@digdir/designsystemet-types': ^1.12.1
   '@eslint/compat': ^2.0.2
-  '@eslint/eslintrc': ^3.3.3
-  '@eslint/js': ^9.39.2
+  '@eslint/eslintrc': ^3.3.4
+  '@eslint/js': ^9.39.3
   '@figma/rest-api-spec': ^0.36.0
   '@hookform/resolvers': 5.2.2
-  '@navikt/aksel-icons': ^8.5.2
+  '@navikt/aksel-icons': ^8.6.0
   '@next/eslint-plugin-next': ^16.1.6
   '@nx/azure-cache': ^5.0.0
   '@nx/eslint': 22.5.1
   '@nx/eslint-plugin': 22.5.1
   '@radix-ui/react-slot': ^1.2.4
-  '@storybook/addon-a11y': ^10.2.10
-  '@storybook/addon-docs': ^10.2.10
-  '@storybook/addon-vitest': ^10.2.10
-  '@storybook/react-vite': ^10.2.10
+  '@storybook/addon-a11y': ^10.2.13
+  '@storybook/addon-docs': ^10.2.13
+  '@storybook/addon-vitest': ^10.2.13
+  '@storybook/react-vite': ^10.2.13
   '@svgr/cli': 8.1.0
   '@svgr/core': ^8.1.0
   '@swc-node/register': ^1.11.1
-  '@swc/core': ^1.15.11
-  '@swc/helpers': ^0.5.18
+  '@swc/core': ^1.15.13
+  '@swc/helpers': ^0.5.19
   '@testing-library/react': ^16.3.2
   '@tokens-studio/sd-transforms': ^2.0.3
   '@types/diffable-html': ^5.0.2
   '@types/mdast': ^4.0.4
   '@types/micromatch': ^4.0.10
-  '@types/node': ^24.10.13
+  '@types/node': ^24.10.14
   '@types/ramda': ^0.31.1
   '@types/react': ^19.2.14
   '@types/react-dom': ^19.2.3
   '@types/remark-heading-id': ^1.0.0
   '@types/yargs': ^17.0.35
-  '@typescript-eslint/eslint-plugin': ^8.56.0
-  '@typescript-eslint/parser': ^8.56.0
+  '@typescript-eslint/eslint-plugin': ^8.56.1
+  '@typescript-eslint/parser': ^8.56.1
   '@typescript/native-preview': 7.0.0-dev.20260208.1
   '@u-elements/u-details': ^0.2.2
   '@u-elements/u-progress': ^0.0.7
@@ -54,22 +54,22 @@ catalog:
   '@vitest/browser-playwright': ^4.0.18
   '@vitest/coverage-v8': ^4.0.18
   '@vitest/ui': ^4.0.18
-  autoprefixer: ^10.4.24
+  autoprefixer: ^10.4.27
   axe-core: ^4.11.1
   axe-playwright: ^2.2.2
   camelcase: ^9.0.0
-  chromatic: ^15.1.1
+  chromatic: ^15.2.0
   clsx: 2.1.1
   cssnano: ^7.1.2
   diffable-html: ^6.0.1
-  eslint: ^9.39.2
+  eslint: ^9.39.3
   eslint-config-next: ^16.1.6
   eslint-config-prettier: 10.1.8
   eslint-plugin-import: ^2.32.0
   eslint-plugin-jsx-a11y: ^6.10.2
   eslint-plugin-react: ^7.37.5
   eslint-plugin-react-hooks: ^7.0.1
-  eslint-plugin-storybook: ^10.2.10
+  eslint-plugin-storybook: ^10.2.13
   fast-glob: ^3.3.3
   fuse.js: ^7.1.0
   hast-util-from-html: ^2.0.3
@@ -86,7 +86,7 @@ catalog:
   micromatch: ^4.0.8
   next: ^16.1.6
   nx: 22.5.1
-  parcel: ^2.16.3
+  parcel: ^2.16.4
   playwright: ^1.58.2
   postcss: ^8.5.6
   postcss-cli: ^11.0.1
@@ -98,8 +98,8 @@ catalog:
   react: ^19.2.4
   react-dom: ^19.2.4
   react-dropzone: ^15.0.0
-  react-hook-form: ^7.71.1
-  react-router-dom: ^7.13.0
+  react-hook-form: ^7.71.2
+  react-router-dom: ^7.13.1
   react-style-stringify: ^1.2.0
   remark-gfm: ^4.0.1
   remark-heading-id: ^1.0.1
@@ -109,9 +109,9 @@ catalog:
   sass: ^1.97.3
   sharp: ^0.34.5
   shx: ^0.4.0
-  storybook: ^10.2.10
-  storybook-addon-pseudo-states: ^10.2.10
-  style-dictionary: ^5.3.1
+  storybook: ^10.2.13
+  storybook-addon-pseudo-states: ^10.2.13
+  style-dictionary: ^5.3.2
   svgo: 4.0.0
   ts-node: ^10.9.2
   tslib: ^2.8.1
@@ -120,7 +120,7 @@ catalog:
   type-fest: ^5.4.4
   typedoc: ^0.28.17
   typescript: ^5.9.3
-  typescript-eslint: ^8.56.0
+  typescript-eslint: ^8.56.1
   unified: ^11.0.5
   unist-util-remove: ^4.0.0
   unist-util-visit: ^5.1.0
@@ -129,7 +129,7 @@ catalog:
   vite-tsconfig-paths: ^6.1.1
   vitest: ^4.0.18
   yargs: ^18.0.0
-  zod: ^4.3.5
+  zod: ^4.3.6
 
 catalogMode: strict
 
