@@ -30,6 +30,10 @@
       "import": "./dist/utilities/form/alpha.js",
       "require": "./dist/utilities/form/alpha.cjs"
     },
+    "./utilities/dataVisualization/alpha": {
+      "import": "./dist/utilities/dataVisualization/alpha.js",
+      "require": "./dist/utilities/dataVisualization/alpha.cjs"
+    },
     "./html": {
       "types": "./dist/html.d.ts"
     },

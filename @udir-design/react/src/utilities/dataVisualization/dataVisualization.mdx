@@ -1,0 +1,237 @@
+import { Meta, Unstyled } from '@storybook/addon-docs/blocks';
+import {
+  DatavisValueColorDisplay,
+  DatavisSeqColorDisplay,
+  DatavisSeqDivColorDisplay,
+} from '../../design-tokens/docs/color/dataviz-color-display';
+
+<Meta title="Utilities/Hjelpefunksjoner for datavisualisering" />
+
+# Hjelpefunksjoner for datavisualisering
+
+Verktøy for å bruke datavisualiseringsfarger i diagrammer og grafer. Disse funksjonene returnerer CSS-variabler som automatisk tilpasser seg når temaet endres (lys/mørk modus).
+
+- `getCategoricalColors()`
+- `getSequentialMonochromaticColors()`
+- `getSequentialDivergentColors()`
+- `getHighchartsTheme()`
+
+> Se [Farger for datavisualisering](/docs/design-tokens-farger--docs#farger-for-datavisualisering) for retningslinjer om når og hvordan de ulike palettene skal brukes.
+
+## Oppsett
+
+Importer CSS for datavisualiseringsfarger i applikasjonen din:
+
+```tsx
+import '@udir-design/theme/dataviz.css';
+```
+
+## Kategorisk palett
+
+For distinkte kategorier i diagrammer (fagområder, elevgrupper, etc.).
+
+**`getCategoricalColors()`** - Returnerer 8 CSS-fargeverdier.
+
+```tsx
+import { getCategoricalColors } from '@udir-design/react/utilities/dataVisualization/alpha';
+
+const colors = getCategoricalColors();
+// ['var(--uds-data-color-categorical-1)', 'var(--uds-data-color-categorical-2)', ...]
+```
+
+<Unstyled>
+  <DatavisValueColorDisplay />
+</Unstyled>
+
+---
+
+## Sekvensiell monokromatisk palett
+
+For sekvensiell data med gradert skala fra lys til mørk (heatmaps, choropleth-kart).
+
+**`getSequentialMonochromaticColors()`** - Returnerer 8 CSS-fargeverdier.
+
+```tsx
+import { getSequentialMonochromaticColors } from '@udir-design/react/utilities/dataVisualization/alpha';
+
+const colors = getSequentialMonochromaticColors();
+// ['var(--uds-data-color-sequential-monochromatic-1)', ...]
+```
+
+<Unstyled>
+  <DatavisSeqColorDisplay />
+</Unstyled>
+
+---
+
+## Sekvensiell divergerende palett
+
+For divergerende skalaer med nøytralt midtpunkt (avvik fra gjennomsnitt).
+
+**`getSequentialDivergentColors()`** - Returnerer 7 CSS-fargeverdier.
+
+```tsx
+import { getSequentialDivergentColors } from '@udir-design/react/utilities/dataVisualization/alpha';
+
+const colors = getSequentialDivergentColors();
+// ['var(--uds-data-color-sequential-divergent-1)', ...]
+```
+
+<Unstyled>
+  <DatavisSeqDivColorDisplay />
+</Unstyled>
+
+---
+
+## Highcharts
+
+> **Tips:** Se [Dashboard-demoen](/docs/demo-dashboard-demo--docs) for komplette eksempler med Highcharts.
+
+### Tema
+
+Ferdigkonfigurert tema for Highcharts med kategorisk fargepalett og typografi fra designsystemet.
+
+**`getHighchartsTheme()`** - Returnerer `Partial<Highcharts.Options>`.
+
+```tsx
+import Highcharts from 'highcharts';
+import HighchartsReact from 'highcharts-react-official';
+import { getHighchartsTheme } from '@udir-design/react/utilities/dataVisualization/alpha';
+import '@udir-design/theme/dataviz.css';
+import 'highcharts/i18n/nb-NO'; // Norsk språkpakke
+
+Highcharts.setOptions(getHighchartsTheme());
+
+export function MyChart() {
+  const options: Highcharts.Options = {
+    chart: { type: 'pie' },
+    title: { text: 'Prøveresultater' },
+    series: [
+      {
+        type: 'pie',
+        name: 'Antall',
+        data: [
+          { name: 'Bestått', y: 300 },
+          { name: 'Ikke bestått', y: 50 },
+        ],
+      },
+    ],
+  };
+
+  return <HighchartsReact highcharts={Highcharts} options={options} />;
+}
+```
+
+### Sekvensielle paletter i Highcharts
+
+For sekvensielle paletter i Highcharts, bruk `getSequentialMonochromaticColors()` eller `getSequentialDivergentColors()` for å generere en fargeskala og angi den i `colorAxis`:
+
+```tsx
+import Highcharts from 'highcharts';
+import HighchartsReact from 'highcharts-react-official';
+import { getHighchartsTheme } from '@udir-design/react/utilities/dataVisualization/alpha';
+import { getSequentialMonochromaticColors } from '@udir-design/react/utilities/dataVisualization/alpha';
+import '@udir-design/theme/dataviz.css';
+import 'highcharts/i18n/nb-NO'; // Norsk språkpakke
+
+Highcharts.setOptions(getHighchartsTheme());
+const seq = getSequentialMonochromaticColors();
+
+const options: Highcharts.Options = {
+  chart: { type: 'heatmap' },
+  colorAxis: {
+    min: 0,
+    max: 100,
+    stops: [
+      [0.0, seq[0]],
+      [0.2, seq[1]],
+      [0.4, seq[2]],
+      [0.6, seq[3]],
+      [0.8, seq[4]],
+      [1.0, seq[5]],
+    ],
+  },
+  series: [
+    {
+      type: 'heatmap',
+      data: [
+        [0, 0, 12],
+        [1, 0, 55],
+        [2, 0, 90],
+      ],
+    },
+  ],
+};
+```
+
+### Språkpakker
+
+Highcharts har noen få innebygde språkpakker. Engelsk er standard. Importer andre du trenger:
+
+```tsx
+import 'highcharts/i18n/nb-NO'; // Norsk Bokmål
+
+// Se alle tilgjengelige språk: node_modules/highcharts/i18n/
+```
+
+## Bruk med andre diagrambiblioteker
+
+Fargepalettene skal fungere med de fleste diagrambiblioteker som lar deg spesifisere farger via CSS eller JavaScript. Her er noen eksempler:
+
+### Chart.js
+
+```tsx
+import { getCategoricalColors } from '@udir-design/react/utilities/dataVisualization/alpha';
+import { Pie } from 'react-chartjs-2';
+
+const data = {
+  labels: ['Norsk', 'Matematikk', 'Engelsk'],
+  datasets: [
+    {
+      data: [85, 72, 91],
+      backgroundColor: getCategoricalColors(),
+      borderWidth: 0,
+    },
+  ],
+};
+
+<Pie data={data} />;
+```
+
+### Recharts
+
+```tsx
+import { getCategoricalColors } from '@udir-design/react/utilities/dataVisualization/alpha';
+import { PieChart, Pie, Cell } from 'recharts';
+
+const data = [
+  { name: 'Norsk', value: 85 },
+  { name: 'Matematikk', value: 72 },
+  { name: 'Engelsk', value: 91 },
+];
+
+const colors = getCategoricalColors();
+
+<PieChart width={400} height={400}>
+  <Pie data={data} dataKey="value">
+    {data.map((entry, index) => (
+      <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+    ))}
+  </Pie>
+</PieChart>;
+```
+
+### D3.js
+
+```tsx
+import { getCategoricalColors } from '@udir-design/react/utilities/dataVisualization/alpha';
+import * as d3 from 'd3';
+
+const colorScale = d3
+  .scaleOrdinal<string, string>()
+  .domain(['Norsk', 'Matematikk', 'Engelsk'])
+  .range(getCategoricalColors());
+
+// Example inside a D3 selection:
+svg.selectAll('rect').attr('fill', (d) => colorScale(d.subject));
+```

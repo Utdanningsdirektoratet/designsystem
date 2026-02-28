@@ -12,18 +12,24 @@ import classes from './color.module.css';
 
 type TokenTableProps = {
   colorTokens: Record<string, PreviewToken[]>;
+  selectLabel: string;
 } & HTMLAttributes<HTMLDivElement>;
 
-export const ColorTokensTable = ({ colorTokens }: TokenTableProps) => {
+export const ColorTokensTable = ({
+  colorTokens,
+  selectLabel,
+}: TokenTableProps) => {
   const colors = Object.keys(colorTokens);
-  const [selectedColor, setSelectedColor] =
-    useState<(typeof colors)[number]>('neutral');
+  const [selectedColor, setSelectedColor] = useState<(typeof colors)[number]>(
+    colors[0],
+  );
   const tokens = colorTokens[selectedColor] || [];
+  const showDarkMode = !selectedColor.startsWith('sequential');
 
   return (
     <div data-color={selectedColor}>
       <Field className={classes.input}>
-        <Label>{labels['token-preview'].color['select-label']}</Label>
+        <Label>{selectLabel}</Label>
         <Select
           value={selectedColor || ''}
           onChange={(e) =>
@@ -56,9 +62,11 @@ export const ColorTokensTable = ({ colorTokens }: TokenTableProps) => {
             <Table.HeaderCell>
               {labels['token-preview'].table.light}
             </Table.HeaderCell>
-            <Table.HeaderCell>
-              {labels['token-preview'].table.dark}
-            </Table.HeaderCell>
+            {showDarkMode && (
+              <Table.HeaderCell>
+                {labels['token-preview'].table.dark}
+              </Table.HeaderCell>
+            )}
           </Table.Row>
         </Table.Head>
         <Table.Body>
@@ -73,9 +81,11 @@ export const ColorTokensTable = ({ colorTokens }: TokenTableProps) => {
                 <Table.Cell>
                   <ColorLight colorVariable={value} />
                 </Table.Cell>
-                <Table.Cell>
-                  <ColorDark colorVariable={value} />
-                </Table.Cell>
+                {showDarkMode && (
+                  <Table.Cell>
+                    <ColorDark colorVariable={value} />
+                  </Table.Cell>
+                )}
               </Table.Row>
             );
           })}

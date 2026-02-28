@@ -3,6 +3,7 @@ import { HighchartsReact } from 'highcharts-react-official';
 import { useRef, useState } from 'react';
 import { Table } from 'src/components/table';
 import { Heading } from 'src/components/typography/heading/Heading';
+import { getHighchartsTheme } from 'src/utilities/dataVisualization';
 import { DataControls } from '../../components/data-controls/DataControls';
 import { LoadChart } from '../../components/loading/LoadChart';
 import { TabStructure } from '../../components/tab-structure/TabStructure';
@@ -19,25 +20,16 @@ const sentData = testOverview.map((item) => item.sent);
 const receivedData = testOverview.map((item) => item.received);
 const differenceData = testOverview.map((item) => item.sent - item.received);
 
+Highcharts.setOptions(getHighchartsTheme());
+
 const options: Highcharts.Options = {
   title: {
     text: 'Prøveoversikt',
     // hide title but keep for accessibility
     style: { display: 'none' },
   },
-  colors: [
-    '#5BA27E',
-    '#6C7C94',
-    '#BB893E',
-    '#353535',
-    '#30A1BB',
-    '#255F41',
-    '#9D5F32',
-    '#949494',
-  ],
   chart: {
     type: 'column',
-    style: { fontFamily: 'Inter, sans-serif' },
   },
   xAxis: {
     categories: categories,

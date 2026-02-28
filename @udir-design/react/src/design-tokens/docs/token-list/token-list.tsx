@@ -6,6 +6,7 @@ import { Heading } from 'src/components/typography/heading/Heading';
 import { Label } from 'src/components/typography/label/Label';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import { ColorTokensTable } from '../color/color-table';
+import dataVizTokens from '../design-tokens/color-dataviz.json';
 import colorTokens from '../design-tokens/color.json';
 import semanticTokens from '../design-tokens/semantic.json';
 import sizeTokens from '../design-tokens/size.json';
@@ -58,6 +59,7 @@ export const TokenList = () => {
   const filteredTypeScaleTokens = typeScaleTokens.filter((t) =>
     tokenSearchFilter(t, value),
   );
+  const filteredDataVizTokens = filteredRecord(dataVizTokens, value);
   const filteredTypographyGroups = filteredRecord(typographyTokens, value);
   const filteredTypographyCombined = [
     ...filteredTypeScaleTokens,
@@ -86,6 +88,11 @@ export const TokenList = () => {
     colorTokens,
     filteredColorTokens,
   );
+  const displayDataVizTokens = pick(
+    headingMatches.colors,
+    dataVizTokens,
+    filteredDataVizTokens,
+  );
   const displayTypographyTokens = pick(
     headingMatches.typography,
     allTypography,
@@ -98,6 +105,7 @@ export const TokenList = () => {
   );
 
   const showColors = headingMatches.colors || has(filteredColorTokens);
+  const showDataViz = headingMatches.colors || has(filteredDataVizTokens);
   const showTypography =
     headingMatches.typography || filteredTypographyCombined.length > 0;
   const showSemantic =
@@ -128,10 +136,32 @@ export const TokenList = () => {
             </Heading>
             <Paragraph>{labels['token-preview'].color.description}</Paragraph>
             <div className={classes.section}>
-              <ColorTokensTable colorTokens={displayColorTokens} />
+              <ColorTokensTable
+                colorTokens={displayColorTokens}
+                selectLabel={labels['token-preview'].color['select-label']}
+              />
             </div>
           </>
         )}
+        {showDataViz && (
+          <>
+            <Heading
+              level={2}
+              data-size="lg"
+              id={labels['token-preview']['dataVizHeading'] + 'heading'}
+            >
+              {labels['token-preview']['dataVizHeading']}
+            </Heading>
+            <Paragraph>{labels['token-preview'].dataViz.description}</Paragraph>
+            <div className={classes.section}>
+              <ColorTokensTable
+                colorTokens={displayDataVizTokens}
+                selectLabel={labels['token-preview'].dataViz['select-label']}
+              />
+            </div>
+          </>
+        )}
+
         {showTypography && (
           <>
             <Heading
