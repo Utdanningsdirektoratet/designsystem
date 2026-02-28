@@ -593,18 +593,44 @@ export const WithNavigationLinksAndMenu = meta.story({
   ),
 });
 
-const responsiveLinks = ['Navlinker', 'Overskrift 1', 'Overskrift 2'].map(
-  (heading, index) => ({
-    heading,
-    links: Array.from(
-      { length: index === 1 ? 5 : index === 2 ? 4 : 3 },
-      (_, i) => ({
-        title: heading === 'Navlinker' ? `Navlink ${i + 1}` : `Link ${i + 1}`,
-        href: '',
-      }),
-    ),
-  }),
-);
+export const LongApplicationName = meta.story({
+  args: {
+    applicationName: 'Foreldre\u00ADundersøkelsen i barnehage',
+  },
+  render: (args) => {
+    const menuButtonRef = useRef<HTMLButtonElement>(null);
+    return (
+      <>
+        <style>
+          {`
+        /* Styles defined in application-specific css */
+        @media (max-width: 30rem) {
+        .uds-header__logo > :last-child {
+          font-size: var(--ds-font-size-4);
+        }
+        @media (max-width: 23rem) {
+          .myMenuText {
+            // Visually hidden but accessible for screen readers
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            white-space: nowrap;
+            width: 1px;
+          }`}
+        </style>
+        <Header {...args}>
+          <Header.MenuButton ref={menuButtonRef}>
+            <span className="myMenuText">Meny</span>
+          </Header.MenuButton>
+          <Header.Menu>{/* Menyinnhold her*/}</Header.Menu>
+        </Header>
+      </>
+    );
+  },
+});
 
 export const WithTag = meta.story({
   render(args) {
@@ -693,6 +719,19 @@ export const WithTwoLanguages = meta.story({
     );
   },
 });
+
+const responsiveLinks = ['Navlinker', 'Overskrift 1', 'Overskrift 2'].map(
+  (heading, index) => ({
+    heading,
+    links: Array.from(
+      { length: index === 1 ? 5 : index === 2 ? 4 : 3 },
+      (_, i) => ({
+        title: heading === 'Navlinker' ? `Navlink ${i + 1}` : `Link ${i + 1}`,
+        href: '',
+      }),
+    ),
+  }),
+);
 
 export const Responsive = meta.story({
   render(args) {
