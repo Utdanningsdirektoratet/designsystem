@@ -31,7 +31,21 @@ function MyComponent() {
 
 ## Ta i bruk uten React
 
-SVG-filene er mulig å importere og bruke fra vanlig HTML og CSS dersom du bruker en bundler som kan resolve npm imports.
+Ikonene er mulig å importere og bruke fra vanlig HTML og CSS, for eksempel dersom du bruker en bundler som kan resolve npm imports.
+
+### Bruk i CSS uten bundler
+
+Alle ikoner er tilgjengeliggjort som URL encodings i hver sin css-fil. For å ta ibruk ikoner på denne måten må du først importere css-filen for hvert ikon.
+
+```css
+@import '@udir-design/icons/dist/css/circleFill.css';
+```
+
+Deretter kan du bruke alle ikoner direkte i css på følgende format:
+
+```css
+var(--uds-icon-circleFill);
+```
 
 ### Med Parcel som bundler
 
@@ -72,8 +86,8 @@ document.body.innerHTML += `
 <a class="ds-link" href="#">
   <svg aria-hidden>
     <use href="${ArrowRight}#icon" />
-  </svg
-  ><span>Lenke lagt til dynamisk med JavaScript</span>
+  </svg>
+  <span>Lenke lagt til dynamisk med JavaScript</span>
 </a>`;
 ```
 
