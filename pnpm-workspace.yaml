@@ -21,8 +21,8 @@ catalog:
   '@navikt/aksel-icons': ^8.6.0
   '@next/eslint-plugin-next': ^16.1.6
   '@nx/azure-cache': ^5.0.0
-  '@nx/eslint': 22.5.1
-  '@nx/eslint-plugin': 22.5.1
+  '@nx/eslint': 22.5.3
+  '@nx/eslint-plugin': 22.5.3
   '@radix-ui/react-slot': ^1.2.4
   '@storybook/addon-a11y': ^10.2.13
   '@storybook/addon-docs': ^10.2.13
@@ -31,14 +31,14 @@ catalog:
   '@svgr/cli': 8.1.0
   '@svgr/core': ^8.1.0
   '@swc-node/register': ^1.11.1
-  '@swc/core': ^1.15.13
+  '@swc/core': ^1.15.17
   '@swc/helpers': ^0.5.19
   '@testing-library/react': ^16.3.2
   '@tokens-studio/sd-transforms': ^2.0.3
   '@types/diffable-html': ^5.0.2
   '@types/mdast': ^4.0.4
   '@types/micromatch': ^4.0.10
-  '@types/node': ^24.10.14
+  '@types/node': ^24.11.0
   '@types/ramda': ^0.31.1
   '@types/react': ^19.2.14
   '@types/react-dom': ^19.2.3
@@ -85,7 +85,7 @@ catalog:
   mdast-util-to-hast: ^13.2.1
   micromatch: ^4.0.8
   next: ^16.1.6
-  nx: 22.5.1
+  nx: 22.5.3
   parcel: ^2.16.4
   playwright: ^1.58.2
   postcss: ^8.5.6
