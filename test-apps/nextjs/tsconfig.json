@@ -3,7 +3,6 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
@@ -27,9 +26,9 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "skipLibCheck": true,
     "module": "esnext",
+    "target": "esnext",
     "moduleResolution": "bundler",
-    "types": ["@udir-design/theme", "@udir-design/react/html"],
-    "target": "ES2017"
+    "types": ["@udir-design/theme", "@udir-design/react/html"]
   },
   "include": [
     "**/*.ts",
