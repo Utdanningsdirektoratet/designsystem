@@ -45,7 +45,7 @@
   width: fit-content;
 
   & > input {
-    @composes ds-sr-only from '@digdir/designsystemet-css/base.css';
+    display: none;
   }
 
   &[aria-busy='true'] {
