@@ -5,8 +5,10 @@
     "copy-aksel-icons": "svgo --config svgo.config.aksel.mjs -f ./node_modules/@navikt/aksel-icons/dist/svg -o ./dist/svg",
     "copy-style": "cp src/style.css dist/",
     "compile": "tsup src/index.ts src/metadata.ts --format esm,cjs --dts",
-    "build": "pnpm compile && pnpm copy-aksel-icons && pnpm copy-style",
-    "inject": "pnpm i"
+    "build": "pnpm clean && pnpm compile && pnpm copy-aksel-icons && pnpm copy-style && pnpm generate-css",
+    "generate-css": "tsx generate-css.ts",
+    "inject": "pnpm i",
+    "clean": "rimraf ./dist && mkdir ./dist"
   },
   "repository": {
     "type": "git",
@@ -24,7 +26,8 @@
     ".": "./dist/index.js",
     "./metadata": "./dist/metadata.js",
     "./style.css": "./dist/style.css",
-    "./svg/*.svg": "./dist/svg/*.svg"
+    "./svg/*.svg": "./dist/svg/*.svg",
+    "./css/*.css": "./dist/css/*.css"
   },
   "files": [
     "./dist"
@@ -34,6 +37,8 @@
   },
   "devDependencies": {
     "svgo": "catalog:",
-    "tsup": "catalog:"
+    "tsup": "catalog:",
+    "camelcase": "catalog:",
+    "rimraf": "catalog:"
   }
 }
