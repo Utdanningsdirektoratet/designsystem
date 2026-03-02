@@ -534,13 +534,13 @@ importers:
       '@digdir/designsystemet-css':
         specifier: 'catalog:'
         version: 1.11.0
-      '@udir-design/icons':
-        specifier: workspace:*
-        version: link:../icons
       '@udir-design/theme':
         specifier: workspace:*
         version: link:../theme
     devDependencies:
+      '@udir-design/icons':
+        specifier: workspace:*
+        version: link:../icons
       autoprefixer:
         specifier: 'catalog:'
         version: 10.4.27(postcss@8.5.6)

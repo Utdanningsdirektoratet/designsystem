@@ -20,10 +20,10 @@
   ],
   "dependencies": {
     "@digdir/designsystemet-css": "catalog:",
-    "@udir-design/theme": "workspace:*",
-    "@udir-design/icons": "workspace:*"
+    "@udir-design/theme": "workspace:*"
   },
   "devDependencies": {
+    "@udir-design/icons": "workspace:*",
     "autoprefixer": "catalog:",
     "cssnano": "catalog:",
     "postcss": "catalog:",
