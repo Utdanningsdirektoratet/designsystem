@@ -1,4 +1,5 @@
 import { Meta, Source, Unstyled } from '@storybook/addon-docs/blocks';
+import { SimpleAlert } from '.storybook/docs/components';
 import { Link } from 'src/components/link/Link';
 import {
   DatavisValueColorDisplay,
@@ -26,7 +27,11 @@ Verktøy for å bruke datavisualiseringsfarger i diagrammer og grafer. Disse fun
 
 Les også <Link href="./typedoc/modules/utilities_form_alpha.html" target="_none">detaljert dokumentasjon generert fra kildekoden (på engelsk)</Link>.
 
-> Se [Farger for datavisualisering](/docs/design-tokens-farger--docs#farger-for-datavisualisering) for retningslinjer om når og hvordan de ulike palettene skal brukes.
+<SimpleAlert type="tip">
+  Se [Farger for
+  datavisualisering](/docs/design-tokens-farger--docs#farger-for-datavisualisering)
+  for retningslinjer om når og hvordan de ulike palettene skal brukes.
+</SimpleAlert>
 
 ## Oppsett
 
@@ -95,7 +100,10 @@ const colors = getSequentialDivergentColors();
 
 ## Highcharts
 
-> **Tips:** Se [Dashboard-demoen](/docs/demo-dashboard-demo--docs) for komplette eksempler med Highcharts.
+<SimpleAlert type="tip" heading="Tips">
+  Se [Dashboard-demoen](/docs/demo-dashboard-demo--docs) for komplette eksempler
+  med Highcharts.
+</SimpleAlert>
 
 ### Tema
 

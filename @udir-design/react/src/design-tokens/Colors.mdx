@@ -1,4 +1,5 @@
 import { Meta, Unstyled } from '@storybook/addon-docs/blocks';
+import { SimpleAlert } from '.storybook/docs/components';
 import {
   ColorDisplay,
   SeverityColors,
@@ -18,7 +19,10 @@ import {
 
 # Farger
 
-> Gå til [oversikten over designtokens](/docs/design-tokens-oversikt--docs) for å se CSS-variablene til fargene.
+<SimpleAlert type="tip">
+  Gå til [oversikten over designtokens](/docs/design-tokens-oversikt--docs) for
+  å se CSS-variablene til fargene.
+</SimpleAlert>
 
 ## Farger for brukergrensesnitt
 
@@ -46,7 +50,12 @@ Varselfargene brukes til å formidle varsler av typen info, suksess, advarsel el
 
 Udir har egne farger ment til bruk av datavisualisering. Disse er laget spesielt for å sikre god kontrast og lesbarhet. Fargene har utgangspunkt i Udirs identitetsfarger, men er optimalisert for bruk i diagrammer og grafer.
 
-> Vi tilbyr [hjelpefunksjoner for datavisualisering](/docs/utilities-hjelpefunksjoner-for-datavisualisering--docs) som kan brukes i visualiseringsprogrammer som Highcharts, D3, Chart.js og lignende.
+<SimpleAlert type="tip">
+  Vi tilbyr [hjelpefunksjoner for
+  datavisualisering](/docs/utilities-hjelpefunksjoner-for-datavisualisering--docs)
+  som kan brukes i visualiseringsprogrammer som Highcharts, D3, Chart.js og
+  lignende.
+</SimpleAlert>
 
 ### Kategorisk data
 
@@ -54,7 +63,10 @@ Udir har egne farger ment til bruk av datavisualisering. Disse er laget spesielt
 
 Kategoriske data bruker en kvalitativ fargepalett med tydelige fargeforskjeller for å skille distinkte kategorier av data som er likestilte, som for eksempel ulike elevgrupper eller fagområder.
 
-> CSS-variabler: <code>--uds-data-color-categorical-1</code> til <code>--uds-data-color-categorical-8</code>.
+<SimpleAlert type="tip" heading="CSS-variabler">
+  <code>--uds-data-color-categorical-1</code> til{' '}
+  <code>--uds-data-color-categorical-8</code>.
+</SimpleAlert>
 
 <DatavisValueColorDisplay />
 
@@ -80,13 +92,19 @@ For kategorier som allerede har en naturlig rekkefølge, for eksempel kvartaler,
 
 #### Monokromatisk palett
 
-> **Merk:** Den monokromatiske paletten er under arbeid. Fargene kan endres eller fjernes i nær fremtid.
+<SimpleAlert type="warning">
+  Den monokromatiske paletten er under arbeid. Fargene kan endres eller fjernes
+  i nær fremtid.
+</SimpleAlert>
 
 Sekvensiell eller numerisk data som har en naturlig rekkefølge fra lav til høy verdi bruker en monokromatisk fargepalett i én fargeskala fra lys til mørk, der mørkere farge indikerer høyere verdi. Fargenyansene kan enten være klart adskilt eller ha en jevn overgang.
 
 Monokromatisk palett bruker samme fargeverdier i både light mode og dark mode.
 
-> CSS-variabler: <code>--uds-data-color-sequential-monochromatic-1</code> til <code>--uds-data-color-sequential-monochromatic-8</code>.
+<SimpleAlert type="tip" heading="CSS-variabler">
+  <code>--uds-data-color-sequential-monochromatic-1</code> til{' '}
+  <code>--uds-data-color-sequential-monochromatic-8</code>.
+</SimpleAlert>
 
 <DatavisSeqColorDisplay />
 
@@ -96,7 +114,10 @@ Monokromatisk palett bruker samme fargeverdier i både light mode og dark mode.
 
 Numeriske data med avvik fra et midtpunkt bruker en divergerende palett med to monokromatiske fargepaletter som står i kontrast til hverandre med en nøytral farge som midtpunkt. Mørkere farge indikerer høyere verdi. Dette er godt egnet for å vise data over og under et midtpunkt, som for eksempel elevers prestasjonsforskjeller i en nasjonal prøve.
 
-> CSS-variabler: <code>--uds-data-color-sequential-divergent-1</code> til <code>--uds-data-color-sequential-divergent-7</code>.
+<SimpleAlert type="tip" heading="CSS-variabler">
+  <code>--uds-data-color-sequential-divergent-1</code> til{' '}
+  <code>--uds-data-color-sequential-divergent-7</code>.
+</SimpleAlert>
 
 <DatavisSeqDivColorDisplay />
 
