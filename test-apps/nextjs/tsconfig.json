@@ -26,9 +26,9 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "skipLibCheck": true,
     "module": "esnext",
+    "target": "esnext",
     "moduleResolution": "bundler",
-    "types": ["@udir-design/theme", "@udir-design/react/html"],
-    "target": "ES2017"
+    "types": ["@udir-design/theme", "@udir-design/react/html"]
   },
   "include": [
     "**/*.ts",

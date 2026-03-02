@@ -4,7 +4,7 @@
     "allowJs": false,
     "strict": true,
     "moduleResolution": "nodenext",
-    "module": "node20",
+    "module": "nodenext",
     "target": "esnext"
   },
   "extends": "../../tsconfig.base.json"
