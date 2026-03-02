@@ -4,7 +4,7 @@
   "scripts": {
     "copy-aksel-icons": "svgo --config svgo.config.aksel.mjs -f ./node_modules/@navikt/aksel-icons/dist/svg -o ./dist/svg",
     "copy-style": "cp src/style.css dist/",
-    "compile": "tsup src/index.ts src/metadata.ts --format esm,cjs --dts",
+    "compile": "tsdown src/index.ts src/metadata.ts --format esm,cjs --dts",
     "build": "pnpm clean && pnpm compile && pnpm copy-aksel-icons && pnpm copy-style && pnpm generate-css",
     "generate-css": "tsx generate-css.ts",
     "inject": "pnpm i",
@@ -20,11 +20,11 @@
   },
   "license": "MIT",
   "type": "module",
-  "main": "./dist/index.js",
+  "main": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.js",
-    "./metadata": "./dist/metadata.js",
+    ".": "./dist/index.mjs",
+    "./metadata": "./dist/metadata.mjs",
     "./style.css": "./dist/style.css",
     "./svg/*.svg": "./dist/svg/*.svg",
     "./css/*.css": "./dist/css/*.css"
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "svgo": "catalog:",
-    "tsup": "catalog:",
+    "tsdown": "catalog:",
     "camelcase": "catalog:",
     "rimraf": "catalog:"
   }

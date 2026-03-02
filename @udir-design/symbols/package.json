@@ -14,7 +14,7 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "tsup": {
+  "tsdown": {
     "entry": [
       "generated-src/**/*.{ts,tsx}"
     ],
@@ -25,7 +25,7 @@
     "dts": true,
     "sourcemap": true,
     "clean": true,
-    "external": [
+    "neverBundle": [
       "react"
     ]
   },
@@ -33,7 +33,7 @@
     ".": {
       "import": {
         "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "default": "./dist/index.mjs"
       },
       "require": {
         "types": "./dist/index.d.ts",
@@ -63,7 +63,7 @@
     "copy:utils": "shx mkdir -p generated-src/util && shx cp -r util/* generated-src/util || exit 0",
     "copy:svgs": "shx mkdir -p dist/svg && svgo --config=config/svgo.config.js -f symbols -o dist/svg",
     "prebuild": "shx rm -rf generated-src && pnpm run copy:utils && pnpm run update:metadata && pnpm run generate",
-    "build": "tsup",
+    "build": "tsdown",
     "postbuild": "pnpm run copy:svgs",
     "fetch-new:symbols": "tsx config/figma/index.ts",
     "generate:pngs": "node config/svg-to-png.js"
@@ -82,7 +82,7 @@
     "sharp": "catalog:",
     "shx": "catalog:",
     "svgo": "catalog:",
-    "tsup": "catalog:",
+    "tsdown": "catalog:",
     "typescript": "catalog:"
   }
 }

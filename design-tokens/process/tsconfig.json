@@ -2,7 +2,7 @@
   "compilerOptions": {
     "noEmit": true,
     "allowJs": false,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "moduleResolution": "nodenext",
