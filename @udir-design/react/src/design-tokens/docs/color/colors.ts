@@ -114,36 +114,3 @@ export const severityColors: ColorInfo[] = [
     semantics: makeColorScale('danger'),
   },
 ];
-
-// TODO: Update when data visualization colors are added as tokens
-export const datavisColors: { number: string; value: string }[] = [
-  { number: '1', value: '#5BA27E' },
-  { number: '2', value: '#6C7C94' },
-  { number: '3', value: '#BB893E' },
-  { number: '4', value: '#353535' },
-  { number: '5', value: '#30A1BB' },
-  { number: '6', value: '#255F41' },
-  { number: '7', value: '#9D5F32' },
-  { number: '8', value: '#949494' },
-];
-
-export const datavisSeqMonoColors: string[] = [
-  '#5BA27E',
-  '#427C5E',
-  '#36674E',
-  '#254B38',
-  '#1E422F',
-  '#163626',
-  '#112E1F',
-  '#0B1E15',
-];
-
-export const datavisSeqDivergentColors: string[] = [
-  '#1E422F',
-  '#36674E',
-  '#5BA27E',
-  '#DEDEDE',
-  '#6C7C94',
-  '#485970',
-  '#2E3C51',
-];

@@ -88,6 +88,8 @@ export default defineConfig({
         alpha: 'src/alpha.ts',
         beta: 'src/beta.ts',
         'utilities/form/alpha': 'src/utilities/form/alpha.ts',
+        'utilities/dataVisualization/alpha':
+          'src/utilities/dataVisualization/alpha.ts',
       },
       name: '@udir-design/react',
       // Change this to the formats you want to support.

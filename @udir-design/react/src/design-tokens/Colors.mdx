@@ -14,77 +14,12 @@ import {
 } from './docs/color/datavis-color-display';
 
 <Meta title="design-tokens/Farger" />
-<Unstyled>
 
 # Farger
-
-## Farger for datavisualisering
-
-Udir har egne farger ment til bruk av datavisualisering. Disse er laget spesielt for å sikre god kontrast og lesbarhet. Fargene har utgangspunkt i Udirs identitetsfarger, men er optimalisert for bruk i diagrammer og grafer.
-
-### Farger for kategorisk data
-
-#### Kvalitativ palett
-
-Kategoriske data bruker en kvalitativ fargepalett med tydelige fargeforskjeller for å skille distinkte kategorier av data som er likestilte, som for eksempel ulike elevgrupper eller fagområder.
-
-Rekkefølgen på fargenen er ikke tilfeldig, og er designet slik at hver farge passer til fargene den står ved siden av, uten fare for at de forsveksles med hverandre. Rekkefølgen på fargene er også en rangering på hvor mye hver farge skal brukes. Det vil si at farge 1 og 2 skal brukes mest, og farge 7 og 8 brukes minst.
-
-<DatavisValueColorDisplay />
-
-##### Rekkefølge ved likestilte kategorier
-
-Der rekkefølgen på kategoriene i diagrammet er likegyldig, velg kategorien med størst mengde til farge 1, nest størst til farge 2, osv. Dette sikrer mest bruk av de første fargene i profilen.
-
-##### Rekkefølge ved naturlig sortering
-
-For kategorier som allerede har en naturlig rekkefølge, for eksempel kvartaler, aldersgrupper, eller tidspunkt, så følger fargene denne rekkefølgen uavhengig av mengde. Fargene bruker fortsatt fast rekkefølge fra farge 1 til farge 8.
-
-{/* Fargetabell */}
-
-<DatavisColorDisplay />
-
-### Farger for sekvensiell data
-
-**Sekvensielle paletter:**
-
-- **Monokromatisk palett** - For data med naturlig rekkefølge fra lav til høy.
-
-- **Divergerende palett** - For data med avvik fra et midtpunkt.
-
-#### Monokromatisk palett
-
-Sekvensiell eller numerisk data som har en naturlig rekkefølge fra lav til høy verdi bruker en monokromatisk fargepalett i én fargeskala fra lys til mørk, der mørkere farge indikerer høyere verdi. Fargenyansene kan enten være klart adskilt eller ha en jevn overgang.
-
-Monokromatisk palett bruker samme fargeverdier i både light mode og dark mode.
-
-<DatavisSeqColorDisplay />
-
-<DatavisGradient />
-
-#### Divergerende palett
-
-Numeriske data med avvik fra et midtpunkt bruker en divergerende palett med to monokromatiske fargepaletter som står i kontrast til hverandre med en nøytral farge som midtpunkt. Mørkere farge indikerer høyere verdi. Dette er godt egnet for å vise data over og under et midtpunkt, som for eksempel elevers prestasjonsforskjeller i en nasjonal prøve.
-
-<DatavisSeqDivColorDisplay />
-
-<DatavisDivGradient />
-
-### Bruksregler
-
-#### Diagramtyper
-
-**Stolpediagram:** Rekkefølgen på fargene er den samme uavhengig av om stolpediagrammet er stående, liggende eller stablet.
-
-**Kakediagram:** Følg den faste rekkefølgen for diagramfarger. Bruk hjelpestreker mellom forklaring og farge for bedre lesbarhet.
-
-**Linjediagram:** Bruk geometriske figurer (sirkler, trekanter, firkanter) knyttet til linjene i tillegg til farge for å gjøre det enklere å oppfatte forskjeller.
 
 ## Farger for andre flater
 
 Dersom du skal lage illustrasjoner, trykksaker eller lignende, kan du lese mer om [fargepaletter for øvrige bruksområder](https://www.udir.no/om-udir/designprofil/farger/) på Udir.no.
-
-</Unstyled>
 
 Vi deler fargene i designsystemet inn i tre grupper: Farger for brukergrensesnitt, datavisualisering, og for andre flater.
 
@@ -109,3 +44,74 @@ Identitetsfargene tar utgangspunkt i Udirs visuelle identitet, men nyansene er t
 Varselfargene brukes til å formidle varsler av typen info, suksess, advarsel eller fare. Disse fargene er tilgjengelig for komponenter der det er relevant, for eksempel [`Alert`](/docs/components-alert--docs) og [`Tag`](/docs/components-tag--docs). Varselfarger skal ikke brukes som dekor eller fordi de ser fine ut. De skal kun benyttes i kontekst der innholdet har tilsvarende funksjon.
 
 <SeverityColors />
+
+<Unstyled>
+## Farger for datavisualisering
+
+Udir har egne farger ment til bruk av datavisualisering. Disse er laget spesielt for å sikre god kontrast og lesbarhet. Fargene har utgangspunkt i Udirs identitetsfarger, men er optimalisert for bruk i diagrammer og grafer.
+
+Gå til [oversikten over designtokens](/docs/design-tokens-oversikt--docs) for å se alle CSS-variablene til fargene.
+
+### Kategorisk data
+
+#### Kvalitativ palett
+
+Kategoriske data bruker en kvalitativ fargepalett med tydelige fargeforskjeller for å skille distinkte kategorier av data som er likestilte, som for eksempel ulike elevgrupper eller fagområder.
+
+> CSS-variabler: <code>--uds-data-color-categorical-1</code> til <code>--uds-data-color-categorical-8</code>.
+
+<DatavisValueColorDisplay />
+
+Rekkefølgen på fargene er ikke tilfeldig, og er designet slik at hver farge passer til fargene den står ved siden av, uten fare for at de forsveksles med hverandre. Rekkefølgen på fargene er også en rangering på hvor mye hver farge skal brukes. Det vil si at farge 1 og 2 skal brukes mest, og farge 7 og 8 brukes minst.
+
+<DatavisColorDisplay />
+
+##### Rekkefølge ved likestilte kategorier
+
+Der rekkefølgen på kategoriene i diagrammet er likegyldig, velg kategorien med størst mengde til farge 1, nest størst til farge 2, osv. Dette sikrer mest bruk av de første fargene i profilen.
+
+##### Rekkefølge ved naturlig sortering
+
+For kategorier som allerede har en naturlig rekkefølge, for eksempel kvartaler, aldersgrupper, eller tidspunkt, så følger fargene denne rekkefølgen uavhengig av mengde. Fargene bruker fortsatt fast rekkefølge fra farge 1 til farge 8.
+
+### Sekvensiell data
+
+**Sekvensielle paletter:**
+
+- **Monokromatisk palett** - For data med naturlig rekkefølge fra lav til høy.
+
+- **Divergerende palett** - For data med avvik fra et midtpunkt.
+
+#### Monokromatisk palett
+
+Sekvensiell eller numerisk data som har en naturlig rekkefølge fra lav til høy verdi bruker en monokromatisk fargepalett i én fargeskala fra lys til mørk, der mørkere farge indikerer høyere verdi. Fargenyansene kan enten være klart adskilt eller ha en jevn overgang.
+
+Monokromatisk palett bruker samme fargeverdier i både light mode og dark mode.
+
+> CSS-variabler: <code>--uds-data-color-sequential-monochromatic-1</code> til <code>--uds-data-color-sequential-monochromatic-8</code>.
+
+<DatavisSeqColorDisplay />
+
+<DatavisGradient />
+
+#### Divergerende palett
+
+Numeriske data med avvik fra et midtpunkt bruker en divergerende palett med to monokromatiske fargepaletter som står i kontrast til hverandre med en nøytral farge som midtpunkt. Mørkere farge indikerer høyere verdi. Dette er godt egnet for å vise data over og under et midtpunkt, som for eksempel elevers prestasjonsforskjeller i en nasjonal prøve.
+
+> CSS-variabler: <code>--uds-data-color-diverging-1</code> til <code>--uds-data-color-diverging-7</code>.
+
+<DatavisSeqDivColorDisplay />
+
+<DatavisDivGradient />
+
+### Bruksregler
+
+#### Diagramtyper
+
+**Stolpediagram:** Rekkefølgen på fargene er den samme uavhengig av om stolpediagrammet er stående, liggende eller stablet.
+
+**Kakediagram:** Følg den faste rekkefølgen for diagramfarger. Bruk hjelpestreker mellom forklaring og farge for bedre lesbarhet.
+
+**Linjediagram:** Bruk geometriske figurer (sirkler, trekanter, firkanter) knyttet til linjene i tillegg til farge for å gjøre det enklere å oppfatte forskjeller.
+
+</Unstyled>
