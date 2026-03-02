@@ -1,6 +1,6 @@
 @layer udir.icons {
   svg:has(use[href$='#icon']) {
-    width: 1em;
     height: 1em;
+    width: auto;
   }
 }
