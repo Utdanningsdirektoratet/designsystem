@@ -5,7 +5,8 @@
     "strict": true,
     "moduleResolution": "nodenext",
     "module": "nodenext",
-    "target": "esnext"
+    "target": "esnext",
+    "types": ["node"]
   },
   "extends": "../../tsconfig.base.json"
 }
