@@ -43,6 +43,14 @@ Varianten `FileUpload.Trigger` er en knapp som åpner nettleserens filvelger. Du
 
 <Canvas of={FileUploadStories.ExampleTrigger} />
 
+### Begrenset antall filer
+
+Dersom du ønsker å begrense antall filer implementeres dette selv. Du kan bruke propertien `disabled` for å hindre brukeren i å laste opp flere filer når grensen er nådd.
+
+Dersom brukeren allerede har lastet opp mer enn det maksimalt tillatte antallet, f.eks. ved å droppe flere filer omgangen i dropzonen, bør du vise en feilmelding for input-feltet, ikke for hver enkelt fil. Se eksempelet under.
+
+<Canvas of={FileUploadStories.TooManyFiles} />
+
 ### Vedlegg
 
 Delkomponenten `FileUpload.Item` brukes til å vise status for filer som er lastet opp. Du kan bruke `error` til å vise feilmeldinger, for eksempel dersom filformatet ikke er riktig.

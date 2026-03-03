@@ -115,7 +115,7 @@ export const ExampleDropZone = meta.story({
       onDropRejected: (rej) => {
         setRejected((prev) => [...prev, ...rej]);
       },
-      maxSize: 524288,
+      maxSize: 5242880,
       accept: {
         'application/pdf': [],
       },
@@ -135,6 +135,7 @@ export const ExampleDropZone = meta.story({
           multiple
           inputProps={getInputProps()}
           data-testid="dropzone"
+          error={files.length > 2 && 'Du har lastet opp for mange filer.'}
           {...getRootProps()}
           {...args}
         />
@@ -194,11 +195,71 @@ export const ExampleDropZone = meta.story({
   },
 });
 
+export const TooManyFiles = meta.story({
+  render: (args) => {
+    const [files, setFiles] = useState<File[]>([
+      new File(['abc'.repeat(100000)], 'eksempel1.pdf'),
+      new File(['abc'.repeat(10000)], 'eksempel2.docx'),
+      new File(['abc'.repeat(1000000)], 'eksempel3.png'),
+    ]);
+
+    const removeFile = (fileToRemove: File) => {
+      setFiles((prevItems) =>
+        prevItems.filter((file) => file !== fileToRemove),
+      );
+    };
+
+    const { getRootProps, getInputProps } = useDropzone({
+      onDropAccepted: (file) => {
+        setFiles((prev) => [...prev, ...file]);
+      },
+      multiple: true,
+    });
+
+    return (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 'var(--ds-size-3)',
+        }}
+      >
+        <FileUpload.Dropzone
+          label="Last opp dokumentasjon"
+          description="Du kan kun laste opp 2 filer."
+          data-testid="dropzone"
+          error={
+            files.length > 2 &&
+            'Du har lastet opp for mange filer. Fjern noen for å kunne sende inn skjemaet.'
+          }
+          inputProps={getInputProps()}
+          {...getRootProps()}
+          style={{ maxWidth: '450px', width: '100%' }}
+          {...args}
+        />
+        {files.length > 0 && (
+          <>
+            <Heading level={3} data-size="2xs">
+              Vedlegg ({files.length}):
+            </Heading>
+            {files.map((file, index) => (
+              <FileUpload.Item
+                key={index}
+                file={file}
+                onRemove={() => removeFile(file)}
+              />
+            ))}
+          </>
+        )}
+      </div>
+    );
+  },
+});
+
 const ErrorMessages = new Map<string, string>([
   ['file-invalid-type', 'Filformatet støttes ikke'],
   ['file-too-large', 'Filen er for stor'],
   ['file-too-small', 'Filen er for liten'],
-  ['too-many-files', 'Du har lastet opp for mange filer'],
 ]);
 
 export const ExampleTrigger = meta.story({
