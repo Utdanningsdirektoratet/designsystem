@@ -6,7 +6,6 @@ import {
   DatavisSeqColorDisplay,
   DatavisSeqDivColorDisplay,
 } from '../../design-tokens/docs/color/datavis-color-display';
-import chartjsExample from './docs/chartjsExample.tsx?raw';
 import rechartsExample from './docs/rechartsExample.tsx?raw';
 import highchartsCategoricalExample from './docs/highchartsCategoricalExample.tsx?raw';
 import highchartsSequentialExample from './docs/highchartsSequentialExample.tsx?raw';
@@ -137,33 +136,9 @@ import 'highcharts/i18n/nb-NO'; // Norsk Bokmål
 
 ## Bruk med andre diagrambiblioteker
 
-Fargepalettene skal fungere med de fleste diagrambiblioteker som lar deg spesifisere farger via CSS eller JavaScript. Her er noen eksempler:
-
-### Chart.js
-
-<Source
-  code={chartjsExample.replace(/^((?!import).+\n)+/, '')}
-  language="typescript"
-/>
-
-### Recharts
+Fargepalettene skal fungere med de fleste diagrambiblioteker som lar deg spesifisere farger via CSS eller JavaScript. Her er et eksempel på hvordan du kan bruke `getCategoricalColors()` med Recharts:
 
 <Source
   code={rechartsExample.replace(/^((?!import).+\n)+/, '')}
   language="typescript"
 />
-
-### D3.js
-
-```tsx
-import { getCategoricalColors } from '@udir-design/react/utilities/datavis/alpha';
-import * as d3 from 'd3';
-
-const colorScale = d3
-  .scaleOrdinal<string, string>()
-  .domain(['Norsk', 'Matematikk', 'Engelsk'])
-  .range(getCategoricalColors());
-
-// Example inside a D3 selection:
-svg.selectAll('rect').attr('fill', (d) => colorScale(d.subject));
-```
