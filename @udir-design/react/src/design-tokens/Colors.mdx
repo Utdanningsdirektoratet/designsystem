@@ -19,10 +19,9 @@ import {
 
 # Farger
 
-<SimpleAlert type="tip">
-  Gå til [oversikten over designtokens](/docs/design-tokens-oversikt--docs) for
-  å se CSS-variablene til fargene.
-</SimpleAlert>
+Vi deler fargene i designsystemet inn i tre grupper: Farger for brukergrensesnitt, datavisualisering, og for andre flater.
+
+Gå til [oversikten over designtokens](/docs/design-tokens-oversikt--docs) for å se CSS-variablene til fargene.
 
 ## Farger for brukergrensesnitt
 
@@ -61,11 +60,6 @@ Udir har egne farger ment til bruk av datavisualisering. Disse er laget spesielt
 
 Kategoriske data bruker en fargepalett med tydelige fargeforskjeller for å skille distinkte kategorier av data som er likestilte, som for eksempel ulike elevgrupper eller fagområder.
 
-<SimpleAlert type="tip" heading="CSS-variabler">
-  <code>--uds-data-color-categorical-1</code> til{' '}
-  <code>--uds-data-color-categorical-8</code>.
-</SimpleAlert>
-
 <DatavisValueColorDisplay />
 
 Rekkefølgen på fargene er ikke tilfeldig, og er designet slik at hver farge passer til fargene den står ved siden av, uten fare for at de forsveksles med hverandre. Rekkefølgen på fargene er også en rangering på hvor mye hver farge skal brukes. Det vil si at farge 1 og 2 skal brukes mest, og farge 7 og 8 brukes minst.
@@ -99,11 +93,6 @@ Sekvensiell eller numerisk data som har en naturlig rekkefølge fra lav til høy
 
 Monokromatisk palett bruker samme fargeverdier i både light mode og dark mode.
 
-<SimpleAlert type="tip" heading="CSS-variabler">
-  <code>--uds-data-color-sequential-monochromatic-1</code> til{' '}
-  <code>--uds-data-color-sequential-monochromatic-8</code>.
-</SimpleAlert>
-
 <DatavisSeqColorDisplay />
 
 <DatavisGradient />
@@ -111,11 +100,6 @@ Monokromatisk palett bruker samme fargeverdier i både light mode og dark mode.
 #### Divergerende palett
 
 Numeriske data med avvik fra et midtpunkt bruker en divergerende palett med to monokromatiske fargepaletter som står i kontrast til hverandre med en nøytral farge som midtpunkt. Mørkere farge indikerer høyere verdi. Dette er godt egnet for å vise data over og under et midtpunkt, som for eksempel elevers prestasjonsforskjeller i en nasjonal prøve.
-
-<SimpleAlert type="tip" heading="CSS-variabler">
-  <code>--uds-data-color-sequential-divergent-1</code> til{' '}
-  <code>--uds-data-color-sequential-divergent-7</code>.
-</SimpleAlert>
 
 <DatavisSeqDivColorDisplay />
 
@@ -136,5 +120,3 @@ Numeriske data med avvik fra et midtpunkt bruker en divergerende palett med to m
 ## Farger for andre flater
 
 Dersom du skal lage illustrasjoner, trykksaker eller lignende, kan du lese mer om [fargepaletter for øvrige bruksområder](https://www.udir.no/om-udir/designprofil/farger/) på Udir.no.
-
-Vi deler fargene i designsystemet inn i tre grupper: Farger for brukergrensesnitt, datavisualisering, og for andre flater.
