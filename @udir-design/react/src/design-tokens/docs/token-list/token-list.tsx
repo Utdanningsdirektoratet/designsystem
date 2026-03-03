@@ -6,7 +6,7 @@ import { Heading } from 'src/components/typography/heading/Heading';
 import { Label } from 'src/components/typography/label/Label';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import { ColorTokensTable } from '../color/color-table';
-import datavisTokens from '../design-tokens/color-dataviz.json';
+import datavisTokens from '../design-tokens/color-datavis.json';
 import colorTokens from '../design-tokens/color.json';
 import semanticTokens from '../design-tokens/semantic.json';
 import sizeTokens from '../design-tokens/size.json';
