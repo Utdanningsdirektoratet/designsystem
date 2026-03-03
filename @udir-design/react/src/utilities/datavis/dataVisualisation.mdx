@@ -5,7 +5,7 @@ import {
   DatavisValueColorDisplay,
   DatavisSeqColorDisplay,
   DatavisSeqDivColorDisplay,
-} from '../../design-tokens/docs/color/dataviz-color-display';
+} from '../../design-tokens/docs/color/datavis-color-display';
 import chartjsExample from './docs/chartjsExample.tsx?raw';
 import rechartsExample from './docs/rechartsExample.tsx?raw';
 import highchartsCategoricalExample from './docs/highchartsCategoricalExample.tsx?raw';
@@ -38,7 +38,7 @@ Les også <Link href="./typedoc/modules/utilities_dataVisualization_alpha.html" 
 Importer CSS for datavisualiseringsfarger i applikasjonen din:
 
 ```tsx
-import '@udir-design/theme/dataviz.css';
+import '@udir-design/theme/datavis.css';
 ```
 
 ## Kategorisk palett
@@ -48,7 +48,7 @@ For distinkte kategorier i diagrammer (fagområder, elevgrupper, etc.).
 **`getCategoricalColors()`** - Returnerer 8 CSS-fargeverdier.
 
 ```tsx
-import { getCategoricalColors } from '@udir-design/react/utilities/dataVisualization/alpha';
+import { getCategoricalColors } from '@udir-design/react/utilities/datavis/alpha';
 
 const colors = getCategoricalColors();
 // ['var(--uds-data-color-categorical-1)', 'var(--uds-data-color-categorical-2)', ...]
@@ -67,7 +67,7 @@ For sekvensiell data med gradert skala fra lys til mørk (heatmaps, choropleth-k
 **`getSequentialMonochromaticColors()`** - Returnerer 8 CSS-fargeverdier.
 
 ```tsx
-import { getSequentialMonochromaticColors } from '@udir-design/react/utilities/dataVisualization/alpha';
+import { getSequentialMonochromaticColors } from '@udir-design/react/utilities/datavis/alpha';
 
 const colors = getSequentialMonochromaticColors();
 // ['var(--uds-data-color-sequential-monochromatic-1)', ...]
@@ -86,7 +86,7 @@ For divergerende skalaer med nøytralt midtpunkt (avvik fra gjennomsnitt).
 **`getSequentialDivergentColors()`** - Returnerer 7 CSS-fargeverdier.
 
 ```tsx
-import { getSequentialDivergentColors } from '@udir-design/react/utilities/dataVisualization/alpha';
+import { getSequentialDivergentColors } from '@udir-design/react/utilities/datavis/alpha';
 
 const colors = getSequentialDivergentColors();
 // ['var(--uds-data-color-sequential-divergent-1)', ...]
@@ -156,7 +156,7 @@ Fargepalettene skal fungere med de fleste diagrambiblioteker som lar deg spesifi
 ### D3.js
 
 ```tsx
-import { getCategoricalColors } from '@udir-design/react/utilities/dataVisualization/alpha';
+import { getCategoricalColors } from '@udir-design/react/utilities/datavis/alpha';
 import * as d3 from 'd3';
 
 const colorScale = d3

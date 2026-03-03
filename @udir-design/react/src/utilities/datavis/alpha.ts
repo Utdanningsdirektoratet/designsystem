@@ -8,6 +8,6 @@ export {
   getCategoricalColors,
   getSequentialDivergentColors,
   getSequentialMonochromaticColors,
-} from './dataVisualization';
+} from './dataVisualisation';
 
 export { getHighchartsTheme } from './highcharts';

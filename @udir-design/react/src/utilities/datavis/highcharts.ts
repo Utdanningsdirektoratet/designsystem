@@ -1,11 +1,11 @@
 /**
  * Highcharts theme configuration using Udir design system colors and typography.
  *
- * @requires @udir-design/theme/dataviz.css must be imported in your application
+ * @requires @udir-design/theme/datavis.css must be imported in your application
  */
 
 import type * as Highcharts from 'highcharts';
-import { getCategoricalColors } from './dataVisualization';
+import { getCategoricalColors } from './dataVisualisation';
 
 /**
  * Gets a Highcharts theme configuration object based on Udir design system.
@@ -26,8 +26,8 @@ import { getCategoricalColors } from './dataVisualization';
  * ```tsx
  * import Highcharts from 'highcharts';
  * import HighchartsReact from 'highcharts-react-official';
- * import { getHighchartsTheme } from '@udir-design/react/utilities/dataVisualization/alpha';
- * import '@udir-design/theme/dataviz.css';
+ * import { getHighchartsTheme } from '@udir-design/react/utilities/datavis/alpha';
+ * import '@udir-design/theme/datavis.css';
  * import 'highcharts/i18n/nb-NO'; // Norwegian Bokmål language pack
  *
  * Highcharts.setOptions(getHighchartsTheme());

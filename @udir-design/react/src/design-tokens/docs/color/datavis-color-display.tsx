@@ -4,8 +4,8 @@ import {
   getCategoricalColors,
   getSequentialDivergentColors,
   getSequentialMonochromaticColors,
-} from 'src/utilities/dataVisualization';
-import classes from './dataviz.module.css';
+} from 'src/utilities/datavis';
+import classes from './datavis.module.css';
 
 const datavisColors = getCategoricalColors().map((value, index) => ({
   number: String(index + 1),

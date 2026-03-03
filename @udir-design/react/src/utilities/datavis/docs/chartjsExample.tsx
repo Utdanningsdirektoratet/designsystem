@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-imports */
 //@ts-expect-error example code
 import { Pie } from 'react-chartjs-2';
-import { getCategoricalColors } from '@udir-design/react/utilities/dataVisualization/alpha';
+import { getCategoricalColors } from '@udir-design/react/utilities/datavis/alpha';
 
 export function MyChart() {
   const data = {

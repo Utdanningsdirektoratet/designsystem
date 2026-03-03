@@ -26,7 +26,7 @@ export const labels = {
       ),
       'select-label': 'Velg farge (data-color)',
     },
-    dataViz: {
+    datavis: {
       description: (
         <>
           Datavisualiseringsfargene er laget med god kontrast og lesbarhet.{' '}
@@ -41,7 +41,7 @@ export const labels = {
     'search-in-design-tokens': 'Søk i design tokens',
     'search-input-aria-label': 'Søk på variabel navn i CSS for design tokens',
     colors: 'Farger',
-    dataVizHeading: 'Farger for datavisualisering',
+    datavisHeading: 'Farger for datavisualisering',
     typography: 'Typografi',
     semantic: 'Semantiske',
     'no-results': 'Ingen resultater funnet',

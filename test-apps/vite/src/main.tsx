@@ -1,5 +1,5 @@
 import '@udir-design/react/style.css';
-import '@udir-design/theme/dataviz.css';
+import '@udir-design/theme/datavis.css';
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';

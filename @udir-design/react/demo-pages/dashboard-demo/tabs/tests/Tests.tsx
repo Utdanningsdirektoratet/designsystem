@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 import { Card } from 'src/components/card/Card';
 import { Table } from 'src/components/table';
 import { Heading } from 'src/components/typography/heading/Heading';
-import { getHighchartsTheme } from 'src/utilities/dataVisualization';
+import { getHighchartsTheme } from 'src/utilities/datavis';
 import { DataControls } from '../../components/data-controls/DataControls';
 import { LoadChart } from '../../components/loading/LoadChart';
 import { TabStructure } from '../../components/tab-structure/TabStructure';

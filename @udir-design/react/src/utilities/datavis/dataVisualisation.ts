@@ -2,7 +2,7 @@
  * Utilities for working with data visualization colors from the design system.
  * These functions return CSS custom property references.
  *
- * @requires @udir-design/theme/dataviz.css must be imported in your application
+ * @requires @udir-design/theme/datavis.css must be imported in your application
  */
 
 /**
@@ -13,8 +13,8 @@
  *
  * @example
  * ```tsx
- * import { getCategoricalColors } from '@udir-design/react/utilities/dataVisualization/alpha';
- * import '@udir-design/theme/dataviz.css';
+ * import { getCategoricalColors } from '@udir-design/react/utilities/datavis/alpha';
+ * import '@udir-design/theme/datavis.css';
  *
  * const colors = getCategoricalColors();
  * // ['var(--uds-data-color-categorical-1)', ...]
@@ -35,8 +35,8 @@ export function getCategoricalColors(): readonly string[] {
  *
  * @example
  * ```tsx
- * import { getSequentialMonochromaticColors } from '@udir-design/react/utilities/dataVisualization/alpha';
- * import '@udir-design/theme/dataviz.css';
+ * import { getSequentialMonochromaticColors } from '@udir-design/react/utilities/datavis/alpha';
+ * import '@udir-design/theme/datavis.css';
  *
  * const colors = getSequentialMonochromaticColors();
  * // ['var(--uds-data-color-sequential-monochromatic-1)', ...]
@@ -57,8 +57,8 @@ export function getSequentialMonochromaticColors(): readonly string[] {
  *
  * @example
  * ```tsx
- * import { getSequentialDivergentColors } from '@udir-design/react/utilities/dataVisualization/alpha';
- * import '@udir-design/theme/dataviz.css';
+ * import { getSequentialDivergentColors } from '@udir-design/react/utilities/datavis/alpha';
+ * import '@udir-design/theme/datavis.css';
  *
  * const colors = getSequentialDivergentColors();
  * // ['var(--uds-data-color-sequential-divergent-1)', ...]

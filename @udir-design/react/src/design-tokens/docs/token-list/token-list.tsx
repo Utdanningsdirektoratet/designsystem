@@ -6,7 +6,7 @@ import { Heading } from 'src/components/typography/heading/Heading';
 import { Label } from 'src/components/typography/label/Label';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import { ColorTokensTable } from '../color/color-table';
-import dataVizTokens from '../design-tokens/color-dataviz.json';
+import datavisTokens from '../design-tokens/color-dataviz.json';
 import colorTokens from '../design-tokens/color.json';
 import semanticTokens from '../design-tokens/semantic.json';
 import sizeTokens from '../design-tokens/size.json';
@@ -59,7 +59,7 @@ export const TokenList = () => {
   const filteredTypeScaleTokens = typeScaleTokens.filter((t) =>
     tokenSearchFilter(t, value),
   );
-  const filteredDataVizTokens = filteredRecord(dataVizTokens, value);
+  const filteredDatavisTokens = filteredRecord(datavisTokens, value);
   const filteredTypographyGroups = filteredRecord(typographyTokens, value);
   const filteredTypographyCombined = [
     ...filteredTypeScaleTokens,
@@ -88,10 +88,10 @@ export const TokenList = () => {
     colorTokens,
     filteredColorTokens,
   );
-  const displayDataVizTokens = pick(
+  const displayDatavisTokens = pick(
     headingMatches.colors,
-    dataVizTokens,
-    filteredDataVizTokens,
+    datavisTokens,
+    filteredDatavisTokens,
   );
   const displayTypographyTokens = pick(
     headingMatches.typography,
@@ -105,7 +105,7 @@ export const TokenList = () => {
   );
 
   const showColors = headingMatches.colors || has(filteredColorTokens);
-  const showDataViz = headingMatches.colors || has(filteredDataVizTokens);
+  const showDatavis = headingMatches.colors || has(filteredDatavisTokens);
   const showTypography =
     headingMatches.typography || filteredTypographyCombined.length > 0;
   const showSemantic =
@@ -143,20 +143,20 @@ export const TokenList = () => {
             </div>
           </>
         )}
-        {showDataViz && (
+        {showDatavis && (
           <>
             <Heading
               level={2}
               data-size="lg"
-              id={labels['token-preview']['dataVizHeading'] + 'heading'}
+              id={labels['token-preview']['datavisHeading'] + 'heading'}
             >
-              {labels['token-preview']['dataVizHeading']}
+              {labels['token-preview']['datavisHeading']}
             </Heading>
-            <Paragraph>{labels['token-preview'].dataViz.description}</Paragraph>
+            <Paragraph>{labels['token-preview'].datavis.description}</Paragraph>
             <div className={classes.section}>
               <ColorTokensTable
-                colorTokens={displayDataVizTokens}
-                selectLabel={labels['token-preview'].dataViz['select-label']}
+                colorTokens={displayDatavisTokens}
+                selectLabel={labels['token-preview'].datavis['select-label']}
               />
             </div>
           </>
