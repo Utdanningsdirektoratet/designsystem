@@ -132,8 +132,10 @@ export const ExampleDropZone = meta.story({
         <FileUpload.Dropzone
           label="Last opp dokumentasjon"
           description="Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB."
-          multiple
-          inputProps={{ ...getInputProps(), id: 'dokumentasjon' }}
+          inputProps={{
+            ...getInputProps(),
+            id: 'dokumentasjon',
+          }}
           data-testid="dropzone"
           error={files.length > 2 && 'Du har lastet opp for mange filer.'}
           {...getRootProps()}
@@ -270,10 +272,11 @@ export const ExampleTrigger = meta.story({
   render: (args) => {
     const [file, setFile] = useState<File | null>(null);
 
-    const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
-      if (e.target.files) {
-        setFile(e.target.files[0]);
-        e.target.value = '';
+    const handleOnChange = (e: ChangeEvent<HTMLDivElement>) => {
+      const input = e.target as unknown as HTMLInputElement;
+      if (input.files) {
+        setFile(input.files[0]);
+        input.value = '';
       }
     };
 
@@ -286,7 +289,10 @@ export const ExampleTrigger = meta.story({
         }}
       >
         <FileUpload.Trigger
-          inputProps={{ accept: 'image/png, image/jpeg', id: 'profilbilde' }}
+          inputProps={{
+            accept: 'image/png, image/jpeg',
+            id: 'profilbilde',
+          }}
           onChange={(e) => handleOnChange(e)}
           data-testid="trigger"
           {...args}

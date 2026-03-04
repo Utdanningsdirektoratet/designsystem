@@ -1,6 +1,6 @@
 import type { Size } from '@digdir/designsystemet-react';
 import cl from 'clsx/lite';
-import type { InputHTMLAttributes, ReactNode } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 import { forwardRef, useEffect, useRef } from 'react';
 import { UploadIcon } from '@udir-design/icons';
 import { Button } from '../button/Button';
@@ -15,7 +15,7 @@ type InputProps_ = Omit<
   'prefix' | 'className' | 'style' | 'data-color' | 'type' | 'data-size'
 >;
 
-export type FileUploadProps = InputHTMLAttributes<HTMLInputElement> & {
+export type FileUploadProps = HTMLAttributes<HTMLDivElement> & {
   /**
    * Changes size for descendant Designsystemet components.
    * Select from predefined sizes.
@@ -39,7 +39,7 @@ export type FileUploadProps = InputHTMLAttributes<HTMLInputElement> & {
   inputProps?: InputProps_;
 };
 
-export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
+export const FileUploadTrigger = forwardRef<HTMLDivElement, FileUploadProps>(
   function FileUploadTrigger(
     {
       className,
@@ -77,7 +77,7 @@ export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
         {!!label && <Label>{label}</Label>}
         {!!description && <Field.Description>{description}</Field.Description>}
         <Button
-          disabled={inputProps?.readOnly}
+          disabled={inputProps?.readOnly ?? inputProps?.disabled}
           variant="secondary"
           onClick={() => {
             fileInputRef.current?.click();
@@ -91,10 +91,15 @@ export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
           type="file"
           ref={fileInputRef}
           readOnly={inputProps?.readOnly}
-          onClick={inputProps?.readOnly ? (e) => e.preventDefault() : undefined}
           multiple={Boolean(inputProps?.multiple) || undefined}
           id={inputProps?.id}
           {...inputProps}
+          onClick={(e) => {
+            if (inputProps?.readOnly) {
+              e.preventDefault();
+            }
+            inputProps?.onClick?.(e);
+          }}
         />
         {!!error && <ValidationMessage>{error}</ValidationMessage>}
       </Field>

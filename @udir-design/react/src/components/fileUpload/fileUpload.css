@@ -51,7 +51,7 @@
   width: fit-content;
   height: fit-content;
 
-  & > input {
+  > input {
     display: none;
   }
 
@@ -135,6 +135,33 @@
       content: var(--udsc-fileUpload-dropzone-button-text);
     }
   }
+
+  /* Text and icon for readOnly */
+  &:has(input[readOnly]) {
+    > .ds-card {
+      &::before {
+        content: '';
+        display: block;
+        width: 1.3rem;
+        height: 1.3rem;
+        background: currentColor;
+        mask-image: var(--uds-icon-circleSlash);
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+      }
+
+      > div {
+        text-align: center;
+
+        &::before {
+          content: var(--udsc-fileUpload-disabled-text-line-one) '\a'
+            var(--udsc-fileUpload-disabled-text-line-two);
+          white-space: pre;
+        }
+      }
+    }
+  }
 }
 
 /* FileUpload.Item */
@@ -157,7 +184,7 @@
     width: 100%;
   }
 
-  & > div > div > svg {
+  > div > div > svg {
     width: auto;
     height: var(--ds-size-10);
     margin-inline-end: var(--ds-size-3);
