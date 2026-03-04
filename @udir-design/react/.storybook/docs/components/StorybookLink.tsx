@@ -5,7 +5,7 @@ import {
 } from 'react';
 import { Link } from 'src/components/link/Link';
 
-const getPath = (href: string | undefined): string => {
+export const getPath = (href: string | undefined): string => {
   if (!href) {
     return '';
   }
