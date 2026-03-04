@@ -1,3 +1,5 @@
+import { StorybookLink } from '.storybook/docs/components/StorybookLink';
+
 export const labels = {
   'token-preview': {
     size: {
@@ -15,14 +17,31 @@ export const labels = {
           Verdien til disse fargevariablene settes av <code>data-color</code>
           -attributtet. Du kan også bruke fargene direkte, ved å legge til
           fargenavnet etter <code>--ds-color-</code>, f.eks.{' '}
-          <code>--ds-color-accent-background-default</code>
+          <code>--ds-color-accent-background-default</code>.{' '}
+          <StorybookLink href="/docs/design-tokens-farger--docs">
+            Les om hvordan fargene skal brukes
+          </StorybookLink>
+          .
         </>
       ),
       'select-label': 'Velg farge (data-color)',
     },
+    datavis: {
+      description: (
+        <>
+          Datavisualiseringsfargene er laget med god kontrast og lesbarhet.{' '}
+          <StorybookLink href="/docs/design-tokens-farger--docs#farger-for-datavisualisering">
+            Les om hvordan de skal brukes
+          </StorybookLink>
+          .
+        </>
+      ),
+      'select-label': 'Velg palett',
+    },
     'search-in-design-tokens': 'Søk i design tokens',
     'search-input-aria-label': 'Søk på variabel navn i CSS for design tokens',
     colors: 'Farger',
+    datavisHeading: 'Farger for datavisualisering',
     typography: 'Typografi',
     semantic: 'Semantiske',
     'no-results': 'Ingen resultater funnet',

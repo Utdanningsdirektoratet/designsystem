@@ -30,6 +30,10 @@
       "import": "./dist/utilities/form/alpha.js",
       "require": "./dist/utilities/form/alpha.cjs"
     },
+    "./utilities/datavis/alpha": {
+      "import": "./dist/utilities/datavis/alpha.js",
+      "require": "./dist/utilities/datavis/alpha.cjs"
+    },
     "./html": {
       "types": "./dist/html.d.ts"
     },

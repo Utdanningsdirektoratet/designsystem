@@ -1,4 +1,5 @@
 import { Unstyled } from '@storybook/addon-docs/blocks';
+import { SimpleAlert } from '.storybook/docs/components';
 import { SpacingGuidelines } from './SpacingGuidelines';
 import image from '../../public/img/size-component.png';
 import { Meta } from '@storybook/addon-docs/blocks';
@@ -9,7 +10,9 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 Vi bruker størrelsesvariabler (design tokens) for å definere spacing (mellomrom), sizing (bredder og høyder) og fontstørrelser på en konsistent måte. Verdien til størrelsesvariabler avhenger av hvilken størrelsesmodus som er aktiv. Du kan endre størrelsesmodus ved å sette `data-size`-attributtet i kode eller size mode i Figma.
 
-> 1rem tilsvarer 16px i størrelsesmodus medium, som er default.
+<SimpleAlert type="tip">
+  1rem tilsvarer 16px i størrelsesmodus medium, som er default.
+</SimpleAlert>
 
 Komponentene endrer størrelse basert på hvilken størrelsesmodus som er aktiv: small, medium eller large.
 

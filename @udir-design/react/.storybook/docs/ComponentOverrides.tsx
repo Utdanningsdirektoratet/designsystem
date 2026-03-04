@@ -1,5 +1,3 @@
-import type { MouseEventHandler } from 'react';
-import { Children } from 'react';
 import { LinkIcon } from '@udir-design/icons';
 import { Link } from 'src/components/link/Link';
 import { List } from 'src/components/list/List';
@@ -9,35 +7,7 @@ import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import type { MdxComponentOverrides } from '../types';
 import componentStyles from './componentOverrides.module.scss';
-
-const getPath = (href: string | undefined): string => {
-  if (!href) {
-    return '';
-  }
-
-  // if link starts with /, add current path to link
-  if (href.startsWith('/')) {
-    // Get location from window.parent instead of document, otherwise pathname is iframe.html
-    const { origin = '', pathname } = window.parent.location;
-
-    return `${origin}${pathname}?path=${href}`;
-  }
-
-  return href;
-};
-
-const handleLinkClick =
-  (href: string): MouseEventHandler<HTMLAnchorElement> =>
-  (event) => {
-    // Handle in-page anchor links
-    if (href.startsWith('#')) {
-      event.preventDefault();
-      document
-        .getElementById(decodeURIComponent(href).substring(1))
-        ?.scrollIntoView({ behavior: 'smooth' });
-      window.parent.history.pushState(undefined, '', href);
-    }
-  };
+import { StorybookLink, handleLinkClick } from './components/StorybookLink';
 
 const HeadingSelfLink: React.FC<HeadingProps> = ({ children, ...props }) => {
   const href = `#${props.id}`;
@@ -83,23 +53,7 @@ export const componentOverrides: MdxComponentOverrides = {
     />
   ),
   li: (props) => <List.Item {...props} className="sb-unstyled" />,
-  a: ({ children = '', ...props }) => {
-    // if link starts with /, add current path to link
-    const href = getPath(props.href);
-
-    return (
-      <Link
-        {...props}
-        href={href}
-        className="sb-unstyled"
-        onClick={handleLinkClick(props.href ?? '')}
-        // Add a data-attribute for use when styling links which include code snippets
-        {...(Children.count(children) === 1 && { 'data-single-child': true })}
-      >
-        {children}
-      </Link>
-    );
-  },
+  a: StorybookLink,
   table: (props) => (
     <Table
       {...props}
