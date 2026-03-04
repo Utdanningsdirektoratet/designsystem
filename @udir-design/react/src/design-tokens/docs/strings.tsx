@@ -1,4 +1,4 @@
-import { Link } from 'src/components/link/Link';
+import { StorybookLink } from '.storybook/docs/components/StorybookLink';
 
 export const labels = {
   'token-preview': {
@@ -18,9 +18,9 @@ export const labels = {
           -attributtet. Du kan også bruke fargene direkte, ved å legge til
           fargenavnet etter <code>--ds-color-</code>, f.eks.{' '}
           <code>--ds-color-accent-background-default</code>.{' '}
-          <Link href="/?path=/docs/design-tokens-farger--docs">
+          <StorybookLink href="/docs/design-tokens-farger--docs">
             Les om hvordan fargene skal brukes
-          </Link>
+          </StorybookLink>
           .
         </>
       ),
@@ -30,9 +30,9 @@ export const labels = {
       description: (
         <>
           Datavisualiseringsfargene er laget med god kontrast og lesbarhet.{' '}
-          <Link href="/?path=/docs/design-tokens-farger--docs#farger-for-datavisualisering">
+          <StorybookLink href="/docs/design-tokens-farger--docs#farger-for-datavisualisering">
             Les om hvordan de skal brukes
-          </Link>
+          </StorybookLink>
           .
         </>
       ),
