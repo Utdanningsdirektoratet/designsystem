@@ -817,14 +817,13 @@ exports[`Form Page 3 1`] = `
       <div>
       </div>
       <div
-        id="dokumentasjon-dropzone"
         role="presentation"
         tabindex="0"
         aria-invalid="false"
       >
         <label
           data-weight="medium"
-          for=":mmbpn7o76qo"
+          for="dokumentasjon-dropzone"
         >
           <span>
             Last opp dokumentasjon
@@ -832,7 +831,7 @@ exports[`Form Page 3 1`] = `
         </label>
         <div
           data-field="description"
-          id=":mmbpn7o76qo:description:1"
+          id="dokumentasjon-dropzone:description:1"
         >
           Du kan laste opp filer i PDF-format. Filer kan være opptil 25 MB.
         </div>
@@ -865,13 +864,13 @@ exports[`Form Page 3 1`] = `
           </button>
         </div>
         <input
+          id="dokumentasjon-dropzone"
           accept="application/pdf"
           multiple
           tabindex="-1"
           required
           type="file"
-          id=":mmbpn7o76qo"
-          aria-describedby=":mmbpn7o76qo:description:1"
+          aria-describedby="dokumentasjon-dropzone:description:1"
           style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
         >
       </div>
