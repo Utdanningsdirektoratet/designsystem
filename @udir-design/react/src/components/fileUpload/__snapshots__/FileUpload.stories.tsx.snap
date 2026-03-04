@@ -8,13 +8,13 @@ exports[`Example Drop Zone 1`] = `
   >
     <label
       data-weight="medium"
-      for=":mmam98wfj31"
+      for="dokumentasjon"
     >
       Last opp dokumentasjon
     </label>
     <div
       data-field="description"
-      id=":mmam98wfj31:description:1"
+      id="dokumentasjon:description:1"
     >
       Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
     </div>
@@ -47,12 +47,12 @@ exports[`Example Drop Zone 1`] = `
       </button>
     </div>
     <input
+      id="dokumentasjon"
       accept="application/pdf"
       multiple
       tabindex="-1"
       type="file"
-      id=":mmam98wfj31"
-      aria-describedby=":mmam98wfj31:description:1"
+      aria-describedby="dokumentasjon:description:1"
       style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
     >
   </div>
@@ -519,13 +519,13 @@ exports[`Example Trigger 1`] = `
   <div>
     <label
       data-weight="medium"
-      for=":mmam993m59v"
+      for="profilbilde"
     >
       Last opp profilbilde
     </label>
     <div
       data-field="description"
-      id=":mmam993m59v:description:1"
+      id="profilbilde:description:1"
     >
       Du kan laste opp filer i PNG- og JPEG-format.
     </div>
@@ -554,10 +554,10 @@ exports[`Example Trigger 1`] = `
       </svg>
     </button>
     <input
+      id="profilbilde"
       accept="image/png, image/jpeg"
       type="file"
-      id=":mmam993m59v"
-      aria-describedby=":mmam993m59v:description:1"
+      aria-describedby="profilbilde:description:1"
     >
   </div>
   <h3 data-size="2xs">
@@ -752,13 +752,13 @@ exports[`Readonly 1`] = `
   <div>
     <label
       data-weight="medium"
-      for=":mmam98rtw1k"
+      for="readonly-trigger"
     >
       Lesemodus
     </label>
     <div
       data-field="description"
-      id=":mmam98rtw1k:description:1"
+      id="readonly-trigger:description:1"
     >
       Beskrivelse for Trigger
     </div>
@@ -789,21 +789,21 @@ exports[`Readonly 1`] = `
     </button>
     <input
       readonly
+      id="readonly-trigger"
       type="file"
-      id=":mmam98rtw1k"
-      aria-describedby=":mmam98rtw1k:description:1"
+      aria-describedby="readonly-trigger:description:1"
     >
   </div>
   <div>
     <label
       data-weight="medium"
-      for=":mmam98ru0iw"
+      for="readonly-dropzone"
     >
       Lesemodus
     </label>
     <div
       data-field="description"
-      id=":mmam98ru0iw:description:1"
+      id="readonly-dropzone:description:1"
     >
       Beskrivelse for Dropzone
     </div>
@@ -818,6 +818,7 @@ exports[`Readonly 1`] = `
         viewbox="0 0 24 24"
         focusable="false"
         role="img"
+        aria-hidden="true"
       >
         <path
           fill="currentColor"
@@ -830,10 +831,10 @@ exports[`Readonly 1`] = `
     </div>
     <input
       readonly
+      id="readonly-dropzone"
       max="2"
       type="file"
-      id=":mmam98ru0iw"
-      aria-describedby=":mmam98ru0iw:description:1"
+      aria-describedby="readonly-dropzone:description:1"
     >
   </div>
 </div>
@@ -848,13 +849,13 @@ exports[`Too Many Files 1`] = `
   >
     <label
       data-weight="medium"
-      for=":mmam9928i30"
+      for="dokumentasjon-for-mange"
     >
       Last opp dokumentasjon
     </label>
     <div
       data-field="description"
-      id=":mmam9928i30:description:1"
+      id="dokumentasjon-for-mange:description:1"
     >
       Du kan kun laste opp 2 filer.
     </div>
@@ -887,16 +888,16 @@ exports[`Too Many Files 1`] = `
       </button>
     </div>
     <input
+      id="dokumentasjon-for-mange"
       multiple
       tabindex="-1"
       type="file"
-      id=":mmam9928i30"
-      aria-describedby=":mmam9928i30:validation:1 :mmam9928i30:description:1"
+      aria-describedby="dokumentasjon-for-mange:validation:1 dokumentasjon-for-mange:description:1"
       style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
     >
     <p
       data-field="validation"
-      id=":mmam9928i30:validation:1"
+      id="dokumentasjon-for-mange:validation:1"
     >
       Du har lastet opp for mange filer. Fjern noen for å kunne sende inn skjemaet.
     </p>

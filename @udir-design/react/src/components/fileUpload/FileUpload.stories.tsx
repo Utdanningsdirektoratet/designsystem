@@ -76,13 +76,13 @@ export const Readonly = meta.story({
       >
         <FileUpload.Trigger
           {...args}
-          inputProps={{ readOnly: true }}
+          inputProps={{ readOnly: true, id: 'readonly-trigger' }}
           label="Lesemodus"
           description="Beskrivelse for Trigger"
         />
         <FileUpload.Dropzone
           {...args}
-          inputProps={{ readOnly: true, max: 2 }}
+          inputProps={{ readOnly: true, max: 2, id: 'readonly-dropzone' }}
           label="Lesemodus"
           description="Beskrivelse for Dropzone"
         />
@@ -133,7 +133,7 @@ export const ExampleDropZone = meta.story({
           label="Last opp dokumentasjon"
           description="Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB."
           multiple
-          inputProps={getInputProps()}
+          inputProps={{ ...getInputProps(), id: 'dokumentasjon' }}
           data-testid="dropzone"
           error={files.length > 2 && 'Du har lastet opp for mange filer.'}
           {...getRootProps()}
@@ -232,7 +232,7 @@ export const TooManyFiles = meta.story({
             files.length > 2 &&
             'Du har lastet opp for mange filer. Fjern noen for å kunne sende inn skjemaet.'
           }
-          inputProps={getInputProps()}
+          inputProps={{ ...getInputProps(), id: 'dokumentasjon-for-mange' }}
           {...getRootProps()}
           style={{ maxWidth: '450px', width: '100%' }}
           {...args}
@@ -286,7 +286,7 @@ export const ExampleTrigger = meta.story({
         }}
       >
         <FileUpload.Trigger
-          inputProps={{ accept: 'image/png, image/jpeg' }}
+          inputProps={{ accept: 'image/png, image/jpeg', id: 'profilbilde' }}
           onChange={(e) => handleOnChange(e)}
           data-testid="trigger"
           {...args}

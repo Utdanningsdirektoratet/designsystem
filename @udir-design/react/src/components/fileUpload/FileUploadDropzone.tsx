@@ -54,7 +54,7 @@ export const FileUploadDropzone = forwardRef<
         {inputProps?.readOnly ? (
           <>
             <div>{/* Text in css */}</div>
-            <CircleSlashIcon />
+            <CircleSlashIcon aria-hidden />
           </>
         ) : (
           <>
