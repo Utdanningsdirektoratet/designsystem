@@ -1,12 +1,12 @@
 /**
- * Utilities for working with data visualization colors from the design system.
+ * Utilities for working with data visualisation colors from the design system.
  * These functions return CSS custom property references.
  *
  * @requires @udir-design/theme/datavis.css must be imported in your application
  */
 
 /**
- * Gets the categorical color palette for data visualization.
+ * Gets the categorical color palette for data visualisation.
  * Returns CSS variable references that automatically update with theme changes.
  *
  * @returns Array of 8 CSS variable references
@@ -28,7 +28,7 @@ export function getCategoricalColors(): readonly string[] {
 }
 
 /**
- * Gets the sequential monochromatic color palette for data visualization.
+ * Gets the sequential monochromatic color palette for data visualisation.
  * Returns CSS variable reference.
  *
  * @returns Array of 8 CSS variable references from light to dark
@@ -50,7 +50,7 @@ export function getSequentialMonochromaticColors(): readonly string[] {
 }
 
 /**
- * Gets the sequential divergent color palette for data visualization.
+ * Gets the sequential divergent color palette for data visualisation.
  * Returns CSS variable reference.
  *
  * @returns Array of 7 CSS variable references
