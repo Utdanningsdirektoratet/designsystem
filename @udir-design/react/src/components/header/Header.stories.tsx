@@ -1,3 +1,4 @@
+import type { StoryContext } from '@storybook/react-vite';
 import { useRef, useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import { BriefcaseIcon, LanguageIcon, LeaveIcon } from '@udir-design/icons';
@@ -641,11 +642,16 @@ export const WithTag = meta.story({
   },
 });
 
+function id(context: StoryContext, id: string) {
+  const prefix = context.id.split('--')[1] ?? context.id;
+  return `${prefix}-${id}`;
+}
+
 export const WithLanguagePicker = meta.story({
   parameters: {
     docs: advancedCodeDocs,
   },
-  render(args) {
+  render(args, context) {
     type Language = 'nb' | 'nn' | 'se' | 'en';
     const options: Record<Language, string> = {
       nb: 'Bokmål',
@@ -655,6 +661,7 @@ export const WithLanguagePicker = meta.story({
     };
     const [currentLanguage, setCurrentLanguage] = useState<Language>('nn');
     const languagePickerProps: LanguagePickerProps<Language> = {
+      id: id(context, 'language-picker'),
       type: 'button',
       options,
       currentLanguage,
@@ -687,9 +694,18 @@ export const WithLanguagePicker = meta.story({
             <div>...menyinnhold...</div>
           </Header.Menu>
         </Header>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          ...innhold på {options[currentLanguage].toLocaleLowerCase()}...
-        </div>
+        <Prose
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Paragraph>
+            ...innhold på {options[currentLanguage].toLocaleLowerCase()}...
+          </Paragraph>
+          <Button>Fokuserbart innhold</Button>
+        </Prose>
       </>
     );
   },
@@ -699,7 +715,7 @@ export const WithLinkBasedLanguagePicker = meta.story({
   parameters: {
     docs: advancedCodeDocs,
   },
-  render(args) {
+  render(args, context) {
     type Language = 'nb' | 'nn' | 'se' | 'en';
     const options: Record<Language, string> = {
       nb: 'Bokmål',
@@ -714,6 +730,7 @@ export const WithLinkBasedLanguagePicker = meta.story({
       : 'nb';
 
     const languagePickerProps: LanguagePickerProps<Language> = {
+      id: id(context, 'language-picker'),
       type: 'a',
       options,
       currentLanguage,

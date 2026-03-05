@@ -3,7 +3,7 @@ import type {
   ButtonHTMLAttributes,
   HTMLAttributes,
 } from 'react';
-import { useRef } from 'react';
+import { useId, useRef } from 'react';
 import { LanguageIcon } from '@udir-design/icons';
 import { Button } from 'src/components/button/Button';
 import { Dropdown } from 'src/components/dropdown/Dropdown';
@@ -40,21 +40,45 @@ export const LanguagePicker = <TLang extends string>({
   getActionProps,
   ...props
 }: LanguagePickerProps<TLang>) => {
+  const generatedId = useId();
+  const id = props.id || generatedId;
+  const dropdownId = id + '--dropdown';
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const languages = Object.keys(options) as TLang[];
+  const isDropdownOpen = () =>
+    dropdownRef?.current?.matches(':popover-open') || false;
 
   return (
-    <div {...props}>
+    <div {...props} id={id}>
       <Button
         variant="tertiary"
-        popoverTarget="language-picker"
+        popoverTarget={dropdownId}
         lang="en"
         ref={buttonRef}
+        onBlurCapture={(e) => {
+          const next = e.relatedTarget;
+          if (isDropdownOpen() && !dropdownRef.current?.contains(next)) {
+            // Close dropdown when button loses focus, and new focus isn't within dropdown
+            buttonRef.current?.click();
+          }
+        }}
       >
         <LanguageIcon aria-hidden />
         Language
       </Button>
-      <Dropdown id="language-picker">
+      <Dropdown
+        id={dropdownId}
+        ref={dropdownRef}
+        onBlurCapture={(e) => {
+          const current = e.currentTarget;
+          const next = e.relatedTarget;
+          if (isDropdownOpen() && !current.contains(next)) {
+            // Close dropdown when it loses focus
+            buttonRef.current?.click();
+          }
+        }}
+      >
         <Dropdown.List>
           {languages.map((lang) => {
             const action =
@@ -78,7 +102,6 @@ export const LanguagePicker = <TLang extends string>({
                     {...action.props}
                     onClick={(e) => {
                       buttonRef.current?.focus();
-                      buttonRef.current?.click();
                       action.props.onClick?.(e);
                     }}
                   >
@@ -93,7 +116,6 @@ export const LanguagePicker = <TLang extends string>({
                       {...action.props}
                       onClick={(e) => {
                         buttonRef.current?.focus();
-                        buttonRef.current?.click();
                         action.props?.onClick?.(e);
                       }}
                     >
