@@ -1,8 +1,9 @@
-import { Meta, Controls, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Controls, Canvas, Source } from '@storybook/addon-docs/blocks';
 
 import * as HeaderStories from './Header.stories';
 import { Table } from '@udir-design/react/beta';
 import { Unstyled } from '@storybook/addon-docs/blocks';
+import languagePickerSrc from './docs/LanguagePicker.tsx?raw';
 
 <Meta of={HeaderStories} />
 
@@ -161,9 +162,20 @@ Bruk `Tag` til å indikere at en tjeneste vises i et annet kjøretidsmiljø enn 
 
 Bruk `Button` sammen med `Dropdown` for å lage en språkvelger i `Header`.
 
+<Source code={languagePickerSrc} language="tsx" />
+
+Eksempel der språkvalget er en knapp som setter tilstand
+
 <Canvas
   story={{ inline: false, height: '350px' }}
   of={HeaderStories.WithLanguagePicker}
+/>
+
+Eksempel der språkvalget er en lenke til en alternativ versjon av siden
+
+<Canvas
+  story={{ inline: false, height: '350px' }}
+  of={HeaderStories.WithLinkBasedLanguagePicker}
 />
 
 Dersom det bare finnes to språk i tjenesten, kan du bruke en `Button` som bytter språk ved klikk.
