@@ -1,9 +1,7 @@
 import type {
   AnchorHTMLAttributes,
-  Dispatch,
+  ButtonHTMLAttributes,
   HTMLAttributes,
-  MouseEventHandler,
-  SetStateAction,
 } from 'react';
 import { useRef, useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
@@ -649,28 +647,33 @@ export const WithTag = meta.story({
 type LanguagePickerProps<TLang extends string> = {
   options: Record<TLang, string>;
   currentLanguage: TLang;
-  setCurrentLanguage?: Dispatch<SetStateAction<TLang>>;
 } & (
   | {
-      buttonType: 'button';
-      onLanguageClick?: MouseEventHandler<HTMLButtonElement>;
-      getAnchorProps?: undefined;
+      type: 'button';
+      getActionProps: (
+        lang: TLang,
+      ) => Omit<
+        ButtonHTMLAttributes<HTMLButtonElement>,
+        'data-size' | 'data-color'
+      >;
     }
   | {
-      buttonType: 'a';
-      onLanguageClick?: MouseEventHandler<HTMLAnchorElement>;
-      getAnchorProps: (lang: TLang) => AnchorHTMLAttributes<HTMLAnchorElement>;
+      type: 'a';
+      getActionProps: (
+        lang: TLang,
+      ) => Omit<
+        AnchorHTMLAttributes<HTMLAnchorElement>,
+        'data-size' | 'data-color'
+      >;
     }
 ) &
   HTMLAttributes<HTMLDivElement>;
 
 const LanguagePicker = <TLang extends string>({
-  buttonType,
+  type,
   options,
   currentLanguage,
-  setCurrentLanguage,
-  onLanguageClick,
-  getAnchorProps,
+  getActionProps,
   ...props
 }: LanguagePickerProps<TLang>) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -690,21 +693,29 @@ const LanguagePicker = <TLang extends string>({
       <Dropdown id="language-picker">
         <Dropdown.List>
           {languages.map((lang) => {
-            const anchorProps =
-              buttonType === 'a' ? getAnchorProps(lang) : undefined;
+            const action =
+              type === 'button'
+                ? {
+                    type: 'button' as const,
+                    props: getActionProps(lang),
+                  }
+                : {
+                    type: 'a' as const,
+                    props: getActionProps(lang),
+                  };
 
             return (
               <Dropdown.Item
                 {...(currentLanguage === lang && { 'aria-current': true })}
               >
-                {buttonType === 'button' ? (
+                {action.type === 'button' ? (
                   <Dropdown.Button
                     lang={lang}
+                    {...action.props}
                     onClick={(e) => {
-                      setCurrentLanguage?.(lang);
                       buttonRef.current?.focus();
                       buttonRef.current?.click();
-                      onLanguageClick?.(e);
+                      action.props.onClick?.(e);
                     }}
                   >
                     {options[lang]}
@@ -715,13 +726,11 @@ const LanguagePicker = <TLang extends string>({
                       lang={lang}
                       rel="alternate"
                       hrefLang={lang}
-                      {...anchorProps}
+                      {...action.props}
                       onClick={(e) => {
-                        setCurrentLanguage?.(lang);
                         buttonRef.current?.focus();
                         buttonRef.current?.click();
-                        onLanguageClick?.(e);
-                        anchorProps?.onClick?.(e);
+                        action.props?.onClick?.(e);
                       }}
                     >
                       {options[lang]}
@@ -751,10 +760,12 @@ export const WithLanguagePicker = meta.story({
     };
     const [currentLanguage, setCurrentLanguage] = useState<Language>('nn');
     const languagePickerProps: LanguagePickerProps<Language> = {
-      buttonType: 'button',
+      type: 'button',
       options,
       currentLanguage,
-      setCurrentLanguage,
+      getActionProps: (lang) => ({
+        onClick: () => setCurrentLanguage(lang),
+      }),
     };
 
     const menuButtonRef = useRef<HTMLButtonElement>(null);
@@ -768,7 +779,8 @@ export const WithLanguagePicker = meta.story({
             <LanguagePicker
               {...languagePickerProps}
               data-hide="sm"
-              onLanguageClick={() => {
+              onClick={(e) => {
+                languagePickerProps.onClick?.(e);
                 menuButtonRef.current?.focus();
                 menuButtonRef.current?.click();
               }}
@@ -802,10 +814,10 @@ export const WithLinkBasedLanguagePicker = meta.story({
       : 'nb';
 
     const languagePickerProps: LanguagePickerProps<Language> = {
-      buttonType: 'a',
+      type: 'a',
       options,
       currentLanguage,
-      getAnchorProps: (lang) => ({
+      getActionProps: (lang) => ({
         href: `${window.location.pathname}?${searchParams.toString()}&lang=${lang}`,
       }),
     };
