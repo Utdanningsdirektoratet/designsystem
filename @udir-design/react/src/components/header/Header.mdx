@@ -45,6 +45,17 @@ Subkomponenter:
 - `Header.Menu` med `Header.Menu.Link`
 - `Header.ThemeMenuButton`
 
+### Lange tjenestenavn
+
+Hvis tjenesten har et langt navn, bruker du `&shy;` (soft hyphen) for å indikere hvor navnet kan deles opp i flere linjer. Det gjør at navnet kan brytes på en pen måte på mindre skjermer, samtidig som det vises i sin helhet på større skjermer.
+
+I eksempelet under setter vi `applicationName="Foreldre&shy;undersøkelsen i barnehage"`. Da brytes navnet etter "Foreldre" og "undersøkelsen" dersom det ikke er nok plass til å vise hele navnet på én linje.
+
+<Canvas
+  story={{ inline: false, height: '90px' }}
+  of={HeaderStories.LongApplicationName}
+/>
+
 ### Brukerprofil
 
 Subkomponenten `Header.UserButton` viser brukerinformasjon og kan knyttes til en meny med brukerrelaterte handlinger. Den har props for navn, beskrivelse og avatar og finnes i fargene `neutral` og `accent`. I eksempelet brukes [`Dropdown`](/docs/components-dropdown--docs) som brukermeny.
