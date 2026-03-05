@@ -17,8 +17,7 @@ import { Tag } from '../tag/Tag';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Prose } from '../typography/prose/Prose';
-import type { LanguagePickerProps } from './docs/LanguagePicker';
-import { LanguagePicker } from './docs/LanguagePicker';
+import type { HeaderLanguageDropdownProps } from './HeaderLanguageDropdown';
 import { Header } from '.';
 
 const meta = preview.meta({
@@ -652,15 +651,14 @@ export const WithLanguagePicker = meta.story({
     docs: advancedCodeDocs,
   },
   render(args, context) {
-    type Language = 'nb' | 'nn' | 'se' | 'en';
-    const options: Record<Language, string> = {
+    const options: Record<string, string> = {
       nb: 'Bokmål',
       nn: 'Nynorsk',
       se: 'Davvisámegiella',
       en: 'English',
     };
-    const [currentLanguage, setCurrentLanguage] = useState<Language>('nn');
-    const languagePickerProps: LanguagePickerProps<Language> = {
+    const [currentLanguage, setCurrentLanguage] = useState('nn');
+    const languagePickerProps: HeaderLanguageDropdownProps = {
       id: id(context, 'language-picker'),
       type: 'button',
       options,
@@ -675,10 +673,10 @@ export const WithLanguagePicker = meta.story({
     return (
       <>
         <Header {...args}>
-          <LanguagePicker {...languagePickerProps} data-show="xs" />
+          <Header.LanguageDropdown {...languagePickerProps} data-show="xs" />
           <Header.MenuButton ref={menuButtonRef} />
           <Header.Menu>
-            <LanguagePicker
+            <Header.LanguageDropdown
               {...languagePickerProps}
               data-hide="xs"
               type="button"
@@ -716,8 +714,7 @@ export const WithLinkBasedLanguagePicker = meta.story({
     docs: advancedCodeDocs,
   },
   render(args, context) {
-    type Language = 'nb' | 'nn' | 'se' | 'en';
-    const options: Record<Language, string> = {
+    const options: Record<string, string> = {
       nb: 'Bokmål',
       nn: 'Nynorsk',
       se: 'Davvisámegiella',
@@ -725,11 +722,11 @@ export const WithLinkBasedLanguagePicker = meta.story({
     };
     const searchParams = new URLSearchParams(window.location.search);
     const langFromSearchParams = searchParams.get('lang');
-    const currentLanguage = options[langFromSearchParams as Language]
-      ? (langFromSearchParams as Language)
+    const currentLanguage = options[langFromSearchParams as string]
+      ? (langFromSearchParams as string)
       : 'nb';
 
-    const languagePickerProps: LanguagePickerProps<Language> = {
+    const languagePickerProps: HeaderLanguageDropdownProps = {
       id: id(context, 'language-picker'),
       type: 'a',
       options,
@@ -744,10 +741,10 @@ export const WithLinkBasedLanguagePicker = meta.story({
     return (
       <>
         <Header {...args}>
-          <LanguagePicker {...languagePickerProps} data-show="xs" />
+          <Header.LanguageDropdown {...languagePickerProps} data-show="xs" />
           <Header.MenuButton ref={menuButtonRef} />
           <Header.Menu>
-            <LanguagePicker {...languagePickerProps} data-hide="xs" />
+            <Header.LanguageDropdown {...languagePickerProps} data-hide="xs" />
             <div>...menyinnhold...</div>
           </Header.Menu>
         </Header>

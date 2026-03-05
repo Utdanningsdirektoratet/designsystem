@@ -1,4 +1,5 @@
 import { Header as HeaderRoot } from './Header';
+import { HeaderLanguageDropdown } from './HeaderLanguageDropdown';
 import { HeaderMenuButton } from './HeaderMenuButton';
 import { HeaderSearch } from './HeaderSearch';
 import { HeaderThemeMenuButton } from './HeaderThemeMenuButton';
@@ -13,6 +14,7 @@ type HeaderProps = typeof HeaderRoot & {
   Navigation: typeof HeaderNavigation;
   Menu: typeof HeaderMenu;
   Search: typeof HeaderSearch;
+  LanguageDropdown: typeof HeaderLanguageDropdown;
 };
 
 const Header: HeaderProps = Object.assign(HeaderRoot, {
@@ -22,6 +24,7 @@ const Header: HeaderProps = Object.assign(HeaderRoot, {
   Navigation: HeaderNavigation,
   Menu: HeaderMenu,
   Search: HeaderSearch,
+  LanguageDropdown: HeaderLanguageDropdown,
 });
 
 Header.UserButton.displayName = 'Header.UserButton';
@@ -30,6 +33,7 @@ Header.ThemeMenuButton.displayName = 'Header.ThemeMenuButton';
 Header.Navigation.displayName = 'Header.Navigation';
 Header.Menu.displayName = 'Header.Menu';
 Header.Search.displayName = 'Header.Search';
+Header.LanguageDropdown.displayName = 'Header.Search';
 
 export type { HeaderProps } from './Header';
 export type { HeaderUserButtonProps } from './HeaderUserButton';
@@ -38,8 +42,10 @@ export type { HeaderThemeMenuButtonProps } from './HeaderThemeMenuButton';
 export type { HeaderNavigationProps } from './headerNavigation';
 export type { HeaderMenuProps } from './headerMenu';
 export type { HeaderSearchProps } from './HeaderSearch';
+export type { HeaderLanguageDropdownProps } from './HeaderLanguageDropdown';
 export {
   Header,
+  HeaderLanguageDropdown,
   HeaderMenu,
   HeaderMenuButton,
   HeaderNavigation,

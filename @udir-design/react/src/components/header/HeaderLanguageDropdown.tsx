@@ -3,19 +3,19 @@ import type {
   ButtonHTMLAttributes,
   HTMLAttributes,
 } from 'react';
-import { useId, useRef } from 'react';
+import { forwardRef, useId, useRef } from 'react';
 import { LanguageIcon } from '@udir-design/icons';
-import { Button } from 'src/components/button/Button';
-import { Dropdown } from 'src/components/dropdown/Dropdown';
+import { Button } from '../button/Button';
+import { Dropdown } from '../dropdown/Dropdown';
 
-export type LanguagePickerProps<TLang extends string> = {
-  options: Record<TLang, string>;
-  currentLanguage: TLang;
+export type HeaderLanguageDropdownProps = {
+  options: Record<string, string>;
+  currentLanguage: string;
 } & (
   | {
       type: 'button';
       getActionProps: (
-        lang: TLang,
+        lang: string,
       ) => Omit<
         ButtonHTMLAttributes<HTMLButtonElement>,
         'data-size' | 'data-color'
@@ -24,7 +24,7 @@ export type LanguagePickerProps<TLang extends string> = {
   | {
       type: 'a';
       getActionProps: (
-        lang: TLang,
+        lang: string,
       ) => Omit<
         AnchorHTMLAttributes<HTMLAnchorElement>,
         'data-size' | 'data-color'
@@ -33,24 +33,24 @@ export type LanguagePickerProps<TLang extends string> = {
 ) &
   HTMLAttributes<HTMLDivElement>;
 
-export const LanguagePicker = <TLang extends string>({
-  type,
-  options,
-  currentLanguage,
-  getActionProps,
-  ...props
-}: LanguagePickerProps<TLang>) => {
+export const HeaderLanguageDropdown = forwardRef<
+  HTMLDivElement,
+  HeaderLanguageDropdownProps
+>(function HeaderLanguageDropdown(
+  { type, options, currentLanguage, getActionProps, ...props },
+  ref,
+) {
   const generatedId = useId();
   const id = props.id || generatedId;
   const dropdownId = id + '--dropdown';
   const buttonRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const languages = Object.keys(options) as TLang[];
+  const languages = Object.keys(options);
   const isDropdownOpen = () =>
     dropdownRef?.current?.matches(':popover-open') || false;
 
   return (
-    <div {...props} id={id}>
+    <div {...props} id={id} ref={ref}>
       <Button
         variant="tertiary"
         popoverTarget={dropdownId}
@@ -130,4 +130,4 @@ export const LanguagePicker = <TLang extends string>({
       </Dropdown>
     </div>
   );
-};
+});
