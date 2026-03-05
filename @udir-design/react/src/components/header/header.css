@@ -1,10 +1,12 @@
 .uds-header {
-  --udsc-header-height: var(--ds-size-12);
+  --udsc-header-height: var(--ds-size-22);
   --udsc-header-padding: var(--ds-size-5);
   @media (max-width: 30rem) {
+    --udsc-header-height: calc(var(--ds-size-22) - var(--ds-size-2));
     --udsc-header-padding: var(--ds-size-4);
   }
 
+  box-sizing: border-box;
   height: var(--udsc-header-height);
   padding: var(--udsc-header-padding);
   background-color: var(--ds-color-background-default);
