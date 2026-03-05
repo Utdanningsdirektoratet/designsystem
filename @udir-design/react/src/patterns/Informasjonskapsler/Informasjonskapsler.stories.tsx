@@ -12,12 +12,24 @@ const meta = preview.meta({
       originator: 'self',
     },
   },
-  decorators: [withResponsiveDataSize],
+  decorators: [
+    withResponsiveDataSize,
+    (Story, context) => {
+      // Hacky way to detect docs mode in iframe-rendered story
+      const isInDocsPage =
+        window.parent.location.search.includes('viewMode=docs');
+      if (isInDocsPage) {
+        // Set viewMode since Storybook doesn't detect it properly when rendered with "inline: false" (iframe mode)
+        context.viewMode = 'docs';
+      }
+      return <Story />;
+    },
+  ],
 });
 
 export const Preview = meta.story({
   args: {},
-  render: (args) => {
+  render: (args, context) => {
     return (
       <>
         <style>
@@ -35,7 +47,12 @@ export const Preview = meta.story({
             }
           `}
         </style>
-        <Dialog open={true} modal={false} {...args}>
+        <Dialog
+          open={true}
+          modal={false}
+          {...args}
+          {...(context.viewMode === 'docs' && { inert: true })}
+        >
           <Prose>
             <Heading>Vi bruker informasjonskapsler</Heading>
             <Paragraph>
