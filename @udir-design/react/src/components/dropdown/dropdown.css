@@ -3,7 +3,7 @@
     color: var(--ds-color-neutral-text-default);
     font-weight: 600;
   }
-  [aria-current='true'] button {
+  [aria-current='true'] :is(a, button, [role='button']) {
     position: relative;
     &::before {
       content: '';
