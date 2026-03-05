@@ -141,6 +141,10 @@ export const ExampleDropZone = meta.story({
         await within(canvasElement).findByText(dummyFile.name),
       ).toBeInTheDocument();
     });
+
+    // Reset file input so uploads work. Without this, every subsequent
+    // uploaded file will be replaced by the dummyFile used in the test
+    dropzone.value = '';
   },
 });
 
