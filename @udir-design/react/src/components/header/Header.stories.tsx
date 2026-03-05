@@ -55,7 +55,20 @@ export const LongApplicationName = meta.story({
   args: {
     applicationName: 'Foreldre\u00ADundersøkelsen i barnehage',
   },
-  render: Preview.input.render,
+  render: (args) => (
+    <>
+      <style>
+        {`
+        /* Styles defined in application-specific css */
+        @media (max-width: 22.74rem) {
+        .uds-header {
+          --udsc-header-height: var(--ds-size-25);
+        }
+      }`}
+      </style>
+      <Header {...args} />
+    </>
+  ),
 });
 
 const profileImage =

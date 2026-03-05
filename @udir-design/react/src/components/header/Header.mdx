@@ -49,7 +49,7 @@ Subkomponenter:
 
 Hvis tjenesten har et langt navn, bruker du `&shy;` (soft hyphen) for å indikere hvor navnet kan deles opp i flere linjer. Det gjør at navnet kan brytes på en pen måte på mindre skjermer, samtidig som det vises i sin helhet på større skjermer.
 
-I eksempelet under setter vi `applicationName="Foreldre&shy;undersøkelsen i barnehage"`. Da brytes navnet etter "Foreldre" og "undersøkelsen" dersom det ikke er nok plass til å vise hele navnet på én linje.
+I eksempelet under setter vi `applicationName="Foreldre&shy;undersøkelsen i barnehage"`. Da brytes navnet etter "Foreldre" og "undersøkelsen" dersom det ikke er nok plass til å vise hele navnet på én linje. For å sørge for at det er nok plass i headeren, setter vi `--udsc-header-height` til en høyere verdi når navnet brekker på tre linjer. Se kodesnutten for å se hvordan dette gjøres.
 
 <Canvas
   story={{ inline: false, height: '90px' }}
