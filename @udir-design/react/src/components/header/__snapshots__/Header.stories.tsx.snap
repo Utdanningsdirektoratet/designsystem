@@ -948,11 +948,22 @@ exports[`Long Application Name 1`] = `
 <div data-size="auto">
   <style>
     /* Styles defined in application-specific css */
-        @media (max-width: 22.74rem) {
-        .uds-header {
-          --udsc-header-height: var(--ds-size-25);
+        @media (max-width: 30rem) {
+        .uds-header__logo > :last-child {
+          font-size: var(--ds-font-size-4);
         }
-      }
+        @media (max-width: 23rem) {
+          .myMenuText {
+            // Visually hidden but accessible for screen readers
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            white-space: nowrap;
+            width: 1px;
+          }
   </style>
   <header
     data-scroll-direction="up"
@@ -975,6 +986,57 @@ exports[`Long Application Name 1`] = `
           Foreldre­undersøkelsen i barnehage
         </span>
       </a>
+      <div>
+        <button
+          data-variant="tertiary"
+          type="button"
+          popovertarget="uds-header-menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M2.75 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17A.75.75 0 0 1 2.75 6m0 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17a.75.75 0 0 1-.75-.75m.75 5.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M6.53 5.47a.75.75 0 0 0-1.06 1.06L10.94 12l-5.47 5.47a.75.75 0 1 0 1.06 1.06L12 13.06l5.47 5.47a.75.75 0 1 0 1.06-1.06L13.06 12l5.47-5.47a.75.75 0 0 0-1.06-1.06L12 10.94z"
+            >
+            </path>
+          </svg>
+          <span>
+            Meny
+          </span>
+        </button>
+        <div
+          id="uds-header-menu"
+          popover="auto"
+          data-variant="default"
+        >
+        </div>
+      </div>
     </div>
   </header>
 </div>

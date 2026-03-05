@@ -45,17 +45,6 @@ Subkomponenter:
 - `Header.Menu` med `Header.Menu.Link`
 - `Header.ThemeMenuButton`
 
-### Lange tjenestenavn
-
-Hvis tjenesten har et langt navn, bruker du `&shy;` (soft hyphen) for å indikere hvor navnet kan deles opp i flere linjer. Det gjør at navnet kan brytes på en pen måte på mindre skjermer, samtidig som det vises i sin helhet på større skjermer.
-
-I eksempelet under setter vi `applicationName="Foreldre&shy;undersøkelsen i barnehage"`. Da brytes navnet etter "Foreldre" og "undersøkelsen" dersom det ikke er nok plass til å vise hele navnet på én linje. For å sørge for at det er nok plass i headeren, setter vi `--udsc-header-height` til en høyere verdi når navnet brekker på tre linjer. Se kodesnutten for å se hvordan dette gjøres.
-
-<Canvas
-  story={{ inline: false, height: '90px' }}
-  of={HeaderStories.LongApplicationName}
-/>
-
 ### Brukerprofil
 
 Subkomponenten `Header.UserButton` viser brukerinformasjon og kan knyttes til en meny med brukerrelaterte handlinger. Den har props for navn, beskrivelse og avatar og finnes i fargene `neutral` og `accent`. I eksempelet brukes [`Dropdown`](/docs/components-dropdown--docs) som brukermeny.
@@ -129,11 +118,24 @@ Navigasjonslenker og meny er de eneste navigasjonselementene som kan kombineres 
   of={HeaderStories.WithNavigationLinksAndMenu}
 />
 
+### Lange tjenestenavn
+
+Hvis tjenesten har et langt navn, bruker du `&shy;` (soft hyphen) for å indikere hvor navnet kan deles opp i flere linjer. Det gjør at navnet kan brytes på en pen måte på mindre skjermer, samtidig som det vises i sin helhet på større skjermer.
+
+I eksempelet under setter vi `applicationName="Foreldre&shy;undersøkelsen i barnehage"`. Da brytes navnet etter "Foreldre" og "undersøkelsen" dersom det ikke er nok plass til å vise hele navnet på én linje. Vi setter også ned font-size på tjenestenavnet og fjerner "Meny"-teksten på menyknappen når skjermen blir smalere. Ta en titt på kodesnutten for å se hvordan dette kan gjøres.
+
+Er navnet så langt at det må brekke på tre linjer, kan det være nødvendig å justere høyden på `Header` ved å sette `--udsc-header-height` til en høyere verdi.
+
+<Canvas
+  story={{ inline: false, height: '90px' }}
+  of={HeaderStories.LongApplicationName}
+/>
+
 ### Utviklingsmiljø
 
 Bruk `Tag` til å indikere at en tjeneste vises i et annet kjøretidsmiljø enn produksjon, f.eks. dev, test eller qa. Den skal alltid ligge som første element og vil da automatisk legges til venstre, inntil logo.
 
-<Canvas story={{ inline: false, height: '150px' }} of={HeaderStories.WithTag} />
+<Canvas story={{ inline: false, height: '90px' }} of={HeaderStories.WithTag} />
 
 ### Språkvelger
 
