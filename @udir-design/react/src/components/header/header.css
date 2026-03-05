@@ -146,9 +146,7 @@
     animation: 1.3s delay-overflow;
 
     &:popover-open {
-      max-height: calc(
-        95% - (var(--udsc-header-height) + (var(--udsc-header-padding) * 2))
-      );
+      max-height: calc(95% - (var(--udsc-header-height)));
       overflow: auto;
       display: block;
       @starting-style {
@@ -278,9 +276,7 @@
       box-shadow 200ms ease;
   }
   &[data-scroll-direction='down']:not(:has([popover]:popover-open)) {
-    transform: translateY(
-      calc(-1 * var(--udsc-header-height) - (var(--udsc-header-padding) * 2))
-    );
+    transform: translateY(calc(-1 * var(--udsc-header-height)));
     box-shadow: none;
   }
   &[data-scroll-direction='up'] {
