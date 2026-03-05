@@ -594,11 +594,8 @@ export const WithNavigationLinksAndMenu = meta.story({
 });
 
 export const LongApplicationName = meta.story({
-  args: {
-    applicationName: 'Foreldre\u00ADundersøkelsen i barnehage',
-  },
-  render: (args) => {
-    const menuButtonRef = useRef<HTMLButtonElement>(null);
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
     return (
       <>
         <style>
@@ -621,8 +618,8 @@ export const LongApplicationName = meta.story({
             width: 1px;
           }`}
         </style>
-        <Header {...args}>
-          <Header.MenuButton ref={menuButtonRef}>
+        <Header applicationName="Foreldre&shy;undersøkelsen i barnehage">
+          <Header.MenuButton>
             <span className="myMenuText">Meny</span>
           </Header.MenuButton>
           <Header.Menu>{/* Menyinnhold her*/}</Header.Menu>
