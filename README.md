@@ -34,7 +34,8 @@ I dette repositoriet lever den delen av designsystemet som implementeres i kode:
   - [Oppsett lokalt](#oppsett-lokalt)
   - [Monorepo - enkelt forklart](#monorepo---enkelt-forklart)
   - [Hvordan jobbe med kodebasen](#hvordan-jobbe-med-kodebasen)
-  - [Hvordan oppgradere avhengigheter](#hvordan-oppgradere-avhengigheter)
+  - [Hvordan legge til nye prosjekter i arbeidsområdet](#hvordan-legge-til-nye-prosjekter-i-arbeidsområdet)
+  - [Hvordan håndtere avhengigheter](#hvordan-håndtere-avhengigheter)
   - [Hvordan oppdatere symboler](#hvordan-oppdatere-symboler)
   - [Hvordan publisere en ny versjon](#hvordan-publisere-en-ny-versjon)
   - [Oversikt over verktøy](#oversikt-over-verktøy)
@@ -239,10 +240,6 @@ flowchart-elk BT
 
 ## Hvordan jobbe med kodebasen
 
-> [!CAUTION]
-> Denne dokumentasjonen inneholder foreløpig ingen informasjon om hvordan du går fram for å skrive tester.
-> Foreløpig kan du lese [Hva tester vi](#hva-tester-vi)-seksjonen, og be en kollega om hjelp om du står fast.
-
 ### Mappestruktur
 
 Hver komponent skal ha en undermappe i `@udir-design/react/src/components`. F.eks:
@@ -387,7 +384,114 @@ Les mer i Nx sin dokumentasjon:
 - [Explore your Workspace](https://nx.dev/features/explore-graph)
 - [Run Tasks](https://nx.dev/features/run-tasks).
 
-## Hvordan oppgradere avhengigheter
+### Testing
+
+Følgende kommando kjører enhets-, uu- og snapshottest samlet.
+
+```bash
+pnpm nx test:storybook
+```
+
+#### Enhetstester
+
+Vi bruker playwright til å skrive interaksjonstester for komponenter. Testene simulerer interaksjon med komponenten, og defineres som en del av eksemplene for en komponent i Storybook. En komponent skal testes i alle relevante tilstander og skal dekke alle relevante brukerinteraksjoner.
+
+> [!TIP]
+> For `Popover` burde man for eksempel teste i både åpen og lukket tilstand, samt sjekke at den kan lukkes både med knapp og ved å trykke utenfor boksen.
+
+#### Automatiske tester
+
+Hvert eksempel i Storybook får automatisk en snapshottest, en visuell test, og en regelbasert UU-test. Disse testene generes med kommandoen
+
+```bash
+pnpm nx test:storybook --update
+```
+
+#### Systemtest
+
+Alle unike komponenter skal inngå i minst én demo-side for å kunne gjennomføre systemtest.
+
+### Pull request prosessen
+
+Alle kodeendringer må gjennom en peer review prosess i github. Alle pull requests må ha minst én approval for å kunne merges. I tillegg må pull requesten bestå alle automatiserte tester.
+
+En kodeendring som sendes til peer review setter i gang kjøring av tester. Dette skjer i GitHub Actions. Ved visuelle endringer må det både gjennomføres kodegjennomgang på Github og visuell gjennomgang i Chromatic. Lenker til dette inngår som en del av sjekkene for pull requesten i github.
+
+Testene utføres også automatisk før publisering av kodebibliotekene, og publiseringen vil bli avbrutt dersom testene feiler.
+
+### Hvordan genere nye designtokens
+
+Fordi vi har noen egne tokensett i tillegg til de fra Digdir er prosessen for å oppdatere dem noe ulik den beskrevet hos Digdir.
+
+1. Oppdater config-fila `design-tokens/designsystemet.config.json`, manuelt eller ved bruk av temabyggeren
+2. Kjør kommandoen `pnpm nx run design-tokens:create` i terminalen
+3. Se gjennom og revert om nødvendig filene `$metadata.json` og `$themes.json`, siden vi har noen ekstra tokenssett her. Husk da også å reverte sletting av disse filene
+4. Kjør `pnpm nx build` for å oppdatere css-variabler
+
+## Hvordan legge til nye prosjekter i arbeidsområdet
+
+Nye pakker legges til i `@udir-design/<new-package>`.
+
+**For at en ny pakke skal kunne bygges og publiseres trenger du:**
+
+- `package.json` med:
+  - `"name": "@udir-design/<name>"`
+  - `"version": "0.0.0-semantically-released"`
+  - `"license": "MIT"`
+  - `"type": "module"`
+  - riktige `exports` (peker til JS/TS-output eller CSS/andre assets)
+- en build-prosess som genererer filer til `dist/`
+
+**Hvis pakken er en TypeScript-pakke trenger du også:**
+
+- `tsconfig.json`
+- `src/index.ts` som entrypoint
+
+**Valgfritt:**
+
+- `project.json` (bare hvis pakken trenger egne Nx-targets, som Storybook og generators)
+
+**Typisk mappestruktur:**
+
+```
+@udir-design/<new-package>
+├── src/
+├── README.md
+├── tsconfig.json
+└── package.json
+```
+
+I tillegg må du oppdatere eventuelle [avhengigheter mellom prosjekter](#hvordan-legge-til-avhengigheter-mellom-prosjekter).
+
+## Hvordan håndtere avhengigheter
+
+### Hvordan legge til avhengigheter mellom prosjekter
+
+Dersom noen av prosjektene er avhengige av hverandre, slik som f.eks. `@udir-design/react` er avhenging av `@udir-design/css` legges prosjektet til i `package.json` som en dependency på følgende måte:
+
+```json
+"dependencies": {
+    "@udir-design/css": "workspace:*"
+  },
+```
+
+Pass på å ikke lage sykliske avhengigheter. Dette skal oppdages av linter.
+
+### Hvordan legge til nye eksterne avhengigheter
+
+Legg til nye eksterne avhengigheter med kommandoen
+
+```bash
+pnpm add <package>
+```
+
+Legg til avhengigheter som ikke er nødvendige i selve pakkene, men som brukes til for eksempel Storybook-eksempler og testing, som `devDependencies`:
+
+```bash
+pnpm add -D <package>
+```
+
+### Hvordan oppgradere avhengigheter
 
 Få oversikt over utdaterte avhengigheter i alle prosjekter med
 
@@ -406,7 +510,7 @@ pnpm update -r
 
 Vi har noen avhengigheter som er pinnet til spesifikke versjoner. Disse trenger egne kommandoer.
 
-### `@digdir/*`
+#### `@digdir/*`
 
 > [!IMPORTANT]
 > Oppdateringer av Digdir-bibliotekene skjer automatisk [hver natt kl 01:00 (UTC)](https://github.com/Utdanningsdirektoratet/designsystem/actions/workflows/update-digdir.yml), og eventuelle endringer må godkjennes i en pull request.
@@ -417,7 +521,7 @@ Designsystem-bibliotekene fra Digdir er pinnet for å ha full kontroll over hvil
 pnpm update -r --latest "@digdir/*"
 ```
 
-### `nx` og `@nx/*`
+#### `nx` og `@nx/*`
 
 `nx` har sin egen oppdateringskommando, som også klargjør migreringer i de tilfellene det er relevant.
 
@@ -427,7 +531,7 @@ pnpm install --no-frozen-lockfile
 pnpm nx --run-migrations # kun dersom migrations.json ble opprettet
 ```
 
-### `prettier`
+#### `prettier`
 
 > [!IMPORTANT]
 > Oppdateringer av `prettier` skjer automatisk [hver mandag kl 02:00 (UTC)](https://github.com/Utdanningsdirektoratet/designsystem/actions/workflows/update-prettier.yml), og eventuelle endringer må godkjennes i en pull request.
@@ -448,7 +552,7 @@ git commit --all -m "chore: update .git-blame-ignore-revs"
 > blir ignorert i blame-visningen på GitHub.
 > Les mer om dette i [GitHubs dokumentasjon](https://docs.github.com/en/repositories/working-with-files/using-files/viewing-and-understanding-files#ignore-commits-in-the-blame-view)
 
-### Oppdatere til nye major-versjoner
+#### Oppdatere til nye major-versjoner
 
 `pnpm update -r` vil kun oppdatere innenfor de versjonsgrensene vi har satt. F.eks. med grensen `^18.3.1` vil kommandoen kunne oppdatere til versjonen `18.4.0`, men ikke til `19.0.0`.
 
@@ -473,7 +577,7 @@ pnpm update -r --latest react react-dom @types/react @types/react-dom
 pnpm update -r --latest storybook "@storybook/*"
 ```
 
-### Oppgradere Node.js
+#### Oppgradere Node.js
 
 > [!IMPORTANT]
 > Vi oppgraderer kun til partallsversjoner av Node, siden dette er LTS-versjonene.
@@ -485,7 +589,7 @@ Vi må også sørge for at versjonen av avhengigheten `@types/node` samsvarer me
 
 I tillegg finnes feltet `engines.node` i `package.json`, som leses av GitHub Actions. Denne trenger kun å være en versjon som inneholder `corepack`, for å installere `pnpm`, så vi trenger kun å oppdatere dette feltet når en node-versjon ikke lenger er støttet.
 
-### Fikse sikkerhetsadvarsler
+#### Fikse sikkerhetsadvarsler
 
 Se en liste over sikkerhetsadvarsler med
 
@@ -512,7 +616,7 @@ Nytt symbol legges til i [Symbolbiblioteket i Figma](https://www.figma.com/desig
 
 Nedlasting av oppdaterte symboler fra Figma gjøres i et lokalt repo av [Udirs Designsystem](https://github.com/Utdanningsdirektoratet/designsystem).
 
-`.env.local` må inneholde en gyldig Figma-token: `FIGMA_TOKEN={token}`.
+`.env.local` må inneholde gyldig Figma-token: `FIGMA_TOKEN={token}`.
 
 Kjør følgende kommando i `designsystem/@udir-design/symbols`:
 
