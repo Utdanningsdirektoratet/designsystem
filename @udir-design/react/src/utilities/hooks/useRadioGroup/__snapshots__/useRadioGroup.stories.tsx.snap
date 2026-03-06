@@ -1,14 +1,20 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Controlled 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="mmexwmdiwq32 mmexwmdiwq33">
+  <legend
+    data-weight="medium"
+    id="mmexwmdiwq32"
+  >
     Utdanningsnivå
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="mmexwmdiwq33"
+  >
     Velg det høyeste utdanningsnivået du har fullført.
   </p>
-  <div>
+  <ds-field data-clickdelegatefor="utilities-useradiogroup--controlled-kindergarten">
     <input
       id="utilities-useradiogroup--controlled-kindergarten"
       type="radio"
@@ -21,8 +27,8 @@ exports[`Controlled 1`] = `
     >
       Barnehage
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="utilities-useradiogroup--controlled-primary">
     <input
       id="utilities-useradiogroup--controlled-primary"
       type="radio"
@@ -35,8 +41,8 @@ exports[`Controlled 1`] = `
     >
       Grunnskole
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="utilities-useradiogroup--controlled-secondary">
     <input
       id="utilities-useradiogroup--controlled-secondary"
       type="radio"
@@ -49,8 +55,8 @@ exports[`Controlled 1`] = `
     >
       Videregående
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="utilities-useradiogroup--controlled-higher">
     <input
       id="utilities-useradiogroup--controlled-higher"
       type="radio"
@@ -63,7 +69,7 @@ exports[`Controlled 1`] = `
     >
       Høyere utdanning
     </label>
-  </div>
+  </ds-field>
 </fieldset>
 <hr
   aria-hidden="true"
@@ -99,48 +105,39 @@ exports[`Default 1`] = `
   <legend data-weight="medium">
     Velg din aldersgruppe.
   </legend>
-  <div>
+  <ds-field>
     <input
       id="utilities-useradiogroup--default-10-20"
       type="radio"
       value="10-20"
       name="my-group"
     >
-    <label
-      data-weight="regular"
-      for="utilities-useradiogroup--default-10-20"
-    >
+    <label data-weight="regular">
       10-20 år
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field>
     <input
       id="utilities-useradiogroup--default-21-45"
       type="radio"
       value="21-45"
       name="my-group"
     >
-    <label
-      data-weight="regular"
-      for="utilities-useradiogroup--default-21-45"
-    >
+    <label data-weight="regular">
       21-45 år
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field>
     <input
       id="utilities-useradiogroup--default-46-80"
       type="radio"
       value="46-80"
       name="my-group"
     >
-    <label
-      data-weight="regular"
-      for="utilities-useradiogroup--default-46-80"
-    >
+    <label data-weight="regular">
       46-80 år
     </label>
-  </div>
+  </ds-field>
   <p
     data-field="validation"
     hidden
@@ -151,14 +148,20 @@ exports[`Default 1`] = `
 `;
 
 exports[`Disabled 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="mmexwmdiwq38 mmexwmdiwq39">
+  <legend
+    data-weight="medium"
+    id="mmexwmdiwq38"
+  >
     Velg din aldersgruppe.
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="mmexwmdiwq39"
+  >
     Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
-  <div>
+  <ds-field data-clickdelegatefor="utilities-useradiogroup--disabled-10-20">
     <input
       id="utilities-useradiogroup--disabled-10-20"
       disabled
@@ -172,8 +175,8 @@ exports[`Disabled 1`] = `
     >
       10-20 år
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="utilities-useradiogroup--disabled-21-45">
     <input
       id="utilities-useradiogroup--disabled-21-45"
       disabled
@@ -187,8 +190,8 @@ exports[`Disabled 1`] = `
     >
       21-45 år
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="utilities-useradiogroup--disabled-46-80">
     <input
       id="utilities-useradiogroup--disabled-46-80"
       disabled
@@ -202,7 +205,7 @@ exports[`Disabled 1`] = `
     >
       46-80 år
     </label>
-  </div>
+  </ds-field>
   <p
     data-field="validation"
     hidden
@@ -213,14 +216,20 @@ exports[`Disabled 1`] = `
 `;
 
 exports[`Group 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="mmexwmdiwq34 mmexwmdiwq35">
+  <legend
+    data-weight="medium"
+    id="mmexwmdiwq34"
+  >
     Velg din aldersgruppe.
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="mmexwmdiwq35"
+  >
     Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
-  <div>
+  <ds-field data-clickdelegatefor="utilities-useradiogroup--group-10-20">
     <input
       id="utilities-useradiogroup--group-10-20"
       type="radio"
@@ -233,8 +242,8 @@ exports[`Group 1`] = `
     >
       10-20 år
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="utilities-useradiogroup--group-21-45">
     <input
       id="utilities-useradiogroup--group-21-45"
       type="radio"
@@ -247,8 +256,8 @@ exports[`Group 1`] = `
     >
       21-45 år
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="utilities-useradiogroup--group-46-80">
     <input
       id="utilities-useradiogroup--group-46-80"
       type="radio"
@@ -261,7 +270,7 @@ exports[`Group 1`] = `
     >
       46-80 år
     </label>
-  </div>
+  </ds-field>
   <p
     data-field="validation"
     hidden
@@ -279,7 +288,7 @@ exports[`Read Only 1`] = `
   <p data-variant="default">
     Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
-  <div>
+  <ds-field>
     <input
       id="utilities-useradiogroup--read-only-10-20"
       readonly
@@ -287,14 +296,11 @@ exports[`Read Only 1`] = `
       value="10-20"
       name="my-readonly"
     >
-    <label
-      data-weight="regular"
-      for="utilities-useradiogroup--read-only-10-20"
-    >
+    <label data-weight="regular">
       10-20 år
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field>
     <input
       id="utilities-useradiogroup--read-only-21-45"
       readonly
@@ -302,14 +308,11 @@ exports[`Read Only 1`] = `
       value="21-45"
       name="my-readonly"
     >
-    <label
-      data-weight="regular"
-      for="utilities-useradiogroup--read-only-21-45"
-    >
+    <label data-weight="regular">
       21-45 år
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field>
     <input
       id="utilities-useradiogroup--read-only-46-80"
       readonly
@@ -317,13 +320,10 @@ exports[`Read Only 1`] = `
       value="46-80"
       name="my-readonly"
     >
-    <label
-      data-weight="regular"
-      for="utilities-useradiogroup--read-only-46-80"
-    >
+    <label data-weight="regular">
       46-80 år
     </label>
-  </div>
+  </ds-field>
   <p
     data-field="validation"
     hidden
@@ -334,14 +334,20 @@ exports[`Read Only 1`] = `
 `;
 
 exports[`With Error 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="mmexwmdiwq36 mmexwmdiwq37">
+  <legend
+    data-weight="medium"
+    id="mmexwmdiwq36"
+  >
     Velg din aldersgruppe.
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="mmexwmdiwq37"
+  >
     Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
-  <div>
+  <ds-field data-clickdelegatefor="utilities-useradiogroup--with-error-10-20">
     <input
       id="utilities-useradiogroup--with-error-10-20"
       aria-describedby="_r_e_"
@@ -356,8 +362,8 @@ exports[`With Error 1`] = `
     >
       10-20 år
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="utilities-useradiogroup--with-error-21-45">
     <input
       id="utilities-useradiogroup--with-error-21-45"
       aria-describedby="_r_e_"
@@ -372,8 +378,8 @@ exports[`With Error 1`] = `
     >
       21-45 år
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="utilities-useradiogroup--with-error-46-80">
     <input
       id="utilities-useradiogroup--with-error-46-80"
       aria-describedby="_r_e_"
@@ -388,7 +394,7 @@ exports[`With Error 1`] = `
     >
       46-80 år
     </label>
-  </div>
+  </ds-field>
   <p
     data-field="validation"
     id="_r_e_"

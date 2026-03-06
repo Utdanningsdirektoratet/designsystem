@@ -2,7 +2,8 @@
 
 exports[`Example Drop Zone 1`] = `
 <div style="display: flex; flex-direction: column; gap: var(--ds-size-3);">
-  <div
+  <ds-field
+    multiple
     role="presentation"
     tabindex="0"
   >
@@ -55,7 +56,7 @@ exports[`Example Drop Zone 1`] = `
       aria-describedby="dokumentasjon:description:1"
       style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
     >
-  </div>
+  </ds-field>
   <h3 data-size="2xs">
     Vedlegg (1):
   </h3>
@@ -516,7 +517,7 @@ exports[`Example Items 1`] = `
 
 exports[`Example Trigger 1`] = `
 <div style="display: flex; flex-direction: column; gap: var(--ds-size-3);">
-  <div>
+  <ds-field>
     <label
       data-weight="medium"
       for="profilbilde"
@@ -525,7 +526,7 @@ exports[`Example Trigger 1`] = `
     </label>
     <div
       data-field="description"
-      id="profilbilde:description:1"
+      id="mmexwmxi3qk4"
     >
       Du kan laste opp filer i PNG- og JPEG-format.
     </div>
@@ -557,9 +558,9 @@ exports[`Example Trigger 1`] = `
       accept="image/png, image/jpeg"
       id="profilbilde"
       type="file"
-      aria-describedby="profilbilde:description:1"
+      aria-describedby="mmexwmxi3qk4"
     >
-  </div>
+  </ds-field>
   <h3 data-size="2xs">
     Vedlegg (1):
   </h3>
@@ -646,17 +647,11 @@ exports[`Example Trigger 1`] = `
 
 exports[`Preview 1`] = `
 <div style="display: flex; gap: var(--ds-size-18); justify-content: center;">
-  <div data-size="md">
-    <label
-      data-weight="medium"
-      for="trigger"
-    >
+  <ds-field data-size="md">
+    <label data-weight="medium">
       Label
     </label>
-    <div
-      data-field="description"
-      id="trigger:description:1"
-    >
+    <div data-field="description">
       Beskrivelse
     </div>
     <button
@@ -686,7 +681,6 @@ exports[`Preview 1`] = `
     <input
       id="trigger"
       type="file"
-      aria-describedby="trigger:description:1"
     >
   </div>
   <div
@@ -700,10 +694,7 @@ exports[`Preview 1`] = `
     >
       Label
     </label>
-    <div
-      data-field="description"
-      id="dropzone:description:1"
-    >
+    <div data-field="description">
       Beskrivelse
     </div>
     <div data-variant="default">
@@ -1134,7 +1125,7 @@ exports[`Too Many Files 1`] = `
 </div>
 `;
 
-exports[`Upload 1`] = `
+exports[`Too Many Files 1`] = `
 <div style="display: flex; flex-direction: column; gap: var(--ds-size-3);">
   <div>
     <label
@@ -1176,8 +1167,7 @@ exports[`Upload 1`] = `
     <input
       id="rapport"
       type="file"
-      aria-describedby="rapport:description:1"
     >
-  </div>
+  </ds-field>
 </div>
 `;

@@ -4,23 +4,16 @@ exports[`Controlled 1`] = `
 <h1>
   Retting av prøver
 </h1>
-<div
-  role="radiogroup"
+<fieldset
+  data-toggle-group
   data-variant="primary"
-  tabindex="0"
 >
-  <button
-    data-variant="tertiary"
-    type="button"
-    value="answers"
-    id="togglegroup-item-_r_28_"
-    aria-checked="false"
-    aria-current="false"
-    role="radio"
-    name="togglegroup-name-_r_26_"
-    data-roving-tabindex-item="true"
-    tabindex="-1"
-  >
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="answers"
+      name="togglegroup-name-_r_18_"
+    >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1em"
@@ -40,19 +33,13 @@ exports[`Controlled 1`] = `
       </path>
     </svg>
     Ikke påbegynt
-  </button>
-  <button
-    data-variant="tertiary"
-    type="button"
-    value="drafts"
-    id="togglegroup-item-_r_2b_"
-    aria-checked="false"
-    aria-current="false"
-    role="radio"
-    name="togglegroup-name-_r_26_"
-    data-roving-tabindex-item="true"
-    tabindex="-1"
-  >
+  </label>
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="drafts"
+      name="togglegroup-name-_r_18_"
+    >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1em"
@@ -72,19 +59,14 @@ exports[`Controlled 1`] = `
       </path>
     </svg>
     Under arbeid
-  </button>
-  <button
-    data-variant="primary"
-    type="button"
-    value="correctedAnswers"
-    id="togglegroup-item-_r_2e_"
-    aria-checked="true"
-    aria-current="true"
-    role="radio"
-    name="togglegroup-name-_r_26_"
-    data-roving-tabindex-item="true"
-    tabindex="0"
-  >
+  </label>
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="correctedAnswers"
+      checked
+      name="togglegroup-name-_r_18_"
+    >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1em"
@@ -104,8 +86,8 @@ exports[`Controlled 1`] = `
       </path>
     </svg>
     Ferdig
-  </button>
-</div>
+  </label>
+</fieldset>
 <table style="table-layout: fixed;">
   <thead>
     <tr>
@@ -139,9 +121,10 @@ exports[`Controlled 1`] = `
           data-icon="true"
           data-variant="tertiary"
           type="button"
-          popovertarget="_r_2g_"
-          popovertargetaction="show"
-          aria-labelledby="_r_2g_"
+          aria-label="Se retting"
+          data-tooltip="Se retting"
+          data-placement="top"
+          data-autoplacement="true"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -160,14 +143,6 @@ exports[`Controlled 1`] = `
             </path>
           </svg>
         </button>
-        <span
-          role="tooltip"
-          id="_r_2g_"
-          popover="manual"
-          style="opacity: 0;"
-        >
-          Se retting
-        </span>
       </td>
     </tr>
     <tr>
@@ -185,9 +160,10 @@ exports[`Controlled 1`] = `
           data-icon="true"
           data-variant="tertiary"
           type="button"
-          popovertarget="_r_2i_"
-          popovertargetaction="show"
-          aria-labelledby="_r_2i_"
+          aria-label="Se retting"
+          data-tooltip="Se retting"
+          data-placement="top"
+          data-autoplacement="true"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -206,14 +182,6 @@ exports[`Controlled 1`] = `
             </path>
           </svg>
         </button>
-        <span
-          role="tooltip"
-          id="_r_2i_"
-          popover="manual"
-          style="opacity: 0;"
-        >
-          Se retting
-        </span>
       </td>
     </tr>
     <tr>
@@ -231,9 +199,10 @@ exports[`Controlled 1`] = `
           data-icon="true"
           data-variant="tertiary"
           type="button"
-          popovertarget="_r_2k_"
-          popovertargetaction="show"
-          aria-labelledby="_r_2k_"
+          aria-label="Se retting"
+          data-tooltip="Se retting"
+          data-placement="top"
+          data-autoplacement="true"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -252,14 +221,6 @@ exports[`Controlled 1`] = `
             </path>
           </svg>
         </button>
-        <span
-          role="tooltip"
-          id="_r_2k_"
-          popover="manual"
-          style="opacity: 0;"
-        >
-          Se retting
-        </span>
       </td>
     </tr>
   </tbody>
@@ -274,27 +235,23 @@ exports[`Controlled 1`] = `
 `;
 
 exports[`Only Icons 1`] = `
-<div
-  role="radiogroup"
+<fieldset
+  data-toggle-group
   data-variant="primary"
-  tabindex="0"
 >
-  <button
-    data-icon="true"
-    data-variant="primary"
-    type="button"
-    value="venstrestilt"
-    popovertarget="_r_1d_"
-    popovertargetaction="show"
-    aria-labelledby="_r_1d_"
-    id="togglegroup-item-_r_1f_"
-    aria-checked="true"
-    aria-current="true"
-    role="radio"
-    name="togglegroup-name-_r_1c_"
-    data-roving-tabindex-item="true"
-    tabindex="0"
+  <label
+    aria-label="Venstrestilt"
+    data-tooltip="Venstrestilt"
+    data-placement="top"
+    data-autoplacement="true"
+    data-variant="tertiary"
   >
+    <input
+      type="radio"
+      value="venstrestilt"
+      checked
+      name="togglegroup-name-_r_q_"
+    >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1em"
@@ -313,31 +270,19 @@ exports[`Only Icons 1`] = `
       >
       </path>
     </svg>
-  </button>
-  <span
-    role="tooltip"
-    id="_r_1d_"
-    popover="manual"
-    style="opacity: 0;"
-  >
-    Venstrestilt
-  </span>
-  <button
-    data-icon="true"
+  </label>
+  <label
+    aria-label="Midtstilt"
+    data-tooltip="Midtstilt"
+    data-placement="top"
+    data-autoplacement="true"
     data-variant="tertiary"
-    type="button"
-    value="midtstilt"
-    popovertarget="_r_1h_"
-    popovertargetaction="show"
-    aria-labelledby="_r_1h_"
-    id="togglegroup-item-_r_1j_"
-    aria-checked="false"
-    aria-current="false"
-    role="radio"
-    name="togglegroup-name-_r_1c_"
-    data-roving-tabindex-item="true"
-    tabindex="-1"
   >
+    <input
+      type="radio"
+      value="midtstilt"
+      name="togglegroup-name-_r_q_"
+    >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1em"
@@ -356,31 +301,19 @@ exports[`Only Icons 1`] = `
       >
       </path>
     </svg>
-  </button>
-  <span
-    role="tooltip"
-    id="_r_1h_"
-    popover="manual"
-    style="opacity: 0;"
-  >
-    Midtstilt
-  </span>
-  <button
-    data-icon="true"
+  </label>
+  <label
+    aria-label="Høyrestilt"
+    data-tooltip="Høyrestilt"
+    data-placement="top"
+    data-autoplacement="true"
     data-variant="tertiary"
-    type="button"
-    value="høyrestilt"
-    popovertarget="_r_1l_"
-    popovertargetaction="show"
-    aria-labelledby="_r_1l_"
-    id="togglegroup-item-_r_1n_"
-    aria-checked="false"
-    aria-current="false"
-    role="radio"
-    name="togglegroup-name-_r_1c_"
-    data-roving-tabindex-item="true"
-    tabindex="-1"
   >
+    <input
+      type="radio"
+      value="høyrestilt"
+      name="togglegroup-name-_r_q_"
+    >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1em"
@@ -399,289 +332,146 @@ exports[`Only Icons 1`] = `
       >
       </path>
     </svg>
-  </button>
-  <span
-    role="tooltip"
-    id="_r_1l_"
-    popover="manual"
-    style="opacity: 0;"
-  >
-    Høyrestilt
-  </span>
-</div>
+  </label>
+</fieldset>
 `;
 
 exports[`Only Text 1`] = `
 <label>
   Filtrering av skjema
 </label>
-<div
-  role="radiogroup"
+<fieldset
+  data-toggle-group
   data-variant="primary"
-  tabindex="0"
 >
-  <button
-    data-variant="primary"
-    type="button"
-    value="personlig"
-    id="togglegroup-item-_r_t_"
-    aria-checked="true"
-    aria-current="true"
-    role="radio"
-    name="togglegroup-name-_r_r_"
-    data-roving-tabindex-item="true"
-    tabindex="0"
-  >
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="personlig"
+      checked
+      name="togglegroup-name-_r_f_"
+    >
     Personlig
-  </button>
-  <button
-    data-variant="tertiary"
-    type="button"
-    value="generelt"
-    id="togglegroup-item-_r_v_"
-    aria-checked="false"
-    aria-current="false"
-    role="radio"
-    name="togglegroup-name-_r_r_"
-    data-roving-tabindex-item="true"
-    tabindex="-1"
-  >
+  </label>
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="generelt"
+      name="togglegroup-name-_r_f_"
+    >
     Generelt
-  </button>
-  <button
-    data-variant="tertiary"
-    type="button"
-    value="tilleggsinformasjon"
-    id="togglegroup-item-_r_11_"
-    aria-checked="false"
-    aria-current="false"
-    role="radio"
-    name="togglegroup-name-_r_r_"
-    data-roving-tabindex-item="true"
-    tabindex="-1"
-  >
+  </label>
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="tilleggsinformasjon"
+      name="togglegroup-name-_r_f_"
+    >
     Tilleggsinformasjon
-  </button>
-</div>
-`;
-
-exports[`Preview 1`] = `
-<div
-  role="radiogroup"
-  data-variant="primary"
-  tabindex="0"
->
-  <button
-    data-variant="tertiary"
-    type="button"
-    value="innboks"
-    id="togglegroup-item-_r_2_"
-    aria-checked="false"
-    aria-current="false"
-    role="radio"
-    name="togglegroup-name-_r_0_"
-    data-roving-tabindex-item="true"
-    tabindex="-1"
-  >
-    Innboks
-  </button>
-  <button
-    data-variant="primary"
-    type="button"
-    value="utkast"
-    id="togglegroup-item-_r_4_"
-    aria-checked="true"
-    aria-current="true"
-    role="radio"
-    name="togglegroup-name-_r_0_"
-    data-roving-tabindex-item="true"
-    tabindex="0"
-  >
-    Utkast
-  </button>
-  <button
-    data-variant="tertiary"
-    type="button"
-    value="arkiv"
-    id="togglegroup-item-_r_6_"
-    aria-checked="false"
-    aria-current="false"
-    role="radio"
-    name="togglegroup-name-_r_0_"
-    data-roving-tabindex-item="true"
-    tabindex="-1"
-  >
-    Arkiv
-  </button>
-  <button
-    data-variant="tertiary"
-    type="button"
-    value="sendt"
-    id="togglegroup-item-_r_8_"
-    aria-checked="false"
-    aria-current="false"
-    role="radio"
-    name="togglegroup-name-_r_0_"
-    data-roving-tabindex-item="true"
-    tabindex="-1"
-  >
-    Sendt
-  </button>
-</div>
+  </label>
+</fieldset>
 `;
 
 exports[`Primary 1`] = `
-<div
-  role="radiogroup"
+<fieldset
+  data-toggle-group
   data-variant="primary"
-  tabindex="0"
 >
-  <button
-    data-variant="primary"
-    type="button"
-    value="innboks"
-    id="togglegroup-item-_r_b_"
-    aria-checked="true"
-    aria-current="true"
-    role="radio"
-    name="togglegroup-name-_r_9_"
-    data-roving-tabindex-item="true"
-    tabindex="0"
-  >
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="innboks"
+      checked
+      name="togglegroup-name-_r_5_"
+    >
     Innboks
-  </button>
-  <button
-    data-variant="tertiary"
-    type="button"
-    value="utkast"
-    id="togglegroup-item-_r_d_"
-    aria-checked="false"
-    aria-current="false"
-    role="radio"
-    name="togglegroup-name-_r_9_"
-    data-roving-tabindex-item="true"
-    tabindex="-1"
-  >
+  </label>
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="utkast"
+      name="togglegroup-name-_r_5_"
+    >
     Utkast
-  </button>
-  <button
-    data-variant="tertiary"
-    type="button"
-    value="arkiv"
-    id="togglegroup-item-_r_f_"
-    aria-checked="false"
-    aria-current="false"
-    role="radio"
-    name="togglegroup-name-_r_9_"
-    data-roving-tabindex-item="true"
-    tabindex="-1"
-  >
+  </label>
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="arkiv"
+      name="togglegroup-name-_r_5_"
+    >
     Arkiv
-  </button>
-  <button
-    data-variant="tertiary"
-    type="button"
-    value="sendt"
-    id="togglegroup-item-_r_h_"
-    aria-checked="false"
-    aria-current="false"
-    role="radio"
-    name="togglegroup-name-_r_9_"
-    data-roving-tabindex-item="true"
-    tabindex="-1"
-  >
+  </label>
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="sendt"
+      name="togglegroup-name-_r_5_"
+    >
     Sendt
-  </button>
-</div>
+  </label>
+</fieldset>
 `;
 
 exports[`Secondary 1`] = `
-<div
-  role="radiogroup"
+<fieldset
+  data-toggle-group
   data-variant="secondary"
-  tabindex="0"
 >
-  <button
-    data-variant="secondary"
-    type="button"
-    value="innboks"
-    id="togglegroup-item-_r_k_"
-    aria-checked="true"
-    aria-current="true"
-    role="radio"
-    name="togglegroup-name-_r_i_"
-    data-roving-tabindex-item="true"
-    tabindex="0"
-  >
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="innboks"
+      checked
+      name="togglegroup-name-_r_a_"
+    >
     Innboks
-  </button>
-  <button
-    data-variant="tertiary"
-    type="button"
-    value="utkast"
-    id="togglegroup-item-_r_m_"
-    aria-checked="false"
-    aria-current="false"
-    role="radio"
-    name="togglegroup-name-_r_i_"
-    data-roving-tabindex-item="true"
-    tabindex="-1"
-  >
+  </label>
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="utkast"
+      name="togglegroup-name-_r_a_"
+    >
     Utkast
-  </button>
-  <button
-    data-variant="tertiary"
-    type="button"
-    value="arkiv"
-    id="togglegroup-item-_r_o_"
-    aria-checked="false"
-    aria-current="false"
-    role="radio"
-    name="togglegroup-name-_r_i_"
-    data-roving-tabindex-item="true"
-    tabindex="-1"
-  >
+  </label>
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="arkiv"
+      name="togglegroup-name-_r_a_"
+    >
     Arkiv
-  </button>
-  <button
-    data-variant="tertiary"
-    type="button"
-    value="sendt"
-    id="togglegroup-item-_r_q_"
-    aria-checked="false"
-    aria-current="false"
-    role="radio"
-    name="togglegroup-name-_r_i_"
-    data-roving-tabindex-item="true"
-    tabindex="-1"
-  >
+  </label>
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="sendt"
+      name="togglegroup-name-_r_a_"
+    >
     Sendt
-  </button>
-</div>
+  </label>
+</fieldset>
 `;
 
 exports[`Secondary Only Icons 1`] = `
-<div
-  role="radiogroup"
+<fieldset
+  data-toggle-group
   data-variant="secondary"
-  tabindex="0"
 >
-  <button
-    data-icon="true"
-    data-variant="secondary"
-    type="button"
-    value="venstrestilt"
-    popovertarget="_r_1q_"
-    popovertargetaction="show"
-    aria-labelledby="_r_1q_"
-    id="togglegroup-item-_r_1s_"
-    aria-checked="true"
-    aria-current="true"
-    role="radio"
-    name="togglegroup-name-_r_1p_"
-    data-roving-tabindex-item="true"
-    tabindex="0"
+  <label
+    aria-label="Venstrestilt"
+    data-tooltip="Venstrestilt"
+    data-placement="top"
+    data-autoplacement="true"
+    data-variant="tertiary"
   >
+    <input
+      type="radio"
+      value="venstrestilt"
+      checked
+      name="togglegroup-name-_r_11_"
+    >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1em"
@@ -700,31 +490,19 @@ exports[`Secondary Only Icons 1`] = `
       >
       </path>
     </svg>
-  </button>
-  <span
-    role="tooltip"
-    id="_r_1q_"
-    popover="manual"
-    style="opacity: 0;"
-  >
-    Venstrestilt
-  </span>
-  <button
-    data-icon="true"
+  </label>
+  <label
+    aria-label="Midtstilt"
+    data-tooltip="Midtstilt"
+    data-placement="top"
+    data-autoplacement="true"
     data-variant="tertiary"
-    type="button"
-    value="midtstilt"
-    popovertarget="_r_1u_"
-    popovertargetaction="show"
-    aria-labelledby="_r_1u_"
-    id="togglegroup-item-_r_20_"
-    aria-checked="false"
-    aria-current="false"
-    role="radio"
-    name="togglegroup-name-_r_1p_"
-    data-roving-tabindex-item="true"
-    tabindex="-1"
   >
+    <input
+      type="radio"
+      value="midtstilt"
+      name="togglegroup-name-_r_11_"
+    >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1em"
@@ -743,31 +521,19 @@ exports[`Secondary Only Icons 1`] = `
       >
       </path>
     </svg>
-  </button>
-  <span
-    role="tooltip"
-    id="_r_1u_"
-    popover="manual"
-    style="opacity: 0;"
-  >
-    Midtstilt
-  </span>
-  <button
-    data-icon="true"
+  </label>
+  <label
+    aria-label="Høyrestilt"
+    data-tooltip="Høyrestilt"
+    data-placement="top"
+    data-autoplacement="true"
     data-variant="tertiary"
-    type="button"
-    value="høyrestilt"
-    popovertarget="_r_22_"
-    popovertargetaction="show"
-    aria-labelledby="_r_22_"
-    id="togglegroup-item-_r_24_"
-    aria-checked="false"
-    aria-current="false"
-    role="radio"
-    name="togglegroup-name-_r_1p_"
-    data-roving-tabindex-item="true"
-    tabindex="-1"
   >
+    <input
+      type="radio"
+      value="høyrestilt"
+      name="togglegroup-name-_r_11_"
+    >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1em"
@@ -786,36 +552,22 @@ exports[`Secondary Only Icons 1`] = `
       >
       </path>
     </svg>
-  </button>
-  <span
-    role="tooltip"
-    id="_r_22_"
-    popover="manual"
-    style="opacity: 0;"
-  >
-    Høyrestilt
-  </span>
-</div>
+  </label>
+</fieldset>
 `;
 
 exports[`Text And Icons 1`] = `
-<div
-  role="radiogroup"
+<fieldset
+  data-toggle-group
   data-variant="primary"
-  tabindex="0"
 >
-  <button
-    data-variant="primary"
-    type="button"
-    value="aktiv"
-    id="togglegroup-item-_r_14_"
-    aria-checked="true"
-    aria-current="true"
-    role="radio"
-    name="togglegroup-name-_r_12_"
-    data-roving-tabindex-item="true"
-    tabindex="0"
-  >
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="aktiv"
+      checked
+      name="togglegroup-name-_r_j_"
+    >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1em"
@@ -835,19 +587,13 @@ exports[`Text And Icons 1`] = `
       </path>
     </svg>
     Aktiv
-  </button>
-  <button
-    data-variant="tertiary"
-    type="button"
-    value="advarsel"
-    id="togglegroup-item-_r_17_"
-    aria-checked="false"
-    aria-current="false"
-    role="radio"
-    name="togglegroup-name-_r_12_"
-    data-roving-tabindex-item="true"
-    tabindex="-1"
-  >
+  </label>
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="advarsel"
+      name="togglegroup-name-_r_j_"
+    >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1em"
@@ -867,19 +613,13 @@ exports[`Text And Icons 1`] = `
       </path>
     </svg>
     Advarsel
-  </button>
-  <button
-    data-variant="tertiary"
-    type="button"
-    value="kritisk"
-    id="togglegroup-item-_r_1a_"
-    aria-checked="false"
-    aria-current="false"
-    role="radio"
-    name="togglegroup-name-_r_12_"
-    data-roving-tabindex-item="true"
-    tabindex="-1"
-  >
+  </label>
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="kritisk"
+      name="togglegroup-name-_r_j_"
+    >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1em"
@@ -899,76 +639,6 @@ exports[`Text And Icons 1`] = `
       </path>
     </svg>
     Kritisk
-  </button>
-</div>
-`;
-
-exports[`Toggle Group In Color Context 1`] = `
-<div
-  data-variant="tinted"
-  data-color="accent"
->
-  <div
-    role="radiogroup"
-    data-variant="primary"
-    tabindex="0"
-  >
-    <button
-      data-variant="primary"
-      type="button"
-      value="innboks"
-      id="togglegroup-item-_r_2o_"
-      aria-checked="true"
-      aria-current="true"
-      role="radio"
-      name="togglegroup-name-_r_2m_"
-      data-roving-tabindex-item="true"
-      tabindex="0"
-    >
-      Innboks
-    </button>
-    <button
-      data-variant="tertiary"
-      type="button"
-      value="utkast"
-      id="togglegroup-item-_r_2q_"
-      aria-checked="false"
-      aria-current="false"
-      role="radio"
-      name="togglegroup-name-_r_2m_"
-      data-roving-tabindex-item="true"
-      tabindex="-1"
-    >
-      Utkast
-    </button>
-    <button
-      data-variant="tertiary"
-      type="button"
-      value="arkiv"
-      id="togglegroup-item-_r_2s_"
-      aria-checked="false"
-      aria-current="false"
-      role="radio"
-      name="togglegroup-name-_r_2m_"
-      data-roving-tabindex-item="true"
-      tabindex="-1"
-    >
-      Arkiv
-    </button>
-    <button
-      data-variant="tertiary"
-      type="button"
-      value="sendt"
-      id="togglegroup-item-_r_2u_"
-      aria-checked="false"
-      aria-current="false"
-      role="radio"
-      name="togglegroup-name-_r_2m_"
-      data-roving-tabindex-item="true"
-      tabindex="-1"
-    >
-      Sendt
-    </button>
-  </div>
-</div>
+  </label>
+</fieldset>
 `;

@@ -1,13 +1,16 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Preview 1`] = `
-<nav aria-label="Sidenavigering">
+<ds-pagination
+  aria-label="Sidenavigering"
+  role="navigation"
+>
   <ul>
     <li>
       <button
         data-variant="tertiary"
-        type="button"
         aria-label="Forrige side"
+        variant="tertiary"
       >
         Forrige
       </button>
@@ -15,7 +18,6 @@ exports[`Preview 1`] = `
     <li>
       <button
         data-variant="tertiary"
-        type="button"
         aria-label="Side 1"
       >
         1
@@ -23,10 +25,9 @@ exports[`Preview 1`] = `
     </li>
     <li>
       <button
-        data-variant="primary"
-        type="button"
+        data-variant="tertiary"
         aria-label="Side 2"
-        aria-current="page"
+        aria-current="true"
       >
         2
       </button>
@@ -34,7 +35,6 @@ exports[`Preview 1`] = `
     <li>
       <button
         data-variant="tertiary"
-        type="button"
         aria-label="Side 3"
       >
         3
@@ -43,7 +43,6 @@ exports[`Preview 1`] = `
     <li>
       <button
         data-variant="tertiary"
-        type="button"
         aria-label="Side 4"
       >
         4
@@ -52,7 +51,6 @@ exports[`Preview 1`] = `
     <li>
       <button
         data-variant="tertiary"
-        type="button"
         aria-label="Side 5"
       >
         5
@@ -63,7 +61,6 @@ exports[`Preview 1`] = `
     <li>
       <button
         data-variant="tertiary"
-        type="button"
         aria-label="Side 10"
       >
         10
@@ -72,12 +69,12 @@ exports[`Preview 1`] = `
     <li>
       <button
         data-variant="tertiary"
-        type="button"
         aria-label="Neste side"
+        variant="tertiary"
       >
         Neste
       </button>
     </li>
   </ul>
-</nav>
+</ds-pagination>
 `;

@@ -5,12 +5,12 @@ exports[`Checkbox In Color Context 1`] = `
   data-variant="tinted"
   data-color="accent"
 >
-  <div>
+  <ds-field data-clickdelegatefor="checkbox-in-color-context">
     <input
       id="checkbox-in-color-context"
       type="checkbox"
       checked
-      aria-describedby="checkbox-in-color-context:description:1"
+      aria-describedby="mmexwnuqdi94"
     >
     <label
       data-weight="regular"
@@ -20,21 +20,21 @@ exports[`Checkbox In Color Context 1`] = `
     </label>
     <div
       data-field="description"
-      id="checkbox-in-color-context:description:1"
+      id="mmexwnuqdi94"
     >
       Description
     </div>
-  </div>
+  </ds-field>
 </div>
 `;
 
 exports[`Focused 1`] = `
-<div>
+<ds-field data-clickdelegatefor="checkbox-preview">
   <input
     id="checkbox-preview"
     type="checkbox"
     value="value"
-    aria-describedby="checkbox-preview:description:1"
+    aria-describedby="mmexwnuqdi95"
   >
   <label
     data-weight="regular"
@@ -44,11 +44,11 @@ exports[`Focused 1`] = `
   </label>
   <div
     data-field="description"
-    id="checkbox-preview:description:1"
+    id="mmexwnuqdi95"
   >
     Description
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`One Option 1`] = `
@@ -59,29 +59,26 @@ exports[`One Option 1`] = `
   <p data-variant="default">
     For at vi skal kunne sende deg opplysningen du ber om, må du bekrefte at du er myndig.
   </p>
-  <div>
+  <ds-field>
     <input
       id="components-checkbox--one-option"
       type="checkbox"
       value="samtykke"
     >
-    <label
-      data-weight="regular"
-      for="components-checkbox--one-option"
-    >
+    <label data-weight="regular">
       Jeg bekrefter at jeg er over 18 år
     </label>
-  </div>
+  </ds-field>
 </fieldset>
 `;
 
 exports[`Preview 1`] = `
-<div>
+<ds-field data-clickdelegatefor="checkbox-preview">
   <input
     id="checkbox-preview"
     type="checkbox"
     value="value"
-    aria-describedby="checkbox-preview:description:1"
+    aria-describedby="mmexwnuqdi91"
   >
   <label
     data-weight="regular"
@@ -91,9 +88,9 @@ exports[`Preview 1`] = `
   </label>
   <div
     data-field="description"
-    id="checkbox-preview:description:1"
+    id="mmexwnuqdi91"
   >
     Description
   </div>
-</div>
+</ds-field>
 `;

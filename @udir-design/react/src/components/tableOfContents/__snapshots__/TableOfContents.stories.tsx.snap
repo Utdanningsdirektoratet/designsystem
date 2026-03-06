@@ -19,19 +19,13 @@ exports[`Automatic 1`] = `
     data-variant="tinted"
     data-color="accent"
   >
-    <u-details
+    <details
       open
       data-variant="default"
-      role="group"
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         Innhold på denne siden
-      </u-summary>
+      </summary>
       <div>
         <ol>
           <li>
@@ -105,7 +99,7 @@ exports[`Automatic 1`] = `
           </li>
         </ol>
       </div>
-    </u-details>
+    </details>
   </div>
   <h2
     data-size="md"
@@ -172,18 +166,10 @@ exports[`Default Closed 1`] = `
     data-variant="tinted"
     data-color="accent"
   >
-    <u-details
-      data-variant="default"
-      role="group"
-    >
-      <u-summary
-        aria-expanded="false"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+    <details data-variant="default">
+      <summary>
         Innhold på denne siden
-      </u-summary>
+      </summary>
       <div>
         <ol>
           <li>
@@ -257,7 +243,7 @@ exports[`Default Closed 1`] = `
           </li>
         </ol>
       </div>
-    </u-details>
+    </details>
   </div>
   <h2
     data-size="md"
@@ -317,19 +303,13 @@ exports[`Manual 1`] = `
     data-variant="default"
     data-color="support1"
   >
-    <u-details
+    <details
       open
       data-variant="default"
-      role="group"
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         Innhold på denne siden
-      </u-summary>
+      </summary>
       <div>
         <ol>
           <li>
@@ -380,7 +360,7 @@ exports[`Manual 1`] = `
           </li>
         </ol>
       </div>
-    </u-details>
+    </details>
   </div>
   <h2
     data-size="md"
@@ -415,19 +395,13 @@ exports[`Preview 1`] = `
     data-color="neutral"
     style="width: 450px;"
   >
-    <u-details
+    <details
       open
       data-variant="default"
-      role="group"
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         Innhold på denne siden
-      </u-summary>
+      </summary>
       <div>
         <ol>
           <li>
@@ -547,7 +521,7 @@ exports[`Preview 1`] = `
           </li>
         </ol>
       </div>
-    </u-details>
+    </details>
   </div>
   <h2
     data-size="md"
