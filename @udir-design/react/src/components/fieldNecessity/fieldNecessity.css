@@ -22,6 +22,11 @@
 }
 
 .uds-field-necessity {
+  .ds-label {
+    display: flex;
+    align-items: center;
+  }
+
   /* When we are showing tags for individual fields, we need to adjust the label styling */
   &[data-show-required='true'],
   &[data-show-optional='true'] {
