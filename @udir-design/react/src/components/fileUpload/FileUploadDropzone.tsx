@@ -68,8 +68,6 @@ export const FileUploadDropzone = forwardRef<
       </Card>
       <input
         type="file"
-        readOnly={inputProps?.readOnly}
-        id={inputProps?.id}
         {...inputProps}
         onClick={(e) => {
           if (inputProps?.readOnly) {
