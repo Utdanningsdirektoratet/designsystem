@@ -1,6 +1,6 @@
 import type { Size } from '@digdir/designsystemet-react';
 import cl from 'clsx/lite';
-import type { InputHTMLAttributes, ReactNode } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 import { forwardRef, useEffect, useRef } from 'react';
 import { UploadIcon } from '@udir-design/icons';
 import { Button } from '../button/Button';
@@ -10,12 +10,21 @@ import { Label } from '../typography/label/Label';
 import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
 import './fileUpload.css';
 
+/**
+ * From digdir web components:
+ * "Custom element is used to performantly keep track of fields on the page"
+ */
+export type DSFieldElement = HTMLElement & {
+  connectedCallback(): void;
+  disconnectedCallback(): void;
+};
+
 type InputProps_ = Omit<
   InputProps,
   'prefix' | 'className' | 'style' | 'data-color' | 'type' | 'data-size'
 >;
 
-export type FileUploadProps = InputHTMLAttributes<HTMLInputElement> & {
+export type FileUploadProps = HTMLAttributes<DSFieldElement> & {
   /**
    * Changes size for descendant Designsystemet components.
    * Select from predefined sizes.
@@ -43,11 +52,10 @@ export type FileUploadProps = InputHTMLAttributes<HTMLInputElement> & {
   id?: string;
 };
 
-export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
+export const FileUploadTrigger = forwardRef<DSFieldElement, FileUploadProps>(
   function FileUploadTrigger(
     {
       className,
-      multiple,
       'data-size': size,
       label,
       error,
@@ -60,7 +68,7 @@ export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
   ) {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
-    const cssVar = multiple
+    const cssVar = inputProps?.multiple
       ? '--udsc-fileUpload-addFiles-text'
       : '--udsc-fileUpload-addFile-text';
     // This is to make sure accessibility tests pass. Not actually necessary to make screenreaders announce the button.
@@ -92,13 +100,7 @@ export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
           <UploadIcon aria-hidden />
           {/* Text in css */}
         </Button>
-        <input
-          type="file"
-          ref={fileInputRef}
-          multiple={Boolean(multiple) || undefined}
-          id={id}
-          {...inputProps}
-        />
+        <input type="file" ref={fileInputRef} id={id} {...inputProps} />
         {!!error && <ValidationMessage>{error}</ValidationMessage>}
       </Field>
     );

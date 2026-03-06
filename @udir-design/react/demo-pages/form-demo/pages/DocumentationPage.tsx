@@ -60,9 +60,11 @@ export const DocumentationPage = ({
         description="Du kan laste opp filer i PDF-format. Filer kan være opptil 25 MB."
         {...getRootProps()}
         error={errors.documentation?.message}
-        inputProps={getInputProps({ required: true })}
+        inputProps={getInputProps({
+          required: true,
+          readOnly: isSubmitSuccessful,
+        })}
         aria-invalid={!!errors.documentation}
-        readOnly={isSubmitSuccessful}
       />
       {uploadedFiles.length > 0 && (
         <>
