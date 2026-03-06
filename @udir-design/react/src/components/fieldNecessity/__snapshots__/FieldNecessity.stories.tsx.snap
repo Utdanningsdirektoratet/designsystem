@@ -455,6 +455,69 @@ exports[`Preview 1`] = `
 </div>
 `;
 
+exports[`Readonly 1`] = `
+<div
+  data-show-required="true"
+  data-show-optional="false"
+  data-show-summary="true"
+  style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
+>
+  <div>
+    <label
+      data-weight="medium"
+      for="readonly-first"
+    >
+      <span>
+        Fornavn
+      </span>
+    </label>
+    <div>
+      <input
+        id="readonly-first"
+        required
+        readonly
+        type="text"
+      >
+    </div>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for="readonly-middle"
+    >
+      <span>
+        Mellomnavn
+      </span>
+    </label>
+    <div>
+      <input
+        id="readonly-middle"
+        readonly
+        type="text"
+      >
+    </div>
+  </div>
+  <div>
+    <label
+      data-weight="medium"
+      for="readonly-last"
+    >
+      <span>
+        Etternavn
+      </span>
+    </label>
+    <div>
+      <input
+        id="readonly-last"
+        required
+        readonly
+        type="text"
+      >
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Single Optional Field 1`] = `
 <div
   data-show-required="true"
