@@ -27,18 +27,10 @@ exports[`Controlled 1`] = `
   Åpne alle
 </button>
 <br>
-<u-details
-  data-variant="default"
-  role="group"
->
-  <u-summary
-    aria-expanded="false"
-    role="button"
-    slot="summary"
-    tabindex="0"
-  >
+<details data-variant="default">
+  <summary>
     Hva er Feide?
-  </u-summary>
+  </summary>
   <div>
     <p>
       Feide er den nasjonale løsningen for trygg innlogging og datadeling i utdanning og forskning.
@@ -50,19 +42,11 @@ exports[`Controlled 1`] = `
       Med en Feide-bruker bruker elever, studenter, forskere og undervisere ett og samme brukernavn og passord til å logge inn på alle tjenester som har Feide som innloggingsløsning. De slipper med andre ord å huske ulike brukernavn og passord for ulike tjenester.
     </p>
   </div>
-</u-details>
-<u-details
-  data-variant="default"
-  role="group"
->
-  <u-summary
-    aria-expanded="false"
-    role="button"
-    slot="summary"
-    tabindex="0"
-  >
+</details>
+<details data-variant="default">
+  <summary>
     Hva er UIDP?
-  </u-summary>
+  </summary>
   <div>
     <p>
       UIDP er Udirs nye løsning for identitets- og tilgangskontroll.
@@ -77,19 +61,11 @@ exports[`Controlled 1`] = `
       UIDP er også integrert med Udir sin gamle påloggingsløsning UBAS.
     </p>
   </div>
-</u-details>
-<u-details
-  data-variant="default"
-  role="group"
->
-  <u-summary
-    aria-expanded="false"
-    role="button"
-    slot="summary"
-    tabindex="0"
-  >
+</details>
+<details data-variant="default">
+  <summary>
     Hva er UBAS?
-  </u-summary>
+  </summary>
   <div>
     <p>
       UBAS er Udirs gamle løsning for identitets- og tilgangskontroll. Fra 2022 blir UBAS gradvis faset ut og erstattet med nyere fellesløsninger (UIDP, Feide, ID-porten, Altinn Autorisasjon).
@@ -98,7 +74,7 @@ exports[`Controlled 1`] = `
       Etter overgang til nye løsninger vil tildeling av roller og tjenestetilganger som hovedregel gjøres i Altinn, og ikke lenger i UBAS.
     </p>
   </div>
-</u-details>
+</details>
 `;
 
 exports[`In Card 1`] = `
@@ -106,18 +82,10 @@ exports[`In Card 1`] = `
   data-variant="default"
   data-color="neutral"
 >
-  <u-details
-    data-variant="default"
-    role="group"
-  >
-    <u-summary
-      aria-expanded="false"
-      role="button"
-      slot="summary"
-      tabindex="0"
-    >
+  <details data-variant="default">
+    <summary>
       Vedlegg
-    </u-summary>
+    </summary>
     <div>
       <ul>
         <li>
@@ -149,7 +117,7 @@ exports[`In Card 1`] = `
         </li>
       </ul>
     </div>
-  </u-details>
+  </details>
 </div>
 `;
 
@@ -158,34 +126,18 @@ exports[`In Card With Color 1`] = `
   data-variant="tinted"
   data-color="accent"
 >
-  <u-details
-    data-variant="default"
-    role="group"
-  >
-    <u-summary
-      aria-expanded="false"
-      role="button"
-      slot="summary"
-      tabindex="0"
-    >
+  <details data-variant="default">
+    <summary>
       Kva er nasjonale prøver?
-    </u-summary>
+    </summary>
     <div>
       Føremålet med nasjonale prøver er å gi skolane kunnskap om elevane sine grunnleggjande ferdigheiter i lesing, rekning og engelsk. Informasjonen frå prøvene skal danne grunnlag for undervegsvurdering og kvalitetsutvikling på alle nivå i skolesystemet.
     </div>
-  </u-details>
-  <u-details
-    data-variant="default"
-    role="group"
-  >
-    <u-summary
-      aria-expanded="false"
-      role="button"
-      slot="summary"
-      tabindex="0"
-    >
+  </details>
+  <details data-variant="default">
+    <summary>
       Korleis skal nasjonale prøver brukast?
-    </u-summary>
+    </summary>
     <div>
       <ul>
         <li>
@@ -199,27 +151,8 @@ exports[`In Card With Color 1`] = `
         </li>
       </ul>
     </div>
-  </u-details>
+  </details>
 </div>
-`;
-
-exports[`Preview 1`] = `
-<u-details
-  data-variant="default"
-  role="group"
->
-  <u-summary
-    aria-expanded="false"
-    role="button"
-    slot="summary"
-    tabindex="0"
-  >
-    Kva er nasjonale prøver?
-  </u-summary>
-  <div>
-    Føremålet med nasjonale prøver er å gi skolane kunnskap om elevane sine grunnleggjande ferdigheiter i lesing, rekning og engelsk. Informasjonen frå prøvene skal danne grunnlag for undervegsvurdering og kvalitetsutvikling på alle nivå i skolesystemet.
-  </div>
-</u-details>
 `;
 
 exports[`Pseudo States 1`] = `
@@ -230,65 +163,41 @@ exports[`Pseudo States 1`] = `
   >
     Default
   </label>
-  <u-details
-    data-variant="default"
-    role="group"
-  >
-    <u-summary
-      aria-expanded="false"
-      role="button"
-      slot="summary"
-      tabindex="0"
-    >
+  <details data-variant="default">
+    <summary>
       Kva er nasjonale prøver?
-    </u-summary>
+    </summary>
     <div>
       Føremålet med nasjonale prøver er å gi skolane kunnskap om elevane sine grunnleggjande ferdigheiter i lesing, rekning og engelsk. Informasjonen frå prøvene skal danne grunnlag for undervegsvurdering og kvalitetsutvikling på alle nivå i skolesystemet.
     </div>
-  </u-details>
+  </details>
   <label
     data-weight="medium"
     data-size="sm"
   >
     Hover
   </label>
-  <u-details
-    data-variant="default"
-    role="group"
-  >
-    <u-summary
-      aria-expanded="false"
-      role="button"
-      slot="summary"
-      tabindex="0"
-    >
+  <details data-variant="default">
+    <summary>
       Kva er nasjonale prøver?
-    </u-summary>
+    </summary>
     <div>
       Føremålet med nasjonale prøver er å gi skolane kunnskap om elevane sine grunnleggjande ferdigheiter i lesing, rekning og engelsk. Informasjonen frå prøvene skal danne grunnlag for undervegsvurdering og kvalitetsutvikling på alle nivå i skolesystemet.
     </div>
-  </u-details>
+  </details>
   <label
     data-weight="medium"
     data-size="sm"
   >
     Focused
   </label>
-  <u-details
-    data-variant="default"
-    role="group"
-  >
-    <u-summary
-      aria-expanded="false"
-      role="button"
-      slot="summary"
-      tabindex="0"
-    >
+  <details data-variant="default">
+    <summary>
       Kva er nasjonale prøver?
-    </u-summary>
+    </summary>
     <div>
       Føremålet med nasjonale prøver er å gi skolane kunnskap om elevane sine grunnleggjande ferdigheiter i lesing, rekning og engelsk. Informasjonen frå prøvene skal danne grunnlag for undervegsvurdering og kvalitetsutvikling på alle nivå i skolesystemet.
     </div>
-  </u-details>
+  </details>
 </div>
 `;

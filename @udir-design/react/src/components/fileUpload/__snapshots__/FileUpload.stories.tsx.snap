@@ -2,7 +2,8 @@
 
 exports[`Example Drop Zone 1`] = `
 <div style="display: flex; flex-direction: column; gap: var(--ds-size-3);">
-  <div
+  <ds-field
+    multiple
     role="presentation"
     tabindex="0"
   >
@@ -14,7 +15,7 @@ exports[`Example Drop Zone 1`] = `
     </label>
     <div
       data-field="description"
-      id="dokumentasjon-dropzone:description:1"
+      id="mmexwmxi3qk3"
     >
       Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
     </div>
@@ -48,14 +49,14 @@ exports[`Example Drop Zone 1`] = `
     </div>
     <input
       id="dokumentasjon-dropzone"
-      multiple
       accept="application/pdf"
+      multiple
       tabindex="-1"
       type="file"
-      aria-describedby="dokumentasjon-dropzone:description:1"
+      aria-describedby="mmexwmxi3qk3"
       style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
     >
-  </div>
+  </ds-field>
   <h3 data-size="2xs">
     Vedlegg (1):
   </h3>
@@ -105,9 +106,10 @@ exports[`Example Drop Zone 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_4_"
-        popovertargetaction="show"
-        aria-labelledby="_r_4_"
+        aria-label
+        data-tooltip
+        data-placement="top"
+        data-autoplacement="true"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -128,14 +130,6 @@ exports[`Example Drop Zone 1`] = `
           </path>
         </svg>
       </button>
-      <span
-        role="tooltip"
-        id="_r_4_"
-        popover="manual"
-        style="opacity: 0;"
-      >
-        Fjern filen
-      </span>
     </div>
     <div
       aria-relevant="additions removals"
@@ -197,9 +191,10 @@ exports[`Example Items 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_b_"
-        popovertargetaction="show"
-        aria-labelledby="_r_b_"
+        aria-label
+        data-tooltip
+        data-placement="top"
+        data-autoplacement="true"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -220,14 +215,6 @@ exports[`Example Items 1`] = `
           </path>
         </svg>
       </button>
-      <span
-        role="tooltip"
-        id="_r_b_"
-        popover="manual"
-        style="opacity: 0;"
-      >
-        Fjern filen
-      </span>
     </div>
     <div
       aria-relevant="additions removals"
@@ -281,9 +268,10 @@ exports[`Example Items 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_e_"
-        popovertargetaction="show"
-        aria-labelledby="_r_e_"
+        aria-label
+        data-tooltip
+        data-placement="top"
+        data-autoplacement="true"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -304,14 +292,6 @@ exports[`Example Items 1`] = `
           </path>
         </svg>
       </button>
-      <span
-        role="tooltip"
-        id="_r_e_"
-        popover="manual"
-        style="opacity: 0;"
-      >
-        Fjern filen
-      </span>
     </div>
     <div
       aria-relevant="additions removals"
@@ -414,9 +394,10 @@ exports[`Example Items 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_h_"
-        popovertargetaction="show"
-        aria-labelledby="_r_h_"
+        aria-label
+        data-tooltip
+        data-placement="top"
+        data-autoplacement="true"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -437,14 +418,6 @@ exports[`Example Items 1`] = `
           </path>
         </svg>
       </button>
-      <span
-        role="tooltip"
-        id="_r_h_"
-        popover="manual"
-        style="opacity: 0;"
-      >
-        Fjern filen
-      </span>
     </div>
     <div
       aria-relevant="additions removals"
@@ -478,7 +451,7 @@ exports[`Example Items 1`] = `
 
 exports[`Example Trigger 1`] = `
 <div style="display: flex; flex-direction: column; gap: var(--ds-size-3);">
-  <div>
+  <ds-field>
     <label
       data-weight="medium"
       for="profilbilde"
@@ -487,7 +460,7 @@ exports[`Example Trigger 1`] = `
     </label>
     <div
       data-field="description"
-      id="profilbilde:description:1"
+      id="mmexwmxi3qk4"
     >
       Du kan laste opp filer i PNG- og JPEG-format.
     </div>
@@ -519,9 +492,9 @@ exports[`Example Trigger 1`] = `
       id="profilbilde"
       accept="image/png, image/jpeg"
       type="file"
-      aria-describedby="profilbilde:description:1"
+      aria-describedby="mmexwmxi3qk4"
     >
-  </div>
+  </ds-field>
   <h3 data-size="2xs">
     Vedlegg (1):
   </h3>
@@ -566,9 +539,10 @@ exports[`Example Trigger 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_8_"
-        popovertargetaction="show"
-        aria-labelledby="_r_8_"
+        aria-label
+        data-tooltip
+        data-placement="top"
+        data-autoplacement="true"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -589,14 +563,6 @@ exports[`Example Trigger 1`] = `
           </path>
         </svg>
       </button>
-      <span
-        role="tooltip"
-        id="_r_8_"
-        popover="manual"
-        style="opacity: 0;"
-      >
-        Fjern filen
-      </span>
     </div>
     <div
       aria-relevant="additions removals"
@@ -609,17 +575,11 @@ exports[`Example Trigger 1`] = `
 
 exports[`Preview 1`] = `
 <div style="display: flex; gap: var(--ds-size-18); justify-content: center;">
-  <div data-size="md">
-    <label
-      data-weight="medium"
-      for="trigger"
-    >
+  <ds-field data-size="md">
+    <label data-weight="medium">
       Label
     </label>
-    <div
-      data-field="description"
-      id="trigger:description:1"
-    >
+    <div data-field="description">
       Beskrivelse
     </div>
     <button
@@ -649,20 +609,13 @@ exports[`Preview 1`] = `
     <input
       id="trigger"
       type="file"
-      aria-describedby="trigger:description:1"
     >
-  </div>
-  <div data-size="md">
-    <label
-      data-weight="medium"
-      for="dropzone"
-    >
+  </ds-field>
+  <ds-field data-size="md">
+    <label data-weight="medium">
       Label
     </label>
-    <div
-      data-field="description"
-      id="dropzone:description:1"
-    >
+    <div data-field="description">
       Beskrivelse
     </div>
     <div data-variant="default">
@@ -696,25 +649,18 @@ exports[`Preview 1`] = `
     <input
       id="dropzone"
       type="file"
-      aria-describedby="dropzone:description:1"
     >
-  </div>
+  </ds-field>
 </div>
 `;
 
 exports[`Upload 1`] = `
 <div style="display: flex; flex-direction: column; gap: var(--ds-size-3);">
-  <div>
-    <label
-      data-weight="medium"
-      for="rapport"
-    >
+  <ds-field>
+    <label data-weight="medium">
       Last opp rapport
     </label>
-    <div
-      data-field="description"
-      id="rapport:description:1"
-    >
+    <div data-field="description">
       Du kan legge ved 1 fil.
     </div>
     <button
@@ -744,8 +690,7 @@ exports[`Upload 1`] = `
     <input
       id="rapport"
       type="file"
-      aria-describedby="rapport:description:1"
     >
-  </div>
+  </ds-field>
 </div>
 `;

@@ -1,11 +1,8 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Affix 1`] = `
-<div>
-  <label
-    data-weight="medium"
-    for="textfield-affix"
-  >
+<ds-field>
+  <label data-weight="medium">
     Hvor mange kroner koster det per måned?
   </label>
   <div>
@@ -21,12 +18,12 @@ exports[`Affix 1`] = `
       pr. mnd
     </span>
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`Controlled 1`] = `
 <div style="display: flex; gap: var(--ds-size-2); align-items: end; width: 100%;">
-  <div style="flex-grow: 1;">
+  <ds-field style="flex-grow: 1;">
     <label
       data-weight="medium"
       for="textfield-controlled"
@@ -40,7 +37,7 @@ exports[`Controlled 1`] = `
         value
       >
     </div>
-  </div>
+  </ds-field>
   <button
     data-variant="secondary"
     type="button"
@@ -51,7 +48,7 @@ exports[`Controlled 1`] = `
 `;
 
 exports[`Counter 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
     for="textfield-counter"
@@ -63,29 +60,22 @@ exports[`Counter 1`] = `
       id="textfield-counter"
       inputmode="numeric"
       type="text"
-      aria-describedby="textfield-counter:description:1"
+      aria-describedby="mmexwm7yv5w1"
     >
   </div>
-  <div aria-live="polite">
-  </div>
   <p
-    data-variant="default"
-    aria-hidden="true"
+    data-field="counter"
+    data-limit="10"
+    id="mmexwm7yv5w1"
+    data-label="10 tegn igjen"
+    data-state="under"
   >
-    10 tegn igjen
   </p>
-  <div
-    aria-hidden="true"
-    data-field="description"
-    id="textfield-counter:description:1"
-  >
-    Maks 10 tegn tillatt.
-  </div>
-</div>
+</ds-field>
 `;
 
 exports[`Disabled 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
     for="textfield-disabled"
@@ -99,8 +89,8 @@ exports[`Disabled 1`] = `
       type="text"
     >
   </div>
-</div>
-<div>
+</ds-field>
+<ds-field>
   <label
     data-weight="medium"
     for="multiline-textfield-disabled"
@@ -115,11 +105,11 @@ exports[`Disabled 1`] = `
     >
     </textarea>
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`Focused 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
     for="textfield-preview"
@@ -132,11 +122,11 @@ exports[`Focused 1`] = `
       type="text"
     >
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`Preview 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
     for="textfield-preview"
@@ -149,11 +139,11 @@ exports[`Preview 1`] = `
       type="text"
     >
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`Read Only 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
     for="textfield-readonly"
@@ -167,8 +157,8 @@ exports[`Read Only 1`] = `
       type="text"
     >
   </div>
-</div>
-<div>
+</ds-field>
+<ds-field>
   <label
     data-weight="medium"
     for="multiline-textfield-readonly"
@@ -183,11 +173,11 @@ exports[`Read Only 1`] = `
     >
     </textarea>
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`Rows 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
     for="textfield-rows"
@@ -201,5 +191,5 @@ exports[`Rows 1`] = `
     >
     </textarea>
   </div>
-</div>
+</ds-field>
 `;

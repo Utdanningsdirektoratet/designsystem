@@ -12,62 +12,50 @@ exports[`Checkbox 1`] = `
     >
       Small
     </h2>
-    <div>
+    <ds-field>
       <input
         id="components-input--checkbox-sm-default"
         type="checkbox"
         name="sm-default"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-sm-default"
-      >
+      <label data-weight="medium">
         Default
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         id="components-input--checkbox-sm-checked"
         type="checkbox"
         checked
         name="sm-checked"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-sm-checked"
-      >
+      <label data-weight="medium">
         Checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         data-indeterminate="true"
         id="components-input--checkbox-sm-indeterminate"
         type="checkbox"
         name="sm-indeterminate"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-sm-indeterminate"
-      >
+      <label data-weight="medium">
         Indeterminate
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         disabled
         id="components-input--checkbox-sm-disabled"
         type="checkbox"
         name="sm-disabled"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-sm-disabled"
-      >
+      <label data-weight="medium">
         Disabled
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         disabled
         id="components-input--checkbox-sm-disabled-checked"
@@ -75,14 +63,11 @@ exports[`Checkbox 1`] = `
         checked
         name="sm-disabled-checked"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-sm-disabled-checked"
-      >
+      <label data-weight="medium">
         Disabled checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         disabled
         data-indeterminate="true"
@@ -90,28 +75,22 @@ exports[`Checkbox 1`] = `
         type="checkbox"
         name="sm-disabled-indeterminate"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-sm-disabled-indeterminate"
-      >
+      <label data-weight="medium">
         Disabled indeterminate
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         aria-invalid="true"
         id="components-input--checkbox-sm-invalid"
         type="checkbox"
         name="sm-invalid"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-sm-invalid"
-      >
+      <label data-weight="medium">
         Invalid
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         aria-invalid="true"
         id="components-input--checkbox-sm-invalid-checked"
@@ -119,14 +98,11 @@ exports[`Checkbox 1`] = `
         checked
         name="sm-invalid-checked"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-sm-invalid-checked"
-      >
+      <label data-weight="medium">
         Invalid checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         aria-invalid="true"
         data-indeterminate="true"
@@ -134,28 +110,22 @@ exports[`Checkbox 1`] = `
         type="checkbox"
         name="sm-invalid-indeterminate"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-sm-invalid-indeterminate"
-      >
+      <label data-weight="medium">
         Invalid indeterminate
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         readonly
         id="components-input--checkbox-sm-read-only"
         type="checkbox"
         name="sm-read-only"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-sm-read-only"
-      >
+      <label data-weight="medium">
         Read-only
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         readonly
         id="components-input--checkbox-sm-read-only-checked"
@@ -163,14 +133,11 @@ exports[`Checkbox 1`] = `
         checked
         name="sm-read-only-checked"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-sm-read-only-checked"
-      >
+      <label data-weight="medium">
         Read-only checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         readonly
         data-indeterminate="true"
@@ -178,13 +145,10 @@ exports[`Checkbox 1`] = `
         type="checkbox"
         name="sm-read-only-indeterminate"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-sm-read-only-indeterminate"
-      >
+      <label data-weight="medium">
         Read-only indeterminate
       </label>
-    </div>
+    </ds-field>
   </div>
   <div
     data-size="md"
@@ -196,62 +160,50 @@ exports[`Checkbox 1`] = `
     >
       Medium
     </h2>
-    <div>
+    <ds-field>
       <input
         id="components-input--checkbox-md-default"
         type="checkbox"
         name="md-default"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-md-default"
-      >
+      <label data-weight="medium">
         Default
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         id="components-input--checkbox-md-checked"
         type="checkbox"
         checked
         name="md-checked"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-md-checked"
-      >
+      <label data-weight="medium">
         Checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         data-indeterminate="true"
         id="components-input--checkbox-md-indeterminate"
         type="checkbox"
         name="md-indeterminate"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-md-indeterminate"
-      >
+      <label data-weight="medium">
         Indeterminate
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         disabled
         id="components-input--checkbox-md-disabled"
         type="checkbox"
         name="md-disabled"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-md-disabled"
-      >
+      <label data-weight="medium">
         Disabled
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         disabled
         id="components-input--checkbox-md-disabled-checked"
@@ -259,14 +211,11 @@ exports[`Checkbox 1`] = `
         checked
         name="md-disabled-checked"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-md-disabled-checked"
-      >
+      <label data-weight="medium">
         Disabled checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         disabled
         data-indeterminate="true"
@@ -274,28 +223,22 @@ exports[`Checkbox 1`] = `
         type="checkbox"
         name="md-disabled-indeterminate"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-md-disabled-indeterminate"
-      >
+      <label data-weight="medium">
         Disabled indeterminate
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         aria-invalid="true"
         id="components-input--checkbox-md-invalid"
         type="checkbox"
         name="md-invalid"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-md-invalid"
-      >
+      <label data-weight="medium">
         Invalid
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         aria-invalid="true"
         id="components-input--checkbox-md-invalid-checked"
@@ -303,14 +246,11 @@ exports[`Checkbox 1`] = `
         checked
         name="md-invalid-checked"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-md-invalid-checked"
-      >
+      <label data-weight="medium">
         Invalid checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         aria-invalid="true"
         data-indeterminate="true"
@@ -318,28 +258,22 @@ exports[`Checkbox 1`] = `
         type="checkbox"
         name="md-invalid-indeterminate"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-md-invalid-indeterminate"
-      >
+      <label data-weight="medium">
         Invalid indeterminate
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         readonly
         id="components-input--checkbox-md-read-only"
         type="checkbox"
         name="md-read-only"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-md-read-only"
-      >
+      <label data-weight="medium">
         Read-only
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         readonly
         id="components-input--checkbox-md-read-only-checked"
@@ -347,14 +281,11 @@ exports[`Checkbox 1`] = `
         checked
         name="md-read-only-checked"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-md-read-only-checked"
-      >
+      <label data-weight="medium">
         Read-only checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         readonly
         data-indeterminate="true"
@@ -362,13 +293,10 @@ exports[`Checkbox 1`] = `
         type="checkbox"
         name="md-read-only-indeterminate"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-md-read-only-indeterminate"
-      >
+      <label data-weight="medium">
         Read-only indeterminate
       </label>
-    </div>
+    </ds-field>
   </div>
   <div
     data-size="lg"
@@ -380,62 +308,50 @@ exports[`Checkbox 1`] = `
     >
       Large
     </h2>
-    <div>
+    <ds-field>
       <input
         id="components-input--checkbox-lg-default"
         type="checkbox"
         name="lg-default"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-lg-default"
-      >
+      <label data-weight="medium">
         Default
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         id="components-input--checkbox-lg-checked"
         type="checkbox"
         checked
         name="lg-checked"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-lg-checked"
-      >
+      <label data-weight="medium">
         Checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         data-indeterminate="true"
         id="components-input--checkbox-lg-indeterminate"
         type="checkbox"
         name="lg-indeterminate"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-lg-indeterminate"
-      >
+      <label data-weight="medium">
         Indeterminate
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         disabled
         id="components-input--checkbox-lg-disabled"
         type="checkbox"
         name="lg-disabled"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-lg-disabled"
-      >
+      <label data-weight="medium">
         Disabled
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         disabled
         id="components-input--checkbox-lg-disabled-checked"
@@ -443,14 +359,11 @@ exports[`Checkbox 1`] = `
         checked
         name="lg-disabled-checked"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-lg-disabled-checked"
-      >
+      <label data-weight="medium">
         Disabled checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         disabled
         data-indeterminate="true"
@@ -458,28 +371,22 @@ exports[`Checkbox 1`] = `
         type="checkbox"
         name="lg-disabled-indeterminate"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-lg-disabled-indeterminate"
-      >
+      <label data-weight="medium">
         Disabled indeterminate
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         aria-invalid="true"
         id="components-input--checkbox-lg-invalid"
         type="checkbox"
         name="lg-invalid"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-lg-invalid"
-      >
+      <label data-weight="medium">
         Invalid
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         aria-invalid="true"
         id="components-input--checkbox-lg-invalid-checked"
@@ -487,14 +394,11 @@ exports[`Checkbox 1`] = `
         checked
         name="lg-invalid-checked"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-lg-invalid-checked"
-      >
+      <label data-weight="medium">
         Invalid checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         aria-invalid="true"
         data-indeterminate="true"
@@ -502,28 +406,22 @@ exports[`Checkbox 1`] = `
         type="checkbox"
         name="lg-invalid-indeterminate"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-lg-invalid-indeterminate"
-      >
+      <label data-weight="medium">
         Invalid indeterminate
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         readonly
         id="components-input--checkbox-lg-read-only"
         type="checkbox"
         name="lg-read-only"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-lg-read-only"
-      >
+      <label data-weight="medium">
         Read-only
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         readonly
         id="components-input--checkbox-lg-read-only-checked"
@@ -531,14 +429,11 @@ exports[`Checkbox 1`] = `
         checked
         name="lg-read-only-checked"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-lg-read-only-checked"
-      >
+      <label data-weight="medium">
         Read-only checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         readonly
         data-indeterminate="true"
@@ -546,20 +441,17 @@ exports[`Checkbox 1`] = `
         type="checkbox"
         name="lg-read-only-indeterminate"
       >
-      <label
-        data-weight="medium"
-        for="components-input--checkbox-lg-read-only-indeterminate"
-      >
+      <label data-weight="medium">
         Read-only indeterminate
       </label>
-    </div>
+    </ds-field>
   </div>
 </div>
 `;
 
 exports[`Controlled 1`] = `
 <div style="display: flex; gap: var(--ds-size-2); align-items: end; width: 100%;">
-  <div>
+  <ds-field>
     <label
       data-weight="medium"
       for="components-input--controlled"
@@ -571,7 +463,7 @@ exports[`Controlled 1`] = `
       type="text"
       value
     >
-  </div>
+  </ds-field>
   <button
     data-variant="secondary"
     type="button"
@@ -582,7 +474,7 @@ exports[`Controlled 1`] = `
 `;
 
 exports[`Html Size 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
     for="components-input--html-size"
@@ -594,11 +486,11 @@ exports[`Html Size 1`] = `
     id="components-input--html-size"
     type="text"
   >
-</div>
+</ds-field>
 `;
 
 exports[`Input Types 1`] = `
-<div>
+<ds-field data-clickdelegatefor="components-input--input-types-checkbox">
   <label
     data-weight="medium"
     for="components-input--input-types-checkbox"
@@ -610,8 +502,8 @@ exports[`Input Types 1`] = `
     type="checkbox"
     checked
   >
-</div>
-<div>
+</ds-field>
+<ds-field data-clickdelegatefor="components-input--input-types-radio">
   <label
     data-weight="medium"
     for="components-input--input-types-radio"
@@ -623,8 +515,8 @@ exports[`Input Types 1`] = `
     type="radio"
     checked
   >
-</div>
-<div>
+</ds-field>
+<ds-field data-clickdelegatefor="components-input--input-types-switch">
   <label
     data-weight="medium"
     for="components-input--input-types-switch"
@@ -637,7 +529,7 @@ exports[`Input Types 1`] = `
     type="checkbox"
     checked
   >
-</div>
+</ds-field>
 `;
 
 exports[`Preview 1`] = `
@@ -663,48 +555,39 @@ exports[`Radio 1`] = `
     >
       Small
     </h2>
-    <div>
+    <ds-field>
       <input
         id="components-input--radio-sm-Default"
         type="radio"
         name="sm-Default"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-sm-Default"
-      >
+      <label data-weight="medium">
         Default
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         id="components-input--radio-sm-Checked"
         type="radio"
         checked
         name="sm-Checked"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-sm-Checked"
-      >
+      <label data-weight="medium">
         Checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         disabled
         id="components-input--radio-sm-Disabled"
         type="radio"
         name="sm-Disabled"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-sm-Disabled"
-      >
+      <label data-weight="medium">
         Disabled
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         disabled
         id="components-input--radio-sm-Disabled"
@@ -712,28 +595,22 @@ exports[`Radio 1`] = `
         checked
         name="sm-Disabled"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-sm-Disabled"
-      >
+      <label data-weight="medium">
         Disabled checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         aria-invalid="true"
         id="components-input--radio-sm-Invalid"
         type="radio"
         name="sm-Invalid"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-sm-Invalid"
-      >
+      <label data-weight="medium">
         Invalid
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         aria-invalid="true"
         id="components-input--radio-sm-Invalid"
@@ -741,28 +618,22 @@ exports[`Radio 1`] = `
         checked
         name="sm-Invalid"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-sm-Invalid"
-      >
+      <label data-weight="medium">
         Invalid checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         readonly
         id="components-input--radio-sm-Read-only"
         type="radio"
         name="sm-Read-only"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-sm-Read-only"
-      >
+      <label data-weight="medium">
         Read-only
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         readonly
         id="components-input--radio-sm-Read-only"
@@ -770,13 +641,10 @@ exports[`Radio 1`] = `
         checked
         name="sm-Read-only"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-sm-Read-only"
-      >
+      <label data-weight="medium">
         Read-only checked
       </label>
-    </div>
+    </ds-field>
   </div>
   <div
     data-size="md"
@@ -788,48 +656,39 @@ exports[`Radio 1`] = `
     >
       Medium
     </h2>
-    <div>
+    <ds-field>
       <input
         id="components-input--radio-md-Default"
         type="radio"
         name="md-Default"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-md-Default"
-      >
+      <label data-weight="medium">
         Default
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         id="components-input--radio-md-Checked"
         type="radio"
         checked
         name="md-Checked"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-md-Checked"
-      >
+      <label data-weight="medium">
         Checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         disabled
         id="components-input--radio-md-Disabled"
         type="radio"
         name="md-Disabled"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-md-Disabled"
-      >
+      <label data-weight="medium">
         Disabled
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         disabled
         id="components-input--radio-md-Disabled"
@@ -837,28 +696,22 @@ exports[`Radio 1`] = `
         checked
         name="md-Disabled"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-md-Disabled"
-      >
+      <label data-weight="medium">
         Disabled checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         aria-invalid="true"
         id="components-input--radio-md-Invalid"
         type="radio"
         name="md-Invalid"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-md-Invalid"
-      >
+      <label data-weight="medium">
         Invalid
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         aria-invalid="true"
         id="components-input--radio-md-Invalid"
@@ -866,28 +719,22 @@ exports[`Radio 1`] = `
         checked
         name="md-Invalid"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-md-Invalid"
-      >
+      <label data-weight="medium">
         Invalid checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         readonly
         id="components-input--radio-md-Read-only"
         type="radio"
         name="md-Read-only"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-md-Read-only"
-      >
+      <label data-weight="medium">
         Read-only
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         readonly
         id="components-input--radio-md-Read-only"
@@ -895,13 +742,10 @@ exports[`Radio 1`] = `
         checked
         name="md-Read-only"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-md-Read-only"
-      >
+      <label data-weight="medium">
         Read-only checked
       </label>
-    </div>
+    </ds-field>
   </div>
   <div
     data-size="lg"
@@ -913,48 +757,39 @@ exports[`Radio 1`] = `
     >
       Large
     </h2>
-    <div>
+    <ds-field>
       <input
         id="components-input--radio-lg-Default"
         type="radio"
         name="lg-Default"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-lg-Default"
-      >
+      <label data-weight="medium">
         Default
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         id="components-input--radio-lg-Checked"
         type="radio"
         checked
         name="lg-Checked"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-lg-Checked"
-      >
+      <label data-weight="medium">
         Checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         disabled
         id="components-input--radio-lg-Disabled"
         type="radio"
         name="lg-Disabled"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-lg-Disabled"
-      >
+      <label data-weight="medium">
         Disabled
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         disabled
         id="components-input--radio-lg-Disabled"
@@ -962,28 +797,22 @@ exports[`Radio 1`] = `
         checked
         name="lg-Disabled"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-lg-Disabled"
-      >
+      <label data-weight="medium">
         Disabled checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         aria-invalid="true"
         id="components-input--radio-lg-Invalid"
         type="radio"
         name="lg-Invalid"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-lg-Invalid"
-      >
+      <label data-weight="medium">
         Invalid
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         aria-invalid="true"
         id="components-input--radio-lg-Invalid"
@@ -991,28 +820,22 @@ exports[`Radio 1`] = `
         checked
         name="lg-Invalid"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-lg-Invalid"
-      >
+      <label data-weight="medium">
         Invalid checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         readonly
         id="components-input--radio-lg-Read-only"
         type="radio"
         name="lg-Read-only"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-lg-Read-only"
-      >
+      <label data-weight="medium">
         Read-only
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field>
       <input
         readonly
         id="components-input--radio-lg-Read-only"
@@ -1020,13 +843,10 @@ exports[`Radio 1`] = `
         checked
         name="lg-Read-only"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-lg-Read-only"
-      >
+      <label data-weight="medium">
         Read-only checked
       </label>
-    </div>
+    </ds-field>
   </div>
 </div>
 `;
@@ -1043,7 +863,7 @@ exports[`Switch 1`] = `
     >
       Small
     </h2>
-    <div>
+    <ds-field data-clickdelegatefor="components-input--switch-sm-default">
       <input
         role="switch"
         id="components-input--switch-sm-default"
@@ -1056,8 +876,8 @@ exports[`Switch 1`] = `
       >
         Default
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field data-clickdelegatefor="components-input--switch-sm-checked">
       <input
         role="switch"
         id="components-input--switch-sm-checked"
@@ -1071,8 +891,8 @@ exports[`Switch 1`] = `
       >
         Checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field data-clickdelegatefor="components-input--switch-sm-disabled">
       <input
         role="switch"
         disabled
@@ -1086,8 +906,8 @@ exports[`Switch 1`] = `
       >
         Disabled
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field data-clickdelegatefor="components-input--switch-sm-disabled-checked">
       <input
         role="switch"
         disabled
@@ -1102,8 +922,8 @@ exports[`Switch 1`] = `
       >
         Disabled checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field data-clickdelegatefor="components-input--switch-sm-read-only">
       <input
         role="switch"
         readonly
@@ -1117,8 +937,8 @@ exports[`Switch 1`] = `
       >
         Read-only
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field data-clickdelegatefor="components-input--switch-sm-read-only-checked">
       <input
         role="switch"
         readonly
@@ -1133,7 +953,7 @@ exports[`Switch 1`] = `
       >
         Read-only checked
       </label>
-    </div>
+    </ds-field>
   </div>
   <div
     data-size="md"
@@ -1145,7 +965,7 @@ exports[`Switch 1`] = `
     >
       Medium
     </h2>
-    <div>
+    <ds-field data-clickdelegatefor="components-input--switch-md-default">
       <input
         role="switch"
         id="components-input--switch-md-default"
@@ -1158,8 +978,8 @@ exports[`Switch 1`] = `
       >
         Default
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field data-clickdelegatefor="components-input--switch-md-checked">
       <input
         role="switch"
         id="components-input--switch-md-checked"
@@ -1173,8 +993,8 @@ exports[`Switch 1`] = `
       >
         Checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field data-clickdelegatefor="components-input--switch-md-disabled">
       <input
         role="switch"
         disabled
@@ -1188,8 +1008,8 @@ exports[`Switch 1`] = `
       >
         Disabled
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field data-clickdelegatefor="components-input--switch-md-disabled-checked">
       <input
         role="switch"
         disabled
@@ -1204,8 +1024,8 @@ exports[`Switch 1`] = `
       >
         Disabled checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field data-clickdelegatefor="components-input--switch-md-read-only">
       <input
         role="switch"
         readonly
@@ -1219,8 +1039,8 @@ exports[`Switch 1`] = `
       >
         Read-only
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field data-clickdelegatefor="components-input--switch-md-read-only-checked">
       <input
         role="switch"
         readonly
@@ -1235,7 +1055,7 @@ exports[`Switch 1`] = `
       >
         Read-only checked
       </label>
-    </div>
+    </ds-field>
   </div>
   <div
     data-size="lg"
@@ -1247,7 +1067,7 @@ exports[`Switch 1`] = `
     >
       Large
     </h2>
-    <div>
+    <ds-field data-clickdelegatefor="components-input--switch-lg-default">
       <input
         role="switch"
         id="components-input--switch-lg-default"
@@ -1260,8 +1080,8 @@ exports[`Switch 1`] = `
       >
         Default
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field data-clickdelegatefor="components-input--switch-lg-checked">
       <input
         role="switch"
         id="components-input--switch-lg-checked"
@@ -1275,8 +1095,8 @@ exports[`Switch 1`] = `
       >
         Checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field data-clickdelegatefor="components-input--switch-lg-disabled">
       <input
         role="switch"
         disabled
@@ -1290,8 +1110,8 @@ exports[`Switch 1`] = `
       >
         Disabled
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field data-clickdelegatefor="components-input--switch-lg-disabled-checked">
       <input
         role="switch"
         disabled
@@ -1306,8 +1126,8 @@ exports[`Switch 1`] = `
       >
         Disabled checked
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field data-clickdelegatefor="components-input--switch-lg-read-only">
       <input
         role="switch"
         readonly
@@ -1321,8 +1141,8 @@ exports[`Switch 1`] = `
       >
         Read-only
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field data-clickdelegatefor="components-input--switch-lg-read-only-checked">
       <input
         role="switch"
         readonly
@@ -1337,7 +1157,7 @@ exports[`Switch 1`] = `
       >
         Read-only checked
       </label>
-    </div>
+    </ds-field>
   </div>
 </div>
 `;
@@ -1354,11 +1174,8 @@ exports[`Text 1`] = `
     >
       Small
     </h2>
-    <div>
-      <label
-        data-weight="medium"
-        for="components-input--text-sm-default"
-      >
+    <ds-field>
+      <label data-weight="medium">
         Default
       </label>
       <input
@@ -1368,12 +1185,9 @@ exports[`Text 1`] = `
         value="Value"
         name="sm-default"
       >
-    </div>
-    <div>
-      <label
-        data-weight="medium"
-        for="components-input--text-sm-disabled"
-      >
+    </ds-field>
+    <ds-field>
+      <label data-weight="medium">
         Disabled
       </label>
       <input
@@ -1384,12 +1198,9 @@ exports[`Text 1`] = `
         value="Value"
         name="sm-disabled"
       >
-    </div>
-    <div>
-      <label
-        data-weight="medium"
-        for="components-input--text-sm-invalid"
-      >
+    </ds-field>
+    <ds-field>
+      <label data-weight="medium">
         Invalid
       </label>
       <input
@@ -1399,20 +1210,13 @@ exports[`Text 1`] = `
         type="text"
         value="Value"
         name="sm-invalid"
-        aria-describedby="components-input--text-sm-invalid:validation:1"
       >
-      <p
-        data-field="validation"
-        id="components-input--text-sm-invalid:validation:1"
-      >
+      <p data-field="validation">
         Feilmelding
       </p>
-    </div>
-    <div>
-      <label
-        data-weight="medium"
-        for="components-input--text-sm-read-only"
-      >
+    </ds-field>
+    <ds-field>
+      <label data-weight="medium">
         Read-only
       </label>
       <input
@@ -1423,7 +1227,7 @@ exports[`Text 1`] = `
         value="Value"
         name="sm-read-only"
       >
-    </div>
+    </ds-field>
   </div>
   <div
     data-size="md"
@@ -1435,11 +1239,8 @@ exports[`Text 1`] = `
     >
       Medium
     </h2>
-    <div>
-      <label
-        data-weight="medium"
-        for="components-input--text-md-default"
-      >
+    <ds-field>
+      <label data-weight="medium">
         Default
       </label>
       <input
@@ -1449,12 +1250,9 @@ exports[`Text 1`] = `
         value="Value"
         name="md-default"
       >
-    </div>
-    <div>
-      <label
-        data-weight="medium"
-        for="components-input--text-md-disabled"
-      >
+    </ds-field>
+    <ds-field>
+      <label data-weight="medium">
         Disabled
       </label>
       <input
@@ -1465,12 +1263,9 @@ exports[`Text 1`] = `
         value="Value"
         name="md-disabled"
       >
-    </div>
-    <div>
-      <label
-        data-weight="medium"
-        for="components-input--text-md-invalid"
-      >
+    </ds-field>
+    <ds-field>
+      <label data-weight="medium">
         Invalid
       </label>
       <input
@@ -1480,20 +1275,13 @@ exports[`Text 1`] = `
         type="text"
         value="Value"
         name="md-invalid"
-        aria-describedby="components-input--text-md-invalid:validation:1"
       >
-      <p
-        data-field="validation"
-        id="components-input--text-md-invalid:validation:1"
-      >
+      <p data-field="validation">
         Feilmelding
       </p>
-    </div>
-    <div>
-      <label
-        data-weight="medium"
-        for="components-input--text-md-read-only"
-      >
+    </ds-field>
+    <ds-field>
+      <label data-weight="medium">
         Read-only
       </label>
       <input
@@ -1504,7 +1292,7 @@ exports[`Text 1`] = `
         value="Value"
         name="md-read-only"
       >
-    </div>
+    </ds-field>
   </div>
   <div
     data-size="lg"
@@ -1516,11 +1304,8 @@ exports[`Text 1`] = `
     >
       Large
     </h2>
-    <div>
-      <label
-        data-weight="medium"
-        for="components-input--text-lg-default"
-      >
+    <ds-field>
+      <label data-weight="medium">
         Default
       </label>
       <input
@@ -1530,12 +1315,9 @@ exports[`Text 1`] = `
         value="Value"
         name="lg-default"
       >
-    </div>
-    <div>
-      <label
-        data-weight="medium"
-        for="components-input--text-lg-disabled"
-      >
+    </ds-field>
+    <ds-field>
+      <label data-weight="medium">
         Disabled
       </label>
       <input
@@ -1546,12 +1328,9 @@ exports[`Text 1`] = `
         value="Value"
         name="lg-disabled"
       >
-    </div>
-    <div>
-      <label
-        data-weight="medium"
-        for="components-input--text-lg-invalid"
-      >
+    </ds-field>
+    <ds-field>
+      <label data-weight="medium">
         Invalid
       </label>
       <input
@@ -1561,20 +1340,13 @@ exports[`Text 1`] = `
         type="text"
         value="Value"
         name="lg-invalid"
-        aria-describedby="components-input--text-lg-invalid:validation:1"
       >
-      <p
-        data-field="validation"
-        id="components-input--text-lg-invalid:validation:1"
-      >
+      <p data-field="validation">
         Feilmelding
       </p>
-    </div>
-    <div>
-      <label
-        data-weight="medium"
-        for="components-input--text-lg-read-only"
-      >
+    </ds-field>
+    <ds-field>
+      <label data-weight="medium">
         Read-only
       </label>
       <input
@@ -1585,7 +1357,7 @@ exports[`Text 1`] = `
         value="Value"
         name="lg-read-only"
       >
-    </div>
+    </ds-field>
   </div>
 </div>
 `;

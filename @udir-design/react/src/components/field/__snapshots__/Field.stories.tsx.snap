@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Affix 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
     for="affix"
@@ -21,11 +21,11 @@ exports[`Affix 1`] = `
       pr. mnd.
     </span>
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`Counter 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
     for="counter"
@@ -35,31 +35,27 @@ exports[`Counter 1`] = `
   <textarea
     rows="2"
     id="counter"
-    aria-describedby="counter:description:1"
+    aria-describedby="mmexwpw60j03"
   >
   </textarea>
-  <div aria-live="polite">
-  </div>
   <p
-    data-variant="default"
-    aria-hidden="true"
+    data-field="counter"
+    data-limit="10"
+    id="mmexwpw60j03"
+    data-label="10 tegn igjen"
+    data-state="under"
   >
-    10 tegn igjen
   </p>
-  <div
-    aria-hidden="true"
-    data-field="description"
-    id="counter:description:1"
-  >
-    Maks 10 tegn tillatt.
-  </div>
-</div>
+</ds-field>
 `;
 
 exports[`Position 1`] = `
 <div style="max-width: 200px; margin: auto;">
   <div style="display: flex; flex-direction: column; gap: var(--ds-size-2);">
-    <div data-position="end">
+    <ds-field
+      data-position="end"
+      data-clickdelegatefor="airplane"
+    >
       <label
         data-weight="medium"
         for="airplane"
@@ -71,8 +67,11 @@ exports[`Position 1`] = `
         id="airplane"
         type="checkbox"
       >
-    </div>
-    <div data-position="end">
+    </ds-field>
+    <ds-field
+      data-position="end"
+      data-clickdelegatefor="sounds"
+    >
       <label
         data-weight="medium"
         for="sounds"
@@ -84,13 +83,13 @@ exports[`Position 1`] = `
         id="sounds"
         type="checkbox"
       >
-    </div>
+    </ds-field>
   </div>
 </div>
 `;
 
 exports[`Preview 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
     for="preview"
@@ -99,7 +98,7 @@ exports[`Preview 1`] = `
   </label>
   <div
     data-field="description"
-    id="preview:description:1"
+    id="mmexwpw60j02"
   >
     E-posten din brukes til å logge inn og motta varsler
   </div>
@@ -108,13 +107,13 @@ exports[`Preview 1`] = `
     aria-invalid="true"
     type="text"
     value="ola nordmann@udir.no"
-    aria-describedby="preview:validation:1 preview:description:1"
+    aria-describedby="mmexwpw60j01 mmexwpw60j02"
   >
   <p
     data-field="validation"
-    id="preview:validation:1"
+    id="mmexwpw60j01"
   >
     Du må oppgi en gyldig e-postadresse
   </p>
-</div>
+</ds-field>
 `;
