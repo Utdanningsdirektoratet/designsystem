@@ -98,13 +98,11 @@ export const Mobile = meta.story({
       <Pagination>
         <Pagination.List>
           <Pagination.Item>
-            <Pagination.Button aria-label="Forrige side" variant="tertiary" />
+            <Pagination.Button aria-label="Forrige side" />
           </Pagination.Item>
 
           <Pagination.Item>
-            <Pagination.Button aria-label="Side 2" variant="tertiary">
-              2
-            </Pagination.Button>
+            <Pagination.Button aria-label="Side 2">2</Pagination.Button>
           </Pagination.Item>
 
           <Pagination.Item>
@@ -112,13 +110,11 @@ export const Mobile = meta.story({
           </Pagination.Item>
 
           <Pagination.Item>
-            <Pagination.Button aria-label="Side 4" variant="tertiary">
-              4
-            </Pagination.Button>
+            <Pagination.Button aria-label="Side 4">4</Pagination.Button>
           </Pagination.Item>
 
           <Pagination.Item>
-            <Pagination.Button aria-label="Neste side" variant="tertiary" />
+            <Pagination.Button aria-label="Neste side" />
           </Pagination.Item>
         </Pagination.List>
       </Pagination>
