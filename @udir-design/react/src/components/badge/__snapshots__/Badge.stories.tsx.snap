@@ -320,9 +320,9 @@ exports[`In Button 1`] = `
         viewbox="0 0 24 24"
         focusable="false"
         role="img"
-        aria-labelledby="title-_r_9_"
+        aria-labelledby="title-_r_7_"
       >
-        <title id="title-_r_9_">
+        <title id="title-_r_7_">
           Innboks
         </title>
         <path
@@ -358,9 +358,9 @@ exports[`In Button 1`] = `
         viewbox="0 0 24 24"
         focusable="false"
         role="img"
-        aria-labelledby="title-_r_a_"
+        aria-labelledby="title-_r_8_"
       >
-        <title id="title-_r_a_">
+        <title id="title-_r_8_">
           Meldinger
         </title>
         <path
@@ -395,9 +395,9 @@ exports[`In Button 1`] = `
         viewbox="0 0 24 24"
         focusable="false"
         role="img"
-        aria-labelledby="title-_r_b_"
+        aria-labelledby="title-_r_9_"
       >
-        <title id="title-_r_b_">
+        <title id="title-_r_9_">
           Skru på video
         </title>
         <path
@@ -414,19 +414,13 @@ exports[`In Button 1`] = `
 `;
 
 exports[`In Tabs 1`] = `
-<div>
-  <div
-    role="tablist"
-    tabindex="0"
-  >
-    <button
-      id="tab-_r_6_"
-      aria-selected="true"
+<ds-tabs data-utabs>
+  <ds-tablist role="tablist">
+    <ds-tab
+      aria-controls="_r_6_-value1"
       data-value="value1"
       role="tab"
-      type="button"
-      data-roving-tabindex-item="true"
-      tabindex="0"
+      tabindex="-1"
     >
       Nye saker
       <span
@@ -435,14 +429,11 @@ exports[`In Tabs 1`] = `
         data-color="neutral"
       >
       </span>
-    </button>
-    <button
-      id="tab-_r_7_"
-      aria-selected="false"
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_6_-value2"
       data-value="value2"
       role="tab"
-      type="button"
-      data-roving-tabindex-item="true"
       tabindex="-1"
     >
       Pågående saker
@@ -452,20 +443,17 @@ exports[`In Tabs 1`] = `
         data-color="neutral"
       >
       </span>
-    </button>
-    <button
-      id="tab-_r_8_"
-      aria-selected="false"
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_6_-value3"
       data-value="value3"
       role="tab"
-      type="button"
-      data-roving-tabindex-item="true"
       tabindex="-1"
     >
       Løste saker
-    </button>
-  </div>
-</div>
+    </ds-tab>
+  </ds-tablist>
+</ds-tabs>
 `;
 
 exports[`Preview 1`] = `
@@ -518,16 +506,8 @@ exports[`System Alerts 1`] = `
   <h2 style="margin-block-end: var(--ds-size-4;">
     Systemvarsler
   </h2>
-  <u-details
-    data-variant="default"
-    role="group"
-  >
-    <u-summary
-      aria-expanded="false"
-      role="button"
-      slot="summary"
-      tabindex="0"
-    >
+  <details data-variant="default">
+    <summary>
       Kritisk
       <span
         data-count="2"
@@ -535,7 +515,7 @@ exports[`System Alerts 1`] = `
         data-color="danger"
       >
       </span>
-    </u-summary>
+    </summary>
     <div style="gap: var(--ds-size-4); display: flex; flex-direction: column;">
       <div data-variant="default">
         <div style="display: flex; justify-content: space-between;">
@@ -572,17 +552,9 @@ exports[`System Alerts 1`] = `
         </p>
       </div>
     </div>
-  </u-details>
-  <u-details
-    data-variant="default"
-    role="group"
-  >
-    <u-summary
-      aria-expanded="false"
-      role="button"
-      slot="summary"
-      tabindex="0"
-    >
+  </details>
+  <details data-variant="default">
+    <summary>
       Advarsler
       <span
         data-count="6"
@@ -590,7 +562,7 @@ exports[`System Alerts 1`] = `
         data-color="warning"
       >
       </span>
-    </u-summary>
+    </summary>
     <div style="gap: var(--ds-size-4); display: flex; flex-direction: column;">
       <div data-variant="default">
         <div style="display: flex; justify-content: space-between;">
@@ -695,17 +667,9 @@ exports[`System Alerts 1`] = `
         </p>
       </div>
     </div>
-  </u-details>
-  <u-details
-    data-variant="default"
-    role="group"
-  >
-    <u-summary
-      aria-expanded="false"
-      role="button"
-      slot="summary"
-      tabindex="0"
-    >
+  </details>
+  <details data-variant="default">
+    <summary>
       Andre hendelser
       <span
         data-count="9+"
@@ -713,7 +677,7 @@ exports[`System Alerts 1`] = `
         data-color="info"
       >
       </span>
-    </u-summary>
+    </summary>
     <div>
       <div style="gap: var(--ds-size-4); display: flex; flex-direction: column;">
         <div data-variant="default">
@@ -828,6 +792,6 @@ exports[`System Alerts 1`] = `
         </div>
       </div>
     </div>
-  </u-details>
+  </details>
 </div>
 `;

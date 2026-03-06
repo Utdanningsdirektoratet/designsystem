@@ -194,24 +194,26 @@ exports[`Fixed Table 1`] = `
       </tr>
     </tbody>
   </table>
-  <nav aria-label="Sidenavigering">
+  <ds-pagination
+    aria-label="Bla i sider"
+    role="navigation"
+  >
     <ul>
       <li>
         <button
           data-variant="tertiary"
-          type="button"
           aria-label="Forrige side"
           aria-hidden="true"
+          variant="tertiary"
         >
           Forrige
         </button>
       </li>
       <li>
         <button
-          data-variant="primary"
-          type="button"
+          data-variant="tertiary"
           aria-label="Side 1"
-          aria-current="page"
+          aria-current="true"
         >
           1
         </button>
@@ -219,7 +221,6 @@ exports[`Fixed Table 1`] = `
       <li>
         <button
           data-variant="tertiary"
-          type="button"
           aria-label="Side 2"
         >
           2
@@ -228,7 +229,6 @@ exports[`Fixed Table 1`] = `
       <li>
         <button
           data-variant="tertiary"
-          type="button"
           aria-label="Side 3"
         >
           3
@@ -237,15 +237,15 @@ exports[`Fixed Table 1`] = `
       <li>
         <button
           data-variant="tertiary"
-          type="button"
           aria-label="Neste side"
           aria-hidden="false"
+          variant="tertiary"
         >
           Neste
         </button>
       </li>
     </ul>
-  </nav>
+  </ds-pagination>
 </div>
 `;
 
@@ -392,7 +392,7 @@ exports[`Preview 1`] = `
   <thead>
     <tr>
       <th>
-        <div>
+        <ds-field>
           <input
             aria-label="Velg alle ansatte"
             id="checkbox-select-all"
@@ -400,7 +400,7 @@ exports[`Preview 1`] = `
             value
             name="my-checkbox"
           >
-        </div>
+        </ds-field>
       </th>
       <th aria-sort="none">
         <button type="button">
@@ -421,7 +421,7 @@ exports[`Preview 1`] = `
   <tbody>
     <tr>
       <td>
-        <div>
+        <ds-field>
           <input
             id="checkbox-1"
             aria-label="Velg [object Object]"
@@ -429,7 +429,7 @@ exports[`Preview 1`] = `
             value="1"
             name="my-checkbox"
           >
-        </div>
+        </ds-field>
       </td>
       <td>
         Rita Nordmann
@@ -451,7 +451,7 @@ exports[`Preview 1`] = `
     </tr>
     <tr>
       <td>
-        <div>
+        <ds-field>
           <input
             id="checkbox-2"
             aria-label="Velg [object Object]"
@@ -459,7 +459,7 @@ exports[`Preview 1`] = `
             value="2"
             name="my-checkbox"
           >
-        </div>
+        </ds-field>
       </td>
       <td>
         Kari Nordmann
@@ -481,7 +481,7 @@ exports[`Preview 1`] = `
     </tr>
     <tr>
       <td>
-        <div>
+        <ds-field>
           <input
             id="checkbox-3"
             aria-label="Velg [object Object]"
@@ -489,7 +489,7 @@ exports[`Preview 1`] = `
             value="3"
             name="my-checkbox"
           >
-        </div>
+        </ds-field>
       </td>
       <td>
         Ola Nordmann
@@ -511,7 +511,7 @@ exports[`Preview 1`] = `
     </tr>
     <tr>
       <td>
-        <div>
+        <ds-field>
           <input
             id="checkbox-4"
             aria-label="Velg [object Object]"
@@ -519,7 +519,7 @@ exports[`Preview 1`] = `
             value="4"
             name="my-checkbox"
           >
-        </div>
+        </ds-field>
       </td>
       <td>
         Kai Nordmann
@@ -541,7 +541,7 @@ exports[`Preview 1`] = `
     </tr>
     <tr>
       <td>
-        <div>
+        <ds-field>
           <input
             id="checkbox-5"
             aria-label="Velg [object Object]"
@@ -549,7 +549,7 @@ exports[`Preview 1`] = `
             value="5"
             name="my-checkbox"
           >
-        </div>
+        </ds-field>
       </td>
       <td>
         Mateo Nordmann
@@ -947,7 +947,7 @@ exports[`With Form Elements 1`] = `
   <thead>
     <tr>
       <th>
-        <div>
+        <ds-field data-clickdelegatefor="components-table--with-form-elements-selectAll">
           <input
             aria-label="Select all"
             id="components-table--with-form-elements-selectAll"
@@ -955,7 +955,7 @@ exports[`With Form Elements 1`] = `
             value
             name="components-table--with-form-elements-checkboxGroup"
           >
-        </div>
+        </ds-field>
       </th>
       <th>
         nr.
@@ -974,7 +974,7 @@ exports[`With Form Elements 1`] = `
   <tbody style="place-content: start center; align-items: center;">
     <tr>
       <td>
-        <div>
+        <ds-field data-clickdelegatefor="components-table--with-form-elements-select1">
           <input
             aria-label="Check 1"
             id="components-table--with-form-elements-select1"
@@ -982,13 +982,13 @@ exports[`With Form Elements 1`] = `
             value="1"
             name="components-table--with-form-elements-checkboxGroup"
           >
-        </div>
+        </ds-field>
       </td>
       <td>
         1.
       </td>
       <td style="min-width: 200px;">
-        <div data-size="sm">
+        <ds-field data-size="sm">
           <div>
             <input
               aria-label="Textfield 1-1"
@@ -997,10 +997,10 @@ exports[`With Form Elements 1`] = `
               value="Trives du på skolen?"
             >
           </div>
-        </div>
+        </ds-field>
       </td>
       <td style="min-width: 200px;">
-        <div data-size="sm">
+        <ds-field data-size="sm">
           <div>
             <input
               aria-label="Textfield 1-2"
@@ -1009,10 +1009,10 @@ exports[`With Form Elements 1`] = `
               value="Trives ikke noe særlig"
             >
           </div>
-        </div>
+        </ds-field>
       </td>
       <td style="min-width: 200px;">
-        <div data-size="sm">
+        <ds-field data-size="sm">
           <div>
             <input
               aria-label="Textfield 1-3"
@@ -1021,12 +1021,12 @@ exports[`With Form Elements 1`] = `
               value="Trives godt"
             >
           </div>
-        </div>
+        </ds-field>
       </td>
     </tr>
     <tr>
       <td>
-        <div>
+        <ds-field data-clickdelegatefor="components-table--with-form-elements-select1">
           <input
             aria-label="Check 1"
             id="components-table--with-form-elements-select1"
@@ -1035,13 +1035,13 @@ exports[`With Form Elements 1`] = `
             checked
             name="components-table--with-form-elements-checkboxGroup"
           >
-        </div>
+        </ds-field>
       </td>
       <td>
         2.
       </td>
       <td>
-        <div
+        <ds-field
           data-size="sm"
           style="width: 250px;"
         >
@@ -1053,10 +1053,10 @@ exports[`With Form Elements 1`] = `
               value="Har du opplevd mobbing?"
             >
           </div>
-        </div>
+        </ds-field>
       </td>
       <td>
-        <div data-size="sm">
+        <ds-field data-size="sm">
           <div>
             <input
               aria-label="Textfield 1-2"
@@ -1065,10 +1065,10 @@ exports[`With Form Elements 1`] = `
               value="Sjelden"
             >
           </div>
-        </div>
+        </ds-field>
       </td>
       <td>
-        <div data-size="sm">
+        <ds-field data-size="sm">
           <div>
             <input
               cols="3"
@@ -1078,7 +1078,7 @@ exports[`With Form Elements 1`] = `
               value="Ofte"
             >
           </div>
-        </div>
+        </ds-field>
       </td>
     </tr>
   </tbody>

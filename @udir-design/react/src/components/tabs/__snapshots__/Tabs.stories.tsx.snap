@@ -1,20 +1,15 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Controlled 1`] = `
-<div>
-  <div
-    role="tablist"
-    tabindex="0"
-  >
-    <button
-      id="tab-_r_r_"
-      aria-selected="true"
+<ds-tabs data-utabs>
+  <ds-tablist role="tablist">
+    <ds-tab
+      aria-controls="_r_b_-users"
       data-value="users"
       role="tab"
-      type="button"
-      data-roving-tabindex-item="true"
       tabindex="0"
-      aria-controls="tabpanel-_r_v_"
+      aria-selected="true"
+      id=":ds-tab4"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -35,16 +30,13 @@ exports[`Controlled 1`] = `
         </path>
       </svg>
       Brukere
-    </button>
-    <button
-      id="tab-_r_t_"
-      aria-selected="false"
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_b_-profile"
       data-value="profile"
       role="tab"
-      type="button"
-      data-roving-tabindex-item="true"
       tabindex="-1"
-      aria-controls="tabpanel-_r_10_"
+      aria-selected="false"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -65,12 +57,14 @@ exports[`Controlled 1`] = `
         </path>
       </svg>
       Din profil
-    </button>
-  </div>
-  <div
-    id="tabpanel-_r_v_"
+    </ds-tab>
+  </ds-tablist>
+  <ds-tabpanel
+    id="_r_b_-users"
+    aria-hidden="false"
     role="tabpanel"
-    aria-labelledby="tab-_r_r_"
+    aria-labelledby=":ds-tab4"
+    tabindex="0"
   >
     <ul style="list-style: none; padding: 0px;">
       <li style="display: flex;">
@@ -119,13 +113,12 @@ exports[`Controlled 1`] = `
         </a>
       </li>
     </ul>
-  </div>
-  <div
-    id="tabpanel-_r_10_"
-    role="tabpanel"
-    tabindex="0"
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="_r_b_-profile"
     hidden
-    aria-labelledby="tab-_r_t_"
+    aria-hidden="true"
+    role="tabpanel"
   >
     <div style="display: flex; align-items: center; gap: var(--ds-size-2);">
       <span
@@ -152,24 +145,18 @@ exports[`Controlled 1`] = `
     <p data-variant="default">
       Mysen Videregående skole
     </p>
-  </div>
-</div>
+  </ds-tabpanel>
+</ds-tabs>
 `;
 
 exports[`Icons With Text 1`] = `
-<div>
-  <div
-    role="tablist"
-    tabindex="0"
-  >
-    <button
-      id="tab-_r_9_"
-      aria-selected="true"
+<ds-tabs data-utabs>
+  <ds-tablist role="tablist">
+    <ds-tab
+      aria-controls="_r_2_-barnehage"
       data-value="barnehage"
       role="tab"
-      type="button"
-      data-roving-tabindex-item="true"
-      tabindex="0"
+      tabindex="-1"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -190,14 +177,11 @@ exports[`Icons With Text 1`] = `
         </path>
       </svg>
       Barnehage
-    </button>
-    <button
-      id="tab-_r_b_"
-      aria-selected="false"
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_2_-grunnskole"
       data-value="grunnskole"
       role="tab"
-      type="button"
-      data-roving-tabindex-item="true"
       tabindex="-1"
     >
       <svg
@@ -219,14 +203,11 @@ exports[`Icons With Text 1`] = `
         </path>
       </svg>
       Grunnskole
-    </button>
-    <button
-      id="tab-_r_d_"
-      aria-selected="false"
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_2_-videregående"
       data-value="videregående"
       role="tab"
-      type="button"
-      data-roving-tabindex-item="true"
       tabindex="-1"
     >
       <svg
@@ -248,27 +229,22 @@ exports[`Icons With Text 1`] = `
         </path>
       </svg>
       Videregående
-    </button>
-  </div>
-</div>
+    </ds-tab>
+  </ds-tablist>
+</ds-tabs>
 `;
 
 exports[`Only Icons 1`] = `
-<div>
-  <div
-    role="tablist"
-    tabindex="0"
-  >
-    <button
-      id="tab-_r_g_"
-      aria-selected="false"
+<ds-tabs data-utabs>
+  <ds-tablist role="tablist">
+    <ds-tab
+      aria-controls="_r_6_-gallery"
       data-value="gallery"
+      aria-label="Galleri"
+      data-tooltip="Galleri"
+      data-placement="top"
+      data-autoplacement
       role="tab"
-      type="button"
-      popovertarget="_r_f_"
-      popovertargetaction="show"
-      aria-labelledby="_r_f_"
-      data-roving-tabindex-item="true"
       tabindex="-1"
     >
       <svg
@@ -289,26 +265,16 @@ exports[`Only Icons 1`] = `
         >
         </path>
       </svg>
-    </button>
-    <span
-      role="tooltip"
-      id="_r_f_"
-      popover="manual"
-      style="opacity: 0;"
-    >
-      Galleri
-    </span>
-    <button
-      id="tab-_r_j_"
-      aria-selected="true"
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_6_-profile"
       data-value="profile"
+      aria-label="Profilen din"
+      data-tooltip="Profilen din"
+      data-placement="top"
+      data-autoplacement
       role="tab"
-      type="button"
-      popovertarget="_r_i_"
-      popovertargetaction="show"
-      aria-labelledby="_r_i_"
-      data-roving-tabindex-item="true"
-      tabindex="0"
+      tabindex="-1"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -328,25 +294,15 @@ exports[`Only Icons 1`] = `
         >
         </path>
       </svg>
-    </button>
-    <span
-      role="tooltip"
-      id="_r_i_"
-      popover="manual"
-      style="opacity: 0;"
-    >
-      Profilen din
-    </span>
-    <button
-      id="tab-_r_m_"
-      aria-selected="false"
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_6_-notifications"
       data-value="notifications"
+      aria-label="Varsler"
+      data-tooltip="Varsler"
+      data-placement="top"
+      data-autoplacement
       role="tab"
-      type="button"
-      popovertarget="_r_l_"
-      popovertargetaction="show"
-      aria-labelledby="_r_l_"
-      data-roving-tabindex-item="true"
       tabindex="-1"
     >
       <svg
@@ -367,25 +323,15 @@ exports[`Only Icons 1`] = `
         >
         </path>
       </svg>
-    </button>
-    <span
-      role="tooltip"
-      id="_r_l_"
-      popover="manual"
-      style="opacity: 0;"
-    >
-      Varsler
-    </span>
-    <button
-      id="tab-_r_p_"
-      aria-selected="false"
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_6_-settings"
       data-value="settings"
+      aria-label="Innstillinger"
+      data-tooltip="Innstillinger"
+      data-placement="top"
+      data-autoplacement
       role="tab"
-      type="button"
-      popovertarget="_r_o_"
-      popovertargetaction="show"
-      aria-labelledby="_r_o_"
-      data-roving-tabindex-item="true"
       tabindex="-1"
     >
       <svg
@@ -406,130 +352,38 @@ exports[`Only Icons 1`] = `
         >
         </path>
       </svg>
-    </button>
-    <span
-      role="tooltip"
-      id="_r_o_"
-      popover="manual"
-      style="opacity: 0;"
-    >
-      Innstillinger
-    </span>
-  </div>
-</div>
+    </ds-tab>
+  </ds-tablist>
+</ds-tabs>
 `;
 
 exports[`Only Text 1`] = `
-<div>
-  <div
-    role="tablist"
-    tabindex="0"
-  >
-    <button
-      id="tab-_r_6_"
-      aria-selected="true"
+<ds-tabs data-utabs>
+  <ds-tablist role="tablist">
+    <ds-tab
+      aria-controls="_r_1_-oversikt"
       data-value="oversikt"
       role="tab"
-      type="button"
-      data-roving-tabindex-item="true"
-      tabindex="0"
+      tabindex="-1"
     >
       Oversikt
-    </button>
-    <button
-      id="tab-_r_7_"
-      aria-selected="false"
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_1_-prøver"
       data-value="prøver"
       role="tab"
-      type="button"
-      data-roving-tabindex-item="true"
       tabindex="-1"
     >
       Prøver
-    </button>
-    <button
-      id="tab-_r_8_"
-      aria-selected="false"
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_1_-prøvesvar"
       data-value="prøvesvar"
       role="tab"
-      type="button"
-      data-roving-tabindex-item="true"
       tabindex="-1"
     >
       Prøvesvar
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Preview 1`] = `
-<div>
-  <div
-    role="tablist"
-    tabindex="0"
-  >
-    <button
-      id="tab-_r_0_"
-      aria-selected="true"
-      data-value="value1"
-      role="tab"
-      type="button"
-      data-roving-tabindex-item="true"
-      tabindex="0"
-      aria-controls="tabpanel-_r_3_"
-    >
-      Tab 1
-    </button>
-    <button
-      id="tab-_r_1_"
-      aria-selected="false"
-      data-value="value2"
-      role="tab"
-      type="button"
-      data-roving-tabindex-item="true"
-      tabindex="-1"
-      aria-controls="tabpanel-_r_4_"
-    >
-      Tab 2
-    </button>
-    <button
-      id="tab-_r_2_"
-      aria-selected="false"
-      data-value="value3"
-      role="tab"
-      type="button"
-      data-roving-tabindex-item="true"
-      tabindex="-1"
-      aria-controls="tabpanel-_r_5_"
-    >
-      Tab 3
-    </button>
-  </div>
-  <div
-    id="tabpanel-_r_3_"
-    role="tabpanel"
-    tabindex="0"
-    aria-labelledby="tab-_r_0_"
-  >
-    Innhold for Tab 1
-  </div>
-  <div
-    id="tabpanel-_r_4_"
-    role="tabpanel"
-    tabindex="0"
-    aria-labelledby="tab-_r_1_"
-    hidden
-  >
-    Innhold for Tab 2
-  </div>
-  <div
-    id="tabpanel-_r_5_"
-    role="tabpanel"
-    tabindex="0"
-    aria-labelledby="tab-_r_2_"
-    hidden
-  >
-    Innhold for Tab 3
-  </div>
-</div>
+    </ds-tab>
+  </ds-tablist>
+</ds-tabs>
 `;

@@ -16,19 +16,13 @@ exports[`Container 1`] = `
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dui nunc, maximus vitae finibus ut, consequat sit amet metus. Suspendisse nisl massa, egestas eu justo eu, luctus volutpat ante. Aliquam congue consectetur arcu, at pharetra nunc ultricies in. Sed aliquam mi a odio varius, in eleifend orci elementum.
   </p>
   <div data-variant="default">
-    <u-details
+    <details
       open
       data-variant="default"
-      role="group"
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         Innhold på denne siden
-      </u-summary>
+      </summary>
       <div>
         <ol>
           <li>
@@ -102,7 +96,7 @@ exports[`Container 1`] = `
           </li>
         </ol>
       </div>
-    </u-details>
+    </details>
   </div>
   <h2
     data-size="md"
@@ -153,19 +147,13 @@ exports[`Container 1`] = `
 exports[`Default 1`] = `
 <div>
   <div data-variant="default">
-    <u-details
+    <details
       open
       data-variant="default"
-      role="group"
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         Innhold på denne siden
-      </u-summary>
+      </summary>
       <div>
         <ol>
           <li>
@@ -239,7 +227,7 @@ exports[`Default 1`] = `
           </li>
         </ol>
       </div>
-    </u-details>
+    </details>
   </div>
   <h2
     data-size="md"
@@ -268,19 +256,13 @@ exports[`Default 1`] = `
 exports[`Toc Ignore 1`] = `
 <div>
   <div data-variant="default">
-    <u-details
+    <details
       open
       data-variant="default"
-      role="group"
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         Innhold på denne siden
-      </u-summary>
+      </summary>
       <div>
         <ol>
           <li>
@@ -331,7 +313,7 @@ exports[`Toc Ignore 1`] = `
           </li>
         </ol>
       </div>
-    </u-details>
+    </details>
   </div>
   <h2
     data-size="md"

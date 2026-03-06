@@ -4,13 +4,15 @@ exports[`Backdrop Closedby Any 1`] = `
 <button
   data-variant="secondary"
   type="button"
+  command="show-modal"
+  commandfor="_r_3_"
   aria-haspopup="dialog"
 >
   Åpne Dialog
 </button>
 <dialog
   data-placement="center"
-  data-modal="true"
+  id="_r_3_"
   closedby="any"
   open
 >
@@ -20,7 +22,8 @@ exports[`Backdrop Closedby Any 1`] = `
     type="button"
     aria-label="Lukk dialogvindu"
     data-color="neutral"
-    data-command="close"
+    command="close"
+    commandfor="_r_3_"
   >
   </button>
   <h2>
@@ -42,7 +45,7 @@ exports[`Backdrop Closedby Any 1`] = `
 `;
 
 exports[`Dialog Non Modal 1`] = `
-<div style="width: 400px;">
+<ds-field style="width: 400px;">
   <label
     data-weight="medium"
     for="textareaundefined"
@@ -54,7 +57,7 @@ exports[`Dialog Non Modal 1`] = `
     rows="8"
   >
   </textarea>
-</div>
+</ds-field>
 <button
   data-variant="secondary"
   type="button"
@@ -63,8 +66,7 @@ exports[`Dialog Non Modal 1`] = `
 </button>
 <dialog
   data-placement="center"
-  data-modal="false"
-  closedby="closerequest"
+  id="_r_9_"
   open
   style="width: 300px; left: 80%;"
 >
@@ -74,7 +76,8 @@ exports[`Dialog Non Modal 1`] = `
     type="button"
     aria-label="Lukk dialogvindu"
     data-color="neutral"
-    data-command="close"
+    command="close"
+    commandfor="_r_9_"
   >
   </button>
   <h2 style="margin-bottom: var(--ds-size-2);">
@@ -104,13 +107,15 @@ exports[`Dialog With Form 1`] = `
 <button
   data-variant="primary"
   type="button"
+  command="show-modal"
+  commandfor="_r_5_"
   aria-haspopup="dialog"
 >
   Send inn skjema
 </button>
 <dialog
   data-placement="center"
-  data-modal="true"
+  id="_r_5_"
   closedby="any"
   open
 >
@@ -120,13 +125,14 @@ exports[`Dialog With Form 1`] = `
     type="button"
     aria-label="Lukk dialogvindu"
     data-color="neutral"
-    data-command="close"
+    command="close"
+    commandfor="_r_5_"
   >
   </button>
   <h2 style="margin-bottom: var(--ds-size-2);">
     Skjemainnsending
   </h2>
-  <div>
+  <ds-field>
     <label
       data-weight="medium"
       for="components-dialog--dialog-with-form"
@@ -141,7 +147,7 @@ exports[`Dialog With Form 1`] = `
         value
       >
     </div>
-  </div>
+  </ds-field>
   <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-4);">
     <button
       data-variant="primary"
@@ -164,14 +170,15 @@ exports[`Dialog With Max Width 1`] = `
 <button
   data-variant="secondary"
   type="button"
+  command="show-modal"
+  commandfor="_r_6_"
   aria-haspopup="dialog"
 >
   Åpne Dialog
 </button>
 <dialog
   data-placement="center"
-  data-modal="true"
-  closedby="closerequest"
+  id="_r_6_"
   open
   style="max-width: 1200px;"
 >
@@ -181,7 +188,8 @@ exports[`Dialog With Max Width 1`] = `
     type="button"
     aria-label="Lukk dialogvindu"
     data-color="neutral"
-    data-command="close"
+    command="close"
+    commandfor="_r_6_"
   >
   </button>
   <h2 style="margin-bottom: var(--ds-size-2);">
@@ -202,8 +210,7 @@ exports[`Dialog With Open Prop 1`] = `
 </button>
 <dialog
   data-placement="center"
-  data-modal="true"
-  closedby="closerequest"
+  id="_r_2_"
   open
 >
   <button
@@ -212,7 +219,8 @@ exports[`Dialog With Open Prop 1`] = `
     type="button"
     aria-label="Lukk dialogvindu"
     data-color="neutral"
-    data-command="close"
+    command="close"
+    commandfor="_r_2_"
   >
   </button>
   <p
@@ -238,14 +246,15 @@ exports[`Dialog With Suggestion 1`] = `
 <button
   data-variant="secondary"
   type="button"
+  command="show-modal"
+  commandfor="_r_7_"
   aria-haspopup="dialog"
 >
   Åpne Dialog
 </button>
 <dialog
   data-placement="center"
-  data-modal="true"
-  closedby="closerequest"
+  id="_r_7_"
   open
   style="overflow: visible;"
 >
@@ -255,7 +264,8 @@ exports[`Dialog With Suggestion 1`] = `
     type="button"
     aria-label="Lukk dialogvindu"
     data-color="neutral"
-    data-command="close"
+    command="close"
+    commandfor="_r_7_"
   >
   </button>
   <div>
@@ -264,21 +274,21 @@ exports[`Dialog With Suggestion 1`] = `
     </h2>
   </div>
   <div>
-    <div>
+    <ds-field>
       <label
         data-weight="medium"
         for="undefined-input"
       >
         Velg en kommune
       </label>
-      <u-combobox>
+      <ds-suggestion>
         <input
-          placeholder
+          placeholder=" "
           id="undefined-input"
           type="text"
-          data-label="Velg en kommune"
+          data-label
           list=":u-datalist1"
-          aria-label="Velg en kommune​​​​​"
+          aria-label="​​​​​"
           popovertarget=":u-datalist1"
           aria-autocomplete="list"
           aria-controls=":u-datalist1"
@@ -287,24 +297,21 @@ exports[`Dialog With Suggestion 1`] = `
           role="combobox"
         >
         <del
-          data-icon="true"
-          data-variant="tertiary"
           aria-label="Tøm"
           hidden
           role="button"
         >
         </del>
         <u-datalist
-          data-nofilter
-          data-sr-singular="%d forslag"
-          data-sr-plural="%d forslag"
           popover="manual"
+          data-nofilter
+          data-sr-plural="%d forslag"
+          data-sr-singular="%d forslag"
           hidden
           role="listbox"
           tabindex="-1"
           aria-multiselectable="false"
           id=":u-datalist1"
-          style="width: 590px; translate: <removed>;"
         >
           <u-option
             label="Sogndal"
@@ -398,8 +405,8 @@ exports[`Dialog With Suggestion 1`] = `
             </div>
           </u-option>
         </u-datalist>
-      </u-combobox>
-    </div>
+      </ds-suggestion>
+    </ds-field>
   </div>
   <div style="display: flex; gap: var(--ds-size-2);">
     <button
@@ -421,7 +428,10 @@ exports[`Dialog With Suggestion 1`] = `
 
 exports[`Drawer 1`] = `
 <div style="display: flex; flex-direction: column; align-items: center;">
-  <div style="margin-bottom: var(--ds-size-4);">
+  <ds-field
+    data-clickdelegatefor="modal-checkbox"
+    style="margin-bottom: var(--ds-size-4);"
+  >
     <input
       id="modal-checkbox"
       type="checkbox"
@@ -433,10 +443,10 @@ exports[`Drawer 1`] = `
     >
       Modal
     </label>
-  </div>
+  </ds-field>
   <fieldset>
     <div style="display: flex; flex-wrap: wrap; gap: var(--ds-size-5); margin-bottom: var(--ds-size-8);">
-      <div>
+      <ds-field data-clickdelegatefor="center-radio">
         <input
           id="center-radio"
           type="radio"
@@ -449,8 +459,8 @@ exports[`Drawer 1`] = `
         >
           Midten
         </label>
-      </div>
-      <div>
+      </ds-field>
+      <ds-field data-clickdelegatefor="top-radio">
         <input
           id="top-radio"
           type="radio"
@@ -463,8 +473,8 @@ exports[`Drawer 1`] = `
         >
           Topp
         </label>
-      </div>
-      <div>
+      </ds-field>
+      <ds-field data-clickdelegatefor="bottom-radio">
         <input
           id="bottom-radio"
           type="radio"
@@ -477,8 +487,8 @@ exports[`Drawer 1`] = `
         >
           Bunn
         </label>
-      </div>
-      <div>
+      </ds-field>
+      <ds-field data-clickdelegatefor="left-radio">
         <input
           id="left-radio"
           type="radio"
@@ -491,8 +501,8 @@ exports[`Drawer 1`] = `
         >
           Venstre
         </label>
-      </div>
-      <div>
+      </ds-field>
+      <ds-field data-clickdelegatefor="right-radio">
         <input
           id="right-radio"
           type="radio"
@@ -505,19 +515,21 @@ exports[`Drawer 1`] = `
         >
           Høyre
         </label>
-      </div>
+      </ds-field>
     </div>
   </fieldset>
   <button
     data-variant="primary"
     type="button"
+    command="show-modal"
+    commandfor="_r_a_"
     aria-haspopup="dialog"
   >
     Open Dialog
   </button>
   <dialog
     data-placement="bottom"
-    data-modal="true"
+    id="_r_a_"
     closedby="any"
     open
     style="z-index: 10;"
@@ -528,7 +540,8 @@ exports[`Drawer 1`] = `
       type="button"
       aria-label="Lukk dialogvindu"
       data-color="neutral"
-      data-command="close"
+      command="close"
+      commandfor="_r_a_"
     >
     </button>
     <div>
@@ -548,13 +561,15 @@ exports[`Preview 1`] = `
   <button
     data-variant="primary"
     type="button"
+    command="show-modal"
+    commandfor="_r_0_"
     aria-haspopup="dialog"
   >
     Åpne Dialog
   </button>
   <dialog
     data-placement="center"
-    data-modal="true"
+    id="_r_0_"
     closedby="any"
     open
     style="z-index: 10;"
@@ -565,7 +580,8 @@ exports[`Preview 1`] = `
       type="button"
       aria-label="Lukk dialogvindu"
       data-color="neutral"
-      data-command="close"
+      command="close"
+      commandfor="_r_0_"
     >
     </button>
     <h2 style="margin-bottom: var(--ds-size-2);">
@@ -591,14 +607,15 @@ exports[`With Header And Footer 1`] = `
 <button
   data-variant="primary"
   type="button"
+  command="show-modal"
+  commandfor="_r_4_"
   aria-haspopup="dialog"
 >
   Gå til neste
 </button>
 <dialog
   data-placement="center"
-  data-modal="true"
-  closedby="closerequest"
+  id="_r_4_"
   open
 >
   <button
@@ -607,7 +624,8 @@ exports[`With Header And Footer 1`] = `
     type="button"
     aria-label="Lukk dialogvindu"
     data-color="neutral"
-    data-command="close"
+    command="close"
+    commandfor="_r_4_"
   >
   </button>
   <div>
@@ -647,8 +665,7 @@ exports[`Without Dialog Trigger Context 1`] = `
 </button>
 <dialog
   data-placement="center"
-  data-modal="true"
-  closedby="closerequest"
+  id="_r_1_"
   open
 >
   <button
@@ -657,7 +674,8 @@ exports[`Without Dialog Trigger Context 1`] = `
     type="button"
     aria-label="Lukk dialogvindu"
     data-color="neutral"
-    data-command="close"
+    command="close"
+    commandfor="_r_1_"
   >
   </button>
   <p
