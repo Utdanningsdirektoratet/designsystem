@@ -9,6 +9,8 @@
   --udsc-fileUpload-or-text: 'eller';
   --udsc-fileUpload-uploading-text: 'Laster opp...';
   --udsc-fileUpload-removeFile-text: 'Fjern filen';
+  --udsc-fileUpload-disabled-text-line-one: 'Du kan ikke lenger';
+  --udsc-fileUpload-disabled-text-line-two: 'laste opp filer';
 }
 
 [lang='nn'] {
@@ -21,6 +23,8 @@
   --udsc-fileUpload-or-text: 'eller';
   --udsc-fileUpload-uploading-text: 'Lastar opp...';
   --udsc-fileUpload-removeFile-text: 'Fjern fila';
+  --udsc-fileUpload-disabled-text-line-one: 'Du kan ikkje lenger';
+  --udsc-fileUpload-disabled-text-line-two: 'laste opp filer';
 }
 
 [lang='en'] {
@@ -33,6 +37,8 @@
   --udsc-fileUpload-or-text: 'or';
   --udsc-fileUpload-uploading-text: 'Uploading...';
   --udsc-fileUpload-removeFile-text: 'Remove file';
+  --udsc-fileUpload-disabled-text-line-one: 'You can no longer';
+  --udsc-fileUpload-disabled-text-line-two: 'upload files';
 }
 
 /* FileUpload.Dropzone and FileUpload.Trigger */
@@ -43,23 +49,59 @@
   );
   --udsc-fileUpload-dropzone-text: var(--udsc-fileUpload-dropFile-text);
   width: fit-content;
+  height: fit-content;
 
-  & > input {
+  > input {
     display: none;
   }
 
+  /* Loading state */
   &[aria-busy='true'] {
-    & > .ds-card {
+    > .ds-card {
       cursor: progress;
     }
   }
 
-  &:not([aria-busy='true']) {
+  /* Design of dropzone */
+  > .ds-card {
+    margin-block-start: var(--ds-size-2);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--ds-size-2);
+    --dsc-card-border-style: dashed;
+    --dsc-card-border-color: var(--ds-color-border-strong);
+  }
+
+  &:has(input[readOnly]) {
+    cursor: not-allowed;
+
+    > label {
+      cursor: not-allowed;
+    }
+
+    > .ds-card {
+      background: transparent;
+      opacity: var(--ds-opacity-disabled);
+    }
+  }
+
+  /* 
+  * Override opacity for label and description when disabled, 
+  * to ensure they are still readable since disabled button is used for readOnly.
+  */
+  > label,
+  [data-field='description'] {
+    opacity: 1;
+  }
+
+  &:not([aria-busy='true']):not(:has(input[readOnly])) {
     &:hover {
-      & > .ds-card {
+      > .ds-card {
         cursor: pointer;
 
-        & > .ds-button {
+        > .ds-button {
           background: var(--dsc-button-background--hover);
           color: var(--dsc-button-color--hover);
         }
@@ -77,31 +119,48 @@
   }
 
   /* Trigger texts */
-  & > .ds-button::after {
+  > .ds-button::after {
     content: var(--udsc-fileUpload-button-text);
   }
 
   /* Dropzone texts */
-  & > .ds-card {
+  > .ds-card {
     &::before {
       content: var(--udsc-fileUpload-dropzone-text);
     }
-    & > div::before {
+    > div::before {
       content: var(--udsc-fileUpload-or-text);
     }
-    & > .ds-button::after {
+    > .ds-button::after {
       content: var(--udsc-fileUpload-dropzone-button-text);
     }
   }
 
-  & > .ds-card {
-    margin-block-start: var(--ds-size-2);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--ds-size-2);
-    --dsc-card-border-style: dashed;
+  /* Text and icon for readOnly */
+  &:has(input[readOnly]) {
+    > .ds-card {
+      &::before {
+        content: '';
+        display: block;
+        width: 1.3rem;
+        height: 1.3rem;
+        background: currentColor;
+        mask-image: var(--uds-icon-circleSlash);
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+      }
+
+      > div {
+        text-align: center;
+
+        &::before {
+          content: var(--udsc-fileUpload-disabled-text-line-one) '\a'
+            var(--udsc-fileUpload-disabled-text-line-two);
+          white-space: pre;
+        }
+      }
+    }
   }
 }
 
@@ -112,19 +171,20 @@
   flex-direction: column;
   align-items: flex-start;
   max-width: 30rem;
+  word-break: break-all;
 
   /* Uploading text in the paragraph after link */
   &[aria-busy='true'] .ds-link + .ds-paragraph::before {
     content: var(--udsc-fileUpload-uploading-text);
   }
 
-  & > div {
+  > div {
     display: flex;
     align-items: center;
     width: 100%;
   }
 
-  & > div > svg {
+  > div > div > svg {
     width: auto;
     height: var(--ds-size-10);
     margin-inline-end: var(--ds-size-3);
@@ -134,7 +194,7 @@
   &[aria-invalid='true'] {
     --dsc-card-border-color: var(--ds-color-danger-border-strong);
 
-    & > div:last-of-type > p {
+    > div:last-of-type > p {
       padding-inline-start: var(--ds-size-12);
       color: var(--ds-color-danger-text-subtle);
       display: flex;
@@ -144,7 +204,7 @@
     }
   }
 
-  & > div > .ds-button {
+  > div > .ds-button {
     margin-inline-start: auto;
   }
 

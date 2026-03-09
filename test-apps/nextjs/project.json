@@ -8,6 +8,9 @@
   "targets": {
     "start": {
       "dependsOn": ["build"]
+    },
+    "dev": {
+      "dependsOn": ["^build"]
     }
   }
 }
