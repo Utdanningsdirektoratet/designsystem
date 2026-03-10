@@ -41,4 +41,11 @@
       background-color: var(--ds-color-surface-tinted);
     }
   }
+
+  &[data-border='true'],
+  &[data-tinted-column-header] {
+    > caption {
+      margin-bottom: var(--ds-size-3);
+    }
+  }
 }
