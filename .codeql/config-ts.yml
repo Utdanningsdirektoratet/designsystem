@@ -1,0 +1,8 @@
+paths-ignore:
+  - '**/dist/**/*'
+  - '**/storybook-static/**/*'
+  - '**/test-reports/**/*'
+packs:
+  - codeql/javascript-queries
+  - codeql/javascript-all
+  - codeql/threat-models
