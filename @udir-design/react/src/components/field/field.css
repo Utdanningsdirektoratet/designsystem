@@ -1,0 +1,9 @@
+.ds-field:has([aria-readonly='true'], [readonly]) label::before {
+  /* position lock icon correctly even if the label contains a Tag */
+  vertical-align: middle;
+  position: relative;
+  top: calc(-0.5 * var(--ds-size-1));
+  /* prevent increasing the height of the label (when there is no Tag) due to vertical-align: middle */
+  height: calc(1lh - 0.5ch);
+  mask-size: cover;
+}
