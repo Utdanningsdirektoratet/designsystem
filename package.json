@@ -8,7 +8,7 @@
     "build": "pnpm nx format:check && pnpm nx affected -t typecheck lint test build build:docs"
   },
   "private": true,
-  "packageManager": "pnpm@10.27.0+sha512.72d699da16b1179c14ba9e64dc71c9a40988cbdc65c264cb0e489db7de917f20dcf4d64d8723625f2969ba52d4b7e2a1170682d9ac2a5dcaeaab732b7e16f04a",
+  "packageManager": "pnpm@10.30.2+sha512.36cdc707e7b7940a988c9c1ecf88d084f8514b5c3f085f53a2e244c2921d3b2545bc20dd4ebe1fc245feec463bb298aecea7a63ed1f7680b877dc6379d8d0cb4",
   "engines": {
     "node": ">= 24.6.0 < 25"
   },
@@ -47,41 +47,5 @@
     "tsx": "catalog:",
     "typescript": "catalog:",
     "typescript-eslint": "catalog:"
-  },
-  "pnpm": {
-    "ignoredBuiltDependencies": [
-      "@bundled-es-modules/glob",
-      "@parcel/watcher",
-      "@swc/core",
-      "esbuild",
-      "lmdb",
-      "msgpackr-extract",
-      "msw",
-      "nx",
-      "oxc-resolver",
-      "sharp",
-      "style-dictionary",
-      "unrs-resolver"
-    ],
-    "overrides": {
-      "@eslint/plugin-kit@<0.3.4": ">=0.3.4",
-      "tmp@<=0.2.3": ">=0.2.4",
-      "glob@>=10.2.0 <10.5.0": "^10.5.0",
-      "semver@<7": "^6.3.1",
-      "chokidar@>=4.0.0 <5": "^5.0.0",
-      "jws@=4.0.0": ">=4.0.1",
-      "jws@<3.2.3": ">=3.2.3",
-      "qs@<6.14.1": ">=6.14.1",
-      "unist-util-visit@<5": "^5.0.0"
-    },
-    "patchedDependencies": {
-      "@parcel/reporter-dev-server@2.16.3": "patches/@parcel__reporter-dev-server@2.16.3.patch",
-      "remark-heading-id@1.0.1": "patches/remark-heading-id@1.0.1.patch"
-    },
-    "auditConfig": {
-      "ignoreCves": [
-        "CVE-2025-56648"
-      ]
-    }
   }
 }

@@ -1,8 +1,6 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
     "module": "ESNext",
     "target": "ESNext",
     "forceConsistentCasingInFileNames": true,

@@ -7,7 +7,8 @@
     - If table.css changes, Table stories must be re-snapshotted
 */
 @import '../../css/src/external.css';
-@import '../../theme/dist/dataviz.css';
+@import '../../css/src/icons.css';
+@import '../../theme/dist/datavis.css';
 
 body {
   font-family: 'Inter', sans-serif;

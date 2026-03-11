@@ -1,0 +1,44 @@
+.containerSm {
+  display: flex;
+  width: 100%;
+  gap: var(--ds-size-1);
+  flex-wrap: wrap;
+  margin-block-end: var(--ds-size-8);
+}
+
+.containerMd {
+  display: flex;
+  width: 100%;
+  gap: var(--ds-size-2);
+  flex-wrap: wrap;
+  margin-block-end: var(--ds-size-8);
+}
+
+.containerNoGap {
+  width: 100%;
+  margin-block-end: var(--ds-size-8);
+}
+
+.swatchCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 5rem;
+  border-radius: var(--ds-border-radius-md);
+  color: var(--ds-color-neutral-base-contrast-default);
+}
+
+.swatchBox {
+  display: flex;
+  width: var(--ds-size-22);
+  min-height: 7rem;
+  padding: var(--ds-size-3);
+  border-radius: var(--ds-border-radius-md);
+  color: var(--ds-color-neutral-base-contrast-default);
+}
+
+.gradient {
+  min-height: 5rem;
+  border-radius: var(--ds-border-radius-md);
+  width: 100%;
+}

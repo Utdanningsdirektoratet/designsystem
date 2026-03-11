@@ -1,5 +1,5 @@
 import type { SeverityColors } from '@digdir/designsystemet-react/colors';
-import { Markdown, Unstyled } from '@storybook/addon-docs/blocks';
+import { Markdown } from '@storybook/addon-docs/blocks';
 import { toHtml } from 'hast-util-to-html';
 import type { Heading, Root, RootContent, Text } from 'mdast';
 import { toHast } from 'mdast-util-to-hast';
@@ -12,10 +12,9 @@ import remarkParse from 'remark-parse';
 import remarkStringify from 'remark-stringify';
 import { unified } from 'unified';
 import { visit } from 'unist-util-visit';
-import { Alert } from '../../../src/components/alert/Alert';
-import { Heading as H } from '../../../src/components/typography/heading/Heading';
 import { componentOverrides } from '../ComponentOverrides';
 import componentStyles from '../componentOverrides.module.scss';
+import { SimpleAlert } from './SimpleAlert/SimpleAlert';
 
 interface Props {
   markdown: string;
@@ -112,11 +111,11 @@ function remarkIncreaseHeadingDepth({
   };
 }
 
-type AlertData = { type: SeverityColors; heading: string };
+type AlertData = { type: SeverityColors | 'tip'; heading: string };
 
 const alertMap: Record<string, AlertData> = {
   NOTE: { type: 'info', heading: 'Legg merke til' },
-  TIP: { type: 'success', heading: 'Tips' },
+  TIP: { type: 'tip', heading: 'Tips' },
   IMPORTANT: { type: 'warning', heading: 'Viktig' },
   WARNING: { type: 'warning', heading: 'Advarsel' },
   CAUTION: { type: 'danger', heading: 'Utvis forsiktighet' },
@@ -153,25 +152,16 @@ function remarkGithubAlert() {
         parent.children[index] = {
           type: 'html',
           value: renderToStaticMarkup(
-            <Unstyled style={{ marginBottom: 'var(--ds-size-6)' }}>
-              <Alert data-color={alertData.type}>
-                <H
-                  data-size="xs"
-                  style={{ marginBottom: 'var(--ds-size-2)' }}
-                  asChild
-                >
-                  <div>{alertData.heading}</div>
-                </H>
-                <div
-                  className="sb-unstyled"
-                  dangerouslySetInnerHTML={{
-                    __html: toHtml(
-                      toHast({ type: 'root', children: blockquote.children }),
-                    ),
-                  }}
-                />
-              </Alert>
-            </Unstyled>,
+            <SimpleAlert type={alertData.type} heading={alertData.heading}>
+              <div
+                className="sb-unstyled"
+                dangerouslySetInnerHTML={{
+                  __html: toHtml(
+                    toHast({ type: 'root', children: blockquote.children }),
+                  ),
+                }}
+              />
+            </SimpleAlert>,
           ),
         };
       }

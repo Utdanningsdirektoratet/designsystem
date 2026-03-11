@@ -14,4 +14,4 @@ Dersom du bruker `@udir-design/react` trenger du ikke å bruke dette biblioteket
 
 ## Datavisualiseringsfarger
 
-Importer `@udir-design/theme/dataviz.css` for å få tilgang på farger for datavisualisering, f.eks. til bruk i Highcharts.
+Importer `@udir-design/theme/datavis.css` for å få tilgang på farger for datavisualisering, f.eks. til bruk i Highcharts.

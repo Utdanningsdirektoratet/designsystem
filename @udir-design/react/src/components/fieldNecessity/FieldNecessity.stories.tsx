@@ -82,6 +82,37 @@ export const Outline = meta.story({
   ),
 });
 
+export const Readonly = meta.story({
+  render: (args, context) => (
+    <FieldNecessity
+      {...args}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        rowGap: 'var(--ds-size-4)',
+      }}
+    >
+      <Textfield
+        id={id(context, 'first')}
+        label={<span>Fornavn</span>}
+        required
+        readOnly
+      />
+      <Textfield
+        id={id(context, 'middle')}
+        label={<span>Mellomnavn</span>}
+        readOnly
+      />
+      <Textfield
+        id={id(context, 'last')}
+        label={<span>Etternavn</span>}
+        required
+        readOnly
+      />
+    </FieldNecessity>
+  ),
+});
+
 export const AllRequired = meta.story({
   render: (args, context) => (
     <FieldNecessity

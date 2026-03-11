@@ -1,3 +1,4 @@
+import './field.css';
 import {
   Field as DigdirField,
   FieldAffix,

@@ -1,0 +1,154 @@
+import { Meta, Source, Unstyled } from '@storybook/addon-docs/blocks';
+import { SimpleAlert } from '.storybook/docs/components';
+import { Link } from 'src/components/link/Link';
+import {
+  DatavisValueColorDisplay,
+  DatavisSeqColorDisplay,
+  DatavisSeqDivColorDisplay,
+} from '../../design-tokens/docs/color/datavis-color-display';
+import rechartsExample from './docs/rechartsExample.tsx?raw';
+import highchartsCategoricalExample from './docs/highchartsCategoricalExample.tsx?raw';
+import highchartsSequentialExample from './docs/highchartsSequentialExample.tsx?raw';
+
+<Meta
+  title="Utilities/Hjelpefunksjoner for datavisualisering"
+  tags={['alpha']}
+/>
+
+# Hjelpefunksjoner for datavisualisering
+
+Verktøy for å bruke datavisualiseringsfarger i diagrammer og grafer. Disse funksjonene returnerer CSS-variabler som automatisk tilpasser seg når temaet endres (lys/mørk modus).
+
+- `getCategoricalColors()`
+- `getSequentialMonochromaticColors()`
+- `getSequentialDivergentColors()`
+- `getHighchartsTheme()`
+
+Les også <Link href="./typedoc/modules/utilities_datavis_alpha.html" target="_none">detaljert dokumentasjon generert fra kildekoden (på engelsk)</Link>.
+
+<SimpleAlert type="tip">
+  Se [Farger for
+  datavisualisering](/docs/design-tokens-farger--docs#farger-for-datavisualisering)
+  for retningslinjer om når og hvordan de ulike palettene skal brukes.
+</SimpleAlert>
+
+## Oppsett
+
+Importer CSS for datavisualiseringsfarger i applikasjonen din:
+
+```tsx
+import '@udir-design/theme/datavis.css';
+```
+
+## Kategorisk palett
+
+For distinkte kategorier i diagrammer (fagområder, elevgrupper, etc.).
+
+**`getCategoricalColors()`** - Returnerer 8 CSS-fargeverdier.
+
+```tsx
+import { getCategoricalColors } from '@udir-design/react/utilities/datavis/alpha';
+
+const colors = getCategoricalColors();
+// ['var(--uds-data-color-categorical-1)', 'var(--uds-data-color-categorical-2)', ...]
+```
+
+<Unstyled>
+  <DatavisValueColorDisplay />
+</Unstyled>
+
+---
+
+## Sekvensiell monokromatisk palett
+
+<SimpleAlert type="warning">
+  Den monokromatiske paletten er under arbeid. Fargene kan endres eller fjernes
+  i nær fremtid.
+</SimpleAlert>
+
+For sekvensiell data med gradert skala fra lys til mørk (heatmaps, choropleth-kart).
+
+**`getSequentialMonochromaticColors()`** - Returnerer 8 CSS-fargeverdier.
+
+```tsx
+import { getSequentialMonochromaticColors } from '@udir-design/react/utilities/datavis/alpha';
+
+const colors = getSequentialMonochromaticColors();
+// ['var(--uds-data-color-sequential-monochromatic-1)', ...]
+```
+
+<Unstyled>
+  <DatavisSeqColorDisplay />
+</Unstyled>
+
+---
+
+## Sekvensiell divergerende palett
+
+<SimpleAlert type="warning">
+  Den divergerende paletten er under arbeid. Fargene kan endres eller fjernes i
+  nær fremtid.
+</SimpleAlert>
+
+For divergerende skalaer med nøytralt midtpunkt (avvik fra gjennomsnitt).
+
+**`getSequentialDivergentColors()`** - Returnerer 7 CSS-fargeverdier.
+
+```tsx
+import { getSequentialDivergentColors } from '@udir-design/react/utilities/datavis/alpha';
+
+const colors = getSequentialDivergentColors();
+// ['var(--uds-data-color-sequential-divergent-1)', ...]
+```
+
+<Unstyled>
+  <DatavisSeqDivColorDisplay />
+</Unstyled>
+
+---
+
+## Highcharts
+
+<SimpleAlert type="tip" heading="Tips">
+  Se [Dashboard-demoen](/docs/demo-dashboard-demo--docs) for komplette eksempler
+  med Highcharts.
+</SimpleAlert>
+
+### Tema
+
+Ferdigkonfigurert tema for Highcharts med kategorisk fargepalett og typografi fra designsystemet.
+
+**`getHighchartsTheme()`** - Returnerer `Partial<Highcharts.Options>`.
+
+<Source
+  code={highchartsCategoricalExample.replace(/^((?!import).+\n)+/, '')}
+  language="typescript"
+/>
+
+### Sekvensielle paletter i Highcharts
+
+For sekvensielle paletter i Highcharts, bruk `getSequentialMonochromaticColors()` eller `getSequentialDivergentColors()` for å generere en fargeskala og angi den i `colorAxis`:
+
+<Source
+  code={highchartsSequentialExample.replace(/^((?!import).+\n)+/, '')}
+  language="typescript"
+/>
+
+### Språkpakker
+
+Highcharts har noen få innebygde språkpakker. Engelsk er standard. Importer andre du trenger:
+
+```tsx
+import 'highcharts/i18n/nb-NO'; // Norsk Bokmål
+
+// Se alle tilgjengelige språk: node_modules/highcharts/i18n/
+```
+
+## Bruk med andre diagrambiblioteker
+
+Fargepalettene skal fungere med de fleste diagrambiblioteker som lar deg spesifisere farger via CSS eller JavaScript. Her er et eksempel på hvordan du kan bruke `getCategoricalColors()` med Recharts:
+
+<Source
+  code={rechartsExample.replace(/^((?!import).+\n)+/, '')}
+  language="typescript"
+/>

@@ -1,6 +1,6 @@
 import type { Size } from '@digdir/designsystemet-react';
 import cl from 'clsx/lite';
-import type { InputHTMLAttributes, ReactNode } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 import { forwardRef, useEffect, useRef } from 'react';
 import { UploadIcon } from '@udir-design/icons';
 import { Button } from '../button/Button';
@@ -15,7 +15,7 @@ type InputProps_ = Omit<
   'prefix' | 'className' | 'style' | 'data-color' | 'type' | 'data-size'
 >;
 
-export type FileUploadProps = InputHTMLAttributes<HTMLInputElement> & {
+export type FileUploadProps = HTMLAttributes<HTMLDivElement> & {
   /**
    * Changes size for descendant Designsystemet components.
    * Select from predefined sizes.
@@ -37,30 +37,24 @@ export type FileUploadProps = InputHTMLAttributes<HTMLInputElement> & {
    * Props for the input field
    */
   inputProps?: InputProps_;
-  /**
-   * Id for the input field
-   */
-  id?: string;
 };
 
-export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
+export const FileUploadTrigger = forwardRef<HTMLDivElement, FileUploadProps>(
   function FileUploadTrigger(
     {
       className,
-      multiple,
       'data-size': size,
       label,
       error,
       description,
       inputProps,
-      id,
       ...rest
     },
     ref,
   ) {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
-    const cssVar = multiple
+    const cssVar = inputProps?.multiple
       ? '--udsc-fileUpload-addFiles-text'
       : '--udsc-fileUpload-addFile-text';
     // This is to make sure accessibility tests pass. Not actually necessary to make screenreaders announce the button.
@@ -83,6 +77,7 @@ export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
         {!!label && <Label>{label}</Label>}
         {!!description && <Field.Description>{description}</Field.Description>}
         <Button
+          disabled={inputProps?.readOnly ?? inputProps?.disabled}
           variant="secondary"
           onClick={() => {
             fileInputRef.current?.click();
@@ -95,9 +90,13 @@ export const FileUploadTrigger = forwardRef<HTMLInputElement, FileUploadProps>(
         <input
           type="file"
           ref={fileInputRef}
-          multiple={Boolean(multiple) || undefined}
-          id={id}
           {...inputProps}
+          onClick={(e) => {
+            if (inputProps?.readOnly) {
+              e.preventDefault();
+            }
+            inputProps?.onClick?.(e);
+          }}
         />
         {!!error && <ValidationMessage>{error}</ValidationMessage>}
       </Field>

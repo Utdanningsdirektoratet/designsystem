@@ -3,7 +3,6 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
@@ -17,6 +16,9 @@
       "src/utilities/form/*": [
         "./node_modules/@udir-design/react/dist/utilities/form/alpha"
       ],
+      "src/utilities/datavis": [
+        "./node_modules/@udir-design/react/dist/utilities/datavis/alpha"
+      ],
       "src/utilities/*": ["./node_modules/@udir-design/react/dist/alpha"]
     },
     "plugins": [
@@ -27,9 +29,9 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "skipLibCheck": true,
     "module": "esnext",
+    "target": "esnext",
     "moduleResolution": "bundler",
-    "types": ["@udir-design/theme", "@udir-design/react/html"],
-    "target": "ES2017"
+    "types": ["@udir-design/theme", "@udir-design/react/html"]
   },
   "include": [
     "**/*.ts",

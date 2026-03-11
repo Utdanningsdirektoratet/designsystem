@@ -10,6 +10,9 @@
       "src/utilities/form/*": [
         "./node_modules/@udir-design/react/dist/utilities/form/alpha"
       ],
+      "src/utilities/datavis": [
+        "./node_modules/@udir-design/react/dist/utilities/datavis/alpha"
+      ],
       "src/utilities/*": ["./node_modules/@udir-design/react/dist/alpha"]
     },
     "types": [

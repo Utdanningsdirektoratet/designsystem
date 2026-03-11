@@ -1,5 +1,6 @@
 import type { JSX } from 'react';
 import { ArrowRightIcon } from '@udir-design/icons';
+import { getPath } from '.storybook/docs/components/StorybookLink';
 import { Card } from 'src/components/card/Card';
 import type { HeadingProps } from 'src/components/typography/heading/Heading';
 import { Heading } from 'src/components/typography/heading/Heading';
@@ -7,11 +8,10 @@ import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import styles from './ResourceLinks.module.css';
 
 export function LandingResourceLinks() {
-  const domainUrl = window.location.origin;
   return (
     <div className={styles.wrapper}>
       <ResourceLink
-        href={`${domainUrl}/?path=/docs/components-introduksjon--docs`}
+        href={getPath('/docs/components-introduksjon--docs')}
         illustration={storybookIllustration}
         headingLevel={3}
         heading="Komponenter"

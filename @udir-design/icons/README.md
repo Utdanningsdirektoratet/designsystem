@@ -2,9 +2,9 @@
 
 Dette biblioteket inneholder ikoner som React-komponenter for Utdanningsdirektoratets designsystem.
 
-For å ta i bruk biblioteket må du først installere det.
+Udirs ikonbibliotek er basert på [@navikt/aksel-icons](https://aksel.nav.no/komponenter/ikoner).
 
-Udirs ikonbibliotek er basert på [navikt/aksel](https://aksel.nav.no/komponenter/ikoner).
+For å ta i bruk biblioteket må du først installere det.
 
 ## Installere biblioteket
 
@@ -31,23 +31,58 @@ function MyComponent() {
 
 ## Ta i bruk uten React
 
-SVG-filene er mulig å importere og bruke fra vanlig HTML og CSS dersom du bruker en bundler som kan resolve npm imports.
+Ikonene er mulig å importere og bruke i vanlig HTML og CSS, så lenge du bruker en bundler som f.eks. Vite eller Parcel.
 
-### Med Parcel som bundler
+### Bruk i HTML
 
-#### Bruk i HTML
+Du kan bruke ikonene fra HTML ved å referere de inn gjennom `<svg><use href="<sti-til-svg>#icon" /></svg>`.
+For å få riktig dimensjoner må du også importere litt CSS fra biblioteket.
+
+Nøyaktige import-stier vil avhenge av oppsettet ditt. Vi har med eksempler for Vite og Parcel.
+
+#### Nødvendig CSS
+
+Du trenger litt CSS for å få riktig dimensjoner på ikonene
 
 ```css
 /* css */
 
 /* Nødvendig for riktig dimensjoner på ikon. */
-@import 'npm:@udir-design/icons/dist/style.css';
+@import '@udir-design/icons/style.css'; // med Vite som bundler
+@import 'npm:@udir-design/icons/dist/style.css'; // med Parcel som bundler
 
-/* Valgfritt: styr ikonets størrelse med font-size. Default er 1em x 1em. */
+/* Valgfritt: styr ikonets størrelse. Default er height: 1em; width: auto; */
 .my-icon {
-  font-size: 2rem;
+  height: 2rem;
 }
 ```
+
+#### HTML
+
+Dersom HTML-en blir generert dynamisk, kan du f.eks. gjøre slik:
+
+```js
+/* JavaScript */
+
+// Med Vite som bundler
+import ArrowRight from '@udir-design/icons/svg/ArrowRight.svg?no-inline';
+
+// Med Parcel som bundler
+const ArrowRight = new URL(
+  'npm:@udir-design/icons/dist/svg/ArrowRight.svg',
+  import.meta.url,
+);
+
+document.body.innerHTML += `
+<a class="ds-link" href="#">
+  <svg aria-hidden class="my-icon">
+    <use href="${ArrowRight}#icon" />
+  </svg>
+  <span>Lenke lagt til dynamisk med JavaScript</span>
+</a>`;
+```
+
+Med Parcel er det også mulig å referere til ikonene direkte i HTML-filer:
 
 ```html
 <!-- html -->
@@ -56,44 +91,36 @@ SVG-filene er mulig å importere og bruke fra vanlig HTML og CSS dersom du bruke
 </svg>
 ```
 
-Dersom HTML-en blir generert dynamisk, kan du f.eks. gjøre slik:
+### Bruk i CSS
 
-```js
-/* JavaScript */
-// Nødvendig for riktig dimensjoner på ikon
-import '@udir-design/icons/dist/style.css';
+Alle ikoner er tilgjengeliggjort som CSS-variabler.
 
-const ArrowRight = new URL(
-  'npm:@udir-design/icons/dist/svg/ArrowRight.svg',
-  import.meta.url,
-);
+For å ta i bruk ikoner på denne måten må du først importere CSS-filen for hvert ikon du skal bruke.
+De kan importeres fra JavaScript / TypeScript eller fra CSS.
 
-document.body.innerHTML += `
-<a class="ds-link" href="#">
-  <svg aria-hidden>
-    <use href="${ArrowRight}#icon" />
-  </svg
-  ><span>Lenke lagt til dynamisk med JavaScript</span>
-</a>`;
-```
+**Merk: dersom du bruker `@udir-design/css` er noen ikoner allerede tilgjengelig**. Det er lurt å ikke importere disse på nytt. [Se hvilke ikoner som kommer inkludert i @udir-design/css](../css/src/icons.css).
 
-#### Bruk i CSS
+Variablene har navnekonvensjonen `--uds-icon-<ikonnavn>`, og css-filene ligger i `@udir-design/icons/css/<ikonnavn>.css`, der `<ikonnavn>` er navnet på ikonet slik det står i [ikonoversikten](https://design.udir.no/beta/?path=/docs/iconsandsymbols-ikoner--ikoner) men med liten forbokstav.
 
-Du kan bruke SVG-filene direkte i CSS, men må da ta ansvar for en del styling selv.
-
-Et eksempel er å automatisk legge til ikon på et element med en viss klasse.
+Nøyaktige import-stier vil avhenge av oppsettet ditt. Vi har med eksempler for Vite og Parcel.
 
 ```css
-/* css */
+/* Med Vite som bundler  */
+@import '@udir-design/icons/css/circleFill.css';
+/* Med Parcel som bundler */
+@import 'npm:@udir-design/icons/dist/css/circleFill.css';
+```
 
+Ved bruk direkte i CSS må du ta ansvar for en del styling selv, men du kan for eksempel automatisk legge til ikon på et element med en viss klasse.
+
+```css
 .myClass::before {
   content: '';
   display: inline-block;
   width: 1em;
   height: 1em;
   background: currentColor;
-  mask: center / 100% no-repeat
-    url('npm:@udir-design/icons/dist/svg/PencilWriting.svg');
+  mask: center / 100% no-repeat var(--uds-icon-circleFill);
   vertical-align: middle;
 }
 ```
