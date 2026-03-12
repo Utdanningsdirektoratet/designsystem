@@ -386,22 +386,41 @@ Les mer i Nx sin dokumentasjon:
 
 ### Testing
 
-Følgende kommando kjører enhets-, uu- og snapshottest samlet.
+Følgende kommando kjører enhets-, interaksjons-, uu- og snapshottester samlet.
+
+```bash
+pnpm nx test
+```
+
+Man kan også kjøre kun enhetstestene med
+
+```bash
+pnpm nx test:unit
+```
+
+...og alle de andre testene med
 
 ```bash
 pnpm nx test:storybook
 ```
 
-#### Enhetstester
+#### Interaksjonstester
 
-Vi bruker playwright til å skrive interaksjonstester for komponenter. Testene simulerer interaksjon med komponenten, og defineres som en del av eksemplene for en komponent i Storybook. En komponent skal testes i alle relevante tilstander og skal dekke alle relevante brukerinteraksjoner.
+Vi bruker Storybook til å skrive [interaksjonstester for komponenter](https://storybook.js.org/docs/writing-tests/interaction-testing). Testene simulerer interaksjon med komponenten, og defineres som en del av eksemplene for en komponent i Storybook. En komponent skal testes i alle relevante tilstander og skal dekke alle relevante brukerinteraksjoner.
 
 > [!TIP]
 > For `Popover` burde man for eksempel teste i både åpen og lukket tilstand, samt sjekke at den kan lukkes både med knapp og ved å trykke utenfor boksen.
 
+#### Enhetstester
+
+Hjelpefunksjoner og hooks tester vi med [Vitest](https://vitest.dev/). Disse kjører mye raskere enn interaksjonstester, og er mer egnet til å teste logikk eller intern oppførsel. Enhetstester skrives i egne filer som slutter på `.spec.tsx`.
+
+> [!WARNING]
+> Det er foreløpig ingen egentlige enhetstester i repoet, kun et eksempel i Button.spec.tsx, men vi bør skrive enhetstester for alle våre egne hooks og hjelpefunksjoner
+
 #### Automatiske tester
 
-Hvert eksempel i Storybook får automatisk en snapshottest, en visuell test, og en regelbasert UU-test. Disse testene generes med kommandoen
+Hvert eksempel i Storybook får automatisk en snapshottest, en visuell test, og en regelbasert UU-test. Snapshottestene sammenligner html-output med snapshots som er sjekket inn i repoet (`*.stories.tsx.snap`). Disse oppdateres med kommandoen
 
 ```bash
 pnpm nx test:storybook --update
@@ -411,11 +430,11 @@ pnpm nx test:storybook --update
 
 Alle unike komponenter skal inngå i minst én demo-side for å kunne gjennomføre systemtest.
 
-### Pull request prosessen
+### Pull request-prosessen
 
-Alle kodeendringer må gjennom en peer review prosess i github. Alle pull requests må ha minst én approval for å kunne merges. I tillegg må pull requesten bestå alle automatiserte tester.
+Alle kodeendringer må gjennom en peer review i GitHub. Alle pull requests må ha minst én approval for å kunne merges. I tillegg må pull requesten bestå alle automatiserte tester.
 
-En kodeendring som sendes til peer review setter i gang kjøring av tester. Dette skjer i GitHub Actions. Ved visuelle endringer må det både gjennomføres kodegjennomgang på Github og visuell gjennomgang i Chromatic. Lenker til dette inngår som en del av sjekkene for pull requesten i github.
+En kodeendring som sendes til peer review setter i gang kjøring av tester. Dette skjer i GitHub Actions. Ved visuelle endringer må det både gjennomføres kodegjennomgang på Github og visuell gjennomgang i Chromatic. Lenker til dette inngår som en del av sjekkene for pull requesten i GitHub.
 
 Testene utføres også automatisk før publisering av kodebibliotekene, og publiseringen vil bli avbrutt dersom testene feiler.
 
@@ -425,12 +444,13 @@ Fordi vi har noen egne tokensett i tillegg til de fra Digdir er prosessen for å
 
 1. Oppdater config-fila `design-tokens/designsystemet.config.json`, manuelt eller ved bruk av temabyggeren
 2. Kjør kommandoen `pnpm nx run design-tokens:create` i terminalen
-3. Se gjennom og revert om nødvendig filene `$metadata.json` og `$themes.json`, siden vi har noen ekstra tokenssett her. Husk da også å reverte sletting av disse filene
-4. Kjør `pnpm nx build` for å oppdatere css-variabler
+3. Reverter sletting av våre egne tokensett (`*.overrides.json`)
+4. Se gjennom filene `$metadata.json` og `$themes.json`. Om den eneste endringen er at våre ekstra tokensett er fjernet, kan filene bare reverteres. Ellers må vi integrere endringene fra Digdir med våre ekstra linjer
+5. Kjør `pnpm nx build` for å oppdatere css-variabler
 
 ## Hvordan legge til nye prosjekter i arbeidsområdet
 
-Nye pakker legges til i `@udir-design/<new-package>`.
+Nye offentlige pakker legges til i `@udir-design/<new-package>`.
 
 **For at en ny pakke skal kunne bygges og publiseres trenger du:**
 
@@ -449,7 +469,7 @@ Nye pakker legges til i `@udir-design/<new-package>`.
 
 **Valgfritt:**
 
-- `project.json` (bare hvis pakken trenger egne Nx-targets, som Storybook og generators)
+- `project.json` (bare hvis pakken trenger egne innstillinger for Nx, f.eks. konfigurere inputs og targets)
 
 **Typisk mappestruktur:**
 
