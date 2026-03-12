@@ -1,9 +1,5 @@
 {
-  "name": "@udir-design/css",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "@udir-design/css/src",
-  "projectType": "library",
-  "tags": [],
   "namedInputs": {
     "css": [
       "{workspaceRoot}/@udir-design/react/src/components/**/*.css",

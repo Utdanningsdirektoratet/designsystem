@@ -34,7 +34,8 @@ I dette repositoriet lever den delen av designsystemet som implementeres i kode:
   - [Oppsett lokalt](#oppsett-lokalt)
   - [Monorepo - enkelt forklart](#monorepo---enkelt-forklart)
   - [Hvordan jobbe med kodebasen](#hvordan-jobbe-med-kodebasen)
-  - [Hvordan oppgradere avhengigheter](#hvordan-oppgradere-avhengigheter)
+  - [Hvordan legge til nye prosjekter i arbeidsområdet](#hvordan-legge-til-nye-prosjekter-i-arbeidsområdet)
+  - [Hvordan håndtere avhengigheter](#hvordan-håndtere-avhengigheter)
   - [Hvordan oppdatere symboler](#hvordan-oppdatere-symboler)
   - [Hvordan publisere en ny versjon](#hvordan-publisere-en-ny-versjon)
   - [Oversikt over verktøy](#oversikt-over-verktøy)
@@ -239,10 +240,6 @@ flowchart-elk BT
 
 ## Hvordan jobbe med kodebasen
 
-> [!CAUTION]
-> Denne dokumentasjonen inneholder foreløpig ingen informasjon om hvordan du går fram for å skrive tester.
-> Foreløpig kan du lese [Hva tester vi](#hva-tester-vi)-seksjonen, og be en kollega om hjelp om du står fast.
-
 ### Mappestruktur
 
 Hver komponent skal ha en undermappe i `@udir-design/react/src/components`. F.eks:
@@ -387,7 +384,286 @@ Les mer i Nx sin dokumentasjon:
 - [Explore your Workspace](https://nx.dev/features/explore-graph)
 - [Run Tasks](https://nx.dev/features/run-tasks).
 
-## Hvordan oppgradere avhengigheter
+### Testing
+
+Følgende kommando kjører enhets-, interaksjons-, uu- og snapshottester samlet.
+
+```bash
+pnpm nx test
+```
+
+Man kan også kjøre kun enhetstestene med
+
+```bash
+pnpm nx test:unit
+```
+
+...og alle de andre testene med
+
+```bash
+pnpm nx test:storybook
+```
+
+#### Interaksjonstester
+
+Vi bruker Storybook til å skrive [interaksjonstester for komponenter](https://storybook.js.org/docs/writing-tests/interaction-testing). Testene simulerer interaksjon med komponenten, og defineres som en del av eksemplene for en komponent i Storybook. En komponent skal testes i alle relevante tilstander og skal dekke alle relevante brukerinteraksjoner.
+
+> [!TIP]
+> For `Popover` burde man for eksempel teste i både åpen og lukket tilstand, samt sjekke at den kan lukkes både med knapp og ved å trykke utenfor boksen.
+
+#### Enhetstester
+
+Hjelpefunksjoner og hooks tester vi med [Vitest](https://vitest.dev/). Disse kjører mye raskere enn interaksjonstester, og er mer egnet til å teste logikk eller intern oppførsel. Enhetstester skrives i egne filer som slutter på `.spec.tsx`.
+
+> [!WARNING]
+> Det er foreløpig ingen egentlige enhetstester i repoet, kun et eksempel i Button.spec.tsx, men vi bør skrive enhetstester for alle våre egne hooks og hjelpefunksjoner
+
+#### Automatiske tester
+
+Hvert eksempel i Storybook får automatisk en snapshottest, en visuell test, og en regelbasert UU-test. Snapshottestene sammenligner html-output med snapshots som er sjekket inn i repoet (`*.stories.tsx.snap`). Disse oppdateres med kommandoen
+
+```bash
+pnpm nx test:storybook --update
+```
+
+#### Systemtest
+
+Alle unike komponenter skal inngå i minst én demo-side for å kunne gjennomføre systemtest.
+
+### Pull request-prosessen
+
+Alle kodeendringer må gjennom en peer review i GitHub. Alle pull requests må ha minst én approval for å kunne merges. I tillegg må pull requesten bestå alle automatiserte tester.
+
+En kodeendring som sendes til peer review setter i gang kjøring av tester. Dette skjer i GitHub Actions. Ved visuelle endringer må det både gjennomføres kodegjennomgang på Github og visuell gjennomgang i Chromatic. Lenker til dette inngår som en del av sjekkene for pull requesten i GitHub.
+
+Testene utføres også automatisk før publisering av kodebibliotekene, og publiseringen vil bli avbrutt dersom testene feiler.
+
+### Hvordan genere nye designtokens
+
+Fordi vi har noen egne tokensett i tillegg til de fra Digdir er prosessen for å oppdatere dem noe ulik den beskrevet hos Digdir.
+
+1. Oppdater config-fila `design-tokens/designsystemet.config.json`, manuelt eller ved bruk av temabyggeren
+2. Kjør kommandoen `pnpm nx run design-tokens:create` i terminalen
+3. Reverter sletting av våre egne tokensett (`*.overrides.json`)
+4. Se gjennom filene `$metadata.json` og `$themes.json`. Om den eneste endringen er at våre ekstra tokensett er fjernet, kan filene bare reverteres. Ellers må vi integrere endringene fra Digdir med våre ekstra linjer
+5. Kjør `pnpm nx build` for å oppdatere css-variabler
+
+## Hvordan legge til nye prosjekter i arbeidsområdet
+
+Et nytt prosjekt kan enten være en pakke som skal publiseres til npm, en internt pakke som kun brukes innad i repoet, eller en testapplikasjon.
+
+Hvis andre prosjekter i repoet er avhengig av prosjektet, må du også huske å [legge det til som en intern avhengighet](#hvordan-legge-til-avhengigheter-mellom-prosjekter).
+
+### Pakke som skal publiseres til npm
+
+En pakke som skal publiseres offentlig på npm legges til i `@udir-design/<new-package-name>`.
+
+Du trenger en `package.json` med:
+
+```json
+{
+  "name": "@udir-design/<new-package-name>",
+  "repository": {
+    "type": "git",
+    "url": "github:Utdanningsdirektoratet/designsystem",
+    "directory": "@udir-design/<new-package-name>"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "version": "0.0.0-semantically-released",
+  "type": "module",
+  "files": ["./dist"]
+}
+```
+
+...samt ett eller flere korrekt konfigurerte [entry point(s) i `exports`-feltet](https://nodejs.org/docs/v24.14.0/api/packages.html#package-entry-points), som peker til JS/TS-output og/eller andre assets i `./dist`
+
+Du må også definere et build-script i `package.json` som genererer filer til `./dist/`
+
+```json
+  "scripts": {
+    "build": "<kommando for å bygge pakken>"
+  }
+```
+
+#### TypeScript-oppsett
+
+Hvis pakken inneholder TypeScript trenger du også `tsconfig.json`, som inneholder referanse til basekonfigurasjonen og kan utvides ved behov
+
+```json
+{
+  "extends": "../../tsconfig.base.json"
+}
+```
+
+Dersom TypeScript-koden skal publiseres, pass på at build-scriptet genererer følgende for hvert relevante entry point definert i `"exports"` i `package.json`:
+
+- JavaScript på CommonJS-format
+- JavaScript på ESM-format
+- Deklarasjonsfil (`*.d.ts`)
+
+Vanligvis legger vi koden for hoved-entrypointet i `src/index.ts`.
+
+#### ESLint
+
+For at linting skal fungere trenger du en `eslint.config.js`-fil.
+
+Her er et minimalt oppsett som kun skrur på basekonfigurasjonen som er definert i rot av repoet.
+
+```js
+import { defineConfig } from 'eslint/config';
+import baseConfig from '../../eslint.config.js';
+
+export default defineConfig(baseConfig);
+```
+
+Det kan være relevant å utvide denne med andre forhåndsdefinerte innstillinger, og eventuelt egen konfigurasjon:
+
+```js
+import nxEslintPlugin from '@nx/eslint-plugin';
+import { defineConfig } from 'eslint/config';
+import baseConfig from '../../eslint.config.js';
+
+export default defineConfig(
+  nxEslintPlugin.configs['flat/react'], // @nx/eslint sin konfigurasjon for React
+  baseConfig, // Repoets felles eslint-konfigurasjon
+  {
+    // Din egen skreddersydde konfigurasjon her
+  },
+);
+```
+
+#### Nx-konfigurasjon
+
+Ut av boksen får pakken standardinnstillingene som er definert i `nx.json` i rot av repoet.
+Hvis pakken trenger egne innstillinger for Nx, kan du legge til filen `project.json`:
+
+```jsonc
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json"
+  // din config her, f.eks.
+  "targets": {
+    "build": {
+      "cache": false // overstyrer cache-innstilling fra targetDefaults.build.cache i nx.json
+    }
+  }
+}
+```
+
+> [!TIP]
+> [Les om prosjektkonfigurasjon i Nx sin dokumentasjon](https://nx.dev/docs/reference/project-configuration).
+> Merk:
+>
+> - Selv om det er mulig å ha Nx-spesifikk prosjektkonfigurasjon i `package.json`, velger vi å ha en separat `project.json` fordi det er ryddigere
+> - Vi bruker ingen Nx plugins bortsett fra `@nx/eslint/plugin` fordi vi har erfart at plugins ofte gir lite verdi over manuell konfigurasjon, og ofte fører til inkompatibilitet ved oppgraderinger.
+
+#### Typisk mappestruktur
+
+```
+@udir-design/<new-package-name>
+├── src/
+│   ├── ...
+│   └── index.ts
+├── eslint.config.js
+├── README.md
+├── tsconfig.json
+├── package.json
+└── project.json
+```
+
+### Interne pakker
+
+Noen ganger er det nyttig å separere ut kode til en egen intern pakke som **ikke** skal publiseres på npm.
+Merk at denne koden ikke kan være i bruk av kode som **skal** publiseres, men det kan være nyttig for å dele kode som f.eks. build-scripts, hjelpefunksjoner for dokumentasjon og lignende.
+
+Slike prosjekter legger vi i `@internal/<new-package-name>`.
+
+Du trenger da en `package.json` med:
+
+```json
+{
+  "name": "@internal/<new-package-name>",
+  "type": "module",
+  "private": true
+}
+```
+
+I motsetning til publiserte pakker trenger du ikke å tenke på `"exports"` og byggeskript. Ellers er oppsettet likt som for pakker som skal publiseres til npm.
+
+### Testapplikasjoner
+
+Vi har testapplikasjoner for bruk av bibliotekene vi publiserer med ulike kombinasjoner av teknologi. Et nytt prosjekt av denne typen legger du i `test-apps/<new-test-app-name>`.
+
+Du trenger da en `package.json` med:
+
+```json
+{
+  "name": "test-app-<new-test-app-name>",
+  "type": "module",
+  "private": true
+}
+```
+
+I disse prosjektene trenger du ikke tenke på `"exports"` eller at andre prosjekter kan være avhengige av de. Sett prosjektet opp etter anvisning fra dokumentasjonen til teknologien du tester med, men husk å bruke vårt baseoppsett for TypeScript (`tsconfig.base.json`) og ESLint `eslint.config.js`.
+
+## Hvordan håndtere avhengigheter
+
+### Hvordan legge til avhengigheter mellom prosjekter
+
+Dersom noen av prosjektene er avhengige av hverandre, f.eks. at `@udir-design/react` er avhenging av `@udir-design/css`, legges dette til på følgende måte:
+
+```bash
+pnpm add @udir-design/css --workspace
+```
+
+Dette resulterer i at `package.json` blir oppdatert med
+
+```json
+"dependencies": {
+  "@udir-design/css": "workspace:*"
+}
+```
+
+Om avhengigheten er et TypeScript-prosjekt må du også oppdatere `"paths"` i `tsconfig.base.json`
+
+```json
+"paths": {
+  "<navn-i-prosjektets-package-json>": "./<path-til-prosjektet>/src/index.ts",
+  // Dersom pakken har submoduler:
+  "<navn-i-prosjektets-package-json>/<submodul>": "./<path-til-prosjektet>/src/<submodul>.ts"
+}
+```
+
+Eksempel: `@udir-design/icons` definerer både et hoved-entrypoint og en submodul `/metadata`, dette krever følgende konfigurasjon
+
+```json
+"paths": {
+  "@udir-design/icons": ["./@udir-design/icons/src/index.ts"],
+  "@udir-design/icons/metadata": ["./@udir-design/icons/src/metadata.ts"],
+}
+```
+
+Uten endringen i `tsconfig.base.json` vil ting fungere for eksterne konsumenter, men du kan få subtile problemer innad i repoet.
+
+Dersom du får sykliske avhengigheter mellom prosjekter, vil installasjonen feile. Det er et tegn på at kode som begge avhenger av sannsynligvis bør splittes ut til et eget prosjekt.
+
+### Hvordan legge til nye eksterne avhengigheter
+
+Legg til nye eksterne avhengigheter med kommandoen
+
+```bash
+pnpm add <package>
+```
+
+Legg til avhengigheter som ikke er nødvendige i selve pakkene, men som brukes til for eksempel Storybook-eksempler og testing, som `devDependencies`:
+
+```bash
+pnpm add -D <package>
+```
+
+### Hvordan oppgradere avhengigheter
 
 Få oversikt over utdaterte avhengigheter i alle prosjekter med
 
@@ -406,7 +682,7 @@ pnpm update -r
 
 Vi har noen avhengigheter som er pinnet til spesifikke versjoner. Disse trenger egne kommandoer.
 
-### `@digdir/*`
+#### `@digdir/*`
 
 > [!IMPORTANT]
 > Oppdateringer av Digdir-bibliotekene skjer automatisk [hver natt kl 01:00 (UTC)](https://github.com/Utdanningsdirektoratet/designsystem/actions/workflows/update-digdir.yml), og eventuelle endringer må godkjennes i en pull request.
@@ -417,7 +693,7 @@ Designsystem-bibliotekene fra Digdir er pinnet for å ha full kontroll over hvil
 pnpm update -r --latest "@digdir/*"
 ```
 
-### `nx` og `@nx/*`
+#### `nx` og `@nx/*`
 
 `nx` har sin egen oppdateringskommando, som også klargjør migreringer i de tilfellene det er relevant.
 
@@ -427,7 +703,7 @@ pnpm install --no-frozen-lockfile
 pnpm nx --run-migrations # kun dersom migrations.json ble opprettet
 ```
 
-### `prettier`
+#### `prettier`
 
 > [!IMPORTANT]
 > Oppdateringer av `prettier` skjer automatisk [hver mandag kl 02:00 (UTC)](https://github.com/Utdanningsdirektoratet/designsystem/actions/workflows/update-prettier.yml), og eventuelle endringer må godkjennes i en pull request.
@@ -448,7 +724,7 @@ git commit --all -m "chore: update .git-blame-ignore-revs"
 > blir ignorert i blame-visningen på GitHub.
 > Les mer om dette i [GitHubs dokumentasjon](https://docs.github.com/en/repositories/working-with-files/using-files/viewing-and-understanding-files#ignore-commits-in-the-blame-view)
 
-### Oppdatere til nye major-versjoner
+#### Oppdatere til nye major-versjoner
 
 `pnpm update -r` vil kun oppdatere innenfor de versjonsgrensene vi har satt. F.eks. med grensen `^18.3.1` vil kommandoen kunne oppdatere til versjonen `18.4.0`, men ikke til `19.0.0`.
 
@@ -473,7 +749,7 @@ pnpm update -r --latest react react-dom @types/react @types/react-dom
 pnpm update -r --latest storybook "@storybook/*"
 ```
 
-### Oppgradere Node.js
+#### Oppgradere Node.js
 
 > [!IMPORTANT]
 > Vi oppgraderer kun til partallsversjoner av Node, siden dette er LTS-versjonene.
@@ -485,7 +761,7 @@ Vi må også sørge for at versjonen av avhengigheten `@types/node` samsvarer me
 
 I tillegg finnes feltet `engines.node` i `package.json`, som leses av GitHub Actions. Denne trenger kun å være en versjon som inneholder `corepack`, for å installere `pnpm`, så vi trenger kun å oppdatere dette feltet når en node-versjon ikke lenger er støttet.
 
-### Fikse sikkerhetsadvarsler
+#### Fikse sikkerhetsadvarsler
 
 Se en liste over sikkerhetsadvarsler med
 
@@ -512,7 +788,7 @@ Nytt symbol legges til i [Symbolbiblioteket i Figma](https://www.figma.com/desig
 
 Nedlasting av oppdaterte symboler fra Figma gjøres i et lokalt repo av [Udirs Designsystem](https://github.com/Utdanningsdirektoratet/designsystem).
 
-`.env.local` må inneholde en gyldig Figma-token: `FIGMA_TOKEN={token}`.
+`.env.local` må inneholde gyldig Figma-token: `FIGMA_TOKEN={token}`.
 
 Kjør følgende kommando i `designsystem/@udir-design/symbols`:
 
