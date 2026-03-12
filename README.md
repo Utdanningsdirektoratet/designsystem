@@ -450,52 +450,204 @@ Fordi vi har noen egne tokensett i tillegg til de fra Digdir er prosessen for å
 
 ## Hvordan legge til nye prosjekter i arbeidsområdet
 
-Nye offentlige pakker legges til i `@udir-design/<new-package>`.
+Et nytt prosjekt kan enten være en pakke som skal publiseres til npm, en internt pakke som kun brukes innad i repoet, eller en testapplikasjon.
 
-**For at en ny pakke skal kunne bygges og publiseres trenger du:**
+Hvis andre prosjekter i repoet er avhengig av prosjektet, må du også huske å [legge det til som en intern avhengighet](#hvordan-legge-til-avhengigheter-mellom-prosjekter).
 
-- `package.json` med:
-  - `"name": "@udir-design/<name>"`
-  - `"version": "0.0.0-semantically-released"`
-  - `"license": "MIT"`
-  - `"type": "module"`
-  - riktige `exports` (peker til JS/TS-output eller CSS/andre assets)
-- en build-prosess som genererer filer til `dist/`
+### Pakke som skal publiseres til npm
 
-**Hvis pakken er en TypeScript-pakke trenger du også:**
+En pakke som skal publiseres offentlig på npm legges til i `@udir-design/<new-package-name>`.
 
-- `tsconfig.json`
-- `src/index.ts` som entrypoint
+Du trenger en `package.json` med:
 
-**Valgfritt:**
+```json
+{
+  "name": "@udir-design/<new-package-name>",
+  "repository": {
+    "type": "git",
+    "url": "github:Utdanningsdirektoratet/designsystem",
+    "directory": "@udir-design/<new-package-name>"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "version": "0.0.0-semantically-released",
+  "type": "module",
+  "files": ["./dist"]
+}
+```
 
-- `project.json` (bare hvis pakken trenger egne innstillinger for Nx, f.eks. konfigurere inputs og targets)
+...samt ett eller flere korrekt konfigurerte [entry point(s) i `exports`-feltet](https://nodejs.org/docs/v24.14.0/api/packages.html#package-entry-points), som peker til JS/TS-output og/eller andre assets i `./dist`
 
-**Typisk mappestruktur:**
+Du må også definere et build-script i `package.json` som genererer filer til `./dist/`
+
+```json
+  "scripts": {
+    "build": "<kommando for å bygge pakken>"
+  }
+```
+
+#### TypeScript-oppsett
+
+Hvis pakken inneholder TypeScript trenger du også `tsconfig.json`, som inneholder referanse til basekonfigurasjonen og kan utvides ved behov
+
+```json
+{
+  "extends": "../../tsconfig.base.json"
+}
+```
+
+Dersom TypeScript-koden skal publiseres, pass på at build-scriptet genererer følgende for hvert relevante entry point definert i `"exports"` i `package.json`:
+
+- JavaScript på CommonJS-format
+- JavaScript på ESM-format
+- Deklarasjonsfil (`*.d.ts`)
+
+Vanligvis legger vi koden for hoved-entrypointet i `src/index.ts`.
+
+#### ESLint
+
+For at linting skal fungere trenger du en `eslint.config.js`-fil.
+
+Her er et minimalt oppsett som kun skrur på basekonfigurasjonen som er definert i rot av repoet.
+
+```js
+import { defineConfig } from 'eslint/config';
+import baseConfig from '../../eslint.config.js';
+
+export default defineConfig(baseConfig);
+```
+
+Det kan være relevant å utvide denne med andre forhåndsdefinerte innstillinger, og eventuelt egen konfigurasjon:
+
+```js
+import nxEslintPlugin from '@nx/eslint-plugin';
+import { defineConfig } from 'eslint/config';
+import baseConfig from '../../eslint.config.js';
+
+export default defineConfig(
+  nxEslintPlugin.configs['flat/react'], // @nx/eslint sin konfigurasjon for React
+  baseConfig, // Repoets felles eslint-konfigurasjon
+  {
+    // Din egen skreddersydde konfigurasjon her
+  },
+);
+```
+
+#### Nx-konfigurasjon
+
+Ut av boksen får pakken standardinnstillingene som er definert i `nx.json` i rot av repoet.
+Hvis pakken trenger egne innstillinger for Nx, kan du legge til filen `project.json`:
+
+```jsonc
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json"
+  // din config her, f.eks.
+  "targets": {
+    "build": {
+      "cache": false // overstyrer cache-innstilling fra targetDefaults.build.cache i nx.json
+    }
+  }
+}
+```
+
+> [!TIP]
+> [Les om prosjektkonfigurasjon i Nx sin dokumentasjon](https://nx.dev/docs/reference/project-configuration).
+> Merk:
+>
+> - Selv om det er mulig å ha Nx-spesifikk prosjektkonfigurasjon i `package.json`, velger vi å ha en separat `project.json` fordi det er ryddigere
+> - Vi bruker ingen Nx plugins bortsett fra `@nx/eslint/plugin` fordi vi har erfart at plugins ofte gir lite verdi over manuell konfigurasjon, og ofte fører til inkompatibilitet ved oppgraderinger.
+
+#### Typisk mappestruktur
 
 ```
-@udir-design/<new-package>
+@udir-design/<new-package-name>
 ├── src/
+│   ├── ...
+│   └── index.ts
+├── eslint.config.js
 ├── README.md
 ├── tsconfig.json
-└── package.json
+├── package.json
+└── project.json
 ```
 
-I tillegg må du oppdatere eventuelle [avhengigheter mellom prosjekter](#hvordan-legge-til-avhengigheter-mellom-prosjekter).
+### Interne pakker
+
+Noen ganger er det nyttig å separere ut kode til en egen intern pakke som **ikke** skal publiseres på npm.
+Merk at denne koden ikke kan være i bruk av kode som **skal** publiseres, men det kan være nyttig for å dele kode som f.eks. build-scripts, hjelpefunksjoner for dokumentasjon og lignende.
+
+Slike prosjekter legger vi i `@internal/<new-package-name>`.
+
+Du trenger da en `package.json` med:
+
+```json
+{
+  "name": "@internal/<new-package-name>",
+  "type": "module",
+  "private": true
+}
+```
+
+I motsetning til publiserte pakker trenger du ikke å tenke på `"exports"` og byggeskript. Ellers er oppsettet likt som for pakker som skal publiseres til npm.
+
+### Testapplikasjoner
+
+Vi har testapplikasjoner for bruk av bibliotekene vi publiserer med ulike kombinasjoner av teknologi. Et nytt prosjekt av denne typen legger du i `test-apps/<new-test-app-name>`.
+
+Du trenger da en `package.json` med:
+
+```json
+{
+  "name": "test-app-<new-test-app-name>",
+  "type": "module",
+  "private": true
+}
+```
+
+I disse prosjektene trenger du ikke tenke på `"exports"` eller at andre prosjekter kan være avhengige av de. Sett prosjektet opp etter anvisning fra dokumentasjonen til teknologien du tester med, men husk å bruke vårt baseoppsett for TypeScript (`tsconfig.base.json`) og ESLint `eslint.config.js`.
 
 ## Hvordan håndtere avhengigheter
 
 ### Hvordan legge til avhengigheter mellom prosjekter
 
-Dersom noen av prosjektene er avhengige av hverandre, slik som f.eks. `@udir-design/react` er avhenging av `@udir-design/css` legges prosjektet til i `package.json` som en dependency på følgende måte:
+Dersom noen av prosjektene er avhengige av hverandre, f.eks. at `@udir-design/react` er avhenging av `@udir-design/css`, legges dette til på følgende måte:
+
+```bash
+pnpm add @udir-design/css --workspace
+```
+
+Dette resulterer i at `package.json` blir oppdatert med
 
 ```json
 "dependencies": {
-    "@udir-design/css": "workspace:*"
-  },
+  "@udir-design/css": "workspace:*"
+}
 ```
 
-Pass på å ikke lage sykliske avhengigheter. Dette skal oppdages av linter.
+Om avhengigheten er et TypeScript-prosjekt må du også oppdatere `"paths"` i `tsconfig.base.json`
+
+```json
+"paths": {
+  "<navn-i-prosjektets-package-json>": "./<path-til-prosjektet>/src/index.ts",
+  // Dersom pakken har submoduler:
+  "<navn-i-prosjektets-package-json>/<submodul>": "./<path-til-prosjektet>/src/<submodul>.ts"
+}
+```
+
+Eksempel: `@udir-design/icons` definerer både et hoved-entrypoint og en submodul `/metadata`, dette krever følgende konfigurasjon
+
+```json
+"paths": {
+  "@udir-design/icons": ["./@udir-design/icons/src/index.ts"],
+  "@udir-design/icons/metadata": ["./@udir-design/icons/src/metadata.ts"],
+}
+```
+
+Uten endringen i `tsconfig.base.json` vil ting fungere for eksterne konsumenter, men du kan få subtile problemer innad i repoet.
+
+Dersom du får sykliske avhengigheter mellom prosjekter, vil installasjonen feile. Det er et tegn på at kode som begge avhenger av sannsynligvis bør splittes ut til et eget prosjekt.
 
 ### Hvordan legge til nye eksterne avhengigheter
 
