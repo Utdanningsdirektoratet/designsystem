@@ -142,6 +142,8 @@ catalogs:
 
 cleanupUnusedCatalogs: true
 
+disallowWorkspaceCycles: true
+
 ignoredBuiltDependencies:
   - '@bundled-es-modules/glob'
   - '@parcel/watcher'
