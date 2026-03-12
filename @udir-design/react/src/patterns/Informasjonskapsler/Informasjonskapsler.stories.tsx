@@ -6,7 +6,7 @@ import { Heading } from 'src/components/typography/heading/Heading';
 import { Prose } from 'src/components/typography/prose/Prose';
 
 const meta = preview.meta({
-  tags: ['alpha', 'udir'],
+  tags: ['alpha', 'udir', '!dev'],
   parameters: {
     componentOrigin: {
       originator: 'self',
