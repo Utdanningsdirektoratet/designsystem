@@ -1,6 +1,7 @@
 {
   "name": "test-app-nextjs",
   "type": "module",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
