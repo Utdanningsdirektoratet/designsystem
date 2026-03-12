@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "build": "pnpm nx format:check && pnpm nx affected -t typecheck lint test build build:docs",
+    "build": "pnpm nx format:check && pnpm nx affected -t typecheck lint test:unit build build:docs",
     "codeql:db:ts": "rm -rf .codeql/ts && codeql database create .codeql/ts --codescanning-config=.codeql/config-ts.yml --language=javascript-typescript",
     "codeql:db:actions": "rm -rf .codeql/actions && codeql database create .codeql/actions --codescanning-config=.codeql/config-actions.yml --language=actions",
     "codeql:db": "pnpm codeql:db:ts && pnpm codeql:db:actions",
