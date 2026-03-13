@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { expect, userEvent, within } from 'storybook/test';
+import { expect, userEvent, waitFor, within } from 'storybook/test';
 import {
   ArrowDownIcon,
   ArrowUpIcon,
@@ -39,7 +39,9 @@ const meta = preview.meta({
     const button = canvas.getByRole('button');
     await userEvent.click(button);
     const popover = ctx.canvasElement.querySelector('[popover]');
-    await expect(popover).toBeVisible();
+    await waitFor(() => {
+      expect(popover?.matches(':popover-open')).toBe(true);
+    });
   },
 });
 
@@ -76,17 +78,25 @@ export const Preview = meta.story({
     // Check open, click link and close with trigger
     await userEvent.click(button);
     const dropdown = ctx.canvasElement.querySelector('[popover]');
-    await expect(dropdown).toBeVisible();
+    await waitFor(() => {
+      expect(dropdown?.matches(':popover-open')).toBe(true);
+    });
     const dropdownButton = within(ctx.canvasElement).getByText('.pdf');
     await userEvent.click(dropdownButton);
     await userEvent.click(button);
-    await expect(dropdown).not.toBeVisible();
+    await waitFor(() => {
+      expect(dropdown?.matches(':popover-open')).toBe(false);
+    });
 
     // Check close with click outside
     await userEvent.click(button);
-    await expect(dropdown).toBeVisible();
+    await waitFor(() => {
+      expect(dropdown?.matches(':popover-open')).toBe(true);
+    });
     await userEvent.click(ctx.canvasElement);
-    await expect(dropdown).not.toBeVisible();
+    await waitFor(() => {
+      expect(dropdown?.matches(':popover-open')).toBe(false);
+    });
 
     await userEvent.click(button);
   },
@@ -287,9 +297,13 @@ export const WithoutTrigger = meta.story({
     const button = within(ctx.canvasElement).getByRole('button');
     await userEvent.click(button);
     const dropdown = ctx.canvasElement.querySelector('[popover]');
-    await expect(dropdown).toBeVisible();
+    await waitFor(() => {
+      expect(dropdown?.matches(':popover-open')).toBe(true);
+    });
     await userEvent.click(button);
-    await expect(dropdown).not.toBeVisible();
+    await waitFor(() => {
+      expect(dropdown?.matches(':popover-open')).toBe(false);
+    });
     await userEvent.click(button);
   },
 });

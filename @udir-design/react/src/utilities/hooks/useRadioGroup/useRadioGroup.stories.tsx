@@ -89,7 +89,9 @@ export const Default = meta.story({
 
     return (
       <Fieldset>
-        <Fieldset.Legend>Velg din aldersgruppe.</Fieldset.Legend>
+        <Fieldset.Legend id={context.id + '-legend'}>
+          Velg din aldersgruppe.
+        </Fieldset.Legend>
         {ageGroups.map((group) => (
           <Radio
             key={group.value}
@@ -127,8 +129,10 @@ export const Controlled = meta.story({
     return (
       <>
         <Fieldset>
-          <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
-          <Fieldset.Description>
+          <Fieldset.Legend id={context.id + '-legend'}>
+            Utdanningsnivå
+          </Fieldset.Legend>
+          <Fieldset.Description id={context.id + '-description'}>
             Velg det høyeste utdanningsnivået du har fullført.
           </Fieldset.Description>
           {educationLevels.map((level) => (
@@ -172,8 +176,10 @@ const GroupBase = {
 
     return (
       <Fieldset>
-        <Fieldset.Legend>Velg din aldersgruppe.</Fieldset.Legend>
-        <Fieldset.Description>
+        <Fieldset.Legend id={context.id + '-legend'}>
+          Velg din aldersgruppe.
+        </Fieldset.Legend>
+        <Fieldset.Description id={context.id + '-description'}>
           Informasjonen blir brukt til å tilpasse innholdet på siden.
         </Fieldset.Description>
         {ageGroups.map((group) => (
