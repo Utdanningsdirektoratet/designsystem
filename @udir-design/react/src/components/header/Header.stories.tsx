@@ -157,9 +157,9 @@ export const WithUserButton_Test = meta.story({
     await step('Userbutton opens dropdown', async () => {
       await expect(dropdown).not.toBeVisible();
       await userEvent.click(userButton);
-        await waitFor(() => {
-          expect(dropdown?.matches(':popover-open')).toBe(true);
-        });
+      await waitFor(() => {
+        expect(dropdown?.matches(':popover-open')).toBe(true);
+      });
     });
   },
 });
