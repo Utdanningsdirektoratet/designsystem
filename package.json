@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "build": "pnpm nx format:check && pnpm nx affected -t typecheck lint test:unit build build:docs",
+    "build": "pnpm prettier:check && pnpm nx affected -t typecheck lint test:unit build build:docs",
     "codeql:db:ts": "rm -rf .codeql/ts && codeql database create .codeql/ts --codescanning-config=.codeql/config-ts.yml --language=javascript-typescript",
     "codeql:db:actions": "rm -rf .codeql/actions && codeql database create .codeql/actions --codescanning-config=.codeql/config-actions.yml --language=actions",
     "codeql:db": "pnpm codeql:db:ts && pnpm codeql:db:actions",
@@ -15,7 +15,9 @@
     "codeql:results:ts": "echo 'CodeQL found the following problems in TypeScript / JavaScript code:\n' && jq -f .codeql/get-results.jq .codeql/ts-results.json",
     "codeql:results:actions": "echo 'CodeQL found the following problems in GitHub Actions code:\n' && jq -f .codeql/get-results.jq .codeql/actions-results.json",
     "codeql:results": "pnpm codeql:results:ts && pnpm codeql:results:actions",
-    "codeql": "pnpm codeql:db && pnpm codeql:scan && pnpm codeql:results"
+    "codeql": "pnpm codeql:db && pnpm codeql:scan && pnpm codeql:results",
+    "prettier:check": "pnpm prettier --check .",
+    "prettier:write": "pnpm prettier --write ."
   },
   "private": true,
   "packageManager": "pnpm@10.30.2+sha512.36cdc707e7b7940a988c9c1ecf88d084f8514b5c3f085f53a2e244c2921d3b2545bc20dd4ebe1fc245feec463bb298aecea7a63ed1f7680b877dc6379d8d0cb4",
