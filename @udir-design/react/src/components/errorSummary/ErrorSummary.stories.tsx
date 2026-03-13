@@ -130,7 +130,10 @@ export const ShowHide = meta.story({
     await expect(errorSummary).toHaveFocus();
   },
   parameters: {
-    docs: { source: { type: 'code', transform: formatReactSource } },
+    docs: {
+      canvas: { sourceState: 'shown' },
+      source: { type: 'code', transform: formatReactSource },
+    },
     customStyles: {
       display: 'flex',
       flexDirection: 'column',
