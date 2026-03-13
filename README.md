@@ -342,7 +342,7 @@ De vanlige stegene for å jobbe i arbeidsområdet er
 > Under panseret kjører `pnpm build` følgende kommando:
 >
 > ```
-> pnpm nx format:check && pnpm nx affected -t typecheck lint test build build-storybook
+> pnpm prettier:check && pnpm nx affected -t typecheck lint test build build-storybook
 > ```
 
 ### Få overblikk med Nx
@@ -713,7 +713,7 @@ Siden nye versjoner av `prettier` ofte påvirker kodeformateringen, er denne ver
 ```sh
 pnpm update -r --latest prettier
 git commit --all -m "build: update prettier to $(npm view prettier version)"
-pnpm nx format:write --all
+pnpm prettier:write
 git commit --all -m "style: format files with prettier $(npm view prettier version)"
 echo "# $(git show -s --format='%s')\n$(git rev-parse HEAD)" > .git-blame-ignore-revs
 git commit --all -m "chore: update .git-blame-ignore-revs"

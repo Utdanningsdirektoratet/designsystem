@@ -27,7 +27,7 @@ jobs:
         run: |
           pnpm update -r --latest prettier && pnpm dedupe
           git commit --all -m "build: update prettier to ${{ steps.prettier_info.outputs.version }}"
-          pnpm nx format:write --all
+          pnpm prettier:write
           echo has_changes="$(git diff --stat --exit-code)" >> "$GITHUB_OUTPUT"
 
       - name: Commit changes and update .git-blame-ignore-revs
