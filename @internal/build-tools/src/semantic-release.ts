@@ -169,7 +169,7 @@ function ignoreGitTags(
       .trim()
       .split('\n');
     const prereleaseTags = gitTags.filter((tag) =>
-      tag.match(/(-(\w|\d)+)+\.\d+$/),
+      tag.match(/(-[a-z0-9]+)+\.\d+$/i),
     );
     if (options.verbose) {
       console.log('Ignoring pre-release versions:');
