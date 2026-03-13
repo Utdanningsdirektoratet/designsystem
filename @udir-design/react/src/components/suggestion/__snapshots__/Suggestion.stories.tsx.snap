@@ -21,7 +21,7 @@ exports[`Always Show All 1`] = `
       Sogndal
     </data>
     <input
-      placeholder=" "
+      placeholder
       id="components-suggestion--always-show-all"
       type="text"
       data-label
@@ -717,7 +717,7 @@ exports[`Custom Filter Alt 2 1`] = `
   </label>
   <ds-suggestion>
     <input
-      placeholder=" "
+      placeholder
       id="components-suggestion--custom-filter-alt-2"
       type="text"
       data-label
@@ -1111,7 +1111,7 @@ exports[`Multiple 1`] = `
   </label>
   <ds-suggestion data-multiple>
     <input
-      placeholder
+      placeholder=" "
       id="components-suggestion--multiple"
       type="text"
       data-label

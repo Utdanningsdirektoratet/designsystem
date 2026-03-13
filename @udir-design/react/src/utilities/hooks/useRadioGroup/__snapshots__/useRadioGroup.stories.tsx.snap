@@ -1,16 +1,16 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Controlled 1`] = `
-<fieldset aria-labelledby="mmexwmdiwq32 mmexwmdiwq33">
+<fieldset aria-labelledby="utilities-useradiogroup--controlled-legend utilities-useradiogroup--controlled-description">
   <legend
+    id="utilities-useradiogroup--controlled-legend"
     data-weight="medium"
-    id="mmexwmdiwq32"
   >
     Utdanningsnivå
   </legend>
   <p
     data-variant="default"
-    id="mmexwmdiwq33"
+    id="utilities-useradiogroup--controlled-description"
   >
     Velg det høyeste utdanningsnivået du har fullført.
   </p>
@@ -102,7 +102,10 @@ exports[`Controlled 1`] = `
 
 exports[`Default 1`] = `
 <fieldset>
-  <legend data-weight="medium">
+  <legend
+    id="utilities-useradiogroup--default-legend"
+    data-weight="medium"
+  >
     Velg din aldersgruppe.
   </legend>
   <ds-field>
@@ -148,16 +151,16 @@ exports[`Default 1`] = `
 `;
 
 exports[`Disabled 1`] = `
-<fieldset aria-labelledby="mmexwmdiwq38 mmexwmdiwq39">
+<fieldset aria-labelledby="utilities-useradiogroup--disabled-legend utilities-useradiogroup--disabled-description">
   <legend
+    id="utilities-useradiogroup--disabled-legend"
     data-weight="medium"
-    id="mmexwmdiwq38"
   >
     Velg din aldersgruppe.
   </legend>
   <p
     data-variant="default"
-    id="mmexwmdiwq39"
+    id="utilities-useradiogroup--disabled-description"
   >
     Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
@@ -216,16 +219,16 @@ exports[`Disabled 1`] = `
 `;
 
 exports[`Group 1`] = `
-<fieldset aria-labelledby="mmexwmdiwq34 mmexwmdiwq35">
+<fieldset aria-labelledby="utilities-useradiogroup--group-legend utilities-useradiogroup--group-description">
   <legend
+    id="utilities-useradiogroup--group-legend"
     data-weight="medium"
-    id="mmexwmdiwq34"
   >
     Velg din aldersgruppe.
   </legend>
   <p
     data-variant="default"
-    id="mmexwmdiwq35"
+    id="utilities-useradiogroup--group-description"
   >
     Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
@@ -281,14 +284,20 @@ exports[`Group 1`] = `
 `;
 
 exports[`Read Only 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="utilities-useradiogroup--read-only-legend utilities-useradiogroup--read-only-description">
+  <legend
+    id="utilities-useradiogroup--read-only-legend"
+    data-weight="medium"
+  >
     Velg din aldersgruppe.
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="utilities-useradiogroup--read-only-description"
+  >
     Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
-  <ds-field>
+  <ds-field data-clickdelegatefor="utilities-useradiogroup--read-only-10-20">
     <input
       id="utilities-useradiogroup--read-only-10-20"
       readonly
@@ -296,11 +305,14 @@ exports[`Read Only 1`] = `
       value="10-20"
       name="my-readonly"
     >
-    <label data-weight="regular">
+    <label
+      data-weight="regular"
+      for="utilities-useradiogroup--read-only-10-20"
+    >
       10-20 år
     </label>
   </ds-field>
-  <ds-field>
+  <ds-field data-clickdelegatefor="utilities-useradiogroup--read-only-21-45">
     <input
       id="utilities-useradiogroup--read-only-21-45"
       readonly
@@ -308,11 +320,14 @@ exports[`Read Only 1`] = `
       value="21-45"
       name="my-readonly"
     >
-    <label data-weight="regular">
+    <label
+      data-weight="regular"
+      for="utilities-useradiogroup--read-only-21-45"
+    >
       21-45 år
     </label>
   </ds-field>
-  <ds-field>
+  <ds-field data-clickdelegatefor="utilities-useradiogroup--read-only-46-80">
     <input
       id="utilities-useradiogroup--read-only-46-80"
       readonly
@@ -320,7 +335,10 @@ exports[`Read Only 1`] = `
       value="46-80"
       name="my-readonly"
     >
-    <label data-weight="regular">
+    <label
+      data-weight="regular"
+      for="utilities-useradiogroup--read-only-46-80"
+    >
       46-80 år
     </label>
   </ds-field>
@@ -334,16 +352,16 @@ exports[`Read Only 1`] = `
 `;
 
 exports[`With Error 1`] = `
-<fieldset aria-labelledby="mmexwmdiwq36 mmexwmdiwq37">
+<fieldset aria-labelledby="utilities-useradiogroup--with-error-legend utilities-useradiogroup--with-error-description">
   <legend
+    id="utilities-useradiogroup--with-error-legend"
     data-weight="medium"
-    id="mmexwmdiwq36"
   >
     Velg din aldersgruppe.
   </legend>
   <p
     data-variant="default"
-    id="mmexwmdiwq37"
+    id="utilities-useradiogroup--with-error-description"
   >
     Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>

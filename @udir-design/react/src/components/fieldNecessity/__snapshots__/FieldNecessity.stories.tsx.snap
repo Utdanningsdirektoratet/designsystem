@@ -8,10 +8,7 @@ exports[`All Optional 1`] = `
   style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
 >
   <ds-field>
-    <label
-      data-weight="medium"
-      for="all-optional-opinion"
-    >
+    <label data-weight="medium">
       <span>
         Hva synes du om skjemaet?
       </span>
@@ -22,10 +19,7 @@ exports[`All Optional 1`] = `
     </div>
   </ds-field>
   <ds-field>
-    <label
-      data-weight="medium"
-      for="all-optional-other"
-    >
+    <label data-weight="medium">
       <span>
         Har du noen andre innspill?
       </span>
@@ -88,10 +82,10 @@ exports[`Fieldset Checkboxes 1`] = `
   data-show-optional="false"
   data-show-summary="false"
 >
-  <fieldset aria-labelledby="mmexwmcyze61 mmexwmcyze62">
+  <fieldset aria-labelledby="components-fieldnecessity--fieldset-checkboxes-legend components-fieldnecessity--fieldset-checkboxes-description">
     <legend
+      id="components-fieldnecessity--fieldset-checkboxes-legend"
       data-weight="medium"
-      id="mmexwmcyze61"
     >
       <span>
         Hvordan vil du helst at vi skal kontakte deg?
@@ -99,7 +93,7 @@ exports[`Fieldset Checkboxes 1`] = `
     </legend>
     <p
       data-variant="default"
-      id="mmexwmcyze62"
+      id="components-fieldnecessity--fieldset-checkboxes-description"
     >
       Velg de alternativene som er relevante for deg.
     </p>
@@ -170,10 +164,10 @@ exports[`Fieldset Radios 1`] = `
   data-show-optional="false"
   data-show-summary="false"
 >
-  <fieldset aria-labelledby="mmexwmcyze63">
+  <fieldset aria-labelledby="components-fieldnecessity--fieldset-radios-legend">
     <legend
+      id="components-fieldnecessity--fieldset-radios-legend"
       data-weight="medium"
-      id="mmexwmcyze63"
     >
       <span>
         Velg din aldersgruppe

@@ -1,10 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Example 1`] = `
-<fieldset aria-labelledby="mmexwq1odtz1">
+<fieldset aria-labelledby="undefinedlegend">
   <legend
+    id="undefinedlegend"
     data-weight="medium"
-    id="mmexwq1odtz1"
   >
     Trenger eleven individuelt tilrettelagt opplæring?
   </legend>

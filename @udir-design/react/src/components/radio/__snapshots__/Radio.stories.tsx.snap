@@ -6,7 +6,7 @@ exports[`Focused 1`] = `
     id="radio-preview"
     type="radio"
     value="value"
-    aria-describedby="mmexwp3d43z5"
+    aria-describedby="mmowk07nsca3"
   >
   <label
     data-weight="regular"
@@ -16,7 +16,7 @@ exports[`Focused 1`] = `
   </label>
   <div
     data-field="description"
-    id="mmexwp3d43z5"
+    id="mmowk07nsca3"
   >
     Description
   </div>
@@ -24,33 +24,45 @@ exports[`Focused 1`] = `
 `;
 
 exports[`Inline 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="undefinedlegend undefineddescription">
+  <legend
+    id="undefinedlegend"
+    data-weight="medium"
+  >
     Kontaktes på e-post?
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="undefineddescription"
+  >
     Bekreft om du ønsker å bli kontaktet per e-post.
   </p>
   <div style="display: flex; flex-wrap: wrap; gap: var(--ds-size-6);">
-    <ds-field>
+    <ds-field data-clickdelegatefor="undefined-inline-ja">
       <input
         id="undefined-inline-ja"
         type="radio"
         value="ja"
         name="my-inline"
       >
-      <label data-weight="regular">
+      <label
+        data-weight="regular"
+        for="undefined-inline-ja"
+      >
         Ja
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="undefined-inline-nei">
       <input
         id="undefined-inline-nei"
         type="radio"
         value="nei"
         name="my-inline"
       >
-      <label data-weight="regular">
+      <label
+        data-weight="regular"
+        for="undefined-inline-nei"
+      >
         Nei
       </label>
     </ds-field>
@@ -64,7 +76,7 @@ exports[`Preview 1`] = `
     id="radio-preview"
     type="radio"
     value="value"
-    aria-describedby="mmexwp3d43z1"
+    aria-describedby="mmowk07nsca1"
   >
   <label
     data-weight="regular"
@@ -74,7 +86,7 @@ exports[`Preview 1`] = `
   </label>
   <div
     data-field="description"
-    id="mmexwp3d43z1"
+    id="mmowk07nsca1"
   >
     Description
   </div>
@@ -91,7 +103,7 @@ exports[`Radio In Color Context 1`] = `
       id="radio-in-color-context"
       type="radio"
       checked
-      aria-describedby="mmexwp3d43z4"
+      aria-describedby="mmowk07nsca2"
     >
     <label
       data-weight="regular"
@@ -101,7 +113,7 @@ exports[`Radio In Color Context 1`] = `
     </label>
     <div
       data-field="description"
-      id="mmexwp3d43z4"
+      id="mmowk07nsca2"
     >
       Description
     </div>

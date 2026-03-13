@@ -1,10 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Legend As Heading 1`] = `
-<fieldset aria-labelledby="mmexwpiw1qq6 mmexwpiw1qq7">
+<fieldset>
   <legend
+    id="components-fieldset--legend-as-heading-legend"
     data-weight="medium"
-    id="mmexwpiw1qq6"
   >
     <h2 data-size="sm">
       Hvilke tjenester bruker du?
@@ -12,49 +12,40 @@ exports[`Legend As Heading 1`] = `
   </legend>
   <p
     data-variant="default"
-    id="mmexwpiw1qq7"
+    id="components-fieldset--legend-as-heading-description"
   >
     Påloggingssystemer hos Udir
   </p>
-  <ds-field data-clickdelegatefor="components-fieldset--legend-as-heading-feide">
+  <ds-field>
     <input
       id="components-fieldset--legend-as-heading-feide"
       type="checkbox"
       value="feide"
       name="components-fieldset--legend-as-heading-feide"
     >
-    <label
-      data-weight="regular"
-      for="components-fieldset--legend-as-heading-feide"
-    >
+    <label data-weight="regular">
       Feide
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="components-fieldset--legend-as-heading-UIDP">
+  <ds-field>
     <input
       id="components-fieldset--legend-as-heading-UIDP"
       type="checkbox"
       value="UIDP"
       name="components-fieldset--legend-as-heading-UIDP"
     >
-    <label
-      data-weight="regular"
-      for="components-fieldset--legend-as-heading-UIDP"
-    >
+    <label data-weight="regular">
       UIDP
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="components-fieldset--legend-as-heading-UBAS">
+  <ds-field>
     <input
       id="components-fieldset--legend-as-heading-UBAS"
       type="checkbox"
       value="UBAS"
       name="components-fieldset--legend-as-heading-UBAS"
     >
-    <label
-      data-weight="regular"
-      for="components-fieldset--legend-as-heading-UBAS"
-    >
+    <label data-weight="regular">
       UBAS
     </label>
   </ds-field>
@@ -63,10 +54,16 @@ exports[`Legend As Heading 1`] = `
 
 exports[`Preview 1`] = `
 <fieldset>
-  <legend data-weight="medium">
+  <legend
+    id="components-fieldset--preview-legend"
+    data-weight="medium"
+  >
     Hvilken fjordarm bor du ved?
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="components-fieldset--preview-description"
+  >
     Valget vil hjelpe oss å forbedre innholdet vi viser deg.
   </p>
   <ds-field>
@@ -106,10 +103,10 @@ exports[`Preview 1`] = `
 `;
 
 exports[`With Checkbox 1`] = `
-<fieldset aria-labelledby="mmexwpiw1qq3">
+<fieldset aria-labelledby="components-fieldset--with-checkbox-legend">
   <legend
+    id="components-fieldset--with-checkbox-legend"
     data-weight="medium"
-    id="mmexwpiw1qq3"
   >
     Godtar du vilkårene?
   </legend>
@@ -129,10 +126,10 @@ exports[`With Checkbox 1`] = `
 `;
 
 exports[`With Textfield 1`] = `
-<fieldset aria-labelledby="mmexwpiw1qq4 mmexwpiw1qq5">
+<fieldset aria-labelledby="components-fieldset--with-textfield-legend components-fieldset--with-textfield-description">
   <legend
+    id="components-fieldset--with-textfield-legend"
     data-weight="medium"
-    id="mmexwpiw1qq4"
   >
     <h2 data-size="sm">
       Adresse
@@ -140,7 +137,7 @@ exports[`With Textfield 1`] = `
   </legend>
   <p
     data-variant="default"
-    id="mmexwpiw1qq5"
+    id="components-fieldset--with-textfield-description"
   >
     Skriv inn adressen din for å motta post fra oss.
   </p>

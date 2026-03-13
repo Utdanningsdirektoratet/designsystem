@@ -2,10 +2,10 @@
 
 exports[`Preview 1`] = `
 <ds-error-summary
-  aria-labelledby="mmexwp4azzy1"
+  aria-labelledby="mmowjxtkcb71"
   tabindex="-1"
 >
-  <h2 id="mmexwp4azzy1">
+  <h2 id="mmowjxtkcb71">
     For å gå videre må du rette opp følgende feil:
   </h2>
   <ul>
@@ -37,9 +37,47 @@ exports[`Preview 1`] = `
 </ds-error-summary>
 `;
 
+exports[`Show Hide 1`] = `
+<button
+  data-variant="primary"
+  type="button"
+>
+  Skjul feilmelding
+</button>
+<ds-error-summary
+  aria-labelledby="mmowjxtkcb75"
+  tabindex="-1"
+>
+  <h2 id="mmowjxtkcb75">
+    For å gå videre må du rette opp følgende feil:
+  </h2>
+  <ul>
+    <li>
+      <a
+        data-color="neutral"
+        href="#fornavn"
+      >
+        Fornavn må være minst 2 tegn
+      </a>
+    </li>
+    <li>
+      <a
+        data-color="neutral"
+        href="#telefon"
+      >
+        Telefonnummer kan kun inneholde siffer
+      </a>
+    </li>
+  </ul>
+</ds-error-summary>
+`;
+
 exports[`With Form 1`] = `
 <ds-field>
-  <label data-weight="medium">
+  <label
+    data-weight="medium"
+    for="fornavn"
+  >
     Fornavn
   </label>
   <div>
@@ -47,14 +85,21 @@ exports[`With Form 1`] = `
       aria-invalid="true"
       id="fornavn"
       type="text"
+      aria-describedby="mmowjxtkcb72"
     >
   </div>
-  <p data-field="validation">
+  <p
+    data-field="validation"
+    id="mmowjxtkcb72"
+  >
     Fornavn må være minst 2 tegn
   </p>
 </ds-field>
 <ds-field>
-  <label data-weight="medium">
+  <label
+    data-weight="medium"
+    for="telefon"
+  >
     Telefon
   </label>
   <div>
@@ -62,17 +107,18 @@ exports[`With Form 1`] = `
       aria-invalid="true"
       id="telefon"
       type="tel"
+      aria-describedby="mmowjxtkcb73"
     >
   </div>
-  <p data-field="validation">
+  <p
+    data-field="validation"
+    id="mmowjxtkcb73"
+  >
     Telefonnummer kan kun inneholde siffer
   </p>
 </ds-field>
-<ds-error-summary
-  aria-labelledby="mmexwp4azzy2"
-  tabindex="-1"
->
-  <h2 id="mmexwp4azzy2">
+<ds-error-summary>
+  <h2>
     For å gå videre må du rette opp følgende feil:
   </h2>
   <ul>

@@ -35,13 +35,13 @@ exports[`Counter 1`] = `
   <textarea
     rows="2"
     id="counter"
-    aria-describedby="mmexwpw60j03"
+    aria-describedby="mmowk0uh42f3"
   >
   </textarea>
   <p
     data-field="counter"
     data-limit="10"
-    id="mmexwpw60j03"
+    id="mmowk0uh42f3"
     data-label="10 tegn igjen"
     data-state="under"
   >
@@ -98,7 +98,7 @@ exports[`Preview 1`] = `
   </label>
   <div
     data-field="description"
-    id="mmexwpw60j02"
+    id="mmowk0uh42f2"
   >
     E-posten din brukes til å logge inn og motta varsler
   </div>
@@ -107,11 +107,11 @@ exports[`Preview 1`] = `
     aria-invalid="true"
     type="text"
     value="ola nordmann@udir.no"
-    aria-describedby="mmexwpw60j01 mmexwpw60j02"
+    aria-describedby="mmowk0uh42f1 mmowk0uh42f2"
   >
   <p
     data-field="validation"
-    id="mmexwpw60j01"
+    id="mmowk0uh42f1"
   >
     Du må oppgi en gyldig e-postadresse
   </p>

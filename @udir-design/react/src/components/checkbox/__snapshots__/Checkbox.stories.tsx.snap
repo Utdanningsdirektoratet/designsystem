@@ -10,7 +10,7 @@ exports[`Checkbox In Color Context 1`] = `
       id="checkbox-in-color-context"
       type="checkbox"
       checked
-      aria-describedby="mmexwnuqdi94"
+      aria-describedby="mmowjzw1hs62"
     >
     <label
       data-weight="regular"
@@ -20,7 +20,7 @@ exports[`Checkbox In Color Context 1`] = `
     </label>
     <div
       data-field="description"
-      id="mmexwnuqdi94"
+      id="mmowjzw1hs62"
     >
       Description
     </div>
@@ -34,7 +34,7 @@ exports[`Focused 1`] = `
     id="checkbox-preview"
     type="checkbox"
     value="value"
-    aria-describedby="mmexwnuqdi95"
+    aria-describedby="mmowjzw1hs63"
   >
   <label
     data-weight="regular"
@@ -44,7 +44,7 @@ exports[`Focused 1`] = `
   </label>
   <div
     data-field="description"
-    id="mmexwnuqdi95"
+    id="mmowjzw1hs63"
   >
     Description
   </div>
@@ -52,20 +52,29 @@ exports[`Focused 1`] = `
 `;
 
 exports[`One Option 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="components-checkbox--one-optionlegend components-checkbox--one-optiondescription">
+  <legend
+    id="components-checkbox--one-optionlegend"
+    data-weight="medium"
+  >
     Bekreft at du er over 18 år
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="components-checkbox--one-optiondescription"
+  >
     For at vi skal kunne sende deg opplysningen du ber om, må du bekrefte at du er myndig.
   </p>
-  <ds-field>
+  <ds-field data-clickdelegatefor="components-checkbox--one-option">
     <input
       id="components-checkbox--one-option"
       type="checkbox"
       value="samtykke"
     >
-    <label data-weight="regular">
+    <label
+      data-weight="regular"
+      for="components-checkbox--one-option"
+    >
       Jeg bekrefter at jeg er over 18 år
     </label>
   </ds-field>
@@ -78,7 +87,7 @@ exports[`Preview 1`] = `
     id="checkbox-preview"
     type="checkbox"
     value="value"
-    aria-describedby="mmexwnuqdi91"
+    aria-describedby="mmowjzw1hs61"
   >
   <label
     data-weight="regular"
@@ -88,7 +97,7 @@ exports[`Preview 1`] = `
   </label>
   <div
     data-field="description"
-    id="mmexwnuqdi91"
+    id="mmowjzw1hs61"
   >
     Description
   </div>

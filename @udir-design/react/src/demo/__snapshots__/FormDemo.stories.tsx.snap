@@ -795,12 +795,18 @@ exports[`Form Page 3 1`] = `
         tabindex="0"
         aria-invalid="false"
       >
-        <label data-weight="medium">
+        <label
+          data-weight="medium"
+          for="dokumentasjon-dropzone"
+        >
           <span>
             Last opp dokumentasjon
           </span>
         </label>
-        <div data-field="description">
+        <div
+          data-field="description"
+          id="mmowjxjm9np7"
+        >
           Du kan laste opp filer i PDF-format. Filer kan være opptil 25 MB.
         </div>
         <div data-variant="default">
@@ -838,21 +844,29 @@ exports[`Form Page 3 1`] = `
           required
           id="dokumentasjon-dropzone"
           type="file"
+          aria-describedby="mmowjxjm9np7"
           style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
         >
       </ds-field>
       <ds-field>
-        <label data-weight="medium">
+        <label
+          data-weight="medium"
+          for="addition"
+        >
           <span>
             Kommentarer til dokumentasjon
           </span>
         </label>
-        <div data-field="description">
+        <div
+          data-field="description"
+          id="mmowjxjm9np8"
+        >
           Ytterlige kommentarer til dokumentasjonen du har lastet opp.
         </div>
         <textarea
           id="addition"
           name="addition"
+          aria-describedby="mmowjxjm9np8"
         >
         </textarea>
       </ds-field>
@@ -1020,6 +1034,7 @@ exports[`Form Page 4 1`] = `
       command="show-modal"
       data-color="neutral"
       commandfor="_r_l_"
+      aria-haspopup="dialog"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

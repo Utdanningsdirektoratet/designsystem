@@ -37,7 +37,10 @@ exports[`Composed 1`] = `
   </div>
   <div>
     <ds-field>
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="components-card--composed-role"
+      >
         Velg rolle
       </label>
       <select id="components-card--composed-role">
@@ -53,7 +56,10 @@ exports[`Composed 1`] = `
       </select>
     </ds-field>
     <ds-field>
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="components-card--composed-nationality-number"
+      >
         Fødselsnummer
       </label>
       <div>
@@ -64,7 +70,10 @@ exports[`Composed 1`] = `
       </div>
     </ds-field>
     <ds-field>
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="components-card--composed-last-name"
+      >
         Etternavn
       </label>
       <div>

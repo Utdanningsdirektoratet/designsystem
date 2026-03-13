@@ -2,7 +2,10 @@
 
 exports[`Affix 1`] = `
 <ds-field>
-  <label data-weight="medium">
+  <label
+    data-weight="medium"
+    for="textfield-affix"
+  >
     Hvor mange kroner koster det per måned?
   </label>
   <div>
@@ -60,13 +63,13 @@ exports[`Counter 1`] = `
       id="textfield-counter"
       inputmode="numeric"
       type="text"
-      aria-describedby="mmexwm7yv5w1"
+      aria-describedby="mmowjup50411"
     >
   </div>
   <p
     data-field="counter"
     data-limit="10"
-    id="mmexwm7yv5w1"
+    id="mmowjup50411"
     data-label="10 tegn igjen"
     data-state="under"
   >
