@@ -14,7 +14,7 @@ import './fileUpload.css';
  * From digdir web components:
  * "Custom element is used to performantly keep track of fields on the page"
  */
-export type DSFieldElement = HTMLDivElement & {
+export type DSFieldElement = HTMLElement & {
   connectedCallback(): void;
   disconnectedCallback(): void;
 };
