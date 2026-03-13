@@ -10,12 +10,21 @@ import { Label } from '../typography/label/Label';
 import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
 import './fileUpload.css';
 
+/**
+ * From digdir web components:
+ * "Custom element is used to performantly keep track of fields on the page"
+ */
+export type DSFieldElement = HTMLElement & {
+  connectedCallback(): void;
+  disconnectedCallback(): void;
+};
+
 type InputProps_ = Omit<
   InputProps,
   'prefix' | 'className' | 'style' | 'data-color' | 'type' | 'data-size'
 >;
 
-export type FileUploadProps = HTMLAttributes<HTMLDivElement> & {
+export type FileUploadProps = HTMLAttributes<DSFieldElement> & {
   /**
    * Changes size for descendant Designsystemet components.
    * Select from predefined sizes.
@@ -39,7 +48,7 @@ export type FileUploadProps = HTMLAttributes<HTMLDivElement> & {
   inputProps?: InputProps_;
 };
 
-export const FileUploadTrigger = forwardRef<HTMLDivElement, FileUploadProps>(
+export const FileUploadTrigger = forwardRef<DSFieldElement, FileUploadProps>(
   function FileUploadTrigger(
     {
       className,

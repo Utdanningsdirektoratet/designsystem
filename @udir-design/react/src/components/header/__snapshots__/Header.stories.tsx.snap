@@ -132,6 +132,7 @@ exports[`Auto Hide Sticky 1`] = `
         <div
           id="uds-header-menu"
           popover="auto"
+          data-placement="bottom-end"
           data-variant="default"
         >
           <nav aria-labelledby="header-menu-navigation">
@@ -603,9 +604,10 @@ exports[`Auto Hide Sticky Test 1`] = `
         <div
           id="uds-header-menu"
           popover="auto"
+          data-placement="bottom-end"
           data-variant="default"
-          data-placement="bottom"
-          style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+          data-floating="bottom-end"
+          style="--_ds-floating-arrow-x: 1113px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
         >
           <nav aria-labelledby="header-menu-navigation">
             <h2 id="header-menu-navigation">
@@ -1033,6 +1035,7 @@ exports[`Long Application Name 1`] = `
         <div
           id="uds-header-menu"
           popover="auto"
+          data-placement="bottom-end"
           data-variant="default"
         >
         </div>
@@ -1208,6 +1211,7 @@ exports[`Responsive 1`] = `
         <div
           id="usermenu2"
           popover="manual"
+          data-placement="bottom-end"
           data-variant="default"
         >
           <ul>
@@ -1326,6 +1330,7 @@ exports[`Responsive 1`] = `
         <div
           id="uds-header-menu"
           popover="auto"
+          data-placement="bottom-end"
           data-variant="default"
         >
           <button
@@ -1398,6 +1403,7 @@ exports[`Responsive 1`] = `
           <div
             id="usermenuInMenu"
             popover="manual"
+            data-placement="bottom-end"
             data-variant="default"
           >
             <ul>
@@ -1860,6 +1866,7 @@ exports[`Udir No 1`] = `
         <div
           id="uds-header-menu"
           popover="auto"
+          data-placement="bottom-end"
           data-variant="default"
         >
           <div
@@ -2802,6 +2809,7 @@ exports[`With Language Picker 1`] = `
         <div
           id="language-picker"
           popover="manual"
+          data-placement="bottom-end"
           data-variant="default"
         >
           <ul>
@@ -2935,6 +2943,7 @@ exports[`With Menu 1`] = `
         <div
           id="uds-header-menu"
           popover="auto"
+          data-placement="bottom-end"
           data-variant="default"
         >
           <nav aria-labelledby="header-menu-navigation">
@@ -3285,6 +3294,7 @@ exports[`With Navigation Links 1`] = `
         <div
           id="uds-header-menu"
           popover="auto"
+          data-placement="bottom-end"
           data-variant="default"
         >
           <nav aria-label="Menynavigasjon">
@@ -3470,6 +3480,7 @@ exports[`With Navigation Links And Menu 1`] = `
         <div
           id="uds-header-menu"
           popover="auto"
+          data-placement="bottom-end"
           data-variant="default"
         >
           <nav aria-labelledby="header-menu-navigation">
@@ -3949,6 +3960,7 @@ exports[`With Theme Menus 1`] = `
         <div
           id="header-education-menu"
           popover="auto"
+          data-placement="bottom-end"
           data-variant="default"
         >
           <nav aria-labelledby="header-menu-theme1-navigation">
@@ -4244,6 +4256,7 @@ exports[`With Theme Menus 1`] = `
         <div
           id="header-learning-menu"
           popover="auto"
+          data-placement="bottom-end"
           data-variant="default"
         >
           <nav aria-labelledby="header-menu-theme2-navigation">
@@ -4464,6 +4477,7 @@ exports[`With Theme Menus 1`] = `
         <div
           id="header-mobile-menu"
           popover="auto"
+          data-placement="bottom-end"
           data-variant="default"
         >
           <nav aria-labelledby="header-menu-navigation">
@@ -5035,6 +5049,7 @@ exports[`With User Button 1`] = `
         <div
           id="usermenu"
           popover="manual"
+          data-placement="bottom-end"
           data-variant="default"
         >
           <ul>
@@ -5130,6 +5145,7 @@ exports[`With User Button 1`] = `
         <div
           id="usermenuSmall"
           popover="manual"
+          data-placement="bottom-end"
           data-variant="default"
         >
           <ul>
@@ -5321,9 +5337,10 @@ exports[`With User Button Test 1`] = `
         <div
           id="usermenu"
           popover="manual"
+          data-placement="bottom-end"
           data-variant="default"
-          data-placement="bottom"
-          style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+          data-floating="bottom-end"
+          style="--_ds-floating-arrow-x: 143px; --_ds-floating-arrow-y: -40px; translate: <removed>;"
         >
           <ul>
             <li>
@@ -5418,6 +5435,7 @@ exports[`With User Button Test 1`] = `
         <div
           id="usermenuSmall"
           popover="manual"
+          data-placement="bottom-end"
           data-variant="default"
         >
           <ul>

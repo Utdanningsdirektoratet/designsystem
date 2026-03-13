@@ -2,118 +2,115 @@
 
 exports[`Legend As Heading 1`] = `
 <fieldset>
-  <legend data-weight="medium">
+  <legend
+    id="components-fieldset--legend-as-heading-legend"
+    data-weight="medium"
+  >
     <h2 data-size="sm">
       Hvilke tjenester bruker du?
     </h2>
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="components-fieldset--legend-as-heading-description"
+  >
     Påloggingssystemer hos Udir
   </p>
-  <div>
+  <ds-field>
     <input
       id="components-fieldset--legend-as-heading-feide"
       type="checkbox"
       value="feide"
       name="components-fieldset--legend-as-heading-feide"
     >
-    <label
-      data-weight="regular"
-      for="components-fieldset--legend-as-heading-feide"
-    >
+    <label data-weight="regular">
       Feide
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field>
     <input
       id="components-fieldset--legend-as-heading-UIDP"
       type="checkbox"
       value="UIDP"
       name="components-fieldset--legend-as-heading-UIDP"
     >
-    <label
-      data-weight="regular"
-      for="components-fieldset--legend-as-heading-UIDP"
-    >
+    <label data-weight="regular">
       UIDP
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field>
     <input
       id="components-fieldset--legend-as-heading-UBAS"
       type="checkbox"
       value="UBAS"
       name="components-fieldset--legend-as-heading-UBAS"
     >
-    <label
-      data-weight="regular"
-      for="components-fieldset--legend-as-heading-UBAS"
-    >
+    <label data-weight="regular">
       UBAS
     </label>
-  </div>
+  </ds-field>
 </fieldset>
 `;
 
 exports[`Preview 1`] = `
 <fieldset>
-  <legend data-weight="medium">
+  <legend
+    id="components-fieldset--preview-legend"
+    data-weight="medium"
+  >
     Hvilken fjordarm bor du ved?
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="components-fieldset--preview-description"
+  >
     Valget vil hjelpe oss å forbedre innholdet vi viser deg.
   </p>
-  <div>
+  <ds-field>
     <input
       id="components-fieldset--preview-radio-barsnesfjorden"
       type="radio"
       value="barsnesfjorden"
       name="radio"
     >
-    <label
-      data-weight="regular"
-      for="components-fieldset--preview-radio-barsnesfjorden"
-    >
+    <label data-weight="regular">
       Barsnesfjorden
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field>
     <input
       id="components-fieldset--preview-radio-eidsfjorden"
       type="radio"
       value="eidsfjorden"
       name="radio"
     >
-    <label
-      data-weight="regular"
-      for="components-fieldset--preview-radio-eidsfjorden"
-    >
+    <label data-weight="regular">
       Eidsfjorden
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field>
     <input
       id="components-fieldset--preview-radio-ingen-av-de"
       type="radio"
       value="ingen-av-de"
       name="radio"
     >
-    <label
-      data-weight="regular"
-      for="components-fieldset--preview-radio-ingen-av-de"
-    >
+    <label data-weight="regular">
       Ingen av de
     </label>
-  </div>
+  </ds-field>
 </fieldset>
 `;
 
 exports[`With Checkbox 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="components-fieldset--with-checkbox-legend">
+  <legend
+    id="components-fieldset--with-checkbox-legend"
+    data-weight="medium"
+  >
     Godtar du vilkårene?
   </legend>
-  <div>
+  <ds-field data-clickdelegatefor="components-fieldset--with-checkbox-checkbox">
     <input
       id="components-fieldset--with-checkbox-checkbox"
       type="checkbox"
@@ -124,21 +121,27 @@ exports[`With Checkbox 1`] = `
     >
       Ja, jeg godtar
     </label>
-  </div>
+  </ds-field>
 </fieldset>
 `;
 
 exports[`With Textfield 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="components-fieldset--with-textfield-legend components-fieldset--with-textfield-description">
+  <legend
+    id="components-fieldset--with-textfield-legend"
+    data-weight="medium"
+  >
     <h2 data-size="sm">
       Adresse
     </h2>
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="components-fieldset--with-textfield-description"
+  >
     Skriv inn adressen din for å motta post fra oss.
   </p>
-  <div>
+  <ds-field>
     <label
       data-weight="medium"
       for="components-fieldset--with-textfield-textfield"
@@ -152,8 +155,8 @@ exports[`With Textfield 1`] = `
         name="components-fieldset--with-textfield-textfield"
       >
     </div>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field>
     <label
       data-weight="medium"
       for="components-fieldset--with-textfield-textfield"
@@ -170,8 +173,8 @@ exports[`With Textfield 1`] = `
         name="components-fieldset--with-textfield-textfield"
       >
     </div>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field>
     <label
       data-weight="medium"
       for="components-fieldset--with-textfield-textfield2"
@@ -186,6 +189,6 @@ exports[`With Textfield 1`] = `
         name="components-fieldset--with-textfield-textfield2"
       >
     </div>
-  </div>
+  </ds-field>
 </fieldset>
 `;
