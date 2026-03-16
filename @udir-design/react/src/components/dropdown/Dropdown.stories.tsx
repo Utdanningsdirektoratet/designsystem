@@ -203,14 +203,8 @@ export const Selected = meta.story({
 });
 
 export const Controlled = meta.story({
-    parameters: {
-    docs: {
-      source: {
-        // Ensure we show the actual code, and not the initially rendered output
-        type: 'code',
-        transform: formatReactSource,
-      },
-    },
+  parameters: {
+    docs: { source: { type: 'code', transform: formatReactSource } },
   },
   render: function Render(args) {
     const [open, setOpen] = useState(false);
