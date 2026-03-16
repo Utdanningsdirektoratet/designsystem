@@ -37,6 +37,12 @@ export type FileUploadProps = HTMLAttributes<HTMLDivElement> & {
    * Props for the input field
    */
   inputProps?: InputProps_;
+  /**
+   *  Specify which variant of
+   *  the button to use
+   *  @default 'secondary'
+   */
+  variant?: 'primary' | 'secondary';
 };
 
 export const FileUploadTrigger = forwardRef<HTMLDivElement, FileUploadProps>(
@@ -47,6 +53,7 @@ export const FileUploadTrigger = forwardRef<HTMLDivElement, FileUploadProps>(
       label,
       error,
       description,
+      variant = 'secondary',
       inputProps,
       ...rest
     },
@@ -78,7 +85,7 @@ export const FileUploadTrigger = forwardRef<HTMLDivElement, FileUploadProps>(
         {!!description && <Field.Description>{description}</Field.Description>}
         <Button
           disabled={inputProps?.readOnly ?? inputProps?.disabled}
-          variant="secondary"
+          variant={variant}
           onClick={() => {
             fileInputRef.current?.click();
           }}
