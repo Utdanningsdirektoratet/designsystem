@@ -23,7 +23,7 @@ import { FormNavigation } from '.';
 
 const meta = preview.meta({
   component: FormNavigation,
-  tags: ['alpha'],
+  tags: ['beta', 'udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',

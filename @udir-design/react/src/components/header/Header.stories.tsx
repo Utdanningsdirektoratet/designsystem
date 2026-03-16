@@ -20,7 +20,7 @@ import { Header } from '.';
 
 const meta = preview.meta({
   component: Header,
-  tags: ['alpha'],
+  tags: ['beta', 'udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',
