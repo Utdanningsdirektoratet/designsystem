@@ -130,8 +130,11 @@ export const Affix = meta.story({
 
 export const Counter = meta.story({
   args: {
-    counter: 10,
-    label: 'Hvor mange kroner koster det per måned?',
+    counter: {
+      limit: 11,
+      over: 'Fødselsnummer må være 11 siffer',
+    },
+    label: 'Fødselsnummer',
     id: 'textfield-counter',
     inputMode: 'numeric',
   },
