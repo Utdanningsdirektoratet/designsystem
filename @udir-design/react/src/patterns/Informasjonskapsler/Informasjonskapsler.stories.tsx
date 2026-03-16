@@ -42,8 +42,11 @@ export const Preview = meta.story({
             }
             @media (max-width: 40rem) {
               .cookies-buttons > button {
-          flex: 1 1 auto;
+            flex: 1 1 auto;
               }
+            }
+            .link {
+              white-space: nowrap;
             }
           `}
         </style>
@@ -60,7 +63,7 @@ export const Preview = meta.story({
               og er sikkert, og kan ikke velges bort. Andre brukes til
               statistikk, analyse, og å forbedre brukeropplevelsen. Godkjenner
               du alle, hjelper du oss å lage bedre nettsider og tjenester.{' '}
-              <Link href="#">Om informasjonskapslene.</Link>
+              <Link className='link' href="#">Om informasjonskapslene.</Link>
             </Paragraph>
             <Paragraph>
               Du kan når som helst endre samtykket ditt via lenken i bunnmenyen.
