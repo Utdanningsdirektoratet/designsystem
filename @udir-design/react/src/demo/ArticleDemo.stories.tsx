@@ -3,6 +3,7 @@ import { SkipLink } from '@digdir/designsystemet-react';
 import type { HTMLAttributes } from 'react';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
+import { DemoBanner } from 'src/components/demoBanner/DemoBanner';
 import { ArticleDemo as ArticleDemoPage } from '../../demo-pages/article-demo/ArticleDemo';
 import { FooterDemo } from './components/footer';
 import { HeaderDemo } from './components/header';
@@ -13,9 +14,11 @@ type ArticleDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
 const ArticleDemo = (props: ArticleDemoProps) => (
   <div {...props} data-size="auto">
     <SkipLink href="#main-content">Hopp til hovedinnholdet</SkipLink>
-    <HeaderDemo applicationName="Artikkeldemo" />
-    <ArticleDemoPage />
-    <FooterDemo />
+    <DemoBanner>
+      <HeaderDemo applicationName="Artikkeldemo" />
+      <ArticleDemoPage />
+      <FooterDemo />
+    </DemoBanner>
   </div>
 );
 
