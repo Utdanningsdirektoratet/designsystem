@@ -118,6 +118,9 @@ export const Counter = meta.story({
       await waitFor(() => expect(label).toHaveAttribute('for', textarea.id));
     });
   },
+  parameters: {
+    docs: advancedCodeDocs,
+  },
 });
 
 export const Format = meta.story({
@@ -202,4 +205,7 @@ export const Position = meta.story({
       </div>
     ),
   ],
+  parameters: {
+    docs: advancedCodeDocs,
+  },
 });

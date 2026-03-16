@@ -132,6 +132,7 @@ export const DottedUnderline = meta.story({
         height: 320,
       },
     },
+    docs: advancedCodeDocs,
   },
   render: (args) => (
     <Popover.TriggerContext>
@@ -176,6 +177,7 @@ export const DottedUnderline = meta.story({
 
     await userEvent.click(button);
   },
+  // transforming..
 });
 
 const ColorVariantsMap: {

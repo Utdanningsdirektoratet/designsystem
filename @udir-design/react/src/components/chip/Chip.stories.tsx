@@ -2,6 +2,7 @@ import type { FunctionComponent } from 'react';
 import { useState } from 'react';
 import { expect, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Search } from 'src/components/search';
 import { Paragraph } from 'src/components/typography/paragraph';
 import type {
@@ -147,6 +148,9 @@ export const Checkbox = meta.story({
       expect(inputs[0]).not.toBeChecked();
     });
   },
+  parameters: {
+    docs: advancedCodeDocs,
+  },
 });
 
 export const Radio = meta.story({
@@ -171,6 +175,9 @@ export const Radio = meta.story({
         </div>
       </div>
     );
+  },
+  parameters: {
+    docs: advancedCodeDocs,
   },
 });
 
@@ -215,6 +222,9 @@ export const Removable = meta.story({
         expect(newButtons).toHaveLength(buttons.length - 1);
       });
     });
+  },
+  parameters: {
+    docs: advancedCodeDocs,
   },
 });
 
@@ -273,5 +283,8 @@ export const Button = meta.story({
         expect(input.value).toBe('Skole');
       });
     });
+  },
+  parameters: {
+    docs: advancedCodeDocs,
   },
 });

@@ -7,6 +7,7 @@ import z from 'zod';
 import { BulletListIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from 'src/components/button';
 import { Dialog } from 'src/components/dialog';
 import { Textfield } from 'src/components/textfield';
@@ -535,6 +536,9 @@ export const SimpleNavigation = meta.story({
       </FormProvider>
     );
   },
+  parameters: {
+    docs: advancedCodeDocs,
+  },
 });
 
 const Schema = z.object({
@@ -580,7 +584,9 @@ const heading = (stepId: StepId) => {
 };
 
 export const Full = meta.story({
-  parameters: { docs: { source: { type: 'code' } } },
+  parameters: {
+    docs: advancedCodeDocs,
+  },
   args: { className: classes.navigation },
   render(args) {
     const onStepChange = async (_nextId: StepId, prevId: StepId | null) => {
