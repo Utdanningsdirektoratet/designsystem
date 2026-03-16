@@ -1,0 +1,6 @@
+.ds-pagination {
+  button[aria-current='true'],
+  a[aria-current='true'] {
+    color: var(--ds-color-base-contrast-default);
+  }
+}
