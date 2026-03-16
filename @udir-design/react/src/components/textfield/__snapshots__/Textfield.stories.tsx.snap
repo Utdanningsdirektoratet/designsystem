@@ -56,7 +56,7 @@ exports[`Counter 1`] = `
     data-weight="medium"
     for="textfield-counter"
   >
-    Hvor mange kroner koster det per måned?
+    Fødselsnummer
   </label>
   <div>
     <input
@@ -72,14 +72,14 @@ exports[`Counter 1`] = `
     data-variant="default"
     aria-hidden="true"
   >
-    10 tegn igjen
+    11 tegn igjen
   </p>
   <div
     aria-hidden="true"
     data-field="description"
     id="textfield-counter:description:1"
   >
-    Maks 10 tegn tillatt.
+    Maks 11 tegn tillatt.
   </div>
 </div>
 `;
