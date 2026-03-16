@@ -13,6 +13,7 @@ import {
   TrashFillIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
+import { formatReactSource } from '.storybook/utils/sourceTransformers';
 import { Avatar } from '../avatar/Avatar';
 import { Badge } from '../badge/Badge';
 import { Button } from '../button/Button';
@@ -202,6 +203,15 @@ export const Selected = meta.story({
 });
 
 export const Controlled = meta.story({
+    parameters: {
+    docs: {
+      source: {
+        // Ensure we show the actual code, and not the initially rendered output
+        type: 'code',
+        transform: formatReactSource,
+      },
+    },
+  },
   render: function Render(args) {
     const [open, setOpen] = useState(false);
 

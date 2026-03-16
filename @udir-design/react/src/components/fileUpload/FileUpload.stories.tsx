@@ -4,6 +4,7 @@ import type { FileRejection, FileWithPath } from 'react-dropzone';
 import { useDropzone } from 'react-dropzone';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { formatReactSource } from '.storybook/utils/sourceTransformers';
 import { Heading } from '../typography/heading/Heading';
 import { FileUpload } from './index';
 
@@ -11,6 +12,7 @@ const meta = preview.meta({
   component: FileUpload.Trigger,
   tags: ['alpha', 'udir'],
   parameters: {
+    docs: { source: { type: 'code', transform: formatReactSource } },
     componentOrigin: {
       originator: 'self',
       details: 'Deler av implementasjonen er inspirert av Navs designsystem.',

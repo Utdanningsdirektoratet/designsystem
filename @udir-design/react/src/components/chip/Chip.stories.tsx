@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { expect, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { formatReactSource } from '.storybook/utils/sourceTransformers';
 import { Search } from '../search/Search';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Chip } from './Chip';
@@ -112,6 +113,9 @@ export const Checkbox = meta.story({
       expect(inputs[0]).not.toBeChecked();
     });
   },
+  parameters: {
+    docs: { source: { type: 'code', transform: formatReactSource } },
+  },
 });
 
 export const Radio = meta.story({
@@ -136,6 +140,9 @@ export const Radio = meta.story({
         </div>
       </div>
     );
+  },
+  parameters: {
+    docs: { source: { type: 'code', transform: formatReactSource } },
   },
 });
 
@@ -179,6 +186,9 @@ export const Removable = meta.story({
         expect(newButtons).toHaveLength(buttons.length - 1);
       });
     });
+  },
+  parameters: {
+    docs: { source: { type: 'code', transform: formatReactSource } },
   },
 });
 
@@ -237,5 +247,8 @@ export const Button = meta.story({
         expect(input.value).toBe('Skole');
       });
     });
+  },
+  parameters: {
+    docs: { source: { type: 'code', transform: formatReactSource } },
   },
 });

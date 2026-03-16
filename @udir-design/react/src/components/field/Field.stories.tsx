@@ -1,5 +1,6 @@
 import { expect, waitFor } from 'storybook/test';
 import preview from '.storybook/preview';
+import { formatReactSource } from '.storybook/utils/sourceTransformers';
 import { Input } from '../input/Input';
 import { Textarea } from '../textarea/Textarea';
 import { Label } from '../typography/label/Label';
@@ -98,6 +99,9 @@ export const Counter = meta.story({
       await waitFor(() => expect(label).toHaveAttribute('for', textarea.id));
     });
   },
+  parameters: {
+    docs: { source: { type: 'code', transform: formatReactSource } },
+  },
 });
 
 export const Position = meta.story({
@@ -145,4 +149,7 @@ export const Position = meta.story({
       </div>
     ),
   ],
+  parameters: {
+    docs: { source: { type: 'code', transform: formatReactSource } },
+  },
 });

@@ -75,7 +75,7 @@ const ageGroups = [
   { value: '46-80', label: '46-80 år' },
 ];
 
-export const Default = meta.story({
+export const Preview = meta.story({
   args: {
     name: 'my-group',
     readOnly: false,
