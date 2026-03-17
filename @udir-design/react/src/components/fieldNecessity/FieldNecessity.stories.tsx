@@ -1,4 +1,5 @@
 import type { StoryContext } from '@storybook/react-vite';
+import { expect, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
 import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
@@ -135,6 +136,18 @@ export const AllRequired = meta.story({
       />
     </FieldNecessity>
   ),
+  play: async ({ canvasElement, step }) => {
+    const summaryTag = canvasElement.querySelector('.uds-field-necessity');
+    if (!summaryTag) throw new Error('Could not find .uds-field-necessity');
+
+    await step('The tag is visible, displaying the correct text', async () => {
+      const pseudoContent = window.getComputedStyle(
+        summaryTag,
+        '::before',
+      ).content;
+      expect(pseudoContent).toContain('Alle felt må fylles ut');
+    });
+  },
 });
 
 export const AllOptional = meta.story({
@@ -159,6 +172,18 @@ export const AllOptional = meta.story({
       />
     </FieldNecessity>
   ),
+  play: async ({ canvasElement, step }) => {
+    const summaryTag = canvasElement.querySelector('.uds-field-necessity');
+    if (!summaryTag) throw new Error('Could not find .uds-field-necessity');
+
+    await step('The tag is visible, displaying the correct text', async () => {
+      const pseudoContent = window.getComputedStyle(
+        summaryTag,
+        '::before',
+      ).content;
+      expect(pseudoContent).toContain('Alle felt er valgfri');
+    });
+  },
 });
 
 export const SingleOptionalField = meta.story({
@@ -172,6 +197,15 @@ export const SingleOptionalField = meta.story({
       />
     </FieldNecessity>
   ),
+  play: async ({ canvasElement, step }) => {
+    const label = canvasElement.querySelector('label.ds-label');
+    if (!label) throw new Error('Could not find label.ds-label');
+
+    await step('The tag is visible, displaying the correct text', async () => {
+      const pseudoContent = window.getComputedStyle(label, '::after').content;
+      expect(pseudoContent).toContain('Valgfritt');
+    });
+  },
 });
 
 export const SingleRequiredField = meta.story({
@@ -186,6 +220,15 @@ export const SingleRequiredField = meta.story({
       />
     </FieldNecessity>
   ),
+  play: async ({ canvasElement, step }) => {
+    const label = canvasElement.querySelector('label.ds-label');
+    if (!label) throw new Error('Could not find label.ds-label');
+
+    await step('The tag is visible, displaying the correct text', async () => {
+      const pseudoContent = window.getComputedStyle(label, '::after').content;
+      expect(pseudoContent).toContain('Må fylles ut');
+    });
+  },
 });
 
 export const FieldsetCheckboxes = meta.story({
@@ -326,4 +369,24 @@ export const ManualSummaryPlacement = meta.story({
       />
     </FieldNecessity>
   ),
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const paragraph = canvas.getByText(
+      'Vi trenger å vite hvordan vi kan kontakte deg i etterkant av søknaden.',
+    );
+    const summaryTag = canvasElement.querySelector(
+      '.uds-field-necessity-summary',
+    );
+
+    if (!summaryTag)
+      throw new Error('Could not find .uds-field-necessity-summary');
+
+    await step(
+      'The summary tag appears after the paragraph as intended',
+      async () => {
+        const position = paragraph.compareDocumentPosition(summaryTag);
+        expect(position & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+      },
+    );
+  },
 });
