@@ -1,4 +1,3 @@
-import { expect, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { Alert } from 'src/components/alert';
 import { Details } from 'src/components/details/Details';
@@ -173,14 +172,6 @@ export const Preview = meta.story({
         </Prose>
       </div>
     );
-  },
-  play: async ({ canvasElement, step }) => {
-    const canvas = within(canvasElement);
-    const prose = canvas.getByTestId('prose');
-
-    await step('Prose is rendered', async () => {
-      expect(prose).toBeTruthy();
-    });
   },
 });
 

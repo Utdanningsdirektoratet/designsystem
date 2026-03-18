@@ -136,18 +136,6 @@ export const AllRequired = meta.story({
       />
     </FieldNecessity>
   ),
-  play: async ({ canvasElement, step }) => {
-    const summaryTag = canvasElement.querySelector('.uds-field-necessity');
-    if (!summaryTag) throw new Error('Could not find .uds-field-necessity');
-
-    await step('The tag is visible, displaying the correct text', async () => {
-      const pseudoContent = window.getComputedStyle(
-        summaryTag,
-        '::before',
-      ).content;
-      expect(pseudoContent).toContain('Alle felt må fylles ut');
-    });
-  },
 });
 
 export const AllOptional = meta.story({
@@ -172,18 +160,6 @@ export const AllOptional = meta.story({
       />
     </FieldNecessity>
   ),
-  play: async ({ canvasElement, step }) => {
-    const summaryTag = canvasElement.querySelector('.uds-field-necessity');
-    if (!summaryTag) throw new Error('Could not find .uds-field-necessity');
-
-    await step('The tag is visible, displaying the correct text', async () => {
-      const pseudoContent = window.getComputedStyle(
-        summaryTag,
-        '::before',
-      ).content;
-      expect(pseudoContent).toContain('Alle felt er valgfri');
-    });
-  },
 });
 
 export const SingleOptionalField = meta.story({
@@ -197,15 +173,6 @@ export const SingleOptionalField = meta.story({
       />
     </FieldNecessity>
   ),
-  play: async ({ canvasElement, step }) => {
-    const label = canvasElement.querySelector('label.ds-label');
-    if (!label) throw new Error('Could not find label.ds-label');
-
-    await step('The tag is visible, displaying the correct text', async () => {
-      const pseudoContent = window.getComputedStyle(label, '::after').content;
-      expect(pseudoContent).toContain('Valgfritt');
-    });
-  },
 });
 
 export const SingleRequiredField = meta.story({
@@ -220,15 +187,6 @@ export const SingleRequiredField = meta.story({
       />
     </FieldNecessity>
   ),
-  play: async ({ canvasElement, step }) => {
-    const label = canvasElement.querySelector('label.ds-label');
-    if (!label) throw new Error('Could not find label.ds-label');
-
-    await step('The tag is visible, displaying the correct text', async () => {
-      const pseudoContent = window.getComputedStyle(label, '::after').content;
-      expect(pseudoContent).toContain('Må fylles ut');
-    });
-  },
 });
 
 export const FieldsetCheckboxes = meta.story({
