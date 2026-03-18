@@ -1,11 +1,11 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Preview 1`] = `
-<div
+<ds-error-summary
+  aria-labelledby="mmowjxtkcb71"
   tabindex="-1"
-  aria-labelledby="_r_0_"
 >
-  <h2 id="_r_0_">
+  <h2 id="mmowjxtkcb71">
     For å gå videre må du rette opp følgende feil:
   </h2>
   <ul>
@@ -34,7 +34,7 @@ exports[`Preview 1`] = `
       </a>
     </li>
   </ul>
-</div>
+</ds-error-summary>
 `;
 
 exports[`Show Hide 1`] = `
@@ -44,11 +44,11 @@ exports[`Show Hide 1`] = `
 >
   Skjul feilmelding
 </button>
-<div
+<ds-error-summary
+  aria-labelledby="mmowjxtkcb75"
   tabindex="-1"
-  aria-labelledby="_r_2_"
 >
-  <h2 id="_r_2_">
+  <h2 id="mmowjxtkcb75">
     For å gå videre må du rette opp følgende feil:
   </h2>
   <ul>
@@ -69,11 +69,11 @@ exports[`Show Hide 1`] = `
       </a>
     </li>
   </ul>
-</div>
+</ds-error-summary>
 `;
 
 exports[`With Form 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
     for="fornavn"
@@ -85,17 +85,17 @@ exports[`With Form 1`] = `
       aria-invalid="true"
       id="fornavn"
       type="text"
-      aria-describedby="fornavn:validation:1"
+      aria-describedby="mmowjxtkcb72"
     >
   </div>
   <p
     data-field="validation"
-    id="fornavn:validation:1"
+    id="mmowjxtkcb72"
   >
     Fornavn må være minst 2 tegn
   </p>
-</div>
-<div>
+</ds-field>
+<ds-field>
   <label
     data-weight="medium"
     for="telefon"
@@ -107,21 +107,18 @@ exports[`With Form 1`] = `
       aria-invalid="true"
       id="telefon"
       type="tel"
-      aria-describedby="telefon:validation:1"
+      aria-describedby="mmowjxtkcb73"
     >
   </div>
   <p
     data-field="validation"
-    id="telefon:validation:1"
+    id="mmowjxtkcb73"
   >
     Telefonnummer kan kun inneholde siffer
   </p>
-</div>
-<div
-  tabindex="-1"
-  aria-labelledby="_r_1_"
->
-  <h2 id="_r_1_">
+</ds-field>
+<ds-error-summary>
+  <h2>
     For å gå videre må du rette opp følgende feil:
   </h2>
   <ul>
@@ -142,5 +139,5 @@ exports[`With Form 1`] = `
       </a>
     </li>
   </ul>
-</div>
+</ds-error-summary>
 `;

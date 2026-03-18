@@ -12,10 +12,11 @@ exports[`Color Variants 1`] = `
   <div
     id="_r_d_"
     popover="manual"
+    data-placement="top"
     data-variant="default"
     data-color="neutral"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="bottom"
+    style="--_ds-floating-arrow-x: 77px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
   >
     neutralDefault
   </div>
@@ -29,10 +30,11 @@ exports[`Color Variants 1`] = `
   <div
     id="_r_e_"
     popover="manual"
+    data-placement="top"
     data-variant="tinted"
     data-color="neutral"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="bottom"
+    style="--_ds-floating-arrow-x: 74px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
   >
     neutralTinted
   </div>
@@ -46,10 +48,11 @@ exports[`Color Variants 1`] = `
   <div
     id="_r_f_"
     popover="manual"
+    data-placement="top"
     data-variant="default"
     data-color="accent"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="bottom"
+    style="--_ds-floating-arrow-x: 76px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
   >
     accentDefault
   </div>
@@ -63,10 +66,11 @@ exports[`Color Variants 1`] = `
   <div
     id="_r_g_"
     popover="manual"
+    data-placement="top"
     data-variant="tinted"
     data-color="accent"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="bottom"
+    style="--_ds-floating-arrow-x: 72px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
   >
     accentTinted
   </div>
@@ -80,10 +84,11 @@ exports[`Color Variants 1`] = `
   <div
     id="_r_h_"
     popover="manual"
+    data-placement="top"
     data-variant="default"
     data-color="support1"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="--_ds-floating-arrow-x: 84px; --_ds-floating-arrow-y: 89px; translate: <removed>;"
   >
     support1Default
   </div>
@@ -97,10 +102,11 @@ exports[`Color Variants 1`] = `
   <div
     id="_r_i_"
     popover="manual"
+    data-placement="top"
     data-variant="tinted"
     data-color="support1"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="--_ds-floating-arrow-x: 81px; --_ds-floating-arrow-y: 89px; translate: <removed>;"
   >
     support1Tinted
   </div>
@@ -114,10 +120,11 @@ exports[`Color Variants 1`] = `
   <div
     id="_r_j_"
     popover="manual"
+    data-placement="top"
     data-variant="default"
     data-color="support2"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="--_ds-floating-arrow-x: 86px; --_ds-floating-arrow-y: 89px; translate: <removed>;"
   >
     support2Default
   </div>
@@ -131,10 +138,11 @@ exports[`Color Variants 1`] = `
   <div
     id="_r_k_"
     popover="manual"
+    data-placement="top"
     data-variant="tinted"
     data-color="support2"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="--_ds-floating-arrow-x: 82px; --_ds-floating-arrow-y: 89px; translate: <removed>;"
   >
     support2Tinted
   </div>
@@ -168,9 +176,10 @@ exports[`Controlled 1`] = `
 <div
   id="_r_l_"
   popover="manual"
+  data-placement="top"
   data-variant="default"
-  data-placement="bottom"
-  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  data-floating="bottom"
+  style="--_ds-floating-arrow-x: 150px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
 >
   Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
   <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
@@ -196,8 +205,8 @@ exports[`Dotted Underline 1`] = `
 <p data-variant="default">
   I aldersgruppen 1-5 år går 93 prosent av barna i barnehage. I aldersgruppen 3-5 år er andelen 97 prosent. Til sammenligning er
   <button
-    popovertarget="_r_4_"
     data-popover="inline"
+    popovertarget="_r_4_"
   >
     OECD
   </button>
@@ -206,10 +215,11 @@ exports[`Dotted Underline 1`] = `
 <div
   id="_r_4_"
   popover="manual"
+  data-placement="top"
   data-variant="default"
   data-color="neutral"
-  data-placement="bottom"
-  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  data-floating="bottom"
+  style="--_ds-floating-arrow-x: 241px; --_ds-floating-arrow-y: -25px; translate: <removed>;"
 >
   <p data-variant="default">
     <strong>
@@ -248,9 +258,10 @@ exports[`Interactive 1`] = `
 <div
   id="_r_2_"
   popover="manual"
+  data-placement="top"
   data-variant="default"
-  data-placement="bottom"
-  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  data-floating="bottom"
+  style="--_ds-floating-arrow-x: 142px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
 >
   <p data-variant="default">
     Vil du lagre endringene dine?
@@ -301,9 +312,10 @@ exports[`Preview 1`] = `
 <div
   id="_r_0_"
   popover="manual"
+  data-placement="top"
   data-variant="default"
-  data-placement="bottom"
-  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  data-floating="bottom"
+  style="--_ds-floating-arrow-x: 150px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
 >
   Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
   <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
@@ -337,10 +349,11 @@ exports[`Variants 1`] = `
   <div
     id="_r_5_"
     popover="manual"
+    data-placement="top"
     data-variant="default"
     data-color="success"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="bottom"
+    style="--_ds-floating-arrow-x: 83px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
   >
     successDefault
   </div>
@@ -354,10 +367,11 @@ exports[`Variants 1`] = `
   <div
     id="_r_6_"
     popover="manual"
+    data-placement="top"
     data-variant="tinted"
     data-color="success"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="bottom"
+    style="--_ds-floating-arrow-x: 78px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
   >
     successTinted
   </div>
@@ -371,10 +385,11 @@ exports[`Variants 1`] = `
   <div
     id="_r_7_"
     popover="manual"
+    data-placement="top"
     data-variant="default"
     data-color="danger"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="bottom"
+    style="--_ds-floating-arrow-x: 78px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
   >
     dangerDefault
   </div>
@@ -388,10 +403,11 @@ exports[`Variants 1`] = `
   <div
     id="_r_8_"
     popover="manual"
+    data-placement="top"
     data-variant="tinted"
     data-color="danger"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="bottom"
+    style="--_ds-floating-arrow-x: 73px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
   >
     dangerTinted
   </div>
@@ -405,10 +421,11 @@ exports[`Variants 1`] = `
   <div
     id="_r_9_"
     popover="manual"
+    data-placement="top"
     data-variant="default"
     data-color="info"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="--_ds-floating-arrow-x: 63px; --_ds-floating-arrow-y: 89px; translate: <removed>;"
   >
     infoDefault
   </div>
@@ -422,10 +439,11 @@ exports[`Variants 1`] = `
   <div
     id="_r_a_"
     popover="manual"
+    data-placement="top"
     data-variant="tinted"
     data-color="info"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="--_ds-floating-arrow-x: 59px; --_ds-floating-arrow-y: 89px; translate: <removed>;"
   >
     infoTinted
   </div>
@@ -439,10 +457,11 @@ exports[`Variants 1`] = `
   <div
     id="_r_b_"
     popover="manual"
+    data-placement="top"
     data-variant="default"
     data-color="warning"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="--_ds-floating-arrow-x: 82px; --_ds-floating-arrow-y: 89px; translate: <removed>;"
   >
     warningDefault
   </div>
@@ -456,10 +475,11 @@ exports[`Variants 1`] = `
   <div
     id="_r_c_"
     popover="manual"
+    data-placement="top"
     data-variant="tinted"
     data-color="warning"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="--_ds-floating-arrow-x: 78px; --_ds-floating-arrow-y: 89px; translate: <removed>;"
   >
     warningTinted
   </div>
@@ -498,10 +518,11 @@ exports[`Without Context 1`] = `
 <div
   id="my-popover"
   popover="manual"
+  data-placement="top"
   data-variant="default"
   data-color="neutral"
-  data-placement="bottom"
-  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  data-floating="bottom"
+  style="--_ds-floating-arrow-x: 150px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
 >
   <p data-variant="default">
     Er du sikker på at du vil slette raden? Handlingen kan ikke angres.

@@ -1,7 +1,7 @@
 import { Paragraph, Tooltip } from '@digdir/designsystemet-react';
 import type { Size } from '@digdir/designsystemet-react';
 import cl from 'clsx/lite';
-import { forwardRef, useEffect, useRef, useState } from 'react';
+import { forwardRef } from 'react';
 import type { MouseEvent } from 'react';
 import type { HTMLAttributes } from 'react';
 import {
@@ -73,18 +73,6 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
     }: FileUploadItemProps,
     ref,
   ) => {
-    const tooltipRef = useRef<HTMLDivElement>(null);
-    const [tooltipContent, setTooltipContent] = useState('');
-    // Tooltip text from css variable
-    useEffect(() => {
-      if (typeof window === 'undefined' || !tooltipRef.current) return;
-      const content = getComputedStyle(tooltipRef.current)
-        .getPropertyValue('--udsc-fileUpload-removeFile-text')
-        .replace(/^["']|["']$/g, '')
-        .trim();
-      setTooltipContent(content);
-    }, []);
-
     return (
       <Card
         className={cl('uds-file-upload__item', className)}
@@ -106,7 +94,8 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
             </Paragraph>
           </div>
           {!loading && !readonly && (
-            <Tooltip content={tooltipContent} ref={tooltipRef}>
+            <Tooltip content="">
+              {/* Tooltip content in css */}
               <Button
                 icon
                 onClick={(e) => onRemove(file, e)}

@@ -2,9 +2,15 @@
 
 exports[`Form Example 1`] = `
 <div style="display: flex; flex-direction: column; gap: var(--ds-size-6);">
-  <fieldset id="rankings">
+  <fieldset
+    id="rankings"
+    aria-labelledby="components-progressbar--form-example-legend"
+  >
     <div style="display: flex; width: 100%; justify-content: space-between; align-items: flex-end; margin-block-end: var(--ds-size-4);">
-      <legend data-weight="medium">
+      <legend
+        id="components-progressbar--form-example-legend"
+        data-weight="medium"
+      >
         <h4>
           Skjema
         </h4>
@@ -70,7 +76,7 @@ exports[`Form Example 1`] = `
             Første påstand
           </td>
           <td>
-            <div>
+            <ds-field data-clickdelegatefor="rankings.Første påstand-Uenig">
               <input
                 id="rankings.Første påstand-Uenig"
                 aria-label="Uenig i påstand Første påstand"
@@ -78,10 +84,10 @@ exports[`Form Example 1`] = `
                 value="Uenig"
                 name="rankings.Første påstand"
               >
-            </div>
+            </ds-field>
           </td>
           <td>
-            <div>
+            <ds-field data-clickdelegatefor="rankings.Første påstand-Nøytral">
               <input
                 id="rankings.Første påstand-Nøytral"
                 aria-label="Nøytral i påstand Første påstand"
@@ -89,10 +95,10 @@ exports[`Form Example 1`] = `
                 value="Nøytral"
                 name="rankings.Første påstand"
               >
-            </div>
+            </ds-field>
           </td>
           <td>
-            <div>
+            <ds-field data-clickdelegatefor="rankings.Første påstand-Enig">
               <input
                 id="rankings.Første påstand-Enig"
                 aria-label="Enig i påstand Første påstand"
@@ -100,7 +106,7 @@ exports[`Form Example 1`] = `
                 value="Enig"
                 name="rankings.Første påstand"
               >
-            </div>
+            </ds-field>
           </td>
         </tr>
         <tr>
@@ -108,7 +114,7 @@ exports[`Form Example 1`] = `
             Andre påstand
           </td>
           <td>
-            <div>
+            <ds-field data-clickdelegatefor="rankings.Andre påstand-Uenig">
               <input
                 id="rankings.Andre påstand-Uenig"
                 aria-label="Uenig i påstand Andre påstand"
@@ -116,10 +122,10 @@ exports[`Form Example 1`] = `
                 value="Uenig"
                 name="rankings.Andre påstand"
               >
-            </div>
+            </ds-field>
           </td>
           <td>
-            <div>
+            <ds-field data-clickdelegatefor="rankings.Andre påstand-Nøytral">
               <input
                 id="rankings.Andre påstand-Nøytral"
                 aria-label="Nøytral i påstand Andre påstand"
@@ -127,10 +133,10 @@ exports[`Form Example 1`] = `
                 value="Nøytral"
                 name="rankings.Andre påstand"
               >
-            </div>
+            </ds-field>
           </td>
           <td>
-            <div>
+            <ds-field data-clickdelegatefor="rankings.Andre påstand-Enig">
               <input
                 id="rankings.Andre påstand-Enig"
                 aria-label="Enig i påstand Andre påstand"
@@ -138,7 +144,7 @@ exports[`Form Example 1`] = `
                 value="Enig"
                 name="rankings.Andre påstand"
               >
-            </div>
+            </ds-field>
           </td>
         </tr>
         <tr>
@@ -146,7 +152,7 @@ exports[`Form Example 1`] = `
             Tredje påstand
           </td>
           <td>
-            <div>
+            <ds-field data-clickdelegatefor="rankings.Tredje påstand-Uenig">
               <input
                 id="rankings.Tredje påstand-Uenig"
                 aria-label="Uenig i påstand Tredje påstand"
@@ -154,10 +160,10 @@ exports[`Form Example 1`] = `
                 value="Uenig"
                 name="rankings.Tredje påstand"
               >
-            </div>
+            </ds-field>
           </td>
           <td>
-            <div>
+            <ds-field data-clickdelegatefor="rankings.Tredje påstand-Nøytral">
               <input
                 id="rankings.Tredje påstand-Nøytral"
                 aria-label="Nøytral i påstand Tredje påstand"
@@ -165,10 +171,10 @@ exports[`Form Example 1`] = `
                 value="Nøytral"
                 name="rankings.Tredje påstand"
               >
-            </div>
+            </ds-field>
           </td>
           <td>
-            <div>
+            <ds-field data-clickdelegatefor="rankings.Tredje påstand-Enig">
               <input
                 id="rankings.Tredje påstand-Enig"
                 aria-label="Enig i påstand Tredje påstand"
@@ -176,7 +182,7 @@ exports[`Form Example 1`] = `
                 value="Enig"
                 name="rankings.Tredje påstand"
               >
-            </div>
+            </ds-field>
           </td>
         </tr>
       </tbody>

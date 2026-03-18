@@ -1,12 +1,12 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Focused 1`] = `
-<div>
+<ds-field data-clickdelegatefor="radio-preview">
   <input
     id="radio-preview"
     type="radio"
     value="value"
-    aria-describedby="radio-preview:description:1"
+    aria-describedby="mmowk07nsca3"
   >
   <label
     data-weight="regular"
@@ -16,23 +16,29 @@ exports[`Focused 1`] = `
   </label>
   <div
     data-field="description"
-    id="radio-preview:description:1"
+    id="mmowk07nsca3"
   >
     Description
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`Inline 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="undefinedlegend undefineddescription">
+  <legend
+    id="undefinedlegend"
+    data-weight="medium"
+  >
     Kontaktes på e-post?
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="undefineddescription"
+  >
     Bekreft om du ønsker å bli kontaktet per e-post.
   </p>
   <div style="display: flex; flex-wrap: wrap; gap: var(--ds-size-6);">
-    <div>
+    <ds-field data-clickdelegatefor="undefined-inline-ja">
       <input
         id="undefined-inline-ja"
         type="radio"
@@ -45,8 +51,8 @@ exports[`Inline 1`] = `
       >
         Ja
       </label>
-    </div>
-    <div>
+    </ds-field>
+    <ds-field data-clickdelegatefor="undefined-inline-nei">
       <input
         id="undefined-inline-nei"
         type="radio"
@@ -59,18 +65,18 @@ exports[`Inline 1`] = `
       >
         Nei
       </label>
-    </div>
+    </ds-field>
   </div>
 </fieldset>
 `;
 
 exports[`Preview 1`] = `
-<div>
+<ds-field data-clickdelegatefor="radio-preview">
   <input
     id="radio-preview"
     type="radio"
     value="value"
-    aria-describedby="radio-preview:description:1"
+    aria-describedby="mmowk07nsca1"
   >
   <label
     data-weight="regular"
@@ -80,11 +86,11 @@ exports[`Preview 1`] = `
   </label>
   <div
     data-field="description"
-    id="radio-preview:description:1"
+    id="mmowk07nsca1"
   >
     Description
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`Radio In Color Context 1`] = `
@@ -92,12 +98,12 @@ exports[`Radio In Color Context 1`] = `
   data-variant="tinted"
   data-color="accent"
 >
-  <div>
+  <ds-field data-clickdelegatefor="radio-in-color-context">
     <input
       id="radio-in-color-context"
       type="radio"
       checked
-      aria-describedby="radio-in-color-context:description:1"
+      aria-describedby="mmowk07nsca2"
     >
     <label
       data-weight="regular"
@@ -107,10 +113,10 @@ exports[`Radio In Color Context 1`] = `
     </label>
     <div
       data-field="description"
-      id="radio-in-color-context:description:1"
+      id="mmowk07nsca2"
     >
       Description
     </div>
-  </div>
+  </ds-field>
 </div>
 `;

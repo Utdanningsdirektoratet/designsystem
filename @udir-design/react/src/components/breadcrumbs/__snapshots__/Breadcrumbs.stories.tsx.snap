@@ -1,18 +1,18 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Back Only 1`] = `
-<nav aria-label="Du er her:">
+<ds-breadcrumbs>
   <a
     href="#"
     aria-label="Tilbake til Eksamen"
   >
     Eksamen
   </a>
-</nav>
+</ds-breadcrumbs>
 `;
 
 exports[`List Only 1`] = `
-<nav aria-label="Du er her:">
+<ds-breadcrumbs aria-label="Du er her:">
   <ol>
     <li>
       <a href="#">
@@ -30,19 +30,16 @@ exports[`List Only 1`] = `
       </a>
     </li>
     <li>
-      <a
-        href="#"
-        aria-current="page"
-      >
+      <a href="#">
         Kartleggingsprøver
       </a>
     </li>
   </ol>
-</nav>
+</ds-breadcrumbs>
 `;
 
 exports[`Long Items 1`] = `
-<nav aria-label="Du er her:">
+<ds-breadcrumbs>
   <a
     href="#"
     aria-label="Tilbake til helsesertifikat for sjømat"
@@ -76,19 +73,16 @@ exports[`Long Items 1`] = `
       </a>
     </li>
     <li>
-      <a
-        href="#"
-        aria-current="page"
-      >
+      <a href="#">
         Slik søker du om å bli vurdert for videreutdanning
       </a>
     </li>
   </ol>
-</nav>
+</ds-breadcrumbs>
 `;
 
 exports[`Mobile Viewport 1`] = `
-<nav aria-label="Du er her:">
+<ds-breadcrumbs aria-label="Du er her:">
   <a
     href="#"
     aria-label="Tilbake til Utdanningsløpet"
@@ -107,19 +101,16 @@ exports[`Mobile Viewport 1`] = `
       </a>
     </li>
     <li>
-      <a
-        href="#"
-        aria-current="page"
-      >
+      <a href="#">
         Grunnskole
       </a>
     </li>
   </ol>
-</nav>
+</ds-breadcrumbs>
 `;
 
 exports[`Preview 1`] = `
-<nav aria-label="Du er her:">
+<ds-breadcrumbs aria-label="Du er her:">
   <a
     href="#"
     aria-label="Tilbake til Utdanningsløpet"
@@ -138,13 +129,10 @@ exports[`Preview 1`] = `
       </a>
     </li>
     <li>
-      <a
-        href="#"
-        aria-current="page"
-      >
+      <a href="#">
         Grunnskole
       </a>
     </li>
   </ol>
-</nav>
+</ds-breadcrumbs>
 `;

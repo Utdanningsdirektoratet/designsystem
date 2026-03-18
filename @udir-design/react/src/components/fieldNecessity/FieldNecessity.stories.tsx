@@ -202,10 +202,10 @@ export const FieldsetCheckboxes = meta.story({
     return (
       <FieldNecessity {...args}>
         <Fieldset>
-          <Fieldset.Legend>
+          <Fieldset.Legend id={`${context.id}-legend`}>
             <span>Hvordan vil du helst at vi skal kontakte deg?</span>
           </Fieldset.Legend>
-          <Fieldset.Description>
+          <Fieldset.Description id={`${context.id}-description`}>
             Velg de alternativene som er relevante for deg.
           </Fieldset.Description>
           <Checkbox
@@ -249,7 +249,7 @@ export const FieldsetRadios = meta.story({
     return (
       <FieldNecessity {...args}>
         <Fieldset>
-          <Fieldset.Legend>
+          <Fieldset.Legend id={`${context.id}-legend`}>
             <span>Velg din aldersgruppe</span>
           </Fieldset.Legend>
           {ageGroups.map((group) => (

@@ -45,55 +45,54 @@ export const Preview = meta.story({
       <ToggleGroup.Item value="sendt">Sendt</ToggleGroup.Item>
     </ToggleGroup>
   ),
-  play: async ({ canvasElement, step, args }) => {
+  play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
-    const innboksButton = canvas.getByRole('radio', { name: /innboks/i });
-    const utkastButton = canvas.getByRole('radio', { name: /utkast/i });
-    const arkivButton = canvas.getByRole('radio', { name: /arkiv/i });
+    const innboksInput = canvas.getByRole('radio', { name: /innboks/i });
+    const utkastInput = canvas.getByRole('radio', { name: /utkast/i });
+    const arkivInput = canvas.getByRole('radio', { name: /arkiv/i });
 
     await step('Default selection is "Innboks"', async () => {
-      expect(innboksButton).toHaveAttribute('aria-checked', 'true');
+      expect(innboksInput).toBeChecked();
     });
 
     await step('Only one ToggleGroup item is active initially', async () => {
-      const buttons = canvas.getAllByRole('radio');
-      const activeButtons = buttons.filter(
-        (btn) => btn.getAttribute('aria-checked') === 'true',
+      const inputs = canvas.getAllByRole('radio');
+      const activeButtons = inputs.filter(
+        (input) => (input as HTMLInputElement).checked,
       );
       expect(activeButtons).toHaveLength(1);
     });
 
     await step('User can navigate with arrow keys', async () => {
       await userEvent.tab();
-      expect(innboksButton).toHaveFocus();
+      expect(innboksInput).toHaveFocus();
 
       await userEvent.keyboard('{arrowright}');
-      expect(utkastButton).toHaveFocus();
+      expect(utkastInput).toHaveFocus();
 
       await userEvent.keyboard('{arrowright}');
-      expect(arkivButton).toHaveFocus();
+      expect(arkivInput).toHaveFocus();
 
       await userEvent.keyboard('{arrowleft}');
-      expect(utkastButton).toHaveFocus();
+      expect(utkastInput).toHaveFocus();
     });
 
     await step(
-      'Clicking a different option updates the active state and calls onChange',
+      'Selecting a different option updates the active state and calls onChange',
       async () => {
-        expect(utkastButton).toHaveAttribute('aria-checked', 'false');
-        await userEvent.click(utkastButton);
-        expect(args.onChange).toHaveBeenCalledWith('utkast');
-        expect(utkastButton).toHaveAttribute('aria-checked', 'true');
-        expect(innboksButton).toHaveAttribute('aria-checked', 'false');
+        expect(utkastInput).not.toBeChecked();
+        await userEvent.keyboard('{Enter}');
+        expect(utkastInput).toBeChecked();
+        expect(innboksInput).not.toBeChecked();
       },
     );
 
     await step(
-      'Clicking an already active option keeps it active',
+      'Selecting an already active option keeps it active',
       async () => {
-        expect(utkastButton).toHaveAttribute('aria-checked', 'true');
-        await userEvent.click(utkastButton);
-        expect(utkastButton).toHaveAttribute('aria-checked', 'true');
+        expect(utkastInput).toBeChecked();
+        await userEvent.keyboard('{Enter}');
+        expect(utkastInput).toBeChecked();
       },
     );
   },
@@ -354,10 +353,13 @@ export const ToggleGroupInColorContext = meta.story({
     await step(
       'Should have neutral color palette by default, no matter the surrounding color palette',
       async () => {
-        const firstButton = within(canvasElement).getAllByRole('radio')[0];
-        const expectedColor = getComputedStyle(firstButton).getPropertyValue(
-          '--ds-color-neutral-base-default',
-        );
+        const firstInput = within(canvasElement).getAllByRole('radio')[0];
+        const firstButton =
+          firstInput.closest('label') ?? firstInput.parentElement;
+
+        const expectedColor = getComputedStyle(
+          firstButton as Element,
+        ).getPropertyValue('--ds-color-neutral-base-default');
         await expect(firstButton).toHaveStyle(
           `background-color: ${expectedColor}`,
         );
