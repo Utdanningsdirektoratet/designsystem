@@ -120,6 +120,7 @@ export const Counter = meta.story({
   },
   parameters: {
     docs: advancedCodeDocs,
+    // transforming ...
   },
 });
 
