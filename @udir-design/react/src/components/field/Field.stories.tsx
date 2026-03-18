@@ -101,6 +101,7 @@ export const Counter = meta.story({
   },
   parameters: {
     docs: { source: { type: 'code', transform: formatReactSource } },
+    // transforming ...
   },
 });
 
