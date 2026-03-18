@@ -21,6 +21,7 @@ export const FileUploadDropzone = forwardRef<
     label,
     error,
     description,
+    variant = 'secondary',
     inputProps,
     ...rest
   },
@@ -60,7 +61,7 @@ export const FileUploadDropzone = forwardRef<
         {/* Text in css */}
         <div>{/* Text in css */}</div>
         {!inputProps?.readOnly && (
-          <Button variant="secondary" ref={buttonRef}>
+          <Button variant={variant} ref={buttonRef}>
             <UploadIcon aria-hidden />
             {/* Text in css */}
           </Button>
