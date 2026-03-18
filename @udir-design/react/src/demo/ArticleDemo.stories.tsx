@@ -40,6 +40,12 @@ export const ArticleStory = meta.story({
     'data-color-scheme': 'light',
   },
   parameters: {
+    layout: 'fullscreen',
+    customStyles: {
+      height: 'auto',
+      overflow: 'visible',
+      padding: 0,
+    },
     docs: {
       story: {
         inline: false,
