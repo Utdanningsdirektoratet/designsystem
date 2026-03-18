@@ -1,6 +1,6 @@
 import { Pagination, usePagination } from '@digdir/designsystemet-react';
-import { useCallback, useMemo, useState } from 'react';
-import { expect, within } from 'storybook/test';
+import { useMemo, useState } from 'react';
+import { expect, userEvent, within } from 'storybook/test';
 import { ChevronDownIcon, ChevronRightIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
@@ -843,121 +843,13 @@ export const WithBorder = meta.story({
 
 type Node = {
   id: string;
-  label: string; // e.g. "8. trinn", "Fra Oslo"
-  values: React.ReactNode[]; // per-column values (excluding the row header cell)
+  label: string;
+  values: React.ReactNode[];
   children?: Node[];
 };
 
-type TreeTableProps = {
-  columns: string[]; // headers for the non-header columns
-  data: Node[]; // tree data
-};
-
-export function TreeTable({ columns, data, ...args }: TreeTableProps) {
-  const [open, setOpen] = useState<Set<string>>(new Set());
-
-  const toggle = useCallback(
-    (id: string) =>
-      setOpen((prev) => {
-        const next = new Set(prev);
-        next.has(id) ? next.delete(id) : next.add(id);
-        return next;
-      }),
-    [],
-  );
-
-  const rows = useMemo(() => {
-    const renderRows = (node: Node, depth = 0): React.ReactNode => {
-      const isOpen = open.has(node.id);
-      const hasChildren = !!node.children?.length;
-
-      return (
-        <>
-          <Table.Row key={node.id}>
-            <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
-              {hasChildren ? (
-                <button
-                  type="button"
-                  onClick={() => hasChildren && toggle(node.id)}
-                  aria-expanded={hasChildren ? isOpen : undefined}
-                  aria-controls={
-                    hasChildren ? `rowgroup-${node.id}` : undefined
-                  }
-                  style={{
-                    all: 'unset',
-                    cursor: hasChildren ? 'pointer' : 'default',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    paddingLeft: `calc(var(--ds-size-3) * ${depth})`,
-                  }}
-                >
-                  {isOpen ? (
-                    <ChevronDownIcon aria-hidden />
-                  ) : (
-                    <ChevronRightIcon aria-hidden />
-                  )}
-                  {node.label}
-                </button>
-              ) : (
-                <span
-                  style={{ paddingLeft: `calc(var(--ds-size-7) * ${depth})` }}
-                >
-                  {node.label}
-                </span>
-              )}
-            </Table.HeaderCell>
-
-            {node.values.map((v, i) => (
-              <Table.Cell
-                key={`${node.id}-c${i}`}
-                style={{ textAlign: 'right' }}
-              >
-                {v}
-              </Table.Cell>
-            ))}
-          </Table.Row>
-
-          {hasChildren && isOpen && node.children && (
-            <>{node.children.map((child) => renderRows(child, depth + 1))}</>
-          )}
-        </>
-      );
-    };
-
-    return data?.map((node) => renderRows(node)) || [];
-  }, [data, open, toggle]);
-
-  return (
-    <Table data-color="accent" {...args}>
-      <caption
-        style={{
-          fontSize: 'var(--ds-font-size-3)',
-          captionSide: 'bottom',
-          textAlign: 'center',
-          fontWeight: 'normal',
-          marginTop: 'var(--ds-size-2)',
-        }}
-      >
-        Svarprosent for elevundersøkelsen nasjonalt
-      </caption>
-
-      <Table.Head>
-        <Table.Row>
-          <Table.Cell />
-          {columns?.map((c, i) => (
-            <Table.HeaderCell key={i} scope="col">
-              {c}
-            </Table.HeaderCell>
-          ))}
-        </Table.Row>
-      </Table.Head>
-
-      <Table.Body style={{ textAlign: 'right' }}>{rows}</Table.Body>
-    </Table>
-  );
-}
-
+const caption = 'Svarprosent for elevundersøkelsen nasjonalt';
+const rowHeaderLabel = 'Elevgruppe';
 const columns = ['2022–23', '2023–24', '2024–25'];
 
 const data: Node[] = [
@@ -977,11 +869,16 @@ const data: Node[] = [
             values: ['15,1%', '0,7%', '11,0%'],
           },
           {
-            id: '8trinn-oslo-øst',
+            id: '8trinn-oslo-ost',
             label: 'Øst',
             values: ['15,4%', '0,6%', '12,3%'],
           },
         ],
+      },
+      {
+        id: '8trinn-drobak',
+        label: 'Fra Drøbak',
+        values: ['28,5%', '0,9%', '20,3%'],
       },
     ],
   },
@@ -989,6 +886,35 @@ const data: Node[] = [
     id: '9trinn',
     label: '9. trinn',
     values: ['88,7%', '86,3%', '84,9%'],
+    children: [
+      {
+        id: '9trinn-oslo',
+        label: 'Fra Oslo',
+        values: ['31,5%', '1,0%', '24,3%'],
+      },
+      {
+        id: '9trinn-drobak',
+        label: 'Fra Drøbak',
+        values: ['27,5%', '0,8%', '19,3%'],
+      },
+    ],
+  },
+  {
+    id: '10trinn',
+    label: '10. trinn',
+    values: ['89,7%', '87,3%', '85,7%'],
+    children: [
+      {
+        id: '10trinn-oslo',
+        label: 'Fra Oslo',
+        values: ['32,5%', '1,1%', '25,3%'],
+      },
+      {
+        id: '10trinn-drobak',
+        label: 'Fra Drøbak',
+        values: ['29,5%', '0,9%', '21,3%'],
+      },
+    ],
   },
 ];
 
@@ -999,5 +925,207 @@ export const TreeStructuredTable = meta.story({
     tintedRowHeader: true,
     'data-color': 'support1',
   },
-  render: (args) => <TreeTable columns={columns} data={data} {...args} />,
+  render: (args) => {
+    const [open, setOpen] = useState<Set<string>>(new Set());
+
+    const toggle = (id: string) => {
+      setOpen((prev) => {
+        const next = new Set(prev);
+        next.has(id) ? next.delete(id) : next.add(id);
+        return next;
+      });
+    };
+
+    const rows = useMemo(() => {
+      const renderRows = (node: Node, depth = 0): React.ReactNode[] => {
+        const isOpen = open.has(node.id);
+        const children = node.children ?? [];
+        const hasChildren = children.length > 0;
+
+        const labelContent = (
+          <span
+            className="treeStructuredTable-label"
+            style={{ '--tree-depth': depth } as React.CSSProperties}
+          >
+            <span className="treeStructuredTable-icon" aria-hidden="true">
+              {hasChildren ? (
+                isOpen ? (
+                  <ChevronDownIcon />
+                ) : (
+                  <ChevronRightIcon />
+                )
+              ) : null}
+            </span>
+            <span>{node.label}</span>
+          </span>
+        );
+
+        const currentRow = (
+          <Table.Row key={node.id} data-testid={`tree-row-${node.id}`}>
+            <Table.HeaderCell scope="row">
+              {hasChildren ? (
+                <button
+                  type="button"
+                  onClick={() => toggle(node.id)}
+                  aria-expanded={isOpen}
+                  aria-label={
+                    isOpen
+                      ? `Skjul undernivå for ${node.label}`
+                      : `Vis undernivå for ${node.label}`
+                  }
+                  data-testid={`tree-toggle-${node.id}`}
+                  className="treeStructuredTable-button"
+                >
+                  {labelContent}
+                </button>
+              ) : (
+                labelContent
+              )}
+            </Table.HeaderCell>
+
+            {node.values.map((value, index) => (
+              <Table.Cell
+                key={`${node.id}-c${index}`}
+                className="treeStructuredTable-valueCell"
+              >
+                {value}
+              </Table.Cell>
+            ))}
+          </Table.Row>
+        );
+
+        if (!hasChildren || !isOpen) {
+          return [currentRow];
+        }
+
+        return [
+          currentRow,
+          ...children.flatMap((child) => renderRows(child, depth + 1)),
+        ];
+      };
+
+      return data.flatMap((node) => renderRows(node));
+    }, [open]);
+
+    return (
+      <>
+        <style>
+          {`
+            /* Styles defined in application-specific css */
+            .treeStructuredTable-caption {
+              font-size: var(--ds-font-size-3);
+              caption-side: bottom;
+              text-align: center;
+              font-weight: normal;
+              margin-top: var(--ds-size-2);
+            }
+
+            .treeStructuredTable-valueCell {
+              text-align: right;
+            }
+
+            .treeStructuredTable-button {
+              background: none;
+              border: 0;
+              margin: 0;
+              padding: 0;
+              font: inherit;
+              color: inherit;
+              cursor: pointer;
+            }
+
+            .treeStructuredTable-label {
+              display: grid;
+              grid-template-columns: var(--ds-size-5) auto;
+              align-items: center;
+              column-gap: 0.5rem;
+              padding-inline-start: calc(var(--ds-size-3) * var(--tree-depth));
+            }
+
+            .treeStructuredTable-icon {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              width: var(--ds-size-5);
+            }
+          `}
+        </style>
+
+        <Table {...args}>
+          <caption className="treeStructuredTable-caption">{caption}</caption>
+
+          <Table.Head>
+            <Table.Row>
+              <Table.HeaderCell
+                scope="col"
+                className="treeStructuredTable-rowHeader"
+              >
+                {rowHeaderLabel}
+              </Table.HeaderCell>
+
+              {columns.map((column) => (
+                <Table.HeaderCell key={column} scope="col">
+                  {column}
+                </Table.HeaderCell>
+              ))}
+            </Table.Row>
+          </Table.Head>
+
+          <Table.Body>{rows}</Table.Body>
+        </Table>
+      </>
+    );
+  },
+  async play({ canvasElement, step }) {
+    const canvas = within(canvasElement);
+
+    await step(
+      'Expandable rows expose clear button names and collapsed state',
+      async () => {
+        const topLevelToggle = canvas.getByTestId('tree-toggle-8trinn');
+
+        expect(topLevelToggle).toHaveAccessibleName(
+          'Vis undernivå for 8. trinn',
+        );
+        expect(topLevelToggle).toHaveAttribute('aria-expanded', 'false');
+        expect(
+          canvas.queryByTestId('tree-row-8trinn-oslo'),
+        ).not.toBeInTheDocument();
+      },
+    );
+
+    await step('Top-level row can be expanded with keyboard', async () => {
+      await userEvent.tab();
+
+      const topLevelToggle = canvas.getByTestId('tree-toggle-8trinn');
+      expect(topLevelToggle).toHaveFocus();
+
+      await userEvent.keyboard(' ');
+
+      expect(topLevelToggle).toHaveAttribute('aria-expanded', 'true');
+      expect(topLevelToggle).toHaveAccessibleName(
+        'Skjul undernivå for 8. trinn',
+      );
+      expect(canvas.getByTestId('tree-row-8trinn-oslo')).toBeInTheDocument();
+      expect(canvas.getByTestId('tree-row-8trinn-drobak')).toBeInTheDocument();
+    });
+
+    await step('Nested row can be expanded with keyboard', async () => {
+      await userEvent.tab();
+
+      const nestedToggle = canvas.getByTestId('tree-toggle-8trinn-oslo');
+      expect(nestedToggle).toHaveFocus();
+      expect(nestedToggle).toHaveAccessibleName('Vis undernivå for Fra Oslo');
+
+      await userEvent.keyboard('{Enter}');
+
+      expect(nestedToggle).toHaveAttribute('aria-expanded', 'true');
+      expect(
+        canvas.getByTestId('tree-row-8trinn-oslo-sentrum'),
+      ).toBeInTheDocument();
+      expect(
+        canvas.getByTestId('tree-row-8trinn-oslo-ost'),
+      ).toBeInTheDocument();
+    });
+  },
 });
