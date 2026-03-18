@@ -5,6 +5,7 @@ import { ChevronDownUpIcon, ChevronUpDownIcon } from '@udir-design/icons';
 import { Stack } from '.storybook/docs/components';
 import preview from '.storybook/preview';
 import { makeStoryTransformer } from '.storybook/utils/makeStoryTransformer';
+import { formatReactSource } from '.storybook/utils/sourceTransformers';
 import { Button } from '../button/Button';
 import type { CardProps } from '../card/Card';
 import { Card } from '../card/Card';
@@ -307,6 +308,10 @@ export const Controlled = meta.story({
       </>
     );
   },
+  parameters: {
+    docs: { source: { type: 'code', transform: formatReactSource } },
+  },
+  // transforming ...
 });
 
 const makePseudoStatesStory = makeStoryTransformer((originalStory) => ({
