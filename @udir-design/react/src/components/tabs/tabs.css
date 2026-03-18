@@ -1,12 +1,20 @@
 .ds-tabs {
-  --dsc-tabs-tab-color: var(--ds-color-text-default);
+  --dsc-tabs-tab-color: var(--ds-color-text-subtle);
   --dsc-tabs-tab-color--hover: var(--ds-color-text-sublte);
   --dsc-tabs-list-border-color: var(--ds-color-border-subtle);
   --dsc-tabs-tab-color--selected: var(--ds-color-text-default);
 
-  &[data-color='accent'] {
-    --dsc-tabs-tab-color: var(--ds-color-text-subtle);
-    --dsc-tabs-tab-color--hover: var(--ds-color-border-default);
+  :is([role='tablist'], u-tablist) > :is([role='tab'], u-tab) {
+    &[aria-selected='true'] {
+      font-weight: var(--ds-font-weight-semibold);
+
+      &::after {
+        background: var(--ds-color-text-subtle);
+      }
+    }
+    &:hover:not([aria-selected='true']) {
+      background: var(--ds-color-surface-hover);
+    }
   }
 
   :is([role='tablist'], u-tablist) > :is([role='tab'], u-tab) :where(img, svg) {
