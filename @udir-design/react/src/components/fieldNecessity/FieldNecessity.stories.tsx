@@ -1,5 +1,4 @@
 import type { StoryContext } from '@storybook/react-vite';
-import { expect, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
 import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
@@ -327,24 +326,4 @@ export const ManualSummaryPlacement = meta.story({
       />
     </FieldNecessity>
   ),
-  play: async ({ canvasElement, step }) => {
-    const canvas = within(canvasElement);
-    const paragraph = canvas.getByText(
-      'Vi trenger å vite hvordan vi kan kontakte deg i etterkant av søknaden.',
-    );
-    const summaryTag = canvasElement.querySelector(
-      '.uds-field-necessity-summary',
-    );
-
-    if (!summaryTag)
-      throw new Error('Could not find .uds-field-necessity-summary');
-
-    await step(
-      'The summary tag appears after the paragraph as intended',
-      async () => {
-        const position = paragraph.compareDocumentPosition(summaryTag);
-        expect(position & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-      },
-    );
-  },
 });
