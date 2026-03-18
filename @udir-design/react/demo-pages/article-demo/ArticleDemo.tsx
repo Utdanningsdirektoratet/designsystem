@@ -11,6 +11,7 @@ import { Link } from 'src/components/link/Link';
 import { TableOfContents } from 'src/components/tableOfContents/TableOfContents';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Prose } from 'src/components/typography/prose/Prose';
 import { useTableOfContents } from 'src/utilities/hooks/useTableOfContents/useTableOfContents';
 import classes from './ArticleDemo.module.css';
 import { ContentSection } from './content-section/ContentSection';
@@ -44,67 +45,69 @@ export const ArticleDemo = () => {
         </Breadcrumbs.List>
       </Breadcrumbs>
       <div
-        className={cl(classes.contentWrapper, classes.contentSpacing)}
+        className={classes.contentWrapper}
         id="main-content"
         tabIndex={-1}
         ref={containerRef}
       >
-        <Alert>Denne artikkelen er mer enn 2 år gammel</Alert>
-        <div className={classes.headingWrapper}>
-          <Heading data-size="md" level={1}>
-            Læreplanverket
-          </Heading>
-          <Link
-            href="#"
-            data-size="md"
-            onClick={(e) => {
-              e.preventDefault();
-              window.print();
-            }}
-          >
-            <PrinterSmallIcon aria-hidden />
-            <span>Skriv ut denne siden</span>
-          </Link>
-        </div>
-        <TableOfContents {...useTableOfContents({ containerRef })} />
-        <Card data-color="support2" variant="tinted">
-          <Heading level={2} data-size="sm">
-            Planleggingsverktøy
-          </Heading>
-          <Paragraph>
-            Planleggingsverktøyet gir støtte til å ta i bruk læreplanene.
-          </Paragraph>
-        </Card>
-        <ContentSection section={section1} />
-        <ContentSection section={section2} />
-        <ContentSection section={section3} />
-        <Card>
-          <Card.Block>
+        <Prose>
+          <Alert>Denne artikkelen er mer enn 2 år gammel</Alert>
+          <div className={classes.headingWrapper}>
+            <Heading data-size="md" level={1}>
+              Læreplanverket
+            </Heading>
+            <Link
+              href="#"
+              data-size="md"
+              onClick={(e) => {
+                e.preventDefault();
+                window.print();
+              }}
+            >
+              <PrinterSmallIcon aria-hidden />
+              <span>Skriv ut denne siden</span>
+            </Link>
+          </div>
+          <TableOfContents {...useTableOfContents({ containerRef })} />
+          <Card data-color="support2" variant="tinted">
             <Heading level={2} data-size="sm">
-              Endringer i verktøyet
+              Planleggingsverktøy
             </Heading>
             <Paragraph>
-              Vi går igjennom alle innspillene vi får, og med jevne mellomrom
-              prioriterer vi hva vi gjør av endringer.
+              Planleggingsverktøyet gir støtte til å ta i bruk læreplanene.
             </Paragraph>
-          </Card.Block>
-          {changes.map(({ summary, content }, i) => (
-            <Details key={i}>
-              <Details.Summary>{summary}</Details.Summary>
-              <Details.Content>{content}</Details.Content>
-            </Details>
-          ))}
-        </Card>
-        <Divider />
-        <Button
-          variant="secondary"
-          onClick={() =>
-            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
-          }
-          className={classes.scrollButton}
-        >
-          Tilbake til toppen
-        </Button>
+          </Card>
+          <ContentSection section={section1} />
+          <ContentSection section={section2} />
+          <ContentSection section={section3} />
+          <Card>
+            <Card.Block>
+              <Heading level={2} data-size="sm">
+                Endringer i verktøyet
+              </Heading>
+              <Paragraph>
+                Vi går igjennom alle innspillene vi får, og med jevne mellomrom
+                prioriterer vi hva vi gjør av endringer.
+              </Paragraph>
+            </Card.Block>
+            {changes.map(({ summary, content }, i) => (
+              <Details key={i}>
+                <Details.Summary>{summary}</Details.Summary>
+                <Details.Content>{content}</Details.Content>
+              </Details>
+            ))}
+          </Card>
+          <Divider />
+          <Button
+            variant="secondary"
+            onClick={() =>
+              window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+            }
+            className={classes.scrollButton}
+          >
+            Tilbake til toppen
+          </Button>
+        </Prose>
       </div>
     </article>
   );
