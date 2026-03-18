@@ -15,7 +15,7 @@ const ArticleDemo = (props: ArticleDemoProps) => (
   <div {...props} data-size="auto">
     <SkipLink href="#main-content">Hopp til hovedinnholdet</SkipLink>
     <DemoBanner>
-      <HeaderDemo applicationName="Artikkeldemo" />
+      <HeaderDemo applicationName="Utdanningsdirektoratet" />
       <ArticleDemoPage />
       <FooterDemo />
     </DemoBanner>
