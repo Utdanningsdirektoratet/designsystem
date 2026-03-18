@@ -16,7 +16,7 @@ import { FieldNecessity } from '.';
 
 const meta = preview.meta({
   component: FieldNecessity,
-  tags: ['alpha', 'udir'],
+  tags: ['beta', 'udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',
