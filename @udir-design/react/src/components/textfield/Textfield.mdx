@@ -44,7 +44,7 @@ Prefixer og suffixer er nyttige for å vise enheter, valuta eller annen informas
 
 ### Antall tegn
 
-Bruk `counter` til å begrense antall tegn brukerne kan skrive i feltet.
+Bruk `counter` til å vise brukeren hvor mange tegn de kan skrive inn i feltet. Man bør ikke hindre folk i å skrive mer enn maks antall tegn, da dette kan føre til at man sender inn feil data f.eks. ved å komme borti samme tall to ganger. Det er bedre å la brukeren skrive inn det de ønsker, og heller vise en feilmelding dersom de har skrevet for mye.
 
 <Canvas of={TextfieldStories.Counter} />
 
