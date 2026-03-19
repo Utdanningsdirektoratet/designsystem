@@ -9,7 +9,8 @@ import { Textfield } from '../textfield/Textfield';
 import { Heading } from '../typography/heading/Heading';
 import { Label } from '../typography/label/Label';
 import { Paragraph } from '../typography/paragraph/Paragraph';
-import { Card } from './Card';
+import { Card, CardBlock } from './Card';
+import { Card as FakeCard } from './docs/FakeCard';
 
 const studentsImg =
   'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
@@ -18,7 +19,10 @@ const schoolSuppliesImg =
   'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1644&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
 const meta = preview.meta({
-  component: Card,
+  component: FakeCard,
+  subcomponents: {
+    'Card.Block': CardBlock,
+  },
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {
@@ -42,12 +46,14 @@ const meta = preview.meta({
 export const Preview = meta.story({
   args: {
     'data-color': 'neutral',
-    children: [
-      <Heading>Tittel</Heading>,
-      <Paragraph>Innhold</Paragraph>,
-      <Paragraph data-size="sm">Fotnote</Paragraph>,
-    ],
   },
+  render: (args) => (
+    <Card {...args}>
+      <Heading>Tittel</Heading>
+      <Paragraph>Innhold</Paragraph>
+      <Paragraph data-size="sm">Fotnote</Paragraph>
+    </Card>
+  ),
 });
 
 const VariantsMap: Record<
@@ -151,7 +157,9 @@ export const Media = meta.story({
 export const Video = meta.story({
   args: {
     'data-color': 'neutral',
-    children: [
+  },
+  render: (args) => (
+    <Card {...args}>
       <Card.Block>
         <iframe
           data-chromatic="ignore"
@@ -161,7 +169,7 @@ export const Video = meta.story({
           allow="autoplay; fullscreen; picture-in-picture"
           title="30 år med digitalt innsyn"
         ></iframe>
-      </Card.Block>,
+      </Card.Block>
       <Card.Block>
         <Heading>
           <a
@@ -175,9 +183,9 @@ export const Video = meta.story({
         <Paragraph>
           Kunnskapsminister Kari Nessa Nordtun om den nye opplæringsloven.
         </Paragraph>
-      </Card.Block>,
-    ],
-  },
+      </Card.Block>
+    </Card>
+  ),
 });
 
 const options = [
