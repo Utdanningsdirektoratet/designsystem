@@ -12,6 +12,7 @@ import type { API_LeafEntry } from 'storybook/internal/types';
 import {
   addons,
   types,
+  useParameter,
   useStorybookApi,
   useStorybookState,
 } from 'storybook/manager-api';
@@ -46,10 +47,9 @@ function SourceCodeTool() {
     }
   }
 
-  const sourceCodeParameter =
-    (currentStory?.parameters?.['sourceCode'] as
-      | SourceCodeConfig
-      | undefined) ?? api.getCurrentParameter<SourceCodeConfig>('sourceCode');
+  const sourceCodeParameter = useParameter<SourceCodeConfig | undefined>(
+    'sourceCode',
+  );
 
   const gitBranch = api.getGlobals()['gitBranch'];
   const parent = currentStory?.parent
