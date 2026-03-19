@@ -5,7 +5,7 @@ import { Footer } from './';
 
 const meta = preview.meta({
   component: Footer,
-  tags: ['alpha', 'udir'],
+  tags: ['beta', 'udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',
