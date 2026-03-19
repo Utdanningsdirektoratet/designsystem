@@ -2,6 +2,12 @@ import { execSync } from 'node:child_process';
 import { defineMain } from '@storybook/react-vite/node';
 import remarkGfm from 'remark-gfm';
 import type { Plugin, UserConfig } from 'vite';
+import { explicitlyIncludedProps } from './docs/explicitlyIncludedProps';
+
+const isFromDependency = (fileName: string) =>
+  fileName.includes('node_modules');
+const isFromAllowedDependency = (fileName: string) =>
+  ['@digdir', '@udir-design'].some((org) => fileName.includes(org));
 
 export default defineMain({
   stories: ['../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
@@ -85,6 +91,32 @@ export default defineMain({
   typescript: {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
+      propFilter: (prop, component) => {
+        // Make it possible to explicitly choose to include a prop that would otherwise be
+        // filtered out because it's a third-party prop, e.g. types from React
+        if (explicitlyIncludedProps[component.name]?.includes(prop.name)) {
+          return true;
+        }
+
+        // Remove popovertarget prop which @digdir/designsystemet-react adds to all elements
+        if (prop.name === 'popovertarget') {
+          return false;
+        }
+
+        // Filter out third-party props from node_modules except @digdir packages.
+        // Unlike the default logic, this checks all declaration locations and allows
+        // props if they have been defined locally or in @digdir/* packages, even if
+        // they are also defined in a non-allow location (other packages)
+        const filesToCheck = [
+          prop.parent?.fileName ?? [],
+          prop.declarations?.map((x) => x.fileName) ?? [],
+        ].flat();
+        const isPropFromAllowedLocation = filesToCheck.some(
+          (fileName) =>
+            isFromAllowedDependency(fileName) || !isFromDependency(fileName),
+        );
+        return isPropFromAllowedLocation;
+      },
       tsconfigPath: 'tsconfig.lib.json',
       // Required for unions like Size, Color etc from @digdir to generate options in Storybook controls
       shouldExtractLiteralValuesFromEnum: true,
