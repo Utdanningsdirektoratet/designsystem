@@ -7,7 +7,6 @@ export type SourceCodeLinkConfig = {
 };
 
 export type SourceCodeConfig = {
-  gitBranch?: string;
   links?: SourceCodeLinkConfig[];
   /** When true, configured links replace auto-detected links. Default: false (merge). */
   overwrite?: boolean;

@@ -29,12 +29,6 @@ import {
 const ADDON_ID = 'udir/source-code-toolbar';
 const TOOL_ID = `${ADDON_ID}/tool`;
 
-function getGitBranchFromStory(
-  currentStory: API_LeafEntry | undefined,
-): string | undefined {
-  return currentStory?.parameters?.['sourceCode']?.['gitBranch'];
-}
-
 const getLinkIcon = (label: string) => {
   const s = label.toLowerCase();
 
@@ -77,8 +71,7 @@ function SourceCodeTool() {
     ? { ...storeParameter, ...channelConfig }
     : storeParameter;
 
-  const gitBranch =
-    sourceCodeParameter?.gitBranch ?? getGitBranchFromStory(currentStory);
+  const gitBranch = api.getGlobals()['gitBranch'];
 
   const sourceLinks = currentStory
     ? getSourceLinks(
@@ -135,10 +128,18 @@ addons.register(ADDON_ID, () => {
 
 export type SourceCodeToolbarTypes = {
   parameters: {
+    /** Source code link configuration */
     sourceCode?: SourceCodeConfig;
   };
+  // Explicitly don't add typing for globals.gitBranch here, because we don't want it to be overridden
 };
 
-export function sourceCodeToolbarAddon(): PreviewAddon<SourceCodeToolbarTypes> {
-  return {};
+export function sourceCodeToolbarAddon(options: {
+  gitBranch: string;
+}): PreviewAddon<SourceCodeToolbarTypes> {
+  return {
+    initialGlobals: {
+      gitBranch: options.gitBranch,
+    },
+  };
 }

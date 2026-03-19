@@ -70,10 +70,6 @@ export default definePreview({
       modes: chromaticViewports,
     },
 
-    sourceCode: {
-      gitBranch: __GIT_BRANCH__,
-    },
-
     a11y: {
       test: 'error',
     },
@@ -90,7 +86,7 @@ export default definePreview({
     storybookAddonPseudoStates(),
     addonDocs(),
     customParametersAddon(),
-    sourceCodeToolbarAddon(),
+    sourceCodeToolbarAddon({ gitBranch: __GIT_BRANCH__ }),
   ],
   ...testLifecycleHooks,
 });
