@@ -36,11 +36,11 @@ export default defineMain({
     const branchName = execSync('git rev-parse --abbrev-ref HEAD')
       .toString()
       .trimEnd();
-    const commitHash = execSync('git rev-parse HEAD').toString().trimEnd();
-    process.env.VITE_GIT_BRANCH_NAME = branchName;
-    process.env.VITE_GIT_COMMIT_HASH = commitHash;
 
     return mergeConfig(cfg, {
+      define: {
+        __GIT_BRANCH__: JSON.stringify(branchName),
+      },
       build: {
         cssCodeSplit: false,
       },

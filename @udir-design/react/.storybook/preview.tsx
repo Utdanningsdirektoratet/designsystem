@@ -39,8 +39,6 @@ const chromaticViewports = {
   desktop: { viewport: { width: 1200 } },
 };
 
-const GIT_BRANCH = import.meta.env['VITE_GIT_BRANCH_NAME'];
-
 export default definePreview({
   tags: ['a11y-test'],
 
@@ -72,7 +70,7 @@ export default definePreview({
     },
 
     sourceCode: {
-      gitBranch: GIT_BRANCH,
+      gitBranch: __GIT_BRANCH__,
     },
 
     a11y: {
