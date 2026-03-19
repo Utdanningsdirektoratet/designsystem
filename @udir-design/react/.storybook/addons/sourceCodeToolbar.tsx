@@ -6,11 +6,7 @@ import {
   StorybookIcon,
 } from '@storybook/icons';
 import React from 'react';
-import {
-  Button,
-  TooltipLinkList,
-  WithTooltip,
-} from 'storybook/internal/components';
+import { ActionList, Button, WithTooltip } from 'storybook/internal/components';
 import type { PreviewAddon } from 'storybook/internal/csf';
 import type { API_LeafEntry } from 'storybook/internal/types';
 import {
@@ -67,21 +63,23 @@ function SourceCodeTool() {
       )
     : [];
 
-  const handleLinkClick = React.useCallback((href: string) => {
-    window.open(href, '_blank', 'noopener,noreferrer');
-  }, []);
-
   const hasLinks = sourceLinks.length > 0;
 
   const overlay = hasLinks ? (
-    <TooltipLinkList
-      links={sourceLinks.map((link) => ({
-        id: link.href,
-        title: link.label,
-        icon: getLinkIcon(link.label),
-        onClick: () => handleLinkClick(link.href),
-      }))}
-    />
+    <ActionList>
+      {sourceLinks.map((link) => (
+        <ActionList.Item key={link.href}>
+          <ActionList.Link
+            href={link.href}
+            target="_blank"
+            rel="noopener,noreferrer"
+            style={{ justifyContent: 'start' }}
+          >
+            {getLinkIcon(link.label)} {link.label}
+          </ActionList.Link>
+        </ActionList.Item>
+      ))}
+    </ActionList>
   ) : (
     'Unable to resolve source code for this page'
   );
@@ -93,7 +91,12 @@ function SourceCodeTool() {
       placement="bottom-start"
       tooltip={overlay}
     >
-      <Button title="See source code" key={TOOL_ID} disabled={!hasLinks}>
+      <Button
+        title="See source code"
+        key={TOOL_ID}
+        disabled={!hasLinks}
+        ariaLabel={false}
+      >
         <GithubIcon /> <span>See source code</span>
       </Button>
     </WithTooltip>
