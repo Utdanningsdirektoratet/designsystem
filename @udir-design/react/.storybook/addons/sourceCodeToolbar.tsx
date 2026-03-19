@@ -11,6 +11,7 @@ import {
   TooltipLinkList,
   WithTooltip,
 } from 'storybook/internal/components';
+import type { PreviewAddon } from 'storybook/internal/csf';
 import type { API_LeafEntry } from 'storybook/internal/types';
 import {
   addons,
@@ -131,3 +132,13 @@ addons.register(ADDON_ID, () => {
     render: () => <SourceCodeTool />,
   });
 });
+
+export type SourceCodeToolbarTypes = {
+  parameters: {
+    sourceCode?: SourceCodeConfig;
+  };
+};
+
+export function sourceCodeToolbarAddon(): PreviewAddon<SourceCodeToolbarTypes> {
+  return {};
+}

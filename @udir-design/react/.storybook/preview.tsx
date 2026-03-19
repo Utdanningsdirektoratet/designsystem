@@ -8,6 +8,7 @@ import { type PreviewAddon } from 'storybook/internal/csf';
 import { INITIAL_VIEWPORTS, type ViewportMap } from 'storybook/viewport';
 import storybookAddonPseudoStates from 'storybook-addon-pseudo-states';
 import * as icons from '@udir-design/icons';
+import { sourceCodeToolbarAddon } from './addons/sourceCodeToolbar';
 import { docsParameters } from './docs/parameters';
 import { testLifecycleHooks } from './preview-test';
 import type {
@@ -89,6 +90,7 @@ export default definePreview({
     storybookAddonPseudoStates(),
     addonDocs(),
     customParametersAddon(),
+    sourceCodeToolbarAddon(),
   ],
   ...testLifecycleHooks,
 });
