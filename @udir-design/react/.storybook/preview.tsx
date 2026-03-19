@@ -4,7 +4,7 @@ import addonA11y from '@storybook/addon-a11y';
 import addonDocs from '@storybook/addon-docs';
 import { definePreview } from '@storybook/react-vite';
 import * as R from 'ramda';
-import type { PreviewAddon } from 'storybook/internal/csf';
+import { type PreviewAddon } from 'storybook/internal/csf';
 import { INITIAL_VIEWPORTS, type ViewportMap } from 'storybook/viewport';
 import storybookAddonPseudoStates from 'storybook-addon-pseudo-states';
 import * as icons from '@udir-design/icons';
@@ -39,6 +39,8 @@ const chromaticViewports = {
   desktop: { viewport: { width: 1200 } },
 };
 
+const GIT_BRANCH = import.meta.env['VITE_GIT_BRANCH_NAME'];
+
 export default definePreview({
   tags: ['a11y-test'],
 
@@ -69,6 +71,10 @@ export default definePreview({
       modes: chromaticViewports,
     },
 
+    sourceCode: {
+      gitBranch: GIT_BRANCH,
+    },
+
     a11y: {
       test: 'error',
     },
@@ -88,7 +94,6 @@ export default definePreview({
   ],
   ...testLifecycleHooks,
 });
-
 interface CustomTypes {
   parameters: ComponentOriginParameters &
     CustomStylesParameters &

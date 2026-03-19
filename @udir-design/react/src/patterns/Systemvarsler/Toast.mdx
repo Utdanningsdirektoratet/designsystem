@@ -1,6 +1,16 @@
 import { Meta } from '@storybook/addon-docs/blocks';
+import { SourceCodeMeta } from '../../../.storybook/utils/SourceCodeMeta';
 
 <Meta tags={['beta']} />
+<SourceCodeMeta
+  overwrite
+  links={[
+    {
+      label: 'Documentation source',
+      path: './src/patterns/Systemvarsler/Toast.mdx',
+    },
+  ]}
+/>
 
 # Unngå bruk av toast
 
