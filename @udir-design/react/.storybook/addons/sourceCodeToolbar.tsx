@@ -16,15 +16,11 @@ import type { API_LeafEntry } from 'storybook/internal/types';
 import {
   addons,
   types,
-  useChannel,
   useStorybookApi,
   useStorybookState,
 } from 'storybook/manager-api';
 import type { SourceCodeConfig } from '../utils/sourceCodeUrl';
-import {
-  SOURCE_CODE_CHANNEL_EVENT,
-  getSourceLinks,
-} from '../utils/sourceCodeUrl';
+import { getSourceLinks } from '../utils/sourceCodeUrl';
 
 const ADDON_ID = 'udir/source-code-toolbar';
 const TOOL_ID = `${ADDON_ID}/tool`;
@@ -44,14 +40,6 @@ function SourceCodeTool() {
   const api = useStorybookApi();
   const { storyId } = useStorybookState();
 
-  const [channelConfig, setChannelConfig] =
-    React.useState<SourceCodeConfig | null>(null);
-
-  useChannel({
-    [SOURCE_CODE_CHANNEL_EVENT]: (config: SourceCodeConfig | null) =>
-      setChannelConfig(config),
-  });
-
   let currentStory: API_LeafEntry | undefined;
 
   if (storyId) {
@@ -62,22 +50,17 @@ function SourceCodeTool() {
     }
   }
 
-  const storeParameter =
+  const sourceCodeParameter =
     (currentStory?.parameters?.['sourceCode'] as
       | SourceCodeConfig
       | undefined) ?? api.getCurrentParameter<SourceCodeConfig>('sourceCode');
-
-  const sourceCodeParameter: SourceCodeConfig | undefined = channelConfig
-    ? { ...storeParameter, ...channelConfig }
-    : storeParameter;
 
   const gitBranch = api.getGlobals()['gitBranch'];
 
   const sourceLinks = currentStory
     ? getSourceLinks(
         {
-          importPath: currentStory.importPath,
-          type: currentStory.type,
+          story: currentStory,
           sourceCode: sourceCodeParameter,
         },
         gitBranch,

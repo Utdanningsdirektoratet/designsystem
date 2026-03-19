@@ -1,4 +1,4 @@
-export const SOURCE_CODE_CHANNEL_EVENT = 'udir/source-code-params';
+import type { API_LeafEntry } from 'storybook/internal/types';
 
 export type SourceCodeLinkConfig = {
   label: string;
@@ -13,8 +13,7 @@ export type SourceCodeConfig = {
 };
 
 export type SourceCodeContext = {
-  importPath?: string;
-  type?: string;
+  story: API_LeafEntry;
   sourceCode?: SourceCodeConfig;
 };
 
@@ -29,25 +28,6 @@ const DEFAULT_BRANCH = 'main';
 
 const STORIES_FILE_RE = /\.stories\.(t|j)sx?$/;
 const MDX_FILE_RE = /\.mdx?$/;
-
-/**
- * Counts path segments after `./src/` to determine structural depth.
- *   `./src/components/button/Button.stories.tsx` → 3
- *   `./src/demo/FormDemo.stories.tsx` → 2
- *   `./src/Introduksjon.mdx` → 1
- */
-function getPathDepthFromSrc(importPath: string): number {
-  return importPath.replace(/^\.?\/?src\//, '').split('/').length;
-}
-
-/**
- * Files in a dedicated subdirectory (depth ≥ 3 from src/) have a
- * companion source file. This covers components and utilities without
- * hardcoding folder names.
- */
-function hasCompanionSource(importPath: string): boolean {
-  return getPathDepthFromSrc(importPath) >= 3;
-}
 
 function replaceExtension(
   path: string,
@@ -94,7 +74,8 @@ export function getSourceLinks(
   context: SourceCodeContext,
   gitBranch?: string,
 ): SourceLink[] {
-  const { importPath, type, sourceCode } = context;
+  const { sourceCode, story } = context;
+  const { importPath, type } = story;
 
   const configuredLinks = buildConfiguredLinks(sourceCode?.links, gitBranch);
   if (configuredLinks.length > 0 && sourceCode?.overwrite)
@@ -110,9 +91,11 @@ export function getSourceLinks(
     }
   };
 
-  const isSourceComponent = hasCompanionSource(importPath);
+  const hasExportedComponent =
+    /^(components|utilities)/i.test(story.title) &&
+    !story.tags.includes('unattached-mdx');
 
-  if (isSourceComponent) {
+  if (hasExportedComponent) {
     if (type === 'story') {
       push('Component source code', toComponentPath(importPath), 0);
       push('Stories source code', importPath, 1);
@@ -126,6 +109,7 @@ export function getSourceLinks(
         0,
       );
       push('Stories source code', storiesPath, 1);
+      push('Documentation source', importPath, 2);
     }
   } else if (type === 'story') {
     push('Stories source code', importPath, 0);
@@ -148,11 +132,4 @@ export function getSourceLinks(
   }
 
   return links.sort((a, b) => a.order - b.order);
-}
-
-export function createSourceCodeHref(
-  context: SourceCodeContext,
-  gitBranch?: string,
-): string | undefined {
-  return getSourceLinks(context, gitBranch)[0]?.href;
 }
