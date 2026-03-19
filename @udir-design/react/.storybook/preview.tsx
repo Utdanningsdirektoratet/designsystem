@@ -4,10 +4,11 @@ import addonA11y from '@storybook/addon-a11y';
 import addonDocs from '@storybook/addon-docs';
 import { definePreview } from '@storybook/react-vite';
 import * as R from 'ramda';
-import type { PreviewAddon } from 'storybook/internal/csf';
+import { type PreviewAddon } from 'storybook/internal/csf';
 import { INITIAL_VIEWPORTS, type ViewportMap } from 'storybook/viewport';
 import storybookAddonPseudoStates from 'storybook-addon-pseudo-states';
 import * as icons from '@udir-design/icons';
+import { sourceCodeToolbarAddon } from './addons/sourceCodeToolbar';
 import { docsParameters } from './docs/parameters';
 import { testLifecycleHooks } from './preview-test';
 import type {
@@ -85,10 +86,10 @@ export default definePreview({
     storybookAddonPseudoStates(),
     addonDocs(),
     customParametersAddon(),
+    sourceCodeToolbarAddon({ gitBranch: __GIT_BRANCH__ }),
   ],
   ...testLifecycleHooks,
 });
-
 interface CustomTypes {
   parameters: ComponentOriginParameters &
     CustomStylesParameters &
