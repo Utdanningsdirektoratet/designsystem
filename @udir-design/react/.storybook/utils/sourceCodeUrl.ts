@@ -1,4 +1,5 @@
-import type { API_LeafEntry } from 'storybook/internal/types';
+import * as R from 'ramda';
+import type { API_HashEntry, API_LeafEntry } from 'storybook/internal/types';
 
 export type SourceCodeLinkConfig = {
   label: string;
@@ -6,14 +7,22 @@ export type SourceCodeLinkConfig = {
   order?: number;
 };
 
+type LinkFn = (importPath: string) => string;
+
 export type SourceCodeConfig = {
   links?: SourceCodeLinkConfig[];
+  autoLinks?: {
+    component?: false;
+    stories?: false;
+    docs?: false;
+  };
   /** When true, configured links replace auto-detected links. Default: false (merge). */
   overwrite?: boolean;
 };
 
 export type SourceCodeContext = {
   story: API_LeafEntry;
+  siblings?: API_HashEntry[];
   sourceCode?: SourceCodeConfig;
 };
 
@@ -29,23 +38,22 @@ const DEFAULT_BRANCH = 'main';
 const STORIES_FILE_RE = /\.stories\.(t|j)sx?$/;
 const MDX_FILE_RE = /\.mdx?$/;
 
-function replaceExtension(
-  path: string,
-  from: RegExp,
-  to: string,
-): string | undefined {
-  return from.test(path) ? path.replace(from, to) : undefined;
+function replaceExtension(path: string, from: RegExp, to: string): string {
+  return path.replace(from, to);
 }
 
-function toComponentPath(storiesPath: string): string | undefined {
+function toComponentPath(importPath: string): string {
+  const storiesPath = importPath.endsWith('.mdx')
+    ? toStoriesPath(importPath)
+    : importPath;
   const filename = storiesPath.split('/').pop() ?? '';
   const baseName = filename.replace(STORIES_FILE_RE, '');
   const ext = baseName.startsWith('use') ? '.ts' : '.tsx';
   return replaceExtension(storiesPath, STORIES_FILE_RE, ext);
 }
 
-function toStoriesPath(mdxPath: string): string | undefined {
-  return replaceExtension(mdxPath, MDX_FILE_RE, '.stories.tsx');
+function toStoriesPath(importPath: string): string {
+  return replaceExtension(importPath, MDX_FILE_RE, '.stories.tsx');
 }
 
 function buildGitHubUrl(importPath: string, gitBranch?: string): string {
@@ -74,62 +82,85 @@ export function getSourceLinks(
   context: SourceCodeContext,
   gitBranch?: string,
 ): SourceLink[] {
-  const { sourceCode, story } = context;
+  const { sourceCode, story, siblings } = context;
   const { importPath, type } = story;
-
-  const configuredLinks = buildConfiguredLinks(sourceCode?.links, gitBranch);
-  if (configuredLinks.length > 0 && sourceCode?.overwrite)
-    return configuredLinks;
-
-  if (!importPath && configuredLinks.length > 0) return configuredLinks;
-  if (!importPath) return [];
-
-  const links: SourceLink[] = [];
-  const push = (label: string, path: string | undefined, order: number) => {
-    if (path) {
-      links.push({ label, href: buildGitHubUrl(path, gitBranch), order });
-    }
-  };
+  const { autoLinks: configuredAutoLinks = {} } = sourceCode ?? {};
 
   const hasExportedComponent =
     /^(components|utilities)/i.test(story.title) &&
     !story.tags.includes('unattached-mdx');
 
-  if (hasExportedComponent) {
-    if (type === 'story') {
-      push('Component source code', toComponentPath(importPath), 0);
-      push('Stories source code', importPath, 1);
-    } else if (type === 'docs') {
-      const storiesPath = STORIES_FILE_RE.test(importPath)
-        ? importPath
-        : toStoriesPath(importPath);
-      push(
-        'Component source code',
-        storiesPath ? toComponentPath(storiesPath) : undefined,
-        0,
-      );
-      push('Stories source code', storiesPath, 1);
-      push('Documentation source', importPath, 2);
-    }
-  } else if (type === 'story') {
-    push('Stories source code', importPath, 0);
-  } else if (type === 'docs') {
-    push('Documentation source', importPath, 0);
-  }
+  const defaultAutoLinks: Record<
+    keyof typeof configuredAutoLinks,
+    false | LinkFn
+  > = {
+    component: hasExportedComponent && toComponentPath,
+    docs: type === 'docs' && R.identity,
+    stories:
+      type === 'story' ? R.identity : hasExportedComponent && toStoriesPath,
+  };
+
+  const autoLinks = { ...defaultAutoLinks, ...configuredAutoLinks };
+
+  const configuredLinks = buildConfiguredLinks(sourceCode?.links, gitBranch);
+  if (configuredLinks.length > 0 && sourceCode?.overwrite)
+    return configuredLinks;
+
+  const builtinLinkPaths = {
+    component: autoLinks.component && autoLinks.component(importPath),
+    stories: autoLinks.stories && autoLinks.stories(importPath),
+    docs: autoLinks.docs && autoLinks.docs(importPath),
+  };
+  type BuiltInLink = keyof typeof builtinLinkPaths;
+  const builtinLinkLabels: Record<BuiltInLink, string> = {
+    component: 'Component source code',
+    stories: 'Stories source code',
+    docs: 'Documentation source',
+  };
+
+  const links = R.toPairs(builtinLinkPaths)
+    .filter((pair): pair is [BuiltInLink, string] => pair[1] !== false)
+    .map(
+      ([key, path], index): SourceLink => ({
+        label: builtinLinkLabels[key],
+        href: buildGitHubUrl(path, gitBranch),
+        order: index,
+      }),
+    );
+
+  // Create links to sibling components from a documentation page, when docs are
+  // shared between multiple components (e.g. Typography and Logo)
+  const siblingLinks =
+    siblings?.flatMap((x, index): SourceLink[] =>
+      x.type === 'component'
+        ? [
+            {
+              label: `${x.name} component source`,
+              href: buildGitHubUrl(
+                toComponentPath(x.importPath ?? ''),
+                gitBranch,
+              ),
+              order: links.length + index,
+            },
+            {
+              label: `${x.name} stories source`,
+              href: buildGitHubUrl(
+                toStoriesPath(x.importPath ?? ''),
+                gitBranch,
+              ),
+              order: links.length + index,
+            },
+          ]
+        : [],
+    ) ?? [];
 
   // Merge configured links (order after auto-detected by default)
-  const autoCount = links.length;
-  for (const configured of configuredLinks) {
-    links.push({
-      ...configured,
-      order: configured.order + autoCount,
-    });
-  }
-
-  // Fallback: if no links were generated, link to the primary source file
-  if (links.length === 0) {
-    push('Source file', importPath, 0);
-  }
-
-  return links.sort((a, b) => a.order - b.order);
+  const autoCount = links.length + siblingLinks.length;
+  const confLinks = configuredLinks.map((link) => ({
+    ...link,
+    order: link.order + autoCount,
+  }));
+  return [...links, ...siblingLinks, ...confLinks].sort(
+    (a, b) => a.order - b.order,
+  );
 }

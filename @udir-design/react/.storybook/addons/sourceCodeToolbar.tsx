@@ -24,10 +24,10 @@ const TOOL_ID = `${ADDON_ID}/tool`;
 const getLinkIcon = (label: string) => {
   const s = label.toLowerCase();
 
-  if (s.includes('component')) return <ComponentIcon />;
-  if (s.includes('stories')) return <StorybookIcon />;
-  if (s.includes('documentation')) return <DocumentIcon />;
-  if (s.includes('file')) return <DocumentIcon />;
+  if (s.includes('component')) return <ComponentIcon aria-hidden />;
+  if (s.includes('stories')) return <StorybookIcon aria-hidden />;
+  if (s.includes('documentation')) return <DocumentIcon aria-hidden />;
+  if (s.includes('file')) return <DocumentIcon aria-hidden />;
 
   return <JumpToIcon />;
 };
@@ -52,11 +52,25 @@ function SourceCodeTool() {
       | undefined) ?? api.getCurrentParameter<SourceCodeConfig>('sourceCode');
 
   const gitBranch = api.getGlobals()['gitBranch'];
+  const parent = currentStory?.parent
+    ? api.resolveStory(currentStory.parent)
+    : undefined;
+  const siblings =
+    currentStory?.type === 'docs' &&
+    parent &&
+    parent.type !== 'docs' &&
+    parent.type !== 'story'
+      ? parent.children
+          .filter((x) => x !== storyId)
+          .map((x) => api.resolveStory(x))
+          .filter((x) => x !== undefined)
+      : undefined;
 
   const sourceLinks = currentStory
     ? getSourceLinks(
         {
           story: currentStory,
+          siblings,
           sourceCode: sourceCodeParameter,
         },
         gitBranch,
@@ -73,6 +87,7 @@ function SourceCodeTool() {
             href={link.href}
             target="_blank"
             rel="noopener,noreferrer"
+            ariaLabel={false}
             style={{ justifyContent: 'start' }}
           >
             {getLinkIcon(link.label)} {link.label}
