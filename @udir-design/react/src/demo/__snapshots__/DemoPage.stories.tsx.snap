@@ -37,81 +37,105 @@ exports[`Page Story 1`] = `
   </ds-breadcrumbs>
   <div>
     <div>
-      <fieldset>
-        <legend data-weight="medium">
+      <fieldset aria-labelledby="<removed>">
+        <legend
+          data-weight="medium"
+          id="<removed>"
+        >
           Handleliste
         </legend>
-        <ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="potet"
+            id="<removed>"
             type="checkbox"
             value="potet"
           >
-          <label data-weight="regular">
+          <label
+            data-weight="regular"
+            for="<removed>"
+          >
             En kilo poteter
           </label>
         </ds-field>
-        <ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="farris"
+            id="<removed>"
             type="checkbox"
             value="farris"
           >
-          <label data-weight="regular">
+          <label
+            data-weight="regular"
+            for="<removed>"
+          >
             To liter Farris
           </label>
         </ds-field>
-        <ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="blomkol"
+            checked
+            id="<removed>"
             type="checkbox"
             value="blomkol"
-            checked
           >
-          <label data-weight="regular">
+          <label
+            data-weight="regular"
+            for="<removed>"
+          >
             Blomkål
           </label>
         </ds-field>
-        <ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="pizza"
+            checked
+            id="<removed>"
             type="checkbox"
             value="pizza"
-            checked
           >
-          <label data-weight="regular">
+          <label
+            data-weight="regular"
+            for="<removed>"
+          >
             Pizza
           </label>
         </ds-field>
-        <ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="melk"
+            checked
+            id="<removed>"
             type="checkbox"
             value="melk"
-            checked
           >
-          <label data-weight="regular">
+          <label
+            data-weight="regular"
+            for="<removed>"
+          >
             Tre liter lettmelk
           </label>
         </ds-field>
         <hr aria-hidden="true">
-        <ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="smagodt"
+            id="<removed>"
             type="checkbox"
             value="smagodt"
           >
-          <label data-weight="regular">
+          <label
+            data-weight="regular"
+            for="<removed>"
+          >
             2kg smågodt
           </label>
         </ds-field>
-        <ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="smash"
+            id="<removed>"
             type="checkbox"
             value="smash"
           >
-          <label data-weight="regular">
+          <label
+            data-weight="regular"
+            for="<removed>"
+          >
             10 poser med Smash
           </label>
         </ds-field>
@@ -122,37 +146,43 @@ exports[`Page Story 1`] = `
         Opprett ny bruker
       </h2>
       <ds-field>
-        <label data-weight="medium">
+        <label
+          data-weight="medium"
+          for="<removed>"
+        >
           Navn
         </label>
         <div>
           <input
-            id="name"
-            placeholder="Ola Normann"
             autocomplete="name"
+            id="<removed>"
+            placeholder="Ola Normann"
             type="text"
           >
         </div>
       </ds-field>
       <ds-field>
-        <label data-weight="medium">
+        <label
+          data-weight="medium"
+          for="<removed>"
+        >
           E-post
         </label>
         <div>
           <input
-            id="email"
-            placeholder="ola@norge.no"
             autocomplete="email"
+            id="<removed>"
+            placeholder="ola@norge.no"
             type="email"
           >
         </div>
       </ds-field>
       <a
-        href="#"
         aria-label="Trykk for å få hjelp"
-        data-tooltip="Trykk for å få hjelp"
-        data-placement="top"
         data-autoplacement="true"
+        data-placement="top"
+        data-tooltip="Trykk for å få hjelp"
+        href="#"
         type="describedby"
       >
         Glemt passord?
@@ -173,17 +203,17 @@ exports[`Page Story 1`] = `
           Side 1 av 8
         </span>
         <u-progress
-          value="1"
-          id=":u-progress1"
           aria-busy="false"
+          aria-hidden="true"
           aria-label="..."
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="13"
-          role="progressbar"
+          id="<removed>"
           max="8"
-          aria-hidden="true"
+          role="progressbar"
           style="--percentage: 13%;"
+          value="1"
         >
           <template shadowrootmode="open">
             <slot>
@@ -213,8 +243,8 @@ exports[`Page Story 1`] = `
       </h2>
       <div>
         <div
-          data-variant="tinted"
           data-color="accent"
+          data-variant="tinted"
         >
           <h2>
             Sikkerhet og drift
@@ -224,8 +254,8 @@ exports[`Page Story 1`] = `
           </p>
         </div>
         <div
-          data-variant="tinted"
           data-color="support1"
+          data-variant="tinted"
         >
           <h2>
             Skole og utdanning
@@ -235,8 +265,8 @@ exports[`Page Story 1`] = `
           </p>
         </div>
         <div
-          data-variant="tinted"
           data-color="support2"
+          data-variant="tinted"
         >
           <h2>
             Mat og helse
@@ -269,30 +299,30 @@ exports[`Page Story 1`] = `
           </select>
           <button
             data-variant="primary"
-            type="button"
             popovertarget="_r_3_"
+            type="button"
           >
             Utfør
           </button>
           <div
-            id="_r_3_"
-            popover="manual"
             data-placement="top"
             data-variant="default"
+            id="<removed>"
+            popover="manual"
           >
             Er du sikker på at du vil gjennomføre? Handlingen vil utføres på alle brukere.
             <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
               <button
+                data-size="sm"
                 data-variant="primary"
                 type="button"
-                data-size="sm"
               >
                 Ja, utfør
               </button>
               <button
+                data-size="sm"
                 data-variant="tertiary"
                 type="button"
-                data-size="sm"
               >
                 Avbryt
               </button>
@@ -301,15 +331,15 @@ exports[`Page Story 1`] = `
         </div>
         <div>
           <input
-            placeholder
             aria-label="Søk"
+            placeholder
             type="search"
           >
           <button
+            aria-label="Tøm"
             data-icon="true"
             data-variant="tertiary"
             type="reset"
-            aria-label="Tøm"
           >
           </button>
           <button

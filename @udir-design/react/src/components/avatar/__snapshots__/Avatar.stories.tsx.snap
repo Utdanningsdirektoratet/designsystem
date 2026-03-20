@@ -6,9 +6,9 @@ exports[`As Link 1`] = `
   style="display: flex; gap: var(--ds-size-2); align-items: center;"
 >
   <span
+    aria-hidden="true"
     data-variant="circle"
     role="img"
-    aria-hidden="true"
   >
   </span>
   <span>
@@ -19,77 +19,77 @@ exports[`As Link 1`] = `
 
 exports[`Color Variants 1`] = `
 <span
-  data-variant="circle"
-  role="img"
   aria-label="color neutral"
   data-color="neutral"
+  data-variant="circle"
+  role="img"
 >
 </span>
 <span
-  data-variant="circle"
-  role="img"
   aria-label="color accent"
   data-color="accent"
+  data-variant="circle"
+  role="img"
 >
 </span>
 <span
-  data-variant="circle"
-  role="img"
   aria-label="color support1"
   data-color="support1"
+  data-variant="circle"
+  role="img"
 >
 </span>
 <span
-  data-variant="circle"
-  role="img"
   aria-label="color support2"
   data-color="support2"
+  data-variant="circle"
+  role="img"
 >
 </span>
 `;
 
 exports[`Content 1`] = `
 <span
+  aria-label="Ola Nordmann"
   data-variant="circle"
   role="img"
-  aria-label="Ola Nordmann"
 >
 </span>
 <span
-  data-variant="circle"
+  aria-label="Ola Nordmann"
   data-initials="ON"
+  data-variant="circle"
   role="img"
-  aria-label="Ola Nordmann"
 >
 </span>
 <span
+  aria-label="Ola Nordmann"
   data-variant="circle"
   role="img"
-  aria-label="Ola Nordmann"
 >
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
     aria-hidden="true"
+    fill="none"
+    focusable="false"
+    height="1em"
+    role="img"
+    viewbox="0 0 24 24"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
   >
     <path
+      clip-rule="evenodd"
+      d="M2.25 7.5c0-.69.56-1.25 1.25-1.25h4.25V5c0-.966.784-1.75 1.75-1.75h5c.966 0 1.75.784 1.75 1.75v1.25h4.25c.69 0 1.25.56 1.25 1.25v5c0 .69-.56 1.25-1.25 1.25h-.25v4.75c0 .69-.56 1.25-1.25 1.25H5c-.69 0-1.25-.56-1.25-1.25v-4.75H3.5c-.69 0-1.25-.56-1.25-1.25zm7-2.5a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v1.25h-5.5zM12 15.75a.75.75 0 0 0 .75-.75v-1.25h6v4.5H5.25v-4.5h6V15c0 .414.336.75.75.75m0-5.5a.75.75 0 0 1 .75.75v1.25h7.5v-4.5H3.75v4.5h7.5V11a.75.75 0 0 1 .75-.75"
       fill="currentColor"
       fill-rule="evenodd"
-      d="M2.25 7.5c0-.69.56-1.25 1.25-1.25h4.25V5c0-.966.784-1.75 1.75-1.75h5c.966 0 1.75.784 1.75 1.75v1.25h4.25c.69 0 1.25.56 1.25 1.25v5c0 .69-.56 1.25-1.25 1.25h-.25v4.75c0 .69-.56 1.25-1.25 1.25H5c-.69 0-1.25-.56-1.25-1.25v-4.75H3.5c-.69 0-1.25-.56-1.25-1.25zm7-2.5a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v1.25h-5.5zM12 15.75a.75.75 0 0 0 .75-.75v-1.25h6v4.5H5.25v-4.5h6V15c0 .414.336.75.75.75m0-5.5a.75.75 0 0 1 .75.75v1.25h7.5v-4.5H3.75v4.5h7.5V11a.75.75 0 0 1 .75-.75"
-      clip-rule="evenodd"
     >
     </path>
   </svg>
 </span>
 <span
+  aria-label="Ola Nordmann"
   data-variant="circle"
   role="img"
-  aria-label="Ola Nordmann"
 >
   <img
     alt
@@ -102,44 +102,44 @@ exports[`Content 1`] = `
 exports[`In Dropdown 1`] = `
 <button
   data-variant="tertiary"
-  type="button"
   popovertarget="_r_1_"
+  type="button"
 >
   <span
-    data-variant="circle"
-    data-initials="ON"
-    role="img"
     aria-hidden="true"
+    data-initials="ON"
     data-size="sm"
+    data-variant="circle"
+    role="img"
   >
   </span>
   Ola Nordmann
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
     aria-hidden="true"
+    fill="none"
+    focusable="false"
+    height="1em"
+    role="img"
+    viewbox="0 0 24 24"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
   >
     <path
+      clip-rule="evenodd"
+      d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
       fill="currentColor"
       fill-rule="evenodd"
-      d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
-      clip-rule="evenodd"
     >
     </path>
   </svg>
 </button>
 <div
-  id="_r_1_"
-  popover="manual"
-  data-placement="bottom-end"
-  data-variant="default"
-  data-size="md"
   data-floating="bottom-end"
+  data-placement="bottom-end"
+  data-size="md"
+  data-variant="default"
+  id="<removed>"
+  popover="manual"
   style="--_ds-floating-arrow-x: 151px; --_ds-floating-arrow-y: -38px; translate: <removed>;"
 >
   <h2>
@@ -156,17 +156,17 @@ exports[`In Dropdown 1`] = `
           data-placement="top-right"
         >
           <span
-            data-variant="base"
             data-color="danger"
             data-size="sm"
+            data-variant="base"
           >
           </span>
           <span
-            data-variant="circle"
-            data-initials="ON"
-            role="img"
             aria-hidden="true"
+            data-initials="ON"
             data-size="xs"
+            data-variant="circle"
+            role="img"
           >
           </span>
         </span>
@@ -179,27 +179,27 @@ exports[`In Dropdown 1`] = `
         type="button"
       >
         <span
+          aria-hidden="true"
+          data-color="support1"
+          data-size="xs"
           data-variant="circle"
           role="img"
-          data-size="xs"
-          data-color="support1"
-          aria-hidden="true"
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            fill="none"
-            viewbox="0 0 24 24"
-            focusable="false"
-            role="img"
             aria-hidden="true"
+            fill="none"
+            focusable="false"
+            height="1em"
+            role="img"
+            viewbox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
+              clip-rule="evenodd"
+              d="M2.25 7.5c0-.69.56-1.25 1.25-1.25h4.25V5c0-.966.784-1.75 1.75-1.75h5c.966 0 1.75.784 1.75 1.75v1.25h4.25c.69 0 1.25.56 1.25 1.25v5c0 .69-.56 1.25-1.25 1.25h-.25v4.75c0 .69-.56 1.25-1.25 1.25H5c-.69 0-1.25-.56-1.25-1.25v-4.75H3.5c-.69 0-1.25-.56-1.25-1.25zm7-2.5a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v1.25h-5.5zM12 15.75a.75.75 0 0 0 .75-.75v-1.25h6v4.5H5.25v-4.5h6V15c0 .414.336.75.75.75m0-5.5a.75.75 0 0 1 .75.75v1.25h7.5v-4.5H3.75v4.5h7.5V11a.75.75 0 0 1 .75-.75"
               fill="currentColor"
               fill-rule="evenodd"
-              d="M2.25 7.5c0-.69.56-1.25 1.25-1.25h4.25V5c0-.966.784-1.75 1.75-1.75h5c.966 0 1.75.784 1.75 1.75v1.25h4.25c.69 0 1.25.56 1.25 1.25v5c0 .69-.56 1.25-1.25 1.25h-.25v4.75c0 .69-.56 1.25-1.25 1.25H5c-.69 0-1.25-.56-1.25-1.25v-4.75H3.5c-.69 0-1.25-.56-1.25-1.25zm7-2.5a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v1.25h-5.5zM12 15.75a.75.75 0 0 0 .75-.75v-1.25h6v4.5H5.25v-4.5h6V15c0 .414.336.75.75.75m0-5.5a.75.75 0 0 1 .75.75v1.25h7.5v-4.5H3.75v4.5h7.5V11a.75.75 0 0 1 .75-.75"
-              clip-rule="evenodd"
             >
             </path>
           </svg>
@@ -213,72 +213,72 @@ exports[`In Dropdown 1`] = `
 
 exports[`Preview 1`] = `
 <span
+  aria-label="Ola Nordmann"
   data-variant="circle"
   role="img"
-  aria-label="Ola Nordmann"
 >
 </span>
 `;
 
 exports[`Sizes 1`] = `
 <span
-  data-variant="circle"
+  aria-label="extra small"
   data-initials="xs"
-  role="img"
-  aria-label="extra small"
   data-size="xs"
+  data-variant="circle"
+  role="img"
 >
 </span>
 <span
-  data-variant="circle"
-  role="img"
   aria-label="extra small"
   data-size="xs"
+  data-variant="circle"
+  role="img"
 >
 </span>
 <span
-  data-variant="circle"
+  aria-label="small"
   data-initials="sm"
-  role="img"
-  aria-label="small"
   data-size="sm"
+  data-variant="circle"
+  role="img"
 >
 </span>
 <span
-  data-variant="circle"
-  role="img"
   aria-label="small"
   data-size="sm"
+  data-variant="circle"
+  role="img"
 >
 </span>
 <span
-  data-variant="circle"
+  aria-label="medium"
   data-initials="md"
-  role="img"
-  aria-label="medium"
   data-size="md"
+  data-variant="circle"
+  role="img"
 >
 </span>
 <span
-  data-variant="circle"
-  role="img"
   aria-label="medium"
   data-size="md"
+  data-variant="circle"
+  role="img"
 >
 </span>
 <span
-  data-variant="circle"
+  aria-label="large"
   data-initials="lg"
-  role="img"
-  aria-label="large"
   data-size="lg"
+  data-variant="circle"
+  role="img"
 >
 </span>
 <span
-  data-variant="circle"
-  role="img"
   aria-label="large"
   data-size="lg"
+  data-variant="circle"
+  role="img"
 >
 </span>
 `;

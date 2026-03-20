@@ -2,25 +2,25 @@
 
 exports[`Checkbox In Color Context 1`] = `
 <div
-  data-variant="tinted"
   data-color="accent"
+  data-variant="tinted"
 >
-  <ds-field data-clickdelegatefor="checkbox-in-color-context">
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="checkbox-in-color-context"
-      type="checkbox"
+      aria-describedby="<removed>"
       checked
-      aria-describedby="mmowjzw1hs62"
+      id="<removed>"
+      type="checkbox"
     >
     <label
       data-weight="regular"
-      for="checkbox-in-color-context"
+      for="<removed>"
     >
       Checkbox label
     </label>
     <div
       data-field="description"
-      id="mmowjzw1hs62"
+      id="<removed>"
     >
       Description
     </div>
@@ -29,22 +29,22 @@ exports[`Checkbox In Color Context 1`] = `
 `;
 
 exports[`Focused 1`] = `
-<ds-field data-clickdelegatefor="checkbox-preview">
+<ds-field data-clickdelegatefor="<removed>">
   <input
-    id="checkbox-preview"
+    aria-describedby="<removed>"
+    id="<removed>"
     type="checkbox"
     value="value"
-    aria-describedby="mmowjzw1hs63"
   >
   <label
     data-weight="regular"
-    for="checkbox-preview"
+    for="<removed>"
   >
     Checkbox label
   </label>
   <div
     data-field="description"
-    id="mmowjzw1hs63"
+    id="<removed>"
   >
     Description
   </div>
@@ -52,28 +52,28 @@ exports[`Focused 1`] = `
 `;
 
 exports[`One Option 1`] = `
-<fieldset aria-labelledby="components-checkbox--one-optionlegend components-checkbox--one-optiondescription">
+<fieldset aria-labelledby="<removed>">
   <legend
-    id="components-checkbox--one-optionlegend"
     data-weight="medium"
+    id="<removed>"
   >
     Bekreft at du er over 18 år
   </legend>
   <p
     data-variant="default"
-    id="components-checkbox--one-optiondescription"
+    id="<removed>"
   >
     For at vi skal kunne sende deg opplysningen du ber om, må du bekrefte at du er myndig.
   </p>
-  <ds-field data-clickdelegatefor="components-checkbox--one-option">
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-checkbox--one-option"
+      id="<removed>"
       type="checkbox"
       value="samtykke"
     >
     <label
       data-weight="regular"
-      for="components-checkbox--one-option"
+      for="<removed>"
     >
       Jeg bekrefter at jeg er over 18 år
     </label>
@@ -82,22 +82,22 @@ exports[`One Option 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<ds-field data-clickdelegatefor="checkbox-preview">
+<ds-field data-clickdelegatefor="<removed>">
   <input
-    id="checkbox-preview"
+    aria-describedby="<removed>"
+    id="<removed>"
     type="checkbox"
     value="value"
-    aria-describedby="mmowjzw1hs61"
   >
   <label
     data-weight="regular"
-    for="checkbox-preview"
+    for="<removed>"
   >
     Checkbox label
   </label>
   <div
     data-field="description"
-    id="mmowjzw1hs61"
+    id="<removed>"
   >
     Description
   </div>

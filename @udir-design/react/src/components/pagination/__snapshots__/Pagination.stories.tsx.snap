@@ -8,39 +8,39 @@ exports[`Mobile 1`] = `
   <ul>
     <li>
       <button
-        data-variant="tertiary"
         aria-label="Forrige side"
+        data-variant="tertiary"
       >
       </button>
     </li>
     <li>
       <button
-        data-variant="tertiary"
         aria-label="Side 2"
+        data-variant="tertiary"
       >
         2
       </button>
     </li>
     <li>
       <button
-        data-variant="tertiary"
         aria-label="Side 3"
+        data-variant="tertiary"
       >
         3
       </button>
     </li>
     <li>
       <button
-        data-variant="tertiary"
         aria-label="Side 4"
+        data-variant="tertiary"
       >
         4
       </button>
     </li>
     <li>
       <button
-        data-variant="tertiary"
         aria-label="Neste side"
+        data-variant="tertiary"
       >
       </button>
     </li>
@@ -56,8 +56,8 @@ exports[`Preview 1`] = `
   <ul>
     <li>
       <button
-        data-variant="tertiary"
         aria-label="Forrige side"
+        data-variant="tertiary"
         variant="tertiary"
       >
         Forrige
@@ -65,41 +65,41 @@ exports[`Preview 1`] = `
     </li>
     <li>
       <button
-        data-variant="tertiary"
         aria-label="Side 1"
+        data-variant="tertiary"
       >
         1
       </button>
     </li>
     <li>
       <button
-        data-variant="tertiary"
         aria-label="Side 2"
+        data-variant="tertiary"
       >
         2
       </button>
     </li>
     <li>
       <button
-        data-variant="tertiary"
         aria-label="Side 3"
+        data-variant="tertiary"
       >
         3
       </button>
     </li>
     <li>
       <button
-        data-variant="tertiary"
-        aria-label="Side 4"
         aria-current="true"
+        aria-label="Side 4"
+        data-variant="tertiary"
       >
         4
       </button>
     </li>
     <li>
       <button
-        data-variant="tertiary"
         aria-label="Side 5"
+        data-variant="tertiary"
       >
         5
       </button>
@@ -108,16 +108,16 @@ exports[`Preview 1`] = `
     </li>
     <li>
       <button
-        data-variant="tertiary"
         aria-label="Side 10"
+        data-variant="tertiary"
       >
         10
       </button>
     </li>
     <li>
       <button
-        data-variant="tertiary"
         aria-label="Neste side"
+        data-variant="tertiary"
         variant="tertiary"
       >
         Neste
@@ -131,8 +131,8 @@ exports[`With Anchor 1`] = `
 <div style="gap: 70px; display: flex; flex-direction: column;">
   <div>
     <input
-      placeholder
       aria-label="Søk"
+      placeholder
       type="search"
       value="https://udir.design.no/pagination"
     >
@@ -144,9 +144,9 @@ exports[`With Anchor 1`] = `
     <ul>
       <li>
         <a
-          href="#side-3"
-          data-variant="tertiary"
           aria-label="Forrige side"
+          data-variant="tertiary"
+          href="#side-3"
           variant="tertiary"
         >
           Forrige
@@ -154,46 +154,46 @@ exports[`With Anchor 1`] = `
       </li>
       <li>
         <a
-          href="#side-1"
-          data-variant="tertiary"
           aria-label="Side 1"
+          data-variant="tertiary"
+          href="#side-1"
         >
           1
         </a>
       </li>
       <li>
         <a
-          href="#side-2"
-          data-variant="tertiary"
           aria-label="Side 2"
+          data-variant="tertiary"
+          href="#side-2"
         >
           2
         </a>
       </li>
       <li>
         <a
-          href="#side-3"
-          data-variant="tertiary"
           aria-label="Side 3"
+          data-variant="tertiary"
+          href="#side-3"
         >
           3
         </a>
       </li>
       <li>
         <a
-          href="#side-4"
-          data-variant="tertiary"
-          aria-label="Side 4"
           aria-current="true"
+          aria-label="Side 4"
+          data-variant="tertiary"
+          href="#side-4"
         >
           4
         </a>
       </li>
       <li>
         <a
-          href="#side-5"
-          data-variant="tertiary"
           aria-label="Side 5"
+          data-variant="tertiary"
+          href="#side-5"
         >
           5
         </a>
@@ -202,18 +202,18 @@ exports[`With Anchor 1`] = `
       </li>
       <li>
         <a
-          href="#side-10"
-          data-variant="tertiary"
           aria-label="Side 10"
+          data-variant="tertiary"
+          href="#side-10"
         >
           10
         </a>
       </li>
       <li>
         <a
-          href="#side-5"
-          data-variant="tertiary"
           aria-label="Neste side"
+          data-variant="tertiary"
+          href="#side-5"
           variant="tertiary"
         >
           Neste

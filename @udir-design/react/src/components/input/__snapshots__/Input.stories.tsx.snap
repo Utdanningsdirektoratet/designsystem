@@ -12,140 +12,176 @@ exports[`Checkbox 1`] = `
     >
       Small
     </h2>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="components-input--checkbox-sm-default"
-        type="checkbox"
+        id="<removed>"
         name="sm-default"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Default
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="components-input--checkbox-sm-checked"
-        type="checkbox"
         checked
+        id="<removed>"
         name="sm-checked"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Checked
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         data-indeterminate="true"
-        id="components-input--checkbox-sm-indeterminate"
-        type="checkbox"
+        id="<removed>"
         name="sm-indeterminate"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Indeterminate
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         disabled
-        id="components-input--checkbox-sm-disabled"
-        type="checkbox"
+        id="<removed>"
         name="sm-disabled"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Disabled
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        disabled
-        id="components-input--checkbox-sm-disabled-checked"
-        type="checkbox"
         checked
+        disabled
+        id="<removed>"
         name="sm-disabled-checked"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Disabled checked
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        disabled
         data-indeterminate="true"
-        id="components-input--checkbox-sm-disabled-indeterminate"
-        type="checkbox"
+        disabled
+        id="<removed>"
         name="sm-disabled-indeterminate"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Disabled indeterminate
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         aria-invalid="true"
-        id="components-input--checkbox-sm-invalid"
-        type="checkbox"
+        id="<removed>"
         name="sm-invalid"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Invalid
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         aria-invalid="true"
-        id="components-input--checkbox-sm-invalid-checked"
-        type="checkbox"
         checked
+        id="<removed>"
         name="sm-invalid-checked"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Invalid checked
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         aria-invalid="true"
         data-indeterminate="true"
-        id="components-input--checkbox-sm-invalid-indeterminate"
-        type="checkbox"
+        id="<removed>"
         name="sm-invalid-indeterminate"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Invalid indeterminate
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        readonly
-        id="components-input--checkbox-sm-read-only"
-        type="checkbox"
+        id="<removed>"
         name="sm-read-only"
+        readonly
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Read-only
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        readonly
-        id="components-input--checkbox-sm-read-only-checked"
-        type="checkbox"
         checked
+        id="<removed>"
         name="sm-read-only-checked"
+        readonly
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Read-only checked
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        readonly
         data-indeterminate="true"
-        id="components-input--checkbox-sm-read-only-indeterminate"
-        type="checkbox"
+        id="<removed>"
         name="sm-read-only-indeterminate"
+        readonly
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Read-only indeterminate
       </label>
     </ds-field>
@@ -160,140 +196,176 @@ exports[`Checkbox 1`] = `
     >
       Medium
     </h2>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="components-input--checkbox-md-default"
-        type="checkbox"
+        id="<removed>"
         name="md-default"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Default
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="components-input--checkbox-md-checked"
-        type="checkbox"
         checked
+        id="<removed>"
         name="md-checked"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Checked
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         data-indeterminate="true"
-        id="components-input--checkbox-md-indeterminate"
-        type="checkbox"
+        id="<removed>"
         name="md-indeterminate"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Indeterminate
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         disabled
-        id="components-input--checkbox-md-disabled"
-        type="checkbox"
+        id="<removed>"
         name="md-disabled"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Disabled
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        disabled
-        id="components-input--checkbox-md-disabled-checked"
-        type="checkbox"
         checked
+        disabled
+        id="<removed>"
         name="md-disabled-checked"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Disabled checked
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        disabled
         data-indeterminate="true"
-        id="components-input--checkbox-md-disabled-indeterminate"
-        type="checkbox"
+        disabled
+        id="<removed>"
         name="md-disabled-indeterminate"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Disabled indeterminate
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         aria-invalid="true"
-        id="components-input--checkbox-md-invalid"
-        type="checkbox"
+        id="<removed>"
         name="md-invalid"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Invalid
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         aria-invalid="true"
-        id="components-input--checkbox-md-invalid-checked"
-        type="checkbox"
         checked
+        id="<removed>"
         name="md-invalid-checked"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Invalid checked
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         aria-invalid="true"
         data-indeterminate="true"
-        id="components-input--checkbox-md-invalid-indeterminate"
-        type="checkbox"
+        id="<removed>"
         name="md-invalid-indeterminate"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Invalid indeterminate
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        readonly
-        id="components-input--checkbox-md-read-only"
-        type="checkbox"
+        id="<removed>"
         name="md-read-only"
+        readonly
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Read-only
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        readonly
-        id="components-input--checkbox-md-read-only-checked"
-        type="checkbox"
         checked
+        id="<removed>"
         name="md-read-only-checked"
+        readonly
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Read-only checked
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        readonly
         data-indeterminate="true"
-        id="components-input--checkbox-md-read-only-indeterminate"
-        type="checkbox"
+        id="<removed>"
         name="md-read-only-indeterminate"
+        readonly
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Read-only indeterminate
       </label>
     </ds-field>
@@ -308,140 +380,176 @@ exports[`Checkbox 1`] = `
     >
       Large
     </h2>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="components-input--checkbox-lg-default"
-        type="checkbox"
+        id="<removed>"
         name="lg-default"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Default
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="components-input--checkbox-lg-checked"
-        type="checkbox"
         checked
+        id="<removed>"
         name="lg-checked"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Checked
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         data-indeterminate="true"
-        id="components-input--checkbox-lg-indeterminate"
-        type="checkbox"
+        id="<removed>"
         name="lg-indeterminate"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Indeterminate
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         disabled
-        id="components-input--checkbox-lg-disabled"
-        type="checkbox"
+        id="<removed>"
         name="lg-disabled"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Disabled
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        disabled
-        id="components-input--checkbox-lg-disabled-checked"
-        type="checkbox"
         checked
+        disabled
+        id="<removed>"
         name="lg-disabled-checked"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Disabled checked
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        disabled
         data-indeterminate="true"
-        id="components-input--checkbox-lg-disabled-indeterminate"
-        type="checkbox"
+        disabled
+        id="<removed>"
         name="lg-disabled-indeterminate"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Disabled indeterminate
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         aria-invalid="true"
-        id="components-input--checkbox-lg-invalid"
-        type="checkbox"
+        id="<removed>"
         name="lg-invalid"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Invalid
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         aria-invalid="true"
-        id="components-input--checkbox-lg-invalid-checked"
-        type="checkbox"
         checked
+        id="<removed>"
         name="lg-invalid-checked"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Invalid checked
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         aria-invalid="true"
         data-indeterminate="true"
-        id="components-input--checkbox-lg-invalid-indeterminate"
-        type="checkbox"
+        id="<removed>"
         name="lg-invalid-indeterminate"
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Invalid indeterminate
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        readonly
-        id="components-input--checkbox-lg-read-only"
-        type="checkbox"
+        id="<removed>"
         name="lg-read-only"
+        readonly
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Read-only
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        readonly
-        id="components-input--checkbox-lg-read-only-checked"
-        type="checkbox"
         checked
+        id="<removed>"
         name="lg-read-only-checked"
+        readonly
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Read-only checked
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        readonly
         data-indeterminate="true"
-        id="components-input--checkbox-lg-read-only-indeterminate"
-        type="checkbox"
+        id="<removed>"
         name="lg-read-only-indeterminate"
+        readonly
+        type="checkbox"
       >
-      <label data-weight="medium">
+      <label
+        data-weight="medium"
+        for="<removed>"
+      >
         Read-only indeterminate
       </label>
     </ds-field>
@@ -454,12 +562,12 @@ exports[`Controlled 1`] = `
   <ds-field>
     <label
       data-weight="medium"
-      for="components-input--controlled"
+      for="<removed>"
     >
       Fullt navn
     </label>
     <input
-      id="components-input--controlled"
+      id="<removed>"
       type="text"
       value
     >
@@ -477,57 +585,57 @@ exports[`Html Size 1`] = `
 <ds-field>
   <label
     data-weight="medium"
-    for="components-input--html-size"
+    for="<removed>"
   >
     Input with size
   </label>
   <input
+    id="<removed>"
     size="10"
-    id="components-input--html-size"
     type="text"
   >
 </ds-field>
 `;
 
 exports[`Input Types 1`] = `
-<ds-field data-clickdelegatefor="components-input--input-types-checkbox">
+<ds-field data-clickdelegatefor="<removed>">
   <label
     data-weight="medium"
-    for="components-input--input-types-checkbox"
+    for="<removed>"
   >
     Checkbox
   </label>
   <input
-    id="components-input--input-types-checkbox"
-    type="checkbox"
     checked
+    id="<removed>"
+    type="checkbox"
   >
 </ds-field>
-<ds-field data-clickdelegatefor="components-input--input-types-radio">
+<ds-field data-clickdelegatefor="<removed>">
   <label
     data-weight="medium"
-    for="components-input--input-types-radio"
+    for="<removed>"
   >
     Radio
   </label>
   <input
-    id="components-input--input-types-radio"
-    type="radio"
     checked
+    id="<removed>"
+    type="radio"
   >
 </ds-field>
-<ds-field data-clickdelegatefor="components-input--input-types-switch">
+<ds-field data-clickdelegatefor="<removed>">
   <label
     data-weight="medium"
-    for="components-input--input-types-switch"
+    for="<removed>"
   >
     Switch
   </label>
   <input
-    role="switch"
-    id="components-input--input-types-switch"
-    type="checkbox"
     checked
+    id="<removed>"
+    role="switch"
+    type="checkbox"
   >
 </ds-field>
 `;
@@ -536,10 +644,9 @@ exports[`Preview 1`] = `
 <input
   aria-invalid="false"
   aria-label="input"
-  id="components-input--preview"
-  type="text"
   checked
   name="inputs"
+  type="text"
 >
 `;
 
@@ -555,116 +662,116 @@ exports[`Radio 1`] = `
     >
       Small
     </h2>
-    <ds-field data-clickdelegatefor="components-input--radio-sm-Default">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="components-input--radio-sm-Default"
-        type="radio"
+        id="<removed>"
         name="sm-Default"
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-sm-Default"
+        for="<removed>"
       >
         Default
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-sm-Checked">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="components-input--radio-sm-Checked"
-        type="radio"
         checked
+        id="<removed>"
         name="sm-Checked"
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-sm-Checked"
+        for="<removed>"
       >
         Checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-sm-Disabled">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         disabled
-        id="components-input--radio-sm-Disabled"
-        type="radio"
+        id="<removed>"
         name="sm-Disabled"
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-sm-Disabled"
+        for="<removed>"
       >
         Disabled
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-sm-Disabled">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        disabled
-        id="components-input--radio-sm-Disabled"
-        type="radio"
         checked
+        disabled
+        id="<removed>"
         name="sm-Disabled"
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-sm-Disabled"
+        for="<removed>"
       >
         Disabled checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-sm-Invalid">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         aria-invalid="true"
-        id="components-input--radio-sm-Invalid"
-        type="radio"
+        id="<removed>"
         name="sm-Invalid"
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-sm-Invalid"
+        for="<removed>"
       >
         Invalid
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-sm-Invalid">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         aria-invalid="true"
-        id="components-input--radio-sm-Invalid"
-        type="radio"
         checked
+        id="<removed>"
         name="sm-Invalid"
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-sm-Invalid"
+        for="<removed>"
       >
         Invalid checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-sm-Read-only">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        readonly
-        id="components-input--radio-sm-Read-only"
-        type="radio"
+        id="<removed>"
         name="sm-Read-only"
+        readonly
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-sm-Read-only"
+        for="<removed>"
       >
         Read-only
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-sm-Read-only">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        readonly
-        id="components-input--radio-sm-Read-only"
-        type="radio"
         checked
+        id="<removed>"
         name="sm-Read-only"
+        readonly
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-sm-Read-only"
+        for="<removed>"
       >
         Read-only checked
       </label>
@@ -680,116 +787,116 @@ exports[`Radio 1`] = `
     >
       Medium
     </h2>
-    <ds-field data-clickdelegatefor="components-input--radio-md-Default">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="components-input--radio-md-Default"
-        type="radio"
+        id="<removed>"
         name="md-Default"
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-md-Default"
+        for="<removed>"
       >
         Default
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-md-Checked">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="components-input--radio-md-Checked"
-        type="radio"
         checked
+        id="<removed>"
         name="md-Checked"
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-md-Checked"
+        for="<removed>"
       >
         Checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-md-Disabled">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         disabled
-        id="components-input--radio-md-Disabled"
-        type="radio"
+        id="<removed>"
         name="md-Disabled"
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-md-Disabled"
+        for="<removed>"
       >
         Disabled
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-md-Disabled">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        disabled
-        id="components-input--radio-md-Disabled"
-        type="radio"
         checked
+        disabled
+        id="<removed>"
         name="md-Disabled"
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-md-Disabled"
+        for="<removed>"
       >
         Disabled checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-md-Invalid">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         aria-invalid="true"
-        id="components-input--radio-md-Invalid"
-        type="radio"
+        id="<removed>"
         name="md-Invalid"
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-md-Invalid"
+        for="<removed>"
       >
         Invalid
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-md-Invalid">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         aria-invalid="true"
-        id="components-input--radio-md-Invalid"
-        type="radio"
         checked
+        id="<removed>"
         name="md-Invalid"
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-md-Invalid"
+        for="<removed>"
       >
         Invalid checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-md-Read-only">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        readonly
-        id="components-input--radio-md-Read-only"
-        type="radio"
+        id="<removed>"
         name="md-Read-only"
+        readonly
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-md-Read-only"
+        for="<removed>"
       >
         Read-only
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-md-Read-only">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        readonly
-        id="components-input--radio-md-Read-only"
-        type="radio"
         checked
+        id="<removed>"
         name="md-Read-only"
+        readonly
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-md-Read-only"
+        for="<removed>"
       >
         Read-only checked
       </label>
@@ -805,116 +912,116 @@ exports[`Radio 1`] = `
     >
       Large
     </h2>
-    <ds-field data-clickdelegatefor="components-input--radio-lg-Default">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="components-input--radio-lg-Default"
-        type="radio"
+        id="<removed>"
         name="lg-Default"
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-lg-Default"
+        for="<removed>"
       >
         Default
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-lg-Checked">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="components-input--radio-lg-Checked"
-        type="radio"
         checked
+        id="<removed>"
         name="lg-Checked"
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-lg-Checked"
+        for="<removed>"
       >
         Checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-lg-Disabled">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         disabled
-        id="components-input--radio-lg-Disabled"
-        type="radio"
+        id="<removed>"
         name="lg-Disabled"
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-lg-Disabled"
+        for="<removed>"
       >
         Disabled
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-lg-Disabled">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        disabled
-        id="components-input--radio-lg-Disabled"
-        type="radio"
         checked
+        disabled
+        id="<removed>"
         name="lg-Disabled"
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-lg-Disabled"
+        for="<removed>"
       >
         Disabled checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-lg-Invalid">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         aria-invalid="true"
-        id="components-input--radio-lg-Invalid"
-        type="radio"
+        id="<removed>"
         name="lg-Invalid"
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-lg-Invalid"
+        for="<removed>"
       >
         Invalid
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-lg-Invalid">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
         aria-invalid="true"
-        id="components-input--radio-lg-Invalid"
-        type="radio"
         checked
+        id="<removed>"
         name="lg-Invalid"
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-lg-Invalid"
+        for="<removed>"
       >
         Invalid checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-lg-Read-only">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        readonly
-        id="components-input--radio-lg-Read-only"
-        type="radio"
+        id="<removed>"
         name="lg-Read-only"
+        readonly
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-lg-Read-only"
+        for="<removed>"
       >
         Read-only
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-lg-Read-only">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        readonly
-        id="components-input--radio-lg-Read-only"
-        type="radio"
         checked
+        id="<removed>"
         name="lg-Read-only"
+        readonly
+        type="radio"
       >
       <label
         data-weight="medium"
-        for="components-input--radio-lg-Read-only"
+        for="<removed>"
       >
         Read-only checked
       </label>
@@ -935,93 +1042,93 @@ exports[`Switch 1`] = `
     >
       Small
     </h2>
-    <ds-field data-clickdelegatefor="components-input--switch-sm-default">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        role="switch"
-        id="components-input--switch-sm-default"
-        type="checkbox"
+        id="<removed>"
         name="sm-default"
+        role="switch"
+        type="checkbox"
       >
       <label
         data-weight="medium"
-        for="components-input--switch-sm-default"
+        for="<removed>"
       >
         Default
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--switch-sm-checked">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        role="switch"
-        id="components-input--switch-sm-checked"
-        type="checkbox"
         checked
+        id="<removed>"
         name="sm-checked"
+        role="switch"
+        type="checkbox"
       >
       <label
         data-weight="medium"
-        for="components-input--switch-sm-checked"
+        for="<removed>"
       >
         Checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--switch-sm-disabled">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        role="switch"
         disabled
-        id="components-input--switch-sm-disabled"
-        type="checkbox"
+        id="<removed>"
         name="sm-disabled"
+        role="switch"
+        type="checkbox"
       >
       <label
         data-weight="medium"
-        for="components-input--switch-sm-disabled"
+        for="<removed>"
       >
         Disabled
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--switch-sm-disabled-checked">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        role="switch"
-        disabled
-        id="components-input--switch-sm-disabled-checked"
-        type="checkbox"
         checked
+        disabled
+        id="<removed>"
         name="sm-disabled-checked"
+        role="switch"
+        type="checkbox"
       >
       <label
         data-weight="medium"
-        for="components-input--switch-sm-disabled-checked"
+        for="<removed>"
       >
         Disabled checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--switch-sm-read-only">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        role="switch"
-        readonly
-        id="components-input--switch-sm-read-only"
-        type="checkbox"
+        id="<removed>"
         name="sm-read-only"
+        readonly
+        role="switch"
+        type="checkbox"
       >
       <label
         data-weight="medium"
-        for="components-input--switch-sm-read-only"
+        for="<removed>"
       >
         Read-only
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--switch-sm-read-only-checked">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        role="switch"
-        readonly
-        id="components-input--switch-sm-read-only-checked"
-        type="checkbox"
         checked
+        id="<removed>"
         name="sm-read-only-checked"
+        readonly
+        role="switch"
+        type="checkbox"
       >
       <label
         data-weight="medium"
-        for="components-input--switch-sm-read-only-checked"
+        for="<removed>"
       >
         Read-only checked
       </label>
@@ -1037,93 +1144,93 @@ exports[`Switch 1`] = `
     >
       Medium
     </h2>
-    <ds-field data-clickdelegatefor="components-input--switch-md-default">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        role="switch"
-        id="components-input--switch-md-default"
-        type="checkbox"
+        id="<removed>"
         name="md-default"
+        role="switch"
+        type="checkbox"
       >
       <label
         data-weight="medium"
-        for="components-input--switch-md-default"
+        for="<removed>"
       >
         Default
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--switch-md-checked">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        role="switch"
-        id="components-input--switch-md-checked"
-        type="checkbox"
         checked
+        id="<removed>"
         name="md-checked"
+        role="switch"
+        type="checkbox"
       >
       <label
         data-weight="medium"
-        for="components-input--switch-md-checked"
+        for="<removed>"
       >
         Checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--switch-md-disabled">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        role="switch"
         disabled
-        id="components-input--switch-md-disabled"
-        type="checkbox"
+        id="<removed>"
         name="md-disabled"
+        role="switch"
+        type="checkbox"
       >
       <label
         data-weight="medium"
-        for="components-input--switch-md-disabled"
+        for="<removed>"
       >
         Disabled
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--switch-md-disabled-checked">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        role="switch"
-        disabled
-        id="components-input--switch-md-disabled-checked"
-        type="checkbox"
         checked
+        disabled
+        id="<removed>"
         name="md-disabled-checked"
+        role="switch"
+        type="checkbox"
       >
       <label
         data-weight="medium"
-        for="components-input--switch-md-disabled-checked"
+        for="<removed>"
       >
         Disabled checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--switch-md-read-only">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        role="switch"
-        readonly
-        id="components-input--switch-md-read-only"
-        type="checkbox"
+        id="<removed>"
         name="md-read-only"
+        readonly
+        role="switch"
+        type="checkbox"
       >
       <label
         data-weight="medium"
-        for="components-input--switch-md-read-only"
+        for="<removed>"
       >
         Read-only
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--switch-md-read-only-checked">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        role="switch"
-        readonly
-        id="components-input--switch-md-read-only-checked"
-        type="checkbox"
         checked
+        id="<removed>"
         name="md-read-only-checked"
+        readonly
+        role="switch"
+        type="checkbox"
       >
       <label
         data-weight="medium"
-        for="components-input--switch-md-read-only-checked"
+        for="<removed>"
       >
         Read-only checked
       </label>
@@ -1139,93 +1246,93 @@ exports[`Switch 1`] = `
     >
       Large
     </h2>
-    <ds-field data-clickdelegatefor="components-input--switch-lg-default">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        role="switch"
-        id="components-input--switch-lg-default"
-        type="checkbox"
+        id="<removed>"
         name="lg-default"
+        role="switch"
+        type="checkbox"
       >
       <label
         data-weight="medium"
-        for="components-input--switch-lg-default"
+        for="<removed>"
       >
         Default
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--switch-lg-checked">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        role="switch"
-        id="components-input--switch-lg-checked"
-        type="checkbox"
         checked
+        id="<removed>"
         name="lg-checked"
+        role="switch"
+        type="checkbox"
       >
       <label
         data-weight="medium"
-        for="components-input--switch-lg-checked"
+        for="<removed>"
       >
         Checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--switch-lg-disabled">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        role="switch"
         disabled
-        id="components-input--switch-lg-disabled"
-        type="checkbox"
+        id="<removed>"
         name="lg-disabled"
+        role="switch"
+        type="checkbox"
       >
       <label
         data-weight="medium"
-        for="components-input--switch-lg-disabled"
+        for="<removed>"
       >
         Disabled
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--switch-lg-disabled-checked">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        role="switch"
-        disabled
-        id="components-input--switch-lg-disabled-checked"
-        type="checkbox"
         checked
+        disabled
+        id="<removed>"
         name="lg-disabled-checked"
+        role="switch"
+        type="checkbox"
       >
       <label
         data-weight="medium"
-        for="components-input--switch-lg-disabled-checked"
+        for="<removed>"
       >
         Disabled checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--switch-lg-read-only">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        role="switch"
-        readonly
-        id="components-input--switch-lg-read-only"
-        type="checkbox"
+        id="<removed>"
         name="lg-read-only"
+        readonly
+        role="switch"
+        type="checkbox"
       >
       <label
         data-weight="medium"
-        for="components-input--switch-lg-read-only"
+        for="<removed>"
       >
         Read-only
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--switch-lg-read-only-checked">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        role="switch"
-        readonly
-        id="components-input--switch-lg-read-only-checked"
-        type="checkbox"
         checked
+        id="<removed>"
         name="lg-read-only-checked"
+        readonly
+        role="switch"
+        type="checkbox"
       >
       <label
         data-weight="medium"
-        for="components-input--switch-lg-read-only-checked"
+        for="<removed>"
       >
         Read-only checked
       </label>
@@ -1249,53 +1356,53 @@ exports[`Text 1`] = `
     <ds-field>
       <label
         data-weight="medium"
-        for="components-input--text-sm-default"
+        for="<removed>"
       >
         Default
       </label>
       <input
         data-size="sm"
-        id="components-input--text-sm-default"
+        id="<removed>"
+        name="sm-default"
         type="text"
         value="Value"
-        name="sm-default"
       >
     </ds-field>
     <ds-field>
       <label
         data-weight="medium"
-        for="components-input--text-sm-disabled"
+        for="<removed>"
       >
         Disabled
       </label>
       <input
-        disabled
         data-size="sm"
-        id="components-input--text-sm-disabled"
+        disabled
+        id="<removed>"
+        name="sm-disabled"
         type="text"
         value="Value"
-        name="sm-disabled"
       >
     </ds-field>
     <ds-field>
       <label
         data-weight="medium"
-        for="components-input--text-sm-invalid"
+        for="<removed>"
       >
         Invalid
       </label>
       <input
+        aria-describedby="<removed>"
         aria-invalid="true"
         data-size="sm"
-        id="components-input--text-sm-invalid"
+        id="<removed>"
+        name="sm-invalid"
         type="text"
         value="Value"
-        name="sm-invalid"
-        aria-describedby="mmowjupda9n1"
       >
       <p
         data-field="validation"
-        id="mmowjupda9n1"
+        id="<removed>"
       >
         Feilmelding
       </p>
@@ -1303,17 +1410,17 @@ exports[`Text 1`] = `
     <ds-field>
       <label
         data-weight="medium"
-        for="components-input--text-sm-read-only"
+        for="<removed>"
       >
         Read-only
       </label>
       <input
-        readonly
         data-size="sm"
-        id="components-input--text-sm-read-only"
+        id="<removed>"
+        name="sm-read-only"
+        readonly
         type="text"
         value="Value"
-        name="sm-read-only"
       >
     </ds-field>
   </div>
@@ -1330,53 +1437,53 @@ exports[`Text 1`] = `
     <ds-field>
       <label
         data-weight="medium"
-        for="components-input--text-md-default"
+        for="<removed>"
       >
         Default
       </label>
       <input
         data-size="md"
-        id="components-input--text-md-default"
+        id="<removed>"
+        name="md-default"
         type="text"
         value="Value"
-        name="md-default"
       >
     </ds-field>
     <ds-field>
       <label
         data-weight="medium"
-        for="components-input--text-md-disabled"
+        for="<removed>"
       >
         Disabled
       </label>
       <input
-        disabled
         data-size="md"
-        id="components-input--text-md-disabled"
+        disabled
+        id="<removed>"
+        name="md-disabled"
         type="text"
         value="Value"
-        name="md-disabled"
       >
     </ds-field>
     <ds-field>
       <label
         data-weight="medium"
-        for="components-input--text-md-invalid"
+        for="<removed>"
       >
         Invalid
       </label>
       <input
+        aria-describedby="<removed>"
         aria-invalid="true"
         data-size="md"
-        id="components-input--text-md-invalid"
+        id="<removed>"
+        name="md-invalid"
         type="text"
         value="Value"
-        name="md-invalid"
-        aria-describedby="mmowjupda9n2"
       >
       <p
         data-field="validation"
-        id="mmowjupda9n2"
+        id="<removed>"
       >
         Feilmelding
       </p>
@@ -1384,17 +1491,17 @@ exports[`Text 1`] = `
     <ds-field>
       <label
         data-weight="medium"
-        for="components-input--text-md-read-only"
+        for="<removed>"
       >
         Read-only
       </label>
       <input
-        readonly
         data-size="md"
-        id="components-input--text-md-read-only"
+        id="<removed>"
+        name="md-read-only"
+        readonly
         type="text"
         value="Value"
-        name="md-read-only"
       >
     </ds-field>
   </div>
@@ -1411,53 +1518,53 @@ exports[`Text 1`] = `
     <ds-field>
       <label
         data-weight="medium"
-        for="components-input--text-lg-default"
+        for="<removed>"
       >
         Default
       </label>
       <input
         data-size="lg"
-        id="components-input--text-lg-default"
+        id="<removed>"
+        name="lg-default"
         type="text"
         value="Value"
-        name="lg-default"
       >
     </ds-field>
     <ds-field>
       <label
         data-weight="medium"
-        for="components-input--text-lg-disabled"
+        for="<removed>"
       >
         Disabled
       </label>
       <input
-        disabled
         data-size="lg"
-        id="components-input--text-lg-disabled"
+        disabled
+        id="<removed>"
+        name="lg-disabled"
         type="text"
         value="Value"
-        name="lg-disabled"
       >
     </ds-field>
     <ds-field>
       <label
         data-weight="medium"
-        for="components-input--text-lg-invalid"
+        for="<removed>"
       >
         Invalid
       </label>
       <input
+        aria-describedby="<removed>"
         aria-invalid="true"
         data-size="lg"
-        id="components-input--text-lg-invalid"
+        id="<removed>"
+        name="lg-invalid"
         type="text"
         value="Value"
-        name="lg-invalid"
-        aria-describedby="mmowjupda9n3"
       >
       <p
         data-field="validation"
-        id="mmowjupda9n3"
+        id="<removed>"
       >
         Feilmelding
       </p>
@@ -1465,17 +1572,17 @@ exports[`Text 1`] = `
     <ds-field>
       <label
         data-weight="medium"
-        for="components-input--text-lg-read-only"
+        for="<removed>"
       >
         Read-only
       </label>
       <input
-        readonly
         data-size="lg"
-        id="components-input--text-lg-read-only"
+        id="<removed>"
+        name="lg-read-only"
+        readonly
         type="text"
         value="Value"
-        name="lg-read-only"
       >
     </ds-field>
   </div>

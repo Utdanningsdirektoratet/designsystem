@@ -1,10 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Legend As Heading 1`] = `
-<fieldset>
+<fieldset aria-labelledby="<removed>">
   <legend
-    id="components-fieldset--legend-as-heading-legend"
     data-weight="medium"
+    id="<removed>"
   >
     <h2 data-size="sm">
       Hvilke tjenester bruker du?
@@ -12,40 +12,49 @@ exports[`Legend As Heading 1`] = `
   </legend>
   <p
     data-variant="default"
-    id="components-fieldset--legend-as-heading-description"
+    id="<removed>"
   >
     Påloggingssystemer hos Udir
   </p>
-  <ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-fieldset--legend-as-heading-feide"
+      id="<removed>"
+      name="components-fieldset--legend-as-heading-feide"
       type="checkbox"
       value="feide"
-      name="components-fieldset--legend-as-heading-feide"
     >
-    <label data-weight="regular">
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
       Feide
     </label>
   </ds-field>
-  <ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-fieldset--legend-as-heading-UIDP"
+      id="<removed>"
+      name="components-fieldset--legend-as-heading-UIDP"
       type="checkbox"
       value="UIDP"
-      name="components-fieldset--legend-as-heading-UIDP"
     >
-    <label data-weight="regular">
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
       UIDP
     </label>
   </ds-field>
-  <ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-fieldset--legend-as-heading-UBAS"
+      id="<removed>"
+      name="components-fieldset--legend-as-heading-UBAS"
       type="checkbox"
       value="UBAS"
-      name="components-fieldset--legend-as-heading-UBAS"
     >
-    <label data-weight="regular">
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
       UBAS
     </label>
   </ds-field>
@@ -53,49 +62,58 @@ exports[`Legend As Heading 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<fieldset>
+<fieldset aria-labelledby="<removed>">
   <legend
-    id="components-fieldset--preview-legend"
     data-weight="medium"
+    id="<removed>"
   >
     Hvilken fjordarm bor du ved?
   </legend>
   <p
     data-variant="default"
-    id="components-fieldset--preview-description"
+    id="<removed>"
   >
     Valget vil hjelpe oss å forbedre innholdet vi viser deg.
   </p>
-  <ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-fieldset--preview-radio-barsnesfjorden"
+      id="<removed>"
+      name="radio"
       type="radio"
       value="barsnesfjorden"
-      name="radio"
     >
-    <label data-weight="regular">
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
       Barsnesfjorden
     </label>
   </ds-field>
-  <ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-fieldset--preview-radio-eidsfjorden"
+      id="<removed>"
+      name="radio"
       type="radio"
       value="eidsfjorden"
-      name="radio"
     >
-    <label data-weight="regular">
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
       Eidsfjorden
     </label>
   </ds-field>
-  <ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-fieldset--preview-radio-ingen-av-de"
+      id="<removed>"
+      name="radio"
       type="radio"
       value="ingen-av-de"
-      name="radio"
     >
-    <label data-weight="regular">
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
       Ingen av de
     </label>
   </ds-field>
@@ -103,21 +121,21 @@ exports[`Preview 1`] = `
 `;
 
 exports[`With Checkbox 1`] = `
-<fieldset aria-labelledby="components-fieldset--with-checkbox-legend">
+<fieldset aria-labelledby="<removed>">
   <legend
-    id="components-fieldset--with-checkbox-legend"
     data-weight="medium"
+    id="<removed>"
   >
     Godtar du vilkårene?
   </legend>
-  <ds-field data-clickdelegatefor="components-fieldset--with-checkbox-checkbox">
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-fieldset--with-checkbox-checkbox"
+      id="<removed>"
       type="checkbox"
     >
     <label
       data-weight="regular"
-      for="components-fieldset--with-checkbox-checkbox"
+      for="<removed>"
     >
       Ja, jeg godtar
     </label>
@@ -126,10 +144,10 @@ exports[`With Checkbox 1`] = `
 `;
 
 exports[`With Textfield 1`] = `
-<fieldset aria-labelledby="components-fieldset--with-textfield-legend components-fieldset--with-textfield-description">
+<fieldset aria-labelledby="<removed>">
   <legend
-    id="components-fieldset--with-textfield-legend"
     data-weight="medium"
+    id="<removed>"
   >
     <h2 data-size="sm">
       Adresse
@@ -137,56 +155,56 @@ exports[`With Textfield 1`] = `
   </legend>
   <p
     data-variant="default"
-    id="components-fieldset--with-textfield-description"
+    id="<removed>"
   >
     Skriv inn adressen din for å motta post fra oss.
   </p>
   <ds-field>
     <label
       data-weight="medium"
-      for="components-fieldset--with-textfield-textfield"
+      for="<removed>"
     >
       Gateadresse
     </label>
     <div>
       <input
-        id="components-fieldset--with-textfield-textfield"
-        type="text"
+        id="<removed>"
         name="components-fieldset--with-textfield-textfield"
+        type="text"
       >
     </div>
   </ds-field>
   <ds-field>
     <label
       data-weight="medium"
-      for="components-fieldset--with-textfield-textfield"
+      for="<removed>"
     >
       Postnummer
     </label>
     <div>
       <input
-        id="components-fieldset--with-textfield-textfield"
-        pattern="[0-9]*"
+        id="<removed>"
         inputmode="numeric"
+        name="components-fieldset--with-textfield-textfield"
+        pattern="[0-9]*"
         size="4"
         type="text"
-        name="components-fieldset--with-textfield-textfield"
       >
     </div>
   </ds-field>
   <ds-field>
     <label
       data-weight="medium"
-      for="components-fieldset--with-textfield-textfield2"
+      for="<removed>"
     >
       Poststed
     </label>
     <div>
       <input
-        id="components-fieldset--with-textfield-textfield2"
+        id="<removed>"
+        name="components-fieldset--with-textfield-textfield2"
         size="25"
         type="text"
-        name="components-fieldset--with-textfield-textfield2"
       >
     </div>
   </ds-field>

@@ -7,8 +7,8 @@ exports[`Headings 1`] = `
       Heading xxl
     </h1>
     <p
-      data-variant="default"
       data-size="xl"
+      data-variant="default"
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
     </p>
@@ -62,8 +62,8 @@ exports[`Preview 1`] = `
       Sidetittel (h1)
     </h1>
     <p
-      data-variant="default"
       data-size="lg"
+      data-variant="default"
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae lacus ullamcorper, malesuada risus sed, consequat est. Donec lobortis leo et condimentum consequat.
     </p>
@@ -73,12 +73,12 @@ exports[`Preview 1`] = `
       <hr aria-hidden="true">
     </div>
     <div
-      data-variant="tinted"
       data-color="accent"
+      data-variant="tinted"
     >
       <details
-        open
         data-variant="default"
+        open
       >
         <summary>
           Innhold på denne siden
@@ -88,18 +88,18 @@ exports[`Preview 1`] = `
             <li>
               <a href="#first-heading">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
                   aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="1em"
+                  role="img"
+                  viewbox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill="currentColor"
                     d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                    fill="currentColor"
                   >
                   </path>
                 </svg>
@@ -111,18 +111,18 @@ exports[`Preview 1`] = `
             <li>
               <a href="#first-subheading">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
                   aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="1em"
+                  role="img"
+                  viewbox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill="currentColor"
                     d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                    fill="currentColor"
                   >
                   </path>
                 </svg>
@@ -134,18 +134,18 @@ exports[`Preview 1`] = `
             <li>
               <a href="#second-subheading">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
                   aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="1em"
+                  role="img"
+                  viewbox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill="currentColor"
                     d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                    fill="currentColor"
                   >
                   </path>
                 </svg>
@@ -157,18 +157,18 @@ exports[`Preview 1`] = `
             <li>
               <a href="#second-heading">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
                   aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="1em"
+                  role="img"
+                  viewbox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill="currentColor"
                     d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                    fill="currentColor"
                   >
                   </path>
                 </svg>
@@ -180,18 +180,18 @@ exports[`Preview 1`] = `
             <li>
               <a href="#third-heading">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
                   aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="1em"
+                  role="img"
+                  viewbox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill="currentColor"
                     d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                    fill="currentColor"
                   >
                   </path>
                 </svg>
@@ -206,7 +206,7 @@ exports[`Preview 1`] = `
     </div>
     <h2
       data-size="md"
-      id="first-heading"
+      id="<removed>"
       tabindex="-1"
     >
       Første overskrift (h2)
@@ -216,7 +216,7 @@ exports[`Preview 1`] = `
     </p>
     <h3
       data-size="sm"
-      id="first-subheading"
+      id="<removed>"
       tabindex="-1"
     >
       Første underoverskrift (h3)
@@ -226,7 +226,7 @@ exports[`Preview 1`] = `
     </p>
     <h3
       data-size="sm"
-      id="second-subheading"
+      id="<removed>"
       tabindex="-1"
     >
       Andre underoverskrift (h3)
@@ -235,9 +235,9 @@ exports[`Preview 1`] = `
       In quis fermentum enim, a rhoncus dui. Quisque in placerat nisi. Praesent sollicitudin ante eu lacus sagittis aliquet. Cras ut gravida nisi. In sed sapien eu nulla rhoncus fringilla. Mauris nec orci mollis, tincidunt purus a, tempor mauris. Integer faucibus nisi a sem laoreet dapibus sed a tellus. Proin sit amet velit vel lacus faucibus laoreet. Vivamus in rutrum enim. Fusce nulla nisl, iaculis vitae quam sit amet, vehicula semper sem.
     </p>
     <table
-      data-zebra="true"
       data-color="accent"
       data-tinted-column-header="true"
+      data-zebra="true"
     >
       <caption>
         Tabelloverskrift
@@ -289,7 +289,7 @@ exports[`Preview 1`] = `
     </table>
     <h2
       data-size="md"
-      id="second-heading"
+      id="<removed>"
       tabindex="-1"
     >
       Andre overskrift (h2)
@@ -316,7 +316,7 @@ exports[`Preview 1`] = `
     </ul>
     <h2
       data-size="md"
-      id="third-heading"
+      id="<removed>"
       tabindex="-1"
     >
       Tredje overskrift (h2)

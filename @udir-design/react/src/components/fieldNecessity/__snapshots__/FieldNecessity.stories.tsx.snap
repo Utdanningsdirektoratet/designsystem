@@ -2,30 +2,36 @@
 
 exports[`All Optional 1`] = `
 <div
-  data-show-required="true"
   data-show-optional="false"
+  data-show-required="true"
   data-show-summary="true"
   style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
 >
   <ds-field>
-    <label data-weight="medium">
+    <label
+      data-weight="medium"
+      for="<removed>"
+    >
       <span>
         Hva synes du om skjemaet?
       </span>
     </label>
     <div>
-      <textarea id="all-optional-opinion">
+      <textarea id="<removed>">
       </textarea>
     </div>
   </ds-field>
   <ds-field>
-    <label data-weight="medium">
+    <label
+      data-weight="medium"
+      for="<removed>"
+    >
       <span>
         Har du noen andre innspill?
       </span>
     </label>
     <div>
-      <textarea id="all-optional-other">
+      <textarea id="<removed>">
       </textarea>
     </div>
   </ds-field>
@@ -34,15 +40,15 @@ exports[`All Optional 1`] = `
 
 exports[`All Required 1`] = `
 <div
-  data-show-required="true"
   data-show-optional="false"
+  data-show-required="true"
   data-show-summary="true"
   style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
 >
   <ds-field>
     <label
       data-weight="medium"
-      for="all-required-first"
+      for="<removed>"
     >
       <span>
         Fornavn
@@ -50,7 +56,7 @@ exports[`All Required 1`] = `
     </label>
     <div>
       <input
-        id="all-required-first"
+        id="<removed>"
         required
         type="text"
       >
@@ -59,7 +65,7 @@ exports[`All Required 1`] = `
   <ds-field>
     <label
       data-weight="medium"
-      for="all-required-last"
+      for="<removed>"
     >
       <span>
         Etternavn
@@ -67,7 +73,7 @@ exports[`All Required 1`] = `
     </label>
     <div>
       <input
-        id="all-required-last"
+        id="<removed>"
         required
         type="text"
       >
@@ -78,14 +84,14 @@ exports[`All Required 1`] = `
 
 exports[`Fieldset Checkboxes 1`] = `
 <div
-  data-show-required="true"
   data-show-optional="false"
+  data-show-required="true"
   data-show-summary="false"
 >
-  <fieldset aria-labelledby="components-fieldnecessity--fieldset-checkboxes-legend components-fieldnecessity--fieldset-checkboxes-description">
+  <fieldset aria-labelledby="<removed>">
     <legend
-      id="components-fieldnecessity--fieldset-checkboxes-legend"
       data-weight="medium"
+      id="<removed>"
     >
       <span>
         Hvordan vil du helst at vi skal kontakte deg?
@@ -93,55 +99,55 @@ exports[`Fieldset Checkboxes 1`] = `
     </legend>
     <p
       data-variant="default"
-      id="components-fieldnecessity--fieldset-checkboxes-description"
+      id="<removed>"
     >
       Velg de alternativene som er relevante for deg.
     </p>
-    <ds-field data-clickdelegatefor="fieldset-checkboxes-email">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="fieldset-checkboxes-email"
+        id="<removed>"
+        name="checkbox-group"
         required
         type="checkbox"
         value="epost"
-        name="checkbox-group"
       >
       <label
         data-weight="regular"
-        for="fieldset-checkboxes-email"
+        for="<removed>"
       >
         <span>
           E-post
         </span>
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="fieldset-checkboxes-telefon">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="fieldset-checkboxes-telefon"
+        id="<removed>"
+        name="checkbox-group"
         required
         type="checkbox"
         value="telefon"
-        name="checkbox-group"
       >
       <label
         data-weight="regular"
-        for="fieldset-checkboxes-telefon"
+        for="<removed>"
       >
         <span>
           Telefon
         </span>
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="fieldset-checkboxes-sms">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="fieldset-checkboxes-sms"
+        id="<removed>"
+        name="checkbox-group"
         required
         type="checkbox"
         value="sms"
-        name="checkbox-group"
       >
       <label
         data-weight="regular"
-        for="fieldset-checkboxes-sms"
+        for="<removed>"
       >
         <span>
           SMS
@@ -151,7 +157,7 @@ exports[`Fieldset Checkboxes 1`] = `
     <p
       data-field="validation"
       hidden
-      id="_r_4_"
+      id="<removed>"
     >
     </p>
   </fieldset>
@@ -160,60 +166,60 @@ exports[`Fieldset Checkboxes 1`] = `
 
 exports[`Fieldset Radios 1`] = `
 <div
-  data-show-required="true"
   data-show-optional="false"
+  data-show-required="true"
   data-show-summary="false"
 >
-  <fieldset aria-labelledby="components-fieldnecessity--fieldset-radios-legend">
+  <fieldset aria-labelledby="<removed>">
     <legend
-      id="components-fieldnecessity--fieldset-radios-legend"
       data-weight="medium"
+      id="<removed>"
     >
       <span>
         Velg din aldersgruppe
       </span>
     </legend>
-    <ds-field data-clickdelegatefor="fieldset-radios-10-20">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="fieldset-radios-10-20"
+        id="<removed>"
+        name="radio-group"
         required
         type="radio"
         value="10-20"
-        name="radio-group"
       >
       <label
         data-weight="regular"
-        for="fieldset-radios-10-20"
+        for="<removed>"
       >
         10-20 år
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="fieldset-radios-21-45">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="fieldset-radios-21-45"
+        id="<removed>"
+        name="radio-group"
         required
         type="radio"
         value="21-45"
-        name="radio-group"
       >
       <label
         data-weight="regular"
-        for="fieldset-radios-21-45"
+        for="<removed>"
       >
         21-45 år
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="fieldset-radios-46-80">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="fieldset-radios-46-80"
+        id="<removed>"
+        name="radio-group"
         required
         type="radio"
         value="46-80"
-        name="radio-group"
       >
       <label
         data-weight="regular"
-        for="fieldset-radios-46-80"
+        for="<removed>"
       >
         46-80 år
       </label>
@@ -221,7 +227,7 @@ exports[`Fieldset Radios 1`] = `
     <p
       data-field="validation"
       hidden
-      id="_r_7_"
+      id="<removed>"
     >
     </p>
   </fieldset>
@@ -230,33 +236,33 @@ exports[`Fieldset Radios 1`] = `
 
 exports[`Individual Checkboxes 1`] = `
 <div
-  data-show-required="true"
   data-show-optional="false"
+  data-show-required="true"
   data-show-summary="true"
 >
-  <ds-field data-clickdelegatefor="individual-checkboxes-terms-conditions">
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="individual-checkboxes-terms-conditions"
+      id="<removed>"
       required
       type="checkbox"
     >
     <label
       data-weight="regular"
-      for="individual-checkboxes-terms-conditions"
+      for="<removed>"
     >
       <span>
         Jeg bekrefter at opplysningene i søknaden er korrekt
       </span>
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="individual-checkboxes-contact">
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="individual-checkboxes-contact"
+      id="<removed>"
       type="checkbox"
     >
     <label
       data-weight="regular"
-      for="individual-checkboxes-contact"
+      for="<removed>"
     >
       <span>
         Jeg er villig til å delta i en spørreundersøkelse i etterkant av søknadsprosessen
@@ -268,8 +274,8 @@ exports[`Individual Checkboxes 1`] = `
 
 exports[`Manual Summary Placement 1`] = `
 <div
-  data-show-required="true"
   data-show-optional="false"
+  data-show-required="true"
   data-show-summary="true"
   style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
 >
@@ -284,7 +290,7 @@ exports[`Manual Summary Placement 1`] = `
   <ds-field>
     <label
       data-weight="medium"
-      for="manual-summary-placement-first"
+      for="<removed>"
     >
       <span>
         Fornavn
@@ -292,7 +298,7 @@ exports[`Manual Summary Placement 1`] = `
     </label>
     <div>
       <input
-        id="manual-summary-placement-first"
+        id="<removed>"
         required
         type="text"
       >
@@ -301,7 +307,7 @@ exports[`Manual Summary Placement 1`] = `
   <ds-field>
     <label
       data-weight="medium"
-      for="manual-summary-placement-middle"
+      for="<removed>"
     >
       <span>
         Etternavn
@@ -309,7 +315,7 @@ exports[`Manual Summary Placement 1`] = `
     </label>
     <div>
       <input
-        id="manual-summary-placement-middle"
+        id="<removed>"
         required
         type="text"
       >
@@ -318,7 +324,7 @@ exports[`Manual Summary Placement 1`] = `
   <ds-field>
     <label
       data-weight="medium"
-      for="manual-summary-placement-last"
+      for="<removed>"
     >
       <span>
         E-postadresse
@@ -326,7 +332,7 @@ exports[`Manual Summary Placement 1`] = `
     </label>
     <div>
       <input
-        id="manual-summary-placement-last"
+        id="<removed>"
         required
         type="text"
       >
@@ -338,16 +344,16 @@ exports[`Manual Summary Placement 1`] = `
 exports[`Outline 1`] = `
 <div data-variant="tinted">
   <div
-    data-variant="outline"
-    data-show-required="true"
     data-show-optional="false"
+    data-show-required="true"
     data-show-summary="true"
+    data-variant="outline"
     style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
   >
     <ds-field>
       <label
         data-weight="medium"
-        for="outline-first"
+        for="<removed>"
       >
         <span>
           Fornavn
@@ -355,7 +361,7 @@ exports[`Outline 1`] = `
       </label>
       <div>
         <input
-          id="outline-first"
+          id="<removed>"
           required
           type="text"
         >
@@ -364,7 +370,7 @@ exports[`Outline 1`] = `
     <ds-field>
       <label
         data-weight="medium"
-        for="outline-middle"
+        for="<removed>"
       >
         <span>
           Mellomnavn
@@ -372,7 +378,7 @@ exports[`Outline 1`] = `
       </label>
       <div>
         <input
-          id="outline-middle"
+          id="<removed>"
           type="text"
         >
       </div>
@@ -380,7 +386,7 @@ exports[`Outline 1`] = `
     <ds-field>
       <label
         data-weight="medium"
-        for="outline-last"
+        for="<removed>"
       >
         <span>
           Etternavn
@@ -388,7 +394,7 @@ exports[`Outline 1`] = `
       </label>
       <div>
         <input
-          id="outline-last"
+          id="<removed>"
           required
           type="text"
         >
@@ -400,47 +406,56 @@ exports[`Outline 1`] = `
 
 exports[`Preview 1`] = `
 <div
-  data-show-required="true"
   data-show-optional="false"
+  data-show-required="true"
   data-show-summary="true"
   style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
 >
   <ds-field>
-    <label data-weight="medium">
+    <label
+      data-weight="medium"
+      for="<removed>"
+    >
       <span>
         Fornavn
       </span>
     </label>
     <div>
       <input
-        id="preview-first"
+        id="<removed>"
         required
         type="text"
       >
     </div>
   </ds-field>
   <ds-field>
-    <label data-weight="medium">
+    <label
+      data-weight="medium"
+      for="<removed>"
+    >
       <span>
         Mellomnavn
       </span>
     </label>
     <div>
       <input
-        id="preview-middle"
+        id="<removed>"
         type="text"
       >
     </div>
   </ds-field>
   <ds-field>
-    <label data-weight="medium">
+    <label
+      data-weight="medium"
+      for="<removed>"
+    >
       <span>
         Etternavn
       </span>
     </label>
     <div>
       <input
-        id="preview-last"
+        id="<removed>"
         required
         type="text"
       >
@@ -451,21 +466,21 @@ exports[`Preview 1`] = `
 
 exports[`Single Optional Field 1`] = `
 <div
-  data-show-required="true"
   data-show-optional="true"
+  data-show-required="true"
   data-show-summary="false"
 >
   <ds-field>
     <label
       data-weight="medium"
-      for="single-optional-field-comments"
+      for="<removed>"
     >
       <span>
         Har du noen kommentarer?
       </span>
     </label>
     <div>
-      <textarea id="single-optional-field-comments">
+      <textarea id="<removed>">
       </textarea>
     </div>
   </ds-field>
@@ -474,14 +489,14 @@ exports[`Single Optional Field 1`] = `
 
 exports[`Single Required Field 1`] = `
 <div
-  data-show-required="true"
   data-show-optional="false"
+  data-show-required="true"
   data-show-summary="false"
 >
   <ds-field>
     <label
       data-weight="medium"
-      for="single-required-field-events"
+      for="<removed>"
     >
       <span>
         Beskriv hendelsesforløpet
@@ -489,7 +504,7 @@ exports[`Single Required Field 1`] = `
     </label>
     <div>
       <textarea
-        id="single-required-field-events"
+        id="<removed>"
         required
       >
       </textarea>

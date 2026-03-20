@@ -187,7 +187,7 @@ const options = [
 ];
 
 export const Composed = meta.story({
-  render: (args, context) => (
+  render: (args) => (
     <Card {...args}>
       <Card.Block>
         <div
@@ -207,7 +207,7 @@ export const Composed = meta.story({
       <Card.Block>
         <Field>
           <Label>Velg rolle</Label>
-          <Select id={context.id + '-role'}>
+          <Select>
             {options.map(({ value, label }, index) => (
               <Select.Option key={index} value={value}>
                 {label}
@@ -215,11 +215,8 @@ export const Composed = meta.story({
             ))}
           </Select>
         </Field>
-        <Textfield
-          id={context.id + '-nationality-number'}
-          label="Fødselsnummer"
-        />
-        <Textfield id={context.id + '-last-name'} label="Etternavn" />
+        <Textfield label="Fødselsnummer" />
+        <Textfield label="Etternavn" />
       </Card.Block>
       <Card.Block>
         <Button variant="secondary" data-size="sm">

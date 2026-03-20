@@ -75,16 +75,14 @@ export const OneOption = meta.story({
     label: 'Jeg bekrefter at jeg er over 18 år',
     value: 'samtykke',
   },
-  render: (args, context) => (
+  render: (args) => (
     <Fieldset>
-      <Fieldset.Legend id={context.id + 'legend'}>
-        Bekreft at du er over 18 år
-      </Fieldset.Legend>
-      <Fieldset.Description id={context.id + 'description'}>
+      <Fieldset.Legend>Bekreft at du er over 18 år</Fieldset.Legend>
+      <Fieldset.Description>
         For at vi skal kunne sende deg opplysningen du ber om, må du bekrefte at
         du er myndig.
       </Fieldset.Description>
-      <Checkbox id={context.id} {...args} />
+      <Checkbox {...args} />
     </Fieldset>
   ),
 });

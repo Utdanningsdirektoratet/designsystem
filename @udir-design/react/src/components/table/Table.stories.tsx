@@ -505,7 +505,6 @@ export const WithFormElements = meta.story({
                 data-size="sm"
                 value="Trives du på skolen?"
                 aria-label={`Textfield 1-1`}
-                id={`${ctx.id}-textfield1-1`}
               />
             </Table.Cell>
             <Table.Cell style={{ minWidth: 200 }}>
@@ -513,7 +512,6 @@ export const WithFormElements = meta.story({
                 data-size="sm"
                 value="Trives ikke noe særlig"
                 aria-label={`Textfield 1-2`}
-                id={`${ctx.id}-textfield1-2`}
               />
             </Table.Cell>
             <Table.Cell style={{ minWidth: 200 }}>
@@ -521,7 +519,6 @@ export const WithFormElements = meta.story({
                 value="Trives godt"
                 data-size="sm"
                 aria-label={`Textfield 1-3`}
-                id={`${ctx.id}-textfield1-3`}
               />
             </Table.Cell>
           </Table.Row>
@@ -541,7 +538,6 @@ export const WithFormElements = meta.story({
                 data-size="sm"
                 value="Har du opplevd mobbing?"
                 aria-label={`Textfield 1-1`}
-                id={`${ctx.id}-textfield1-1`}
                 style={{ width: 250 }}
               />
             </Table.Cell>
@@ -550,7 +546,6 @@ export const WithFormElements = meta.story({
                 data-size="sm"
                 value="Sjelden"
                 aria-label={`Textfield 1-2`}
-                id={`${ctx.id}-textfield1-2`}
               />
             </Table.Cell>
             <Table.Cell>
@@ -559,7 +554,6 @@ export const WithFormElements = meta.story({
                 value="Ofte"
                 data-size="sm"
                 aria-label={`Textfield 1-3`}
-                id={`${ctx.id}-textfield1-3`}
               />
             </Table.Cell>
           </Table.Row>
