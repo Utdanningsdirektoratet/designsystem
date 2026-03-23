@@ -9,7 +9,18 @@ import { Label } from '../typography/label/Label';
 import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
 import type { FileUploadProps } from './FileUploadTrigger';
 
-export type FileUploadDropzoneProps = FileUploadProps;
+export type FileUploadDropzoneProps = FileUploadProps & {
+  /**
+   * True if the user holds files
+   * over the drop-area
+   */
+  isDragActive?: boolean;
+  /**
+   * True if the user holds files
+   * anywhere in the document
+   */
+  isDragGlobal?: boolean;
+};
 
 export const FileUploadDropzone = forwardRef<
   HTMLDivElement,
@@ -21,6 +32,8 @@ export const FileUploadDropzone = forwardRef<
     label,
     error,
     description,
+    isDragActive,
+    isDragGlobal,
     variant = 'secondary',
     inputProps,
     ...rest
@@ -52,6 +65,8 @@ export const FileUploadDropzone = forwardRef<
         }
         rest.onDrop?.(e);
       }}
+      data-drag-active={isDragActive || undefined}
+      data-drag-global={isDragGlobal || undefined}
       ref={ref}
       {...rest}
     >
