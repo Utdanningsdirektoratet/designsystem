@@ -9,10 +9,10 @@ catalog:
   '@commitlint/cli': ^20.5.0
   '@commitlint/config-conventional': ^20.5.0
   '@commitlint/types': ^20.5.0
-  '@digdir/designsystemet': 1.11.0
-  '@digdir/designsystemet-css': 1.11.0
-  '@digdir/designsystemet-react': 1.11.0
-  '@digdir/designsystemet-types': 1.11.0
+  '@digdir/designsystemet': 1.12.1
+  '@digdir/designsystemet-css': 1.12.1
+  '@digdir/designsystemet-react': 1.12.1
+  '@digdir/designsystemet-types': ^1.12.1
   '@eslint/compat': ^2.0.3
   '@eslint/eslintrc': ^3.3.5
   '@eslint/js': ^9.39.4
@@ -203,6 +203,7 @@ trustPolicyExclude:
   - eslint-import-resolver-typescript@3.10.1
   # v1.6.1 was published manually 2 years ago, and was already in our lock file
   # due to being a dependency of @nx/js
+  - invokers-polyfill@0.6.1
   - detect-port@1.6.1
 
 useNodeVersion: 24.10.0
