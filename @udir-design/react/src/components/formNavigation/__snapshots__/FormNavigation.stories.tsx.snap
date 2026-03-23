@@ -707,8 +707,10 @@ exports[`Full 1`] = `
         <button
           data-variant="secondary"
           type="button"
-          aria-haspopup="dialog"
+          command="show-modal"
           data-color="neutral"
+          commandfor="_r_1_"
+          aria-haspopup="dialog"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -732,7 +734,7 @@ exports[`Full 1`] = `
         </button>
         <dialog
           data-placement="center"
-          data-modal="true"
+          id="_r_1_"
           closedby="any"
           style="width: fit-content; min-width: 20rem;"
         >
@@ -742,7 +744,8 @@ exports[`Full 1`] = `
             type="button"
             aria-label="Lukk dialogvindu"
             data-color="neutral"
-            data-command="close"
+            command="close"
+            commandfor="_r_1_"
           >
           </button>
           <h2>
@@ -835,11 +838,8 @@ exports[`Full 1`] = `
         Første seksjon
       </h2>
       <form>
-        <div>
-          <label
-            data-weight="medium"
-            for="q1"
-          >
+        <ds-field>
+          <label data-weight="medium">
             Første spørsmål
           </label>
           <div>
@@ -849,12 +849,9 @@ exports[`Full 1`] = `
               name="q1"
             >
           </div>
-        </div>
-        <div>
-          <label
-            data-weight="medium"
-            for="q2"
-          >
+        </ds-field>
+        <ds-field>
+          <label data-weight="medium">
             Andre spørsmål
           </label>
           <div>
@@ -864,7 +861,7 @@ exports[`Full 1`] = `
               name="q2"
             >
           </div>
-        </div>
+        </ds-field>
         <div>
           <button
             data-variant="secondary"
@@ -1054,11 +1051,8 @@ exports[`Simple Navigation 1`] = `
         Utfylling
       </h2>
       <form>
-        <div>
-          <label
-            data-weight="medium"
-            for="step1"
-          >
+        <ds-field>
+          <label data-weight="medium">
             Steg 1
           </label>
           <div>
@@ -1068,7 +1062,7 @@ exports[`Simple Navigation 1`] = `
               name="step1"
             >
           </div>
-        </div>
+        </ds-field>
         <div>
           <button
             data-variant="secondary"

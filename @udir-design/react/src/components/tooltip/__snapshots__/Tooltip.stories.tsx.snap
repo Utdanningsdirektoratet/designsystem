@@ -6,9 +6,10 @@ exports[`Aria 1`] = `
     data-icon="true"
     data-variant="primary"
     type="button"
-    popovertarget="_r_a_"
-    popovertargetaction="show"
-    aria-labelledby="_r_a_"
+    aria-label="Jeg er hovedinformasjon (aria-labelledby)"
+    data-tooltip="Jeg er hovedinformasjon (aria-labelledby)"
+    data-placement="top"
+    data-autoplacement="true"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -29,31 +30,16 @@ exports[`Aria 1`] = `
       </path>
     </svg>
   </button>
-  <span
-    role="tooltip"
-    id="_r_a_"
-    popover="manual"
-    style="opacity: 0;"
-  >
-    Jeg er hovedinformasjon (aria-labelledby)
-  </span>
   <button
     data-variant="primary"
     type="button"
-    popovertarget="_r_c_"
-    popovertargetaction="show"
-    aria-labelledby="_r_c_"
+    aria-label="Jeg er tillegsinformasjon (aria-describedby)"
+    data-tooltip="Jeg er tillegsinformasjon (aria-describedby)"
+    data-placement="top"
+    data-autoplacement="true"
   >
     Tekst i trigger
   </button>
-  <span
-    role="tooltip"
-    id="_r_c_"
-    popover="manual"
-    style="opacity: 0;"
-  >
-    Jeg er tillegsinformasjon (aria-describedby)
-  </span>
 </div>
 `;
 
@@ -63,9 +49,10 @@ exports[`Placement 1`] = `
     data-icon="true"
     data-variant="secondary"
     type="button"
-    popovertarget="_r_2_"
-    popovertargetaction="show"
-    aria-labelledby="_r_2_"
+    aria-label="Slett"
+    data-tooltip="Slett"
+    data-placement="left"
+    data-autoplacement="true"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -86,21 +73,14 @@ exports[`Placement 1`] = `
       </path>
     </svg>
   </button>
-  <span
-    role="tooltip"
-    id="_r_2_"
-    popover="manual"
-    style="opacity: 0;"
-  >
-    Slett
-  </span>
   <button
     data-icon="true"
     data-variant="secondary"
     type="button"
-    popovertarget="_r_4_"
-    popovertargetaction="show"
-    aria-labelledby="_r_4_"
+    aria-label="Lagre"
+    data-tooltip="Lagre"
+    data-placement="top"
+    data-autoplacement="true"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -121,21 +101,14 @@ exports[`Placement 1`] = `
       </path>
     </svg>
   </button>
-  <span
-    role="tooltip"
-    id="_r_4_"
-    popover="manual"
-    style="opacity: 0;"
-  >
-    Lagre
-  </span>
   <button
     data-icon="true"
     data-variant="secondary"
     type="button"
-    popovertarget="_r_6_"
-    popovertargetaction="show"
-    aria-labelledby="_r_6_"
+    aria-label="ctrl + p"
+    data-tooltip="ctrl + p"
+    data-placement="bottom"
+    data-autoplacement="true"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -156,21 +129,14 @@ exports[`Placement 1`] = `
       </path>
     </svg>
   </button>
-  <span
-    role="tooltip"
-    id="_r_6_"
-    popover="manual"
-    style="opacity: 0;"
-  >
-    ctrl + p
-  </span>
   <button
     data-icon="true"
     data-variant="secondary"
     type="button"
-    popovertarget="_r_8_"
-    popovertargetaction="show"
-    aria-labelledby="_r_8_"
+    aria-label="Kopier"
+    data-tooltip="Kopier"
+    data-placement="right"
+    data-autoplacement="true"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -191,51 +157,5 @@ exports[`Placement 1`] = `
       </path>
     </svg>
   </button>
-  <span
-    role="tooltip"
-    id="_r_8_"
-    popover="manual"
-    style="opacity: 0;"
-  >
-    Kopier
-  </span>
 </div>
-`;
-
-exports[`Preview 1`] = `
-<button
-  data-icon="true"
-  data-variant="tertiary"
-  type="button"
-  popovertarget="_r_0_"
-  popovertargetaction="show"
-  aria-labelledby="_r_0_"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
-    aria-hidden="true"
-  >
-    <path
-      fill="currentColor"
-      fill-rule="evenodd"
-      d="M3.75 12a8.25 8.25 0 1 1 16.5 0 8.25 8.25 0 0 1-16.5 0M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25m0 4.5a.75.75 0 0 1 .75.75v3.75h3.75a.75.75 0 0 1 0 1.5h-3.75v3.75a.75.75 0 0 1-1.5 0v-3.75H7.5a.75.75 0 0 1 0-1.5h3.75V7.5a.75.75 0 0 1 .75-.75"
-      clip-rule="evenodd"
-    >
-    </path>
-  </svg>
-</button>
-<span
-  role="tooltip"
-  id="_r_0_"
-  popover="manual"
-  style="opacity: 0; --dsc-tooltip-arrow-x: <removed>; --dsc-tooltip-arrow-y: <removed>; --_dsc-tooltip-safearea-height: var(--dsc-tooltip-arrow-size); --_dsc-tooltip-safearea-width: 100%; --_dsc-tooltip-safearea-translate: <removed>; translate: <removed>;"
->
-  Legg til
-</span>
 `;

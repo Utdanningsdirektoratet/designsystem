@@ -1,11 +1,14 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Example 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="mn2x8dclom41">
+  <legend
+    data-weight="medium"
+    id="mn2x8dclom41"
+  >
     Trenger eleven individuelt tilrettelagt opplæring?
   </legend>
-  <div>
+  <ds-field data-clickdelegatefor="components-radio--group-ja">
     <input
       id="components-radio--group-ja"
       type="radio"
@@ -18,8 +21,8 @@ exports[`Example 1`] = `
     >
       Ja
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="components-radio--group-nei">
     <input
       id="components-radio--group-nei"
       type="radio"
@@ -32,7 +35,7 @@ exports[`Example 1`] = `
     >
       Nei
     </label>
-  </div>
+  </ds-field>
   <details>
     <summary>
       Dette er individuelt tilrettelagt opplæring

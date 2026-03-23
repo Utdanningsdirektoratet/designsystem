@@ -63,8 +63,10 @@ exports[`Form Page 2 1`] = `
     <button
       data-variant="secondary"
       type="button"
-      aria-haspopup="dialog"
+      command="show-modal"
       data-color="neutral"
+      commandfor="_r_6_"
+      aria-haspopup="dialog"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +90,7 @@ exports[`Form Page 2 1`] = `
     </button>
     <dialog
       data-placement="center"
-      data-modal="true"
+      id="_r_6_"
       closedby="any"
       style="width: fit-content; min-width: 20rem;"
     >
@@ -98,7 +100,8 @@ exports[`Form Page 2 1`] = `
         type="button"
         aria-label="Lukk dialogvindu"
         data-color="neutral"
-        data-command="close"
+        command="close"
+        commandfor="_r_6_"
       >
       </button>
       <h2>
@@ -176,11 +179,8 @@ exports[`Form Page 2 1`] = `
       </h2>
       <div>
       </div>
-      <div>
-        <label
-          data-weight="medium"
-          for="projectTitle"
-        >
+      <ds-field>
+        <label data-weight="medium">
           <span>
             Tittel på prosjektet
           </span>
@@ -193,12 +193,9 @@ exports[`Form Page 2 1`] = `
             name="projectTitle"
           >
         </div>
-      </div>
-      <div>
-        <label
-          data-weight="medium"
-          for="projectDescription"
-        >
+      </ds-field>
+      <ds-field>
+        <label data-weight="medium">
           <span>
             Beskrivelse av prosjektet
           </span>
@@ -212,7 +209,7 @@ exports[`Form Page 2 1`] = `
           >
           </textarea>
         </div>
-      </div>
+      </ds-field>
       <fieldset
         id="projectCategory"
         tabindex="-1"
@@ -225,7 +222,7 @@ exports[`Form Page 2 1`] = `
         <p data-variant="default">
           Hvilken kategori hører prosjektet til?
         </p>
-        <div>
+        <ds-field>
           <input
             id="radio-learning"
             required
@@ -233,16 +230,13 @@ exports[`Form Page 2 1`] = `
             value="Learning"
             name="projectCategory"
           >
-          <label
-            data-weight="regular"
-            for="radio-learning"
-          >
+          <label data-weight="regular">
             <span>
               Opplæring
             </span>
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field>
           <input
             id="radio-social"
             required
@@ -250,16 +244,13 @@ exports[`Form Page 2 1`] = `
             value="social"
             name="projectCategory"
           >
-          <label
-            data-weight="regular"
-            for="radio-social"
-          >
+          <label data-weight="regular">
             <span>
               Sosialt
             </span>
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field>
           <input
             id="radio-activity"
             required
@@ -267,15 +258,12 @@ exports[`Form Page 2 1`] = `
             value="activity"
             name="projectCategory"
           >
-          <label
-            data-weight="regular"
-            for="radio-activity"
-          >
+          <label data-weight="regular">
             <span>
               Aktivitet
             </span>
           </label>
-        </div>
+        </ds-field>
         <details>
           <summary>
             Grunnen til at vi spør om dette
@@ -285,32 +273,25 @@ exports[`Form Page 2 1`] = `
           </div>
         </details>
       </fieldset>
-      <div>
-        <label
-          data-weight="medium"
-          for="county"
-        >
+      <ds-field>
+        <label data-weight="medium">
           <span>
             Gjennomføringssted
           </span>
         </label>
-        <div
-          data-field="description"
-          id="county:description:1"
-        >
+        <div data-field="description">
           Hvilket fylke vil prosjektet gjennomføres i?
         </div>
-        <u-combobox>
+        <ds-suggestion>
           <input
-            placeholder
+            placeholder=" "
             aria-invalid="false"
             id="county"
             required
             type="text"
-            aria-describedby="county:description:1"
-            data-label="Gjennomføringssted"
+            data-label
             list=":u-datalist1"
-            aria-label="Gjennomføringssted​​​​​"
+            aria-label="​​​​​"
             popovertarget=":u-datalist1"
             aria-autocomplete="list"
             aria-controls=":u-datalist1"
@@ -319,24 +300,21 @@ exports[`Form Page 2 1`] = `
             role="combobox"
           >
           <del
-            data-icon="true"
-            data-variant="tertiary"
             aria-label="Tøm"
             hidden
             role="button"
           >
           </del>
           <u-datalist
-            data-nofilter
-            data-sr-singular="%d forslag"
-            data-sr-plural="%d forslag"
             popover="manual"
+            data-nofilter
+            data-sr-plural="%d forslag"
+            data-sr-singular="%d forslag"
             hidden
             role="listbox"
             tabindex="-1"
             aria-multiselectable="false"
             id=":u-datalist1"
-            style="width: 592px; translate: <removed>;"
           >
             <u-option
               label="Agder"
@@ -492,33 +470,27 @@ exports[`Form Page 2 1`] = `
           <select
             name="county"
             hidden
-            id="_r_4_"
+            id="_r_7_"
           >
           </select>
-        </u-combobox>
-      </div>
-      <div>
-        <label
-          data-weight="medium"
-          for="ageGroup"
-        >
+        </ds-suggestion>
+      </ds-field>
+      <ds-field>
+        <label data-weight="medium">
           <span>
             Aldersgruppe
           </span>
         </label>
-        <div
-          data-field="description"
-          id="ageGroup:description:1"
-        >
+        <div data-field="description">
           Hvilken aldersgruppe er prosjektet rettet mot?
         </div>
         <select
+          aria-readonly="false"
           id="ageGroup"
           aria-label="Velg aldersgruppe"
           name="ageGroup"
           aria-invalid="false"
           required
-          aria-describedby="ageGroup:description:1"
         >
           <option
             value="blank"
@@ -540,7 +512,7 @@ exports[`Form Page 2 1`] = `
             16-19 år
           </option>
         </select>
-      </div>
+      </ds-field>
       <div>
         <button
           data-variant="secondary"
@@ -591,8 +563,7 @@ exports[`Form Page 2 1`] = `
       </div>
       <dialog
         data-placement="center"
-        data-modal="true"
-        closedby="closerequest"
+        id="_r_a_"
         style="width: fit-content;"
       >
         <div>
@@ -703,8 +674,10 @@ exports[`Form Page 3 1`] = `
     <button
       data-variant="secondary"
       type="button"
-      aria-haspopup="dialog"
+      command="show-modal"
       data-color="neutral"
+      commandfor="_r_d_"
+      aria-haspopup="dialog"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -728,7 +701,7 @@ exports[`Form Page 3 1`] = `
     </button>
     <dialog
       data-placement="center"
-      data-modal="true"
+      id="_r_d_"
       closedby="any"
       style="width: fit-content; min-width: 20rem;"
     >
@@ -738,7 +711,8 @@ exports[`Form Page 3 1`] = `
         type="button"
         aria-label="Lukk dialogvindu"
         data-color="neutral"
-        data-command="close"
+        command="close"
+        commandfor="_r_d_"
       >
       </button>
       <h2>
@@ -816,7 +790,7 @@ exports[`Form Page 3 1`] = `
       </h2>
       <div>
       </div>
-      <div
+      <ds-field
         role="presentation"
         tabindex="0"
         aria-invalid="false"
@@ -831,7 +805,7 @@ exports[`Form Page 3 1`] = `
         </label>
         <div
           data-field="description"
-          id="dokumentasjon-dropzone:description:1"
+          id="mn2x88lmbvr7"
         >
           Du kan laste opp filer i PDF-format. Filer kan være opptil 25 MB.
         </div>
@@ -870,11 +844,11 @@ exports[`Form Page 3 1`] = `
           required
           id="dokumentasjon-dropzone"
           type="file"
-          aria-describedby="dokumentasjon-dropzone:description:1"
+          aria-describedby="mn2x88lmbvr7"
           style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
         >
-      </div>
-      <div>
+      </ds-field>
+      <ds-field>
         <label
           data-weight="medium"
           for="addition"
@@ -885,17 +859,17 @@ exports[`Form Page 3 1`] = `
         </label>
         <div
           data-field="description"
-          id="addition:description:1"
+          id="mn2x88lmbvr8"
         >
           Ytterlige kommentarer til dokumentasjonen du har lastet opp.
         </div>
         <textarea
           id="addition"
           name="addition"
-          aria-describedby="addition:description:1"
+          aria-describedby="mn2x88lmbvr8"
         >
         </textarea>
-      </div>
+      </ds-field>
       <div>
         <button
           data-variant="secondary"
@@ -946,8 +920,7 @@ exports[`Form Page 3 1`] = `
       </div>
       <dialog
         data-placement="center"
-        data-modal="true"
-        closedby="closerequest"
+        id="_r_i_"
         style="width: fit-content;"
       >
         <div>
@@ -1058,8 +1031,10 @@ exports[`Form Page 4 1`] = `
     <button
       data-variant="secondary"
       type="button"
-      aria-haspopup="dialog"
+      command="show-modal"
       data-color="neutral"
+      commandfor="_r_l_"
+      aria-haspopup="dialog"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1083,7 +1058,7 @@ exports[`Form Page 4 1`] = `
     </button>
     <dialog
       data-placement="center"
-      data-modal="true"
+      id="_r_l_"
       closedby="any"
       style="width: fit-content; min-width: 20rem;"
     >
@@ -1093,7 +1068,8 @@ exports[`Form Page 4 1`] = `
         type="button"
         aria-label="Lukk dialogvindu"
         data-color="neutral"
-        data-command="close"
+        command="close"
+        commandfor="_r_l_"
       >
       </button>
       <h2>
@@ -1224,8 +1200,7 @@ exports[`Form Page 4 1`] = `
       </div>
       <dialog
         data-placement="center"
-        data-modal="true"
-        closedby="closerequest"
+        id="_r_o_"
         style="width: fit-content;"
       >
         <div>
@@ -1336,8 +1311,10 @@ exports[`Form Page 5 1`] = `
     <button
       data-variant="secondary"
       type="button"
-      aria-haspopup="dialog"
+      command="show-modal"
       data-color="neutral"
+      commandfor="_r_r_"
+      aria-haspopup="dialog"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1361,7 +1338,7 @@ exports[`Form Page 5 1`] = `
     </button>
     <dialog
       data-placement="center"
-      data-modal="true"
+      id="_r_r_"
       closedby="any"
       style="width: fit-content; min-width: 20rem;"
     >
@@ -1371,7 +1348,8 @@ exports[`Form Page 5 1`] = `
         type="button"
         aria-label="Lukk dialogvindu"
         data-color="neutral"
-        data-command="close"
+        command="close"
+        commandfor="_r_r_"
       >
       </button>
       <h2>
@@ -1462,8 +1440,7 @@ exports[`Form Page 5 1`] = `
       </div>
       <dialog
         data-placement="center"
-        data-modal="true"
-        closedby="closerequest"
+        id="_r_s_"
         style="width: fit-content;"
       >
         <div>
@@ -1574,8 +1551,10 @@ exports[`Form Story 1`] = `
     <button
       data-variant="secondary"
       type="button"
-      aria-haspopup="dialog"
+      command="show-modal"
       data-color="neutral"
+      commandfor="_r_1_"
+      aria-haspopup="dialog"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1599,7 +1578,7 @@ exports[`Form Story 1`] = `
     </button>
     <dialog
       data-placement="center"
-      data-modal="true"
+      id="_r_1_"
       closedby="any"
       style="width: fit-content; min-width: 20rem;"
     >
@@ -1609,7 +1588,8 @@ exports[`Form Story 1`] = `
         type="button"
         aria-label="Lukk dialogvindu"
         data-color="neutral"
-        data-command="close"
+        command="close"
+        commandfor="_r_1_"
       >
       </button>
       <h2>
@@ -1687,11 +1667,8 @@ exports[`Form Story 1`] = `
       </h2>
       <div>
       </div>
-      <div>
-        <label
-          data-weight="medium"
-          for="firstName"
-        >
+      <ds-field>
+        <label data-weight="medium">
           <span>
             Fornavn
           </span>
@@ -1705,12 +1682,9 @@ exports[`Form Story 1`] = `
             name="firstName"
           >
         </div>
-      </div>
-      <div>
-        <label
-          data-weight="medium"
-          for="lastName"
-        >
+      </ds-field>
+      <ds-field>
+        <label data-weight="medium">
           <span>
             Etternavn
           </span>
@@ -1723,7 +1697,7 @@ exports[`Form Story 1`] = `
           type="text"
           name="lastName"
         >
-      </div>
+      </ds-field>
       <fieldset
         id="contactMethods"
         tabindex="-1"
@@ -1736,7 +1710,7 @@ exports[`Form Story 1`] = `
         <p data-variant="default">
           Velg ett eller flere alternativer
         </p>
-        <div>
+        <ds-field>
           <input
             id="contactMethodsEmail"
             aria-invalid="false"
@@ -1745,16 +1719,13 @@ exports[`Form Story 1`] = `
             value="epost"
             name="contactMethods"
           >
-          <label
-            data-weight="regular"
-            for="contactMethodsEmail"
-          >
+          <label data-weight="regular">
             <span>
               E-post
             </span>
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field>
           <input
             id="contactMethodsTelefon"
             aria-invalid="false"
@@ -1763,16 +1734,13 @@ exports[`Form Story 1`] = `
             value="telefon"
             name="contactMethods"
           >
-          <label
-            data-weight="regular"
-            for="contactMethodsTelefon"
-          >
+          <label data-weight="regular">
             <span>
               Telefon
             </span>
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field>
           <input
             id="contactMethodsSms"
             aria-invalid="false"
@@ -1781,15 +1749,12 @@ exports[`Form Story 1`] = `
             value="sms"
             name="contactMethods"
           >
-          <label
-            data-weight="regular"
-            for="contactMethodsSms"
-          >
+          <label data-weight="regular">
             <span>
               SMS
             </span>
           </label>
-        </div>
+        </ds-field>
       </fieldset>
       <div>
         <button
@@ -1818,8 +1783,7 @@ exports[`Form Story 1`] = `
       </div>
       <dialog
         data-placement="center"
-        data-modal="true"
-        closedby="closerequest"
+        id="_r_3_"
         style="width: fit-content;"
       >
         <div>

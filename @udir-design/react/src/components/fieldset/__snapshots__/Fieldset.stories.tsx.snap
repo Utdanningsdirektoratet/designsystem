@@ -1,16 +1,22 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Legend As Heading 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="mn2x8bn1ipd6 mn2x8bn1ipd7">
+  <legend
+    data-weight="medium"
+    id="mn2x8bn1ipd6"
+  >
     <h2 data-size="sm">
       Hvilke tjenester bruker du?
     </h2>
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="mn2x8bn1ipd7"
+  >
     Påloggingssystemer hos Udir
   </p>
-  <div>
+  <ds-field data-clickdelegatefor="components-fieldset--legend-as-heading-feide">
     <input
       id="components-fieldset--legend-as-heading-feide"
       type="checkbox"
@@ -23,8 +29,8 @@ exports[`Legend As Heading 1`] = `
     >
       Feide
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="components-fieldset--legend-as-heading-UIDP">
     <input
       id="components-fieldset--legend-as-heading-UIDP"
       type="checkbox"
@@ -37,8 +43,8 @@ exports[`Legend As Heading 1`] = `
     >
       UIDP
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="components-fieldset--legend-as-heading-UBAS">
     <input
       id="components-fieldset--legend-as-heading-UBAS"
       type="checkbox"
@@ -51,7 +57,7 @@ exports[`Legend As Heading 1`] = `
     >
       UBAS
     </label>
-  </div>
+  </ds-field>
 </fieldset>
 `;
 
@@ -63,57 +69,51 @@ exports[`Preview 1`] = `
   <p data-variant="default">
     Valget vil hjelpe oss å forbedre innholdet vi viser deg.
   </p>
-  <div>
+  <ds-field>
     <input
       id="components-fieldset--preview-radio-barsnesfjorden"
       type="radio"
       value="barsnesfjorden"
       name="radio"
     >
-    <label
-      data-weight="regular"
-      for="components-fieldset--preview-radio-barsnesfjorden"
-    >
+    <label data-weight="regular">
       Barsnesfjorden
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field>
     <input
       id="components-fieldset--preview-radio-eidsfjorden"
       type="radio"
       value="eidsfjorden"
       name="radio"
     >
-    <label
-      data-weight="regular"
-      for="components-fieldset--preview-radio-eidsfjorden"
-    >
+    <label data-weight="regular">
       Eidsfjorden
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field>
     <input
       id="components-fieldset--preview-radio-ingen-av-de"
       type="radio"
       value="ingen-av-de"
       name="radio"
     >
-    <label
-      data-weight="regular"
-      for="components-fieldset--preview-radio-ingen-av-de"
-    >
+    <label data-weight="regular">
       Ingen av de
     </label>
-  </div>
+  </ds-field>
 </fieldset>
 `;
 
 exports[`With Checkbox 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="mn2x8bn1ipd3">
+  <legend
+    data-weight="medium"
+    id="mn2x8bn1ipd3"
+  >
     Godtar du vilkårene?
   </legend>
-  <div>
+  <ds-field data-clickdelegatefor="components-fieldset--with-checkbox-checkbox">
     <input
       id="components-fieldset--with-checkbox-checkbox"
       type="checkbox"
@@ -124,21 +124,27 @@ exports[`With Checkbox 1`] = `
     >
       Ja, jeg godtar
     </label>
-  </div>
+  </ds-field>
 </fieldset>
 `;
 
 exports[`With Textfield 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="mn2x8bn1ipd4 mn2x8bn1ipd5">
+  <legend
+    data-weight="medium"
+    id="mn2x8bn1ipd4"
+  >
     <h2 data-size="sm">
       Adresse
     </h2>
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="mn2x8bn1ipd5"
+  >
     Skriv inn adressen din for å motta post fra oss.
   </p>
-  <div>
+  <ds-field>
     <label
       data-weight="medium"
       for="components-fieldset--with-textfield-textfield"
@@ -152,8 +158,8 @@ exports[`With Textfield 1`] = `
         name="components-fieldset--with-textfield-textfield"
       >
     </div>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field>
     <label
       data-weight="medium"
       for="components-fieldset--with-textfield-textfield"
@@ -170,8 +176,8 @@ exports[`With Textfield 1`] = `
         name="components-fieldset--with-textfield-textfield"
       >
     </div>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field>
     <label
       data-weight="medium"
       for="components-fieldset--with-textfield-textfield2"
@@ -186,6 +192,6 @@ exports[`With Textfield 1`] = `
         name="components-fieldset--with-textfield-textfield2"
       >
     </div>
-  </div>
+  </ds-field>
 </fieldset>
 `;

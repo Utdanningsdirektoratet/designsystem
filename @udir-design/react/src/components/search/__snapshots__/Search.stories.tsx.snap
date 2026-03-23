@@ -180,7 +180,7 @@ exports[`Variants 1`] = `
 `;
 
 exports[`With Label 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
     for="components-search--with-label"
@@ -208,5 +208,5 @@ exports[`With Label 1`] = `
       Søk
     </button>
   </div>
-</div>
+</ds-field>
 `;
