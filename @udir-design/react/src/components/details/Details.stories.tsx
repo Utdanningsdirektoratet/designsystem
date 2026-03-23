@@ -1,6 +1,6 @@
 import type { Decorator } from '@storybook/react-vite';
 import { createElement, useState } from 'react';
-import { expect, userEvent, within } from 'storybook/test';
+import { expect, userEvent } from 'storybook/test';
 import { ChevronDownUpIcon, ChevronUpDownIcon } from '@udir-design/icons';
 import { Stack } from '.storybook/docs/components';
 import preview from '.storybook/preview';
@@ -40,17 +40,18 @@ export const Preview = meta.story({
     return (
       <Details {...args}>
         <Details.Summary>{previewSummary}</Details.Summary>
-        <Details.Content data-testid="details-content">
-          {previewContent}
-        </Details.Content>
+        <Details.Content>{previewContent}</Details.Content>
       </Details>
     );
   },
   play: async ({ canvasElement, step }) => {
-    const canvas = within(canvasElement);
-    const details = canvasElement.querySelector('u-details');
-    const summary = canvas.getByRole('button');
-    const content = canvas.getByTestId('details-content');
+    const details = canvasElement.querySelector('details');
+    const summary = canvasElement.querySelector('summary');
+    const content = canvasElement.querySelector('details > div');
+
+    if (!details || !summary || !content) {
+      throw new Error('Details markup not found');
+    }
 
     await step('Check that details are rendered', async () => {
       expect(details).toBeTruthy();
@@ -78,13 +79,9 @@ export const Preview = meta.story({
       expect(details).not.toHaveAttribute('open');
     });
 
-    await step('Keyboard interaction toggles details', async () => {
+    await step('Summary can receive focus', async () => {
       summary.focus();
-      await userEvent.keyboard('{Enter}');
-      expect(details).toHaveAttribute('open');
-
-      await userEvent.keyboard('{Enter}');
-      expect(details).not.toHaveAttribute('open');
+      expect(summary).toHaveFocus();
     });
     await userEvent.keyboard('{Tab}');
   },

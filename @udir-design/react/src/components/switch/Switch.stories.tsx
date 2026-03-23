@@ -90,7 +90,7 @@ export const Description = meta.story({
 export const Group = meta.story({
   render: ({ ...args }, context) => (
     <Fieldset>
-      <Fieldset.Legend>Varsler</Fieldset.Legend>
+      <Fieldset.Legend id={context.id + 'legend'}>Varsler</Fieldset.Legend>
       <Switch
         label="Lydvarsler"
         description="Spill av lyd når et varsel mottas."
@@ -123,10 +123,10 @@ export const GroupEnd = meta.story({
   },
   render: (args, context) => (
     <Fieldset>
-      <Fieldset.Legend>
+      <Fieldset.Legend id={context.id + 'legend'}>
         <Heading level={2}>Innstillinger</Heading>
       </Fieldset.Legend>
-      <Fieldset.Description>
+      <Fieldset.Description id={context.id + 'description'}>
         Innstillinger som gjelder hele systemet.
       </Fieldset.Description>
       <Switch
@@ -160,7 +160,7 @@ export const Controlled = meta.story({
     };
     return (
       <Fieldset>
-        <Fieldset.Legend>
+        <Fieldset.Legend id={context.id + 'legend'}>
           <Heading level={2}>Innstillinger</Heading>
         </Fieldset.Legend>
         <Switch
@@ -169,7 +169,7 @@ export const Controlled = meta.story({
           checked={anyChecked}
           onChange={handleSwitchChange}
         />
-        <Fieldset.Description>
+        <Fieldset.Description id={context.id + 'description'}>
           Velg hvilke typer varsler du ønsker å motta.
         </Fieldset.Description>
         <Checkbox
