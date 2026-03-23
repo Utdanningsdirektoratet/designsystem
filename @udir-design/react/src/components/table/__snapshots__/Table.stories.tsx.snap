@@ -392,7 +392,7 @@ exports[`Preview 1`] = `
   <thead>
     <tr>
       <th>
-        <ds-field>
+        <ds-field data-clickdelegatefor="checkbox-select-all">
           <input
             aria-label="Velg alle ansatte"
             id="checkbox-select-all"
@@ -421,7 +421,7 @@ exports[`Preview 1`] = `
   <tbody>
     <tr>
       <td>
-        <ds-field>
+        <ds-field data-clickdelegatefor="checkbox-1">
           <input
             id="checkbox-1"
             aria-label="Velg [object Object]"
@@ -451,7 +451,7 @@ exports[`Preview 1`] = `
     </tr>
     <tr>
       <td>
-        <ds-field>
+        <ds-field data-clickdelegatefor="checkbox-2">
           <input
             id="checkbox-2"
             aria-label="Velg [object Object]"
@@ -481,7 +481,7 @@ exports[`Preview 1`] = `
     </tr>
     <tr>
       <td>
-        <ds-field>
+        <ds-field data-clickdelegatefor="checkbox-3">
           <input
             id="checkbox-3"
             aria-label="Velg [object Object]"
@@ -511,7 +511,7 @@ exports[`Preview 1`] = `
     </tr>
     <tr>
       <td>
-        <ds-field>
+        <ds-field data-clickdelegatefor="checkbox-4">
           <input
             id="checkbox-4"
             aria-label="Velg [object Object]"
@@ -541,7 +541,7 @@ exports[`Preview 1`] = `
     </tr>
     <tr>
       <td>
-        <ds-field>
+        <ds-field data-clickdelegatefor="checkbox-5">
           <input
             id="checkbox-5"
             aria-label="Velg [object Object]"

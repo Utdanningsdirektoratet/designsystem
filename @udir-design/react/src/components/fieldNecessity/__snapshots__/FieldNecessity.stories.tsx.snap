@@ -88,16 +88,22 @@ exports[`Fieldset Checkboxes 1`] = `
   data-show-optional="false"
   data-show-summary="false"
 >
-  <fieldset>
-    <legend data-weight="medium">
+  <fieldset aria-labelledby="components-fieldnecessity--fieldset-checkboxes-legend components-fieldnecessity--fieldset-checkboxes-description">
+    <legend
+      id="components-fieldnecessity--fieldset-checkboxes-legend"
+      data-weight="medium"
+    >
       <span>
         Hvordan vil du helst at vi skal kontakte deg?
       </span>
     </legend>
-    <p data-variant="default">
+    <p
+      data-variant="default"
+      id="components-fieldnecessity--fieldset-checkboxes-description"
+    >
       Velg de alternativene som er relevante for deg.
     </p>
-    <ds-field>
+    <ds-field data-clickdelegatefor="fieldset-checkboxes-email">
       <input
         id="fieldset-checkboxes-email"
         required
@@ -105,13 +111,16 @@ exports[`Fieldset Checkboxes 1`] = `
         value="epost"
         name="checkbox-group"
       >
-      <label data-weight="regular">
+      <label
+        data-weight="regular"
+        for="fieldset-checkboxes-email"
+      >
         <span>
           E-post
         </span>
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="fieldset-checkboxes-telefon">
       <input
         id="fieldset-checkboxes-telefon"
         required
@@ -119,13 +128,16 @@ exports[`Fieldset Checkboxes 1`] = `
         value="telefon"
         name="checkbox-group"
       >
-      <label data-weight="regular">
+      <label
+        data-weight="regular"
+        for="fieldset-checkboxes-telefon"
+      >
         <span>
           Telefon
         </span>
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="fieldset-checkboxes-sms">
       <input
         id="fieldset-checkboxes-sms"
         required
@@ -133,7 +145,10 @@ exports[`Fieldset Checkboxes 1`] = `
         value="sms"
         name="checkbox-group"
       >
-      <label data-weight="regular">
+      <label
+        data-weight="regular"
+        for="fieldset-checkboxes-sms"
+      >
         <span>
           SMS
         </span>
@@ -155,13 +170,16 @@ exports[`Fieldset Radios 1`] = `
   data-show-optional="false"
   data-show-summary="false"
 >
-  <fieldset>
-    <legend data-weight="medium">
+  <fieldset aria-labelledby="components-fieldnecessity--fieldset-radios-legend">
+    <legend
+      id="components-fieldnecessity--fieldset-radios-legend"
+      data-weight="medium"
+    >
       <span>
         Velg din aldersgruppe
       </span>
     </legend>
-    <ds-field>
+    <ds-field data-clickdelegatefor="fieldset-radios-10-20">
       <input
         id="fieldset-radios-10-20"
         required
@@ -169,11 +187,14 @@ exports[`Fieldset Radios 1`] = `
         value="10-20"
         name="radio-group"
       >
-      <label data-weight="regular">
+      <label
+        data-weight="regular"
+        for="fieldset-radios-10-20"
+      >
         10-20 år
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="fieldset-radios-21-45">
       <input
         id="fieldset-radios-21-45"
         required
@@ -181,11 +202,14 @@ exports[`Fieldset Radios 1`] = `
         value="21-45"
         name="radio-group"
       >
-      <label data-weight="regular">
+      <label
+        data-weight="regular"
+        for="fieldset-radios-21-45"
+      >
         21-45 år
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="fieldset-radios-46-80">
       <input
         id="fieldset-radios-46-80"
         required
@@ -193,7 +217,10 @@ exports[`Fieldset Radios 1`] = `
         value="46-80"
         name="radio-group"
       >
-      <label data-weight="regular">
+      <label
+        data-weight="regular"
+        for="fieldset-radios-46-80"
+      >
         46-80 år
       </label>
     </ds-field>
@@ -436,7 +463,10 @@ exports[`Readonly 1`] = `
   style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
 >
   <ds-field>
-    <label data-weight="medium">
+    <label
+      data-weight="medium"
+      for="readonly-first"
+    >
       <span>
         Fornavn
       </span>
@@ -451,7 +481,10 @@ exports[`Readonly 1`] = `
     </div>
   </ds-field>
   <ds-field>
-    <label data-weight="medium">
+    <label
+      data-weight="medium"
+      for="readonly-middle"
+    >
       <span>
         Mellomnavn
       </span>
@@ -465,7 +498,10 @@ exports[`Readonly 1`] = `
     </div>
   </ds-field>
   <ds-field>
-    <label data-weight="medium">
+    <label
+      data-weight="medium"
+      for="readonly-last"
+    >
       <span>
         Etternavn
       </span>

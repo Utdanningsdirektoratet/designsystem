@@ -1,10 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Controlled 1`] = `
-<fieldset aria-labelledby="mn2x8aju2t59">
+<fieldset aria-labelledby="utilities-usecheckboxgroup--controlled-legend">
   <legend
+    id="utilities-usecheckboxgroup--controlled-legend"
     data-weight="medium"
-    id="mn2x8aju2t59"
   >
     Utdanningsnivå
   </legend>
@@ -138,16 +138,16 @@ exports[`Default 1`] = `
 `;
 
 exports[`Disabled 1`] = `
-<fieldset aria-labelledby="mn2x8aju2t57 mn2x8aju2t58">
+<fieldset aria-labelledby="utilities-usecheckboxgroup--disabled-legend utilities-usecheckboxgroup--disabled-description">
   <legend
+    id="utilities-usecheckboxgroup--disabled-legend"
     data-weight="medium"
-    id="mn2x8aju2t57"
   >
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
   <p
     data-variant="default"
-    id="mn2x8aju2t58"
+    id="utilities-usecheckboxgroup--disabled-description"
   >
     Velg de alternativene som er relevante for deg.
   </p>
@@ -207,16 +207,16 @@ exports[`Disabled 1`] = `
 `;
 
 exports[`Group 1`] = `
-<fieldset aria-labelledby="mn2x8aju2t51 mn2x8aju2t52">
+<fieldset aria-labelledby="utilities-usecheckboxgroup--group-legend utilities-usecheckboxgroup--group-description">
   <legend
+    id="utilities-usecheckboxgroup--group-legend"
     data-weight="medium"
-    id="mn2x8aju2t51"
   >
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
   <p
     data-variant="default"
-    id="mn2x8aju2t52"
+    id="utilities-usecheckboxgroup--group-description"
   >
     Velg de alternativene som er relevante for deg.
   </p>
@@ -384,14 +384,20 @@ exports[`Indeterminate In Table 1`] = `
 `;
 
 exports[`Read Only 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="utilities-usecheckboxgroup--read-only-legend utilities-usecheckboxgroup--read-only-description">
+  <legend
+    id="utilities-usecheckboxgroup--read-only-legend"
+    data-weight="medium"
+  >
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="utilities-usecheckboxgroup--read-only-description"
+  >
     Velg de alternativene som er relevante for deg.
   </p>
-  <ds-field>
+  <ds-field data-clickdelegatefor="utilities-usecheckboxgroup--read-only-email">
     <input
       id="utilities-usecheckboxgroup--read-only-email"
       readonly
@@ -400,11 +406,14 @@ exports[`Read Only 1`] = `
       checked
       name="my-readonly"
     >
-    <label data-weight="regular">
+    <label
+      data-weight="regular"
+      for="utilities-usecheckboxgroup--read-only-email"
+    >
       E-post
     </label>
   </ds-field>
-  <ds-field>
+  <ds-field data-clickdelegatefor="utilities-usecheckboxgroup--read-only-telefon">
     <input
       id="utilities-usecheckboxgroup--read-only-telefon"
       readonly
@@ -412,11 +421,14 @@ exports[`Read Only 1`] = `
       value="telefon"
       name="my-readonly"
     >
-    <label data-weight="regular">
+    <label
+      data-weight="regular"
+      for="utilities-usecheckboxgroup--read-only-telefon"
+    >
       Telefon
     </label>
   </ds-field>
-  <ds-field>
+  <ds-field data-clickdelegatefor="utilities-usecheckboxgroup--read-only-sms">
     <input
       id="utilities-usecheckboxgroup--read-only-sms"
       readonly
@@ -424,7 +436,10 @@ exports[`Read Only 1`] = `
       value="sms"
       name="my-readonly"
     >
-    <label data-weight="regular">
+    <label
+      data-weight="regular"
+      for="utilities-usecheckboxgroup--read-only-sms"
+    >
       SMS
     </label>
   </ds-field>
@@ -438,16 +453,16 @@ exports[`Read Only 1`] = `
 `;
 
 exports[`With Error 1`] = `
-<fieldset aria-labelledby="mn2x8aju2t53 mn2x8aju2t54">
+<fieldset aria-labelledby="utilities-usecheckboxgroup--with-error-legend utilities-usecheckboxgroup--with-error-description">
   <legend
+    id="utilities-usecheckboxgroup--with-error-legend"
     data-weight="medium"
-    id="mn2x8aju2t53"
   >
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
   <p
     data-variant="default"
-    id="mn2x8aju2t54"
+    id="utilities-usecheckboxgroup--with-error-description"
   >
     Velg de alternativene som er relevante for deg.
   </p>

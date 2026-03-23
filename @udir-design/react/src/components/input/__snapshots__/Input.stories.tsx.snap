@@ -490,11 +490,8 @@ exports[`Html Size 1`] = `
 `;
 
 exports[`Input Types 1`] = `
-<ds-field data-clickdelegatefor="components-input--input-types-checkbox">
-  <label
-    data-weight="medium"
-    for="components-input--input-types-checkbox"
-  >
+<ds-field>
+  <label data-weight="medium">
     Checkbox
   </label>
   <input
@@ -503,11 +500,8 @@ exports[`Input Types 1`] = `
     checked
   >
 </ds-field>
-<ds-field data-clickdelegatefor="components-input--input-types-radio">
-  <label
-    data-weight="medium"
-    for="components-input--input-types-radio"
-  >
+<ds-field>
+  <label data-weight="medium">
     Radio
   </label>
   <input
@@ -516,11 +510,8 @@ exports[`Input Types 1`] = `
     checked
   >
 </ds-field>
-<ds-field data-clickdelegatefor="components-input--input-types-switch">
-  <label
-    data-weight="medium"
-    for="components-input--input-types-switch"
-  >
+<ds-field>
+  <label data-weight="medium">
     Switch
   </label>
   <input
@@ -555,48 +546,39 @@ exports[`Radio 1`] = `
     >
       Small
     </h2>
-    <ds-field data-clickdelegatefor="components-input--radio-sm-Default">
+    <ds-field>
       <input
         id="components-input--radio-sm-Default"
         type="radio"
         name="sm-Default"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-sm-Default"
-      >
+      <label data-weight="medium">
         Default
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-sm-Checked">
+    <ds-field>
       <input
         id="components-input--radio-sm-Checked"
         type="radio"
         checked
         name="sm-Checked"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-sm-Checked"
-      >
+      <label data-weight="medium">
         Checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-sm-Disabled">
+    <ds-field>
       <input
         disabled
         id="components-input--radio-sm-Disabled"
         type="radio"
         name="sm-Disabled"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-sm-Disabled"
-      >
+      <label data-weight="medium">
         Disabled
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-sm-Disabled">
+    <ds-field>
       <input
         disabled
         id="components-input--radio-sm-Disabled"
@@ -604,28 +586,22 @@ exports[`Radio 1`] = `
         checked
         name="sm-Disabled"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-sm-Disabled"
-      >
+      <label data-weight="medium">
         Disabled checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-sm-Invalid">
+    <ds-field>
       <input
         aria-invalid="true"
         id="components-input--radio-sm-Invalid"
         type="radio"
         name="sm-Invalid"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-sm-Invalid"
-      >
+      <label data-weight="medium">
         Invalid
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-sm-Invalid">
+    <ds-field>
       <input
         aria-invalid="true"
         id="components-input--radio-sm-Invalid"
@@ -633,28 +609,22 @@ exports[`Radio 1`] = `
         checked
         name="sm-Invalid"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-sm-Invalid"
-      >
+      <label data-weight="medium">
         Invalid checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-sm-Read-only">
+    <ds-field>
       <input
         readonly
         id="components-input--radio-sm-Read-only"
         type="radio"
         name="sm-Read-only"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-sm-Read-only"
-      >
+      <label data-weight="medium">
         Read-only
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-sm-Read-only">
+    <ds-field>
       <input
         readonly
         id="components-input--radio-sm-Read-only"
@@ -662,10 +632,7 @@ exports[`Radio 1`] = `
         checked
         name="sm-Read-only"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-sm-Read-only"
-      >
+      <label data-weight="medium">
         Read-only checked
       </label>
     </ds-field>
@@ -680,48 +647,39 @@ exports[`Radio 1`] = `
     >
       Medium
     </h2>
-    <ds-field data-clickdelegatefor="components-input--radio-md-Default">
+    <ds-field>
       <input
         id="components-input--radio-md-Default"
         type="radio"
         name="md-Default"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-md-Default"
-      >
+      <label data-weight="medium">
         Default
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-md-Checked">
+    <ds-field>
       <input
         id="components-input--radio-md-Checked"
         type="radio"
         checked
         name="md-Checked"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-md-Checked"
-      >
+      <label data-weight="medium">
         Checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-md-Disabled">
+    <ds-field>
       <input
         disabled
         id="components-input--radio-md-Disabled"
         type="radio"
         name="md-Disabled"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-md-Disabled"
-      >
+      <label data-weight="medium">
         Disabled
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-md-Disabled">
+    <ds-field>
       <input
         disabled
         id="components-input--radio-md-Disabled"
@@ -729,28 +687,22 @@ exports[`Radio 1`] = `
         checked
         name="md-Disabled"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-md-Disabled"
-      >
+      <label data-weight="medium">
         Disabled checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-md-Invalid">
+    <ds-field>
       <input
         aria-invalid="true"
         id="components-input--radio-md-Invalid"
         type="radio"
         name="md-Invalid"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-md-Invalid"
-      >
+      <label data-weight="medium">
         Invalid
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-md-Invalid">
+    <ds-field>
       <input
         aria-invalid="true"
         id="components-input--radio-md-Invalid"
@@ -758,28 +710,22 @@ exports[`Radio 1`] = `
         checked
         name="md-Invalid"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-md-Invalid"
-      >
+      <label data-weight="medium">
         Invalid checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-md-Read-only">
+    <ds-field>
       <input
         readonly
         id="components-input--radio-md-Read-only"
         type="radio"
         name="md-Read-only"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-md-Read-only"
-      >
+      <label data-weight="medium">
         Read-only
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-md-Read-only">
+    <ds-field>
       <input
         readonly
         id="components-input--radio-md-Read-only"
@@ -787,10 +733,7 @@ exports[`Radio 1`] = `
         checked
         name="md-Read-only"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-md-Read-only"
-      >
+      <label data-weight="medium">
         Read-only checked
       </label>
     </ds-field>
@@ -805,48 +748,39 @@ exports[`Radio 1`] = `
     >
       Large
     </h2>
-    <ds-field data-clickdelegatefor="components-input--radio-lg-Default">
+    <ds-field>
       <input
         id="components-input--radio-lg-Default"
         type="radio"
         name="lg-Default"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-lg-Default"
-      >
+      <label data-weight="medium">
         Default
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-lg-Checked">
+    <ds-field>
       <input
         id="components-input--radio-lg-Checked"
         type="radio"
         checked
         name="lg-Checked"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-lg-Checked"
-      >
+      <label data-weight="medium">
         Checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-lg-Disabled">
+    <ds-field>
       <input
         disabled
         id="components-input--radio-lg-Disabled"
         type="radio"
         name="lg-Disabled"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-lg-Disabled"
-      >
+      <label data-weight="medium">
         Disabled
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-lg-Disabled">
+    <ds-field>
       <input
         disabled
         id="components-input--radio-lg-Disabled"
@@ -854,28 +788,22 @@ exports[`Radio 1`] = `
         checked
         name="lg-Disabled"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-lg-Disabled"
-      >
+      <label data-weight="medium">
         Disabled checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-lg-Invalid">
+    <ds-field>
       <input
         aria-invalid="true"
         id="components-input--radio-lg-Invalid"
         type="radio"
         name="lg-Invalid"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-lg-Invalid"
-      >
+      <label data-weight="medium">
         Invalid
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-lg-Invalid">
+    <ds-field>
       <input
         aria-invalid="true"
         id="components-input--radio-lg-Invalid"
@@ -883,28 +811,22 @@ exports[`Radio 1`] = `
         checked
         name="lg-Invalid"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-lg-Invalid"
-      >
+      <label data-weight="medium">
         Invalid checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-lg-Read-only">
+    <ds-field>
       <input
         readonly
         id="components-input--radio-lg-Read-only"
         type="radio"
         name="lg-Read-only"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-lg-Read-only"
-      >
+      <label data-weight="medium">
         Read-only
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="components-input--radio-lg-Read-only">
+    <ds-field>
       <input
         readonly
         id="components-input--radio-lg-Read-only"
@@ -912,10 +834,7 @@ exports[`Radio 1`] = `
         checked
         name="lg-Read-only"
       >
-      <label
-        data-weight="medium"
-        for="components-input--radio-lg-Read-only"
-      >
+      <label data-weight="medium">
         Read-only checked
       </label>
     </ds-field>
@@ -1237,11 +1156,11 @@ exports[`Text 1`] = `
         type="text"
         value="Value"
         name="sm-invalid"
-        aria-describedby="mn2x845t5l01"
+        aria-describedby="mn2xa6d3u7w1"
       >
       <p
         data-field="validation"
-        id="mn2x845t5l01"
+        id="mn2xa6d3u7w1"
       >
         Feilmelding
       </p>
@@ -1318,11 +1237,11 @@ exports[`Text 1`] = `
         type="text"
         value="Value"
         name="md-invalid"
-        aria-describedby="mn2x845t5l02"
+        aria-describedby="mn2xa6d3u7w2"
       >
       <p
         data-field="validation"
-        id="mn2x845t5l02"
+        id="mn2xa6d3u7w2"
       >
         Feilmelding
       </p>
@@ -1399,11 +1318,11 @@ exports[`Text 1`] = `
         type="text"
         value="Value"
         name="lg-invalid"
-        aria-describedby="mn2x845t5l03"
+        aria-describedby="mn2xa6d3u7w3"
       >
       <p
         data-field="validation"
-        id="mn2x845t5l03"
+        id="mn2xa6d3u7w3"
       >
         Feilmelding
       </p>
