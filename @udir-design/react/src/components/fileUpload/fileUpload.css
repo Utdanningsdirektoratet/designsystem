@@ -200,6 +200,9 @@
 
 /* FileUpload.Item */
 .uds-file-upload__item {
+  [data-tooltip] {
+    --ds-tooltip: var(--udsc-fileUpload-removeFile-text);
+  }
   padding: var(--ds-size-6);
   display: flex;
   flex-direction: column;
