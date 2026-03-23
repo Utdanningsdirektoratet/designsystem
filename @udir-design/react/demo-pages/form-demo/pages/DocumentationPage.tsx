@@ -32,21 +32,22 @@ export const DocumentationPage = ({
     );
   };
 
-  const { getRootProps, getInputProps } = useDropzone({
-    onDropAccepted: (file) => {
-      setValue('documentation', [...uploadedFiles, ...file], {
-        shouldValidate: true,
-      });
-    },
-    onDropRejected: (rej) => {
-      setRejected((prev) => [...prev, ...rej]);
-    },
-    maxSize: 25000000,
-    multiple: true,
-    accept: {
-      'application/pdf': [],
-    },
-  });
+  const { getRootProps, getInputProps, isDragGlobal, isDragActive } =
+    useDropzone({
+      onDropAccepted: (file) => {
+        setValue('documentation', [...uploadedFiles, ...file], {
+          shouldValidate: true,
+        });
+      },
+      onDropRejected: (rej) => {
+        setRejected((prev) => [...prev, ...rej]);
+      },
+      maxSize: 25000000,
+      multiple: true,
+      accept: {
+        'application/pdf': [],
+      },
+    });
 
   return (
     <>
@@ -58,7 +59,6 @@ export const DocumentationPage = ({
         label={<span>Last opp dokumentasjon</span>}
         description="Du kan laste opp filer i PDF-format. Filer kan være opptil 25 MB."
         {...getRootProps()}
-        error={errors.documentation?.message}
         inputProps={{
           ...getInputProps({
             required: true,
@@ -66,6 +66,9 @@ export const DocumentationPage = ({
           }),
           id: 'dokumentasjon-dropzone',
         }}
+        isDragActive={isDragActive}
+        isDragGlobal={isDragGlobal}
+        error={errors.documentation?.message}
         aria-invalid={!!errors.documentation}
       />
       {uploadedFiles.length > 0 && (
