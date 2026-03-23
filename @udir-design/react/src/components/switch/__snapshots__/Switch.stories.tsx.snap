@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Checked 1`] = `
-<div>
+<ds-field data-clickdelegatefor="components-switch--checked">
   <input
     role="switch"
     id="components-switch--checked"
@@ -14,7 +14,7 @@ exports[`Checked 1`] = `
   >
     En bryter
   </label>
-</div>
+</ds-field>
 `;
 
 exports[`Controlled 1`] = `
@@ -24,89 +24,70 @@ exports[`Controlled 1`] = `
       Innstillinger
     </h2>
   </legend>
-  <div>
+  <ds-field>
     <input
       role="switch"
       id="components-switch--controlled"
       type="checkbox"
       checked
     >
-    <label
-      data-weight="regular"
-      for="components-switch--controlled"
-    >
+    <label data-weight="regular">
       Varsler
     </label>
-  </div>
+  </ds-field>
   <p data-variant="default">
     Velg hvilke typer varsler du ønsker å motta.
   </p>
-  <div>
+  <ds-field>
     <input
       id="components-switch--controlledlydvarsler"
       type="checkbox"
     >
-    <label
-      data-weight="regular"
-      for="components-switch--controlledlydvarsler"
-    >
+    <label data-weight="regular">
       Lydvarsler
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field>
     <input
       id="components-switch--controlledepostvarsler"
       type="checkbox"
       checked
     >
-    <label
-      data-weight="regular"
-      for="components-switch--controlledepostvarsler"
-    >
+    <label data-weight="regular">
       Epostvarsler
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field>
     <input
       id="components-switch--controlledpopupvarsler"
       type="checkbox"
     >
-    <label
-      data-weight="regular"
-      for="components-switch--controlledpopupvarsler"
-    >
+    <label data-weight="regular">
       Popup-varsler
     </label>
-  </div>
+  </ds-field>
 </fieldset>
 `;
 
 exports[`Description 1`] = `
-<div>
+<ds-field>
   <input
     role="switch"
     id="components-switch--description"
     type="checkbox"
     checked
-    aria-describedby="components-switch--description:description:1"
   >
-  <label
-    data-weight="regular"
-    for="components-switch--description"
-  >
+  <label data-weight="regular">
     Åpen prøve
   </label>
-  <div
-    data-field="description"
-    id="components-switch--description:description:1"
-  >
+  <div data-field="description">
     Prøven er åpen for alle som ønsker å delta.
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`Disabled 1`] = `
-<div>
+<ds-field data-clickdelegatefor="disabled-switch">
   <input
     role="switch"
     disabled
@@ -119,11 +100,11 @@ exports[`Disabled 1`] = `
   >
     Disabled switch
   </label>
-</div>
+</ds-field>
 `;
 
 exports[`Focused 1`] = `
-<div>
+<ds-field data-clickdelegatefor="components-switch--focused">
   <input
     role="switch"
     id="components-switch--focused"
@@ -135,22 +116,25 @@ exports[`Focused 1`] = `
   >
     En bryter
   </label>
-</div>
+</ds-field>
 `;
 
 exports[`Group 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="mn2x86ap7002">
+  <legend
+    data-weight="medium"
+    id="mn2x86ap7002"
+  >
     Varsler
   </legend>
-  <div>
+  <ds-field data-clickdelegatefor="components-switch--grouplydvarsler">
     <input
       role="switch"
       id="components-switch--grouplydvarsler"
       type="checkbox"
       value="lydvarsler"
       checked
-      aria-describedby="components-switch--grouplydvarsler:description:1"
+      aria-describedby="mn2x86ap7003"
     >
     <label
       data-weight="regular"
@@ -160,18 +144,18 @@ exports[`Group 1`] = `
     </label>
     <div
       data-field="description"
-      id="components-switch--grouplydvarsler:description:1"
+      id="mn2x86ap7003"
     >
       Spill av lyd når et varsel mottas.
     </div>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="components-switch--grouppopup-varsler">
     <input
       role="switch"
       id="components-switch--grouppopup-varsler"
       type="checkbox"
       value="popup-varsler"
-      aria-describedby="components-switch--grouppopup-varsler:description:1"
+      aria-describedby="mn2x86ap7004"
     >
     <label
       data-weight="regular"
@@ -181,18 +165,18 @@ exports[`Group 1`] = `
     </label>
     <div
       data-field="description"
-      id="components-switch--grouppopup-varsler:description:1"
+      id="mn2x86ap7004"
     >
       Vis popup-varsler på skjermen.
     </div>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="components-switch--groupemail-varsler">
     <input
       role="switch"
       id="components-switch--groupemail-varsler"
       type="checkbox"
       value="email-varsler"
-      aria-describedby="components-switch--groupemail-varsler:description:1"
+      aria-describedby="mn2x86ap7005"
     >
     <label
       data-weight="regular"
@@ -202,25 +186,34 @@ exports[`Group 1`] = `
     </label>
     <div
       data-field="description"
-      id="components-switch--groupemail-varsler:description:1"
+      id="mn2x86ap7005"
     >
       Tillat e-postvarsler for viktige oppdateringer.
     </div>
-  </div>
+  </ds-field>
 </fieldset>
 `;
 
 exports[`Group End 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="mn2x86ap7006 mn2x86ap7007">
+  <legend
+    data-weight="medium"
+    id="mn2x86ap7006"
+  >
     <h2>
       Innstillinger
     </h2>
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="mn2x86ap7007"
+  >
     Innstillinger som gjelder hele systemet.
   </p>
-  <div data-position="end">
+  <ds-field
+    data-position="end"
+    data-clickdelegatefor="components-switch--group-endmork-modus"
+  >
     <input
       role="switch"
       id="components-switch--group-endmork-modus"
@@ -234,8 +227,11 @@ exports[`Group End 1`] = `
     >
       Mørk modus
     </label>
-  </div>
-  <div data-position="end">
+  </ds-field>
+  <ds-field
+    data-position="end"
+    data-clickdelegatefor="components-switch--group-endautomatiske-oppdateringer"
+  >
     <input
       role="switch"
       id="components-switch--group-endautomatiske-oppdateringer"
@@ -248,12 +244,12 @@ exports[`Group End 1`] = `
     >
       Automatiske oppdateringer
     </label>
-  </div>
+  </ds-field>
 </fieldset>
 `;
 
 exports[`Preview 1`] = `
-<div>
+<ds-field data-clickdelegatefor="components-switch--preview">
   <input
     role="switch"
     id="components-switch--preview"
@@ -265,11 +261,11 @@ exports[`Preview 1`] = `
   >
     En bryter
   </label>
-</div>
+</ds-field>
 `;
 
 exports[`Read Only 1`] = `
-<div>
+<ds-field data-clickdelegatefor="readonly-switch">
   <input
     role="switch"
     readonly
@@ -282,7 +278,7 @@ exports[`Read Only 1`] = `
   >
     Read-only switch
   </label>
-</div>
+</ds-field>
 `;
 
 exports[`Switch In Color Context 1`] = `
@@ -290,13 +286,13 @@ exports[`Switch In Color Context 1`] = `
   data-variant="tinted"
   data-color="accent"
 >
-  <div>
+  <ds-field data-clickdelegatefor="switch-in-color-context">
     <input
       role="switch"
       id="switch-in-color-context"
       type="checkbox"
       checked
-      aria-describedby="switch-in-color-context:description:1"
+      aria-describedby="mn2x86ap7009"
     >
     <label
       data-weight="regular"
@@ -306,10 +302,10 @@ exports[`Switch In Color Context 1`] = `
     </label>
     <div
       data-field="description"
-      id="switch-in-color-context:description:1"
+      id="mn2x86ap7009"
     >
       Description
     </div>
-  </div>
+  </ds-field>
 </div>
 `;

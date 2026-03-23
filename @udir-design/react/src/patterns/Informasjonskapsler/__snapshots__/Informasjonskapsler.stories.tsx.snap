@@ -17,8 +17,7 @@ exports[`Drawer 1`] = `
   </style>
   <dialog
     data-placement="bottom"
-    data-modal="false"
-    closedby="closerequest"
+    id="_r_1_"
     open
   >
     <button
@@ -27,7 +26,8 @@ exports[`Drawer 1`] = `
       type="button"
       aria-label="Lukk dialogvindu"
       data-color="neutral"
-      data-command="close"
+      command="close"
+      commandfor="_r_1_"
     >
     </button>
     <div>
@@ -85,8 +85,7 @@ exports[`Preview 1`] = `
   </style>
   <dialog
     data-placement="center"
-    data-modal="false"
-    closedby="closerequest"
+    id="_r_0_"
     open
   >
     <button
@@ -95,7 +94,8 @@ exports[`Preview 1`] = `
       type="button"
       aria-label="Lukk dialogvindu"
       data-color="neutral"
-      data-command="close"
+      command="close"
+      commandfor="_r_0_"
     >
     </button>
     <div>

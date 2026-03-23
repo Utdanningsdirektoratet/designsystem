@@ -5,12 +5,12 @@ exports[`Checkbox In Color Context 1`] = `
   data-variant="tinted"
   data-color="accent"
 >
-  <div>
+  <ds-field data-clickdelegatefor="checkbox-in-color-context">
     <input
       id="checkbox-in-color-context"
       type="checkbox"
       checked
-      aria-describedby="checkbox-in-color-context:description:1"
+      aria-describedby="mn2x8ap99vk4"
     >
     <label
       data-weight="regular"
@@ -20,21 +20,21 @@ exports[`Checkbox In Color Context 1`] = `
     </label>
     <div
       data-field="description"
-      id="checkbox-in-color-context:description:1"
+      id="mn2x8ap99vk4"
     >
       Description
     </div>
-  </div>
+  </ds-field>
 </div>
 `;
 
 exports[`Focused 1`] = `
-<div>
+<ds-field data-clickdelegatefor="checkbox-preview">
   <input
     id="checkbox-preview"
     type="checkbox"
     value="value"
-    aria-describedby="checkbox-preview:description:1"
+    aria-describedby="mn2x8ap99vk5"
   >
   <label
     data-weight="regular"
@@ -44,22 +44,28 @@ exports[`Focused 1`] = `
   </label>
   <div
     data-field="description"
-    id="checkbox-preview:description:1"
+    id="mn2x8ap99vk5"
   >
     Description
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`One Option 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="mn2x8ap99vk2 mn2x8ap99vk3">
+  <legend
+    data-weight="medium"
+    id="mn2x8ap99vk2"
+  >
     Bekreft at du er over 18 år
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="mn2x8ap99vk3"
+  >
     For at vi skal kunne sende deg opplysningen du ber om, må du bekrefte at du er myndig.
   </p>
-  <div>
+  <ds-field data-clickdelegatefor="components-checkbox--one-option">
     <input
       id="components-checkbox--one-option"
       type="checkbox"
@@ -71,17 +77,17 @@ exports[`One Option 1`] = `
     >
       Jeg bekrefter at jeg er over 18 år
     </label>
-  </div>
+  </ds-field>
 </fieldset>
 `;
 
 exports[`Preview 1`] = `
-<div>
+<ds-field data-clickdelegatefor="checkbox-preview">
   <input
     id="checkbox-preview"
     type="checkbox"
     value="value"
-    aria-describedby="checkbox-preview:description:1"
+    aria-describedby="mn2x8ap99vk1"
   >
   <label
     data-weight="regular"
@@ -91,9 +97,9 @@ exports[`Preview 1`] = `
   </label>
   <div
     data-field="description"
-    id="checkbox-preview:description:1"
+    id="mn2x8ap99vk1"
   >
     Description
   </div>
-</div>
+</ds-field>
 `;

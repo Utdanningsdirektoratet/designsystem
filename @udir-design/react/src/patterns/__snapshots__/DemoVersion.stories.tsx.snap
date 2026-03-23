@@ -38,10 +38,14 @@ exports[`Preview 1`] = `
       </p>
       <div
         data-variant="default"
+        data-clickdelegatefor="_r_0_"
         style="max-width: 300px;"
       >
         <h2>
-          <a href="/">
+          <a
+            href="/"
+            id="_r_0_"
+          >
             Logg inn
           </a>
         </h2>
@@ -1910,8 +1914,7 @@ exports[`Preview 1`] = `
   </div>
   <dialog
     data-placement="center"
-    data-modal="true"
-    closedby="closerequest"
+    id="_r_1_"
     open
     style="max-width: 650px;"
   >
@@ -1921,7 +1924,8 @@ exports[`Preview 1`] = `
       type="button"
       aria-label="Lukk dialogvindu"
       data-color="neutral"
-      data-command="close"
+      command="close"
+      commandfor="_r_1_"
     >
     </button>
     <h2 style="margin-block-end: var(--ds-size-4);">
