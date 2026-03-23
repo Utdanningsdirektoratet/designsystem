@@ -286,8 +286,8 @@ export const ExampleTrigger = meta.story({
   render: (args) => {
     const [file, setFile] = useState<File | null>(null);
 
-    const handleOnChange = (e: ChangeEvent<HTMLDivElement>) => {
-      const input = e.target as unknown as HTMLInputElement;
+    const handleOnChange = (e: ChangeEvent<HTMLElement>) => {
+      const input = e.target as HTMLInputElement;
       if (input.files) {
         setFile(input.files[0]);
         input.value = '';
