@@ -805,7 +805,7 @@ exports[`Form Page 3 1`] = `
         </label>
         <div
           data-field="description"
-          id="mn2x88lmbvr7"
+          id="mn2xa82z3tb7"
         >
           Du kan laste opp filer i PDF-format. Filer kan være opptil 25 MB.
         </div>
@@ -844,7 +844,7 @@ exports[`Form Page 3 1`] = `
           required
           id="dokumentasjon-dropzone"
           type="file"
-          aria-describedby="mn2x88lmbvr7"
+          aria-describedby="mn2xa82z3tb7"
           style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
         >
       </ds-field>
@@ -859,14 +859,14 @@ exports[`Form Page 3 1`] = `
         </label>
         <div
           data-field="description"
-          id="mn2x88lmbvr8"
+          id="mn2xa82z3tb8"
         >
           Ytterlige kommentarer til dokumentasjonen du har lastet opp.
         </div>
         <textarea
           id="addition"
           name="addition"
-          aria-describedby="mn2x88lmbvr8"
+          aria-describedby="mn2xa82z3tb8"
         >
         </textarea>
       </ds-field>

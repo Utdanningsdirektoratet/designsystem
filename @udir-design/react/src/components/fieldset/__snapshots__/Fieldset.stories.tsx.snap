@@ -1,10 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Legend As Heading 1`] = `
-<fieldset aria-labelledby="mn2x8bn1ipd6 mn2x8bn1ipd7">
+<fieldset aria-labelledby="components-fieldset--legend-as-heading-legend components-fieldset--legend-as-heading-description">
   <legend
+    id="components-fieldset--legend-as-heading-legend"
     data-weight="medium"
-    id="mn2x8bn1ipd6"
   >
     <h2 data-size="sm">
       Hvilke tjenester bruker du?
@@ -12,7 +12,7 @@ exports[`Legend As Heading 1`] = `
   </legend>
   <p
     data-variant="default"
-    id="mn2x8bn1ipd7"
+    id="components-fieldset--legend-as-heading-description"
   >
     Påloggingssystemer hos Udir
   </p>
@@ -63,10 +63,16 @@ exports[`Legend As Heading 1`] = `
 
 exports[`Preview 1`] = `
 <fieldset>
-  <legend data-weight="medium">
+  <legend
+    id="components-fieldset--preview-legend"
+    data-weight="medium"
+  >
     Hvilken fjordarm bor du ved?
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="components-fieldset--preview-description"
+  >
     Valget vil hjelpe oss å forbedre innholdet vi viser deg.
   </p>
   <ds-field>
@@ -106,10 +112,10 @@ exports[`Preview 1`] = `
 `;
 
 exports[`With Checkbox 1`] = `
-<fieldset aria-labelledby="mn2x8bn1ipd3">
+<fieldset aria-labelledby="components-fieldset--with-checkbox-legend">
   <legend
+    id="components-fieldset--with-checkbox-legend"
     data-weight="medium"
-    id="mn2x8bn1ipd3"
   >
     Godtar du vilkårene?
   </legend>
@@ -129,10 +135,10 @@ exports[`With Checkbox 1`] = `
 `;
 
 exports[`With Textfield 1`] = `
-<fieldset aria-labelledby="mn2x8bn1ipd4 mn2x8bn1ipd5">
+<fieldset aria-labelledby="components-fieldset--with-textfield-legend components-fieldset--with-textfield-description">
   <legend
+    id="components-fieldset--with-textfield-legend"
     data-weight="medium"
-    id="mn2x8bn1ipd4"
   >
     <h2 data-size="sm">
       Adresse
@@ -140,7 +146,7 @@ exports[`With Textfield 1`] = `
   </legend>
   <p
     data-variant="default"
-    id="mn2x8bn1ipd5"
+    id="components-fieldset--with-textfield-description"
   >
     Skriv inn adressen din for å motta post fra oss.
   </p>

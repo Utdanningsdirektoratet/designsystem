@@ -48,6 +48,85 @@ exports[`Mobile 1`] = `
 </ds-pagination>
 `;
 
+exports[`Preview 1`] = `
+<ds-pagination
+  aria-label="Sidenavigering"
+  role="navigation"
+>
+  <ul>
+    <li>
+      <button
+        data-variant="tertiary"
+        aria-label="Forrige side"
+        variant="tertiary"
+      >
+        Forrige
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        aria-label="Side 1"
+      >
+        1
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        aria-label="Side 2"
+      >
+        2
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        aria-label="Side 3"
+      >
+        3
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        aria-label="Side 4"
+        aria-current="true"
+      >
+        4
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        aria-label="Side 5"
+      >
+        5
+      </button>
+    </li>
+    <li>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        aria-label="Side 10"
+      >
+        10
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        aria-label="Neste side"
+        variant="tertiary"
+      >
+        Neste
+      </button>
+    </li>
+  </ul>
+</ds-pagination>
+`;
+
 exports[`With Anchor 1`] = `
 <div style="gap: 70px; display: flex; flex-direction: column;">
   <div>

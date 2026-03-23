@@ -599,7 +599,7 @@ exports[`Custom Filter Alt 1 1`] = `
   </label>
   <ds-suggestion>
     <input
-      placeholder=" "
+      placeholder
       id="components-suggestion--custom-filter-alt-1"
       type="text"
       data-label
@@ -717,7 +717,7 @@ exports[`Custom Filter Alt 2 1`] = `
   </label>
   <ds-suggestion>
     <input
-      placeholder=" "
+      placeholder
       id="components-suggestion--custom-filter-alt-2"
       type="text"
       data-label
@@ -955,7 +955,7 @@ exports[`Fetch External 1`] = `
   </label>
   <ds-suggestion>
     <input
-      placeholder=" "
+      placeholder
       id="components-suggestion--fetch-external"
       type="text"
       data-label
@@ -1007,7 +1007,7 @@ exports[`In Details 1`] = `
       </label>
       <ds-suggestion autofocus>
         <input
-          placeholder=" "
+          placeholder
           id="components-suggestion--in-details"
           type="text"
           data-label

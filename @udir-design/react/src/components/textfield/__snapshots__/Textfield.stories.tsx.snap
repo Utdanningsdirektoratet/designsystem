@@ -63,13 +63,13 @@ exports[`Counter 1`] = `
       id="textfield-counter"
       inputmode="numeric"
       type="text"
-      aria-describedby="mn2x86k8seb1"
+      aria-describedby="mn2xa6ryjqe1"
     >
   </div>
   <p
     data-field="counter"
     data-limit="10"
-    id="mn2x86k8seb1"
+    id="mn2xa6ryjqe1"
     data-label="10 tegn igjen"
     data-state="under"
   >
@@ -113,10 +113,7 @@ exports[`Disabled 1`] = `
 
 exports[`Focused 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="textfield-preview"
-  >
+  <label data-weight="medium">
     Label
   </label>
   <div>
@@ -181,7 +178,10 @@ exports[`Read Only 1`] = `
 
 exports[`Rows 1`] = `
 <ds-field>
-  <label data-weight="medium">
+  <label
+    data-weight="medium"
+    for="textfield-rows"
+  >
     Beskrivelse
   </label>
   <div>

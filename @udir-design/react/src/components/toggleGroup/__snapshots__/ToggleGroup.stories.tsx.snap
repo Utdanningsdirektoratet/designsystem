@@ -372,6 +372,47 @@ exports[`Only Text 1`] = `
 </fieldset>
 `;
 
+exports[`Preview 1`] = `
+<fieldset
+  data-toggle-group
+  data-variant="primary"
+>
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="innboks"
+      checked
+      name="togglegroup-name-_r_0_"
+    >
+    Innboks
+  </label>
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="utkast"
+      name="togglegroup-name-_r_0_"
+    >
+    Utkast
+  </label>
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="arkiv"
+      name="togglegroup-name-_r_0_"
+    >
+    Arkiv
+  </label>
+  <label data-variant="tertiary">
+    <input
+      type="radio"
+      value="sendt"
+      name="togglegroup-name-_r_0_"
+    >
+    Sendt
+  </label>
+</fieldset>
+`;
+
 exports[`Primary 1`] = `
 <fieldset
   data-toggle-group
@@ -641,4 +682,50 @@ exports[`Text And Icons 1`] = `
     Kritisk
   </label>
 </fieldset>
+`;
+
+exports[`Toggle Group In Color Context 1`] = `
+<div
+  data-variant="tinted"
+  data-color="accent"
+>
+  <fieldset
+    data-toggle-group
+    data-variant="primary"
+  >
+    <label data-variant="tertiary">
+      <input
+        type="radio"
+        value="innboks"
+        checked
+        name="togglegroup-name-_r_1j_"
+      >
+      Innboks
+    </label>
+    <label data-variant="tertiary">
+      <input
+        type="radio"
+        value="utkast"
+        name="togglegroup-name-_r_1j_"
+      >
+      Utkast
+    </label>
+    <label data-variant="tertiary">
+      <input
+        type="radio"
+        value="arkiv"
+        name="togglegroup-name-_r_1j_"
+      >
+      Arkiv
+    </label>
+    <label data-variant="tertiary">
+      <input
+        type="radio"
+        value="sendt"
+        name="togglegroup-name-_r_1j_"
+      >
+      Sendt
+    </label>
+  </fieldset>
+</div>
 `;
