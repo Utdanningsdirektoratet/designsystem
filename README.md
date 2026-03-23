@@ -27,8 +27,8 @@ I dette repositoriet lever den delen av designsystemet som implementeres i kode:
   - [Livsfaser for en komponent](#livsfaser-for-en-komponent)
 - [Hva tester vi?](#hva-tester-vi)
   - [Individuelle komponenter](#individuelle-komponenter)
-  - [Komponenter i kontekst](#komponenter-i-kontekst)
-  - [Felles for begge](#felles-for-begge)
+  - [Demosider](#demosider)
+  - [Felles for komponenter og demosider](#felles-for-komponenter-og-demosider)
   - [Tester for komponenter i ulike livsfaser](#tester-for-komponenter-i-ulike-livsfaser)
 - [Informasjon for utviklere som skal bidra](#informasjon-for-utviklere-som-skal-bidra)
   - [Oppsett lokalt](#oppsett-lokalt)
@@ -69,7 +69,7 @@ Komponenter i designsystemet kan befinne seg i én av tre ulike livsfaser:
 
 <dl>
 <dt><strong>Alpha</strong></dt><dd>Komponenten er implementert, men dokumentasjon er mangelfull. Den er ikke nødvendigvis testet i en større kontekst, og det er sannsynlig at utseende, oppførsel og/eller API vil endre seg.</dd>
-<dt><strong>Beta</strong></dt><dd>Komponenten har gjennomgått en initiell prosess i designteamet, der visuelle valg har blitt tatt. Den har fått bruksdokumentasjon i Storybook og Figma, og er en del av en demoside der den kan testes i en større kontekst. Det finnes automatiserte testing av komponenten der det gir mening. Endringer er fremdeles mulig basert på tilbakemeldinger fra systemteam og manuell testing.</dd>
+<dt><strong>Beta</strong></dt><dd>Designteamet har tatt valg for hvordan komponenten skal se ut og oppføre seg. Den har fått bruksdokumentasjon i Storybook og Figma, og er en del av en demoside der den kan testes i en større kontekst. Det finnes automatiserte tester av komponenten der det gir mening. Endringer er fremdeles mulig basert på tilbakemeldinger fra systemteam og manuell testing.</dd>
 <dt><strong>Stabil</strong></dt><dd>Komponenten er vurdert til å tilfredsstille systemteamenes behov. Designteamet har gjort denne vurderingen basert på kjennskap til Udirs tjenester og tilbakemeldinger fra systemteamene i alpha- og betafasene. Stabile komponenter har gjennomgått akseptansetest i designteamet. Vi prøver å unngå endringer i stabile komponenter med mindre det ligger gode grunner bak.</dd>
 </dl>
 
@@ -97,13 +97,15 @@ Alle våre automatiserte tester kjører i nettleseren Chromium.
 
 Vi bruker **komponenttester** for å teste hvordan individuelle komponenter rendrer ut i nettleseren i ulike tilstander og etter ulike brukerinteraksjoner.
 
-I de tilfellene vi implementerer egen oppførsel for komponenter, vil det finnes **enhetstester** for å teste denne oppførselen isolert.
+### Oppførsel
 
-## Komponenter i kontekst
+I de tilfellene vi implementerer egen oppførsel for komponenter eller hjelpefunksjoner, vil det finnes **enhetstester** for å teste denne oppførselen isolert.
 
-Vi tester hver komponent i en større kontekst av andre komponenter. Dette kaller vi **komposisjonstester**. Her tester vi også interaksjoner på tvers av komponenter.
+## Demosider
 
-## Felles for begge
+Vi tester hver komponent i en større kontekst av andre komponenter. Dette kaller vi **komposisjonstester**. Her kan vi også teste interaksjoner på tvers av komponenter.
+
+## Felles for komponenter og demosider
 
 Både komponenttester og komposisjonstester er basert på eksempler (eng: _stories_) i Storybook. I tillegg til det som er beskrevet over, får hvert eksempel også automatisk en snapshottest, en visuell test, og en regelbasert UU-test.
 
