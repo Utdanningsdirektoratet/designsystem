@@ -1,4 +1,3 @@
-import type { StoryContext } from '@storybook/react-vite';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import type { DecoratorType } from '.storybook/types';
@@ -82,20 +81,17 @@ export const Default = meta.story({
     disabled: false,
     value: '10-20',
   },
-  render(args, context) {
+  render(args) {
     const { getRadioProps, validationMessageProps } = useRadioGroup({
       ...args,
     });
 
     return (
       <Fieldset>
-        <Fieldset.Legend id={context.id + '-legend'}>
-          Velg din aldersgruppe.
-        </Fieldset.Legend>
+        <Fieldset.Legend>Velg din aldersgruppe.</Fieldset.Legend>
         {ageGroups.map((group) => (
           <Radio
             key={group.value}
-            id={context.id + '-' + group.value}
             label={group.label}
             {...getRadioProps(group.value)}
           />
@@ -122,23 +118,20 @@ export const Controlled = meta.story({
     },
     docs: { source: { type: 'code', transform: formatReactSource } },
   },
-  render: (args, context) => {
+  render: (args) => {
     const { value, setValue, getRadioProps } = useRadioGroup({
       ...args,
     });
     return (
       <>
         <Fieldset>
-          <Fieldset.Legend id={context.id + '-legend'}>
-            Utdanningsnivå
-          </Fieldset.Legend>
-          <Fieldset.Description id={context.id + '-description'}>
+          <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
+          <Fieldset.Description>
             Velg det høyeste utdanningsnivået du har fullført.
           </Fieldset.Description>
           {educationLevels.map((level) => (
             <Radio
               key={level.value}
-              id={`${context.id}-${level.value}`}
               label={level.label}
               {...getRadioProps(level.value)}
             />
@@ -169,23 +162,20 @@ const GroupBase = {
     disabled: false,
     value: 'sjokolade',
   },
-  render(args: UseRadioGroupProps, context: StoryContext<UseRadioGroupProps>) {
+  render(args: UseRadioGroupProps) {
     const { getRadioProps, validationMessageProps } = useRadioGroup({
       ...args,
     });
 
     return (
       <Fieldset>
-        <Fieldset.Legend id={context.id + '-legend'}>
-          Velg din aldersgruppe.
-        </Fieldset.Legend>
-        <Fieldset.Description id={context.id + '-description'}>
+        <Fieldset.Legend>Velg din aldersgruppe.</Fieldset.Legend>
+        <Fieldset.Description>
           Informasjonen blir brukt til å tilpasse innholdet på siden.
         </Fieldset.Description>
         {ageGroups.map((group) => (
           <Radio
             key={group.value}
-            id={context.id + '-' + group.value}
             label={group.label}
             {...getRadioProps(group.value)}
           />

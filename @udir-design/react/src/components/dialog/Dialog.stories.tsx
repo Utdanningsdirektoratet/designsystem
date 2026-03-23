@@ -240,7 +240,7 @@ export const WithHeaderAndFooter = meta.story({
 });
 
 export const DialogWithForm = meta.story({
-  render(args, context) {
+  render(args) {
     const dialogRef = useRef<HTMLDialogElement>(null);
     const [input, setInput] = useState('');
 
@@ -262,7 +262,6 @@ export const DialogWithForm = meta.story({
             label="Navn"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            id={context.id}
           />
           <div
             style={{
@@ -317,7 +316,7 @@ const DATA_PLACES = [
 ];
 
 export const DialogWithSuggestion = meta.story({
-  render(ctx) {
+  render() {
     const dialogRef = useRef<HTMLDialogElement>(null);
     return (
       <Dialog.TriggerContext>
@@ -330,7 +329,7 @@ export const DialogWithSuggestion = meta.story({
             <Field>
               <Label>Velg en kommune</Label>
               <Suggestion>
-                <Suggestion.Input id={`${ctx.id}-input`} />
+                <Suggestion.Input />
                 <Suggestion.Clear />
                 <Suggestion.List>
                   <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -396,13 +395,13 @@ export const DialogNonModal = meta.story({
       gap: 'var(--ds-size-4)',
     },
   },
-  render(context) {
+  render() {
     const dialogRef = useRef<HTMLDialogElement>(null);
     return (
       <>
         <Field style={{ width: '400px' }}>
           <Label>Besvarelse</Label>
-          <Textarea id={'textarea' + context.id} rows={8} />
+          <Textarea rows={8} />
         </Field>
         <Button variant="secondary" onClick={() => dialogRef.current?.show()}>
           Åpne skrivetips

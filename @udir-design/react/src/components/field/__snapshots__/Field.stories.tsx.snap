@@ -2,7 +2,10 @@
 
 exports[`Affix 1`] = `
 <ds-field>
-  <label data-weight="medium">
+  <label
+    data-weight="medium"
+    for="<removed>"
+  >
     Hvor mange kroner koster det per måned?
   </label>
   <div>
@@ -10,7 +13,7 @@ exports[`Affix 1`] = `
       NOK
     </span>
     <input
-      id="affix"
+      id="<removed>"
       size="12"
       type="text"
     >
@@ -25,22 +28,22 @@ exports[`Counter 1`] = `
 <ds-field>
   <label
     data-weight="medium"
-    for="counter"
+    for="<removed>"
   >
     Legg til en beskrivelse
   </label>
   <textarea
+    aria-describedby="<removed>"
+    id="<removed>"
     rows="2"
-    id="counter"
-    aria-describedby="mn2xa9wdzho3"
   >
   </textarea>
   <p
     data-field="counter"
-    data-limit="10"
-    id="mn2xa9wdzho3"
     data-label="10 tegn igjen"
+    data-limit="10"
     data-state="under"
+    id="<removed>"
   >
   </p>
 </ds-field>
@@ -50,34 +53,34 @@ exports[`Position 1`] = `
 <div style="max-width: 200px; margin: auto;">
   <div style="display: flex; flex-direction: column; gap: var(--ds-size-2);">
     <ds-field
+      data-clickdelegatefor="<removed>"
       data-position="end"
-      data-clickdelegatefor="airplane"
     >
       <label
         data-weight="medium"
-        for="airplane"
+        for="<removed>"
       >
         Flymodus
       </label>
       <input
+        id="<removed>"
         role="switch"
-        id="airplane"
         type="checkbox"
       >
     </ds-field>
     <ds-field
+      data-clickdelegatefor="<removed>"
       data-position="end"
-      data-clickdelegatefor="sounds"
     >
       <label
         data-weight="medium"
-        for="sounds"
+        for="<removed>"
       >
         Lydløs
       </label>
       <input
+        id="<removed>"
         role="switch"
-        id="sounds"
         type="checkbox"
       >
     </ds-field>
@@ -89,26 +92,26 @@ exports[`Preview 1`] = `
 <ds-field>
   <label
     data-weight="medium"
-    for="preview"
+    for="<removed>"
   >
     E-post
   </label>
   <div
     data-field="description"
-    id="mn2xa9wdzho2"
+    id="<removed>"
   >
     E-posten din brukes til å logge inn og motta varsler
   </div>
   <input
-    id="preview"
+    aria-describedby="<removed>"
     aria-invalid="true"
+    id="<removed>"
     type="text"
     value="ola nordmann@udir.no"
-    aria-describedby="mn2xa9wdzho1 mn2xa9wdzho2"
   >
   <p
     data-field="validation"
-    id="mn2xa9wdzho1"
+    id="<removed>"
   >
     Du må oppgi en gyldig e-postadresse
   </p>
