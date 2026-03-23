@@ -76,7 +76,7 @@ export const FormExample = meta.story({
     value: 1,
     max: 7,
   },
-  render: (args) => {
+  render: (args, context) => {
     const [page, setPage] = useState<number>(1);
     const progressRef = useRef<HTMLDivElement>(null);
 
@@ -112,7 +112,7 @@ export const FormExample = meta.story({
               marginBlockEnd: 'var(--ds-size-4)',
             }}
           >
-            <Fieldset.Legend>
+            <Fieldset.Legend id={`${context.id}-legend`}>
               <Heading level={4}>Skjema</Heading>
             </Fieldset.Legend>
             <ProgressBar
