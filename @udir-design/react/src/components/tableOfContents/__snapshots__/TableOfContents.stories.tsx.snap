@@ -4,24 +4,24 @@ exports[`Automatic 1`] = `
 <div>
   <h1
     data-size="lg"
-    id="heading-1"
+    id="<removed>"
     tabindex="-1"
   >
     Sidetittel (h1)
   </h1>
   <p
-    data-variant="default"
     data-size="lg"
+    data-variant="default"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dui nunc, maximus vitae finibus ut, consequat sit amet metus. Suspendisse nisl massa, egestas eu justo eu, luctus volutpat ante. Aliquam congue consectetur arcu, at pharetra nunc ultricies in. Sed aliquam mi a odio varius, in eleifend orci elementum.
   </p>
   <div
-    data-variant="tinted"
     data-color="accent"
+    data-variant="tinted"
   >
     <details
-      open
       data-variant="default"
+      open
     >
       <summary>
         Innhold på denne siden
@@ -31,18 +31,18 @@ exports[`Automatic 1`] = `
           <li>
             <a href="#heading-2">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -54,18 +54,18 @@ exports[`Automatic 1`] = `
           <li>
             <a href="#heading-3">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -77,18 +77,18 @@ exports[`Automatic 1`] = `
           <li>
             <a href="#heading-5">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -103,7 +103,7 @@ exports[`Automatic 1`] = `
   </div>
   <h2
     data-size="md"
-    id="heading-2"
+    id="<removed>"
     tabindex="-1"
   >
     Første overskrift (h2)
@@ -116,7 +116,7 @@ exports[`Automatic 1`] = `
   </p>
   <h3
     data-size="sm"
-    id="heading-3"
+    id="<removed>"
     tabindex="-1"
   >
     Første underoverskrift (h3)
@@ -126,7 +126,7 @@ exports[`Automatic 1`] = `
   </p>
   <h4
     data-size="xs"
-    id="heading-4"
+    id="<removed>"
     tabindex="-1"
   >
     Første underunderoverskrift (h4)
@@ -136,7 +136,7 @@ exports[`Automatic 1`] = `
   </p>
   <h2
     data-size="md"
-    id="heading-5"
+    id="<removed>"
     tabindex="-1"
   >
     Andre overskrift (h2)
@@ -150,13 +150,13 @@ exports[`Automatic 1`] = `
 exports[`Controlled State 1`] = `
 <div>
   <div
-    data-variant="default"
     data-color="neutral"
+    data-variant="default"
     style="max-width: 450px;"
   >
     <details
-      open
       data-variant="default"
+      open
     >
       <summary>
         Innhold på denne siden
@@ -166,18 +166,18 @@ exports[`Controlled State 1`] = `
           <li>
             <a href="#forste-overskrift">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -189,18 +189,18 @@ exports[`Controlled State 1`] = `
           <li>
             <a href="#forste-underoverskrift">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -212,18 +212,18 @@ exports[`Controlled State 1`] = `
           <li>
             <a href="#andre-underoverskrift">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -235,18 +235,18 @@ exports[`Controlled State 1`] = `
           <li>
             <a href="#andre-overskrift">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -258,18 +258,18 @@ exports[`Controlled State 1`] = `
           <li>
             <a href="#tredje-overskrift">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -287,35 +287,35 @@ exports[`Controlled State 1`] = `
   </p>
   <h2
     data-size="md"
-    id="forste-overskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Første overskrift (h2)
   </h2>
   <h3
     data-size="sm"
-    id="forste-underoverskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Første underoverskrift (h3)
   </h3>
   <h3
     data-size="sm"
-    id="andre-underoverskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Andre underoverskrift (h3)
   </h3>
   <h2
     data-size="md"
-    id="andre-overskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Andre overskrift (h2)
   </h2>
   <h2
     data-size="md"
-    id="tredje-overskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Tredje overskrift (h2)
@@ -327,20 +327,20 @@ exports[`Default Closed 1`] = `
 <div>
   <h1
     data-size="lg"
-    id="heading-1"
+    id="<removed>"
     tabindex="-1"
   >
     Sidetittel (h1)
   </h1>
   <p
-    data-variant="default"
     data-size="lg"
+    data-variant="default"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dui nunc, maximus vitae finibus ut, consequat sit amet metus. Suspendisse nisl massa, egestas eu justo eu, luctus volutpat ante. Aliquam congue consectetur arcu, at pharetra nunc ultricies in. Sed aliquam mi a odio varius, in eleifend orci elementum.
   </p>
   <div
-    data-variant="tinted"
     data-color="accent"
+    data-variant="tinted"
   >
     <details data-variant="default">
       <summary>
@@ -351,18 +351,18 @@ exports[`Default Closed 1`] = `
           <li>
             <a href="#heading-2">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -374,18 +374,18 @@ exports[`Default Closed 1`] = `
           <li>
             <a href="#heading-3">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -397,18 +397,18 @@ exports[`Default Closed 1`] = `
           <li>
             <a href="#heading-5">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -423,7 +423,7 @@ exports[`Default Closed 1`] = `
   </div>
   <h2
     data-size="md"
-    id="heading-2"
+    id="<removed>"
     tabindex="-1"
   >
     Første overskrift (h2)
@@ -436,7 +436,7 @@ exports[`Default Closed 1`] = `
   </p>
   <h3
     data-size="sm"
-    id="heading-3"
+    id="<removed>"
     tabindex="-1"
   >
     Første underoverskrift (h3)
@@ -446,7 +446,7 @@ exports[`Default Closed 1`] = `
   </p>
   <h4
     data-size="xs"
-    id="heading-4"
+    id="<removed>"
     tabindex="-1"
   >
     Første underunderoverskrift (h4)
@@ -456,7 +456,7 @@ exports[`Default Closed 1`] = `
   </p>
   <h2
     data-size="md"
-    id="heading-5"
+    id="<removed>"
     tabindex="-1"
   >
     Andre overskrift (h2)
@@ -476,12 +476,12 @@ exports[`Manual 1`] = `
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dui nunc, maximus vitae finibus ut, consequat sit amet metus.
   </p>
   <div
-    data-variant="default"
     data-color="support1"
+    data-variant="default"
   >
     <details
-      open
       data-variant="default"
+      open
     >
       <summary>
         Innhold på denne siden
@@ -491,18 +491,18 @@ exports[`Manual 1`] = `
           <li>
             <a href="#forste">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -514,18 +514,18 @@ exports[`Manual 1`] = `
           <li>
             <a href="#andre">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -540,7 +540,7 @@ exports[`Manual 1`] = `
   </div>
   <h2
     data-size="md"
-    id="forste"
+    id="<removed>"
     tabindex="-1"
   >
     Første overskrift (h2)
@@ -550,7 +550,7 @@ exports[`Manual 1`] = `
   </p>
   <h2
     data-size="md"
-    id="andre"
+    id="<removed>"
     tabindex="-1"
   >
     Andre overskrift (h2)
@@ -567,13 +567,13 @@ exports[`Manual 1`] = `
 exports[`Preview 1`] = `
 <div style="overflow: auto; display: flex; flex-direction: column; gap: var(--ds-size-5);">
   <div
-    data-variant="default"
     data-color="neutral"
+    data-variant="default"
     style="width: 450px;"
   >
     <details
-      open
       data-variant="default"
+      open
     >
       <summary>
         Innhold på denne siden
@@ -583,18 +583,18 @@ exports[`Preview 1`] = `
           <li>
             <a href="#forste-overskrift">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -606,18 +606,18 @@ exports[`Preview 1`] = `
           <li>
             <a href="#forste-underoverskrift">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -629,18 +629,18 @@ exports[`Preview 1`] = `
           <li>
             <a href="#andre-underoverskrift">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -652,18 +652,18 @@ exports[`Preview 1`] = `
           <li>
             <a href="#andre-overskrift">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -675,18 +675,18 @@ exports[`Preview 1`] = `
           <li>
             <a href="#tredje-overskrift">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -701,35 +701,35 @@ exports[`Preview 1`] = `
   </div>
   <h2
     data-size="md"
-    id="forste-overskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Første overskrift (h2)
   </h2>
   <h3
     data-size="sm"
-    id="forste-underoverskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Første underoverskrift (h3)
   </h3>
   <h3
     data-size="sm"
-    id="andre-underoverskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Andre underoverskrift (h3)
   </h3>
   <h2
     data-size="md"
-    id="andre-overskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Andre overskrift (h2)
   </h2>
   <h2
     data-size="md"
-    id="tredje-overskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Tredje overskrift (h2)

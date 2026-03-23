@@ -8,8 +8,8 @@ exports[`Preview 1`] = `
   <ul>
     <li>
       <button
-        data-variant="tertiary"
         aria-label="Forrige side"
+        data-variant="tertiary"
         variant="tertiary"
       >
         Forrige
@@ -17,41 +17,41 @@ exports[`Preview 1`] = `
     </li>
     <li>
       <button
-        data-variant="tertiary"
         aria-label="Side 1"
+        data-variant="tertiary"
       >
         1
       </button>
     </li>
     <li>
       <button
-        data-variant="tertiary"
-        aria-label="Side 2"
         aria-current="true"
+        aria-label="Side 2"
+        data-variant="tertiary"
       >
         2
       </button>
     </li>
     <li>
       <button
-        data-variant="tertiary"
         aria-label="Side 3"
+        data-variant="tertiary"
       >
         3
       </button>
     </li>
     <li>
       <button
-        data-variant="tertiary"
         aria-label="Side 4"
+        data-variant="tertiary"
       >
         4
       </button>
     </li>
     <li>
       <button
-        data-variant="tertiary"
         aria-label="Side 5"
+        data-variant="tertiary"
       >
         5
       </button>
@@ -60,16 +60,16 @@ exports[`Preview 1`] = `
     </li>
     <li>
       <button
-        data-variant="tertiary"
         aria-label="Side 10"
+        data-variant="tertiary"
       >
         10
       </button>
     </li>
     <li>
       <button
-        data-variant="tertiary"
         aria-label="Neste side"
+        data-variant="tertiary"
         variant="tertiary"
       >
         Neste

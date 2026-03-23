@@ -4,16 +4,16 @@ exports[`Button 1`] = `
 <div style="display: flex; flex-direction: column; gap: var(--ds-size-4);">
   <div>
     <input
-      placeholder
       aria-label="søk"
+      placeholder
       type="search"
       value="Skole"
     >
     <button
+      aria-label="Tøm"
       data-icon="true"
       data-variant="tertiary"
       type="reset"
-      aria-label="Tøm"
     >
     </button>
     <button
@@ -94,32 +94,32 @@ exports[`Checkbox 1`] = `
 
 exports[`Preview 1`] = `
 <button
-  type="button"
   name="my-button"
+  type="button"
   value="button"
 >
   Button
 </button>
 <label>
   <input
+    name="my-checkbox"
     type="checkbox"
     value="checkbox"
-    name="my-checkbox"
   >
   Checkbox
 </label>
 <label>
   <input
+    name="my-radio"
     type="radio"
     value="radio"
-    name="my-radio"
   >
   Radio
 </label>
 <button
-  type="button"
   data-removable="true"
   name="my-removable"
+  type="button"
   value="removable"
 >
   Removable
@@ -135,24 +135,24 @@ exports[`Radio 1`] = `
     <label>
       <input
         aria-label="Barnehage"
-        type="radio"
         name="my-radio"
+        type="radio"
       >
       Barnehage
     </label>
     <label>
       <input
         aria-label="Grunnskole"
-        type="radio"
         name="my-radio"
+        type="radio"
       >
       Grunnskole
     </label>
     <label>
       <input
         aria-label="Videregående"
-        type="radio"
         name="my-radio"
+        type="radio"
       >
       Videregående
     </label>
@@ -162,16 +162,16 @@ exports[`Radio 1`] = `
 
 exports[`Removable 1`] = `
 <button
-  type="button"
-  data-removable="true"
   aria-label="Slett Grunnskole"
+  data-removable="true"
+  type="button"
 >
   Grunnskole
 </button>
 <button
-  type="button"
-  data-removable="true"
   aria-label="Slett Videregående"
+  data-removable="true"
+  type="button"
 >
   Videregående
 </button>

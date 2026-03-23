@@ -14,32 +14,35 @@ exports[`Table Story 1`] = `
     </h2>
     <hr aria-hidden="true">
     <div>
-      <fieldset>
-        <legend data-weight="medium">
+      <fieldset aria-labelledby="<removed>">
+        <legend
+          data-weight="medium"
+          id="<removed>"
+        >
           Filtrer på utdanningsnivå
         </legend>
         <div>
           <label>
             <input
+              checked
               type="checkbox"
               value="Barnehage"
-              checked
             >
             Barnehage
           </label>
           <label>
             <input
+              checked
               type="checkbox"
               value="Grunnskole"
-              checked
             >
             Grunnskole
           </label>
           <label>
             <input
+              checked
               type="checkbox"
               value="Videregående"
-              checked
             >
             Videregående
           </label>
@@ -47,17 +50,17 @@ exports[`Table Story 1`] = `
       </fieldset>
       <div>
         <input
-          placeholder="Søk"
           aria-label="Søk"
+          name="search"
+          placeholder="Søk"
           type="search"
           value
-          name="search"
         >
         <button
+          aria-label="Tøm"
           data-icon="true"
           data-variant="tertiary"
           type="reset"
-          aria-label="Tøm"
         >
         </button>
       </div>
@@ -67,13 +70,13 @@ exports[`Table Story 1`] = `
         <thead>
           <tr>
             <th>
-              <ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
-                  id="checkbox-select-all"
                   aria-label="Select all"
+                  id="<removed>"
+                  name="my-checkbox"
                   type="checkbox"
                   value="all"
-                  name="my-checkbox"
                 >
               </ds-field>
             </th>
@@ -104,22 +107,22 @@ exports[`Table Story 1`] = `
         <tbody>
           <tr>
             <td>
-              <ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
-                  id="checkbox-1"
                   aria-label="Check Lise Nordmann"
+                  id="<removed>"
+                  name="my-checkbox"
                   type="checkbox"
                   value="1"
-                  name="my-checkbox"
                 >
               </ds-field>
             </td>
             <td>
               <div>
                 <span
+                  aria-label="Lise Nordmann"
                   data-variant="circle"
                   role="img"
-                  aria-label="Lise Nordmann"
                 >
                 </span>
                 Lise Nordmann
@@ -136,57 +139,57 @@ exports[`Table Story 1`] = `
             </td>
             <td>
               <span
-                data-variant="default"
                 data-color="warning"
+                data-variant="default"
               >
                 Ikke eksportert
               </span>
             </td>
             <td>
               <button
+                aria-haspopup="dialog"
+                aria-label="Slett"
+                command="show-modal"
+                commandfor="_r_3_"
+                data-autoplacement="true"
+                data-color="danger"
                 data-icon="true"
+                data-placement="top"
+                data-tooltip="Slett"
                 data-variant="tertiary"
                 type="button"
-                command="show-modal"
-                data-color="danger"
-                aria-label="Slett"
-                data-tooltip="Slett"
-                data-placement="top"
-                data-autoplacement="true"
-                commandfor="_r_3_"
-                aria-haspopup="dialog"
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
                   aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="1em"
+                  role="img"
+                  viewbox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
+                    clip-rule="evenodd"
+                    d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
                     fill="currentColor"
                     fill-rule="evenodd"
-                    d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-                    clip-rule="evenodd"
                   >
                   </path>
                 </svg>
               </button>
               <dialog
                 data-placement="center"
-                id="_r_3_"
+                id="<removed>"
               >
                 <button
+                  aria-label="Lukk dialogvindu"
+                  command="close"
+                  commandfor="_r_3_"
+                  data-color="neutral"
                   data-icon="true"
                   data-variant="tertiary"
                   type="button"
-                  aria-label="Lukk dialogvindu"
-                  data-color="neutral"
-                  command="close"
-                  commandfor="_r_3_"
                 >
                 </button>
                 <div>
@@ -196,9 +199,9 @@ exports[`Table Story 1`] = `
                 </div>
                 <div>
                   <button
+                    data-color="danger"
                     data-variant="primary"
                     type="button"
-                    data-color="danger"
                   >
                     Slett
                   </button>
@@ -214,22 +217,22 @@ exports[`Table Story 1`] = `
           </tr>
           <tr>
             <td>
-              <ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
-                  id="checkbox-2"
                   aria-label="Check Ola Nordmann"
+                  id="<removed>"
+                  name="my-checkbox"
                   type="checkbox"
                   value="2"
-                  name="my-checkbox"
                 >
               </ds-field>
             </td>
             <td>
               <div>
                 <span
+                  aria-label="Ola Nordmann"
                   data-variant="circle"
                   role="img"
-                  aria-label="Ola Nordmann"
                 >
                 </span>
                 Ola Nordmann
@@ -246,57 +249,57 @@ exports[`Table Story 1`] = `
             </td>
             <td>
               <span
-                data-variant="default"
                 data-color="success"
+                data-variant="default"
               >
                 Eksportert
               </span>
             </td>
             <td>
               <button
+                aria-haspopup="dialog"
+                aria-label="Slett"
+                command="show-modal"
+                commandfor="_r_5_"
+                data-autoplacement="true"
+                data-color="danger"
                 data-icon="true"
+                data-placement="top"
+                data-tooltip="Slett"
                 data-variant="tertiary"
                 type="button"
-                command="show-modal"
-                data-color="danger"
-                aria-label="Slett"
-                data-tooltip="Slett"
-                data-placement="top"
-                data-autoplacement="true"
-                commandfor="_r_5_"
-                aria-haspopup="dialog"
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
                   aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="1em"
+                  role="img"
+                  viewbox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
+                    clip-rule="evenodd"
+                    d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
                     fill="currentColor"
                     fill-rule="evenodd"
-                    d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-                    clip-rule="evenodd"
                   >
                   </path>
                 </svg>
               </button>
               <dialog
                 data-placement="center"
-                id="_r_5_"
+                id="<removed>"
               >
                 <button
+                  aria-label="Lukk dialogvindu"
+                  command="close"
+                  commandfor="_r_5_"
+                  data-color="neutral"
                   data-icon="true"
                   data-variant="tertiary"
                   type="button"
-                  aria-label="Lukk dialogvindu"
-                  data-color="neutral"
-                  command="close"
-                  commandfor="_r_5_"
                 >
                 </button>
                 <div>
@@ -306,9 +309,9 @@ exports[`Table Story 1`] = `
                 </div>
                 <div>
                   <button
+                    data-color="danger"
                     data-variant="primary"
                     type="button"
-                    data-color="danger"
                   >
                     Slett
                   </button>
@@ -324,22 +327,22 @@ exports[`Table Story 1`] = `
           </tr>
           <tr>
             <td>
-              <ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
-                  id="checkbox-3"
                   aria-label="Check Kari Nordmann"
+                  id="<removed>"
+                  name="my-checkbox"
                   type="checkbox"
                   value="3"
-                  name="my-checkbox"
                 >
               </ds-field>
             </td>
             <td>
               <div>
                 <span
+                  aria-label="Kari Nordmann"
                   data-variant="circle"
                   role="img"
-                  aria-label="Kari Nordmann"
                 >
                 </span>
                 Kari Nordmann
@@ -356,57 +359,57 @@ exports[`Table Story 1`] = `
             </td>
             <td>
               <span
-                data-variant="default"
                 data-color="warning"
+                data-variant="default"
               >
                 Ikke eksportert
               </span>
             </td>
             <td>
               <button
+                aria-haspopup="dialog"
+                aria-label="Slett"
+                command="show-modal"
+                commandfor="_r_7_"
+                data-autoplacement="true"
+                data-color="danger"
                 data-icon="true"
+                data-placement="top"
+                data-tooltip="Slett"
                 data-variant="tertiary"
                 type="button"
-                command="show-modal"
-                data-color="danger"
-                aria-label="Slett"
-                data-tooltip="Slett"
-                data-placement="top"
-                data-autoplacement="true"
-                commandfor="_r_7_"
-                aria-haspopup="dialog"
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
                   aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="1em"
+                  role="img"
+                  viewbox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
+                    clip-rule="evenodd"
+                    d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
                     fill="currentColor"
                     fill-rule="evenodd"
-                    d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-                    clip-rule="evenodd"
                   >
                   </path>
                 </svg>
               </button>
               <dialog
                 data-placement="center"
-                id="_r_7_"
+                id="<removed>"
               >
                 <button
+                  aria-label="Lukk dialogvindu"
+                  command="close"
+                  commandfor="_r_7_"
+                  data-color="neutral"
                   data-icon="true"
                   data-variant="tertiary"
                   type="button"
-                  aria-label="Lukk dialogvindu"
-                  data-color="neutral"
-                  command="close"
-                  commandfor="_r_7_"
                 >
                 </button>
                 <div>
@@ -416,9 +419,9 @@ exports[`Table Story 1`] = `
                 </div>
                 <div>
                   <button
+                    data-color="danger"
                     data-variant="primary"
                     type="button"
-                    data-color="danger"
                   >
                     Slett
                   </button>
@@ -434,22 +437,22 @@ exports[`Table Story 1`] = `
           </tr>
           <tr>
             <td>
-              <ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
-                  id="checkbox-4"
                   aria-label="Check Per Nordmann"
+                  id="<removed>"
+                  name="my-checkbox"
                   type="checkbox"
                   value="4"
-                  name="my-checkbox"
                 >
               </ds-field>
             </td>
             <td>
               <div>
                 <span
+                  aria-label="Per Nordmann"
                   data-variant="circle"
                   role="img"
-                  aria-label="Per Nordmann"
                 >
                 </span>
                 Per Nordmann
@@ -466,57 +469,57 @@ exports[`Table Story 1`] = `
             </td>
             <td>
               <span
-                data-variant="default"
                 data-color="warning"
+                data-variant="default"
               >
                 Ikke eksportert
               </span>
             </td>
             <td>
               <button
+                aria-haspopup="dialog"
+                aria-label="Slett"
+                command="show-modal"
+                commandfor="_r_9_"
+                data-autoplacement="true"
+                data-color="danger"
                 data-icon="true"
+                data-placement="top"
+                data-tooltip="Slett"
                 data-variant="tertiary"
                 type="button"
-                command="show-modal"
-                data-color="danger"
-                aria-label="Slett"
-                data-tooltip="Slett"
-                data-placement="top"
-                data-autoplacement="true"
-                commandfor="_r_9_"
-                aria-haspopup="dialog"
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
                   aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="1em"
+                  role="img"
+                  viewbox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
+                    clip-rule="evenodd"
+                    d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
                     fill="currentColor"
                     fill-rule="evenodd"
-                    d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-                    clip-rule="evenodd"
                   >
                   </path>
                 </svg>
               </button>
               <dialog
                 data-placement="center"
-                id="_r_9_"
+                id="<removed>"
               >
                 <button
+                  aria-label="Lukk dialogvindu"
+                  command="close"
+                  commandfor="_r_9_"
+                  data-color="neutral"
                   data-icon="true"
                   data-variant="tertiary"
                   type="button"
-                  aria-label="Lukk dialogvindu"
-                  data-color="neutral"
-                  command="close"
-                  commandfor="_r_9_"
                 >
                 </button>
                 <div>
@@ -526,9 +529,9 @@ exports[`Table Story 1`] = `
                 </div>
                 <div>
                   <button
+                    data-color="danger"
                     data-variant="primary"
                     type="button"
-                    data-color="danger"
                   >
                     Slett
                   </button>
@@ -544,22 +547,22 @@ exports[`Table Story 1`] = `
           </tr>
           <tr>
             <td>
-              <ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
-                  id="checkbox-5"
                   aria-label="Check Anne Nordmann"
+                  id="<removed>"
+                  name="my-checkbox"
                   type="checkbox"
                   value="5"
-                  name="my-checkbox"
                 >
               </ds-field>
             </td>
             <td>
               <div>
                 <span
+                  aria-label="Anne Nordmann"
                   data-variant="circle"
                   role="img"
-                  aria-label="Anne Nordmann"
                 >
                 </span>
                 Anne Nordmann
@@ -576,57 +579,57 @@ exports[`Table Story 1`] = `
             </td>
             <td>
               <span
-                data-variant="default"
                 data-color="success"
+                data-variant="default"
               >
                 Eksportert
               </span>
             </td>
             <td>
               <button
+                aria-haspopup="dialog"
+                aria-label="Slett"
+                command="show-modal"
+                commandfor="_r_b_"
+                data-autoplacement="true"
+                data-color="danger"
                 data-icon="true"
+                data-placement="top"
+                data-tooltip="Slett"
                 data-variant="tertiary"
                 type="button"
-                command="show-modal"
-                data-color="danger"
-                aria-label="Slett"
-                data-tooltip="Slett"
-                data-placement="top"
-                data-autoplacement="true"
-                commandfor="_r_b_"
-                aria-haspopup="dialog"
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
                   aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="1em"
+                  role="img"
+                  viewbox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
+                    clip-rule="evenodd"
+                    d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
                     fill="currentColor"
                     fill-rule="evenodd"
-                    d="M10 4.75c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm6.75 1.5V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25H4.5a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.875-11.384h.806a.75.75 0 0 0 0-1.5h-2.75m-6 4.25a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0zM14 9.75a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-                    clip-rule="evenodd"
                   >
                   </path>
                 </svg>
               </button>
               <dialog
                 data-placement="center"
-                id="_r_b_"
+                id="<removed>"
               >
                 <button
+                  aria-label="Lukk dialogvindu"
+                  command="close"
+                  commandfor="_r_b_"
+                  data-color="neutral"
                   data-icon="true"
                   data-variant="tertiary"
                   type="button"
-                  aria-label="Lukk dialogvindu"
-                  data-color="neutral"
-                  command="close"
-                  commandfor="_r_b_"
                 >
                 </button>
                 <div>
@@ -636,9 +639,9 @@ exports[`Table Story 1`] = `
                 </div>
                 <div>
                   <button
+                    data-color="danger"
                     data-variant="primary"
                     type="button"
-                    data-color="danger"
                   >
                     Slett
                   </button>
@@ -657,26 +660,26 @@ exports[`Table Story 1`] = `
     </div>
     <div>
       <button
-        data-variant="primary"
-        type="button"
+        aria-haspopup="dialog"
         command="show-modal"
         commandfor="_r_c_"
-        aria-haspopup="dialog"
+        data-variant="primary"
+        type="button"
       >
         Eksporter liste
       </button>
       <dialog
         data-placement="center"
-        id="_r_c_"
+        id="<removed>"
       >
         <button
+          aria-label="Lukk dialogvindu"
+          command="close"
+          commandfor="_r_c_"
+          data-color="neutral"
           data-icon="true"
           data-variant="tertiary"
           type="button"
-          aria-label="Lukk dialogvindu"
-          data-color="neutral"
-          command="close"
-          commandfor="_r_c_"
         >
         </button>
         <div>
@@ -692,20 +695,20 @@ exports[`Table Story 1`] = `
               type="button"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
+                  clip-rule="evenodd"
+                  d="M13.25 3.5a.25.25 0 0 0-.25-.25H6.5c-.69 0-1.25.56-1.25 1.25v6c0 .138.112.25.25.25h13a.25.25 0 0 0 .25-.25V9a.25.25 0 0 0-.25-.25h-4c-.69 0-1.25-.56-1.25-1.25zM15 7.25a.25.25 0 0 1-.25-.25V4.293a.25.25 0 0 1 .427-.177l2.707 2.707a.25.25 0 0 1-.177.427zm-12 5a.75.75 0 0 0-.75.75v7c0 .414.336.75.75.75h18a.75.75 0 0 0 .75-.75v-7a.75.75 0 0 0-.75-.75zm4.7 1.64q.54 0 .938.203.405.203.623.567.224.364.224.854 0 .483-.224.854-.224.364-.623.567a2.04 2.04 0 0 1-.938.203h-.693V19h-1.05v-5.11zm4.302 0q.533 0 .924.203.4.203.616.574.224.365.224.86v1.828q0 .49-.224.86-.216.372-.616.582-.391.203-.924.203h-1.659v-5.11zm2.798 0V19h1.05v-2.016h2.058v-.98h-2.072V14.87h2.254v-.98zm-6.568 1.134q-.196-.19-.532-.19h-.693v1.359H7.7q.336 0 .532-.182a.65.65 0 0 0 .203-.497.63.63 0 0 0-.203-.49m4.288.028a.73.73 0 0 0-.518-.182h-.609v3.15h.61q.322 0 .517-.182a.63.63 0 0 0 .196-.483v-1.827a.62.62 0 0 0-.196-.476"
                   fill="currentColor"
                   fill-rule="evenodd"
-                  d="M13.25 3.5a.25.25 0 0 0-.25-.25H6.5c-.69 0-1.25.56-1.25 1.25v6c0 .138.112.25.25.25h13a.25.25 0 0 0 .25-.25V9a.25.25 0 0 0-.25-.25h-4c-.69 0-1.25-.56-1.25-1.25zM15 7.25a.25.25 0 0 1-.25-.25V4.293a.25.25 0 0 1 .427-.177l2.707 2.707a.25.25 0 0 1-.177.427zm-12 5a.75.75 0 0 0-.75.75v7c0 .414.336.75.75.75h18a.75.75 0 0 0 .75-.75v-7a.75.75 0 0 0-.75-.75zm4.7 1.64q.54 0 .938.203.405.203.623.567.224.364.224.854 0 .483-.224.854-.224.364-.623.567a2.04 2.04 0 0 1-.938.203h-.693V19h-1.05v-5.11zm4.302 0q.533 0 .924.203.4.203.616.574.224.365.224.86v1.828q0 .49-.224.86-.216.372-.616.582-.391.203-.924.203h-1.659v-5.11zm2.798 0V19h1.05v-2.016h2.058v-.98h-2.072V14.87h2.254v-.98zm-6.568 1.134q-.196-.19-.532-.19h-.693v1.359H7.7q.336 0 .532-.182a.65.65 0 0 0 .203-.497.63.63 0 0 0-.203-.49m4.288.028a.73.73 0 0 0-.518-.182h-.609v3.15h.61q.322 0 .517-.182a.63.63 0 0 0 .196-.483v-1.827a.62.62 0 0 0-.196-.476"
-                  clip-rule="evenodd"
                 >
                 </path>
               </svg>
@@ -716,20 +719,20 @@ exports[`Table Story 1`] = `
               type="button"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
+                  clip-rule="evenodd"
+                  d="M13.25 3.5a.25.25 0 0 0-.25-.25H6.5c-.69 0-1.25.56-1.25 1.25v6c0 .138.112.25.25.25h13a.25.25 0 0 0 .25-.25V9a.25.25 0 0 0-.25-.25h-4c-.69 0-1.25-.56-1.25-1.25zM15 7.25a.25.25 0 0 1-.25-.25V4.293a.25.25 0 0 1 .427-.177l2.707 2.707a.25.25 0 0 1-.177.427zm-12 5a.75.75 0 0 0-.75.75v7c0 .414.336.75.75.75h18a.75.75 0 0 0 .75-.75v-7a.75.75 0 0 0-.75-.75zm4.622 6.82q-.511 0-.896-.189a1.5 1.5 0 0 1-.602-.539 1.55 1.55 0 0 1-.21-.812v-2.17q0-.469.21-.812.217-.343.602-.532a1.95 1.95 0 0 1 .896-.196q.518 0 .896.196.385.189.595.532.217.344.217.812H8.28q0-.308-.175-.469-.168-.16-.483-.16t-.49.16q-.168.16-.168.47v2.17q0 .3.168.468.175.16.49.161.315 0 .483-.16.175-.17.175-.47h1.05q0 .462-.217.812-.21.343-.595.54-.378.188-.896.188m4.38 0q-.54 0-.939-.182a1.43 1.43 0 0 1-.616-.51 1.4 1.4 0 0 1-.217-.778h1.05q0 .259.196.413.204.147.546.147.33 0 .511-.147a.49.49 0 0 0 .19-.406.57.57 0 0 0-.14-.385.7.7 0 0 0-.393-.217l-.518-.119q-.65-.155-1.015-.567a1.53 1.53 0 0 1-.357-1.022q0-.448.203-.777.21-.336.588-.518t.896-.182q.784 0 1.24.392.46.385.461 1.043h-1.05a.47.47 0 0 0-.175-.385q-.168-.14-.49-.14-.3 0-.462.14-.16.133-.16.385 0 .225.125.385a.68.68 0 0 0 .371.21l.546.126q.68.155 1.03.56.35.4.35 1.022 0 .448-.225.791-.216.343-.616.532a2.1 2.1 0 0 1-.93.19m2.482-5.18L15.75 19h1.33l1.253-5.11h-1.057l-.686 3.22q-.036.175-.077.434-.043.26-.07.441a8 8 0 0 0-.084-.44q-.05-.26-.084-.428l-.707-3.227z"
                   fill="currentColor"
                   fill-rule="evenodd"
-                  d="M13.25 3.5a.25.25 0 0 0-.25-.25H6.5c-.69 0-1.25.56-1.25 1.25v6c0 .138.112.25.25.25h13a.25.25 0 0 0 .25-.25V9a.25.25 0 0 0-.25-.25h-4c-.69 0-1.25-.56-1.25-1.25zM15 7.25a.25.25 0 0 1-.25-.25V4.293a.25.25 0 0 1 .427-.177l2.707 2.707a.25.25 0 0 1-.177.427zm-12 5a.75.75 0 0 0-.75.75v7c0 .414.336.75.75.75h18a.75.75 0 0 0 .75-.75v-7a.75.75 0 0 0-.75-.75zm4.622 6.82q-.511 0-.896-.189a1.5 1.5 0 0 1-.602-.539 1.55 1.55 0 0 1-.21-.812v-2.17q0-.469.21-.812.217-.343.602-.532a1.95 1.95 0 0 1 .896-.196q.518 0 .896.196.385.189.595.532.217.344.217.812H8.28q0-.308-.175-.469-.168-.16-.483-.16t-.49.16q-.168.16-.168.47v2.17q0 .3.168.468.175.16.49.161.315 0 .483-.16.175-.17.175-.47h1.05q0 .462-.217.812-.21.343-.595.54-.378.188-.896.188m4.38 0q-.54 0-.939-.182a1.43 1.43 0 0 1-.616-.51 1.4 1.4 0 0 1-.217-.778h1.05q0 .259.196.413.204.147.546.147.33 0 .511-.147a.49.49 0 0 0 .19-.406.57.57 0 0 0-.14-.385.7.7 0 0 0-.393-.217l-.518-.119q-.65-.155-1.015-.567a1.53 1.53 0 0 1-.357-1.022q0-.448.203-.777.21-.336.588-.518t.896-.182q.784 0 1.24.392.46.385.461 1.043h-1.05a.47.47 0 0 0-.175-.385q-.168-.14-.49-.14-.3 0-.462.14-.16.133-.16.385 0 .225.125.385a.68.68 0 0 0 .371.21l.546.126q.68.155 1.03.56.35.4.35 1.022 0 .448-.225.791-.216.343-.616.532a2.1 2.1 0 0 1-.93.19m2.482-5.18L15.75 19h1.33l1.253-5.11h-1.057l-.686 3.22q-.036.175-.077.434-.043.26-.07.441a8 8 0 0 0-.084-.44q-.05-.26-.084-.428l-.707-3.227z"
-                  clip-rule="evenodd"
                 >
                 </path>
               </svg>
@@ -745,9 +748,9 @@ exports[`Table Story 1`] = `
         <ul>
           <li>
             <button
+              aria-disabled="true"
               data-variant="tertiary"
               variant="tertiary"
-              aria-disabled="true"
             >
               <span>
                 Forrige
@@ -756,25 +759,25 @@ exports[`Table Story 1`] = `
           </li>
           <li>
             <button
-              data-variant="tertiary"
               aria-current="true"
               aria-label="Side 1"
+              data-variant="tertiary"
             >
               1
             </button>
           </li>
           <li>
             <button
-              data-variant="tertiary"
               aria-label="Side 2"
+              data-variant="tertiary"
             >
               2
             </button>
           </li>
           <li>
             <button
-              data-variant="tertiary"
               aria-label="Side 3"
+              data-variant="tertiary"
             >
               3
             </button>

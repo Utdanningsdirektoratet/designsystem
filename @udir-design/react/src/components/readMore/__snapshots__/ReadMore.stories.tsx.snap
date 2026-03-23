@@ -1,37 +1,37 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Example 1`] = `
-<fieldset aria-labelledby="undefinedlegend">
+<fieldset aria-labelledby="<removed>">
   <legend
-    id="undefinedlegend"
     data-weight="medium"
+    id="<removed>"
   >
     Trenger eleven individuelt tilrettelagt opplæring?
   </legend>
-  <ds-field data-clickdelegatefor="components-radio--group-ja">
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-radio--group-ja"
+      id="<removed>"
+      name="my-group"
       type="radio"
       value="ja"
-      name="my-group"
     >
     <label
       data-weight="regular"
-      for="components-radio--group-ja"
+      for="<removed>"
     >
       Ja
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="components-radio--group-nei">
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-radio--group-nei"
+      id="<removed>"
+      name="my-group"
       type="radio"
       value="nei"
-      name="my-group"
     >
     <label
       data-weight="regular"
-      for="components-radio--group-nei"
+      for="<removed>"
     >
       Nei
     </label>

@@ -34,7 +34,7 @@ export const Preview = meta.story({
     label: 'En bryter',
     onChange: fn(),
   },
-  render: (args, context) => <Switch {...args} id={context.id} />,
+  render: (args) => <Switch {...args} />,
   play: async ({ canvasElement, step, args }) => {
     const canvas = within(canvasElement);
     const toggleSwitch = canvas.getByRole('switch');
@@ -84,34 +84,31 @@ export const Description = meta.story({
     defaultChecked: true,
     id: 'switch-with-description',
   },
-  render: (args, context) => <Switch {...args} id={context.id} />,
+  render: (args) => <Switch {...args} />,
 });
 
 export const Group = meta.story({
-  render: ({ ...args }, context) => (
+  render: ({ ...args }) => (
     <Fieldset>
-      <Fieldset.Legend id={context.id + 'legend'}>Varsler</Fieldset.Legend>
+      <Fieldset.Legend>Varsler</Fieldset.Legend>
       <Switch
         label="Lydvarsler"
         description="Spill av lyd når et varsel mottas."
         value="lydvarsler"
         defaultChecked
         {...args}
-        id={context.id + 'lydvarsler'}
       />
       <Switch
         label="Popup-varsler"
         description="Vis popup-varsler på skjermen."
         value="popup-varsler"
         {...args}
-        id={context.id + 'popup-varsler'}
       />
       <Switch
         label="E-postvarsler"
         description="Tillat e-postvarsler for viktige oppdateringer."
         value="email-varsler"
         {...args}
-        id={context.id + 'email-varsler'}
       />
     </Fieldset>
   ),
@@ -121,33 +118,26 @@ export const GroupEnd = meta.story({
   args: {
     position: 'end',
   },
-  render: (args, context) => (
+  render: (args) => (
     <Fieldset>
-      <Fieldset.Legend id={context.id + 'legend'}>
+      <Fieldset.Legend>
         <Heading level={2}>Innstillinger</Heading>
       </Fieldset.Legend>
-      <Fieldset.Description id={context.id + 'description'}>
+      <Fieldset.Description>
         Innstillinger som gjelder hele systemet.
       </Fieldset.Description>
-      <Switch
-        label="Mørk modus"
-        value="mork-modus"
-        defaultChecked
-        {...args}
-        id={context.id + 'mork-modus'}
-      />
+      <Switch label="Mørk modus" value="mork-modus" defaultChecked {...args} />
       <Switch
         label="Automatiske oppdateringer"
         value="automatiske-oppdateringer"
         {...args}
-        id={context.id + 'automatiske-oppdateringer'}
       />
     </Fieldset>
   ),
 });
 
 export const Controlled = meta.story({
-  render: (args, context) => {
+  render: (args) => {
     const [lydvarsler, setLydvarsler] = useState(false);
     const [epostvarsler, setEpostvarsler] = useState(true);
     const [popupvarsler, setPopupvarsler] = useState(false);
@@ -160,32 +150,24 @@ export const Controlled = meta.story({
     };
     return (
       <Fieldset>
-        <Fieldset.Legend id={context.id + 'legend'}>
+        <Fieldset.Legend>
           <Heading level={2}>Innstillinger</Heading>
         </Fieldset.Legend>
-        <Switch
-          {...args}
-          id={context.id}
-          checked={anyChecked}
-          onChange={handleSwitchChange}
-        />
-        <Fieldset.Description id={context.id + 'description'}>
+        <Switch {...args} checked={anyChecked} onChange={handleSwitchChange} />
+        <Fieldset.Description>
           Velg hvilke typer varsler du ønsker å motta.
         </Fieldset.Description>
         <Checkbox
-          id={context.id + 'lydvarsler'}
           label="Lydvarsler"
           checked={lydvarsler}
           onChange={(e) => setLydvarsler(e.target.checked)}
         />
         <Checkbox
-          id={context.id + 'epostvarsler'}
           label="Epostvarsler"
           checked={epostvarsler}
           onChange={(e) => setEpostvarsler(e.target.checked)}
         />
         <Checkbox
-          id={context.id + 'popupvarsler'}
           label="Popup-varsler"
           checked={popupvarsler}
           onChange={(e) => setPopupvarsler(e.target.checked)}
