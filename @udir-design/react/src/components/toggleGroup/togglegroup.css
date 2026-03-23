@@ -16,4 +16,8 @@
       }
     }
   }
+
+  label:has(input:checked) {
+    color: var(--dsc-button-color--active);
+  }
 }
