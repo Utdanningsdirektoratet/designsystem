@@ -74,6 +74,14 @@ Dersom du har behov for full kontroll over innholdet i `TableOfContents` kan du 
   story={{ inline: false, height: '450px' }}
 />
 
+### Kontrollert tilstand
+
+`TableOfContents` holder selv styr på om den er åpen eller lukket, men dette kan også kontrolleres ved å bruke `open` og `onToggle`. For eksempel kan vi styre tilstanden basert basert på om innholdsfortegnelsen er synlig eller ikke.
+
+<Canvas
+  of={TableOfContentStories.ControlledState}
+  story={{ inline: false, height: '450px' }}
+/>
 ## Retningslinjer
 
 `h1` skal ikke inngå i en `TableOfContents`.

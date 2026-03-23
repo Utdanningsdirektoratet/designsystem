@@ -1,6 +1,8 @@
+import { useEffect, useRef, useState } from 'react';
 import { expect, within } from 'storybook/test';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { useTableOfContents } from 'src/utilities/hooks/useTableOfContents/useTableOfContents';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
@@ -236,5 +238,85 @@ export const DefaultClosed = meta.story({
   args: {
     ...automaticBase.args,
     defaultClosed: true,
+  },
+});
+
+export const ControlledState = meta.story({
+  parameters: {
+    docs: advancedCodeDocs,
+  },
+  args: {
+    headings: [], // we generate these using useTableOfContents inside the story
+    'data-color': 'neutral',
+  },
+  render: (args) => {
+    const [open, setOpen] = useState(true);
+    const tocRef = useRef<HTMLDivElement>(null);
+    const tocData = useTableOfContents();
+
+    // Use an IntersectionObserver to auto-close the ToC when it starts to go out of view, and
+    // auto-open it again when we scroll it back into view.
+    useEffect(() => {
+      if (!tocRef.current) return;
+      let autoCloseTime: number | undefined;
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (!entries[0].isIntersecting) {
+            autoCloseTime = entries[0].time;
+            setOpen(false);
+          }
+          if (
+            entries[0].isIntersecting &&
+            autoCloseTime &&
+            // Only auto-open if 500 ms has passed since auto-close, so we don't end up in a feedback loop
+            // when closing the ToC makes it visible again
+            entries[0].time > autoCloseTime + 500
+          ) {
+            setOpen(true);
+          }
+        },
+        {
+          root: document,
+          threshold: 0.9,
+        },
+      );
+      observer.observe(tocRef.current);
+      return () => observer.disconnect();
+    }, []);
+
+    return (
+      <Prose>
+        <TableOfContents
+          {...args}
+          {...tocData}
+          style={{ maxWidth: '450px' }}
+          data-testid="table-of-contents"
+          ref={tocRef}
+          open={open}
+          onToggle={() => {
+            setOpen((prev) => !prev);
+          }}
+        />
+        <Paragraph>
+          I dette eksempelet lukker vi innholdsfortegnelsen når den er mindre
+          enn 90% synlig, og åpner den når den blir synlig igjen.
+        </Paragraph>
+        <Heading id="forste-overskrift" level={2} data-size="md">
+          Første overskrift (h2)
+        </Heading>
+        <Heading id="forste-underoverskrift" level={3} data-size="sm">
+          Første underoverskrift (h3)
+        </Heading>
+        <Heading id="andre-underoverskrift" level={3} data-size="sm">
+          Andre underoverskrift (h3)
+        </Heading>
+        <Heading id="andre-overskrift" level={2} data-size="md">
+          Andre overskrift (h2)
+        </Heading>
+        <Heading id="tredje-overskrift" level={2} data-size="md">
+          Tredje overskrift (h2)
+        </Heading>
+      </Prose>
+    );
   },
 });
