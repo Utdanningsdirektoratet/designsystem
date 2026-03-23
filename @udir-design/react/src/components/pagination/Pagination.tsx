@@ -13,6 +13,7 @@ import type {
   ForwardRefExoticComponent,
   RefAttributes,
 } from 'react';
+import './pagination.css';
 
 type PaginationProps = Omit<DigdirPaginationProps, 'data-color'>;
 
