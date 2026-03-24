@@ -1,3 +1,5 @@
+import type { ChangeEvent } from 'react';
+import { useState } from 'react';
 import { expect, waitFor } from 'storybook/test';
 import preview from '.storybook/preview';
 import { Input } from '../input/Input';
@@ -97,6 +99,41 @@ export const Counter = meta.story({
       expect(label).toBeInTheDocument();
       await waitFor(() => expect(label).toHaveAttribute('for', textarea.id));
     });
+  },
+});
+
+export const Format = meta.story({
+  render: () => {
+    const [nationalIdentityNumber, setNationalIdentityNumber] =
+      useState<string>('');
+    const tooLong = nationalIdentityNumber.length > 11;
+    const hasNonDigits = /\D/.test(nationalIdentityNumber);
+
+    const updateNumber = (e: ChangeEvent<HTMLInputElement>) => {
+      // removing spaces from stored value so users can space how they like withour error message
+      setNationalIdentityNumber(e.target.value.replace(/\s+/g, ''));
+    };
+
+    return (
+      <Field>
+        <Label>Fødselsnummer</Label>
+        <Input
+          id="format"
+          inputMode="numeric"
+          onChange={(e) => updateNumber(e)}
+        />
+        {tooLong && (
+          <ValidationMessage>
+            Fødselsnummer skal kun være 11 tegn
+          </ValidationMessage>
+        )}
+        {hasNonDigits && (
+          <ValidationMessage>
+            Fødselsnummer skal kun inneholde siffere
+          </ValidationMessage>
+        )}
+      </Field>
+    );
   },
 });
 
