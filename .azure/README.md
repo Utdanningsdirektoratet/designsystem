@@ -20,6 +20,20 @@ Then deploy the storage account, container and related resources
 az deployment group create --resource-group rg-designsystem-build --template-file designsystem-build.bicep
 ```
 
+## TODO test app
+
+...
+
+```
+az deployment sub create --location westeurope --template-file resourcegroup-testapp.bicep
+```
+
+...
+
+```
+az deployment group create --resource-group rg-designsystem-testapp --template-file designsystem-testapp.bicep
+```
+
 ## Runtime infrastructure
 
 We use the following resources for our documentation:
