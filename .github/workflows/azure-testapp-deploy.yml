@@ -39,16 +39,14 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          submodules: true
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: 'package.json'
-          cache: 'pnpm'
-      - name: Install and build
-        run: pnpm install --frozen-lockfile && pnpm --filter test-app-nextjs... build
+          fetch-depth: 0
+      - uses: ./.github/actions/pnpm-setup
+      - name: build
+
+        run: pnpm nx run test-apps/nextjs:build
+
       - name: Deploy
         uses: Azure/static-web-apps-deploy@1a947af9992250f3bc2e68ad0754c0b0c11566c9
         with:
