@@ -49,8 +49,6 @@ jobs:
 
       - name: Deploy
         uses: Azure/static-web-apps-deploy@4d27395796ac319302594769cfe812bd207490b1
-        env:
-          CUSTOM_BUILD_COMMAND: 'pnpm nx run test-apps/nextjs:build'
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_TESTAPP_DEPLOYMENT_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
@@ -58,6 +56,7 @@ jobs:
           app_location: ${{ env.APP_LOCATION }}
           output_location: ${{ env.OUTPUT_LOCATION }}
           skip_app_build: true
+          skip_api_build: true
 
   cleanup:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
