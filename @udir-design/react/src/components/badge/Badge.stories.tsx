@@ -15,10 +15,13 @@ import { Tabs } from '../tabs/Tabs';
 import { Tag } from '../tag/Tag';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
-import { Badge } from './Badge';
+import { Badge, BadgePosition } from './Badge';
 
 const meta = preview.meta({
   component: Badge,
+  subcomponents: {
+    'Badge.Position': BadgePosition,
+  },
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {
