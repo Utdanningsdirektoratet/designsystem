@@ -1,12 +1,43 @@
+import type { FunctionComponent } from 'react';
 import { useState } from 'react';
 import { expect, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { Search } from '../search/Search';
 import { Paragraph } from '../typography/paragraph/Paragraph';
+import type {
+  ChipButtonProps,
+  ChipCheckboxProps,
+  ChipRadioProps,
+  ChipRemovableProps,
+} from './Chip';
 import { Chip } from './Chip';
+import { ChipButton } from './docs/FakeChipButton';
+import { ChipCheckbox } from './docs/FakeChipCheckbox';
+import { ChipRadio } from './docs/FakeChipRadio';
+import { ChipRemovable } from './docs/FakeChipRemovable';
+
+type CombinedProps = ChipRadioProps &
+  ChipButtonProps &
+  ChipCheckboxProps &
+  ChipRemovableProps;
+
+// Hack to get the first tab in Controls to have the correct name Chip.Button instead of ChipButton
+(
+  ChipButton as unknown as {
+    __docgenInfo: { displayName: string };
+  }
+).__docgenInfo.displayName = 'Chip.Button';
 
 const meta = preview.meta({
-  component: Chip.Radio,
+  // "as ..." here is a hack to ensure args has an acceptable type for all stories
+  // It does not affect the content of the prop table
+  component: ChipButton as FunctionComponent<CombinedProps>,
+  subcomponents: {
+    'Chip.Checkbox': ChipCheckbox,
+    'Chip.Radio': ChipRadio,
+    'Chip.Removable': ChipRemovable,
+  },
+
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {

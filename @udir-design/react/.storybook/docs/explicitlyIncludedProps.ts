@@ -19,6 +19,11 @@ type Components = {
     : never]: ComponentExports[K];
 };
 
+// TODO is it better to remove this whitelist, and always use the pattern shown in FakeChipCheckbox instead?
+// When adding `ChipCheckbox: ['onChange']` to the list below, it for some reason showed up with the
+// incorrect type `ChangeHandler<HTMLButtonElement>` But "redefining" the prop with
+//   { onChange?: ChipCheckboxProps['onChange'] }
+// in FakeChipCheckbox made the correct type show up...
 export const explicitlyIncludedProps: Record<string, string[] | undefined> = {
   /* Here we can choose to include specific props which would otherwise be filtered out –
    * e.g. due to being defined in third-party dependencies like React – for specific components.
