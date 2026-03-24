@@ -50,7 +50,7 @@ jobs:
           action: 'upload'
           app_location: ${{ env.APP_LOCATION }}
           output_location: ${{ env.OUTPUT_LOCATION }}
-          app_build_command: 'corepack enable && pnpm install --frozen-lockfile && pnpm --filter test-app-nextjs build'
+          app_build_command: 'corepack enable && pnpm -w install --frozen-lockfile && pnpm --filter test-app-nextjs... build'
         env:
           ENABLE_NODE_MONOREPO_BUILD: true
 
