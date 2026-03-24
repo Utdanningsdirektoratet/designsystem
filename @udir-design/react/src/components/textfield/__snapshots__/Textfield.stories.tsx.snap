@@ -56,15 +56,15 @@ exports[`Counter 1`] = `
     data-weight="medium"
     for="textfield-counter"
   >
-    Fødselsnummer
+    Legg til en beskrivelse
   </label>
   <div>
-    <input
+    <textarea
       id="textfield-counter"
-      inputmode="numeric"
-      type="text"
+      rows="4"
       aria-describedby="textfield-counter:description:1"
     >
+    </textarea>
   </div>
   <div aria-live="polite">
   </div>
@@ -72,14 +72,14 @@ exports[`Counter 1`] = `
     data-variant="default"
     aria-hidden="true"
   >
-    11 tegn igjen
+    75 tegn igjen
   </p>
   <div
     aria-hidden="true"
     data-field="description"
     id="textfield-counter:description:1"
   >
-    Maks 11 tegn tillatt.
+    Maks 75 tegn tillatt.
   </div>
 </div>
 `;
@@ -129,6 +129,24 @@ exports[`Focused 1`] = `
   <div>
     <input
       id="textfield-preview"
+      type="text"
+    >
+  </div>
+</div>
+`;
+
+exports[`Format 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="format"
+  >
+    Fødselsnummer
+  </label>
+  <div>
+    <input
+      id="format"
+      inputmode="numeric"
       type="text"
     >
   </div>
