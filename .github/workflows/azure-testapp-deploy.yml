@@ -42,7 +42,14 @@ jobs:
       - uses: actions/checkout@v5
         with:
           submodules: true
-      - name: Build And Deploy
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+          cache: 'pnpm'
+      - name: Install and build
+        run: pnpm install --frozen-lockfile && pnpm --filter test-app-nextjs... build
+      - name: Deploy
         uses: Azure/static-web-apps-deploy@1a947af9992250f3bc2e68ad0754c0b0c11566c9
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_TESTAPP_DEPLOYMENT_TOKEN }}
@@ -50,9 +57,7 @@ jobs:
           action: 'upload'
           app_location: ${{ env.APP_LOCATION }}
           output_location: ${{ env.OUTPUT_LOCATION }}
-          app_build_command: 'corepack enable && pnpm -w install --frozen-lockfile && pnpm --filter test-app-nextjs... build'
-        env:
-          ENABLE_NODE_MONOREPO_BUILD: true
+          skip_app_build: true
 
   cleanup:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
