@@ -82,8 +82,8 @@ export const Counter = meta.story({
   render: () => (
     <Field>
       <Label>Legg til en beskrivelse</Label>
-      <Textarea rows={2} id="counter" />
-      <Field.Counter limit={10} />
+      <Textarea rows={4} id="counter" />
+      <Field.Counter limit={75} />
     </Field>
   ),
   play: async ({ canvasElement, step }) => {

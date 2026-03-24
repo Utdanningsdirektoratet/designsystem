@@ -129,15 +129,15 @@ export const Affix = meta.story({
 });
 
 export const Counter = meta.story({
-  args: {
-    counter: {
-      limit: 11,
-      over: 'Fødselsnummer må være 11 siffer',
-    },
-    label: 'Fødselsnummer',
-    id: 'textfield-counter',
-    inputMode: 'numeric',
-  },
+  render: () => (
+    <Textfield
+      id="textfield-counter"
+      multiline
+      rows={4}
+      label="Legg til en beskrivelse"
+      counter={75}
+    />
+  ),
 });
 
 export const Controlled = meta.story({
