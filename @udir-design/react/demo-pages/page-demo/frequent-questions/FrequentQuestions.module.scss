@@ -12,3 +12,10 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+.symbolWrapper {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
