@@ -222,6 +222,8 @@ type UdirSymbolName =
   | 'MattePlusstegnGrønn'
   | 'MattePlusstegnOutline'
   | 'MattePlusstegnSort'
+  | 'MattePåPcFill'
+  | 'MattePåPcOutline'
   | 'MedaljeFill'
   | 'MedaljeOutline'
   | 'MegafonFill'
@@ -277,6 +279,8 @@ type UdirSymbolName =
   | 'MålskiveOutline'
   | 'NettbrettFill'
   | 'NettbrettOutline'
+  | 'NorgeskartFill'
+  | 'NorgeskartOutline'
   | 'NotatarkFill'
   | 'NotatarkOutline'
   | 'NotearkFill'
@@ -324,6 +328,8 @@ type UdirSymbolName =
   | 'SamiskSolGrønn'
   | 'SamiskSolOutline'
   | 'SamiskSolSort'
+  | 'SamtalePåPcFill'
+  | 'SamtalePåPcOutline'
   | 'SikkerhetFill'
   | 'SikkerhetOutline'
   | 'SirkelOgFirkantKryssendeFormFill'
@@ -2366,6 +2372,24 @@ const metadata: {
     variant: 'Sort',
     created_at: '20.06.2025',
   },
+  MattePåPcFill: {
+    id: 'MattePåPcFill',
+    name: 'MattePåPcFill',
+    category: 'Symboler',
+    sub_category: 'Matte på PC',
+    keywords: ['MattePåPcFill'],
+    variant: 'Fill',
+    created_at: '25.03.2026',
+  },
+  MattePåPcOutline: {
+    id: 'MattePåPcOutline',
+    name: 'MattePåPcOutline',
+    category: 'Symboler',
+    sub_category: 'Matte på PC',
+    keywords: ['MattePåPcOutline'],
+    variant: 'Outline',
+    created_at: '25.03.2026',
+  },
   MedaljeFill: {
     id: 'MedaljeFill',
     name: 'MedaljeFill',
@@ -2861,6 +2885,24 @@ const metadata: {
     variant: 'Outline',
     created_at: '12.06.2024',
   },
+  NorgeskartFill: {
+    id: 'NorgeskartFill',
+    name: 'NorgeskartFill',
+    category: 'Symboler',
+    sub_category: 'Norgeskart',
+    keywords: ['NorgeskartFill'],
+    variant: 'Fill',
+    created_at: '25.03.2026',
+  },
+  NorgeskartOutline: {
+    id: 'NorgeskartOutline',
+    name: 'NorgeskartOutline',
+    category: 'Symboler',
+    sub_category: 'Norgeskart',
+    keywords: ['NorgeskartOutline'],
+    variant: 'Outline',
+    created_at: '25.03.2026',
+  },
   NotatarkFill: {
     id: 'NotatarkFill',
     name: 'NotatarkFill',
@@ -3283,6 +3325,24 @@ const metadata: {
     keywords: ['SamiskSolSort'],
     variant: 'Sort',
     created_at: '29.01.2025',
+  },
+  SamtalePåPcFill: {
+    id: 'SamtalePåPcFill',
+    name: 'SamtalePåPcFill',
+    category: 'Symboler',
+    sub_category: 'Samtale på PC',
+    keywords: ['SamtalePåPcFill'],
+    variant: 'Fill',
+    created_at: '25.03.2026',
+  },
+  SamtalePåPcOutline: {
+    id: 'SamtalePåPcOutline',
+    name: 'SamtalePåPcOutline',
+    category: 'Symboler',
+    sub_category: 'Samtale på PC',
+    keywords: ['SamtalePåPcOutline'],
+    variant: 'Outline',
+    created_at: '25.03.2026',
   },
   SikkerhetFill: {
     id: 'SikkerhetFill',
