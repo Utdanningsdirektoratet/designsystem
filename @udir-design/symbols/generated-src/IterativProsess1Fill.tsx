@@ -1,25 +1,13 @@
 'use client';
 import React, { type Ref, type SVGProps, forwardRef } from 'react';
-import { useId } from './util/useId';
-interface SVGRProps {
-  title?: string;
-  titleId?: string;
-}
 interface SVGRProps {
   size?: number | string;
 }
 const SvgIterativProsess1Fill = forwardRef(
   (
-    {
-      size,
-      title,
-      titleId: _titleId,
-      ...props
-    }: SVGProps<SVGSVGElement> & SVGRProps,
+    { size, ...props }: SVGProps<SVGSVGElement> & SVGRProps,
     ref: Ref<SVGSVGElement>,
   ) => {
-    let titleId: string | undefined = useId();
-    titleId = title ? (_titleId ? _titleId : 'title-' + titleId) : undefined;
     const __srcW = 42;
     const __srcH = 14;
     const __isWide = true;
@@ -49,10 +37,8 @@ const SvgIterativProsess1Fill = forwardRef(
         focusable="false"
         role="img"
         ref={ref}
-        aria-labelledby={titleId}
         {...props}
       >
-        {title ? <title id={titleId}>{title}</title> : null}
         <mask id="IterativProsess1Fill_svg__a" fill="#fff">
           <path d="m13.35 8.686-.337-.103c-.021.082-1.015 3.99-3.942 3.99H1v-1.588h7.373c2.432 0 3.025-2.838 3.036-2.895l-.367-.112 1.544-1.02z" />
         </mask>

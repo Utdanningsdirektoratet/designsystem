@@ -1,25 +1,13 @@
 'use client';
 import React, { type Ref, type SVGProps, forwardRef } from 'react';
-import { useId } from './util/useId';
-interface SVGRProps {
-  title?: string;
-  titleId?: string;
-}
 interface SVGRProps {
   size?: number | string;
 }
 const SvgTegnsprkAHudtone1 = forwardRef(
   (
-    {
-      size,
-      title,
-      titleId: _titleId,
-      ...props
-    }: SVGProps<SVGSVGElement> & SVGRProps,
+    { size, ...props }: SVGProps<SVGSVGElement> & SVGRProps,
     ref: Ref<SVGSVGElement>,
   ) => {
-    let titleId: string | undefined = useId();
-    titleId = title ? (_titleId ? _titleId : 'title-' + titleId) : undefined;
     const __srcW = 40;
     const __srcH = 42;
     const __isWide = false;
@@ -49,10 +37,8 @@ const SvgTegnsprkAHudtone1 = forwardRef(
         focusable="false"
         role="img"
         ref={ref}
-        aria-labelledby={titleId}
         {...props}
       >
-        {title ? <title id={titleId}>{title}</title> : null}
         <path
           fill="#ECDBC2"
           d="M6.477 31.86c.645-.868 2.044-2.856 1.705-5.376-.424-3.15-2.166-14.086-1.16-14.788 1.007-.703 1.758-2.259 2.454-2.937.695-.678 1.41-1.109 2.095-1.91.685-.803 1.711-3.627 3.104-3.362s5.37.08 6.37.126c1.002.046 1.63-1.5 4.356-1.714 2.728-.213 5.133-.684 5.31.956 1.078-1.052 3.442-2.717 4.276-.96 1.043 2.197.241 5.494.85 6.771 1.038 2.182-1.533 5.773-6.485 15.483-2.85 5.588-6.047 3.908-7.911 8.503-1.864 4.594-1.07 7.402-3.193 7.192S2.843 37.288 3.572 36.027s1.737-2.594 2.905-4.167"
