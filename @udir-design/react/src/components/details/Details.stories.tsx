@@ -14,9 +14,15 @@ import { List } from '../list/List';
 import { ToggleGroup } from '../toggleGroup/ToggleGroup';
 import { Label } from '../typography/label/Label';
 import { Details } from './Details';
+import { Details as FakeDetails } from './docs/FakeDetails';
+import { DetailsContent } from './docs/FakeDetailsContent';
 
 const meta = preview.meta({
-  component: Details,
+  component: FakeDetails,
+  subcomponents: {
+    'Details.Summary': Details.Summary,
+    'Details.Content': DetailsContent,
+  },
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {

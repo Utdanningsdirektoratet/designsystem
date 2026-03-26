@@ -10,8 +10,11 @@ import {
   type ChipRemovableProps,
 } from '@digdir/designsystemet-react';
 
-// For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
+// This doesn't help with Storybook's code preview for some reason, it's still displayed as ChipButton etc :(
 Chip.Button.displayName = 'Chip.Button';
+Chip.Checkbox.displayName = 'Chip.Checkbox';
+Chip.Radio.displayName = 'Chip.Radio';
+Chip.Removable.displayName = 'Chip.Removable';
 
 export type {
   ChipButtonProps,

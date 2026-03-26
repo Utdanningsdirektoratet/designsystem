@@ -10,6 +10,9 @@ import { Alert } from './';
 
 const meta = preview.meta({
   component: Alert,
+  subcomponents: {
+    'Alert.Heading': Alert.Heading,
+  },
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: { originator: 'digdir' },
