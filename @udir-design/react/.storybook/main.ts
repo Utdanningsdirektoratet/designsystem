@@ -2,7 +2,6 @@ import { execSync } from 'node:child_process';
 import { defineMain } from '@storybook/react-vite/node';
 import remarkGfm from 'remark-gfm';
 import type { Plugin, UserConfig } from 'vite';
-import { explicitlyIncludedProps } from './docs/explicitlyIncludedProps';
 
 const isFromDependency = (fileName: string) =>
   fileName.includes('node_modules');
@@ -91,13 +90,7 @@ export default defineMain({
   typescript: {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
-      propFilter: (prop, component) => {
-        // Make it possible to explicitly choose to include a prop that would otherwise be
-        // filtered out because it's a third-party prop, e.g. types from React
-        if (explicitlyIncludedProps[component.name]?.includes(prop.name)) {
-          return true;
-        }
-
+      propFilter: (prop) => {
         // Remove popovertarget prop which @digdir/designsystemet-react adds to all elements
         if (prop.name === 'popovertarget') {
           return false;
