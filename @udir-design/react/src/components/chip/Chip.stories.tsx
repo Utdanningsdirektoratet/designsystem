@@ -22,11 +22,13 @@ type CombinedProps = ChipRadioProps &
   ChipRemovableProps;
 
 // Hack to get the first tab in Controls to have the correct name Chip.Button instead of ChipButton
-(
-  ChipButton as unknown as {
-    __docgenInfo: { displayName: string };
-  }
-).__docgenInfo.displayName = 'Chip.Button';
+if (Object.hasOwn(ChipButton, '__docgenInfo')) {
+  (
+    ChipButton as unknown as {
+      __docgenInfo: { displayName: string };
+    }
+  ).__docgenInfo.displayName = 'Chip.Button';
+}
 
 const meta = preview.meta({
   // "as ..." here is a hack to ensure args has an acceptable type for all stories
