@@ -418,10 +418,9 @@ exports[`In Tabs 1`] = `
   <ds-tablist role="tablist">
     <ds-tab
       aria-controls="_r_6_-value1"
-      aria-selected="true"
       data-value="value1"
       role="tab"
-      tabindex="0"
+      tabindex="-1"
     >
       Nye saker
       <span
@@ -433,7 +432,6 @@ exports[`In Tabs 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_6_-value2"
-      aria-selected="false"
       data-value="value2"
       role="tab"
       tabindex="-1"
@@ -448,7 +446,6 @@ exports[`In Tabs 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_6_-value3"
-      aria-selected="false"
       data-value="value3"
       role="tab"
       tabindex="-1"

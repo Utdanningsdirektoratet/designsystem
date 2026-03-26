@@ -154,10 +154,9 @@ exports[`Icons With Text 1`] = `
   <ds-tablist role="tablist">
     <ds-tab
       aria-controls="_r_2_-barnehage"
-      aria-selected="true"
       data-value="barnehage"
       role="tab"
-      tabindex="0"
+      tabindex="-1"
     >
       <svg
         aria-hidden="true"
@@ -181,7 +180,6 @@ exports[`Icons With Text 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_2_-grunnskole"
-      aria-selected="false"
       data-value="grunnskole"
       role="tab"
       tabindex="-1"
@@ -208,7 +206,6 @@ exports[`Icons With Text 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_2_-videregående"
-      aria-selected="false"
       data-value="videregående"
       role="tab"
       tabindex="-1"
@@ -243,13 +240,12 @@ exports[`Only Icons 1`] = `
     <ds-tab
       aria-controls="_r_6_-gallery"
       aria-label="Galleri"
-      aria-selected="true"
       data-autoplacement
       data-placement="top"
       data-tooltip="Galleri"
       data-value="gallery"
       role="tab"
-      tabindex="0"
+      tabindex="-1"
     >
       <svg
         aria-hidden="true"
@@ -273,7 +269,6 @@ exports[`Only Icons 1`] = `
     <ds-tab
       aria-controls="_r_6_-profile"
       aria-label="Profilen din"
-      aria-selected="false"
       data-autoplacement
       data-placement="top"
       data-tooltip="Profilen din"
@@ -303,7 +298,6 @@ exports[`Only Icons 1`] = `
     <ds-tab
       aria-controls="_r_6_-notifications"
       aria-label="Varsler"
-      aria-selected="false"
       data-autoplacement
       data-placement="top"
       data-tooltip="Varsler"
@@ -333,7 +327,6 @@ exports[`Only Icons 1`] = `
     <ds-tab
       aria-controls="_r_6_-settings"
       aria-label="Innstillinger"
-      aria-selected="false"
       data-autoplacement
       data-placement="top"
       data-tooltip="Innstillinger"
@@ -369,16 +362,14 @@ exports[`Only Text 1`] = `
   <ds-tablist role="tablist">
     <ds-tab
       aria-controls="_r_1_-oversikt"
-      aria-selected="true"
       data-value="oversikt"
       role="tab"
-      tabindex="0"
+      tabindex="-1"
     >
       Oversikt
     </ds-tab>
     <ds-tab
       aria-controls="_r_1_-prøver"
-      aria-selected="false"
       data-value="prøver"
       role="tab"
       tabindex="-1"
@@ -387,7 +378,6 @@ exports[`Only Text 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_1_-prøvesvar"
-      aria-selected="false"
       data-value="prøvesvar"
       role="tab"
       tabindex="-1"

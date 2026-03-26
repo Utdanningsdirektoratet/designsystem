@@ -117,11 +117,8 @@ exports[`With Form 1`] = `
     Telefonnummer kan kun inneholde siffer
   </p>
 </ds-field>
-<ds-error-summary
-  aria-labelledby="<removed>"
-  tabindex="-1"
->
-  <h2 id="<removed>">
+<ds-error-summary>
+  <h2>
     For å gå videre må du rette opp følgende feil:
   </h2>
   <ul>
