@@ -1,25 +1,13 @@
 'use client';
 import React, { type Ref, type SVGProps, forwardRef } from 'react';
-import { useId } from './util/useId';
-interface SVGRProps {
-  title?: string;
-  titleId?: string;
-}
 interface SVGRProps {
   size?: number | string;
 }
 const SvgHelsekorsBrun = forwardRef(
   (
-    {
-      size,
-      title,
-      titleId: _titleId,
-      ...props
-    }: SVGProps<SVGSVGElement> & SVGRProps,
+    { size, ...props }: SVGProps<SVGSVGElement> & SVGRProps,
     ref: Ref<SVGSVGElement>,
   ) => {
-    let titleId: string | undefined = useId();
-    titleId = title ? (_titleId ? _titleId : 'title-' + titleId) : undefined;
     const __srcW = 42;
     const __srcH = 42;
     const __isWide = true;
@@ -49,10 +37,8 @@ const SvgHelsekorsBrun = forwardRef(
         focusable="false"
         role="img"
         ref={ref}
-        aria-labelledby={titleId}
         {...props}
       >
-        {title ? <title id={titleId}>{title}</title> : null}
         <path
           fill="#E5CEAE"
           d="M25.4 1a.6.6 0 0 1 .6.6V16h14.4a.6.6 0 0 1 .6.6v8.8a.6.6 0 0 1-.6.6H26v14.4a.6.6 0 0 1-.6.6h-8.8a.6.6 0 0 1-.6-.6V26H1.6a.6.6 0 0 1-.6-.6v-8.8c0-.33.27-.6.6-.6H16V1.6c0-.33.27-.6.6-.6z"

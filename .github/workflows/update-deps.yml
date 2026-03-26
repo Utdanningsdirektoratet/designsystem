@@ -6,6 +6,10 @@ on:
   #   # Runs at 23:00, only on Sunday
   #   - cron: 0 23 * * 0
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   update-deps:
     runs-on: ubuntu-latest

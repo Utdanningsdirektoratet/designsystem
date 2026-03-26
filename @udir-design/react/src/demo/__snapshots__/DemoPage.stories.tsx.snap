@@ -252,6 +252,51 @@ exports[`Page Story 1`] = `
           data-variant="tinted"
           data-color="accent"
         >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewbox="0 0 36 42"
+            focusable="false"
+            role="img"
+            aria-label="Sikkerhet"
+            style="height: 5rem; width: auto;"
+          >
+            <g
+              stroke="#303030"
+              stroke-width="0.4"
+              clip-path="url(#SikkerhetFill_svg__a)"
+            >
+              <path
+                fill="#76C69D"
+                d="M34.477 4.68c-9.35.6-14.735-2.58-16.155-3.56a.67.67 0 0 0-.761 0c-1.42.98-6.805 4.159-16.155 3.56A.38.38 0 0 0 1 5.058v19.499C1 37.98 16.789 40.814 17.882 40.995q.059.01.118 0c1.093-.179 16.881-3.013 16.881-16.438v-19.5a.38.38 0 0 0-.404-.377Z"
+              >
+              </path>
+              <path
+                fill="#E5CEAE"
+                d="M23.843 21.451h-2.22v-5.615a3.56 3.56 0 0 0-3.556-3.556 3.56 3.56 0 0 0-3.556 3.556v5.615h-2.22v-5.615a5.78 5.78 0 0 1 5.776-5.776 5.78 5.78 0 0 1 5.776 5.776z"
+              >
+              </path>
+              <path
+                fill="#BED5E8"
+                d="M26.3 29.311H9.987a1.19 1.19 0 0 1-1.191-1.19v-8.185c0-.657.532-1.19 1.19-1.19H26.3c.657 0 1.192.532 1.192 1.19v8.185c0 .656-.535 1.19-1.192 1.19Z"
+              >
+              </path>
+              <path
+                fill="#A9C0D3"
+                d="M18.798 23.933a1.86 1.86 0 0 0 1.17-2.112 1.865 1.865 0 1 0-2.468 2.117c.04.015.057.06.038.096l-1.145 2.094a.503.503 0 0 0 .441.744h2.599c.38 0 .622-.405.445-.74l-1.118-2.106c-.017-.032 0-.078.038-.093Z"
+              >
+              </path>
+            </g>
+            <defs>
+              <clipPath id="SikkerhetFill_svg__a">
+                <path
+                  fill="#fff"
+                  d="M0 0h35.881v42H0z"
+                >
+                </path>
+              </clipPath>
+            </defs>
+          </svg>
           <h2>
             Sikkerhet og drift
           </h2>
@@ -263,6 +308,113 @@ exports[`Page Story 1`] = `
           data-variant="tinted"
           data-color="support1"
         >
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewbox="0 0 42 23"
+              focusable="false"
+              role="img"
+              aria-label="Skole"
+              style="width: 5rem; height: auto;"
+            >
+              <path
+                fill="#F2E8DA"
+                stroke="#303030"
+                stroke-miterlimit="10"
+                stroke-width="0.4"
+                d="M31.708 4.35H10.292v17.372h21.416z"
+              >
+              </path>
+              <path
+                fill="#D6B689"
+                stroke="#303030"
+                stroke-miterlimit="10"
+                stroke-width="0.4"
+                d="M10.291 8.435H1.883v13.287h8.408z"
+              >
+              </path>
+              <path
+                fill="#E5CEAE"
+                stroke="#303030"
+                stroke-miterlimit="10"
+                stroke-width="0.4"
+                d="M40.116 8.43h-8.408v13.287h8.408z"
+              >
+              </path>
+              <path
+                fill="#303030"
+                stroke="#303030"
+                stroke-miterlimit="10"
+                stroke-width="0.4"
+                d="M32.179 4.35H9.82L11.79 1h18.42zM41 8.43h-9.292V5.768h7.98zM10.292 8.43H1l1.312-2.662h7.98z"
+              >
+              </path>
+              <path
+                fill="#BED5E8"
+                stroke="#303030"
+                stroke-miterlimit="10"
+                stroke-width="0.4"
+                d="M21 9.21a1.473 1.473 0 1 0 0-2.945 1.473 1.473 0 0 0 0 2.945Z"
+              >
+              </path>
+              <path
+                fill="#76C69D"
+                stroke="#303030"
+                stroke-miterlimit="10"
+                stroke-width="0.4"
+                d="M24.274 15.169h-6.548v6.548h6.548z"
+              >
+              </path>
+              <path
+                fill="#D6B689"
+                stroke="#303030"
+                stroke-miterlimit="10"
+                stroke-width="0.4"
+                d="M29.04 16.323h-2.098v3.256h2.098z"
+              >
+              </path>
+              <path
+                fill="#E5CEAE"
+                stroke="#303030"
+                stroke-miterlimit="10"
+                stroke-width="0.4"
+                d="M15.058 16.323H12.96v3.256h2.098z"
+              >
+              </path>
+              <path
+                fill="#D6B689"
+                stroke="#303030"
+                stroke-miterlimit="10"
+                stroke-width="0.4"
+                d="M15.058 8.606H12.96v3.256h2.098z"
+              >
+              </path>
+              <path
+                fill="#E5CEAE"
+                stroke="#303030"
+                stroke-miterlimit="10"
+                stroke-width="0.4"
+                d="M29.04 8.606h-2.098v3.256h2.098z"
+              >
+              </path>
+              <path
+                fill="#F2E8DA"
+                stroke="#303030"
+                stroke-miterlimit="10"
+                stroke-width="0.4"
+                d="M7.137 13.486H5.04v3.256h2.098zM36.961 13.396h-2.098v3.256h2.098z"
+              >
+              </path>
+              <path
+                stroke="#303030"
+                stroke-miterlimit="10"
+                stroke-width="0.2"
+                d="M21 15.169v6.549M20.296 7.516l.704.221v-.935"
+              >
+              </path>
+            </svg>
+          </div>
           <h2>
             Skole og utdanning
           </h2>
@@ -274,6 +426,39 @@ exports[`Page Story 1`] = `
           data-variant="tinted"
           data-color="support2"
         >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewbox="0 0 33 42"
+            focusable="false"
+            role="img"
+            aria-label="Kokkehatt"
+            style="height: 5rem; width: auto;"
+          >
+            <path
+              fill="#C8DEF0"
+              stroke="#303030"
+              stroke-miterlimit="10"
+              stroke-width="0.4"
+              d="M8.721 29.909s-2.836-4.666-3.004-5.686.978-1.997.434-3.539c-.545-1.54-6.726-5.735-4.77-6.583s.46-5.77 3.607-6.813 3.565 1.74 6.043-.718c2.141-2.123 9.002-7.332 10.557-4.967 1.555 2.364 7.365-.061 9.316 2.587s-4.337 7.358-2.416 10.445c2.22 3.564-.304 6.531.1 7.571.403 1.04.867 4.313.217 5.556l-11.357 3.643-7.973-.65-.757-.843z"
+            >
+            </path>
+            <path
+              fill="#BED5E8"
+              stroke="#303030"
+              stroke-miterlimit="10"
+              stroke-width="0.4"
+              d="M19.756 29.37c-2.277.323-5.083.257-7.086.82-2.004.564-3.59-.224-3.272 1.355s-.188 4.865.434 6.51c.621 1.645-.315 2.323 1.544 2.657 1.86.334 6.79.57 11.053-.426 4.261-.995 7.446-1.112 7.863-2.812.419-1.7-.5-6.207-1.039-6.294s.63-3.249-.447-3.42-3.571-.117-5.102.49c-1.53.604-2.637.934-3.95 1.12z"
+            >
+            </path>
+            <path
+              stroke="#303030"
+              stroke-miterlimit="10"
+              stroke-width="0.245"
+              d="M12.794 27.98s-2.123-2.534-1.532-5.713c.59-3.178-1.29-4.245-1.967-6.362M18.039 24.297s1.987-2.187.546-6.122c-1.97-5.38-1.672-9.685-.47-10.342M24.58 10.675c-2.069 5.887 1.85 5.425.157 10.614-.775 2.376 1.184 4.394 1.14 4.532M28.775 32.033S27.43 34.064 17.722 35.1"
+            >
+            </path>
+          </svg>
           <h2>
             Mat og helse
           </h2>

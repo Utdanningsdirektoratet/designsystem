@@ -1,3 +1,4 @@
+import { execSync } from 'node:child_process';
 import { defineMain } from '@storybook/react-vite/node';
 import remarkGfm from 'remark-gfm';
 import type { Plugin, UserConfig } from 'vite';
@@ -32,7 +33,17 @@ export default defineMain({
   async viteFinal(cfg) {
     const { mergeConfig } = await import('vite');
     process.env['IS_STORYBOOK'] = 'true';
+    const githubActionsHeadRef = process.env['GITHUB_HEAD_REF'];
+    const branchName = githubActionsHeadRef
+      ? // In GitHub Actions, HEAD is in detached state, so we get the branch name from a var set by GitHub
+        githubActionsHeadRef.replace(/^refs\/heads\//, '')
+      : // When running locally we just get the branch name currently checked out
+        execSync('git rev-parse --abbrev-ref HEAD').toString().trimEnd();
+
     return mergeConfig(cfg, {
+      define: {
+        __GIT_BRANCH__: JSON.stringify(branchName),
+      },
       build: {
         cssCodeSplit: false,
       },

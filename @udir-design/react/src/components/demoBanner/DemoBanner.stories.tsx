@@ -1,4 +1,3 @@
-import { expect, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { Laering3 } from 'src/patterns/DemoVersion.stories';
 import { Card } from '../card/Card';
@@ -11,7 +10,7 @@ import { DemoBanner } from './DemoBanner';
 
 const meta = preview.meta({
   component: DemoBanner,
-  tags: ['alpha', 'udir'],
+  tags: ['beta', 'udir'],
 });
 
 export const Preview = meta.story({
@@ -87,14 +86,6 @@ export const Preview = meta.story({
       </Footer>
     </DemoBanner>
   ),
-  play: async ({ canvasElement, step }) => {
-    const canvas = within(canvasElement);
-    const banner = canvas.getByTestId('banner');
-
-    await step('Banner is rendered', async () => {
-      await expect(banner).toBeTruthy();
-    });
-  },
 });
 
 export const WithScroll = meta.story({

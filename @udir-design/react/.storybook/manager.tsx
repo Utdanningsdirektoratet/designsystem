@@ -1,5 +1,6 @@
 import './style.css';
 import './manager.css';
+import './addons/sourceCodeToolbar';
 import React from 'react';
 import type { API_HashEntry } from 'storybook/internal/types';
 import { addons } from 'storybook/manager-api';

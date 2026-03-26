@@ -1,9 +1,3 @@
 {
-  "name": "test-apps/parcel-vanilla",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "test-apps/parcel-vanilla/src",
-  "projectType": "application",
-  "tags": [],
-  "// targets": "to see all targets run: nx show project test-apps/vite --web",
-  "targets": {}
+  "$schema": "../../node_modules/nx/schemas/project-schema.json"
 }

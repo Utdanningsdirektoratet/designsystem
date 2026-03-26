@@ -25,7 +25,9 @@ export const SimpleAlert: React.FC<
             <div>{heading}</div>
           </Heading>
         )}
-        <Paragraph>{children}</Paragraph>
+        <Paragraph asChild>
+          <div>{children}</div>
+        </Paragraph>
       </div>
     </Card>
   ) : (

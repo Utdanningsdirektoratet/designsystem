@@ -377,6 +377,9 @@ export const StickyHeader = meta.story({
           }}
         >
           <Table {...args}>
+            <caption className="ds-sr-only">
+              Ansattes utdanning fordelt på eiertype (ordinære), 2021
+            </caption>
             <Table.Head>
               <Table.Row>
                 <Table.Cell></Table.Cell>

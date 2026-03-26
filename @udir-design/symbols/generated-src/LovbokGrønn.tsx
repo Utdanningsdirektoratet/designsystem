@@ -1,25 +1,13 @@
 'use client';
 import React, { type Ref, type SVGProps, forwardRef } from 'react';
-import { useId } from './util/useId';
-interface SVGRProps {
-  title?: string;
-  titleId?: string;
-}
 interface SVGRProps {
   size?: number | string;
 }
 const SvgLovbokGrnn = forwardRef(
   (
-    {
-      size,
-      title,
-      titleId: _titleId,
-      ...props
-    }: SVGProps<SVGSVGElement> & SVGRProps,
+    { size, ...props }: SVGProps<SVGSVGElement> & SVGRProps,
     ref: Ref<SVGSVGElement>,
   ) => {
-    let titleId: string | undefined = useId();
-    titleId = title ? (_titleId ? _titleId : 'title-' + titleId) : undefined;
     const __srcW = 34;
     const __srcH = 42;
     const __isWide = false;
@@ -49,10 +37,8 @@ const SvgLovbokGrnn = forwardRef(
         focusable="false"
         role="img"
         ref={ref}
-        aria-labelledby={titleId}
         {...props}
       >
-        {title ? <title id={titleId}>{title}</title> : null}
         <mask id="LovbokGr\xF8nn_svg__a" fill="#fff">
           <path d="M1 2.921C1 1.861 1.86 1 2.921 1h28.547c.53 0 .96.43.96.96v38.08c0 .53-.43.96-.96.96H2.921A1.92 1.92 0 0 1 1 39.079z" />
         </mask>

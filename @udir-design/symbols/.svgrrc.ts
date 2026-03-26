@@ -4,7 +4,7 @@ import template from './config/template.ts';
 export default {
   typescript: true,
   ref: true,
-  titleProp: true,
+  titleProp: false,
   dimensions: false,
   jsxRuntime: 'automatic',
   svgProps: {

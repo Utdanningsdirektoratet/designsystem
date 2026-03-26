@@ -14,5 +14,5 @@ const pascalPreserve = (str: string) =>
     .replace(/[^\p{L}\p{N}]+/gu, ' ')
     .trim()
     .split(/\s+/)
-    .map(upperFirst)
+    .map((word) => upperFirst(word.toLowerCase()))
     .join('');

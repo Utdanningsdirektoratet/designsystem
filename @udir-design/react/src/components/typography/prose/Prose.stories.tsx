@@ -12,7 +12,7 @@ import { Prose } from './Prose';
 
 const meta = preview.meta({
   component: Prose,
-  tags: ['alpha', 'udir'],
+  tags: ['beta', 'udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',
@@ -30,7 +30,7 @@ export const Preview = meta.story({
           justifyContent: 'center',
         }}
       >
-        <Prose style={{ maxWidth: '50rem' }}>
+        <Prose style={{ maxWidth: '50rem' }} data-testid="prose">
           <Alert>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </Alert>

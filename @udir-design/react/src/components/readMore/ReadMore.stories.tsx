@@ -6,7 +6,7 @@ import { ReadMore } from './ReadMore';
 
 const meta = preview.meta({
   component: ReadMore,
-  tags: ['alpha', 'udir'],
+  tags: ['beta', 'udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',

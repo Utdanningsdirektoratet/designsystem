@@ -14,12 +14,6 @@
   gap: var(--ds-size-13);
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-3);
-}
-
 .contentWrapper {
   max-width: 50rem;
   margin: 0 auto;

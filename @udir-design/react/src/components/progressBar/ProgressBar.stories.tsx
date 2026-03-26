@@ -11,7 +11,7 @@ import { ProgressBar } from './ProgressBar';
 
 const meta = preview.meta({
   component: ProgressBar,
-  tags: ['alpha', 'udir'],
+  tags: ['beta', 'udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',

@@ -1,25 +1,13 @@
 'use client';
 import React, { type Ref, type SVGProps, forwardRef } from 'react';
-import { useId } from './util/useId';
-interface SVGRProps {
-  title?: string;
-  titleId?: string;
-}
 interface SVGRProps {
   size?: number | string;
 }
 const SvgIterativProsess1Outline = forwardRef(
   (
-    {
-      size,
-      title,
-      titleId: _titleId,
-      ...props
-    }: SVGProps<SVGSVGElement> & SVGRProps,
+    { size, ...props }: SVGProps<SVGSVGElement> & SVGRProps,
     ref: Ref<SVGSVGElement>,
   ) => {
-    let titleId: string | undefined = useId();
-    titleId = title ? (_titleId ? _titleId : 'title-' + titleId) : undefined;
     const __srcW = 42;
     const __srcH = 14;
     const __isWide = true;
@@ -49,10 +37,8 @@ const SvgIterativProsess1Outline = forwardRef(
         focusable="false"
         role="img"
         ref={ref}
-        aria-labelledby={titleId}
         {...props}
       >
-        {title ? <title id={titleId}>{title}</title> : null}
         <path
           fill="#303030"
           d="M4.232 11.011c.029.037 1.264 1.592 3.247 1.592H1v-1.592zM1.443 12.16h3.393a5.3 5.3 0 0 1-.802-.705h-2.59zM16.98 11.012c.02.025 1.258 1.593 3.248 1.593h-4.446v-1.593zm-.755 1.15h1.36a5.4 5.4 0 0 1-.694-.59q-.062-.063-.11-.116h-.556zM29.73 11.012c.02.025 1.257 1.593 3.247 1.593h-4.446v-1.593zm-.756 1.15h1.36a5.4 5.4 0 0 1-.694-.59q-.061-.063-.109-.116h-.556z"
