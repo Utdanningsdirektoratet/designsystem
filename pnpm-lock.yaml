@@ -28,8 +28,8 @@ catalogs:
       specifier: 1.12.1
       version: 1.12.1
     '@digdir/designsystemet-types':
-      specifier: ^1.12.1
-      version: 1.13.0
+      specifier: 1.12.1
+      version: 1.12.1
     '@eslint/compat':
       specifier: ^2.0.3
       version: 2.0.3
@@ -593,7 +593,7 @@ importers:
         version: 1.12.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@digdir/designsystemet-types':
         specifier: 'catalog:'
-        version: 1.13.0
+        version: 1.12.1
       '@radix-ui/react-slot':
         specifier: 'catalog:'
         version: 1.2.4(@types/react@19.2.14)(react@19.2.4)
@@ -834,7 +834,7 @@ importers:
     dependencies:
       '@digdir/designsystemet-types':
         specifier: 'catalog:'
-        version: 1.13.0
+        version: 1.12.1
     devDependencies:
       '@internal/build-tools':
         specifier: workspace:*
@@ -1816,6 +1816,9 @@ packages:
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
+
+  '@digdir/designsystemet-types@1.12.1':
+    resolution: {integrity: sha512-HE6D81h9IuNofEq1Gx1/FEVomxDID4SxCo7tcCYT16ZOQzHsUpSjirJD4Z3cIBY1SDDknwUTszyGz7QsBb5a8A==}
 
   '@digdir/designsystemet-types@1.13.0':
     resolution: {integrity: sha512-36t36fjDkzZH2GNuXSsgVoEsdBgQ2NMzdz4BbS1PXvwarXz5lT7GuloMvER+JCzvBlzx/2C3/pfWIaVoN5v6pg==}
@@ -10103,7 +10106,7 @@ snapshots:
 
   '@digdir/designsystemet-react@1.12.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@digdir/designsystemet-types': 1.13.0
+      '@digdir/designsystemet-types': 1.12.1
       '@digdir/designsystemet-web': 1.12.1
       '@floating-ui/dom': 1.7.6
       '@floating-ui/react': 0.26.23(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -10115,6 +10118,8 @@ snapshots:
       react-dom: 19.2.4(react@19.2.4)
     transitivePeerDependencies:
       - '@types/react'
+
+  '@digdir/designsystemet-types@1.12.1': {}
 
   '@digdir/designsystemet-types@1.13.0': {}
 
@@ -12666,7 +12671,7 @@ snapshots:
   '@udir-design/react@file:@udir-design/react(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@digdir/designsystemet-react': 1.12.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@digdir/designsystemet-types': 1.13.0
+      '@digdir/designsystemet-types': 1.12.1
       '@radix-ui/react-slot': 1.2.4(@types/react@19.2.14)(react@19.2.4)
       '@u-elements/u-details': 0.2.2
       '@u-elements/u-progress': 0.0.7
