@@ -4,10 +4,7 @@ exports[`Controlled 1`] = `
 <h1>
   Retting av prøver
 </h1>
-<fieldset
-  data-toggle-group
-  data-variant="primary"
->
+<fieldset data-variant="primary">
   <label data-variant="tertiary">
     <input
       name="togglegroup-name-_r_18_"
@@ -235,10 +232,7 @@ exports[`Controlled 1`] = `
 `;
 
 exports[`Only Icons 1`] = `
-<fieldset
-  data-toggle-group
-  data-variant="primary"
->
+<fieldset data-variant="primary">
   <label
     aria-label="Venstrestilt"
     data-autoplacement="true"
@@ -340,10 +334,7 @@ exports[`Only Text 1`] = `
 <label>
   Filtrering av skjema
 </label>
-<fieldset
-  data-toggle-group
-  data-variant="primary"
->
+<fieldset data-variant="primary">
   <label data-variant="tertiary">
     <input
       checked
@@ -373,10 +364,7 @@ exports[`Only Text 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<fieldset
-  data-toggle-group
-  data-variant="primary"
->
+<fieldset data-variant="primary">
   <label data-variant="tertiary">
     <input
       checked
@@ -414,10 +402,7 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Primary 1`] = `
-<fieldset
-  data-toggle-group
-  data-variant="primary"
->
+<fieldset data-variant="primary">
   <label data-variant="tertiary">
     <input
       checked
@@ -455,10 +440,7 @@ exports[`Primary 1`] = `
 `;
 
 exports[`Secondary 1`] = `
-<fieldset
-  data-toggle-group
-  data-variant="secondary"
->
+<fieldset data-variant="secondary">
   <label data-variant="tertiary">
     <input
       checked
@@ -496,10 +478,7 @@ exports[`Secondary 1`] = `
 `;
 
 exports[`Secondary Only Icons 1`] = `
-<fieldset
-  data-toggle-group
-  data-variant="secondary"
->
+<fieldset data-variant="secondary">
   <label
     aria-label="Venstrestilt"
     data-autoplacement="true"
@@ -598,10 +577,7 @@ exports[`Secondary Only Icons 1`] = `
 `;
 
 exports[`Text And Icons 1`] = `
-<fieldset
-  data-toggle-group
-  data-variant="primary"
->
+<fieldset data-variant="primary">
   <label data-variant="tertiary">
     <input
       checked
@@ -689,10 +665,7 @@ exports[`Toggle Group In Color Context 1`] = `
   data-color="accent"
   data-variant="tinted"
 >
-  <fieldset
-    data-toggle-group
-    data-variant="primary"
-  >
+  <fieldset data-variant="primary">
     <label data-variant="tertiary">
       <input
         checked

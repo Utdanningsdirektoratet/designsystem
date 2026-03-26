@@ -49,6 +49,7 @@ exports[`Example Drop Zone 1`] = `
     <input
       accept="application/pdf"
       aria-describedby="<removed>"
+      aria-invalid="false"
       id="<removed>"
       multiple
       style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
@@ -528,6 +529,7 @@ exports[`Example Trigger 1`] = `
     <input
       accept="image/png, image/jpeg"
       aria-describedby="<removed>"
+      aria-invalid="false"
       id="<removed>"
       type="file"
     >
@@ -650,6 +652,7 @@ exports[`Preview 1`] = `
     </button>
     <input
       aria-describedby="<removed>"
+      aria-invalid="false"
       id="<removed>"
       type="file"
     >
@@ -702,6 +705,7 @@ exports[`Preview 1`] = `
     <input
       accept="application/pdf"
       aria-describedby="<removed>"
+      aria-invalid="false"
       id="<removed>"
       multiple
       style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
@@ -754,6 +758,7 @@ exports[`Readonly 1`] = `
     </button>
     <input
       aria-describedby="<removed>"
+      aria-invalid="false"
       id="<removed>"
       readonly
       type="file"
@@ -778,6 +783,7 @@ exports[`Readonly 1`] = `
     </div>
     <input
       aria-describedby="<removed>"
+      aria-invalid="false"
       id="<removed>"
       max="2"
       readonly
@@ -1120,6 +1126,7 @@ exports[`Upload 1`] = `
     </button>
     <input
       aria-describedby="<removed>"
+      aria-invalid="false"
       id="<removed>"
       type="file"
     >

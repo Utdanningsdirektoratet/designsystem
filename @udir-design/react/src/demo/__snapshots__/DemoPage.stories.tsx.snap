@@ -11,7 +11,10 @@ exports[`Page Story 1`] = `
   <p data-variant="default">
     På denne demosiden hvor vi har laget noen eksempler på komponentene i biblioteket, sånn at man kan se hvordan de samspiller i en litt større kontekst. På sikt vil alle komponentene være representert her, men så langt er det kun de vi har ansett som viktigst i første omgang. Lengre ned på siden kan du prøve å endre på størrelse og farge-modus for å se hvordan det påvirker komponentene.
   </p>
-  <ds-breadcrumbs aria-label="Du er her:">
+  <ds-breadcrumbs
+    aria-label="Du er her:"
+    role="navigation"
+  >
     <ol>
       <li>
         <a href="#">
@@ -29,7 +32,10 @@ exports[`Page Story 1`] = `
         </a>
       </li>
       <li>
-        <a href="#">
+        <a
+          aria-current="page"
+          href="#"
+        >
           Nivå 4
         </a>
       </li>
@@ -46,6 +52,7 @@ exports[`Page Story 1`] = `
         </legend>
         <ds-field data-clickdelegatefor="<removed>">
           <input
+            aria-invalid="false"
             id="<removed>"
             type="checkbox"
             value="potet"
@@ -59,6 +66,7 @@ exports[`Page Story 1`] = `
         </ds-field>
         <ds-field data-clickdelegatefor="<removed>">
           <input
+            aria-invalid="false"
             id="<removed>"
             type="checkbox"
             value="farris"
@@ -72,6 +80,7 @@ exports[`Page Story 1`] = `
         </ds-field>
         <ds-field data-clickdelegatefor="<removed>">
           <input
+            aria-invalid="false"
             checked
             id="<removed>"
             type="checkbox"
@@ -86,6 +95,7 @@ exports[`Page Story 1`] = `
         </ds-field>
         <ds-field data-clickdelegatefor="<removed>">
           <input
+            aria-invalid="false"
             checked
             id="<removed>"
             type="checkbox"
@@ -100,6 +110,7 @@ exports[`Page Story 1`] = `
         </ds-field>
         <ds-field data-clickdelegatefor="<removed>">
           <input
+            aria-invalid="false"
             checked
             id="<removed>"
             type="checkbox"
@@ -115,6 +126,7 @@ exports[`Page Story 1`] = `
         <hr aria-hidden="true">
         <ds-field data-clickdelegatefor="<removed>">
           <input
+            aria-invalid="false"
             id="<removed>"
             type="checkbox"
             value="smagodt"
@@ -128,6 +140,7 @@ exports[`Page Story 1`] = `
         </ds-field>
         <ds-field data-clickdelegatefor="<removed>">
           <input
+            aria-invalid="false"
             id="<removed>"
             type="checkbox"
             value="smash"
@@ -154,6 +167,7 @@ exports[`Page Story 1`] = `
         </label>
         <div>
           <input
+            aria-invalid="false"
             autocomplete="name"
             id="<removed>"
             placeholder="Ola Normann"
@@ -170,6 +184,7 @@ exports[`Page Story 1`] = `
         </label>
         <div>
           <input
+            aria-invalid="false"
             autocomplete="email"
             id="<removed>"
             placeholder="ola@norge.no"

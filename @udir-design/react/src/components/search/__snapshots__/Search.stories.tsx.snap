@@ -189,6 +189,7 @@ exports[`With Label 1`] = `
   </label>
   <div>
     <input
+      aria-invalid="false"
       id="<removed>"
       name="cat-search"
       placeholder

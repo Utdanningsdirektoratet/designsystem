@@ -17,7 +17,11 @@ exports[`All Optional 1`] = `
       </span>
     </label>
     <div>
-      <textarea id="<removed>">
+      <textarea
+        aria-invalid="false"
+        id="<removed>"
+        style="--_ds-field-sizing: 70px;"
+      >
       </textarea>
     </div>
   </ds-field>
@@ -31,7 +35,11 @@ exports[`All Optional 1`] = `
       </span>
     </label>
     <div>
-      <textarea id="<removed>">
+      <textarea
+        aria-invalid="false"
+        id="<removed>"
+        style="--_ds-field-sizing: 70px;"
+      >
       </textarea>
     </div>
   </ds-field>
@@ -56,6 +64,7 @@ exports[`All Required 1`] = `
     </label>
     <div>
       <input
+        aria-invalid="false"
         id="<removed>"
         required
         type="text"
@@ -73,6 +82,7 @@ exports[`All Required 1`] = `
     </label>
     <div>
       <input
+        aria-invalid="false"
         id="<removed>"
         required
         type="text"
@@ -105,6 +115,7 @@ exports[`Fieldset Checkboxes 1`] = `
     </p>
     <ds-field data-clickdelegatefor="<removed>">
       <input
+        aria-invalid="false"
         id="<removed>"
         name="checkbox-group"
         required
@@ -122,6 +133,7 @@ exports[`Fieldset Checkboxes 1`] = `
     </ds-field>
     <ds-field data-clickdelegatefor="<removed>">
       <input
+        aria-invalid="false"
         id="<removed>"
         name="checkbox-group"
         required
@@ -139,6 +151,7 @@ exports[`Fieldset Checkboxes 1`] = `
     </ds-field>
     <ds-field data-clickdelegatefor="<removed>">
       <input
+        aria-invalid="false"
         id="<removed>"
         name="checkbox-group"
         required
@@ -181,6 +194,7 @@ exports[`Fieldset Radios 1`] = `
     </legend>
     <ds-field data-clickdelegatefor="<removed>">
       <input
+        aria-invalid="false"
         id="<removed>"
         name="radio-group"
         required
@@ -196,6 +210,7 @@ exports[`Fieldset Radios 1`] = `
     </ds-field>
     <ds-field data-clickdelegatefor="<removed>">
       <input
+        aria-invalid="false"
         id="<removed>"
         name="radio-group"
         required
@@ -211,6 +226,7 @@ exports[`Fieldset Radios 1`] = `
     </ds-field>
     <ds-field data-clickdelegatefor="<removed>">
       <input
+        aria-invalid="false"
         id="<removed>"
         name="radio-group"
         required
@@ -242,6 +258,7 @@ exports[`Individual Checkboxes 1`] = `
 >
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       id="<removed>"
       required
       type="checkbox"
@@ -257,6 +274,7 @@ exports[`Individual Checkboxes 1`] = `
   </ds-field>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       id="<removed>"
       type="checkbox"
     >
@@ -298,6 +316,7 @@ exports[`Manual Summary Placement 1`] = `
     </label>
     <div>
       <input
+        aria-invalid="false"
         id="<removed>"
         required
         type="text"
@@ -315,6 +334,7 @@ exports[`Manual Summary Placement 1`] = `
     </label>
     <div>
       <input
+        aria-invalid="false"
         id="<removed>"
         required
         type="text"
@@ -332,6 +352,7 @@ exports[`Manual Summary Placement 1`] = `
     </label>
     <div>
       <input
+        aria-invalid="false"
         id="<removed>"
         required
         type="text"
@@ -361,6 +382,7 @@ exports[`Outline 1`] = `
       </label>
       <div>
         <input
+          aria-invalid="false"
           id="<removed>"
           required
           type="text"
@@ -378,6 +400,7 @@ exports[`Outline 1`] = `
       </label>
       <div>
         <input
+          aria-invalid="false"
           id="<removed>"
           type="text"
         >
@@ -394,6 +417,7 @@ exports[`Outline 1`] = `
       </label>
       <div>
         <input
+          aria-invalid="false"
           id="<removed>"
           required
           type="text"
@@ -422,6 +446,7 @@ exports[`Preview 1`] = `
     </label>
     <div>
       <input
+        aria-invalid="false"
         id="<removed>"
         required
         type="text"
@@ -439,6 +464,7 @@ exports[`Preview 1`] = `
     </label>
     <div>
       <input
+        aria-invalid="false"
         id="<removed>"
         type="text"
       >
@@ -455,6 +481,7 @@ exports[`Preview 1`] = `
     </label>
     <div>
       <input
+        aria-invalid="false"
         id="<removed>"
         required
         type="text"
@@ -482,6 +509,7 @@ exports[`Readonly 1`] = `
     </label>
     <div>
       <input
+        aria-invalid="false"
         id="<removed>"
         readonly
         required
@@ -500,6 +528,7 @@ exports[`Readonly 1`] = `
     </label>
     <div>
       <input
+        aria-invalid="false"
         id="<removed>"
         readonly
         type="text"
@@ -517,6 +546,7 @@ exports[`Readonly 1`] = `
     </label>
     <div>
       <input
+        aria-invalid="false"
         id="<removed>"
         readonly
         required
@@ -543,7 +573,11 @@ exports[`Single Optional Field 1`] = `
       </span>
     </label>
     <div>
-      <textarea id="<removed>">
+      <textarea
+        aria-invalid="false"
+        id="<removed>"
+        style="--_ds-field-sizing: 70px;"
+      >
       </textarea>
     </div>
   </ds-field>
@@ -567,8 +601,10 @@ exports[`Single Required Field 1`] = `
     </label>
     <div>
       <textarea
+        aria-invalid="false"
         id="<removed>"
         required
+        style="--_ds-field-sizing: 70px;"
       >
       </textarea>
     </div>

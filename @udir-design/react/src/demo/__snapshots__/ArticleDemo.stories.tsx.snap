@@ -172,7 +172,10 @@ exports[`Article Story 1`] = `
       </div>
     </header>
     <article>
-      <ds-breadcrumbs aria-label="Du er her:">
+      <ds-breadcrumbs
+        aria-label="Du er her:"
+        role="navigation"
+      >
         <a aria-label="Tilbake til mer informasjon">
           Mer informasjon
         </a>
@@ -188,7 +191,10 @@ exports[`Article Story 1`] = `
             </a>
           </li>
           <li>
-            <a href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/planleggingsverktoy-i-lareplanvisning/">
+            <a
+              aria-current="page"
+              href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/planleggingsverktoy-i-lareplanvisning/"
+            >
               Læreplanverket
             </a>
           </li>

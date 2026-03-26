@@ -12,7 +12,10 @@ exports[`Back Only 1`] = `
 `;
 
 exports[`List Only 1`] = `
-<ds-breadcrumbs aria-label="Du er her:">
+<ds-breadcrumbs
+  aria-label="Du er her:"
+  role="navigation"
+>
   <ol>
     <li>
       <a href="#">
@@ -30,7 +33,10 @@ exports[`List Only 1`] = `
       </a>
     </li>
     <li>
-      <a href="#">
+      <a
+        aria-current="page"
+        href="#"
+      >
         Kartleggingsprøver
       </a>
     </li>
@@ -39,7 +45,10 @@ exports[`List Only 1`] = `
 `;
 
 exports[`Long Items 1`] = `
-<ds-breadcrumbs>
+<ds-breadcrumbs
+  aria-label="Du er her:"
+  role="navigation"
+>
   <a
     aria-label="Tilbake til helsesertifikat for sjømat"
     href="#"
@@ -73,7 +82,10 @@ exports[`Long Items 1`] = `
       </a>
     </li>
     <li>
-      <a href="#">
+      <a
+        aria-current="page"
+        href="#"
+      >
         Slik søker du om å bli vurdert for videreutdanning
       </a>
     </li>
@@ -82,7 +94,7 @@ exports[`Long Items 1`] = `
 `;
 
 exports[`Mobile Viewport 1`] = `
-<ds-breadcrumbs aria-label="Du er her:">
+<ds-breadcrumbs>
   <a
     aria-label="Tilbake til Utdanningsløpet"
     href="#"
@@ -101,7 +113,10 @@ exports[`Mobile Viewport 1`] = `
       </a>
     </li>
     <li>
-      <a href="#">
+      <a
+        aria-current="page"
+        href="#"
+      >
         Grunnskole
       </a>
     </li>
@@ -110,7 +125,10 @@ exports[`Mobile Viewport 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<ds-breadcrumbs aria-label="Du er her:">
+<ds-breadcrumbs
+  aria-label="Du er her:"
+  role="navigation"
+>
   <a
     aria-label="Tilbake til Utdanningsløpet"
     href="#"
@@ -129,7 +147,10 @@ exports[`Preview 1`] = `
       </a>
     </li>
     <li>
-      <a href="#">
+      <a
+        aria-current="page"
+        href="#"
+      >
         Grunnskole
       </a>
     </li>

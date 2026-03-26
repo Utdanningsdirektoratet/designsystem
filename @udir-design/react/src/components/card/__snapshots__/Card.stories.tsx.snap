@@ -43,7 +43,10 @@ exports[`Composed 1`] = `
       >
         Velg rolle
       </label>
-      <select id="<removed>">
+      <select
+        aria-invalid="false"
+        id="<removed>"
+      >
         <option value="lærer">
           Lærer
         </option>
@@ -64,6 +67,7 @@ exports[`Composed 1`] = `
       </label>
       <div>
         <input
+          aria-invalid="false"
           id="<removed>"
           type="text"
         >
@@ -78,6 +82,7 @@ exports[`Composed 1`] = `
       </label>
       <div>
         <input
+          aria-invalid="false"
           id="<removed>"
           type="text"
         >

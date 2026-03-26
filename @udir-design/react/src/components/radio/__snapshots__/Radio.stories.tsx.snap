@@ -4,6 +4,7 @@ exports[`Focused 1`] = `
 <ds-field data-clickdelegatefor="<removed>">
   <input
     aria-describedby="<removed>"
+    aria-invalid="false"
     id="<removed>"
     type="radio"
     value="value"
@@ -40,6 +41,7 @@ exports[`Inline 1`] = `
   <div style="display: flex; flex-wrap: wrap; gap: var(--ds-size-6);">
     <ds-field data-clickdelegatefor="<removed>">
       <input
+        aria-invalid="false"
         id="<removed>"
         name="my-inline"
         type="radio"
@@ -54,6 +56,7 @@ exports[`Inline 1`] = `
     </ds-field>
     <ds-field data-clickdelegatefor="<removed>">
       <input
+        aria-invalid="false"
         id="<removed>"
         name="my-inline"
         type="radio"
@@ -74,6 +77,7 @@ exports[`Preview 1`] = `
 <ds-field data-clickdelegatefor="<removed>">
   <input
     aria-describedby="<removed>"
+    aria-invalid="false"
     id="<removed>"
     type="radio"
     value="value"
@@ -101,6 +105,7 @@ exports[`Radio In Color Context 1`] = `
   <ds-field data-clickdelegatefor="<removed>">
     <input
       aria-describedby="<removed>"
+      aria-invalid="false"
       checked
       id="<removed>"
       type="radio"

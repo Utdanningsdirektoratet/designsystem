@@ -13,6 +13,7 @@ exports[`Affix 1`] = `
       NOK
     </span>
     <input
+      aria-invalid="false"
       id="<removed>"
       size="12"
       type="text"
@@ -34,8 +35,10 @@ exports[`Counter 1`] = `
   </label>
   <textarea
     aria-describedby="<removed>"
+    aria-invalid="false"
     id="<removed>"
     rows="2"
+    style="--_ds-field-sizing: 70px;"
   >
   </textarea>
   <p
@@ -63,6 +66,7 @@ exports[`Position 1`] = `
         Flymodus
       </label>
       <input
+        aria-invalid="false"
         id="<removed>"
         role="switch"
         type="checkbox"
@@ -79,6 +83,7 @@ exports[`Position 1`] = `
         Lydløs
       </label>
       <input
+        aria-invalid="false"
         id="<removed>"
         role="switch"
         type="checkbox"

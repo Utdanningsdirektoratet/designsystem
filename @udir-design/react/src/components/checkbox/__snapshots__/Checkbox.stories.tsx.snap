@@ -8,6 +8,7 @@ exports[`Checkbox In Color Context 1`] = `
   <ds-field data-clickdelegatefor="<removed>">
     <input
       aria-describedby="<removed>"
+      aria-invalid="false"
       checked
       id="<removed>"
       type="checkbox"
@@ -32,6 +33,7 @@ exports[`Focused 1`] = `
 <ds-field data-clickdelegatefor="<removed>">
   <input
     aria-describedby="<removed>"
+    aria-invalid="false"
     id="<removed>"
     type="checkbox"
     value="value"
@@ -67,6 +69,7 @@ exports[`One Option 1`] = `
   </p>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       id="<removed>"
       type="checkbox"
       value="samtykke"
@@ -85,6 +88,7 @@ exports[`Preview 1`] = `
 <ds-field data-clickdelegatefor="<removed>">
   <input
     aria-describedby="<removed>"
+    aria-invalid="false"
     id="<removed>"
     type="checkbox"
     value="value"

@@ -3,6 +3,7 @@
 exports[`Checked 1`] = `
 <ds-field data-clickdelegatefor="<removed>">
   <input
+    aria-invalid="false"
     checked
     id="<removed>"
     role="switch"
@@ -29,6 +30,7 @@ exports[`Controlled 1`] = `
   </legend>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       checked
       id="<removed>"
       role="switch"
@@ -46,6 +48,7 @@ exports[`Controlled 1`] = `
   </p>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       id="<removed>"
       type="checkbox"
     >
@@ -58,6 +61,7 @@ exports[`Controlled 1`] = `
   </ds-field>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       checked
       id="<removed>"
       type="checkbox"
@@ -71,6 +75,7 @@ exports[`Controlled 1`] = `
   </ds-field>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       id="<removed>"
       type="checkbox"
     >
@@ -88,6 +93,7 @@ exports[`Description 1`] = `
 <ds-field data-clickdelegatefor="<removed>">
   <input
     aria-describedby="<removed>"
+    aria-invalid="false"
     checked
     id="<removed>"
     role="switch"
@@ -111,6 +117,7 @@ exports[`Description 1`] = `
 exports[`Disabled 1`] = `
 <ds-field data-clickdelegatefor="<removed>">
   <input
+    aria-invalid="false"
     disabled
     id="<removed>"
     role="switch"
@@ -128,6 +135,7 @@ exports[`Disabled 1`] = `
 exports[`Focused 1`] = `
 <ds-field data-clickdelegatefor="<removed>">
   <input
+    aria-invalid="false"
     id="<removed>"
     role="switch"
     type="checkbox"
@@ -152,6 +160,7 @@ exports[`Group 1`] = `
   <ds-field data-clickdelegatefor="<removed>">
     <input
       aria-describedby="<removed>"
+      aria-invalid="false"
       checked
       id="<removed>"
       role="switch"
@@ -174,6 +183,7 @@ exports[`Group 1`] = `
   <ds-field data-clickdelegatefor="<removed>">
     <input
       aria-describedby="<removed>"
+      aria-invalid="false"
       id="<removed>"
       role="switch"
       type="checkbox"
@@ -195,6 +205,7 @@ exports[`Group 1`] = `
   <ds-field data-clickdelegatefor="<removed>">
     <input
       aria-describedby="<removed>"
+      aria-invalid="false"
       id="<removed>"
       role="switch"
       type="checkbox"
@@ -237,6 +248,7 @@ exports[`Group End 1`] = `
     data-position="end"
   >
     <input
+      aria-invalid="false"
       checked
       id="<removed>"
       role="switch"
@@ -255,6 +267,7 @@ exports[`Group End 1`] = `
     data-position="end"
   >
     <input
+      aria-invalid="false"
       id="<removed>"
       role="switch"
       type="checkbox"
@@ -273,6 +286,7 @@ exports[`Group End 1`] = `
 exports[`Preview 1`] = `
 <ds-field data-clickdelegatefor="<removed>">
   <input
+    aria-invalid="false"
     id="<removed>"
     role="switch"
     type="checkbox"
@@ -289,6 +303,7 @@ exports[`Preview 1`] = `
 exports[`Read Only 1`] = `
 <ds-field data-clickdelegatefor="<removed>">
   <input
+    aria-invalid="false"
     id="<removed>"
     readonly
     role="switch"
@@ -311,6 +326,7 @@ exports[`Switch In Color Context 1`] = `
   <ds-field data-clickdelegatefor="<removed>">
     <input
       aria-describedby="<removed>"
+      aria-invalid="false"
       checked
       id="<removed>"
       role="switch"

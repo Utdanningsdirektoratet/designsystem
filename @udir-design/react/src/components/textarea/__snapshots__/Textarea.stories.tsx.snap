@@ -9,8 +9,10 @@ exports[`Controlled 1`] = `
     Beskriv bekymringen din
   </label>
   <textarea
+    aria-invalid="false"
     id="<removed>"
     rows="4"
+    style="--_ds-field-sizing: 124px;"
   >
   </textarea>
 </ds-field>
@@ -32,8 +34,10 @@ exports[`Disabled 1`] = `
     Disabled Textarea
   </label>
   <textarea
+    aria-invalid="false"
     disabled
     id="<removed>"
+    style="--_ds-field-sizing: 70px;"
   >
   </textarea>
 </ds-field>
@@ -48,9 +52,11 @@ exports[`Focused 1`] = `
     Label
   </label>
   <textarea
+    aria-invalid="false"
     cols="20"
     id="<removed>"
     rows="3"
+    style="--_ds-field-sizing: 97px;"
   >
   </textarea>
 </ds-field>
@@ -64,7 +70,11 @@ exports[`Full Width 1`] = `
   >
     Beskriv bekymringen din
   </label>
-  <textarea id="<removed>">
+  <textarea
+    aria-invalid="false"
+    id="<removed>"
+    style="--_ds-field-sizing: 70px;"
+  >
   </textarea>
 </ds-field>
 `;
@@ -78,9 +88,11 @@ exports[`Preview 1`] = `
     Label
   </label>
   <textarea
+    aria-invalid="false"
     cols="20"
     id="<removed>"
     rows="3"
+    style="--_ds-field-sizing: 97px;"
   >
   </textarea>
 </ds-field>
@@ -95,8 +107,10 @@ exports[`Read Only 1`] = `
     Read-Only Textarea
   </label>
   <textarea
+    aria-invalid="false"
     id="<removed>"
     readonly
+    style="--_ds-field-sizing: 70px;"
   >
   </textarea>
 </ds-field>

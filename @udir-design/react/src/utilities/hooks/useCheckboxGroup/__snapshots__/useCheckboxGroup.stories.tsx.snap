@@ -10,6 +10,7 @@ exports[`Controlled 1`] = `
   </legend>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       checked
       id="<removed>"
       name="my-controlled"
@@ -25,6 +26,7 @@ exports[`Controlled 1`] = `
   </ds-field>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       id="<removed>"
       name="my-controlled"
       type="checkbox"
@@ -39,6 +41,7 @@ exports[`Controlled 1`] = `
   </ds-field>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       checked
       id="<removed>"
       name="my-controlled"
@@ -96,6 +99,7 @@ exports[`Default 1`] = `
 <fieldset>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       checked
       id="<removed>"
       name="_r_2_"
@@ -111,6 +115,7 @@ exports[`Default 1`] = `
   </ds-field>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       id="<removed>"
       name="_r_2_"
       type="checkbox"
@@ -125,6 +130,7 @@ exports[`Default 1`] = `
   </ds-field>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       id="<removed>"
       name="_r_2_"
       type="checkbox"
@@ -162,6 +168,7 @@ exports[`Disabled 1`] = `
   </p>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       checked
       disabled
       id="<removed>"
@@ -178,6 +185,7 @@ exports[`Disabled 1`] = `
   </ds-field>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       disabled
       id="<removed>"
       name="my-disabled"
@@ -193,6 +201,7 @@ exports[`Disabled 1`] = `
   </ds-field>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       disabled
       id="<removed>"
       name="my-disabled"
@@ -231,6 +240,7 @@ exports[`Group 1`] = `
   </p>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       checked
       id="<removed>"
       name="my-group"
@@ -246,6 +256,7 @@ exports[`Group 1`] = `
   </ds-field>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       id="<removed>"
       name="my-group"
       type="checkbox"
@@ -260,6 +271,7 @@ exports[`Group 1`] = `
   </ds-field>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       id="<removed>"
       name="my-group"
       type="checkbox"
@@ -293,6 +305,7 @@ exports[`Indeterminate In Table 1`] = `
       <th>
         <ds-field data-clickdelegatefor="<removed>">
           <input
+            aria-invalid="false"
             aria-label="Velg alle"
             id="<removed>"
             name="utilities-usecheckboxgroup--indeterminate-in-table"
@@ -314,6 +327,7 @@ exports[`Indeterminate In Table 1`] = `
       <td>
         <ds-field data-clickdelegatefor="<removed>">
           <input
+            aria-invalid="false"
             aria-labelledby="<removed>"
             id="<removed>"
             name="utilities-usecheckboxgroup--indeterminate-in-table"
@@ -333,6 +347,7 @@ exports[`Indeterminate In Table 1`] = `
       <td>
         <ds-field data-clickdelegatefor="<removed>">
           <input
+            aria-invalid="false"
             aria-labelledby="<removed>"
             checked
             id="<removed>"
@@ -353,6 +368,7 @@ exports[`Indeterminate In Table 1`] = `
       <td>
         <ds-field data-clickdelegatefor="<removed>">
           <input
+            aria-invalid="false"
             aria-labelledby="<removed>"
             checked
             id="<removed>"
@@ -373,6 +389,7 @@ exports[`Indeterminate In Table 1`] = `
       <td>
         <ds-field data-clickdelegatefor="<removed>">
           <input
+            aria-invalid="false"
             aria-labelledby="<removed>"
             id="<removed>"
             name="utilities-usecheckboxgroup--indeterminate-in-table"
@@ -408,6 +425,7 @@ exports[`Read Only 1`] = `
   </p>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       checked
       id="<removed>"
       name="my-readonly"
@@ -424,6 +442,7 @@ exports[`Read Only 1`] = `
   </ds-field>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       id="<removed>"
       name="my-readonly"
       readonly
@@ -439,6 +458,7 @@ exports[`Read Only 1`] = `
   </ds-field>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       id="<removed>"
       name="my-readonly"
       readonly

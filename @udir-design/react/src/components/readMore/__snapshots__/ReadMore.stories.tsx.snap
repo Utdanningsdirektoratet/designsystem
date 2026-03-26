@@ -10,6 +10,7 @@ exports[`Example 1`] = `
   </legend>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       id="<removed>"
       name="my-group"
       type="radio"
@@ -24,6 +25,7 @@ exports[`Example 1`] = `
   </ds-field>
   <ds-field data-clickdelegatefor="<removed>">
     <input
+      aria-invalid="false"
       id="<removed>"
       name="my-group"
       type="radio"

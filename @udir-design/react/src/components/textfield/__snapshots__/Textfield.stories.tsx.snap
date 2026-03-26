@@ -13,6 +13,7 @@ exports[`Affix 1`] = `
       NOK
     </span>
     <input
+      aria-invalid="false"
       id="<removed>"
       inputmode="numeric"
       type="text"
@@ -35,6 +36,7 @@ exports[`Controlled 1`] = `
     </label>
     <div>
       <input
+        aria-invalid="false"
         id="<removed>"
         type="text"
         value
@@ -61,6 +63,7 @@ exports[`Counter 1`] = `
   <div>
     <input
       aria-describedby="<removed>"
+      aria-invalid="false"
       id="<removed>"
       inputmode="numeric"
       type="text"
@@ -87,6 +90,7 @@ exports[`Disabled 1`] = `
   </label>
   <div>
     <input
+      aria-invalid="false"
       disabled
       id="<removed>"
       type="text"
@@ -102,9 +106,11 @@ exports[`Disabled 1`] = `
   </label>
   <div>
     <textarea
+      aria-invalid="false"
       disabled
       id="<removed>"
       rows="4"
+      style="--_ds-field-sizing: 124px;"
     >
     </textarea>
   </div>
@@ -121,6 +127,7 @@ exports[`Focused 1`] = `
   </label>
   <div>
     <input
+      aria-invalid="false"
       id="<removed>"
       type="text"
     >
@@ -138,6 +145,7 @@ exports[`Preview 1`] = `
   </label>
   <div>
     <input
+      aria-invalid="false"
       id="<removed>"
       type="text"
     >
@@ -155,6 +163,7 @@ exports[`Read Only 1`] = `
   </label>
   <div>
     <input
+      aria-invalid="false"
       id="<removed>"
       readonly
       type="text"
@@ -170,9 +179,11 @@ exports[`Read Only 1`] = `
   </label>
   <div>
     <textarea
+      aria-invalid="false"
       id="<removed>"
       readonly
       rows="4"
+      style="--_ds-field-sizing: 124px;"
     >
     </textarea>
   </div>
@@ -189,8 +200,10 @@ exports[`Rows 1`] = `
   </label>
   <div>
     <textarea
+      aria-invalid="false"
       id="<removed>"
       rows="4"
+      style="--_ds-field-sizing: 124px;"
     >
     </textarea>
   </div>

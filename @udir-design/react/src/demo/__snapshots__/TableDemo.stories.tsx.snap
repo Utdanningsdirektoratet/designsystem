@@ -72,6 +72,7 @@ exports[`Table Story 1`] = `
             <th>
               <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-invalid="false"
                   aria-label="Select all"
                   id="<removed>"
                   name="my-checkbox"
@@ -109,6 +110,7 @@ exports[`Table Story 1`] = `
             <td>
               <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-invalid="false"
                   aria-label="Check Lise Nordmann"
                   id="<removed>"
                   name="my-checkbox"
@@ -219,6 +221,7 @@ exports[`Table Story 1`] = `
             <td>
               <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-invalid="false"
                   aria-label="Check Ola Nordmann"
                   id="<removed>"
                   name="my-checkbox"
@@ -329,6 +332,7 @@ exports[`Table Story 1`] = `
             <td>
               <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-invalid="false"
                   aria-label="Check Kari Nordmann"
                   id="<removed>"
                   name="my-checkbox"
@@ -439,6 +443,7 @@ exports[`Table Story 1`] = `
             <td>
               <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-invalid="false"
                   aria-label="Check Per Nordmann"
                   id="<removed>"
                   name="my-checkbox"
@@ -549,6 +554,7 @@ exports[`Table Story 1`] = `
             <td>
               <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-invalid="false"
                   aria-label="Check Anne Nordmann"
                   id="<removed>"
                   name="my-checkbox"
@@ -747,7 +753,7 @@ exports[`Table Story 1`] = `
             <button
               aria-disabled="true"
               data-variant="tertiary"
-              variant="tertiary"
+              type="button"
             >
               <span>
                 Forrige
@@ -759,6 +765,7 @@ exports[`Table Story 1`] = `
               aria-current="true"
               aria-label="Side 1"
               data-variant="tertiary"
+              type="button"
             >
               1
             </button>
@@ -767,6 +774,7 @@ exports[`Table Story 1`] = `
             <button
               aria-label="Side 2"
               data-variant="tertiary"
+              type="button"
             >
               2
             </button>
@@ -775,6 +783,7 @@ exports[`Table Story 1`] = `
             <button
               aria-label="Side 3"
               data-variant="tertiary"
+              type="button"
             >
               3
             </button>
@@ -782,7 +791,7 @@ exports[`Table Story 1`] = `
           <li>
             <button
               data-variant="tertiary"
-              variant="tertiary"
+              type="button"
             >
               <span>
                 Neste

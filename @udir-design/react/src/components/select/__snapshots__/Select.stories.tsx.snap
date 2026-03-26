@@ -11,7 +11,10 @@ exports[`Controlled 1`] = `
   >
     Fylke
   </label>
-  <select id="<removed>">
+  <select
+    aria-invalid="false"
+    id="<removed>"
+  >
     <option value>
       Velg et fylke …
     </option>
@@ -69,7 +72,10 @@ exports[`Controlled 1`] = `
   >
     By
   </label>
-  <select id="<removed>">
+  <select
+    aria-invalid="false"
+    id="<removed>"
+  >
     <option value>
       Velg en by …
     </option>
@@ -86,6 +92,7 @@ exports[`Disabled 1`] = `
     Fylke
   </label>
   <select
+    aria-invalid="false"
     disabled
     id="<removed>"
   >
@@ -222,6 +229,7 @@ exports[`Read Only 1`] = `
     Fylke
   </label>
   <select
+    aria-invalid="false"
     aria-readonly="true"
     id="<removed>"
   >
@@ -359,7 +367,10 @@ exports[`With Optgroup 1`] = `
   >
     Klassetrinn
   </label>
-  <select id="<removed>">
+  <select
+    aria-invalid="false"
+    id="<removed>"
+  >
     <option value>
       Velg klassetrinn …
     </option>

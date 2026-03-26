@@ -847,6 +847,7 @@ exports[`Full 1`] = `
           </label>
           <div>
             <input
+              aria-invalid="false"
               id="<removed>"
               name="q1"
               type="text"
@@ -862,6 +863,7 @@ exports[`Full 1`] = `
           </label>
           <div>
             <input
+              aria-invalid="false"
               id="<removed>"
               name="q2"
               type="text"
@@ -1066,6 +1068,7 @@ exports[`Simple Navigation 1`] = `
           </label>
           <div>
             <input
+              aria-invalid="false"
               id="<removed>"
               name="step1"
               type="text"

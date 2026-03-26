@@ -78,6 +78,7 @@ exports[`Form Example 1`] = `
           <td>
             <ds-field data-clickdelegatefor="<removed>">
               <input
+                aria-invalid="false"
                 aria-label="Uenig i påstand Første påstand"
                 id="<removed>"
                 name="rankings.Første påstand"
@@ -89,6 +90,7 @@ exports[`Form Example 1`] = `
           <td>
             <ds-field data-clickdelegatefor="<removed>">
               <input
+                aria-invalid="false"
                 aria-label="Nøytral i påstand Første påstand"
                 id="<removed>"
                 name="rankings.Første påstand"
@@ -100,6 +102,7 @@ exports[`Form Example 1`] = `
           <td>
             <ds-field data-clickdelegatefor="<removed>">
               <input
+                aria-invalid="false"
                 aria-label="Enig i påstand Første påstand"
                 id="<removed>"
                 name="rankings.Første påstand"
@@ -116,6 +119,7 @@ exports[`Form Example 1`] = `
           <td>
             <ds-field data-clickdelegatefor="<removed>">
               <input
+                aria-invalid="false"
                 aria-label="Uenig i påstand Andre påstand"
                 id="<removed>"
                 name="rankings.Andre påstand"
@@ -127,6 +131,7 @@ exports[`Form Example 1`] = `
           <td>
             <ds-field data-clickdelegatefor="<removed>">
               <input
+                aria-invalid="false"
                 aria-label="Nøytral i påstand Andre påstand"
                 id="<removed>"
                 name="rankings.Andre påstand"
@@ -138,6 +143,7 @@ exports[`Form Example 1`] = `
           <td>
             <ds-field data-clickdelegatefor="<removed>">
               <input
+                aria-invalid="false"
                 aria-label="Enig i påstand Andre påstand"
                 id="<removed>"
                 name="rankings.Andre påstand"
@@ -154,6 +160,7 @@ exports[`Form Example 1`] = `
           <td>
             <ds-field data-clickdelegatefor="<removed>">
               <input
+                aria-invalid="false"
                 aria-label="Uenig i påstand Tredje påstand"
                 id="<removed>"
                 name="rankings.Tredje påstand"
@@ -165,6 +172,7 @@ exports[`Form Example 1`] = `
           <td>
             <ds-field data-clickdelegatefor="<removed>">
               <input
+                aria-invalid="false"
                 aria-label="Nøytral i påstand Tredje påstand"
                 id="<removed>"
                 name="rankings.Tredje påstand"
@@ -176,6 +184,7 @@ exports[`Form Example 1`] = `
           <td>
             <ds-field data-clickdelegatefor="<removed>">
               <input
+                aria-invalid="false"
                 aria-label="Enig i påstand Tredje påstand"
                 id="<removed>"
                 name="rankings.Tredje påstand"

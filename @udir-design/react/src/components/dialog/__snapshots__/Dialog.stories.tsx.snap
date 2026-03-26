@@ -53,8 +53,10 @@ exports[`Dialog Non Modal 1`] = `
     Besvarelse
   </label>
   <textarea
+    aria-invalid="false"
     id="<removed>"
     rows="8"
+    style="--_ds-field-sizing: 232px;"
   >
   </textarea>
 </ds-field>
@@ -141,6 +143,7 @@ exports[`Dialog With Form 1`] = `
     </label>
     <div>
       <input
+        aria-invalid="false"
         autofocus="true"
         id="<removed>"
         type="text"
@@ -284,15 +287,16 @@ exports[`Dialog With Suggestion 1`] = `
       <ds-suggestion>
         <input
           aria-autocomplete="list"
-          aria-controls=":u-datalist1"
+          aria-controls=":ds:3"
           aria-expanded="true"
-          aria-label="​​​​​"
+          aria-invalid="false"
+          aria-label="Velg en kommune​​​​​"
           autocomplete="off"
-          data-label
+          data-label="Velg en kommune"
           id="<removed>"
-          list=":u-datalist1"
+          list=":ds:3"
           placeholder=" "
-          popovertarget=":u-datalist1"
+          popovertarget=":ds:3"
           role="combobox"
           type="text"
         >
@@ -433,6 +437,7 @@ exports[`Drawer 1`] = `
     style="margin-bottom: var(--ds-size-4);"
   >
     <input
+      aria-invalid="false"
       checked
       id="<removed>"
       type="checkbox"
@@ -448,6 +453,7 @@ exports[`Drawer 1`] = `
     <div style="display: flex; flex-wrap: wrap; gap: var(--ds-size-5); margin-bottom: var(--ds-size-8);">
       <ds-field data-clickdelegatefor="<removed>">
         <input
+          aria-invalid="false"
           id="<removed>"
           name="drawer"
           type="radio"
@@ -462,6 +468,7 @@ exports[`Drawer 1`] = `
       </ds-field>
       <ds-field data-clickdelegatefor="<removed>">
         <input
+          aria-invalid="false"
           id="<removed>"
           name="drawer"
           type="radio"
@@ -476,6 +483,7 @@ exports[`Drawer 1`] = `
       </ds-field>
       <ds-field data-clickdelegatefor="<removed>">
         <input
+          aria-invalid="false"
           id="<removed>"
           name="drawer"
           type="radio"
@@ -490,6 +498,7 @@ exports[`Drawer 1`] = `
       </ds-field>
       <ds-field data-clickdelegatefor="<removed>">
         <input
+          aria-invalid="false"
           id="<removed>"
           name="drawer"
           type="radio"
@@ -504,6 +513,7 @@ exports[`Drawer 1`] = `
       </ds-field>
       <ds-field data-clickdelegatefor="<removed>">
         <input
+          aria-invalid="false"
           id="<removed>"
           name="drawer"
           type="radio"
