@@ -37,6 +37,7 @@ export const Preview = meta.story({
             `Rejected dropped file(s):\n  - ${rej.map((x) => `${x.file.name} (reason: ${x.errors.map((err) => err.message).join(', ')})`).join(',\n  - ')}`,
           );
         },
+        multiple: false,
         accept: {
           'application/pdf': [],
         },
