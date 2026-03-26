@@ -1,25 +1,13 @@
 'use client';
 import React, { type Ref, type SVGProps, forwardRef } from 'react';
-import { useId } from './util/useId';
-interface SVGRProps {
-  title?: string;
-  titleId?: string;
-}
 interface SVGRProps {
   size?: number | string;
 }
 const SvgBadeballFill = forwardRef(
   (
-    {
-      size,
-      title,
-      titleId: _titleId,
-      ...props
-    }: SVGProps<SVGSVGElement> & SVGRProps,
+    { size, ...props }: SVGProps<SVGSVGElement> & SVGRProps,
     ref: Ref<SVGSVGElement>,
   ) => {
-    let titleId: string | undefined = useId();
-    titleId = title ? (_titleId ? _titleId : 'title-' + titleId) : undefined;
     const __srcW = 42;
     const __srcH = 42;
     const __isWide = true;
@@ -49,10 +37,8 @@ const SvgBadeballFill = forwardRef(
         focusable="false"
         role="img"
         ref={ref}
-        aria-labelledby={titleId}
         {...props}
       >
-        {title ? <title id={titleId}>{title}</title> : null}
         <path
           fill="#BED5E8"
           d="M38.124 31.653a6.1 6.1 0 0 0-.055-2.126c-.6-2.985-3.223-6.223-6.254-9.057-2.054-1.888-4.735-3.995-8.216-6.336 1.318-2.636 0-4.792-.599-5.391a13.4 13.4 0 0 1 2.041-.768c5.914-1.9 10.254-.46 11.735.618 6.708 9.104 3.594 19.466 1.348 23.06"

@@ -1,25 +1,13 @@
 'use client';
 import React, { type Ref, type SVGProps, forwardRef } from 'react';
-import { useId } from './util/useId';
-interface SVGRProps {
-  title?: string;
-  titleId?: string;
-}
 interface SVGRProps {
   size?: number | string;
 }
 const SvgReFill = forwardRef(
   (
-    {
-      size,
-      title,
-      titleId: _titleId,
-      ...props
-    }: SVGProps<SVGSVGElement> & SVGRProps,
+    { size, ...props }: SVGProps<SVGSVGElement> & SVGRProps,
     ref: Ref<SVGSVGElement>,
   ) => {
-    let titleId: string | undefined = useId();
-    titleId = title ? (_titleId ? _titleId : 'title-' + titleId) : undefined;
     const __srcW = 29;
     const __srcH = 42;
     const __isWide = false;
@@ -49,10 +37,8 @@ const SvgReFill = forwardRef(
         focusable="false"
         role="img"
         ref={ref}
-        aria-labelledby={titleId}
         {...props}
       >
-        {title ? <title id={titleId}>{title}</title> : null}
         <path
           fill="#ECDBC2"
           d="M2.437 7.866S8.58-2.21 18.738 2.05c10.159 4.26 9.4 13.577 6.339 17.604-2.962 3.895-4.538 6.97-5.357 12.212C18.903 37.108 11.96 41 7.62 41c-3.426 0-5.894-2.132-5.183-7.649 0 0 .836-9.79-.775-15.221-1.854-6.25.775-10.262.775-10.262z"

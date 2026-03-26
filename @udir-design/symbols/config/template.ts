@@ -2,21 +2,15 @@ import {
   blockStatement,
   identifier,
   importDefaultSpecifier,
-  isIdentifier,
   isImportDeclaration,
-  isObjectProperty,
   isStringLiteral,
   traverseFast,
 } from '@babel/types';
 import type {
-  Identifier,
   JSXAttribute,
   JSXIdentifier,
   JSXOpeningElement,
   JSXSpreadAttribute,
-  ObjectPattern,
-  ObjectProperty,
-  RestElement,
 } from '@babel/types';
 import type { Config } from '@svgr/core';
 
@@ -32,25 +26,6 @@ const template: Template = (variables, { tpl }) => {
       node.specifiers.unshift(importDefaultSpecifier(identifier('React')));
     }
   });
-
-  // Rename titleId to _titleId to avoid conflict with generated variable
-  const firstParam = (
-    Array.isArray(variables.props) ? variables.props[0] : variables.props
-  ) as ObjectPattern | undefined;
-
-  if (firstParam?.type === 'ObjectPattern') {
-    const titleIdProp = firstParam.properties.find(
-      (p): p is ObjectProperty =>
-        p.type === 'ObjectProperty' &&
-        (p.key as Identifier | undefined)?.name === 'titleId',
-    );
-    if (titleIdProp) {
-      titleIdProp.value = {
-        type: 'Identifier',
-        name: '_titleId',
-      } satisfies Identifier;
-    }
-  }
 
   // Analyze original SVG dimensions (width/height or viewBox)
   const svgOpen = variables.jsx.openingElement as JSXOpeningElement;
@@ -105,59 +80,15 @@ const template: Template = (variables, { tpl }) => {
     svgOpen.attributes.splice(propsSpreadIdx, 0, sizeSpread);
   else svgOpen.attributes.push(sizeSpread);
 
-  // Add size to props; ensure ...props is present
-  try {
-    const firstParam = (
-      Array.isArray(variables.props) ? variables.props[0] : variables.props
-    ) as ObjectPattern | undefined;
-
-    if (firstParam?.type === 'ObjectPattern') {
-      const hasSize = firstParam.properties.some(
-        (p): p is ObjectProperty =>
-          isObjectProperty(p) &&
-          !p.computed &&
-          isIdentifier(p.key, { name: 'size' }),
-      );
-
-      if (!hasSize) {
-        const sizeProp: ObjectProperty = {
-          type: 'ObjectProperty',
-          key: { type: 'Identifier', name: 'size' },
-          value: { type: 'Identifier', name: 'size' },
-          shorthand: true,
-          computed: false,
-        };
-        firstParam.properties.unshift(sizeProp);
-      }
-
-      const hasRest = firstParam.properties.some(
-        (p): p is RestElement => p.type === 'RestElement',
-      );
-      if (!hasRest) {
-        const rest: RestElement = {
-          type: 'RestElement',
-          argument: { type: 'Identifier', name: 'props' },
-        };
-        firstParam.properties.push(rest);
-      }
-    }
-  } catch {
-    // be intentionally silent
-  }
-
   // Output
   return tpl`
 "use client";
 import React, { type Ref, type SVGProps, forwardRef } from "react";
-import { useId } from "./util/useId";
 
 ${variables.interfaces}
 interface SVGRProps { size?: number | string; }
 
-const ${variables.componentName} = forwardRef((${variables.props}) => {
-  let titleId: string | undefined = useId();
-  titleId = title ? (_titleId ? _titleId : "title-" + titleId) : undefined;
-
+const ${variables.componentName} = forwardRef(({size, ...props}: SVGProps<SVGSVGElement> & SVGRProps, ref: Ref<SVGSVGElement>) => {
   const __srcW = ${JSON.stringify(srcW)};
   const __srcH = ${JSON.stringify(srcH)};
   const __isWide = ${JSON.stringify(isWide)};
