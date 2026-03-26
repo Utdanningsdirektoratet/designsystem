@@ -13,9 +13,8 @@ const ARIA_LABELLEDBY_PATTERN = /\baria-labelledby="[^"]+"/g;
 const ARIA_DESCRIBEDBY_PATTERN = /\baria-describedby="[^"]+"/g;
 const DATA_CLICKDELEGATEFOR_PATTERN = /\bdata-clickdelegatefor="[^"]+"/g;
 
-const DS_POPOVER_ARROW_PATTERN = /(--ds-popover-arrow-[xy]): [^;]+;/g;
-const DSC_TOOLTIP_ARROW_PATTERN = /(--dsc-tooltip-arrow-[xy]): [^;]+;/g;
 const TRANSLATE_PATTERN = /(translate): [^;]+;/g;
+const DS_FLOATING_ARROW_PATTERN = /(--_ds-floating-arrow-[xy]): [^;]+;/g;
 const HIGHCHART_ID_PATTERN = /\bid=(["'])highcharts-[^'"]+\1/g;
 
 export default {
@@ -32,10 +31,8 @@ export default {
         DATA_CLICKDELEGATEFOR_PATTERN,
         'data-clickdelegatefor="<removed>"',
       )
-      // ensure dynamic popover arrow position doesn't break tests
-      .replace(DS_POPOVER_ARROW_PATTERN, '$1: <removed>;')
-      // ensure dynamic tooltip arrow position doesn't break tests
-      .replace(DSC_TOOLTIP_ARROW_PATTERN, '$1: <removed>;')
+      // ensure dynamic floating arrow position doesn't break tests
+      .replace(DS_FLOATING_ARROW_PATTERN, '$1: <removed>;')
       // ensure dynamic translate doesn't break tests
       .replace(TRANSLATE_PATTERN, '$1: <removed>;');
 
