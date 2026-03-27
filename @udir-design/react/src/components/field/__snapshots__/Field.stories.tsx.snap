@@ -33,7 +33,7 @@ exports[`Counter 1`] = `
     Legg til en beskrivelse
   </label>
   <textarea
-    rows="2"
+    rows="4"
     id="counter"
     aria-describedby="counter:description:1"
   >
@@ -44,15 +44,31 @@ exports[`Counter 1`] = `
     data-variant="default"
     aria-hidden="true"
   >
-    10 tegn igjen
+    75 tegn igjen
   </p>
   <div
     aria-hidden="true"
     data-field="description"
     id="counter:description:1"
   >
-    Maks 10 tegn tillatt.
+    Maks 75 tegn tillatt.
   </div>
+</div>
+`;
+
+exports[`Format 1`] = `
+<div>
+  <label
+    data-weight="medium"
+    for="format"
+  >
+    Fødselsnummer
+  </label>
+  <input
+    id="format"
+    inputmode="numeric"
+    type="text"
+  >
 </div>
 `;
 
