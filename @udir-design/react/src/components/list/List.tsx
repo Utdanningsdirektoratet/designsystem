@@ -30,6 +30,9 @@ const List = Object.assign(DigdirList, {
 });
 
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
+List.Unordered.displayName = 'List.Unordered';
+// This no longer works??? Sjekke etter påsken
+List.Ordered.displayName = 'List.Ordered';
 List.Item.displayName = 'List.Item';
 
 export type { ListItemProps, ListOrderedProps, ListUnorderedProps };
