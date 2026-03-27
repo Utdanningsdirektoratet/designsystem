@@ -6,9 +6,20 @@ import { formatReactSource } from '.storybook/utils/sourceTransformers';
 import { Button } from '../button/Button';
 import { Textfield } from '../textfield/Textfield';
 import { ErrorSummary } from './ErrorSummary';
+import { ErrorSummary as FakeErrorSummary } from './docs/FakeErrorSummary';
+import { ErrorSummaryHeading } from './docs/FakeErrorSummaryHeading';
+import { ErrorSummaryItem } from './docs/FakeErrorSummaryItem';
+import { ErrorSummaryLink } from './docs/FakeErrorSummaryLink';
+import { ErrorSummaryList } from './docs/FakeErrorSummaryList';
 
 const meta = preview.meta({
-  component: ErrorSummary,
+  component: FakeErrorSummary,
+  subcomponents: {
+    'ErrorSummary.Heading': ErrorSummaryHeading,
+    'ErrorSummary.Item': ErrorSummaryItem,
+    'ErrorSummary.Link': ErrorSummaryLink,
+    'ErrorSummary.List': ErrorSummaryList,
+  },
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {
