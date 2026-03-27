@@ -1,10 +1,17 @@
 import { expect, userEvent, within } from 'storybook/test';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
+import { Footer as FakeFooter } from './docs/FakeFooter';
+import { FooterItem } from './docs/FakeFooterItem';
+import { FooterList } from './docs/FakeFooterList';
 import { Footer } from './';
 
 const meta = preview.meta({
-  component: Footer,
+  component: FakeFooter,
+  subcomponents: {
+    'Footer.List': FooterList,
+    'Footer.Item': FooterItem,
+  },
   tags: ['beta', 'udir'],
   parameters: {
     componentOrigin: {

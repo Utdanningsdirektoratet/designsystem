@@ -5,9 +5,14 @@ import { Textarea } from '../textarea/Textarea';
 import { Label } from '../typography/label/Label';
 import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
 import { Field } from './Field';
+import { Field as FakeField } from './docs/FakeField';
+import { FieldCounter } from './docs/FakeFieldCounter';
 
 const meta = preview.meta({
-  component: Field,
+  component: FakeField,
+  subcomponents: {
+    'Field.Counter': FieldCounter,
+  },
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {

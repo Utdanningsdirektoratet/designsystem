@@ -2,9 +2,17 @@ import preview from '.storybook/preview';
 import { Link } from '../link/Link';
 import { Heading } from '../typography/heading/Heading';
 import { List } from './List';
+import { ListItem } from './docs/FakeListItem';
+import { ListOrdered } from './docs/FakeListOrdered';
 
 const meta = preview.meta({
+  // Displays as ListUnordered
   component: List.Unordered,
+  subcomponents: {
+    // Not subcomponent but want it to be displayed in tab-view for props
+    'List.Ordered': ListOrdered,
+    'List.Item': ListItem,
+  },
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {
