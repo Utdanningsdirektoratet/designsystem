@@ -2,7 +2,7 @@
 
 exports[`Mobile 1`] = `
 <ds-pagination
-  aria-label="Bla i sider"
+  aria-label="Sidenavigering"
   role="navigation"
 >
   <ul>
@@ -10,6 +10,7 @@ exports[`Mobile 1`] = `
       <button
         aria-label="Forrige side"
         data-variant="tertiary"
+        variant="tertiary"
       >
       </button>
     </li>
@@ -23,6 +24,7 @@ exports[`Mobile 1`] = `
     </li>
     <li>
       <button
+        aria-current="true"
         aria-label="Side 3"
         data-variant="tertiary"
       >
@@ -41,6 +43,7 @@ exports[`Mobile 1`] = `
       <button
         aria-label="Neste side"
         data-variant="tertiary"
+        variant="tertiary"
       >
       </button>
     </li>
