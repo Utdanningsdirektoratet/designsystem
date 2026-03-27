@@ -35,6 +35,8 @@ Det finnes flere måter å håndtere opplasting av filer. Se eksempler på dette
 
 Varianten `FileUpload.Dropzone`er et stipla område med en knapp inni, ment å bruke for dra og slipp ved filopplasting. I dette eksempelet bruker vi [biblioteket `react-dropzone`](https://react-dropzone.js.org/). Komponenten er utviklet slik at den støtter dette biblioteket, men man står fritt til å velge løsningen man selv ønsker.
 
+Komponenten er stylet slik at man kan bruke `isDragActive` for å endre utseendet på dropzone når brukeren holder en fil over den. Du kan også bruke `isDragGlobal` for å utheve dropzone når brukeren drar en fil over vinduet. Disse propertiesene får du ut av boksen med `react-dropzone`, men du kan også skrive din egen logikk så lenge du bruker samme property-navn. Se eksempelet under for hvordan dette ser ut.
+
 <Canvas of={FileUploadStories.ExampleDropZone} />
 
 ### Knapp
