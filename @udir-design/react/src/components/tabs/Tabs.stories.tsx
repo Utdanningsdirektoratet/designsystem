@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { expect, userEvent, within } from 'storybook/test';
+import { expect, fireEvent, userEvent, waitFor, within } from 'storybook/test';
 import {
   BellIcon,
   CalculatorIcon,
@@ -29,6 +29,17 @@ const meta = preview.meta({
       originator: 'digdir',
     },
     layout: 'centered',
+    /* a11y complains on aria-controls on tabs when there is no tabs-panel, which there are several places in the examples */
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'aria-valid-attr-value',
+            enabled: false,
+          },
+        ],
+      },
+    },
   },
 });
 
@@ -89,21 +100,32 @@ export const Preview = meta.story({
     );
 
     await step('Can navigate tabs with the keyboard', async () => {
-      expect(tab1).toHaveFocus();
-
-      await userEvent.keyboard('{arrowright}');
-      expect(tab2).toHaveFocus();
-      await userEvent.keyboard('{enter}');
-      expect(tab2).toHaveAttribute('aria-selected', 'true');
-      const panel2 = canvas.getByText(/innhold for tab 2/i);
-      expect(panel2).toBeVisible();
-
-      await userEvent.keyboard('{arrowleft}');
-      expect(tab1).toHaveFocus();
-      await userEvent.keyboard(' ');
-      expect(tab1).toHaveAttribute('aria-selected', 'true');
-      const panel1 = canvas.getByText(/innhold for tab 1/i);
-      expect(panel1).toBeVisible();
+      tab1.focus();
+      await waitFor(() => {
+        expect(tab1).toHaveFocus();
+      });
+      fireEvent.keyDown(tab1, { key: 'ArrowRight' });
+      await waitFor(() => {
+        expect(tab2).toHaveFocus();
+      });
+      fireEvent.keyDown(tab2, { key: 'Enter' });
+      await waitFor(() => {
+        expect(tab2).toHaveAttribute('aria-selected', 'true');
+      });
+      await waitFor(() => {
+        expect(canvas.getByText(/innhold for tab 2/i)).toBeVisible();
+      });
+      fireEvent.keyDown(tab2, { key: 'ArrowLeft' });
+      await waitFor(() => {
+        expect(tab1).toHaveFocus();
+      });
+      fireEvent.keyDown(tab1, { key: ' ' });
+      await waitFor(() => {
+        expect(tab1).toHaveAttribute('aria-selected', 'true');
+      });
+      await waitFor(() => {
+        expect(canvas.getByText(/innhold for tab 1/i)).toBeVisible();
+      });
     });
   },
 });

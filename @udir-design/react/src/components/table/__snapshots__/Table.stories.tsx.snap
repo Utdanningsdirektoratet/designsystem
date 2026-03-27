@@ -2,8 +2,8 @@
 
 exports[`Column And Row Headers 1`] = `
 <table
-  data-hover="true"
   data-color="accent"
+  data-hover="true"
   data-tinted-column-header="true"
   data-tinted-row-header="true"
 >
@@ -135,7 +135,7 @@ exports[`Column And Row Headers 1`] = `
 exports[`Fixed Table 1`] = `
 <div>
   <table
-    id="myTable"
+    id="<removed>"
     style="table-layout: fixed; margin-bottom: 12px;"
   >
     <caption>
@@ -194,67 +194,67 @@ exports[`Fixed Table 1`] = `
       </tr>
     </tbody>
   </table>
-  <nav aria-label="Sidenavigering">
+  <ds-pagination
+    aria-label="Bla i sider"
+    role="navigation"
+  >
     <ul>
       <li>
         <button
-          data-variant="tertiary"
-          type="button"
-          aria-label="Forrige side"
           aria-hidden="true"
+          aria-label="Forrige side"
+          data-variant="tertiary"
+          variant="tertiary"
         >
           Forrige
         </button>
       </li>
       <li>
         <button
-          data-variant="primary"
-          type="button"
+          aria-current="true"
           aria-label="Side 1"
-          aria-current="page"
+          data-variant="tertiary"
         >
           1
         </button>
       </li>
       <li>
         <button
-          data-variant="tertiary"
-          type="button"
           aria-label="Side 2"
+          data-variant="tertiary"
         >
           2
         </button>
       </li>
       <li>
         <button
-          data-variant="tertiary"
-          type="button"
           aria-label="Side 3"
+          data-variant="tertiary"
         >
           3
         </button>
       </li>
       <li>
         <button
-          data-variant="tertiary"
-          type="button"
-          aria-label="Neste side"
           aria-hidden="false"
+          aria-label="Neste side"
+          data-variant="tertiary"
+          variant="tertiary"
         >
           Neste
         </button>
       </li>
     </ul>
-  </nav>
+  </ds-pagination>
 </div>
 `;
 
 exports[`Multiple Header Rows 1`] = `
 <table
-  data-zebra="true"
   data-color="support1"
   data-tinted-column-header="true"
   data-tinted-row-header="true"
+  data-zebra="true"
 >
   <thead>
     <tr>
@@ -392,15 +392,15 @@ exports[`Preview 1`] = `
   <thead>
     <tr>
       <th>
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
             aria-label="Velg alle ansatte"
-            id="checkbox-select-all"
+            id="<removed>"
+            name="my-checkbox"
             type="checkbox"
             value
-            name="my-checkbox"
           >
-        </div>
+        </ds-field>
       </th>
       <th aria-sort="none">
         <button type="button">
@@ -421,15 +421,15 @@ exports[`Preview 1`] = `
   <tbody>
     <tr>
       <td>
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="checkbox-1"
             aria-label="Velg [object Object]"
+            id="<removed>"
+            name="my-checkbox"
             type="checkbox"
             value="1"
-            name="my-checkbox"
           >
-        </div>
+        </ds-field>
       </td>
       <td>
         Rita Nordmann
@@ -439,8 +439,8 @@ exports[`Preview 1`] = `
       </td>
       <td>
         <span
-          data-variant="default"
           data-color="info"
+          data-variant="default"
         >
           I arbeid
         </span>
@@ -451,15 +451,15 @@ exports[`Preview 1`] = `
     </tr>
     <tr>
       <td>
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="checkbox-2"
             aria-label="Velg [object Object]"
+            id="<removed>"
+            name="my-checkbox"
             type="checkbox"
             value="2"
-            name="my-checkbox"
           >
-        </div>
+        </ds-field>
       </td>
       <td>
         Kari Nordmann
@@ -469,8 +469,8 @@ exports[`Preview 1`] = `
       </td>
       <td>
         <span
-          data-variant="default"
           data-color="success"
+          data-variant="default"
         >
           Ferdig
         </span>
@@ -481,15 +481,15 @@ exports[`Preview 1`] = `
     </tr>
     <tr>
       <td>
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="checkbox-3"
             aria-label="Velg [object Object]"
+            id="<removed>"
+            name="my-checkbox"
             type="checkbox"
             value="3"
-            name="my-checkbox"
           >
-        </div>
+        </ds-field>
       </td>
       <td>
         Ola Nordmann
@@ -499,8 +499,8 @@ exports[`Preview 1`] = `
       </td>
       <td>
         <span
-          data-variant="default"
           data-color="info"
+          data-variant="default"
         >
           I arbeid
         </span>
@@ -511,15 +511,15 @@ exports[`Preview 1`] = `
     </tr>
     <tr>
       <td>
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="checkbox-4"
             aria-label="Velg [object Object]"
+            id="<removed>"
+            name="my-checkbox"
             type="checkbox"
             value="4"
-            name="my-checkbox"
           >
-        </div>
+        </ds-field>
       </td>
       <td>
         Kai Nordmann
@@ -529,8 +529,8 @@ exports[`Preview 1`] = `
       </td>
       <td>
         <span
-          data-variant="default"
           data-color="warning"
+          data-variant="default"
         >
           Ikke begynt
         </span>
@@ -541,15 +541,15 @@ exports[`Preview 1`] = `
     </tr>
     <tr>
       <td>
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="checkbox-5"
             aria-label="Velg [object Object]"
+            id="<removed>"
+            name="my-checkbox"
             type="checkbox"
             value="5"
-            name="my-checkbox"
           >
-        </div>
+        </ds-field>
       </td>
       <td>
         Mateo Nordmann
@@ -559,8 +559,8 @@ exports[`Preview 1`] = `
       </td>
       <td>
         <span
-          data-variant="default"
           data-color="success"
+          data-variant="default"
         >
           Ferdig
         </span>
@@ -688,12 +688,12 @@ exports[`Sticky Header 1`] = `
 </h2>
 <div style="height: 420px; width: 580px; overflow: auto; padding: 0px;">
   <table
-    data-sticky-header="true"
-    data-zebra="true"
-    tabindex="0"
     data-color="support1"
+    data-sticky-header="true"
     data-tinted-column-header="true"
     data-tinted-row-header="true"
+    data-zebra="true"
+    tabindex="0"
   >
     <caption>
       Ansattes utdanning fordelt på eiertype (ordinære), 2021
@@ -950,15 +950,15 @@ exports[`With Form Elements 1`] = `
   <thead>
     <tr>
       <th>
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
             aria-label="Select all"
-            id="components-table--with-form-elements-selectAll"
+            id="<removed>"
+            name="components-table--with-form-elements-checkboxGroup"
             type="checkbox"
             value
-            name="components-table--with-form-elements-checkboxGroup"
           >
-        </div>
+        </ds-field>
       </th>
       <th>
         nr.
@@ -977,111 +977,105 @@ exports[`With Form Elements 1`] = `
   <tbody style="place-content: start center; align-items: center;">
     <tr>
       <td>
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
             aria-label="Check 1"
-            id="components-table--with-form-elements-select1"
+            id="<removed>"
+            name="components-table--with-form-elements-checkboxGroup"
             type="checkbox"
             value="1"
-            name="components-table--with-form-elements-checkboxGroup"
           >
-        </div>
+        </ds-field>
       </td>
       <td>
         1.
       </td>
       <td style="min-width: 200px;">
-        <div data-size="sm">
+        <ds-field data-size="sm">
           <div>
             <input
               aria-label="Textfield 1-1"
-              id="components-table--with-form-elements-textfield1-1"
               type="text"
               value="Trives du på skolen?"
             >
           </div>
-        </div>
+        </ds-field>
       </td>
       <td style="min-width: 200px;">
-        <div data-size="sm">
+        <ds-field data-size="sm">
           <div>
             <input
               aria-label="Textfield 1-2"
-              id="components-table--with-form-elements-textfield1-2"
               type="text"
               value="Trives ikke noe særlig"
             >
           </div>
-        </div>
+        </ds-field>
       </td>
       <td style="min-width: 200px;">
-        <div data-size="sm">
+        <ds-field data-size="sm">
           <div>
             <input
               aria-label="Textfield 1-3"
-              id="components-table--with-form-elements-textfield1-3"
               type="text"
               value="Trives godt"
             >
           </div>
-        </div>
+        </ds-field>
       </td>
     </tr>
     <tr>
       <td>
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
             aria-label="Check 1"
-            id="components-table--with-form-elements-select1"
+            checked
+            id="<removed>"
+            name="components-table--with-form-elements-checkboxGroup"
             type="checkbox"
             value="2"
-            checked
-            name="components-table--with-form-elements-checkboxGroup"
           >
-        </div>
+        </ds-field>
       </td>
       <td>
         2.
       </td>
       <td>
-        <div
+        <ds-field
           data-size="sm"
           style="width: 250px;"
         >
           <div>
             <input
               aria-label="Textfield 1-1"
-              id="components-table--with-form-elements-textfield1-1"
               type="text"
               value="Har du opplevd mobbing?"
             >
           </div>
-        </div>
+        </ds-field>
       </td>
       <td>
-        <div data-size="sm">
+        <ds-field data-size="sm">
           <div>
             <input
               aria-label="Textfield 1-2"
-              id="components-table--with-form-elements-textfield1-2"
               type="text"
               value="Sjelden"
             >
           </div>
-        </div>
+        </ds-field>
       </td>
       <td>
-        <div data-size="sm">
+        <ds-field data-size="sm">
           <div>
             <input
-              cols="3"
               aria-label="Textfield 1-3"
-              id="components-table--with-form-elements-textfield1-3"
+              cols="3"
               type="text"
               value="Ofte"
             >
           </div>
-        </div>
+        </ds-field>
       </td>
     </tr>
   </tbody>
