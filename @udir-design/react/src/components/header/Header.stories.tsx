@@ -75,10 +75,8 @@ export const WithUserButton = meta.story({
         autoPlacement={false}
         data-testid="dropdown"
       >
+        <Dropdown.Heading>Bytt profil</Dropdown.Heading>
         <Dropdown.List>
-          <Dropdown.Item>
-            <Dropdown.Heading>Bytt profil</Dropdown.Heading>
-          </Dropdown.Item>
           <Dropdown.Item>
             <Dropdown.Button>
               <Avatar aria-hidden>
@@ -104,10 +102,8 @@ export const WithUserButton = meta.story({
         </Avatar>
       </Button>
       <Dropdown id="usermenuSmall" placement="bottom-end" autoPlacement={false}>
+        <Dropdown.Heading>Detaljer</Dropdown.Heading>
         <Dropdown.List>
-          <Dropdown.Item>
-            <Dropdown.Heading>Detaljer</Dropdown.Heading>
-          </Dropdown.Item>
           <Dropdown.Item style={{ marginLeft: 'var(--ds-size-4)' }}>
             <Paragraph>Stian Hansen</Paragraph>
           </Dropdown.Item>
@@ -120,9 +116,9 @@ export const WithUserButton = meta.story({
             <Paragraph>Admin</Paragraph>
           </Dropdown.Item>
           <Divider />
-          <Dropdown.Item>
-            <Dropdown.Heading>Bytt profil</Dropdown.Heading>
-          </Dropdown.Item>
+        </Dropdown.List>
+        <Dropdown.Heading>Bytt profil</Dropdown.Heading>
+        <Dropdown.List>
           <Dropdown.Item>
             <Dropdown.Button>
               <Avatar aria-hidden>
@@ -773,9 +769,7 @@ export const Responsive = meta.story({
           />
           <Dropdown id="usermenu2" placement="bottom-end" autoPlacement={false}>
             <Dropdown.List>
-              <Dropdown.Item>
-                <Dropdown.Heading>Bytt profil</Dropdown.Heading>
-              </Dropdown.Item>
+              <Dropdown.Heading>Bytt profil</Dropdown.Heading>
               <Dropdown.Item>
                 <Dropdown.Button>
                   <Avatar aria-hidden>
@@ -808,10 +802,8 @@ export const Responsive = meta.story({
               placement="bottom-end"
               autoPlacement={false}
             >
+              <Dropdown.Heading>Bytt profil</Dropdown.Heading>
               <Dropdown.List>
-                <Dropdown.Item>
-                  <Dropdown.Heading>Bytt profil</Dropdown.Heading>
-                </Dropdown.Item>
                 <Dropdown.Item>
                   <Dropdown.Button>
                     <Avatar aria-hidden>
