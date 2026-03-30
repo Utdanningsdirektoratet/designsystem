@@ -7,7 +7,7 @@ import './fileUpload.css';
 import { Field } from '../field/Field';
 import { Label } from '../typography/label/Label';
 import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
-import type { FileUploadProps } from './FileUploadTrigger';
+import type { DSFieldElement, FileUploadProps } from './FileUploadTrigger';
 
 export type FileUploadDropzoneProps = FileUploadProps & {
   /**
@@ -23,7 +23,7 @@ export type FileUploadDropzoneProps = FileUploadProps & {
 };
 
 export const FileUploadDropzone = forwardRef<
-  HTMLDivElement,
+  DSFieldElement,
   FileUploadDropzoneProps
 >(function FileUploadDropzone(
   {
