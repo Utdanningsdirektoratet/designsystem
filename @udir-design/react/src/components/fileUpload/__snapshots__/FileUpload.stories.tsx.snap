@@ -14,7 +14,7 @@ exports[`Example Drop Zone 1`] = `
     </label>
     <div
       data-field="description"
-      id="mn2x88damp25"
+      id="mn2xa4ttf4k5"
     >
       Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
     </div>
@@ -52,7 +52,7 @@ exports[`Example Drop Zone 1`] = `
       tabindex="-1"
       id="dokumentasjon"
       type="file"
-      aria-describedby="mn2x88damp25"
+      aria-describedby="mn2xa4ttf4k5"
       style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
     >
   </ds-field>
@@ -104,8 +104,8 @@ exports[`Example Drop Zone 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        aria-label
-        data-tooltip
+        aria-label="Fjern filen"
+        data-tooltip="Fjern filen"
         data-placement="top"
         data-autoplacement="true"
       >
@@ -497,7 +497,7 @@ exports[`Example Trigger 1`] = `
     </label>
     <div
       data-field="description"
-      id="mn2x88damp28"
+      id="mn2xa4ttf4k8"
     >
       Du kan laste opp filer i PNG- og JPEG-format.
     </div>
@@ -529,7 +529,7 @@ exports[`Example Trigger 1`] = `
       accept="image/png, image/jpeg"
       id="profilbilde"
       type="file"
-      aria-describedby="mn2x88damp28"
+      aria-describedby="mn2xa4ttf4k8"
     >
   </ds-field>
   <h3 data-size="2xs">
@@ -575,8 +575,8 @@ exports[`Example Trigger 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        aria-label
-        data-tooltip
+        aria-label="Fjern filen"
+        data-tooltip="Fjern filen"
         data-placement="top"
         data-autoplacement="true"
       >
@@ -700,10 +700,16 @@ exports[`Preview 1`] = `
 exports[`Readonly 1`] = `
 <div style="background: var(--ds-color-neutral-surface-tinted); display: flex; gap: var(--ds-size-12); justify-content: center; padding: var(--ds-size-8); border-radius: var(--ds-border-radius-md);">
   <ds-field>
-    <label data-weight="medium">
+    <label
+      data-weight="medium"
+      for="readonly-trigger"
+    >
       Lesemodus
     </label>
-    <div data-field="description">
+    <div
+      data-field="description"
+      id="mn2xa4ttf4k3"
+    >
       Beskrivelse for Trigger
     </div>
     <button
@@ -735,13 +741,20 @@ exports[`Readonly 1`] = `
       readonly
       id="readonly-trigger"
       type="file"
+      aria-describedby="mn2xa4ttf4k3"
     >
   </ds-field>
   <ds-field>
-    <label data-weight="medium">
+    <label
+      data-weight="medium"
+      for="readonly-dropzone"
+    >
       Lesemodus
     </label>
-    <div data-field="description">
+    <div
+      data-field="description"
+      id="mn2xa4ttf4k4"
+    >
       Beskrivelse for Dropzone
     </div>
     <div data-variant="default">
@@ -753,6 +766,7 @@ exports[`Readonly 1`] = `
       max="2"
       id="readonly-dropzone"
       type="file"
+      aria-describedby="mn2xa4ttf4k4"
     >
   </ds-field>
 </div>
@@ -1050,7 +1064,7 @@ exports[`Upload 1`] = `
     </label>
     <div
       data-field="description"
-      id="mn2x88damp29"
+      id="mn2xa4ttf4k9"
     >
       Du kan legge ved 1 fil.
     </div>
@@ -1081,7 +1095,7 @@ exports[`Upload 1`] = `
     <input
       id="rapport"
       type="file"
-      aria-describedby="mn2x88damp29"
+      aria-describedby="mn2xa4ttf4k9"
     >
   </ds-field>
 </div>

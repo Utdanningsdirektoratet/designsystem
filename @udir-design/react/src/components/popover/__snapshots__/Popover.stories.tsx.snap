@@ -149,6 +149,194 @@ exports[`Color Variants 1`] = `
 </div>
 `;
 
+exports[`Controlled 1`] = `
+<button
+  data-variant="tertiary"
+  type="button"
+  popovertarget="_r_l_"
+>
+  Fjern
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      d="M18.03 7.03a.75.75 0 0 0-1.06-1.06L12 10.94 7.03 5.97a.75.75 0 0 0-1.06 1.06L10.94 12l-4.97 4.97a.75.75 0 1 0 1.06 1.06L12 13.06l4.97 4.97a.75.75 0 1 0 1.06-1.06L13.06 12z"
+    >
+    </path>
+  </svg>
+</button>
+<div
+  id="_r_l_"
+  popover="manual"
+  data-placement="top"
+  data-variant="default"
+  data-floating="bottom"
+  style="--_ds-floating-arrow-x: 150px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
+>
+  Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
+  <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
+    <button
+      data-variant="primary"
+      type="button"
+      data-size="sm"
+    >
+      Ja, fjern
+    </button>
+    <button
+      data-variant="tertiary"
+      type="button"
+      data-size="sm"
+    >
+      Avbryt
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Dotted Underline 1`] = `
+<p data-variant="default">
+  I aldersgruppen 1-5 år går 93 prosent av barna i barnehage. I aldersgruppen 3-5 år er andelen 97 prosent. Til sammenligning er
+  <button
+    data-popover="inline"
+    popovertarget="_r_4_"
+  >
+    OECD
+  </button>
+  -gjennomsnittet for andelen 3-5-åringer i barnehage på 83 prosent (OECD 2021).
+</p>
+<div
+  id="_r_4_"
+  popover="manual"
+  data-placement="top"
+  data-variant="default"
+  data-color="neutral"
+  data-floating="bottom"
+  style="--_ds-floating-arrow-x: 241px; --_ds-floating-arrow-y: -25px; translate: <removed>;"
+>
+  <p data-variant="default">
+    <strong>
+      Organisasjonen for økonomisk samarbeid og utvikling
+    </strong>
+    (OCED) er en internasjonal organisasjon som sammarbeider om å fremme økonomisk og sosial vekst og utvikling.
+  </p>
+</div>
+`;
+
+exports[`Interactive 1`] = `
+<button
+  data-variant="secondary"
+  type="button"
+  popovertarget="_r_2_"
+  aria-label="Lukk"
+>
+  Lukk
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      d="M18.03 7.03a.75.75 0 0 0-1.06-1.06L12 10.94 7.03 5.97a.75.75 0 0 0-1.06 1.06L10.94 12l-4.97 4.97a.75.75 0 1 0 1.06 1.06L12 13.06l4.97 4.97a.75.75 0 1 0 1.06-1.06L13.06 12z"
+    >
+    </path>
+  </svg>
+</button>
+<div
+  id="_r_2_"
+  popover="manual"
+  data-placement="top"
+  data-variant="default"
+  data-floating="bottom"
+  style="--_ds-floating-arrow-x: 142px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
+>
+  <p data-variant="default">
+    Vil du lagre endringene dine?
+  </p>
+  <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
+    <button
+      data-variant="primary"
+      type="button"
+      data-size="sm"
+    >
+      Lagre
+    </button>
+    <button
+      data-variant="tertiary"
+      type="button"
+      data-size="sm"
+    >
+      Ikke lagre
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Preview 1`] = `
+<button
+  data-variant="tertiary"
+  type="button"
+  popovertarget="_r_0_"
+>
+  Fjern
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      d="M18.03 7.03a.75.75 0 0 0-1.06-1.06L12 10.94 7.03 5.97a.75.75 0 0 0-1.06 1.06L10.94 12l-4.97 4.97a.75.75 0 1 0 1.06 1.06L12 13.06l4.97 4.97a.75.75 0 1 0 1.06-1.06L13.06 12z"
+    >
+    </path>
+  </svg>
+</button>
+<div
+  id="_r_0_"
+  popover="manual"
+  data-placement="top"
+  data-variant="default"
+  data-floating="bottom"
+  style="--_ds-floating-arrow-x: 150px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
+>
+  Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
+  <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
+    <button
+      data-variant="primary"
+      type="button"
+      data-size="sm"
+    >
+      Ja, fjern
+    </button>
+    <button
+      data-variant="tertiary"
+      type="button"
+      data-size="sm"
+    >
+      Avbryt
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Variants 1`] = `
 <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 100px; place-items: center; margin-top: var(--ds-size-12);">
   <button
@@ -294,6 +482,66 @@ exports[`Variants 1`] = `
     style="--_ds-floating-arrow-x: 78px; --_ds-floating-arrow-y: 89px; translate: <removed>;"
   >
     warningTinted
+  </div>
+</div>
+`;
+
+exports[`Without Context 1`] = `
+<button
+  data-variant="primary"
+  type="button"
+  popovertarget="my-popover"
+  aria-label="Slett rad"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-labelledby="title-_r_n_"
+  >
+    <title id="title-_r_n_">
+      Slett rad
+    </title>
+    <path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
+</button>
+<div
+  id="my-popover"
+  popover="manual"
+  data-placement="top"
+  data-variant="default"
+  data-color="neutral"
+  data-floating="bottom"
+  style="--_ds-floating-arrow-x: 150px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
+>
+  <p data-variant="default">
+    Er du sikker på at du vil slette raden? Handlingen kan ikke angres.
+  </p>
+  <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
+    <button
+      data-variant="primary"
+      type="button"
+      data-size="sm"
+    >
+      Ja, slett den
+    </button>
+    <button
+      data-variant="tertiary"
+      type="button"
+      data-size="sm"
+    >
+      Avbryt
+    </button>
   </div>
 </div>
 `;

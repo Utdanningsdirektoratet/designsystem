@@ -10,7 +10,7 @@ exports[`Checkbox In Color Context 1`] = `
       id="checkbox-in-color-context"
       type="checkbox"
       checked
-      aria-describedby="mn2x8ap99vk4"
+      aria-describedby="mn2xa95ljkz2"
     >
     <label
       data-weight="regular"
@@ -20,7 +20,7 @@ exports[`Checkbox In Color Context 1`] = `
     </label>
     <div
       data-field="description"
-      id="mn2x8ap99vk4"
+      id="mn2xa95ljkz2"
     >
       Description
     </div>
@@ -29,39 +29,32 @@ exports[`Checkbox In Color Context 1`] = `
 `;
 
 exports[`Focused 1`] = `
-<ds-field data-clickdelegatefor="checkbox-preview">
+<ds-field>
   <input
     id="checkbox-preview"
     type="checkbox"
     value="value"
-    aria-describedby="mn2x8ap99vk5"
   >
-  <label
-    data-weight="regular"
-    for="checkbox-preview"
-  >
+  <label data-weight="regular">
     Checkbox label
   </label>
-  <div
-    data-field="description"
-    id="mn2x8ap99vk5"
-  >
+  <div data-field="description">
     Description
   </div>
 </ds-field>
 `;
 
 exports[`One Option 1`] = `
-<fieldset aria-labelledby="mn2x8ap99vk2 mn2x8ap99vk3">
+<fieldset aria-labelledby="components-checkbox--one-optionlegend components-checkbox--one-optiondescription">
   <legend
+    id="components-checkbox--one-optionlegend"
     data-weight="medium"
-    id="mn2x8ap99vk2"
   >
     Bekreft at du er over 18 år
   </legend>
   <p
     data-variant="default"
-    id="mn2x8ap99vk3"
+    id="components-checkbox--one-optiondescription"
   >
     For at vi skal kunne sende deg opplysningen du ber om, må du bekrefte at du er myndig.
   </p>
@@ -87,7 +80,7 @@ exports[`Preview 1`] = `
     id="checkbox-preview"
     type="checkbox"
     value="value"
-    aria-describedby="mn2x8ap99vk1"
+    aria-describedby="mn2xa95ljkz1"
   >
   <label
     data-weight="regular"
@@ -97,7 +90,7 @@ exports[`Preview 1`] = `
   </label>
   <div
     data-field="description"
-    id="mn2x8ap99vk1"
+    id="mn2xa95ljkz1"
   >
     Description
   </div>

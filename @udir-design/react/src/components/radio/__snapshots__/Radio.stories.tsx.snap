@@ -6,7 +6,7 @@ exports[`Focused 1`] = `
     id="radio-preview"
     type="radio"
     value="value"
-    aria-describedby="mn2x8boqj6t5"
+    aria-describedby="mn2xa96ne0p3"
   >
   <label
     data-weight="regular"
@@ -16,7 +16,7 @@ exports[`Focused 1`] = `
   </label>
   <div
     data-field="description"
-    id="mn2x8boqj6t5"
+    id="mn2xa96ne0p3"
   >
     Description
   </div>
@@ -24,16 +24,16 @@ exports[`Focused 1`] = `
 `;
 
 exports[`Inline 1`] = `
-<fieldset aria-labelledby="mn2x8boqj6t2 mn2x8boqj6t3">
+<fieldset aria-labelledby="undefinedlegend undefineddescription">
   <legend
+    id="undefinedlegend"
     data-weight="medium"
-    id="mn2x8boqj6t2"
   >
     Kontaktes på e-post?
   </legend>
   <p
     data-variant="default"
-    id="mn2x8boqj6t3"
+    id="undefineddescription"
   >
     Bekreft om du ønsker å bli kontaktet per e-post.
   </p>
@@ -76,7 +76,7 @@ exports[`Preview 1`] = `
     id="radio-preview"
     type="radio"
     value="value"
-    aria-describedby="mn2x8boqj6t1"
+    aria-describedby="mn2xa96ne0p1"
   >
   <label
     data-weight="regular"
@@ -86,7 +86,7 @@ exports[`Preview 1`] = `
   </label>
   <div
     data-field="description"
-    id="mn2x8boqj6t1"
+    id="mn2xa96ne0p1"
   >
     Description
   </div>
@@ -98,16 +98,23 @@ exports[`Radio In Color Context 1`] = `
   data-variant="tinted"
   data-color="accent"
 >
-  <ds-field>
+  <ds-field data-clickdelegatefor="radio-in-color-context">
     <input
       id="radio-in-color-context"
       type="radio"
       checked
+      aria-describedby="mn2xa96ne0p2"
     >
-    <label data-weight="regular">
+    <label
+      data-weight="regular"
+      for="radio-in-color-context"
+    >
       Radio
     </label>
-    <div data-field="description">
+    <div
+      data-field="description"
+      id="mn2xa96ne0p2"
+    >
       Description
     </div>
   </ds-field>
