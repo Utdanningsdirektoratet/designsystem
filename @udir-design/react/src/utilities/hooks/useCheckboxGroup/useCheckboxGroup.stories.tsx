@@ -123,10 +123,10 @@ const GroupBase = {
 
     return (
       <Fieldset>
-        <Fieldset.Legend>
+        <Fieldset.Legend id={`${context.id}-legend`}>
           Hvordan vil du helst at vi skal kontakte deg?
         </Fieldset.Legend>
-        <Fieldset.Description>
+        <Fieldset.Description id={`${context.id}-description`}>
           Velg de alternativene som er relevante for deg.
         </Fieldset.Description>
         <Checkbox
@@ -268,7 +268,9 @@ export const Controlled = meta.story({
     return (
       <>
         <Fieldset>
-          <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
+          <Fieldset.Legend id={`${context.id}-legend`}>
+            Utdanningsnivå
+          </Fieldset.Legend>
           {Object.entries(choices).map(([value, { label }]) => (
             <Checkbox
               key={value}

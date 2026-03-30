@@ -59,8 +59,10 @@ export const Preview = meta.story({
 export const Inline = meta.story({
   render: (context) => (
     <Fieldset>
-      <Fieldset.Legend>Kontaktes på e-post?</Fieldset.Legend>
-      <Fieldset.Description>
+      <Fieldset.Legend id={context.id + 'legend'}>
+        Kontaktes på e-post?
+      </Fieldset.Legend>
+      <Fieldset.Description id={context.id + 'description'}>
         Bekreft om du ønsker å bli kontaktet per e-post.
       </Fieldset.Description>
       <div

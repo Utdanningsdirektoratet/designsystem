@@ -116,7 +116,7 @@ const educationalLevels = {
 export const WithOptgroup = meta.story({
   render: (args, context) => (
     <Field>
-      <Label>Klassetrinn</Label>
+      <Label htmlFor={context.id}>Klassetrinn</Label>
       <Select {...args} id={context.id}>
         <Select.Option value="">Velg klassetrinn &hellip;</Select.Option>
         {Object.entries(educationalLevels).map(([key, levels]) => (
@@ -173,7 +173,7 @@ export const Controlled = meta.story({
       <>
         <Heading>Hvor bor du?</Heading>
         <Field>
-          <Label>Fylke</Label>
+          <Label htmlFor={context.id}>Fylke</Label>
           <Select
             {...args}
             id={context.id}
@@ -189,7 +189,7 @@ export const Controlled = meta.story({
           </Select>
         </Field>
         <Field>
-          <Label>By</Label>
+          <Label htmlFor={`${context.id}-by`}>By</Label>
           <Select
             {...args}
             id={`${context.id}-by`}

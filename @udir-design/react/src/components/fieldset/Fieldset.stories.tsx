@@ -20,8 +20,10 @@ const meta = preview.meta({
 export const Preview = meta.story({
   render: (args, context) => (
     <Fieldset {...args}>
-      <Fieldset.Legend>Hvilken fjordarm bor du ved?</Fieldset.Legend>
-      <Fieldset.Description>
+      <Fieldset.Legend id={`${context.id}-legend`}>
+        Hvilken fjordarm bor du ved?
+      </Fieldset.Legend>
+      <Fieldset.Description id={`${context.id}-description`}>
         Valget vil hjelpe oss å forbedre innholdet vi viser deg.
       </Fieldset.Description>
       <Radio
@@ -49,7 +51,9 @@ export const Preview = meta.story({
 export const WithCheckbox = meta.story({
   render: (args, context) => (
     <Fieldset {...args}>
-      <Fieldset.Legend>Godtar du vilkårene?</Fieldset.Legend>
+      <Fieldset.Legend id={`${context.id}-legend`}>
+        Godtar du vilkårene?
+      </Fieldset.Legend>
       <Checkbox id={`${context.id}-checkbox`} label="Ja, jeg godtar" />
     </Fieldset>
   ),
@@ -58,12 +62,12 @@ export const WithCheckbox = meta.story({
 export const WithTextfield = meta.story({
   render: (args, context) => (
     <Fieldset {...args}>
-      <Fieldset.Legend>
+      <Fieldset.Legend id={`${context.id}-legend`}>
         <Heading level={2} data-size="sm">
           Adresse
         </Heading>
       </Fieldset.Legend>
-      <Fieldset.Description>
+      <Fieldset.Description id={`${context.id}-description`}>
         Skriv inn adressen din for å motta post fra oss.
       </Fieldset.Description>
       <Textfield
@@ -92,12 +96,14 @@ export const WithTextfield = meta.story({
 export const LegendAsHeading = meta.story({
   render: (args, context) => (
     <Fieldset {...args}>
-      <Fieldset.Legend>
+      <Fieldset.Legend id={`${context.id}-legend`}>
         <Heading level={2} data-size="sm">
           Hvilke tjenester bruker du?
         </Heading>
       </Fieldset.Legend>
-      <Fieldset.Description>Påloggingssystemer hos Udir</Fieldset.Description>
+      <Fieldset.Description id={`${context.id}-description`}>
+        Påloggingssystemer hos Udir
+      </Fieldset.Description>
       <Checkbox
         id={`${context.id}-feide`}
         label="Feide"
