@@ -1,6 +1,7 @@
 import { Meta, Controls, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as DialogStories from './Dialog.stories';
 import { Dialog } from './Dialog';
+import { SimpleAlert } from '.storybook/docs/components';
 
 <Meta of={DialogStories} />
 
@@ -36,11 +37,18 @@ import { Dialog } from '@udir-design/react';
 
 ### Egen lukkeknapp
 
-For å legge til egen lukkeknapp, kan du enten bruke `ref` og `Dialog.close()` på en knapp du lager selv, eller legge på `data-command="close"` på en knapp inni dialogen.
+For å legge til egen lukk knapp, kan du enten bruke `command="close" commandfor="DIALOG-ID"` ellr `ref` og `Dialog.close()` på en knapp du lager selv.
 Dersom knappen er tom vil den få et ikon.
 Dersom knappen er direkte barn av dialogen og første element, vil den flyte til topp høyre.
 
-`data-command` er inspirert av [Invoker Commands (mozilla.org)](https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API).
+<SimpleAlert>
+  Attributtene
+  [`command`(developer.mozilla.org)](https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/command)
+  og `commandfor` er en relativt ny del av web-standarden som lar knapper utføre
+  handlinger på andre elementer deklarativt. Vi legger automatisk til
+  [invokers-polyfill(npmjs.com)](https://www.npmjs.com/package/invokers-polyfill/v/0.5.2)
+  for å støtte eldre nettlesere.
+</SimpleAlert>
 
 ```tsx
 <Dialog>
@@ -56,14 +64,15 @@ Dersom knappen er direkte barn av dialogen og første element, vil den flyte til
 ### Bruk med ekstern trigger
 
 Om du trenger programmatisk kontroll over åpning og lukking av modalen kan du bruke `open`-propen, eller en `ref` som gir tilgang på HTML-elementets [instance-metoder](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement#instance_methods) (f.eks. `.show()`, `.showModal()` og `.close()`).
-Her bruker vi `useRef` for å få tilgang til dialogen, og kaller `.showModal()` når knappen trykkes.
+Her bruker vi `useRef` for å få tilgang til dialogen, og kaller `.showModal()` når knappen trykkes. Merk at knappen som åpner dialogen da bør ha `aria-haspopup="dialog"`-attributtet.
 
 <Canvas of={DialogStories.WithoutDialogTriggerContext} />
 
+Du kan også bruke `command="show-modal"` eller `command="--show-non-modal"` og `commandfor="DIALOG-ID"` for å åpne dialogen fra en ekstern trigger.
+
 ### Lukk ved klikk utenfor
 
-Vi bruker `closedby="any"` proppen for å lukke dialogen når brukeren klikker utenfor.
-Dette funker kun dersom du har `modal={true}`, fordi en non-modal har ikke et backdrop.
+Vi bruker `closedby="any"` proppen for å lukke dialogen når brukeren klikker utenfor. Vi legger til polyfill så `closedby="any"` også fungerer i eldre Safari.
 
 <Canvas of={DialogStories.BackdropClosedbyAny} />
 
