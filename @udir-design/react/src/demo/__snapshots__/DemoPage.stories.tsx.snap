@@ -11,7 +11,7 @@ exports[`Page Story 1`] = `
   <p data-variant="default">
     På denne demosiden hvor vi har laget noen eksempler på komponentene i biblioteket, sånn at man kan se hvordan de samspiller i en litt større kontekst. På sikt vil alle komponentene være representert her, men så langt er det kun de vi har ansett som viktigst i første omgang. Lengre ned på siden kan du prøve å endre på størrelse og farge-modus for å se hvordan det påvirker komponentene.
   </p>
-  <nav aria-label="Du er her:">
+  <ds-breadcrumbs aria-label="Du er her:">
     <ol>
       <li>
         <a href="#">
@@ -29,127 +29,100 @@ exports[`Page Story 1`] = `
         </a>
       </li>
       <li>
-        <a
-          href="#"
-          aria-current="page"
-        >
+        <a href="#">
           Nivå 4
         </a>
       </li>
     </ol>
-  </nav>
+  </ds-breadcrumbs>
   <div>
     <div>
       <fieldset>
         <legend data-weight="medium">
           Handleliste
         </legend>
-        <div>
+        <ds-field>
           <input
             id="potet"
             type="checkbox"
             value="potet"
           >
-          <label
-            data-weight="regular"
-            for="potet"
-          >
+          <label data-weight="regular">
             En kilo poteter
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field>
           <input
             id="farris"
             type="checkbox"
             value="farris"
           >
-          <label
-            data-weight="regular"
-            for="farris"
-          >
+          <label data-weight="regular">
             To liter Farris
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field>
           <input
             id="blomkol"
             type="checkbox"
             value="blomkol"
             checked
           >
-          <label
-            data-weight="regular"
-            for="blomkol"
-          >
+          <label data-weight="regular">
             Blomkål
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field>
           <input
             id="pizza"
             type="checkbox"
             value="pizza"
             checked
           >
-          <label
-            data-weight="regular"
-            for="pizza"
-          >
+          <label data-weight="regular">
             Pizza
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field>
           <input
             id="melk"
             type="checkbox"
             value="melk"
             checked
           >
-          <label
-            data-weight="regular"
-            for="melk"
-          >
+          <label data-weight="regular">
             Tre liter lettmelk
           </label>
-        </div>
+        </ds-field>
         <hr aria-hidden="true">
-        <div>
+        <ds-field>
           <input
             id="smagodt"
             type="checkbox"
             value="smagodt"
           >
-          <label
-            data-weight="regular"
-            for="smagodt"
-          >
+          <label data-weight="regular">
             2kg smågodt
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field>
           <input
             id="smash"
             type="checkbox"
             value="smash"
           >
-          <label
-            data-weight="regular"
-            for="smash"
-          >
+          <label data-weight="regular">
             10 poser med Smash
           </label>
-        </div>
+        </ds-field>
       </fieldset>
     </div>
     <div>
       <h2>
         Opprett ny bruker
       </h2>
-      <div>
-        <label
-          data-weight="medium"
-          for="name"
-        >
+      <ds-field>
+        <label data-weight="medium">
           Navn
         </label>
         <div>
@@ -160,12 +133,9 @@ exports[`Page Story 1`] = `
             type="text"
           >
         </div>
-      </div>
-      <div>
-        <label
-          data-weight="medium"
-          for="email"
-        >
+      </ds-field>
+      <ds-field>
+        <label data-weight="medium">
           E-post
         </label>
         <div>
@@ -176,23 +146,17 @@ exports[`Page Story 1`] = `
             type="email"
           >
         </div>
-      </div>
+      </ds-field>
       <a
         href="#"
-        popovertarget="_r_0_"
-        popovertargetaction="show"
-        aria-describedby="_r_0_"
+        aria-label="Trykk for å få hjelp"
+        data-tooltip="Trykk for å få hjelp"
+        data-placement="top"
+        data-autoplacement="true"
+        type="describedby"
       >
         Glemt passord?
       </a>
-      <span
-        role="tooltip"
-        id="_r_0_"
-        popover="manual"
-        style="opacity: 0;"
-      >
-        Trykk for å få hjelp
-      </span>
       <button
         data-variant="primary"
         type="button"
@@ -491,13 +455,14 @@ exports[`Page Story 1`] = `
           <button
             data-variant="primary"
             type="button"
-            popovertarget="_r_1_"
+            popovertarget="_r_3_"
           >
             Utfør
           </button>
           <div
-            id="_r_1_"
+            id="_r_3_"
             popover="manual"
+            data-placement="top"
             data-variant="default"
           >
             Er du sikker på at du vil gjennomføre? Handlingen vil utføres på alle brukere.
