@@ -1213,11 +1213,9 @@ exports[`Responsive 1`] = `
           popover="manual"
         >
           <ul>
-            <li>
-              <h2>
-                Bytt profil
-              </h2>
-            </li>
+            <h2>
+              Bytt profil
+            </h2>
             <li>
               <button
                 data-variant="tertiary"
@@ -1404,12 +1402,10 @@ exports[`Responsive 1`] = `
             id="<removed>"
             popover="manual"
           >
+            <h2>
+              Bytt profil
+            </h2>
             <ul>
-              <li>
-                <h2>
-                  Bytt profil
-                </h2>
-              </li>
               <li>
                 <button
                   data-variant="tertiary"
@@ -5050,12 +5046,10 @@ exports[`With User Button 1`] = `
           id="<removed>"
           popover="manual"
         >
+          <h2>
+            Bytt profil
+          </h2>
           <ul>
-            <li>
-              <h2>
-                Bytt profil
-              </h2>
-            </li>
             <li>
               <button
                 data-variant="tertiary"
@@ -5146,12 +5140,10 @@ exports[`With User Button 1`] = `
           id="<removed>"
           popover="manual"
         >
+          <h2>
+            Detaljer
+          </h2>
           <ul>
-            <li>
-              <h2>
-                Detaljer
-              </h2>
-            </li>
             <li style="margin-left: var(--ds-size-4);">
               <p data-variant="default">
                 Stian Hansen
@@ -5163,11 +5155,11 @@ exports[`With User Button 1`] = `
               </p>
             </li>
             <hr aria-hidden="true">
-            <li>
-              <h2>
-                Bytt profil
-              </h2>
-            </li>
+          </ul>
+          <h2>
+            Bytt profil
+          </h2>
+          <ul>
             <li>
               <button
                 data-variant="tertiary"
@@ -5340,12 +5332,10 @@ exports[`With User Button Test 1`] = `
           popover="manual"
           style="--_ds-floating-arrow-x: <removed>; --_ds-floating-arrow-y: <removed>; translate: <removed>;"
         >
+          <h2>
+            Bytt profil
+          </h2>
           <ul>
-            <li>
-              <h2>
-                Bytt profil
-              </h2>
-            </li>
             <li>
               <button
                 data-variant="tertiary"
@@ -5436,12 +5426,10 @@ exports[`With User Button Test 1`] = `
           id="<removed>"
           popover="manual"
         >
+          <h2>
+            Detaljer
+          </h2>
           <ul>
-            <li>
-              <h2>
-                Detaljer
-              </h2>
-            </li>
             <li style="margin-left: var(--ds-size-4);">
               <p data-variant="default">
                 Stian Hansen
@@ -5453,11 +5441,11 @@ exports[`With User Button Test 1`] = `
               </p>
             </li>
             <hr aria-hidden="true">
-            <li>
-              <h2>
-                Bytt profil
-              </h2>
-            </li>
+          </ul>
+          <h2>
+            Bytt profil
+          </h2>
+          <ul>
             <li>
               <button
                 data-variant="tertiary"
