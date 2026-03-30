@@ -2,25 +2,25 @@
 
 exports[`Controlled 1`] = `
 <button
+  data-size="sm"
   data-variant="tertiary"
   type="button"
-  data-size="sm"
 >
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
     aria-hidden="true"
+    fill="none"
+    focusable="false"
+    height="1em"
+    role="img"
+    viewbox="0 0 24 24"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
   >
     <path
+      clip-rule="evenodd"
+      d="M12.53 4.47a.75.75 0 0 0-1.06 0l-3.5 3.5a.75.75 0 0 0 1.06 1.06L12 6.06l2.97 2.97a.75.75 0 1 0 1.06-1.06zm-3.5 10.5a.75.75 0 0 0-1.06 1.06l3.5 3.5a.75.75 0 0 0 1.06 0l3.5-3.5a.75.75 0 1 0-1.06-1.06L12 17.94z"
       fill="currentColor"
       fill-rule="evenodd"
-      d="M12.53 4.47a.75.75 0 0 0-1.06 0l-3.5 3.5a.75.75 0 0 0 1.06 1.06L12 6.06l2.97 2.97a.75.75 0 1 0 1.06-1.06zm-3.5 10.5a.75.75 0 0 0-1.06 1.06l3.5 3.5a.75.75 0 0 0 1.06 0l3.5-3.5a.75.75 0 1 0-1.06-1.06L12 17.94z"
-      clip-rule="evenodd"
     >
     </path>
   </svg>
@@ -79,8 +79,8 @@ exports[`Controlled 1`] = `
 
 exports[`In Card 1`] = `
 <div
-  data-variant="default"
   data-color="neutral"
+  data-variant="default"
 >
   <details data-variant="default">
     <summary>
@@ -123,8 +123,8 @@ exports[`In Card 1`] = `
 
 exports[`In Card With Color 1`] = `
 <div
-  data-variant="tinted"
   data-color="accent"
+  data-variant="tinted"
 >
   <details data-variant="default">
     <summary>
@@ -169,8 +169,8 @@ exports[`Preview 1`] = `
 exports[`Pseudo States 1`] = `
 <div style="display: flex; flex-direction: column; gap: var(--ds-size-4);">
   <label
-    data-weight="medium"
     data-size="sm"
+    data-weight="medium"
   >
     Default
   </label>
@@ -183,8 +183,8 @@ exports[`Pseudo States 1`] = `
     </div>
   </details>
   <label
-    data-weight="medium"
     data-size="sm"
+    data-weight="medium"
   >
     Hover
   </label>
@@ -197,8 +197,8 @@ exports[`Pseudo States 1`] = `
     </div>
   </details>
   <label
-    data-weight="medium"
     data-size="sm"
+    data-weight="medium"
   >
     Focused
   </label>

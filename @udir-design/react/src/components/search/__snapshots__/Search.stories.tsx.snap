@@ -4,17 +4,17 @@ exports[`Controlled 1`] = `
 <form style="display: flex; flex-direction: column; gap: var(--ds-size-2);">
   <div>
     <input
-      placeholder
-      id="search-input-controlled"
       aria-label="Søk"
+      id="<removed>"
+      placeholder
       type="search"
       value
     >
     <button
+      aria-label="Tøm"
       data-icon="true"
       data-variant="tertiary"
       type="reset"
-      aria-label="Tøm"
     >
     </button>
     <button
@@ -26,8 +26,8 @@ exports[`Controlled 1`] = `
   </div>
   <div style="display: flex; gap: var(--ds-size-2); align-items: center;">
     <p
-      data-variant="default"
       data-size="sm"
+      data-variant="default"
     >
       Hurtigsøk:
     </p>
@@ -48,15 +48,15 @@ exports[`Form 1`] = `
 <form>
   <div>
     <input
-      placeholder
       aria-label="Søk"
+      placeholder
       type="search"
     >
     <button
+      aria-label="Tøm"
       data-icon="true"
       data-variant="tertiary"
       type="reset"
-      aria-label="Tøm"
     >
     </button>
     <button
@@ -72,16 +72,16 @@ exports[`Form 1`] = `
 exports[`Live Search 1`] = `
 <div>
   <input
-    placeholder
     aria-label="Søk"
+    placeholder
     type="search"
     value
   >
   <button
+    aria-label="Tøm"
     data-icon="true"
     data-variant="tertiary"
     type="reset"
-    aria-label="Tøm"
   >
   </button>
 </div>
@@ -91,15 +91,15 @@ exports[`Preview 1`] = `
 <form>
   <div>
     <input
-      placeholder
       aria-label="Søk"
+      placeholder
       type="search"
     >
     <button
+      aria-label="Tøm"
       data-icon="true"
       data-variant="tertiary"
       type="reset"
-      aria-label="Tøm"
     >
     </button>
     <button
@@ -116,15 +116,15 @@ exports[`Variants 1`] = `
 <div>
   <div>
     <input
-      placeholder
       aria-label="Søk"
+      placeholder
       type="search"
     >
     <button
+      aria-label="Tøm"
       data-icon="true"
       data-variant="tertiary"
       type="reset"
-      aria-label="Tøm"
     >
     </button>
   </div>
@@ -134,15 +134,15 @@ exports[`Variants 1`] = `
   >
   <div>
     <input
-      placeholder
       aria-label="Søk"
+      placeholder
       type="search"
     >
     <button
+      aria-label="Tøm"
       data-icon="true"
       data-variant="tertiary"
       type="reset"
-      aria-label="Tøm"
     >
     </button>
     <button
@@ -158,15 +158,15 @@ exports[`Variants 1`] = `
   >
   <div>
     <input
-      placeholder
       aria-label="Søk"
+      placeholder
       type="search"
     >
     <button
+      aria-label="Tøm"
       data-icon="true"
       data-variant="tertiary"
       type="reset"
-      aria-label="Tøm"
     >
     </button>
     <button
@@ -183,22 +183,22 @@ exports[`With Label 1`] = `
 <ds-field>
   <label
     data-weight="medium"
-    for="components-search--with-label"
+    for="<removed>"
   >
     Søk i læreplaner
   </label>
   <div>
     <input
-      placeholder
-      id="components-search--with-label"
-      type="search"
+      id="<removed>"
       name="cat-search"
+      placeholder
+      type="search"
     >
     <button
+      aria-label="Tøm"
       data-icon="true"
       data-variant="tertiary"
       type="reset"
-      aria-label="Tøm"
     >
     </button>
     <button

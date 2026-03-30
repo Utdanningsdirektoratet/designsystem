@@ -57,29 +57,17 @@ export const Preview = meta.story({
 });
 
 export const Inline = meta.story({
-  render: (context) => (
+  render: () => (
     <Fieldset>
-      <Fieldset.Legend id={context.id + 'legend'}>
-        Kontaktes på e-post?
-      </Fieldset.Legend>
-      <Fieldset.Description id={context.id + 'description'}>
+      <Fieldset.Legend>Kontaktes på e-post?</Fieldset.Legend>
+      <Fieldset.Description>
         Bekreft om du ønsker å bli kontaktet per e-post.
       </Fieldset.Description>
       <div
         style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--ds-size-6)' }}
       >
-        <Radio
-          id={context.id + '-inline-ja'}
-          name="my-inline"
-          label="Ja"
-          value="ja"
-        />
-        <Radio
-          id={context.id + '-inline-nei'}
-          name="my-inline"
-          label="Nei"
-          value="nei"
-        />
+        <Radio name="my-inline" label="Ja" value="ja" />
+        <Radio name="my-inline" label="Nei" value="nei" />
       </div>
     </Fieldset>
   ),
