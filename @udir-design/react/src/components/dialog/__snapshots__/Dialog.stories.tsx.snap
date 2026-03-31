@@ -4,7 +4,7 @@ exports[`Backdrop Closedby Any 1`] = `
 <button
   aria-haspopup="dialog"
   command="show-modal"
-  commandfor="_r_4_"
+  commandfor="_r_5_"
   data-variant="secondary"
   type="button"
 >
@@ -19,7 +19,7 @@ exports[`Backdrop Closedby Any 1`] = `
   <button
     aria-label="Lukk dialogvindu"
     command="close"
-    commandfor="_r_4_"
+    commandfor="_r_5_"
     data-color="neutral"
     data-icon="true"
     data-variant="tertiary"
@@ -35,12 +35,43 @@ exports[`Backdrop Closedby Any 1`] = `
   <p data-variant="default">
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
   </p>
-  <p
-    data-size="sm"
-    data-variant="default"
+</dialog>
+`;
+
+exports[`Custom Close Button 1`] = `
+<button
+  aria-haspopup="dialog"
+  command="show-modal"
+  commandfor="custom-close-button-dialog"
+  data-variant="secondary"
+  type="button"
+>
+  Åpne Dialog med tilpasset lukkeknapp
+</button>
+<dialog
+  data-placement="center"
+  id="<removed>"
+  open
+>
+  <button
+    command="close"
+    commandfor="custom-close-button-dialog"
+    data-variant="secondary"
+    type="button"
   >
-    Dialog footer
-  </p>
+    Lukk
+  </button>
+  <div>
+    <h2>
+      Dialog med tilpasset lukkeknapp
+    </h2>
+    <p data-variant="default">
+      Her har vi erstattet det vanlige lukkekrysset med en knapp med tekst
+    </p>
+    <p data-variant="default">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+    </p>
+  </div>
 </dialog>
 `;
 
@@ -73,7 +104,7 @@ exports[`Dialog Non Modal 1`] = `
   <button
     aria-label="Lukk dialogvindu"
     command="close"
-    commandfor="_r_a_"
+    commandfor="_r_b_"
     data-color="neutral"
     data-icon="true"
     data-variant="tertiary"
@@ -107,7 +138,7 @@ exports[`Dialog With Form 1`] = `
 <button
   aria-haspopup="dialog"
   command="show-modal"
-  commandfor="_r_6_"
+  commandfor="dialog-with-form"
   data-variant="primary"
   type="button"
 >
@@ -122,7 +153,7 @@ exports[`Dialog With Form 1`] = `
   <button
     aria-label="Lukk dialogvindu"
     command="close"
-    commandfor="_r_6_"
+    commandfor="dialog-with-form"
     data-color="neutral"
     data-icon="true"
     data-variant="tertiary"
@@ -150,13 +181,16 @@ exports[`Dialog With Form 1`] = `
   </ds-field>
   <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-4);">
     <button
+      command="close"
+      commandfor="dialog-with-form"
       data-variant="primary"
       type="button"
     >
       Send inn skjema
     </button>
     <button
-      data-command="close"
+      command="close"
+      commandfor="dialog-with-form"
       data-variant="secondary"
       type="button"
     >
@@ -170,7 +204,7 @@ exports[`Dialog With Max Width 1`] = `
 <button
   aria-haspopup="dialog"
   command="show-modal"
-  commandfor="_r_7_"
+  commandfor="_r_8_"
   data-variant="secondary"
   type="button"
 >
@@ -185,7 +219,7 @@ exports[`Dialog With Max Width 1`] = `
   <button
     aria-label="Lukk dialogvindu"
     command="close"
-    commandfor="_r_7_"
+    commandfor="_r_8_"
     data-color="neutral"
     data-icon="true"
     data-variant="tertiary"
@@ -203,10 +237,11 @@ exports[`Dialog With Max Width 1`] = `
 
 exports[`Dialog With Open Prop 1`] = `
 <button
+  aria-haspopup="dialog"
   data-variant="primary"
   type="button"
 >
-  Open Dialog with prop
+  Åpne Dialog med ekstern tilstand
 </button>
 <dialog
   data-placement="center"
@@ -223,22 +258,27 @@ exports[`Dialog With Open Prop 1`] = `
     type="button"
   >
   </button>
-  <p
-    data-size="sm"
-    data-variant="default"
-  >
-    Dialog subtittel
-  </p>
-  <h2 style="margin-bottom: var(--ds-size-2);">
-    Dialog header
-  </h2>
-  <p
-    data-variant="default"
-    style="margin-bottom: var(--ds-size-2);"
-  >
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
-  </p>
-  Dialog footer
+  <div>
+    <h2>
+      Dialog med ekstern tilstand
+    </h2>
+    <p data-variant="default">
+      Her setter vi en ekstern tilstand med
+      <code>
+        open
+      </code>
+      og styrer denne for å åpne og lukke dialogen.
+    </p>
+    <p data-variant="default">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+    </p>
+    <button
+      data-variant="secondary"
+      type="button"
+    >
+      Lukk dialog
+    </button>
+  </div>
 </dialog>
 `;
 
@@ -246,7 +286,7 @@ exports[`Dialog With Suggestion 1`] = `
 <button
   aria-haspopup="dialog"
   command="show-modal"
-  commandfor="_r_8_"
+  commandfor="_r_9_"
   data-variant="secondary"
   type="button"
 >
@@ -261,7 +301,7 @@ exports[`Dialog With Suggestion 1`] = `
   <button
     aria-label="Lukk dialogvindu"
     command="close"
-    commandfor="_r_8_"
+    commandfor="_r_9_"
     data-color="neutral"
     data-icon="true"
     data-variant="tertiary"
@@ -416,7 +456,6 @@ exports[`Dialog With Suggestion 1`] = `
       Send inn
     </button>
     <button
-      data-command="close"
       data-variant="secondary"
       type="button"
     >
@@ -521,7 +560,7 @@ exports[`Drawer 1`] = `
   <button
     aria-haspopup="dialog"
     command="show-modal"
-    commandfor="_r_b_"
+    commandfor="_r_c_"
     data-variant="primary"
     type="button"
   >
@@ -537,7 +576,7 @@ exports[`Drawer 1`] = `
     <button
       aria-label="Lukk dialogvindu"
       command="close"
-      commandfor="_r_b_"
+      commandfor="_r_c_"
       data-color="neutral"
       data-icon="true"
       data-variant="tertiary"
@@ -607,7 +646,7 @@ exports[`With Header And Footer 1`] = `
 <button
   aria-haspopup="dialog"
   command="show-modal"
-  commandfor="_r_5_"
+  commandfor="_r_6_"
   data-variant="primary"
   type="button"
 >
@@ -621,7 +660,7 @@ exports[`With Header And Footer 1`] = `
   <button
     aria-label="Lukk dialogvindu"
     command="close"
-    commandfor="_r_5_"
+    commandfor="_r_6_"
     data-color="neutral"
     data-icon="true"
     data-variant="tertiary"
@@ -662,7 +701,7 @@ exports[`Without Dialog Trigger Context 1`] = `
   data-variant="secondary"
   type="button"
 >
-  Åpne Dialog
+  Åpne Dialog med ref
 </button>
 <dialog
   data-placement="center"
@@ -679,26 +718,30 @@ exports[`Without Dialog Trigger Context 1`] = `
     type="button"
   >
   </button>
-  <p
-    data-size="sm"
-    data-variant="default"
+  <div>
+    <h2>
+      Dialog med
+      <code>
+        ref
+      </code>
+    </h2>
+    <p data-variant="default">
+      Her bruker vi
+      <code>
+        ref
+      </code>
+      for å åpne og lukke dialogen
+    </p>
+    <p data-variant="default">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+    </p>
+  </div>
+  <button
+    data-variant="secondary"
+    type="button"
   >
-    Dialog subtittel
-  </p>
-  <h2 style="margin-bottom: var(--ds-size-2);">
-    Her bruker vi
-    <code>
-      ref
-    </code>
-    for å åpne dialogen
-  </h2>
-  <p
-    data-variant="default"
-    style="margin-bottom: var(--ds-size-2);"
-  >
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
-  </p>
-  Dialog footer
+    Lukk dialog
+  </button>
 </dialog>
 `;
 
@@ -706,11 +749,11 @@ exports[`Without Dialog Trigger Context With Command 1`] = `
 <button
   aria-haspopup="dialog"
   command="show-modal"
-  commandfor="my-dialog-commant"
+  commandfor="dialog-with-command"
   data-variant="primary"
   type="button"
 >
-  Open Dialog with ref
+  Åpne Dialog med command
 </button>
 <dialog
   data-placement="center"
@@ -720,21 +763,42 @@ exports[`Without Dialog Trigger Context With Command 1`] = `
   <button
     aria-label="Lukk dialogvindu"
     command="close"
-    commandfor="my-dialog-commant"
+    commandfor="dialog-with-command"
     data-color="neutral"
     data-icon="true"
     data-variant="tertiary"
     type="button"
   >
   </button>
-  <h2 style="margin-bottom: var(--ds-size-2);">
-    Dialog header
-  </h2>
-  <p
-    data-variant="default"
-    style="margin-bottom: var(--ds-size-2);"
-  >
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
-  </p>
+  <div>
+    <h2>
+      Dialog med
+      <code>
+        command
+      </code>
+    </h2>
+    <p data-variant="default">
+      Her bruker vi
+      <code>
+        command
+      </code>
+      og
+      <code>
+        commandfor
+      </code>
+      for å åpne og lukke dialogen
+    </p>
+    <p data-variant="default">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+    </p>
+    <button
+      command="close"
+      commandfor="dialog-with-command"
+      data-variant="secondary"
+      type="button"
+    >
+      Lukk dialog
+    </button>
+  </div>
 </dialog>
 `;
