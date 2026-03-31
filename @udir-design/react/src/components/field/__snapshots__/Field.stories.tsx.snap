@@ -1,10 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Affix 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="affix"
+    for="<removed>"
   >
     Hvor mange kroner koster det per måned?
   </label>
@@ -13,7 +13,7 @@ exports[`Affix 1`] = `
       NOK
     </span>
     <input
-      id="affix"
+      id="<removed>"
       size="12"
       type="text"
     >
@@ -21,100 +21,99 @@ exports[`Affix 1`] = `
       pr. mnd.
     </span>
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`Counter 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="counter"
+    for="<removed>"
   >
     Legg til en beskrivelse
   </label>
   <textarea
+    aria-describedby="<removed>"
+    id="<removed>"
     rows="2"
-    id="counter"
-    aria-describedby="counter:description:1"
   >
   </textarea>
-  <div aria-live="polite">
-  </div>
   <p
-    data-variant="default"
-    aria-hidden="true"
+    data-field="counter"
+    data-label="10 tegn igjen"
+    data-limit="10"
+    data-state="under"
+    id="<removed>"
   >
-    10 tegn igjen
   </p>
-  <div
-    aria-hidden="true"
-    data-field="description"
-    id="counter:description:1"
-  >
-    Maks 10 tegn tillatt.
-  </div>
-</div>
+</ds-field>
 `;
 
 exports[`Position 1`] = `
 <div style="max-width: 200px; margin: auto;">
   <div style="display: flex; flex-direction: column; gap: var(--ds-size-2);">
-    <div data-position="end">
+    <ds-field
+      data-clickdelegatefor="<removed>"
+      data-position="end"
+    >
       <label
         data-weight="medium"
-        for="airplane"
+        for="<removed>"
       >
         Flymodus
       </label>
       <input
+        id="<removed>"
         role="switch"
-        id="airplane"
         type="checkbox"
       >
-    </div>
-    <div data-position="end">
+    </ds-field>
+    <ds-field
+      data-clickdelegatefor="<removed>"
+      data-position="end"
+    >
       <label
         data-weight="medium"
-        for="sounds"
+        for="<removed>"
       >
         Lydløs
       </label>
       <input
+        id="<removed>"
         role="switch"
-        id="sounds"
         type="checkbox"
       >
-    </div>
+    </ds-field>
   </div>
 </div>
 `;
 
 exports[`Preview 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="preview"
+    for="<removed>"
   >
     E-post
   </label>
   <div
     data-field="description"
-    id="preview:description:1"
+    id="<removed>"
   >
     E-posten din brukes til å logge inn og motta varsler
   </div>
   <input
-    id="preview"
+    aria-describedby="<removed>"
     aria-invalid="true"
+    id="<removed>"
     type="text"
     value="ola nordmann@udir.no"
-    aria-describedby="preview:validation:1 preview:description:1"
   >
   <p
     data-field="validation"
-    id="preview:validation:1"
+    id="<removed>"
   >
     Du må oppgi en gyldig e-postadresse
   </p>
-</div>
+</ds-field>
 `;

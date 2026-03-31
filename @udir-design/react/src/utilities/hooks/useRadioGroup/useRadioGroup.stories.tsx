@@ -1,4 +1,3 @@
-import type { StoryContext } from '@storybook/react-vite';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import type { DecoratorType } from '.storybook/types';
@@ -82,7 +81,7 @@ export const Default = meta.story({
     disabled: false,
     value: '10-20',
   },
-  render(args, context) {
+  render(args) {
     const { getRadioProps, validationMessageProps } = useRadioGroup({
       ...args,
     });
@@ -93,7 +92,6 @@ export const Default = meta.story({
         {ageGroups.map((group) => (
           <Radio
             key={group.value}
-            id={context.id + '-' + group.value}
             label={group.label}
             {...getRadioProps(group.value)}
           />
@@ -120,7 +118,7 @@ export const Controlled = meta.story({
     },
     docs: { source: { type: 'code', transform: formatReactSource } },
   },
-  render: (args, context) => {
+  render: (args) => {
     const { value, setValue, getRadioProps } = useRadioGroup({
       ...args,
     });
@@ -134,7 +132,6 @@ export const Controlled = meta.story({
           {educationLevels.map((level) => (
             <Radio
               key={level.value}
-              id={`${context.id}-${level.value}`}
               label={level.label}
               {...getRadioProps(level.value)}
             />
@@ -165,7 +162,7 @@ const GroupBase = {
     disabled: false,
     value: 'sjokolade',
   },
-  render(args: UseRadioGroupProps, context: StoryContext<UseRadioGroupProps>) {
+  render(args: UseRadioGroupProps) {
     const { getRadioProps, validationMessageProps } = useRadioGroup({
       ...args,
     });
@@ -179,7 +176,6 @@ const GroupBase = {
         {ageGroups.map((group) => (
           <Radio
             key={group.value}
-            id={context.id + '-' + group.value}
             label={group.label}
             {...getRadioProps(group.value)}
           />

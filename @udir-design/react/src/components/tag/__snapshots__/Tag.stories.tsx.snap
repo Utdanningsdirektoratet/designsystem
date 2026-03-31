@@ -14,18 +14,18 @@ exports[`Article 1`] = `
     <ul style="list-style: none; display: flex; gap: 10px; padding: 0px; margin: 0px;">
       <li>
         <span
-          data-variant="default"
           data-color="accent"
           data-size="sm"
+          data-variant="default"
         >
           Videregående
         </span>
       </li>
       <li>
         <span
-          data-variant="default"
           data-color="support1"
           data-size="sm"
+          data-variant="default"
         >
           Lærling
         </span>
@@ -34,11 +34,11 @@ exports[`Article 1`] = `
   </div>
   <div style="display: flex; align-items: center; gap: 10px; margin-bottom: var(--ds-size-2);">
     <span
-      data-variant="circle"
-      data-initials="ON"
-      role="img"
       aria-label="Kari Nordmann"
+      data-initials="ON"
       data-size="xs"
+      data-variant="circle"
+      role="img"
     >
     </span>
     <p data-variant="default">
@@ -53,26 +53,26 @@ exports[`Article 1`] = `
 
 exports[`Colors 1`] = `
 <span
-  data-variant="default"
   data-color="neutral"
+  data-variant="default"
 >
   neutral
 </span>
 <span
-  data-variant="default"
   data-color="accent"
+  data-variant="default"
 >
   accent
 </span>
 <span
-  data-variant="default"
   data-color="support1"
+  data-variant="default"
 >
   support1
 </span>
 <span
-  data-variant="default"
   data-color="support2"
+  data-variant="default"
 >
   support2
 </span>
@@ -84,52 +84,52 @@ exports[`Icon 1`] = `
   style="padding-inline-start: var(--ds-size-1);"
 >
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
     aria-hidden="true"
+    fill="none"
+    focusable="false"
+    height="1em"
+    role="img"
     style="margin-inline-end: var(--ds-size-1);"
+    viewbox="0 0 24 24"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      fill="currentColor"
       d="M15 14a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 9 14zM9.5 9a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3M14.5 9a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"
+      fill="currentColor"
     >
     </path>
     <path
+      clip-rule="evenodd"
+      d="M12 .5a1.5 1.5 0 0 1 .75 2.798V5h5.5a.75.75 0 0 1 .75.75v3.5h2.24a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-.75.75H19v3.5a.75.75 0 0 1-.75.75H5.75a.75.75 0 0 1-.75-.75v-3.5H2.75A.75.75 0 0 1 2 14v-4a.75.75 0 0 1 .75-.75H5v-3.5A.75.75 0 0 1 5.75 5h5.5V3.298A1.498 1.498 0 0 1 12 .5m-5.5 17h11v-11h-11zm-3-4.25H5v-2.5H3.5zm15.5 0h1.49v-2.5H19z"
       fill="currentColor"
       fill-rule="evenodd"
-      d="M12 .5a1.5 1.5 0 0 1 .75 2.798V5h5.5a.75.75 0 0 1 .75.75v3.5h2.24a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-.75.75H19v3.5a.75.75 0 0 1-.75.75H5.75a.75.75 0 0 1-.75-.75v-3.5H2.75A.75.75 0 0 1 2 14v-4a.75.75 0 0 1 .75-.75H5v-3.5A.75.75 0 0 1 5.75 5h5.5V3.298A1.498 1.498 0 0 1 12 .5m-5.5 17h11v-11h-11zm-3-4.25H5v-2.5H3.5zm15.5 0h1.49v-2.5H19z"
-      clip-rule="evenodd"
     >
     </path>
   </svg>
   Teksten er KI-generert
 </span>
 <span
-  data-variant="default"
   data-color="support1"
+  data-variant="default"
   style="padding-inline-start: var(--ds-size-1);"
 >
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
     aria-hidden="true"
+    fill="none"
+    focusable="false"
+    height="1em"
+    role="img"
     style="margin-inline-end: var(--ds-size-1);"
+    viewbox="0 0 24 24"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
   >
     <path
+      clip-rule="evenodd"
+      d="M11.997 2.25A3.747 3.747 0 0 0 8.75 7.864a3.292 3.292 0 0 0-.376 6.218l4.486 1.848a2.245 2.245 0 0 1-.857 4.32A2.25 2.25 0 0 1 9.75 18a.75.75 0 0 0-1.5 0 3.75 3.75 0 0 0 3.753 3.75 3.747 3.747 0 0 0 3.247-5.614 3.293 3.293 0 0 0 .376-6.218L11.14 8.07a2.245 2.245 0 0 1 .857-4.32A2.25 2.25 0 0 1 14.25 6a.75.75 0 0 0 1.5 0 3.75 3.75 0 0 0-3.753-3.75m1.2 12.196.057.018.511.184a1.793 1.793 0 0 0 1.29-3.344l-4.251-1.75-.058-.018-.51-.184a1.793 1.793 0 0 0-1.29 3.344z"
       fill="currentColor"
       fill-rule="evenodd"
-      d="M11.997 2.25A3.747 3.747 0 0 0 8.75 7.864a3.292 3.292 0 0 0-.376 6.218l4.486 1.848a2.245 2.245 0 0 1-.857 4.32A2.25 2.25 0 0 1 9.75 18a.75.75 0 0 0-1.5 0 3.75 3.75 0 0 0 3.753 3.75 3.747 3.747 0 0 0 3.247-5.614 3.293 3.293 0 0 0 .376-6.218L11.14 8.07a2.245 2.245 0 0 1 .857-4.32A2.25 2.25 0 0 1 14.25 6a.75.75 0 0 0 1.5 0 3.75 3.75 0 0 0-3.753-3.75m1.2 12.196.057.018.511.184a1.793 1.793 0 0 0 1.29-3.344l-4.251-1.75-.058-.018-.51-.184a1.793 1.793 0 0 0-1.29 3.344z"
-      clip-rule="evenodd"
     >
     </path>
   </svg>
@@ -139,8 +139,8 @@ exports[`Icon 1`] = `
 
 exports[`Preview 1`] = `
 <span
-  data-variant="default"
   data-color="success"
+  data-variant="default"
 >
   Ferdig
 </span>
@@ -148,20 +148,20 @@ exports[`Preview 1`] = `
 
 exports[`Sizes 1`] = `
 <span
-  data-variant="default"
   data-size="sm"
+  data-variant="default"
 >
   sm
 </span>
 <span
-  data-variant="default"
   data-size="md"
+  data-variant="default"
 >
   md
 </span>
 <span
-  data-variant="default"
   data-size="lg"
+  data-variant="default"
 >
   lg
 </span>
@@ -169,26 +169,26 @@ exports[`Sizes 1`] = `
 
 exports[`Status 1`] = `
 <span
-  data-variant="default"
   data-color="success"
+  data-variant="default"
 >
   success
 </span>
 <span
-  data-variant="default"
   data-color="warning"
+  data-variant="default"
 >
   warning
 </span>
 <span
-  data-variant="default"
   data-color="danger"
+  data-variant="default"
 >
   danger
 </span>
 <span
-  data-variant="default"
   data-color="info"
+  data-variant="default"
 >
   info
 </span>
@@ -196,50 +196,50 @@ exports[`Status 1`] = `
 
 exports[`Variant Outline 1`] = `
 <span
-  data-variant="outline"
   data-color="neutral"
+  data-variant="outline"
 >
   neutral
 </span>
 <span
-  data-variant="outline"
   data-color="accent"
+  data-variant="outline"
 >
   accent
 </span>
 <span
-  data-variant="outline"
   data-color="support1"
+  data-variant="outline"
 >
   support1
 </span>
 <span
-  data-variant="outline"
   data-color="support2"
+  data-variant="outline"
 >
   support2
 </span>
 <span
-  data-variant="outline"
   data-color="success"
+  data-variant="outline"
 >
   success
 </span>
 <span
-  data-variant="outline"
   data-color="warning"
+  data-variant="outline"
 >
   warning
 </span>
 <span
-  data-variant="outline"
   data-color="danger"
+  data-variant="outline"
 >
   danger
 </span>
 <span
-  data-variant="outline"
   data-color="info"
+  data-variant="outline"
 >
   info
 </span>

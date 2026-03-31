@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { expect, userEvent, within } from 'storybook/test';
+import { expect, userEvent, waitFor, within } from 'storybook/test';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
@@ -127,7 +127,7 @@ export const ShowHide = meta.story({
     await userEvent.click(button);
     const errorSummary = canvas.getByTestId('show-hide');
     await expect(errorSummary).toBeVisible();
-    await expect(errorSummary).toHaveFocus();
+    await waitFor(() => expect(errorSummary).toHaveFocus());
   },
   parameters: {
     docs: { source: { type: 'code', transform: formatReactSource } },

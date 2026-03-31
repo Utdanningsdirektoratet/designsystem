@@ -4,48 +4,42 @@ exports[`Container 1`] = `
 <div>
   <h1
     data-size="lg"
-    id="sidetittel"
+    id="<removed>"
     tabindex="-1"
   >
     Sidetittel (h1)
   </h1>
   <p
-    data-variant="default"
     data-size="lg"
+    data-variant="default"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dui nunc, maximus vitae finibus ut, consequat sit amet metus. Suspendisse nisl massa, egestas eu justo eu, luctus volutpat ante. Aliquam congue consectetur arcu, at pharetra nunc ultricies in. Sed aliquam mi a odio varius, in eleifend orci elementum.
   </p>
   <div data-variant="default">
-    <u-details
-      open
+    <details
       data-variant="default"
-      role="group"
+      open
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         Innhold på denne siden
-      </u-summary>
+      </summary>
       <div>
         <ol>
           <li>
             <a href="#forste-overskrift">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -57,18 +51,18 @@ exports[`Container 1`] = `
           <li>
             <a href="#forste-underoverskrift">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -80,18 +74,18 @@ exports[`Container 1`] = `
           <li>
             <a href="#andre-overskrift">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -102,11 +96,11 @@ exports[`Container 1`] = `
           </li>
         </ol>
       </div>
-    </u-details>
+    </details>
   </div>
   <h2
     data-size="md"
-    id="forste-overskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Første overskrift (h2)
@@ -119,7 +113,7 @@ exports[`Container 1`] = `
   </p>
   <h3
     data-size="sm"
-    id="forste-underoverskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Første underoverskrift (h3)
@@ -129,7 +123,7 @@ exports[`Container 1`] = `
   </p>
   <h4
     data-size="xs"
-    id="forste-underunderoverskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Første underunderoverskrift (h4)
@@ -139,7 +133,7 @@ exports[`Container 1`] = `
   </p>
   <h2
     data-size="md"
-    id="andre-overskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Andre overskrift (h2)
@@ -153,36 +147,30 @@ exports[`Container 1`] = `
 exports[`Default 1`] = `
 <div>
   <div data-variant="default">
-    <u-details
-      open
+    <details
       data-variant="default"
-      role="group"
+      open
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         Innhold på denne siden
-      </u-summary>
+      </summary>
       <div>
         <ol>
           <li>
             <a href="#first-heading">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -194,18 +182,18 @@ exports[`Default 1`] = `
           <li>
             <a href="#first-subheading">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -217,18 +205,18 @@ exports[`Default 1`] = `
           <li>
             <a href="#second-heading">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -239,25 +227,25 @@ exports[`Default 1`] = `
           </li>
         </ol>
       </div>
-    </u-details>
+    </details>
   </div>
   <h2
     data-size="md"
-    id="first-heading"
+    id="<removed>"
     tabindex="-1"
   >
     Første overskrift (h2)
   </h2>
   <h3
     data-size="sm"
-    id="first-subheading"
+    id="<removed>"
     tabindex="-1"
   >
     Første underoverskrift (h3)
   </h3>
   <h2
     data-size="md"
-    id="second-heading"
+    id="<removed>"
     tabindex="-1"
   >
     Andre overskrift (h2)
@@ -268,36 +256,30 @@ exports[`Default 1`] = `
 exports[`Toc Ignore 1`] = `
 <div>
   <div data-variant="default">
-    <u-details
-      open
+    <details
       data-variant="default"
-      role="group"
+      open
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         Innhold på denne siden
-      </u-summary>
+      </summary>
       <div>
         <ol>
           <li>
             <a href="#inkluder-overskrift-1">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -309,18 +291,18 @@ exports[`Toc Ignore 1`] = `
           <li>
             <a href="#inkluder-overskrift-3">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill="currentColor"
                   d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                  fill="currentColor"
                 >
                 </path>
               </svg>
@@ -331,26 +313,26 @@ exports[`Toc Ignore 1`] = `
           </li>
         </ol>
       </div>
-    </u-details>
+    </details>
   </div>
   <h2
     data-size="md"
-    id="inkluder-overskrift-1"
+    id="<removed>"
     tabindex="-1"
   >
     Inkluder første overskrift (h2)
   </h2>
   <h2
-    data-toc-ignore="true"
     data-size="md"
-    id="utelat-overskrift-2"
+    data-toc-ignore="true"
+    id="<removed>"
     tabindex="-1"
   >
     Utelat andre overskrift (h2)
   </h2>
   <h2
     data-size="md"
-    id="inkluder-overskrift-3"
+    id="<removed>"
     tabindex="-1"
   >
     Inkluder tredje overskrift (h2)

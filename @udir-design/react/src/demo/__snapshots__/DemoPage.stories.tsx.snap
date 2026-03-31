@@ -11,7 +11,7 @@ exports[`Page Story 1`] = `
   <p data-variant="default">
     På denne demosiden hvor vi har laget noen eksempler på komponentene i biblioteket, sånn at man kan se hvordan de samspiller i en litt større kontekst. På sikt vil alle komponentene være representert her, men så langt er det kun de vi har ansett som viktigst i første omgang. Lengre ned på siden kan du prøve å endre på størrelse og farge-modus for å se hvordan det påvirker komponentene.
   </p>
-  <nav aria-label="Du er her:">
+  <ds-breadcrumbs aria-label="Du er her:">
     <ol>
       <li>
         <a href="#">
@@ -29,170 +29,164 @@ exports[`Page Story 1`] = `
         </a>
       </li>
       <li>
-        <a
-          href="#"
-          aria-current="page"
-        >
+        <a href="#">
           Nivå 4
         </a>
       </li>
     </ol>
-  </nav>
+  </ds-breadcrumbs>
   <div>
     <div>
-      <fieldset>
-        <legend data-weight="medium">
+      <fieldset aria-labelledby="<removed>">
+        <legend
+          data-weight="medium"
+          id="<removed>"
+        >
           Handleliste
         </legend>
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="potet"
+            id="<removed>"
             type="checkbox"
             value="potet"
           >
           <label
             data-weight="regular"
-            for="potet"
+            for="<removed>"
           >
             En kilo poteter
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="farris"
+            id="<removed>"
             type="checkbox"
             value="farris"
           >
           <label
             data-weight="regular"
-            for="farris"
+            for="<removed>"
           >
             To liter Farris
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="blomkol"
+            checked
+            id="<removed>"
             type="checkbox"
             value="blomkol"
-            checked
           >
           <label
             data-weight="regular"
-            for="blomkol"
+            for="<removed>"
           >
             Blomkål
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="pizza"
+            checked
+            id="<removed>"
             type="checkbox"
             value="pizza"
-            checked
           >
           <label
             data-weight="regular"
-            for="pizza"
+            for="<removed>"
           >
             Pizza
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="melk"
+            checked
+            id="<removed>"
             type="checkbox"
             value="melk"
-            checked
           >
           <label
             data-weight="regular"
-            for="melk"
+            for="<removed>"
           >
             Tre liter lettmelk
           </label>
-        </div>
+        </ds-field>
         <hr aria-hidden="true">
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="smagodt"
+            id="<removed>"
             type="checkbox"
             value="smagodt"
           >
           <label
             data-weight="regular"
-            for="smagodt"
+            for="<removed>"
           >
             2kg smågodt
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="smash"
+            id="<removed>"
             type="checkbox"
             value="smash"
           >
           <label
             data-weight="regular"
-            for="smash"
+            for="<removed>"
           >
             10 poser med Smash
           </label>
-        </div>
+        </ds-field>
       </fieldset>
     </div>
     <div>
       <h2>
         Opprett ny bruker
       </h2>
-      <div>
+      <ds-field>
         <label
           data-weight="medium"
-          for="name"
+          for="<removed>"
         >
           Navn
         </label>
         <div>
           <input
-            id="name"
-            placeholder="Ola Normann"
             autocomplete="name"
+            id="<removed>"
+            placeholder="Ola Normann"
             type="text"
           >
         </div>
-      </div>
-      <div>
+      </ds-field>
+      <ds-field>
         <label
           data-weight="medium"
-          for="email"
+          for="<removed>"
         >
           E-post
         </label>
         <div>
           <input
-            id="email"
-            placeholder="ola@norge.no"
             autocomplete="email"
+            id="<removed>"
+            placeholder="ola@norge.no"
             type="email"
           >
         </div>
-      </div>
+      </ds-field>
       <a
+        aria-label="Trykk for å få hjelp"
+        data-autoplacement="true"
+        data-placement="top"
+        data-tooltip="Trykk for å få hjelp"
         href="#"
-        popovertarget="_r_0_"
-        popovertargetaction="show"
-        aria-describedby="_r_0_"
+        type="describedby"
       >
         Glemt passord?
       </a>
-      <span
-        role="tooltip"
-        id="_r_0_"
-        popover="manual"
-        style="opacity: 0;"
-      >
-        Trykk for å få hjelp
-      </span>
       <button
         data-variant="primary"
         type="button"
@@ -209,17 +203,17 @@ exports[`Page Story 1`] = `
           Side 1 av 8
         </span>
         <u-progress
-          value="1"
-          id=":u-progress1"
           aria-busy="false"
+          aria-hidden="true"
           aria-label="..."
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="13"
-          role="progressbar"
+          id="<removed>"
           max="8"
-          aria-hidden="true"
+          role="progressbar"
           style="--percentage: 13%;"
+          value="1"
         >
           <template shadowrootmode="open">
             <slot>
@@ -249,49 +243,49 @@ exports[`Page Story 1`] = `
       </h2>
       <div>
         <div
-          data-variant="tinted"
           data-color="accent"
+          data-variant="tinted"
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            aria-label="Sikkerhet"
             fill="none"
-            viewbox="0 0 36 42"
             focusable="false"
             role="img"
-            aria-label="Sikkerhet"
             style="height: 5rem; width: auto;"
+            viewbox="0 0 36 42"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <g
+              clip-path="url(#SikkerhetFill_svg__a)"
               stroke="#303030"
               stroke-width="0.4"
-              clip-path="url(#SikkerhetFill_svg__a)"
             >
               <path
-                fill="#76C69D"
                 d="M34.477 4.68c-9.35.6-14.735-2.58-16.155-3.56a.67.67 0 0 0-.761 0c-1.42.98-6.805 4.159-16.155 3.56A.38.38 0 0 0 1 5.058v19.499C1 37.98 16.789 40.814 17.882 40.995q.059.01.118 0c1.093-.179 16.881-3.013 16.881-16.438v-19.5a.38.38 0 0 0-.404-.377Z"
+                fill="#76C69D"
               >
               </path>
               <path
-                fill="#E5CEAE"
                 d="M23.843 21.451h-2.22v-5.615a3.56 3.56 0 0 0-3.556-3.556 3.56 3.56 0 0 0-3.556 3.556v5.615h-2.22v-5.615a5.78 5.78 0 0 1 5.776-5.776 5.78 5.78 0 0 1 5.776 5.776z"
+                fill="#E5CEAE"
               >
               </path>
               <path
-                fill="#BED5E8"
                 d="M26.3 29.311H9.987a1.19 1.19 0 0 1-1.191-1.19v-8.185c0-.657.532-1.19 1.19-1.19H26.3c.657 0 1.192.532 1.192 1.19v8.185c0 .656-.535 1.19-1.192 1.19Z"
+                fill="#BED5E8"
               >
               </path>
               <path
-                fill="#A9C0D3"
                 d="M18.798 23.933a1.86 1.86 0 0 0 1.17-2.112 1.865 1.865 0 1 0-2.468 2.117c.04.015.057.06.038.096l-1.145 2.094a.503.503 0 0 0 .441.744h2.599c.38 0 .622-.405.445-.74l-1.118-2.106c-.017-.032 0-.078.038-.093Z"
+                fill="#A9C0D3"
               >
               </path>
             </g>
             <defs>
-              <clipPath id="SikkerhetFill_svg__a">
+              <clipPath id="<removed>">
                 <path
-                  fill="#fff"
                   d="M0 0h35.881v42H0z"
+                  fill="#fff"
                 >
                 </path>
               </clipPath>
@@ -305,112 +299,112 @@ exports[`Page Story 1`] = `
           </p>
         </div>
         <div
-          data-variant="tinted"
           data-color="support1"
+          data-variant="tinted"
         >
           <div>
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              aria-label="Skole"
               fill="none"
-              viewbox="0 0 42 23"
               focusable="false"
               role="img"
-              aria-label="Skole"
               style="width: 5rem; height: auto;"
+              viewbox="0 0 42 23"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
+                d="M31.708 4.35H10.292v17.372h21.416z"
                 fill="#F2E8DA"
                 stroke="#303030"
                 stroke-miterlimit="10"
                 stroke-width="0.4"
-                d="M31.708 4.35H10.292v17.372h21.416z"
               >
               </path>
               <path
+                d="M10.291 8.435H1.883v13.287h8.408z"
                 fill="#D6B689"
                 stroke="#303030"
                 stroke-miterlimit="10"
                 stroke-width="0.4"
-                d="M10.291 8.435H1.883v13.287h8.408z"
               >
               </path>
               <path
+                d="M40.116 8.43h-8.408v13.287h8.408z"
                 fill="#E5CEAE"
                 stroke="#303030"
                 stroke-miterlimit="10"
                 stroke-width="0.4"
-                d="M40.116 8.43h-8.408v13.287h8.408z"
               >
               </path>
               <path
+                d="M32.179 4.35H9.82L11.79 1h18.42zM41 8.43h-9.292V5.768h7.98zM10.292 8.43H1l1.312-2.662h7.98z"
                 fill="#303030"
                 stroke="#303030"
                 stroke-miterlimit="10"
                 stroke-width="0.4"
-                d="M32.179 4.35H9.82L11.79 1h18.42zM41 8.43h-9.292V5.768h7.98zM10.292 8.43H1l1.312-2.662h7.98z"
               >
               </path>
               <path
+                d="M21 9.21a1.473 1.473 0 1 0 0-2.945 1.473 1.473 0 0 0 0 2.945Z"
                 fill="#BED5E8"
                 stroke="#303030"
                 stroke-miterlimit="10"
                 stroke-width="0.4"
-                d="M21 9.21a1.473 1.473 0 1 0 0-2.945 1.473 1.473 0 0 0 0 2.945Z"
               >
               </path>
               <path
+                d="M24.274 15.169h-6.548v6.548h6.548z"
                 fill="#76C69D"
                 stroke="#303030"
                 stroke-miterlimit="10"
                 stroke-width="0.4"
-                d="M24.274 15.169h-6.548v6.548h6.548z"
               >
               </path>
               <path
-                fill="#D6B689"
-                stroke="#303030"
-                stroke-miterlimit="10"
-                stroke-width="0.4"
                 d="M29.04 16.323h-2.098v3.256h2.098z"
-              >
-              </path>
-              <path
-                fill="#E5CEAE"
-                stroke="#303030"
-                stroke-miterlimit="10"
-                stroke-width="0.4"
-                d="M15.058 16.323H12.96v3.256h2.098z"
-              >
-              </path>
-              <path
                 fill="#D6B689"
                 stroke="#303030"
                 stroke-miterlimit="10"
                 stroke-width="0.4"
-                d="M15.058 8.606H12.96v3.256h2.098z"
               >
               </path>
               <path
+                d="M15.058 16.323H12.96v3.256h2.098z"
                 fill="#E5CEAE"
                 stroke="#303030"
                 stroke-miterlimit="10"
                 stroke-width="0.4"
-                d="M29.04 8.606h-2.098v3.256h2.098z"
               >
               </path>
               <path
+                d="M15.058 8.606H12.96v3.256h2.098z"
+                fill="#D6B689"
+                stroke="#303030"
+                stroke-miterlimit="10"
+                stroke-width="0.4"
+              >
+              </path>
+              <path
+                d="M29.04 8.606h-2.098v3.256h2.098z"
+                fill="#E5CEAE"
+                stroke="#303030"
+                stroke-miterlimit="10"
+                stroke-width="0.4"
+              >
+              </path>
+              <path
+                d="M7.137 13.486H5.04v3.256h2.098zM36.961 13.396h-2.098v3.256h2.098z"
                 fill="#F2E8DA"
                 stroke="#303030"
                 stroke-miterlimit="10"
                 stroke-width="0.4"
-                d="M7.137 13.486H5.04v3.256h2.098zM36.961 13.396h-2.098v3.256h2.098z"
               >
               </path>
               <path
+                d="M21 15.169v6.549M20.296 7.516l.704.221v-.935"
                 stroke="#303030"
                 stroke-miterlimit="10"
                 stroke-width="0.2"
-                d="M21 15.169v6.549M20.296 7.516l.704.221v-.935"
               >
               </path>
             </svg>
@@ -423,39 +417,39 @@ exports[`Page Story 1`] = `
           </p>
         </div>
         <div
-          data-variant="tinted"
           data-color="support2"
+          data-variant="tinted"
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            aria-label="Kokkehatt"
             fill="none"
-            viewbox="0 0 33 42"
             focusable="false"
             role="img"
-            aria-label="Kokkehatt"
             style="height: 5rem; width: auto;"
+            viewbox="0 0 33 42"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
+              d="M8.721 29.909s-2.836-4.666-3.004-5.686.978-1.997.434-3.539c-.545-1.54-6.726-5.735-4.77-6.583s.46-5.77 3.607-6.813 3.565 1.74 6.043-.718c2.141-2.123 9.002-7.332 10.557-4.967 1.555 2.364 7.365-.061 9.316 2.587s-4.337 7.358-2.416 10.445c2.22 3.564-.304 6.531.1 7.571.403 1.04.867 4.313.217 5.556l-11.357 3.643-7.973-.65-.757-.843z"
               fill="#C8DEF0"
               stroke="#303030"
               stroke-miterlimit="10"
               stroke-width="0.4"
-              d="M8.721 29.909s-2.836-4.666-3.004-5.686.978-1.997.434-3.539c-.545-1.54-6.726-5.735-4.77-6.583s.46-5.77 3.607-6.813 3.565 1.74 6.043-.718c2.141-2.123 9.002-7.332 10.557-4.967 1.555 2.364 7.365-.061 9.316 2.587s-4.337 7.358-2.416 10.445c2.22 3.564-.304 6.531.1 7.571.403 1.04.867 4.313.217 5.556l-11.357 3.643-7.973-.65-.757-.843z"
             >
             </path>
             <path
+              d="M19.756 29.37c-2.277.323-5.083.257-7.086.82-2.004.564-3.59-.224-3.272 1.355s-.188 4.865.434 6.51c.621 1.645-.315 2.323 1.544 2.657 1.86.334 6.79.57 11.053-.426 4.261-.995 7.446-1.112 7.863-2.812.419-1.7-.5-6.207-1.039-6.294s.63-3.249-.447-3.42-3.571-.117-5.102.49c-1.53.604-2.637.934-3.95 1.12z"
               fill="#BED5E8"
               stroke="#303030"
               stroke-miterlimit="10"
               stroke-width="0.4"
-              d="M19.756 29.37c-2.277.323-5.083.257-7.086.82-2.004.564-3.59-.224-3.272 1.355s-.188 4.865.434 6.51c.621 1.645-.315 2.323 1.544 2.657 1.86.334 6.79.57 11.053-.426 4.261-.995 7.446-1.112 7.863-2.812.419-1.7-.5-6.207-1.039-6.294s.63-3.249-.447-3.42-3.571-.117-5.102.49c-1.53.604-2.637.934-3.95 1.12z"
             >
             </path>
             <path
+              d="M12.794 27.98s-2.123-2.534-1.532-5.713c.59-3.178-1.29-4.245-1.967-6.362M18.039 24.297s1.987-2.187.546-6.122c-1.97-5.38-1.672-9.685-.47-10.342M24.58 10.675c-2.069 5.887 1.85 5.425.157 10.614-.775 2.376 1.184 4.394 1.14 4.532M28.775 32.033S27.43 34.064 17.722 35.1"
               stroke="#303030"
               stroke-miterlimit="10"
               stroke-width="0.245"
-              d="M12.794 27.98s-2.123-2.534-1.532-5.713c.59-3.178-1.29-4.245-1.967-6.362M18.039 24.297s1.987-2.187.546-6.122c-1.97-5.38-1.672-9.685-.47-10.342M24.58 10.675c-2.069 5.887 1.85 5.425.157 10.614-.775 2.376 1.184 4.394 1.14 4.532M28.775 32.033S27.43 34.064 17.722 35.1"
             >
             </path>
           </svg>
@@ -490,29 +484,30 @@ exports[`Page Story 1`] = `
           </select>
           <button
             data-variant="primary"
+            popovertarget="_r_3_"
             type="button"
-            popovertarget="_r_1_"
           >
             Utfør
           </button>
           <div
-            id="_r_1_"
-            popover="manual"
+            data-placement="top"
             data-variant="default"
+            id="<removed>"
+            popover="manual"
           >
             Er du sikker på at du vil gjennomføre? Handlingen vil utføres på alle brukere.
             <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
               <button
+                data-size="sm"
                 data-variant="primary"
                 type="button"
-                data-size="sm"
               >
                 Ja, utfør
               </button>
               <button
+                data-size="sm"
                 data-variant="tertiary"
                 type="button"
-                data-size="sm"
               >
                 Avbryt
               </button>
@@ -521,15 +516,15 @@ exports[`Page Story 1`] = `
         </div>
         <div>
           <input
-            placeholder
             aria-label="Søk"
+            placeholder
             type="search"
           >
           <button
+            aria-label="Tøm"
             data-icon="true"
             data-variant="tertiary"
             type="reset"
-            aria-label="Tøm"
           >
           </button>
           <button

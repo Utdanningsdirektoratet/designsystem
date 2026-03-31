@@ -37,11 +37,15 @@ exports[`Preview 1`] = `
         Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu.
       </p>
       <div
+        data-clickdelegatefor="<removed>"
         data-variant="default"
         style="max-width: 300px;"
       >
         <h2>
-          <a href="/">
+          <a
+            href="/"
+            id="<removed>"
+          >
             Logg inn
           </a>
         </h2>
@@ -55,12 +59,12 @@ exports[`Preview 1`] = `
     </div>
     <div style="width: 400px;">
       <svg
-        width="493"
-        height="493"
-        viewbox="0 0 493 493"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        height="493"
         style="width: 100%; height: fit-content;"
+        viewbox="0 0 493 493"
+        width="493"
+        xmlns="http://www.w3.org/2000/svg"
       >
         <path
           d="M393.693 334.03C358.147 373.284 309.959 412.419 239.772 374.54C169.59 336.666 181.93 293.224 120.052 266.24C58.1745 239.261 42.5388 128.59 134.035 114.05C225.531 99.5099 237.014 131.609 272.163 150.994C307.312 170.38 369.284 134.537 419.933 182.213C475.95 234.948 413.02 312.688 393.693 334.03Z"
@@ -100,9 +104,9 @@ exports[`Preview 1`] = `
         <path
           d="M123.094 258.734C120.988 259.056 118.842 259.123 116.721 258.931C116.289 258.892 115.839 258.836 115.48 258.591"
           stroke="#536D81"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
@@ -123,9 +127,9 @@ exports[`Preview 1`] = `
         <path
           d="M88.8367 270.554C89.5416 270.554 90.113 269.326 90.113 267.811C90.113 266.296 89.5416 265.068 88.8367 265.068C88.1319 265.068 87.5605 266.296 87.5605 267.811C87.5605 269.326 88.1319 270.554 88.8367 270.554Z"
           stroke="#7F99AE"
-          stroke-width="0.403259"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.403259"
         >
         </path>
         <path
@@ -181,9 +185,9 @@ exports[`Preview 1`] = `
         <path
           d="M48.119 273.217C48.8238 273.217 49.3952 271.989 49.3952 270.474C49.3952 268.959 48.8238 267.731 48.119 267.731C47.4142 267.731 46.8428 268.959 46.8428 270.474C46.8428 271.989 47.4142 273.217 48.119 273.217Z"
           stroke="#7F99AE"
-          stroke-width="0.403259"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.403259"
         >
         </path>
         <path
@@ -204,9 +208,9 @@ exports[`Preview 1`] = `
         <path
           d="M110.477 274.699C111.452 274.645 112.149 272.904 112.035 270.81C111.92 268.716 111.037 267.061 110.063 267.114C109.088 267.168 108.391 268.909 108.505 271.003C108.62 273.097 109.503 274.752 110.477 274.699Z"
           stroke="#7F99AE"
-          stroke-width="0.55764"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.55764"
         >
         </path>
         <path
@@ -232,41 +236,41 @@ exports[`Preview 1`] = `
         <path
           d="M48.1338 250.917C48.9908 251.832 49.7075 252.877 50.253 254.005C50.4813 254.478 50.6834 255.01 50.544 255.515"
           stroke="#705C40"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
           d="M69.1927 250.322C68.1027 250.447 67.1212 251.081 66.369 251.879C65.6167 252.678 65.0619 253.639 64.5146 254.589C63.7473 255.923 62.9801 257.257 62.2129 258.59"
           stroke="#705C40"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
           d="M78.1988 248.651C77.7076 248.422 76.829 248.987 76.4576 249.276C74.6312 250.696 74.2822 253.235 73.9697 255.375"
           stroke="#705C40"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
           d="M67.208 245.222C68.7883 245.677 70.276 246.105 71.7515 246.853C73.226 247.601 74.6295 248.479 76.0292 249.356"
           stroke="#705C40"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
           d="M65.2824 243.109C65.5538 243.549 65.4331 243.996 65.0233 244.298C64.5863 244.619 63.966 244.795 63.4289 244.81C63.0921 244.82 62.7366 244.81 62.4493 244.635C62.0274 244.376 61.5315 243.209 61.4201 242.726C61.9282 243.138 62.1883 243.835 62.0751 244.478C61.9628 245.122 61.4809 245.689 60.8634 245.904C60.4022 246.065 59.6555 246.161 59.1961 245.969C59.0605 245.913 58.951 245.794 58.9847 245.639"
           stroke="#705C40"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
@@ -367,98 +371,98 @@ exports[`Preview 1`] = `
         <path
           d="M81.626 209.327C82.2893 209.857 82.5588 210.766 82.5045 211.613C82.4503 212.46 82.1144 213.261 81.7514 214.029"
           stroke="#303030"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
           d="M83.9814 209.351C84.2172 210.041 84.4287 210.745 84.4839 211.471C84.5391 212.197 84.4277 212.953 84.0554 213.579"
           stroke="#303030"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
           d="M85.7471 208.358C85.9782 208.598 86.0624 208.941 86.1232 209.268C86.3159 210.314 86.3506 211.388 86.2271 212.445"
           stroke="#303030"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
           d="M122.709 208.694C122.909 209.781 123.103 210.939 122.687 211.963C122.367 212.751 121.686 213.383 120.878 213.644"
           stroke="#303030"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
           d="M104.788 206.38C103.576 207.551 102.921 209.275 103.05 210.956"
           stroke="#303030"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
           d="M95.5879 196.973C96.9006 200.766 97.3862 204.843 96.9998 208.838"
           stroke="#5BA27E"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
           d="M81.1103 192.281C81.3648 194.048 81.6062 195.918 80.9167 197.564C80.6921 198.1 80.3749 198.591 80.0605 199.079"
           stroke="#5BA27E"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
           d="M72.2818 209.817C72.0517 209.772 71.4192 209.534 71.2124 209.424C70.7736 209.188 70.2814 208.982 69.8875 208.681C69.0174 208.015 68.2408 207.238 67.4558 206.475C65.6959 204.764 64.2194 202.562 64.3813 200C64.4524 198.869 64.8847 197.743 65.6809 196.935C66.8523 195.747 68.6871 195.383 70.3245 195.699C71.9628 196.015 73.428 196.93 74.7117 197.997"
           stroke="#5BA27E"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
           d="M96.4978 250.691C96.6232 250.743 96.7364 250.556 96.6765 250.434C96.6166 250.312 96.4744 250.261 96.3443 250.224C95.6969 250.036 95.0307 249.914 94.3589 249.864C93.6899 249.815 93.0172 249.837 92.3464 249.859C91.0907 249.9 89.7163 249.802 88.5028 250.18C88.0555 250.319 87.6935 250.551 87.307 250.807C87.2013 250.878 87.0806 250.986 87.1199 251.107C87.2537 251.213 87.4371 251.256 87.6036 251.217"
           stroke="#536D81"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
           d="M88.7907 222.973C87.9271 223.351 87.304 224.15 86.9382 225.019C86.3712 226.36 86.3029 227.82 86.127 229.246C85.2428 236.399 85.7321 243.557 86.7782 250.664"
           stroke="#536D81"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
           d="M116.396 236.463C116.289 237.301 115.7 238.061 114.915 238.371"
           stroke="#536D81"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
           d="M77.7391 214.329C78.47 214.137 78.8268 213.082 78.5362 211.972C78.2455 210.862 77.4174 210.117 76.6866 210.308C75.9557 210.499 75.5989 211.555 75.8895 212.665C76.1802 213.775 77.0083 214.52 77.7391 214.329Z"
           fill="#BED5E8"
           stroke="#536D81"
-          stroke-width="0.452848"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.452848"
         >
         </path>
         <path
@@ -469,17 +473,17 @@ exports[`Preview 1`] = `
         <path
           d="M102.646 263.446C102.791 261.633 101.773 261.1 101.061 260.804C100.349 260.507 99.2044 260.588 98.4363 260.662C97.524 260.75 96.434 261.338 95.6004 261.719C94.1221 262.395 92.7308 263.268 91.4022 264.201C90.2373 265.019 88.9096 265.904 87.9263 266.923C87.7747 267.08 87.6203 267.242 87.5333 267.441C87.4463 267.64 87.4388 267.891 87.5726 268.063"
           stroke="#254B38"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
           d="M97.9608 256.331C97.2404 256.368 96.3169 256.483 95.284 256.789C94.0835 257.144 93.1367 257.638 92.4658 258.056"
           stroke="#254B38"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
@@ -500,25 +504,25 @@ exports[`Preview 1`] = `
         <path
           d="M100.812 183.31C100.693 183.352 100.639 183.489 100.61 183.611C100.395 184.519 100.765 185.447 101.05 186.335C101.108 186.516 101.163 186.707 101.122 186.892C101.068 187.136 100.852 187.318 100.617 187.402C100.381 187.486 100.126 187.488 99.876 187.489"
           stroke="#303030"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
           d="M88.4854 187.256C88.9784 189.088 91.1912 190.359 92.4394 191.518"
           stroke="#303030"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
           d="M88.9989 177.348C88.4722 177.72 88.2233 178.442 88.4086 179.059"
           stroke="#303030"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
@@ -554,9 +558,9 @@ exports[`Preview 1`] = `
         <path
           d="M82.0234 188.747C82.1376 189.733 82.567 190.66 83.0311 191.526C83.5916 192.57 84.3859 193.503 85.3683 194.173C86.0654 194.648 86.8251 194.947 87.6279 195.202C88.309 195.418 89.0061 195.611 89.7209 195.64C90.4357 195.669 91.1758 195.521 91.7587 195.107C92.4838 194.593 92.8993 193.671 92.8029 192.786"
           stroke="#5BA27E"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
@@ -577,9 +581,9 @@ exports[`Preview 1`] = `
         <path
           d="M100.233 166.123C100.744 166.387 101.86 167.549 102.664 168.659C103.496 169.807 103.636 170.993 103.721 171.565"
           stroke="#705C40"
-          stroke-width="0.467818"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.467818"
         >
         </path>
         <path
@@ -655,9 +659,9 @@ exports[`Preview 1`] = `
         <path
           d="M393.976 231.438C393.962 233.358 393.789 235.691 393.26 238.295C392.649 241.303 391.738 243.812 390.875 245.749"
           stroke="#5BA27E"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
@@ -678,25 +682,25 @@ exports[`Preview 1`] = `
         <path
           d="M406.126 225.267C406.779 226.598 407.329 229.251 407.685 230.689C408.083 232.294 408.48 233.898 408.878 235.501C409.177 236.711 409.478 237.925 409.651 239.16C409.77 240.003 409.695 244.63 409.694 245.48C408.384 243.622 407.088 238.071 405.555 236.393C404.69 236.881 404.051 238.436 403.187 238.924C402.811 236.743 402.943 233.444 403.299 231.259C403.606 229.375 403.915 227.491 404.223 225.606"
           stroke="#254B38"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M409.436 249.06C409.429 248.732 409.871 244.865 409.914 244.539C409.995 243.917 410.164 243.31 410.332 242.705C410.673 241.484 411.016 240.256 411.541 239.101C413.118 235.633 416.277 232.941 417.251 229.257C417.569 228.052 417.927 226.846 418.076 225.604C418.371 223.149 417.82 220.634 417.568 218.198C417.438 216.943 417.303 215.664 416.784 214.515C419.369 214.781 423.14 215.369 422.942 218.781C422.795 221.328 422.603 223.369 422.454 225.915C422.404 226.794 422.351 227.673 422.22 228.544C422.057 229.61 421.773 230.653 421.491 231.693C420.737 234.46 419.985 237.228 419.231 239.995C419.098 238.626 418.623 237.294 417.859 236.15C417.688 235.894 417.496 235.64 417.232 235.482C416.894 235.279 416.467 235.197 416.088 235.306C414.309 235.819 412.067 238.379 411.542 239.1"
           stroke="#254B38"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M429.904 230.856C429.89 232.183 429.89 233.577 430.528 234.741C430.78 235.201 431.12 235.603 431.453 236.008C432.983 237.874 434.417 240.013 434.513 242.422"
           stroke="#254B38"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
@@ -707,17 +711,17 @@ exports[`Preview 1`] = `
         <path
           d="M411.845 189.401C413.356 189.791 414.804 190.425 416.117 191.269"
           stroke="#705C40"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M407.264 191.897C408.605 192.138 409.863 192.825 410.791 193.825"
           stroke="#705C40"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
@@ -728,137 +732,137 @@ exports[`Preview 1`] = `
         <path
           d="M389.597 227.259C390.226 227.766 391.154 227.869 391.876 227.508C391.963 227.465 392.057 227.414 392.15 227.438C392.224 227.457 392.28 227.519 392.331 227.577C392.549 227.831 392.768 228.084 392.986 228.339"
           stroke="#BFA687"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M397.629 225.714C397.622 224.709 397.25 222.814 396.613 222.036"
           stroke="#BFA687"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M418.186 356.844C418.723 358.097 419.149 358.363 420.051 359.228C420.954 360.092 422.602 361.223 423.851 361.196C424.35 361.185 424.851 360.867 425.342 360.957C425.931 361.067 425.904 361.276 426.367 361.657C430.13 364.765 434.752 367.562 439.594 368.172C440.835 368.329 442.122 367.985 443.352 367.754C444.579 367.523 446.206 366.59 447.049 365.666"
           stroke="#705C40"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M447.099 362.072C445.825 362.02 444.548 362.135 443.299 362.382C440.793 362.878 439.176 364.652 435.791 363.754C432.693 362.932 429.83 361.541 426.81 360.472C425.769 360.105 424.678 359.842 423.726 359.284C423.102 358.918 422.554 358.435 422.025 357.941C420.875 356.867 419.495 355.004 418.484 353.799"
           stroke="#705C40"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M433.871 351.776C433.187 350.851 430.972 349.606 429.833 349.438C429.106 349.332 428.37 349.292 427.635 349.321C427.361 349.332 427.08 349.354 426.832 349.471C426.583 349.588 426.376 349.824 426.363 350.098C426.346 350.483 426.697 350.778 427.033 350.968C428.893 352.02 431.167 351.893 433.298 351.736"
           stroke="#705C40"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M436.73 348.27C436.988 348.053 437.266 347.848 437.586 347.742C437.906 347.636 438.276 347.639 438.561 347.817C439.022 348.103 439.125 348.769 438.919 349.269C438.713 349.77 438.275 350.137 437.826 350.443C437.369 350.755 434.855 352.318 434.544 351.404C434.264 350.578 436.188 348.724 436.729 348.268L436.73 348.27Z"
           stroke="#705C40"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M437.388 353.801C435.717 353.767 434.595 354.203 432.945 354.475C432.671 354.521 432.341 354.621 432.284 354.894C432.462 354.901 432.639 354.909 432.816 354.917"
           stroke="#705C40"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M439.652 355.592C439.725 355.519 439.749 355.628 439.652 355.592ZM439.652 355.592C439.579 355.664 439.098 355.638 438.996 355.652C437.902 355.801 436.82 355.723 435.784 356.11C435.349 356.273 434.892 356.48 434.661 356.884"
           stroke="#705C40"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M441.129 357.25C439.433 357.67 437.784 358.286 436.229 359.084"
           stroke="#705C40"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M397.084 293.665C400.111 294.396 403.32 295.231 405.443 297.509C406.136 298.253 406.681 299.12 407.212 299.988C408.677 302.378 410.085 304.828 410.991 307.481C411.422 308.742 411.736 310.04 412.121 311.316C413.698 316.542 419.351 323.334 423.075 327.325"
           stroke="#303030"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M429.327 299.323C427.493 300.064 426.202 301.792 425.526 303.65C424.85 305.508 424.707 307.512 424.569 309.485C424.292 313.459 424.016 317.432 423.739 321.406C423.535 324.346 423.331 327.286 423.229 330.232C423.152 332.494 422.911 334.844 422.301 337.105C421.699 339.332 421.111 341.066 419.805 342.967"
           stroke="#303030"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M419.976 343.426C420.595 344.691 421.453 345.488 422.735 346.072C424.016 346.657 428.789 347.075 430.181 347.286C431.619 347.504 434.686 346.955 435.828 346.053"
           stroke="#303030"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M421.135 338.282C420.398 339.008 419.652 339.72 418.895 340.424C417.995 341.258 417.023 342.107 415.822 342.363"
           stroke="#303030"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M418.977 285.326C418.242 286.3 417.631 287.366 417.164 288.494C416.983 288.929 416.822 289.389 416.836 289.861C416.853 290.388 417.088 290.881 417.34 291.345C419.232 294.823 423.048 298.511 426.028 301.12"
           stroke="#303030"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M411.392 286.714C412.147 287.27 412.681 288.075 413.126 288.9C413.571 289.725 413.948 290.592 414.474 291.368"
           stroke="#303030"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M414.848 291.725C413.637 295.458 410.553 297.36 407.104 299.611"
           stroke="#303030"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M393.975 231.438C393.395 231.986 390.986 234.968 390.338 235.432C389.394 236.11 388.023 236.432 386.86 236.462C385.697 236.492 384.448 235.783 384.215 234.644"
           stroke="#5BA27E"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
@@ -884,17 +888,17 @@ exports[`Preview 1`] = `
         <path
           d="M416.904 254.698C412.949 255.45 407.191 256.513 403.219 255.861C401.738 255.617 399.857 254.745 399.298 253.352C397.116 254.964 394.602 256.128 391.961 256.752C390.895 257.004 389.707 257.151 388.762 256.599"
           stroke="#BFA687"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M395.615 250.848C395.149 251.662 394.316 252.187 393.506 252.662C391.531 253.82 389.494 254.873 387.408 255.819"
           stroke="#BFA687"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
@@ -935,9 +939,9 @@ exports[`Preview 1`] = `
         <path
           d="M398.357 211.003C398.289 212.085 398.022 212.893 397.762 213.46C397.447 214.147 397.155 214.461 397.241 214.874C397.323 215.269 397.749 215.761 399.325 216.14"
           stroke="#BFA687"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
@@ -948,49 +952,49 @@ exports[`Preview 1`] = `
         <path
           d="M414.804 206.563C415.263 206.684 415.77 206.839 416.008 207.251C416.095 207.4 416.136 207.569 416.168 207.739C416.297 208.428 416.27 209.145 416.091 209.821"
           stroke="#BFA687"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M392.522 218.816C392.971 219.041 393.208 219.535 393.392 220.004C393.889 221.274 394.233 222.603 394.412 223.956C394.533 224.871 394.591 225.838 395.079 226.623C395.195 226.809 395.337 226.984 395.53 227.084C395.776 227.211 396.071 227.2 396.338 227.133C397.068 226.951 397.333 226.544 397.613 225.903C397.662 226.408 398.134 226.836 398.641 226.834C399.262 226.834 399.734 226.299 400.119 225.809C400.407 226.132 400.892 226.265 401.304 226.132C401.716 225.999 402.033 225.608 402.075 225.176"
           stroke="#BFA687"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M393.542 214.578C393.797 216.39 394.573 218.548 395.707 220.011C396.637 221.21 398.014 221.895 398.986 223.011C400.022 224.203 401.829 224.591 403.313 224.823C403.898 224.915 404.492 224.993 405.078 224.911C405.539 224.846 405.981 224.684 406.418 224.519C407.703 224.031 408.982 223.49 410.093 222.68C411.203 221.871 412.141 220.762 412.519 219.441"
           stroke="#BFA687"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M394.05 191.905C393.151 193.253 392.242 196.445 393.067 198.032C393.298 198.477 393.296 198.759 393.783 198.881C394.095 198.96 394.765 198.765 395.08 198.702C396.103 198.497 397.445 197.183 398.479 197.046C400.301 196.807 402.179 197.347 403.801 198.209C404.414 198.535 405.561 199.188 406.217 199.416C407.421 199.836 408.106 199.877 409.366 199.674C410.52 199.489 411.685 199.3 412.773 198.873C413.861 198.445 414.88 197.751 415.489 196.753"
           stroke="#705C40"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M416.159 257.2C421 258.027 426.68 258.542 432.379 258.989C437.324 259.377 441.99 259.53 446.332 259.526C446.964 259.561 447.499 259.521 447.918 259.467C448.108 259.443 448.307 259.408 448.524 259.359C449.123 259.225 449.595 258.935 449.951 258.666"
           stroke="#5BA27E"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M381.841 229.293L390.248 264.176"
           stroke="#7F99AE"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
@@ -1016,44 +1020,44 @@ exports[`Preview 1`] = `
         <path
           d="M462.777 263.058L455.86 265.623"
           stroke="#263745"
-          stroke-width="0.316793"
           stroke-miterlimit="10"
+          stroke-width="0.316793"
         >
         </path>
         <path
           d="M460.675 262.405L453.758 264.969"
           stroke="#263745"
-          stroke-width="0.316793"
           stroke-miterlimit="10"
+          stroke-width="0.316793"
         >
         </path>
         <path
           d="M458.706 261.838L451.789 264.402"
           stroke="#263745"
-          stroke-width="0.316793"
           stroke-miterlimit="10"
+          stroke-width="0.316793"
         >
         </path>
         <path
           d="M462.329 264.612L454.309 261.928"
           stroke="#263745"
-          stroke-width="0.316793"
           stroke-miterlimit="10"
+          stroke-width="0.316793"
         >
         </path>
         <path
           d="M460.372 265.415L452.352 262.732"
           stroke="#263745"
-          stroke-width="0.316793"
           stroke-miterlimit="10"
+          stroke-width="0.316793"
         >
         </path>
         <path
           d="M427.727 228.162C427.513 229.341 427.637 230.562 427.927 231.725C428.207 232.848 428.554 234.091 429.13 235.089C429.75 236.161 430.071 237.397 430.795 238.412C431.12 238.868 431.529 239.271 431.782 239.77C432.086 240.368 432.146 241.059 432.349 241.7C432.552 242.342 432.981 242.991 433.642 243.12"
           stroke="#5BA27E"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
@@ -1064,99 +1068,99 @@ exports[`Preview 1`] = `
         <path
           d="M441.642 245.475C438.926 243.477 435.309 243.327 431.937 243.331C429.875 243.333 427.808 243.365 425.756 243.586C422.175 243.974 418.657 244.953 415.388 246.469C416.097 246.333 416.809 248.511 417.057 249.724C417.306 250.938 417.303 252.187 417.289 253.426C417.274 254.641 417 255.549 416.4 256.613C416.335 256.729 416.267 256.847 416.156 256.92C415.895 257.091 415.519 256.901 415.383 256.619C415.247 256.337 415.12 255.186 415.158 254.875"
           stroke="#5BA27E"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M412.761 264.474L446.691 265.727"
           stroke="#7F99AE"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M412.433 257.826L392.217 264.132"
           stroke="#7F99AE"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M439.536 355.369C440.422 354.883 442.756 353.874 444.054 351.791C445.87 348.874 445.677 345.946 445.574 344.993C445.444 343.803 444.556 342.707 443.593 342.058"
           stroke="#705C40"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M443.287 341.966C443.531 342.541 443.789 342.937 443.627 343.579C443.422 344.393 442.736 344.63 442.264 345.253C441.236 346.602 440.998 348.285 440.252 349.778C439.883 350.516 438.955 351.191 438.64 351.956C438.418 352.493 438.424 353.554 438.329 354.117"
           stroke="#705C40"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M434.526 346.646C434.371 347.462 434.705 348.762 435.242 350.448C436.251 353.617 438.931 355.06 439.537 355.367"
           stroke="#705C40"
-          stroke-width="0.790397"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.790397"
         >
         </path>
         <path
           d="M421.524 262.329L422.473 262.362"
           stroke="#7F99AE"
-          stroke-width="0.868012"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.868012"
         >
         </path>
         <path
           d="M424.221 262.421L440.811 262.983"
           stroke="#7F99AE"
-          stroke-width="0.868012"
+          stroke-dasharray="1.75 1.75"
           stroke-linecap="round"
           stroke-linejoin="round"
-          stroke-dasharray="1.75 1.75"
+          stroke-width="0.868012"
         >
         </path>
         <path
           d="M441.683 263.014L442.633 263.045"
           stroke="#7F99AE"
-          stroke-width="0.868012"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.868012"
         >
         </path>
         <path
           d="M424.269 260.181L425.219 260.209"
           stroke="#7F99AE"
-          stroke-width="0.868012"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.868012"
         >
         </path>
         <path
           d="M427.179 260.27L441.87 260.718"
           stroke="#7F99AE"
-          stroke-width="0.868012"
+          stroke-dasharray="1.96 1.96"
           stroke-linecap="round"
           stroke-linejoin="round"
-          stroke-dasharray="1.96 1.96"
+          stroke-width="0.868012"
         >
         </path>
         <path
           d="M442.849 260.749L443.799 260.777"
           stroke="#7F99AE"
-          stroke-width="0.868012"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.868012"
         >
         </path>
         <path
@@ -1227,25 +1231,25 @@ exports[`Preview 1`] = `
         <path
           d="M184.258 222.375C184.258 222.375 185.725 222.74 186.213 224.684"
           stroke="#BFA687"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
           d="M211.189 218.108C211.189 218.108 209.79 218.708 210.101 221.964"
           stroke="#BFA687"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
           d="M197.829 222.036C197.697 222.451 197.592 222.878 197.516 223.311C197.439 223.867 197.804 224.419 198.262 224.489L198.967 224.6"
           stroke="#BFA687"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
@@ -1281,9 +1285,9 @@ exports[`Preview 1`] = `
         <path
           d="M203.816 234.149C202.263 234.989 199.241 235.133 199.241 235.133"
           stroke="#BFA687"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
@@ -1299,25 +1303,25 @@ exports[`Preview 1`] = `
         <path
           d="M168.625 267.976C168.625 267.976 167.33 267.91 166.225 268.324C165.117 268.739 165.557 269.473 165.557 269.473"
           stroke="#BFA687"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
           d="M165.851 267.841C165.851 267.841 164.711 268.048 164.254 268.585C163.797 269.117 164.385 269.442 164.385 269.442"
           stroke="#BFA687"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
           d="M222.245 220.515L225.716 222.103"
           stroke="#BFA687"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
@@ -1328,17 +1332,17 @@ exports[`Preview 1`] = `
         <path
           d="M184.197 265.179C185.722 265.218 187.085 265.446 189.331 267.698"
           stroke="#BFA687"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
           d="M168.679 269.959L169.982 269.764"
           stroke="#BFA687"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
@@ -1354,9 +1358,9 @@ exports[`Preview 1`] = `
         <path
           d="M225.515 191.825L222.394 194.333"
           stroke="#BFA687"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
@@ -1372,9 +1376,9 @@ exports[`Preview 1`] = `
         <path
           d="M226.817 236.757C226.817 236.757 227.657 237.576 228.219 237.514"
           stroke="#191D24"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
@@ -1385,17 +1389,17 @@ exports[`Preview 1`] = `
         <path
           d="M188.908 338.196C190.194 338.616 191.54 338.851 192.891 338.892C193.65 338.914 194.435 338.871 195.121 338.551C195.985 338.15 196.849 338.006 197.738 337.656C200.082 336.734 202.738 336.851 205.077 335.918C205.692 335.673 206.334 335.288 206.506 334.649"
           stroke="#5BA27E"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
           d="M217.948 331.221C219.922 331.731 222.014 331.486 224.001 331.024C225.016 330.788 226.042 330.484 226.887 329.875C228.104 328.994 228.811 327.58 229.358 326.18C230.237 323.937 230.828 321.584 231.115 319.192"
           stroke="#5BA27E"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
@@ -1411,33 +1415,33 @@ exports[`Preview 1`] = `
         <path
           d="M219.483 294.229C221.594 294.967 222.717 297.789 223.782 299.498C226.533 303.915 227.441 311.291 228.332 314.421"
           stroke="#2F4960"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
           d="M213.523 280.363C212.788 281.79 213.141 281.35 212.53 283.075C210.173 289.73 207.188 293.563 210.611 301.439L211.097 302.409L221.982 317.193"
           stroke="#2F4960"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
           d="M221.632 296.029C222.926 295.451 225.473 292.784 227.663 289.166C230.068 285.192 230.786 281.157 230.092 276.594C229.895 275.301 229.681 273.983 229.07 272.828"
           stroke="#2F4960"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
           d="M205.238 302.167L207.942 302.686"
           stroke="#2F4960"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
@@ -1448,17 +1452,17 @@ exports[`Preview 1`] = `
         <path
           d="M197.957 326.916C198.598 327.23 199.616 327.632 200.92 327.748C202.749 327.91 204.189 327.429 204.923 327.124"
           stroke="#2F4960"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
           d="M221.981 317.192C222.709 317.556 224.504 317.792 226.036 317.035C227.228 316.448 228.169 315.267 228.335 314.418"
           stroke="#2F4960"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
@@ -1474,17 +1478,17 @@ exports[`Preview 1`] = `
         <path
           d="M187.263 233.261C186.944 233.309 186.679 233.598 186.661 233.92C186.642 234.243 186.874 234.561 187.186 234.642C187.392 234.698 187.659 234.685 187.755 234.874C187.191 235.029 186.653 235.436 186.534 236.009C186.414 236.581 186.874 237.255 187.456 237.202C187.736 237.377 188.145 237.408 188.414 237.215C188.53 237.697 188.944 238.093 189.43 238.189C189.917 238.285 190.451 238.071 190.738 237.67"
           stroke="#E5CEAE"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
           d="M188.421 206.873C187.889 207.877 187.477 209.024 187.712 210.135C187.773 210.424 187.88 210.717 187.825 211.008C187.768 211.308 187.543 211.58 187.595 211.882C187.659 212.265 188.11 212.426 188.488 212.514"
           stroke="#E5CEAE"
-          stroke-width="0.86551"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.86551"
         >
         </path>
         <path
@@ -1555,9 +1559,9 @@ exports[`Preview 1`] = `
         <path
           d="M278.476 185.299C278.476 185.299 279.338 187.928 279.455 188.336C279.566 188.743 278.044 191.37 278.133 192.04C278.214 192.707 279.426 193.382 279.426 193.382"
           stroke="#937A57"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
@@ -1573,25 +1577,25 @@ exports[`Preview 1`] = `
         <path
           d="M280.435 202.074C281.813 202.112 283.614 201.55 283.614 201.55"
           stroke="#937A57"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M292.086 189.589C292.086 189.589 291.436 189.356 290.704 190.678C291.469 191.536 290.668 192.428 290.668 192.428"
           stroke="#937A57"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M267.205 188.577C267.205 188.577 268.05 189.12 268.318 190.289C267.509 191.415 268.661 192.079 268.661 192.079"
           stroke="#937A57"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
@@ -1602,9 +1606,9 @@ exports[`Preview 1`] = `
         <path
           d="M260.902 255.936C260.902 255.936 261.191 258.148 261.361 259.552C261.534 260.953 262.683 260.66 262.683 260.66"
           stroke="#937A57"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
@@ -1625,33 +1629,33 @@ exports[`Preview 1`] = `
         <path
           d="M285.535 205.133L285.64 205.423C285.64 205.423 286.796 208.652 284.265 210.012C284.265 210.012 283.194 209.154 282.579 208.105C281.965 207.055 281.276 206.783 281.276 206.783L280.837 206.612"
           stroke="#EAEAEA"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M277.777 206.539L277.515 206.705C277.515 206.705 276.789 207.173 276.404 208.219C276.025 209.266 275.409 210.364 274.758 210.713C274.758 210.713 272.506 209.375 272.619 206.573"
           stroke="#EAEAEA"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M292.985 216.253C292.985 216.253 292.242 218.295 292.242 218.763C292.242 219.231 292.646 223.828 292.646 223.828"
           stroke="#EAEAEA"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M284.305 233.545C284.305 233.545 279.319 238.758 274.027 241.404"
           stroke="#EAEAEA"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
@@ -1667,9 +1671,9 @@ exports[`Preview 1`] = `
         <path
           d="M302.757 255.274C303.118 257.009 303.042 258.074 303.042 258.074C303.157 259.183 302.812 259.768 302.584 259.885"
           stroke="#937A57"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
@@ -1690,65 +1694,65 @@ exports[`Preview 1`] = `
         <path
           d="M264.149 317.96C264.149 317.96 266.276 317.259 267.138 317.904C268.002 318.545 267.138 319.71 266.391 319.888C265.644 320.063 263.802 318.486 263.802 318.486"
           stroke="#EAEAEA"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M264.093 317.786C264.093 317.786 263.661 317.669 263.318 318.108C262.975 318.55 263.403 318.897 263.403 318.897"
           stroke="#EAEAEA"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M263.431 317.904C263.431 317.904 262.426 316.708 261.305 317.202C260.183 317.7 259.55 318.952 260.585 318.952C261.62 318.952 263.146 318.63 263.146 318.63"
           stroke="#EAEAEA"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M264.06 319.887C264.06 319.887 262.57 318.863 260.697 319.272"
           stroke="#EAEAEA"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M262.082 320.237C262.082 320.237 260.903 319.364 259.609 319.858"
           stroke="#EAEAEA"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M265.729 217.132C265.729 217.132 265.902 220.632 265.978 221.254C266.053 221.875 265.44 226.778 265.44 226.778"
           stroke="#EAEAEA"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M258.482 224.405C258.882 224.482 260.089 224.867 261 225.299"
           stroke="#EAEAEA"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M263.006 246.184C263.46 246.124 264.122 246.246 264.122 246.246"
           stroke="#EAEAEA"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
@@ -1764,65 +1768,65 @@ exports[`Preview 1`] = `
         <path
           d="M277.404 261.942L275.217 259.26"
           stroke="#6D889D"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M281.927 260.931L279.858 262.409"
           stroke="#6D889D"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M280.509 248.697C280.509 248.697 281.488 249.747 281.141 255.173"
           stroke="#E0EFFB"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M277.751 248.406C277.751 248.406 276.887 248.987 276.542 254.416"
           stroke="#E0EFFB"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M266.49 247.393L263.72 251.555"
           stroke="#6D889D"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M292.007 249.108L293.389 252.14"
           stroke="#6D889D"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M282.616 276.629C282.607 276.633 282.096 276.709 281.532 276.773C281.483 276.776 281.434 276.782 281.389 276.79"
           stroke="#6D889D"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M295.096 284.286C295.079 284.286 293.638 284.573 291.814 284.895"
           stroke="#6D889D"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
@@ -1843,41 +1847,41 @@ exports[`Preview 1`] = `
         <path
           d="M287.449 315.418C287.449 315.418 289.282 314.13 290.293 314.498C291.305 314.862 290.817 316.227 290.153 316.612C289.489 316.996 287.268 316.02 287.268 316.02"
           stroke="#EAEAEA"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M287.348 315.265C287.348 315.265 286.901 315.279 286.7 315.799C286.498 316.321 287.009 316.529 287.009 316.529"
           stroke="#EAEAEA"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M286.744 315.571C286.744 315.571 285.478 314.217 284.551 315.015C283.621 315.818 283.738 317.197 284.728 316.897C285.718 316.597 286.682 316.35 286.682 316.35"
           stroke="#EAEAEA"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M288.1 317.821C288.1 317.821 286.201 316.741 284.526 317.674"
           stroke="#EAEAEA"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path
           d="M286.328 318.604C286.328 318.604 284.749 317.702 283.655 318.551"
           stroke="#EAEAEA"
-          stroke-width="0.886371"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="0.886371"
         >
         </path>
         <path

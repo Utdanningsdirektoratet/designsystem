@@ -14,9 +14,9 @@ exports[`All States 1`] = `
           Steg
         </button>
         <button
+          aria-current="step"
           data-state="active"
           data-variant="default"
-          aria-current="step"
         >
           <div>
           </div>
@@ -31,9 +31,9 @@ exports[`All States 1`] = `
           Steg
         </button>
         <button
+          aria-invalid="true"
           data-state="invalid"
           data-variant="default"
-          aria-invalid="true"
         >
           <div>
           </div>
@@ -50,9 +50,9 @@ exports[`All States 1`] = `
           Infoside
         </button>
         <button
+          aria-current="step"
           data-state="active"
           data-variant="info"
-          aria-current="step"
         >
           <div>
           </div>
@@ -69,9 +69,9 @@ exports[`All States 1`] = `
           Oppsummering
         </button>
         <button
+          aria-current="step"
           data-state="active"
           data-variant="summary"
-          aria-current="step"
         >
           <div>
           </div>
@@ -88,9 +88,9 @@ exports[`All States 1`] = `
           Innsending
         </button>
         <button
+          aria-current="step"
           data-state="active"
           data-variant="submission"
-          aria-current="step"
         >
           <div>
           </div>
@@ -107,9 +107,9 @@ exports[`All States 1`] = `
           Kvittering
         </button>
         <button
+          aria-current="step"
           data-state="active"
           data-variant="confirmation"
-          aria-current="step"
         >
           <div>
           </div>
@@ -261,36 +261,36 @@ exports[`All States 1`] = `
             </span>
           </summary>
           <button
+            aria-invalid="true"
             data-state="invalid"
             data-variant="default"
-            aria-invalid="true"
           >
             <div>
             </div>
             Første steg
           </button>
           <button
+            aria-invalid="true"
             data-state="invalid"
             data-variant="default"
-            aria-invalid="true"
           >
             <div>
             </div>
             Andre steg
           </button>
           <button
+            aria-invalid="true"
             data-state="invalid"
             data-variant="default"
-            aria-invalid="true"
           >
             <div>
             </div>
             Tredje steg
           </button>
           <button
+            aria-invalid="true"
             data-state="invalid"
             data-variant="default"
-            aria-invalid="true"
           >
             <div>
             </div>
@@ -325,18 +325,18 @@ exports[`All States 1`] = `
             Andre steg
           </button>
           <button
+            aria-invalid="true"
             data-state="invalid"
             data-variant="default"
-            aria-invalid="true"
           >
             <div>
             </div>
             Tredje steg
           </button>
           <button
+            aria-invalid="true"
             data-state="invalid"
             data-variant="default"
-            aria-invalid="true"
           >
             <div>
             </div>
@@ -436,36 +436,36 @@ exports[`All States 1`] = `
             </span>
           </summary>
           <button
+            aria-invalid="true"
             data-state="invalid"
             data-variant="default"
-            aria-invalid="true"
           >
             <div>
             </div>
             Første steg
           </button>
           <button
+            aria-invalid="true"
             data-state="invalid"
             data-variant="default"
-            aria-invalid="true"
           >
             <div>
             </div>
             Andre steg
           </button>
           <button
+            aria-invalid="true"
             data-state="invalid"
             data-variant="default"
-            aria-invalid="true"
           >
             <div>
             </div>
             Tredje steg
           </button>
           <button
+            aria-invalid="true"
             data-state="invalid"
             data-variant="default"
-            aria-invalid="true"
           >
             <div>
             </div>
@@ -475,8 +475,8 @@ exports[`All States 1`] = `
       </div>
       <div>
         <details
+          data-active-step-label="Første steg"
           data-state="idle"
-          data-active-step-label="Første steg"
         >
           <summary>
             <span>
@@ -484,9 +484,9 @@ exports[`All States 1`] = `
             </span>
           </summary>
           <button
+            aria-current="step"
             data-state="active"
             data-variant="default"
-            aria-current="step"
           >
             <div>
             </div>
@@ -520,8 +520,8 @@ exports[`All States 1`] = `
       </div>
       <div>
         <details
+          data-active-step-label="Første steg"
           data-state="completed"
-          data-active-step-label="Første steg"
         >
           <summary>
             <span>
@@ -529,9 +529,9 @@ exports[`All States 1`] = `
             </span>
           </summary>
           <button
+            aria-current="step"
             data-state="active"
             data-variant="default"
-            aria-current="step"
           >
             <div>
             </div>
@@ -565,8 +565,8 @@ exports[`All States 1`] = `
       </div>
       <div>
         <details
-          data-state="invalid"
           data-active-step-label="Første steg"
+          data-state="invalid"
         >
           <summary aria-invalid="true">
             <span>
@@ -574,36 +574,36 @@ exports[`All States 1`] = `
             </span>
           </summary>
           <button
+            aria-current="step"
             data-state="active"
             data-variant="default"
-            aria-current="step"
           >
             <div>
             </div>
             Første steg
           </button>
           <button
+            aria-invalid="true"
             data-state="invalid"
             data-variant="default"
-            aria-invalid="true"
           >
             <div>
             </div>
             Andre steg
           </button>
           <button
+            aria-invalid="true"
             data-state="invalid"
             data-variant="default"
-            aria-invalid="true"
           >
             <div>
             </div>
             Tredje steg
           </button>
           <button
+            aria-invalid="true"
             data-state="invalid"
             data-variant="default"
-            aria-invalid="true"
           >
             <div>
             </div>
@@ -622,9 +622,9 @@ exports[`Full 1`] = `
     <div>
       <div>
         <details
+          data-active-step-label="Første steg"
           data-state="idle"
           open
-          data-active-step-label="Første steg"
         >
           <summary>
             <span>
@@ -632,9 +632,9 @@ exports[`Full 1`] = `
             </span>
           </summary>
           <button
+            aria-current="step"
             data-state="active"
             data-variant="default"
-            aria-current="step"
           >
             <div>
             </div>
@@ -705,44 +705,47 @@ exports[`Full 1`] = `
     <div>
       <div>
         <button
+          aria-haspopup="dialog"
+          command="show-modal"
+          commandfor="_r_1_"
+          data-color="neutral"
           data-variant="secondary"
           type="button"
-          aria-haspopup="dialog"
-          data-color="neutral"
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            fill="none"
-            viewbox="0 0 24 24"
-            focusable="false"
-            role="img"
             aria-hidden="true"
+            fill="none"
+            focusable="false"
+            height="1em"
+            role="img"
+            viewbox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
+              clip-rule="evenodd"
+              d="M4 5.75a.25.25 0 1 0 0 .5.25.25 0 0 0 0-.5M2.25 6a1.75 1.75 0 1 1 3.5 0 1.75 1.75 0 0 1-3.5 0m1.5 6a.25.25 0 1 1 .5 0 .25.25 0 0 1-.5 0M4 10.25a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5M3.75 18a.25.25 0 1 1 .5 0 .25.25 0 0 1-.5 0M4 16.25a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5m5 1a.75.75 0 0 0 0 1.5h12a.75.75 0 0 0 0-1.5zM8.25 12a.75.75 0 0 1 .75-.75h12a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75M9 5.25a.75.75 0 0 0 0 1.5h12a.75.75 0 0 0 0-1.5z"
               fill="currentColor"
               fill-rule="evenodd"
-              d="M4 5.75a.25.25 0 1 0 0 .5.25.25 0 0 0 0-.5M2.25 6a1.75 1.75 0 1 1 3.5 0 1.75 1.75 0 0 1-3.5 0m1.5 6a.25.25 0 1 1 .5 0 .25.25 0 0 1-.5 0M4 10.25a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5M3.75 18a.25.25 0 1 1 .5 0 .25.25 0 0 1-.5 0M4 16.25a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5m5 1a.75.75 0 0 0 0 1.5h12a.75.75 0 0 0 0-1.5zM8.25 12a.75.75 0 0 1 .75-.75h12a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75M9 5.25a.75.75 0 0 0 0 1.5h12a.75.75 0 0 0 0-1.5z"
-              clip-rule="evenodd"
             >
             </path>
           </svg>
           Naviger
         </button>
         <dialog
-          data-placement="center"
-          data-modal="true"
           closedby="any"
+          data-placement="center"
+          id="<removed>"
           style="width: fit-content; min-width: 20rem;"
         >
           <button
+            aria-label="Lukk dialogvindu"
+            command="close"
+            commandfor="_r_1_"
+            data-color="neutral"
             data-icon="true"
             data-variant="tertiary"
             type="button"
-            aria-label="Lukk dialogvindu"
-            data-color="neutral"
-            data-command="close"
           >
           </button>
           <h2>
@@ -750,9 +753,9 @@ exports[`Full 1`] = `
           </h2>
           <div>
             <details
+              data-active-step-label="Første steg"
               data-state="idle"
               open
-              data-active-step-label="Første steg"
             >
               <summary>
                 <span>
@@ -760,9 +763,9 @@ exports[`Full 1`] = `
                 </span>
               </summary>
               <button
+                aria-current="step"
                 data-state="active"
                 data-variant="default"
-                aria-current="step"
               >
                 <div>
                 </div>
@@ -835,36 +838,36 @@ exports[`Full 1`] = `
         Første seksjon
       </h2>
       <form>
-        <div>
+        <ds-field>
           <label
             data-weight="medium"
-            for="q1"
+            for="<removed>"
           >
             Første spørsmål
           </label>
           <div>
             <input
-              id="q1"
-              type="text"
+              id="<removed>"
               name="q1"
+              type="text"
             >
           </div>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field>
           <label
             data-weight="medium"
-            for="q2"
+            for="<removed>"
           >
             Andre spørsmål
           </label>
           <div>
             <input
-              id="q2"
-              type="text"
+              id="<removed>"
               name="q2"
+              type="text"
             >
           </div>
-        </div>
+        </ds-field>
         <div>
           <button
             data-variant="secondary"
@@ -883,9 +886,9 @@ exports[`Grouping 1`] = `
 <div data-size="auto">
   <div>
     <details
+      data-active-step-label="Første steg"
       data-state="idle"
       open
-      data-active-step-label="Første steg"
     >
       <summary>
         <span>
@@ -893,9 +896,9 @@ exports[`Grouping 1`] = `
         </span>
       </summary>
       <button
+        aria-current="step"
         data-state="active"
         data-variant="default"
-        aria-current="step"
       >
         <div>
         </div>
@@ -918,9 +921,9 @@ exports[`Long Step Names 1`] = `
 <div data-size="auto">
   <div style="width: 200px;">
     <details
+      data-active-step-label="Bygg- og anleggsteknikk"
       data-state="idle"
       open
-      data-active-step-label="Bygg- og anleggsteknikk"
     >
       <summary>
         <span>
@@ -928,9 +931,9 @@ exports[`Long Step Names 1`] = `
         </span>
       </summary>
       <button
+        aria-current="step"
         data-state="active"
         data-variant="default"
-        aria-current="step"
       >
         <div>
         </div>
@@ -977,8 +980,8 @@ exports[`Preview 1`] = `
       Steg
     </button>
     <details
-      data-state="idle"
       data-active-step-label="Første steg"
+      data-state="idle"
       open
     >
       <summary>
@@ -987,9 +990,9 @@ exports[`Preview 1`] = `
         </span>
       </summary>
       <button
+        aria-current="step"
         data-state="active"
         data-variant="default"
-        aria-current="step"
       >
         <div>
         </div>
@@ -1013,9 +1016,9 @@ exports[`Simple Navigation 1`] = `
   <div>
     <div>
       <details
+        data-active-step-label="Steg 1"
         data-state="idle"
         open
-        data-active-step-label="Steg 1"
       >
         <summary>
           <span>
@@ -1023,9 +1026,9 @@ exports[`Simple Navigation 1`] = `
           </span>
         </summary>
         <button
+          aria-current="step"
           data-state="active"
           data-variant="default"
-          aria-current="step"
         >
           <div>
           </div>
@@ -1054,21 +1057,21 @@ exports[`Simple Navigation 1`] = `
         Utfylling
       </h2>
       <form>
-        <div>
+        <ds-field>
           <label
             data-weight="medium"
-            for="step1"
+            for="<removed>"
           >
             Steg 1
           </label>
           <div>
             <input
-              id="step1"
-              type="text"
+              id="<removed>"
               name="step1"
+              type="text"
             >
           </div>
-        </div>
+        </ds-field>
         <div>
           <button
             data-variant="secondary"
@@ -1118,9 +1121,9 @@ exports[`States 1`] = `
       Frittstående steg
     </button>
     <button
+      aria-invalid="true"
       data-state="invalid"
       data-variant="default"
-      aria-invalid="true"
     >
       <div>
       </div>
@@ -1178,18 +1181,18 @@ exports[`States 1`] = `
         Første steg
       </button>
       <button
+        aria-invalid="true"
         data-state="invalid"
         data-variant="default"
-        aria-invalid="true"
       >
         <div>
         </div>
         Andre steg
       </button>
       <button
+        aria-invalid="true"
         data-state="invalid"
         data-variant="default"
-        aria-invalid="true"
       >
         <div>
         </div>
@@ -1197,9 +1200,9 @@ exports[`States 1`] = `
       </button>
     </details>
     <details
+      data-active-step-label="Tredje steg"
       data-state="idle"
       open
-      data-active-step-label="Tredje steg"
     >
       <summary>
         <span>
@@ -1223,9 +1226,9 @@ exports[`States 1`] = `
         Andre steg
       </button>
       <button
+        aria-current="step"
         data-state="active"
         data-variant="default"
-        aria-current="step"
       >
         <div>
         </div>

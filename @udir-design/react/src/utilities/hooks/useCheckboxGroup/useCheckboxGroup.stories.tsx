@@ -1,4 +1,3 @@
-import type { StoryContext } from '@storybook/react-vite';
 import preview from '.storybook/preview';
 import type { DecoratorType } from '.storybook/types';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
@@ -77,7 +76,7 @@ const meta = preview.meta<
 });
 
 export const Default = meta.story({
-  render(args, context) {
+  render(args) {
     const { getCheckboxProps, validationMessageProps } = useCheckboxGroup({
       value: ['epost'],
       ...args,
@@ -85,21 +84,9 @@ export const Default = meta.story({
 
     return (
       <Fieldset>
-        <Checkbox
-          id={context.id + '-email'}
-          label="E-post"
-          {...getCheckboxProps('epost')}
-        />
-        <Checkbox
-          id={context.id + '-telefon'}
-          label="Telefon"
-          {...getCheckboxProps('telefon')}
-        />
-        <Checkbox
-          id={context.id + '-sms'}
-          label="SMS"
-          {...getCheckboxProps({ value: 'sms' })}
-        />
+        <Checkbox label="E-post" {...getCheckboxProps('epost')} />
+        <Checkbox label="Telefon" {...getCheckboxProps('telefon')} />
+        <Checkbox label="SMS" {...getCheckboxProps({ value: 'sms' })} />
         <ValidationMessage {...validationMessageProps} />
       </Fieldset>
     );
@@ -112,10 +99,7 @@ const GroupBase = {
     disabled: false,
     error: '',
   } as UseCheckboxGroupProps,
-  render(
-    args: UseCheckboxGroupProps,
-    context: StoryContext<UseCheckboxGroupProps>,
-  ) {
+  render(args: UseCheckboxGroupProps) {
     const { getCheckboxProps, validationMessageProps } = useCheckboxGroup({
       value: ['epost'],
       ...args,
@@ -129,21 +113,9 @@ const GroupBase = {
         <Fieldset.Description>
           Velg de alternativene som er relevante for deg.
         </Fieldset.Description>
-        <Checkbox
-          id={context.id + '-email'}
-          label="E-post"
-          {...getCheckboxProps('epost')}
-        />
-        <Checkbox
-          id={context.id + '-telefon'}
-          label="Telefon"
-          {...getCheckboxProps('telefon')}
-        />
-        <Checkbox
-          id={context.id + '-sms'}
-          label="SMS"
-          {...getCheckboxProps('sms')}
-        />
+        <Checkbox label="E-post" {...getCheckboxProps('epost')} />
+        <Checkbox label="Telefon" {...getCheckboxProps('telefon')} />
+        <Checkbox label="SMS" {...getCheckboxProps('sms')} />
         <ValidationMessage {...validationMessageProps} />
       </Fieldset>
     );
@@ -204,7 +176,6 @@ export const IndeterminateInTable = meta.story({
           <Table.Row>
             <Table.HeaderCell>
               <Checkbox
-                id={context.id + '-all'}
                 aria-label="Velg alle"
                 {...getCheckboxProps({
                   allowIndeterminate: true,
@@ -221,7 +192,6 @@ export const IndeterminateInTable = meta.story({
             <Table.Row key={person.name}>
               <Table.Cell>
                 <Checkbox
-                  id={`${context.id}-${person.id}`}
                   aria-labelledby={`${context.id}-${person.id}-name`}
                   {...getCheckboxProps(person.id.toString())}
                 />
@@ -245,7 +215,7 @@ type Choices = {
 };
 
 export const Controlled = meta.story({
-  render: (args, context) => {
+  render: (args) => {
     const choices: Choices = {
       barnehage: { label: 'Barnehage' },
       grunnskole: { label: 'Grunnskole' },
@@ -270,12 +240,7 @@ export const Controlled = meta.story({
         <Fieldset>
           <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
           {Object.entries(choices).map(([value, { label }]) => (
-            <Checkbox
-              key={value}
-              id={`${context.id}-${value}`}
-              label={label}
-              {...getCheckboxProps(value)}
-            />
+            <Checkbox key={value} label={label} {...getCheckboxProps(value)} />
           ))}
         </Fieldset>
         <ValidationMessage {...validationMessageProps} />

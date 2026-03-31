@@ -4,9 +4,9 @@ exports[`Correct Live Region 1`] = `
 <div role="alert">
 </div>
 <button
+  data-size="sm"
   data-variant="secondary"
   type="button"
-  data-size="sm"
 >
   Handling som fører til varsel
 </button>
@@ -77,9 +77,9 @@ exports[`With Link 1`] = `
 
 exports[`Wrong Live Region 1`] = `
 <button
+  data-size="sm"
   data-variant="secondary"
   type="button"
-  data-size="sm"
 >
   Handling som fører til varsel
 </button>

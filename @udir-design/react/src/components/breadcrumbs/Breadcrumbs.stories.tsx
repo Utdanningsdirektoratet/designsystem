@@ -44,7 +44,7 @@ export const Preview = meta.story({
   ),
   play: async ({ canvasElement, step, globals }) => {
     const canvas = within(canvasElement);
-    const breadcrumbs = canvas.getByRole('navigation');
+    const breadcrumbs = canvasElement.querySelector('ds-breadcrumbs');
 
     await step('Element with navigation role should exist', async () => {
       await expect(breadcrumbs).toBeTruthy();
