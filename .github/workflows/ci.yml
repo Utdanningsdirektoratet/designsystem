@@ -55,21 +55,21 @@ jobs:
 
       - name: Skip 'Storybook Publish' check
         if: steps.job_condition.outputs.run_ui_tests == 'false'
-        uses: LouisBrunner/checks-action@6b626ffbad7cc56fd58627f774b9067e6118af23 # v2.0.0
+        uses: LouisBrunner/checks-action@937cbbcde3259005b50746dc91cde29098aac2ff # v3.1.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: Storybook Publish
           conclusion: skipped
       - name: Skip 'UI Tests' check
         if: steps.job_condition.outputs.run_ui_tests == 'false'
-        uses: LouisBrunner/checks-action@6b626ffbad7cc56fd58627f774b9067e6118af23 # v2.0.0
+        uses: LouisBrunner/checks-action@937cbbcde3259005b50746dc91cde29098aac2ff # v3.1.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: UI Tests
           conclusion: skipped
       - name: Skip 'UI Review' check
         if: steps.job_condition.outputs.run_ui_tests == 'false'
-        uses: LouisBrunner/checks-action@6b626ffbad7cc56fd58627f774b9067e6118af23 # v2.0.0
+        uses: LouisBrunner/checks-action@937cbbcde3259005b50746dc91cde29098aac2ff # v3.1.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: UI Review
