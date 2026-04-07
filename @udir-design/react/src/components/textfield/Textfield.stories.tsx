@@ -1,9 +1,11 @@
+import type { ChangeEvent } from 'react';
 import { useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { Button } from '../button/Button';
 import { Divider } from '../divider/Divider';
 import { Paragraph } from '../typography/paragraph/Paragraph';
+import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
 import { Textfield } from './Textfield';
 
 const meta = preview.meta({
@@ -129,11 +131,49 @@ export const Affix = meta.story({
 });
 
 export const Counter = meta.story({
-  args: {
-    counter: 10,
-    label: 'Hvor mange kroner koster det per måned?',
-    id: 'textfield-counter',
-    inputMode: 'numeric',
+  render: () => (
+    <Textfield
+      id="textfield-counter"
+      multiline
+      rows={4}
+      label="Legg til en beskrivelse"
+      counter={75}
+    />
+  ),
+});
+
+export const Format = meta.story({
+  render: () => {
+    const [nationalIdentityNumber, setNationalIdentityNumber] =
+      useState<string>('');
+    const tooLong = nationalIdentityNumber.length > 11;
+    const hasNonDigits = /\D/.test(nationalIdentityNumber);
+
+    const updateNumber = (e: ChangeEvent<HTMLInputElement>) => {
+      // removing spaces from stored value so users can space how they like withour error message
+      setNationalIdentityNumber(e.target.value.replace(/\s+/g, ''));
+    };
+
+    return (
+      <>
+        <Textfield
+          label="Fødselsnummer"
+          id="format"
+          inputMode="numeric"
+          onChange={(e) => updateNumber(e)}
+        />
+        {tooLong && (
+          <ValidationMessage>
+            Fødselsnummer skal kun være 11 tegn
+          </ValidationMessage>
+        )}
+        {hasNonDigits && (
+          <ValidationMessage>
+            Fødselsnummer skal kun inneholde siffere
+          </ValidationMessage>
+        )}
+      </>
+    );
   },
 });
 
