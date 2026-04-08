@@ -10,7 +10,7 @@ const meta = preview.meta({
   subcomponents: {
     'Alert.Heading': Alert.Heading,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: { originator: 'digdir' },
   },

@@ -3,4 +3,4 @@
  */
 
 // Empty export for now
-export {};
+export * from './alert';
