@@ -2,6 +2,7 @@ import type { ChangeEvent } from 'react';
 import { useRef, useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { formatReactSource } from '.storybook/utils/sourceTransformers';
 import { Button } from '../button/Button';
 import { Checkbox } from '../checkbox/Checkbox';
 import { Field } from '../field/Field';
@@ -149,6 +150,10 @@ export const WithoutDialogTriggerContext = meta.story({
         </Dialog>
       </>
     );
+  },
+  parameters: {
+    docs: { source: { type: 'code', transform: formatReactSource } },
+    // transforming ...
   },
 });
 

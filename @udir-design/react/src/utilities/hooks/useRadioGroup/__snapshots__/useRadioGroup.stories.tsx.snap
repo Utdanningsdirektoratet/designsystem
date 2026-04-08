@@ -94,62 +94,6 @@ exports[`Controlled 1`] = `
 </div>
 `;
 
-exports[`Default 1`] = `
-<fieldset>
-  <legend data-weight="medium">
-    Velg din aldersgruppe.
-  </legend>
-  <div>
-    <input
-      id="utilities-useradiogroup--default-10-20"
-      type="radio"
-      value="10-20"
-      name="my-group"
-    >
-    <label
-      data-weight="regular"
-      for="utilities-useradiogroup--default-10-20"
-    >
-      10-20 år
-    </label>
-  </div>
-  <div>
-    <input
-      id="utilities-useradiogroup--default-21-45"
-      type="radio"
-      value="21-45"
-      name="my-group"
-    >
-    <label
-      data-weight="regular"
-      for="utilities-useradiogroup--default-21-45"
-    >
-      21-45 år
-    </label>
-  </div>
-  <div>
-    <input
-      id="utilities-useradiogroup--default-46-80"
-      type="radio"
-      value="46-80"
-      name="my-group"
-    >
-    <label
-      data-weight="regular"
-      for="utilities-useradiogroup--default-46-80"
-    >
-      46-80 år
-    </label>
-  </div>
-  <p
-    data-field="validation"
-    hidden
-    id="_r_2_"
-  >
-  </p>
-</fieldset>
-`;
-
 exports[`Disabled 1`] = `
 <fieldset>
   <legend data-weight="medium">
@@ -266,6 +210,62 @@ exports[`Group 1`] = `
     data-field="validation"
     hidden
     id="_r_a_"
+  >
+  </p>
+</fieldset>
+`;
+
+exports[`Preview 1`] = `
+<fieldset>
+  <legend data-weight="medium">
+    Velg din aldersgruppe.
+  </legend>
+  <div>
+    <input
+      id="utilities-useradiogroup--preview-10-20"
+      type="radio"
+      value="10-20"
+      name="my-group"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-useradiogroup--preview-10-20"
+    >
+      10-20 år
+    </label>
+  </div>
+  <div>
+    <input
+      id="utilities-useradiogroup--preview-21-45"
+      type="radio"
+      value="21-45"
+      name="my-group"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-useradiogroup--preview-21-45"
+    >
+      21-45 år
+    </label>
+  </div>
+  <div>
+    <input
+      id="utilities-useradiogroup--preview-46-80"
+      type="radio"
+      value="46-80"
+      name="my-group"
+    >
+    <label
+      data-weight="regular"
+      for="utilities-useradiogroup--preview-46-80"
+    >
+      46-80 år
+    </label>
+  </div>
+  <p
+    data-field="validation"
+    hidden
+    id="_r_2_"
   >
   </p>
 </fieldset>

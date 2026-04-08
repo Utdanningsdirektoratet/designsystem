@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import { MultiplyIcon, TrashIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
+import { formatReactSource } from '.storybook/utils/sourceTransformers';
 import { Button } from '../button/Button';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Popover } from './Popover';
@@ -132,6 +133,10 @@ export const DottedUnderline = meta.story({
 
     await userEvent.click(button);
   },
+  parameters: {
+    docs: { source: { type: 'code', transform: formatReactSource } },
+  },
+  // transforming..
 });
 
 const ColorVariantsMap: {
