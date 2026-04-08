@@ -62,3 +62,4 @@ jobs:
           resourceGroup: rg-designsystem-testapp
           imageToDeploy: ${{ env.IMAGE_NAME }}:${{ github.sha }}
           registryUrl: ghcr.io
+          targetPort: 3000
