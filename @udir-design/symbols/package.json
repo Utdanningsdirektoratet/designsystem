@@ -14,21 +14,6 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "tsdown": {
-    "entry": [
-      "generated-src/**/*.{ts,tsx}"
-    ],
-    "format": [
-      "cjs",
-      "esm"
-    ],
-    "dts": true,
-    "sourcemap": true,
-    "clean": true,
-    "neverBundle": [
-      "react"
-    ]
-  },
   "exports": {
     ".": {
       "import": {
