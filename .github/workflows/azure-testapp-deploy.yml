@@ -7,21 +7,12 @@ on:
     paths:
       - 'test-apps/nextjs/**'
       - '.github/workflows/azure-testapp-deploy.yml'
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches:
-      - main
-    paths:
-      - 'test-apps/nextjs/**'
-      - '.github/workflows/azure-testapp-deploy.yml'
-
 env:
   APP_PATH: test-apps/nextjs
   IMAGE_NAME: ghcr.io/utdanningsdirektoratet/designsystem-testapp
 
 jobs:
   build_and_deploy:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build image, push to GHCR, and deploy to Azure Container Apps
     permissions:

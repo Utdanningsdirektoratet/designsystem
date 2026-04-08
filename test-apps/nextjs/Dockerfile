@@ -17,15 +17,12 @@ FROM base AS builder
 
 WORKDIR /app
 
-# Copy entire monorepo — pnpm with catalog needs pnpm-workspace.yaml,
-# all workspace package.json files, patches, and the lockfile.
 COPY . .
 
 RUN pnpm install --frozen-lockfile
 
 ENV NODE_ENV=production
 
-# Build with nx to resolve workspace dependency graph
 RUN pnpm nx run test-apps/nextjs:build
 
 # ============================================
