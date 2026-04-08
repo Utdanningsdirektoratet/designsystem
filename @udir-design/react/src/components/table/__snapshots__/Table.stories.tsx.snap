@@ -863,6 +863,308 @@ exports[`Sticky Header 1`] = `
 </div>
 `;
 
+exports[`Tree Structured Table 1`] = `
+<style>
+  /* Styles defined in application-specific css */
+            .treeStructuredTable-caption {
+              font-size: var(--ds-font-size-3);
+              caption-side: bottom;
+              text-align: center;
+              font-weight: normal;
+              margin-top: var(--ds-size-2);
+            }
+
+            .treeStructuredTable-valueCell {
+              text-align: right;
+            }
+
+            .treeStructuredTable-button {
+              background: none;
+              border: 0;
+              margin: 0;
+              padding: 0;
+              font: inherit;
+              color: inherit;
+              cursor: pointer;
+            }
+
+            .treeStructuredTable-label {
+              display: grid;
+              grid-template-columns: var(--ds-size-5) auto;
+              align-items: center;
+              column-gap: 0.5rem;
+              padding-inline-start: calc(var(--ds-size-3) * var(--tree-depth));
+            }
+
+            .treeStructuredTable-icon {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              width: var(--ds-size-5);
+            }
+</style>
+<table
+  data-zebra="true"
+  data-color="support1"
+  data-tinted-column-header="true"
+  data-tinted-row-header="true"
+>
+  <caption>
+    Svarprosent for elevundersøkelsen nasjonalt
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">
+        Elevgruppe
+      </th>
+      <th scope="col">
+        2022–23
+      </th>
+      <th scope="col">
+        2023–24
+      </th>
+      <th scope="col">
+        2024–25
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="true"
+          aria-label="Skjul undernivå for 8. trinn"
+        >
+          <span style="--tree-depth: 0;">
+            <span aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="none"
+                viewbox="0 0 24 24"
+                focusable="false"
+                role="img"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
+                  clip-rule="evenodd"
+                >
+                </path>
+              </svg>
+            </span>
+            <span>
+              8. trinn
+            </span>
+          </span>
+        </button>
+      </th>
+      <td>
+        88,5%
+      </td>
+      <td>
+        86,3%
+      </td>
+      <td>
+        85,3%
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="true"
+          aria-label="Skjul undernivå for Fra Oslo"
+        >
+          <span style="--tree-depth: 1;">
+            <span aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="none"
+                viewbox="0 0 24 24"
+                focusable="false"
+                role="img"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
+                  clip-rule="evenodd"
+                >
+                </path>
+              </svg>
+            </span>
+            <span>
+              Fra Oslo
+            </span>
+          </span>
+        </button>
+      </th>
+      <td>
+        30,5%
+      </td>
+      <td>
+        1,3%
+      </td>
+      <td>
+        23,3%
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <span style="--tree-depth: 2;">
+          <span aria-hidden="true">
+          </span>
+          <span>
+            Sentrum
+          </span>
+        </span>
+      </th>
+      <td>
+        15,1%
+      </td>
+      <td>
+        0,7%
+      </td>
+      <td>
+        11,0%
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <span style="--tree-depth: 2;">
+          <span aria-hidden="true">
+          </span>
+          <span>
+            Øst
+          </span>
+        </span>
+      </th>
+      <td>
+        15,4%
+      </td>
+      <td>
+        0,6%
+      </td>
+      <td>
+        12,3%
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <span style="--tree-depth: 1;">
+          <span aria-hidden="true">
+          </span>
+          <span>
+            Fra Drøbak
+          </span>
+        </span>
+      </th>
+      <td>
+        28,5%
+      </td>
+      <td>
+        0,9%
+      </td>
+      <td>
+        20,3%
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+          aria-label="Vis undernivå for 9. trinn"
+        >
+          <span style="--tree-depth: 0;">
+            <span aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="none"
+                viewbox="0 0 24 24"
+                focusable="false"
+                role="img"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                  clip-rule="evenodd"
+                >
+                </path>
+              </svg>
+            </span>
+            <span>
+              9. trinn
+            </span>
+          </span>
+        </button>
+      </th>
+      <td>
+        88,7%
+      </td>
+      <td>
+        86,3%
+      </td>
+      <td>
+        84,9%
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+          aria-label="Vis undernivå for 10. trinn"
+        >
+          <span style="--tree-depth: 0;">
+            <span aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="none"
+                viewbox="0 0 24 24"
+                focusable="false"
+                role="img"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M9.47 5.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 1 1-1.06-1.06L14.44 12 9.47 7.03a.75.75 0 0 1 0-1.06"
+                  clip-rule="evenodd"
+                >
+                </path>
+              </svg>
+            </span>
+            <span>
+              10. trinn
+            </span>
+          </span>
+        </button>
+      </th>
+      <td>
+        89,7%
+      </td>
+      <td>
+        87,3%
+      </td>
+      <td>
+        85,7%
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
 exports[`With Border 1`] = `
 <div style="display: grid; gap: 1rem;">
   <table
