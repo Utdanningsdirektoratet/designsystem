@@ -6,6 +6,8 @@
   --udsc-fileUpload-chooseFiles-text: 'Velg filer';
   --udsc-fileUpload-dropFile-text: 'Dra og slipp filen her';
   --udsc-fileUpload-dropFiles-text: 'Dra og slipp filer her';
+  --udsc-fileUpload-dropFile-active-text: 'Slipp filen her';
+  --udsc-fileUpload-dropFiles-active-text: 'Slipp filen(e) her';
   --udsc-fileUpload-or-text: 'eller';
   --udsc-fileUpload-uploading-text: 'Laster opp...';
   --udsc-fileUpload-removeFile-text: 'Fjern filen';
@@ -20,6 +22,8 @@
   --udsc-fileUpload-chooseFiles-text: 'Vel filer';
   --udsc-fileUpload-dropFile-text: 'Dra og slepp fila her';
   --udsc-fileUpload-dropFiles-text: 'Dra og slepp filer her';
+  --udsc-fileUpload-dropFile-active-text: 'Slepp fila her';
+  --udsc-fileUpload-dropFiles-active-text: 'Slepp filen(e) her';
   --udsc-fileUpload-or-text: 'eller';
   --udsc-fileUpload-uploading-text: 'Lastar opp...';
   --udsc-fileUpload-removeFile-text: 'Fjern fila';
@@ -34,6 +38,8 @@
   --udsc-fileUpload-chooseFiles-text: 'Choose files';
   --udsc-fileUpload-dropFile-text: 'Drag and drop file here';
   --udsc-fileUpload-dropFiles-text: 'Drag and drop files here';
+  --udsc-fileUpload-dropFile-active-text: 'Drop the file here';
+  --udsc-fileUpload-dropFiles-active-text: 'Drop the files here';
   --udsc-fileUpload-or-text: 'or';
   --udsc-fileUpload-uploading-text: 'Uploading...';
   --udsc-fileUpload-removeFile-text: 'Remove file';
@@ -72,6 +78,34 @@
     gap: var(--ds-size-2);
     --dsc-card-border-style: dashed;
     --dsc-card-border-color: var(--ds-color-border-strong);
+  }
+
+  &[data-drag-global]:not([data-drag-active]),
+  &[data-drag-active] {
+    --udsc-fileUpload-dropzone-text: var(
+      --udsc-fileUpload-dropFile-active-text
+    );
+
+    &:has(input[type='file'][multiple]) {
+      --udsc-fileUpload-dropzone-text: var(
+        --udsc-fileUpload-dropFiles-active-text
+      );
+
+      > .ds-card {
+        --udsc-fileUpload-dropzone-text: var(
+          --udsc-fileUpload-dropFiles-active-text
+        );
+      }
+    }
+  }
+
+  &[data-drag-global]:not([data-drag-active]) > .ds-card {
+    background: var(--ds-color-surface-tinted);
+  }
+
+  &[data-drag-active] > .ds-card {
+    background: var(--ds-color-surface-active);
+    --dsc-card-border-style: solid;
   }
 
   &:has(input[readOnly]) {

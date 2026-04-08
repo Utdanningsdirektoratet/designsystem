@@ -1,9 +1,17 @@
 import { expect, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { Breadcrumbs } from './Breadcrumbs';
+import { BreadcrumbsItem } from './docs/FakeBreadcrumbsItem';
+import { BreadcrumbsLink } from './docs/FakeBreadcrumbsLink';
+import { BreadcrumbsList } from './docs/FakeBreadcrumbsList';
 
 const meta = preview.meta({
   component: Breadcrumbs,
+  subcomponents: {
+    'Breadcrumbs.Link': BreadcrumbsLink,
+    'Breadcrumbs.List': BreadcrumbsList,
+    'Breadcrumbs.Item': BreadcrumbsItem,
+  },
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {

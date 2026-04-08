@@ -25,21 +25,23 @@ export const Preview = meta.story({
     description: 'Beskrivelse',
   },
   render: (args) => {
-    const { getRootProps, getInputProps } = useDropzone({
-      onDropAccepted: (files) => {
-        window.alert(
-          `Accepted dropped file(s):\n  - ${files.map((x) => x.name).join(',\n  - ')}`,
-        );
-      },
-      onDropRejected: (rej) => {
-        window.alert(
-          `Rejected dropped file(s):\n  - ${rej.map((x) => `${x.file.name} (reason: ${x.errors.map((err) => err.message).join(', ')})`).join(',\n  - ')}`,
-        );
-      },
-      accept: {
-        'application/pdf': [],
-      },
-    });
+    const { getRootProps, getInputProps, isDragActive, isDragGlobal } =
+      useDropzone({
+        onDropAccepted: (files) => {
+          window.alert(
+            `Accepted dropped file(s):\n  - ${files.map((x) => x.name).join(',\n  - ')}`,
+          );
+        },
+        onDropRejected: (rej) => {
+          window.alert(
+            `Rejected dropped file(s):\n  - ${rej.map((x) => `${x.file.name} (reason: ${x.errors.map((err) => err.message).join(', ')})`).join(',\n  - ')}`,
+          );
+        },
+        multiple: false,
+        accept: {
+          'application/pdf': [],
+        },
+      });
     return (
       <div
         style={{
@@ -55,6 +57,8 @@ export const Preview = meta.story({
         <FileUpload.Dropzone
           {...getRootProps(args)}
           inputProps={getInputProps({ ...args.inputProps, id: 'dropzone' })}
+          isDragGlobal={isDragGlobal}
+          isDragActive={isDragActive}
         />
       </div>
     );
@@ -108,18 +112,19 @@ export const ExampleDropZone = meta.story({
       );
     };
 
-    const { getRootProps, getInputProps } = useDropzone({
-      onDropAccepted: (file) => {
-        setFiles((prev) => [...prev, ...file]);
-      },
-      onDropRejected: (rej) => {
-        setRejected((prev) => [...prev, ...rej]);
-      },
-      maxSize: 5242880,
-      accept: {
-        'application/pdf': [],
-      },
-    });
+    const { getRootProps, getInputProps, isDragActive, isDragGlobal } =
+      useDropzone({
+        onDropAccepted: (file) => {
+          setFiles((prev) => [...prev, ...file]);
+        },
+        onDropRejected: (rej) => {
+          setRejected((prev) => [...prev, ...rej]);
+        },
+        maxSize: 5242880,
+        accept: {
+          'application/pdf': [],
+        },
+      });
 
     return (
       <div
@@ -136,6 +141,8 @@ export const ExampleDropZone = meta.story({
             ...getInputProps(),
             id: 'dokumentasjon',
           }}
+          isDragGlobal={isDragGlobal}
+          isDragActive={isDragActive}
           data-testid="dropzone"
           error={files.length > 2 && 'Du har lastet opp for mange filer.'}
           {...getRootProps()}
@@ -215,12 +222,13 @@ export const TooManyFiles = meta.story({
       );
     };
 
-    const { getRootProps, getInputProps } = useDropzone({
-      onDropAccepted: (file) => {
-        setFiles((prev) => [...prev, ...file]);
-      },
-      multiple: true,
-    });
+    const { getRootProps, getInputProps, isDragActive, isDragGlobal } =
+      useDropzone({
+        onDropAccepted: (file) => {
+          setFiles((prev) => [...prev, ...file]);
+        },
+        multiple: true,
+      });
 
     return (
       <div
@@ -240,6 +248,8 @@ export const TooManyFiles = meta.story({
           }
           inputProps={{ ...getInputProps(), id: 'dokumentasjon-for-mange' }}
           {...getRootProps()}
+          isDragGlobal={isDragGlobal}
+          isDragActive={isDragActive}
           style={{ maxWidth: '450px', width: '100%' }}
           {...args}
         />

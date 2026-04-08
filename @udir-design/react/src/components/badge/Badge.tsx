@@ -1,6 +1,8 @@
 import './badge.css';
 import {
   Badge as DigdirBadge,
+  BadgePosition,
+  type BadgePositionProps,
   type BadgeProps as DigdirBadgeProps,
 } from '@digdir/designsystemet-react';
 import type {
@@ -21,5 +23,5 @@ const Badge = DigdirBadge as ForwardRefExoticComponent<
 > &
   Pick<typeof DigdirBadge, 'Position'>;
 
-export type { BadgeProps };
-export { Badge };
+export type { BadgePositionProps, BadgeProps };
+export { Badge, BadgePosition };

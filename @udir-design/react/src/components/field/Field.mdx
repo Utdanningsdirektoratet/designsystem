@@ -44,9 +44,13 @@ Det er viktig at samme informasjon som vises i prefixet eller suffixet, også in
 
 ### Antall tegn
 
-Bruk `Field.Counter` til å informere om antall tegn brukerne kan skrive i feltet.
+Bruk `Field.Counter` til å vise brukeren hvor mange tegn de kan skrive inn i feltet. Ved behov kan du bruke `over` eller `under` til å skrive en tilpasset melding, f.eks. dersom man ønsker å vise antall tegn brukt av en total. Man bør ikke hindre folk i å skrive mer enn maks antall tegn, da dette kan føre til at man sender inn feil data. Det er bedre å la brukeren skrive inn det de ønsker, og vise en feilmelding dersom de har skrevet for mye.
 
 <Canvas of={FieldStories.Counter} />
+
+I noen tilfeller vil man ha data med et visst antall tegn, men unngå å telle med f.eks. mellomrom. Dette gjelder for eksempel telefonnummer eller personnummer. Du burde la brukeren plassere mellomrom der det er naturlig for dem, og heller fjerne disse programmatisk før innsending. Det kan i disse tilfellene være nødvendig å skrive sin egen logikk for å validere antall tegn fremfor å bruke `counter`. Se eksempelet under for hvordan det kan løses.
+
+<Canvas of={FieldStories.Format} />
 
 ### Plassering
 
