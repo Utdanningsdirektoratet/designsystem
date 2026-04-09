@@ -1,0 +1,16 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import * as PagineringStories from './Paginering.stories';
+
+<Meta of={PagineringStories} />
+
+# Paginering
+
+Bruk paginering når en tabell har mange rader. Det gir brukeren mulighet til å bla gjennom dataene i håndterbare deler.
+
+La brukeren velge hvor mange rader som vises per side, og vis alltid hvilke rader de ser på, for eksempel «1-10 av 100». Dette gir brukeren kontroll og oversikt over hvor de er i datasettet.
+
+<Canvas
+  of={PagineringStories.Preview}
+  story={{ inline: false, height: '675px' }}
+/>
