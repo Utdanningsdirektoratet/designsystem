@@ -1,3 +1,5 @@
+// Compat shim: remove fixupConfigRules once @nx/eslint-plugin's react plugins natively support ESLint 10
+import { fixupConfigRules } from '@eslint/compat';
 import nxEslintPlugin from '@nx/eslint-plugin';
 import { defineConfig } from 'eslint/config';
 import storybook from 'eslint-plugin-storybook';
@@ -27,7 +29,7 @@ const restrictBarrelImports = {
 };
 
 export default defineConfig(
-  nxEslintPlugin.configs['flat/react'],
+  fixupConfigRules(nxEslintPlugin.configs['flat/react']),
   storybook.configs['flat/recommended'],
   baseConfig,
   {
