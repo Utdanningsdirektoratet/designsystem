@@ -46,7 +46,7 @@ export const ArticleDemo = () => {
           </Breadcrumbs.Item>
           <Breadcrumbs.Item>
             <Breadcrumbs.Link href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/planleggingsverktoy-i-lareplanvisning/">
-              Læreplanverket
+              Tilpasset opplæring
             </Breadcrumbs.Link>
           </Breadcrumbs.Item>
         </Breadcrumbs.List>
@@ -70,11 +70,10 @@ export const ArticleDemo = () => {
                 ARTIKKEL | Sist endret: 01.01.2024
               </Paragraph>
               <Link
-                href="#"
+                href=""
                 data-size="sm"
                 onClick={(e) => {
                   e.preventDefault();
-                  window.print();
                 }}
               >
                 <DownloadIcon aria-hidden />
@@ -97,11 +96,10 @@ export const ArticleDemo = () => {
               grad skje gjennom variasjon og tilpasninger til mangfoldet i
               elevgruppen innenfor fellesskapet.{' '}
               <Link
-                href="#"
+                href=""
                 data-size="sm"
                 onClick={(e) => {
                   e.preventDefault();
-                  window.print();
                 }}
               >
                 Overordnet del 3.2

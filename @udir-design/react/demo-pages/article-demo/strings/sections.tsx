@@ -121,11 +121,10 @@ export const section5: SectionItem[] = [
       <ul>
         <li>
           <Link
-            href="#"
+            href=""
             data-size="md"
             onClick={(e) => {
               e.preventDefault();
-              window.print();
             }}
           >
             Utdanningsdirektoratets nettside om tilpasset opplæring
@@ -133,11 +132,10 @@ export const section5: SectionItem[] = [
         </li>
         <li>
           <Link
-            href="#"
+            href=""
             data-size="md"
             onClick={(e) => {
               e.preventDefault();
-              window.print();
             }}
           >
             Utdanningsdirektoratets nettside om tilpasset opplæring i
@@ -146,11 +144,10 @@ export const section5: SectionItem[] = [
         </li>
         <li>
           <Link
-            href="#"
+            href=""
             data-size="md"
             onClick={(e) => {
               e.preventDefault();
-              window.print();
             }}
           >
             Utdanningsdirektoratets nettside om tilpasset opplæring i
