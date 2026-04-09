@@ -1,6 +1,7 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { includeIgnoreFile } from '@eslint/compat';
+// Compat shim: remove fixupPluginRules once eslint-plugin-import natively supports ESLint 10
+import { fixupPluginRules, includeIgnoreFile } from '@eslint/compat';
 import nxEslintPlugin from '@nx/eslint-plugin';
 import { defineConfig } from 'eslint/config';
 import importPlugin from 'eslint-plugin-import';
@@ -51,7 +52,7 @@ export default defineConfig(
   },
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
-    plugins: { import: importPlugin },
+    plugins: { import: fixupPluginRules(importPlugin) },
     settings: {
       'import/internal-regex': '^(@udir-design|src)/',
     },

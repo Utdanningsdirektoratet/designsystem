@@ -1,16 +1,11 @@
-// import { FlatCompat } from '@eslint/eslintrc';
-// import eslintJs from '@eslint/js';
-import nxEslintPlugin from '@nx/eslint-plugin';
+// Compat shim: remove fixupConfigRules once eslint-config-next natively supports ESLint 10
+import { fixupConfigRules } from '@eslint/compat';
 import { defineConfig, globalIgnores } from 'eslint/config';
-import next from 'eslint-config-next';
 import nextVitals from 'eslint-config-next/core-web-vitals';
 import nextTypescript from 'eslint-config-next/typescript';
-import baseConfig from '../../eslint.config.js';
 
 const eslintConfig = defineConfig(
-  next,
-  nextVitals,
-  nextTypescript,
+  fixupConfigRules([nextVitals, nextTypescript].flat()),
   globalIgnores([
     // Default ignores of eslint-config-next:
     '.next/**',
@@ -18,7 +13,5 @@ const eslintConfig = defineConfig(
     'build/**',
     'next-env.d.ts',
   ]),
-  nxEslintPlugin.configs['flat/react-typescript'],
-  baseConfig,
 );
 export default eslintConfig;
