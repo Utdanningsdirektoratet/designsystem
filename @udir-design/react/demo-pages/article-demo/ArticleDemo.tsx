@@ -59,7 +59,7 @@ export const ArticleDemo = () => {
       >
         <Prose>
           <div className={classes.headingWrapper}>
-            <Heading data-size="md" level={1}>
+            <Heading data-size="lg" level={1}>
               Tilpasset opplæring
             </Heading>
             <ContentSection section={sectionHeader} />
@@ -86,7 +86,7 @@ export const ArticleDemo = () => {
           <TableOfContents
             data-color="accent"
             variant="tinted"
-            {...useTableOfContents({ containerRef })}
+            {...useTableOfContents({ containerRef, headingSelector: 'h2' })}
           />
           <ContentSection section={section0} />
           <ContentSection section={section1} />
