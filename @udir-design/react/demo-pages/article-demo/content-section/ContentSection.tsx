@@ -12,10 +12,20 @@ export const ContentSection = ({ section }: ContentSectionProps) => (
   <section className={classes.content}>
     {section.map(({ heading, paragraph }, i) => (
       <Fragment key={i}>
-        <Heading data-size={heading.size} level={heading.level} id={heading.id}>
-          {heading.text}
-        </Heading>
-        <Paragraph>{paragraph}</Paragraph>
+        {heading && (
+          <Heading
+            data-size={heading.size}
+            level={heading.level}
+            id={heading.id}
+          >
+            {heading.text}
+          </Heading>
+        )}
+        {typeof paragraph === 'string' ? (
+          <Paragraph>{paragraph}</Paragraph>
+        ) : (
+          paragraph
+        )}
       </Fragment>
     ))}
   </section>
