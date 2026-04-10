@@ -22,7 +22,7 @@ const meta = preview.meta({
   subcomponents: {
     'Badge.Position': BadgePosition,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

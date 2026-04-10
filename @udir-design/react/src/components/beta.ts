@@ -3,7 +3,6 @@
  */
 
 export * from './alert';
-export * from './badge/Badge';
 export * from './breadcrumbs/Breadcrumbs';
 export * from './chip/Chip';
 export * from './demoBanner/DemoBanner';
