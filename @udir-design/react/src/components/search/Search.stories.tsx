@@ -203,11 +203,11 @@ export const Variants = meta.story({
 });
 
 export const WithLabel = meta.story({
-  render: (args, context) => (
+  render: (args) => (
     <Field>
       <Label>Søk i læreplaner</Label>
       <Search {...args}>
-        <Search.Input id={context.id} name="cat-search" />
+        <Search.Input name="cat-search" />
         <Search.Clear />
         <Search.Button />
       </Search>

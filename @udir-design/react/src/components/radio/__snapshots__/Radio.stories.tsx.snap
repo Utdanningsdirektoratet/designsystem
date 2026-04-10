@@ -1,22 +1,22 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Focused 1`] = `
-<ds-field data-clickdelegatefor="radio-preview">
+<ds-field data-clickdelegatefor="<removed>">
   <input
-    id="radio-preview"
+    aria-describedby="<removed>"
+    id="<removed>"
     type="radio"
     value="value"
-    aria-describedby="mnsry1gkzjh3"
   >
   <label
     data-weight="regular"
-    for="radio-preview"
+    for="<removed>"
   >
     Radio
   </label>
   <div
     data-field="description"
-    id="mnsry1gkzjh3"
+    id="<removed>"
   >
     Description
   </div>
@@ -24,44 +24,44 @@ exports[`Focused 1`] = `
 `;
 
 exports[`Inline 1`] = `
-<fieldset aria-labelledby="undefinedlegend undefineddescription">
+<fieldset aria-labelledby="<removed>">
   <legend
-    id="undefinedlegend"
     data-weight="medium"
+    id="<removed>"
   >
     Kontaktes på e-post?
   </legend>
   <p
     data-variant="default"
-    id="undefineddescription"
+    id="<removed>"
   >
     Bekreft om du ønsker å bli kontaktet per e-post.
   </p>
   <div style="display: flex; flex-wrap: wrap; gap: var(--ds-size-6);">
-    <ds-field data-clickdelegatefor="undefined-inline-ja">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="undefined-inline-ja"
+        id="<removed>"
+        name="my-inline"
         type="radio"
         value="ja"
-        name="my-inline"
       >
       <label
         data-weight="regular"
-        for="undefined-inline-ja"
+        for="<removed>"
       >
         Ja
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="undefined-inline-nei">
+    <ds-field data-clickdelegatefor="<removed>">
       <input
-        id="undefined-inline-nei"
+        id="<removed>"
+        name="my-inline"
         type="radio"
         value="nei"
-        name="my-inline"
       >
       <label
         data-weight="regular"
-        for="undefined-inline-nei"
+        for="<removed>"
       >
         Nei
       </label>
@@ -71,22 +71,22 @@ exports[`Inline 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<ds-field data-clickdelegatefor="radio-preview">
+<ds-field data-clickdelegatefor="<removed>">
   <input
-    id="radio-preview"
+    aria-describedby="<removed>"
+    id="<removed>"
     type="radio"
     value="value"
-    aria-describedby="mnsry1gkzjh1"
   >
   <label
     data-weight="regular"
-    for="radio-preview"
+    for="<removed>"
   >
     Radio
   </label>
   <div
     data-field="description"
-    id="mnsry1gkzjh1"
+    id="<removed>"
   >
     Description
   </div>
@@ -95,25 +95,25 @@ exports[`Preview 1`] = `
 
 exports[`Radio In Color Context 1`] = `
 <div
-  data-variant="tinted"
   data-color="accent"
+  data-variant="tinted"
 >
-  <ds-field data-clickdelegatefor="radio-in-color-context">
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="radio-in-color-context"
-      type="radio"
+      aria-describedby="<removed>"
       checked
-      aria-describedby="mnsry1gkzjh2"
+      id="<removed>"
+      type="radio"
     >
     <label
       data-weight="regular"
-      for="radio-in-color-context"
+      for="<removed>"
     >
       Radio
     </label>
     <div
       data-field="description"
-      id="mnsry1gkzjh2"
+      id="<removed>"
     >
       Description
     </div>

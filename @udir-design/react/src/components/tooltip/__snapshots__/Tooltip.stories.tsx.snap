@@ -3,40 +3,40 @@
 exports[`Aria 1`] = `
 <div style="display: flex; gap: var(--ds-size-2);">
   <button
+    aria-label="Jeg er hovedinformasjon (aria-labelledby)"
+    data-autoplacement="true"
     data-icon="true"
+    data-placement="top"
+    data-tooltip="Jeg er hovedinformasjon (aria-labelledby)"
     data-variant="primary"
     type="button"
-    aria-label="Jeg er hovedinformasjon (aria-labelledby)"
-    data-tooltip="Jeg er hovedinformasjon (aria-labelledby)"
-    data-placement="top"
-    data-autoplacement="true"
   >
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
-      fill="none"
-      viewbox="0 0 24 24"
-      focusable="false"
-      role="img"
       aria-hidden="true"
+      fill="none"
+      focusable="false"
+      height="1em"
+      role="img"
+      viewbox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
+        clip-rule="evenodd"
+        d="M8.25 3.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l5 5c.141.14.22.331.22.53v8.5c0 .69-.56 1.25-1.25 1.25h-9c-.69 0-1.25-.56-1.25-1.25zm6.25 5.25c-.69 0-1.25-.56-1.25-1.25V3.75h-3.5v12.5h8.5v-7.5zm.25-3.94 2.44 2.44h-2.44zM6.502 7.75H5.75v12.5h8.5v-.748a.75.75 0 0 1 1.5 0v.998c0 .69-.56 1.25-1.25 1.25h-9c-.69 0-1.25-.56-1.25-1.25v-13c0-.69.56-1.25 1.25-1.25h1.002a.75.75 0 1 1 0 1.5"
         fill="currentColor"
         fill-rule="evenodd"
-        d="M8.25 3.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l5 5c.141.14.22.331.22.53v8.5c0 .69-.56 1.25-1.25 1.25h-9c-.69 0-1.25-.56-1.25-1.25zm6.25 5.25c-.69 0-1.25-.56-1.25-1.25V3.75h-3.5v12.5h8.5v-7.5zm.25-3.94 2.44 2.44h-2.44zM6.502 7.75H5.75v12.5h8.5v-.748a.75.75 0 0 1 1.5 0v.998c0 .69-.56 1.25-1.25 1.25h-9c-.69 0-1.25-.56-1.25-1.25v-13c0-.69.56-1.25 1.25-1.25h1.002a.75.75 0 1 1 0 1.5"
-        clip-rule="evenodd"
       >
       </path>
     </svg>
   </button>
   <button
+    aria-label="Jeg er tillegsinformasjon (aria-describedby)"
+    data-autoplacement="true"
+    data-placement="top"
+    data-tooltip="Jeg er tillegsinformasjon (aria-describedby)"
     data-variant="primary"
     type="button"
-    aria-label="Jeg er tillegsinformasjon (aria-describedby)"
-    data-tooltip="Jeg er tillegsinformasjon (aria-describedby)"
-    data-placement="top"
-    data-autoplacement="true"
   >
     Tekst i trigger
   </button>
@@ -46,113 +46,113 @@ exports[`Aria 1`] = `
 exports[`Placement 1`] = `
 <div style="display: flex; gap: var(--ds-size-2);">
   <button
-    data-icon="true"
-    data-variant="secondary"
-    type="button"
     aria-label="Slett"
-    data-tooltip="Slett"
+    data-autoplacement="true"
+    data-icon="true"
     data-placement="left"
-    data-autoplacement="true"
+    data-tooltip="Slett"
+    data-variant="secondary"
+    type="button"
   >
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
-      fill="none"
-      viewbox="0 0 24 24"
-      focusable="false"
-      role="img"
       aria-hidden="true"
+      fill="none"
+      focusable="false"
+      height="1em"
+      role="img"
+      viewbox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fill="currentColor"
-        fill-rule="evenodd"
+        clip-rule="evenodd"
         d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-        clip-rule="evenodd"
+        fill="currentColor"
+        fill-rule="evenodd"
       >
       </path>
     </svg>
   </button>
   <button
-    data-icon="true"
-    data-variant="secondary"
-    type="button"
     aria-label="Lagre"
-    data-tooltip="Lagre"
+    data-autoplacement="true"
+    data-icon="true"
     data-placement="top"
-    data-autoplacement="true"
+    data-tooltip="Lagre"
+    data-variant="secondary"
+    type="button"
   >
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
-      fill="none"
-      viewbox="0 0 24 24"
-      focusable="false"
-      role="img"
       aria-hidden="true"
+      fill="none"
+      focusable="false"
+      height="1em"
+      role="img"
+      viewbox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fill="currentColor"
-        fill-rule="evenodd"
+        clip-rule="evenodd"
         d="M4 3.25a.75.75 0 0 0-.75.75v16c0 .414.336.75.75.75h16a.75.75 0 0 0 .75-.75V6a.75.75 0 0 0-.22-.53l-2-2a.75.75 0 0 0-.53-.22zm15.25 3.06-1.56-1.56h-.94V7a.75.75 0 0 1-.75.75H8A.75.75 0 0 1 7.25 7V4.75h-2.5v14.5h1.5V11a.75.75 0 0 1 .75-.75h10a.75.75 0 0 1 .75.75v8.25h1.5zm-3 12.94h-8.5v-7.5h8.5zm-1-14.5v1.5h-6.5v-1.5zm-6 9.25a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75m0 3a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1-.75-.75"
-        clip-rule="evenodd"
+        fill="currentColor"
+        fill-rule="evenodd"
       >
       </path>
     </svg>
   </button>
   <button
-    data-icon="true"
-    data-variant="secondary"
-    type="button"
     aria-label="ctrl + p"
-    data-tooltip="ctrl + p"
-    data-placement="bottom"
     data-autoplacement="true"
+    data-icon="true"
+    data-placement="bottom"
+    data-tooltip="ctrl + p"
+    data-variant="secondary"
+    type="button"
   >
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
-      fill="none"
-      viewbox="0 0 24 24"
-      focusable="false"
-      role="img"
       aria-hidden="true"
+      fill="none"
+      focusable="false"
+      height="1em"
+      role="img"
+      viewbox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
+        clip-rule="evenodd"
+        d="M7 2.25a.75.75 0 0 0-.75.75v4.25H4A1.75 1.75 0 0 0 2.25 9v9c0 .414.336.75.75.75h3.25V21c0 .414.336.75.75.75h10a.75.75 0 0 0 .75-.75v-2.25H21a.75.75 0 0 0 .75-.75V9A1.75 1.75 0 0 0 20 7.25h-2.25V3a.75.75 0 0 0-.75-.75zM3.75 9A.25.25 0 0 1 4 8.75h16a.25.25 0 0 1 .25.25v8.25h-2.5V12a.75.75 0 0 0-.75-.75H7a.75.75 0 0 0-.75.75v5.25h-2.5zm12.5-1.75v-3.5h-8.5v3.5zm-8.5 5.5v7.5h8.5v-7.5zM9.25 15a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75m0 3a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H10a.75.75 0 0 1-.75-.75"
         fill="currentColor"
         fill-rule="evenodd"
-        d="M7 2.25a.75.75 0 0 0-.75.75v4.25H4A1.75 1.75 0 0 0 2.25 9v9c0 .414.336.75.75.75h3.25V21c0 .414.336.75.75.75h10a.75.75 0 0 0 .75-.75v-2.25H21a.75.75 0 0 0 .75-.75V9A1.75 1.75 0 0 0 20 7.25h-2.25V3a.75.75 0 0 0-.75-.75zM3.75 9A.25.25 0 0 1 4 8.75h16a.25.25 0 0 1 .25.25v8.25h-2.5V12a.75.75 0 0 0-.75-.75H7a.75.75 0 0 0-.75.75v5.25h-2.5zm12.5-1.75v-3.5h-8.5v3.5zm-8.5 5.5v7.5h8.5v-7.5zM9.25 15a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75m0 3a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H10a.75.75 0 0 1-.75-.75"
-        clip-rule="evenodd"
       >
       </path>
     </svg>
   </button>
   <button
+    aria-label="Kopier"
+    data-autoplacement="true"
     data-icon="true"
+    data-placement="right"
+    data-tooltip="Kopier"
     data-variant="secondary"
     type="button"
-    aria-label="Kopier"
-    data-tooltip="Kopier"
-    data-placement="right"
-    data-autoplacement="true"
   >
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
-      fill="none"
-      viewbox="0 0 24 24"
-      focusable="false"
-      role="img"
       aria-hidden="true"
+      fill="none"
+      focusable="false"
+      height="1em"
+      role="img"
+      viewbox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
+        clip-rule="evenodd"
+        d="M8.25 3.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l5 5c.141.14.22.331.22.53v8.5c0 .69-.56 1.25-1.25 1.25h-9c-.69 0-1.25-.56-1.25-1.25zm6.25 5.25c-.69 0-1.25-.56-1.25-1.25V3.75h-3.5v12.5h8.5v-7.5zm.25-3.94 2.44 2.44h-2.44zM6.502 7.75H5.75v12.5h8.5v-.748a.75.75 0 0 1 1.5 0v.998c0 .69-.56 1.25-1.25 1.25h-9c-.69 0-1.25-.56-1.25-1.25v-13c0-.69.56-1.25 1.25-1.25h1.002a.75.75 0 1 1 0 1.5"
         fill="currentColor"
         fill-rule="evenodd"
-        d="M8.25 3.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l5 5c.141.14.22.331.22.53v8.5c0 .69-.56 1.25-1.25 1.25h-9c-.69 0-1.25-.56-1.25-1.25zm6.25 5.25c-.69 0-1.25-.56-1.25-1.25V3.75h-3.5v12.5h8.5v-7.5zm.25-3.94 2.44 2.44h-2.44zM6.502 7.75H5.75v12.5h8.5v-.748a.75.75 0 0 1 1.5 0v.998c0 .69-.56 1.25-1.25 1.25h-9c-.69 0-1.25-.56-1.25-1.25v-13c0-.69.56-1.25 1.25-1.25h1.002a.75.75 0 1 1 0 1.5"
-        clip-rule="evenodd"
       >
       </path>
     </svg>
@@ -162,29 +162,29 @@ exports[`Placement 1`] = `
 
 exports[`Preview 1`] = `
 <button
+  aria-label="Legg til"
+  data-autoplacement="true"
   data-icon="true"
+  data-placement="top"
+  data-tooltip="Legg til"
   data-variant="tertiary"
   type="button"
-  aria-label="Legg til"
-  data-tooltip="Legg til"
-  data-placement="top"
-  data-autoplacement="true"
 >
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
     aria-hidden="true"
+    fill="none"
+    focusable="false"
+    height="1em"
+    role="img"
+    viewbox="0 0 24 24"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
   >
     <path
+      clip-rule="evenodd"
+      d="M3.75 12a8.25 8.25 0 1 1 16.5 0 8.25 8.25 0 0 1-16.5 0M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25m0 4.5a.75.75 0 0 1 .75.75v3.75h3.75a.75.75 0 0 1 0 1.5h-3.75v3.75a.75.75 0 0 1-1.5 0v-3.75H7.5a.75.75 0 0 1 0-1.5h3.75V7.5a.75.75 0 0 1 .75-.75"
       fill="currentColor"
       fill-rule="evenodd"
-      d="M3.75 12a8.25 8.25 0 1 1 16.5 0 8.25 8.25 0 0 1-16.5 0M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25m0 4.5a.75.75 0 0 1 .75.75v3.75h3.75a.75.75 0 0 1 0 1.5h-3.75v3.75a.75.75 0 0 1-1.5 0v-3.75H7.5a.75.75 0 0 1 0-1.5h3.75V7.5a.75.75 0 0 1 .75-.75"
-      clip-rule="evenodd"
     >
     </path>
   </svg>

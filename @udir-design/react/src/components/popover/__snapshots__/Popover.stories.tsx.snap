@@ -4,144 +4,144 @@ exports[`Color Variants 1`] = `
 <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 100px; place-items: center; margin-top: var(--ds-size-12);">
   <button
     data-variant="tertiary"
-    type="button"
     popovertarget="_r_d_"
+    type="button"
   >
     popover
   </button>
   <div
-    id="_r_d_"
-    popover="manual"
-    data-placement="top"
-    data-variant="default"
     data-color="neutral"
     data-floating="bottom"
+    data-placement="top"
+    data-variant="default"
+    id="<removed>"
+    popover="manual"
     style="--_ds-floating-arrow-x: 77px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
   >
     neutralDefault
   </div>
   <button
     data-variant="tertiary"
-    type="button"
     popovertarget="_r_e_"
+    type="button"
   >
     popover
   </button>
   <div
-    id="_r_e_"
-    popover="manual"
-    data-placement="top"
-    data-variant="tinted"
     data-color="neutral"
     data-floating="bottom"
+    data-placement="top"
+    data-variant="tinted"
+    id="<removed>"
+    popover="manual"
     style="--_ds-floating-arrow-x: 74px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
   >
     neutralTinted
   </div>
   <button
     data-variant="tertiary"
-    type="button"
     popovertarget="_r_f_"
+    type="button"
   >
     popover
   </button>
   <div
-    id="_r_f_"
-    popover="manual"
-    data-placement="top"
-    data-variant="default"
     data-color="accent"
     data-floating="bottom"
+    data-placement="top"
+    data-variant="default"
+    id="<removed>"
+    popover="manual"
     style="--_ds-floating-arrow-x: 76px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
   >
     accentDefault
   </div>
   <button
     data-variant="tertiary"
-    type="button"
     popovertarget="_r_g_"
+    type="button"
   >
     popover
   </button>
   <div
-    id="_r_g_"
-    popover="manual"
-    data-placement="top"
-    data-variant="tinted"
     data-color="accent"
     data-floating="bottom"
+    data-placement="top"
+    data-variant="tinted"
+    id="<removed>"
+    popover="manual"
     style="--_ds-floating-arrow-x: 72px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
   >
     accentTinted
   </div>
   <button
     data-variant="tertiary"
-    type="button"
     popovertarget="_r_h_"
+    type="button"
   >
     popover
   </button>
   <div
-    id="_r_h_"
-    popover="manual"
-    data-placement="top"
-    data-variant="default"
     data-color="support1"
     data-floating="top"
+    data-placement="top"
+    data-variant="default"
+    id="<removed>"
+    popover="manual"
     style="--_ds-floating-arrow-x: 84px; --_ds-floating-arrow-y: 89px; translate: <removed>;"
   >
     support1Default
   </div>
   <button
     data-variant="tertiary"
-    type="button"
     popovertarget="_r_i_"
+    type="button"
   >
     popover
   </button>
   <div
-    id="_r_i_"
-    popover="manual"
-    data-placement="top"
-    data-variant="tinted"
     data-color="support1"
     data-floating="top"
+    data-placement="top"
+    data-variant="tinted"
+    id="<removed>"
+    popover="manual"
     style="--_ds-floating-arrow-x: 81px; --_ds-floating-arrow-y: 89px; translate: <removed>;"
   >
     support1Tinted
   </div>
   <button
     data-variant="tertiary"
-    type="button"
     popovertarget="_r_j_"
+    type="button"
   >
     popover
   </button>
   <div
-    id="_r_j_"
-    popover="manual"
-    data-placement="top"
-    data-variant="default"
     data-color="support2"
     data-floating="top"
+    data-placement="top"
+    data-variant="default"
+    id="<removed>"
+    popover="manual"
     style="--_ds-floating-arrow-x: 86px; --_ds-floating-arrow-y: 89px; translate: <removed>;"
   >
     support2Default
   </div>
   <button
     data-variant="tertiary"
-    type="button"
     popovertarget="_r_k_"
+    type="button"
   >
     popover
   </button>
   <div
-    id="_r_k_"
-    popover="manual"
-    data-placement="top"
-    data-variant="tinted"
     data-color="support2"
     data-floating="top"
+    data-placement="top"
+    data-variant="tinted"
+    id="<removed>"
+    popover="manual"
     style="--_ds-floating-arrow-x: 82px; --_ds-floating-arrow-y: 89px; translate: <removed>;"
   >
     support2Tinted
@@ -152,48 +152,48 @@ exports[`Color Variants 1`] = `
 exports[`Controlled 1`] = `
 <button
   data-variant="tertiary"
-  type="button"
   popovertarget="_r_l_"
+  type="button"
 >
   Fjern
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
     aria-hidden="true"
+    fill="none"
+    focusable="false"
+    height="1em"
+    role="img"
+    viewbox="0 0 24 24"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      fill="currentColor"
       d="M18.03 7.03a.75.75 0 0 0-1.06-1.06L12 10.94 7.03 5.97a.75.75 0 0 0-1.06 1.06L10.94 12l-4.97 4.97a.75.75 0 1 0 1.06 1.06L12 13.06l4.97 4.97a.75.75 0 1 0 1.06-1.06L13.06 12z"
+      fill="currentColor"
     >
     </path>
   </svg>
 </button>
 <div
-  id="_r_l_"
-  popover="manual"
+  data-floating="bottom"
   data-placement="top"
   data-variant="default"
-  data-floating="bottom"
+  id="<removed>"
+  popover="manual"
   style="--_ds-floating-arrow-x: 150px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
 >
   Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
   <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
     <button
+      data-size="sm"
       data-variant="primary"
       type="button"
-      data-size="sm"
     >
       Ja, fjern
     </button>
     <button
+      data-size="sm"
       data-variant="tertiary"
       type="button"
-      data-size="sm"
     >
       Avbryt
     </button>
@@ -213,12 +213,12 @@ exports[`Dotted Underline 1`] = `
   -gjennomsnittet for andelen 3-5-åringer i barnehage på 83 prosent (OECD 2021).
 </p>
 <div
-  id="_r_4_"
-  popover="manual"
-  data-placement="top"
-  data-variant="default"
   data-color="neutral"
   data-floating="bottom"
+  data-placement="top"
+  data-variant="default"
+  id="<removed>"
+  popover="manual"
   style="--_ds-floating-arrow-x: 241px; --_ds-floating-arrow-y: -25px; translate: <removed>;"
 >
   <p data-variant="default">
@@ -232,35 +232,35 @@ exports[`Dotted Underline 1`] = `
 
 exports[`Interactive 1`] = `
 <button
-  data-variant="secondary"
-  type="button"
-  popovertarget="_r_2_"
   aria-label="Lukk"
+  data-variant="secondary"
+  popovertarget="_r_2_"
+  type="button"
 >
   Lukk
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
     aria-hidden="true"
+    fill="none"
+    focusable="false"
+    height="1em"
+    role="img"
+    viewbox="0 0 24 24"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      fill="currentColor"
       d="M18.03 7.03a.75.75 0 0 0-1.06-1.06L12 10.94 7.03 5.97a.75.75 0 0 0-1.06 1.06L10.94 12l-4.97 4.97a.75.75 0 1 0 1.06 1.06L12 13.06l4.97 4.97a.75.75 0 1 0 1.06-1.06L13.06 12z"
+      fill="currentColor"
     >
     </path>
   </svg>
 </button>
 <div
-  id="_r_2_"
-  popover="manual"
+  data-floating="bottom"
   data-placement="top"
   data-variant="default"
-  data-floating="bottom"
+  id="<removed>"
+  popover="manual"
   style="--_ds-floating-arrow-x: 142px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
 >
   <p data-variant="default">
@@ -268,16 +268,16 @@ exports[`Interactive 1`] = `
   </p>
   <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
     <button
+      data-size="sm"
       data-variant="primary"
       type="button"
-      data-size="sm"
     >
       Lagre
     </button>
     <button
+      data-size="sm"
       data-variant="tertiary"
       type="button"
-      data-size="sm"
     >
       Ikke lagre
     </button>
@@ -288,48 +288,48 @@ exports[`Interactive 1`] = `
 exports[`Preview 1`] = `
 <button
   data-variant="tertiary"
-  type="button"
   popovertarget="_r_0_"
+  type="button"
 >
   Fjern
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
     aria-hidden="true"
+    fill="none"
+    focusable="false"
+    height="1em"
+    role="img"
+    viewbox="0 0 24 24"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      fill="currentColor"
       d="M18.03 7.03a.75.75 0 0 0-1.06-1.06L12 10.94 7.03 5.97a.75.75 0 0 0-1.06 1.06L10.94 12l-4.97 4.97a.75.75 0 1 0 1.06 1.06L12 13.06l4.97 4.97a.75.75 0 1 0 1.06-1.06L13.06 12z"
+      fill="currentColor"
     >
     </path>
   </svg>
 </button>
 <div
-  id="_r_0_"
-  popover="manual"
+  data-floating="bottom"
   data-placement="top"
   data-variant="default"
-  data-floating="bottom"
+  id="<removed>"
+  popover="manual"
   style="--_ds-floating-arrow-x: 150px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
 >
   Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
   <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
     <button
+      data-size="sm"
       data-variant="primary"
       type="button"
-      data-size="sm"
     >
       Ja, fjern
     </button>
     <button
+      data-size="sm"
       data-variant="tertiary"
       type="button"
-      data-size="sm"
     >
       Avbryt
     </button>
@@ -341,144 +341,144 @@ exports[`Variants 1`] = `
 <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 100px; place-items: center; margin-top: var(--ds-size-12);">
   <button
     data-variant="tertiary"
-    type="button"
     popovertarget="_r_5_"
+    type="button"
   >
     popover
   </button>
   <div
-    id="_r_5_"
-    popover="manual"
-    data-placement="top"
-    data-variant="default"
     data-color="success"
     data-floating="bottom"
+    data-placement="top"
+    data-variant="default"
+    id="<removed>"
+    popover="manual"
     style="--_ds-floating-arrow-x: 83px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
   >
     successDefault
   </div>
   <button
     data-variant="tertiary"
-    type="button"
     popovertarget="_r_6_"
+    type="button"
   >
     popover
   </button>
   <div
-    id="_r_6_"
-    popover="manual"
-    data-placement="top"
-    data-variant="tinted"
     data-color="success"
     data-floating="bottom"
+    data-placement="top"
+    data-variant="tinted"
+    id="<removed>"
+    popover="manual"
     style="--_ds-floating-arrow-x: 78px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
   >
     successTinted
   </div>
   <button
     data-variant="tertiary"
-    type="button"
     popovertarget="_r_7_"
+    type="button"
   >
     popover
   </button>
   <div
-    id="_r_7_"
-    popover="manual"
-    data-placement="top"
-    data-variant="default"
     data-color="danger"
     data-floating="bottom"
+    data-placement="top"
+    data-variant="default"
+    id="<removed>"
+    popover="manual"
     style="--_ds-floating-arrow-x: 78px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
   >
     dangerDefault
   </div>
   <button
     data-variant="tertiary"
-    type="button"
     popovertarget="_r_8_"
+    type="button"
   >
     popover
   </button>
   <div
-    id="_r_8_"
-    popover="manual"
-    data-placement="top"
-    data-variant="tinted"
     data-color="danger"
     data-floating="bottom"
+    data-placement="top"
+    data-variant="tinted"
+    id="<removed>"
+    popover="manual"
     style="--_ds-floating-arrow-x: 73px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
   >
     dangerTinted
   </div>
   <button
     data-variant="tertiary"
-    type="button"
     popovertarget="_r_9_"
+    type="button"
   >
     popover
   </button>
   <div
-    id="_r_9_"
-    popover="manual"
-    data-placement="top"
-    data-variant="default"
     data-color="info"
     data-floating="top"
+    data-placement="top"
+    data-variant="default"
+    id="<removed>"
+    popover="manual"
     style="--_ds-floating-arrow-x: 63px; --_ds-floating-arrow-y: 89px; translate: <removed>;"
   >
     infoDefault
   </div>
   <button
     data-variant="tertiary"
-    type="button"
     popovertarget="_r_a_"
+    type="button"
   >
     popover
   </button>
   <div
-    id="_r_a_"
-    popover="manual"
-    data-placement="top"
-    data-variant="tinted"
     data-color="info"
     data-floating="top"
+    data-placement="top"
+    data-variant="tinted"
+    id="<removed>"
+    popover="manual"
     style="--_ds-floating-arrow-x: 59px; --_ds-floating-arrow-y: 89px; translate: <removed>;"
   >
     infoTinted
   </div>
   <button
     data-variant="tertiary"
-    type="button"
     popovertarget="_r_b_"
+    type="button"
   >
     popover
   </button>
   <div
-    id="_r_b_"
-    popover="manual"
-    data-placement="top"
-    data-variant="default"
     data-color="warning"
     data-floating="top"
+    data-placement="top"
+    data-variant="default"
+    id="<removed>"
+    popover="manual"
     style="--_ds-floating-arrow-x: 82px; --_ds-floating-arrow-y: 89px; translate: <removed>;"
   >
     warningDefault
   </div>
   <button
     data-variant="tertiary"
-    type="button"
     popovertarget="_r_c_"
+    type="button"
   >
     popover
   </button>
   <div
-    id="_r_c_"
-    popover="manual"
-    data-placement="top"
-    data-variant="tinted"
     data-color="warning"
     data-floating="top"
+    data-placement="top"
+    data-variant="tinted"
+    id="<removed>"
+    popover="manual"
     style="--_ds-floating-arrow-x: 78px; --_ds-floating-arrow-y: 89px; translate: <removed>;"
   >
     warningTinted
@@ -488,40 +488,40 @@ exports[`Variants 1`] = `
 
 exports[`Without Context 1`] = `
 <button
-  data-variant="primary"
-  type="button"
-  popovertarget="my-popover"
   aria-label="Slett rad"
+  data-variant="primary"
+  popovertarget="my-popover"
+  type="button"
 >
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
+    aria-labelledby="<removed>"
     fill="none"
-    viewbox="0 0 24 24"
     focusable="false"
+    height="1em"
     role="img"
-    aria-labelledby="title-_r_n_"
+    viewbox="0 0 24 24"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
   >
-    <title id="title-_r_n_">
+    <title id="<removed>">
       Slett rad
     </title>
     <path
+      clip-rule="evenodd"
+      d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
       fill="currentColor"
       fill-rule="evenodd"
-      d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-      clip-rule="evenodd"
     >
     </path>
   </svg>
 </button>
 <div
-  id="my-popover"
-  popover="manual"
-  data-placement="top"
-  data-variant="default"
   data-color="neutral"
   data-floating="bottom"
+  data-placement="top"
+  data-variant="default"
+  id="<removed>"
+  popover="manual"
   style="--_ds-floating-arrow-x: 150px; --_ds-floating-arrow-y: -36px; translate: <removed>;"
 >
   <p data-variant="default">
@@ -529,16 +529,16 @@ exports[`Without Context 1`] = `
   </p>
   <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
     <button
+      data-size="sm"
       data-variant="primary"
       type="button"
-      data-size="sm"
     >
       Ja, slett den
     </button>
     <button
+      data-size="sm"
       data-variant="tertiary"
       type="button"
-      data-size="sm"
     >
       Avbryt
     </button>
