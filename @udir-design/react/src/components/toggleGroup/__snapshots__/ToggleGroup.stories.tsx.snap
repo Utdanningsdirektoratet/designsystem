@@ -5,7 +5,8 @@ exports[`Controlled 1`] = `
   Retting av prøver
 </h1>
 <fieldset
-  data-toggle-group
+  aria-label="Filtrer på status"
+  data-toggle-group="Filtrer på status"
   data-variant="primary"
 >
   <label data-variant="tertiary">
@@ -236,7 +237,8 @@ exports[`Controlled 1`] = `
 
 exports[`Only Icons 1`] = `
 <fieldset
-  data-toggle-group
+  aria-label="Tekstjustering"
+  data-toggle-group="Tekstjustering"
   data-variant="primary"
 >
   <label
@@ -337,44 +339,51 @@ exports[`Only Icons 1`] = `
 `;
 
 exports[`Only Text 1`] = `
-<label>
-  Filtrering av skjema
-</label>
-<fieldset
-  data-toggle-group
-  data-variant="primary"
->
-  <label data-variant="tertiary">
-    <input
-      checked
-      name="togglegroup-name-_r_f_"
-      type="radio"
-      value="personlig"
-    >
-    Personlig
-  </label>
-  <label data-variant="tertiary">
-    <input
-      name="togglegroup-name-_r_f_"
-      type="radio"
-      value="generelt"
-    >
-    Generelt
-  </label>
-  <label data-variant="tertiary">
-    <input
-      name="togglegroup-name-_r_f_"
-      type="radio"
-      value="tilleggsinformasjon"
-    >
-    Tilleggsinformasjon
-  </label>
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
+    Filtrering av skjema
+  </legend>
+  <fieldset
+    aria-label="Filtrering av skjema"
+    data-toggle-group="Filtrering av skjema"
+    data-variant="primary"
+  >
+    <label data-variant="tertiary">
+      <input
+        checked
+        name="togglegroup-name-_r_f_"
+        type="radio"
+        value="personlig"
+      >
+      Personlig
+    </label>
+    <label data-variant="tertiary">
+      <input
+        name="togglegroup-name-_r_f_"
+        type="radio"
+        value="generelt"
+      >
+      Generelt
+    </label>
+    <label data-variant="tertiary">
+      <input
+        name="togglegroup-name-_r_f_"
+        type="radio"
+        value="tilleggsinformasjon"
+      >
+      Tilleggsinformasjon
+    </label>
+  </fieldset>
 </fieldset>
 `;
 
 exports[`Preview 1`] = `
 <fieldset
-  data-toggle-group
+  aria-label="Velg epostboks"
+  data-toggle-group="Velg epostboks"
   data-variant="primary"
 >
   <label data-variant="tertiary">
@@ -415,7 +424,8 @@ exports[`Preview 1`] = `
 
 exports[`Primary 1`] = `
 <fieldset
-  data-toggle-group
+  aria-label="Velg epostboks"
+  data-toggle-group="Velg epostboks"
   data-variant="primary"
 >
   <label data-variant="tertiary">
@@ -456,7 +466,8 @@ exports[`Primary 1`] = `
 
 exports[`Secondary 1`] = `
 <fieldset
-  data-toggle-group
+  aria-label="Velg epostboks"
+  data-toggle-group="Velg epostboks"
   data-variant="secondary"
 >
   <label data-variant="tertiary">
@@ -497,7 +508,8 @@ exports[`Secondary 1`] = `
 
 exports[`Secondary Only Icons 1`] = `
 <fieldset
-  data-toggle-group
+  aria-label="Tekstjustering"
+  data-toggle-group="Tekstjustering"
   data-variant="secondary"
 >
   <label
@@ -599,7 +611,8 @@ exports[`Secondary Only Icons 1`] = `
 
 exports[`Text And Icons 1`] = `
 <fieldset
-  data-toggle-group
+  aria-label="Filtrer på status"
+  data-toggle-group="Filtrer på status"
   data-variant="primary"
 >
   <label data-variant="tertiary">
@@ -690,7 +703,8 @@ exports[`Toggle Group In Color Context 1`] = `
   data-variant="tinted"
 >
   <fieldset
-    data-toggle-group
+    aria-label="Velg epostboks"
+    data-toggle-group="Velg epostboks"
     data-variant="primary"
   >
     <label data-variant="tertiary">

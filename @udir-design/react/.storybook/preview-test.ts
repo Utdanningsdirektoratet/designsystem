@@ -109,6 +109,13 @@ export const testLifecycleHooks = {
       });
     }
 
+    const toggleGroup = canvasElement.querySelector('[data-toggle-group]');
+    if (toggleGroup) {
+      await waitFor(() => {
+        expect(toggleGroup).toHaveAttribute('aria-label');
+      });
+    }
+
     const html = canvasElement.innerHTML;
     viteExpect(html).toMatchSnapshot();
 

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as Icons from '@udir-design/icons';
 import { Tag } from 'src/components/tag/Tag';
-import { ToggleGroup } from 'src/components/toggleGroup/ToggleGroup';
+import { ToggleGroup } from 'src/components/toggleGroup';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import { CodeBlock } from './CodeBlock';
