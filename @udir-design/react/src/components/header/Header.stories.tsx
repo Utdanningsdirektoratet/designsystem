@@ -142,6 +142,9 @@ export const WithUserButton = meta.story({
 
 // Additional story for testing because we render the story inline in docs: https://github.com/storybookjs/storybook/issues/22893
 export const WithUserButton_Test = meta.story({
+  parameters: {
+    chromatic: { modes: { desktop: { viewport: { height: 306 } } } },
+  },
   render: WithUserButton.input.render,
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);

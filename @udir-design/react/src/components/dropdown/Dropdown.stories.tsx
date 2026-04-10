@@ -46,6 +46,9 @@ const meta = preview.meta({
 });
 
 export const Preview = meta.story({
+  parameters: {
+    chromatic: { modes: { desktop: { viewport: { height: 260 } } } },
+  },
   args: {
     placement: 'bottom-end',
   },
@@ -101,6 +104,9 @@ export const Preview = meta.story({
 });
 
 export const Icons = meta.story({
+  parameters: {
+    chromatic: { modes: { desktop: { viewport: { height: 206 } } } },
+  },
   render: (args) => {
     return (
       <Dropdown.TriggerContext>
@@ -135,6 +141,9 @@ export const Icons = meta.story({
 });
 
 export const Avatars = meta.story({
+  parameters: {
+    chromatic: { modes: { desktop: { viewport: { height: 378 } } } },
+  },
   render: (args) => {
     const [open, setOpen] = useState(false);
 
@@ -180,6 +189,9 @@ export const Avatars = meta.story({
 });
 
 export const Selected = meta.story({
+  parameters: {
+    chromatic: { modes: { desktop: { viewport: { height: 256 } } } },
+  },
   args: {
     placement: 'bottom-end',
   },
@@ -208,6 +220,9 @@ export const Selected = meta.story({
 });
 
 export const Controlled = meta.story({
+  parameters: {
+    chromatic: { modes: { desktop: { viewport: { height: 400 } } } },
+  },
   render: function Render(args) {
     const [open, setOpen] = useState(false);
 
@@ -255,6 +270,9 @@ export const Controlled = meta.story({
 });
 
 export const WithoutTrigger = meta.story({
+  parameters: {
+    chromatic: { modes: { desktop: { viewport: { height: 260 } } } },
+  },
   render: () => {
     return (
       <>
