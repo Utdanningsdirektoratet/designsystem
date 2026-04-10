@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ChevronDownIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
 import { Dropdown } from 'src/components/dropdown/Dropdown';
+import type { PaginationButtonProps } from 'src/components/pagination/Pagination';
 import { Pagination } from 'src/components/pagination/Pagination';
 import type { TableHeaderCellProps } from 'src/components/table';
 import { Table } from 'src/components/table';
@@ -71,11 +72,22 @@ export const Preview = meta.story({
         return sortDirection === 'ascending' ? 1 : -1;
       return 0;
     });
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    useEffect(() => {
+      const handleResize = () => setWindowWidth(window.innerWidth);
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+    const isMobile = windowWidth < 768;
+    const isTablet = windowWidth >= 768 && windowWidth < 1024;
+    const isCompact = windowWidth < 1024;
+    const isSmallMobile = windowWidth < 375;
+
     const totalPages = Math.ceil(dummyData.length / itemsPerPage);
     const { pages, nextButtonProps, prevButtonProps } = usePagination({
       currentPage: page,
       totalPages,
-      showPages: 5,
+      showPages: isSmallMobile ? 1 : isMobile ? 2 : 5,
       setCurrentPage,
     });
 
@@ -103,9 +115,11 @@ export const Preview = meta.story({
               >
                 Sted
               </Table.HeaderCell>
-              <Table.HeaderCell>Orgnummer</Table.HeaderCell>
-              <Table.HeaderCell>Klar for gjennomføring</Table.HeaderCell>
-              <Table.HeaderCell>Brukerstøtte</Table.HeaderCell>
+              {!isMobile && <Table.HeaderCell>Orgnummer</Table.HeaderCell>}
+              {!isMobile && (
+                <Table.HeaderCell>Klar for gjennomføring</Table.HeaderCell>
+              )}
+              {!isMobile && <Table.HeaderCell>Brukerstøtte</Table.HeaderCell>}
             </Table.Row>
           </Table.Head>
           <Table.Body>
@@ -113,9 +127,11 @@ export const Preview = meta.story({
               <Table.Row key={row.id}>
                 <Table.Cell>{row.navn}</Table.Cell>
                 <Table.Cell>{row.sted}</Table.Cell>
-                <Table.Cell>{row.orgnummer}</Table.Cell>
-                <Table.Cell>{row.klarForGjennomforing}</Table.Cell>
-                <Table.Cell>{row.brukerstotte}</Table.Cell>
+                {!isMobile && <Table.Cell>{row.orgnummer}</Table.Cell>}
+                {!isMobile && (
+                  <Table.Cell>{row.klarForGjennomforing}</Table.Cell>
+                )}
+                {!isMobile && <Table.Cell>{row.brukerstotte}</Table.Cell>}
               </Table.Row>
             ))}
           </Table.Body>
@@ -123,8 +139,10 @@ export const Preview = meta.story({
         <div
           style={{
             display: 'flex',
-            justifyContent: 'space-between',
+            flexDirection: isCompact ? 'column' : 'row',
+            justifyContent: isCompact ? 'center' : 'space-between',
             alignItems: 'center',
+            gap: 'var(--ds-size-4)',
             margin: 'var(--ds-size-6) var(--ds-size-2)',
           }}
         >
@@ -135,7 +153,7 @@ export const Preview = meta.story({
                   aria-label="Forrige side"
                   {...prevButtonProps}
                 >
-                  Forrige
+                  {!isMobile && 'Forrige'}
                 </Pagination.Button>
               </Pagination.Item>
               {pages.map(
@@ -146,7 +164,7 @@ export const Preview = meta.story({
                 }: {
                   page: number | string;
                   itemKey: string;
-                  buttonProps: any;
+                  buttonProps: PaginationButtonProps | null;
                 }) => (
                   <Pagination.Item key={itemKey}>
                     {typeof page === 'number' && (
@@ -162,7 +180,7 @@ export const Preview = meta.story({
               )}
               <Pagination.Item>
                 <Pagination.Button aria-label="Neste side" {...nextButtonProps}>
-                  Neste
+                  {!isMobile && 'Neste'}
                 </Pagination.Button>
               </Pagination.Item>
             </Pagination.List>
@@ -170,41 +188,55 @@ export const Preview = meta.story({
           <div
             style={{
               display: 'flex',
+              flexDirection: isMobile ? 'column' : 'row',
+              justifyContent: isTablet ? 'space-between' : undefined,
               alignItems: 'center',
+              width: isTablet ? '60%' : undefined,
+              padding: isTablet ? '0 50px' : undefined,
               gap: 'var(--ds-size-4)',
             }}
           >
             <span
               style={{
                 color: 'var(--ds-color-neutral-text-subtle)',
-                marginRight: 'var(--ds-size-6)',
               }}
             >
               {rangeStart}-{rangeEnd} av {dummyData.length}
             </span>
-            <span>Rader per side</span>
-            <Dropdown.TriggerContext>
-              <Dropdown.Trigger variant="secondary" aria-label="Rader per side">
-                {itemsPerPage}
-                <ChevronDownIcon aria-hidden />
-              </Dropdown.Trigger>
-              <Dropdown>
-                <Dropdown.List>
-                  {[5, 10, 25, 50].map((size) => (
-                    <Dropdown.Item key={size}>
-                      <Dropdown.Button
-                        onClick={() => {
-                          setItemsPerPage(size);
-                          setCurrentPage(1);
-                        }}
-                      >
-                        {size}
-                      </Dropdown.Button>
-                    </Dropdown.Item>
-                  ))}
-                </Dropdown.List>
-              </Dropdown>
-            </Dropdown.TriggerContext>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 'var(--ds-size-4)',
+              }}
+            >
+              <span>Rader per side</span>
+              <Dropdown.TriggerContext>
+                <Dropdown.Trigger
+                  variant="secondary"
+                  aria-label="Rader per side"
+                >
+                  {itemsPerPage}
+                  <ChevronDownIcon aria-hidden />
+                </Dropdown.Trigger>
+                <Dropdown>
+                  <Dropdown.List>
+                    {[5, 10, 25, 50].map((size) => (
+                      <Dropdown.Item key={size}>
+                        <Dropdown.Button
+                          onClick={() => {
+                            setItemsPerPage(size);
+                            setCurrentPage(1);
+                          }}
+                        >
+                          {size}
+                        </Dropdown.Button>
+                      </Dropdown.Item>
+                    ))}
+                  </Dropdown.List>
+                </Dropdown>
+              </Dropdown.TriggerContext>
+            </div>
           </div>
         </div>
       </div>
