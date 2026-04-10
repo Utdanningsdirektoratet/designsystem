@@ -69,9 +69,15 @@
   }
 
   /* Design of dropzone */
+  &:has(> .ds-card) {
+    display: flex;
+    flex-direction: column;
+  }
   > .ds-card {
     margin-block-start: var(--ds-size-2);
     width: 100%;
+    flex-basis: 100%;
+    justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
