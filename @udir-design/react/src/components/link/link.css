@@ -9,20 +9,4 @@
   &:focus-visible {
     text-decoration: none;
   }
-
-  /* Fix spacing between icon and link text.
-     Digdir has previously fixed this, but introduced the issue again. Remove when fixed by Digdir. */
-  &:has(> span) > :is(img, svg) {
-    margin-inline: var(--ds-size-1);
-    &:first-child {
-      margin-inline-start: 0;
-    }
-    &:last-child {
-      margin-inline-end: 0;
-    }
-  }
-  /* Remove extra spacing AFTER link which has an icon, that somehow has been added by Digdir */
-  &:has(> span):has(> :is(img, svg)) {
-    margin-inline: 0;
-  }
 }
