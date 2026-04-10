@@ -1,6 +1,6 @@
 import type { ChangeEvent } from 'react';
 import { useRef, useState } from 'react';
-import { expect, userEvent, waitFor, within } from 'storybook/test';
+import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from '../button/Button';
@@ -20,18 +20,10 @@ import type { DialogProps } from './Dialog';
 import { Dialog } from './Dialog';
 import styles from './dialog.stories.module.scss';
 
-async function defaultPlay(
-  canvasElement: HTMLElement,
-  options: { waitForCommand: boolean },
-) {
+async function defaultPlay(canvasElement: HTMLElement) {
   // When not in Docs mode, automatically open the dialog
   const canvas = within(canvasElement);
   const button = canvas.getByRole('button');
-  if (options.waitForCommand) {
-    // Wait for command and commandfor to be added before clicking.
-    await waitFor(() => expect(button).toHaveAttribute('command'));
-    await waitFor(() => expect(button).toHaveAttribute('commandfor'));
-  }
   await userEvent.click(button);
   // Wait for dialog to fade in before running tests
   const dialog = canvas.getByRole('dialog');
@@ -68,7 +60,7 @@ const meta = preview.meta({
       },
     },
   },
-  play: async (ctx) => defaultPlay(ctx.canvasElement, { waitForCommand: true }),
+  play: async (ctx) => defaultPlay(ctx.canvasElement),
 });
 
 export const Preview = meta.story({
@@ -93,7 +85,7 @@ export const Preview = meta.story({
     </div>
   ),
   play: async (ctx) => {
-    await defaultPlay(ctx.canvasElement, { waitForCommand: true });
+    await defaultPlay(ctx.canvasElement);
     const canvas = within(ctx.canvasElement);
     const dialog = canvas.getByRole('dialog');
     const button = canvas.getByRole('button', {
@@ -137,7 +129,7 @@ export const Preview = meta.story({
 
 export const WithoutDialogTriggerContext = meta.story({
   parameters: { docs: advancedCodeDocs },
-  play: (ctx) => defaultPlay(ctx.canvasElement, { waitForCommand: false }),
+  play: (ctx) => defaultPlay(ctx.canvasElement),
   render(args) {
     const dialogRef = useRef<HTMLDialogElement>(null);
     return (
@@ -209,7 +201,7 @@ export const WithoutDialogTriggerContextWithCommand = meta.story({
 
 export const DialogWithOpenProp = meta.story({
   parameters: { docs: advancedCodeDocs },
-  play: (ctx) => defaultPlay(ctx.canvasElement, { waitForCommand: false }),
+  play: (ctx) => defaultPlay(ctx.canvasElement),
   render(args) {
     const [open, setOpen] = useState(false);
 
@@ -535,7 +527,7 @@ export const DialogNonModal = meta.story({
     );
   },
   play: async (ctx) => {
-    await defaultPlay(ctx.canvasElement, { waitForCommand: false });
+    await defaultPlay(ctx.canvasElement);
     const canvas = within(ctx.canvasElement);
     const dialog = canvas.getByRole('dialog');
 

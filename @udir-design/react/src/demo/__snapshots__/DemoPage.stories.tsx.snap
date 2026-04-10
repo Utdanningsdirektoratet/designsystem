@@ -11,7 +11,10 @@ exports[`Page Story 1`] = `
   <p data-variant="default">
     På denne demosiden hvor vi har laget noen eksempler på komponentene i biblioteket, sånn at man kan se hvordan de samspiller i en litt større kontekst. På sikt vil alle komponentene være representert her, men så langt er det kun de vi har ansett som viktigst i første omgang. Lengre ned på siden kan du prøve å endre på størrelse og farge-modus for å se hvordan det påvirker komponentene.
   </p>
-  <ds-breadcrumbs aria-label="Du er her:">
+  <ds-breadcrumbs
+    aria-label="Du er her:"
+    role="navigation"
+  >
     <ol>
       <li>
         <a href="#">
@@ -29,7 +32,10 @@ exports[`Page Story 1`] = `
         </a>
       </li>
       <li>
-        <a href="#">
+        <a
+          aria-current="page"
+          href="#"
+        >
           Nivå 4
         </a>
       </li>

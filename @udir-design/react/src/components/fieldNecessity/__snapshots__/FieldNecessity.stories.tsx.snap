@@ -17,7 +17,10 @@ exports[`All Optional 1`] = `
       </span>
     </label>
     <div>
-      <textarea id="<removed>">
+      <textarea
+        id="<removed>"
+        style="--_ds-field-sizing: <removed>;"
+      >
       </textarea>
     </div>
   </ds-field>
@@ -31,7 +34,10 @@ exports[`All Optional 1`] = `
       </span>
     </label>
     <div>
-      <textarea id="<removed>">
+      <textarea
+        id="<removed>"
+        style="--_ds-field-sizing: <removed>;"
+      >
       </textarea>
     </div>
   </ds-field>
@@ -543,7 +549,10 @@ exports[`Single Optional Field 1`] = `
       </span>
     </label>
     <div>
-      <textarea id="<removed>">
+      <textarea
+        id="<removed>"
+        style="--_ds-field-sizing: <removed>;"
+      >
       </textarea>
     </div>
   </ds-field>
@@ -569,6 +578,7 @@ exports[`Single Required Field 1`] = `
       <textarea
         id="<removed>"
         required
+        style="--_ds-field-sizing: <removed>;"
       >
       </textarea>
     </div>

@@ -11,6 +11,7 @@ exports[`Controlled 1`] = `
   <textarea
     id="<removed>"
     rows="4"
+    style="--_ds-field-sizing: <removed>;"
   >
   </textarea>
 </ds-field>
@@ -34,6 +35,7 @@ exports[`Disabled 1`] = `
   <textarea
     disabled
     id="<removed>"
+    style="--_ds-field-sizing: <removed>;"
   >
   </textarea>
 </ds-field>
@@ -51,6 +53,7 @@ exports[`Focused 1`] = `
     cols="20"
     id="<removed>"
     rows="3"
+    style="--_ds-field-sizing: <removed>;"
   >
   </textarea>
 </ds-field>
@@ -64,7 +67,10 @@ exports[`Full Width 1`] = `
   >
     Beskriv bekymringen din
   </label>
-  <textarea id="<removed>">
+  <textarea
+    id="<removed>"
+    style="--_ds-field-sizing: <removed>;"
+  >
   </textarea>
 </ds-field>
 `;
@@ -81,6 +87,7 @@ exports[`Preview 1`] = `
     cols="20"
     id="<removed>"
     rows="3"
+    style="--_ds-field-sizing: <removed>;"
   >
   </textarea>
 </ds-field>
@@ -97,6 +104,7 @@ exports[`Read Only 1`] = `
   <textarea
     id="<removed>"
     readonly
+    style="--_ds-field-sizing: <removed>;"
   >
   </textarea>
 </ds-field>

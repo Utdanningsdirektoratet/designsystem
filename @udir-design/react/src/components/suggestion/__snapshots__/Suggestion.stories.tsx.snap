@@ -22,15 +22,15 @@ exports[`Always Show All 1`] = `
     </data>
     <input
       aria-autocomplete="list"
-      aria-controls=":u-datalist7"
+      aria-controls=":ds:14"
       aria-expanded="true"
-      aria-label="​​​​​"
+      aria-label="Viser alle options også når valgt​​​​​"
       autocomplete="off"
-      data-label
+      data-label="Viser alle options også når valgt"
       id="<removed>"
-      list=":u-datalist7"
+      list=":ds:14"
       placeholder=" "
-      popovertarget=":u-datalist7"
+      popovertarget=":ds:14"
       role="combobox"
       type="text"
     >
@@ -143,15 +143,15 @@ exports[`Controlled Independent Label Value 1`] = `
     </data>
     <input
       aria-autocomplete="list"
-      aria-controls=":u-datalist4"
+      aria-controls=":ds:8"
       aria-expanded="true"
-      aria-label="​​​​​"
+      aria-label="Velg person​​​​​"
       autocomplete="off"
-      data-label
+      data-label="Velg person"
       id="<removed>"
-      list=":u-datalist4"
+      list=":ds:8"
       placeholder=" "
-      popovertarget=":u-datalist4"
+      popovertarget=":ds:8"
       role="combobox"
       type="text"
     >
@@ -270,15 +270,15 @@ exports[`Controlled Multiple 1`] = `
     </data>
     <input
       aria-autocomplete="list"
-      aria-controls=":u-datalist3"
+      aria-controls=":ds:6"
       aria-expanded="true"
-      aria-label=", Navigate left to find 2 selected​​​​​"
+      aria-label="Velg destinasjoner, Navigate left to find 2 selected​​​​​"
       autocomplete="off"
-      data-label
+      data-label="Velg destinasjoner"
       id="<removed>"
-      list=":u-datalist3"
+      list=":ds:6"
       placeholder=" "
-      popovertarget=":u-datalist3"
+      popovertarget=":ds:6"
       role="combobox"
       type="text"
     >
@@ -434,15 +434,15 @@ exports[`Controlled Single 1`] = `
     </data>
     <input
       aria-autocomplete="list"
-      aria-controls=":u-datalist2"
+      aria-controls=":ds:4"
       aria-expanded="true"
-      aria-label="​​​​​"
+      aria-label="Velg destinasjon​​​​​"
       autocomplete="off"
-      data-label
+      data-label="Velg destinasjon"
       id="<removed>"
-      list=":u-datalist2"
+      list=":ds:4"
       placeholder=" "
-      popovertarget=":u-datalist2"
+      popovertarget=":ds:4"
       role="combobox"
       type="text"
     >
@@ -600,15 +600,15 @@ exports[`Custom Filter Alt 1 1`] = `
   <ds-suggestion>
     <input
       aria-autocomplete="list"
-      aria-controls=":u-datalist5"
+      aria-controls=":ds:10"
       aria-expanded="true"
-      aria-label="​​​​​"
+      aria-label="Skriv inn et tall mellom 1-6​​​​​"
       autocomplete="off"
-      data-label
+      data-label="Skriv inn et tall mellom 1-6"
       id="<removed>"
-      list=":u-datalist5"
+      list=":ds:10"
       placeholder=" "
-      popovertarget=":u-datalist5"
+      popovertarget=":ds:10"
       role="combobox"
       type="text"
     >
@@ -718,15 +718,15 @@ exports[`Custom Filter Alt 2 1`] = `
   <ds-suggestion>
     <input
       aria-autocomplete="list"
-      aria-controls=":u-datalist6"
+      aria-controls=":ds:12"
       aria-expanded="true"
-      aria-label="​​​​​"
+      aria-label="Skriv inn et tall mellom 1-6​​​​​"
       autocomplete="off"
-      data-label
+      data-label="Skriv inn et tall mellom 1-6"
       id="<removed>"
-      list=":u-datalist6"
+      list=":ds:12"
       placeholder=" "
-      popovertarget=":u-datalist6"
+      popovertarget=":ds:12"
       role="combobox"
       type="text"
     >
@@ -839,15 +839,15 @@ exports[`Default Value 1`] = `
     </data>
     <input
       aria-autocomplete="list"
-      aria-controls=":u-datalista"
+      aria-controls=":ds:20"
       aria-expanded="true"
-      aria-label="​​​​​"
+      aria-label="Velg en destinasjon​​​​​"
       autocomplete="off"
-      data-label
+      data-label="Velg en destinasjon"
       id="<removed>"
-      list=":u-datalista"
+      list=":ds:20"
       placeholder=" "
-      popovertarget=":u-datalista"
+      popovertarget=":ds:20"
       role="combobox"
       type="text"
     >
@@ -956,15 +956,15 @@ exports[`Fetch External 1`] = `
   <ds-suggestion>
     <input
       aria-autocomplete="list"
-      aria-controls=":u-datalist8"
+      aria-controls=":ds:16"
       aria-expanded="true"
-      aria-label="​​​​​"
+      aria-label="Search for countries (in english)​​​​​"
       autocomplete="off"
-      data-label
+      data-label="Search for countries (in english)"
       id="<removed>"
-      list=":u-datalist8"
+      list=":ds:16"
       placeholder=" "
-      popovertarget=":u-datalist8"
+      popovertarget=":ds:16"
       role="combobox"
       type="text"
     >
@@ -1008,15 +1008,15 @@ exports[`In Details 1`] = `
       <ds-suggestion autofocus>
         <input
           aria-autocomplete="list"
-          aria-controls=":u-datalistb"
+          aria-controls=":ds:22"
           aria-expanded="true"
           aria-label="​​​​​"
           autocomplete="off"
           data-label
           id="<removed>"
-          list=":u-datalistb"
+          list=":ds:22"
           placeholder=" "
-          popovertarget=":u-datalistb"
+          popovertarget=":ds:22"
           role="combobox"
           type="text"
         >
@@ -1112,16 +1112,16 @@ exports[`Multiple 1`] = `
   <ds-suggestion data-multiple>
     <input
       aria-autocomplete="list"
-      aria-controls=":u-datalist9"
+      aria-controls=":ds:18"
       aria-expanded="true"
-      aria-label=", No selected​​​​​"
+      aria-label="Velg en destinasjon, No selected​​​​​"
       autocomplete="off"
-      data-label
+      data-label="Velg en destinasjon"
       form="#"
       id="<removed>"
-      list=":u-datalist9"
+      list=":ds:18"
       placeholder=" "
-      popovertarget=":u-datalist9"
+      popovertarget=":ds:18"
       role="combobox"
       type="text"
     >
@@ -1259,15 +1259,15 @@ exports[`Preview 1`] = `
   <ds-suggestion>
     <input
       aria-autocomplete="list"
-      aria-controls=":u-datalist1"
+      aria-controls=":ds:2"
       aria-expanded="true"
-      aria-label="​​​​​"
+      aria-label="Velg en destinasjon​​​​​"
       autocomplete="off"
-      data-label
+      data-label="Velg en destinasjon"
       id="<removed>"
-      list=":u-datalist1"
+      list=":ds:2"
       placeholder=" "
-      popovertarget=":u-datalist1"
+      popovertarget=":ds:2"
       role="combobox"
       type="text"
     >

@@ -204,7 +204,7 @@ exports[`Fixed Table 1`] = `
           aria-hidden="true"
           aria-label="Forrige side"
           data-variant="tertiary"
-          variant="tertiary"
+          type="button"
         >
           Forrige
         </button>
@@ -214,6 +214,7 @@ exports[`Fixed Table 1`] = `
           aria-current="true"
           aria-label="Side 1"
           data-variant="tertiary"
+          type="button"
         >
           1
         </button>
@@ -222,6 +223,7 @@ exports[`Fixed Table 1`] = `
         <button
           aria-label="Side 2"
           data-variant="tertiary"
+          type="button"
         >
           2
         </button>
@@ -230,6 +232,7 @@ exports[`Fixed Table 1`] = `
         <button
           aria-label="Side 3"
           data-variant="tertiary"
+          type="button"
         >
           3
         </button>
@@ -239,7 +242,7 @@ exports[`Fixed Table 1`] = `
           aria-hidden="false"
           aria-label="Neste side"
           data-variant="tertiary"
-          variant="tertiary"
+          type="button"
         >
           Neste
         </button>

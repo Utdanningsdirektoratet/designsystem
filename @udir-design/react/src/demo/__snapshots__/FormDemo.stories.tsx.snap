@@ -62,8 +62,6 @@ exports[`Form Page 2 1`] = `
   <div>
     <button
       aria-haspopup="dialog"
-      command="show-modal"
-      commandfor="_r_6_"
       data-color="neutral"
       data-variant="secondary"
       type="button"
@@ -90,6 +88,7 @@ exports[`Form Page 2 1`] = `
     </button>
     <dialog
       closedby="any"
+      data-modal="true"
       data-placement="center"
       id="<removed>"
       style="width: fit-content; min-width: 20rem;"
@@ -212,6 +211,7 @@ exports[`Form Page 2 1`] = `
             name="projectDescription"
             required
             rows="4"
+            style="--_ds-field-sizing: <removed>;"
           >
           </textarea>
         </div>
@@ -313,17 +313,17 @@ exports[`Form Page 2 1`] = `
         <ds-suggestion>
           <input
             aria-autocomplete="list"
-            aria-controls=":u-datalist1"
+            aria-controls=":ds:4"
             aria-describedby="<removed>"
             aria-expanded="true"
             aria-invalid="false"
-            aria-label="​​​​​"
+            aria-label="Gjennomføringssted​​​​​"
             autocomplete="off"
-            data-label
+            data-label="Gjennomføringssted"
             id="<removed>"
-            list=":u-datalist1"
+            list=":ds:4"
             placeholder=" "
-            popovertarget=":u-datalist1"
+            popovertarget=":ds:4"
             required
             role="combobox"
             type="text"
@@ -598,6 +598,7 @@ exports[`Form Page 2 1`] = `
         </button>
       </div>
       <dialog
+        data-modal="true"
         data-placement="center"
         id="<removed>"
         style="width: fit-content;"
@@ -709,8 +710,6 @@ exports[`Form Page 3 1`] = `
   <div>
     <button
       aria-haspopup="dialog"
-      command="show-modal"
-      commandfor="_r_d_"
       data-color="neutral"
       data-variant="secondary"
       type="button"
@@ -737,6 +736,7 @@ exports[`Form Page 3 1`] = `
     </button>
     <dialog
       closedby="any"
+      data-modal="true"
       data-placement="center"
       id="<removed>"
       style="width: fit-content; min-width: 20rem;"
@@ -903,6 +903,7 @@ exports[`Form Page 3 1`] = `
           aria-describedby="<removed>"
           id="<removed>"
           name="addition"
+          style="--_ds-field-sizing: <removed>;"
         >
         </textarea>
       </ds-field>
@@ -955,6 +956,7 @@ exports[`Form Page 3 1`] = `
         </button>
       </div>
       <dialog
+        data-modal="true"
         data-placement="center"
         id="<removed>"
         style="width: fit-content;"
@@ -1066,8 +1068,6 @@ exports[`Form Page 4 1`] = `
   <div>
     <button
       aria-haspopup="dialog"
-      command="show-modal"
-      commandfor="_r_l_"
       data-color="neutral"
       data-variant="secondary"
       type="button"
@@ -1094,6 +1094,7 @@ exports[`Form Page 4 1`] = `
     </button>
     <dialog
       closedby="any"
+      data-modal="true"
       data-placement="center"
       id="<removed>"
       style="width: fit-content; min-width: 20rem;"
@@ -1235,6 +1236,7 @@ exports[`Form Page 4 1`] = `
         </button>
       </div>
       <dialog
+        data-modal="true"
         data-placement="center"
         id="<removed>"
         style="width: fit-content;"
@@ -1346,8 +1348,6 @@ exports[`Form Page 5 1`] = `
   <div>
     <button
       aria-haspopup="dialog"
-      command="show-modal"
-      commandfor="_r_r_"
       data-color="neutral"
       data-variant="secondary"
       type="button"
@@ -1374,6 +1374,7 @@ exports[`Form Page 5 1`] = `
     </button>
     <dialog
       closedby="any"
+      data-modal="true"
       data-placement="center"
       id="<removed>"
       style="width: fit-content; min-width: 20rem;"
@@ -1475,6 +1476,7 @@ exports[`Form Page 5 1`] = `
       <div>
       </div>
       <dialog
+        data-modal="true"
         data-placement="center"
         id="<removed>"
         style="width: fit-content;"
@@ -1586,8 +1588,6 @@ exports[`Form Story 1`] = `
   <div>
     <button
       aria-haspopup="dialog"
-      command="show-modal"
-      commandfor="_r_1_"
       data-color="neutral"
       data-variant="secondary"
       type="button"
@@ -1614,6 +1614,7 @@ exports[`Form Story 1`] = `
     </button>
     <dialog
       closedby="any"
+      data-modal="true"
       data-placement="center"
       id="<removed>"
       style="width: fit-content; min-width: 20rem;"
@@ -1840,6 +1841,7 @@ exports[`Form Story 1`] = `
         </button>
       </div>
       <dialog
+        data-modal="true"
         data-placement="center"
         id="<removed>"
         style="width: fit-content;"

@@ -1,4 +1,4 @@
-/* build: v1.13.1 */
+/* build: v0.0.0-fix-test-friendliness-20260409125534 */
 import type {} from '@digdir/designsystemet-types';
 
 // Augment types based on theme

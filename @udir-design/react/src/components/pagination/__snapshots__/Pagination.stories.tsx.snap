@@ -10,7 +10,7 @@ exports[`Mobile 1`] = `
       <button
         aria-label="Forrige side"
         data-variant="tertiary"
-        variant="tertiary"
+        type="button"
       >
       </button>
     </li>
@@ -18,6 +18,7 @@ exports[`Mobile 1`] = `
       <button
         aria-label="Side 2"
         data-variant="tertiary"
+        type="button"
       >
         2
       </button>
@@ -27,6 +28,7 @@ exports[`Mobile 1`] = `
         aria-current="true"
         aria-label="Side 3"
         data-variant="tertiary"
+        type="button"
       >
         3
       </button>
@@ -35,6 +37,7 @@ exports[`Mobile 1`] = `
       <button
         aria-label="Side 4"
         data-variant="tertiary"
+        type="button"
       >
         4
       </button>
@@ -43,7 +46,7 @@ exports[`Mobile 1`] = `
       <button
         aria-label="Neste side"
         data-variant="tertiary"
-        variant="tertiary"
+        type="button"
       >
       </button>
     </li>
@@ -61,7 +64,7 @@ exports[`Preview 1`] = `
       <button
         aria-label="Forrige side"
         data-variant="tertiary"
-        variant="tertiary"
+        type="button"
       >
         Forrige
       </button>
@@ -70,6 +73,7 @@ exports[`Preview 1`] = `
       <button
         aria-label="Side 1"
         data-variant="tertiary"
+        type="button"
       >
         1
       </button>
@@ -78,6 +82,7 @@ exports[`Preview 1`] = `
       <button
         aria-label="Side 2"
         data-variant="tertiary"
+        type="button"
       >
         2
       </button>
@@ -86,6 +91,7 @@ exports[`Preview 1`] = `
       <button
         aria-label="Side 3"
         data-variant="tertiary"
+        type="button"
       >
         3
       </button>
@@ -95,6 +101,7 @@ exports[`Preview 1`] = `
         aria-current="true"
         aria-label="Side 4"
         data-variant="tertiary"
+        type="button"
       >
         4
       </button>
@@ -103,6 +110,7 @@ exports[`Preview 1`] = `
       <button
         aria-label="Side 5"
         data-variant="tertiary"
+        type="button"
       >
         5
       </button>
@@ -113,6 +121,7 @@ exports[`Preview 1`] = `
       <button
         aria-label="Side 10"
         data-variant="tertiary"
+        type="button"
       >
         10
       </button>
@@ -121,7 +130,7 @@ exports[`Preview 1`] = `
       <button
         aria-label="Neste side"
         data-variant="tertiary"
-        variant="tertiary"
+        type="button"
       >
         Neste
       </button>
@@ -150,7 +159,6 @@ exports[`With Anchor 1`] = `
           aria-label="Forrige side"
           data-variant="tertiary"
           href="#side-3"
-          variant="tertiary"
         >
           Forrige
         </a>
@@ -217,7 +225,6 @@ exports[`With Anchor 1`] = `
           aria-label="Neste side"
           data-variant="tertiary"
           href="#side-5"
-          variant="tertiary"
         >
           Neste
         </a>

@@ -3,8 +3,6 @@
 exports[`Backdrop Closedby Any 1`] = `
 <button
   aria-haspopup="dialog"
-  command="show-modal"
-  commandfor="_r_5_"
   data-variant="secondary"
   type="button"
 >
@@ -12,6 +10,7 @@ exports[`Backdrop Closedby Any 1`] = `
 </button>
 <dialog
   closedby="any"
+  data-modal="true"
   data-placement="center"
   id="<removed>"
   open
@@ -49,6 +48,7 @@ exports[`Custom Close Button 1`] = `
   Åpne Dialog med tilpasset lukkeknapp
 </button>
 <dialog
+  data-modal="true"
   data-placement="center"
   id="<removed>"
   open
@@ -86,6 +86,7 @@ exports[`Dialog Non Modal 1`] = `
   <textarea
     id="<removed>"
     rows="8"
+    style="--_ds-field-sizing: <removed>;"
   >
   </textarea>
 </ds-field>
@@ -96,6 +97,7 @@ exports[`Dialog Non Modal 1`] = `
   Åpne skrivetips
 </button>
 <dialog
+  data-modal="false"
   data-placement="center"
   id="<removed>"
   open
@@ -137,8 +139,6 @@ exports[`Dialog Non Modal 1`] = `
 exports[`Dialog With Form 1`] = `
 <button
   aria-haspopup="dialog"
-  command="show-modal"
-  commandfor="dialog-with-form"
   data-variant="primary"
   type="button"
 >
@@ -146,6 +146,7 @@ exports[`Dialog With Form 1`] = `
 </button>
 <dialog
   closedby="any"
+  data-modal="true"
   data-placement="center"
   id="<removed>"
   open
@@ -203,14 +204,13 @@ exports[`Dialog With Form 1`] = `
 exports[`Dialog With Max Width 1`] = `
 <button
   aria-haspopup="dialog"
-  command="show-modal"
-  commandfor="_r_8_"
   data-variant="secondary"
   type="button"
 >
   Åpne Dialog
 </button>
 <dialog
+  data-modal="true"
   data-placement="center"
   id="<removed>"
   open
@@ -244,6 +244,7 @@ exports[`Dialog With Open Prop 1`] = `
   Åpne Dialog med ekstern tilstand
 </button>
 <dialog
+  data-modal="true"
   data-placement="center"
   id="<removed>"
   open
@@ -285,14 +286,13 @@ exports[`Dialog With Open Prop 1`] = `
 exports[`Dialog With Suggestion 1`] = `
 <button
   aria-haspopup="dialog"
-  command="show-modal"
-  commandfor="_r_9_"
   data-variant="secondary"
   type="button"
 >
   Åpne Dialog
 </button>
 <dialog
+  data-modal="true"
   data-placement="center"
   id="<removed>"
   open
@@ -324,15 +324,15 @@ exports[`Dialog With Suggestion 1`] = `
       <ds-suggestion>
         <input
           aria-autocomplete="list"
-          aria-controls=":u-datalist1"
+          aria-controls=":ds:3"
           aria-expanded="true"
-          aria-label="​​​​​"
+          aria-label="Velg en kommune​​​​​"
           autocomplete="off"
-          data-label
+          data-label="Velg en kommune"
           id="<removed>"
-          list=":u-datalist1"
+          list=":ds:3"
           placeholder=" "
-          popovertarget=":u-datalist1"
+          popovertarget=":ds:3"
           role="combobox"
           type="text"
         >
@@ -559,8 +559,6 @@ exports[`Drawer 1`] = `
   </fieldset>
   <button
     aria-haspopup="dialog"
-    command="show-modal"
-    commandfor="_r_c_"
     data-variant="primary"
     type="button"
   >
@@ -568,6 +566,7 @@ exports[`Drawer 1`] = `
   </button>
   <dialog
     closedby="any"
+    data-modal="true"
     data-placement="bottom"
     id="<removed>"
     open
@@ -599,8 +598,6 @@ exports[`Preview 1`] = `
 <div>
   <button
     aria-haspopup="dialog"
-    command="show-modal"
-    commandfor="_r_0_"
     data-variant="primary"
     type="button"
   >
@@ -608,6 +605,7 @@ exports[`Preview 1`] = `
   </button>
   <dialog
     closedby="any"
+    data-modal="true"
     data-placement="center"
     id="<removed>"
     open
@@ -645,14 +643,13 @@ exports[`Preview 1`] = `
 exports[`With Header And Footer 1`] = `
 <button
   aria-haspopup="dialog"
-  command="show-modal"
-  commandfor="_r_6_"
   data-variant="primary"
   type="button"
 >
   Gå til neste
 </button>
 <dialog
+  data-modal="true"
   data-placement="center"
   id="<removed>"
   open
@@ -704,6 +701,7 @@ exports[`Without Dialog Trigger Context 1`] = `
   Åpne Dialog med ref
 </button>
 <dialog
+  data-modal="true"
   data-placement="center"
   id="<removed>"
   open
@@ -756,6 +754,7 @@ exports[`Without Dialog Trigger Context With Command 1`] = `
   Åpne Dialog med command
 </button>
 <dialog
+  data-modal="true"
   data-placement="center"
   id="<removed>"
   open

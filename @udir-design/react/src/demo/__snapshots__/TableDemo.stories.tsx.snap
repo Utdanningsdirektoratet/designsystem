@@ -149,8 +149,6 @@ exports[`Table Story 1`] = `
               <button
                 aria-haspopup="dialog"
                 aria-label="Slett"
-                command="show-modal"
-                commandfor="_r_3_"
                 data-autoplacement="true"
                 data-color="danger"
                 data-icon="true"
@@ -179,6 +177,7 @@ exports[`Table Story 1`] = `
                 </svg>
               </button>
               <dialog
+                data-modal="true"
                 data-placement="center"
                 id="<removed>"
               >
@@ -259,8 +258,6 @@ exports[`Table Story 1`] = `
               <button
                 aria-haspopup="dialog"
                 aria-label="Slett"
-                command="show-modal"
-                commandfor="_r_5_"
                 data-autoplacement="true"
                 data-color="danger"
                 data-icon="true"
@@ -289,6 +286,7 @@ exports[`Table Story 1`] = `
                 </svg>
               </button>
               <dialog
+                data-modal="true"
                 data-placement="center"
                 id="<removed>"
               >
@@ -369,8 +367,6 @@ exports[`Table Story 1`] = `
               <button
                 aria-haspopup="dialog"
                 aria-label="Slett"
-                command="show-modal"
-                commandfor="_r_7_"
                 data-autoplacement="true"
                 data-color="danger"
                 data-icon="true"
@@ -399,6 +395,7 @@ exports[`Table Story 1`] = `
                 </svg>
               </button>
               <dialog
+                data-modal="true"
                 data-placement="center"
                 id="<removed>"
               >
@@ -479,8 +476,6 @@ exports[`Table Story 1`] = `
               <button
                 aria-haspopup="dialog"
                 aria-label="Slett"
-                command="show-modal"
-                commandfor="_r_9_"
                 data-autoplacement="true"
                 data-color="danger"
                 data-icon="true"
@@ -509,6 +504,7 @@ exports[`Table Story 1`] = `
                 </svg>
               </button>
               <dialog
+                data-modal="true"
                 data-placement="center"
                 id="<removed>"
               >
@@ -589,8 +585,6 @@ exports[`Table Story 1`] = `
               <button
                 aria-haspopup="dialog"
                 aria-label="Slett"
-                command="show-modal"
-                commandfor="_r_b_"
                 data-autoplacement="true"
                 data-color="danger"
                 data-icon="true"
@@ -619,6 +613,7 @@ exports[`Table Story 1`] = `
                 </svg>
               </button>
               <dialog
+                data-modal="true"
                 data-placement="center"
                 id="<removed>"
               >
@@ -666,6 +661,7 @@ exports[`Table Story 1`] = `
         Eksporter liste
       </button>
       <dialog
+        data-modal="true"
         data-placement="center"
         id="<removed>"
       >
@@ -747,7 +743,7 @@ exports[`Table Story 1`] = `
             <button
               aria-disabled="true"
               data-variant="tertiary"
-              variant="tertiary"
+              type="button"
             >
               <span>
                 Forrige
@@ -759,6 +755,7 @@ exports[`Table Story 1`] = `
               aria-current="true"
               aria-label="Side 1"
               data-variant="tertiary"
+              type="button"
             >
               1
             </button>
@@ -767,6 +764,7 @@ exports[`Table Story 1`] = `
             <button
               aria-label="Side 2"
               data-variant="tertiary"
+              type="button"
             >
               2
             </button>
@@ -775,6 +773,7 @@ exports[`Table Story 1`] = `
             <button
               aria-label="Side 3"
               data-variant="tertiary"
+              type="button"
             >
               3
             </button>
@@ -782,7 +781,7 @@ exports[`Table Story 1`] = `
           <li>
             <button
               data-variant="tertiary"
-              variant="tertiary"
+              type="button"
             >
               <span>
                 Neste

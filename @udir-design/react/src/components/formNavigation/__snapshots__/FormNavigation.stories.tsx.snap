@@ -706,8 +706,6 @@ exports[`Full 1`] = `
       <div>
         <button
           aria-haspopup="dialog"
-          command="show-modal"
-          commandfor="_r_1_"
           data-color="neutral"
           data-variant="secondary"
           type="button"
@@ -734,6 +732,7 @@ exports[`Full 1`] = `
         </button>
         <dialog
           closedby="any"
+          data-modal="true"
           data-placement="center"
           id="<removed>"
           style="width: fit-content; min-width: 20rem;"

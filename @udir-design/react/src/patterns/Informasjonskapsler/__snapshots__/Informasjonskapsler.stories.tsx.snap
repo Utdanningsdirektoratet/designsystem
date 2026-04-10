@@ -16,6 +16,7 @@ exports[`Drawer 1`] = `
             }
   </style>
   <dialog
+    data-modal="false"
     data-placement="bottom"
     id="<removed>"
     open
@@ -84,6 +85,7 @@ exports[`Preview 1`] = `
             }
   </style>
   <dialog
+    data-modal="false"
     data-placement="center"
     id="<removed>"
     open

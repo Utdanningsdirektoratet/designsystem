@@ -36,38 +36,6 @@ export const testLifecycleHooks = {
      * `await waitFor(() => { ... })`
      */
 
-    const labelWithinField = canvasElement.querySelector('ds-field label');
-    if (labelWithinField) {
-      await waitFor(() => {
-        expect(
-          labelWithinField,
-          'label within ds-field should automatically get a for="..." attribute',
-        ).toHaveAttribute('for');
-      });
-    }
-
-    const fieldWithCheckboxOrRadio = canvasElement.querySelector(
-      'ds-field:has(input:is([type="checkbox"], [type="radio"]))',
-    );
-    if (fieldWithCheckboxOrRadio) {
-      await waitFor(() => {
-        expect(
-          fieldWithCheckboxOrRadio,
-          'ds-field with a checkbox or radio should automatically get a data-clickdelegatefor="..." attribute',
-        ).toHaveAttribute('data-clickdelegatefor');
-      });
-    }
-
-    const errorSummary = canvasElement.querySelector('ds-error-summary');
-    if (errorSummary) {
-      await waitFor(() => {
-        expect(
-          errorSummary,
-          'ds-error-summary should automatically get an accessible name',
-        ).toHaveAccessibleName();
-      });
-    }
-
     const tab = canvasElement.querySelector('ds-tab');
     if (tab) {
       await waitFor(() => {
@@ -75,44 +43,6 @@ export const testLifecycleHooks = {
           tab,
           'ds-tab should automatically get an aria-selected attribute',
         ).toHaveAttribute('aria-selected');
-      });
-    }
-
-    const tooltip = canvasElement.querySelector('[data-tooltip]');
-    if (tooltip) {
-      await waitFor(() => {
-        expect(tooltip).toHaveAccessibleName();
-      });
-    }
-
-    const modalTriggerButton = canvasElement.querySelector(
-      'button[command="show-modal"]',
-    );
-    if (modalTriggerButton) {
-      await waitFor(() => {
-        expect(
-          modalTriggerButton,
-          'buttons that trigger a modal should have an aria-haspopup="dialog" attribute',
-        ).toHaveAttribute('aria-haspopup', 'dialog');
-      });
-    }
-
-    const inputWithinSuggestion = canvasElement.querySelector(
-      'ds-suggestion input',
-    );
-    if (inputWithinSuggestion) {
-      await waitFor(() => {
-        expect(
-          inputWithinSuggestion.getAttribute('placeholder'),
-          'input in ds-suggestion should automatically get a non-empty placeholder',
-        ).not.toBeOneOf([null, '']);
-      });
-    }
-
-    const toggleGroup = canvasElement.querySelector('[data-toggle-group]');
-    if (toggleGroup) {
-      await waitFor(() => {
-        expect(toggleGroup).toHaveAttribute('aria-label');
       });
     }
 
