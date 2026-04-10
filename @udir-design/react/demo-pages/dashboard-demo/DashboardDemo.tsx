@@ -1,5 +1,5 @@
 import cl from 'clsx/lite';
-import { type HTMLAttributes } from 'react';
+import { type HTMLAttributes, useState } from 'react';
 import { Tabs } from 'src/components/tabs/Tabs';
 import { Heading } from 'src/components/typography/heading/Heading';
 import classes from './DashboardDemo.module.css';
@@ -14,10 +14,11 @@ type DashboardDemoProps = {
 } & HTMLAttributes<HTMLDivElement>;
 
 export const DashboardDemo = ({
-  page = 'overview',
+  page: initialPage = 'overview',
   setColorMode,
   ...props
 }: DashboardDemoProps) => {
+  const [page, setPage] = useState(initialPage);
   return (
     <div
       {...props}
@@ -28,7 +29,7 @@ export const DashboardDemo = ({
       <Heading level={1} data-size="md">
         Schweigaardsgate skole
       </Heading>
-      <Tabs defaultValue={page} className={classes.tabs}>
+      <Tabs value={page} className={classes.tabs} onChange={setPage}>
         <Tabs.List>
           <Tabs.Tab value="overview">Oversikt</Tabs.Tab>
           <Tabs.Tab value="tests">Prøver</Tabs.Tab>

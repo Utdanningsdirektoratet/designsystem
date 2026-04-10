@@ -180,20 +180,21 @@ exports[`Dashboard Page 2 1`] = `
     <ds-tablist role="tablist">
       <ds-tab
         aria-controls="_r_i_-overview"
-        aria-selected="true"
+        aria-selected="false"
         data-value="overview"
         id="<removed>"
         role="tab"
-        tabindex="0"
+        tabindex="-1"
       >
         Oversikt
       </ds-tab>
       <ds-tab
         aria-controls="_r_i_-tests"
-        aria-selected="false"
+        aria-selected="true"
         data-value="tests"
+        id="<removed>"
         role="tab"
-        tabindex="-1"
+        tabindex="0"
       >
         Prøver
       </ds-tab>
@@ -217,11 +218,11 @@ exports[`Dashboard Page 2 1`] = `
       </ds-tab>
     </ds-tablist>
     <ds-tabpanel
-      aria-hidden="false"
+      aria-hidden="true"
       aria-labelledby="<removed>"
+      hidden
       id="<removed>"
       role="tabpanel"
-      tabindex="0"
     >
       <p data-variant="default">
         Her får du en oversikt over all den overordnede informasjonen.
@@ -290,10 +291,11 @@ exports[`Dashboard Page 2 1`] = `
       </div>
     </ds-tabpanel>
     <ds-tabpanel
-      aria-hidden="true"
-      hidden
+      aria-hidden="false"
+      aria-labelledby="<removed>"
       id="<removed>"
       role="tabpanel"
+      tabindex="0"
     >
       <p data-variant="default">
         Oversikt over prøver for Schweigaardsgate skole.
@@ -867,11 +869,11 @@ exports[`Dashboard Page 3 1`] = `
     <ds-tablist role="tablist">
       <ds-tab
         aria-controls="_r_10_-overview"
-        aria-selected="true"
+        aria-selected="false"
         data-value="overview"
         id="<removed>"
         role="tab"
-        tabindex="0"
+        tabindex="-1"
       >
         Oversikt
       </ds-tab>
@@ -886,10 +888,11 @@ exports[`Dashboard Page 3 1`] = `
       </ds-tab>
       <ds-tab
         aria-controls="_r_10_-test-answers"
-        aria-selected="false"
+        aria-selected="true"
         data-value="test-answers"
+        id="<removed>"
         role="tab"
-        tabindex="-1"
+        tabindex="0"
       >
         Prøvesvar
       </ds-tab>
@@ -904,11 +907,11 @@ exports[`Dashboard Page 3 1`] = `
       </ds-tab>
     </ds-tablist>
     <ds-tabpanel
-      aria-hidden="false"
+      aria-hidden="true"
       aria-labelledby="<removed>"
+      hidden
       id="<removed>"
       role="tabpanel"
-      tabindex="0"
     >
       <p data-variant="default">
         Her får du en oversikt over all den overordnede informasjonen.
@@ -1069,10 +1072,11 @@ exports[`Dashboard Page 3 1`] = `
       </div>
     </ds-tabpanel>
     <ds-tabpanel
-      aria-hidden="true"
-      hidden
+      aria-hidden="false"
+      aria-labelledby="<removed>"
       id="<removed>"
       role="tabpanel"
+      tabindex="0"
     >
       <p data-variant="default">
         Oversikt over prøvesvar for Schweigaardsgate skole.
@@ -1554,11 +1558,11 @@ exports[`Dashboard Page 4 1`] = `
     <ds-tablist role="tablist">
       <ds-tab
         aria-controls="_r_1e_-overview"
-        aria-selected="true"
+        aria-selected="false"
         data-value="overview"
         id="<removed>"
         role="tab"
-        tabindex="0"
+        tabindex="-1"
       >
         Oversikt
       </ds-tab>
@@ -1582,20 +1586,21 @@ exports[`Dashboard Page 4 1`] = `
       </ds-tab>
       <ds-tab
         aria-controls="_r_1e_-settings"
-        aria-selected="false"
+        aria-selected="true"
         data-value="settings"
+        id="<removed>"
         role="tab"
-        tabindex="-1"
+        tabindex="0"
       >
         Innstillinger
       </ds-tab>
     </ds-tablist>
     <ds-tabpanel
-      aria-hidden="false"
+      aria-hidden="true"
       aria-labelledby="<removed>"
+      hidden
       id="<removed>"
       role="tabpanel"
-      tabindex="0"
     >
       <p data-variant="default">
         Her får du en oversikt over all den overordnede informasjonen.
@@ -1828,10 +1833,11 @@ exports[`Dashboard Page 4 1`] = `
       </div>
     </ds-tabpanel>
     <ds-tabpanel
-      aria-hidden="true"
-      hidden
+      aria-hidden="false"
+      aria-labelledby="<removed>"
       id="<removed>"
       role="tabpanel"
+      tabindex="0"
     >
       <div>
         <div>
