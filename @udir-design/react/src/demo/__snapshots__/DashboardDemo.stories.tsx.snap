@@ -23,72 +23,86 @@ exports[`Dashboard Page 2 1`] = `
       </span>
     </a>
     <div>
-      <button
-        type="button"
-        data-color="neutral"
-        popovertarget="usermenu2"
-        data-show="md"
+      <span
+        data-overlap="rectangle"
+        data-placement="top-right"
+        data-size="lg"
       >
-        <div>
-          <h3
-            data-size="2xs"
-            title="Stian Hansen"
-          >
-            Stian Hansen
-          </h3>
-          <p
-            data-variant="default"
-            data-size="xs"
-          >
-            Admin
-          </p>
-        </div>
-        <span
-          data-variant="circle"
-          role="img"
-          aria-hidden="true"
+        <button
+          type="button"
+          data-color="neutral"
+          popovertarget="usermenu2"
+          data-show="md"
+          aria-label="Stian Hansen Admin - 10 varsler"
         >
-          <span>
-            SH
+          <div>
+            <h3
+              data-size="2xs"
+              title="Stian Hansen"
+            >
+              Stian Hansen
+            </h3>
+            <p
+              data-variant="default"
+              data-size="xs"
+            >
+              Admin
+            </p>
+          </div>
+          <span
+            data-variant="circle"
+            role="img"
+            aria-hidden="true"
+          >
+            <span>
+              SH
+            </span>
           </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </button>
+        <span
+          data-count="9+"
+          data-variant="base"
+          data-color="danger"
+          style="--dsc-badge-right: 20%; --dsc-badge-top: 13%;"
+        >
         </span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
-      </button>
+      </span>
       <div
         id="usermenu2"
         popover="manual"
@@ -719,72 +733,86 @@ exports[`Dashboard Page 3 1`] = `
       </span>
     </a>
     <div>
-      <button
-        type="button"
-        data-color="neutral"
-        popovertarget="usermenu2"
-        data-show="md"
+      <span
+        data-overlap="rectangle"
+        data-placement="top-right"
+        data-size="lg"
       >
-        <div>
-          <h3
-            data-size="2xs"
-            title="Stian Hansen"
-          >
-            Stian Hansen
-          </h3>
-          <p
-            data-variant="default"
-            data-size="xs"
-          >
-            Admin
-          </p>
-        </div>
-        <span
-          data-variant="circle"
-          role="img"
-          aria-hidden="true"
+        <button
+          type="button"
+          data-color="neutral"
+          popovertarget="usermenu2"
+          data-show="md"
+          aria-label="Stian Hansen Admin - 10 varsler"
         >
-          <span>
-            SH
+          <div>
+            <h3
+              data-size="2xs"
+              title="Stian Hansen"
+            >
+              Stian Hansen
+            </h3>
+            <p
+              data-variant="default"
+              data-size="xs"
+            >
+              Admin
+            </p>
+          </div>
+          <span
+            data-variant="circle"
+            role="img"
+            aria-hidden="true"
+          >
+            <span>
+              SH
+            </span>
           </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </button>
+        <span
+          data-count="9+"
+          data-variant="base"
+          data-color="danger"
+          style="--dsc-badge-right: 20%; --dsc-badge-top: 13%;"
+        >
         </span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
-      </button>
+      </span>
       <div
         id="usermenu2"
         popover="manual"
@@ -1415,72 +1443,86 @@ exports[`Dashboard Page 4 1`] = `
       </span>
     </a>
     <div>
-      <button
-        type="button"
-        data-color="neutral"
-        popovertarget="usermenu2"
-        data-show="md"
+      <span
+        data-overlap="rectangle"
+        data-placement="top-right"
+        data-size="lg"
       >
-        <div>
-          <h3
-            data-size="2xs"
-            title="Stian Hansen"
-          >
-            Stian Hansen
-          </h3>
-          <p
-            data-variant="default"
-            data-size="xs"
-          >
-            Admin
-          </p>
-        </div>
-        <span
-          data-variant="circle"
-          role="img"
-          aria-hidden="true"
+        <button
+          type="button"
+          data-color="neutral"
+          popovertarget="usermenu2"
+          data-show="md"
+          aria-label="Stian Hansen Admin - 10 varsler"
         >
-          <span>
-            SH
+          <div>
+            <h3
+              data-size="2xs"
+              title="Stian Hansen"
+            >
+              Stian Hansen
+            </h3>
+            <p
+              data-variant="default"
+              data-size="xs"
+            >
+              Admin
+            </p>
+          </div>
+          <span
+            data-variant="circle"
+            role="img"
+            aria-hidden="true"
+          >
+            <span>
+              SH
+            </span>
           </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </button>
+        <span
+          data-count="9+"
+          data-variant="base"
+          data-color="danger"
+          style="--dsc-badge-right: 20%; --dsc-badge-top: 13%;"
+        >
         </span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
-      </button>
+      </span>
       <div
         id="usermenu2"
         popover="manual"
@@ -2111,72 +2153,86 @@ exports[`Dashboard Story 1`] = `
       </span>
     </a>
     <div>
-      <button
-        type="button"
-        data-color="neutral"
-        popovertarget="usermenu2"
-        data-show="md"
+      <span
+        data-overlap="rectangle"
+        data-placement="top-right"
+        data-size="lg"
       >
-        <div>
-          <h3
-            data-size="2xs"
-            title="Stian Hansen"
-          >
-            Stian Hansen
-          </h3>
-          <p
-            data-variant="default"
-            data-size="xs"
-          >
-            Admin
-          </p>
-        </div>
-        <span
-          data-variant="circle"
-          role="img"
-          aria-hidden="true"
+        <button
+          type="button"
+          data-color="neutral"
+          popovertarget="usermenu2"
+          data-show="md"
+          aria-label="Stian Hansen Admin - 10 varsler"
         >
-          <span>
-            SH
+          <div>
+            <h3
+              data-size="2xs"
+              title="Stian Hansen"
+            >
+              Stian Hansen
+            </h3>
+            <p
+              data-variant="default"
+              data-size="xs"
+            >
+              Admin
+            </p>
+          </div>
+          <span
+            data-variant="circle"
+            role="img"
+            aria-hidden="true"
+          >
+            <span>
+              SH
+            </span>
           </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </button>
+        <span
+          data-count="9+"
+          data-variant="base"
+          data-color="danger"
+          style="--dsc-badge-right: 20%; --dsc-badge-top: 13%;"
+        >
         </span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
-      </button>
+      </span>
       <div
         id="usermenu2"
         popover="manual"

@@ -27,17 +27,32 @@ const meta = preview.meta({
 
 export const DashboardStory = meta.story({
   render: (args) => {
+    const notifications = 10;
     const [colorMode, setColorMode] = useState<'light' | 'dark'>('light');
     return (
       <>
         <Header applicationName="Dashboard demo">
-          <Header.UserButton
-            name="Stian Hansen"
-            description="Admin"
-            popoverTarget="usermenu2"
-            data-show="md"
-            avatar={<Avatar aria-hidden>SH</Avatar>}
-          />
+          <Badge.Position data-size="lg">
+            <Header.UserButton
+              name="Stian Hansen"
+              description="Admin"
+              popoverTarget="usermenu2"
+              data-show="md"
+              avatar={<Avatar aria-hidden>SH</Avatar>}
+              aria-label={`Stian Hansen Admin - ${notifications} varsler`}
+            />
+            <Badge
+              count={notifications}
+              maxCount={9}
+              data-color="danger"
+              style={
+                {
+                  '--dsc-badge-right': '20%',
+                  '--dsc-badge-top': '13%',
+                } as React.CSSProperties
+              }
+            />
+          </Badge.Position>
           <Dropdown id="usermenu2" placement="bottom-end" autoPlacement={false}>
             <Dropdown.List>
               <Dropdown.Item>
@@ -49,7 +64,7 @@ export const DashboardStory = meta.story({
                     <BriefcaseIcon />
                   </Avatar>
                   Grålum skole
-                  <Badge count={10} maxCount={9} />
+                  <Badge count={notifications} maxCount={9} />
                 </Dropdown.Button>
               </Dropdown.Item>
               <Divider />
