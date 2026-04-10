@@ -72,6 +72,7 @@ exports[`Article Story 1`] = `
           <div
             id="uds-header-menu"
             popover="auto"
+            data-placement="bottom-end"
             data-variant="default"
             style="padding: var(--udsc-header-padding);"
           >
@@ -171,7 +172,7 @@ exports[`Article Story 1`] = `
       </div>
     </header>
     <article>
-      <nav aria-label="Du er her:">
+      <ds-breadcrumbs aria-label="Du er her:">
         <a aria-label="Tilbake til mer informasjon">
           Mer informasjon
         </a>
@@ -187,15 +188,12 @@ exports[`Article Story 1`] = `
             </a>
           </li>
           <li>
-            <a
-              href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/planleggingsverktoy-i-lareplanvisning/"
-              aria-current="page"
-            >
+            <a href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/planleggingsverktoy-i-lareplanvisning/">
               Læreplanverket
             </a>
           </li>
         </ol>
-      </nav>
+      </ds-breadcrumbs>
       <div
         id="main-content"
         tabindex="-1"
@@ -236,19 +234,13 @@ exports[`Article Story 1`] = `
             </a>
           </div>
           <div data-variant="default">
-            <u-details
+            <details
               open
               data-variant="default"
-              role="group"
             >
-              <u-summary
-                aria-expanded="true"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
+              <summary>
                 Innhold på denne siden
-              </u-summary>
+              </summary>
               <div>
                 <ol>
                   <li>
@@ -437,7 +429,7 @@ exports[`Article Story 1`] = `
                   </li>
                 </ol>
               </div>
-            </u-details>
+            </details>
           </div>
           <div
             data-variant="tinted"
@@ -545,86 +537,46 @@ exports[`Article Story 1`] = `
                 Vi går igjennom alle innspillene vi får, og med jevne mellomrom prioriterer vi hva vi gjør av endringer.
               </p>
             </div>
-            <u-details
-              data-variant="default"
-              role="group"
-            >
-              <u-summary
-                aria-expanded="false"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
+            <details data-variant="default">
+              <summary>
                 Oversikt - 19.11.2022
-              </u-summary>
+              </summary>
               <div>
                 Vi har lagt til en ny knapp hvor du får oversikt over hvilke deler av læreplanen du har brukt i planene dine.
               </div>
-            </u-details>
-            <u-details
-              data-variant="default"
-              role="group"
-            >
-              <u-summary
-                aria-expanded="false"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
+            </details>
+            <details data-variant="default">
+              <summary>
                 Tilgang for instruktører i bedrift - 09.11.2022
-              </u-summary>
+              </summary>
               <div>
                 Vi har lagt til pålogging med ID-porten slik at også instruktører i bedrift kan bruke planleggingsverktøyet.
               </div>
-            </u-details>
-            <u-details
-              data-variant="default"
-              role="group"
-            >
-              <u-summary
-                aria-expanded="false"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
+            </details>
+            <details data-variant="default">
+              <summary>
                 Invitere til flere planer - 25.01.2022
-              </u-summary>
+              </summary>
               <div>
                 Vi har fått innspill om at det er tungvindt å gå inn i en og en plan for å invitere samarbeidspartnere. Vi har lagt til mulighet for å invitere samarbeidspartnere til mange planer samtidig.
               </div>
-            </u-details>
-            <u-details
-              data-variant="default"
-              role="group"
-            >
-              <u-summary
-                aria-expanded="false"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
+            </details>
+            <details data-variant="default">
+              <summary>
                 Velge språk - 10.01.2022
-              </u-summary>
+              </summary>
               <div>
                 Vi har lagt til funksjon for å velge språk slik at verktøyet er tilgjengelig på bokmål, nynorsk, nordsamisk, sørsamisk og lulesamisk. Det er mulig å velge språk på brukerinnstillinger og på hver enkelt plan.
               </div>
-            </u-details>
-            <u-details
-              data-variant="default"
-              role="group"
-            >
-              <u-summary
-                aria-expanded="false"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
+            </details>
+            <details data-variant="default">
+              <summary>
                 Overføring av planer når en bruker slettes - 22.06.2022
-              </u-summary>
+              </summary>
               <div>
                 Tidligere var det slik at hvis en bruker slettet seg fra planleggingsverktøyet, så ble alle planene personen hadde opprettet også slettet. Vi fikk tilbakemelding om at dette var uheldig for samarbeidspartnerne. Vi har derfor endret dette. Nå er det slik: Den som har  opprettet en plan, har rollen som administrator. Hvis administrator av en plan slettes som bruker, blir ikke planen slettet hvis det er samarbeidspartnere på planen. Rollen som administrator blir overført til den samarbeidspartneren som står øverst på lista i planen. Samtykkeerklæringen er oppdatert i tråd med denne endringen. Det er fortsatt slik at både administrator og samarbeidspartnere kan endre en plan, men bare administrator kan slette den
               </div>
-            </u-details>
+            </details>
           </div>
           <hr aria-hidden="true">
           <button

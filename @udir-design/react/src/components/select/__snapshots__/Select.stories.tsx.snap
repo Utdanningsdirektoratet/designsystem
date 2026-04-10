@@ -4,7 +4,7 @@ exports[`Controlled 1`] = `
 <h2>
   Hvor bor du?
 </h2>
-<div>
+<ds-field>
   <label
     data-weight="medium"
     for="components-select--controlled"
@@ -61,8 +61,8 @@ exports[`Controlled 1`] = `
       Østfold
     </option>
   </select>
-</div>
-<div>
+</ds-field>
+<ds-field>
   <label
     data-weight="medium"
     for="components-select--controlled-by"
@@ -74,11 +74,11 @@ exports[`Controlled 1`] = `
       Velg en by …
     </option>
   </select>
-</div>
+</ds-field>
 `;
 
 exports[`Disabled 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
     for="components-select--disabled"
@@ -141,11 +141,11 @@ exports[`Disabled 1`] = `
       Østfold
     </option>
   </select>
-</div>
+</ds-field>
 `;
 
 exports[`Preview 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
     for="components-select--preview"
@@ -153,6 +153,7 @@ exports[`Preview 1`] = `
     Fylke
   </label>
   <select
+    aria-readonly="false"
     data-width="full"
     aria-invalid="false"
     id="components-select--preview"
@@ -209,11 +210,11 @@ exports[`Preview 1`] = `
       Østfold
     </option>
   </select>
-</div>
+</ds-field>
 `;
 
 exports[`Read Only 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
     for="components-select--read-only"
@@ -221,7 +222,7 @@ exports[`Read Only 1`] = `
     Fylke
   </label>
   <select
-    readonly
+    aria-readonly="true"
     id="components-select--read-only"
   >
     <option
@@ -276,21 +277,17 @@ exports[`Read Only 1`] = `
       Østfold
     </option>
   </select>
-</div>
+</ds-field>
 `;
 
 exports[`With Error 1`] = `
-<div>
-  <label
-    data-weight="medium"
-    for="components-select--with-error"
-  >
+<ds-field>
+  <label data-weight="medium">
     Fylke
   </label>
   <select
     aria-invalid="true"
     id="components-select--with-error"
-    aria-describedby="components-select--with-error:validation:1"
   >
     <option value>
       Velg et fylke …
@@ -341,21 +338,15 @@ exports[`With Error 1`] = `
       Østfold
     </option>
   </select>
-  <p
-    data-field="validation"
-    id="components-select--with-error:validation:1"
-  >
+  <p data-field="validation">
     Velg et fylke
   </p>
-</div>
+</ds-field>
 `;
 
 exports[`With Optgroup 1`] = `
-<div>
-  <label
-    data-weight="medium"
-    for="components-select--with-optgroup"
-  >
+<ds-field>
+  <label data-weight="medium">
     Klassetrinn
   </label>
   <select id="components-select--with-optgroup">
@@ -408,5 +399,5 @@ exports[`With Optgroup 1`] = `
       </option>
     </optgroup>
   </select>
-</div>
+</ds-field>
 `;
