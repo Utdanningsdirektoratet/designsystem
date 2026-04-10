@@ -96,6 +96,13 @@ export const Readonly = meta.story({
 });
 
 export const ExampleDropZone = meta.story({
+  parameters: {
+    customStyles: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 'var(--ds-size-3)',
+    },
+  },
   render: (args) => {
     const [files, setFiles] = useState<File[]>([]);
     const [rejected, setRejected] = useState<FileRejection[]>([]);
@@ -127,13 +134,7 @@ export const ExampleDropZone = meta.story({
       });
 
     return (
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 'var(--ds-size-3)',
-        }}
-      >
+      <>
         <FileUpload.Dropzone
           label="Last opp dokumentasjon"
           description="Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB."
@@ -177,7 +178,7 @@ export const ExampleDropZone = meta.story({
             ))}
           </>
         )}
-      </div>
+      </>
     );
   },
   play: async ({ canvasElement, step }) => {
@@ -206,6 +207,17 @@ export const ExampleDropZone = meta.story({
     // uploaded file will be replaced by the dummyFile used in the test
     dropzone.value = '';
   },
+});
+
+export const ExampleDropzoneWithExplicitSize = ExampleDropZone.extend({
+  decorators: [
+    (Story) => (
+      <>
+        <style>{`.uds-file-upload { height: 600px; width: 100%; }`}</style>
+        <Story />
+      </>
+    ),
+  ],
 });
 
 export const TooManyFiles = meta.story({
