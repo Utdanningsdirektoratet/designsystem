@@ -1,4 +1,6 @@
 .ds-breadcrumbs {
+  display: block; /* this not being set is a bug in Digdir */
+
   .ds-link {
     &:visited {
       color: var(--dsc-link-color);
