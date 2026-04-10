@@ -15,9 +15,22 @@ import type {
   SuggestionMultipleProps,
   SuggestionSingleProps,
 } from './Suggestion';
+import { Suggestion as FakeSuggestion } from './docs/FakeSuggestion';
+import { SuggestionClear } from './docs/FakeSuggestionClear';
+import { SuggestionEmpty } from './docs/FakeSuggestionEmpty';
+import { SuggestionInput } from './docs/FakeSuggestionInput';
+import { SuggestionList } from './docs/FakeSuggestionList';
+import { SuggestionOption } from './docs/FakeSuggestionOption';
 
 const meta = preview.meta({
-  component: Suggestion,
+  component: FakeSuggestion,
+  subcomponents: {
+    'Suggestion.Clear': SuggestionClear,
+    'Suggestion.Empty': SuggestionEmpty,
+    'Suggestion.Input': SuggestionInput,
+    'Suggestion.List': SuggestionList,
+    'Suggestion.Option': SuggestionOption,
+  },
   tags: ['alpha', 'digdir'],
   parameters: {
     componentOrigin: {
