@@ -150,6 +150,19 @@ export const Status = meta.story({
 });
 
 export const InTabs = meta.story({
+  parameters: {
+    /* a11y complains on aria-controls on tabs when there is no tabs-panel, which there are several places in the examples */
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'aria-valid-attr-value',
+            enabled: false,
+          },
+        ],
+      },
+    },
+  },
   args: { 'data-color': 'neutral' },
   render: (args) => (
     <Tabs defaultValue="value1">
