@@ -30,6 +30,9 @@ catalogs:
     '@digdir/designsystemet-types':
       specifier: 1.12.1
       version: 1.12.1
+    '@digdir/designsystemet-web':
+      specifier: 1.12.1
+      version: 1.12.1
     '@eslint/compat':
       specifier: ^2.0.4
       version: 2.0.4
@@ -593,6 +596,9 @@ importers:
         specifier: 'catalog:'
         version: 1.12.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@digdir/designsystemet-types':
+        specifier: 'catalog:'
+        version: 1.12.1
+      '@digdir/designsystemet-web':
         specifier: 'catalog:'
         version: 1.12.1
       '@radix-ui/react-slot':
@@ -1827,8 +1833,8 @@ packages:
   '@digdir/designsystemet-types@1.13.1':
     resolution: {integrity: sha512-oIaxQrUMhhfni3NpvG1lpOxOjCHs9Dm062VlTgbTJ8MbOizLx/W23ayGtOE79CiG77Dt5kga3TC9DMalONfDAg==}
 
-  '@digdir/designsystemet-web@1.13.1':
-    resolution: {integrity: sha512-S3TsW83YGIQs6h/EI40luJ2K4hgNADuTdt8+1akZAw3wCcfNBBuN72ZUUgSL94BKIaxwp8bSUCfHMD9VpRI6tg==}
+  '@digdir/designsystemet-web@1.12.1':
+    resolution: {integrity: sha512-yv4Umnlg00TyOfBY72l7YacfVJc7te5LRT5HzJYBaDauKFm1uzMxLBKJHwIqjN5BfKhnm1cWCF/pFCFvhYD2bg==}
 
   '@digdir/designsystemet@1.12.1':
     resolution: {integrity: sha512-2qWGPMLrzN86fB7FCXEXeer/XL8zWHJZR1JJAscW/qLhk30+IFRj880d14HzSShpE/jC8uHXg9i8hR7D35266w==}
@@ -10130,7 +10136,7 @@ snapshots:
   '@digdir/designsystemet-react@1.12.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@digdir/designsystemet-types': 1.12.1
-      '@digdir/designsystemet-web': 1.13.1
+      '@digdir/designsystemet-web': 1.12.1
       '@floating-ui/dom': 1.7.6
       '@floating-ui/react': 0.26.23(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@navikt/aksel-icons': 8.9.0(@types/react@19.2.14)(react@19.2.4)
@@ -10146,7 +10152,7 @@ snapshots:
 
   '@digdir/designsystemet-types@1.13.1': {}
 
-  '@digdir/designsystemet-web@1.13.1':
+  '@digdir/designsystemet-web@1.12.1':
     dependencies:
       '@floating-ui/dom': 1.7.6
       '@u-elements/u-combobox': 1.0.7
@@ -12713,6 +12719,7 @@ snapshots:
     dependencies:
       '@digdir/designsystemet-react': 1.12.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@digdir/designsystemet-types': 1.12.1
+      '@digdir/designsystemet-web': 1.12.1
       '@radix-ui/react-slot': 1.2.4(@types/react@19.2.14)(react@19.2.4)
       '@u-elements/u-details': 0.2.2
       '@u-elements/u-progress': 0.0.7
