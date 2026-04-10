@@ -26,8 +26,7 @@ const meta = preview.meta({
   parameters: {
     componentOrigin: {
       originator: 'digdir',
-      details:
-        'Vi har begrenset fargevalg til varselfarger og Udirs hovedfarger.',
+      details: 'Vi har begrenset fargevalg til varselfarger og neutral.',
     },
     customStyles: {
       display: 'flex',

@@ -10,7 +10,7 @@ import * as BadgeStories from './Badge.stories';
 **Passar til å**
 
 - vise antal nye meldingar, varsel eller oppgåver med tal
-- vise statusindikatorar i form av ein sirkel, som til dømes viser om ein person er opptatt, borte eller aktiv
+- vise statusindikatorar i form av ein sirkel, som til dømes viser om ein person er oppteken, borte eller aktiv
 
 **Passar ikkje til å**
 
@@ -39,13 +39,13 @@ import { Badge } from '@udir-design/react';
 
 ### Fargar
 
-`Badge` finst i neutral, i tillegg til varselfargane. Du kan endre fargen med `data-color`. Du kan òg setje `variant` direkte for å endre bakgrunnsfargen til `tinted` variant, som er noko lysare.
+`Badge` finst i neutral, i tillegg til varselfargane. Du kan endre fargen med `data-color`. Du kan òg setje `variant` til `tinted`, denne varianten har ei bakgrunnsfarge som er noko lysare.
 
 Fordi raud er godt etablert som farge for å indikere notifikasjonar, vik den tilrådde bruken her noko frå standard semantikk for varselfargar. For notifikasjonar plasserte på ikon eller avatarar blir fargen `danger` tilrådd. Ved bruk inline er hovudregelen å nytte `neutral`. I enkelte tilfelle kan det vere aktuelt å nytte dei andre varselfargane.
 
 <Canvas of={BadgeStories.ColorVariants} />
 
-### Vise staus
+### Vise status
 
 Dersom du ikkje sender inn `count`, blir berre ein sirkel vist. Dette kan brukast for å vise status.
 
@@ -61,7 +61,7 @@ Det er vanleg å bruke raud farge, altså `data-color="danger"` på `Badge` som 
 <Canvas of={BadgeStories.Floating} />
 
 Ikkje alle ikon har lik form, og då må du kanskje endre kor `Badge` skal plasserast. Dersom du ikkje får `Badge` til å liggje der du ynskjer, kan du bruke css-variablar for å overstyre plasseringa.
-Dette fungerer og når du bruker `overlap="circle"`.
+Dette fungerer og når du brukar `overlap="circle"`.
 
 <Canvas of={BadgeStories.CustomPlacement} />
 
@@ -71,7 +71,7 @@ Du kan òg bruke komponenten inline.
 
 <Canvas of={BadgeStories.InTabs} />
 
-Under ser du et eksempel på bruk av varselfargene til `Badge` inline.
+Under ser du eit eksempel på bruk av varselfargane til `Badge` inline.
 
 <Canvas of={BadgeStories.SystemAlerts} />
 
@@ -83,7 +83,7 @@ Bruk `Badge` for å trekkje merksemd mot statusar, varslar eller tal.
 
 Denne komponenten er ikkje meint for tekst. Om du treng å vise ord eller korte frasar, bør du heller bruke [`Tag`](/docs/components-tag--docs)-komponenten.
 
-## Tilgjengeligheit
+## Tilgjengelegheit
 
 [Badge gir ingen informasjon til skjermlesarar](https://github.com/digdir/designsystemet/issues/3560).
 Sørg derfor for at elementet som `Badge` er plassert over, inneheld den same informasjonen ved å bruke `aria-label`.
