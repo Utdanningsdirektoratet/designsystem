@@ -950,7 +950,7 @@ exports[`With Form Elements 1`] = `
   <thead>
     <tr>
       <th>
-        <ds-field data-clickdelegatefor="components-table--with-form-elements-selectAll">
+        <ds-field>
           <input
             aria-label="Select all"
             id="components-table--with-form-elements-selectAll"
@@ -977,7 +977,7 @@ exports[`With Form Elements 1`] = `
   <tbody style="place-content: start center; align-items: center;">
     <tr>
       <td>
-        <ds-field data-clickdelegatefor="components-table--with-form-elements-select1">
+        <ds-field>
           <input
             aria-label="Check 1"
             id="components-table--with-form-elements-select1"
@@ -1029,7 +1029,7 @@ exports[`With Form Elements 1`] = `
     </tr>
     <tr>
       <td>
-        <ds-field data-clickdelegatefor="components-table--with-form-elements-select1">
+        <ds-field>
           <input
             aria-label="Check 1"
             id="components-table--with-form-elements-select1"

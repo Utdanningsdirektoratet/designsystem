@@ -46,10 +46,7 @@ exports[`All Required 1`] = `
   style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
 >
   <ds-field>
-    <label
-      data-weight="medium"
-      for="all-required-first"
-    >
+    <label data-weight="medium">
       <span>
         Fornavn
       </span>
@@ -63,10 +60,7 @@ exports[`All Required 1`] = `
     </div>
   </ds-field>
   <ds-field>
-    <label
-      data-weight="medium"
-      for="all-required-last"
-    >
+    <label data-weight="medium">
       <span>
         Etternavn
       </span>
@@ -88,16 +82,22 @@ exports[`Fieldset Checkboxes 1`] = `
   data-show-optional="false"
   data-show-summary="false"
 >
-  <fieldset>
-    <legend data-weight="medium">
+  <fieldset aria-labelledby="components-fieldnecessity--fieldset-checkboxes-legend components-fieldnecessity--fieldset-checkboxes-description">
+    <legend
+      id="components-fieldnecessity--fieldset-checkboxes-legend"
+      data-weight="medium"
+    >
       <span>
         Hvordan vil du helst at vi skal kontakte deg?
       </span>
     </legend>
-    <p data-variant="default">
+    <p
+      data-variant="default"
+      id="components-fieldnecessity--fieldset-checkboxes-description"
+    >
       Velg de alternativene som er relevante for deg.
     </p>
-    <ds-field>
+    <ds-field data-clickdelegatefor="fieldset-checkboxes-email">
       <input
         id="fieldset-checkboxes-email"
         required
@@ -105,13 +105,16 @@ exports[`Fieldset Checkboxes 1`] = `
         value="epost"
         name="checkbox-group"
       >
-      <label data-weight="regular">
+      <label
+        data-weight="regular"
+        for="fieldset-checkboxes-email"
+      >
         <span>
           E-post
         </span>
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="fieldset-checkboxes-telefon">
       <input
         id="fieldset-checkboxes-telefon"
         required
@@ -119,13 +122,16 @@ exports[`Fieldset Checkboxes 1`] = `
         value="telefon"
         name="checkbox-group"
       >
-      <label data-weight="regular">
+      <label
+        data-weight="regular"
+        for="fieldset-checkboxes-telefon"
+      >
         <span>
           Telefon
         </span>
       </label>
     </ds-field>
-    <ds-field>
+    <ds-field data-clickdelegatefor="fieldset-checkboxes-sms">
       <input
         id="fieldset-checkboxes-sms"
         required
@@ -133,7 +139,10 @@ exports[`Fieldset Checkboxes 1`] = `
         value="sms"
         name="checkbox-group"
       >
-      <label data-weight="regular">
+      <label
+        data-weight="regular"
+        for="fieldset-checkboxes-sms"
+      >
         <span>
           SMS
         </span>
@@ -155,10 +164,10 @@ exports[`Fieldset Radios 1`] = `
   data-show-optional="false"
   data-show-summary="false"
 >
-  <fieldset aria-labelledby="mnsrx3zcju73">
+  <fieldset aria-labelledby="components-fieldnecessity--fieldset-radios-legend">
     <legend
+      id="components-fieldnecessity--fieldset-radios-legend"
       data-weight="medium"
-      id="mnsrx3zcju73"
     >
       <span>
         Velg din aldersgruppe
@@ -397,7 +406,10 @@ exports[`Preview 1`] = `
   style="display: flex; flex-direction: column; row-gap: var(--ds-size-4);"
 >
   <ds-field>
-    <label data-weight="medium">
+    <label
+      data-weight="medium"
+      for="preview-first"
+    >
       <span>
         Fornavn
       </span>
@@ -411,7 +423,10 @@ exports[`Preview 1`] = `
     </div>
   </ds-field>
   <ds-field>
-    <label data-weight="medium">
+    <label
+      data-weight="medium"
+      for="preview-middle"
+    >
       <span>
         Mellomnavn
       </span>
@@ -424,7 +439,10 @@ exports[`Preview 1`] = `
     </div>
   </ds-field>
   <ds-field>
-    <label data-weight="medium">
+    <label
+      data-weight="medium"
+      for="preview-last"
+    >
       <span>
         Etternavn
       </span>

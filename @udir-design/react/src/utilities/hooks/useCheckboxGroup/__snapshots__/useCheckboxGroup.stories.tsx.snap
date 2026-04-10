@@ -1,10 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Controlled 1`] = `
-<fieldset aria-labelledby="mnsrx7kpnvk9">
+<fieldset aria-labelledby="utilities-usecheckboxgroup--controlled-legend">
   <legend
+    id="utilities-usecheckboxgroup--controlled-legend"
     data-weight="medium"
-    id="mnsrx7kpnvk9"
   >
     Utdanningsnivå
   </legend>
@@ -94,7 +94,7 @@ exports[`Controlled 1`] = `
 
 exports[`Default 1`] = `
 <fieldset>
-  <ds-field data-clickdelegatefor="utilities-usecheckboxgroup--default-email">
+  <ds-field>
     <input
       id="utilities-usecheckboxgroup--default-email"
       type="checkbox"
@@ -102,38 +102,29 @@ exports[`Default 1`] = `
       checked
       name="_r_2_"
     >
-    <label
-      data-weight="regular"
-      for="utilities-usecheckboxgroup--default-email"
-    >
+    <label data-weight="regular">
       E-post
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="utilities-usecheckboxgroup--default-telefon">
+  <ds-field>
     <input
       id="utilities-usecheckboxgroup--default-telefon"
       type="checkbox"
       value="telefon"
       name="_r_2_"
     >
-    <label
-      data-weight="regular"
-      for="utilities-usecheckboxgroup--default-telefon"
-    >
+    <label data-weight="regular">
       Telefon
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="utilities-usecheckboxgroup--default-sms">
+  <ds-field>
     <input
       id="utilities-usecheckboxgroup--default-sms"
       type="checkbox"
       value="sms"
       name="_r_2_"
     >
-    <label
-      data-weight="regular"
-      for="utilities-usecheckboxgroup--default-sms"
-    >
+    <label data-weight="regular">
       SMS
     </label>
   </ds-field>
@@ -147,16 +138,16 @@ exports[`Default 1`] = `
 `;
 
 exports[`Disabled 1`] = `
-<fieldset aria-labelledby="mnsrx7kpnvk7 mnsrx7kpnvk8">
+<fieldset aria-labelledby="utilities-usecheckboxgroup--disabled-legend utilities-usecheckboxgroup--disabled-description">
   <legend
+    id="utilities-usecheckboxgroup--disabled-legend"
     data-weight="medium"
-    id="mnsrx7kpnvk7"
   >
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
   <p
     data-variant="default"
-    id="mnsrx7kpnvk8"
+    id="utilities-usecheckboxgroup--disabled-description"
   >
     Velg de alternativene som er relevante for deg.
   </p>
@@ -216,20 +207,20 @@ exports[`Disabled 1`] = `
 `;
 
 exports[`Group 1`] = `
-<fieldset aria-labelledby="mnsrx7kpnvk1 mnsrx7kpnvk2">
+<fieldset>
   <legend
+    id="utilities-usecheckboxgroup--group-legend"
     data-weight="medium"
-    id="mnsrx7kpnvk1"
   >
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
   <p
     data-variant="default"
-    id="mnsrx7kpnvk2"
+    id="utilities-usecheckboxgroup--group-description"
   >
     Velg de alternativene som er relevante for deg.
   </p>
-  <ds-field data-clickdelegatefor="utilities-usecheckboxgroup--group-email">
+  <ds-field>
     <input
       id="utilities-usecheckboxgroup--group-email"
       type="checkbox"
@@ -237,38 +228,29 @@ exports[`Group 1`] = `
       checked
       name="my-group"
     >
-    <label
-      data-weight="regular"
-      for="utilities-usecheckboxgroup--group-email"
-    >
+    <label data-weight="regular">
       E-post
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="utilities-usecheckboxgroup--group-telefon">
+  <ds-field>
     <input
       id="utilities-usecheckboxgroup--group-telefon"
       type="checkbox"
       value="telefon"
       name="my-group"
     >
-    <label
-      data-weight="regular"
-      for="utilities-usecheckboxgroup--group-telefon"
-    >
+    <label data-weight="regular">
       Telefon
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="utilities-usecheckboxgroup--group-sms">
+  <ds-field>
     <input
       id="utilities-usecheckboxgroup--group-sms"
       type="checkbox"
       value="sms"
       name="my-group"
     >
-    <label
-      data-weight="regular"
-      for="utilities-usecheckboxgroup--group-sms"
-    >
+    <label data-weight="regular">
       SMS
     </label>
   </ds-field>
@@ -291,7 +273,7 @@ exports[`Indeterminate In Table 1`] = `
   <thead>
     <tr>
       <th>
-        <ds-field>
+        <ds-field data-clickdelegatefor="utilities-usecheckboxgroup--indeterminate-in-table-all">
           <input
             id="utilities-usecheckboxgroup--indeterminate-in-table-all"
             aria-label="Velg alle"
@@ -312,7 +294,7 @@ exports[`Indeterminate In Table 1`] = `
   <tbody>
     <tr>
       <td>
-        <ds-field>
+        <ds-field data-clickdelegatefor="utilities-usecheckboxgroup--indeterminate-in-table-1">
           <input
             id="utilities-usecheckboxgroup--indeterminate-in-table-1"
             aria-labelledby="utilities-usecheckboxgroup--indeterminate-in-table-1-name"
@@ -331,7 +313,7 @@ exports[`Indeterminate In Table 1`] = `
     </tr>
     <tr>
       <td>
-        <ds-field>
+        <ds-field data-clickdelegatefor="utilities-usecheckboxgroup--indeterminate-in-table-2">
           <input
             id="utilities-usecheckboxgroup--indeterminate-in-table-2"
             aria-labelledby="utilities-usecheckboxgroup--indeterminate-in-table-2-name"
@@ -351,7 +333,7 @@ exports[`Indeterminate In Table 1`] = `
     </tr>
     <tr>
       <td>
-        <ds-field>
+        <ds-field data-clickdelegatefor="utilities-usecheckboxgroup--indeterminate-in-table-3">
           <input
             id="utilities-usecheckboxgroup--indeterminate-in-table-3"
             aria-labelledby="utilities-usecheckboxgroup--indeterminate-in-table-3-name"
@@ -371,7 +353,7 @@ exports[`Indeterminate In Table 1`] = `
     </tr>
     <tr>
       <td>
-        <ds-field>
+        <ds-field data-clickdelegatefor="utilities-usecheckboxgroup--indeterminate-in-table-4">
           <input
             id="utilities-usecheckboxgroup--indeterminate-in-table-4"
             aria-labelledby="utilities-usecheckboxgroup--indeterminate-in-table-4-name"
@@ -393,16 +375,16 @@ exports[`Indeterminate In Table 1`] = `
 `;
 
 exports[`Read Only 1`] = `
-<fieldset aria-labelledby="mnsrx7kpnvk5 mnsrx7kpnvk6">
+<fieldset aria-labelledby="utilities-usecheckboxgroup--read-only-legend utilities-usecheckboxgroup--read-only-description">
   <legend
+    id="utilities-usecheckboxgroup--read-only-legend"
     data-weight="medium"
-    id="mnsrx7kpnvk5"
   >
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
   <p
     data-variant="default"
-    id="mnsrx7kpnvk6"
+    id="utilities-usecheckboxgroup--read-only-description"
   >
     Velg de alternativene som er relevante for deg.
   </p>
@@ -462,16 +444,16 @@ exports[`Read Only 1`] = `
 `;
 
 exports[`With Error 1`] = `
-<fieldset aria-labelledby="mnsrx7kpnvk3 mnsrx7kpnvk4">
+<fieldset aria-labelledby="utilities-usecheckboxgroup--with-error-legend utilities-usecheckboxgroup--with-error-description">
   <legend
+    id="utilities-usecheckboxgroup--with-error-legend"
     data-weight="medium"
-    id="mnsrx7kpnvk3"
   >
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
   <p
     data-variant="default"
-    id="mnsrx7kpnvk4"
+    id="utilities-usecheckboxgroup--with-error-description"
   >
     Velg de alternativene som er relevante for deg.
   </p>

@@ -52,19 +52,26 @@ exports[`Controlled 1`] = `
 
 exports[`Counter 1`] = `
 <ds-field>
-  <label data-weight="medium">
+  <label
+    data-weight="medium"
+    for="textfield-counter"
+  >
     Legg til en beskrivelse
   </label>
   <div>
     <textarea
       id="textfield-counter"
       rows="4"
+      aria-describedby="mnsrxy5d19q1"
     >
     </textarea>
   </div>
   <p
     data-field="counter"
     data-limit="75"
+    id="mnsrxy5d19q1"
+    data-label="75 tegn igjen"
+    data-state="under"
   >
   </p>
 </ds-field>
@@ -72,7 +79,10 @@ exports[`Counter 1`] = `
 
 exports[`Disabled 1`] = `
 <ds-field>
-  <label data-weight="medium">
+  <label
+    data-weight="medium"
+    for="textfield-disabled"
+  >
     Disabled Textfield
   </label>
   <div>
@@ -84,7 +94,10 @@ exports[`Disabled 1`] = `
   </div>
 </ds-field>
 <ds-field>
-  <label data-weight="medium">
+  <label
+    data-weight="medium"
+    for="multiline-textfield-disabled"
+  >
     Disabled multiline Textfield
   </label>
   <div>

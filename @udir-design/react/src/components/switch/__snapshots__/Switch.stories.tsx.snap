@@ -18,10 +18,10 @@ exports[`Checked 1`] = `
 `;
 
 exports[`Controlled 1`] = `
-<fieldset aria-labelledby="mnsrx3uqsan8">
+<fieldset aria-labelledby="components-switch--controlledlegend">
   <legend
+    id="components-switch--controlledlegend"
     data-weight="medium"
-    id="mnsrx3uqsan8"
   >
     <h2>
       Innstillinger
@@ -41,7 +41,10 @@ exports[`Controlled 1`] = `
       Varsler
     </label>
   </ds-field>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="components-switch--controlleddescription"
+  >
     Velg hvilke typer varsler du ønsker å motta.
   </p>
   <ds-field data-clickdelegatefor="components-switch--controlledlydvarsler">
@@ -91,7 +94,7 @@ exports[`Description 1`] = `
     id="components-switch--description"
     type="checkbox"
     checked
-    aria-describedby="mnsrx3uqsan1"
+    aria-describedby="mnsrxy3itpy1"
   >
   <label
     data-weight="regular"
@@ -101,7 +104,7 @@ exports[`Description 1`] = `
   </label>
   <div
     data-field="description"
-    id="mnsrx3uqsan1"
+    id="mnsrxy3itpy1"
   >
     Prøven er åpen for alle som ønsker å delta.
   </div>
@@ -142,74 +145,53 @@ exports[`Focused 1`] = `
 `;
 
 exports[`Group 1`] = `
-<fieldset aria-labelledby="mnsrx3uqsan2">
+<fieldset>
   <legend
+    id="components-switch--grouplegend"
     data-weight="medium"
-    id="mnsrx3uqsan2"
   >
     Varsler
   </legend>
-  <ds-field data-clickdelegatefor="components-switch--grouplydvarsler">
+  <ds-field>
     <input
       role="switch"
       id="components-switch--grouplydvarsler"
       type="checkbox"
       value="lydvarsler"
       checked
-      aria-describedby="mnsrx3uqsan3"
     >
-    <label
-      data-weight="regular"
-      for="components-switch--grouplydvarsler"
-    >
+    <label data-weight="regular">
       Lydvarsler
     </label>
-    <div
-      data-field="description"
-      id="mnsrx3uqsan3"
-    >
+    <div data-field="description">
       Spill av lyd når et varsel mottas.
     </div>
   </ds-field>
-  <ds-field data-clickdelegatefor="components-switch--grouppopup-varsler">
+  <ds-field>
     <input
       role="switch"
       id="components-switch--grouppopup-varsler"
       type="checkbox"
       value="popup-varsler"
-      aria-describedby="mnsrx3uqsan4"
     >
-    <label
-      data-weight="regular"
-      for="components-switch--grouppopup-varsler"
-    >
+    <label data-weight="regular">
       Popup-varsler
     </label>
-    <div
-      data-field="description"
-      id="mnsrx3uqsan4"
-    >
+    <div data-field="description">
       Vis popup-varsler på skjermen.
     </div>
   </ds-field>
-  <ds-field data-clickdelegatefor="components-switch--groupemail-varsler">
+  <ds-field>
     <input
       role="switch"
       id="components-switch--groupemail-varsler"
       type="checkbox"
       value="email-varsler"
-      aria-describedby="mnsrx3uqsan5"
     >
-    <label
-      data-weight="regular"
-      for="components-switch--groupemail-varsler"
-    >
+    <label data-weight="regular">
       E-postvarsler
     </label>
-    <div
-      data-field="description"
-      id="mnsrx3uqsan5"
-    >
+    <div data-field="description">
       Tillat e-postvarsler for viktige oppdateringer.
     </div>
   </ds-field>
@@ -217,10 +199,10 @@ exports[`Group 1`] = `
 `;
 
 exports[`Group End 1`] = `
-<fieldset aria-labelledby="mnsrx3uqsan6 mnsrx3uqsan7">
+<fieldset aria-labelledby="components-switch--group-endlegend components-switch--group-enddescription">
   <legend
+    id="components-switch--group-endlegend"
     data-weight="medium"
-    id="mnsrx3uqsan6"
   >
     <h2>
       Innstillinger
@@ -228,7 +210,7 @@ exports[`Group End 1`] = `
   </legend>
   <p
     data-variant="default"
-    id="mnsrx3uqsan7"
+    id="components-switch--group-enddescription"
   >
     Innstillinger som gjelder hele systemet.
   </p>
@@ -314,7 +296,7 @@ exports[`Switch In Color Context 1`] = `
       id="switch-in-color-context"
       type="checkbox"
       checked
-      aria-describedby="mnsrx3uqsan9"
+      aria-describedby="mnsrxy3itpy5"
     >
     <label
       data-weight="regular"
@@ -324,7 +306,7 @@ exports[`Switch In Color Context 1`] = `
     </label>
     <div
       data-field="description"
-      id="mnsrx3uqsan9"
+      id="mnsrxy3itpy5"
     >
       Description
     </div>

@@ -181,7 +181,10 @@ exports[`Variants 1`] = `
 
 exports[`With Label 1`] = `
 <ds-field>
-  <label data-weight="medium">
+  <label
+    data-weight="medium"
+    for="components-search--with-label"
+  >
     Søk i læreplaner
   </label>
   <div>

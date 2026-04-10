@@ -13,7 +13,7 @@ exports[`Example Drop Zone 1`] = `
   </label>
   <div
     data-field="description"
-    id="mnsrx5d84xp5"
+    id="mnsrxw1csa05"
   >
     Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
   </div>
@@ -51,7 +51,7 @@ exports[`Example Drop Zone 1`] = `
     tabindex="-1"
     id="dokumentasjon"
     type="file"
-    aria-describedby="mnsrx5d84xp5"
+    aria-describedby="mnsrxw1csa05"
     style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
   >
 </ds-field>
@@ -103,8 +103,8 @@ exports[`Example Drop Zone 1`] = `
       data-icon="true"
       data-variant="tertiary"
       type="button"
-      aria-label
-      data-tooltip
+      aria-label="Fjern filen"
+      data-tooltip="Fjern filen"
       data-placement="top"
       data-autoplacement="true"
     >
@@ -152,7 +152,7 @@ exports[`Example Dropzone With Explicit Size 1`] = `
   </label>
   <div
     data-field="description"
-    id="mnsrx5d84xp6"
+    id="mnsrxw1csa06"
   >
     Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
   </div>
@@ -190,7 +190,7 @@ exports[`Example Dropzone With Explicit Size 1`] = `
     tabindex="-1"
     id="dokumentasjon"
     type="file"
-    aria-describedby="mnsrx5d84xp6"
+    aria-describedby="mnsrxw1csa06"
     style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
   >
 </ds-field>
@@ -242,8 +242,8 @@ exports[`Example Dropzone With Explicit Size 1`] = `
       data-icon="true"
       data-variant="tertiary"
       type="button"
-      aria-label
-      data-tooltip
+      aria-label="Fjern filen"
+      data-tooltip="Fjern filen"
       data-placement="top"
       data-autoplacement="true"
     >
@@ -634,7 +634,7 @@ exports[`Example Trigger 1`] = `
     </label>
     <div
       data-field="description"
-      id="mnsrx5d84xp9"
+      id="mnsrxw1csa09"
     >
       Du kan laste opp filer i PNG- og JPEG-format.
     </div>
@@ -666,7 +666,7 @@ exports[`Example Trigger 1`] = `
       accept="image/png, image/jpeg"
       id="profilbilde"
       type="file"
-      aria-describedby="mnsrx5d84xp9"
+      aria-describedby="mnsrxw1csa09"
     >
   </ds-field>
   <h3 data-size="2xs">
@@ -845,7 +845,7 @@ exports[`Readonly 1`] = `
     </label>
     <div
       data-field="description"
-      id="mnsrx5d84xp3"
+      id="mnsrxw1csa03"
     >
       Beskrivelse for Trigger
     </div>
@@ -878,7 +878,7 @@ exports[`Readonly 1`] = `
       readonly
       id="readonly-trigger"
       type="file"
-      aria-describedby="mnsrx5d84xp3"
+      aria-describedby="mnsrxw1csa03"
     >
   </ds-field>
   <ds-field>
@@ -890,7 +890,7 @@ exports[`Readonly 1`] = `
     </label>
     <div
       data-field="description"
-      id="mnsrx5d84xp4"
+      id="mnsrxw1csa04"
     >
       Beskrivelse for Dropzone
     </div>
@@ -903,7 +903,7 @@ exports[`Readonly 1`] = `
       max="2"
       id="readonly-dropzone"
       type="file"
-      aria-describedby="mnsrx5d84xp4"
+      aria-describedby="mnsrxw1csa04"
     >
   </ds-field>
 </div>
@@ -1201,7 +1201,7 @@ exports[`Upload 1`] = `
     </label>
     <div
       data-field="description"
-      id="mnsrx5d84xp10"
+      id="mnsrxw1csa010"
     >
       Du kan legge ved 1 fil.
     </div>
@@ -1232,7 +1232,7 @@ exports[`Upload 1`] = `
     <input
       id="rapport"
       type="file"
-      aria-describedby="mnsrx5d84xp10"
+      aria-describedby="mnsrxw1csa010"
     >
   </ds-field>
 </div>

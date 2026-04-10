@@ -4,12 +4,12 @@ exports[`Form Example 1`] = `
 <div style="display: flex; flex-direction: column; gap: var(--ds-size-6);">
   <fieldset
     id="rankings"
-    aria-labelledby="mnsrx8g7t221"
+    aria-labelledby="components-progressbar--form-example-legend"
   >
     <div style="display: flex; width: 100%; justify-content: space-between; align-items: flex-end; margin-block-end: var(--ds-size-4);">
       <legend
+        id="components-progressbar--form-example-legend"
         data-weight="medium"
-        id="mnsrx8g7t221"
       >
         <h4>
           Skjema

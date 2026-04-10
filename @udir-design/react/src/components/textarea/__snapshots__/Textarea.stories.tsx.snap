@@ -2,7 +2,10 @@
 
 exports[`Controlled 1`] = `
 <ds-field>
-  <label data-weight="medium">
+  <label
+    data-weight="medium"
+    for="textfield-controlled"
+  >
     Beskriv bekymringen din
   </label>
   <textarea

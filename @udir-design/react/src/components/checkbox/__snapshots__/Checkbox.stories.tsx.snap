@@ -10,7 +10,7 @@ exports[`Checkbox In Color Context 1`] = `
       id="checkbox-in-color-context"
       type="checkbox"
       checked
-      aria-describedby="mnsrx7udzqy4"
+      aria-describedby="mnsry0bqm572"
     >
     <label
       data-weight="regular"
@@ -20,7 +20,7 @@ exports[`Checkbox In Color Context 1`] = `
     </label>
     <div
       data-field="description"
-      id="mnsrx7udzqy4"
+      id="mnsry0bqm572"
     >
       Description
     </div>
@@ -34,7 +34,7 @@ exports[`Focused 1`] = `
     id="checkbox-preview"
     type="checkbox"
     value="value"
-    aria-describedby="mnsrx7udzqy5"
+    aria-describedby="mnsry0bqm573"
   >
   <label
     data-weight="regular"
@@ -44,7 +44,7 @@ exports[`Focused 1`] = `
   </label>
   <div
     data-field="description"
-    id="mnsrx7udzqy5"
+    id="mnsry0bqm573"
   >
     Description
   </div>
@@ -52,16 +52,16 @@ exports[`Focused 1`] = `
 `;
 
 exports[`One Option 1`] = `
-<fieldset aria-labelledby="mnsrx7udzqy2 mnsrx7udzqy3">
+<fieldset aria-labelledby="components-checkbox--one-optionlegend components-checkbox--one-optiondescription">
   <legend
+    id="components-checkbox--one-optionlegend"
     data-weight="medium"
-    id="mnsrx7udzqy2"
   >
     Bekreft at du er over 18 år
   </legend>
   <p
     data-variant="default"
-    id="mnsrx7udzqy3"
+    id="components-checkbox--one-optiondescription"
   >
     For at vi skal kunne sende deg opplysningen du ber om, må du bekrefte at du er myndig.
   </p>
@@ -87,7 +87,7 @@ exports[`Preview 1`] = `
     id="checkbox-preview"
     type="checkbox"
     value="value"
-    aria-describedby="mnsrx7udzqy1"
+    aria-describedby="mnsry0bqm571"
   >
   <label
     data-weight="regular"
@@ -97,7 +97,7 @@ exports[`Preview 1`] = `
   </label>
   <div
     data-field="description"
-    id="mnsrx7udzqy1"
+    id="mnsry0bqm571"
   >
     Description
   </div>

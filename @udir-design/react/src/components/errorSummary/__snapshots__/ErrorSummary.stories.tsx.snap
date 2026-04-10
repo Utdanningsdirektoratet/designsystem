@@ -1,11 +1,8 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Preview 1`] = `
-<ds-error-summary
-  aria-labelledby="mnsrx918c991"
-  tabindex="-1"
->
-  <h2 id="mnsrx918c991">
+<ds-error-summary>
+  <h2>
     For å gå videre må du rette opp følgende feil:
   </h2>
   <ul>
@@ -45,10 +42,10 @@ exports[`Show Hide 1`] = `
   Skjul feilmelding
 </button>
 <ds-error-summary
-  aria-labelledby="mnsrx918c995"
+  aria-labelledby="mnsry0t023z5"
   tabindex="-1"
 >
-  <h2 id="mnsrx918c995">
+  <h2 id="mnsry0t023z5">
     For å gå videre må du rette opp følgende feil:
   </h2>
   <ul>
@@ -85,12 +82,12 @@ exports[`With Form 1`] = `
       aria-invalid="true"
       id="fornavn"
       type="text"
-      aria-describedby="mnsrx918c992"
+      aria-describedby="mnsry0t023z2"
     >
   </div>
   <p
     data-field="validation"
-    id="mnsrx918c992"
+    id="mnsry0t023z2"
   >
     Fornavn må være minst 2 tegn
   </p>
@@ -107,12 +104,12 @@ exports[`With Form 1`] = `
       aria-invalid="true"
       id="telefon"
       type="tel"
-      aria-describedby="mnsrx918c993"
+      aria-describedby="mnsry0t023z3"
     >
   </div>
   <p
     data-field="validation"
-    id="mnsrx918c993"
+    id="mnsry0t023z3"
   >
     Telefonnummer kan kun inneholde siffer
   </p>

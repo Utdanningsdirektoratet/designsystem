@@ -282,12 +282,16 @@ exports[`Read Only 1`] = `
 
 exports[`With Error 1`] = `
 <ds-field>
-  <label data-weight="medium">
+  <label
+    data-weight="medium"
+    for="components-select--with-error"
+  >
     Fylke
   </label>
   <select
     aria-invalid="true"
     id="components-select--with-error"
+    aria-describedby="mnsry091etf1"
   >
     <option value>
       Velg et fylke …
@@ -338,7 +342,10 @@ exports[`With Error 1`] = `
       Østfold
     </option>
   </select>
-  <p data-field="validation">
+  <p
+    data-field="validation"
+    id="mnsry091etf1"
+  >
     Velg et fylke
   </p>
 </ds-field>
@@ -346,7 +353,10 @@ exports[`With Error 1`] = `
 
 exports[`With Optgroup 1`] = `
 <ds-field>
-  <label data-weight="medium">
+  <label
+    data-weight="medium"
+    for="components-select--with-optgroup"
+  >
     Klassetrinn
   </label>
   <select id="components-select--with-optgroup">

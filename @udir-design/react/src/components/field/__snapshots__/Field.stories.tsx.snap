@@ -2,7 +2,10 @@
 
 exports[`Affix 1`] = `
 <ds-field>
-  <label data-weight="medium">
+  <label
+    data-weight="medium"
+    for="affix"
+  >
     Hvor mange kroner koster det per måned?
   </label>
   <div>
@@ -32,13 +35,13 @@ exports[`Counter 1`] = `
   <textarea
     rows="4"
     id="counter"
-    aria-describedby="mnsrx7j3bwy3"
+    aria-describedby="mnsry0lwbdz3"
   >
   </textarea>
   <p
     data-field="counter"
     data-limit="75"
-    id="mnsrx7j3bwy3"
+    id="mnsry0lwbdz3"
     data-label="75 tegn igjen"
     data-state="under"
   >
@@ -111,7 +114,7 @@ exports[`Preview 1`] = `
   </label>
   <div
     data-field="description"
-    id="mnsrx7j3bwy2"
+    id="mnsry0lwbdz2"
   >
     E-posten din brukes til å logge inn og motta varsler
   </div>
@@ -120,11 +123,11 @@ exports[`Preview 1`] = `
     aria-invalid="true"
     type="text"
     value="ola nordmann@udir.no"
-    aria-describedby="mnsrx7j3bwy1 mnsrx7j3bwy2"
+    aria-describedby="mnsry0lwbdz1 mnsry0lwbdz2"
   >
   <p
     data-field="validation"
-    id="mnsrx7j3bwy1"
+    id="mnsry0lwbdz1"
   >
     Du må oppgi en gyldig e-postadresse
   </p>

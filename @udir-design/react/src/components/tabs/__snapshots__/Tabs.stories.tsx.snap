@@ -245,8 +245,7 @@ exports[`Only Icons 1`] = `
       data-placement="top"
       data-autoplacement
       role="tab"
-      tabindex="0"
-      aria-selected="true"
+      tabindex="-1"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -276,7 +275,6 @@ exports[`Only Icons 1`] = `
       data-autoplacement
       role="tab"
       tabindex="-1"
-      aria-selected="false"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -306,7 +304,6 @@ exports[`Only Icons 1`] = `
       data-autoplacement
       role="tab"
       tabindex="-1"
-      aria-selected="false"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -336,7 +333,6 @@ exports[`Only Icons 1`] = `
       data-autoplacement
       role="tab"
       tabindex="-1"
-      aria-selected="false"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -389,5 +385,69 @@ exports[`Only Text 1`] = `
       Prøvesvar
     </ds-tab>
   </ds-tablist>
+</ds-tabs>
+`;
+
+exports[`Preview 1`] = `
+<ds-tabs data-utabs>
+  <ds-tablist role="tablist">
+    <ds-tab
+      aria-controls="_r_0_-value1"
+      data-value="value1"
+      role="tab"
+      tabindex="0"
+      aria-selected="true"
+      id=":ds-tab1"
+    >
+      Tab 1
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_0_-value2"
+      data-value="value2"
+      role="tab"
+      tabindex="-1"
+      aria-selected="false"
+      id=":ds-tab2"
+    >
+      Tab 2
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_0_-value3"
+      data-value="value3"
+      role="tab"
+      tabindex="-1"
+      aria-selected="false"
+      id=":ds-tab3"
+    >
+      Tab 3
+    </ds-tab>
+  </ds-tablist>
+  <ds-tabpanel
+    id="_r_0_-value1"
+    aria-hidden="false"
+    role="tabpanel"
+    aria-labelledby=":ds-tab1"
+    tabindex="0"
+  >
+    Innhold for Tab 1
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="_r_0_-value2"
+    aria-hidden="true"
+    role="tabpanel"
+    aria-labelledby=":ds-tab2"
+    hidden
+  >
+    Innhold for Tab 2
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="_r_0_-value3"
+    aria-hidden="true"
+    role="tabpanel"
+    aria-labelledby=":ds-tab3"
+    hidden
+  >
+    Innhold for Tab 3
+  </ds-tabpanel>
 </ds-tabs>
 `;
