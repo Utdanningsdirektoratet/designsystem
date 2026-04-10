@@ -27,6 +27,7 @@ const meta = preview.meta({
 
 export const DashboardStory = meta.story({
   render: (args) => {
+    const notifications = 10;
     const [colorMode, setColorMode] = useState<'light' | 'dark'>('light');
     return (
       <>
@@ -36,7 +37,18 @@ export const DashboardStory = meta.story({
             description="Admin"
             popoverTarget="usermenu2"
             data-show="md"
-            avatar={<Avatar aria-hidden>SH</Avatar>}
+            avatar={
+              <Badge.Position overlap="circle">
+                <Badge
+                  count={notifications}
+                  maxCount={9}
+                  aria-hidden
+                  data-color="danger"
+                />
+                <Avatar aria-hidden>SH</Avatar>
+              </Badge.Position>
+            }
+            aria-label={`Stian Hansen Admin - ${notifications} varsler`}
           />
           <Dropdown id="usermenu2" placement="bottom-end" autoPlacement={false}>
             <Dropdown.Heading>Bytt profil</Dropdown.Heading>

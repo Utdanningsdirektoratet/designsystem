@@ -30,6 +30,7 @@ exports[`Dashboard Page 2 1`] = `
         data-color="neutral"
         popovertarget="usermenu2"
         data-show="md"
+        aria-label="Stian Hansen Admin - 10 varsler"
       >
         <div>
           <span>
@@ -40,12 +41,24 @@ exports[`Dashboard Page 2 1`] = `
           </span>
         </div>
         <span
-          data-variant="circle"
-          role="img"
-          aria-hidden="true"
+          data-overlap="circle"
+          data-placement="top-right"
         >
-          <span>
-            SH
+          <span
+            data-count="9+"
+            data-variant="base"
+            aria-hidden="true"
+            data-color="danger"
+          >
+          </span>
+          <span
+            data-variant="circle"
+            role="img"
+            aria-hidden="true"
+          >
+            <span>
+              SH
+            </span>
           </span>
         </span>
       </button>
@@ -689,6 +702,7 @@ exports[`Dashboard Page 3 1`] = `
         data-color="neutral"
         popovertarget="usermenu2"
         data-show="md"
+        aria-label="Stian Hansen Admin - 10 varsler"
       >
         <div>
           <span>
@@ -699,12 +713,24 @@ exports[`Dashboard Page 3 1`] = `
           </span>
         </div>
         <span
-          data-variant="circle"
-          role="img"
-          aria-hidden="true"
+          data-overlap="circle"
+          data-placement="top-right"
         >
-          <span>
-            SH
+          <span
+            data-count="9+"
+            data-variant="base"
+            aria-hidden="true"
+            data-color="danger"
+          >
+          </span>
+          <span
+            data-variant="circle"
+            role="img"
+            aria-hidden="true"
+          >
+            <span>
+              SH
+            </span>
           </span>
         </span>
       </button>
@@ -1348,6 +1374,7 @@ exports[`Dashboard Page 4 1`] = `
         data-color="neutral"
         popovertarget="usermenu2"
         data-show="md"
+        aria-label="Stian Hansen Admin - 10 varsler"
       >
         <div>
           <span>
@@ -1358,12 +1385,24 @@ exports[`Dashboard Page 4 1`] = `
           </span>
         </div>
         <span
-          data-variant="circle"
-          role="img"
-          aria-hidden="true"
+          data-overlap="circle"
+          data-placement="top-right"
         >
-          <span>
-            SH
+          <span
+            data-count="9+"
+            data-variant="base"
+            aria-hidden="true"
+            data-color="danger"
+          >
+          </span>
+          <span
+            data-variant="circle"
+            role="img"
+            aria-hidden="true"
+          >
+            <span>
+              SH
+            </span>
           </span>
         </span>
       </button>
@@ -2007,6 +2046,7 @@ exports[`Dashboard Story 1`] = `
         data-color="neutral"
         popovertarget="usermenu2"
         data-show="md"
+        aria-label="Stian Hansen Admin - 10 varsler"
       >
         <div>
           <span>
@@ -2017,12 +2057,24 @@ exports[`Dashboard Story 1`] = `
           </span>
         </div>
         <span
-          data-variant="circle"
-          role="img"
-          aria-hidden="true"
+          data-overlap="circle"
+          data-placement="top-right"
         >
-          <span>
-            SH
+          <span
+            data-count="9+"
+            data-variant="base"
+            aria-hidden="true"
+            data-color="danger"
+          >
+          </span>
+          <span
+            data-variant="circle"
+            role="img"
+            aria-hidden="true"
+          >
+            <span>
+              SH
+            </span>
           </span>
         </span>
       </button>
