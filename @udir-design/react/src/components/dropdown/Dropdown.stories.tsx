@@ -57,10 +57,8 @@ export const Preview = meta.story({
           <DownloadIcon aria-hidden />
         </Dropdown.Trigger>
         <Dropdown {...args}>
+          <Dropdown.Heading>Velg format</Dropdown.Heading>
           <Dropdown.List>
-            <Dropdown.Item>
-              <Dropdown.Heading>Velg format</Dropdown.Heading>
-            </Dropdown.Item>
             <Dropdown.Item>
               <Dropdown.Button>.pdf</Dropdown.Button>
             </Dropdown.Item>
@@ -151,10 +149,8 @@ export const Avatars = meta.story({
           )}
         </Dropdown.Trigger>
         <Dropdown {...args} open={open} onClose={() => setOpen(false)}>
+          <Dropdown.Heading>Velg profil</Dropdown.Heading>
           <Dropdown.List>
-            <Dropdown.Item>
-              <Dropdown.Heading>Velg profil</Dropdown.Heading>
-            </Dropdown.Item>
             <Dropdown.Item>
               <Dropdown.Button onClick={() => setOpen(false)}>
                 <Avatar aria-label="Kai Nordmann" />
@@ -226,10 +222,8 @@ export const Controlled = meta.story({
           )}
         </Dropdown.Trigger>
         <Dropdown {...args} open={open} onClose={() => setOpen(false)}>
+          <Dropdown.Heading>Grunnskolen</Dropdown.Heading>
           <Dropdown.List>
-            <Dropdown.Item>
-              <Dropdown.Heading>Grunnskolen</Dropdown.Heading>
-            </Dropdown.Item>
             <Dropdown.Item>
               <Dropdown.Button onClick={() => setOpen(false)}>
                 Barneskolen
@@ -241,10 +235,8 @@ export const Controlled = meta.story({
               </Dropdown.Button>
             </Dropdown.Item>
           </Dropdown.List>
+          <Dropdown.Heading>Videregående opplæring</Dropdown.Heading>
           <Dropdown.List>
-            <Dropdown.Item>
-              <Dropdown.Heading>Videregående opplæring</Dropdown.Heading>
-            </Dropdown.Item>
             <Dropdown.Item>
               <Dropdown.Button onClick={() => setOpen(false)}>
                 Studieforberedende

@@ -1,5 +1,5 @@
 .ds-dropdown {
-  & :is(h2, h3, h4, h5, h6) {
+  & > :is(h2, h3, h4, h5, h6) {
     color: var(--ds-color-neutral-text-default);
     font-weight: var(--ds-font-weight-semibold);
   }
