@@ -28,24 +28,35 @@ import {
 export const ArticleDemo = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   return (
-    <article className={cl(classes.article, classes.contentSpacing)}>
+    <article
+      aria-label="Tilpasset opplæring"
+      className={cl(classes.article, classes.contentSpacing)}
+    >
       <Breadcrumbs aria-label="Du er her:">
-        <Breadcrumbs.Link aria-label="Tilbake til mer informasjon">
-          Mer informasjon
+        <Breadcrumbs.Link
+          href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/"
+          aria-label="Tilbake til Støtte til arbeid med læreplanverket"
+        >
+          Støtte til arbeid med læreplanverket
         </Breadcrumbs.Link>
         <Breadcrumbs.List>
           <Breadcrumbs.Item>
             <Breadcrumbs.Link href="https://www.udir.no/">
-              Generell informasjon
+              Forside
             </Breadcrumbs.Link>
           </Breadcrumbs.Item>
           <Breadcrumbs.Item>
             <Breadcrumbs.Link href="https://www.udir.no/laring-og-trivsel/lareplanverket/">
-              Mer informasjon
+              Læreplanverket
             </Breadcrumbs.Link>
           </Breadcrumbs.Item>
           <Breadcrumbs.Item>
-            <Breadcrumbs.Link href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/planleggingsverktoy-i-lareplanvisning/">
+            <Breadcrumbs.Link href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/">
+              Støtte til arbeid med læreplanverket
+            </Breadcrumbs.Link>
+          </Breadcrumbs.Item>
+          <Breadcrumbs.Item>
+            <Breadcrumbs.Link href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/tilpasset-opplaring/">
               Tilpasset opplæring
             </Breadcrumbs.Link>
           </Breadcrumbs.Item>
