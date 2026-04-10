@@ -1921,7 +1921,7 @@ exports[`Preview 1`] = `
     <button
       aria-label="Lukk dialogvindu"
       command="close"
-      commandfor="_r_1_"
+      commandfor="demo-version-dialog"
       data-color="neutral"
       data-icon="true"
       data-variant="tertiary"
@@ -1944,7 +1944,8 @@ exports[`Preview 1`] = `
       Dette er kun en demo. Dine data vil ikke lagres og du risikerer å måtte fylle ut på nytt.
     </div>
     <button
-      data-command="close"
+      command="close"
+      commandfor="demo-version-dialog"
       data-variant="primary"
       type="button"
     >
