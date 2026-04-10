@@ -132,6 +132,7 @@ export const WithoutDialogTriggerContext = meta.story({
       <>
         <Button
           variant="secondary"
+          aria-haspopup="dialog"
           onClick={() => dialogRef.current?.showModal()}
         >
           Åpne Dialog
@@ -150,6 +151,25 @@ export const WithoutDialogTriggerContext = meta.story({
       </>
     );
   },
+});
+
+export const WithoutDialogTriggerContextWithCommand = meta.story({
+  render: (args) => (
+    <>
+      <Button command="show-modal" commandfor="my-dialog-commant">
+        Open Dialog with ref
+      </Button>
+      <Dialog id="my-dialog-commant" {...args}>
+        <Heading style={{ marginBottom: 'var(--ds-size-2)' }}>
+          Dialog header
+        </Heading>
+        <Paragraph style={{ marginBottom: 'var(--ds-size-2)' }}>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
+          doloremque obcaecati assumenda odio ducimus sunt et.
+        </Paragraph>
+      </Dialog>
+    </>
+  ),
 });
 
 export const DialogWithOpenProp = meta.story({
