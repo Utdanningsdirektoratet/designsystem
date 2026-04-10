@@ -14,7 +14,7 @@ type ArticleDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
 const ArticleDemo = (props: ArticleDemoProps) => (
   <div {...props} data-size="auto">
     <SkipLink href="#main-content">Hopp til hovedinnholdet</SkipLink>
-    <DemoBanner>
+    <DemoBanner text="Dette er et demobanner">
       <HeaderDemo applicationName="Utdanningsdirektoratet" />
       <ArticleDemoPage />
       <FooterDemo />

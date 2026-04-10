@@ -1,7 +1,6 @@
 import cl from 'clsx';
 import { useRef } from 'react';
-import { PrinterSmallIcon } from '@udir-design/icons';
-import { Alert } from 'src/components/alert';
+import { ArrowUpIcon, DownloadIcon } from '@udir-design/icons';
 import { Breadcrumbs } from 'src/components/breadcrumbs/Breadcrumbs';
 import { Button } from 'src/components/button/Button';
 import { Card } from 'src/components/card/Card';
@@ -15,31 +14,50 @@ import { Prose } from 'src/components/typography/prose/Prose';
 import { useTableOfContents } from 'src/utilities/hooks/useTableOfContents/useTableOfContents';
 import classes from './ArticleDemo.module.css';
 import { ContentSection } from './content-section/ContentSection';
-import { changes } from './strings/changes';
-import { section1, section2, section3 } from './strings/sections';
+import { measures } from './strings/measures';
+import {
+  section0,
+  section1,
+  section2,
+  section3,
+  section4,
+  section5,
+  sectionHeader,
+} from './strings/sections';
 
 export const ArticleDemo = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   return (
-    <article className={cl(classes.article, classes.contentSpacing)}>
+    <article
+      aria-label="Tilpasset opplæring"
+      className={cl(classes.article, classes.contentSpacing)}
+    >
       <Breadcrumbs aria-label="Du er her:">
-        <Breadcrumbs.Link aria-label="Tilbake til mer informasjon">
-          Mer informasjon
+        <Breadcrumbs.Link
+          href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/"
+          aria-label="Tilbake til Støtte til arbeid med læreplanverket"
+        >
+          Støtte til arbeid med læreplanverket
         </Breadcrumbs.Link>
         <Breadcrumbs.List>
           <Breadcrumbs.Item>
             <Breadcrumbs.Link href="https://www.udir.no/">
-              Generell informasjon
+              Forside
             </Breadcrumbs.Link>
           </Breadcrumbs.Item>
           <Breadcrumbs.Item>
             <Breadcrumbs.Link href="https://www.udir.no/laring-og-trivsel/lareplanverket/">
-              Mer informasjon
+              Læreplanverket
             </Breadcrumbs.Link>
           </Breadcrumbs.Item>
           <Breadcrumbs.Item>
-            <Breadcrumbs.Link href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/planleggingsverktoy-i-lareplanvisning/">
-              Læreplanverket
+            <Breadcrumbs.Link href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/">
+              Støtte til arbeid med læreplanverket
+            </Breadcrumbs.Link>
+          </Breadcrumbs.Item>
+          <Breadcrumbs.Item>
+            <Breadcrumbs.Link href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/tilpasset-opplaring/">
+              Tilpasset opplæring
             </Breadcrumbs.Link>
           </Breadcrumbs.Item>
         </Breadcrumbs.List>
@@ -51,61 +69,75 @@ export const ArticleDemo = () => {
         ref={containerRef}
       >
         <Prose>
-          <Alert>Denne artikkelen er mer enn 2 år gammel</Alert>
           <div className={classes.headingWrapper}>
-            <Heading data-size="md" level={1}>
-              Læreplanverket
+            <Heading data-size="lg" level={1}>
+              Tilpasset opplæring
             </Heading>
-            <Link
-              href="#"
-              data-size="md"
-              onClick={(e) => {
-                e.preventDefault();
-                window.print();
-              }}
-            >
-              <PrinterSmallIcon aria-hidden />
-              <span>Skriv ut denne siden</span>
-            </Link>
+            <ContentSection section={sectionHeader} />
+
+            <Divider style={{ margin: 'var(--ds-size-4) 0' }} />
+            <div className={classes.dividerWrapper}>
+              <Paragraph data-size="sm">
+                ARTIKKEL | Sist endret: 01.01.2024
+              </Paragraph>
+              <Link
+                href=""
+                data-size="sm"
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
+              >
+                <DownloadIcon aria-hidden />
+                <span data-size="sm">Last ned siden som PDF</span>
+              </Link>
+            </div>
+
+            <Divider style={{ margin: 'var(--ds-size-4) 0' }} />
           </div>
-          <TableOfContents {...useTableOfContents({ containerRef })} />
-          <Card data-color="support2" variant="tinted">
-            <Heading level={2} data-size="sm">
-              Planleggingsverktøy
-            </Heading>
+          <TableOfContents
+            data-color="accent"
+            variant="tinted"
+            {...useTableOfContents({ containerRef, headingSelector: 'h2' })}
+          />
+          <ContentSection section={section0} />
+          <ContentSection section={section1} />
+          <Card data-color="accent" variant="tinted">
             <Paragraph>
-              Planleggingsverktøyet gir støtte til å ta i bruk læreplanene.
+              Tilpasset opplæring gjelder alle elever, og skal i størst mulig
+              grad skje gjennom variasjon og tilpasninger til mangfoldet i
+              elevgruppen innenfor fellesskapet.{' '}
+              <Link
+                href=""
+                data-size="sm"
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
+              >
+                Overordnet del 3.2
+              </Link>
             </Paragraph>
           </Card>
-          <ContentSection section={section1} />
           <ContentSection section={section2} />
           <ContentSection section={section3} />
-          <Card>
-            <Card.Block>
-              <Heading level={2} data-size="sm">
-                Endringer i verktøyet
-              </Heading>
-              <Paragraph>
-                Vi går igjennom alle innspillene vi får, og med jevne mellomrom
-                prioriterer vi hva vi gjør av endringer.
-              </Paragraph>
-            </Card.Block>
-            {changes.map(({ summary, content }, i) => (
+          <Card data-color="neutral" variant="tinted">
+            {measures.map(({ summary, content }, i) => (
               <Details key={i}>
                 <Details.Summary>{summary}</Details.Summary>
                 <Details.Content>{content}</Details.Content>
               </Details>
             ))}
           </Card>
-          <Divider />
+          <ContentSection section={section4} />
+          <ContentSection section={section5} />
           <Button
-            variant="secondary"
+            variant="tertiary"
             onClick={() =>
               window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
             }
             className={classes.scrollButton}
           >
-            Tilbake til toppen
+            Til toppen
+            <ArrowUpIcon aria-hidden />
           </Button>
         </Prose>
       </div>
