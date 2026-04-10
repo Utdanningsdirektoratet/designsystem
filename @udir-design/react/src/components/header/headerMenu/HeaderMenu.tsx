@@ -42,7 +42,7 @@ export const HeaderMenu = forwardRef<HTMLDivElement, HeaderMenuProps>(
         id={id}
         className={cl('uds-header__menu', className)}
         popover="auto"
-        placement="bottom-end"
+        placement="none"
         ref={ref}
         open={open}
         onOpen={() => {

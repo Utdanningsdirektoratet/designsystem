@@ -24,10 +24,10 @@ exports[`Dashboard Page 2 1`] = `
     </a>
     <div>
       <button
-        type="button"
         data-color="neutral"
-        popovertarget="usermenu2"
         data-show="md"
+        popovertarget="usermenu2"
+        type="button"
       >
         <div>
           <h3
@@ -37,94 +37,93 @@ exports[`Dashboard Page 2 1`] = `
             Stian Hansen
           </h3>
           <p
-            data-variant="default"
             data-size="xs"
+            data-variant="default"
           >
             Admin
           </p>
         </div>
         <span
+          aria-hidden="true"
           data-variant="circle"
           role="img"
-          aria-hidden="true"
         >
           <span>
             SH
           </span>
         </span>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
           aria-hidden="true"
+          fill="none"
+          focusable="false"
+          height="1em"
+          role="img"
+          viewbox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
+            clip-rule="evenodd"
+            d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
             fill="currentColor"
             fill-rule="evenodd"
-            d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
-            clip-rule="evenodd"
           >
           </path>
         </svg>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
           aria-hidden="true"
+          fill="none"
+          focusable="false"
+          height="1em"
+          role="img"
+          viewbox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
+            clip-rule="evenodd"
+            d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
             fill="currentColor"
             fill-rule="evenodd"
-            d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
-            clip-rule="evenodd"
           >
           </path>
         </svg>
       </button>
       <div
-        id="usermenu2"
-        popover="manual"
+        data-placement="bottom-end"
         data-variant="default"
+        id="<removed>"
+        popover="manual"
       >
+        <h2>
+          Bytt profil
+        </h2>
         <ul>
-          <li>
-            <h2>
-              Bytt profil
-            </h2>
-          </li>
           <li>
             <button
               data-variant="tertiary"
               type="button"
             >
               <span
+                aria-hidden="true"
                 data-variant="circle"
                 role="img"
-                aria-hidden="true"
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
                   aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="1em"
+                  role="img"
+                  viewbox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
+                    clip-rule="evenodd"
+                    d="M2.25 7.5c0-.69.56-1.25 1.25-1.25h4.25V5c0-.966.784-1.75 1.75-1.75h5c.966 0 1.75.784 1.75 1.75v1.25h4.25c.69 0 1.25.56 1.25 1.25v5c0 .69-.56 1.25-1.25 1.25h-.25v4.75c0 .69-.56 1.25-1.25 1.25H5c-.69 0-1.25-.56-1.25-1.25v-4.75H3.5c-.69 0-1.25-.56-1.25-1.25zm7-2.5a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v1.25h-5.5zM12 15.75a.75.75 0 0 0 .75-.75v-1.25h6v4.5H5.25v-4.5h6V15c0 .414.336.75.75.75m0-5.5a.75.75 0 0 1 .75.75v1.25h7.5v-4.5H3.75v4.5h7.5V11a.75.75 0 0 1 .75-.75"
                     fill="currentColor"
                     fill-rule="evenodd"
-                    d="M2.25 7.5c0-.69.56-1.25 1.25-1.25h4.25V5c0-.966.784-1.75 1.75-1.75h5c.966 0 1.75.784 1.75 1.75v1.25h4.25c.69 0 1.25.56 1.25 1.25v5c0 .69-.56 1.25-1.25 1.25h-.25v4.75c0 .69-.56 1.25-1.25 1.25H5c-.69 0-1.25-.56-1.25-1.25v-4.75H3.5c-.69 0-1.25-.56-1.25-1.25zm7-2.5a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v1.25h-5.5zM12 15.75a.75.75 0 0 0 .75-.75v-1.25h6v4.5H5.25v-4.5h6V15c0 .414.336.75.75.75m0-5.5a.75.75 0 0 1 .75.75v1.25h7.5v-4.5H3.75v4.5h7.5V11a.75.75 0 0 1 .75-.75"
-                    clip-rule="evenodd"
                   >
                   </path>
                 </svg>
@@ -144,20 +143,20 @@ exports[`Dashboard Page 2 1`] = `
               type="button"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
+                  clip-rule="evenodd"
+                  d="M5 3.25A1.75 1.75 0 0 0 3.25 5v14c0 .966.784 1.75 1.75 1.75h3.5a.75.75 0 0 0 0-1.5H5a.25.25 0 0 1-.25-.25V5A.25.25 0 0 1 5 4.75h3.5a.75.75 0 0 0 0-1.5zm9.97 3.72a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H8.5a.75.75 0 0 1 0-1.5h9.69l-3.22-3.22a.75.75 0 0 1 0-1.06"
                   fill="currentColor"
                   fill-rule="evenodd"
-                  d="M5 3.25A1.75 1.75 0 0 0 3.25 5v14c0 .966.784 1.75 1.75 1.75h3.5a.75.75 0 0 0 0-1.5H5a.25.25 0 0 1-.25-.25V5A.25.25 0 0 1 5 4.75h3.5a.75.75 0 0 0 0-1.5zm9.97 3.72a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H8.5a.75.75 0 0 1 0-1.5h9.69l-3.22-3.22a.75.75 0 0 1 0-1.06"
-                  clip-rule="evenodd"
                 >
                 </path>
               </svg>
@@ -177,66 +176,53 @@ exports[`Dashboard Page 2 1`] = `
   <h1 data-size="md">
     Schweigaardsgate skole
   </h1>
-  <div>
-    <div
-      role="tablist"
-      tabindex="0"
-    >
-      <button
-        id="tab-_r_g_"
+  <ds-tabs data-utabs>
+    <ds-tablist role="tablist">
+      <ds-tab
+        aria-controls="_r_i_-overview"
         aria-selected="false"
         data-value="overview"
+        id="<removed>"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_k_"
       >
         Oversikt
-      </button>
-      <button
-        id="tab-_r_h_"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_i_-tests"
         aria-selected="true"
         data-value="tests"
+        id="<removed>"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
         tabindex="0"
-        aria-controls="tabpanel-_r_l_"
       >
         Prøver
-      </button>
-      <button
-        id="tab-_r_i_"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_i_-test-answers"
         aria-selected="false"
         data-value="test-answers"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_m_"
       >
         Prøvesvar
-      </button>
-      <button
-        id="tab-_r_j_"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_i_-settings"
         aria-selected="false"
         data-value="settings"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_n_"
       >
         Innstillinger
-      </button>
-    </div>
-    <div
-      id="tabpanel-_r_k_"
-      role="tabpanel"
-      tabindex="0"
+      </ds-tab>
+    </ds-tablist>
+    <ds-tabpanel
+      aria-hidden="true"
+      aria-labelledby="<removed>"
       hidden
-      aria-labelledby="tab-_r_g_"
+      id="<removed>"
+      role="tabpanel"
     >
       <p data-variant="default">
         Her får du en oversikt over all den overordnede informasjonen.
@@ -279,23 +265,23 @@ exports[`Dashboard Page 2 1`] = `
           <div>
             <svg
               aria-label="laster inn"
+              data-size="lg"
               role="img"
               viewbox="0 0 50 50"
-              data-size="lg"
             >
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
@@ -303,11 +289,13 @@ exports[`Dashboard Page 2 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_l_"
+    </ds-tabpanel>
+    <ds-tabpanel
+      aria-hidden="false"
+      aria-labelledby="<removed>"
+      id="<removed>"
       role="tabpanel"
-      aria-labelledby="tab-_r_h_"
+      tabindex="0"
     >
       <p data-variant="default">
         Oversikt over prøver for Schweigaardsgate skole.
@@ -337,18 +325,18 @@ exports[`Dashboard Page 2 1`] = `
           </h2>
           <div>
             <a
-              href="/"
-              data-variant="default"
               data-color="neutral"
+              data-variant="default"
+              href="/"
             >
               <h2>
                 Administrer prøve X
               </h2>
             </a>
             <a
-              href="/"
-              data-variant="default"
               data-color="neutral"
+              data-variant="default"
+              href="/"
             >
               <h2>
                 Administrer prøve Y
@@ -370,23 +358,23 @@ exports[`Dashboard Page 2 1`] = `
           <div>
             <svg
               aria-label="laster inn"
+              data-size="lg"
               role="img"
               viewbox="0 0 50 50"
-              data-size="lg"
             >
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
@@ -394,13 +382,12 @@ exports[`Dashboard Page 2 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_m_"
-      role="tabpanel"
-      tabindex="0"
+    </ds-tabpanel>
+    <ds-tabpanel
+      aria-hidden="true"
       hidden
-      aria-labelledby="tab-_r_i_"
+      id="<removed>"
+      role="tabpanel"
     >
       <p data-variant="default">
         Oversikt over prøvesvar for Schweigaardsgate skole.
@@ -443,23 +430,23 @@ exports[`Dashboard Page 2 1`] = `
           <div>
             <svg
               aria-label="laster inn"
+              data-size="lg"
               role="img"
               viewbox="0 0 50 50"
-              data-size="lg"
             >
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
@@ -467,12 +454,12 @@ exports[`Dashboard Page 2 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_n_"
-      role="tabpanel"
+    </ds-tabpanel>
+    <ds-tabpanel
+      aria-hidden="true"
       hidden
-      aria-labelledby="tab-_r_j_"
+      id="<removed>"
+      role="tabpanel"
     >
       <div>
         <div>
@@ -496,203 +483,209 @@ exports[`Dashboard Page 2 1`] = `
         <div>
           <div>
             <div
-              data-variant="tinted"
               data-color="support1"
+              data-variant="tinted"
             >
               <h2>
                 Generelle innstillinger
               </h2>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  id="<removed>"
                   role="switch"
-                  id="dark-mode"
                   type="checkbox"
-                  aria-describedby="dark-mode:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="dark-mode"
+                  for="<removed>"
                 >
                   Mørk modus
                 </label>
                 <div
                   data-field="description"
-                  id="dark-mode:description:1"
+                  id="<removed>"
                 >
                   Et mørkere grensesnitt for å spare øynene.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  checked
+                  id="<removed>"
                   role="switch"
-                  id="auto-updates"
                   type="checkbox"
                   value="auto-updates"
-                  checked
-                  aria-describedby="auto-updates:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="auto-updates"
+                  for="<removed>"
                 >
                   Automatiske oppdateringer
                 </label>
                 <div
                   data-field="description"
-                  id="auto-updates:description:1"
+                  id="<removed>"
                 >
                   Bruk automatisk oppdateringer for å holde systemet oppdatert.
                 </div>
-              </div>
+              </ds-field>
             </div>
             <div
-              data-variant="tinted"
               data-color="support1"
+              data-variant="tinted"
             >
               <h2>
                 Personvern
               </h2>
-              <fieldset>
-                <legend data-weight="medium">
+              <fieldset aria-labelledby="<removed>">
+                <legend
+                  data-weight="medium"
+                  id="<removed>"
+                >
                   Hvem kan se profilen din?
                 </legend>
-                <p data-variant="default">
+                <p
+                  data-variant="default"
+                  id="<removed>"
+                >
                   Velg hvem som har tilgang til å se profilen din.
                 </p>
-                <div>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-public"
+                    checked
+                    id="<removed>"
+                    name="privacy"
                     type="radio"
                     value="public"
-                    checked
-                    name="privacy"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-public"
+                    for="<removed>"
                   >
                     Alle
                   </label>
-                </div>
-                <div>
+                </ds-field>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-friends"
+                    aria-describedby="<removed>"
+                    id="<removed>"
+                    name="privacy"
                     type="radio"
                     value="friends"
-                    name="privacy"
-                    aria-describedby="privacy-friends:description:1"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-friends"
+                    for="<removed>"
                   >
                     Kun venner
                   </label>
                   <div
                     data-field="description"
-                    id="privacy-friends:description:1"
+                    id="<removed>"
                   >
                     Bare personer du har lagt til kan se profilen din.
                   </div>
-                </div>
-                <div>
+                </ds-field>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-private"
+                    id="<removed>"
+                    name="privacy"
                     type="radio"
                     value="private"
-                    name="privacy"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-private"
+                    for="<removed>"
                   >
                     Kun meg
                   </label>
-                </div>
+                </ds-field>
                 <p
                   data-field="validation"
                   hidden
-                  id="validation-privacy"
+                  id="<removed>"
                 >
                 </p>
               </fieldset>
             </div>
             <div
-              data-variant="tinted"
               data-color="support1"
+              data-variant="tinted"
             >
               <h2>
                 Varsler
               </h2>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  id="<removed>"
                   role="switch"
-                  id="sound-notifications"
                   type="checkbox"
                   value="sound-notifications"
-                  aria-describedby="sound-notifications:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="sound-notifications"
+                  for="<removed>"
                 >
                   Lydvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="sound-notifications:description:1"
+                  id="<removed>"
                 >
                   Spill av lyd når et varsel mottas.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  id="<removed>"
                   role="switch"
-                  id="popup-notifications"
                   type="checkbox"
                   value="popup-notifications"
-                  aria-describedby="popup-notifications:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="popup-notifications"
+                  for="<removed>"
                 >
                   Popup-varsler
                 </label>
                 <div
                   data-field="description"
-                  id="popup-notifications:description:1"
+                  id="<removed>"
                 >
                   Vis popup-varsler på skjermen.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  id="<removed>"
                   role="switch"
-                  id="email-notifications"
                   type="checkbox"
                   value="email-notifications"
-                  aria-describedby="email-notifications:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="email-notifications"
+                  for="<removed>"
                 >
                   E-postvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="email-notifications:description:1"
+                  id="<removed>"
                 >
                   Tillat e-postvarsler for viktige oppdateringer.
                 </div>
-              </div>
+              </ds-field>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </ds-tabpanel>
+  </ds-tabs>
 </div>
 `;
 
@@ -720,10 +713,10 @@ exports[`Dashboard Page 3 1`] = `
     </a>
     <div>
       <button
-        type="button"
         data-color="neutral"
-        popovertarget="usermenu2"
         data-show="md"
+        popovertarget="usermenu2"
+        type="button"
       >
         <div>
           <h3
@@ -733,94 +726,93 @@ exports[`Dashboard Page 3 1`] = `
             Stian Hansen
           </h3>
           <p
-            data-variant="default"
             data-size="xs"
+            data-variant="default"
           >
             Admin
           </p>
         </div>
         <span
+          aria-hidden="true"
           data-variant="circle"
           role="img"
-          aria-hidden="true"
         >
           <span>
             SH
           </span>
         </span>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
           aria-hidden="true"
+          fill="none"
+          focusable="false"
+          height="1em"
+          role="img"
+          viewbox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
+            clip-rule="evenodd"
+            d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
             fill="currentColor"
             fill-rule="evenodd"
-            d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
-            clip-rule="evenodd"
           >
           </path>
         </svg>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
           aria-hidden="true"
+          fill="none"
+          focusable="false"
+          height="1em"
+          role="img"
+          viewbox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
+            clip-rule="evenodd"
+            d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
             fill="currentColor"
             fill-rule="evenodd"
-            d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
-            clip-rule="evenodd"
           >
           </path>
         </svg>
       </button>
       <div
-        id="usermenu2"
-        popover="manual"
+        data-placement="bottom-end"
         data-variant="default"
+        id="<removed>"
+        popover="manual"
       >
+        <h2>
+          Bytt profil
+        </h2>
         <ul>
-          <li>
-            <h2>
-              Bytt profil
-            </h2>
-          </li>
           <li>
             <button
               data-variant="tertiary"
               type="button"
             >
               <span
+                aria-hidden="true"
                 data-variant="circle"
                 role="img"
-                aria-hidden="true"
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
                   aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="1em"
+                  role="img"
+                  viewbox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
+                    clip-rule="evenodd"
+                    d="M2.25 7.5c0-.69.56-1.25 1.25-1.25h4.25V5c0-.966.784-1.75 1.75-1.75h5c.966 0 1.75.784 1.75 1.75v1.25h4.25c.69 0 1.25.56 1.25 1.25v5c0 .69-.56 1.25-1.25 1.25h-.25v4.75c0 .69-.56 1.25-1.25 1.25H5c-.69 0-1.25-.56-1.25-1.25v-4.75H3.5c-.69 0-1.25-.56-1.25-1.25zm7-2.5a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v1.25h-5.5zM12 15.75a.75.75 0 0 0 .75-.75v-1.25h6v4.5H5.25v-4.5h6V15c0 .414.336.75.75.75m0-5.5a.75.75 0 0 1 .75.75v1.25h7.5v-4.5H3.75v4.5h7.5V11a.75.75 0 0 1 .75-.75"
                     fill="currentColor"
                     fill-rule="evenodd"
-                    d="M2.25 7.5c0-.69.56-1.25 1.25-1.25h4.25V5c0-.966.784-1.75 1.75-1.75h5c.966 0 1.75.784 1.75 1.75v1.25h4.25c.69 0 1.25.56 1.25 1.25v5c0 .69-.56 1.25-1.25 1.25h-.25v4.75c0 .69-.56 1.25-1.25 1.25H5c-.69 0-1.25-.56-1.25-1.25v-4.75H3.5c-.69 0-1.25-.56-1.25-1.25zm7-2.5a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v1.25h-5.5zM12 15.75a.75.75 0 0 0 .75-.75v-1.25h6v4.5H5.25v-4.5h6V15c0 .414.336.75.75.75m0-5.5a.75.75 0 0 1 .75.75v1.25h7.5v-4.5H3.75v4.5h7.5V11a.75.75 0 0 1 .75-.75"
-                    clip-rule="evenodd"
                   >
                   </path>
                 </svg>
@@ -840,20 +832,20 @@ exports[`Dashboard Page 3 1`] = `
               type="button"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
+                  clip-rule="evenodd"
+                  d="M5 3.25A1.75 1.75 0 0 0 3.25 5v14c0 .966.784 1.75 1.75 1.75h3.5a.75.75 0 0 0 0-1.5H5a.25.25 0 0 1-.25-.25V5A.25.25 0 0 1 5 4.75h3.5a.75.75 0 0 0 0-1.5zm9.97 3.72a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H8.5a.75.75 0 0 1 0-1.5h9.69l-3.22-3.22a.75.75 0 0 1 0-1.06"
                   fill="currentColor"
                   fill-rule="evenodd"
-                  d="M5 3.25A1.75 1.75 0 0 0 3.25 5v14c0 .966.784 1.75 1.75 1.75h3.5a.75.75 0 0 0 0-1.5H5a.25.25 0 0 1-.25-.25V5A.25.25 0 0 1 5 4.75h3.5a.75.75 0 0 0 0-1.5zm9.97 3.72a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H8.5a.75.75 0 0 1 0-1.5h9.69l-3.22-3.22a.75.75 0 0 1 0-1.06"
-                  clip-rule="evenodd"
                 >
                 </path>
               </svg>
@@ -873,66 +865,53 @@ exports[`Dashboard Page 3 1`] = `
   <h1 data-size="md">
     Schweigaardsgate skole
   </h1>
-  <div>
-    <div
-      role="tablist"
-      tabindex="0"
-    >
-      <button
-        id="tab-_r_s_"
+  <ds-tabs data-utabs>
+    <ds-tablist role="tablist">
+      <ds-tab
+        aria-controls="_r_10_-overview"
         aria-selected="false"
         data-value="overview"
+        id="<removed>"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_10_"
       >
         Oversikt
-      </button>
-      <button
-        id="tab-_r_t_"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_10_-tests"
         aria-selected="false"
         data-value="tests"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_11_"
       >
         Prøver
-      </button>
-      <button
-        id="tab-_r_u_"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_10_-test-answers"
         aria-selected="true"
         data-value="test-answers"
+        id="<removed>"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
         tabindex="0"
-        aria-controls="tabpanel-_r_12_"
       >
         Prøvesvar
-      </button>
-      <button
-        id="tab-_r_v_"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_10_-settings"
         aria-selected="false"
         data-value="settings"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_13_"
       >
         Innstillinger
-      </button>
-    </div>
-    <div
-      id="tabpanel-_r_10_"
-      role="tabpanel"
-      tabindex="0"
+      </ds-tab>
+    </ds-tablist>
+    <ds-tabpanel
+      aria-hidden="true"
+      aria-labelledby="<removed>"
       hidden
-      aria-labelledby="tab-_r_s_"
+      id="<removed>"
+      role="tabpanel"
     >
       <p data-variant="default">
         Her får du en oversikt over all den overordnede informasjonen.
@@ -975,23 +954,23 @@ exports[`Dashboard Page 3 1`] = `
           <div>
             <svg
               aria-label="laster inn"
+              data-size="lg"
               role="img"
               viewbox="0 0 50 50"
-              data-size="lg"
             >
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
@@ -999,12 +978,12 @@ exports[`Dashboard Page 3 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_11_"
-      role="tabpanel"
+    </ds-tabpanel>
+    <ds-tabpanel
+      aria-hidden="true"
       hidden
-      aria-labelledby="tab-_r_t_"
+      id="<removed>"
+      role="tabpanel"
     >
       <p data-variant="default">
         Oversikt over prøver for Schweigaardsgate skole.
@@ -1034,18 +1013,18 @@ exports[`Dashboard Page 3 1`] = `
           </h2>
           <div>
             <a
-              href="/"
-              data-variant="default"
               data-color="neutral"
+              data-variant="default"
+              href="/"
             >
               <h2>
                 Administrer prøve X
               </h2>
             </a>
             <a
-              href="/"
-              data-variant="default"
               data-color="neutral"
+              data-variant="default"
+              href="/"
             >
               <h2>
                 Administrer prøve Y
@@ -1067,23 +1046,23 @@ exports[`Dashboard Page 3 1`] = `
           <div>
             <svg
               aria-label="laster inn"
+              data-size="lg"
               role="img"
               viewbox="0 0 50 50"
-              data-size="lg"
             >
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
@@ -1091,12 +1070,13 @@ exports[`Dashboard Page 3 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_12_"
+    </ds-tabpanel>
+    <ds-tabpanel
+      aria-hidden="false"
+      aria-labelledby="<removed>"
+      id="<removed>"
       role="tabpanel"
       tabindex="0"
-      aria-labelledby="tab-_r_u_"
     >
       <p data-variant="default">
         Oversikt over prøvesvar for Schweigaardsgate skole.
@@ -1139,23 +1119,23 @@ exports[`Dashboard Page 3 1`] = `
           <div>
             <svg
               aria-label="laster inn"
+              data-size="lg"
               role="img"
               viewbox="0 0 50 50"
-              data-size="lg"
             >
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
@@ -1163,12 +1143,12 @@ exports[`Dashboard Page 3 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_13_"
-      role="tabpanel"
+    </ds-tabpanel>
+    <ds-tabpanel
+      aria-hidden="true"
       hidden
-      aria-labelledby="tab-_r_v_"
+      id="<removed>"
+      role="tabpanel"
     >
       <div>
         <div>
@@ -1192,203 +1172,209 @@ exports[`Dashboard Page 3 1`] = `
         <div>
           <div>
             <div
-              data-variant="tinted"
               data-color="support1"
+              data-variant="tinted"
             >
               <h2>
                 Generelle innstillinger
               </h2>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  id="<removed>"
                   role="switch"
-                  id="dark-mode"
                   type="checkbox"
-                  aria-describedby="dark-mode:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="dark-mode"
+                  for="<removed>"
                 >
                   Mørk modus
                 </label>
                 <div
                   data-field="description"
-                  id="dark-mode:description:1"
+                  id="<removed>"
                 >
                   Et mørkere grensesnitt for å spare øynene.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  checked
+                  id="<removed>"
                   role="switch"
-                  id="auto-updates"
                   type="checkbox"
                   value="auto-updates"
-                  checked
-                  aria-describedby="auto-updates:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="auto-updates"
+                  for="<removed>"
                 >
                   Automatiske oppdateringer
                 </label>
                 <div
                   data-field="description"
-                  id="auto-updates:description:1"
+                  id="<removed>"
                 >
                   Bruk automatisk oppdateringer for å holde systemet oppdatert.
                 </div>
-              </div>
+              </ds-field>
             </div>
             <div
-              data-variant="tinted"
               data-color="support1"
+              data-variant="tinted"
             >
               <h2>
                 Personvern
               </h2>
-              <fieldset>
-                <legend data-weight="medium">
+              <fieldset aria-labelledby="<removed>">
+                <legend
+                  data-weight="medium"
+                  id="<removed>"
+                >
                   Hvem kan se profilen din?
                 </legend>
-                <p data-variant="default">
+                <p
+                  data-variant="default"
+                  id="<removed>"
+                >
                   Velg hvem som har tilgang til å se profilen din.
                 </p>
-                <div>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-public"
+                    checked
+                    id="<removed>"
+                    name="privacy"
                     type="radio"
                     value="public"
-                    checked
-                    name="privacy"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-public"
+                    for="<removed>"
                   >
                     Alle
                   </label>
-                </div>
-                <div>
+                </ds-field>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-friends"
+                    aria-describedby="<removed>"
+                    id="<removed>"
+                    name="privacy"
                     type="radio"
                     value="friends"
-                    name="privacy"
-                    aria-describedby="privacy-friends:description:1"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-friends"
+                    for="<removed>"
                   >
                     Kun venner
                   </label>
                   <div
                     data-field="description"
-                    id="privacy-friends:description:1"
+                    id="<removed>"
                   >
                     Bare personer du har lagt til kan se profilen din.
                   </div>
-                </div>
-                <div>
+                </ds-field>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-private"
+                    id="<removed>"
+                    name="privacy"
                     type="radio"
                     value="private"
-                    name="privacy"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-private"
+                    for="<removed>"
                   >
                     Kun meg
                   </label>
-                </div>
+                </ds-field>
                 <p
                   data-field="validation"
                   hidden
-                  id="validation-privacy"
+                  id="<removed>"
                 >
                 </p>
               </fieldset>
             </div>
             <div
-              data-variant="tinted"
               data-color="support1"
+              data-variant="tinted"
             >
               <h2>
                 Varsler
               </h2>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  id="<removed>"
                   role="switch"
-                  id="sound-notifications"
                   type="checkbox"
                   value="sound-notifications"
-                  aria-describedby="sound-notifications:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="sound-notifications"
+                  for="<removed>"
                 >
                   Lydvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="sound-notifications:description:1"
+                  id="<removed>"
                 >
                   Spill av lyd når et varsel mottas.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  id="<removed>"
                   role="switch"
-                  id="popup-notifications"
                   type="checkbox"
                   value="popup-notifications"
-                  aria-describedby="popup-notifications:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="popup-notifications"
+                  for="<removed>"
                 >
                   Popup-varsler
                 </label>
                 <div
                   data-field="description"
-                  id="popup-notifications:description:1"
+                  id="<removed>"
                 >
                   Vis popup-varsler på skjermen.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  id="<removed>"
                   role="switch"
-                  id="email-notifications"
                   type="checkbox"
                   value="email-notifications"
-                  aria-describedby="email-notifications:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="email-notifications"
+                  for="<removed>"
                 >
                   E-postvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="email-notifications:description:1"
+                  id="<removed>"
                 >
                   Tillat e-postvarsler for viktige oppdateringer.
                 </div>
-              </div>
+              </ds-field>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </ds-tabpanel>
+  </ds-tabs>
 </div>
 `;
 
@@ -1416,10 +1402,10 @@ exports[`Dashboard Page 4 1`] = `
     </a>
     <div>
       <button
-        type="button"
         data-color="neutral"
-        popovertarget="usermenu2"
         data-show="md"
+        popovertarget="usermenu2"
+        type="button"
       >
         <div>
           <h3
@@ -1429,94 +1415,93 @@ exports[`Dashboard Page 4 1`] = `
             Stian Hansen
           </h3>
           <p
-            data-variant="default"
             data-size="xs"
+            data-variant="default"
           >
             Admin
           </p>
         </div>
         <span
+          aria-hidden="true"
           data-variant="circle"
           role="img"
-          aria-hidden="true"
         >
           <span>
             SH
           </span>
         </span>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
           aria-hidden="true"
+          fill="none"
+          focusable="false"
+          height="1em"
+          role="img"
+          viewbox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
+            clip-rule="evenodd"
+            d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
             fill="currentColor"
             fill-rule="evenodd"
-            d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
-            clip-rule="evenodd"
           >
           </path>
         </svg>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
           aria-hidden="true"
+          fill="none"
+          focusable="false"
+          height="1em"
+          role="img"
+          viewbox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
+            clip-rule="evenodd"
+            d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
             fill="currentColor"
             fill-rule="evenodd"
-            d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
-            clip-rule="evenodd"
           >
           </path>
         </svg>
       </button>
       <div
-        id="usermenu2"
-        popover="manual"
+        data-placement="bottom-end"
         data-variant="default"
+        id="<removed>"
+        popover="manual"
       >
+        <h2>
+          Bytt profil
+        </h2>
         <ul>
-          <li>
-            <h2>
-              Bytt profil
-            </h2>
-          </li>
           <li>
             <button
               data-variant="tertiary"
               type="button"
             >
               <span
+                aria-hidden="true"
                 data-variant="circle"
                 role="img"
-                aria-hidden="true"
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
                   aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="1em"
+                  role="img"
+                  viewbox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
+                    clip-rule="evenodd"
+                    d="M2.25 7.5c0-.69.56-1.25 1.25-1.25h4.25V5c0-.966.784-1.75 1.75-1.75h5c.966 0 1.75.784 1.75 1.75v1.25h4.25c.69 0 1.25.56 1.25 1.25v5c0 .69-.56 1.25-1.25 1.25h-.25v4.75c0 .69-.56 1.25-1.25 1.25H5c-.69 0-1.25-.56-1.25-1.25v-4.75H3.5c-.69 0-1.25-.56-1.25-1.25zm7-2.5a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v1.25h-5.5zM12 15.75a.75.75 0 0 0 .75-.75v-1.25h6v4.5H5.25v-4.5h6V15c0 .414.336.75.75.75m0-5.5a.75.75 0 0 1 .75.75v1.25h7.5v-4.5H3.75v4.5h7.5V11a.75.75 0 0 1 .75-.75"
                     fill="currentColor"
                     fill-rule="evenodd"
-                    d="M2.25 7.5c0-.69.56-1.25 1.25-1.25h4.25V5c0-.966.784-1.75 1.75-1.75h5c.966 0 1.75.784 1.75 1.75v1.25h4.25c.69 0 1.25.56 1.25 1.25v5c0 .69-.56 1.25-1.25 1.25h-.25v4.75c0 .69-.56 1.25-1.25 1.25H5c-.69 0-1.25-.56-1.25-1.25v-4.75H3.5c-.69 0-1.25-.56-1.25-1.25zm7-2.5a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v1.25h-5.5zM12 15.75a.75.75 0 0 0 .75-.75v-1.25h6v4.5H5.25v-4.5h6V15c0 .414.336.75.75.75m0-5.5a.75.75 0 0 1 .75.75v1.25h7.5v-4.5H3.75v4.5h7.5V11a.75.75 0 0 1 .75-.75"
-                    clip-rule="evenodd"
                   >
                   </path>
                 </svg>
@@ -1536,20 +1521,20 @@ exports[`Dashboard Page 4 1`] = `
               type="button"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
+                  clip-rule="evenodd"
+                  d="M5 3.25A1.75 1.75 0 0 0 3.25 5v14c0 .966.784 1.75 1.75 1.75h3.5a.75.75 0 0 0 0-1.5H5a.25.25 0 0 1-.25-.25V5A.25.25 0 0 1 5 4.75h3.5a.75.75 0 0 0 0-1.5zm9.97 3.72a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H8.5a.75.75 0 0 1 0-1.5h9.69l-3.22-3.22a.75.75 0 0 1 0-1.06"
                   fill="currentColor"
                   fill-rule="evenodd"
-                  d="M5 3.25A1.75 1.75 0 0 0 3.25 5v14c0 .966.784 1.75 1.75 1.75h3.5a.75.75 0 0 0 0-1.5H5a.25.25 0 0 1-.25-.25V5A.25.25 0 0 1 5 4.75h3.5a.75.75 0 0 0 0-1.5zm9.97 3.72a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H8.5a.75.75 0 0 1 0-1.5h9.69l-3.22-3.22a.75.75 0 0 1 0-1.06"
-                  clip-rule="evenodd"
                 >
                 </path>
               </svg>
@@ -1569,66 +1554,53 @@ exports[`Dashboard Page 4 1`] = `
   <h1 data-size="md">
     Schweigaardsgate skole
   </h1>
-  <div>
-    <div
-      role="tablist"
-      tabindex="0"
-    >
-      <button
-        id="tab-_r_18_"
+  <ds-tabs data-utabs>
+    <ds-tablist role="tablist">
+      <ds-tab
+        aria-controls="_r_1e_-overview"
         aria-selected="false"
         data-value="overview"
+        id="<removed>"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_1c_"
       >
         Oversikt
-      </button>
-      <button
-        id="tab-_r_19_"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_1e_-tests"
         aria-selected="false"
         data-value="tests"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_1d_"
       >
         Prøver
-      </button>
-      <button
-        id="tab-_r_1a_"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_1e_-test-answers"
         aria-selected="false"
         data-value="test-answers"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_1e_"
       >
         Prøvesvar
-      </button>
-      <button
-        id="tab-_r_1b_"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_1e_-settings"
         aria-selected="true"
         data-value="settings"
+        id="<removed>"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
         tabindex="0"
-        aria-controls="tabpanel-_r_1f_"
       >
         Innstillinger
-      </button>
-    </div>
-    <div
-      id="tabpanel-_r_1c_"
-      role="tabpanel"
-      tabindex="0"
+      </ds-tab>
+    </ds-tablist>
+    <ds-tabpanel
+      aria-hidden="true"
+      aria-labelledby="<removed>"
       hidden
-      aria-labelledby="tab-_r_18_"
+      id="<removed>"
+      role="tabpanel"
     >
       <p data-variant="default">
         Her får du en oversikt over all den overordnede informasjonen.
@@ -1671,23 +1643,23 @@ exports[`Dashboard Page 4 1`] = `
           <div>
             <svg
               aria-label="laster inn"
+              data-size="lg"
               role="img"
               viewbox="0 0 50 50"
-              data-size="lg"
             >
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
@@ -1695,12 +1667,12 @@ exports[`Dashboard Page 4 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_1d_"
-      role="tabpanel"
+    </ds-tabpanel>
+    <ds-tabpanel
+      aria-hidden="true"
       hidden
-      aria-labelledby="tab-_r_19_"
+      id="<removed>"
+      role="tabpanel"
     >
       <p data-variant="default">
         Oversikt over prøver for Schweigaardsgate skole.
@@ -1730,18 +1702,18 @@ exports[`Dashboard Page 4 1`] = `
           </h2>
           <div>
             <a
-              href="/"
-              data-variant="default"
               data-color="neutral"
+              data-variant="default"
+              href="/"
             >
               <h2>
                 Administrer prøve X
               </h2>
             </a>
             <a
-              href="/"
-              data-variant="default"
               data-color="neutral"
+              data-variant="default"
+              href="/"
             >
               <h2>
                 Administrer prøve Y
@@ -1763,23 +1735,23 @@ exports[`Dashboard Page 4 1`] = `
           <div>
             <svg
               aria-label="laster inn"
+              data-size="lg"
               role="img"
               viewbox="0 0 50 50"
-              data-size="lg"
             >
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
@@ -1787,13 +1759,12 @@ exports[`Dashboard Page 4 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_1e_"
-      role="tabpanel"
-      tabindex="0"
+    </ds-tabpanel>
+    <ds-tabpanel
+      aria-hidden="true"
       hidden
-      aria-labelledby="tab-_r_1a_"
+      id="<removed>"
+      role="tabpanel"
     >
       <p data-variant="default">
         Oversikt over prøvesvar for Schweigaardsgate skole.
@@ -1836,23 +1807,23 @@ exports[`Dashboard Page 4 1`] = `
           <div>
             <svg
               aria-label="laster inn"
+              data-size="lg"
               role="img"
               viewbox="0 0 50 50"
-              data-size="lg"
             >
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
@@ -1860,11 +1831,13 @@ exports[`Dashboard Page 4 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_1f_"
+    </ds-tabpanel>
+    <ds-tabpanel
+      aria-hidden="false"
+      aria-labelledby="<removed>"
+      id="<removed>"
       role="tabpanel"
-      aria-labelledby="tab-_r_1b_"
+      tabindex="0"
     >
       <div>
         <div>
@@ -1888,203 +1861,209 @@ exports[`Dashboard Page 4 1`] = `
         <div>
           <div>
             <div
-              data-variant="tinted"
               data-color="support1"
+              data-variant="tinted"
             >
               <h2>
                 Generelle innstillinger
               </h2>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  id="<removed>"
                   role="switch"
-                  id="dark-mode"
                   type="checkbox"
-                  aria-describedby="dark-mode:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="dark-mode"
+                  for="<removed>"
                 >
                   Mørk modus
                 </label>
                 <div
                   data-field="description"
-                  id="dark-mode:description:1"
+                  id="<removed>"
                 >
                   Et mørkere grensesnitt for å spare øynene.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  checked
+                  id="<removed>"
                   role="switch"
-                  id="auto-updates"
                   type="checkbox"
                   value="auto-updates"
-                  checked
-                  aria-describedby="auto-updates:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="auto-updates"
+                  for="<removed>"
                 >
                   Automatiske oppdateringer
                 </label>
                 <div
                   data-field="description"
-                  id="auto-updates:description:1"
+                  id="<removed>"
                 >
                   Bruk automatisk oppdateringer for å holde systemet oppdatert.
                 </div>
-              </div>
+              </ds-field>
             </div>
             <div
-              data-variant="tinted"
               data-color="support1"
+              data-variant="tinted"
             >
               <h2>
                 Personvern
               </h2>
-              <fieldset>
-                <legend data-weight="medium">
+              <fieldset aria-labelledby="<removed>">
+                <legend
+                  data-weight="medium"
+                  id="<removed>"
+                >
                   Hvem kan se profilen din?
                 </legend>
-                <p data-variant="default">
+                <p
+                  data-variant="default"
+                  id="<removed>"
+                >
                   Velg hvem som har tilgang til å se profilen din.
                 </p>
-                <div>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-public"
+                    checked
+                    id="<removed>"
+                    name="privacy"
                     type="radio"
                     value="public"
-                    checked
-                    name="privacy"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-public"
+                    for="<removed>"
                   >
                     Alle
                   </label>
-                </div>
-                <div>
+                </ds-field>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-friends"
+                    aria-describedby="<removed>"
+                    id="<removed>"
+                    name="privacy"
                     type="radio"
                     value="friends"
-                    name="privacy"
-                    aria-describedby="privacy-friends:description:1"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-friends"
+                    for="<removed>"
                   >
                     Kun venner
                   </label>
                   <div
                     data-field="description"
-                    id="privacy-friends:description:1"
+                    id="<removed>"
                   >
                     Bare personer du har lagt til kan se profilen din.
                   </div>
-                </div>
-                <div>
+                </ds-field>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-private"
+                    id="<removed>"
+                    name="privacy"
                     type="radio"
                     value="private"
-                    name="privacy"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-private"
+                    for="<removed>"
                   >
                     Kun meg
                   </label>
-                </div>
+                </ds-field>
                 <p
                   data-field="validation"
                   hidden
-                  id="validation-privacy"
+                  id="<removed>"
                 >
                 </p>
               </fieldset>
             </div>
             <div
-              data-variant="tinted"
               data-color="support1"
+              data-variant="tinted"
             >
               <h2>
                 Varsler
               </h2>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  id="<removed>"
                   role="switch"
-                  id="sound-notifications"
                   type="checkbox"
                   value="sound-notifications"
-                  aria-describedby="sound-notifications:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="sound-notifications"
+                  for="<removed>"
                 >
                   Lydvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="sound-notifications:description:1"
+                  id="<removed>"
                 >
                   Spill av lyd når et varsel mottas.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  id="<removed>"
                   role="switch"
-                  id="popup-notifications"
                   type="checkbox"
                   value="popup-notifications"
-                  aria-describedby="popup-notifications:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="popup-notifications"
+                  for="<removed>"
                 >
                   Popup-varsler
                 </label>
                 <div
                   data-field="description"
-                  id="popup-notifications:description:1"
+                  id="<removed>"
                 >
                   Vis popup-varsler på skjermen.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  id="<removed>"
                   role="switch"
-                  id="email-notifications"
                   type="checkbox"
                   value="email-notifications"
-                  aria-describedby="email-notifications:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="email-notifications"
+                  for="<removed>"
                 >
                   E-postvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="email-notifications:description:1"
+                  id="<removed>"
                 >
                   Tillat e-postvarsler for viktige oppdateringer.
                 </div>
-              </div>
+              </ds-field>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </ds-tabpanel>
+  </ds-tabs>
 </div>
 `;
 
@@ -2112,10 +2091,10 @@ exports[`Dashboard Story 1`] = `
     </a>
     <div>
       <button
-        type="button"
         data-color="neutral"
-        popovertarget="usermenu2"
         data-show="md"
+        popovertarget="usermenu2"
+        type="button"
       >
         <div>
           <h3
@@ -2125,94 +2104,93 @@ exports[`Dashboard Story 1`] = `
             Stian Hansen
           </h3>
           <p
-            data-variant="default"
             data-size="xs"
+            data-variant="default"
           >
             Admin
           </p>
         </div>
         <span
+          aria-hidden="true"
           data-variant="circle"
           role="img"
-          aria-hidden="true"
         >
           <span>
             SH
           </span>
         </span>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
           aria-hidden="true"
+          fill="none"
+          focusable="false"
+          height="1em"
+          role="img"
+          viewbox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
+            clip-rule="evenodd"
+            d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
             fill="currentColor"
             fill-rule="evenodd"
-            d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
-            clip-rule="evenodd"
           >
           </path>
         </svg>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
           aria-hidden="true"
+          fill="none"
+          focusable="false"
+          height="1em"
+          role="img"
+          viewbox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
+            clip-rule="evenodd"
+            d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
             fill="currentColor"
             fill-rule="evenodd"
-            d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
-            clip-rule="evenodd"
           >
           </path>
         </svg>
       </button>
       <div
-        id="usermenu2"
-        popover="manual"
+        data-placement="bottom-end"
         data-variant="default"
+        id="<removed>"
+        popover="manual"
       >
+        <h2>
+          Bytt profil
+        </h2>
         <ul>
-          <li>
-            <h2>
-              Bytt profil
-            </h2>
-          </li>
           <li>
             <button
               data-variant="tertiary"
               type="button"
             >
               <span
+                aria-hidden="true"
                 data-variant="circle"
                 role="img"
-                aria-hidden="true"
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  fill="none"
-                  viewbox="0 0 24 24"
-                  focusable="false"
-                  role="img"
                   aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="1em"
+                  role="img"
+                  viewbox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
+                    clip-rule="evenodd"
+                    d="M2.25 7.5c0-.69.56-1.25 1.25-1.25h4.25V5c0-.966.784-1.75 1.75-1.75h5c.966 0 1.75.784 1.75 1.75v1.25h4.25c.69 0 1.25.56 1.25 1.25v5c0 .69-.56 1.25-1.25 1.25h-.25v4.75c0 .69-.56 1.25-1.25 1.25H5c-.69 0-1.25-.56-1.25-1.25v-4.75H3.5c-.69 0-1.25-.56-1.25-1.25zm7-2.5a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v1.25h-5.5zM12 15.75a.75.75 0 0 0 .75-.75v-1.25h6v4.5H5.25v-4.5h6V15c0 .414.336.75.75.75m0-5.5a.75.75 0 0 1 .75.75v1.25h7.5v-4.5H3.75v4.5h7.5V11a.75.75 0 0 1 .75-.75"
                     fill="currentColor"
                     fill-rule="evenodd"
-                    d="M2.25 7.5c0-.69.56-1.25 1.25-1.25h4.25V5c0-.966.784-1.75 1.75-1.75h5c.966 0 1.75.784 1.75 1.75v1.25h4.25c.69 0 1.25.56 1.25 1.25v5c0 .69-.56 1.25-1.25 1.25h-.25v4.75c0 .69-.56 1.25-1.25 1.25H5c-.69 0-1.25-.56-1.25-1.25v-4.75H3.5c-.69 0-1.25-.56-1.25-1.25zm7-2.5a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v1.25h-5.5zM12 15.75a.75.75 0 0 0 .75-.75v-1.25h6v4.5H5.25v-4.5h6V15c0 .414.336.75.75.75m0-5.5a.75.75 0 0 1 .75.75v1.25h7.5v-4.5H3.75v4.5h7.5V11a.75.75 0 0 1 .75-.75"
-                    clip-rule="evenodd"
                   >
                   </path>
                 </svg>
@@ -2232,20 +2210,20 @@ exports[`Dashboard Story 1`] = `
               type="button"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
+                  clip-rule="evenodd"
+                  d="M5 3.25A1.75 1.75 0 0 0 3.25 5v14c0 .966.784 1.75 1.75 1.75h3.5a.75.75 0 0 0 0-1.5H5a.25.25 0 0 1-.25-.25V5A.25.25 0 0 1 5 4.75h3.5a.75.75 0 0 0 0-1.5zm9.97 3.72a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H8.5a.75.75 0 0 1 0-1.5h9.69l-3.22-3.22a.75.75 0 0 1 0-1.06"
                   fill="currentColor"
                   fill-rule="evenodd"
-                  d="M5 3.25A1.75 1.75 0 0 0 3.25 5v14c0 .966.784 1.75 1.75 1.75h3.5a.75.75 0 0 0 0-1.5H5a.25.25 0 0 1-.25-.25V5A.25.25 0 0 1 5 4.75h3.5a.75.75 0 0 0 0-1.5zm9.97 3.72a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H8.5a.75.75 0 0 1 0-1.5h9.69l-3.22-3.22a.75.75 0 0 1 0-1.06"
-                  clip-rule="evenodd"
                 >
                 </path>
               </svg>
@@ -2265,65 +2243,52 @@ exports[`Dashboard Story 1`] = `
   <h1 data-size="md">
     Schweigaardsgate skole
   </h1>
-  <div>
-    <div
-      role="tablist"
-      tabindex="0"
-    >
-      <button
-        id="tab-_r_4_"
+  <ds-tabs data-utabs>
+    <ds-tablist role="tablist">
+      <ds-tab
+        aria-controls="_r_4_-overview"
         aria-selected="true"
         data-value="overview"
+        id="<removed>"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
         tabindex="0"
-        aria-controls="tabpanel-_r_8_"
       >
         Oversikt
-      </button>
-      <button
-        id="tab-_r_5_"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_4_-tests"
         aria-selected="false"
         data-value="tests"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_9_"
       >
         Prøver
-      </button>
-      <button
-        id="tab-_r_6_"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_4_-test-answers"
         aria-selected="false"
         data-value="test-answers"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_a_"
       >
         Prøvesvar
-      </button>
-      <button
-        id="tab-_r_7_"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_4_-settings"
         aria-selected="false"
         data-value="settings"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_b_"
       >
         Innstillinger
-      </button>
-    </div>
-    <div
-      id="tabpanel-_r_8_"
+      </ds-tab>
+    </ds-tablist>
+    <ds-tabpanel
+      aria-hidden="false"
+      aria-labelledby="<removed>"
+      id="<removed>"
       role="tabpanel"
       tabindex="0"
-      aria-labelledby="tab-_r_4_"
     >
       <p data-variant="default">
         Her får du en oversikt over all den overordnede informasjonen.
@@ -2366,23 +2331,23 @@ exports[`Dashboard Story 1`] = `
           <div>
             <svg
               aria-label="laster inn"
+              data-size="lg"
               role="img"
               viewbox="0 0 50 50"
-              data-size="lg"
             >
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
@@ -2390,12 +2355,12 @@ exports[`Dashboard Story 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_9_"
-      role="tabpanel"
+    </ds-tabpanel>
+    <ds-tabpanel
+      aria-hidden="true"
       hidden
-      aria-labelledby="tab-_r_5_"
+      id="<removed>"
+      role="tabpanel"
     >
       <p data-variant="default">
         Oversikt over prøver for Schweigaardsgate skole.
@@ -2425,18 +2390,18 @@ exports[`Dashboard Story 1`] = `
           </h2>
           <div>
             <a
-              href="/"
-              data-variant="default"
               data-color="neutral"
+              data-variant="default"
+              href="/"
             >
               <h2>
                 Administrer prøve X
               </h2>
             </a>
             <a
-              href="/"
-              data-variant="default"
               data-color="neutral"
+              data-variant="default"
+              href="/"
             >
               <h2>
                 Administrer prøve Y
@@ -2458,23 +2423,23 @@ exports[`Dashboard Story 1`] = `
           <div>
             <svg
               aria-label="laster inn"
+              data-size="lg"
               role="img"
               viewbox="0 0 50 50"
-              data-size="lg"
             >
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
@@ -2482,13 +2447,12 @@ exports[`Dashboard Story 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_a_"
-      role="tabpanel"
-      tabindex="0"
+    </ds-tabpanel>
+    <ds-tabpanel
+      aria-hidden="true"
       hidden
-      aria-labelledby="tab-_r_6_"
+      id="<removed>"
+      role="tabpanel"
     >
       <p data-variant="default">
         Oversikt over prøvesvar for Schweigaardsgate skole.
@@ -2531,23 +2495,23 @@ exports[`Dashboard Story 1`] = `
           <div>
             <svg
               aria-label="laster inn"
+              data-size="lg"
               role="img"
               viewbox="0 0 50 50"
-              data-size="lg"
             >
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
               <circle
                 cx="25"
                 cy="25"
-                r="20"
                 fill="none"
+                r="20"
                 stroke-width="5"
               >
               </circle>
@@ -2555,12 +2519,12 @@ exports[`Dashboard Story 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_b_"
-      role="tabpanel"
+    </ds-tabpanel>
+    <ds-tabpanel
+      aria-hidden="true"
       hidden
-      aria-labelledby="tab-_r_7_"
+      id="<removed>"
+      role="tabpanel"
     >
       <div>
         <div>
@@ -2584,202 +2548,208 @@ exports[`Dashboard Story 1`] = `
         <div>
           <div>
             <div
-              data-variant="tinted"
               data-color="support1"
+              data-variant="tinted"
             >
               <h2>
                 Generelle innstillinger
               </h2>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  id="<removed>"
                   role="switch"
-                  id="dark-mode"
                   type="checkbox"
-                  aria-describedby="dark-mode:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="dark-mode"
+                  for="<removed>"
                 >
                   Mørk modus
                 </label>
                 <div
                   data-field="description"
-                  id="dark-mode:description:1"
+                  id="<removed>"
                 >
                   Et mørkere grensesnitt for å spare øynene.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  checked
+                  id="<removed>"
                   role="switch"
-                  id="auto-updates"
                   type="checkbox"
                   value="auto-updates"
-                  checked
-                  aria-describedby="auto-updates:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="auto-updates"
+                  for="<removed>"
                 >
                   Automatiske oppdateringer
                 </label>
                 <div
                   data-field="description"
-                  id="auto-updates:description:1"
+                  id="<removed>"
                 >
                   Bruk automatisk oppdateringer for å holde systemet oppdatert.
                 </div>
-              </div>
+              </ds-field>
             </div>
             <div
-              data-variant="tinted"
               data-color="support1"
+              data-variant="tinted"
             >
               <h2>
                 Personvern
               </h2>
-              <fieldset>
-                <legend data-weight="medium">
+              <fieldset aria-labelledby="<removed>">
+                <legend
+                  data-weight="medium"
+                  id="<removed>"
+                >
                   Hvem kan se profilen din?
                 </legend>
-                <p data-variant="default">
+                <p
+                  data-variant="default"
+                  id="<removed>"
+                >
                   Velg hvem som har tilgang til å se profilen din.
                 </p>
-                <div>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-public"
+                    checked
+                    id="<removed>"
+                    name="privacy"
                     type="radio"
                     value="public"
-                    checked
-                    name="privacy"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-public"
+                    for="<removed>"
                   >
                     Alle
                   </label>
-                </div>
-                <div>
+                </ds-field>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-friends"
+                    aria-describedby="<removed>"
+                    id="<removed>"
+                    name="privacy"
                     type="radio"
                     value="friends"
-                    name="privacy"
-                    aria-describedby="privacy-friends:description:1"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-friends"
+                    for="<removed>"
                   >
                     Kun venner
                   </label>
                   <div
                     data-field="description"
-                    id="privacy-friends:description:1"
+                    id="<removed>"
                   >
                     Bare personer du har lagt til kan se profilen din.
                   </div>
-                </div>
-                <div>
+                </ds-field>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-private"
+                    id="<removed>"
+                    name="privacy"
                     type="radio"
                     value="private"
-                    name="privacy"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-private"
+                    for="<removed>"
                   >
                     Kun meg
                   </label>
-                </div>
+                </ds-field>
                 <p
                   data-field="validation"
                   hidden
-                  id="validation-privacy"
+                  id="<removed>"
                 >
                 </p>
               </fieldset>
             </div>
             <div
-              data-variant="tinted"
               data-color="support1"
+              data-variant="tinted"
             >
               <h2>
                 Varsler
               </h2>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  id="<removed>"
                   role="switch"
-                  id="sound-notifications"
                   type="checkbox"
                   value="sound-notifications"
-                  aria-describedby="sound-notifications:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="sound-notifications"
+                  for="<removed>"
                 >
                   Lydvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="sound-notifications:description:1"
+                  id="<removed>"
                 >
                   Spill av lyd når et varsel mottas.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  id="<removed>"
                   role="switch"
-                  id="popup-notifications"
                   type="checkbox"
                   value="popup-notifications"
-                  aria-describedby="popup-notifications:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="popup-notifications"
+                  for="<removed>"
                 >
                   Popup-varsler
                 </label>
                 <div
                   data-field="description"
-                  id="popup-notifications:description:1"
+                  id="<removed>"
                 >
                   Vis popup-varsler på skjermen.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
+                  aria-describedby="<removed>"
+                  id="<removed>"
                   role="switch"
-                  id="email-notifications"
                   type="checkbox"
                   value="email-notifications"
-                  aria-describedby="email-notifications:description:1"
                 >
                 <label
                   data-weight="regular"
-                  for="email-notifications"
+                  for="<removed>"
                 >
                   E-postvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="email-notifications:description:1"
+                  id="<removed>"
                 >
                   Tillat e-postvarsler for viktige oppdateringer.
                 </div>
-              </div>
+              </ds-field>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </ds-tabpanel>
+  </ds-tabs>
 </div>
 `;

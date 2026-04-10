@@ -32,13 +32,13 @@ export const ExportDialog = ({ handleExport }: ExportDialogProps) => {
   };
 
   return (
-    <Dialog.TriggerContext>
-      <Dialog.Trigger
+    <>
+      <Button
         onClick={() => handleExport(dialogExportRef)}
         className={classes.exportButton}
       >
         Eksporter liste
-      </Dialog.Trigger>
+      </Button>
       <Dialog ref={dialogExportRef}>
         <Dialog.Block className={classes.exportDialog}>
           <Heading data-size="xs">Eksporter liste</Heading>
@@ -63,6 +63,6 @@ export const ExportDialog = ({ handleExport }: ExportDialogProps) => {
           </div>
         </Dialog.Block>
       </Dialog>
-    </Dialog.TriggerContext>
+    </>
   );
 };

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { expect, userEvent, within } from 'storybook/test';
+import { expect, userEvent, waitFor, within } from 'storybook/test';
 import { MultiplyIcon, TrashIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { Button } from '../button/Button';
@@ -18,17 +18,25 @@ const meta = preview.meta({
       justifyContent: 'center',
     },
   },
-  play: async (ctx) => {
-    // When not in Docs mode, automatically open the popover
-    const canvas = within(ctx.canvasElement);
+  play: async ({ canvasElement, userEvent }) => {
+    const canvas = within(canvasElement);
     const button = canvas.getByRole('button');
+
     await userEvent.click(button);
-    const popover = ctx.canvasElement.querySelector('[popover]');
-    await expect(popover).toBeVisible();
+
+    const popover = canvasElement.querySelector('[popover]');
+    expect(popover).toBeTruthy();
+
+    await waitFor(() => {
+      expect(popover?.matches(':popover-open')).toBe(true);
+    });
   },
 });
 
 export const Preview = meta.story({
+  parameters: {
+    chromatic: { modes: { desktop: { viewport: { height: 260 } } } },
+  },
   render: (args) => (
     <Popover.TriggerContext>
       <Popover.Trigger variant="tertiary">
@@ -56,22 +64,33 @@ export const Preview = meta.story({
 
     // Check open, click link and close with trigger
     await userEvent.click(button);
-    const dropdown = ctx.canvasElement.querySelector('[popover]');
-    await expect(dropdown).toBeVisible();
+    const popover = ctx.canvasElement.querySelector('[popover]');
+    await waitFor(() => {
+      expect(popover?.matches(':popover-open')).toBe(true);
+    });
     await userEvent.click(button);
-    await expect(dropdown).not.toBeVisible();
+    await waitFor(() => {
+      expect(popover?.matches(':popover-open')).toBe(false);
+    });
 
     // Check close with click outside
     await userEvent.click(button);
-    await expect(dropdown).toBeVisible();
+    await waitFor(() => {
+      expect(popover?.matches(':popover-open')).toBe(true);
+    });
     await userEvent.click(ctx.canvasElement);
-    await expect(dropdown).not.toBeVisible();
+    await waitFor(() => {
+      expect(popover?.matches(':popover-open')).toBe(false);
+    });
 
     await userEvent.click(button);
   },
 });
 
 export const Interactive = meta.story({
+  parameters: {
+    chromatic: { modes: { desktop: { viewport: { height: 208 } } } },
+  },
   render: () => (
     <Popover.TriggerContext>
       <Popover.Trigger aria-label="Lukk" variant="secondary">
@@ -97,6 +116,9 @@ export const Interactive = meta.story({
 });
 
 export const DottedUnderline = meta.story({
+  parameters: {
+    chromatic: { modes: { desktop: { viewport: { height: 228 } } } },
+  },
   render: () => (
     <Popover.TriggerContext>
       <Paragraph>
@@ -120,15 +142,23 @@ export const DottedUnderline = meta.story({
     // Check open and close with trigger
     await userEvent.click(button);
     const dropdown = ctx.canvasElement.querySelector('[popover]');
-    await expect(dropdown).toBeVisible();
+    await waitFor(() => {
+      expect(dropdown?.matches(':popover-open')).toBe(true);
+    });
     await userEvent.click(button);
-    await expect(dropdown).not.toBeVisible();
+    await waitFor(() => {
+      expect(dropdown?.matches(':popover-open')).toBe(false);
+    });
 
     // Check close with click outside
     await userEvent.click(button);
-    await expect(dropdown).toBeVisible();
+    await waitFor(() => {
+      expect(dropdown?.matches(':popover-open')).toBe(true);
+    });
     await userEvent.click(ctx.canvasElement);
-    await expect(dropdown).not.toBeVisible();
+    await waitFor(() => {
+      expect(dropdown?.matches(':popover-open')).toBe(false);
+    });
 
     await userEvent.click(button);
   },
@@ -201,6 +231,9 @@ const VariantsMap: {
 };
 
 export const Variants = meta.story({
+  parameters: {
+    chromatic: { modes: { desktop: { viewport: { height: 290 } } } },
+  },
   render: () => {
     return (
       <div
@@ -229,6 +262,9 @@ export const Variants = meta.story({
 });
 
 export const ColorVariants = meta.story({
+  parameters: {
+    chromatic: { modes: { desktop: { viewport: { height: 290 } } } },
+  },
   render: () => {
     return (
       <div
@@ -257,6 +293,9 @@ export const ColorVariants = meta.story({
 });
 
 export const Controlled = meta.story({
+  parameters: {
+    chromatic: { modes: { desktop: { viewport: { height: 260 } } } },
+  },
   render: (args) => {
     const [open, setOpen] = useState(false);
 
@@ -292,6 +331,9 @@ export const Controlled = meta.story({
 });
 
 export const WithoutContext = meta.story({
+  parameters: {
+    chromatic: { modes: { desktop: { viewport: { height: 260 } } } },
+  },
   render: () => {
     const [open, setOpen] = useState(false);
 

@@ -2,43 +2,35 @@
 
 exports[`Controlled 1`] = `
 <button
+  data-size="sm"
   data-variant="tertiary"
   type="button"
-  data-size="sm"
 >
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewbox="0 0 24 24"
-    focusable="false"
-    role="img"
     aria-hidden="true"
+    fill="none"
+    focusable="false"
+    height="1em"
+    role="img"
+    viewbox="0 0 24 24"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
   >
     <path
+      clip-rule="evenodd"
+      d="M12.53 4.47a.75.75 0 0 0-1.06 0l-3.5 3.5a.75.75 0 0 0 1.06 1.06L12 6.06l2.97 2.97a.75.75 0 1 0 1.06-1.06zm-3.5 10.5a.75.75 0 0 0-1.06 1.06l3.5 3.5a.75.75 0 0 0 1.06 0l3.5-3.5a.75.75 0 1 0-1.06-1.06L12 17.94z"
       fill="currentColor"
       fill-rule="evenodd"
-      d="M12.53 4.47a.75.75 0 0 0-1.06 0l-3.5 3.5a.75.75 0 0 0 1.06 1.06L12 6.06l2.97 2.97a.75.75 0 1 0 1.06-1.06zm-3.5 10.5a.75.75 0 0 0-1.06 1.06l3.5 3.5a.75.75 0 0 0 1.06 0l3.5-3.5a.75.75 0 1 0-1.06-1.06L12 17.94z"
-      clip-rule="evenodd"
     >
     </path>
   </svg>
   Åpne alle
 </button>
 <br>
-<u-details
-  data-variant="default"
-  role="group"
->
-  <u-summary
-    aria-expanded="false"
-    role="button"
-    slot="summary"
-    tabindex="0"
-  >
+<details data-variant="default">
+  <summary>
     Hva er Feide?
-  </u-summary>
+  </summary>
   <div>
     <p>
       Feide er den nasjonale løsningen for trygg innlogging og datadeling i utdanning og forskning.
@@ -50,19 +42,11 @@ exports[`Controlled 1`] = `
       Med en Feide-bruker bruker elever, studenter, forskere og undervisere ett og samme brukernavn og passord til å logge inn på alle tjenester som har Feide som innloggingsløsning. De slipper med andre ord å huske ulike brukernavn og passord for ulike tjenester.
     </p>
   </div>
-</u-details>
-<u-details
-  data-variant="default"
-  role="group"
->
-  <u-summary
-    aria-expanded="false"
-    role="button"
-    slot="summary"
-    tabindex="0"
-  >
+</details>
+<details data-variant="default">
+  <summary>
     Hva er UIDP?
-  </u-summary>
+  </summary>
   <div>
     <p>
       UIDP er Udirs nye løsning for identitets- og tilgangskontroll.
@@ -77,19 +61,11 @@ exports[`Controlled 1`] = `
       UIDP er også integrert med Udir sin gamle påloggingsløsning UBAS.
     </p>
   </div>
-</u-details>
-<u-details
-  data-variant="default"
-  role="group"
->
-  <u-summary
-    aria-expanded="false"
-    role="button"
-    slot="summary"
-    tabindex="0"
-  >
+</details>
+<details data-variant="default">
+  <summary>
     Hva er UBAS?
-  </u-summary>
+  </summary>
   <div>
     <p>
       UBAS er Udirs gamle løsning for identitets- og tilgangskontroll. Fra 2022 blir UBAS gradvis faset ut og erstattet med nyere fellesløsninger (UIDP, Feide, ID-porten, Altinn Autorisasjon).
@@ -98,26 +74,18 @@ exports[`Controlled 1`] = `
       Etter overgang til nye løsninger vil tildeling av roller og tjenestetilganger som hovedregel gjøres i Altinn, og ikke lenger i UBAS.
     </p>
   </div>
-</u-details>
+</details>
 `;
 
 exports[`In Card 1`] = `
 <div
-  data-variant="default"
   data-color="neutral"
+  data-variant="default"
 >
-  <u-details
-    data-variant="default"
-    role="group"
-  >
-    <u-summary
-      aria-expanded="false"
-      role="button"
-      slot="summary"
-      tabindex="0"
-    >
+  <details data-variant="default">
+    <summary>
       Vedlegg
-    </u-summary>
+    </summary>
     <div>
       <ul>
         <li>
@@ -149,43 +117,27 @@ exports[`In Card 1`] = `
         </li>
       </ul>
     </div>
-  </u-details>
+  </details>
 </div>
 `;
 
 exports[`In Card With Color 1`] = `
 <div
-  data-variant="tinted"
   data-color="accent"
+  data-variant="tinted"
 >
-  <u-details
-    data-variant="default"
-    role="group"
-  >
-    <u-summary
-      aria-expanded="false"
-      role="button"
-      slot="summary"
-      tabindex="0"
-    >
+  <details data-variant="default">
+    <summary>
       Kva er nasjonale prøver?
-    </u-summary>
+    </summary>
     <div>
       Føremålet med nasjonale prøver er å gi skolane kunnskap om elevane sine grunnleggjande ferdigheiter i lesing, rekning og engelsk. Informasjonen frå prøvene skal danne grunnlag for undervegsvurdering og kvalitetsutvikling på alle nivå i skolesystemet.
     </div>
-  </u-details>
-  <u-details
-    data-variant="default"
-    role="group"
-  >
-    <u-summary
-      aria-expanded="false"
-      role="button"
-      slot="summary"
-      tabindex="0"
-    >
+  </details>
+  <details data-variant="default">
+    <summary>
       Korleis skal nasjonale prøver brukast?
-    </u-summary>
+    </summary>
     <div>
       <ul>
         <li>
@@ -199,96 +151,64 @@ exports[`In Card With Color 1`] = `
         </li>
       </ul>
     </div>
-  </u-details>
+  </details>
 </div>
 `;
 
 exports[`Preview 1`] = `
-<u-details
-  data-variant="default"
-  role="group"
->
-  <u-summary
-    aria-expanded="false"
-    role="button"
-    slot="summary"
-    tabindex="0"
-  >
+<details data-variant="default">
+  <summary>
     Kva er nasjonale prøver?
-  </u-summary>
+  </summary>
   <div>
     Føremålet med nasjonale prøver er å gi skolane kunnskap om elevane sine grunnleggjande ferdigheiter i lesing, rekning og engelsk. Informasjonen frå prøvene skal danne grunnlag for undervegsvurdering og kvalitetsutvikling på alle nivå i skolesystemet.
   </div>
-</u-details>
+</details>
 `;
 
 exports[`Pseudo States 1`] = `
 <div style="display: flex; flex-direction: column; gap: var(--ds-size-4);">
   <label
-    data-weight="medium"
     data-size="sm"
+    data-weight="medium"
   >
     Default
   </label>
-  <u-details
-    data-variant="default"
-    role="group"
-  >
-    <u-summary
-      aria-expanded="false"
-      role="button"
-      slot="summary"
-      tabindex="0"
-    >
+  <details data-variant="default">
+    <summary>
       Kva er nasjonale prøver?
-    </u-summary>
+    </summary>
     <div>
       Føremålet med nasjonale prøver er å gi skolane kunnskap om elevane sine grunnleggjande ferdigheiter i lesing, rekning og engelsk. Informasjonen frå prøvene skal danne grunnlag for undervegsvurdering og kvalitetsutvikling på alle nivå i skolesystemet.
     </div>
-  </u-details>
+  </details>
   <label
-    data-weight="medium"
     data-size="sm"
+    data-weight="medium"
   >
     Hover
   </label>
-  <u-details
-    data-variant="default"
-    role="group"
-  >
-    <u-summary
-      aria-expanded="false"
-      role="button"
-      slot="summary"
-      tabindex="0"
-    >
+  <details data-variant="default">
+    <summary>
       Kva er nasjonale prøver?
-    </u-summary>
+    </summary>
     <div>
       Føremålet med nasjonale prøver er å gi skolane kunnskap om elevane sine grunnleggjande ferdigheiter i lesing, rekning og engelsk. Informasjonen frå prøvene skal danne grunnlag for undervegsvurdering og kvalitetsutvikling på alle nivå i skolesystemet.
     </div>
-  </u-details>
+  </details>
   <label
-    data-weight="medium"
     data-size="sm"
+    data-weight="medium"
   >
     Focused
   </label>
-  <u-details
-    data-variant="default"
-    role="group"
-  >
-    <u-summary
-      aria-expanded="false"
-      role="button"
-      slot="summary"
-      tabindex="0"
-    >
+  <details data-variant="default">
+    <summary>
       Kva er nasjonale prøver?
-    </u-summary>
+    </summary>
     <div>
       Føremålet med nasjonale prøver er å gi skolane kunnskap om elevane sine grunnleggjande ferdigheiter i lesing, rekning og engelsk. Informasjonen frå prøvene skal danne grunnlag for undervegsvurdering og kvalitetsutvikling på alle nivå i skolesystemet.
     </div>
-  </u-details>
+  </details>
 </div>
 `;

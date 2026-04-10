@@ -2,6 +2,7 @@ import type { ChangeEvent } from 'react';
 import { useRef, useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from '../button/Button';
 import { Checkbox } from '../checkbox/Checkbox';
 import { Field } from '../field/Field';
@@ -14,6 +15,7 @@ import { Textfield } from '../textfield/Textfield';
 import { Heading } from '../typography/heading/Heading';
 import { Label } from '../typography/label/Label';
 import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Prose } from '../typography/prose/Prose';
 import type { DialogProps } from './Dialog';
 import { Dialog } from './Dialog';
 import styles from './dialog.stories.module.scss';
@@ -126,51 +128,141 @@ export const Preview = meta.story({
 });
 
 export const WithoutDialogTriggerContext = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  play: (ctx) => defaultPlay(ctx.canvasElement),
   render(args) {
     const dialogRef = useRef<HTMLDialogElement>(null);
     return (
       <>
         <Button
           variant="secondary"
+          aria-haspopup="dialog"
           onClick={() => dialogRef.current?.showModal()}
         >
-          Åpne Dialog
+          Åpne Dialog med ref
         </Button>
         <Dialog {...args} ref={dialogRef}>
-          <Paragraph data-size="sm">Dialog subtittel</Paragraph>
-          <Heading style={{ marginBottom: 'var(--ds-size-2)' }}>
-            Her bruker vi <code>ref</code> for å åpne dialogen
-          </Heading>
-          <Paragraph style={{ marginBottom: 'var(--ds-size-2)' }}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
-            doloremque obcaecati assumenda odio ducimus sunt et.
-          </Paragraph>
-          Dialog footer
+          <Prose>
+            <Heading>
+              Dialog med <code>ref</code>
+            </Heading>
+            <Paragraph>
+              Her bruker vi <code>ref</code> for å åpne og lukke dialogen
+            </Paragraph>
+            <Paragraph>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+            </Paragraph>
+          </Prose>
+          <Button
+            variant="secondary"
+            onClick={() => dialogRef.current?.close()}
+          >
+            Lukk dialog
+          </Button>
         </Dialog>
       </>
     );
   },
 });
 
+export const WithoutDialogTriggerContextWithCommand = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: (args) => (
+    <>
+      <Button command="show-modal" commandfor="dialog-with-command">
+        Åpne Dialog med command
+      </Button>
+      <Dialog id="dialog-with-command" {...args}>
+        <Prose>
+          <Heading>
+            Dialog med <code>command</code>
+          </Heading>
+          <Paragraph>
+            Her bruker vi <code>command</code> og <code>commandfor</code> for å
+            åpne og lukke dialogen
+          </Paragraph>
+          <Paragraph>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
+            doloremque obcaecati assumenda odio ducimus sunt et.
+          </Paragraph>
+          <Button
+            variant="secondary"
+            command="close"
+            commandfor="dialog-with-command"
+          >
+            Lukk dialog
+          </Button>
+        </Prose>
+      </Dialog>
+    </>
+  ),
+});
+
 export const DialogWithOpenProp = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  play: (ctx) => defaultPlay(ctx.canvasElement),
   render(args) {
     const [open, setOpen] = useState(false);
 
     return (
       <>
-        <Button onClick={() => setOpen((prev) => !prev)}>
-          Open Dialog with prop
+        <Button aria-haspopup="dialog" onClick={() => setOpen((prev) => !prev)}>
+          Åpne Dialog med ekstern tilstand
         </Button>
         <Dialog {...args} open={open} onClose={() => setOpen(false)}>
-          <Paragraph data-size="sm">Dialog subtittel</Paragraph>
-          <Heading style={{ marginBottom: 'var(--ds-size-2)' }}>
-            Dialog header
-          </Heading>
-          <Paragraph style={{ marginBottom: 'var(--ds-size-2)' }}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
-            doloremque obcaecati assumenda odio ducimus sunt et.
-          </Paragraph>
-          Dialog footer
+          <Prose>
+            <Heading>Dialog med ekstern tilstand</Heading>
+            <Paragraph>
+              Her setter vi en ekstern tilstand med <code>open</code> og styrer
+              denne for å åpne og lukke dialogen.
+            </Paragraph>
+            <Paragraph>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+            </Paragraph>
+            <Button variant="secondary" onClick={() => setOpen(false)}>
+              Lukk dialog
+            </Button>
+          </Prose>
+        </Dialog>
+      </>
+    );
+  },
+});
+
+export const CustomCloseButton = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render(args) {
+    return (
+      <>
+        <Button
+          variant="secondary"
+          aria-haspopup="dialog"
+          command="show-modal"
+          commandfor="custom-close-button-dialog"
+        >
+          Åpne Dialog med tilpasset lukkeknapp
+        </Button>
+        <Dialog {...args} id="custom-close-button-dialog" closeButton={false}>
+          <Button
+            command="close"
+            commandfor="custom-close-button-dialog"
+            variant="secondary"
+          >
+            Lukk
+          </Button>
+          <Prose>
+            <Heading>Dialog med tilpasset lukkeknapp</Heading>
+            <Paragraph>
+              Her har vi erstattet det vanlige lukkekrysset med en knapp med
+              tekst
+            </Paragraph>
+            <Paragraph>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+            </Paragraph>
+          </Prose>
         </Dialog>
       </>
     );
@@ -178,13 +270,12 @@ export const DialogWithOpenProp = meta.story({
 });
 
 export const BackdropClosedbyAny = meta.story({
+  parameters: { docs: advancedCodeDocs },
   render() {
-    const dialogRef = useRef<HTMLDialogElement>(null);
-
     return (
       <Dialog.TriggerContext>
         <Dialog.Trigger variant="secondary">Åpne Dialog</Dialog.Trigger>
-        <Dialog ref={dialogRef} closedby="any">
+        <Dialog closedby="any" onClose={() => alert('Dialog ble lukket')}>
           <Heading>
             Dialog med <code>closedby="any"</code>
           </Heading>
@@ -192,7 +283,6 @@ export const BackdropClosedbyAny = meta.story({
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
             doloremque obcaecati assumenda odio ducimus sunt et.
           </Paragraph>
-          <Paragraph data-size="sm">Dialog footer</Paragraph>
         </Dialog>
       </Dialog.TriggerContext>
     );
@@ -240,29 +330,28 @@ export const WithHeaderAndFooter = meta.story({
 });
 
 export const DialogWithForm = meta.story({
-  render(args, context) {
-    const dialogRef = useRef<HTMLDialogElement>(null);
+  parameters: { docs: advancedCodeDocs },
+  render(args) {
     const [input, setInput] = useState('');
 
     return (
       <Dialog.TriggerContext>
         <Dialog.Trigger>Send inn skjema</Dialog.Trigger>
         <Dialog
-          ref={dialogRef}
           onClose={() => setInput('')}
           closedby="any"
+          id="dialog-with-form"
           {...args}
         >
           <Heading style={{ marginBottom: 'var(--ds-size-2)' }}>
             Skjemainnsending
           </Heading>
           <Textfield
-            // @ts-expect-error We want the native "autofocus" and Reacts onMount smartness (see https://react.dev/reference/react-dom/components/input#input)
+            // @ts-expect-error React's own autoFocus prop doesn't work due to being inside the Dialog
             autofocus="true"
             label="Navn"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            id={context.id}
           />
           <div
             style={{
@@ -272,14 +361,19 @@ export const DialogWithForm = meta.story({
             }}
           >
             <Button
+              command="close"
+              commandfor="dialog-with-form"
               onClick={() => {
                 window.alert(`Du har sendt inn skjema med navn: ${input}`);
-                dialogRef.current?.close();
               }}
             >
               Send inn skjema
             </Button>
-            <Button variant="secondary" data-command="close">
+            <Button
+              variant="secondary"
+              command="close"
+              commandfor="dialog-with-form"
+            >
               Avbryt
             </Button>
           </div>
@@ -317,7 +411,7 @@ const DATA_PLACES = [
 ];
 
 export const DialogWithSuggestion = meta.story({
-  render(ctx) {
+  render() {
     const dialogRef = useRef<HTMLDialogElement>(null);
     return (
       <Dialog.TriggerContext>
@@ -330,7 +424,7 @@ export const DialogWithSuggestion = meta.story({
             <Field>
               <Label>Velg en kommune</Label>
               <Suggestion>
-                <Suggestion.Input id={`${ctx.id}-input`} />
+                <Suggestion.Input />
                 <Suggestion.Clear />
                 <Suggestion.List>
                   <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -358,7 +452,10 @@ export const DialogWithSuggestion = meta.story({
             >
               Send inn
             </Button>
-            <Button variant="secondary" data-command="close">
+            <Button
+              onClick={() => dialogRef.current?.close()}
+              variant="secondary"
+            >
               Avbryt
             </Button>
           </Dialog.Block>
@@ -396,13 +493,13 @@ export const DialogNonModal = meta.story({
       gap: 'var(--ds-size-4)',
     },
   },
-  render(context) {
+  render() {
     const dialogRef = useRef<HTMLDialogElement>(null);
     return (
       <>
         <Field style={{ width: '400px' }}>
           <Label>Besvarelse</Label>
-          <Textarea id={'textarea' + context.id} rows={8} />
+          <Textarea rows={8} />
         </Field>
         <Button variant="secondary" onClick={() => dialogRef.current?.show()}>
           Åpne skrivetips

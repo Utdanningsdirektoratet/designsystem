@@ -16,18 +16,19 @@ exports[`Drawer 1`] = `
             }
   </style>
   <dialog
-    data-placement="bottom"
     data-modal="false"
-    closedby="closerequest"
+    data-placement="bottom"
+    id="<removed>"
     open
   >
     <button
+      aria-label="Lukk dialogvindu"
+      command="close"
+      commandfor="_r_1_"
+      data-color="neutral"
       data-icon="true"
       data-variant="tertiary"
       type="button"
-      aria-label="Lukk dialogvindu"
-      data-color="neutral"
-      data-command="close"
     >
     </button>
     <div>
@@ -84,18 +85,19 @@ exports[`Preview 1`] = `
             }
   </style>
   <dialog
-    data-placement="center"
     data-modal="false"
-    closedby="closerequest"
+    data-placement="center"
+    id="<removed>"
     open
   >
     <button
+      aria-label="Lukk dialogvindu"
+      command="close"
+      commandfor="_r_0_"
+      data-color="neutral"
       data-icon="true"
       data-variant="tertiary"
       type="button"
-      aria-label="Lukk dialogvindu"
-      data-color="neutral"
-      data-command="close"
     >
     </button>
     <div>

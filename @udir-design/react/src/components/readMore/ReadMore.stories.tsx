@@ -59,7 +59,7 @@ export const Example = meta.story({
   },
   render: (args) => (
     <Fieldset>
-      <Fieldset.Legend>
+      <Fieldset.Legend id={args.id + 'legend'}>
         Trenger eleven individuelt tilrettelagt opplæring?
       </Fieldset.Legend>
       <Radio

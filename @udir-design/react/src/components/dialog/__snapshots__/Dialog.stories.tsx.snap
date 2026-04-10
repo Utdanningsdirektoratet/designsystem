@@ -2,25 +2,27 @@
 
 exports[`Backdrop Closedby Any 1`] = `
 <button
+  aria-haspopup="dialog"
   data-variant="secondary"
   type="button"
-  aria-haspopup="dialog"
 >
   Åpne Dialog
 </button>
 <dialog
-  data-placement="center"
-  data-modal="true"
   closedby="any"
+  data-modal="true"
+  data-placement="center"
+  id="<removed>"
   open
 >
   <button
+    aria-label="Lukk dialogvindu"
+    command="close"
+    commandfor="_r_5_"
+    data-color="neutral"
     data-icon="true"
     data-variant="tertiary"
     type="button"
-    aria-label="Lukk dialogvindu"
-    data-color="neutral"
-    data-command="close"
   >
   </button>
   <h2>
@@ -32,29 +34,62 @@ exports[`Backdrop Closedby Any 1`] = `
   <p data-variant="default">
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
   </p>
-  <p
-    data-variant="default"
-    data-size="sm"
+</dialog>
+`;
+
+exports[`Custom Close Button 1`] = `
+<button
+  aria-haspopup="dialog"
+  command="show-modal"
+  commandfor="custom-close-button-dialog"
+  data-variant="secondary"
+  type="button"
+>
+  Åpne Dialog med tilpasset lukkeknapp
+</button>
+<dialog
+  data-modal="true"
+  data-placement="center"
+  id="<removed>"
+  open
+>
+  <button
+    command="close"
+    commandfor="custom-close-button-dialog"
+    data-variant="secondary"
+    type="button"
   >
-    Dialog footer
-  </p>
+    Lukk
+  </button>
+  <div>
+    <h2>
+      Dialog med tilpasset lukkeknapp
+    </h2>
+    <p data-variant="default">
+      Her har vi erstattet det vanlige lukkekrysset med en knapp med tekst
+    </p>
+    <p data-variant="default">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+    </p>
+  </div>
 </dialog>
 `;
 
 exports[`Dialog Non Modal 1`] = `
-<div style="width: 400px;">
+<ds-field style="width: 400px;">
   <label
     data-weight="medium"
-    for="textareaundefined"
+    for="<removed>"
   >
     Besvarelse
   </label>
   <textarea
-    id="textareaundefined"
+    id="<removed>"
     rows="8"
+    style="--_ds-field-sizing: <removed>;"
   >
   </textarea>
-</div>
+</ds-field>
 <button
   data-variant="secondary"
   type="button"
@@ -62,19 +97,20 @@ exports[`Dialog Non Modal 1`] = `
   Åpne skrivetips
 </button>
 <dialog
-  data-placement="center"
   data-modal="false"
-  closedby="closerequest"
+  data-placement="center"
+  id="<removed>"
   open
   style="width: 300px; left: 80%;"
 >
   <button
+    aria-label="Lukk dialogvindu"
+    command="close"
+    commandfor="_r_b_"
+    data-color="neutral"
     data-icon="true"
     data-variant="tertiary"
     type="button"
-    aria-label="Lukk dialogvindu"
-    data-color="neutral"
-    data-command="close"
   >
   </button>
   <h2 style="margin-bottom: var(--ds-size-2);">
@@ -102,57 +138,62 @@ exports[`Dialog Non Modal 1`] = `
 
 exports[`Dialog With Form 1`] = `
 <button
+  aria-haspopup="dialog"
   data-variant="primary"
   type="button"
-  aria-haspopup="dialog"
 >
   Send inn skjema
 </button>
 <dialog
-  data-placement="center"
-  data-modal="true"
   closedby="any"
+  data-modal="true"
+  data-placement="center"
+  id="<removed>"
   open
 >
   <button
+    aria-label="Lukk dialogvindu"
+    command="close"
+    commandfor="dialog-with-form"
+    data-color="neutral"
     data-icon="true"
     data-variant="tertiary"
     type="button"
-    aria-label="Lukk dialogvindu"
-    data-color="neutral"
-    data-command="close"
   >
   </button>
   <h2 style="margin-bottom: var(--ds-size-2);">
     Skjemainnsending
   </h2>
-  <div>
+  <ds-field>
     <label
       data-weight="medium"
-      for="components-dialog--dialog-with-form"
+      for="<removed>"
     >
       Navn
     </label>
     <div>
       <input
         autofocus="true"
-        id="components-dialog--dialog-with-form"
+        id="<removed>"
         type="text"
         value
       >
     </div>
-  </div>
+  </ds-field>
   <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-4);">
     <button
+      command="close"
+      commandfor="dialog-with-form"
       data-variant="primary"
       type="button"
     >
       Send inn skjema
     </button>
     <button
+      command="close"
+      commandfor="dialog-with-form"
       data-variant="secondary"
       type="button"
-      data-command="close"
     >
       Avbryt
     </button>
@@ -162,26 +203,27 @@ exports[`Dialog With Form 1`] = `
 
 exports[`Dialog With Max Width 1`] = `
 <button
+  aria-haspopup="dialog"
   data-variant="secondary"
   type="button"
-  aria-haspopup="dialog"
 >
   Åpne Dialog
 </button>
 <dialog
-  data-placement="center"
   data-modal="true"
-  closedby="closerequest"
+  data-placement="center"
+  id="<removed>"
   open
   style="max-width: 1200px;"
 >
   <button
+    aria-label="Lukk dialogvindu"
+    command="close"
+    commandfor="_r_8_"
+    data-color="neutral"
     data-icon="true"
     data-variant="tertiary"
     type="button"
-    aria-label="Lukk dialogvindu"
-    data-color="neutral"
-    data-command="close"
   >
   </button>
   <h2 style="margin-bottom: var(--ds-size-2);">
@@ -195,67 +237,75 @@ exports[`Dialog With Max Width 1`] = `
 
 exports[`Dialog With Open Prop 1`] = `
 <button
+  aria-haspopup="dialog"
   data-variant="primary"
   type="button"
 >
-  Open Dialog with prop
+  Åpne Dialog med ekstern tilstand
 </button>
 <dialog
-  data-placement="center"
   data-modal="true"
-  closedby="closerequest"
+  data-placement="center"
+  id="<removed>"
   open
 >
   <button
+    aria-label="Lukk dialogvindu"
+    command="close"
+    commandfor="_r_3_"
+    data-color="neutral"
     data-icon="true"
     data-variant="tertiary"
     type="button"
-    aria-label="Lukk dialogvindu"
-    data-color="neutral"
-    data-command="close"
   >
   </button>
-  <p
-    data-variant="default"
-    data-size="sm"
-  >
-    Dialog subtittel
-  </p>
-  <h2 style="margin-bottom: var(--ds-size-2);">
-    Dialog header
-  </h2>
-  <p
-    data-variant="default"
-    style="margin-bottom: var(--ds-size-2);"
-  >
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
-  </p>
-  Dialog footer
+  <div>
+    <h2>
+      Dialog med ekstern tilstand
+    </h2>
+    <p data-variant="default">
+      Her setter vi en ekstern tilstand med
+      <code>
+        open
+      </code>
+      og styrer denne for å åpne og lukke dialogen.
+    </p>
+    <p data-variant="default">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+    </p>
+    <button
+      data-variant="secondary"
+      type="button"
+    >
+      Lukk dialog
+    </button>
+  </div>
 </dialog>
 `;
 
 exports[`Dialog With Suggestion 1`] = `
 <button
+  aria-haspopup="dialog"
   data-variant="secondary"
   type="button"
-  aria-haspopup="dialog"
 >
   Åpne Dialog
 </button>
 <dialog
-  data-placement="center"
   data-modal="true"
-  closedby="closerequest"
+  data-placement="center"
+  id="<removed>"
   open
   style="overflow: visible;"
 >
   <button
+    aria-label="Lukk dialogvindu"
+    command="close"
+    commandfor="_r_9_"
+    data-color="neutral"
     data-icon="true"
     data-variant="tertiary"
     type="button"
-    aria-label="Lukk dialogvindu"
-    data-color="neutral"
-    data-command="close"
   >
   </button>
   <div>
@@ -264,55 +314,52 @@ exports[`Dialog With Suggestion 1`] = `
     </h2>
   </div>
   <div>
-    <div>
+    <ds-field>
       <label
         data-weight="medium"
-        for="undefined-input"
+        for="<removed>"
       >
         Velg en kommune
       </label>
-      <u-combobox>
+      <ds-suggestion>
         <input
-          placeholder
-          id="undefined-input"
-          type="text"
-          data-label="Velg en kommune"
-          list=":u-datalist1"
-          aria-label="Velg en kommune​​​​​"
-          popovertarget=":u-datalist1"
           aria-autocomplete="list"
-          aria-controls=":u-datalist1"
+          aria-controls=":ds:3"
           aria-expanded="true"
+          aria-label="Velg en kommune​​​​​"
           autocomplete="off"
+          data-label="Velg en kommune"
+          id="<removed>"
+          list=":ds:3"
+          placeholder=" "
+          popovertarget=":ds:3"
           role="combobox"
+          type="text"
         >
         <del
-          data-icon="true"
-          data-variant="tertiary"
           aria-label="Tøm"
           hidden
           role="button"
         >
         </del>
         <u-datalist
+          aria-multiselectable="false"
           data-nofilter
-          data-sr-singular="%d forslag"
           data-sr-plural="%d forslag"
-          popover="manual"
+          data-sr-singular="%d forslag"
           hidden
+          id="<removed>"
+          popover="manual"
           role="listbox"
           tabindex="-1"
-          aria-multiselectable="false"
-          id=":u-datalist1"
-          style="width: 590px; translate: <removed>;"
         >
           <u-option
-            label="Sogndal"
-            value="Sogndal"
-            tabindex="-1"
-            role="option"
             aria-disabled="false"
             aria-selected="false"
+            label="Sogndal"
+            role="option"
+            tabindex="-1"
+            value="Sogndal"
           >
             Sogndal
             <div>
@@ -320,12 +367,12 @@ exports[`Dialog With Suggestion 1`] = `
             </div>
           </u-option>
           <u-option
-            label="Oslo"
-            value="Oslo"
-            tabindex="-1"
-            role="option"
             aria-disabled="false"
             aria-selected="false"
+            label="Oslo"
+            role="option"
+            tabindex="-1"
+            value="Oslo"
           >
             Oslo
             <div>
@@ -333,12 +380,12 @@ exports[`Dialog With Suggestion 1`] = `
             </div>
           </u-option>
           <u-option
-            label="Brønnøysund"
-            value="Brønnøysund"
-            tabindex="-1"
-            role="option"
             aria-disabled="false"
             aria-selected="false"
+            label="Brønnøysund"
+            role="option"
+            tabindex="-1"
+            value="Brønnøysund"
           >
             Brønnøysund
             <div>
@@ -346,12 +393,12 @@ exports[`Dialog With Suggestion 1`] = `
             </div>
           </u-option>
           <u-option
-            label="Stavanger"
-            value="Stavanger"
-            tabindex="-1"
-            role="option"
             aria-disabled="false"
             aria-selected="false"
+            label="Stavanger"
+            role="option"
+            tabindex="-1"
+            value="Stavanger"
           >
             Stavanger
             <div>
@@ -359,12 +406,12 @@ exports[`Dialog With Suggestion 1`] = `
             </div>
           </u-option>
           <u-option
-            label="Trondheim"
-            value="Trondheim"
-            tabindex="-1"
-            role="option"
             aria-disabled="false"
             aria-selected="false"
+            label="Trondheim"
+            role="option"
+            tabindex="-1"
+            value="Trondheim"
           >
             Trondheim
             <div>
@@ -372,12 +419,12 @@ exports[`Dialog With Suggestion 1`] = `
             </div>
           </u-option>
           <u-option
-            label="Bergen"
-            value="Bergen"
-            tabindex="-1"
-            role="option"
             aria-disabled="false"
             aria-selected="false"
+            label="Bergen"
+            role="option"
+            tabindex="-1"
+            value="Bergen"
           >
             Bergen
             <div>
@@ -385,12 +432,12 @@ exports[`Dialog With Suggestion 1`] = `
             </div>
           </u-option>
           <u-option
-            label="Lillestrøm"
-            value="Lillestrøm"
-            tabindex="-1"
-            role="option"
             aria-disabled="false"
             aria-selected="false"
+            label="Lillestrøm"
+            role="option"
+            tabindex="-1"
+            value="Lillestrøm"
           >
             Lillestrøm
             <div>
@@ -398,8 +445,8 @@ exports[`Dialog With Suggestion 1`] = `
             </div>
           </u-option>
         </u-datalist>
-      </u-combobox>
-    </div>
+      </ds-suggestion>
+    </ds-field>
   </div>
   <div style="display: flex; gap: var(--ds-size-2);">
     <button
@@ -411,7 +458,6 @@ exports[`Dialog With Suggestion 1`] = `
     <button
       data-variant="secondary"
       type="button"
-      data-command="close"
     >
       Avbryt
     </button>
@@ -421,114 +467,119 @@ exports[`Dialog With Suggestion 1`] = `
 
 exports[`Drawer 1`] = `
 <div style="display: flex; flex-direction: column; align-items: center;">
-  <div style="margin-bottom: var(--ds-size-4);">
+  <ds-field
+    data-clickdelegatefor="<removed>"
+    style="margin-bottom: var(--ds-size-4);"
+  >
     <input
-      id="modal-checkbox"
-      type="checkbox"
       checked
+      id="<removed>"
+      type="checkbox"
     >
     <label
       data-weight="regular"
-      for="modal-checkbox"
+      for="<removed>"
     >
       Modal
     </label>
-  </div>
+  </ds-field>
   <fieldset>
     <div style="display: flex; flex-wrap: wrap; gap: var(--ds-size-5); margin-bottom: var(--ds-size-8);">
-      <div>
+      <ds-field data-clickdelegatefor="<removed>">
         <input
-          id="center-radio"
+          id="<removed>"
+          name="drawer"
           type="radio"
           value="center"
-          name="drawer"
         >
         <label
           data-weight="regular"
-          for="center-radio"
+          for="<removed>"
         >
           Midten
         </label>
-      </div>
-      <div>
+      </ds-field>
+      <ds-field data-clickdelegatefor="<removed>">
         <input
-          id="top-radio"
+          id="<removed>"
+          name="drawer"
           type="radio"
           value="top"
-          name="drawer"
         >
         <label
           data-weight="regular"
-          for="top-radio"
+          for="<removed>"
         >
           Topp
         </label>
-      </div>
-      <div>
+      </ds-field>
+      <ds-field data-clickdelegatefor="<removed>">
         <input
-          id="bottom-radio"
+          id="<removed>"
+          name="drawer"
           type="radio"
           value="bottom"
-          name="drawer"
         >
         <label
           data-weight="regular"
-          for="bottom-radio"
+          for="<removed>"
         >
           Bunn
         </label>
-      </div>
-      <div>
+      </ds-field>
+      <ds-field data-clickdelegatefor="<removed>">
         <input
-          id="left-radio"
+          id="<removed>"
+          name="drawer"
           type="radio"
           value="left"
-          name="drawer"
         >
         <label
           data-weight="regular"
-          for="left-radio"
+          for="<removed>"
         >
           Venstre
         </label>
-      </div>
-      <div>
+      </ds-field>
+      <ds-field data-clickdelegatefor="<removed>">
         <input
-          id="right-radio"
+          id="<removed>"
+          name="drawer"
           type="radio"
           value="right"
-          name="drawer"
         >
         <label
           data-weight="regular"
-          for="right-radio"
+          for="<removed>"
         >
           Høyre
         </label>
-      </div>
+      </ds-field>
     </div>
   </fieldset>
   <button
+    aria-haspopup="dialog"
     data-variant="primary"
     type="button"
-    aria-haspopup="dialog"
   >
     Open Dialog
   </button>
   <dialog
-    data-placement="bottom"
-    data-modal="true"
     closedby="any"
+    data-modal="true"
+    data-placement="bottom"
+    id="<removed>"
     open
     style="z-index: 10;"
   >
     <button
+      aria-label="Lukk dialogvindu"
+      command="close"
+      commandfor="_r_c_"
+      data-color="neutral"
       data-icon="true"
       data-variant="tertiary"
       type="button"
-      aria-label="Lukk dialogvindu"
-      data-color="neutral"
-      data-command="close"
     >
     </button>
     <div>
@@ -546,26 +597,28 @@ exports[`Drawer 1`] = `
 exports[`Preview 1`] = `
 <div>
   <button
+    aria-haspopup="dialog"
     data-variant="primary"
     type="button"
-    aria-haspopup="dialog"
   >
     Åpne Dialog
   </button>
   <dialog
-    data-placement="center"
-    data-modal="true"
     closedby="any"
+    data-modal="true"
+    data-placement="center"
+    id="<removed>"
     open
     style="z-index: 10;"
   >
     <button
+      aria-label="Lukk dialogvindu"
+      command="close"
+      commandfor="_r_0_"
+      data-color="neutral"
       data-icon="true"
       data-variant="tertiary"
       type="button"
-      aria-label="Lukk dialogvindu"
-      data-color="neutral"
-      data-command="close"
     >
     </button>
     <h2 style="margin-bottom: var(--ds-size-2);">
@@ -578,8 +631,8 @@ exports[`Preview 1`] = `
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
     </p>
     <p
-      data-variant="default"
       data-size="sm"
+      data-variant="default"
     >
       Dialog footer
     </p>
@@ -589,31 +642,32 @@ exports[`Preview 1`] = `
 
 exports[`With Header And Footer 1`] = `
 <button
+  aria-haspopup="dialog"
   data-variant="primary"
   type="button"
-  aria-haspopup="dialog"
 >
   Gå til neste
 </button>
 <dialog
-  data-placement="center"
   data-modal="true"
-  closedby="closerequest"
+  data-placement="center"
+  id="<removed>"
   open
 >
   <button
+    aria-label="Lukk dialogvindu"
+    command="close"
+    commandfor="_r_6_"
+    data-color="neutral"
     data-icon="true"
     data-variant="tertiary"
     type="button"
-    aria-label="Lukk dialogvindu"
-    data-color="neutral"
-    data-command="close"
   >
   </button>
   <div>
     <p
-      data-variant="default"
       data-size="sm"
+      data-variant="default"
     >
       Undertittel
     </p>
@@ -640,45 +694,110 @@ exports[`With Header And Footer 1`] = `
 
 exports[`Without Dialog Trigger Context 1`] = `
 <button
+  aria-haspopup="dialog"
   data-variant="secondary"
   type="button"
 >
-  Åpne Dialog
+  Åpne Dialog med ref
 </button>
 <dialog
-  data-placement="center"
   data-modal="true"
-  closedby="closerequest"
+  data-placement="center"
+  id="<removed>"
   open
 >
   <button
+    aria-label="Lukk dialogvindu"
+    command="close"
+    commandfor="_r_1_"
+    data-color="neutral"
     data-icon="true"
     data-variant="tertiary"
     type="button"
-    aria-label="Lukk dialogvindu"
-    data-color="neutral"
-    data-command="close"
   >
   </button>
-  <p
-    data-variant="default"
-    data-size="sm"
+  <div>
+    <h2>
+      Dialog med
+      <code>
+        ref
+      </code>
+    </h2>
+    <p data-variant="default">
+      Her bruker vi
+      <code>
+        ref
+      </code>
+      for å åpne og lukke dialogen
+    </p>
+    <p data-variant="default">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+    </p>
+  </div>
+  <button
+    data-variant="secondary"
+    type="button"
   >
-    Dialog subtittel
-  </p>
-  <h2 style="margin-bottom: var(--ds-size-2);">
-    Her bruker vi
-    <code>
-      ref
-    </code>
-    for å åpne dialogen
-  </h2>
-  <p
-    data-variant="default"
-    style="margin-bottom: var(--ds-size-2);"
+    Lukk dialog
+  </button>
+</dialog>
+`;
+
+exports[`Without Dialog Trigger Context With Command 1`] = `
+<button
+  aria-haspopup="dialog"
+  command="show-modal"
+  commandfor="dialog-with-command"
+  data-variant="primary"
+  type="button"
+>
+  Åpne Dialog med command
+</button>
+<dialog
+  data-modal="true"
+  data-placement="center"
+  id="<removed>"
+  open
+>
+  <button
+    aria-label="Lukk dialogvindu"
+    command="close"
+    commandfor="dialog-with-command"
+    data-color="neutral"
+    data-icon="true"
+    data-variant="tertiary"
+    type="button"
   >
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
-  </p>
-  Dialog footer
+  </button>
+  <div>
+    <h2>
+      Dialog med
+      <code>
+        command
+      </code>
+    </h2>
+    <p data-variant="default">
+      Her bruker vi
+      <code>
+        command
+      </code>
+      og
+      <code>
+        commandfor
+      </code>
+      for å åpne og lukke dialogen
+    </p>
+    <p data-variant="default">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+    </p>
+    <button
+      command="close"
+      commandfor="dialog-with-command"
+      data-variant="secondary"
+      type="button"
+    >
+      Lukk dialog
+    </button>
+  </div>
 </dialog>
 `;

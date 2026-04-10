@@ -19,17 +19,20 @@ catalogs:
       specifier: ^20.5.0
       version: 20.5.0
     '@digdir/designsystemet':
-      specifier: 1.11.0
-      version: 1.11.0
+      specifier: 0.0.0-fix-test-friendliness-20260409125534
+      version: 0.0.0-fix-test-friendliness-20260409125534
     '@digdir/designsystemet-css':
-      specifier: 1.11.0
-      version: 1.11.0
+      specifier: 0.0.0-fix-test-friendliness-20260409125534
+      version: 0.0.0-fix-test-friendliness-20260409125534
     '@digdir/designsystemet-react':
-      specifier: 1.11.0
-      version: 1.11.0
+      specifier: 0.0.0-fix-test-friendliness-20260409125534
+      version: 0.0.0-fix-test-friendliness-20260409125534
     '@digdir/designsystemet-types':
-      specifier: 1.11.0
-      version: 1.11.0
+      specifier: 0.0.0-fix-test-friendliness-20260409125534
+      version: 0.0.0-fix-test-friendliness-20260409125534
+    '@digdir/designsystemet-web':
+      specifier: 0.0.0-fix-test-friendliness-20260409125534
+      version: 0.0.0-fix-test-friendliness-20260409125534
     '@eslint/compat':
       specifier: ^2.0.4
       version: 2.0.4
@@ -538,7 +541,7 @@ importers:
     dependencies:
       '@digdir/designsystemet-css':
         specifier: 'catalog:'
-        version: 1.11.0
+        version: 0.0.0-fix-test-friendliness-20260409125534
       '@udir-design/theme':
         specifier: workspace:*
         version: link:../theme
@@ -591,10 +594,13 @@ importers:
     dependencies:
       '@digdir/designsystemet-react':
         specifier: 'catalog:'
-        version: 1.11.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        version: 0.0.0-fix-test-friendliness-20260409125534(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@digdir/designsystemet-types':
         specifier: 'catalog:'
-        version: 1.11.0
+        version: 0.0.0-fix-test-friendliness-20260409125534
+      '@digdir/designsystemet-web':
+        specifier: 'catalog:'
+        version: 0.0.0-fix-test-friendliness-20260409125534
       '@radix-ui/react-slot':
         specifier: 'catalog:'
         version: 1.2.4(@types/react@19.2.14)(react@19.2.4)
@@ -835,7 +841,7 @@ importers:
     dependencies:
       '@digdir/designsystemet-types':
         specifier: 'catalog:'
-        version: 1.11.0
+        version: 0.0.0-fix-test-friendliness-20260409125534
     devDependencies:
       '@internal/build-tools':
         specifier: workspace:*
@@ -855,7 +861,7 @@ importers:
     devDependencies:
       '@digdir/designsystemet':
         specifier: 'catalog:'
-        version: 1.11.0(tslib@2.8.1)
+        version: 0.0.0-fix-test-friendliness-20260409125534(tslib@2.8.1)
       '@tokens-studio/sd-transforms':
         specifier: 'catalog:'
         version: 2.0.3(style-dictionary@5.4.0(tslib@2.8.1))
@@ -916,7 +922,7 @@ importers:
     dependencies:
       '@digdir/designsystemet-css':
         specifier: 'catalog:'
-        version: 1.11.0
+        version: 0.0.0-fix-test-friendliness-20260409125534
       '@udir-design/css':
         specifier: workspace:*
         version: link:../../@udir-design/css
@@ -1812,24 +1818,27 @@ packages:
     resolution: {integrity: sha512-Y6+WUMsTFWE5jb20IFP4YGa5IrGY/+a/FbOSjDF/wz9gepU2hwCYSXRHP/vPwBvwcY3SVMASt4yXxbXNXigmZQ==}
     engines: {node: '>=18'}
 
-  '@digdir/designsystemet-css@1.11.0':
-    resolution: {integrity: sha512-fbLs5nrDyCdoIZAJMErj9+P4dmA+u2q3n+y2fWHRYK2U1Bs8hWKF47M3EhtqVCbmJIUhhI0SvRp8vb72Fa+WLQ==}
+  '@digdir/designsystemet-css@0.0.0-fix-test-friendliness-20260409125534':
+    resolution: {integrity: sha512-RMOGsxl8XuuOVzDNAco2DcOGu0Pf3DEGrRI0FaFRrOIO4mIYDIWldXdGhAMV/BPbzW8d3eYw42CPHIRup1ED3Q==}
 
-  '@digdir/designsystemet-react@1.11.0':
-    resolution: {integrity: sha512-JoCTcKxD3MiMakyfv458TVvA6YIfjSoDOUkBcSbLC7sp+WrczjA9lJN+NsCv2PNTb6kGLJ2WPwNhhx+6i8dlJQ==}
+  '@digdir/designsystemet-react@0.0.0-fix-test-friendliness-20260409125534':
+    resolution: {integrity: sha512-wOHt8etWV8SAHucu4YFKlwxE8xwxo5gvbxUEU70DpgHpsBSnjoCYXhI2b9KkjUQzAwao58jkNMc/VPtvJkq8kQ==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet-types@1.11.0':
-    resolution: {integrity: sha512-9kgM+cADYmroibCSH5VWqkXw6gEYXN+vV1glmRWhHvMq6veiD4BpBgsVAs2tDi972+SIvyo8VMPriva+XEobug==}
+  '@digdir/designsystemet-types@0.0.0-fix-test-friendliness-20260409125534':
+    resolution: {integrity: sha512-BEbKv64Upulvf8jPBq2wpIzswNtRCLHrnDZbz7u+xi3VhCcsqk3XQxSaYNaHmgZh8w53ANSvZqhyMBGjCX4b6Q==}
 
-  '@digdir/designsystemet-types@1.13.1':
-    resolution: {integrity: sha512-oIaxQrUMhhfni3NpvG1lpOxOjCHs9Dm062VlTgbTJ8MbOizLx/W23ayGtOE79CiG77Dt5kga3TC9DMalONfDAg==}
+  '@digdir/designsystemet-types@0.0.0-react-side-effects-20260113071010':
+    resolution: {integrity: sha512-2DV5MDDM4efxaznH+dm/67+jwQ7qUbu5KuTqLoagEl21GrCc9O6UtRIDI6btX5Z9YbnsOUn/DtU4aHV+htpNVQ==}
 
-  '@digdir/designsystemet@1.11.0':
-    resolution: {integrity: sha512-pQTfjCJ5X4dY0pGxUvkI7xD1YbiKKilsy9c1BLUgqg30+aK2P1W6ngD8DSDec09X3AvCBxLwJV7bK4Jg3jNBnw==}
-    engines: {node: '>=20 <25'}
+  '@digdir/designsystemet-web@0.0.0-fix-test-friendliness-20260409125534':
+    resolution: {integrity: sha512-61iPev8dn7J7daKYSSuQOdthTCagd8Fzkm3qCEe+d356zAm45+Tm3uVviiKHWRJUQ7JH1KOym8HOjl1h0SjxDg==}
+
+  '@digdir/designsystemet@0.0.0-fix-test-friendliness-20260409125534':
+    resolution: {integrity: sha512-SaCyas9xCeuSq1jq4wNxF/liSJLTSL3LeqS1bMgtz25nyYL4L8yrhyeP3egtADw0th/hukfCONBHBPnCiiaSSQ==}
+    engines: {node: '>=20.20.2'}
     hasBin: true
 
   '@emnapi/core@1.9.2':
@@ -2570,17 +2579,6 @@ packages:
     peerDependencies:
       '@emnapi/core': ^1.7.1
       '@emnapi/runtime': ^1.7.1
-
-  '@navikt/aksel-icons@7.40.0':
-    resolution: {integrity: sha512-1xuhplMhKCEPn2iMFypMVgkRNxUd5iupQ7HP2itdQCkK3K2mm2b8HsDwL9d7YDWcxowq5ff7ewpKgQFPn6o1UQ==}
-    peerDependencies:
-      '@types/react': ^18.3.11 || ^19.0.0
-      react: ^18.3.1 || ^19.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      react:
-        optional: true
 
   '@navikt/aksel-icons@8.9.0':
     resolution: {integrity: sha512-AaHoHwSlULrQxNPLV1tmWNdx4RL6QTdzhkM7NcKrnaq0hUPvcUbHyVLiecubiDmjEiAAPVQQboo6/QRuw2UvXg==}
@@ -4261,14 +4259,14 @@ packages:
   '@u-elements/u-datalist@1.1.0':
     resolution: {integrity: sha512-t8H3OddziXmq0YBuXodVWnvRi56WW4sfbJEIO1fx4i39sZ0s/0xjHBsoAsTZkb9mXJEtpgrsH8IkDYP0ZSgSXQ==}
 
-  '@u-elements/u-details@0.1.5':
-    resolution: {integrity: sha512-08sBhbc4u3VFlXIvH//m2yCDBHOJlQigs8QiKVLAVk2hMSg+fcRPggcgeBmtVPuy7iN3u/VURP6G2Ajlfbr6xg==}
-
   '@u-elements/u-details@0.2.2':
     resolution: {integrity: sha512-8EJH3ajS34IjX4bauUi7z16FNZOLa3GNxfS6QReO1dck4nGNsHT25GYSyDaoQOQX7ZMxlsWADWrUJ9AGLgDO7w==}
 
   '@u-elements/u-progress@0.0.7':
     resolution: {integrity: sha512-T2Q6jwWL60we4qiZCOPqnhEfoI2lOaUP3EmYYvnVpZ+iA8HVuqT+kgdQgACiVymfGWgIzapTcP6xaM02AvPa/A==}
+
+  '@u-elements/u-tabs@0.1.2':
+    resolution: {integrity: sha512-KVYJFDPZdo+LXrW+mCMPEUen4wXi8VfSMDKWLt2+q6VgYqWBcAIZcaWBRWxIjXFzGfXQSJqD0amnYGaL1RGZ/w==}
 
   '@udir-design/react@file:@udir-design/react':
     resolution: {directory: '@udir-design/react', type: directory}
@@ -10128,35 +10126,42 @@ snapshots:
       gonzales-pe: 4.3.0
       node-source-walk: 7.0.1
 
-  '@digdir/designsystemet-css@1.11.0':
+  '@digdir/designsystemet-css@0.0.0-fix-test-friendliness-20260409125534':
     dependencies:
-      '@digdir/designsystemet-types': 1.13.1
+      '@digdir/designsystemet-types': 0.0.0-react-side-effects-20260113071010
 
-  '@digdir/designsystemet-react@1.11.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@digdir/designsystemet-react@0.0.0-fix-test-friendliness-20260409125534(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@digdir/designsystemet-types': 1.13.1
+      '@digdir/designsystemet-types': 0.0.0-fix-test-friendliness-20260409125534
+      '@digdir/designsystemet-web': 0.0.0-fix-test-friendliness-20260409125534
       '@floating-ui/dom': 1.7.6
       '@floating-ui/react': 0.26.23(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@navikt/aksel-icons': 7.40.0(@types/react@19.2.14)(react@19.2.4)
+      '@navikt/aksel-icons': 8.9.0(@types/react@19.2.14)(react@19.2.4)
       '@radix-ui/react-slot': 1.2.4(@types/react@19.2.14)(react@19.2.4)
       '@tanstack/react-virtual': 3.13.23(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@u-elements/u-combobox': 1.0.7
-      '@u-elements/u-datalist': 1.1.0
-      '@u-elements/u-details': 0.1.5
       clsx: 2.1.1
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet-types@1.11.0': {}
+  '@digdir/designsystemet-types@0.0.0-fix-test-friendliness-20260409125534': {}
 
-  '@digdir/designsystemet-types@1.13.1': {}
+  '@digdir/designsystemet-types@0.0.0-react-side-effects-20260113071010': {}
 
-  '@digdir/designsystemet@1.11.0(tslib@2.8.1)':
+  '@digdir/designsystemet-web@0.0.0-fix-test-friendliness-20260409125534':
+    dependencies:
+      '@floating-ui/dom': 1.7.6
+      '@u-elements/u-combobox': 1.0.7
+      '@u-elements/u-datalist': 1.1.0
+      '@u-elements/u-details': 0.2.2
+      '@u-elements/u-progress': 0.0.7
+      '@u-elements/u-tabs': 0.1.2
+
+  '@digdir/designsystemet@0.0.0-fix-test-friendliness-20260409125534(tslib@2.8.1)':
     dependencies:
       '@commander-js/extra-typings': 14.0.0(commander@14.0.3)
-      '@digdir/designsystemet-types': 1.13.1
+      '@digdir/designsystemet-types': 0.0.0-react-side-effects-20260113071010
       '@tokens-studio/sd-transforms': 2.0.3(style-dictionary@5.4.0(tslib@2.8.1))
       chroma-js: 3.2.0
       colorjs.io: 0.6.1
@@ -10807,11 +10812,6 @@ snapshots:
       '@emnapi/runtime': 1.9.2
       '@tybys/wasm-util': 0.10.1
     optional: true
-
-  '@navikt/aksel-icons@7.40.0(@types/react@19.2.14)(react@19.2.4)':
-    optionalDependencies:
-      '@types/react': 19.2.14
-      react: 19.2.4
 
   '@navikt/aksel-icons@8.9.0(@types/react@19.2.14)(react@19.2.4)':
     optionalDependencies:
@@ -12705,16 +12705,17 @@ snapshots:
 
   '@u-elements/u-datalist@1.1.0': {}
 
-  '@u-elements/u-details@0.1.5': {}
-
   '@u-elements/u-details@0.2.2': {}
 
   '@u-elements/u-progress@0.0.7': {}
 
+  '@u-elements/u-tabs@0.1.2': {}
+
   '@udir-design/react@file:@udir-design/react(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@digdir/designsystemet-react': 1.11.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@digdir/designsystemet-types': 1.11.0
+      '@digdir/designsystemet-react': 0.0.0-fix-test-friendliness-20260409125534(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@digdir/designsystemet-types': 0.0.0-fix-test-friendliness-20260409125534
+      '@digdir/designsystemet-web': 0.0.0-fix-test-friendliness-20260409125534
       '@radix-ui/react-slot': 1.2.4(@types/react@19.2.14)(react@19.2.4)
       '@u-elements/u-details': 0.2.2
       '@u-elements/u-progress': 0.0.7

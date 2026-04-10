@@ -1,18 +1,21 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Back Only 1`] = `
-<nav aria-label="Du er her:">
+<ds-breadcrumbs>
   <a
-    href="#"
     aria-label="Tilbake til Eksamen"
+    href="#"
   >
     Eksamen
   </a>
-</nav>
+</ds-breadcrumbs>
 `;
 
 exports[`List Only 1`] = `
-<nav aria-label="Du er her:">
+<ds-breadcrumbs
+  aria-label="Du er her:"
+  role="navigation"
+>
   <ol>
     <li>
       <a href="#">
@@ -31,21 +34,24 @@ exports[`List Only 1`] = `
     </li>
     <li>
       <a
-        href="#"
         aria-current="page"
+        href="#"
       >
         Kartleggingsprøver
       </a>
     </li>
   </ol>
-</nav>
+</ds-breadcrumbs>
 `;
 
 exports[`Long Items 1`] = `
-<nav aria-label="Du er her:">
+<ds-breadcrumbs
+  aria-label="Du er her:"
+  role="navigation"
+>
   <a
-    href="#"
     aria-label="Tilbake til helsesertifikat for sjømat"
+    href="#"
   >
     Slik søker du om å bli vurdert for videreutdanning
   </a>
@@ -77,21 +83,21 @@ exports[`Long Items 1`] = `
     </li>
     <li>
       <a
-        href="#"
         aria-current="page"
+        href="#"
       >
         Slik søker du om å bli vurdert for videreutdanning
       </a>
     </li>
   </ol>
-</nav>
+</ds-breadcrumbs>
 `;
 
 exports[`Mobile Viewport 1`] = `
-<nav aria-label="Du er her:">
+<ds-breadcrumbs>
   <a
-    href="#"
     aria-label="Tilbake til Utdanningsløpet"
+    href="#"
   >
     Utdanningsløpet
   </a>
@@ -108,21 +114,24 @@ exports[`Mobile Viewport 1`] = `
     </li>
     <li>
       <a
-        href="#"
         aria-current="page"
+        href="#"
       >
         Grunnskole
       </a>
     </li>
   </ol>
-</nav>
+</ds-breadcrumbs>
 `;
 
 exports[`Preview 1`] = `
-<nav aria-label="Du er her:">
+<ds-breadcrumbs
+  aria-label="Du er her:"
+  role="navigation"
+>
   <a
-    href="#"
     aria-label="Tilbake til Utdanningsløpet"
+    href="#"
   >
     Utdanningsløpet
   </a>
@@ -139,12 +148,12 @@ exports[`Preview 1`] = `
     </li>
     <li>
       <a
-        href="#"
         aria-current="page"
+        href="#"
       >
         Grunnskole
       </a>
     </li>
   </ol>
-</nav>
+</ds-breadcrumbs>
 `;

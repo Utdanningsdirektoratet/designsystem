@@ -30,71 +30,72 @@ exports[`Article Story 1`] = `
         <div>
           <button
             data-variant="tertiary"
-            type="button"
             popovertarget="uds-header-menu"
+            type="button"
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="1em"
-              height="1em"
-              fill="none"
-              viewbox="0 0 24 24"
-              focusable="false"
-              role="img"
               aria-hidden="true"
+              fill="none"
+              focusable="false"
+              height="1em"
+              role="img"
+              viewbox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
+                clip-rule="evenodd"
+                d="M2.75 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17A.75.75 0 0 1 2.75 6m0 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17a.75.75 0 0 1-.75-.75m.75 5.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
                 fill="currentColor"
                 fill-rule="evenodd"
-                d="M2.75 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17A.75.75 0 0 1 2.75 6m0 6a.75.75 0 0 1 .75-.75h17a.75.75 0 0 1 0 1.5h-17a.75.75 0 0 1-.75-.75m.75 5.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
-                clip-rule="evenodd"
               >
               </path>
             </svg>
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="1em"
-              height="1em"
-              fill="none"
-              viewbox="0 0 24 24"
-              focusable="false"
-              role="img"
               aria-hidden="true"
+              fill="none"
+              focusable="false"
+              height="1em"
+              role="img"
+              viewbox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill="currentColor"
                 d="M6.53 5.47a.75.75 0 0 0-1.06 1.06L10.94 12l-5.47 5.47a.75.75 0 1 0 1.06 1.06L12 13.06l5.47 5.47a.75.75 0 1 0 1.06-1.06L13.06 12l5.47-5.47a.75.75 0 0 0-1.06-1.06L12 10.94z"
+                fill="currentColor"
               >
               </path>
             </svg>
             Meny
           </button>
           <div
-            id="uds-header-menu"
-            popover="auto"
+            data-placement="none"
             data-variant="default"
+            id="<removed>"
+            popover="auto"
             style="padding: var(--udsc-header-padding);"
           >
-            <nav aria-labelledby="header-menu-navigation">
-              <h2 id="header-menu-navigation">
+            <nav aria-labelledby="<removed>">
+              <h2 id="<removed>">
                 Menynavigasjon
               </h2>
               <ul>
                 <li>
                   <a href="#">
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="1em"
-                      height="1em"
-                      fill="none"
-                      viewbox="0 0 24 24"
-                      focusable="false"
-                      role="img"
                       aria-hidden="true"
+                      fill="none"
+                      focusable="false"
+                      height="1em"
+                      role="img"
+                      viewbox="0 0 24 24"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        fill="currentColor"
                         d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+                        fill="currentColor"
                       >
                       </path>
                     </svg>
@@ -104,18 +105,18 @@ exports[`Article Story 1`] = `
                 <li>
                   <a href="#">
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="1em"
-                      height="1em"
-                      fill="none"
-                      viewbox="0 0 24 24"
-                      focusable="false"
-                      role="img"
                       aria-hidden="true"
+                      fill="none"
+                      focusable="false"
+                      height="1em"
+                      role="img"
+                      viewbox="0 0 24 24"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        fill="currentColor"
                         d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+                        fill="currentColor"
                       >
                       </path>
                     </svg>
@@ -125,18 +126,18 @@ exports[`Article Story 1`] = `
                 <li>
                   <a href="#">
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="1em"
-                      height="1em"
-                      fill="none"
-                      viewbox="0 0 24 24"
-                      focusable="false"
-                      role="img"
                       aria-hidden="true"
+                      fill="none"
+                      focusable="false"
+                      height="1em"
+                      role="img"
+                      viewbox="0 0 24 24"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        fill="currentColor"
                         d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+                        fill="currentColor"
                       >
                       </path>
                     </svg>
@@ -146,18 +147,18 @@ exports[`Article Story 1`] = `
                 <li>
                   <a href="#">
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="1em"
-                      height="1em"
-                      fill="none"
-                      viewbox="0 0 24 24"
-                      focusable="false"
-                      role="img"
                       aria-hidden="true"
+                      fill="none"
+                      focusable="false"
+                      height="1em"
+                      role="img"
+                      viewbox="0 0 24 24"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        fill="currentColor"
                         d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+                        fill="currentColor"
                       >
                       </path>
                     </svg>
@@ -171,7 +172,10 @@ exports[`Article Story 1`] = `
       </div>
     </header>
     <article>
-      <nav aria-label="Du er her:">
+      <ds-breadcrumbs
+        aria-label="Du er her:"
+        role="navigation"
+      >
         <a aria-label="Tilbake til mer informasjon">
           Mer informasjon
         </a>
@@ -188,16 +192,16 @@ exports[`Article Story 1`] = `
           </li>
           <li>
             <a
-              href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/planleggingsverktoy-i-lareplanvisning/"
               aria-current="page"
+              href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/planleggingsverktoy-i-lareplanvisning/"
             >
               Læreplanverket
             </a>
           </li>
         </ol>
-      </nav>
+      </ds-breadcrumbs>
       <div
-        id="main-content"
+        id="<removed>"
         tabindex="-1"
       >
         <div>
@@ -209,24 +213,24 @@ exports[`Article Story 1`] = `
               Læreplanverket
             </h1>
             <a
-              href="#"
               data-size="md"
+              href="#"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
                 aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="1em"
+                role="img"
+                viewbox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
+                  clip-rule="evenodd"
+                  d="M7 2.25a.75.75 0 0 0-.75.75v4.25H4A1.75 1.75 0 0 0 2.25 9v9c0 .414.336.75.75.75h3.25V21c0 .414.336.75.75.75h10a.75.75 0 0 0 .75-.75v-2.25H21a.75.75 0 0 0 .75-.75V9A1.75 1.75 0 0 0 20 7.25h-2.25V3a.75.75 0 0 0-.75-.75zM3.75 9A.25.25 0 0 1 4 8.75h16a.25.25 0 0 1 .25.25v8.25h-2.5V12a.75.75 0 0 0-.75-.75H7a.75.75 0 0 0-.75.75v5.25h-2.5zm12.5-1.75v-3.5h-8.5v3.5zm-8.5 5.5v7.5h8.5v-7.5zM9.25 15a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75m0 3a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H10a.75.75 0 0 1-.75-.75"
                   fill="currentColor"
                   fill-rule="evenodd"
-                  d="M7 2.25a.75.75 0 0 0-.75.75v4.25H4A1.75 1.75 0 0 0 2.25 9v9c0 .414.336.75.75.75h3.25V21c0 .414.336.75.75.75h10a.75.75 0 0 0 .75-.75v-2.25H21a.75.75 0 0 0 .75-.75V9A1.75 1.75 0 0 0 20 7.25h-2.25V3a.75.75 0 0 0-.75-.75zM3.75 9A.25.25 0 0 1 4 8.75h16a.25.25 0 0 1 .25.25v8.25h-2.5V12a.75.75 0 0 0-.75-.75H7a.75.75 0 0 0-.75.75v5.25h-2.5zm12.5-1.75v-3.5h-8.5v3.5zm-8.5 5.5v7.5h8.5v-7.5zM9.25 15a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75m0 3a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H10a.75.75 0 0 1-.75-.75"
-                  clip-rule="evenodd"
                 >
                 </path>
               </svg>
@@ -236,36 +240,30 @@ exports[`Article Story 1`] = `
             </a>
           </div>
           <div data-variant="default">
-            <u-details
-              open
+            <details
               data-variant="default"
-              role="group"
+              open
             >
-              <u-summary
-                aria-expanded="true"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
+              <summary>
                 Innhold på denne siden
-              </u-summary>
+              </summary>
               <div>
                 <ol>
                   <li>
                     <a href="#how-to">
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="1em"
-                        height="1em"
-                        fill="none"
-                        viewbox="0 0 24 24"
-                        focusable="false"
-                        role="img"
                         aria-hidden="true"
+                        fill="none"
+                        focusable="false"
+                        height="1em"
+                        role="img"
+                        viewbox="0 0 24 24"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          fill="currentColor"
                           d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                          fill="currentColor"
                         >
                         </path>
                       </svg>
@@ -277,18 +275,18 @@ exports[`Article Story 1`] = `
                   <li>
                     <a href="#what-resources">
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="1em"
-                        height="1em"
-                        fill="none"
-                        viewbox="0 0 24 24"
-                        focusable="false"
-                        role="img"
                         aria-hidden="true"
+                        fill="none"
+                        focusable="false"
+                        height="1em"
+                        role="img"
+                        viewbox="0 0 24 24"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          fill="currentColor"
                           d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                          fill="currentColor"
                         >
                         </path>
                       </svg>
@@ -300,18 +298,18 @@ exports[`Article Story 1`] = `
                   <li>
                     <a href="#involve-students">
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="1em"
-                        height="1em"
-                        fill="none"
-                        viewbox="0 0 24 24"
-                        focusable="false"
-                        role="img"
                         aria-hidden="true"
+                        fill="none"
+                        focusable="false"
+                        height="1em"
+                        role="img"
+                        viewbox="0 0 24 24"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          fill="currentColor"
                           d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                          fill="currentColor"
                         >
                         </path>
                       </svg>
@@ -323,18 +321,18 @@ exports[`Article Story 1`] = `
                   <li>
                     <a href="#access">
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="1em"
-                        height="1em"
-                        fill="none"
-                        viewbox="0 0 24 24"
-                        focusable="false"
-                        role="img"
                         aria-hidden="true"
+                        fill="none"
+                        focusable="false"
+                        height="1em"
+                        role="img"
+                        viewbox="0 0 24 24"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          fill="currentColor"
                           d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                          fill="currentColor"
                         >
                         </path>
                       </svg>
@@ -346,18 +344,18 @@ exports[`Article Story 1`] = `
                   <li>
                     <a href="#teachers">
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="1em"
-                        height="1em"
-                        fill="none"
-                        viewbox="0 0 24 24"
-                        focusable="false"
-                        role="img"
                         aria-hidden="true"
+                        fill="none"
+                        focusable="false"
+                        height="1em"
+                        role="img"
+                        viewbox="0 0 24 24"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          fill="currentColor"
                           d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                          fill="currentColor"
                         >
                         </path>
                       </svg>
@@ -369,18 +367,18 @@ exports[`Article Story 1`] = `
                   <li>
                     <a href="#students">
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="1em"
-                        height="1em"
-                        fill="none"
-                        viewbox="0 0 24 24"
-                        focusable="false"
-                        role="img"
                         aria-hidden="true"
+                        fill="none"
+                        focusable="false"
+                        height="1em"
+                        role="img"
+                        viewbox="0 0 24 24"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          fill="currentColor"
                           d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                          fill="currentColor"
                         >
                         </path>
                       </svg>
@@ -392,18 +390,18 @@ exports[`Article Story 1`] = `
                   <li>
                     <a href="#it">
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="1em"
-                        height="1em"
-                        fill="none"
-                        viewbox="0 0 24 24"
-                        focusable="false"
-                        role="img"
                         aria-hidden="true"
+                        fill="none"
+                        focusable="false"
+                        height="1em"
+                        role="img"
+                        viewbox="0 0 24 24"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          fill="currentColor"
                           d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                          fill="currentColor"
                         >
                         </path>
                       </svg>
@@ -415,18 +413,18 @@ exports[`Article Story 1`] = `
                   <li>
                     <a href="#technical-questions">
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="1em"
-                        height="1em"
-                        fill="none"
-                        viewbox="0 0 24 24"
-                        focusable="false"
-                        role="img"
                         aria-hidden="true"
+                        fill="none"
+                        focusable="false"
+                        height="1em"
+                        role="img"
+                        viewbox="0 0 24 24"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          fill="currentColor"
                           d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
+                          fill="currentColor"
                         >
                         </path>
                       </svg>
@@ -437,11 +435,11 @@ exports[`Article Story 1`] = `
                   </li>
                 </ol>
               </div>
-            </u-details>
+            </details>
           </div>
           <div
-            data-variant="tinted"
             data-color="support2"
+            data-variant="tinted"
           >
             <h2 data-size="sm">
               Planleggingsverktøy
@@ -453,7 +451,7 @@ exports[`Article Story 1`] = `
           <section>
             <h2
               data-size="sm"
-              id="how-to"
+              id="<removed>"
               tabindex="-1"
             >
               Hvordan bruke verktøyet
@@ -463,7 +461,7 @@ exports[`Article Story 1`] = `
             </p>
             <h3
               data-size="xs"
-              id="what-resources"
+              id="<removed>"
               tabindex="-1"
             >
               Hvilke ressurser er tilgjengelige?
@@ -473,7 +471,7 @@ exports[`Article Story 1`] = `
             </p>
             <h3
               data-size="xs"
-              id="involve-students"
+              id="<removed>"
               tabindex="-1"
             >
               Hvordan involvere elever i planlegging?
@@ -485,7 +483,7 @@ exports[`Article Story 1`] = `
           <section>
             <h2
               data-size="sm"
-              id="access"
+              id="<removed>"
               tabindex="-1"
             >
               Tilgang
@@ -495,7 +493,7 @@ exports[`Article Story 1`] = `
             </p>
             <h3
               data-size="xs"
-              id="teachers"
+              id="<removed>"
               tabindex="-1"
             >
               Lærere
@@ -505,7 +503,7 @@ exports[`Article Story 1`] = `
             </p>
             <h3
               data-size="xs"
-              id="students"
+              id="<removed>"
               tabindex="-1"
             >
               Studenter
@@ -515,7 +513,7 @@ exports[`Article Story 1`] = `
             </p>
             <h3
               data-size="xs"
-              id="it"
+              id="<removed>"
               tabindex="-1"
             >
               IT-ansvarlige
@@ -527,7 +525,7 @@ exports[`Article Story 1`] = `
           <section>
             <h2
               data-size="sm"
-              id="technical-questions"
+              id="<removed>"
               tabindex="-1"
             >
               Tekniske spørsmål
@@ -545,86 +543,46 @@ exports[`Article Story 1`] = `
                 Vi går igjennom alle innspillene vi får, og med jevne mellomrom prioriterer vi hva vi gjør av endringer.
               </p>
             </div>
-            <u-details
-              data-variant="default"
-              role="group"
-            >
-              <u-summary
-                aria-expanded="false"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
+            <details data-variant="default">
+              <summary>
                 Oversikt - 19.11.2022
-              </u-summary>
+              </summary>
               <div>
                 Vi har lagt til en ny knapp hvor du får oversikt over hvilke deler av læreplanen du har brukt i planene dine.
               </div>
-            </u-details>
-            <u-details
-              data-variant="default"
-              role="group"
-            >
-              <u-summary
-                aria-expanded="false"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
+            </details>
+            <details data-variant="default">
+              <summary>
                 Tilgang for instruktører i bedrift - 09.11.2022
-              </u-summary>
+              </summary>
               <div>
                 Vi har lagt til pålogging med ID-porten slik at også instruktører i bedrift kan bruke planleggingsverktøyet.
               </div>
-            </u-details>
-            <u-details
-              data-variant="default"
-              role="group"
-            >
-              <u-summary
-                aria-expanded="false"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
+            </details>
+            <details data-variant="default">
+              <summary>
                 Invitere til flere planer - 25.01.2022
-              </u-summary>
+              </summary>
               <div>
                 Vi har fått innspill om at det er tungvindt å gå inn i en og en plan for å invitere samarbeidspartnere. Vi har lagt til mulighet for å invitere samarbeidspartnere til mange planer samtidig.
               </div>
-            </u-details>
-            <u-details
-              data-variant="default"
-              role="group"
-            >
-              <u-summary
-                aria-expanded="false"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
+            </details>
+            <details data-variant="default">
+              <summary>
                 Velge språk - 10.01.2022
-              </u-summary>
+              </summary>
               <div>
                 Vi har lagt til funksjon for å velge språk slik at verktøyet er tilgjengelig på bokmål, nynorsk, nordsamisk, sørsamisk og lulesamisk. Det er mulig å velge språk på brukerinnstillinger og på hver enkelt plan.
               </div>
-            </u-details>
-            <u-details
-              data-variant="default"
-              role="group"
-            >
-              <u-summary
-                aria-expanded="false"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
+            </details>
+            <details data-variant="default">
+              <summary>
                 Overføring av planer når en bruker slettes - 22.06.2022
-              </u-summary>
+              </summary>
               <div>
                 Tidligere var det slik at hvis en bruker slettet seg fra planleggingsverktøyet, så ble alle planene personen hadde opprettet også slettet. Vi fikk tilbakemelding om at dette var uheldig for samarbeidspartnerne. Vi har derfor endret dette. Nå er det slik: Den som har  opprettet en plan, har rollen som administrator. Hvis administrator av en plan slettes som bruker, blir ikke planen slettet hvis det er samarbeidspartnere på planen. Rollen som administrator blir overført til den samarbeidspartneren som står øverst på lista i planen. Samtykkeerklæringen er oppdatert i tråd med denne endringen. Det er fortsatt slik at både administrator og samarbeidspartnere kan endre en plan, men bare administrator kan slette den
               </div>
-            </u-details>
+            </details>
           </div>
           <hr aria-hidden="true">
           <button

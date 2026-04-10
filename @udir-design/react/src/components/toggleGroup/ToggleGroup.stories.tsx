@@ -15,13 +15,17 @@ import preview from '.storybook/preview';
 import { demoChromaticModes } from 'src/demo/demoParameters';
 import { Button } from '../button/Button';
 import { Card } from '../card/Card';
+import { Fieldset } from '../fieldset/Fieldset';
 import { Table } from '../table';
 import { Tooltip } from '../tooltip/Tooltip';
 import { Heading } from '../typography/heading/Heading';
-import { ToggleGroup } from './ToggleGroup';
+import { ToggleGroup } from './';
 
 const meta = preview.meta({
   component: ToggleGroup,
+  subcomponents: {
+    'ToggleGroup.Item': ToggleGroup.Item,
+  },
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {
@@ -38,62 +42,61 @@ export const Preview = meta.story({
     onChange: fn(),
   },
   render: (args) => (
-    <ToggleGroup {...args}>
+    <ToggleGroup {...args} aria-label="Velg epostboks">
       <ToggleGroup.Item value="innboks">Innboks</ToggleGroup.Item>
       <ToggleGroup.Item value="utkast">Utkast</ToggleGroup.Item>
       <ToggleGroup.Item value="arkiv">Arkiv</ToggleGroup.Item>
       <ToggleGroup.Item value="sendt">Sendt</ToggleGroup.Item>
     </ToggleGroup>
   ),
-  play: async ({ canvasElement, step, args }) => {
+  play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
-    const innboksButton = canvas.getByRole('radio', { name: /innboks/i });
-    const utkastButton = canvas.getByRole('radio', { name: /utkast/i });
-    const arkivButton = canvas.getByRole('radio', { name: /arkiv/i });
+    const innboksInput = canvas.getByRole('radio', { name: /innboks/i });
+    const utkastInput = canvas.getByRole('radio', { name: /utkast/i });
+    const arkivInput = canvas.getByRole('radio', { name: /arkiv/i });
 
     await step('Default selection is "Innboks"', async () => {
-      expect(innboksButton).toHaveAttribute('aria-checked', 'true');
+      expect(innboksInput).toBeChecked();
     });
 
     await step('Only one ToggleGroup item is active initially', async () => {
-      const buttons = canvas.getAllByRole('radio');
-      const activeButtons = buttons.filter(
-        (btn) => btn.getAttribute('aria-checked') === 'true',
+      const inputs = canvas.getAllByRole('radio');
+      const activeButtons = inputs.filter(
+        (input) => (input as HTMLInputElement).checked,
       );
       expect(activeButtons).toHaveLength(1);
     });
 
     await step('User can navigate with arrow keys', async () => {
       await userEvent.tab();
-      expect(innboksButton).toHaveFocus();
+      expect(innboksInput).toHaveFocus();
 
       await userEvent.keyboard('{arrowright}');
-      expect(utkastButton).toHaveFocus();
+      expect(utkastInput).toHaveFocus();
 
       await userEvent.keyboard('{arrowright}');
-      expect(arkivButton).toHaveFocus();
+      expect(arkivInput).toHaveFocus();
 
       await userEvent.keyboard('{arrowleft}');
-      expect(utkastButton).toHaveFocus();
+      expect(utkastInput).toHaveFocus();
     });
 
     await step(
-      'Clicking a different option updates the active state and calls onChange',
+      'Selecting a different option updates the active state and calls onChange',
       async () => {
-        expect(utkastButton).toHaveAttribute('aria-checked', 'false');
-        await userEvent.click(utkastButton);
-        expect(args.onChange).toHaveBeenCalledWith('utkast');
-        expect(utkastButton).toHaveAttribute('aria-checked', 'true');
-        expect(innboksButton).toHaveAttribute('aria-checked', 'false');
+        expect(utkastInput).not.toBeChecked();
+        await userEvent.keyboard('{Enter}');
+        expect(utkastInput).toBeChecked();
+        expect(innboksInput).not.toBeChecked();
       },
     );
 
     await step(
-      'Clicking an already active option keeps it active',
+      'Selecting an already active option keeps it active',
       async () => {
-        expect(utkastButton).toHaveAttribute('aria-checked', 'true');
-        await userEvent.click(utkastButton);
-        expect(utkastButton).toHaveAttribute('aria-checked', 'true');
+        expect(utkastInput).toBeChecked();
+        await userEvent.keyboard('{Enter}');
+        expect(utkastInput).toBeChecked();
       },
     );
   },
@@ -109,6 +112,7 @@ export const Secondary = meta.story({
   render: Preview.input.render,
 });
 
+// TODO: this example should use `aria-labelledby` when supported by Digdir
 export const OnlyText = meta.story({
   args: {},
   parameters: {
@@ -119,16 +123,16 @@ export const OnlyText = meta.story({
     },
   },
   render: () => (
-    <>
-      <label>Filtrering av skjema</label>
-      <ToggleGroup defaultValue="personlig">
+    <Fieldset>
+      <Fieldset.Legend>Filtrering av skjema</Fieldset.Legend>
+      <ToggleGroup defaultValue="personlig" aria-label="Filtrering av skjema">
         <ToggleGroup.Item value="personlig">Personlig</ToggleGroup.Item>
         <ToggleGroup.Item value="generelt">Generelt</ToggleGroup.Item>
         <ToggleGroup.Item value="tilleggsinformasjon">
           Tilleggsinformasjon
         </ToggleGroup.Item>
       </ToggleGroup>
-    </>
+    </Fieldset>
   ),
 });
 
@@ -137,7 +141,7 @@ export const TextAndIcons = meta.story({
     defaultValue: 'option-1',
   },
   render: () => (
-    <ToggleGroup defaultValue="aktiv">
+    <ToggleGroup aria-label="Filtrer på status" defaultValue="aktiv">
       <ToggleGroup.Item value="aktiv">
         <CheckmarkCircleIcon aria-hidden />
         Aktiv
@@ -159,14 +163,14 @@ export const OnlyIcons = meta.story({
     defaultValue: 'venstrestilt',
   },
   render: (args) => (
-    <ToggleGroup {...args}>
+    <ToggleGroup {...args} aria-label="Tekstjustering">
       <Tooltip content="Venstrestilt">
-        <ToggleGroup.Item value="venstrestilt" icon>
+        <ToggleGroup.Item value="venstrestilt">
           <AlignLeftIcon aria-hidden />
         </ToggleGroup.Item>
       </Tooltip>
       <Tooltip content="Midtstilt">
-        <ToggleGroup.Item value="midtstilt" icon>
+        <ToggleGroup.Item value="midtstilt">
           <AlignCenterIcon aria-hidden />
         </ToggleGroup.Item>
       </Tooltip>
@@ -275,7 +279,12 @@ export const Controlled = meta.story({
     return (
       <>
         <Heading level={1}>Retting av prøver</Heading>
-        <ToggleGroup value={value} onChange={setValue} {...args}>
+        <ToggleGroup
+          aria-label="Filtrer på status"
+          value={value}
+          onChange={setValue}
+          {...args}
+        >
           <ToggleGroup.Item value="answers">
             <TasklistIcon aria-hidden />
             Ikke påbegynt
@@ -354,10 +363,13 @@ export const ToggleGroupInColorContext = meta.story({
     await step(
       'Should have neutral color palette by default, no matter the surrounding color palette',
       async () => {
-        const firstButton = within(canvasElement).getAllByRole('radio')[0];
-        const expectedColor = getComputedStyle(firstButton).getPropertyValue(
-          '--ds-color-neutral-base-default',
-        );
+        const firstInput = within(canvasElement).getAllByRole('radio')[0];
+        const firstButton =
+          firstInput.closest('label') ?? firstInput.parentElement;
+
+        const expectedColor = getComputedStyle(
+          firstButton as Element,
+        ).getPropertyValue('--ds-color-neutral-base-default');
         await expect(firstButton).toHaveStyle(
           `background-color: ${expectedColor}`,
         );

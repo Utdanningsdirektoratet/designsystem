@@ -1,103 +1,111 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Controlled 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="textfield-controlled"
+    for="<removed>"
   >
     Beskriv bekymringen din
   </label>
   <textarea
-    id="textfield-controlled"
+    id="<removed>"
     rows="4"
+    style="--_ds-field-sizing: <removed>;"
   >
   </textarea>
-</div>
+</ds-field>
 <button
   data-variant="secondary"
-  type="button"
   style="margin-top: var(--ds-size-2);"
+  type="button"
 >
   Tøm feltet
 </button>
 `;
 
 exports[`Disabled 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="textarea-disabled"
+    for="<removed>"
   >
     Disabled Textarea
   </label>
   <textarea
-    id="textarea-disabled"
     disabled
+    id="<removed>"
+    style="--_ds-field-sizing: <removed>;"
   >
   </textarea>
-</div>
+</ds-field>
 `;
 
 exports[`Focused 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="my-textarea"
+    for="<removed>"
   >
     Label
   </label>
   <textarea
-    rows="3"
     cols="20"
-    id="my-textarea"
+    id="<removed>"
+    rows="3"
+    style="--_ds-field-sizing: <removed>;"
   >
   </textarea>
-</div>
+</ds-field>
 `;
 
 exports[`Full Width 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="my-textarea"
+    for="<removed>"
   >
     Beskriv bekymringen din
   </label>
-  <textarea id="my-textarea">
+  <textarea
+    id="<removed>"
+    style="--_ds-field-sizing: <removed>;"
+  >
   </textarea>
-</div>
+</ds-field>
 `;
 
 exports[`Preview 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="my-textarea"
+    for="<removed>"
   >
     Label
   </label>
   <textarea
-    rows="3"
     cols="20"
-    id="my-textarea"
+    id="<removed>"
+    rows="3"
+    style="--_ds-field-sizing: <removed>;"
   >
   </textarea>
-</div>
+</ds-field>
 `;
 
 exports[`Read Only 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="textarea-readonly"
+    for="<removed>"
   >
     Read-Only Textarea
   </label>
   <textarea
-    id="textarea-readonly"
+    id="<removed>"
     readonly
+    style="--_ds-field-sizing: <removed>;"
   >
   </textarea>
-</div>
+</ds-field>
 `;

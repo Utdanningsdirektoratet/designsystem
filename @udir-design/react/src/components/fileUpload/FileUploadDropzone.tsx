@@ -1,9 +1,10 @@
+import './fileUpload.css';
+import type { DSFieldElement } from '@digdir/designsystemet-web';
 import cl from 'clsx/lite';
 import { forwardRef, useEffect, useRef } from 'react';
 import { UploadIcon } from '@udir-design/icons';
 import { Button } from '../button/Button';
 import { Card } from '../card/Card';
-import './fileUpload.css';
 import { Field } from '../field/Field';
 import { Label } from '../typography/label/Label';
 import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
@@ -23,7 +24,7 @@ export type FileUploadDropzoneProps = FileUploadProps & {
 };
 
 export const FileUploadDropzone = forwardRef<
-  HTMLDivElement,
+  DSFieldElement,
   FileUploadDropzoneProps
 >(function FileUploadDropzone(
   {

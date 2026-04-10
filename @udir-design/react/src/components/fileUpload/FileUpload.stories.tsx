@@ -139,7 +139,7 @@ export const ExampleDropZone = meta.story({
           label="Last opp dokumentasjon"
           description="Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB."
           inputProps={{
-            ...getInputProps(),
+            ...getInputProps({ multiple: true }),
             id: 'dokumentasjon',
           }}
           isDragGlobal={isDragGlobal}
@@ -298,8 +298,8 @@ export const ExampleTrigger = meta.story({
   render: (args) => {
     const [file, setFile] = useState<File | null>(null);
 
-    const handleOnChange = (e: ChangeEvent<HTMLDivElement>) => {
-      const input = e.target as unknown as HTMLInputElement;
+    const handleOnChange = (e: ChangeEvent<HTMLElement>) => {
+      const input = e.target as HTMLInputElement;
       if (input.files) {
         setFile(input.files[0]);
         input.value = '';
@@ -434,15 +434,16 @@ export const Upload = meta.story({
     const [file, setFile] = useState<File | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
 
-    const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
-      const files = e.target.files; // safe
+    const handleOnChange = (e: ChangeEvent<HTMLElement>) => {
+      const input = e.target as HTMLInputElement;
+      const files = input.files; // safe
 
       if (files) {
         setFile(files[0]);
         setLoading(true);
         setTimeout(() => {
           setLoading(false);
-          e.target.value = '';
+          input.value = '';
         }, 2000);
       }
     };

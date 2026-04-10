@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as Symbols from '@udir-design/symbols';
 import { Select } from 'src/components/select/Select';
-import { ToggleGroup } from 'src/components/toggleGroup/ToggleGroup';
+import { ToggleGroup } from 'src/components/toggleGroup';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { CodeBlock } from '../../icons/docs/CodeBlock';
 import { type UdirSymbol, symbolsByBaseName } from './SymbolDisplay.utils';

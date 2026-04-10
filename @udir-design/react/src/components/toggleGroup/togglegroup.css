@@ -1,19 +1,21 @@
 :is(.ds-togglegroup, .ds-toggle-group) {
-  box-sizing: border-box;
-  height: var(--dsc-togglegroup-button-size);
-  button {
-    height: 100%;
-    white-space: nowrap;
-    min-height: unset;
+  overflow-x: initial; /* fixes gap between border-radius of fieldset and label, but will prevent horizontal scroll */
+  --_dsc-togglegroup-button-size: calc(
+    var(--dsc-togglegroup-button-size) - 2 * var(--dsc-togglegroup-border-width)
+  ); /* necessary due to overflow-x: initial */
 
-    &[data-icon] {
-      height: 100%;
-    }
+  label {
+    height: var(--_dsc-togglegroup-button-size);
+  }
 
-    &[data-variant='secondary'] {
-      button[aria-checked='true'] {
-        --dsc-button-border-color: var(--ds-color-text-default);
-      }
+  label:has(input:checked) {
+    color: var(--dsc-button-color--active);
+  }
+
+  &[data-variant='secondary'] {
+    label:has(input:checked) {
+      --dsc-button-border-color: var(--ds-color-text-default);
     }
+    --_dsc-togglegroup-button-size: var(--dsc-togglegroup-button-size);
   }
 }
