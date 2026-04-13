@@ -90,7 +90,7 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
       </Fieldset>
       <Field>
         <Label>
-          <span>Gjennomføringssted test</span>
+          <span>Gjennomføringssted</span>
         </Label>
         <Field.Description>
           Hvilket fylke vil prosjektet gjennomføres i?
