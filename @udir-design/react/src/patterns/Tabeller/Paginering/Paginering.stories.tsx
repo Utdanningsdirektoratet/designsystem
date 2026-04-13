@@ -78,10 +78,17 @@ export const Preview = meta.story({
       window.addEventListener('resize', handleResize);
       return () => window.removeEventListener('resize', handleResize);
     }, []);
-    const isMobile = windowWidth < 768;
-    const isTablet = windowWidth >= 768 && windowWidth < 1024;
-    const isCompact = windowWidth < 1024;
-    const isSmallMobile = windowWidth < 375;
+    const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const breakpoints = {
+      xs: 30 * rem, // 480px
+      md: 48 * rem, // 768px
+      lg: 64 * rem, // 1024px
+    };
+    const isSmallMobile = windowWidth < breakpoints.xs;
+    const isMobile = windowWidth < breakpoints.md;
+    const isTablet =
+      windowWidth >= breakpoints.md && windowWidth < breakpoints.lg;
+    const isMobileOrTablet = windowWidth < breakpoints.lg;
 
     const totalPages = Math.ceil(dummyData.length / itemsPerPage);
     const { pages, nextButtonProps, prevButtonProps } = usePagination({
@@ -139,8 +146,8 @@ export const Preview = meta.story({
         <div
           style={{
             display: 'flex',
-            flexDirection: isCompact ? 'column' : 'row',
-            justifyContent: isCompact ? 'center' : 'space-between',
+            flexDirection: isMobileOrTablet ? 'column' : 'row',
+            justifyContent: isMobileOrTablet ? 'center' : 'space-between',
             alignItems: 'center',
             gap: 'var(--ds-size-4)',
             margin: 'var(--ds-size-6) var(--ds-size-2)',
@@ -189,10 +196,11 @@ export const Preview = meta.story({
             style={{
               display: 'flex',
               flexDirection: isMobile ? 'column' : 'row',
-              justifyContent: isTablet ? 'space-between' : undefined,
+              justifyContent: isTablet ? 'space-between' : 'flex-start',
               alignItems: 'center',
-              width: isTablet ? '60%' : undefined,
-              padding: isTablet ? '0 50px' : undefined,
+              alignSelf: isTablet ? 'center' : 'auto',
+              width: isTablet ? '100%' : 'auto',
+              maxWidth: isTablet ? '25rem' : 'none',
               gap: 'var(--ds-size-4)',
             }}
           >
