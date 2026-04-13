@@ -1,6 +1,4 @@
 import type { HTMLAttributes } from 'react';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import styles from './DemoPage.module.scss';
 import { BreadcrumbsDemo } from './breadcrumbs/BreadcrumbsDemo';
 import { FrequentQuestions } from './frequent-questions/FrequentQuestions';
