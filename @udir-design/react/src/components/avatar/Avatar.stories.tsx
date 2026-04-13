@@ -121,7 +121,6 @@ export const InDropdown = meta.story({
 });
 
 export const Icons = meta.story({
-  args: { 'aria-label': 'Ola Nordmann' },
   render: (args) => (
     <>
       <style>{`
@@ -138,17 +137,17 @@ export const Icons = meta.story({
       `}</style>
       <div className="avatar-group">
         <div className="avatar-icon-group">
-          <Avatar {...args} />
+          <Avatar {...args} aria-hidden />
           <span>Person</span>
         </div>
         <div className="avatar-icon-group">
-          <Avatar {...args}>
+          <Avatar {...args} aria-hidden>
             <HatSchoolIcon />
           </Avatar>
           <span>Skole</span>
         </div>
         <div className="avatar-icon-group">
-          <Avatar {...args}>
+          <Avatar {...args} aria-hidden>
             <BriefcaseIcon />
           </Avatar>
           <span>Virksomhet</span>
@@ -164,7 +163,7 @@ export const AsLink = meta.story({
   },
   render: (args) => (
     <Link
-      href="https://www.udir.no/"
+      href="/"
       style={{ display: 'flex', gap: 'var(--ds-size-2)', alignItems: 'center' }}
     >
       <Avatar {...args} />

@@ -2,7 +2,7 @@
 
 exports[`As Link 1`] = `
 <a
-  href="https://www.udir.no/"
+  href="/"
   style="display: flex; gap: var(--ds-size-2); align-items: center;"
 >
   <span
@@ -117,7 +117,7 @@ exports[`Icons 1`] = `
     <span
       data-variant="circle"
       role="img"
-      aria-label="Ola Nordmann"
+      aria-hidden="true"
     >
     </span>
     <span>
@@ -128,7 +128,7 @@ exports[`Icons 1`] = `
     <span
       data-variant="circle"
       role="img"
-      aria-label="Ola Nordmann"
+      aria-hidden="true"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -157,7 +157,7 @@ exports[`Icons 1`] = `
     <span
       data-variant="circle"
       role="img"
-      aria-label="Ola Nordmann"
+      aria-hidden="true"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
