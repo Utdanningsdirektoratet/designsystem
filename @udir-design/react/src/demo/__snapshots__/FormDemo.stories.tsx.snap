@@ -293,7 +293,7 @@ exports[`Form Page 2 1`] = `
           for="county"
         >
           <span>
-            Gjennomføringssted test
+            Gjennomføringssted
           </span>
         </label>
         <div
@@ -311,9 +311,9 @@ exports[`Form Page 2 1`] = `
             required
             type="text"
             aria-describedby="county:description:1"
-            data-label="Gjennomføringssted test"
+            data-label="Gjennomføringssted"
             list=":u-datalist1"
-            aria-label="Gjennomføringssted test​​​​​"
+            aria-label="Gjennomføringssted​​​​​"
             popovertarget=":u-datalist1"
             aria-autocomplete="list"
             aria-controls=":u-datalist1"
