@@ -1,0 +1,52 @@
+import { Meta, Controls, Primary, Canvas } from '@storybook/addon-docs/blocks';
+
+import * as FormSummaryStories from './FormSummary.stories';
+import { Unstyled } from '@storybook/addon-docs/blocks';
+
+<Meta of={FormSummaryStories} />
+
+# FormSummary
+
+`FormSummary` brukes til å vise en oppsummering av informasjonen brukeren har fylt inn i et skjema, ofte før innsending. Den gir brukeren mulighet til å gå tilbake og redigere informasjonen ved behov.
+
+**Passer til å**
+
+- oppsummere informasjon i et skjema med flere sider eller seksjoner
+- gi brukeren en oversikt over hva som er fylt inn før innsending
+
+**Passer ikke til å**
+
+- redigere svar fra skjemaet direkte
+
+## Slik bruker du FormSummary
+
+<Primary />
+<Controls />
+
+## Eksempler
+
+`FormSummary` bygges opp med flere subkomponenter for å strukturere innholdet.
+
+Subkomponenter:
+
+- `FormSummary.Section`
+- `FormSummary.Fields`
+- `FormSummary.Field` med `FormSummary.Field.Label` og `FormSummary.Field.Answer`
+
+### Inndeling i seksjoner
+
+`FormSummary` deles inn i seksjoner ved hjelp av `FormSummary.Section`. Hver seksjon har tittel (`title`), redigeringslenke (`editHref`) og nivå (`level`) som angir overskriftsnivået for seksjonstittelen. Bruk `onEdit` for å overskrive standard oppførsel ved klikk på redigeringslenken.
+
+For å gruppere felt innen en seksjon, bruk `FormSummary.Fields`. Hvert felt representeres av `FormSummary.Field`, som inneholder `label` for feltet (`FormSummary.Field.Label`) og svaret (`FormSummary.Field.Answer`).
+
+For å gruppere i underseksjoner legger du `FormSummary.Section` inne i en annen.
+
+<Canvas of={FormSummaryStories.NestedSections} />
+
+### Med feil på felt
+
+Bruk `error`-prop på `FormSummary.Field` for å vise feilmeldinger knyttet til spesifikke felt i oppsummeringen. Ved manglende utfylling av felt lenkes brukeren tilbake til det aktuelle feltet i skjemaet for å fylle ut.
+
+<Canvas of={FormSummaryStories.ErrorStates} />
+
+## Retningslinjer
