@@ -1,4 +1,8 @@
-import { BriefcaseIcon, ChevronUpIcon } from '@udir-design/icons';
+import {
+  BriefcaseIcon,
+  ChevronUpIcon,
+  HatSchoolIcon,
+} from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { Badge } from '../badge/Badge';
 import { Dropdown } from '../dropdown/Dropdown';
@@ -113,6 +117,44 @@ export const InDropdown = meta.story({
         </Dropdown.List>
       </Dropdown>
     </Dropdown.TriggerContext>
+  ),
+});
+
+export const Icons = meta.story({
+  args: { 'aria-label': 'Ola Nordmann' },
+  render: (args) => (
+    <>
+      <style>{`
+        .avatar-group {
+          display: flex;
+          gap: var(--ds-size-2);
+          flex-direction: column;
+        }
+        .avatar-icon-group {
+          display: flex;
+          align-items: center;
+          gap: var(--ds-size-2);
+        }
+      `}</style>
+      <div className="avatar-group">
+        <div className="avatar-icon-group">
+          <Avatar {...args} />
+          <span>Person</span>
+        </div>
+        <div className="avatar-icon-group">
+          <Avatar {...args}>
+            <HatSchoolIcon />
+          </Avatar>
+          <span>Skole</span>
+        </div>
+        <div className="avatar-icon-group">
+          <Avatar {...args}>
+            <BriefcaseIcon />
+          </Avatar>
+          <span>Virksomhet</span>
+        </div>
+      </div>
+    </>
   ),
 });
 
