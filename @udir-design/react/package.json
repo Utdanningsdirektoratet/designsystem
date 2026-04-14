@@ -87,7 +87,7 @@
     "@types/react-dom": "catalog:",
     "@types/remark-heading-id": "catalog:",
     "@udir-design/symbols": "workspace:*",
-    "@vitejs/plugin-react-swc": "catalog:",
+    "@vitejs/plugin-react": "catalog:",
     "@vitest/browser": "catalog:",
     "@vitest/browser-playwright": "catalog:",
     "@vitest/coverage-v8": "catalog:",
@@ -129,7 +129,6 @@
     "unist-util-visit": "catalog:",
     "vite": "catalog:",
     "vite-plugin-dts": "catalog:",
-    "vite-tsconfig-paths": "catalog:",
     "vitest": "catalog:",
     "zod": "catalog:"
   },
