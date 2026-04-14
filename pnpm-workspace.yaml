@@ -24,11 +24,11 @@ catalog:
   '@nx/eslint': 22.6.4
   '@nx/eslint-plugin': 22.6.4
   '@radix-ui/react-slot': ^1.2.4
-  '@storybook/addon-a11y': ^10.3.4
-  '@storybook/addon-docs': ^10.3.4
-  '@storybook/addon-vitest': ^10.3.4
+  '@storybook/addon-a11y': ^10.3.5
+  '@storybook/addon-docs': ^10.3.5
+  '@storybook/addon-vitest': ^10.3.5
   '@storybook/icons': ^2.0.1
-  '@storybook/react-vite': ^10.3.4
+  '@storybook/react-vite': ^10.3.5
   '@svgr/cli': 8.1.0
   '@svgr/core': ^8.1.0
   '@swc-node/register': ^1.11.1
@@ -70,7 +70,7 @@ catalog:
   eslint-plugin-jsx-a11y: ^6.10.2
   eslint-plugin-react: ^7.37.5
   eslint-plugin-react-hooks: ^7.0.1
-  eslint-plugin-storybook: ^10.3.4
+  eslint-plugin-storybook: ^10.3.5
   fast-glob: ^3.3.3
   fuse.js: ^7.3.0
   hast-util-from-html: ^2.0.3
@@ -110,8 +110,8 @@ catalog:
   sass: ^1.99.0
   sharp: ^0.34.5
   shx: ^0.4.0
-  storybook: ^10.3.4
-  storybook-addon-pseudo-states: ^10.3.4
+  storybook: ^10.3.5
+  storybook-addon-pseudo-states: ^10.3.5
   style-dictionary: ^5.4.0
   svgo: ^4.0.1
   ts-node: ^10.9.2
@@ -181,6 +181,7 @@ overrides:
   semver@<7: ^7
   tmp@<=0.2.3: '>=0.2.4'
   unist-util-visit@<5: ^5.0.0
+  '@digdir/designsystemet-types': 1.11.0 # remove this when upgrading to 1.13.2 where this is fixed
   '@joshwooding/vite-plugin-react-docgen-typescript@>=0.7.0': 0.6.4
 
 packageExtensions:
