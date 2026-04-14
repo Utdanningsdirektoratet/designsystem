@@ -181,6 +181,7 @@ overrides:
   semver@<7: ^7
   tmp@<=0.2.3: '>=0.2.4'
   unist-util-visit@<5: ^5.0.0
+  '@joshwooding/vite-plugin-react-docgen-typescript@>=0.7.0': 0.6.4
 
 packageExtensions:
   '@navikt/aksel-icons':
