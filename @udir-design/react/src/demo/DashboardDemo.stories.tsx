@@ -9,6 +9,7 @@ import { Button } from 'src/components/button/Button';
 import { Divider } from 'src/components/divider/Divider';
 import { Dropdown } from 'src/components/dropdown/Dropdown';
 import { Header } from 'src/components/header';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import { DashboardDemo } from '../../demo-pages/dashboard-demo/DashboardDemo';
 import { demoParameters } from './demoParameters';
 
@@ -37,13 +38,14 @@ export const DashboardStory = meta.story({
               name="Stian Hansen"
               description="Admin"
               popoverTarget="usermenu2"
-              data-show="md"
+              data-show="sm"
               avatar={<Avatar aria-hidden>SH</Avatar>}
               aria-label={`Stian Hansen Admin - ${notifications} varsler`}
             />
             <Badge
               count={notifications}
               maxCount={9}
+              data-show="sm"
               data-color="danger"
               style={
                 {
@@ -65,6 +67,68 @@ export const DashboardStory = meta.story({
                   </Avatar>
                   Grålum skole
                   <Badge count={notifications} maxCount={9} />
+                </Dropdown.Button>
+              </Dropdown.Item>
+              <Divider />
+              <Dropdown.Item>
+                <Button variant="tertiary">
+                  <LeaveIcon aria-hidden />
+                  Logg ut
+                </Button>
+              </Dropdown.Item>
+            </Dropdown.List>
+          </Dropdown>
+          <Badge.Position data-size="lg">
+            <Button
+              data-hide="sm"
+              popoverTarget="usermenuSmall"
+              variant="tertiary"
+            >
+              <Avatar aria-label="Stian Hansen">SH</Avatar>
+            </Button>
+            <Badge
+              count={notifications}
+              maxCount={9}
+              data-hide="sm"
+              data-color="danger"
+              style={
+                {
+                  '--dsc-badge-right': '15%',
+                  '--dsc-badge-top': '15%',
+                } as React.CSSProperties
+              }
+            />
+          </Badge.Position>
+          <Dropdown id="usermenuSmall" placement="bottom-end">
+            <Dropdown.List>
+              <Dropdown.Item>
+                <Dropdown.Heading>Detaljer</Dropdown.Heading>
+              </Dropdown.Item>
+              <Dropdown.Item
+                style={{
+                  marginLeft: 'var(--ds-size-4)',
+                }}
+              >
+                <Paragraph>Stian Hansen</Paragraph>
+              </Dropdown.Item>
+              <Dropdown.Item
+                style={{
+                  marginBottom: 'var(--ds-size-4)',
+                  marginLeft: 'var(--ds-size-4)',
+                }}
+              >
+                <Paragraph>Admin</Paragraph>
+              </Dropdown.Item>
+              <Divider />
+              <Dropdown.Item>
+                <Dropdown.Heading>Bytt profil</Dropdown.Heading>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <Dropdown.Button>
+                  <Avatar aria-hidden>
+                    <BriefcaseIcon />
+                  </Avatar>
+                  Grålum skole <Badge count={10} maxCount={9} />
                 </Dropdown.Button>
               </Dropdown.Item>
               <Divider />
