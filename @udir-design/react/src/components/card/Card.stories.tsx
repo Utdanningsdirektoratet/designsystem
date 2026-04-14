@@ -23,7 +23,7 @@ const meta = preview.meta({
   subcomponents: {
     'Card.Block': CardBlock,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
@@ -171,15 +171,7 @@ export const Video = meta.story({
         ></iframe>
       </Card.Block>
       <Card.Block>
-        <Heading>
-          <a
-            href="https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/filmer/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Ny opplæringslov
-          </a>
-        </Heading>
+        <Heading>Ny opplæringslov</Heading>
         <Paragraph>
           Kunnskapsminister Kari Nessa Nordtun om den nye opplæringsloven.
         </Paragraph>
@@ -289,11 +281,12 @@ export const WithLink = meta.story({
 });
 
 export const Horizontal = meta.story({
-  render: () => {
+  render: (args) => {
     const url =
       'https://www.udir.no/contentassets/0ae1c5846c254b9f8800c59c393fd03d/skolemiljo.png';
     return (
       <Card
+        {...args}
         style={{
           display: 'grid',
           gridAutoFlow: 'column',
