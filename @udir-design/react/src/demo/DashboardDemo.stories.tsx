@@ -101,7 +101,7 @@ export const DashboardStory = meta.story({
               <Dropdown.Item>
                 <Dropdown.Heading>Detaljer</Dropdown.Heading>
               </Dropdown.Item>
-              <Dropdown.Item>
+              <Dropdown.Item style={{ marginLeft: 'var(--ds-size-4)' }}>
                 <Paragraph>Stian Hansen</Paragraph>
               </Dropdown.Item>
               <Dropdown.Item
