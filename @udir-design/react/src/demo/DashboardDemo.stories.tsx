@@ -33,19 +33,17 @@ export const DashboardStory = meta.story({
     return (
       <>
         <Header applicationName="Dashboard demo">
-          <Badge.Position data-size="lg">
+          <Badge.Position data-show="sm">
             <Header.UserButton
               name="Stian Hansen"
               description="Admin"
               popoverTarget="usermenu2"
-              data-show="sm"
               avatar={<Avatar aria-hidden>SH</Avatar>}
               aria-label={`Stian Hansen Admin - ${notifications} varsler`}
             />
             <Badge
               count={notifications}
               maxCount={9}
-              data-show="sm"
               data-color="danger"
               style={
                 {
@@ -78,18 +76,15 @@ export const DashboardStory = meta.story({
               </Dropdown.Item>
             </Dropdown.List>
           </Dropdown>
-          <Badge.Position data-size="lg">
-            <Button
-              data-hide="sm"
-              popoverTarget="usermenuSmall"
-              variant="tertiary"
-            >
+
+          {/* Small screen: swap UserButton with avatar button on "sm" */}
+          <Badge.Position data-hide="sm">
+            <Button popoverTarget="usermenuSmall" variant="tertiary">
               <Avatar aria-label="Stian Hansen">SH</Avatar>
             </Button>
             <Badge
               count={notifications}
               maxCount={9}
-              data-hide="sm"
               data-color="danger"
               style={
                 {
@@ -104,7 +99,7 @@ export const DashboardStory = meta.story({
               <Dropdown.Item>
                 <Dropdown.Heading>Detaljer</Dropdown.Heading>
               </Dropdown.Item>
-              <Dropdown.Item>
+              <Dropdown.Item style={{ marginLeft: 'var(--ds-size-4)' }}>
                 <Paragraph>Stian Hansen</Paragraph>
               </Dropdown.Item>
               <Dropdown.Item

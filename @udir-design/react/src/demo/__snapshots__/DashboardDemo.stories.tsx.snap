@@ -26,13 +26,12 @@ exports[`Dashboard Page 2 1`] = `
       <span
         data-overlap="rectangle"
         data-placement="top-right"
-        data-size="lg"
+        data-show="sm"
       >
         <button
           type="button"
           data-color="neutral"
           popovertarget="usermenu2"
-          data-show="sm"
           aria-label="Stian Hansen Admin - 10 varsler"
         >
           <div>
@@ -98,7 +97,6 @@ exports[`Dashboard Page 2 1`] = `
         <span
           data-count="9+"
           data-variant="base"
-          data-show="sm"
           data-color="danger"
           style="--dsc-badge-right: 20%; --dsc-badge-top: 13%;"
         >
@@ -184,12 +182,11 @@ exports[`Dashboard Page 2 1`] = `
       <span
         data-overlap="rectangle"
         data-placement="top-right"
-        data-size="lg"
+        data-hide="sm"
       >
         <button
           data-variant="tertiary"
           type="button"
-          data-hide="sm"
           popovertarget="usermenuSmall"
         >
           <span
@@ -205,7 +202,6 @@ exports[`Dashboard Page 2 1`] = `
         <span
           data-count="9+"
           data-variant="base"
-          data-hide="sm"
           data-color="danger"
           style="--dsc-badge-right: 15%; --dsc-badge-top: 15%;"
         >
@@ -222,7 +218,7 @@ exports[`Dashboard Page 2 1`] = `
               Detaljer
             </h2>
           </li>
-          <li>
+          <li style="margin-left: var(--ds-size-4);">
             <p data-variant="default">
               Stian Hansen
             </p>
@@ -860,13 +856,12 @@ exports[`Dashboard Page 3 1`] = `
       <span
         data-overlap="rectangle"
         data-placement="top-right"
-        data-size="lg"
+        data-show="sm"
       >
         <button
           type="button"
           data-color="neutral"
           popovertarget="usermenu2"
-          data-show="sm"
           aria-label="Stian Hansen Admin - 10 varsler"
         >
           <div>
@@ -932,7 +927,6 @@ exports[`Dashboard Page 3 1`] = `
         <span
           data-count="9+"
           data-variant="base"
-          data-show="sm"
           data-color="danger"
           style="--dsc-badge-right: 20%; --dsc-badge-top: 13%;"
         >
@@ -1018,12 +1012,11 @@ exports[`Dashboard Page 3 1`] = `
       <span
         data-overlap="rectangle"
         data-placement="top-right"
-        data-size="lg"
+        data-hide="sm"
       >
         <button
           data-variant="tertiary"
           type="button"
-          data-hide="sm"
           popovertarget="usermenuSmall"
         >
           <span
@@ -1039,7 +1032,6 @@ exports[`Dashboard Page 3 1`] = `
         <span
           data-count="9+"
           data-variant="base"
-          data-hide="sm"
           data-color="danger"
           style="--dsc-badge-right: 15%; --dsc-badge-top: 15%;"
         >
@@ -1056,7 +1048,7 @@ exports[`Dashboard Page 3 1`] = `
               Detaljer
             </h2>
           </li>
-          <li>
+          <li style="margin-left: var(--ds-size-4);">
             <p data-variant="default">
               Stian Hansen
             </p>
@@ -1694,13 +1686,12 @@ exports[`Dashboard Page 4 1`] = `
       <span
         data-overlap="rectangle"
         data-placement="top-right"
-        data-size="lg"
+        data-show="sm"
       >
         <button
           type="button"
           data-color="neutral"
           popovertarget="usermenu2"
-          data-show="sm"
           aria-label="Stian Hansen Admin - 10 varsler"
         >
           <div>
@@ -1766,7 +1757,6 @@ exports[`Dashboard Page 4 1`] = `
         <span
           data-count="9+"
           data-variant="base"
-          data-show="sm"
           data-color="danger"
           style="--dsc-badge-right: 20%; --dsc-badge-top: 13%;"
         >
@@ -1852,12 +1842,11 @@ exports[`Dashboard Page 4 1`] = `
       <span
         data-overlap="rectangle"
         data-placement="top-right"
-        data-size="lg"
+        data-hide="sm"
       >
         <button
           data-variant="tertiary"
           type="button"
-          data-hide="sm"
           popovertarget="usermenuSmall"
         >
           <span
@@ -1873,7 +1862,6 @@ exports[`Dashboard Page 4 1`] = `
         <span
           data-count="9+"
           data-variant="base"
-          data-hide="sm"
           data-color="danger"
           style="--dsc-badge-right: 15%; --dsc-badge-top: 15%;"
         >
@@ -1890,7 +1878,7 @@ exports[`Dashboard Page 4 1`] = `
               Detaljer
             </h2>
           </li>
-          <li>
+          <li style="margin-left: var(--ds-size-4);">
             <p data-variant="default">
               Stian Hansen
             </p>
@@ -2528,13 +2516,12 @@ exports[`Dashboard Story 1`] = `
       <span
         data-overlap="rectangle"
         data-placement="top-right"
-        data-size="lg"
+        data-show="sm"
       >
         <button
           type="button"
           data-color="neutral"
           popovertarget="usermenu2"
-          data-show="sm"
           aria-label="Stian Hansen Admin - 10 varsler"
         >
           <div>
@@ -2600,7 +2587,6 @@ exports[`Dashboard Story 1`] = `
         <span
           data-count="9+"
           data-variant="base"
-          data-show="sm"
           data-color="danger"
           style="--dsc-badge-right: 20%; --dsc-badge-top: 13%;"
         >
@@ -2686,12 +2672,11 @@ exports[`Dashboard Story 1`] = `
       <span
         data-overlap="rectangle"
         data-placement="top-right"
-        data-size="lg"
+        data-hide="sm"
       >
         <button
           data-variant="tertiary"
           type="button"
-          data-hide="sm"
           popovertarget="usermenuSmall"
         >
           <span
@@ -2707,7 +2692,6 @@ exports[`Dashboard Story 1`] = `
         <span
           data-count="9+"
           data-variant="base"
-          data-hide="sm"
           data-color="danger"
           style="--dsc-badge-right: 15%; --dsc-badge-top: 15%;"
         >
@@ -2724,7 +2708,7 @@ exports[`Dashboard Story 1`] = `
               Detaljer
             </h2>
           </li>
-          <li>
+          <li style="margin-left: var(--ds-size-4);">
             <p data-variant="default">
               Stian Hansen
             </p>
