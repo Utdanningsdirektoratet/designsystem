@@ -20,9 +20,18 @@ import { Tooltip } from '../tooltip/Tooltip';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Tabs } from './Tabs';
+import { Tabs as FakeTabs } from './docs/FakeTabs';
+import { TabsList } from './docs/FakeTabsList';
+import { TabsPanel } from './docs/FakeTabsPanel';
+import { TabsTab } from './docs/FakeTabsTab';
 
 const meta = preview.meta({
-  component: Tabs,
+  component: FakeTabs,
+  subcomponents: {
+    'Tabs.List': TabsList,
+    'Tabs.Tab': TabsTab,
+    'Tabs.Panel': TabsPanel,
+  },
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {
@@ -46,6 +55,7 @@ export const Preview = meta.story({
       <Tabs.Panel value="value3">Innhold for Tab 3</Tabs.Panel>,
     ],
   },
+  render: (args) => <Tabs {...args} />,
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
     const tab1 = canvas.getByRole('tab', { name: /tab 1/i });
