@@ -5,10 +5,17 @@ import { useDropzone } from 'react-dropzone';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { Heading } from '../typography/heading/Heading';
+import { FileUploadDropzone } from './docs/FakeFileUploadDropzone';
+import { FileUploadItem } from './docs/FakeFileUploadItem';
+import { FileUploadTrigger } from './docs/FakeFileUploadTrigger';
 import { FileUpload } from './index';
 
 const meta = preview.meta({
-  component: FileUpload.Trigger,
+  component: FileUploadTrigger,
+  subcomponents: {
+    'FileUpload.Dropzone': FileUploadDropzone,
+    'FileUpload.Item': FileUploadItem,
+  },
   tags: ['alpha', 'udir'],
   parameters: {
     componentOrigin: {
