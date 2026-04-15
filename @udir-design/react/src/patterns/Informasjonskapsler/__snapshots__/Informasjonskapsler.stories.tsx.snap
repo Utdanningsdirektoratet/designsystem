@@ -11,8 +11,11 @@ exports[`Drawer 1`] = `
             }
             @media (max-width: 40rem) {
               .cookies-buttons > button {
-          flex: 1 1 auto;
+            flex: 1 1 auto;
               }
+            }
+            .link {
+              white-space: nowrap;
             }
   </style>
   <dialog
@@ -79,8 +82,11 @@ exports[`Preview 1`] = `
             }
             @media (max-width: 40rem) {
               .cookies-buttons > button {
-          flex: 1 1 auto;
+            flex: 1 1 auto;
               }
+            }
+            .link {
+              white-space: nowrap;
             }
   </style>
   <dialog
