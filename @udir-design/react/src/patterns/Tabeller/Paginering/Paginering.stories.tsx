@@ -72,29 +72,29 @@ export const Preview = meta.story({
         return sortDirection === 'ascending' ? 1 : -1;
       return 0;
     });
+
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     useEffect(() => {
       const handleResize = () => setWindowWidth(window.innerWidth);
       window.addEventListener('resize', handleResize);
       return () => window.removeEventListener('resize', handleResize);
     }, []);
+
     const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
     const breakpoints = {
-      xs: 30 * rem, // 480px
+      sm: 20 * rem, // 320px
       md: 48 * rem, // 768px
-      lg: 64 * rem, // 1024px
+      lg: 75 * rem, // 1200px
     };
-    const isSmallMobile = windowWidth < breakpoints.xs;
+    const isSmallMobile = windowWidth <= breakpoints.sm;
     const isMobile = windowWidth < breakpoints.md;
-    const isTablet =
-      windowWidth >= breakpoints.md && windowWidth < breakpoints.lg;
-    const isMobileOrTablet = windowWidth < breakpoints.lg;
+    const isTablet = windowWidth < breakpoints.lg;
 
     const totalPages = Math.ceil(dummyData.length / itemsPerPage);
     const { pages, nextButtonProps, prevButtonProps } = usePagination({
       currentPage: page,
       totalPages,
-      showPages: isSmallMobile ? 1 : isMobile ? 2 : 5,
+      showPages: isSmallMobile ? 1 : isMobile ? 2 : isTablet ? 3 : 6,
       setCurrentPage,
     });
 
@@ -146,8 +146,8 @@ export const Preview = meta.story({
         <div
           style={{
             display: 'flex',
-            flexDirection: isMobileOrTablet ? 'column' : 'row',
-            justifyContent: isMobileOrTablet ? 'center' : 'space-between',
+            flexDirection: isTablet ? 'column' : 'row',
+            justifyContent: isTablet ? 'center' : 'space-between',
             alignItems: 'center',
             gap: 'var(--ds-size-4)',
             margin: 'var(--ds-size-6) var(--ds-size-2)',
@@ -159,9 +159,7 @@ export const Preview = meta.story({
                 <Pagination.Button
                   aria-label="Forrige side"
                   {...prevButtonProps}
-                >
-                  {!isMobile && 'Forrige'}
-                </Pagination.Button>
+                />
               </Pagination.Item>
               {pages.map(
                 ({
@@ -186,9 +184,10 @@ export const Preview = meta.story({
                 ),
               )}
               <Pagination.Item>
-                <Pagination.Button aria-label="Neste side" {...nextButtonProps}>
-                  {!isMobile && 'Neste'}
-                </Pagination.Button>
+                <Pagination.Button
+                  aria-label="Neste side"
+                  {...nextButtonProps}
+                />
               </Pagination.Item>
             </Pagination.List>
           </Pagination>
