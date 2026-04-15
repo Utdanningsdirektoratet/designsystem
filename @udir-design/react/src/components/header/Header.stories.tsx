@@ -16,10 +16,29 @@ import { Tag } from '../tag/Tag';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Prose } from '../typography/prose/Prose';
+import { Header as FakeHeader } from './docs/FakeHeader';
+import { HeaderMenu } from './docs/FakeHeaderMenu';
+import { HeaderMenuButton } from './docs/FakeHeaderMenuButton';
+import { HeaderMenuLink } from './docs/FakeHeaderMenuLink';
+import { HeaderNavigationItem } from './docs/FakeHeaderNavigationItem';
+import { HeaderSearch } from './docs/FakeHeaderSearch';
+import { HeaderThemeMenuButton } from './docs/FakeHeaderThemeMenuButton';
+import { HeaderUserButton } from './docs/FakeHeaderUserButton';
+import { HeaderNavigation } from './headerNavigation/HeaderNavigation';
 import { Header } from '.';
 
 const meta = preview.meta({
-  component: Header,
+  component: FakeHeader,
+  subcomponents: {
+    'Header.UserButton': HeaderUserButton,
+    'Header.Search': HeaderSearch,
+    'Header.Navigation': HeaderNavigation,
+    'Header.Navigation.Item': HeaderNavigationItem,
+    'Header.MenuButton': HeaderMenuButton,
+    'Header.Menu': HeaderMenu,
+    'Header.Menu.Link': HeaderMenuLink,
+    'Header.ThemeMenuButton': HeaderThemeMenuButton,
+  },
   tags: ['beta', 'udir'],
   parameters: {
     componentOrigin: {
