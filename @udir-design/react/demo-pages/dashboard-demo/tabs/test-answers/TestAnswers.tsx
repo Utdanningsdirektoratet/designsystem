@@ -1,5 +1,5 @@
 import * as Highcharts from 'highcharts';
-import HighchartsReact from 'highcharts-react-official';
+import { HighchartsReact } from 'highcharts-react-official';
 import { useRef, useState } from 'react';
 import { Table } from 'src/components/table';
 import { Heading } from 'src/components/typography/heading/Heading';
