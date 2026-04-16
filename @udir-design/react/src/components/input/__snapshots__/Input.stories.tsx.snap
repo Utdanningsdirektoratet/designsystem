@@ -564,7 +564,7 @@ exports[`Controlled 1`] = `
       data-weight="medium"
       for="<removed>"
     >
-      Fullt navn
+      Skriv inn verdi
     </label>
     <input
       type="text"
@@ -607,7 +607,6 @@ exports[`Input Types 1`] = `
   </label>
   <input
     type="checkbox"
-    checked
     id="<removed>"
   >
 </ds-field>
@@ -620,7 +619,6 @@ exports[`Input Types 1`] = `
   </label>
   <input
     type="radio"
-    checked
     id="<removed>"
   >
 </ds-field>
@@ -634,7 +632,6 @@ exports[`Input Types 1`] = `
   <input
     role="switch"
     type="checkbox"
-    checked
     id="<removed>"
   >
 </ds-field>
@@ -645,7 +642,6 @@ exports[`Preview 1`] = `
   aria-invalid="false"
   aria-label="input"
   type="text"
-  checked
   name="inputs"
 >
 `;
