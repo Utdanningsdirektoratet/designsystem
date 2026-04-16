@@ -8,7 +8,7 @@ exports[`Article Story 1`] = `
   <a href="#main">
     Hopp til hovedinnholdet
   </a>
-  <div style="--udsc-demo-banner-text: &#x27;Dette er en demo&#x27;;">
+  <div style="--udsc-demo-banner-text: &#x27;Dette er et demobanner&#x27;;">
     <header
       data-scroll-direction="up"
       data-top="true"
@@ -79,119 +79,135 @@ exports[`Article Story 1`] = `
               <h2 id="header-menu-navigation">
                 Menynavigasjon
               </h2>
-              <ul>
-                <li>
-                  <a href="#">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="1em"
-                      height="1em"
-                      fill="none"
-                      viewbox="0 0 24 24"
-                      focusable="false"
-                      role="img"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+              <div>
+                <h3
+                  data-size="xs"
+                  style="margin-bottom: var(--ds-size-3);"
+                >
+                  Heading 1
+                </h3>
+                <ul>
+                  <li>
+                    <a href="#">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        fill="none"
+                        viewbox="0 0 24 24"
+                        focusable="false"
+                        role="img"
+                        aria-hidden="true"
                       >
-                      </path>
-                    </svg>
-                    Navigasjonslenke 1
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="1em"
-                      height="1em"
-                      fill="none"
-                      viewbox="0 0 24 24"
-                      focusable="false"
-                      role="img"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+                        <path
+                          fill="currentColor"
+                          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+                        >
+                        </path>
+                      </svg>
+                      Navigasjonslenke 1
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        fill="none"
+                        viewbox="0 0 24 24"
+                        focusable="false"
+                        role="img"
+                        aria-hidden="true"
                       >
-                      </path>
-                    </svg>
-                    Navigasjonslenke 2
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="1em"
-                      height="1em"
-                      fill="none"
-                      viewbox="0 0 24 24"
-                      focusable="false"
-                      role="img"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+                        <path
+                          fill="currentColor"
+                          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+                        >
+                        </path>
+                      </svg>
+                      Navigasjonslenke 2
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        fill="none"
+                        viewbox="0 0 24 24"
+                        focusable="false"
+                        role="img"
+                        aria-hidden="true"
                       >
-                      </path>
-                    </svg>
-                    Navigasjonslenke 3
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="1em"
-                      height="1em"
-                      fill="none"
-                      viewbox="0 0 24 24"
-                      focusable="false"
-                      role="img"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+                        <path
+                          fill="currentColor"
+                          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+                        >
+                        </path>
+                      </svg>
+                      Navigasjonslenke 3
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        fill="none"
+                        viewbox="0 0 24 24"
+                        focusable="false"
+                        role="img"
+                        aria-hidden="true"
                       >
-                      </path>
-                    </svg>
-                    Navigasjonslenke 4
-                  </a>
-                </li>
-              </ul>
+                        <path
+                          fill="currentColor"
+                          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+                        >
+                        </path>
+                      </svg>
+                      Navigasjonslenke 4
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </nav>
           </div>
         </div>
       </div>
     </header>
-    <article>
+    <article aria-label="Tilpasset opplæring">
       <nav aria-label="Du er her:">
-        <a aria-label="Tilbake til mer informasjon">
-          Mer informasjon
+        <a
+          href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/"
+          aria-label="Tilbake til Støtte til arbeid med læreplanverket"
+        >
+          Støtte til arbeid med læreplanverket
         </a>
         <ol>
           <li>
             <a href="https://www.udir.no/">
-              Generell informasjon
+              Forside
             </a>
           </li>
           <li>
             <a href="https://www.udir.no/laring-og-trivsel/lareplanverket/">
-              Mer informasjon
+              Læreplanverket
+            </a>
+          </li>
+          <li>
+            <a href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/">
+              Støtte til arbeid med læreplanverket
             </a>
           </li>
           <li>
             <a
-              href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/planleggingsverktoy-i-lareplanvisning/"
+              href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/tilpasset-opplaring/"
               aria-current="page"
             >
-              Læreplanverket
+              Tilpasset opplæring
             </a>
           </li>
         </ol>
@@ -201,41 +217,60 @@ exports[`Article Story 1`] = `
         tabindex="-1"
       >
         <div>
-          <div data-color="info">
-            Denne artikkelen er mer enn 2 år gammel
-          </div>
           <div>
-            <h1 data-size="md">
-              Læreplanverket
+            <h1 data-size="lg">
+              Tilpasset opplæring
             </h1>
-            <a
-              href="#"
-              data-size="md"
+            <p data-variant="default">
+              Skolen skal tilpasse opplæringen for alle elever, lærlinger, lærekandidater og voksne. Tilpasset opplæring innebærer at elevene skal få et tilfredsstillende utbytte av opplæringen uavhengig av forutsetninger, og at alle skal få utnyttet og utviklet evnene sine.
+            </p>
+            <hr
+              aria-hidden="true"
+              style="margin: var(--ds-size-4) 0;"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
-                aria-hidden="true"
+            <div>
+              <p
+                data-variant="default"
+                data-size="sm"
               >
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  d="M7 2.25a.75.75 0 0 0-.75.75v4.25H4A1.75 1.75 0 0 0 2.25 9v9c0 .414.336.75.75.75h3.25V21c0 .414.336.75.75.75h10a.75.75 0 0 0 .75-.75v-2.25H21a.75.75 0 0 0 .75-.75V9A1.75 1.75 0 0 0 20 7.25h-2.25V3a.75.75 0 0 0-.75-.75zM3.75 9A.25.25 0 0 1 4 8.75h16a.25.25 0 0 1 .25.25v8.25h-2.5V12a.75.75 0 0 0-.75-.75H7a.75.75 0 0 0-.75.75v5.25h-2.5zm12.5-1.75v-3.5h-8.5v3.5zm-8.5 5.5v7.5h8.5v-7.5zM9.25 15a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75m0 3a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H10a.75.75 0 0 1-.75-.75"
-                  clip-rule="evenodd"
+                ARTIKKEL | Sist endret: 01.01.2024
+              </p>
+              <a
+                href
+                data-size="sm"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
                 >
-                </path>
-              </svg>
-              <span>
-                Skriv ut denne siden
-              </span>
-            </a>
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span data-size="sm">
+                  Last ned siden som PDF
+                </span>
+              </a>
+            </div>
+            <hr
+              aria-hidden="true"
+              style="margin: var(--ds-size-4) 0;"
+            >
           </div>
-          <div data-variant="default">
+          <div
+            data-variant="tinted"
+            data-color="accent"
+          >
             <u-details
               open
               data-variant="default"
@@ -252,7 +287,7 @@ exports[`Article Story 1`] = `
               <div>
                 <ol>
                   <li>
-                    <a href="#how-to">
+                    <a href="#follow-development">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="1em"
@@ -270,12 +305,12 @@ exports[`Article Story 1`] = `
                         </path>
                       </svg>
                       <span>
-                        Hvordan bruke verktøyet
+                        Følg med på utviklingen
                       </span>
                     </a>
                   </li>
                   <li>
-                    <a href="#what-resources">
+                    <a href="#curriculum-framework">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="1em"
@@ -293,12 +328,12 @@ exports[`Article Story 1`] = `
                         </path>
                       </svg>
                       <span>
-                        Hvilke ressurser er tilgjengelige?
+                        Læreplanverket gir et stort handlingsrom til å tilpasse opplæringen
                       </span>
                     </a>
                   </li>
                   <li>
-                    <a href="#involve-students">
+                    <a href="#examples-of-measures">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="1em"
@@ -316,12 +351,12 @@ exports[`Article Story 1`] = `
                         </path>
                       </svg>
                       <span>
-                        Hvordan involvere elever i planlegging?
+                        Eksempler på virkemidler
                       </span>
                     </a>
                   </li>
                   <li>
-                    <a href="#access">
+                    <a href="#intensive-education">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="1em"
@@ -339,12 +374,12 @@ exports[`Article Story 1`] = `
                         </path>
                       </svg>
                       <span>
-                        Tilgang
+                        Intensiv opplæring
                       </span>
                     </a>
                   </li>
                   <li>
-                    <a href="#teachers">
+                    <a href="#useful-links">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="1em"
@@ -362,76 +397,7 @@ exports[`Article Story 1`] = `
                         </path>
                       </svg>
                       <span>
-                        Lærere
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#students">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="1em"
-                        height="1em"
-                        fill="none"
-                        viewbox="0 0 24 24"
-                        focusable="false"
-                        role="img"
-                        aria-hidden="true"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
-                        >
-                        </path>
-                      </svg>
-                      <span>
-                        Studenter
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#it">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="1em"
-                        height="1em"
-                        fill="none"
-                        viewbox="0 0 24 24"
-                        focusable="false"
-                        role="img"
-                        aria-hidden="true"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
-                        >
-                        </path>
-                      </svg>
-                      <span>
-                        IT-ansvarlige
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#technical-questions">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="1em"
-                        height="1em"
-                        fill="none"
-                        viewbox="0 0 24 24"
-                        focusable="false"
-                        role="img"
-                        aria-hidden="true"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M4.5 3.25a.75.75 0 0 1 .75.75v6c0 .69.56 1.25 1.25 1.25h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H6.5A2.75 2.75 0 0 1 3.75 10V4a.75.75 0 0 1 .75-.75"
-                        >
-                        </path>
-                      </svg>
-                      <span>
-                        Tekniske spørsmål
+                        Nyttige lenker
                       </span>
                     </a>
                   </li>
@@ -439,112 +405,60 @@ exports[`Article Story 1`] = `
               </div>
             </u-details>
           </div>
+          <p data-variant="default">
+            Skolen må gi alle elever mulighet til læring og utvikling uavhengig av forutsetningene deres. Dere skal legge til rette for en opplæring som ivaretar både fellesskapet og hver enkelt elev, slik at elevene får best mulig utbytte av opplæringen.
+          </p>
+          <h2
+            data-size="md"
+            id="follow-development"
+            tabindex="-1"
+          >
+            Følg med på utviklingen
+          </h2>
+          <p data-variant="default">
+            Dere som jobber på skolen må følge med på utviklingen til elevene, og melde fra til rektor hvis det er tvil om at en elev har tilfredsstillende utbytte av opplæringen. Hvis det må til, skal dere sette i gang egnede tiltak som kan bidra til at eleven får tilfredsstillende utbytte.
+          </p>
+          <p data-variant="default">
+            For elever på 1. til 4. trinn som står i fare for ikke å ha forventet progresjon i lesing, skriving eller regning skal dere også sette i gang med intensiv opplæring.
+          </p>
           <div
             data-variant="tinted"
-            data-color="support2"
+            data-color="accent"
           >
-            <h2 data-size="sm">
-              Planleggingsverktøy
-            </h2>
             <p data-variant="default">
-              Planleggingsverktøyet gir støtte til å ta i bruk læreplanene.
+              Tilpasset opplæring gjelder alle elever, og skal i størst mulig grad skje gjennom variasjon og tilpasninger til mangfoldet i elevgruppen innenfor fellesskapet.
+              <a
+                href="https://www.udir.no/lk20/overordnet-del/3.-prinsipper-for-skolens-praksis/3.2-undervisning-og-tilpasset-opplaring"
+                data-size="sm"
+              >
+                Overordnet del 3.2
+              </a>
             </p>
           </div>
-          <section>
-            <h2
-              data-size="sm"
-              id="how-to"
-              tabindex="-1"
-            >
-              Hvordan bruke verktøyet
-            </h2>
-            <p data-variant="default">
-              Verktøyet kan brukes til å jobbe med de didaktiske spørsmålene hvorfor, hva og hvordan i planlegging av opplæring i tråd med læreplanverket.
-            </p>
-            <h3
-              data-size="xs"
-              id="what-resources"
-              tabindex="-1"
-            >
-              Hvilke ressurser er tilgjengelige?
-            </h3>
-            <p data-variant="default">
-              Det finnes flere ressurser tilgjengelig for lærere som ønsker å forbedre sine planleggingsevner. Dette inkluderer maler, sjekklister og veiledninger som kan lastes ned fra vår nettside.
-            </p>
-            <h3
-              data-size="xs"
-              id="involve-students"
-              tabindex="-1"
-            >
-              Hvordan involvere elever i planlegging?
-            </h3>
-            <p data-variant="default">
-              Å involvere elever i planleggingen av egne læringsmål kan øke motivasjonen. Dette kan gjøres gjennom workshops og tilbakemeldingsrunder der elevenes stemmer blir hørt.
-            </p>
-          </section>
-          <section>
-            <h2
-              data-size="sm"
-              id="access"
-              tabindex="-1"
-            >
-              Tilgang
-            </h2>
-            <p data-variant="default">
-              Skoleeiere, høgskoler, universitet og lærebedrifter som ønsker at lærere og ansatte skal ha tilgang til verktøyet, må signere databehandleravtale.
-            </p>
-            <h3
-              data-size="xs"
-              id="teachers"
-              tabindex="-1"
-            >
-              Lærere
-            </h3>
-            <p data-variant="default">
-              Lærere som ønsker å bruke verktøyet til undervisning må registrere seg og bekrefte sin identitet.
-            </p>
-            <h3
-              data-size="xs"
-              id="students"
-              tabindex="-1"
-            >
-              Studenter
-            </h3>
-            <p data-variant="default">
-              Studenter får tilgang til verktøyet gjennom lærerne sine, etter at de har fått bekreftet sin påmelding.
-            </p>
-            <h3
-              data-size="xs"
-              id="it"
-              tabindex="-1"
-            >
-              IT-ansvarlige
-            </h3>
-            <p data-variant="default">
-              IT-ansvarlige i institusjoner må sørge for at nødvendig infrastruktur er på plass for at verktøyet skal fungere optimalt.
-            </p>
-          </section>
-          <section>
-            <h2
-              data-size="sm"
-              id="technical-questions"
-              tabindex="-1"
-            >
-              Tekniske spørsmål
-            </h2>
-            <p data-variant="default">
-              Har du tekniske spørsmål, så send en e-post til lpv@udir.no. Hvis du bytter Feide-bruker, så hjelper vi deg også med å koble planer du allerede har til din nye Feide-bruker.
-            </p>
-          </section>
-          <div data-variant="default">
-            <div>
-              <h2 data-size="sm">
-                Endringer i verktøyet
-              </h2>
-              <p data-variant="default">
-                Vi går igjennom alle innspillene vi får, og med jevne mellomrom prioriterer vi hva vi gjør av endringer.
-              </p>
-            </div>
+          <h2
+            data-size="md"
+            id="curriculum-framework"
+            tabindex="-1"
+          >
+            Læreplanverket gir et stort handlingsrom til å tilpasse opplæringen
+          </h2>
+          <p data-variant="default">
+            Dere lærere har et stort handlingsrom til å prøve ut ulike tiltak for å tilpasse opplæringen for elevene deres. Deres kjennskap til elevene og profesjonsfaglige skjønn er avgjørende for å fange opp elevenes behov, og for å lykkes med tilpasningene.
+          </p>
+          <h2
+            data-size="md"
+            id="examples-of-measures"
+            tabindex="-1"
+          >
+            Eksempler på virkemidler
+          </h2>
+          <p data-variant="default">
+            Nedenfor følger noen eksempler på tiltak og virkemidler som kan hjelpe dere å tilpasse opplæringen. Det er ikke en uttømmende liste, men ment som støtte for å komme i gang.
+          </p>
+          <div
+            data-variant="tinted"
+            data-color="neutral"
+          >
             <u-details
               data-variant="default"
               role="group"
@@ -555,10 +469,10 @@ exports[`Article Story 1`] = `
                 slot="summary"
                 tabindex="0"
               >
-                Oversikt - 19.11.2022
+                Elevenes medvirkning og motivasjon
               </u-summary>
               <div>
-                Vi har lagt til en ny knapp hvor du får oversikt over hvilke deler av læreplanen du har brukt i planene dine.
+                levene lærer på mange forskjellige måter, og blir motivert av ulike faktorer. De har også med seg ulike forkunnskaper og forutsetninger inn i opplæringen. Allerede når dere planlegger undervisningen er det lurt å ta hensyn til hva elevene kan fra før, og hva som motiverer dem. Det er viktig å prøve ut ulike arbeidsformer og pedagogiske metoder for å bli godt kjent med hva som fungerer for den enkelte eleven.
               </div>
             </u-details>
             <u-details
@@ -571,10 +485,10 @@ exports[`Article Story 1`] = `
                 slot="summary"
                 tabindex="0"
               >
-                Tilgang for instruktører i bedrift - 09.11.2022
+                Struktur og forutsigbarhet
               </u-summary>
               <div>
-                Vi har lagt til pålogging med ID-porten slik at også instruktører i bedrift kan bruke planleggingsverktøyet.
+                Struktur og forutsigbarhet er viktig for de fleste elevene, men noen har et større behov enn andre. Mens noen elever kan forholde seg til mange beskjeder samtidig og tåler å vite mindre om hva som skal skje, kan andre oppleve slike situasjoner som stressende og forvirrende. Dette kan skyldes mange forskjellige forhold, som for eksempel vansker med problemløsning, planlegging, språk eller atferdsregulering. For disse elvene er det helt avgjørende at dere forsøker å være i forkant av situasjoner og gjøre det mer forutsigbart, slik at elevene kan være trygge og oppleve mestring.
               </div>
             </u-details>
             <u-details
@@ -587,51 +501,80 @@ exports[`Article Story 1`] = `
                 slot="summary"
                 tabindex="0"
               >
-                Invitere til flere planer - 25.01.2022
+                Reguleringsstøtte
               </u-summary>
               <div>
-                Vi har fått innspill om at det er tungvindt å gå inn i en og en plan for å invitere samarbeidspartnere. Vi har lagt til mulighet for å invitere samarbeidspartnere til mange planer samtidig.
-              </div>
-            </u-details>
-            <u-details
-              data-variant="default"
-              role="group"
-            >
-              <u-summary
-                aria-expanded="false"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
-                Velge språk - 10.01.2022
-              </u-summary>
-              <div>
-                Vi har lagt til funksjon for å velge språk slik at verktøyet er tilgjengelig på bokmål, nynorsk, nordsamisk, sørsamisk og lulesamisk. Det er mulig å velge språk på brukerinnstillinger og på hver enkelt plan.
-              </div>
-            </u-details>
-            <u-details
-              data-variant="default"
-              role="group"
-            >
-              <u-summary
-                aria-expanded="false"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
-                Overføring av planer når en bruker slettes - 22.06.2022
-              </u-summary>
-              <div>
-                Tidligere var det slik at hvis en bruker slettet seg fra planleggingsverktøyet, så ble alle planene personen hadde opprettet også slettet. Vi fikk tilbakemelding om at dette var uheldig for samarbeidspartnerne. Vi har derfor endret dette. Nå er det slik: Den som har  opprettet en plan, har rollen som administrator. Hvis administrator av en plan slettes som bruker, blir ikke planen slettet hvis det er samarbeidspartnere på planen. Rollen som administrator blir overført til den samarbeidspartneren som står øverst på lista i planen. Samtykkeerklæringen er oppdatert i tråd med denne endringen. Det er fortsatt slik at både administrator og samarbeidspartnere kan endre en plan, men bare administrator kan slette den
+                For å utvikle sosial kompetanse, mestre samspill og samarbeid, eller håndtere stress og utfordrende situasjoner, kan elever ha behov for støtte til å regulere følelser og atferd. Dette er spesielt viktig for de elevene som av ulike årsaker har negativ atferd over tid. Å gi reguleringsstøtte handler først og fremst om å forstå elevens opplevelse av situasjonen, og å være i forkant av det som skjer.
               </div>
             </u-details>
           </div>
-          <hr aria-hidden="true">
+          <h2
+            data-size="md"
+            id="intensive-education"
+            tabindex="-1"
+          >
+            Intensiv opplæring
+          </h2>
+          <p data-variant="default">
+            Intensiv opplæring for 1.-4. trinn er en del av den tilpassede opplæringen. Det skal være en kortvarig og målrettet innsats fra skolen i lesing, skriving eller regning for elevene som har behov for det. Målet er at elevene raskt skal få egnet støtte og oppfølging, slik at problemene ikke får mulighet til å utvikle og forsterke seg videre i opplæringsløpet.
+          </p>
+          <p data-variant="default">
+            Hvordan dere bør gjennomføre den intensive opplæringen, må dere vurdere ut ifra behovene til eleven og andre mulige tiltak i opplæringen. Intensiv opplæring kan skje i grupper og i noen tilfeller én-til-én. Det er dere som er nærmest til å vurdere hvordan intensiv opplæring best kan organiseres og gjennomføres. Vi vil likevel understreke at eleven skal bli hørt, at hensynet til elevens beste skal ivaretas og at inkludering er et grunnleggende prinsipp i norsk skole.
+          </p>
+          <h2
+            data-size="md"
+            id="useful-links"
+            tabindex="-1"
+          >
+            Nyttige lenker
+          </h2>
+          <ul>
+            <li>
+              <a
+                href="https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/veileder-for-tilpasset-opplaring-og-individuell-tilrettelegging/"
+                data-size="md"
+              >
+                Veileder for tilpasset opplæring og individuell tilrettelegging
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/tilpasset-opplaring/vurdere-om-eleven-har-tilfredsstillende-utbytte-av-opplaringen/"
+                data-size="md"
+              >
+                Vurdere om eleven har tilfredsstillende utbytte av opplæringen
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.udir.no/laring-og-trivsel/spesialpedagogikk/tilrettelegging-for-barn-og-elever-med-behov-for-ekstra-stotte/"
+                data-size="md"
+              >
+                Tilrettelegging for barn og elever med behov for ekstra støtte
+              </a>
+            </li>
+          </ul>
           <button
-            data-variant="secondary"
+            data-variant="tertiary"
             type="button"
           >
-            Tilbake til toppen
+            Til toppen
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                fill="currentColor"
+                d="M12.53 4.47a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 1.06 1.06l3.22-3.22V19a.75.75 0 0 0 1.5 0V6.81l3.22 3.22a.75.75 0 1 0 1.06-1.06z"
+              >
+              </path>
+            </svg>
           </button>
         </div>
       </div>
@@ -682,7 +625,7 @@ exports[`Article Story 1`] = `
       </div>
     </footer>
     <div aria-hidden="true">
-      Dette er en demo
+      Dette er et demobanner
     </div>
   </div>
 </div>
