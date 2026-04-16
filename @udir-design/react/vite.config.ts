@@ -79,6 +79,9 @@ export default defineConfig({
     outDir: './dist',
     emptyOutDir: true,
     reportCompressedSize: true,
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
     lib: {
       entry: {
         stable: 'src/stable.ts',
@@ -92,7 +95,7 @@ export default defineConfig({
       // Don't forget to update your package.json as well.
       formats: ['es', 'cjs'],
     },
-    rolldownOptions: {
+    rollupOptions: {
       // External packages that should not be bundled into your library.
       external: [...dependencies, ...dependenciesSubmodules],
     },
