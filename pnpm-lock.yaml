@@ -366,6 +366,9 @@ catalogs:
     vite-plugin-dts:
       specifier: ^4.5.4
       version: 4.5.4
+    vite-plugin-static-copy:
+      specifier: ^4.0.1
+      version: 4.0.1
     vite-tsconfig-paths:
       specifier: ^6.1.1
       version: 6.1.1
@@ -980,6 +983,9 @@ importers:
       vite:
         specifier: 'catalog:'
         version: 7.3.2(@types/node@24.12.2)(jiti@2.6.1)(less@4.1.3)(lightningcss@1.32.0)(sass@1.99.0)(stylus@0.64.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.3)
+      vite-plugin-static-copy:
+        specifier: 'catalog:'
+        version: 4.0.1(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(less@4.1.3)(lightningcss@1.32.0)(sass@1.99.0)(stylus@0.64.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.3))
 
 packages:
 
@@ -6839,6 +6845,10 @@ packages:
     resolution: {integrity: sha512-LaNjtRWUBY++zB5nE/NwcaoMylSPk+S+ZHNB1TzdbMJMny6dynpAGt7X/tl/QYq3TIeE6nxHppbo2LGymrG5Pw==}
     engines: {node: '>=10'}
 
+  p-map@7.0.4:
+    resolution: {integrity: sha512-tkAQEw8ysMzmkhgw8k+1U/iPhWNhykKnSk4Rd5zLoPJCuJaGRPo6YposrZgaxHKzDHdDWWZvE/Sk7hsL2X/CpQ==}
+    engines: {node: '>=18'}
+
   package-json-from-dist@1.0.1:
     resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
 
@@ -8295,6 +8305,12 @@ packages:
     peerDependenciesMeta:
       vite:
         optional: true
+
+  vite-plugin-static-copy@4.0.1:
+    resolution: {integrity: sha512-r3kQUrrimduikhyRm58ayemoxsgB8lZdn/JULLL4wpXHAZlYejtyZx7E/id7dwRtIOSYWu/tWvFjdEOTzso2MA==}
+    engines: {node: ^22.0.0 || >=24.0.0}
+    peerDependencies:
+      vite: ^6.0.0 || ^7.0.0 || ^8.0.0
 
   vite-tsconfig-paths@6.1.1:
     resolution: {integrity: sha512-2cihq7zliibCCZ8P9cKJrQBkfgdvcFkOOc3Y02o3GWUDLgqjWsZudaoiuOwO/gzTzy17cS5F7ZPo4bsnS4DGkg==}
@@ -15167,6 +15183,8 @@ snapshots:
     dependencies:
       p-limit: 3.1.0
 
+  p-map@7.0.4: {}
+
   package-json-from-dist@1.0.1: {}
 
   parent-module@1.0.1:
@@ -16843,6 +16861,14 @@ snapshots:
       - '@types/node'
       - rollup
       - supports-color
+
+  vite-plugin-static-copy@4.0.1(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(less@4.1.3)(lightningcss@1.32.0)(sass@1.99.0)(stylus@0.64.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.3)):
+    dependencies:
+      chokidar: 3.6.0
+      p-map: 7.0.4
+      picocolors: 1.1.1
+      tinyglobby: 0.2.15
+      vite: 7.3.2(@types/node@24.12.2)(jiti@2.6.1)(less@4.1.3)(lightningcss@1.32.0)(sass@1.99.0)(stylus@0.64.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.3)
 
   vite-tsconfig-paths@6.1.1(typescript@5.9.3)(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(less@4.1.3)(lightningcss@1.32.0)(sass@1.99.0)(stylus@0.64.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.3)):
     dependencies:

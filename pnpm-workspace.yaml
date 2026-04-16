@@ -126,6 +126,7 @@ catalog:
   unist-util-visit: ^5.1.0
   vite: ^7.3.2
   vite-plugin-dts: ^4.5.4
+  vite-plugin-static-copy: ^4.0.1
   vite-tsconfig-paths: ^6.1.1
   vitest: ^4.1.2
   yargs: ^18.0.0
@@ -164,7 +165,9 @@ minimumReleaseAgeExclude:
   - '@u-elements/*'
 
 overrides:
+  '@digdir/designsystemet-types': 1.11.0 # remove this when upgrading to 1.13.2 where this is fixed
   '@eslint/plugin-kit@<0.3.4': '>=0.3.4'
+  '@joshwooding/vite-plugin-react-docgen-typescript@>=0.7.0': 0.6.4
   chokidar@>=4.0.0 <5: ^5.0.0
   flatted@<=3.4.1: '>=3.4.2'
   glob@>=10.2.0 <10.5.0: ^10.5.0
@@ -179,8 +182,6 @@ overrides:
   semver@<7: ^7
   tmp@<=0.2.3: '>=0.2.4'
   unist-util-visit@<5: ^5.0.0
-  '@digdir/designsystemet-types': 1.11.0 # remove this when upgrading to 1.13.2 where this is fixed
-  '@joshwooding/vite-plugin-react-docgen-typescript@>=0.7.0': 0.6.4
 
 packageExtensions:
   '@navikt/aksel-icons':
