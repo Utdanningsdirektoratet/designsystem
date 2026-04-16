@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Parcel Vanilla App</title>
+    <title>Vite Vanilla App</title>
     <link
       rel="preload stylesheet"
       as="style"
@@ -18,31 +18,26 @@
       data-color="accent"
       data-variant="tinted"
     >
-      <h1 class="ds-heading" data-size="md">Vanilla html/css/js med Parcel</h1>
+      <h1 class="ds-heading" data-size="md">Vanilla html/css/js med Vite</h1>
       <p>
-        Eksempel på bruk av Udirs designsystem-biblioteker uten React, med
-        Parcel som bundler.
+        Eksempel på bruk av Udirs designsystem-biblioteker uten React, med Vite.
       </p>
       <button type="button" class="ds-button">
         <svg>
-          <use href="npm:@udir-design/icons/dist/svg/PencilWriting.svg#icon" />
+          <use id="icon-pencil" />
         </svg>
         Knapp med SVG-ikon
       </button>
       <div class="symbol-box">
         <span>Datamaskinsymbol</span>
         <svg aria-label="Datamaskinsymbol">
-          <use
-            href="npm:@udir-design/symbols/dist/svg/DatamaskinFill.svg#symbol"
-          />
+          <use id="symbol-computer" />
         </svg>
       </div>
       <span>Inline SVG-ikon</span>
       <a class="ds-link" href="/underside">
         <svg>
-          <use
-            href="npm:@udir-design/icons/dist/svg/ArrowRight.svg#icon"
-          /></svg
+          <use id="icon-arrow-link" /></svg
         ><span>Lenke med SVG-ikon</span>
       </a>
       <div class="idea-box">Du kan også bruke ikoner og symboler i CSS</div>

@@ -33,8 +33,7 @@ body {
   height: 1em;
   margin-inline-end: var(--ds-size-2);
   background: currentColor;
-  mask: center / 100% no-repeat
-    url('npm:@udir-design/icons/dist/svg/LightBulb.svg');
+  mask: center / 100% no-repeat var(--icon-lightbulb-url);
   vertical-align: middle;
   position: relative;
   top: -2px;
