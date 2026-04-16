@@ -22,12 +22,11 @@ const meta = preview.meta({
   subcomponents: {
     'Badge.Position': BadgePosition,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
-      details:
-        'Vi har begrenset fargevalg til varselfarger og Udirs hovedfarger.',
+      details: 'Vi har begrenset fargevalg til varselfarger og neutral.',
     },
     customStyles: {
       display: 'flex',
