@@ -57,6 +57,7 @@ const meta = preview.meta({
     await testSuggestion(storyRoot);
   },
 });
+export default meta;
 
 async function testSuggestion(el: HTMLElement) {
   /* wait for role to be added */

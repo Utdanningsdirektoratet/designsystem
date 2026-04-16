@@ -16,6 +16,7 @@ const meta = preview.meta({
     },
   },
 });
+export default meta;
 
 export const Dummy = meta.story({
   tags: ['!dev', '!test'], // hides the story from sidebar and tests

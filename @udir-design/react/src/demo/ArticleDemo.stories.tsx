@@ -34,6 +34,7 @@ const meta = preview.meta({
     },
   },
 });
+export default meta;
 
 export const ArticleStory = meta.story({
   args: {

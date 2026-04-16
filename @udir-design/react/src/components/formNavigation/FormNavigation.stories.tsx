@@ -37,6 +37,7 @@ const meta = preview.meta({
   },
   decorators: [withResponsiveDataSize],
 });
+export default meta;
 
 export const Preview = meta.story({
   args: {},

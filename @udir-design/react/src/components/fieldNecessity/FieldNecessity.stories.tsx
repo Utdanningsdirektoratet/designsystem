@@ -23,6 +23,7 @@ const meta = preview.meta({
     layout: 'centered',
   },
 });
+export default meta;
 
 function id(context: StoryContext, id: string) {
   const prefix = context.id.split('--')[1] ?? context.id;

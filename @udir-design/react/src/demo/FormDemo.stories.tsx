@@ -31,6 +31,7 @@ const meta = preview.meta({
     },
   },
 });
+export default meta;
 
 export const FormStory = meta.story({
   args: {

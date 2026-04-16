@@ -20,6 +20,7 @@ const meta = preview.meta({
   },
   decorators: [withScrollHashBehavior],
 });
+export default meta;
 
 export const Preview = meta.story({
   args: {

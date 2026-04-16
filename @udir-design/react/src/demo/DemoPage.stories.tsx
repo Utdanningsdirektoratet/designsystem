@@ -14,6 +14,7 @@ const meta = preview.meta({
     },
   },
 });
+export default meta;
 
 export const PageStory = meta.story({
   args: {

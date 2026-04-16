@@ -27,6 +27,7 @@ const meta = preview.meta({
     await expect(popover).toBeVisible();
   },
 });
+export default meta;
 
 export const Preview = meta.story({
   render: (args) => (

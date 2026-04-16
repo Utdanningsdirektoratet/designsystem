@@ -23,6 +23,7 @@ const meta = preview.meta({
     layout: 'centered',
   },
 });
+export default meta;
 
 const onSubmit = fn<React.SubmitEventHandler<HTMLFormElement>>((e) => {
   e.preventDefault();

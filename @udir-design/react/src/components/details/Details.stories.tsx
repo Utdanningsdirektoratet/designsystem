@@ -30,6 +30,7 @@ const meta = preview.meta({
     },
   },
 });
+export default meta;
 
 const previewSummary = 'Kva er nasjonale prøver?';
 const previewContent =

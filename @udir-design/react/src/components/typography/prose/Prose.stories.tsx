@@ -20,6 +20,7 @@ const meta = preview.meta({
   },
   title: 'Components/Typography/Prose',
 });
+export default meta;
 
 export const Preview = meta.story({
   render: () => {

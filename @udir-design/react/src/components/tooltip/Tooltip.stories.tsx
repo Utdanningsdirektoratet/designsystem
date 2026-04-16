@@ -29,6 +29,7 @@ const meta = preview.meta({
     children: undefined,
   },
 });
+export default meta;
 
 export const Preview = meta.story({
   args: {

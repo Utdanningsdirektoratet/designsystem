@@ -24,6 +24,7 @@ const meta = preview.meta({
     },
   },
 });
+export default meta;
 
 export const DashboardStory = meta.story({
   render: (args) => {

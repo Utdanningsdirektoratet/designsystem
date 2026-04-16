@@ -17,6 +17,7 @@ const meta = preview.meta({
     children: undefined,
   },
 });
+export default meta;
 
 const udirLink = 'https://udir.no/';
 

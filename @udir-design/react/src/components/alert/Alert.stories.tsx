@@ -18,6 +18,7 @@ const meta = preview.meta({
     componentOrigin: { originator: 'digdir' },
   },
 });
+export default meta;
 
 export const Preview = meta.story({
   args: {

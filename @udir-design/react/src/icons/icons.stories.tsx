@@ -13,6 +13,7 @@ const meta = preview.meta({
     html: { disable: true },
   },
 });
+export default meta;
 
 type Icon = typeof AirplaneIcon;
 const typedIcons = Icons as Record<string, Icon>;

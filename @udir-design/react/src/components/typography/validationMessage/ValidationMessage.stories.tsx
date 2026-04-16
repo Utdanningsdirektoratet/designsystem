@@ -11,6 +11,7 @@ const meta = preview.meta({
   },
   title: 'Components/Typography/ValidationMessage',
 });
+export default meta;
 
 export const Preview = meta.story({
   args: {

@@ -60,6 +60,7 @@ const meta = preview.meta({
   },
   play: async (ctx) => defaultPlay(ctx.canvasElement),
 });
+export default meta;
 
 export const Preview = meta.story({
   args: { closedby: 'any' },

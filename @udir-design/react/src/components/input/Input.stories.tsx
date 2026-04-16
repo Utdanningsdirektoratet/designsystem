@@ -29,6 +29,7 @@ const meta = preview.meta({
     layout: 'centered',
   },
 });
+export default meta;
 
 export const Preview = meta.story({
   args: {

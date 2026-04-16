@@ -12,6 +12,7 @@ const meta = preview.meta({
   component: DemoBanner,
   tags: ['beta', 'udir'],
 });
+export default meta;
 
 export const Preview = meta.story({
   parameters: {

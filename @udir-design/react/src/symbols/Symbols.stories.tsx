@@ -13,6 +13,7 @@ const meta = preview.meta({
     html: { disable: true },
   },
 });
+export default meta;
 
 type Symbol = typeof AnalyseFillSymbol;
 const typedSymbols = Symbols as Record<string, Symbol>;

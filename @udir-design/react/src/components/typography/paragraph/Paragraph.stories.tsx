@@ -17,6 +17,7 @@ const meta = preview.meta({
   },
   title: 'Components/Typography/Paragraph',
 });
+export default meta;
 
 export const Preview = meta.story({
   args: {

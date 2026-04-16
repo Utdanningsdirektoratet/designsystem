@@ -19,6 +19,7 @@ const meta = preview.meta({
     componentOrigin: { originator: 'self' },
   },
 });
+export default meta;
 
 export const Preview = meta.story({
   args: {},
