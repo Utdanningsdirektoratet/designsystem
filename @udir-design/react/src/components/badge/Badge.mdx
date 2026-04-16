@@ -60,8 +60,9 @@ Det er vanleg å bruke raud farge, altså `data-color="danger"` på `Badge` som 
 
 <Canvas of={BadgeStories.Floating} />
 
-Ikkje alle ikon har lik form, og då må du kanskje endre kor `Badge` skal plasserast. Dersom du ikkje får `Badge` til å liggje der du ynskjer, kan du bruke css-variablar for å overstyre plasseringa.
-Dette fungerer og når du brukar `overlap="circle"`.
+Ikkje alle ikon har lik form, og då må du kanskje endre kor `Badge` skal plasserast. Dersom du ikkje får `Badge` til å liggje der du ynskjer, kan du bruke css-variablar for å overstyre plasseringa. Dette fungerer og når du brukar `overlap="circle"`.
+
+Det finst ikkje automatisk støtte for å spegle plassering av `badge` ved bruk av `dir="rtl"`. Du må sjølv overstyre plasseringa med css-variablar avhengig av kva for eit språk som er vald.
 
 <Canvas of={BadgeStories.CustomPlacement} />
 
