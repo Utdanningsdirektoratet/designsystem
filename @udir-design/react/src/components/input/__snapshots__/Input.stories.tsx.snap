@@ -564,7 +564,7 @@ exports[`Controlled 1`] = `
       data-weight="medium"
       for="components-input--controlled"
     >
-      Fullt navn
+      Skriv inn verdi
     </label>
     <input
       id="components-input--controlled"
@@ -608,7 +608,6 @@ exports[`Input Types 1`] = `
   <input
     id="components-input--input-types-checkbox"
     type="checkbox"
-    checked
   >
 </div>
 <div>
@@ -621,7 +620,6 @@ exports[`Input Types 1`] = `
   <input
     id="components-input--input-types-radio"
     type="radio"
-    checked
   >
 </div>
 <div>
@@ -635,7 +633,6 @@ exports[`Input Types 1`] = `
     role="switch"
     id="components-input--input-types-switch"
     type="checkbox"
-    checked
   >
 </div>
 `;
@@ -646,7 +643,6 @@ exports[`Preview 1`] = `
   aria-label="input"
   id="components-input--preview"
   type="text"
-  checked
   name="inputs"
 >
 `;
