@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   root: 'src',
-  cacheDir: '../../node_modules/.vite/test-apps/vite-vanilla',
   server: {
     port: 4200,
     host: 'localhost',
