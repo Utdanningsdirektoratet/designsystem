@@ -20,6 +20,24 @@ body {
   padding: var(--ds-size-4);
 }
 
+/* Fix icon SVG sizing: override @layer udir.icons { width: auto } which resolves
+   to 300px when the outer <svg> has no viewBox. Icons are always 1:1, so 1em works. */
+svg:has(use[href$='#icon']) {
+  width: 1em;
+}
+
+/* Pre-JS sizing: the :has(use[href$='#icon']) selector only matches after JS sets
+   the href, so also target icon SVGs by their parent context. */
+.ds-button > svg,
+.ds-link > svg {
+  height: 1em;
+  width: 1em;
+}
+
+.symbol-box img {
+  height: 3em;
+}
+
 .idea-box {
   background: var(--ds-color-support2-surface-tinted);
   padding: var(--ds-size-4);
@@ -33,7 +51,7 @@ body {
   height: 1em;
   margin-inline-end: var(--ds-size-2);
   background: currentColor;
-  mask: center / 100% no-repeat var(--icon-lightbulb-url);
+  mask: center / 100% no-repeat var(--uds-icon-lightBulb);
   vertical-align: middle;
   position: relative;
   top: -2px;
