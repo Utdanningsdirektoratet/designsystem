@@ -2,6 +2,7 @@
  * This file exports the components that are deemed stable (not alpha or beta)
  */
 
+export * from './alert';
 export * from './avatar';
 export * from './badge';
 export * from './breadcrumbs';
