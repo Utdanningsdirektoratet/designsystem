@@ -1,11 +1,8 @@
 import { useState } from 'react';
-import { expect, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
 import { Button } from '../button/Button';
 import { Link } from '../link/Link';
-import { Heading } from '../typography/heading/Heading';
-import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Alert } from './';
 
 const meta = preview.meta({
@@ -13,7 +10,7 @@ const meta = preview.meta({
   subcomponents: {
     'Alert.Heading': Alert.Heading,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: { originator: 'digdir' },
   },
@@ -22,6 +19,7 @@ const meta = preview.meta({
 export const Preview = meta.story({
   args: {
     'data-color': 'info',
+    'data-size': 'md',
   },
   render: (args) => (
     <Alert data-testid="alert-preview" {...args}>
@@ -29,21 +27,6 @@ export const Preview = meta.story({
       En beskjed det er viktig at brukeren ser
     </Alert>
   ),
-  play: async ({ canvasElement, step }) => {
-    const canvas = within(canvasElement);
-    const alert = canvas.getByTestId('alert-preview');
-    await step('Alert is rendered ', async () => {
-      await expect(alert).toBeTruthy();
-    });
-    await step('Alert has correct color', async () => {
-      await expect(alert).toHaveAttribute('data-color', 'info');
-    });
-    await step('Alert has correct text', async () => {
-      await expect(alert).toHaveTextContent(
-        'En beskjed det er viktig at brukeren ser',
-      );
-    });
-  },
 });
 
 export const VariantInfo = meta.story({
@@ -53,9 +36,9 @@ export const VariantInfo = meta.story({
   render: (args) => (
     <Alert {...args}>
       <Alert.Heading level={2}>
-        Har du husket å melde deg på privatisteksamen?
+        Har du husket å melde deg opp til privatisteksamen?
       </Alert.Heading>
-      Du må melde deg på innen 1. februar for våreksamen.
+      Du må melde deg opp innen 1. februar.
     </Alert>
   ),
 });
@@ -93,8 +76,9 @@ export const VariantDanger = meta.story({
     <Alert {...args}>
       <Alert.Heading level={2}>Det har skjedd en feil</Alert.Heading>
       Vi klarer ikke å hente informasjonen du ser etter akkurat nå. Prøv igjen
-      litt senere. Hvis vi fortsatt ikke klarer å vise informasjonen du trenger,
-      tar du kontakt med kundeservice på telefon 85 44 32 66.
+      litt senere. <br />
+      Ta kontakt med kundeservice på telefon 85 44 32 66 hvis problemet
+      vedvarer.
     </Alert>
   ),
 });
@@ -150,18 +134,10 @@ export const WrongLiveRegion = meta.story({
             // Feil bruk: role="alert" ligger på selve varselet
             role="alert"
           >
-            <Heading level={2}>Vi klarer ikke lagre skjemaet</Heading>
-            <Paragraph>
-              Vi har mistet forbindelsen med serveren og får ikke lagret
-              skjemaet. Vent litt og prøv en gang til.
-            </Paragraph>
+            Vi klarer ikke lagre skjemaet
           </Alert>
         )}
-        <Button
-          data-size="sm"
-          variant="secondary"
-          onClick={() => setShowAlert((value) => !value)}
-        >
+        <Button onClick={() => setShowAlert((value) => !value)}>
           {showAlert ? 'Skjul varsel' : 'Handling som fører til varsel'}
         </Button>
       </>
@@ -179,22 +155,10 @@ export const CorrectLiveRegion = meta.story({
         {/* Korrekt bruk: role="alert" ligger på elementet der varselet dukker opp */}
         <div role="alert">
           {showAlert && (
-            <Alert data-color="warning">
-              <Alert.Heading level={2}>
-                Vi klarer ikke lagre skjemaet
-              </Alert.Heading>
-              <Paragraph>
-                Vi har mistet forbindelsen med serveren og får ikke lagret
-                skjemaet. Vent litt og prøv en gang til.
-              </Paragraph>
-            </Alert>
+            <Alert data-color="warning">Vi klarer ikke lagre skjemaet</Alert>
           )}
         </div>
-        <Button
-          data-size="sm"
-          variant="secondary"
-          onClick={() => setShowAlert((value) => !value)}
-        >
+        <Button onClick={() => setShowAlert((value) => !value)}>
           {showAlert ? 'Skjul varsel' : 'Handling som fører til varsel'}
         </Button>
       </>

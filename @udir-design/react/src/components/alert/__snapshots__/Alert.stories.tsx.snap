@@ -4,9 +4,8 @@ exports[`Correct Live Region 1`] = `
 <div role="alert">
 </div>
 <button
-  data-variant="secondary"
+  data-variant="primary"
   type="button"
-  data-size="sm"
 >
   Handling som fører til varsel
 </button>
@@ -19,7 +18,10 @@ exports[`No Heading 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<div data-color="info">
+<div
+  data-color="info"
+  data-size="md"
+>
   <h3 data-size="xs">
     Overskrift
   </h3>
@@ -32,16 +34,18 @@ exports[`Variant Danger 1`] = `
   <h2 data-size="xs">
     Det har skjedd en feil
   </h2>
-  Vi klarer ikke å hente informasjonen du ser etter akkurat nå. Prøv igjen litt senere. Hvis vi fortsatt ikke klarer å vise informasjonen du trenger, tar du kontakt med kundeservice på telefon 85 44 32 66.
+  Vi klarer ikke å hente informasjonen du ser etter akkurat nå. Prøv igjen litt senere.
+  <br>
+  Ta kontakt med kundeservice på telefon 85 44 32 66 hvis problemet vedvarer.
 </div>
 `;
 
 exports[`Variant Info 1`] = `
 <div data-color="info">
   <h2 data-size="xs">
-    Har du husket å melde deg på privatisteksamen?
+    Har du husket å melde deg opp til privatisteksamen?
   </h2>
-  Du må melde deg på innen 1. februar for våreksamen.
+  Du må melde deg opp innen 1. februar.
 </div>
 `;
 
@@ -77,9 +81,8 @@ exports[`With Link 1`] = `
 
 exports[`Wrong Live Region 1`] = `
 <button
-  data-variant="secondary"
+  data-variant="primary"
   type="button"
-  data-size="sm"
 >
   Handling som fører til varsel
 </button>
