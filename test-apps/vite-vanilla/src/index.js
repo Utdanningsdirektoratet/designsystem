@@ -11,7 +11,9 @@ import DatamaskinFillUrl from '@udir-design/symbols/svg/DatamaskinFill.svg?url';
 document
   .getElementById('icon-pencil')
   ?.setAttribute('href', `${PencilWritingUrl}#icon`);
-document.getElementById('symbol-computer')?.setAttribute('src', DatamaskinFillUrl);
+document
+  .getElementById('symbol-computer')
+  ?.setAttribute('src', DatamaskinFillUrl);
 document
   .getElementById('icon-arrow-link')
   ?.setAttribute('href', `${ArrowRightUrl}#icon`);
