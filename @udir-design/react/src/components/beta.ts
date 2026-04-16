@@ -13,7 +13,6 @@ export * from './chip/Chip';
 export * from './demoBanner/DemoBanner';
 export * from './details/Details';
 export * from './dialog/Dialog';
-export * from './divider/Divider';
 export * from './dropdown/Dropdown';
 export * from './errorSummary/ErrorSummary';
 export * from './field/Field';
