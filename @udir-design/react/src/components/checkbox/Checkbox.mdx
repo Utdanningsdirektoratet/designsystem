@@ -16,7 +16,7 @@ import {
 
 # Checkbox
 
-Vi bruker `Checkbox` (avmerkingsboks) for å gi brukerne valg, der de kan velge ett eller flere alternativer. Brukerne kan både velge og oppheve valgene de gjør. Bruk [`Fieldset`](/docs/components-fieldset--docs) til å gruppere flere valg.
+Vi bruker `Checkbox` (avmerkingsboks) når brukeren skal kunne velge ett eller flere alternativer. For å gruppere flere avmerkingsbokser sammen, kan du bruke [`Fieldset`](/docs/components-fieldset--docs).
 
 **Passer til å**
 
@@ -42,13 +42,13 @@ import { Checkbox } from '@udir-design/react';
 
 ### Kun ett valg
 
-Hvis brukeren skal bekrefte noe, men ikke velge noe, kan en `Checkbox` stå alene. For eksempel når brukeren skal samtykke til vilkår.
+En `Checkbox` kan brukes alene når det kun er ett valg, og det er tydelig for brukeren hva det betyr å krysse av eller ikke. For eksempel når brukeren skal samtykke til vilkår.
 
 <Canvas of={CheckboxStories.OneOption} />
 
 ### Gruppering av flere valg
 
-Bruk `Fieldset` og `useCheckboxGroup` for gruppering av flere valg.
+For å gruppere flere valg, bruk `Fieldset` og `useCheckboxGroup`.
 
 <Canvas of={useCheckboxGroupStories.Group} />
 
@@ -56,16 +56,13 @@ Bruk `Fieldset` og `useCheckboxGroup` for gruppering av flere valg.
 
 ### Velge alle alternativer med en overordnet avmerkingsboks
 
-Legg inn `allowIndeterminate: true` i `getCheckboxProps` for å opprette en overordnet avmerkingsboks som både kan velge og fjerne alle alternativer.
-Dette aktiverer en ekstra tilstand, `indeterminate`, ved siden av `checked` og `unchecked`. Den vises med en horisontal strek og signaliserer at én eller flere avmerkingsbokser er markert i gruppen.
+For å gi brukeren mulighet til å velge eller fjerne alle alternativer i en gruppe, kan du legge til en overordnet `Checkbox` som styrer alle de underordnede avmerkingsboksene. Dette gjør du ved å bruke `useCheckboxGroup` og legge inn `allowIndeterminate: true` i `getCheckboxProps`. Dette aktiverer en ekstra tilstand, `indeterminate`, ved siden av `checked` og `unchecked`. Den vises med en horisontal strek og signaliserer at én eller flere avmerkingsbokser er markert i gruppen.
 
 <Canvas of={useCheckboxGroupStories.IndeterminateInTable} />
 
 ### Vise feilmelding
 
-Bruk `error` på `Fieldset` for å vise feilmelding.
-
-Her må du bruke `Fieldset` for å gjøre innholdet tilgjengelig og aktivere riktig stil.
+Bruk `error` på `Fieldset` for å vise feilmelding. `Fieldset` sørger for at innholdet er tilgjengelig og at riktig stil aktiveres.
 
 <Canvas of={useCheckboxGroupStories.WithError} />
 
@@ -80,36 +77,27 @@ I eksempelet under kontrollerer vi hvilke `Checkbox` som er valgt med både [`Bu
 
 ### Rekkefølge
 
-Vær bevisst på rekkefølgen du velger for alternativene. Ofte er en alfabetisk sortering det beste,
-men dersom det finnes en logisk rekkefølge — f.eks. _vinter, vår, sommer, høst_ — bør du
-heller bruke denne.
+Velg en bevisst rekkefølge for alternativene. Ofte er alfabetisk sortering best, men dersom det finnes en logisk rekkefølge — for eksempel _vinter, vår, sommer, høst_ — bør du heller bruke denne.
 
-I noen tilfeller kan det være hjelpsomt å ha de mest aktuelle alternativene først, men vær forsiktig
-så rekkefølgen ikke påvirker svaret eller gjør det vanskelig å finne ønsket alternativ.
+I noen tilfeller kan det være nyttig å plassere de mest aktuelle alternativene først, men vær forsiktig så rekkefølgen ikke påvirker svaret eller gjør det vanskelig å finne ønsket alternativ.
 
 ### Plassering
 
-`Checkbox` skal som hovedregel kun plasseres vertikalt, av hensyn
-til lesbarhet. Det er enklere for brukere å skanne listen når alternativene ligger
-under hverandre. For brukere som trenger å forstørre (zoome inn) nettsiden for å
-se godt nok, er en horisontal liste ekstra vanskelig.
+`Checkbox` skal som hovedregel plasseres vertikalt. Det er enklere for brukere å skanne listen når alternativene ligger under hverandre. For brukere som trenger å forstørre (zoome inn) nettsiden, er en horisontal liste ekstra vanskelig å navigere.
 
 <CheckboxEx1 />
 
 ### Ikke bruk deaktivert Checkbox
 
-Vi unngår deaktiverte (`disabled`) `Checkbox` fordi de kan være vanskelige å oppfatte. Noen brukere vil ikke forstå hva `Checkbox` sier eller hvorfor den ikke er klikkbar. Hvis en `Checkbox` eller gruppe med `Checkbox` ikke er relevant, bør du helst fjerne valgene fremfor å deaktivere dem. Tilby gjerne brukeren informasjon om hvorfor valgene ikke er tilgjengelig.
+Vi unngår deaktiverte (`disabled`) `Checkbox`, fordi de kan være vanskelige å oppfatte. Noen brukere forstår ikke hva `Checkbox`-en betyr, eller hvorfor den ikke er klikkbar. Hvis en `Checkbox` eller en gruppe med `Checkbox`-er ikke er relevant, bør du heller fjerne valgene fremfor å deaktivere dem. Gi gjerne brukeren informasjon om hvorfor valgene ikke er tilgjengelige.
 
-Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander) og hvilke alternativer som finnes.
+Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematiske](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander), og hvilke alternativer som finnes.
 
 <DisabledEx />
 
 ### Unngå skrivebeskyttet Checkbox
 
-`Checkbox` støtter `readOnly`-attributtet for å gjøre feltet skrivebeskyttet, og gir en visuell indikasjon
-som skiller seg fra redigerbare felter. Vi unngår likevel `readOnly` så langt det lar seg gjøre, fordi
-slike felter kan være forvirrende for noen brukere. Ikke alle vil skjønne hvorfor de ikke får til å
-endre innholdet i feltet.
+`Checkbox` støtter `readOnly`-attributtet for å gjøre feltet skrivebeskyttet, og gir en visuell indikasjon som skiller seg fra redigerbare felter. Vi unngår likevel å bruke `readOnly` så langt det lar seg gjøre, fordi slike felt kan være forvirrende for noen brukere. Ikke alle forstår hvorfor de ikke kan endre innholdet i feltet.
 
 <ReadOnlyEx />
 
@@ -117,31 +105,30 @@ endre innholdet i feltet.
 
 Bruk et aktivt og positivt språk når du formulerer forklaringer og svaralternativer.
 
-Hvordan vi henvender oss til brukerne kan avhenge av hvilken kontekst avmerkingsboksene blir brukt i.
+Hvordan vi henvender oss til brukerne kan variere avhengig av hvilken kontekst avmerkingsboksene brukes i.
 
 ### I skjema
 
-Det er naturlig å tenke på et skjema som en samtale med den som svarer. Brukerne leser gjerne innholdet i den
-rekkefølgen det opptrer i skjemaet. Derfor er ofte forklaringen og alternativene formulert som spørsmål og svar.
+Det er naturlig å tenke på et skjema som en samtale med den som svarer. Brukerne leser gjerne innholdet i den rekkefølgen det presenteres i skjemaet. Derfor er forklaringer og alternativer ofte formulert som spørsmål og svar.
 
 <CheckboxExConversation />
 
 ### I andre grensesnitt
 
-Når `Checkbox` er brukt som del av andre typer interaktive elementer, er det ofte som del av filtre eller andre handlinger. Vi forventer at brukerne hurtig titter gjennom grensesnittet for å finne mulige handlinger ved behov, og at disse ikke nødvendigvis leses i rekkefølge. Vi bør derfor unngå overflødig tekst.
+Når `Checkbox` brukes i filtre eller andre interaktive elementer, skanner brukerne gjerne raskt gjennom innholdet, og ikke nødvendigvis i tiltenkt rekkefølge. Hold derfor teksten kort og unngå overflødig informasjon.
 
 <CheckboxExFilter />
 
 ### Plassering av tekst
 
 - Plasser `legend` og eventuell tilhørende `description` før listen med svaralternativer.
-- `label` til hver boks må beskrive alternativet.
-- `label` skal stå til høyre for boksen. Hvis det er nødvendig med ekstra beskrivelse, kan du ha en `description` under `label` .
+- `label` må beskrive svaralternativet.
+- `label` skal stå til høyre for boksen. Hvis det er nødvendig med ekstra beskrivelse, kan du ha en `description` under `label`.
 - `label` skal alltid ha stor forbokstav.
 
-### Lag logisk sammenheng mellom forklaringen og svaralternativene
+### Lag en logisk sammenheng mellom forklaringen og svaralternativene
 
-Brukeren skal kunne lese hvert svaralternativ som en logisk respons på forklaringen over boksene.
+Hvert svaralternativ bør kunne leses som en logisk respons på forklaringen som står over alternativene.
 
 Eksempel på riktig logisk sammenheng:
 
@@ -155,7 +142,7 @@ Det betyr at de kan ha enten fullstendige setninger eller ett ord, ikke begge de
 
 ## Tilgjengelighet
 
-Det skal være mulig å flytte fokus til `Checkbox`, ved å trykke <kbd>Tab</kbd> på tastaturet. Det skal være mulig å merke og fjerne avmerking ved å trykke <kbd>Space</kbd>.
+Det skal være mulig å flytte fokus til `Checkbox` ved å trykke <kbd>Tab</kbd> på tastaturet. Det skal også være mulig å merke og fjerne avmerking ved å trykke <kbd>Space</kbd>.
 
 ### Bruk label
 
