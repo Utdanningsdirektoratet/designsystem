@@ -5,7 +5,7 @@ import { Footer } from './';
 
 const meta = preview.meta({
   component: Footer,
-  tags: ['beta', 'udir'],
+  tags: ['udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',
@@ -19,8 +19,8 @@ const meta = preview.meta({
 });
 
 export const Preview = meta.story({
-  render: () => (
-    <Footer data-testid="footer">
+  render: (args) => (
+    <Footer data-testid="footer" {...args}>
       <Footer.List>
         <Footer.Item href="#" data-testid="footer-item-1">
           Om tjenesten
@@ -57,8 +57,8 @@ export const PreviewTest = Preview.extend({
 });
 
 export const Udirno = meta.story({
-  render: () => (
-    <Footer>
+  render: (args) => (
+    <Footer {...args}>
       <Footer.List>
         <Footer.Item href="#">Om tjenesten</Footer.Item>
         <Footer.Item href="#">Kontakt oss</Footer.Item>
@@ -83,7 +83,7 @@ export const Udirno = meta.story({
           <span>Facebook</span>
         </Footer.Item>
         <Footer.Item href="#">
-          <Instagram />
+          <Instagram aria-hidden />
           <span>Instagram</span>
         </Footer.Item>
       </Footer.List>
@@ -92,8 +92,8 @@ export const Udirno = meta.story({
 });
 
 export const Tjeneste = meta.story({
-  render: () => (
-    <Footer>
+  render: (args) => (
+    <Footer {...args}>
       <Footer.List>
         <Footer.Item href="#">Om tjenesten</Footer.Item>
         <Footer.Item href="#">Kontakt oss</Footer.Item>
