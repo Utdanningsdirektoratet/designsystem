@@ -470,7 +470,7 @@ exports[`Page Story 1`] = `
         <div>
           <select
             aria-label="Velg handling"
-            autocomplete="off"
+            autoComplete="off"
           >
             <option value="blank">
               Velg handling
@@ -520,7 +520,7 @@ exports[`Page Story 1`] = `
           <input
             placeholder
             aria-label="Søk"
-            autocomplete="off"
+            autoComplete="off"
             type="search"
           >
           <button
