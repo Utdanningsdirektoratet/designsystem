@@ -20,12 +20,6 @@ body {
   padding: var(--ds-size-4);
 }
 
-/* Custom width since { width: auto } (default) resolves to 300px 
-    when the outer <svg> has no viewBox. Icons are 1:1, so 1em (default height) works. */
-svg:has(use[href$='#icon']) {
-  width: 1em;
-}
-
 .symbol-box img {
   height: 3em;
 }
