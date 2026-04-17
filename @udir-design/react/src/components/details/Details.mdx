@@ -8,7 +8,7 @@ import { SimpleAlert } from '.storybook/docs/components';
 
 # Details
 
-Med `Details` kan du presentere mye innhold på liten plass i én eller flere rader. Hele raden er klikkbar og lar brukere åpne eller lukke visningen av innholdet under.
+Med `Details` kan du presentere mye innhold på liten plass i én eller flere rader. Hele raden er klikkbar og gjør det mulig for brukeren å åpne eller lukke innholdet under.
 
 <SimpleAlert heading="Vær oppmerksom på">
 - Ved å legge innhold i `Details` risikerer du at det ikke blir sett av brukerne. Innhold som er viktig bør _ikke_ skjules.
@@ -62,7 +62,7 @@ Dette kan passe i tilfeller der `Details` ikke fyller hele siden, eller når det
 
 ### Med farger
 
-`Details` kan bruke alle fargene i Udirs fargeprofil, ved å sette `data-color` på `Details` (eller et foreldreelement, som `Card` eller `div`)
+`Details` kan bruke alle fargene i Udirs fargeprofil ved å sette `data-color` på `Details` eller et foreldreelement, som `Card` eller `div`.
 
 ```tsx
 /* Én enkelt Details */
@@ -106,9 +106,10 @@ Ikke legg en `Details` inni en annen. Er innholdet allerede skjult, er det ikke 
 ### Unngå for langt innhold
 
 Ikke legg for mye innhold i en `Details`. Ofte kan et par avsnitt være passe. Dette gjør det lettere å relatere innholdet til overskriften.
-Der det gir mening, foretrekk å bryte innholdet opp i flere `Details` istedenfor å bruke flere overskrifter i én `Details`.
+Der det gir mening, bør innholdet deles opp i flere `Details` istedenfor å bruke flere overskrifter i én `Details`.
 
-Hvis innholdet er for langt eller komplisert, bør du vurdere om det er mulig å korte ned eller omformulere teksten, endre strukturen, fordele innholdet på flere sider, og/eller bruke funksjon for "innhold på denne siden". Om du flytter innhold over på egen side, vær oppmerksom på brukerne ofte kan nå innholdet fra mange ulike kontekster, og det bør komme tydelig fram hvilken helhet innholdsfragmentet inngår i.
+Hvis innholdet er for langt eller komplisert, bør du vurdere om teksten kan kortes ned eller omformuleres, om strukturen kan forbedres, om innholdet bør fordeles på flere sider, og/eller om funksjonen «innhold på denne siden» bør brukes.
+Om du flytter innhold over på egen side, vær oppmerksom på at brukerne ofte kan nå innholdet fra flere ulike kontekster. Det bør derfor komme tydelig fram hvilken helhet innholdsfragmentet inngår i.
 
 <DetailsEx1 />
 
@@ -120,15 +121,15 @@ Hvis `Details` kun har ett element, kan det være lurt å legge det i et `Card` 
 
 ## Tekst i Details
 
-Sørg for at overskriften gir en god beskrivelse av hva innholdet i `Details` er. En tydelig og beskrivende overskrift skal gjøre brukerne nysgjerrige på innholdet. Overskriftene til `Details` kan ha stor betydning for om brukerne finner det de trenger, om innholdet blir lest og om det kan regnes som tilgjengelig for alle brukere. «Vis mer» eller «Les mer her» er ikke gode nok titler.
+Sørg for at overskriften gir en god beskrivelse av hva innholdet i `Details` er. En tydelig og beskrivende overskrift skal gjøre brukerne nysgjerrige på innholdet. Overskriftene til `Details` kan ha stor betydning for om brukerne finner det de trenger, om innholdet blir lest, og om det kan regnes som tilgjengelig for alle brukere. «Vis mer» eller «Les mer her» er ikke gode nok titler.
 
-Har du en liste med mange `Details`, kan du ha en hovedoverskrift eller temaoverskrift over hele listen.
+Har du en liste med mange `Details`, kan du ha en hovedoverskrift eller temaoverskrift for hele listen.
 
 ## Tilgjengelighet
 
-[`Chevron`-ikonet](https://aksel.nav.no/ikoner/ChevronDown) er bevisst plassert til venstre for teksten, av hensyn til brukere med nedsatt synsfelt. Der er det lettere for brukeren å se det (fordi vi leser fra venstre). Mange brukere tror at de må peke på og velge ikonet for å åpne.
+[`Chevron`-ikonet](https://aksel.nav.no/ikoner/ChevronDown) er bevisst plassert til venstre for teksten av hensyn til brukere med nedsatt synsfelt. Der er det lettere for brukeren å se det, siden vi leser fra venstre mot høyre. Mange brukere tror at de må peke på og velge ikonet for å åpne.
 
-Ikke plasser andre interaktive elementer inn i `Details.Summary`, da hele raden skal være klikkbar. Ikonet og teksten skal _ikke_ lenke til ulike handlinger (for eksempel at teksten går videre til en side, mens ikonet åpner listen). Brukerne forventer ikke at ikon og tekst skal gi ulikt resultat når de velger dem.
+Ikke plasser andre interaktive elementer inn i `Details.Summary`, siden hele raden skal være klikkbar. Ikonet og teksten skal _ikke_ lenke til ulike handlinger, for eksempel at teksten går videre til en side mens ikonet åpner listen. Brukerne forventer ikke at ikon og tekst gir ulike resultat når de velger dem.
 
 - <kbd>Tab</kbd> flytter fokus til neste element som kan ha fokus
 - <kbd>Shift</kbd> + <kbd>Tab</kbd> flytter fokus til forrige element som kan ha
