@@ -40,7 +40,7 @@ const meta = preview.meta({
     'Chip.Removable': ChipRemovable,
   },
 
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       name: 'Chip',
@@ -108,7 +108,7 @@ export const Preview = meta.story({
 });
 
 export const Checkbox = meta.story({
-  render: () => {
+  render: (args) => {
     const options = ['2020', '2021', '2022', '2023', '2024', '2025'];
 
     return (
@@ -122,7 +122,9 @@ export const Checkbox = meta.story({
         <Paragraph>Vis data for</Paragraph>
         <div style={{ display: 'flex', gap: 'var(--ds-size-1)' }}>
           {options.map((year) => (
-            <Chip.Checkbox aria-label={year}>{year}</Chip.Checkbox>
+            <Chip.Checkbox aria-label={year} {...args}>
+              {year}
+            </Chip.Checkbox>
           ))}
         </div>
       </div>
@@ -148,7 +150,7 @@ export const Checkbox = meta.story({
 });
 
 export const Radio = meta.story({
-  render: () => {
+  render: (args) => {
     const options = ['Barnehage', 'Grunnskole', 'Videregående'];
 
     return (
@@ -162,7 +164,7 @@ export const Radio = meta.story({
         <Paragraph>Vis data for</Paragraph>
         <div style={{ display: 'flex', gap: 'var(--ds-size-1)' }}>
           {options.map((grade) => (
-            <Chip.Radio name="my-radio" aria-label={grade}>
+            <Chip.Radio name="my-radio" aria-label={grade} {...args}>
               {grade}
             </Chip.Radio>
           ))}
@@ -173,7 +175,7 @@ export const Radio = meta.story({
 });
 
 export const Removable = meta.story({
-  render: () => {
+  render: (args) => {
     const schoolOptions = ['Barnehage', 'Grunnskole', 'Videregående'];
     const [filter, setFilter] = useState(schoolOptions);
 
@@ -181,6 +183,7 @@ export const Removable = meta.story({
       <>
         {filter.map((item) => (
           <Chip.Removable
+            {...args}
             aria-label={`Slett ${item}`}
             onClick={() => {
               setFilter((x) =>
@@ -216,7 +219,7 @@ export const Removable = meta.story({
 });
 
 export const Button = meta.story({
-  render: () => {
+  render: (args) => {
     const [inputValue, setInputValue] = useState('');
 
     return (
@@ -238,13 +241,13 @@ export const Button = meta.story({
         </Search>
         <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
           <Paragraph>Hurtigsøk: </Paragraph>
-          <Chip.Button onClick={() => setInputValue('Læreplaner')}>
+          <Chip.Button onClick={() => setInputValue('Læreplaner')} {...args}>
             Læreplaner
           </Chip.Button>
-          <Chip.Button onClick={() => setInputValue('Skole')}>
+          <Chip.Button onClick={() => setInputValue('Skole')} {...args}>
             Skole
           </Chip.Button>
-          <Chip.Button onClick={() => setInputValue('Engelsk')}>
+          <Chip.Button onClick={() => setInputValue('Engelsk')} {...args}>
             Eksamen
           </Chip.Button>
         </div>
@@ -271,4 +274,21 @@ export const Button = meta.story({
       });
     });
   },
+});
+
+export const Colors = meta.story({
+  render: (args) => (
+    <>
+      <Chip.Button {...args}>Neutral</Chip.Button>
+      <Chip.Button data-color="accent" {...args}>
+        Accent
+      </Chip.Button>
+      <Chip.Button data-color="support1" {...args}>
+        Support1
+      </Chip.Button>
+      <Chip.Button data-color="support2" {...args}>
+        Support2
+      </Chip.Button>
+    </>
+  ),
 });
