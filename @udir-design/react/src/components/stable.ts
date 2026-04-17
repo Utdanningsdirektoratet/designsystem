@@ -8,6 +8,7 @@ export * from './breadcrumbs';
 export * from './button';
 export * from './card';
 export * from './checkbox';
+export * from './chip';
 export * from './details';
 export * from './dialog';
 export * from './divider';
