@@ -3,7 +3,7 @@ import { Label } from './Label';
 
 const meta = preview.meta({
   component: Label,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
