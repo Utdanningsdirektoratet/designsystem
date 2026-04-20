@@ -3,7 +3,7 @@ import { ValidationMessage } from './ValidationMessage';
 
 const meta = preview.meta({
   component: ValidationMessage,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
