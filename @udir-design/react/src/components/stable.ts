@@ -3,3 +3,4 @@
  */
 
 export * from './typography/heading/Heading';
+export * from './typography/label/Label';

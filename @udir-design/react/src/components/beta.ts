@@ -45,8 +45,4 @@ export * from './table';
 export * from './textfield/Textfield';
 export * from './toggleGroup/ToggleGroup';
 export * from './tooltip/Tooltip';
-export * from './typography/heading/Heading';
-export * from './typography/label/Label';
-export * from './typography/paragraph/Paragraph';
 export * from './typography/prose/Prose';
-export * from './typography/validationMessage/ValidationMessage';
