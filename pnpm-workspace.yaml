@@ -87,7 +87,6 @@ catalog:
   micromatch: ^4.0.8
   next: ^16.2.2
   nx: 22.6.4
-  parcel: ^2.16.4
   playwright: ^1.59.1
   postcss: ^8.5.8
   postcss-cli: ^11.0.1
@@ -147,7 +146,6 @@ disallowWorkspaceCycles: true
 
 ignoredBuiltDependencies:
   - '@bundled-es-modules/glob'
-  - '@parcel/watcher'
   - '@swc/core'
   - esbuild
   - lmdb
