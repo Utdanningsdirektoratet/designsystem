@@ -25,3 +25,4 @@ export * from './switch/Switch';
 export * from './tag/Tag';
 export * from './typography/heading/Heading';
 export * from './typography/label/Label';
+export * from './typography/paragraph/Paragraph';
