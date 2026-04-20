@@ -13,7 +13,7 @@ import { Input } from './Input';
 
 const meta = preview.meta({
   component: Input,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   argTypes: {
     role: {
       control: 'radio',
@@ -40,13 +40,29 @@ export const Preview = meta.story({
     'aria-label': 'input',
   },
   render: (args, context) => {
-    if (args.role !== 'switch') args.role = undefined; // Ensure we only keep switch role in storybook
+    const role = args.role === 'switch' ? 'switch' : undefined;
 
-    return <Input {...args} defaultChecked id={context.id} />;
+    return <Input {...args} role={role} id={context.id} />;
   },
+
   play: async ({ canvasElement, step, args }) => {
     const canvas = within(canvasElement);
     const input = canvas.getByRole('textbox');
+
+    if (args.disabled) {
+      await step('Input is disabled', async () => {
+        expect(input).toBeDisabled();
+      });
+      return;
+    }
+
+    if (args.readOnly) {
+      await step('Input is read-only', async () => {
+        expect(input).toHaveAttribute('readonly');
+        expect(input).not.toBeDisabled();
+      });
+      return;
+    }
 
     await step('User can focus the input', async () => {
       await userEvent.click(input);
@@ -58,20 +74,11 @@ export const Preview = meta.story({
       expect(input).not.toHaveFocus();
     });
 
-    if (!args.disabled && !args.readOnly) {
-      await step('User can type in the input', async () => {
-        await userEvent.clear(input);
-        await userEvent.type(input, 'Hello World');
-        expect(input).toHaveValue('Hello World');
-      });
-    } else {
-      await step(
-        'Input is disabled or read-only so it should not be editable',
-        async () => {
-          expect(input).toBeDisabled();
-        },
-      );
-    }
+    await step('User can type in the input', async () => {
+      await userEvent.clear(input);
+      await userEvent.type(input, 'Hello World');
+      expect(input).toHaveValue('Hello World');
+    });
   },
 });
 
@@ -88,6 +95,22 @@ export const HtmlSize = meta.story({
 });
 
 export const Controlled = meta.story({
+  argTypes: {
+    type: {
+      control: { type: 'select' },
+      options: [
+        'number',
+        'search',
+        'text',
+        'tel',
+        'url',
+        'email',
+        'time',
+        'date',
+        'datetime-local',
+      ],
+    },
+  },
   parameters: {
     customStyles: {
       display: 'flex',
@@ -108,12 +131,12 @@ export const Controlled = meta.story({
           }}
         >
           <Field>
-            <Label>Fullt navn</Label>
+            <Label>Skriv inn verdi</Label>
             <Input
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
               {...args}
               id={context.id}
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
             />
           </Field>
           <Button variant="secondary" onClick={() => setValue('')}>
@@ -123,9 +146,7 @@ export const Controlled = meta.story({
         {value && (
           <>
             <Divider />
-            <Paragraph>
-              Ditt brukernavn blir da: {value.replace(/\s/g, '').toLowerCase()}
-            </Paragraph>
+            <Paragraph>Valgt verdi: {value}</Paragraph>
           </>
         )}
       </>
@@ -143,6 +164,25 @@ const sizenames = {
 export const Text = meta.story({
   args: {
     value: 'Value',
+  },
+  argTypes: {
+    type: {
+      control: { type: 'select' },
+      options: [
+        'date',
+        'datetime-local',
+        'email',
+        'number',
+        'password',
+        'search',
+        'tel',
+        'text',
+        'time',
+        'url',
+        'week',
+        'month',
+      ],
+    },
   },
   render: (args, context) => {
     const states = [
@@ -191,6 +231,14 @@ export const Text = meta.story({
 });
 
 export const InputTypes = meta.story({
+  argTypes: {
+    type: {
+      table: { disable: true },
+    },
+    size: {
+      table: { disable: true },
+    },
+  },
   parameters: {
     customStyles: {
       display: 'flex',
@@ -203,16 +251,11 @@ export const InputTypes = meta.story({
       <>
         <Field>
           <Label>Checkbox</Label>
-          <Input
-            {...args}
-            type="checkbox"
-            id={`${context.id}-checkbox`}
-            checked
-          />
+          <Input {...args} type="checkbox" id={`${context.id}-checkbox`} />
         </Field>
         <Field>
           <Label>Radio</Label>
-          <Input {...args} type="radio" id={`${context.id}-radio`} checked />
+          <Input {...args} type="radio" id={`${context.id}-radio`} />
         </Field>
         <Field>
           <Label>Switch</Label>
@@ -221,7 +264,6 @@ export const InputTypes = meta.story({
             type="checkbox"
             role="switch"
             id={`${context.id}-switch`}
-            checked
           />
         </Field>
       </>
@@ -232,6 +274,14 @@ export const InputTypes = meta.story({
 export const Radio = meta.story({
   args: {
     type: 'radio',
+  },
+  argTypes: {
+    type: {
+      table: { disable: true },
+    },
+    size: {
+      table: { disable: true },
+    },
   },
   render: (args, context) => {
     const states = [
@@ -294,6 +344,17 @@ export const Radio = meta.story({
 export const Checkbox = meta.story({
   args: {
     type: 'checkbox',
+  },
+  argTypes: {
+    type: {
+      table: { disable: true },
+    },
+    role: {
+      table: { disable: true },
+    },
+    size: {
+      table: { disable: true },
+    },
   },
   render(args, context) {
     useEffect(() => {
@@ -382,6 +443,17 @@ export const Switch = meta.story({
   args: {
     type: 'checkbox',
     role: 'switch',
+  },
+  argTypes: {
+    type: {
+      table: { disable: true },
+    },
+    role: {
+      table: { disable: true },
+    },
+    size: {
+      table: { disable: true },
+    },
   },
   render: (args, context) => {
     const states = [
