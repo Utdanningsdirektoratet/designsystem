@@ -188,6 +188,7 @@ exports[`Form Page 2 1`] = `
         <div>
           <input
             id="projectTitle"
+            autocomplete="off"
             required
             type="text"
             name="projectTitle"
@@ -208,6 +209,7 @@ exports[`Form Page 2 1`] = `
             id="projectDescription"
             rows="4"
             name="projectDescription"
+            autocomplete="off"
             required
           >
           </textarea>
@@ -303,6 +305,7 @@ exports[`Form Page 2 1`] = `
         <u-combobox>
           <input
             placeholder
+            autocomplete="off"
             aria-invalid="false"
             id="county"
             required
@@ -315,7 +318,6 @@ exports[`Form Page 2 1`] = `
             aria-autocomplete="list"
             aria-controls=":u-datalist1"
             aria-expanded="true"
-            autocomplete="off"
             role="combobox"
           >
           <del
@@ -514,9 +516,9 @@ exports[`Form Page 2 1`] = `
         </div>
         <select
           id="ageGroup"
-          aria-label="Velg aldersgruppe"
           name="ageGroup"
           aria-invalid="false"
+          autocomplete="off"
           required
           aria-describedby="ageGroup:description:1"
         >

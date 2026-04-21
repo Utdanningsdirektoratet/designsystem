@@ -141,6 +141,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
               aria-label="Søk"
               placeholder="Søk"
               value={searchQuery}
+              autoComplete="off"
               onChange={(e) => {
                 setSearchQuery(e.target.value);
                 setCurrentPage(1);

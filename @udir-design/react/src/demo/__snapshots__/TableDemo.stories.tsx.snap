@@ -49,6 +49,7 @@ exports[`Table Story 1`] = `
         <input
           placeholder="Søk"
           aria-label="Søk"
+          autocomplete="off"
           type="search"
           value
           name="search"

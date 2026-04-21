@@ -13,7 +13,7 @@ import type { DemoProps } from './demoProps';
 type ArticleDemoProps = DemoProps & HTMLAttributes<HTMLDivElement>;
 const ArticleDemo = (props: ArticleDemoProps) => (
   <div {...props} data-size="auto">
-    <SkipLink href="#main-content">Hopp til hovedinnholdet</SkipLink>
+    <SkipLink href="#main">Hopp til hovedinnholdet</SkipLink>
     <DemoBanner>
       <HeaderDemo applicationName="Utdanningsdirektoratet" />
       <ArticleDemoPage />

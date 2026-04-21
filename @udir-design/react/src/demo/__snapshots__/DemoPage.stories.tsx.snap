@@ -5,12 +5,6 @@ exports[`Page Story 1`] = `
   data-color-scheme="light"
   data-size
 >
-  <h2>
-    Velkommen!
-  </h2>
-  <p data-variant="default">
-    På denne demosiden hvor vi har laget noen eksempler på komponentene i biblioteket, sånn at man kan se hvordan de samspiller i en litt større kontekst. På sikt vil alle komponentene være representert her, men så langt er det kun de vi har ansett som viktigst i første omgang. Lengre ned på siden kan du prøve å endre på størrelse og farge-modus for å se hvordan det påvirker komponentene.
-  </p>
   <nav aria-label="Du er her:">
     <ol>
       <li>
@@ -474,7 +468,10 @@ exports[`Page Story 1`] = `
       </h2>
       <div>
         <div>
-          <select aria-label="Velg handling">
+          <select
+            aria-label="Velg handling"
+            autocomplete="off"
+          >
             <option value="blank">
               Velg handling
             </option>
@@ -523,6 +520,7 @@ exports[`Page Story 1`] = `
           <input
             placeholder
             aria-label="Søk"
+            autocomplete="off"
             type="search"
           >
           <button

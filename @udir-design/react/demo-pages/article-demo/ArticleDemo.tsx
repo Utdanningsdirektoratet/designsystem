@@ -46,7 +46,7 @@ export const ArticleDemo = () => {
       </Breadcrumbs>
       <div
         className={classes.contentWrapper}
-        id="main-content"
+        id="main"
         tabIndex={-1}
         ref={containerRef}
       >
