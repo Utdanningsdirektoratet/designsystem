@@ -1,7 +1,6 @@
 import cl from 'clsx/lite';
 import type { HTMLAttributes } from 'react';
 import { forwardRef } from 'react';
-import { ChevronDownIcon, ChevronUpIcon } from '@udir-design/icons';
 import { Heading } from '../typography/heading/Heading';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 
@@ -54,8 +53,6 @@ export const HeaderUserButton = forwardRef<
         {description && <Paragraph data-size="xs">{description}</Paragraph>}
       </div>
       {avatar && avatar}
-      <ChevronDownIcon aria-hidden />
-      <ChevronUpIcon aria-hidden />
     </button>
   );
 });
