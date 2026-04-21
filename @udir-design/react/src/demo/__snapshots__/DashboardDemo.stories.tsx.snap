@@ -52,42 +52,6 @@ exports[`Dashboard Page 2 1`] = `
             SH
           </span>
         </span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
       </button>
       <div
         id="usermenu2"
@@ -183,60 +147,60 @@ exports[`Dashboard Page 2 1`] = `
       tabindex="0"
     >
       <button
-        id="tab-_r_g_"
+        id="tab-_r_c_"
         aria-selected="false"
         data-value="overview"
         role="tab"
         type="button"
         data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_k_"
+        aria-controls="tabpanel-_r_g_"
       >
         Oversikt
       </button>
       <button
-        id="tab-_r_h_"
+        id="tab-_r_d_"
         aria-selected="true"
         data-value="tests"
         role="tab"
         type="button"
         data-roving-tabindex-item="true"
         tabindex="0"
-        aria-controls="tabpanel-_r_l_"
+        aria-controls="tabpanel-_r_h_"
       >
         Prøver
       </button>
       <button
-        id="tab-_r_i_"
+        id="tab-_r_e_"
         aria-selected="false"
         data-value="test-answers"
         role="tab"
         type="button"
         data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_m_"
+        aria-controls="tabpanel-_r_i_"
       >
         Prøvesvar
       </button>
       <button
-        id="tab-_r_j_"
+        id="tab-_r_f_"
         aria-selected="false"
         data-value="settings"
         role="tab"
         type="button"
         data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_n_"
+        aria-controls="tabpanel-_r_j_"
       >
         Innstillinger
       </button>
     </div>
     <div
-      id="tabpanel-_r_k_"
+      id="tabpanel-_r_g_"
       role="tabpanel"
       tabindex="0"
       hidden
-      aria-labelledby="tab-_r_g_"
+      aria-labelledby="tab-_r_c_"
     >
       <p data-variant="default">
         Her får du en oversikt over all den overordnede informasjonen.
@@ -305,9 +269,9 @@ exports[`Dashboard Page 2 1`] = `
       </div>
     </div>
     <div
-      id="tabpanel-_r_l_"
+      id="tabpanel-_r_h_"
       role="tabpanel"
-      aria-labelledby="tab-_r_h_"
+      aria-labelledby="tab-_r_d_"
     >
       <p data-variant="default">
         Oversikt over prøver for Schweigaardsgate skole.
@@ -396,11 +360,11 @@ exports[`Dashboard Page 2 1`] = `
       </div>
     </div>
     <div
-      id="tabpanel-_r_m_"
+      id="tabpanel-_r_i_"
       role="tabpanel"
       tabindex="0"
       hidden
-      aria-labelledby="tab-_r_i_"
+      aria-labelledby="tab-_r_e_"
     >
       <p data-variant="default">
         Oversikt over prøvesvar for Schweigaardsgate skole.
@@ -469,10 +433,10 @@ exports[`Dashboard Page 2 1`] = `
       </div>
     </div>
     <div
-      id="tabpanel-_r_n_"
+      id="tabpanel-_r_j_"
       role="tabpanel"
       hidden
-      aria-labelledby="tab-_r_j_"
+      aria-labelledby="tab-_r_f_"
     >
       <div>
         <div>
@@ -748,42 +712,6 @@ exports[`Dashboard Page 3 1`] = `
             SH
           </span>
         </span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
       </button>
       <div
         id="usermenu2"
@@ -879,60 +807,60 @@ exports[`Dashboard Page 3 1`] = `
       tabindex="0"
     >
       <button
-        id="tab-_r_s_"
+        id="tab-_r_m_"
         aria-selected="false"
         data-value="overview"
         role="tab"
         type="button"
         data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_10_"
+        aria-controls="tabpanel-_r_q_"
       >
         Oversikt
       </button>
       <button
-        id="tab-_r_t_"
+        id="tab-_r_n_"
         aria-selected="false"
         data-value="tests"
         role="tab"
         type="button"
         data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_11_"
+        aria-controls="tabpanel-_r_r_"
       >
         Prøver
       </button>
       <button
-        id="tab-_r_u_"
+        id="tab-_r_o_"
         aria-selected="true"
         data-value="test-answers"
         role="tab"
         type="button"
         data-roving-tabindex-item="true"
         tabindex="0"
-        aria-controls="tabpanel-_r_12_"
+        aria-controls="tabpanel-_r_s_"
       >
         Prøvesvar
       </button>
       <button
-        id="tab-_r_v_"
+        id="tab-_r_p_"
         aria-selected="false"
         data-value="settings"
         role="tab"
         type="button"
         data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_13_"
+        aria-controls="tabpanel-_r_t_"
       >
         Innstillinger
       </button>
     </div>
     <div
-      id="tabpanel-_r_10_"
+      id="tabpanel-_r_q_"
       role="tabpanel"
       tabindex="0"
       hidden
-      aria-labelledby="tab-_r_s_"
+      aria-labelledby="tab-_r_m_"
     >
       <p data-variant="default">
         Her får du en oversikt over all den overordnede informasjonen.
@@ -1001,10 +929,10 @@ exports[`Dashboard Page 3 1`] = `
       </div>
     </div>
     <div
-      id="tabpanel-_r_11_"
+      id="tabpanel-_r_r_"
       role="tabpanel"
       hidden
-      aria-labelledby="tab-_r_t_"
+      aria-labelledby="tab-_r_n_"
     >
       <p data-variant="default">
         Oversikt over prøver for Schweigaardsgate skole.
@@ -1093,10 +1021,10 @@ exports[`Dashboard Page 3 1`] = `
       </div>
     </div>
     <div
-      id="tabpanel-_r_12_"
+      id="tabpanel-_r_s_"
       role="tabpanel"
       tabindex="0"
-      aria-labelledby="tab-_r_u_"
+      aria-labelledby="tab-_r_o_"
     >
       <p data-variant="default">
         Oversikt over prøvesvar for Schweigaardsgate skole.
@@ -1165,10 +1093,10 @@ exports[`Dashboard Page 3 1`] = `
       </div>
     </div>
     <div
-      id="tabpanel-_r_13_"
+      id="tabpanel-_r_t_"
       role="tabpanel"
       hidden
-      aria-labelledby="tab-_r_v_"
+      aria-labelledby="tab-_r_p_"
     >
       <div>
         <div>
@@ -1444,42 +1372,6 @@ exports[`Dashboard Page 4 1`] = `
             SH
           </span>
         </span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
       </button>
       <div
         id="usermenu2"
@@ -1575,60 +1467,60 @@ exports[`Dashboard Page 4 1`] = `
       tabindex="0"
     >
       <button
-        id="tab-_r_18_"
+        id="tab-_r_10_"
         aria-selected="false"
         data-value="overview"
         role="tab"
         type="button"
         data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_1c_"
+        aria-controls="tabpanel-_r_14_"
       >
         Oversikt
       </button>
       <button
-        id="tab-_r_19_"
+        id="tab-_r_11_"
         aria-selected="false"
         data-value="tests"
         role="tab"
         type="button"
         data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_1d_"
+        aria-controls="tabpanel-_r_15_"
       >
         Prøver
       </button>
       <button
-        id="tab-_r_1a_"
+        id="tab-_r_12_"
         aria-selected="false"
         data-value="test-answers"
         role="tab"
         type="button"
         data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_1e_"
+        aria-controls="tabpanel-_r_16_"
       >
         Prøvesvar
       </button>
       <button
-        id="tab-_r_1b_"
+        id="tab-_r_13_"
         aria-selected="true"
         data-value="settings"
         role="tab"
         type="button"
         data-roving-tabindex-item="true"
         tabindex="0"
-        aria-controls="tabpanel-_r_1f_"
+        aria-controls="tabpanel-_r_17_"
       >
         Innstillinger
       </button>
     </div>
     <div
-      id="tabpanel-_r_1c_"
+      id="tabpanel-_r_14_"
       role="tabpanel"
       tabindex="0"
       hidden
-      aria-labelledby="tab-_r_18_"
+      aria-labelledby="tab-_r_10_"
     >
       <p data-variant="default">
         Her får du en oversikt over all den overordnede informasjonen.
@@ -1697,10 +1589,10 @@ exports[`Dashboard Page 4 1`] = `
       </div>
     </div>
     <div
-      id="tabpanel-_r_1d_"
+      id="tabpanel-_r_15_"
       role="tabpanel"
       hidden
-      aria-labelledby="tab-_r_19_"
+      aria-labelledby="tab-_r_11_"
     >
       <p data-variant="default">
         Oversikt over prøver for Schweigaardsgate skole.
@@ -1789,11 +1681,11 @@ exports[`Dashboard Page 4 1`] = `
       </div>
     </div>
     <div
-      id="tabpanel-_r_1e_"
+      id="tabpanel-_r_16_"
       role="tabpanel"
       tabindex="0"
       hidden
-      aria-labelledby="tab-_r_1a_"
+      aria-labelledby="tab-_r_12_"
     >
       <p data-variant="default">
         Oversikt over prøvesvar for Schweigaardsgate skole.
@@ -1862,9 +1754,9 @@ exports[`Dashboard Page 4 1`] = `
       </div>
     </div>
     <div
-      id="tabpanel-_r_1f_"
+      id="tabpanel-_r_17_"
       role="tabpanel"
-      aria-labelledby="tab-_r_1b_"
+      aria-labelledby="tab-_r_13_"
     >
       <div>
         <div>
@@ -2140,42 +2032,6 @@ exports[`Dashboard Story 1`] = `
             SH
           </span>
         </span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
       </button>
       <div
         id="usermenu2"
@@ -2271,59 +2127,59 @@ exports[`Dashboard Story 1`] = `
       tabindex="0"
     >
       <button
-        id="tab-_r_4_"
+        id="tab-_r_2_"
         aria-selected="true"
         data-value="overview"
         role="tab"
         type="button"
         data-roving-tabindex-item="true"
         tabindex="0"
-        aria-controls="tabpanel-_r_8_"
+        aria-controls="tabpanel-_r_6_"
       >
         Oversikt
       </button>
       <button
-        id="tab-_r_5_"
+        id="tab-_r_3_"
         aria-selected="false"
         data-value="tests"
         role="tab"
         type="button"
         data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_9_"
+        aria-controls="tabpanel-_r_7_"
       >
         Prøver
       </button>
       <button
-        id="tab-_r_6_"
+        id="tab-_r_4_"
         aria-selected="false"
         data-value="test-answers"
         role="tab"
         type="button"
         data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_a_"
+        aria-controls="tabpanel-_r_8_"
       >
         Prøvesvar
       </button>
       <button
-        id="tab-_r_7_"
+        id="tab-_r_5_"
         aria-selected="false"
         data-value="settings"
         role="tab"
         type="button"
         data-roving-tabindex-item="true"
         tabindex="-1"
-        aria-controls="tabpanel-_r_b_"
+        aria-controls="tabpanel-_r_9_"
       >
         Innstillinger
       </button>
     </div>
     <div
-      id="tabpanel-_r_8_"
+      id="tabpanel-_r_6_"
       role="tabpanel"
       tabindex="0"
-      aria-labelledby="tab-_r_4_"
+      aria-labelledby="tab-_r_2_"
     >
       <p data-variant="default">
         Her får du en oversikt over all den overordnede informasjonen.
@@ -2392,10 +2248,10 @@ exports[`Dashboard Story 1`] = `
       </div>
     </div>
     <div
-      id="tabpanel-_r_9_"
+      id="tabpanel-_r_7_"
       role="tabpanel"
       hidden
-      aria-labelledby="tab-_r_5_"
+      aria-labelledby="tab-_r_3_"
     >
       <p data-variant="default">
         Oversikt over prøver for Schweigaardsgate skole.
@@ -2484,11 +2340,11 @@ exports[`Dashboard Story 1`] = `
       </div>
     </div>
     <div
-      id="tabpanel-_r_a_"
+      id="tabpanel-_r_8_"
       role="tabpanel"
       tabindex="0"
       hidden
-      aria-labelledby="tab-_r_6_"
+      aria-labelledby="tab-_r_4_"
     >
       <p data-variant="default">
         Oversikt over prøvesvar for Schweigaardsgate skole.
@@ -2557,10 +2413,10 @@ exports[`Dashboard Story 1`] = `
       </div>
     </div>
     <div
-      id="tabpanel-_r_b_"
+      id="tabpanel-_r_9_"
       role="tabpanel"
       hidden
-      aria-labelledby="tab-_r_7_"
+      aria-labelledby="tab-_r_5_"
     >
       <div>
         <div>
