@@ -86,20 +86,33 @@
   }
 
   .uds-header__menu-button {
-    > svg:first-of-type {
-      display: block;
-    }
+    --uds-header__menu-button-icon-default: var(--uds-icon-menuHamburger);
+    --uds-header__menu-button-icon-active: var(--uds-icon-xMark);
+  }
 
-    > svg:last-of-type {
-      display: none;
+  .uds-header__theme-menu-button {
+    --uds-header__menu-button-icon-default: var(--uds-icon-chevronDown);
+    --uds-header__menu-button-icon-active: var(--uds-icon-chevronUp);
+  }
+
+  .uds-header__menu-button,
+  .uds-header__theme-menu-button {
+    &::before {
+      content: '';
+      display: block;
+      width: 1.3em;
+      height: 1.3em;
+      background: currentColor;
+      mask-image: var(--uds-header__menu-button-icon-default);
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      flex-shrink: 0;
     }
 
     &:has(+ [popover]:popover-open) {
-      > svg:first-of-type {
-        display: none;
-      }
-      > svg:last-of-type {
-        display: block;
+      &::before {
+        mask-image: var(--uds-header__menu-button-icon-active);
       }
     }
   }
@@ -125,7 +138,16 @@
         display: flex;
         gap: var(--ds-size-1);
         width: fit-content;
-        & > svg {
+        &::before {
+          content: '';
+          display: block;
+          width: 1em;
+          height: 1em;
+          background: currentColor;
+          mask-image: var(--uds-icon-arrowRight);
+          mask-size: contain;
+          mask-repeat: no-repeat;
+          mask-position: center;
           transform: translateY(var(--ds-size-1));
           flex-shrink: 0;
         }
@@ -199,30 +221,24 @@
       }
     }
 
-    > svg {
+    --uds-header__user-button-icon: var(--uds-icon-chevronDown);
+
+    &::after {
+      content: '';
+      display: block;
+      width: var(--ds-size-6);
+      height: var(--ds-size-6);
+      background: currentColor;
+      mask-image: var(--uds-header__user-button-icon);
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
       margin-inline-start: var(--ds-size-1);
       flex-shrink: 0;
     }
 
-    > svg:nth-last-child(2) {
-      display: block;
-      width: auto;
-      height: var(--ds-size-6);
-    }
-
-    > svg:last-child {
-      display: none;
-      width: auto;
-      height: var(--ds-size-6);
-    }
-
     &:has(+ [popover]:popover-open) {
-      > svg:nth-last-child(2) {
-        display: none;
-      }
-      > svg:last-child {
-        display: block;
-      }
+      --uds-header__user-button-icon: var(--uds-icon-chevronUp);
     }
 
     @composes ds-focus from '@digdir/designsystemet-css/base.css';

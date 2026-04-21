@@ -1,6 +1,5 @@
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
-import { ArrowRightIcon } from '@udir-design/icons';
 import type { LinkProps } from '../../link/Link';
 import { Link } from '../../link/Link';
 
@@ -17,7 +16,6 @@ export const HeaderMenuLink = forwardRef<
         ref={ref}
         {...props}
       >
-        <ArrowRightIcon aria-hidden />
         {children}
       </Link>
     </li>
