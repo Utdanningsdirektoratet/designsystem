@@ -8,10 +8,18 @@
   }
 }
 
+.dividerWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 var(--ds-size-2);
+  width: 100%;
+}
+
 .contentSpacing {
   display: flex;
   flex-direction: column;
   gap: var(--ds-size-13);
+  margin: var(--ds-size-2) 0;
 }
 
 .contentWrapper {
