@@ -1,0 +1,359 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Preview 1`] = `
+<div data-size="auto">
+  <div style="margin: 20px;">
+    <table
+      data-zebra="true"
+      data-color="neutral"
+    >
+      <thead>
+        <tr>
+          <th aria-sort="none">
+            <button type="button">
+              Navn
+            </button>
+          </th>
+          <th aria-sort="none">
+            <button type="button">
+              Sted
+            </button>
+          </th>
+          <th>
+            Orgnummer
+          </th>
+          <th>
+            Klar for gjennomføring
+          </th>
+          <th>
+            Brukerstøtte
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Rita Nordmann
+          </td>
+          <td>
+            Oslo
+          </td>
+          <td>
+            100000000
+          </td>
+          <td>
+            Nei
+          </td>
+          <td>
+            Brukerstøtte
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Kari Nordmann
+          </td>
+          <td>
+            Bergen
+          </td>
+          <td>
+            100000001
+          </td>
+          <td>
+            Ja
+          </td>
+          <td>
+            Brukerstøtte
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Ola Nordmann
+          </td>
+          <td>
+            Trondheim
+          </td>
+          <td>
+            100000002
+          </td>
+          <td>
+            Ja
+          </td>
+          <td>
+            Brukerstøtte
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Kai Nordmann
+          </td>
+          <td>
+            Stavanger
+          </td>
+          <td>
+            100000003
+          </td>
+          <td>
+            Nei
+          </td>
+          <td>
+            Brukerstøtte
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Rita Nordmann
+          </td>
+          <td>
+            Oslo
+          </td>
+          <td>
+            100000004
+          </td>
+          <td>
+            Ja
+          </td>
+          <td>
+            Brukerstøtte
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Kari Nordmann
+          </td>
+          <td>
+            Bergen
+          </td>
+          <td>
+            100000005
+          </td>
+          <td>
+            Ja
+          </td>
+          <td>
+            Brukerstøtte
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Ola Nordmann
+          </td>
+          <td>
+            Trondheim
+          </td>
+          <td>
+            100000006
+          </td>
+          <td>
+            Nei
+          </td>
+          <td>
+            Brukerstøtte
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Kai Nordmann
+          </td>
+          <td>
+            Stavanger
+          </td>
+          <td>
+            100000007
+          </td>
+          <td>
+            Ja
+          </td>
+          <td>
+            Brukerstøtte
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Rita Nordmann
+          </td>
+          <td>
+            Oslo
+          </td>
+          <td>
+            100000008
+          </td>
+          <td>
+            Ja
+          </td>
+          <td>
+            Brukerstøtte
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Kari Nordmann
+          </td>
+          <td>
+            Bergen
+          </td>
+          <td>
+            100000009
+          </td>
+          <td>
+            Nei
+          </td>
+          <td>
+            Brukerstøtte
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: var(--ds-size-4); margin: var(--ds-size-6) var(--ds-size-2);">
+      <nav
+        aria-label="Sidenavigering"
+        data-color="neutral"
+        data-size="sm"
+      >
+        <ul>
+          <li>
+            <button
+              aria-disabled="true"
+              data-variant="tertiary"
+              type="button"
+              aria-label="Forrige side"
+            >
+            </button>
+          </li>
+          <li>
+            <button
+              data-variant="primary"
+              type="button"
+              aria-current="page"
+              aria-label="Side 1"
+            >
+              1
+            </button>
+          </li>
+          <li>
+            <button
+              data-variant="tertiary"
+              type="button"
+              aria-label="Side 2"
+            >
+              2
+            </button>
+          </li>
+          <li>
+            <button
+              data-variant="tertiary"
+              type="button"
+              aria-label="Side 3"
+            >
+              3
+            </button>
+          </li>
+          <li>
+            <button
+              data-variant="tertiary"
+              type="button"
+              aria-label="Side 4"
+            >
+              4
+            </button>
+          </li>
+          <li>
+          </li>
+          <li>
+            <button
+              data-variant="tertiary"
+              type="button"
+              aria-label="Side 10"
+            >
+              10
+            </button>
+          </li>
+          <li>
+            <button
+              data-variant="tertiary"
+              type="button"
+              aria-label="Neste side"
+            >
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center; align-self: auto; width: auto; max-width: none; gap: var(--ds-size-4);">
+        <span style="color: var(--ds-color-neutral-text-subtle);">
+          1-10 av 100
+        </span>
+        <div style="display: flex; align-items: center; gap: var(--ds-size-4);">
+          <span>
+            Rader per side
+          </span>
+          <button
+            data-variant="secondary"
+            type="button"
+            popovertarget="_r_0_"
+            aria-label="Rader per side"
+          >
+            10
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M5.97 9.47a.75.75 0 0 1 1.06 0L12 14.44l4.97-4.97a.75.75 0 1 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-5.5-5.5a.75.75 0 0 1 0-1.06"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+          </button>
+          <div
+            id="_r_0_"
+            popover="manual"
+            data-variant="default"
+          >
+            <ul>
+              <li>
+                <button
+                  data-variant="tertiary"
+                  type="button"
+                >
+                  5
+                </button>
+              </li>
+              <li>
+                <button
+                  data-variant="tertiary"
+                  type="button"
+                >
+                  10
+                </button>
+              </li>
+              <li>
+                <button
+                  data-variant="tertiary"
+                  type="button"
+                >
+                  25
+                </button>
+              </li>
+              <li>
+                <button
+                  data-variant="tertiary"
+                  type="button"
+                >
+                  50
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
