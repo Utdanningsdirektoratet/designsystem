@@ -23,7 +23,7 @@ export const HeaderDemo = ({ ...props }: Props) => {
                 marginBottom: 'var(--ds-size-3)',
               }}
             >
-              Heading 1
+              Navigasjon
             </Heading>
             <List.Unordered>
               <Header.Menu.Link href="#">Navigasjonslenke 1</Header.Menu.Link>

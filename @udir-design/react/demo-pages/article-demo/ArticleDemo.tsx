@@ -84,7 +84,6 @@ export const ArticleDemo = () => {
               </Paragraph>
               <Link
                 href=""
-                data-size="sm"
                 onClick={(e) => {
                   e.preventDefault();
                   window.print();
@@ -112,7 +111,6 @@ export const ArticleDemo = () => {
               elevgruppen innenfor fellesskapet.{' '}
               <Link
                 href="https://www.udir.no/lk20/overordnet-del/3.-prinsipper-for-skolens-praksis/3.2-undervisning-og-tilpasset-opplaring"
-                data-size="sm"
                 onClick={(e) => {
                   e.preventDefault();
                 }}

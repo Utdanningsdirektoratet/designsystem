@@ -7,7 +7,7 @@ export const measures: Measure[] = [
   {
     summary: 'Elevenes medvirkning og motivasjon ',
     content:
-      'levene lærer på mange forskjellige måter, og blir motivert av ulike faktorer. De har også med seg ulike forkunnskaper og forutsetninger inn i opplæringen. Allerede når dere planlegger undervisningen er det lurt å ta hensyn til hva elevene kan fra før, og hva som motiverer dem. Det er viktig å prøve ut ulike arbeidsformer og pedagogiske metoder for å bli godt kjent med hva som fungerer for den enkelte eleven.',
+      'Elevene lærer på mange forskjellige måter, og blir motivert av ulike faktorer. De har også med seg ulike forkunnskaper og forutsetninger inn i opplæringen. Allerede når dere planlegger undervisningen er det lurt å ta hensyn til hva elevene kan fra før, og hva som motiverer dem. Det er viktig å prøve ut ulike arbeidsformer og pedagogiske metoder for å bli godt kjent med hva som fungerer for den enkelte eleven.',
   },
   {
     summary: 'Struktur og forutsigbarhet',

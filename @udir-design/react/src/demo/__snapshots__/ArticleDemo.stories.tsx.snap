@@ -84,7 +84,7 @@ exports[`Article Story 1`] = `
                   data-size="xs"
                   style="margin-bottom: var(--ds-size-3);"
                 >
-                  Heading 1
+                  Navigasjon
                 </h3>
                 <ul>
                   <li>
@@ -235,10 +235,7 @@ exports[`Article Story 1`] = `
               >
                 ARTIKKEL | Sist endret: 01.01.2024
               </p>
-              <a
-                href
-                data-size="sm"
-              >
+              <a href>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1em"
@@ -427,10 +424,7 @@ exports[`Article Story 1`] = `
           >
             <p data-variant="default">
               Tilpasset opplæring gjelder alle elever, og skal i størst mulig grad skje gjennom variasjon og tilpasninger til mangfoldet i elevgruppen innenfor fellesskapet.
-              <a
-                href="https://www.udir.no/lk20/overordnet-del/3.-prinsipper-for-skolens-praksis/3.2-undervisning-og-tilpasset-opplaring"
-                data-size="sm"
-              >
+              <a href="https://www.udir.no/lk20/overordnet-del/3.-prinsipper-for-skolens-praksis/3.2-undervisning-og-tilpasset-opplaring">
                 Overordnet del 3.2
               </a>
             </p>
@@ -472,7 +466,7 @@ exports[`Article Story 1`] = `
                 Elevenes medvirkning og motivasjon
               </u-summary>
               <div>
-                levene lærer på mange forskjellige måter, og blir motivert av ulike faktorer. De har også med seg ulike forkunnskaper og forutsetninger inn i opplæringen. Allerede når dere planlegger undervisningen er det lurt å ta hensyn til hva elevene kan fra før, og hva som motiverer dem. Det er viktig å prøve ut ulike arbeidsformer og pedagogiske metoder for å bli godt kjent med hva som fungerer for den enkelte eleven.
+                Elevene lærer på mange forskjellige måter, og blir motivert av ulike faktorer. De har også med seg ulike forkunnskaper og forutsetninger inn i opplæringen. Allerede når dere planlegger undervisningen er det lurt å ta hensyn til hva elevene kan fra før, og hva som motiverer dem. Det er viktig å prøve ut ulike arbeidsformer og pedagogiske metoder for å bli godt kjent med hva som fungerer for den enkelte eleven.
               </div>
             </u-details>
             <u-details
@@ -528,7 +522,7 @@ exports[`Article Story 1`] = `
           >
             Nyttige lenker
           </h2>
-          <ul>
+          <ul style="list-style: none; padding: 0px;">
             <li>
               <a
                 href="https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/veileder-for-tilpasset-opplaring-og-individuell-tilrettelegging/"

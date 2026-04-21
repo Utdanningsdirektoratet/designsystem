@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { Link } from 'src/components/link/Link';
+import { List } from 'src/components/list/List';
 
 interface HeadingMeta {
   size: 'xs' | 'sm' | 'md' | 'lg';
@@ -102,32 +103,37 @@ export const section5: SectionItem[] = [
       id: 'useful-links',
     },
     paragraph: (
-      <ul>
-        <li>
+      <List.Unordered
+        style={{
+          listStyle: 'none',
+          padding: 0,
+        }}
+      >
+        <List.Item>
           <Link
             href="https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/veileder-for-tilpasset-opplaring-og-individuell-tilrettelegging/"
             data-size="md"
           >
             Veileder for tilpasset opplæring og individuell tilrettelegging
           </Link>
-        </li>
-        <li>
+        </List.Item>
+        <List.Item>
           <Link
             href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/tilpasset-opplaring/vurdere-om-eleven-har-tilfredsstillende-utbytte-av-opplaringen/"
             data-size="md"
           >
             Vurdere om eleven har tilfredsstillende utbytte av opplæringen
           </Link>
-        </li>
-        <li>
+        </List.Item>
+        <List.Item>
           <Link
             href="https://www.udir.no/laring-og-trivsel/spesialpedagogikk/tilrettelegging-for-barn-og-elever-med-behov-for-ekstra-stotte/"
             data-size="md"
           >
             Tilrettelegging for barn og elever med behov for ekstra støtte
           </Link>
-        </li>
-      </ul>
+        </List.Item>
+      </List.Unordered>
     ),
   },
 ];
