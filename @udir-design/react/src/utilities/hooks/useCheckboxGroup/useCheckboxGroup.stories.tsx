@@ -236,6 +236,12 @@ export const IndeterminateInTable = meta.story({
       </Table>
     );
   },
+  parameters: {
+    docs: {
+      source: { type: 'code', transform: formatReactSource },
+    },
+  },
+  // transforming...
 });
 
 type Choices = {

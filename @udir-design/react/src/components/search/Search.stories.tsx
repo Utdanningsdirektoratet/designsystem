@@ -2,6 +2,7 @@ import { useDebounceCallback } from '@digdir/designsystemet-react';
 import { useState } from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { formatReactSource } from '.storybook/utils/sourceTransformers';
 import { assertExists } from '../../utilities/helpers/assertExists';
 import { Chip } from '../chip/Chip';
 import { Divider } from '../divider/Divider';
@@ -83,6 +84,7 @@ export const Controlled = meta.story({
       flexDirection: 'column',
       gap: 'var(--ds-size-2)',
     },
+    docs: { source: { type: 'code', transform: formatReactSource } },
   },
   render() {
     const [inputValue, setInputValue] = useState('');
@@ -247,16 +249,20 @@ export const Form = meta.story({
       </>
     );
   },
+  parameters: {
+    docs: { source: { type: 'code', transform: formatReactSource } },
+  },
+  //transforming..
 });
 
 export const LiveSearch = meta.story({
   parameters: {
+    docs: { source: { type: 'code', transform: formatReactSource } },
     customStyles: {
       display: 'flex',
       flexDirection: 'column',
       gap: 'var(--ds-size-2)',
     },
-    docs: { source: { type: 'code' } },
   },
   render(args) {
     const [value, setValue] = useState<string>('');

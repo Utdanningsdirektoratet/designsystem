@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { formatReactSource } from '.storybook/utils/sourceTransformers';
 import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
 import { Search } from '../search/Search';
 import { Pagination } from './Pagination';
@@ -221,4 +222,8 @@ export const WithAnchor = meta.story({
       </div>
     );
   },
+  parameters: {
+    docs: { source: { type: 'code', transform: formatReactSource } },
+  },
+  // transforming...
 });
