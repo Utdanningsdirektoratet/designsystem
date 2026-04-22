@@ -279,15 +279,15 @@ export const Button = meta.story({
 export const Colors = meta.story({
   render: (args) => (
     <>
-      <Chip.Button {...args}>Neutral</Chip.Button>
+      <Chip.Button {...args}>Chip 1</Chip.Button>
       <Chip.Button data-color="accent" {...args}>
-        Accent
+        Chip 2
       </Chip.Button>
       <Chip.Button data-color="support1" {...args}>
-        Support1
+        Chip 3
       </Chip.Button>
       <Chip.Button data-color="support2" {...args}>
-        Support2
+        Chip 4
       </Chip.Button>
     </>
   ),
