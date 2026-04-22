@@ -23,7 +23,6 @@ export * from './footer';
 export * from './formNavigation';
 export * from './header';
 export * from './input/Input';
-export * from './link/Link';
 export * from './list/List';
 export * from './logo';
 export * from './pagination/Pagination';
