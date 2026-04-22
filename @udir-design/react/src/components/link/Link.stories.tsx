@@ -5,7 +5,7 @@ import { Link } from './Link';
 
 const meta = preview.meta({
   component: Link,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
@@ -41,7 +41,7 @@ export const InText = meta.story({
 
 export const WithIcon = meta.story({
   args: {
-    href: 'mailto:designsystem@digdir.no',
+    href: 'mailto:post@udir.no',
   },
   render: (args) => (
     <Link {...args}>
@@ -57,7 +57,7 @@ export const LongLink = meta.story({
   },
   render: (args) => (
     <Paragraph>
-      <Link href={udirLink} {...args}>
+      <Link href="/" {...args}>
         Dette er en lenke som brekker over flere linjer
       </Link>
     </Paragraph>

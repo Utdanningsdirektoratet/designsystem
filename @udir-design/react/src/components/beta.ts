@@ -14,7 +14,6 @@ export * from './fieldNecessity';
 export * from './fieldset/Fieldset';
 export * from './formNavigation';
 export * from './header';
-export * from './link/Link';
 export * from './pagination/Pagination';
 export * from './popover/Popover';
 export * from './progressBar/ProgressBar';
