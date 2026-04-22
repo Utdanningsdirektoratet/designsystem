@@ -82,7 +82,7 @@ Du kan bruke lenke i `Alert` når brukeren trenger å gjøre noe et annet sted f
 
 Bruk `Alert` varsomt. Brukere kan forveksle varsler med reklame, og dermed overse dem. Hvis vi bruker varsler for ofte, kan vi forverre dette problemet.
 
-`Alert` skal se lik ut i alle tjenester og produkter, slik at brukerne gjenkjenner den uansett kontekst. Fargene i komponenten er bevisst valgt for å skille seg fra resten av Udir-paletten og fange oppmerksomheten til brukeren.
+`Alert` skal se lik ut i alle tjenester og produkter, slik at brukerne gjenkjenner den uansett kontekst. Komponenten bruker varselfarger. Dette er valgt bevisst for å skille seg fra Udirs identitetsfarger og fange oppmerksomheten til brukeren.
 
 ## Tekst i Alert
 
@@ -127,7 +127,7 @@ Legg spesielt merke til at live-regionen, altså elementet med attributt `role="
 
 For dynamiske varsler er det mest aktuelt å bruke `role="alert"` for kritiske varsel eller `role="status"` for mindre kritiske varsel, som beskrevet i [mønsteret for systemvarsler](/docs/patterns-systemvarsler--docs). Se også [alert role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) og [status role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/status_role) hos MDN.
 
-**Ikke** kombiner `role="alert"` og `aria-live`, siden [dette fører at varselet leses opp dobbelt i VoiceOver](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions#:~:text=adding%20both%20aria%2Dlive%20and%20role=%22alert%22%20causes%20double%20speaking%20issues%20in%20VoiceOver%20on%20iOS).
+**Ikke** kombiner `role="alert"` og `aria-live`, siden [dette fører til at varselet leses opp dobbelt i VoiceOver](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions#:~:text=adding%20both%20aria%2Dlive%20and%20role=%22alert%22%20causes%20double%20speaking%20issues%20in%20VoiceOver%20on%20iOS).
 
 Du **bør** kombinere `role="status"` og `aria-live="polite"` [for å maksimere kompatibilitet](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions#roles_with_implicit_live_region_attributes).
 
