@@ -44,7 +44,7 @@ exports[`In Text 1`] = `
 
 exports[`Long Link 1`] = `
 <p data-variant="default">
-  <a href="https://udir.no/">
+  <a href="/">
     Dette er en lenke som brekker over flere linjer
   </a>
 </p>
@@ -57,7 +57,7 @@ exports[`Preview 1`] = `
 `;
 
 exports[`With Icon 1`] = `
-<a href="mailto:designsystem@digdir.no">
+<a href="mailto:post@udir.no">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
