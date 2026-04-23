@@ -11,7 +11,7 @@ import { Card } from '../card/Card';
 import { Fieldset } from '../fieldset/Fieldset';
 import { Link } from '../link/Link';
 import { List } from '../list/List';
-import { ToggleGroup } from '../toggleGroup/ToggleGroup';
+import { ToggleGroup } from '../toggleGroup';
 import { Label } from '../typography/label/Label';
 import { Details } from './Details';
 import { Details as FakeDetails } from './docs/FakeDetails';
@@ -150,6 +150,7 @@ const detailsColorDecorator: Decorator = (Story) => {
         <Fieldset>
           <Fieldset.Legend>Farge</Fieldset.Legend>
           <ToggleGroup
+            aria-label="Farge"
             value={color}
             onChange={(val) => setColor(val as typeof color)}
           >
@@ -163,6 +164,7 @@ const detailsColorDecorator: Decorator = (Story) => {
         <Fieldset>
           <Fieldset.Legend>Foreldreelement</Fieldset.Legend>
           <ToggleGroup
+            aria-label="Foreldrelement"
             value={card}
             onChange={(val) => setCard(val as typeof card)}
           >
