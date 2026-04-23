@@ -1,4 +1,5 @@
 import type { Size } from '@digdir/designsystemet-react';
+import type { DSFieldElement } from '@digdir/designsystemet-web';
 import cl from 'clsx/lite';
 import type { HTMLAttributes, ReactNode } from 'react';
 import { forwardRef, useEffect, useRef } from 'react';
@@ -15,7 +16,7 @@ type InputProps_ = Omit<
   'prefix' | 'className' | 'style' | 'data-color' | 'type' | 'data-size'
 >;
 
-export type FileUploadProps = HTMLAttributes<HTMLDivElement> & {
+export type FileUploadProps = HTMLAttributes<DSFieldElement> & {
   /**
    * Changes size for descendant Designsystemet components.
    * Select from predefined sizes.
@@ -45,7 +46,7 @@ export type FileUploadProps = HTMLAttributes<HTMLDivElement> & {
   variant?: 'primary' | 'secondary';
 };
 
-export const FileUploadTrigger = forwardRef<HTMLDivElement, FileUploadProps>(
+export const FileUploadTrigger = forwardRef<DSFieldElement, FileUploadProps>(
   function FileUploadTrigger(
     {
       className,
