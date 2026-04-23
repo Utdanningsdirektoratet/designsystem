@@ -94,27 +94,33 @@ export const Preview = meta.story({
 
 export const Mobile = meta.story({
   render() {
+    const [page, setCurrentPage] = useState(3);
+    const { pages, nextButtonProps, prevButtonProps } = usePagination({
+      currentPage: page,
+      totalPages: 10,
+      showPages: 3,
+      setCurrentPage,
+    });
+
     return (
-      <Pagination>
+      <Pagination aria-label="Sidenavigering">
         <Pagination.List>
           <Pagination.Item>
-            <Pagination.Button aria-label="Forrige side" />
+            <Pagination.Button aria-label="Forrige side" {...prevButtonProps} />
           </Pagination.Item>
 
-          <Pagination.Item>
-            <Pagination.Button aria-label="Side 2">2</Pagination.Button>
-          </Pagination.Item>
+          {pages.map(({ page, itemKey, buttonProps }) => (
+            <Pagination.Item key={itemKey}>
+              {typeof page === 'number' && (
+                <Pagination.Button {...buttonProps} aria-label={`Side ${page}`}>
+                  {page}
+                </Pagination.Button>
+              )}
+            </Pagination.Item>
+          ))}
 
           <Pagination.Item>
-            <Pagination.Button aria-label="Side 3">3</Pagination.Button>
-          </Pagination.Item>
-
-          <Pagination.Item>
-            <Pagination.Button aria-label="Side 4">4</Pagination.Button>
-          </Pagination.Item>
-
-          <Pagination.Item>
-            <Pagination.Button aria-label="Neste side" />
+            <Pagination.Button aria-label="Neste side" {...nextButtonProps} />
           </Pagination.Item>
         </Pagination.List>
       </Pagination>
