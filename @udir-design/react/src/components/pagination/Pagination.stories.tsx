@@ -70,13 +70,13 @@ export const Preview = meta.story({
 
     await step('Initial active page is 4', async () => {
       const activePageButton = canvas.getByRole('button', { name: /side 4/i });
-      expect(activePageButton).toHaveAttribute('aria-current', 'page');
+      expect(activePageButton).toHaveAttribute('aria-current', 'true');
     });
 
     await step('Clicking "Neste side" changes active page to 5', async () => {
       await userEvent.click(nextButton);
       const activePageButton = canvas.getByRole('button', { name: /side 5/i });
-      expect(activePageButton).toHaveAttribute('aria-current', 'page');
+      expect(activePageButton).toHaveAttribute('aria-current', 'true');
     });
 
     await step(
@@ -86,7 +86,7 @@ export const Preview = meta.story({
         const activePageButton = canvas.getByRole('button', {
           name: /side 4/i,
         });
-        expect(activePageButton).toHaveAttribute('aria-current', 'page');
+        expect(activePageButton).toHaveAttribute('aria-current', 'true');
       },
     );
   },

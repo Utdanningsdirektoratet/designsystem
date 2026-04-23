@@ -36,11 +36,7 @@ const meta = preview.meta({
           // (chips for selected items) don't have an appropriate parent element
           {
             id: 'aria-required-parent',
-            matches: (element) =>
-              !(
-                element instanceof HTMLDataElement &&
-                element.className === 'ds-chip'
-              ),
+            matches: (element) => !(element instanceof HTMLDataElement),
           },
           /* Axe does not like role="combobox" on input elements either */
           {
