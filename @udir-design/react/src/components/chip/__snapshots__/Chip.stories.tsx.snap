@@ -92,6 +92,30 @@ exports[`Checkbox 1`] = `
 </div>
 `;
 
+exports[`Colors 1`] = `
+<button type="button">
+  Chip 1
+</button>
+<button
+  type="button"
+  data-color="accent"
+>
+  Chip 2
+</button>
+<button
+  type="button"
+  data-color="support1"
+>
+  Chip 3
+</button>
+<button
+  type="button"
+  data-color="support2"
+>
+  Chip 4
+</button>
+`;
+
 exports[`Preview 1`] = `
 <button
   type="button"
