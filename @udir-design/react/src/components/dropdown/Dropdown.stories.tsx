@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import {
   ArrowDownIcon,
@@ -13,6 +13,7 @@ import {
   TrashFillIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Avatar } from '../avatar/Avatar';
 import { Badge } from '../badge/Badge';
 import { Button } from '../button/Button';
@@ -221,14 +222,15 @@ export const Selected = meta.story({
 
 export const Controlled = meta.story({
   parameters: {
-    customStyles: { story: { height: 260 } },
+    customStyles: { story: { height: 402 } },
+    docs: advancedCodeDocs,
   },
-  render: function Render(args) {
+  render(args) {
     const [open, setOpen] = useState(false);
 
     return (
       <Dropdown.TriggerContext>
-        <Dropdown.Trigger onClick={() => setOpen(!open)} variant="secondary">
+        <Dropdown.Trigger variant="secondary">
           Utdanningsløp
           {open ? (
             <ChevronUpIcon aria-hidden />
@@ -236,7 +238,12 @@ export const Controlled = meta.story({
             <ChevronDownIcon aria-hidden />
           )}
         </Dropdown.Trigger>
-        <Dropdown {...args} open={open} onClose={() => setOpen(false)}>
+        <Dropdown
+          {...args}
+          open={open}
+          onOpen={() => setOpen(true)}
+          onClose={() => setOpen(false)}
+        >
           <Dropdown.Heading>Grunnskolen</Dropdown.Heading>
           <Dropdown.List>
             <Dropdown.Item>
@@ -269,15 +276,74 @@ export const Controlled = meta.story({
   },
 });
 
-export const WithoutTrigger = meta.story({
+export const ControlledWithoutContext = meta.story({
+  parameters: {
+    customStyles: { story: { height: 402 } },
+    docs: advancedCodeDocs,
+  },
+  render(args) {
+    const [open, setOpen] = useState(false);
+    const popoverId = useId();
+
+    return (
+      <>
+        <Button popoverTarget={popoverId} variant="secondary">
+          Utdanningsløp
+          {open ? (
+            <ChevronUpIcon aria-hidden />
+          ) : (
+            <ChevronDownIcon aria-hidden />
+          )}
+        </Button>
+        <Dropdown
+          {...args}
+          id={popoverId}
+          open={open}
+          onOpen={() => setOpen(true)}
+          onClose={() => setOpen(false)}
+        >
+          <Dropdown.Heading>Grunnskolen</Dropdown.Heading>
+          <Dropdown.List>
+            <Dropdown.Item>
+              <Dropdown.Button onClick={() => setOpen(false)}>
+                Barneskolen
+              </Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Dropdown.Button onClick={() => setOpen(false)}>
+                Ungdomsskolen
+              </Dropdown.Button>
+            </Dropdown.Item>
+          </Dropdown.List>
+          <Dropdown.Heading>Videregående opplæring</Dropdown.Heading>
+          <Dropdown.List>
+            <Dropdown.Item>
+              <Dropdown.Button onClick={() => setOpen(false)}>
+                Studieforberedende
+              </Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Dropdown.Button onClick={() => setOpen(false)}>
+                Yrkesfaglig
+              </Dropdown.Button>
+            </Dropdown.Item>
+          </Dropdown.List>
+        </Dropdown>
+      </>
+    );
+  },
+});
+
+export const WithoutContext = meta.story({
   parameters: {
     customStyles: { story: { height: 260 } },
+    docs: { source: { type: 'dynamic' } },
   },
   render: () => {
     return (
       <>
         <Button
-          popovertarget="dropdown"
+          popoverTarget="dropdown"
           variant="tertiary"
           icon
           title="Flere valg"
