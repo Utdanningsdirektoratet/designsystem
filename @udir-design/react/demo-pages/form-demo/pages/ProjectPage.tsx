@@ -109,7 +109,6 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
             >
               <Suggestion.Input
                 autoComplete="off"
-                aria-invalid={!!errors.county}
                 id="county"
                 readOnly={isSubmitSuccessful}
                 required
@@ -140,7 +139,6 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
         <Select
           id="ageGroup"
           {...register('ageGroup')}
-          aria-invalid={!!errors.ageGroup}
           defaultValue="blank"
           aria-readonly={isSubmitSuccessful}
           autoComplete="off"
