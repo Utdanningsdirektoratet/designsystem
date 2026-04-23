@@ -145,7 +145,11 @@ const detailsColorDecorator: Decorator = (Story) => {
       <Stack
         direction="row"
         data-size="sm"
-        style={{ marginBottom: 'var(--ds-size-5)' }}
+        style={{
+          paddingInline: '1rem',
+          paddingTop: '1rem',
+          marginBottom: 'var(--ds-size-5)',
+        }}
       >
         <Fieldset>
           <Fieldset.Legend>Farge</Fieldset.Legend>
@@ -189,6 +193,9 @@ const detailsColorDecorator: Decorator = (Story) => {
 
 export const InCardWithColor = meta.story({
   decorators: [detailsColorDecorator],
+  parameters: {
+    customStyles: { paddingTop: 0 },
+  },
   render: (args) => {
     return (
       <>
