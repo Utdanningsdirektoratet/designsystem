@@ -8,7 +8,7 @@ import { ButtonEx1, ButtonEx2, ButtonEx4, ButtonEx5 } from './docs/doAndDont';
 
 # Button
 
-Knapper lar brukerne utføre handlinger. Vi har variantene `primary`, `secondary` og `tertiary` som kommer i ulike fargevarianter og størrelser.
+Knapper lar brukerne utføre en handling. Vi har variantene `primary`, `secondary` og `tertiary` som alle kommer i ulike fargevarianter og størrelser.
 
 **Passer til å**
 
@@ -33,41 +33,41 @@ import { Button } from '@udir-design/react';
 
 ## Varianter av Button
 
-Vi har forskjellige knapper for å fremheve utvalgte handlinger. `Primary`, `secondary` og `tertiary` bestemmer hvor viktig handlingen er.
+Vi har forskjellige varianter av knapper for å signalisere hvor viktig en handling er. Disse er `primary`, `secondary` og `tertiary`.
 
 ### Primary Button
 
-Vi bruker denne knappen til den handlingen som er viktigst for brukeren, for eksempel Lagre, Neste eller Send inn. Det skal bare være en primærknapp per side.
+Vi bruker `primary`-knappen til den handlingen som er viktigst for brukeren, for eksempel Lagre, Neste eller Send inn. Det skal kun være én primærknapp per side.
 
 <Canvas of={ButtonStories.Primary} />
 
 ### Secondary Button
 
-Vi bruker denne knappen til handlinger som ikke er hovedhandlinger. Den står gjerne sammen med en hovedknapp, så hvis hovedknappen er Lagre, kan sekundærknappen være Avbryt.
+Vi bruker `secondary`-knappen til handlinger som ikke er hovedhandlinger, men som gjerne støtter dem. For eksempel Avbryt ved siden av Lagre.
 
 <Canvas of={ButtonStories.Secondary} />
 
 ### Tertiary Button
 
-Denne knappen bruker vi til nedtonede handlinger. Hvis vi vil bruke den alene, må den ha med et ikon, hvis ikke er det vanskelig å se at det er en knapp.
+Vi bruker `tertiary`-knappen til nedtonede handlinger. Brukes den alene, bør den ha et ikon for å være tydelig nok som knapp.
 
 <Canvas of={ButtonStories.Tertiary} />
 
 ## Fargevarianter
 
-Knappene kommer i to fargevarianter: `neutral` og `danger`.
+Knappene kommer i to fargevarianter, `neutral` og `danger`.
 
-- `neutral` er standardfargen.
+- `neutral` er standardfargen og passer til de fleste handlinger.
 
 <Canvas of={ButtonStories.Neutral} />
 
-- `danger`-fargen bruker vi til handlinger som brukeren ikke kan angre, for eksempel Slett.
+- `danger` bruker vi til handlinger som brukeren ikke kan angre, for eksempel Slett.
 
 <Canvas of={ButtonStories.Danger} />
 
 ### Kombinere ulike fargevarianter
 
-Vi kan bruke en `danger`-knapp sammen med én eller flere `neutral`-knapper når vi skal tydeliggjøre en handling brukeren ikke kan angre, for eksempel Forkast. Vi skal ikke kombinere andre fargevarianter.
+Vi kan bruke en `danger`-knapp sammen med én eller flere `neutral`-knapper for å tydeliggjøre en handling brukeren ikke kan angre, for eksempel Forkast. Unngå å bruke `danger`-knapper sammen med andre `danger`-knapper.
 
 <Canvas of={ButtonStories.CombinedColors} />
 
@@ -75,20 +75,21 @@ Vi kan bruke en `danger`-knapp sammen med én eller flere `neutral`-knapper når
 
 ### Knapp som lenke
 
-Bruk `asChild` dersom du trenger å bruke knappen som en lenke. Vurder først om det er bedre å bruke [`Link`](/docs/components-link--docs)-komponenten.
+Bruk `asChild` dersom du trenger å bruke knappen som en lenke. Vurder først om det er mer hensiktsmessig å bruke [`Link`](/docs/components-link--docs)-komponenten. Knapp som lenke kan gi tydeligere visuell prioritet når navigasjonen er en viktig handling.
+
 [Les mer om komposisjon](https://www.designsystemet.no/grunnleggende/for-utviklere/komposisjon).
 
 <Canvas of={ButtonStories.AsLink} />
 
 ### Knapp med kun ikon
 
-Knapper med kun ikon bruker vi bare for godt kjente ikoner som Lukk og Slett. Når knappen bare har ikon, må vi ha med en tilgjengelig tekst som forklarer hva knappen gjør. Dette kan legges i `title`, `aria-label` eller i en `Tooltip` som i eksempelet under.
+Knapper med kun ikon bruker vi bare for godt kjente ikoner, som Lukk og Slett. Knappen må da ha en tilgjengelig tekst som forklarer hva den gjør, for eksempel med `aria-label` eller i en `Tooltip` som i eksempelet under.
 
 <Canvas of={ButtonStories.IconOnly} />
 
 ### Knapp med tekst og ikon
 
-Når vi bruker ikon sammen med tekst, skal ikonet ha `aria-hidden` slik at teksten ikke blir lest opp av skjermleser to ganger.
+Når vi bruker ikon sammen med tekst, skal ikonet ha `aria-hidden` slik at teksten ikke blir lest opp av en skjermleser to ganger.
 
 <Canvas of={ButtonStories.TextAndIcon} />
 
@@ -97,22 +98,21 @@ Vi plasserer ikonet til venstre eller høyre for teksten, avhengig av hva knappe
 Som regel er det **venstre** som er den beste plasseringen, men det finnes unntak:
 
 - Er det en knapp som sier “Start” med en høyrepekende pil, er det naturlig at pilen plasseres til høyre for teksten.
-- Er knappen fast plassert på høyre side av grensesnittet er det best at ikonet også er høyrestilt for teksten.
+- Er knappen fast plassert på høyre side av grensesnittet, er det best at ikonet også er til høyre for teksten.
 
 ### Størrelse på ikon
 
-Ikon skalerer automatisk basert på knappestørrelse, men du kan endre denne ved å sette fontstørrelsen.
+Ikon skalerer automatisk med knappestørrelsen, men du kan overstyre det ved å sette en egen fontstørrelse.
 
 <Canvas of={ButtonStories.IconOnly} />
 
 ### Last inn
 
-Når vi skal vise brukeren at knappen laster noe, kan vi kombinere knappen med en `spinner`.
-I eksempelet under bruker vi proppen `loading` for å vise at knappen laster.
+Vi kan vise brukeren at en knapp laster ved å kombinere knappen med en spinner og bruke proppen `loading`.
 
 <Canvas of={ButtonStories.Loading} />
 
-I eksempelet over blir `aria-disabled` satt av `loading="true"`. Skjermlesere og andre hjelpemidler vil bli informert om at knappen finnes, men ikke er aktiv. I motsetning til `disabled` kan knappen fortsatt få fokus når noen navigerer med tastaturet.
+I eksempelet over blir `aria-disabled` satt av `loading="true"`. Skjermlesere og andre hjelpemidler vil bli informert om at knappen finnes, men ikke er aktiv. I motsetning til `disabled`, kan knappen fortsatt få fokus når noen navigerer med tastaturet.
 
 <SimpleAlert type="tip" heading="Tips">
   `loading="true"` eller `aria-disabled` stopper ikke automatisk knappen fra å
@@ -124,32 +124,32 @@ I eksempelet over blir `aria-disabled` satt av `loading="true"`. Skjermlesere og
 
 ### Plassering av knapper
 
-Når vi legger flere knapper ved siden av hverandre, skal primærknappen stå først. Unntaket er Forrige og Neste, da skal sekundærknappen Forrige stå først.
+Når vi plasserer flere knapper ved siden av hverandre, skal primærknappen stå først. Unntaket er Forrige og Neste, da skal sekundærknappen Forrige stå først.
 
 ### Ikke bruk deaktiverte knapper
 
-Vi unngår deaktiverte (`disabled`) knapper fordi de kan være vanskelige å oppfatte. Noen brukere vil ikke forstå hva knappen sier eller hvorfor den ikke er klikkbar. En aktiv knapp som viser en feilmelding når brukeren klikker gir i de fleste tilfeller en bedre brukeropplevelse.
+Vi unngår deaktiverte (`disabled`) knapper fordi de kan være vanskelige å oppfatte. Noen brukere vil ikke forstå hva knappen sier eller hvorfor den ikke er klikkbar. En aktiv knapp som viser en feilmelding når brukeren klikker, gir i de fleste tilfeller en bedre brukeropplevelse.
 
-Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander) og hvilke alternativer som finnes.
+Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematiske](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander) og hvilke alternativer som finnes.
 
 <SimpleAlert type="tip" heading="Tips">
 Hvis du mot formodning må bruke en deaktivert knapp:
 
-- Sørg for at alle brukerne dine både opplever og forstår at knappen eksisterer, at den er deaktivert, og hvorfor.
+- Sørg for at brukerne både opplever og forstår at knappen eksisterer, at den er deaktivert, og hvorfor.
 - Bruk gjerne støttetekst som alltid er synlig når knappen er deaktivert.
-- Dersom det gir mening å fortsatt kunne navigere til knappen med tastaturet, eller det av andre grunner er viktig å beholde tab-rekkefølgen, bruk `aria-disabled` heller enn `disabled`. Da må du også huske å selv blokkere kjøring av callback-funksjoner (f.eks. `onClick`).
+- Dersom det gir mening å fortsatt kunne navigere til knappen med tastaturet, eller det av andre grunner er viktig å beholde tab-rekkefølgen, bruk `aria-disabled` heller enn `disabled`. Da må du også sørge for å blokkere callback-funksjoner (f.eks. `onClick`).
 
 </SimpleAlert>
 
 ### En knapp skal utføre kun én handling
 
-Vi skal tydelig beskrive handlingene knappene utfører. En knapp kan bare ha én handling, ikke flere.
+Vi skal tydelig beskrive handlingene knappene utfører. En knapp kan bare ha én handling.
 
 <ButtonEx1 />
 
 ### Én hovedhandling per side
 
-Vi skal holde oss til én primærknapp per side. Hvis det er flere hovedhandlinger kan brukerne bli usikre på hva de skal gjøre.
+Vi skal holde oss til én primærknapp per side. Hvis det er flere hovedhandlinger, kan brukerne bli usikre på hva de skal gjøre.
 
 <ButtonEx2 />
 
@@ -161,7 +161,7 @@ Vi skal holde oss til ett ikon per knapp.
 
 ## Tekst i Button
 
-Knappeteksten skal være kort, helst ikke mer enn to, maks. tre ord. Tenk på at knappen tydelig skal beskrive hva som skjer når brukeren klikker på den.
+Knappeteksten skal være kort, helst to-tre ord. Teksten skal tydelig beskrive hva som skjer når brukeren klikker på knappen.
 
 ### Unngå å blande skrivemåter
 
