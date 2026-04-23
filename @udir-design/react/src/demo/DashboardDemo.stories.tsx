@@ -39,10 +39,8 @@ export const DashboardStory = meta.story({
             avatar={<Avatar aria-hidden>SH</Avatar>}
           />
           <Dropdown id="usermenu2" placement="bottom-end" autoPlacement={false}>
+            <Dropdown.Heading>Bytt profil</Dropdown.Heading>
             <Dropdown.List>
-              <Dropdown.Item>
-                <Dropdown.Heading>Bytt profil</Dropdown.Heading>
-              </Dropdown.Item>
               <Dropdown.Item>
                 <Dropdown.Button>
                   <Avatar aria-hidden>
