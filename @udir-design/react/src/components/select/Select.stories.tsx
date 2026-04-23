@@ -8,9 +8,16 @@ import { Heading } from '../typography/heading/Heading';
 import { Label } from '../typography/label/Label';
 import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
 import { Select } from './Select';
+import { Select as FakeSelect } from './docs/FakeSelect';
+import { SelectOptgroup as FakeSelectOptgroup } from './docs/FakeSelectOptgroup';
+import { SelectOption as FakeSelectOption } from './docs/FakeSelectOption';
 
 const meta = preview.meta({
-  component: Select,
+  component: FakeSelect,
+  subcomponents: {
+    'Select.Optgroup': FakeSelectOptgroup,
+    'Select.Option': FakeSelectOption,
+  },
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {
