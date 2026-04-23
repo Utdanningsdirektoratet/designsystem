@@ -2,21 +2,6 @@
   overflow-x: initial; /* fixes gap between border-radius of fieldset and label, but will prevent horizontal scroll */
   box-sizing: border-box;
   height: var(--dsc-togglegroup-button-size);
-  button {
-    height: 100%;
-    white-space: nowrap;
-    min-height: unset;
-
-    &[data-icon] {
-      height: 100%;
-    }
-
-    &[data-variant='secondary'] {
-      button[aria-checked='true'] {
-        --dsc-button-border-color: var(--ds-color-text-default);
-      }
-    }
-  }
 
   label:has(input:checked) {
     color: var(--dsc-button-color--active);
