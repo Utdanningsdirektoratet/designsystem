@@ -14,8 +14,11 @@ exports[`Table Story 1`] = `
     </h2>
     <hr aria-hidden="true">
     <div>
-      <fieldset>
-        <legend data-weight="medium">
+      <fieldset aria-labelledby="<removed>">
+        <legend
+          data-weight="medium"
+          id="<removed>"
+        >
           Filtrer på utdanningsnivå
         </legend>
         <div>
@@ -68,15 +71,15 @@ exports[`Table Story 1`] = `
         <thead>
           <tr>
             <th>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
-                  id="checkbox-select-all"
+                  id="<removed>"
                   aria-label="Select all"
                   type="checkbox"
                   value="all"
                   name="my-checkbox"
                 >
-              </div>
+              </ds-field>
             </th>
             <th aria-sort="none">
               <button type="button">
@@ -105,15 +108,15 @@ exports[`Table Story 1`] = `
         <tbody>
           <tr>
             <td>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
-                  id="checkbox-1"
+                  id="<removed>"
                   aria-label="Check Lise Nordmann"
                   type="checkbox"
                   value="1"
                   name="my-checkbox"
                 >
-              </div>
+              </ds-field>
             </td>
             <td>
               <div>
@@ -150,9 +153,10 @@ exports[`Table Story 1`] = `
                 type="button"
                 aria-haspopup="dialog"
                 data-color="danger"
-                popovertarget="_r_2_"
-                popovertargetaction="show"
-                aria-labelledby="_r_2_"
+                aria-label="Slett"
+                data-tooltip="Slett"
+                data-placement="top"
+                data-autoplacement="true"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -173,26 +177,19 @@ exports[`Table Story 1`] = `
                   </path>
                 </svg>
               </button>
-              <span
-                role="tooltip"
-                id="_r_2_"
-                popover="manual"
-                style="opacity: 0;"
-              >
-                Slett
-              </span>
               <dialog
                 data-placement="center"
                 data-modal="true"
-                closedby="closerequest"
+                id="<removed>"
               >
                 <button
                   data-icon="true"
+                  commandfor="_r_3_"
                   data-variant="tertiary"
                   type="button"
                   aria-label="Lukk dialogvindu"
                   data-color="neutral"
-                  data-command="close"
+                  command="close"
                 >
                 </button>
                 <div>
@@ -220,15 +217,15 @@ exports[`Table Story 1`] = `
           </tr>
           <tr>
             <td>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
-                  id="checkbox-2"
+                  id="<removed>"
                   aria-label="Check Ola Nordmann"
                   type="checkbox"
                   value="2"
                   name="my-checkbox"
                 >
-              </div>
+              </ds-field>
             </td>
             <td>
               <div>
@@ -265,9 +262,10 @@ exports[`Table Story 1`] = `
                 type="button"
                 aria-haspopup="dialog"
                 data-color="danger"
-                popovertarget="_r_4_"
-                popovertargetaction="show"
-                aria-labelledby="_r_4_"
+                aria-label="Slett"
+                data-tooltip="Slett"
+                data-placement="top"
+                data-autoplacement="true"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -288,26 +286,19 @@ exports[`Table Story 1`] = `
                   </path>
                 </svg>
               </button>
-              <span
-                role="tooltip"
-                id="_r_4_"
-                popover="manual"
-                style="opacity: 0;"
-              >
-                Slett
-              </span>
               <dialog
                 data-placement="center"
                 data-modal="true"
-                closedby="closerequest"
+                id="<removed>"
               >
                 <button
                   data-icon="true"
+                  commandfor="_r_5_"
                   data-variant="tertiary"
                   type="button"
                   aria-label="Lukk dialogvindu"
                   data-color="neutral"
-                  data-command="close"
+                  command="close"
                 >
                 </button>
                 <div>
@@ -335,15 +326,15 @@ exports[`Table Story 1`] = `
           </tr>
           <tr>
             <td>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
-                  id="checkbox-3"
+                  id="<removed>"
                   aria-label="Check Kari Nordmann"
                   type="checkbox"
                   value="3"
                   name="my-checkbox"
                 >
-              </div>
+              </ds-field>
             </td>
             <td>
               <div>
@@ -380,9 +371,10 @@ exports[`Table Story 1`] = `
                 type="button"
                 aria-haspopup="dialog"
                 data-color="danger"
-                popovertarget="_r_6_"
-                popovertargetaction="show"
-                aria-labelledby="_r_6_"
+                aria-label="Slett"
+                data-tooltip="Slett"
+                data-placement="top"
+                data-autoplacement="true"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -403,26 +395,19 @@ exports[`Table Story 1`] = `
                   </path>
                 </svg>
               </button>
-              <span
-                role="tooltip"
-                id="_r_6_"
-                popover="manual"
-                style="opacity: 0;"
-              >
-                Slett
-              </span>
               <dialog
                 data-placement="center"
                 data-modal="true"
-                closedby="closerequest"
+                id="<removed>"
               >
                 <button
                   data-icon="true"
+                  commandfor="_r_7_"
                   data-variant="tertiary"
                   type="button"
                   aria-label="Lukk dialogvindu"
                   data-color="neutral"
-                  data-command="close"
+                  command="close"
                 >
                 </button>
                 <div>
@@ -450,15 +435,15 @@ exports[`Table Story 1`] = `
           </tr>
           <tr>
             <td>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
-                  id="checkbox-4"
+                  id="<removed>"
                   aria-label="Check Per Nordmann"
                   type="checkbox"
                   value="4"
                   name="my-checkbox"
                 >
-              </div>
+              </ds-field>
             </td>
             <td>
               <div>
@@ -495,9 +480,10 @@ exports[`Table Story 1`] = `
                 type="button"
                 aria-haspopup="dialog"
                 data-color="danger"
-                popovertarget="_r_8_"
-                popovertargetaction="show"
-                aria-labelledby="_r_8_"
+                aria-label="Slett"
+                data-tooltip="Slett"
+                data-placement="top"
+                data-autoplacement="true"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -518,26 +504,19 @@ exports[`Table Story 1`] = `
                   </path>
                 </svg>
               </button>
-              <span
-                role="tooltip"
-                id="_r_8_"
-                popover="manual"
-                style="opacity: 0;"
-              >
-                Slett
-              </span>
               <dialog
                 data-placement="center"
                 data-modal="true"
-                closedby="closerequest"
+                id="<removed>"
               >
                 <button
                   data-icon="true"
+                  commandfor="_r_9_"
                   data-variant="tertiary"
                   type="button"
                   aria-label="Lukk dialogvindu"
                   data-color="neutral"
-                  data-command="close"
+                  command="close"
                 >
                 </button>
                 <div>
@@ -565,15 +544,15 @@ exports[`Table Story 1`] = `
           </tr>
           <tr>
             <td>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
-                  id="checkbox-5"
+                  id="<removed>"
                   aria-label="Check Anne Nordmann"
                   type="checkbox"
                   value="5"
                   name="my-checkbox"
                 >
-              </div>
+              </ds-field>
             </td>
             <td>
               <div>
@@ -610,9 +589,10 @@ exports[`Table Story 1`] = `
                 type="button"
                 aria-haspopup="dialog"
                 data-color="danger"
-                popovertarget="_r_a_"
-                popovertargetaction="show"
-                aria-labelledby="_r_a_"
+                aria-label="Slett"
+                data-tooltip="Slett"
+                data-placement="top"
+                data-autoplacement="true"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -633,26 +613,19 @@ exports[`Table Story 1`] = `
                   </path>
                 </svg>
               </button>
-              <span
-                role="tooltip"
-                id="_r_a_"
-                popover="manual"
-                style="opacity: 0;"
-              >
-                Slett
-              </span>
               <dialog
                 data-placement="center"
                 data-modal="true"
-                closedby="closerequest"
+                id="<removed>"
               >
                 <button
                   data-icon="true"
+                  commandfor="_r_b_"
                   data-variant="tertiary"
                   type="button"
                   aria-label="Lukk dialogvindu"
                   data-color="neutral"
-                  data-command="close"
+                  command="close"
                 >
                 </button>
                 <div>
@@ -685,22 +658,22 @@ exports[`Table Story 1`] = `
       <button
         data-variant="primary"
         type="button"
-        aria-haspopup="dialog"
       >
         Eksporter liste
       </button>
       <dialog
         data-placement="center"
         data-modal="true"
-        closedby="closerequest"
+        id="<removed>"
       >
         <button
           data-icon="true"
+          commandfor="_r_c_"
           data-variant="tertiary"
           type="button"
           aria-label="Lukk dialogvindu"
           data-color="neutral"
-          data-command="close"
+          command="close"
         >
         </button>
         <div>
@@ -762,7 +735,10 @@ exports[`Table Story 1`] = `
           </div>
         </div>
       </dialog>
-      <nav aria-label="Sidenavigering">
+      <ds-pagination
+        aria-label="Bla i sider"
+        role="navigation"
+      >
         <ul>
           <li>
             <button
@@ -777,9 +753,9 @@ exports[`Table Story 1`] = `
           </li>
           <li>
             <button
-              data-variant="primary"
+              data-variant="tertiary"
               type="button"
-              aria-current="page"
+              aria-current="true"
               aria-label="Side 1"
             >
               1
@@ -814,7 +790,7 @@ exports[`Table Story 1`] = `
             </button>
           </li>
         </ul>
-      </nav>
+      </ds-pagination>
     </div>
   </div>
 </div>

@@ -128,7 +128,7 @@ exports[`Danger 1`] = `
 `;
 
 exports[`Danger Pseudo States 1`] = `
-<div style="display: grid; grid-template-columns: repeat(4, auto); gap: inherit; place-items: center;">
+<div style="<removed>">
   <label
     data-weight="medium"
     data-size="sm"
@@ -486,9 +486,10 @@ exports[`Icon Only 1`] = `
   data-variant="tertiary"
   type="button"
   data-color="neutral"
-  popovertarget="_r_f_"
-  popovertargetaction="show"
-  aria-labelledby="_r_f_"
+  aria-label="Legg til ny"
+  data-tooltip="Legg til ny"
+  data-placement="top"
+  data-autoplacement="true"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -509,22 +510,15 @@ exports[`Icon Only 1`] = `
     </path>
   </svg>
 </button>
-<span
-  role="tooltip"
-  id="_r_f_"
-  popover="manual"
-  style="opacity: 0;"
->
-  Legg til ny
-</span>
 <button
   data-icon="true"
   data-variant="tertiary"
   type="button"
   data-color="neutral"
-  popovertarget="_r_h_"
-  popovertargetaction="show"
-  aria-labelledby="_r_h_"
+  aria-label="Varslinger"
+  data-tooltip="Varslinger"
+  data-placement="top"
+  data-autoplacement="true"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -545,22 +539,15 @@ exports[`Icon Only 1`] = `
     </path>
   </svg>
 </button>
-<span
-  role="tooltip"
-  id="_r_h_"
-  popover="manual"
-  style="opacity: 0;"
->
-  Varslinger
-</span>
 <button
   data-icon="true"
   data-variant="tertiary"
   type="button"
   data-color="neutral"
-  popovertarget="_r_j_"
-  popovertargetaction="show"
-  aria-labelledby="_r_j_"
+  aria-label="Instillinger"
+  data-tooltip="Instillinger"
+  data-placement="top"
+  data-autoplacement="true"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -581,14 +568,6 @@ exports[`Icon Only 1`] = `
     </path>
   </svg>
 </button>
-<span
-  role="tooltip"
-  id="_r_j_"
-  popover="manual"
-  style="opacity: 0;"
->
-  Instillinger
-</span>
 `;
 
 exports[`Icons 1`] = `
@@ -606,9 +585,9 @@ exports[`Icons 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-_r_9_"
+    aria-labelledby="<removed>"
   >
-    <title id="title-_r_9_">
+    <title id="<removed>">
       Innstillinger
     </title>
     <path
@@ -659,9 +638,9 @@ exports[`Icons 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-_r_b_"
+    aria-labelledby="<removed>"
   >
-    <title id="title-_r_b_">
+    <title id="<removed>">
       Innstillinger
     </title>
     <path
@@ -712,9 +691,9 @@ exports[`Icons 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-_r_d_"
+    aria-labelledby="<removed>"
   >
-    <title id="title-_r_d_">
+    <title id="<removed>">
       Innstillinger
     </title>
     <path
@@ -768,9 +747,9 @@ exports[`Icons Only Primary 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-_r_l_"
+    aria-labelledby="<removed>"
   >
-    <title id="title-_r_l_">
+    <title id="<removed>">
       Innstillinger
     </title>
     <path
@@ -796,9 +775,9 @@ exports[`Icons Only Primary 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-_r_m_"
+    aria-labelledby="<removed>"
   >
-    <title id="title-_r_m_">
+    <title id="<removed>">
       Innstillinger
     </title>
     <path
@@ -824,9 +803,9 @@ exports[`Icons Only Primary 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-_r_n_"
+    aria-labelledby="<removed>"
   >
-    <title id="title-_r_n_">
+    <title id="<removed>">
       Innstillinger
     </title>
     <path
@@ -1012,7 +991,7 @@ exports[`Neutral 1`] = `
 `;
 
 exports[`Neutral Pseudo States 1`] = `
-<div style="display: grid; grid-template-columns: repeat(4, auto); gap: inherit; place-items: center;">
+<div style="<removed>">
   <label
     data-weight="medium"
     data-size="sm"

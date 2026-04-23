@@ -733,16 +733,18 @@ exports[`Full 1`] = `
         <dialog
           data-placement="center"
           data-modal="true"
+          id="<removed>"
           closedby="any"
-          style="width: fit-content; min-width: 20rem;"
+          style="<removed>"
         >
           <button
             data-icon="true"
+            commandfor="_r_1_"
             data-variant="tertiary"
             type="button"
             aria-label="Lukk dialogvindu"
             data-color="neutral"
-            data-command="close"
+            command="close"
           >
           </button>
           <h2>
@@ -835,36 +837,36 @@ exports[`Full 1`] = `
         Første seksjon
       </h2>
       <form>
-        <div>
+        <ds-field>
           <label
             data-weight="medium"
-            for="q1"
+            for="<removed>"
           >
             Første spørsmål
           </label>
           <div>
             <input
-              id="q1"
+              id="<removed>"
               type="text"
               name="q1"
             >
           </div>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field>
           <label
             data-weight="medium"
-            for="q2"
+            for="<removed>"
           >
             Andre spørsmål
           </label>
           <div>
             <input
-              id="q2"
+              id="<removed>"
               type="text"
               name="q2"
             >
           </div>
-        </div>
+        </ds-field>
         <div>
           <button
             data-variant="secondary"
@@ -916,7 +918,7 @@ exports[`Grouping 1`] = `
 
 exports[`Long Step Names 1`] = `
 <div data-size="auto">
-  <div style="width: 200px;">
+  <div style="<removed>">
     <details
       data-state="idle"
       open
@@ -1054,21 +1056,21 @@ exports[`Simple Navigation 1`] = `
         Utfylling
       </h2>
       <form>
-        <div>
+        <ds-field>
           <label
             data-weight="medium"
-            for="step1"
+            for="<removed>"
           >
             Steg 1
           </label>
           <div>
             <input
-              id="step1"
+              id="<removed>"
               type="text"
               name="step1"
             >
           </div>
-        </div>
+        </ds-field>
         <div>
           <button
             data-variant="secondary"

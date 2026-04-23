@@ -5,7 +5,10 @@ exports[`Page Story 1`] = `
   data-color-scheme="light"
   data-size
 >
-  <nav aria-label="Du er her:">
+  <ds-breadcrumbs
+    aria-label="Du er her:"
+    role="navigation"
+  >
     <ol>
       <li>
         <a href="#">
@@ -31,162 +34,159 @@ exports[`Page Story 1`] = `
         </a>
       </li>
     </ol>
-  </nav>
+  </ds-breadcrumbs>
   <div>
     <div>
-      <fieldset>
-        <legend data-weight="medium">
+      <fieldset aria-labelledby="<removed>">
+        <legend
+          data-weight="medium"
+          id="<removed>"
+        >
           Handleliste
         </legend>
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="potet"
+            id="<removed>"
             type="checkbox"
             value="potet"
           >
           <label
             data-weight="regular"
-            for="potet"
+            for="<removed>"
           >
             En kilo poteter
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="farris"
+            id="<removed>"
             type="checkbox"
             value="farris"
           >
           <label
             data-weight="regular"
-            for="farris"
+            for="<removed>"
           >
             To liter Farris
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="blomkol"
+            id="<removed>"
             type="checkbox"
             value="blomkol"
             checked
           >
           <label
             data-weight="regular"
-            for="blomkol"
+            for="<removed>"
           >
             Blomkål
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="pizza"
+            id="<removed>"
             type="checkbox"
             value="pizza"
             checked
           >
           <label
             data-weight="regular"
-            for="pizza"
+            for="<removed>"
           >
             Pizza
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="melk"
+            id="<removed>"
             type="checkbox"
             value="melk"
             checked
           >
           <label
             data-weight="regular"
-            for="melk"
+            for="<removed>"
           >
             Tre liter lettmelk
           </label>
-        </div>
+        </ds-field>
         <hr aria-hidden="true">
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="smagodt"
+            id="<removed>"
             type="checkbox"
             value="smagodt"
           >
           <label
             data-weight="regular"
-            for="smagodt"
+            for="<removed>"
           >
             2kg smågodt
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="smash"
+            id="<removed>"
             type="checkbox"
             value="smash"
           >
           <label
             data-weight="regular"
-            for="smash"
+            for="<removed>"
           >
             10 poser med Smash
           </label>
-        </div>
+        </ds-field>
       </fieldset>
     </div>
     <div>
       <h2>
         Opprett ny bruker
       </h2>
-      <div>
+      <ds-field>
         <label
           data-weight="medium"
-          for="name"
+          for="<removed>"
         >
           Navn
         </label>
         <div>
           <input
-            id="name"
+            id="<removed>"
             placeholder="Ola Normann"
             autocomplete="name"
             type="text"
           >
         </div>
-      </div>
-      <div>
+      </ds-field>
+      <ds-field>
         <label
           data-weight="medium"
-          for="email"
+          for="<removed>"
         >
           E-post
         </label>
         <div>
           <input
-            id="email"
+            id="<removed>"
             placeholder="ola@norge.no"
             autocomplete="email"
             type="email"
           >
         </div>
-      </div>
+      </ds-field>
       <a
         href="#"
-        popovertarget="_r_0_"
-        popovertargetaction="show"
-        aria-describedby="_r_0_"
+        aria-label="Trykk for å få hjelp"
+        data-tooltip="Trykk for å få hjelp"
+        data-placement="top"
+        data-autoplacement="true"
+        type="describedby"
       >
         Glemt passord?
       </a>
-      <span
-        role="tooltip"
-        id="_r_0_"
-        popover="manual"
-        style="opacity: 0;"
-      >
-        Trykk for å få hjelp
-      </span>
       <button
         data-variant="primary"
         type="button"
@@ -204,7 +204,7 @@ exports[`Page Story 1`] = `
         </span>
         <u-progress
           value="1"
-          id=":u-progress1"
+          id="<removed>"
           aria-busy="false"
           aria-label="..."
           aria-valuemax="100"
@@ -213,7 +213,7 @@ exports[`Page Story 1`] = `
           role="progressbar"
           max="8"
           aria-hidden="true"
-          style="--percentage: 13%;"
+          style="<removed>"
         >
           <template shadowrootmode="open">
             <slot>
@@ -253,7 +253,7 @@ exports[`Page Story 1`] = `
             focusable="false"
             role="img"
             aria-label="Sikkerhet"
-            style="height: 5rem; width: auto;"
+            style="<removed>"
           >
             <g
               stroke="#303030"
@@ -282,7 +282,7 @@ exports[`Page Story 1`] = `
               </path>
             </g>
             <defs>
-              <clipPath id="SikkerhetFill_svg__a">
+              <clipPath id="<removed>">
                 <path
                   fill="#fff"
                   d="M0 0h35.881v42H0z"
@@ -310,7 +310,7 @@ exports[`Page Story 1`] = `
               focusable="false"
               role="img"
               aria-label="Skole"
-              style="width: 5rem; height: auto;"
+              style="<removed>"
             >
               <path
                 fill="#F2E8DA"
@@ -427,7 +427,7 @@ exports[`Page Story 1`] = `
             focusable="false"
             role="img"
             aria-label="Kokkehatt"
-            style="height: 5rem; width: auto;"
+            style="<removed>"
           >
             <path
               fill="#C8DEF0"
@@ -488,17 +488,18 @@ exports[`Page Story 1`] = `
           <button
             data-variant="primary"
             type="button"
-            popovertarget="_r_1_"
+            popovertarget="_r_3_"
           >
             Utfør
           </button>
           <div
-            id="_r_1_"
+            id="<removed>"
             popover="manual"
+            data-placement="top"
             data-variant="default"
           >
             Er du sikker på at du vil gjennomføre? Handlingen vil utføres på alle brukere.
-            <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
+            <div style="<removed>">
               <button
                 data-variant="primary"
                 type="button"

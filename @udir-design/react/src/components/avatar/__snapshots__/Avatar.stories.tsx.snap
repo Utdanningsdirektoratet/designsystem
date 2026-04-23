@@ -3,7 +3,7 @@
 exports[`As Link 1`] = `
 <a
   href="https://www.udir.no/"
-  style="display: flex; gap: var(--ds-size-2); align-items: center;"
+  style="<removed>"
 >
   <span
     data-variant="circle"
@@ -134,12 +134,13 @@ exports[`In Dropdown 1`] = `
   </svg>
 </button>
 <div
-  id="_r_1_"
+  id="<removed>"
   popover="manual"
+  data-placement="bottom-end"
   data-variant="default"
   data-size="md"
-  data-placement="bottom"
-  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  data-floating="bottom-end"
+  style="<removed>"
 >
   <h2>
     Velg profil

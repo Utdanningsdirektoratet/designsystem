@@ -1,59 +1,62 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Controlled 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
     Utdanningsnivå
   </legend>
-  <div>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="utilities-usecheckboxgroup--controlled-barnehage"
       type="checkbox"
       value="barnehage"
       checked
       name="my-controlled"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="utilities-usecheckboxgroup--controlled-barnehage"
+      for="<removed>"
     >
       Barnehage
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="utilities-usecheckboxgroup--controlled-grunnskole"
       type="checkbox"
       value="grunnskole"
       name="my-controlled"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="utilities-usecheckboxgroup--controlled-grunnskole"
+      for="<removed>"
     >
       Grunnskole
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="utilities-usecheckboxgroup--controlled-videregaende"
       type="checkbox"
       value="videregaende"
       checked
       name="my-controlled"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="utilities-usecheckboxgroup--controlled-videregaende"
+      for="<removed>"
     >
       Videregående
     </label>
-  </div>
+  </ds-field>
 </fieldset>
 <p
   data-field="validation"
   hidden
-  id="_r_r_"
+  id="<removed>"
 >
 </p>
 <hr aria-hidden="true">
@@ -61,7 +64,7 @@ exports[`Controlled 1`] = `
   (Annet innhold)
 </p>
 <hr aria-hidden="true">
-<div style="display: flex; gap: var(--ds-size-2);">
+<div style="<removed>">
   <p data-variant="default">
     Viser innhold for:
   </p>
@@ -83,7 +86,7 @@ exports[`Controlled 1`] = `
 <button
   data-variant="secondary"
   type="button"
-  style="width: fit-content;"
+  style="<removed>"
 >
   Tøm filtre
 </button>
@@ -91,176 +94,188 @@ exports[`Controlled 1`] = `
 
 exports[`Default 1`] = `
 <fieldset>
-  <div>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="utilities-usecheckboxgroup--default-email"
       type="checkbox"
       value="epost"
       checked
       name="_r_2_"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="utilities-usecheckboxgroup--default-email"
+      for="<removed>"
     >
       E-post
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="utilities-usecheckboxgroup--default-telefon"
       type="checkbox"
       value="telefon"
       name="_r_2_"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="utilities-usecheckboxgroup--default-telefon"
+      for="<removed>"
     >
       Telefon
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="utilities-usecheckboxgroup--default-sms"
       type="checkbox"
       value="sms"
       name="_r_2_"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="utilities-usecheckboxgroup--default-sms"
+      for="<removed>"
     >
       SMS
     </label>
-  </div>
+  </ds-field>
   <p
     data-field="validation"
     hidden
-    id="_r_3_"
+    id="<removed>"
   >
   </p>
 </fieldset>
 `;
 
 exports[`Disabled 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="<removed>"
+  >
     Velg de alternativene som er relevante for deg.
   </p>
-  <div>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="utilities-usecheckboxgroup--disabled-email"
       disabled
       type="checkbox"
       value="epost"
       checked
       name="my-disabled"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="utilities-usecheckboxgroup--disabled-email"
+      for="<removed>"
     >
       E-post
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="utilities-usecheckboxgroup--disabled-telefon"
       disabled
       type="checkbox"
       value="telefon"
       name="my-disabled"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="utilities-usecheckboxgroup--disabled-telefon"
+      for="<removed>"
     >
       Telefon
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="utilities-usecheckboxgroup--disabled-sms"
       disabled
       type="checkbox"
       value="sms"
       name="my-disabled"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="utilities-usecheckboxgroup--disabled-sms"
+      for="<removed>"
     >
       SMS
     </label>
-  </div>
+  </ds-field>
   <p
     data-field="validation"
     hidden
-    id="_r_j_"
+    id="<removed>"
   >
   </p>
 </fieldset>
 `;
 
 exports[`Group 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="<removed>"
+  >
     Velg de alternativene som er relevante for deg.
   </p>
-  <div>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="utilities-usecheckboxgroup--group-email"
       type="checkbox"
       value="epost"
       checked
       name="my-group"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="utilities-usecheckboxgroup--group-email"
+      for="<removed>"
     >
       E-post
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="utilities-usecheckboxgroup--group-telefon"
       type="checkbox"
       value="telefon"
       name="my-group"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="utilities-usecheckboxgroup--group-telefon"
+      for="<removed>"
     >
       Telefon
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="utilities-usecheckboxgroup--group-sms"
       type="checkbox"
       value="sms"
       name="my-group"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="utilities-usecheckboxgroup--group-sms"
+      for="<removed>"
     >
       SMS
     </label>
-  </div>
+  </ds-field>
   <p
     data-field="validation"
     hidden
-    id="_r_7_"
+    id="<removed>"
   >
   </p>
 </fieldset>
@@ -269,22 +284,22 @@ exports[`Group 1`] = `
 exports[`Indeterminate In Table 1`] = `
 <table>
   <colgroup>
-    <col style="width: 1px;">
-    <col style="width: 10em;">
+    <col style="<removed>">
+    <col style="<removed>">
     <col>
   </colgroup>
   <thead>
     <tr>
       <th>
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="utilities-usecheckboxgroup--indeterminate-in-table-all"
             aria-label="Velg alle"
             type="checkbox"
             value="all"
             name="utilities-usecheckboxgroup--indeterminate-in-table"
+            id="<removed>"
           >
-        </div>
+        </ds-field>
       </th>
       <th>
         Navn
@@ -297,17 +312,17 @@ exports[`Indeterminate In Table 1`] = `
   <tbody>
     <tr>
       <td>
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="utilities-usecheckboxgroup--indeterminate-in-table-1"
-            aria-labelledby="utilities-usecheckboxgroup--indeterminate-in-table-1-name"
+            aria-labelledby="<removed>"
             type="checkbox"
             value="1"
             name="utilities-usecheckboxgroup--indeterminate-in-table"
+            id="<removed>"
           >
-        </div>
+        </ds-field>
       </td>
-      <td id="utilities-usecheckboxgroup--indeterminate-in-table-1-name">
+      <td id="<removed>">
         Lise Nordmann
       </td>
       <td>
@@ -316,18 +331,18 @@ exports[`Indeterminate In Table 1`] = `
     </tr>
     <tr>
       <td>
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="utilities-usecheckboxgroup--indeterminate-in-table-2"
-            aria-labelledby="utilities-usecheckboxgroup--indeterminate-in-table-2-name"
+            aria-labelledby="<removed>"
             type="checkbox"
             value="2"
             checked
             name="utilities-usecheckboxgroup--indeterminate-in-table"
+            id="<removed>"
           >
-        </div>
+        </ds-field>
       </td>
-      <td id="utilities-usecheckboxgroup--indeterminate-in-table-2-name">
+      <td id="<removed>">
         Ola Nordmann
       </td>
       <td>
@@ -336,18 +351,18 @@ exports[`Indeterminate In Table 1`] = `
     </tr>
     <tr>
       <td>
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="utilities-usecheckboxgroup--indeterminate-in-table-3"
-            aria-labelledby="utilities-usecheckboxgroup--indeterminate-in-table-3-name"
+            aria-labelledby="<removed>"
             type="checkbox"
             value="3"
             checked
             name="utilities-usecheckboxgroup--indeterminate-in-table"
+            id="<removed>"
           >
-        </div>
+        </ds-field>
       </td>
-      <td id="utilities-usecheckboxgroup--indeterminate-in-table-3-name">
+      <td id="<removed>">
         Kari Nordmann
       </td>
       <td>
@@ -356,17 +371,17 @@ exports[`Indeterminate In Table 1`] = `
     </tr>
     <tr>
       <td>
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="utilities-usecheckboxgroup--indeterminate-in-table-4"
-            aria-labelledby="utilities-usecheckboxgroup--indeterminate-in-table-4-name"
+            aria-labelledby="<removed>"
             type="checkbox"
             value="4"
             name="utilities-usecheckboxgroup--indeterminate-in-table"
+            id="<removed>"
           >
-        </div>
+        </ds-field>
       </td>
-      <td id="utilities-usecheckboxgroup--indeterminate-in-table-4-name">
+      <td id="<removed>">
         Per Nordmann
       </td>
       <td>
@@ -378,128 +393,140 @@ exports[`Indeterminate In Table 1`] = `
 `;
 
 exports[`Read Only 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="<removed>"
+  >
     Velg de alternativene som er relevante for deg.
   </p>
-  <div>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="utilities-usecheckboxgroup--read-only-email"
       readonly
       type="checkbox"
       value="epost"
       checked
       name="my-readonly"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="utilities-usecheckboxgroup--read-only-email"
+      for="<removed>"
     >
       E-post
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="utilities-usecheckboxgroup--read-only-telefon"
       readonly
       type="checkbox"
       value="telefon"
       name="my-readonly"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="utilities-usecheckboxgroup--read-only-telefon"
+      for="<removed>"
     >
       Telefon
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="utilities-usecheckboxgroup--read-only-sms"
       readonly
       type="checkbox"
       value="sms"
       name="my-readonly"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="utilities-usecheckboxgroup--read-only-sms"
+      for="<removed>"
     >
       SMS
     </label>
-  </div>
+  </ds-field>
   <p
     data-field="validation"
     hidden
-    id="_r_f_"
+    id="<removed>"
   >
   </p>
 </fieldset>
 `;
 
 exports[`With Error 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="<removed>"
+  >
     Velg de alternativene som er relevante for deg.
   </p>
-  <div>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="utilities-usecheckboxgroup--with-error-email"
-      aria-describedby="_r_b_"
+      aria-describedby="<removed>"
       aria-invalid="true"
       type="checkbox"
       value="epost"
       checked
       name="my-error"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="utilities-usecheckboxgroup--with-error-email"
+      for="<removed>"
     >
       E-post
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="utilities-usecheckboxgroup--with-error-telefon"
-      aria-describedby="_r_b_"
+      aria-describedby="<removed>"
       aria-invalid="true"
       type="checkbox"
       value="telefon"
       name="my-error"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="utilities-usecheckboxgroup--with-error-telefon"
+      for="<removed>"
     >
       Telefon
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="utilities-usecheckboxgroup--with-error-sms"
-      aria-describedby="_r_b_"
+      aria-describedby="<removed>"
       aria-invalid="true"
       type="checkbox"
       value="sms"
       name="my-error"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="utilities-usecheckboxgroup--with-error-sms"
+      for="<removed>"
     >
       SMS
     </label>
-  </div>
+  </ds-field>
   <p
     data-field="validation"
-    id="_r_b_"
+    id="<removed>"
   >
     Du må velge minst to kontaktalternativ
   </p>

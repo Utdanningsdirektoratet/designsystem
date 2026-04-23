@@ -1,7 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Mobile 1`] = `
-<nav aria-label="Sidenavigering">
+<ds-pagination
+  aria-label="Sidenavigering"
+  role="navigation"
+>
   <ul>
     <li>
       <button
@@ -22,8 +25,9 @@ exports[`Mobile 1`] = `
     </li>
     <li>
       <button
-        data-variant="primary"
+        data-variant="tertiary"
         type="button"
+        aria-current="true"
         aria-label="Side 3"
       >
         3
@@ -47,11 +51,14 @@ exports[`Mobile 1`] = `
       </button>
     </li>
   </ul>
-</nav>
+</ds-pagination>
 `;
 
 exports[`Preview 1`] = `
-<nav aria-label="Sidenavigering">
+<ds-pagination
+  aria-label="Sidenavigering"
+  role="navigation"
+>
   <ul>
     <li>
       <button
@@ -91,10 +98,10 @@ exports[`Preview 1`] = `
     </li>
     <li>
       <button
-        data-variant="primary"
+        data-variant="tertiary"
         type="button"
         aria-label="Side 4"
-        aria-current="page"
+        aria-current="true"
       >
         4
       </button>
@@ -129,11 +136,11 @@ exports[`Preview 1`] = `
       </button>
     </li>
   </ul>
-</nav>
+</ds-pagination>
 `;
 
 exports[`With Anchor 1`] = `
-<div style="gap: 70px; display: flex; flex-direction: column;">
+<div style="<removed>">
   <div>
     <input
       placeholder
@@ -142,7 +149,10 @@ exports[`With Anchor 1`] = `
       value="https://udir.design.no/pagination"
     >
   </div>
-  <nav aria-label="Sidenavigering">
+  <ds-pagination
+    aria-label="Sidenavigering"
+    role="navigation"
+  >
     <ul>
       <li>
         <a
@@ -183,9 +193,9 @@ exports[`With Anchor 1`] = `
       <li>
         <a
           href="#side-4"
-          data-variant="primary"
+          data-variant="tertiary"
           aria-label="Side 4"
-          aria-current="page"
+          aria-current="true"
         >
           4
         </a>
@@ -220,6 +230,6 @@ exports[`With Anchor 1`] = `
         </a>
       </li>
     </ul>
-  </nav>
+  </ds-pagination>
 </div>
 `;
