@@ -348,8 +348,8 @@ const makePseudoStatesStory = makeStoryTransformer((originalStory) => ({
   parameters: {
     ...originalStory.composed.parameters,
     pseudo: {
-      hover: ['.hover > u-summary'],
-      focusVisible: ['.focusVisible > u-summary'],
+      hover: ['.hover > summary'],
+      focusVisible: ['.focusVisible > summary'],
     },
   },
 }));
