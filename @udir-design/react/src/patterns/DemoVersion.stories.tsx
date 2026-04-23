@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react';
+import { type CSSProperties } from 'react';
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Alert } from 'src/components/alert';
@@ -99,6 +99,7 @@ export const Preview = meta.story({
         <Dialog
           open={true}
           style={{ maxWidth: '650px' }}
+          id="demo-version-dialog"
           // Render the dialog as inert in docs page, so it doesn't steal focus
           {...(context.viewMode === 'docs' && { inert: true })}
         >
@@ -117,7 +118,9 @@ export const Preview = meta.story({
             Dette er kun en demo. Dine data vil ikke lagres og du risikerer å
             måtte fylle ut på nytt.
           </Alert>
-          <Button data-command="close">Fortsett til demo</Button>
+          <Button command="close" commandfor="demo-version-dialog">
+            Fortsett til demo
+          </Button>
         </Dialog>
         <Footer>
           <Footer.List>

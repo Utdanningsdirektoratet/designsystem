@@ -35,11 +35,27 @@ import { Dialog } from '@udir-design/react';
 
 ## Eksempler
 
-### Egen lukkeknapp
+### Kontroll over åpning og lukking
 
-For å legge til egen lukkeknapp, kan du enten bruke `command="close" commandfor="DIALOG-ID"` eller `ref` og `Dialog.close()` på en knapp du lager selv.
-Dersom knappen er tom vil den få et ikon.
-Dersom knappen er direkte barn av dialogen og første element, vil den flyte til topp høyre.
+Om du trenger programmatisk kontroll over åpning og lukking av `Dialog`, finnes det flere måter å gjøre dette.
+
+- Du kan styre tilstanden selv med `open` på `Dialog`.
+- Du kan bruke `command` og `commandfor` på knappene som åpner og lukker `Dialog`.
+- Du kan bruke `<Dialog ref={dialogRef}>` og kalle `.show()`, `.showModal()` eller `.close()`.
+
+Merk at knapper som åpner en dialog bør ha `aria-haspopup="dialog"`-attributtet. Dette gjør vi automatisk når du bruker `command` og `commandfor` eller `Dialog.Trigger`, men i de andre tilfellene må du sette dette selv.
+
+I tillegg kan du bruke `closedby` for å styre om brukeren kan lukke dialogen ved trykk på Esc-tasten eller klikk utenfor dialogen, og `closeButton` lar deg skjule eller endre den vanlige lukkeknappen.
+
+Her går vi gjennom de ulike måtene du kan ta kontroll over åpning og lukking.
+
+#### Åpne og lukke med styrt tilstand
+
+Du kan styre tilstanden ved å bruke `open` og `onClose` props på `Dialog`-elementet, som i dette eksempelet. Husk å sette `aria-haspopup="dialog"` på knappen som åpner dialogen.
+
+<Canvas of={DialogStories.DialogWithOpenProp} />
+
+#### Åpne og lukke med command og commandfor
 
 <SimpleAlert>
   Attributtene
@@ -50,29 +66,42 @@ Dersom knappen er direkte barn av dialogen og første element, vil den flyte til
   for å støtte eldre nettlesere.
 </SimpleAlert>
 
-```tsx
-<Dialog>
-  <Dialog.Block>
-    <Heading>Header</Heading>
-  </Dialog.Block>
-  <Dialog.Block>
-    <Button data-command="close">Lukk</Button>
-  </Dialog.Block>
-</Dialog>
-```
+Du kan bruke en knapp med `command="show-modal"` for å åpne en modal dialog, eller `command="--show-non-modal"` for en ikke-modal dialog. En knapp med `command="close"` vil lukke dialogen. Samtlige av disse knappene må også ha `commandfor="DIALOG-ID"` for å knytte de opp til riktig dialog.
 
-### Bruk med ekstern trigger
+<Canvas of={DialogStories.WithoutDialogTriggerContextWithCommand} />
 
-Om du trenger programmatisk kontroll over åpning og lukking av modalen kan du bruke `open`-propen, eller en `ref` som gir tilgang på HTML-elementets [instance-metoder](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement#instance_methods) (f.eks. `.show()`, `.showModal()` og `.close()`).
-Her bruker vi `useRef` for å få tilgang til dialogen, og kaller `.showModal()` når knappen trykkes. Merk at knappen som åpner dialogen da bør ha `aria-haspopup="dialog"`-attributtet.
+#### Åpne og lukke med ref
+
+Du kan bruke en `ref` som gir tilgang på HTML-elementets [instance-metoder](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement#instance_methods) (f.eks. `.show()`, `.showModal()` og `.close()`). Husk å sette `aria-haspopup="dialog"` på knappen som åpner dialogen.
+
+Her bruker vi `useRef` for å få tilgang til dialogen, og kaller `.showModal()` når knappen trykkes.
 
 <Canvas of={DialogStories.WithoutDialogTriggerContext} />
 
-Du kan også bruke `command="show-modal"` eller `command="--show-non-modal"` og `commandfor="DIALOG-ID"` for å åpne dialogen fra en ekstern trigger.
+#### Endre standard lukkeknapp
 
-### Lukk ved klikk utenfor
+Om du ønsker å skru av lukkeknappen øverst til høyre, kan du sette `closeButton={false}` på `Dialog`-elementet.
 
-Vi bruker `closedby="any"` proppen for å lukke dialogen når brukeren klikker utenfor. Vi legger til polyfill så `closedby="any"` også fungerer i eldre Safari.
+Du kan endre skjermleserteksten for lukkeknappen ved å sende en string til `closeButton`, f.eks. `closeButton="Close dialog"`. Om du ikke sender noe vil teksten være "Lukk dialogvindu".
+
+Du kan også erstatte lukkeknappen helt ved å sette `closeButton={false}` på `Dialog`-elementet, og legge
+en `Button` med `command="close"` og `commandfor="DIALOG-ID"` som første barn av `Dialog`. Knappen vil da flyttes øverst til høyre i dialogen. Dersom knappen er tom vil den også få et kryss-ikon. NB: Dette fungerer kun for alternativet med `command` og `commandfor` på knappen.
+
+I dette eksempelet endrer vi lukkeknappen til en knapp med tekst.
+
+<Canvas of={DialogStories.CustomCloseButton} />
+
+#### Lukk med Esc-tast eller ved klikk utenfor
+
+Standard oppførsel for `Dialog` er at den kan lukkes ved å trykke Esc-tasten. Dette tilsvarer å sette `closedby="closerequest"`.
+
+Dersom du også ønsker å lukke dialogen når brukeren klikker utenfor, sett `closedby="any"`. Vi legger til polyfill så `closedby="any"` også fungerer i eldre Safari.
+
+Ved å sette `closedby="none"` skrur du av både Esc-tast og klikk utenfor.
+
+Du kan også kjøre egen kode når dialogen lukkes ved å bruke `onClose`. Dette er for eksempel nyttig når du skal [åpne og lukke med styrt tilstand](#åpne-og-lukke-med-styrt-tilstand).
+
+Dette eksempelet viser `closedby="any"` og en `onClose`-funksjon, som her blir kjørt både ved klikk på lukkeknappen, ved klikk utenfor og ved trykk på Esc-tasten.
 
 <Canvas of={DialogStories.BackdropClosedbyAny} />
 
@@ -91,7 +120,9 @@ Merk at innhold kan ikke plasseres direkte i `Dialog` dersom du bruker `Dialog.B
 
 ### Fokus
 
-Vi bruker native `autoFocus` på `Textfield` for å fokusere inputen i skjemaet.
+Dersom du vil at et felt i et skjema inni dialogen skal få fokus når dialogen åpnes, kan du bruke native `autofocus`-attributtet på input-elementet.
+
+Når du bruker dette med React, må du skrive det med små bokstaver som `autofocus`, ikke `autoFocus`. Fordi `autofocus` med liten `f` ikke finnes i React sine typedefinisjoner, har vi ignorert typefeilen med en `@ts-expect-error`-kommentar i eksempelet under.
 
 <Canvas of={DialogStories.DialogWithForm} />
 
@@ -156,3 +187,19 @@ På mobil kan en "ikke-modal" `Dialog` være problematisk på grunn av begrenset
 - Ha en kort og konsis overskrift. Overskriften skal gjøre det tydelig for brukeren at konteksten er endret.
 - Unngå mange avsnitt med tekst.
 - Sørg for at formålet er tydelig og at all nødvendig informasjon er tilgjengelig i modalen.
+
+## Tilgjengelighet
+
+### Knapper som åpner dialoger
+
+En knapp som åpner en dialog bør ha `aria-haspopup="dialog"`-attributtet for en bedre skjermleseropplevelse.
+Dersom du bruker `Dialog.Trigger` eller en knapp med `command` og `commandfor` håndteres dette automatisk, men i andre tilfeller må du sette dette selv.
+
+### Ikke-modale dialoger
+
+Når du bruker ikke-modale dialoger, må du passe på at elementer som får fokus gjennom navigering med tastatur ikke havner bak dialogen og blir skjult. Se kriteriene [2.4.11 (w3.org)](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html) (AA) og [2.4.12 (w3.org)](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-enhanced.html) (AAA).
+
+For ikke-modale dialoger betyr dette at du må:
+
+- Sikre at fokuserbare elementer aldri blir helt dekket av dialogen når brukeren tabber gjennom siden.
+- Sørge for at fokusrekkefølgen er logisk og at fokus alltid er synlig, slik at brukere som navigerer med tastatur eller skjermleser forstår hvor fokus befinner seg.
