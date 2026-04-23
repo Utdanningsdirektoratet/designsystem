@@ -142,7 +142,7 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
           {...register('ageGroup')}
           aria-invalid={!!errors.ageGroup}
           defaultValue="blank"
-          readOnly={isSubmitSuccessful}
+          aria-readonly={isSubmitSuccessful}
           autoComplete="off"
           required
         >
