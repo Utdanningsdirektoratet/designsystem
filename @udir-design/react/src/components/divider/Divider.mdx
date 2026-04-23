@@ -5,7 +5,9 @@ import * as DividerStories from './Divider.stories';
 
 # Divider
 
-`Divider` brukes for å skape et visuelt skille mellom innhold – f.eks. ulike seksjoner i en artikkel eller ulike funksjonelle områder på en side – slik at det blir mer oversiktlig og lettere å lese. Det er en enkel horisontal linje som strekker seg over tilgjengelig bredde. Den kan også brukes for å skille innhold som er relatert til hverandre, men som likevel bør ha en visuelt skille.
+`Divider` brukes for å skape et visuelt skille mellom innhold, for eksempel mellom ulike seksjoner i en artikkel eller funksjonelle områder på en side. Dette gjør innholdet mer oversiktlig og lettere å lese. Den kan også brukes for å skille innhold som er relatert til hverandre, men som likevel bør ha et visuelt skille.
+
+En `Divider` består av en enkel horisontal linje som strekker seg over tilgjengelig bredde.
 
 **Passer til å**
 
@@ -14,7 +16,7 @@ import * as DividerStories from './Divider.stories';
 
 **Passer ikke til å**
 
-- skape spacing der andre visuelle elementer bedre kan gi separasjon
+- skape spacing der andre visuelle elementer kan gi bedre separasjon
 
 ## Slik bruker du Divider
 
@@ -29,6 +31,8 @@ import { Divider } from '@udir-design/react';
 
 ## Tilgjengelighet
 
-`Divider` er et rent visuelt virkemiddel, og leses ikke opp av skjermlesere.
+`Divider` er et rent visuelt virkemiddel og leses ikke opp av skjermlesere.
 
-Unngå likevel å bruke `Divider` utelukkende for visuell effekt uten funksjonell betydning. En `Divider` representerer en tematisk inndeling av innhold. For å kommunisere denne inndelingen på en tilgjengelig måte må man i tillegg bruke elementer som en skjermleser forstår. Dette kan for eksempel være en [`Heading`](/docs/components-heading--docs), en [`List`](/docs/components-list--docs), [`<section>`-elementer](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/section), eller elementer med [`role="group"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role).
+Unngå likevel å bruke `Divider` utelukkende for visuell effekt uten funksjonell betydning. Den representerer en tematisk inndeling av innhold, og denne inndelingen må også formidles på en tilgjengelig måte.
+
+For å gjøre dette bør du også bruke elementer som skjermlesere forstår, som for eksempel en [`Heading`](/docs/components-heading--docs), en [`List`](/docs/components-list--docs), [`<section>`-elementer](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/section), eller elementer med [`role="group"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role).

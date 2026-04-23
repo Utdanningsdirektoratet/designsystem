@@ -7,7 +7,7 @@ import { Divider } from './Divider';
 
 const meta = preview.meta({
   component: Divider,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
