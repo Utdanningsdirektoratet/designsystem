@@ -39,10 +39,10 @@ export const Preview = meta.story({
     name: 'inputs',
     'aria-label': 'input',
   },
-  render: (args, context) => {
+  render: (args) => {
     if (args.role !== 'switch') args.role = undefined; // Ensure we only keep switch role in storybook
 
-    return <Input {...args} defaultChecked id={context.id} />;
+    return <Input {...args} defaultChecked />;
   },
   play: async ({ canvasElement, step, args }) => {
     const canvas = within(canvasElement);
@@ -79,10 +79,10 @@ export const HtmlSize = meta.story({
   args: {
     size: 10,
   },
-  render: (args, context) => (
+  render: (args) => (
     <Field>
       <Label>Input with size</Label>
-      <Input {...args} id={context.id} />
+      <Input {...args} />
     </Field>
   ),
 });
@@ -95,7 +95,7 @@ export const Controlled = meta.story({
       gap: 'var(--ds-size-2)',
     },
   },
-  render(args, context) {
+  render(args) {
     const [value, setValue] = useState<string>('');
     return (
       <>
@@ -113,7 +113,6 @@ export const Controlled = meta.story({
               value={value}
               onChange={(e) => setValue(e.target.value)}
               {...args}
-              id={context.id}
             />
           </Field>
           <Button variant="secondary" onClick={() => setValue('')}>
@@ -144,7 +143,7 @@ export const Text = meta.story({
   args: {
     value: 'Value',
   },
-  render: (args, context) => {
+  render: (args) => {
     const states = [
       { label: 'Default', props: {} },
       { label: 'Disabled', props: { disabled: true } },
@@ -176,7 +175,6 @@ export const Text = meta.story({
                   name={`${size}-${state.label.toLowerCase()}`}
                   {...state.props}
                   data-size={size}
-                  id={`${context.id}-${size}-${state.label.toLowerCase()}`}
                 />
                 {state.label === 'Invalid' && (
                   <ValidationMessage>Feilmelding</ValidationMessage>
@@ -198,31 +196,20 @@ export const InputTypes = meta.story({
       gap: 'var(--ds-size-2)',
     },
   },
-  render: (args, context) => {
+  render: (args) => {
     return (
       <>
         <Field>
           <Label>Checkbox</Label>
-          <Input
-            {...args}
-            type="checkbox"
-            id={`${context.id}-checkbox`}
-            checked
-          />
+          <Input {...args} type="checkbox" checked />
         </Field>
         <Field>
           <Label>Radio</Label>
-          <Input {...args} type="radio" id={`${context.id}-radio`} checked />
+          <Input {...args} type="radio" checked />
         </Field>
         <Field>
           <Label>Switch</Label>
-          <Input
-            {...args}
-            type="checkbox"
-            role="switch"
-            id={`${context.id}-switch`}
-            checked
-          />
+          <Input {...args} type="checkbox" role="switch" checked />
         </Field>
       </>
     );
@@ -233,7 +220,7 @@ export const Radio = meta.story({
   args: {
     type: 'radio',
   },
-  render: (args, context) => {
+  render: (args) => {
     const states = [
       { label: 'Default', props: {} },
       { label: 'Checked', props: { defaultChecked: true } },
@@ -279,7 +266,6 @@ export const Radio = meta.story({
                   {...args}
                   name={`${size}-${state.label.split(' ')[0]}`} // As states are demonstrated in pairs
                   {...state.props}
-                  id={`${context.id}-${size}-${state.label.split(' ')[0]}`}
                 />
                 <Label>{state.label}</Label>
               </Field>
@@ -295,7 +281,7 @@ export const Checkbox = meta.story({
   args: {
     type: 'checkbox',
   },
-  render(args, context) {
+  render(args) {
     useEffect(() => {
       for (const input of Array.from(document.getElementsByTagName('input'))) {
         if (input.hasAttribute('data-indeterminate'))
@@ -364,9 +350,6 @@ export const Checkbox = meta.story({
                     .toLowerCase()
                     .replace(' ', '-')}`}
                   {...state.props}
-                  id={`${context.id}-${size}-${state.label
-                    .toLowerCase()
-                    .replace(' ', '-')}`}
                 />
                 <Label>{state.label}</Label>
               </Field>
@@ -383,7 +366,7 @@ export const Switch = meta.story({
     type: 'checkbox',
     role: 'switch',
   },
-  render: (args, context) => {
+  render: (args) => {
     const states = [
       { label: 'Default', props: {} },
       { label: 'Checked', props: { defaultChecked: true } },
@@ -428,9 +411,6 @@ export const Switch = meta.story({
                     .toLowerCase()
                     .replace(' ', '-')}`}
                   {...state.props}
-                  id={`${context.id}-${size}-${state.label
-                    .toLowerCase()
-                    .replace(' ', '-')}`}
                 />
                 <Label>{state.label}</Label>
               </Field>

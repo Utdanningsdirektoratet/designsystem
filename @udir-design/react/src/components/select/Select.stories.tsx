@@ -27,10 +27,10 @@ export const Preview = meta.story({
     disabled: false,
     readOnly: false,
   },
-  render: (args, context) => (
+  render: (args) => (
     <Field>
       <Label>Fylke</Label>
-      <Select {...args} defaultValue="" id={context.id}>
+      <Select {...args} defaultValue="">
         <Select.Option value="">Velg et fylke &hellip;</Select.Option>
         {counties.map((county) => (
           <Select.Option key={county} value={county.toLowerCase()}>
@@ -83,10 +83,10 @@ export const WithError = meta.story({
   args: {
     'aria-invalid': true,
   },
-  render: (args, context) => (
+  render: (args) => (
     <Field>
       <Label>Fylke</Label>
-      <Select {...args} id={context.id}>
+      <Select {...args}>
         <Select.Option value="">Velg et fylke &hellip;</Select.Option>
         {counties.map((county) => (
           <Select.Option key={county} value={county.toLowerCase()}>
@@ -114,10 +114,10 @@ const educationalLevels = {
 };
 
 export const WithOptgroup = meta.story({
-  render: (args, context) => (
+  render: (args) => (
     <Field>
       <Label>Klassetrinn</Label>
-      <Select {...args} id={context.id}>
+      <Select {...args}>
         <Select.Option value="">Velg klassetrinn &hellip;</Select.Option>
         {Object.entries(educationalLevels).map(([key, levels]) => (
           <Select.Optgroup
@@ -146,7 +146,7 @@ export const Controlled = meta.story({
       flexDirection: 'column',
     },
   },
-  render: (args, context) => {
+  render: (args) => {
     const [selectedCounty, setSelectedCounty] = useState<SelectedCounty>('');
     const [selectedCity, setSelectedCity] = useState<string>('');
 
@@ -176,7 +176,6 @@ export const Controlled = meta.story({
           <Label>Fylke</Label>
           <Select
             {...args}
-            id={context.id}
             value={selectedCounty}
             onChange={handleCountyChange}
           >
@@ -190,12 +189,7 @@ export const Controlled = meta.story({
         </Field>
         <Field>
           <Label>By</Label>
-          <Select
-            {...args}
-            id={`${context.id}-by`}
-            value={selectedCity}
-            onChange={handleCityChange}
-          >
+          <Select {...args} value={selectedCity} onChange={handleCityChange}>
             <Select.Option value="">Velg en by &hellip;</Select.Option>
             {selectedCounty
               ? cities[selectedCounty].map((city) => (

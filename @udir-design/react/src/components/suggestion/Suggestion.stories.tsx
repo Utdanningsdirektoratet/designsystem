@@ -83,12 +83,12 @@ const DATA_PEOPLE = [
 ];
 
 export const Preview = meta.story({
-  render(args, ctx) {
+  render(args) {
     return (
       <Field>
         <Label>Velg en destinasjon</Label>
         <Suggestion {...args}>
-          <Suggestion.Input id={ctx.id} />
+          <Suggestion.Input />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -106,7 +106,7 @@ export const Preview = meta.story({
 });
 
 export const ControlledSingle = meta.story({
-  render: (args, ctx) => {
+  render: (args) => {
     const [value, setValue] = useState<string>('');
 
     return (
@@ -118,7 +118,7 @@ export const ControlledSingle = meta.story({
             selected={value}
             onSelectedChange={(item) => setValue(item?.value ?? '')}
           >
-            <Suggestion.Input id={ctx.id} />
+            <Suggestion.Input />
             <Suggestion.Clear />
             <Suggestion.List>
               <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -173,7 +173,7 @@ export const ControlledSingle = meta.story({
 });
 
 export const ControlledMultiple = meta.story({
-  render: (args, ctx) => {
+  render: (args) => {
     const [value, setValue] = useState<string[]>(['Oslo']);
     return (
       <>
@@ -187,7 +187,7 @@ export const ControlledMultiple = meta.story({
               setValue(items.map((item) => item.value))
             }
           >
-            <Suggestion.Input id={ctx.id} />
+            <Suggestion.Input />
             <Suggestion.Clear />
             <Suggestion.List>
               <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -249,7 +249,7 @@ export const ControlledMultiple = meta.story({
 });
 
 export const ControlledIndependentLabelValue = meta.story({
-  render: (args, ctx) => {
+  render: (args) => {
     const [item, setItem] = useState<SuggestionItem | null>(DATA_PEOPLE[0]);
 
     return (
@@ -262,7 +262,7 @@ export const ControlledIndependentLabelValue = meta.story({
             onSelectedChange={setItem}
             filter={false}
           >
-            <Suggestion.Input id={ctx.id} />
+            <Suggestion.Input />
             <Suggestion.Clear />
             <Suggestion.List>
               <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -303,7 +303,7 @@ export const ControlledIndependentLabelValue = meta.story({
 });
 
 export const CustomFilterAlt1 = meta.story({
-  render(args, ctx) {
+  render(args) {
     return (
       <Field>
         <Label>Skriv inn et tall mellom 1-6</Label>
@@ -313,7 +313,7 @@ export const CustomFilterAlt1 = meta.story({
             !input.value || index === Number(input.value) - 1
           }
         >
-          <Suggestion.Input id={ctx.id} />
+          <Suggestion.Input />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -330,14 +330,13 @@ export const CustomFilterAlt1 = meta.story({
 });
 
 export const CustomFilterAlt2 = meta.story({
-  render: (args, ctx) => {
+  render: (args) => {
     const [value, setValue] = useState('');
     return (
       <Field>
         <Label>Skriv inn et tall mellom 1-6</Label>
         <Suggestion {...args} filter={false}>
           <Suggestion.Input
-            id={ctx.id}
             onInput={({ currentTarget }) => setValue(currentTarget.value)}
           />
           <Suggestion.Clear />
@@ -356,7 +355,7 @@ export const CustomFilterAlt2 = meta.story({
 });
 
 export const AlwaysShowAll = meta.story({
-  render: (args, ctx) => {
+  render: (args) => {
     const [value, setValue] = useState<string | undefined>('Sogndal');
     return (
       <Field>
@@ -367,7 +366,7 @@ export const AlwaysShowAll = meta.story({
           filter={false}
           onSelectedChange={(item) => setValue(item?.value)}
         >
-          <Suggestion.Input id={ctx.id} />
+          <Suggestion.Input />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -382,7 +381,7 @@ export const AlwaysShowAll = meta.story({
 });
 
 export const FetchExternal = meta.story({
-  render: (args, ctx) => {
+  render: (args) => {
     const [value, setValue] = useState('');
     const [options, setOptions] = useState<string[] | null>(null);
 
@@ -410,7 +409,7 @@ export const FetchExternal = meta.story({
       <Field lang="en">
         <Label>Search for countries (in english)</Label>
         <Suggestion {...args} filter={false}>
-          <Suggestion.Input id={ctx.id} onInput={handleInput} />
+          <Suggestion.Input onInput={handleInput} />
           <Suggestion.Clear />
           <Suggestion.List singular="%d country" plural="%d countries">
             {value ? (
@@ -446,7 +445,7 @@ export const FetchExternal = meta.story({
 export const Multiple = Preview.extend({ args: { multiple: true } });
 
 export const DefaultValue = meta.story({
-  render(args, ctx) {
+  render(args) {
     return (
       <Field>
         <Label>Velg en destinasjon</Label>
@@ -454,7 +453,7 @@ export const DefaultValue = meta.story({
           {...(args as SuggestionSingleProps)}
           defaultSelected={'Sogndal'}
         >
-          <Suggestion.Input id={ctx.id} />
+          <Suggestion.Input />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -469,7 +468,7 @@ export const DefaultValue = meta.story({
 });
 
 export const InDetails = meta.story({
-  render: (args, ctx) => {
+  render: (args) => {
     return (
       <Details>
         <Details.Summary>Åpne details som har overflow: clip;</Details.Summary>
@@ -477,7 +476,7 @@ export const InDetails = meta.story({
           <Field>
             <Label>Velg en destinasjon</Label>
             <Suggestion {...args} autoFocus>
-              <Suggestion.Input id={ctx.id} />
+              <Suggestion.Input />
               <Suggestion.Clear />
               <Suggestion.List>
                 <Suggestion.Empty>Tomt</Suggestion.Empty>
