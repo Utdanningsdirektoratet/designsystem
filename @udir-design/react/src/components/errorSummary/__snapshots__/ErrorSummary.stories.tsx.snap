@@ -1,11 +1,11 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Preview 1`] = `
-<div
+<ds-error-summary
   tabindex="-1"
-  aria-labelledby="_r_0_"
+  aria-labelledby="<removed>"
 >
-  <h2 id="_r_0_">
+  <h2 id="<removed>">
     For å gå videre må du rette opp følgende feil:
   </h2>
   <ul>
@@ -34,7 +34,7 @@ exports[`Preview 1`] = `
       </a>
     </li>
   </ul>
-</div>
+</ds-error-summary>
 `;
 
 exports[`Show Hide 1`] = `
@@ -44,11 +44,11 @@ exports[`Show Hide 1`] = `
 >
   Skjul feilmelding
 </button>
-<div
+<ds-error-summary
   tabindex="-1"
-  aria-labelledby="_r_2_"
+  aria-labelledby="<removed>"
 >
-  <h2 id="_r_2_">
+  <h2 id="<removed>">
     For å gå videre må du rette opp følgende feil:
   </h2>
   <ul>
@@ -69,59 +69,59 @@ exports[`Show Hide 1`] = `
       </a>
     </li>
   </ul>
-</div>
+</ds-error-summary>
 `;
 
 exports[`With Form 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="fornavn"
+    for="<removed>"
   >
     Fornavn
   </label>
   <div>
     <input
       aria-invalid="true"
-      id="fornavn"
+      id="<removed>"
       type="text"
-      aria-describedby="fornavn:validation:1"
+      aria-describedby="<removed>"
     >
   </div>
   <p
     data-field="validation"
-    id="fornavn:validation:1"
+    id="<removed>"
   >
     Fornavn må være minst 2 tegn
   </p>
-</div>
-<div>
+</ds-field>
+<ds-field>
   <label
     data-weight="medium"
-    for="telefon"
+    for="<removed>"
   >
     Telefon
   </label>
   <div>
     <input
       aria-invalid="true"
-      id="telefon"
+      id="<removed>"
       type="tel"
-      aria-describedby="telefon:validation:1"
+      aria-describedby="<removed>"
     >
   </div>
   <p
     data-field="validation"
-    id="telefon:validation:1"
+    id="<removed>"
   >
     Telefonnummer kan kun inneholde siffer
   </p>
-</div>
-<div
+</ds-field>
+<ds-error-summary
   tabindex="-1"
-  aria-labelledby="_r_1_"
+  aria-labelledby="<removed>"
 >
-  <h2 id="_r_1_">
+  <h2 id="<removed>">
     For å gå videre må du rette opp følgende feil:
   </h2>
   <ul>
@@ -142,5 +142,5 @@ exports[`With Form 1`] = `
       </a>
     </li>
   </ul>
-</div>
+</ds-error-summary>
 `;

@@ -4,11 +4,11 @@ exports[`Dashboard Page 2 1`] = `
 <header
   data-scroll-direction="up"
   data-top="true"
-  style="--udsc-header-max-width: 80rem;"
+  style="<removed>"
 >
   <div>
     <a href="/">
-      <div style="--uds-logo-padding: 0;">
+      <div style="<removed>">
         <img
           alt="Utdanningsdirektoratet"
           src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
@@ -90,16 +90,15 @@ exports[`Dashboard Page 2 1`] = `
         </svg>
       </button>
       <div
-        id="usermenu2"
+        id="<removed>"
         popover="manual"
+        data-placement="bottom-end"
         data-variant="default"
       >
+        <h2>
+          Bytt profil
+        </h2>
         <ul>
-          <li>
-            <h2>
-              Bytt profil
-            </h2>
-          </li>
           <li>
             <button
               data-variant="tertiary"
@@ -177,66 +176,53 @@ exports[`Dashboard Page 2 1`] = `
   <h1 data-size="md">
     Schweigaardsgate skole
   </h1>
-  <div>
-    <div
-      role="tablist"
-      tabindex="0"
-    >
-      <button
-        id="tab-_r_g_"
-        aria-selected="false"
+  <ds-tabs>
+    <ds-tablist role="tablist">
+      <ds-tab
+        aria-controls="_r_i_-overview"
         data-value="overview"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
+        aria-selected="false"
         tabindex="-1"
-        aria-controls="tabpanel-_r_k_"
+        id="<removed>"
       >
         Oversikt
-      </button>
-      <button
-        id="tab-_r_h_"
-        aria-selected="true"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_i_-tests"
         data-value="tests"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
+        aria-selected="true"
         tabindex="0"
-        aria-controls="tabpanel-_r_l_"
+        id="<removed>"
       >
         Prøver
-      </button>
-      <button
-        id="tab-_r_i_"
-        aria-selected="false"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_i_-test-answers"
         data-value="test-answers"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
+        aria-selected="false"
         tabindex="-1"
-        aria-controls="tabpanel-_r_m_"
       >
         Prøvesvar
-      </button>
-      <button
-        id="tab-_r_j_"
-        aria-selected="false"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_i_-settings"
         data-value="settings"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
+        aria-selected="false"
         tabindex="-1"
-        aria-controls="tabpanel-_r_n_"
       >
         Innstillinger
-      </button>
-    </div>
-    <div
-      id="tabpanel-_r_k_"
+      </ds-tab>
+    </ds-tablist>
+    <ds-tabpanel
+      id="<removed>"
+      aria-hidden="true"
+      aria-labelledby="<removed>"
       role="tabpanel"
-      tabindex="0"
       hidden
-      aria-labelledby="tab-_r_g_"
     >
       <p data-variant="default">
         Her får du en oversikt over all den overordnede informasjonen.
@@ -267,13 +253,13 @@ exports[`Dashboard Page 2 1`] = `
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <div>
@@ -303,11 +289,13 @@ exports[`Dashboard Page 2 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_l_"
+    </ds-tabpanel>
+    <ds-tabpanel
+      id="<removed>"
       role="tabpanel"
-      aria-labelledby="tab-_r_h_"
+      aria-hidden="false"
+      tabindex="0"
+      aria-labelledby="<removed>"
     >
       <p data-variant="default">
         Oversikt over prøver for Schweigaardsgate skole.
@@ -358,13 +346,13 @@ exports[`Dashboard Page 2 1`] = `
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <div>
@@ -394,13 +382,12 @@ exports[`Dashboard Page 2 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_m_"
+    </ds-tabpanel>
+    <ds-tabpanel
+      id="<removed>"
       role="tabpanel"
-      tabindex="0"
+      aria-hidden="true"
       hidden
-      aria-labelledby="tab-_r_i_"
     >
       <p data-variant="default">
         Oversikt over prøvesvar for Schweigaardsgate skole.
@@ -431,13 +418,13 @@ exports[`Dashboard Page 2 1`] = `
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <div>
@@ -467,12 +454,12 @@ exports[`Dashboard Page 2 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_n_"
+    </ds-tabpanel>
+    <ds-tabpanel
+      id="<removed>"
       role="tabpanel"
+      aria-hidden="true"
       hidden
-      aria-labelledby="tab-_r_j_"
     >
       <div>
         <div>
@@ -502,48 +489,48 @@ exports[`Dashboard Page 2 1`] = `
               <h2>
                 Generelle innstillinger
               </h2>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="dark-mode"
+                  id="<removed>"
                   type="checkbox"
-                  aria-describedby="dark-mode:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="dark-mode"
+                  for="<removed>"
                 >
                   Mørk modus
                 </label>
                 <div
                   data-field="description"
-                  id="dark-mode:description:1"
+                  id="<removed>"
                 >
                   Et mørkere grensesnitt for å spare øynene.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="auto-updates"
+                  id="<removed>"
                   type="checkbox"
                   value="auto-updates"
                   checked
-                  aria-describedby="auto-updates:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="auto-updates"
+                  for="<removed>"
                 >
                   Automatiske oppdateringer
                 </label>
                 <div
                   data-field="description"
-                  id="auto-updates:description:1"
+                  id="<removed>"
                 >
                   Bruk automatisk oppdateringer for å holde systemet oppdatert.
                 </div>
-              </div>
+              </ds-field>
             </div>
             <div
               data-variant="tinted"
@@ -552,16 +539,22 @@ exports[`Dashboard Page 2 1`] = `
               <h2>
                 Personvern
               </h2>
-              <fieldset>
-                <legend data-weight="medium">
+              <fieldset aria-labelledby="<removed>">
+                <legend
+                  data-weight="medium"
+                  id="<removed>"
+                >
                   Hvem kan se profilen din?
                 </legend>
-                <p data-variant="default">
+                <p
+                  data-variant="default"
+                  id="<removed>"
+                >
                   Velg hvem som har tilgang til å se profilen din.
                 </p>
-                <div>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-public"
+                    id="<removed>"
                     type="radio"
                     value="public"
                     checked
@@ -569,50 +562,50 @@ exports[`Dashboard Page 2 1`] = `
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-public"
+                    for="<removed>"
                   >
                     Alle
                   </label>
-                </div>
-                <div>
+                </ds-field>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-friends"
+                    id="<removed>"
                     type="radio"
                     value="friends"
                     name="privacy"
-                    aria-describedby="privacy-friends:description:1"
+                    aria-describedby="<removed>"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-friends"
+                    for="<removed>"
                   >
                     Kun venner
                   </label>
                   <div
                     data-field="description"
-                    id="privacy-friends:description:1"
+                    id="<removed>"
                   >
                     Bare personer du har lagt til kan se profilen din.
                   </div>
-                </div>
-                <div>
+                </ds-field>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-private"
+                    id="<removed>"
                     type="radio"
                     value="private"
                     name="privacy"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-private"
+                    for="<removed>"
                   >
                     Kun meg
                   </label>
-                </div>
+                </ds-field>
                 <p
                   data-field="validation"
                   hidden
-                  id="validation-privacy"
+                  id="<removed>"
                 >
                 </p>
               </fieldset>
@@ -624,75 +617,75 @@ exports[`Dashboard Page 2 1`] = `
               <h2>
                 Varsler
               </h2>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="sound-notifications"
+                  id="<removed>"
                   type="checkbox"
                   value="sound-notifications"
-                  aria-describedby="sound-notifications:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="sound-notifications"
+                  for="<removed>"
                 >
                   Lydvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="sound-notifications:description:1"
+                  id="<removed>"
                 >
                   Spill av lyd når et varsel mottas.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="popup-notifications"
+                  id="<removed>"
                   type="checkbox"
                   value="popup-notifications"
-                  aria-describedby="popup-notifications:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="popup-notifications"
+                  for="<removed>"
                 >
                   Popup-varsler
                 </label>
                 <div
                   data-field="description"
-                  id="popup-notifications:description:1"
+                  id="<removed>"
                 >
                   Vis popup-varsler på skjermen.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="email-notifications"
+                  id="<removed>"
                   type="checkbox"
                   value="email-notifications"
-                  aria-describedby="email-notifications:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="email-notifications"
+                  for="<removed>"
                 >
                   E-postvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="email-notifications:description:1"
+                  id="<removed>"
                 >
                   Tillat e-postvarsler for viktige oppdateringer.
                 </div>
-              </div>
+              </ds-field>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </ds-tabpanel>
+  </ds-tabs>
 </div>
 `;
 
@@ -700,11 +693,11 @@ exports[`Dashboard Page 3 1`] = `
 <header
   data-scroll-direction="up"
   data-top="true"
-  style="--udsc-header-max-width: 80rem;"
+  style="<removed>"
 >
   <div>
     <a href="/">
-      <div style="--uds-logo-padding: 0;">
+      <div style="<removed>">
         <img
           alt="Utdanningsdirektoratet"
           src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
@@ -786,16 +779,15 @@ exports[`Dashboard Page 3 1`] = `
         </svg>
       </button>
       <div
-        id="usermenu2"
+        id="<removed>"
         popover="manual"
+        data-placement="bottom-end"
         data-variant="default"
       >
+        <h2>
+          Bytt profil
+        </h2>
         <ul>
-          <li>
-            <h2>
-              Bytt profil
-            </h2>
-          </li>
           <li>
             <button
               data-variant="tertiary"
@@ -873,66 +865,53 @@ exports[`Dashboard Page 3 1`] = `
   <h1 data-size="md">
     Schweigaardsgate skole
   </h1>
-  <div>
-    <div
-      role="tablist"
-      tabindex="0"
-    >
-      <button
-        id="tab-_r_s_"
-        aria-selected="false"
+  <ds-tabs>
+    <ds-tablist role="tablist">
+      <ds-tab
+        aria-controls="_r_10_-overview"
         data-value="overview"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
+        aria-selected="false"
         tabindex="-1"
-        aria-controls="tabpanel-_r_10_"
+        id="<removed>"
       >
         Oversikt
-      </button>
-      <button
-        id="tab-_r_t_"
-        aria-selected="false"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_10_-tests"
         data-value="tests"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
+        aria-selected="false"
         tabindex="-1"
-        aria-controls="tabpanel-_r_11_"
       >
         Prøver
-      </button>
-      <button
-        id="tab-_r_u_"
-        aria-selected="true"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_10_-test-answers"
         data-value="test-answers"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
+        aria-selected="true"
         tabindex="0"
-        aria-controls="tabpanel-_r_12_"
+        id="<removed>"
       >
         Prøvesvar
-      </button>
-      <button
-        id="tab-_r_v_"
-        aria-selected="false"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_10_-settings"
         data-value="settings"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
+        aria-selected="false"
         tabindex="-1"
-        aria-controls="tabpanel-_r_13_"
       >
         Innstillinger
-      </button>
-    </div>
-    <div
-      id="tabpanel-_r_10_"
+      </ds-tab>
+    </ds-tablist>
+    <ds-tabpanel
+      id="<removed>"
+      aria-hidden="true"
+      aria-labelledby="<removed>"
       role="tabpanel"
-      tabindex="0"
       hidden
-      aria-labelledby="tab-_r_s_"
     >
       <p data-variant="default">
         Her får du en oversikt over all den overordnede informasjonen.
@@ -963,13 +942,13 @@ exports[`Dashboard Page 3 1`] = `
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <div>
@@ -999,12 +978,12 @@ exports[`Dashboard Page 3 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_11_"
+    </ds-tabpanel>
+    <ds-tabpanel
+      id="<removed>"
       role="tabpanel"
+      aria-hidden="true"
       hidden
-      aria-labelledby="tab-_r_t_"
     >
       <p data-variant="default">
         Oversikt over prøver for Schweigaardsgate skole.
@@ -1055,13 +1034,13 @@ exports[`Dashboard Page 3 1`] = `
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <div>
@@ -1091,12 +1070,13 @@ exports[`Dashboard Page 3 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_12_"
+    </ds-tabpanel>
+    <ds-tabpanel
+      id="<removed>"
       role="tabpanel"
+      aria-hidden="false"
       tabindex="0"
-      aria-labelledby="tab-_r_u_"
+      aria-labelledby="<removed>"
     >
       <p data-variant="default">
         Oversikt over prøvesvar for Schweigaardsgate skole.
@@ -1127,13 +1107,13 @@ exports[`Dashboard Page 3 1`] = `
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <div>
@@ -1163,12 +1143,12 @@ exports[`Dashboard Page 3 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_13_"
+    </ds-tabpanel>
+    <ds-tabpanel
+      id="<removed>"
       role="tabpanel"
+      aria-hidden="true"
       hidden
-      aria-labelledby="tab-_r_v_"
     >
       <div>
         <div>
@@ -1198,48 +1178,48 @@ exports[`Dashboard Page 3 1`] = `
               <h2>
                 Generelle innstillinger
               </h2>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="dark-mode"
+                  id="<removed>"
                   type="checkbox"
-                  aria-describedby="dark-mode:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="dark-mode"
+                  for="<removed>"
                 >
                   Mørk modus
                 </label>
                 <div
                   data-field="description"
-                  id="dark-mode:description:1"
+                  id="<removed>"
                 >
                   Et mørkere grensesnitt for å spare øynene.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="auto-updates"
+                  id="<removed>"
                   type="checkbox"
                   value="auto-updates"
                   checked
-                  aria-describedby="auto-updates:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="auto-updates"
+                  for="<removed>"
                 >
                   Automatiske oppdateringer
                 </label>
                 <div
                   data-field="description"
-                  id="auto-updates:description:1"
+                  id="<removed>"
                 >
                   Bruk automatisk oppdateringer for å holde systemet oppdatert.
                 </div>
-              </div>
+              </ds-field>
             </div>
             <div
               data-variant="tinted"
@@ -1248,16 +1228,22 @@ exports[`Dashboard Page 3 1`] = `
               <h2>
                 Personvern
               </h2>
-              <fieldset>
-                <legend data-weight="medium">
+              <fieldset aria-labelledby="<removed>">
+                <legend
+                  data-weight="medium"
+                  id="<removed>"
+                >
                   Hvem kan se profilen din?
                 </legend>
-                <p data-variant="default">
+                <p
+                  data-variant="default"
+                  id="<removed>"
+                >
                   Velg hvem som har tilgang til å se profilen din.
                 </p>
-                <div>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-public"
+                    id="<removed>"
                     type="radio"
                     value="public"
                     checked
@@ -1265,50 +1251,50 @@ exports[`Dashboard Page 3 1`] = `
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-public"
+                    for="<removed>"
                   >
                     Alle
                   </label>
-                </div>
-                <div>
+                </ds-field>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-friends"
+                    id="<removed>"
                     type="radio"
                     value="friends"
                     name="privacy"
-                    aria-describedby="privacy-friends:description:1"
+                    aria-describedby="<removed>"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-friends"
+                    for="<removed>"
                   >
                     Kun venner
                   </label>
                   <div
                     data-field="description"
-                    id="privacy-friends:description:1"
+                    id="<removed>"
                   >
                     Bare personer du har lagt til kan se profilen din.
                   </div>
-                </div>
-                <div>
+                </ds-field>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-private"
+                    id="<removed>"
                     type="radio"
                     value="private"
                     name="privacy"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-private"
+                    for="<removed>"
                   >
                     Kun meg
                   </label>
-                </div>
+                </ds-field>
                 <p
                   data-field="validation"
                   hidden
-                  id="validation-privacy"
+                  id="<removed>"
                 >
                 </p>
               </fieldset>
@@ -1320,75 +1306,75 @@ exports[`Dashboard Page 3 1`] = `
               <h2>
                 Varsler
               </h2>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="sound-notifications"
+                  id="<removed>"
                   type="checkbox"
                   value="sound-notifications"
-                  aria-describedby="sound-notifications:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="sound-notifications"
+                  for="<removed>"
                 >
                   Lydvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="sound-notifications:description:1"
+                  id="<removed>"
                 >
                   Spill av lyd når et varsel mottas.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="popup-notifications"
+                  id="<removed>"
                   type="checkbox"
                   value="popup-notifications"
-                  aria-describedby="popup-notifications:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="popup-notifications"
+                  for="<removed>"
                 >
                   Popup-varsler
                 </label>
                 <div
                   data-field="description"
-                  id="popup-notifications:description:1"
+                  id="<removed>"
                 >
                   Vis popup-varsler på skjermen.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="email-notifications"
+                  id="<removed>"
                   type="checkbox"
                   value="email-notifications"
-                  aria-describedby="email-notifications:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="email-notifications"
+                  for="<removed>"
                 >
                   E-postvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="email-notifications:description:1"
+                  id="<removed>"
                 >
                   Tillat e-postvarsler for viktige oppdateringer.
                 </div>
-              </div>
+              </ds-field>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </ds-tabpanel>
+  </ds-tabs>
 </div>
 `;
 
@@ -1396,11 +1382,11 @@ exports[`Dashboard Page 4 1`] = `
 <header
   data-scroll-direction="up"
   data-top="true"
-  style="--udsc-header-max-width: 80rem;"
+  style="<removed>"
 >
   <div>
     <a href="/">
-      <div style="--uds-logo-padding: 0;">
+      <div style="<removed>">
         <img
           alt="Utdanningsdirektoratet"
           src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
@@ -1482,16 +1468,15 @@ exports[`Dashboard Page 4 1`] = `
         </svg>
       </button>
       <div
-        id="usermenu2"
+        id="<removed>"
         popover="manual"
+        data-placement="bottom-end"
         data-variant="default"
       >
+        <h2>
+          Bytt profil
+        </h2>
         <ul>
-          <li>
-            <h2>
-              Bytt profil
-            </h2>
-          </li>
           <li>
             <button
               data-variant="tertiary"
@@ -1569,66 +1554,53 @@ exports[`Dashboard Page 4 1`] = `
   <h1 data-size="md">
     Schweigaardsgate skole
   </h1>
-  <div>
-    <div
-      role="tablist"
-      tabindex="0"
-    >
-      <button
-        id="tab-_r_18_"
-        aria-selected="false"
+  <ds-tabs>
+    <ds-tablist role="tablist">
+      <ds-tab
+        aria-controls="_r_1e_-overview"
         data-value="overview"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
+        aria-selected="false"
         tabindex="-1"
-        aria-controls="tabpanel-_r_1c_"
+        id="<removed>"
       >
         Oversikt
-      </button>
-      <button
-        id="tab-_r_19_"
-        aria-selected="false"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_1e_-tests"
         data-value="tests"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
+        aria-selected="false"
         tabindex="-1"
-        aria-controls="tabpanel-_r_1d_"
       >
         Prøver
-      </button>
-      <button
-        id="tab-_r_1a_"
-        aria-selected="false"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_1e_-test-answers"
         data-value="test-answers"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
+        aria-selected="false"
         tabindex="-1"
-        aria-controls="tabpanel-_r_1e_"
       >
         Prøvesvar
-      </button>
-      <button
-        id="tab-_r_1b_"
-        aria-selected="true"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_1e_-settings"
         data-value="settings"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
+        aria-selected="true"
         tabindex="0"
-        aria-controls="tabpanel-_r_1f_"
+        id="<removed>"
       >
         Innstillinger
-      </button>
-    </div>
-    <div
-      id="tabpanel-_r_1c_"
+      </ds-tab>
+    </ds-tablist>
+    <ds-tabpanel
+      id="<removed>"
+      aria-hidden="true"
+      aria-labelledby="<removed>"
       role="tabpanel"
-      tabindex="0"
       hidden
-      aria-labelledby="tab-_r_18_"
     >
       <p data-variant="default">
         Her får du en oversikt over all den overordnede informasjonen.
@@ -1659,13 +1631,13 @@ exports[`Dashboard Page 4 1`] = `
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <div>
@@ -1695,12 +1667,12 @@ exports[`Dashboard Page 4 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_1d_"
+    </ds-tabpanel>
+    <ds-tabpanel
+      id="<removed>"
       role="tabpanel"
+      aria-hidden="true"
       hidden
-      aria-labelledby="tab-_r_19_"
     >
       <p data-variant="default">
         Oversikt over prøver for Schweigaardsgate skole.
@@ -1751,13 +1723,13 @@ exports[`Dashboard Page 4 1`] = `
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <div>
@@ -1787,13 +1759,12 @@ exports[`Dashboard Page 4 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_1e_"
+    </ds-tabpanel>
+    <ds-tabpanel
+      id="<removed>"
       role="tabpanel"
-      tabindex="0"
+      aria-hidden="true"
       hidden
-      aria-labelledby="tab-_r_1a_"
     >
       <p data-variant="default">
         Oversikt over prøvesvar for Schweigaardsgate skole.
@@ -1824,13 +1795,13 @@ exports[`Dashboard Page 4 1`] = `
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <div>
@@ -1860,11 +1831,13 @@ exports[`Dashboard Page 4 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_1f_"
+    </ds-tabpanel>
+    <ds-tabpanel
+      id="<removed>"
       role="tabpanel"
-      aria-labelledby="tab-_r_1b_"
+      aria-hidden="false"
+      tabindex="0"
+      aria-labelledby="<removed>"
     >
       <div>
         <div>
@@ -1894,48 +1867,48 @@ exports[`Dashboard Page 4 1`] = `
               <h2>
                 Generelle innstillinger
               </h2>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="dark-mode"
+                  id="<removed>"
                   type="checkbox"
-                  aria-describedby="dark-mode:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="dark-mode"
+                  for="<removed>"
                 >
                   Mørk modus
                 </label>
                 <div
                   data-field="description"
-                  id="dark-mode:description:1"
+                  id="<removed>"
                 >
                   Et mørkere grensesnitt for å spare øynene.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="auto-updates"
+                  id="<removed>"
                   type="checkbox"
                   value="auto-updates"
                   checked
-                  aria-describedby="auto-updates:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="auto-updates"
+                  for="<removed>"
                 >
                   Automatiske oppdateringer
                 </label>
                 <div
                   data-field="description"
-                  id="auto-updates:description:1"
+                  id="<removed>"
                 >
                   Bruk automatisk oppdateringer for å holde systemet oppdatert.
                 </div>
-              </div>
+              </ds-field>
             </div>
             <div
               data-variant="tinted"
@@ -1944,16 +1917,22 @@ exports[`Dashboard Page 4 1`] = `
               <h2>
                 Personvern
               </h2>
-              <fieldset>
-                <legend data-weight="medium">
+              <fieldset aria-labelledby="<removed>">
+                <legend
+                  data-weight="medium"
+                  id="<removed>"
+                >
                   Hvem kan se profilen din?
                 </legend>
-                <p data-variant="default">
+                <p
+                  data-variant="default"
+                  id="<removed>"
+                >
                   Velg hvem som har tilgang til å se profilen din.
                 </p>
-                <div>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-public"
+                    id="<removed>"
                     type="radio"
                     value="public"
                     checked
@@ -1961,50 +1940,50 @@ exports[`Dashboard Page 4 1`] = `
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-public"
+                    for="<removed>"
                   >
                     Alle
                   </label>
-                </div>
-                <div>
+                </ds-field>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-friends"
+                    id="<removed>"
                     type="radio"
                     value="friends"
                     name="privacy"
-                    aria-describedby="privacy-friends:description:1"
+                    aria-describedby="<removed>"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-friends"
+                    for="<removed>"
                   >
                     Kun venner
                   </label>
                   <div
                     data-field="description"
-                    id="privacy-friends:description:1"
+                    id="<removed>"
                   >
                     Bare personer du har lagt til kan se profilen din.
                   </div>
-                </div>
-                <div>
+                </ds-field>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-private"
+                    id="<removed>"
                     type="radio"
                     value="private"
                     name="privacy"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-private"
+                    for="<removed>"
                   >
                     Kun meg
                   </label>
-                </div>
+                </ds-field>
                 <p
                   data-field="validation"
                   hidden
-                  id="validation-privacy"
+                  id="<removed>"
                 >
                 </p>
               </fieldset>
@@ -2016,75 +1995,75 @@ exports[`Dashboard Page 4 1`] = `
               <h2>
                 Varsler
               </h2>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="sound-notifications"
+                  id="<removed>"
                   type="checkbox"
                   value="sound-notifications"
-                  aria-describedby="sound-notifications:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="sound-notifications"
+                  for="<removed>"
                 >
                   Lydvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="sound-notifications:description:1"
+                  id="<removed>"
                 >
                   Spill av lyd når et varsel mottas.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="popup-notifications"
+                  id="<removed>"
                   type="checkbox"
                   value="popup-notifications"
-                  aria-describedby="popup-notifications:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="popup-notifications"
+                  for="<removed>"
                 >
                   Popup-varsler
                 </label>
                 <div
                   data-field="description"
-                  id="popup-notifications:description:1"
+                  id="<removed>"
                 >
                   Vis popup-varsler på skjermen.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="email-notifications"
+                  id="<removed>"
                   type="checkbox"
                   value="email-notifications"
-                  aria-describedby="email-notifications:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="email-notifications"
+                  for="<removed>"
                 >
                   E-postvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="email-notifications:description:1"
+                  id="<removed>"
                 >
                   Tillat e-postvarsler for viktige oppdateringer.
                 </div>
-              </div>
+              </ds-field>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </ds-tabpanel>
+  </ds-tabs>
 </div>
 `;
 
@@ -2092,11 +2071,11 @@ exports[`Dashboard Story 1`] = `
 <header
   data-scroll-direction="up"
   data-top="true"
-  style="--udsc-header-max-width: 80rem;"
+  style="<removed>"
 >
   <div>
     <a href="/">
-      <div style="--uds-logo-padding: 0;">
+      <div style="<removed>">
         <img
           alt="Utdanningsdirektoratet"
           src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
@@ -2178,16 +2157,15 @@ exports[`Dashboard Story 1`] = `
         </svg>
       </button>
       <div
-        id="usermenu2"
+        id="<removed>"
         popover="manual"
+        data-placement="bottom-end"
         data-variant="default"
       >
+        <h2>
+          Bytt profil
+        </h2>
         <ul>
-          <li>
-            <h2>
-              Bytt profil
-            </h2>
-          </li>
           <li>
             <button
               data-variant="tertiary"
@@ -2265,65 +2243,52 @@ exports[`Dashboard Story 1`] = `
   <h1 data-size="md">
     Schweigaardsgate skole
   </h1>
-  <div>
-    <div
-      role="tablist"
-      tabindex="0"
-    >
-      <button
-        id="tab-_r_4_"
-        aria-selected="true"
+  <ds-tabs>
+    <ds-tablist role="tablist">
+      <ds-tab
+        aria-controls="_r_4_-overview"
         data-value="overview"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
+        aria-selected="true"
         tabindex="0"
-        aria-controls="tabpanel-_r_8_"
+        id="<removed>"
       >
         Oversikt
-      </button>
-      <button
-        id="tab-_r_5_"
-        aria-selected="false"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_4_-tests"
         data-value="tests"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
+        aria-selected="false"
         tabindex="-1"
-        aria-controls="tabpanel-_r_9_"
       >
         Prøver
-      </button>
-      <button
-        id="tab-_r_6_"
-        aria-selected="false"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_4_-test-answers"
         data-value="test-answers"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
+        aria-selected="false"
         tabindex="-1"
-        aria-controls="tabpanel-_r_a_"
       >
         Prøvesvar
-      </button>
-      <button
-        id="tab-_r_7_"
-        aria-selected="false"
+      </ds-tab>
+      <ds-tab
+        aria-controls="_r_4_-settings"
         data-value="settings"
         role="tab"
-        type="button"
-        data-roving-tabindex-item="true"
+        aria-selected="false"
         tabindex="-1"
-        aria-controls="tabpanel-_r_b_"
       >
         Innstillinger
-      </button>
-    </div>
-    <div
-      id="tabpanel-_r_8_"
-      role="tabpanel"
+      </ds-tab>
+    </ds-tablist>
+    <ds-tabpanel
+      id="<removed>"
+      aria-hidden="false"
       tabindex="0"
-      aria-labelledby="tab-_r_4_"
+      aria-labelledby="<removed>"
+      role="tabpanel"
     >
       <p data-variant="default">
         Her får du en oversikt over all den overordnede informasjonen.
@@ -2354,13 +2319,13 @@ exports[`Dashboard Story 1`] = `
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <div>
@@ -2390,12 +2355,12 @@ exports[`Dashboard Story 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_9_"
+    </ds-tabpanel>
+    <ds-tabpanel
+      id="<removed>"
       role="tabpanel"
+      aria-hidden="true"
       hidden
-      aria-labelledby="tab-_r_5_"
     >
       <p data-variant="default">
         Oversikt over prøver for Schweigaardsgate skole.
@@ -2446,13 +2411,13 @@ exports[`Dashboard Story 1`] = `
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <div>
@@ -2482,13 +2447,12 @@ exports[`Dashboard Story 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_a_"
+    </ds-tabpanel>
+    <ds-tabpanel
+      id="<removed>"
       role="tabpanel"
-      tabindex="0"
+      aria-hidden="true"
       hidden
-      aria-labelledby="tab-_r_6_"
     >
       <p data-variant="default">
         Oversikt over prøvesvar for Schweigaardsgate skole.
@@ -2519,13 +2483,13 @@ exports[`Dashboard Story 1`] = `
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <span
             aria-hidden="true"
             data-variant="rectangle"
-            style="width: 15.625rem;"
+            style="<removed>"
           >
           </span>
           <div>
@@ -2555,12 +2519,12 @@ exports[`Dashboard Story 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="tabpanel-_r_b_"
+    </ds-tabpanel>
+    <ds-tabpanel
+      id="<removed>"
       role="tabpanel"
+      aria-hidden="true"
       hidden
-      aria-labelledby="tab-_r_7_"
     >
       <div>
         <div>
@@ -2590,48 +2554,48 @@ exports[`Dashboard Story 1`] = `
               <h2>
                 Generelle innstillinger
               </h2>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="dark-mode"
+                  id="<removed>"
                   type="checkbox"
-                  aria-describedby="dark-mode:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="dark-mode"
+                  for="<removed>"
                 >
                   Mørk modus
                 </label>
                 <div
                   data-field="description"
-                  id="dark-mode:description:1"
+                  id="<removed>"
                 >
                   Et mørkere grensesnitt for å spare øynene.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="auto-updates"
+                  id="<removed>"
                   type="checkbox"
                   value="auto-updates"
                   checked
-                  aria-describedby="auto-updates:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="auto-updates"
+                  for="<removed>"
                 >
                   Automatiske oppdateringer
                 </label>
                 <div
                   data-field="description"
-                  id="auto-updates:description:1"
+                  id="<removed>"
                 >
                   Bruk automatisk oppdateringer for å holde systemet oppdatert.
                 </div>
-              </div>
+              </ds-field>
             </div>
             <div
               data-variant="tinted"
@@ -2640,16 +2604,22 @@ exports[`Dashboard Story 1`] = `
               <h2>
                 Personvern
               </h2>
-              <fieldset>
-                <legend data-weight="medium">
+              <fieldset aria-labelledby="<removed>">
+                <legend
+                  data-weight="medium"
+                  id="<removed>"
+                >
                   Hvem kan se profilen din?
                 </legend>
-                <p data-variant="default">
+                <p
+                  data-variant="default"
+                  id="<removed>"
+                >
                   Velg hvem som har tilgang til å se profilen din.
                 </p>
-                <div>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-public"
+                    id="<removed>"
                     type="radio"
                     value="public"
                     checked
@@ -2657,50 +2627,50 @@ exports[`Dashboard Story 1`] = `
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-public"
+                    for="<removed>"
                   >
                     Alle
                   </label>
-                </div>
-                <div>
+                </ds-field>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-friends"
+                    id="<removed>"
                     type="radio"
                     value="friends"
                     name="privacy"
-                    aria-describedby="privacy-friends:description:1"
+                    aria-describedby="<removed>"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-friends"
+                    for="<removed>"
                   >
                     Kun venner
                   </label>
                   <div
                     data-field="description"
-                    id="privacy-friends:description:1"
+                    id="<removed>"
                   >
                     Bare personer du har lagt til kan se profilen din.
                   </div>
-                </div>
-                <div>
+                </ds-field>
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
-                    id="privacy-private"
+                    id="<removed>"
                     type="radio"
                     value="private"
                     name="privacy"
                   >
                   <label
                     data-weight="regular"
-                    for="privacy-private"
+                    for="<removed>"
                   >
                     Kun meg
                   </label>
-                </div>
+                </ds-field>
                 <p
                   data-field="validation"
                   hidden
-                  id="validation-privacy"
+                  id="<removed>"
                 >
                 </p>
               </fieldset>
@@ -2712,74 +2682,74 @@ exports[`Dashboard Story 1`] = `
               <h2>
                 Varsler
               </h2>
-              <div>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="sound-notifications"
+                  id="<removed>"
                   type="checkbox"
                   value="sound-notifications"
-                  aria-describedby="sound-notifications:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="sound-notifications"
+                  for="<removed>"
                 >
                   Lydvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="sound-notifications:description:1"
+                  id="<removed>"
                 >
                   Spill av lyd når et varsel mottas.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="popup-notifications"
+                  id="<removed>"
                   type="checkbox"
                   value="popup-notifications"
-                  aria-describedby="popup-notifications:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="popup-notifications"
+                  for="<removed>"
                 >
                   Popup-varsler
                 </label>
                 <div
                   data-field="description"
-                  id="popup-notifications:description:1"
+                  id="<removed>"
                 >
                   Vis popup-varsler på skjermen.
                 </div>
-              </div>
-              <div>
+              </ds-field>
+              <ds-field data-clickdelegatefor="<removed>">
                 <input
                   role="switch"
-                  id="email-notifications"
+                  id="<removed>"
                   type="checkbox"
                   value="email-notifications"
-                  aria-describedby="email-notifications:description:1"
+                  aria-describedby="<removed>"
                 >
                 <label
                   data-weight="regular"
-                  for="email-notifications"
+                  for="<removed>"
                 >
                   E-postvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="email-notifications:description:1"
+                  id="<removed>"
                 >
                   Tillat e-postvarsler for viktige oppdateringer.
                 </div>
-              </div>
+              </ds-field>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </ds-tabpanel>
+  </ds-tabs>
 </div>
 `;

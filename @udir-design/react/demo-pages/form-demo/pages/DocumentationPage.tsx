@@ -69,7 +69,6 @@ export const DocumentationPage = ({
         isDragActive={isDragActive}
         isDragGlobal={isDragGlobal}
         error={errors.documentation?.message}
-        aria-invalid={!!errors.documentation}
       />
       {uploadedFiles.length > 0 && (
         <>

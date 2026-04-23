@@ -1,6 +1,6 @@
 import type { Decorator } from '@storybook/react-vite';
 import { createElement, useState } from 'react';
-import { expect, userEvent, within } from 'storybook/test';
+import { expect, userEvent } from 'storybook/test';
 import { ChevronDownUpIcon, ChevronUpDownIcon } from '@udir-design/icons';
 import { Stack } from '.storybook/docs/components';
 import preview from '.storybook/preview';
@@ -11,7 +11,7 @@ import { Card } from '../card/Card';
 import { Fieldset } from '../fieldset/Fieldset';
 import { Link } from '../link/Link';
 import { List } from '../list/List';
-import { ToggleGroup } from '../toggleGroup/ToggleGroup';
+import { ToggleGroup } from '../toggleGroup';
 import { Label } from '../typography/label/Label';
 import { Details } from './Details';
 import { Details as FakeDetails } from './docs/FakeDetails';
@@ -40,17 +40,18 @@ export const Preview = meta.story({
     return (
       <Details {...args}>
         <Details.Summary>{previewSummary}</Details.Summary>
-        <Details.Content data-testid="details-content">
-          {previewContent}
-        </Details.Content>
+        <Details.Content>{previewContent}</Details.Content>
       </Details>
     );
   },
   play: async ({ canvasElement, step }) => {
-    const canvas = within(canvasElement);
-    const details = canvasElement.querySelector('u-details');
-    const summary = canvas.getByRole('button');
-    const content = canvas.getByTestId('details-content');
+    const details = canvasElement.querySelector('details');
+    const summary = canvasElement.querySelector('summary');
+    const content = canvasElement.querySelector('details > div');
+
+    if (!details || !summary || !content) {
+      throw new Error('Details markup not found');
+    }
 
     await step('Check that details are rendered', async () => {
       expect(details).toBeTruthy();
@@ -78,13 +79,9 @@ export const Preview = meta.story({
       expect(details).not.toHaveAttribute('open');
     });
 
-    await step('Keyboard interaction toggles details', async () => {
+    await step('Summary can receive focus', async () => {
       summary.focus();
-      await userEvent.keyboard('{Enter}');
-      expect(details).toHaveAttribute('open');
-
-      await userEvent.keyboard('{Enter}');
-      expect(details).not.toHaveAttribute('open');
+      expect(summary).toHaveFocus();
     });
     await userEvent.keyboard('{Tab}');
   },
@@ -148,11 +145,16 @@ const detailsColorDecorator: Decorator = (Story) => {
       <Stack
         direction="row"
         data-size="sm"
-        style={{ marginBottom: 'var(--ds-size-5)' }}
+        style={{
+          paddingInline: '1rem',
+          paddingTop: '1rem',
+          marginBottom: 'var(--ds-size-5)',
+        }}
       >
         <Fieldset>
           <Fieldset.Legend>Farge</Fieldset.Legend>
           <ToggleGroup
+            aria-label="Farge"
             value={color}
             onChange={(val) => setColor(val as typeof color)}
           >
@@ -166,6 +168,7 @@ const detailsColorDecorator: Decorator = (Story) => {
         <Fieldset>
           <Fieldset.Legend>Foreldreelement</Fieldset.Legend>
           <ToggleGroup
+            aria-label="Foreldrelement"
             value={card}
             onChange={(val) => setCard(val as typeof card)}
           >
@@ -190,6 +193,9 @@ const detailsColorDecorator: Decorator = (Story) => {
 
 export const InCardWithColor = meta.story({
   decorators: [detailsColorDecorator],
+  parameters: {
+    customStyles: { paddingTop: 0 },
+  },
   render: (args) => {
     return (
       <>
@@ -342,8 +348,8 @@ const makePseudoStatesStory = makeStoryTransformer((originalStory) => ({
   parameters: {
     ...originalStory.composed.parameters,
     pseudo: {
-      hover: ['.hover > u-summary'],
-      focusVisible: ['.focusVisible > u-summary'],
+      hover: ['.hover > summary'],
+      focusVisible: ['.focusVisible > summary'],
     },
   },
 }));

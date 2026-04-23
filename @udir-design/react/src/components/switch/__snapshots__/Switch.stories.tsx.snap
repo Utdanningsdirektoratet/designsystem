@@ -1,288 +1,306 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Checked 1`] = `
-<div>
+<ds-field data-clickdelegatefor="<removed>">
   <input
     role="switch"
-    id="components-switch--checked"
     type="checkbox"
     checked
+    id="<removed>"
   >
   <label
     data-weight="regular"
-    for="components-switch--checked"
+    for="<removed>"
   >
     En bryter
   </label>
-</div>
+</ds-field>
 `;
 
 exports[`Controlled 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
     <h2>
       Innstillinger
     </h2>
   </legend>
-  <div>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
       role="switch"
-      id="components-switch--controlled"
+      id="<removed>"
       type="checkbox"
       checked
     >
     <label
       data-weight="regular"
-      for="components-switch--controlled"
+      for="<removed>"
     >
       Varsler
     </label>
-  </div>
+  </ds-field>
   <p data-variant="default">
     Velg hvilke typer varsler du ønsker å motta.
   </p>
-  <div>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-switch--controlledlydvarsler"
       type="checkbox"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="components-switch--controlledlydvarsler"
+      for="<removed>"
     >
       Lydvarsler
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-switch--controlledepostvarsler"
       type="checkbox"
       checked
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="components-switch--controlledepostvarsler"
+      for="<removed>"
     >
       Epostvarsler
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-switch--controlledpopupvarsler"
       type="checkbox"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="components-switch--controlledpopupvarsler"
+      for="<removed>"
     >
       Popup-varsler
     </label>
-  </div>
+  </ds-field>
 </fieldset>
 `;
 
 exports[`Description 1`] = `
-<div>
+<ds-field data-clickdelegatefor="<removed>">
   <input
     role="switch"
-    id="components-switch--description"
+    id="<removed>"
     type="checkbox"
     checked
-    aria-describedby="components-switch--description:description:1"
+    aria-describedby="<removed>"
   >
   <label
     data-weight="regular"
-    for="components-switch--description"
+    for="<removed>"
   >
     Åpen prøve
   </label>
   <div
     data-field="description"
-    id="components-switch--description:description:1"
+    id="<removed>"
   >
     Prøven er åpen for alle som ønsker å delta.
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`Disabled 1`] = `
-<div>
+<ds-field data-clickdelegatefor="<removed>">
   <input
     role="switch"
     disabled
-    id="disabled-switch"
+    id="<removed>"
     type="checkbox"
   >
   <label
     data-weight="regular"
-    for="disabled-switch"
+    for="<removed>"
   >
     Disabled switch
   </label>
-</div>
+</ds-field>
 `;
 
 exports[`Focused 1`] = `
-<div>
+<ds-field data-clickdelegatefor="<removed>">
   <input
     role="switch"
-    id="components-switch--focused"
+    id="<removed>"
     type="checkbox"
   >
   <label
     data-weight="regular"
-    for="components-switch--focused"
+    for="<removed>"
   >
     En bryter
   </label>
-</div>
+</ds-field>
 `;
 
 exports[`Group 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
     Varsler
   </legend>
-  <div>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
       role="switch"
-      id="components-switch--grouplydvarsler"
       type="checkbox"
       value="lydvarsler"
       checked
-      aria-describedby="components-switch--grouplydvarsler:description:1"
+      id="<removed>"
+      aria-describedby="<removed>"
     >
     <label
       data-weight="regular"
-      for="components-switch--grouplydvarsler"
+      for="<removed>"
     >
       Lydvarsler
     </label>
     <div
       data-field="description"
-      id="components-switch--grouplydvarsler:description:1"
+      id="<removed>"
     >
       Spill av lyd når et varsel mottas.
     </div>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
       role="switch"
-      id="components-switch--grouppopup-varsler"
       type="checkbox"
       value="popup-varsler"
-      aria-describedby="components-switch--grouppopup-varsler:description:1"
+      id="<removed>"
+      aria-describedby="<removed>"
     >
     <label
       data-weight="regular"
-      for="components-switch--grouppopup-varsler"
+      for="<removed>"
     >
       Popup-varsler
     </label>
     <div
       data-field="description"
-      id="components-switch--grouppopup-varsler:description:1"
+      id="<removed>"
     >
       Vis popup-varsler på skjermen.
     </div>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
       role="switch"
-      id="components-switch--groupemail-varsler"
       type="checkbox"
       value="email-varsler"
-      aria-describedby="components-switch--groupemail-varsler:description:1"
+      id="<removed>"
+      aria-describedby="<removed>"
     >
     <label
       data-weight="regular"
-      for="components-switch--groupemail-varsler"
+      for="<removed>"
     >
       E-postvarsler
     </label>
     <div
       data-field="description"
-      id="components-switch--groupemail-varsler:description:1"
+      id="<removed>"
     >
       Tillat e-postvarsler for viktige oppdateringer.
     </div>
-  </div>
+  </ds-field>
 </fieldset>
 `;
 
 exports[`Group End 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
     <h2>
       Innstillinger
     </h2>
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="<removed>"
+  >
     Innstillinger som gjelder hele systemet.
   </p>
-  <div data-position="end">
+  <ds-field
+    data-position="end"
+    data-clickdelegatefor="<removed>"
+  >
     <input
       role="switch"
-      id="components-switch--group-endmork-modus"
       type="checkbox"
       value="mork-modus"
       checked
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="components-switch--group-endmork-modus"
+      for="<removed>"
     >
       Mørk modus
     </label>
-  </div>
-  <div data-position="end">
+  </ds-field>
+  <ds-field
+    data-position="end"
+    data-clickdelegatefor="<removed>"
+  >
     <input
       role="switch"
-      id="components-switch--group-endautomatiske-oppdateringer"
       type="checkbox"
       value="automatiske-oppdateringer"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="components-switch--group-endautomatiske-oppdateringer"
+      for="<removed>"
     >
       Automatiske oppdateringer
     </label>
-  </div>
+  </ds-field>
 </fieldset>
 `;
 
 exports[`Preview 1`] = `
-<div>
+<ds-field data-clickdelegatefor="<removed>">
   <input
     role="switch"
-    id="components-switch--preview"
     type="checkbox"
+    id="<removed>"
   >
   <label
     data-weight="regular"
-    for="components-switch--preview"
+    for="<removed>"
   >
     En bryter
   </label>
-</div>
+</ds-field>
 `;
 
 exports[`Read Only 1`] = `
-<div>
+<ds-field data-clickdelegatefor="<removed>">
   <input
     role="switch"
     readonly
-    id="readonly-switch"
+    id="<removed>"
     type="checkbox"
   >
   <label
     data-weight="regular"
-    for="readonly-switch"
+    for="<removed>"
   >
     Read-only switch
   </label>
-</div>
+</ds-field>
 `;
 
 exports[`Switch In Color Context 1`] = `
@@ -290,26 +308,26 @@ exports[`Switch In Color Context 1`] = `
   data-variant="tinted"
   data-color="accent"
 >
-  <div>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
       role="switch"
-      id="switch-in-color-context"
+      id="<removed>"
       type="checkbox"
       checked
-      aria-describedby="switch-in-color-context:description:1"
+      aria-describedby="<removed>"
     >
     <label
       data-weight="regular"
-      for="switch-in-color-context"
+      for="<removed>"
     >
       Radio
     </label>
     <div
       data-field="description"
-      id="switch-in-color-context:description:1"
+      id="<removed>"
     >
       Description
     </div>
-  </div>
+  </ds-field>
 </div>
 `;

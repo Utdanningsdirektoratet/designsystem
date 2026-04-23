@@ -19,7 +19,7 @@ const handleScrollHash = (event: MouseEvent) => {
 
 export const withScrollHashBehavior: Decorator = (Story, c) => {
   // Add an event listener to the canvasElement instead of adding another wrapper div.
-  // This way, we don't break the customStylesDecorator or rely on the order of decorators
+  // This way, we don't break the CustomStylesDecorator or rely on the order of decorators
   c.canvasElement.addEventListener('click', handleScrollHash);
   return <Story />;
 };

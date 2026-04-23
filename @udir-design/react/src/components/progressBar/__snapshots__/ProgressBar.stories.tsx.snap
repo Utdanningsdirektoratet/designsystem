@@ -1,10 +1,16 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Form Example 1`] = `
-<div style="display: flex; flex-direction: column; gap: var(--ds-size-6);">
-  <fieldset id="rankings">
-    <div style="display: flex; width: 100%; justify-content: space-between; align-items: flex-end; margin-block-end: var(--ds-size-4);">
-      <legend data-weight="medium">
+<div style="<removed>">
+  <fieldset
+    id="<removed>"
+    aria-labelledby="<removed>"
+  >
+    <div style="<removed>">
+      <legend
+        data-weight="medium"
+        id="<removed>"
+      >
         <h4>
           Skjema
         </h4>
@@ -12,7 +18,7 @@ exports[`Form Example 1`] = `
       <div
         data-color="accent"
         tabindex="-1"
-        style="width: 30%;"
+        style="<removed>"
       >
         <span>
           Skjemafremgang
@@ -22,7 +28,7 @@ exports[`Form Example 1`] = `
         </span>
         <u-progress
           value="1"
-          id=":u-progress3"
+          id="<removed>"
           aria-busy="false"
           aria-label="..."
           aria-valuemax="100"
@@ -31,7 +37,7 @@ exports[`Form Example 1`] = `
           role="progressbar"
           max="7"
           aria-hidden="true"
-          style="--percentage: 14%;"
+          style="<removed>"
         >
           <template shadowrootmode="open">
             <slot>
@@ -70,37 +76,37 @@ exports[`Form Example 1`] = `
             Første påstand
           </td>
           <td>
-            <div>
+            <ds-field data-clickdelegatefor="<removed>">
               <input
-                id="rankings.Første påstand-Uenig"
+                id="<removed>"
                 aria-label="Uenig i påstand Første påstand"
                 type="radio"
                 value="Uenig"
                 name="rankings.Første påstand"
               >
-            </div>
+            </ds-field>
           </td>
           <td>
-            <div>
+            <ds-field data-clickdelegatefor="<removed>">
               <input
-                id="rankings.Første påstand-Nøytral"
+                id="<removed>"
                 aria-label="Nøytral i påstand Første påstand"
                 type="radio"
                 value="Nøytral"
                 name="rankings.Første påstand"
               >
-            </div>
+            </ds-field>
           </td>
           <td>
-            <div>
+            <ds-field data-clickdelegatefor="<removed>">
               <input
-                id="rankings.Første påstand-Enig"
+                id="<removed>"
                 aria-label="Enig i påstand Første påstand"
                 type="radio"
                 value="Enig"
                 name="rankings.Første påstand"
               >
-            </div>
+            </ds-field>
           </td>
         </tr>
         <tr>
@@ -108,37 +114,37 @@ exports[`Form Example 1`] = `
             Andre påstand
           </td>
           <td>
-            <div>
+            <ds-field data-clickdelegatefor="<removed>">
               <input
-                id="rankings.Andre påstand-Uenig"
+                id="<removed>"
                 aria-label="Uenig i påstand Andre påstand"
                 type="radio"
                 value="Uenig"
                 name="rankings.Andre påstand"
               >
-            </div>
+            </ds-field>
           </td>
           <td>
-            <div>
+            <ds-field data-clickdelegatefor="<removed>">
               <input
-                id="rankings.Andre påstand-Nøytral"
+                id="<removed>"
                 aria-label="Nøytral i påstand Andre påstand"
                 type="radio"
                 value="Nøytral"
                 name="rankings.Andre påstand"
               >
-            </div>
+            </ds-field>
           </td>
           <td>
-            <div>
+            <ds-field data-clickdelegatefor="<removed>">
               <input
-                id="rankings.Andre påstand-Enig"
+                id="<removed>"
                 aria-label="Enig i påstand Andre påstand"
                 type="radio"
                 value="Enig"
                 name="rankings.Andre påstand"
               >
-            </div>
+            </ds-field>
           </td>
         </tr>
         <tr>
@@ -146,43 +152,43 @@ exports[`Form Example 1`] = `
             Tredje påstand
           </td>
           <td>
-            <div>
+            <ds-field data-clickdelegatefor="<removed>">
               <input
-                id="rankings.Tredje påstand-Uenig"
+                id="<removed>"
                 aria-label="Uenig i påstand Tredje påstand"
                 type="radio"
                 value="Uenig"
                 name="rankings.Tredje påstand"
               >
-            </div>
+            </ds-field>
           </td>
           <td>
-            <div>
+            <ds-field data-clickdelegatefor="<removed>">
               <input
-                id="rankings.Tredje påstand-Nøytral"
+                id="<removed>"
                 aria-label="Nøytral i påstand Tredje påstand"
                 type="radio"
                 value="Nøytral"
                 name="rankings.Tredje påstand"
               >
-            </div>
+            </ds-field>
           </td>
           <td>
-            <div>
+            <ds-field data-clickdelegatefor="<removed>">
               <input
-                id="rankings.Tredje påstand-Enig"
+                id="<removed>"
                 aria-label="Enig i påstand Tredje påstand"
                 type="radio"
                 value="Enig"
                 name="rankings.Tredje påstand"
               >
-            </div>
+            </ds-field>
           </td>
         </tr>
       </tbody>
     </table>
   </fieldset>
-  <div style="display: flex; justify-content: flex-start; gap: var(--ds-size-4);">
+  <div style="<removed>">
     <button
       data-variant="secondary"
       type="button"
@@ -216,7 +222,7 @@ exports[`Percentage 1`] = `
   </span>
   <u-progress
     value="2"
-    id=":u-progress2"
+    id="<removed>"
     aria-busy="false"
     aria-label="..."
     aria-valuemax="100"
@@ -225,7 +231,7 @@ exports[`Percentage 1`] = `
     role="progressbar"
     max="10"
     aria-hidden="true"
-    style="--percentage: 20%;"
+    style="<removed>"
   >
     <template shadowrootmode="open">
       <slot>
@@ -249,7 +255,7 @@ exports[`Preview 1`] = `
   </span>
   <u-progress
     value="3"
-    id=":u-progress1"
+    id="<removed>"
     aria-busy="false"
     aria-label="..."
     aria-valuemax="100"
@@ -258,7 +264,7 @@ exports[`Preview 1`] = `
     role="progressbar"
     max="10"
     aria-hidden="true"
-    style="--percentage: 30%;"
+    style="<removed>"
   >
     <template shadowrootmode="open">
       <slot>

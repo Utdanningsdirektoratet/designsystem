@@ -1,19 +1,19 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Example Drop Zone 1`] = `
-<div
+<ds-field
   role="presentation"
   tabindex="0"
 >
   <label
     data-weight="medium"
-    for="dokumentasjon"
+    for="<removed>"
   >
     Last opp dokumentasjon
   </label>
   <div
     data-field="description"
-    id="dokumentasjon:description:1"
+    id="<removed>"
   >
     Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
   </div>
@@ -49,12 +49,12 @@ exports[`Example Drop Zone 1`] = `
     accept="application/pdf"
     multiple
     tabindex="-1"
-    id="dokumentasjon"
+    id="<removed>"
     type="file"
-    aria-describedby="dokumentasjon:description:1"
-    style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+    aria-describedby="<removed>"
+    style="<removed>"
   >
-</div>
+</ds-field>
 <h3 data-size="2xs">
   Vedlegg (1):
 </h3>
@@ -103,9 +103,10 @@ exports[`Example Drop Zone 1`] = `
       data-icon="true"
       data-variant="tertiary"
       type="button"
-      popovertarget="_r_5_"
-      popovertargetaction="show"
-      aria-labelledby="_r_5_"
+      data-tooltip="Fjern filen"
+      data-placement="top"
+      data-autoplacement="true"
+      aria-label="Fjern filen"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -126,14 +127,6 @@ exports[`Example Drop Zone 1`] = `
         </path>
       </svg>
     </button>
-    <span
-      role="tooltip"
-      id="_r_5_"
-      popover="manual"
-      style="opacity: 0;"
-    >
-      Fjern filen
-    </span>
   </div>
   <div
     aria-relevant="additions removals"
@@ -147,19 +140,19 @@ exports[`Example Dropzone With Explicit Size 1`] = `
 <style>
   .uds-file-upload { height: 600px; width: 100%; }
 </style>
-<div
+<ds-field
   role="presentation"
   tabindex="0"
 >
   <label
     data-weight="medium"
-    for="dokumentasjon"
+    for="<removed>"
   >
     Last opp dokumentasjon
   </label>
   <div
     data-field="description"
-    id="dokumentasjon:description:1"
+    id="<removed>"
   >
     Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
   </div>
@@ -195,12 +188,12 @@ exports[`Example Dropzone With Explicit Size 1`] = `
     accept="application/pdf"
     multiple
     tabindex="-1"
-    id="dokumentasjon"
+    id="<removed>"
     type="file"
-    aria-describedby="dokumentasjon:description:1"
-    style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+    aria-describedby="<removed>"
+    style="<removed>"
   >
-</div>
+</ds-field>
 <h3 data-size="2xs">
   Vedlegg (1):
 </h3>
@@ -249,9 +242,10 @@ exports[`Example Dropzone With Explicit Size 1`] = `
       data-icon="true"
       data-variant="tertiary"
       type="button"
-      popovertarget="_r_9_"
-      popovertargetaction="show"
-      aria-labelledby="_r_9_"
+      data-tooltip="Fjern filen"
+      data-placement="top"
+      data-autoplacement="true"
+      aria-label="Fjern filen"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -272,14 +266,6 @@ exports[`Example Dropzone With Explicit Size 1`] = `
         </path>
       </svg>
     </button>
-    <span
-      role="tooltip"
-      id="_r_9_"
-      popover="manual"
-      style="opacity: 0;"
-    >
-      Fjern filen
-    </span>
   </div>
   <div
     aria-relevant="additions removals"
@@ -290,7 +276,7 @@ exports[`Example Dropzone With Explicit Size 1`] = `
 `;
 
 exports[`Example Items 1`] = `
-<div style="display: flex; flex-direction: column; gap: var(--ds-size-3);">
+<div style="<removed>">
   <h3 data-size="2xs">
     Vedlegg (4):
   </h3>
@@ -339,9 +325,10 @@ exports[`Example Items 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_q_"
-        popovertargetaction="show"
-        aria-labelledby="_r_q_"
+        data-tooltip="Fjern filen"
+        data-placement="top"
+        data-autoplacement="true"
+        aria-label="Fjern filen"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -362,14 +349,6 @@ exports[`Example Items 1`] = `
           </path>
         </svg>
       </button>
-      <span
-        role="tooltip"
-        id="_r_q_"
-        popover="manual"
-        style="opacity: 0;"
-      >
-        Fjern filen
-      </span>
     </div>
     <div
       aria-relevant="additions removals"
@@ -422,9 +401,10 @@ exports[`Example Items 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_t_"
-        popovertargetaction="show"
-        aria-labelledby="_r_t_"
+        data-tooltip="Fjern filen"
+        data-placement="top"
+        data-autoplacement="true"
+        aria-label="Fjern filen"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -445,14 +425,6 @@ exports[`Example Items 1`] = `
           </path>
         </svg>
       </button>
-      <span
-        role="tooltip"
-        id="_r_t_"
-        popover="manual"
-        style="opacity: 0;"
-      >
-        Fjern filen
-      </span>
     </div>
     <div
       aria-relevant="additions removals"
@@ -552,7 +524,7 @@ exports[`Example Items 1`] = `
   </div>
   <h3
     data-size="2xs"
-    style="margin-block-start: var(--ds-size-3);"
+    style="<removed>"
   >
     Vedlegg med feil:
   </h3>
@@ -596,9 +568,10 @@ exports[`Example Items 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_11_"
-        popovertargetaction="show"
-        aria-labelledby="_r_11_"
+        data-tooltip="Fjern filen"
+        data-placement="top"
+        data-autoplacement="true"
+        aria-label="Fjern filen"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -619,14 +592,6 @@ exports[`Example Items 1`] = `
           </path>
         </svg>
       </button>
-      <span
-        role="tooltip"
-        id="_r_11_"
-        popover="manual"
-        style="opacity: 0;"
-      >
-        Fjern filen
-      </span>
     </div>
     <div
       aria-relevant="additions removals"
@@ -659,17 +624,17 @@ exports[`Example Items 1`] = `
 `;
 
 exports[`Example Trigger 1`] = `
-<div style="display: flex; flex-direction: column; gap: var(--ds-size-3);">
-  <div>
+<div style="<removed>">
+  <ds-field>
     <label
       data-weight="medium"
-      for="profilbilde"
+      for="<removed>"
     >
       Last opp profilbilde
     </label>
     <div
       data-field="description"
-      id="profilbilde:description:1"
+      id="<removed>"
     >
       Du kan laste opp filer i PNG- og JPEG-format.
     </div>
@@ -699,11 +664,11 @@ exports[`Example Trigger 1`] = `
     </button>
     <input
       accept="image/png, image/jpeg"
-      id="profilbilde"
+      id="<removed>"
       type="file"
-      aria-describedby="profilbilde:description:1"
+      aria-describedby="<removed>"
     >
-  </div>
+  </ds-field>
   <h3 data-size="2xs">
     Vedlegg (1):
   </h3>
@@ -747,9 +712,10 @@ exports[`Example Trigger 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_n_"
-        popovertargetaction="show"
-        aria-labelledby="_r_n_"
+        data-tooltip="Fjern filen"
+        data-placement="top"
+        data-autoplacement="true"
+        aria-label="Fjern filen"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -770,14 +736,6 @@ exports[`Example Trigger 1`] = `
           </path>
         </svg>
       </button>
-      <span
-        role="tooltip"
-        id="_r_n_"
-        popover="manual"
-        style="opacity: 0;"
-      >
-        Fjern filen
-      </span>
     </div>
     <div
       aria-relevant="additions removals"
@@ -789,17 +747,17 @@ exports[`Example Trigger 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<div style="display: flex; gap: var(--ds-size-18); justify-content: center;">
-  <div data-size="md">
+<div style="<removed>">
+  <ds-field data-size="md">
     <label
       data-weight="medium"
-      for="trigger"
+      for="<removed>"
     >
       Label
     </label>
     <div
       data-field="description"
-      id="trigger:description:1"
+      id="<removed>"
     >
       Beskrivelse
     </div>
@@ -828,25 +786,25 @@ exports[`Preview 1`] = `
       </svg>
     </button>
     <input
-      id="trigger"
+      id="<removed>"
       type="file"
-      aria-describedby="trigger:description:1"
+      aria-describedby="<removed>"
     >
-  </div>
-  <div
+  </ds-field>
+  <ds-field
     data-size="md"
     role="presentation"
     tabindex="0"
   >
     <label
       data-weight="medium"
-      for="dropzone"
+      for="<removed>"
     >
       Label
     </label>
     <div
       data-field="description"
-      id="dropzone:description:1"
+      id="<removed>"
     >
       Beskrivelse
     </div>
@@ -881,27 +839,27 @@ exports[`Preview 1`] = `
     <input
       accept="application/pdf"
       tabindex="-1"
-      id="dropzone"
+      id="<removed>"
       type="file"
-      aria-describedby="dropzone:description:1"
-      style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      aria-describedby="<removed>"
+      style="<removed>"
     >
-  </div>
+  </ds-field>
 </div>
 `;
 
 exports[`Readonly 1`] = `
-<div style="background: var(--ds-color-neutral-surface-tinted); display: flex; gap: var(--ds-size-12); justify-content: center; padding: var(--ds-size-8); border-radius: var(--ds-border-radius-md);">
-  <div>
+<div style="<removed>">
+  <ds-field>
     <label
       data-weight="medium"
-      for="readonly-trigger"
+      for="<removed>"
     >
       Lesemodus
     </label>
     <div
       data-field="description"
-      id="readonly-trigger:description:1"
+      id="<removed>"
     >
       Beskrivelse for Trigger
     </div>
@@ -932,21 +890,21 @@ exports[`Readonly 1`] = `
     </button>
     <input
       readonly
-      id="readonly-trigger"
+      id="<removed>"
       type="file"
-      aria-describedby="readonly-trigger:description:1"
+      aria-describedby="<removed>"
     >
-  </div>
-  <div>
+  </ds-field>
+  <ds-field>
     <label
       data-weight="medium"
-      for="readonly-dropzone"
+      for="<removed>"
     >
       Lesemodus
     </label>
     <div
       data-field="description"
-      id="readonly-dropzone:description:1"
+      id="<removed>"
     >
       Beskrivelse for Dropzone
     </div>
@@ -957,30 +915,30 @@ exports[`Readonly 1`] = `
     <input
       readonly
       max="2"
-      id="readonly-dropzone"
+      id="<removed>"
       type="file"
-      aria-describedby="readonly-dropzone:description:1"
+      aria-describedby="<removed>"
     >
-  </div>
+  </ds-field>
 </div>
 `;
 
 exports[`Too Many Files 1`] = `
-<div style="display: flex; flex-direction: column; gap: var(--ds-size-3);">
-  <div
+<div style="<removed>">
+  <ds-field
     role="presentation"
     tabindex="0"
-    style="max-width: 450px; width: 100%;"
+    style="<removed>"
   >
     <label
       data-weight="medium"
-      for="dokumentasjon-for-mange"
+      for="<removed>"
     >
       Last opp dokumentasjon
     </label>
     <div
       data-field="description"
-      id="dokumentasjon-for-mange:description:1"
+      id="<removed>"
     >
       Du kan kun laste opp 2 filer.
     </div>
@@ -1015,18 +973,19 @@ exports[`Too Many Files 1`] = `
     <input
       multiple
       tabindex="-1"
-      id="dokumentasjon-for-mange"
+      id="<removed>"
       type="file"
-      aria-describedby="dokumentasjon-for-mange:validation:1 dokumentasjon-for-mange:description:1"
-      style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      aria-describedby="<removed>"
+      aria-invalid="true"
+      style="<removed>"
     >
     <p
       data-field="validation"
-      id="dokumentasjon-for-mange:validation:1"
+      id="<removed>"
     >
       Du har lastet opp for mange filer. Fjern noen for å kunne sende inn skjemaet.
     </p>
-  </div>
+  </ds-field>
   <h3 data-size="2xs">
     Vedlegg (3):
   </h3>
@@ -1075,9 +1034,10 @@ exports[`Too Many Files 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_d_"
-        popovertargetaction="show"
-        aria-labelledby="_r_d_"
+        data-tooltip="Fjern filen"
+        data-placement="top"
+        data-autoplacement="true"
+        aria-label="Fjern filen"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -1098,14 +1058,6 @@ exports[`Too Many Files 1`] = `
           </path>
         </svg>
       </button>
-      <span
-        role="tooltip"
-        id="_r_d_"
-        popover="manual"
-        style="opacity: 0;"
-      >
-        Fjern filen
-      </span>
     </div>
     <div
       aria-relevant="additions removals"
@@ -1158,9 +1110,10 @@ exports[`Too Many Files 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_g_"
-        popovertargetaction="show"
-        aria-labelledby="_r_g_"
+        data-tooltip="Fjern filen"
+        data-placement="top"
+        data-autoplacement="true"
+        aria-label="Fjern filen"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -1181,14 +1134,6 @@ exports[`Too Many Files 1`] = `
           </path>
         </svg>
       </button>
-      <span
-        role="tooltip"
-        id="_r_g_"
-        popover="manual"
-        style="opacity: 0;"
-      >
-        Fjern filen
-      </span>
     </div>
     <div
       aria-relevant="additions removals"
@@ -1236,9 +1181,10 @@ exports[`Too Many Files 1`] = `
         data-icon="true"
         data-variant="tertiary"
         type="button"
-        popovertarget="_r_j_"
-        popovertargetaction="show"
-        aria-labelledby="_r_j_"
+        data-tooltip="Fjern filen"
+        data-placement="top"
+        data-autoplacement="true"
+        aria-label="Fjern filen"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -1259,14 +1205,6 @@ exports[`Too Many Files 1`] = `
           </path>
         </svg>
       </button>
-      <span
-        role="tooltip"
-        id="_r_j_"
-        popover="manual"
-        style="opacity: 0;"
-      >
-        Fjern filen
-      </span>
     </div>
     <div
       aria-relevant="additions removals"
@@ -1278,17 +1216,17 @@ exports[`Too Many Files 1`] = `
 `;
 
 exports[`Upload 1`] = `
-<div style="display: flex; flex-direction: column; gap: var(--ds-size-3);">
-  <div>
+<div style="<removed>">
+  <ds-field>
     <label
       data-weight="medium"
-      for="rapport"
+      for="<removed>"
     >
       Last opp rapport
     </label>
     <div
       data-field="description"
-      id="rapport:description:1"
+      id="<removed>"
     >
       Du kan legge ved 1 fil.
     </div>
@@ -1317,10 +1255,10 @@ exports[`Upload 1`] = `
       </svg>
     </button>
     <input
-      id="rapport"
+      id="<removed>"
       type="file"
-      aria-describedby="rapport:description:1"
+      aria-describedby="<removed>"
     >
-  </div>
+  </ds-field>
 </div>
 `;

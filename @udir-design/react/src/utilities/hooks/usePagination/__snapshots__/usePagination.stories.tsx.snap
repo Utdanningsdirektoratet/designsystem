@@ -1,7 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Preview 1`] = `
-<nav aria-label="Sidenavigering">
+<ds-pagination
+  aria-label="Sidenavigering"
+  role="navigation"
+>
   <ul>
     <li>
       <button
@@ -23,10 +26,10 @@ exports[`Preview 1`] = `
     </li>
     <li>
       <button
-        data-variant="primary"
+        data-variant="tertiary"
         type="button"
         aria-label="Side 2"
-        aria-current="page"
+        aria-current="true"
       >
         2
       </button>
@@ -79,5 +82,5 @@ exports[`Preview 1`] = `
       </button>
     </li>
   </ul>
-</nav>
+</ds-pagination>
 `;

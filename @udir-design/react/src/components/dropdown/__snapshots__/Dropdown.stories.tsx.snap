@@ -33,18 +33,17 @@ exports[`Avatars 1`] = `
   </svg>
 </button>
 <div
-  id="_r_5_"
+  id="<removed>"
   popover="manual"
+  data-placement="bottom-end"
   data-variant="default"
-  data-placement="bottom"
-  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  data-floating="bottom-end"
+  style="<removed>"
 >
+  <h2>
+    Velg profil
+  </h2>
   <ul>
-    <li>
-      <h2>
-        Velg profil
-      </h2>
-    </li>
     <li>
       <button
         data-variant="tertiary"
@@ -155,18 +154,17 @@ exports[`Controlled 1`] = `
   </svg>
 </button>
 <div
-  id="_r_b_"
+  id="<removed>"
   popover="manual"
+  data-placement="bottom-end"
   data-variant="default"
-  data-placement="bottom"
-  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  data-floating="bottom-end"
+  style="<removed>"
 >
+  <h2>
+    Grunnskolen
+  </h2>
   <ul>
-    <li>
-      <h2>
-        Grunnskolen
-      </h2>
-    </li>
     <li>
       <button
         data-variant="tertiary"
@@ -184,12 +182,89 @@ exports[`Controlled 1`] = `
       </button>
     </li>
   </ul>
+  <h2>
+    Videregående opplæring
+  </h2>
   <ul>
     <li>
-      <h2>
-        Videregående opplæring
-      </h2>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Studieforberedende
+      </button>
     </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Yrkesfaglig
+      </button>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Controlled Without Context 1`] = `
+<button
+  data-variant="secondary"
+  type="button"
+  popovertarget="_r_f_"
+>
+  Utdanningsløp
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 1 1-1.06 1.06L12 9.56l-4.97 4.97a.75.75 0 0 1-1.06-1.06z"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
+</button>
+<div
+  id="<removed>"
+  popover="manual"
+  data-placement="bottom-end"
+  data-variant="default"
+  data-floating="bottom-end"
+  style="<removed>"
+>
+  <h2>
+    Grunnskolen
+  </h2>
+  <ul>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Barneskolen
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Ungdomsskolen
+      </button>
+    </li>
+  </ul>
+  <h2>
+    Videregående opplæring
+  </h2>
+  <ul>
     <li>
       <button
         data-variant="tertiary"
@@ -219,11 +294,12 @@ exports[`Icons 1`] = `
   Nyttige lenker
 </button>
 <div
-  id="_r_2_"
+  id="<removed>"
   popover="manual"
+  data-placement="bottom-end"
   data-variant="default"
-  data-placement="bottom"
-  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  data-floating="bottom-end"
+  style="<removed>"
 >
   <ul>
     <li>
@@ -313,18 +389,17 @@ exports[`Preview 1`] = `
   </svg>
 </button>
 <div
-  id="_r_0_"
+  id="<removed>"
   popover="manual"
+  data-placement="bottom-end"
   data-variant="default"
-  data-placement="bottom"
-  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  data-floating="bottom-end"
+  style="<removed>"
 >
+  <h2>
+    Velg format
+  </h2>
   <ul>
-    <li>
-      <h2>
-        Velg format
-      </h2>
-    </li>
     <li>
       <button
         data-variant="tertiary"
@@ -354,11 +429,12 @@ exports[`Selected 1`] = `
   Velg bakgrunnsfarge
 </button>
 <div
-  id="_r_a_"
+  id="<removed>"
   popover="manual"
+  data-placement="bottom-end"
   data-variant="default"
-  data-placement="bottom"
-  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  data-floating="bottom-end"
+  style="<removed>"
 >
   <ul>
     <li>
@@ -389,7 +465,7 @@ exports[`Selected 1`] = `
 </div>
 `;
 
-exports[`Without Trigger 1`] = `
+exports[`Without Context 1`] = `
 <button
   data-icon="true"
   data-variant="tertiary"
@@ -417,11 +493,12 @@ exports[`Without Trigger 1`] = `
   </svg>
 </button>
 <div
-  id="dropdown"
+  id="<removed>"
   popover="manual"
+  data-placement="bottom-end"
   data-variant="default"
-  data-placement="bottom"
-  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  data-floating="bottom-end"
+  style="<removed>"
 >
   <ul>
     <li>

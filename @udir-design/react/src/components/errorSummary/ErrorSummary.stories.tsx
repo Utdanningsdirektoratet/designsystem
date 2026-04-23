@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
-import { expect, userEvent, within } from 'storybook/test';
+import { useState } from 'react';
+import { expect, userEvent, waitFor, within } from 'storybook/test';
+import { WithInertInitialRender } from '.storybook/decorators/WithInertInitialRender';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
@@ -20,6 +21,7 @@ const meta = preview.meta({
 });
 
 export const Preview = meta.story({
+  decorators: WithInertInitialRender,
   render: (args) => (
     <ErrorSummary {...args}>
       <ErrorSummary.Heading>
@@ -48,6 +50,7 @@ export const WithForm = meta.story({
   parameters: {
     customStyles: { display: 'grid', gap: 'var(--ds-size-4)' },
   },
+  decorators: WithInertInitialRender,
   render: (args) => (
     <>
       <Textfield
@@ -87,12 +90,6 @@ export const WithForm = meta.story({
 export const ShowHide = meta.story({
   render: () => {
     const [show, setShow] = useState(false);
-    const summaryRef = useRef<HTMLDivElement>(null);
-    useEffect(() => {
-      if (show) {
-        summaryRef.current?.focus();
-      }
-    }, [show]);
 
     return (
       <>
@@ -100,7 +97,7 @@ export const ShowHide = meta.story({
           {show ? 'Skjul feilmelding' : 'Send inn skjema'}
         </Button>
         {show && (
-          <ErrorSummary data-testid="show-hide" ref={summaryRef}>
+          <ErrorSummary data-testid="show-hide">
             <ErrorSummary.Heading>
               For å gå videre må du rette opp følgende feil:
             </ErrorSummary.Heading>
@@ -127,7 +124,7 @@ export const ShowHide = meta.story({
     await userEvent.click(button);
     const errorSummary = canvas.getByTestId('show-hide');
     await expect(errorSummary).toBeVisible();
-    await expect(errorSummary).toHaveFocus();
+    await waitFor(() => expect(errorSummary).toHaveFocus());
   },
   parameters: {
     docs: { source: { type: 'code', transform: formatReactSource } },

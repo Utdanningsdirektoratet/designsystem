@@ -9,10 +9,11 @@ catalog:
   '@commitlint/cli': ^20.5.0
   '@commitlint/config-conventional': ^20.5.0
   '@commitlint/types': ^20.5.0
-  '@digdir/designsystemet': 1.11.0
-  '@digdir/designsystemet-css': 1.11.0
-  '@digdir/designsystemet-react': 1.11.0
-  '@digdir/designsystemet-types': 1.11.0
+  '@digdir/designsystemet': 1.13.3
+  '@digdir/designsystemet-css': 1.13.3
+  '@digdir/designsystemet-react': 1.13.3
+  '@digdir/designsystemet-types': 1.13.3
+  '@digdir/designsystemet-web': 1.13.3
   '@eslint/compat': ^2.0.4
   '@eslint/eslintrc': ^3.3.5
   '@eslint/js': ^9.39.4
@@ -48,7 +49,7 @@ catalog:
   '@typescript-eslint/eslint-plugin': ^8.58.0
   '@typescript-eslint/parser': ^8.58.0
   '@typescript/native-preview': 7.0.0-dev.20260407.1
-  '@u-elements/u-details': ^0.2.2
+  '@u-elements/u-details': ^1.0.0
   '@u-elements/u-progress': ^0.0.7
   '@vitejs/plugin-react-swc': ^4.3.0
   '@vitest/browser': ^4.1.2
@@ -164,7 +165,6 @@ minimumReleaseAgeExclude:
   - '@u-elements/*'
 
 overrides:
-  '@digdir/designsystemet-types': 1.11.0 # remove this when upgrading to 1.13.2 where this is fixed
   '@eslint/plugin-kit@<0.3.4': '>=0.3.4'
   '@joshwooding/vite-plugin-react-docgen-typescript@>=0.7.0': 0.6.4
   chokidar@>=4.0.0 <5: ^5.0.0
@@ -204,6 +204,7 @@ trustPolicyExclude:
   - eslint-import-resolver-typescript@3.10.1
   # v1.6.1 was published manually 2 years ago, and was already in our lock file
   # due to being a dependency of @nx/js
+  - invokers-polyfill@0.6.1
   - detect-port@1.6.1
 
 useNodeVersion: 24.10.0

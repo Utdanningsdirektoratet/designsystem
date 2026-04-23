@@ -44,7 +44,7 @@ const ExSelectReadOnly = () => {
   return (
     <Field>
       <Label>Fylke</Label>
-      <Select defaultValue="" id="do-dont-select-disabled" readOnly>
+      <Select defaultValue="" id="do-dont-select-disabled" aria-readonly>
         <Select.Option value="">Velg et fylke &hellip;</Select.Option>
         {counties.map((county) => (
           <Select.Option key={county} value={county.toLowerCase()}>

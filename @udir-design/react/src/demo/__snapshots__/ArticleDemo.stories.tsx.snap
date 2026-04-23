@@ -8,15 +8,15 @@ exports[`Article Story 1`] = `
   <a href="#main-content">
     Hopp til hovedinnholdet
   </a>
-  <div style="--udsc-demo-banner-text: &#x27;Dette er et demobanner&#x27;;">
+  <div style="<removed>">
     <header
       data-scroll-direction="up"
       data-top="true"
-      style="--udsc-header-max-width: 80rem;"
+      style="<removed>"
     >
       <div>
         <a href="/">
-          <div style="--uds-logo-padding: 0;">
+          <div style="<removed>">
             <img
               alt="Utdanningsdirektoratet"
               src="/assets/img/udir-main-logo.svg"
@@ -70,19 +70,20 @@ exports[`Article Story 1`] = `
             Meny
           </button>
           <div
-            id="uds-header-menu"
+            id="<removed>"
             popover="auto"
+            data-placement="none"
             data-variant="default"
-            style="padding: var(--udsc-header-padding);"
+            style="<removed>"
           >
-            <nav aria-labelledby="header-menu-navigation">
-              <h2 id="header-menu-navigation">
+            <nav aria-labelledby="<removed>">
+              <h2 id="<removed>">
                 Menynavigasjon
               </h2>
               <div>
                 <h3
                   data-size="xs"
-                  style="margin-bottom: var(--ds-size-3);"
+                  style="<removed>"
                 >
                   Navigasjon
                 </h3>
@@ -179,7 +180,10 @@ exports[`Article Story 1`] = `
       </div>
     </header>
     <article aria-label="Tilpasset opplæring">
-      <nav aria-label="Du er her:">
+      <ds-breadcrumbs
+        aria-label="Du er her:"
+        role="navigation"
+      >
         <a
           href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/"
           aria-label="Tilbake til Støtte til arbeid med læreplanverket"
@@ -211,9 +215,9 @@ exports[`Article Story 1`] = `
             </a>
           </li>
         </ol>
-      </nav>
+      </ds-breadcrumbs>
       <div
-        id="main"
+        id="<removed>"
         tabindex="-1"
       >
         <div>
@@ -226,7 +230,7 @@ exports[`Article Story 1`] = `
             </p>
             <hr
               aria-hidden="true"
-              style="margin: var(--ds-size-4) 0;"
+              style="<removed>"
             >
             <div>
               <p
@@ -261,26 +265,20 @@ exports[`Article Story 1`] = `
             </div>
             <hr
               aria-hidden="true"
-              style="margin: var(--ds-size-4) 0;"
+              style="<removed>"
             >
           </div>
           <div
             data-variant="tinted"
             data-color="accent"
           >
-            <u-details
+            <details
               open
               data-variant="default"
-              role="group"
             >
-              <u-summary
-                aria-expanded="true"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
+              <summary>
                 Innhold på denne siden
-              </u-summary>
+              </summary>
               <div>
                 <ol>
                   <li>
@@ -400,14 +398,14 @@ exports[`Article Story 1`] = `
                   </li>
                 </ol>
               </div>
-            </u-details>
+            </details>
           </div>
           <p data-variant="default">
             Skolen må gi alle elever mulighet til læring og utvikling uavhengig av forutsetningene deres. Dere skal legge til rette for en opplæring som ivaretar både fellesskapet og hver enkelt elev, slik at elevene får best mulig utbytte av opplæringen.
           </p>
           <h2
             data-size="md"
-            id="follow-development"
+            id="<removed>"
             tabindex="-1"
           >
             Følg med på utviklingen
@@ -431,7 +429,7 @@ exports[`Article Story 1`] = `
           </div>
           <h2
             data-size="md"
-            id="curriculum-framework"
+            id="<removed>"
             tabindex="-1"
           >
             Læreplanverket gir et stort handlingsrom til å tilpasse opplæringen
@@ -441,7 +439,7 @@ exports[`Article Story 1`] = `
           </p>
           <h2
             data-size="md"
-            id="examples-of-measures"
+            id="<removed>"
             tabindex="-1"
           >
             Eksempler på virkemidler
@@ -453,58 +451,34 @@ exports[`Article Story 1`] = `
             data-variant="tinted"
             data-color="neutral"
           >
-            <u-details
-              data-variant="default"
-              role="group"
-            >
-              <u-summary
-                aria-expanded="false"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
+            <details data-variant="default">
+              <summary>
                 Elevenes medvirkning og motivasjon
-              </u-summary>
+              </summary>
               <div>
                 Elevene lærer på mange forskjellige måter, og blir motivert av ulike faktorer. De har også med seg ulike forkunnskaper og forutsetninger inn i opplæringen. Allerede når dere planlegger undervisningen er det lurt å ta hensyn til hva elevene kan fra før, og hva som motiverer dem. Det er viktig å prøve ut ulike arbeidsformer og pedagogiske metoder for å bli godt kjent med hva som fungerer for den enkelte eleven.
               </div>
-            </u-details>
-            <u-details
-              data-variant="default"
-              role="group"
-            >
-              <u-summary
-                aria-expanded="false"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
+            </details>
+            <details data-variant="default">
+              <summary>
                 Struktur og forutsigbarhet
-              </u-summary>
+              </summary>
               <div>
                 Struktur og forutsigbarhet er viktig for de fleste elevene, men noen har et større behov enn andre. Mens noen elever kan forholde seg til mange beskjeder samtidig og tåler å vite mindre om hva som skal skje, kan andre oppleve slike situasjoner som stressende og forvirrende. Dette kan skyldes mange forskjellige forhold, som for eksempel vansker med problemløsning, planlegging, språk eller atferdsregulering. For disse elvene er det helt avgjørende at dere forsøker å være i forkant av situasjoner og gjøre det mer forutsigbart, slik at elevene kan være trygge og oppleve mestring.
               </div>
-            </u-details>
-            <u-details
-              data-variant="default"
-              role="group"
-            >
-              <u-summary
-                aria-expanded="false"
-                role="button"
-                slot="summary"
-                tabindex="0"
-              >
+            </details>
+            <details data-variant="default">
+              <summary>
                 Reguleringsstøtte
-              </u-summary>
+              </summary>
               <div>
                 For å utvikle sosial kompetanse, mestre samspill og samarbeid, eller håndtere stress og utfordrende situasjoner, kan elever ha behov for støtte til å regulere følelser og atferd. Dette er spesielt viktig for de elevene som av ulike årsaker har negativ atferd over tid. Å gi reguleringsstøtte handler først og fremst om å forstå elevens opplevelse av situasjonen, og å være i forkant av det som skjer.
               </div>
-            </u-details>
+            </details>
           </div>
           <h2
             data-size="md"
-            id="intensive-education"
+            id="<removed>"
             tabindex="-1"
           >
             Intensiv opplæring
@@ -517,12 +491,12 @@ exports[`Article Story 1`] = `
           </p>
           <h2
             data-size="md"
-            id="useful-links"
+            id="<removed>"
             tabindex="-1"
           >
             Nyttige lenker
           </h2>
-          <ul style="list-style: none; padding: 0px;">
+          <ul style="<removed>">
             <li>
               <a
                 href="https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/veileder-for-tilpasset-opplaring-og-individuell-tilrettelegging/"
@@ -573,7 +547,7 @@ exports[`Article Story 1`] = `
         </div>
       </div>
     </article>
-    <footer style="--udsc-footer-max-width: 80rem;">
+    <footer style="<removed>">
       <div>
         <ul data-variant="simple">
           <li>
@@ -605,7 +579,7 @@ exports[`Article Story 1`] = `
           </li>
         </ul>
         <a href="https://udir.no">
-          <div style="--uds-logo-padding: 0;">
+          <div style="<removed>">
             <img
               alt="Utdanningsdirektoratet"
               src="/assets/img/udir-main-logo.svg"

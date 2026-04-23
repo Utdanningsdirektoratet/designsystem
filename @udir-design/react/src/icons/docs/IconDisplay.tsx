@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Search } from 'src/components/search/Search';
-import { ToggleGroup } from 'src/components/toggleGroup/ToggleGroup';
+import { ToggleGroup } from 'src/components/toggleGroup';
 import { CategorizedIcons } from './CategorizedIcons';
 import type { UdirIcon } from './IconDisplay.utils';
 import {

@@ -1,11 +1,11 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Cards 1`] = `
-<div style="margin: var(--ds-size-12); display: flex; flex-direction: column; gap: var(--ds-size-6);">
+<div style="<removed>">
   <h3 data-size="lg">
     Elever
   </h3>
-  <div style="display: flex; justify-content: end;">
+  <div style="<removed>">
     <button
       data-variant="tertiary"
       type="button"
@@ -79,7 +79,7 @@ exports[`Cards 1`] = `
       Filter
     </button>
   </div>
-  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ds-size-6);">
+  <div style="<removed>">
     <div data-variant="default">
       <div>
         <span
@@ -90,7 +90,7 @@ exports[`Cards 1`] = `
           Rita Nordmann
         </span>
       </div>
-      <div style="display: flex; flex-direction: column;">
+      <div style="<removed>">
         <span
           aria-hidden="true"
           data-text="-"
@@ -131,7 +131,7 @@ exports[`Cards 1`] = `
           Ola Nordmann
         </span>
       </div>
-      <div style="display: flex; flex-direction: column;">
+      <div style="<removed>">
         <span
           aria-hidden="true"
           data-text="-"
@@ -172,7 +172,7 @@ exports[`Cards 1`] = `
           Kari Nordmann
         </span>
       </div>
-      <div style="display: flex; flex-direction: column;">
+      <div style="<removed>">
         <span
           aria-hidden="true"
           data-text="-"
@@ -213,7 +213,7 @@ exports[`Cards 1`] = `
           Juliane Nordmann
         </span>
       </div>
-      <div style="display: flex; flex-direction: column;">
+      <div style="<removed>">
         <span
           aria-hidden="true"
           data-text="-"
@@ -254,7 +254,7 @@ exports[`Cards 1`] = `
           Mateo Nordmann
         </span>
       </div>
-      <div style="display: flex; flex-direction: column;">
+      <div style="<removed>">
         <span
           aria-hidden="true"
           data-text="-"
@@ -295,7 +295,7 @@ exports[`Cards 1`] = `
           Kai Nordmann
         </span>
       </div>
-      <div style="display: flex; flex-direction: column;">
+      <div style="<removed>">
         <span
           aria-hidden="true"
           data-text="-"
@@ -351,17 +351,17 @@ exports[`Children 1`] = `
 `;
 
 exports[`Components 1`] = `
-<div style="display: flex; align-items: center; gap: 20px;">
+<div style="<removed>">
   <span
     aria-hidden="true"
     data-variant="circle"
-    style="width: 50px; height: 50px;"
+    style="<removed>"
   >
   </span>
   <span
     aria-hidden="true"
     data-variant="rectangle"
-    style="width: 100px; height: 50px;"
+    style="<removed>"
   >
   </span>
   <p data-variant="default">
@@ -379,14 +379,14 @@ exports[`Preview 1`] = `
 <span
   aria-hidden="true"
   data-variant="rectangle"
-  style="width: 200px; height: 100px;"
+  style="<removed>"
 >
 </span>
 `;
 
 exports[`Text 1`] = `
-<div style="display: flex; gap: var(--ds-size-12); margin: var(--ds-size-12);">
-  <div style="flex: 1 1 200px;">
+<div style="<removed>">
+  <div style="<removed>">
     <h2>
       Den kjekkaste leiken
     </h2>
@@ -397,7 +397,7 @@ exports[`Text 1`] = `
       Det er verken dyrt eller komplisert å leggje til rette for den leiken barna liker best. Når viser barna mest trivsel i uteleiken? Det ønskte forskarar i forskingsprosjektet «EnCompetence» å finne ut, og dei ville spesielt sjå på situasjonar med fysisk aktivitet.
     </p>
   </div>
-  <div style="flex: 1 1 200px;">
+  <div style="<removed>">
     <h2>
       <span
         aria-hidden="true"
@@ -423,12 +423,12 @@ exports[`Text 1`] = `
 `;
 
 exports[`Usage Example 1`] = `
-<div style="display: flex; gap: var(--ds-size-12); margin: var(--ds-size-12);">
-  <div style="flex: 1 1 200px;">
+<div style="<removed>">
+  <div style="<removed>">
     <span
       aria-hidden="true"
       data-variant="rectangle"
-      style="height: 200px;"
+      style="<removed>"
     >
     </span>
     <h2>
@@ -439,11 +439,11 @@ exports[`Usage Example 1`] = `
       >
       </span>
     </h2>
-    <div style="display: flex; gap: 10px; align-items: center; padding: 5px 0px;">
+    <div style="<removed>">
       <span
         aria-hidden="true"
         data-variant="circle"
-        style="width: 40px; height: 40px;"
+        style="<removed>"
       >
       </span>
       <span
@@ -461,16 +461,16 @@ exports[`Usage Example 1`] = `
     >
     </span>
   </div>
-  <div style="flex: 1 1 200px;">
+  <div style="<removed>">
     <img
       alt="Bøker på et bord"
       src="https://images.unsplash.com/photo-1516383607781-913a19294fd1?q=80&amp;w=2374&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;"
+      style="<removed>"
     >
     <h2>
       Undersøke
     </h2>
-    <div style="display: flex; align-items: center; gap: 10px;">
+    <div style="<removed>">
       <span
         data-variant="circle"
         data-initials="KN"
