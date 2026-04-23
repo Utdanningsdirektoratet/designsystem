@@ -1,7 +1,5 @@
 :is(.ds-togglegroup, .ds-toggle-group) {
   overflow-x: initial; /* fixes gap between border-radius of fieldset and label, but will prevent horizontal scroll */
-  box-sizing: border-box;
-  height: var(--dsc-togglegroup-button-size);
 
   label:has(input:checked) {
     color: var(--dsc-button-color--active);
