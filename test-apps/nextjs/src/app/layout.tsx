@@ -16,6 +16,11 @@ export default function RootLayout({
     <html lang="nb">
       <head>
         <title>Testapp</title>
+        <link
+          rel="preload stylesheet"
+          as="style"
+          href="https://altinncdn.no/fonts/inter/v4/inter.css"
+        />
       </head>
       <body>
         <DemoBanner>
