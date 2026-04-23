@@ -26,8 +26,10 @@ const meta = preview.meta({
     },
     layout: 'centered',
     customStyles: {
-      /* add height by default */
-      height: '320px',
+      story: {
+        /* add height by default when viewing a single story */
+        height: '320px',
+      },
     },
     a11y: {
       config: {
@@ -79,6 +81,19 @@ const DATA_PEOPLE = [
 ];
 
 export const Preview = meta.story({
+  parameters: {
+    layout: 'none',
+    chromatic: {
+      modes: { desktop: { viewport: { height: '430px' } } },
+    },
+    customStyles: {
+      width: 300,
+      justifySelf: 'center',
+      story: {
+        height: 430,
+      },
+    },
+  },
   render(args) {
     return (
       <Field>
@@ -326,6 +341,16 @@ export const CustomFilterAlt1 = meta.story({
 });
 
 export const CustomFilterAlt2 = meta.story({
+  parameters: {
+    layout: 'none',
+    customStyles: {
+      width: 300,
+      justifySelf: 'center',
+      story: {
+        height: 430,
+      },
+    },
+  },
   render: (args) => {
     const [value, setValue] = useState('');
     return (
@@ -351,6 +376,16 @@ export const CustomFilterAlt2 = meta.story({
 });
 
 export const AlwaysShowAll = meta.story({
+  parameters: {
+    layout: 'none',
+    customStyles: {
+      width: 320,
+      justifySelf: 'center',
+      story: {
+        height: 430,
+      },
+    },
+  },
   render: (args) => {
     const [value, setValue] = useState<string | undefined>('Sogndal');
     return (

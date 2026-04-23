@@ -34,6 +34,9 @@ const meta = preview.meta({
 });
 
 export const Preview = meta.story({
+  parameters: {
+    customStyles: { story: { height: 260 } },
+  },
   render: (args) => (
     <Popover.TriggerContext>
       <Popover.Trigger variant="tertiary">
@@ -85,6 +88,9 @@ export const Preview = meta.story({
 });
 
 export const Interactive = meta.story({
+  parameters: {
+    customStyles: { story: { height: 260 } },
+  },
   render: () => (
     <Popover.TriggerContext>
       <Popover.Trigger aria-label="Lukk" variant="secondary">
@@ -110,6 +116,15 @@ export const Interactive = meta.story({
 });
 
 export const DottedUnderline = meta.story({
+  parameters: {
+    layout: 'none',
+    customStyles: {
+      padding: '1rem 2rem',
+      story: {
+        height: 320,
+      },
+    },
+  },
   render: () => (
     <Popover.TriggerContext>
       <Paragraph>
@@ -222,6 +237,10 @@ const VariantsMap: {
 };
 
 export const Variants = meta.story({
+  parameters: {
+    layout: 'none',
+    customStyles: { height: 284, padding: '2rem' },
+  },
   render: () => {
     return (
       <div
@@ -250,6 +269,10 @@ export const Variants = meta.story({
 });
 
 export const ColorVariants = meta.story({
+  parameters: {
+    layout: 'none',
+    customStyles: { height: 284, padding: '2rem' },
+  },
   render: () => {
     return (
       <div
@@ -278,6 +301,9 @@ export const ColorVariants = meta.story({
 });
 
 export const Controlled = meta.story({
+  parameters: {
+    customStyles: { story: { height: 260 } },
+  },
   render: (args) => {
     const [open, setOpen] = useState(false);
 
@@ -313,6 +339,9 @@ export const Controlled = meta.story({
 });
 
 export const WithoutContext = meta.story({
+  parameters: {
+    customStyles: { story: { height: 260 } },
+  },
   render: () => {
     const [open, setOpen] = useState(false);
 
