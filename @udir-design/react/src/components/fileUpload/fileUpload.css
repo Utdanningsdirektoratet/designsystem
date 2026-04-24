@@ -147,6 +147,13 @@
     }
   }
 
+  &:has(label:hover) {
+    .ds-button:hover {
+      background: var(--dsc-button-background);
+      color: var(--dsc-button-color);
+    }
+  }
+
   /* Text for multiple files */
   &:has(input[type='file'][multiple]) {
     --udsc-fileUpload-button-text: var(--udsc-fileUpload-addFiles-text);
