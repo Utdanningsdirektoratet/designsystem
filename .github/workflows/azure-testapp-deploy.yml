@@ -26,7 +26,7 @@ jobs:
           fetch-depth: 0
           filter: tree:0
 
-      - uses: nrwl/nx-set-shas@dbe0650947e5f2c81f59190a38512cf49126fe6b # v4.3.0
+      - uses: ./.github/actions/pnpm-setup
 
       - name: Determine whether to deploy
         id: should_deploy
