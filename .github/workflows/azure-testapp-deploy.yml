@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Check if deploy should be initiated
     outputs:
-      should_deploy: ${{ steps.should_deploy.conclusion }}
+      should_deploy: ${{ steps.should_deploy.outputs.should_deploy }}
     permissions:
       contents: read
       actions: 'read'
@@ -26,7 +26,7 @@ jobs:
           fetch-depth: 0
           filter: tree:0
 
-      - uses: nrwl/nx-set-shas@dbe0650947e5f2c81f59190a38512cf49126fe6b # v4.3.0
+      - uses: ./.github/actions/pnpm-setup
 
       - name: Determine whether to deploy
         id: should_deploy
@@ -37,8 +37,8 @@ jobs:
           echo "Is the deployment workflow modified? $IS_WORKFLOW_MODIFIED"
           echo "Is the deploy triggered through a manual workflow dispatch? $IS_DISPATCH"
           ($IS_DISPATCH || $IS_NEXTJS_AFFECTED || $IS_WORKFLOW_MODIFIED) && SHOULD_DEPLOY=true || SHOULD_DEPLOY=false
-          echo "Conclusion: should we run deploy the test app? $SHOULD_DEPLOY
-          echo "conclusion=$SHOULD_DEPLOY" >> "$GITHUB_OUTPUT"
+          echo "Conclusion: should we deploy the test app? $SHOULD_DEPLOY"
+          echo "should_deploy=$SHOULD_DEPLOY" >> "$GITHUB_OUTPUT"
         env:
           IS_DISPATCH: ${{ github.event_name == 'workflow_dispatch'}}
 
@@ -46,6 +46,7 @@ jobs:
     needs: check
     if: needs.check.outputs.should_deploy == 'true'
     runs-on: ubuntu-latest
+    environment: test-app
     name: Build image, push to GHCR, and deploy to Azure Container Apps
     permissions:
       contents: read
