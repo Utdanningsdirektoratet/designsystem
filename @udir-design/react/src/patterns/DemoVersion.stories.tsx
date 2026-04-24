@@ -1,4 +1,8 @@
 import { type CSSProperties } from 'react';
+import {
+  WithInertInitialRender,
+  useIsInert,
+} from '.storybook/decorators/WithInertInitialRender';
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Alert } from 'src/components/alert';
@@ -31,17 +35,9 @@ export const Preview = meta.story({
       padding: 0,
     },
   },
-  decorators: (Story, context) => {
-    // Hacky way to detect docs mode in iframe-rendered story
-    const isInDocsPage =
-      window.parent.location.search.includes('viewMode=docs');
-    if (isInDocsPage) {
-      // Set viewMode since Storybook doesn't detect it properly when rendered with "inline: false" (iframe mode)
-      context.viewMode = 'docs';
-    }
-    return <Story />;
-  },
-  render: (_args, context) => {
+  decorators: WithInertInitialRender,
+  render: () => {
+    const isInert = useIsInert();
     return (
       <DemoBanner
         style={{
@@ -100,8 +96,8 @@ export const Preview = meta.story({
           open={true}
           style={{ maxWidth: '650px' }}
           id="demo-version-dialog"
-          // Render the dialog as inert in docs page, so it doesn't steal focus
-          {...(context.viewMode === 'docs' && { inert: true })}
+          // In docs, initially render Dialog as inert so it doesn't steal focus
+          {...(isInert && { inert: true })}
         >
           <Heading style={{ marginBlockEnd: 'var(--ds-size-4)' }}>
             Lorem ipsum dolor sit amet consectetur
