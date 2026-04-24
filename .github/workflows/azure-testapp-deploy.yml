@@ -1,0 +1,88 @@
+name: Deploy testapp to Azure
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+env:
+  APP_PATH: test-apps/nextjs
+  IMAGE_NAME: ghcr.io/utdanningsdirektoratet/designsystem-testapp
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    name: Check if deploy should be initiated
+    outputs:
+      should_deploy: ${{ steps.should_deploy.conclusion }}
+    permissions:
+      contents: read
+      actions: 'read'
+      pull-requests: 'read'
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          filter: tree:0
+
+      - uses: nrwl/nx-set-shas@dbe0650947e5f2c81f59190a38512cf49126fe6b # v4.3.0
+
+      - name: Determine whether to deploy
+        id: should_deploy
+        run: |
+          IS_NEXTJS_AFFECTED=$(./@internal/build-tools/bin/is-project-affected.sh test-app-nextjs)
+          IS_WORKFLOW_MODIFIED=$(./@internal/build-tools/bin/is-file-modified.sh .github/workflows/azure-testapp-deploy.yml)
+          echo "Is the Next.js test app affected? $IS_NEXTJS_AFFECTED"
+          echo "Is the deployment workflow modified? $IS_WORKFLOW_MODIFIED"
+          echo "Is the deploy triggered through a manual workflow dispatch? $IS_DISPATCH"
+          ($IS_DISPATCH || $IS_NEXTJS_AFFECTED || $IS_WORKFLOW_MODIFIED) && SHOULD_DEPLOY=true || SHOULD_DEPLOY=false
+          echo "Conclusion: should we run deploy the test app? $SHOULD_DEPLOY
+          echo "conclusion=$SHOULD_DEPLOY" >> "$GITHUB_OUTPUT"
+        env:
+          IS_DISPATCH: ${{ github.event_name == 'workflow_dispatch'}}
+
+  build_and_deploy:
+    needs: check
+    if: needs.check.outputs.should_deploy == 'true'
+    runs-on: ubuntu-latest
+    name: Build image, push to GHCR, and deploy to Azure Container Apps
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./test-apps/nextjs/Dockerfile
+          push: true
+          tags: ${{ env.IMAGE_NAME }}:${{ github.sha }}
+
+      - name: Log in to Azure
+        uses: azure/login@v3
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Deploy to Azure Container Apps
+        uses: azure/container-apps-deploy-action@v1
+        with:
+          containerAppName: ca-designsystem-testapp
+          resourceGroup: rg-designsystem-testapp
+          imageToDeploy: ${{ env.IMAGE_NAME }}:${{ github.sha }}
+          registryUrl: ghcr.io
+          targetPort: 3000
