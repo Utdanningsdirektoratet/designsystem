@@ -826,12 +826,10 @@ exports[`Form Page 3 1`] = `
       </h2>
       <div>
       </div>
-      <ds-field
-        role="presentation"
-        tabindex="0"
-      >
+      <div>
         <label
           data-weight="medium"
+          id="<removed>"
           for="<removed>"
         >
           <span>
@@ -844,12 +842,18 @@ exports[`Form Page 3 1`] = `
         >
           Du kan laste opp filer i PDF-format. Filer kan være opptil 25 MB.
         </div>
-        <div data-variant="default">
+        <div
+          data-variant="default"
+          role="presentation"
+        >
           <div>
           </div>
           <button
             data-variant="secondary"
             type="button"
+            id="<removed>"
+            aria-labelledby="<removed>"
+            aria-describedby="<removed>"
             aria-label="Velg filer"
           >
             <svg
@@ -879,10 +883,9 @@ exports[`Form Page 3 1`] = `
           required
           id="<removed>"
           type="file"
-          aria-describedby="<removed>"
           style="<removed>"
         >
-      </ds-field>
+      </div>
       <ds-field>
         <label
           data-weight="medium"
@@ -1100,7 +1103,7 @@ exports[`Form Page 4 1`] = `
     >
       <button
         data-icon="true"
-        commandfor="_r_l_"
+        commandfor="_r_m_"
         data-variant="tertiary"
         type="button"
         aria-label="Lukk dialogvindu"
@@ -1380,7 +1383,7 @@ exports[`Form Page 5 1`] = `
     >
       <button
         data-icon="true"
-        commandfor="_r_r_"
+        commandfor="_r_s_"
         data-variant="tertiary"
         type="button"
         aria-label="Lukk dialogvindu"

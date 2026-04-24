@@ -1,7 +1,7 @@
 import './fileUpload.css';
-import type { DSFieldElement } from '@digdir/designsystemet-web';
 import cl from 'clsx/lite';
-import { forwardRef, useEffect, useRef } from 'react';
+import type { HTMLAttributes } from 'react';
+import { forwardRef, useEffect, useId, useRef } from 'react';
 import { UploadIcon } from '@udir-design/icons';
 import { Button } from '../button/Button';
 import { Card } from '../card/Card';
@@ -21,10 +21,14 @@ export type FileUploadDropzoneProps = FileUploadProps & {
    * anywhere in the document
    */
   isDragGlobal?: boolean;
+  /**
+   * Props for the card representing the drop zone
+   */
+  cardProps?: Omit<HTMLAttributes<HTMLDivElement>, 'data-size' | 'data-color'>;
 };
 
 export const FileUploadDropzone = forwardRef<
-  DSFieldElement,
+  HTMLDivElement,
   FileUploadDropzoneProps
 >(function FileUploadDropzone(
   {
@@ -37,6 +41,7 @@ export const FileUploadDropzone = forwardRef<
     isDragGlobal,
     variant = 'secondary',
     inputProps,
+    cardProps,
     ...rest
   },
   ref,
@@ -55,29 +60,50 @@ export const FileUploadDropzone = forwardRef<
     buttonRef.current.setAttribute('aria-label', buttonAriaLabel);
   }, [cssVar]);
 
+  const generatedId = useId();
+  const id = rest.id ?? generatedId;
+  const buttonId = `${id}-button`;
+  const labelId = `${id}-label`;
+  const descriptionId = `${id}-description`;
+
   return (
-    <Field
-      className={cl(`uds-file-upload`, className)}
+    <div
+      className={cl('ds-field', 'uds-file-upload', className)}
       data-size={size}
-      onDrop={(e) => {
-        if (inputProps?.readOnly) {
-          e.preventDefault();
-          return;
-        }
-        rest.onDrop?.(e);
-      }}
       data-drag-active={isDragActive || undefined}
       data-drag-global={isDragGlobal || undefined}
       ref={ref}
       {...rest}
     >
-      {!!label && <Label>{label}</Label>}
-      {!!description && <Field.Description>{description}</Field.Description>}
-      <Card>
+      {!!label && (
+        <Label id={labelId} htmlFor={buttonId}>
+          {label}
+        </Label>
+      )}
+      {!!description && (
+        <Field.Description id={descriptionId}>{description}</Field.Description>
+      )}
+      <Card
+        {...cardProps}
+        onDrop={(e) => {
+          if (inputProps?.readOnly) {
+            e.preventDefault();
+            return;
+          }
+          cardProps?.onDrop?.(e);
+        }}
+        tabIndex={undefined}
+      >
         {/* Text in css */}
         <div>{/* Text in css */}</div>
         {!inputProps?.readOnly && (
-          <Button variant={variant} ref={buttonRef}>
+          <Button
+            id={buttonId}
+            aria-labelledby={label ? labelId : undefined}
+            aria-describedby={description ? descriptionId : undefined}
+            variant={variant}
+            ref={buttonRef}
+          >
             <UploadIcon aria-hidden />
             {/* Text in css */}
           </Button>
@@ -94,6 +120,6 @@ export const FileUploadDropzone = forwardRef<
         }}
       />
       {!!error && <ValidationMessage>{error}</ValidationMessage>}
-    </Field>
+    </div>
   );
 });

@@ -1,8 +1,7 @@
 import type { Size } from '@digdir/designsystemet-react';
-import type { DSFieldElement } from '@digdir/designsystemet-web';
 import cl from 'clsx/lite';
 import type { HTMLAttributes, ReactNode } from 'react';
-import { forwardRef, useEffect, useRef } from 'react';
+import { forwardRef, useEffect, useId, useRef } from 'react';
 import { UploadIcon } from '@udir-design/icons';
 import { Button } from '../button/Button';
 import { Field } from '../field/Field';
@@ -16,7 +15,7 @@ type InputProps_ = Omit<
   'prefix' | 'className' | 'style' | 'data-color' | 'type' | 'data-size'
 >;
 
-export type FileUploadProps = HTMLAttributes<DSFieldElement> & {
+export type FileUploadProps = HTMLAttributes<HTMLDivElement> & {
   /**
    * Changes size for descendant Designsystemet components.
    * Select from predefined sizes.
@@ -46,7 +45,7 @@ export type FileUploadProps = HTMLAttributes<DSFieldElement> & {
   variant?: 'primary' | 'secondary';
 };
 
-export const FileUploadTrigger = forwardRef<DSFieldElement, FileUploadProps>(
+export const FileUploadTrigger = forwardRef<HTMLDivElement, FileUploadProps>(
   function FileUploadTrigger(
     {
       className,
@@ -75,16 +74,33 @@ export const FileUploadTrigger = forwardRef<DSFieldElement, FileUploadProps>(
       buttonRef.current.setAttribute('aria-label', buttonAriaLabel);
     }, [cssVar]);
 
+    const generatedId = useId();
+    const id = rest.id ?? generatedId;
+    const buttonId = `${id}-button`;
+    const labelId = `${id}-label`;
+    const descriptionId = `${id}-description`;
+
     return (
-      <Field
-        className={cl(`uds-file-upload`, className)}
+      <div
+        className={cl('ds-field', 'uds-file-upload', className)}
         data-size={size}
         ref={ref}
         {...rest}
       >
-        {!!label && <Label>{label}</Label>}
-        {!!description && <Field.Description>{description}</Field.Description>}
+        {!!label && (
+          <Label id={labelId} htmlFor={buttonId}>
+            {label}
+          </Label>
+        )}
+        {!!description && (
+          <Field.Description id={descriptionId}>
+            {description}
+          </Field.Description>
+        )}
         <Button
+          id={buttonId}
+          aria-labelledby={label ? labelId : undefined}
+          aria-describedby={description ? descriptionId : undefined}
           disabled={inputProps?.readOnly ?? inputProps?.disabled}
           variant={variant}
           onClick={() => {
@@ -107,7 +123,7 @@ export const FileUploadTrigger = forwardRef<DSFieldElement, FileUploadProps>(
           }}
         />
         {!!error && <ValidationMessage>{error}</ValidationMessage>}
-      </Field>
+      </div>
     );
   },
 );

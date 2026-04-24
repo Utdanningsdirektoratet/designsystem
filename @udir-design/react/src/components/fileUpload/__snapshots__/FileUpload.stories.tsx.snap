@@ -1,12 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Example Drop Zone 1`] = `
-<ds-field
-  role="presentation"
-  tabindex="0"
->
+<div>
   <label
     data-weight="medium"
+    id="<removed>"
     for="<removed>"
   >
     Last opp dokumentasjon
@@ -17,12 +15,18 @@ exports[`Example Drop Zone 1`] = `
   >
     Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
   </div>
-  <div data-variant="default">
+  <div
+    data-variant="default"
+    role="presentation"
+  >
     <div>
     </div>
     <button
       data-variant="secondary"
       type="button"
+      id="<removed>"
+      aria-labelledby="<removed>"
+      aria-describedby="<removed>"
       aria-label="Velg filer"
     >
       <svg
@@ -49,12 +53,10 @@ exports[`Example Drop Zone 1`] = `
     accept="application/pdf"
     multiple
     tabindex="-1"
-    id="<removed>"
     type="file"
-    aria-describedby="<removed>"
     style="<removed>"
   >
-</ds-field>
+</div>
 <h3 data-size="2xs">
   Vedlegg (1):
 </h3>
@@ -140,12 +142,10 @@ exports[`Example Dropzone With Explicit Size 1`] = `
 <style>
   .uds-file-upload { height: 600px; width: 100%; }
 </style>
-<ds-field
-  role="presentation"
-  tabindex="0"
->
+<div>
   <label
     data-weight="medium"
+    id="<removed>"
     for="<removed>"
   >
     Last opp dokumentasjon
@@ -156,12 +156,18 @@ exports[`Example Dropzone With Explicit Size 1`] = `
   >
     Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
   </div>
-  <div data-variant="default">
+  <div
+    data-variant="default"
+    role="presentation"
+  >
     <div>
     </div>
     <button
       data-variant="secondary"
       type="button"
+      id="<removed>"
+      aria-labelledby="<removed>"
+      aria-describedby="<removed>"
       aria-label="Velg filer"
     >
       <svg
@@ -188,12 +194,10 @@ exports[`Example Dropzone With Explicit Size 1`] = `
     accept="application/pdf"
     multiple
     tabindex="-1"
-    id="<removed>"
     type="file"
-    aria-describedby="<removed>"
     style="<removed>"
   >
-</ds-field>
+</div>
 <h3 data-size="2xs">
   Vedlegg (1):
 </h3>
@@ -625,9 +629,10 @@ exports[`Example Items 1`] = `
 
 exports[`Example Trigger 1`] = `
 <div style="<removed>">
-  <ds-field>
+  <div>
     <label
       data-weight="medium"
+      id="<removed>"
       for="<removed>"
     >
       Last opp profilbilde
@@ -641,6 +646,9 @@ exports[`Example Trigger 1`] = `
     <button
       data-variant="secondary"
       type="button"
+      id="<removed>"
+      aria-labelledby="<removed>"
+      aria-describedby="<removed>"
       aria-label="Legg til fil"
     >
       <svg
@@ -664,11 +672,9 @@ exports[`Example Trigger 1`] = `
     </button>
     <input
       accept="image/png, image/jpeg"
-      id="<removed>"
       type="file"
-      aria-describedby="<removed>"
     >
-  </ds-field>
+  </div>
   <h3 data-size="2xs">
     Vedlegg (1):
   </h3>
@@ -748,9 +754,10 @@ exports[`Example Trigger 1`] = `
 
 exports[`Preview 1`] = `
 <div style="<removed>">
-  <ds-field data-size="md">
+  <div data-size="md">
     <label
       data-weight="medium"
+      id="<removed>"
       for="<removed>"
     >
       Label
@@ -764,6 +771,9 @@ exports[`Preview 1`] = `
     <button
       data-variant="secondary"
       type="button"
+      id="<removed>"
+      aria-labelledby="<removed>"
+      aria-describedby="<removed>"
       aria-label="Legg til fil"
     >
       <svg
@@ -785,19 +795,12 @@ exports[`Preview 1`] = `
         </path>
       </svg>
     </button>
-    <input
-      id="<removed>"
-      type="file"
-      aria-describedby="<removed>"
-    >
-  </ds-field>
-  <ds-field
-    data-size="md"
-    role="presentation"
-    tabindex="0"
-  >
+    <input type="file">
+  </div>
+  <div data-size="md">
     <label
       data-weight="medium"
+      id="<removed>"
       for="<removed>"
     >
       Label
@@ -808,12 +811,18 @@ exports[`Preview 1`] = `
     >
       Beskrivelse
     </div>
-    <div data-variant="default">
+    <div
+      data-variant="default"
+      role="presentation"
+    >
       <div>
       </div>
       <button
         data-variant="secondary"
         type="button"
+        id="<removed>"
+        aria-labelledby="<removed>"
+        aria-describedby="<removed>"
         aria-label="Velg fil"
       >
         <svg
@@ -839,20 +848,19 @@ exports[`Preview 1`] = `
     <input
       accept="application/pdf"
       tabindex="-1"
-      id="<removed>"
       type="file"
-      aria-describedby="<removed>"
       style="<removed>"
     >
-  </ds-field>
+  </div>
 </div>
 `;
 
 exports[`Readonly 1`] = `
 <div style="<removed>">
-  <ds-field>
+  <div>
     <label
       data-weight="medium"
+      id="<removed>"
       for="<removed>"
     >
       Lesemodus
@@ -866,6 +874,9 @@ exports[`Readonly 1`] = `
     <button
       data-variant="secondary"
       type="button"
+      id="<removed>"
+      aria-labelledby="<removed>"
+      aria-describedby="<removed>"
       disabled
       aria-label="Legg til fil"
     >
@@ -890,14 +901,13 @@ exports[`Readonly 1`] = `
     </button>
     <input
       readonly
-      id="<removed>"
       type="file"
-      aria-describedby="<removed>"
     >
-  </ds-field>
-  <ds-field>
+  </div>
+  <div>
     <label
       data-weight="medium"
+      id="<removed>"
       for="<removed>"
     >
       Lesemodus
@@ -915,23 +925,18 @@ exports[`Readonly 1`] = `
     <input
       readonly
       max="2"
-      id="<removed>"
       type="file"
-      aria-describedby="<removed>"
     >
-  </ds-field>
+  </div>
 </div>
 `;
 
 exports[`Too Many Files 1`] = `
 <div style="<removed>">
-  <ds-field
-    role="presentation"
-    tabindex="0"
-    style="<removed>"
-  >
+  <div style="<removed>">
     <label
       data-weight="medium"
+      id="<removed>"
       for="<removed>"
     >
       Last opp dokumentasjon
@@ -942,12 +947,18 @@ exports[`Too Many Files 1`] = `
     >
       Du kan kun laste opp 2 filer.
     </div>
-    <div data-variant="default">
+    <div
+      data-variant="default"
+      role="presentation"
+    >
       <div>
       </div>
       <button
         data-variant="secondary"
         type="button"
+        id="<removed>"
+        aria-labelledby="<removed>"
+        aria-describedby="<removed>"
         aria-label="Velg filer"
       >
         <svg
@@ -973,19 +984,13 @@ exports[`Too Many Files 1`] = `
     <input
       multiple
       tabindex="-1"
-      id="<removed>"
       type="file"
-      aria-describedby="<removed>"
-      aria-invalid="true"
       style="<removed>"
     >
-    <p
-      data-field="validation"
-      id="<removed>"
-    >
+    <p data-field="validation">
       Du har lastet opp for mange filer. Fjern noen for å kunne sende inn skjemaet.
     </p>
-  </ds-field>
+  </div>
   <h3 data-size="2xs">
     Vedlegg (3):
   </h3>
@@ -1217,9 +1222,10 @@ exports[`Too Many Files 1`] = `
 
 exports[`Upload 1`] = `
 <div style="<removed>">
-  <ds-field>
+  <div>
     <label
       data-weight="medium"
+      id="<removed>"
       for="<removed>"
     >
       Last opp rapport
@@ -1233,6 +1239,9 @@ exports[`Upload 1`] = `
     <button
       data-variant="secondary"
       type="button"
+      id="<removed>"
+      aria-labelledby="<removed>"
+      aria-describedby="<removed>"
       aria-label="Legg til fil"
     >
       <svg
@@ -1254,11 +1263,7 @@ exports[`Upload 1`] = `
         </path>
       </svg>
     </button>
-    <input
-      id="<removed>"
-      type="file"
-      aria-describedby="<removed>"
-    >
-  </ds-field>
+    <input type="file">
+  </div>
 </div>
 `;
