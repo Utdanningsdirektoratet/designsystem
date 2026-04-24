@@ -14,10 +14,6 @@ export {
   usePagination,
 } from './usePagination/usePagination';
 export {
-  type UseRadioGroupProps,
-  useRadioGroup,
-} from './useRadioGroup/useRadioGroup';
-export {
   useTableOfContents,
   type useTableOfContentsProps,
   type useTableOfContentsReturn,
