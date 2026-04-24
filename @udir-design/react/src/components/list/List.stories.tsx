@@ -5,7 +5,7 @@ import { List } from './List';
 
 const meta = preview.meta({
   component: List.Unordered,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       name: 'List',
