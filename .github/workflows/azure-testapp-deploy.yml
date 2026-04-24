@@ -46,6 +46,7 @@ jobs:
     needs: check
     if: needs.check.outputs.should_deploy == 'true'
     runs-on: ubuntu-latest
+    environment: test-app
     name: Build image, push to GHCR, and deploy to Azure Container Apps
     permissions:
       contents: read
