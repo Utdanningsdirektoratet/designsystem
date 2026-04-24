@@ -18,7 +18,7 @@ export function TestHeader() {
 
   return (
     <Header applicationName="Demoapp">
-      <Badge.Position data-size="lg">
+      <Badge.Position data-size="lg" data-show="md">
         <Header.UserButton
           name="Stian Hansen"
           description="Admin"
