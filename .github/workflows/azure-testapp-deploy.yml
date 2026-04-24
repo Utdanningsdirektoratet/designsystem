@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Check if deploy should be initiated
     outputs:
-      should_deploy: ${{ steps.should_deploy.conclusion }}
+      should_deploy: ${{ steps.should_deploy.outputs.should_deploy }}
     permissions:
       contents: read
       actions: 'read'
@@ -38,7 +38,7 @@ jobs:
           echo "Is the deploy triggered through a manual workflow dispatch? $IS_DISPATCH"
           ($IS_DISPATCH || $IS_NEXTJS_AFFECTED || $IS_WORKFLOW_MODIFIED) && SHOULD_DEPLOY=true || SHOULD_DEPLOY=false
           echo "Conclusion: should we deploy the test app? $SHOULD_DEPLOY"
-          echo "conclusion=$SHOULD_DEPLOY" >> "$GITHUB_OUTPUT"
+          echo "should_deploy=$SHOULD_DEPLOY" >> "$GITHUB_OUTPUT"
         env:
           IS_DISPATCH: ${{ github.event_name == 'workflow_dispatch'}}
 
