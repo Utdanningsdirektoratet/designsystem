@@ -15,10 +15,6 @@ on:
       - 'test-apps/nextjs/**'
       - '.github/workflows/azure-testapp-deploy.yml'
 
-permissions:
-  contents: read
-  packages: write
-
 env:
   APP_PATH: test-apps/nextjs
   IMAGE_NAME: ghcr.io/utdanningsdirektoratet/designsystem-testapp
@@ -28,6 +24,10 @@ jobs:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build image, push to GHCR, and deploy to Azure Container Apps
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
 
     steps:
       - name: Check out repo
@@ -49,9 +49,11 @@ jobs:
           tags: ${{ env.IMAGE_NAME }}:${{ github.sha }}
 
       - name: Log in to Azure
-        uses: azure/login@v2
+        uses: azure/login@v3
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Deploy to Azure Container Apps
         uses: azure/container-apps-deploy-action@v1
