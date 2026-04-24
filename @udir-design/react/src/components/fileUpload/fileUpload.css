@@ -137,14 +137,12 @@
   }
 
   &:not([aria-busy='true']):not(:has(input[readOnly])) {
-    &:hover {
-      > .ds-card {
-        cursor: pointer;
+    > .ds-card:hover {
+      cursor: pointer;
 
-        > .ds-button {
-          background: var(--dsc-button-background--hover);
-          color: var(--dsc-button-color--hover);
-        }
+      > .ds-button {
+        background: var(--dsc-button-background--hover);
+        color: var(--dsc-button-color--hover);
       }
     }
   }
