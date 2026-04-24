@@ -58,7 +58,6 @@ jobs:
       - name: Deploy to Azure Container Apps
         uses: azure/container-apps-deploy-action@v1
         with:
-          appSourcePath: ${{ github.workspace }}
           containerAppName: ca-designsystem-testapp
           resourceGroup: rg-designsystem-testapp
           imageToDeploy: ${{ env.IMAGE_NAME }}:${{ github.sha }}
