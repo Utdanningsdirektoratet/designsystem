@@ -20,19 +20,17 @@ Then deploy the storage account, container and related resources
 az deployment group create --resource-group rg-designsystem-build --template-file designsystem-build.bicep
 ```
 
-## TODO test app
+## Testapp infrastructure
 
-...
+The test app is a Nextjs application hosted as an Azure Container App.
+
+To recreate the required infrastructure, first deploy the resource group
 
 ```
 az deployment sub create --location westeurope --template-file resourcegroup-testapp.bicep
 ```
 
-...
-
-```
-az deployment group create --resource-group rg-designsystem-testapp --template-file designsystem-testapp.bicep
-```
+The Azure Container App instance gets created through the `azure-testapp-deploy.yml` workflow.
 
 ## Runtime infrastructure
 
