@@ -20,7 +20,6 @@ export const PersonalInfoPage = ({
 }: PageProps) => {
   const { register, formState } = useFormContext<FormValues>();
   const errors = showErrors ? formState.errors : {};
-  const isInvalid = !!errors.contactMethods;
   return (
     <>
       <Heading level={2} data-size="sm">
@@ -45,7 +44,6 @@ export const PersonalInfoPage = ({
           {...register('lastName')}
           required
           autoComplete="family-name"
-          aria-invalid={!!errors.lastName}
           readOnly={isSubmitSuccessful}
         />
         {errors.lastName && (
@@ -63,7 +61,6 @@ export const PersonalInfoPage = ({
           id="contactMethodsEmail"
           label={<span>E-post</span>}
           {...register('contactMethods')}
-          aria-invalid={isInvalid}
           readOnly={isSubmitSuccessful}
           value="epost"
           required
@@ -72,7 +69,6 @@ export const PersonalInfoPage = ({
           id="contactMethodsTelefon"
           label={<span>Telefon</span>}
           {...register('contactMethods')}
-          aria-invalid={isInvalid}
           readOnly={isSubmitSuccessful}
           value="telefon"
           required
@@ -81,7 +77,6 @@ export const PersonalInfoPage = ({
           id="contactMethodsSms"
           label={<span>SMS</span>}
           {...register('contactMethods')}
-          aria-invalid={isInvalid}
           readOnly={isSubmitSuccessful}
           value="sms"
           required

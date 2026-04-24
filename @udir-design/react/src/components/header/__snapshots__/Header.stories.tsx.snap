@@ -38,11 +38,11 @@ exports[`Auto Hide Sticky 1`] = `
   <header
     data-scroll-direction="up"
     data-top="true"
-    style="--udsc-header-max-width: 80rem;"
+    style="<removed>"
   >
     <div>
       <a href="/">
-        <div style="--uds-logo-padding: 0;">
+        <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
             src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
@@ -130,18 +130,19 @@ exports[`Auto Hide Sticky 1`] = `
           Meny
         </button>
         <div
-          id="uds-header-menu"
+          id="<removed>"
           popover="auto"
+          data-placement="none"
           data-variant="default"
         >
-          <nav aria-labelledby="header-menu-navigation">
-            <h2 id="header-menu-navigation">
+          <nav aria-labelledby="<removed>">
+            <h2 id="<removed>">
               Menynavigasjon
             </h2>
             <div data-hide="md">
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Navlinker
               </h3>
@@ -214,7 +215,7 @@ exports[`Auto Hide Sticky 1`] = `
             <div data-hide>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Overskrift 1
               </h3>
@@ -329,7 +330,7 @@ exports[`Auto Hide Sticky 1`] = `
             <div data-hide>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Overskrift 2
               </h3>
@@ -509,11 +510,11 @@ exports[`Auto Hide Sticky Test 1`] = `
   <header
     data-scroll-direction="up"
     data-top="true"
-    style="--udsc-header-max-width: 80rem;"
+    style="<removed>"
   >
     <div>
       <a href="/">
-        <div style="--uds-logo-padding: 0;">
+        <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
             src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
@@ -601,20 +602,19 @@ exports[`Auto Hide Sticky Test 1`] = `
           Meny
         </button>
         <div
-          id="uds-header-menu"
+          id="<removed>"
           popover="auto"
+          data-placement="none"
           data-variant="default"
-          data-placement="bottom"
-          style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
         >
-          <nav aria-labelledby="header-menu-navigation">
-            <h2 id="header-menu-navigation">
+          <nav aria-labelledby="<removed>">
+            <h2 id="<removed>">
               Menynavigasjon
             </h2>
             <div data-hide="md">
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Navlinker
               </h3>
@@ -687,7 +687,7 @@ exports[`Auto Hide Sticky Test 1`] = `
             <div data-hide>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Overskrift 1
               </h3>
@@ -802,7 +802,7 @@ exports[`Auto Hide Sticky Test 1`] = `
             <div data-hide>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Overskrift 2
               </h3>
@@ -968,11 +968,11 @@ exports[`Long Application Name 1`] = `
   <header
     data-scroll-direction="up"
     data-top="true"
-    style="--udsc-header-max-width: 80rem;"
+    style="<removed>"
   >
     <div>
       <a href="/">
-        <div style="--uds-logo-padding: 0;">
+        <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
             src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
@@ -1031,8 +1031,9 @@ exports[`Long Application Name 1`] = `
           </span>
         </button>
         <div
-          id="uds-header-menu"
+          id="<removed>"
           popover="auto"
+          data-placement="none"
           data-variant="default"
         >
         </div>
@@ -1044,10 +1045,10 @@ exports[`Long Application Name 1`] = `
 
 exports[`Preview 1`] = `
 <div data-size="auto">
-  <header style="--udsc-header-max-width: 80rem;">
+  <header style="<removed>">
     <div>
       <a href="/">
-        <div style="--uds-logo-padding: 0;">
+        <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
             src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
@@ -1089,11 +1090,11 @@ exports[`Responsive 1`] = `
   <header
     data-scroll-direction="up"
     data-top="true"
-    style="--udsc-header-max-width: 80rem;"
+    style="<removed>"
   >
     <div>
       <a href="/">
-        <div style="--uds-logo-padding: 0;">
+        <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
             src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
@@ -1146,10 +1147,7 @@ exports[`Responsive 1`] = `
           data-show="md"
         >
           <div>
-            <h3
-              data-size="2xs"
-              title="Stian Hansen"
-            >
+            <h3 data-size="2xs">
               Stian Hansen
             </h3>
             <p
@@ -1206,16 +1204,15 @@ exports[`Responsive 1`] = `
           </svg>
         </button>
         <div
-          id="usermenu2"
+          id="<removed>"
           popover="manual"
+          data-placement="bottom-end"
           data-variant="default"
         >
           <ul>
-            <li>
-              <h2>
-                Bytt profil
-              </h2>
-            </li>
+            <h2>
+              Bytt profil
+            </h2>
             <li>
               <button
                 data-variant="tertiary"
@@ -1324,8 +1321,9 @@ exports[`Responsive 1`] = `
           Meny
         </button>
         <div
-          id="uds-header-menu"
+          id="<removed>"
           popover="auto"
+          data-placement="none"
           data-variant="default"
         >
           <button
@@ -1333,13 +1331,10 @@ exports[`Responsive 1`] = `
             data-color="neutral"
             popovertarget="usermenuInMenu"
             data-hide="md"
-            style="width: stretch; margin: 0 var(--ds-size-5);"
+            style="<removed>"
           >
             <div>
-              <h3
-                data-size="2xs"
-                title="Stian Hansen"
-              >
+              <h3 data-size="2xs">
                 Stian Hansen
               </h3>
               <p
@@ -1396,16 +1391,15 @@ exports[`Responsive 1`] = `
             </svg>
           </button>
           <div
-            id="usermenuInMenu"
+            id="<removed>"
             popover="manual"
+            data-placement="bottom-end"
             data-variant="default"
           >
+            <h2>
+              Bytt profil
+            </h2>
             <ul>
-              <li>
-                <h2>
-                  Bytt profil
-                </h2>
-              </li>
               <li>
                 <button
                   data-variant="tertiary"
@@ -1472,14 +1466,14 @@ exports[`Responsive 1`] = `
               </li>
             </ul>
           </div>
-          <nav aria-labelledby="header-menu-navigation">
-            <h2 id="header-menu-navigation">
+          <nav aria-labelledby="<removed>">
+            <h2 id="<removed>">
               Menynavigasjon
             </h2>
             <div data-hide="lg">
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Navlinker
               </h3>
@@ -1552,7 +1546,7 @@ exports[`Responsive 1`] = `
             <div data-hide>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Overskrift 1
               </h3>
@@ -1667,7 +1661,7 @@ exports[`Responsive 1`] = `
             <div data-hide>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Overskrift 2
               </h3>
@@ -1783,11 +1777,11 @@ exports[`Udir No 1`] = `
   <header
     data-scroll-direction="up"
     data-top="true"
-    style="--udsc-header-max-width: 80rem;"
+    style="<removed>"
   >
     <div>
       <a href="https://www.udir.no/">
-        <div style="--uds-logo-padding: 0;">
+        <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
             src="/assets/img/udir-main-logo.svg"
@@ -1801,7 +1795,7 @@ exports[`Udir No 1`] = `
       <div>
         <div
           data-show="sm"
-          style="max-width: 280px;"
+          style="<removed>"
         >
           <input
             placeholder="Søk"
@@ -1858,13 +1852,14 @@ exports[`Udir No 1`] = `
           Meny
         </button>
         <div
-          id="uds-header-menu"
+          id="<removed>"
           popover="auto"
+          data-placement="none"
           data-variant="default"
         >
           <div
             data-hide="sm"
-            style="width: auto; margin: var(--ds-size-5) var(--ds-size-5) 0;"
+            style="<removed>"
           >
             <input
               placeholder="Søk"
@@ -1879,14 +1874,14 @@ exports[`Udir No 1`] = `
             >
             </button>
           </div>
-          <nav aria-labelledby="header-menu-navigation">
-            <h2 id="header-menu-navigation">
+          <nav aria-labelledby="<removed>">
+            <h2 id="<removed>">
               Menynavigasjon
             </h2>
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Utdanningsløpet
               </h3>
@@ -2064,7 +2059,7 @@ exports[`Udir No 1`] = `
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Læring og trivsel
               </h3>
@@ -2200,7 +2195,7 @@ exports[`Udir No 1`] = `
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Prøver og vurdering
               </h3>
@@ -2315,7 +2310,7 @@ exports[`Udir No 1`] = `
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Kompetanse og tilskudd
               </h3>
@@ -2472,7 +2467,7 @@ exports[`Udir No 1`] = `
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Tall og forskning
               </h3>
@@ -2650,7 +2645,7 @@ exports[`Udir No 1`] = `
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Regelverk og tilsyn
               </h3>
@@ -2754,11 +2749,11 @@ exports[`With Language Picker 1`] = `
   <header
     data-scroll-direction="up"
     data-top="true"
-    style="--udsc-header-max-width: 80rem;"
+    style="<removed>"
   >
     <div>
       <a href="/">
-        <div style="--uds-logo-padding: 0;">
+        <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
             src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
@@ -2800,8 +2795,9 @@ exports[`With Language Picker 1`] = `
           Language
         </button>
         <div
-          id="language-picker"
+          id="<removed>"
           popover="manual"
+          data-placement="bottom-end"
           data-variant="default"
         >
           <ul>
@@ -2872,11 +2868,11 @@ exports[`With Menu 1`] = `
   <header
     data-scroll-direction="up"
     data-top="true"
-    style="--udsc-header-max-width: 80rem;"
+    style="<removed>"
   >
     <div>
       <a href="/">
-        <div style="--uds-logo-padding: 0;">
+        <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
             src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
@@ -2933,18 +2929,19 @@ exports[`With Menu 1`] = `
           Meny
         </button>
         <div
-          id="uds-header-menu"
+          id="<removed>"
           popover="auto"
+          data-placement="none"
           data-variant="default"
         >
-          <nav aria-labelledby="header-menu-navigation">
-            <h2 id="header-menu-navigation">
+          <nav aria-labelledby="<removed>">
+            <h2 id="<removed>">
               Menynavigasjon
             </h2>
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 <a href="#">
                   Designprofil
@@ -3019,7 +3016,7 @@ exports[`With Menu 1`] = `
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 <a href="#">
                   Illustrasjoner
@@ -3094,7 +3091,7 @@ exports[`With Menu 1`] = `
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 <a href="#">
                   Nyttige lenker
@@ -3190,11 +3187,11 @@ exports[`With Navigation Links 1`] = `
   <header
     data-scroll-direction="up"
     data-top="true"
-    style="--udsc-header-max-width: 80rem;"
+    style="<removed>"
   >
     <div>
       <a href="/">
-        <div style="--uds-logo-padding: 0;">
+        <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
             src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
@@ -3283,8 +3280,9 @@ exports[`With Navigation Links 1`] = `
           Meny
         </button>
         <div
-          id="uds-header-menu"
+          id="<removed>"
           popover="auto"
+          data-placement="none"
           data-variant="default"
         >
           <nav aria-label="Menynavigasjon">
@@ -3384,11 +3382,11 @@ exports[`With Navigation Links And Menu 1`] = `
   <header
     data-scroll-direction="up"
     data-top="true"
-    style="--udsc-header-max-width: 80rem;"
+    style="<removed>"
   >
     <div>
       <a href="/">
-        <div style="--uds-logo-padding: 0;">
+        <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
             src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
@@ -3468,18 +3466,19 @@ exports[`With Navigation Links And Menu 1`] = `
           Meny
         </button>
         <div
-          id="uds-header-menu"
+          id="<removed>"
           popover="auto"
+          data-placement="none"
           data-variant="default"
         >
-          <nav aria-labelledby="header-menu-navigation">
-            <h2 id="header-menu-navigation">
+          <nav aria-labelledby="<removed>">
+            <h2 id="<removed>">
               Menynavigasjon
             </h2>
             <div data-hide="sm">
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Navlinker
               </h3>
@@ -3531,7 +3530,7 @@ exports[`With Navigation Links And Menu 1`] = `
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Overskrift 1
               </h3>
@@ -3604,7 +3603,7 @@ exports[`With Navigation Links And Menu 1`] = `
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Overskrift 2
               </h3>
@@ -3698,7 +3697,7 @@ exports[`With Navigation Links And Menu 1`] = `
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Overskrift 3
               </h3>
@@ -3781,11 +3780,11 @@ exports[`With Search 1`] = `
   <header
     data-scroll-direction="up"
     data-top="true"
-    style="--udsc-header-max-width: 80rem;"
+    style="<removed>"
   >
     <div>
       <a href="/">
-        <div style="--uds-logo-padding: 0;">
+        <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
             src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
@@ -3826,11 +3825,11 @@ exports[`With Tag 1`] = `
   <header
     data-scroll-direction="up"
     data-top="true"
-    style="--udsc-header-max-width: 80rem;"
+    style="<removed>"
   >
     <div>
       <a href="/">
-        <div style="--uds-logo-padding: 0;">
+        <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
             src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
@@ -3883,11 +3882,11 @@ exports[`With Theme Menus 1`] = `
   <header
     data-scroll-direction="up"
     data-top="true"
-    style="--udsc-header-max-width: 80rem;"
+    style="<removed>"
   >
     <div>
       <a href="/">
-        <div style="--uds-logo-padding: 0;">
+        <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
             src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
@@ -3947,18 +3946,19 @@ exports[`With Theme Menus 1`] = `
           Temameny 1
         </button>
         <div
-          id="header-education-menu"
+          id="<removed>"
           popover="auto"
+          data-placement="none"
           data-variant="default"
         >
-          <nav aria-labelledby="header-menu-theme1-navigation">
-            <h2 id="header-menu-theme1-navigation">
+          <nav aria-labelledby="<removed>">
+            <h2 id="<removed>">
               Temameny 1 navigasjon
             </h2>
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Overskrift 1
               </h3>
@@ -4031,7 +4031,7 @@ exports[`With Theme Menus 1`] = `
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Overskrift 2
               </h3>
@@ -4125,7 +4125,7 @@ exports[`With Theme Menus 1`] = `
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Overskrift 3
               </h3>
@@ -4242,18 +4242,19 @@ exports[`With Theme Menus 1`] = `
           Temameny 2
         </button>
         <div
-          id="header-learning-menu"
+          id="<removed>"
           popover="auto"
+          data-placement="none"
           data-variant="default"
         >
-          <nav aria-labelledby="header-menu-theme2-navigation">
-            <h2 id="header-menu-theme2-navigation">
+          <nav aria-labelledby="<removed>">
+            <h2 id="<removed>">
               Temameny 2 navigasjon
             </h2>
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Overskrift 4
               </h3>
@@ -4326,7 +4327,7 @@ exports[`With Theme Menus 1`] = `
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Overskrift 5
               </h3>
@@ -4462,18 +4463,19 @@ exports[`With Theme Menus 1`] = `
           Meny
         </button>
         <div
-          id="header-mobile-menu"
+          id="<removed>"
           popover="auto"
+          data-placement="none"
           data-variant="default"
         >
-          <nav aria-labelledby="header-menu-navigation">
-            <h2 id="header-menu-navigation">
+          <nav aria-labelledby="<removed>">
+            <h2 id="<removed>">
               Menynavigasjon
             </h2>
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Overskrift 1
               </h3>
@@ -4546,7 +4548,7 @@ exports[`With Theme Menus 1`] = `
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Overskrift 2
               </h3>
@@ -4640,7 +4642,7 @@ exports[`With Theme Menus 1`] = `
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Overskrift 3
               </h3>
@@ -4713,7 +4715,7 @@ exports[`With Theme Menus 1`] = `
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Overskrift 4
               </h3>
@@ -4786,7 +4788,7 @@ exports[`With Theme Menus 1`] = `
             <div>
               <h3
                 data-size="xs"
-                style="margin-bottom: var(--ds-size-3);"
+                style="<removed>"
               >
                 Overskrift 5
               </h3>
@@ -4890,11 +4892,11 @@ exports[`With Two Languages 1`] = `
   <header
     data-scroll-direction="up"
     data-top="true"
-    style="--udsc-header-max-width: 80rem;"
+    style="<removed>"
   >
     <div>
       <a href="/">
-        <div style="--uds-logo-padding: 0;">
+        <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
             src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
@@ -4945,11 +4947,11 @@ exports[`With User Button 1`] = `
   <header
     data-scroll-direction="up"
     data-top="true"
-    style="--udsc-header-max-width: 80rem;"
+    style="<removed>"
   >
     <div>
       <a href="/">
-        <div style="--uds-logo-padding: 0;">
+        <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
             src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
@@ -4971,10 +4973,7 @@ exports[`With User Button 1`] = `
           data-show="sm"
         >
           <div>
-            <h3
-              data-size="2xs"
-              title="Stian Hansen"
-            >
+            <h3 data-size="2xs">
               Stian Hansen
             </h3>
             <p
@@ -5033,16 +5032,15 @@ exports[`With User Button 1`] = `
           </svg>
         </button>
         <div
-          id="usermenu"
+          id="<removed>"
           popover="manual"
+          data-placement="bottom-end"
           data-variant="default"
         >
+          <h2>
+            Bytt profil
+          </h2>
           <ul>
-            <li>
-              <h2>
-                Bytt profil
-              </h2>
-            </li>
             <li>
               <button
                 data-variant="tertiary"
@@ -5128,32 +5126,31 @@ exports[`With User Button 1`] = `
           </span>
         </button>
         <div
-          id="usermenuSmall"
+          id="<removed>"
           popover="manual"
+          data-placement="bottom-end"
           data-variant="default"
         >
+          <h2>
+            Detaljer
+          </h2>
           <ul>
-            <li>
-              <h2>
-                Detaljer
-              </h2>
-            </li>
-            <li style="margin-left: var(--ds-size-4);">
+            <li style="<removed>">
               <p data-variant="default">
                 Stian Hansen
               </p>
             </li>
-            <li style="margin-left: var(--ds-size-4); margin-bottom: var(--ds-size-4);">
+            <li style="<removed>">
               <p data-variant="default">
                 Admin
               </p>
             </li>
             <hr aria-hidden="true">
-            <li>
-              <h2>
-                Bytt profil
-              </h2>
-            </li>
+          </ul>
+          <h2>
+            Bytt profil
+          </h2>
+          <ul>
             <li>
               <button
                 data-variant="tertiary"
@@ -5231,11 +5228,11 @@ exports[`With User Button Test 1`] = `
   <header
     data-scroll-direction="up"
     data-top="true"
-    style="--udsc-header-max-width: 80rem;"
+    style="<removed>"
   >
     <div>
       <a href="/">
-        <div style="--uds-logo-padding: 0;">
+        <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
             src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
@@ -5257,10 +5254,7 @@ exports[`With User Button Test 1`] = `
           data-show="sm"
         >
           <div>
-            <h3
-              data-size="2xs"
-              title="Stian Hansen"
-            >
+            <h3 data-size="2xs">
               Stian Hansen
             </h3>
             <p
@@ -5319,18 +5313,17 @@ exports[`With User Button Test 1`] = `
           </svg>
         </button>
         <div
-          id="usermenu"
+          id="<removed>"
           popover="manual"
+          data-placement="bottom-end"
           data-variant="default"
-          data-placement="bottom"
-          style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+          data-floating="bottom-end"
+          style="<removed>"
         >
+          <h2>
+            Bytt profil
+          </h2>
           <ul>
-            <li>
-              <h2>
-                Bytt profil
-              </h2>
-            </li>
             <li>
               <button
                 data-variant="tertiary"
@@ -5416,32 +5409,31 @@ exports[`With User Button Test 1`] = `
           </span>
         </button>
         <div
-          id="usermenuSmall"
+          id="<removed>"
           popover="manual"
+          data-placement="bottom-end"
           data-variant="default"
         >
+          <h2>
+            Detaljer
+          </h2>
           <ul>
-            <li>
-              <h2>
-                Detaljer
-              </h2>
-            </li>
-            <li style="margin-left: var(--ds-size-4);">
+            <li style="<removed>">
               <p data-variant="default">
                 Stian Hansen
               </p>
             </li>
-            <li style="margin-left: var(--ds-size-4); margin-bottom: var(--ds-size-4);">
+            <li style="<removed>">
               <p data-variant="default">
                 Admin
               </p>
             </li>
             <hr aria-hidden="true">
-            <li>
-              <h2>
-                Bytt profil
-              </h2>
-            </li>
+          </ul>
+          <h2>
+            Bytt profil
+          </h2>
+          <ul>
             <li>
               <button
                 data-variant="tertiary"

@@ -5,13 +5,13 @@ exports[`Article 1`] = `
   <img
     alt="Bøker på et bord"
     src="https://images.unsplash.com/photo-1635335874521-7987db781153?q=80&amp;w=2070&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;"
+    style="<removed>"
   >
-  <div style="display: flex; gap: 10px; margin-top: var(--ds-size-4); margin-bottom: var(--ds-size-3);">
+  <div style="<removed>">
     <h2>
       Rådgivning for lærlinger
     </h2>
-    <ul style="list-style: none; display: flex; gap: 10px; padding: 0px; margin: 0px;">
+    <ul style="<removed>">
       <li>
         <span
           data-variant="default"
@@ -32,7 +32,7 @@ exports[`Article 1`] = `
       </li>
     </ul>
   </div>
-  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: var(--ds-size-2);">
+  <div style="<removed>">
     <span
       data-variant="circle"
       data-initials="ON"
@@ -81,7 +81,7 @@ exports[`Colors 1`] = `
 exports[`Icon 1`] = `
 <span
   data-variant="default"
-  style="padding-inline-start: var(--ds-size-1);"
+  style="<removed>"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -92,7 +92,7 @@ exports[`Icon 1`] = `
     focusable="false"
     role="img"
     aria-hidden="true"
-    style="margin-inline-end: var(--ds-size-1);"
+    style="<removed>"
   >
     <path
       fill="currentColor"
@@ -112,7 +112,7 @@ exports[`Icon 1`] = `
 <span
   data-variant="default"
   data-color="support1"
-  style="padding-inline-start: var(--ds-size-1);"
+  style="<removed>"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +123,7 @@ exports[`Icon 1`] = `
     focusable="false"
     role="img"
     aria-hidden="true"
-    style="margin-inline-end: var(--ds-size-1);"
+    style="<removed>"
   >
     <path
       fill="currentColor"

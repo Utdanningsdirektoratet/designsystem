@@ -1,6 +1,6 @@
 import { DownloadIcon } from '@udir-design/icons';
 import { Button } from 'src/components/button/Button';
-import { ToggleGroup } from 'src/components/toggleGroup/ToggleGroup';
+import { ToggleGroup } from 'src/components/toggleGroup';
 import classes from './DataControls.module.css';
 
 type DataControlsProps = {

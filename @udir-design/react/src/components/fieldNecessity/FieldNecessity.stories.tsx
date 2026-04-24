@@ -1,4 +1,3 @@
-import type { StoryContext } from '@storybook/react-vite';
 import preview from '.storybook/preview';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
 import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
@@ -24,13 +23,8 @@ const meta = preview.meta({
   },
 });
 
-function id(context: StoryContext, id: string) {
-  const prefix = context.id.split('--')[1] ?? context.id;
-  return `${prefix}-${id}`;
-}
-
 export const Preview = meta.story({
-  render: (args, context) => (
+  render: (args) => (
     <FieldNecessity
       {...args}
       style={{
@@ -39,24 +33,16 @@ export const Preview = meta.story({
         rowGap: 'var(--ds-size-4)',
       }}
     >
-      <Textfield
-        id={id(context, 'first')}
-        label={<span>Fornavn</span>}
-        required
-      />
-      <Textfield id={id(context, 'middle')} label={<span>Mellomnavn</span>} />
-      <Textfield
-        id={id(context, 'last')}
-        label={<span>Etternavn</span>}
-        required
-      />
+      <Textfield label={<span>Fornavn</span>} required />
+      <Textfield label={<span>Mellomnavn</span>} />
+      <Textfield label={<span>Etternavn</span>} required />
     </FieldNecessity>
   ),
 });
 
 export const Outline = meta.story({
   args: { variant: 'outline' },
-  render: (args, context) => (
+  render: (args) => (
     <Card variant="tinted">
       <FieldNecessity
         {...args}
@@ -66,24 +52,16 @@ export const Outline = meta.story({
           rowGap: 'var(--ds-size-4)',
         }}
       >
-        <Textfield
-          id={id(context, 'first')}
-          label={<span>Fornavn</span>}
-          required
-        />
-        <Textfield id={id(context, 'middle')} label={<span>Mellomnavn</span>} />
-        <Textfield
-          id={id(context, 'last')}
-          label={<span>Etternavn</span>}
-          required
-        />
+        <Textfield label={<span>Fornavn</span>} required />
+        <Textfield label={<span>Mellomnavn</span>} />
+        <Textfield label={<span>Etternavn</span>} required />
       </FieldNecessity>
     </Card>
   ),
 });
 
 export const Readonly = meta.story({
-  render: (args, context) => (
+  render: (args) => (
     <FieldNecessity
       {...args}
       style={{
@@ -92,29 +70,15 @@ export const Readonly = meta.story({
         rowGap: 'var(--ds-size-4)',
       }}
     >
-      <Textfield
-        id={id(context, 'first')}
-        label={<span>Fornavn</span>}
-        required
-        readOnly
-      />
-      <Textfield
-        id={id(context, 'middle')}
-        label={<span>Mellomnavn</span>}
-        readOnly
-      />
-      <Textfield
-        id={id(context, 'last')}
-        label={<span>Etternavn</span>}
-        required
-        readOnly
-      />
+      <Textfield label={<span>Fornavn</span>} required readOnly />
+      <Textfield label={<span>Mellomnavn</span>} readOnly />
+      <Textfield label={<span>Etternavn</span>} required readOnly />
     </FieldNecessity>
   ),
 });
 
 export const AllRequired = meta.story({
-  render: (args, context) => (
+  render: (args) => (
     <FieldNecessity
       {...args}
       style={{
@@ -123,22 +87,14 @@ export const AllRequired = meta.story({
         rowGap: 'var(--ds-size-4)',
       }}
     >
-      <Textfield
-        id={id(context, 'first')}
-        label={<span>Fornavn</span>}
-        required
-      />
-      <Textfield
-        id={id(context, 'last')}
-        label={<span>Etternavn</span>}
-        required
-      />
+      <Textfield label={<span>Fornavn</span>} required />
+      <Textfield label={<span>Etternavn</span>} required />
     </FieldNecessity>
   ),
 });
 
 export const AllOptional = meta.story({
-  render: (args, context) => (
+  render: (args) => (
     <FieldNecessity
       {...args}
       style={{
@@ -147,39 +103,26 @@ export const AllOptional = meta.story({
         rowGap: 'var(--ds-size-4)',
       }}
     >
-      <Textfield
-        id={id(context, 'opinion')}
-        multiline
-        label={<span>Hva synes du om skjemaet?</span>}
-      />
-      <Textfield
-        id={id(context, 'other')}
-        multiline
-        label={<span>Har du noen andre innspill?</span>}
-      />
+      <Textfield multiline label={<span>Hva synes du om skjemaet?</span>} />
+      <Textfield multiline label={<span>Har du noen andre innspill?</span>} />
     </FieldNecessity>
   ),
 });
 
 export const SingleOptionalField = meta.story({
   args: { showSummary: false, showOptional: true },
-  render: (args, context) => (
+  render: (args) => (
     <FieldNecessity {...args}>
-      <Textfield
-        id={id(context, 'comments')}
-        multiline
-        label={<span>Har du noen kommentarer?</span>}
-      />
+      <Textfield multiline label={<span>Har du noen kommentarer?</span>} />
     </FieldNecessity>
   ),
 });
 
 export const SingleRequiredField = meta.story({
   args: { showSummary: false },
-  render: (args, context) => (
+  render: (args) => (
     <FieldNecessity {...args}>
       <Textfield
-        id={id(context, 'events')}
         multiline
         label={<span>Beskriv hendelsesforløpet</span>}
         required
@@ -193,7 +136,7 @@ export const FieldsetCheckboxes = meta.story({
     docs: { source: { type: 'code', transform: formatReactSource } },
   },
   args: { showSummary: false },
-  render: (args, context) => {
+  render: (args) => {
     const { getCheckboxProps, validationMessageProps } = useCheckboxGroup({
       required: true,
       name: 'checkbox-group',
@@ -209,20 +152,14 @@ export const FieldsetCheckboxes = meta.story({
             Velg de alternativene som er relevante for deg.
           </Fieldset.Description>
           <Checkbox
-            id={id(context, 'email')}
             label={<span>E-post</span>}
             {...getCheckboxProps('epost')}
           />
           <Checkbox
-            id={id(context, 'telefon')}
             label={<span>Telefon</span>}
             {...getCheckboxProps('telefon')}
           />
-          <Checkbox
-            id={id(context, 'sms')}
-            label={<span>SMS</span>}
-            {...getCheckboxProps('sms')}
-          />
+          <Checkbox label={<span>SMS</span>} {...getCheckboxProps('sms')} />
           <ValidationMessage {...validationMessageProps} />
         </Fieldset>
       </FieldNecessity>
@@ -235,7 +172,7 @@ export const FieldsetRadios = meta.story({
     docs: { source: { type: 'code', transform: formatReactSource } },
   },
   args: { showSummary: false },
-  render: (args, context) => {
+  render: (args) => {
     const ageGroups = [
       { value: '10-20', label: '10-20 år' },
       { value: '21-45', label: '21-45 år' },
@@ -255,7 +192,6 @@ export const FieldsetRadios = meta.story({
           {ageGroups.map((group) => (
             <Radio
               key={group.value}
-              id={id(context, group.value)}
               label={group.label}
               {...getRadioProps(group.value)}
             />
@@ -268,18 +204,16 @@ export const FieldsetRadios = meta.story({
 });
 
 export const IndividualCheckboxes = meta.story({
-  render: (args, context) => {
+  render: (args) => {
     return (
       <FieldNecessity {...args}>
         <Checkbox
-          id={id(context, 'terms-conditions')}
           label={
             <span>Jeg bekrefter at opplysningene i søknaden er korrekt</span>
           }
           required
         />
         <Checkbox
-          id={id(context, 'contact')}
           label={
             <span>
               Jeg er villig til å delta i en spørreundersøkelse i etterkant av
@@ -293,7 +227,7 @@ export const IndividualCheckboxes = meta.story({
 });
 
 export const ManualSummaryPlacement = meta.story({
-  render: (args, context) => (
+  render: (args) => (
     <FieldNecessity
       {...args}
       style={{
@@ -309,21 +243,9 @@ export const ManualSummaryPlacement = meta.story({
         Vi trenger å vite hvordan vi kan kontakte deg i etterkant av søknaden.
       </Paragraph>
       <FieldNecessity.Summary />
-      <Textfield
-        id={id(context, 'first')}
-        label={<span>Fornavn</span>}
-        required
-      />
-      <Textfield
-        id={id(context, 'middle')}
-        label={<span>Etternavn</span>}
-        required
-      />
-      <Textfield
-        id={id(context, 'last')}
-        label={<span>E-postadresse</span>}
-        required
-      />
+      <Textfield label={<span>Fornavn</span>} required />
+      <Textfield label={<span>Etternavn</span>} required />
+      <Textfield label={<span>E-postadresse</span>} required />
     </FieldNecessity>
   ),
 });

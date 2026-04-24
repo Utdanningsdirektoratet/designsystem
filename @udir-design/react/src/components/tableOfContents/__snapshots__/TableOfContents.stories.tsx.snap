@@ -4,7 +4,7 @@ exports[`Automatic 1`] = `
 <div>
   <h1
     data-size="lg"
-    id="heading-1"
+    id="<removed>"
     tabindex="-1"
   >
     Sidetittel (h1)
@@ -19,19 +19,13 @@ exports[`Automatic 1`] = `
     data-variant="tinted"
     data-color="accent"
   >
-    <u-details
+    <details
       open
       data-variant="default"
-      role="group"
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         Innhold på denne siden
-      </u-summary>
+      </summary>
       <div>
         <ol>
           <li>
@@ -105,11 +99,11 @@ exports[`Automatic 1`] = `
           </li>
         </ol>
       </div>
-    </u-details>
+    </details>
   </div>
   <h2
     data-size="md"
-    id="heading-2"
+    id="<removed>"
     tabindex="-1"
   >
     Første overskrift (h2)
@@ -122,7 +116,7 @@ exports[`Automatic 1`] = `
   </p>
   <h3
     data-size="sm"
-    id="heading-3"
+    id="<removed>"
     tabindex="-1"
   >
     Første underoverskrift (h3)
@@ -132,7 +126,7 @@ exports[`Automatic 1`] = `
   </p>
   <h4
     data-size="xs"
-    id="heading-4"
+    id="<removed>"
     tabindex="-1"
   >
     Første underunderoverskrift (h4)
@@ -142,7 +136,7 @@ exports[`Automatic 1`] = `
   </p>
   <h2
     data-size="md"
-    id="heading-5"
+    id="<removed>"
     tabindex="-1"
   >
     Andre overskrift (h2)
@@ -158,21 +152,15 @@ exports[`Controlled State 1`] = `
   <div
     data-variant="default"
     data-color="neutral"
-    style="max-width: 450px;"
+    style="<removed>"
   >
-    <u-details
+    <details
       open
       data-variant="default"
-      role="group"
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         Innhold på denne siden
-      </u-summary>
+      </summary>
       <div>
         <ol>
           <li>
@@ -292,42 +280,42 @@ exports[`Controlled State 1`] = `
           </li>
         </ol>
       </div>
-    </u-details>
+    </details>
   </div>
   <p data-variant="default">
     I dette eksempelet lukker vi innholdsfortegnelsen når den er mindre enn 90% synlig, og åpner den når den blir synlig igjen.
   </p>
   <h2
     data-size="md"
-    id="forste-overskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Første overskrift (h2)
   </h2>
   <h3
     data-size="sm"
-    id="forste-underoverskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Første underoverskrift (h3)
   </h3>
   <h3
     data-size="sm"
-    id="andre-underoverskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Andre underoverskrift (h3)
   </h3>
   <h2
     data-size="md"
-    id="andre-overskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Andre overskrift (h2)
   </h2>
   <h2
     data-size="md"
-    id="tredje-overskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Tredje overskrift (h2)
@@ -339,7 +327,7 @@ exports[`Default Closed 1`] = `
 <div>
   <h1
     data-size="lg"
-    id="heading-1"
+    id="<removed>"
     tabindex="-1"
   >
     Sidetittel (h1)
@@ -354,18 +342,10 @@ exports[`Default Closed 1`] = `
     data-variant="tinted"
     data-color="accent"
   >
-    <u-details
-      data-variant="default"
-      role="group"
-    >
-      <u-summary
-        aria-expanded="false"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+    <details data-variant="default">
+      <summary>
         Innhold på denne siden
-      </u-summary>
+      </summary>
       <div>
         <ol>
           <li>
@@ -439,11 +419,11 @@ exports[`Default Closed 1`] = `
           </li>
         </ol>
       </div>
-    </u-details>
+    </details>
   </div>
   <h2
     data-size="md"
-    id="heading-2"
+    id="<removed>"
     tabindex="-1"
   >
     Første overskrift (h2)
@@ -456,7 +436,7 @@ exports[`Default Closed 1`] = `
   </p>
   <h3
     data-size="sm"
-    id="heading-3"
+    id="<removed>"
     tabindex="-1"
   >
     Første underoverskrift (h3)
@@ -466,7 +446,7 @@ exports[`Default Closed 1`] = `
   </p>
   <h4
     data-size="xs"
-    id="heading-4"
+    id="<removed>"
     tabindex="-1"
   >
     Første underunderoverskrift (h4)
@@ -476,7 +456,7 @@ exports[`Default Closed 1`] = `
   </p>
   <h2
     data-size="md"
-    id="heading-5"
+    id="<removed>"
     tabindex="-1"
   >
     Andre overskrift (h2)
@@ -499,19 +479,13 @@ exports[`Manual 1`] = `
     data-variant="default"
     data-color="support1"
   >
-    <u-details
+    <details
       open
       data-variant="default"
-      role="group"
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         Innhold på denne siden
-      </u-summary>
+      </summary>
       <div>
         <ol>
           <li>
@@ -562,11 +536,11 @@ exports[`Manual 1`] = `
           </li>
         </ol>
       </div>
-    </u-details>
+    </details>
   </div>
   <h2
     data-size="md"
-    id="forste"
+    id="<removed>"
     tabindex="-1"
   >
     Første overskrift (h2)
@@ -576,7 +550,7 @@ exports[`Manual 1`] = `
   </p>
   <h2
     data-size="md"
-    id="andre"
+    id="<removed>"
     tabindex="-1"
   >
     Andre overskrift (h2)
@@ -591,25 +565,19 @@ exports[`Manual 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<div style="overflow: auto; display: flex; flex-direction: column; gap: var(--ds-size-5);">
+<div style="<removed>">
   <div
     data-variant="default"
     data-color="neutral"
-    style="width: 450px;"
+    style="<removed>"
   >
-    <u-details
+    <details
       open
       data-variant="default"
-      role="group"
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         Innhold på denne siden
-      </u-summary>
+      </summary>
       <div>
         <ol>
           <li>
@@ -729,39 +697,39 @@ exports[`Preview 1`] = `
           </li>
         </ol>
       </div>
-    </u-details>
+    </details>
   </div>
   <h2
     data-size="md"
-    id="forste-overskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Første overskrift (h2)
   </h2>
   <h3
     data-size="sm"
-    id="forste-underoverskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Første underoverskrift (h3)
   </h3>
   <h3
     data-size="sm"
-    id="andre-underoverskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Andre underoverskrift (h3)
   </h3>
   <h2
     data-size="md"
-    id="andre-overskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Andre overskrift (h2)
   </h2>
   <h2
     data-size="md"
-    id="tredje-overskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Tredje overskrift (h2)

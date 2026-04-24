@@ -4,14 +4,14 @@ exports[`Controlled 1`] = `
 <h2>
   Hvor bor du?
 </h2>
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="components-select--controlled"
+    for="<removed>"
   >
     Fylke
   </label>
-  <select id="components-select--controlled">
+  <select id="<removed>">
     <option value>
       Velg et fylke …
     </option>
@@ -61,33 +61,33 @@ exports[`Controlled 1`] = `
       Østfold
     </option>
   </select>
-</div>
-<div>
+</ds-field>
+<ds-field>
   <label
     data-weight="medium"
-    for="components-select--controlled-by"
+    for="<removed>"
   >
     By
   </label>
-  <select id="components-select--controlled-by">
+  <select id="<removed>">
     <option value>
       Velg en by …
     </option>
   </select>
-</div>
+</ds-field>
 `;
 
 exports[`Disabled 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="components-select--disabled"
+    for="<removed>"
   >
     Fylke
   </label>
   <select
     disabled
-    id="components-select--disabled"
+    id="<removed>"
   >
     <option
       value
@@ -141,21 +141,22 @@ exports[`Disabled 1`] = `
       Østfold
     </option>
   </select>
-</div>
+</ds-field>
 `;
 
 exports[`Preview 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="components-select--preview"
+    for="<removed>"
   >
     Fylke
   </label>
   <select
+    aria-readonly="false"
     data-width="full"
     aria-invalid="false"
-    id="components-select--preview"
+    id="<removed>"
   >
     <option
       value
@@ -209,20 +210,20 @@ exports[`Preview 1`] = `
       Østfold
     </option>
   </select>
-</div>
+</ds-field>
 `;
 
 exports[`Read Only 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="components-select--read-only"
+    for="<removed>"
   >
     Fylke
   </label>
   <select
-    readonly
-    id="components-select--read-only"
+    aria-readonly="true"
+    id="<removed>"
   >
     <option
       value
@@ -276,21 +277,21 @@ exports[`Read Only 1`] = `
       Østfold
     </option>
   </select>
-</div>
+</ds-field>
 `;
 
 exports[`With Error 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="components-select--with-error"
+    for="<removed>"
   >
     Fylke
   </label>
   <select
     aria-invalid="true"
-    id="components-select--with-error"
-    aria-describedby="components-select--with-error:validation:1"
+    id="<removed>"
+    aria-describedby="<removed>"
   >
     <option value>
       Velg et fylke …
@@ -343,22 +344,22 @@ exports[`With Error 1`] = `
   </select>
   <p
     data-field="validation"
-    id="components-select--with-error:validation:1"
+    id="<removed>"
   >
     Velg et fylke
   </p>
-</div>
+</ds-field>
 `;
 
 exports[`With Optgroup 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="components-select--with-optgroup"
+    for="<removed>"
   >
     Klassetrinn
   </label>
-  <select id="components-select--with-optgroup">
+  <select id="<removed>">
     <option value>
       Velg klassetrinn …
     </option>
@@ -408,5 +409,5 @@ exports[`With Optgroup 1`] = `
       </option>
     </optgroup>
   </select>
-</div>
+</ds-field>
 `;

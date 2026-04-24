@@ -1,4 +1,6 @@
 import type { Decorator } from '@storybook/react-vite';
+import { type CSSProperties, useEffect } from 'react';
+import { stringifyCSSProperties } from 'react-style-stringify';
 import type { Parameters } from '.storybook/types';
 
 /**
@@ -35,22 +37,37 @@ import type { Parameters } from '.storybook/types';
  * > trims each snapshot to the dimensions of the root node of the story. To capture
  * > those styles, wrap the story in a decorator that adds slight padding.
  */
-export const customStylesDecorator: Decorator = (Story, ctx) => {
+export const CustomStylesDecorator: Decorator = (Story, ctx) => {
   const { docs, story, ...style } =
     (ctx.parameters as Parameters).customStyles ?? {};
 
+  // Apply style to the innermost decorator, which will not be this decorator
+  // if there are any story-specific decorators
+  useEffect(() => {
+    const styleObject: CSSProperties = {
+      boxSizing: 'border-box',
+      overflow: 'hidden',
+      padding: '1rem',
+      ...style,
+      ...(ctx.viewMode === 'docs' && docs),
+      ...(ctx.viewMode === 'story' && story),
+    };
+    const innerDecorator = Array.from(
+      ctx.canvasElement.querySelectorAll('[data-storybook-decorator]'),
+    ).at(-1);
+    if (innerDecorator) {
+      console.log('Found inner decorator');
+      console.log(innerDecorator);
+      const existingStyle = innerDecorator.getAttribute('style') ?? '';
+      innerDecorator.setAttribute(
+        'style',
+        existingStyle + stringifyCSSProperties(styleObject),
+      );
+    }
+  }, [ctx.canvasElement, ctx.viewMode, docs, story, style]);
+
   return (
-    <div
-      data-storybook-decorator
-      style={{
-        boxSizing: 'border-box',
-        overflow: 'hidden',
-        padding: '1rem',
-        ...style,
-        ...(ctx.viewMode === 'docs' && docs),
-        ...(ctx.viewMode === 'story' && story),
-      }}
-    >
+    <div data-storybook-decorator>
       <Story />
     </div>
   );

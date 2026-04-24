@@ -18,16 +18,17 @@ exports[`Drawer 1`] = `
   <dialog
     data-placement="bottom"
     data-modal="false"
-    closedby="closerequest"
+    id="<removed>"
     open
   >
     <button
       data-icon="true"
+      commandfor="_r_1_"
       data-variant="tertiary"
       type="button"
       aria-label="Lukk dialogvindu"
       data-color="neutral"
-      data-command="close"
+      command="close"
     >
     </button>
     <div>
@@ -86,16 +87,17 @@ exports[`Preview 1`] = `
   <dialog
     data-placement="center"
     data-modal="false"
-    closedby="closerequest"
+    id="<removed>"
     open
   >
     <button
       data-icon="true"
+      commandfor="_r_0_"
       data-variant="tertiary"
       type="button"
       aria-label="Lukk dialogvindu"
       data-color="neutral"
-      data-command="close"
+      command="close"
     >
     </button>
     <div>

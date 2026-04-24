@@ -1,8 +1,8 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Headings 1`] = `
-<div style="display: flex; justify-content: center;">
-  <div style="max-width: 50rem;">
+<div style="<removed>">
+  <div style="<removed>">
     <h1 data-size="2xl">
       Heading xxl
     </h1>
@@ -53,8 +53,8 @@ exports[`Headings 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<div style="display: flex; justify-content: center;">
-  <div style="max-width: 50rem;">
+<div style="<removed>">
+  <div style="<removed>">
     <div data-color="info">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </div>
@@ -76,19 +76,13 @@ exports[`Preview 1`] = `
       data-variant="tinted"
       data-color="accent"
     >
-      <u-details
+      <details
         open
         data-variant="default"
-        role="group"
       >
-        <u-summary
-          aria-expanded="true"
-          role="button"
-          slot="summary"
-          tabindex="0"
-        >
+        <summary>
           Innhold på denne siden
-        </u-summary>
+        </summary>
         <div>
           <ol>
             <li>
@@ -208,11 +202,11 @@ exports[`Preview 1`] = `
             </li>
           </ol>
         </div>
-      </u-details>
+      </details>
     </div>
     <h2
       data-size="md"
-      id="first-heading"
+      id="<removed>"
       tabindex="-1"
     >
       Første overskrift (h2)
@@ -222,7 +216,7 @@ exports[`Preview 1`] = `
     </p>
     <h3
       data-size="sm"
-      id="first-subheading"
+      id="<removed>"
       tabindex="-1"
     >
       Første underoverskrift (h3)
@@ -232,7 +226,7 @@ exports[`Preview 1`] = `
     </p>
     <h3
       data-size="sm"
-      id="second-subheading"
+      id="<removed>"
       tabindex="-1"
     >
       Andre underoverskrift (h3)
@@ -295,7 +289,7 @@ exports[`Preview 1`] = `
     </table>
     <h2
       data-size="md"
-      id="second-heading"
+      id="<removed>"
       tabindex="-1"
     >
       Andre overskrift (h2)
@@ -322,7 +316,7 @@ exports[`Preview 1`] = `
     </ul>
     <h2
       data-size="md"
-      id="third-heading"
+      id="<removed>"
       tabindex="-1"
     >
       Tredje overskrift (h2)
@@ -334,48 +328,32 @@ exports[`Preview 1`] = `
       Ut sit amet scelerisque odio, a ullamcorper quam. Praesent ornare diam sit amet magna feugiat, nec aliquet arcu pharetra. Cras condimentum tempus augue, in posuere dolor fermentum quis.
     </p>
     <div>
-      <u-details
-        data-variant="default"
-        role="group"
-      >
-        <u-summary
-          aria-expanded="false"
-          role="button"
-          slot="summary"
-          tabindex="0"
-        >
+      <details data-variant="default">
+        <summary>
           Første details
-        </u-summary>
+        </summary>
         <div>
           <p data-variant="default">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae lacus ullamcorper, malesuada risus sed, consequat est. Donec lobortis leo et condimentum consequat. Aenean vehicula leo et euismod rutrum. Donec eget orci est.
           </p>
           <p
             data-variant="default"
-            style="margin-top: var(--ds-size-5);"
+            style="<removed>"
           >
             Vivamus sapien magna, dictum at velit quis, mattis molestie eros. Vivamus vitae purus purus. Maecenas mollis elementum aliquam. Donec efficitur urna sed ante consectetur, in scelerisque lectus tristique.
           </p>
         </div>
-      </u-details>
-      <u-details
-        data-variant="default"
-        role="group"
-      >
-        <u-summary
-          aria-expanded="false"
-          role="button"
-          slot="summary"
-          tabindex="0"
-        >
+      </details>
+      <details data-variant="default">
+        <summary>
           Andre details
-        </u-summary>
+        </summary>
         <div>
           <p data-variant="default">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae lacus ullamcorper, malesuada risus sed, consequat est. Donec lobortis leo et condimentum consequat. Aenean vehicula leo et euismod rutrum. Donec eget orci est.
           </p>
         </div>
-      </u-details>
+      </details>
     </div>
   </div>
 </div>

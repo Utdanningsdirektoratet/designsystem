@@ -1,0 +1,15 @@
+node_modules
+.git
+.nx
+.next
+.venv
+.parcel-cache
+dist
+tmp
+out
+coverage
+storybook-static
+test-reports
+*.tsbuildinfo
+.DS_Store
+.env.*

@@ -78,9 +78,10 @@ export const ColorVariants = meta.story({
 
 export const InDropdown = meta.story({
   parameters: {
-    layout: 'fullscreen',
+    layout: 'none',
     customStyles: {
-      height: '320px',
+      height: '300px',
+      alignItems: 'start',
     },
   },
   render: (args) => (

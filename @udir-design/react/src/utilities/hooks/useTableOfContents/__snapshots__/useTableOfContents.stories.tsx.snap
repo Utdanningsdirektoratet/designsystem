@@ -4,7 +4,7 @@ exports[`Container 1`] = `
 <div>
   <h1
     data-size="lg"
-    id="sidetittel"
+    id="<removed>"
     tabindex="-1"
   >
     Sidetittel (h1)
@@ -16,19 +16,13 @@ exports[`Container 1`] = `
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dui nunc, maximus vitae finibus ut, consequat sit amet metus. Suspendisse nisl massa, egestas eu justo eu, luctus volutpat ante. Aliquam congue consectetur arcu, at pharetra nunc ultricies in. Sed aliquam mi a odio varius, in eleifend orci elementum.
   </p>
   <div data-variant="default">
-    <u-details
+    <details
       open
       data-variant="default"
-      role="group"
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         Innhold på denne siden
-      </u-summary>
+      </summary>
       <div>
         <ol>
           <li>
@@ -102,11 +96,11 @@ exports[`Container 1`] = `
           </li>
         </ol>
       </div>
-    </u-details>
+    </details>
   </div>
   <h2
     data-size="md"
-    id="forste-overskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Første overskrift (h2)
@@ -119,7 +113,7 @@ exports[`Container 1`] = `
   </p>
   <h3
     data-size="sm"
-    id="forste-underoverskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Første underoverskrift (h3)
@@ -129,7 +123,7 @@ exports[`Container 1`] = `
   </p>
   <h4
     data-size="xs"
-    id="forste-underunderoverskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Første underunderoverskrift (h4)
@@ -139,7 +133,7 @@ exports[`Container 1`] = `
   </p>
   <h2
     data-size="md"
-    id="andre-overskrift"
+    id="<removed>"
     tabindex="-1"
   >
     Andre overskrift (h2)
@@ -153,19 +147,13 @@ exports[`Container 1`] = `
 exports[`Default 1`] = `
 <div>
   <div data-variant="default">
-    <u-details
+    <details
       open
       data-variant="default"
-      role="group"
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         Innhold på denne siden
-      </u-summary>
+      </summary>
       <div>
         <ol>
           <li>
@@ -239,25 +227,25 @@ exports[`Default 1`] = `
           </li>
         </ol>
       </div>
-    </u-details>
+    </details>
   </div>
   <h2
     data-size="md"
-    id="first-heading"
+    id="<removed>"
     tabindex="-1"
   >
     Første overskrift (h2)
   </h2>
   <h3
     data-size="sm"
-    id="first-subheading"
+    id="<removed>"
     tabindex="-1"
   >
     Første underoverskrift (h3)
   </h3>
   <h2
     data-size="md"
-    id="second-heading"
+    id="<removed>"
     tabindex="-1"
   >
     Andre overskrift (h2)
@@ -268,19 +256,13 @@ exports[`Default 1`] = `
 exports[`Toc Ignore 1`] = `
 <div>
   <div data-variant="default">
-    <u-details
+    <details
       open
       data-variant="default"
-      role="group"
     >
-      <u-summary
-        aria-expanded="true"
-        role="button"
-        slot="summary"
-        tabindex="0"
-      >
+      <summary>
         Innhold på denne siden
-      </u-summary>
+      </summary>
       <div>
         <ol>
           <li>
@@ -331,11 +313,11 @@ exports[`Toc Ignore 1`] = `
           </li>
         </ol>
       </div>
-    </u-details>
+    </details>
   </div>
   <h2
     data-size="md"
-    id="inkluder-overskrift-1"
+    id="<removed>"
     tabindex="-1"
   >
     Inkluder første overskrift (h2)
@@ -343,14 +325,14 @@ exports[`Toc Ignore 1`] = `
   <h2
     data-toc-ignore="true"
     data-size="md"
-    id="utelat-overskrift-2"
+    id="<removed>"
     tabindex="-1"
   >
     Utelat andre overskrift (h2)
   </h2>
   <h2
     data-size="md"
-    id="inkluder-overskrift-3"
+    id="<removed>"
     tabindex="-1"
   >
     Inkluder tredje overskrift (h2)

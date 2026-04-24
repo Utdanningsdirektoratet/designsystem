@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Color Variants 1`] = `
-<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 100px; place-items: center; margin-top: var(--ds-size-12);">
+<div style="<removed>">
   <button
     data-variant="tertiary"
     type="button"
@@ -10,12 +10,13 @@ exports[`Color Variants 1`] = `
     popover
   </button>
   <div
-    id="_r_d_"
+    id="<removed>"
     popover="manual"
+    data-placement="top"
     data-variant="default"
     data-color="neutral"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="<removed>"
   >
     neutralDefault
   </div>
@@ -27,12 +28,13 @@ exports[`Color Variants 1`] = `
     popover
   </button>
   <div
-    id="_r_e_"
+    id="<removed>"
     popover="manual"
+    data-placement="top"
     data-variant="tinted"
     data-color="neutral"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="<removed>"
   >
     neutralTinted
   </div>
@@ -44,12 +46,13 @@ exports[`Color Variants 1`] = `
     popover
   </button>
   <div
-    id="_r_f_"
+    id="<removed>"
     popover="manual"
+    data-placement="top"
     data-variant="default"
     data-color="accent"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="<removed>"
   >
     accentDefault
   </div>
@@ -61,12 +64,13 @@ exports[`Color Variants 1`] = `
     popover
   </button>
   <div
-    id="_r_g_"
+    id="<removed>"
     popover="manual"
+    data-placement="top"
     data-variant="tinted"
     data-color="accent"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="<removed>"
   >
     accentTinted
   </div>
@@ -78,12 +82,13 @@ exports[`Color Variants 1`] = `
     popover
   </button>
   <div
-    id="_r_h_"
+    id="<removed>"
     popover="manual"
+    data-placement="top"
     data-variant="default"
     data-color="support1"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="<removed>"
   >
     support1Default
   </div>
@@ -95,12 +100,13 @@ exports[`Color Variants 1`] = `
     popover
   </button>
   <div
-    id="_r_i_"
+    id="<removed>"
     popover="manual"
+    data-placement="top"
     data-variant="tinted"
     data-color="support1"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="<removed>"
   >
     support1Tinted
   </div>
@@ -112,12 +118,13 @@ exports[`Color Variants 1`] = `
     popover
   </button>
   <div
-    id="_r_j_"
+    id="<removed>"
     popover="manual"
+    data-placement="top"
     data-variant="default"
     data-color="support2"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="<removed>"
   >
     support2Default
   </div>
@@ -129,12 +136,13 @@ exports[`Color Variants 1`] = `
     popover
   </button>
   <div
-    id="_r_k_"
+    id="<removed>"
     popover="manual"
+    data-placement="top"
     data-variant="tinted"
     data-color="support2"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="<removed>"
   >
     support2Tinted
   </div>
@@ -166,14 +174,15 @@ exports[`Controlled 1`] = `
   </svg>
 </button>
 <div
-  id="_r_l_"
+  id="<removed>"
   popover="manual"
+  data-placement="top"
   data-variant="default"
-  data-placement="bottom"
-  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  data-floating="bottom"
+  style="<removed>"
 >
   Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
-  <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
+  <div style="<removed>">
     <button
       data-variant="primary"
       type="button"
@@ -196,20 +205,21 @@ exports[`Dotted Underline 1`] = `
 <p data-variant="default">
   I aldersgruppen 1-5 år går 93 prosent av barna i barnehage. I aldersgruppen 3-5 år er andelen 97 prosent. Til sammenligning er
   <button
-    popovertarget="_r_4_"
     data-popover="inline"
+    popovertarget="_r_4_"
   >
     OECD
   </button>
   -gjennomsnittet for andelen 3-5-åringer i barnehage på 83 prosent (OECD 2021).
 </p>
 <div
-  id="_r_4_"
+  id="<removed>"
   popover="manual"
+  data-placement="top"
   data-variant="default"
   data-color="neutral"
-  data-placement="bottom"
-  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  data-floating="bottom"
+  style="<removed>"
 >
   <p data-variant="default">
     <strong>
@@ -246,16 +256,17 @@ exports[`Interactive 1`] = `
   </svg>
 </button>
 <div
-  id="_r_2_"
+  id="<removed>"
   popover="manual"
+  data-placement="top"
   data-variant="default"
-  data-placement="bottom"
-  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  data-floating="bottom"
+  style="<removed>"
 >
   <p data-variant="default">
     Vil du lagre endringene dine?
   </p>
-  <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
+  <div style="<removed>">
     <button
       data-variant="primary"
       type="button"
@@ -299,14 +310,15 @@ exports[`Preview 1`] = `
   </svg>
 </button>
 <div
-  id="_r_0_"
+  id="<removed>"
   popover="manual"
+  data-placement="top"
   data-variant="default"
-  data-placement="bottom"
-  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  data-floating="bottom"
+  style="<removed>"
 >
   Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
-  <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
+  <div style="<removed>">
     <button
       data-variant="primary"
       type="button"
@@ -326,7 +338,7 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Variants 1`] = `
-<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 100px; place-items: center; margin-top: var(--ds-size-12);">
+<div style="<removed>">
   <button
     data-variant="tertiary"
     type="button"
@@ -335,12 +347,13 @@ exports[`Variants 1`] = `
     popover
   </button>
   <div
-    id="_r_5_"
+    id="<removed>"
     popover="manual"
+    data-placement="top"
     data-variant="default"
     data-color="success"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="<removed>"
   >
     successDefault
   </div>
@@ -352,12 +365,13 @@ exports[`Variants 1`] = `
     popover
   </button>
   <div
-    id="_r_6_"
+    id="<removed>"
     popover="manual"
+    data-placement="top"
     data-variant="tinted"
     data-color="success"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="<removed>"
   >
     successTinted
   </div>
@@ -369,12 +383,13 @@ exports[`Variants 1`] = `
     popover
   </button>
   <div
-    id="_r_7_"
+    id="<removed>"
     popover="manual"
+    data-placement="top"
     data-variant="default"
     data-color="danger"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="<removed>"
   >
     dangerDefault
   </div>
@@ -386,12 +401,13 @@ exports[`Variants 1`] = `
     popover
   </button>
   <div
-    id="_r_8_"
+    id="<removed>"
     popover="manual"
+    data-placement="top"
     data-variant="tinted"
     data-color="danger"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="<removed>"
   >
     dangerTinted
   </div>
@@ -403,12 +419,13 @@ exports[`Variants 1`] = `
     popover
   </button>
   <div
-    id="_r_9_"
+    id="<removed>"
     popover="manual"
+    data-placement="top"
     data-variant="default"
     data-color="info"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="<removed>"
   >
     infoDefault
   </div>
@@ -420,12 +437,13 @@ exports[`Variants 1`] = `
     popover
   </button>
   <div
-    id="_r_a_"
+    id="<removed>"
     popover="manual"
+    data-placement="top"
     data-variant="tinted"
     data-color="info"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="<removed>"
   >
     infoTinted
   </div>
@@ -437,12 +455,13 @@ exports[`Variants 1`] = `
     popover
   </button>
   <div
-    id="_r_b_"
+    id="<removed>"
     popover="manual"
+    data-placement="top"
     data-variant="default"
     data-color="warning"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="<removed>"
   >
     warningDefault
   </div>
@@ -454,12 +473,13 @@ exports[`Variants 1`] = `
     popover
   </button>
   <div
-    id="_r_c_"
+    id="<removed>"
     popover="manual"
+    data-placement="top"
     data-variant="tinted"
     data-color="warning"
-    data-placement="top"
-    style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+    data-floating="top"
+    style="<removed>"
   >
     warningTinted
   </div>
@@ -481,9 +501,9 @@ exports[`Without Context 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="title-_r_n_"
+    aria-labelledby="<removed>"
   >
-    <title id="title-_r_n_">
+    <title id="<removed>">
       Slett rad
     </title>
     <path
@@ -496,17 +516,18 @@ exports[`Without Context 1`] = `
   </svg>
 </button>
 <div
-  id="my-popover"
+  id="<removed>"
   popover="manual"
+  data-placement="top"
   data-variant="default"
   data-color="neutral"
-  data-placement="bottom"
-  style="--ds-popover-arrow-x: <removed>; --ds-popover-arrow-y: <removed>; translate: <removed>;"
+  data-floating="bottom"
+  style="<removed>"
 >
   <p data-variant="default">
     Er du sikker på at du vil slette raden? Handlingen kan ikke angres.
   </p>
-  <div style="display: flex; gap: var(--ds-size-2); margin-top: var(--ds-size-2);">
+  <div style="<removed>">
     <button
       data-variant="primary"
       type="button"

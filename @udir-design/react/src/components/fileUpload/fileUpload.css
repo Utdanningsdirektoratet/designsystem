@@ -69,9 +69,15 @@
   }
 
   /* Design of dropzone */
+  &:has(> .ds-card) {
+    display: flex;
+    flex-direction: column;
+  }
   > .ds-card {
     margin-block-start: var(--ds-size-2);
     width: 100%;
+    flex-basis: 100%;
+    justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -131,15 +137,20 @@
   }
 
   &:not([aria-busy='true']):not(:has(input[readOnly])) {
-    &:hover {
-      > .ds-card {
-        cursor: pointer;
+    > .ds-card:hover {
+      cursor: pointer;
 
-        > .ds-button {
-          background: var(--dsc-button-background--hover);
-          color: var(--dsc-button-color--hover);
-        }
+      > .ds-button {
+        background: var(--dsc-button-background--hover);
+        color: var(--dsc-button-color--hover);
       }
+    }
+  }
+
+  &:has(label:hover) {
+    .ds-button:hover {
+      background: var(--dsc-button-background);
+      color: var(--dsc-button-color);
     }
   }
 
@@ -200,6 +211,9 @@
 
 /* FileUpload.Item */
 .uds-file-upload__item {
+  [data-tooltip] {
+    --ds-tooltip: var(--udsc-fileUpload-removeFile-text);
+  }
   padding: var(--ds-size-6);
   display: flex;
   flex-direction: column;

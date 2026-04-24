@@ -1,3 +1,4 @@
+import { Code } from 'storybook/internal/components';
 import type { ComponentOrigin } from '.storybook/types';
 import { Link } from 'src/components/link/Link';
 import { Heading } from 'src/components/typography/heading/Heading';
@@ -53,7 +54,7 @@ export function OriginText({
         Kilde
       </Heading>
       <Paragraph className="sb-unstyled">
-        <code className="css-b5rkn5">{name ?? component}</code>
+        <Code>{name ?? component}</Code>
         {fullText}
       </Paragraph>
     </>

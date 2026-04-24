@@ -1,191 +1,212 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Legend As Heading 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
     <h2 data-size="sm">
       Hvilke tjenester bruker du?
     </h2>
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="<removed>"
+  >
     Påloggingssystemer hos Udir
   </p>
-  <div>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-fieldset--legend-as-heading-feide"
       type="checkbox"
       value="feide"
       name="components-fieldset--legend-as-heading-feide"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="components-fieldset--legend-as-heading-feide"
+      for="<removed>"
     >
       Feide
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-fieldset--legend-as-heading-UIDP"
       type="checkbox"
       value="UIDP"
       name="components-fieldset--legend-as-heading-UIDP"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="components-fieldset--legend-as-heading-UIDP"
+      for="<removed>"
     >
       UIDP
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-fieldset--legend-as-heading-UBAS"
       type="checkbox"
       value="UBAS"
       name="components-fieldset--legend-as-heading-UBAS"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="components-fieldset--legend-as-heading-UBAS"
+      for="<removed>"
     >
       UBAS
     </label>
-  </div>
+  </ds-field>
 </fieldset>
 `;
 
 exports[`Preview 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
     Hvilken fjordarm bor du ved?
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="<removed>"
+  >
     Valget vil hjelpe oss å forbedre innholdet vi viser deg.
   </p>
-  <div>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-fieldset--preview-radio-barsnesfjorden"
       type="radio"
       value="barsnesfjorden"
       name="radio"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="components-fieldset--preview-radio-barsnesfjorden"
+      for="<removed>"
     >
       Barsnesfjorden
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-fieldset--preview-radio-eidsfjorden"
       type="radio"
       value="eidsfjorden"
       name="radio"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="components-fieldset--preview-radio-eidsfjorden"
+      for="<removed>"
     >
       Eidsfjorden
     </label>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-fieldset--preview-radio-ingen-av-de"
       type="radio"
       value="ingen-av-de"
       name="radio"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="components-fieldset--preview-radio-ingen-av-de"
+      for="<removed>"
     >
       Ingen av de
     </label>
-  </div>
+  </ds-field>
 </fieldset>
 `;
 
 exports[`With Checkbox 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
     Godtar du vilkårene?
   </legend>
-  <div>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-fieldset--with-checkbox-checkbox"
       type="checkbox"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="components-fieldset--with-checkbox-checkbox"
+      for="<removed>"
     >
       Ja, jeg godtar
     </label>
-  </div>
+  </ds-field>
 </fieldset>
 `;
 
 exports[`With Textfield 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
     <h2 data-size="sm">
       Adresse
     </h2>
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="<removed>"
+  >
     Skriv inn adressen din for å motta post fra oss.
   </p>
-  <div>
+  <ds-field>
     <label
       data-weight="medium"
-      for="components-fieldset--with-textfield-textfield"
+      for="<removed>"
     >
       Gateadresse
     </label>
     <div>
       <input
-        id="components-fieldset--with-textfield-textfield"
         type="text"
         name="components-fieldset--with-textfield-textfield"
+        id="<removed>"
       >
     </div>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field>
     <label
       data-weight="medium"
-      for="components-fieldset--with-textfield-textfield"
+      for="<removed>"
     >
       Postnummer
     </label>
     <div>
       <input
-        id="components-fieldset--with-textfield-textfield"
         pattern="[0-9]*"
         inputmode="numeric"
         size="4"
         type="text"
         name="components-fieldset--with-textfield-textfield"
+        id="<removed>"
       >
     </div>
-  </div>
-  <div>
+  </ds-field>
+  <ds-field>
     <label
       data-weight="medium"
-      for="components-fieldset--with-textfield-textfield2"
+      for="<removed>"
     >
       Poststed
     </label>
     <div>
       <input
-        id="components-fieldset--with-textfield-textfield2"
         size="25"
         type="text"
         name="components-fieldset--with-textfield-textfield2"
+        id="<removed>"
       >
     </div>
-  </div>
+  </ds-field>
 </fieldset>
 `;

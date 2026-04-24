@@ -1,7 +1,11 @@
 import { useDebounceCallback } from '@digdir/designsystemet-react';
+import { Source } from '@storybook/addon-docs/blocks';
 import { useState } from 'react';
+import { Card } from 'src/components/card/Card';
 import { Field } from 'src/components/field/Field';
+import { Link } from 'src/components/link/Link';
 import { Search } from 'src/components/search/Search';
+import { Tabs } from 'src/components/tabs/Tabs';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Label } from 'src/components/typography/label/Label';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
@@ -114,6 +118,92 @@ export const TokenList = () => {
 
   return (
     <div className={classes.tokensContainer}>
+      <Paragraph>
+        Variablene blir tilgjengelig i kode ved å importere <em>ett</em> av
+        følgende biblioteker:
+      </Paragraph>
+      <Card style={{ marginBottom: 'var(--ds-size-8)' }}>
+        <Tabs defaultValue="react" data-size="sm">
+          <Tabs.List>
+            <Tabs.Tab value="react">@udir-design/react</Tabs.Tab>
+            <Tabs.Tab value="css">@udir-design/css</Tabs.Tab>
+            <Tabs.Tab value="theme">@udir-design/theme</Tabs.Tab>
+          </Tabs.List>
+          <Tabs.Panel value="react">
+            <Paragraph>
+              Inneholder React-komponenter samt CSS for komponenter og
+              variabler.{' '}
+              <Link
+                target="_blank"
+                href="https://github.com/Utdanningsdirektoratet/designsystem/blob/main/%40udir-design/react/README.md"
+              >
+                Se README på GitHub
+              </Link>
+              .
+            </Paragraph>
+            <Source
+              language="css"
+              code={`
+/* I en css-fil */
+@import '@udir-design/react/style.css';`}
+            />
+            <Source
+              language="typescript"
+              code={`
+// Eller i en TypeScript / JavaScript-fil
+import '@udir-design/react/style.css';`}
+            />
+          </Tabs.Panel>
+          <Tabs.Panel value="css">
+            <Paragraph>
+              Inneholder CSS for komponenter og variabler.{' '}
+              <Link
+                target="_blank"
+                href="https://github.com/Utdanningsdirektoratet/designsystem/blob/main/%40udir-design/css/README.md"
+              >
+                Se README på GitHub
+              </Link>
+              .
+            </Paragraph>
+            <Source
+              language="css"
+              code={`
+/* I en css-fil */
+@import '@udir-design/css';`}
+            />
+            <Source
+              language="typescript"
+              code={`
+// Eller i en TypeScript / JavaScript-fil
+import '@udir-design/css';`}
+            />
+          </Tabs.Panel>
+          <Tabs.Panel value="theme">
+            <Paragraph>
+              Inneholder kun CSS-variabler.{' '}
+              <Link
+                target="_blank"
+                href="https://github.com/Utdanningsdirektoratet/designsystem/blob/main/%40udir-design/theme/README.md"
+              >
+                Se README på GitHub
+              </Link>
+              .
+            </Paragraph>
+            <Source
+              language="css"
+              code={`
+/* I en css-fil */
+@import '@udir-design/theme';`}
+            />
+            <Source
+              language="typescript"
+              code={`
+// Eller i en TypeScript / JavaScript-fil
+import '@udir-design/theme';`}
+            />
+          </Tabs.Panel>
+        </Tabs>
+      </Card>
       <Field className={classes.input}>
         <Label>{labels['token-preview']['search-in-design-tokens']}</Label>
         <Search>
@@ -153,6 +243,23 @@ export const TokenList = () => {
               {labels['token-preview']['datavisHeading']}
             </Heading>
             <Paragraph>{labels['token-preview'].datavis.description}</Paragraph>
+            <Paragraph>
+              For å bruke disse fargene må biblioteket{' '}
+              <code>@udir-design/theme</code> være installert, og du må
+              importere en separat CSS-fil:
+            </Paragraph>
+            <Source
+              language="css"
+              code={`
+/* I en CSS-fil */
+@import '@udir-design/theme/datavis.css';`}
+            />
+            <Source
+              language="typescript"
+              code={`
+// Eller i en TypeScript / JavaScript-fil
+import '@udir-design/theme/datavis.css';`}
+            />
             <div className={classes.section}>
               <ColorTokensTable
                 colorTokens={displayDatavisTokens}

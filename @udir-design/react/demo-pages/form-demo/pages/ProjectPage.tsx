@@ -32,6 +32,7 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
         {...register('projectTitle')}
         error={errors.projectTitle?.message}
         readOnly={isSubmitSuccessful}
+        autoComplete="off"
         required
       />
       <Textfield
@@ -42,6 +43,7 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
         {...register('projectDescription')}
         error={errors.projectDescription?.message}
         readOnly={isSubmitSuccessful}
+        autoComplete="off"
         required
       />
       <Fieldset id="projectCategory" {...focusableFieldsetProps}>
@@ -106,7 +108,7 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
               }}
             >
               <Suggestion.Input
-                aria-invalid={!!errors.county}
+                autoComplete="off"
                 id="county"
                 readOnly={isSubmitSuccessful}
                 required
@@ -136,11 +138,10 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
         </Field.Description>
         <Select
           id="ageGroup"
-          aria-label="Velg aldersgruppe"
           {...register('ageGroup')}
-          aria-invalid={!!errors.ageGroup}
           defaultValue="blank"
-          readOnly={isSubmitSuccessful}
+          aria-readonly={isSubmitSuccessful}
+          autoComplete="off"
           required
         >
           <Select.Option value="blank" disabled>

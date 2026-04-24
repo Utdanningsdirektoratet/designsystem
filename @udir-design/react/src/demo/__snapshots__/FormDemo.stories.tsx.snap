@@ -89,16 +89,18 @@ exports[`Form Page 2 1`] = `
     <dialog
       data-placement="center"
       data-modal="true"
+      id="<removed>"
       closedby="any"
-      style="width: fit-content; min-width: 20rem;"
+      style="<removed>"
     >
       <button
         data-icon="true"
+        commandfor="_r_6_"
         data-variant="tertiary"
         type="button"
         aria-label="Lukk dialogvindu"
         data-color="neutral"
-        data-command="close"
+        command="close"
       >
       </button>
       <h2>
@@ -176,10 +178,10 @@ exports[`Form Page 2 1`] = `
       </h2>
       <div>
       </div>
-      <div>
+      <ds-field>
         <label
           data-weight="medium"
-          for="projectTitle"
+          for="<removed>"
         >
           <span>
             Tittel på prosjektet
@@ -187,17 +189,18 @@ exports[`Form Page 2 1`] = `
         </label>
         <div>
           <input
-            id="projectTitle"
+            id="<removed>"
+            autocomplete="off"
             required
             type="text"
             name="projectTitle"
           >
         </div>
-      </div>
-      <div>
+      </ds-field>
+      <ds-field>
         <label
           data-weight="medium"
-          for="projectDescription"
+          for="<removed>"
         >
           <span>
             Beskrivelse av prosjektet
@@ -205,29 +208,38 @@ exports[`Form Page 2 1`] = `
         </label>
         <div>
           <textarea
-            id="projectDescription"
+            id="<removed>"
             rows="4"
             name="projectDescription"
+            autocomplete="off"
             required
+            style="<removed>"
           >
           </textarea>
         </div>
-      </div>
+      </ds-field>
       <fieldset
-        id="projectCategory"
+        id="<removed>"
         tabindex="-1"
+        aria-labelledby="<removed>"
       >
-        <legend data-weight="medium">
+        <legend
+          data-weight="medium"
+          id="<removed>"
+        >
           <span>
             Kategori
           </span>
         </legend>
-        <p data-variant="default">
+        <p
+          data-variant="default"
+          id="<removed>"
+        >
           Hvilken kategori hører prosjektet til?
         </p>
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="radio-learning"
+            id="<removed>"
             required
             type="radio"
             value="Learning"
@@ -235,16 +247,16 @@ exports[`Form Page 2 1`] = `
           >
           <label
             data-weight="regular"
-            for="radio-learning"
+            for="<removed>"
           >
             <span>
               Opplæring
             </span>
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="radio-social"
+            id="<removed>"
             required
             type="radio"
             value="social"
@@ -252,16 +264,16 @@ exports[`Form Page 2 1`] = `
           >
           <label
             data-weight="regular"
-            for="radio-social"
+            for="<removed>"
           >
             <span>
               Sosialt
             </span>
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="radio-activity"
+            id="<removed>"
             required
             type="radio"
             value="activity"
@@ -269,13 +281,13 @@ exports[`Form Page 2 1`] = `
           >
           <label
             data-weight="regular"
-            for="radio-activity"
+            for="<removed>"
           >
             <span>
               Aktivitet
             </span>
           </label>
-        </div>
+        </ds-field>
         <details>
           <summary>
             Grunnen til at vi spør om dette
@@ -285,10 +297,10 @@ exports[`Form Page 2 1`] = `
           </div>
         </details>
       </fieldset>
-      <div>
+      <ds-field>
         <label
           data-weight="medium"
-          for="county"
+          for="<removed>"
         >
           <span>
             Gjennomføringssted
@@ -296,31 +308,28 @@ exports[`Form Page 2 1`] = `
         </label>
         <div
           data-field="description"
-          id="county:description:1"
+          id="<removed>"
         >
           Hvilket fylke vil prosjektet gjennomføres i?
         </div>
-        <u-combobox>
+        <ds-suggestion>
           <input
-            placeholder
-            aria-invalid="false"
-            id="county"
+            placeholder=" "
+            autocomplete="off"
+            id="<removed>"
             required
             type="text"
-            aria-describedby="county:description:1"
+            aria-describedby="<removed>"
+            popovertarget=":ds:4"
             data-label="Gjennomføringssted"
-            list=":u-datalist1"
+            list=":ds:4"
             aria-label="Gjennomføringssted​​​​​"
-            popovertarget=":u-datalist1"
             aria-autocomplete="list"
-            aria-controls=":u-datalist1"
+            aria-controls=":ds:4"
             aria-expanded="true"
-            autocomplete="off"
             role="combobox"
           >
           <del
-            data-icon="true"
-            data-variant="tertiary"
             aria-label="Tøm"
             hidden
             role="button"
@@ -328,15 +337,14 @@ exports[`Form Page 2 1`] = `
           </del>
           <u-datalist
             data-nofilter
-            data-sr-singular="%d forslag"
             data-sr-plural="%d forslag"
+            data-sr-singular="%d forslag"
             popover="manual"
-            hidden
             role="listbox"
+            id="<removed>"
+            hidden
             tabindex="-1"
             aria-multiselectable="false"
-            id=":u-datalist1"
-            style="width: 592px; translate: <removed>;"
           >
             <u-option
               label="Agder"
@@ -492,15 +500,15 @@ exports[`Form Page 2 1`] = `
           <select
             name="county"
             hidden
-            id="_r_4_"
+            id="<removed>"
           >
           </select>
-        </u-combobox>
-      </div>
-      <div>
+        </ds-suggestion>
+      </ds-field>
+      <ds-field>
         <label
           data-weight="medium"
-          for="ageGroup"
+          for="<removed>"
         >
           <span>
             Aldersgruppe
@@ -508,17 +516,17 @@ exports[`Form Page 2 1`] = `
         </label>
         <div
           data-field="description"
-          id="ageGroup:description:1"
+          id="<removed>"
         >
           Hvilken aldersgruppe er prosjektet rettet mot?
         </div>
         <select
-          id="ageGroup"
-          aria-label="Velg aldersgruppe"
+          aria-readonly="false"
+          id="<removed>"
           name="ageGroup"
-          aria-invalid="false"
+          autocomplete="off"
           required
-          aria-describedby="ageGroup:description:1"
+          aria-describedby="<removed>"
         >
           <option
             value="blank"
@@ -540,12 +548,12 @@ exports[`Form Page 2 1`] = `
             16-19 år
           </option>
         </select>
-      </div>
+      </ds-field>
       <div>
         <button
           data-variant="secondary"
           type="button"
-          style="flex: 1 1 0%;"
+          style="<removed>"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -568,7 +576,7 @@ exports[`Form Page 2 1`] = `
         <button
           data-variant="secondary"
           type="button"
-          style="flex: 1 1 0%;"
+          style="<removed>"
         >
           Neste
           <svg
@@ -592,8 +600,8 @@ exports[`Form Page 2 1`] = `
       <dialog
         data-placement="center"
         data-modal="true"
-        closedby="closerequest"
-        style="width: fit-content;"
+        id="<removed>"
+        style="<removed>"
       >
         <div>
           <h2 data-size="xs">
@@ -603,14 +611,14 @@ exports[`Form Page 2 1`] = `
             <button
               data-variant="secondary"
               type="button"
-              style="flex: 1 1 0%;"
+              style="<removed>"
             >
               Avbryt
             </button>
             <button
               data-variant="primary"
               type="submit"
-              style="flex: 2 1 0%;"
+              style="<removed>"
             >
               Send inn
               <svg
@@ -729,16 +737,18 @@ exports[`Form Page 3 1`] = `
     <dialog
       data-placement="center"
       data-modal="true"
+      id="<removed>"
       closedby="any"
-      style="width: fit-content; min-width: 20rem;"
+      style="<removed>"
     >
       <button
         data-icon="true"
+        commandfor="_r_d_"
         data-variant="tertiary"
         type="button"
         aria-label="Lukk dialogvindu"
         data-color="neutral"
-        data-command="close"
+        command="close"
       >
       </button>
       <h2>
@@ -816,14 +826,11 @@ exports[`Form Page 3 1`] = `
       </h2>
       <div>
       </div>
-      <div
-        role="presentation"
-        tabindex="0"
-        aria-invalid="false"
-      >
+      <div>
         <label
           data-weight="medium"
-          for="dokumentasjon-dropzone"
+          id="<removed>"
+          for="<removed>"
         >
           <span>
             Last opp dokumentasjon
@@ -831,16 +838,22 @@ exports[`Form Page 3 1`] = `
         </label>
         <div
           data-field="description"
-          id="dokumentasjon-dropzone:description:1"
+          id="<removed>"
         >
           Du kan laste opp filer i PDF-format. Filer kan være opptil 25 MB.
         </div>
-        <div data-variant="default">
+        <div
+          data-variant="default"
+          role="presentation"
+        >
           <div>
           </div>
           <button
             data-variant="secondary"
             type="button"
+            id="<removed>"
+            aria-labelledby="<removed>"
+            aria-describedby="<removed>"
             aria-label="Velg filer"
           >
             <svg
@@ -868,16 +881,15 @@ exports[`Form Page 3 1`] = `
           multiple
           tabindex="-1"
           required
-          id="dokumentasjon-dropzone"
+          id="<removed>"
           type="file"
-          aria-describedby="dokumentasjon-dropzone:description:1"
-          style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          style="<removed>"
         >
       </div>
-      <div>
+      <ds-field>
         <label
           data-weight="medium"
-          for="addition"
+          for="<removed>"
         >
           <span>
             Kommentarer til dokumentasjon
@@ -885,22 +897,23 @@ exports[`Form Page 3 1`] = `
         </label>
         <div
           data-field="description"
-          id="addition:description:1"
+          id="<removed>"
         >
           Ytterlige kommentarer til dokumentasjonen du har lastet opp.
         </div>
         <textarea
-          id="addition"
+          id="<removed>"
           name="addition"
-          aria-describedby="addition:description:1"
+          aria-describedby="<removed>"
+          style="<removed>"
         >
         </textarea>
-      </div>
+      </ds-field>
       <div>
         <button
           data-variant="secondary"
           type="button"
-          style="flex: 1 1 0%;"
+          style="<removed>"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -923,7 +936,7 @@ exports[`Form Page 3 1`] = `
         <button
           data-variant="secondary"
           type="button"
-          style="flex: 1 1 0%;"
+          style="<removed>"
         >
           Neste
           <svg
@@ -947,8 +960,8 @@ exports[`Form Page 3 1`] = `
       <dialog
         data-placement="center"
         data-modal="true"
-        closedby="closerequest"
-        style="width: fit-content;"
+        id="<removed>"
+        style="<removed>"
       >
         <div>
           <h2 data-size="xs">
@@ -958,14 +971,14 @@ exports[`Form Page 3 1`] = `
             <button
               data-variant="secondary"
               type="button"
-              style="flex: 1 1 0%;"
+              style="<removed>"
             >
               Avbryt
             </button>
             <button
               data-variant="primary"
               type="submit"
-              style="flex: 2 1 0%;"
+              style="<removed>"
             >
               Send inn
               <svg
@@ -1084,16 +1097,18 @@ exports[`Form Page 4 1`] = `
     <dialog
       data-placement="center"
       data-modal="true"
+      id="<removed>"
       closedby="any"
-      style="width: fit-content; min-width: 20rem;"
+      style="<removed>"
     >
       <button
         data-icon="true"
+        commandfor="_r_m_"
         data-variant="tertiary"
         type="button"
         aria-label="Lukk dialogvindu"
         data-color="neutral"
-        data-command="close"
+        command="close"
       >
       </button>
       <h2>
@@ -1176,7 +1191,7 @@ exports[`Form Page 4 1`] = `
         <button
           data-variant="secondary"
           type="button"
-          style="flex: 1 1 0%;"
+          style="<removed>"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1199,7 +1214,7 @@ exports[`Form Page 4 1`] = `
         <button
           data-variant="primary"
           type="button"
-          style="flex: 2 1 0%;"
+          style="<removed>"
         >
           Send inn skjema
           <svg
@@ -1225,8 +1240,8 @@ exports[`Form Page 4 1`] = `
       <dialog
         data-placement="center"
         data-modal="true"
-        closedby="closerequest"
-        style="width: fit-content;"
+        id="<removed>"
+        style="<removed>"
       >
         <div>
           <h2 data-size="xs">
@@ -1236,14 +1251,14 @@ exports[`Form Page 4 1`] = `
             <button
               data-variant="secondary"
               type="button"
-              style="flex: 1 1 0%;"
+              style="<removed>"
             >
               Avbryt
             </button>
             <button
               data-variant="primary"
               type="submit"
-              style="flex: 2 1 0%;"
+              style="<removed>"
             >
               Send inn
               <svg
@@ -1362,16 +1377,18 @@ exports[`Form Page 5 1`] = `
     <dialog
       data-placement="center"
       data-modal="true"
+      id="<removed>"
       closedby="any"
-      style="width: fit-content; min-width: 20rem;"
+      style="<removed>"
     >
       <button
         data-icon="true"
+        commandfor="_r_s_"
         data-variant="tertiary"
         type="button"
         aria-label="Lukk dialogvindu"
         data-color="neutral"
-        data-command="close"
+        command="close"
       >
       </button>
       <h2>
@@ -1463,8 +1480,8 @@ exports[`Form Page 5 1`] = `
       <dialog
         data-placement="center"
         data-modal="true"
-        closedby="closerequest"
-        style="width: fit-content;"
+        id="<removed>"
+        style="<removed>"
       >
         <div>
           <h2 data-size="xs">
@@ -1474,14 +1491,14 @@ exports[`Form Page 5 1`] = `
             <button
               data-variant="secondary"
               type="button"
-              style="flex: 1 1 0%;"
+              style="<removed>"
             >
               Avbryt
             </button>
             <button
               data-variant="primary"
               type="submit"
-              style="flex: 2 1 0%;"
+              style="<removed>"
             >
               Send inn
               <svg
@@ -1600,16 +1617,18 @@ exports[`Form Story 1`] = `
     <dialog
       data-placement="center"
       data-modal="true"
+      id="<removed>"
       closedby="any"
-      style="width: fit-content; min-width: 20rem;"
+      style="<removed>"
     >
       <button
         data-icon="true"
+        commandfor="_r_1_"
         data-variant="tertiary"
         type="button"
         aria-label="Lukk dialogvindu"
         data-color="neutral"
-        data-command="close"
+        command="close"
       >
       </button>
       <h2>
@@ -1687,10 +1706,10 @@ exports[`Form Story 1`] = `
       </h2>
       <div>
       </div>
-      <div>
+      <ds-field>
         <label
           data-weight="medium"
-          for="firstName"
+          for="<removed>"
         >
           <span>
             Fornavn
@@ -1698,48 +1717,53 @@ exports[`Form Story 1`] = `
         </label>
         <div>
           <input
-            id="firstName"
+            id="<removed>"
             autocomplete="given-name"
             required
             type="text"
             name="firstName"
           >
         </div>
-      </div>
-      <div>
+      </ds-field>
+      <ds-field>
         <label
           data-weight="medium"
-          for="lastName"
+          for="<removed>"
         >
           <span>
             Etternavn
           </span>
         </label>
         <input
-          id="lastName"
+          id="<removed>"
           required
           autocomplete="family-name"
-          aria-invalid="false"
           type="text"
           name="lastName"
         >
-      </div>
+      </ds-field>
       <fieldset
-        id="contactMethods"
+        id="<removed>"
         tabindex="-1"
+        aria-labelledby="<removed>"
       >
-        <legend data-weight="medium">
+        <legend
+          data-weight="medium"
+          id="<removed>"
+        >
           <span>
             Hvordan ønsker du at vi skal kontakte deg?
           </span>
         </legend>
-        <p data-variant="default">
+        <p
+          data-variant="default"
+          id="<removed>"
+        >
           Velg ett eller flere alternativer
         </p>
-        <div>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="contactMethodsEmail"
-            aria-invalid="false"
+            id="<removed>"
             required
             type="checkbox"
             value="epost"
@@ -1747,17 +1771,16 @@ exports[`Form Story 1`] = `
           >
           <label
             data-weight="regular"
-            for="contactMethodsEmail"
+            for="<removed>"
           >
             <span>
               E-post
             </span>
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="contactMethodsTelefon"
-            aria-invalid="false"
+            id="<removed>"
             required
             type="checkbox"
             value="telefon"
@@ -1765,17 +1788,16 @@ exports[`Form Story 1`] = `
           >
           <label
             data-weight="regular"
-            for="contactMethodsTelefon"
+            for="<removed>"
           >
             <span>
               Telefon
             </span>
           </label>
-        </div>
-        <div>
+        </ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
           <input
-            id="contactMethodsSms"
-            aria-invalid="false"
+            id="<removed>"
             required
             type="checkbox"
             value="sms"
@@ -1783,19 +1805,19 @@ exports[`Form Story 1`] = `
           >
           <label
             data-weight="regular"
-            for="contactMethodsSms"
+            for="<removed>"
           >
             <span>
               SMS
             </span>
           </label>
-        </div>
+        </ds-field>
       </fieldset>
       <div>
         <button
           data-variant="secondary"
           type="button"
-          style="flex: 1 1 0%;"
+          style="<removed>"
         >
           Neste
           <svg
@@ -1819,8 +1841,8 @@ exports[`Form Story 1`] = `
       <dialog
         data-placement="center"
         data-modal="true"
-        closedby="closerequest"
-        style="width: fit-content;"
+        id="<removed>"
+        style="<removed>"
       >
         <div>
           <h2 data-size="xs">
@@ -1830,14 +1852,14 @@ exports[`Form Story 1`] = `
             <button
               data-variant="secondary"
               type="button"
-              style="flex: 1 1 0%;"
+              style="<removed>"
             >
               Avbryt
             </button>
             <button
               data-variant="primary"
               type="submit"
-              style="flex: 2 1 0%;"
+              style="<removed>"
             >
               Send inn
               <svg

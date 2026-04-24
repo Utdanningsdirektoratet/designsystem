@@ -1,4 +1,4 @@
-import { expect, userEvent, waitFor, within } from 'storybook/test';
+import { expect, within } from 'storybook/test';
 import {
   FilesIcon,
   FloppydiskIcon,
@@ -45,29 +45,9 @@ export const Preview = meta.story({
     const canvas = within(canvasElement);
     const trigger = canvas.getByRole('button');
 
-    await step('Tooltip is not visible initially', async () => {
-      const tooltip = canvas.queryByText(args.content);
-      expect(tooltip).not.toBeVisible();
-    });
-
-    await step('Hovering over the button displays the tooltip', async () => {
-      await userEvent.hover(trigger);
-      const tooltip = canvas.queryByText(args.content);
-      await waitFor(() => {
-        expect(tooltip).toBeVisible();
-      });
-      await userEvent.unhover(trigger);
-      await waitFor(() => expect(tooltip).not.toBeVisible());
-    });
-
-    await step('Focus on the button displays the tooltip', async () => {
-      await userEvent.tab();
-      const tooltip = canvas.getByRole('tooltip');
-      await waitFor(() => {
-        expect(tooltip).toBeVisible();
-      });
-      await userEvent.tab();
-      await waitFor(() => expect(tooltip).not.toBeVisible());
+    await step('Applies tooltip attributes to the trigger', async () => {
+      expect(trigger).toHaveAttribute('data-tooltip', args.content);
+      expect(trigger).toHaveAttribute('aria-label', args.content);
     });
   },
 });

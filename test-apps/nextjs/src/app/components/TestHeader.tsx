@@ -1,11 +1,65 @@
 'use client';
 
-import { ArrowRightIcon } from '@udir-design/icons';
-import { Header, Heading, Link, List } from '@udir-design/react/alpha';
+import { ArrowRightIcon, BriefcaseIcon, LeaveIcon } from '@udir-design/icons';
+import {
+  Avatar,
+  Badge,
+  Button,
+  Divider,
+  Dropdown,
+  Header,
+  Heading,
+  Link,
+  List,
+} from '@udir-design/react/alpha';
 
 export function TestHeader() {
+  const notifications = 10;
+
   return (
     <Header applicationName="Demoapp">
+      <Badge.Position data-size="lg" data-show="md">
+        <Header.UserButton
+          name="Stian Hansen"
+          description="Admin"
+          popoverTarget="usermenu2"
+          data-show="md"
+          avatar={<Avatar aria-hidden>SH</Avatar>}
+          aria-label={`Stian Hansen Admin - ${notifications} varsler`}
+        />
+        <Badge
+          count={notifications}
+          maxCount={9}
+          data-color="danger"
+          style={
+            {
+              '--dsc-badge-right': '20%',
+              '--dsc-badge-top': '13%',
+            } as React.CSSProperties
+          }
+        />
+      </Badge.Position>
+      <Dropdown id="usermenu2" placement="bottom-end" autoPlacement={false}>
+        <Dropdown.Heading>Bytt profil</Dropdown.Heading>
+        <Dropdown.List>
+          <Dropdown.Item>
+            <Dropdown.Button>
+              <Avatar aria-hidden>
+                <BriefcaseIcon />
+              </Avatar>
+              Grålum skole
+              <Badge count={notifications} maxCount={9} />
+            </Dropdown.Button>
+          </Dropdown.Item>
+          <Divider />
+          <Dropdown.Item>
+            <Button variant="tertiary">
+              <LeaveIcon aria-hidden />
+              Logg ut
+            </Button>
+          </Dropdown.Item>
+        </Dropdown.List>
+      </Dropdown>
       <Header.MenuButton />
       <Header.Menu>
         <nav

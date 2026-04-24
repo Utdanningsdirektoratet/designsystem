@@ -24,7 +24,7 @@ Highcharts.setOptions(getHighchartsTheme());
 
 const options: Highcharts.Options = {
   title: {
-    text: 'Prøveoversikt',
+    text: 'Graf for prøveoversikt',
     // hide title but keep for accessibility
     style: { display: 'none' },
   },

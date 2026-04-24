@@ -70,13 +70,13 @@ export const Preview = meta.story({
 
     await step('Initial active page is 4', async () => {
       const activePageButton = canvas.getByRole('button', { name: /side 4/i });
-      expect(activePageButton).toHaveAttribute('aria-current', 'page');
+      expect(activePageButton).toHaveAttribute('aria-current', 'true');
     });
 
     await step('Clicking "Neste side" changes active page to 5', async () => {
       await userEvent.click(nextButton);
       const activePageButton = canvas.getByRole('button', { name: /side 5/i });
-      expect(activePageButton).toHaveAttribute('aria-current', 'page');
+      expect(activePageButton).toHaveAttribute('aria-current', 'true');
     });
 
     await step(
@@ -86,7 +86,7 @@ export const Preview = meta.story({
         const activePageButton = canvas.getByRole('button', {
           name: /side 4/i,
         });
-        expect(activePageButton).toHaveAttribute('aria-current', 'page');
+        expect(activePageButton).toHaveAttribute('aria-current', 'true');
       },
     );
   },
@@ -94,31 +94,33 @@ export const Preview = meta.story({
 
 export const Mobile = meta.story({
   render() {
+    const [page, setCurrentPage] = useState(3);
+    const { pages, nextButtonProps, prevButtonProps } = usePagination({
+      currentPage: page,
+      totalPages: 10,
+      showPages: 3,
+      setCurrentPage,
+    });
+
     return (
-      <Pagination>
+      <Pagination aria-label="Sidenavigering">
         <Pagination.List>
           <Pagination.Item>
-            <Pagination.Button aria-label="Forrige side" variant="tertiary" />
+            <Pagination.Button aria-label="Forrige side" {...prevButtonProps} />
           </Pagination.Item>
 
-          <Pagination.Item>
-            <Pagination.Button aria-label="Side 2" variant="tertiary">
-              2
-            </Pagination.Button>
-          </Pagination.Item>
+          {pages.map(({ page, itemKey, buttonProps }) => (
+            <Pagination.Item key={itemKey}>
+              {typeof page === 'number' && (
+                <Pagination.Button {...buttonProps} aria-label={`Side ${page}`}>
+                  {page}
+                </Pagination.Button>
+              )}
+            </Pagination.Item>
+          ))}
 
           <Pagination.Item>
-            <Pagination.Button aria-label="Side 3">3</Pagination.Button>
-          </Pagination.Item>
-
-          <Pagination.Item>
-            <Pagination.Button aria-label="Side 4" variant="tertiary">
-              4
-            </Pagination.Button>
-          </Pagination.Item>
-
-          <Pagination.Item>
-            <Pagination.Button aria-label="Neste side" variant="tertiary" />
+            <Pagination.Button aria-label="Neste side" {...nextButtonProps} />
           </Pagination.Item>
         </Pagination.List>
       </Pagination>

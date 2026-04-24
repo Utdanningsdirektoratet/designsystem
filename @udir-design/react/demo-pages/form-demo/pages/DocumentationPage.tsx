@@ -58,7 +58,7 @@ export const DocumentationPage = ({
       <FileUpload.Dropzone
         label={<span>Last opp dokumentasjon</span>}
         description="Du kan laste opp filer i PDF-format. Filer kan være opptil 25 MB."
-        {...getRootProps()}
+        cardProps={getRootProps()}
         inputProps={{
           ...getInputProps({
             required: true,
@@ -69,7 +69,6 @@ export const DocumentationPage = ({
         isDragActive={isDragActive}
         isDragGlobal={isDragGlobal}
         error={errors.documentation?.message}
-        aria-invalid={!!errors.documentation}
       />
       {uploadedFiles.length > 0 && (
         <>
