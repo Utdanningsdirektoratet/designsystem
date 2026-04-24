@@ -6,7 +6,7 @@ import { Checkbox } from './Checkbox';
 
 const meta = preview.meta({
   component: Checkbox,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

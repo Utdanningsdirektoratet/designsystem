@@ -8,7 +8,6 @@ export * from './badge/Badge';
 export * from './breadcrumbs/Breadcrumbs';
 export * from './button/Button';
 export * from './card/Card';
-export * from './checkbox/Checkbox';
 export * from './chip/Chip';
 export * from './demoBanner/DemoBanner';
 export * from './details/Details';
