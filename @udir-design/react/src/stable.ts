@@ -4,3 +4,4 @@
  */
 
 export * from './components/stable';
+export * from './utilities/hooks/stable';

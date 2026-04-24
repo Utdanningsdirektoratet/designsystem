@@ -29,6 +29,14 @@ const meta = preview.meta<
 });
 
 export const Default = meta.story({
+  args: {
+    name: 'my-group',
+    disabled: false,
+    readOnly: false,
+    required: false,
+    value: ['epost'],
+    error: '',
+  },
   render(args) {
     const { getCheckboxProps, validationMessageProps } = useCheckboxGroup({
       value: ['epost'],
@@ -50,6 +58,8 @@ const GroupBase = {
   args: {
     name: 'my-group',
     disabled: false,
+    readOnly: false,
+    required: false,
     error: '',
   } as UseCheckboxGroupProps,
   render(args: UseCheckboxGroupProps) {
