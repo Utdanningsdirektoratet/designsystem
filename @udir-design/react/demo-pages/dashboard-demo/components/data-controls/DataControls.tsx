@@ -15,6 +15,7 @@ export const DataControls = ({ value, setValue }: DataControlsProps) => {
         defaultValue={value}
         onChange={setValue}
         className={classes.toggleGroup}
+        aria-label="Velg visning"
       >
         <ToggleGroup.Item value="graph">Vis som graf</ToggleGroup.Item>
         <ToggleGroup.Item value="table">Vis som tabell</ToggleGroup.Item>
