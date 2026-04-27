@@ -16,7 +16,7 @@ import type {
   ComponentOriginParameters,
   CustomStylesParameters,
 } from './types';
-import { customStylesDecorator } from './utils/customStylesDecorator';
+import { CustomStylesDecorator } from './utils/customStylesDecorator';
 
 // Fix icons being displayed as React.ForwardRef in Storybook code examples
 for (const iconName of R.keys(icons)) {
@@ -79,7 +79,7 @@ export default definePreview({
     viewport: { value: 'desktop' },
   },
 
-  decorators: [customStylesDecorator],
+  decorators: [CustomStylesDecorator],
 
   addons: [
     addonA11y(),

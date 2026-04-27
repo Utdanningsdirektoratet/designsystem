@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ToggleGroup } from 'src/components/toggleGroup/ToggleGroup';
+import { ToggleGroup } from 'src/components/toggleGroup';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import { CodeBlock } from '../../icons/docs/CodeBlock';

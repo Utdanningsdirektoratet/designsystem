@@ -13,7 +13,7 @@ export function UserTable() {
       <Heading>Alle brukere</Heading>
       <div className={styles.actionAndSearch}>
         <div className={styles.selectAction}>
-          <Select aria-label="Velg handling">
+          <Select aria-label="Velg handling" autoComplete="off">
             <Select.Option value="blank">Velg handling</Select.Option>
             <Select.Option value="duplicate">Dupliser</Select.Option>
             <Select.Option value="delete">Slett</Select.Option>
@@ -42,7 +42,7 @@ export function UserTable() {
           </Popover.TriggerContext>
         </div>
         <Search className={styles.tableSearch}>
-          <Search.Input aria-label="Søk" />
+          <Search.Input aria-label="Søk" autoComplete="off" />
           <Search.Clear />
           <Search.Button />
         </Search>

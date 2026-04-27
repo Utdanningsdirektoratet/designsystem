@@ -1,11 +1,11 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Controlled 1`] = `
-<form style="display: flex; flex-direction: column; gap: var(--ds-size-2);">
+<form style="<removed>">
   <div>
     <input
       placeholder
-      id="search-input-controlled"
+      id="<removed>"
       aria-label="Søk"
       type="search"
       value
@@ -24,7 +24,7 @@ exports[`Controlled 1`] = `
       Søk
     </button>
   </div>
-  <div style="display: flex; gap: var(--ds-size-2); align-items: center;">
+  <div style="<removed>">
     <p
       data-variant="default"
       data-size="sm"
@@ -130,7 +130,7 @@ exports[`Variants 1`] = `
   </div>
   <hr
     aria-hidden="true"
-    style="margin-top: var(--ds-size-4);"
+    style="<removed>"
   >
   <div>
     <input
@@ -154,7 +154,7 @@ exports[`Variants 1`] = `
   </div>
   <hr
     aria-hidden="true"
-    style="margin-top: var(--ds-size-4);"
+    style="<removed>"
   >
   <div>
     <input
@@ -180,19 +180,19 @@ exports[`Variants 1`] = `
 `;
 
 exports[`With Label 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="components-search--with-label"
+    for="<removed>"
   >
     Søk i læreplaner
   </label>
   <div>
     <input
       placeholder
-      id="components-search--with-label"
       type="search"
       name="cat-search"
+      id="<removed>"
     >
     <button
       data-icon="true"
@@ -208,5 +208,5 @@ exports[`With Label 1`] = `
       Søk
     </button>
   </div>
-</div>
+</ds-field>
 `;

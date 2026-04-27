@@ -4,6 +4,7 @@ import type { FileRejection, FileWithPath } from 'react-dropzone';
 import { useDropzone } from 'react-dropzone';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Heading } from '../typography/heading/Heading';
 import { FileUpload } from './index';
 
@@ -19,6 +20,7 @@ const meta = preview.meta({
 });
 
 export const Preview = meta.story({
+  parameters: { docs: advancedCodeDocs },
   args: {
     'data-size': 'md',
     label: 'Label',
@@ -50,15 +52,13 @@ export const Preview = meta.story({
           justifyContent: 'center',
         }}
       >
-        <FileUpload.Trigger
-          {...args}
-          inputProps={{ ...args.inputProps, id: 'trigger' }}
-        />
+        <FileUpload.Trigger {...args} inputProps={{ ...args.inputProps }} />
         <FileUpload.Dropzone
-          {...getRootProps(args)}
-          inputProps={getInputProps({ ...args.inputProps, id: 'dropzone' })}
+          {...args}
+          inputProps={getInputProps({ ...args.inputProps })}
           isDragGlobal={isDragGlobal}
           isDragActive={isDragActive}
+          cardProps={getRootProps()}
         />
       </div>
     );
@@ -80,13 +80,13 @@ export const Readonly = meta.story({
       >
         <FileUpload.Trigger
           {...args}
-          inputProps={{ readOnly: true, id: 'readonly-trigger' }}
+          inputProps={{ readOnly: true }}
           label="Lesemodus"
           description="Beskrivelse for Trigger"
         />
         <FileUpload.Dropzone
           {...args}
-          inputProps={{ readOnly: true, max: 2, id: 'readonly-dropzone' }}
+          inputProps={{ readOnly: true, max: 2 }}
           label="Lesemodus"
           description="Beskrivelse for Dropzone"
         />
@@ -96,6 +96,14 @@ export const Readonly = meta.story({
 });
 
 export const ExampleDropZone = meta.story({
+  parameters: {
+    customStyles: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 'var(--ds-size-3)',
+    },
+    docs: advancedCodeDocs,
+  },
   render: (args) => {
     const [files, setFiles] = useState<File[]>([]);
     const [rejected, setRejected] = useState<FileRejection[]>([]);
@@ -127,25 +135,16 @@ export const ExampleDropZone = meta.story({
       });
 
     return (
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 'var(--ds-size-3)',
-        }}
-      >
+      <>
         <FileUpload.Dropzone
           label="Last opp dokumentasjon"
           description="Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB."
-          inputProps={{
-            ...getInputProps(),
-            id: 'dokumentasjon',
-          }}
+          inputProps={getInputProps({ multiple: true })}
           isDragGlobal={isDragGlobal}
           isDragActive={isDragActive}
           data-testid="dropzone"
           error={files.length > 2 && 'Du har lastet opp for mange filer.'}
-          {...getRootProps()}
+          cardProps={getRootProps()}
           {...args}
         />
         {files.length > 0 && (
@@ -177,7 +176,7 @@ export const ExampleDropZone = meta.story({
             ))}
           </>
         )}
-      </div>
+      </>
     );
   },
   play: async ({ canvasElement, step }) => {
@@ -208,7 +207,19 @@ export const ExampleDropZone = meta.story({
   },
 });
 
+export const ExampleDropzoneWithExplicitSize = ExampleDropZone.extend({
+  decorators: [
+    (Story) => (
+      <>
+        <style>{`.uds-file-upload { height: 600px; width: 100%; }`}</style>
+        <Story />
+      </>
+    ),
+  ],
+});
+
 export const TooManyFiles = meta.story({
+  parameters: { docs: advancedCodeDocs },
   render: (args) => {
     const [files, setFiles] = useState<File[]>([
       new File(['abc'.repeat(100000)], 'eksempel1.pdf'),
@@ -246,8 +257,8 @@ export const TooManyFiles = meta.story({
             files.length > 2 &&
             'Du har lastet opp for mange filer. Fjern noen for å kunne sende inn skjemaet.'
           }
-          inputProps={{ ...getInputProps(), id: 'dokumentasjon-for-mange' }}
-          {...getRootProps()}
+          inputProps={getInputProps()}
+          cardProps={getRootProps()}
           isDragGlobal={isDragGlobal}
           isDragActive={isDragActive}
           style={{ maxWidth: '450px', width: '100%' }}
@@ -286,8 +297,8 @@ export const ExampleTrigger = meta.story({
   render: (args) => {
     const [file, setFile] = useState<File | null>(null);
 
-    const handleOnChange = (e: ChangeEvent<HTMLDivElement>) => {
-      const input = e.target as unknown as HTMLInputElement;
+    const handleOnChange = (e: ChangeEvent<HTMLElement>) => {
+      const input = e.target as HTMLInputElement;
       if (input.files) {
         setFile(input.files[0]);
         input.value = '';
@@ -305,7 +316,6 @@ export const ExampleTrigger = meta.story({
         <FileUpload.Trigger
           inputProps={{
             accept: 'image/png, image/jpeg',
-            id: 'profilbilde',
           }}
           onChange={(e) => handleOnChange(e)}
           data-testid="trigger"
@@ -422,15 +432,16 @@ export const Upload = meta.story({
     const [file, setFile] = useState<File | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
 
-    const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
-      const files = e.target.files; // safe
+    const handleOnChange = (e: ChangeEvent<HTMLElement>) => {
+      const input = e.target as HTMLInputElement;
+      const files = input.files; // safe
 
       if (files) {
         setFile(files[0]);
         setLoading(true);
         setTimeout(() => {
           setLoading(false);
-          e.target.value = '';
+          input.value = '';
         }, 2000);
       }
     };
@@ -446,7 +457,6 @@ export const Upload = meta.story({
           label="Last opp rapport"
           description="Du kan legge ved 1 fil."
           onChange={handleOnChange}
-          inputProps={{ id: 'rapport' }}
         />
         {file && (
           <>

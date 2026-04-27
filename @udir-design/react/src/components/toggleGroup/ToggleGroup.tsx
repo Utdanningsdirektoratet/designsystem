@@ -1,24 +1,27 @@
 import {
   ToggleGroup as DigdirToggleGroup,
-  ToggleGroupItem,
-  type ToggleGroupItemProps,
   type ToggleGroupProps as DigdirToggleGroupProps,
 } from '@digdir/designsystemet-react';
-import type {
-  ComponentRef,
-  ForwardRefExoticComponent,
-  RefAttributes,
-} from 'react';
+import { forwardRef } from 'react';
 import './togglegroup.css';
 
-type ToggleGroupProps = Omit<DigdirToggleGroupProps, 'data-color'>;
+export type ToggleGroupProps = Omit<
+  DigdirToggleGroupProps,
+  'data-color' | 'data-toggle-group'
+> & {
+  'aria-label'?: string;
+};
 
-const ToggleGroup = DigdirToggleGroup as ForwardRefExoticComponent<
-  ToggleGroupProps & RefAttributes<ComponentRef<typeof DigdirToggleGroup>>
-> &
-  Pick<typeof DigdirToggleGroup, 'Item'>;
+export const ToggleGroup = forwardRef<HTMLFieldSetElement, ToggleGroupProps>(
+  function ToggleGroup({ 'aria-label': ariaLabel, ...props }, ref) {
+    return (
+      <DigdirToggleGroup
+        {...props}
+        data-toggle-group={ariaLabel} // temporary until Digdir supports aria-label directly
+        ref={ref}
+      />
+    );
+  },
+);
 
-// For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 ToggleGroup.displayName = 'ToggleGroup';
-export type { ToggleGroupItemProps, ToggleGroupProps };
-export { ToggleGroup, ToggleGroupItem };

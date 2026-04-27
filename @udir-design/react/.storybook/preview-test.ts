@@ -21,17 +21,15 @@ export const testLifecycleHooks = {
     };
   },
   async afterEach(storyContext: StoryContext) {
-    const expect = globalThis.vitestExpect;
-    if (!expect) {
+    const viteExpect = globalThis.vitestExpect;
+    if (!viteExpect) {
       return;
     }
-    const canvasElement = storyContext.canvasElement as HTMLElement;
-    const decorators = canvasElement.querySelectorAll(
-      '[data-storybook-decorator]',
-    );
-    const innerDecorator = Array.from(decorators).at(decorators.length - 1);
-    const html = innerDecorator?.innerHTML || canvasElement.innerHTML;
-    expect(html).toMatchSnapshot();
+
+    const canvasElement = removeDecorators(storyContext.canvasElement);
+
+    const html = canvasElement.innerHTML;
+    viteExpect(html).toMatchSnapshot();
 
     storyContext.reporting.addReport({
       type: 'snapshot',
@@ -40,3 +38,12 @@ export const testLifecycleHooks = {
     });
   },
 };
+
+function removeDecorators(canvasElement: HTMLElement) {
+  const decorators = canvasElement.querySelectorAll<HTMLElement>(
+    '[data-storybook-decorator]',
+  );
+  const innerDecorator =
+    Array.from(decorators).at(decorators.length - 1) ?? canvasElement;
+  return innerDecorator;
+}

@@ -1,10 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Affix 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="textfield-affix"
+    for="<removed>"
   >
     Hvor mange kroner koster det per måned?
   </label>
@@ -13,7 +13,7 @@ exports[`Affix 1`] = `
       NOK
     </span>
     <input
-      id="textfield-affix"
+      id="<removed>"
       inputmode="numeric"
       type="text"
     >
@@ -21,26 +21,26 @@ exports[`Affix 1`] = `
       pr. mnd
     </span>
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`Controlled 1`] = `
-<div style="display: flex; gap: var(--ds-size-2); align-items: end; width: 100%;">
-  <div style="flex-grow: 1;">
+<div style="<removed>">
+  <ds-field style="<removed>">
     <label
       data-weight="medium"
-      for="textfield-controlled"
+      for="<removed>"
     >
       Fullt navn
     </label>
     <div>
       <input
-        id="textfield-controlled"
+        id="<removed>"
         type="text"
         value
       >
     </div>
-  </div>
+  </ds-field>
   <button
     data-variant="secondary"
     type="button"
@@ -51,173 +51,170 @@ exports[`Controlled 1`] = `
 `;
 
 exports[`Counter 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="textfield-counter"
+    for="<removed>"
   >
     Legg til en beskrivelse
   </label>
   <div>
     <textarea
-      id="textfield-counter"
+      id="<removed>"
       rows="4"
-      aria-describedby="textfield-counter:description:1"
+      aria-describedby="<removed>"
+      style="<removed>"
     >
     </textarea>
   </div>
-  <div aria-live="polite">
-  </div>
   <p
-    data-variant="default"
-    aria-hidden="true"
+    data-field="counter"
+    data-limit="75"
+    id="<removed>"
+    data-label="75 tegn igjen"
+    data-state="under"
   >
-    75 tegn igjen
   </p>
-  <div
-    aria-hidden="true"
-    data-field="description"
-    id="textfield-counter:description:1"
-  >
-    Maks 75 tegn tillatt.
-  </div>
-</div>
+</ds-field>
 `;
 
 exports[`Disabled 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="textfield-disabled"
+    for="<removed>"
   >
     Disabled Textfield
   </label>
   <div>
     <input
-      id="textfield-disabled"
+      id="<removed>"
       disabled
       type="text"
     >
   </div>
-</div>
-<div>
+</ds-field>
+<ds-field>
   <label
     data-weight="medium"
-    for="multiline-textfield-disabled"
+    for="<removed>"
   >
     Disabled multiline Textfield
   </label>
   <div>
     <textarea
-      id="multiline-textfield-disabled"
+      id="<removed>"
       rows="4"
       disabled
+      style="<removed>"
     >
     </textarea>
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`Focused 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="textfield-preview"
+    for="<removed>"
   >
     Label
   </label>
   <div>
     <input
-      id="textfield-preview"
+      id="<removed>"
       type="text"
     >
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`Format 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="format"
+    for="<removed>"
   >
     Fødselsnummer
   </label>
   <div>
     <input
-      id="format"
+      id="<removed>"
       inputmode="numeric"
       type="text"
     >
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`Preview 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="textfield-preview"
+    for="<removed>"
   >
     Label
   </label>
   <div>
     <input
-      id="textfield-preview"
+      id="<removed>"
       type="text"
     >
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`Read Only 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="textfield-readonly"
+    for="<removed>"
   >
     ReadOnly Textfield
   </label>
   <div>
     <input
-      id="textfield-readonly"
+      id="<removed>"
       readonly
       type="text"
     >
   </div>
-</div>
-<div>
+</ds-field>
+<ds-field>
   <label
     data-weight="medium"
-    for="multiline-textfield-readonly"
+    for="<removed>"
   >
     ReadOnly multiline Textfield
   </label>
   <div>
     <textarea
-      id="multiline-textfield-readonly"
+      id="<removed>"
       rows="4"
       readonly
+      style="<removed>"
     >
     </textarea>
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`Rows 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="textfield-rows"
+    for="<removed>"
   >
     Beskrivelse
   </label>
   <div>
     <textarea
       rows="4"
-      id="textfield-rows"
+      id="<removed>"
+      style="<removed>"
     >
     </textarea>
   </div>
-</div>
+</ds-field>
 `;

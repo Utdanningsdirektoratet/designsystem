@@ -31,14 +31,14 @@ function MyComponent() {
 
 ## Ta i bruk uten React
 
-Ikonene er mulig å importere og bruke i vanlig HTML og CSS, så lenge du bruker en bundler som f.eks. Vite eller Parcel.
+Ikonene er mulig å importere og bruke i vanlig HTML og CSS, så lenge du bruker en bundler som f.eks. Vite.
 
 ### Bruk i HTML
 
 Du kan bruke ikonene fra HTML ved å referere de inn gjennom `<svg><use href="<sti-til-svg>#icon" /></svg>`.
 For å få riktig dimensjoner må du også importere litt CSS fra biblioteket.
 
-Nøyaktige import-stier vil avhenge av oppsettet ditt. Vi har med eksempler for Vite og Parcel.
+Nøyaktige import-stier vil avhenge av oppsettet ditt. Vi har med eksempler for Vite.
 
 #### Nødvendig CSS
 
@@ -48,8 +48,9 @@ Du trenger litt CSS for å få riktig dimensjoner på ikonene
 /* css */
 
 /* Nødvendig for riktig dimensjoner på ikon. */
-@import '@udir-design/icons/style.css'; // med Vite som bundler
-@import 'npm:@udir-design/icons/dist/style.css'; // med Parcel som bundler
+@import '@udir-design/icons/style.css';
+
+// med Vite som bundler
 
 /* Valgfritt: styr ikonets størrelse. Default er height: 1em; width: auto; */
 .my-icon {
@@ -67,12 +68,6 @@ Dersom HTML-en blir generert dynamisk, kan du f.eks. gjøre slik:
 // Med Vite som bundler
 import ArrowRight from '@udir-design/icons/svg/ArrowRight.svg?no-inline';
 
-// Med Parcel som bundler
-const ArrowRight = new URL(
-  'npm:@udir-design/icons/dist/svg/ArrowRight.svg',
-  import.meta.url,
-);
-
 document.body.innerHTML += `
 <a class="ds-link" href="#">
   <svg aria-hidden class="my-icon">
@@ -80,15 +75,6 @@ document.body.innerHTML += `
   </svg>
   <span>Lenke lagt til dynamisk med JavaScript</span>
 </a>`;
-```
-
-Med Parcel er det også mulig å referere til ikonene direkte i HTML-filer:
-
-```html
-<!-- html -->
-<svg aria-hidden class="my-icon">
-  <use href="npm:@udir-design/icons/dist/svg/Airplane.svg#icon" />
-</svg>
 ```
 
 ### Bruk i CSS
@@ -102,13 +88,11 @@ De kan importeres fra JavaScript / TypeScript eller fra CSS.
 
 Variablene har navnekonvensjonen `--uds-icon-<ikonnavn>`, og css-filene ligger i `@udir-design/icons/css/<ikonnavn>.css`, der `<ikonnavn>` er navnet på ikonet slik det står i [ikonoversikten](https://design.udir.no/beta/?path=/docs/iconsandsymbols-ikoner--ikoner) men med liten forbokstav.
 
-Nøyaktige import-stier vil avhenge av oppsettet ditt. Vi har med eksempler for Vite og Parcel.
+Nøyaktige import-stier vil avhenge av oppsettet ditt. Vi har med eksempler for Vite.
 
 ```css
 /* Med Vite som bundler  */
 @import '@udir-design/icons/css/circleFill.css';
-/* Med Parcel som bundler */
-@import 'npm:@udir-design/icons/dist/css/circleFill.css';
 ```
 
 Ved bruk direkte i CSS må du ta ansvar for en del styling selv, men du kan for eksempel automatisk legge til ikon på et element med en viss klasse.

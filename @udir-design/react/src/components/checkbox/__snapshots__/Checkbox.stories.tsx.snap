@@ -5,95 +5,101 @@ exports[`Checkbox In Color Context 1`] = `
   data-variant="tinted"
   data-color="accent"
 >
-  <div>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="checkbox-in-color-context"
+      id="<removed>"
       type="checkbox"
       checked
-      aria-describedby="checkbox-in-color-context:description:1"
+      aria-describedby="<removed>"
     >
     <label
       data-weight="regular"
-      for="checkbox-in-color-context"
+      for="<removed>"
     >
       Checkbox label
     </label>
     <div
       data-field="description"
-      id="checkbox-in-color-context:description:1"
+      id="<removed>"
     >
       Description
     </div>
-  </div>
+  </ds-field>
 </div>
 `;
 
 exports[`Focused 1`] = `
-<div>
+<ds-field data-clickdelegatefor="<removed>">
   <input
-    id="checkbox-preview"
+    id="<removed>"
     type="checkbox"
     value="value"
-    aria-describedby="checkbox-preview:description:1"
+    aria-describedby="<removed>"
   >
   <label
     data-weight="regular"
-    for="checkbox-preview"
+    for="<removed>"
   >
     Checkbox label
   </label>
   <div
     data-field="description"
-    id="checkbox-preview:description:1"
+    id="<removed>"
   >
     Description
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`One Option 1`] = `
-<fieldset>
-  <legend data-weight="medium">
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
     Bekreft at du er over 18 år
   </legend>
-  <p data-variant="default">
+  <p
+    data-variant="default"
+    id="<removed>"
+  >
     For at vi skal kunne sende deg opplysningen du ber om, må du bekrefte at du er myndig.
   </p>
-  <div>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
-      id="components-checkbox--one-option"
       type="checkbox"
       value="samtykke"
+      id="<removed>"
     >
     <label
       data-weight="regular"
-      for="components-checkbox--one-option"
+      for="<removed>"
     >
       Jeg bekrefter at jeg er over 18 år
     </label>
-  </div>
+  </ds-field>
 </fieldset>
 `;
 
 exports[`Preview 1`] = `
-<div>
+<ds-field data-clickdelegatefor="<removed>">
   <input
-    id="checkbox-preview"
+    id="<removed>"
     type="checkbox"
     value="value"
-    aria-describedby="checkbox-preview:description:1"
+    aria-describedby="<removed>"
   >
   <label
     data-weight="regular"
-    for="checkbox-preview"
+    for="<removed>"
   >
     Checkbox label
   </label>
   <div
     data-field="description"
-    id="checkbox-preview:description:1"
+    id="<removed>"
   >
     Description
   </div>
-</div>
+</ds-field>
 `;

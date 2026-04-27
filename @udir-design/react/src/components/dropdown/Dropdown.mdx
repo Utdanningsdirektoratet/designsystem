@@ -58,7 +58,9 @@ Du kan legge ikon og lignende komponenter slik som `Avatar` rett inn i `Dropdown
 
 ### Kontrollert tilstand
 
-Tilstanden til `Dropdown` kan kontrolleres ved å bruke `open` og `onClose`.
+Dersom du sender inn `open`, så bruker du `Dropdown` kontrollert. Du kan bruke `onOpen` og `onClose` for å få beskjed når `Dropdown` vil åpnes og lukkes.
+
+Merk at vi ikke bruker `onClick` på triggeren, `Dropdown` håndterer dette internt og delegerer videre til `onOpen` og `onClose`.
 
 <Canvas of={DropdownStories.Controlled} />
 
@@ -66,9 +68,13 @@ Tilstanden til `Dropdown` kan kontrolleres ved å bruke `open` og `onClose`.
 
 Triggeren er en [`Button`](/docs/components-button--docs) som standard. Du kan bruke `asChild` for å endre `Dropdown.Trigger` elementet. Dersom du skal legge på funksjoner som `onClick`, legg det på ditt element, og legg `asChild` på `Dropdown.Trigger`.
 
-Fordi `Dropdown` bruker popover API-et, kan du også bruke `Dropdown` uten `Dropdown.Trigger`. Da må du legge til `popovertarget={id}` på komponenten som skal brukes som trigger, og `id` på `Dropdown`.
+Fordi `Dropdown` bruker popover API-et, kan du også bruke `Dropdown` uten `Dropdown.TriggerContext` og `Dropdown.Trigger`. Da må du legge til `popovertarget={id}` på komponenten som skal brukes som trigger, og `id` på `Dropdown`.
 
-<Canvas of={DropdownStories.WithoutTrigger} />
+<Canvas of={DropdownStories.WithoutContext} />
+
+Dette kan også kombineres med kontrollert tilstand, som i dette eksempelet
+
+<Canvas of={DropdownStories.ControlledWithoutContext} />
 
 ### Vis aktivt element
 

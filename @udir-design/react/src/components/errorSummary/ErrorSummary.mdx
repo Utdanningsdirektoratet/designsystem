@@ -55,13 +55,13 @@ I dette forenklede eksempelet ser du hvordan `id` på skjemafeltene og `href` p�
 
 <Canvas of={ErrorSummaryStories.WithForm} sourceState="shown" />
 
-### Flytte fokus når ErrorSummary vises
+### ErrorSummary får automatisk fokus når den vises
 
 `ErrorSummary` skal være skjult helt til brukeren prøver å komme seg videre, for eksempel ved å sende inn et skjema, og det finnes feil eller mangler som hindrer innsending.
 
-Det er viktig at `ErrorSummary` får fokus når den dukker opp, slik at brukeren får med seg hva hen må gjøre for å komme videre. Her ser du hvordan du gjør dette teknisk.
+`ErrorSummary` får automatisk fokus når den dukker opp, slik at brukeren får med seg hva hen må gjøre for å komme videre. Her er et eksempel på hvordan dette fungerer.
 
-<Canvas of={ErrorSummaryStories.ShowHide} sourceState="shown" />
+<Canvas of={ErrorSummaryStories.ShowHide} />
 
 ## Retningslinjer
 

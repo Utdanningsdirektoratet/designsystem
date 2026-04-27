@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { expect, userEvent, within } from 'storybook/test';
+import { useId, useState } from 'react';
+import { expect, userEvent, waitFor, within } from 'storybook/test';
 import {
   ArrowDownIcon,
   ArrowUpIcon,
@@ -13,6 +13,7 @@ import {
   TrashFillIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Avatar } from '../avatar/Avatar';
 import { Badge } from '../badge/Badge';
 import { Button } from '../button/Button';
@@ -39,11 +40,16 @@ const meta = preview.meta({
     const button = canvas.getByRole('button');
     await userEvent.click(button);
     const popover = ctx.canvasElement.querySelector('[popover]');
-    await expect(popover).toBeVisible();
+    await waitFor(() => {
+      expect(popover?.matches(':popover-open')).toBe(true);
+    });
   },
 });
 
 export const Preview = meta.story({
+  parameters: {
+    customStyles: { story: { height: 260 } },
+  },
   args: {
     placement: 'bottom-end',
   },
@@ -55,10 +61,8 @@ export const Preview = meta.story({
           <DownloadIcon aria-hidden />
         </Dropdown.Trigger>
         <Dropdown {...args}>
+          <Dropdown.Heading>Velg format</Dropdown.Heading>
           <Dropdown.List>
-            <Dropdown.Item>
-              <Dropdown.Heading>Velg format</Dropdown.Heading>
-            </Dropdown.Item>
             <Dropdown.Item>
               <Dropdown.Button>.pdf</Dropdown.Button>
             </Dropdown.Item>
@@ -76,23 +80,34 @@ export const Preview = meta.story({
     // Check open, click link and close with trigger
     await userEvent.click(button);
     const dropdown = ctx.canvasElement.querySelector('[popover]');
-    await expect(dropdown).toBeVisible();
+    await waitFor(() => {
+      expect(dropdown?.matches(':popover-open')).toBe(true);
+    });
     const dropdownButton = within(ctx.canvasElement).getByText('.pdf');
     await userEvent.click(dropdownButton);
     await userEvent.click(button);
-    await expect(dropdown).not.toBeVisible();
+    await waitFor(() => {
+      expect(dropdown?.matches(':popover-open')).toBe(false);
+    });
 
     // Check close with click outside
     await userEvent.click(button);
-    await expect(dropdown).toBeVisible();
+    await waitFor(() => {
+      expect(dropdown?.matches(':popover-open')).toBe(true);
+    });
     await userEvent.click(ctx.canvasElement);
-    await expect(dropdown).not.toBeVisible();
+    await waitFor(() => {
+      expect(dropdown?.matches(':popover-open')).toBe(false);
+    });
 
     await userEvent.click(button);
   },
 });
 
 export const Icons = meta.story({
+  parameters: {
+    customStyles: { story: { height: 260 } },
+  },
   render: (args) => {
     return (
       <Dropdown.TriggerContext>
@@ -127,6 +142,9 @@ export const Icons = meta.story({
 });
 
 export const Avatars = meta.story({
+  parameters: {
+    customStyles: { story: { height: 370 } },
+  },
   render: (args) => {
     const [open, setOpen] = useState(false);
 
@@ -141,10 +159,8 @@ export const Avatars = meta.story({
           )}
         </Dropdown.Trigger>
         <Dropdown {...args} open={open} onClose={() => setOpen(false)}>
+          <Dropdown.Heading>Velg profil</Dropdown.Heading>
           <Dropdown.List>
-            <Dropdown.Item>
-              <Dropdown.Heading>Velg profil</Dropdown.Heading>
-            </Dropdown.Item>
             <Dropdown.Item>
               <Dropdown.Button onClick={() => setOpen(false)}>
                 <Avatar aria-label="Kai Nordmann" />
@@ -174,6 +190,9 @@ export const Avatars = meta.story({
 });
 
 export const Selected = meta.story({
+  parameters: {
+    customStyles: { story: { height: 260 } },
+  },
   args: {
     placement: 'bottom-end',
   },
@@ -202,12 +221,16 @@ export const Selected = meta.story({
 });
 
 export const Controlled = meta.story({
-  render: function Render(args) {
+  parameters: {
+    customStyles: { story: { height: 402 } },
+    docs: advancedCodeDocs,
+  },
+  render(args) {
     const [open, setOpen] = useState(false);
 
     return (
       <Dropdown.TriggerContext>
-        <Dropdown.Trigger onClick={() => setOpen(!open)} variant="secondary">
+        <Dropdown.Trigger variant="secondary">
           Utdanningsløp
           {open ? (
             <ChevronUpIcon aria-hidden />
@@ -215,11 +238,14 @@ export const Controlled = meta.story({
             <ChevronDownIcon aria-hidden />
           )}
         </Dropdown.Trigger>
-        <Dropdown {...args} open={open} onClose={() => setOpen(false)}>
+        <Dropdown
+          {...args}
+          open={open}
+          onOpen={() => setOpen(true)}
+          onClose={() => setOpen(false)}
+        >
+          <Dropdown.Heading>Grunnskolen</Dropdown.Heading>
           <Dropdown.List>
-            <Dropdown.Item>
-              <Dropdown.Heading>Grunnskolen</Dropdown.Heading>
-            </Dropdown.Item>
             <Dropdown.Item>
               <Dropdown.Button onClick={() => setOpen(false)}>
                 Barneskolen
@@ -231,10 +257,8 @@ export const Controlled = meta.story({
               </Dropdown.Button>
             </Dropdown.Item>
           </Dropdown.List>
+          <Dropdown.Heading>Videregående opplæring</Dropdown.Heading>
           <Dropdown.List>
-            <Dropdown.Item>
-              <Dropdown.Heading>Videregående opplæring</Dropdown.Heading>
-            </Dropdown.Item>
             <Dropdown.Item>
               <Dropdown.Button onClick={() => setOpen(false)}>
                 Studieforberedende
@@ -252,12 +276,74 @@ export const Controlled = meta.story({
   },
 });
 
-export const WithoutTrigger = meta.story({
+export const ControlledWithoutContext = meta.story({
+  parameters: {
+    customStyles: { story: { height: 402 } },
+    docs: advancedCodeDocs,
+  },
+  render(args) {
+    const [open, setOpen] = useState(false);
+    const popoverId = useId();
+
+    return (
+      <>
+        <Button popoverTarget={popoverId} variant="secondary">
+          Utdanningsløp
+          {open ? (
+            <ChevronUpIcon aria-hidden />
+          ) : (
+            <ChevronDownIcon aria-hidden />
+          )}
+        </Button>
+        <Dropdown
+          {...args}
+          id={popoverId}
+          open={open}
+          onOpen={() => setOpen(true)}
+          onClose={() => setOpen(false)}
+        >
+          <Dropdown.Heading>Grunnskolen</Dropdown.Heading>
+          <Dropdown.List>
+            <Dropdown.Item>
+              <Dropdown.Button onClick={() => setOpen(false)}>
+                Barneskolen
+              </Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Dropdown.Button onClick={() => setOpen(false)}>
+                Ungdomsskolen
+              </Dropdown.Button>
+            </Dropdown.Item>
+          </Dropdown.List>
+          <Dropdown.Heading>Videregående opplæring</Dropdown.Heading>
+          <Dropdown.List>
+            <Dropdown.Item>
+              <Dropdown.Button onClick={() => setOpen(false)}>
+                Studieforberedende
+              </Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Dropdown.Button onClick={() => setOpen(false)}>
+                Yrkesfaglig
+              </Dropdown.Button>
+            </Dropdown.Item>
+          </Dropdown.List>
+        </Dropdown>
+      </>
+    );
+  },
+});
+
+export const WithoutContext = meta.story({
+  parameters: {
+    customStyles: { story: { height: 260 } },
+    docs: { source: { type: 'dynamic' } },
+  },
   render: () => {
     return (
       <>
         <Button
-          popovertarget="dropdown"
+          popoverTarget="dropdown"
           variant="tertiary"
           icon
           title="Flere valg"
@@ -287,9 +373,13 @@ export const WithoutTrigger = meta.story({
     const button = within(ctx.canvasElement).getByRole('button');
     await userEvent.click(button);
     const dropdown = ctx.canvasElement.querySelector('[popover]');
-    await expect(dropdown).toBeVisible();
+    await waitFor(() => {
+      expect(dropdown?.matches(':popover-open')).toBe(true);
+    });
     await userEvent.click(button);
-    await expect(dropdown).not.toBeVisible();
+    await waitFor(() => {
+      expect(dropdown?.matches(':popover-open')).toBe(false);
+    });
     await userEvent.click(button);
   },
 });

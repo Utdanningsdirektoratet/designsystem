@@ -1,12 +1,26 @@
+html {
+  height: 100%;
+  scroll-padding-top: 10rem;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   font-feature-settings: 'cv05' 1; /* Enable lowercase l with tail */
-  height: 100vh;
+  height: 100%;
+
+  .uds-demo-banner {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
 
   .content {
+    flex: 1;
+    width: 100%;
     max-width: 80rem;
     margin: 0 auto;
     padding-block: var(--ds-size-5);
+    box-sizing: border-box;
   }
 }

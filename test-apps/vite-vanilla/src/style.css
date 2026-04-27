@@ -20,6 +20,10 @@ body {
   padding: var(--ds-size-4);
 }
 
+.symbol-box img {
+  height: 3em;
+}
+
 .idea-box {
   background: var(--ds-color-support2-surface-tinted);
   padding: var(--ds-size-4);
@@ -33,8 +37,7 @@ body {
   height: 1em;
   margin-inline-end: var(--ds-size-2);
   background: currentColor;
-  mask: center / 100% no-repeat
-    url('npm:@udir-design/icons/dist/svg/LightBulb.svg');
+  mask: center / 100% no-repeat var(--uds-icon-lightBulb);
   vertical-align: middle;
   position: relative;
   top: -2px;

@@ -90,6 +90,7 @@ export default defineMain({
   typescript: {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
+      setDisplayName: false,
       propFilter: (prop) => {
         // Remove popovertarget prop which @digdir/designsystemet-react adds to all elements
         if (prop.name === 'popovertarget') {

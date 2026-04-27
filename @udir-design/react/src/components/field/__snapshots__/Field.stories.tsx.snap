@@ -1,10 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Affix 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="affix"
+    for="<removed>"
   >
     Hvor mange kroner koster det per måned?
   </label>
@@ -13,7 +13,7 @@ exports[`Affix 1`] = `
       NOK
     </span>
     <input
-      id="affix"
+      id="<removed>"
       size="12"
       type="text"
     >
@@ -21,116 +21,116 @@ exports[`Affix 1`] = `
       pr. mnd.
     </span>
   </div>
-</div>
+</ds-field>
 `;
 
 exports[`Counter 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="counter"
+    for="<removed>"
   >
     Legg til en beskrivelse
   </label>
   <textarea
     rows="4"
-    id="counter"
-    aria-describedby="counter:description:1"
+    id="<removed>"
+    aria-describedby="<removed>"
+    style="<removed>"
   >
   </textarea>
-  <div aria-live="polite">
-  </div>
   <p
-    data-variant="default"
-    aria-hidden="true"
+    data-field="counter"
+    data-limit="75"
+    id="<removed>"
+    data-label="75 tegn igjen"
+    data-state="under"
   >
-    75 tegn igjen
   </p>
-  <div
-    aria-hidden="true"
-    data-field="description"
-    id="counter:description:1"
-  >
-    Maks 75 tegn tillatt.
-  </div>
-</div>
+</ds-field>
 `;
 
 exports[`Format 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="format"
+    for="<removed>"
   >
     Fødselsnummer
   </label>
   <input
-    id="format"
+    id="<removed>"
     inputmode="numeric"
     type="text"
   >
-</div>
+</ds-field>
 `;
 
 exports[`Position 1`] = `
-<div style="max-width: 200px; margin: auto;">
-  <div style="display: flex; flex-direction: column; gap: var(--ds-size-2);">
-    <div data-position="end">
+<div style="<removed>">
+  <div style="<removed>">
+    <ds-field
+      data-position="end"
+      data-clickdelegatefor="<removed>"
+    >
       <label
         data-weight="medium"
-        for="airplane"
+        for="<removed>"
       >
         Flymodus
       </label>
       <input
         role="switch"
-        id="airplane"
+        id="<removed>"
         type="checkbox"
       >
-    </div>
-    <div data-position="end">
+    </ds-field>
+    <ds-field
+      data-position="end"
+      data-clickdelegatefor="<removed>"
+    >
       <label
         data-weight="medium"
-        for="sounds"
+        for="<removed>"
       >
         Lydløs
       </label>
       <input
         role="switch"
-        id="sounds"
+        id="<removed>"
         type="checkbox"
       >
-    </div>
+    </ds-field>
   </div>
 </div>
 `;
 
 exports[`Preview 1`] = `
-<div>
+<ds-field>
   <label
     data-weight="medium"
-    for="preview"
+    for="<removed>"
   >
     E-post
   </label>
   <div
     data-field="description"
-    id="preview:description:1"
+    id="<removed>"
   >
     E-posten din brukes til å logge inn og motta varsler
   </div>
   <input
-    id="preview"
+    id="<removed>"
     aria-invalid="true"
     type="text"
     value="ola nordmann@udir.no"
-    aria-describedby="preview:validation:1 preview:description:1"
+    aria-describedby="<removed>"
   >
   <p
     data-field="validation"
-    id="preview:validation:1"
+    id="<removed>"
   >
     Du må oppgi en gyldig e-postadresse
   </p>
-</div>
+</ds-field>
 `;

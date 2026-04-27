@@ -38,44 +38,6 @@ import '@udir-design/css';
 @import '@udir-design/css';
 ```
 
-### Med f.eks. Parcel
-
-For bundlere som **ikke** støtter `@import` av npm-avhengigheter i CSS på standard måte, må du gjøre noe ekstra selv.
-
-#### Installer biblioteket og avhengigheter
-
-Først, om du bruker `pnpm`, moderne `yarn` en annen fornuftig package manager som ikke tillater å importere transitive avhengigheter, må du sørge for å eksplisitt installere CSS-bibliotekets avhengigheter i tillegg til biblioteket.
-
-```sh
-pnpm add @udir-design/css@beta @udir-design/theme@beta @digdir/designsystemet-css
-```
-
-#### Import fra JavaScript
-
-```js
-import '@udir-design/theme/dist/index.css';
-import '@digdir/designsystemet-css/dist/src/index.css';
-import '@udir-design/css/components.css';
-```
-
-> [!NOTE]
-> Legg merke til at vi importerer CSS-filer fra `dist/`-undermappen. Dette er fordi
-> Parcel ikke respekterer `package.json`-feltet `"exports"` når den resolver CSS imports.
-> Hvilken konkrete fil du faktisk må importere her kan i teorien endre seg, og fasiten
-> ligger i bibliotekenes `package.json`-fil.
-
-#### Import fra CSS
-
-> [!NOTE]
-> I tillegg til merknaden over om `dist/`, legg merke til `npm:`-prefix, som er
-> spesifikt for Parcel
-
-```css
-@import 'npm:@udir-design/theme/dist/index.css';
-@import 'npm:@digdir/designsystemet-css/dist/src/index.css';
-@import 'npm:@udir-design/css/dist/components.css';
-```
-
 ### Bruke biblioteket
 
 Det er foreløpig ingen dokumentasjon på hvordan man bruker komponentene uten React. Generelt sett er det ganske lett å få likt utseende som med React, men eventuell interaktivitet må implementeres selv.

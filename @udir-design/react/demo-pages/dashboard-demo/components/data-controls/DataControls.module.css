@@ -7,9 +7,11 @@
 
 .toggleGroup {
   @container (max-width: 18.75rem) {
-    grid-auto-flow: row;
+    justify-content: space-between;
     width: 100%;
     max-width: unset;
-    height: auto;
+    label {
+      flex-basis: 100%;
+    }
   }
 }

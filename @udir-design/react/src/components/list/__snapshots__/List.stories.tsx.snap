@@ -2,7 +2,7 @@
 
 exports[`As Nav 1`] = `
 <nav aria-label="Snarveier">
-  <ul style="list-style: none; padding: 0px;">
+  <ul style="<removed>">
     <li>
       <a
         href="https://www.udir.no/utdanningslopet/barnehage/"
@@ -35,7 +35,7 @@ exports[`Indented 1`] = `
 <h2 data-size="xs">
   Innhold
 </h2>
-<ol style="margin-top: var(--ds-size-2);">
+<ol style="<removed>">
   <li>
     Barnehagens verdigrunnlag
     <ul>
@@ -81,7 +81,7 @@ exports[`Indented 1`] = `
 exports[`Ordered 1`] = `
 <h2
   data-size="xs"
-  style="margin-bottom: var(--ds-size-2);"
+  style="<removed>"
 >
   Slik gjennomfører dere metoden:
 </h2>
@@ -118,7 +118,7 @@ exports[`Preview 1`] = `
 exports[`Unordered 1`] = `
 <h2
   data-size="xs"
-  style="margin-bottom: var(--ds-size-2);"
+  style="<removed>"
 >
   Gjennom arbeid med kommunikasjon, språk og tekst skal barnehagen bidra til at barna
 </h2>
@@ -136,7 +136,7 @@ exports[`Unordered 1`] = `
 `;
 
 exports[`With Links 1`] = `
-<ul style="list-style: none; padding: 0px;">
+<ul style="<removed>">
   <li>
     <a
       href="https://www.udir.no/om-udir/designprofil/identitet/"
