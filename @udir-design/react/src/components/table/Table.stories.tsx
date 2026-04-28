@@ -1011,7 +1011,7 @@ export const TreeStructuredTable = meta.story({
           <Table.Row
             key={node.id}
             data-testid={`row-${node.id}`}
-            aria-level={depth + 1}
+            data-level={depth + 1}
           >
             <Table.HeaderCell scope="row">
               {hasChildren ? (

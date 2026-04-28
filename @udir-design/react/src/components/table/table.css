@@ -80,7 +80,7 @@
   }
 
   /* Expandable rows (simple expand/collapse, not drilldown) */
-  & > tbody > tr:not([aria-level]):has(> :is(td, th) > button[aria-expanded]) {
+  & > tbody > tr:not([data-level]):has(> :is(td, th) > button[aria-expanded]) {
     & > :is(td, th):has(> button[aria-expanded]) {
       padding: 0;
     }
@@ -101,19 +101,19 @@
 
   /* Drilldown / tree-structured rows */
 
-  & > tbody > tr[aria-level] {
+  & > tbody > tr[data-level] {
     --dsc-table-drilldown-depth: 0;
 
-    &[aria-level='2'] {
+    &[data-level='2'] {
       --dsc-table-drilldown-depth: 1;
     }
-    &[aria-level='3'] {
+    &[data-level='3'] {
       --dsc-table-drilldown-depth: 2;
     }
-    &[aria-level='4'] {
+    &[data-level='4'] {
       --dsc-table-drilldown-depth: 3;
     }
-    &[aria-level='5'] {
+    &[data-level='5'] {
       --dsc-table-drilldown-depth: 4;
     }
 
