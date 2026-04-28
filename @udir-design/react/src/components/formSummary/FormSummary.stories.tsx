@@ -1,10 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
-import { Link } from '../link/Link';
+import preview from '.storybook/preview';
 import { FormSummary } from '.';
 import './formSummary.stories.modules.css';
 
-const meta: Meta<typeof FormSummary> = {
+const meta = preview.meta({
   component: FormSummary,
   tags: ['alpha'],
   parameters: {
@@ -14,14 +13,11 @@ const meta: Meta<typeof FormSummary> = {
     layout: 'centered',
   },
   decorators: [withResponsiveDataSize],
-};
+});
 
-export default meta;
-type Story = StoryObj<typeof FormSummary>;
-
-export const Preview: Story = {
-  render: (args) => (
-    <FormSummary {...args} className="form-summary-size">
+export const Preview = meta.story({
+  render: () => (
+    <FormSummary className="form-summary-size">
       <FormSummary.Section title="Oppsummering" level={1} />
       <FormSummary.Section
         title="Første seksjon (enkeltside)"
@@ -93,11 +89,11 @@ export const Preview: Story = {
       </FormSummary.Section>
     </FormSummary>
   ),
-};
+});
 
-export const NestedSections: Story = {
-  render: (args) => (
-    <FormSummary {...args} className="form-summary-size">
+export const NestedSections = meta.story({
+  render: () => (
+    <FormSummary className="form-summary-size">
       <FormSummary.Section title="Oppsummering" level={1} />
       <FormSummary.Section title="Foresatt" editHref="#" level={2}>
         <FormSummary.Fields>
@@ -162,24 +158,24 @@ export const NestedSections: Story = {
       </FormSummary.Section>
     </FormSummary>
   ),
-};
+});
 
-export const ErrorStates: Story = {
-  render: (args) => (
-    <FormSummary {...args} className="form-summary-size">
+export const ErrorStates = meta.story({
+  render: () => (
+    <FormSummary className="form-summary-size">
       <FormSummary.Section title="Oppsummering" level={1} />
       <FormSummary.Section title="Foresatt" editHref="#" level={2}>
         <FormSummary.Fields>
           <FormSummary.Field>
             <FormSummary.Field.Label>Fornavn</FormSummary.Field.Label>
             <FormSummary.Field.Answer error="Fornavn må fylles ut">
-              <Link href="#">Fyll ut fornavn</Link>
+              Ikke besvart
             </FormSummary.Field.Answer>
           </FormSummary.Field>
           <FormSummary.Field>
             <FormSummary.Field.Label>Etternavn</FormSummary.Field.Label>
             <FormSummary.Field.Answer error="Etternavn må fylles ut">
-              <Link href="#">Fyll ut etternavn</Link>
+              Ikke besvart
             </FormSummary.Field.Answer>
           </FormSummary.Field>
           <FormSummary.Field>
@@ -224,7 +220,7 @@ export const ErrorStates: Story = {
           <FormSummary.Field>
             <FormSummary.Field.Label>Gateadresse</FormSummary.Field.Label>
             <FormSummary.Field.Answer error="Gateadresse må fylles ut">
-              <Link href="#">Fyll ut gateadresse</Link>
+              Ikke besvart
             </FormSummary.Field.Answer>
           </FormSummary.Field>
           <FormSummary.Field>
@@ -239,4 +235,4 @@ export const ErrorStates: Story = {
       </FormSummary.Section>
     </FormSummary>
   ),
-};
+});
