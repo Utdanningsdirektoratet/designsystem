@@ -17,12 +17,11 @@ const meta = preview.meta({
 
 export const Preview = meta.story({
   render: () => (
-    <FormSummary className="form-summary-size">
-      <FormSummary.Section title="Oppsummering" level={1} />
+    <FormSummary className="form-summary-size" title="Oppsummering">
       <FormSummary.Section
         title="Første seksjon (enkeltside)"
         editHref="#"
-        level={2}
+        level={3}
       >
         <FormSummary.Fields>
           <FormSummary.Field>
@@ -43,7 +42,7 @@ export const Preview = meta.story({
       <FormSummary.Section
         title="Andre seksjon (enkeltside)"
         editHref="#"
-        level={2}
+        level={3}
       >
         <FormSummary.Fields>
           <FormSummary.Field>
@@ -57,8 +56,8 @@ export const Preview = meta.story({
         </FormSummary.Fields>
       </FormSummary.Section>
 
-      <FormSummary.Section title="Tredje seksjon" level={2}>
-        <FormSummary.Section title="Første side" editHref="#" level={3}>
+      <FormSummary.Section title="Tredje seksjon" level={3}>
+        <FormSummary.Section title="Første side" editHref="#" level={4}>
           <FormSummary.Fields>
             <FormSummary.Field>
               <FormSummary.Field.Label>Første spørsmål</FormSummary.Field.Label>
@@ -93,9 +92,8 @@ export const Preview = meta.story({
 
 export const NestedSections = meta.story({
   render: () => (
-    <FormSummary className="form-summary-size">
-      <FormSummary.Section title="Oppsummering" level={1} />
-      <FormSummary.Section title="Foresatt" editHref="#" level={2}>
+    <FormSummary className="form-summary-size" title="Oppsummering">
+      <FormSummary.Section title="Foresatt" editHref="#" level={3}>
         <FormSummary.Fields>
           <FormSummary.Field>
             <FormSummary.Field.Label>Fornavn</FormSummary.Field.Label>
@@ -112,8 +110,8 @@ export const NestedSections = meta.story({
         </FormSummary.Fields>
       </FormSummary.Section>
 
-      <FormSummary.Section title="Barn" level={2}>
-        <FormSummary.Section title="Barn 1" editHref="#" level={3}>
+      <FormSummary.Section title="Barn" level={3}>
+        <FormSummary.Section title="Barn 1" editHref="#" level={4}>
           <FormSummary.Fields>
             <FormSummary.Field>
               <FormSummary.Field.Label>Fornavn</FormSummary.Field.Label>
@@ -126,7 +124,7 @@ export const NestedSections = meta.story({
           </FormSummary.Fields>
         </FormSummary.Section>
 
-        <FormSummary.Section title="Barn 2" editHref="#" level={3}>
+        <FormSummary.Section title="Barn 2" editHref="#" level={4}>
           <FormSummary.Fields>
             <FormSummary.Field>
               <FormSummary.Field.Label>Fornavn</FormSummary.Field.Label>
@@ -140,7 +138,7 @@ export const NestedSections = meta.story({
         </FormSummary.Section>
       </FormSummary.Section>
 
-      <FormSummary.Section title="Adresse" editHref="#" level={2}>
+      <FormSummary.Section title="Adresse" editHref="#" level={3}>
         <FormSummary.Fields>
           <FormSummary.Field>
             <FormSummary.Field.Label>Gateadresse</FormSummary.Field.Label>
@@ -162,9 +160,8 @@ export const NestedSections = meta.story({
 
 export const ErrorStates = meta.story({
   render: () => (
-    <FormSummary className="form-summary-size">
-      <FormSummary.Section title="Oppsummering" level={1} />
-      <FormSummary.Section title="Foresatt" editHref="#" level={2}>
+    <FormSummary className="form-summary-size" title="Oppsummering">
+      <FormSummary.Section title="Foresatt" editHref="#" level={3}>
         <FormSummary.Fields>
           <FormSummary.Field>
             <FormSummary.Field.Label>Fornavn</FormSummary.Field.Label>
@@ -187,8 +184,8 @@ export const ErrorStates = meta.story({
         </FormSummary.Fields>
       </FormSummary.Section>
 
-      <FormSummary.Section title="Barn" level={2}>
-        <FormSummary.Section title="Barn 1" editHref="#" level={3}>
+      <FormSummary.Section title="Barn" level={3}>
+        <FormSummary.Section title="Barn 1" editHref="#" level={4}>
           <FormSummary.Fields>
             <FormSummary.Field>
               <FormSummary.Field.Label>Fornavn</FormSummary.Field.Label>
@@ -201,7 +198,7 @@ export const ErrorStates = meta.story({
           </FormSummary.Fields>
         </FormSummary.Section>
 
-        <FormSummary.Section title="Barn 2" editHref="#" level={3}>
+        <FormSummary.Section title="Barn 2" editHref="#" level={4}>
           <FormSummary.Fields>
             <FormSummary.Field>
               <FormSummary.Field.Label>Fornavn</FormSummary.Field.Label>
@@ -215,7 +212,7 @@ export const ErrorStates = meta.story({
         </FormSummary.Section>
       </FormSummary.Section>
 
-      <FormSummary.Section title="Adresse" editHref="#" level={2}>
+      <FormSummary.Section title="Adresse" editHref="#" level={3}>
         <FormSummary.Fields>
           <FormSummary.Field>
             <FormSummary.Field.Label>Gateadresse</FormSummary.Field.Label>

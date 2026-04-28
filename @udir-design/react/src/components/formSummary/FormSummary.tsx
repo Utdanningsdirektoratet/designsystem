@@ -4,13 +4,17 @@ import { forwardRef } from 'react';
 import './formSummary.css';
 import type { CardProps } from '../card/Card';
 import { Card } from '../card/Card';
+import { Heading } from '../typography/heading/Heading';
 
-export type FormSummaryProps = Omit<CardProps, 'variant' | 'asChild'>;
+export type FormSummaryProps = Omit<CardProps, 'variant' | 'asChild'> & {
+  title: string;
+  level?: 2 | 3;
+};
 
 export const FormSummary: ForwardRefExoticComponent<
   FormSummaryProps & RefAttributes<HTMLDivElement>
 > = forwardRef<HTMLDivElement, FormSummaryProps>(function FormSummary(
-  { className, ...rest },
+  { className, children, title, level = 2, ...rest },
   ref,
 ) {
   return (
@@ -19,6 +23,13 @@ export const FormSummary: ForwardRefExoticComponent<
       ref={ref}
       variant="tinted"
       {...rest}
-    />
+    >
+      {title && (
+        <Card.Block>
+          <Heading level={level}>{title}</Heading>
+        </Card.Block>
+      )}
+      {children}
+    </Card>
   );
 });
