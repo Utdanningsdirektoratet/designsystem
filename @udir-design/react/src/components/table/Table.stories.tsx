@@ -1,7 +1,7 @@
 import { Pagination, usePagination } from '@digdir/designsystemet-react';
+import type React from 'react';
 import { useMemo, useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
-import { ChevronDownIcon, ChevronRightIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
 import { Checkbox } from '../checkbox/Checkbox';
@@ -835,82 +835,147 @@ export const WithBorder = meta.story({
   },
 });
 
-type Node = {
+const expandableData = [
+  {
+    id: 1,
+    navn: 'Rita Nordmann',
+    rolle: 'Rektor',
+    epost: 'rita@nordmann.no',
+    detaljer:
+      'Rita har vært rektor i 12 år og har ansvar for 45 ansatte. Hun leder skolens pedagogiske utviklingsarbeid.',
+  },
+  {
+    id: 2,
+    navn: 'Kari Nordmann',
+    rolle: 'Lektor',
+    epost: 'kari@nordmann.no',
+    detaljer:
+      'Kari underviser i norsk og samfunnsfag for 8.–10. trinn. Hun er også kontaktlærer for 9A.',
+  },
+  {
+    id: 3,
+    navn: 'Ola Nordmann',
+    rolle: 'Lektor',
+    epost: 'ola@nordmann.no',
+    detaljer:
+      'Ola underviser i matematikk og naturfag. Han er ansvarlig for skolens realfagssatsing.',
+  },
+];
+
+export const ExpandableRows = meta.story({
+  render: (args) => (
+    <Table {...args} style={{ tableLayout: 'fixed', width: '600px' }}>
+      <Table.Head>
+        <Table.Row>
+          <Table.HeaderCell>Navn</Table.HeaderCell>
+          <Table.HeaderCell>Rolle</Table.HeaderCell>
+          <Table.HeaderCell>Epost</Table.HeaderCell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        {expandableData.map((row) => (
+          <ExpandableTableRow key={row.id} row={row} />
+        ))}
+      </Table.Body>
+    </Table>
+  ),
+  async play({ canvasElement, step }) {
+    const canvas = within(canvasElement);
+
+    await step('Detail row is hidden when collapsed', () => {
+      const button = canvas.getAllByRole('button')[0];
+      expect(button).toHaveAttribute('aria-expanded', 'false');
+    });
+
+    await step('Detail row is shown when expanded', async () => {
+      const button = canvas.getAllByRole('button')[0];
+      await userEvent.click(button);
+      expect(button).toHaveAttribute('aria-expanded', 'true');
+    });
+  },
+});
+
+function ExpandableTableRow({ row }: { row: (typeof expandableData)[number] }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <>
+      <Table.Row>
+        <Table.Cell>
+          <button
+            type="button"
+            aria-expanded={expanded}
+            onClick={() => setExpanded(!expanded)}
+          >
+            {row.navn}
+          </button>
+        </Table.Cell>
+        <Table.Cell>{row.rolle}</Table.Cell>
+        <Table.Cell>{row.epost}</Table.Cell>
+      </Table.Row>
+      <Table.Row hidden={!expanded}>
+        <Table.Cell colSpan={3}>{row.detaljer}</Table.Cell>
+      </Table.Row>
+    </>
+  );
+}
+
+type TreeNode = {
   id: string;
   label: string;
   values: React.ReactNode[];
-  children?: Node[];
+  children?: TreeNode[];
 };
 
-const caption = 'Svarprosent for elevundersøkelsen nasjonalt';
-const rowHeaderLabel = 'Elevgruppe';
-const columns = ['2022–23', '2023–24', '2024–25'];
+/* ─── Nasjonale prøver – tree table ─── */
 
-const data: Node[] = [
-  {
-    id: '8trinn',
-    label: '8. trinn',
-    values: ['88,5%', '86,3%', '85,3%'],
-    children: [
-      {
-        id: '8trinn-oslo',
-        label: 'Fra Oslo',
-        values: ['30,5%', '1,3%', '23,3%'],
-        children: [
-          {
-            id: '8trinn-oslo-sentrum',
-            label: 'Sentrum',
-            values: ['15,1%', '0,7%', '11,0%'],
-          },
-          {
-            id: '8trinn-oslo-ost',
-            label: 'Øst',
-            values: ['15,4%', '0,6%', '12,3%'],
-          },
+type NpNode = [label: string, values: string[], children?: NpNode[]];
+
+const toTree = (nodes: NpNode[], prefix = 'np'): TreeNode[] =>
+  nodes.map(([label, values, children]) => {
+    const id = `${prefix}-${label.toLowerCase().replace(/[^a-zæøå0-9]/g, '')}`;
+    return {
+      id,
+      label,
+      values,
+      ...(children && { children: toTree(children, id) }),
+    };
+  });
+
+const nasjonalePrøverData = toTree([
+  [
+    'Nasjonalt',
+    ['50', '50', '50'],
+    [
+      ['Akershus', ['52', '52', '53'], [['…', ['…', '…', '…']]]],
+      [
+        'Oslo',
+        ['53', '52', '54'],
+        [
+          ['Frogner', ['55', '53', '56'], [['…', ['…', '…', '…']]]],
+          [
+            'Gamle Oslo',
+            ['52', '50', '52'],
+            [
+              ['Gamlebyen skole', ['51', '49', '51']],
+              ['Kampen skole', ['54', '52', '55']],
+              ['Tøyen skole', ['53', '51', '53']],
+              ['Vahl skole', ['52', '50', '52']],
+            ],
+          ],
+          ['Grünerløkka', ['54', '52', '55'], [['…', ['…', '…', '…']]]],
+          ['Nordre Aker', ['53', '52', '54'], [['…', ['…', '…', '…']]]],
+          ['St. Hanshaugen', ['54', '53', '55'], [['…', ['…', '…', '…']]]],
+          ['Søndre Nordstrand', ['50', '48', '50'], [['…', ['…', '…', '…']]]],
         ],
-      },
-      {
-        id: '8trinn-drobak',
-        label: 'Fra Drøbak',
-        values: ['28,5%', '0,9%', '20,3%'],
-      },
+      ],
+      ['Rogaland', ['50', '51', '51'], [['…', ['…', '…', '…']]]],
+      ['Trøndelag', ['50', '51', '50'], [['…', ['…', '…', '…']]]],
+      ['Vestland', ['51', '51', '50'], [['…', ['…', '…', '…']]]],
+      ['…', ['…', '…', '…']],
     ],
-  },
-  {
-    id: '9trinn',
-    label: '9. trinn',
-    values: ['88,7%', '86,3%', '84,9%'],
-    children: [
-      {
-        id: '9trinn-oslo',
-        label: 'Fra Oslo',
-        values: ['31,5%', '1,0%', '24,3%'],
-      },
-      {
-        id: '9trinn-drobak',
-        label: 'Fra Drøbak',
-        values: ['27,5%', '0,8%', '19,3%'],
-      },
-    ],
-  },
-  {
-    id: '10trinn',
-    label: '10. trinn',
-    values: ['89,7%', '87,3%', '85,7%'],
-    children: [
-      {
-        id: '10trinn-oslo',
-        label: 'Fra Oslo',
-        values: ['32,5%', '1,1%', '25,3%'],
-      },
-      {
-        id: '10trinn-drobak',
-        label: 'Fra Drøbak',
-        values: ['29,5%', '0,9%', '21,3%'],
-      },
-    ],
-  },
-];
+  ],
+]);
 
 export const TreeStructuredTable = meta.story({
   args: {
@@ -920,7 +985,13 @@ export const TreeStructuredTable = meta.story({
     'data-color': 'support1',
   },
   render: (args) => {
-    const [open, setOpen] = useState<Set<string>>(new Set());
+    const [open, setOpen] = useState<Set<string>>(
+      new Set([
+        'np-nasjonalt',
+        'np-nasjonalt-oslo',
+        'np-nasjonalt-oslo-gamleoslo',
+      ]),
+    );
 
     const toggle = (id: string) => {
       setOpen((prev) => {
@@ -931,56 +1002,36 @@ export const TreeStructuredTable = meta.story({
     };
 
     const rows = useMemo(() => {
-      const renderRows = (node: Node, depth = 0): React.ReactNode[] => {
+      const renderRows = (node: TreeNode, depth = 0): React.ReactNode[] => {
         const isOpen = open.has(node.id);
         const children = node.children ?? [];
         const hasChildren = children.length > 0;
 
-        const labelContent = (
-          <span
-            className="treeStructuredTable-label"
-            style={{ '--tree-depth': depth } as React.CSSProperties}
-          >
-            <span className="treeStructuredTable-icon" aria-hidden="true">
-              {hasChildren ? (
-                isOpen ? (
-                  <ChevronDownIcon />
-                ) : (
-                  <ChevronRightIcon />
-                )
-              ) : null}
-            </span>
-            <span>{node.label}</span>
-          </span>
-        );
-
         const currentRow = (
-          <Table.Row key={node.id} data-testid={`tree-row-${node.id}`}>
+          <Table.Row
+            key={node.id}
+            data-testid={`row-${node.id}`}
+            aria-level={depth + 1}
+          >
             <Table.HeaderCell scope="row">
               {hasChildren ? (
                 <button
                   type="button"
                   onClick={() => toggle(node.id)}
                   aria-expanded={isOpen}
-                  aria-label={
-                    isOpen
-                      ? `Skjul undernivå for ${node.label}`
-                      : `Vis undernivå for ${node.label}`
-                  }
-                  data-testid={`tree-toggle-${node.id}`}
-                  className="treeStructuredTable-button"
+                  data-testid={`toggle-${node.id}`}
                 >
-                  {labelContent}
+                  {node.label}
                 </button>
               ) : (
-                labelContent
+                node.label
               )}
             </Table.HeaderCell>
 
             {node.values.map((value, index) => (
               <Table.Cell
                 key={`${node.id}-c${index}`}
-                className="treeStructuredTable-valueCell"
+                style={{ textAlign: 'right' }}
               >
                 {value}
               </Table.Cell>
@@ -998,128 +1049,82 @@ export const TreeStructuredTable = meta.story({
         ];
       };
 
-      return data.flatMap((node) => renderRows(node));
+      return nasjonalePrøverData.flatMap((node) => renderRows(node));
     }, [open]);
 
     return (
-      <>
-        <style>
-          {`
-            /* Styles defined in application-specific css */
-            .treeStructuredTable-caption {
-              font-size: var(--ds-font-size-3);
-              caption-side: bottom;
-              text-align: center;
-              font-weight: normal;
-              margin-top: var(--ds-size-2);
-            }
+      <Table
+        {...args}
+        style={{
+          tableLayout: 'fixed',
+          width: '550px',
+        }}
+      >
+        <caption
+          style={{
+            fontSize: 'var(--ds-font-size-3)',
+            captionSide: 'bottom',
+            textAlign: 'center',
+            fontWeight: 'normal',
+            marginTop: 'var(--ds-size-2)',
+          }}
+        >
+          Nasjonale prøver 5. trinn – skoleåret 2024–25, snitt skalapoeng
+        </caption>
 
-            .treeStructuredTable-valueCell {
-              text-align: right;
-            }
+        <Table.Head>
+          <Table.Row>
+            <Table.HeaderCell scope="col">Område</Table.HeaderCell>
+            <Table.HeaderCell scope="col" style={{ width: '4rem' }}>
+              Lesing
+            </Table.HeaderCell>
+            <Table.HeaderCell scope="col" style={{ width: '4rem' }}>
+              Regning
+            </Table.HeaderCell>
+            <Table.HeaderCell scope="col" style={{ width: '4rem' }}>
+              Engelsk
+            </Table.HeaderCell>
+          </Table.Row>
+        </Table.Head>
 
-            .treeStructuredTable-button {
-              background: none;
-              border: 0;
-              margin: 0;
-              padding: 0;
-              font: inherit;
-              color: inherit;
-              cursor: pointer;
-            }
-
-            .treeStructuredTable-label {
-              display: grid;
-              grid-template-columns: var(--ds-size-5) auto;
-              align-items: center;
-              column-gap: 0.5rem;
-              padding-inline-start: calc(var(--ds-size-3) * var(--tree-depth));
-            }
-
-            .treeStructuredTable-icon {
-              display: inline-flex;
-              align-items: center;
-              justify-content: center;
-              width: var(--ds-size-5);
-            }
-          `}
-        </style>
-
-        <Table {...args}>
-          <caption className="treeStructuredTable-caption">{caption}</caption>
-
-          <Table.Head>
-            <Table.Row>
-              <Table.HeaderCell
-                scope="col"
-                className="treeStructuredTable-rowHeader"
-              >
-                {rowHeaderLabel}
-              </Table.HeaderCell>
-
-              {columns.map((column) => (
-                <Table.HeaderCell key={column} scope="col">
-                  {column}
-                </Table.HeaderCell>
-              ))}
-            </Table.Row>
-          </Table.Head>
-
-          <Table.Body>{rows}</Table.Body>
-        </Table>
-      </>
+        <Table.Body>{rows}</Table.Body>
+      </Table>
     );
   },
   async play({ canvasElement, step }) {
     const canvas = within(canvasElement);
 
-    await step(
-      'Expandable rows expose clear button names and collapsed state',
-      async () => {
-        const topLevelToggle = canvas.getByTestId('tree-toggle-8trinn');
-
-        expect(topLevelToggle).toHaveAccessibleName(
-          'Vis undernivå for 8. trinn',
-        );
-        expect(topLevelToggle).toHaveAttribute('aria-expanded', 'false');
-        expect(
-          canvas.queryByTestId('tree-row-8trinn-oslo'),
-        ).not.toBeInTheDocument();
-      },
-    );
-
-    await step('Top-level row can be expanded with keyboard', async () => {
-      await userEvent.tab();
-
-      const topLevelToggle = canvas.getByTestId('tree-toggle-8trinn');
-      expect(topLevelToggle).toHaveFocus();
-
-      await userEvent.keyboard(' ');
-
-      expect(topLevelToggle).toHaveAttribute('aria-expanded', 'true');
-      expect(topLevelToggle).toHaveAccessibleName(
-        'Skjul undernivå for 8. trinn',
+    await step('Nasjonalt, Oslo and Gamle Oslo are expanded by default', () => {
+      expect(canvas.getByTestId('toggle-np-nasjonalt')).toHaveAttribute(
+        'aria-expanded',
+        'true',
       );
-      expect(canvas.getByTestId('tree-row-8trinn-oslo')).toBeInTheDocument();
-      expect(canvas.getByTestId('tree-row-8trinn-drobak')).toBeInTheDocument();
+      expect(canvas.getByTestId('toggle-np-nasjonalt-oslo')).toHaveAttribute(
+        'aria-expanded',
+        'true',
+      );
+      expect(
+        canvas.getByTestId('toggle-np-nasjonalt-oslo-gamleoslo'),
+      ).toHaveAttribute('aria-expanded', 'true');
+      expect(
+        canvas.getByTestId('row-np-nasjonalt-oslo-gamleoslo-tøyenskole'),
+      ).toBeInTheDocument();
+      expect(
+        canvas.getByTestId('row-np-nasjonalt-oslo-gamleoslo-kampenskole'),
+      ).toBeInTheDocument();
     });
 
-    await step('Nested row can be expanded with keyboard', async () => {
-      await userEvent.tab();
+    await step('Collapsing Gamle Oslo hides schools', async () => {
+      await userEvent.click(
+        canvas.getByTestId('toggle-np-nasjonalt-oslo-gamleoslo'),
+      );
 
-      const nestedToggle = canvas.getByTestId('tree-toggle-8trinn-oslo');
-      expect(nestedToggle).toHaveFocus();
-      expect(nestedToggle).toHaveAccessibleName('Vis undernivå for Fra Oslo');
-
-      await userEvent.keyboard('{Enter}');
-
-      expect(nestedToggle).toHaveAttribute('aria-expanded', 'true');
       expect(
-        canvas.getByTestId('tree-row-8trinn-oslo-sentrum'),
-      ).toBeInTheDocument();
+        canvas.getByTestId('toggle-np-nasjonalt-oslo-gamleoslo'),
+      ).toHaveAttribute('aria-expanded', 'false');
       expect(
-        canvas.getByTestId('tree-row-8trinn-oslo-ost'),
-      ).toBeInTheDocument();
+        canvas.queryByTestId('row-np-nasjonalt-oslo-gamleoslo-tøyenskole'),
+      ).not.toBeInTheDocument();
     });
   },
 });

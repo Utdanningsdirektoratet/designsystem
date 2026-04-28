@@ -127,18 +127,69 @@ Det er spesielt nyttig i tabeller med paginering eller annen dynamisk oppdaterin
 
 <Canvas of={TableStories.WithBorder} />
 
-### Table med skjulte/ekspanderbare rader
+### Ekspanderbare rader
 
-Du kan bruke `Table` til å vise hierarkiske data med skjulte eller ekspanderbare rader, for eksempel når en overordnet rad kan åpne undernivåer med mer detaljert informasjon.
-Dette kan fungere greit når brukeren først og fremst trenger å sammenligne verdier i en tabell, men også av og til se mer detaljer.
+Ekspanderbare rader kan brukes for ekstra informasjon som ikke er nødvendig for å skanne tabellen, men som kan være nyttig for brukerne å ha tilgang til.
 
-Legg ekspanderingsknappen i radoverskriften, slik at det er tydelig hvilken rad som åpnes eller lukkes.
-Knappen bør kunne brukes med tastatur og ha `aria-expanded`, og teksten bør gjøre det klart hva som skjer når raden åpnes eller skjules.
-Hold strukturen så grunn som mulig, og vær varsom med mange nivåer, siden tabellen fort blir vanskeligere å lese og navigere.
+Legg en `<button>` med `aria-expanded` i første celle på raden som skal kunne utvides.
+Rett etter legger du en detaljrad med `hidden`-attributt og en `<Table.Cell colSpan={...}>`.
+CSS-en legger til chevron-ikon og gjør hele cellen klikkbar automatisk.
 
-Dette er ikke en perfekt løsning for universell utforming, fordi en vanlig tabell ikke er laget for å uttrykke hierarki og utvidbar struktur.
-For enkle og moderate behov fungerer mønsteret likevel greit, så lenge det testes godt med tastatur og skjermleser.
-Hvis hierarkiet er dypt, eller brukeren må gjøre mange handlinger per rad, bør du vurdere om en annen presentasjonsform er bedre.
+```jsx
+<Table.Row>
+  <Table.Cell>
+    <button
+      type="button"
+      aria-expanded={expanded}
+      onClick={() => setExpanded(!expanded)}
+    >
+      {navn}
+    </button>
+  </Table.Cell>
+  <Table.Cell>{rolle}</Table.Cell>
+</Table.Row>
+<Table.Row hidden={!expanded}>
+  <Table.Cell colSpan={2}>{detaljer}</Table.Cell>
+</Table.Row>
+```
+
+<Canvas of={TableStories.ExpandableRows} />
+
+### Hierarkiske data (drilldown)
+
+Drilldown er en måte å vise hierarkiske data i en tabell, der brukerne kan utvide og skjule undernivåer av informasjon. Dette kan være nyttig for å organisere og presentere store datamengder på en oversiktlig måte, samtidig som det gir brukerne muligheten til å utforske dataene i dybden.
+
+#### Struktur
+
+- Sett `aria-level` på hver `<Table.Row>` (1 for toppnivå, 2 for første undernivå osv.). CSS-en beregner innrykk automatisk opp til nivå 5.
+- Bruk `<Table.HeaderCell scope="row">` i første kolonne med en `<button aria-expanded>` for rader som har barn.
+- Vis og skjul underrader med betinget rendering.
+
+```jsx
+<Table.Row aria-level={1}>
+  <Table.HeaderCell scope="row">
+    <button type="button" aria-expanded={isOpen} onClick={() => toggle(id)}>
+      {label}
+    </button>
+  </Table.HeaderCell>
+  <Table.Cell>{verdi1}</Table.Cell>
+</Table.Row>;
+{
+  isOpen &&
+    children.map((child) => (
+      <Table.Row key={child.id} aria-level={2}>
+        <Table.HeaderCell scope="row">{child.label}</Table.HeaderCell>
+        <Table.Cell>{child.verdi1}</Table.Cell>
+      </Table.Row>
+    ));
+}
+```
+
+#### Begrensninger
+
+Vanlige HTML-tabeller er ikke laget for å uttrykke hierarki.
+Hold strukturen grunn og test med tastatur og skjermleser.
+Hvis hierarkiet er dypt, vurder om en annen presentasjonsform passer bedre.
 
 <Canvas of={TableStories.TreeStructuredTable} />
 
@@ -173,8 +224,6 @@ For å sikre at tabeller fungerer optimalt for alle brukere er det viktig å fø
   Tomme celler skal være `Table.Cell`. Dette er viktig for å sikre at skjermlesere kan navigere riktig i tabellen.
 - **Tastaturnavigering:**
   Sjekk at du kan velge ulik sortering med tastatur. Test med skjermleser at du hører hva som er sorterbart, typer sortering og at du ikke mister fokus når du endrer sortering.
-- **Ekspanderbare rader:**
-  Hvis du bruker skjulte eller ekspanderbare rader, må ekspanderingsknappen være tilgjengelig med tastatur og ha tydelig tilstand med `aria-expanded`. Vær oppmerksom på at dette fortsatt ikke gir en fullverdig hierarkisk tabellsemantikk, så løsningen må vurderes pragmatisk og testes med skjermleser.
 - **Tilpasning for mobil:**
   Det kan være vanskelig å vise tabeller på mobil, siden det ikke finnes et felles design som fungerer i alle sammenhenger.
   De vanligste alternativene for mobil er en tabell som ruller horisontalt eller omgjøring til listevisning.
