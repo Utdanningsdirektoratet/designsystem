@@ -30,7 +30,6 @@ export * from './pagination/Pagination';
 export * from './popover/Popover';
 export * from './progressBar/ProgressBar';
 export * from './radio/Radio';
-export * from './readMore/ReadMore';
 export * from './search/Search';
 export * from './select/Select';
 export * from './skeleton/Skeleton';
