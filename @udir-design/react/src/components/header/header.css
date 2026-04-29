@@ -237,7 +237,8 @@
       flex-shrink: 0;
     }
 
-    &:has(+ [popover]:popover-open) {
+    &:has(+ [popover]:popover-open),
+    .ds-badge--position:has(+ [popover]:popover-open) > & {
       --uds-header__user-button-icon: var(--uds-icon-chevronUp);
     }
 
