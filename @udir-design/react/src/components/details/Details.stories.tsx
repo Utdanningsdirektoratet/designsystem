@@ -23,7 +23,7 @@ const meta = preview.meta({
     'Details.Summary': Details.Summary,
     'Details.Content': DetailsContent,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
