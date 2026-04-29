@@ -1,5 +1,5 @@
 import type { FunctionComponent } from 'react';
-import type { ToggleGroupItemProps } from '../ToggleGroup';
+import type { ToggleGroupItemProps } from '../';
 
 /**
  * This component only exists to add relevant html props for ToggleGroupItem
