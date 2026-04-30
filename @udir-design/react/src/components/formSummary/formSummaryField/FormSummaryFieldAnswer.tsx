@@ -15,7 +15,7 @@ export const FormSummaryFieldAnswer = forwardRef<
 >(function FormSummaryFieldAnswer({ children, error, ...rest }, ref) {
   return (
     <dd ref={ref} {...rest}>
-      {children}
+      <span>{children}</span>
       {!!error && <ValidationMessage>{error}</ValidationMessage>}
     </dd>
   );

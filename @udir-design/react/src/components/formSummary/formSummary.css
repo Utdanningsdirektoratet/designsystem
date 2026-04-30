@@ -1,3 +1,16 @@
+:root,
+[lang='nb'] {
+  --udsc-formSummary-empty-text: 'Ikke besvart';
+}
+
+[lang='nn'] {
+  --udsc-formSummary-empty-text: 'Ikkje svart';
+}
+
+[lang='en'] {
+  --udsc-formSummary-empty-text: 'Not answered';
+}
+
 .uds-form-summary {
   --dsc-card-padding: var(--ds-size-4);
   width: 100%;
@@ -24,6 +37,12 @@
     & .ds-validation-message {
       font-weight: var(--ds-font-weight-regular);
       margin-block-start: var(--ds-size-1);
+    }
+
+    > span:empty::before {
+      content: var(--udsc-formSummary-empty-text);
+      font-style: italic;
+      font-weight: var(--ds-font-weight-regular);
     }
   }
 

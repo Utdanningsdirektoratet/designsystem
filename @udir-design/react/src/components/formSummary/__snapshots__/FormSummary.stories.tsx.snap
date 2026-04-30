@@ -43,7 +43,8 @@ exports[`Error States 1`] = `
             Fornavn
           </dt>
           <dd>
-            Ikke besvart
+            <span>
+            </span>
             <p data-field="validation">
               Fornavn må fylles ut
             </p>
@@ -54,10 +55,8 @@ exports[`Error States 1`] = `
             Etternavn
           </dt>
           <dd>
-            Ikke besvart
-            <p data-field="validation">
-              Etternavn må fylles ut
-            </p>
+            <span>
+            </span>
           </dd>
         </div>
         <div>
@@ -65,7 +64,9 @@ exports[`Error States 1`] = `
             Fødselsdato
           </dt>
           <dd>
-            32.01.1990
+            <span>
+              32.01.1990
+            </span>
             <p data-field="validation">
               Ugyldig dato
             </p>
@@ -114,7 +115,9 @@ exports[`Error States 1`] = `
               Fornavn
             </dt>
             <dd>
-              Karianne
+              <span>
+                Karianne
+              </span>
             </dd>
           </div>
           <div>
@@ -122,7 +125,9 @@ exports[`Error States 1`] = `
               Etternavn
             </dt>
             <dd>
-              Hansen
+              <span>
+                Hansen
+              </span>
             </dd>
           </div>
         </dl>
@@ -162,7 +167,9 @@ exports[`Error States 1`] = `
               Fornavn
             </dt>
             <dd>
-              Stine
+              <span>
+                Stine
+              </span>
             </dd>
           </div>
           <div>
@@ -170,7 +177,9 @@ exports[`Error States 1`] = `
               Etternavn
             </dt>
             <dd>
-              Stiansen
+              <span>
+                Stiansen
+              </span>
             </dd>
           </div>
         </dl>
@@ -211,7 +220,8 @@ exports[`Error States 1`] = `
             Gateadresse
           </dt>
           <dd>
-            Ikke besvart
+            <span>
+            </span>
             <p data-field="validation">
               Gateadresse må fylles ut
             </p>
@@ -222,7 +232,9 @@ exports[`Error States 1`] = `
             Postnummer
           </dt>
           <dd>
-            0123
+            <span>
+              0123
+            </span>
           </dd>
         </div>
         <div>
@@ -230,7 +242,9 @@ exports[`Error States 1`] = `
             Poststed
           </dt>
           <dd>
-            Oslo
+            <span>
+              Oslo
+            </span>
           </dd>
         </div>
       </dl>
@@ -282,7 +296,9 @@ exports[`Nested Sections 1`] = `
             Fornavn
           </dt>
           <dd>
-            Ola
+            <span>
+              Ola
+            </span>
           </dd>
         </div>
         <div>
@@ -290,7 +306,9 @@ exports[`Nested Sections 1`] = `
             Etternavn
           </dt>
           <dd>
-            Olsen
+            <span>
+              Olsen
+            </span>
           </dd>
         </div>
         <div>
@@ -298,7 +316,9 @@ exports[`Nested Sections 1`] = `
             Fødselsdato
           </dt>
           <dd>
-            01.01.1990
+            <span>
+              01.01.1990
+            </span>
           </dd>
         </div>
       </dl>
@@ -344,7 +364,9 @@ exports[`Nested Sections 1`] = `
               Fornavn
             </dt>
             <dd>
-              Karianne
+              <span>
+                Karianne
+              </span>
             </dd>
           </div>
           <div>
@@ -352,7 +374,9 @@ exports[`Nested Sections 1`] = `
               Etternavn
             </dt>
             <dd>
-              Hansen
+              <span>
+                Hansen
+              </span>
             </dd>
           </div>
         </dl>
@@ -392,7 +416,9 @@ exports[`Nested Sections 1`] = `
               Fornavn
             </dt>
             <dd>
-              Stine
+              <span>
+                Stine
+              </span>
             </dd>
           </div>
           <div>
@@ -400,7 +426,9 @@ exports[`Nested Sections 1`] = `
               Etternavn
             </dt>
             <dd>
-              Stiansen
+              <span>
+                Stiansen
+              </span>
             </dd>
           </div>
         </dl>
@@ -441,7 +469,9 @@ exports[`Nested Sections 1`] = `
             Gateadresse
           </dt>
           <dd>
-            Storgata 1
+            <span>
+              Storgata 1
+            </span>
           </dd>
         </div>
         <div>
@@ -449,7 +479,9 @@ exports[`Nested Sections 1`] = `
             Postnummer
           </dt>
           <dd>
-            0123
+            <span>
+              0123
+            </span>
           </dd>
         </div>
         <div>
@@ -457,7 +489,9 @@ exports[`Nested Sections 1`] = `
             Poststed
           </dt>
           <dd>
-            Oslo
+            <span>
+              Oslo
+            </span>
           </dd>
         </div>
       </dl>
@@ -509,7 +543,9 @@ exports[`Preview 1`] = `
             Første spørsmål
           </dt>
           <dd>
-            Første svar
+            <span>
+              Første svar
+            </span>
           </dd>
         </div>
         <div>
@@ -517,7 +553,9 @@ exports[`Preview 1`] = `
             Andre spørsmål
           </dt>
           <dd>
-            Andre svar
+            <span>
+              Andre svar
+            </span>
           </dd>
         </div>
         <div>
@@ -525,7 +563,9 @@ exports[`Preview 1`] = `
             Tredje spørsmål
           </dt>
           <dd>
-            Tredje svar
+            <span>
+              Tredje svar
+            </span>
           </dd>
         </div>
       </dl>
@@ -565,7 +605,9 @@ exports[`Preview 1`] = `
             Første spørsmål
           </dt>
           <dd>
-            Første svar
+            <span>
+              Første svar
+            </span>
           </dd>
         </div>
         <div>
@@ -573,7 +615,9 @@ exports[`Preview 1`] = `
             Andre spørsmål
           </dt>
           <dd>
-            Andre svar
+            <span>
+              Andre svar
+            </span>
           </dd>
         </div>
       </dl>
@@ -619,7 +663,9 @@ exports[`Preview 1`] = `
               Første spørsmål
             </dt>
             <dd>
-              Første svar
+              <span>
+                Første svar
+              </span>
             </dd>
           </div>
           <div>
@@ -627,7 +673,9 @@ exports[`Preview 1`] = `
               Andre spørsmål
             </dt>
             <dd>
-              Andre svar
+              <span>
+                Andre svar
+              </span>
             </dd>
           </div>
           <div>
@@ -635,7 +683,9 @@ exports[`Preview 1`] = `
               Tredje spørsmål
             </dt>
             <dd>
-              Tredje svar
+              <span>
+                Tredje svar
+              </span>
             </dd>
           </div>
         </dl>
@@ -675,7 +725,9 @@ exports[`Preview 1`] = `
               Første spørsmål
             </dt>
             <dd>
-              Første svar
+              <span>
+                Første svar
+              </span>
             </dd>
           </div>
           <div>
@@ -683,7 +735,9 @@ exports[`Preview 1`] = `
               Andre spørsmål
             </dt>
             <dd>
-              Andre svar
+              <span>
+                Andre svar
+              </span>
             </dd>
           </div>
         </dl>

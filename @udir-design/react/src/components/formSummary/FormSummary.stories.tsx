@@ -165,15 +165,11 @@ export const ErrorStates = meta.story({
         <FormSummary.Fields>
           <FormSummary.Field>
             <FormSummary.Field.Label>Fornavn</FormSummary.Field.Label>
-            <FormSummary.Field.Answer error="Fornavn må fylles ut">
-              Ikke besvart
-            </FormSummary.Field.Answer>
+            <FormSummary.Field.Answer error="Fornavn må fylles ut" />
           </FormSummary.Field>
           <FormSummary.Field>
             <FormSummary.Field.Label>Etternavn</FormSummary.Field.Label>
-            <FormSummary.Field.Answer error="Etternavn må fylles ut">
-              Ikke besvart
-            </FormSummary.Field.Answer>
+            <FormSummary.Field.Answer />
           </FormSummary.Field>
           <FormSummary.Field>
             <FormSummary.Field.Label>Fødselsdato</FormSummary.Field.Label>
@@ -216,9 +212,7 @@ export const ErrorStates = meta.story({
         <FormSummary.Fields>
           <FormSummary.Field>
             <FormSummary.Field.Label>Gateadresse</FormSummary.Field.Label>
-            <FormSummary.Field.Answer error="Gateadresse må fylles ut">
-              Ikke besvart
-            </FormSummary.Field.Answer>
+            <FormSummary.Field.Answer error="Gateadresse må fylles ut" />
           </FormSummary.Field>
           <FormSummary.Field>
             <FormSummary.Field.Label>Postnummer</FormSummary.Field.Label>
