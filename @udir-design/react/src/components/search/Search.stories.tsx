@@ -23,7 +23,7 @@ const meta = preview.meta({
     'Search.Clear': SearchClear,
     'Search.Input': SearchInput,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
@@ -185,16 +185,16 @@ export const Controlled = meta.story({
 });
 
 export const Variants = meta.story({
-  render: () => (
+  render: (args) => (
     <div>
-      <Search>
+      <Search {...args}>
         <Search.Input aria-label="Søk" />
         <Search.Clear />
       </Search>
 
       <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
 
-      <Search>
+      <Search {...args}>
         <Search.Input aria-label="Søk" />
         <Search.Clear />
         <Search.Button />
@@ -202,7 +202,7 @@ export const Variants = meta.story({
 
       <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
 
-      <Search>
+      <Search {...args}>
         <Search.Input aria-label="Søk" />
         <Search.Clear />
         <Search.Button variant="secondary" />
