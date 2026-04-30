@@ -48,4 +48,91 @@
       margin-bottom: var(--ds-size-3);
     }
   }
+
+  /* Shared expand/collapse button styles */
+  & > tbody > tr > :is(td, th) > button[aria-expanded] {
+    all: unset;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: var(--ds-border-radius-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+
+    @composes ds-focus from '@digdir/designsystemet-css/base.css';
+
+    &::before {
+      all: unset;
+      display: inline-block;
+      content: '';
+      background: currentcolor;
+      flex-shrink: 0;
+      height: var(--ds-size-5);
+      width: var(--ds-size-5);
+      mask: center / contain no-repeat var(--uds-icon-chevronDown);
+      rotate: -90deg;
+    }
+
+    &[aria-expanded='true']::before {
+      rotate: 0deg;
+    }
+  }
+
+  /* Expandable rows (simple expand/collapse, not drilldown) */
+  & > tbody > tr:not([data-level]):has(> :is(td, th) > button[aria-expanded]) {
+    & > :is(td, th):has(> button[aria-expanded]) {
+      padding: 0;
+    }
+
+    & > :is(td, th) > button[aria-expanded] {
+      padding: var(--dsc-table-padding);
+    }
+
+    /* Remove border between expanded row and its content */
+    &:has(button[aria-expanded='true']) > :is(td, th) {
+      border-bottom: 0;
+    }
+
+    &:has(button[aria-expanded='false']) + tr > td[colspan]:only-child {
+      display: none;
+    }
+  }
+
+  /* Drilldown / tree-structured rows */
+
+  & > tbody > tr[data-level] {
+    --dsc-table-drilldown-depth: 0;
+
+    &[data-level='2'] {
+      --dsc-table-drilldown-depth: 1;
+    }
+    &[data-level='3'] {
+      --dsc-table-drilldown-depth: 2;
+    }
+    &[data-level='4'] {
+      --dsc-table-drilldown-depth: 3;
+    }
+    &[data-level='5'] {
+      --dsc-table-drilldown-depth: 4;
+    }
+
+    & > :is(th, td):first-child {
+      padding-inline-start: calc(
+        var(--ds-size-3) + var(--ds-size-6) * var(--dsc-table-drilldown-depth) +
+          var(--ds-size-5) + 0.5rem
+      );
+
+      &:has(> button[aria-expanded]) {
+        padding: 0;
+      }
+    }
+
+    & > :is(th, td):first-child > button[aria-expanded] {
+      padding: var(--dsc-table-padding);
+      padding-inline-start: calc(
+        var(--ds-size-3) + var(--ds-size-6) * var(--dsc-table-drilldown-depth)
+      );
+    }
+  }
 }

@@ -127,6 +127,72 @@ Det er spesielt nyttig i tabeller med paginering eller annen dynamisk oppdaterin
 
 <Canvas of={TableStories.WithBorder} />
 
+### Ekspanderbare rader
+
+Ekspanderbare rader kan brukes for ekstra informasjon som ikke er nødvendig for å skanne tabellen, men som kan være nyttig for brukerne å ha tilgang til.
+
+Legg en `<button>` med `aria-expanded` i første celle på raden som skal kunne utvides.
+Rett etter legger du en detaljrad med `hidden`-attributt og en `<Table.Cell colSpan={...}>`.
+CSS-en legger til chevron-ikon og gjør hele cellen klikkbar automatisk.
+
+```jsx
+<Table.Row>
+  <Table.Cell>
+    <button
+      type="button"
+      aria-expanded={expanded}
+      onClick={() => setExpanded(!expanded)}
+    >
+      {navn}
+    </button>
+  </Table.Cell>
+  <Table.Cell>{rolle}</Table.Cell>
+</Table.Row>
+<Table.Row hidden={!expanded}>
+  <Table.Cell colSpan={2}>{detaljer}</Table.Cell>
+</Table.Row>
+```
+
+<Canvas of={TableStories.ExpandableRows} />
+
+### Hierarkiske data (drilldown)
+
+Drilldown er en måte å vise hierarkiske data i en tabell, der brukerne kan utvide og skjule undernivåer av informasjon. Dette kan være nyttig for å organisere og presentere store datamengder på en oversiktlig måte, samtidig som det gir brukerne muligheten til å utforske dataene i dybden.
+
+#### Struktur
+
+- Sett `data-level` på hver `<Table.Row>` (1 for toppnivå, 2 for første undernivå osv.). CSS-en beregner innrykk automatisk opp til nivå 5.
+- Bruk `<Table.HeaderCell scope="row">` i første kolonne med en `<button aria-expanded>` for rader som har barn.
+- Vis og skjul underrader med betinget rendering.
+
+```jsx
+<Table.Row data-level={1}>
+  <Table.HeaderCell scope="row">
+    <button type="button" aria-expanded={isOpen} onClick={() => toggle(id)}>
+      {label}
+    </button>
+  </Table.HeaderCell>
+  <Table.Cell>{verdi1}</Table.Cell>
+</Table.Row>;
+{
+  isOpen &&
+    children.map((child) => (
+      <Table.Row key={child.id} data-level={2}>
+        <Table.HeaderCell scope="row">{child.label}</Table.HeaderCell>
+        <Table.Cell>{child.verdi1}</Table.Cell>
+      </Table.Row>
+    ));
+}
+```
+
+#### Begrensninger
+
+Vanlige HTML-tabeller er ikke laget for å uttrykke hierarki.
+Hold strukturen grunn og test med tastatur og skjermleser.
+Hvis hierarkiet er dypt, vurder om en annen presentasjonsform passer bedre.
+
+<Canvas of={TableStories.TreeStructuredTable} />
+
 ## Retningslinjer
 
 Vi bruker `Table` når vi skal organisere og vise data på en strukturert måte i rader og kolonner for brukerne.

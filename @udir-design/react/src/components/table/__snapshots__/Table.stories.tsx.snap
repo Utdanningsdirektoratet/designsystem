@@ -132,6 +132,89 @@ exports[`Column And Row Headers 1`] = `
 </table>
 `;
 
+exports[`Expandable Rows 1`] = `
+<table style="<removed>">
+  <thead>
+    <tr>
+      <th>
+        Navn
+      </th>
+      <th>
+        Rolle
+      </th>
+      <th>
+        Epost
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <button
+          type="button"
+          aria-expanded="true"
+        >
+          Rita Nordmann
+        </button>
+      </td>
+      <td>
+        Rektor
+      </td>
+      <td>
+        rita@nordmann.no
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        Rita har vært rektor i 12 år og har ansvar for 45 ansatte. Hun leder skolens pedagogiske utviklingsarbeid.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          Kari Nordmann
+        </button>
+      </td>
+      <td>
+        Lektor
+      </td>
+      <td>
+        kari@nordmann.no
+      </td>
+    </tr>
+    <tr hidden>
+      <td colspan="3">
+        Kari underviser i norsk og samfunnsfag for 8.–10. trinn. Hun er også kontaktlærer for 9A.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          Ola Nordmann
+        </button>
+      </td>
+      <td>
+        Lektor
+      </td>
+      <td>
+        ola@nordmann.no
+      </td>
+    </tr>
+    <tr hidden>
+      <td colspan="3">
+        Ola underviser i matematikk og naturfag. Han er ansvarlig for skolens realfagssatsing.
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
 exports[`Fixed Table 1`] = `
 <div>
   <table
@@ -864,6 +947,289 @@ exports[`Sticky Header 1`] = `
     </tbody>
   </table>
 </div>
+`;
+
+exports[`Tree Structured Table 1`] = `
+<table
+  data-zebra="true"
+  data-color="support1"
+  data-tinted-column-header="true"
+  data-tinted-row-header="true"
+  style="<removed>"
+>
+  <caption style="<removed>">
+    Nasjonale prøver 5. trinn – skoleåret 2024–25, snitt skalapoeng
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">
+        Område
+      </th>
+      <th
+        scope="col"
+        style="<removed>"
+      >
+        Lesing
+      </th>
+      <th
+        scope="col"
+        style="<removed>"
+      >
+        Regning
+      </th>
+      <th
+        scope="col"
+        style="<removed>"
+      >
+        Engelsk
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-level="1">
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="true"
+        >
+          Nasjonalt
+        </button>
+      </th>
+      <td style="<removed>">
+        50
+      </td>
+      <td style="<removed>">
+        50
+      </td>
+      <td style="<removed>">
+        50
+      </td>
+    </tr>
+    <tr data-level="2">
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          Akershus
+        </button>
+      </th>
+      <td style="<removed>">
+        52
+      </td>
+      <td style="<removed>">
+        52
+      </td>
+      <td style="<removed>">
+        53
+      </td>
+    </tr>
+    <tr data-level="2">
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="true"
+        >
+          Oslo
+        </button>
+      </th>
+      <td style="<removed>">
+        53
+      </td>
+      <td style="<removed>">
+        52
+      </td>
+      <td style="<removed>">
+        54
+      </td>
+    </tr>
+    <tr data-level="3">
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          Frogner
+        </button>
+      </th>
+      <td style="<removed>">
+        55
+      </td>
+      <td style="<removed>">
+        53
+      </td>
+      <td style="<removed>">
+        56
+      </td>
+    </tr>
+    <tr data-level="3">
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          Gamle Oslo
+        </button>
+      </th>
+      <td style="<removed>">
+        52
+      </td>
+      <td style="<removed>">
+        50
+      </td>
+      <td style="<removed>">
+        52
+      </td>
+    </tr>
+    <tr data-level="3">
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          Grünerløkka
+        </button>
+      </th>
+      <td style="<removed>">
+        54
+      </td>
+      <td style="<removed>">
+        52
+      </td>
+      <td style="<removed>">
+        55
+      </td>
+    </tr>
+    <tr data-level="3">
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          Nordre Aker
+        </button>
+      </th>
+      <td style="<removed>">
+        53
+      </td>
+      <td style="<removed>">
+        52
+      </td>
+      <td style="<removed>">
+        54
+      </td>
+    </tr>
+    <tr data-level="3">
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          St. Hanshaugen
+        </button>
+      </th>
+      <td style="<removed>">
+        54
+      </td>
+      <td style="<removed>">
+        53
+      </td>
+      <td style="<removed>">
+        55
+      </td>
+    </tr>
+    <tr data-level="3">
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          Søndre Nordstrand
+        </button>
+      </th>
+      <td style="<removed>">
+        50
+      </td>
+      <td style="<removed>">
+        48
+      </td>
+      <td style="<removed>">
+        50
+      </td>
+    </tr>
+    <tr data-level="2">
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          Rogaland
+        </button>
+      </th>
+      <td style="<removed>">
+        50
+      </td>
+      <td style="<removed>">
+        51
+      </td>
+      <td style="<removed>">
+        51
+      </td>
+    </tr>
+    <tr data-level="2">
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          Trøndelag
+        </button>
+      </th>
+      <td style="<removed>">
+        50
+      </td>
+      <td style="<removed>">
+        51
+      </td>
+      <td style="<removed>">
+        50
+      </td>
+    </tr>
+    <tr data-level="2">
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          Vestland
+        </button>
+      </th>
+      <td style="<removed>">
+        51
+      </td>
+      <td style="<removed>">
+        51
+      </td>
+      <td style="<removed>">
+        50
+      </td>
+    </tr>
+    <tr data-level="2">
+      <th scope="row">
+        …
+      </th>
+      <td style="<removed>">
+        …
+      </td>
+      <td style="<removed>">
+        …
+      </td>
+      <td style="<removed>">
+        …
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;
 
 exports[`With Border 1`] = `
