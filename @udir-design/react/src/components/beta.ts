@@ -20,7 +20,6 @@ export * from './select/Select';
 export * from './skeleton/Skeleton';
 export * from './tableOfContents/TableOfContents';
 export * from './tabs/Tabs';
-export * from './tag/Tag';
 export * from './textarea/Textarea';
 export * from './table';
 export * from './textfield/Textfield';

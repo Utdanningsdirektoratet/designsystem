@@ -21,3 +21,4 @@ export * from './search/Search';
 export * from './skipLink/SkipLink';
 export * from './spinner/Spinner';
 export * from './switch/Switch';
+export * from './tag/Tag';

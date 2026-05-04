@@ -9,7 +9,7 @@ import { Tag } from './Tag';
 
 const meta = preview.meta({
   component: Tag,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
@@ -53,12 +53,13 @@ export const Sizes = meta.story({
 });
 
 export const Icon = meta.story({
-  render: () => (
+  render: (args) => (
     <>
       <Tag
         style={{
           paddingInlineStart: 'var(--ds-size-1)',
         }}
+        {...args}
       >
         <RobotIcon
           aria-hidden
@@ -71,6 +72,7 @@ export const Icon = meta.story({
         style={{
           paddingInlineStart: 'var(--ds-size-1)',
         }}
+        {...args}
       >
         <ParagraphIcon
           aria-hidden
@@ -113,7 +115,7 @@ const electricianImage =
   'https://images.unsplash.com/photo-1635335874521-7987db781153?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
 export const Article = meta.story({
-  render: () => (
+  render: (args) => (
     <div>
       <img
         src={electricianImage}
@@ -144,12 +146,12 @@ export const Article = meta.story({
           }}
         >
           <li>
-            <Tag data-color="accent" data-size="sm">
+            <Tag data-color="accent" data-size="sm" {...args}>
               Videregående
             </Tag>
           </li>
           <li>
-            <Tag data-color="support1" data-size="sm">
+            <Tag data-color="support1" data-size="sm" {...args}>
               Lærling
             </Tag>
           </li>
@@ -187,7 +189,7 @@ export const VariantOutline = meta.story({
       placeItems: 'left',
     },
   },
-  render: () => {
+  render: (args) => {
     return (
       <>
         {colorVariants.concat(colorStatusVariants).map((color) => (
@@ -195,6 +197,7 @@ export const VariantOutline = meta.story({
             key={color}
             data-color={color as TagProps['data-color']}
             variant="outline"
+            {...args}
           >
             {color}
           </Tag>
