@@ -2,6 +2,7 @@ import { Meta, Controls, Primary, Canvas } from '@storybook/addon-docs/blocks';
 
 import * as FormSummaryStories from './FormSummary.stories';
 import { Unstyled } from '@storybook/addon-docs/blocks';
+import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/CssLanguageVariables';
 
 <Meta of={FormSummaryStories} />
 
@@ -75,8 +76,20 @@ For å gruppere i underseksjoner legger du `FormSummary.Section` inne i en annen
 
 <Canvas of={FormSummaryStories.NestedSections} />
 
+### Tomme svar
+
+Hvis et svar ikke er fylt inn, vises en standard tekst for tomme svar. Se [avsnittet om språkstøtte](#språkstøtte) for hvilke tekstvariabler som er tilgjengelige for overstyring.
+
 ### Med feil på felt
 
 Bruk `error`-prop på `FormSummary.Field.Answer` for å vise feilmeldinger knyttet til spesifikke felt i oppsummeringen.
 
 <Canvas of={FormSummaryStories.ErrorStates} />
+
+## Språkstøtte
+
+Komponenten har innebygget støtte for bokmål, nynorsk og engelsk. [Slik støtter du flere språk](/docs/components-språkstøtte--docs).
+
+Følgende tekstvariabler er tilgjengelige for overstyring:
+
+<CssLanguageVariables variables={['--udsc-formSummary-empty-text']} />
