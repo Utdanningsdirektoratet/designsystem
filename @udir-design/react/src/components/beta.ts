@@ -25,7 +25,6 @@ export * from './radio/Radio';
 export * from './readMore/ReadMore';
 export * from './select/Select';
 export * from './skeleton/Skeleton';
-export * from './skipLink/SkipLink';
 export * from './spinner/Spinner';
 export * from './switch/Switch';
 export * from './tableOfContents/TableOfContents';

@@ -6,7 +6,7 @@ import { SkipLink } from './SkipLink';
 
 const meta = preview.meta({
   component: SkipLink,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
