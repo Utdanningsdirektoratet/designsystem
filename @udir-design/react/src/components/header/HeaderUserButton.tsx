@@ -1,8 +1,6 @@
 import cl from 'clsx/lite';
 import type { HTMLAttributes } from 'react';
 import { forwardRef } from 'react';
-import { Heading } from '../typography/heading/Heading';
-import { Paragraph } from '../typography/paragraph/Paragraph';
 
 export type HeaderUserButtonProps = HTMLAttributes<HTMLButtonElement> & {
   /**
@@ -47,10 +45,8 @@ export const HeaderUserButton = forwardRef<
       {...rest}
     >
       <div>
-        <Heading data-size="2xs" level={3}>
-          {name}
-        </Heading>
-        {description && <Paragraph data-size="xs">{description}</Paragraph>}
+        <span>{name}</span>
+        {description && <span>{description}</span>}
       </div>
       {avatar && avatar}
     </button>
