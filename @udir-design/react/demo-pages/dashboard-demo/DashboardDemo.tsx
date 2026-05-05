@@ -24,6 +24,7 @@ export const DashboardDemo = ({
       className={cl(classes.card, classes.container)}
       data-size="auto"
       lang="nb"
+      id="main-content"
     >
       <Heading level={1} data-size="md">
         Schweigaardsgate skole
