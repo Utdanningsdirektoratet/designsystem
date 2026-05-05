@@ -20,13 +20,13 @@ const meta = preview.meta({
 
 export const Preview = meta.story({
   args: {
-    'aria-label': 'Laster...',
+    'aria-label': 'Laster',
   },
 });
 
 export const Sizes = meta.story({
   args: {
-    'aria-label': 'Laster...',
+    'aria-label': 'Laster',
   },
   render: (args) => (
     <>
@@ -42,7 +42,7 @@ export const Sizes = meta.story({
 
 export const Variants = meta.story({
   args: {
-    'aria-label': 'Laster...',
+    'aria-label': 'Laster',
     'data-size': 'xl',
   },
   render: (args) => (
