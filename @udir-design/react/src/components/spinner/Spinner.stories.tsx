@@ -54,3 +54,27 @@ export const Variants = meta.story({
     </>
   ),
 });
+
+export const WithText = meta.story({
+  args: {
+    'aria-hidden': true,
+    'data-size': 'sm',
+  },
+  render: (args) => (
+    <>
+      <style>
+        {`
+      .spinner-with-text {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+      `}
+      </style>
+      <div className="spinner-with-text">
+        <Spinner {...args} />
+        <span>Forbereder filen din</span>
+      </div>
+    </>
+  ),
+});

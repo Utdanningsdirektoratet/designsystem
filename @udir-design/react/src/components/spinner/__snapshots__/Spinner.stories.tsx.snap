@@ -264,3 +264,41 @@ exports[`Variants 1`] = `
   </circle>
 </svg>
 `;
+
+exports[`With Text 1`] = `
+<style>
+  .spinner-with-text {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+</style>
+<div>
+  <svg
+    role="img"
+    viewbox="0 0 50 50"
+    aria-hidden="true"
+    data-size="sm"
+  >
+    <circle
+      cx="25"
+      cy="25"
+      r="20"
+      fill="none"
+      stroke-width="5"
+    >
+    </circle>
+    <circle
+      cx="25"
+      cy="25"
+      r="20"
+      fill="none"
+      stroke-width="5"
+    >
+    </circle>
+  </svg>
+  <span>
+    Forbereder filen din
+  </span>
+</div>
+`;
