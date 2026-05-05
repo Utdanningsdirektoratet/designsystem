@@ -3,7 +3,7 @@ import { Spinner } from './Spinner';
 
 const meta = preview.meta({
   component: Spinner,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
