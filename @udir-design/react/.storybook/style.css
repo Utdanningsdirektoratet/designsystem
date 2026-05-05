@@ -25,3 +25,8 @@ body {
     border-radius: 4px;
   }
 }
+
+/* Offset scroll so DemoBanner doesn't cover main content */
+:root:has(.uds-demo-banner) {
+  scroll-padding-top: 7rem;
+}
