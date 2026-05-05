@@ -259,7 +259,7 @@ export const FormDemo = ({
 
   return (
     <FormProvider {...methods}>
-      <div className={classes.page} data-size="auto">
+      <div className={classes.page} data-size="auto" id="main-content">
         <div className={classes.desktop}>{formNavigationContent}</div>
         <div className={classes.mobile}>
           <Dialog.TriggerContext>

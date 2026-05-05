@@ -13,7 +13,7 @@ export function DemoPage(props: Props) {
   return (
     <div className={styles.page} {...props} data-size="">
       <BreadcrumbsDemo />
-      <div className={styles.examples}>
+      <div className={styles.examples} id="main-content">
         <Shoppinglist />
         <Login />
         <Progress />

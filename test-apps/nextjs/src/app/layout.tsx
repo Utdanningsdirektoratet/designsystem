@@ -26,9 +26,7 @@ export default function RootLayout({
         <DemoBanner>
           <SkipLink href="#main-content">Hopp til hovedinnholdet</SkipLink>
           <Header />
-          <main className="content" id="main-content">
-            {children}
-          </main>
+          <main className="content">{children}</main>
           <Footer className="footer" />
         </DemoBanner>
       </body>
