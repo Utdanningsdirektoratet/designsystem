@@ -1,5 +1,5 @@
 import cl from 'clsx/lite';
-import type { HTMLAttributes } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 import { forwardRef } from 'react';
 import { NotePencilIcon } from '@udir-design/icons';
 import { Card } from '../card/Card';
@@ -24,6 +24,10 @@ export type FormSummarySectionProps = HTMLAttributes<HTMLDivElement> & {
    * Click handler for the edit action button. If provided, this will take precedence over `editHref`.
    */
   onEdit?: () => void;
+  /**
+   * Either one or more `FormSummary.Fields` components, or – to implement subsections – one or more `FormSummary.Section` components.
+   */
+  children: ReactNode;
 };
 
 export const FormSummarySection = forwardRef<
