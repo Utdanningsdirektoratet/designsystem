@@ -16,8 +16,11 @@ const meta = preview.meta({
 });
 
 export const Preview = meta.story({
-  render: () => (
-    <FormSummary className="form-summary-size" title="Oppsummering">
+  args: {
+    title: 'Oppsummering',
+  },
+  render: (args) => (
+    <FormSummary {...args} className="form-summary-size">
       <FormSummary.Section
         title="Første seksjon (enkeltside)"
         editHref="#"
