@@ -15,7 +15,7 @@ export type FormSummarySectionProps = HTMLAttributes<HTMLDivElement> & {
    * Heading level for the section title.
    * @default 3
    */
-  level?: 3 | 4 | 5;
+  headingLevel?: 3 | 4 | 5;
   /**
    * URL for the edit action link.
    */
@@ -30,7 +30,7 @@ export const FormSummarySection = forwardRef<
   HTMLDivElement,
   FormSummarySectionProps
 >(function FormSummarySection(
-  { children, className, title, level = 3, editHref, onEdit, ...rest },
+  { children, className, title, headingLevel = 3, editHref, onEdit, ...rest },
   ref,
 ) {
   const hasEditAction = Boolean(editHref || onEdit);
@@ -61,7 +61,7 @@ export const FormSummarySection = forwardRef<
       {...rest}
     >
       <div className="uds-form-summary__header">
-        <Heading level={level}>{title}</Heading>
+        <Heading level={headingLevel}>{title}</Heading>
         {renderEditAction()}
       </div>
 

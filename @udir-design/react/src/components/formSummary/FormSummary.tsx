@@ -22,7 +22,7 @@ export type FormSummaryProps = Omit<
    * Heading level for the title.
    * @default 2
    */
-  level?: 2 | 3;
+  headingLevel?: 2 | 3;
   /**
    * One or more `FormSummary.Section` components
    */
@@ -32,7 +32,7 @@ export type FormSummaryProps = Omit<
 export const FormSummary: ForwardRefExoticComponent<
   FormSummaryProps & RefAttributes<HTMLDivElement>
 > = forwardRef<HTMLDivElement, FormSummaryProps>(function FormSummary(
-  { className, children, title, level = 2, ...rest },
+  { className, children, title, headingLevel = 2, ...rest },
   ref,
 ) {
   return (
@@ -44,7 +44,7 @@ export const FormSummary: ForwardRefExoticComponent<
     >
       {title && (
         <Card.Block>
-          <Heading level={level}>{title}</Heading>
+          <Heading level={headingLevel}>{title}</Heading>
         </Card.Block>
       )}
       {children}
