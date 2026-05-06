@@ -11,9 +11,18 @@ import { Spinner } from '../spinner/Spinner';
 import { Label } from '../typography/label/Label';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Search } from './Search';
+import { Search as FakeSearch } from './docs/FakeSearch';
+import { SearchButton } from './docs/FakeSearchButton';
+import { SearchClear } from './docs/FakeSearchClear';
+import { SearchInput } from './docs/FakeSearchInput';
 
 const meta = preview.meta({
-  component: Search,
+  component: FakeSearch,
+  subcomponents: {
+    'Search.Button': SearchButton,
+    'Search.Clear': SearchClear,
+    'Search.Input': SearchInput,
+  },
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {

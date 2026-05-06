@@ -1,6 +1,5 @@
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
-import { MenuHamburgerIcon, XMarkIcon } from '@udir-design/icons';
 import type { ButtonProps } from '../button/Button';
 import { Button } from '../button/Button';
 
@@ -18,10 +17,6 @@ export const HeaderMenuButton = forwardRef<
       ref={ref}
       {...props}
     >
-      <>
-        <MenuHamburgerIcon aria-hidden />
-        <XMarkIcon aria-hidden />
-      </>
       {children ? children : 'Meny'}
     </Button>
   );

@@ -1,0 +1,84 @@
+import { Meta, Controls, Primary, Canvas } from '@storybook/addon-docs/blocks';
+
+import * as FormSummaryStories from './FormSummary.stories';
+import { Unstyled } from '@storybook/addon-docs/blocks';
+import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/CssLanguageVariables';
+
+<Meta of={FormSummaryStories} />
+
+# FormSummary
+
+`FormSummary` brukes til å vise en oppsummering av informasjonen brukeren har fylt inn i et skjema, ofte før innsending. Den gir brukeren mulighet til å gå tilbake og redigere informasjonen ved behov.
+
+**Passer til å**
+
+- oppsummere informasjon i et skjema med flere sider eller seksjoner
+- gi brukeren en oversikt over hva som er fylt inn før innsending
+
+**Passer ikke til å**
+
+- redigere svar fra skjemaet direkte
+
+## Slik bruker du FormSummary
+
+<Canvas of={FormSummaryStories.Preview} withToolbar />
+<Controls of={FormSummaryStories.Preview} />
+
+```tsx
+import { FormSummary } from '@udir-design/react';
+
+<FormSummary title="Oppsummering">
+  <FormSummary.Section title="Personalia" editHref="/edit-personalia">
+    <FormSummary.Fields>
+      <FormSummary.Field label="Navn" value="Ola Nordmann" />
+      <FormSummary.Field label="Fødselsdato" value="01.01.1990" />
+    </FormSummary.Fields>
+  </FormSummary.Section>
+
+  <FormSummary.Section title="Adresse" editHref="/edit-address">
+    <FormSummary.Fields>
+      <FormSummary.Field label="Gateadresse" value="Storgata 1" />
+      <FormSummary.Field label="Postnummer" value="0123" />
+      </FormSummary.Field>
+    </FormSummary.Fields>
+  </FormSummary.Section>
+</FormSummary>;
+```
+
+## Eksempler
+
+`FormSummary` bygges opp med flere subkomponenter for å strukturere innholdet.
+
+Subkomponenter:
+
+- `FormSummary.Section`
+- `FormSummary.Fields`
+- `FormSummary.Field`
+
+### Inndeling i seksjoner
+
+`FormSummary` deles inn i seksjoner ved hjelp av `FormSummary.Section`. Hver seksjon har tittel (`title`), redigeringslenke (`editHref`) og nivå (`level`) som angir overskriftsnivået for seksjonstittelen. Bruk `onEdit` for å overskrive standard oppførsel ved klikk på redigeringslenken.
+
+For å gruppere felt innen en seksjon, bruk `FormSummary.Fields`. Hvert felt representeres av `FormSummary.Field`, som inneholder `label`, `value` og eventuell `error` for feltet.
+
+For å gruppere i underseksjoner legger du `FormSummary.Section` inne i en annen.
+
+<Canvas of={FormSummaryStories.NestedSections} />
+
+### Tomme svar
+
+Hvis et svar ikke er fylt inn, vises en standard tekst for tomme svar. Se [avsnittet om språkstøtte](#språkstøtte) for hvilke tekstvariabler som er tilgjengelige for overstyring.
+
+### Med feil på felt
+
+Bruk `error`-prop på `FormSummary.Field` for å vise feilmeldinger knyttet til spesifikke felt i oppsummeringen.
+
+<Canvas of={FormSummaryStories.ErrorStates} />
+
+## Språkstøtte
+
+Komponenten har innebygget støtte for bokmål, nynorsk og engelsk. [Slik støtter du flere språk](/docs/components-språkstøtte--docs).
+
+Følgende tekstvariabler er tilgjengelige for overstyring:
+
+<CssLanguageVariables variables={['--udsc-formSummary-empty-text']} />

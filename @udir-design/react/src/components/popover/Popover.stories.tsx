@@ -5,9 +5,16 @@ import preview from '.storybook/preview';
 import { Button } from '../button/Button';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Popover } from './Popover';
+import { Popover as FakePopover } from './docs/FakePopover';
+import { PopoverTrigger } from './docs/FakePopoverTrigger';
+import { PopoverTriggerContext } from './docs/FakePopoverTriggerContext';
 
 const meta = preview.meta({
-  component: Popover,
+  component: FakePopover,
+  subcomponents: {
+    'Popover.Trigger': PopoverTrigger,
+    'Popover.TriggerContext': PopoverTriggerContext,
+  },
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {

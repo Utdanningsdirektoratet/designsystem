@@ -19,12 +19,14 @@ import { Fieldset } from '../fieldset/Fieldset';
 import { Table } from '../table';
 import { Tooltip } from '../tooltip/Tooltip';
 import { Heading } from '../typography/heading/Heading';
+import { ToggleGroup as FakeToggleGroup } from './docs/FakeToggleGroup';
+import { ToggleGroupItem } from './docs/FakeToggleGroupItem';
 import { ToggleGroup } from './';
 
 const meta = preview.meta({
-  component: ToggleGroup,
+  component: FakeToggleGroup,
   subcomponents: {
-    'ToggleGroup.Item': ToggleGroup.Item,
+    'ToggleGroup.Item': ToggleGroupItem,
   },
   tags: ['beta', 'digdir'],
   parameters: {

@@ -18,11 +18,18 @@ import { Button } from '../button/Button';
 import { Dialog } from '../dialog/Dialog';
 import { Textfield } from '../textfield/Textfield';
 import { Heading } from '../typography/heading/Heading';
+import { FormNavigation as FakeFormNavigation } from './docs/FakeFormNavigation';
+import { FormNavigationGroup } from './docs/FakeFormNavigationGroup';
+import { FormNavigationStep } from './docs/FakeFormNavigationStep';
 import classes from './formNavigation.stories.module.css';
 import { FormNavigation } from '.';
 
 const meta = preview.meta({
-  component: FormNavigation,
+  component: FakeFormNavigation,
+  subcomponents: {
+    'FormNavigation.Group': FormNavigationGroup,
+    'FormNavigation.Step': FormNavigationStep,
+  },
   tags: ['beta', 'udir'],
   parameters: {
     componentOrigin: {

@@ -4,6 +4,8 @@ import {
   type ErrorSummaryHeadingProps,
   ErrorSummaryItem,
   type ErrorSummaryItemProps,
+  ErrorSummaryLink,
+  type ErrorSummaryLinkProps,
   ErrorSummaryList,
   type ErrorSummaryListProps,
   type ErrorSummaryProps,
@@ -15,6 +17,7 @@ ErrorSummary.displayName = 'ErrorSummary';
 export type {
   ErrorSummaryHeadingProps,
   ErrorSummaryItemProps,
+  ErrorSummaryLinkProps,
   ErrorSummaryListProps,
   ErrorSummaryProps,
 };
@@ -22,5 +25,6 @@ export {
   ErrorSummary,
   ErrorSummaryHeading,
   ErrorSummaryItem,
+  ErrorSummaryLink,
   ErrorSummaryList,
 };

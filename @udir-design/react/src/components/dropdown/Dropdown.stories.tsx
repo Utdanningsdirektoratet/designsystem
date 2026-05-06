@@ -19,9 +19,20 @@ import { Badge } from '../badge/Badge';
 import { Button } from '../button/Button';
 import { Divider } from '../divider/Divider';
 import { Dropdown } from './Dropdown';
+import { Dropdown as FakeDropdown } from './docs/FakeDropdown';
+import { DropdownButton } from './docs/FakeDropdownButton';
+import { DropdownHeading } from './docs/FakeDropdownHeading';
+import { DropdownTrigger } from './docs/FakeDropdownTrigger';
+import { DropdownTriggerContext } from './docs/FakeDropdownTriggerContext';
 
 const meta = preview.meta({
-  component: Dropdown,
+  component: FakeDropdown,
+  subcomponents: {
+    'Dropdown.Button': DropdownButton,
+    'Dropdown.Heading': DropdownHeading,
+    'Dropdown.Trigger': DropdownTrigger,
+    'Dropdown.TriggerContext': DropdownTriggerContext,
+  },
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {

@@ -2,9 +2,25 @@ import preview from '.storybook/preview';
 import { Link } from '../link/Link';
 import { Heading } from '../typography/heading/Heading';
 import { List } from './List';
+import { ListItem } from './docs/FakeListItem';
+import { ListOrdered } from './docs/FakeListOrdered';
+import { ListUnordered } from './docs/FakeListUnordered';
+
+// Hack to get the first tab in Controls to have the correct name List.Unordered instead of ListUnordered
+if (Object.hasOwn(ListUnordered, '__docgenInfo')) {
+  (
+    ListUnordered as unknown as {
+      __docgenInfo: { displayName: string };
+    }
+  ).__docgenInfo.displayName = 'List.Unordered';
+}
 
 const meta = preview.meta({
-  component: List.Unordered,
+  component: ListUnordered,
+  subcomponents: {
+    'List.Ordered': ListOrdered, // Not subcomponent but want it to be displayed in tab-view for props
+    'List.Item': ListItem,
+  },
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {
@@ -76,7 +92,7 @@ export const Indented = meta.story({
   args: {
     style: { marginTop: 'var(--ds-size-2)' },
   },
-  render: ({ ref: _ref, ...args }) => (
+  render: (args) => (
     <>
       <Heading level={2} data-size="xs">
         Innhold

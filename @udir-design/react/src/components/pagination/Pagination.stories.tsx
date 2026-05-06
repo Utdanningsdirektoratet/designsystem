@@ -4,9 +4,18 @@ import preview from '.storybook/preview';
 import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
 import { Search } from '../search/Search';
 import { Pagination } from './Pagination';
+import { Pagination as FakePagination } from './docs/FakePagination';
+import { PaginationButton } from './docs/FakePaginationButton';
+import { PaginationItem } from './docs/FakePaginationItem';
+import { PaginationList } from './docs/FakePaginationList';
 
 const meta = preview.meta({
-  component: Pagination,
+  component: FakePagination,
+  subcomponents: {
+    'Pagination.List': PaginationList,
+    'Pagination.Item': PaginationItem,
+    'Pagination.Button': PaginationButton,
+  },
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {

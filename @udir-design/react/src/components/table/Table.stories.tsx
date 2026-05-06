@@ -7,11 +7,26 @@ import { Checkbox } from '../checkbox/Checkbox';
 import { Tag } from '../tag/Tag';
 import { Textfield } from '../textfield/Textfield';
 import { Heading } from '../typography/heading/Heading';
-import type { TableHeaderCellProps } from '.';
+import { Table as FakeTable } from './docs/FakeTable';
+import { TableBody } from './docs/FakeTableBody';
+import { TableCell } from './docs/FakeTableCell';
+import { TableFoot } from './docs/FakeTableFoot';
+import { TableHead } from './docs/FakeTableHead';
+import { TableHeaderCell } from './docs/FakeTableHeaderCell';
+import { TableRow } from './docs/FakeTableRow';
 import { Table } from '.';
+import type { TableHeaderCellProps } from '.';
 
 const meta = preview.meta({
-  component: Table,
+  component: FakeTable,
+  subcomponents: {
+    'Table.Head': TableHead,
+    'Table.Body': TableBody,
+    'Table.Row': TableRow,
+    'Table.Cell': TableCell,
+    'Table.HeaderCell': TableHeaderCell,
+    'Table.Foot': TableFoot,
+  },
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {

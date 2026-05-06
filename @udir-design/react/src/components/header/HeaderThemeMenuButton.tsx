@@ -1,6 +1,5 @@
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
-import { ChevronDownIcon, ChevronUpIcon } from '@udir-design/icons';
 import type { ButtonProps } from '../button/Button';
 import { Button } from '../button/Button';
 
@@ -15,15 +14,11 @@ export const HeaderThemeMenuButton = forwardRef<
 ) {
   return (
     <Button
-      className={cl('uds-header__menu-button', className)}
+      className={cl('uds-header__theme-menu-button', className)}
       variant="tertiary"
       ref={ref}
       {...props}
     >
-      <>
-        <ChevronDownIcon aria-hidden />
-        <ChevronUpIcon aria-hidden />
-      </>
       {children}
     </Button>
   );
