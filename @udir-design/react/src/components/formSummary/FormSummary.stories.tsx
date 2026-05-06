@@ -5,6 +5,13 @@ import './formSummary.stories.modules.css';
 
 const meta = preview.meta({
   component: FormSummary,
+  subcomponents: {
+    'FormSummary.Section': FormSummary.Section,
+    'FormSummary.Fields': FormSummary.Fields,
+    'FormSummary.Field': FormSummary.Field,
+    'FormSummary.Field.Label': FormSummary.Field.Label,
+    'FormSummary.Field.Answer': FormSummary.Field.Answer,
+  },
   tags: ['alpha'],
   parameters: {
     componentOrigin: {
