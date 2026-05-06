@@ -1,12 +1,19 @@
 import cl from 'clsx/lite';
-import type { ForwardRefExoticComponent, RefAttributes } from 'react';
+import type {
+  ForwardRefExoticComponent,
+  ReactNode,
+  RefAttributes,
+} from 'react';
 import { forwardRef } from 'react';
 import './formSummary.css';
 import type { CardProps } from '../card/Card';
 import { Card } from '../card/Card';
 import { Heading } from '../typography/heading/Heading';
 
-export type FormSummaryProps = Omit<CardProps, 'variant' | 'asChild'> & {
+export type FormSummaryProps = Omit<
+  CardProps,
+  'variant' | 'asChild' | 'children'
+> & {
   /**
    * Title of the summary.
    */
@@ -16,6 +23,10 @@ export type FormSummaryProps = Omit<CardProps, 'variant' | 'asChild'> & {
    * @default 2
    */
   level?: 2 | 3;
+  /**
+   * One or more `FormSummary.Section` components
+   */
+  children: ReactNode;
 };
 
 export const FormSummary: ForwardRefExoticComponent<

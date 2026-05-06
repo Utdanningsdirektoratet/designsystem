@@ -13,6 +13,7 @@ const meta = preview.meta({
     layout: 'centered',
   },
   decorators: [withResponsiveDataSize],
+  args: { children: undefined },
 });
 
 export const Preview = meta.story({
