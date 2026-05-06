@@ -661,15 +661,12 @@ exports[`Responsive 1`] = `
           data-show="md"
         >
           <div>
-            <h3 data-size="2xs">
+            <span>
               Stian Hansen
-            </h3>
-            <p
-              data-variant="default"
-              data-size="xs"
-            >
+            </span>
+            <span>
               Admin
-            </p>
+            </span>
           </div>
           <span
             data-variant="circle"
@@ -778,15 +775,12 @@ exports[`Responsive 1`] = `
             style="<removed>"
           >
             <div>
-              <h3 data-size="2xs">
+              <span>
                 Stian Hansen
-              </h3>
-              <p
-                data-variant="default"
-                data-size="xs"
-              >
+              </span>
+              <span>
                 Admin
-              </p>
+              </span>
             </div>
             <span
               data-variant="circle"
@@ -2411,15 +2405,12 @@ exports[`With User Button 1`] = `
           data-show="sm"
         >
           <div>
-            <h3 data-size="2xs">
+            <span>
               Stian Hansen
-            </h3>
-            <p
-              data-variant="default"
-              data-size="xs"
-            >
+            </span>
+            <span>
               Admin
-            </p>
+            </span>
           </div>
           <span
             data-variant="circle"
@@ -2656,15 +2647,12 @@ exports[`With User Button Test 1`] = `
           data-show="sm"
         >
           <div>
-            <h3 data-size="2xs">
+            <span>
               Stian Hansen
-            </h3>
-            <p
-              data-variant="default"
-              data-size="xs"
-            >
+            </span>
+            <span>
               Admin
-            </p>
+            </span>
           </div>
           <span
             data-variant="circle"
