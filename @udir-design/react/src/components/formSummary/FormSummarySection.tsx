@@ -1,12 +1,12 @@
 import cl from 'clsx/lite';
+import type { HTMLAttributes } from 'react';
 import { forwardRef } from 'react';
 import { NotePencilIcon } from '@udir-design/icons';
-import type { CardBlockProps } from '../card/Card';
 import { Card } from '../card/Card';
 import { Link } from '../link/Link';
 import { Heading } from '../typography/heading/Heading';
 
-export type FormSummarySectionProps = CardBlockProps & {
+export type FormSummarySectionProps = HTMLAttributes<HTMLDivElement> & {
   /**
    * Title of the section.
    */
