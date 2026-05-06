@@ -20,7 +20,6 @@ export * from './radio/Radio';
 export * from './readMore/ReadMore';
 export * from './select/Select';
 export * from './skeleton/Skeleton';
-export * from './switch/Switch';
 export * from './tableOfContents/TableOfContents';
 export * from './tabs/Tabs';
 export * from './tag/Tag';
