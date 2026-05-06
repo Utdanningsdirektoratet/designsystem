@@ -219,6 +219,7 @@
         text-overflow: ellipsis;
         &:first-child {
           font-weight: var(--ds-font-weight-medium);
+          line-height: var(--ds-heading-2xs-line-height);
         }
         &:nth-child(2) {
           font-size: var(--ds-body-xs-font-size);
