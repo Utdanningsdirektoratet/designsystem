@@ -1,7 +1,7 @@
 import { FormSummary as FormSummaryRoot } from './FormSummary';
+import { FormSummaryField } from './FormSummaryField';
 import { FormSummaryFields } from './FormSummaryFields';
 import { FormSummarySection } from './FormSummarySection';
-import { FormSummaryField } from './formSummaryField';
 
 type FormSummary = typeof FormSummaryRoot & {
   Fields: typeof FormSummaryFields;
@@ -21,6 +21,7 @@ FormSummary.Section.displayName = 'FormSummary.Section';
 
 export type { FormSummaryProps } from './FormSummary';
 export type { FormSummaryFieldsProps } from './FormSummaryFields';
+export type { FormSummaryFieldProps } from './FormSummaryField';
 export type { FormSummarySectionProps } from './FormSummarySection';
 
 export { FormSummary, FormSummaryField, FormSummaryFields, FormSummarySection };
