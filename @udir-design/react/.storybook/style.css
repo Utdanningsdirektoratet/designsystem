@@ -15,7 +15,20 @@ body {
   font-feature-settings: 'cv05' 1; /* Enable lowercase l with tail */
 }
 
-/* Offset scroll so DemoBanner doesn't cover main content */
-:root:has(.uds-demo-banner) {
-  scroll-padding-top: 7rem;
+/* Scroll offset for sticky header and demo banner */
+html:has(
+  [data-storybook-decorator] > * > .uds-header,
+  [data-storybook-decorator] > * > * > .uds-header
+) {
+  --udsc-header-height: var(--ds-size-22);
+  @media (max-width: 30rem) {
+    --udsc-header-height: calc(var(--ds-size-22) - var(--ds-size-2));
+  }
+  scroll-padding-top: calc(var(--ds-size-4) + var(--udsc-header-height));
+}
+
+html:has([data-storybook-decorator] > * > .uds-demo-banner) {
+  scroll-padding-top: calc(
+    1.5lh + var(--ds-size-4) + var(--udsc-header-height)
+  );
 }
