@@ -28,3 +28,10 @@
     }
   }
 }
+
+/* Scroll offset for demo banner */
+html:has(> body > .uds-demo-banner) {
+  scroll-padding-top: calc(
+    1.5lh + var(--ds-size-4) + var(--udsc-header-height)
+  );
+}

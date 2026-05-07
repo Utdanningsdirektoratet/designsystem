@@ -392,3 +392,15 @@
 body:has(.uds-header .uds-header__menu:popover-open) {
   overflow: hidden;
 }
+
+/* Scroll offset for sticky header */
+html:has(> body > .uds-header, > body > * > .uds-header) {
+  --udsc-header-height: var(--ds-size-22);
+  @media (max-width: 30rem) {
+    --udsc-header-height: calc(var(--ds-size-22) - var(--ds-size-2));
+  }
+}
+
+html:has(> body > .uds-header) {
+  scroll-padding-top: calc(var(--ds-size-4) + var(--udsc-header-height));
+}
