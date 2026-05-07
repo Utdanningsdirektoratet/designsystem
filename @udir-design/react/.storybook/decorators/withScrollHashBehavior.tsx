@@ -12,8 +12,19 @@ const handleScrollHash = (event: MouseEvent) => {
   event.preventDefault();
   const element = document.getElementById(decodeURIComponent(hash).slice(1));
   if (element && (event.currentTarget as HTMLElement)?.contains(element)) {
-    element.scrollIntoView({ behavior: 'smooth' });
-    element.focus({ preventScroll: true });
+    if (anchor.closest('ds-error-summary')) {
+      // This is an anchor inside an error summary.
+      // We scroll the entire field (label, optional description, and input) into view,
+      // then focus the input field. This prevents scrolling to an input field without showing
+      // the related label.
+      const target = element.closest('ds-field') ?? element;
+      const input = element.querySelector<HTMLElement>('.ds-input') ?? element;
+      target.scrollIntoView();
+      input.focus({ preventScroll: true });
+    } else {
+      element.scrollIntoView();
+      element.focus({ preventScroll: true });
+    }
   }
 };
 
