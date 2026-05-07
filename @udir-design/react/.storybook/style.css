@@ -12,6 +12,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--uds-scroll-padding-top);
 }
 
 body {

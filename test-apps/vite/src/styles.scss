@@ -1,18 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
-// .content {
-//   display: grid;
-//   grid-template-rows: auto 1fr auto;
-//   min-height: 100vh;
-// }
-
-// .outlet {
-//   padding: var(--ds-size-6);
-// }
-
 html {
   height: 100%;
   scroll-behavior: smooth;
+  scroll-padding-top: var(--uds-scroll-padding-top);
 }
 
 body {
