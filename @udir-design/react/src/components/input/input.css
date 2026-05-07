@@ -20,3 +20,9 @@
     var(--dsc-input-padding-inline);
   line-height: var(--dsc-input-line-height);
 }
+
+/* Scroll offset for inputs with labels */
+.ds-label + .ds-input,
+.ds-label + .ds-field-affixes > .ds-input {
+  scroll-margin-top: var(--ds-size-8);
+}
