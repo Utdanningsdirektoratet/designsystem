@@ -184,10 +184,10 @@ export const UsageExample = meta.story({
           >
             <Skeleton variant="circle" width="40px" height="40px" {...args} />
             <Skeleton variant="text" {...args}>
-              Forfatter| sist endret
+              Forfatter | sist endret
             </Skeleton>
           </div>
-          <Skeleton variant="text" width="200" />
+          <Skeleton variant="text" width="260" />
         </div>
         <div style={{ flex: '1 1 200px' }}>
           <img
@@ -201,7 +201,7 @@ export const UsageExample = meta.story({
             }}
           />
           <Heading>Undersøke</Heading>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '5px 0 5px 0' }}>
             <Avatar data-size="xs" initials="KN" aria-label={'Kari Nordmann'} />
             <Paragraph>Kari Nordmann | 27.06.2025</Paragraph>
           </div>
@@ -260,7 +260,7 @@ export const Text = meta.story({
           <Skeleton {...args}>Den kjekkaste leiken</Skeleton>
         </Heading>
         <Paragraph data-size="sm">
-          <Skeleton width={262} {...args} />
+          <Skeleton width={275} {...args} />
         </Paragraph>
       </div>
     </div>
