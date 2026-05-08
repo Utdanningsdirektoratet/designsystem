@@ -15,6 +15,7 @@ exports[`Affix 1`] = `
     <input
       id="<removed>"
       size="12"
+      autocomplete="off"
       type="text"
     >
     <span aria-hidden="true">
@@ -35,6 +36,7 @@ exports[`Counter 1`] = `
   <textarea
     rows="4"
     id="<removed>"
+    autocomplete="off"
     aria-describedby="<removed>"
     style="<removed>"
   >
@@ -61,6 +63,7 @@ exports[`Format 1`] = `
   <input
     id="<removed>"
     inputmode="numeric"
+    autocomplete="off"
     type="text"
   >
 </ds-field>
@@ -121,6 +124,8 @@ exports[`Preview 1`] = `
   </div>
   <input
     id="<removed>"
+    autocomplete="email"
+    aria-invalid="true"
     type="text"
     value="ola nordmann@udir.no"
     aria-describedby="<removed>"

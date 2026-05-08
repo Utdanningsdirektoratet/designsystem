@@ -32,7 +32,12 @@ export const Preview = meta.story({
       <Field.Description>
         E-posten din brukes til å logge inn og motta varsler
       </Field.Description>
-      <Input id="preview" defaultValue="ola nordmann@udir.no" />
+      <Input
+        id="preview"
+        defaultValue="ola nordmann@udir.no"
+        autoComplete="email"
+        aria-invalid
+      />
       <ValidationMessage>Du må oppgi en gyldig e-postadresse</ValidationMessage>
     </Field>
   ),
@@ -78,7 +83,7 @@ export const Affix = meta.story({
       <Label>Hvor mange kroner koster det per måned?</Label>
       <Field.Affixes>
         <Field.Affix>NOK</Field.Affix>
-        <Input id="affix" size={12} />
+        <Input id="affix" size={12} autoComplete="off" />
         <Field.Affix>pr. mnd.</Field.Affix>
       </Field.Affixes>
     </Field>
@@ -89,7 +94,7 @@ export const Counter = meta.story({
   render: () => (
     <Field>
       <Label>Legg til en beskrivelse</Label>
-      <Textarea rows={4} id="counter" />
+      <Textarea rows={4} id="counter" autoComplete="off" />
       <Field.Counter limit={75} />
     </Field>
   ),
@@ -126,6 +131,7 @@ export const Format = meta.story({
           id="format"
           inputMode="numeric"
           onChange={(e) => updateNumber(e)}
+          autoComplete="off"
         />
         {tooLong && (
           <ValidationMessage>
