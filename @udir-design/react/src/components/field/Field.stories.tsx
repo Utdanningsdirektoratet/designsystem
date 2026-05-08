@@ -15,7 +15,7 @@ const meta = preview.meta({
   subcomponents: {
     'Field.Counter': FieldCounter,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
