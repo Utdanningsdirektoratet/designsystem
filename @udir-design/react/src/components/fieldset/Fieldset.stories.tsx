@@ -7,7 +7,7 @@ import { Fieldset } from './Fieldset';
 
 const meta = preview.meta({
   component: Fieldset,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
