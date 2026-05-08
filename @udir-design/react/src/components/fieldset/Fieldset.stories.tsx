@@ -51,15 +51,25 @@ export const WithTextfield = meta.story({
       <Fieldset.Description>
         Skriv inn adressen din for å motta post fra oss.
       </Fieldset.Description>
-      <Textfield label="Gateadresse" name={`${context.id}-textfield`} />
+      <Textfield
+        label="Gateadresse"
+        name={`${context.id}-address-line1`}
+        autoComplete="address-line1"
+      />
       <Textfield
         label="Postnummer"
-        name={`${context.id}-textfield`}
-        pattern="[0-9]*"
+        name={`${context.id}-postal-code`}
         inputMode="numeric"
+        maxLength={4}
         size={4}
+        autoComplete="postal-code"
       />
-      <Textfield label="Poststed" name={`${context.id}-textfield2`} size={25} />
+      <Textfield
+        label="Poststed"
+        name={`${context.id}-address-level2`}
+        size={25}
+        autoComplete="address-level2"
+      />
     </Fieldset>
   ),
 });
