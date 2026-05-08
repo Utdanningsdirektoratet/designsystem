@@ -12,6 +12,7 @@ export * from './details';
 export * from './dialog';
 export * from './divider';
 export * from './dropdown';
+export * from './errorSummary';
 export * from './field';
 export * from './fieldNecessity';
 export * from './fieldset';
