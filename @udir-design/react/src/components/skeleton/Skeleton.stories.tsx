@@ -201,7 +201,14 @@ export const UsageExample = meta.story({
             }}
           />
           <Heading>Undersøke</Heading>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '5px 0 5px 0' }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              padding: '5px 0 5px 0',
+            }}
+          >
             <Avatar data-size="xs" initials="KN" aria-label={'Kari Nordmann'} />
             <Paragraph>Kari Nordmann | 27.06.2025</Paragraph>
           </div>
