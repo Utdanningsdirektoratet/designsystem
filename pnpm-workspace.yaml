@@ -4,6 +4,20 @@ packages:
   - design-tokens
   - test-apps/*
 
+allowBuilds:
+  '@bundled-es-modules/glob': false
+  '@parcel/watcher': false
+  '@swc/core': false
+  esbuild: false
+  lmdb: false
+  msgpackr-extract: false
+  msw: false
+  nx: false
+  oxc-resolver: false
+  sharp: false
+  style-dictionary: false
+  unrs-resolver: false
+
 catalog:
   '@babel/types': ^7.29.0
   '@commitlint/cli': ^20.5.0
@@ -145,19 +159,6 @@ cleanupUnusedCatalogs: true
 
 disallowWorkspaceCycles: true
 
-ignoredBuiltDependencies:
-  - '@bundled-es-modules/glob'
-  - '@swc/core'
-  - esbuild
-  - lmdb
-  - msgpackr-extract
-  - msw
-  - nx
-  - oxc-resolver
-  - sharp
-  - style-dictionary
-  - unrs-resolver
-
 minimumReleaseAge: 1440
 
 minimumReleaseAgeExclude:
@@ -209,7 +210,5 @@ trustPolicyExclude:
   # due to being a dependency of @nx/js
   - invokers-polyfill@0.6.1
   - detect-port@1.6.1
-
-useNodeVersion: 24.10.0
 
 verifyDepsBeforeRun: prompt
