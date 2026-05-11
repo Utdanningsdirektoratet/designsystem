@@ -352,6 +352,7 @@ export const DialogWithForm = meta.story({
             autofocus="true"
             label="Navn"
             value={input}
+            autocomplete="name"
             onChange={(e) => setInput(e.target.value)}
           />
           <div
@@ -500,7 +501,7 @@ export const DialogNonModal = meta.story({
       <>
         <Field style={{ width: '400px' }}>
           <Label>Besvarelse</Label>
-          <Textarea rows={8} />
+          <Textarea rows={8} autoComplete="off" />
         </Field>
         <Button variant="secondary" onClick={() => dialogRef.current?.show()}>
           Åpne skrivetips
@@ -574,6 +575,7 @@ export const Drawer = meta.story({
             setPlacement(target.value as DialogProps['placement']);
           }}
         >
+          <Fieldset.Legend>Velg plassering for dialogen</Fieldset.Legend>
           <div
             style={{
               display: 'flex',
