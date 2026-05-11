@@ -36,7 +36,7 @@ async function defaultPlay(canvasElement: HTMLElement) {
 
 const meta = preview.meta({
   component: Dialog,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
