@@ -15,7 +15,7 @@ const meta = preview.meta({
     'Popover.Trigger': PopoverTrigger,
     'Popover.TriggerContext': PopoverTriggerContext,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

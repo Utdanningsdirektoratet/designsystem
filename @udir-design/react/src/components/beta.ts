@@ -16,7 +16,6 @@ export * from './formNavigation';
 export * from './header';
 export * from './link/Link';
 export * from './pagination/Pagination';
-export * from './popover/Popover';
 export * from './progressBar/ProgressBar';
 export * from './radio/Radio';
 export * from './readMore/ReadMore';
