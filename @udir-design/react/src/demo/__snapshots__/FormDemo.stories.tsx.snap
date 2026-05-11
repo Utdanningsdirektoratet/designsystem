@@ -320,179 +320,177 @@ exports[`Form Page 2 1`] = `
             required
             type="text"
             aria-describedby="<removed>"
-            popovertarget=":ds:4"
-            data-label="Gjennomføringssted"
-            list=":ds:4"
-            aria-label="Gjennomføringssted​​​​​"
-            aria-autocomplete="list"
-            aria-controls=":ds:4"
-            aria-expanded="true"
-            role="combobox"
+            list=":u-datalist1"
+            popovertarget=":u-datalist1"
           >
-          <del
+          <button
             aria-label="Tøm"
             hidden
-            role="button"
+            type="reset"
+            aria-hidden="false"
+            tabindex="-1"
           >
-          </del>
+          </button>
           <u-datalist
             data-nofilter
             data-sr-plural="%d forslag"
             data-sr-singular="%d forslag"
             popover="manual"
             role="listbox"
-            id="<removed>"
+            data-sr-of="of"
             hidden
             tabindex="-1"
             aria-multiselectable="false"
+            id="<removed>"
+            data-is-floating="true"
           >
             <u-option
               label="Agder"
               value="Agder"
-              tabindex="-1"
               role="option"
               aria-disabled="false"
               aria-selected="false"
+              id="<removed>"
             >
               Agder
             </u-option>
             <u-option
               label="Akershus"
               value="Akershus"
-              tabindex="-1"
               role="option"
               aria-disabled="false"
               aria-selected="false"
+              id="<removed>"
             >
               Akershus
             </u-option>
             <u-option
               label="Buskerud"
               value="Buskerud"
-              tabindex="-1"
               role="option"
               aria-disabled="false"
               aria-selected="false"
+              id="<removed>"
             >
               Buskerud
             </u-option>
             <u-option
               label="Finnmark"
               value="Finnmark"
-              tabindex="-1"
               role="option"
               aria-disabled="false"
               aria-selected="false"
+              id="<removed>"
             >
               Finnmark
             </u-option>
             <u-option
               label="Innlandet"
               value="Innlandet"
-              tabindex="-1"
               role="option"
               aria-disabled="false"
               aria-selected="false"
+              id="<removed>"
             >
               Innlandet
             </u-option>
             <u-option
               label="Møre og Romsdal"
               value="Møre og Romsdal"
-              tabindex="-1"
               role="option"
               aria-disabled="false"
               aria-selected="false"
+              id="<removed>"
             >
               Møre og Romsdal
             </u-option>
             <u-option
               label="Nordland"
               value="Nordland"
-              tabindex="-1"
               role="option"
               aria-disabled="false"
               aria-selected="false"
+              id="<removed>"
             >
               Nordland
             </u-option>
             <u-option
               label="Oslo"
               value="Oslo"
-              tabindex="-1"
               role="option"
               aria-disabled="false"
               aria-selected="false"
+              id="<removed>"
             >
               Oslo
             </u-option>
             <u-option
               label="Rogaland"
               value="Rogaland"
-              tabindex="-1"
               role="option"
               aria-disabled="false"
               aria-selected="false"
+              id="<removed>"
             >
               Rogaland
             </u-option>
             <u-option
               label="Telemark"
               value="Telemark"
-              tabindex="-1"
               role="option"
               aria-disabled="false"
               aria-selected="false"
+              id="<removed>"
             >
               Telemark
             </u-option>
             <u-option
               label="Troms"
               value="Troms"
-              tabindex="-1"
               role="option"
               aria-disabled="false"
               aria-selected="false"
+              id="<removed>"
             >
               Troms
             </u-option>
             <u-option
               label="Trøndelag"
               value="Trøndelag"
-              tabindex="-1"
               role="option"
               aria-disabled="false"
               aria-selected="false"
+              id="<removed>"
             >
               Trøndelag
             </u-option>
             <u-option
               label="Vestfold"
               value="Vestfold"
-              tabindex="-1"
               role="option"
               aria-disabled="false"
               aria-selected="false"
+              id="<removed>"
             >
               Vestfold
             </u-option>
             <u-option
               label="Vestland"
               value="Vestland"
-              tabindex="-1"
               role="option"
               aria-disabled="false"
               aria-selected="false"
+              id="<removed>"
             >
               Vestland
             </u-option>
             <u-option
               label="Østfold"
               value="Østfold"
-              tabindex="-1"
               role="option"
               aria-disabled="false"
               aria-selected="false"
+              id="<removed>"
             >
               Østfold
             </u-option>

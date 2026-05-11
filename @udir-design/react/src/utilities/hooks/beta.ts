@@ -7,6 +7,7 @@
 
 export {
   type UseCheckboxGroupProps,
+  type UseCheckboxGroupReturn,
   useCheckboxGroup,
 } from './useCheckboxGroup/useCheckboxGroup';
 export {
@@ -15,6 +16,7 @@ export {
 } from './usePagination/usePagination';
 export {
   type UseRadioGroupProps,
+  type UseRadioGroupReturn,
   useRadioGroup,
 } from './useRadioGroup/useRadioGroup';
 export {

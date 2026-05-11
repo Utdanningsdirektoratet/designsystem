@@ -70,6 +70,12 @@ export const Preview = meta.story({
   },
 });
 
+export const Outline = Preview.extend({
+  args: {
+    variant: 'outline',
+  },
+});
+
 export const OneOption = meta.story({
   args: {
     label: 'Jeg bekrefter at jeg er over 18 år',
