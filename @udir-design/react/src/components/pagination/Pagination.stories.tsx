@@ -171,7 +171,7 @@ export const WithAnchor = meta.story({
         }}
       >
         <Search>
-          <Search.Input aria-label="Søk" value={url} />
+          <Search.Input aria-label="Søk" value={url} autoComplete="url" />
         </Search>
         <Pagination aria-label="Sidenavigering">
           <Pagination.List>
