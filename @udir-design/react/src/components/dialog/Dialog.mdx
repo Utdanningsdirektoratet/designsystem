@@ -14,7 +14,7 @@ import { SimpleAlert } from '.storybook/docs/components';
 <Canvas of={DialogStories.Preview} withToolbar />
 <Controls of={DialogStories.Preview} />
 
-Du bytter mellom modal og ikke-modal dialog ved å bruke `modal`-propen, som er satt til `true` som standard. Vi overstyrer hvordan `open` fungerer basert på verdien til `modal`.
+Du bytter mellom modal og ikke-modal dialog ved å bruke `modal`-propen, som er satt til `true` som standard. Vi overstyrer hvordan `open` fungerer basert på verdien av `modal`.
 
 En modal `dialog` har innebygd "focus trap", som betyr at brukeren ikke kan navigere med tabulator til annet innhold på siden mens dialogen er åpen.
 
@@ -37,21 +37,21 @@ import { Dialog } from '@udir-design/react';
 
 ### Kontroll over åpning og lukking
 
-Om du trenger programmatisk kontroll over åpning og lukking av `Dialog`, finnes det flere måter å gjøre dette.
+Hvis du trenger programmatisk kontroll over åpning og lukking av `Dialog`, finnes det flere måter å gjøre dette.
 
 - Du kan styre tilstanden selv med `open` på `Dialog`.
 - Du kan bruke `command` og `commandfor` på knappene som åpner og lukker `Dialog`.
-- Du kan bruke `<Dialog ref={dialogRef}>` og kalle `.show()`, `.showModal()` eller `.close()`.
+- Du kan bruke `<Dialog ref={dialogRef}>` og kalle `show()`, `showModal()` eller `close()`.
 
-Merk at knapper som åpner en dialog bør ha `aria-haspopup="dialog"`-attributtet. Dette gjør vi automatisk når du bruker `command` og `commandfor` eller `Dialog.Trigger`, men i de andre tilfellene må du sette dette selv.
+Merk at knapper som åpner en dialog bør ha `aria-haspopup="dialog"`-attributtet. Dette settes automatisk når du bruker `command` og `commandfor` eller `Dialog.Trigger`. I andre tilfeller må du sette dette selv.
 
-I tillegg kan du bruke `closedby` for å styre om brukeren kan lukke dialogen ved trykk på Esc-tasten eller klikk utenfor dialogen, og `closeButton` lar deg skjule eller endre den vanlige lukkeknappen.
+Du kan også bruke `closedby` for å styre om brukeren kan lukke dialogen ved trykk på Esc-tasten eller klikk utenfor dialogen. Med `closeButton` kan du skjule eller endre den vanlige lukkeknappen.
 
-Her går vi gjennom de ulike måtene du kan ta kontroll over åpning og lukking.
+Under går vi gjennom de ulike måtene å ta kontroll over åpning og lukking på.
 
 #### Åpne og lukke med styrt tilstand
 
-Du kan styre tilstanden ved å bruke `open` og `onClose` props på `Dialog`-elementet, som i dette eksempelet. Husk å sette `aria-haspopup="dialog"` på knappen som åpner dialogen.
+Du kan styre tilstanden ved å bruke `open` og `onClose` på `Dialog`-elementet. Husk å sette `aria-haspopup="dialog"` på knappen som åpner dialogen.
 
 <Canvas of={DialogStories.DialogWithOpenProp} />
 
@@ -66,7 +66,7 @@ Du kan styre tilstanden ved å bruke `open` og `onClose` props på `Dialog`-elem
   for å støtte eldre nettlesere.
 </SimpleAlert>
 
-Du kan bruke en knapp med `command="show-modal"` for å åpne en modal dialog, eller `command="--show-non-modal"` for en ikke-modal dialog. En knapp med `command="close"` vil lukke dialogen. Samtlige av disse knappene må også ha `commandfor="DIALOG-ID"` for å knytte de opp til riktig dialog.
+Du kan bruke en knapp med `command="show-modal"` for å åpne en modal dialog, eller `command="--show-non-modal"` for en ikke-modal dialog. En knapp med `command="close"` vil lukke dialogen. Alle disse knappene må også ha `commandfor="DIALOG-ID"` for å knyttes til riktig dialog.
 
 <Canvas of={DialogStories.WithoutDialogTriggerContextWithCommand} />
 
@@ -80,12 +80,12 @@ Her bruker vi `useRef` for å få tilgang til dialogen, og kaller `.showModal()`
 
 #### Endre standard lukkeknapp
 
-Om du ønsker å skru av lukkeknappen øverst til høyre, kan du sette `closeButton={false}` på `Dialog`-elementet.
+Hvis du ønsker å skru av lukkeknappen øverst til høyre, kan du sette `closeButton={false}` på `Dialog`-elementet.
 
-Du kan endre skjermleserteksten for lukkeknappen ved å sende en string til `closeButton`, f.eks. `closeButton="Close dialog"`. Om du ikke sender noe vil teksten være "Lukk dialogvindu".
+Du kan endre skjermleserteksten for lukkeknappen ved å sende inn en tekststreng til `closeButton`, f.eks. `closeButton="Close dialog"`. Hvis du ikke sender noe, vil teksten være "Lukk dialogvindu".
 
-Du kan også erstatte lukkeknappen helt ved å sette `closeButton={false}` på `Dialog`-elementet, og legge
-en `Button` med `command="close"` og `commandfor="DIALOG-ID"` som første barn av `Dialog`. Knappen vil da flyttes øverst til høyre i dialogen. Dersom knappen er tom vil den også få et kryss-ikon. NB: Dette fungerer kun for alternativet med `command` og `commandfor` på knappen.
+Du kan også erstatte lukkeknappen helt ved å sette `closeButton={false}` på `Dialog`-elementet og legge inn
+en `Button` med `command="close"` og `commandfor="DIALOG-ID"` som første barn av `Dialog`. Knappen flyttes da øverst til høyre i dialogen. Dersom knappen er tom, får den også et kryss-ikon. NB: Dette fungerer kun i alternativet med `command` og `commandfor` på knappen.
 
 I dette eksempelet endrer vi lukkeknappen til en knapp med tekst.
 
@@ -95,11 +95,11 @@ I dette eksempelet endrer vi lukkeknappen til en knapp med tekst.
 
 Standard oppførsel for `Dialog` er at den kan lukkes ved å trykke Esc-tasten. Dette tilsvarer å sette `closedby="closerequest"`.
 
-Dersom du også ønsker å lukke dialogen når brukeren klikker utenfor, sett `closedby="any"`. Vi legger til polyfill så `closedby="any"` også fungerer i eldre Safari.
+Dersom du også ønsker å lukke dialogen når brukeren klikker utenfor, sett `closedby="any"`. Vi legger til polyfill, slik at `closedby="any"` også fungerer i eldre Safari.
 
 Ved å sette `closedby="none"` skrur du av både Esc-tast og klikk utenfor.
 
-Du kan også kjøre egen kode når dialogen lukkes ved å bruke `onClose`. Dette er for eksempel nyttig når du skal [åpne og lukke med styrt tilstand](#åpne-og-lukke-med-styrt-tilstand).
+Du kan også kjøre egen kode når dialogen lukkes, ved å bruke `onClose`. Dette er for eksempel nyttig når du skal [åpne og lukke med styrt tilstand](#åpne-og-lukke-med-styrt-tilstand).
 
 Dette eksempelet viser `closedby="any"` og en `onClose`-funksjon, som her blir kjørt både ved klikk på lukkeknappen, ved klikk utenfor og ved trykk på Esc-tasten.
 
@@ -107,14 +107,14 @@ Dette eksempelet viser `closedby="any"` og en `onClose`-funksjon, som her blir k
 
 ### Plassering
 
-Som default åpnes en dialog midt på skjermen. Ved å sette `placement` til noe annet enn `"center"` vil `Dialog` kunne oppføre seg som en såkalt "drawer" og komme inn fra en av sidene (`"left"`, `"right"`, `"top"` eller `"bottom"`).
+Som standard åpnes en dialog midt på skjermen. Setter du `placement` til noe annet enn `"center"`, kan `Dialog` oppføre seg som en såkalt "drawer" og komme inn fra en av sidene (`"left"`, `"right"`, `"top"` eller `"bottom"`).
 
 <Canvas of={DialogStories.Drawer} />
 
 ### Med inndeling
 
-Bruk flere `Dialog.Block` hvis du vil dele opp dialogen med skillelinjer til for eksempel topp- og bunn-område.
-Merk at innhold kan ikke plasseres direkte i `Dialog` dersom du bruker `Dialog.Block`; da burde alt innholdet være inni en av dialogens `Dialog.Block`-seksjoner.
+Bruk flere `Dialog.Block` hvis du vil dele opp dialogen med skillelinjer, for eksempel i topp- og bunnområde.
+Merk at innhold ikke kan plasseres direkte i `Dialog` når du bruker `Dialog.Block`. Da må alt innhold ligge i en av dialogens `Dialog.Block`-seksjoner.
 
 <Canvas of={DialogStories.WithHeaderAndFooter} />
 
@@ -122,29 +122,29 @@ Merk at innhold kan ikke plasseres direkte i `Dialog` dersom du bruker `Dialog.B
 
 Dersom du vil at et felt i et skjema inni dialogen skal få fokus når dialogen åpnes, kan du bruke native `autofocus`-attributtet på input-elementet.
 
-Når du bruker dette med React, må du skrive det med små bokstaver som `autofocus`, ikke `autoFocus`. Fordi `autofocus` med liten `f` ikke finnes i React sine typedefinisjoner, har vi ignorert typefeilen med en `@ts-expect-error`-kommentar i eksempelet under.
+I React må dette skrives med små bokstaver som `autofocus`, ikke `autoFocus`. Siden `autofocus` (med liten `f`) ikke finnes i React sine typedefinisjoner, har vi ignorert typefeilen med en `@ts-expect-error`-kommentar i eksempelet under.
 
 <Canvas of={DialogStories.DialogWithForm} />
 
 ### Egendefinert bredde
 
-Bruk `max-width` for å sette egendefinert maks bredde på dialogen. Default er 40rem.
+Bruk `max-width` for å sette en egendefinert maksbredde på dialogen. Standard er 40rem.
 
 <Canvas of={DialogStories.DialogWithMaxWidth} />
 
 ### Innhold som går utenfor Dialogen
 
-Bruk `overflow: visible` for å la innhold gå utenfor dialogen.
+Bruk `overflow: visible` hvis du vil at innhold skal kunne gå utenfor dialogen.
 
 <Canvas of={DialogStories.DialogWithSuggestion} />
 
 ### Ikke-modal Dialog
 
-Bruk `modal={false}` for å lage en non-modal dialog. Den kan brukes til å gi støtteinformasjon eller ekstra funksjonalitet som ikke krever full oppmerksomhet.
+Bruk `modal={false}` for å lage en ikke-modal dialog. Den kan brukes til å gi støtteinformasjon eller ekstra funksjonalitet som ikke krever full oppmerksomhet.
 
-En ikke-modal Dialog burde som regel plasseres i forhold til innholdet. Da må du overstyre standard plassering, som vanligvis er i midten av skjermen.
+En ikke-modal Dialog bør som regel plasseres i forhold til innholdet. Det betyr at du må overstyre standardplasseringen, som vanligvis er midt på skjermen.
 
-I eksempelet under kan du se skrivetips i en dialog, samtidig som du kan fortsette å skrive inn i tekstfeltet.
+I eksempelet under vises skrivetips i en dialog, samtidig som brukeren kan fortsette å skrive i tekstfeltet.
 
 <Canvas of={DialogStories.DialogNonModal} />
 
@@ -154,7 +154,7 @@ I eksempelet under kan du se skrivetips i en dialog, samtidig som du kan fortset
 
 ### 1) Modal Dialog
 
-En modal `Dialog` er et midlertidig vindu som åpnes over resten av innholdet på nettsiden. Modal `Dialog` fanger brukerens oppmerksomhet og hindrer interaksjon med annet innhold, samtidig som konteksten til nettsiden beholdes. Bruk av modal `Dialog` bør generelt begrenses, men kan være nyttig når brukeren må ta stilling til informasjon, bekrefte en handling eller fokusere på en spesifikk oppgave – uten å navigere bort fra siden.
+En modal `Dialog` er et midlertidig vindu som åpnes over resten av innholdet på siden. Den fanger brukerens oppmerksomhet og hindrer interaksjon med annet innhold, samtidig som konteksten beholdes. Bruk av modal `Dialog` bør generelt begrenses, men kan være nyttig når brukeren må ta stilling til informasjon, bekrefte en handling eller fokusere på en spesifikk oppgave uten å navigere bort fra siden.
 
 **Passer til å**
 
@@ -165,11 +165,11 @@ En modal `Dialog` er et midlertidig vindu som åpnes over resten av innholdet p�
 **Passer ikke til å**
 
 - vise omfattende eller komplekst innhold som krever langvarig interaksjon
-- gi informasjon uten å avbryte brukerens arbeidsflyt - bruk heller [`Alert`](/docs/components-alert--docs), [`Popover`](/docs/components-popover--docs), eller "ikke-modal" `Dialog`
+- gi informasjon uten å avbryte brukerens arbeidsflyt - bruk heller [`Alert`](/docs/components-alert--docs), [`Popover`](/docs/components-popover--docs) eller ikke-modal `Dialog`
 
 ### 2) Ikke-modal Dialog
 
-En "ikke-modal" `Dialog` lar brukeren fortsatt bruke resten av siden mens dialogen er åpen. Den bør brukes med varsomhet, og passer best når du skal gi støtteinformasjon eller ekstra funksjonalitet som ikke krever full oppmerksomhet.
+En ikke-modal `Dialog` lar brukeren fortsette å bruke resten av siden mens dialogen er åpen. Den bør brukes med varsomhet, og passer best når du vil gi støtteinformasjon eller ekstra funksjonalitet som ikke krever full oppmerksomhet.
 
 **Passer til å**
 
@@ -180,20 +180,20 @@ En "ikke-modal" `Dialog` lar brukeren fortsatt bruke resten av siden mens dialog
 - gi kritiske valg som brukeren må ta stilling til før de kan fortsette - bruk heller modal `Dialog`
 - gi bekreftelser eller varsler som krever brukerens fulle oppmerksomhet - bruk heller modal `Dialog`
 
-På mobil kan en "ikke-modal" `Dialog` være problematisk på grunn av begrenset skjermplass. Den kan dekke viktig innhold og forstyrre brukeropplevelsen. I slike tilfeller kan det være bedre å bruke modal `Dialog` eller andre løsninger.
+På mobil kan en ikke-modal `Dialog` være problematisk på grunn av begrenset skjermplass. Den kan dekke viktig innhold og forstyrre brukeropplevelsen. I slike tilfeller kan det være bedre å bruke modal `Dialog` eller andre løsninger.
 
 ## Tekst i Dialog
 
-- Ha en kort og konsis overskrift. Overskriften skal gjøre det tydelig for brukeren at konteksten er endret.
+- Bruk en kort og konsis overskrift. Overskriften skal gjøre det tydelig for brukeren at konteksten er endret.
 - Unngå mange avsnitt med tekst.
-- Sørg for at formålet er tydelig og at all nødvendig informasjon er tilgjengelig i modalen.
+- Sørg for at formålet er tydelig, og at all nødvendig informasjon er tilgjengelig i dialogen.
 
 ## Tilgjengelighet
 
 ### Knapper som åpner dialoger
 
 En knapp som åpner en dialog bør ha `aria-haspopup="dialog"`-attributtet for en bedre skjermleseropplevelse.
-Dersom du bruker `Dialog.Trigger` eller en knapp med `command` og `commandfor` håndteres dette automatisk, men i andre tilfeller må du sette dette selv.
+Dette settes automatisk når du bruker `Dialog.Trigger` eller en knapp med `command` og `commandfor`, men i andre tilfeller må du sette dette selv.
 
 ### Ikke-modale dialoger
 
@@ -202,4 +202,4 @@ Når du bruker ikke-modale dialoger, må du passe på at elementer som får foku
 For ikke-modale dialoger betyr dette at du må:
 
 - Sikre at fokuserbare elementer aldri blir helt dekket av dialogen når brukeren tabber gjennom siden.
-- Sørge for at fokusrekkefølgen er logisk og at fokus alltid er synlig, slik at brukere som navigerer med tastatur eller skjermleser forstår hvor fokus befinner seg.
+- Sørge for at fokusrekkefølgen er logisk, og at fokus alltid er synlig, slik at brukere som navigerer med tastatur eller skjermleser forstår hvor fokus befinner seg.
