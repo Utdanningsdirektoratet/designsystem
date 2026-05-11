@@ -21,7 +21,6 @@ const meta = preview.meta<
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: { originator: 'digdir' },
-    chromatic: { disableSnapshot: true },
   },
 });
 
