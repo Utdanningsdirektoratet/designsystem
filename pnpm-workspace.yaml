@@ -6,7 +6,6 @@ packages:
 
 allowBuilds:
   '@bundled-es-modules/glob': false
-  '@parcel/watcher': false
   '@swc/core': false
   esbuild: false
   lmdb: false
@@ -158,6 +157,9 @@ catalogs:
 cleanupUnusedCatalogs: true
 
 disallowWorkspaceCycles: true
+
+ignoredOptionalDependencies:
+  - '@parcel/watcher'
 
 minimumReleaseAge: 1440
 
