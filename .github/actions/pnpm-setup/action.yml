@@ -12,11 +12,11 @@ runs:
   steps:
     # Note: pnpm version is set in package.json "packageManager"
     - name: Install pnpm
-      uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+      uses: pnpm/action-setup@91ab88e2619ed1f46221f0ba42d1492c02baf788 # v6.0.6
 
     # Cache node_modules
     # Note: node version is set in package.json "engines.node"
-    - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+    - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
       with:
         node-version-file: 'package.json'
         cache: 'pnpm'
@@ -25,6 +25,6 @@ runs:
     - run: pnpm install
       shell: bash
 
-    - uses: nrwl/nx-set-shas@dbe0650947e5f2c81f59190a38512cf49126fe6b # v4.3.0
+    - uses: nrwl/nx-set-shas@afb73a62d26e41464e9254689e1fd6122ee683c1 # v5.0.1
       with:
         main-branch-name: ${{ github.base_ref || github.ref_name }}

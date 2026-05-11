@@ -44,7 +44,6 @@
   ],
   "scripts": {
     "build": "vite build",
-    "inject": "pnpm i",
     "lint:cycles": "pnpm madge --circular ./src/alpha.ts",
     "typecheck": "tsgo --build",
     "dev": "storybook dev --port 6005",
