@@ -29,6 +29,7 @@ export const Preview = meta.story({
     rows: 3,
     cols: 20,
     id: 'my-textarea',
+    autoComplete: 'off',
   },
   render: (args) => (
     <Field>
@@ -74,6 +75,7 @@ export const Preview = meta.story({
 export const FullWidth = meta.story({
   args: {
     id: 'my-textarea',
+    autoComplete: 'off',
   },
   parameters: {
     customStyles: {
@@ -91,6 +93,7 @@ export const FullWidth = meta.story({
 export const Controlled = meta.story({
   args: {
     id: 'textfield-controlled',
+    autoComplete: 'off',
   },
   parameters: {
     customStyles: {
@@ -131,6 +134,7 @@ export const Disabled = meta.story({
   args: {
     id: 'textarea-disabled',
     disabled: true,
+    autoComplete: 'off',
   },
   render: (args) => (
     <Field>
@@ -144,6 +148,7 @@ export const ReadOnly = meta.story({
   args: {
     id: 'textarea-readonly',
     readOnly: true,
+    autoComplete: 'off',
   },
   render: (args) => (
     <Field>
