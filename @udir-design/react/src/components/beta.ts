@@ -12,6 +12,5 @@ export * from './pagination';
 export * from './readMore';
 export * from './select';
 export * from './skeleton';
-export * from './table';
 export * from './toggleGroup';
 export * from './typography/prose';

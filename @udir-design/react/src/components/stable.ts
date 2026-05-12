@@ -27,6 +27,7 @@ export * from './search';
 export * from './skipLink';
 export * from './spinner';
 export * from './switch';
+export * from './table';
 export * from './tableOfContents';
 export * from './tabs';
 export * from './tag';
