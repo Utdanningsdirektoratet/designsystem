@@ -21,7 +21,6 @@ export * from './tableOfContents/TableOfContents';
 export * from './tabs/Tabs';
 export * from './textarea/Textarea';
 export * from './table';
-export * from './textfield/Textfield';
 export * from './toggleGroup';
 export * from './tooltip/Tooltip';
 export * from './typography/prose/Prose';

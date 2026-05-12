@@ -2,10 +2,10 @@ import type { ChangeEvent } from 'react';
 import { useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from '../button/Button';
 import { Divider } from '../divider/Divider';
 import { Paragraph } from '../typography/paragraph/Paragraph';
-import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
 import { Textfield } from './Textfield';
 
 const meta = preview.meta({
@@ -89,20 +89,11 @@ export const Preview = meta.story({
       expect(input).not.toHaveFocus();
     });
 
-    if (!args.disabled && !args.readOnly) {
-      await step('User can type in the text field', async () => {
-        await userEvent.clear(input);
-        await userEvent.type(input, 'Hello World');
-        expect(input).toHaveValue('Hello World');
-      });
-    } else {
-      await step(
-        'Text field is disabled or read-only so it should not be editable',
-        async () => {
-          expect(input).toBeDisabled();
-        },
-      );
-    }
+    await step('User can type in the text field', async () => {
+      await userEvent.clear(input);
+      await userEvent.type(input, 'Hello World');
+      expect(input).toHaveValue('Hello World');
+    });
   },
 });
 
@@ -126,18 +117,20 @@ export const Affix = meta.story({
 });
 
 export const Counter = meta.story({
-  render: () => (
-    <Textfield
-      id="textfield-counter"
-      multiline
-      rows={4}
-      label="Legg til en beskrivelse"
-      counter={75}
-    />
-  ),
+  args: {
+    id: 'textfield-counter',
+    label: 'Legg til en beskrivelse',
+    multiline: true,
+    rows: 4,
+    counter: 75,
+  },
+  render: (args) => <Textfield {...args} />,
 });
 
 export const Format = meta.story({
+  parameters: {
+    docs: advancedCodeDocs,
+  },
   render: () => {
     const [nationalIdentityNumber, setNationalIdentityNumber] =
       useState<string>('');
@@ -145,29 +138,24 @@ export const Format = meta.story({
     const hasNonDigits = /\D/.test(nationalIdentityNumber);
 
     const updateNumber = (e: ChangeEvent<HTMLInputElement>) => {
-      // removing spaces from stored value so users can space how they like withour error message
+      // removing spaces from stored value so users can space how they like without error message
       setNationalIdentityNumber(e.target.value.replace(/\s+/g, ''));
     };
 
     return (
-      <>
-        <Textfield
-          label="Fødselsnummer"
-          id="format"
-          inputMode="numeric"
-          onChange={(e) => updateNumber(e)}
-        />
-        {tooLong && (
-          <ValidationMessage>
-            Fødselsnummer skal kun være 11 tegn
-          </ValidationMessage>
-        )}
-        {hasNonDigits && (
-          <ValidationMessage>
-            Fødselsnummer skal kun inneholde siffere
-          </ValidationMessage>
-        )}
-      </>
+      <Textfield
+        label="Fødselsnummer"
+        id="format"
+        inputMode="numeric"
+        onChange={(e) => updateNumber(e)}
+        error={
+          tooLong
+            ? 'Fødselsnummer skal kun være 11 tegn'
+            : hasNonDigits
+              ? 'Fødselsnummer skal kun inneholde siffere'
+              : undefined
+        }
+      />
     );
   },
 });
@@ -176,6 +164,7 @@ export const Controlled = meta.story({
   args: {
     label: 'Fullt navn',
     id: 'textfield-controlled',
+    autoComplete: 'name',
   },
   parameters: {
     customStyles: {
@@ -183,6 +172,7 @@ export const Controlled = meta.story({
       flexDirection: 'column',
       gap: 'var(--ds-size-2)',
     },
+    docs: advancedCodeDocs,
   },
   render: (args) => {
     const [value, setValue] = useState<string>('');
