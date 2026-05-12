@@ -9,7 +9,7 @@ import { Textarea as FakeTextarea } from './docs/FakeTextarea';
 
 const meta = preview.meta({
   component: FakeTextarea,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
