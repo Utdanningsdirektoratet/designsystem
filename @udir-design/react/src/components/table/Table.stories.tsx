@@ -48,9 +48,11 @@ export const Preview = meta.story({
     stickyHeader: false,
     border: false,
     hover: false,
+    children: undefined,
+    'data-size': undefined,
+    'data-color': 'neutral',
     tintedColumnHeader: false,
     tintedRowHeader: false,
-    'data-color': 'neutral',
   },
   render: (args) => {
     const [sortField, setSortField] = useState<
@@ -145,6 +147,9 @@ export const ColumnAndRowHeaders = meta.story({
     stickyHeader: false,
     border: false,
     hover: true,
+    children: undefined,
+    'data-size': undefined,
+    'data-color': undefined,
     tintedColumnHeader: true,
     tintedRowHeader: true,
   },
@@ -164,9 +169,9 @@ export const ColumnAndRowHeaders = meta.story({
       <Table.Head>
         <Table.Row>
           <Table.Cell />
-          <Table.HeaderCell scope="col">2022–23</Table.HeaderCell>
-          <Table.HeaderCell scope="col">2023–24</Table.HeaderCell>
-          <Table.HeaderCell scope="col">2024–25</Table.HeaderCell>
+          <Table.HeaderCell scope="col">2022-23</Table.HeaderCell>
+          <Table.HeaderCell scope="col">2023-24</Table.HeaderCell>
+          <Table.HeaderCell scope="col">2024-25</Table.HeaderCell>
         </Table.Row>
       </Table.Head>
       <Table.Body style={{ textAlign: 'right' }}>
@@ -371,12 +376,16 @@ export const Sortable = meta.story({
 
 export const StickyHeader = meta.story({
   args: {
-    tabIndex: 0,
-    stickyHeader: true,
     zebra: true,
+    stickyHeader: true,
+    border: false,
+    hover: false,
+    children: undefined,
+    'data-size': undefined,
+    'data-color': 'support1',
     tintedColumnHeader: true,
     tintedRowHeader: true,
-    'data-color': 'support1',
+    tabIndex: 0,
   },
   render: (args) => {
     return (
@@ -747,9 +756,14 @@ export const FixedTable = meta.story({
 export const MultipleHeaderRows = meta.story({
   args: {
     zebra: true,
+    stickyHeader: false,
+    border: false,
+    hover: false,
+    children: undefined,
+    'data-size': undefined,
+    'data-color': 'support1',
     tintedColumnHeader: true,
     tintedRowHeader: true,
-    'data-color': 'support1',
   },
   render: (args) => {
     return (
@@ -819,10 +833,15 @@ export const MultipleHeaderRows = meta.story({
 
 export const WithBorder = meta.story({
   args: {
+    zebra: false,
+    stickyHeader: false,
     border: true,
+    hover: false,
+    children: undefined,
+    'data-size': undefined,
+    'data-color': 'support2',
     tintedColumnHeader: true,
     tintedRowHeader: true,
-    'data-color': 'support2',
   },
   render: (args) => {
     return (
