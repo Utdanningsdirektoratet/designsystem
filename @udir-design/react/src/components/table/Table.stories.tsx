@@ -115,7 +115,7 @@ export const Preview = meta.story({
               <Table.Cell>
                 <Checkbox
                   id={'checkbox-' + row.id}
-                  aria-label={`Velg ${row}`}
+                  aria-label={`Velg checkbox ${row.id}`}
                   {...getCheckboxProps(String(row.id))}
                 />
               </Table.Cell>
@@ -385,7 +385,6 @@ export const StickyHeader = meta.story({
     'data-color': 'support1',
     tintedColumnHeader: true,
     tintedRowHeader: true,
-    tabIndex: 0,
   },
   render: (args) => {
     return (
@@ -394,6 +393,8 @@ export const StickyHeader = meta.story({
           Ansattes utdanning fordelt på eiertype (ordinære), 2021
         </Heading>
         <div
+          role="region"
+          tabIndex={0}
           style={{
             height: '420px',
             width: '580px',
@@ -407,7 +408,9 @@ export const StickyHeader = meta.story({
             </caption>
             <Table.Head>
               <Table.Row>
-                <Table.Cell></Table.Cell>
+                <Table.HeaderCell scope="col">
+                  <span className="ds-sr-only">Radkategori</span>
+                </Table.HeaderCell>
                 <Table.HeaderCell>5 store</Table.HeaderCell>
                 <Table.HeaderCell>Andre kjeder</Table.HeaderCell>
                 <Table.HeaderCell>Frittstående</Table.HeaderCell>
@@ -533,6 +536,7 @@ export const WithFormElements = meta.story({
                 data-size="sm"
                 value="Trives du på skolen?"
                 aria-label={`Textfield 1-1`}
+                autoComplete="off"
               />
             </Table.Cell>
             <Table.Cell style={{ minWidth: 200 }}>
@@ -540,6 +544,7 @@ export const WithFormElements = meta.story({
                 data-size="sm"
                 value="Trives ikke noe særlig"
                 aria-label={`Textfield 1-2`}
+                autoComplete="off"
               />
             </Table.Cell>
             <Table.Cell style={{ minWidth: 200 }}>
@@ -547,15 +552,16 @@ export const WithFormElements = meta.story({
                 value="Trives godt"
                 data-size="sm"
                 aria-label={`Textfield 1-3`}
+                autoComplete="off"
               />
             </Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>
               <Checkbox
-                aria-label={`Check 1`}
+                aria-label={`Check 2`}
                 {...getCheckboxProps({
-                  id: `${ctx.id}-select1`,
+                  id: `${ctx.id}-select2`,
                   value: '2',
                 })}
               />
@@ -565,7 +571,8 @@ export const WithFormElements = meta.story({
               <Textfield
                 data-size="sm"
                 value="Har du opplevd mobbing?"
-                aria-label={`Textfield 1-1`}
+                aria-label={`Textfield 2-1`}
+                autoComplete="off"
                 style={{ width: 250 }}
               />
             </Table.Cell>
@@ -573,7 +580,8 @@ export const WithFormElements = meta.story({
               <Textfield
                 data-size="sm"
                 value="Sjelden"
-                aria-label={`Textfield 1-2`}
+                aria-label={`Textfield 2-2`}
+                autoComplete="off"
               />
             </Table.Cell>
             <Table.Cell>
@@ -581,7 +589,8 @@ export const WithFormElements = meta.story({
                 cols={3}
                 value="Ofte"
                 data-size="sm"
-                aria-label={`Textfield 1-3`}
+                aria-label={`Textfield 2-3`}
+                autoComplete="off"
               />
             </Table.Cell>
           </Table.Row>
@@ -770,13 +779,17 @@ export const MultipleHeaderRows = meta.story({
       <Table {...args}>
         <Table.Head>
           <Table.Row>
-            <Table.Cell />
+            <Table.HeaderCell scope="col">
+              <span className="ds-sr-only">Radkategori</span>
+            </Table.HeaderCell>
             <Table.HeaderCell colSpan={5} style={{ textAlign: 'center' }}>
               Trives du på skolen?
             </Table.HeaderCell>
           </Table.Row>
           <Table.Row>
-            <Table.Cell />
+            <Table.HeaderCell scope="col">
+              <span className="ds-sr-only">Radkategori</span>
+            </Table.HeaderCell>
             <Table.HeaderCell>Trives ikke i det hele tatt</Table.HeaderCell>
             <Table.HeaderCell>Trives ikke noe særlig</Table.HeaderCell>
             <Table.HeaderCell>Trives litt</Table.HeaderCell>
