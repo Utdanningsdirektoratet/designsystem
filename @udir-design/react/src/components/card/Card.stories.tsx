@@ -1,9 +1,12 @@
 import type { Color } from '@digdir/designsystemet-react/colors';
+import type { ComponentType } from 'react';
 import { Fragment } from 'react/jsx-runtime';
 import { PlusIcon, TrashFillIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { Button } from '../button/Button';
 import { Field } from '../field/Field';
+import { Link as LinkComponent } from '../link/Link';
+import type { LinkProps } from '../link/Link';
 import { Select } from '../select/Select';
 import { Textfield } from '../textfield/Textfield';
 import { Heading } from '../typography/heading/Heading';
@@ -228,53 +231,76 @@ export const Composed = meta.story({
   ),
 });
 
-export const WithLink = meta.story({
-  render: (args) => (
-    <>
-      <Card data-color="support1" {...args}>
-        <Card.Block>
-          <img src={studentsImg} alt="" />
-        </Card.Block>
-        <Card.Block>
-          <Heading>
-            <a
-              href="https://www.udir.no/eksamen-og-prover/eksamen/ta-fag-som-privatist/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Påmelding til eksamen
-            </a>
-          </Heading>
-          <Paragraph>
-            Du må melde deg på innen 1. februar for våreksamen og 15. september
-            for høsteksamen.
-          </Paragraph>
-          <Paragraph data-size="sm">Privatisteksamen</Paragraph>
-        </Card.Block>
-      </Card>
-      <Card {...args} data-color="neutral">
-        <Card.Block>
-          <Heading>
-            <a
-              href="https://www.udir.no/eksamen-og-prover/eksamen/ta-fag-som-privatist/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Påmelding til eksamen
-            </a>
-          </Heading>
-          <Paragraph>
-            Du må melde deg på innen 1. februar for våreksamen og 15. september
-            for høsteksamen.
-          </Paragraph>
-          <Paragraph data-size="sm">Privatisteksamen</Paragraph>
-        </Card.Block>
-        <Card.Block>
-          <img src={studentsImg} alt="" />
-        </Card.Block>
-      </Card>
-    </>
-  ),
+const WithLinkBase = (Link: ComponentType<LinkProps>) =>
+  meta.story({
+    render: (args) => (
+      <>
+        <Card data-color="support1" {...args}>
+          <Card.Block>
+            <img src={studentsImg} alt="" />
+          </Card.Block>
+          <Card.Block>
+            <Heading>
+              <Link
+                href="https://www.udir.no/eksamen-og-prover/eksamen/ta-fag-som-privatist/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Påmelding til eksamen
+              </Link>
+            </Heading>
+            <Paragraph>
+              Du må melde deg på innen 1. februar for våreksamen og 15.
+              september for høsteksamen.
+            </Paragraph>
+            <Paragraph data-size="sm">Privatisteksamen</Paragraph>
+          </Card.Block>
+        </Card>
+        <Card {...args} data-color="neutral">
+          <Card.Block>
+            <Heading>
+              <Link
+                href="https://www.udir.no/eksamen-og-prover/eksamen/ta-fag-som-privatist/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Påmelding til eksamen
+              </Link>
+            </Heading>
+            <Paragraph>
+              Du må melde deg på innen 1. februar for våreksamen og 15.
+              september for høsteksamen.
+            </Paragraph>
+            <Paragraph data-size="sm">Privatisteksamen</Paragraph>
+          </Card.Block>
+          <Card.Block>
+            <img src={studentsImg} alt="" />
+          </Card.Block>
+        </Card>
+      </>
+    ),
+  });
+
+export const WithLink = WithLinkBase(LinkComponent).extend({});
+
+export const WithAnchor = WithLinkBase(({ children, ...props }) => (
+  <a {...props}>{children}</a>
+)).extend({});
+
+export const WithLinkFocused = WithLink.extend({
+  parameters: {
+    pseudo: {
+      focusVisible: 'a',
+    },
+  },
+});
+
+export const WithAnchorFocused = WithAnchor.extend({
+  parameters: {
+    pseudo: {
+      focusVisible: 'a',
+    },
+  },
 });
 
 export const Horizontal = meta.story({
