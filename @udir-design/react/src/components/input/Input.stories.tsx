@@ -2,6 +2,7 @@ import type { Size } from '@digdir/designsystemet-types';
 import { useEffect, useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from '../button/Button';
 import { Divider } from '../divider/Divider';
 import { Field } from '../field/Field';
@@ -117,6 +118,7 @@ export const Controlled = meta.story({
       flexDirection: 'column',
       gap: 'var(--ds-size-2)',
     },
+    docs: advancedCodeDocs,
   },
   render(args) {
     const [value, setValue] = useState<string>('');
