@@ -2,6 +2,7 @@ import type { ChangeEvent } from 'react';
 import { useState } from 'react';
 import { expect, waitFor } from 'storybook/test';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Input } from '../input/Input';
 import { Textarea } from '../textarea/Textarea';
 import { Label } from '../typography/label/Label';
@@ -26,8 +27,8 @@ const meta = preview.meta({
 });
 
 export const Preview = meta.story({
-  render: () => (
-    <Field>
+  render: (args) => (
+    <Field {...args}>
       <Label>E-post</Label>
       <Field.Description>
         E-posten din brukes til å logge inn og motta varsler
@@ -78,8 +79,8 @@ export const Preview = meta.story({
 });
 
 export const Affix = meta.story({
-  render: () => (
-    <Field>
+  render: (args) => (
+    <Field {...args}>
       <Label>Hvor mange kroner koster det per måned?</Label>
       <Field.Affixes>
         <Field.Affix>NOK</Field.Affix>
@@ -91,8 +92,8 @@ export const Affix = meta.story({
 });
 
 export const Counter = meta.story({
-  render: () => (
-    <Field>
+  render: (args) => (
+    <Field {...args}>
       <Label>Legg til en beskrivelse</Label>
       <Textarea rows={4} id="counter" autoComplete="off" />
       <Field.Counter limit={75} />
@@ -113,19 +114,20 @@ export const Counter = meta.story({
 });
 
 export const Format = meta.story({
-  render: () => {
+  parameters: { docs: advancedCodeDocs },
+  render: (args) => {
     const [nationalIdentityNumber, setNationalIdentityNumber] =
       useState<string>('');
     const tooLong = nationalIdentityNumber.length > 11;
     const hasNonDigits = /\D/.test(nationalIdentityNumber);
 
     const updateNumber = (e: ChangeEvent<HTMLInputElement>) => {
-      // removing spaces from stored value so users can space how they like withour error message
+      // Remove spaces from the stored value so users can format the input without triggering an error message.
       setNationalIdentityNumber(e.target.value.replace(/\s+/g, ''));
     };
 
     return (
-      <Field>
+      <Field {...args}>
         <Label>Fødselsnummer</Label>
         <Input
           id="format"
@@ -135,12 +137,12 @@ export const Format = meta.story({
         />
         {tooLong && (
           <ValidationMessage>
-            Fødselsnummer skal kun være 11 tegn
+            Fødselsnummer skal kun være 11 tegn.
           </ValidationMessage>
         )}
         {hasNonDigits && (
           <ValidationMessage>
-            Fødselsnummer skal kun inneholde siffere
+            Fødselsnummer skal kun inneholde sifre.
           </ValidationMessage>
         )}
       </Field>
@@ -149,7 +151,7 @@ export const Format = meta.story({
 });
 
 export const Position = meta.story({
-  render: () => (
+  render: (args) => (
     <div
       style={{
         display: 'flex',
@@ -157,11 +159,11 @@ export const Position = meta.story({
         gap: 'var(--ds-size-2)',
       }}
     >
-      <Field position="end">
+      <Field {...args} position="end">
         <Label>Flymodus</Label>
         <Input type="checkbox" role="switch" id={'airplane'} />
       </Field>
-      <Field position="end">
+      <Field {...args} position="end">
         <Label>Lydløs</Label>
         <Input type="checkbox" role="switch" id={'sounds'} />
       </Field>
