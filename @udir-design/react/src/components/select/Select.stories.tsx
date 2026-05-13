@@ -3,6 +3,7 @@ import { expect, userEvent, waitFor, within } from 'storybook/test';
 import type { County } from '.storybook/data';
 import { citiesPerCounty as cities, counties } from '.storybook/data';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Field } from 'src/components/field';
 import { Heading } from 'src/components/typography/heading';
 import { Label } from 'src/components/typography/label';
@@ -147,6 +148,7 @@ export const Controlled = meta.story({
       gap: 'var(--ds-size-4)',
       flexDirection: 'column',
     },
+    docs: advancedCodeDocs,
   },
   render: (args) => {
     const [selectedCounty, setSelectedCounty] = useState<SelectedCounty>('');
