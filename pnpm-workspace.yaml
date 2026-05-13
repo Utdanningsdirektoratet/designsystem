@@ -215,5 +215,3 @@ trustPolicyExclude:
   # due to being a dependency of @nx/js
   - invokers-polyfill@0.6.1
   - detect-port@1.6.1
-
-verifyDepsBeforeRun: prompt
