@@ -48,12 +48,12 @@ Bruk flere `Card.Block` hvis du vil dele opp `Card` med skillelinjer eller legge
 
 `Card` kan brukes som lenkekort for å ta brukerne videre til en annen side.
 
-Det er viktig at du ikke legger en lenke rundt hele kortet. Legg heller inn lenken som en `a`-tag i et `Heading`-element i `Card`, slik:
+Det er viktig at du ikke legger en lenke rundt hele kortet. Legg heller inn lenken som en `Link` i et `Heading`-element i `Card`, slik:
 
 ```tsx
 <Card>
   <Heading level={3}>
-    <a href="/link-path">Lenketittel</a>
+    <Link href="/link-path">Lenketittel</Link>
   </Heading>
 </Card>
 ```
