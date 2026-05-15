@@ -56,6 +56,12 @@ export const Preview = meta.story({
   },
 });
 
+export const Outline = Preview.extend({
+  args: {
+    variant: 'outline',
+  },
+});
+
 export const Inline = meta.story({
   render: () => (
     <Fieldset>

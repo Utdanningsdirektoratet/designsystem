@@ -8,7 +8,7 @@ import type {
   RefAttributes,
 } from 'react';
 
-type RadioProps = Omit<DigdirRadioProps, 'data-color'>;
+type RadioProps = Omit<DigdirRadioProps, 'data-color' | 'data-indeterminate'>;
 
 const Radio = DigdirRadio as ForwardRefExoticComponent<
   RadioProps & RefAttributes<ComponentRef<typeof DigdirRadio>>

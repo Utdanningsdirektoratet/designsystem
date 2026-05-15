@@ -9,6 +9,7 @@ import { Fieldset } from 'src/components/fieldset/Fieldset';
 import { Table } from 'src/components/table';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import { ValidationMessage } from 'src/components/typography/validationMessage/ValidationMessage';
+import { useCheckboxGroup as fakeUseCheckboxGroup } from './docs/FakeUseCheckboxGroup';
 import {
   type UseCheckboxGroupProps,
   useCheckboxGroup,
@@ -20,58 +21,10 @@ const meta = preview.meta<
   Partial<UseCheckboxGroupProps>
 >({
   title: 'Utilities/useCheckboxGroup',
+  component: fakeUseCheckboxGroup,
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: { originator: 'digdir' },
-    chromatic: { disableSnapshot: true },
-  },
-  argTypes: {
-    name: {
-      table: { type: { summary: 'string' } },
-      description:
-        'Name of all checkboxes. If no name is passed, an auto-generated name will be created.',
-    },
-    value: {
-      description: 'Array of values of selected checkboxes',
-      table: {
-        defaultValue: { summary: '' },
-        type: { summary: 'string[]' },
-      },
-    },
-    onChange: {
-      description: 'Callback when selected checkboxes changes',
-      table: {
-        type: {
-          summary:
-            '(nextValue: string[], prevValue: string[], event: ChangeEvent<HTMLInputElement>) => void;',
-        },
-      },
-    },
-    error: {
-      table: { type: { summary: 'string | ReactNode' } },
-      description: 'Shared error message for all checkboxes.',
-    },
-    disabled: {
-      table: {
-        defaultValue: { summary: 'false' },
-        type: { summary: 'boolean' },
-      },
-      description: 'Set disabled state of all checkboxes',
-    },
-    readOnly: {
-      table: {
-        defaultValue: { summary: 'false' },
-        type: { summary: 'boolean' },
-      },
-      description: 'Set read only state of all checkboxes',
-    },
-    required: {
-      table: {
-        defaultValue: { summary: 'false' },
-        type: { summary: 'boolean' },
-      },
-      description: 'Set required state of all checkboxes',
-    },
   },
 });
 
@@ -123,6 +76,12 @@ const GroupBase = {
 };
 
 export const Group = meta.story(GroupBase);
+
+export const Outline = Group.extend({
+  args: {
+    variant: 'outline',
+  },
+});
 
 export const WithError = meta.story({
   args: {

@@ -270,6 +270,90 @@ exports[`Group End 1`] = `
 </fieldset>
 `;
 
+exports[`Outline 1`] = `
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
+    Varsler
+  </legend>
+  <ds-field
+    data-variant="outline"
+    data-clickdelegatefor="<removed>"
+  >
+    <input
+      role="switch"
+      type="checkbox"
+      value="lydvarsler"
+      checked
+      id="<removed>"
+      aria-describedby="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      Lydvarsler
+    </label>
+    <div
+      data-field="description"
+      id="<removed>"
+    >
+      Spill av lyd når et varsel mottas.
+    </div>
+  </ds-field>
+  <ds-field
+    data-variant="outline"
+    data-clickdelegatefor="<removed>"
+  >
+    <input
+      role="switch"
+      type="checkbox"
+      value="popup-varsler"
+      id="<removed>"
+      aria-describedby="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      Popup-varsler
+    </label>
+    <div
+      data-field="description"
+      id="<removed>"
+    >
+      Vis popup-varsler på skjermen.
+    </div>
+  </ds-field>
+  <ds-field
+    data-variant="outline"
+    data-clickdelegatefor="<removed>"
+  >
+    <input
+      role="switch"
+      type="checkbox"
+      value="email-varsler"
+      id="<removed>"
+      aria-describedby="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      E-postvarsler
+    </label>
+    <div
+      data-field="description"
+      id="<removed>"
+    >
+      Tillat e-postvarsler for viktige oppdateringer.
+    </div>
+  </ds-field>
+</fieldset>
+`;
+
 exports[`Preview 1`] = `
 <ds-field data-clickdelegatefor="<removed>">
   <input

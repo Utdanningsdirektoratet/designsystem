@@ -292,6 +292,80 @@ exports[`Group 1`] = `
 </fieldset>
 `;
 
+exports[`Outline 1`] = `
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
+    Velg din aldersgruppe.
+  </legend>
+  <p
+    data-variant="default"
+    id="<removed>"
+  >
+    Informasjonen blir brukt til å tilpasse innholdet på siden.
+  </p>
+  <ds-field
+    data-variant="outline"
+    data-clickdelegatefor="<removed>"
+  >
+    <input
+      type="radio"
+      value="10-20"
+      name="my-group"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      10-20 år
+    </label>
+  </ds-field>
+  <ds-field
+    data-variant="outline"
+    data-clickdelegatefor="<removed>"
+  >
+    <input
+      type="radio"
+      value="21-45"
+      name="my-group"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      21-45 år
+    </label>
+  </ds-field>
+  <ds-field
+    data-variant="outline"
+    data-clickdelegatefor="<removed>"
+  >
+    <input
+      type="radio"
+      value="46-80"
+      name="my-group"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      46-80 år
+    </label>
+  </ds-field>
+  <p
+    data-field="validation"
+    hidden
+    id="<removed>"
+  >
+  </p>
+</fieldset>
+`;
+
 exports[`Read Only 1`] = `
 <fieldset aria-labelledby="<removed>">
   <legend

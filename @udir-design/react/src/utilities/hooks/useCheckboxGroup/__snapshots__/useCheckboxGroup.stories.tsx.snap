@@ -392,6 +392,81 @@ exports[`Indeterminate In Table 1`] = `
 </table>
 `;
 
+exports[`Outline 1`] = `
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
+    Hvordan vil du helst at vi skal kontakte deg?
+  </legend>
+  <p
+    data-variant="default"
+    id="<removed>"
+  >
+    Velg de alternativene som er relevante for deg.
+  </p>
+  <ds-field
+    data-variant="outline"
+    data-clickdelegatefor="<removed>"
+  >
+    <input
+      type="checkbox"
+      value="epost"
+      checked
+      name="my-group"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      E-post
+    </label>
+  </ds-field>
+  <ds-field
+    data-variant="outline"
+    data-clickdelegatefor="<removed>"
+  >
+    <input
+      type="checkbox"
+      value="telefon"
+      name="my-group"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      Telefon
+    </label>
+  </ds-field>
+  <ds-field
+    data-variant="outline"
+    data-clickdelegatefor="<removed>"
+  >
+    <input
+      type="checkbox"
+      value="sms"
+      name="my-group"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      SMS
+    </label>
+  </ds-field>
+  <p
+    data-field="validation"
+    hidden
+    id="<removed>"
+  >
+  </p>
+</fieldset>
+`;
+
 exports[`Read Only 1`] = `
 <fieldset aria-labelledby="<removed>">
   <legend

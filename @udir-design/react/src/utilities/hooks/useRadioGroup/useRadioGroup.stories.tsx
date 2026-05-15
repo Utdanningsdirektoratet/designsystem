@@ -8,6 +8,7 @@ import { Fieldset } from 'src/components/fieldset/Fieldset';
 import { Radio } from 'src/components/radio/Radio';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import { ValidationMessage } from 'src/components/typography/validationMessage/ValidationMessage';
+import { useRadioGroup as fakeUseRadioGroup } from './docs/FakeUseRadioGroup';
 import { type UseRadioGroupProps, useRadioGroup } from './useRadioGroup';
 
 const meta = preview.meta<
@@ -16,55 +17,10 @@ const meta = preview.meta<
   Partial<UseRadioGroupProps>
 >({
   title: 'Utilities/useRadioGroup',
+  component: fakeUseRadioGroup,
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: { originator: 'digdir' },
-    chromatic: { disableSnapshot: true },
-  },
-  argTypes: {
-    name: {
-      table: { type: { summary: 'string' } },
-      description:
-        'Name of all radios. If no name is passed, an auto-generated name will be created.',
-    },
-    value: {
-      description: 'Value of selected radio',
-      table: { defaultValue: { summary: '' }, type: { summary: 'string' } },
-    },
-    onChange: {
-      description: 'Callback when selected radio changes',
-      table: {
-        type: {
-          summary:
-            '(nextValue: string, prevValue: string, event: Event) => void;',
-        },
-      },
-    },
-    error: {
-      table: { type: { summary: 'string | ReactNode' } },
-      description: 'Shared error message for all radios.',
-    },
-    disabled: {
-      table: {
-        defaultValue: { summary: 'false' },
-        type: { summary: 'boolean' },
-      },
-      description: 'Set disabled state of all radios',
-    },
-    readOnly: {
-      table: {
-        defaultValue: { summary: 'false' },
-        type: { summary: 'boolean' },
-      },
-      description: 'Set read only state of all radios',
-    },
-    required: {
-      table: {
-        defaultValue: { summary: 'false' },
-        type: { summary: 'boolean' },
-      },
-      description: 'Set required state of all radios',
-    },
   },
 });
 
@@ -210,6 +166,12 @@ export const Group = meta.story({
       expect(radios[0]).toHaveFocus();
       expect(radios[0]).toBeChecked();
     });
+  },
+});
+
+export const Outline = Group.extend({
+  args: {
+    variant: 'outline',
   },
 });
 
