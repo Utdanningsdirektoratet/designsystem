@@ -19,6 +19,7 @@ allowBuilds:
 
 catalog:
   '@babel/types': ^7.29.0
+  '@types/js-yaml': ^4.0.9
   '@commitlint/cli': ^20.5.0
   '@commitlint/config-conventional': ^20.5.0
   '@commitlint/types': ^20.5.0

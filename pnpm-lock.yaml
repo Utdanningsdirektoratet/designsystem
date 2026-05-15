@@ -105,6 +105,9 @@ catalogs:
     '@types/diffable-html':
       specifier: ^5.0.2
       version: 5.0.2
+    '@types/js-yaml':
+      specifier: ^4.0.9
+      version: 4.0.9
     '@types/mdast':
       specifier: ^4.0.4
       version: 4.0.4
@@ -520,12 +523,18 @@ importers:
 
   '@internal/build-tools':
     devDependencies:
+      '@types/js-yaml':
+        specifier: 'catalog:'
+        version: 4.0.9
       '@types/micromatch':
         specifier: 'catalog:'
         version: 4.0.10
       '@types/yargs':
         specifier: 'catalog:'
         version: 17.0.35
+      js-yaml:
+        specifier: 'catalog:'
+        version: 4.1.1
       micromatch:
         specifier: 'catalog:'
         version: 4.0.8
@@ -3578,6 +3587,9 @@ packages:
 
   '@types/hast@3.0.4':
     resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
+
+  '@types/js-yaml@4.0.9':
+    resolution: {integrity: sha512-k4MGaQl5TGo/iipqb2UDG2UwjXziSWkh0uysQelTlJpX1qGlpUZYm8PnO4DxG1qBomtJUdYJ6qR6xdIah10JLg==}
 
   '@types/jsesc@2.5.1':
     resolution: {integrity: sha512-9VN+6yxLOPLOav+7PwjZbxiID2bVaeq0ED4qSQmdQTdjnXJSaCVKTR58t15oqH1H5t8Ng2ZX1SabJVoN9Q34bw==}
@@ -10879,6 +10891,8 @@ snapshots:
   '@types/hast@3.0.4':
     dependencies:
       '@types/unist': 3.0.3
+
+  '@types/js-yaml@4.0.9': {}
 
   '@types/jsesc@2.5.1': {}
 
