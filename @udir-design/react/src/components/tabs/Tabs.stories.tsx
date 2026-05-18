@@ -32,7 +32,7 @@ const meta = preview.meta({
     'Tabs.Tab': TabsTab,
     'Tabs.Panel': TabsPanel,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
