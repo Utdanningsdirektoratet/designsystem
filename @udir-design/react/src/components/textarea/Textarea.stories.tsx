@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from '../button/Button';
 import { Field } from '../field/Field';
 import { Label } from '../typography/label/Label';
@@ -101,6 +102,7 @@ export const Controlled = meta.story({
       flexDirection: 'column',
       gap: 'var(--ds-size-2)',
     },
+    docs: advancedCodeDocs,
   },
   render: (args) => {
     const [value, setValue] = useState(`${args.value || ''}`);
