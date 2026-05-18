@@ -131,7 +131,7 @@ export const Format = meta.story({
   parameters: {
     docs: advancedCodeDocs,
   },
-  render: () => {
+  render: (args) => {
     const [nationalIdentityNumber, setNationalIdentityNumber] =
       useState<string>('');
     const tooLong = nationalIdentityNumber.length > 11;
@@ -144,6 +144,8 @@ export const Format = meta.story({
 
     return (
       <Textfield
+        {...args}
+        autocomplete="off"
         label="Fødselsnummer"
         id="format"
         inputMode="numeric"

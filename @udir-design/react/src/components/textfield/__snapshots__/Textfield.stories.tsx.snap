@@ -141,6 +141,7 @@ exports[`Format 1`] = `
   </label>
   <div>
     <input
+      autocomplete="off"
       id="<removed>"
       inputmode="numeric"
       type="text"
