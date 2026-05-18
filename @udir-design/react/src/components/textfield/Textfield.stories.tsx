@@ -10,7 +10,7 @@ import { Textfield } from './Textfield';
 
 const meta = preview.meta({
   component: Textfield,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   argTypes: {
     multiline: {
       type: 'boolean',
