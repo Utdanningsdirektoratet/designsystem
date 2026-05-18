@@ -22,6 +22,7 @@ export * from './search/Search';
 export * from './skipLink/SkipLink';
 export * from './spinner/Spinner';
 export * from './switch/Switch';
+export * from './tableOfContents/TableOfContents';
 export * from './tag/Tag';
 export * from './typography/heading/Heading';
 export * from './typography/label/Label';

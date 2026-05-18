@@ -17,7 +17,6 @@ export * from './progressBar/ProgressBar';
 export * from './readMore/ReadMore';
 export * from './select/Select';
 export * from './skeleton/Skeleton';
-export * from './tableOfContents/TableOfContents';
 export * from './tabs/Tabs';
 export * from './textarea/Textarea';
 export * from './table';
