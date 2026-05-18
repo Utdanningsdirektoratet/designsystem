@@ -158,6 +158,7 @@ exports[`Icons With Text 1`] = `
       role="tab"
       aria-selected="true"
       tabindex="0"
+      id="<removed>"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -234,6 +235,31 @@ exports[`Icons With Text 1`] = `
       Videregående
     </ds-tab>
   </ds-tablist>
+  <ds-tabpanel
+    id="<removed>"
+    aria-hidden="false"
+    tabindex="0"
+    aria-labelledby="<removed>"
+    role="tabpanel"
+  >
+    Innhold for barnehage
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="<removed>"
+    role="tabpanel"
+    aria-hidden="true"
+    hidden
+  >
+    Innhold for grunnskole
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="<removed>"
+    role="tabpanel"
+    aria-hidden="true"
+    hidden
+  >
+    Innhold for videregående
+  </ds-tabpanel>
 </ds-tabs>
 `;
 
@@ -249,6 +275,7 @@ exports[`Only Icons 1`] = `
       role="tab"
       aria-selected="false"
       tabindex="-1"
+      id="<removed>"
       aria-label="Galleri"
     >
       <svg
@@ -279,6 +306,7 @@ exports[`Only Icons 1`] = `
       role="tab"
       aria-selected="true"
       tabindex="0"
+      id="<removed>"
       aria-label="Profilen din"
     >
       <svg
@@ -361,6 +389,40 @@ exports[`Only Icons 1`] = `
       </svg>
     </ds-tab>
   </ds-tablist>
+  <ds-tabpanel
+    id="<removed>"
+    aria-hidden="true"
+    aria-labelledby="<removed>"
+    role="tabpanel"
+    hidden
+  >
+    Innhold for galleri
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="<removed>"
+    role="tabpanel"
+    aria-hidden="false"
+    tabindex="0"
+    aria-labelledby="<removed>"
+  >
+    Innhold for profilen din
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="<removed>"
+    role="tabpanel"
+    aria-hidden="true"
+    hidden
+  >
+    Innhold for varsler
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="<removed>"
+    role="tabpanel"
+    aria-hidden="true"
+    hidden
+  >
+    Innhold for innstillinger
+  </ds-tabpanel>
 </ds-tabs>
 `;
 
@@ -373,6 +435,7 @@ exports[`Only Text 1`] = `
       role="tab"
       aria-selected="true"
       tabindex="0"
+      id="<removed>"
     >
       Oversikt
     </ds-tab>
@@ -395,6 +458,31 @@ exports[`Only Text 1`] = `
       Prøvesvar
     </ds-tab>
   </ds-tablist>
+  <ds-tabpanel
+    id="<removed>"
+    aria-hidden="false"
+    tabindex="0"
+    aria-labelledby="<removed>"
+    role="tabpanel"
+  >
+    Innhold for oversikt
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="<removed>"
+    role="tabpanel"
+    aria-hidden="true"
+    hidden
+  >
+    Innhold for prøver
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="<removed>"
+    role="tabpanel"
+    aria-hidden="true"
+    hidden
+  >
+    Innhold for prøvesvar
+  </ds-tabpanel>
 </ds-tabs>
 `;
 

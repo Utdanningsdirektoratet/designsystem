@@ -11,7 +11,7 @@ import {
   PersonIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
-import { formatReactSource } from '.storybook/utils/sourceTransformers';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Avatar } from '../avatar/Avatar';
 import { Button } from '../button/Button';
 import { Link } from '../link/Link';
@@ -38,7 +38,7 @@ const meta = preview.meta({
       originator: 'digdir',
     },
     layout: 'centered',
-    /* a11y complains on aria-controls on tabs when there is no tabs-panel, which there are several places in the examples */
+    /* a11y complains about aria-controls on tabs when there is no tab panel, which is the case in several examples */
     a11y: {
       config: {
         rules: [
@@ -153,6 +153,9 @@ export const OnlyText = meta.story({
           <Tabs.Tab value="prøver">Prøver</Tabs.Tab>
           <Tabs.Tab value="prøvesvar">Prøvesvar</Tabs.Tab>
         </Tabs.List>
+        <Tabs.Panel value="oversikt">Innhold for oversikt</Tabs.Panel>
+        <Tabs.Panel value="prøver">Innhold for prøver</Tabs.Panel>
+        <Tabs.Panel value="prøvesvar">Innhold for prøvesvar</Tabs.Panel>
       </Tabs>
     );
   },
@@ -179,6 +182,9 @@ export const IconsWithText = meta.story({
             Videregående
           </Tabs.Tab>
         </Tabs.List>
+        <Tabs.Panel value="barnehage">Innhold for barnehage</Tabs.Panel>
+        <Tabs.Panel value="grunnskole">Innhold for grunnskole</Tabs.Panel>
+        <Tabs.Panel value="videregående">Innhold for videregående</Tabs.Panel>
       </Tabs>
     );
   },
@@ -212,11 +218,21 @@ export const OnlyIcons = meta.story({
           </Tabs.Tab>
         </Tooltip>
       </Tabs.List>
+      <Tabs.Panel value="gallery">Innhold for galleri</Tabs.Panel>
+      <Tabs.Panel value="profile">Innhold for profilen din</Tabs.Panel>
+      <Tabs.Panel value="notifications">Innhold for varsler</Tabs.Panel>
+      <Tabs.Panel value="settings">Innhold for innstillinger</Tabs.Panel>
     </Tabs>
   ),
 });
 
 export const Controlled = meta.story({
+  parameters: {
+    customStyles: {
+      width: '500px',
+    },
+    docs: advancedCodeDocs,
+  },
   render: (args) => {
     const [tab, setTab] = useState('users');
     return (
@@ -311,11 +327,5 @@ export const Controlled = meta.story({
         </Tabs.Panel>
       </Tabs>
     );
-  },
-  parameters: {
-    customStyles: {
-      width: '500px',
-    },
-    docs: { source: { type: 'code', transform: formatReactSource } },
   },
 });
