@@ -16,6 +16,7 @@ export * from './field';
 export * from './fieldNecessity';
 export * from './fieldset';
 export * from './footer';
+export * from './header';
 export * from './input';
 export * from './link';
 export * from './list';
