@@ -3,8 +3,10 @@
     margin-block-end: var(--ds-size-5);
   }
 
-  & .ds-heading {
+  > .ds-heading,
+  > section > .ds-heading {
     margin-block-end: var(--ds-size-4);
+    margin-block-start: var(--ds-size-8);
 
     &[data-size='2xl'] {
       margin-block-start: var(--ds-size-12);
@@ -33,9 +35,9 @@
     &[data-size='2xs'] {
       margin-block-start: var(--ds-size-6);
     }
-
-    &:first-child {
+  }
+  > .ds-heading:first-child,
+  section:first-child > .ds-heading:first-child {
       margin-block-start: 0;
-    }
   }
 }
