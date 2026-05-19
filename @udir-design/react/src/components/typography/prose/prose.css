@@ -1,5 +1,6 @@
 .uds-prose {
-  & > * {
+  > *:not(.ds-dialog),
+  section > *:not(.ds-dialog) {
     margin-block-end: var(--ds-size-5);
   }
 
@@ -38,6 +39,6 @@
   }
   > .ds-heading:first-child,
   section:first-child > .ds-heading:first-child {
-      margin-block-start: 0;
+    margin-block-start: 0;
   }
 }
