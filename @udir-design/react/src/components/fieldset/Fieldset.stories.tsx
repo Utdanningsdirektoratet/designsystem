@@ -26,7 +26,7 @@ export const Preview = meta.story({
       </Fieldset.Description>
       <Radio label="Barsnesfjorden" name="radio" value="barsnesfjorden" />
       <Radio label="Eidsfjorden" name="radio" value="eidsfjorden" />
-      <Radio label="Ingen av de" name="radio" value="ingen-av-de" />
+      <Radio label="Ingen av dem" name="radio" value="ingen-av-dem" />
     </Fieldset>
   ),
 });
