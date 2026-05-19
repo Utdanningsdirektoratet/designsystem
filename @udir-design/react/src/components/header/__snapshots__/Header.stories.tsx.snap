@@ -724,10 +724,10 @@ exports[`Responsive 1`] = `
           data-placement="bottom-end"
           data-variant="default"
         >
+          <h2>
+            Bytt profil
+          </h2>
           <ul>
-            <h2>
-              Bytt profil
-            </h2>
             <li>
               <button
                 data-variant="tertiary"
@@ -1623,6 +1623,156 @@ exports[`With Menu 1`] = `
 </div>
 `;
 
+exports[`With Menu Test 1`] = `
+<div data-size="auto">
+  <style>
+    /* Styles defined in application-specific css */
+        .withMenu-header-menu-nav {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+          max-width: 800px;
+          margin: 0 auto;
+          padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
+          gap: var(--ds-size-4);
+          row-gap: var(--ds-size-10);
+          justify-items: center;
+        }
+        @media (max-width: 34.375rem) {
+          .withMenu-header-menu-nav {
+            justify-items: flex-start;
+          }
+        }
+  </style>
+  <header
+    data-scroll-direction="up"
+    data-top="true"
+    style="<removed>"
+  >
+    <div>
+      <a href="/">
+        <div style="<removed>">
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
+          >
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-2&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-3&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
+          >
+        </div>
+        <span data-size="xs">
+          Tjenestenavn
+        </span>
+      </a>
+      <div>
+        <button
+          data-variant="tertiary"
+          type="button"
+          popovertarget="uds-header-menu"
+        >
+          Meny
+        </button>
+        <div
+          id="<removed>"
+          popover="auto"
+          data-placement="none"
+          data-variant="default"
+        >
+          <nav aria-labelledby="<removed>">
+            <h2 id="<removed>">
+              Menynavigasjon
+            </h2>
+            <div>
+              <h3
+                data-size="xs"
+                style="<removed>"
+              >
+                <a href="#">
+                  Designprofil
+                </a>
+              </h3>
+              <ul>
+                <li>
+                  <a href="https://www.udir.no/om-udir/designprofil/identitet/">
+                    Identitet
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.udir.no/om-udir/designprofil/farger/">
+                    Farger
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.udir.no/om-udir/designprofil/typografi/">
+                    Typografi
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3
+                data-size="xs"
+                style="<removed>"
+              >
+                <a href="#">
+                  Illustrasjoner
+                </a>
+              </h3>
+              <ul>
+                <li>
+                  <a href="https://www.figma.com/design/QeYBL9fzDCk87WNWcDSQi7/01-Illustrasjoner---barnehage?node-id=457-13863">
+                    Illustrasjoner
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.figma.com/design/SSdGSjSYPDSyX2IfHLfmEL/Symbolbibliotek?node-id=0-1&amp;p=f&amp;m=dev">
+                    Symboler
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.figma.com/design/W4tl2t6G22muQfVF8jGeQX/Ikonbibliotek?node-id=9-2879&amp;p=f&amp;m=dev">
+                    Ikoner
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3
+                data-size="xs"
+                style="<removed>"
+              >
+                <a href="#">
+                  Nyttige lenker
+                </a>
+              </h3>
+              <ul>
+                <li>
+                  <a href="https://design.udir.no/">
+                    Komponenter
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.figma.com/files/1290654482467394866/team/1306917640909073413/Team?fuid=1464219835118877209">
+                    Figma
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Github
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+`;
+
 exports[`With Navigation Links 1`] = `
 <div data-size="auto">
   <style>
@@ -1917,6 +2067,60 @@ exports[`With Navigation Links And Menu 1`] = `
             </div>
           </nav>
         </div>
+      </div>
+    </div>
+  </header>
+</div>
+`;
+
+exports[`With Navigation Links Test 1`] = `
+<div data-size="auto">
+  <header
+    data-scroll-direction="up"
+    data-top="true"
+    style="<removed>"
+  >
+    <div>
+      <a href="/">
+        <div style="<removed>">
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
+          >
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-2&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-3&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
+          >
+        </div>
+        <span data-size="xs">
+          Tjenestenavn
+        </span>
+      </a>
+      <div>
+        <nav aria-label="header-navigation">
+          <ul>
+            <li>
+              <a href="#">
+                Navlink 1
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                aria-current="page"
+              >
+                Navlink 2
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Navlink 3
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </header>
