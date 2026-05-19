@@ -12,6 +12,7 @@ import {
   XMarkOctagonIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from 'src/components/button';
 import { Card } from 'src/components/card';
 import { Fieldset } from 'src/components/fieldset';
@@ -259,6 +260,7 @@ export const Controlled = meta.story({
       gap: '1rem',
       maxWidth: '750px',
     },
+    docs: advancedCodeDocs,
   },
   render: function Render(args) {
     const [value, setValue] = useState<string>('correctedAnswers');
