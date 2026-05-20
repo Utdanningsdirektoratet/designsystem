@@ -1,5 +1,6 @@
 import { expect, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { Header } from '../header';
 import { Breadcrumbs } from './Breadcrumbs';
 import { BreadcrumbsItem } from './docs/FakeBreadcrumbsItem';
 import { BreadcrumbsLink } from './docs/FakeBreadcrumbsLink';
@@ -150,4 +151,45 @@ export const MobileViewport = meta.story({
   globals: {
     viewport: { value: 'iphone6' },
   },
+});
+
+export const PlacementWithHeader = meta.story({
+  parameters: {
+    layout: 'fullscreen',
+  },
+  render: (args) => (
+    <>
+      <style>
+        {`
+        /* Styles defined in application-specific css */
+        .content {
+          max-width: 80rem;
+          margin: var(--ds-size-4) auto 0;
+          padding: 0 var(--ds-size-5);
+        }
+        `}
+      </style>
+      <Header applicationName="Tjenestenavn">
+        <Header.MenuButton />
+      </Header>
+      <div className="content">
+        <Breadcrumbs {...args}>
+          <Breadcrumbs.Link href="#" aria-label="Tilbake til Utdanningsløpet">
+            Utdanningsløpet
+          </Breadcrumbs.Link>
+          <Breadcrumbs.List>
+            <Breadcrumbs.Item>
+              <Breadcrumbs.Link href="#">Forside</Breadcrumbs.Link>
+            </Breadcrumbs.Item>
+            <Breadcrumbs.Item>
+              <Breadcrumbs.Link href="#">Utdanningsløpet</Breadcrumbs.Link>
+            </Breadcrumbs.Item>
+            <Breadcrumbs.Item>
+              <Breadcrumbs.Link href="#">Grunnskole</Breadcrumbs.Link>
+            </Breadcrumbs.Item>
+          </Breadcrumbs.List>
+        </Breadcrumbs>
+      </div>
+    </>
+  ),
 });

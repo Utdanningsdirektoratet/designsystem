@@ -62,13 +62,19 @@ Hvis du legger en `Breadcrumbs.Link` direkte i `Breadcrumbs`, vil denne lenken v
 
 ## Retningslinjer
 
-Følg disse retningslinjene når du bruker `Breadcrumbs`:
+Det er først når det er tre eller flere nivåer at det er behov for `Breadcrumbs`.
+Hvis det er færre enn tre nivåer, kan du bruke en [`Link`](/docs/components-link--docs) i stedet.
 
-- Det er først når det er tre eller flere nivåer at det er behov for `Breadcrumbs`.
-  Hvis det er færre enn tre nivåer, kan du bruke en [`Link`](/docs/components-link--docs) i stedet.
+### Plassering
 
 - `Breadcrumbs` skal alltid plasseres øverst på venstre del av siden.
   Den skal være under menyen og hovednavigasjonen, men over sidetittelen.
+- `Breadcrumbs` skal ha samme bredde som innholdet i [`Header`](/docs/components-header--docs). Du kan sette `max-width: 80rem` på `Breadcrumbs`, og sentrere den ved å sette `margin: 0 auto`.
+
+<Canvas
+  story={{ inline: false, height: '200px' }}
+  of={BreadcrumbsStories.PlacementWithHeader}
+/>
 
 ## Tekst i Breadcrumbs
 

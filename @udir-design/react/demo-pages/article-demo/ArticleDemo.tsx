@@ -34,7 +34,7 @@ export const ArticleDemo = () => {
       aria-label="Tilpasset opplæring"
       className={cl(classes.article, classes.contentSpacing)}
     >
-      <Breadcrumbs aria-label="Du er her:">
+      <Breadcrumbs aria-label="Du er her:" className={classes.breadcrumbs}>
         <Breadcrumbs.Link
           href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/"
           aria-label="Tilbake til Støtte til arbeid med læreplanverket"
