@@ -12,7 +12,7 @@ const meta = preview.meta({
     'Breadcrumbs.List': BreadcrumbsList,
     'Breadcrumbs.Item': BreadcrumbsItem,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

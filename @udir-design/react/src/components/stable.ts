@@ -3,6 +3,7 @@
  */
 
 export * from './avatar/Avatar';
+export * from './breadcrumbs/Breadcrumbs';
 export * from './button/Button';
 export * from './card/Card';
 export * from './checkbox/Checkbox';
