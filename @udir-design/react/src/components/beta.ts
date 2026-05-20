@@ -17,7 +17,6 @@ export * from './errorSummary/ErrorSummary';
 export * from './field/Field';
 export * from './fieldNecessity';
 export * from './fieldset/Fieldset';
-export * from './footer';
 export * from './formNavigation';
 export * from './header';
 export * from './link/Link';
