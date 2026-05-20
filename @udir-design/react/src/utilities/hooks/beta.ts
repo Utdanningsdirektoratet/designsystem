@@ -6,11 +6,6 @@
  */
 
 export {
-  type UseCheckboxGroupProps,
-  type UseCheckboxGroupReturn,
-  useCheckboxGroup,
-} from './useCheckboxGroup/useCheckboxGroup';
-export {
   type UsePaginationProps,
   usePagination,
 } from './usePagination/usePagination';
