@@ -283,17 +283,20 @@ export const Button = meta.story({
 });
 
 export const Colors = meta.story({
+  argTypes: {
+    'data-color': { table: { disable: true } },
+  },
   render: (args) => (
     <>
-      <Chip.Button {...args}>Chip 1</Chip.Button>
+      <Chip.Button {...args}>neutral</Chip.Button>
       <Chip.Button data-color="accent" {...args}>
-        Chip 2
+        accent
       </Chip.Button>
       <Chip.Button data-color="support1" {...args}>
-        Chip 3
+        support1
       </Chip.Button>
       <Chip.Button data-color="support2" {...args}>
-        Chip 4
+        support2
       </Chip.Button>
     </>
   ),
