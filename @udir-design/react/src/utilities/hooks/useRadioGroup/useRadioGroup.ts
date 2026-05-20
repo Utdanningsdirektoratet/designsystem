@@ -3,12 +3,9 @@ import {
   useRadioGroup as useRadioGroupDigdir,
 } from '@digdir/designsystemet-react';
 import type { RadioProps } from '../../../components/radio/Radio';
-import type { MergeRight } from '../../type-utils';
 
-type UseRadioGroupProps = MergeRight<
-  Omit<RadioProps, 'aria-label' | 'aria-labelledby' | 'data-size'>,
-  UseRadioGroupPropsDigdir
->;
+type UseRadioGroupProps = UseRadioGroupPropsDigdir &
+  Pick<RadioProps, 'variant'>;
 
 type UseRadioGroupReturn = ReturnType<typeof useRadioGroupDigdir>;
 const useRadioGroup = (props?: UseRadioGroupProps): UseRadioGroupReturn => {
