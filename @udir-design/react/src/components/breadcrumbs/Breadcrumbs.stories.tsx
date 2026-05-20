@@ -70,6 +70,11 @@ export const Preview = meta.story({
     await step('List should have expected number of items', async () => {
       await expect(canvas.getAllByRole('listitem')).toHaveLength(3);
     });
+
+    await step('Last breadcrumb should have aria-current="page"', async () => {
+      const lastLink = canvas.getByRole('link', { name: /Grunnskole/i });
+      await expect(lastLink).toHaveAttribute('aria-current', 'page');
+    });
   },
 });
 
