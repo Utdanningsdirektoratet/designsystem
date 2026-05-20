@@ -12,7 +12,7 @@ import { Tooltip } from './Tooltip';
 
 const meta = preview.meta({
   component: Tooltip,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

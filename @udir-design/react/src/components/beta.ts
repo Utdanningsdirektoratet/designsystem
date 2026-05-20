@@ -23,5 +23,4 @@ export * from './textarea/Textarea';
 export * from './table';
 export * from './textfield/Textfield';
 export * from './toggleGroup';
-export * from './tooltip/Tooltip';
 export * from './typography/prose/Prose';
