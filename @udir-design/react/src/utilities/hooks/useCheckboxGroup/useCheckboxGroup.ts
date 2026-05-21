@@ -3,15 +3,9 @@ import {
   useCheckboxGroup as useCheckboxGroupDigdir,
 } from '@digdir/designsystemet-react';
 import type { CheckboxProps } from '../../../components/checkbox/Checkbox';
-import type { MergeRight } from '../../type-utils';
 
-type UseCheckboxGroupProps = MergeRight<
-  Omit<
-    CheckboxProps,
-    'aria-label' | 'aria-labelledby' | 'data-size' | 'data-indeterminate'
-  >,
-  UseCheckboxGroupPropsDigdir
->;
+type UseCheckboxGroupProps = UseCheckboxGroupPropsDigdir &
+  Pick<CheckboxProps, 'variant'>;
 
 type UseCheckboxGroupReturn = ReturnType<typeof useCheckboxGroupDigdir>;
 const useCheckboxGroup = (
