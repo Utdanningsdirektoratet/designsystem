@@ -11,21 +11,23 @@ export type DemoBannerProps = HTMLAttributes<HTMLDivElement> & {
 };
 
 export const DemoBanner = forwardRef<HTMLDivElement, DemoBannerProps>(
-  function DemoBanner(
-    { text = 'Dette er en demo', children, className, style, ...rest },
-    ref,
-  ) {
+  function DemoBanner({ text, children, className, style, ...rest }, ref) {
     return (
       <div
         className={cl(`uds-demo-banner`, className)}
         style={
-          { ...style, '--udsc-demo-banner-text': `'${text}'` } as CSSProperties
+          {
+            ...style,
+            ...(text && {
+              '--udsc-demo-banner-text': JSON.stringify(text),
+            }),
+          } as CSSProperties
         }
         ref={ref}
         {...rest}
       >
         {children}
-        <div aria-hidden>{text}</div>
+        <div className="uds-demo-banner-footer" aria-hidden />
       </div>
     );
   },
