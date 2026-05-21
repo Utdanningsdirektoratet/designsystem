@@ -517,7 +517,7 @@ export const DialogNonModal = meta.story({
           modal={false}
           style={{
             width: '300px',
-            left: '80%',
+            left: '65%',
           }}
           {...args}
         >
