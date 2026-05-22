@@ -56,8 +56,6 @@ export const CustomStylesDecorator: Decorator = (Story, ctx) => {
       ctx.canvasElement.querySelectorAll('[data-storybook-decorator]'),
     ).at(-1);
     if (innerDecorator) {
-      console.log('Found inner decorator');
-      console.log(innerDecorator);
       const existingStyle = innerDecorator.getAttribute('style') ?? '';
       innerDecorator.setAttribute(
         'style',
