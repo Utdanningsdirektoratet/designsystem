@@ -98,6 +98,8 @@ Ha gjerne med en ledetekst som forklarer hva valgene gjelder. Skriv tydelige tek
 `ToggleGroup` har standard fokusindikator med ramme.
 Komponenten bruker [roving tabindex](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Keyboard-navigable_JavaScript_widgets#managing_focus_inside_groups) for å håndtere fokusbevegelse mellom knappene. I praksis gjør dette at <kbd>Tab</kbd> flytter fokus til den aktive knappen, eller videre ut av `ToggleGroup`, mens piltastene flytter fokus mellom knappene i gruppen.
 
+`ToggleGroup` brytes ikke over flere linjer. For mange valg eller lange tekster kan det føre til at deler av komponenten havner utenfor den synlige rammen. Kontroller derfor at alle valg fortsatt er synlige og brukbare ved smal viewport eller høy zoom uten horisontal scrolling.
+
 ### Tastaturinteraksjon
 
 - <kbd>Tab</kbd> - flytter fokuset til den aktive toggle-knappen.
