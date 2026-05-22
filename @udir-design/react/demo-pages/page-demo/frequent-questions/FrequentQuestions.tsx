@@ -17,8 +17,8 @@ export const FrequentQuestions = () => {
           <SikkerhetFillSymbol aria-label="Sikkerhet" size="5rem" />
           <Heading>Sikkerhet og drift</Heading>
           <Paragraph>
-            Most provide as with carried business are much better more the
-            perfected designer. Writing slightly explain.
+            Finn informasjon om personvern, tilgangsstyring og sikker håndtering
+            av data i skole og barnehage.
           </Paragraph>
         </Card>
         <Card variant="tinted" data-color="support1">
@@ -27,16 +27,16 @@ export const FrequentQuestions = () => {
           </div>
           <Heading>Skole og utdanning</Heading>
           <Paragraph>
-            Most provide as with carried business are much better more the
-            perfected designer. Writing slightly explain.
+            Les om regelverket for grunnskole og videregående opplæring, og finn
+            veiledning for lærere og skoleledere.
           </Paragraph>
         </Card>
         <Card variant="tinted" data-color="support2">
           <KokkehattFillSymbol aria-label="Kokkehatt" size="5rem" />
           <Heading>Mat og helse</Heading>
           <Paragraph>
-            Most provide as with carried business are much better more the
-            perfected designer. Writing slightly explain.
+            Krav og retningslinjer for måltider i barnehage og skole, inkludert
+            allergihåndtering og ernæringsveiledning.
           </Paragraph>
         </Card>
       </div>
