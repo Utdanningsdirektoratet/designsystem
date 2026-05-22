@@ -4,8 +4,12 @@
   gap: var(--ds-size-6);
 }
 
+.tableWrapper {
+  overflow-x: auto;
+}
+
 .table {
-  width: 12.5rem;
+  width: fit-content;
 }
 
 .rightAlign {
