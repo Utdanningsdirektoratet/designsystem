@@ -4,6 +4,7 @@
 
 export * from './avatar/Avatar';
 export * from './button/Button';
+export * from './card/Card';
 export * from './checkbox/Checkbox';
 export * from './divider/Divider';
 export * from './footer';

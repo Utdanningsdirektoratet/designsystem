@@ -1,9 +1,12 @@
 import type { Color } from '@digdir/designsystemet-react/colors';
+import type { ComponentType } from 'react';
 import { Fragment } from 'react/jsx-runtime';
 import { PlusIcon, TrashFillIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { Button } from '../button/Button';
 import { Field } from '../field/Field';
+import { Link as LinkComponent } from '../link/Link';
+import type { LinkProps } from '../link/Link';
 import { Select } from '../select/Select';
 import { Textfield } from '../textfield/Textfield';
 import { Heading } from '../typography/heading/Heading';
@@ -23,7 +26,7 @@ const meta = preview.meta({
   subcomponents: {
     'Card.Block': CardBlock,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
@@ -171,15 +174,7 @@ export const Video = meta.story({
         ></iframe>
       </Card.Block>
       <Card.Block>
-        <Heading>
-          <a
-            href="https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/filmer/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Ny opplæringslov
-          </a>
-        </Heading>
+        <Heading>Ny opplæringslov</Heading>
         <Paragraph>
           Kunnskapsminister Kari Nessa Nordtun om den nye opplæringsloven.
         </Paragraph>
@@ -236,61 +231,85 @@ export const Composed = meta.story({
   ),
 });
 
-export const WithLink = meta.story({
-  render: (args) => (
-    <>
-      <Card data-color="support1" {...args}>
-        <Card.Block>
-          <img src={studentsImg} alt="" />
-        </Card.Block>
-        <Card.Block>
-          <Heading>
-            <a
-              href="https://www.udir.no/eksamen-og-prover/eksamen/ta-fag-som-privatist/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Påmelding til eksamen
-            </a>
-          </Heading>
-          <Paragraph>
-            Du må melde deg på innen 1. februar for våreksamen og 15. september
-            for høsteksamen.
-          </Paragraph>
-          <Paragraph data-size="sm">Privatisteksamen</Paragraph>
-        </Card.Block>
-      </Card>
-      <Card {...args} data-color="neutral">
-        <Card.Block>
-          <Heading>
-            <a
-              href="https://www.udir.no/eksamen-og-prover/eksamen/ta-fag-som-privatist/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Påmelding til eksamen
-            </a>
-          </Heading>
-          <Paragraph>
-            Du må melde deg på innen 1. februar for våreksamen og 15. september
-            for høsteksamen.
-          </Paragraph>
-          <Paragraph data-size="sm">Privatisteksamen</Paragraph>
-        </Card.Block>
-        <Card.Block>
-          <img src={studentsImg} alt="" />
-        </Card.Block>
-      </Card>
-    </>
-  ),
+const WithLinkBase = (Link: ComponentType<LinkProps>) =>
+  meta.story({
+    render: (args) => (
+      <>
+        <Card data-color="support1" {...args}>
+          <Card.Block>
+            <img src={studentsImg} alt="" />
+          </Card.Block>
+          <Card.Block>
+            <Heading>
+              <Link
+                href="https://www.udir.no/eksamen-og-prover/eksamen/ta-fag-som-privatist/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Påmelding til eksamen
+              </Link>
+            </Heading>
+            <Paragraph>
+              Du må melde deg på innen 1. februar for våreksamen og 15.
+              september for høsteksamen.
+            </Paragraph>
+            <Paragraph data-size="sm">Privatisteksamen</Paragraph>
+          </Card.Block>
+        </Card>
+        <Card {...args} data-color="neutral">
+          <Card.Block>
+            <Heading>
+              <Link
+                href="https://www.udir.no/eksamen-og-prover/eksamen/ta-fag-som-privatist/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Påmelding til eksamen
+              </Link>
+            </Heading>
+            <Paragraph>
+              Du må melde deg på innen 1. februar for våreksamen og 15.
+              september for høsteksamen.
+            </Paragraph>
+            <Paragraph data-size="sm">Privatisteksamen</Paragraph>
+          </Card.Block>
+          <Card.Block>
+            <img src={studentsImg} alt="" />
+          </Card.Block>
+        </Card>
+      </>
+    ),
+  });
+
+export const WithLink = WithLinkBase(LinkComponent).extend({});
+
+export const WithAnchor = WithLinkBase(({ children, ...props }) => (
+  <a {...props}>{children}</a>
+)).extend({});
+
+export const WithLinkFocused = WithLink.extend({
+  parameters: {
+    pseudo: {
+      focusVisible: 'a',
+    },
+  },
+});
+
+export const WithAnchorFocused = WithAnchor.extend({
+  parameters: {
+    pseudo: {
+      focusVisible: 'a',
+    },
+  },
 });
 
 export const Horizontal = meta.story({
-  render: () => {
+  render: (args) => {
     const url =
       'https://www.udir.no/contentassets/0ae1c5846c254b9f8800c59c393fd03d/skolemiljo.png';
     return (
       <Card
+        {...args}
         style={{
           display: 'grid',
           gridAutoFlow: 'column',

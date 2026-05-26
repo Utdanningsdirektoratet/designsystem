@@ -1,4 +1,5 @@
 import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import { SimpleAlert } from '.storybook/docs/components';
 import * as CardStories from './Card.stories';
 
 <Meta of={CardStories} />
@@ -47,7 +48,17 @@ Bruk flere `Card.Block` hvis du vil dele opp `Card` med skillelinjer eller legge
 
 `Card` kan brukes som lenkekort for å ta brukerne videre til en annen side.
 
-**Legg inn lenken som en `a`-tag i `Heading`-elementet til `Card`.** Hele `Card` blir da automatisk klikkbar, og skjermlesere får en [bedre brukeropplevelse enn dersom hele var en lenke](https://adrianroselli.com/2020/02/block-links-cards-clickable-regions-etc.html) fordi kun tittelen blir lest opp som lenketekst.
+Det er viktig at du ikke legger en lenke rundt hele kortet. Legg heller inn lenken som en `Link` i et `Heading`-element i `Card`, slik:
+
+```tsx
+<Card>
+  <Heading level={3}>
+    <Link href="/link-path">Lenketittel</Link>
+  </Heading>
+</Card>
+```
+
+Hele `Card` blir da automatisk klikkbar, og skjermlesere får en [bedre brukeropplevelse enn dersom hele kortet var en lenke](https://adrianroselli.com/2020/02/block-links-cards-clickable-regions-etc.html) fordi kun tittelen blir lest opp som lenketekst.
 
 <Canvas of={CardStories.WithLink} />
 
