@@ -22,7 +22,7 @@ const meta = preview.meta<
 >({
   title: 'Utilities/useCheckboxGroup',
   component: fakeUseCheckboxGroup,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: { originator: 'digdir' },
   },
