@@ -19,7 +19,7 @@ import { Button } from './Button';
 
 const meta = preview.meta({
   component: Button,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
