@@ -1,5 +1,6 @@
 import { Meta, Canvas, Controls, Primary } from '@storybook/addon-docs/blocks';
 import * as DemoBannerStories from './DemoBanner.stories';
+import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/CssLanguageVariables';
 
 <Meta of={DemoBannerStories} />
 
@@ -32,7 +33,15 @@ import { DemoBanner } from '@udir-design/react';
 
 ## Tekst i DemoBanner
 
-Hvis du skal støtte flere språk eller tilpasse teksten i banneret, kan du overstyre standardteksten med `text`.
+Hvis du trenger å tilpasse teksten i banneret, kan du overstyre standardteksten med `text`.
+
+## Språkstøtte
+
+Komponenten har innebygget støtte for bokmål, nynorsk og engelsk. [Slik støtter du flere språk](/docs/components-språkstøtte--docs).
+
+Følgende tekstvariabler er tilgjengelige for overstyring:
+
+<CssLanguageVariables variables={['--udsc-demo-banner-text']} />
 
 ## Innhold på siden
 
