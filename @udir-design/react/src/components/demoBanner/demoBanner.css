@@ -24,7 +24,7 @@
   overflow: visible;
 
   > .uds-header::after,
-  > div:last-child::before {
+  > div:last-child::after {
     content: var(--udsc-demo-banner-text);
     display: block;
     background: var(--ds-color-warning-base-default);
@@ -37,17 +37,13 @@
     margin-block-end: calc(1lh + (var(--ds-size-2) * 2));
 
     &::after {
-      content: var(--udsc-demo-banner-text);
-      display: block;
       margin-inline-start: calc(-1 * var(--udsc-header-padding));
       margin-inline-end: calc(-1 * var(--udsc-header-padding));
       margin-block-start: var(--udsc-header-padding);
     }
   }
 
-  > div:last-child {
-    &::before {
-      inset-block-end: 0;
-    }
+  > div:last-child::after {
+    inset-block-end: 0;
   }
 }
