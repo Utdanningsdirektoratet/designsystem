@@ -1,21 +1,13 @@
-.uds-demo-banner {
+:root,
+[lang='nb'] {
   --udsc-demo-banner-text: 'Dette er en demo';
 }
 
-[lang|='no'] .uds-demo-banner,
-.uds-demo-banner[lang|='no'],
-[lang|='nb'] .uds-demo-banner,
-.uds-demo-banner[lang|='nb'] {
-  --udsc-demo-banner-text: 'Dette er en demo';
-}
-
-[lang|='nn'] .uds-demo-banner,
-.uds-demo-banner[lang|='nn'] {
+[lang='nn'] {
   --udsc-demo-banner-text: 'Dette er ein demo';
 }
 
-[lang|='en'] .uds-demo-banner,
-.uds-demo-banner[lang|='en'] {
+[lang='en'] {
   --udsc-demo-banner-text: 'This is a demo';
 }
 
