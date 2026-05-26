@@ -21,7 +21,7 @@ const meta = preview.meta({
     'List.Ordered': ListOrdered, // Not subcomponent but want it to be displayed in tab-view for props
     'List.Item': ListItem,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       name: 'List',
