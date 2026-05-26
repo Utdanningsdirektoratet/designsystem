@@ -24,7 +24,7 @@
   overflow: visible;
 
   > .uds-header::after,
-  > .uds-demo-banner-footer::before {
+  > div:last-child::before {
     content: var(--udsc-demo-banner-text);
     display: block;
     background: var(--ds-color-warning-base-default);
@@ -45,7 +45,7 @@
     }
   }
 
-  > .uds-demo-banner-footer {
+  > div:last-child {
     &::before {
       inset-block-end: 0;
     }

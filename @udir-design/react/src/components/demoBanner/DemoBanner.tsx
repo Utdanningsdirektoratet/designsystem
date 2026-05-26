@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 import './demoBanner.css';
 
 export type DemoBannerProps = HTMLAttributes<HTMLDivElement> & {
-  /*
+  /**
    * @default "Dette er en demo"
    */
   text?: string;
@@ -27,7 +27,7 @@ export const DemoBanner = forwardRef<HTMLDivElement, DemoBannerProps>(
         {...rest}
       >
         {children}
-        <div className="uds-demo-banner-footer" aria-hidden />
+        <div aria-hidden />
       </div>
     );
   },
