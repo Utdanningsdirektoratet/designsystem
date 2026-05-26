@@ -3,6 +3,7 @@
  */
 
 export * from './avatar/Avatar';
+export * from './button/Button';
 export * from './checkbox/Checkbox';
 export * from './divider/Divider';
 export * from './footer';

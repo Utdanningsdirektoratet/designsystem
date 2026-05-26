@@ -5,7 +5,6 @@
 export * from './alert';
 export * from './badge/Badge';
 export * from './breadcrumbs/Breadcrumbs';
-export * from './button/Button';
 export * from './card/Card';
 export * from './chip/Chip';
 export * from './demoBanner/DemoBanner';
