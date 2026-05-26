@@ -9,7 +9,10 @@ import type {
 } from 'react';
 import './input.css';
 
-type InputProps = Omit<DigdirInputProps, 'data-color'>;
+type InputProps = Omit<DigdirInputProps, 'data-color'> & {
+  'aria-invalid'?: DigdirInputProps['aria-invalid'];
+  'aria-label'?: DigdirInputProps['aria-label'];
+};
 
 const Input = DigdirInput as ForwardRefExoticComponent<
   InputProps & RefAttributes<ComponentRef<typeof DigdirInput>>

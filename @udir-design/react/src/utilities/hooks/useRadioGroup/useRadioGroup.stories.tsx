@@ -33,8 +33,6 @@ const ageGroups = [
 export const Default = meta.story({
   args: {
     name: 'my-group',
-    readOnly: false,
-    disabled: false,
     value: '10-20',
   },
   render(args) {
@@ -114,8 +112,6 @@ export const Controlled = meta.story({
 const GroupBase = {
   args: {
     name: 'my-group',
-    readOnly: false,
-    disabled: false,
     value: 'sjokolade',
   },
   render(args: UseRadioGroupProps) {

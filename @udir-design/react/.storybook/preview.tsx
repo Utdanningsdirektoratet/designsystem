@@ -4,7 +4,7 @@ import addonA11y from '@storybook/addon-a11y';
 import addonDocs from '@storybook/addon-docs';
 import { definePreview } from '@storybook/react-vite';
 import * as R from 'ramda';
-import { type PreviewAddon } from 'storybook/internal/csf';
+import type { PreviewAddon } from 'storybook/internal/csf';
 import { INITIAL_VIEWPORTS, type ViewportMap } from 'storybook/viewport';
 import storybookAddonPseudoStates from 'storybook-addon-pseudo-states';
 import * as icons from '@udir-design/icons';
@@ -16,6 +16,7 @@ import type {
   ComponentOriginParameters,
   CustomStylesParameters,
 } from './types';
+import { argTypesEnhancer } from './utils/argTypesEnhancer';
 import { CustomStylesDecorator } from './utils/customStylesDecorator';
 
 // Fix icons being displayed as React.ForwardRef in Storybook code examples
@@ -42,6 +43,8 @@ const chromaticViewports = {
 
 export default definePreview({
   tags: ['a11y-test'],
+
+  argTypesEnhancers: [argTypesEnhancer],
 
   parameters: {
     options: {

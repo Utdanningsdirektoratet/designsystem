@@ -639,7 +639,6 @@ exports[`Input Types 1`] = `
 
 exports[`Preview 1`] = `
 <input
-  aria-invalid="false"
   aria-label="input"
   type="text"
   name="inputs"
@@ -1388,13 +1387,13 @@ exports[`Text 1`] = `
         Invalid
       </label>
       <input
-        aria-invalid="true"
         data-size="sm"
         type="text"
         value="Value"
         name="sm-invalid"
         id="<removed>"
         aria-describedby="<removed>"
+        aria-invalid="true"
       >
       <p
         data-field="validation"
@@ -1469,13 +1468,13 @@ exports[`Text 1`] = `
         Invalid
       </label>
       <input
-        aria-invalid="true"
         data-size="md"
         type="text"
         value="Value"
         name="md-invalid"
         id="<removed>"
         aria-describedby="<removed>"
+        aria-invalid="true"
       >
       <p
         data-field="validation"
@@ -1550,13 +1549,13 @@ exports[`Text 1`] = `
         Invalid
       </label>
       <input
-        aria-invalid="true"
         data-size="lg"
         type="text"
         value="Value"
         name="lg-invalid"
         id="<removed>"
         aria-describedby="<removed>"
+        aria-invalid="true"
       >
       <p
         data-field="validation"

@@ -8,7 +8,12 @@ import type {
   RefAttributes,
 } from 'react';
 
-type CheckboxProps = Omit<DigdirCheckboxProps, 'data-color'>;
+type CheckboxProps = Omit<DigdirCheckboxProps, 'data-color' | 'value'> & {
+  /**
+   * Value of the `input` element
+   */
+  value?: string | number; // original type is `string | number | readonly string[]`
+};
 
 const Checkbox = DigdirCheckbox as ForwardRefExoticComponent<
   CheckboxProps & RefAttributes<ComponentRef<typeof DigdirCheckbox>>

@@ -34,7 +34,6 @@ const profileImage =
 export const Preview = meta.story({
   args: {
     'aria-label': 'Ola Nordmann',
-    children: '',
   },
 });
 

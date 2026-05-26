@@ -6,8 +6,7 @@ import type { SelectProps } from '../Select';
  * Storybook controls for Select directly :(
  */
 export const Select: FunctionComponent<
-  SelectProps & {
-    'aria-invalid'?: SelectProps['aria-invalid'];
+  Omit<SelectProps, 'readOnly'> & {
     'aria-readonly'?: SelectProps['aria-readonly'];
   }
 > = () => null;
