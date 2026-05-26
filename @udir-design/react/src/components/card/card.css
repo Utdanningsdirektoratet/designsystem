@@ -15,7 +15,8 @@ Can be removed after the next version of @digdir/designsystemet-css is released 
   /* fix focus style for links with <a> tags (and not <Link>) in heading */
   > :is(h1, h2, h3, h4, h5, h6),
   > .ds-card__block > :is(h1, h2, h3, h4, h5, h6) {
-    &:has(> :focus-visible) {
+    &:has(> :is(a, .ds-link):focus-visible) {
+      /* the :is(...) part in the above selector isn't necessary, but without it storybook-addon-pseudo-states crashes on this rule */
       text-decoration: none;
     }
     > a {
