@@ -6,6 +6,16 @@
 }
 
 .toggleGroup {
+  flex-wrap: wrap;
+  height: auto;
+  min-width: 0;
+  overflow-x: visible;
+
+  label {
+    min-width: 0;
+    white-space: normal;
+  }
+
   @container (max-width: 18.75rem) {
     justify-content: space-between;
     width: 100%;
