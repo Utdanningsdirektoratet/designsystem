@@ -21,6 +21,9 @@ const meta = preview.meta({
       options: ['checkbox', 'switch'],
       if: { arg: 'type', eq: 'checkbox' },
     },
+    'aria-invalid': {
+      control: 'boolean',
+    },
   },
   parameters: {
     componentOrigin: {
@@ -33,9 +36,6 @@ const meta = preview.meta({
 
 export const Preview = meta.story({
   args: {
-    'aria-invalid': false,
-    disabled: false,
-    readOnly: false,
     type: 'text',
     name: 'inputs',
     'aria-label': 'input',
@@ -189,7 +189,7 @@ export const Text = meta.story({
     const states = [
       { label: 'Default', props: {} },
       { label: 'Disabled', props: { disabled: true } },
-      { label: 'Invalid', props: { 'aria-invalid': true } },
+      { label: 'Invalid', props: {} },
       { label: 'Read-only', props: { readOnly: true } },
     ];
 

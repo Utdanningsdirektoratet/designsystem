@@ -29,10 +29,7 @@ const meta = preview.meta({
 
 export const Preview = meta.story({
   args: {
-    'aria-invalid': false,
     width: 'full',
-    disabled: false,
-    readOnly: false,
   },
   render: (args) => (
     <Field>
@@ -87,9 +84,7 @@ export const Preview = meta.story({
 });
 
 export const WithError = meta.story({
-  args: {
-    'aria-invalid': true,
-  },
+  args: {},
   render: (args) => (
     <Field>
       <Label>Fylke</Label>
@@ -221,7 +216,7 @@ export const Disabled = meta.story({
 
 export const ReadOnly = meta.story({
   args: {
-    readOnly: true,
+    'aria-readonly': true,
   },
   render: Preview.input.render,
 });

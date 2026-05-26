@@ -5,11 +5,21 @@ import {
 import type {
   ComponentRef,
   ForwardRefExoticComponent,
+  ReactNode,
   RefAttributes,
 } from 'react';
 import './button.css';
 
 type ButtonProps = Omit<DigdirButtonProps, 'data-color'> & {
+  onClick?: DigdirButtonProps['onClick'];
+  /**
+   * The content of the button
+   */
+  children?: ReactNode;
+  /**
+   * Disable the button. Usually not recommended.
+   */
+  disabled?: DigdirButtonProps['disabled'];
   /**
    * Change the color scheme of the button
    */

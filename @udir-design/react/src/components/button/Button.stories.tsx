@@ -38,9 +38,7 @@ const meta = preview.meta({
 
 export const Preview = meta.story({
   args: {
-    disabled: false,
     variant: 'primary',
-    icon: false,
     onClick: fn(),
     children: 'Knapp',
   },

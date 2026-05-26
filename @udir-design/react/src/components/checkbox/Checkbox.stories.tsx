@@ -13,15 +13,15 @@ const meta = preview.meta({
       details: 'Vi har fjernet mulighet for fargevalg.',
     },
   },
+  argTypes: {
+    onChange: { table: { disable: true } },
+  },
 });
 
 export const Preview = meta.story({
   args: {
     label: 'Checkbox label',
     description: 'Description',
-    disabled: false,
-    readOnly: false,
-    value: 'value',
     onChange: fn(),
     id: 'checkbox-preview',
   },
@@ -123,8 +123,6 @@ export const Focused = meta.story({
   args: {
     label: 'Checkbox label',
     description: 'Description',
-    disabled: false,
-    readOnly: false,
     value: 'value',
     onChange: fn(),
     id: 'checkbox-preview',
