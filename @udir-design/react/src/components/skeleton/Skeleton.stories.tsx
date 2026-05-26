@@ -41,19 +41,23 @@ export const Components = meta.story({
   },
   render: (args) => {
     return (
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '20px',
-        }}
-      >
-        <Skeleton variant="circle" width="50px" {...args} />
-        <Skeleton variant="rectangle" width="100px" {...args} />
-        <Paragraph>
-          <Skeleton variant="text" width="10" {...args} />
-        </Paragraph>
-      </div>
+      <>
+        <style>
+          {`
+.example-main {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}`}
+        </style>
+        <div className="example-main">
+          <Skeleton variant="circle" width="50px" {...args} />
+          <Skeleton variant="rectangle" width="100px" {...args} />
+          <Paragraph>
+            <Skeleton variant="text" width="10" {...args} />
+          </Paragraph>
+        </div>
+      </>
     );
   },
 });
@@ -104,54 +108,73 @@ const StudentData = [
 ];
 
 export const Cards = meta.story({
-  render: () => {
+  render: (args) => {
     return (
-      <div
-        style={{
-          margin: 'var(--ds-size-12)',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 'var(--ds-size-6)',
-        }}
-      >
-        <Heading level={3} data-size="lg">
-          Elever
-        </Heading>
-        <div style={{ display: 'flex', justifyContent: 'end' }}>
-          <Button variant="tertiary">
-            <PlusCircleIcon aria-hidden /> Legg til elev
-          </Button>
-          <Button variant="tertiary">
-            <ArrowsUpDownIcon aria-hidden /> Sorter
-          </Button>
-          <Button variant="tertiary">
-            <FilterIcon aria-hidden /> Filter
-          </Button>
+      <>
+        <style>
+          {`
+.example-main {
+  margin: var(--ds-size-12);
+    display: flex;
+    flex-direction: column;
+    gap: var(--ds-size-6);
+  }
+.example-buttons {
+  display: flex;
+  justify-content: end;
+}
+.example-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--ds-size-6);
+}
+.example-card-block {
+  display: flex;
+  flex-direction: column;
+}`}
+        </style>
+        <div className="example-main">
+          <Heading level={3} data-size="lg">
+            Elever
+          </Heading>
+          <div className="example-buttons">
+            <Button variant="tertiary">
+              <PlusCircleIcon aria-hidden /> Legg til elev
+            </Button>
+            <Button variant="tertiary">
+              <ArrowsUpDownIcon aria-hidden /> Sorter
+            </Button>
+            <Button variant="tertiary">
+              <FilterIcon aria-hidden /> Filter
+            </Button>
+          </div>
+          <div className="example-card">
+            {StudentData.map((student) => (
+              <Card key={student.id}>
+                <Card.Block>
+                  <Skeleton variant="text" {...args}>
+                    {student.name}
+                  </Skeleton>
+                </Card.Block>
+                <Card.Block className="example-card-block">
+                  <Skeleton variant="text" {...args}>
+                    Fødselsdato: {student.birthday}
+                  </Skeleton>
+                  <Skeleton variant="text" {...args}>
+                    Trinn: {student.class}
+                  </Skeleton>
+                  <Skeleton variant="text" {...args}>
+                    Lærer: {student.teacher}
+                  </Skeleton>
+                  <Skeleton variant="text" {...args}>
+                    Vurdert: 23.04.2023
+                  </Skeleton>
+                </Card.Block>
+              </Card>
+            ))}
+          </div>
         </div>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: 'var(--ds-size-6)',
-          }}
-        >
-          {StudentData.map((student) => (
-            <Card key={student.id}>
-              <Card.Block>
-                <Skeleton variant="text">{student.name}</Skeleton>
-              </Card.Block>
-              <Card.Block style={{ display: 'flex', flexDirection: 'column' }}>
-                <Skeleton variant="text">
-                  Fødselsdato: {student.birthday}
-                </Skeleton>
-                <Skeleton variant="text">Trinn: {student.class}</Skeleton>
-                <Skeleton variant="text">Lærer: {student.teacher}</Skeleton>
-                <Skeleton variant="text">Vurdert: 23.04.2023</Skeleton>
-              </Card.Block>
-            </Card>
-          ))}
-        </div>
-      </div>
+      </>
     );
   },
 });
@@ -162,64 +185,68 @@ const schoolImage =
 export const UsageExample = meta.story({
   render: (args) => {
     return (
-      <div
-        style={{
-          display: 'flex',
-          gap: 'var(--ds-size-12)',
-          margin: 'var(--ds-size-12)',
-        }}
-      >
-        <div style={{ flex: '1 1 200px' }}>
-          <Skeleton height="200px" {...args} />
-          <Heading>
-            <Skeleton variant="text" width="15" />
-          </Heading>
-          <div
-            style={{
-              display: 'flex',
-              gap: '10px',
-              alignItems: 'center',
-              padding: '5px 0 5px 0',
-            }}
-          >
-            <Skeleton variant="circle" width="40px" height="40px" {...args} />
-            <Skeleton variant="text" {...args}>
-              Forfatter | sist endret
-            </Skeleton>
+      <>
+        <style>
+          {`
+.example-main {
+  display: flex;
+  gap: var(--ds-size-12);
+  margin: var(--ds-size-12);
+}
+.example-section {
+  flex: 1 1 200px;
+}
+.example-meta {
+  display: flex;
+  gap: var(--ds-size-2);
+  align-items: center;
+  padding-block: var(--ds-size-1);
+}
+.example-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}`}
+        </style>
+        <div className="example-main">
+          <div className="example-section">
+            <Skeleton height="200px" {...args} />
+            <Heading>
+              <Skeleton variant="text" width="15" />
+            </Heading>
+            <div className="example-meta">
+              <Skeleton variant="circle" width="40px" height="40px" {...args} />
+              <Skeleton variant="text" {...args}>
+                Forfatter | sist endret
+              </Skeleton>
+            </div>
+            <Skeleton variant="text" width="260" />
           </div>
-          <Skeleton variant="text" width="260" />
-        </div>
-        <div style={{ flex: '1 1 200px' }}>
-          <img
-            src={schoolImage}
-            alt="Bøker på et bord"
-            style={{
-              width: '100%',
-              height: '200px',
-              objectFit: 'cover',
-              borderRadius: 10,
-            }}
-          />
-          <Heading>Undersøke</Heading>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
-              padding: '5px 0 5px 0',
-            }}
-          >
-            <Avatar data-size="xs" initials="KN" aria-label={'Kari Nordmann'} />
-            <Paragraph>Kari Nordmann | 27.06.2025</Paragraph>
+          <div className="example-section">
+            <img
+              src={schoolImage}
+              alt="Bøker på et bord"
+              className="example-image"
+            />
+            <Heading>Undersøke</Heading>
+            <div className="example-meta">
+              <Avatar
+                data-size="xs"
+                initials="KN"
+                aria-label={'Kari Nordmann'}
+              />
+              <Paragraph>Kari Nordmann | 27.06.2025</Paragraph>
+            </div>
+            <Paragraph>
+              Barnehagen er pliktig til å gjennomføre undersøkelser som med
+              rimelighet kan forventes. Barnehagen må innhente nok informasjon
+              til å avdekke hva som er problemet og hva som gjør at barnet ikke
+              har det trygt og godt.
+            </Paragraph>
           </div>
-          <Paragraph>
-            Barnehagen er pliktig til å gjennomføre undersøkelser som med
-            rimelighet kan forventes. Barnehagen må innhente nok informasjon til
-            å avdekke hva som er problemet og hva som gjør at barnet ikke har
-            det trygt og godt.
-          </Paragraph>
         </div>
-      </div>
+      </>
     );
   },
 });
@@ -246,30 +273,37 @@ export const Text = meta.story({
     variant: 'text',
   },
   render: (args) => (
-    <div
-      style={{
-        display: 'flex',
-        gap: 'var(--ds-size-12)',
-        margin: 'var(--ds-size-12)',
-      }}
-    >
-      <div style={{ flex: '1 1 200px' }}>
-        <Heading>Den kjekkaste leiken</Heading>
-        <Paragraph data-size="sm">
-          Det er verken dyrt eller komplisert å leggje til rette for den leiken
-          barna liker best. Når viser barna mest trivsel i uteleiken? Det ønskte
-          forskarar i forskingsprosjektet «EnCompetence» å finne ut, og dei
-          ville spesielt sjå på situasjonar med fysisk aktivitet.
-        </Paragraph>
+    <>
+      <style>
+        {`
+.example-text {
+  display: flex;
+  gap: var(--ds-size-12);
+  margin: var(--ds-size-12);
+}
+.example-text-column {
+  flex: 1 1 200px;
+}`}
+      </style>
+      <div className="example-text">
+        <div className="example-text-column">
+          <Heading>Den kjekkaste leiken</Heading>
+          <Paragraph data-size="sm">
+            Det er verken dyrt eller komplisert å leggje til rette for den
+            leiken barna liker best. Når viser barna mest trivsel i uteleiken?
+            Det ønskte forskarar i forskingsprosjektet «EnCompetence» å finne
+            ut, og dei ville spesielt sjå på situasjonar med fysisk aktivitet.
+          </Paragraph>
+        </div>
+        <div className="example-text-column">
+          <Heading>
+            <Skeleton {...args}>Den kjekkaste leiken</Skeleton>
+          </Heading>
+          <Paragraph data-size="sm">
+            <Skeleton width={275} {...args} />
+          </Paragraph>
+        </div>
       </div>
-      <div style={{ flex: '1 1 200px' }}>
-        <Heading>
-          <Skeleton {...args}>Den kjekkaste leiken</Skeleton>
-        </Heading>
-        <Paragraph data-size="sm">
-          <Skeleton width={275} {...args} />
-        </Paragraph>
-      </div>
-    </div>
+    </>
   ),
 });

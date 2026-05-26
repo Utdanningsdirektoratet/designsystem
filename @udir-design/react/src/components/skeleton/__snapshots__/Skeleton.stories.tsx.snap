@@ -1,11 +1,32 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Cards 1`] = `
-<div style="<removed>">
+<style>
+  .example-main {
+  margin: var(--ds-size-12);
+    display: flex;
+    flex-direction: column;
+    gap: var(--ds-size-6);
+  }
+.example-buttons {
+  display: flex;
+  justify-content: end;
+}
+.example-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--ds-size-6);
+}
+.example-card-block {
+  display: flex;
+  flex-direction: column;
+}
+</style>
+<div>
   <h3 data-size="lg">
     Elever
   </h3>
-  <div style="<removed>">
+  <div>
     <button
       data-variant="tertiary"
       type="button"
@@ -77,7 +98,7 @@ exports[`Cards 1`] = `
       Filter
     </button>
   </div>
-  <div style="<removed>">
+  <div>
     <div data-variant="default">
       <div>
         <span
@@ -88,7 +109,7 @@ exports[`Cards 1`] = `
           Rita Nordmann
         </span>
       </div>
-      <div style="<removed>">
+      <div>
         <span
           aria-hidden="true"
           data-text="-"
@@ -129,7 +150,7 @@ exports[`Cards 1`] = `
           Ola Nordmann
         </span>
       </div>
-      <div style="<removed>">
+      <div>
         <span
           aria-hidden="true"
           data-text="-"
@@ -170,7 +191,7 @@ exports[`Cards 1`] = `
           Kari Nordmann
         </span>
       </div>
-      <div style="<removed>">
+      <div>
         <span
           aria-hidden="true"
           data-text="-"
@@ -211,7 +232,7 @@ exports[`Cards 1`] = `
           Juliane Nordmann
         </span>
       </div>
-      <div style="<removed>">
+      <div>
         <span
           aria-hidden="true"
           data-text="-"
@@ -252,7 +273,7 @@ exports[`Cards 1`] = `
           Mateo Nordmann
         </span>
       </div>
-      <div style="<removed>">
+      <div>
         <span
           aria-hidden="true"
           data-text="-"
@@ -293,7 +314,7 @@ exports[`Cards 1`] = `
           Kai Nordmann
         </span>
       </div>
-      <div style="<removed>">
+      <div>
         <span
           aria-hidden="true"
           data-text="-"
@@ -349,7 +370,14 @@ exports[`Children 1`] = `
 `;
 
 exports[`Components 1`] = `
-<div style="<removed>">
+<style>
+  .example-main {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+</style>
+<div>
   <span
     aria-hidden="true"
     data-variant="circle"
@@ -383,7 +411,17 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Text 1`] = `
-<div style="<removed>">
+<style>
+  .example-text {
+  display: flex;
+  gap: var(--ds-size-12);
+  margin: var(--ds-size-12);
+}
+.example-text-column {
+  flex: 1 1 200px;
+}
+</style>
+<div>
   <div>
     <h2>
       Den kjekkaste leiken
@@ -421,8 +459,30 @@ exports[`Text 1`] = `
 `;
 
 exports[`Usage Example 1`] = `
-<div style="<removed>">
-  <div style="<removed>">
+<style>
+  .example-main {
+  display: flex;
+  gap: var(--ds-size-12);
+  margin: var(--ds-size-12);
+}
+.example-section {
+  flex: 1 1 200px;
+}
+.example-meta {
+  display: flex;
+  gap: var(--ds-size-2);
+  align-items: center;
+  padding-block: var(--ds-size-1);
+}
+.example-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+</style>
+<div>
+  <div>
     <span
       aria-hidden="true"
       data-variant="rectangle"
@@ -437,7 +497,7 @@ exports[`Usage Example 1`] = `
       >
       </span>
     </h2>
-    <div style="<removed>">
+    <div>
       <span
         aria-hidden="true"
         data-variant="circle"
@@ -459,16 +519,15 @@ exports[`Usage Example 1`] = `
     >
     </span>
   </div>
-  <div style="<removed>">
+  <div>
     <img
       alt="Bøker på et bord"
       src="https://images.unsplash.com/photo-1516383607781-913a19294fd1?q=80&amp;w=2374&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      style="<removed>"
     >
     <h2>
       Undersøke
     </h2>
-    <div style="<removed>">
+    <div>
       <span
         data-variant="circle"
         data-initials="KN"
