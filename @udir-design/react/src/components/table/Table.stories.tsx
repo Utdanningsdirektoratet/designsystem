@@ -3,6 +3,7 @@ import type React from 'react';
 import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Checkbox } from 'src/components/checkbox';
 import { Tag } from 'src/components/tag';
 import { Textfield } from 'src/components/textfield';
@@ -154,77 +155,106 @@ export const ColumnAndRowHeaders = meta.story({
     tintedRowHeader: true,
   },
   render: (args) => (
-    <Table {...args} data-color="accent">
-      <caption
-        style={{
-          fontSize: 'var(--ds-font-size-3)',
-          captionSide: 'bottom',
-          textAlign: 'center',
-          fontWeight: 'normal',
-          marginTop: 'var(--ds-size-2)',
-        }}
-      >
-        Svarprosent for elevundersøkelsen nasjonalt
-      </caption>
-      <Table.Head>
-        <Table.Row>
-          <Table.Cell />
-          <Table.HeaderCell scope="col">2022-23</Table.HeaderCell>
-          <Table.HeaderCell scope="col">2023-24</Table.HeaderCell>
-          <Table.HeaderCell scope="col">2024-25</Table.HeaderCell>
-        </Table.Row>
-      </Table.Head>
-      <Table.Body style={{ textAlign: 'right' }}>
-        <Table.Row>
-          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
-            8. trinn
-          </Table.HeaderCell>
-          <Table.Cell>88,5%</Table.Cell>
-          <Table.Cell>86,3%</Table.Cell>
-          <Table.Cell>85,3%</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
-            9. trinn
-          </Table.HeaderCell>
-          <Table.Cell>88,7%</Table.Cell>
-          <Table.Cell>86,3%</Table.Cell>
-          <Table.Cell>84,9%</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
-            10. trinn
-          </Table.HeaderCell>
-          <Table.Cell>89,7%</Table.Cell>
-          <Table.Cell>87,3%</Table.Cell>
-          <Table.Cell>85,7%</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
-            Vg1
-          </Table.HeaderCell>
-          <Table.Cell>84,8%</Table.Cell>
-          <Table.Cell>82,8%</Table.Cell>
-          <Table.Cell>83,1%</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
-            Vg2
-          </Table.HeaderCell>
-          <Table.Cell>82,5%</Table.Cell>
-          <Table.Cell>80,0%</Table.Cell>
-          <Table.Cell>80,3%</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
-            Vg3
-          </Table.HeaderCell>
-          <Table.Cell>79,9%</Table.Cell>
-          <Table.Cell>75,7%</Table.Cell>
-          <Table.Cell>76,9%</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    </Table>
+    <>
+      <style>
+        {`
+.example-caption {
+  font-size: var(--ds-font-size-3);
+  caption-side: bottom;
+  text-align: center;
+  font-weight: normal;
+  margin-top: var(--ds-size-2);
+}
+.example-table-body {
+  text-align: right;
+}
+.example-table-body-headercell {
+  text-align: left;
+}
+`}
+      </style>
+      <Table {...args} data-color="accent">
+        <caption className="example-caption">
+          Svarprosent for elevundersøkelsen nasjonalt
+        </caption>
+        <Table.Head>
+          <Table.Row>
+            <Table.Cell />
+            <Table.HeaderCell scope="col">2022-23</Table.HeaderCell>
+            <Table.HeaderCell scope="col">2023-24</Table.HeaderCell>
+            <Table.HeaderCell scope="col">2024-25</Table.HeaderCell>
+          </Table.Row>
+        </Table.Head>
+        <Table.Body className="example-table-body">
+          <Table.Row>
+            <Table.HeaderCell
+              scope="row"
+              className="example-table-body-headercell"
+            >
+              8. trinn
+            </Table.HeaderCell>
+            <Table.Cell>88,5%</Table.Cell>
+            <Table.Cell>86,3%</Table.Cell>
+            <Table.Cell>85,3%</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.HeaderCell
+              scope="row"
+              className="example-table-body-headercell"
+            >
+              9. trinn
+            </Table.HeaderCell>
+            <Table.Cell>88,7%</Table.Cell>
+            <Table.Cell>86,3%</Table.Cell>
+            <Table.Cell>84,9%</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.HeaderCell
+              scope="row"
+              className="example-table-body-headercell"
+            >
+              10. trinn
+            </Table.HeaderCell>
+            <Table.Cell>89,7%</Table.Cell>
+            <Table.Cell>87,3%</Table.Cell>
+            <Table.Cell>85,7%</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.HeaderCell
+              scope="row"
+              className="example-table-body-headercell"
+            >
+              Vg1
+            </Table.HeaderCell>
+            <Table.Cell>84,8%</Table.Cell>
+            <Table.Cell>82,8%</Table.Cell>
+            <Table.Cell>83,1%</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.HeaderCell
+              scope="row"
+              className="example-table-body-headercell"
+            >
+              Vg2
+            </Table.HeaderCell>
+            <Table.Cell>82,5%</Table.Cell>
+            <Table.Cell>80,0%</Table.Cell>
+            <Table.Cell>80,3%</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.HeaderCell
+              scope="row"
+              className="example-table-body-headercell"
+            >
+              Vg3
+            </Table.HeaderCell>
+            <Table.Cell>79,9%</Table.Cell>
+            <Table.Cell>75,7%</Table.Cell>
+            <Table.Cell>76,9%</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table>
+    </>
   ),
 });
 
@@ -290,6 +320,7 @@ const tagColor = (status: string) => {
 };
 
 export const Sortable = meta.story({
+  parameters: { docs: advancedCodeDocs },
   render(args) {
     const [sortField, setSortField] = useState<
       keyof (typeof dummyData)[0] | null
@@ -389,19 +420,29 @@ export const StickyHeader = meta.story({
   render: (args) => {
     return (
       <>
-        <Heading style={{ marginBottom: 'var(--ds-size-3)' }}>
+        <style>
+          {`
+.example-heading {
+  margin-bottom: var(--ds-size-3);
+}
+.example-main {
+  height: 420px;
+  width: 580px;
+  overflow: auto;
+  padding: 0;
+}
+.example-table-body {
+  text-align: right;
+}
+.example-table-body-headercell {
+  text-align: left;
+}
+`}
+        </style>
+        <Heading className="example-heading">
           Ansattes utdanning fordelt på eiertype (ordinære), 2021
         </Heading>
-        <div
-          role="region"
-          tabIndex={0}
-          style={{
-            height: '420px',
-            width: '580px',
-            overflow: 'auto',
-            padding: 0,
-          }}
-        >
+        <div role="region" tabIndex={0} className="example-main">
           <Table {...args}>
             <caption className="ds-sr-only">
               Ansattes utdanning fordelt på eiertype (ordinære), 2021
@@ -418,9 +459,12 @@ export const StickyHeader = meta.story({
                 <Table.HeaderCell>Totalt</Table.HeaderCell>
               </Table.Row>
             </Table.Head>
-            <Table.Body style={{ textAlign: 'right' }}>
+            <Table.Body className="example-table-body">
               <Table.Row>
-                <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+                <Table.HeaderCell
+                  scope="row"
+                  className="example-table-body-headercell"
+                >
                   Barnehagelærer
                 </Table.HeaderCell>
                 <Table.Cell>42,9%</Table.Cell>
@@ -430,7 +474,10 @@ export const StickyHeader = meta.story({
                 <Table.Cell>43,6%</Table.Cell>
               </Table.Row>
               <Table.Row>
-                <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+                <Table.HeaderCell
+                  scope="row"
+                  className="example-table-body-headercell"
+                >
                   Annen pedagogisk utdanning
                 </Table.HeaderCell>
                 <Table.Cell>1,9%</Table.Cell>
@@ -440,7 +487,10 @@ export const StickyHeader = meta.story({
                 <Table.Cell>1,7%</Table.Cell>
               </Table.Row>
               <Table.Row>
-                <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+                <Table.HeaderCell
+                  scope="row"
+                  className="example-table-body-headercell"
+                >
                   Annen høyere utdanning
                 </Table.HeaderCell>
                 <Table.Cell>2,2%</Table.Cell>
@@ -450,7 +500,10 @@ export const StickyHeader = meta.story({
                 <Table.Cell>1,8%</Table.Cell>
               </Table.Row>
               <Table.Row>
-                <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+                <Table.HeaderCell
+                  scope="row"
+                  className="example-table-body-headercell"
+                >
                   Barne- og ungdomsarbeider
                 </Table.HeaderCell>
                 <Table.Cell>15,0%</Table.Cell>
@@ -460,7 +513,10 @@ export const StickyHeader = meta.story({
                 <Table.Cell>22,3%</Table.Cell>
               </Table.Row>
               <Table.Row>
-                <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+                <Table.HeaderCell
+                  scope="row"
+                  className="example-table-body-headercell"
+                >
                   Annet fagarbeider
                 </Table.HeaderCell>
                 <Table.Cell>5,2%</Table.Cell>
@@ -470,7 +526,10 @@ export const StickyHeader = meta.story({
                 <Table.Cell>5,2%</Table.Cell>
               </Table.Row>
               <Table.Row>
-                <Table.HeaderCell scope="row" style={{ textAlign: 'left' }}>
+                <Table.HeaderCell
+                  scope="row"
+                  className="example-table-body-headercell"
+                >
                   Annen bakgrunn
                 </Table.HeaderCell>
                 <Table.Cell>32,8%</Table.Cell>
@@ -495,107 +554,124 @@ export const WithFormElements = meta.story({
     });
 
     return (
-      <Table {...args}>
-        <Table.Head>
-          <Table.Row>
-            <Table.HeaderCell>
-              <Checkbox
-                aria-label="Select all"
-                {...getCheckboxProps({
-                  allowIndeterminate: true,
-                  id: `${ctx.id}-selectAll`,
-                })}
-              />
-            </Table.HeaderCell>
-            <Table.HeaderCell>nr.</Table.HeaderCell>
-            <Table.HeaderCell>Spørsmål</Table.HeaderCell>
-            <Table.HeaderCell>Alternativ 1</Table.HeaderCell>
-            <Table.HeaderCell>Alternativ 2</Table.HeaderCell>
-          </Table.Row>
-        </Table.Head>
-        <Table.Body
-          style={{
-            alignContent: 'start',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <Table.Row>
-            <Table.Cell>
-              <Checkbox
-                aria-label={`Check 1`}
-                {...getCheckboxProps({
-                  id: `${ctx.id}-select1`,
-                  value: '1',
-                })}
-              />
-            </Table.Cell>
-            <Table.Cell>1.</Table.Cell>
-            <Table.Cell style={{ minWidth: 200 }}>
-              <Textfield
-                data-size="sm"
-                value="Trives du på skolen?"
-                aria-label={`Textfield 1-1`}
-                autoComplete="off"
-              />
-            </Table.Cell>
-            <Table.Cell style={{ minWidth: 200 }}>
-              <Textfield
-                data-size="sm"
-                value="Trives ikke noe særlig"
-                aria-label={`Textfield 1-2`}
-                autoComplete="off"
-              />
-            </Table.Cell>
-            <Table.Cell style={{ minWidth: 200 }}>
-              <Textfield
-                value="Trives godt"
-                data-size="sm"
-                aria-label={`Textfield 1-3`}
-                autoComplete="off"
-              />
-            </Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>
-              <Checkbox
-                aria-label={`Check 2`}
-                {...getCheckboxProps({
-                  id: `${ctx.id}-select2`,
-                  value: '2',
-                })}
-              />
-            </Table.Cell>
-            <Table.Cell>2.</Table.Cell>
-            <Table.Cell>
-              <Textfield
-                data-size="sm"
-                value="Har du opplevd mobbing?"
-                aria-label={`Textfield 2-1`}
-                autoComplete="off"
-                style={{ width: 250 }}
-              />
-            </Table.Cell>
-            <Table.Cell>
-              <Textfield
-                data-size="sm"
-                value="Sjelden"
-                aria-label={`Textfield 2-2`}
-                autoComplete="off"
-              />
-            </Table.Cell>
-            <Table.Cell>
-              <Textfield
-                cols={3}
-                value="Ofte"
-                data-size="sm"
-                aria-label={`Textfield 2-3`}
-                autoComplete="off"
-              />
-            </Table.Cell>
-          </Table.Row>
-        </Table.Body>
-      </Table>
+      <>
+        <style>
+          {`
+.example-main {
+  height: 420px;
+  width: 580px;
+  overflow: auto;
+  padding: 0;
+}
+.example-table-body {
+  alignContent: 'start',
+  justifyContent: 'center',
+  alignItems: 'center',
+}
+.example-table-body-cell {
+  minWidth: 200px;
+}
+.example-textfield {
+  minWidth: 250px;
+}
+`}
+        </style>
+        <Table {...args}>
+          <Table.Head>
+            <Table.Row>
+              <Table.HeaderCell>
+                <Checkbox
+                  aria-label="Select all"
+                  {...getCheckboxProps({
+                    allowIndeterminate: true,
+                    id: `${ctx.id}-selectAll`,
+                  })}
+                />
+              </Table.HeaderCell>
+              <Table.HeaderCell>nr.</Table.HeaderCell>
+              <Table.HeaderCell>Spørsmål</Table.HeaderCell>
+              <Table.HeaderCell>Alternativ 1</Table.HeaderCell>
+              <Table.HeaderCell>Alternativ 2</Table.HeaderCell>
+            </Table.Row>
+          </Table.Head>
+          <Table.Body className="example-table-body">
+            <Table.Row>
+              <Table.Cell>
+                <Checkbox
+                  aria-label={`Check 1`}
+                  {...getCheckboxProps({
+                    id: `${ctx.id}-select1`,
+                    value: '1',
+                  })}
+                />
+              </Table.Cell>
+              <Table.Cell>1.</Table.Cell>
+              <Table.Cell className="example-table-body-cell">
+                <Textfield
+                  data-size="sm"
+                  value="Trives du på skolen?"
+                  aria-label={`Textfield 1-1`}
+                  autoComplete="off"
+                />
+              </Table.Cell>
+              <Table.Cell className="example-table-body-cell">
+                <Textfield
+                  data-size="sm"
+                  value="Trives ikke noe særlig"
+                  aria-label={`Textfield 1-2`}
+                  autoComplete="off"
+                />
+              </Table.Cell>
+              <Table.Cell className="example-table-body-cell">
+                <Textfield
+                  value="Trives godt"
+                  data-size="sm"
+                  aria-label={`Textfield 1-3`}
+                  autoComplete="off"
+                />
+              </Table.Cell>
+            </Table.Row>
+            <Table.Row>
+              <Table.Cell>
+                <Checkbox
+                  aria-label={`Check 2`}
+                  {...getCheckboxProps({
+                    id: `${ctx.id}-select2`,
+                    value: '2',
+                  })}
+                />
+              </Table.Cell>
+              <Table.Cell>2.</Table.Cell>
+              <Table.Cell>
+                <Textfield
+                  data-size="sm"
+                  value="Har du opplevd mobbing?"
+                  aria-label={`Textfield 2-1`}
+                  autoComplete="off"
+                  className="example-textfield"
+                />
+              </Table.Cell>
+              <Table.Cell>
+                <Textfield
+                  data-size="sm"
+                  value="Sjelden"
+                  aria-label={`Textfield 2-2`}
+                  autoComplete="off"
+                />
+              </Table.Cell>
+              <Table.Cell>
+                <Textfield
+                  cols={3}
+                  value="Ofte"
+                  data-size="sm"
+                  aria-label={`Textfield 2-3`}
+                  autoComplete="off"
+                />
+              </Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>
+      </>
     );
   },
 });
@@ -679,6 +755,7 @@ const dummyDataKommune = [
 ];
 
 export const FixedTable = meta.story({
+  parameters: { docs: advancedCodeDocs },
   render: (args) => {
     const [page, setCurrentPage] = useState(1);
     const { pages, nextButtonProps, prevButtonProps } = usePagination({
@@ -700,15 +777,28 @@ export const FixedTable = meta.story({
     );
 
     return (
-      <div>
-        <Table
-          {...args}
-          id="myTable"
-          style={{
-            tableLayout: 'fixed',
-            marginBottom: '12px',
-          }}
-        >
+      <>
+        <style>
+          {`
+.example-main {
+  height: 420px;
+  width: 580px;
+  overflow: auto;
+  padding: 0;
+}
+.example-table {
+  table-layout: fixed;
+  margin-bottom: 12px;
+}
+.example-table-body-cell {
+  font-feature-settings: "'tnum' 1",
+}
+.example-textfield {
+  min-width: 250px;
+}
+`}
+        </style>
+        <Table {...args} id="myTable" className="example-table">
           <caption>Tildeling skolebibliotek 2024</caption>
           <Table.Head>
             <Table.Row>
@@ -720,11 +810,7 @@ export const FixedTable = meta.story({
             {currentItems.map((item) => (
               <Table.Row key={item.id}>
                 <Table.Cell>{item.kommune}</Table.Cell>
-                <Table.Cell
-                  style={{
-                    fontFeatureSettings: "'tnum' 1",
-                  }}
-                >
+                <Table.Cell className="example-table-body-cell">
                   {item.tildeling}
                 </Table.Cell>
               </Table.Row>
@@ -757,7 +843,7 @@ export const FixedTable = meta.story({
             </Pagination.Item>
           </Pagination.List>
         </Pagination>
-      </div>
+      </>
     );
   },
 });
@@ -776,70 +862,106 @@ export const MultipleHeaderRows = meta.story({
   },
   render: (args) => {
     return (
-      <Table {...args}>
-        <Table.Head>
-          <Table.Row>
-            <Table.HeaderCell scope="col">
-              <span className="ds-sr-only">Radkategori</span>
-            </Table.HeaderCell>
-            <Table.HeaderCell colSpan={5} style={{ textAlign: 'center' }}>
-              Trives du på skolen?
-            </Table.HeaderCell>
-          </Table.Row>
-          <Table.Row>
-            <Table.HeaderCell scope="col">
-              <span className="ds-sr-only">Radkategori</span>
-            </Table.HeaderCell>
-            <Table.HeaderCell>Trives ikke i det hele tatt</Table.HeaderCell>
-            <Table.HeaderCell>Trives ikke noe særlig</Table.HeaderCell>
-            <Table.HeaderCell>Trives litt</Table.HeaderCell>
-            <Table.HeaderCell>Trives godt</Table.HeaderCell>
-            <Table.HeaderCell>Trives svært godt</Table.HeaderCell>
-          </Table.Row>
-        </Table.Head>
-        <Table.Body style={{ textAlign: 'right' }}>
-          <Table.Row>
-            <Table.HeaderCell scope={'row'} style={{ textAlign: 'left' }}>
-              Idrettsfag
-            </Table.HeaderCell>
-            <Table.Cell>0,5%</Table.Cell>
-            <Table.Cell>1,0%</Table.Cell>
-            <Table.Cell>5,7%</Table.Cell>
-            <Table.Cell>46,0%</Table.Cell>
-            <Table.Cell>46,9%</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.HeaderCell scope={'row'} style={{ textAlign: 'left' }}>
-              Medier og kommunikasjon
-            </Table.HeaderCell>
-            <Table.Cell>1,2%</Table.Cell>
-            <Table.Cell>1,9%</Table.Cell>
-            <Table.Cell>11,3%</Table.Cell>
-            <Table.Cell>49,4%</Table.Cell>
-            <Table.Cell>36,1%</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.HeaderCell scope={'row'} style={{ textAlign: 'left' }}>
-              Musikk, dans og drama
-            </Table.HeaderCell>
-            <Table.Cell>-</Table.Cell>
-            <Table.Cell>-</Table.Cell>
-            <Table.Cell>7,0%</Table.Cell>
-            <Table.Cell>41,9%</Table.Cell>
-            <Table.Cell>49,8%</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.HeaderCell scope={'row'} style={{ textAlign: 'left' }}>
-              Studiespesialisering
-            </Table.HeaderCell>
-            <Table.Cell>1,2%</Table.Cell>
-            <Table.Cell>1,8%</Table.Cell>
-            <Table.Cell>8,9%</Table.Cell>
-            <Table.Cell>49,8%</Table.Cell>
-            <Table.Cell>38,3%</Table.Cell>
-          </Table.Row>
-        </Table.Body>
-      </Table>
+      <>
+        <style>
+          {`
+.example-table-head-headercell {
+  text-align: center;
+}
+.example-table-body {
+  align-items: center;
+}
+.example-table-body-headercell {
+  text-align: left;
+}
+.example-table-body-cell {
+  minWidth: 200px;
+}
+.example-table-body-textfield {
+  minWidth: 250px;
+}
+`}
+        </style>
+        <Table {...args}>
+          <Table.Head>
+            <Table.Row>
+              <Table.HeaderCell scope="col">
+                <span className="ds-sr-only">Radkategori</span>
+              </Table.HeaderCell>
+              <Table.HeaderCell
+                colSpan={5}
+                className="example-table-head-headercell"
+              >
+                Trives du på skolen?
+              </Table.HeaderCell>
+            </Table.Row>
+            <Table.Row>
+              <Table.HeaderCell scope="col">
+                <span className="ds-sr-only">Radkategori</span>
+              </Table.HeaderCell>
+              <Table.HeaderCell>Trives ikke i det hele tatt</Table.HeaderCell>
+              <Table.HeaderCell>Trives ikke noe særlig</Table.HeaderCell>
+              <Table.HeaderCell>Trives litt</Table.HeaderCell>
+              <Table.HeaderCell>Trives godt</Table.HeaderCell>
+              <Table.HeaderCell>Trives svært godt</Table.HeaderCell>
+            </Table.Row>
+          </Table.Head>
+          <Table.Body className="example-table-body">
+            <Table.Row>
+              <Table.HeaderCell
+                scope={'row'}
+                className="example-table-body-headercell"
+              >
+                Idrettsfag
+              </Table.HeaderCell>
+              <Table.Cell>0,5%</Table.Cell>
+              <Table.Cell>1,0%</Table.Cell>
+              <Table.Cell>5,7%</Table.Cell>
+              <Table.Cell>46,0%</Table.Cell>
+              <Table.Cell>46,9%</Table.Cell>
+            </Table.Row>
+            <Table.Row>
+              <Table.HeaderCell
+                scope={'row'}
+                className="example-table-body-headercell"
+              >
+                Medier og kommunikasjon
+              </Table.HeaderCell>
+              <Table.Cell>1,2%</Table.Cell>
+              <Table.Cell>1,9%</Table.Cell>
+              <Table.Cell>11,3%</Table.Cell>
+              <Table.Cell>49,4%</Table.Cell>
+              <Table.Cell>36,1%</Table.Cell>
+            </Table.Row>
+            <Table.Row>
+              <Table.HeaderCell
+                scope={'row'}
+                className="example-table-body-headercell"
+              >
+                Musikk, dans og drama
+              </Table.HeaderCell>
+              <Table.Cell>-</Table.Cell>
+              <Table.Cell>-</Table.Cell>
+              <Table.Cell>7,0%</Table.Cell>
+              <Table.Cell>41,9%</Table.Cell>
+              <Table.Cell>49,8%</Table.Cell>
+            </Table.Row>
+            <Table.Row>
+              <Table.HeaderCell
+                scope={'row'}
+                className="example-table-body-headercell"
+              >
+                Studiespesialisering
+              </Table.HeaderCell>
+              <Table.Cell>1,2%</Table.Cell>
+              <Table.Cell>1,8%</Table.Cell>
+              <Table.Cell>8,9%</Table.Cell>
+              <Table.Cell>49,8%</Table.Cell>
+              <Table.Cell>38,3%</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>
+      </>
     );
   },
 });
