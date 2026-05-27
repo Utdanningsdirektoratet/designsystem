@@ -236,96 +236,74 @@ export const Controlled = meta.story({
   render: (args) => {
     const [tab, setTab] = useState('users');
     return (
-      <Tabs {...args} value={tab} onChange={setTab}>
-        <Tabs.List>
-          <Tabs.Tab value="users">
-            <PersonGroupIcon aria-hidden />
-            Brukere
-          </Tabs.Tab>
-          <Tabs.Tab value="profile">
-            <PersonIcon aria-hidden />
-            Din profil
-          </Tabs.Tab>
-        </Tabs.List>
-        <Tabs.Panel value="users">
-          <List.Unordered
-            style={{
-              listStyle: 'none',
-              padding: 0,
-            }}
-          >
-            <List.Item
-              style={{
-                display: 'flex',
-              }}
-            >
-              <Button variant="secondary" onClick={() => setTab('profile')}>
-                <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde
-                Hansen (deg)
-              </Button>
-            </List.Item>
-            <List.Item
-              style={{
-                display: 'flex',
-              }}
-            >
-              <Link
-                href="#"
-                style={{
-                  alignItems: 'center',
-                  display: 'flex',
-                  gap: 'var(--ds-size-2)',
-                }}
-              >
-                <Avatar aria-label="Bruker 2" data-color="support1" />
-                Stian Stølan
-              </Link>
-            </List.Item>
-            <List.Item
-              style={{
-                display: 'flex',
-              }}
-            >
-              <Link
-                href="#"
-                style={{
-                  alignItems: 'center',
-                  display: 'flex',
-                  gap: 'var(--ds-size-2)',
-                }}
-              >
-                <Avatar aria-label="Bruker 3" data-color="support2" />
-                Lina Larsen
-              </Link>
-            </List.Item>
-          </List.Unordered>
-        </Tabs.Panel>
-        <Tabs.Panel value="profile">
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 'var(--ds-size-2)',
-            }}
-          >
-            <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde Hansen
-          </div>
+      <>
+        <style>
+          {`
+          .example-list-unordered {
+            list-style: none;
+            padding: 0;
+          }
+          .example-list-item {
+            display: flex;
+           }
+          .example-list-content {
+            align-items: center;
+            display: flex;
+            gap: var(--ds-size-2);
+          }
+          .example-list-header {
+            margin-bottom: var(--ds-size-2);
+            margin-top: var(--ds-size-4);
+          }`}
+        </style>
+        <Tabs {...args} value={tab} onChange={setTab}>
+          <Tabs.List>
+            <Tabs.Tab value="users">
+              <PersonGroupIcon aria-hidden />
+              Brukere
+            </Tabs.Tab>
+            <Tabs.Tab value="profile">
+              <PersonIcon aria-hidden />
+              Din profil
+            </Tabs.Tab>
+          </Tabs.List>
+          <Tabs.Panel value="users">
+            <List.Unordered className="example-list-unordered">
+              <List.Item className="example-list-item">
+                <Button variant="secondary" onClick={() => setTab('profile')}>
+                  <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde
+                  Hansen (deg)
+                </Button>
+              </List.Item>
+              <List.Item className="example-list-item">
+                <Link href="#" className="example-list-content">
+                  <Avatar aria-label="Bruker 2" data-color="support1" />
+                  Stian Stølan
+                </Link>
+              </List.Item>
+              <List.Item className="example-list-item">
+                <Link href="#" className="example-list-content">
+                  <Avatar aria-label="Bruker 3" data-color="support2" />
+                  Lina Larsen
+                </Link>
+              </List.Item>
+            </List.Unordered>
+          </Tabs.Panel>
+          <Tabs.Panel value="profile">
+            <div className="example-list-content">
+              <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde Hansen
+            </div>
 
-          <Heading
-            level={3}
-            style={{
-              marginBottom: 'var(--ds-size-2)',
-              marginTop: 'var(--ds-size-4)',
-            }}
-          >
-            Detaljer
-          </Heading>
-          <Paragraph>34 år</Paragraph>
-          <Paragraph>Mysen, Norge</Paragraph>
-          <Paragraph>Lærer</Paragraph>
-          <Paragraph>Mysen Videregående skole</Paragraph>
-        </Tabs.Panel>
-      </Tabs>
+            <Heading level={3} className="example-list-header">
+              Detaljer
+            </Heading>
+            <Paragraph>34 år</Paragraph>
+            <Paragraph>Mysen, Norge</Paragraph>
+            <Paragraph>Lærer</Paragraph>
+            <Paragraph>Mysen Videregående skole</Paragraph>
+          </Tabs.Panel>
+        </Tabs>
+      </>
     );
   },
 });
