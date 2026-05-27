@@ -54,6 +54,14 @@ export const Floating = meta.story({
   },
   render: (args) => (
     <>
+      <style>
+        {`
+.example-avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}`}
+      </style>
       <Badge.Position placement="top-right">
         <Badge {...args} />
         <EnvelopeClosedFillIcon title="Meldinger" />
@@ -72,47 +80,19 @@ export const Floating = meta.story({
       </Badge.Position>
       <Badge.Position placement="top-right" overlap="circle">
         <Badge {...args} />
-        <Avatar
-          style={{
-            width: '2rem',
-            height: '2rem',
-            borderRadius: '50%',
-          }}
-          aria-label={'Avatar 1'}
-        />
+        <Avatar className="example-avatar" aria-label={'Avatar 1'} />
       </Badge.Position>
       <Badge.Position placement="top-left" overlap="circle">
         <Badge {...args} />
-        <Avatar
-          style={{
-            width: '2rem',
-            height: '2rem',
-            borderRadius: '50%',
-          }}
-          aria-label={'Avatar 1'}
-        />
+        <Avatar className="example-avatar" aria-label={'Avatar 1'} />
       </Badge.Position>
       <Badge.Position placement="bottom-right" overlap="circle">
         <Badge {...args} />
-        <Avatar
-          style={{
-            width: '2rem',
-            height: '2rem',
-            borderRadius: '50%',
-          }}
-          aria-label={'Avatar 1'}
-        />
+        <Avatar className="example-avatar" aria-label={'Avatar 1'} />
       </Badge.Position>
       <Badge.Position placement="bottom-left" overlap="circle">
         <Badge {...args} />
-        <Avatar
-          style={{
-            width: '2rem',
-            height: '2rem',
-            borderRadius: '50%',
-          }}
-          aria-label={'Avatar 1'}
-        />
+        <Avatar className="example-avatar" aria-label={'Avatar 1'} />
       </Badge.Position>
     </>
   ),
@@ -139,12 +119,10 @@ export const CustomPlacement = meta.story({
 export const Status = meta.story({
   args: { 'data-color': 'danger' },
   render: (args) => (
-    <div>
       <Badge.Position data-size="lg">
         <Badge {...args} />
         <FloppydiskFillIcon title="Lagre" />
       </Badge.Position>
-    </div>
   ),
 });
 
@@ -252,7 +230,7 @@ const ColorsMap: {
 };
 
 export const ColorVariants = meta.story({
-  render: () => (
+  render: (args) => (
     <div
       style={{
         display: 'grid',
@@ -264,69 +242,67 @@ export const ColorVariants = meta.story({
       }}
     >
       {Object.entries(ColorsMap).map(([key, value]) => (
-        <Badge key={key} {...value} count={15} maxCount={9} />
+        <Badge key={key} {...value} count={15} maxCount={9} {...args} />
       ))}
     </div>
   ),
 });
 
 export const SystemAlerts = meta.story({
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', width: '30rem' }}>
-      <Heading style={{ marginBlockEnd: 'var(--ds-size-4' }}>
-        Systemvarsler
-      </Heading>
-      <Details>
-        <Details.Summary>
-          Kritisk <Badge count={2} maxCount={9} data-color="danger" />
-        </Details.Summary>
-        <Details.Content
-          style={{
-            gap: 'var(--ds-size-4)',
-            display: 'flex',
-            flexDirection: 'column',
-          }}
-        >
-          {Array.from({ length: 2 }, (_, index) => (
-            <Varsel key={index} importance="danger" />
-          ))}
-        </Details.Content>
-      </Details>
-      <Details>
-        <Details.Summary>
-          Advarsler <Badge count={6} maxCount={9} data-color="warning" />
-        </Details.Summary>
-        <Details.Content
-          style={{
-            gap: 'var(--ds-size-4)',
-            display: 'flex',
-            flexDirection: 'column',
-          }}
-        >
-          {Array.from({ length: 6 }, (_, index) => (
-            <Varsel key={index} importance="warning" />
-          ))}
-        </Details.Content>
-      </Details>
-      <Details>
-        <Details.Summary>
-          Andre hendelser <Badge count={11} maxCount={9} data-color="info" />
-        </Details.Summary>
-        <Details.Content>
-          <Details.Content
-            style={{
-              gap: 'var(--ds-size-4)',
-              display: 'flex',
-              flexDirection: 'column',
-            }}
-          >
-            {Array.from({ length: 11 }, (_, index) => (
-              <Varsel key={index} importance="info" />
+  render: (args) => (
+    <>
+      <style>
+        {`
+.example-main {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+}
+.example-heading {
+  margin-block-end: var(--ds-size-4);
+}
+.example-details-content {
+  gap: var(--ds-size-4);
+  display: flex;
+  flex-direction: column;
+}`}
+      </style>
+      <div className="example-main">
+        <Heading className="example-heading">
+          Systemvarsler
+        </Heading>
+        <Details>
+          <Details.Summary>
+            Kritisk <Badge count={2} maxCount={9} data-color="danger" {...args}/>
+          </Details.Summary>
+          <Details.Content className="example-details-content">
+            {Array.from({ length: 2 }, (_) => (
+              <Varsel importance="danger" />
             ))}
           </Details.Content>
-        </Details.Content>
-      </Details>
-    </div>
+        </Details>
+        <Details>
+          <Details.Summary>
+            Advarsler <Badge count={6} maxCount={9} data-color="warning" {...args}/>
+          </Details.Summary>
+          <Details.Content className="example-details-content">
+            {Array.from({ length: 6 }, (_) => (
+              <Varsel importance="warning" />
+            ))}
+          </Details.Content>
+        </Details>
+        <Details>
+          <Details.Summary>
+            Andre hendelser <Badge count={11} maxCount={9} data-color="info" {...args}/>
+          </Details.Summary>
+          <Details.Content className="example-details-content">
+              {Array.from({ length: 11 }, (_) => (
+                <Varsel importance="info" />
+              ))}
+          </Details.Content>
+        </Details>
+      </div>
+    </>
   ),
 });
 
