@@ -1254,3 +1254,9 @@ export const UdirNo = meta.story({
     );
   },
 });
+
+export const PrideLogo = meta.story({
+  render(args) {
+    return <Header variant="pride" {...args} />;
+  },
+});
