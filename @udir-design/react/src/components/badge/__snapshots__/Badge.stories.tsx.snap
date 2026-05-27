@@ -101,6 +101,13 @@ exports[`Custom Placement 1`] = `
 `;
 
 exports[`Floating 1`] = `
+<style>
+  .example-avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+</style>
 <span
   data-overlap="rectangle"
   data-placement="top-right"
@@ -238,7 +245,6 @@ exports[`Floating 1`] = `
     data-variant="circle"
     role="img"
     aria-label="Avatar 1"
-    style="<removed>"
   >
   </span>
 </span>
@@ -255,7 +261,6 @@ exports[`Floating 1`] = `
     data-variant="circle"
     role="img"
     aria-label="Avatar 1"
-    style="<removed>"
   >
   </span>
 </span>
@@ -272,7 +277,6 @@ exports[`Floating 1`] = `
     data-variant="circle"
     role="img"
     aria-label="Avatar 1"
-    style="<removed>"
   >
   </span>
 </span>
@@ -289,7 +293,6 @@ exports[`Floating 1`] = `
     data-variant="circle"
     role="img"
     aria-label="Avatar 1"
-    style="<removed>"
   >
   </span>
 </span>
@@ -468,45 +471,58 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Status 1`] = `
-<div>
+<span
+  data-overlap="rectangle"
+  data-placement="top-right"
+  data-size="lg"
+>
   <span
-    data-overlap="rectangle"
-    data-placement="top-right"
-    data-size="lg"
+    data-variant="base"
+    data-color="danger"
   >
-    <span
-      data-variant="base"
-      data-color="danger"
-    >
-    </span>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
-      fill="none"
-      viewbox="0 0 24 24"
-      focusable="false"
-      role="img"
-      aria-labelledby="<removed>"
-    >
-      <title id="<removed>">
-        Lagre
-      </title>
-      <path
-        fill="currentColor"
-        fill-rule="evenodd"
-        d="M4 3.25h2.75a.5.5 0 0 1 .5.5V7c0 .414.336.75.75.75h8a.75.75 0 0 0 .75-.75V3.75a.5.5 0 0 1 .5-.5H18a.75.75 0 0 1 .53.22l2 2c.141.14.22.331.22.53v14a.75.75 0 0 1-.75.75h-1.75a.5.5 0 0 1-.5-.5V11a.75.75 0 0 0-.75-.75H7a.75.75 0 0 0-.75.75v9.25a.5.5 0 0 1-.5.5H4a.75.75 0 0 1-.75-.75V4A.75.75 0 0 1 4 3.25m12.25 17a.5.5 0 0 1-.5.5h-7.5a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h7.5a.5.5 0 0 1 .5.5zm-7.5-16.5a.5.5 0 0 1 .5-.5h5.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-5.5a.5.5 0 0 1-.5-.5zM9.25 14a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75m.75 2.25a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5z"
-        clip-rule="evenodd"
-      >
-      </path>
-    </svg>
   </span>
-</div>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-labelledby="<removed>"
+  >
+    <title id="<removed>">
+      Lagre
+    </title>
+    <path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M4 3.25h2.75a.5.5 0 0 1 .5.5V7c0 .414.336.75.75.75h8a.75.75 0 0 0 .75-.75V3.75a.5.5 0 0 1 .5-.5H18a.75.75 0 0 1 .53.22l2 2c.141.14.22.331.22.53v14a.75.75 0 0 1-.75.75h-1.75a.5.5 0 0 1-.5-.5V11a.75.75 0 0 0-.75-.75H7a.75.75 0 0 0-.75.75v9.25a.5.5 0 0 1-.5.5H4a.75.75 0 0 1-.75-.75V4A.75.75 0 0 1 4 3.25m12.25 17a.5.5 0 0 1-.5.5h-7.5a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h7.5a.5.5 0 0 1 .5.5zm-7.5-16.5a.5.5 0 0 1 .5-.5h5.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-5.5a.5.5 0 0 1-.5-.5zM9.25 14a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75m.75 2.25a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5z"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
+</span>
 `;
 
 exports[`System Alerts 1`] = `
-<div style="<removed>">
-  <h2 style="<removed>">
+<style>
+  .example-main {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+}
+.example-heading {
+  margin-block-end: var(--ds-size-4);
+}
+.example-details-content {
+  gap: var(--ds-size-4);
+  display: flex;
+  flex-direction: column;
+}
+</style>
+<div>
+  <h2>
     Systemvarsler
   </h2>
   <details data-variant="default">
@@ -519,7 +535,7 @@ exports[`System Alerts 1`] = `
       >
       </span>
     </summary>
-    <div style="<removed>">
+    <div>
       <div data-variant="default">
         <div style="<removed>">
           <h3 data-size="xs">
@@ -566,7 +582,7 @@ exports[`System Alerts 1`] = `
       >
       </span>
     </summary>
-    <div style="<removed>">
+    <div>
       <div data-variant="default">
         <div style="<removed>">
           <h3 data-size="xs">
@@ -682,117 +698,115 @@ exports[`System Alerts 1`] = `
       </span>
     </summary>
     <div>
-      <div style="<removed>">
-        <div data-variant="default">
-          <div style="<removed>">
-            <h3 data-size="xs">
-              Varsel
-            </h3>
-          </div>
-          <p data-variant="default">
-            Dette er et varsel.
-          </p>
+      <div data-variant="default">
+        <div style="<removed>">
+          <h3 data-size="xs">
+            Varsel
+          </h3>
         </div>
-        <div data-variant="default">
-          <div style="<removed>">
-            <h3 data-size="xs">
-              Varsel
-            </h3>
-          </div>
-          <p data-variant="default">
-            Dette er et varsel.
-          </p>
+        <p data-variant="default">
+          Dette er et varsel.
+        </p>
+      </div>
+      <div data-variant="default">
+        <div style="<removed>">
+          <h3 data-size="xs">
+            Varsel
+          </h3>
         </div>
-        <div data-variant="default">
-          <div style="<removed>">
-            <h3 data-size="xs">
-              Varsel
-            </h3>
-          </div>
-          <p data-variant="default">
-            Dette er et varsel.
-          </p>
+        <p data-variant="default">
+          Dette er et varsel.
+        </p>
+      </div>
+      <div data-variant="default">
+        <div style="<removed>">
+          <h3 data-size="xs">
+            Varsel
+          </h3>
         </div>
-        <div data-variant="default">
-          <div style="<removed>">
-            <h3 data-size="xs">
-              Varsel
-            </h3>
-          </div>
-          <p data-variant="default">
-            Dette er et varsel.
-          </p>
+        <p data-variant="default">
+          Dette er et varsel.
+        </p>
+      </div>
+      <div data-variant="default">
+        <div style="<removed>">
+          <h3 data-size="xs">
+            Varsel
+          </h3>
         </div>
-        <div data-variant="default">
-          <div style="<removed>">
-            <h3 data-size="xs">
-              Varsel
-            </h3>
-          </div>
-          <p data-variant="default">
-            Dette er et varsel.
-          </p>
+        <p data-variant="default">
+          Dette er et varsel.
+        </p>
+      </div>
+      <div data-variant="default">
+        <div style="<removed>">
+          <h3 data-size="xs">
+            Varsel
+          </h3>
         </div>
-        <div data-variant="default">
-          <div style="<removed>">
-            <h3 data-size="xs">
-              Varsel
-            </h3>
-          </div>
-          <p data-variant="default">
-            Dette er et varsel.
-          </p>
+        <p data-variant="default">
+          Dette er et varsel.
+        </p>
+      </div>
+      <div data-variant="default">
+        <div style="<removed>">
+          <h3 data-size="xs">
+            Varsel
+          </h3>
         </div>
-        <div data-variant="default">
-          <div style="<removed>">
-            <h3 data-size="xs">
-              Varsel
-            </h3>
-          </div>
-          <p data-variant="default">
-            Dette er et varsel.
-          </p>
+        <p data-variant="default">
+          Dette er et varsel.
+        </p>
+      </div>
+      <div data-variant="default">
+        <div style="<removed>">
+          <h3 data-size="xs">
+            Varsel
+          </h3>
         </div>
-        <div data-variant="default">
-          <div style="<removed>">
-            <h3 data-size="xs">
-              Varsel
-            </h3>
-          </div>
-          <p data-variant="default">
-            Dette er et varsel.
-          </p>
+        <p data-variant="default">
+          Dette er et varsel.
+        </p>
+      </div>
+      <div data-variant="default">
+        <div style="<removed>">
+          <h3 data-size="xs">
+            Varsel
+          </h3>
         </div>
-        <div data-variant="default">
-          <div style="<removed>">
-            <h3 data-size="xs">
-              Varsel
-            </h3>
-          </div>
-          <p data-variant="default">
-            Dette er et varsel.
-          </p>
+        <p data-variant="default">
+          Dette er et varsel.
+        </p>
+      </div>
+      <div data-variant="default">
+        <div style="<removed>">
+          <h3 data-size="xs">
+            Varsel
+          </h3>
         </div>
-        <div data-variant="default">
-          <div style="<removed>">
-            <h3 data-size="xs">
-              Varsel
-            </h3>
-          </div>
-          <p data-variant="default">
-            Dette er et varsel.
-          </p>
+        <p data-variant="default">
+          Dette er et varsel.
+        </p>
+      </div>
+      <div data-variant="default">
+        <div style="<removed>">
+          <h3 data-size="xs">
+            Varsel
+          </h3>
         </div>
-        <div data-variant="default">
-          <div style="<removed>">
-            <h3 data-size="xs">
-              Varsel
-            </h3>
-          </div>
-          <p data-variant="default">
-            Dette er et varsel.
-          </p>
+        <p data-variant="default">
+          Dette er et varsel.
+        </p>
+      </div>
+      <div data-variant="default">
+        <div style="<removed>">
+          <h3 data-size="xs">
+            Varsel
+          </h3>
         </div>
+        <p data-variant="default">
+          Dette er et varsel.
+        </p>
       </div>
     </div>
   </details>
