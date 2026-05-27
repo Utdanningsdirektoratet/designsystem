@@ -7,7 +7,7 @@
     "compile": "tsdown src/index.ts src/metadata.ts --format esm,cjs --dts",
     "build": "pnpm clean && pnpm compile && pnpm copy-aksel-icons && pnpm copy-style && pnpm generate-css",
     "generate-css": "tsx generate-css.ts",
-    "inject": "pnpm i",
+    "inject": "echo 'Dummy script to trigger pnpm injected dependency sync'",
     "clean": "rimraf ./dist && mkdir ./dist"
   },
   "repository": {

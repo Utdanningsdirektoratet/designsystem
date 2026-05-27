@@ -35,6 +35,14 @@ export default defineMain({
     },
   },
 
+  core: {
+    disableWhatsNewNotifications: true,
+  },
+
+  features: {
+    sidebarOnboardingChecklist: false,
+  },
+
   async viteFinal(cfg) {
     const { mergeConfig } = await import('vite');
     process.env['IS_STORYBOOK'] = 'true';
@@ -62,7 +70,7 @@ export default defineMain({
         > For a stable experience, please add mentioned dependencies to your config's
         >   `optimizeDeps.include` field manually.
         > [vite] (client) ✨ optimized dependencies changed. reloading
-        
+
         This indicates that some dependencies
         */
         include: ['react/jsx-dev-runtime'],

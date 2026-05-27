@@ -3,4 +3,5 @@
  * Only stable components should be exported here.
  */
 
-export type * from './components/stable';
+export * from './components/stable';
+export * from './utilities/hooks/stable';

@@ -13,14 +13,16 @@ const meta = preview.meta({
       details: 'Vi har fjernet mulighet for fargevalg.',
     },
   },
+  argTypes: {
+    onChange: { table: { disable: true } },
+    onClick: { table: { disable: true } },
+  },
 });
 
 export const Preview = meta.story({
   args: {
     label: 'Radio',
     description: 'Description',
-    disabled: false,
-    readOnly: false,
     value: 'value',
     onChange: fn(),
     onClick: fn(),
@@ -53,6 +55,12 @@ export const Preview = meta.story({
         expect(args.onChange).toHaveBeenCalled();
       },
     );
+  },
+});
+
+export const Outline = Preview.extend({
+  args: {
+    variant: 'outline',
   },
 });
 
@@ -103,8 +111,6 @@ export const Focused = meta.story({
   args: {
     label: 'Radio',
     description: 'Description',
-    disabled: false,
-    readOnly: false,
     value: 'value',
     onChange: fn(),
     onClick: fn(),

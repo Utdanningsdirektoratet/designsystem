@@ -70,6 +70,32 @@ exports[`Inline 1`] = `
 </fieldset>
 `;
 
+exports[`Outline 1`] = `
+<ds-field
+  data-variant="outline"
+  data-clickdelegatefor="<removed>"
+>
+  <input
+    id="<removed>"
+    type="radio"
+    value="value"
+    aria-describedby="<removed>"
+  >
+  <label
+    data-weight="regular"
+    for="<removed>"
+  >
+    Radio
+  </label>
+  <div
+    data-field="description"
+    id="<removed>"
+  >
+    Description
+  </div>
+</ds-field>
+`;
+
 exports[`Preview 1`] = `
 <ds-field data-clickdelegatefor="<removed>">
   <input

@@ -55,11 +55,6 @@ const meta = preview.meta({
 export const Preview = meta.story({
   args: {
     label: 'Label',
-    disabled: false,
-    readOnly: false,
-    multiline: false,
-    description: '',
-    error: '',
     counter: 0,
     id: 'textfield-preview',
   },
@@ -180,7 +175,6 @@ export const Format = meta.story({
 export const Controlled = meta.story({
   args: {
     label: 'Fullt navn',
-    multiline: false,
     id: 'textfield-controlled',
   },
   parameters: {

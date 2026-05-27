@@ -114,6 +114,12 @@ export const Group = meta.story({
   ),
 });
 
+export const Outline = Group.extend({
+  args: {
+    variant: 'outline',
+  },
+});
+
 export const GroupEnd = meta.story({
   args: {
     position: 'end',

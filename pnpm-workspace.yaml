@@ -4,74 +4,88 @@ packages:
   - design-tokens
   - test-apps/*
 
+allowBuilds:
+  '@bundled-es-modules/glob': false
+  '@swc/core': false
+  esbuild: false
+  lmdb: false
+  msgpackr-extract: false
+  msw: false
+  nx: false
+  oxc-resolver: false
+  sharp: false
+  style-dictionary: false
+  unrs-resolver: false
+
 catalog:
   '@babel/types': ^7.29.0
-  '@commitlint/cli': ^20.5.0
-  '@commitlint/config-conventional': ^20.5.0
+  '@types/js-yaml': ^4.0.9
+  '@commitlint/cli': ^20.5.3
+  '@commitlint/config-conventional': ^20.5.3
   '@commitlint/types': ^20.5.0
-  '@digdir/designsystemet': 1.13.3
-  '@digdir/designsystemet-css': 1.13.3
-  '@digdir/designsystemet-react': 1.13.3
-  '@digdir/designsystemet-types': 1.13.3
-  '@digdir/designsystemet-web': 1.13.3
-  '@eslint/compat': ^2.0.5
+  '@digdir/designsystemet': 1.14.0
+  '@digdir/designsystemet-css': 1.14.0
+  '@digdir/designsystemet-react': 1.14.0
+  '@digdir/designsystemet-types': 1.14.0
+  '@digdir/designsystemet-web': 1.14.0
+  '@eslint/compat': ^2.1.0
   '@eslint/eslintrc': ^3.3.5
   '@eslint/js': ^9.39.4
   '@figma/rest-api-spec': ^0.37.0
   '@hookform/resolvers': 5.2.2
-  '@navikt/aksel-icons': ^8.10.1
-  '@next/eslint-plugin-next': ^16.2.4
-  '@nx/azure-cache': ^5.0.2
+  '@navikt/aksel-icons': ^8.10.5
+  '@next/eslint-plugin-next': ^16.2.6
+  '@nx/azure-cache': ^5.0.5
   '@nx/eslint': 22.6.4
   '@nx/eslint-plugin': 22.6.4
   '@radix-ui/react-slot': ^1.2.4
-  '@storybook/addon-a11y': ^10.3.5
-  '@storybook/addon-docs': ^10.3.5
-  '@storybook/addon-vitest': ^10.3.5
-  '@storybook/icons': ^2.0.1
-  '@storybook/react-vite': ^10.3.5
+  '@storybook/addon-a11y': ^10.4.0
+  '@storybook/addon-docs': ^10.4.0
+  '@storybook/addon-vitest': ^10.4.0
+  '@storybook/icons': ^2.0.2
+  '@storybook/react-vite': ^10.4.0
   '@svgr/cli': 8.1.0
   '@svgr/core': ^8.1.0
   '@swc-node/register': ^1.11.1
-  '@swc/core': ^1.15.30
+  '@swc/core': ^1.15.33
   '@swc/helpers': ^0.5.21
   '@testing-library/react': ^16.3.2
   '@tokens-studio/sd-transforms': ^2.0.3
   '@types/diffable-html': ^5.0.2
   '@types/mdast': ^4.0.4
   '@types/micromatch': ^4.0.10
-  '@types/node': ^24.12.2
+  '@types/node': ^24.12.4
   '@types/ramda': ^0.31.1
   '@types/react': ^19.2.14
   '@types/react-dom': ^19.2.3
   '@types/remark-heading-id': ^1.0.0
   '@types/yargs': ^17.0.35
-  '@typescript-eslint/eslint-plugin': ^8.59.0
-  '@typescript-eslint/parser': ^8.59.0
+  '@typescript-eslint/eslint-plugin': ^8.59.3
+  '@typescript-eslint/parser': ^8.59.3
   '@typescript/native-preview': 7.0.0-dev.20260407.1
   '@u-elements/u-details': ^1.0.0
   '@u-elements/u-progress': ^0.0.7
   '@vitejs/plugin-react-swc': ^4.3.0
-  '@vitest/browser': ^4.1.5
-  '@vitest/browser-playwright': ^4.1.5
-  '@vitest/coverage-v8': ^4.1.5
-  '@vitest/ui': ^4.1.5
+  '@vitest/browser': ^4.1.6
+  '@vitest/browser-playwright': ^4.1.6
+  '@vitest/coverage-v8': ^4.1.6
+  '@vitest/ui': ^4.1.6
   autoprefixer: ^10.5.0
-  axe-core: ^4.11.3
+  axe-core: ^4.11.4
   axe-playwright: ^2.2.2
   camelcase: ^9.0.0
   chromatic: ^15.3.1
   clsx: 2.1.1
-  cssnano: ^7.1.7
+  cssnano: ^7.1.9
   diffable-html: ^6.0.1
   eslint: ^9.39.4
-  eslint-config-next: ^16.2.4
+  eslint-config-next: ^16.2.6
   eslint-config-prettier: 10.1.8
   eslint-plugin-import: ^2.32.0
   eslint-plugin-jsx-a11y: ^6.10.2
   eslint-plugin-react: ^7.37.5
   eslint-plugin-react-hooks: ^7.1.1
-  eslint-plugin-storybook: ^10.3.5
+  eslint-plugin-storybook: ^10.4.0
   fast-glob: ^3.3.3
   fuse.js: ^7.3.0
   hast-util-from-html: ^2.0.3
@@ -86,21 +100,21 @@ catalog:
   madge: ^8.0.0
   mdast-util-to-hast: ^13.2.1
   micromatch: ^4.0.8
-  next: ^16.2.4
+  next: ^16.2.6
   nx: 22.6.4
-  playwright: ^1.59.1
-  postcss: ^8.5.10
+  playwright: ^1.60.0
+  postcss: ^8.5.14
   postcss-cli: ^11.0.1
   postcss-easy-import: ^4.0.0
   postcss-load-config: ^6.0.1
   postcss-nesting: ^14.0.0
   prettier: 3.8.3
   ramda: ^0.32.0
-  react: ^19.2.5
-  react-dom: ^19.2.5
+  react: ^19.2.6
+  react-dom: ^19.2.6
   react-dropzone: ^15.0.0
-  react-hook-form: ^7.73.1
-  react-router-dom: ^7.14.2
+  react-hook-form: ^7.75.0
+  react-router-dom: ^7.15.0
   react-style-stringify: ^1.2.0
   remark-gfm: ^4.0.1
   remark-heading-id: ^1.0.1
@@ -110,27 +124,27 @@ catalog:
   sass: ^1.99.0
   sharp: ^0.34.5
   shx: ^0.4.0
-  storybook: ^10.3.5
-  storybook-addon-pseudo-states: ^10.3.5
+  storybook: ^10.4.0
+  storybook-addon-pseudo-states: ^10.4.0
   style-dictionary: ^5.4.0
   svgo: ^4.0.1
   ts-node: ^10.9.2
-  tsdown: ^0.21.9
+  tsdown: ^0.21.10
   tslib: ^2.8.1
-  tsx: ^4.21.0
+  tsx: ^4.21.1
   type-fest: ^5.6.0
   typedoc: ^0.28.19
   typescript: ^6.0.3
-  typescript-eslint: ^8.59.0
+  typescript-eslint: ^8.59.3
   unified: ^11.0.5
   unist-util-remove: ^4.0.0
   unist-util-visit: ^5.1.0
-  vite: ^7.3.2
+  vite: ^7.3.3
   vite-plugin-dts: ^4.5.4
   vite-tsconfig-paths: ^6.1.1
-  vitest: ^4.1.5
+  vitest: ^4.1.6
   yargs: ^18.0.0
-  zod: ^4.3.6
+  zod: ^4.4.3
 
 catalogMode: strict
 
@@ -145,18 +159,8 @@ cleanupUnusedCatalogs: true
 
 disallowWorkspaceCycles: true
 
-ignoredBuiltDependencies:
-  - '@bundled-es-modules/glob'
-  - '@swc/core'
-  - esbuild
-  - lmdb
-  - msgpackr-extract
-  - msw
-  - nx
-  - oxc-resolver
-  - sharp
-  - style-dictionary
-  - unrs-resolver
+ignoredOptionalDependencies:
+  - '@parcel/watcher'
 
 minimumReleaseAge: 1440
 
@@ -199,6 +203,9 @@ packageExtensions:
 patchedDependencies:
   remark-heading-id@1.0.1: patches/remark-heading-id@1.0.1.patch
 
+syncInjectedDepsAfterScripts:
+  - inject
+
 trustPolicy: no-downgrade
 
 trustPolicyExclude:
@@ -209,7 +216,3 @@ trustPolicyExclude:
   # due to being a dependency of @nx/js
   - invokers-polyfill@0.6.1
   - detect-port@1.6.1
-
-useNodeVersion: 24.10.0
-
-verifyDepsBeforeRun: prompt

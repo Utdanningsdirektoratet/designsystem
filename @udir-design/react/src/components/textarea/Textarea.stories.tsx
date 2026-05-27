@@ -5,9 +5,10 @@ import { Button } from '../button/Button';
 import { Field } from '../field/Field';
 import { Label } from '../typography/label/Label';
 import { Textarea } from './Textarea';
+import { Textarea as FakeTextarea } from './docs/FakeTextarea';
 
 const meta = preview.meta({
-  component: Textarea,
+  component: FakeTextarea,
   tags: ['beta', 'digdir'],
   parameters: {
     componentOrigin: {
@@ -25,8 +26,6 @@ const meta = preview.meta({
 
 export const Preview = meta.story({
   args: {
-    disabled: false,
-    readOnly: false,
     rows: 3,
     cols: 20,
     id: 'my-textarea',

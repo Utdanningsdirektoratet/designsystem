@@ -26,9 +26,17 @@ export const DocsContainer = ({
       return;
     }
     if (firstStory.component) {
-      setComponentName(
-        (firstStory.component as ComponentType).displayName ?? '',
-      );
+      const displayName = (firstStory.component as ComponentType).displayName;
+      if (displayName) {
+        setComponentName(displayName);
+      } else if (Object.hasOwn(firstStory.component, '__docgenInfo')) {
+        const docgenDisplayName = (
+          firstStory.component as unknown as {
+            __docgenInfo: { displayName: string };
+          }
+        ).__docgenInfo.displayName;
+        setComponentName(docgenDisplayName);
+      }
     } else {
       const i = firstStory.title.lastIndexOf('/');
       setComponentName(firstStory.title.substring(i + 1) ?? '');

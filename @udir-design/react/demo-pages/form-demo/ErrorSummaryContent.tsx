@@ -1,3 +1,4 @@
+import type { DSErrorSummaryElement } from '@digdir/designsystemet-web';
 import type { FieldError, FieldErrors } from 'react-hook-form';
 import { ErrorSummary } from 'src/components/errorSummary/ErrorSummary';
 import type { FieldId, FormValues, PageFields, PageId } from './FormDemo';
@@ -7,7 +8,7 @@ type Props = {
   attemptedSubmit: boolean;
   currentPage: PageId | null;
   errors: FieldErrors<FormValues>;
-  errorSummaryRef: React.RefObject<HTMLDivElement | null>;
+  errorSummaryRef: React.RefObject<DSErrorSummaryElement | null>;
   pageFields: PageFields;
   setId: React.Dispatch<React.SetStateAction<PageId | null>>;
 };

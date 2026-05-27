@@ -100,8 +100,8 @@ exports[`Dialog Non Modal 1`] = `
   data-placement="center"
   data-modal="false"
   id="<removed>"
-  style="<removed>"
   open
+  style="<removed>"
 >
   <button
     data-icon="true"
@@ -213,8 +213,8 @@ exports[`Dialog With Max Width 1`] = `
   data-placement="center"
   data-modal="true"
   id="<removed>"
-  style="<removed>"
   open
+  style="<removed>"
 >
   <button
     data-icon="true"
@@ -295,8 +295,8 @@ exports[`Dialog With Suggestion 1`] = `
   data-placement="center"
   data-modal="true"
   id="<removed>"
-  style="<removed>"
   open
+  style="<removed>"
 >
   <button
     data-icon="true"
@@ -326,40 +326,37 @@ exports[`Dialog With Suggestion 1`] = `
           placeholder=" "
           type="text"
           id="<removed>"
-          popovertarget=":ds:3"
-          data-label="Velg en kommune"
-          list=":ds:3"
-          aria-label="Velg en kommune​​​​​"
-          aria-autocomplete="list"
-          aria-controls=":ds:3"
-          aria-expanded="true"
-          autocomplete="off"
-          role="combobox"
+          list=":u-datalist1"
+          popovertarget=":u-datalist1"
         >
-        <del
+        <button
           aria-label="Tøm"
           hidden
-          role="button"
+          type="reset"
+          aria-hidden="false"
+          tabindex="-1"
         >
-        </del>
+        </button>
         <u-datalist
           data-nofilter
           data-sr-plural="%d forslag"
           data-sr-singular="%d forslag"
           popover="manual"
           role="listbox"
-          id="<removed>"
+          data-sr-of="of"
           hidden
           tabindex="-1"
           aria-multiselectable="false"
+          id="<removed>"
+          data-is-floating="true"
         >
           <u-option
             label="Sogndal"
             value="Sogndal"
-            tabindex="-1"
             role="option"
             aria-disabled="false"
             aria-selected="false"
+            id="<removed>"
           >
             Sogndal
             <div>
@@ -369,10 +366,10 @@ exports[`Dialog With Suggestion 1`] = `
           <u-option
             label="Oslo"
             value="Oslo"
-            tabindex="-1"
             role="option"
             aria-disabled="false"
             aria-selected="false"
+            id="<removed>"
           >
             Oslo
             <div>
@@ -382,10 +379,10 @@ exports[`Dialog With Suggestion 1`] = `
           <u-option
             label="Brønnøysund"
             value="Brønnøysund"
-            tabindex="-1"
             role="option"
             aria-disabled="false"
             aria-selected="false"
+            id="<removed>"
           >
             Brønnøysund
             <div>
@@ -395,10 +392,10 @@ exports[`Dialog With Suggestion 1`] = `
           <u-option
             label="Stavanger"
             value="Stavanger"
-            tabindex="-1"
             role="option"
             aria-disabled="false"
             aria-selected="false"
+            id="<removed>"
           >
             Stavanger
             <div>
@@ -408,10 +405,10 @@ exports[`Dialog With Suggestion 1`] = `
           <u-option
             label="Trondheim"
             value="Trondheim"
-            tabindex="-1"
             role="option"
             aria-disabled="false"
             aria-selected="false"
+            id="<removed>"
           >
             Trondheim
             <div>
@@ -421,10 +418,10 @@ exports[`Dialog With Suggestion 1`] = `
           <u-option
             label="Bergen"
             value="Bergen"
-            tabindex="-1"
             role="option"
             aria-disabled="false"
             aria-selected="false"
+            id="<removed>"
           >
             Bergen
             <div>
@@ -434,10 +431,10 @@ exports[`Dialog With Suggestion 1`] = `
           <u-option
             label="Lillestrøm"
             value="Lillestrøm"
-            tabindex="-1"
             role="option"
             aria-disabled="false"
             aria-selected="false"
+            id="<removed>"
           >
             Lillestrøm
             <div>
@@ -569,8 +566,8 @@ exports[`Drawer 1`] = `
     data-modal="true"
     id="<removed>"
     closedby="any"
-    style="<removed>"
     open
+    style="<removed>"
   >
     <button
       data-icon="true"
@@ -608,8 +605,8 @@ exports[`Preview 1`] = `
     data-modal="true"
     id="<removed>"
     closedby="any"
-    style="<removed>"
     open
+    style="<removed>"
   >
     <button
       data-icon="true"

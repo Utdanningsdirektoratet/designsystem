@@ -6,12 +6,15 @@ import { Checkbox } from './Checkbox';
 
 const meta = preview.meta({
   component: Checkbox,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
       details: 'Vi har fjernet mulighet for fargevalg.',
     },
+  },
+  argTypes: {
+    onChange: { table: { disable: true } },
   },
 });
 
@@ -19,9 +22,6 @@ export const Preview = meta.story({
   args: {
     label: 'Checkbox label',
     description: 'Description',
-    disabled: false,
-    readOnly: false,
-    value: 'value',
     onChange: fn(),
     id: 'checkbox-preview',
   },
@@ -67,6 +67,12 @@ export const Preview = meta.story({
     );
 
     userEvent.tab();
+  },
+});
+
+export const Outline = Preview.extend({
+  args: {
+    variant: 'outline',
   },
 });
 
@@ -117,8 +123,6 @@ export const Focused = meta.story({
   args: {
     label: 'Checkbox label',
     description: 'Description',
-    disabled: false,
-    readOnly: false,
     value: 'value',
     onChange: fn(),
     id: 'checkbox-preview',

@@ -19,7 +19,7 @@ import { Button } from './Button';
 
 const meta = preview.meta({
   component: Button,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
@@ -38,9 +38,7 @@ const meta = preview.meta({
 
 export const Preview = meta.story({
   args: {
-    disabled: false,
     variant: 'primary',
-    icon: false,
     onClick: fn(),
     children: 'Knapp',
   },

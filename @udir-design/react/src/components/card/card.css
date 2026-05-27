@@ -3,12 +3,24 @@ Fix focus style on details nested in card.
 Can be removed after the next version of @digdir/designsystemet-css is released and we have upgraded.
 */
 .ds-card {
-  & > .ds-details:first-child > :is(summary, u-summary) {
+  > .ds-details:first-child > :is(summary, u-summary) {
     border-top-left-radius: var(--dsc-card-border-radius);
     border-top-right-radius: var(--dsc-card-border-radius);
   }
-  & > .ds-details:last-child:not([open]) > :is(summary, u-summary) {
+  > .ds-details:last-child:not([open]) > :is(summary, u-summary) {
     border-bottom-left-radius: var(--dsc-card-border-radius);
     border-bottom-right-radius: var(--dsc-card-border-radius);
+  }
+
+  /* fix focus style for links with <a> tags (and not <Link>) in heading */
+  > :is(h1, h2, h3, h4, h5, h6),
+  > .ds-card__block > :is(h1, h2, h3, h4, h5, h6) {
+    &:has(> :is(a, .ds-link):focus-visible) {
+      /* the :is(...) part in the above selector isn't necessary, but without it storybook-addon-pseudo-states crashes on this rule */
+      text-decoration: none;
+    }
+    > a {
+      @composes ds-focus from '@digdir/designsystemet-css/base.css';
+    }
   }
 }

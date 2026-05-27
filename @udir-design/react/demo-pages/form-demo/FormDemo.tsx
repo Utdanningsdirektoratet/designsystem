@@ -1,4 +1,4 @@
-import { Paragraph } from '@digdir/designsystemet-react';
+import type { DSErrorSummaryElement } from '@digdir/designsystemet-web';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { HTMLAttributes } from 'react';
 import { useRef, useState } from 'react';
@@ -16,6 +16,7 @@ import { FieldNecessity } from 'src/components/fieldNecessity';
 import type { FieldsetProps } from 'src/components/fieldset/Fieldset';
 import { FormNavigation } from 'src/components/formNavigation';
 import { Heading } from 'src/components/typography/heading/Heading';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 import type { GetFieldId, GetStepId } from 'src/utilities/form/navigation';
 import {
   defineSteps,
@@ -147,7 +148,7 @@ export const FormDemo = ({
 
   const dialogMobileRef = useRef<HTMLDialogElement>(null);
   const dialogDeliverRef = useRef<HTMLDialogElement>(null);
-  const errorSummaryRef = useRef<HTMLDivElement>(null);
+  const errorSummaryRef = useRef<DSErrorSummaryElement>(null);
 
   const stepHasError = (pageId: PageId): boolean => {
     const fields = pageFields[pageId] ?? [];

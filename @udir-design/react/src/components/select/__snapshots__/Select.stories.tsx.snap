@@ -153,9 +153,7 @@ exports[`Preview 1`] = `
     Fylke
   </label>
   <select
-    aria-readonly="false"
     data-width="full"
-    aria-invalid="false"
     id="<removed>"
   >
     <option
@@ -289,9 +287,9 @@ exports[`With Error 1`] = `
     Fylke
   </label>
   <select
-    aria-invalid="true"
     id="<removed>"
     aria-describedby="<removed>"
+    aria-invalid="true"
   >
     <option value>
       Velg et fylke …

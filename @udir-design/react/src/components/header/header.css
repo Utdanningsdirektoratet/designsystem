@@ -212,12 +212,18 @@
       flex-direction: column;
       align-items: flex-end;
       min-width: 0;
-      .ds-heading,
-      .ds-paragraph {
+      span {
         max-width: 100%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        &:first-child {
+          font-weight: var(--ds-font-weight-medium);
+          line-height: var(--ds-heading-2xs-line-height);
+        }
+        &:nth-child(2) {
+          font-size: var(--ds-body-xs-font-size);
+        }
       }
     }
 

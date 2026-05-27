@@ -32,7 +32,7 @@ export const Preview = meta.story({
       <Field.Description>
         E-posten din brukes til å logge inn og motta varsler
       </Field.Description>
-      <Input id="preview" defaultValue="ola nordmann@udir.no" aria-invalid />
+      <Input id="preview" defaultValue="ola nordmann@udir.no" />
       <ValidationMessage>Du må oppgi en gyldig e-postadresse</ValidationMessage>
     </Field>
   ),

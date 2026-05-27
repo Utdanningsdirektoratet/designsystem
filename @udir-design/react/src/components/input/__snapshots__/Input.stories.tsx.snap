@@ -564,7 +564,7 @@ exports[`Controlled 1`] = `
       data-weight="medium"
       for="<removed>"
     >
-      Fullt navn
+      Skriv inn verdi
     </label>
     <input
       type="text"
@@ -607,7 +607,6 @@ exports[`Input Types 1`] = `
   </label>
   <input
     type="checkbox"
-    checked
     id="<removed>"
   >
 </ds-field>
@@ -620,7 +619,6 @@ exports[`Input Types 1`] = `
   </label>
   <input
     type="radio"
-    checked
     id="<removed>"
   >
 </ds-field>
@@ -634,7 +632,6 @@ exports[`Input Types 1`] = `
   <input
     role="switch"
     type="checkbox"
-    checked
     id="<removed>"
   >
 </ds-field>
@@ -642,10 +639,8 @@ exports[`Input Types 1`] = `
 
 exports[`Preview 1`] = `
 <input
-  aria-invalid="false"
   aria-label="input"
   type="text"
-  checked
   name="inputs"
 >
 `;
@@ -1392,13 +1387,13 @@ exports[`Text 1`] = `
         Invalid
       </label>
       <input
-        aria-invalid="true"
         data-size="sm"
         type="text"
         value="Value"
         name="sm-invalid"
         id="<removed>"
         aria-describedby="<removed>"
+        aria-invalid="true"
       >
       <p
         data-field="validation"
@@ -1473,13 +1468,13 @@ exports[`Text 1`] = `
         Invalid
       </label>
       <input
-        aria-invalid="true"
         data-size="md"
         type="text"
         value="Value"
         name="md-invalid"
         id="<removed>"
         aria-describedby="<removed>"
+        aria-invalid="true"
       >
       <p
         data-field="validation"
@@ -1554,13 +1549,13 @@ exports[`Text 1`] = `
         Invalid
       </label>
       <input
-        aria-invalid="true"
         data-size="lg"
         type="text"
         value="Value"
         name="lg-invalid"
         id="<removed>"
         aria-describedby="<removed>"
+        aria-invalid="true"
       >
       <p
         data-field="validation"
