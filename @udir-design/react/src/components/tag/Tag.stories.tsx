@@ -55,29 +55,21 @@ export const Sizes = meta.story({
 export const Icon = meta.story({
   render: (args) => (
     <>
-      <Tag
-        style={{
-          paddingInlineStart: 'var(--ds-size-1)',
-        }}
-        {...args}
-      >
-        <RobotIcon
-          aria-hidden
-          style={{ marginInlineEnd: 'var(--ds-size-1)' }}
-        />
+      <style>
+        {`
+.example-tag {
+  paddingInlineStart: 'var(--ds-size-1)
+}
+.example-icon {
+  marginInlineEnd: 'var(--ds-size-1)'
+}`}
+      </style>
+      <Tag className="example-tag" {...args}>
+        <RobotIcon aria-hidden className="example-icon" />
         Teksten er KI-generert
       </Tag>
-      <Tag
-        data-color="support1"
-        style={{
-          paddingInlineStart: 'var(--ds-size-1)',
-        }}
-        {...args}
-      >
-        <ParagraphIcon
-          aria-hidden
-          style={{ marginInlineEnd: 'var(--ds-size-1)' }}
-        />
+      <Tag data-color="support1" className="example-tag" {...args}>
+        <ParagraphIcon aria-hidden className="example-icon" />
         Privatskoleloven
       </Tag>
     </>
@@ -116,65 +108,68 @@ const electricianImage =
 
 export const Article = meta.story({
   render: (args) => (
-    <div>
-      <img
-        src={electricianImage}
-        alt="Bøker på et bord"
-        style={{
-          width: '100%',
-          height: '200px',
-          objectFit: 'cover',
-          borderRadius: 10,
-        }}
-      />
-      <div
-        style={{
-          display: 'flex',
-          gap: '10px',
-          marginTop: 'var(--ds-size-4)',
-          marginBottom: 'var(--ds-size-3)',
-        }}
-      >
-        <Heading>Rådgivning for lærlinger</Heading>
-        <ul
-          style={{
-            listStyle: 'none',
-            display: 'flex',
-            gap: '10px',
-            padding: 0,
-            margin: 0,
-          }}
-        >
-          <li>
-            <Tag data-color="accent" data-size="sm" {...args}>
-              Videregående
-            </Tag>
-          </li>
-          <li>
-            <Tag data-color="support1" data-size="sm" {...args}>
-              Lærling
-            </Tag>
-          </li>
-        </ul>
+    <>
+      <style>
+        {`
+.example-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.example-div {
+  display: flex;
+  gap: 10px;
+  margin-top: var(--ds-size-4);
+  margin-bottom: var(--ds-size-3);
+}
+.example-div-2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: var(--ds-size-2);
+}
+.example-list {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}`}
+      </style>
+      <div>
+        <img
+          src={electricianImage}
+          alt="Bøker på et bord"
+          className="example-img"
+        />
+        <div className="example-div">
+          <Heading>Rådgivning for lærlinger</Heading>
+          <ul className="example-list">
+            <li>
+              <Tag data-color="accent" data-size="sm" {...args}>
+                Videregående
+              </Tag>
+            </li>
+            <li>
+              <Tag data-color="support1" data-size="sm" {...args}>
+                Lærling
+              </Tag>
+            </li>
+          </ul>
+        </div>
+        <div className="example-div-2">
+          <Avatar data-size="xs" initials="ON" aria-label={'Kari Nordmann'} />
+          <Paragraph>Ola Nordmann | 19.06.2025</Paragraph>
+        </div>
+        <Paragraph>
+          Fylkeskommunen har plikt til å sørge for at både elever og de som har
+          læretid i bedrift skal ha tilgang til rådgivning om utdannings- og
+          yrkesvalg, samt rådgiving om sosiale og personlige forhold. Dette står
+          i opplæringsloven §§ 16-1 og 16-2.
+        </Paragraph>
       </div>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '10px',
-          marginBottom: 'var(--ds-size-2)',
-        }}
-      >
-        <Avatar data-size="xs" initials="ON" aria-label={'Kari Nordmann'} />
-        <Paragraph>Ola Nordmann | 19.06.2025</Paragraph>
-      </div>
-      <Paragraph>
-        Fylkeskommunen har plikt til å sørge for at både elever og de som har
-        læretid i bedrift skal ha tilgang til rådgivning om utdannings- og
-        yrkesvalg, samt rådgiving om sosiale og personlige forhold. Dette står i
-        opplæringsloven §§ 16-1 og 16-2.
-      </Paragraph>
-    </div>
+    </>
   ),
 });
 

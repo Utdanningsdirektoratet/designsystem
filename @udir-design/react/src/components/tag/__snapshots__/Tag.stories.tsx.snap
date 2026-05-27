@@ -1,17 +1,43 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Article 1`] = `
+<style>
+  .example-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.example-div {
+  display: flex;
+  gap: 10px;
+  margin-top: var(--ds-size-4);
+  margin-bottom: var(--ds-size-3);
+}
+.example-div-2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: var(--ds-size-2);
+}
+.example-list {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+</style>
 <div>
   <img
     alt="Bøker på et bord"
     src="https://images.unsplash.com/photo-1635335874521-7987db781153?q=80&amp;w=2070&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    style="<removed>"
   >
-  <div style="<removed>">
+  <div>
     <h2>
       Rådgivning for lærlinger
     </h2>
-    <ul style="<removed>">
+    <ul>
       <li>
         <span
           data-variant="default"
@@ -32,7 +58,7 @@ exports[`Article 1`] = `
       </li>
     </ul>
   </div>
-  <div style="<removed>">
+  <div>
     <span
       data-variant="circle"
       data-initials="ON"
@@ -79,10 +105,15 @@ exports[`Colors 1`] = `
 `;
 
 exports[`Icon 1`] = `
-<span
-  data-variant="default"
-  style="<removed>"
->
+<style>
+  .example-tag {
+  paddingInlineStart: 'var(--ds-size-1)
+}
+.example-icon {
+  marginInlineEnd: 'var(--ds-size-1)'
+}
+</style>
+<span data-variant="default">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -92,7 +123,6 @@ exports[`Icon 1`] = `
     focusable="false"
     role="img"
     aria-hidden="true"
-    style="<removed>"
   >
     <path
       fill="currentColor"
@@ -112,7 +142,6 @@ exports[`Icon 1`] = `
 <span
   data-variant="default"
   data-color="support1"
-  style="<removed>"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +152,6 @@ exports[`Icon 1`] = `
     focusable="false"
     role="img"
     aria-hidden="true"
-    style="<removed>"
   >
     <path
       fill="currentColor"
