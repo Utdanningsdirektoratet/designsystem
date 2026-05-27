@@ -119,10 +119,10 @@ export const CustomPlacement = meta.story({
 export const Status = meta.story({
   args: { 'data-color': 'danger' },
   render: (args) => (
-      <Badge.Position data-size="lg">
-        <Badge {...args} />
-        <FloppydiskFillIcon title="Lagre" />
-      </Badge.Position>
+    <Badge.Position data-size="lg">
+      <Badge {...args} />
+      <FloppydiskFillIcon title="Lagre" />
+    </Badge.Position>
   ),
 });
 
@@ -268,12 +268,11 @@ export const SystemAlerts = meta.story({
 }`}
       </style>
       <div className="example-main">
-        <Heading className="example-heading">
-          Systemvarsler
-        </Heading>
+        <Heading className="example-heading">Systemvarsler</Heading>
         <Details>
           <Details.Summary>
-            Kritisk <Badge count={2} maxCount={9} data-color="danger" {...args}/>
+            Kritisk{' '}
+            <Badge count={2} maxCount={9} data-color="danger" {...args} />
           </Details.Summary>
           <Details.Content className="example-details-content">
             {Array.from({ length: 2 }, (_) => (
@@ -283,7 +282,8 @@ export const SystemAlerts = meta.story({
         </Details>
         <Details>
           <Details.Summary>
-            Advarsler <Badge count={6} maxCount={9} data-color="warning" {...args}/>
+            Advarsler{' '}
+            <Badge count={6} maxCount={9} data-color="warning" {...args} />
           </Details.Summary>
           <Details.Content className="example-details-content">
             {Array.from({ length: 6 }, (_) => (
@@ -293,12 +293,13 @@ export const SystemAlerts = meta.story({
         </Details>
         <Details>
           <Details.Summary>
-            Andre hendelser <Badge count={11} maxCount={9} data-color="info" {...args}/>
+            Andre hendelser{' '}
+            <Badge count={11} maxCount={9} data-color="info" {...args} />
           </Details.Summary>
           <Details.Content className="example-details-content">
-              {Array.from({ length: 11 }, (_) => (
-                <Varsel importance="info" />
-              ))}
+            {Array.from({ length: 11 }, (_) => (
+              <Varsel importance="info" />
+            ))}
           </Details.Content>
         </Details>
       </div>
