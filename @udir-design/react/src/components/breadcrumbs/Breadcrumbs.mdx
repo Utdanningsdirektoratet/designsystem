@@ -44,7 +44,7 @@ Vi bruker `Breadcrumbs` til å hjelpe brukerne å forstå hvor de er i en hierar
 
 ### Sti eller tilbake-knapp basert på skjermstørrelse
 
-Hvis du legger både en `Breadcrumbs.Link` og en `Breadcrumbs.List` direkte i `Breadcrumbs`, vil tilbake-knapp vises på skjermer smalere enn 650px, og sti vises ellers. Dette er ofte den beste løsningen fordi den gir god plass og brukervennlighet på alle skjermer.
+Hvis du legger både en `Breadcrumbs.Link` og en `Breadcrumbs.List` direkte i `Breadcrumbs`, vil en tilbake-knapp vises på skjermer smalere enn 650px, og en sti vises ellers. Dette er ofte den beste løsningen fordi den gir god plass og brukervennlighet på alle skjermer.
 
 <Canvas of={BreadcrumbsStories.Preview} />
 
@@ -56,7 +56,7 @@ Hvis du legger en `Breadcrumbs.List` direkte i `Breadcrumbs`, vil denne vises so
 
 ### Kun tilbake-knapp
 
-Hvis du legger en `Breadcrumbs.Link` direkte i `Breadcrumbs`, vil denne lenken vises som en tilbake-knapp. Det kan for eksempel benyttes for å spare plass. Det er viktig at du er konsistent i din løsning og bruker enten tilbake-knapp eller sti.
+Hvis du legger en `Breadcrumbs.Link` direkte i `Breadcrumbs`, vil denne lenken vises som en tilbake-knapp. Dette kan for eksempel benyttes for å spare plass. Det er viktig at du er konsistent i din løsning og bruker enten tilbake-knapp eller sti.
 
 <Canvas of={BreadcrumbsStories.BackOnly} />
 
@@ -84,6 +84,6 @@ Bruk korte og tydelige navn i brødsmulestien, slik at brukerne raskt forstår h
 
 Den siste lenken skal tilsvare den nåværende siden. Den ser ut som vanlig tekst, men er kodet som en lenke med aria-current="page". På den måten får skjermlesere korrekt informasjon om hvilken side brukeren er på, uten at andre brukere feilaktig oppfatter det som en klikkbar lenke.
 
-Pass på at at det ikke ligger andre interaktive elementer for nær `Breadcrumbs`, og at det ikke er noen skjulte elementer som kan forstyrre navigasjonen.
+Pass på at det ikke ligger andre interaktive elementer for nær `Breadcrumbs`, og at det ikke er noen skjulte elementer som kan forstyrre navigasjonen.
 
 Sørg for [`SkipLink`](/docs/components-skiplink--docs) hopper over `Breadcrumbs`, slik at tastaturnavigerende brukere slipper å tabbe gjennom hvert punkt før de når hovedinnholdet på siden.
