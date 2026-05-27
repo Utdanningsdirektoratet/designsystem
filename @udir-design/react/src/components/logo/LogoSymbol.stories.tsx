@@ -22,3 +22,16 @@ export const DarkMode = meta.story({
     </div>
   ),
 });
+
+export const PrideVariants = meta.story({
+  render: (args) => (
+    <>
+      <div data-color-scheme="light">
+        <LogoSymbol {...args} variant="pride" />
+      </div>
+      <div data-color-scheme="dark">
+        <LogoSymbol {...args} variant="pride" />
+      </div>
+    </>
+  ),
+});
