@@ -173,21 +173,16 @@ corepack prepare
 
 ### Felles Nx cache
 
-> [!NOTE]
-> Dette steget er ikke nødvendig for at prosjektene skal bygge, men uten dette vil Nx kun bruke din lokale cache.
+Vi bruker Nx Cloud for caching av bygg, hovedsaklig for raskere kjøring av GitHub Actions. Oppsettet er strukturert ut fra [best practices for cache-sikkerhet i Nx](https://nx.dev/docs/concepts/ci-concepts/cache-security), og kan oppsummeres som følger:
 
-Vi bruker en felles Nx cache for å gjøre bygg raskere på tvers av ulike utviklermaskiner og CI-kjøringer. Cachen er lagret i en Azure storage account, gjennom pluginen [@nx/azure-cache](https://www.npmjs.com/package/@nx/azure-cache).
+- Utviklere som er logget inn med Nx Cloud (`pnpm nx login`) kan _lese_ fra cachen, men ikke skrive.
+- Actions som kjører på de beskyttede `main` og `release/*`-branchene kan både lese og skrive til cachen.
+- Actions som kjører på andre brancher, f.eks. ved PR, kan lese fra den felles cachen, men kun skrive til en isolert branch-spesifikk cache.
+- Release-workflowen leser ikke fra cachen, og vil alltid bygge på nytt før publisering.
 
-Azure-infrastrukturen som er nødvendig for felles caching er dokumentert i [.azure/README.md](.azure/README.md).
+På denne måten unngår vi potensiell cache poisoning.
 
-For å kunne bruke den felles cachen, må hver utvikler legge til følgende i den git-ignorerte filen `.env.local`
-
-```
-AZURE_STORAGE_CONNECTION_STRING=<secret value>
-NX_KEY=<secret value>
-```
-
-`<secret value>` må erstattes med faktiske verdier. Spør en utvikler på designteamet om hvor du kan finne disse.
+Tidligere brukte vi en self-hosted remote cache, men den er avviklet fordi `@nx/azure-cache` er deprecated pga sårbarhet for cache poisoning. Hvis du har `AZURE_STORAGE_CONNECTION_STRING` eller `NX_KEY` i din lokale `.env.local` kan du fjerne disse, siden de ikke lenger er i bruk.
 
 ### Sjekke at oppsettet funker
 
