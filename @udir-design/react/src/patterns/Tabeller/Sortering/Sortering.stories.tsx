@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
-import { Table, type TableHeaderCellProps } from 'src/components/table';
-import { Table as FakeTable } from 'src/components/table/docs/FakeTable';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
+import { Table, type TableHeaderCellProps } from 'src/components/table';
 
 const meta = preview.meta({
   tags: ['alpha', 'udir'],
