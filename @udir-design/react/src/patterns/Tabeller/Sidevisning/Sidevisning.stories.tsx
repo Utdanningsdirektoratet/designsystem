@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import { ChevronDownIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
-import { Dropdown } from 'src/components/dropdown/Dropdown';
-import type { PaginationButtonProps } from 'src/components/pagination/Pagination';
-import { Pagination } from 'src/components/pagination/Pagination';
-import type { TableHeaderCellProps } from 'src/components/table';
-import { Table } from 'src/components/table';
-import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
+import { Dropdown } from '../../..//components/dropdown/Dropdown';
+import type { PaginationButtonProps } from '../../..//components/pagination/Pagination';
+import type { TableHeaderCellProps } from '../../..//components/table';
+import { Table } from '../../..//components/table';
+import { usePagination } from '../../../utilities/hooks/usePagination/usePagination';
+import { Pagination } from '../../../components/pagination/Pagination';
 
 const meta = preview.meta({
   tags: ['beta', 'udir'],
