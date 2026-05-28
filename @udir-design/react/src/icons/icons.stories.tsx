@@ -26,6 +26,7 @@ export const OutlineIcons = meta.story({
             !key.includes('Fill') && (
               <React.Fragment key={key}>
                 <Component
+                  aria-label={key}
                   height="3rem"
                   width="3rem"
                   aria-hidden
@@ -56,7 +57,13 @@ export const FillIcons = meta.story({
           return (
             key.includes('Fill') && (
               <React.Fragment key={key}>
-                <Component fontSize="3rem" aria-hidden className="icon-color" />
+                <Component
+                  aria-label={key}
+                  height="3rem"
+                  width="3rem"
+                  aria-hidden
+                  className="icon-color"
+                />
               </React.Fragment>
             )
           );
