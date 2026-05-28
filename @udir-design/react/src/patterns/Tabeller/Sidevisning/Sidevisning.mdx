@@ -1,21 +1,20 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 
-import * as PagineringStories from './Sidevisning.stories';
+import * as SidevisningStories from './Sidevisning.stories';
 
-<Meta of={PagineringStories} />
+<Meta of={SidevisningStories} />
 
 # Sidevisning
 
 Når en tabell inneholder mange rader, vil det ofte være en fordel å ha en form for kontrollert sidevisning. Dette gjør at brukeren kan navigere i innholdet uten å bli overveldet av informasjon. Vi anbefaler å unngå infinity tables - altså tabeller med uendelig scroll - fordi disse gjør det umulig å nå innhold som befinner seg under tabellen, og de gir brukeren dårligere kontroll over navigasjonen.
 
-Dette mønsteret tar ikke stilling til om siçdevisning håndteres i frontend eller backend. Det avhenger av datasettets størrelse og teknisk kontekst, og er opp til hvert team å vurdere.
+Dette mønsteret tar ikke stilling til om sidevisning håndteres i frontend eller backend. Det avhenger av datasettets størrelse og teknisk kontekst, og er opp til hvert team å vurdere.
 
 Sidevisningen skal gjøre det mulig for brukeren å navigere frem og tilbake mellom sidene, velge hvor mange rader som vises om gangen, se hvilke rader som er synlige nå, og se totalt antall rader i tabellen.
 
-<Canvas
-  of={PagineringStories.Preview}
-  story={{ inline: false, height: '675px' }}
-/>
+## Desktop, nettbrett og mobil
+
+<Canvas of={SidevisningStories.Preview} />
 
 ## Velge antall rader per side
 
@@ -27,7 +26,7 @@ Et alternativ som viser alle rader kan vurderes for tabeller med et moderat anta
 
 ## Visning av antall treff
 
-For å gi brukeren oversikt over hvilke rader som er synlige og det totale antallet rader i tabellen, brukes formuleringen «Rad 30-40 av 230». Denne teksten bør alltid være synlig når sidevisning er aktiv.
+For å gi brukeren oversikt over hvilke rader som er synlige og det totale antallet rader i tabellen, brukes formuleringen «Rad 30–40 av 230». Denne teksten bør alltid være synlig når sidevisning er aktiv.
 
 ## Sidenavigasjon
 
@@ -38,11 +37,11 @@ For å navigere mellom sider i tabellen brukes komponenten Pagination.
 Alle komponenter knyttet til sidevisning plasseres under tabellen. Dette skiller dem tydelig fra elementer over tabellen, som filtre, søkefelt og handlinger.
 Plasseringen varierer etter skjermstørrelse:
 
-Stor skjerm (desktop)
-Pagination plasseres til venstre. Rad X-Y av Z og Rader per side plasseres til høyre, med Rad X-Y av Z til venstre for Rader per side.
+**Stor skjerm (desktop)**
+Pagination plasseres til venstre. Rad X–Y av Z og Rader per side plasseres til høyre, med Rad X–Y av Z til venstre for Rader per side.
 
-Mellomstore skjermer (nettbrett)
-Pagination plasseres på første rad. Rad X-Y av Z plasseres til venstre og Rader per side til høyre på andre rad. Radene er midtstilt
+**Mellomstore skjermer (nettbrett)**
+Pagination plasseres på første rad. Rad X–Y av Z plasseres til venstre og Rader per side til høyre på andre rad. Radene er midtstilt.
 
-Små skjermer (mobil)
-Pagination plasseres på første rad. Rad X-Y av Z plasseres på andre rad. Rader per side plasseres på tredje rad. Radene er midtstilt.
+**Små skjermer (mobil)**
+Pagination plasseres på første rad. Rad X–Y av Z plasseres på andre rad. Rader per side plasseres på tredje rad. Radene er midtstilt.
