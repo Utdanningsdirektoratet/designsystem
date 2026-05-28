@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import { ChevronDownIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Dropdown } from 'src/components/dropdown/Dropdown';
+import { Pagination } from 'src/components/pagination/Pagination';
 import type { TableHeaderCellProps } from 'src/components/table';
 import { Table } from 'src/components/table';
 import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
-import { Pagination } from 'src/components/pagination/Pagination';
-import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 
 const meta = preview.meta({
   tags: ['alpha', 'udir'],
