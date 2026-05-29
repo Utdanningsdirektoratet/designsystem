@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --max-warnings 0",
-    "typecheck": "tsgo --build"
+    "typecheck": "tsgo --build",
+    "pretest:e2e": "pnpm exec playwright install --with-deps chromium",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@next/eslint-plugin-next": "catalog:",

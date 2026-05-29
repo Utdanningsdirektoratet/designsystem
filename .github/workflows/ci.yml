@@ -23,6 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       run_ui_tests: ${{ steps.job_condition.outputs.run_ui_tests }}
+      run_nextjs_smoke: ${{ steps.job_condition.outputs.run_nextjs_smoke }}
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
@@ -33,9 +34,11 @@ jobs:
       - name: Print affected packages
         run: pnpm turbo ls --affected
 
-      - name: Determine whether storybook-tests & chromatic need to run
+      - name: Determine which conditional jobs need to run
         id: job_condition
-        run: echo "run_ui_tests=$(./@internal/ci/bin/should-run-ui-tests.ts)" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "run_ui_tests=$(./@internal/ci/bin/should-run-ui-tests.ts)" >> "$GITHUB_OUTPUT"
+          echo "run_nextjs_smoke=$(./@internal/ci/bin/should-run-nextjs-smoke.ts)" >> "$GITHUB_OUTPUT"
         env:
           IS_PR_READY: ${{ github.event_name == 'pull_request' && !github.event.pull_request.draft }}
           IS_PUSH: ${{ github.event_name == 'push' }}
@@ -67,6 +70,13 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: chromatic / chromatic
+          conclusion: skipped
+      - name: Skip 'Next.js Smoke Test' check
+        if: steps.job_condition.outputs.run_nextjs_smoke == 'false'
+        uses: LouisBrunner/checks-action@937cbbcde3259005b50746dc91cde29098aac2ff # v3.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Next.js Smoke Test
           conclusion: skipped
 
       - name: Validate current commit (last commit) with commitlint
@@ -105,8 +115,20 @@ jobs:
     secrets:
       CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
+  nextjs-smoke-test:
+    runs-on: ubuntu-latest
+    needs: main
+    if: needs.main.outputs.run_nextjs_smoke == 'true'
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/pnpm-setup
+      - name: Run Next.js smoke test
+        run: pnpm turbo run test:e2e --filter=test-app-nextjs
+
   release:
-    needs: [main, storybook-tests, chromatic]
+    needs: [main, storybook-tests, chromatic, nextjs-smoke-test]
     if: |
       always() && !failure() && !cancelled() &&
       (github.event_name == 'push' || github.event_name == 'pull_request') &&
