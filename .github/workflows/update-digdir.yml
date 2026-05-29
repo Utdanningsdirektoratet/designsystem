@@ -5,6 +5,9 @@ on:
     # Runs at 01:00, Monday through Friday
     - cron: 0 1 * * 1-5
 
+env:
+  NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
+
 permissions:
   contents: write
   pull-requests: write

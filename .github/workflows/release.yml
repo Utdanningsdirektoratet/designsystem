@@ -6,17 +6,11 @@ on:
       dry-run:
         type: boolean
         default: true
-    secrets:
-      AZURE_STORAGE_CONNECTION_STRING:
-        required: true
-      NX_KEY:
-        required: true
-
 env:
-  AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
-  NX_KEY: ${{ secrets.NX_KEY }}
   # either the PR *target* branch, or the current branch being released
   BRANCH_NAME: ${{ github.base_ref || github.ref_name }}
+  # NOTE: We explicitly DON'T add the NX_CLOUD_ACCESS_TOKEN env var in the release workflow,
+  # to be entirely sure that our published libraries can't be affected by cache poisoning
 
 jobs:
   semantic-release:
@@ -42,7 +36,7 @@ jobs:
         with:
           registry-url: 'https://registry.npmjs.org'
 
-      # Retrieve builds from the cache for the projects we are releasing
+      # Build only the projects we are releasing
       - run: pnpm nx run-many -t build -p "@udir-design/*"
 
       - name: Preview semantic-release for this PR

@@ -6,19 +6,10 @@ Before running any of the below commands, run `az login` and choose the subscrip
 
 ## Build-time infrastructure
 
-Remote caching for Nx builds has been implemented using a storage container in Azure.
-
-To recreate the required infrastructure, first deploy the resource group
-
-```
-az deployment sub create --location norwayeast --template-file resourcegroup-build.bicep
-```
-
-Then deploy the storage account, container and related resources
-
-```
-az deployment group create --resource-group rg-designsystem-build --template-file designsystem-build.bicep
-```
+> [!NOTE]
+> The `nx-remotecache` storage container is no longer in use. CI caching is now handled by
+> Nx Cloud. The container and Bicep templates are kept in place temporarily as a
+> rollback option and can be deleted once the migration has been confirmed stable on `main`.
 
 ## Testapp infrastructure
 
