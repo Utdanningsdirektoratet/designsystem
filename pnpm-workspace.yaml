@@ -168,9 +168,6 @@ minimumReleaseAgeExclude:
   - '@u-elements/*'
 
 overrides:
-  # vite-plugin-react-docgen-typescript@>=0.7.0 removes many props from args tables in Storybook.
-  # Storybook now lists a higher version as a dependency, but we are prevented from upgrading
-  '@joshwooding/vite-plugin-react-docgen-typescript@>=0.7.0': 0.6.4
   axios@>=1.0.0 <1.15.0: '>=1.15.0'
   postcss@<8.5.10: ^8.5.10
   semver@<7: ^7
