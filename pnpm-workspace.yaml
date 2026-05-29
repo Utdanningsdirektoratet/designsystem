@@ -166,29 +166,14 @@ minimumReleaseAge: 1440
 minimumReleaseAgeExclude:
   - '@digdir/*'
   - '@u-elements/*'
-  - postcss@8.5.10 # patches a vulnerability
 
 overrides:
-  '@eslint/plugin-kit@<0.3.4': '>=0.3.4'
+  # vite-plugin-react-docgen-typescript@>=0.7.0 removes many props from args tables in Storybook.
+  # Storybook now lists a higher version as a dependency, but we are prevented from upgrading
   '@joshwooding/vite-plugin-react-docgen-typescript@>=0.7.0': 0.6.4
   axios@>=1.0.0 <1.15.0: '>=1.15.0'
-  axios@>=1.0.0 <=1.13.4: '>=1.13.5'
-  chokidar@>=4.0.0 <5: ^5.0.0
-  flatted@<=3.4.1: '>=3.4.2'
-  glob@>=10.2.0 <10.5.0: ^10.5.0
-  jws@<3.2.3: '>=3.2.3'
-  jws@=4.0.0: '>=4.0.1'
-  minimatch@>=10.0.0 <10.2.1: '>=10.2.1'
-  minimatch@>=10.0.0 <10.2.3: '>=10.2.3'
-  minimatch@>=9.0.0 <9.0.6: '>=9.0.6'
-  minimatch@>=9.0.0 <9.0.7: '>=9.0.7'
-  picomatch@>=4.0.0 <4.0.4: '>=4.0.4'
   postcss@<8.5.10: ^8.5.10
-  qs@<6.14.1: '>=6.14.1'
   semver@<7: ^7
-  tmp@<=0.2.3: '>=0.2.4'
-  unist-util-visit@<5: ^5.0.0
-  uuid@<14.0.0: '>=14.0.0'
 
 packageExtensions:
   '@navikt/aksel-icons':
