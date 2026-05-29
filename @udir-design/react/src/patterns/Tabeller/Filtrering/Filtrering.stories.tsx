@@ -35,11 +35,9 @@ export const Preview = meta.story({
   parameters: { docs: advancedCodeDocs },
   args: {
     zebra: true,
-    stickyHeader: false,
     border: false,
     hover: false,
     tintedColumnHeader: false,
-    tintedRowHeader: false,
     'data-color': 'neutral',
   },
   render: (args) => {
@@ -130,8 +128,30 @@ export const Preview = meta.story({
       <>
         <style>
           {`
+        .example-filters-section {
+            display: flex;
+                flex-direction: ${isMobile || isTablet ? 'column' : 'row'};
+                justify-content: space-between;
+                align-items: ${isMobile || isTablet ? 'flex-start' : 'flex-end'};
+                gap: var(--ds-size-6);
+        }
+        .example-suggestion-section {
+            display: flex;
+            flex-direction: ${isMobile ? 'column' : 'row'};
+            gap: var(--ds-size-4);
+            align-items: flex-end;
+            width: ${isMobile ? '100%' : 'auto'};
+        }
+        .example-suggestion-field {
+            max-width: ${isMobile ? 'none' : '280px'};
+            width: ${isMobile ? '100%' : 'auto'};
+        }
+        .example-search-field {
+            width: ${isMobile ? '100%' : 'auto'};
+        }
         .example-main {
           margin: 20px;
+          gap: 20px;
         }
         .example-controls {
           display: flex;
@@ -158,18 +178,10 @@ export const Preview = meta.story({
           gap: var(--ds-size-2);
         }`}
         </style>
-        <div className="example-main" style={{ margin: '20px', gap: '20px' }}>
+        <div className="example-main">
           <Prose>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: isMobile || isTablet ? 'column' : 'row',
-                justifyContent: 'space-between',
-                alignItems: isMobile || isTablet ? 'flex-start' : 'flex-end',
-                gap: 'var(--ds-size-6)',
-              }}
-            >
-              <Field style={{ width: isMobile ? '100%' : undefined }}>
+            <div className="example-filters-section">
+              <Field className="example-search-field">
                 <Label>Søk</Label>
                 <Search>
                   <Search.Input
@@ -180,21 +192,8 @@ export const Preview = meta.story({
                   <Search.Clear onClick={() => setSearchQuery('')} />
                 </Search>
               </Field>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: isMobile ? 'column' : 'row',
-                  gap: 'var(--ds-size-4)',
-                  alignItems: 'flex-end',
-                  width: isMobile ? '100%' : undefined,
-                }}
-              >
-                <Field
-                  style={{
-                    maxWidth: isMobile ? 'none' : '280px',
-                    width: isMobile ? '100%' : undefined,
-                  }}
-                >
+              <div className="example-suggestion-section">
+                <Field className="example-suggestion-field">
                   <Label>Velg sted</Label>
                   <Suggestion
                     {...(args as SuggestionMultipleProps)}
@@ -216,12 +215,7 @@ export const Preview = meta.story({
                     </Suggestion.List>
                   </Suggestion>
                 </Field>
-                <Field
-                  style={{
-                    maxWidth: isMobile ? 'none' : '280px',
-                    width: isMobile ? '100%' : undefined,
-                  }}
-                >
+                <Field className="example-suggestion-field">
                   <Label>Velg orgnummer</Label>
                   <Suggestion
                     {...(args as SuggestionMultipleProps)}
