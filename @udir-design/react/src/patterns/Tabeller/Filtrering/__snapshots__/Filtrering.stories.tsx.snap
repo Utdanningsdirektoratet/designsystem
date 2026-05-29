@@ -3,8 +3,30 @@
 exports[`Preview 1`] = `
 <div data-size="auto">
   <style>
-    .example-main {
+    .example-filters-section {
+            display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+                gap: var(--ds-size-6);
+        }
+        .example-suggestion-section {
+            display: flex;
+            flex-direction: row;
+            gap: var(--ds-size-4);
+            align-items: flex-end;
+            width: auto;
+        }
+        .example-suggestion-field {
+            max-width: 280px;
+            width: auto;
+        }
+        .example-search-field {
+            width: auto;
+        }
+        .example-main {
           margin: 20px;
+          gap: 20px;
         }
         .example-controls {
           display: flex;
@@ -31,9 +53,9 @@ exports[`Preview 1`] = `
           gap: var(--ds-size-2);
         }
   </style>
-  <div style="<removed>">
+  <div>
     <div>
-      <div style="<removed>">
+      <div>
         <ds-field>
           <label
             data-weight="medium"
@@ -58,8 +80,8 @@ exports[`Preview 1`] = `
             </button>
           </div>
         </ds-field>
-        <div style="<removed>">
-          <ds-field style="<removed>">
+        <div>
+          <ds-field>
             <label
               data-weight="medium"
               for="<removed>"
@@ -143,7 +165,7 @@ exports[`Preview 1`] = `
               </u-datalist>
             </ds-suggestion>
           </ds-field>
-          <ds-field style="<removed>">
+          <ds-field>
             <label
               data-weight="medium"
               for="<removed>"

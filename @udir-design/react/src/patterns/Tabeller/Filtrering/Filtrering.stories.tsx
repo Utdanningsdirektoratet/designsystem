@@ -4,18 +4,18 @@ import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveData
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Dropdown } from 'src/components/dropdown/Dropdown';
+import { Field } from 'src/components/field/Field';
 import { Pagination } from 'src/components/pagination/Pagination';
-import type { TableHeaderCellProps } from 'src/components/table';
-import { Table } from 'src/components/table';
-import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
 import { Search } from 'src/components/search/Search';
 import {
   Suggestion,
-  SuggestionMultipleProps,
+  type SuggestionMultipleProps,
 } from 'src/components/suggestion/Suggestion';
-import { Field } from 'src/components/field/Field';
+import type { TableHeaderCellProps } from 'src/components/table';
+import { Table } from 'src/components/table';
 import { Label } from 'src/components/typography/label/Label';
 import { Prose } from 'src/components/typography/prose/Prose';
+import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
 
 const meta = preview.meta({
   tags: ['alpha', 'udir'],
