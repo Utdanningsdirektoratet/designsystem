@@ -119,7 +119,7 @@ export default defineMain({
         );
         return isPropFromAllowedLocation;
       },
-      tsconfigPath: 'tsconfig.lib.json',
+      tsconfigPath: 'tsconfig.docgen.json',
       // Required for unions like Size, Color etc from @digdir to generate options in Storybook controls
       shouldExtractLiteralValuesFromEnum: true,
       // Removes "undefined" as an option in Storybook controls for optional properties
