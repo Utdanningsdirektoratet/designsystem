@@ -1,0 +1,33 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import * as FiltreringStories from './Filtrering.stories';
+
+# Filtrering og søk
+
+## Filtrering
+
+Filtrering lar brukeren begrense hvilke rader som vises, basert på verdier i én eller flere kolonner. Dersom et filter gjelder for data i en bestemt kolonne, skal label for input-feltet matche kolonneoverskriften i tabellen. Dette gjør det lettere for brukeren å forstå sammenhengen mellom filteret og innholdet det påvirker.
+
+Dersom det er behov for mer avansert filtrering med sammensatte eller spissede filtervalg, bør dette plasseres i en egen dialog. Det frigjør plass i den primære verktøylinjen og gir brukeren et dedikert sted for komplekse filtervalg uten at grensesnittet over tabellen blir uoversiktlig.
+
+<Canvas of={FiltreringStories.Preview} />
+
+## Søk
+
+Søk lar brukeren finne frem til spesifikke rader ved å skrive inn tekst som matches mot dataen i tabellen. Dette er særlig nyttig i tabeller med mange rader, der manuell navigasjon ville tatt uforholdsmessig lang tid.
+
+Søket opererer på hele datasettet – ikke bare på den siden som er synlig. Når brukeren søker, viser tabellen alle rader som matcher, uavhengig av hvilken side de befant seg på. Sidevisningen oppdateres tilsvarende for å reflektere antall treff. Dersom brukeren for eksempel hadde navigert til side 3 og deretter søker, vil resultatlisten starte fra begynnelsen, som om man hadde nullstilt til side 1.
+
+Søket treffer på tvers av alle kolonner og tar ikke hensyn til hvilken kolonne verdien befinner seg i. Søker man for eksempel på «Os», vil man få treff på alle rader som inneholder «Os» – enten det er kommuner som «Os» eller kommuner med «Os» som del av navnet, og «Oslo» som et fylke. Filtrering kan brukes til å innsnevre resultatene dersom søket gir for mange eller lite relevante treff.
+
+Vi anbefaler å unngå infinity tables, ettersom Ctrl+F i nettleseren da bare treffer på rader som er lastet inn og synlig i nettleseren – ikke på hele datasettet. Dette kan gi brukeren en misvisende opplevelse av at data mangler.
+
+## Samspill mellom søk og filtrering
+
+Søk og filtrering kan brukes samtidig og virker i kombinasjon. Et aktivt filter begrenser hvilke rader som er synlige, og et søk vil bare treffe innenfor de radene som allerede er filtrert frem.
+
+Dette er viktig å kommunisere tydelig i grensesnittet dersom begge er aktive. Brukeren bør forstå at et søk som gir få eller ingen treff kan skyldes et aktivt filter, ikke at dataen mangler. Aktive filtre bør derfor alltid være synlige og enkle å fjerne.
+
+## Plassering av søk og filtrering
+
+Søkefelt og filtreringsmuligheter plasseres over tabellen. Dette gir brukeren mulighet til å forme visningen før de møter selve tabellen. Dersom tabellen ikke tar hele bredden av siden, kan det også være aktuelt å plassere disse elementene til venstre for tabellen.#
