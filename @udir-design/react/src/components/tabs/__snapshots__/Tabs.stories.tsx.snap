@@ -1,6 +1,24 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Controlled 1`] = `
+<style>
+  .example-list-unordered {
+            list-style: none;
+            padding: 0;
+          }
+          .example-list-item {
+            display: flex;
+           }
+          .example-list-content {
+            align-items: center;
+            display: flex;
+            gap: var(--ds-size-2);
+          }
+          .example-list-header {
+            margin-bottom: var(--ds-size-2);
+            margin-top: var(--ds-size-4);
+          }
+</style>
 <ds-tabs>
   <ds-tablist role="tablist">
     <ds-tab
@@ -66,8 +84,8 @@ exports[`Controlled 1`] = `
     aria-labelledby="<removed>"
     role="tabpanel"
   >
-    <ul style="<removed>">
-      <li style="<removed>">
+    <ul>
+      <li>
         <button
           data-variant="secondary"
           type="button"
@@ -82,11 +100,8 @@ exports[`Controlled 1`] = `
           Hilde Hansen (deg)
         </button>
       </li>
-      <li style="<removed>">
-        <a
-          href="#"
-          style="<removed>"
-        >
+      <li>
+        <a href="#">
           <span
             data-variant="circle"
             role="img"
@@ -97,11 +112,8 @@ exports[`Controlled 1`] = `
           Stian Stølan
         </a>
       </li>
-      <li style="<removed>">
-        <a
-          href="#"
-          style="<removed>"
-        >
+      <li>
+        <a href="#">
           <span
             data-variant="circle"
             role="img"
@@ -120,7 +132,7 @@ exports[`Controlled 1`] = `
     aria-hidden="true"
     hidden
   >
-    <div style="<removed>">
+    <div>
       <span
         data-variant="circle"
         role="img"
@@ -130,7 +142,7 @@ exports[`Controlled 1`] = `
       </span>
       Hilde Hansen
     </div>
-    <h3 style="<removed>">
+    <h3>
       Detaljer
     </h3>
     <p data-variant="default">
