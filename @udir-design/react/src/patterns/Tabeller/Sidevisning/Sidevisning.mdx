@@ -1,4 +1,5 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { INITIAL_VIEWPORTS } from 'storybook/viewport';
 
 import * as SidevisningStories from './Sidevisning.stories';
 
@@ -40,8 +41,40 @@ Plasseringen varierer etter skjermstørrelse:
 **Stor skjerm (desktop)**
 Pagination plasseres til venstre. Rad X–Y av Z og Rader per side plasseres til høyre, med Rad X–Y av Z til venstre for Rader per side.
 
+<Canvas of={SidevisningStories.Preview} />
+
 **Mellomstore skjermer (nettbrett)**
 Pagination plasseres på første rad. Rad X–Y av Z plasseres til venstre og Rader per side til høyre på andre rad. Radene er midtstilt.
 
+<div
+  style={{
+    width: INITIAL_VIEWPORTS['ipad'].styles.height,
+    justifySelf: 'center',
+  }}
+>
+  <Canvas
+    of={SidevisningStories.Preview}
+    story={{
+      inline: false,
+      height: INITIAL_VIEWPORTS['ipad'].styles.width,
+    }}
+  />
+</div>
+
 **Små skjermer (mobil)**
 Pagination plasseres på første rad. Rad X–Y av Z plasseres på andre rad. Rader per side plasseres på tredje rad. Radene er midtstilt.
+
+<div
+  style={{
+    width: INITIAL_VIEWPORTS['iphone14pro'].styles.width,
+    justifySelf: 'center',
+  }}
+>
+  <Canvas
+    of={SidevisningStories.Preview}
+    story={{
+      inline: false,
+      height: INITIAL_VIEWPORTS['iphone14pro'].styles.height,
+    }}
+  />
+</div>

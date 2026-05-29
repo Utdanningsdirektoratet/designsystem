@@ -119,7 +119,7 @@ export const Preview = meta.story({
           justify-content: ${isTablet ? 'space-between' : 'flex-start'};
           align-items: center;
           width: ${isTablet ? 'fit-content' : 'auto'};
-          gap: var(--ds-size-4);
+          gap: ${isTablet ? 'var(--ds-size-8)' : isDesktop ? 'var(--ds-size-6)' : 'var(--ds-size-2)'};
         }
         .example-controls-section-span {
           color: var(--ds-color-neutral-text-subtle);
@@ -196,7 +196,7 @@ export const Preview = meta.story({
             </Pagination>
             <div className="example-controls-section">
               <span className="example-controls-section-span">
-                {rangeStart}-{rangeEnd} av {dummyData.length}
+                Rad {rangeStart}-{rangeEnd} av {dummyData.length}
               </span>
               <div className="example-controls-section-dropdown">
                 <span>Rader per side</span>

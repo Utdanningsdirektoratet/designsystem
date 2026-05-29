@@ -20,7 +20,7 @@ exports[`Preview 1`] = `
           justify-content: flex-start;
           align-items: center;
           width: auto;
-          gap: var(--ds-size-4);
+          gap: var(--ds-size-6);
         }
         .example-controls-section-span {
           color: var(--ds-color-neutral-text-subtle);
@@ -275,7 +275,7 @@ exports[`Preview 1`] = `
       </ds-pagination>
       <div>
         <span>
-          1-10 av 200
+          Rad 1-10 av 200
         </span>
         <div>
           <span>
@@ -328,6 +328,14 @@ exports[`Preview 1`] = `
                   type="button"
                 >
                   10
+                </button>
+              </li>
+              <li>
+                <button
+                  data-variant="tertiary"
+                  type="button"
+                >
+                  15
                 </button>
               </li>
               <li>
