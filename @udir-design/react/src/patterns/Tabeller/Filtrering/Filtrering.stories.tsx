@@ -347,7 +347,7 @@ export const Preview = meta.story({
   },
 });
 
-export const withDialog = meta.story({
+export const WithDialog = meta.story({
   parameters: { docs: advancedCodeDocs },
   args: {
     zebra: true,
