@@ -28,6 +28,7 @@ I dette repositoriet lever den delen av designsystemet som implementeres i kode:
 - [Hva tester vi?](#hva-tester-vi)
   - [Individuelle komponenter](#individuelle-komponenter)
   - [Demosider](#demosider)
+  - [Smoketest (Next.js)](#smoketest-nextjs)
   - [Felles for komponenter og demosider](#felles-for-komponenter-og-demosider)
   - [Tester for komponenter i ulike livsfaser](#tester-for-komponenter-i-ulike-livsfaser)
 - [Informasjon for utviklere som skal bidra](#informasjon-for-utviklere-som-skal-bidra)
@@ -104,6 +105,10 @@ I de tilfellene vi implementerer egen oppførsel for komponenter eller hjelpefun
 ## Demosider
 
 Vi tester hver komponent i en større kontekst av andre komponenter. Dette kaller vi **komposisjonstester**. Her kan vi også teste interaksjoner på tvers av komponenter.
+
+## Smoketest (Next.js)
+
+Vi smoketester Next.js-testapplikasjonen i produksjonsmodus og besøker alle demosidene. Testen verifiserer at hver side rendres uten feil, og fanger opp problemer som ikke oppdages av komponent- eller komposisjonstester — for eksempel biblioteker som krasjer under server-side rendering (SSR).
 
 ## Felles for komponenter og demosider
 
@@ -427,6 +432,16 @@ Hvert eksempel i Storybook får automatisk en snapshottest, en visuell test, og 
 ```bash
 pnpm test:storybook:update
 ```
+
+#### Smoketest (Next.js)
+
+Smoketesten bruker [Playwright](https://playwright.dev/) til å bygge og starte Next.js-appen (`test-apps/nextjs`) og besøke alle demosider i Chromium.
+
+```bash
+pnpm nx test:e2e test-app-nextjs
+```
+
+I CI kjøres denne automatisk på pull requests som påvirker `test-app-nextjs` eller dens avhengigheter (`@udir-design/react`, `@udir-design/theme`, `@udir-design/icons`, `@udir-design/symbols`).
 
 #### Systemtest
 
