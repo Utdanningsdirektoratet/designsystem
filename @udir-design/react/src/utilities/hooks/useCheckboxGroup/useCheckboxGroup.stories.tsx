@@ -1,14 +1,14 @@
 import preview from '.storybook/preview';
 import type { DecoratorType } from '.storybook/types';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
-import { Button } from 'src/components/button/Button';
-import { Checkbox } from 'src/components/checkbox/Checkbox';
-import { Chip } from 'src/components/chip/Chip';
-import { Divider } from 'src/components/divider/Divider';
-import { Fieldset } from 'src/components/fieldset/Fieldset';
+import { Button } from 'src/components/button';
+import { Checkbox } from 'src/components/checkbox';
+import { Chip } from 'src/components/chip';
+import { Divider } from 'src/components/divider';
+import { Fieldset } from 'src/components/fieldset';
 import { Table } from 'src/components/table';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
-import { ValidationMessage } from 'src/components/typography/validationMessage/ValidationMessage';
+import { Paragraph } from 'src/components/typography/paragraph';
+import { ValidationMessage } from 'src/components/typography/validationMessage';
 import { useCheckboxGroup as fakeUseCheckboxGroup } from './docs/FakeUseCheckboxGroup';
 import {
   type UseCheckboxGroupProps,

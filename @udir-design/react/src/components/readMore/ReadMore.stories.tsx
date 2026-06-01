@@ -1,7 +1,7 @@
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
-import { Fieldset } from '../fieldset/Fieldset';
-import { Radio } from '../radio/Radio';
+import { Fieldset } from 'src/components/fieldset';
+import { Radio } from 'src/components/radio';
 import { ReadMore } from './ReadMore';
 
 const meta = preview.meta({

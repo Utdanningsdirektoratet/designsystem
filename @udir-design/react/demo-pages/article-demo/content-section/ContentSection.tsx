@@ -1,6 +1,6 @@
 import { Fragment } from 'react/jsx-runtime';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
 import type { SectionItem } from '../strings/sections';
 
 export interface ContentSectionProps {

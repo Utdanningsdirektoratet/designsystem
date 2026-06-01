@@ -1,9 +1,9 @@
 import { type HTMLAttributes, useState } from 'react';
-import { Field } from 'src/components/field/Field';
-import { Select } from 'src/components/select/Select';
+import { Field } from 'src/components/field';
+import { Select } from 'src/components/select';
 import { Table } from 'src/components/table';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Label } from 'src/components/typography/label/Label';
+import { Heading } from 'src/components/typography/heading';
+import { Label } from 'src/components/typography/label';
 import { capitalizeString } from 'src/utilities/helpers/stringHelpers';
 import { labels } from '../strings';
 import type { PreviewToken } from '../types';

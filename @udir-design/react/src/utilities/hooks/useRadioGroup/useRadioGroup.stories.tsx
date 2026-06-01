@@ -2,12 +2,12 @@ import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import type { DecoratorType } from '.storybook/types';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
-import { Button } from 'src/components/button/Button';
-import { Divider } from 'src/components/divider/Divider';
-import { Fieldset } from 'src/components/fieldset/Fieldset';
-import { Radio } from 'src/components/radio/Radio';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
-import { ValidationMessage } from 'src/components/typography/validationMessage/ValidationMessage';
+import { Button } from 'src/components/button';
+import { Divider } from 'src/components/divider';
+import { Fieldset } from 'src/components/fieldset';
+import { Radio } from 'src/components/radio';
+import { Paragraph } from 'src/components/typography/paragraph';
+import { ValidationMessage } from 'src/components/typography/validationMessage';
 import { useRadioGroup as fakeUseRadioGroup } from './docs/FakeUseRadioGroup';
 import { type UseRadioGroupProps, useRadioGroup } from './useRadioGroup';
 

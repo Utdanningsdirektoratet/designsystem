@@ -7,17 +7,17 @@ import z from 'zod';
 import { BulletListIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
-import type { GetStepId } from 'src/utilities/form/navigation';
+import { Button } from 'src/components/button';
+import { Dialog } from 'src/components/dialog';
+import { Textfield } from 'src/components/textfield';
+import { Heading } from 'src/components/typography/heading';
 import {
   defineSteps,
   getStepIds,
   makeStepFinder,
 } from 'src/utilities/form/navigation';
-import { useFormNavigation } from 'src/utilities/hooks/useFormNavigation/useFormNavigation';
-import { Button } from '../button/Button';
-import { Dialog } from '../dialog/Dialog';
-import { Textfield } from '../textfield/Textfield';
-import { Heading } from '../typography/heading/Heading';
+import type { GetStepId } from 'src/utilities/form/navigation';
+import { useFormNavigation } from 'src/utilities/hooks/useFormNavigation';
 import { FormNavigation as FakeFormNavigation } from './docs/FakeFormNavigation';
 import { FormNavigationGroup } from './docs/FakeFormNavigationGroup';
 import { FormNavigationStep } from './docs/FakeFormNavigationStep';

@@ -2,9 +2,9 @@ import cl from 'clsx/lite';
 import type { HTMLAttributes, ReactNode } from 'react';
 import { forwardRef } from 'react';
 import { NotePencilIcon } from '@udir-design/icons';
-import { Card } from '../card/Card';
-import { Link } from '../link/Link';
-import { Heading } from '../typography/heading/Heading';
+import { Card } from '../card';
+import { Link } from '../link';
+import { Heading } from '../typography/heading';
 
 export type FormSummarySectionProps = HTMLAttributes<HTMLDivElement> & {
   /**

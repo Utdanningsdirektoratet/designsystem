@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { expect, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
-import { Button } from '../button/Button';
-import { Link } from '../link/Link';
-import { Heading } from '../typography/heading/Heading';
-import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Button } from 'src/components/button';
+import { Link } from 'src/components/link';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
 import { Alert } from './';
 
 const meta = preview.meta({

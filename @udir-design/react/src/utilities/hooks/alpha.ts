@@ -5,11 +5,11 @@
  * @module
  */
 
-export { useDrilldownTable } from './useDrilldownTable/useDrilldownTable';
+export { useDrilldownTable } from './useDrilldownTable';
 export {
   type FormNavigationState,
   type GetFormNavigationStepProps,
   type UseFormNavigationProps,
   type UseFormNavigationReturn,
   useFormNavigation,
-} from './useFormNavigation/useFormNavigation';
+} from './useFormNavigation';

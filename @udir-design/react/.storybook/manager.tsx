@@ -12,7 +12,7 @@ import {
   TokenIcon,
   WrenchIcon,
 } from '@udir-design/icons';
-import { type TagProps } from 'src/components/tag/Tag';
+import { type TagProps } from 'src/components/tag';
 import customTheme from './docs/customTheme';
 
 const tagBadges = {

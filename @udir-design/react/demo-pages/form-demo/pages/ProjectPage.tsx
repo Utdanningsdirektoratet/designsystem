@@ -1,16 +1,16 @@
 import { Controller, useFormContext } from 'react-hook-form';
 import { counties } from '.storybook/data';
-import { Field } from 'src/components/field/Field';
+import { Field } from 'src/components/field';
 import { FieldNecessity } from 'src/components/fieldNecessity';
-import { Fieldset } from 'src/components/fieldset/Fieldset';
-import { Radio } from 'src/components/radio/Radio';
-import { ReadMore } from 'src/components/readMore/ReadMore';
-import { Select } from 'src/components/select/Select';
-import { Suggestion } from 'src/components/suggestion/Suggestion';
-import { Textfield } from 'src/components/textfield/Textfield';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Label } from 'src/components/typography/label/Label';
-import { ValidationMessage } from 'src/components/typography/validationMessage/ValidationMessage';
+import { Fieldset } from 'src/components/fieldset';
+import { Radio } from 'src/components/radio';
+import { ReadMore } from 'src/components/readMore';
+import { Select } from 'src/components/select';
+import { Suggestion } from 'src/components/suggestion';
+import { Textfield } from 'src/components/textfield';
+import { Heading } from 'src/components/typography/heading';
+import { Label } from 'src/components/typography/label';
+import { ValidationMessage } from 'src/components/typography/validationMessage';
 import {
   type FormValues,
   type PageProps,

@@ -1,9 +1,9 @@
 import { expect, within } from 'storybook/test';
 import { ParagraphIcon, RobotIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
-import { Avatar } from '../avatar/Avatar';
-import { Heading } from '../typography/heading/Heading';
-import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Avatar } from 'src/components/avatar';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
 import type { TagProps } from './Tag';
 import { Tag } from './Tag';
 

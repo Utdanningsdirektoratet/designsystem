@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
-import { Button } from '../button/Button';
-import { Divider } from '../divider/Divider';
-import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Button } from 'src/components/button';
+import { Divider } from 'src/components/divider';
+import { Paragraph } from 'src/components/typography/paragraph';
 import { Textfield } from './Textfield';
 
 const meta = preview.meta({

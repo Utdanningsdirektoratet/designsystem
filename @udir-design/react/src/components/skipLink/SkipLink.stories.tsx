@@ -1,7 +1,7 @@
 import { expect, userEvent, within } from 'storybook/test';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
-import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Paragraph } from 'src/components/typography/paragraph';
 import { SkipLink } from './SkipLink';
 
 const meta = preview.meta({

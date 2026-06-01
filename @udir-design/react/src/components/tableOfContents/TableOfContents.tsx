@@ -2,11 +2,11 @@ import type { Color } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
 import { ArrowDownRightIcon } from '@udir-design/icons';
-import type { CardProps } from '../card/Card';
-import { Card } from '../card/Card';
-import type { DetailsProps } from '../details/Details';
-import { Details } from '../details/Details';
-import { Link } from '../link/Link';
+import type { CardProps } from '../card';
+import { Card } from '../card';
+import type { DetailsProps } from '../details';
+import { Details } from '../details';
+import { Link } from '../link';
 import './tableOfContents.css';
 
 export type TocHeading = {

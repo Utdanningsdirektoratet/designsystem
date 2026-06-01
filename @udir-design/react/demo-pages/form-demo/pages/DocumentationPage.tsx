@@ -2,12 +2,12 @@ import { useState } from 'react';
 import type { FileRejection, FileWithPath } from 'react-dropzone';
 import { useDropzone } from 'react-dropzone';
 import { useFormContext } from 'react-hook-form';
-import { Field } from 'src/components/field/Field';
+import { Field } from 'src/components/field';
 import { FieldNecessity } from 'src/components/fieldNecessity';
 import { FileUpload } from 'src/components/fileUpload';
-import { Textarea } from 'src/components/textarea/Textarea';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Label } from 'src/components/typography/label/Label';
+import { Textarea } from 'src/components/textarea';
+import { Heading } from 'src/components/typography/heading';
+import { Label } from 'src/components/typography/label';
 import type { FormValues, PageProps } from '../FormDemo';
 
 export const DocumentationPage = ({

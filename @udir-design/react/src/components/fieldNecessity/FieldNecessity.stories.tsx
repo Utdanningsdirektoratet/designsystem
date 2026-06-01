@@ -1,15 +1,15 @@
 import preview from '.storybook/preview';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
-import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
-import { useRadioGroup } from 'src/utilities/hooks/useRadioGroup/useRadioGroup';
-import { Card } from '../card/Card';
-import { Checkbox } from '../checkbox/Checkbox';
-import { Fieldset } from '../fieldset/Fieldset';
-import { Radio } from '../radio/Radio';
-import { Textfield } from '../textfield/Textfield';
-import { Heading } from '../typography/heading/Heading';
-import { Paragraph } from '../typography/paragraph/Paragraph';
-import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
+import { Card } from 'src/components/card';
+import { Checkbox } from 'src/components/checkbox';
+import { Fieldset } from 'src/components/fieldset';
+import { Radio } from 'src/components/radio';
+import { Textfield } from 'src/components/textfield';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
+import { ValidationMessage } from 'src/components/typography/validationMessage';
+import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup';
+import { useRadioGroup } from 'src/utilities/hooks/useRadioGroup';
 import { FieldNecessity } from '.';
 
 const meta = preview.meta({

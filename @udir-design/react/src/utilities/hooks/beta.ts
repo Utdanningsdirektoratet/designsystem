@@ -5,12 +5,9 @@
  * @module
  */
 
-export {
-  type UsePaginationProps,
-  usePagination,
-} from './usePagination/usePagination';
+export { type UsePaginationProps, usePagination } from './usePagination';
 export {
   useTableOfContents,
   type useTableOfContentsProps,
   type useTableOfContentsReturn,
-} from './useTableOfContents/useTableOfContents';
+} from './useTableOfContents';

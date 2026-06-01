@@ -1,6 +1,6 @@
 import preview from '.storybook/preview';
-import { Link } from '../link/Link';
-import { Heading } from '../typography/heading/Heading';
+import { Link } from 'src/components/link';
+import { Heading } from 'src/components/typography/heading';
 import { List } from './List';
 import { ListItem } from './docs/FakeListItem';
 import { ListOrdered } from './docs/FakeListOrdered';

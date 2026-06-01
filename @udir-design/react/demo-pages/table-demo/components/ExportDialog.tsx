@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react';
 import { FileCsvFillIcon, FilePdfFillIcon } from '@udir-design/icons';
-import { Button } from 'src/components/button/Button';
-import { Dialog } from 'src/components/dialog/Dialog';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Button } from 'src/components/button';
+import { Dialog } from 'src/components/dialog';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
 import classes from '../TableDemo.module.css';
 
 type ExportDialogProps = {

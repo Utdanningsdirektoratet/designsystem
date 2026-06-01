@@ -6,15 +6,15 @@ import {
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Alert } from 'src/components/alert';
-import { Button } from 'src/components/button/Button';
-import { Card } from 'src/components/card/Card';
-import { DemoBanner } from 'src/components/demoBanner/DemoBanner';
-import { Dialog } from 'src/components/dialog/Dialog';
+import { Button } from 'src/components/button';
+import { Card } from 'src/components/card';
+import { DemoBanner } from 'src/components/demoBanner';
+import { Dialog } from 'src/components/dialog';
 import { Footer } from 'src/components/footer';
 import { Header } from 'src/components/header';
-import { Link } from 'src/components/link/Link';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Link } from 'src/components/link';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
 
 const meta = preview.meta({
   title: 'patterns/Demoversjon av tjenester',

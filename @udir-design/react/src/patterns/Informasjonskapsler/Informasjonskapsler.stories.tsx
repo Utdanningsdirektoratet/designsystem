@@ -1,9 +1,9 @@
 import { Button, Link, Paragraph } from '@digdir/designsystemet-react';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
-import { Dialog } from 'src/components/dialog/Dialog';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Prose } from 'src/components/typography/prose/Prose';
+import { Dialog } from 'src/components/dialog';
+import { Heading } from 'src/components/typography/heading';
+import { Prose } from 'src/components/typography/prose';
 
 const meta = preview.meta({
   tags: ['alpha', 'udir'],

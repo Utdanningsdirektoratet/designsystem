@@ -7,14 +7,14 @@ import {
   VideoIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
-import { Avatar } from '../avatar/Avatar';
-import { Button } from '../button/Button';
-import { Card } from '../card/Card';
-import { Details } from '../details/Details';
-import { Tabs } from '../tabs/Tabs';
-import { Tag } from '../tag/Tag';
-import { Heading } from '../typography/heading/Heading';
-import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Avatar } from 'src/components/avatar';
+import { Button } from 'src/components/button';
+import { Card } from 'src/components/card';
+import { Details } from 'src/components/details';
+import { Tabs } from 'src/components/tabs';
+import { Tag } from 'src/components/tag';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
 import { Badge, BadgePosition } from './Badge';
 
 const meta = preview.meta({

@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { Heading, type HeadingProps } from '../typography/heading/Heading';
+import { Heading, type HeadingProps } from '../typography/heading';
 
 export type AlertHeadingProps = HeadingProps;
 

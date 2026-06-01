@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import * as Icons from '@udir-design/icons';
-import { Tag } from 'src/components/tag/Tag';
+import { Tag } from 'src/components/tag';
 import { ToggleGroup } from 'src/components/toggleGroup';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
 import { CodeBlock } from './CodeBlock';
 import type { UdirIcon } from './IconDisplay.utils';
 import styles from './iconInformation.module.css';

@@ -1,10 +1,10 @@
 import cl from 'clsx/lite';
-import { Card } from 'src/components/card/Card';
-import { Fieldset } from 'src/components/fieldset/Fieldset';
-import { Radio } from 'src/components/radio/Radio';
-import { Switch } from 'src/components/switch/Switch';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { ValidationMessage } from 'src/components/typography/validationMessage/ValidationMessage';
+import { Card } from 'src/components/card';
+import { Fieldset } from 'src/components/fieldset';
+import { Radio } from 'src/components/radio';
+import { Switch } from 'src/components/switch';
+import { Heading } from 'src/components/typography/heading';
+import { ValidationMessage } from 'src/components/typography/validationMessage';
 import { TabStructure } from '../../components/tab-structure/TabStructure';
 import classes from './Settings.module.css';
 
