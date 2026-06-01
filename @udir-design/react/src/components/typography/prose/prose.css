@@ -9,31 +9,31 @@
     margin-block-end: var(--ds-size-4);
     margin-block-start: var(--ds-size-8);
 
-    &[data-size='2xl'] {
+    &:where([data-size='2xl']) {
       margin-block-start: var(--ds-size-12);
     }
 
-    &[data-size='xl'] {
+    &:where([data-size='xl']) {
       margin-block-start: var(--ds-size-11);
     }
 
-    &[data-size='lg'] {
+    &:where([data-size='lg']) {
       margin-block-start: var(--ds-size-10);
     }
 
-    &[data-size='md'] {
+    &:where([data-size='md']) {
       margin-block-start: var(--ds-size-9);
     }
 
-    &[data-size='sm'] {
+    &:where([data-size='sm']) {
       margin-block-start: var(--ds-size-8);
     }
 
-    &[data-size='xs'] {
+    &:where([data-size='xs']) {
       margin-block-start: var(--ds-size-7);
     }
 
-    &[data-size='2xs'] {
+    &:where([data-size='2xs']) {
       margin-block-start: var(--ds-size-6);
     }
   }
