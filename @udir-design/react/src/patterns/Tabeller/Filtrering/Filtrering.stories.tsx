@@ -411,7 +411,7 @@ export const WithDialog = meta.story({
       name: 'radio-group',
       value: draftKlar,
       onChange: (value) => setDraftKlar(value as 'alle' | 'ja' | 'nei'),
-      variant: 'default',
+      variant: 'outline',
     });
 
     const sortedData = [...dummyData]
