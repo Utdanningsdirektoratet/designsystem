@@ -21,7 +21,7 @@ const meta = preview.meta({
     'ErrorSummary.Link': ErrorSummaryLink,
     'ErrorSummary.List': ErrorSummaryList,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

@@ -16,7 +16,7 @@ const meta = preview.meta({
     'Pagination.Item': PaginationItem,
     'Pagination.Button': PaginationButton,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

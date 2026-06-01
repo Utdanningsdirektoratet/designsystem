@@ -40,7 +40,7 @@ const meta = preview.meta({
     'Chip.Removable': ChipRemovable,
   },
 
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       name: 'Chip',

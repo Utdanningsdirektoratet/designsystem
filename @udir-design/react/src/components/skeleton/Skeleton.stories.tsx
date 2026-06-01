@@ -13,7 +13,7 @@ import { Skeleton } from './Skeleton';
 
 const meta = preview.meta({
   component: Skeleton,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

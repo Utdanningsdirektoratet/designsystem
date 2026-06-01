@@ -11,13 +11,13 @@ import { Button } from 'src/components/button';
 import { Dialog } from 'src/components/dialog';
 import { Textfield } from 'src/components/textfield';
 import { Heading } from 'src/components/typography/heading';
+import { useFormNavigation } from 'src/hooks/useFormNavigation';
 import {
   defineSteps,
   getStepIds,
   makeStepFinder,
 } from 'src/utilities/form/navigation';
 import type { GetStepId } from 'src/utilities/form/navigation';
-import { useFormNavigation } from 'src/hooks/useFormNavigation';
 import { FormNavigation as FakeFormNavigation } from './docs/FakeFormNavigation';
 import { FormNavigationGroup } from './docs/FakeFormNavigationGroup';
 import { FormNavigationStep } from './docs/FakeFormNavigationStep';
@@ -30,7 +30,7 @@ const meta = preview.meta({
     'FormNavigation.Group': FormNavigationGroup,
     'FormNavigation.Step': FormNavigationStep,
   },
-  tags: ['beta', 'udir'],
+  tags: ['udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',

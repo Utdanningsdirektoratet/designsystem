@@ -33,7 +33,7 @@ const meta = preview.meta({
     'Dropdown.Trigger': DropdownTrigger,
     'Dropdown.TriggerContext': DropdownTriggerContext,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

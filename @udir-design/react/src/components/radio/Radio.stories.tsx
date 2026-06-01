@@ -6,7 +6,7 @@ import { Radio } from './Radio';
 
 const meta = preview.meta({
   component: Radio,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

@@ -31,7 +31,7 @@ const meta = preview.meta({
     'Suggestion.List': SuggestionList,
     'Suggestion.Option': SuggestionOption,
   },
-  tags: ['alpha', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

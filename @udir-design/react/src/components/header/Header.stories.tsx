@@ -39,7 +39,7 @@ const meta = preview.meta({
     'Header.Menu.Link': HeaderMenuLink,
     'Header.ThemeMenuButton': HeaderThemeMenuButton,
   },
-  tags: ['beta', 'udir'],
+  tags: ['udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',

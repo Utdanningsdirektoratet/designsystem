@@ -11,7 +11,7 @@ const meta = preview.meta<
   Partial<UseFormNavigationProps>
 >({
   title: 'Utilities/useFormNavigation',
-  tags: ['alpha', 'udir'],
+  tags: ['udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',

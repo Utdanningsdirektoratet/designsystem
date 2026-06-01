@@ -10,7 +10,7 @@ import { DemoBanner } from './DemoBanner';
 
 const meta = preview.meta({
   component: DemoBanner,
-  tags: ['beta', 'udir'],
+  tags: ['udir'],
 });
 
 export const Preview = meta.story({

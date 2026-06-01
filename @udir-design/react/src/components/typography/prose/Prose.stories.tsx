@@ -16,7 +16,7 @@ import { Prose } from './Prose';
 
 const meta = preview.meta({
   component: Prose,
-  tags: ['beta', 'udir'],
+  tags: ['udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',

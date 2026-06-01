@@ -18,7 +18,7 @@ const meta = preview.meta({
     'Select.Optgroup': FakeSelectOptgroup,
     'Select.Option': FakeSelectOption,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

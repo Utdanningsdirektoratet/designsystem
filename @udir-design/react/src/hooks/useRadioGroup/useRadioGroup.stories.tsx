@@ -18,7 +18,7 @@ const meta = preview.meta<
 >({
   title: 'Utilities/useRadioGroup',
   component: fakeUseRadioGroup,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: { originator: 'digdir' },
   },

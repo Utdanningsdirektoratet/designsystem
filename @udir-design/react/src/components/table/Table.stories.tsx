@@ -28,7 +28,7 @@ const meta = preview.meta({
     'Table.HeaderCell': TableHeaderCell,
     'Table.Foot': TableFoot,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

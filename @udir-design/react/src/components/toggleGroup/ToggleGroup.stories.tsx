@@ -28,7 +28,7 @@ const meta = preview.meta({
   subcomponents: {
     'ToggleGroup.Item': ToggleGroupItem,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

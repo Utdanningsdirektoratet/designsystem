@@ -17,7 +17,7 @@ const meta = preview.meta({
     'FileUpload.Dropzone': FileUploadDropzone,
     'FileUpload.Item': FileUploadItem,
   },
-  tags: ['alpha', 'udir'],
+  tags: ['udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',

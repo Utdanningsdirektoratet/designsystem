@@ -11,7 +11,7 @@ import { Avatar } from './Avatar';
 
 const meta = preview.meta({
   component: Avatar,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
