@@ -26,23 +26,317 @@
       "import": "./dist/beta.js",
       "require": "./dist/beta.cjs"
     },
-    "./utilities/form/alpha": {
-      "import": "./dist/utilities/form/alpha.js",
-      "require": "./dist/utilities/form/alpha.cjs"
-    },
-    "./utilities/datavis/alpha": {
-      "import": "./dist/utilities/datavis/alpha.js",
-      "require": "./dist/utilities/datavis/alpha.cjs"
+    "./utilities/alpha": {
+      "import": "./dist/utilities/alpha.js",
+      "require": "./dist/utilities/alpha.cjs"
     },
     "./html": {
       "types": "./dist/html.d.ts"
     },
-    "./style.css": "./dist/style.css"
+    "./style.css": "./dist/style.css",
+    "./avatar": {
+      "types": "./dist/components/avatar/index.d.ts",
+      "import": "./dist/components/avatar/index.js",
+      "require": "./dist/components/avatar/index.cjs"
+    },
+    "./button": {
+      "types": "./dist/components/button/index.d.ts",
+      "import": "./dist/components/button/index.js",
+      "require": "./dist/components/button/index.cjs"
+    },
+    "./card": {
+      "types": "./dist/components/card/index.d.ts",
+      "import": "./dist/components/card/index.js",
+      "require": "./dist/components/card/index.cjs"
+    },
+    "./checkbox": {
+      "types": "./dist/components/checkbox/index.d.ts",
+      "import": "./dist/components/checkbox/index.js",
+      "require": "./dist/components/checkbox/index.cjs"
+    },
+    "./divider": {
+      "types": "./dist/components/divider/index.d.ts",
+      "import": "./dist/components/divider/index.js",
+      "require": "./dist/components/divider/index.cjs"
+    },
+    "./footer": {
+      "types": "./dist/components/footer/index.d.ts",
+      "import": "./dist/components/footer/index.js",
+      "require": "./dist/components/footer/index.cjs"
+    },
+    "./input": {
+      "types": "./dist/components/input/index.d.ts",
+      "import": "./dist/components/input/index.js",
+      "require": "./dist/components/input/index.cjs"
+    },
+    "./list": {
+      "types": "./dist/components/list/index.d.ts",
+      "import": "./dist/components/list/index.js",
+      "require": "./dist/components/list/index.cjs"
+    },
+    "./search": {
+      "types": "./dist/components/search/index.d.ts",
+      "import": "./dist/components/search/index.js",
+      "require": "./dist/components/search/index.cjs"
+    },
+    "./useCheckboxGroup": {
+      "types": "./dist/hooks/useCheckboxGroup/index.d.ts",
+      "import": "./dist/hooks/useCheckboxGroup/index.js",
+      "require": "./dist/hooks/useCheckboxGroup/index.cjs"
+    },
+    "./beta/alert": {
+      "types": "./dist/components/alert/index.d.ts",
+      "import": "./dist/components/alert/index.js",
+      "require": "./dist/components/alert/index.cjs"
+    },
+    "./beta/badge": {
+      "types": "./dist/components/badge/index.d.ts",
+      "import": "./dist/components/badge/index.js",
+      "require": "./dist/components/badge/index.cjs"
+    },
+    "./beta/breadcrumbs": {
+      "types": "./dist/components/breadcrumbs/index.d.ts",
+      "import": "./dist/components/breadcrumbs/index.js",
+      "require": "./dist/components/breadcrumbs/index.cjs"
+    },
+    "./beta/chip": {
+      "types": "./dist/components/chip/index.d.ts",
+      "import": "./dist/components/chip/index.js",
+      "require": "./dist/components/chip/index.cjs"
+    },
+    "./beta/demoBanner": {
+      "types": "./dist/components/demoBanner/index.d.ts",
+      "import": "./dist/components/demoBanner/index.js",
+      "require": "./dist/components/demoBanner/index.cjs"
+    },
+    "./beta/details": {
+      "types": "./dist/components/details/index.d.ts",
+      "import": "./dist/components/details/index.js",
+      "require": "./dist/components/details/index.cjs"
+    },
+    "./beta/dialog": {
+      "types": "./dist/components/dialog/index.d.ts",
+      "import": "./dist/components/dialog/index.js",
+      "require": "./dist/components/dialog/index.cjs"
+    },
+    "./beta/dropdown": {
+      "types": "./dist/components/dropdown/index.d.ts",
+      "import": "./dist/components/dropdown/index.js",
+      "require": "./dist/components/dropdown/index.cjs"
+    },
+    "./beta/errorSummary": {
+      "types": "./dist/components/errorSummary/index.d.ts",
+      "import": "./dist/components/errorSummary/index.js",
+      "require": "./dist/components/errorSummary/index.cjs"
+    },
+    "./beta/field": {
+      "types": "./dist/components/field/index.d.ts",
+      "import": "./dist/components/field/index.js",
+      "require": "./dist/components/field/index.cjs"
+    },
+    "./beta/fieldNecessity": {
+      "types": "./dist/components/fieldNecessity/index.d.ts",
+      "import": "./dist/components/fieldNecessity/index.js",
+      "require": "./dist/components/fieldNecessity/index.cjs"
+    },
+    "./beta/fieldset": {
+      "types": "./dist/components/fieldset/index.d.ts",
+      "import": "./dist/components/fieldset/index.js",
+      "require": "./dist/components/fieldset/index.cjs"
+    },
+    "./beta/formNavigation": {
+      "types": "./dist/components/formNavigation/index.d.ts",
+      "import": "./dist/components/formNavigation/index.js",
+      "require": "./dist/components/formNavigation/index.cjs"
+    },
+    "./beta/header": {
+      "types": "./dist/components/header/index.d.ts",
+      "import": "./dist/components/header/index.js",
+      "require": "./dist/components/header/index.cjs"
+    },
+    "./beta/link": {
+      "types": "./dist/components/link/index.d.ts",
+      "import": "./dist/components/link/index.js",
+      "require": "./dist/components/link/index.cjs"
+    },
+    "./beta/logo": {
+      "types": "./dist/components/logo/index.d.ts",
+      "import": "./dist/components/logo/index.js",
+      "require": "./dist/components/logo/index.cjs"
+    },
+    "./beta/pagination": {
+      "types": "./dist/components/pagination/index.d.ts",
+      "import": "./dist/components/pagination/index.js",
+      "require": "./dist/components/pagination/index.cjs"
+    },
+    "./beta/popover": {
+      "types": "./dist/components/popover/index.d.ts",
+      "import": "./dist/components/popover/index.js",
+      "require": "./dist/components/popover/index.cjs"
+    },
+    "./beta/progressBar": {
+      "types": "./dist/components/progressBar/index.d.ts",
+      "import": "./dist/components/progressBar/index.js",
+      "require": "./dist/components/progressBar/index.cjs"
+    },
+    "./beta/radio": {
+      "types": "./dist/components/radio/index.d.ts",
+      "import": "./dist/components/radio/index.js",
+      "require": "./dist/components/radio/index.cjs"
+    },
+    "./beta/readMore": {
+      "types": "./dist/components/readMore/index.d.ts",
+      "import": "./dist/components/readMore/index.js",
+      "require": "./dist/components/readMore/index.cjs"
+    },
+    "./beta/select": {
+      "types": "./dist/components/select/index.d.ts",
+      "import": "./dist/components/select/index.js",
+      "require": "./dist/components/select/index.cjs"
+    },
+    "./beta/skeleton": {
+      "types": "./dist/components/skeleton/index.d.ts",
+      "import": "./dist/components/skeleton/index.js",
+      "require": "./dist/components/skeleton/index.cjs"
+    },
+    "./beta/skipLink": {
+      "types": "./dist/components/skipLink/index.d.ts",
+      "import": "./dist/components/skipLink/index.js",
+      "require": "./dist/components/skipLink/index.cjs"
+    },
+    "./beta/spinner": {
+      "types": "./dist/components/spinner/index.d.ts",
+      "import": "./dist/components/spinner/index.js",
+      "require": "./dist/components/spinner/index.cjs"
+    },
+    "./beta/switch": {
+      "types": "./dist/components/switch/index.d.ts",
+      "import": "./dist/components/switch/index.js",
+      "require": "./dist/components/switch/index.cjs"
+    },
+    "./beta/tableOfContents": {
+      "types": "./dist/components/tableOfContents/index.d.ts",
+      "import": "./dist/components/tableOfContents/index.js",
+      "require": "./dist/components/tableOfContents/index.cjs"
+    },
+    "./beta/tabs": {
+      "types": "./dist/components/tabs/index.d.ts",
+      "import": "./dist/components/tabs/index.js",
+      "require": "./dist/components/tabs/index.cjs"
+    },
+    "./beta/tag": {
+      "types": "./dist/components/tag/index.d.ts",
+      "import": "./dist/components/tag/index.js",
+      "require": "./dist/components/tag/index.cjs"
+    },
+    "./beta/textarea": {
+      "types": "./dist/components/textarea/index.d.ts",
+      "import": "./dist/components/textarea/index.js",
+      "require": "./dist/components/textarea/index.cjs"
+    },
+    "./beta/table": {
+      "types": "./dist/components/table/index.d.ts",
+      "import": "./dist/components/table/index.js",
+      "require": "./dist/components/table/index.cjs"
+    },
+    "./beta/textfield": {
+      "types": "./dist/components/textfield/index.d.ts",
+      "import": "./dist/components/textfield/index.js",
+      "require": "./dist/components/textfield/index.cjs"
+    },
+    "./beta/toggleGroup": {
+      "types": "./dist/components/toggleGroup/index.d.ts",
+      "import": "./dist/components/toggleGroup/index.js",
+      "require": "./dist/components/toggleGroup/index.cjs"
+    },
+    "./beta/tooltip": {
+      "types": "./dist/components/tooltip/index.d.ts",
+      "import": "./dist/components/tooltip/index.js",
+      "require": "./dist/components/tooltip/index.cjs"
+    },
+    "./beta/heading": {
+      "types": "./dist/components/typography/heading/index.d.ts",
+      "import": "./dist/components/typography/heading/index.js",
+      "require": "./dist/components/typography/heading/index.cjs"
+    },
+    "./beta/label": {
+      "types": "./dist/components/typography/label/index.d.ts",
+      "import": "./dist/components/typography/label/index.js",
+      "require": "./dist/components/typography/label/index.cjs"
+    },
+    "./beta/paragraph": {
+      "types": "./dist/components/typography/paragraph/index.d.ts",
+      "import": "./dist/components/typography/paragraph/index.js",
+      "require": "./dist/components/typography/paragraph/index.cjs"
+    },
+    "./beta/prose": {
+      "types": "./dist/components/typography/prose/index.d.ts",
+      "import": "./dist/components/typography/prose/index.js",
+      "require": "./dist/components/typography/prose/index.cjs"
+    },
+    "./beta/validationMessage": {
+      "types": "./dist/components/typography/validationMessage/index.d.ts",
+      "import": "./dist/components/typography/validationMessage/index.js",
+      "require": "./dist/components/typography/validationMessage/index.cjs"
+    },
+    "./beta/usePagination": {
+      "types": "./dist/hooks/usePagination/index.d.ts",
+      "import": "./dist/hooks/usePagination/index.js",
+      "require": "./dist/hooks/usePagination/index.cjs"
+    },
+    "./beta/useRadioGroup": {
+      "types": "./dist/hooks/useRadioGroup/index.d.ts",
+      "import": "./dist/hooks/useRadioGroup/index.js",
+      "require": "./dist/hooks/useRadioGroup/index.cjs"
+    },
+    "./beta/useTableOfContents": {
+      "types": "./dist/hooks/useTableOfContents/index.d.ts",
+      "import": "./dist/hooks/useTableOfContents/index.js",
+      "require": "./dist/hooks/useTableOfContents/index.cjs"
+    },
+    "./alpha/fileUpload": {
+      "types": "./dist/components/fileUpload/index.d.ts",
+      "import": "./dist/components/fileUpload/index.js",
+      "require": "./dist/components/fileUpload/index.cjs"
+    },
+    "./alpha/formSummary": {
+      "types": "./dist/components/formSummary/index.d.ts",
+      "import": "./dist/components/formSummary/index.js",
+      "require": "./dist/components/formSummary/index.cjs"
+    },
+    "./alpha/suggestion": {
+      "types": "./dist/components/suggestion/index.d.ts",
+      "import": "./dist/components/suggestion/index.js",
+      "require": "./dist/components/suggestion/index.cjs"
+    },
+    "./alpha/useFormNavigation": {
+      "types": "./dist/hooks/useFormNavigation/index.d.ts",
+      "import": "./dist/hooks/useFormNavigation/index.js",
+      "require": "./dist/hooks/useFormNavigation/index.cjs"
+    },
+    "./alpha/utilities/form/navigation": {
+      "types": "./dist/utilities/form/navigation/index.d.ts",
+      "import": "./dist/utilities/form/navigation/index.js",
+      "require": "./dist/utilities/form/navigation/index.cjs"
+    },
+    "./alpha/utilities/datavis/dataVisualisation": {
+      "types": "./dist/utilities/datavis/dataVisualisation/index.d.ts",
+      "import": "./dist/utilities/datavis/dataVisualisation/index.js",
+      "require": "./dist/utilities/datavis/dataVisualisation/index.cjs"
+    },
+    "./alpha/utilities/datavis/highcharts": {
+      "types": "./dist/utilities/datavis/highcharts/index.d.ts",
+      "import": "./dist/utilities/datavis/highcharts/index.js",
+      "require": "./dist/utilities/datavis/highcharts/index.cjs"
+    }
   },
   "files": [
     "./dist"
   ],
   "scripts": {
+    "generate:exports": "../../@internal/build-tools/bin/generate-react-exports.ts",
+    "prebuild": "pnpm generate:exports",
+    "predev": "pnpm generate:exports",
     "build": "vite build",
     "inject": "echo 'Dummy script to trigger pnpm injected dependency sync'",
     "lint:cycles": "pnpm madge --circular ./src/alpha.ts",
