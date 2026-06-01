@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+import { useState } from 'react';
 import {
   ArrowRightIcon,
   BellIcon,
@@ -13,29 +15,51 @@ import { Header } from 'src/components/header';
 import { Link } from 'src/components/link/Link';
 import { List } from 'src/components/list/List';
 import { Heading } from 'src/components/typography/heading/Heading';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
 
-const profiles = {
+type Profile = {
+  name: string;
+  description?: string;
+  avatar: ReactNode;
+  notifications: number;
+};
+const profiles: Record<'stian' | 'gralum', Profile> = {
   stian: {
     name: 'Stian Hansen',
     description: 'Admin',
+    avatar: 'SH',
     notifications: 8,
   },
   gralum: {
     name: 'Grålum skole',
     notifications: 3,
-  }
-}
+    avatar: <BriefcaseIcon aria-hidden />,
+  },
+};
+
+const profileAriaLabel = (profile: Profile) => {
+  const nameAndDescription = [profile.name, profile.description]
+    .filter((x) => !!x)
+    .join(', ');
+  return `${nameAndDescription}, ${profile.notifications} varsler`;
+};
 
 export function TestHeader() {
-  const selfNotifications = 8;
-  const schoolNotifications = 3;
-  const notifications = selfNotifications + schoolNotifications;
+  const notifications = Object.values(profiles).reduce(
+    (acc, profile) => acc + profile.notifications,
+    0,
+  );
+  const [currentProfile, setCurrentProfile] =
+    useState<keyof typeof profiles>('stian');
+  const profile = profiles[currentProfile];
+  const otherProfile =
+    profiles[currentProfile === 'stian' ? 'gralum' : 'stian'];
 
   return (
     <Header applicationName="Demoapp">
       <Header.UserButton
-        name="Stian Hansen"
-        description="Admin"
+        name={profile.name}
+        description={profile.description}
         popoverTarget="usermenu2"
         data-show="md"
         avatar={
@@ -46,23 +70,23 @@ export function TestHeader() {
               aria-hidden
               data-color="danger"
             />
-            <Avatar aria-hidden>SH</Avatar>
+            <Avatar aria-hidden>{profile.avatar}</Avatar>
           </Badge.Position>
         }
-        aria-label={`Stian Hansen, Admin, ${notifications} varsler`}
+        aria-label={profileAriaLabel(profile)}
       />
       <Dropdown id="usermenu2" placement="bottom-end" autoPlacement={false}>
         <Dropdown.List>
           <Dropdown.Item>
             <Button
               variant="tertiary"
-              aria-label={`${selfNotifications} varsler`}
+              aria-label={`${profile.notifications} varsler`}
             >
               <BellIcon aria-hidden />
               Varsler
               <Badge
                 data-color="danger"
-                count={selfNotifications}
+                count={profile.notifications}
                 maxCount={9}
                 aria-hidden
               />
@@ -74,20 +98,30 @@ export function TestHeader() {
         <Dropdown.List>
           <Dropdown.Item>
             <Dropdown.Button
-              aria-label={`Grålum skole, ${schoolNotifications} varsler`}
+              aria-label={profileAriaLabel(otherProfile)}
+              onClick={() => {
+                setCurrentProfile((prev) =>
+                  prev === 'stian' ? 'gralum' : 'stian',
+                );
+              }}
             >
               <Badge.Position overlap="circle">
                 <Badge
                   aria-hidden
-                  count={schoolNotifications}
+                  count={otherProfile.notifications}
                   maxCount={9}
                   data-color="danger"
                 />
-                <Avatar aria-hidden>
-                  <BriefcaseIcon />
-                </Avatar>
+                <Avatar aria-hidden>{otherProfile.avatar}</Avatar>
               </Badge.Position>
-              Grålum skole
+              <div>
+                <div>{otherProfile.name}</div>
+                {otherProfile.description && (
+                  <Paragraph data-size="xs">
+                    {otherProfile.description}
+                  </Paragraph>
+                )}
+              </div>
             </Dropdown.Button>
           </Dropdown.Item>
         </Dropdown.List>
