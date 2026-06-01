@@ -1,7 +1,7 @@
 import cl from 'clsx/lite';
 import { type HTMLAttributes } from 'react';
-import { Tabs } from 'src/components/tabs/Tabs';
-import { Heading } from 'src/components/typography/heading/Heading';
+import { Tabs } from 'src/components/tabs';
+import { Heading } from 'src/components/typography/heading';
 import classes from './DashboardDemo.module.css';
 import { Overview } from './tabs/overview/Overview';
 import { Settings } from './tabs/settings/Settings';

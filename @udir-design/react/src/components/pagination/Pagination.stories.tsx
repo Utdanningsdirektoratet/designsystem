@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
-import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
-import { Search } from '../search/Search';
+import { Search } from 'src/components/search';
+import { usePagination } from 'src/utilities/hooks/usePagination';
 import { Pagination } from './Pagination';
 import { Pagination as FakePagination } from './docs/FakePagination';
 import { PaginationButton } from './docs/FakePaginationButton';

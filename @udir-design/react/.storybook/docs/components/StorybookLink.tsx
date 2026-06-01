@@ -3,7 +3,7 @@ import {
   Children,
   type MouseEventHandler,
 } from 'react';
-import { Link } from 'src/components/link/Link';
+import { Link } from 'src/components/link';
 
 export const getPath = (href: string | undefined): string => {
   if (!href) {

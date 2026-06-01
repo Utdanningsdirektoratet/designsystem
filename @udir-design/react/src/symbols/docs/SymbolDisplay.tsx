@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search } from 'src/components/search/Search';
+import { Search } from 'src/components/search';
 import { CategorizedSymbols } from './CategorizedSymbols';
 import type { UdirSymbol } from './SymbolDisplay.utils';
 import { categorizeSymbols } from './SymbolDisplay.utils';

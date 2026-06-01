@@ -3,7 +3,7 @@ import cl from 'clsx/lite';
 import type { CSSProperties, HTMLAttributes } from 'react';
 import { forwardRef } from 'react';
 import './footer.css';
-import { Logo } from '../logo/Logo';
+import { Logo } from '../logo';
 
 export type FooterProps = HTMLAttributes<HTMLElement> & {
   /**

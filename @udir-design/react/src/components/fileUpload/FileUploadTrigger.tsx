@@ -3,11 +3,11 @@ import cl from 'clsx/lite';
 import type { HTMLAttributes, ReactNode } from 'react';
 import { forwardRef, useEffect, useId, useRef } from 'react';
 import { UploadIcon } from '@udir-design/icons';
-import { Button } from '../button/Button';
-import { Field } from '../field/Field';
-import type { InputProps } from '../input/Input';
-import { Label } from '../typography/label/Label';
-import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
+import { Button } from '../button';
+import { Field } from '../field';
+import type { InputProps } from '../input';
+import { Label } from '../typography/label';
+import { ValidationMessage } from '../typography/validationMessage';
 import './fileUpload.css';
 
 type InputProps_ = Omit<

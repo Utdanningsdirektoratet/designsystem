@@ -5,17 +5,14 @@
  * @module
  */
 
-export {
-  type UsePaginationProps,
-  usePagination,
-} from './usePagination/usePagination';
+export { type UsePaginationProps, usePagination } from './usePagination';
 export {
   type UseRadioGroupProps,
   type UseRadioGroupReturn,
   useRadioGroup,
-} from './useRadioGroup/useRadioGroup';
+} from './useRadioGroup';
 export {
   useTableOfContents,
   type useTableOfContentsProps,
   type useTableOfContentsReturn,
-} from './useTableOfContents/useTableOfContents';
+} from './useTableOfContents';

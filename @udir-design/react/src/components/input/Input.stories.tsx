@@ -3,13 +3,13 @@ import { useEffect, useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
-import { Button } from '../button/Button';
-import { Divider } from '../divider/Divider';
-import { Field } from '../field/Field';
-import { Heading } from '../typography/heading/Heading';
-import { Label } from '../typography/label/Label';
-import { Paragraph } from '../typography/paragraph/Paragraph';
-import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
+import { Button } from 'src/components/button';
+import { Divider } from 'src/components/divider';
+import { Field } from 'src/components/field';
+import { Heading } from 'src/components/typography/heading';
+import { Label } from 'src/components/typography/label';
+import { Paragraph } from 'src/components/typography/paragraph';
+import { ValidationMessage } from 'src/components/typography/validationMessage';
 import { Input } from './Input';
 
 const meta = preview.meta({

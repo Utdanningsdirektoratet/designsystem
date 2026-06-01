@@ -1,17 +1,17 @@
 import { MultiplyIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { Alert } from 'src/components/alert';
-import { Button } from 'src/components/button/Button';
-import { Details } from 'src/components/details/Details';
-import { Dialog } from 'src/components/dialog/Dialog';
-import { Divider } from 'src/components/divider/Divider';
-import { List } from 'src/components/list/List';
-import { Popover } from 'src/components/popover/Popover';
+import { Button } from 'src/components/button';
+import { Details } from 'src/components/details';
+import { Dialog } from 'src/components/dialog';
+import { Divider } from 'src/components/divider';
+import { List } from 'src/components/list';
+import { Popover } from 'src/components/popover';
 import { Table } from 'src/components/table';
-import { TableOfContents } from 'src/components/tableOfContents/TableOfContents';
-import { useTableOfContents } from 'src/utilities/hooks/useTableOfContents/useTableOfContents';
-import { Heading } from '../heading/Heading';
-import { Paragraph } from '../paragraph/Paragraph';
+import { TableOfContents } from 'src/components/tableOfContents';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
+import { useTableOfContents } from 'src/utilities/hooks/useTableOfContents';
 import { Prose } from './Prose';
 
 const meta = preview.meta({

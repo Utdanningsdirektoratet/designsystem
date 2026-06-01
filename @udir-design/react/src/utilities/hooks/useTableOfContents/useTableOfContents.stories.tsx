@@ -3,10 +3,10 @@ import { expect, within } from 'storybook/test';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
 import type { DecoratorType } from '.storybook/types';
-import { TableOfContents } from 'src/components/tableOfContents/TableOfContents';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
-import { Prose } from 'src/components/typography/prose/Prose';
+import { TableOfContents } from 'src/components/tableOfContents';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
+import { Prose } from 'src/components/typography/prose';
 import {
   useTableOfContents,
   type useTableOfContentsProps,

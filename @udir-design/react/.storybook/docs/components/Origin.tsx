@@ -1,8 +1,8 @@
 import { Code } from 'storybook/internal/components';
 import type { ComponentOrigin } from '.storybook/types';
-import { Link } from 'src/components/link/Link';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Link } from 'src/components/link';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
 
 export interface OriginProps extends ComponentOrigin {
   component: string;

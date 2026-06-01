@@ -11,4 +11,4 @@ export {
   type UseFormNavigationProps,
   type UseFormNavigationReturn,
   useFormNavigation,
-} from './useFormNavigation/useFormNavigation';
+} from './useFormNavigation';

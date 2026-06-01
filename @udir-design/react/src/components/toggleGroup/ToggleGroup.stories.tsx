@@ -12,13 +12,13 @@ import {
   XMarkOctagonIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
+import { Button } from 'src/components/button';
+import { Card } from 'src/components/card';
+import { Fieldset } from 'src/components/fieldset';
+import { Tooltip } from 'src/components/tooltip';
+import { Heading } from 'src/components/typography/heading';
 import { demoChromaticModes } from 'src/demo/demoParameters';
-import { Button } from '../button/Button';
-import { Card } from '../card/Card';
-import { Fieldset } from '../fieldset/Fieldset';
 import { Table } from '../table';
-import { Tooltip } from '../tooltip/Tooltip';
-import { Heading } from '../typography/heading/Heading';
 import { ToggleGroup as FakeToggleGroup } from './docs/FakeToggleGroup';
 import { ToggleGroupItem } from './docs/FakeToggleGroupItem';
 import { ToggleGroup } from './';

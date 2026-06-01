@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
-import { Button } from '../button/Button';
-import { Field } from '../field/Field';
-import { Label } from '../typography/label/Label';
+import { Button } from 'src/components/button';
+import { Field } from 'src/components/field';
+import { Label } from 'src/components/typography/label';
 import { Textarea } from './Textarea';
 import { Textarea as FakeTextarea } from './docs/FakeTextarea';
 

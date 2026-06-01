@@ -9,4 +9,4 @@ export {
   type UseCheckboxGroupProps,
   type UseCheckboxGroupReturn,
   useCheckboxGroup,
-} from './useCheckboxGroup/useCheckboxGroup';
+} from './useCheckboxGroup';

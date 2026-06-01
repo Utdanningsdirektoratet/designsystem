@@ -1,6 +1,6 @@
 import type { DSErrorSummaryElement } from '@digdir/designsystemet-web';
 import type { FieldError, FieldErrors } from 'react-hook-form';
-import { ErrorSummary } from 'src/components/errorSummary/ErrorSummary';
+import { ErrorSummary } from 'src/components/errorSummary';
 import type { FieldId, FormValues, PageFields, PageId } from './FormDemo';
 import { findPageForField } from './FormDemo';
 

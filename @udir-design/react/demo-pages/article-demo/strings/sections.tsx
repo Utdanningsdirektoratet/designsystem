@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
-import { Link } from 'src/components/link/Link';
-import { List } from 'src/components/list/List';
+import { Link } from 'src/components/link';
+import { List } from 'src/components/list';
 
 interface HeadingMeta {
   size: 'xs' | 'sm' | 'md' | 'lg';

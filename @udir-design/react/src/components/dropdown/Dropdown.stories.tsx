@@ -14,10 +14,10 @@ import {
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
-import { Avatar } from '../avatar/Avatar';
-import { Badge } from '../badge/Badge';
-import { Button } from '../button/Button';
-import { Divider } from '../divider/Divider';
+import { Avatar } from 'src/components/avatar';
+import { Badge } from 'src/components/badge';
+import { Button } from 'src/components/button';
+import { Divider } from 'src/components/divider';
 import { Dropdown } from './Dropdown';
 import { Dropdown as FakeDropdown } from './docs/FakeDropdown';
 import { DropdownButton } from './docs/FakeDropdownButton';

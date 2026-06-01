@@ -6,9 +6,9 @@ import type {
 } from 'react';
 import { forwardRef } from 'react';
 import './formSummary.css';
-import type { CardProps } from '../card/Card';
-import { Card } from '../card/Card';
-import { Heading } from '../typography/heading/Heading';
+import type { CardProps } from '../card';
+import { Card } from '../card';
+import { Heading } from '../typography/heading';
 
 export type FormSummaryProps = Omit<
   CardProps,

@@ -1,8 +1,8 @@
 import preview from '.storybook/preview';
-import { Checkbox } from '../checkbox/Checkbox';
-import { Radio } from '../radio/Radio';
-import { Textfield } from '../textfield/Textfield';
-import { Heading } from '../typography/heading/Heading';
+import { Checkbox } from 'src/components/checkbox';
+import { Radio } from 'src/components/radio';
+import { Textfield } from 'src/components/textfield';
+import { Heading } from 'src/components/typography/heading';
 import { Fieldset } from './Fieldset';
 
 const meta = preview.meta({

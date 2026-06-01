@@ -1,6 +1,6 @@
 import cl from 'clsx/lite';
 import { type HTMLAttributes, type ReactNode, forwardRef } from 'react';
-import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
+import { ValidationMessage } from '../typography/validationMessage';
 
 export type FormSummaryFieldProps = Omit<
   HTMLAttributes<HTMLDivElement>,

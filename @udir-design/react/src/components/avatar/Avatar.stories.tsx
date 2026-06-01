@@ -4,9 +4,9 @@ import {
   HatSchoolIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
-import { Badge } from '../badge/Badge';
-import { Dropdown } from '../dropdown/Dropdown';
-import { Link } from '../link/Link';
+import { Badge } from 'src/components/badge';
+import { Dropdown } from 'src/components/dropdown';
+import { Link } from 'src/components/link';
 import { Avatar } from './Avatar';
 
 const meta = preview.meta({

@@ -2,12 +2,12 @@
  * This file exports the components that are deemed stable (not alpha or beta)
  */
 
-export * from './avatar/Avatar';
-export * from './button/Button';
-export * from './card/Card';
-export * from './checkbox/Checkbox';
-export * from './divider/Divider';
+export * from './avatar';
+export * from './button';
+export * from './card';
+export * from './checkbox';
+export * from './divider';
 export * from './footer';
-export * from './input/Input';
-export * from './list/List';
-export * from './search/Search';
+export * from './input';
+export * from './list';
+export * from './search';

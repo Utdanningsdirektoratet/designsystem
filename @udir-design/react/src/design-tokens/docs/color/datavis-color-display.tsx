@@ -1,5 +1,5 @@
-import { Card } from 'src/components/card/Card';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Card } from 'src/components/card';
+import { Paragraph } from 'src/components/typography/paragraph';
 import {
   getCategoricalColors,
   getSequentialDivergentColors,

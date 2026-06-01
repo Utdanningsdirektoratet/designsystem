@@ -1,7 +1,7 @@
 import { useArgs } from 'storybook/preview-api';
 import preview from '.storybook/preview';
 import type { DecoratorType } from '.storybook/types';
-import { Pagination } from 'src/components/pagination/Pagination';
+import { Pagination } from 'src/components/pagination';
 import { type UsePaginationProps, usePagination } from './usePagination';
 
 const meta = preview.meta<

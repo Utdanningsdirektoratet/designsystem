@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Button } from 'src/components/button/Button';
-import { ProgressBar } from 'src/components/progressBar/ProgressBar';
-import { Heading } from 'src/components/typography/heading/Heading';
+import { Button } from 'src/components/button';
+import { ProgressBar } from 'src/components/progressBar';
+import { Heading } from 'src/components/typography/heading';
 import styles from './Progress.module.scss';
 
 export function Progress() {

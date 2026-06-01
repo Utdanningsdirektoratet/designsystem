@@ -4,9 +4,9 @@ import { forwardRef } from 'react';
 import type { HTMLAttributes } from 'react';
 import type { CSSProperties } from 'react';
 import { useScrollDirection } from '../../utilities/useScrollDirection';
-import { Logo } from '../logo/Logo';
-import { LogoSymbol } from '../logo/LogoSymbol';
-import { Heading } from '../typography/heading/Heading';
+import { Logo } from '../logo';
+import { LogoSymbol } from '../logo';
+import { Heading } from '../typography/heading';
 import './header.css';
 
 export type HeaderProps = HTMLAttributes<HTMLElement> & {
