@@ -17,13 +17,13 @@ import type { FieldsetProps } from 'src/components/fieldset';
 import { FormNavigation } from 'src/components/formNavigation';
 import { Heading } from 'src/components/typography/heading';
 import { Paragraph } from 'src/components/typography/paragraph';
+import { useFormNavigation } from 'src/hooks/useFormNavigation';
 import type { GetFieldId, GetStepId } from 'src/utilities/form/navigation';
 import {
   defineSteps,
   getStepIds,
   makeStepFinder,
 } from 'src/utilities/form/navigation';
-import { useFormNavigation } from 'src/utilities/hooks/useFormNavigation';
 import { ErrorSummaryContent } from './ErrorSummaryContent';
 import classes from './FormDemo.module.css';
 import { DocumentationPage } from './pages/DocumentationPage';

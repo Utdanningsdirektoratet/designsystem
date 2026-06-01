@@ -2,7 +2,7 @@ import {
   type UseRadioGroupProps as UseRadioGroupPropsDigdir,
   useRadioGroup as useRadioGroupDigdir,
 } from '@digdir/designsystemet-react';
-import type { RadioProps } from '../../../components/radio/Radio';
+import type { RadioProps } from '../../components/radio/Radio';
 
 type UseRadioGroupProps = UseRadioGroupPropsDigdir &
   Pick<RadioProps, 'variant'>;

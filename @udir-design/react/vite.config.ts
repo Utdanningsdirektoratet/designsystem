@@ -8,6 +8,7 @@ import { createFilter, defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import tsConfigPaths from 'vite-tsconfig-paths';
 import pkg from './package.json';
+import { tiers } from './tiers.js';
 
 const resolveAlias = (alias: string): string =>
   path.resolve(import.meta.dirname, alias);
@@ -26,6 +27,21 @@ const dependenciesSubmodules = dependencies.map(
   (dep) => new RegExp(`^${dep}/`),
 );
 
+/**
+ * Builds a map of entry keys → source paths for use in lib.entry.
+ * The key (e.g. "components/avatar/index") becomes the output file path
+ * (e.g. "dist/components/avatar/index.js"), which aligns with what
+ * vite-plugin-dts emits at the same relative path.
+ */
+function makeEntries(names: string[], dir: string): Record<string, string> {
+  return Object.fromEntries(
+    names.map((name) => [
+      `${dir}/${name}/index`,
+      `src/${dir}/${name}/index.ts`,
+    ]),
+  );
+}
+
 export default defineConfig({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/@udir-design/react',
@@ -33,6 +49,7 @@ export default defineConfig({
     alias: resolveAliases({
       src: 'src',
       '.storybook': '.storybook',
+      '@udir-design/react/utilities/alpha': 'src/utilities/alpha',
       '@udir-design/react/alpha': 'src/alpha',
       '@udir-design/react/beta': 'src/beta',
       // the root (stable) react export must be after alpha/beta to not interfere with the aliases above
@@ -87,8 +104,22 @@ export default defineConfig({
         stable: 'src/stable.ts',
         alpha: 'src/alpha.ts',
         beta: 'src/beta.ts',
-        'utilities/form/alpha': 'src/utilities/form/alpha.ts',
-        'utilities/datavis/alpha': 'src/utilities/datavis/alpha.ts',
+        // Utility tier barrels.
+        'utilities/alpha': 'src/utilities/alpha.ts',
+        // Individual entries — output path mirrors src, aligning with .d.ts output.
+        // Derived from the barrel files via tiers.ts (single source of truth).
+        ...makeEntries(tiers.stable.components, 'components'),
+        ...makeEntries(tiers.beta.components, 'components'),
+        ...makeEntries(
+          tiers.beta.typographyComponents,
+          'components/typography',
+        ),
+        ...makeEntries(tiers.alpha.components, 'components'),
+        ...makeEntries(
+          [...tiers.stable.hooks, ...tiers.beta.hooks, ...tiers.alpha.hooks],
+          'hooks',
+        ),
+        ...makeEntries(tiers.alpha.utilities, 'utilities'),
       },
       name: '@udir-design/react',
       // Change this to the formats you want to support.

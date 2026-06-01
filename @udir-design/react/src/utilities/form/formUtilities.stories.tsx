@@ -2,14 +2,14 @@ import preview from '.storybook/preview';
 
 const meta = preview.meta({
   title: 'Utilities/Hjelpefunksjoner for skjema',
-  tags: ['alpha'],
+  tags: [],
   parameters: {
     sourceCode: {
       autoLinks: { component: false, stories: false },
       links: [
         {
           label: 'Utility functions source',
-          path: 'src/utilities/form/navigation.ts',
+          path: 'src/utilities/form/navigation/index.ts',
           order: -10,
         },
       ],

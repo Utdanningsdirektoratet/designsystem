@@ -6,7 +6,7 @@ import { Checkbox } from 'src/components/checkbox';
 import { Tag } from 'src/components/tag';
 import { Textfield } from 'src/components/textfield';
 import { Heading } from 'src/components/typography/heading';
-import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup';
+import { useCheckboxGroup } from 'src/hooks/useCheckboxGroup';
 import { Table as FakeTable } from './docs/FakeTable';
 import { TableBody } from './docs/FakeTableBody';
 import { TableCell } from './docs/FakeTableCell';

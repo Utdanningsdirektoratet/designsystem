@@ -2,7 +2,7 @@ import {
   type UseCheckboxGroupProps as UseCheckboxGroupPropsDigdir,
   useCheckboxGroup as useCheckboxGroupDigdir,
 } from '@digdir/designsystemet-react';
-import type { CheckboxProps } from '../../../components/checkbox/Checkbox';
+import type { CheckboxProps } from '../../components/checkbox/Checkbox';
 
 type UseCheckboxGroupProps = UseCheckboxGroupPropsDigdir &
   Pick<CheckboxProps, 'variant'>;

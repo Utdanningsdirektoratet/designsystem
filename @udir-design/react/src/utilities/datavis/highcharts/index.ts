@@ -5,7 +5,7 @@
  */
 
 import type * as Highcharts from 'highcharts';
-import { getCategoricalColors } from './dataVisualisation';
+import { getCategoricalColors } from '../dataVisualisation';
 
 /**
  * Gets a Highcharts theme configuration object based on Udir design system.
@@ -26,7 +26,7 @@ import { getCategoricalColors } from './dataVisualisation';
  * ```tsx
  * import Highcharts from 'highcharts';
  * import { HighchartsReact } from 'highcharts-react-official';
- * import { getHighchartsTheme } from '@udir-design/react/utilities/datavis/alpha';
+ * import { getHighchartsTheme } from '@udir-design/react/utilities/alpha';
  * import '@udir-design/theme/datavis.css';
  * import 'highcharts/i18n/nb-NO'; // Norwegian Bokmål language pack
  *

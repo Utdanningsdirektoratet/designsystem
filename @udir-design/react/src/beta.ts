@@ -4,4 +4,4 @@
  */
 export * from './stable';
 export * from './components/beta';
-export * from './utilities/hooks/beta';
+export * from './hooks/beta';

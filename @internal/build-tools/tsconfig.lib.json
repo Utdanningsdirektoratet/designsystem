@@ -4,7 +4,11 @@
     "composite": true,
     "outDir": "../../dist/out-tsc",
     "declaration": true,
-    "types": ["node"]
+    "types": ["node"],
   },
-  "include": ["bin/**/*.ts", "src/**/*.ts"]
+  "include": [
+    "bin/**/*.ts",
+    "src/**/*.ts",
+    "../../@udir-design/react/tiers.ts",
+  ],
 }

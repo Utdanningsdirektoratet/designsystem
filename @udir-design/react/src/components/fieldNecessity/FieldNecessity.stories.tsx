@@ -8,8 +8,8 @@ import { Textfield } from 'src/components/textfield';
 import { Heading } from 'src/components/typography/heading';
 import { Paragraph } from 'src/components/typography/paragraph';
 import { ValidationMessage } from 'src/components/typography/validationMessage';
-import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup';
-import { useRadioGroup } from 'src/utilities/hooks/useRadioGroup';
+import { useCheckboxGroup } from 'src/hooks/useCheckboxGroup';
+import { useRadioGroup } from 'src/hooks/useRadioGroup';
 import { FieldNecessity } from '.';
 
 const meta = preview.meta({

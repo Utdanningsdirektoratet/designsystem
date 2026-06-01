@@ -2,19 +2,19 @@ import preview from '.storybook/preview';
 
 const meta = preview.meta({
   title: 'Utilities/Hjelpefunksjoner for datavisualisering',
-  tags: ['alpha'],
+  tags: [],
   parameters: {
     sourceCode: {
       autoLinks: { component: false, stories: false },
       links: [
         {
           label: 'Utility functions source',
-          path: 'src/utilities/datavis/dataVisualisation.ts',
+          path: 'src/utilities/datavis/dataVisualisation/index.ts',
           order: -11,
         },
         {
           label: 'Highcharts theme source',
-          path: 'src/utilities/datavis/highcharts.ts',
+          path: 'src/utilities/datavis/highcharts/index.ts',
           order: -10,
         },
       ],
