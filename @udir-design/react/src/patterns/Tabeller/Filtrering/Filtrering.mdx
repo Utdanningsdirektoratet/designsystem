@@ -8,9 +8,14 @@ import * as FiltreringStories from './Filtrering.stories';
 
 Filtrering lar brukeren begrense hvilke rader som vises, basert på verdier i én eller flere kolonner. Dersom et filter gjelder for data i en bestemt kolonne, skal label for input-feltet matche kolonneoverskriften i tabellen. Dette gjør det lettere for brukeren å forstå sammenhengen mellom filteret og innholdet det påvirker.
 
-Dersom det er behov for mer avansert filtrering med sammensatte eller spissede filtervalg, bør dette plasseres i en egen dialog. Det frigjør plass i den primære verktøylinjen og gir brukeren et dedikert sted for komplekse filtervalg uten at grensesnittet over tabellen blir uoversiktlig.
-
 <Canvas of={FiltreringStories.Preview} />
+
+Dersom det er behov for mer avansert filtrering med sammensatte eller spissede
+filtervalg, bør dette plasseres i en egen dialog. Det frigjør plass i den
+primære verktøylinjen og gir brukeren et dedikert sted for komplekse filtervalg
+uten at grensesnittet over tabellen blir uoversiktlig.
+
+<Canvas of={FiltreringStories.withDialog} />
 
 ## Søk
 
