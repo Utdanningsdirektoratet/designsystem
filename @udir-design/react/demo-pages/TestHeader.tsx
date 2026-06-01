@@ -1,22 +1,30 @@
-'use client';
-
 import {
   ArrowRightIcon,
   BellIcon,
   BriefcaseIcon,
   LeaveIcon,
 } from '@udir-design/icons';
-import {
-  Avatar,
-  Badge,
-  Button,
-  Divider,
-  Dropdown,
-  Header,
-  Heading,
-  Link,
-  List,
-} from '@udir-design/react/alpha';
+import { Avatar } from 'src/components/avatar/Avatar';
+import { Badge } from 'src/components/badge/Badge';
+import { Button } from 'src/components/button/Button';
+import { Divider } from 'src/components/divider/Divider';
+import { Dropdown } from 'src/components/dropdown/Dropdown';
+import { Header } from 'src/components/header';
+import { Link } from 'src/components/link/Link';
+import { List } from 'src/components/list/List';
+import { Heading } from 'src/components/typography/heading/Heading';
+
+const profiles = {
+  stian: {
+    name: 'Stian Hansen',
+    description: 'Admin',
+    notifications: 8,
+  },
+  gralum: {
+    name: 'Grålum skole',
+    notifications: 3,
+  }
+}
 
 export function TestHeader() {
   const selfNotifications = 8;
