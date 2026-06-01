@@ -842,6 +842,10 @@ export const Responsive = meta.story({
     row-gap: var(--ds-size-10);
     justify-items: center;
   }
+  .responsive-header-menu-user-button {
+    margin: 0 var(--ds-size-5);
+    justify-self: end;
+  }
   @media (max-width: 34.375rem) {
     .responsive-header-menu-nav {
       justify-items: flex-start;
@@ -900,7 +904,7 @@ export const Responsive = meta.story({
               popoverTarget="usermenuInMenu"
               avatar={<Avatar aria-hidden>SH</Avatar>}
               data-hide="md"
-              style={{ width: 'stretch', margin: '0 var(--ds-size-5)' }}
+              className="responsive-header-menu-user-button"
             />
             <Dropdown
               id="usermenuInMenu"

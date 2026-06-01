@@ -633,6 +633,10 @@ exports[`Responsive 1`] = `
     row-gap: var(--ds-size-10);
     justify-items: center;
   }
+  .responsive-header-menu-user-button {
+    margin: 0 var(--ds-size-5);
+    justify-self: end;
+  }
   @media (max-width: 34.375rem) {
     .responsive-header-menu-nav {
       justify-items: flex-start;
@@ -820,7 +824,6 @@ exports[`Responsive 1`] = `
             data-color="neutral"
             popovertarget="usermenuInMenu"
             data-hide="md"
-            style="<removed>"
           >
             <div>
               <span>
