@@ -1,4 +1,4 @@
-import { Footer } from '@udir-design/react/alpha';
+import { Footer } from 'src/components/footer';
 
 type Props = {
   className?: string;

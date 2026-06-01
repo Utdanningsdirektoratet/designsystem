@@ -42,15 +42,24 @@ export const DashboardStory = meta.story({
             <Dropdown.Heading>Bytt profil</Dropdown.Heading>
             <Dropdown.List>
               <Dropdown.Item>
-                <Dropdown.Button>
-                  <Avatar aria-hidden>
-                    <BriefcaseIcon />
-                  </Avatar>
+                <Dropdown.Button aria-label="Grålum skole, 10 varsler">
+                  <Badge.Position overlap="circle">
+                    <Avatar aria-hidden>
+                      <BriefcaseIcon />
+                    </Avatar>
+                    <Badge
+                      count={10}
+                      maxCount={9}
+                      aria-hidden
+                      data-color="danger"
+                    />
+                  </Badge.Position>
                   Grålum skole
-                  <Badge count={10} maxCount={9} />
                 </Dropdown.Button>
               </Dropdown.Item>
-              <Divider />
+            </Dropdown.List>
+            <Divider />
+            <Dropdown.List>
               <Dropdown.Item>
                 <Button variant="tertiary">
                   <LeaveIcon aria-hidden />

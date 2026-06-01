@@ -97,11 +97,19 @@ export const WithUserButton = meta.story({
         <Dropdown.Heading>Bytt profil</Dropdown.Heading>
         <Dropdown.List>
           <Dropdown.Item>
-            <Dropdown.Button>
-              <Avatar aria-hidden>
-                <BriefcaseIcon />
-              </Avatar>
-              Grålum skole <Badge count={10} maxCount={9} />
+            <Dropdown.Button aria-label="Grålum skole, 10 varsler">
+              <Badge.Position overlap="circle">
+                <Avatar aria-hidden>
+                  <BriefcaseIcon />
+                </Avatar>
+                <Badge
+                  count={10}
+                  maxCount={9}
+                  aria-hidden
+                  data-color="danger"
+                />
+              </Badge.Position>
+              Grålum skole
             </Dropdown.Button>
           </Dropdown.Item>
           <Divider />
@@ -139,11 +147,19 @@ export const WithUserButton = meta.story({
         <Dropdown.Heading>Bytt profil</Dropdown.Heading>
         <Dropdown.List>
           <Dropdown.Item>
-            <Dropdown.Button>
-              <Avatar aria-hidden>
-                <BriefcaseIcon />
-              </Avatar>
-              Grålum skole <Badge count={10} maxCount={9} />
+            <Dropdown.Button aria-label="Grålum skole, 10 varsler">
+              <Badge.Position overlap="circle">
+                <Avatar aria-hidden>
+                  <BriefcaseIcon />
+                </Avatar>
+                <Badge
+                  count={10}
+                  maxCount={9}
+                  aria-hidden
+                  data-color="danger"
+                />
+              </Badge.Position>
+              Grålum skole
             </Dropdown.Button>
           </Dropdown.Item>
           <Divider />
@@ -793,11 +809,19 @@ export const Responsive = meta.story({
             <Dropdown.List>
               <Dropdown.Heading>Bytt profil</Dropdown.Heading>
               <Dropdown.Item>
-                <Dropdown.Button>
-                  <Avatar aria-hidden>
-                    <BriefcaseIcon />
-                  </Avatar>
-                  Grålum skole <Badge count={10} maxCount={9} />
+                <Dropdown.Button aria-label="Grålum skole, 10 varsler">
+                  <Badge.Position overlap="circle">
+                    <Avatar aria-hidden>
+                      <BriefcaseIcon />
+                    </Avatar>
+                    <Badge
+                      count={10}
+                      maxCount={9}
+                      aria-hidden
+                      data-color="danger"
+                    />
+                  </Badge.Position>
+                  Grålum skole
                 </Dropdown.Button>
               </Dropdown.Item>
               <Divider />
@@ -827,11 +851,19 @@ export const Responsive = meta.story({
               <Dropdown.Heading>Bytt profil</Dropdown.Heading>
               <Dropdown.List>
                 <Dropdown.Item>
-                  <Dropdown.Button>
-                    <Avatar aria-hidden>
-                      <BriefcaseIcon />
-                    </Avatar>
-                    Grålum skole <Badge count={10} maxCount={9} />
+                  <Dropdown.Button aria-label="Grålum skole, 10 varsler">
+                    <Badge.Position overlap="circle">
+                      <Avatar aria-hidden>
+                        <BriefcaseIcon />
+                      </Avatar>
+                      <Badge
+                        count={10}
+                        maxCount={9}
+                        aria-hidden
+                        data-color="danger"
+                      />
+                    </Badge.Position>
+                    Grålum skole
                   </Dropdown.Button>
                 </Dropdown.Item>
                 <Divider />

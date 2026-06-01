@@ -3,9 +3,9 @@
 import '@udir-design/react/style.css';
 import '@udir-design/theme/datavis.css';
 import './global.css';
+import { TestFooter as Footer } from '@udir-design/demos/TestFooter';
+import { TestHeader as Header } from '@udir-design/demos/TestHeader';
 import { DemoBanner, SkipLink } from 'src/components/*';
-import { TestFooter as Footer } from './components/TestFooter';
-import { TestHeader as Header } from './components/TestHeader';
 
 export default function RootLayout({
   children,
