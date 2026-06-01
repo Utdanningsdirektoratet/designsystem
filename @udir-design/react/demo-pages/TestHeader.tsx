@@ -37,106 +37,30 @@ const profiles: Record<'stian' | 'gralum', Profile> = {
   },
 };
 
-const profileAriaLabel = (profile: Profile) => {
-  const nameAndDescription = [profile.name, profile.description]
-    .filter((x) => !!x)
-    .join(', ');
-  return `${nameAndDescription}, ${profile.notifications} varsler`;
-};
-
 export function TestHeader() {
-  const notifications = Object.values(profiles).reduce(
-    (acc, profile) => acc + profile.notifications,
-    0,
-  );
   const [currentProfile, setCurrentProfile] =
     useState<keyof typeof profiles>('stian');
-  const profile = profiles[currentProfile];
-  const otherProfile =
-    profiles[currentProfile === 'stian' ? 'gralum' : 'stian'];
+  const onProfileSwitch = () => {
+    setCurrentProfile((prev) => (prev === 'stian' ? 'gralum' : 'stian'));
+  };
 
   return (
     <Header applicationName="Demoapp">
-      <Header.UserButton
-        name={profile.name}
-        description={profile.description}
-        popoverTarget="usermenu2"
-        data-show="md"
-        avatar={
-          <Badge.Position overlap="circle">
-            <Badge
-              count={notifications}
-              maxCount={9}
-              aria-hidden
-              data-color="danger"
-            />
-            <Avatar aria-hidden>{profile.avatar}</Avatar>
-          </Badge.Position>
-        }
-        aria-label={profileAriaLabel(profile)}
+      <UserMenu
+        currentProfile={currentProfile}
+        onProfileSwitch={onProfileSwitch}
+        id="usermenu-desktop"
+        data-show="sm"
       />
-      <Dropdown id="usermenu2" placement="bottom-end" autoPlacement={false}>
-        <Dropdown.List>
-          <Dropdown.Item>
-            <Button
-              variant="tertiary"
-              aria-label={`${profile.notifications} varsler`}
-            >
-              <BellIcon aria-hidden />
-              Varsler
-              <Badge
-                data-color="danger"
-                count={profile.notifications}
-                maxCount={9}
-                aria-hidden
-              />
-            </Button>
-          </Dropdown.Item>
-        </Dropdown.List>
-        <Divider />
-        <Dropdown.Heading>Bytt profil</Dropdown.Heading>
-        <Dropdown.List>
-          <Dropdown.Item>
-            <Dropdown.Button
-              aria-label={profileAriaLabel(otherProfile)}
-              onClick={() => {
-                setCurrentProfile((prev) =>
-                  prev === 'stian' ? 'gralum' : 'stian',
-                );
-              }}
-            >
-              <Badge.Position overlap="circle">
-                <Badge
-                  aria-hidden
-                  count={otherProfile.notifications}
-                  maxCount={9}
-                  data-color="danger"
-                />
-                <Avatar aria-hidden>{otherProfile.avatar}</Avatar>
-              </Badge.Position>
-              <div>
-                <div>{otherProfile.name}</div>
-                {otherProfile.description && (
-                  <Paragraph data-size="xs">
-                    {otherProfile.description}
-                  </Paragraph>
-                )}
-              </div>
-            </Dropdown.Button>
-          </Dropdown.Item>
-        </Dropdown.List>
-        <Divider />
-        <Dropdown.List>
-          <Dropdown.Item>
-            <Button variant="tertiary">
-              <LeaveIcon aria-hidden />
-              Logg ut
-            </Button>
-          </Dropdown.Item>
-        </Dropdown.List>
-      </Dropdown>
       <Header.MenuButton />
       <Header.Menu>
+        <UserMenu
+          currentProfile={currentProfile}
+          onProfileSwitch={onProfileSwitch}
+          id="usermenu-mobile"
+          data-hide="sm"
+          style={{ marginLeft: 'auto' }}
+        />
         <nav
           aria-labelledby="header-menu-theme1-navigation"
           style={{
@@ -224,5 +148,115 @@ export function TestHeader() {
         </nav>
       </Header.Menu>
     </Header>
+  );
+}
+
+const profileAriaLabel = (profile: Profile) => {
+  const nameAndDescription = [profile.name, profile.description]
+    .filter((x) => !!x)
+    .join(', ');
+  return `${nameAndDescription}, ${profile.notifications} varsler`;
+};
+
+function UserMenu({
+  currentProfile,
+  onProfileSwitch,
+  id,
+  style,
+  ...rest
+}: {
+  currentProfile: keyof typeof profiles;
+  onProfileSwitch: () => void;
+  id: string;
+  style?: React.CSSProperties;
+  'data-show'?: string;
+  'data-hide'?: string;
+}) {
+  const notifications = Object.values(profiles).reduce(
+    (acc, profile) => acc + profile.notifications,
+    0,
+  );
+  const profile = profiles[currentProfile];
+  const otherProfile =
+    profiles[currentProfile === 'stian' ? 'gralum' : 'stian'];
+
+  return (
+    <>
+      <Header.UserButton
+        {...rest}
+        style={style}
+        name={profile.name}
+        description={profile.description}
+        popoverTarget={id}
+        avatar={
+          <Badge.Position overlap="circle">
+            <Badge
+              count={notifications}
+              maxCount={9}
+              aria-hidden
+              data-color="danger"
+            />
+            <Avatar aria-hidden>{profile.avatar}</Avatar>
+          </Badge.Position>
+        }
+        aria-label={profileAriaLabel(profile)}
+      />
+      <Dropdown {...rest} id={id} placement="bottom-end" autoPlacement={false}>
+        <Dropdown.List>
+          <Dropdown.Item>
+            <Button
+              variant="tertiary"
+              aria-label={`${profile.notifications} varsler`}
+            >
+              <BellIcon aria-hidden />
+              Varsler
+              <Badge
+                data-color="danger"
+                count={profile.notifications}
+                maxCount={9}
+                aria-hidden
+              />
+            </Button>
+          </Dropdown.Item>
+        </Dropdown.List>
+        <Divider />
+        <Dropdown.Heading>Bytt profil</Dropdown.Heading>
+        <Dropdown.List>
+          <Dropdown.Item>
+            <Dropdown.Button
+              aria-label={profileAriaLabel(otherProfile)}
+              onClick={onProfileSwitch}
+            >
+              <Badge.Position overlap="circle">
+                <Badge
+                  aria-hidden
+                  count={otherProfile.notifications}
+                  maxCount={9}
+                  data-color="danger"
+                />
+                <Avatar aria-hidden>{otherProfile.avatar}</Avatar>
+              </Badge.Position>
+              <div>
+                <div>{otherProfile.name}</div>
+                {otherProfile.description && (
+                  <Paragraph data-size="xs">
+                    {otherProfile.description}
+                  </Paragraph>
+                )}
+              </div>
+            </Dropdown.Button>
+          </Dropdown.Item>
+        </Dropdown.List>
+        <Divider />
+        <Dropdown.List>
+          <Dropdown.Item>
+            <Button variant="tertiary">
+              <LeaveIcon aria-hidden />
+              Logg ut
+            </Button>
+          </Dropdown.Item>
+        </Dropdown.List>
+      </Dropdown>
+    </>
   );
 }
