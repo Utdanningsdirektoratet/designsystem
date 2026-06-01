@@ -3,7 +3,7 @@ import { useState } from 'react';
 import {
   ArrowRightIcon,
   BellIcon,
-  BriefcaseIcon,
+  HatSchoolIcon,
   LeaveIcon,
 } from '@udir-design/icons';
 import { Avatar } from 'src/components/avatar/Avatar';
@@ -23,7 +23,7 @@ type Profile = {
   avatar: ReactNode;
   notifications: number;
 };
-const profiles: Record<'stian' | 'gralum', Profile> = {
+const _profiles = {
   stian: {
     name: 'Stian Hansen',
     description: 'Admin',
@@ -33,22 +33,21 @@ const profiles: Record<'stian' | 'gralum', Profile> = {
   gralum: {
     name: 'Grålum skole',
     notifications: 3,
-    avatar: <BriefcaseIcon aria-hidden />,
+    avatar: <HatSchoolIcon aria-hidden />,
   },
-};
+} satisfies Record<string, Profile>;
+
+const profiles: Record<keyof typeof _profiles, Profile> = _profiles;
 
 export function TestHeader() {
   const [currentProfile, setCurrentProfile] =
     useState<keyof typeof profiles>('stian');
-  const onProfileSwitch = () => {
-    setCurrentProfile((prev) => (prev === 'stian' ? 'gralum' : 'stian'));
-  };
 
   return (
     <Header applicationName="Demoapp">
       <UserMenu
         currentProfile={currentProfile}
-        onProfileSwitch={onProfileSwitch}
+        onProfileSwitch={setCurrentProfile}
         id="usermenu-desktop"
         data-show="sm"
       />
@@ -56,7 +55,7 @@ export function TestHeader() {
       <Header.Menu>
         <UserMenu
           currentProfile={currentProfile}
-          onProfileSwitch={onProfileSwitch}
+          onProfileSwitch={setCurrentProfile}
           id="usermenu-mobile"
           data-hide="sm"
           style={{ marginLeft: 'auto' }}
@@ -166,7 +165,7 @@ function UserMenu({
   ...rest
 }: {
   currentProfile: keyof typeof profiles;
-  onProfileSwitch: () => void;
+  onProfileSwitch: (profile: keyof typeof profiles) => void;
   id: string;
   style?: React.CSSProperties;
   'data-show'?: string;
@@ -177,8 +176,12 @@ function UserMenu({
     0,
   );
   const profile = profiles[currentProfile];
-  const otherProfile =
-    profiles[currentProfile === 'stian' ? 'gralum' : 'stian'];
+  const otherProfiles = Object.entries(profiles)
+    .filter(([key]) => key !== currentProfile)
+    .map(([key, val]) => ({
+      key: key as keyof typeof profiles,
+      ...val,
+    }));
 
   return (
     <>
@@ -195,6 +198,7 @@ function UserMenu({
               maxCount={9}
               aria-hidden
               data-color="danger"
+              hidden={notifications === 0}
             />
             <Avatar aria-hidden>{profile.avatar}</Avatar>
           </Badge.Position>
@@ -215,6 +219,7 @@ function UserMenu({
                 count={profile.notifications}
                 maxCount={9}
                 aria-hidden
+                hidden={profile.notifications === 0}
               />
             </Button>
           </Dropdown.Item>
@@ -222,30 +227,33 @@ function UserMenu({
         <Divider />
         <Dropdown.Heading>Bytt profil</Dropdown.Heading>
         <Dropdown.List>
-          <Dropdown.Item>
-            <Dropdown.Button
-              aria-label={profileAriaLabel(otherProfile)}
-              onClick={onProfileSwitch}
-            >
-              <Badge.Position overlap="circle">
-                <Badge
-                  aria-hidden
-                  count={otherProfile.notifications}
-                  maxCount={9}
-                  data-color="danger"
-                />
-                <Avatar aria-hidden>{otherProfile.avatar}</Avatar>
-              </Badge.Position>
-              <div>
-                <div>{otherProfile.name}</div>
-                {otherProfile.description && (
-                  <Paragraph data-size="xs">
-                    {otherProfile.description}
-                  </Paragraph>
-                )}
-              </div>
-            </Dropdown.Button>
-          </Dropdown.Item>
+          {otherProfiles.map((otherProfile) => (
+            <Dropdown.Item key={otherProfile.key}>
+              <Dropdown.Button
+                aria-label={profileAriaLabel(otherProfile)}
+                onClick={() => onProfileSwitch(otherProfile.key)}
+              >
+                <Badge.Position overlap="circle">
+                  <Badge
+                    aria-hidden
+                    count={otherProfile.notifications}
+                    maxCount={9}
+                    data-color="danger"
+                    hidden={otherProfile.notifications === 0}
+                  />
+                  <Avatar aria-hidden>{otherProfile.avatar}</Avatar>
+                </Badge.Position>
+                <div>
+                  <div>{otherProfile.name}</div>
+                  {otherProfile.description && (
+                    <Paragraph data-size="xs">
+                      {otherProfile.description}
+                    </Paragraph>
+                  )}
+                </div>
+              </Dropdown.Button>
+            </Dropdown.Item>
+          ))}
         </Dropdown.List>
         <Divider />
         <Dropdown.List>
