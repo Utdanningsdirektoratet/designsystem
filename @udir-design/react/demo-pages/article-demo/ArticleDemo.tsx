@@ -71,12 +71,11 @@ export const ArticleDemo = () => {
         ref={containerRef}
       >
         <Prose>
+          <Heading data-size="lg" level={1}>
+            Tilpasset opplæring
+          </Heading>
+          <ContentSection section={sectionHeader} />
           <div className={classes.headingWrapper}>
-            <Heading data-size="lg" level={1}>
-              Tilpasset opplæring
-            </Heading>
-            <ContentSection section={sectionHeader} />
-
             <Divider style={{ margin: 'var(--ds-size-4) 0' }} />
             <div className={classes.dividerWrapper}>
               <Paragraph data-size="sm">

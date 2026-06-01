@@ -358,3 +358,103 @@ exports[`Preview 1`] = `
   </div>
 </div>
 `;
+
+exports[`With Dialog 1`] = `
+<div style="<removed>">
+  <button
+    data-variant="primary"
+    type="button"
+    aria-haspopup="dialog"
+  >
+    Åpne Dialog
+  </button>
+  <dialog
+    data-placement="center"
+    data-modal="true"
+    id="<removed>"
+    closedby="any"
+    open
+    style="<removed>"
+  >
+    <button
+      data-icon="true"
+      commandfor="_r_6_"
+      data-variant="tertiary"
+      type="button"
+      aria-label="Lukk dialogvindu"
+      data-color="neutral"
+      command="close"
+    >
+    </button>
+    <h2 style="<removed>">
+      Dialog header
+    </h2>
+    <p
+      data-variant="default"
+      style="<removed>"
+    >
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+    </p>
+    <p
+      data-variant="default"
+      data-size="sm"
+    >
+      Dialog footer
+    </p>
+  </dialog>
+</div>
+`;
+
+exports[`With Popover 1`] = `
+<div style="<removed>">
+  <button
+    data-variant="tertiary"
+    type="button"
+    popovertarget="_r_7_"
+  >
+    Fjern
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="none"
+      viewbox="0 0 24 24"
+      focusable="false"
+      role="img"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        d="M18.03 7.03a.75.75 0 0 0-1.06-1.06L12 10.94 7.03 5.97a.75.75 0 0 0-1.06 1.06L10.94 12l-4.97 4.97a.75.75 0 1 0 1.06 1.06L12 13.06l4.97 4.97a.75.75 0 1 0 1.06-1.06L13.06 12z"
+      >
+      </path>
+    </svg>
+  </button>
+  <div
+    id="<removed>"
+    popover="manual"
+    data-placement="top"
+    data-variant="default"
+    data-floating="bottom"
+    style="<removed>"
+  >
+    Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
+    <div style="<removed>">
+      <button
+        data-variant="primary"
+        type="button"
+        data-size="sm"
+      >
+        Ja, fjern
+      </button>
+      <button
+        data-variant="tertiary"
+        type="button"
+        data-size="sm"
+      >
+        Avbryt
+      </button>
+    </div>
+  </div>
+</div>
+`;
