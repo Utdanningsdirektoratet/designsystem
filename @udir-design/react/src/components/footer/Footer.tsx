@@ -17,10 +17,15 @@ export type FooterProps = HTMLAttributes<HTMLElement> & {
    * Changes size for descendant Designsystemet components. Select from predefined sizes.
    */
   'data-size'?: Size;
+  /**
+   * Changes the logo variant. Options are `default` and `pride`.
+   * @default 'default'
+   */
+  variant?: 'default' | 'pride';
 };
 
 export const Footer = forwardRef<HTMLElement, FooterProps>(function Footer(
-  { children, className, maxWidth = '80rem', ...rest },
+  { children, className, maxWidth = '80rem', variant = 'default', ...rest },
   ref,
 ) {
   return (
@@ -33,7 +38,7 @@ export const Footer = forwardRef<HTMLElement, FooterProps>(function Footer(
       <div>
         {children}
         <a href="https://udir.no" className="uds-footer__logo">
-          <Logo padding="0" />
+          <Logo variant={variant} padding="0" />
         </a>
       </div>
     </footer>

@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.lib.json",
+  // Ensure docgen has the full context (including anything in **/docs/)
+  "exclude": []
+}

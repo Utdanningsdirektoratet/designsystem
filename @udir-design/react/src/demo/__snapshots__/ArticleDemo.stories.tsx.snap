@@ -19,10 +19,12 @@ exports[`Article Story 1`] = `
           <div style="<removed>">
             <img
               alt="Utdanningsdirektoratet"
+              role="img"
               src="/assets/img/udir-main-logo.svg"
             >
             <img
               alt="Utdanningsdirektoratet"
+              role="img"
               src="/assets/img/udir-main-logo-dark-mode.svg"
             >
           </div>
@@ -40,9 +42,11 @@ exports[`Article Story 1`] = `
             popover="auto"
             data-placement="none"
             data-variant="default"
-            style="<removed>"
           >
-            <nav aria-labelledby="<removed>">
+            <nav
+              aria-labelledby="<removed>"
+              style="<removed>"
+            >
               <h2 id="<removed>">
                 Menynavigasjon
               </h2>
@@ -123,13 +127,13 @@ exports[`Article Story 1`] = `
         tabindex="-1"
       >
         <div>
+          <h1 data-size="lg">
+            Tilpasset opplæring
+          </h1>
+          <p data-variant="default">
+            Skolen skal tilpasse opplæringen for alle elever, lærlinger, lærekandidater og voksne. Tilpasset opplæring innebærer at elevene skal få et tilfredsstillende utbytte av opplæringen uavhengig av forutsetninger, og at alle skal få utnyttet og utviklet evnene sine.
+          </p>
           <div>
-            <h1 data-size="lg">
-              Tilpasset opplæring
-            </h1>
-            <p data-variant="default">
-              Skolen skal tilpasse opplæringen for alle elever, lærlinger, lærekandidater og voksne. Tilpasset opplæring innebærer at elevene skal få et tilfredsstillende utbytte av opplæringen uavhengig av forutsetninger, og at alle skal få utnyttet og utviklet evnene sine.
-            </p>
             <hr
               aria-hidden="true"
               style="<removed>"
@@ -484,10 +488,12 @@ exports[`Article Story 1`] = `
           <div style="<removed>">
             <img
               alt="Utdanningsdirektoratet"
+              role="img"
               src="/assets/img/udir-main-logo.svg"
             >
             <img
               alt="Utdanningsdirektoratet"
+              role="img"
               src="/assets/img/udir-main-logo-dark-mode.svg"
             >
           </div>

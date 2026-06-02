@@ -80,24 +80,26 @@ export const Tests = (props: HighchartsReact.Props) => {
     switch (value) {
       case 'table':
         return (
-          <Table zebra className={classes.table}>
-            <Table.Head>
-              <Table.Row>
-                <Table.Cell>Prøver</Table.Cell>
-                <Table.Cell className={classes.rightAlign}>Antall</Table.Cell>
-              </Table.Row>
-            </Table.Head>
-            <Table.Body>
-              {tests.map((item, index) => (
-                <Table.Row key={index}>
-                  <Table.Cell>{item.name}</Table.Cell>
-                  <Table.Cell className={classes.rightAlign}>
-                    {item.value}
-                  </Table.Cell>
+          <div className={classes.tableWrapper}>
+            <Table zebra className={classes.table}>
+              <Table.Head>
+                <Table.Row>
+                  <Table.Cell>Prøver</Table.Cell>
+                  <Table.Cell className={classes.rightAlign}>Antall</Table.Cell>
                 </Table.Row>
-              ))}
-            </Table.Body>
-          </Table>
+              </Table.Head>
+              <Table.Body>
+                {tests.map((item, index) => (
+                  <Table.Row key={index}>
+                    <Table.Cell>{item.name}</Table.Cell>
+                    <Table.Cell className={classes.rightAlign}>
+                      {item.value}
+                    </Table.Cell>
+                  </Table.Row>
+                ))}
+              </Table.Body>
+            </Table>
+          </div>
         );
       default:
         return (

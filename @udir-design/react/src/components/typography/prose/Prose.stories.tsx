@@ -1,8 +1,12 @@
+import { MultiplyIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { Alert } from 'src/components/alert';
+import { Button } from 'src/components/button/Button';
 import { Details } from 'src/components/details/Details';
+import { Dialog } from 'src/components/dialog/Dialog';
 import { Divider } from 'src/components/divider/Divider';
 import { List } from 'src/components/list/List';
+import { Popover } from 'src/components/popover/Popover';
 import { Table } from 'src/components/table';
 import { TableOfContents } from 'src/components/tableOfContents/TableOfContents';
 import { useTableOfContents } from 'src/utilities/hooks/useTableOfContents/useTableOfContents';
@@ -280,6 +284,71 @@ export const Headings = meta.story({
           </Paragraph>
         </Prose>
       </div>
+    );
+  },
+});
+
+export const WithDialog = meta.story({
+  render: () => {
+    return (
+      <Prose style={{ maxWidth: '50rem' }}>
+        <Dialog.TriggerContext>
+          <Dialog.Trigger>Åpne Dialog</Dialog.Trigger>
+          <Dialog
+            closedby="any"
+            style={{
+              zIndex: 10,
+            }}
+            open
+          >
+            <Heading
+              style={{
+                marginBottom: 'var(--ds-size-2)',
+              }}
+            >
+              Dialog header
+            </Heading>
+            <Paragraph
+              style={{
+                marginBottom: 'var(--ds-size-2)',
+              }}
+            >
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+            </Paragraph>
+            <Paragraph data-size="sm">Dialog footer</Paragraph>
+          </Dialog>
+        </Dialog.TriggerContext>
+      </Prose>
+    );
+  },
+});
+
+export const WithPopover = meta.story({
+  render: () => {
+    return (
+      <Prose style={{ maxWidth: '50rem' }}>
+        <Popover.TriggerContext>
+          <Popover.Trigger variant="tertiary">
+            Fjern <MultiplyIcon aria-hidden />
+          </Popover.Trigger>
+          <Popover open>
+            Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
+            <div
+              style={{
+                display: 'flex',
+                gap: 'var(--ds-size-2)',
+                marginTop: 'var(--ds-size-2)',
+              }}
+            >
+              <Button data-size="sm">Ja, fjern</Button>
+              <Button data-size="sm" variant="tertiary">
+                Avbryt
+              </Button>
+            </div>
+          </Popover>
+        </Popover.TriggerContext>
+      </Prose>
     );
   },
 });

@@ -3,7 +3,7 @@ import { Spinner } from './Spinner';
 
 const meta = preview.meta({
   component: Spinner,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
@@ -20,13 +20,13 @@ const meta = preview.meta({
 
 export const Preview = meta.story({
   args: {
-    'aria-label': 'Laster...',
+    'aria-label': 'Laster',
   },
 });
 
 export const Sizes = meta.story({
   args: {
-    'aria-label': 'Laster...',
+    'aria-label': 'Laster',
   },
   render: (args) => (
     <>
@@ -42,7 +42,7 @@ export const Sizes = meta.story({
 
 export const Variants = meta.story({
   args: {
-    'aria-label': 'Laster...',
+    'aria-label': 'Laster',
     'data-size': 'xl',
   },
   render: (args) => (
@@ -51,6 +51,30 @@ export const Variants = meta.story({
       <Spinner {...args} data-color="accent" />
       <Spinner {...args} data-color="support1" />
       <Spinner {...args} data-color="support2" />
+    </>
+  ),
+});
+
+export const WithText = meta.story({
+  args: {
+    'aria-hidden': true,
+    'data-size': 'sm',
+  },
+  render: (args) => (
+    <>
+      <style>
+        {`
+      .spinner-with-text {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+      `}
+      </style>
+      <div className="spinner-with-text">
+        <Spinner {...args} />
+        <span>Forbereder filen din</span>
+      </div>
     </>
   ),
 });

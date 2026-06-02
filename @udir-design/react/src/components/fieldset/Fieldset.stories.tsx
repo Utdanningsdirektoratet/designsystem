@@ -7,7 +7,7 @@ import { Fieldset } from './Fieldset';
 
 const meta = preview.meta({
   component: Fieldset,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
@@ -26,7 +26,7 @@ export const Preview = meta.story({
       </Fieldset.Description>
       <Radio label="Barsnesfjorden" name="radio" value="barsnesfjorden" />
       <Radio label="Eidsfjorden" name="radio" value="eidsfjorden" />
-      <Radio label="Ingen av de" name="radio" value="ingen-av-de" />
+      <Radio label="Ingen av dem" name="radio" value="ingen-av-dem" />
     </Fieldset>
   ),
 });
@@ -51,15 +51,25 @@ export const WithTextfield = meta.story({
       <Fieldset.Description>
         Skriv inn adressen din for å motta post fra oss.
       </Fieldset.Description>
-      <Textfield label="Gateadresse" name={`${context.id}-textfield`} />
+      <Textfield
+        label="Gateadresse"
+        name={`${context.id}-address-line1`}
+        autoComplete="address-line1"
+      />
       <Textfield
         label="Postnummer"
-        name={`${context.id}-textfield`}
-        pattern="[0-9]*"
+        name={`${context.id}-postal-code`}
         inputMode="numeric"
+        maxLength={4}
         size={4}
+        autoComplete="postal-code"
       />
-      <Textfield label="Poststed" name={`${context.id}-textfield2`} size={25} />
+      <Textfield
+        label="Poststed"
+        name={`${context.id}-address-level2`}
+        size={25}
+        autoComplete="address-level2"
+      />
     </Fieldset>
   ),
 });

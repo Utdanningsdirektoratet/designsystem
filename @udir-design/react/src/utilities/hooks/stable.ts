@@ -7,6 +7,9 @@
 
 export {
   type UseCheckboxGroupProps,
-  type UseCheckboxGroupReturn,
   useCheckboxGroup,
 } from './useCheckboxGroup/useCheckboxGroup';
+export {
+  type UseRadioGroupProps,
+  useRadioGroup,
+} from './useRadioGroup/useRadioGroup';

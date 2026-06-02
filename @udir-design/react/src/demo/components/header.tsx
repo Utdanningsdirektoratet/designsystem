@@ -10,8 +10,15 @@ export const HeaderDemo = ({ ...props }: Props) => {
   return (
     <Header {...props}>
       <Header.MenuButton />
-      <Header.Menu style={{ padding: 'var(--udsc-header-padding)' }}>
-        <nav aria-labelledby="header-menu-navigation">
+      <Header.Menu>
+        <nav
+          aria-labelledby="header-menu-navigation"
+          style={{
+            maxWidth: '80rem',
+            margin: '0 auto',
+            padding: 'var(--ds-size-10) var(--ds-size-5)',
+          }}
+        >
           <h2 id="header-menu-navigation" className="ds-sr-only">
             Menynavigasjon
           </h2>

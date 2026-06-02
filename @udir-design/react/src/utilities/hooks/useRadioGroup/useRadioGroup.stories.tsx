@@ -42,7 +42,7 @@ export const Default = meta.story({
 
     return (
       <Fieldset>
-        <Fieldset.Legend>Velg din aldersgruppe.</Fieldset.Legend>
+        <Fieldset.Legend>Velg din aldersgruppe</Fieldset.Legend>
         {ageGroups.map((group) => (
           <Radio
             key={group.value}
@@ -121,7 +121,7 @@ const GroupBase = {
 
     return (
       <Fieldset>
-        <Fieldset.Legend>Velg din aldersgruppe.</Fieldset.Legend>
+        <Fieldset.Legend>Velg din aldersgruppe</Fieldset.Legend>
         <Fieldset.Description>
           Informasjonen blir brukt til å tilpasse innholdet på siden.
         </Fieldset.Description>

@@ -43,11 +43,15 @@ export const StorybookLink = ({
 >) => {
   // if link starts with /, add current path to link
   const href = getPath(props.href);
+  const isExternal =
+    href.match(/^https?:\/\//) && !href.match(/^https?:\/\/([^.]+\.)?udir\.no/);
 
   return (
     <Link
       {...props}
       href={href}
+      // Add noreferrer to links outside udir.no domain for security reasons
+      rel={isExternal ? 'noreferrer' : undefined}
       className="sb-unstyled"
       onClick={handleLinkClick(props.href ?? '')}
       // Add a data-attribute for use when styling links which include code snippets

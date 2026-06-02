@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import { MultiplyIcon, TrashIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from '../button/Button';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Popover } from './Popover';
@@ -15,7 +16,7 @@ const meta = preview.meta({
     'Popover.Trigger': PopoverTrigger,
     'Popover.TriggerContext': PopoverTriggerContext,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
@@ -98,12 +99,12 @@ export const Interactive = meta.story({
   parameters: {
     customStyles: { story: { height: 260 } },
   },
-  render: () => (
+  render: (args) => (
     <Popover.TriggerContext>
       <Popover.Trigger aria-label="Lukk" variant="secondary">
         Lukk <MultiplyIcon aria-hidden />
       </Popover.Trigger>
-      <Popover>
+      <Popover {...args}>
         <Paragraph>Vil du lagre endringene dine?</Paragraph>
         <div
           style={{
@@ -132,7 +133,7 @@ export const DottedUnderline = meta.story({
       },
     },
   },
-  render: () => (
+  render: (args) => (
     <Popover.TriggerContext>
       <Paragraph>
         I aldersgruppen 1-5 år går 93 prosent av barna i barnehage. I
@@ -140,7 +141,7 @@ export const DottedUnderline = meta.story({
         <Popover.Trigger inline>OECD</Popover.Trigger>-gjennomsnittet for
         andelen 3-5-åringer i barnehage på 83 prosent (OECD 2021).
       </Paragraph>
-      <Popover data-color="neutral">
+      <Popover data-color="neutral" {...args}>
         <Paragraph>
           <strong>Organisasjonen for økonomisk samarbeid og utvikling </strong>
           (OCED) er en internasjonal organisasjon som sammarbeider om å fremme
@@ -248,7 +249,7 @@ export const Variants = meta.story({
     layout: 'none',
     customStyles: { height: 284, padding: '2rem' },
   },
-  render: () => {
+  render: (args) => {
     return (
       <div
         style={{
@@ -262,7 +263,7 @@ export const Variants = meta.story({
         {Object.entries(VariantsMap).map(([key, props]) => (
           <Popover.TriggerContext key={key}>
             <Popover.Trigger variant="tertiary">popover</Popover.Trigger>
-            <Popover open={true} autoPlacement={false} {...props}>
+            <Popover open={true} autoPlacement={false} {...props} {...args}>
               {key}
             </Popover>
           </Popover.TriggerContext>
@@ -280,7 +281,7 @@ export const ColorVariants = meta.story({
     layout: 'none',
     customStyles: { height: 284, padding: '2rem' },
   },
-  render: () => {
+  render: (args) => {
     return (
       <div
         style={{
@@ -294,7 +295,7 @@ export const ColorVariants = meta.story({
         {Object.entries(ColorVariantsMap).map(([key, props]) => (
           <Popover.TriggerContext key={key}>
             <Popover.Trigger variant="tertiary">popover</Popover.Trigger>
-            <Popover open={true} autoPlacement={false} {...props}>
+            <Popover open={true} autoPlacement={false} {...props} {...args}>
               {key}
             </Popover>
           </Popover.TriggerContext>
@@ -310,6 +311,7 @@ export const ColorVariants = meta.story({
 export const Controlled = meta.story({
   parameters: {
     customStyles: { story: { height: 260 } },
+    docs: advancedCodeDocs,
   },
   render: (args) => {
     const [open, setOpen] = useState(false);
@@ -348,8 +350,9 @@ export const Controlled = meta.story({
 export const WithoutContext = meta.story({
   parameters: {
     customStyles: { story: { height: 260 } },
+    docs: advancedCodeDocs,
   },
-  render: () => {
+  render: (args) => {
     const [open, setOpen] = useState(false);
 
     return (
@@ -366,6 +369,7 @@ export const WithoutContext = meta.story({
           open={open}
           onClose={() => setOpen(false)}
           data-color="neutral"
+          {...args}
         >
           <Paragraph>
             Er du sikker på at du vil slette raden? Handlingen kan ikke angres.

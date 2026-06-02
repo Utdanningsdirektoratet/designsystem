@@ -5,10 +5,12 @@ exports[`Dark Mode 1`] = `
   <div>
     <img
       alt="Utdanningsdirektoratet"
+      role="img"
       src="/assets/img/udir-main-logo.svg"
     >
     <img
       alt="Utdanningsdirektoratet"
+      role="img"
       src="/assets/img/udir-main-logo-dark-mode.svg"
     >
   </div>
@@ -19,11 +21,44 @@ exports[`Preview 1`] = `
 <div>
   <img
     alt="Utdanningsdirektoratet"
+    role="img"
     src="/assets/img/udir-main-logo.svg"
   >
   <img
     alt="Utdanningsdirektoratet"
+    role="img"
     src="/assets/img/udir-main-logo-dark-mode.svg"
   >
+</div>
+`;
+
+exports[`Pride Variants 1`] = `
+<div data-color-scheme="light">
+  <div>
+    <img
+      alt="Utdanningsdirektoratet"
+      role="img"
+      src="/assets/img/udir-pride-logo.svg"
+    >
+    <img
+      alt="Utdanningsdirektoratet"
+      role="img"
+      src="/assets/img/udir-pride-logo-dark-mode.svg"
+    >
+  </div>
+</div>
+<div data-color-scheme="dark">
+  <div>
+    <img
+      alt="Utdanningsdirektoratet"
+      role="img"
+      src="/assets/img/udir-pride-logo.svg"
+    >
+    <img
+      alt="Utdanningsdirektoratet"
+      role="img"
+      src="/assets/img/udir-pride-logo-dark-mode.svg"
+    >
+  </div>
 </div>
 `;

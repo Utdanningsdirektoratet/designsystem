@@ -5,12 +5,12 @@ import * as FieldsetStories from './Fieldset.stories';
 
 # Fieldset
 
-`Fieldset` brukes til å gruppere og navngi felt som naturlig hører sammen, for eksempel datofelt eller adressefelt. Komponenten hjelper med å organisere informasjon, gjøre skjemaer mer oversiktlige og forbedre tilgjengeligheten for skjermlesere.
+`Fieldset` brukes til å gruppere og gi navn til felt som naturlig hører sammen, for eksempel datofelt eller adressefelt. Komponenten hjelper med å strukturere informasjon, gjøre skjemaer mer oversiktlige og forbedre tilgjengeligheten for skjermlesere.
 
 **Passer til å**
 
-- gruppere en liste med flere [`Radio`](/docs/components-radio--docs) eller [`Checkbox`](/docs/components-checkbox--docs) som hører naturlig sammen
-- dele inn et skjema i seksjoner med forklarende ledetekster
+- gruppere flere [`Radio`](/docs/components-radio--docs) eller [`Checkbox`](/docs/components-checkbox--docs) som hører naturlig sammen
+- dele inn skjema i seksjoner med forklarende ledetekster
 
 **Passer ikke til å**
 
@@ -41,7 +41,7 @@ import { Fieldset } from '@udir-design/react';
 
 ### Checkbox
 
-`Fieldset` er et [HTML `<fieldset>`-element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset) med diverse hjelpfunksjoner for å hjelpe med bruk og gruppering av kontrollelementer i et skjema. Den kan for eksempel brukes med [`Checkbox`](/docs/components-checkbox--docs).
+`Fieldset` er et [HTML `<fieldset>`-element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset) med hjelpefunksjoner som gjør det enklere å bruke og gruppere kontrollelementer i et skjema. Den kan for eksempel brukes med [`Checkbox`](/docs/components-checkbox--docs).
 
 <Canvas of={FieldsetStories.WithCheckbox} />
 
@@ -53,15 +53,15 @@ import { Fieldset } from '@udir-design/react';
 
 ### Spørsmål som overskrift
 
-Å bruke selve spørsmålet som overskrift er god praksis i mange tilfeller, fordi brukere med skjermleser da bare hører spørsmålet én gang.
+Å bruke selve spørsmålet som overskrift er ofte god praksis, fordi skjermleserbrukere da bare hører spørsmålet én gang, ikke både som overskrift og feltbeskrivelse.
 
-På sider med mange inndatafelt er det også enklere for brukere med skjermleser om spørsmålet er en overskrift. Dette understreker at alle de tilhørende feltene hører til samme gruppe.
+Dette gjelder også på sider med mange inndatafelt, fordi det tydeliggjør at de tilhørende feltene hører til samme gruppe.
 
 <Canvas of={FieldsetStories.LegendAsHeading} />
 
 ## Retningslinjer
 
-Når du bruker `Fieldset`, starter du med en `Fieldset.Legend` som forklarer hva feltene under handler om. Det kan være et spørsmål som «Hvor bor du nå?», eller en beskrivelse som «Personopplysninger». Dette hjelper brukeren med å forstå sammenhengen mellom feltene og hva de skal fylle ut.
+Når du bruker `Fieldset`, starter du med en `Fieldset.Legend` som forklarer hva feltene handler om. Det kan være et spørsmål som «Hvor bor du nå?» eller en beskrivelse som «Personopplysninger». Dette hjelper brukeren med å forstå sammenhengen mellom feltene og hva som skal fylles ut.
 
 ## Tekst i Fieldset
 

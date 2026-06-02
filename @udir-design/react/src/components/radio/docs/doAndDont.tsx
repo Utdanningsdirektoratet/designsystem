@@ -107,7 +107,7 @@ const ExPlacementExDont = () => {
 export const RadioExLogic = () => {
   return (
     <Stack style={{ margin: 'var(--ds-size-8) 0' }}>
-      <Do description="Brukeren skal kunne lese hvert svaralternativ som en logisk respons på forklaringen over boksene.">
+      <Do description="Brukeren skal kunne lese hvert svaralternativ som en logisk respons på forklaringen over radioknappene.">
         <ExLogicDo />
       </Do>
       <Dont description="Unngå å lage svaralternativer som bryter lesbarheten.">

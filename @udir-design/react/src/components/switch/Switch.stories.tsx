@@ -10,22 +10,13 @@ import { Switch } from './Switch';
 
 const meta = preview.meta({
   component: Switch,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
       details: 'Vi har fjernet mulighet for fargevalg.',
     },
     layout: 'centered',
-  },
-  argTypes: {
-    /**
-     * Digdir has mistakenly set the label description as "Radio label". Remove when fixed.
-     */
-    label: {
-      description: 'Switch label',
-      control: 'text',
-    },
   },
 });
 

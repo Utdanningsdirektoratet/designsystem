@@ -34,6 +34,10 @@ export type HeaderProps = HTMLAttributes<HTMLElement> & {
    * Changes size for descendant Designsystemet components. Select from predefined sizes.
    */
   'data-size'?: Size;
+  /**
+   * Changes the logo variant. Options are `default` and `pride`.
+   */
+  variant?: 'default' | 'pride';
 };
 
 export const Header = forwardRef<HTMLElement, HeaderProps>(function Header(
@@ -44,6 +48,7 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(function Header(
     href = '/',
     maxWidth = '80rem',
     sticky = true,
+    variant = 'default',
     ...rest
   },
   ref,
@@ -65,7 +70,11 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(function Header(
     >
       <div>
         <LogoContainer href={href as string} className="uds-header__logo">
-          {isMain ? <Logo padding="0" /> : <LogoSymbol padding="0" />}
+          {isMain ? (
+            <Logo padding="0" variant={variant} />
+          ) : (
+            <LogoSymbol padding="0" variant={variant} />
+          )}
           {!isMain && (
             <Heading data-size="xs" asChild>
               <span>{applicationName}</span>

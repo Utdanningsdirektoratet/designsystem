@@ -98,6 +98,17 @@ export const Udirno = meta.story({
   ),
 });
 
+export const PrideLogo = meta.story({
+  render: (args) => (
+    <Footer data-testid="footer" variant="pride" {...args}>
+      <Footer.List>
+        <Footer.Item href="#">Om tjenesten</Footer.Item>
+        <Footer.Item href="#">Kontakt oss</Footer.Item>
+      </Footer.List>
+    </Footer>
+  ),
+});
+
 export const Tjeneste = meta.story({
   render: (args) => (
     <Footer {...args}>

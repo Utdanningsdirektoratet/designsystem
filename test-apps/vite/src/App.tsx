@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
+import { TestFooter as Footer } from '@udir-design/demos/TestFooter';
+import { TestHeader as Header } from '@udir-design/demos/TestHeader';
 import { DemoBanner, SkipLink } from '@udir-design/react/beta';
-import { TestFooter as Footer } from './components/TestFooter';
-import { TestHeader as Header } from './components/TestHeader';
 
 function App() {
   return (

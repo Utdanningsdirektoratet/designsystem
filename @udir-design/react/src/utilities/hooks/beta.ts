@@ -10,11 +10,6 @@ export {
   usePagination,
 } from './usePagination/usePagination';
 export {
-  type UseRadioGroupProps,
-  type UseRadioGroupReturn,
-  useRadioGroup,
-} from './useRadioGroup/useRadioGroup';
-export {
   useTableOfContents,
   type useTableOfContentsProps,
   type useTableOfContentsReturn,

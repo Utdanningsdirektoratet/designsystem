@@ -20,7 +20,7 @@
     "prettier:write": "pnpm prettier --write ."
   },
   "private": true,
-  "packageManager": "pnpm@11.0.9+sha512.34ce82e6780233cf9cad8685029a8f81d2e06196c5a9bad98879f7424940c6817c4e4524fb7d38b8553ceed48b9758b8ebaf1abd3600c232c4c8cf7366086f38",
+  "packageManager": "pnpm@11.5.0+sha512.dbfcc4f81cf48597afd4bc391ffdf12c11f1a9fb83a395bfa6b0a2d9cc2fd8ffebafdb1ccbd529632153f793904c2615b7f09fe1a345473fd1c35845172a8eb1",
   "devDependencies": {
     "@commitlint/cli": "catalog:",
     "@commitlint/config-conventional": "catalog:",
@@ -28,7 +28,6 @@
     "@eslint/compat": "catalog:",
     "@eslint/eslintrc": "catalog:",
     "@eslint/js": "catalog:",
-    "@nx/azure-cache": "catalog:",
     "@nx/eslint": "catalog:",
     "@nx/eslint-plugin": "catalog:",
     "@swc-node/register": "catalog:",
@@ -60,7 +59,8 @@
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "24.15.0"
+      "version": "24.15.0",
+      "onFail": "download"
     }
   }
 }

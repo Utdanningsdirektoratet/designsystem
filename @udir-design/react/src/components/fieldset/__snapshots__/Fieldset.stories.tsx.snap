@@ -106,7 +106,7 @@ exports[`Preview 1`] = `
   <ds-field data-clickdelegatefor="<removed>">
     <input
       type="radio"
-      value="ingen-av-de"
+      value="ingen-av-dem"
       name="radio"
       id="<removed>"
     >
@@ -114,7 +114,7 @@ exports[`Preview 1`] = `
       data-weight="regular"
       for="<removed>"
     >
-      Ingen av de
+      Ingen av dem
     </label>
   </ds-field>
 </fieldset>
@@ -168,8 +168,9 @@ exports[`With Textfield 1`] = `
     </label>
     <div>
       <input
+        autocomplete="address-line1"
         type="text"
-        name="components-fieldset--with-textfield-textfield"
+        name="components-fieldset--with-textfield-address-line1"
         id="<removed>"
       >
     </div>
@@ -183,11 +184,12 @@ exports[`With Textfield 1`] = `
     </label>
     <div>
       <input
-        pattern="[0-9]*"
         inputmode="numeric"
+        maxlength="4"
         size="4"
+        autocomplete="postal-code"
         type="text"
-        name="components-fieldset--with-textfield-textfield"
+        name="components-fieldset--with-textfield-postal-code"
         id="<removed>"
       >
     </div>
@@ -202,8 +204,9 @@ exports[`With Textfield 1`] = `
     <div>
       <input
         size="25"
+        autocomplete="address-level2"
         type="text"
-        name="components-fieldset--with-textfield-textfield2"
+        name="components-fieldset--with-textfield-address-level2"
         id="<removed>"
       >
     </div>

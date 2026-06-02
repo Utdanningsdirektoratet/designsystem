@@ -5,6 +5,10 @@ on:
   # schedule:
   #   # Runs at 23:00, only on Sunday
   #   - cron: 0 23 * * 0
+  #
+
+env:
+  NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
 
 permissions:
   contents: write

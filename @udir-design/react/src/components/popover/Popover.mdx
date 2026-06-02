@@ -9,14 +9,15 @@ import * as PopoverStories from './Popover.stories';
 
 **Passer til å**
 
-- forklare ord eller konsepter som trenger mer enn en kort definisjon
-- gi mer omfattende informasjon (maksimalt ett avsnitt)
-- inkludere interaktivitet, som lenker, knapper eller valg
+- forklare ord eller begreper som trenger mer enn en kort definisjon
+- gi mer utfyllende informasjon
+- inkludere interaktivitet, for eksempel lenker, knapper eller valg
 
 **Passer ikke til å**
 
-- beskrive et symbol - bruk heller [`Tooltip`](/docs/components-tooltip--docs)
-- vise mye innhold
+- beskrive et symbol eller en tastatursnarvei, bruk heller [`Tooltip`](/docs/components-tooltip--docs)
+- vise store mengder innhold
+- navigere eller velge mellom alternativer, bruk heller [`Dropdown`](https://design.udir.no/beta/?path=/docs/components-dropdown--docs)
 
 ## Slik bruker du Popover
 
@@ -54,46 +55,44 @@ Du kan også sette `variant=tinted` for å få valgt farge som bakgrunn.
 
 ### Ordforklaring
 
-Bruk `inline={true}` (stiplet understrek) på `Popover.Trigger` for å indikere en ordforklaring. Dette er nyttig dersom man for eksempel vil gi tilleggsinformasjon til et ord i en artikel. Popoveren kan inneholde en kort tekst som utdyper ordets betydning.
+Bruk `inline={true}` (stiplet understrek) på `Popover.Trigger` for å indikere en ordforklaring. Dette er nyttig når du vil gi ekstra informasjon om et ord i en artikkel. Popoveren kan inneholde en kort tekst som utdyper ordets betydning.
 
 <Canvas of={PopoverStories.DottedUnderline} />
 
 ### Interaktive elementer i en Popover
 
-Bruk `Popover` for å inkludere interaksjoner som knapper eller lenker.
+Bruk `Popover` for å inkludere interaktive elementer, som knapper eller lenker.
 
 <Canvas of={PopoverStories.Interactive} />
 
 ### Kontrollert tilstand
 
-`open` propen kan brukes for å kontrollere tilstanden til `Popover`. Du kan også bruke `onClose` for å trigge andre effekter når `Popover` blir lukket.
-Disse kontrollmulighetene er nyttige dersom du for eksempel har annet innhold på siden som skal lukke `Popover` når du klikker på det.
+`open`-propen kan brukes til å kontrollere tilstanden til `Popover`. Du kan også bruke `onClose` for å trigge andre effekter når `Popover` lukkes. Dette er nyttig når annet innhold på siden skal kunne lukke popoveren.
 
 <Canvas of={PopoverStories.Controlled} />
 
 ### Automatisk plassering
 
-Standard oppførsel er at `Popover` alltid vil prøve å være i skjermbildet, ankret til triggeren.
-`Popover` har en `autoPlacement` prop som kan brukes til å slå av automatisk plassering. Standardverdien er `true`.
+Standard oppførsel er at `Popover` alltid vil prøve å være i skjermbildet, forankret til triggeren.
+`Popover` har en `autoPlacement`-prop som kan brukes til å slå av automatisk plassering. Standardverdien er `true`.
 
 ## Tekst i Popover
 
-Unngå lange tekster og kompliserte forklaringer. I noen tilfeller er det kanskje bedre å lenke til en annen side med utdypende informasjon om temaet.
+Hold teksten kort og enkel. Hvis innholdet krever mer utdyping, kan du vurdere å lenke videre til en egen side med mer informasjon.
 
 ## Tilgjengelighet
 
-Det er innebygd tilgjengelighet i [Popover API-et](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API) i henhold til åpnet/lukket tilstand og tastaturnavigasjon.
+[Popover API-et](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API) har innebygd støtte for tilgjengelighet, inkludert støtte for åpen/lukket tilstand og tastaturnavigasjon.
 
 ## Kompatibilitet
 
 ### Polyfill
 
-`Popover` bruker [Popover API-et](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover). Dette apiet er klassifisert som [Baseline: Newly available](https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility) fra april 2024, da Firefox som siste nettleser la det til. I noen tilfeller kan en oppleve at brukere av ulike grunner er låst til eldre nettleserversjoner, og da kan det være aktuelt å legge til en polyfill for å sikre at `Popover` fungerer for alle.
+`Popover` bruker [Popover API-et](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover). API-et ble klassifisert som [Baseline: Newly available](https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility) i april 2024, da Firefox som siste nettleser fikk støtte. Enkelte brukere kan fortsatt være låst til eldre nettleserversjoner av ulike årsaker. I slike tilfeller kan det være aktuelt å legge til en polyfill for å sikre at `Popover` fungerer for alle.
 
 - [Popover-Polyfill](https://github.com/oddbird/popover-polyfill)
 
 ### React og popovertarget
 
-Når du bruker `Popover` uten `Popover.TriggerContext`, kobler du selv sammen utløseren og `Popover`.
-Da brukes `popovertarget`, slik at alle versjoner av React korrekt gjengir attributtet.
-Når du bruker `@udir-design/react` utvider vi `@types/react-dom` til å akseptere dette.
+Når du bruker `Popover` uten `Popover.TriggerContext`, må du selv koble sammen utløseren og `Popover`. Da brukes `popovertarget`, slik at attributtet gjengis korrekt i alle React-versjoner.
+Når du bruker `@udir-design/react`, utvider vi `@types/react-dom` til å akseptere dette.

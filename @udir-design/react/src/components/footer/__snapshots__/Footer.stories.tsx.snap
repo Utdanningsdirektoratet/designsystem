@@ -49,10 +49,12 @@ exports[`Preview 1`] = `
         <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
+            role="img"
             src="/assets/img/udir-main-logo.svg"
           >
           <img
             alt="Utdanningsdirektoratet"
+            role="img"
             src="/assets/img/udir-main-logo-dark-mode.svg"
           >
         </div>
@@ -111,11 +113,48 @@ exports[`Preview Test 1`] = `
         <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
+            role="img"
             src="/assets/img/udir-main-logo.svg"
           >
           <img
             alt="Utdanningsdirektoratet"
+            role="img"
             src="/assets/img/udir-main-logo-dark-mode.svg"
+          >
+        </div>
+      </a>
+    </div>
+  </footer>
+</div>
+`;
+
+exports[`Pride Logo 1`] = `
+<div data-size="auto">
+  <footer style="<removed>">
+    <div>
+      <ul data-variant="simple">
+        <li>
+          <a href="#">
+            Om tjenesten
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Kontakt oss
+          </a>
+        </li>
+      </ul>
+      <a href="https://udir.no">
+        <div style="<removed>">
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="/assets/img/udir-pride-logo.svg"
+          >
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="/assets/img/udir-pride-logo-dark-mode.svg"
           >
         </div>
       </a>
@@ -161,10 +200,12 @@ exports[`Tjeneste 1`] = `
         <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
+            role="img"
             src="/assets/img/udir-main-logo.svg"
           >
           <img
             alt="Utdanningsdirektoratet"
+            role="img"
             src="/assets/img/udir-main-logo-dark-mode.svg"
           >
         </div>
@@ -350,10 +391,12 @@ exports[`Udirno 1`] = `
         <div style="<removed>">
           <img
             alt="Utdanningsdirektoratet"
+            role="img"
             src="/assets/img/udir-main-logo.svg"
           >
           <img
             alt="Utdanningsdirektoratet"
+            role="img"
             src="/assets/img/udir-main-logo-dark-mode.svg"
           >
         </div>
