@@ -3,7 +3,7 @@ import { Heading } from './Heading';
 
 const meta = preview.meta({
   component: Heading,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
