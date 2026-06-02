@@ -21,6 +21,7 @@ import { Label } from 'src/components/typography/label/Label';
 import { Prose } from 'src/components/typography/prose/Prose';
 import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
 import { useRadioGroup } from 'src/utilities/hooks/useRadioGroup/useRadioGroup';
+import './filtering.css';
 
 const meta = preview.meta({
   tags: ['alpha', 'udir'],
@@ -59,7 +60,6 @@ export const Preview = meta.story({
 
     const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
     const isMobile = width < 48 * rem; // < 480px
-    const isTablet = width >= 48 * rem && width < 64 * rem; // 480–1024px
     const isDesktop = width >= 64 * rem; // >= 1024px
 
     const [city, setCity] = useState<string[]>([]);
@@ -99,58 +99,6 @@ export const Preview = meta.story({
 
     return (
       <>
-        <style>
-          {`
-        .example-filters-section {
-          display: flex;
-          flex-direction: ${isMobile || isTablet ? 'column' : 'row'};
-          justify-content: space-between;
-          align-items: ${isMobile || isTablet ? 'flex-start' : 'flex-end'};
-          gap: var(--ds-size-6);
-        }
-        .example-suggestion-section {
-          display: flex;
-          flex-direction: ${isMobile ? 'column' : 'row'};
-          gap: var(--ds-size-4);
-          align-items: flex-end;
-          width: ${isMobile ? '100%' : 'auto'};
-        }
-        .example-suggestion-field {
-          max-width: ${isMobile ? 'none' : '280px'};
-          width: ${isMobile ? '100%' : 'auto'};
-        }
-        .example-search-field {
-          width: ${isMobile ? '100%' : 'auto'};
-        }
-        .example-main {
-          margin: 20px;
-          gap: 20px;
-        }
-        .example-controls {
-          display: flex;
-          flex-direction: ${isDesktop ? 'row' : 'column'};
-          justify-content: ${isDesktop ? 'space-between' : 'center'};
-          align-items: center;
-          gap: var(--ds-size-4);
-          margin: var(--ds-size-6) var(--ds-size-2); 
-        }
-        .example-controls-section {
-          display: flex;
-          flex-direction: ${isMobile ? 'column' : 'row'};
-          justify-content: ${isTablet ? 'space-between' : 'flex-start'};
-          align-items: center;
-          width: ${isTablet ? 'fit-content' : 'auto'};
-          gap: ${isTablet ? 'var(--ds-size-8)' : isDesktop ? 'var(--ds-size-6)' : 'var(--ds-size-2)'};
-        }
-        .example-controls-section-span {
-          color: var(--ds-color-neutral-text-subtle);
-        }
-        .example-controls-section-dropdown {
-          display: flex;
-          align-items: center;
-          gap: var(--ds-size-2);
-        }`}
-        </style>
         <div className="example-main">
           <Prose>
             <div className="example-filters-section">
@@ -353,7 +301,6 @@ export const WithDialog = meta.story({
 
     const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
     const isMobile = width < 48 * rem; // < 480px
-    const isTablet = width >= 48 * rem && width < 64 * rem; // 480–1024px
     const isDesktop = width >= 64 * rem; // >= 1024px
 
     const [city, setCity] = useState<string[]>([]);
@@ -410,61 +357,9 @@ export const WithDialog = meta.story({
 
     return (
       <>
-        <style>
-          {`
-        .example-main {
-          margin: 20px;
-          gap: 20px;
-        }
-        .example-filters-section {
-          display: flex;
-          flex-direction: ${isMobile ? 'column' : 'row'};
-          align-items: ${isMobile ? 'flex-start' : 'flex-end'};
-          gap: var(--ds-size-4);
-        }
-        .example-dialog-filters {
-            display: grid;
-            grid-template-columns: ${isMobile ? '1fr' : '1fr 1fr'};
-            gap: var(--ds-size-4);
-          }
-        .example-controls {
-          display: flex;
-          flex-direction: ${isDesktop ? 'row' : 'column'};
-          justify-content: ${isDesktop ? 'space-between' : 'center'};
-          align-items: center;
-          gap: var(--ds-size-4);
-          margin: var(--ds-size-6) var(--ds-size-2); 
-        }
-        .example-controls-section {
-          display: flex;
-          flex-direction: ${isMobile ? 'column' : 'row'};
-          justify-content: ${isTablet ? 'space-between' : 'flex-start'};
-          align-items: center;
-          width: ${isTablet ? 'fit-content' : 'auto'};
-          gap: ${isTablet ? 'var(--ds-size-8)' : isDesktop ? 'var(--ds-size-6)' : 'var(--ds-size-2)'};
-        }
-        .example-controls-section-span {
-          color: var(--ds-color-neutral-text-subtle);
-        }
-        .example-controls-section-dropdown {
-          display: flex;
-          align-items: center;
-          gap: var(--ds-size-2);
-        }
-        .example-footer {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          gap: var(--ds-size-2);
-        }
-        .example-footer button {
-          margin: 0;
-        }
-        `}
-        </style>
         <div className="example-main">
           <Prose>
-            <div className="example-filters-section">
+            <div className="example-filters-section-modal">
               <Field>
                 <Label>Søk</Label>
                 <Search>
