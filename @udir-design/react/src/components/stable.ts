@@ -8,6 +8,7 @@ export * from './card/Card';
 export * from './checkbox/Checkbox';
 export * from './details/Details';
 export * from './divider/Divider';
+export * from './field/Field';
 export * from './footer';
 export * from './input/Input';
 export * from './list/List';

@@ -10,7 +10,6 @@ export * from './demoBanner/DemoBanner';
 export * from './dialog/Dialog';
 export * from './dropdown/Dropdown';
 export * from './errorSummary/ErrorSummary';
-export * from './field/Field';
 export * from './fieldNecessity';
 export * from './fieldset/Fieldset';
 export * from './formNavigation';

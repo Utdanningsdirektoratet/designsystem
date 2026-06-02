@@ -6,15 +6,15 @@ import * as FieldStories from './Field.stories';
 
 # Field
 
-`Field` er et hjelpemiddel for å automatisk koble et felt sammen med [`Label`](/docs/components-typography--docs#label), `Field.Description`, [`ValidationMessage`](/docs/components-typography--docs#validationmessage) og `Field.Counter`. `Field` kan brukes sammen med [`Input`](/docs/components-input--docs), [`Textarea`](/docs/components-textarea--docs) og [`Select`](/docs/components-select--docs). **OBS**: [`Textfield`](/docs/components-textfield--docs) har allerede `Field` innebygd, og kan derfor ikke brukes i en `Field`.
+`Field` er en hjelpekomponent som brukes for å automatisk koble et felt sammen med [`Label`](/docs/components-typography--docs#label), `Field.Description`, [`ValidationMessage`](/docs/components-typography--docs#validationmessage) og `Field.Counter`. `Field` kan brukes sammen med [`Input`](/docs/components-input--docs), [`Textarea`](/docs/components-textarea--docs) og [`Select`](/docs/components-select--docs). **OBS**: [`Textfield`](/docs/components-textfield--docs) har allerede `Field` innebygd, og skal derfor ikke brukes inne i en `Field`.
 
 **Passer til å**
 
-- sørge for at [`Label`](/docs/components-typography--docs#label), `Field.Description`, [`ValidationMessage`](/docs/components-typography--docs#validationmessage) og `Field.Counter` er riktig koblet til et felt
+- sikre at [`Label`](/docs/components-typography--docs#label), `Field.Description`, [`ValidationMessage`](/docs/components-typography--docs#validationmessage) og `Field.Counter` er riktig koblet til et felt
 
 **Passer ikke til å**
 
-- semantisk gruppere flere felt - bruk heller [`Fieldset`](/docs/components-fieldset--docs)
+- semantisk gruppere flere felt, bruk heller [`Fieldset`](/docs/components-fieldset--docs)
 
 ## Slik bruker du Field
 
@@ -32,32 +32,32 @@ import * as FieldStories from './Field.stories';
 
 ## Eksempler
 
-Eksemplene nedenfor viser hvordan du kan bruke `Field` for å få full kontroll over komponentenes oppsett og validering. Ved de fleste tilfeller vil du heller bruke [`Textfield`](/docs/components-textfield--docs) som har innebygde funksjoner for dette.
+Eksemplene nedenfor viser hvordan du kan bruke `Field` for å få full kontroll over komponentenes oppsett og validering. I de fleste tilfeller vil du heller bruke [`Textfield`](/docs/components-textfield--docs), som har innebygde funksjoner for dette.
 
 ### Prefix/Suffix
 
 Bruk `Field.Prefix` og `Field.Suffix` for å legge til ekstra informasjon før eller etter feltet. Dette kan være nyttig for å indikere enhet, valuta eller annen relevant informasjon som brukeren bør være oppmerksom på.
 Du skal **ikke** bruke disse alene, siden skjermlesere ikke leser dem opp.
-Det er viktig at samme informasjon som vises i prefixet eller suffixet, også inkluderes i `label`.
+Det er viktig at den samme informasjonen som vises i prefix eller suffix, også inkluderes i `label`.
 
 <Canvas of={FieldStories.Affix} />
 
 ### Antall tegn
 
-Bruk `Field.Counter` til å vise brukeren hvor mange tegn de kan skrive inn i feltet. Ved behov kan du bruke `over` eller `under` til å skrive en tilpasset melding, f.eks. dersom man ønsker å vise antall tegn brukt av en total. Man bør ikke hindre folk i å skrive mer enn maks antall tegn, da dette kan føre til at man sender inn feil data. Det er bedre å la brukeren skrive inn det de ønsker, og vise en feilmelding dersom de har skrevet for mye.
+Bruk `Field.Counter` for å vise brukeren hvor mange tegn de kan skrive i feltet. Ved behov kan du bruke `over` eller `under` til å skrive en tilpasset melding, for eksempel dersom man ønsker å vise antall tegn brukt av en total. Man bør ikke hindre brukeren i å skrive mer enn maksimalt antall tegn, da dette kan føre til at feil data sendes inn. Det er bedre å la brukeren skrive inn det de ønsker, og vise en feilmelding dersom de har skrevet for mye.
 
 <Canvas of={FieldStories.Counter} />
 
-I noen tilfeller vil man ha data med et visst antall tegn, men unngå å telle med f.eks. mellomrom. Dette gjelder for eksempel telefonnummer eller personnummer. Du burde la brukeren plassere mellomrom der det er naturlig for dem, og heller fjerne disse programmatisk før innsending. Det kan i disse tilfellene være nødvendig å skrive sin egen logikk for å validere antall tegn fremfor å bruke `counter`. Se eksempelet under for hvordan det kan løses.
+I noen tilfeller vil man ha data med et visst antall tegn, men unngå å telle med for eksempel mellomrom. Dette gjelder for eksempel telefonnummer eller personnummer. La brukeren plassere mellomrom der det føles naturlig, og fjern dem heller programmatisk før innsending. I slike tilfeller kan det være nødvendig med egen valideringslogikk for antall tegn i stedet for å bruke `counter`. Se eksempelet under for hvordan det kan løses.
 
 <Canvas of={FieldStories.Format} />
 
 ### Plassering
 
-Bruk `position="end"` når du ønsker å plassere [`Input`](/docs/components-input--docs) til høyre for `Label`. Dette kan være nyttig i innstillingsgrensesnitt, slik at brukeren først kan lese etiketten til venstre – som forklarer hva innstillingen gjelder – og deretter handlingselementet (bryteren) til høyre.
+Bruk `position="end"` når du ønsker å plassere [`Input`](/docs/components-input--docs) til høyre for `Label`. Dette kan være nyttig i innstillingsgrensesnitt, slik at brukeren først kan lese etiketten til venstre, som forklarer hva innstillingen gjelder, og deretter handlingselementet (bryteren) til høyre.
 
 <Canvas of={FieldStories.Position} />
 
 ## Tilgjengelighet
 
-`Field` hjelper deg med å strukturere skjemafelt på en tilgjengelig og konsistent måte. Den kobler automatisk sammen [`Label`](/docs/components-typography--docs#label), `Field.Description`, [`ValidationMessage`](/docs/components-typography--docs#validationmessage) og `Field.Counter` med det tilhørende feltet via riktige ARIA-attributter.
+`Field` hjelper deg med å strukturere skjemafelt på en tilgjengelig og konsistent måte. Komponenten kobler automatisk sammen [`Label`](/docs/components-typography--docs#label), `Field.Description`, [`ValidationMessage`](/docs/components-typography--docs#validationmessage) og `Field.Counter` med det tilhørende feltet via riktige ARIA-attributter.
