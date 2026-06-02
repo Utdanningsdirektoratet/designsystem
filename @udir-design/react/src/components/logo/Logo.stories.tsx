@@ -4,7 +4,7 @@ import { Logo } from './Logo';
 const meta = preview.meta({
   title: 'Components/Logo/Logo',
   component: Logo,
-  tags: ['beta', 'udir'],
+  tags: ['udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',

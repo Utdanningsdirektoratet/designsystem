@@ -39,8 +39,10 @@ export const Logo = forwardRef<HTMLDivElement, LogoProps>(function Header(
         } as React.CSSProperties
       }
     >
-      <img src={mainLogoLight} alt={logoAlt} />
-      <img src={mainLogoDark} alt={logoAlt} />
+      {/* eslint-disable-next-line jsx-a11y/no-redundant-roles -- Without this, SVG src may cause VoiceOver to enumerate internal SVG elements in older Safari versions. See https://bugs.webkit.org/show_bug.cgi?id=216364 */}
+      <img src={mainLogoLight} alt={logoAlt} role="img" />
+      {/* eslint-disable-next-line jsx-a11y/no-redundant-roles -- Without this, SVG src may cause VoiceOver to enumerate internal SVG elements in older Safari versions. See https://bugs.webkit.org/show_bug.cgi?id=216364 */}
+      <img src={mainLogoDark} alt={logoAlt} role="img" />
     </div>
   );
 });
