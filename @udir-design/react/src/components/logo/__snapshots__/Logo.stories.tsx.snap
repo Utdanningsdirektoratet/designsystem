@@ -5,10 +5,12 @@ exports[`Dark Mode 1`] = `
   <div>
     <img
       alt="Utdanningsdirektoratet"
+      role="img"
       src="/assets/img/udir-main-logo.svg"
     >
     <img
       alt="Utdanningsdirektoratet"
+      role="img"
       src="/assets/img/udir-main-logo-dark-mode.svg"
     >
   </div>
@@ -19,10 +21,12 @@ exports[`Preview 1`] = `
 <div>
   <img
     alt="Utdanningsdirektoratet"
+    role="img"
     src="/assets/img/udir-main-logo.svg"
   >
   <img
     alt="Utdanningsdirektoratet"
+    role="img"
     src="/assets/img/udir-main-logo-dark-mode.svg"
   >
 </div>
