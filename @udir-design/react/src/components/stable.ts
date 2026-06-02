@@ -9,6 +9,7 @@ export * from './checkbox/Checkbox';
 export * from './details/Details';
 export * from './divider/Divider';
 export * from './field/Field';
+export * from './fieldNecessity';
 export * from './footer';
 export * from './input/Input';
 export * from './link/Link';
