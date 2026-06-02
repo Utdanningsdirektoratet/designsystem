@@ -1,16 +1,16 @@
-import { Button } from '@digdir/designsystemet-react';
 import { useEffect, useRef, useState } from 'react';
-import { ChevronDownIcon, FunnelIcon } from '@udir-design/icons';
+import { FunnelIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
+import { Button } from 'src/components/button/Button';
 import { Dialog } from 'src/components/dialog/Dialog';
-import { Dropdown } from 'src/components/dropdown/Dropdown';
 import { Field } from 'src/components/field/Field';
 import { Fieldset } from 'src/components/fieldset/Fieldset';
 import { Pagination } from 'src/components/pagination/Pagination';
 import { Radio } from 'src/components/radio/Radio';
 import { Search } from 'src/components/search/Search';
+import { Select } from 'src/components/select/Select';
 import {
   Suggestion,
   type SuggestionMultipleProps,
@@ -98,182 +98,169 @@ export const Preview = meta.story({
     );
 
     return (
-      <>
-        <div className="example-main">
-          <Prose>
-            <div className="example-filters-section">
-              <Field className="example-search-field">
-                <Label>Søk</Label>
-                <Search>
-                  <Search.Input
-                    aria-label="Søk"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                  />
-                  <Search.Clear onClick={() => setSearchQuery('')} />
-                </Search>
+      <div className="example-main">
+        <Prose>
+          <div className="example-filters-section">
+            <Field className="example-search-field">
+              <Label>Søk</Label>
+              <Search>
+                <Search.Input
+                  aria-label="Søk"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                <Search.Clear onClick={() => setSearchQuery('')} />
+              </Search>
+            </Field>
+            <div className="example-suggestion-section">
+              <Field className="example-suggestion-field">
+                <Label>Velg sted</Label>
+                <Suggestion
+                  {...(args as SuggestionMultipleProps)}
+                  multiple
+                  selected={city}
+                  onSelectedChange={(items) =>
+                    setCity(items.map((item) => item.value))
+                  }
+                >
+                  <Suggestion.Input />
+                  <Suggestion.Clear />
+                  <Suggestion.List>
+                    <Suggestion.Empty>Tomt</Suggestion.Empty>
+                    {uniqueCities.map((c) => (
+                      <Suggestion.Option key={c} label={c} value={c}>
+                        {c}
+                      </Suggestion.Option>
+                    ))}
+                  </Suggestion.List>
+                </Suggestion>
               </Field>
-              <div className="example-suggestion-section">
-                <Field className="example-suggestion-field">
-                  <Label>Velg sted</Label>
-                  <Suggestion
-                    {...(args as SuggestionMultipleProps)}
-                    multiple
-                    selected={city}
-                    onSelectedChange={(items) =>
-                      setCity(items.map((item) => item.value))
-                    }
-                  >
-                    <Suggestion.Input />
-                    <Suggestion.Clear />
-                    <Suggestion.List>
-                      <Suggestion.Empty>Tomt</Suggestion.Empty>
-                      {uniqueCities.map((c) => (
-                        <Suggestion.Option key={c} label={c} value={c}>
-                          {c}
-                        </Suggestion.Option>
-                      ))}
-                    </Suggestion.List>
-                  </Suggestion>
-                </Field>
-                <Field className="example-suggestion-field">
-                  <Label>Velg fylke</Label>
-                  <Suggestion
-                    {...(args as SuggestionMultipleProps)}
-                    multiple
-                    selected={fylke}
-                    onSelectedChange={(items) =>
-                      setFylke(items.map((item) => item.value))
-                    }
-                  >
-                    <Suggestion.Input />
-                    <Suggestion.Clear />
-                    <Suggestion.List>
-                      <Suggestion.Empty>Tomt</Suggestion.Empty>
-                      {uniqueFylker.map((f) => (
-                        <Suggestion.Option key={f} label={f} value={f}>
-                          {f}
-                        </Suggestion.Option>
-                      ))}
-                    </Suggestion.List>
-                  </Suggestion>
-                </Field>
-                <Field className="example-suggestion-field">
-                  <Label>Velg orgnummer</Label>
-                  <Suggestion
-                    {...(args as SuggestionMultipleProps)}
-                    multiple
-                    selected={orgnummer}
-                    onSelectedChange={(items) =>
-                      setOrgnummer(items.map((item) => item.value))
-                    }
-                  >
-                    <Suggestion.Input />
-                    <Suggestion.Clear />
-                    <Suggestion.List>
-                      <Suggestion.Empty>Tomt</Suggestion.Empty>
-                      {uniqueOrgnummers.map((org) => (
-                        <Suggestion.Option key={org} label={org} value={org}>
-                          {org}
-                        </Suggestion.Option>
-                      ))}
-                    </Suggestion.List>
-                  </Suggestion>
-                </Field>
-              </div>
-            </div>
-          </Prose>
-          <Table {...args}>
-            <Table.Head>
-              <Table.Row>
-                <Table.HeaderCell>Navn</Table.HeaderCell>
-                <Table.HeaderCell>Sted</Table.HeaderCell>
-                {!isMobile && <Table.HeaderCell>Fylke</Table.HeaderCell>}
-                {!isMobile && <Table.HeaderCell>Orgnummer</Table.HeaderCell>}
-                {isDesktop && (
-                  <Table.HeaderCell>Klar for gjennomføring</Table.HeaderCell>
-                )}
-              </Table.Row>
-            </Table.Head>
-            <Table.Body>
-              {paginatedData.map((row) => (
-                <Table.Row key={row.id}>
-                  <Table.Cell>{row.navn}</Table.Cell>
-                  <Table.Cell>{row.sted}</Table.Cell>
-                  {!isMobile && <Table.Cell>{row.fylke}</Table.Cell>}
-                  {!isMobile && <Table.Cell>{row.orgnummer}</Table.Cell>}
-                  {isDesktop && (
-                    <Table.Cell>{row.klarForGjennomforing}</Table.Cell>
-                  )}
-                </Table.Row>
-              ))}
-            </Table.Body>
-          </Table>
-          <div className="example-controls">
-            <Pagination aria-label="Sidenavigering" data-size="sm">
-              <Pagination.List>
-                <Pagination.Item>
-                  <Pagination.Button
-                    aria-label="Forrige side"
-                    {...prevButtonProps}
-                  />
-                </Pagination.Item>
-                {pages.map(({ page, itemKey, buttonProps }) => (
-                  <Pagination.Item key={itemKey}>
-                    {typeof page === 'number' && (
-                      <Pagination.Button
-                        {...buttonProps}
-                        aria-label={`Side ${page}`}
-                      >
-                        {page}
-                      </Pagination.Button>
-                    )}
-                  </Pagination.Item>
-                ))}
-                <Pagination.Item>
-                  <Pagination.Button
-                    aria-label="Neste side"
-                    {...nextButtonProps}
-                  />
-                </Pagination.Item>
-              </Pagination.List>
-            </Pagination>
-            <div className="example-controls-section">
-              <span className="example-controls-section-span">
-                Rad {rangeStart}–{rangeEnd} av {filteredData.length}
-              </span>
-              <div className="example-controls-section-dropdown">
-                <span>Rader per side</span>
-                <Dropdown.TriggerContext>
-                  <Dropdown.Trigger
-                    variant="secondary"
-                    aria-label="Rader per side"
-                  >
-                    {itemsPerPage}
-                    <ChevronDownIcon aria-hidden />
-                  </Dropdown.Trigger>
-                  <Dropdown>
-                    <Dropdown.List>
-                      {[5, 10, 25, 50].map((size) => (
-                        <Dropdown.Item key={size}>
-                          <Dropdown.Button
-                            onClick={() => {
-                              setItemsPerPage(size);
-                              setCurrentPage(1);
-                            }}
-                          >
-                            {size}
-                          </Dropdown.Button>
-                        </Dropdown.Item>
-                      ))}
-                    </Dropdown.List>
-                  </Dropdown>
-                </Dropdown.TriggerContext>
-              </div>
+              <Field className="example-suggestion-field">
+                <Label>Velg fylke</Label>
+                <Suggestion
+                  {...(args as SuggestionMultipleProps)}
+                  multiple
+                  selected={fylke}
+                  onSelectedChange={(items) =>
+                    setFylke(items.map((item) => item.value))
+                  }
+                >
+                  <Suggestion.Input />
+                  <Suggestion.Clear />
+                  <Suggestion.List>
+                    <Suggestion.Empty>Tomt</Suggestion.Empty>
+                    {uniqueFylker.map((f) => (
+                      <Suggestion.Option key={f} label={f} value={f}>
+                        {f}
+                      </Suggestion.Option>
+                    ))}
+                  </Suggestion.List>
+                </Suggestion>
+              </Field>
+              <Field className="example-suggestion-field">
+                <Label>Velg orgnummer</Label>
+                <Suggestion
+                  {...(args as SuggestionMultipleProps)}
+                  multiple
+                  selected={orgnummer}
+                  onSelectedChange={(items) =>
+                    setOrgnummer(items.map((item) => item.value))
+                  }
+                >
+                  <Suggestion.Input />
+                  <Suggestion.Clear />
+                  <Suggestion.List>
+                    <Suggestion.Empty>Tomt</Suggestion.Empty>
+                    {uniqueOrgnummers.map((org) => (
+                      <Suggestion.Option key={org} label={org} value={org}>
+                        {org}
+                      </Suggestion.Option>
+                    ))}
+                  </Suggestion.List>
+                </Suggestion>
+              </Field>
             </div>
           </div>
+        </Prose>
+        <Table {...args}>
+          <Table.Head>
+            <Table.Row>
+              <Table.HeaderCell>Navn</Table.HeaderCell>
+              <Table.HeaderCell>Sted</Table.HeaderCell>
+              {!isMobile && <Table.HeaderCell>Fylke</Table.HeaderCell>}
+              {!isMobile && <Table.HeaderCell>Orgnummer</Table.HeaderCell>}
+              {isDesktop && (
+                <Table.HeaderCell>Klar for gjennomføring</Table.HeaderCell>
+              )}
+            </Table.Row>
+          </Table.Head>
+          <Table.Body>
+            {paginatedData.map((row) => (
+              <Table.Row key={row.id}>
+                <Table.Cell>{row.navn}</Table.Cell>
+                <Table.Cell>{row.sted}</Table.Cell>
+                {!isMobile && <Table.Cell>{row.fylke}</Table.Cell>}
+                {!isMobile && <Table.Cell>{row.orgnummer}</Table.Cell>}
+                {isDesktop && (
+                  <Table.Cell>{row.klarForGjennomforing}</Table.Cell>
+                )}
+              </Table.Row>
+            ))}
+          </Table.Body>
+        </Table>
+        <div className="example-controls">
+          <Pagination aria-label="Sidenavigering" data-size="sm">
+            <Pagination.List>
+              <Pagination.Item>
+                <Pagination.Button
+                  aria-label="Forrige side"
+                  {...prevButtonProps}
+                />
+              </Pagination.Item>
+              {pages.map(({ page, itemKey, buttonProps }) => (
+                <Pagination.Item key={itemKey}>
+                  {typeof page === 'number' && (
+                    <Pagination.Button
+                      {...buttonProps}
+                      aria-label={`Side ${page}`}
+                    >
+                      {page}
+                    </Pagination.Button>
+                  )}
+                </Pagination.Item>
+              ))}
+              <Pagination.Item>
+                <Pagination.Button
+                  aria-label="Neste side"
+                  {...nextButtonProps}
+                />
+              </Pagination.Item>
+            </Pagination.List>
+          </Pagination>
+          <div className="example-controls-section">
+            <span>
+              Rad {rangeStart}-{rangeEnd} av {filteredData.length}
+            </span>
+            <Field className="example-controls-section-select">
+              <Label>Rader per side</Label>
+              <Select>
+                {[5, 10, 25, 50].map((size) => (
+                  <Select.Option
+                    key={size}
+                    value={size}
+                    onClick={() => {
+                      setItemsPerPage(size);
+                      setCurrentPage(1);
+                    }}
+                  >
+                    {size}
+                  </Select.Option>
+                ))}
+              </Select>
+            </Field>
+          </div>
         </div>
-      </>
+      </div>
     );
   },
 });
@@ -356,246 +343,228 @@ export const WithDialog = meta.story({
     );
 
     return (
-      <>
-        <div className="example-main">
-          <Prose>
-            <div className="example-filters-section-modal">
-              <Field>
-                <Label>Søk</Label>
-                <Search>
-                  <Search.Input
-                    aria-label="Søk"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                  />
-                  <Search.Clear onClick={() => setSearchQuery('')} />
-                </Search>
-              </Field>
-              <Dialog.TriggerContext>
-                <Dialog.Trigger variant="secondary">
-                  <FunnelIcon aria-label="En tittel for skjermleser" />
-                  Filtre
-                </Dialog.Trigger>
-                <Dialog
-                  ref={dialogRef}
-                  closedby="any"
-                  onToggle={(e) => {
-                    if ((e.target as HTMLDialogElement).open) {
+      <div className="example-main">
+        <Prose>
+          <div className="example-filters-section-modal">
+            <Field>
+              <Label>Søk</Label>
+              <Search>
+                <Search.Input
+                  aria-label="Søk"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                <Search.Clear onClick={() => setSearchQuery('')} />
+              </Search>
+            </Field>
+            <Dialog.TriggerContext>
+              <Dialog.Trigger variant="secondary">
+                <FunnelIcon aria-label="En tittel for skjermleser" />
+                Filtre
+              </Dialog.Trigger>
+              <Dialog
+                ref={dialogRef}
+                closedby="any"
+                onToggle={(e) => {
+                  if ((e.target as HTMLDialogElement).open) {
+                    setDraftCity(city);
+                    setDraftFylke(fylke);
+                    setDraftOrgnummer(orgnummer);
+                    setDraftKlar(klarFilter);
+                  }
+                }}
+              >
+                <Heading>Filtre</Heading>
+                <div className="example-dialog-filters">
+                  <Prose>
+                    <Fieldset>
+                      <Fieldset.Legend>Klar for gjennomføring</Fieldset.Legend>
+                      <Radio label="Ja" {...getRadioProps('ja')} />
+                      <Radio label="Nei" {...getRadioProps('nei')} />
+                      <Radio label="Alle" {...getRadioProps('alle')} />
+                    </Fieldset>
+                    <Field className="example-suggestion-field">
+                      <Label>Velg orgnummer</Label>
+                      <Suggestion
+                        {...(args as SuggestionMultipleProps)}
+                        multiple
+                        selected={draftOrgnummer}
+                        onSelectedChange={(items) =>
+                          setDraftOrgnummer(items.map((item) => item.value))
+                        }
+                      >
+                        <Suggestion.Input />
+                        <Suggestion.Clear />
+                        <Suggestion.List>
+                          <Suggestion.Empty>Tomt</Suggestion.Empty>
+                          {uniqueOrgnummers.map((org) => (
+                            <Suggestion.Option
+                              key={org}
+                              label={org}
+                              value={org}
+                            >
+                              {org}
+                            </Suggestion.Option>
+                          ))}
+                        </Suggestion.List>
+                      </Suggestion>
+                    </Field>
+                  </Prose>
+                  <Prose>
+                    <Field className="example-suggestion-field">
+                      <Label>Velg sted</Label>
+                      <Suggestion
+                        {...(args as SuggestionMultipleProps)}
+                        multiple
+                        selected={draftCity}
+                        onSelectedChange={(items) =>
+                          setDraftCity(items.map((item) => item.value))
+                        }
+                      >
+                        <Suggestion.Input />
+                        <Suggestion.Clear />
+                        <Suggestion.List>
+                          <Suggestion.Empty>Tomt</Suggestion.Empty>
+                          {uniqueCities.map((c) => (
+                            <Suggestion.Option key={c} label={c} value={c}>
+                              {c}
+                            </Suggestion.Option>
+                          ))}
+                        </Suggestion.List>
+                      </Suggestion>
+                    </Field>
+                    <Field className="example-suggestion-field">
+                      <Label>Velg fylke</Label>
+                      <Suggestion
+                        {...(args as SuggestionMultipleProps)}
+                        multiple
+                        selected={draftFylke}
+                        onSelectedChange={(items) =>
+                          setDraftFylke(items.map((item) => item.value))
+                        }
+                      >
+                        <Suggestion.Input />
+                        <Suggestion.Clear />
+                        <Suggestion.List>
+                          <Suggestion.Empty>Tomt</Suggestion.Empty>
+                          {uniqueFylker.map((f) => (
+                            <Suggestion.Option key={f} label={f} value={f}>
+                              {f}
+                            </Suggestion.Option>
+                          ))}
+                        </Suggestion.List>
+                      </Suggestion>
+                    </Field>
+                  </Prose>
+                </div>
+                <Field className="example-footer">
+                  <Button
+                    onClick={() => {
+                      setCity(draftCity);
+                      setFylke(draftFylke);
+                      setOrgnummer(draftOrgnummer);
+                      setKlarFilter(draftKlar);
+                      dialogRef.current?.close();
+                    }}
+                  >
+                    Lagre
+                  </Button>
+                  <Button
+                    variant="secondary"
+                    onClick={() => {
                       setDraftCity(city);
                       setDraftFylke(fylke);
                       setDraftOrgnummer(orgnummer);
                       setDraftKlar(klarFilter);
-                    }
-                  }}
-                  style={{
-                    zIndex: 10,
-                  }}
-                >
-                  <Heading>Filtre</Heading>
-                  <div className="example-dialog-filters">
-                    <Prose>
-                      <Fieldset>
-                        <Fieldset.Legend>
-                          Klar for gjennomføring
-                        </Fieldset.Legend>
-                        <Radio label="Ja" {...getRadioProps('ja')} />
-                        <Radio label="Nei" {...getRadioProps('nei')} />
-                        <Radio label="Alle" {...getRadioProps('alle')} />
-                      </Fieldset>
-                      <Field className="example-suggestion-field">
-                        <Label>Velg orgnummer</Label>
-                        <Suggestion
-                          {...(args as SuggestionMultipleProps)}
-                          multiple
-                          selected={draftOrgnummer}
-                          onSelectedChange={(items) =>
-                            setDraftOrgnummer(items.map((item) => item.value))
-                          }
-                        >
-                          <Suggestion.Input />
-                          <Suggestion.Clear />
-                          <Suggestion.List>
-                            <Suggestion.Empty>Tomt</Suggestion.Empty>
-                            {uniqueOrgnummers.map((org) => (
-                              <Suggestion.Option
-                                key={org}
-                                label={org}
-                                value={org}
-                              >
-                                {org}
-                              </Suggestion.Option>
-                            ))}
-                          </Suggestion.List>
-                        </Suggestion>
-                      </Field>
-                    </Prose>
-                    <Prose>
-                      <Field className="example-suggestion-field">
-                        <Label>Velg sted</Label>
-                        <Suggestion
-                          {...(args as SuggestionMultipleProps)}
-                          multiple
-                          selected={draftCity}
-                          onSelectedChange={(items) =>
-                            setDraftCity(items.map((item) => item.value))
-                          }
-                        >
-                          <Suggestion.Input />
-                          <Suggestion.Clear />
-                          <Suggestion.List>
-                            <Suggestion.Empty>Tomt</Suggestion.Empty>
-                            {uniqueCities.map((c) => (
-                              <Suggestion.Option key={c} label={c} value={c}>
-                                {c}
-                              </Suggestion.Option>
-                            ))}
-                          </Suggestion.List>
-                        </Suggestion>
-                      </Field>
-                      <Field className="example-suggestion-field">
-                        <Label>Velg fylke</Label>
-                        <Suggestion
-                          {...(args as SuggestionMultipleProps)}
-                          multiple
-                          selected={draftFylke}
-                          onSelectedChange={(items) =>
-                            setDraftFylke(items.map((item) => item.value))
-                          }
-                        >
-                          <Suggestion.Input />
-                          <Suggestion.Clear />
-                          <Suggestion.List>
-                            <Suggestion.Empty>Tomt</Suggestion.Empty>
-                            {uniqueFylker.map((f) => (
-                              <Suggestion.Option key={f} label={f} value={f}>
-                                {f}
-                              </Suggestion.Option>
-                            ))}
-                          </Suggestion.List>
-                        </Suggestion>
-                      </Field>
-                    </Prose>
-                  </div>
-                  <Field className="example-footer">
-                    <Button
-                      onClick={() => {
-                        setCity(draftCity);
-                        setFylke(draftFylke);
-                        setOrgnummer(draftOrgnummer);
-                        setKlarFilter(draftKlar);
-                        dialogRef.current?.close();
-                      }}
-                    >
-                      Lagre
-                    </Button>
-                    <Button
-                      variant="secondary"
-                      onClick={() => {
-                        setDraftCity(city);
-                        setDraftFylke(fylke);
-                        setDraftOrgnummer(orgnummer);
-                        setDraftKlar(klarFilter);
-                        dialogRef.current?.close();
-                      }}
-                    >
-                      Avbryt
-                    </Button>
-                  </Field>
-                </Dialog>
-              </Dialog.TriggerContext>
-            </div>
-          </Prose>
-          <Table {...args}>
-            <Table.Head>
-              <Table.Row>
-                <Table.HeaderCell>Navn</Table.HeaderCell>
-                <Table.HeaderCell>Sted</Table.HeaderCell>
-                {!isMobile && <Table.HeaderCell>Fylke</Table.HeaderCell>}
-                {!isMobile && <Table.HeaderCell>Orgnummer</Table.HeaderCell>}
+                      dialogRef.current?.close();
+                    }}
+                  >
+                    Avbryt
+                  </Button>
+                </Field>
+              </Dialog>
+            </Dialog.TriggerContext>
+          </div>
+        </Prose>
+        <Table {...args}>
+          <Table.Head>
+            <Table.Row>
+              <Table.HeaderCell>Navn</Table.HeaderCell>
+              <Table.HeaderCell>Sted</Table.HeaderCell>
+              {!isMobile && <Table.HeaderCell>Fylke</Table.HeaderCell>}
+              {!isMobile && <Table.HeaderCell>Orgnummer</Table.HeaderCell>}
+              {isDesktop && (
+                <Table.HeaderCell>Klar for gjennomføring</Table.HeaderCell>
+              )}
+            </Table.Row>
+          </Table.Head>
+          <Table.Body>
+            {paginatedData.map((row) => (
+              <Table.Row key={row.id}>
+                <Table.Cell>{row.navn}</Table.Cell>
+                <Table.Cell>{row.sted}</Table.Cell>
+                {!isMobile && <Table.Cell>{row.fylke}</Table.Cell>}
+                {!isMobile && <Table.Cell>{row.orgnummer}</Table.Cell>}
                 {isDesktop && (
-                  <Table.HeaderCell>Klar for gjennomføring</Table.HeaderCell>
+                  <Table.Cell>{row.klarForGjennomforing}</Table.Cell>
                 )}
               </Table.Row>
-            </Table.Head>
-            <Table.Body>
-              {paginatedData.map((row) => (
-                <Table.Row key={row.id}>
-                  <Table.Cell>{row.navn}</Table.Cell>
-                  <Table.Cell>{row.sted}</Table.Cell>
-                  {!isMobile && <Table.Cell>{row.fylke}</Table.Cell>}
-                  {!isMobile && <Table.Cell>{row.orgnummer}</Table.Cell>}
-                  {isDesktop && (
-                    <Table.Cell>{row.klarForGjennomforing}</Table.Cell>
+            ))}
+          </Table.Body>
+        </Table>
+        <div className="example-controls">
+          <Pagination aria-label="Sidenavigering" data-size="sm">
+            <Pagination.List>
+              <Pagination.Item>
+                <Pagination.Button
+                  aria-label="Forrige side"
+                  {...prevButtonProps}
+                />
+              </Pagination.Item>
+              {pages.map(({ page, itemKey, buttonProps }) => (
+                <Pagination.Item key={itemKey}>
+                  {typeof page === 'number' && (
+                    <Pagination.Button
+                      {...buttonProps}
+                      aria-label={`Side ${page}`}
+                    >
+                      {page}
+                    </Pagination.Button>
                   )}
-                </Table.Row>
+                </Pagination.Item>
               ))}
-            </Table.Body>
-          </Table>
-          <div className="example-controls">
-            <Pagination aria-label="Sidenavigering" data-size="sm">
-              <Pagination.List>
-                <Pagination.Item>
-                  <Pagination.Button
-                    aria-label="Forrige side"
-                    {...prevButtonProps}
-                  />
-                </Pagination.Item>
-                {pages.map(({ page, itemKey, buttonProps }) => (
-                  <Pagination.Item key={itemKey}>
-                    {typeof page === 'number' && (
-                      <Pagination.Button
-                        {...buttonProps}
-                        aria-label={`Side ${page}`}
-                      >
-                        {page}
-                      </Pagination.Button>
-                    )}
-                  </Pagination.Item>
-                ))}
-                <Pagination.Item>
-                  <Pagination.Button
-                    aria-label="Neste side"
-                    {...nextButtonProps}
-                  />
-                </Pagination.Item>
-              </Pagination.List>
-            </Pagination>
-            <div className="example-controls-section">
-              <span className="example-controls-section-span">
-                Rad {rangeStart}–{rangeEnd} av {filteredData.length}
-              </span>
-              <div className="example-controls-section-dropdown">
-                <span>Rader per side</span>
-                <Dropdown.TriggerContext>
-                  <Dropdown.Trigger
-                    variant="secondary"
-                    aria-label="Rader per side"
+              <Pagination.Item>
+                <Pagination.Button
+                  aria-label="Neste side"
+                  {...nextButtonProps}
+                />
+              </Pagination.Item>
+            </Pagination.List>
+          </Pagination>
+          <div className="example-controls-section">
+            <span>
+              Rad {rangeStart}–{rangeEnd} av {filteredData.length}
+            </span>
+            <Field className="example-controls-section-select">
+              <Label>Rader per side</Label>
+              <Select>
+                {[5, 10, 25, 50].map((size) => (
+                  <Select.Option
+                    key={size}
+                    value={size}
+                    onClick={() => {
+                      setItemsPerPage(size);
+                      setCurrentPage(1);
+                    }}
                   >
-                    {itemsPerPage}
-                    <ChevronDownIcon aria-hidden />
-                  </Dropdown.Trigger>
-                  <Dropdown>
-                    <Dropdown.List>
-                      {[5, 10, 25, 50].map((size) => (
-                        <Dropdown.Item key={size}>
-                          <Dropdown.Button
-                            onClick={() => {
-                              setItemsPerPage(size);
-                              setCurrentPage(1);
-                            }}
-                          >
-                            {size}
-                          </Dropdown.Button>
-                        </Dropdown.Item>
-                      ))}
-                    </Dropdown.List>
-                  </Dropdown>
-                </Dropdown.TriggerContext>
-              </div>
-            </div>
+                    {size}
+                  </Select.Option>
+                ))}
+              </Select>
+            </Field>
           </div>
         </div>
-      </>
+      </div>
     );
   },
 });
