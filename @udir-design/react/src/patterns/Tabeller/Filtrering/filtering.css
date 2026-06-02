@@ -1,3 +1,8 @@
+.example-main {
+  margin: 20px;
+  gap: 20px;
+}
+
 .example-filters-section {
   display: flex;
   flex-direction: column;
@@ -37,39 +42,6 @@
   gap: var(--ds-size-4);
 }
 
-.example-main {
-  margin: 20px;
-  gap: 20px;
-}
-
-.example-filters-section {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--ds-size-4);
-}
-
-.example-controls-section-span {
-  color: var(--ds-color-neutral-text-subtle);
-}
-
-.example-controls-section-dropdown {
-  display: flex;
-  align-items: center;
-  gap: var(--ds-size-2);
-}
-
-.example-footer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: var(--ds-size-2);
-}
-
-.example-footer button {
-  margin: 0;
-}
-
 .example-controls {
   display: flex;
   flex-direction: column;
@@ -88,14 +60,27 @@
   gap: var(--ds-size-2);
 }
 
-.example-controls-section-span {
+.example-controls-section span {
   color: var(--ds-color-neutral-text-subtle);
 }
 
-.example-controls-section-dropdown {
+.example-controls-section-select {
   display: flex;
+  flex-direction: row;
+  gap: var(--ds-size-2);
+  white-space: nowrap;
+  align-items: center;
+}
+
+.example-footer {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   gap: var(--ds-size-2);
+}
+
+.example-footer button {
+  margin: 0;
 }
 
 @media (min-width: 48rem) {
@@ -105,14 +90,7 @@
   }
 
   .example-filters-section-modal {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-  }
-
-  .example-filters-section-modal {
     flex-direction: row;
-    justify-content: flex-start;
     align-items: flex-end;
   }
 
@@ -143,19 +121,9 @@
 }
 
 @media (min-width: 64rem) {
-  .example-filters-section {
-    flex-direction: row;
-    align-items: flex-end;
-  }
-
   .example-filters-section-modal {
     flex-direction: row;
-    justify-content: flex-start;
     align-items: flex-end;
-  }
-
-  .example-dialog-filters {
-    grid-template-columns: 1fr 1fr;
   }
 
   .example-controls {
@@ -164,8 +132,6 @@
   }
 
   .example-controls-section {
-    justify-content: flex-start;
-    width: auto;
     gap: var(--ds-size-6);
   }
 }
