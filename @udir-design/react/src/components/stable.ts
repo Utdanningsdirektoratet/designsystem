@@ -11,3 +11,4 @@ export * from './footer';
 export * from './input/Input';
 export * from './list/List';
 export * from './search/Search';
+export * from './skipLink/SkipLink';
