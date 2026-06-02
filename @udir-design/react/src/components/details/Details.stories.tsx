@@ -23,7 +23,7 @@ const meta = preview.meta({
     'Details.Summary': Details.Summary,
     'Details.Content': DetailsContent,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
@@ -98,19 +98,19 @@ export const InCard = meta.story({
               <List.Item>
                 Vedlegg 1:{' '}
                 <Link href="#" target="_blank">
-                  Regler og retningslinjer.pdf
+                  Regler og retningslinjer (PDF)
                 </Link>{' '}
               </List.Item>
               <List.Item>
                 Vedlegg 2:{' '}
                 <Link href="#" target="_blank">
-                  Brevmal.docx
+                  Brevmal (DOCX)
                 </Link>{' '}
               </List.Item>
               <List.Item>
                 Vedlegg 3:{' '}
                 <Link href="#" target="_blank">
-                  Illustrasjoner.zip
+                  Illustrasjoner (ZIP)
                 </Link>
               </List.Item>
             </List.Unordered>

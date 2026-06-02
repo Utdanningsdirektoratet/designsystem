@@ -7,7 +7,6 @@ export * from './badge/Badge';
 export * from './breadcrumbs/Breadcrumbs';
 export * from './chip/Chip';
 export * from './demoBanner/DemoBanner';
-export * from './details/Details';
 export * from './dialog/Dialog';
 export * from './dropdown/Dropdown';
 export * from './errorSummary/ErrorSummary';
