@@ -2,57 +2,6 @@
 
 exports[`Preview 1`] = `
 <div data-size="auto">
-  <style>
-    .example-filters-section {
-            display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: flex-end;
-                gap: var(--ds-size-6);
-        }
-        .example-suggestion-section {
-            display: flex;
-            flex-direction: row;
-            gap: var(--ds-size-4);
-            align-items: flex-end;
-            width: auto;
-        }
-        .example-suggestion-field {
-            max-width: 280px;
-            width: auto;
-        }
-        .example-search-field {
-            width: auto;
-        }
-        .example-main {
-          margin: 20px;
-          gap: 20px;
-        }
-        .example-controls {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          gap: var(--ds-size-4);
-          margin: var(--ds-size-6) var(--ds-size-2); 
-        }
-        .example-controls-section {
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-start;
-          align-items: center;
-          width: auto;
-          gap: var(--ds-size-6);
-        }
-        .example-controls-section-span {
-          color: var(--ds-color-neutral-text-subtle);
-        }
-        .example-controls-section-dropdown {
-          display: flex;
-          align-items: center;
-          gap: var(--ds-size-2);
-        }
-  </style>
   <div>
     <div>
       <div>
@@ -170,7 +119,7 @@ exports[`Preview 1`] = `
               data-weight="medium"
               for="<removed>"
             >
-              Velg orgnummer
+              Velg fylke
             </label>
             <ds-suggestion
               data-multiple
@@ -184,6 +133,90 @@ exports[`Preview 1`] = `
                 aria-description="No selected"
                 list=":u-datalist2"
                 popovertarget=":u-datalist2"
+              >
+              <button
+                aria-label="Tøm"
+                hidden
+                type="reset"
+                aria-hidden="false"
+                tabindex="-1"
+              >
+              </button>
+              <u-datalist
+                data-nofilter
+                data-sr-plural="%d forslag"
+                data-sr-singular="%d forslag"
+                popover="manual"
+                role="listbox"
+                data-sr-of="of"
+                hidden
+                tabindex="-1"
+                aria-multiselectable="true"
+                id="<removed>"
+                data-is-floating="true"
+              >
+                <u-option
+                  label="Oslo"
+                  value="Oslo"
+                  role="option"
+                  aria-disabled="false"
+                  aria-selected="false"
+                  id="<removed>"
+                >
+                  Oslo
+                </u-option>
+                <u-option
+                  label="Vestland"
+                  value="Vestland"
+                  role="option"
+                  aria-disabled="false"
+                  aria-selected="false"
+                  id="<removed>"
+                >
+                  Vestland
+                </u-option>
+                <u-option
+                  label="Trøndelag"
+                  value="Trøndelag"
+                  role="option"
+                  aria-disabled="false"
+                  aria-selected="false"
+                  id="<removed>"
+                >
+                  Trøndelag
+                </u-option>
+                <u-option
+                  label="Rogaland"
+                  value="Rogaland"
+                  role="option"
+                  aria-disabled="false"
+                  aria-selected="false"
+                  id="<removed>"
+                >
+                  Rogaland
+                </u-option>
+              </u-datalist>
+            </ds-suggestion>
+          </ds-field>
+          <ds-field>
+            <label
+              data-weight="medium"
+              for="<removed>"
+            >
+              Velg orgnummer
+            </label>
+            <ds-suggestion
+              data-multiple
+              zebra
+              data-color="neutral"
+            >
+              <input
+                placeholder=" "
+                type="text"
+                id="<removed>"
+                aria-description="No selected"
+                list=":u-datalist3"
+                popovertarget=":u-datalist3"
               >
               <button
                 aria-label="Tøm"
@@ -2218,15 +2251,14 @@ exports[`Preview 1`] = `
     >
       <thead>
         <tr>
-          <th aria-sort="none">
-            <button type="button">
-              Navn
-            </button>
+          <th>
+            Navn
           </th>
-          <th aria-sort="none">
-            <button type="button">
-              Sted
-            </button>
+          <th>
+            Sted
+          </th>
+          <th>
+            Fylke
           </th>
           <th>
             Orgnummer
@@ -2240,6 +2272,9 @@ exports[`Preview 1`] = `
         <tr>
           <td>
             Rita Nordmann
+          </td>
+          <td>
+            Oslo
           </td>
           <td>
             Oslo
@@ -2259,6 +2294,9 @@ exports[`Preview 1`] = `
             Bergen
           </td>
           <td>
+            Vestland
+          </td>
+          <td>
             100000001
           </td>
           <td>
@@ -2271,6 +2309,9 @@ exports[`Preview 1`] = `
           </td>
           <td>
             Trondheim
+          </td>
+          <td>
+            Trøndelag
           </td>
           <td>
             100000002
@@ -2287,6 +2328,9 @@ exports[`Preview 1`] = `
             Stavanger
           </td>
           <td>
+            Rogaland
+          </td>
+          <td>
             100000003
           </td>
           <td>
@@ -2296,6 +2340,9 @@ exports[`Preview 1`] = `
         <tr>
           <td>
             Rita Nordmann
+          </td>
+          <td>
+            Oslo
           </td>
           <td>
             Oslo
@@ -2394,7 +2441,7 @@ exports[`Preview 1`] = `
           <button
             data-variant="secondary"
             type="button"
-            popovertarget="_r_2_"
+            popovertarget="_r_3_"
             aria-label="Rader per side"
           >
             5
@@ -2467,56 +2514,6 @@ exports[`Preview 1`] = `
 
 exports[`With Dialog 1`] = `
 <div data-size="auto">
-  <style>
-    .example-main {
-          margin: 20px;
-          gap: 20px;
-        }
-        .example-filters-section {
-          display: flex;
-          flex-direction: row;
-          align-items: flex-end;
-          gap: var(--ds-size-4);
-        }
-        .example-dialog-filters {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--ds-size-4);
-          }
-        .example-controls {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          gap: var(--ds-size-4);
-          margin: var(--ds-size-6) var(--ds-size-2); 
-        }
-        .example-controls-section {
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-start;
-          align-items: center;
-          width: auto;
-          gap: var(--ds-size-6);
-        }
-        .example-controls-section-span {
-          color: var(--ds-color-neutral-text-subtle);
-        }
-        .example-controls-section-dropdown {
-          display: flex;
-          align-items: center;
-          gap: var(--ds-size-2);
-        }
-        .example-footer {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          gap: var(--ds-size-2);
-        }
-        .example-footer button {
-          margin: 0;
-        }
-  </style>
   <div>
     <div>
       <div>
@@ -2578,7 +2575,7 @@ exports[`With Dialog 1`] = `
         >
           <button
             data-icon="true"
-            commandfor="_r_9_"
+            commandfor="_r_a_"
             data-variant="tertiary"
             type="button"
             aria-label="Lukk dialogvindu"
@@ -2598,10 +2595,7 @@ exports[`With Dialog 1`] = `
                 >
                   Klar for gjennomføring
                 </legend>
-                <ds-field
-                  data-variant="outline"
-                  data-clickdelegatefor="<removed>"
-                >
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
                     type="radio"
                     value="ja"
@@ -2615,10 +2609,7 @@ exports[`With Dialog 1`] = `
                     Ja
                   </label>
                 </ds-field>
-                <ds-field
-                  data-variant="outline"
-                  data-clickdelegatefor="<removed>"
-                >
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
                     type="radio"
                     value="nei"
@@ -2632,10 +2623,7 @@ exports[`With Dialog 1`] = `
                     Nei
                   </label>
                 </ds-field>
-                <ds-field
-                  data-variant="outline"
-                  data-clickdelegatefor="<removed>"
-                >
+                <ds-field data-clickdelegatefor="<removed>">
                   <input
                     type="radio"
                     value="alle"
@@ -2667,8 +2655,8 @@ exports[`With Dialog 1`] = `
                     type="text"
                     id="<removed>"
                     aria-description="No selected"
-                    list=":u-datalist3"
-                    popovertarget=":u-datalist3"
+                    list=":u-datalist4"
+                    popovertarget=":u-datalist4"
                   >
                   <button
                     aria-label="Tøm"
@@ -4713,8 +4701,8 @@ exports[`With Dialog 1`] = `
                     type="text"
                     id="<removed>"
                     aria-description="No selected"
-                    list=":u-datalist4"
-                    popovertarget=":u-datalist4"
+                    list=":u-datalist5"
+                    popovertarget=":u-datalist5"
                   >
                   <button
                     aria-label="Tøm"
@@ -4797,8 +4785,8 @@ exports[`With Dialog 1`] = `
                     type="text"
                     id="<removed>"
                     aria-description="No selected"
-                    list=":u-datalist5"
-                    popovertarget=":u-datalist5"
+                    list=":u-datalist6"
+                    popovertarget=":u-datalist6"
                   >
                   <button
                     aria-label="Tøm"
@@ -4889,20 +4877,14 @@ exports[`With Dialog 1`] = `
     >
       <thead>
         <tr>
-          <th aria-sort="none">
-            <button type="button">
-              Navn
-            </button>
+          <th>
+            Navn
           </th>
-          <th aria-sort="none">
-            <button type="button">
-              Sted
-            </button>
+          <th>
+            Sted
           </th>
-          <th aria-sort="none">
-            <button type="button">
-              Fylke
-            </button>
+          <th>
+            Fylke
           </th>
           <th>
             Orgnummer
@@ -5076,7 +5058,7 @@ exports[`With Dialog 1`] = `
       </ds-pagination>
       <div>
         <span>
-          Rad 1-5 av 200
+          Rad 1–5 av 200
         </span>
         <div>
           <span>
@@ -5085,7 +5067,7 @@ exports[`With Dialog 1`] = `
           <button
             data-variant="secondary"
             type="button"
-            popovertarget="_r_d_"
+            popovertarget="_r_e_"
             aria-label="Rader per side"
           >
             5
