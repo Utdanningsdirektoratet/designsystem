@@ -6,10 +6,10 @@ exports[`Aria 1`] = `
     data-icon="true"
     data-variant="primary"
     type="button"
-    aria-label="Jeg er hovedinformasjon (aria-labelledby)"
     data-tooltip="Jeg er hovedinformasjon (aria-labelledby)"
     data-placement="top"
     data-autoplacement="true"
+    aria-label="Jeg er hovedinformasjon (aria-labelledby)"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -33,10 +33,10 @@ exports[`Aria 1`] = `
   <button
     data-variant="primary"
     type="button"
-    aria-label="Jeg er tillegsinformasjon (aria-describedby)"
     data-tooltip="Jeg er tillegsinformasjon (aria-describedby)"
     data-placement="top"
     data-autoplacement="true"
+    aria-description="Jeg er tillegsinformasjon (aria-describedby)"
   >
     Tekst i trigger
   </button>
@@ -49,10 +49,10 @@ exports[`Placement 1`] = `
     data-icon="true"
     data-variant="secondary"
     type="button"
-    aria-label="Slett"
     data-tooltip="Slett"
     data-placement="left"
     data-autoplacement="true"
+    aria-label="Slett"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -77,10 +77,10 @@ exports[`Placement 1`] = `
     data-icon="true"
     data-variant="secondary"
     type="button"
-    aria-label="Lagre"
     data-tooltip="Lagre"
     data-placement="top"
     data-autoplacement="true"
+    aria-label="Lagre"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -105,10 +105,10 @@ exports[`Placement 1`] = `
     data-icon="true"
     data-variant="secondary"
     type="button"
-    aria-label="ctrl + p"
     data-tooltip="ctrl + p"
     data-placement="bottom"
     data-autoplacement="true"
+    aria-label="ctrl + p"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -133,10 +133,10 @@ exports[`Placement 1`] = `
     data-icon="true"
     data-variant="secondary"
     type="button"
-    aria-label="Kopier"
     data-tooltip="Kopier"
     data-placement="right"
     data-autoplacement="true"
+    aria-label="Kopier"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -165,10 +165,10 @@ exports[`Preview 1`] = `
   data-icon="true"
   data-variant="tertiary"
   type="button"
-  aria-label="Legg til"
   data-tooltip="Legg til"
   data-placement="top"
   data-autoplacement="true"
+  aria-label="Legg til"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
