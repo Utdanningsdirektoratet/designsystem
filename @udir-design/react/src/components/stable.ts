@@ -13,6 +13,7 @@ export * from './footer';
 export * from './input/Input';
 export * from './list/List';
 export * from './logo';
+export * from './popover/Popover';
 export * from './search/Search';
 export * from './skipLink/SkipLink';
 export * from './spinner/Spinner';
