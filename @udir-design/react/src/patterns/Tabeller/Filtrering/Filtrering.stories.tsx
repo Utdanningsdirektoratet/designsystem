@@ -15,7 +15,6 @@ import {
   Suggestion,
   type SuggestionMultipleProps,
 } from 'src/components/suggestion/Suggestion';
-import type { TableHeaderCellProps } from 'src/components/table';
 import { Table } from 'src/components/table';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Label } from 'src/components/typography/label/Label';
@@ -47,11 +46,6 @@ export const Preview = meta.story({
     'data-color': 'neutral',
   },
   render: (args) => {
-    const [sortField, setSortField] = useState<
-      keyof (typeof dummyData)[0] | null
-    >(null);
-    const [sortDirection, setSortDirection] =
-      useState<TableHeaderCellProps['sort']>(undefined);
     const [itemsPerPage, setItemsPerPage] = useState(5);
     const [page, setCurrentPage] = useState(1);
     const [width, setWidth] = useState(window.innerWidth);
@@ -68,30 +62,17 @@ export const Preview = meta.story({
     const isTablet = width >= 48 * rem && width < 64 * rem; // 480–1024px
     const isDesktop = width >= 64 * rem; // >= 1024px
 
-    const handleSort = (field: keyof (typeof dummyData)[0]) => {
-      if (sortField === field && sortDirection === 'descending') {
-        setSortField(null);
-        setSortDirection(undefined);
-      } else {
-        setSortField(field);
-        setSortDirection(
-          sortField === field && sortDirection === 'ascending'
-            ? 'descending'
-            : 'ascending',
-        );
-      }
-      setCurrentPage(1);
-    };
-
     const [city, setCity] = useState<string[]>([]);
+    const [fylke, setFylke] = useState<string[]>([]);
     const [orgnummer, setOrgnummer] = useState<string[]>([]);
 
     useEffect(() => {
       setCurrentPage(1);
-    }, [city, orgnummer, searchQuery]);
+    }, [city, fylke, orgnummer, searchQuery]);
 
-    const sortedData = [...dummyData]
+    const filteredData = [...dummyData]
       .filter((d) => city.length === 0 || city.includes(d.sted))
+      .filter((d) => fylke.length === 0 || fylke.includes(d.fylke))
       .filter((d) => orgnummer.length === 0 || orgnummer.includes(d.orgnummer))
       .filter((d) => {
         if (!searchQuery) return true;
@@ -99,21 +80,9 @@ export const Preview = meta.story({
         return Object.values(d).some((v) =>
           String(v).toLowerCase().includes(q),
         );
-      })
-      .sort((a, b) => {
-        if (!sortField) return 0;
-        return a[sortField] < b[sortField]
-          ? sortDirection === 'ascending'
-            ? -1
-            : 1
-          : a[sortField] > b[sortField]
-            ? sortDirection === 'ascending'
-              ? 1
-              : -1
-            : 0;
       });
 
-    const totalPages = Math.ceil(sortedData.length / itemsPerPage);
+    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
     const { pages, nextButtonProps, prevButtonProps } = usePagination({
       currentPage: page,
       totalPages,
@@ -122,8 +91,8 @@ export const Preview = meta.story({
     });
 
     const rangeStart = (page - 1) * itemsPerPage + 1;
-    const rangeEnd = Math.min(page * itemsPerPage, sortedData.length);
-    const paginatedData = sortedData.slice(
+    const rangeEnd = Math.min(page * itemsPerPage, filteredData.length);
+    const paginatedData = filteredData.slice(
       (page - 1) * itemsPerPage,
       page * itemsPerPage,
     );
@@ -133,25 +102,25 @@ export const Preview = meta.story({
         <style>
           {`
         .example-filters-section {
-            display: flex;
-                flex-direction: ${isMobile || isTablet ? 'column' : 'row'};
-                justify-content: space-between;
-                align-items: ${isMobile || isTablet ? 'flex-start' : 'flex-end'};
-                gap: var(--ds-size-6);
+          display: flex;
+          flex-direction: ${isMobile || isTablet ? 'column' : 'row'};
+          justify-content: space-between;
+          align-items: ${isMobile || isTablet ? 'flex-start' : 'flex-end'};
+          gap: var(--ds-size-6);
         }
         .example-suggestion-section {
-            display: flex;
-            flex-direction: ${isMobile ? 'column' : 'row'};
-            gap: var(--ds-size-4);
-            align-items: flex-end;
-            width: ${isMobile ? '100%' : 'auto'};
+          display: flex;
+          flex-direction: ${isMobile ? 'column' : 'row'};
+          gap: var(--ds-size-4);
+          align-items: flex-end;
+          width: ${isMobile ? '100%' : 'auto'};
         }
         .example-suggestion-field {
-            max-width: ${isMobile ? 'none' : '280px'};
-            width: ${isMobile ? '100%' : 'auto'};
+          max-width: ${isMobile ? 'none' : '280px'};
+          width: ${isMobile ? '100%' : 'auto'};
         }
         .example-search-field {
-            width: ${isMobile ? '100%' : 'auto'};
+          width: ${isMobile ? '100%' : 'auto'};
         }
         .example-main {
           margin: 20px;
@@ -211,9 +180,31 @@ export const Preview = meta.story({
                     <Suggestion.Clear />
                     <Suggestion.List>
                       <Suggestion.Empty>Tomt</Suggestion.Empty>
-                      {uniqueCities.map((city) => (
-                        <Suggestion.Option key={city} label={city} value={city}>
-                          {city}
+                      {uniqueCities.map((c) => (
+                        <Suggestion.Option key={c} label={c} value={c}>
+                          {c}
+                        </Suggestion.Option>
+                      ))}
+                    </Suggestion.List>
+                  </Suggestion>
+                </Field>
+                <Field className="example-suggestion-field">
+                  <Label>Velg fylke</Label>
+                  <Suggestion
+                    {...(args as SuggestionMultipleProps)}
+                    multiple
+                    selected={fylke}
+                    onSelectedChange={(items) =>
+                      setFylke(items.map((item) => item.value))
+                    }
+                  >
+                    <Suggestion.Input />
+                    <Suggestion.Clear />
+                    <Suggestion.List>
+                      <Suggestion.Empty>Tomt</Suggestion.Empty>
+                      {uniqueFylker.map((f) => (
+                        <Suggestion.Option key={f} label={f} value={f}>
+                          {f}
                         </Suggestion.Option>
                       ))}
                     </Suggestion.List>
@@ -247,18 +238,9 @@ export const Preview = meta.story({
           <Table {...args}>
             <Table.Head>
               <Table.Row>
-                <Table.HeaderCell
-                  sort={sortField === 'navn' ? sortDirection : 'none'}
-                  onClick={() => handleSort('navn')}
-                >
-                  Navn
-                </Table.HeaderCell>
-                <Table.HeaderCell
-                  sort={sortField === 'sted' ? sortDirection : 'none'}
-                  onClick={() => handleSort('sted')}
-                >
-                  Sted
-                </Table.HeaderCell>
+                <Table.HeaderCell>Navn</Table.HeaderCell>
+                <Table.HeaderCell>Sted</Table.HeaderCell>
+                {!isMobile && <Table.HeaderCell>Fylke</Table.HeaderCell>}
                 {!isMobile && <Table.HeaderCell>Orgnummer</Table.HeaderCell>}
                 {isDesktop && (
                   <Table.HeaderCell>Klar for gjennomføring</Table.HeaderCell>
@@ -270,6 +252,7 @@ export const Preview = meta.story({
                 <Table.Row key={row.id}>
                   <Table.Cell>{row.navn}</Table.Cell>
                   <Table.Cell>{row.sted}</Table.Cell>
+                  {!isMobile && <Table.Cell>{row.fylke}</Table.Cell>}
                   {!isMobile && <Table.Cell>{row.orgnummer}</Table.Cell>}
                   {isDesktop && (
                     <Table.Cell>{row.klarForGjennomforing}</Table.Cell>
@@ -309,7 +292,7 @@ export const Preview = meta.story({
             </Pagination>
             <div className="example-controls-section">
               <span className="example-controls-section-span">
-                Rad {rangeStart}–{rangeEnd} av {sortedData.length}
+                Rad {rangeStart}–{rangeEnd} av {filteredData.length}
               </span>
               <div className="example-controls-section-dropdown">
                 <span>Rader per side</span>
@@ -357,11 +340,6 @@ export const WithDialog = meta.story({
     'data-color': 'neutral',
   },
   render: (args) => {
-    const [sortField, setSortField] = useState<
-      keyof (typeof dummyData)[0] | null
-    >(null);
-    const [sortDirection, setSortDirection] =
-      useState<TableHeaderCellProps['sort']>(undefined);
     const [itemsPerPage, setItemsPerPage] = useState(5);
     const [page, setCurrentPage] = useState(1);
     const [width, setWidth] = useState(window.innerWidth);
@@ -377,21 +355,6 @@ export const WithDialog = meta.story({
     const isMobile = width < 48 * rem; // < 480px
     const isTablet = width >= 48 * rem && width < 64 * rem; // 480–1024px
     const isDesktop = width >= 64 * rem; // >= 1024px
-
-    const handleSort = (field: keyof (typeof dummyData)[0]) => {
-      if (sortField === field && sortDirection === 'descending') {
-        setSortField(null);
-        setSortDirection(undefined);
-      } else {
-        setSortField(field);
-        setSortDirection(
-          sortField === field && sortDirection === 'ascending'
-            ? 'descending'
-            : 'ascending',
-        );
-      }
-      setCurrentPage(1);
-    };
 
     const [city, setCity] = useState<string[]>([]);
     const [fylke, setFylke] = useState<string[]>([]);
@@ -411,10 +374,9 @@ export const WithDialog = meta.story({
       name: 'radio-group',
       value: draftKlar,
       onChange: (value) => setDraftKlar(value as 'alle' | 'ja' | 'nei'),
-      variant: 'outline',
     });
 
-    const sortedData = [...dummyData]
+    const filteredData = [...dummyData]
       .filter((d) => city.length === 0 || city.includes(d.sted))
       .filter((d) => fylke.length === 0 || fylke.includes(d.fylke))
       .filter((d) => orgnummer.length === 0 || orgnummer.includes(d.orgnummer))
@@ -429,21 +391,9 @@ export const WithDialog = meta.story({
         return Object.values(d).some((v) =>
           String(v).toLowerCase().includes(q),
         );
-      })
-      .sort((a, b) => {
-        if (!sortField) return 0;
-        return a[sortField] < b[sortField]
-          ? sortDirection === 'ascending'
-            ? -1
-            : 1
-          : a[sortField] > b[sortField]
-            ? sortDirection === 'ascending'
-              ? 1
-              : -1
-            : 0;
       });
 
-    const totalPages = Math.ceil(sortedData.length / itemsPerPage);
+    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
     const { pages, nextButtonProps, prevButtonProps } = usePagination({
       currentPage: page,
       totalPages,
@@ -452,8 +402,8 @@ export const WithDialog = meta.story({
     });
 
     const rangeStart = (page - 1) * itemsPerPage + 1;
-    const rangeEnd = Math.min(page * itemsPerPage, sortedData.length);
-    const paginatedData = sortedData.slice(
+    const rangeEnd = Math.min(page * itemsPerPage, filteredData.length);
+    const paginatedData = filteredData.slice(
       (page - 1) * itemsPerPage,
       page * itemsPerPage,
     );
@@ -663,26 +613,9 @@ export const WithDialog = meta.story({
           <Table {...args}>
             <Table.Head>
               <Table.Row>
-                <Table.HeaderCell
-                  sort={sortField === 'navn' ? sortDirection : 'none'}
-                  onClick={() => handleSort('navn')}
-                >
-                  Navn
-                </Table.HeaderCell>
-                <Table.HeaderCell
-                  sort={sortField === 'sted' ? sortDirection : 'none'}
-                  onClick={() => handleSort('sted')}
-                >
-                  Sted
-                </Table.HeaderCell>
-                {!isMobile && (
-                  <Table.HeaderCell
-                    sort={sortField === 'fylke' ? sortDirection : 'none'}
-                    onClick={() => handleSort('fylke')}
-                  >
-                    Fylke
-                  </Table.HeaderCell>
-                )}
+                <Table.HeaderCell>Navn</Table.HeaderCell>
+                <Table.HeaderCell>Sted</Table.HeaderCell>
+                {!isMobile && <Table.HeaderCell>Fylke</Table.HeaderCell>}
                 {!isMobile && <Table.HeaderCell>Orgnummer</Table.HeaderCell>}
                 {isDesktop && (
                   <Table.HeaderCell>Klar for gjennomføring</Table.HeaderCell>
@@ -734,7 +667,7 @@ export const WithDialog = meta.story({
             </Pagination>
             <div className="example-controls-section">
               <span className="example-controls-section-span">
-                Rad {rangeStart}-{rangeEnd} av {sortedData.length}
+                Rad {rangeStart}–{rangeEnd} av {filteredData.length}
               </span>
               <div className="example-controls-section-dropdown">
                 <span>Rader per side</span>
