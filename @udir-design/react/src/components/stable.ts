@@ -17,6 +17,7 @@ export * from './link/Link';
 export * from './list/List';
 export * from './logo';
 export * from './popover/Popover';
+export * from './radio/Radio';
 export * from './search/Search';
 export * from './skipLink/SkipLink';
 export * from './spinner/Spinner';

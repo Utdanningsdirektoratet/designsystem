@@ -14,7 +14,6 @@ export * from './formNavigation';
 export * from './header';
 export * from './pagination/Pagination';
 export * from './progressBar/ProgressBar';
-export * from './radio/Radio';
 export * from './readMore/ReadMore';
 export * from './select/Select';
 export * from './skeleton/Skeleton';
