@@ -2,6 +2,7 @@
 
 exports[`Preview 1`] = `
 <ds-error-summary
+  role="group"
   tabindex="-1"
   aria-labelledby="<removed>"
 >
@@ -45,6 +46,7 @@ exports[`Show Hide 1`] = `
   Skjul feilmelding
 </button>
 <ds-error-summary
+  role="group"
   tabindex="-1"
   aria-labelledby="<removed>"
 >
@@ -118,6 +120,7 @@ exports[`With Form 1`] = `
   </p>
 </ds-field>
 <ds-error-summary
+  role="group"
   tabindex="-1"
   aria-labelledby="<removed>"
 >

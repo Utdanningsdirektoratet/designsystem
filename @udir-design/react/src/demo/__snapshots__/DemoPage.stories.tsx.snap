@@ -179,11 +179,11 @@ exports[`Page Story 1`] = `
       </ds-field>
       <a
         href="#"
-        aria-label="Trykk for å få hjelp"
         data-tooltip="Trykk for å få hjelp"
         data-placement="top"
         data-autoplacement="true"
         type="describedby"
+        aria-description="Trykk for å få hjelp"
       >
         Glemt passord?
       </a>
