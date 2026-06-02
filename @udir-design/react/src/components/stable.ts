@@ -15,3 +15,4 @@ export * from './list/List';
 export * from './logo';
 export * from './search/Search';
 export * from './skipLink/SkipLink';
+export * from './spinner/Spinner';
