@@ -65,97 +65,95 @@ export const Preview = meta.story({
     );
 
     return (
-      <>
-        <div className="example-main" style={{ margin: '20px' }}>
-          <Table {...args}>
-            <Table.Head>
-              <Table.Row>
-                <Table.HeaderCell>Navn</Table.HeaderCell>
-                <Table.HeaderCell>Sted</Table.HeaderCell>
-                {!isMobile && <Table.HeaderCell>Orgnummer</Table.HeaderCell>}
+      <div className="example-main" style={{ margin: '20px' }}>
+        <Table {...args}>
+          <Table.Head>
+            <Table.Row>
+              <Table.HeaderCell>Navn</Table.HeaderCell>
+              <Table.HeaderCell>Sted</Table.HeaderCell>
+              {!isMobile && <Table.HeaderCell>Orgnummer</Table.HeaderCell>}
+              {isDesktop && (
+                <Table.HeaderCell>Klar for gjennomføring</Table.HeaderCell>
+              )}
+            </Table.Row>
+          </Table.Head>
+          <Table.Body>
+            {paginatedData.map((row) => (
+              <Table.Row key={row.id}>
+                <Table.Cell>{row.navn}</Table.Cell>
+                <Table.Cell>{row.sted}</Table.Cell>
+                {!isMobile && <Table.Cell>{row.orgnummer}</Table.Cell>}
                 {isDesktop && (
-                  <Table.HeaderCell>Klar for gjennomføring</Table.HeaderCell>
+                  <Table.Cell>{row.klarForGjennomforing}</Table.Cell>
                 )}
               </Table.Row>
-            </Table.Head>
-            <Table.Body>
-              {paginatedData.map((row) => (
-                <Table.Row key={row.id}>
-                  <Table.Cell>{row.navn}</Table.Cell>
-                  <Table.Cell>{row.sted}</Table.Cell>
-                  {!isMobile && <Table.Cell>{row.orgnummer}</Table.Cell>}
-                  {isDesktop && (
-                    <Table.Cell>{row.klarForGjennomforing}</Table.Cell>
+            ))}
+          </Table.Body>
+        </Table>
+        <div className="example-controls">
+          <Pagination aria-label="Sidenavigering" data-size="sm">
+            <Pagination.List>
+              <Pagination.Item>
+                <Pagination.Button
+                  aria-label="Forrige side"
+                  {...prevButtonProps}
+                />
+              </Pagination.Item>
+              {pages.map(({ page, itemKey, buttonProps }) => (
+                <Pagination.Item key={itemKey}>
+                  {typeof page === 'number' && (
+                    <Pagination.Button
+                      {...buttonProps}
+                      aria-label={`Side ${page}`}
+                    >
+                      {page}
+                    </Pagination.Button>
                   )}
-                </Table.Row>
+                </Pagination.Item>
               ))}
-            </Table.Body>
-          </Table>
-          <div className="example-controls">
-            <Pagination aria-label="Sidenavigering" data-size="sm">
-              <Pagination.List>
-                <Pagination.Item>
-                  <Pagination.Button
-                    aria-label="Forrige side"
-                    {...prevButtonProps}
-                  />
-                </Pagination.Item>
-                {pages.map(({ page, itemKey, buttonProps }) => (
-                  <Pagination.Item key={itemKey}>
-                    {typeof page === 'number' && (
-                      <Pagination.Button
-                        {...buttonProps}
-                        aria-label={`Side ${page}`}
-                      >
-                        {page}
-                      </Pagination.Button>
-                    )}
-                  </Pagination.Item>
-                ))}
-                <Pagination.Item>
-                  <Pagination.Button
-                    aria-label="Neste side"
-                    {...nextButtonProps}
-                  />
-                </Pagination.Item>
-              </Pagination.List>
-            </Pagination>
-            <div className="example-controls-section">
-              <span className="example-controls-section-span">
-                Rad {rangeStart}-{rangeEnd} av {dummyData.length}
-              </span>
-              <div className="example-controls-section-dropdown">
-                <span>Rader per side</span>
-                <Dropdown.TriggerContext>
-                  <Dropdown.Trigger
-                    variant="secondary"
-                    aria-label="Rader per side"
-                  >
-                    {itemsPerPage}
-                    <ChevronDownIcon aria-hidden />
-                  </Dropdown.Trigger>
-                  <Dropdown>
-                    <Dropdown.List>
-                      {[5, 10, 25, 50].map((size) => (
-                        <Dropdown.Item key={size}>
-                          <Dropdown.Button
-                            onClick={() => {
-                              setItemsPerPage(size);
-                              setCurrentPage(1);
-                            }}
-                          >
-                            {size}
-                          </Dropdown.Button>
-                        </Dropdown.Item>
-                      ))}
-                    </Dropdown.List>
-                  </Dropdown>
-                </Dropdown.TriggerContext>
-              </div>
+              <Pagination.Item>
+                <Pagination.Button
+                  aria-label="Neste side"
+                  {...nextButtonProps}
+                />
+              </Pagination.Item>
+            </Pagination.List>
+          </Pagination>
+          <div className="example-controls-section">
+            <span className="example-controls-section-span">
+              Rad {rangeStart}-{rangeEnd} av {dummyData.length}
+            </span>
+            <div className="example-controls-section-dropdown">
+              <span>Rader per side</span>
+              <Dropdown.TriggerContext>
+                <Dropdown.Trigger
+                  variant="secondary"
+                  aria-label="Rader per side"
+                >
+                  {itemsPerPage}
+                  <ChevronDownIcon aria-hidden />
+                </Dropdown.Trigger>
+                <Dropdown>
+                  <Dropdown.List>
+                    {[5, 10, 25, 50].map((size) => (
+                      <Dropdown.Item key={size}>
+                        <Dropdown.Button
+                          onClick={() => {
+                            setItemsPerPage(size);
+                            setCurrentPage(1);
+                          }}
+                        >
+                          {size}
+                        </Dropdown.Button>
+                      </Dropdown.Item>
+                    ))}
+                  </Dropdown.List>
+                </Dropdown>
+              </Dropdown.TriggerContext>
             </div>
           </div>
         </div>
-      </>
+      </div>
     );
   },
 });
