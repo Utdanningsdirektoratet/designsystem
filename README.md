@@ -517,13 +517,19 @@ export default defineConfig(baseConfig);
 Det kan være relevant å utvide denne med andre forhåndsdefinerte innstillinger, og eventuelt egen konfigurasjon:
 
 ```js
-import nxEslintPlugin from '@nx/eslint-plugin';
 import { defineConfig } from 'eslint/config';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
 import baseConfig from '../../eslint.config.js';
 
 export default defineConfig(
-  nxEslintPlugin.configs['flat/react'], // @nx/eslint sin konfigurasjon for React
+  react.configs.flat.recommended, // React-regler
+  react.configs.flat['jsx-runtime'], // Fjerner krav om `import React`
+  reactHooks.configs.flat.recommended, // React Hooks-regler
   baseConfig, // Repoets felles eslint-konfigurasjon
+  {
+    settings: { react: { version: 'detect' } },
+  },
   {
     // Din egen skreddersydde konfigurasjon her
   },

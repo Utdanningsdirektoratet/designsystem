@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button } from 'src/components/button/Button';
 import { Popover } from 'src/components/popover/Popover';
 import { Search } from 'src/components/search/Search';

@@ -1,5 +1,7 @@
-import nxEslintPlugin from '@nx/eslint-plugin';
-import { defineConfig } from 'eslint/config';
+import { defineConfig } from '@eslint/config-helpers';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
 import storybook from 'eslint-plugin-storybook';
 import baseConfig, { importOrderConfig } from '../../eslint.config.js';
 
@@ -27,11 +29,31 @@ const restrictBarrelImports = {
 };
 
 export default defineConfig(
-  nxEslintPlugin.configs['flat/react'],
+  react.configs.flat.recommended,
+  react.configs.flat['jsx-runtime'],
+  reactHooks.configs.flat.recommended,
+  jsxA11y.flatConfigs.recommended,
   storybook.configs['flat/recommended'],
   baseConfig,
   {
+    settings: { react: { version: 'detect' } },
+  },
+  {
     ignores: ['!.storybook'],
+  },
+  {
+    // Rules not previously enforced (from migration off @nx/eslint-plugin).
+    // Enable these incrementally in follow-up PRs.
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+    rules: {
+      'react/prop-types': 'off',
+      'react/no-unknown-property': 'off',
+      'react/display-name': 'off',
+      'react/no-unescaped-entities': 'off',
+      'react/no-children-prop': 'off',
+      'react/jsx-key': 'off',
+      'jsx-a11y/no-autofocus': 'off',
+    },
   },
   {
     files: ['**/*.ts', '**/*.tsx'],
@@ -85,6 +107,26 @@ export default defineConfig(
   {
     // Storybook & docs-specific overrides
     files: ['**/*.stories.{ts,tsx}', '**/{.storybook,demo,docs}/**/*.{ts,tsx}'],
+    rules: {
+      // Storybook requires `import React` at runtime even with JSX transform
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          vars: 'all',
+          args: 'all',
+          argsIgnorePattern: '^_',
+          caughtErrors: 'all',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          varsIgnorePattern: '^(_|React$)',
+        },
+      ],
+      '@typescript-eslint/consistent-type-imports': 'off',
+      '@typescript-eslint/no-unused-expressions': [
+        'error',
+        { allowTernary: true },
+      ],
+    },
   },
   {
     // Overrides for demo pages shared with test-apps
