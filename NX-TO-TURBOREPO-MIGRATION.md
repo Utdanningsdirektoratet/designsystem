@@ -379,6 +379,46 @@ Turborepo validates artifacts by content hash, not by machine ID. An artifact re
 `actions/cache` on any runner is accepted as long as its hash matches the task inputs. Cross-run
 and cross-job caching both work correctly.
 
+#### Cache security comparison
+
+Nx Cloud's security model (what we had) provided:
+
+1. **Personal access tokens** for developers — read-only by default, can't poison the cache
+2. **Branch-scoped isolation** — PR branches write to an isolated cache that `main` never reads
+3. **Release workflow skips cache** — deployed artifacts are always built from scratch
+4. **End-to-end encryption** — artifacts stored encrypted at rest
+
+The table below compares how each Turborepo caching option maps to these properties:
+
+| Security property                           | Nx Cloud (previous)                    | Option A (GitHub Actions Cache)                                                       | Option B (Vercel Remote Cache)                                                                                                              |
+| ------------------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Immutability** (can't overwrite entries)  | ✅ API-enforced                        | ✅ GitHub returns 409 on existing keys                                                | ✅ Turbo Remote Cache API spec requires 409                                                                                                 |
+| **Branch isolation** (PR can't poison main) | ✅ Scoped write tokens                 | ✅ GitHub's branch-scoping rules: PR can read from main, but main never reads from PR | ⚠️ No built-in branch scoping — but immutability means existing entries can't be overwritten, and different inputs produce different hashes |
+| **Developer write access**                  | Read-only by default                   | N/A (developers don't share CI cache)                                                 | Read-write after `turbo login` — acceptable for internal teams                                                                              |
+| **Artifact integrity**                      | End-to-end encryption                  | Content-hash validation by Turbo                                                      | HMAC-SHA256 artifact signing (`remoteCache.signature: true`)                                                                                |
+| **Release isolation**                       | Token not provided to release workflow | Don't set up cache step in release workflow                                           | Don't set `TURBO_TOKEN` in release workflow                                                                                                 |
+| **Developer machine sharing**               | ✅ Developers read CI cache            | ❌ Local cache only                                                                   | ✅ Full bidirectional sharing                                                                                                               |
+| **External dependency**                     | Nx Cloud account                       | None (GitHub-native)                                                                  | Vercel account (free, no hosting needed)                                                                                                    |
+| **Cost**                                    | ~$433/month at current usage           | Free                                                                                  | Free                                                                                                                                        |
+
+**Key insight:** The main cache poisoning vector — a malicious PR writes bad artifacts that
+`main` later reads — is addressed differently by each option:
+
+- **GitHub Actions Cache:** Structurally impossible. GitHub's branch-scoping rules make PR
+  caches unreadable by `main`. Only the reverse direction works.
+- **Vercel Remote Cache:** Addressed by immutability + content addressing. A PR computes
+  different hashes than main (different inputs), so main never reads PR-produced entries.
+  Even if hashes collided, immutability prevents overwriting existing entries.
+
+This repository is public (open source) but does not accept contributions from outside the
+Udir organization. The relevant security boundary is who can trigger CI workflows with write
+access — not whether the source is readable. GitHub never exposes Actions secrets to workflows
+triggered by fork PRs, so an external actor cannot access `TURBO_TOKEN` or write to the GitHub
+Actions Cache. Both options provide equivalent security to the Nx Cloud setup. The release
+workflow continues to build without cache in either case. If the contribution policy ever
+changes, revisit this — but since fork PRs run without secrets by default, both options remain
+safe even in that scenario.
+
 #### CREEP immunity
 
 Turborepo's Remote Cache API spec explicitly requires `409 Conflict` when a client writes to a
