@@ -164,15 +164,21 @@ export const Preview = meta.story({
   },
 });
 
-const subject = ['Engelsk', 'Matematikk', 'Norsk Hovedmål', 'Norsk Sidemål'];
+const emner = ['Engelsk', 'Matematikk', 'Norsk Hovedmål', 'Norsk Sidemål'];
 
-const grades: Data[] = subject.map((subject) => ({
-  id: subject,
-  emne: subject,
-  muntligkarakter: (Math.random() * (4.4 - 3.5) + 3.5).toFixed(2),
-  eleverMuntlig: Math.floor(Math.random() * (8000 - 5000 + 1)) + 5000,
-  skriftligkarakter: (Math.random() * (4 - 3) + 3).toFixed(2),
-  eleverSkriftlig: Math.floor(Math.random() * (10000 - 7000 + 1)) + 7000,
-  standpunktkarakter: (Math.random() * (4.2 - 3.2) + 3.2).toFixed(2),
-  antallelever: Math.floor(Math.random() * (15000 - 10000 + 1)) + 10000,
+const seeded = (str: string): number => {
+  let h = 0;
+  for (const c of str) h = (Math.imul(31, h) + c.charCodeAt(0)) | 0;
+  return Math.abs(h) / 2147483647;
+};
+
+const grades: Data[] = emner.map((emne) => ({
+  id: emne,
+  emne: emne,
+  muntligkarakter: (seeded(`${emne}-muntlig`) * 1.2 + 3).toFixed(2),
+  eleverMuntlig: Math.floor(seeded(`${emne}-eleverMuntlig`) * 3001) + 5000,
+  skriftligkarakter: (seeded(`${emne}-skriftlig`) * 1.2 + 3).toFixed(2),
+  eleverSkriftlig: Math.floor(seeded(`${emne}-eleverSkriftlig`) * 3001) + 7000,
+  standpunktkarakter: (seeded(`${emne}-standpunkt`) * 1.2 + 3.2).toFixed(2),
+  antallelever: Math.floor(seeded(`${emne}-antall`) * 10001) + 5000,
 }));
