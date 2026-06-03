@@ -25,13 +25,17 @@ runs:
     - run: pnpm install
       shell: bash
 
-    # Turborepo remote cache via GitHub Actions cache
+    # Turborepo remote cache via GitHub Actions cache.
+    # The key includes the job name so parallel/sequential jobs don't overwrite each other.
+    # The restore-keys fall back progressively: same job first, then any job on the same OS,
+    # so e.g. storybook-tests can reuse build results cached by the main job.
     - name: Cache Turborepo
       uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
       with:
         path: .turbo/cache
-        key: turbo-${{ runner.os }}-${{ github.sha }}
+        key: turbo-${{ runner.os }}-${{ github.job }}-${{ github.sha }}
         restore-keys: |
+          turbo-${{ runner.os }}-${{ github.job }}-
           turbo-${{ runner.os }}-
 
     # Set Turborepo SCM base for affected detection.
