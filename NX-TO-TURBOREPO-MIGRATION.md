@@ -658,11 +658,12 @@ Add a corresponding task to the root `turbo.json`:
 + "build": "pnpm prettier:check && pnpm turbo run typecheck lint test:unit build build:docs --filter=...[origin/main]"
 ```
 
-> `pnpm nx affected` used `NX_BASE` set by `nrwl/nx-set-shas`, which resolves to the last
-> successful CI commit rather than `origin/main`. This is smarter: it avoids re-running tasks
-> that already passed in a previous CI run on the same branch. If preserving this behaviour
-> matters, set a `BASE_SHA` env var in CI (derived from the GitHub API or a stored artifact)
-> and use `--filter=...[$BASE_SHA]` instead of `--filter=...[origin/main]`.
+> **Resolved:** `nrwl/nx-set-shas` has been removed. Turborepo's `--affected` flag uses
+> `TURBO_SCM_BASE` (set to `github.base_ref || github.ref_name` in `pnpm-setup`).
+> The "last successful run" logic from nx-set-shas is unnecessary in this repo because
+> pushes to protected branches unconditionally run all UI tests (`$IS_PUSH` condition
+> in `ci.yml`). Affected detection only gates work for PRs, where branch comparison
+> (`target_branch...HEAD`) is already correct.
 
 ### 1.9 Add root `package.json` scripts for developer commands ✅
 
@@ -905,30 +906,12 @@ dance is a workaround for the fact that the current system (Nx release) doesn't 
 honours the same interface. The `semantic-release` package is then an internal dependency of
 the script, not something invoked directly by CI.
 
-**`pnpm-setup/action.yml`** — once `nx` is removed, delete the `nrwl/nx-set-shas` step.
-Replace with a simpler git-base calculation if affected detection is still needed
-(see Phase 1 notes on `is-project-affected.sh`).
+**`pnpm-setup/action.yml`** — ~~once `nx` is removed, delete the `nrwl/nx-set-shas` step.~~
+✅ Done in Phase 1. Replaced with `TURBO_SCM_BASE` env var.
 
-**`is-project-affected.sh`** — replace `nx show projects --affected` with a Turbo-native check:
-
-```bash
-#!/usr/bin/env bash
-PACKAGE=$1
-BASE="${BASE:-origin/main}"
-pnpm turbo run build --filter="$PACKAGE" --dry=json 2>/dev/null \
-  | jq '.tasks | any(.[]; .cache.status != "HIT")' 2>/dev/null \
-  || printf false
-```
-
-Or a simpler git-based check (doesn't account for transitive deps via the task graph):
-
-```bash
-#!/usr/bin/env bash
-PACKAGE=$1
-BASE="${BASE:-origin/main}"
-PKG_DIR=$(pnpm list --filter "$PACKAGE" --depth 0 --json | jq -r '.[0].path' | sed "s|$(pwd)/||")
-git diff --name-only "$BASE"...HEAD | grep -q "^$PKG_DIR/" && printf true || printf false
-```
+**`is-project-affected.ts`** — ~~replace `nx show projects --affected` with a Turbo-native check.~~
+✅ Done in Phase 1. Rewritten as TypeScript (`bin/is-project-affected.ts`), uses
+`turbo ls --affected --filter=<pkg> --output json` and respects `TURBO_SCM_BASE`.
 
 #### 2.10 Final cleanup
 
@@ -945,25 +928,25 @@ Once Phase 2 is complete and CI is green on a release branch:
 
 ## Summary: what Nx usage gets replaced by what
 
-| Current Nx usage                           | Location                                          | Phase 1 replacement                                                                                                                     | Phase 2 replacement                            |
-| ------------------------------------------ | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| `nx affected -t ...`                       | `package.json` build script                       | `turbo run ... --filter=...[origin/main]`                                                                                               | —                                              |
-| `nx run-many -t build -p "@udir-design/*"` | `release.yml`                                     | `turbo run build --filter="@udir-design/*"`                                                                                             | —                                              |
-| `nx test:storybook`                        | `ci.yml` (storybook-tests job)                    | `turbo run test:storybook --filter=@udir-design/react`                                                                                  | —                                              |
-| `nx build:docs`                            | `ci.yml` (chromatic + deploy-docs jobs)           | `turbo run build:docs --filter=@udir-design/react`                                                                                      | —                                              |
-| `nx run @udir-design/theme:build`          | `update-digdir.yml`                               | `turbo run build --filter=@udir-design/theme`                                                                                           | —                                              |
-| `nx test:storybook -u`                     | `update-digdir.yml`, local dev                    | New `test:storybook:update` task (`cache: false`) + root `package.json` script                                                          | —                                              |
-| `defaultProject: "@udir-design/react"`     | `nx.json` (implicit in several CI commands above) | Root `package.json` scripts for dev commands; explicit `--filter` flags in CI                                                           | —                                              |
-| `nx show projects --affected`              | `ci.yml`, `is-project-affected.sh`                | Unchanged (Nx still installed)                                                                                                          | Turbo `--dry=json` + jq, or git-based          |
-| `nrwl/nx-set-shas`                         | `pnpm-setup` action                               | Unchanged                                                                                                                               | Remove; use `origin/main` as base              |
-| `targetDefaults` task orchestration        | `nx.json`                                         | `turbo.json`                                                                                                                            | —                                              |
-| `@nx/eslint/plugin` task inference         | `nx.json` plugins                                 | Add `lint` scripts to each `package.json` (step 1.4); migrate ESLint configs to `typescript-eslint` + explicit react plugins (step 1.6) | —                                              |
-| `@nx/azure-cache` remote cache             | `nx.json`, CI secrets                             | GitHub Actions cache or `turborepo-remote-cache`                                                                                        | —                                              |
-| `@nx/eslint`, `@nx/eslint-plugin`          | Root devDeps                                      | Remove                                                                                                                                  | —                                              |
-| `nx/release` APIs                          | `semantic-release.ts`                             | Nx kept installed, unchanged                                                                                                            | `semantic-release` + plugins                   |
-| `nx/release/changelog-renderer`            | `changelog-renderer.ts`                           | Nx kept installed, unchanged                                                                                                            | Custom renderer (same logic, no Nx base class) |
-| `nx.json` `release` section                | `nx.json`                                         | Kept as-is                                                                                                                              | Removed                                        |
-| `project.json` files                       | Each package                                      | Kept (Nx still installed)                                                                                                               | Delete all                                     |
+| Current Nx usage                           | Location                                          | Phase 1 replacement                                                                                                                                                                                        | Phase 2 replacement                            |
+| ------------------------------------------ | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| `nx affected -t ...`                       | `package.json` build script                       | `turbo run ... --filter=...[origin/main]`                                                                                                                                                                  | —                                              |
+| `nx run-many -t build -p "@udir-design/*"` | `release.yml`                                     | `turbo run build --filter="@udir-design/*"`                                                                                                                                                                | —                                              |
+| `nx test:storybook`                        | `ci.yml` (storybook-tests job)                    | `turbo run test:storybook --filter=@udir-design/react`                                                                                                                                                     | —                                              |
+| `nx build:docs`                            | `ci.yml` (chromatic + deploy-docs jobs)           | `turbo run build:docs --filter=@udir-design/react`                                                                                                                                                         | —                                              |
+| `nx run @udir-design/theme:build`          | `update-digdir.yml`                               | `turbo run build --filter=@udir-design/theme`                                                                                                                                                              | —                                              |
+| `nx test:storybook -u`                     | `update-digdir.yml`, local dev                    | New `test:storybook:update` task (`cache: false`) + root `package.json` script                                                                                                                             | —                                              |
+| `defaultProject: "@udir-design/react"`     | `nx.json` (implicit in several CI commands above) | Root `package.json` scripts for dev commands; explicit `--filter` flags in CI                                                                                                                              | —                                              |
+| `nx show projects --affected`              | `ci.yml`, `is-project-affected.sh`                | `turbo ls --affected --filter=<pkg>` + `TURBO_SCM_BASE` env var                                                                                                                                            | —                                              |
+| `nrwl/nx-set-shas`                         | `pnpm-setup` action                               | Removed. Replaced with `TURBO_SCM_BASE=${{ github.base_ref \|\| github.ref_name }}`. The "last successful run" logic is unnecessary because pushes to protected branches unconditionally run all UI tests. | —                                              |
+| `targetDefaults` task orchestration        | `nx.json`                                         | `turbo.json`                                                                                                                                                                                               | —                                              |
+| `@nx/eslint/plugin` task inference         | `nx.json` plugins                                 | Add `lint` scripts to each `package.json` (step 1.4); migrate ESLint configs to `typescript-eslint` + explicit react plugins (step 1.6)                                                                    | —                                              |
+| `@nx/azure-cache` remote cache             | `nx.json`, CI secrets                             | GitHub Actions cache or `turborepo-remote-cache`                                                                                                                                                           | —                                              |
+| `@nx/eslint`, `@nx/eslint-plugin`          | Root devDeps                                      | Remove                                                                                                                                                                                                     | —                                              |
+| `nx/release` APIs                          | `semantic-release.ts`                             | Nx kept installed, unchanged                                                                                                                                                                               | `semantic-release` + plugins                   |
+| `nx/release/changelog-renderer`            | `changelog-renderer.ts`                           | Nx kept installed, unchanged                                                                                                                                                                               | Custom renderer (same logic, no Nx base class) |
+| `nx.json` `release` section                | `nx.json`                                         | Kept as-is                                                                                                                                                                                                 | Removed                                        |
+| `project.json` files                       | Each package                                      | Kept (Nx still installed)                                                                                                                                                                                  | Delete all                                     |
 
 ---
 
