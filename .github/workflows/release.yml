@@ -9,8 +9,8 @@ on:
 env:
   # either the PR *target* branch, or the current branch being released
   BRANCH_NAME: ${{ github.base_ref || github.ref_name }}
-  # NOTE: We explicitly DON'T add the NX_CLOUD_ACCESS_TOKEN env var in the release workflow,
-  # to be entirely sure that our published libraries can't be affected by cache poisoning
+  # Turborepo cache is safe to use here: it's repo-scoped (GitHub Actions cache)
+  # and content-addressed (Turbo hashing), so artifacts match source deterministically.
 
 jobs:
   semantic-release:

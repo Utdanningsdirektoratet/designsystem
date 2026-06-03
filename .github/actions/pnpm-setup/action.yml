@@ -1,5 +1,5 @@
-name: Prepare pnpm & Nx
-description: Installs pnpm, sets up the pnpm cache, and sets the Nx hashes
+name: Prepare pnpm & CI caches
+description: Installs pnpm, sets up the pnpm + Turborepo caches, and sets the Nx hashes
 inputs:
   registry-url:
     description: |
@@ -24,6 +24,15 @@ runs:
 
     - run: pnpm install
       shell: bash
+
+    # Turborepo remote cache via GitHub Actions cache
+    - name: Cache Turborepo
+      uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+      with:
+        path: .turbo/cache
+        key: turbo-${{ runner.os }}-${{ github.sha }}
+        restore-keys: |
+          turbo-${{ runner.os }}-
 
     - uses: nrwl/nx-set-shas@afb73a62d26e41464e9254689e1fd6122ee683c1 # v5.0.1
       with:
