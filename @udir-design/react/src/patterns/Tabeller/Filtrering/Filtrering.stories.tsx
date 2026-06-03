@@ -23,6 +23,16 @@ import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckb
 import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
 import './filtering.css';
 
+type Data = {
+  id: string;
+  fylke: string;
+  emne: string;
+  antallelever: number;
+  muntligkarakter: string;
+  skriftligkarakter: string;
+  standpunktkarakter: string;
+};
+
 const meta = preview.meta({
   tags: ['alpha', 'udir'],
   parameters: { componentOrigin: { originator: 'self' } },
