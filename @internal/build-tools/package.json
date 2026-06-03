@@ -4,7 +4,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "lint": "eslint . --max-warnings 0"
+    "lint": "eslint . --max-warnings 0",
+    "test": "vitest run"
   },
   "devDependencies": {
     "@types/js-yaml": "catalog:",
@@ -13,6 +14,7 @@
     "js-yaml": "catalog:",
     "micromatch": "catalog:",
     "tsx": "catalog:",
+    "vitest": "catalog:",
     "yargs": "catalog:"
   }
 }
