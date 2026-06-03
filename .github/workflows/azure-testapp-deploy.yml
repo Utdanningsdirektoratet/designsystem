@@ -30,7 +30,7 @@ jobs:
 
       - name: Determine whether to deploy
         id: should_deploy
-        run: echo "should_deploy=$(./@internal/build-tools/bin/should-deploy-testapp.ts)" >> "$GITHUB_OUTPUT"
+        run: echo "should_deploy=$(./@internal/ci/bin/should-deploy-testapp.ts)" >> "$GITHUB_OUTPUT"
         env:
           IS_DISPATCH: ${{ github.event_name == 'workflow_dispatch'}}
 

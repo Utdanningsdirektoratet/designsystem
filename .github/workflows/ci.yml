@@ -35,7 +35,7 @@ jobs:
 
       - name: Determine whether storybook-tests & chromatic need to run
         id: job_condition
-        run: echo "run_ui_tests=$(./@internal/build-tools/bin/should-run-ui-tests.ts)" >> "$GITHUB_OUTPUT"
+        run: echo "run_ui_tests=$(./@internal/ci/bin/should-run-ui-tests.ts)" >> "$GITHUB_OUTPUT"
         env:
           IS_PR_READY: ${{ github.event_name == 'pull_request' && !github.event.pull_request.draft }}
           IS_PUSH: ${{ github.event_name == 'push' }}
@@ -109,7 +109,7 @@ jobs:
       - name: Check runtime dependency changes
         id: diff_runtime_deps
         run: |
-          pnpm tsx ./@internal/build-tools/bin/diff-runtime-deps.ts --base "${TURBO_SCM_BASE:-main}" \
+          pnpm tsx ./@internal/ci/bin/diff-runtime-deps.ts --base "${TURBO_SCM_BASE:-main}" \
             && echo "deps_changed=false" >> "$GITHUB_OUTPUT" \
             || echo "deps_changed=true" >> "$GITHUB_OUTPUT"
 

@@ -12,7 +12,7 @@ The repo previously used **Nx** for both task orchestration (builds, caching,
 affected-project detection, ESLint target inference) and release automation (`nx release`
 APIs). After Phase 1, it now uses **Turborepo** for task orchestration and **Nx** for
 release automation only (`nx release` APIs called from
-`@internal/build-tools/src/semantic-release.ts`).
+`@internal/ci/src/semantic-release.ts`).
 
 Phase 2 targets replacing the Nx release APIs with **`semantic-release`**, which would allow
 Nx to be removed entirely.
@@ -27,6 +27,8 @@ to Turborepo + GitHub Actions Cache eliminated the cost entirely.
 
 ### Key files
 
+Phase 1 replaced the following Nx mechanisms:
+
 | Before (Nx)                                   | After (Turborepo)                                    | Role                                                      |
 | --------------------------------------------- | ---------------------------------------------------- | --------------------------------------------------------- |
 | `nx.json` (task orchestration config)         | `turbo.json`                                         | Task pipeline — build/test/lint orchestration and caching |
@@ -36,15 +38,16 @@ to Turborepo + GitHub Actions Cache eliminated the cost entirely.
 | `nrwl/nx-set-shas` (in `pnpm-setup`)          | `TURBO_SCM_BASE` env var (in `pnpm-setup`)           | SCM base for affected detection                           |
 | `@nx/azure-cache` / Nx Cloud                  | `actions/cache` for `.turbo/cache`                   | CI build caching                                          |
 | `is-project-affected.sh` (inline shell in CI) | `should-run-ui-tests.ts`, `should-deploy-testapp.ts` | Conditional job gating via `turbo ls --affected`          |
-| —                                             | `@internal/build-tools/bin/ci-decisions.test.ts`     | Tests for the CI decision scripts                         |
 
-Files unchanged by Phase 1 (still Nx-dependent, targeted by Phase 2):
+CI and release scripts live in `@internal/ci/` (previously `@internal/build-tools`,
+renamed since no published packages depend on it — it only contains CI and release
+automation). The release scripts are still Nx-dependent and targeted by Phase 2:
 
-| File                                            | Role                                                                                           |
-| ----------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `@internal/build-tools/src/semantic-release.ts` | The release orchestrator — calls `nx/release` APIs                                             |
-| `@internal/build-tools/bin/semantic-release.ts` | CLI entry point for the above                                                                  |
-| `changelog-renderer.ts`                         | Extends `nx/release/changelog-renderer`; customises body indent and breaking-change extraction |
+| File                                   | Role                                                                                           |
+| -------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `@internal/ci/src/semantic-release.ts` | The release orchestrator — calls `nx/release` APIs                                             |
+| `@internal/ci/bin/semantic-release.ts` | CLI entry point for the above                                                                  |
+| `changelog-renderer.ts`                | Extends `nx/release/changelog-renderer`; customises body indent and breaking-change extraction |
 
 ### Current git tag format
 
@@ -134,7 +137,7 @@ on its `build` task rather than relying on inheritance, because Turborepo's per-
 - `@udir-design/css`
 - `@udir-design/icons`
 - `@udir-design/symbols`
-- `@internal/build-tools`
+- `@internal/ci`
 
 `design-tokens` and `@udir-design/theme` have no source files that benefit from linting
 (tokens are generated, theme copies CSS from tokens) and do not have lint scripts.
@@ -209,7 +212,7 @@ scripts that use `turbo ls --affected`:
 - `should-run-ui-tests.ts` — gates storybook-tests & chromatic jobs
 - `should-deploy-testapp.ts` — gates the Next.js test app deployment
 
-Both scripts are tested in `@internal/build-tools/bin/ci-decisions.test.ts`.
+Both scripts are tested in `@internal/ci/bin/ci-decisions.test.ts`.
 
 Current CI command mapping:
 
@@ -250,7 +253,7 @@ Developers use `pnpm dev`, `pnpm build:docs`, etc. CI keeps explicit
 
 ### What needs replacing
 
-The following imports in `@internal/build-tools/src/semantic-release.ts` must go:
+The following imports in `@internal/ci/src/semantic-release.ts` must go:
 
 ```typescript
 import {
@@ -344,11 +347,11 @@ available as `nextRelease.version` in the semantic-release lifecycle. For fixed 
 package.json files.
 
 The script should discover packages dynamically (those with `publishConfig` in their
-`package.json`) rather than hard-coding names. A TypeScript script in `@internal/build-tools`
+`package.json`) rather than hard-coding names. A TypeScript script in `@internal/ci`
 is the natural home — consistent with the other CI scripts:
 
 ```typescript
-// @internal/build-tools/bin/sync-package-versions.ts
+// @internal/ci/bin/sync-package-versions.ts
 import { readFileSync, writeFileSync } from 'node:fs';
 import { glob } from 'fast-glob';
 

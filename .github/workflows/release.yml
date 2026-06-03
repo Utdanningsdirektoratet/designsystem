@@ -41,11 +41,11 @@ jobs:
 
       - name: Preview semantic-release for this PR
         if: success() && github.event_name == 'pull_request'
-        run: ./@internal/build-tools/bin/semantic-release.ts --branch $BRANCH_NAME --preview-changelog
+        run: ./@internal/ci/bin/semantic-release.ts --branch $BRANCH_NAME --preview-changelog
 
       - name: Output preview changelog to file
         if: success() && github.event_name == 'pull_request'
-        run: ./@internal/build-tools/bin/preview-changelogs.sh > CHANGELOG_PREVIEW.md
+        run: ./@internal/ci/bin/preview-changelogs.sh > CHANGELOG_PREVIEW.md
 
       - name: Add changelog as comment on PR
         if: success() && github.event_name == 'pull_request'
@@ -56,7 +56,7 @@ jobs:
 
       - name: Run semantic-release script
         if: success() && github.event_name != 'pull_request'
-        run: ./@internal/build-tools/bin/semantic-release.ts --branch $BRANCH_NAME ${{ inputs.dry-run && '--dry-run' || '--publish'}}
+        run: ./@internal/ci/bin/semantic-release.ts --branch $BRANCH_NAME ${{ inputs.dry-run && '--dry-run' || '--publish'}}
         shell: bash
         # See https://docs.github.com/en/actions/use-cases-and-examples/publishing-packages/publishing-nodejs-packages
         env:

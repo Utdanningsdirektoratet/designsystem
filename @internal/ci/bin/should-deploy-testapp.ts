@@ -38,7 +38,7 @@ function isNextjsAffected(): boolean {
 function isWorkflowModified(): boolean {
   try {
     const output = execSync(
-      './@internal/build-tools/bin/is-file-modified.sh .github/workflows/azure-testapp-deploy.yml',
+      './@internal/ci/bin/is-file-modified.sh .github/workflows/azure-testapp-deploy.yml',
       { encoding: 'utf-8', stdio: ['pipe', 'pipe', 'ignore'] },
     );
     return output.trim() === 'true';
