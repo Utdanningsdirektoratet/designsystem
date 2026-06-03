@@ -13,9 +13,6 @@ on:
       - synchronize
       - ready_for_review
 
-env:
-  NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
-
 permissions:
   actions: read
   contents: read
@@ -97,7 +94,7 @@ jobs:
           fetch-depth: 0
       - uses: ./.github/actions/pnpm-setup
       - name: Run Storybook tests
-        run: pnpm nx test:storybook
+        run: pnpm turbo run test:storybook --filter=@udir-design/react
 
   chromatic:
     runs-on: ubuntu-latest
@@ -116,7 +113,7 @@ jobs:
       - uses: ./.github/actions/pnpm-setup
 
       - name: Build storybook
-        run: pnpm nx build:docs
+        run: pnpm turbo run build:docs --filter=@udir-design/react
 
       - name: Check runtime dependency changes
         id: diff_runtime_deps
@@ -182,7 +179,7 @@ jobs:
       - uses: ./.github/actions/pnpm-setup
 
       - name: Build storybook
-        run: pnpm nx build:docs
+        run: pnpm turbo run build:docs --filter=@udir-design/react
 
       - shell: bash
         env:

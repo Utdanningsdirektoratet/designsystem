@@ -37,7 +37,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       # Build only the projects we are releasing
-      - run: pnpm nx run-many -t build -p "@udir-design/*"
+      - run: pnpm turbo run build --filter="@udir-design/*"
 
       - name: Preview semantic-release for this PR
         if: success() && github.event_name == 'pull_request'
