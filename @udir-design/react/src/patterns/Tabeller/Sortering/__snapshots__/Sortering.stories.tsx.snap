@@ -2,106 +2,104 @@
 
 exports[`Preview 1`] = `
 <div data-size="auto">
-  <div style="<removed>">
-    <table
-      data-zebra="true"
-      data-color="neutral"
-    >
-      <thead>
-        <tr>
-          <th aria-sort="none">
-            <button type="button">
-              Navn
-            </button>
-          </th>
-          <th aria-sort="none">
-            <button type="button">
-              Sted
-            </button>
-          </th>
-          <th aria-sort="none">
-            <button type="button">
-              Orgnummer
-            </button>
-          </th>
-          <th>
-            Klar for gjennomføring
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            Rita Nordmann
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            100000000
-          </td>
-          <td>
-            Nei
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Kari Nordmann
-          </td>
-          <td>
-            Bergen
-          </td>
-          <td>
-            100000001
-          </td>
-          <td>
-            Ja
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Ola Nordmann
-          </td>
-          <td>
-            Trondheim
-          </td>
-          <td>
-            100000002
-          </td>
-          <td>
-            Ja
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Kai Nordmann
-          </td>
-          <td>
-            Stavanger
-          </td>
-          <td>
-            100000003
-          </td>
-          <td>
-            Nei
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Rita Nordmann
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            100000004
-          </td>
-          <td>
-            Ja
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table
+    data-zebra="true"
+    data-color="neutral"
+  >
+    <thead>
+      <tr>
+        <th aria-sort="none">
+          <button type="button">
+            Navn
+          </button>
+        </th>
+        <th aria-sort="none">
+          <button type="button">
+            Sted
+          </button>
+        </th>
+        <th aria-sort="none">
+          <button type="button">
+            Orgnummer
+          </button>
+        </th>
+        <th>
+          Klar for gjennomføring
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Rita Nordmann
+        </td>
+        <td>
+          Oslo
+        </td>
+        <td>
+          100000000
+        </td>
+        <td>
+          Nei
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Kari Nordmann
+        </td>
+        <td>
+          Bergen
+        </td>
+        <td>
+          100000001
+        </td>
+        <td>
+          Ja
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ola Nordmann
+        </td>
+        <td>
+          Trondheim
+        </td>
+        <td>
+          100000002
+        </td>
+        <td>
+          Ja
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Kai Nordmann
+        </td>
+        <td>
+          Stavanger
+        </td>
+        <td>
+          100000003
+        </td>
+        <td>
+          Nei
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Rita Nordmann
+        </td>
+        <td>
+          Oslo
+        </td>
+        <td>
+          100000004
+        </td>
+        <td>
+          Ja
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 `;
