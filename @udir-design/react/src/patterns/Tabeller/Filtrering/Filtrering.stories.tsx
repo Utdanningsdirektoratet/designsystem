@@ -582,15 +582,26 @@ const fylker = [
   'Viken',
 ];
 
+const seeded = (str: string): number => {
+  let h = 0;
+  for (const c of str) h = (Math.imul(31, h) + c.charCodeAt(0)) | 0;
+  return Math.abs(h) / 2147483647;
+};
+
 const grades: Data[] = fylker.flatMap((fylke) =>
   emner.map((emne) => ({
     id: `${fylke}-${emne}`,
     emne,
     fylke,
-    muntligkarakter: (Math.random() * (4.2 - 3) + 3).toFixed(2),
-    skriftligkarakter: (Math.random() * (4.2 - 3) + 3).toFixed(2),
-    standpunktkarakter: (Math.random() * (4.2 - 3) + 3).toFixed(2),
-    antallelever: Math.floor(Math.random() * (15000 - 5000 + 1)) + 5000,
+    muntligkarakter: (seeded(`${fylke}-${emne}-muntlig`) * 1.2 + 3).toFixed(2),
+    skriftligkarakter: (seeded(`${fylke}-${emne}-skriftlig`) * 1.2 + 3).toFixed(
+      2,
+    ),
+    standpunktkarakter: (
+      seeded(`${fylke}-${emne}-standpunkt`) * 1.2 +
+      3
+    ).toFixed(2),
+    antallelever: Math.floor(seeded(`${fylke}-${emne}-antall`) * 10001) + 5000,
   })),
 );
 
