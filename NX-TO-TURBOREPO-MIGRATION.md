@@ -87,13 +87,13 @@ independently of the other.
 
 ## Phase 1 — Task Orchestration (estimated: 2–3 days)
 
-### 1.1 Install Turborepo
+### 1.1 Install Turborepo ✅
 
 ```bash
 pnpm add -Dw turbo
 ```
 
-### 1.2 Create `turbo.json`
+### 1.2 Create `turbo.json` ✅
 
 Maps `nx.json` `targetDefaults` to Turborepo's task pipeline. Place at the workspace root.
 
@@ -147,7 +147,7 @@ Maps `nx.json` `targetDefaults` to Turborepo's task pipeline. Place at the works
 **Note on `continuous` tasks:** Nx's `continuous: true` (used for `dev`, `watch`, `serve:*`) becomes
 `"persistent": true` in Turborepo. Add these to `turbo.json` if `turbo dev` support is desired.
 
-### 1.3 Per-package `turbo.json` overrides
+### 1.3 Per-package `turbo.json` overrides ✅
 
 Two Nx-specific input patterns require package-level config.
 
@@ -333,7 +333,7 @@ from the `dev` task entirely:
 
 `serve:typedoc` also needs a `turbo.json` entry (persistent, no dependsOn).
 
-### 1.4 Add `lint` scripts to every package
+### 1.4 Add `lint` scripts to every package ✅
 
 `@nx/eslint/plugin` currently auto-infers `lint` targets. Turborepo requires explicit `package.json`
 scripts. **No package currently has a `lint` script.** Add to each:
@@ -352,7 +352,11 @@ Packages requiring this:
 - `design-tokens` (`@udir-design/tokens`)
 - `@internal/build-tools`
 
-### 1.5 Remote caching
+### 1.5 Remote caching ✅
+
+> **Completed.** Chose Option A (GitHub Actions cache). Added `actions/cache` for
+> `.turbo/cache` in `.github/actions/pnpm-setup/action.yml`. No external accounts,
+> tokens, or costs required. CI↔CI cache sharing works automatically.
 
 `@nx/azure-cache` was removed and replaced with **Nx Cloud** (free hobby tier) in PR #796.
 Caching across CI runs and developer machines is already working — but at a projected cost of
@@ -472,7 +476,14 @@ Container App or Function) and adding `TURBO_API`, `TURBO_TOKEN`, `TURBO_TEAM` a
 Given that Option B is free and operationally equivalent, Option C is only worth pursuing if
 there is a policy reason to keep data within the team's own Azure subscription.
 
-### 1.6 Migrate ESLint configs off `@nx/eslint-plugin`
+### 1.6 Migrate ESLint configs off `@nx/eslint-plugin` ✅
+
+> **Completed.** Removed `@nx/eslint-plugin` and `@nx/eslint` from dependencies.
+> Replaced with direct `@eslint/js`, `typescript-eslint`, `eslint-plugin-react`,
+> `eslint-plugin-react-hooks`, and `eslint-plugin-jsx-a11y` flat configs.
+> All rules from `recommended` configs are now fully enabled. Only `react/prop-types`
+> (redundant with TypeScript) and `jsx-a11y/no-autofocus` (intentional component API)
+> are permanently disabled.
 
 Removing `@nx/eslint-plugin` from devDependencies (done in step 1.7) requires updating six
 `eslint.config.js` files first. All usages fall into three Nx flat-config shapes, each with a
@@ -536,7 +547,7 @@ After making these changes, run `pnpm lint` across all packages and compare the 
 error output against a pre-migration baseline. The replacement configs should produce identical
 warnings and errors for any known-bad code.
 
-### 1.7 Strip `nx.json` to release-only config
+### 1.7 Strip `nx.json` to release-only config ✅
 
 Remove all task-orchestration config from `nx.json`, keeping only the `release` section (which
 Phase 2 will remove). The stripped file should look like:
@@ -566,7 +577,7 @@ Remove from root `devDependencies`: `@nx/eslint`, `@nx/eslint-plugin`.
 Remove the `plugins` array from `nx.json` (the `@nx/eslint/plugin` entry).
 `NX_KEY` was already removed from `pnpm-workspace.yaml` and CI secrets on `build/remove-nx-azure-cache`.
 
-### 1.8 Update CI commands
+### 1.8 Update CI commands ✅
 
 Because `nx` is still installed in Phase 1, `is-project-affected.sh`, `nrwl/nx-set-shas`, and
 `pnpm nx show projects --affected` all continue to work **without changes**. Only the
@@ -653,7 +664,7 @@ Add a corresponding task to the root `turbo.json`:
 > matters, set a `BASE_SHA` env var in CI (derived from the GitHub API or a stored artifact)
 > and use `--filter=...[$BASE_SHA]` instead of `--filter=...[origin/main]`.
 
-### 1.9 Add root `package.json` scripts for developer commands
+### 1.9 Add root `package.json` scripts for developer commands ✅
 
 Nx's `defaultProject: "@udir-design/react"` in `nx.json` lets developers run
 `pnpm nx dev`, `pnpm nx build:docs`, etc. without specifying a package. Stripping
