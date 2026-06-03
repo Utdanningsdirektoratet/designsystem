@@ -55,18 +55,19 @@ const meta = preview.meta({
 export const Preview = meta.story({
   args: {
     defaultValue: 'value1',
-    children: [
+  },
+  render: (args) => (
+    <Tabs {...args}>
       <Tabs.List>
         <Tabs.Tab value="value1">Tab 1</Tabs.Tab>
         <Tabs.Tab value="value2">Tab 2</Tabs.Tab>
         <Tabs.Tab value="value3">Tab 3</Tabs.Tab>
-      </Tabs.List>,
-      <Tabs.Panel value="value1">Innhold for Tab 1</Tabs.Panel>,
-      <Tabs.Panel value="value2">Innhold for Tab 2</Tabs.Panel>,
-      <Tabs.Panel value="value3">Innhold for Tab 3</Tabs.Panel>,
-    ],
-  },
-  render: (args) => <Tabs {...args} />,
+      </Tabs.List>
+      <Tabs.Panel value="value1">Innhold for Tab 1</Tabs.Panel>
+      <Tabs.Panel value="value2">Innhold for Tab 2</Tabs.Panel>
+      <Tabs.Panel value="value3">Innhold for Tab 3</Tabs.Panel>
+    </Tabs>
+  ),
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
     const tab1 = canvas.getByRole('tab', { name: /tab 1/i });

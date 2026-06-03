@@ -23,7 +23,7 @@ export const ColorDisplay = ({ colorPalette }: ColorDisplayProps) => {
           )}
           <div className={styles.semanticGrid}>
             {color.semantics.map((category) => (
-              <div className={styles.valueGrid}>
+              <div key={category.name} className={styles.valueGrid}>
                 <Paragraph className={styles.category}>
                   {category.name}
                 </Paragraph>

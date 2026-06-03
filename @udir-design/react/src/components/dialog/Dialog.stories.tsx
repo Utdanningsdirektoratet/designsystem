@@ -275,7 +275,10 @@ export const BackdropClosedbyAny = meta.story({
         <Dialog.Trigger variant="secondary">Åpne Dialog</Dialog.Trigger>
         <Dialog closedby="any" onClose={() => alert('Dialog ble lukket')}>
           <Heading>
-            Dialog med <code>closedby="any"</code>
+            Dialog med{' '}
+            <code>
+              closedby={'"'}any{'"'}
+            </code>
           </Heading>
           <Paragraph>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
@@ -607,7 +610,7 @@ export const Drawer = meta.story({
             <Dialog.Block>
               <Paragraph>
                 This is a {modal ? 'modal' : 'non-modal'} Dialog with{' '}
-                <code>placement="{placement}"</code>
+                <code>placement={`"${placement}"`}</code>
               </Paragraph>
             </Dialog.Block>
           </Dialog>

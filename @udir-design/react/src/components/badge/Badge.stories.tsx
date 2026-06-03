@@ -288,8 +288,8 @@ export const SystemAlerts = meta.story({
             flexDirection: 'column',
           }}
         >
-          {Array.from({ length: 2 }, (_) => (
-            <Varsel importance="danger" />
+          {Array.from({ length: 2 }, (_, index) => (
+            <Varsel key={index} importance="danger" />
           ))}
         </Details.Content>
       </Details>
@@ -304,8 +304,8 @@ export const SystemAlerts = meta.story({
             flexDirection: 'column',
           }}
         >
-          {Array.from({ length: 6 }, (_) => (
-            <Varsel importance="warning" />
+          {Array.from({ length: 6 }, (_, index) => (
+            <Varsel key={index} importance="warning" />
           ))}
         </Details.Content>
       </Details>
@@ -321,8 +321,8 @@ export const SystemAlerts = meta.story({
               flexDirection: 'column',
             }}
           >
-            {Array.from({ length: 11 }, (_) => (
-              <Varsel importance="info" />
+            {Array.from({ length: 11 }, (_, index) => (
+              <Varsel key={index} importance="info" />
             ))}
           </Details.Content>
         </Details.Content>

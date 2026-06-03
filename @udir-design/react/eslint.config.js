@@ -42,16 +42,11 @@ export default defineConfig(
     ignores: ['!.storybook'],
   },
   {
-    // Rules not previously enforced (from migration off @nx/eslint-plugin).
-    // Enable these incrementally in follow-up PRs.
+    // Intentionally disabled: prop-types is redundant with TypeScript,
+    // and autoFocus is a legitimate API in a component library.
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     rules: {
       'react/prop-types': 'off',
-      'react/no-unknown-property': 'off',
-      'react/display-name': 'off',
-      'react/no-unescaped-entities': 'off',
-      'react/no-children-prop': 'off',
-      'react/jsx-key': 'off',
       'jsx-a11y/no-autofocus': 'off',
     },
   },

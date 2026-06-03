@@ -97,13 +97,13 @@ export const ListOnly = meta.story({
 });
 
 export const BackOnly = meta.story({
-  args: {
-    children: [
+  render: (args) => (
+    <Breadcrumbs {...args}>
       <Breadcrumbs.Link href="#" aria-label="Tilbake til Eksamen">
         Eksamen
-      </Breadcrumbs.Link>,
-    ],
-  },
+      </Breadcrumbs.Link>
+    </Breadcrumbs>
+  ),
 });
 
 export const LongItems = meta.story({
