@@ -5,14 +5,25 @@ import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Table, type TableHeaderCellProps } from 'src/components/table';
 
 type Data = {
-  id: number;
-  navn: string;
-  sted: string;
-  orgnummer: string;
-  klarForGjennomforing: string;
+  id: string;
+  emne: string;
+  muntligkarakter: string;
+  eleverMuntlig: number;
+  skriftligkarakter: string;
+  eleverSkriftlig: number;
+  standpunktkarakter: string;
+  antallelever: number;
 };
 
 type SortDirection = Exclude<TableHeaderCellProps['sort'], 'none'> | undefined;
+type SortField =
+  | 'emne'
+  | 'muntligkarakter'
+  | 'eleverMuntlig'
+  | 'skriftligkarakter'
+  | 'eleverSkriftlig'
+  | 'standpunktkarakter'
+  | 'antallelever';
 
 const meta = preview.meta({
   tags: ['alpha', 'udir'],
@@ -46,11 +57,11 @@ export const Preview = meta.story({
   },
   parameters: { docs: advancedCodeDocs },
   render: (args) => {
-    const [sortField, setSortField] = useState<keyof Data | null>(null);
+    const [sortField, setSortField] = useState<SortField | null>(null);
     const [sortDirection, setSortDirection] =
       useState<SortDirection>(undefined);
 
-    const handleSort = (field: keyof Data) => {
+    const handleSort = (field: SortField) => {
       if (sortField === field && sortDirection === 'descending') {
         setSortField(null);
         setSortDirection(undefined);
@@ -64,13 +75,25 @@ export const Preview = meta.story({
       }
     };
 
+    const getSortValue = (row: Data, field: SortField): number | string => {
+      if (field === 'emne') return row.emne;
+      if (field === 'muntligkarakter') return Number(row.muntligkarakter);
+      if (field === 'skriftligkarakter') return Number(row.skriftligkarakter);
+      if (field === 'eleverMuntlig') return Number(row.eleverMuntlig);
+      if (field === 'eleverSkriftlig') return Number(row.eleverSkriftlig);
+      if (field === 'standpunktkarakter') return Number(row.standpunktkarakter);
+      if (field === 'antallelever') return Number(row.antallelever);
+      return 0;
+    };
+
     const sortedData = useMemo(() => {
-      return [...dummyData].sort((a, b) => {
+      return [...grades].sort((a, b) => {
         if (sortField === null) return 0;
-        if (a[sortField] < b[sortField])
-          return sortDirection === 'ascending' ? -1 : 1;
-        if (a[sortField] > b[sortField])
-          return sortDirection === 'ascending' ? 1 : -1;
+        const aValue = getSortValue(a, sortField);
+        const bValue = getSortValue(b, sortField);
+
+        if (aValue < bValue) return sortDirection === 'ascending' ? -1 : 1;
+        if (aValue > bValue) return sortDirection === 'ascending' ? 1 : -1;
         return 0;
       });
     }, [sortField, sortDirection]);
@@ -80,33 +103,59 @@ export const Preview = meta.story({
         <Table.Head>
           <Table.Row>
             <Table.HeaderCell
-              sort={sortField === 'navn' ? sortDirection : 'none'}
-              onClick={() => handleSort('navn')}
+              sort={sortField === 'emne' ? sortDirection : 'none'}
+              onClick={() => handleSort('emne')}
             >
-              Navn
+              Emne
             </Table.HeaderCell>
             <Table.HeaderCell
-              sort={sortField === 'sted' ? sortDirection : 'none'}
-              onClick={() => handleSort('sted')}
+              sort={sortField === 'muntligkarakter' ? sortDirection : 'none'}
+              onClick={() => handleSort('muntligkarakter')}
             >
-              Sted
+              Muntlig karakter
             </Table.HeaderCell>
             <Table.HeaderCell
-              sort={sortField === 'orgnummer' ? sortDirection : 'none'}
-              onClick={() => handleSort('orgnummer')}
+              sort={sortField === 'eleverMuntlig' ? sortDirection : 'none'}
+              onClick={() => handleSort('eleverMuntlig')}
             >
-              Orgnummer
+              Antall elever
             </Table.HeaderCell>
-            <Table.HeaderCell>Klar for gjennomføring</Table.HeaderCell>
+            <Table.HeaderCell
+              sort={sortField === 'skriftligkarakter' ? sortDirection : 'none'}
+              onClick={() => handleSort('skriftligkarakter')}
+            >
+              Skriftlig karakter
+            </Table.HeaderCell>
+            <Table.HeaderCell
+              sort={sortField === 'eleverSkriftlig' ? sortDirection : 'none'}
+              onClick={() => handleSort('eleverSkriftlig')}
+            >
+              Antall elever
+            </Table.HeaderCell>
+            <Table.HeaderCell
+              sort={sortField === 'standpunktkarakter' ? sortDirection : 'none'}
+              onClick={() => handleSort('standpunktkarakter')}
+            >
+              Standpunkt
+            </Table.HeaderCell>
+            <Table.HeaderCell
+              sort={sortField === 'antallelever' ? sortDirection : 'none'}
+              onClick={() => handleSort('antallelever')}
+            >
+              Antall elever
+            </Table.HeaderCell>
           </Table.Row>
         </Table.Head>
         <Table.Body>
           {sortedData.map((row) => (
             <Table.Row key={row.id}>
-              <Table.Cell>{row.navn}</Table.Cell>
-              <Table.Cell>{row.sted}</Table.Cell>
-              <Table.Cell>{row.orgnummer}</Table.Cell>
-              <Table.Cell>{row.klarForGjennomforing}</Table.Cell>
+              <Table.Cell>{row.emne}</Table.Cell>
+              <Table.Cell>{row.muntligkarakter}</Table.Cell>
+              <Table.Cell>{row.eleverMuntlig}</Table.Cell>
+              <Table.Cell>{row.skriftligkarakter}</Table.Cell>
+              <Table.Cell>{row.eleverSkriftlig}</Table.Cell>
+              <Table.Cell>{row.standpunktkarakter}</Table.Cell>
+              <Table.Cell>{row.antallelever}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
@@ -115,13 +164,15 @@ export const Preview = meta.story({
   },
 });
 
-const steder = ['Oslo', 'Bergen', 'Trondheim', 'Stavanger'];
-const fornavn = ['Rita', 'Kari', 'Ola', 'Kai'];
+const subject = ['Engelsk', 'Matematikk', 'Norsk Hovedmål', 'Norsk Sidemål'];
 
-const dummyData: Data[] = Array.from({ length: 5 }, (_, i) => ({
-  id: i + 1,
-  navn: `${fornavn[i % fornavn.length]} Nordmann`,
-  sted: steder[i % steder.length],
-  orgnummer: String(100000000 + i),
-  klarForGjennomforing: i % 3 === 0 ? 'Nei' : 'Ja',
+const grades: Data[] = subject.map((subject) => ({
+  id: subject,
+  emne: subject,
+  muntligkarakter: (Math.random() * (4.4 - 3.5) + 3.5).toFixed(2),
+  eleverMuntlig: Math.floor(Math.random() * (8000 - 5000 + 1)) + 5000,
+  skriftligkarakter: (Math.random() * (4 - 3) + 3).toFixed(2),
+  eleverSkriftlig: Math.floor(Math.random() * (10000 - 7000 + 1)) + 7000,
+  standpunktkarakter: (Math.random() * (4.2 - 3.2) + 3.2).toFixed(2),
+  antallelever: Math.floor(Math.random() * (15000 - 10000 + 1)) + 10000,
 }));

@@ -11,11 +11,13 @@ import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
 import './sidevisning.css';
 
 type Data = {
-  id: number;
-  navn: string;
-  sted: string;
-  orgnummer: string;
-  klarForGjennomforing: string;
+  id: string;
+  fylke: string;
+  emne: string;
+  muntligkarakter: string;
+  skriftligkarakter: string;
+  standpunktkarakter: string;
+  antallelever: number;
 };
 
 const meta = preview.meta({
@@ -64,7 +66,7 @@ export const Preview = meta.story({
     const isMobile = width < 48 * rem; // < 480px
     const isDesktop = width >= 64 * rem; // >= 1024px
 
-    const totalRows = dummyData.length;
+    const totalRows = grades.length;
     const totalPages = Math.ceil(totalRows / itemsPerPage);
     const { pages, nextButtonProps, prevButtonProps } = usePagination({
       currentPage: page,
@@ -76,7 +78,7 @@ export const Preview = meta.story({
     const rangeStart = totalRows === 0 ? 0 : (page - 1) * itemsPerPage + 1;
     const rangeEnd =
       totalRows === 0 ? 0 : Math.min(page * itemsPerPage, totalRows);
-    const paginatedData = dummyData.slice(
+    const paginatedData = grades.slice(
       (page - 1) * itemsPerPage,
       page * itemsPerPage,
     );
@@ -93,23 +95,29 @@ export const Preview = meta.story({
         <Table {...args}>
           <Table.Head>
             <Table.Row>
-              <Table.HeaderCell>Navn</Table.HeaderCell>
-              <Table.HeaderCell>Sted</Table.HeaderCell>
-              {!isMobile && <Table.HeaderCell>Orgnummer</Table.HeaderCell>}
-              {isDesktop && (
-                <Table.HeaderCell>Klar for gjennomføring</Table.HeaderCell>
-              )}
+              {isMobile && <Table.HeaderCell>Fylke, emne</Table.HeaderCell>}
+              {!isMobile && <Table.HeaderCell>Fylke</Table.HeaderCell>}
+              {!isMobile && <Table.HeaderCell>Emne</Table.HeaderCell>}
+              {!isMobile && <Table.HeaderCell>Antall elever</Table.HeaderCell>}
+              <Table.HeaderCell>Standpunkt</Table.HeaderCell>
+              {isDesktop && <Table.HeaderCell>Muntlig </Table.HeaderCell>}
+              {isDesktop && <Table.HeaderCell>Skriftlig </Table.HeaderCell>}
             </Table.Row>
           </Table.Head>
           <Table.Body>
             {paginatedData.map((row) => (
               <Table.Row key={row.id}>
-                <Table.Cell>{row.navn}</Table.Cell>
-                <Table.Cell>{row.sted}</Table.Cell>
-                {!isMobile && <Table.Cell>{row.orgnummer}</Table.Cell>}
-                {isDesktop && (
-                  <Table.Cell>{row.klarForGjennomforing}</Table.Cell>
+                {isMobile && (
+                  <Table.Cell>
+                    {row.fylke}, <br /> {row.emne}
+                  </Table.Cell>
                 )}
+                {!isMobile && <Table.Cell>{row.fylke}</Table.Cell>}
+                {!isMobile && <Table.Cell>{row.emne}</Table.Cell>}
+                {!isMobile && <Table.Cell>{row.antallelever}</Table.Cell>}
+                <Table.Cell>{row.standpunktkarakter}</Table.Cell>
+                {isDesktop && <Table.Cell>{row.muntligkarakter}</Table.Cell>}
+                {isDesktop && <Table.Cell>{row.skriftligkarakter}</Table.Cell>}
               </Table.Row>
             ))}
           </Table.Body>
@@ -167,13 +175,30 @@ export const Preview = meta.story({
   },
 });
 
-const steder = ['Oslo', 'Bergen', 'Trondheim', 'Stavanger'];
-const fornavn = ['Rita', 'Kari', 'Ola', 'Kai'];
+const emner = ['Engelsk', 'Matematikk', 'Hovedmål', 'Sidemål'];
+const fylker = [
+  'Agder',
+  'Akershus',
+  'Buskerud',
+  'Finnmark',
+  'Innlandet',
+  'Nordland',
+  'Oslo',
+  'Rogaland',
+  'Telemark',
+  'Troms',
+  'Vestland',
+  'Viken',
+];
 
-const dummyData: Data[] = Array.from({ length: 200 }, (_, i) => ({
-  id: i + 1,
-  navn: `${fornavn[i % fornavn.length]} Nordmann`,
-  sted: steder[i % steder.length],
-  orgnummer: String(100000000 + i),
-  klarForGjennomforing: i % 3 === 0 ? 'Nei' : 'Ja',
-}));
+const grades: Data[] = fylker.flatMap((fylke) =>
+  emner.map((emne) => ({
+    id: `${fylke}-${emne}`,
+    emne,
+    fylke,
+    muntligkarakter: (Math.random() * (4.2 - 3) + 3).toFixed(2),
+    skriftligkarakter: (Math.random() * (4.2 - 3) + 3).toFixed(2),
+    standpunktkarakter: (Math.random() * (4.2 - 3) + 3).toFixed(2),
+    antallelever: Math.floor(Math.random() * (15000 - 5000 + 1)) + 5000,
+  })),
+);

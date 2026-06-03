@@ -10,93 +10,132 @@ exports[`Preview 1`] = `
       <tr>
         <th aria-sort="none">
           <button type="button">
-            Navn
+            Emne
           </button>
         </th>
         <th aria-sort="none">
           <button type="button">
-            Sted
+            Muntlig karakter
           </button>
         </th>
         <th aria-sort="none">
           <button type="button">
-            Orgnummer
+            Antall elever
           </button>
         </th>
-        <th>
-          Klar for gjennomføring
+        <th aria-sort="none">
+          <button type="button">
+            Skriftlig karakter
+          </button>
+        </th>
+        <th aria-sort="none">
+          <button type="button">
+            Antall elever
+          </button>
+        </th>
+        <th aria-sort="none">
+          <button type="button">
+            Standpunkt
+          </button>
+        </th>
+        <th aria-sort="none">
+          <button type="button">
+            Antall elever
+          </button>
         </th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>
-          Rita Nordmann
+          Engelsk
         </td>
         <td>
-          Oslo
+          4.32
         </td>
         <td>
-          100000000
+          5760
         </td>
         <td>
-          Nei
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Kari Nordmann
+          3.05
         </td>
         <td>
-          Bergen
+          8538
         </td>
         <td>
-          100000001
+          3.64
         </td>
         <td>
-          Ja
+          11669
         </td>
       </tr>
       <tr>
         <td>
-          Ola Nordmann
+          Matematikk
         </td>
         <td>
-          Trondheim
+          4.37
         </td>
         <td>
-          100000002
+          7385
         </td>
         <td>
-          Ja
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Kai Nordmann
+          3.49
         </td>
         <td>
-          Stavanger
+          8559
         </td>
         <td>
-          100000003
+          3.82
         </td>
         <td>
-          Nei
+          13907
         </td>
       </tr>
       <tr>
         <td>
-          Rita Nordmann
+          Norsk Hovedmål
         </td>
         <td>
-          Oslo
+          3.70
         </td>
         <td>
-          100000004
+          5573
         </td>
         <td>
-          Ja
+          3.02
+        </td>
+        <td>
+          8462
+        </td>
+        <td>
+          3.25
+        </td>
+        <td>
+          10461
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Norsk Sidemål
+        </td>
+        <td>
+          4.12
+        </td>
+        <td>
+          6852
+        </td>
+        <td>
+          3.12
+        </td>
+        <td>
+          8135
+        </td>
+        <td>
+          3.33
+        </td>
+        <td>
+          12606
         </td>
       </tr>
     </tbody>

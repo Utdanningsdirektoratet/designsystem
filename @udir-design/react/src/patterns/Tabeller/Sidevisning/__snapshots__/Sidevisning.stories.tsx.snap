@@ -10,158 +10,224 @@ exports[`Preview 1`] = `
       <thead>
         <tr>
           <th>
-            Navn
+            Fylke
           </th>
           <th>
-            Sted
+            Emne
           </th>
           <th>
-            Orgnummer
+            Antall elever
           </th>
           <th>
-            Klar for gjennomføring
+            Standpunkt
+          </th>
+          <th>
+            Muntlig
+          </th>
+          <th>
+            Skriftlig
           </th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>
-            Rita Nordmann
+            Agder
           </td>
           <td>
-            Oslo
+            Engelsk
           </td>
           <td>
-            100000000
+            14216
           </td>
           <td>
-            Nei
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Kari Nordmann
+            3.32
           </td>
           <td>
-            Bergen
+            3.09
           </td>
           <td>
-            100000001
-          </td>
-          <td>
-            Ja
+            3.85
           </td>
         </tr>
         <tr>
           <td>
-            Ola Nordmann
+            Agder
           </td>
           <td>
-            Trondheim
+            Matematikk
           </td>
           <td>
-            100000002
+            14394
           </td>
           <td>
-            Ja
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Kai Nordmann
+            3.57
           </td>
           <td>
-            Stavanger
+            4.05
           </td>
           <td>
-            100000003
-          </td>
-          <td>
-            Nei
+            3.02
           </td>
         </tr>
         <tr>
           <td>
-            Rita Nordmann
+            Agder
           </td>
           <td>
-            Oslo
+            Hovedmål
           </td>
           <td>
-            100000004
+            10166
           </td>
           <td>
-            Ja
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Kari Nordmann
+            3.16
           </td>
           <td>
-            Bergen
+            3.33
           </td>
           <td>
-            100000005
-          </td>
-          <td>
-            Ja
+            3.49
           </td>
         </tr>
         <tr>
           <td>
-            Ola Nordmann
+            Agder
           </td>
           <td>
-            Trondheim
+            Sidemål
           </td>
           <td>
-            100000006
+            9643
           </td>
           <td>
-            Nei
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Kai Nordmann
+            3.44
           </td>
           <td>
-            Stavanger
+            3.12
           </td>
           <td>
-            100000007
-          </td>
-          <td>
-            Ja
+            3.67
           </td>
         </tr>
         <tr>
           <td>
-            Rita Nordmann
+            Akershus
           </td>
           <td>
-            Oslo
+            Engelsk
           </td>
           <td>
-            100000008
+            14664
           </td>
           <td>
-            Ja
+            3.63
+          </td>
+          <td>
+            3.44
+          </td>
+          <td>
+            3.32
           </td>
         </tr>
         <tr>
           <td>
-            Kari Nordmann
+            Akershus
           </td>
           <td>
-            Bergen
+            Matematikk
           </td>
           <td>
-            100000009
+            11904
           </td>
           <td>
-            Nei
+            3.52
+          </td>
+          <td>
+            3.24
+          </td>
+          <td>
+            3.22
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Akershus
+          </td>
+          <td>
+            Hovedmål
+          </td>
+          <td>
+            11067
+          </td>
+          <td>
+            4.00
+          </td>
+          <td>
+            3.51
+          </td>
+          <td>
+            3.48
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Akershus
+          </td>
+          <td>
+            Sidemål
+          </td>
+          <td>
+            10557
+          </td>
+          <td>
+            4.04
+          </td>
+          <td>
+            4.05
+          </td>
+          <td>
+            3.62
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Buskerud
+          </td>
+          <td>
+            Engelsk
+          </td>
+          <td>
+            5111
+          </td>
+          <td>
+            3.72
+          </td>
+          <td>
+            3.18
+          </td>
+          <td>
+            4.09
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Buskerud
+          </td>
+          <td>
+            Matematikk
+          </td>
+          <td>
+            5980
+          </td>
+          <td>
+            3.88
+          </td>
+          <td>
+            3.66
+          </td>
+          <td>
+            3.15
           </td>
         </tr>
       </tbody>
@@ -220,14 +286,12 @@ exports[`Preview 1`] = `
             </button>
           </li>
           <li>
-          </li>
-          <li>
             <button
               data-variant="tertiary"
               type="button"
-              aria-label="Side 20"
+              aria-label="Side 5"
             >
-              20
+              5
             </button>
           </li>
           <li>
@@ -242,7 +306,7 @@ exports[`Preview 1`] = `
       </ds-pagination>
       <div>
         <span>
-          Rad 1-10 av 200
+          Rad 1-10 av 48
         </span>
         <ds-field>
           <label
