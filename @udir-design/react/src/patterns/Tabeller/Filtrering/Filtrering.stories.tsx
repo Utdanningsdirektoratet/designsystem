@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
-import { FunnelIcon } from '@udir-design/icons';
+import { FilterIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from 'src/components/button/Button';
+import { Checkbox } from 'src/components/checkbox/Checkbox';
 import { Dialog } from 'src/components/dialog/Dialog';
 import { Field } from 'src/components/field/Field';
 import { Fieldset } from 'src/components/fieldset/Fieldset';
 import { Pagination } from 'src/components/pagination/Pagination';
-import { Radio } from 'src/components/radio/Radio';
 import { Search } from 'src/components/search/Search';
 import { Select } from 'src/components/select/Select';
 import {
@@ -19,8 +19,8 @@ import { Table } from 'src/components/table';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Label } from 'src/components/typography/label/Label';
 import { Prose } from 'src/components/typography/prose/Prose';
+import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
 import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
-import { useRadioGroup } from 'src/utilities/hooks/useRadioGroup/useRadioGroup';
 import './filtering.css';
 
 const meta = preview.meta({
@@ -62,18 +62,16 @@ export const Preview = meta.story({
     const isMobile = width < 48 * rem; // < 480px
     const isDesktop = width >= 64 * rem; // >= 1024px
 
-    const [city, setCity] = useState<string[]>([]);
+    const [emne, setEmne] = useState<string[]>([]);
     const [fylke, setFylke] = useState<string[]>([]);
-    const [orgnummer, setOrgnummer] = useState<string[]>([]);
 
     useEffect(() => {
       setCurrentPage(1);
-    }, [city, fylke, orgnummer, searchQuery]);
+    }, [emne, fylke, searchQuery]);
 
-    const filteredData = [...dummyData]
-      .filter((d) => city.length === 0 || city.includes(d.sted))
+    const filteredData = [...grades]
+      .filter((d) => emne.length === 0 || emne.includes(d.emne))
       .filter((d) => fylke.length === 0 || fylke.includes(d.fylke))
-      .filter((d) => orgnummer.length === 0 || orgnummer.includes(d.orgnummer))
       .filter((d) => {
         if (!searchQuery) return true;
         const q = searchQuery.toLowerCase();
@@ -114,20 +112,20 @@ export const Preview = meta.story({
             </Field>
             <div className="example-suggestion-section">
               <Field className="example-suggestion-field">
-                <Label>Velg sted</Label>
+                <Label>Velg emne(r)</Label>
                 <Suggestion
                   {...(args as SuggestionMultipleProps)}
                   multiple
-                  selected={city}
+                  selected={emne}
                   onSelectedChange={(items) =>
-                    setCity(items.map((item) => item.value))
+                    setEmne(items.map((item) => item.value))
                   }
                 >
                   <Suggestion.Input />
                   <Suggestion.Clear />
                   <Suggestion.List>
                     <Suggestion.Empty>Tomt</Suggestion.Empty>
-                    {uniqueCities.map((c) => (
+                    {uniqueEmner.map((c) => (
                       <Suggestion.Option key={c} label={c} value={c}>
                         {c}
                       </Suggestion.Option>
@@ -136,7 +134,7 @@ export const Preview = meta.story({
                 </Suggestion>
               </Field>
               <Field className="example-suggestion-field">
-                <Label>Velg fylke</Label>
+                <Label>Velg fylke(r)</Label>
                 <Suggestion
                   {...(args as SuggestionMultipleProps)}
                   multiple
@@ -149,31 +147,13 @@ export const Preview = meta.story({
                   <Suggestion.Clear />
                   <Suggestion.List>
                     <Suggestion.Empty>Tomt</Suggestion.Empty>
-                    {uniqueFylker.map((f) => (
-                      <Suggestion.Option key={f} label={f} value={f}>
-                        {f}
-                      </Suggestion.Option>
-                    ))}
-                  </Suggestion.List>
-                </Suggestion>
-              </Field>
-              <Field className="example-suggestion-field">
-                <Label>Velg orgnummer</Label>
-                <Suggestion
-                  {...(args as SuggestionMultipleProps)}
-                  multiple
-                  selected={orgnummer}
-                  onSelectedChange={(items) =>
-                    setOrgnummer(items.map((item) => item.value))
-                  }
-                >
-                  <Suggestion.Input />
-                  <Suggestion.Clear />
-                  <Suggestion.List>
-                    <Suggestion.Empty>Tomt</Suggestion.Empty>
-                    {uniqueOrgnummers.map((org) => (
-                      <Suggestion.Option key={org} label={org} value={org}>
-                        {org}
+                    {uniqueFylker.map((fylke) => (
+                      <Suggestion.Option
+                        key={fylke}
+                        label={fylke}
+                        value={fylke}
+                      >
+                        {fylke}
                       </Suggestion.Option>
                     ))}
                   </Suggestion.List>
@@ -185,25 +165,29 @@ export const Preview = meta.story({
         <Table {...args}>
           <Table.Head>
             <Table.Row>
-              <Table.HeaderCell>Navn</Table.HeaderCell>
-              <Table.HeaderCell>Sted</Table.HeaderCell>
+              {isMobile && <Table.HeaderCell>Fylke, emne</Table.HeaderCell>}
               {!isMobile && <Table.HeaderCell>Fylke</Table.HeaderCell>}
-              {!isMobile && <Table.HeaderCell>Orgnummer</Table.HeaderCell>}
-              {isDesktop && (
-                <Table.HeaderCell>Klar for gjennomføring</Table.HeaderCell>
-              )}
+              {!isMobile && <Table.HeaderCell>Emne</Table.HeaderCell>}
+              {isDesktop && <Table.HeaderCell>Antall elever</Table.HeaderCell>}
+              <Table.HeaderCell>Standpunkt</Table.HeaderCell>
+              {!isMobile && <Table.HeaderCell>Muntlig </Table.HeaderCell>}
+              {!isMobile && <Table.HeaderCell>Skriftlig </Table.HeaderCell>}
             </Table.Row>
           </Table.Head>
           <Table.Body>
             {paginatedData.map((row) => (
               <Table.Row key={row.id}>
-                <Table.Cell>{row.navn}</Table.Cell>
-                <Table.Cell>{row.sted}</Table.Cell>
-                {!isMobile && <Table.Cell>{row.fylke}</Table.Cell>}
-                {!isMobile && <Table.Cell>{row.orgnummer}</Table.Cell>}
-                {isDesktop && (
-                  <Table.Cell>{row.klarForGjennomforing}</Table.Cell>
+                {isMobile && (
+                  <Table.Cell>
+                    {row.fylke}, <br /> {row.emne}
+                  </Table.Cell>
                 )}
+                {!isMobile && <Table.Cell>{row.fylke}</Table.Cell>}
+                {!isMobile && <Table.Cell>{row.emne}</Table.Cell>}
+                {isDesktop && <Table.Cell>{row.antallelever}</Table.Cell>}
+                <Table.Cell>{row.standpunktkarakter}</Table.Cell>
+                {!isMobile && <Table.Cell>{row.muntligkarakter}</Table.Cell>}
+                {!isMobile && <Table.Cell>{row.skriftligkarakter}</Table.Cell>}
               </Table.Row>
             ))}
           </Table.Body>
@@ -279,6 +263,21 @@ export const WithDialog = meta.story({
     const [page, setCurrentPage] = useState(1);
     const [width, setWidth] = useState(window.innerWidth);
     const [searchQuery, setSearchQuery] = useState('');
+    const [emne, setEmne] = useState<string[]>([]);
+    const [fylke, setFylke] = useState<string[]>([]);
+    const [eksamen, setEksamen] = useState<string[]>([
+      'skriftlig',
+      'muntlig',
+      'standpunkt',
+    ]);
+    const [draftEmne, setDraftEmne] = useState<string[]>([]);
+    const [draftFylke, setDraftFylke] = useState<string[]>([]);
+    const [draftEksamen, setDraftEksamen] = useState<string[]>([
+      'skriftlig',
+      'muntlig',
+      'standpunkt',
+    ]);
+    const dialogRef = useRef<HTMLDialogElement>(null);
 
     useEffect(() => {
       const onResize = () => setWidth(window.innerWidth);
@@ -290,35 +289,19 @@ export const WithDialog = meta.story({
     const isMobile = width < 48 * rem; // < 480px
     const isDesktop = width >= 64 * rem; // >= 1024px
 
-    const [city, setCity] = useState<string[]>([]);
-    const [fylke, setFylke] = useState<string[]>([]);
-    const [orgnummer, setOrgnummer] = useState<string[]>([]);
-    const [klarFilter, setKlarFilter] = useState<'alle' | 'ja' | 'nei'>('alle');
-    const [draftCity, setDraftCity] = useState<string[]>([]);
-    const [draftFylke, setDraftFylke] = useState<string[]>([]);
-    const [draftOrgnummer, setDraftOrgnummer] = useState<string[]>([]);
-    const [draftKlar, setDraftKlar] = useState<'alle' | 'ja' | 'nei'>('alle');
-    const dialogRef = useRef<HTMLDialogElement>(null);
-
     useEffect(() => {
       setCurrentPage(1);
-    }, [city, fylke, orgnummer, klarFilter, searchQuery]);
+    }, [emne, fylke, eksamen, searchQuery]);
 
-    const { getRadioProps } = useRadioGroup({
-      name: 'radio-group',
-      value: draftKlar,
-      onChange: (value) => setDraftKlar(value as 'alle' | 'ja' | 'nei'),
+    const { getCheckboxProps } = useCheckboxGroup({
+      name: 'checkbox-group',
+      value: draftEksamen,
+      onChange: (value) => setDraftEksamen(value),
     });
 
-    const filteredData = [...dummyData]
-      .filter((d) => city.length === 0 || city.includes(d.sted))
+    const filteredData = [...grades]
+      .filter((d) => emne.length === 0 || emne.includes(d.emne))
       .filter((d) => fylke.length === 0 || fylke.includes(d.fylke))
-      .filter((d) => orgnummer.length === 0 || orgnummer.includes(d.orgnummer))
-      .filter(
-        (d) =>
-          klarFilter === 'alle' ||
-          d.klarForGjennomforing.toLowerCase() === klarFilter,
-      )
       .filter((d) => {
         if (!searchQuery) return true;
         const q = searchQuery.toLowerCase();
@@ -359,75 +342,61 @@ export const WithDialog = meta.story({
             </Field>
             <Dialog.TriggerContext>
               <Dialog.Trigger variant="secondary">
-                <FunnelIcon aria-label="En tittel for skjermleser" />
-                Filtre
+                <FilterIcon aria-label="Filter" />
+                Filter
               </Dialog.Trigger>
               <Dialog
                 ref={dialogRef}
                 closedby="any"
                 onToggle={(e) => {
                   if ((e.target as HTMLDialogElement).open) {
-                    setDraftCity(city);
+                    setDraftEmne(emne);
                     setDraftFylke(fylke);
-                    setDraftOrgnummer(orgnummer);
-                    setDraftKlar(klarFilter);
+                    setDraftEksamen(eksamen);
                   }
                 }}
               >
-                <Heading>Filtre</Heading>
+                <Heading>Filter</Heading>
                 <div className="example-dialog-filters">
                   <Prose>
                     <Fieldset>
-                      <Fieldset.Legend>Klar for gjennomføring</Fieldset.Legend>
-                      <Radio label="Ja" {...getRadioProps('ja')} />
-                      <Radio label="Nei" {...getRadioProps('nei')} />
-                      <Radio label="Alle" {...getRadioProps('alle')} />
+                      <Fieldset.Legend>Karaktertype</Fieldset.Legend>
+                      <Checkbox
+                        label="Skriftlig"
+                        {...getCheckboxProps('skriftlig')}
+                      />
+                      <Checkbox
+                        label="Muntlig"
+                        {...getCheckboxProps('muntlig')}
+                      />
+                      <Checkbox
+                        label="Standpunkt"
+                        {...getCheckboxProps('standpunkt')}
+                      />
                     </Fieldset>
-                    <Field className="example-suggestion-field">
-                      <Label>Velg orgnummer</Label>
-                      <Suggestion
-                        {...(args as SuggestionMultipleProps)}
-                        multiple
-                        selected={draftOrgnummer}
-                        onSelectedChange={(items) =>
-                          setDraftOrgnummer(items.map((item) => item.value))
-                        }
-                      >
-                        <Suggestion.Input />
-                        <Suggestion.Clear />
-                        <Suggestion.List>
-                          <Suggestion.Empty>Tomt</Suggestion.Empty>
-                          {uniqueOrgnummers.map((org) => (
-                            <Suggestion.Option
-                              key={org}
-                              label={org}
-                              value={org}
-                            >
-                              {org}
-                            </Suggestion.Option>
-                          ))}
-                        </Suggestion.List>
-                      </Suggestion>
-                    </Field>
                   </Prose>
                   <Prose>
                     <Field className="example-suggestion-field">
-                      <Label>Velg sted</Label>
+                      <Label>Velg emne</Label>
                       <Suggestion
                         {...(args as SuggestionMultipleProps)}
                         multiple
-                        selected={draftCity}
+                        selected={draftEmne}
                         onSelectedChange={(items) =>
-                          setDraftCity(items.map((item) => item.value))
+                          setDraftEmne(items.map((item) => item.value))
                         }
                       >
                         <Suggestion.Input />
                         <Suggestion.Clear />
                         <Suggestion.List>
                           <Suggestion.Empty>Tomt</Suggestion.Empty>
-                          {uniqueCities.map((c) => (
-                            <Suggestion.Option key={c} label={c} value={c}>
-                              {c}
+                          {uniqueEmner.map((emne) => (
+                            <Suggestion.Option
+                              key={emne}
+                              label={emne}
+                              value={emne}
+                            >
+                              {emne}
                             </Suggestion.Option>
                           ))}
                         </Suggestion.List>
@@ -460,10 +429,9 @@ export const WithDialog = meta.story({
                 <Field className="example-footer">
                   <Button
                     onClick={() => {
-                      setCity(draftCity);
+                      setEmne(draftEmne);
                       setFylke(draftFylke);
-                      setOrgnummer(draftOrgnummer);
-                      setKlarFilter(draftKlar);
+                      setEksamen(draftEksamen);
                       dialogRef.current?.close();
                     }}
                   >
@@ -472,10 +440,9 @@ export const WithDialog = meta.story({
                   <Button
                     variant="secondary"
                     onClick={() => {
-                      setDraftCity(city);
+                      setDraftEmne(emne);
                       setDraftFylke(fylke);
-                      setDraftOrgnummer(orgnummer);
-                      setDraftKlar(klarFilter);
+                      setDraftEksamen(eksamen);
                       dialogRef.current?.close();
                     }}
                   >
@@ -489,25 +456,45 @@ export const WithDialog = meta.story({
         <Table {...args}>
           <Table.Head>
             <Table.Row>
-              <Table.HeaderCell>Navn</Table.HeaderCell>
-              <Table.HeaderCell>Sted</Table.HeaderCell>
+              {isMobile && <Table.HeaderCell>Fylke, emne</Table.HeaderCell>}
               {!isMobile && <Table.HeaderCell>Fylke</Table.HeaderCell>}
-              {!isMobile && <Table.HeaderCell>Orgnummer</Table.HeaderCell>}
-              {isDesktop && (
-                <Table.HeaderCell>Klar for gjennomføring</Table.HeaderCell>
+              {!isMobile && <Table.HeaderCell>Emne</Table.HeaderCell>}
+              {isDesktop && <Table.HeaderCell>Antall elever</Table.HeaderCell>}
+              {eksamen.includes('standpunkt') && (
+                <Table.HeaderCell>Standpunkt</Table.HeaderCell>
               )}
+              {eksamen.includes('muntlig') &&
+                (!isMobile || !eksamen.includes('standpunkt')) && (
+                  <Table.HeaderCell>Muntlig</Table.HeaderCell>
+                )}
+              {eksamen.includes('skriftlig') &&
+                (!isMobile || !eksamen.includes('standpunkt')) && (
+                  <Table.HeaderCell>Skriftlig</Table.HeaderCell>
+                )}
             </Table.Row>
           </Table.Head>
           <Table.Body>
             {paginatedData.map((row) => (
               <Table.Row key={row.id}>
-                <Table.Cell>{row.navn}</Table.Cell>
-                <Table.Cell>{row.sted}</Table.Cell>
-                {!isMobile && <Table.Cell>{row.fylke}</Table.Cell>}
-                {!isMobile && <Table.Cell>{row.orgnummer}</Table.Cell>}
-                {isDesktop && (
-                  <Table.Cell>{row.klarForGjennomforing}</Table.Cell>
+                {isMobile && (
+                  <Table.Cell>
+                    {row.fylke}, <br /> {row.emne}
+                  </Table.Cell>
                 )}
+                {!isMobile && <Table.Cell>{row.fylke}</Table.Cell>}
+                {!isMobile && <Table.Cell>{row.emne}</Table.Cell>}
+                {isDesktop && <Table.Cell>{row.antallelever}</Table.Cell>}
+                {eksamen.includes('standpunkt') && (
+                  <Table.Cell>{row.standpunktkarakter}</Table.Cell>
+                )}
+                {eksamen.includes('muntlig') &&
+                  (!isMobile || !eksamen.includes('standpunkt')) && (
+                    <Table.Cell>{row.muntligkarakter}</Table.Cell>
+                  )}
+                {eksamen.includes('skriftlig') &&
+                  (!isMobile || !eksamen.includes('standpunkt')) && (
+                    <Table.Cell>{row.skriftligkarakter}</Table.Cell>
+                  )}
               </Table.Row>
             ))}
           </Table.Body>
@@ -569,27 +556,33 @@ export const WithDialog = meta.story({
   },
 });
 
-const steder = [
-  { sted: 'Oslo', fylke: 'Oslo' },
-  { sted: 'Bergen', fylke: 'Vestland' },
-  { sted: 'Trondheim', fylke: 'Trøndelag' },
-  { sted: 'Stavanger', fylke: 'Rogaland' },
+const emner = ['Engelsk', 'Matematikk', 'Hovedmål', 'Sidemål'];
+const fylker = [
+  'Agder',
+  'Akershus',
+  'Buskerud',
+  'Finnmark',
+  'Innlandet',
+  'Nordland',
+  'Oslo',
+  'Rogaland',
+  'Telemark',
+  'Troms',
+  'Vestland',
+  'Viken',
 ];
 
-const fornavn = ['Rita', 'Kari', 'Ola', 'Kai'];
-
-const dummyData = Array.from({ length: 200 }, (_, i) => {
-  const { sted, fylke } = steder[i % steder.length];
-  return {
-    id: i + 1,
-    navn: `${fornavn[i % fornavn.length]} Nordmann`,
-    sted,
+const grades: Data[] = fylker.flatMap((fylke) =>
+  emner.map((emne) => ({
+    id: `${fylke}-${emne}`,
+    emne,
     fylke,
-    orgnummer: String(100000000 + i),
-    klarForGjennomforing: i % 3 === 0 ? 'Nei' : 'Ja',
-  };
-});
+    muntligkarakter: (Math.random() * (4.2 - 3) + 3).toFixed(2),
+    skriftligkarakter: (Math.random() * (4.2 - 3) + 3).toFixed(2),
+    standpunktkarakter: (Math.random() * (4.2 - 3) + 3).toFixed(2),
+    antallelever: Math.floor(Math.random() * (15000 - 5000 + 1)) + 5000,
+  })),
+);
 
-const uniqueCities = [...new Set(dummyData.map((d) => d.sted))];
-const uniqueFylker = [...new Set(dummyData.map((d) => d.fylke))];
-const uniqueOrgnummers = [...new Set(dummyData.map((d) => d.orgnummer))];
+const uniqueFylker = [...new Set(grades.map((d) => d.fylke))];
+const uniqueEmner = [...new Set(grades.map((d) => d.emne))];
