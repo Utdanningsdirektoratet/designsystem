@@ -23,12 +23,16 @@ point.
 PR #796 (`build/remove-nx-azure-cache`) removed the package and replaced it with **Nx Cloud**
 (free hobby tier), which resolved the CVE and the cache problem more completely than Phase 1
 would have — Nx Cloud caches cross-machine including developer machines, without the
-machine-ID restriction that makes `actions/cache` ineffective for Nx 22+. **This removes the
-urgency from the migration.** The security risk is gone and CI builds are fast again. Phase 1
-loses most of its compelling justification; Phase 2 remains independently motivated but can be
-done when there is capacity and appetite. The natural trigger for revisiting is hitting Nx
-Cloud's hobby tier limits, at which point Turborepo + Vercel Remote Cache (also free) is the
-readiest alternative.
+machine-ID restriction that makes `actions/cache` ineffective for Nx 22+.
+
+**Update (June 2026):** Usage data from the first two days of June projects **838 000 credits
+per month** against a free tier of 50 000. Overage pricing is $5.50 per 10 000 credits,
+giving an estimated monthly cost of **~$433/month (~$5 200/year)**. This is the trigger
+identified above — Nx Cloud's hobby tier limits have been exceeded by ~17×. **Phase 1 is now
+justified on cost alone.** A 2–3 day migration to Turborepo + GitHub Actions Cache (Option A)
+or Vercel Remote Cache (Option B) eliminates this cost entirely, paying for itself within the
+first week of engineering time. Phase 2 remains independently motivated and can follow when
+there is capacity.
 
 ### Key files to understand before touching anything
 
@@ -65,9 +69,9 @@ independently of the other.
 
 - Nx is kept installed as a release-only dependency, so the release path is
   untouched.
-- Currently has weak justification: Nx Cloud already provides caching, and
-  replacing Nx's config model with Turborepo's is a lateral move for a repo of
-  this size.
+- **Strongly justified:** Nx Cloud projects ~838 000 credits/month against a
+  50 000 free tier, costing ~$433/month. Turborepo + GitHub Actions Cache or
+  Vercel Remote Cache is free and eliminates this cost entirely.
 
 **Phase 2 — Replace `nx/release` APIs with `semantic-release`** (estimated 1–2 weeks)
 
@@ -351,12 +355,14 @@ Packages requiring this:
 ### 1.5 Remote caching
 
 `@nx/azure-cache` was removed and replaced with **Nx Cloud** (free hobby tier) in PR #796.
-Caching across CI runs and developer machines is already working.
+Caching across CI runs and developer machines is already working — but at a projected cost of
+~$433/month (838 000 credits/month against a 50 000 free tier at $5.50/10 000 overage).
 
 **Important:** Nx Cloud caches tasks dispatched by Nx's own task runner. Once Phase 1 is
 complete, tasks run through Turborepo instead, so Nx Cloud will no longer cache them. This
 step must be implemented alongside Phase 1 — do not merge Phase 1 without also choosing and
-configuring one of the options below.
+configuring one of the options below. All options below are **free**, eliminating the Nx Cloud
+overage cost entirely.
 
 The technical background below explains why `actions/cache` (Option A) works for Turborepo
 even though it did not work as a direct replacement for `@nx/azure-cache` under Nx 22+.
