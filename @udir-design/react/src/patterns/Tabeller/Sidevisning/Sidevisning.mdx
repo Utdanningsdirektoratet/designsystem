@@ -6,7 +6,13 @@ import * as SidevisningStories from './Sidevisning.stories';
 <Meta of={SidevisningStories} />
 
 # Sidevisning
+Når en tabell inneholder mange rader, bør den ha kontrollert sidevisning. Det gjør det enklere for brukeren å navigere i innholdet uten å bli overveldet av informasjon.
 
+Vi anbefaler å unngå tabeller med uendelig scroll. Slike tabeller kan gjøre det vanskelig eller umulig å nå innhold som ligger under tabellen, og gir brukeren dårligere kontroll over navigasjonen.
+
+Dette mønsteret tar ikke stilling til om sidevisning håndteres i frontend eller backend. Det avhenger av datasettets størrelse og teknisk kontekst, og må vurderes av hvert enkelt team.
+
+Sidevisningen skal gjøre det mulig for brukeren å navigere frem og tilbake mellom sider, velge hvor mange rader som vises om gangen, se hvilke rader som vises nå, og se totalt antall rader i tabellen.
 Når en tabell inneholder mange rader, vil det ofte være en fordel å ha en form for kontrollert sidevisning. Dette gjør at brukeren kan navigere i innholdet uten å bli overveldet av informasjon. Vi anbefaler å unngå infinity tables - altså tabeller med uendelig scroll - fordi disse gjør det umulig å nå innhold som befinner seg under tabellen, og de gir brukeren dårligere kontroll over navigasjonen.
 
 Dette mønsteret tar ikke stilling til om sidevisning håndteres i frontend eller backend. Det avhenger av datasettets størrelse og teknisk kontekst, og er opp til hvert team å vurdere.
@@ -19,7 +25,7 @@ Sidevisningen skal gjøre det mulig for brukeren å navigere frem og tilbake mel
 
 ## Velge antall rader per side
 
-I store tabeller bør brukeren kunne velge hvor mange rader de vil se om gangen. Ulike arbeidsoppgaver gir ulike behov, og det kan oppleves overveldende å måtte scrolle gjennom mange rader uten kontroll. Dette løses med en Select-komponent med en Label med teksten «Rader per side».
+I store tabeller bør brukeren kunne velge hvor mange rader som vises om gangen. Ulike oppgaver gir ulike behov, og det kan oppleves overveldende å måtte bla gjennom mange rader uten kontroll over visningen. Dette kan løses med en [`Select`](/docs/components-select--docs) for å velge antall rader per side.
 
 Hvilke intervaller som tilbys, bør tilpasses datasettets størrelse. Som utgangspunkt bør valgene følge jevne intervaller - for eksempel 5, 10, 15 eller 10, 20, 30 eller 10, 25, 50. Når brukeren velger et nytt antall rader, oppdateres tabellen umiddelbart og navigasjonen tilpasses de nye sidetallene.
 
@@ -31,7 +37,7 @@ For å gi brukeren oversikt over hvilke rader som er synlige og det totale antal
 
 ## Sidenavigasjon
 
-For å navigere mellom sider i tabellen brukes komponenten Pagination.
+For å navigere mellom sider i tabellen brukes [`Pagination`](/docs/components-select--docs).
 
 ## Plassering
 
