@@ -1,3 +1,4 @@
+#!/usr/bin/env -S pnpm tsx
 import fs from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { cwd } from 'node:process';
@@ -17,7 +18,7 @@ const neutralComponents = [
   '.ds-togglegroup',
 ];
 
-export async function postprocessCssColors(file: string) {
+async function postprocessCssColors(file: string) {
   // Change default color from accent to neutral
   const css = (await fs.readFile(resolve(cwd(), file), { encoding: 'utf-8' }))
     .replace(
@@ -31,3 +32,11 @@ export async function postprocessCssColors(file: string) {
 
   await fs.writeFile(file, css, { encoding: 'utf-8' });
 }
+
+const filename = process.argv[2];
+if (!filename) {
+  console.error('Usage: postprocess-css-colors.ts <file>');
+  process.exit(1);
+}
+
+await postprocessCssColors(filename);

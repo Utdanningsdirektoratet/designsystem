@@ -835,9 +835,6 @@ importers:
         specifier: 'catalog:'
         version: 1.15.0
     devDependencies:
-      '@internal/build-tools':
-        specifier: workspace:*
-        version: link:../../@internal/build-tools
       '@udir-design/tokens':
         specifier: workspace:*
         version: link:../../design-tokens
