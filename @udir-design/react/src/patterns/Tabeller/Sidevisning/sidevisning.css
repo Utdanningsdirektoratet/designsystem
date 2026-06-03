@@ -20,14 +20,16 @@
   gap: var(--ds-size-2);
 }
 
-.example-controls-section-span {
-  color: var(--ds-color-neutral-text-subtle);
+.example-controls-section-select {
+  display: flex;
+  flex-direction: row;
+  gap: var(--ds-size-2);
+  white-space: nowrap;
+  align-items: center;
 }
 
-.example-controls-section-dropdown {
-  display: flex;
-  align-items: center;
-  gap: var(--ds-size-2);
+.example-controls-section-span {
+  color: var(--ds-color-neutral-text-subtle);
 }
 
 @media (min-width: 48rem) {
@@ -46,8 +48,6 @@
   }
 
   .example-controls-section {
-    justify-content: flex-start;
-    width: auto;
     gap: var(--ds-size-6);
   }
 }
