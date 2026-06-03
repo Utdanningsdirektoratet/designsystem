@@ -30,15 +30,13 @@ jobs:
 
       - uses: ./.github/actions/pnpm-setup
 
-      - name: Print affected projects
-        run: |
-          pnpm nx show projects --affected --base $NX_BASE --head $NX_HEAD \
-            | grep -v "^info" || echo "No projects affected" && true
+      - name: Print affected packages
+        run: pnpm turbo ls --affected
 
       - name: Determine whether storybook-tests & chromatic need to run
         id: job_condition
         run: |
-          IS_REACT_AFFECTED=$(./@internal/build-tools/bin/is-project-affected.sh @udir-design/react)
+          IS_REACT_AFFECTED=$(./@internal/build-tools/bin/is-project-affected.ts @udir-design/react)
           echo "Is this a PR which is ready for review? $IS_PR_READY"
           echo "Is @udir-design/react affected? $IS_REACT_AFFECTED"
           echo "Is this a push to a protected branch? $IS_PUSH"
@@ -118,7 +116,7 @@ jobs:
       - name: Check runtime dependency changes
         id: diff_runtime_deps
         run: |
-          pnpm tsx ./@internal/build-tools/bin/diff-runtime-deps.ts --base "$NX_BASE" \
+          pnpm tsx ./@internal/build-tools/bin/diff-runtime-deps.ts --base "${TURBO_SCM_BASE:-main}" \
             && echo "deps_changed=false" >> "$GITHUB_OUTPUT" \
             || echo "deps_changed=true" >> "$GITHUB_OUTPUT"
 

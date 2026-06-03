@@ -1,5 +1,5 @@
 name: Prepare pnpm & CI caches
-description: Installs pnpm, sets up the pnpm + Turborepo caches, and sets the Nx hashes
+description: Installs pnpm, sets up the pnpm + Turborepo caches, and configures SCM base for affected detection
 inputs:
   registry-url:
     description: |
@@ -34,6 +34,22 @@ runs:
         restore-keys: |
           turbo-${{ runner.os }}-
 
-    - uses: nrwl/nx-set-shas@afb73a62d26e41464e9254689e1fd6122ee683c1 # v5.0.1
-      with:
-        main-branch-name: ${{ github.base_ref || github.ref_name }}
+    # Set Turborepo SCM base for affected detection.
+    # For PRs: compare against the PR target branch (e.g. "origin/main").
+    # For pushes: compare against the previous branch HEAD before the push,
+    #   so turbo can identify which packages were affected by the new commits.
+    #   Falls back to ref_name if github.event.before is unavailable or is the
+    #   zero SHA (initial branch creation).
+    - name: Set TURBO_SCM_BASE
+      shell: bash
+      run: |
+        if [[ "${{ github.event_name }}" == "push" ]]; then
+          BEFORE="${{ github.event.before }}"
+          if [[ -n "$BEFORE" && "$BEFORE" != "0000000000000000000000000000000000000000" ]]; then
+            echo "TURBO_SCM_BASE=$BEFORE" >> "$GITHUB_ENV"
+          else
+            echo "TURBO_SCM_BASE=origin/${{ github.ref_name }}" >> "$GITHUB_ENV"
+          fi
+        else
+          echo "TURBO_SCM_BASE=origin/${{ github.base_ref || github.ref_name }}" >> "$GITHUB_ENV"
+        fi

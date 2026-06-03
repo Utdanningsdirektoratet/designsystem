@@ -31,7 +31,7 @@ jobs:
       - name: Determine whether to deploy
         id: should_deploy
         run: |
-          IS_NEXTJS_AFFECTED=$(./@internal/build-tools/bin/is-project-affected.sh test-app-nextjs)
+          IS_NEXTJS_AFFECTED=$(./@internal/build-tools/bin/is-project-affected.ts test-app-nextjs)
           IS_WORKFLOW_MODIFIED=$(./@internal/build-tools/bin/is-file-modified.sh .github/workflows/azure-testapp-deploy.yml)
           echo "Is the Next.js test app affected? $IS_NEXTJS_AFFECTED"
           echo "Is the deployment workflow modified? $IS_WORKFLOW_MODIFIED"
