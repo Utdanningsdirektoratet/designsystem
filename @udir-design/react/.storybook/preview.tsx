@@ -3,11 +3,9 @@ import './docs/customTheme.scss';
 import addonA11y from '@storybook/addon-a11y';
 import addonDocs from '@storybook/addon-docs';
 import { definePreview } from '@storybook/react-vite';
-import * as R from 'ramda';
 import type { PreviewAddon } from 'storybook/internal/csf';
 import { INITIAL_VIEWPORTS, type ViewportMap } from 'storybook/viewport';
 import storybookAddonPseudoStates from 'storybook-addon-pseudo-states';
-import * as icons from '@udir-design/icons';
 import { sourceCodeToolbarAddon } from './addons/sourceCodeToolbar';
 import { docsParameters } from './docs/parameters';
 import { testLifecycleHooks } from './preview-test';
@@ -18,11 +16,7 @@ import type {
 } from './types';
 import { argTypesEnhancer } from './utils/argTypesEnhancer';
 import { CustomStylesDecorator } from './utils/customStylesDecorator';
-
-// Fix icons being displayed as React.ForwardRef in Storybook code examples
-for (const iconName of R.keys(icons)) {
-  icons[iconName].displayName = iconName;
-}
+import './docs/fixIconDisplayNames';
 
 // See the complete list of available devices in INITIAL_VIEWPORTS here:
 // https://storybook.js.org/docs/essentials/viewport#use-a-detailed-set-of-devices

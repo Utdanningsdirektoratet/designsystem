@@ -88,54 +88,15 @@ jobs:
         run: pnpm turbo run test:storybook --filter=@udir-design/react
 
   chromatic:
-    runs-on: ubuntu-latest
     needs: [main]
-    if: needs.main.outputs.run_ui_tests == 'true'
-    env:
-      CHROMATIC_WORKING_DIR: '@udir-design/react'
-      CHROMATIC_STORYBOOK_BUILD_DIR: ./storybook-static
-      CHROMATIC_EXIT_ZERO_ON_CHANGES: true
-      CHROMATIC_EXIT_ONCE_UPLOADED: true
-    steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          fetch-depth: 0
-
-      - uses: ./.github/actions/pnpm-setup
-
-      - name: Build storybook
-        run: pnpm turbo run build:docs --filter=@udir-design/react
-
-      - name: Check runtime dependency changes
-        id: diff_runtime_deps
-        run: |
-          pnpm tsx ./@internal/ci/bin/diff-runtime-deps.ts --base "${TURBO_SCM_BASE:-main}" \
-            && echo "deps_changed=false" >> "$GITHUB_OUTPUT" \
-            || echo "deps_changed=true" >> "$GITHUB_OUTPUT"
-
-      - name: Publish Storybook to Chromatic (TurboSnap)
-        if: steps.diff_runtime_deps.outputs.deps_changed != 'true'
-        uses: chromaui/action@fd9f0848927ca40d7157227eb3a7f771827652bc # v16.7.0
-        with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          workingDir: ${{ env.CHROMATIC_WORKING_DIR }}
-          storybookBuildDir: ${{ env.CHROMATIC_STORYBOOK_BUILD_DIR }}
-          exitZeroOnChanges: ${{ env.CHROMATIC_EXIT_ZERO_ON_CHANGES }}
-          exitOnceUploaded: ${{ env.CHROMATIC_EXIT_ONCE_UPLOADED }}
-          onlyChanged: true
-          externals: 'design-tokens/src/**'
-          untraced: '@udir-design/react/.storybook/docs/**'
-
-      - name: Publish Storybook to Chromatic (full build)
-        if: steps.diff_runtime_deps.outputs.deps_changed == 'true'
-        uses: chromaui/action@fd9f0848927ca40d7157227eb3a7f771827652bc # v16.7.0
-        with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          workingDir: ${{ env.CHROMATIC_WORKING_DIR }}
-          storybookBuildDir: ${{ env.CHROMATIC_STORYBOOK_BUILD_DIR }}
-          exitZeroOnChanges: ${{ env.CHROMATIC_EXIT_ZERO_ON_CHANGES }}
-          exitOnceUploaded: ${{ env.CHROMATIC_EXIT_ONCE_UPLOADED }}
-          onlyChanged: false
+    # On PRs, require the 'chromatic' label to run (conserves snapshot credits).
+    # On pushes to protected branches, always run. Remove label gate when no longer needed.
+    if: |
+      needs.main.outputs.run_ui_tests == 'true' &&
+      (github.event_name == 'push' || contains(github.event.pull_request.labels.*.name, 'chromatic'))
+    uses: ./.github/workflows/chromatic.yml
+    secrets:
+      CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
   release:
     needs: [main, storybook-tests, chromatic]
