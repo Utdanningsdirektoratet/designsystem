@@ -4,7 +4,7 @@
  * Determines whether UI tests (Storybook tests + Chromatic) should run.
  *
  * Decision logic:
- *   (IS_PR_READY && @udir-design/react is affected) || IS_PUSH
+ *   (IS_PR_READY || IS_PUSH) && @udir-design/react is affected
  *
  * Reads from environment variables:
  *   IS_PR_READY - "true" if the PR is open and not a draft
@@ -43,7 +43,7 @@ log(`Is this a PR which is ready for review? ${IS_PR_READY}`);
 log(`Is @udir-design/react affected? ${reactAffected}`);
 log(`Is this a push to a protected branch? ${IS_PUSH}`);
 
-const shouldRun = (IS_PR_READY && reactAffected) || IS_PUSH;
+const shouldRun = (IS_PR_READY || IS_PUSH) && reactAffected;
 
 log(`Conclusion: should we run UI tests? ${shouldRun}`);
 process.stdout.write(String(shouldRun));
