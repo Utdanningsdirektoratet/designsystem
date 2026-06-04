@@ -132,6 +132,89 @@ exports[`Column And Row Headers 1`] = `
 </table>
 `;
 
+exports[`Expandable Rows 1`] = `
+<table style="<removed>">
+  <thead>
+    <tr>
+      <th>
+        Navn
+      </th>
+      <th>
+        Rolle
+      </th>
+      <th>
+        Epost
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <button
+          type="button"
+          aria-expanded="true"
+        >
+          Rita Nordmann
+        </button>
+      </td>
+      <td>
+        Rektor
+      </td>
+      <td>
+        rita@nordmann.no
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        Rita har vært rektor i 12 år og har ansvar for 45 ansatte. Hun leder skolens pedagogiske utviklingsarbeid.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          Kari Nordmann
+        </button>
+      </td>
+      <td>
+        Lektor
+      </td>
+      <td>
+        kari@nordmann.no
+      </td>
+    </tr>
+    <tr hidden>
+      <td colspan="3">
+        Kari underviser i norsk og samfunnsfag for 8.–10. trinn. Hun er også kontaktlærer for 9A.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          Ola Nordmann
+        </button>
+      </td>
+      <td>
+        Lektor
+      </td>
+      <td>
+        ola@nordmann.no
+      </td>
+    </tr>
+    <tr hidden>
+      <td colspan="3">
+        Ola underviser i matematikk og naturfag. Han er ansvarlig for skolens realfagssatsing.
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
 exports[`Fixed Table 1`] = `
 <div>
   <table
