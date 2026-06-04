@@ -118,7 +118,7 @@ describe('should-run-ui-tests', () => {
       TURBO_SCM_BASE: 'HEAD',
     });
     expect(result.stderr).toContain('Conclusion');
-    expect(result.stderr).toContain('should we run UI tests');
+    expect(result.stderr).toContain('build:storybook affected');
   });
 
   it('outputs no trailing newline on stdout', () => {
