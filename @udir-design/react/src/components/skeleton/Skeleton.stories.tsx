@@ -220,16 +220,18 @@ export const UsageExample = meta.story({
 export const Children = meta.story({
   args: {
     variant: 'rectangle',
-    children: [
+  },
+  render: (args) => (
+    <Skeleton {...args}>
       <Paragraph>
         Her er en tekst som blir sendt inn som barn av en Skeleton.
-      </Paragraph>,
+      </Paragraph>
       <Paragraph>
         Se hvordan Skeleton da dekker den samlede bredden og høyden til barna.
-      </Paragraph>,
-      <Button>Knapp</Button>,
-    ],
-  },
+      </Paragraph>
+      <Button>Knapp</Button>
+    </Skeleton>
+  ),
 });
 
 export const Text = meta.story({

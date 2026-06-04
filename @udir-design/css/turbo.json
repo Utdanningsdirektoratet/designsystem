@@ -1,0 +1,13 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "../react/src/components/**/*.css",
+        "!../react/src/components/**/*.module.css"
+      ]
+    }
+  }
+}

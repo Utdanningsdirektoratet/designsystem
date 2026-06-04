@@ -61,7 +61,7 @@ az storage blob delete-batch --account-name stdesignsystemdocs -s '$web' --patte
 Build the documentation
 
 ```
-pnpm nx build:docs
+pnpm build:docs
 ```
 
 Then, to upload, run this from the root of the repo

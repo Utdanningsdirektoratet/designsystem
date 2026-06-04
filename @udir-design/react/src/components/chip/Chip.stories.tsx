@@ -122,7 +122,9 @@ export const Checkbox = meta.story({
         <Paragraph>Vis data for</Paragraph>
         <div style={{ display: 'flex', gap: 'var(--ds-size-1)' }}>
           {options.map((year) => (
-            <Chip.Checkbox aria-label={year}>{year}</Chip.Checkbox>
+            <Chip.Checkbox key={year} aria-label={year}>
+              {year}
+            </Chip.Checkbox>
           ))}
         </div>
       </div>
@@ -162,7 +164,7 @@ export const Radio = meta.story({
         <Paragraph>Vis data for</Paragraph>
         <div style={{ display: 'flex', gap: 'var(--ds-size-1)' }}>
           {options.map((grade) => (
-            <Chip.Radio name="my-radio" aria-label={grade}>
+            <Chip.Radio key={grade} name="my-radio" aria-label={grade}>
               {grade}
             </Chip.Radio>
           ))}
@@ -181,6 +183,7 @@ export const Removable = meta.story({
       <>
         {filter.map((item) => (
           <Chip.Removable
+            key={item}
             aria-label={`Slett ${item}`}
             onClick={() => {
               setFilter((x) =>

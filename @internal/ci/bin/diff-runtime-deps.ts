@@ -427,7 +427,7 @@ function compareClosure(
     .wrap(yargsInstance.terminalWidth())
     .parseAsync();
 
-  // The script lives at <repoRoot>/@internal/build-tools/bin/, so go up 3 dirs.
+  // The script lives at <repoRoot>/@internal/ci/bin/, so go up 3 dirs.
   const repoRoot = path.resolve(import.meta.dirname, '../../..');
   const lockfilePath = path.join(repoRoot, 'pnpm-lock.yaml');
 

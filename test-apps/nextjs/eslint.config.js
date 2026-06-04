@@ -1,7 +1,4 @@
-// import { FlatCompat } from '@eslint/eslintrc';
-// import eslintJs from '@eslint/js';
-import nxEslintPlugin from '@nx/eslint-plugin';
-import { defineConfig, globalIgnores } from 'eslint/config';
+import { defineConfig, globalIgnores } from '@eslint/config-helpers';
 import next from 'eslint-config-next';
 import nextVitals from 'eslint-config-next/core-web-vitals';
 import nextTypescript from 'eslint-config-next/typescript';
@@ -18,7 +15,6 @@ const eslintConfig = defineConfig(
     'build/**',
     'next-env.d.ts',
   ]),
-  nxEslintPlugin.configs['flat/react-typescript'],
   baseConfig,
 );
 export default eslintConfig;

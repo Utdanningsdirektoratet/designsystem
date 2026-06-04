@@ -45,6 +45,7 @@
   "scripts": {
     "build": "vite build",
     "inject": "echo 'Dummy script to trigger pnpm injected dependency sync'",
+    "lint": "eslint . --max-warnings 0",
     "lint:cycles": "pnpm madge --circular ./src/alpha.ts",
     "typecheck": "tsgo --build",
     "dev": "storybook dev --port 6005",

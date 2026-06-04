@@ -76,8 +76,13 @@ export const Secondary = meta.story({
 export const Tertiary = meta.story({
   args: {
     variant: 'tertiary',
-    children: [<NotePencilIcon aria-hidden />, 'Rediger'],
   },
+  render: (args) => (
+    <Button {...args}>
+      <NotePencilIcon aria-hidden />
+      Rediger
+    </Button>
+  ),
 });
 
 export const Neutral = meta.story({

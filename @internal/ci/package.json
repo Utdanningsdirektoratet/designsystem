@@ -1,8 +1,12 @@
 {
-  "name": "@internal/build-tools",
+  "name": "@internal/ci",
   "version": "0.0.0",
   "type": "module",
   "private": true,
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "test": "vitest run"
+  },
   "devDependencies": {
     "@types/js-yaml": "catalog:",
     "@types/micromatch": "catalog:",
@@ -10,6 +14,7 @@
     "js-yaml": "catalog:",
     "micromatch": "catalog:",
     "tsx": "catalog:",
+    "vitest": "catalog:",
     "yargs": "catalog:"
   }
 }

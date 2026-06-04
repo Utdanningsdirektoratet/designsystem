@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button } from 'src/components/button/Button';
 import { Link } from 'src/components/link/Link';
 import { Textfield } from 'src/components/textfield/Textfield';

@@ -34,7 +34,7 @@ I dette repositoriet lever den delen av designsystemet som implementeres i kode:
   - [Oppsett lokalt](#oppsett-lokalt)
   - [Monorepo - enkelt forklart](#monorepo---enkelt-forklart)
   - [Hvordan jobbe med kodebasen](#hvordan-jobbe-med-kodebasen)
-  - [Hvordan legge til nye prosjekter i arbeidsområdet](#hvordan-legge-til-nye-prosjekter-i-arbeidsområdet)
+  - [Hvordan legge til nye pakker i monorepoet](#hvordan-legge-til-nye-pakker-i-monorepoet)
   - [Hvordan håndtere avhengigheter](#hvordan-håndtere-avhengigheter)
   - [Hvordan oppdatere symboler](#hvordan-oppdatere-symboler)
   - [Hvordan publisere en ny versjon](#hvordan-publisere-en-ny-versjon)
@@ -140,27 +140,27 @@ En **stabil** komponent har bestått alle testene i alpha- og beta-fasene og UU-
 Før du kan bidra med kode i designsystemet trenger du å gjøre noe oppsett lokalt. I tillegg trenger du å forstå hvordan kodebasen er strukturert på et overordnet nivå. Deretter får du vite hvordan du jobber med kodebasen, og hvordan du går fram for å oppdatere avhengigheter og publisere endringer. Til slutt får du en oversikt over verktøy som er i bruk i kodebasen.
 
 > [!NOTE]
-> Den påfølgende dokumentasjonen vil bruke følgende begreper, hentet fra Nx:
+> Den påfølgende dokumentasjonen vil bruke følgende begreper, hentet fra Turborepo/pnpm:
 >
 > <dl>
-> <dt><strong>arbeidsområde</strong></dt><dd>hele kodebasen, på engelsk <em>workspace</em></dd>
-> <dt><strong>prosjekt</strong></dt><dd>en enkelt del eller modul i arbeidsområdet, på engelsk <em>project</em></dd>
-> <dt><strong>target</strong></dt><dd>definisjonen av en automatisert oppgave (eng: <em>task</em>) som kan kjøres av Nx</dd>
+> <dt><strong>monorepo</strong></dt><dd>hele kodebasen</dd>
+> <dt><strong>pakke</strong></dt><dd>en enkelt del eller modul i monorepoet, på engelsk <em>package</em></dd>
+> <dt><strong>task</strong></dt><dd>en automatisert oppgave (et npm-script) som kan kjøres av Turborepo</dd>
 > </dl>
 
 ## Oppsett lokalt
 
-Du trenger å sette opp Node.js og pnpm dersom du ikke har dette fra før. Du kan også gjøre byggestegene raskere ved å benytte vår felles Nx cache.
+Du trenger å sette opp Node.js og pnpm dersom du ikke har dette fra før.
 
 ### Node.js
 
-pnpm sørger for at vi alltid bruker riktig versjon av Node.js i arbeidsområdet, som definert i `.npmrc`, men for å installere pnpm trenger du minst Node.js versjon 18.12.
+pnpm sørger for at vi alltid bruker riktig versjon av Node.js i monorepoet, som definert i `.npmrc`, men for å installere pnpm trenger du minst Node.js versjon 18.12.
 
 Om du ikke har Node.js fra før, eller `corepack`-kommandoen ikke finnes, er det enkleste å installere nyeste LTS-versjon ved å følge [de offisielle instruksene](https://nodejs.org/en/download/). Bruk helst den anbefalte installasjonsmetoden: `nvm` eller `fnm` på macOS, og `fnm` på Windows.
 
 ### pnpm
 
-For å installere pnpm, kjør følgende kommandoer fra en kommandolinje i rot av repoet.
+For å installere pnpm, kjør følgende kommandoer fra en kommandolinje i rot av monorepoet.
 
 ```
 corepack enable pnpm
@@ -171,28 +171,23 @@ corepack prepare
 > corepack er en del av Node.js, og sørger for at vi til enhver tid bruker samme versjon av pnpm hos alle utviklere.
 > Versjonsnummeret er spesifisert i feltet `"packageManager"` i filen `package.json`.
 
-### Felles Nx cache
+### Lokal cache
 
-Vi bruker Nx Cloud for caching av bygg, hovedsaklig for raskere kjøring av GitHub Actions. Oppsettet er strukturert ut fra [best practices for cache-sikkerhet i Nx](https://nx.dev/docs/concepts/ci-concepts/cache-security), og kan oppsummeres som følger:
+Vi bruker [Turborepo](https://turbo.build/) for task-orkestrering og caching av bygg. Turbo lagrer resultater lokalt i `.turbo/`-mappen (git-ignorert), slik at uendrede tasks ikke kjøres på nytt.
 
-- Utviklere som er logget inn med Nx Cloud (`pnpm nx login`) kan _lese_ fra cachen, men ikke skrive.
-- Actions som kjører på de beskyttede `main` og `release/*`-branchene kan både lese og skrive til cachen.
-- Actions som kjører på andre brancher, f.eks. ved PR, kan lese fra den felles cachen, men kun skrive til en isolert branch-spesifikk cache.
-- Release-workflowen leser ikke fra cachen, og vil alltid bygge på nytt før publisering.
+I CI bruker vi GitHub Actions Cache for å dele cache mellom kjøringer. Release-workflowen bygger alltid fra scratch uten cache for å garantere at publiserte pakker ikke er påvirket av eventuell cache poisoning.
 
-På denne måten unngår vi potensiell cache poisoning.
-
-Tidligere brukte vi en self-hosted remote cache, men den er avviklet fordi `@nx/azure-cache` er deprecated pga sårbarhet for cache poisoning. Hvis du har `AZURE_STORAGE_CONNECTION_STRING` eller `NX_KEY` i din lokale `.env.local` kan du fjerne disse, siden de ikke lenger er i bruk.
+Hvis du har `AZURE_STORAGE_CONNECTION_STRING` eller `NX_KEY` i din lokale `.env.local` kan du fjerne disse, siden de ikke lenger er i bruk.
 
 ### Sjekke at oppsettet funker
 
-Kjør `pnpm i && pnpm nx dev`. Dersom dette kjører uten problemer, og du får opp Storybook i nettleseren, er alt som det skal.
+Kjør `pnpm i && pnpm dev`. Dersom dette kjører uten problemer, og du får opp Storybook i nettleseren, er alt som det skal.
 
 ## Monorepo - enkelt forklart
 
 Kodebasen er strukturert i et [monorepo](https://monorepo.tools/#what-is-a-monorepo) — et repository som inneholder flere distinkte programmer og biblioteker, med veldefinerte avhengighetsforhold.
 
-For å hjelpe oss med struktur og avhengigheter i monorepoet benytter vi verktøyene [Nx](https://nx.dev) og [pnpm](https://pnpm.io/). Mer om disse senere.
+For å hjelpe oss med struktur og avhengigheter i monorepoet benytter vi verktøyene [Turborepo](https://turbo.build/) og [pnpm](https://pnpm.io/). Mer om disse senere.
 
 Monorepoet vårt består av
 
@@ -328,77 +323,87 @@ BREAKING CHANGE: Consumers must upgrade to React 18 or 19.
 
 ### Vanlig utvikling
 
-De vanlige stegene for å jobbe i arbeidsområdet er
+De vanlige stegene for å jobbe i monorepoet er
 
 - `pnpm install` / `pnpm i` for å sørge for at lokale avhengigheter er oppdatert
-- `pnpm nx dev` for å starte Storybook, slik at du kan se endringer live
-- Gjøre endringer i `@udir-design/react` eller andre prosjekter
-- `pnpm build` — uten `nx` — for å kjøre lint, typesjekk, bygg og enhetstester for alle prosjekter som har blitt påvirket av dine endringer
+- `pnpm dev` for å starte Storybook, slik at du kan se endringer live
+- Gjøre endringer i `@udir-design/react` eller andre pakker
+- `pnpm build` for å kjøre lint, typesjekk, bygg og enhetstester for alle pakker
 
 > [!TIP]
 > Under panseret kjører `pnpm build` følgende kommando:
 >
 > ```
-> pnpm prettier:check && pnpm nx affected -t typecheck lint test build build-storybook
+> pnpm prettier:check && turbo run typecheck lint test:unit build build:docs
 > ```
 
-### Få overblikk med Nx
+### Kjøre tasks med Turborepo
 
-Du kan få et visuelt overblikk over prosjektene i kodebasen ved å bruke Nx.
+Turborepo håndterer task-orkestrering: den sørger for at avhengigheter mellom pakker og tasks respekteres, og cacher resultater slik at uendrede oppgaver ikke kjøres på nytt.
 
-```
-pnpm nx graph --targets all
-```
-
-Du kan vise mer informasjon om et prosjekt ved å klikke på prosjektet, og så på søke-ikonet :mag: øverst til høyre i modalen. Eller du kan åpne denne visningen direkte fra kommandolinjen, f.eks.
+Du kan få et visuelt overblikk over pakkene i kodebasen ved å kjøre:
 
 ```
-pnpm nx show project @udir-design/react
+pnpm turbo devtools
 ```
 
-I denne visningen ser du en nyttig oversikt over targets for det valgte prosjektet. Disse kan igjen kjøres fra kommandolinjen:
+Dette åpner en interaktiv graf i nettleseren som viser avhengighetene mellom pakkene.
+
+Kjør en task i en spesifikk pakke:
 
 ```
-pnpm nx <target> [optional project] <...options>
+pnpm turbo <package>#<task>
 ```
 
-Om project utelates, blir `@udir-design/react` brukt siden dette er satt som default project.
-
-F.eks. dette kjører target `build` i `@udir-design/react`
+Alternativt kan du navigere til pakkens mappe og kjøre tasken derfra:
 
 ```
-pnpm nx build
+cd <path-til-pakken>
+pnpm turbo <task>
 ```
 
-Du kan også kjøre ett eller flere targets på tvers av alle prosjekter som har disse definert:
+Kjør en eller flere task i alle pakker som har den definert:
 
 ```
-pnpm nx run-many -t lint test
+pnpm turbo <task-1> <task-2>
 ```
 
-Les mer i Nx sin dokumentasjon:
+`--filter` kan brukes for mer komplekse søk, f.eks. kan du kjøre `build` i alle `@udir-design/*`-pakker:
 
-- [Explore your Workspace](https://nx.dev/features/explore-graph)
-- [Run Tasks](https://nx.dev/features/run-tasks).
+```
+pnpm turbo build --filter="@udir-design/*"
+```
+
+De vanligste kommandoene har snarveier i rot `package.json`:
+
+| Snarvei                | Kommando                                  |
+| ---------------------- | ----------------------------------------- |
+| `pnpm dev`             | Start Storybook med typedoc i watch-modus |
+| `pnpm build`           | Lint, typesjekk, test og bygg alle pakker |
+| `pnpm build:storybook` | Bygg Storybook                            |
+| `pnpm build:docs`      | Bygg Storybook + typedoc                  |
+| `pnpm test:storybook`  | Kjør Storybook-tester                     |
+
+Les mer i [Turborepo-dokumentasjonen](https://turbo.build/docs).
 
 ### Testing
 
 Følgende kommando kjører enhets-, interaksjons-, uu- og snapshottester samlet.
 
 ```bash
-pnpm nx test
+pnpm turbo test
 ```
 
 Man kan også kjøre kun enhetstestene med
 
 ```bash
-pnpm nx test:unit
+pnpm turbo test:unit
 ```
 
 ...og alle de andre testene med
 
 ```bash
-pnpm nx test:storybook
+pnpm test:storybook
 ```
 
 #### Interaksjonstester
@@ -413,14 +418,14 @@ Vi bruker Storybook til å skrive [interaksjonstester for komponenter](https://s
 Hjelpefunksjoner og hooks tester vi med [Vitest](https://vitest.dev/). Disse kjører mye raskere enn interaksjonstester, og er mer egnet til å teste logikk eller intern oppførsel. Enhetstester skrives i egne filer som slutter på `.spec.tsx`.
 
 > [!WARNING]
-> Det er foreløpig ingen egentlige enhetstester i repoet, kun et eksempel i Button.spec.tsx, men vi bør skrive enhetstester for alle våre egne hooks og hjelpefunksjoner
+> Det er foreløpig ingen egentlige enhetstester i monorepoet, kun et eksempel i Button.spec.tsx, men vi bør skrive enhetstester for alle våre egne hooks og hjelpefunksjoner
 
 #### Automatiske tester
 
 Hvert eksempel i Storybook får automatisk en snapshottest, en visuell test, og en regelbasert UU-test. Snapshottestene sammenligner html-output med snapshots som er sjekket inn i repoet (`*.stories.tsx.snap`). Disse oppdateres med kommandoen
 
 ```bash
-pnpm nx test:storybook --update
+pnpm test:storybook:update
 ```
 
 #### Systemtest
@@ -440,16 +445,16 @@ Testene utføres også automatisk før publisering av kodebibliotekene, og publi
 Fordi vi har noen egne tokensett i tillegg til de fra Digdir er prosessen for å oppdatere dem noe ulik den beskrevet hos Digdir.
 
 1. Oppdater config-fila `design-tokens/designsystemet.config.json`, manuelt eller ved bruk av temabyggeren
-2. Kjør kommandoen `pnpm nx run design-tokens:create` i terminalen
+2. Kjør kommandoen `pnpm --filter @udir-design/tokens run create` i terminalen
 3. Reverter sletting av våre egne tokensett (`*.overrides.json`)
 4. Se gjennom filene `$metadata.json` og `$themes.json`. Om den eneste endringen er at våre ekstra tokensett er fjernet, kan filene bare reverteres. Ellers må vi integrere endringene fra Digdir med våre ekstra linjer
-5. Kjør `pnpm nx build` for å oppdatere css-variabler
+5. Kjør `pnpm turbo @udir-design/theme#build` for å oppdatere css-variabler
 
-## Hvordan legge til nye prosjekter i arbeidsområdet
+## Hvordan legge til nye pakker i monorepoet
 
-Et nytt prosjekt kan enten være en pakke som skal publiseres til npm, en internt pakke som kun brukes innad i repoet, eller en testapplikasjon.
+En ny pakke kan enten publiseres til npm, brukes kun internt i monorepoet, eller være en testapplikasjon.
 
-Hvis andre prosjekter i repoet er avhengig av prosjektet, må du også huske å [legge det til som en intern avhengighet](#hvordan-legge-til-avhengigheter-mellom-prosjekter).
+Hvis andre pakker i monorepoet er avhengig av pakken, må du også huske å [legge den til som en intern avhengighet](#hvordan-legge-til-avhengigheter-mellom-pakker).
 
 ### Pakke som skal publiseres til npm
 
@@ -507,7 +512,7 @@ Vanligvis legger vi koden for hoved-entrypointet i `src/index.ts`.
 
 For at linting skal fungere trenger du en `eslint.config.js`-fil.
 
-Her er et minimalt oppsett som kun skrur på basekonfigurasjonen som er definert i rot av repoet.
+Her er et minimalt oppsett som kun skrur på basekonfigurasjonen som er definert i rot av monorepoet.
 
 ```js
 import { defineConfig } from 'eslint/config';
@@ -519,42 +524,49 @@ export default defineConfig(baseConfig);
 Det kan være relevant å utvide denne med andre forhåndsdefinerte innstillinger, og eventuelt egen konfigurasjon:
 
 ```js
-import nxEslintPlugin from '@nx/eslint-plugin';
 import { defineConfig } from 'eslint/config';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
 import baseConfig from '../../eslint.config.js';
 
 export default defineConfig(
-  nxEslintPlugin.configs['flat/react'], // @nx/eslint sin konfigurasjon for React
-  baseConfig, // Repoets felles eslint-konfigurasjon
+  react.configs.flat.recommended, // React-regler
+  react.configs.flat['jsx-runtime'], // Fjerner krav om `import React`
+  reactHooks.configs.flat.recommended, // React Hooks-regler
+  baseConfig, // Monorepoets felles eslint-konfigurasjon
+  {
+    settings: { react: { version: 'detect' } },
+  },
   {
     // Din egen skreddersydde konfigurasjon her
   },
 );
 ```
 
-#### Nx-konfigurasjon
+#### Turborepo-konfigurasjon
 
-Ut av boksen får pakken standardinnstillingene som er definert i `nx.json` i rot av repoet.
-Hvis pakken trenger egne innstillinger for Nx, kan du legge til filen `project.json`:
+Ut av boksen får pakken standardinnstillingene som er definert i `turbo.json` i rot av monorepoet.
+Hvis pakken trenger egne innstillinger, kan du legge til filen `turbo.json` i pakken:
 
 ```jsonc
 {
-  "$schema": "../../node_modules/nx/schemas/project-schema.json"
-  // din config her, f.eks.
-  "targets": {
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    // din config her, f.eks.
     "build": {
-      "cache": false // overstyrer cache-innstilling fra targetDefaults.build.cache i nx.json
-    }
-  }
+      "outputs": [".next/**", "!.next/cache/**"], // overstyr outputs for pakker med uvanlig bygg-output
+    },
+  },
 }
 ```
 
 > [!TIP]
-> [Les om prosjektkonfigurasjon i Nx sin dokumentasjon](https://nx.dev/docs/reference/project-configuration).
+> [Les om pakkekonfigurasjon i Turborepo-dokumentasjonen](https://turbo.build/docs/crafting-your-repository/configuring-tasks).
 > Merk:
 >
-> - Selv om det er mulig å ha Nx-spesifikk prosjektkonfigurasjon i `package.json`, velger vi å ha en separat `project.json` fordi det er ryddigere
-> - Vi bruker ingen Nx plugins bortsett fra `@nx/eslint/plugin` fordi vi har erfart at plugins ofte gir lite verdi over manuell konfigurasjon, og ofte fører til inkompatibilitet ved oppgraderinger.
+> - `"extends": ["//"]` betyr at pakken arver innstillinger fra rot `turbo.json`
+> - Per-pakke `dependsOn` _erstatter_ rotdefinisjonen (den merger ikke), så husk å inkludere `^build` og `^inject` hvis du overstyrer `build`-taskens `dependsOn`
 
 #### Typisk mappestruktur
 
@@ -567,7 +579,7 @@ Hvis pakken trenger egne innstillinger for Nx, kan du legge til filen `project.j
 ├── README.md
 ├── tsconfig.json
 ├── package.json
-└── project.json
+└── turbo.json (valgfritt, kun ved behov for egne task-innstillinger)
 ```
 
 ### Interne pakker
@@ -575,7 +587,7 @@ Hvis pakken trenger egne innstillinger for Nx, kan du legge til filen `project.j
 Noen ganger er det nyttig å separere ut kode til en egen intern pakke som **ikke** skal publiseres på npm.
 Merk at denne koden ikke kan være i bruk av kode som **skal** publiseres, men det kan være nyttig for å dele kode som f.eks. build-scripts, hjelpefunksjoner for dokumentasjon og lignende.
 
-Slike prosjekter legger vi i `@internal/<new-package-name>`.
+Slike pakker legger vi i `@internal/<new-package-name>`.
 
 Du trenger da en `package.json` med:
 
@@ -591,7 +603,7 @@ I motsetning til publiserte pakker trenger du ikke å tenke på `"exports"` og b
 
 ### Testapplikasjoner
 
-Vi har testapplikasjoner for bruk av bibliotekene vi publiserer med ulike kombinasjoner av teknologi. Et nytt prosjekt av denne typen legger du i `test-apps/<new-test-app-name>`.
+Vi har testapplikasjoner for bruk av bibliotekene vi publiserer med ulike kombinasjoner av teknologi. En ny pakke av denne typen legger du i `test-apps/<new-test-app-name>`.
 
 Du trenger da en `package.json` med:
 
@@ -603,13 +615,13 @@ Du trenger da en `package.json` med:
 }
 ```
 
-I disse prosjektene trenger du ikke tenke på `"exports"` eller at andre prosjekter kan være avhengige av de. Sett prosjektet opp etter anvisning fra dokumentasjonen til teknologien du tester med, men husk å bruke vårt baseoppsett for TypeScript (`tsconfig.base.json`) og ESLint `eslint.config.js`.
+I disse pakkene trenger du ikke tenke på `"exports"` eller at andre pakker kan være avhengige av de. Sett pakken opp etter anvisning fra dokumentasjonen til teknologien du tester med, men husk å bruke vårt baseoppsett for TypeScript (`tsconfig.base.json`) og ESLint `eslint.config.js`.
 
 ## Hvordan håndtere avhengigheter
 
-### Hvordan legge til avhengigheter mellom prosjekter
+### Hvordan legge til avhengigheter mellom pakker
 
-Dersom noen av prosjektene er avhengige av hverandre, f.eks. at `@udir-design/react` er avhenging av `@udir-design/css`, legges dette til på følgende måte:
+Dersom noen av pakkene er avhengige av hverandre, f.eks. at `@udir-design/react` er avhenging av `@udir-design/css`, legges dette til på følgende måte:
 
 ```bash
 pnpm add @udir-design/css --workspace
@@ -623,13 +635,13 @@ Dette resulterer i at `package.json` blir oppdatert med
 }
 ```
 
-Om avhengigheten er et TypeScript-prosjekt må du også oppdatere `"paths"` i `tsconfig.base.json`
+Om avhengigheten bruker TypeScript må du også oppdatere `"paths"` i `tsconfig.base.json`
 
 ```json
 "paths": {
-  "<navn-i-prosjektets-package-json>": "./<path-til-prosjektet>/src/index.ts",
+  "<navn-i-pakkens-package-json>": "./<path-til-pakken>/src/index.ts",
   // Dersom pakken har submoduler:
-  "<navn-i-prosjektets-package-json>/<submodul>": "./<path-til-prosjektet>/src/<submodul>.ts"
+  "<navn-i-pakkens-package-json>/<submodul>": "./<path-til-pakken>/src/<submodul>.ts"
 }
 ```
 
@@ -642,9 +654,9 @@ Eksempel: `@udir-design/icons` definerer både et hoved-entrypoint og en submodu
 }
 ```
 
-Uten endringen i `tsconfig.base.json` vil ting fungere for eksterne konsumenter, men du kan få subtile problemer innad i repoet.
+Uten endringen i `tsconfig.base.json` vil ting fungere for eksterne konsumenter, men du kan få subtile problemer innad i monorepoet.
 
-Dersom du får sykliske avhengigheter mellom prosjekter, vil installasjonen feile. Det er et tegn på at kode som begge avhenger av sannsynligvis bør splittes ut til et eget prosjekt.
+Dersom du får sykliske avhengigheter mellom pakker, vil installasjonen feile. Det er et tegn på at kode som begge avhenger av sannsynligvis bør splittes ut til en egen pakke.
 
 ### Hvordan legge til nye eksterne avhengigheter
 
@@ -662,7 +674,7 @@ pnpm add -D <package>
 
 ### Hvordan oppgradere avhengigheter
 
-Få oversikt over utdaterte avhengigheter i alle prosjekter med
+Få oversikt over utdaterte avhengigheter i alle pakker med
 
 ```sh
 pnpm outdated -r
@@ -692,7 +704,7 @@ pnpm update -r --latest "@digdir/*"
 
 #### `nx` og `@nx/*`
 
-`nx` har sin egen oppdateringskommando, som også klargjør migreringer i de tilfellene det er relevant.
+`nx` brukes kun for release-automatikk (`nx release`-API-ene). Oppgrader med:
 
 ```sh
 pnpm nx migrate latest
@@ -790,7 +802,7 @@ Nedlasting av oppdaterte symboler fra Figma gjøres i et lokalt repo av [Udirs D
 Kjør følgende kommando i `designsystem/@udir-design/symbols`:
 
 ```bash
-pnpm nx fetch-new:symbols
+pnpm --filter @udir-design/symbols run fetch-new:symbols
 ```
 
 ### Generere PNG
@@ -802,7 +814,7 @@ Generering av PNG-er gjøres i et lokalt repo av [Udirs Designsystem](https://gi
 Kjør følgende kommando i `designsystem/@udir-design/symbols`:
 
 ```bash
-pnpm nx generate:pngs
+pnpm --filter @udir-design/symbols run generate:pngs
 ```
 
 ## Hvordan publisere en ny versjon
@@ -849,7 +861,8 @@ Dette er de viktigste verktøyene og tjenestene vi bruker i designsystemet.
 
 - [Node.js](https://nodejs.org) - kjøretidsmiljø for JavaScript som brukes av de fleste verktøyene våre
 - [pnpm](https://pnpm.io/) — package manager som håndterer avhengigheter, både mellom interne moduler og til eksterne biblioteker
-- [Nx](https://nx.dev/) — overordnet byggesystem som respekterer avhengigheter mellom ulike deler av monorepoet, og håndterer publisering av biblioteker
+- [Turborepo](https://turbo.build/) — task-orkestrering som respekterer avhengigheter mellom ulike deler av monorepoet, med lokal og remote caching, samt affected-deteksjon i CI
+- [Nx](https://nx.dev/) — brukes kun for release-automatikk (`nx release`)
 - [Vite](https://vite.dev/) — verktøy som bygger de individuelle TypeScript-bibliotekene
 - [GitHub Actions](https://github.com/features/actions) — kontinuerlig integrasjon og utrulling (CI/CD)
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from 'src/components/button/Button';
 import { ProgressBar } from 'src/components/progressBar/ProgressBar';
 import { Heading } from 'src/components/typography/heading/Heading';

@@ -181,6 +181,7 @@ const detailsColorDecorator: Decorator = (Story) => {
         </Fieldset>
       </Stack>
       <div data-storybook-decorator>
+        {/* eslint-disable-next-line react/no-children-prop -- createElement requires children in props */}
         {createElement(card === 'none' ? 'div' : Card, {
           variant: card !== 'none' ? card : undefined,
           'data-color': color,

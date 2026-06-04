@@ -1,4 +1,3 @@
-import React from 'react';
 import { Breadcrumbs } from 'src/components/breadcrumbs/Breadcrumbs';
 import styles from './BreadcrumbsDemo.module.scss';
 
