@@ -124,7 +124,22 @@ jobs:
           exitOnceUploaded: ${{ env.CHROMATIC_EXIT_ONCE_UPLOADED }}
           onlyChanged: true
           externals: 'design-tokens/src/**'
-          untraced: '@udir-design/react/.storybook/docs/**'
+          untraced: |
+            @udir-design/react/.storybook/docs/**
+            @udir-design/react/.storybook/manager.tsx
+            @udir-design/react/.storybook/manager.css
+            @udir-design/react/.storybook/manager-head.html
+            @udir-design/react/.storybook/addons/**
+            @udir-design/react/.storybook/types/**
+            @udir-design/react/.storybook/data/**
+            @udir-design/react/.storybook/utils/argTypesEnhancer.ts
+            @udir-design/react/.storybook/utils/sourceCodeUrl.ts
+            @udir-design/react/.storybook/utils/sourceTransformers.ts
+            @udir-design/react/.storybook/utils/makeStoryTransformer.ts
+            @udir-design/react/.storybook/story-snapshot-serializer.ts
+            @udir-design/react/.storybook/preview-test.ts
+            @udir-design/react/.storybook/decorators/WithInertInitialRender.tsx
+            @udir-design/react/.storybook/decorators/withScrollHashBehavior.tsx
 
       - name: Publish Storybook to Chromatic (full build)
         if: steps.diff_runtime_deps.outputs.deps_changed == 'true'
