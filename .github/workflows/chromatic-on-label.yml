@@ -1,0 +1,26 @@
+# Runs Chromatic when the 'chromatic' label is added to a PR.
+# This avoids re-running the full CI pipeline (build, lint, commitlint) since
+# the code hasn't changed — only the label was added.
+#
+# Temporary measure to conserve Chromatic snapshot credits.
+# Remove this workflow (and the label gate in ci.yml) when no longer needed.
+
+name: 'Chromatic (on label)'
+
+on:
+  pull_request:
+    types: [labeled]
+
+permissions:
+  actions: read
+  contents: read
+  checks: write
+
+jobs:
+  chromatic:
+    if: |
+      github.event.label.name == 'chromatic' &&
+      !github.event.pull_request.draft
+    uses: ./.github/workflows/chromatic.yml
+    secrets:
+      CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
