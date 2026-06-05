@@ -91,40 +91,15 @@ This matches the format produced by the former Nx-based `changelog-renderer.ts`.
 
 ## Bootstrapping (one-time procedures)
 
-### 1. Bootstrap git notes for existing tags
+### 1. Bootstrap git notes for existing tags ✅ Done
 
 semantic-release tracks which npm channel a tag was published on using git
 notes (`refs/notes/semantic-release-<tag>`). Tags created by the old Nx-based
-release system don't have these notes, so semantic-release can't find them as
-prior releases — it falls back to scanning the entire commit history.
+release system didn't have these notes. A one-time bootstrap script was run to
+derive the channel from each tag's semver prerelease identifier and attach the
+note to the underlying commit. The notes have been pushed to the remote.
 
-The bootstrap script reads all `v*` tags, derives the channel from the semver
-prerelease identifier, and adds the appropriate note to the underlying commit:
-
-```bash
-# Preview what will be added
-pnpm tsx @internal/ci/bin/bootstrap-git-notes.ts --dry-run
-
-# Add the notes
-pnpm tsx @internal/ci/bin/bootstrap-git-notes.ts
-
-# Push the notes to the remote
-git push origin 'refs/notes/semantic-release*'
-```
-
-The script is idempotent — re-running it skips tags that already have notes.
-
-> **Why this is needed:** semantic-release uses git notes to map tags to
-> channels. Without notes, all tags default to the `latest` channel (`null`).
-> A tag like `v1.0.0-beta.33` is then invisible to the `release/beta` branch
-> (which expects `channel: "beta"`), causing semantic-release to report
-> "No git tag version found" and generate a release from scratch.
->
-> An additional subtlety: the existing tags are **annotated** (Nx used
-> `git tag -a`), but semantic-release creates **lightweight** tags. Git notes
-> attached to an annotated tag object aren't visible in `git log` (which
-> operates on commits). The bootstrap script resolves each tag to its
-> underlying commit before attaching the note.
+For new tags, semantic-release creates and pushes notes automatically.
 
 ### 2. Bootstrap v1.0.0 (stable baseline)
 
@@ -175,14 +150,13 @@ are analyzed for version bumps and included in the changelog.
 
 ## Configuration reference
 
-| File                                        | Purpose                                                                                         |
-| ------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `@internal/ci/bin/semantic-release.ts`      | CLI entry point (`--branch`, `--dry-run`, `--dry-run-full`, `--preview-changelog`, `--publish`) |
-| `@internal/ci/bin/bootstrap-git-notes.ts`   | One-time script to add semantic-release git notes to tags created by Nx                         |
-| `@internal/ci/src/semantic-release.ts`      | Calls `semantic-release` programmatically; branch config, plugin setup                          |
-| `@internal/ci/src/changelog-writer-opts.ts` | Customises the changelog format (adds commit body text)                                         |
-| `@internal/ci/bin/sync-package-versions.ts` | Syncs a version string into all publishable `package.json` files                                |
-| `.github/workflows/release.yml`             | CI workflow that runs the release script                                                        |
+| File                                        | Purpose                                                                       |
+| ------------------------------------------- | ----------------------------------------------------------------------------- |
+| `@internal/ci/bin/semantic-release.ts`      | CLI entry point (`--branch`, `--dry-run`, `--preview-changelog`, `--publish`) |
+| `@internal/ci/src/semantic-release.ts`      | Calls `semantic-release` programmatically; branch config, plugin setup        |
+| `@internal/ci/src/changelog-writer-opts.ts` | Customises the changelog format (adds commit body text)                       |
+| `@internal/ci/bin/sync-package-versions.ts` | Syncs a version string into all publishable `package.json` files              |
+| `.github/workflows/release.yml`             | CI workflow that runs the release script                                      |
 
 ## Local testing
 
@@ -222,11 +196,6 @@ git push /tmp/test-remote.git HEAD:refs/heads/release/latest --force
   --repository-url file:///tmp/test-remote.git
 
 cat CHANGELOG.md
-
-# Full E2E dry-run (creates its own sandbox repo automatically)
-./@internal/ci/bin/semantic-release.ts \
-  --branch release/latest \
-  --dry-run-full
 
 # Cleanup
 git reset HEAD~1

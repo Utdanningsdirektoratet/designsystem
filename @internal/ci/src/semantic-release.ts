@@ -1,8 +1,4 @@
-import { execSync } from 'node:child_process';
-import { mkdtempSync, rmSync } from 'node:fs';
 import { writeFile } from 'node:fs/promises';
-import { tmpdir } from 'node:os';
-import { join } from 'node:path';
 import process from 'node:process';
 import semanticReleaseFn, {
   type BranchSpec,
@@ -13,7 +9,6 @@ import { writerOpts } from './changelog-writer-opts.js';
 export interface SemanticReleaseOptions {
   branch: string;
   dryRun: boolean;
-  dryRunFull: boolean;
   previewChangelog: boolean;
   publish: boolean;
   /** Override the git remote URL (useful for local E2E testing). */
@@ -27,14 +22,9 @@ export interface SemanticReleaseOptions {
  * - `--dry-run` (default): analyse commits and generate notes without publishing.
  * - `--preview-changelog`: dry-run + write notes to `CHANGELOG.md` for PR preview.
  * - `--publish`: real release — stage packages on npm (awaiting manual approval).
- * - `--dry-run-full`: full E2E in a sandbox (temp git repo, no real publish).
  */
 export async function semanticRelease(options: SemanticReleaseOptions) {
-  if (options.dryRunFull) {
-    await runInSandbox(options);
-  } else {
-    await runAgainstRemote(options);
-  }
+  await runAgainstRemote(options);
 }
 
 // ─── Real remote ─────────────────────────────────────────────────────────────
@@ -92,143 +82,6 @@ async function runAgainstRemote(options: SemanticReleaseOptions) {
   }
 }
 
-// ─── Sandbox (temp repo) ─────────────────────────────────────────────────────
-
-// TODO: Consider removing `--dry-run-full` / `runInSandbox` once the
-// semantic-release migration has been verified through a few real releases.
-// The regular `--dry-run` mode covers day-to-day needs; the sandbox exists
-// primarily to validate the migration end-to-end.
-
-/**
- * Run the full semantic-release pipeline in a sandbox.
- *
- * Creates a temporary bare git repo, runs semantic-release in non-dry-run mode
- * against it, but uses `pnpm stage publish --dry-run` so nothing is actually
- * uploaded. This tests the entire orchestration: branch resolution, tag
- * analysis, commit analysis, note generation, version sync, and publish
- * validation — without affecting the real remote.
- *
- * Uses the actual remote branch (not HEAD) so that existing tags are reachable
- * and semantic-release finds the correct baseline.
- *
- * Package.json files and git tags are restored after the run.
- */
-async function runInSandbox(options: SemanticReleaseOptions) {
-  console.log('Running semantic-release — full E2E dry-run (sandbox)…');
-
-  const tempDir = mkdtempSync(join(tmpdir(), 'semantic-release-'));
-  const tempRepo = join(tempDir, 'repo.git');
-
-  // Record existing local tags so we can remove any new ones in cleanup
-  const tagsBefore = new Set(
-    execSync('git tag --list', { encoding: 'utf-8' }).trim().split('\n'),
-  );
-
-  try {
-    // Set up a throwaway bare repo mirroring the remote release branches.
-    // Use the actual remote branch (not HEAD) so existing tags are reachable.
-    execSync(`git init --bare "${tempRepo}"`, { stdio: 'pipe' });
-    execSync(
-      `git push "${tempRepo}" origin/${options.branch}:refs/heads/${options.branch} --tags`,
-      { stdio: 'pipe' },
-    );
-    execSync(
-      `git --git-dir="${tempRepo}" symbolic-ref HEAD refs/heads/${options.branch}`,
-      { stdio: 'pipe' },
-    );
-
-    // Push semantic-release git notes so the sandbox can find prior releases.
-    // Without notes, semantic-release treats all tags as unrecognised and
-    // falls back to scanning the entire commit history.
-    try {
-      execSync(
-        `git push "${tempRepo}" "refs/notes/semantic-release*:refs/notes/semantic-release*"`,
-        { stdio: 'pipe' },
-      );
-    } catch {
-      // Notes may not exist yet (e.g. before bootstrap)
-    }
-
-    // Mirror all remote release/* branches into the temp repo.
-    // semantic-release validates that at least one release-type branch
-    // (non-prerelease) exists, even when running on a prerelease branch.
-    const remoteRefs = execSync('git ls-remote --heads origin "release/*"', {
-      encoding: 'utf-8',
-    }).trim();
-    for (const line of remoteRefs.split('\n')) {
-      if (!line) continue;
-      const [hash, ref] = line.split('\t');
-      const branchName = ref.replace('refs/heads/', '');
-      if (branchName === options.branch) continue; // already pushed above
-      try {
-        execSync(`git push "${tempRepo}" ${hash}:${ref}`, { stdio: 'pipe' });
-      } catch {
-        // Skip branches whose commits aren't available locally
-      }
-    }
-
-    const config = buildSemanticReleaseConfig({
-      ...options,
-      publish: true, // enable publishCmd so the publish step runs
-      repositoryUrl: options.repositoryUrl ?? `file://${tempRepo}`,
-    });
-    const env = buildEnv(options);
-
-    const result = await semanticReleaseFn(
-      { ...config, dryRun: false },
-      {
-        cwd: process.cwd(),
-        env: env as NodeJS.ProcessEnv,
-        stdout: process.stdout,
-        stderr: process.stderr,
-      },
-    );
-
-    if (!result) {
-      console.log('No release is needed — no relevant commits found.');
-      return;
-    }
-
-    const { nextRelease } = result;
-    console.log(
-      `\nFull dry-run complete: ${nextRelease.gitTag}`,
-      `(channel: ${nextRelease.channel ?? 'latest'})`,
-    );
-    if (nextRelease.notes) {
-      console.log('\n--- Generated changelog ---\n');
-      console.log(nextRelease.notes);
-    }
-    console.log(
-      'The full pipeline ran successfully. No packages were published',
-      'and no tags were pushed to the real remote.',
-    );
-  } finally {
-    // Restore package.json files modified by sync-package-versions.ts
-    try {
-      execSync('git checkout -- @udir-design/*/package.json', {
-        stdio: 'pipe',
-      });
-    } catch {
-      // Ignore — files may not have been modified if the run failed early
-    }
-    // Remove any git tags created during the sandbox run
-    try {
-      const tagsAfter = execSync('git tag --list', { encoding: 'utf-8' })
-        .trim()
-        .split('\n');
-      for (const tag of tagsAfter) {
-        if (tag && !tagsBefore.has(tag)) {
-          execSync(`git tag -d "${tag}"`, { stdio: 'pipe' });
-        }
-      }
-    } catch {
-      // Ignore cleanup errors
-    }
-    // Remove the temporary bare repo
-    rmSync(tempDir, { recursive: true, force: true });
-  }
-}
-
 // ─── Environment ─────────────────────────────────────────────────────────────
 
 /**
@@ -278,13 +131,7 @@ const branches: BranchSpec[] = [
 function buildSemanticReleaseConfig(options: SemanticReleaseOptions): Options {
   let publishCmd: string | undefined;
 
-  if (options.publish && options.dryRunFull) {
-    // Full dry-run: validate publish without uploading.
-    // The echo adds context for OIDC warnings that pnpm emits outside
-    // GitHub Actions (provenance tokens are unavailable locally).
-    publishCmd =
-      'echo "\nℹ  OIDC/provenance warnings below are expected outside GitHub Actions CI.\n" && pnpm -r --filter "@udir-design/*" stage publish --dry-run --no-git-checks --tag ${nextRelease.channel || "latest"} --access public';
-  } else if (options.publish) {
+  if (options.publish) {
     // Real release: stage packages (awaiting manual approval)
     publishCmd =
       'pnpm -r --filter "@udir-design/*" stage publish --no-git-checks --tag ${nextRelease.channel || "latest"} --access public';
@@ -330,9 +177,8 @@ function buildSemanticReleaseConfig(options: SemanticReleaseOptions): Options {
       ],
 
       // 4. Create a GitHub release with the generated notes.
-      //    Skipped when no GitHub token is available (e.g. local testing)
-      //    or during sandbox runs.
-      ...(hasGitHubToken && options.publish && !options.dryRunFull
+      //    Skipped when no GitHub token is available (e.g. local testing).
+      ...(hasGitHubToken && options.publish
         ? ['@semantic-release/github']
         : []),
     ],
