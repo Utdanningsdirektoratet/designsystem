@@ -8,6 +8,9 @@
     "dev": {
       "persistent": true,
       "dependsOn": ["^build", "^inject"]
+    },
+    "test:e2e": {
+      "dependsOn": ["build"]
     }
   }
 }
