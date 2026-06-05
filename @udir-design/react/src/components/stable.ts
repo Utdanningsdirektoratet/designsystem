@@ -10,6 +10,7 @@ export * from './checkbox/Checkbox';
 export * from './details/Details';
 export * from './dialog/Dialog';
 export * from './divider/Divider';
+export * from './dropdown/Dropdown';
 export * from './field/Field';
 export * from './fieldNecessity';
 export * from './fieldset/Fieldset';
