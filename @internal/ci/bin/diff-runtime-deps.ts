@@ -7,6 +7,12 @@
  * excluding `@types/*`) of all `@udir-design/*` packages have changed in
  * `pnpm-lock.yaml` on the current branch compared to a base ref (default: main).
  *
+ * When a workspace package declares an `untrackedDevDependencies` array in its
+ * package.json, all its devDependencies *except* those listed are also included
+ * in the closure. This lets packages with build pipelines that produce
+ * non-committed output (e.g. PostCSS, svgo) opt in to tracking their build
+ * tools, so that version bumps trigger a full Chromatic rebuild.
+ *
  * Workspace dependencies (workspace:*) are followed recursively so that
  * transitive dependency changes through sibling packages are also detected.
  *
@@ -34,6 +40,8 @@ interface PackageJson {
   name?: string;
   dependencies?: Record<string, string>;
   peerDependencies?: Record<string, string>;
+  devDependencies?: Record<string, string>;
+  untrackedDevDependencies?: string[];
 }
 
 interface LockfileImporterDep {
@@ -106,8 +114,11 @@ function formatSnapshotKey(key: string): string {
 // ─── Package-json helpers ─────────────────────────────────────────────────────
 
 /**
- * Extracts `dependencies` + `peerDependencies` names from a parsed package.json,
- * excluding any `@types/*` packages.
+ * Extracts tracked dependency names from a parsed package.json.
+ *
+ * Always includes `dependencies` + `peerDependencies` (excluding `@types/*`).
+ * When the package declares `untrackedDevDependencies`, all `devDependencies`
+ * not in that list are also included.
  */
 function parseTrackedDepNames(pkg: PackageJson): Set<string> {
   const names = new Set<string>();
@@ -116,6 +127,14 @@ function parseTrackedDepNames(pkg: PackageJson): Set<string> {
     ...Object.keys(pkg.peerDependencies ?? {}),
   ]) {
     if (!isTypesPackage(name)) names.add(name);
+  }
+  if (pkg.untrackedDevDependencies) {
+    const ignored = new Set(pkg.untrackedDevDependencies);
+    for (const name of Object.keys(pkg.devDependencies ?? {})) {
+      if (!isTypesPackage(name) && !ignored.has(name)) {
+        names.add(name);
+      }
+    }
   }
   return names;
 }
@@ -471,8 +490,20 @@ function compareClosure(
 
   const headReadPkgJson = (pkgName: string) =>
     readPkgJsonFromDisk(repoRoot, pkgName);
-  const baseReadPkgJson = (pkgName: string) =>
-    readPkgJsonFromGit(repoRoot, options.base, pkgName);
+  const baseReadPkgJson = (pkgName: string) => {
+    const basePkg = readPkgJsonFromGit(repoRoot, options.base, pkgName);
+    // If the base package.json doesn't declare untrackedDevDependencies yet,
+    // borrow the classification from HEAD so that both sides track the same
+    // set of devDependencies. Without this, introducing the field on a branch
+    // would cause every tracked devDep to appear as "added".
+    if (basePkg && !basePkg.untrackedDevDependencies) {
+      const headPkg = readPkgJsonFromDisk(repoRoot, pkgName);
+      if (headPkg?.untrackedDevDependencies) {
+        basePkg.untrackedDevDependencies = headPkg.untrackedDevDependencies;
+      }
+    }
+    return basePkg;
+  };
 
   const headClosure = buildClosure(
     headLockfile,
