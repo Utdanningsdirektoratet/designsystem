@@ -85,6 +85,7 @@ exports[`Dialog Non Modal 1`] = `
   </label>
   <textarea
     rows="8"
+    autocomplete="off"
     id="<removed>"
     style="<removed>"
   >
@@ -174,6 +175,7 @@ exports[`Dialog With Form 1`] = `
     <div>
       <input
         autofocus="true"
+        autocomplete="name"
         type="text"
         value
         id="<removed>"
@@ -480,7 +482,13 @@ exports[`Drawer 1`] = `
       Modal
     </label>
   </ds-field>
-  <fieldset>
+  <fieldset aria-labelledby="<removed>">
+    <legend
+      data-weight="medium"
+      id="<removed>"
+    >
+      Velg plassering for dialogen
+    </legend>
     <div style="<removed>">
       <ds-field data-clickdelegatefor="<removed>">
         <input
