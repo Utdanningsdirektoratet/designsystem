@@ -4,9 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "lint": "eslint . --max-warnings 0",
-    "test": "vitest run",
-    "test:unit": "vitest run"
+    "lint": "eslint . --max-warnings 0"
   },
   "devDependencies": {
     "@types/js-yaml": "catalog:",
