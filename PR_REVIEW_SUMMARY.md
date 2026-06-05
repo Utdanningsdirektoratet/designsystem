@@ -2,11 +2,12 @@
 
 This branch consolidates the following 10 component promotions from beta to stable into a single PR to save Chromatic credits.
 
-## Approved (8 PRs)
+## Approved (9 PRs)
 
 ### 1. Tooltip — [#777](https://github.com/Utdanningsdirektoratet/designsystem/pull/777)
 
 - **Changes:** Moved export from `beta.ts` → `stable.ts`. Removed beta tag from stories. Spread `args` into story renders for correct Storybook code examples. Polished Norwegian docs (accessibility, guidelines, polyfill sections).
+- **Post-review fixes:** Corrected `aria-labelledby`/`aria-describedby` → `aria-label`/`aria-description` in docs and story strings. Removed reference to deprecated `type` prop from docs text. Marked deprecated `type` and `open` props in Storybook args table. Rebased on main.
 - **Review:** ✅ Approved by **adrianflatner**. No unresolved comments.
 
 ### 2. Breadcrumbs — [#776](https://github.com/Utdanningsdirektoratet/designsystem/pull/776)
@@ -32,6 +33,7 @@ This branch consolidates the following 10 component promotions from beta to stab
 ### 6. Dialog — [#754](https://github.com/Utdanningsdirektoratet/designsystem/pull/754)
 
 - **Changes:** Export move + beta tag removal. Extensive docs rewrite: restructured Modal vs Non-modal section to top, rewrote copy for clarity, improved explanations of `command`/`commandfor`, `closedby`, `closeButton`, `autofocus`. Stories updated with `{...args}` spread. No API changes.
+- **Post-review fixes:** Marked deprecated `asChild` prop in Storybook args table. Rebased on main.
 - **Review:** ✅ Approved by **adrianflatner** ("Nice!"). 1 minor comment addressed. No unresolved comments.
 
 ### 7. Dropdown — [#753](https://github.com/Utdanningsdirektoratet/designsystem/pull/753)
@@ -47,15 +49,25 @@ This branch consolidates the following 10 component promotions from beta to stab
 ### 9. Badge — [#667](https://github.com/Utdanningsdirektoratet/designsystem/pull/667)
 
 - **Changes:** Export move + beta tag removal. Fixed Nynorsk typos in docs. Stories refactored: replaced inline styles with CSS classes, added args passthrough. DashboardDemo updated with Badge on Header.UserButton and responsive small-screen variant with dropdown.
+- **Post-review fixes:** Refactored DashboardDemo to use `avatar` prop with `Badge.Position` (matching the pattern in TestHeader.tsx) instead of wrapping the entire UserButton.
 - **Review:** ✅ Approved by **adrianflatner** ("Looks good, må se på `dir`"). RTL positioning issue noted but documented — not blocking. No unresolved comments.
 
-## Awaiting Approval (1 PR)
+## ~~Awaiting Approval~~ (0 PRs)
 
 ### 10. Textarea — [#761](https://github.com/Utdanningsdirektoratet/designsystem/pull/761)
 
 - **Changes:** Export move + beta tag removal. Added `autoComplete: 'off'` to all story args. Added `advancedCodeDocs` to Controlled story. Docs rewritten with clearer Norwegian, fixed case-sensitive link. Snapshots updated.
-- **Review:** ⚠️ **Review required** — **adrianflatner** commented (requesting `advancedCodeDocs` on Controlled story) which was addressed, but **no formal approval yet**. No unresolved comments remain.
+- **Review:** ✅ Approved by **une**. adrianflatner's earlier comment (requesting `advancedCodeDocs` on Controlled story) was addressed.
 
 ## Common Pattern
 
 Every PR follows the same structure: move export from `beta.ts` → `stable.ts`, remove `'beta'` Storybook tag, polish Norwegian documentation, and improve story quality (args spreading, accessibility fixes, `advancedCodeDocs`). No component API changes in any of them — all are purely promotions + docs/stories cleanup.
+
+All 10 PR branches have been rebased on `main` and conflicts resolved.
+
+## Additional: Deprecated Props Fix
+
+### Field — [fix/field-deprecated-props](https://github.com/Utdanningsdirektoratet/designsystem/tree/fix/field-deprecated-props)
+
+- **Changes:** Marked deprecated upstream props (`asChild` on Field, `hint` on Field.Counter) in Storybook args tables. Field is already stable but was missing these annotations.
+- **Review:** Pending — not part of the original beta-to-stable PRs.
