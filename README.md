@@ -717,16 +717,6 @@ Designsystem-bibliotekene fra Digdir er pinnet for å ha full kontroll over hvil
 pnpm update -r --latest "@digdir/*"
 ```
 
-#### `nx` og `@nx/*`
-
-`nx` brukes kun for release-automatikk (`nx release`-API-ene). Oppgrader med:
-
-```sh
-pnpm nx migrate latest
-pnpm install --no-frozen-lockfile
-pnpm nx --run-migrations # kun dersom migrations.json ble opprettet
-```
-
 #### `prettier`
 
 > [!IMPORTANT]

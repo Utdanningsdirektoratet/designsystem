@@ -75,17 +75,14 @@ All packages (`@udir-design/*`) are released at the same version simultaneously
 
 **Phase 2 — Replace `nx/release` APIs with `semantic-release`** ✅ Complete
 
-- Combined with Phase 1, allows Nx to be removed entirely.
+- Combined with Phase 1, Nx has been removed entirely.
 - Independently motivated: the existing release orchestrator was self-described
   as "a simple imitation of semantic-release" and had accumulated workarounds
   (`ignoreGitTags`, `restoreGitTags`, `sanitizeNpmTag`, the 0.x→1.x guard) that
   the real tool handles natively.
 
-**Remaining steps before Nx can be fully removed:**
-
-1. Bootstrap git notes for existing tags (see `RELEASING.md` §1)
-2. Push notes to origin: `git push origin 'refs/notes/semantic-release*'`
-3. Remove `nx`, `@nx/js`, and related deps (see §2.10 below)
+**Operational prerequisite:** git notes must be bootstrapped and pushed before
+the first real release. See `RELEASING.md` §1.
 
 ---
 
@@ -391,26 +388,27 @@ Both deleted as planned. semantic-release handles pre-release tag filtering
 natively via git notes and branch config.
 
 **Additional discovery:** existing tags (created by Nx as annotated tags) had no
-git notes, making them invisible to semantic-release. A bootstrap script
-(`@internal/ci/bin/bootstrap-git-notes.ts`) was added to create the required
-notes. See `RELEASING.md` §1 for details.
+git notes, making them invisible to semantic-release. A one-time bootstrap
+script was used to create the required notes (now removed).
 
 #### 2.9 CI changes for Phase 2 ✅
 
 `release.yml` required no structural changes — the CLI interface (`--branch`,
 `--dry-run`, `--publish`, `--preview-changelog`) was preserved.
 
-#### 2.10 Final cleanup
+#### 2.10 Final cleanup ✅
 
-Once Phase 2 is validated on a release branch:
+Removed:
 
-- Remove `nx` and `@nx/js` from root `devDependencies` and pnpm catalog
-- Delete `nx.json` and `changelog-renderer.ts`
-- Remove `@swc-node/register` and `ts-node` (only needed by Nx)
-- `@swc/core` stays (used by `@vitejs/plugin-react-swc`)
-- `@swc/helpers` stays (used by `next`)
+- `nx` and `@nx/js` from root `devDependencies` and pnpm catalog
+- `nx.json` and `changelog-renderer.ts`
+- `@swc-node/register` and `ts-node` (only needed by Nx)
+- `detect-port` trust policy exclusion (no longer in lockfile)
+- Dependabot ignore rules for `nx` / `@nx/*`
+- `.gitignore` entries for `.nx/` and Nx-related editor rule files
 
-This cleanup is prepared on branch `build/remove-nx`.
+Kept: `@swc/core` (used by `@vitejs/plugin-react-swc`) and `@swc/helpers`
+(used by `next`).
 
 ---
 
