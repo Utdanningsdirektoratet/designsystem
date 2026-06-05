@@ -393,7 +393,7 @@ overrides:
 packageExtensionsChecksum: sha256-LMeXZzq7zvEM75wWqXhoH5AKiX4vxXAjdihGHRrb69w=
 
 patchedDependencies:
-  remark-heading-id@1.0.1: faf8a813a7e122ff325c4b8d65a67c81db9b50ce3c1538954b66a62960a4dc1a
+  remark-heading-id@1.0.1: 01a0e789c972e5f10120bc9c842127ba4f31c5cb60f00b73b1a4fdbc07538ae0
 
 importers:
 
@@ -734,7 +734,7 @@ importers:
         version: 4.0.1
       remark-heading-id:
         specifier: 'catalog:'
-        version: 1.0.1(patch_hash=faf8a813a7e122ff325c4b8d65a67c81db9b50ce3c1538954b66a62960a4dc1a)
+        version: 1.0.1(patch_hash=01a0e789c972e5f10120bc9c842127ba4f31c5cb60f00b73b1a4fdbc07538ae0)
       remark-parse:
         specifier: 'catalog:'
         version: 11.0.0
@@ -14952,7 +14952,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  remark-heading-id@1.0.1(patch_hash=faf8a813a7e122ff325c4b8d65a67c81db9b50ce3c1538954b66a62960a4dc1a):
+  remark-heading-id@1.0.1(patch_hash=01a0e789c972e5f10120bc9c842127ba4f31c5cb60f00b73b1a4fdbc07538ae0):
     dependencies:
       lodash: 4.18.1
       unist-util-visit: 1.4.1
