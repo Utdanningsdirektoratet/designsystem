@@ -24,6 +24,12 @@ import { semanticRelease } from '../src/semantic-release.js';
         type: 'boolean',
         default: true,
       },
+      'dry-run-full': {
+        description:
+          'Full E2E dry-run: runs the entire pipeline in a sandbox (temp git repo, pnpm stage publish --dry-run). Tests orchestration, version sync, and publish validation without publishing or pushing to the real remote.',
+        type: 'boolean',
+        default: false,
+      },
       'preview-changelog': {
         description:
           'Run in dry-run mode but write the generated changelog to CHANGELOG.md for CI preview. Implies --no-publish.',
@@ -49,6 +55,10 @@ import { semanticRelease } from '../src/semantic-release.js';
     options.dryRun = false;
   }
   if (options.previewChangelog) {
+    options.publish = false;
+  }
+  if (options.dryRunFull) {
+    options.dryRun = false;
     options.publish = false;
   }
 
