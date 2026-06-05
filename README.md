@@ -852,7 +852,7 @@ Når du er ferdig med en fiks eller feature, må du ta stilling til hvor denne s
 - Skal den rulles ut som en ny, stabil versjon? Lag en PR mot `release/latest`.
 - Skal den rulles ut som en alpha- eller beta-versjon? Lag en PR mot `release/alpha` eller `release/beta`.
 - Er det en feature eller bugfix for en eldre versjon? I dette tilfellet må endringene dine branche UT fra versjonen som trenger endring. For eksempel, dersom vi allerede er på versjon 2, men du må fikse en bug i versjon 1.13.1, så må du
-  - branche ut fra git-taggen `@udir-design/react@1.13.1`
+  - branche ut fra git-taggen `v1.13.1`
   - committe bugfix `fix: <description here>`
   - lage en PR mot branchen `release/1.x` (eller `release/1.13.x`)
   - dersom bug'en også finnes i versjon 2, kan du så lage en PR for å merge `release/1.x` inn i `release/latest`
