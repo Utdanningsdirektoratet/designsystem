@@ -7,9 +7,9 @@ Before running any of the below commands, run `az login` and choose the subscrip
 ## Build-time infrastructure
 
 > [!NOTE]
-> The `nx-remotecache` storage container is no longer in use. CI caching is now handled by
-> Nx Cloud. The container and Bicep templates are kept in place temporarily as a
-> rollback option and can be deleted once the migration has been confirmed stable on `main`.
+> The `nx-remotecache` storage container defined in `designsystem-build.bicep` is no longer
+> in use. CI caching is now handled by Turborepo via GitHub Actions cache. The container can
+> be deleted from Azure once confirmed no longer needed.
 
 ## Testapp infrastructure
 
