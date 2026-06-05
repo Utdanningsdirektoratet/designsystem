@@ -6,10 +6,10 @@ exports[`Aria 1`] = `
     data-icon="true"
     data-variant="primary"
     type="button"
-    data-tooltip="Jeg er hovedinformasjon (aria-labelledby)"
+    data-tooltip="Jeg er hovedinformasjon (aria-label)"
     data-placement="top"
     data-autoplacement="true"
-    aria-label="Jeg er hovedinformasjon (aria-labelledby)"
+    aria-label="Jeg er hovedinformasjon (aria-label)"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -33,10 +33,10 @@ exports[`Aria 1`] = `
   <button
     data-variant="primary"
     type="button"
-    data-tooltip="Jeg er tillegsinformasjon (aria-describedby)"
+    data-tooltip="Jeg er tillegsinformasjon (aria-description)"
     data-placement="top"
     data-autoplacement="true"
-    aria-description="Jeg er tillegsinformasjon (aria-describedby)"
+    aria-description="Jeg er tillegsinformasjon (aria-description)"
   >
     Tekst i trigger
   </button>
