@@ -17,7 +17,9 @@
     "lint": {
       "inputs": ["$TURBO_DEFAULT$"]
     },
-    "inject": {},
+    "inject": {
+      "cache": false
+    },
     "test": {
       "dependsOn": ["build"],
       "inputs": ["$TURBO_DEFAULT$"]
