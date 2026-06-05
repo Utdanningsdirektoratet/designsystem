@@ -27,6 +27,7 @@ export * from './switch/Switch';
 export * from './tableOfContents/TableOfContents';
 export * from './tabs/Tabs';
 export * from './tag/Tag';
+export * from './textarea/Textarea';
 export * from './tooltip/Tooltip';
 export * from './typography/heading/Heading';
 export * from './typography/label/Label';
