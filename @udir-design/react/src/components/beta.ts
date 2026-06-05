@@ -18,6 +18,5 @@ export * from './skeleton/Skeleton';
 export * from './tableOfContents/TableOfContents';
 export * from './tabs/Tabs';
 export * from './table';
-export * from './textfield/Textfield';
 export * from './toggleGroup';
 export * from './typography/prose/Prose';
