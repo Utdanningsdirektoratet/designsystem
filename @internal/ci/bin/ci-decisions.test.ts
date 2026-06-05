@@ -50,8 +50,26 @@ function isCleanWorkingTree(): boolean {
   }
 }
 
+const clean = isCleanWorkingTree();
+const isCI = process.env['CI'] === 'true';
+
+/**
+ * Skip a test if the working tree is dirty and we're not in CI.
+ * In CI the tree should always be clean, so a dirty tree there is a real
+ * problem and the test should fail rather than be silently skipped.
+ */
+function skipIfDirtyLocal(ctx: { skip: () => void }) {
+  if (!clean && !isCI) {
+    console.log(
+      'Skipped: working tree is dirty, turbo may report false affected state',
+    );
+    ctx.skip();
+  }
+}
+
 describe('should-run-ui-tests', () => {
-  it('returns "false" on push events when react is not affected', () => {
+  it('returns "false" on push events when react is not affected', (ctx) => {
+    skipIfDirtyLocal(ctx);
     const result = runScript('should-run-ui-tests.ts', {
       IS_PR_READY: 'false',
       IS_PUSH: 'true',
@@ -85,20 +103,15 @@ describe('should-run-ui-tests', () => {
     expect(result.stdout).toBe('false');
   });
 
-  it('returns "false" when PR is ready but react is not affected', () => {
-    const clean = isCleanWorkingTree();
+  it('returns "false" when PR is ready but react is not affected', (ctx) => {
+    skipIfDirtyLocal(ctx);
     const result = runScript('should-run-ui-tests.ts', {
       IS_PR_READY: 'true',
       IS_PUSH: 'false',
       TURBO_SCM_BASE: 'HEAD',
     });
     expect(result.exitCode).toBe(0);
-    if (clean) {
-      expect(result.stdout).toBe('false');
-    } else {
-      // Dirty tree: turbo may report affected, so just check valid output
-      expect(['true', 'false']).toContain(result.stdout);
-    }
+    expect(result.stdout).toBe('false');
   });
 
   it('returns "false" when neither push nor PR ready', () => {
@@ -141,18 +154,14 @@ describe('should-deploy-testapp', () => {
     expect(result.stdout).toBe('true');
   });
 
-  it('returns "false" when no dispatch and nothing affected (clean tree)', () => {
-    const clean = isCleanWorkingTree();
+  it('returns "false" when no dispatch and nothing affected (clean tree)', (ctx) => {
+    skipIfDirtyLocal(ctx);
     const result = runScript('should-deploy-testapp.ts', {
       IS_DISPATCH: 'false',
       TURBO_SCM_BASE: 'HEAD',
     });
     expect(result.exitCode).toBe(0);
-    if (clean) {
-      expect(result.stdout).toBe('false');
-    } else {
-      expect(['true', 'false']).toContain(result.stdout);
-    }
+    expect(result.stdout).toBe('false');
   });
 
   it('simulates push-to-main in CI (TURBO_SCM_BASE=previous commit)', () => {

@@ -24,6 +24,10 @@
       "dependsOn": ["build"],
       "inputs": ["$TURBO_DEFAULT$"]
     },
+    "test:unit": {
+      "dependsOn": ["build"],
+      "inputs": ["$TURBO_DEFAULT$"]
+    },
     "dev": {
       "persistent": true,
       "dependsOn": ["build"]
