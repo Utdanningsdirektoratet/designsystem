@@ -1,4 +1,4 @@
-import { Meta, ArgTypes, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 
 import * as Stories from './useFormNavigation.stories';
 import { useFormNavigation } from './useFormNavigation';
@@ -7,12 +7,12 @@ import { useFormNavigation } from './useFormNavigation';
 
 # useFormNavigation
 
-En React-hook for å håndtere navigasjon i [`FormNavigation`](/docs/components-formnavigation--docs).
+En React-hook for å styre navigasjon i [`FormNavigation`](/docs/components-formnavigation--docs).
 
 <Canvas of={Stories.Preview} withToolbar />
 <Controls of={Stories.Preview} />
 
-I respons får du objektet:
+Hooken returnerer et objekt med:
 
 ```ts
 {
@@ -50,7 +50,7 @@ I respons får du objektet:
 
 Send inn `value` til `useFormNavigation` for å sette første aktive steg. Deretter bruker du `getStepProps` for å spre nødvendige props på hvert `FormNavigation.Step`. Bruk `getGroupProps` for å spre nødvendige props på `FormNavigation.Group`.
 
-Sett `label` i `getStepProps` for hvert steg dersom du ønsker å vise aktivt steg in en lukket gruppe. Da vil `label` på hvert steg overstyre eventuelle `children` i `FormNavigation.Step`.
+Sett `label` i `getStepProps` for hvert steg dersom du ønsker å vise aktivt steg i en lukket gruppe. Da vil `label` på hvert steg overstyre eventuelle `children` i `FormNavigation.Step`.
 
 ```tsx
 type StepId = 'infopage' | 'step-1' | 'step-2';
@@ -93,15 +93,15 @@ return (
     {...}
 
     {id === 'info' && <InfoPage />}
-    {id === 'step 1' && <Step1Page />}
-    {id === 'step 2' && <Step2Page />}
+    {id === 'step-1' && <Step1Page />}
+    {id === 'step-2' && <Step2Page />}
   </>
 );
 ```
 
 ### Håndtering av tilstand
 
-Validering av skjema håndteres utenfor hooken, slik at du kan tilpasse valideringslogikken etter behov. Når brukeren prøver å gå videre til neste steg, kan du validere det nåværende steget og bruke `markInvalid` eller `markCompleted` basert på resultatet. Dette kan gjøres i `onChange` som du sender til hooken.
+Skjemavalidering håndteres utenfor hooken, slik at du kan tilpasse valideringslogikken etter behov. Når brukeren prøver å gå videre til neste steg, kan du validere gjeldende steg og bruke `markInvalid` eller `markCompleted` basert på resultatet. Dette kan gjøres i `onChange` som du sender til hooken.
 
 ```tsx
 const onStepChange = (nextId: StepId, prevId: StepId) => {
@@ -121,27 +121,27 @@ const { markCompleted, markInvalid } = useFormNavigation<StepId>({
 
 ### Navigasjonskontroller
 
-Bruk `prev`, `next`, `hasPrev` og `hasNext` for å lage navigasjonsknapper for skjemaet ditt.
+Bruk `prev`, `next`, `hasPrev` og `hasNext` for å lage navigasjonsknapper i skjemaet.
 
 ```tsx
 const { prev, next, hasPrev, hasNext } = useFormNavigation({
-    value: 'step-1',
+  value: 'step-1',
 });
 
 return (
-    <>
-        {...}
+  <>
+    {...}
 
-        {hasPrev() && (
-            <Button variant="secondary" onClick={prev}>
-                Forrige
-            </Button>
-        )}
-        {hasNext() && (
-            <Button variant="secondary" onClick={next}>
-                Neste
-            </Button>
-        )}
-    </>
+    {hasPrev() && (
+      <Button variant="secondary" onClick={prev}>
+        Forrige
+      </Button>
+    )}
+    {hasNext() && (
+      <Button variant="secondary" onClick={next}>
+        Neste
+      </Button>
+    )}
+  </>
 );
 ```
