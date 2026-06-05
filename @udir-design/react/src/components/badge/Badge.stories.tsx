@@ -275,8 +275,8 @@ export const SystemAlerts = meta.story({
             <Badge count={2} maxCount={9} data-color="danger" {...args} />
           </Details.Summary>
           <Details.Content className="example-details-content">
-            {Array.from({ length: 2 }, (_) => (
-              <Varsel importance="danger" />
+            {Array.from({ length: 2 }, (_, i) => (
+              <Varsel key={i} importance="danger" />
             ))}
           </Details.Content>
         </Details>
@@ -286,8 +286,8 @@ export const SystemAlerts = meta.story({
             <Badge count={6} maxCount={9} data-color="warning" {...args} />
           </Details.Summary>
           <Details.Content className="example-details-content">
-            {Array.from({ length: 6 }, (_) => (
-              <Varsel importance="warning" />
+            {Array.from({ length: 6 }, (_, i) => (
+              <Varsel key={i} importance="warning" />
             ))}
           </Details.Content>
         </Details>
@@ -297,8 +297,8 @@ export const SystemAlerts = meta.story({
             <Badge count={11} maxCount={9} data-color="info" {...args} />
           </Details.Summary>
           <Details.Content className="example-details-content">
-            {Array.from({ length: 11 }, (_) => (
-              <Varsel importance="info" />
+            {Array.from({ length: 11 }, (_, i) => (
+              <Varsel key={i} importance="info" />
             ))}
           </Details.Content>
         </Details>
