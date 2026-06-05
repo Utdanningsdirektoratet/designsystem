@@ -51,7 +51,7 @@ I dette repositoriet lever den delen av designsystemet som implementeres i kode:
 
 # Versjonering og publisering
 
-Bibliotekene våre følger [semantisk versjonering](https://semver.org/) og [semantisk publisering](https://semantic-release.gitbook.io).
+Bibliotekene våre følger [semantisk versjonering](https://semver.org/) og [semantisk publisering](https://semantic-release.org/).
 
 Det vil si, gitt et versjonsnummer MAJOR.MINOR.PATCH, vil
 
@@ -834,9 +834,9 @@ pnpm --filter @udir-design/symbols run generate:pngs
 
 ## Hvordan publisere en ny versjon
 
-Vi benytter en publiseringsstrategi basert på [semantic-release](https://semantic-release.gitbook.io),
+Vi benytter en publiseringsstrategi basert på [semantic-release](https://semantic-release.org/),
 tilpasset for bruk i monorepo. Denne strategien baserer seg på automatisert publisering gjennom pull requests til
-spesifikke brancher.
+spesifikke brancher. Se [RELEASING.md](RELEASING.md) for teknisk oppsett, konfigurasjon og bootstrap-prosedyre.
 
 Hos oss er dette satt opp slik:
 
@@ -877,7 +877,7 @@ Dette er de viktigste verktøyene og tjenestene vi bruker i designsystemet.
 - [Node.js](https://nodejs.org) - kjøretidsmiljø for JavaScript som brukes av de fleste verktøyene våre
 - [pnpm](https://pnpm.io/) — package manager som håndterer avhengigheter, både mellom interne moduler og til eksterne biblioteker
 - [Turborepo](https://turbo.build/) — task-orkestrering som respekterer avhengigheter mellom ulike deler av monorepoet, med lokal og remote caching, samt affected-deteksjon i CI
-- [Nx](https://nx.dev/) — brukes kun for release-automatikk (`nx release`)
+- [semantic-release](https://semantic-release.org/) — automatisert versjonering, endringslogg og publisering basert på [Conventional Commits](https://www.conventionalcommits.org/)
 - [Vite](https://vite.dev/) — verktøy som bygger de individuelle TypeScript-bibliotekene
 - [GitHub Actions](https://github.com/features/actions) — kontinuerlig integrasjon og utrulling (CI/CD)
 
