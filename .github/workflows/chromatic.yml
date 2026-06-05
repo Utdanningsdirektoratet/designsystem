@@ -51,6 +51,8 @@ jobs:
           onlyChanged: true
           externals: 'design-tokens/src/**'
           untraced: |
+            pnpm-lock.yaml
+            pnpm-workspace.yaml
             @udir-design/react/.storybook/docs/**
             @udir-design/react/.storybook/manager.tsx
             @udir-design/react/.storybook/manager.css
