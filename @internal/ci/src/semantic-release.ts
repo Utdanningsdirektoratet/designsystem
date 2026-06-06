@@ -270,15 +270,9 @@ const branches: BranchSpec[] = [
   },
   // Stable latest channel (`false` = default dist-tag, i.e. @latest on npm)
   { name: 'release/latest', channel: false },
-  // Pre-release channels
-  { name: 'release/next', prerelease: 'next', channel: 'next' },
-  {
-    name: 'release/next-major',
-    prerelease: 'next-major',
-    channel: 'next-major',
-  },
+  // Pre-release channel
+  // TODO: Remove after the first stable release on release/latest
   { name: 'release/beta', prerelease: 'beta', channel: 'beta' },
-  { name: 'release/alpha', prerelease: 'alpha', channel: 'alpha' },
 ];
 
 function buildSemanticReleaseConfig(options: SemanticReleaseOptions): Options {

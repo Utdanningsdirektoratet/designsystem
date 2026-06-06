@@ -379,6 +379,12 @@ The `branches` array in `@internal/ci/src/semantic-release.ts` maps directly
 from the former `defaultReleaseConfigs`. `sanitizeNpmTag`, `removeReleasePrefix`,
 and `getReleaseConfig` were all deleted.
 
+**Simplification:** `release/alpha`, `release/next`, and `release/next-major`
+were removed. Component maturity is communicated via import paths
+(`/alpha`, `/beta`, `/`) rather than npm dist-tags, making per-channel
+pre-release branches redundant. `release/beta` is kept temporarily until the
+first stable release on `release/latest`.
+
 #### 2.8 Affect on `ignoreGitTags` / `restoreGitTags` ✅
 
 Both deleted as planned. semantic-release handles pre-release tag filtering
@@ -439,7 +445,8 @@ These items were preserved through both phases:
   `--publish`, `--preview-changelog`) are unchanged; `--git-push`,
   `--commit-version-numbers`, and `--verbose` were removed (`semantic-release`
   manages git internally and logs verbosely by default)
-- The branch-to-channel strategy (`release/latest`, `release/beta`, etc.)
+- The branch-to-channel strategy (`release/latest`, `release/beta`,
+  maintenance branches) — simplified from 6 branches to 3
 - `pnpm-workspace.yaml` structure
 - Package `publishConfig`, `version`, and `exports` fields
 - The PR preview-changelog comment feature
