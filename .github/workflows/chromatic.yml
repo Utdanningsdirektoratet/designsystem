@@ -41,7 +41,7 @@ jobs:
 
       - name: Publish Storybook to Chromatic (TurboSnap)
         if: steps.diff_runtime_deps.outputs.deps_changed != 'true'
-        uses: chromaui/action@fd9f0848927ca40d7157227eb3a7f771827652bc # v16.7.0
+        uses: chromaui/action@05812acac141ce7d317a3f787be88122bca27cf4 # v17.3.0
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: ${{ env.CHROMATIC_WORKING_DIR }}
@@ -71,7 +71,7 @@ jobs:
 
       - name: Publish Storybook to Chromatic (full build)
         if: steps.diff_runtime_deps.outputs.deps_changed == 'true'
-        uses: chromaui/action@fd9f0848927ca40d7157227eb3a7f771827652bc # v16.7.0
+        uses: chromaui/action@05812acac141ce7d317a3f787be88122bca27cf4 # v17.3.0
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: ${{ env.CHROMATIC_WORKING_DIR }}
