@@ -41,13 +41,14 @@ Phase 1 replaced the following Nx mechanisms:
 
 CI and release scripts live in `@internal/ci/` (previously `@internal/build-tools`,
 renamed since no published packages depend on it — it only contains CI and release
-automation). The release scripts are still Nx-dependent and targeted by Phase 2:
+automation). Phase 2 replaced the Nx release dependencies:
 
-| File                                   | Role                                                                                           |
-| -------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `@internal/ci/src/semantic-release.ts` | The release orchestrator — calls `nx/release` APIs                                             |
-| `@internal/ci/bin/semantic-release.ts` | CLI entry point for the above                                                                  |
-| `changelog-renderer.ts`                | Extends `nx/release/changelog-renderer`; customises body indent and breaking-change extraction |
+| File                                        | Role                                                             |
+| ------------------------------------------- | ---------------------------------------------------------------- |
+| `@internal/ci/src/semantic-release.ts`      | Release orchestrator — calls `semantic-release` programmatically |
+| `@internal/ci/src/changelog-writer-opts.ts` | Changelog format customisation (commit body, footer stripping)   |
+| `@internal/ci/bin/semantic-release.ts`      | CLI entry point                                                  |
+| `@internal/ci/bin/sync-package-versions.ts` | Syncs resolved version into publishable `package.json` files     |
 
 ### Current git tag format
 
@@ -72,19 +73,16 @@ All packages (`@udir-design/*`) are released at the same version simultaneously
   50 000 free tier, costing ~$433/month. Turborepo + GitHub Actions Cache
   eliminated this cost entirely.
 
-**Phase 2 — Replace `nx/release` APIs with `semantic-release`** (estimated 2–3 days)
+**Phase 2 — Replace `nx/release` APIs with `semantic-release`** ✅ Complete
 
-- Combined with Phase 1, allows Nx to be removed entirely.
-- Independently motivated: the existing release orchestrator is self-described
-  as "a simple imitation of semantic-release" and has accumulated workarounds
+- Combined with Phase 1, Nx has been removed entirely.
+- Independently motivated: the existing release orchestrator was self-described
+  as "a simple imitation of semantic-release" and had accumulated workarounds
   (`ignoreGitTags`, `restoreGitTags`, `sanitizeNpmTag`, the 0.x→1.x guard) that
   the real tool handles natively.
-- Carries release-pipeline risk: a bug in the new release flow could publish
-  broken packages or miss a release. In practice the risk is low — releases are
-  biweekly, existing published versions continue to work regardless, and failed
-  releases are caught immediately via notification channels. The existing
-  Nx-based script remains functional until Phase 2 is validated, so reverting is
-  a single `git revert`.
+
+**Operational prerequisite:** git notes must be bootstrapped and pushed before
+the first real release. See `RELEASING.md` §1.
 
 ---
 
@@ -249,7 +247,7 @@ Developers use `pnpm dev`, `pnpm build:docs`, etc. CI keeps explicit
 
 ---
 
-## Phase 2 — Replace `nx/release` APIs (estimated: 2–3 days)
+## Phase 2 — Replace `nx/release` APIs ✅
 
 ### What needs replacing
 
@@ -325,194 +323,129 @@ branch logic must live in the wrapper anyway. The cost/benefit doesn't improve o
 
 ### Implementation plan for Phase 2
 
-#### 2.1 New dependencies
+The subsections below were the original plan. Each is annotated with what was
+actually done.
 
-```bash
-pnpm add -Dw semantic-release \
-  @semantic-release/commit-analyzer \
-  @semantic-release/release-notes-generator \
-  @semantic-release/changelog \
-  @semantic-release/github \
-  @semantic-release/npm \
-  @semantic-release/exec \
-  @semantic-release/git \
-  conventional-changelog-conventionalcommits
-```
+#### 2.1 New dependencies ✅
 
-#### 2.2 Replace `nxUpdateVersion`
+Added to `@internal/ci` (not root) as devDependencies:
 
-`semantic-release`'s `commit-analyzer` plugin determines the bump type. The new version is
-available as `nextRelease.version` in the semantic-release lifecycle. For fixed versioning, use
-`@semantic-release/exec` in the `prepare` step to propagate the version to all publishable
-package.json files.
+- `semantic-release` — core release engine
+- `@semantic-release/exec` — runs version sync and publish commands
+- `conventional-changelog-conventionalcommits` — changelog preset
 
-The script should discover packages dynamically (those with `publishConfig` in their
-`package.json`) rather than hard-coding names. A TypeScript script in `@internal/ci`
-is the natural home — consistent with the other CI scripts:
+The bundled plugins (`@semantic-release/commit-analyzer`,
+`@semantic-release/release-notes-generator`, `@semantic-release/github`) ship
+with `semantic-release` and did not need separate installation.
+`@semantic-release/changelog`, `@semantic-release/npm`, and
+`@semantic-release/git` were not needed.
 
-```typescript
-// @internal/ci/bin/sync-package-versions.ts
-import { readFileSync, writeFileSync } from 'node:fs';
-import { glob } from 'fast-glob';
+#### 2.2 Replace `nxUpdateVersion` ✅
 
-const version = process.argv[2];
-if (!version) throw new Error('Usage: sync-package-versions.ts <version>');
+Implemented as `@internal/ci/bin/sync-package-versions.ts`, called by
+`@semantic-release/exec` in the `prepare` step. Discovers publishable packages
+via glob + `publishConfig` check, as planned.
 
-const packageJsonPaths = glob.sync('@udir-design/*/package.json');
+#### 2.3 Replace `nxCreateChangelog` ✅
 
-for (const path of packageJsonPaths) {
-  const pkg = JSON.parse(readFileSync(path, 'utf-8'));
-  if (!pkg.publishConfig) continue; // skip non-publishable packages
-  pkg.version = version;
-  writeFileSync(path, JSON.stringify(pkg, null, 2) + '\n');
-}
-```
+`@semantic-release/release-notes-generator` with custom `writerOpts`
+(in `@internal/ci/src/changelog-writer-opts.ts`). The `--preview-changelog`
+workaround works as planned: programmatic call → `nextRelease.notes` →
+`writeFile('CHANGELOG.md', ...)`.
 
-Currently the 5 publishable packages are `@udir-design/{react,css,icons,symbols,theme}`
-(`design-tokens` is private and not published).
+#### 2.4 Replace `nxPublishRelease` ✅
 
-#### 2.3 Replace `nxCreateChangelog`
+Uses `@semantic-release/exec` with `pnpm stage publish` (staged publishing)
+instead of direct `pnpm publish`. Packages require manual approval via
+`pnpm stage approve` before going live.
 
-`@semantic-release/changelog` writes `CHANGELOG.md`. `@semantic-release/github` creates the GitHub
-release. These are drop-in replacements via the plugin config.
+#### 2.5 Handle the 0.x → 1.x transition ✅
 
-**`--preview-changelog` workaround:**
+Simplified to nothing — all packages are well past v1.0.0, so the guard was
+dropped entirely.
 
-`semantic-release` with `dryRun: true` generates `nextRelease.notes` but does not write
-`CHANGELOG.md`. The existing preview step in `ci.yml` reads from `CHANGELOG.md`. The fix is
-to call semantic-release programmatically and write the file manually:
+#### 2.6 Rewrite `changelog-renderer.ts` ✅
 
-```typescript
-// In semantic-release.ts, for the previewChangelog path:
-import semanticRelease from 'semantic-release';
-import { writeFile } from 'node:fs/promises';
+Replaced with `writerOpts` that wraps the `conventionalcommits` preset
+transform. Adds commit body text (indented, footers stripped) below each entry.
+The BREAKING CHANGES section is handled natively by the preset.
 
-const result = await semanticRelease({ dryRun: true, ...config });
-if (result && result.nextRelease?.notes) {
-  await writeFile('CHANGELOG.md', result.nextRelease.notes, 'utf-8');
-}
-// preview-changelogs.sh then reads CHANGELOG.md as today
-```
+#### 2.7 Branch config ✅
 
-#### 2.4 Replace `nxPublishRelease`
+The `branches` array in `@internal/ci/src/semantic-release.ts` maps directly
+from the former `defaultReleaseConfigs`. `sanitizeNpmTag`, `removeReleasePrefix`,
+and `getReleaseConfig` were all deleted.
 
-`@semantic-release/npm` can publish a single package. For publishing all five packages from one
-run, use `@semantic-release/exec` in the `publish` step:
+**Simplification:** `release/alpha`, `release/next`, and `release/next-major`
+were removed. Component maturity is communicated via import paths
+(`/alpha`, `/beta`, `/`) rather than npm dist-tags, making per-channel
+pre-release branches redundant. `release/beta` is kept temporarily until the
+first stable release on `release/latest`.
 
-```bash
-# scripts/publish-all.sh ${nextRelease.channel}
-TAG=${1:-latest}
-pnpm -r --filter "@udir-design/*" publish --no-git-checks --tag "$TAG" --access public
-```
+#### 2.8 Affect on `ignoreGitTags` / `restoreGitTags` ✅
 
-Or configure multiple `@semantic-release/npm` steps, one per package directory.
+Both deleted as planned. semantic-release handles pre-release tag filtering
+natively via git notes and branch config.
 
-#### 2.5 Handle the 0.x → 1.x transition
+**Additional discovery:** existing tags (created by Nx as annotated tags) had no
+git notes, making them invisible to semantic-release. A one-time bootstrap
+script was used to create the required notes (now removed).
 
-The existing transition guard in `updateVersion()` in `semantic-release.ts` detects when all
-packages are at `0.x.x` and forces a bump to `1.0.0`. With `semantic-release`, implement this as
-an `analyzeCommits` plugin override or a `verifyConditions` hook that overrides `nextRelease.version`
-when the current version is `0.x.x`. Alternatively — since all packages are well past `v1.0.0` —
-this guard can be simplified to a version assertion that exits early if it detects a `0.x.x` state,
-rather than trying to auto-correct it.
+#### 2.9 CI changes for Phase 2 ✅
 
-#### 2.6 Rewrite `changelog-renderer.ts`
+`release.yml` required no structural changes — the CLI interface (`--branch`,
+`--dry-run`, `--publish`, `--preview-changelog`) was preserved.
 
-The current file extends `nx/release/changelog-renderer` and overrides two methods:
+#### 2.10 Final cleanup ✅
 
-- `formatChange`: adds body text (indented) below each changelog entry
-- `extractBreakingChangeExplanation`: strips git footers and indents the explanation
+Removed:
 
-Without the Nx base class, rewrite this as a `@semantic-release/release-notes-generator` custom
-template or a `generateNotes` plugin. The 40 lines of logic (footer stripping, indentation) remain
-the same — only the entry point changes. Starting from a standard conventional-commits
-template and iterating on the format is also acceptable.
+- `nx` and `@nx/js` from root `devDependencies` and pnpm catalog
+- `nx.json` and `changelog-renderer.ts`
+- `@swc-node/register` and `ts-node` (only needed by Nx)
+- `detect-port` trust policy exclusion (no longer in lockfile)
+- Dependabot ignore rules for `nx` / `@nx/*`
+- `.gitignore` entries for `.nx/` and Nx-related editor rule files
 
-#### 2.7 Branch config
-
-Replace `defaultReleaseConfigs` in `semantic-release.ts` with a `branches` array passed to
-`semanticRelease(...)`. The mapping is:
-
-```typescript
-// Before (current defaultReleaseConfigs)
-{ name: 'release/+([0-9])?(.{+([0-9]),x}).x' }
-{ name: 'release/latest' }
-{ name: 'release/next' }
-{ name: 'release/next-major' }
-{ name: 'release/beta',  prerelease: true }
-{ name: 'release/alpha', prerelease: true }
-
-// After (semantic-release branches)
-{ name: 'release/+([0-9])?(.{+([0-9]),x}).x' }  // same glob syntax
-{ name: 'release/latest' }
-{ name: 'release/next',       prerelease: 'next',       channel: 'next' }
-{ name: 'release/next-major', prerelease: 'next-major', channel: 'next-major' }
-{ name: 'release/beta',       prerelease: 'beta',       channel: 'beta' }
-{ name: 'release/alpha',      prerelease: 'alpha',      channel: 'alpha' }
-```
-
-The `sanitizeNpmTag` and `removeReleasePrefix` helpers in the current file become unnecessary —
-semantic-release handles channel naming from the branch config directly.
-
-The `getReleaseConfig` function (which uses `micromatch`) also becomes unnecessary — semantic-release
-runs only on branches that match the `branches` array, and exits cleanly otherwise.
-
-#### 2.8 Affect on `ignoreGitTags` / `restoreGitTags`
-
-**Delete both functions.** Semantic-release does not pick up pre-release tags as the base version
-for stable releases. This is core behaviour, not an edge case. The manual tag deletion/restoration
-dance is a workaround for the fact that the current system (Nx release) doesn't have this built in.
-
-#### 2.9 CI changes for Phase 2
-
-**`release.yml`** — the `semantic-release.ts` CLI entry point and its flags (`--branch`,
-`--dry-run`, `--publish`, `--preview-changelog`) can remain unchanged if the new implementation
-honours the same interface. The `semantic-release` package is then an internal dependency of
-the script, not something invoked directly by CI.
-
-`pnpm-setup/action.yml` and `should-run-ui-tests.ts` are already Turbo-native (done in Phase 1).
-
-#### 2.10 Final cleanup
-
-Once Phase 2 is complete and CI is green on a release branch:
-
-- Remove `nx` and `@nx/js` from root `devDependencies` and pnpm catalog
-- Remove the entire `release` section from `nx.json` (or delete `nx.json` entirely)
-- Remove `@swc-node/register`, `@swc/core`, `@swc/helpers` if they were only needed by Nx
+Kept: `@swc/core` (used by `@vitejs/plugin-react-swc`) and `@swc/helpers`
+(used by `next`).
 
 ---
 
 ## Summary: what Nx usage gets replaced by what
 
-| Current Nx usage                           | Phase 1 status                                                                                             | Phase 2 replacement                            |
-| ------------------------------------------ | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| `nx affected -t ...`                       | ✅ Replaced with `turbo run ...` (no affected filter on build; affected detection drives conditional jobs) | —                                              |
-| `nx run-many -t build -p "@udir-design/*"` | ✅ `turbo run build --filter="@udir-design/*"`                                                             | —                                              |
-| `nx test:storybook`                        | ✅ `turbo run test:storybook --filter=@udir-design/react`                                                  | —                                              |
-| `nx build:docs`                            | ✅ `turbo run build:docs --filter=@udir-design/react`                                                      | —                                              |
-| `nx run @udir-design/theme:build`          | ✅ `turbo run build --filter=@udir-design/theme`                                                           | —                                              |
-| `nx test:storybook -u`                     | ✅ `turbo run test:storybook ... -- --update`                                                              | —                                              |
-| `defaultProject: "@udir-design/react"`     | ✅ Root `package.json` scripts + explicit `--filter` in CI                                                 | —                                              |
-| `nx show projects --affected`              | ✅ `turbo ls --affected` in `should-run-ui-tests.ts`                                                       | —                                              |
-| `nrwl/nx-set-shas`                         | ✅ Removed. Replaced with `TURBO_SCM_BASE`                                                                 | —                                              |
-| `targetDefaults` task orchestration        | ✅ `turbo.json`                                                                                            | —                                              |
-| `@nx/eslint/plugin` task inference         | ✅ Explicit `lint` scripts + migrated ESLint configs                                                       | —                                              |
-| `@nx/azure-cache` / Nx Cloud               | ✅ GitHub Actions Cache                                                                                    | —                                              |
-| `@nx/eslint`, `@nx/eslint-plugin`          | ✅ Removed                                                                                                 | —                                              |
-| `nx/release` APIs                          | Nx kept installed, unchanged                                                                               | `semantic-release` + plugins                   |
-| `nx/release/changelog-renderer`            | Nx kept installed, unchanged                                                                               | Custom renderer (same logic, no Nx base class) |
-| `nx.json` `release` section                | Kept as-is                                                                                                 | Removed                                        |
+| Current Nx usage                           | Phase 1 status                                                                                             | Phase 2 replacement                          |
+| ------------------------------------------ | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| `nx affected -t ...`                       | ✅ Replaced with `turbo run ...` (no affected filter on build; affected detection drives conditional jobs) | —                                            |
+| `nx run-many -t build -p "@udir-design/*"` | ✅ `turbo run build --filter="@udir-design/*"`                                                             | —                                            |
+| `nx test:storybook`                        | ✅ `turbo run test:storybook --filter=@udir-design/react`                                                  | —                                            |
+| `nx build:docs`                            | ✅ `turbo run build:docs --filter=@udir-design/react`                                                      | —                                            |
+| `nx run @udir-design/theme:build`          | ✅ `turbo run build --filter=@udir-design/theme`                                                           | —                                            |
+| `nx test:storybook -u`                     | ✅ `turbo run test:storybook ... -- --update`                                                              | —                                            |
+| `defaultProject: "@udir-design/react"`     | ✅ Root `package.json` scripts + explicit `--filter` in CI                                                 | —                                            |
+| `nx show projects --affected`              | ✅ `turbo ls --affected` in `should-run-ui-tests.ts`                                                       | —                                            |
+| `nrwl/nx-set-shas`                         | ✅ Removed. Replaced with `TURBO_SCM_BASE`                                                                 | —                                            |
+| `targetDefaults` task orchestration        | ✅ `turbo.json`                                                                                            | —                                            |
+| `@nx/eslint/plugin` task inference         | ✅ Explicit `lint` scripts + migrated ESLint configs                                                       | —                                            |
+| `@nx/azure-cache` / Nx Cloud               | ✅ GitHub Actions Cache                                                                                    | —                                            |
+| `@nx/eslint`, `@nx/eslint-plugin`          | ✅ Removed                                                                                                 | —                                            |
+| `nx/release` APIs                          | Nx kept installed, unchanged                                                                               | ✅ `semantic-release` + plugins              |
+| `nx/release/changelog-renderer`            | Nx kept installed, unchanged                                                                               | ✅ `writerOpts` wrapping conventionalcommits |
+| `nx.json` `release` section                | Kept as-is                                                                                                 | ✅ Deleted (config is programmatic)          |
 
 ---
 
 ## What is NOT disrupted
 
-These items were preserved through Phase 1 and will be preserved through Phase 2:
+These items were preserved through both phases:
 
-- The `semantic-release.ts` CLI interface — flags (`--branch`, `--dry-run`, `--publish`,
-  `--preview-changelog`, `--git-push`, etc.) are unchanged
-- The branch-to-channel strategy (`release/latest`, `release/beta`, etc.) — will be
-  preserved in Phase 2 via semantic-release’s native `branches` config
+- The `semantic-release.ts` CLI interface — flags (`--branch`, `--dry-run`,
+  `--publish`, `--preview-changelog`) are unchanged; `--git-push`,
+  `--commit-version-numbers`, and `--verbose` were removed (`semantic-release`
+  manages git internally and logs verbosely by default)
+- The branch-to-channel strategy (`release/latest`, `release/beta`,
+  maintenance branches) — simplified from 6 branches to 3
 - `pnpm-workspace.yaml` structure
 - Package `publishConfig`, `version`, and `exports` fields
 - The PR preview-changelog comment feature
+- `release.yml` workflow structure

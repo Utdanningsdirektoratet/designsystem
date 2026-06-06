@@ -51,7 +51,7 @@ I dette repositoriet lever den delen av designsystemet som implementeres i kode:
 
 # Versjonering og publisering
 
-Bibliotekene våre følger [semantisk versjonering](https://semver.org/) og [semantisk publisering](https://semantic-release.gitbook.io).
+Bibliotekene våre følger [semantisk versjonering](https://semver.org/) og [semantisk publisering](https://semantic-release.org/).
 
 Det vil si, gitt et versjonsnummer MAJOR.MINOR.PATCH, vil
 
@@ -717,16 +717,6 @@ Designsystem-bibliotekene fra Digdir er pinnet for å ha full kontroll over hvil
 pnpm update -r --latest "@digdir/*"
 ```
 
-#### `nx` og `@nx/*`
-
-`nx` brukes kun for release-automatikk (`nx release`-API-ene). Oppgrader med:
-
-```sh
-pnpm nx migrate latest
-pnpm install --no-frozen-lockfile
-pnpm nx --run-migrations # kun dersom migrations.json ble opprettet
-```
-
 #### `prettier`
 
 > [!IMPORTANT]
@@ -834,34 +824,29 @@ pnpm --filter @udir-design/symbols run generate:pngs
 
 ## Hvordan publisere en ny versjon
 
-Vi benytter en publiseringsstrategi basert på [semantic-release](https://semantic-release.gitbook.io),
+Vi benytter en publiseringsstrategi basert på [semantic-release](https://semantic-release.org/),
 tilpasset for bruk i monorepo. Denne strategien baserer seg på automatisert publisering gjennom pull requests til
-spesifikke brancher.
+spesifikke brancher. Se [RELEASING.md](RELEASING.md) for teknisk oppsett, konfigurasjon og bootstrap-prosedyre.
 
 Hos oss er dette satt opp slik:
 
 - `release/latest` brukes for å publisere en stabil versjon, og får `@latest`-taggen på npm.
-- `release/alpha` og `release/beta` brukes for å publisere hhv. alpha- og beta-versjoner. Disse får pre-release versjonsnummer i henhold til [SemVer](https://semver.org/) — f.eks. `1.1.0-alpha.2` — og hhv. `@alpha` og `@beta` tag på npm.
+- `release/beta` brukes for å publisere beta-versjoner. Disse får pre-release versjonsnummer i henhold til [SemVer](https://semver.org/) — f.eks. `1.1.0-beta.2` — og `@beta`-tag på npm. **Denne branchen vil fjernes etter første stabile release på `release/latest`.**
 - `release/<N>.x` og `release/<N>.<N>.x`, der `<N>` er et tall, brukes for å publisere vedlikeholdsversjoner. Det lar oss for eksempel fikse en bug eller legge til en feature på en versjon som er én eller flere major-versjoner bak `release/latest`.
 
 I alle tilfeller blir versjonsnummer og endringslogg automatisk generert etter endringene har blitt merget inn i korrekt branch.
 
-Når du er ferdig med en fiks eller feature, må du ta stilling til hvor denne skal merges inn:
+Alle endringer merges først inn i `main`-branchen via en PR. Når man er klar for å publisere, oppretter man en PR for å merge `main` inn i en release-branch — for øyeblikket `release/beta`, men vi går over til `release/latest` etter første stabile release.
 
-- Skal den ikke rulles ut enda? Lag en PR mot `main`-branchen
-- Skal den rulles ut som en ny, stabil versjon? Lag en PR mot `release/latest`.
-- Skal den rulles ut som en alpha- eller beta-versjon? Lag en PR mot `release/alpha` eller `release/beta`.
-- Er det en feature eller bugfix for en eldre versjon? I dette tilfellet må endringene dine branche UT fra versjonen som trenger endring. For eksempel, dersom vi allerede er på versjon 2, men du må fikse en bug i versjon 1.13.1, så må du
-  - branche ut fra git-taggen `v1.13.1`
-  - committe bugfix `fix: <description here>`
-  - lage en PR mot branchen `release/1.x` (eller `release/1.13.x`)
-  - dersom bug'en også finnes i versjon 2, kan du så lage en PR for å merge `release/1.x` inn i `release/latest`
+Unntaket er vedlikeholdsversjoner for eldre major-versjoner. Dersom vi allerede er på versjon 2, men du må fikse en bug i versjon 1.13.1:
 
-Husk også at endringer som rulles ut til `release/latest` ikke automatisk blir tilgjengelig på `release/alpha`, for å gjøre det må man merge `release/latest` inn i `release/alpha`.
-
-Man kan også måtte merge andre veien, f.eks. dersom en alpha-versjon skal promoteres til stabil vil man merge `release/alpha` inn i `release/latest`.
-
-Dersom man har endringer i `main`-branchen som ennå ikke er publisert, vil man altså opprette en PR for å merge `main` inn i en av `release/*`-branchene.
+- **Bugen finnes også i nåværende versjon:**
+  1. Fiks bugen på `main` via en PR som vanlig
+  2. Opprett vedlikeholdsbranchen `release/1.x` (eller `release/1.13.x`) fra git-taggen `v1.13.1`, dersom den ikke allerede finnes
+  3. Cherry-pick fix-commiten til en ny branch basert på vedlikeholdsbranchen, og lag en PR mot vedlikeholdsbranchen
+- **Bugen finnes kun i den eldre versjonen:**
+  1. Opprett vedlikeholdsbranchen fra git-taggen, dersom den ikke allerede finnes
+  2. Lag en branch fra vedlikeholdsbranchen med fixen, og opprett en PR mot `release/1.x`
 
 ## Oversikt over verktøy
 
@@ -877,7 +862,7 @@ Dette er de viktigste verktøyene og tjenestene vi bruker i designsystemet.
 - [Node.js](https://nodejs.org) - kjøretidsmiljø for JavaScript som brukes av de fleste verktøyene våre
 - [pnpm](https://pnpm.io/) — package manager som håndterer avhengigheter, både mellom interne moduler og til eksterne biblioteker
 - [Turborepo](https://turbo.build/) — task-orkestrering som respekterer avhengigheter mellom ulike deler av monorepoet, med lokal og remote caching, samt affected-deteksjon i CI
-- [Nx](https://nx.dev/) — brukes kun for release-automatikk (`nx release`)
+- [semantic-release](https://semantic-release.org/) — automatisert versjonering, endringslogg og publisering basert på [Conventional Commits](https://www.conventionalcommits.org/)
 - [Vite](https://vite.dev/) — verktøy som bygger de individuelle TypeScript-bibliotekene
 - [GitHub Actions](https://github.com/features/actions) — kontinuerlig integrasjon og utrulling (CI/CD)
 

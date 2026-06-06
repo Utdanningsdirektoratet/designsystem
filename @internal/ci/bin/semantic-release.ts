@@ -3,7 +3,7 @@
 import process from 'node:process';
 import yargs, { Options } from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { semanticRelease } from '../src/semantic-release';
+import { semanticRelease } from '../src/semantic-release.js';
 
 (async () => {
   const yargsInstance = yargs(hideBin(process.argv));
@@ -26,7 +26,7 @@ import { semanticRelease } from '../src/semantic-release';
       },
       'preview-changelog': {
         description:
-          'Similar to dry-run, but will actually update version numbers and changelogs (without committing to git). Useful for previewing the changelogs in CI. --preview-changelog implies --no-git-push.',
+          'Run in dry-run mode but write the generated changelog to CHANGELOG.md for CI preview. Implies --no-publish.',
         type: 'boolean',
         default: false,
       },
@@ -36,28 +36,10 @@ import { semanticRelease } from '../src/semantic-release';
         type: 'boolean',
         default: false,
       },
-      'commit-version-numbers': {
+      'repository-url': {
         description:
-          'Whether or not to commit changes in package.json "version" fields to git. This is NOT recommended, see https://semantic-release.gitbook.io/semantic-release/support/faq#why-is-the-package.jsons-version-not-updated-in-my-repository',
-        type: 'boolean',
-        default: false,
-      },
-      'commit-changelog': {
-        description:
-          'Whether or not to commit changes in changelog files to git. This is NOT recommended, see https://semantic-release.gitbook.io/semantic-release/support/faq#should-release-notes-be-committed-to-a-changelog.md-in-my-repository-during-a-release',
-        type: 'boolean',
-        default: false,
-      },
-      'git-push': {
-        description:
-          'Whether or not to push git tags (and version / changelog commits, if enabled) to the remote',
-        type: 'boolean',
-        default: true,
-      },
-      verbose: {
-        description: 'Whether or not to enable verbose logging',
-        type: 'boolean',
-        default: false,
+          'Override the git remote URL (for local E2E testing against a bare repo)',
+        type: 'string',
       },
     } satisfies Record<string, Options>)
     .wrap(yargsInstance.terminalWidth())
@@ -67,7 +49,7 @@ import { semanticRelease } from '../src/semantic-release';
     options.dryRun = false;
   }
   if (options.previewChangelog) {
-    options.gitPush = false;
+    options.publish = false;
   }
 
   await semanticRelease(options);

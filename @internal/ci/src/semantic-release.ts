@@ -1,270 +1,174 @@
-import { execSync } from 'node:child_process';
+import { writeFile } from 'node:fs/promises';
 import process from 'node:process';
-import micromatch from 'micromatch';
-import {
-  releaseChangelog as nxCreateChangelog,
-  releasePublish as nxPublishRelease,
-  releaseVersion as nxUpdateVersion,
-} from 'nx/release';
-import { VersionOptions } from 'nx/src/command-line/release/command-object';
+import semanticReleaseFn, {
+  type BranchSpec,
+  type Options,
+} from 'semantic-release';
+import { writerOpts } from './changelog-writer-opts.js';
 
-export interface ReleaseConfig {
-  /**
-   * Branch name. Can be a micromatch glob, see https://github.com/micromatch/micromatch?tab=readme-ov-file#matching-features
-   */
-  name: string;
-  /**
-   * Distribution channel to use (e.g. 'latest', 'next'). If not set, the branch name will be used,
-   * without the 'release/' prefix if it is present.
-   */
-  channel?: string;
-  /**
-   * Create prerelease instead of a normal release
-   * @default false
-   */
-  prerelease?: boolean;
-}
-
-interface SemanticReleaseOptions {
+export interface SemanticReleaseOptions {
   branch: string;
   dryRun: boolean;
   previewChangelog: boolean;
   publish: boolean;
-  verbose: boolean;
-  commitVersionNumbers: boolean;
-  commitChangelog: boolean;
-  gitPush: boolean;
-  releaseConfigs?: ReleaseConfig[];
+  /** Override the git remote URL (useful for local E2E testing). */
+  repositoryUrl?: string;
 }
 
 /**
- * This function is a simple imitation of semantic-release — https://semantic-release.gitbook.io —
- * using 'nx release' under the hood to determine which versions should be bumped, and how.
+ * Run a semantic-release cycle.
  *
- * semantic-release itself does not support monorepos. However, this function enables us to use
- * the same flow as described in their documentation, while leveraging Nx to determine which
- * projects need to be versioned and released.
- *
- * The function's only purpose is to determine which distribution channel (npm tag) and release mode
- * (regular or prerelease) to use, based on the given branch name. There is also some logic to
- * handle the initial release, since transitioning from 0.x.x to 1.x.x versions can't be done
- * fully automatically.
- *
- * The rest of the responsibility is handed over to Nx's release command 'nx release'
- *
- * PREREQUISITES:
- * - Each package to be released needs to have a git tag `<package-name>@0.0.0` pointing to the repo's
- *   initial commit. This is used as the 'current version' before any release has been made.
- * - nx.json needs to have `release.version.conventionalCommits` set to `true`.
- *
- * PITFALLS:
- * - If the script which calls this function is not run from the workspace root, Nx can't auto-detect
- *   the package manager. To fix, set nx.json `cli.packageManager` to the correct package manager
- *   ("bun", "npm", "pnpm", or "yarn")
- * - The function has only been tested with pnpm as the package manager.
+ * Modes:
+ * - `--dry-run` (default): analyse commits and generate notes without publishing.
+ * - `--preview-changelog`: dry-run + write notes to `CHANGELOG.md` for PR preview.
+ * - `--publish`: real release — stage packages on npm (awaiting manual approval).
  */
 export async function semanticRelease(options: SemanticReleaseOptions) {
-  const releaseConfigs = options.releaseConfigs ?? defaultReleaseConfigs;
-  console.log('Determining if a release should be made...');
-  const config = getReleaseConfig(releaseConfigs, options.branch);
+  const label = options.previewChangelog
+    ? 'preview changelog'
+    : options.dryRun
+      ? 'dry-run'
+      : 'publish';
+  console.log(`Running semantic-release — ${label}…`);
 
-  if (!config) {
+  const config = buildSemanticReleaseConfig(options);
+  const env = buildEnv(options);
+  const isDryRun = options.dryRun || options.previewChangelog;
+
+  const result = await semanticReleaseFn(
+    { ...config, dryRun: isDryRun },
+    {
+      cwd: process.cwd(),
+      env: env as NodeJS.ProcessEnv,
+      stdout: process.stdout,
+      stderr: process.stderr,
+    },
+  );
+
+  if (!result) {
+    console.log('No release is needed — no relevant commits found.');
+    process.exit(0);
+  }
+
+  const { nextRelease } = result;
+  console.log(
+    `\nRelease: ${nextRelease.gitTag} (channel: ${nextRelease.channel ?? 'latest'})`,
+  );
+
+  if (options.previewChangelog) {
+    if (nextRelease.notes) {
+      await writeFile('CHANGELOG.md', nextRelease.notes, 'utf-8');
+      console.log('Changelog preview written to CHANGELOG.md');
+    }
+  } else if (options.dryRun) {
+    console.log('Dry-run complete — no changes were made.');
+  } else {
     console.log(
-      `Branch '${options.branch}' does not match a configured release plan. It will not be released.`,
+      'Release staged successfully. Run `pnpm stage list` to see staged packages,',
+      'then `pnpm stage approve <id> --otp <otp>` to publish.',
     );
-    process.exit();
-  }
-
-  console.log(`Found configuration for branch ${options.branch}:`);
-  console.log('  - npm tag:', config.channel);
-  console.log('  - prerelease mode:', config.prerelease);
-
-  // Temporarily remove some local git tags that may interfere with versioning
-  const ignoredTags = ignoreGitTags(config, options);
-
-  /*
-   * Update version number
-   */
-  const versionOptions: VersionOptions = {
-    preid: config.prerelease ? removeReleasePrefix(options.branch) : undefined,
-    gitCommit: options.commitVersionNumbers,
-    gitTag: false,
-    gitPush: false,
-    dryRun: !options.previewChangelog && options.dryRun,
-    verbose: options.verbose,
-  };
-  const version = await updateVersion(versionOptions, config);
-  const { workspaceVersion, projectsVersionData } = version;
-
-  /*
-   * Create changelogs
-   */
-  await nxCreateChangelog({
-    versionData: projectsVersionData,
-    version: workspaceVersion,
-    gitCommit: !options.previewChangelog && options.commitChangelog,
-    gitCommitArgs: options.commitVersionNumbers ? '--amend --no-edit' : '',
-    gitTag: !options.previewChangelog,
-    gitPush: !options.previewChangelog && options.gitPush,
-    dryRun: !options.previewChangelog && options.dryRun,
-    verbose: options.verbose,
-    createRelease:
-      options.previewChangelog || !options.gitPush ? false : undefined,
-  });
-
-  /*
-   * Publish releases to npm, if necessary
-   */
-  const projectsToPublish = Object.entries(projectsVersionData)
-    .filter(
-      ([, versionInfo]) =>
-        versionInfo.currentVersion !== null && versionInfo.newVersion !== null,
-    )
-    .map(([projectName]) => projectName);
-
-  if (!projectsToPublish.length) {
-    console.log('No projects need publishing.');
-    process.exit();
-  }
-
-  // publishResults contains a map of project names and their exit codes
-  const publishResults = await nxPublishRelease({
-    dryRun: !options.publish || options.dryRun,
-    verbose: options.verbose,
-    tag: config.channel,
-  });
-
-  /*
-   * Cleanup and exit
-   */
-  restoreGitTags(ignoredTags, options);
-
-  process.exit(
-    Object.values(publishResults).every((result) => result.code === 0) ? 0 : 1,
-  );
-}
-
-// The default config is based on semantic-release's default config,
-// https://github.com/semantic-release/semantic-release/blob/5c006d1f7b34cb1d943aa691ecd211da67182b3d/lib/get-config.js#L64-L72
-// However, we use a release/ prefix and drop `main` and `master` in favor of `release/latest`
-export const defaultReleaseConfigs: ReleaseConfig[] = [
-  { name: 'release/+([0-9])?(.{+([0-9]),x}).x' }, // (N.N.x or N.x.x or N.x with N being a number)
-  { name: 'release/latest' },
-  { name: 'release/next' },
-  { name: 'release/next-major' },
-  { name: 'release/beta', prerelease: true },
-  { name: 'release/alpha', prerelease: true },
-];
-
-type CompleteReleaseConfig = Required<ReleaseConfig>;
-
-function ignoreGitTags(
-  config: CompleteReleaseConfig,
-  options: SemanticReleaseOptions,
-) {
-  const removedTags: { tag: string; commit: string }[] = [];
-  if (!config.prerelease) {
-    // Remove pre-release tags locally, to prevent resolving a pre-release as the current version
-    const gitTags = execSync('git tag --list *.*.*', { encoding: 'utf-8' })
-      .trim()
-      .split('\n');
-    const prereleaseTags = gitTags.filter((tag) =>
-      tag.match(/(-[a-z0-9]+)+\.\d+$/i),
-    );
-    if (options.verbose) {
-      console.log('Ignoring pre-release versions:');
-      console.log(prereleaseTags);
-    }
-    for (const tag of prereleaseTags) {
-      const commitHash = execSync(`git rev-list -n 1 ${tag}`, {
-        encoding: 'utf-8',
-      }).trim();
-      execSync(`git tag --delete ${tag}`);
-      removedTags.push({ tag, commit: commitHash });
-    }
-  }
-  return removedTags;
-}
-
-function restoreGitTags(
-  tagsToRestore: ReturnType<typeof ignoreGitTags>,
-  options: SemanticReleaseOptions,
-) {
-  if (options.dryRun || options.previewChangelog || !options.gitPush) {
-    // Recreate the removed tags. This is not necessary when actually running in CI,
-    // since the tags aren't actually deleted on the remote, but it's nice when testing locally.
-    for (const { tag, commit } of tagsToRestore) {
-      execSync(`git tag ${tag} ${commit}`);
-    }
   }
 }
 
-const removeReleasePrefix = (branch: string) =>
-  branch.replace(/^release\//, '');
-
-function sanitizeNpmTag(tag: string) {
-  // npm dist tags cannot be valid SemVer ranges
-  // https://docs.npmjs.com/cli/v11/commands/npm-dist-tag#caveats
-  // So we tag e.g. '1.x' as 'release-1.x' instead
-  if (tag.match(/^(v?\d)/)) {
-    return `release-${tag}`;
-  }
-  return tag;
-}
-
-function getReleaseConfig(
-  configs: ReleaseConfig[],
-  branchName: string,
-): CompleteReleaseConfig | undefined {
-  const defaultConfig = {
-    // Use the branch name as the distribution channel, if not explicitly set,
-    // but remove the 'release/' prefix if it exists.
-    channel: sanitizeNpmTag(removeReleasePrefix(branchName)),
-    prerelease: false,
-  };
-  const config = configs.find((config) =>
-    micromatch.isMatch(branchName, config.name),
-  );
-  if (!config) {
-    return;
-  }
-  return { ...defaultConfig, ...config };
-}
+// ─── Environment ─────────────────────────────────────────────────────────────
 
 /**
- * Update version using Nx, and handle 0.x.x to 1.x.x transition if necessary
+ * Build an env object that makes `env-ci` (used internally by semantic-release)
+ * resolve the correct branch. This is especially important for:
+ * - `--preview-changelog` mode (runs on PR branches, not release branches)
+ * - Local testing (no CI env vars set)
  */
-async function updateVersion(
-  versionOptions: VersionOptions,
-  branchConfig: Required<ReleaseConfig>,
-) {
-  // Let Nx handle versioning
-  const version = await nxUpdateVersion(versionOptions);
+function buildEnv(
+  options: SemanticReleaseOptions,
+): Record<string, string | undefined> {
+  const env: Record<string, string | undefined> = { ...process.env };
+  env['GITHUB_ACTIONS'] = 'true';
+  env['GITHUB_REF'] = `refs/heads/${options.branch}`;
+  env['GITHUB_EVENT_NAME'] =
+    env['GITHUB_EVENT_NAME'] === 'pull_request'
+      ? 'push'
+      : (env['GITHUB_EVENT_NAME'] ?? 'push');
+  delete env['GITHUB_HEAD_REF'];
+  return env;
+}
 
-  /*
-   * Check if we need to transition from 0.x.x to 1.x.x. This script will only release 1.x.x versions or higher
-   */
-  const isZeroVersion = (v: string | null) => v?.startsWith('0.') ?? false;
-  const isNullOrZeroVersion = (v: string | null) =>
-    v === null || isZeroVersion(v);
+// ─── Semantic-release configuration ──────────────────────────────────────────
 
-  const currentProjectVersions = Object.values(version.projectsVersionData).map(
-    (x) => x.currentVersion,
-  );
-  if (currentProjectVersions.every(isNullOrZeroVersion)) {
-    console.log(
-      'Current version is 0.x.x, which is unsupported in semantic-release. bumping to 1.0.0 before continuing.',
-    );
-    return await nxUpdateVersion({
-      ...versionOptions,
-      gitCommitArgs: '--amend --no-edit',
-      specifier: branchConfig.prerelease ? 'premajor' : 'major',
-    });
-  } else if (currentProjectVersions.some(isZeroVersion)) {
-    console.error(
-      'Current versions are a mix of 0.x.x and >= 1.x.x, this is not supported and must be resolved manually.',
-    );
-    process.exit(1);
+/**
+ * The `branches` array maps directly from the former `defaultReleaseConfigs`.
+ *
+ * semantic-release matches the current git branch against this list and
+ * determines the channel, pre-release identifier, etc. automatically.
+ *
+ * See https://semantic-release.org/foundation/workflow-configuration/
+ */
+const branches: BranchSpec[] = [
+  // Maintenance releases (e.g. release/1.x, release/2.3.x)
+  // Channel strips the `release/` prefix → npm tag `1.x`, `2.3.x`, etc.
+  {
+    name: 'release/+([0-9])?(.{+([0-9]),x}).x',
+    channel: '${name.replace(/^release\\//g, "")}',
+  },
+  // Stable latest channel (`false` = default dist-tag, i.e. @latest on npm)
+  { name: 'release/latest', channel: false },
+  // Pre-release channel
+  // TODO: Remove after the first stable release on release/latest
+  { name: 'release/beta', prerelease: 'beta', channel: 'beta' },
+];
+
+function buildSemanticReleaseConfig(options: SemanticReleaseOptions): Options {
+  let publishCmd: string | undefined;
+
+  if (options.publish) {
+    // Real release: stage packages (awaiting manual approval)
+    publishCmd =
+      'pnpm -r --filter "@udir-design/*" stage publish --no-git-checks --tag ${nextRelease.channel || "latest"} --access public';
   }
-  return version;
+
+  const hasGitHubToken = Boolean(
+    process.env['GH_TOKEN'] || process.env['GITHUB_TOKEN'],
+  );
+
+  return {
+    branches,
+    // v1.2.3 → tag "v1.2.3" — matches the existing tag format
+    tagFormat: 'v${version}',
+    // Allow running outside strict CI environments (e.g. local testing)
+    ci: false,
+    // Allow overriding the repository URL (e.g. for local E2E testing)
+    ...(options.repositoryUrl ? { repositoryUrl: options.repositoryUrl } : {}),
+    plugins: [
+      // 1. Determine the version bump from conventional commits.
+      //    Default rules: feat→minor, fix/perf/revert→patch,
+      //    BREAKING CHANGE→major.
+      ['@semantic-release/commit-analyzer', { preset: 'conventionalcommits' }],
+
+      // 2. Generate release notes — built-in plugin with custom writerOpts
+      //    that adds commit body text below each entry.
+      [
+        '@semantic-release/release-notes-generator',
+        {
+          preset: 'conventionalcommits',
+          writerOpts,
+        },
+      ],
+
+      // 3. Sync the resolved version to every publishable package.json
+      //    and optionally stage-publish to npm.
+      [
+        '@semantic-release/exec',
+        {
+          prepareCmd:
+            'pnpm tsx @internal/ci/bin/sync-package-versions.ts ${nextRelease.version}',
+          ...(publishCmd ? { publishCmd } : {}),
+        },
+      ],
+
+      // 4. Create a GitHub release with the generated notes.
+      //    Skipped when no GitHub token is available (e.g. local testing).
+      ...(hasGitHubToken && options.publish
+        ? ['@semantic-release/github']
+        : []),
+    ],
+  };
 }
