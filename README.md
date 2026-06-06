@@ -841,27 +841,22 @@ spesifikke brancher. Se [RELEASING.md](RELEASING.md) for teknisk oppsett, konfig
 Hos oss er dette satt opp slik:
 
 - `release/latest` brukes for å publisere en stabil versjon, og får `@latest`-taggen på npm.
-- `release/alpha` og `release/beta` brukes for å publisere hhv. alpha- og beta-versjoner. Disse får pre-release versjonsnummer i henhold til [SemVer](https://semver.org/) — f.eks. `1.1.0-alpha.2` — og hhv. `@alpha` og `@beta` tag på npm.
+- `release/beta` brukes for å publisere beta-versjoner. Disse får pre-release versjonsnummer i henhold til [SemVer](https://semver.org/) — f.eks. `1.1.0-beta.2` — og `@beta`-tag på npm. **Denne branchen vil fjernes etter første stabile release på `release/latest`.**
 - `release/<N>.x` og `release/<N>.<N>.x`, der `<N>` er et tall, brukes for å publisere vedlikeholdsversjoner. Det lar oss for eksempel fikse en bug eller legge til en feature på en versjon som er én eller flere major-versjoner bak `release/latest`.
 
 I alle tilfeller blir versjonsnummer og endringslogg automatisk generert etter endringene har blitt merget inn i korrekt branch.
 
-Når du er ferdig med en fiks eller feature, må du ta stilling til hvor denne skal merges inn:
+Alle endringer merges først inn i `main`-branchen via en PR. Når man er klar for å publisere, oppretter man en PR for å merge `main` inn i en release-branch — for øyeblikket `release/beta`, men vi går over til `release/latest` etter første stabile release.
 
-- Skal den ikke rulles ut enda? Lag en PR mot `main`-branchen
-- Skal den rulles ut som en ny, stabil versjon? Lag en PR mot `release/latest`.
-- Skal den rulles ut som en alpha- eller beta-versjon? Lag en PR mot `release/alpha` eller `release/beta`.
-- Er det en feature eller bugfix for en eldre versjon? I dette tilfellet må endringene dine branche UT fra versjonen som trenger endring. For eksempel, dersom vi allerede er på versjon 2, men du må fikse en bug i versjon 1.13.1, så må du
-  - branche ut fra git-taggen `v1.13.1`
-  - committe bugfix `fix: <description here>`
-  - lage en PR mot branchen `release/1.x` (eller `release/1.13.x`)
-  - dersom bug'en også finnes i versjon 2, kan du så lage en PR for å merge `release/1.x` inn i `release/latest`
+Unntaket er vedlikeholdsversjoner for eldre major-versjoner. Dersom vi allerede er på versjon 2, men du må fikse en bug i versjon 1.13.1:
 
-Husk også at endringer som rulles ut til `release/latest` ikke automatisk blir tilgjengelig på `release/alpha`, for å gjøre det må man merge `release/latest` inn i `release/alpha`.
-
-Man kan også måtte merge andre veien, f.eks. dersom en alpha-versjon skal promoteres til stabil vil man merge `release/alpha` inn i `release/latest`.
-
-Dersom man har endringer i `main`-branchen som ennå ikke er publisert, vil man altså opprette en PR for å merge `main` inn i en av `release/*`-branchene.
+- **Bugen finnes også i nåværende versjon:**
+  1. Fiks bugen på `main` via en PR som vanlig
+  2. Opprett vedlikeholdsbranchen `release/1.x` (eller `release/1.13.x`) fra git-taggen `v1.13.1`, dersom den ikke allerede finnes
+  3. Cherry-pick fix-commiten til en ny branch basert på vedlikeholdsbranchen, og lag en PR mot vedlikeholdsbranchen
+- **Bugen finnes kun i den eldre versjonen:**
+  1. Opprett vedlikeholdsbranchen fra git-taggen, dersom den ikke allerede finnes
+  2. Lag en branch fra vedlikeholdsbranchen med fixen, og opprett en PR mot `release/1.x`
 
 ## Oversikt over verktøy
 
