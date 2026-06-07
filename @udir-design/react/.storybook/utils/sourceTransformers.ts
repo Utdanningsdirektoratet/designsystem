@@ -45,6 +45,7 @@ async function formatWithPrettier(
 /**
  * Parse the story source with Prettier's TypeScript parser and extract the
  * `render` property, transforming it into a named function or const.
+ * Inlines story-level `args` when possible.
  * Falls back to the original source if no render property is found.
  */
 async function extractRender(src: string, name: string): Promise<string> {
@@ -62,39 +63,67 @@ async function extractRender(src: string, name: string): Promise<string> {
     return src;
   }
 
-  const renderNode = findRenderProperty(ast);
+  const renderNode = findProperty(ast, 'render');
   if (!renderNode) return src;
 
+  let renderSource: string;
   if (renderNode.method) {
     // render(args) { ... } → function Name(args) { ... }
-    const extracted = wrapped.slice(locStart(renderNode), locEnd(renderNode));
-    return extracted.replace(/^render/, `function ${name}`);
+    renderSource = wrapped
+      .slice(locStart(renderNode), locEnd(renderNode))
+      .replace(/^render/, `function ${name}`);
+  } else {
+    // render: (args) => ... → const Name = (args) => ...
+    const valueSource = wrapped.slice(
+      locStart(renderNode.value),
+      locEnd(renderNode.value),
+    );
+    renderSource = `const ${name} = ${valueSource}`;
   }
 
-  // render: (args) => ... → const Name = (args) => ...
-  const valueSource = wrapped.slice(
-    locStart(renderNode.value),
-    locEnd(renderNode.value),
-  );
-  return `const ${name} = ${valueSource}`;
+  // Extract args and remove from function params
+  const argsNode = findProperty(ast, 'args');
+  if (argsNode) {
+    const argsSource = wrapped.slice(
+      locStart(argsNode.value),
+      locEnd(argsNode.value),
+    );
+    renderSource = removeArgsParam(renderSource);
+    renderSource = `const args = ${argsSource};\n\n${renderSource}`;
+  }
+
+  return renderSource;
 }
 
-interface RenderNode {
+/**
+ * Remove `args` from the function parameter list.
+ * Handles: (args) => | args => | function name(args) {
+ */
+function removeArgsParam(source: string): string {
+  return source
+    .replace(/\(\s*args\s*\)\s*=>/, '() =>')
+    .replace(/(?<=\bconst\s+\w+\s*=\s*)args\s*=>/, '() =>')
+    .replace(/(?<=\bfunction\s+\w+)\(\s*args\s*\)/, '()')
+    .replace(/\(\s*args\s*,/, '(')
+    .replace(/,\s*args\s*\)/, ')');
+}
+
+interface PropertyNode {
   type: string;
   method?: boolean;
   key: { name?: string; value?: string };
   value: Record<string, unknown>;
 }
 
-/** Walk the AST to find an object property named "render" */
-function findRenderProperty(node: unknown): RenderNode | null {
+/** Walk the AST to find an object property by name */
+function findProperty(node: unknown, propName: string): PropertyNode | null {
   if (!node || typeof node !== 'object') return null;
 
   const n = node as Record<string, unknown>;
   if (n.type === 'Property') {
     const key = n.key as Record<string, unknown> | undefined;
-    if (key?.name === 'render' || key?.value === 'render') {
-      return n as unknown as RenderNode;
+    if (key?.name === propName || key?.value === propName) {
+      return n as unknown as PropertyNode;
     }
   }
 
@@ -103,11 +132,11 @@ function findRenderProperty(node: unknown): RenderNode | null {
     const child = n[key];
     if (Array.isArray(child)) {
       for (const item of child) {
-        const result = findRenderProperty(item);
+        const result = findProperty(item, propName);
         if (result) return result;
       }
     } else if (child && typeof child === 'object') {
-      const result = findRenderProperty(child);
+      const result = findProperty(child, propName);
       if (result) return result;
     }
   }
