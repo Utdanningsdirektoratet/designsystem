@@ -109,6 +109,7 @@
   },
   "devDependencies": {
     "@hookform/resolvers": "catalog:",
+    "@pagefind/component-ui": "catalog:",
     "@storybook/addon-a11y": "catalog:",
     "@storybook/addon-docs": "catalog:",
     "@storybook/addon-vitest": "catalog:",
@@ -143,6 +144,7 @@
     "highcharts": "catalog:",
     "highcharts-react-official": "catalog:",
     "mdast-util-to-hast": "catalog:",
+    "pagefind": "catalog:",
     "playwright": "catalog:",
     "prettier": "catalog:",
     "ramda": "catalog:",
@@ -153,6 +155,7 @@
     "react-style-stringify": "catalog:",
     "remark-gfm": "catalog:",
     "remark-heading-id": "catalog:",
+    "remark-mdx": "catalog:",
     "remark-parse": "catalog:",
     "remark-stringify": "catalog:",
     "sass": "catalog:",

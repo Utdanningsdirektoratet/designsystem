@@ -47,6 +47,7 @@ catalog:
   "@figma/rest-api-spec": ^0.41.0
   "@hookform/resolvers": ^5.9.1
   "@navikt/aksel-icons": 8.15.0
+  "@pagefind/component-ui": ^1.5.2
   "@radix-ui/react-slot": ^1.4.0
   "@storybook/addon-a11y": ^10.6.1
   "@storybook/addon-docs": ^10.6.1
@@ -95,6 +96,7 @@ catalog:
   jsdom: ^29.1.1
   mdast-util-to-hast: ^13.2.1
   next: ^16.4.0
+  pagefind: ^1.5.2
   playwright: ^1.64.0
   postcss: ^8.5.29
   postcss-cli: ^11.0.1
@@ -111,6 +113,7 @@ catalog:
   react-style-stringify: ^1.2.0
   remark-gfm: ^4.0.1
   remark-heading-id: ^1.0.1
+  remark-mdx: ^3.1.1
   remark-parse: ^11.0.0
   remark-stringify: ^11.0.0
   rimraf: ^6.1.3
