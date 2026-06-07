@@ -2,6 +2,7 @@ import { execSync } from 'node:child_process';
 import { defineMain } from '@storybook/react-vite/node';
 import remarkGfm from 'remark-gfm';
 import type { Plugin, UserConfig } from 'vite';
+import { pagefindIndexerPlugin } from './plugins/pagefind-indexer.js';
 import { createTierIndexers } from './utils/createTierIndexers.js';
 
 const isFromDependency = (fileName: string) =>
@@ -63,7 +64,10 @@ export default defineMain({
       build: {
         cssCodeSplit: false,
       },
-      plugins: [fixStorybookMockerEntryPlugin()],
+      plugins: [
+        fixStorybookMockerEntryPlugin(),
+        pagefindIndexerPlugin({ srcDir: 'src' }),
+      ],
       optimizeDeps: {
         /*
         Sometimes we get a message like this, and then tests fail:
