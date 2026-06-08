@@ -67,18 +67,7 @@ jobs:
         if: inputs.post-preview-comment
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          COMMENT_MARKER="<!-- docs-preview -->"
-          PR_NUMBER=${{ github.event.pull_request.number }}
-          PREVIEW_URL="https://stdesignsystemdocs.z1.web.core.windows.net/${DESTINATION_PATH}/"
-          BODY="${COMMENT_MARKER}
-          📚 **Docs preview**: ${PREVIEW_URL}"
-
-          COMMENT_ID=$(gh api "repos/${{ github.repository }}/issues/${PR_NUMBER}/comments" \
-            --jq '.[] | select(.body | startswith("<!-- docs-preview -->")) | .id' 2>/dev/null | head -1)
-
-          if [ -n "$COMMENT_ID" ]; then
-            gh api "repos/${{ github.repository }}/issues/comments/${COMMENT_ID}" -X PATCH -f body="${BODY}"
-          else
-            gh api "repos/${{ github.repository }}/issues/${PR_NUMBER}/comments" -f body="${BODY}"
-          fi
+          BODY="📚 **Docs preview**: https://stdesignsystemdocs.z1.web.core.windows.net/${DESTINATION_PATH}/"
+          gh pr comment "$PR_NUMBER" --edit-last --create-if-none --body "$BODY"
