@@ -6,14 +6,14 @@ import * as SorteringStories from './Sortering.stories';
 
 # Sortering
 
-Sortering lar brukeren selv bestemme hvilken rekkefølge innholdet vises i, og gjør det enklere å finne frem til spesifikk informasjon eller sammenligne verdier på tvers av rader. En tydelig og intuitiv sorteringsfunksjon bidrar til at brukeren opplever grensesnittet som oversiktlig og forutsigbart.
+Sortering lar brukeren selv bestemme rekkefølgen på innholdet. Det gjør det enklere å finne spesifikk informasjon og sammenligne verdier på tvers av rader. En tydelig og intuitiv sorteringsfunksjon bidrar til at brukeren opplever grensesnittet som mer oversiktlig og forutsigbart.
 
-For at sortering skal oppleves som forståelig og trygg, er det viktig at det tydelig fremgår hvilke kolonner som kan sorteres, at en aktiv sortering er lett å se, at det er klart om kolonnen er sortert i stigende eller synkende rekkefølge, og at brukeren enkelt kan skru av sorteringen igjen.
+For at sortering skal oppleves som forståelig og trygg, bør det være tydelig hvilke kolonner som kan sorteres, hvilken sortering som er aktiv, om sorteringen er stigende eller synkende, og hvordan sortering kan slås av.
 
-Disse behovene dekkes gjennom sort-propen i Table-komponenten, som gir spesifikk styling av kolonneheaderen. Sorteringslogikken håndteres selv ved bruk av onClick. Du kan [lese mer om hvordan man håndterer sortering i dokumentasjonen for Table her](https://design.udir.no/beta/?path=/docs/components-table--docs#sortering-av-rader).
+Disse behovene dekkes gjennom `sort`-propen i `Table`-komponenten, som gir en spesifikk styling av kolonneheaderen. Selve sorteringslogikken håndteres ved bruk av `onClick`. Du kan [lese mer om hvordan man håndterer sortering i dokumentasjonen for Table](https://design.udir.no/beta/?path=/docs/components-table--docs#sortering-av-rader).
 
 <Canvas of={SorteringStories.Preview} />
 
 ## Stabil sortering
 
-En stabil sorteringsalgoritme bevarer den opprinnelige rekkefølgen på rader som har lik verdi i den sorterte kolonnen. Det vil si at dersom brukeren først sorterer på navn alfabetisk og deretter sorterer på alder, vil rader med samme alder fortsatt være sortert alfabetisk på navn innenfor hver aldersgruppe. Uten stabil sortering vil rekkefølgen på rader med lik verdi være uforutsigbar. Det legges ingen absolutte føringer for bruk av stabil sortering - det er opp til hvert systemteam å vurdere om det er ønskelig og relevant for sin kontekst.
+En stabil sorteringsalgoritme bevarer den opprinnelige rekkefølgen for rader med lik verdi i den sorterte kolonnen. Hvis brukeren for eksempel først sorterer alfabetisk på navn og deretter på alder, vil rader med samme alder fortsatt være sortert alfabetisk på navn innenfor hver aldersgruppe. Uten stabil sortering kan rekkefølgen på rader med lik verdi bli uforutsigbar. Det legges ingen absolutte føringer for bruk av stabil sortering; hvert systemteam må selv vurdere om det er ønskelig og relevant i sin kontekst.
