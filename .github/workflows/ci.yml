@@ -13,9 +13,6 @@ on:
       - synchronize
       - ready_for_review
 
-env:
-  NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
-
 permissions:
   actions: read
   contents: read
@@ -26,6 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       run_ui_tests: ${{ steps.job_condition.outputs.run_ui_tests }}
+      run_nextjs_smoke: ${{ steps.job_condition.outputs.run_nextjs_smoke }}
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
@@ -33,21 +31,14 @@ jobs:
 
       - uses: ./.github/actions/pnpm-setup
 
-      - name: Print affected projects
-        run: |
-          pnpm nx show projects --affected --base $NX_BASE --head $NX_HEAD \
-            | grep -v "^info" || echo "No projects affected" && true
+      - name: Print affected packages
+        run: pnpm turbo ls --affected
 
-      - name: Determine whether storybook-tests & chromatic need to run
+      - name: Determine which conditional jobs need to run
         id: job_condition
         run: |
-          IS_REACT_AFFECTED=$(./@internal/build-tools/bin/is-project-affected.sh @udir-design/react)
-          echo "Is this a PR which is ready for review? $IS_PR_READY"
-          echo "Is @udir-design/react affected? $IS_REACT_AFFECTED"
-          echo "Is this a push to a protected branch? $IS_PUSH"
-          (($IS_PR_READY && $IS_REACT_AFFECTED) || $IS_PUSH) && RUN_UI_TESTS=true || RUN_UI_TESTS=false
-          echo "Conclusion: should we run UI tests? $RUN_UI_TESTS"
-          echo "run_ui_tests=$RUN_UI_TESTS" >> "$GITHUB_OUTPUT"
+          echo "run_ui_tests=$(./@internal/ci/bin/should-run-ui-tests.ts)" >> "$GITHUB_OUTPUT"
+          echo "run_nextjs_smoke=$(./@internal/ci/bin/should-run-nextjs-smoke.ts)" >> "$GITHUB_OUTPUT"
         env:
           IS_PR_READY: ${{ github.event_name == 'pull_request' && !github.event.pull_request.draft }}
           IS_PUSH: ${{ github.event_name == 'push' }}
@@ -73,6 +64,20 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: UI Review
           conclusion: skipped
+      - name: Skip 'chromatic / chromatic' check
+        if: steps.job_condition.outputs.run_ui_tests == 'false'
+        uses: LouisBrunner/checks-action@937cbbcde3259005b50746dc91cde29098aac2ff # v3.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: chromatic / chromatic
+          conclusion: skipped
+      - name: Skip 'Next.js Smoke Test' check
+        if: steps.job_condition.outputs.run_nextjs_smoke == 'false'
+        uses: LouisBrunner/checks-action@937cbbcde3259005b50746dc91cde29098aac2ff # v3.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Next.js Smoke Test
+          conclusion: skipped
 
       - name: Validate current commit (last commit) with commitlint
         if: github.event_name == 'push'
@@ -97,60 +102,33 @@ jobs:
           fetch-depth: 0
       - uses: ./.github/actions/pnpm-setup
       - name: Run Storybook tests
-        run: pnpm nx test:storybook
+        run: pnpm turbo run test:storybook --filter=@udir-design/react
 
   chromatic:
-    runs-on: ubuntu-latest
     needs: [main]
-    if: needs.main.outputs.run_ui_tests == 'true'
-    env:
-      CHROMATIC_WORKING_DIR: '@udir-design/react'
-      CHROMATIC_STORYBOOK_BUILD_DIR: ./storybook-static
-      CHROMATIC_EXIT_ZERO_ON_CHANGES: true
-      CHROMATIC_EXIT_ONCE_UPLOADED: true
+    # On PRs, require the 'chromatic' label to run (conserves snapshot credits).
+    # On pushes to protected branches, always run. Remove label gate when no longer needed.
+    if: |
+      needs.main.outputs.run_ui_tests == 'true' &&
+      (github.event_name == 'push' || contains(github.event.pull_request.labels.*.name, 'chromatic'))
+    uses: ./.github/workflows/chromatic.yml
+    secrets:
+      CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
+  nextjs-smoke-test:
+    runs-on: ubuntu-latest
+    needs: main
+    if: needs.main.outputs.run_nextjs_smoke == 'true'
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0
-
       - uses: ./.github/actions/pnpm-setup
-
-      - name: Build storybook
-        run: pnpm nx build:docs
-
-      - name: Check runtime dependency changes
-        id: diff_runtime_deps
-        run: |
-          pnpm tsx ./@internal/build-tools/bin/diff-runtime-deps.ts --base "$NX_BASE" \
-            && echo "deps_changed=false" >> "$GITHUB_OUTPUT" \
-            || echo "deps_changed=true" >> "$GITHUB_OUTPUT"
-
-      - name: Publish Storybook to Chromatic (TurboSnap)
-        if: steps.diff_runtime_deps.outputs.deps_changed != 'true'
-        uses: chromaui/action@fd9f0848927ca40d7157227eb3a7f771827652bc # v16.7.0
-        with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          workingDir: ${{ env.CHROMATIC_WORKING_DIR }}
-          storybookBuildDir: ${{ env.CHROMATIC_STORYBOOK_BUILD_DIR }}
-          exitZeroOnChanges: ${{ env.CHROMATIC_EXIT_ZERO_ON_CHANGES }}
-          exitOnceUploaded: ${{ env.CHROMATIC_EXIT_ONCE_UPLOADED }}
-          onlyChanged: true
-          externals: 'design-tokens/src/**'
-          untraced: '@udir-design/react/.storybook/docs/**'
-
-      - name: Publish Storybook to Chromatic (full build)
-        if: steps.diff_runtime_deps.outputs.deps_changed == 'true'
-        uses: chromaui/action@fd9f0848927ca40d7157227eb3a7f771827652bc # v16.7.0
-        with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          workingDir: ${{ env.CHROMATIC_WORKING_DIR }}
-          storybookBuildDir: ${{ env.CHROMATIC_STORYBOOK_BUILD_DIR }}
-          exitZeroOnChanges: ${{ env.CHROMATIC_EXIT_ZERO_ON_CHANGES }}
-          exitOnceUploaded: ${{ env.CHROMATIC_EXIT_ONCE_UPLOADED }}
-          onlyChanged: false
+      - name: Run Next.js smoke test
+        run: pnpm turbo run test:e2e --filter=test-app-nextjs
 
   release:
-    needs: [main, storybook-tests, chromatic]
+    needs: [main, storybook-tests, chromatic, nextjs-smoke-test]
     if: |
       always() && !failure() && !cancelled() &&
       (github.event_name == 'push' || github.event_name == 'pull_request') &&
@@ -182,7 +160,7 @@ jobs:
       - uses: ./.github/actions/pnpm-setup
 
       - name: Build storybook
-        run: pnpm nx build:docs
+        run: pnpm turbo run build:docs --filter=@udir-design/react
 
       - shell: bash
         env:

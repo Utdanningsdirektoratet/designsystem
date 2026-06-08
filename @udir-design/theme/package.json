@@ -25,13 +25,12 @@
     "@digdir/designsystemet-types": "catalog:"
   },
   "devDependencies": {
-    "@internal/build-tools": "workspace:*",
     "@udir-design/tokens": "workspace:*",
     "rimraf": "catalog:"
   },
   "scripts": {
     "copy-css": "cp ../../design-tokens/dist/*.* ./dist/ && mv ./dist/udir.css ./dist/index.css && rm ./dist/colors.d.ts",
-    "postprocess-css": "../../@internal/build-tools/bin/postprocess-css-colors.ts ./dist/index.css",
+    "postprocess-css": "./build/postprocess-css-colors.ts ./dist/index.css",
     "clean": "rimraf ./dist && mkdir ./dist",
     "build": "pnpm clean && pnpm copy-css && pnpm postprocess-css"
   }

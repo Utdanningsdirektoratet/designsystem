@@ -49,7 +49,12 @@ export const CssLanguageVariables = ({
   return (
     <Unstyled>
       {langs.map((lang) => (
-        <div style={{ display: 'none' }} lang={lang} ref={refs[lang]} />
+        <div
+          key={lang}
+          style={{ display: 'none' }}
+          lang={lang}
+          ref={refs[lang]}
+        />
       ))}
 
       <Table className={styles.languageVariables} border zebra>
@@ -57,8 +62,8 @@ export const CssLanguageVariables = ({
           <Table.Row>
             <Table.HeaderCell>Navn</Table.HeaderCell>
             {langs.map((lang) => (
-              <Table.HeaderCell>
-                <code>lang="{lang}"</code>
+              <Table.HeaderCell key={lang}>
+                <code>lang={`"${lang}"`}</code>
               </Table.HeaderCell>
             ))}
           </Table.Row>
@@ -70,7 +75,9 @@ export const CssLanguageVariables = ({
                 <code>{variable}</code>
               </Table.Cell>
               {langs.map((lang) => (
-                <Table.Cell>{getTranslation(lang, variable) ?? ''}</Table.Cell>
+                <Table.Cell key={lang}>
+                  {getTranslation(lang, variable) ?? ''}
+                </Table.Cell>
               ))}
             </Table.Row>
           ))}

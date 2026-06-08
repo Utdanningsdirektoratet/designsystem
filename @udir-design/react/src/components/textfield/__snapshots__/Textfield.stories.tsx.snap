@@ -36,6 +36,7 @@ exports[`Controlled 1`] = `
     <div>
       <input
         id="<removed>"
+        autocomplete="name"
         type="text"
         value
       >
@@ -140,6 +141,7 @@ exports[`Format 1`] = `
   </label>
   <div>
     <input
+      autocomplete="off"
       id="<removed>"
       inputmode="numeric"
       type="text"

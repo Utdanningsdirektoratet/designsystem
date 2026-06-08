@@ -38,12 +38,18 @@ const Wrapper = ({ variant, description, children }: WrapperProps) => {
 };
 
 export const Do = ({ description, children }: DoAndDontProps) => {
-  return <Wrapper variant="do" description={description} children={children} />;
+  return (
+    <Wrapper variant="do" description={description}>
+      {children}
+    </Wrapper>
+  );
 };
 
 export const Dont = ({ description, children }: DoAndDontProps) => {
   return (
-    <Wrapper variant="dont" description={description} children={children} />
+    <Wrapper variant="dont" description={description}>
+      {children}
+    </Wrapper>
   );
 };
 

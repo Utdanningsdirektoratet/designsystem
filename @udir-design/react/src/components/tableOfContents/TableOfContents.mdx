@@ -5,11 +5,11 @@ import * as TableOfContentStories from './TableOfContents.stories';
 
 # Table Of Contents
 
-`TableOfContents` gir brukeren bedre oversikt over innhold i lengre artikler. Komponenten inneholder lenker som scroller ned til den valgte overskriften.
+`TableOfContents` gir brukeren bedre oversikt over innholdet i lengre artikler. Komponenten inneholder lenker til overskriftene, slik at brukeren raskt kan navigere til ønsket del av siden.
 
 **Passer til å**
 
-- gi et overblikk på sider med mye innhold
+- gi overblikk på sider med mye innhold
 - la brukeren navigere til overskrifter på en side
 
 **Passer ikke til å**
@@ -47,9 +47,9 @@ const h = [
 
 ### Generere overskrifter automatisk
 
-Hooken [`useTableOfContents`](/docs/utilities-usetableofcontents--docs) kan brukes for å automatisk fylle `TableOfContents` med alle overskrifter som har en id, i dokumentet. Du kan velge om den skal ta med kun `h2` eller både `h2` og `h3`.
+Hooken [`useTableOfContents`](/docs/utilities-usetableofcontents--docs) kan brukes til å automatisk fylle `TableOfContents` med alle overskrifter i dokumentet som har en ID. Du kan velge om den skal inkludere bare `h2`, eller både `h2` og `h3`.
 
-Dersom det er enkelte overskrifter du ikke vil inkludere i innholdsfortegnelsen kan du bruke `data-toc-ignore` på `Heading`.
+Hvis det er enkelte overskrifter du ikke vil inkludere i innholdsfortegnelsen, kan du bruke `data-toc-ignore` på `Heading`.
 
 <Canvas
   of={TableOfContentStories.Automatic}
@@ -58,7 +58,7 @@ Dersom det er enkelte overskrifter du ikke vil inkludere i innholdsfortegnelsen 
 
 ### Legge til overskrifter manuelt
 
-Dersom du har behov for full kontroll over innholdet i `TableOfContents` kan du lage en liste av objekter som inneholder `name`, `level` og `id`. Id brukes til å lenke til riktig overskrift, så det er viktig at denne stemmer overens med overskriftens id i dokumentet.
+Dersom du har behov for full kontroll over innholdet i `TableOfContents`, kan du lage en liste med objekter som inneholder `name`, `level` og `id`. ID-en brukes til å lenke til riktig overskrift, så det er viktig at denne stemmer overens med overskriftens ID i dokumentet.
 
 <Canvas
   of={TableOfContentStories.Manual}
@@ -67,7 +67,7 @@ Dersom du har behov for full kontroll over innholdet i `TableOfContents` kan du 
 
 ### Starte i lukket tilstand
 
-`TableOfContents` starter som standard i åpnet tilstand. Du kan endre dette til å starte i lukket tilstand ved å sette `defaultClosed`.
+`TableOfContents` starter som standard i åpen tilstand. Du kan starte den i lukket tilstand ved å sette `defaultClosed`.
 
 <Canvas
   of={TableOfContentStories.DefaultClosed}
@@ -76,7 +76,7 @@ Dersom du har behov for full kontroll over innholdet i `TableOfContents` kan du 
 
 ### Kontrollert tilstand
 
-`TableOfContents` holder selv styr på om den er åpen eller lukket, men dette kan også kontrolleres ved å bruke `open` og `onToggle`. For eksempel kan vi styre tilstanden basert basert på om innholdsfortegnelsen er synlig eller ikke.
+`TableOfContents` holder selv styr på om den er åpen eller lukket, men dette kan også kontrolleres ved å bruke `open` og `onToggle`. For eksempel kan vi styre tilstanden basert på om innholdsfortegnelsen er synlig eller ikke.
 
 <Canvas
   of={TableOfContentStories.ControlledState}

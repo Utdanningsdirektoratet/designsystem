@@ -44,7 +44,7 @@ Vi bruker `Breadcrumbs` til å hjelpe brukerne å forstå hvor de er i en hierar
 
 ### Sti eller tilbake-knapp basert på skjermstørrelse
 
-Hvis du legger både en `Breadcrumbs.Link` og en `Breadcrumbs.List` direkte i `Breadcrumbs`, vil tilbake-knapp vises på skjermer smalere enn 650px, og sti vises ellers. Dette er ofte den beste løsningen fordi den gir god plass og brukervennlighet på alle skjermer.
+Hvis du legger både en `Breadcrumbs.Link` og en `Breadcrumbs.List` direkte i `Breadcrumbs`, vil en tilbake-knapp vises på skjermer smalere enn 650px, og en sti vises ellers. Dette er ofte den beste løsningen fordi den gir god plass og brukervennlighet på alle skjermer.
 
 <Canvas of={BreadcrumbsStories.Preview} />
 
@@ -56,19 +56,25 @@ Hvis du legger en `Breadcrumbs.List` direkte i `Breadcrumbs`, vil denne vises so
 
 ### Kun tilbake-knapp
 
-Hvis du legger en `Breadcrumbs.Link` direkte i `Breadcrumbs`, vil denne lenken vises som en tilbake-knapp. Det kan for eksempel benyttes for å spare plass. Det er viktig at du er konsistent i din løsning og bruker enten tilbake-knapp eller sti.
+Hvis du legger en `Breadcrumbs.Link` direkte i `Breadcrumbs`, vil denne lenken vises som en tilbake-knapp. Dette kan for eksempel benyttes for å spare plass. Det er viktig at du er konsistent i din løsning og bruker enten tilbake-knapp eller sti.
 
 <Canvas of={BreadcrumbsStories.BackOnly} />
 
 ## Retningslinjer
 
-Følg disse retningslinjene når du bruker `Breadcrumbs`:
+Det er først når det er tre eller flere nivåer at det er behov for `Breadcrumbs`.
+Hvis det er færre enn tre nivåer, kan du bruke en [`Link`](/docs/components-link--docs) i stedet.
 
-- Det er først når det er tre eller flere nivåer at det er behov for `Breadcrumbs`.
-  Hvis det er færre enn tre nivåer, kan du bruke en [`Link`](/docs/components-link--docs) i stedet.
+### Plassering
 
 - `Breadcrumbs` skal alltid plasseres øverst på venstre del av siden.
   Den skal være under menyen og hovednavigasjonen, men over sidetittelen.
+- `Breadcrumbs` skal ha samme bredde som innholdet i [`Header`](/docs/components-header--docs). Du kan sette `max-width: 80rem` på `Breadcrumbs`, og sentrere den ved å sette `margin: 0 auto`.
+
+<Canvas
+  story={{ inline: false, height: '200px' }}
+  of={BreadcrumbsStories.PlacementWithHeader}
+/>
 
 ## Tekst i Breadcrumbs
 
@@ -78,6 +84,6 @@ Bruk korte og tydelige navn i brødsmulestien, slik at brukerne raskt forstår h
 
 Den siste lenken skal tilsvare den nåværende siden. Den ser ut som vanlig tekst, men er kodet som en lenke med aria-current="page". På den måten får skjermlesere korrekt informasjon om hvilken side brukeren er på, uten at andre brukere feilaktig oppfatter det som en klikkbar lenke.
 
-Pass på at at det ikke ligger andre interaktive elementer for nær `Breadcrumbs`, og at det ikke er noen skjulte elementer som kan forstyrre navigasjonen.
+Pass på at det ikke ligger andre interaktive elementer for nær `Breadcrumbs`, og at det ikke er noen skjulte elementer som kan forstyrre navigasjonen.
 
-Sørg for [`SkipLink`](/docs/components-skiplink--docs) hopper over `Breadcrumbs`, slik at tastaturnavigerende brukere slipper å tabbe gjennom hvert punkt før de når hovedinnholdet på siden.
+Sørg for at [`SkipLink`](/docs/components-skiplink--docs) hopper over `Breadcrumbs`, slik at tastaturnavigerende brukere slipper å tabbe seg gjennom hvert punkt før de når hovedinnholdet på siden.

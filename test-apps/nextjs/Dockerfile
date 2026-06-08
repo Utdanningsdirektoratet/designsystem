@@ -23,7 +23,7 @@ RUN pnpm install --frozen-lockfile
 
 ENV NODE_ENV=production
 
-RUN pnpm nx run test-apps/nextjs:build
+RUN pnpm turbo run build --filter=test-app-nextjs
 
 # ============================================
 # Stage 3: Run — minimal image with standalone output only

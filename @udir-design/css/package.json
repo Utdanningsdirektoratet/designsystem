@@ -32,8 +32,9 @@
     "postcss-load-config": "catalog:",
     "postcss-nesting": "catalog:"
   },
+  "untrackedDevDependencies": [],
   "scripts": {
     "build": "postcss src/*.css --dir dist/",
-    "watch": "pnpm build --watch"
+    "lint": "eslint . --max-warnings 0"
   }
 }

@@ -19,7 +19,7 @@ jobs:
         run: |
           {
             echo "slack_message<<EOF"
-            ./@internal/build-tools/bin/get-outdated-majors.sh
+            ./@internal/ci/bin/get-outdated-majors.sh
             echo EOF
           } >> $GITHUB_OUTPUT
       - name: Post to slack

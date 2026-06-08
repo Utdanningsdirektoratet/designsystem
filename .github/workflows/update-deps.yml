@@ -2,13 +2,6 @@ name: Update patch and minor versions
 description: Updates all dependencies according to the version ranges defined in package.json files
 on:
   workflow_dispatch:
-  # schedule:
-  #   # Runs at 23:00, only on Sunday
-  #   - cron: 0 23 * * 0
-  #
-
-env:
-  NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
 
 permissions:
   contents: write

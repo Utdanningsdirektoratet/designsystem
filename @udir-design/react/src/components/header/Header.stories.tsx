@@ -707,6 +707,7 @@ export const WithLanguagePicker = meta.story({
           <Dropdown.List>
             {languages.map((lang) => (
               <Dropdown.Item
+                key={lang}
                 {...(currentLang === lang && { 'aria-current': true })}
               >
                 <Dropdown.Button

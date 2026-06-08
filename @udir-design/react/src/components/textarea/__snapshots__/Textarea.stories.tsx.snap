@@ -10,6 +10,7 @@ exports[`Controlled 1`] = `
   </label>
   <textarea
     id="<removed>"
+    autocomplete="off"
     rows="4"
     style="<removed>"
   >
@@ -35,6 +36,7 @@ exports[`Disabled 1`] = `
   <textarea
     id="<removed>"
     disabled
+    autocomplete="off"
     style="<removed>"
   >
   </textarea>
@@ -53,6 +55,7 @@ exports[`Focused 1`] = `
     rows="3"
     cols="20"
     id="<removed>"
+    autocomplete="off"
     style="<removed>"
   >
   </textarea>
@@ -69,6 +72,7 @@ exports[`Full Width 1`] = `
   </label>
   <textarea
     id="<removed>"
+    autocomplete="off"
     style="<removed>"
   >
   </textarea>
@@ -87,6 +91,7 @@ exports[`Preview 1`] = `
     rows="3"
     cols="20"
     id="<removed>"
+    autocomplete="off"
     style="<removed>"
   >
   </textarea>
@@ -104,6 +109,7 @@ exports[`Read Only 1`] = `
   <textarea
     id="<removed>"
     readonly
+    autocomplete="off"
     style="<removed>"
   >
   </textarea>

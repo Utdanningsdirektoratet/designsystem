@@ -1,9 +1,9 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { includeIgnoreFile } from '@eslint/compat';
-import nxEslintPlugin from '@nx/eslint-plugin';
-import { defineConfig } from 'eslint/config';
+import { defineConfig, includeIgnoreFile } from '@eslint/config-helpers';
+import eslint from '@eslint/js';
 import importPlugin from 'eslint-plugin-import';
+import tseslint from 'typescript-eslint';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -25,28 +25,17 @@ export const importOrderConfig = {
     { pattern: 'src/**', group: 'internal' },
   ],
 };
+
 export default defineConfig(
   includeIgnoreFile(gitignorePath),
-  nxEslintPlugin.configs['flat/base'],
-  nxEslintPlugin.configs['flat/typescript'],
-  nxEslintPlugin.configs['flat/javascript'],
+  eslint.configs.recommended,
+  tseslint.configs.recommended,
   {
-    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
-    ignores: ['eslint.config.js'],
+    // TypeScript handles undefined-variable checking for both TS and JS files
+    // in this project, so disable the ESLint core rule.
+    files: ['**/*.js', '**/*.jsx', '**/*.cjs', '**/*.mjs'],
     rules: {
-      '@nx/enforce-module-boundaries': [
-        'error',
-        {
-          enforceBuildableLibDependency: true,
-          allow: [],
-          depConstraints: [
-            {
-              sourceTag: '*',
-              onlyDependOnLibsWithTags: ['*'],
-            },
-          ],
-        },
-      ],
+      'no-undef': 'off',
     },
   },
   {
@@ -58,7 +47,14 @@ export default defineConfig(
     rules: {
       'import/enforce-node-protocol-usage': ['error', 'always'],
       'import/newline-after-import': 'error',
+      'import/no-relative-packages': 'error',
       'import/order': ['error', importOrderConfig],
+    },
+  },
+  {
+    files: ['**/eslint.config.js'],
+    rules: {
+      'import/no-relative-packages': 'off',
     },
   },
   {

@@ -122,6 +122,7 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
     );
   },
 );
+FileUploadItem.displayName = 'FileUpload.Item';
 
 export function formatFileSize(file: File): string | null {
   if (!file.size) {

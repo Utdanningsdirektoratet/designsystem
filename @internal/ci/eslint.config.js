@@ -1,5 +1,5 @@
 import { resolve } from 'node:path';
-import { defineConfig } from 'eslint/config';
+import { defineConfig } from '@eslint/config-helpers';
 import baseConfig from '../../eslint.config.js';
 
 export default defineConfig(

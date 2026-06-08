@@ -5,9 +5,6 @@ on:
     # Runs at 01:00, Monday through Friday
     - cron: 0 1 * * 1-5
 
-env:
-  NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
-
 permissions:
   contents: write
   pull-requests: write
@@ -26,10 +23,10 @@ jobs:
         run: pnpm update -r --latest "@digdir/*" && pnpm dedupe
       - name: Rebuild theme
         if: steps.digdir_info.outputs.version
-        run: pnpm nx run @udir-design/theme:build
+        run: pnpm turbo run build --filter=@udir-design/theme
       - name: Update snapshots
         if: steps.digdir_info.outputs.version
-        run: pnpm nx test:storybook -u
+        run: pnpm test:storybook:update
       - name: Create or update pull request
         if: steps.digdir_info.outputs.version
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1

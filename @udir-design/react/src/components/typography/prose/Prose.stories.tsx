@@ -98,7 +98,7 @@ export const Preview = meta.story({
             </Table.Head>
             <Table.Body>
               {dummyData.map((item) => (
-                <Table.Row>
+                <Table.Row key={item.id}>
                   <Table.Cell>{item.kommune}</Table.Cell>
                   <Table.Cell>{item.tildeling}</Table.Cell>
                 </Table.Row>

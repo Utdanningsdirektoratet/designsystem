@@ -135,7 +135,7 @@ const Facebook = () => {
       className="icon"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="14" cy="14" r="11" stroke="currentColor" stroke-width="2" />
+      <circle cx="14" cy="14" r="11" stroke="currentColor" strokeWidth="2" />
       <path
         d="M3.41626 19.6598C4.99728 22.6094 7.77554 24.8215 11.1013 25.6467V17.6672H8.62686V14H11.1013V12.4198C11.1013 8.33551 12.9497 6.44238 16.9597 6.44238C17.72 6.44238 19.0318 6.59166 19.5685 6.74046V10.0645C19.2853 10.0347 18.7933 10.0198 18.1822 10.0198C16.2147 10.0198 15.4544 10.7653 15.4544 12.703V14H19.3741L18.7006 17.6672H15.4544V25.9121C18.0489 25.5988 20.3884 24.4578 22.2009 22.7608C20.0554 24.7699 17.1716 26 14.0005 26C9.41978 26 5.43854 23.4333 3.41626 19.6598Z"
         fill="currentColor"
@@ -181,38 +181,38 @@ const LinkedIn = () => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M6.29248 8.57617C6.29248 9.52539 7.06201 10.2949 8.01514 10.2949C8.96436 10.2949 9.73389 9.52148 9.73389 8.57617C9.73389 7.62695 8.96436 6.85742 8.01514 6.85742C7.06201 6.85742 6.29248 7.62695 6.29248 8.57617Z"
         fill="currentColor"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M6.53076 21.1426H9.49951V11.5957H6.53076V21.1426Z"
         fill="currentColor"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M17.644 21.1426H20.6089V15.9043C20.6089 13.334 20.0542 11.3574 17.0503 11.3574C15.6089 11.3574 14.6401 12.1504 14.2456 12.9004H14.2065V11.5957H11.3628V21.1426H14.3237V16.4238C14.3237 15.1777 14.5581 13.9707 16.1011 13.9707C17.6245 13.9707 17.644 15.3965 17.644 16.502V21.1426Z"
         fill="currentColor"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M6.29248 8.57617C6.29248 9.52539 7.06201 10.2949 8.01514 10.2949C8.96436 10.2949 9.73389 9.52148 9.73389 8.57617C9.73389 7.62695 8.96436 6.85742 8.01514 6.85742C7.06201 6.85742 6.29248 7.62695 6.29248 8.57617Z"
         fill="currentColor"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M6.53076 21.1426H9.49951V11.5957H6.53076V21.1426Z"
         fill="currentColor"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M17.644 21.1426H20.6089V15.9043C20.6089 13.334 20.0542 11.3574 17.0503 11.3574C15.6089 11.3574 14.6401 12.1504 14.2456 12.9004H14.2065V11.5957H11.3628V21.1426H14.3237V16.4238C14.3237 15.1777 14.5581 13.9707 16.1011 13.9707C17.6245 13.9707 17.644 15.3965 17.644 16.502V21.1426Z"
         fill="currentColor"
       />

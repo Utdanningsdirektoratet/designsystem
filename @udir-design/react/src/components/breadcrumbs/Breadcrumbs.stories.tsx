@@ -1,5 +1,6 @@
 import { expect, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { Header } from '../header';
 import { Breadcrumbs } from './Breadcrumbs';
 import { BreadcrumbsItem } from './docs/FakeBreadcrumbsItem';
 import { BreadcrumbsLink } from './docs/FakeBreadcrumbsLink';
@@ -12,7 +13,7 @@ const meta = preview.meta({
     'Breadcrumbs.List': BreadcrumbsList,
     'Breadcrumbs.Item': BreadcrumbsItem,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
@@ -69,6 +70,11 @@ export const Preview = meta.story({
     await step('List should have expected number of items', async () => {
       await expect(canvas.getAllByRole('listitem')).toHaveLength(3);
     });
+
+    await step('Last breadcrumb should have aria-current="page"', async () => {
+      const lastLink = canvas.getByRole('link', { name: /Grunnskole/i });
+      await expect(lastLink).toHaveAttribute('aria-current', 'page');
+    });
   },
 });
 
@@ -97,13 +103,13 @@ export const ListOnly = meta.story({
 });
 
 export const BackOnly = meta.story({
-  args: {
-    children: [
+  render: (args) => (
+    <Breadcrumbs {...args}>
       <Breadcrumbs.Link href="#" aria-label="Tilbake til Eksamen">
         Eksamen
-      </Breadcrumbs.Link>,
-    ],
-  },
+      </Breadcrumbs.Link>
+    </Breadcrumbs>
+  ),
 });
 
 export const LongItems = meta.story({
@@ -150,4 +156,45 @@ export const MobileViewport = meta.story({
   globals: {
     viewport: { value: 'iphone6' },
   },
+});
+
+export const PlacementWithHeader = meta.story({
+  parameters: {
+    layout: 'fullscreen',
+  },
+  render: (args) => (
+    <>
+      <style>
+        {`
+        /* Styles defined in application-specific css */
+        .content {
+          max-width: 80rem;
+          margin: var(--ds-size-4) auto 0;
+          padding: 0 var(--ds-size-5);
+        }
+        `}
+      </style>
+      <Header applicationName="Tjenestenavn">
+        <Header.MenuButton />
+      </Header>
+      <div className="content">
+        <Breadcrumbs {...args}>
+          <Breadcrumbs.Link href="#" aria-label="Tilbake til Utdanningsløpet">
+            Utdanningsløpet
+          </Breadcrumbs.Link>
+          <Breadcrumbs.List>
+            <Breadcrumbs.Item>
+              <Breadcrumbs.Link href="#">Forside</Breadcrumbs.Link>
+            </Breadcrumbs.Item>
+            <Breadcrumbs.Item>
+              <Breadcrumbs.Link href="#">Utdanningsløpet</Breadcrumbs.Link>
+            </Breadcrumbs.Item>
+            <Breadcrumbs.Item>
+              <Breadcrumbs.Link href="#">Grunnskole</Breadcrumbs.Link>
+            </Breadcrumbs.Item>
+          </Breadcrumbs.List>
+        </Breadcrumbs>
+      </div>
+    </>
+  ),
 });

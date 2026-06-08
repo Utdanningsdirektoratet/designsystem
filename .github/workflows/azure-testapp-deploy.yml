@@ -30,15 +30,7 @@ jobs:
 
       - name: Determine whether to deploy
         id: should_deploy
-        run: |
-          IS_NEXTJS_AFFECTED=$(./@internal/build-tools/bin/is-project-affected.sh test-app-nextjs)
-          IS_WORKFLOW_MODIFIED=$(./@internal/build-tools/bin/is-file-modified.sh .github/workflows/azure-testapp-deploy.yml)
-          echo "Is the Next.js test app affected? $IS_NEXTJS_AFFECTED"
-          echo "Is the deployment workflow modified? $IS_WORKFLOW_MODIFIED"
-          echo "Is the deploy triggered through a manual workflow dispatch? $IS_DISPATCH"
-          ($IS_DISPATCH || $IS_NEXTJS_AFFECTED || $IS_WORKFLOW_MODIFIED) && SHOULD_DEPLOY=true || SHOULD_DEPLOY=false
-          echo "Conclusion: should we deploy the test app? $SHOULD_DEPLOY"
-          echo "should_deploy=$SHOULD_DEPLOY" >> "$GITHUB_OUTPUT"
+        run: echo "should_deploy=$(./@internal/ci/bin/should-deploy-testapp.ts)" >> "$GITHUB_OUTPUT"
         env:
           IS_DISPATCH: ${{ github.event_name == 'workflow_dispatch'}}
 
