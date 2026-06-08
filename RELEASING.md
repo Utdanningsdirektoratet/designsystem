@@ -75,6 +75,9 @@ pnpm stage approve <stage-id> --otp <otp>
 pnpm stage reject <stage-id>
 ```
 
+Staged packages can also be reviewed and approved on
+[npmjs.com](https://www.npmjs.com/). Follow [these instructions](https://docs.npmjs.com/staged-publishing#using-npmjscom) to find the Staged Packages tab.
+
 This adds a manual gate between CI automation and public availability.
 
 ### Changelog format
