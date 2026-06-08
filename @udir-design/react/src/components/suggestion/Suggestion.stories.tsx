@@ -488,6 +488,34 @@ export const FetchExternal = meta.story({
 
 export const Multiple = Preview.extend({ args: { multiple: true } });
 
+export const MultipleCount = meta.story({
+  render(args) {
+    return (
+      <Field>
+        <Label>Velg destinasjoner</Label>
+        <Suggestion
+          {...(args as SuggestionMultipleProps)}
+          multiple
+          display="count"
+          defaultSelected={['Oslo', 'Sogndal']}
+        >
+          <Suggestion.Input />
+          <Suggestion.Clear />
+          <Suggestion.List>
+            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            {DATA_PLACES.map((place) => (
+              <Suggestion.Option key={place} label={place} value={place}>
+                {place}
+                <div>Kommune</div>
+              </Suggestion.Option>
+            ))}
+          </Suggestion.List>
+        </Suggestion>
+      </Field>
+    );
+  },
+});
+
 export const DefaultValue = meta.story({
   render(args) {
     return (
