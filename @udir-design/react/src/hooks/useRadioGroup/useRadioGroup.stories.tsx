@@ -16,7 +16,7 @@ const meta = preview.meta<
   DecoratorType,
   Partial<UseRadioGroupProps>
 >({
-  title: 'Utilities/useRadioGroup',
+  title: 'Hooks/useRadioGroup',
   component: fakeUseRadioGroup,
   tags: ['digdir'],
   parameters: {

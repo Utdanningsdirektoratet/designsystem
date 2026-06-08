@@ -7,7 +7,7 @@ import { Table } from 'src/components/table';
 import { useDrilldownTable } from './useDrilldownTable';
 
 const meta = preview.meta({
-  title: 'Utilities/useDrilldownTable',
+  title: 'Hooks/useDrilldownTable',
   tags: ['alpha', 'udir'],
   parameters: {
     componentOrigin: { originator: 'self' },

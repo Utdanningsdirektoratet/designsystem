@@ -20,7 +20,7 @@ const meta = preview.meta<
   DecoratorType,
   Partial<UseCheckboxGroupProps>
 >({
-  title: 'Utilities/useCheckboxGroup',
+  title: 'Hooks/useCheckboxGroup',
   component: fakeUseCheckboxGroup,
   tags: ['digdir'],
   parameters: {

@@ -17,7 +17,7 @@ const meta = preview.meta<
   DecoratorType,
   useTableOfContentsProps
 >({
-  title: 'Utilities/useTableOfContents',
+  title: 'Hooks/useTableOfContents',
   tags: ['udir'],
   parameters: {
     chromatic: { disableSnapshot: true },

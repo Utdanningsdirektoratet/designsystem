@@ -9,7 +9,7 @@ const meta = preview.meta<
   DecoratorType,
   Partial<UsePaginationProps>
 >({
-  title: 'Utilities/usePagination',
+  title: 'Hooks/usePagination',
   tags: ['digdir'],
   parameters: {
     componentOrigin: { originator: 'digdir' },

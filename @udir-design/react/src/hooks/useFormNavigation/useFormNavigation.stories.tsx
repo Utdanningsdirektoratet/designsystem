@@ -10,7 +10,7 @@ const meta = preview.meta<
   DecoratorType,
   Partial<UseFormNavigationProps>
 >({
-  title: 'Utilities/useFormNavigation',
+  title: 'Hooks/useFormNavigation',
   tags: ['udir'],
   parameters: {
     componentOrigin: {
