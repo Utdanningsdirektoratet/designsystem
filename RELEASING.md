@@ -177,3 +177,45 @@ rm -rf /tmp/test-remote.git CHANGELOG.md
 > release tags with `git tag --merged release/latest`, which uses the
 > **local** branch ref — not the remote. If the local `release/latest`
 > points to an older commit, the baseline tag won't be found.
+
+## Troubleshooting
+
+### Cleaning up after a failed release
+
+If the CI publish step fails (e.g., npm auth error, network issue), semantic-release
+may have already pushed a git tag and git note before the failure. These must be
+removed before re-running, otherwise semantic-release considers the version already
+released.
+
+1. **Identify the version** from the failed run's logs (e.g., `v1.0.0-beta.34`).
+
+2. **Check what exists on the remote:**
+
+   ```bash
+   git ls-remote origin refs/tags/v1.0.0-beta.34
+   git ls-remote origin 'refs/notes/semantic-release-v1.0.0-beta.34'
+   ```
+
+3. **Delete the tag and note from the remote:**
+
+   ```bash
+   git push origin :refs/tags/v1.0.0-beta.34 :refs/notes/semantic-release-v1.0.0-beta.34
+   ```
+
+4. **Delete the local tag (if fetched):**
+
+   ```bash
+   git tag -d v1.0.0-beta.34 2>/dev/null
+   ```
+
+After cleanup, re-run the "Publish semantic release" job in the GitHub Actions run that failed.
+semantic-release will re-attempt the same version.
+
+### OIDC "permission denied" errors
+
+If you see `OIDC permission denied for this action` when publishing, check the
+trusted publisher configuration on npmjs.org for each `@udir-design/*` package:
+
+- **Allowed actions** must include `npm stage publish` (not just `npm publish`).
+- **Workflow filename** must be `ci.yml` (the top-level calling workflow), not
+  `release.yml`, because npm validates the caller in `workflow_call` chains.
