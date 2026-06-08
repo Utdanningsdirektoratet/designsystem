@@ -10,6 +10,9 @@ exports[`Preview 1`] = `
       <thead>
         <tr>
           <th>
+            Fylke, emne
+          </th>
+          <th>
             Fylke
           </th>
           <th>
@@ -32,6 +35,11 @@ exports[`Preview 1`] = `
       <tbody>
         <tr>
           <td>
+            Agder,
+            <br>
+            Engelsk
+          </td>
+          <td>
             Agder
           </td>
           <td>
@@ -51,6 +59,11 @@ exports[`Preview 1`] = `
           </td>
         </tr>
         <tr>
+          <td>
+            Agder,
+            <br>
+            Matematikk
+          </td>
           <td>
             Agder
           </td>
@@ -72,6 +85,11 @@ exports[`Preview 1`] = `
         </tr>
         <tr>
           <td>
+            Agder,
+            <br>
+            Hovedmål
+          </td>
+          <td>
             Agder
           </td>
           <td>
@@ -91,6 +109,11 @@ exports[`Preview 1`] = `
           </td>
         </tr>
         <tr>
+          <td>
+            Agder,
+            <br>
+            Sidemål
+          </td>
           <td>
             Agder
           </td>
@@ -112,6 +135,11 @@ exports[`Preview 1`] = `
         </tr>
         <tr>
           <td>
+            Akershus,
+            <br>
+            Engelsk
+          </td>
+          <td>
             Akershus
           </td>
           <td>
@@ -131,6 +159,11 @@ exports[`Preview 1`] = `
           </td>
         </tr>
         <tr>
+          <td>
+            Akershus,
+            <br>
+            Matematikk
+          </td>
           <td>
             Akershus
           </td>
@@ -152,6 +185,11 @@ exports[`Preview 1`] = `
         </tr>
         <tr>
           <td>
+            Akershus,
+            <br>
+            Hovedmål
+          </td>
+          <td>
             Akershus
           </td>
           <td>
@@ -171,6 +209,11 @@ exports[`Preview 1`] = `
           </td>
         </tr>
         <tr>
+          <td>
+            Akershus,
+            <br>
+            Sidemål
+          </td>
           <td>
             Akershus
           </td>
@@ -192,6 +235,11 @@ exports[`Preview 1`] = `
         </tr>
         <tr>
           <td>
+            Buskerud,
+            <br>
+            Engelsk
+          </td>
+          <td>
             Buskerud
           </td>
           <td>
@@ -211,6 +259,11 @@ exports[`Preview 1`] = `
           </td>
         </tr>
         <tr>
+          <td>
+            Buskerud,
+            <br>
+            Matematikk
+          </td>
           <td>
             Buskerud
           </td>
@@ -315,7 +368,10 @@ exports[`Preview 1`] = `
           >
             Rader per side
           </label>
-          <select id="<removed>">
+          <select
+            autocomplete="off"
+            id="<removed>"
+          >
             <option value="5">
               5
             </option>
