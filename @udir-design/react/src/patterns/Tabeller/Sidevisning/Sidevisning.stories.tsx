@@ -48,23 +48,16 @@ export const Preview = meta.story({
   render: (args) => {
     const [itemsPerPage, setItemsPerPage] = useState(10);
     const [page, setCurrentPage] = useState(1);
-    const [width, setWidth] = useState(() =>
-      typeof window !== 'undefined' ? window.innerWidth : 1024,
+    const [isMobile, setIsMobile] = useState(
+      () => !window.matchMedia('(min-width: 48rem)').matches,
     );
 
     useEffect(() => {
-      if (typeof window === 'undefined') return;
-      const onResize = () => setWidth(window.innerWidth);
-      window.addEventListener('resize', onResize);
-      return () => window.removeEventListener('resize', onResize);
+      const mediaQuery = window.matchMedia('(min-width: 48rem)');
+      const handler = (e: MediaQueryListEvent) => setIsMobile(!e.matches);
+      mediaQuery.addEventListener('change', handler);
+      return () => mediaQuery.removeEventListener('change', handler);
     }, []);
-
-    const rem =
-      typeof document !== 'undefined'
-        ? parseFloat(getComputedStyle(document.documentElement).fontSize)
-        : 16;
-    const isMobile = width < 48 * rem; // < 480px
-    const isDesktop = width >= 64 * rem; // >= 1024px
 
     const totalRows = grades.length;
     const totalPages = Math.ceil(totalRows / itemsPerPage);
@@ -95,29 +88,49 @@ export const Preview = meta.story({
         <Table {...args}>
           <Table.Head>
             <Table.Row>
-              {isMobile && <Table.HeaderCell>Fylke, emne</Table.HeaderCell>}
-              {!isMobile && <Table.HeaderCell>Fylke</Table.HeaderCell>}
-              {!isMobile && <Table.HeaderCell>Emne</Table.HeaderCell>}
-              {!isMobile && <Table.HeaderCell>Antall elever</Table.HeaderCell>}
+              <Table.HeaderCell className="show-below-tablet">
+                Fylke, emne
+              </Table.HeaderCell>
+              <Table.HeaderCell className="hide-below-tablet">
+                Fylke
+              </Table.HeaderCell>
+              <Table.HeaderCell className="hide-below-tablet">
+                Emne
+              </Table.HeaderCell>
+              <Table.HeaderCell className="hide-below-tablet">
+                Antall elever
+              </Table.HeaderCell>
               <Table.HeaderCell>Standpunkt</Table.HeaderCell>
-              {isDesktop && <Table.HeaderCell>Muntlig </Table.HeaderCell>}
-              {isDesktop && <Table.HeaderCell>Skriftlig </Table.HeaderCell>}
+              <Table.HeaderCell className="desktop-only">
+                Muntlig
+              </Table.HeaderCell>
+              <Table.HeaderCell className="desktop-only">
+                Skriftlig
+              </Table.HeaderCell>
             </Table.Row>
           </Table.Head>
           <Table.Body>
             {paginatedData.map((row) => (
               <Table.Row key={row.id}>
-                {isMobile && (
-                  <Table.Cell>
-                    {row.fylke}, <br /> {row.emne}
-                  </Table.Cell>
-                )}
-                {!isMobile && <Table.Cell>{row.fylke}</Table.Cell>}
-                {!isMobile && <Table.Cell>{row.emne}</Table.Cell>}
-                {!isMobile && <Table.Cell>{row.antallelever}</Table.Cell>}
+                <Table.Cell className="show-below-tablet">
+                  {row.fylke}, <br /> {row.emne}
+                </Table.Cell>
+                <Table.Cell className="hide-below-tablet">
+                  {row.fylke}
+                </Table.Cell>
+                <Table.Cell className="hide-below-tablet">
+                  {row.emne}
+                </Table.Cell>
+                <Table.Cell className="hide-below-tablet">
+                  {row.antallelever}
+                </Table.Cell>
                 <Table.Cell>{row.standpunktkarakter}</Table.Cell>
-                {isDesktop && <Table.Cell>{row.muntligkarakter}</Table.Cell>}
-                {isDesktop && <Table.Cell>{row.skriftligkarakter}</Table.Cell>}
+                <Table.Cell className="desktop-only">
+                  {row.muntligkarakter}
+                </Table.Cell>
+                <Table.Cell className="desktop-only">
+                  {row.skriftligkarakter}
+                </Table.Cell>
               </Table.Row>
             ))}
           </Table.Body>
@@ -160,6 +173,7 @@ export const Preview = meta.story({
               <Select
                 value={String(itemsPerPage)}
                 onChange={handleItemsPerPageChange}
+                autoComplete="off"
               >
                 {[5, 10, 25, 50].map((size) => (
                   <Select.Option key={size} value={String(size)}>
