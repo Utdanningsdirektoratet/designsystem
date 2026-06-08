@@ -5,6 +5,7 @@ import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from 'src/components/button/Button';
 import { Checkbox } from 'src/components/checkbox/Checkbox';
+import { Chip } from 'src/components/chip/Chip';
 import { Dialog } from 'src/components/dialog/Dialog';
 import { Field } from 'src/components/field/Field';
 import { Fieldset } from 'src/components/fieldset/Fieldset';
@@ -22,6 +23,56 @@ import { Prose } from 'src/components/typography/prose/Prose';
 import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
 import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
 import './filtering.css';
+
+function ActiveFilters({
+  emne,
+  setEmne,
+  fylke,
+  setFylke,
+}: {
+  emne: string[];
+  setEmne: React.Dispatch<React.SetStateAction<string[]>>;
+  fylke: string[];
+  setFylke: React.Dispatch<React.SetStateAction<string[]>>;
+}) {
+  if (emne.length === 0 && fylke.length === 0) return null;
+  return (
+    <div className="example-active-filters">
+      {emne.length > 0 && (
+        <div className="example-active-filters-group">
+          <Label>Emne</Label>
+          <ul>
+            {emne.map((e) => (
+              <Chip.Removable
+                key={e}
+                aria-label={`Fjern ${e}`}
+                onClick={() => setEmne((prev) => prev.filter((v) => v !== e))}
+              >
+                {e}
+              </Chip.Removable>
+            ))}
+          </ul>
+        </div>
+      )}
+      {fylke.length > 0 && (
+        <div className="example-active-filters-group">
+          <Label>Fylke</Label>
+          <ul>
+            {fylke.map((f) => (
+              <Chip.Removable
+                key={f}
+                aria-label={`Fjern ${f}`}
+                onClick={() => setFylke((prev) => prev.filter((v) => v !== f))}
+              >
+                {f}
+              </Chip.Removable>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
 
 type Data = {
   id: string;
@@ -107,71 +158,71 @@ export const Preview = meta.story({
 
     return (
       <div className="example-main">
-        <Prose>
-          <div className="example-filters-section">
-            <Field className="example-search-field">
-              <Label>Søk</Label>
-              <Search>
-                <Search.Input
-                  aria-label="Søk"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-                <Search.Clear onClick={() => setSearchQuery('')} />
-              </Search>
+        <div className="example-filters-section">
+          <Field className="example-search-field">
+            <Label>Søk</Label>
+            <Search>
+              <Search.Input
+                aria-label="Søk"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <Search.Clear onClick={() => setSearchQuery('')} />
+            </Search>
+          </Field>
+          <div className="example-suggestion-section">
+            <Field className="example-suggestion-field">
+              <Label>Velg emne(r)</Label>
+              <Suggestion
+                {...(args as SuggestionMultipleProps)}
+                multiple
+                selected={emne}
+                onSelectedChange={(items) =>
+                  setEmne(items.map((item) => item.value))
+                }
+              >
+                <Suggestion.Input />
+                <Suggestion.Clear />
+                <Suggestion.List>
+                  <Suggestion.Empty>Tomt</Suggestion.Empty>
+                  {uniqueEmner.map((c) => (
+                    <Suggestion.Option key={c} label={c} value={c}>
+                      {c}
+                    </Suggestion.Option>
+                  ))}
+                </Suggestion.List>
+              </Suggestion>
             </Field>
-            <div className="example-suggestion-section">
-              <Field className="example-suggestion-field">
-                <Label>Velg emne(r)</Label>
-                <Suggestion
-                  {...(args as SuggestionMultipleProps)}
-                  multiple
-                  selected={emne}
-                  onSelectedChange={(items) =>
-                    setEmne(items.map((item) => item.value))
-                  }
-                >
-                  <Suggestion.Input />
-                  <Suggestion.Clear />
-                  <Suggestion.List>
-                    <Suggestion.Empty>Tomt</Suggestion.Empty>
-                    {uniqueEmner.map((c) => (
-                      <Suggestion.Option key={c} label={c} value={c}>
-                        {c}
-                      </Suggestion.Option>
-                    ))}
-                  </Suggestion.List>
-                </Suggestion>
-              </Field>
-              <Field className="example-suggestion-field">
-                <Label>Velg fylke(r)</Label>
-                <Suggestion
-                  {...(args as SuggestionMultipleProps)}
-                  multiple
-                  selected={fylke}
-                  onSelectedChange={(items) =>
-                    setFylke(items.map((item) => item.value))
-                  }
-                >
-                  <Suggestion.Input />
-                  <Suggestion.Clear />
-                  <Suggestion.List>
-                    <Suggestion.Empty>Tomt</Suggestion.Empty>
-                    {uniqueFylker.map((fylke) => (
-                      <Suggestion.Option
-                        key={fylke}
-                        label={fylke}
-                        value={fylke}
-                      >
-                        {fylke}
-                      </Suggestion.Option>
-                    ))}
-                  </Suggestion.List>
-                </Suggestion>
-              </Field>
-            </div>
+            <Field className="example-suggestion-field">
+              <Label>Velg fylke(r)</Label>
+              <Suggestion
+                {...(args as SuggestionMultipleProps)}
+                multiple
+                selected={fylke}
+                onSelectedChange={(items) =>
+                  setFylke(items.map((item) => item.value))
+                }
+              >
+                <Suggestion.Input />
+                <Suggestion.Clear />
+                <Suggestion.List>
+                  <Suggestion.Empty>Tomt</Suggestion.Empty>
+                  {uniqueFylker.map((fylke) => (
+                    <Suggestion.Option key={fylke} label={fylke} value={fylke}>
+                      {fylke}
+                    </Suggestion.Option>
+                  ))}
+                </Suggestion.List>
+              </Suggestion>
+            </Field>
           </div>
-        </Prose>
+        </div>
+        <ActiveFilters
+          emne={emne}
+          setEmne={setEmne}
+          fylke={fylke}
+          setFylke={setFylke}
+        />
         <Table {...args}>
           <Table.Head>
             <Table.Row>
@@ -337,132 +388,137 @@ export const WithDialog = meta.story({
 
     return (
       <div className="example-main">
-        <Prose>
-          <div className="example-filters-section-modal">
-            <Field>
-              <Label>Søk</Label>
-              <Search>
-                <Search.Input
-                  aria-label="Søk"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-                <Search.Clear onClick={() => setSearchQuery('')} />
-              </Search>
-            </Field>
-            <Dialog.TriggerContext>
-              <Dialog.Trigger variant="secondary">
-                <FilterIcon aria-label="Filter" />
-                Filter
-              </Dialog.Trigger>
-              <Dialog
-                ref={dialogRef}
-                closedby="any"
-                onToggle={(e) => {
-                  if ((e.target as HTMLDialogElement).open) {
+        <div className="example-filters-section-modal">
+          <Field>
+            <Label>Søk</Label>
+            <Search>
+              <Search.Input
+                aria-label="Søk"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <Search.Clear onClick={() => setSearchQuery('')} />
+            </Search>
+          </Field>
+          <Dialog.TriggerContext>
+            <Dialog.Trigger variant="secondary">
+              <FilterIcon aria-label="Filter" />
+              Filter
+            </Dialog.Trigger>
+            <Dialog
+              ref={dialogRef}
+              closedby="any"
+              onToggle={(e) => {
+                if ((e.target as HTMLDialogElement).open) {
+                  setDraftEmne(emne);
+                  setDraftFylke(fylke);
+                  setDraftEksamen(eksamen);
+                }
+              }}
+            >
+              <Heading>Filter</Heading>
+              <div className="example-dialog-filters">
+                <Prose>
+                  <Fieldset>
+                    <Fieldset.Legend>Karaktertype</Fieldset.Legend>
+                    <Checkbox
+                      label="Skriftlig"
+                      {...getCheckboxProps('skriftlig')}
+                    />
+                    <Checkbox
+                      label="Muntlig"
+                      {...getCheckboxProps('muntlig')}
+                    />
+                    <Checkbox
+                      label="Standpunkt"
+                      {...getCheckboxProps('standpunkt')}
+                    />
+                  </Fieldset>
+                </Prose>
+                <Prose>
+                  <Field className="example-suggestion-field">
+                    <Label>Velg emne</Label>
+                    <Suggestion
+                      {...(args as SuggestionMultipleProps)}
+                      multiple
+                      selected={draftEmne}
+                      onSelectedChange={(items) =>
+                        setDraftEmne(items.map((item) => item.value))
+                      }
+                    >
+                      <Suggestion.Input />
+                      <Suggestion.Clear />
+                      <Suggestion.List>
+                        <Suggestion.Empty>Tomt</Suggestion.Empty>
+                        {uniqueEmner.map((emne) => (
+                          <Suggestion.Option
+                            key={emne}
+                            label={emne}
+                            value={emne}
+                          >
+                            {emne}
+                          </Suggestion.Option>
+                        ))}
+                      </Suggestion.List>
+                    </Suggestion>
+                  </Field>
+                  <Field className="example-suggestion-field">
+                    <Label>Velg fylke</Label>
+                    <Suggestion
+                      {...(args as SuggestionMultipleProps)}
+                      multiple
+                      selected={draftFylke}
+                      onSelectedChange={(items) =>
+                        setDraftFylke(items.map((item) => item.value))
+                      }
+                    >
+                      <Suggestion.Input />
+                      <Suggestion.Clear />
+                      <Suggestion.List>
+                        <Suggestion.Empty>Tomt</Suggestion.Empty>
+                        {uniqueFylker.map((f) => (
+                          <Suggestion.Option key={f} label={f} value={f}>
+                            {f}
+                          </Suggestion.Option>
+                        ))}
+                      </Suggestion.List>
+                    </Suggestion>
+                  </Field>
+                </Prose>
+              </div>
+              <Field className="example-footer">
+                <Button
+                  onClick={() => {
+                    setEmne(draftEmne);
+                    setFylke(draftFylke);
+                    setEksamen(draftEksamen);
+                    dialogRef.current?.close();
+                  }}
+                >
+                  Lagre
+                </Button>
+                <Button
+                  variant="secondary"
+                  onClick={() => {
                     setDraftEmne(emne);
                     setDraftFylke(fylke);
                     setDraftEksamen(eksamen);
-                  }
-                }}
-              >
-                <Heading>Filter</Heading>
-                <div className="example-dialog-filters">
-                  <Prose>
-                    <Fieldset>
-                      <Fieldset.Legend>Karaktertype</Fieldset.Legend>
-                      <Checkbox
-                        label="Skriftlig"
-                        {...getCheckboxProps('skriftlig')}
-                      />
-                      <Checkbox
-                        label="Muntlig"
-                        {...getCheckboxProps('muntlig')}
-                      />
-                      <Checkbox
-                        label="Standpunkt"
-                        {...getCheckboxProps('standpunkt')}
-                      />
-                    </Fieldset>
-                  </Prose>
-                  <Prose>
-                    <Field className="example-suggestion-field">
-                      <Label>Velg emne</Label>
-                      <Suggestion
-                        {...(args as SuggestionMultipleProps)}
-                        multiple
-                        selected={draftEmne}
-                        onSelectedChange={(items) =>
-                          setDraftEmne(items.map((item) => item.value))
-                        }
-                      >
-                        <Suggestion.Input />
-                        <Suggestion.Clear />
-                        <Suggestion.List>
-                          <Suggestion.Empty>Tomt</Suggestion.Empty>
-                          {uniqueEmner.map((emne) => (
-                            <Suggestion.Option
-                              key={emne}
-                              label={emne}
-                              value={emne}
-                            >
-                              {emne}
-                            </Suggestion.Option>
-                          ))}
-                        </Suggestion.List>
-                      </Suggestion>
-                    </Field>
-                    <Field className="example-suggestion-field">
-                      <Label>Velg fylke</Label>
-                      <Suggestion
-                        {...(args as SuggestionMultipleProps)}
-                        multiple
-                        selected={draftFylke}
-                        onSelectedChange={(items) =>
-                          setDraftFylke(items.map((item) => item.value))
-                        }
-                      >
-                        <Suggestion.Input />
-                        <Suggestion.Clear />
-                        <Suggestion.List>
-                          <Suggestion.Empty>Tomt</Suggestion.Empty>
-                          {uniqueFylker.map((f) => (
-                            <Suggestion.Option key={f} label={f} value={f}>
-                              {f}
-                            </Suggestion.Option>
-                          ))}
-                        </Suggestion.List>
-                      </Suggestion>
-                    </Field>
-                  </Prose>
-                </div>
-                <Field className="example-footer">
-                  <Button
-                    onClick={() => {
-                      setEmne(draftEmne);
-                      setFylke(draftFylke);
-                      setEksamen(draftEksamen);
-                      dialogRef.current?.close();
-                    }}
-                  >
-                    Lagre
-                  </Button>
-                  <Button
-                    variant="secondary"
-                    onClick={() => {
-                      setDraftEmne(emne);
-                      setDraftFylke(fylke);
-                      setDraftEksamen(eksamen);
-                      dialogRef.current?.close();
-                    }}
-                  >
-                    Avbryt
-                  </Button>
-                </Field>
-              </Dialog>
-            </Dialog.TriggerContext>
-          </div>
-        </Prose>
+                    dialogRef.current?.close();
+                  }}
+                >
+                  Avbryt
+                </Button>
+              </Field>
+            </Dialog>
+          </Dialog.TriggerContext>
+        </div>
+
+        <ActiveFilters
+          emne={emne}
+          setEmne={setEmne}
+          fylke={fylke}
+          setFylke={setFylke}
+        />
         <Table {...args}>
           <Table.Head>
             <Table.Row>
