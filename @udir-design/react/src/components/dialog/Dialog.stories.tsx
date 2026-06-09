@@ -348,11 +348,11 @@ export const DialogWithForm = meta.story({
       <>
         <style>
           {`
-.example-buttons {
-  display: flex;
-  gap: var(--ds-size-2);
-  margin-top: var(--ds-size-4);
-}`}
+        .example-buttons {
+          display: flex;
+          gap: var(--ds-size-2);
+          margin-top: var(--ds-size-4);
+        }`}
         </style>
         <Dialog.TriggerContext>
           <Dialog.Trigger>Send inn skjema</Dialog.Trigger>

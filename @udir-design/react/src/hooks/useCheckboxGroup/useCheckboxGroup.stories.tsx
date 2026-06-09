@@ -128,12 +128,12 @@ export const IndeterminateInTable = meta.story({
       <>
         <style>
           {`
-.example-col-1 {
-  width: 1px;
-}
-.example-col-2 {
-  width: 10em;
-}`}
+        .example-col-1 {
+          width: 1px;
+        }
+        .example-col-2 {
+          width: 10em;
+        }`}
         </style>
         <Table>
           <colgroup>
