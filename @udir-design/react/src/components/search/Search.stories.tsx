@@ -2,14 +2,15 @@ import { useDebounceCallback } from '@digdir/designsystemet-react';
 import { useState } from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
-import { Chip } from 'src/components/chip';
-import { Divider } from 'src/components/divider';
-import { Field } from 'src/components/field';
-import { Skeleton } from 'src/components/skeleton';
-import { Spinner } from 'src/components/spinner';
-import { Label } from 'src/components/typography/label';
-import { Paragraph } from 'src/components/typography/paragraph';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { assertExists } from '../../utilities/helpers/assertExists';
+import { Chip } from '../chip/Chip';
+import { Field } from '../field/Field';
+import { Skeleton } from '../skeleton/Skeleton';
+import { Spinner } from '../spinner/Spinner';
+import { Label } from '../typography/label/Label';
+import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Prose } from '../typography/prose/Prose';
 import { Search } from './Search';
 import { Search as FakeSearch } from './docs/FakeSearch';
 import { SearchButton } from './docs/FakeSearchButton';
@@ -87,13 +88,13 @@ export const Preview = meta.story({
 export const Controlled = meta.story({
   parameters: {
     customStyles: {
-      minHeight: '600px',
       display: 'flex',
       flexDirection: 'column',
       gap: 'var(--ds-size-2)',
     },
+    docs: { advancedCodeDocs },
   },
-  render() {
+  render(args) {
     const [inputValue, setInputValue] = useState('');
     const [searchTerm, setSearchTerm] = useState<string>('');
 
@@ -103,16 +104,22 @@ export const Controlled = meta.story({
     };
 
     return (
-      <>
-        <form
-          onSubmit={handleSubmit}
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 'var(--ds-size-2)',
-          }}
-        >
-          <Search>
+      <Prose>
+        <style>
+          {`
+.example-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+}
+.example-chip-group {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-4);
+}`}
+        </style>
+        <form className="example-form" onSubmit={handleSubmit}>
+          <Search {...args}>
             <Search.Input
               id="search-input-controlled"
               aria-label="Søk"
@@ -122,13 +129,7 @@ export const Controlled = meta.story({
             <Search.Clear />
             <Search.Button type="submit" />
           </Search>
-          <div
-            style={{
-              display: 'flex',
-              gap: 'var(--ds-size-2)',
-              alignItems: 'center',
-            }}
-          >
+          <div className="example-chip-group">
             <Paragraph data-size="sm">Hurtigsøk:</Paragraph>
             <Chip.Button
               onClick={() => {
@@ -158,56 +159,40 @@ export const Controlled = meta.story({
         </form>
         {searchTerm && (
           <>
-            <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
-            <div style={{ margin: 'var(--ds-size-2) 0' }}>
-              Søker etter: {searchTerm}
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: 'var(--ds-size-2)',
-                  marginTop: 'var(--ds-size-4)',
-                }}
-              >
-                <Skeleton variant="rectangle" height="150px" />
-                <Skeleton variant="rectangle" width="200px" />
-                <Skeleton variant="rectangle" />
-                <Skeleton variant="rectangle" />
-                <Skeleton variant="rectangle" />
-                <Skeleton variant="rectangle" width="50px" />
-              </div>
+            <Paragraph>Søker etter: {searchTerm}</Paragraph>
+            <div className="example-form">
+              <Skeleton variant="rectangle" height="150px" />
+              <Skeleton variant="rectangle" width="200px" />
+              <Skeleton variant="rectangle" />
+              <Skeleton variant="rectangle" />
+              <Skeleton variant="rectangle" />
+              <Skeleton variant="rectangle" width="50px" />
             </div>
           </>
         )}
-      </>
+      </Prose>
     );
   },
 });
 
 export const Variants = meta.story({
   render: (args) => (
-    <div>
+    <Prose>
       <Search {...args}>
         <Search.Input aria-label="Søk" />
         <Search.Clear />
       </Search>
-
-      <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
-
       <Search {...args}>
         <Search.Input aria-label="Søk" />
         <Search.Clear />
         <Search.Button />
       </Search>
-
-      <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
-
       <Search {...args}>
         <Search.Input aria-label="Søk" />
         <Search.Clear />
         <Search.Button variant="secondary" />
       </Search>
-    </div>
+    </Prose>
   ),
 });
 
@@ -225,12 +210,15 @@ export const WithLabel = meta.story({
 });
 
 export const Form = meta.story({
-  render() {
+  parameters: {
+    docs: { advancedCodeDocs },
+  },
+  render(args) {
     const [value, setValue] = useState<string>();
     const [submittedValue, setSubmittedValue] = useState<string>();
 
     return (
-      <>
+      <Prose>
         <form
           onSubmit={(e) => {
             // Prevent navigation from Storybook
@@ -238,7 +226,7 @@ export const Form = meta.story({
             setSubmittedValue(value);
           }}
         >
-          <Search>
+          <Search {...args}>
             <Search.Input
               aria-label="Søk"
               value={value}
@@ -249,11 +237,9 @@ export const Form = meta.story({
           </Search>
         </form>
         {submittedValue && (
-          <Paragraph data-size="md" style={{ marginTop: 'var(--ds-size-2)' }}>
-            Søkeord: {submittedValue}
-          </Paragraph>
+          <Paragraph data-size="md">Søkeord: {submittedValue}</Paragraph>
         )}
-      </>
+      </Prose>
     );
   },
 });
@@ -265,7 +251,7 @@ export const LiveSearch = meta.story({
       flexDirection: 'column',
       gap: 'var(--ds-size-2)',
     },
-    docs: { source: { type: 'code' } },
+    docs: { advancedCodeDocs },
   },
   render(args) {
     const [value, setValue] = useState<string>('');
@@ -273,7 +259,7 @@ export const LiveSearch = meta.story({
     const setSearchValueDebounced = useDebounceCallback(setSearchValue, 500);
 
     return (
-      <>
+      <Prose>
         <Search {...args}>
           <Search.Input
             aria-label="Søk"
@@ -301,7 +287,7 @@ export const LiveSearch = meta.story({
             <span>Søker etter: {searchValue}</span>
           </div>
         )}
-      </>
+      </Prose>
     );
   },
 });

@@ -1,15 +1,15 @@
 import preview from '.storybook/preview';
-import { formatReactSource } from '.storybook/utils/sourceTransformers';
-import { Card } from 'src/components/card';
-import { Checkbox } from 'src/components/checkbox';
-import { Fieldset } from 'src/components/fieldset';
-import { Radio } from 'src/components/radio';
-import { Textfield } from 'src/components/textfield';
-import { Heading } from 'src/components/typography/heading';
-import { Paragraph } from 'src/components/typography/paragraph';
-import { ValidationMessage } from 'src/components/typography/validationMessage';
-import { useCheckboxGroup } from 'src/hooks/useCheckboxGroup';
-import { useRadioGroup } from 'src/hooks/useRadioGroup';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
+import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
+import { useRadioGroup } from 'src/utilities/hooks/useRadioGroup/useRadioGroup';
+import { Card } from '../card/Card';
+import { Checkbox } from '../checkbox/Checkbox';
+import { Fieldset } from '../fieldset/Fieldset';
+import { Radio } from '../radio/Radio';
+import { Textfield } from '../textfield/Textfield';
+import { Heading } from '../typography/heading/Heading';
+import { Paragraph } from '../typography/paragraph/Paragraph';
+import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
 import { FieldNecessity } from '.';
 
 const meta = preview.meta({
@@ -25,87 +25,108 @@ const meta = preview.meta({
 
 export const Preview = meta.story({
   render: (args) => (
-    <FieldNecessity
-      {...args}
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        rowGap: 'var(--ds-size-4)',
-      }}
-    >
-      <Textfield label={<span>Fornavn</span>} required />
-      <Textfield label={<span>Mellomnavn</span>} />
-      <Textfield label={<span>Etternavn</span>} required />
-    </FieldNecessity>
+    <>
+      <style>
+        {`
+.example-field-necessity-preview {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--ds-size-4);
+}`}
+      </style>
+      <FieldNecessity className="example-field-necessity-preview" {...args}>
+        <Textfield label={<span>Fornavn</span>} required />
+        <Textfield label={<span>Mellomnavn</span>} />
+        <Textfield label={<span>Etternavn</span>} required />
+      </FieldNecessity>
+    </>
   ),
 });
 
 export const Outline = meta.story({
   args: { variant: 'outline' },
   render: (args) => (
-    <Card variant="tinted">
-      <FieldNecessity
-        {...args}
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          rowGap: 'var(--ds-size-4)',
-        }}
-      >
-        <Textfield label={<span>Fornavn</span>} required />
-        <Textfield label={<span>Mellomnavn</span>} />
-        <Textfield label={<span>Etternavn</span>} required />
-      </FieldNecessity>
-    </Card>
+    <>
+      <style>
+        {`
+.example-field-necessity-outline {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--ds-size-4);
+}`}
+      </style>
+      <Card variant="tinted">
+        <FieldNecessity className="example-field-necessity-outline" {...args}>
+          <Textfield label={<span>Fornavn</span>} required />
+          <Textfield label={<span>Mellomnavn</span>} />
+          <Textfield label={<span>Etternavn</span>} required />
+        </FieldNecessity>
+      </Card>
+    </>
   ),
 });
 
 export const Readonly = meta.story({
   render: (args) => (
-    <FieldNecessity
-      {...args}
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        rowGap: 'var(--ds-size-4)',
-      }}
-    >
-      <Textfield label={<span>Fornavn</span>} required readOnly />
-      <Textfield label={<span>Mellomnavn</span>} readOnly />
-      <Textfield label={<span>Etternavn</span>} required readOnly />
-    </FieldNecessity>
+    <>
+      <style>
+        {`
+.example-field-necessity-readonly {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--ds-size-4);
+}`}
+      </style>
+      <FieldNecessity className="example-field-necessity-readonly" {...args}>
+        <Textfield label={<span>Fornavn</span>} required readOnly />
+        <Textfield label={<span>Mellomnavn</span>} readOnly />
+        <Textfield label={<span>Etternavn</span>} required readOnly />
+      </FieldNecessity>
+    </>
   ),
 });
 
 export const AllRequired = meta.story({
   render: (args) => (
-    <FieldNecessity
-      {...args}
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        rowGap: 'var(--ds-size-4)',
-      }}
-    >
-      <Textfield label={<span>Fornavn</span>} required />
-      <Textfield label={<span>Etternavn</span>} required />
-    </FieldNecessity>
+    <>
+      <style>
+        {`
+.example-field-necessity-all-required {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--ds-size-4);
+}`}
+      </style>
+      <FieldNecessity
+        className="example-field-necessity-all-required"
+        {...args}
+      >
+        <Textfield label={<span>Fornavn</span>} required />
+        <Textfield label={<span>Etternavn</span>} required />
+      </FieldNecessity>
+    </>
   ),
 });
 
 export const AllOptional = meta.story({
   render: (args) => (
-    <FieldNecessity
-      {...args}
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        rowGap: 'var(--ds-size-4)',
-      }}
-    >
-      <Textfield multiline label={<span>Hva synes du om skjemaet?</span>} />
-      <Textfield multiline label={<span>Har du noen andre innspill?</span>} />
-    </FieldNecessity>
+    <>
+      <style>
+        {`
+.example-field-necessity-all-optional {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--ds-size-4);
+}`}
+      </style>
+      <FieldNecessity
+        className="example-field-necessity-all-optional"
+        {...args}
+      >
+        <Textfield multiline label={<span>Hva synes du om skjemaet?</span>} />
+        <Textfield multiline label={<span>Har du noen andre innspill?</span>} />
+      </FieldNecessity>
+    </>
   ),
 });
 
@@ -132,9 +153,7 @@ export const SingleRequiredField = meta.story({
 });
 
 export const FieldsetCheckboxes = meta.story({
-  parameters: {
-    docs: { source: { type: 'code', transform: formatReactSource } },
-  },
+  parameters: { docs: advancedCodeDocs },
   args: { showSummary: false },
   render: (args) => {
     const { getCheckboxProps, validationMessageProps } = useCheckboxGroup({
@@ -168,9 +187,7 @@ export const FieldsetCheckboxes = meta.story({
 });
 
 export const FieldsetRadios = meta.story({
-  parameters: {
-    docs: { source: { type: 'code', transform: formatReactSource } },
-  },
+  parameters: { docs: advancedCodeDocs },
   args: { showSummary: false },
   render: (args) => {
     const ageGroups = [
@@ -228,24 +245,30 @@ export const IndividualCheckboxes = meta.story({
 
 export const ManualSummaryPlacement = meta.story({
   render: (args) => (
-    <FieldNecessity
-      {...args}
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        rowGap: 'var(--ds-size-4)',
-      }}
-    >
-      <Heading level={2} data-size="md">
-        Kontaktinformasjon
-      </Heading>
-      <Paragraph>
-        Vi trenger å vite hvordan vi kan kontakte deg i etterkant av søknaden.
-      </Paragraph>
-      <FieldNecessity.Summary />
-      <Textfield label={<span>Fornavn</span>} required />
-      <Textfield label={<span>Etternavn</span>} required />
-      <Textfield label={<span>E-postadresse</span>} required />
-    </FieldNecessity>
+    <>
+      <style>
+        {`
+.example-field-necessity-manual-summary {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--ds-size-4);
+}`}
+      </style>
+      <FieldNecessity
+        className="example-field-necessity-manual-summary"
+        {...args}
+      >
+        <Heading level={2} data-size="md">
+          Kontaktinformasjon
+        </Heading>
+        <Paragraph>
+          Vi trenger å vite hvordan vi kan kontakte deg i etterkant av søknaden.
+        </Paragraph>
+        <FieldNecessity.Summary />
+        <Textfield label={<span>Fornavn</span>} required />
+        <Textfield label={<span>Etternavn</span>} required />
+        <Textfield label={<span>E-postadresse</span>} required />
+      </FieldNecessity>
+    </>
   ),
 });

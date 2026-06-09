@@ -46,35 +46,42 @@ export const Preview = meta.story({
   },
   render: (args) => {
     return (
-      <div
-        style={{
-          overflow: 'auto',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 'var(--ds-size-5)',
-        }}
-      >
-        <TableOfContents
-          {...args}
-          style={{ width: '450px' }}
-          data-testid="table-of-contents"
-        />
-        <Heading id="forste-overskrift" level={2} data-size="md">
-          Første overskrift (h2)
-        </Heading>
-        <Heading id="forste-underoverskrift" level={3} data-size="sm">
-          Første underoverskrift (h3)
-        </Heading>
-        <Heading id="andre-underoverskrift" level={3} data-size="sm">
-          Andre underoverskrift (h3)
-        </Heading>
-        <Heading id="andre-overskrift" level={2} data-size="md">
-          Andre overskrift (h2)
-        </Heading>
-        <Heading id="tredje-overskrift" level={2} data-size="md">
-          Tredje overskrift (h2)
-        </Heading>
-      </div>
+      <>
+        <style>
+          {`
+.example-main {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-5);
+}
+.example-table-of-contents {
+  width: 450px;
+}`}
+        </style>
+        <div className="example-main">
+          <TableOfContents
+            className="example-table-of-contents"
+            {...args}
+            data-testid="table-of-contents"
+          />
+          <Heading id="forste-overskrift" level={2} data-size="md">
+            Første overskrift (h2)
+          </Heading>
+          <Heading id="forste-underoverskrift" level={3} data-size="sm">
+            Første underoverskrift (h3)
+          </Heading>
+          <Heading id="andre-underoverskrift" level={3} data-size="sm">
+            Andre underoverskrift (h3)
+          </Heading>
+          <Heading id="andre-overskrift" level={2} data-size="md">
+            Andre overskrift (h2)
+          </Heading>
+          <Heading id="tredje-overskrift" level={2} data-size="md">
+            Tredje overskrift (h2)
+          </Heading>
+        </div>
+      </>
     );
   },
   play: async ({ canvasElement, step }) => {

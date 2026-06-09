@@ -1,4 +1,3 @@
-import type { CSSProperties } from 'react';
 import {
   Chat2Icon,
   EnvelopeClosedFillIcon,
@@ -7,14 +6,14 @@ import {
   VideoIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
-import { Avatar } from 'src/components/avatar';
-import { Button } from 'src/components/button';
-import { Card } from 'src/components/card';
-import { Details } from 'src/components/details';
-import { Tabs } from 'src/components/tabs';
-import { Tag } from 'src/components/tag';
-import { Heading } from 'src/components/typography/heading';
-import { Paragraph } from 'src/components/typography/paragraph';
+import { Avatar } from '../avatar/Avatar';
+import { Button } from '../button/Button';
+import { Card } from '../card/Card';
+import { Details } from '../details/Details';
+import { Tabs } from '../tabs/Tabs';
+import { Tag } from '../tag/Tag';
+import { Heading } from '../typography/heading/Heading';
+import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Badge, BadgePosition } from './Badge';
 
 const meta = preview.meta({
@@ -101,18 +100,19 @@ export const Floating = meta.story({
 export const CustomPlacement = meta.story({
   args: { 'data-color': 'danger' },
   render: (args) => (
-    <Badge.Position placement="top-right">
-      <Badge
-        style={
-          {
-            '--dsc-badge-top': '16%',
-            '--dsc-badge-right': '10%',
-          } as CSSProperties
-        }
-        {...args}
-      />
-      <EnvelopeClosedFillIcon title="Meldinger" />
-    </Badge.Position>
+    <>
+      <style>
+        {`
+.example-badge {
+  --dsc-badge-top: 16%;
+  --dsc-badge-right: 10%;
+}`}
+      </style>
+      <Badge.Position placement="top-right">
+        <Badge className="example-badge" {...args} />
+        <EnvelopeClosedFillIcon title="Meldinger" />
+      </Badge.Position>
+    </>
   ),
 });
 
@@ -161,31 +161,35 @@ export const InTabs = meta.story({
 export const InButton = meta.story({
   args: { 'data-color': 'danger' },
   render: (args) => (
-    <div
-      style={{
-        display: 'flex',
-        gap: 'var(--ds-size-4)',
-      }}
-    >
-      <Button icon variant="tertiary">
-        <Badge.Position>
-          <Badge {...args} count={1000} maxCount={99} />
-          <EnvelopeClosedIcon title="Innboks" />
-        </Badge.Position>
-      </Button>
-      <Button icon variant="tertiary">
-        <Badge.Position>
-          <Badge {...args} count={10} />
-          <Chat2Icon title="Meldinger" />
-        </Badge.Position>
-      </Button>
-      <Button icon variant="tertiary">
-        <Badge.Position>
-          <Badge {...args}></Badge>
-          <VideoIcon title="Skru på video" />
-        </Badge.Position>
-      </Button>
-    </div>
+    <>
+      <style>
+        {`
+.example-main {
+  display: flex;
+  gap: var(--ds-size-4);
+}`}
+      </style>
+      <div className="example-main">
+        <Button icon variant="tertiary">
+          <Badge.Position>
+            <Badge {...args} count={1000} maxCount={99} />
+            <EnvelopeClosedIcon title="Innboks" />
+          </Badge.Position>
+        </Button>
+        <Button icon variant="tertiary">
+          <Badge.Position>
+            <Badge {...args} count={10} />
+            <Chat2Icon title="Meldinger" />
+          </Badge.Position>
+        </Button>
+        <Button icon variant="tertiary">
+          <Badge.Position>
+            <Badge {...args}></Badge>
+            <VideoIcon title="Skru på video" />
+          </Badge.Position>
+        </Button>
+      </div>
+    </>
   ),
 });
 
@@ -310,18 +314,27 @@ export const SystemAlerts = meta.story({
 function Varsel({ importance }: { importance: 'danger' | 'warning' | 'info' }) {
   const tagText = importance === 'danger' ? 'Kritisk' : 'Advarsler';
   return (
-    <Card>
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Heading level={3} data-size="xs">
-          Varsel
-        </Heading>
-        {importance !== 'info' && (
-          <Tag data-color={importance} data-size="sm">
-            {tagText}
-          </Tag>
-        )}
-      </div>
-      <Paragraph>Dette er et varsel.</Paragraph>
-    </Card>
+    <>
+      <style>
+        {`
+.example-header {
+  display: flex;
+  justify-content: space-between;
+}`}
+      </style>
+      <Card>
+        <div className="example-header">
+          <Heading level={3} data-size="xs">
+            Varsel
+          </Heading>
+          {importance !== 'info' && (
+            <Tag data-color={importance} data-size="sm">
+              {tagText}
+            </Tag>
+          )}
+        </div>
+        <Paragraph>Dette er et varsel.</Paragraph>
+      </Card>
+    </>
   );
 }

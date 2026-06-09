@@ -3,15 +3,15 @@ import type { ComponentType } from 'react';
 import { Fragment } from 'react/jsx-runtime';
 import { PlusIcon, TrashFillIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
-import { Button } from 'src/components/button';
-import { Field } from 'src/components/field';
-import { Link as LinkComponent } from 'src/components/link';
-import type { LinkProps } from 'src/components/link';
-import { Select } from 'src/components/select';
-import { Textfield } from 'src/components/textfield';
-import { Heading } from 'src/components/typography/heading';
-import { Label } from 'src/components/typography/label';
-import { Paragraph } from 'src/components/typography/paragraph';
+import { Button } from '../button/Button';
+import { Field } from '../field/Field';
+import { Link as LinkComponent } from '../link/Link';
+import type { LinkProps } from '../link/Link';
+import { Select } from '../select/Select';
+import { Textfield } from '../textfield/Textfield';
+import { Heading } from '../typography/heading/Heading';
+import { Label } from '../typography/label/Label';
+import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Card, CardBlock } from './Card';
 import { Card as FakeCard } from './docs/FakeCard';
 
@@ -191,43 +191,47 @@ const options = [
 
 export const Composed = meta.story({
   render: (args) => (
-    <Card {...args}>
-      <Card.Block>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          <Heading>Rolle 1</Heading>
-          <Button variant="secondary" data-color="danger" data-size="sm">
-            <TrashFillIcon aria-hidden />
-            Fjern
+    <>
+      <style>
+        {`
+.example-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}`}
+      </style>
+      <Card {...args}>
+        <Card.Block>
+          <div className="example-heading">
+            <Heading>Rolle 1</Heading>
+            <Button variant="secondary" data-color="danger" data-size="sm">
+              <TrashFillIcon aria-hidden />
+              Fjern
+            </Button>
+          </div>
+        </Card.Block>
+        <Card.Block>
+          <Field>
+            <Label>Velg rolle</Label>
+            <Select>
+              {options.map(({ value, label }, index) => (
+                <Select.Option key={index} value={value}>
+                  {label}
+                </Select.Option>
+              ))}
+            </Select>
+          </Field>
+          <Textfield label="Fødselsnummer" />
+          <Textfield label="Etternavn" />
+        </Card.Block>
+        <Card.Block>
+          <Button variant="secondary" data-size="sm">
+            Legg til rolle
+            <PlusIcon aria-hidden />
           </Button>
-        </div>
-      </Card.Block>
-      <Card.Block>
-        <Field>
-          <Label>Velg rolle</Label>
-          <Select>
-            {options.map(({ value, label }, index) => (
-              <Select.Option key={index} value={value}>
-                {label}
-              </Select.Option>
-            ))}
-          </Select>
-        </Field>
-        <Textfield label="Fødselsnummer" />
-        <Textfield label="Etternavn" />
-      </Card.Block>
-      <Card.Block>
-        <Button variant="secondary" data-size="sm">
-          Legg til rolle
-          <PlusIcon aria-hidden />
-        </Button>
-      </Card.Block>
-    </Card>
+        </Card.Block>
+      </Card>
+    </>
   ),
 });
 
@@ -308,41 +312,45 @@ export const Horizontal = meta.story({
     const url =
       'https://www.udir.no/contentassets/0ae1c5846c254b9f8800c59c393fd03d/skolemiljo.png';
     return (
-      <Card
-        {...args}
-        style={{
-          display: 'grid',
-          gridAutoFlow: 'column',
-          width: '700px',
-        }}
-      >
-        <Card.Block>
-          <img
-            src={url}
-            alt="Barn som spiser lunsj"
-            style={{
-              height: '100%',
-              objectFit: 'cover',
-            }}
-          />
-        </Card.Block>
-        <Card.Block>
-          <Heading>
-            <a
-              href="https://www.udir.no/laring-og-trivsel/skolemiljo/slik-kan-skolen-handtere-et-utrygt-skolemiljo/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Hva gjør du når en elev ikke har det trygt og godt på skolen?
-            </a>
-          </Heading>
-          <Paragraph>
-            Hvis dere mistenker eller kjenner til at en elev ikke har det trygt
-            og godt, skal dere snarest undersøke saken. Vi har laget råd om hva
-            dere kan gjøre.
-          </Paragraph>
-        </Card.Block>
-      </Card>
+      <>
+        <style>
+          {`
+.example-card {
+  display: grid;
+  grid-auto-flow: column;
+  width: 700px;
+}
+.example-img {
+  height: 100%;
+  object-fit: cover;
+}`}
+        </style>
+        <Card {...args} className="example-card">
+          <Card.Block>
+            <img
+              src={url}
+              alt="Barn som spiser lunsj"
+              className="example-img"
+            />
+          </Card.Block>
+          <Card.Block>
+            <Heading>
+              <a
+                href="https://www.udir.no/laring-og-trivsel/skolemiljo/slik-kan-skolen-handtere-et-utrygt-skolemiljo/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Hva gjør du når en elev ikke har det trygt og godt på skolen?
+              </a>
+            </Heading>
+            <Paragraph>
+              Hvis dere mistenker eller kjenner til at en elev ikke har det
+              trygt og godt, skal dere snarest undersøke saken. Vi har laget råd
+              om hva dere kan gjøre.
+            </Paragraph>
+          </Card.Block>
+        </Card>
+      </>
     );
   },
 });

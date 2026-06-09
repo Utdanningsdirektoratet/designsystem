@@ -4,9 +4,9 @@ import {
   HatSchoolIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
-import { Badge } from 'src/components/badge';
-import { Dropdown } from 'src/components/dropdown';
-import { Link } from 'src/components/link';
+import { Badge } from '../badge/Badge';
+import { Dropdown } from '../dropdown/Dropdown';
+import { Link } from '../link/Link';
 import { Avatar } from './Avatar';
 
 const meta = preview.meta({
@@ -124,17 +124,16 @@ export const Icons = meta.story({
   render: (args) => (
     <>
       <style>{`
-        .avatar-group {
-          display: flex;
-          gap: var(--ds-size-2);
-          flex-direction: column;
-        }
-        .avatar-icon-group {
-          display: flex;
-          align-items: center;
-          gap: var(--ds-size-2);
-        }
-      `}</style>
+.avatar-group {
+  display: flex;
+  gap: var(--ds-size-2);
+  flex-direction: column;
+}
+.avatar-icon-group {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-2);
+}`}</style>
       <div className="avatar-group">
         <div className="avatar-icon-group">
           <Avatar {...args} aria-hidden />

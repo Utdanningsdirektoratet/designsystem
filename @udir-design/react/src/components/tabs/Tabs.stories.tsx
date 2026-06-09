@@ -239,22 +239,22 @@ export const Controlled = meta.story({
       <>
         <style>
           {`
-          .example-list-unordered {
-            list-style: none;
-            padding: 0;
-          }
-          .example-list-item {
-            display: flex;
-           }
-          .example-list-content {
-            align-items: center;
-            display: flex;
-            gap: var(--ds-size-2);
-          }
-          .example-list-header {
-            margin-bottom: var(--ds-size-2);
-            margin-top: var(--ds-size-4);
-          }`}
+        .example-list-unordered {
+          list-style: none;
+          padding: 0;
+        }
+        .example-list-item {
+          display: flex;
+         }
+        .example-list-content {
+          align-items: center;
+          display: flex;
+          gap: var(--ds-size-2);
+        }
+        .example-list-header {
+          margin-bottom: var(--ds-size-2);
+          margin-top: var(--ds-size-4);
+        }`}
         </style>
         <Tabs {...args} value={tab} onChange={setTab}>
           <Tabs.List>
