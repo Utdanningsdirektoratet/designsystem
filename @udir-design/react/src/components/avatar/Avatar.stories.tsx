@@ -161,12 +161,17 @@ export const AsLink = meta.story({
     'aria-hidden': true,
   },
   render: (args) => (
-    <Link
-      href="/"
-      style={{ display: 'flex', gap: 'var(--ds-size-2)', alignItems: 'center' }}
-    >
-      <Avatar {...args} />
-      <span>Ola Nordmann</span>
-    </Link>
+    <>
+      <style>{`
+.example-link {
+  display: flex;
+  gap: var(--ds-size-2);
+  align-items: center;
+}`}</style>
+      <Link className="example-link" href="/">
+        <Avatar {...args} />
+        <span>Ola Nordmann</span>
+      </Link>
+    </>
   ),
 });

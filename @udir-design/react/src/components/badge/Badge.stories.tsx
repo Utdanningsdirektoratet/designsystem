@@ -235,20 +235,24 @@ const ColorsMap: {
 
 export const ColorVariants = meta.story({
   render: (args) => (
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(4, 60px)',
-        gap: 'var(--ds-size-2)',
-        justifyContent: 'center',
-        height: '100%',
-        width: '100%',
-      }}
-    >
-      {Object.entries(ColorsMap).map(([key, value]) => (
-        <Badge key={key} {...value} count={15} maxCount={9} {...args} />
-      ))}
-    </div>
+    <>
+      <style>
+        {`
+.example-content {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  gap: var(--ds-size-2);
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}`}
+      </style>
+      <div className="example-content">
+        {Object.entries(ColorsMap).map(([key, value]) => (
+          <Badge key={key} {...value} count={15} maxCount={9} {...args} />
+        ))}
+      </div>
+    </>
   ),
 });
 

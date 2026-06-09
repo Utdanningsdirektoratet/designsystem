@@ -65,19 +65,27 @@ export const Outline = Preview.extend({
 });
 
 export const Inline = meta.story({
-  render: () => (
-    <Fieldset>
-      <Fieldset.Legend>Kontaktes på e-post?</Fieldset.Legend>
-      <Fieldset.Description>
-        Bekreft om du ønsker å bli kontaktet per e-post.
-      </Fieldset.Description>
-      <div
-        style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--ds-size-6)' }}
-      >
-        <Radio name="my-inline" label="Ja" value="ja" />
-        <Radio name="my-inline" label="Nei" value="nei" />
-      </div>
-    </Fieldset>
+  render: (args) => (
+    <>
+      <style>
+        {`
+.example-radio-group {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: var(--ds-size-6);
+}`}
+      </style>
+      <Fieldset>
+        <Fieldset.Legend>Kontaktes på e-post?</Fieldset.Legend>
+        <Fieldset.Description>
+          Bekreft om du ønsker å bli kontaktet per e-post.
+        </Fieldset.Description>
+        <div className="example-radio-group">
+          <Radio name="my-inline" label="Ja" value="ja" {...args} />
+          <Radio name="my-inline" label="Nei" value="nei" {...args} />
+        </div>
+      </Fieldset>
+    </>
   ),
 });
 
