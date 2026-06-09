@@ -497,4 +497,13 @@ describe('getGroupProps', () => {
       'invalid',
     );
   });
+
+  it('returns idle when group includes the active step without explicit state', () => {
+    const { result } = renderHook(() =>
+      useFormNavigation({ order: [...order] }),
+    );
+    // step1 is active, step2 is completed — group is not fully completed
+    act(() => result.current.markCompleted('step2'));
+    expect(result.current.getGroupProps(['step1', 'step2']).state).toBe('idle');
+  });
 });
