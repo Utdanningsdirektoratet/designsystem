@@ -3,8 +3,8 @@ import { expect, userEvent, waitFor, within } from 'storybook/test';
 import { MultiplyIcon, TrashIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
-import { Button } from 'src/components/button';
-import { Paragraph } from 'src/components/typography/paragraph';
+import { Button } from '../button/Button';
+import { Paragraph } from '../typography/paragraph/Paragraph';
 import { Popover } from './Popover';
 import { Popover as FakePopover } from './docs/FakePopover';
 import { PopoverTrigger } from './docs/FakePopoverTrigger';
@@ -46,26 +46,30 @@ export const Preview = meta.story({
     customStyles: { story: { height: 260 } },
   },
   render: (args) => (
-    <Popover.TriggerContext>
-      <Popover.Trigger variant="tertiary">
-        Fjern <MultiplyIcon aria-hidden />
-      </Popover.Trigger>
-      <Popover {...args}>
-        Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
-        <div
-          style={{
-            display: 'flex',
-            gap: 'var(--ds-size-2)',
-            marginTop: 'var(--ds-size-2)',
-          }}
-        >
-          <Button data-size="sm">Ja, fjern</Button>
-          <Button data-size="sm" variant="tertiary">
-            Avbryt
-          </Button>
-        </div>
-      </Popover>
-    </Popover.TriggerContext>
+    <>
+      <style>
+        {`
+.example-section {
+  display: flex;
+  gap: var(--ds-size-2);
+  margin-top: var(--ds-size-2);
+}`}
+      </style>
+      <Popover.TriggerContext>
+        <Popover.Trigger variant="tertiary">
+          Fjern <MultiplyIcon aria-hidden />
+        </Popover.Trigger>
+        <Popover {...args}>
+          Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
+          <div className="example-section">
+            <Button data-size="sm">Ja, fjern</Button>
+            <Button data-size="sm" variant="tertiary">
+              Avbryt
+            </Button>
+          </div>
+        </Popover>
+      </Popover.TriggerContext>
+    </>
   ),
   play: async (ctx) => {
     const button = within(ctx.canvasElement).getByRole('button');
@@ -100,26 +104,30 @@ export const Interactive = meta.story({
     customStyles: { story: { height: 260 } },
   },
   render: (args) => (
-    <Popover.TriggerContext>
-      <Popover.Trigger aria-label="Lukk" variant="secondary">
-        Lukk <MultiplyIcon aria-hidden />
-      </Popover.Trigger>
-      <Popover {...args}>
-        <Paragraph>Vil du lagre endringene dine?</Paragraph>
-        <div
-          style={{
-            display: 'flex',
-            gap: 'var(--ds-size-2)',
-            marginTop: 'var(--ds-size-2)',
-          }}
-        >
-          <Button data-size="sm">Lagre</Button>
-          <Button data-size="sm" variant="tertiary">
-            Ikke lagre
-          </Button>
-        </div>
-      </Popover>
-    </Popover.TriggerContext>
+    <>
+      <style>
+        {`
+.example-popover-buttons {
+  display: flex;
+  gap: var(--ds-size-2);
+  margin-top: var(--ds-size-2);
+}`}
+      </style>
+      <Popover.TriggerContext>
+        <Popover.Trigger aria-label="Lukk" variant="secondary">
+          Lukk <MultiplyIcon aria-hidden />
+        </Popover.Trigger>
+        <Popover {...args}>
+          <Paragraph>Vil du lagre endringene dine?</Paragraph>
+          <div className="example-popover-buttons">
+            <Button data-size="sm">Lagre</Button>
+            <Button data-size="sm" variant="tertiary">
+              Ikke lagre
+            </Button>
+          </div>
+        </Popover>
+      </Popover.TriggerContext>
+    </>
   ),
 });
 
@@ -251,24 +259,28 @@ export const Variants = meta.story({
   },
   render: (args) => {
     return (
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: '100px',
-          placeItems: 'center',
-          marginTop: 'var(--ds-size-12)',
-        }}
-      >
-        {Object.entries(VariantsMap).map(([key, props]) => (
-          <Popover.TriggerContext key={key}>
-            <Popover.Trigger variant="tertiary">popover</Popover.Trigger>
-            <Popover open={true} autoPlacement={false} {...props} {...args}>
-              {key}
-            </Popover>
-          </Popover.TriggerContext>
-        ))}
-      </div>
+      <>
+        <style>
+          {`
+.example-main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 100px;
+  place-items: center;
+  margin-top: var(--ds-size-12);
+}`}
+        </style>
+        <div className="example-main">
+          {Object.entries(VariantsMap).map(([key, props]) => (
+            <Popover.TriggerContext key={key}>
+              <Popover.Trigger variant="tertiary">popover</Popover.Trigger>
+              <Popover open={true} autoPlacement={false} {...props} {...args}>
+                {key}
+              </Popover>
+            </Popover.TriggerContext>
+          ))}
+        </div>
+      </>
     );
   },
   play: () => {
@@ -283,24 +295,28 @@ export const ColorVariants = meta.story({
   },
   render: (args) => {
     return (
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: '100px',
-          placeItems: 'center',
-          marginTop: 'var(--ds-size-12)',
-        }}
-      >
-        {Object.entries(ColorVariantsMap).map(([key, props]) => (
-          <Popover.TriggerContext key={key}>
-            <Popover.Trigger variant="tertiary">popover</Popover.Trigger>
-            <Popover open={true} autoPlacement={false} {...props} {...args}>
-              {key}
-            </Popover>
-          </Popover.TriggerContext>
-        ))}
-      </div>
+      <>
+        <style>
+          {`
+.example-main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 100px;
+  place-items: center;
+  margin-top: var(--ds-size-12);
+}`}
+        </style>
+        <div className="example-main">
+          {Object.entries(ColorVariantsMap).map(([key, props]) => (
+            <Popover.TriggerContext key={key}>
+              <Popover.Trigger variant="tertiary">popover</Popover.Trigger>
+              <Popover open={true} autoPlacement={false} {...props} {...args}>
+                {key}
+              </Popover>
+            </Popover.TriggerContext>
+          ))}
+        </div>
+      </>
     );
   },
   play: () => {
@@ -317,32 +333,36 @@ export const Controlled = meta.story({
     const [open, setOpen] = useState(false);
 
     return (
-      <Popover.TriggerContext>
-        <Popover.Trigger variant="tertiary" onClick={() => setOpen(!open)}>
-          Fjern <MultiplyIcon aria-hidden />
-        </Popover.Trigger>
-        <Popover open={open} {...args}>
-          Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
-          <div
-            style={{
-              display: 'flex',
-              gap: 'var(--ds-size-2)',
-              marginTop: 'var(--ds-size-2)',
-            }}
-          >
-            <Button data-size="sm" onClick={() => setOpen(false)}>
-              Ja, fjern
-            </Button>
-            <Button
-              data-size="sm"
-              variant="tertiary"
-              onClick={() => setOpen(false)}
-            >
-              Avbryt
-            </Button>
-          </div>
-        </Popover>
-      </Popover.TriggerContext>
+      <>
+        <style>
+          {`
+        .example-popover-buttons {
+          display: flex;
+          gap: var(--ds-size-2);
+          margin-top: var(--ds-size-2);
+        }`}
+        </style>
+        <Popover.TriggerContext>
+          <Popover.Trigger variant="tertiary" onClick={() => setOpen(!open)}>
+            Fjern <MultiplyIcon aria-hidden />
+          </Popover.Trigger>
+          <Popover open={open} {...args}>
+            Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
+            <div className="example-popover-buttons">
+              <Button data-size="sm" onClick={() => setOpen(false)}>
+                Ja, fjern
+              </Button>
+              <Button
+                data-size="sm"
+                variant="tertiary"
+                onClick={() => setOpen(false)}
+              >
+                Avbryt
+              </Button>
+            </div>
+          </Popover>
+        </Popover.TriggerContext>
+      </>
     );
   },
 });
@@ -357,6 +377,14 @@ export const WithoutContext = meta.story({
 
     return (
       <>
+        <style>
+          {`
+        .example-popover-buttons {
+          display: flex;
+          gap: var(--ds-size-2);
+          margin-top: var(--ds-size-2);
+        }`}
+        </style>
         <Button
           popovertarget="my-popover"
           aria-label="Slett rad"
@@ -374,13 +402,7 @@ export const WithoutContext = meta.story({
           <Paragraph>
             Er du sikker på at du vil slette raden? Handlingen kan ikke angres.
           </Paragraph>
-          <div
-            style={{
-              display: 'flex',
-              gap: 'var(--ds-size-2)',
-              marginTop: 'var(--ds-size-2)',
-            }}
-          >
+          <div className="example-popover-buttons">
             <Button data-size="sm">Ja, slett den</Button>
             <Button data-size="sm" variant="tertiary">
               Avbryt

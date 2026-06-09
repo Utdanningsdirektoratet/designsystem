@@ -1,10 +1,10 @@
 import { expect, within } from 'storybook/test';
-import preview from '.storybook/preview';
 import { Header } from '../header';
 import { Breadcrumbs } from './Breadcrumbs';
 import { BreadcrumbsItem } from './docs/FakeBreadcrumbsItem';
 import { BreadcrumbsLink } from './docs/FakeBreadcrumbsLink';
 import { BreadcrumbsList } from './docs/FakeBreadcrumbsList';
+import preview from '.storybook/preview';
 
 const meta = preview.meta({
   component: Breadcrumbs,
@@ -166,13 +166,11 @@ export const PlacementWithHeader = meta.story({
     <>
       <style>
         {`
-        /* Styles defined in application-specific css */
-        .content {
-          max-width: 80rem;
-          margin: var(--ds-size-4) auto 0;
-          padding: 0 var(--ds-size-5);
-        }
-        `}
+.content {
+  max-width: 80rem;
+  margin: var(--ds-size-4) auto 0;
+  padding: 0 var(--ds-size-5);
+}`}
       </style>
       <Header applicationName="Tjenestenavn">
         <Header.MenuButton />

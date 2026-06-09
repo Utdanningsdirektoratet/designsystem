@@ -28,153 +28,158 @@ const meta = preview.meta({
 export const Preview = meta.story({
   render: (args) => {
     return (
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
-        <Prose {...args} style={{ maxWidth: '50rem' }} data-testid="prose">
-          <Alert>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Alert>
-          <Heading data-size="lg" level={1}>
-            Sidetittel (h1)
-          </Heading>
-          <Paragraph data-size="lg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            vitae lacus ullamcorper, malesuada risus sed, consequat est. Donec
-            lobortis leo et condimentum consequat.
-          </Paragraph>
-          <div>
-            <Divider />
-            Lorem ipsum | Sist endret: 29.05.2024
-            <Divider />
-          </div>
-          <TableOfContents
-            {...useTableOfContents()}
-            data-color="accent"
-            variant="tinted"
-          />
-          <Heading data-size="md" id="first-heading" level={2}>
-            Første overskrift (h2)
-          </Heading>
-          <Paragraph>
-            Aenean vehicula leo et euismod rutrum. Donec eget orci est. Vivamus
-            sapien magna, dictum at velit quis, mattis molestie eros. Vivamus
-            vitae purus purus. Maecenas mollis elementum aliquam. Donec
-            efficitur urna sed ante consectetur, in scelerisque lectus
-            tristique. Ut et nunc turpis. Mauris faucibus sagittis est nec
-            mollis. Pellentesque sollicitudin nisl mauris, at dapibus mi
-            vestibulum non.
-          </Paragraph>
-          <Heading data-size="sm" id="first-subheading" level={3}>
-            Første underoverskrift (h3)
-          </Heading>
-          <Paragraph>
-            Maecenas nibh justo, lobortis in volutpat eget, tempor et tortor.
-            Curabitur tristique tellus at ligula congue, a tincidunt turpis
-            tincidunt. Aliquam erat volutpat. Ut ac semper neque.
-          </Paragraph>
-          <Heading level={3} id="second-subheading" data-size="sm">
-            Andre underoverskrift (h3)
-          </Heading>
-          <Paragraph>
-            In quis fermentum enim, a rhoncus dui. Quisque in placerat nisi.
-            Praesent sollicitudin ante eu lacus sagittis aliquet. Cras ut
-            gravida nisi. In sed sapien eu nulla rhoncus fringilla. Mauris nec
-            orci mollis, tincidunt purus a, tempor mauris. Integer faucibus nisi
-            a sem laoreet dapibus sed a tellus. Proin sit amet velit vel lacus
-            faucibus laoreet. Vivamus in rutrum enim. Fusce nulla nisl, iaculis
-            vitae quam sit amet, vehicula semper sem.
-          </Paragraph>
-          <Table tintedColumnHeader data-color="accent" zebra>
-            <caption>Tabelloverskrift</caption>
-            <Table.Head>
-              <Table.Row>
-                <Table.HeaderCell>Radoverskrift</Table.HeaderCell>
-                <Table.HeaderCell>Radoverskrift</Table.HeaderCell>
-              </Table.Row>
-            </Table.Head>
-            <Table.Body>
-              {dummyData.map((item) => (
-                <Table.Row key={item.id}>
-                  <Table.Cell>{item.kommune}</Table.Cell>
-                  <Table.Cell>{item.tildeling}</Table.Cell>
-                </Table.Row>
-              ))}
-            </Table.Body>
-          </Table>
-          <Heading level={2} id="second-heading" data-size="md">
-            Andre overskrift (h2)
-          </Heading>
-          <Paragraph>
-            Suspendisse lobortis nunc vitae nisi volutpat, vitae interdum sem
-            faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Suspendisse turpis nisi, blandit ut gravida sed, efficitur ac
-            ligula.
-          </Paragraph>
-          <List.Unordered>
-            <List.Item>
+      <>
+        <style>
+          {`
+.example-main {
+  display: flex;
+  justify-content: center;
+}
+.example-prose {
+  max-width: 50rem;
+}`}
+        </style>
+        <div className="example-main">
+          <Prose className="example-prose" data-testid="prose" {...args}>
+            <Alert>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </List.Item>
-            <List.Item>
-              Phasellus sit amet mauris ac massa convallis egestas at eu sapien.
-            </List.Item>
-            <List.Item>
-              Nullam ac eros vulputate, tempus tellus cursus, volutpat nisi.
-            </List.Item>
-            <List.Item>
-              Nullam consectetur nunc a pretium pellentesque.
-            </List.Item>
-            <List.Item>Aliquam cursus sapien nec tincidunt porta.</List.Item>
-          </List.Unordered>
-          <Heading data-size="md" id="third-heading" level={2}>
-            Tredje overskrift (h2)
-          </Heading>
-          <Paragraph>
-            Praesent eros elit, aliquet at auctor vel, pulvinar id augue.
-            Suspendisse eu orci sit amet turpis mattis blandit sit amet ut
-            massa. Aenean vel consequat ex. Nunc luctus nulla a diam iaculis
-            iaculis. Aliquam suscipit arcu vel luctus posuere.
-          </Paragraph>
-          <Paragraph>
-            Ut sit amet scelerisque odio, a ullamcorper quam. Praesent ornare
-            diam sit amet magna feugiat, nec aliquet arcu pharetra. Cras
-            condimentum tempus augue, in posuere dolor fermentum quis.
-          </Paragraph>
-          <div>
-            <Details>
-              <Details.Summary>Første details</Details.Summary>
-              <Details.Content>
-                <Paragraph>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus vitae lacus ullamcorper, malesuada risus sed,
-                  consequat est. Donec lobortis leo et condimentum consequat.
-                  Aenean vehicula leo et euismod rutrum. Donec eget orci est.
-                </Paragraph>
-                <Paragraph style={{ marginTop: 'var(--ds-size-5)' }}>
-                  Vivamus sapien magna, dictum at velit quis, mattis molestie
-                  eros. Vivamus vitae purus purus. Maecenas mollis elementum
-                  aliquam. Donec efficitur urna sed ante consectetur, in
-                  scelerisque lectus tristique.
-                </Paragraph>
-              </Details.Content>
-            </Details>
-            <Details>
-              <Details.Summary>Andre details</Details.Summary>
-              <Details.Content>
-                <Paragraph>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus vitae lacus ullamcorper, malesuada risus sed,
-                  consequat est. Donec lobortis leo et condimentum consequat.
-                  Aenean vehicula leo et euismod rutrum. Donec eget orci est.
-                </Paragraph>
-              </Details.Content>
-            </Details>
-          </div>
-        </Prose>
-      </div>
+            </Alert>
+            <Heading data-size="lg" level={1}>
+              Sidetittel (h1)
+            </Heading>
+            <Paragraph data-size="lg">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              vitae lacus ullamcorper, malesuada risus sed, consequat est. Donec
+              lobortis leo et condimentum consequat.
+            </Paragraph>
+            <div>
+              <Divider />
+              Lorem ipsum | Sist endret: 29.05.2024
+              <Divider />
+            </div>
+            <TableOfContents
+              {...useTableOfContents()}
+              data-color="accent"
+              variant="tinted"
+            />
+            <Heading data-size="md" id="first-heading" level={2}>
+              Første overskrift (h2)
+            </Heading>
+            <Paragraph>
+              Aenean vehicula leo et euismod rutrum. Donec eget orci est.
+              Vivamus sapien magna, dictum at velit quis, mattis molestie eros.
+              Vivamus vitae purus purus. Maecenas mollis elementum aliquam.
+              Donec efficitur urna sed ante consectetur, in scelerisque lectus
+              tristique.
+            </Paragraph>
+            <Heading data-size="sm" id="first-subheading" level={3}>
+              Første underoverskrift (h3)
+            </Heading>
+            <Paragraph>
+              Maecenas nibh justo, lobortis in volutpat eget, tempor et tortor.
+              Curabitur tristique tellus at ligula congue, a tincidunt turpis
+              tincidunt. Aliquam erat volutpat. Ut ac semper neque.
+            </Paragraph>
+            <Heading level={3} id="second-subheading" data-size="sm">
+              Andre underoverskrift (h3)
+            </Heading>
+            <Paragraph>
+              In quis fermentum enim, a rhoncus dui. Quisque in placerat nisi.
+              Praesent sollicitudin ante eu lacus sagittis aliquet. Cras ut
+              gravida nisi. In sed sapien eu nulla rhoncus fringilla.
+            </Paragraph>
+            <Table tintedColumnHeader data-color="accent" zebra>
+              <caption>Tabelloverskrift</caption>
+              <Table.Head>
+                <Table.Row>
+                  <Table.HeaderCell>Radoverskrift</Table.HeaderCell>
+                  <Table.HeaderCell>Radoverskrift</Table.HeaderCell>
+                </Table.Row>
+              </Table.Head>
+              <Table.Body>
+                {dummyData.map((item) => (
+                  <Table.Row key={item.id}>
+                    <Table.Cell>{item.kommune}</Table.Cell>
+                    <Table.Cell>{item.tildeling}</Table.Cell>
+                  </Table.Row>
+                ))}
+              </Table.Body>
+            </Table>
+            <Heading level={2} id="second-heading" data-size="md">
+              Andre overskrift (h2)
+            </Heading>
+            <Paragraph>
+              Suspendisse lobortis nunc vitae nisi volutpat, vitae interdum sem
+              faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse turpis nisi, blandit ut gravida sed, efficitur ac
+              ligula.
+            </Paragraph>
+            <List.Unordered>
+              <List.Item>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </List.Item>
+              <List.Item>
+                Phasellus sit amet mauris ac massa convallis egestas at eu
+                sapien.
+              </List.Item>
+              <List.Item>
+                Nullam ac eros vulputate, tempus tellus cursus, volutpat nisi.
+              </List.Item>
+              <List.Item>
+                Nullam consectetur nunc a pretium pellentesque.
+              </List.Item>
+              <List.Item>Aliquam cursus sapien nec tincidunt porta.</List.Item>
+            </List.Unordered>
+            <Heading data-size="md" id="third-heading" level={2}>
+              Tredje overskrift (h2)
+            </Heading>
+            <Paragraph>
+              Praesent eros elit, aliquet at auctor vel, pulvinar id augue.
+              Suspendisse eu orci sit amet turpis mattis blandit sit amet ut
+              massa. Aenean vel consequat ex. Nunc luctus nulla a diam iaculis
+              iaculis. Aliquam suscipit arcu vel luctus posuere.
+            </Paragraph>
+            <Paragraph>
+              Ut sit amet scelerisque odio, a ullamcorper quam. Praesent ornare
+              diam sit amet magna feugiat, nec aliquet arcu pharetra. Cras
+              condimentum tempus augue, in posuere dolor fermentum quis.
+            </Paragraph>
+            <div>
+              <Details>
+                <Details.Summary>Første details</Details.Summary>
+                <Details.Content>
+                  <Prose>
+                    <Paragraph>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Phasellus vitae lacus ullamcorper, malesuada risus sed,
+                      consequat est. Donec lobortis leo et condimentum
+                      consequat. Aenean vehicula leo et euismod rutrum. Donec
+                      eget orci est.
+                    </Paragraph>
+                    <Paragraph>
+                      Vivamus sapien magna, dictum at velit quis, mattis
+                      molestie eros. Vivamus vitae purus purus. Maecenas mollis
+                      elementum aliquam. Donec efficitur urna sed ante
+                      consectetur, in scelerisque lectus tristique.
+                    </Paragraph>
+                  </Prose>
+                </Details.Content>
+              </Details>
+              <Details>
+                <Details.Summary>Andre details</Details.Summary>
+                <Details.Content>
+                  <Paragraph>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus vitae lacus ullamcorper, malesuada risus sed,
+                    consequat est. Donec lobortis leo et condimentum consequat.
+                    Aenean vehicula leo et euismod rutrum. Donec eget orci est.
+                  </Paragraph>
+                </Details.Content>
+              </Details>
+            </div>
+          </Prose>
+        </div>
+      </>
     );
   },
 });
@@ -205,150 +210,158 @@ const dummyData = [
 export const Headings = meta.story({
   render: (args) => {
     return (
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
-        <Prose {...args} style={{ maxWidth: '50rem' }}>
-          <Heading level={1} data-size="2xl">
-            Heading xxl
-          </Heading>
-          <Paragraph data-size="xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel
-            scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae
-            lorem. Suspendisse tortor nisl, porttitor eget cursus quis,
-            facilisis et lacus. Sed sit amet laoreet orci.
-          </Paragraph>
-          <Heading level={2} data-size="xl">
-            Heading xl
-          </Heading>
-          <Paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel
-            scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae
-            lorem. Suspendisse tortor nisl, porttitor eget cursus quis,
-            facilisis et lacus. Sed sit amet laoreet orci.
-          </Paragraph>
-          <Heading level={3} data-size="lg">
-            Heading lg
-          </Heading>
-          <Paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel
-            scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae
-            lorem. Suspendisse tortor nisl, porttitor eget cursus quis,
-            facilisis et lacus. Sed sit amet laoreet orci.
-          </Paragraph>
-          <Heading level={4} data-size="md">
-            Heading md
-          </Heading>
-          <Paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel
-            scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae
-            lorem. Suspendisse tortor nisl, porttitor eget cursus quis,
-            facilisis et lacus. Sed sit amet laoreet orci.
-          </Paragraph>
-          <Heading level={5} data-size="sm">
-            Heading sm
-          </Heading>
-          <Paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel
-            scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae
-            lorem. Suspendisse tortor nisl, porttitor eget cursus quis,
-            facilisis et lacus. Sed sit amet laoreet orci.
-          </Paragraph>
-          <Heading level={6} data-size="xs">
-            Heading xs
-          </Heading>
-          <Paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel
-            scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae
-            lorem. Suspendisse tortor nisl, porttitor eget cursus quis,
-            facilisis et lacus. Sed sit amet laoreet orci.
-          </Paragraph>
-          <Heading level={6} data-size="2xs">
-            Heading xxs
-          </Heading>
-          <Paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel
-            scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae
-            lorem. Suspendisse tortor nisl, porttitor eget cursus quis,
-            facilisis et lacus. Sed sit amet laoreet orci.
-          </Paragraph>
-        </Prose>
-      </div>
+      <>
+        <style>
+          {`
+.example-main {
+  display: flex;
+  justify-content: center;
+}
+.example-prose {
+  max-width: 50rem;
+}`}
+        </style>
+        <div className="example-main">
+          <Prose className="example-prose" {...args}>
+            <Heading level={1} data-size="2xl">
+              Heading xxl
+            </Heading>
+            <Paragraph data-size="xl">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor
+              vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta
+              vitae lorem.
+            </Paragraph>
+            <Heading level={2} data-size="xl">
+              Heading xl
+            </Heading>
+            <Paragraph>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor
+              vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta
+              vitae lorem.
+            </Paragraph>
+            <Heading level={3} data-size="lg">
+              Heading lg
+            </Heading>
+            <Paragraph>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor
+              vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta
+              vitae lorem.
+            </Paragraph>
+            <Heading level={4} data-size="md">
+              Heading md
+            </Heading>
+            <Paragraph>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor
+              vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta
+              vitae lorem.
+            </Paragraph>
+            <Heading level={5} data-size="sm">
+              Heading sm
+            </Heading>
+            <Paragraph>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor
+              vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta
+              vitae lorem.
+            </Paragraph>
+            <Heading level={6} data-size="xs">
+              Heading xs
+            </Heading>
+            <Paragraph>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor
+              vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta
+              vitae lorem.
+            </Paragraph>
+            <Heading level={6} data-size="2xs">
+              Heading xxs
+            </Heading>
+            <Paragraph>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor
+              vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta
+              vitae lorem.
+            </Paragraph>
+          </Prose>
+        </div>
+      </>
     );
   },
 });
 
 export const WithDialog = meta.story({
-  render: () => {
+  render: (args) => {
     return (
-      <Prose style={{ maxWidth: '50rem' }}>
-        <Dialog.TriggerContext>
-          <Dialog.Trigger>Åpne Dialog</Dialog.Trigger>
-          <Dialog
-            closedby="any"
-            style={{
-              zIndex: 10,
-            }}
-            open
-          >
-            <Heading
-              style={{
-                marginBottom: 'var(--ds-size-2)',
-              }}
-            >
-              Dialog header
-            </Heading>
-            <Paragraph
-              style={{
-                marginBottom: 'var(--ds-size-2)',
-              }}
-            >
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
-            </Paragraph>
-            <Paragraph data-size="sm">Dialog footer</Paragraph>
-          </Dialog>
-        </Dialog.TriggerContext>
-      </Prose>
+      <>
+        <style>
+          {`
+.example-prose {
+  max-width: 50rem;
+}
+.example-dialog {
+  z-index: 10;
+}`}
+        </style>
+        <Prose className="example-prose" {...args}>
+          <Dialog.TriggerContext>
+            <Dialog.Trigger>Åpne Dialog</Dialog.Trigger>
+            <Dialog className="example-dialog" closedby="any" open>
+              <Prose>
+                <Heading>Dialog header</Heading>
+                <Paragraph>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Blanditiis doloremque obcaecati assumenda odio ducimus sunt
+                  et.
+                </Paragraph>
+                <Paragraph data-size="sm">Dialog footer</Paragraph>
+              </Prose>
+            </Dialog>
+          </Dialog.TriggerContext>
+        </Prose>
+      </>
     );
   },
 });
 
 export const WithPopover = meta.story({
-  render: () => {
+  render: (args) => {
     return (
-      <Prose style={{ maxWidth: '50rem' }}>
-        <Popover.TriggerContext>
-          <Popover.Trigger variant="tertiary">
-            Fjern <MultiplyIcon aria-hidden />
-          </Popover.Trigger>
-          <Popover open>
-            Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
-            <div
-              style={{
-                display: 'flex',
-                gap: 'var(--ds-size-2)',
-                marginTop: 'var(--ds-size-2)',
-              }}
-            >
-              <Button data-size="sm">Ja, fjern</Button>
-              <Button data-size="sm" variant="tertiary">
-                Avbryt
-              </Button>
-            </div>
-          </Popover>
-        </Popover.TriggerContext>
-      </Prose>
+      <>
+        <style>
+          {`
+.example-prose {
+  max-width: 50rem;
+}
+.example-popover-content {
+  display: flex;
+  gap: var(--ds-size-2);
+  margin-top: var(--ds-size-4);
+}`}
+        </style>
+        <Prose className="example-prose" {...args}>
+          <Popover.TriggerContext>
+            <Popover.Trigger variant="tertiary">
+              Fjern <MultiplyIcon aria-hidden />
+            </Popover.Trigger>
+            <Popover open>
+              Er du sikker på at du vil fjerne raden? Handlingen kan ikke
+              angres.
+              <Prose>
+                <div className="example-popover-content">
+                  <Button data-size="sm">Ja, fjern</Button>
+                  <Button data-size="sm" variant="tertiary">
+                    Avbryt
+                  </Button>
+                </div>
+              </Prose>
+            </Popover>
+          </Popover.TriggerContext>
+        </Prose>
+      </>
     );
   },
 });

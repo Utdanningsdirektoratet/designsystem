@@ -1,11 +1,11 @@
 import preview from '.storybook/preview';
 import type { DecoratorType } from '.storybook/types';
-import { formatReactSource } from '.storybook/utils/sourceTransformers';
-import { Button } from 'src/components/button';
-import { Checkbox } from 'src/components/checkbox';
-import { Chip } from 'src/components/chip';
-import { Divider } from 'src/components/divider';
-import { Fieldset } from 'src/components/fieldset';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
+import { Button } from 'src/components/button/Button';
+import { Checkbox } from 'src/components/checkbox/Checkbox';
+import { Chip } from 'src/components/chip/Chip';
+import { Divider } from 'src/components/divider/Divider';
+import { Fieldset } from 'src/components/fieldset/Fieldset';
 import { Table } from 'src/components/table';
 import { Paragraph } from 'src/components/typography/paragraph';
 import { ValidationMessage } from 'src/components/typography/validationMessage';
@@ -125,45 +125,56 @@ export const IndeterminateInTable = meta.story({
       { id: 4, name: 'Per Nordmann', education: 'Barnehage' },
     ];
     return (
-      <Table>
-        <colgroup>
-          {/* ensure the first column only takes up the necessary space */}
-          <col style={{ width: '1px' }} />
-          <col style={{ width: '10em' }} />
-          <col />
-        </colgroup>
-        <Table.Head>
-          <Table.Row>
-            <Table.HeaderCell>
-              <Checkbox
-                aria-label="Velg alle"
-                {...getCheckboxProps({
-                  allowIndeterminate: true,
-                  value: 'all',
-                })}
-              />
-            </Table.HeaderCell>
-            <Table.HeaderCell>Navn</Table.HeaderCell>
-            <Table.HeaderCell>Utdanningsnivå</Table.HeaderCell>
-          </Table.Row>
-        </Table.Head>
-        <Table.Body>
-          {people.map((person) => (
-            <Table.Row key={person.name}>
-              <Table.Cell>
+      <>
+        <style>
+          {`
+.example-col-1 {
+  width: 1px;
+}
+.example-col-2 {
+  width: 10em;
+}`}
+        </style>
+        <Table>
+          <colgroup>
+            {/* ensure the first column only takes up the necessary space */}
+            <col className="example-col-1" />
+            <col className="example-col-2" />
+            <col />
+          </colgroup>
+          <Table.Head>
+            <Table.Row>
+              <Table.HeaderCell>
                 <Checkbox
-                  aria-labelledby={`${context.id}-${person.id}-name`}
-                  {...getCheckboxProps(person.id.toString())}
+                  aria-label="Velg alle"
+                  {...getCheckboxProps({
+                    allowIndeterminate: true,
+                    value: 'all',
+                  })}
                 />
-              </Table.Cell>
-              <Table.Cell id={`${context.id}-${person.id}-name`}>
-                {person.name}
-              </Table.Cell>
-              <Table.Cell>{person.education}</Table.Cell>
+              </Table.HeaderCell>
+              <Table.HeaderCell>Navn</Table.HeaderCell>
+              <Table.HeaderCell>Utdanningsnivå</Table.HeaderCell>
             </Table.Row>
-          ))}
-        </Table.Body>
-      </Table>
+          </Table.Head>
+          <Table.Body>
+            {people.map((person) => (
+              <Table.Row key={person.name}>
+                <Table.Cell>
+                  <Checkbox
+                    aria-labelledby={`${context.id}-${person.id}-name`}
+                    {...getCheckboxProps(person.id.toString())}
+                  />
+                </Table.Cell>
+                <Table.Cell id={`${context.id}-${person.id}-name`}>
+                  {person.name}
+                </Table.Cell>
+                <Table.Cell>{person.education}</Table.Cell>
+              </Table.Row>
+            ))}
+          </Table.Body>
+        </Table>
+      </>
     );
   },
 });
@@ -175,6 +186,14 @@ type Choices = {
 };
 
 export const Controlled = meta.story({
+  parameters: {
+    customStyles: {
+      display: 'flex',
+      gap: 'var(--ds-size-4)',
+      flexDirection: 'column',
+    },
+    docs: { advancedCodeDocs },
+  },
   render: (args) => {
     const choices: Choices = {
       barnehage: { label: 'Barnehage' },
@@ -197,6 +216,16 @@ export const Controlled = meta.story({
 
     return (
       <>
+        <style>
+          {`
+.example-section {
+  display: flex;
+  gap: var(--ds-size-2);
+}
+.example-button {
+  width: fit-content;
+}`}
+        </style>
         <Fieldset>
           <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
           {Object.entries(choices).map(([value, { label }]) => (
@@ -207,7 +236,7 @@ export const Controlled = meta.story({
         <Divider />
         <Paragraph>(Annet innhold)</Paragraph>
         <Divider />
-        <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
+        <div className="example-section">
           <Paragraph>
             {isFiltered ? 'Viser innhold for:' : 'Viser alt innhold'}
           </Paragraph>
@@ -224,7 +253,7 @@ export const Controlled = meta.story({
         </div>
         {isFiltered && (
           <Button
-            style={{ width: 'fit-content' }}
+            className="example-button"
             variant="secondary"
             onClick={() => setValue([])}
           >
@@ -233,13 +262,5 @@ export const Controlled = meta.story({
         )}
       </>
     );
-  },
-  parameters: {
-    customStyles: {
-      display: 'flex',
-      gap: 'var(--ds-size-4)',
-      flexDirection: 'column',
-    },
-    docs: { source: { type: 'code', transform: formatReactSource } },
   },
 });

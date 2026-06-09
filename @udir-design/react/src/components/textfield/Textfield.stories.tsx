@@ -179,21 +179,26 @@ export const Controlled = meta.story({
     const [value, setValue] = useState<string>('');
     return (
       <>
-        <div
-          style={{
-            display: 'flex',
-            gap: 'var(--ds-size-2)',
-            alignItems: 'end',
-            width: '100%',
-          }}
-        >
+        <style>
+          {`
+        .example-main {
+          display: flex;
+          gap: var(--ds-size-2);
+          align-items: end;
+          width: 100%;
+        }
+        .example-textfield {
+          flex-grow: 1;
+        }`}
+        </style>
+        <div className="example-main">
           <Textfield
+            className="example-textfield"
             {...args}
             value={value}
             onChange={(
               e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
             ) => setValue(e.target.value)}
-            style={{ flexGrow: 1 }}
           />
           <Button variant="secondary" onClick={() => setValue('')}>
             Tøm feltet

@@ -16,6 +16,7 @@ import { ToggleGroup } from '../toggleGroup';
 import { Details } from './Details';
 import { Details as FakeDetails } from './docs/FakeDetails';
 import { DetailsContent } from './docs/FakeDetailsContent';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 
 const meta = preview.meta({
   component: FakeDetails,
@@ -231,7 +232,8 @@ export const InCardWithColor = meta.story({
 });
 
 export const Controlled = meta.story({
-  render() {
+  parameters: { docs: advancedCodeDocs },
+  render(args) {
     const [open1, setOpen1] = useState(false);
     const [open2, setOpen2] = useState(false);
     const [open3, setOpen3] = useState(false);
@@ -257,7 +259,7 @@ export const Controlled = meta.story({
           )}
         </Button>
         <br />
-        <Details open={open1} onToggle={() => setOpen1(!open1)}>
+        <Details open={open1} onToggle={() => setOpen1(!open1)} {...args}>
           <Details.Summary>Hva er Feide?</Details.Summary>
           <Details.Content>
             <p>
@@ -277,7 +279,7 @@ export const Controlled = meta.story({
             </p>
           </Details.Content>
         </Details>
-        <Details open={open2} onToggle={() => setOpen2(!open2)}>
+        <Details open={open2} onToggle={() => setOpen2(!open2)} {...args}>
           <Details.Summary>Hva er UIDP?</Details.Summary>
           <Details.Content>
             <p>
@@ -302,7 +304,7 @@ export const Controlled = meta.story({
             </p>
           </Details.Content>
         </Details>
-        <Details open={open3} onToggle={() => setOpen3(!open3)}>
+        <Details open={open3} onToggle={() => setOpen3(!open3)} {...args}>
           <Details.Summary>Hva er UBAS?</Details.Summary>
           <Details.Content>
             <p>

@@ -56,43 +56,61 @@ export const Preview = meta.story({
 export const Placement = meta.story({
   render: (args) => {
     return (
-      <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
-        <Tooltip {...args} placement="left" content="Slett">
-          <Button icon variant="secondary">
-            <TrashIcon aria-hidden />
-          </Button>
-        </Tooltip>
-        <Tooltip placement="top" content="Lagre">
-          <Button icon variant="secondary">
-            <FloppydiskIcon aria-hidden />
-          </Button>
-        </Tooltip>
-        <Tooltip placement="bottom" content="ctrl + p">
-          <Button icon variant="secondary">
-            <PrinterSmallIcon aria-hidden />
-          </Button>
-        </Tooltip>
-        <Tooltip placement="right" content="Kopier">
-          <Button icon variant="secondary">
-            <FilesIcon aria-hidden />
-          </Button>
-        </Tooltip>
-      </div>
+      <>
+        <style>
+          {`
+.example-main {
+  display: flex; 
+  gap: var(--ds-size-2);
+}`}
+        </style>
+        <div className="example-main">
+          <Tooltip {...args} placement="left" content="Slett">
+            <Button icon variant="secondary">
+              <TrashIcon aria-hidden />
+            </Button>
+          </Tooltip>
+          <Tooltip placement="top" content="Lagre">
+            <Button icon variant="secondary">
+              <FloppydiskIcon aria-hidden />
+            </Button>
+          </Tooltip>
+          <Tooltip placement="bottom" content="ctrl + p">
+            <Button icon variant="secondary">
+              <PrinterSmallIcon aria-hidden />
+            </Button>
+          </Tooltip>
+          <Tooltip placement="right" content="Kopier">
+            <Button icon variant="secondary">
+              <FilesIcon aria-hidden />
+            </Button>
+          </Tooltip>
+        </div>
+      </>
     );
   },
 });
 
 export const Aria = meta.story({
   render: (args) => (
-    <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
-      <Tooltip {...args} content="Jeg er hovedinformasjon (aria-label)">
-        <Button icon>
-          <FilesIcon aria-hidden />
-        </Button>
-      </Tooltip>
-      <Tooltip content="Jeg er tillegsinformasjon (aria-description)">
-        <Button>Tekst i trigger</Button>
-      </Tooltip>
-    </div>
+    <>
+      <style>
+        {`
+.example-main {
+  display: flex; 
+  gap: var(--ds-size-2);
+}`}
+      </style>
+      <div className="example-main">
+        <Tooltip {...args} content="Jeg er hovedinformasjon (aria-label)">
+          <Button icon>
+            <FilesIcon aria-hidden />
+          </Button>
+        </Tooltip>
+        <Tooltip content="Jeg er tillegsinformasjon (aria-description)">
+          <Button>Tekst i trigger</Button>
+        </Tooltip>
+      </div>
+    </>
   ),
 });
