@@ -192,7 +192,7 @@ export const Controlled = meta.story({
       gap: 'var(--ds-size-4)',
       flexDirection: 'column',
     },
-    docs: { advancedCodeDocs },
+    docs: advancedCodeDocs,
   },
   render: (args) => {
     const choices: Choices = {
