@@ -1,17 +1,13 @@
 import { Card } from 'src/components/card/Card';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import styles from './stableAnnouncement.module.css';
 
 export function StableAnnouncement() {
   return (
-    <Card style={{ display: 'flex', width: 'fit-content' }}>
-      <Card.Block style={{ padding: '1rem' }}>
-        <img
-          src={'./assets/img/feiring.svg'}
-          alt={'Feiring'}
-          role="img"
-          style={{ width: '14rem', height: 'auto' }}
-        />
+    <Card className={styles.card}>
+      <Card.Block className={styles.imgContainer}>
+        <img src={'./assets/img/feiring.svg'} alt={'Feiring'} role="img" />
       </Card.Block>
       <Card.Block>
         <Heading level={2}>Udirs Designsystem er stabilt!</Heading>
