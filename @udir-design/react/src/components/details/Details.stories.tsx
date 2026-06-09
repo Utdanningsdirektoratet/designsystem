@@ -13,6 +13,7 @@ import { Fieldset } from '../fieldset/Fieldset';
 import { Link } from '../link/Link';
 import { List } from '../list/List';
 import { ToggleGroup } from '../toggleGroup';
+import { Label } from '../typography/label/Label';
 import { Details } from './Details';
 import { Details as FakeDetails } from './docs/FakeDetails';
 import { DetailsContent } from './docs/FakeDetailsContent';
