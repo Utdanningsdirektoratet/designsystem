@@ -1,10 +1,10 @@
 import type { Dispatch, SetStateAction } from 'react';
 import * as Symbols from '@udir-design/symbols';
-import { Button } from 'src/components/button/Button';
-import { Card } from 'src/components/card/Card';
-import { Link } from 'src/components/link/Link';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Button } from 'src/components/button';
+import { Card } from 'src/components/card';
+import { Link } from 'src/components/link';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
 import type { UdirSymbol } from './SymbolDisplay.utils';
 import styles from './categorizedSymbols.module.css';
 

@@ -1,10 +1,10 @@
 import type { Dispatch, SetStateAction } from 'react';
 import * as Icons from '@udir-design/icons';
-import { Button } from 'src/components/button/Button';
-import { Card } from 'src/components/card/Card';
-import { Link } from 'src/components/link/Link';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Button } from 'src/components/button';
+import { Card } from 'src/components/card';
+import { Link } from 'src/components/link';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
 import type { UdirIcon } from './IconDisplay.utils';
 import { Translations } from './Translations';
 import styles from './categorizedIcons.module.css';

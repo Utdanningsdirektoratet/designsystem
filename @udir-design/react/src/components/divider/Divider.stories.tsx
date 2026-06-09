@@ -1,8 +1,8 @@
 import preview from '.storybook/preview';
-import { Link } from '../link/Link';
-import { List } from '../list/List';
-import { Heading } from '../typography/heading/Heading';
-import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Link } from 'src/components/link';
+import { List } from 'src/components/list';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
 import { Divider } from './Divider';
 
 const meta = preview.meta({

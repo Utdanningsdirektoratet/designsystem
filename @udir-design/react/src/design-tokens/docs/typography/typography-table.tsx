@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import type { HTMLAttributes } from 'react';
 import { Table } from 'src/components/table';
-import { Heading } from 'src/components/typography/heading/Heading';
+import { Heading } from 'src/components/typography/heading';
 import { capitalizeString } from 'src/utilities/helpers/stringHelpers';
 import { labels } from '../strings';
 import {

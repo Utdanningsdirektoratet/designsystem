@@ -4,8 +4,8 @@ import { WithInertInitialRender } from '.storybook/decorators/WithInertInitialRe
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
-import { Button } from '../button/Button';
-import { Textfield } from '../textfield/Textfield';
+import { Button } from 'src/components/button';
+import { Textfield } from 'src/components/textfield';
 import { ErrorSummary } from './ErrorSummary';
 import { ErrorSummary as FakeErrorSummary } from './docs/FakeErrorSummary';
 import { ErrorSummaryHeading } from './docs/FakeErrorSummaryHeading';
@@ -21,7 +21,7 @@ const meta = preview.meta({
     'ErrorSummary.Link': ErrorSummaryLink,
     'ErrorSummary.List': ErrorSummaryList,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

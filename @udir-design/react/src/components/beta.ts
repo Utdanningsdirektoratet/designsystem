@@ -3,15 +3,15 @@
  */
 
 export * from './alert';
-export * from './chip/Chip';
-export * from './demoBanner/DemoBanner';
-export * from './errorSummary/ErrorSummary';
+export * from './chip';
+export * from './demoBanner';
+export * from './errorSummary';
 export * from './formNavigation';
 export * from './header';
-export * from './pagination/Pagination';
-export * from './readMore/ReadMore';
-export * from './select/Select';
-export * from './skeleton/Skeleton';
+export * from './pagination';
+export * from './readMore';
+export * from './select';
+export * from './skeleton';
 export * from './table';
 export * from './toggleGroup';
-export * from './typography/prose/Prose';
+export * from './typography/prose';

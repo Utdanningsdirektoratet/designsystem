@@ -3,11 +3,11 @@ import type React from 'react';
 import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
-import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
-import { Checkbox } from '../checkbox/Checkbox';
-import { Tag } from '../tag/Tag';
-import { Textfield } from '../textfield/Textfield';
-import { Heading } from '../typography/heading/Heading';
+import { Checkbox } from 'src/components/checkbox';
+import { Tag } from 'src/components/tag';
+import { Textfield } from 'src/components/textfield';
+import { Heading } from 'src/components/typography/heading';
+import { useCheckboxGroup } from 'src/hooks/useCheckboxGroup';
 import { Table as FakeTable } from './docs/FakeTable';
 import { TableBody } from './docs/FakeTableBody';
 import { TableCell } from './docs/FakeTableCell';
@@ -28,7 +28,7 @@ const meta = preview.meta({
     'Table.HeaderCell': TableHeaderCell,
     'Table.Foot': TableFoot,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

@@ -64,6 +64,7 @@ jobs:
             @udir-design/react/.storybook/utils/sourceCodeUrl.ts
             @udir-design/react/.storybook/utils/sourceTransformers.ts
             @udir-design/react/.storybook/utils/makeStoryTransformer.ts
+            @udir-design/react/.storybook/utils/createTierIndexers.ts
             @udir-design/react/.storybook/story-snapshot-serializer.ts
             @udir-design/react/.storybook/preview-test.ts
             @udir-design/react/.storybook/decorators/WithInertInitialRender.tsx

@@ -3,7 +3,7 @@ import { SkipLink } from '@digdir/designsystemet-react';
 import type { HTMLAttributes } from 'react';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
-import { DemoBanner } from 'src/components/demoBanner/DemoBanner';
+import { DemoBanner } from 'src/components/demoBanner';
 import { ArticleDemo as ArticleDemoPage } from '../../demo-pages/article-demo/ArticleDemo';
 import { FooterDemo } from './components/footer';
 import { HeaderDemo } from './components/header';

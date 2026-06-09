@@ -3,10 +3,10 @@ import { expect, userEvent, waitFor, within } from 'storybook/test';
 import type { County } from '.storybook/data';
 import { citiesPerCounty as cities, counties } from '.storybook/data';
 import preview from '.storybook/preview';
-import { Field } from '../field/Field';
-import { Heading } from '../typography/heading/Heading';
-import { Label } from '../typography/label/Label';
-import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
+import { Field } from 'src/components/field';
+import { Heading } from 'src/components/typography/heading';
+import { Label } from 'src/components/typography/label';
+import { ValidationMessage } from 'src/components/typography/validationMessage';
 import { Select } from './Select';
 import { Select as FakeSelect } from './docs/FakeSelect';
 import { SelectOptgroup as FakeSelectOptgroup } from './docs/FakeSelectOptgroup';
@@ -18,7 +18,7 @@ const meta = preview.meta({
     'Select.Optgroup': FakeSelectOptgroup,
     'Select.Option': FakeSelectOption,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

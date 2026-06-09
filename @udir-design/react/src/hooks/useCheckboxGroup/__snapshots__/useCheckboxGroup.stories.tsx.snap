@@ -1,0 +1,609 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Controlled 1`] = `
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
+    Utdanningsnivå
+  </legend>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="checkbox"
+      value="barnehage"
+      checked
+      name="my-controlled"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      Barnehage
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="checkbox"
+      value="grunnskole"
+      name="my-controlled"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      Grunnskole
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="checkbox"
+      value="videregaende"
+      checked
+      name="my-controlled"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      Videregående
+    </label>
+  </ds-field>
+</fieldset>
+<p
+  data-field="validation"
+  hidden
+  id="<removed>"
+>
+</p>
+<hr aria-hidden="true">
+<p data-variant="default">
+  (Annet innhold)
+</p>
+<hr aria-hidden="true">
+<div style="<removed>">
+  <p data-variant="default">
+    Viser innhold for:
+  </p>
+  <button
+    type="button"
+    data-removable="true"
+    aria-label="Slett Barnehage"
+  >
+    Barnehage
+  </button>
+  <button
+    type="button"
+    data-removable="true"
+    aria-label="Slett Videregående"
+  >
+    Videregående
+  </button>
+</div>
+<button
+  data-variant="secondary"
+  type="button"
+  style="<removed>"
+>
+  Tøm filtre
+</button>
+`;
+
+exports[`Default 1`] = `
+<fieldset>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="checkbox"
+      value="epost"
+      checked
+      name="my-group"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      E-post
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="checkbox"
+      value="telefon"
+      name="my-group"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      Telefon
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="checkbox"
+      value="sms"
+      name="my-group"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      SMS
+    </label>
+  </ds-field>
+  <p
+    data-field="validation"
+    hidden
+    id="<removed>"
+  >
+  </p>
+</fieldset>
+`;
+
+exports[`Disabled 1`] = `
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
+    Hvordan vil du helst at vi skal kontakte deg?
+  </legend>
+  <p
+    data-variant="default"
+    id="<removed>"
+  >
+    Velg de alternativene som er relevante for deg.
+  </p>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      disabled
+      type="checkbox"
+      value="epost"
+      checked
+      name="my-disabled"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      E-post
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      disabled
+      type="checkbox"
+      value="telefon"
+      name="my-disabled"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      Telefon
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      disabled
+      type="checkbox"
+      value="sms"
+      name="my-disabled"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      SMS
+    </label>
+  </ds-field>
+  <p
+    data-field="validation"
+    hidden
+    id="<removed>"
+  >
+  </p>
+</fieldset>
+`;
+
+exports[`Group 1`] = `
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
+    Hvordan vil du helst at vi skal kontakte deg?
+  </legend>
+  <p
+    data-variant="default"
+    id="<removed>"
+  >
+    Velg de alternativene som er relevante for deg.
+  </p>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="checkbox"
+      value="epost"
+      checked
+      name="my-group"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      E-post
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="checkbox"
+      value="telefon"
+      name="my-group"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      Telefon
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="checkbox"
+      value="sms"
+      name="my-group"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      SMS
+    </label>
+  </ds-field>
+  <p
+    data-field="validation"
+    hidden
+    id="<removed>"
+  >
+  </p>
+</fieldset>
+`;
+
+exports[`Indeterminate In Table 1`] = `
+<table>
+  <colgroup>
+    <col style="<removed>">
+    <col style="<removed>">
+    <col>
+  </colgroup>
+  <thead>
+    <tr>
+      <th>
+        <ds-field data-clickdelegatefor="<removed>">
+          <input
+            aria-label="Velg alle"
+            type="checkbox"
+            value="all"
+            name="hooks-usecheckboxgroup--indeterminate-in-table"
+            id="<removed>"
+          >
+        </ds-field>
+      </th>
+      <th>
+        Navn
+      </th>
+      <th>
+        Utdanningsnivå
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <ds-field data-clickdelegatefor="<removed>">
+          <input
+            aria-labelledby="<removed>"
+            type="checkbox"
+            value="1"
+            name="hooks-usecheckboxgroup--indeterminate-in-table"
+            id="<removed>"
+          >
+        </ds-field>
+      </td>
+      <td id="<removed>">
+        Lise Nordmann
+      </td>
+      <td>
+        Barnehage
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <ds-field data-clickdelegatefor="<removed>">
+          <input
+            aria-labelledby="<removed>"
+            type="checkbox"
+            value="2"
+            checked
+            name="hooks-usecheckboxgroup--indeterminate-in-table"
+            id="<removed>"
+          >
+        </ds-field>
+      </td>
+      <td id="<removed>">
+        Ola Nordmann
+      </td>
+      <td>
+        Grunnskole
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <ds-field data-clickdelegatefor="<removed>">
+          <input
+            aria-labelledby="<removed>"
+            type="checkbox"
+            value="3"
+            checked
+            name="hooks-usecheckboxgroup--indeterminate-in-table"
+            id="<removed>"
+          >
+        </ds-field>
+      </td>
+      <td id="<removed>">
+        Kari Nordmann
+      </td>
+      <td>
+        Videregående
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <ds-field data-clickdelegatefor="<removed>">
+          <input
+            aria-labelledby="<removed>"
+            type="checkbox"
+            value="4"
+            name="hooks-usecheckboxgroup--indeterminate-in-table"
+            id="<removed>"
+          >
+        </ds-field>
+      </td>
+      <td id="<removed>">
+        Per Nordmann
+      </td>
+      <td>
+        Barnehage
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Outline 1`] = `
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
+    Hvordan vil du helst at vi skal kontakte deg?
+  </legend>
+  <p
+    data-variant="default"
+    id="<removed>"
+  >
+    Velg de alternativene som er relevante for deg.
+  </p>
+  <ds-field
+    data-variant="outline"
+    data-clickdelegatefor="<removed>"
+  >
+    <input
+      type="checkbox"
+      value="epost"
+      checked
+      name="my-group"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      E-post
+    </label>
+  </ds-field>
+  <ds-field
+    data-variant="outline"
+    data-clickdelegatefor="<removed>"
+  >
+    <input
+      type="checkbox"
+      value="telefon"
+      name="my-group"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      Telefon
+    </label>
+  </ds-field>
+  <ds-field
+    data-variant="outline"
+    data-clickdelegatefor="<removed>"
+  >
+    <input
+      type="checkbox"
+      value="sms"
+      name="my-group"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      SMS
+    </label>
+  </ds-field>
+  <p
+    data-field="validation"
+    hidden
+    id="<removed>"
+  >
+  </p>
+</fieldset>
+`;
+
+exports[`Read Only 1`] = `
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
+    Hvordan vil du helst at vi skal kontakte deg?
+  </legend>
+  <p
+    data-variant="default"
+    id="<removed>"
+  >
+    Velg de alternativene som er relevante for deg.
+  </p>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      readonly
+      type="checkbox"
+      value="epost"
+      checked
+      name="my-readonly"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      E-post
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      readonly
+      type="checkbox"
+      value="telefon"
+      name="my-readonly"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      Telefon
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      readonly
+      type="checkbox"
+      value="sms"
+      name="my-readonly"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      SMS
+    </label>
+  </ds-field>
+  <p
+    data-field="validation"
+    hidden
+    id="<removed>"
+  >
+  </p>
+</fieldset>
+`;
+
+exports[`With Error 1`] = `
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
+    Hvordan vil du helst at vi skal kontakte deg?
+  </legend>
+  <p
+    data-variant="default"
+    id="<removed>"
+  >
+    Velg de alternativene som er relevante for deg.
+  </p>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      aria-describedby="<removed>"
+      aria-invalid="true"
+      type="checkbox"
+      value="epost"
+      checked
+      name="my-error"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      E-post
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      aria-describedby="<removed>"
+      aria-invalid="true"
+      type="checkbox"
+      value="telefon"
+      name="my-error"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      Telefon
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      aria-describedby="<removed>"
+      aria-invalid="true"
+      type="checkbox"
+      value="sms"
+      name="my-error"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      SMS
+    </label>
+  </ds-field>
+  <p
+    data-field="validation"
+    id="<removed>"
+  >
+    Du må velge minst to kontaktalternativ
+  </p>
+</fieldset>
+`;

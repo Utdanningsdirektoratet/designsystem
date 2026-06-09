@@ -1,7 +1,7 @@
 import cl from 'clsx';
 import { CheckmarkIcon, XMarkIcon } from '@udir-design/icons';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
 import styles from './DoAndDont.module.css';
 
 const Wrapper = ({ variant, description, children }: WrapperProps) => {

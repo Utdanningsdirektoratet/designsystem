@@ -4,16 +4,16 @@ import {
   PlusCircleIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
-import { Avatar } from '../avatar/Avatar';
-import { Button } from '../button/Button';
-import { Card } from '../card/Card';
-import { Heading } from '../typography/heading/Heading';
-import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Avatar } from 'src/components/avatar';
+import { Button } from 'src/components/button';
+import { Card } from 'src/components/card';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
 import { Skeleton } from './Skeleton';
 
 const meta = preview.meta({
   component: Skeleton,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

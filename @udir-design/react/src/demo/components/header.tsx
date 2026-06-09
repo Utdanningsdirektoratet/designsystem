@@ -1,6 +1,6 @@
 import { Header } from 'src/components/header';
-import { List } from 'src/components/list/List';
-import { Heading } from 'src/components/typography/heading/Heading';
+import { List } from 'src/components/list';
+import { Heading } from 'src/components/typography/heading';
 
 type Props = {
   applicationName: string;

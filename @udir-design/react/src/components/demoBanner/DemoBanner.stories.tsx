@@ -1,16 +1,16 @@
 import preview from '.storybook/preview';
+import { Card } from 'src/components/card';
+import { Link } from 'src/components/link';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
 import { Laering3 } from 'src/patterns/DemoVersion.stories';
-import { Card } from '../card/Card';
 import { Footer } from '../footer';
 import { Header } from '../header';
-import { Link } from '../link/Link';
-import { Heading } from '../typography/heading/Heading';
-import { Paragraph } from '../typography/paragraph/Paragraph';
 import { DemoBanner } from './DemoBanner';
 
 const meta = preview.meta({
   component: DemoBanner,
-  tags: ['beta', 'udir'],
+  tags: ['udir'],
 });
 
 export const Preview = meta.story({

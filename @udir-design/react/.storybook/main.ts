@@ -2,6 +2,7 @@ import { execSync } from 'node:child_process';
 import { defineMain } from '@storybook/react-vite/node';
 import remarkGfm from 'remark-gfm';
 import type { Plugin, UserConfig } from 'vite';
+import { createTierIndexers } from './utils/createTierIndexers.js';
 
 const isFromDependency = (fileName: string) =>
   fileName.includes('node_modules');
@@ -42,6 +43,8 @@ export default defineMain({
   features: {
     sidebarOnboardingChecklist: false,
   },
+
+  experimental_indexers: createTierIndexers,
 
   async viteFinal(cfg) {
     const { mergeConfig } = await import('vite');

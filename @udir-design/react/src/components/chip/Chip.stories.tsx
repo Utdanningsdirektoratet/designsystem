@@ -2,8 +2,8 @@ import type { FunctionComponent } from 'react';
 import { useState } from 'react';
 import { expect, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
-import { Search } from '../search/Search';
-import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Search } from 'src/components/search';
+import { Paragraph } from 'src/components/typography/paragraph';
 import type {
   ChipButtonProps,
   ChipCheckboxProps,
@@ -40,7 +40,7 @@ const meta = preview.meta({
     'Chip.Removable': ChipRemovable,
   },
 
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       name: 'Chip',

@@ -2,16 +2,16 @@ import { useRef, useState } from 'react';
 import { expect, within } from 'storybook/test';
 import { ArrowLeftIcon, ArrowRightIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
-import { Button } from '../button/Button';
-import { Fieldset } from '../fieldset/Fieldset';
-import { Radio } from '../radio/Radio';
+import { Button } from 'src/components/button';
+import { Fieldset } from 'src/components/fieldset';
+import { Radio } from 'src/components/radio';
+import { Heading } from 'src/components/typography/heading';
 import { Table } from '../table';
-import { Heading } from '../typography/heading/Heading';
 import { ProgressBar } from './ProgressBar';
 
 const meta = preview.meta({
   component: ProgressBar,
-  tags: ['beta', 'udir'],
+  tags: ['udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',

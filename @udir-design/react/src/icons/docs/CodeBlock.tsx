@@ -1,7 +1,7 @@
 import { FilesIcon } from '@udir-design/icons';
-import { Button } from 'src/components/button/Button';
-import { Card } from 'src/components/card/Card';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Button } from 'src/components/button';
+import { Card } from 'src/components/card';
+import { Paragraph } from 'src/components/typography/paragraph';
 import styles from './codeBlock.module.css';
 
 interface Props {
