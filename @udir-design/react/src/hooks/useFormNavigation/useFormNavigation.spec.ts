@@ -155,6 +155,33 @@ describe('next, prev', () => {
     expect(moved).toBe(false);
     expect(result.current.id).toBe('step1');
   });
+
+  it('navigates through all steps and stops at boundaries', async () => {
+    const { result } = renderHook(() =>
+      useFormNavigation({ order: [...order] }),
+    );
+    expect(result.current.id).toBe('step1');
+
+    await act(async () => result.current.next());
+    expect(result.current.id).toBe('step2');
+
+    await act(async () => result.current.next());
+    expect(result.current.id).toBe('step3');
+
+    const blocked = await act(async () => result.current.next());
+    expect(blocked).toBe(false);
+    expect(result.current.id).toBe('step3');
+
+    await act(async () => result.current.prev());
+    expect(result.current.id).toBe('step2');
+
+    await act(async () => result.current.prev());
+    expect(result.current.id).toBe('step1');
+
+    const blockedBack = await act(async () => result.current.prev());
+    expect(blockedBack).toBe(false);
+    expect(result.current.id).toBe('step1');
+  });
 });
 
 describe('navigation using implicit render order', () => {
