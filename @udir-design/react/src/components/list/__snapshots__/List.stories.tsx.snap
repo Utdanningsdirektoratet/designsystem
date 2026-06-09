@@ -1,8 +1,14 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`As Nav 1`] = `
+<style>
+  .example-list {
+  list-style: none; 
+  padding: 0;
+}
+</style>
 <nav aria-label="Snarveier">
-  <ul style="<removed>">
+  <ul>
     <li>
       <a
         href="https://www.udir.no/utdanningslopet/barnehage/"
@@ -32,73 +38,74 @@ exports[`As Nav 1`] = `
 `;
 
 exports[`Indented 1`] = `
-<h2 data-size="xs">
-  Innhold
-</h2>
-<ol style="<removed>">
-  <li>
-    Barnehagens verdigrunnlag
-    <ul>
-      <li>
-        Barn og barndom
-      </li>
-      <li>
-        Demokrati
-      </li>
-      <li>
-        Mangfold og gjensidig respekt
-      </li>
-    </ul>
-  </li>
-  <li>
-    Ansvar og roller
-    <ul>
-      <li>
-        Barnehageeier
-      </li>
-      <li>
-        Styrer
-      </li>
-      <li>
-        Pedagogisk leder
-      </li>
-    </ul>
-  </li>
-  <li>
-    Barnehagens formål og innhold
-    <ul>
-      <li>
-        Barnehagen skal ivareta barnas behov for omsorg
-      </li>
-      <li>
-        Barnehagen skal ivareta barnas behov for lek
-      </li>
-    </ul>
-  </li>
-</ol>
+<div>
+  <h2 data-size="xs">
+    Innhold
+  </h2>
+  <ol>
+    <li>
+      Barnehagens verdigrunnlag
+      <ul>
+        <li>
+          Barn og barndom
+        </li>
+        <li>
+          Demokrati
+        </li>
+        <li>
+          Mangfold og gjensidig respekt
+        </li>
+      </ul>
+    </li>
+    <li>
+      Ansvar og roller
+      <ul>
+        <li>
+          Barnehageeier
+        </li>
+        <li>
+          Styrer
+        </li>
+        <li>
+          Pedagogisk leder
+        </li>
+      </ul>
+    </li>
+    <li>
+      Barnehagens formål og innhold
+      <ul>
+        <li>
+          Barnehagen skal ivareta barnas behov for omsorg
+        </li>
+        <li>
+          Barnehagen skal ivareta barnas behov for lek
+        </li>
+      </ul>
+    </li>
+  </ol>
+</div>
 `;
 
 exports[`Ordered 1`] = `
-<h2
-  data-size="xs"
-  style="<removed>"
->
-  Slik gjennomfører dere metoden:
-</h2>
-<ol>
-  <li>
-    Presenter en problemstilling.
-  </li>
-  <li>
-    Gå sammen to og to for å reflektere.
-  </li>
-  <li>
-    Del innsikter og spørsmål i plenum.
-  </li>
-  <li>
-    Noter ned viktige innspill og refleksjoner.
-  </li>
-</ol>
+<div>
+  <h2 data-size="xs">
+    Slik gjennomfører dere metoden:
+  </h2>
+  <ol>
+    <li>
+      Presenter en problemstilling.
+    </li>
+    <li>
+      Gå sammen to og to for å reflektere.
+    </li>
+    <li>
+      Del innsikter og spørsmål i plenum.
+    </li>
+    <li>
+      Noter ned viktige innspill og refleksjoner.
+    </li>
+  </ol>
+</div>
 `;
 
 exports[`Preview 1`] = `
@@ -116,27 +123,32 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Unordered 1`] = `
-<h2
-  data-size="xs"
-  style="<removed>"
->
-  Gjennom arbeid med kommunikasjon, språk og tekst skal barnehagen bidra til at barna
-</h2>
-<ul>
-  <li>
-    uttrykker sine følelser, tanker, meninger og erfaringer på ulike måter
-  </li>
-  <li>
-    bruker språk til å skape relasjoner, delta i lek og som redskap til å løse konflikter
-  </li>
-  <li>
-    videreutvikler sin begrepsforståelse og bruker et variert ordforråd
-  </li>
-</ul>
+<div>
+  <h2 data-size="xs">
+    Gjennom arbeid med kommunikasjon, språk og tekst skal barnehagen bidra til at barna
+  </h2>
+  <ul>
+    <li>
+      uttrykker sine følelser, tanker, meninger og erfaringer på ulike måter
+    </li>
+    <li>
+      bruker språk til å skape relasjoner, delta i lek og som redskap til å løse konflikter
+    </li>
+    <li>
+      videreutvikler sin begrepsforståelse og bruker et variert ordforråd
+    </li>
+  </ul>
+</div>
 `;
 
 exports[`With Links 1`] = `
-<ul style="<removed>">
+<style>
+  .example-list {
+  list-style: none; 
+  padding: 0;
+}
+</style>
+<ul>
   <li>
     <a
       href="https://www.udir.no/om-udir/designprofil/identitet/"

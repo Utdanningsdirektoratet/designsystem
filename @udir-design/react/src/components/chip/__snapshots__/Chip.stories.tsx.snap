@@ -1,7 +1,18 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Button 1`] = `
-<div style="<removed>">
+<style>
+  .example-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+}
+.example-buttons {
+  display: flex;
+  gap: var(--ds-size-2);
+}
+</style>
+<div>
   <div>
     <input
       placeholder
@@ -23,7 +34,7 @@ exports[`Button 1`] = `
       Søk
     </button>
   </div>
-  <div style="<removed>">
+  <div>
     <p data-variant="default">
       Hurtigsøk:
     </p>
@@ -41,11 +52,22 @@ exports[`Button 1`] = `
 `;
 
 exports[`Checkbox 1`] = `
-<div style="<removed>">
+<style>
+  .example-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+}
+.example-checkbox {
+  display: flex;
+  gap: var(--ds-size-1);
+}
+</style>
+<div>
   <p data-variant="default">
     Vis data for
   </p>
-  <div style="<removed>">
+  <div>
     <label>
       <input
         aria-label="2020"
@@ -151,11 +173,22 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Radio 1`] = `
-<div style="<removed>">
+<style>
+  .example-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+}
+.example-radio {
+  display: flex;
+  gap: var(--ds-size-1);
+}
+</style>
+<div>
   <p data-variant="default">
     Vis data for
   </p>
-  <div style="<removed>">
+  <div>
     <label>
       <input
         aria-label="Barnehage"

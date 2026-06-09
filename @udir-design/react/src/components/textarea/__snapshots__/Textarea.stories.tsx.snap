@@ -1,28 +1,29 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Controlled 1`] = `
-<ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
+<div>
+  <ds-field>
+    <label
+      data-weight="medium"
+      for="<removed>"
+    >
+      Beskriv bekymringen din
+    </label>
+    <textarea
+      id="<removed>"
+      autocomplete="off"
+      rows="4"
+      style="<removed>"
+    >
+    </textarea>
+  </ds-field>
+  <button
+    data-variant="secondary"
+    type="button"
   >
-    Beskriv bekymringen din
-  </label>
-  <textarea
-    id="<removed>"
-    autocomplete="off"
-    rows="4"
-    style="<removed>"
-  >
-  </textarea>
-</ds-field>
-<button
-  data-variant="secondary"
-  type="button"
-  style="<removed>"
->
-  Tøm feltet
-</button>
+    Tøm feltet
+  </button>
+</div>
 `;
 
 exports[`Disabled 1`] = `
