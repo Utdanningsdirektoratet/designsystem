@@ -95,88 +95,93 @@ export const FormExample = meta.story({
     };
 
     return (
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 'var(--ds-size-6)',
-        }}
-      >
-        <Fieldset id="rankings">
-          <div
-            style={{
-              display: 'flex',
-              width: '100%',
-              justifyContent: 'space-between',
-              alignItems: 'flex-end',
-              marginBlockEnd: 'var(--ds-size-4)',
-            }}
-          >
-            <Fieldset.Legend>
-              <Heading level={4}>Skjema</Heading>
-            </Fieldset.Legend>
-            <ProgressBar
-              {...args}
-              tabIndex={-1}
-              ref={progressRef}
-              value={page}
-              style={{ width: '30%' }}
-              aria-label="Skjemafremgang"
-            />
-          </div>
-          <Table border>
-            <Table.Head>
-              <Table.Row>
-                <Table.HeaderCell>Påstander</Table.HeaderCell>
-                {DATA_RANKINGS.map((ranking, index) => (
-                  <Table.HeaderCell key={index}>{ranking}</Table.HeaderCell>
-                ))}
-              </Table.Row>
-            </Table.Head>
-            <Table.Body>
-              {DATA_ASSERTIONS[page - 1].map((assertion, rowIndex) => {
-                const fieldName = `rankings.${assertion}` as const;
-                return (
-                  <Table.Row key={rowIndex}>
-                    <Table.Cell>{assertion}</Table.Cell>
+      <>
+        <style>
+          {`
+.example-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+}
+.example-fieldset-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-block-end: var(--ds-size-4);
+}
+.example-progress-bar {
+  width: 30%;
+}
+.example-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: var(--ds-size-4);
+}`}
+        </style>
+        <div className="example-main">
+          <Fieldset id="rankings">
+            <div className="example-fieldset-content">
+              <Fieldset.Legend>
+                <Heading level={4}>Skjema</Heading>
+              </Fieldset.Legend>
+              <ProgressBar
+                className="example-progress-bar"
+                {...args}
+                tabIndex={-1}
+                ref={progressRef}
+                value={page}
+                aria-label="Skjemafremgang"
+              />
+            </div>
+            <Table border>
+              <Table.Head>
+                <Table.Row>
+                  <Table.HeaderCell>Påstander</Table.HeaderCell>
+                  {DATA_RANKINGS.map((ranking, index) => (
+                    <Table.HeaderCell key={index}>{ranking}</Table.HeaderCell>
+                  ))}
+                </Table.Row>
+              </Table.Head>
+              <Table.Body>
+                {DATA_ASSERTIONS[page - 1].map((assertion, rowIndex) => {
+                  const fieldName = `rankings.${assertion}` as const;
+                  return (
+                    <Table.Row key={rowIndex}>
+                      <Table.Cell>{assertion}</Table.Cell>
 
-                    {DATA_RANKINGS.map((ranking, colIndex) => (
-                      <Table.Cell key={colIndex}>
-                        <Radio
-                          id={`${fieldName}-${ranking}`}
-                          name={fieldName}
-                          aria-label={`${ranking} i påstand ${assertion}`}
-                          value={ranking}
-                        />
-                      </Table.Cell>
-                    ))}
-                  </Table.Row>
-                );
-              })}
-            </Table.Body>
-          </Table>
-        </Fieldset>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'flex-start',
-            gap: 'var(--ds-size-4)',
-          }}
-        >
-          {page > 1 && (
-            <Button variant="tertiary" onClick={() => prevPage()}>
-              <ArrowLeftIcon aria-hidden />
-              Forrige
-            </Button>
-          )}
-          {page < 10 && (
-            <Button variant="secondary" onClick={() => nextPage()}>
-              Neste
-              <ArrowRightIcon aria-hidden />
-            </Button>
-          )}
+                      {DATA_RANKINGS.map((ranking, colIndex) => (
+                        <Table.Cell key={colIndex}>
+                          <Radio
+                            id={`${fieldName}-${ranking}`}
+                            name={fieldName}
+                            aria-label={`${ranking} i påstand ${assertion}`}
+                            value={ranking}
+                          />
+                        </Table.Cell>
+                      ))}
+                    </Table.Row>
+                  );
+                })}
+              </Table.Body>
+            </Table>
+          </Fieldset>
+          <div className="example-buttons">
+            {page > 1 && (
+              <Button variant="tertiary" onClick={() => prevPage()}>
+                <ArrowLeftIcon aria-hidden />
+                Forrige
+              </Button>
+            )}
+            {page < 10 && (
+              <Button variant="secondary" onClick={() => nextPage()}>
+                Neste
+                <ArrowRightIcon aria-hidden />
+              </Button>
+            )}
+          </div>
         </div>
-      </div>
+      </>
     );
   },
 });
