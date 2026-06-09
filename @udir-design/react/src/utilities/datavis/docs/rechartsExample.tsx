@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-imports */
 //@ts-expect-error example code
 import { Cell, Pie, PieChart } from 'recharts';
-import { getCategoricalColors } from '@udir-design/react/utilities/alpha';
+import { getCategoricalColors } from '@udir-design/react/alpha/utilities';
 
 export function MyChart() {
   const data = [

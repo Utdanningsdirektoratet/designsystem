@@ -13,7 +13,7 @@
  *
  * @example
  * ```tsx
- * import { getCategoricalColors } from '@udir-design/react/utilities/alpha';
+ * import { getCategoricalColors } from '@udir-design/react/alpha/utilities';
  * import '@udir-design/theme/datavis.css';
  *
  * const colors = getCategoricalColors();
@@ -35,7 +35,7 @@ export function getCategoricalColors(): readonly string[] {
  *
  * @example
  * ```tsx
- * import { getSequentialMonochromaticColors } from '@udir-design/react/utilities/alpha';
+ * import { getSequentialMonochromaticColors } from '@udir-design/react/alpha/utilities';
  * import '@udir-design/theme/datavis.css';
  *
  * const colors = getSequentialMonochromaticColors();
@@ -57,7 +57,7 @@ export function getSequentialMonochromaticColors(): readonly string[] {
  *
  * @example
  * ```tsx
- * import { getSequentialDivergentColors } from '@udir-design/react/utilities/alpha';
+ * import { getSequentialDivergentColors } from '@udir-design/react/alpha/utilities';
  * import '@udir-design/theme/datavis.css';
  *
  * const colors = getSequentialDivergentColors();
