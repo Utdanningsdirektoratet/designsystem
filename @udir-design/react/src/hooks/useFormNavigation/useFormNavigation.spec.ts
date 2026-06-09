@@ -157,6 +157,40 @@ describe('next, prev', () => {
   });
 });
 
+describe('navigation using implicit render order', () => {
+  it('next and prev use order derived from getStepProps calls', async () => {
+    type StepId = 'charlie' | 'alpha' | 'bravo';
+    const { result } = renderHook(() =>
+      useFormNavigation<StepId>({ value: 'charlie' }),
+    );
+    // Register steps in non-alphabetical order
+    result.current.getStepProps('charlie');
+    result.current.getStepProps('alpha');
+    result.current.getStepProps('bravo');
+
+    const moved = await act(async () => result.current.next());
+    expect(moved).toBe(true);
+    expect(result.current.id).toBe('alpha');
+
+    const movedBack = await act(async () => result.current.prev());
+    expect(movedBack).toBe(true);
+    expect(result.current.id).toBe('charlie');
+  });
+
+  it('hasNext and hasPrev use order derived from getStepProps calls', () => {
+    type StepId = 'charlie' | 'alpha' | 'bravo';
+    const { result } = renderHook(() =>
+      useFormNavigation<StepId>({ value: 'alpha' }),
+    );
+    result.current.getStepProps('charlie');
+    result.current.getStepProps('alpha');
+    result.current.getStepProps('bravo');
+
+    expect(result.current.hasPrev()).toBe(true);
+    expect(result.current.hasNext()).toBe(true);
+  });
+});
+
 describe('hasNext, hasPrev', () => {
   it('hasNext is true when not on last step', () => {
     const { result } = renderHook(() =>
