@@ -1,9 +1,16 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Composed 1`] = `
+<style>
+  .example-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+</style>
 <div data-variant="default">
   <div>
-    <div style="<removed>">
+    <div>
       <h2>
         Rolle 1
       </h2>
@@ -113,16 +120,25 @@ exports[`Composed 1`] = `
 `;
 
 exports[`Horizontal 1`] = `
+<style>
+  .example-card {
+  display: grid;
+  grid-auto-flow: column;
+  width: 700px;
+}
+.example-img {
+  height: 100%;
+  object-fit: cover;
+}
+</style>
 <div
   data-variant="default"
   data-clickdelegatefor="<removed>"
-  style="<removed>"
 >
   <div>
     <img
       alt="Barn som spiser lunsj"
       src="https://www.udir.no/contentassets/0ae1c5846c254b9f8800c59c393fd03d/skolemiljo.png"
-      style="<removed>"
     >
   </div>
   <div>

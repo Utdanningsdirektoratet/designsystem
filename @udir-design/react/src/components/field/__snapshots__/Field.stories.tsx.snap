@@ -71,7 +71,14 @@ exports[`Format 1`] = `
 
 exports[`Position 1`] = `
 <div style="<removed>">
-  <div style="<removed>">
+  <style>
+    .example-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-2);
+}
+  </style>
+  <div>
     <ds-field
       data-position="end"
       data-clickdelegatefor="<removed>"

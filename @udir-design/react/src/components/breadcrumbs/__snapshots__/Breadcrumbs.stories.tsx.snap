@@ -126,12 +126,11 @@ exports[`Mobile Viewport 1`] = `
 
 exports[`Placement With Header 1`] = `
 <style>
-  /* Styles defined in application-specific css */
-        .content {
-          max-width: 80rem;
-          margin: var(--ds-size-4) auto 0;
-          padding: 0 var(--ds-size-5);
-        }
+  .content {
+  max-width: 80rem;
+  margin: var(--ds-size-4) auto 0;
+  padding: 0 var(--ds-size-5);
+}
 </style>
 <header
   data-scroll-direction="up"
