@@ -11,6 +11,11 @@ import { DemoBanner } from './DemoBanner';
 const meta = preview.meta({
   component: DemoBanner,
   tags: ['udir'],
+  parameters: {
+    componentOrigin: {
+      originator: 'self',
+    },
+  },
 });
 
 export const Preview = meta.story({
