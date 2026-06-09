@@ -92,7 +92,7 @@ export const Controlled = meta.story({
       flexDirection: 'column',
       gap: 'var(--ds-size-2)',
     },
-    docs: { advancedCodeDocs },
+    docs: advancedCodeDocs,
   },
   render(args) {
     const [inputValue, setInputValue] = useState('');
@@ -211,7 +211,7 @@ export const WithLabel = meta.story({
 
 export const Form = meta.story({
   parameters: {
-    docs: { advancedCodeDocs },
+    docs: advancedCodeDocs,
   },
   render(args) {
     const [value, setValue] = useState<string>();
@@ -251,7 +251,7 @@ export const LiveSearch = meta.story({
       flexDirection: 'column',
       gap: 'var(--ds-size-2)',
     },
-    docs: { advancedCodeDocs },
+    docs: advancedCodeDocs,
   },
   render(args) {
     const [value, setValue] = useState<string>('');
