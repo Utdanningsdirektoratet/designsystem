@@ -62,89 +62,68 @@ describe('setId', () => {
 });
 
 describe('next, prev', () => {
-  it('next moves to the next step and returns true', () => {
+  it('next moves to the next step and returns true', async () => {
     const { result } = renderHook(() =>
       useFormNavigation({ order: [...order] }),
     );
-    let moved: boolean;
-    act(() => {
-      moved = result.current.next();
-    });
-    expect(moved!).toBe(true);
+    const moved = await act(async () => result.current.next());
+    expect(moved).toBe(true);
     expect(result.current.id).toBe('step2');
   });
 
-  it('next moves to first step when active step id is null and steps are available', () => {
+  it('next moves to first step when active step id is null and steps are available', async () => {
     const { result } = renderHook(() =>
       useFormNavigation({ order: [...order] }),
     );
     act(() => result.current.setId(null));
     expect(result.current.id).toBeNull();
-    let moved: boolean;
-    act(() => {
-      moved = result.current.next();
-    });
-    expect(moved!).toBe(true);
+    const moved = await act(async () => result.current.next());
+    expect(moved).toBe(true);
     expect(result.current.id).toBe('step1');
   });
 
-  it('next returns false when active step id is null and no steps available', () => {
+  it('next returns false when active step id is null and no steps available', async () => {
     const { result } = renderHook(() => useFormNavigation({ order: [] }));
-    let moved: boolean;
-    act(() => {
-      moved = result.current.next();
-    });
-    expect(moved!).toBe(false);
+    const moved = await act(async () => result.current.next());
+    expect(moved).toBe(false);
     expect(result.current.id).toBeNull();
   });
 
-  it('next returns false when called on the last step', () => {
+  it('next returns false when called on the last step', async () => {
     const { result } = renderHook(() =>
       useFormNavigation({ value: 'step3', order: [...order] }),
     );
-    let moved: boolean;
-    act(() => {
-      moved = result.current.next();
-    });
-    expect(moved!).toBe(false);
+    const moved = await act(async () => result.current.next());
+    expect(moved).toBe(false);
     expect(result.current.id).toBe('step3');
   });
 
-  it('prev moves to the previous step and returns true', () => {
+  it('prev moves to the previous step and returns true', async () => {
     const { result } = renderHook(() =>
       useFormNavigation({ value: 'step2', order: [...order] }),
     );
-    let moved: boolean;
-    act(() => {
-      moved = result.current.prev();
-    });
-    expect(moved!).toBe(true);
+    const moved = await act(async () => result.current.prev());
+    expect(moved).toBe(true);
     expect(result.current.id).toBe('step1');
   });
 
-  it('prev returns false when active step id is null', () => {
+  it('prev returns false when active step id is null', async () => {
     const { result } = renderHook(() =>
       useFormNavigation({ order: [...order] }),
     );
     act(() => result.current.setId(null));
     expect(result.current.id).toBeNull();
-    let moved: boolean;
-    act(() => {
-      moved = result.current.prev();
-    });
-    expect(moved!).toBe(false);
+    const moved = await act(async () => result.current.prev());
+    expect(moved).toBe(false);
     expect(result.current.id).toBeNull();
   });
 
-  it('prev returns false when called on the first step', () => {
+  it('prev returns false when called on the first step', async () => {
     const { result } = renderHook(() =>
       useFormNavigation({ order: [...order] }),
     );
-    let moved: boolean;
-    act(() => {
-      moved = result.current.prev();
-    });
-    expect(moved!).toBe(false);
+    const moved = await act(async () => result.current.prev());
+    expect(moved).toBe(false);
     expect(result.current.id).toBe('step1');
   });
 });
