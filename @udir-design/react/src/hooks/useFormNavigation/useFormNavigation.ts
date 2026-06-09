@@ -1,29 +1,28 @@
-import type {
-  Dispatch,
-  ForwardedRef,
-  HTMLAttributes,
-  MouseEventHandler,
-  SetStateAction,
-} from 'react';
+import type { ForwardedRef, HTMLAttributes, MouseEventHandler } from 'react';
 import { useCallback, useRef, useState } from 'react';
 
 export type FormNavigationState = 'idle' | 'active' | 'completed' | 'invalid';
 
-export type UseFormNavigationProps<TId extends string = string> = {
-  /**
-   * Initial active step ID
-   */
-  value?: TId | null;
+type UseFormNavigationPropsBase<TId extends string = string> = {
   /**
    * Called when the active step changes
    */
-  onChange?: (nextId: TId, prevId: TId | null) => void;
-  /**
-   * Define the order of the steps. If not provided, the order
-   * will be determined by the order of `getStepProps` calls.
-   */
-  order?: TId[];
+  onChange?: (nextId: TId, prevId: TId) => void;
 };
+
+export type UseFormNavigationProps<TId extends string = string> =
+  | (UseFormNavigationPropsBase<TId> & {
+      /** Initial active step ID */
+      value: TId;
+      /** Define the order of the steps. If not provided, the order will be determined by the order of `getStepProps` calls. */
+      order?: TId[];
+    })
+  | (UseFormNavigationPropsBase<TId> & {
+      /** Initial active step ID. Defaults to the first step in `order`. */
+      value?: TId;
+      /** Define the order of the steps. */
+      order: [TId, ...TId[]];
+    });
 
 export type GetFormNavigationStepProps<TId extends string = string> = Omit<
   HTMLAttributes<HTMLButtonElement>,
@@ -45,11 +44,11 @@ export type UseFormNavigationReturn<TId extends string = string> = {
   /**
    * Active step ID
    */
-  id: TId | null;
+  id: TId;
   /**
    * Set active step ID
    */
-  setId: Dispatch<SetStateAction<TId | null>>;
+  setId: (next: TId | ((prev: TId) => TId)) => void;
   /**
    * Mark step as completed
    */
@@ -104,11 +103,6 @@ export type UseFormNavigationReturn<TId extends string = string> = {
   };
 };
 
-// Overloads for generic type inference
-export function useFormNavigation(
-  props?: UseFormNavigationProps<string>,
-): UseFormNavigationReturn<string>;
-
 export function useFormNavigation<TId extends string>(
   props: UseFormNavigationProps<TId>,
 ): UseFormNavigationReturn<TId>;
@@ -116,23 +110,23 @@ export function useFormNavigation<TId extends string>(
 /**
  * useFormNavigation – lightweight management for FormNavigation + FormNavigation.Step
  */
-export function useFormNavigation<TId extends string = string>({
-  value: initialId = null,
+export function useFormNavigation<TId extends string>({
+  value: initialId,
   onChange,
   order,
-}: UseFormNavigationProps<TId> = {}): UseFormNavigationReturn<TId> {
-  const [activeId, setActiveId] = useState<TId | null>(
-    initialId ?? (order?.[0] as TId | undefined) ?? null,
+}: UseFormNavigationProps<TId>): UseFormNavigationReturn<TId> {
+  const [activeId, setActiveId] = useState<TId>(
+    initialId ?? (order as TId[])[0],
   );
   const [stepStates, setStepStates] = useState<
     Record<TId, Exclude<FormNavigationState, 'active'>>
   >({} as Record<TId, Exclude<FormNavigationState, 'active'>>);
 
   if (
-    initialId != null &&
+    initialId !== undefined &&
     order &&
     order.length > 0 &&
-    !order.includes(initialId as TId)
+    !order.includes(initialId)
   ) {
     console.warn(
       `useFormNavigation: value "${String(initialId)}" is not included in order. Navigation will be stuck until a valid step is set via setId.`,
@@ -144,7 +138,7 @@ export function useFormNavigation<TId extends string = string>({
   const setId: UseFormNavigationReturn<TId>['setId'] = (next) => {
     setActiveId((prev) => {
       const nextValue = typeof next === 'function' ? next(prev) : next;
-      if (nextValue !== prev) onChange?.(nextValue as TId, prev);
+      if (nextValue !== prev) onChange?.(nextValue, prev);
       return nextValue;
     });
   };
@@ -221,36 +215,26 @@ export function useFormNavigation<TId extends string = string>({
   ) as TId[];
 
   const prev = () => {
-    if (!activeId) return false;
-    const i = effectiveOrder.indexOf(activeId as TId);
+    const i = effectiveOrder.indexOf(activeId);
     if (i <= 0) return false;
     setId(effectiveOrder[i - 1]);
     return true;
   };
 
   const next = () => {
-    if (!activeId) {
-      if (effectiveOrder.length > 0) {
-        setId(effectiveOrder[0]);
-        return true;
-      }
-      return false;
-    }
-    const i = effectiveOrder.indexOf(activeId as TId);
+    const i = effectiveOrder.indexOf(activeId);
     if (i === -1 || i >= effectiveOrder.length - 1) return false;
     setId(effectiveOrder[i + 1]);
     return true;
   };
 
   const hasPrev = () => {
-    if (!activeId) return false;
-    const index = effectiveOrder.indexOf(activeId as TId);
+    const index = effectiveOrder.indexOf(activeId);
     return index > 0;
   };
 
   const hasNext = () => {
-    if (!activeId) return effectiveOrder.length > 0;
-    const index = effectiveOrder.indexOf(activeId as TId);
+    const index = effectiveOrder.indexOf(activeId);
     return index > -1 && index < effectiveOrder.length - 1;
   };
 

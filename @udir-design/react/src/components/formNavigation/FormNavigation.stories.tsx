@@ -48,7 +48,9 @@ const meta = preview.meta({
 export const Preview = meta.story({
   args: {},
   render(args) {
-    const { getStepProps, getGroupProps } = useFormNavigation({
+    const { getStepProps, getGroupProps } = useFormNavigation<
+      'step' | 'step-1' | 'step-2'
+    >({
       value: 'step',
     });
     return (
@@ -104,7 +106,9 @@ export const Preview = meta.story({
 export const Grouping = meta.story({
   args: {},
   render(args) {
-    const { getStepProps, getGroupProps } = useFormNavigation({
+    const { getStepProps, getGroupProps } = useFormNavigation<
+      'step1' | 'step2'
+    >({
       value: 'step1',
     });
     return (
@@ -128,7 +132,9 @@ export const Grouping = meta.story({
 export const LongStepNames = meta.story({
   args: {},
   render(args) {
-    const { getStepProps, getGroupProps } = useFormNavigation({
+    const { getStepProps, getGroupProps } = useFormNavigation<
+      'step1' | 'step2' | 'step3' | 'step4'
+    >({
       value: 'step1',
     });
     return (
@@ -432,7 +438,7 @@ export const SimpleNavigation = meta.story({
       prev,
       hasNext,
       hasPrev,
-    } = useFormNavigation({
+    } = useFormNavigation<'step1' | 'step2' | 'submit'>({
       value: 'step1',
     });
 
