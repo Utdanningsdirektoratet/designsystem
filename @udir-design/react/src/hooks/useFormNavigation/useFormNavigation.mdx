@@ -18,7 +18,7 @@ I respons får du objektet:
 {
   /* Aktivt steg */
   id: TId | null, // Aktivt steg-ID (eller null hvis ingen aktiv)
-  setId: Dispatch<SetStateAction<TId | null>>, // Overstyr aktivt steg-ID
+  setId: (next: TId | ((prev: TId | null) => TId)) => void, // Overstyr aktivt steg-ID
 
   /* Håndtering av tilstand */
   markCompleted: (id: TId) => void, // Marker et steg som fullført

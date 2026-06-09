@@ -1,10 +1,4 @@
-import type {
-  Dispatch,
-  ForwardedRef,
-  HTMLAttributes,
-  MouseEventHandler,
-  SetStateAction,
-} from 'react';
+import type { ForwardedRef, HTMLAttributes, MouseEventHandler } from 'react';
 import { useCallback, useRef, useState } from 'react';
 
 export type FormNavigationState = 'idle' | 'active' | 'completed' | 'invalid';
@@ -49,7 +43,7 @@ export type UseFormNavigationReturn<TId extends string = string> = {
   /**
    * Set active step ID
    */
-  setId: Dispatch<SetStateAction<TId | null>>;
+  setId: (next: TId | ((prev: TId | null) => TId)) => void;
   /**
    * Mark step as completed
    */
@@ -144,7 +138,7 @@ export function useFormNavigation<TId extends string = string>({
   const setId: UseFormNavigationReturn<TId>['setId'] = (next) => {
     setActiveId((prev) => {
       const nextValue = typeof next === 'function' ? next(prev) : next;
-      if (nextValue !== prev) onChange?.(nextValue as TId, prev);
+      if (nextValue !== prev) onChange?.(nextValue, prev);
       return nextValue;
     });
   };
