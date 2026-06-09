@@ -1,7 +1,7 @@
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
-import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
-import { useRadioGroup } from 'src/utilities/hooks/useRadioGroup/useRadioGroup';
+import { useCheckboxGroup } from 'src/hooks/useCheckboxGroup';
+import { useRadioGroup } from 'src/hooks/useRadioGroup';
 import { Card } from '../card/Card';
 import { Checkbox } from '../checkbox/Checkbox';
 import { Fieldset } from '../fieldset/Fieldset';
