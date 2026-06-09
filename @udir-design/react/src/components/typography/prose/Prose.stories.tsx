@@ -11,7 +11,7 @@ import { Table } from 'src/components/table';
 import { TableOfContents } from 'src/components/tableOfContents';
 import { Heading } from 'src/components/typography/heading';
 import { Paragraph } from 'src/components/typography/paragraph';
-import { useTableOfContents } from 'src/utilities/hooks/useTableOfContents';
+import { useTableOfContents } from 'src/hooks/useTableOfContents';
 import { Prose } from './Prose';
 
 const meta = preview.meta({

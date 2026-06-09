@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import type { TocHeading } from '../../../components/tableOfContents';
+import type { TocHeading } from '../../components/tableOfContents';
 
 export type useTableOfContentsProps = {
   /**

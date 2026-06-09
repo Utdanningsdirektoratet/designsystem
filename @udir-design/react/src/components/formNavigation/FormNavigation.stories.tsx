@@ -17,7 +17,7 @@ import {
   makeStepFinder,
 } from 'src/utilities/form/navigation';
 import type { GetStepId } from 'src/utilities/form/navigation';
-import { useFormNavigation } from 'src/utilities/hooks/useFormNavigation';
+import { useFormNavigation } from 'src/hooks/useFormNavigation';
 import { FormNavigation as FakeFormNavigation } from './docs/FakeFormNavigation';
 import { FormNavigationGroup } from './docs/FakeFormNavigationGroup';
 import { FormNavigationStep } from './docs/FakeFormNavigationStep';

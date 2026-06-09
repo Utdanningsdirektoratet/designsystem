@@ -2,7 +2,7 @@ import { Do, Dont, Stack } from '.storybook/docs/components';
 import { Divider } from 'src/components/divider';
 import { Fieldset } from 'src/components/fieldset';
 import { Heading } from 'src/components/typography/heading';
-import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup';
+import { useCheckboxGroup } from 'src/hooks/useCheckboxGroup';
 import { Checkbox } from '../Checkbox';
 
 export const CheckboxExConversation = () => {

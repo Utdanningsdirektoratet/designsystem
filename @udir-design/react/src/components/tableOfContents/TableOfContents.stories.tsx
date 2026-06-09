@@ -6,7 +6,7 @@ import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Heading } from 'src/components/typography/heading';
 import { Paragraph } from 'src/components/typography/paragraph';
 import { Prose } from 'src/components/typography/prose';
-import { useTableOfContents } from 'src/utilities/hooks/useTableOfContents';
+import { useTableOfContents } from 'src/hooks/useTableOfContents';
 import type { TableOfContentsProps } from './TableOfContents';
 import { TableOfContents } from './TableOfContents';
 

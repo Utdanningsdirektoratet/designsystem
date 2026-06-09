@@ -12,7 +12,7 @@ import { Search } from 'src/components/search';
 import { Table } from 'src/components/table';
 import { Tag } from 'src/components/tag';
 import { Heading } from 'src/components/typography/heading';
-import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup';
+import { useCheckboxGroup } from 'src/hooks/useCheckboxGroup';
 import classes from './TableDemo.module.css';
 import { DeleteDialog } from './components/DeleteDialog';
 import { ExportDialog } from './components/ExportDialog';
