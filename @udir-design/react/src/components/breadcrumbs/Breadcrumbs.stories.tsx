@@ -1,10 +1,10 @@
 import { expect, within } from 'storybook/test';
+import preview from '.storybook/preview';
 import { Header } from '../header';
 import { Breadcrumbs } from './Breadcrumbs';
 import { BreadcrumbsItem } from './docs/FakeBreadcrumbsItem';
 import { BreadcrumbsLink } from './docs/FakeBreadcrumbsLink';
 import { BreadcrumbsList } from './docs/FakeBreadcrumbsList';
-import preview from '.storybook/preview';
 
 const meta = preview.meta({
   component: Breadcrumbs,
