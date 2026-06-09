@@ -25,6 +25,50 @@ describe('initial state', () => {
   });
 });
 
+describe('value not in order', () => {
+  it('warns when value is not in order', () => {
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    renderHook(() =>
+      useFormNavigation({ value: 'unknown', order: [...order] }),
+    );
+    expect(warnSpy).toHaveBeenCalledWith(
+      expect.stringContaining('"unknown" is not included in order'),
+    );
+    warnSpy.mockRestore();
+  });
+
+  it('navigation is stuck when value is not in order', async () => {
+    // Suppress expected warning from test output
+    vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const { result } = renderHook(() =>
+      useFormNavigation({ value: 'unknown', order: [...order] }),
+    );
+    expect(result.current.id).toBe('unknown');
+    expect(result.current.hasNext()).toBe(false);
+    expect(result.current.hasPrev()).toBe(false);
+
+    const movedNext = await act(async () => result.current.next());
+    expect(movedNext).toBe(false);
+
+    const movedPrev = await act(async () => result.current.prev());
+    expect(movedPrev).toBe(false);
+    vi.restoreAllMocks();
+  });
+
+  it('can recover from unknown value via setId', () => {
+    // Suppress expected warning from test output
+    vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const { result } = renderHook(() =>
+      useFormNavigation({ value: 'unknown', order: [...order] }),
+    );
+    act(() => result.current.setId('step2'));
+    expect(result.current.id).toBe('step2');
+    expect(result.current.hasNext()).toBe(true);
+    expect(result.current.hasPrev()).toBe(true);
+    vi.restoreAllMocks();
+  });
+});
+
 describe('setId', () => {
   it('updates the active step id', () => {
     const { result } = renderHook(() =>
