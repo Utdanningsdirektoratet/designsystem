@@ -128,6 +128,17 @@ export function useFormNavigation<TId extends string = string>({
     Record<TId, Exclude<FormNavigationState, 'active'>>
   >({} as Record<TId, Exclude<FormNavigationState, 'active'>>);
 
+  if (
+    initialId != null &&
+    order &&
+    order.length > 0 &&
+    !order.includes(initialId as TId)
+  ) {
+    console.warn(
+      `useFormNavigation: value "${String(initialId)}" is not included in order. Navigation will be stuck until a valid step is set via setId.`,
+    );
+  }
+
   const renderOrderRef = useRef<TId[]>([]);
 
   const setId: UseFormNavigationReturn<TId>['setId'] = (next) => {
