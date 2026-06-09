@@ -376,6 +376,19 @@ describe('getStepProps', () => {
     ).toBe('completed');
   });
 
+  it('passes through extra HTML attributes', () => {
+    const { result } = renderHook(() =>
+      useFormNavigation({ order: [...order] }),
+    );
+    const props = result.current.getStepProps({
+      stepId: 'step1',
+      'aria-label': 'First step',
+      className: 'custom',
+    });
+    expect(props['aria-label']).toBe('First step');
+    expect(props.className).toBe('custom');
+  });
+
   it('onClick handler calls provided onClick callback', () => {
     const onClickCallback = vi.fn();
     const { result } = renderHook(() =>
