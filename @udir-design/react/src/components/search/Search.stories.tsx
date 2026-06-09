@@ -107,16 +107,16 @@ export const Controlled = meta.story({
       <Prose>
         <style>
           {`
-.example-form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-4);
-}
-.example-chip-group {
-  display: flex;
-  align-items: center;
-  gap: var(--ds-size-4);
-}`}
+        .example-form {
+          display: flex;
+          flex-direction: column;
+          gap: var(--ds-size-4);
+        }
+        .example-chip-group {
+          display: flex;
+          align-items: center;
+          gap: var(--ds-size-4);
+        }`}
         </style>
         <form className="example-form" onSubmit={handleSubmit}>
           <Search {...args}>

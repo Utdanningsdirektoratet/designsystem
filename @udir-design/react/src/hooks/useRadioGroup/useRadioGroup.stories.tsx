@@ -81,10 +81,10 @@ export const Controlled = meta.story({
       <>
         <style>
           {`
-.example-button-group {
-  display: flex;
-  gap: var(--ds-size-2);
-}`}
+        .example-button-group {
+          display: flex;
+          gap: var(--ds-size-2);
+        }`}
         </style>
         <Fieldset>
           <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
