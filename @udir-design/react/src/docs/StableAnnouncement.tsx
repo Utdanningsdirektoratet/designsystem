@@ -7,7 +7,7 @@ export function StableAnnouncement() {
   return (
     <Card className={styles.card}>
       <Card.Block className={styles.imgContainer}>
-        <img src={'./assets/img/feiring.svg'} alt={'Feiring'} role="img" />
+        <img src={'./public/img/feiring.svg'} alt={'Feiring'} role="img" />
       </Card.Block>
       <Card.Block>
         <Heading level={2}>Udirs Designsystem er stabilt!</Heading>
