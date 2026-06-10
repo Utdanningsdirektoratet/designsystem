@@ -16,4 +16,40 @@
       background: var(--ds-color-surface-hover);
     }
   }
+
+  &[data-variant='card'] {
+    :is([role='tablist'], u-tablist) {
+      overflow: visible;
+
+      & > :is([role='tab'], u-tab) {
+        border: var(--ds-border-width-default) solid transparent;
+        border-bottom: none;
+        border-radius: var(--ds-border-radius-default)
+          var(--ds-border-radius-default) 0 0;
+        flex-shrink: 0;
+        margin-bottom: calc(var(--ds-border-width-default) * -1);
+        position: relative;
+        transition-duration: 0.2s;
+        transition-property: background-color, color, border-color;
+
+        &::after {
+          display: none;
+        }
+
+        &[aria-selected='true'] {
+          background: var(--ds-color-surface-default);
+          border-color: var(--dsc-tabs-list-border-color);
+        }
+      }
+    }
+  }
+
+  /* Tabpanel card variant */
+  :is([role='tabpanel'], u-tabpanel)[data-variant='card'] {
+    border: var(--ds-border-width-default) solid
+      var(--dsc-tabs-list-border-color);
+    border-top: none;
+    border-radius: 0 0 var(--ds-border-radius-default)
+      var(--ds-border-radius-default);
+  }
 }

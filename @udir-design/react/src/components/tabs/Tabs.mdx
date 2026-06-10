@@ -43,6 +43,30 @@ import { Tabs } from '@udir-design/react';
 </Tabs>;
 ```
 
+## Varianter
+
+`Tabs` har tre varianter:
+
+- `default`
+- `card`
+- `vertical`
+
+### Default
+
+`Tabs` har en "default" variant, som er den mest brukte og fleksible varianten. Den fungerer godt i de fleste situasjoner og gir et rent og enkelt utseende.
+
+<Canvas of={TabsStories.Preview} />
+
+### Card
+
+`Tabs` har også en "card" variant som minner om faner i et filsystem. Denne varianten passer til å visuelt knytte fanene til innholdet i panelene.
+
+<Canvas of={TabsStories.CardVariant} />
+
+Dersom du ønsker å ramme inn innholdet i panelene setter du `variant="card"` både på `Tabs` og på `Tabs.Panel`.
+
+<Canvas of={TabsStories.CardPanel} />
+
 ## Eksempler
 
 Tabene i `Tabs` kan ha tre typer innhold:
