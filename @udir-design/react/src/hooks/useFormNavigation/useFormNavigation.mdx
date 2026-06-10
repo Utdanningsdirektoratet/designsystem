@@ -17,8 +17,8 @@ I respons får du objektet:
 ```ts
 {
   /* Aktivt steg */
-  id: TId | null, // Aktivt steg-ID (eller null hvis ingen aktiv)
-  setId: Dispatch<SetStateAction<TId | null>>, // Overstyr aktivt steg-ID
+  id: TId, // Aktivt steg-ID
+  setId: (next: TId | ((prev: TId) => TId)) => void, // Overstyr aktivt steg-ID
 
   /* Håndtering av tilstand */
   markCompleted: (id: TId) => void, // Marker et steg som fullført
@@ -104,8 +104,7 @@ return (
 Validering av skjema håndteres utenfor hooken, slik at du kan tilpasse valideringslogikken etter behov. Når brukeren prøver å gå videre til neste steg, kan du validere det nåværende steget og bruke `markInvalid` eller `markCompleted` basert på resultatet. Dette kan gjøres i `onChange` som du sender til hooken.
 
 ```tsx
-const onStepChange = (nextId: StepId, prevId: StepId | null) => {
-  if (!prevId) return;
+const onStepChange = (nextId: StepId, prevId: StepId) => {
   const isValid = validateStep(prevId);
   if (isValid) {
     markCompleted(prevId);
