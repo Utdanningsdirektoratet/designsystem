@@ -7,10 +7,14 @@ export function StableAnnouncement() {
   return (
     <Card className={styles.card}>
       <Card.Block className={styles.imgContainer}>
-        <img src={'./public/img/feiring.svg'} alt={'Feiring'} role="img" />
+        <img
+          src={`${import.meta.env.BASE_URL}img/feiring.svg`}
+          alt={'Feiring'}
+          role="img"
+        />
       </Card.Block>
       <Card.Block>
-        <Heading level={2}>Udirs Designsystem er stabilt!</Heading>
+        <Heading level={2}>Udirs designsystem er stabilt!</Heading>
         <Paragraph>
           Etter to år med kartlegging, design og utvikling er vi glade for
           endelig å kunne tilby den første stabile versjonen av Udirs
@@ -18,11 +22,10 @@ export function StableAnnouncement() {
         </Paragraph>
         <Paragraph>
           Versjon 1.0.0 er resultatet av et solid kartleggingsarbeid, et godt
-          samarbeid med teamet bak Digdirs Designsystem og en grundig design- og
-          utviklingsprosess. Takk til alle dere som har testet, gitt
-          tilbakemeldinger og bidratt underveis. Vi er stolte av resultatet, og
-          ser frem til å fortsette å utvikle og forbedre designsystemet sammen
-          med dere.
+          samarbeid med Digdir og en grundig design- og utviklingsprosess. Takk
+          til alle dere som har testet, gitt tilbakemeldinger og bidratt
+          underveis. Vi er stolte av resultatet, og ser frem til å videreutvikle
+          og forbedre designsystemet sammen med dere.
         </Paragraph>
       </Card.Block>
     </Card>
