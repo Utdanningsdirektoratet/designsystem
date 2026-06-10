@@ -307,3 +307,79 @@ export const Controlled = meta.story({
     );
   },
 });
+
+export const Filled = meta.story({
+  args: {
+    defaultValue: 'value1',
+    variant: 'filled',
+  },
+  render: (args) => (
+    <Tabs {...args}>
+      <Tabs.List>
+        <Tabs.Tab value="value1">Tab 1</Tabs.Tab>
+        <Tabs.Tab value="value2">Tab 2</Tabs.Tab>
+        <Tabs.Tab value="value3">Tab 3</Tabs.Tab>
+      </Tabs.List>
+      <Tabs.Panel value="value1">Innhold for tab 1</Tabs.Panel>
+      <Tabs.Panel value="value2">Innhold for tab 2</Tabs.Panel>
+      <Tabs.Panel value="value3">Innhold for tab 3</Tabs.Panel>
+    </Tabs>
+  ),
+});
+
+export const Card = meta.story({
+  args: {
+    defaultValue: 'value1',
+    variant: 'card',
+  },
+  render: (args) => (
+    <Tabs {...args}>
+      <Tabs.List>
+        <Tabs.Tab value="value1">Tab 1</Tabs.Tab>
+        <Tabs.Tab value="value2">Tab 2</Tabs.Tab>
+        <Tabs.Tab value="value3">Tab 3</Tabs.Tab>
+      </Tabs.List>
+      <Tabs.Panel value="value1">Innhold for tab 1</Tabs.Panel>
+      <Tabs.Panel value="value2">Innhold for tab 2</Tabs.Panel>
+      <Tabs.Panel value="value3">Innhold for tab 3</Tabs.Panel>
+    </Tabs>
+  ),
+});
+
+export const VerticalLeft = meta.story({
+  args: {
+    defaultValue: 'value1',
+    variant: 'vertical',
+  },
+  render: (args) => (
+    <Tabs {...args}>
+      <Tabs.List>
+        <Tabs.Tab value="value1">Tab 1</Tabs.Tab>
+        <Tabs.Tab value="value2">Tab 2</Tabs.Tab>
+        <Tabs.Tab value="value3">Tab 3</Tabs.Tab>
+      </Tabs.List>
+      <Tabs.Panel value="value1">Innhold for tab 1</Tabs.Panel>
+      <Tabs.Panel value="value2">Innhold for tab 2</Tabs.Panel>
+      <Tabs.Panel value="value3">Innhold for tab 3</Tabs.Panel>
+    </Tabs>
+  ),
+});
+
+export const VerticalRight = meta.story({
+  args: {
+    defaultValue: 'value1',
+    variant: 'vertical',
+  },
+  render: (args) => (
+    <Tabs {...args}>
+      <Tabs.Panel value="value1">Innhold for tab 1</Tabs.Panel>
+      <Tabs.Panel value="value2">Innhold for tab 2</Tabs.Panel>
+      <Tabs.Panel value="value3">Innhold for tab 3</Tabs.Panel>
+      <Tabs.List>
+        <Tabs.Tab value="value1">Tab 1</Tabs.Tab>
+        <Tabs.Tab value="value2">Tab 2</Tabs.Tab>
+        <Tabs.Tab value="value3">Tab 3</Tabs.Tab>
+      </Tabs.List>
+    </Tabs>
+  ),
+});

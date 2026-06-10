@@ -1,5 +1,65 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Card 1`] = `
+<ds-tabs data-variant="card">
+  <ds-tablist role="tablist">
+    <ds-tab
+      aria-controls="_r_e_-value1"
+      data-value="value1"
+      role="tab"
+      aria-selected="true"
+      tabindex="0"
+      id="<removed>"
+    >
+      Tab 1
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_e_-value2"
+      data-value="value2"
+      role="tab"
+      aria-selected="false"
+      tabindex="-1"
+    >
+      Tab 2
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_e_-value3"
+      data-value="value3"
+      role="tab"
+      aria-selected="false"
+      tabindex="-1"
+    >
+      Tab 3
+    </ds-tab>
+  </ds-tablist>
+  <ds-tabpanel
+    id="<removed>"
+    aria-hidden="false"
+    tabindex="0"
+    aria-labelledby="<removed>"
+    role="tabpanel"
+  >
+    Innhold for tab 1
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="<removed>"
+    role="tabpanel"
+    aria-hidden="true"
+    hidden
+  >
+    Innhold for tab 2
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="<removed>"
+    role="tabpanel"
+    aria-hidden="true"
+    hidden
+  >
+    Innhold for tab 3
+  </ds-tabpanel>
+</ds-tabs>
+`;
+
 exports[`Controlled 1`] = `
 <style>
   .example-list-unordered {
@@ -559,5 +619,125 @@ exports[`Preview 1`] = `
   >
     Innhold for Tab 3
   </ds-tabpanel>
+</ds-tabs>
+`;
+
+exports[`Vertical Left 1`] = `
+<ds-tabs data-variant="vertical">
+  <ds-tablist role="tablist">
+    <ds-tab
+      aria-controls="_r_f_-value1"
+      data-value="value1"
+      role="tab"
+      aria-selected="true"
+      tabindex="0"
+      id="<removed>"
+    >
+      Tab 1
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_f_-value2"
+      data-value="value2"
+      role="tab"
+      aria-selected="false"
+      tabindex="-1"
+    >
+      Tab 2
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_f_-value3"
+      data-value="value3"
+      role="tab"
+      aria-selected="false"
+      tabindex="-1"
+    >
+      Tab 3
+    </ds-tab>
+  </ds-tablist>
+  <ds-tabpanel
+    id="<removed>"
+    aria-hidden="false"
+    tabindex="0"
+    aria-labelledby="<removed>"
+    role="tabpanel"
+  >
+    Innhold for tab 1
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="<removed>"
+    role="tabpanel"
+    aria-hidden="true"
+    hidden
+  >
+    Innhold for tab 2
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="<removed>"
+    role="tabpanel"
+    aria-hidden="true"
+    hidden
+  >
+    Innhold for tab 3
+  </ds-tabpanel>
+</ds-tabs>
+`;
+
+exports[`Vertical Right 1`] = `
+<ds-tabs data-variant="vertical">
+  <ds-tabpanel
+    id="<removed>"
+    role="tabpanel"
+    aria-hidden="false"
+    tabindex="0"
+    aria-labelledby="<removed>"
+  >
+    Innhold for tab 1
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="<removed>"
+    role="tabpanel"
+    aria-hidden="true"
+    hidden
+  >
+    Innhold for tab 2
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="<removed>"
+    role="tabpanel"
+    aria-hidden="true"
+    hidden
+  >
+    Innhold for tab 3
+  </ds-tabpanel>
+  <ds-tablist role="tablist">
+    <ds-tab
+      aria-controls="_r_g_-value1"
+      data-value="value1"
+      role="tab"
+      aria-selected="true"
+      tabindex="0"
+      id="<removed>"
+    >
+      Tab 1
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_g_-value2"
+      data-value="value2"
+      role="tab"
+      aria-selected="false"
+      tabindex="-1"
+    >
+      Tab 2
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_g_-value3"
+      data-value="value3"
+      role="tab"
+      aria-selected="false"
+      tabindex="-1"
+    >
+      Tab 3
+    </ds-tab>
+  </ds-tablist>
 </ds-tabs>
 `;

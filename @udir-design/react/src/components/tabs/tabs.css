@@ -16,4 +16,95 @@
       background: var(--ds-color-surface-hover);
     }
   }
+
+  &[data-variant='card'] {
+    :is([role='tablist'], u-tablist) {
+      overflow: visible;
+
+      & > :is([role='tab'], u-tab) {
+        border: var(--ds-border-width-default) solid transparent;
+        border-bottom: none;
+        border-radius: var(--ds-border-radius-default)
+          var(--ds-border-radius-default) 0 0;
+        flex-shrink: 0;
+        margin-bottom: calc(var(--ds-border-width-default) * -1);
+        position: relative;
+        transition-duration: 0.2s;
+        transition-property: background-color, color, border-color;
+
+        &::after {
+          display: none;
+        }
+
+        &[aria-selected='true'] {
+          background: var(--ds-color-surface-default);
+          border-color: var(--dsc-tabs-list-border-color);
+        }
+      }
+    }
+  }
+
+  &[data-variant='vertical'] {
+    display: flex;
+
+    :is([role='tablist'], u-tablist) {
+      border-bottom: none;
+      flex-direction: column;
+      overflow: visible;
+
+      & > :is([role='tab'], u-tab) {
+        justify-content: flex-start;
+        white-space: nowrap;
+
+        &::after {
+          height: 100%;
+          top: 0;
+          width: 0.15em;
+        }
+      }
+    }
+
+    :is([role='tabpanel'], u-tabpanel) {
+      flex: 1;
+    }
+  }
+
+  &[data-variant='vertical'] {
+    :is([role='tablist'], u-tablist) {
+      /* border-right: var(--ds-border-width-default) solid
+        var(--dsc-tabs-list-border-color); */
+
+      & > :is([role='tab'], u-tab) {
+        &::after {
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  &[data-variant='filled'],
+  &[data-variant='vertical'] {
+    :is([role='tablist'], u-tablist) {
+      background: var(--ds-color-surface-tinted);
+      border-bottom: none;
+      border-radius: var(--ds-border-radius-default);
+      overflow: visible;
+      padding: var(--ds-size-1);
+
+      & > :is([role='tab'], u-tab) {
+        border-radius: var(--ds-border-radius-md);
+        transition-duration: 0.2s;
+        transition-property: background-color, color;
+
+        &::after {
+          display: none;
+        }
+
+        &[aria-selected='true'] {
+          background: var(--ds-color-surface-default);
+        }
+      }
+    }
+  }
 }
