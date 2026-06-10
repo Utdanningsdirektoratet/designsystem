@@ -1,0 +1,22 @@
+import { Meta, Controls, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+
+import * as TableStories from '../../../components/table/Table.stories';
+import * as useDrilldownTableStories from '../../../hooks/useDrilldownTable/useDrilldownTable.stories';
+
+<Meta title="patterns/Tabeller/Ekspanderende rader" tags={['alpha']} />
+
+# Ekspanderende rader
+
+Ekspanderende rader lar brukeren hente frem mer informasjon om en rad uten å forlate tabellvisningen. Dette er nyttig når tabellen inneholder hierarkiske data, eller når en rad har ekstra informasjon som ikke passer i tabellens kolonner. Bruk [`Table`](/docs/components-table--docs)-komponenten med støtte for ekspandering for å implementere dette. Se dokumentasjonen for [`Table`](/docs/components-table--docs) for mer informasjon.
+
+## Hierarkisk data
+
+Hierarkisk data brukes når radene i tabellen representerer enheter som selv inneholder underordnede enheter. Et typisk eksempel er en tabell over kommuner der brukeren kan ekspandere en rad for å se de samme verdiene brutt ned på skolenivå. Den ekspanderte visningen viser dermed mer detaljert informasjon i de samme kolonnene som allerede finnes i tabellen.
+
+<Canvas of={useDrilldownTableStories.Preview} />
+
+## Detaljvisning
+
+Detaljvisning brukes når en rad har tilknyttet informasjon som ikke lar seg strukturere i kolonner, for eksempel fritekst, merknader eller annen kontekst. I stedet for en ny tabell vises innholdet som tekst eller andre innholdselementer under raden. Bruk detaljvisning når informasjonen er supplerende og ikke ment for sammenligning på tvers av rader.
+
+<Canvas of={TableStories.ExpandableRows} />
