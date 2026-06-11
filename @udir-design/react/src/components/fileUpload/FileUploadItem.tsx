@@ -35,6 +35,11 @@ export interface FileUploadItemProps extends Omit<
    */
   description?: string;
   /**
+   * Hides the description paragraph entirely.
+   * @default false
+   */
+  hideDescription?: boolean;
+  /**
    * Either a native File or file metadata.
    */
   file: File;
@@ -73,6 +78,7 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
       className,
       'data-size': size,
       description,
+      hideDescription = false,
       onRemove,
       ...rest
     }: FileUploadItemProps,
@@ -95,7 +101,9 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
             <FileName file={file} href={href} />
             <Paragraph data-size="sm">
               {/* Loading text in css */}
-              {!loading && (description ?? formatFileSize(file))}
+              {!loading &&
+                !hideDescription &&
+                (description ?? formatFileSize(file))}
             </Paragraph>
           </div>
           {!loading && !readonly && (
