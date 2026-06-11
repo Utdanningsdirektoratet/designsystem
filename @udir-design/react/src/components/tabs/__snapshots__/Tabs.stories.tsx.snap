@@ -1,13 +1,16 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Card Panel 1`] = `
-<h2 style="<removed>">
+<style>
+  .tabs {
+          max-width: 40rem;
+          margin-top: var(--ds-size-4);
+        }
+</style>
+<h2>
   Designtokens
 </h2>
-<ds-tabs
-  data-variant="card"
-  style="<removed>"
->
+<ds-tabs data-variant="card">
   <ds-tablist role="tablist">
     <ds-tab
       aria-controls="_r_f_-value1"
