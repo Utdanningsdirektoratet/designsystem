@@ -335,10 +335,16 @@ export const CardPanel = meta.story({
   },
   render: (args) => (
     <>
-      <Heading level={2} style={{ marginBottom: '1rem' }}>
-        Designtokens
-      </Heading>
-      <Tabs {...args} style={{ maxWidth: '40rem' }}>
+      <style>
+        {`
+        .tabs {
+          max-width: 40rem;
+          margin-top: var(--ds-size-4);
+        }
+      `}
+      </style>
+      <Heading level={2}>Designtokens</Heading>
+      <Tabs {...args} className="tabs">
         <Tabs.List>
           <Tabs.Tab value="value1">Farger</Tabs.Tab>
           <Tabs.Tab value="value2">Størrelser</Tabs.Tab>
