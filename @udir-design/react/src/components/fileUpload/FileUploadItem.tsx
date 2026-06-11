@@ -31,6 +31,10 @@ export interface FileUploadItemProps extends Omit<
 > {
   'data-size'?: Size;
   /**
+   * Text shown below the file name. Falls back to the formatted file size if not provided.
+   */
+  description?: string;
+  /**
    * Either a native File or file metadata.
    */
   file: File;
@@ -68,6 +72,7 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
       readonly = false,
       className,
       'data-size': size,
+      description,
       onRemove,
       ...rest
     }: FileUploadItemProps,
@@ -90,7 +95,7 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
             <FileName file={file} href={href} />
             <Paragraph data-size="sm">
               {/* Loading text in css */}
-              {!loading && formatFileSize(file)}
+              {!loading && (description ?? formatFileSize(file))}
             </Paragraph>
           </div>
           {!loading && !readonly && (

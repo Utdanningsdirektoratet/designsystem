@@ -424,6 +424,7 @@ export const ExampleItems = meta.story({
                 <FileUpload.Item
                   key={index}
                   file={file}
+                  description={`Filopplasting ${index + 1}`}
                   readonly={index === 2 && true}
                   loading={index === 3 && true}
                   onRemove={() => removeFile(file)}
