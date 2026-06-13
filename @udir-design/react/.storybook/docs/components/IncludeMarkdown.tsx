@@ -5,13 +5,14 @@ import type { Root, Text } from 'mdast';
 import { toHast } from 'mdast-util-to-hast';
 import { Fragment, useMemo } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import remarkHeadingId from 'remark-heading-id';
-import type { RemarkHeadingIdOptions } from 'remark-heading-id';
 import remarkParse from 'remark-parse';
 import remarkStringify from 'remark-stringify';
 import { unified } from 'unified';
 import { visit } from 'unist-util-visit';
-import { remarkGetSection } from '../../utils/remarkGetSection.js';
+import {
+  remarkGetSection,
+  remarkSlugHeadings,
+} from '../../utils/remarkGetSection.js';
 import { componentOverrides } from '../ComponentOverrides';
 import componentStyles from '../componentOverrides.module.scss';
 import { SimpleAlert } from './SimpleAlert/SimpleAlert';
@@ -30,9 +31,7 @@ export const IncludeMarkdown: React.FC<Props> = ({
     () =>
       unified()
         .use(remarkParse)
-        .use(remarkHeadingId, {
-          defaults: true,
-        } satisfies RemarkHeadingIdOptions)
+        .use(remarkSlugHeadings)
         .use(remarkGetSection, { sectionId })
         .use(remarkIncreaseHeadingDepth, { increaseBy: increaseHeadingDepthBy })
         .use(remarkGithubAlert)
