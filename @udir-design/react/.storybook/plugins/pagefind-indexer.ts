@@ -1,6 +1,5 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import type { Root as MdastRoot } from 'mdast';
 import type { Plugin, ResolvedConfig, ViteDevServer } from 'vite';
 import {
   type Tier,
@@ -214,29 +213,6 @@ export function pagefindIndexerPlugin(options: PagefindIndexerOptions): Plugin {
  */
 const KEEP_CHILDREN_TAGS = new Set(['SimpleAlert', 'Alert', 'Unstyled']);
 
-/**
- * Remark plugin that assigns `data.id` to headings by slugifying their text.
- * Used instead of `remark-heading-id` (which has module resolution issues
- * outside of Vite) for the imported markdown files in `<IncludeMarkdown>`
- * resolution. The shared `remarkGetSection` plugin reads `data.id` to
- * extract sections by heading.
- */
-function remarkSlugHeadings() {
-  return function (tree: MdastRoot): void {
-    for (const node of tree.children) {
-      if (node.type === 'heading') {
-        const data = (node.data ?? {}) as Record<string, unknown>;
-        if (!data.id) {
-          data.id = slugify(
-            hastNodeToText(node as Parameters<typeof hastNodeToText>[0]),
-          );
-        }
-        node.data = data as unknown as typeof node.data;
-      }
-    }
-  };
-}
-
 // ─── URL Derivation ──────────────────────────────────────────────────────────
 
 /**
@@ -397,7 +373,8 @@ async function mdxToSearchHtml(
   const { toHtml } = await import('hast-util-to-html');
   const { visit, SKIP } = await import('unist-util-visit');
   const { remove } = await import('unist-util-remove');
-  const { remarkGetSection } = await import('../utils/remarkGetSection.js');
+  const { remarkGetSection, remarkSlugHeadings } =
+    await import('../utils/remarkGetSection.js');
 
   // Parse MDX into a full AST (markdown + JSX + ESM nodes)
   const tree = unified()
