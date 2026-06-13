@@ -6,9 +6,48 @@
   flex-shrink: 0;
 }
 
+#storybook-sidebar-region {
+  background: var(--ds-color-accent-background-tinted);
+}
+
+.sidebar-header > :has(+ button[aria-haspopup]) {
+  margin-right: unset;
+}
+
+label[for='storybook-explorer-searchfield'] ~ * .search-field:has(input:focus) {
+  background: transparent;
+}
+
+.sidebar-subheading > button:hover {
+  background: var(--ds-color-accent-surface-hover);
+}
+.sidebar-item:not([data-selected='true']) > button[aria-haspopup]:hover {
+  background: var(--ds-color-accent-base-hover);
+}
+.sidebar-item[data-selected='true'] > button[aria-haspopup]:hover {
+  background: var(--ds-color-neutral-base-hover);
+}
+
 .sidebar-subheading-icon {
   height: 1.125rem;
   width: auto;
+}
+
+.uds-sb-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.uds-sb-brand img {
+  height: 42px;
+  width: 42px;
+}
+
+.uds-sb-brand span {
+  font-weight: 600;
+  font-size: var(--ds-heading-sm-font-size);
+  color: var(--ds-color-neutral-text-default);
 }
 
 [aria-controls='storybook-mobile-menu'] .uds-sb-sidebar-name {
