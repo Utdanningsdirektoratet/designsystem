@@ -2,7 +2,7 @@ import preview from '.storybook/preview';
 
 const meta = preview.meta({
   title: 'Utilities/Hjelpefunksjoner for datavisualisering',
-  tags: [],
+  tags: ['udir'],
   parameters: {
     sourceCode: {
       autoLinks: { component: false, stories: false },

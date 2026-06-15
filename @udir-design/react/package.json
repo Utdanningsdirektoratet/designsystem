@@ -30,6 +30,10 @@
       "import": "./dist/utilities/alpha.js",
       "require": "./dist/utilities/alpha.cjs"
     },
+    "./beta/utilities": {
+      "import": "./dist/utilities/beta.js",
+      "require": "./dist/utilities/beta.cjs"
+    },
     "./html": {
       "types": "./dist/html.d.ts"
     },

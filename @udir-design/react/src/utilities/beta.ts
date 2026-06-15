@@ -3,3 +3,6 @@
  *
  * @module
  */
+
+export * from './datavis/dataVisualisation';
+export * from './datavis/highcharts';
