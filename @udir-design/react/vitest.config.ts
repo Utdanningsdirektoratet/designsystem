@@ -7,9 +7,6 @@ import viteConfig from './vite.config';
 export default defineConfig({
   test: {
     watch: false,
-    cache: {
-      dir: '../../node_modules/.vitest/@udir-design/react',
-    },
     reporters: [
       'default',
       // html reporter has a bug in 4.0.15, which is fixed but not yet released
