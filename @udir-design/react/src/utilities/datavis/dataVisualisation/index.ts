@@ -27,15 +27,11 @@ export function getCategoricalColors(): readonly string[] {
   );
 }
 
-const MONOCHROMATIC_PALETTE_SIZE = 8;
-
 /**
  * Gets the sequential monochromatic color palette for data visualisation.
- * Returns CSS variable references, evenly distributed across the palette.
+ * Returns CSS variable reference.
  *
- * @param count - Number of colors to return (1–8). Defaults to 8.
- *               Colors are evenly distributed across the palette.
- * @returns Array of CSS variable references from light to dark
+ * @returns Array of 8 CSS variable references from light to dark
  *
  * @example
  * ```tsx
@@ -44,30 +40,13 @@ const MONOCHROMATIC_PALETTE_SIZE = 8;
  *
  * const colors = getSequentialMonochromaticColors();
  * // ['var(--uds-data-color-sequential-monochromatic-1)', ...]
- *
- * const threeColors = getSequentialMonochromaticColors(3);
- * // ['var(--uds-data-color-sequential-monochromatic-1)',
- * //  'var(--uds-data-color-sequential-monochromatic-4)',
- * //  'var(--uds-data-color-sequential-monochromatic-8)']
  * ```
  */
-export function getSequentialMonochromaticColors(
-  count: number = MONOCHROMATIC_PALETTE_SIZE,
-): readonly string[] {
-  if (count < 1 || count > MONOCHROMATIC_PALETTE_SIZE) {
-    throw new RangeError(
-      `count must be between 1 and ${MONOCHROMATIC_PALETTE_SIZE}, got ${count}`,
-    );
-  }
-  if (count === 1) {
-    return [`var(--uds-data-color-sequential-monochromatic-1)`];
-  }
-  return Array.from({ length: count }, (_, i) => {
-    const index = Math.round(
-      (i * (MONOCHROMATIC_PALETTE_SIZE - 1)) / (count - 1),
-    );
-    return `var(--uds-data-color-sequential-monochromatic-${index + 1})`;
-  });
+export function getSequentialMonochromaticColors(): readonly string[] {
+  return Array.from(
+    { length: 8 },
+    (_, i) => `var(--uds-data-color-sequential-monochromatic-${i + 1})`,
+  );
 }
 
 /**

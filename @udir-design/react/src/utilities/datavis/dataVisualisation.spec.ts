@@ -55,43 +55,6 @@ describe('getSequentialMonochromaticColors', () => {
       getSequentialMonochromaticColors(),
     );
   });
-
-  it('returns correct number of colors when count is specified', () => {
-    expect(getSequentialMonochromaticColors(4)).toHaveLength(4);
-    expect(getSequentialMonochromaticColors(1)).toHaveLength(1);
-  });
-
-  it('returns first and last palette colors when count is 2', () => {
-    const colors = getSequentialMonochromaticColors(2);
-    expect(colors).toEqual([
-      'var(--uds-data-color-sequential-monochromatic-1)',
-      'var(--uds-data-color-sequential-monochromatic-8)',
-    ]);
-  });
-
-  it('evenly distributes colors across the palette for count=4', () => {
-    const colors = getSequentialMonochromaticColors(4);
-    expect(colors).toEqual([
-      'var(--uds-data-color-sequential-monochromatic-1)',
-      'var(--uds-data-color-sequential-monochromatic-3)',
-      'var(--uds-data-color-sequential-monochromatic-6)',
-      'var(--uds-data-color-sequential-monochromatic-8)',
-    ]);
-  });
-
-  it('returns first color only when count is 1', () => {
-    expect(getSequentialMonochromaticColors(1)).toEqual([
-      'var(--uds-data-color-sequential-monochromatic-1)',
-    ]);
-  });
-
-  it('throws RangeError for count below 1', () => {
-    expect(() => getSequentialMonochromaticColors(0)).toThrow(RangeError);
-  });
-
-  it('throws RangeError for count above 8', () => {
-    expect(() => getSequentialMonochromaticColors(9)).toThrow(RangeError);
-  });
 });
 
 describe('getSequentialDivergentColors', () => {
@@ -169,6 +132,7 @@ describe('generateMonochromaticColors', () => {
     expect(generateMonochromaticColors(10)).toHaveLength(10);
     expect(generateMonochromaticColors(1)).toHaveLength(1);
     expect(generateMonochromaticColors(8)).toHaveLength(8);
+    expect(generateMonochromaticColors(14)).toHaveLength(14);
   });
 
   it('returns hex color strings', () => {
