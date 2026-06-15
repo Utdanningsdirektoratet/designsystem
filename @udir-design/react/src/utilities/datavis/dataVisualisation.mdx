@@ -4,6 +4,7 @@ import { Link } from 'src/components/link/Link';
 import {
   DatavisValueColorDisplay,
   DatavisSeqColorDisplay,
+  DatavisGenSeqColorDisplay,
   DatavisSeqDivColorDisplay,
 } from '../../design-tokens/docs/color/datavis-color-display';
 import rechartsExample from './docs/rechartsExample.tsx?raw';
@@ -15,14 +16,15 @@ import * as stories from './dataVisualisation.stories.tsx';
 
 # Hjelpefunksjoner for datavisualisering
 
-Hjelpefunksjoner for farger i datavisualisering, for eksempel i diagrammer og grafer. Disse funksjonene returnerer CSS-variabler som automatisk tilpasser seg når temaet endres (lys/mørk modus).
+Verktøy for å bruke datavisualiseringsfarger i diagrammer og grafer. Funksjonene under returnerer enten farger som CSS-variabler eller hex-fargeverdier, eller ferdig konfigurert temainnstilling for Highcharts. CSS-variablene tilpasser seg automatisk når temaet endres (lys/mørk modus).
 
 - `getCategoricalColors()`
 - `getSequentialMonochromaticColors()`
+- `generateSequentialMonochromaticColors(count: number)`
 - `getSequentialDivergentColors()`
 - `getHighchartsTheme()`
 
-Les også <Link href="./typedoc/modules/utilities_datavis_beta.html" target="_none">detaljert dokumentasjon generert fra kildekoden (på engelsk)</Link>.
+Les også <Link href="./typedoc/modules/utilities_datavis_alpha.html">detaljert dokumentasjon generert fra kildekoden (på engelsk)</Link>.
 
 <SimpleAlert type="tip">
   Se [Farger for
@@ -76,6 +78,19 @@ const colors = getSequentialMonochromaticColors();
 
 <Unstyled>
   <DatavisSeqColorDisplay />
+</Unstyled>
+
+**`generateSequentialMonochromaticColors(count: number)`** - Genererer et egenvalgt antall hex-fargeverdier (minimum 1).
+
+```tsx
+import { generateSequentialMonochromaticColors } from '@udir-design/react/utilities/alpha';
+
+const colors = generateSequentialMonochromaticColors(16);
+// ['#5ba27e', '#4a8f6b', '#397b58', ...]
+```
+
+<Unstyled>
+  <DatavisGenSeqColorDisplay />
 </Unstyled>
 
 ---
