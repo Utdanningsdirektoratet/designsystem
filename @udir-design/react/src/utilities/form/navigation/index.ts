@@ -3,11 +3,36 @@ export type FormFieldsByStep<
   TFieldId extends string,
 > = Record<TStepId, TFieldId[]>;
 
+function assertUniqueFieldIds<T extends FormFieldsByStep<string, string>>(
+  stepsDefinition: T,
+): void {
+  const stepByFieldId = new Map<string, keyof T>();
+
+  for (const [stepId, fieldIds] of Object.entries(stepsDefinition) as Array<
+    [keyof T, T[keyof T]]
+  >) {
+    for (const fieldId of fieldIds) {
+      const existingStepId = stepByFieldId.get(fieldId);
+
+      if (existingStepId) {
+        throw new Error(
+          `Duplicate field id "${fieldId}" found in step "${String(stepId)}". ` +
+            `It is already defined in step "${String(existingStepId)}". ` +
+            'Each field id must belong to exactly one step.',
+        );
+      }
+
+      stepByFieldId.set(fieldId, stepId);
+    }
+  }
+}
+
 /**
  * Define the grouping of form fields per step with proper typing.
  *
  * @param stepsDefinition An object where each key is a step id, and each value is an array of field ids
  * @returns The same object, but properly typed for use with other form utilities
+ * @throws If the same field id is defined more than once across the provided steps
  *
  * @example
  * const stepsDefinition = defineSteps({
@@ -23,7 +48,10 @@ export type FormFieldsByStep<
  */
 export const defineSteps = <const T extends FormFieldsByStep<string, string>>(
   stepsDefinition: T,
-) => stepsDefinition;
+) => {
+  assertUniqueFieldIds(stepsDefinition);
+  return stepsDefinition;
+};
 
 /**
  * Extract the `StepId` type from the result of {@link defineSteps}.

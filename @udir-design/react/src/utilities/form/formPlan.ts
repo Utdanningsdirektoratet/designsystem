@@ -43,6 +43,23 @@ export type FormPlan<
 // Core builder
 // -----------------------------
 
+function assertUniqueStepIds<TStepId extends string>(
+  stepIds: readonly TStepId[],
+): void {
+  const seenStepIds = new Set<TStepId>();
+
+  for (const stepId of stepIds) {
+    if (seenStepIds.has(stepId)) {
+      throw new Error(
+        `Duplicate step id "${stepId}" found in form plan. ` +
+          'Each step id must be unique.',
+      );
+    }
+
+    seenStepIds.add(stepId);
+  }
+}
+
 export function defineFormPlan<
   const P extends FormPlan<string, string, string>,
 >(plan: P) {
@@ -67,6 +84,8 @@ export function defineFormPlan<
   const orderedSteps = plan.flatMap((item) =>
     'steps' in item ? item.steps : [item],
   ) as unknown as Step[];
+
+  assertUniqueStepIds(orderedSteps.map((step) => step.id));
 
   const stepById = new Map<StepId, Step>();
 

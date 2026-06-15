@@ -43,6 +43,23 @@ describe('defineSteps', () => {
       | 'question6'
     >();
   });
+
+  it('throws when a field id is defined in multiple steps', () => {
+    expect(() =>
+      defineSteps({
+        firstStep: ['sharedQuestion', 'question1'],
+        secondStep: ['sharedQuestion', 'question2'],
+      }),
+    ).toThrow(/Duplicate field id "sharedQuestion"/);
+  });
+
+  it('throws when a field id is repeated within the same step', () => {
+    expect(() =>
+      defineSteps({
+        firstStep: ['question1', 'question1'],
+      }),
+    ).toThrow(/Duplicate field id "question1"/);
+  });
 });
 
 describe('getStepIds', () => {
@@ -158,16 +175,6 @@ describe('makeStepFinder', () => {
 
   it('returns undefined for a question that does not exist in any step', () => {
     expect(findStepForField('question7')).toBeUndefined();
-  });
-
-  it('returns the first matching step when a field exists in multiple steps', () => {
-    const duplicateSteps = defineSteps({
-      firstStep: ['sharedQuestion', 'question1'],
-      secondStep: ['sharedQuestion', 'question2'],
-    });
-    const duplicateFinder = makeStepFinder(duplicateSteps);
-
-    expect(duplicateFinder('sharedQuestion')).toBe('firstStep');
   });
 
   it('returns undefined for any field when step definition is empty', () => {
