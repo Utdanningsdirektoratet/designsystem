@@ -1,5 +1,10 @@
 import { act, renderHook } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
+import {
+  type GetStepId,
+  defineSteps,
+  getStepIds,
+} from '../../utilities/form/navigation';
 import { useFormNavigation } from './useFormNavigation';
 
 const order = ['step1', 'step2', 'step3'] as const;
@@ -214,6 +219,35 @@ describe('navigation using implicit render order', () => {
 
     expect(result.current.hasPrev()).toBe(true);
     expect(result.current.hasNext()).toBe(true);
+  });
+});
+
+describe('integration with form navigation utilities', () => {
+  it('uses step ids derived from defineSteps as navigation order', async () => {
+    const steps = defineSteps({
+      firstStep: ['question1'],
+      secondStep: ['question2'],
+      thirdStep: ['question3'],
+    });
+    type StepId = GetStepId<typeof steps>;
+    const order = getStepIds(steps);
+
+    const { result } = renderHook(() =>
+      useFormNavigation<StepId>({ value: 'firstStep', order }),
+    );
+
+    expect(result.current.id).toBe('firstStep');
+    expect(result.current.hasPrev()).toBe(false);
+    expect(result.current.hasNext()).toBe(true);
+
+    const movedToSecond = await act(async () => result.current.next());
+    expect(movedToSecond).toBe(true);
+    expect(result.current.id).toBe('secondStep');
+
+    const movedToThird = await act(async () => result.current.next());
+    expect(movedToThird).toBe(true);
+    expect(result.current.id).toBe('thirdStep');
+    expect(result.current.hasNext()).toBe(false);
   });
 });
 

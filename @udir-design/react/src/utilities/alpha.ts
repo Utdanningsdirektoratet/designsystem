@@ -5,6 +5,5 @@
  * @module
  */
 
-export * from './form/navigation';
-export * from './datavis/dataVisualisation';
-export * from './datavis/highcharts';
+// eslint-disable-next-line no-restricted-imports
+export * from './beta';
