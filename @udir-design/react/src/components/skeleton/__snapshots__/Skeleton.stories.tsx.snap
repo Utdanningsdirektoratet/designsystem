@@ -475,6 +475,7 @@ exports[`Usage Example 1`] = `
   padding-block: var(--ds-size-1);
 }
 .example-image {
+  display: block;
   width: 100%;
   height: 200px;
   object-fit: cover;

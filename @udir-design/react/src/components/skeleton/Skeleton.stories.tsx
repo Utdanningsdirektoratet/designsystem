@@ -204,6 +204,7 @@ export const UsageExample = meta.story({
   padding-block: var(--ds-size-1);
 }
 .example-image {
+  display: block;
   width: 100%;
   height: 200px;
   object-fit: cover;
@@ -211,7 +212,7 @@ export const UsageExample = meta.story({
 }`}
         </style>
         <div className="example-main">
-          <div className="example-section">
+          <Prose className="example-section">
             <Skeleton height="200px" {...args} />
             <Heading>
               <Skeleton variant="text" width="15" />
@@ -223,8 +224,8 @@ export const UsageExample = meta.story({
               </Skeleton>
             </div>
             <Skeleton variant="text" width="260" />
-          </div>
-          <div className="example-section">
+          </Prose>
+          <Prose className="example-section">
             <img
               src={schoolImage}
               alt="Bøker på et bord"
@@ -245,7 +246,7 @@ export const UsageExample = meta.story({
               til å avdekke hva som er problemet og hva som gjør at barnet ikke
               har det trygt og godt.
             </Paragraph>
-          </div>
+          </Prose>
         </div>
       </>
     );
