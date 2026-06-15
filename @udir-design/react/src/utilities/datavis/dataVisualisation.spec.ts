@@ -23,7 +23,7 @@ describe('getCategoricalColors', () => {
     });
   });
 
-  it('returns the same array each call', () => {
+  it('returns the same color sequence each call', () => {
     expect(getCategoricalColors()).toEqual(getCategoricalColors());
   });
 });
@@ -49,7 +49,7 @@ describe('getSequentialMonochromaticColors', () => {
     });
   });
 
-  it('returns the same array each call', () => {
+  it('returns the same color sequence each call', () => {
     expect(getSequentialMonochromaticColors()).toEqual(
       getSequentialMonochromaticColors(),
     );
@@ -75,7 +75,7 @@ describe('getSequentialDivergentColors', () => {
     });
   });
 
-  it('returns the same array each call', () => {
+  it('returns the same color sequence each call', () => {
     expect(getSequentialDivergentColors()).toEqual(
       getSequentialDivergentColors(),
     );
@@ -97,14 +97,19 @@ describe('getHighchartsTheme', () => {
     expect(getHighchartsTheme().chart?.backgroundColor).toBe('transparent');
   });
 
-  it('sets title style to correct CSS variable and font size', () => {
+  it('sets correct title style', () => {
     const { title } = getHighchartsTheme();
-    expect(title?.style?.fontWeight).toBe('600');
+    expect(title?.style).toEqual({
+      fontSize: '1.25rem',
+      fontWeight: '600',
+    });
   });
 
-  it('sets subtitle style to correct CSS variable and font size', () => {
+  it('sets correct subtitle style', () => {
     const { subtitle } = getHighchartsTheme();
-    expect(subtitle?.style?.fontSize).toBe('1rem');
+    expect(subtitle?.style).toEqual({
+      fontSize: '1rem',
+    });
   });
 
   it('disables credits', () => {
@@ -121,7 +126,7 @@ describe('getHighchartsTheme', () => {
     ]);
   });
 
-  it('returns the same theme each call', () => {
+  it('returns equivalent theme values each call', () => {
     expect(getHighchartsTheme()).toEqual(getHighchartsTheme());
   });
 });
