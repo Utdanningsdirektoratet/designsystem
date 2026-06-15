@@ -30,11 +30,11 @@ describe('getCategoricalColors', () => {
 });
 
 describe('getSequentialMonochromaticColors', () => {
-  it('returns 8 colors by default', () => {
+  it('returns 8 sequential monochromatic CSS-colorvalues', () => {
     expect(getSequentialMonochromaticColors()).toHaveLength(8);
   });
 
-  it('returns all 8 colors as CSS variable references', () => {
+  it('returns a list of 8 sequential monochromatic CSS-colorvalues', () => {
     for (const color of getSequentialMonochromaticColors()) {
       expect(color).toMatch(
         /^var\(--uds-data-color-sequential-monochromatic-\d+\)$/,
@@ -42,7 +42,7 @@ describe('getSequentialMonochromaticColors', () => {
     }
   });
 
-  it('returns colors numbered 1-8 in order when called with default', () => {
+  it('returns colors numbered 1-8 in order', () => {
     getSequentialMonochromaticColors().forEach((color, i) => {
       expect(color).toBe(
         `var(--uds-data-color-sequential-monochromatic-${i + 1})`,
@@ -54,6 +54,42 @@ describe('getSequentialMonochromaticColors', () => {
     expect(getSequentialMonochromaticColors()).toEqual(
       getSequentialMonochromaticColors(),
     );
+  });
+});
+
+describe('generateMonochromaticColors', () => {
+  it('returns correct number of colors', () => {
+    expect(generateMonochromaticColors(10)).toHaveLength(10);
+    expect(generateMonochromaticColors(1)).toHaveLength(1);
+    expect(generateMonochromaticColors(8)).toHaveLength(8);
+    expect(generateMonochromaticColors(14)).toHaveLength(14);
+  });
+
+  it('returns hex color strings', () => {
+    for (const color of generateMonochromaticColors(10)) {
+      expect(color).toMatch(/^#[0-9a-f]{6}$/);
+    }
+  });
+
+  it('starts with the lightest anchor color', () => {
+    expect(generateMonochromaticColors(10)[0]).toBe('#5ba27e');
+  });
+
+  it('ends with the darkest anchor color', () => {
+    const colors = generateMonochromaticColors(10);
+    expect(colors[colors.length - 1]).toBe('#0b1e15');
+  });
+
+  it('returns just the start color when count is 1', () => {
+    expect(generateMonochromaticColors(1)).toEqual(['#5ba27e']);
+  });
+
+  it('returns start and end when count is 2', () => {
+    expect(generateMonochromaticColors(2)).toEqual(['#5ba27e', '#0b1e15']);
+  });
+
+  it('throws RangeError for count below 1', () => {
+    expect(() => generateMonochromaticColors(0)).toThrow(RangeError);
   });
 });
 
@@ -124,41 +160,5 @@ describe('getHighchartsTheme', () => {
 
   it('returns the same theme each call', () => {
     expect(getHighchartsTheme()).toEqual(getHighchartsTheme());
-  });
-});
-
-describe('generateMonochromaticColors', () => {
-  it('returns correct number of colors', () => {
-    expect(generateMonochromaticColors(10)).toHaveLength(10);
-    expect(generateMonochromaticColors(1)).toHaveLength(1);
-    expect(generateMonochromaticColors(8)).toHaveLength(8);
-    expect(generateMonochromaticColors(14)).toHaveLength(14);
-  });
-
-  it('returns hex color strings', () => {
-    for (const color of generateMonochromaticColors(10)) {
-      expect(color).toMatch(/^#[0-9a-f]{6}$/);
-    }
-  });
-
-  it('starts with the lightest anchor color', () => {
-    expect(generateMonochromaticColors(10)[0]).toBe('#5ba27e');
-  });
-
-  it('ends with the darkest anchor color', () => {
-    const colors = generateMonochromaticColors(10);
-    expect(colors[colors.length - 1]).toBe('#0b1e15');
-  });
-
-  it('returns just the start color when count is 1', () => {
-    expect(generateMonochromaticColors(1)).toEqual(['#5ba27e']);
-  });
-
-  it('returns start and end when count is 2', () => {
-    expect(generateMonochromaticColors(2)).toEqual(['#5ba27e', '#0b1e15']);
-  });
-
-  it('throws RangeError for count below 1', () => {
-    expect(() => generateMonochromaticColors(0)).toThrow(RangeError);
   });
 });
