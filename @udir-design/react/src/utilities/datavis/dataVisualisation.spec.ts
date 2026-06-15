@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
-  generateMonochromaticColors,
+  generateSequentialMonochromaticColors,
   getCategoricalColors,
   getSequentialDivergentColors,
   getSequentialMonochromaticColors,
@@ -57,39 +57,42 @@ describe('getSequentialMonochromaticColors', () => {
   });
 });
 
-describe('generateMonochromaticColors', () => {
+describe('generateSequentialMonochromaticColors', () => {
   it('returns correct number of colors', () => {
-    expect(generateMonochromaticColors(10)).toHaveLength(10);
-    expect(generateMonochromaticColors(1)).toHaveLength(1);
-    expect(generateMonochromaticColors(8)).toHaveLength(8);
-    expect(generateMonochromaticColors(14)).toHaveLength(14);
+    expect(generateSequentialMonochromaticColors(10)).toHaveLength(10);
+    expect(generateSequentialMonochromaticColors(1)).toHaveLength(1);
+    expect(generateSequentialMonochromaticColors(8)).toHaveLength(8);
+    expect(generateSequentialMonochromaticColors(14)).toHaveLength(14);
   });
 
   it('returns hex color strings', () => {
-    for (const color of generateMonochromaticColors(10)) {
+    for (const color of generateSequentialMonochromaticColors(10)) {
       expect(color).toMatch(/^#[0-9a-f]{6}$/);
     }
   });
 
   it('starts with the lightest anchor color', () => {
-    expect(generateMonochromaticColors(10)[0]).toBe('#5ba27e');
+    expect(generateSequentialMonochromaticColors(10)[0]).toBe('#5ba27e');
   });
 
   it('ends with the darkest anchor color', () => {
-    const colors = generateMonochromaticColors(10);
+    const colors = generateSequentialMonochromaticColors(10);
     expect(colors[colors.length - 1]).toBe('#0b1e15');
   });
 
   it('returns just the start color when count is 1', () => {
-    expect(generateMonochromaticColors(1)).toEqual(['#5ba27e']);
+    expect(generateSequentialMonochromaticColors(1)).toEqual(['#5ba27e']);
   });
 
   it('returns start and end when count is 2', () => {
-    expect(generateMonochromaticColors(2)).toEqual(['#5ba27e', '#0b1e15']);
+    expect(generateSequentialMonochromaticColors(2)).toEqual([
+      '#5ba27e',
+      '#0b1e15',
+    ]);
   });
 
   it('throws RangeError for count below 1', () => {
-    expect(() => generateMonochromaticColors(0)).toThrow(RangeError);
+    expect(() => generateSequentialMonochromaticColors(0)).toThrow(RangeError);
   });
 });
 
