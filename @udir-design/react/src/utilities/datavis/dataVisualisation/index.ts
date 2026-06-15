@@ -75,7 +75,7 @@ function interpolateRgb(start: string, end: string, t: number): string {
 }
 
 /**
- * Generates a monochromatic color palette by interpolating between the
+ * Generates a sequential monochromatic color palette by interpolating between the
  * lightest and darkest palette anchors. Returns hex color strings.
  *
  * Unlike `getSequentialMonochromaticColors`, this function is not limited
@@ -87,13 +87,15 @@ function interpolateRgb(start: string, end: string, t: number): string {
  *
  * @example
  * ```tsx
- * import { generateMonochromaticColors } from '@udir-design/react/alpha/utilities';
+ * import { generateSequentialMonochromaticColors } from '@udir-design/react/alpha/utilities';
  *
- * const colors = generateMonochromaticColors(10);
+ * const colors = generateSequentialMonochromaticColors(10);
  * // ['#5ba27e', '#4f9272', ..., '#0b1e15']
  * ```
  */
-export function generateMonochromaticColors(count: number): readonly string[] {
+export function generateSequentialMonochromaticColors(
+  count: number,
+): readonly string[] {
   if (count < 1) {
     throw new RangeError(`count must be at least 1, got ${count}`);
   }
