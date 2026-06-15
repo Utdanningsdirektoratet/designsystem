@@ -126,6 +126,14 @@ describe('getHighchartsTheme', () => {
     ]);
   });
 
+  it('returns a fresh colors array each call', () => {
+    const theme = getHighchartsTheme();
+
+    theme.colors?.push('mutated');
+
+    expect(getHighchartsTheme().colors).toEqual([...getCategoricalColors()]);
+  });
+
   it('returns equivalent theme values each call', () => {
     expect(getHighchartsTheme()).toEqual(getHighchartsTheme());
   });
