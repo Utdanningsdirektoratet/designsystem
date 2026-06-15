@@ -9,6 +9,7 @@ import { Button } from 'src/components/button';
 import { Card } from 'src/components/card';
 import { Heading } from 'src/components/typography/heading';
 import { Paragraph } from 'src/components/typography/paragraph';
+import { Prose } from 'src/components/typography/prose';
 import { Skeleton } from './Skeleton';
 
 const meta = preview.meta({
@@ -286,7 +287,7 @@ export const Text = meta.story({
 }`}
       </style>
       <div className="example-text">
-        <div className="example-text-column">
+        <Prose className="example-text-column">
           <Heading>Den kjekkaste leiken</Heading>
           <Paragraph data-size="sm">
             Det er verken dyrt eller komplisert å leggje til rette for den
@@ -294,15 +295,15 @@ export const Text = meta.story({
             Det ønskte forskarar i forskingsprosjektet «EnCompetence» å finne
             ut, og dei ville spesielt sjå på situasjonar med fysisk aktivitet.
           </Paragraph>
-        </div>
-        <div className="example-text-column">
+        </Prose>
+        <Prose className="example-text-column">
           <Heading>
             <Skeleton {...args}>Den kjekkaste leiken</Skeleton>
           </Heading>
           <Paragraph data-size="sm">
             <Skeleton width={275} {...args} />
           </Paragraph>
-        </div>
+        </Prose>
       </div>
     </>
   ),
