@@ -2,6 +2,7 @@ import { useDebounceCallback } from '@digdir/designsystemet-react';
 import { useState } from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Chip } from 'src/components/chip';
 import { Divider } from 'src/components/divider';
 import { Field } from 'src/components/field';
@@ -92,6 +93,7 @@ export const Controlled = meta.story({
       flexDirection: 'column',
       gap: 'var(--ds-size-2)',
     },
+    docs: advancedCodeDocs,
   },
   render() {
     const [inputValue, setInputValue] = useState('');
@@ -256,16 +258,20 @@ export const Form = meta.story({
       </>
     );
   },
+  parameters: {
+    docs: advancedCodeDocs,
+  },
+  //transforming..
 });
 
 export const LiveSearch = meta.story({
   parameters: {
+    docs: advancedCodeDocs,
     customStyles: {
       display: 'flex',
       flexDirection: 'column',
       gap: 'var(--ds-size-2)',
     },
-    docs: { source: { type: 'code' } },
   },
   render(args) {
     const [value, setValue] = useState<string>('');

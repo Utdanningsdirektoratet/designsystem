@@ -135,7 +135,10 @@ export const Preview = meta.story({
 });
 
 export const WithoutDialogTriggerContext = meta.story({
-  parameters: { docs: advancedCodeDocs },
+  parameters: {
+    docs: advancedCodeDocs,
+    // transforming ...
+  },
   render(args) {
     const dialogRef = useRef<HTMLDialogElement>(null);
     return (

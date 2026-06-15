@@ -2,6 +2,7 @@ import { useDebounceCallback } from '@digdir/designsystemet-react';
 import { type InputEvent, useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from 'src/components/button';
 import { Details } from 'src/components/details';
 import { Divider } from 'src/components/divider';
@@ -478,11 +479,7 @@ export const FetchExternal = meta.story({
     );
   },
   parameters: {
-    docs: {
-      source: {
-        type: 'code',
-      },
-    },
+    docs: advancedCodeDocs,
   },
 });
 

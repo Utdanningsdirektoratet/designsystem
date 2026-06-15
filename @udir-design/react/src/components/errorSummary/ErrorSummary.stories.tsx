@@ -3,7 +3,7 @@ import { expect, userEvent, waitFor, within } from 'storybook/test';
 import { WithInertInitialRender } from '.storybook/decorators/WithInertInitialRender';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
-import { formatReactSource } from '.storybook/utils/sourceTransformers';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from 'src/components/button';
 import { Textfield } from 'src/components/textfield';
 import { ErrorSummary } from './ErrorSummary';
@@ -138,7 +138,10 @@ export const ShowHide = meta.story({
     await waitFor(() => expect(errorSummary).toHaveFocus());
   },
   parameters: {
-    docs: { source: { type: 'code', transform: formatReactSource } },
+    docs: {
+      ...advancedCodeDocs,
+      canvas: { sourceState: 'shown' },
+    },
     customStyles: {
       display: 'flex',
       flexDirection: 'column',

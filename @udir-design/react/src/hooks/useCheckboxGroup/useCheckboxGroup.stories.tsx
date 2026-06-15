@@ -1,6 +1,6 @@
 import preview from '.storybook/preview';
 import type { DecoratorType } from '.storybook/types';
-import { formatReactSource } from '.storybook/utils/sourceTransformers';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from 'src/components/button';
 import { Checkbox } from 'src/components/checkbox';
 import { Chip } from 'src/components/chip';
@@ -166,6 +166,10 @@ export const IndeterminateInTable = meta.story({
       </Table>
     );
   },
+  parameters: {
+    docs: advancedCodeDocs,
+  },
+  // transforming...
 });
 
 type Choices = {
@@ -240,6 +244,6 @@ export const Controlled = meta.story({
       gap: 'var(--ds-size-4)',
       flexDirection: 'column',
     },
-    docs: { source: { type: 'code', transform: formatReactSource } },
+    docs: advancedCodeDocs,
   },
 });

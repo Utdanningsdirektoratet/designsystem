@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Search } from 'src/components/search';
 import { usePagination } from 'src/hooks/usePagination';
 import { Pagination } from './Pagination';
@@ -232,4 +233,8 @@ export const WithAnchor = meta.story({
       </div>
     );
   },
+  parameters: {
+    docs: advancedCodeDocs,
+  },
+  // transforming...
 });

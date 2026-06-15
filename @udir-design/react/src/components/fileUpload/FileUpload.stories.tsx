@@ -19,6 +19,7 @@ const meta = preview.meta({
   },
   tags: ['udir'],
   parameters: {
+    docs: advancedCodeDocs,
     componentOrigin: {
       originator: 'self',
       details: 'Deler av implementasjonen er inspirert av Navs designsystem.',
