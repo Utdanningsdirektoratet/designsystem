@@ -1,6 +1,7 @@
 import { Card } from 'src/components/card';
 import { Paragraph } from 'src/components/typography/paragraph';
 import {
+  generateSequentialMonochromaticColors,
   getCategoricalColors,
   getSequentialDivergentColors,
   getSequentialMonochromaticColors,
@@ -55,6 +56,25 @@ export const DatavisSeqColorDisplay = () => {
     <div className={classes.containerNoGap}>
       <div className={classes.containerMd}>
         {datavisSeqMonoColors.map((color, index) => (
+          <div
+            key={index}
+            className={classes.swatchBox}
+            style={{ background: color }}
+          >
+            <Paragraph data-size="xs">{index + 1}</Paragraph>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export const DatavisGenSeqColorDisplay = () => {
+  const generatedColors = generateSequentialMonochromaticColors(16);
+  return (
+    <div className={classes.containerNoGap}>
+      <div className={classes.containerMd}>
+        {generatedColors.map((color, index) => (
           <div
             key={index}
             className={classes.swatchBox}
