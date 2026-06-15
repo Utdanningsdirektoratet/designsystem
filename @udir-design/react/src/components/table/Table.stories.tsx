@@ -442,6 +442,7 @@ export const StickyHeader = meta.story({
         <Heading className="example-heading">
           Ansattes utdanning fordelt på eiertype (ordinære), 2021
         </Heading>
+        {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- scrollable region needs tabIndex for keyboard access */}
         <div role="region" tabIndex={0} className="example-main">
           <Table {...args}>
             <caption className="ds-sr-only">
