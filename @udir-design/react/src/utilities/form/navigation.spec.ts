@@ -1,10 +1,11 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, expectTypeOf, it } from 'vitest';
 import {
   defineSteps,
   getFieldIds,
   getStepIds,
   makeStepFinder,
 } from './navigation';
+import type { GetFieldId, GetStepId } from './navigation';
 
 const stepsDefinition = defineSteps({
   firstStep: ['question1', 'question2'],
@@ -25,6 +26,23 @@ describe('defineSteps', () => {
       thirdStep: ['question4', 'question5', 'question6'],
     });
   });
+
+  it('preserves literal step and field ids for type inference', () => {
+    type StepId = GetStepId<typeof stepsDefinition>;
+    type FieldId = GetFieldId<typeof stepsDefinition>;
+
+    expectTypeOf<StepId>().toEqualTypeOf<
+      'firstStep' | 'secondStep' | 'thirdStep'
+    >();
+    expectTypeOf<FieldId>().toEqualTypeOf<
+      | 'question1'
+      | 'question2'
+      | 'question3'
+      | 'question4'
+      | 'question5'
+      | 'question6'
+    >();
+  });
 });
 
 describe('getStepIds', () => {
@@ -34,6 +52,14 @@ describe('getStepIds', () => {
       'secondStep',
       'thirdStep',
     ]);
+  });
+
+  it('returns a properly typed step id array', () => {
+    const stepIds = getStepIds(stepsDefinition);
+
+    expectTypeOf(stepIds).toEqualTypeOf<
+      Array<'firstStep' | 'secondStep' | 'thirdStep'>
+    >();
   });
 
   it('returns step ids in definition order', () => {
@@ -62,6 +88,21 @@ describe('getFieldIds', () => {
     ]);
   });
 
+  it('returns a properly typed field id array', () => {
+    const fieldIds = getFieldIds(stepsDefinition);
+
+    expectTypeOf(fieldIds).toEqualTypeOf<
+      Array<
+        | 'question1'
+        | 'question2'
+        | 'question3'
+        | 'question4'
+        | 'question5'
+        | 'question6'
+      >
+    >();
+  });
+
   it('returns fields in step order', () => {
     const steps = defineSteps({
       firstStep: ['question2', 'question1'],
@@ -86,6 +127,21 @@ describe('getFieldIds', () => {
 
 describe('makeStepFinder', () => {
   const findStepForField = makeStepFinder(stepsDefinition);
+
+  it('returns a properly typed lookup function', () => {
+    expectTypeOf(findStepForField).toEqualTypeOf<
+      (
+        field:
+          | 'question1'
+          | 'question2'
+          | 'question3'
+          | 'question4'
+          | 'question5'
+          | 'question6'
+          | (string & {}),
+      ) => 'firstStep' | 'secondStep' | 'thirdStep' | undefined
+    >();
+  });
 
   it('finds the correct step for a field in the first step', () => {
     expect(findStepForField('question1')).toBe('firstStep');
@@ -117,5 +173,17 @@ describe('makeStepFinder', () => {
   it('returns undefined for any field when step definition is empty', () => {
     const emptyFinder = makeStepFinder({});
     expect(emptyFinder('question1')).toBeUndefined();
+  });
+
+  it('skips empty steps when looking up a field in a later step', () => {
+    const sparseSteps = defineSteps({
+      firstStep: [],
+      secondStep: ['question2'],
+      thirdStep: [],
+    });
+    const sparseFinder = makeStepFinder(sparseSteps);
+
+    expect(sparseFinder('question2')).toBe('secondStep');
+    expect(sparseFinder('question1')).toBeUndefined();
   });
 });
