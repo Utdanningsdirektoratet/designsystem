@@ -3,6 +3,5 @@
  */
 
 export * from './readMore';
-export * from './table';
 export * from './toggleGroup';
 export * from './typography/prose';
