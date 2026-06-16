@@ -564,16 +564,11 @@ export const WithFormElements = meta.story({
   overflow: auto;
   padding: 0;
 }
-.example-table-body {
-  alignContent: 'start',
-  justifyContent: 'center',
-  alignItems: 'center',
-}
 .example-table-body-cell {
-  minWidth: 200px;
+  min-width: 200px;
 }
 .example-textfield {
-  minWidth: 250px;
+  min-width: 250px;
 }
 `}
         </style>
