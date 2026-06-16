@@ -54,10 +54,11 @@
     "watch:typedoc": "typedoc --watch --tsconfig tsconfig.lib.json",
     "serve:typedoc": "pnpm dlx http-server --port=8090 -c-1 ./storybook-static/typedoc",
     "serve:docs": "pnpm dlx http-server ./storybook-static",
-    "pretest": "pnpm pretest:storybook",
+    "pretest": "pnpm exec playwright install --with-deps chromium",
     "test": "vitest --outputFile.json test-reports/all.json",
+    "pretest:unit": "pnpm pretest",
     "test:unit": "vitest --project unit --outputFile.json test-reports/unit.json",
-    "pretest:storybook": "pnpm exec playwright install --with-deps chromium",
+    "pretest:storybook": "pnpm pretest",
     "test:storybook": "vitest --project storybook --outputFile.json test-reports/storybook.json --outputFile.html test-reports/storybook/index.html",
     "view-test-report:storybook": "pnpm dlx http-server ./test-reports/storybook"
   },
