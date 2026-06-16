@@ -4,4 +4,5 @@
  */
 export * from './stable';
 export * from './components/beta';
+// eslint-disable-next-line @typescript-eslint/consistent-type-exports
 export * from './hooks/beta';
