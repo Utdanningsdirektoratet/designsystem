@@ -870,16 +870,10 @@ export const MultipleHeaderRows = meta.story({
   text-align: center;
 }
 .example-table-body {
-  align-items: center;
+  text-align: right;
 }
 .example-table-body-headercell {
   text-align: left;
-}
-.example-table-body-cell {
-  minWidth: 200px;
-}
-.example-table-body-textfield {
-  minWidth: 250px;
 }
 `}
         </style>
