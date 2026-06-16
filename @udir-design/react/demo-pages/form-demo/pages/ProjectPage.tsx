@@ -20,7 +20,6 @@ import {
 export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
   const { register, formState, control } = useFormContext<FormValues>();
   const errors = showErrors ? formState.errors : {};
-
   return (
     <>
       <Heading level={2} data-size="sm">
