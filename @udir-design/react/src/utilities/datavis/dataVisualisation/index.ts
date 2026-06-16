@@ -64,19 +64,84 @@ function hexToRgb(hex: string): [number, number, number] {
 function rgbToHex(r: number, g: number, b: number): string {
   return (
     '#' +
-    [r, g, b].map((v) => Math.round(v).toString(16).padStart(2, '0')).join('')
+    [r, g, b]
+      .map((v) =>
+        Math.max(0, Math.min(255, Math.round(v)))
+          .toString(16)
+          .padStart(2, '0'),
+      )
+      .join('')
   );
 }
 
-function interpolateRgb(start: string, end: string, t: number): string {
-  const [r1, g1, b1] = hexToRgb(start);
-  const [r2, g2, b2] = hexToRgb(end);
-  return rgbToHex(r1 + t * (r2 - r1), g1 + t * (g2 - g1), b1 + t * (b2 - b1));
+/* ---- Oklab conversion (Björn Ottosson) ---- */
+
+function srgbToLinear(c: number): number {
+  const s = c / 255;
+  return s <= 0.04045 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+}
+
+function linearToSrgb(c: number): number {
+  const s = c <= 0.0031308 ? 12.92 * c : 1.055 * c ** (1 / 2.4) - 0.055;
+  return s * 255;
+}
+
+function linearRgbToOklab(
+  r: number,
+  g: number,
+  b: number,
+): [number, number, number] {
+  const l = Math.cbrt(0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b);
+  const m = Math.cbrt(0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b);
+  const s = Math.cbrt(0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b);
+  return [
+    0.2104542553 * l + 0.793617785 * m - 0.0040720468 * s,
+    1.9779984951 * l - 2.428592205 * m + 0.4505937099 * s,
+    0.0259040371 * l + 0.7827717662 * m - 0.808675766 * s,
+  ];
+}
+
+function oklabToLinearRgb(
+  L: number,
+  a: number,
+  b: number,
+): [number, number, number] {
+  const l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3;
+  const m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3;
+  const s = (L - 0.0894841775 * a - 1.291485548 * b) ** 3;
+  return [
+    +4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s,
+    -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s,
+    -0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s,
+  ];
+}
+
+function interpolateOklab(start: string, end: string, t: number): string {
+  const [r1, g1, b1] = hexToRgb(start).map(srgbToLinear) as [
+    number,
+    number,
+    number,
+  ];
+  const [r2, g2, b2] = hexToRgb(end).map(srgbToLinear) as [
+    number,
+    number,
+    number,
+  ];
+  const [L1, a1, ob1] = linearRgbToOklab(r1, g1, b1);
+  const [L2, a2, ob2] = linearRgbToOklab(r2, g2, b2);
+
+  const L = L1 + t * (L2 - L1);
+  const a = a1 + t * (a2 - a1);
+  const ob = ob1 + t * (ob2 - ob1);
+
+  const [lr, lg, lb] = oklabToLinearRgb(L, a, ob);
+  return rgbToHex(linearToSrgb(lr), linearToSrgb(lg), linearToSrgb(lb));
 }
 
 /**
  * Generates a sequential monochromatic color palette by interpolating between the
- * lightest and darkest palette anchors. Returns hex color strings.
+ * lightest and darkest palette anchors in the Oklab perceptual color space.
+ * Returns hex color strings with perceptually uniform lightness steps.
  *
  * Unlike `getSequentialMonochromaticColors`, this function is not limited
  * to 8 colors and always returns resolved hex values rather than CSS variable
@@ -90,7 +155,7 @@ function interpolateRgb(start: string, end: string, t: number): string {
  * import { generateSequentialMonochromaticColors } from '@udir-design/react/alpha/utilities';
  *
  * const colors = generateSequentialMonochromaticColors(10);
- * // ['#5ba27e', '#4f9272', ..., '#0b1e15']
+ * // ['#5ba27e', '#519470', ..., '#0b1e15']
  * ```
  */
 export function generateSequentialMonochromaticColors(
@@ -101,7 +166,7 @@ export function generateSequentialMonochromaticColors(
   }
   if (count === 1) return [MONOCHROMATIC_HEX_START];
   return Array.from({ length: count }, (_, i) =>
-    interpolateRgb(
+    interpolateOklab(
       MONOCHROMATIC_HEX_START,
       MONOCHROMATIC_HEX_END,
       i / (count - 1),
