@@ -26,6 +26,7 @@ export * from './input';
 export * from './link';
 export * from './list';
 export * from './logo';
+export * from './pagination';
 export * from './popover';
 export * from './progressBar';
 export * from './radio';
