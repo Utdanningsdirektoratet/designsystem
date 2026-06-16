@@ -54,11 +54,11 @@ exports[`Always Show All 1`] = `
       style="<removed>"
     >
       <u-option
+        selected
         role="option"
         aria-disabled="false"
         aria-selected="true"
         id="<removed>"
-        selected
         aria-hidden="false"
       >
         Sogndal
@@ -178,11 +178,11 @@ exports[`Controlled Independent Label Value 1`] = `
       <u-option
         label="Lars"
         value="#004"
+        selected
         role="option"
         aria-disabled="false"
         aria-selected="true"
         id="<removed>"
-        selected
         aria-hidden="false"
       >
         Lars
@@ -862,11 +862,11 @@ exports[`Default Value 1`] = `
       style="<removed>"
     >
       <u-option
+        selected
         role="option"
         aria-disabled="false"
         aria-selected="true"
         id="<removed>"
-        selected
         aria-hidden="false"
       >
         Sogndal
