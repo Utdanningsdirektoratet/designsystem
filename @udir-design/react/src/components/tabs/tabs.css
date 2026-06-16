@@ -46,6 +46,7 @@
 
   /* Tabpanel card variant */
   :is([role='tabpanel'], u-tabpanel)[data-variant='card'] {
+    background: var(--ds-color-surface-default);
     border: var(--ds-border-width-default) solid
       var(--dsc-tabs-list-border-color);
     border-top: none;

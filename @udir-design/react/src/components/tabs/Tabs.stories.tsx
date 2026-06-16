@@ -333,6 +333,11 @@ export const CardPanel = meta.story({
     defaultValue: 'value1',
     variant: 'card',
   },
+  parameters: {
+    customStyles: {
+      backgroundColor: 'var(--ds-color-background-tinted)',
+    },
+  },
   render: (args) => (
     <>
       <style>
