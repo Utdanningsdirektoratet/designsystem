@@ -31,6 +31,7 @@ export * from './popover';
 export * from './progressBar';
 export * from './radio';
 export * from './search';
+export * from './select';
 export * from './skipLink';
 export * from './spinner';
 export * from './switch';
