@@ -2,7 +2,6 @@
  * This file exports the components that are in the beta stage of development
  */
 
-export * from './chip';
 export * from './demoBanner';
 export * from './errorSummary';
 export * from './formNavigation';
