@@ -2,7 +2,6 @@
  * This file exports the components that are in the beta stage of development
  */
 
-export * from './errorSummary';
 export * from './formNavigation';
 export * from './header';
 export * from './pagination';
