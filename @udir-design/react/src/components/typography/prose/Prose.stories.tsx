@@ -26,7 +26,7 @@ const meta = preview.meta({
 });
 
 export const Preview = meta.story({
-  render: () => {
+  render: (args) => {
     return (
       <div
         style={{
@@ -34,7 +34,7 @@ export const Preview = meta.story({
           justifyContent: 'center',
         }}
       >
-        <Prose style={{ maxWidth: '50rem' }} data-testid="prose">
+        <Prose {...args} style={{ maxWidth: '50rem' }} data-testid="prose">
           <Alert>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </Alert>
@@ -203,7 +203,7 @@ const dummyData = [
 ];
 
 export const Headings = meta.story({
-  render: () => {
+  render: (args) => {
     return (
       <div
         style={{
@@ -211,7 +211,7 @@ export const Headings = meta.story({
           justifyContent: 'center',
         }}
       >
-        <Prose style={{ maxWidth: '50rem' }}>
+        <Prose {...args} style={{ maxWidth: '50rem' }}>
           <Heading level={1} data-size="2xl">
             Heading xxl
           </Heading>

@@ -46,4 +46,5 @@ export * from './tooltip';
 export * from './typography/heading';
 export * from './typography/label';
 export * from './typography/paragraph';
+export * from './typography/prose';
 export * from './typography/validationMessage';

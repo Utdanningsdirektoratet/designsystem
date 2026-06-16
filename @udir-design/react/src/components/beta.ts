@@ -4,4 +4,3 @@
 
 export * from './readMore';
 export * from './toggleGroup';
-export * from './typography/prose';
