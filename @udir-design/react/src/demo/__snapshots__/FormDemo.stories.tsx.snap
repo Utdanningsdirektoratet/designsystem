@@ -218,24 +218,6 @@ exports[`Form Page 2 1`] = `
           </textarea>
         </div>
       </ds-field>
-      <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
-          Dato for prosjektstart
-        </label>
-        <div>
-          <div>
-            <input
-              placeholder="dd.mm.åååå"
-              id="<removed>"
-              type="text"
-              value="16.06.2026"
-            >
-          </div>
-        </div>
-      </ds-field>
       <fieldset
         id="<removed>"
         tabindex="-1"
@@ -759,7 +741,7 @@ exports[`Form Page 3 1`] = `
     >
       <button
         data-icon="true"
-        commandfor="_r_e_"
+        commandfor="_r_d_"
         data-variant="tertiary"
         type="button"
         aria-label="Lukk dialogvindu"
@@ -1119,7 +1101,7 @@ exports[`Form Page 4 1`] = `
     >
       <button
         data-icon="true"
-        commandfor="_r_n_"
+        commandfor="_r_m_"
         data-variant="tertiary"
         type="button"
         aria-label="Lukk dialogvindu"
@@ -1399,7 +1381,7 @@ exports[`Form Page 5 1`] = `
     >
       <button
         data-icon="true"
-        commandfor="_r_t_"
+        commandfor="_r_s_"
         data-variant="tertiary"
         type="button"
         aria-label="Lukk dialogvindu"

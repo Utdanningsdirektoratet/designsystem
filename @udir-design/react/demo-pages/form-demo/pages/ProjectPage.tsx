@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { counties } from '.storybook/data';
 import { Field } from 'src/components/field';
@@ -12,7 +11,6 @@ import { Textfield } from 'src/components/textfield';
 import { Heading } from 'src/components/typography/heading';
 import { Label } from 'src/components/typography/label';
 import { ValidationMessage } from 'src/components/typography/validationMessage';
-import { DatePickerField } from '../DatePickerField';
 import {
   type FormValues,
   type PageProps,
@@ -21,12 +19,8 @@ import {
 
 export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
   const { register, formState, control } = useFormContext<FormValues>();
-  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const errors = showErrors ? formState.errors : {};
 
-  const handleChange = (date: Date | null) => {
-    setSelectedDate(date);
-  };
   return (
     <>
       <Heading level={2} data-size="sm">
@@ -52,13 +46,6 @@ export const ProjectPage = ({ showErrors, isSubmitSuccessful }: PageProps) => {
         readOnly={isSubmitSuccessful}
         autoComplete="off"
         required
-      />
-      <DatePickerField
-        id="projectDate"
-        label="Dato for prosjektstart"
-        selected={selectedDate}
-        onChange={handleChange}
-        readOnly={isSubmitSuccessful}
       />
       <Fieldset id="projectCategory" {...focusableFieldsetProps}>
         <Fieldset.Legend>
