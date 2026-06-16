@@ -230,7 +230,7 @@ export const TooManyFiles = meta.story({
   render: (args) => {
     const [files, setFiles] = useState<File[]>([
       new File(['abc'.repeat(100000)], 'eksempel1.pdf'),
-      new File(['abc'.repeat(10000)], 'eksempel2.docx'),
+      new File(['abc'.repeat(3000)], 'eksempel2.docx'),
       new File(['abc'.repeat(1000000)], 'eksempel3.png'),
     ]);
 
