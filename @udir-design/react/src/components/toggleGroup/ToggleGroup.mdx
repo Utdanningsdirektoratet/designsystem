@@ -37,17 +37,17 @@ import { ToggleGroup } from '@udir-design/react';
 
 ## Varianter av ToggleGroup
 
-`ToggleGroup` har to varianter, `primary` og `secondary`. Hvilken man bruker avhenger av hvor framtredende valgene skal være.
+`ToggleGroup` har to varianter, `primary` og `secondary`, der `secondary` er standard. Hvilken man bruker avhenger av hvor framtredende valgene skal være.
 
 ### Primary ToggleGroup
 
-Dette er den mest framtredende varianten.
+Dette er den mest framtredende varianten, og brukes kun når valgene i `ToggleGroup` er primærhandlingen på siden. Den skal ikke brukes dersom det allerede er en primærknapp på siden.
 
 <Canvas of={ToggleGroupStories.Primary} />
 
 ### Secondary ToggleGroup
 
-Denne varianten kan brukes for å tone ned viktigheten av valgene i forhold til andre valg eller handlinger på siden.
+Dette er den mest nøytrale varianten, og er et godt valg i de fleste tilfeller.
 
 <Canvas of={ToggleGroupStories.Secondary} />
 
