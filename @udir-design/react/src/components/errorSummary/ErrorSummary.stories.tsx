@@ -3,7 +3,7 @@ import { expect, userEvent, waitFor, within } from 'storybook/test';
 import { WithInertInitialRender } from '.storybook/decorators/WithInertInitialRender';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
-import { formatReactSource } from '.storybook/utils/sourceTransformers';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from 'src/components/button';
 import { Textfield } from 'src/components/textfield';
 import { ErrorSummary } from './ErrorSummary';
@@ -15,6 +15,13 @@ import { ErrorSummaryList } from './docs/FakeErrorSummaryList';
 
 const meta = preview.meta({
   component: FakeErrorSummary,
+  argTypes: {
+    asChild: {
+      description:
+        '**@deprecated** This is not supported anymore, as the element needs to be `ds-error-summary`',
+      control: false,
+    },
+  },
   subcomponents: {
     'ErrorSummary.Heading': ErrorSummaryHeading,
     'ErrorSummary.Item': ErrorSummaryItem,
@@ -99,6 +106,15 @@ export const WithForm = meta.story({
 });
 
 export const ShowHide = meta.story({
+  parameters: {
+    docs: advancedCodeDocs,
+    customStyles: {
+      display: 'flex',
+      flexDirection: 'column',
+      placeItems: 'center',
+      gap: 'var(--ds-size-4)',
+    },
+  },
   render: () => {
     const [show, setShow] = useState(false);
 
@@ -136,14 +152,5 @@ export const ShowHide = meta.story({
     const errorSummary = canvas.getByTestId('show-hide');
     await expect(errorSummary).toBeVisible();
     await waitFor(() => expect(errorSummary).toHaveFocus());
-  },
-  parameters: {
-    docs: { source: { type: 'code', transform: formatReactSource } },
-    customStyles: {
-      display: 'flex',
-      flexDirection: 'column',
-      placeItems: 'center',
-      gap: 'var(--ds-size-4)',
-    },
   },
 });

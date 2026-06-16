@@ -44,8 +44,12 @@ export default defineConfig({
       {
         test: {
           name: 'unit',
-          globals: true,
-          environment: 'jsdom',
+          browser: {
+            enabled: true,
+            instances: [{ browser: 'chromium' }],
+            provider: playwright(),
+            headless: true,
+          },
           setupFiles: ['./vitest.setup.ts'],
           include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
         },

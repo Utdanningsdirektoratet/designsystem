@@ -7,6 +7,7 @@ import z from 'zod';
 import { BulletListIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from 'src/components/button';
 import { Dialog } from 'src/components/dialog';
 import { Textfield } from 'src/components/textfield';
@@ -46,7 +47,6 @@ const meta = preview.meta({
 });
 
 export const Preview = meta.story({
-  args: {},
   render(args) {
     const { getStepProps, getGroupProps } = useFormNavigation<
       'step' | 'step-1' | 'step-2'
@@ -104,7 +104,6 @@ export const Preview = meta.story({
 });
 
 export const Grouping = meta.story({
-  args: {},
   render(args) {
     const { getStepProps, getGroupProps } = useFormNavigation<
       'step1' | 'step2'
@@ -130,7 +129,6 @@ export const Grouping = meta.story({
 });
 
 export const LongStepNames = meta.story({
-  args: {},
   render(args) {
     const { getStepProps, getGroupProps } = useFormNavigation<
       'step1' | 'step2' | 'step3' | 'step4'
@@ -141,7 +139,7 @@ export const LongStepNames = meta.story({
       <FormNavigation {...args} style={{ width: '200px' }}>
         <FormNavigation.Group
           title="Utdanningsprogram"
-          {...getGroupProps(['step1', 'step2'])}
+          {...getGroupProps(['step1', 'step2', 'step3', 'step4'])}
         >
           <FormNavigation.Step {...getStepProps('step1')}>
             Bygg- og anleggsteknikk
@@ -162,7 +160,6 @@ export const LongStepNames = meta.story({
 });
 
 export const SingleStep = meta.story({
-  args: {},
   render: (args) => (
     <FormNavigation {...args}>
       <FormNavigation.Step>Steg</FormNavigation.Step>
@@ -171,8 +168,6 @@ export const SingleStep = meta.story({
 });
 
 export const States = meta.story({
-  args: {},
-
   render: (args) => (
     <FormNavigation {...args}>
       <FormNavigation.Step variant="info">Infoside</FormNavigation.Step>
@@ -207,7 +202,6 @@ export const States = meta.story({
 });
 
 export const AllStates = meta.story({
-  args: {},
   render: (args) => (
     <div className={classes.allStatesPage}>
       <div className={classes.allStatesContainer}>
@@ -495,6 +489,7 @@ export const SimpleNavigation = meta.story({
                   {...register('step1', {
                     required: 'Fyll ut steg 1',
                   })}
+                  autoComplete="off"
                   error={errors.step1?.message}
                 />
               )}
@@ -505,6 +500,7 @@ export const SimpleNavigation = meta.story({
                   {...register('step2', {
                     required: 'Fyll ut steg 2',
                   })}
+                  autoComplete="off"
                   error={errors.step2?.message}
                   autoFocus
                 />
@@ -580,7 +576,7 @@ const heading = (stepId: StepId) => {
 };
 
 export const Full = meta.story({
-  parameters: { docs: { source: { type: 'code' } } },
+  parameters: { docs: advancedCodeDocs },
   args: { className: classes.navigation },
   render(args) {
     const onStepChange = async (_nextId: StepId, prevId: StepId | null) => {
@@ -741,6 +737,7 @@ export const Full = meta.story({
                   <Textfield
                     id="q1"
                     label="Første spørsmål"
+                    autoComplete="off"
                     {...register('q1')}
                     error={formErrors.q1?.message}
                     readOnly={isSubmitSuccessful}
@@ -748,6 +745,7 @@ export const Full = meta.story({
                   <Textfield
                     id="q2"
                     label="Andre spørsmål"
+                    autoComplete="off"
                     {...register('q2')}
                     error={formErrors.q2?.message}
                     readOnly={isSubmitSuccessful}
@@ -758,6 +756,7 @@ export const Full = meta.story({
                 <Textfield
                   id="q3"
                   label="Tredje spørsmål"
+                  autoComplete="off"
                   {...register('q3')}
                   error={formErrors.q3?.message}
                   readOnly={isSubmitSuccessful}
@@ -769,6 +768,7 @@ export const Full = meta.story({
                   <Textfield
                     id="q4"
                     label="Fjerde spørsmål"
+                    autoComplete="off"
                     {...register('q4')}
                     error={formErrors.q4?.message}
                     readOnly={isSubmitSuccessful}
@@ -777,6 +777,7 @@ export const Full = meta.story({
                   <Textfield
                     id="q5"
                     label="Femte spørsmål"
+                    autoComplete="off"
                     {...register('q5')}
                     error={formErrors.q5?.message}
                     readOnly={isSubmitSuccessful}
@@ -787,6 +788,7 @@ export const Full = meta.story({
                 <Textfield
                   id="q6"
                   label="Sjette spørsmål"
+                  autoComplete="off"
                   {...register('q6')}
                   error={formErrors.q6?.message}
                   readOnly={isSubmitSuccessful}
@@ -797,6 +799,7 @@ export const Full = meta.story({
                 <Textfield
                   id="q7"
                   label="Syvende spørsmål"
+                  autoComplete="off"
                   {...register('q7')}
                   error={formErrors.q7?.message}
                   readOnly={isSubmitSuccessful}

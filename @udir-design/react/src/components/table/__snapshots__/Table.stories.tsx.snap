@@ -1,13 +1,28 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Column And Row Headers 1`] = `
+<style>
+  .example-caption {
+  font-size: var(--ds-font-size-3);
+  caption-side: bottom;
+  text-align: center;
+  font-weight: normal;
+  margin-top: var(--ds-size-2);
+}
+.example-table-body {
+  text-align: right;
+}
+.example-table-body-headercell {
+  text-align: left;
+}
+</style>
 <table
   data-hover="true"
   data-color="accent"
   data-tinted-column-header="true"
   data-tinted-row-header="true"
 >
-  <caption style="<removed>">
+  <caption>
     Svarprosent for elevundersøkelsen nasjonalt
   </caption>
   <thead>
@@ -15,22 +30,19 @@ exports[`Column And Row Headers 1`] = `
       <td>
       </td>
       <th scope="col">
-        2022–23
+        2022-23
       </th>
       <th scope="col">
-        2023–24
+        2023-24
       </th>
       <th scope="col">
-        2024–25
+        2024-25
       </th>
     </tr>
   </thead>
-  <tbody style="<removed>">
+  <tbody>
     <tr>
-      <th
-        scope="row"
-        style="<removed>"
-      >
+      <th scope="row">
         8. trinn
       </th>
       <td>
@@ -44,10 +56,7 @@ exports[`Column And Row Headers 1`] = `
       </td>
     </tr>
     <tr>
-      <th
-        scope="row"
-        style="<removed>"
-      >
+      <th scope="row">
         9. trinn
       </th>
       <td>
@@ -61,10 +70,7 @@ exports[`Column And Row Headers 1`] = `
       </td>
     </tr>
     <tr>
-      <th
-        scope="row"
-        style="<removed>"
-      >
+      <th scope="row">
         10. trinn
       </th>
       <td>
@@ -78,10 +84,7 @@ exports[`Column And Row Headers 1`] = `
       </td>
     </tr>
     <tr>
-      <th
-        scope="row"
-        style="<removed>"
-      >
+      <th scope="row">
         Vg1
       </th>
       <td>
@@ -95,10 +98,7 @@ exports[`Column And Row Headers 1`] = `
       </td>
     </tr>
     <tr>
-      <th
-        scope="row"
-        style="<removed>"
-      >
+      <th scope="row">
         Vg2
       </th>
       <td>
@@ -112,10 +112,7 @@ exports[`Column And Row Headers 1`] = `
       </td>
     </tr>
     <tr>
-      <th
-        scope="row"
-        style="<removed>"
-      >
+      <th scope="row">
         Vg3
       </th>
       <td>
@@ -216,126 +213,150 @@ exports[`Expandable Rows 1`] = `
 `;
 
 exports[`Fixed Table 1`] = `
-<div>
-  <table
-    id="<removed>"
-    style="<removed>"
-  >
-    <caption>
-      Tildeling skolebibliotek 2024
-    </caption>
-    <thead>
-      <tr>
-        <th>
-          Kommune
-        </th>
-        <th>
-          Tildeling (kr)
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          Bjerkreim kommune
-        </td>
-        <td style="<removed>">
-          330 000
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Færder kommune
-        </td>
-        <td style="<removed>">
-          750 000
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Gjøvik kommune
-        </td>
-        <td style="<removed>">
-          150 000
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Hurdal kommune
-        </td>
-        <td style="<removed>">
-          550 000
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Marker kommune
-        </td>
-        <td style="<removed>">
-          900 000
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <ds-pagination
-    aria-label="Bla i sider"
-    role="navigation"
-  >
-    <ul>
-      <li>
-        <button
-          data-variant="tertiary"
-          type="button"
-          aria-label="Forrige side"
-          aria-hidden="true"
-        >
-          Forrige
-        </button>
-      </li>
-      <li>
-        <button
-          data-variant="tertiary"
-          type="button"
-          aria-label="Side 1"
-          aria-current="true"
-        >
-          1
-        </button>
-      </li>
-      <li>
-        <button
-          data-variant="tertiary"
-          type="button"
-          aria-label="Side 2"
-        >
-          2
-        </button>
-      </li>
-      <li>
-        <button
-          data-variant="tertiary"
-          type="button"
-          aria-label="Side 3"
-        >
-          3
-        </button>
-      </li>
-      <li>
-        <button
-          data-variant="tertiary"
-          type="button"
-          aria-label="Neste side"
-          aria-hidden="false"
-        >
-          Neste
-        </button>
-      </li>
-    </ul>
-  </ds-pagination>
-</div>
+<style>
+  .example-main {
+  height: 420px;
+  width: 580px;
+  overflow: auto;
+  padding: 0;
+}
+.example-table {
+  table-layout: fixed;
+  margin-bottom: 12px;
+}
+.example-table-body-cell {
+  font-feature-settings: "'tnum' 1",
+}
+.example-textfield {
+  min-width: 250px;
+}
+</style>
+<table id="<removed>">
+  <caption>
+    Tildeling skolebibliotek 2024
+  </caption>
+  <thead>
+    <tr>
+      <th>
+        Kommune
+      </th>
+      <th>
+        Tildeling (kr)
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Bjerkreim kommune
+      </td>
+      <td>
+        330 000
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Færder kommune
+      </td>
+      <td>
+        750 000
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Gjøvik kommune
+      </td>
+      <td>
+        150 000
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Hurdal kommune
+      </td>
+      <td>
+        550 000
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Marker kommune
+      </td>
+      <td>
+        900 000
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ds-pagination
+  aria-label="Bla i sider"
+  role="navigation"
+>
+  <ul>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+        aria-label="Forrige side"
+        aria-hidden="true"
+      >
+        Forrige
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+        aria-label="Side 1"
+        aria-current="true"
+      >
+        1
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+        aria-label="Side 2"
+      >
+        2
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+        aria-label="Side 3"
+      >
+        3
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+        aria-label="Neste side"
+        aria-hidden="false"
+      >
+        Neste
+      </button>
+    </li>
+  </ul>
+</ds-pagination>
 `;
 
 exports[`Multiple Header Rows 1`] = `
+<style>
+  .example-table-head-headercell {
+  text-align: center;
+}
+.example-table-body {
+  text-align: right;
+}
+.example-table-body-headercell {
+  text-align: left;
+}
+</style>
 <table
   data-zebra="true"
   data-color="support1"
@@ -344,18 +365,21 @@ exports[`Multiple Header Rows 1`] = `
 >
   <thead>
     <tr>
-      <td>
-      </td>
-      <th
-        colspan="5"
-        style="<removed>"
-      >
+      <th scope="col">
+        <span>
+          Radkategori
+        </span>
+      </th>
+      <th colspan="5">
         Trives du på skolen?
       </th>
     </tr>
     <tr>
-      <td>
-      </td>
+      <th scope="col">
+        <span>
+          Radkategori
+        </span>
+      </th>
       <th>
         Trives ikke i det hele tatt
       </th>
@@ -373,12 +397,9 @@ exports[`Multiple Header Rows 1`] = `
       </th>
     </tr>
   </thead>
-  <tbody style="<removed>">
+  <tbody>
     <tr>
-      <th
-        scope="row"
-        style="<removed>"
-      >
+      <th scope="row">
         Idrettsfag
       </th>
       <td>
@@ -398,10 +419,7 @@ exports[`Multiple Header Rows 1`] = `
       </td>
     </tr>
     <tr>
-      <th
-        scope="row"
-        style="<removed>"
-      >
+      <th scope="row">
         Medier og kommunikasjon
       </th>
       <td>
@@ -421,10 +439,7 @@ exports[`Multiple Header Rows 1`] = `
       </td>
     </tr>
     <tr>
-      <th
-        scope="row"
-        style="<removed>"
-      >
+      <th scope="row">
         Musikk, dans og drama
       </th>
       <td>
@@ -444,10 +459,7 @@ exports[`Multiple Header Rows 1`] = `
       </td>
     </tr>
     <tr>
-      <th
-        scope="row"
-        style="<removed>"
-      >
+      <th scope="row">
         Studiespesialisering
       </th>
       <td>
@@ -510,7 +522,7 @@ exports[`Preview 1`] = `
         <ds-field data-clickdelegatefor="<removed>">
           <input
             id="<removed>"
-            aria-label="Velg [object Object]"
+            aria-label="Velg checkbox 1"
             type="checkbox"
             value="1"
             name="my-checkbox"
@@ -540,7 +552,7 @@ exports[`Preview 1`] = `
         <ds-field data-clickdelegatefor="<removed>">
           <input
             id="<removed>"
-            aria-label="Velg [object Object]"
+            aria-label="Velg checkbox 2"
             type="checkbox"
             value="2"
             name="my-checkbox"
@@ -570,7 +582,7 @@ exports[`Preview 1`] = `
         <ds-field data-clickdelegatefor="<removed>">
           <input
             id="<removed>"
-            aria-label="Velg [object Object]"
+            aria-label="Velg checkbox 3"
             type="checkbox"
             value="3"
             name="my-checkbox"
@@ -600,7 +612,7 @@ exports[`Preview 1`] = `
         <ds-field data-clickdelegatefor="<removed>">
           <input
             id="<removed>"
-            aria-label="Velg [object Object]"
+            aria-label="Velg checkbox 4"
             type="checkbox"
             value="4"
             name="my-checkbox"
@@ -630,7 +642,7 @@ exports[`Preview 1`] = `
         <ds-field data-clickdelegatefor="<removed>">
           <input
             id="<removed>"
-            aria-label="Velg [object Object]"
+            aria-label="Velg checkbox 5"
             type="checkbox"
             value="5"
             name="my-checkbox"
@@ -769,14 +781,33 @@ exports[`Sortable 1`] = `
 `;
 
 exports[`Sticky Header 1`] = `
-<h2 style="<removed>">
+<style>
+  .example-heading {
+  margin-bottom: var(--ds-size-3);
+}
+.example-main {
+  height: 420px;
+  width: 580px;
+  overflow: auto;
+  padding: 0;
+}
+.example-table-body {
+  text-align: right;
+}
+.example-table-body-headercell {
+  text-align: left;
+}
+</style>
+<h2>
   Ansattes utdanning fordelt på eiertype (ordinære), 2021
 </h2>
-<div style="<removed>">
+<div
+  role="region"
+  tabindex="0"
+>
   <table
     data-sticky-header="true"
     data-zebra="true"
-    tabindex="0"
     data-color="support1"
     data-tinted-column-header="true"
     data-tinted-row-header="true"
@@ -786,8 +817,11 @@ exports[`Sticky Header 1`] = `
     </caption>
     <thead>
       <tr>
-        <td>
-        </td>
+        <th scope="col">
+          <span>
+            Radkategori
+          </span>
+        </th>
         <th>
           5 store
         </th>
@@ -805,12 +839,9 @@ exports[`Sticky Header 1`] = `
         </th>
       </tr>
     </thead>
-    <tbody style="<removed>">
+    <tbody>
       <tr>
-        <th
-          scope="row"
-          style="<removed>"
-        >
+        <th scope="row">
           Barnehagelærer
         </th>
         <td>
@@ -830,10 +861,7 @@ exports[`Sticky Header 1`] = `
         </td>
       </tr>
       <tr>
-        <th
-          scope="row"
-          style="<removed>"
-        >
+        <th scope="row">
           Annen pedagogisk utdanning
         </th>
         <td>
@@ -853,10 +881,7 @@ exports[`Sticky Header 1`] = `
         </td>
       </tr>
       <tr>
-        <th
-          scope="row"
-          style="<removed>"
-        >
+        <th scope="row">
           Annen høyere utdanning
         </th>
         <td>
@@ -876,10 +901,7 @@ exports[`Sticky Header 1`] = `
         </td>
       </tr>
       <tr>
-        <th
-          scope="row"
-          style="<removed>"
-        >
+        <th scope="row">
           Barne- og ungdomsarbeider
         </th>
         <td>
@@ -899,10 +921,7 @@ exports[`Sticky Header 1`] = `
         </td>
       </tr>
       <tr>
-        <th
-          scope="row"
-          style="<removed>"
-        >
+        <th scope="row">
           Annet fagarbeider
         </th>
         <td>
@@ -922,10 +941,7 @@ exports[`Sticky Header 1`] = `
         </td>
       </tr>
       <tr>
-        <th
-          scope="row"
-          style="<removed>"
-        >
+        <th scope="row">
           Annen bakgrunn
         </th>
         <td>
@@ -1032,6 +1048,20 @@ exports[`With Border 1`] = `
 `;
 
 exports[`With Form Elements 1`] = `
+<style>
+  .example-main {
+  height: 420px;
+  width: 580px;
+  overflow: auto;
+  padding: 0;
+}
+.example-table-body-cell {
+  min-width: 200px;
+}
+.example-textfield {
+  min-width: 250px;
+}
+</style>
 <table>
   <thead>
     <tr>
@@ -1060,7 +1090,7 @@ exports[`With Form Elements 1`] = `
       </th>
     </tr>
   </thead>
-  <tbody style="<removed>">
+  <tbody>
     <tr>
       <td>
         <ds-field data-clickdelegatefor="<removed>">
@@ -1076,33 +1106,36 @@ exports[`With Form Elements 1`] = `
       <td>
         1.
       </td>
-      <td style="<removed>">
+      <td>
         <ds-field data-size="sm">
           <div>
             <input
               aria-label="Textfield 1-1"
+              autocomplete="off"
               type="text"
               value="Trives du på skolen?"
             >
           </div>
         </ds-field>
       </td>
-      <td style="<removed>">
+      <td>
         <ds-field data-size="sm">
           <div>
             <input
               aria-label="Textfield 1-2"
+              autocomplete="off"
               type="text"
               value="Trives ikke noe særlig"
             >
           </div>
         </ds-field>
       </td>
-      <td style="<removed>">
+      <td>
         <ds-field data-size="sm">
           <div>
             <input
               aria-label="Textfield 1-3"
+              autocomplete="off"
               type="text"
               value="Trives godt"
             >
@@ -1114,7 +1147,7 @@ exports[`With Form Elements 1`] = `
       <td>
         <ds-field data-clickdelegatefor="<removed>">
           <input
-            aria-label="Check 1"
+            aria-label="Check 2"
             id="<removed>"
             type="checkbox"
             value="2"
@@ -1127,13 +1160,11 @@ exports[`With Form Elements 1`] = `
         2.
       </td>
       <td>
-        <ds-field
-          data-size="sm"
-          style="<removed>"
-        >
+        <ds-field data-size="sm">
           <div>
             <input
-              aria-label="Textfield 1-1"
+              aria-label="Textfield 2-1"
+              autocomplete="off"
               type="text"
               value="Har du opplevd mobbing?"
             >
@@ -1144,7 +1175,8 @@ exports[`With Form Elements 1`] = `
         <ds-field data-size="sm">
           <div>
             <input
-              aria-label="Textfield 1-2"
+              aria-label="Textfield 2-2"
+              autocomplete="off"
               type="text"
               value="Sjelden"
             >
@@ -1156,7 +1188,8 @@ exports[`With Form Elements 1`] = `
           <div>
             <input
               cols="3"
-              aria-label="Textfield 1-3"
+              aria-label="Textfield 2-3"
+              autocomplete="off"
               type="text"
               value="Ofte"
             >

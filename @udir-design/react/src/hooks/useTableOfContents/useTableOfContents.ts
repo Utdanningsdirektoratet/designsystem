@@ -31,7 +31,9 @@ export const useTableOfContents = ({
     // See https://react.dev/reference/eslint-plugin-react-hooks/lints/set-state-in-effect#valid
     const ref = containerRef ?? { current: document.body };
     if (ref?.current) {
-      const sectionHeadings = Array.from(ref.current.querySelectorAll('h2,h3'))
+      const sectionHeadings = Array.from(
+        ref.current.querySelectorAll(headingSelector),
+      )
         .filter((node) => !node.hasAttribute('data-toc-ignore'))
         .flatMap((node) => {
           if (!node.id) {

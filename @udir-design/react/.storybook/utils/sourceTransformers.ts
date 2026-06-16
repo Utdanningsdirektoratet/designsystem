@@ -45,7 +45,11 @@ export const formatReactSource: SourceTransformer = async (
       .replace(/^render\(/, `function ${storyNamePascal}(`);
   }
 
-  return formatWithPrettier('typescript', srcToFormat);
+  try {
+    return await formatWithPrettier('typescript', srcToFormat);
+  } catch {
+    return srcToFormat;
+  }
 };
 
 /**

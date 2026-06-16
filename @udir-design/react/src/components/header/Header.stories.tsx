@@ -259,6 +259,40 @@ export const WithNavigationLinks = meta.story({
   ),
 });
 
+export const WithNavigationLinks_Test = meta.story({
+  render: (args) => (
+    <Header {...args}>
+      <Header.Navigation>
+        <Header.Navigation.Item href="#" active={false}>
+          Navlink 1
+        </Header.Navigation.Item>
+        <Header.Navigation.Item href="#" active>
+          Navlink 2
+        </Header.Navigation.Item>
+        <Header.Navigation.Item href="#" active={false}>
+          Navlink 3
+        </Header.Navigation.Item>
+      </Header.Navigation>
+    </Header>
+  ),
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step('Active navigation item has aria-current="page"', async () => {
+      const activeLink = canvas.getByRole('link', { name: 'Navlink 2' });
+      await expect(activeLink).toHaveAttribute('aria-current', 'page');
+    });
+
+    await step(
+      'Inactive navigation items do not have aria-current',
+      async () => {
+        const inactiveLink = canvas.getByRole('link', { name: 'Navlink 1' });
+        await expect(inactiveLink).not.toHaveAttribute('aria-current');
+      },
+    );
+  },
+});
+
 const menuLinks = [
   {
     heading: 'Designprofil',
@@ -368,6 +402,30 @@ export const WithMenu = meta.story({
       </Header>
     </>
   ),
+});
+
+export const WithMenu_Test = meta.story({
+  parameters: {
+    customStyles: { story: { height: 400 } },
+  },
+  render: WithMenu.input.render,
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const menuButton = canvas.getByRole('button', { name: /meny/i });
+
+    await step('Escape closes the menu', async () => {
+      await userEvent.click(menuButton);
+      const menu = canvasElement.querySelector('.uds-header__menu') as Element;
+      await waitFor(() => {
+        expect(menu.matches(':popover-open')).toBe(true);
+      });
+      // delay is necessary for test to pass when run through Vitest
+      await userEvent.keyboard('{Escape}', { delay: 500 });
+      await waitFor(() => {
+        expect(menu.matches(':popover-open')).toBe(false);
+      });
+    });
+  },
 });
 
 const themeMenu1 = Array.from({ length: 3 }, (_, i) => ({
@@ -784,6 +842,10 @@ export const Responsive = meta.story({
     row-gap: var(--ds-size-10);
     justify-items: center;
   }
+  .responsive-header-menu-user-button {
+    margin: 0 var(--ds-size-5);
+    justify-self: end;
+  }
   @media (max-width: 34.375rem) {
     .responsive-header-menu-nav {
       justify-items: flex-start;
@@ -807,8 +869,8 @@ export const Responsive = meta.story({
             avatar={<Avatar aria-hidden>SH</Avatar>}
           />
           <Dropdown id="usermenu2" placement="bottom-end" autoPlacement={false}>
+            <Dropdown.Heading>Bytt profil</Dropdown.Heading>
             <Dropdown.List>
-              <Dropdown.Heading>Bytt profil</Dropdown.Heading>
               <Dropdown.Item>
                 <Dropdown.Button aria-label="Grålum skole, 10 varsler">
                   <Badge.Position overlap="circle">
@@ -842,7 +904,7 @@ export const Responsive = meta.story({
               popoverTarget="usermenuInMenu"
               avatar={<Avatar aria-hidden>SH</Avatar>}
               data-hide="md"
-              style={{ width: 'stretch', margin: '0 var(--ds-size-5)' }}
+              className="responsive-header-menu-user-button"
             />
             <Dropdown
               id="usermenuInMenu"

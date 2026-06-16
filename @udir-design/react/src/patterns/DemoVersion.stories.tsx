@@ -18,7 +18,7 @@ import { Paragraph } from 'src/components/typography/paragraph';
 
 const meta = preview.meta({
   title: 'patterns/Demoversjon av tjenester',
-  tags: ['alpha', 'udir'],
+  tags: ['udir'],
   parameters: {
     componentOrigin: { originator: 'self' },
   },

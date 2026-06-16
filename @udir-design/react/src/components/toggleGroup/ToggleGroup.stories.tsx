@@ -355,10 +355,10 @@ export const Controlled = meta.story({
 });
 
 export const ToggleGroupInColorContext = meta.story({
-  args: Preview.input.args,
+  args: Primary.input.args,
   render: (args) => (
     <Card data-color="accent" variant="tinted">
-      {Preview.input.render(args)}
+      {Primary.input.render(args)}
     </Card>
   ),
   play: async ({ canvasElement, step }) => {

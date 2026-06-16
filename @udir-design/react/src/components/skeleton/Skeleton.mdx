@@ -5,39 +5,39 @@ import * as SkeletonStories from './Skeleton.stories';
 
 # Skeleton
 
-`Skeleton` kan brukes for å indikere at innhold på en side laster. I motsetning til [`Spinner`](/docs/components-loaders-spinner--docs) kan `Skeleton` gi brukeren en indikasjon på hvordan siden kommer til å se ut.
+`Skeleton` kan brukes til å vise at innhold på siden lastes inn. I motsetning til [`Spinner`](/docs/components-loaders-spinner--docs) gir `Skeleton` brukeren en indikasjon på hvordan siden vil se ut.
 
 **Passer til å**
 
-- laste innhold på siden
-- fortelle brukeren at en handling midlertidig har stoppet applikasjonen
+- vise at innhold på siden lastes inn
+- gi en indikasjon på hvordan innholdet vil se ut når det er lastet
 - fortelle brukeren at data blir lagret eller oppdatert
 
 **Passer ikke til å**
 
-- laste når innlasting tar mindre enn 1 sekund
+- vise innlasting når den tar mindre enn 1 sekund
+- indikere at systemet jobber med en oppgave som brukeren må vente på - bruk heller [`Spinner`](/docs/components-spinner--docs)
 
 ## Slik bruker du Skeleton
 
 <Canvas of={SkeletonStories.Preview} withToolbar />
 <Controls of={SkeletonStories.Preview} />
 
-## Varianter av Skeleton
+## Eksempler
 
-Skeleton kommer i tre ulike varianter: `circle`, `rectangle`, og `text`
+### Varianter av Skeleton
+
+`Skeleton` kommer i tre ulike varianter: `circle`, `rectangle`, og `text`.
 
 <Canvas of={SkeletonStories.Components} />
 
-### Text
-
-`variant="text"` skalerer automatisk etter den lokale fontstørrelsen, enten den kommer fra `parent`, `children` , eller fordi typografi-komponenter er satt til Skeletons gjennom `asChild`-propen.
-For best mulig resultat anbefaler vi at du bruker flere `variant="text"` med `width` til det antallet bokstaver du antar vil oppstå.
+`variant="text"` skalerer automatisk med den lokale fontstørrelsen, enten den kommer fra `parent`, `children` eller fordi typografi-komponenter er satt til `Skeleton` gjennom `asChild`-propen. For best mulig resultat anbefaler vi å bruke flere `variant="text"` og sette `width` til omtrent antall bokstaver du forventer.
 
 <Canvas of={SkeletonStories.Text} />
 
-## Eksempler
+### Komposisjon
 
-Du kan bygge opp komponenter og seksjoner av siden din ved å bruke disse variantene som byggeklosser. Målet er at resultatet skal etterligne innholdet som lastes.
+Du kan bygge opp komponenter og seksjoner på siden ved å bruke disse variantene som byggeklosser. Målet er at resultatet skal etterligne innholdet som lastes inn.
 
 <Canvas of={SkeletonStories.UsageExample} />
 
@@ -45,9 +45,9 @@ Du kan bygge opp komponenter og seksjoner av siden din ved å bruke disse varian
 
 ### Skalering av komponenten
 
-Alle varianter av skeleton har `height` og `width` props, som kan brukes til å manuelt sette størrelser. Du kan oppgi størrelsene i `px`, `%`, eller andre enheter som kan settes direkte på style.
-For `variant="text"` holder det ofte å sette kun `width` til det antallet bokstaver du antar vil oppstå, da høyden automatisk skaleres etter tekstinnholdet.
+Alle varianter av `Skeleton` har `height`- og `width`-props, som kan brukes til å sette størrelsen manuelt. Du kan oppgi størrelser i `px`, `%`, eller andre enheter som kan settes direkte på style-attributtet.
+For `variant="text"` holder det ofte å sette kun `width` til omtrent antall bokstaver du forventer, siden høyden skaleres automatisk etter tekstinnholdet.
 
-Skeleton vil også tilpasse seg etter `children` som du sender inn til komponenten, men barna vises ikke som selvstendige skeletons. I stedet vises ett stort skeleton med en høyde og bredde som matcher summen av samtlige barn.
+`Skeleton` vil også tilpasse seg etter `children` som du sender inn til komponenten, men barna vises ikke som selvstendige `Skeleton`-elementer. I stedet vises ett stort `Skeleton` med høyde og bredde som tilsvarer summen av alle barn.
 
 <Canvas of={SkeletonStories.Children} />

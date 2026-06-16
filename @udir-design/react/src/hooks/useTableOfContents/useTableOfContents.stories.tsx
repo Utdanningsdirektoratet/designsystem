@@ -101,7 +101,9 @@ export const Container = meta.story({
           consectetur arcu, at pharetra nunc ultricies in. Sed aliquam mi a odio
           varius, in eleifend orci elementum.
         </Paragraph>
-        <TableOfContents {...useTableOfContents({ containerRef })} />
+        <TableOfContents
+          {...useTableOfContents({ containerRef, headingSelector: 'h2' })}
+        />
         <Heading level={2} id="forste-overskrift" data-size="md">
           Første overskrift (h2)
         </Heading>
