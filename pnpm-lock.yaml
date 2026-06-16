@@ -127,8 +127,8 @@ catalogs:
       specifier: ^1.0.0
       version: 1.0.0
     '@u-elements/u-progress':
-      specifier: ^0.0.7
-      version: 0.0.7
+      specifier: ^1.0.1
+      version: 1.0.1
     '@vitejs/plugin-react-swc':
       specifier: ^4.3.1
       version: 4.3.1
@@ -574,7 +574,7 @@ importers:
         version: 1.0.0
       '@u-elements/u-progress':
         specifier: 'catalog:'
-        version: 0.0.7
+        version: 1.0.1
       '@udir-design/css':
         specifier: workspace:*
         version: link:../css
@@ -3397,8 +3397,8 @@ packages:
   '@u-elements/u-details@1.0.0':
     resolution: {integrity: sha512-CA0w0VTH/vWWouFWEw7XIws3RUCBm2dh7ity+sbDXgpc6yz5NkoMpeDTdB/DHpI+/YInULz0XLOTrw8b7KX3Qg==}
 
-  '@u-elements/u-progress@0.0.7':
-    resolution: {integrity: sha512-T2Q6jwWL60we4qiZCOPqnhEfoI2lOaUP3EmYYvnVpZ+iA8HVuqT+kgdQgACiVymfGWgIzapTcP6xaM02AvPa/A==}
+  '@u-elements/u-progress@1.0.1':
+    resolution: {integrity: sha512-19RM4/hPMPQtdZfOBac3i2nuEhT0x0uCevjoOCs34dJdQTo3XoxjanPCX+fdVwImwC30gHT6XM6YCxfQNUtHpA==}
 
   '@u-elements/u-tabs@1.0.3':
     resolution: {integrity: sha512-Jqd3YuwpWHZVrPx8qiLN4njsdQ/KZY6PbHsskC42mrnxkuR4LnnmWBoRPgcKrn7P74rRtm0MnPp0PMDZYbSorg==}
@@ -7595,6 +7595,7 @@ packages:
   tsconfck@3.1.6:
     resolution: {integrity: sha512-ks6Vjr/jEw0P1gmOVwutM3B7fWxoWBL2KRDb1JfqGVawBmO5UsvmWOQFGHBPl5yxYz4eERr19E6L7NMv+Fej4w==}
     engines: {node: ^18 || >=20}
+    deprecated: unmaintained
     hasBin: true
     peerDependencies:
       typescript: ^5.0.0
@@ -10359,7 +10360,7 @@ snapshots:
 
   '@u-elements/u-details@1.0.0': {}
 
-  '@u-elements/u-progress@0.0.7': {}
+  '@u-elements/u-progress@1.0.1': {}
 
   '@u-elements/u-tabs@1.0.3': {}
 
@@ -10370,7 +10371,7 @@ snapshots:
       '@digdir/designsystemet-web': 1.15.0
       '@radix-ui/react-slot': 1.2.4(@types/react@19.2.15)(react@19.2.6)
       '@u-elements/u-details': 1.0.0
-      '@u-elements/u-progress': 0.0.7
+      '@u-elements/u-progress': 1.0.1
       '@udir-design/css': link:@udir-design/css
       '@udir-design/icons': link:@udir-design/icons
       react: 19.2.6
