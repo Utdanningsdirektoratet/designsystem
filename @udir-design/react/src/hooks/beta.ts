@@ -12,7 +12,6 @@ export {
   type UseFormNavigationReturn,
   useFormNavigation,
 } from './useFormNavigation';
-export { type UsePaginationProps, usePagination } from './usePagination';
 export {
   useTableOfContents,
   type useTableOfContentsProps,

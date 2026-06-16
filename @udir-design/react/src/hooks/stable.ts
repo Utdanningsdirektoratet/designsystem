@@ -9,4 +9,5 @@ export {
   type UseCheckboxGroupProps,
   useCheckboxGroup,
 } from './useCheckboxGroup';
+export { type UsePaginationProps, usePagination } from './usePagination';
 export { type UseRadioGroupProps, useRadioGroup } from './useRadioGroup';
