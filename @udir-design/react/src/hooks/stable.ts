@@ -11,3 +11,8 @@ export {
 } from './useCheckboxGroup';
 export { type UsePaginationProps, usePagination } from './usePagination';
 export { type UseRadioGroupProps, useRadioGroup } from './useRadioGroup';
+export {
+  useTableOfContents,
+  type useTableOfContentsProps,
+  type useTableOfContentsReturn,
+} from './useTableOfContents';
