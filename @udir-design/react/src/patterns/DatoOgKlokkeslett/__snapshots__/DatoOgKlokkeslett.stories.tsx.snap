@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Preview 1`] = `
+<style>
+  .example-main {
+            display: flex;
+            justify-content: center;
+        }
+</style>
+<div>
+  <ds-field>
+    <label
+      data-weight="medium"
+      for="<removed>"
+    >
+      Dato for prosjektstart
+    </label>
+    <div>
+      <div>
+        <input
+          placeholder="dd.mm.åååå"
+          id="<removed>"
+          required
+          type="text"
+          value="16.06.2026"
+        >
+      </div>
+    </div>
+  </ds-field>
+</div>
+`;
