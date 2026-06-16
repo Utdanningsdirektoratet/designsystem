@@ -3,7 +3,6 @@
  */
 
 export * from './readMore';
-export * from './skeleton';
 export * from './table';
 export * from './toggleGroup';
 export * from './typography/prose';
