@@ -16,7 +16,7 @@
   padding: var(--ds-size-2);
 }
 
-/* Hide default header — we render our own */
+/* Hide default header */
 .uds-datepicker .react-datepicker__header {
   background: none;
   border: none;
@@ -61,7 +61,7 @@
   color: var(--ds-color-accent-base-contrast-default);
 }
 
-/* Keyboard-selected (not yet confirmed) */
+/* Keyboard-selected */
 .uds-datepicker .react-datepicker__day--keyboard-selected {
   background-color: var(--ds-color-accent-surface-default);
   color: var(--ds-color-neutral-text-default);

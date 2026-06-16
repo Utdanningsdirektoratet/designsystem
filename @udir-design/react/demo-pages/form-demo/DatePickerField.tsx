@@ -1,34 +1,58 @@
-import { forwardRef } from 'react';
-import DatePicker from 'react-datepicker';
+import { type ReactNode, forwardRef } from 'react';
+import DatePicker, {
+  type ReactDatePickerCustomHeaderProps,
+} from 'react-datepicker';
 import { ChevronLeftIcon, ChevronRightIcon } from '@udir-design/icons';
 import { Button } from 'src/components/button';
 import { Field } from 'src/components/field';
-import { Input } from 'src/components/input';
+import { Input, type InputProps } from 'src/components/input';
 import { Label } from 'src/components/typography/label';
 // eslint-disable-next-line no-restricted-imports -- react-datepicker only ships CSS in dist/
 import 'react-datepicker/dist/react-datepicker.css';
 import './datepicker.css';
 
-type CustomInputProps = React.InputHTMLAttributes<HTMLInputElement>;
-
-const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
-  ({ id, value, onClick, onChange, placeholder, readOnly }, ref) => (
-    <Input
-      ref={ref}
-      id={id}
-      value={value as string}
-      onClick={onClick}
-      onChange={onChange}
-      placeholder={placeholder ?? 'dd.mm.åååå'}
-      readOnly={readOnly}
-    />
+const CustomInput = forwardRef<HTMLInputElement, InputProps>(
+  ({ placeholder, ...rest }, ref) => (
+    <Input ref={ref} placeholder={placeholder ?? 'dd.mm.åååå'} {...rest} />
   ),
 );
 CustomInput.displayName = 'CustomInput';
 
+const CustomHeader = ({
+  date,
+  decreaseMonth,
+  increaseMonth,
+  prevMonthButtonDisabled,
+  nextMonthButtonDisabled,
+}: ReactDatePickerCustomHeaderProps) => (
+  <div className="uds-datepicker__header">
+    <Button
+      data-variant="tertiary"
+      data-size="sm"
+      aria-label="Forrige måned"
+      onClick={decreaseMonth}
+      disabled={prevMonthButtonDisabled}
+    >
+      <ChevronLeftIcon aria-hidden={true} />
+    </Button>
+    <span className="uds-datepicker__month-label">
+      {date.toLocaleString('nb-NO', { month: 'long', year: 'numeric' })}
+    </span>
+    <Button
+      data-variant="tertiary"
+      data-size="sm"
+      aria-label="Neste måned"
+      onClick={increaseMonth}
+      disabled={nextMonthButtonDisabled}
+    >
+      <ChevronRightIcon aria-hidden={true} />
+    </Button>
+  </div>
+);
+
 type DatePickerFieldProps = {
   id: string;
-  label: string;
+  label: ReactNode;
   selected: Date | null;
   onChange: (date: Date | null) => void;
   readOnly?: boolean;
@@ -55,37 +79,7 @@ export const DatePickerField = ({
       showPopperArrow={false}
       calendarClassName="uds-datepicker"
       customInput={<CustomInput />}
-      renderCustomHeader={({
-        date,
-        decreaseMonth,
-        increaseMonth,
-        prevMonthButtonDisabled,
-        nextMonthButtonDisabled,
-      }) => (
-        <div className="uds-datepicker__header">
-          <Button
-            data-variant="tertiary"
-            data-size="sm"
-            aria-label="Forrige måned"
-            onClick={decreaseMonth}
-            disabled={prevMonthButtonDisabled}
-          >
-            <ChevronLeftIcon aria-hidden />
-          </Button>
-          <span className="uds-datepicker__month-label">
-            {date.toLocaleString('nb-NO', { month: 'long', year: 'numeric' })}
-          </span>
-          <Button
-            data-variant="tertiary"
-            data-size="sm"
-            aria-label="Neste måned"
-            onClick={increaseMonth}
-            disabled={nextMonthButtonDisabled}
-          >
-            <ChevronRightIcon aria-hidden />
-          </Button>
-        </div>
-      )}
+      renderCustomHeader={CustomHeader}
     />
   </Field>
 );
