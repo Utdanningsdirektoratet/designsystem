@@ -204,15 +204,14 @@ exports[`Page Story 1`] = `
         </span>
         <u-progress
           value="1"
-          id="<removed>"
-          aria-busy="false"
-          aria-label="..."
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="13"
-          role="progressbar"
           max="8"
           aria-hidden="true"
+          aria-label="..."
+          aria-valuemin="0"
+          aria-valuemax="100"
+          role="progressbar"
+          aria-busy="false"
+          aria-valuenow="13"
           style="<removed>"
         >
           <template shadowrootmode="open">

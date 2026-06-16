@@ -2,11 +2,11 @@
   "cleanOutputDir": true,
   "displayBasePath": "./src",
   "entryPoints": [
-    "./src/utilities/alpha.ts",
-    "./src/utilities/datavis/alpha.ts",
-    "./src/utilities/form/alpha.ts",
+    "./src/utilities/datavis/beta.ts",
+    "./src/utilities/form/beta.ts",
     "./src/hooks/alpha.ts",
-    "./src/hooks/beta.ts"
+    "./src/hooks/beta.ts",
+    "./src/hooks/stable.ts"
   ],
   "out": "storybook-static/typedoc",
   "visibilityFilters": {
