@@ -7,9 +7,6 @@ import viteConfig from './vite.config';
 export default defineConfig({
   test: {
     watch: false,
-    cache: {
-      dir: '../../node_modules/.vitest/@udir-design/react',
-    },
     reporters: [
       'default',
       // html reporter has a bug in 4.0.15, which is fixed but not yet released
@@ -47,8 +44,12 @@ export default defineConfig({
       {
         test: {
           name: 'unit',
-          globals: true,
-          environment: 'jsdom',
+          browser: {
+            enabled: true,
+            instances: [{ browser: 'chromium' }],
+            provider: playwright(),
+            headless: true,
+          },
           setupFiles: ['./vitest.setup.ts'],
           include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
         },

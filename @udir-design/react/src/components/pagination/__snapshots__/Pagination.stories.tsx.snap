@@ -145,6 +145,7 @@ exports[`With Anchor 1`] = `
     <input
       placeholder
       aria-label="Søk"
+      autocomplete="url"
       type="search"
       value="https://udir.design.no/pagination"
     >

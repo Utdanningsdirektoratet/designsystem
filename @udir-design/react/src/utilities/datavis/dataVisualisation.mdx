@@ -15,14 +15,14 @@ import * as stories from './dataVisualisation.stories.tsx';
 
 # Hjelpefunksjoner for datavisualisering
 
-Verktøy for å bruke datavisualiseringsfarger i diagrammer og grafer. Disse funksjonene returnerer CSS-variabler som automatisk tilpasser seg når temaet endres (lys/mørk modus).
+Hjelpefunksjoner for farger i datavisualisering, for eksempel i diagrammer og grafer. Disse funksjonene returnerer CSS-variabler som automatisk tilpasser seg når temaet endres (lys/mørk modus).
 
 - `getCategoricalColors()`
 - `getSequentialMonochromaticColors()`
 - `getSequentialDivergentColors()`
 - `getHighchartsTheme()`
 
-Les også <Link href="./typedoc/modules/utilities_datavis_alpha.html" target="_none">detaljert dokumentasjon generert fra kildekoden (på engelsk)</Link>.
+Les også <Link href="./typedoc/modules/utilities_datavis_beta.html" target="_none">detaljert dokumentasjon generert fra kildekoden (på engelsk)</Link>.
 
 <SimpleAlert type="tip">
   Se [Farger for
@@ -45,7 +45,7 @@ For distinkte kategorier i diagrammer (fagområder, elevgrupper, etc.).
 **`getCategoricalColors()`** - Returnerer 8 CSS-fargeverdier.
 
 ```tsx
-import { getCategoricalColors } from '@udir-design/react/utilities/datavis/alpha';
+import { getCategoricalColors } from '@udir-design/react/utilities/alpha';
 
 const colors = getCategoricalColors();
 // ['var(--uds-data-color-categorical-1)', 'var(--uds-data-color-categorical-2)', ...]
@@ -60,8 +60,7 @@ const colors = getCategoricalColors();
 ## Sekvensiell monokromatisk palett
 
 <SimpleAlert type="warning">
-  Den monokromatiske paletten er under arbeid. Fargene kan endres eller fjernes
-  i nær fremtid.
+  Paletten er under arbeid. Fargene kan endres eller fjernes i nær fremtid.
 </SimpleAlert>
 
 For sekvensiell data med gradert skala fra lys til mørk (heatmaps, choropleth-kart).
@@ -69,7 +68,7 @@ For sekvensiell data med gradert skala fra lys til mørk (heatmaps, choropleth-k
 **`getSequentialMonochromaticColors()`** - Returnerer 8 CSS-fargeverdier.
 
 ```tsx
-import { getSequentialMonochromaticColors } from '@udir-design/react/utilities/datavis/alpha';
+import { getSequentialMonochromaticColors } from '@udir-design/react/utilities/alpha';
 
 const colors = getSequentialMonochromaticColors();
 // ['var(--uds-data-color-sequential-monochromatic-1)', ...]
@@ -84,8 +83,7 @@ const colors = getSequentialMonochromaticColors();
 ## Sekvensiell divergerende palett
 
 <SimpleAlert type="warning">
-  Den divergerende paletten er under arbeid. Fargene kan endres eller fjernes i
-  nær fremtid.
+  Paletten er under arbeid. Fargene kan endres eller fjernes i nær fremtid.
 </SimpleAlert>
 
 For divergerende skalaer med nøytralt midtpunkt (avvik fra gjennomsnitt).
@@ -93,7 +91,7 @@ For divergerende skalaer med nøytralt midtpunkt (avvik fra gjennomsnitt).
 **`getSequentialDivergentColors()`** - Returnerer 7 CSS-fargeverdier.
 
 ```tsx
-import { getSequentialDivergentColors } from '@udir-design/react/utilities/datavis/alpha';
+import { getSequentialDivergentColors } from '@udir-design/react/utilities/alpha';
 
 const colors = getSequentialDivergentColors();
 // ['var(--uds-data-color-sequential-divergent-1)', ...]
@@ -108,7 +106,7 @@ const colors = getSequentialDivergentColors();
 ## Highcharts
 
 <SimpleAlert type="tip" heading="Tips">
-  Se [Dashboard-demoen](/docs/demo-dashboard-demo--docs) for komplette eksempler
+  Se [Dashboard-demo](/docs/demo-dashboard-demo--docs) for komplette eksempler
   med Highcharts.
 </SimpleAlert>
 
@@ -134,7 +132,7 @@ For sekvensielle paletter i Highcharts, bruk `getSequentialMonochromaticColors()
 
 ### Språkpakker
 
-Highcharts har noen få innebygde språkpakker. Engelsk er standard. Importer andre du trenger:
+Highcharts har noen innebygde språkpakker, der engelsk er standard. Importer de andre språkpakkene du har behov for:
 
 ```tsx
 import 'highcharts/i18n/nb-NO'; // Norsk Bokmål
@@ -144,7 +142,7 @@ import 'highcharts/i18n/nb-NO'; // Norsk Bokmål
 
 ## Bruk med andre diagrambiblioteker
 
-Fargepalettene skal fungere med de fleste diagrambiblioteker som lar deg spesifisere farger via CSS eller JavaScript. Her er et eksempel på hvordan du kan bruke `getCategoricalColors()` med Recharts:
+Fargepalettene fungerer med de fleste diagrambiblioteker som lar deg spesifisere farger via CSS eller JavaScript. Her er et eksempel på hvordan du kan bruke `getCategoricalColors()` med Recharts:
 
 <Source
   code={rechartsExample.replace(/^((?!import).+\n)+/, '')}

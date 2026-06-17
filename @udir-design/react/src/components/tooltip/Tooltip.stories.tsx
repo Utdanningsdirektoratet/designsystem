@@ -7,7 +7,7 @@ import {
   TrashIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
-import { Button } from '../button/Button';
+import { Button } from 'src/components/button';
 import { Tooltip } from './Tooltip';
 
 const meta = preview.meta({

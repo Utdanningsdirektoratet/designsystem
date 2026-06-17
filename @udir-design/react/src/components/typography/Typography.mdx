@@ -1,4 +1,5 @@
 import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import { OriginText } from '.storybook/docs/components/Origin';
 
 import * as HeadingStories from './heading/Heading.stories';
 import * as ParagraphStories from './paragraph/Paragraph.stories';
@@ -74,3 +75,9 @@ Meldinger skal plasseres nær feltet de gjelder, slik at både visuelle brukere 
 Alle elementer i en `Prose` får `margin-bottom: var(--ds-size-5)` som sikrer konsistent vertikal rytme. Unntaket er `Heading`-komponenter som får en litt mindre bunnmargin for å skape visuell tilhørighet mellom overskrift og innhold. Av samme grunn brukes varierende margins over overskrifter. Avstanden i `margin-top` er bestemt av `data-size` for `Heading`.
 
 <Canvas of={ProseStories.Preview} story={{ inline: false, height: '700px' }} />
+
+<OriginText
+  component="Typography"
+  originator="digdir"
+  details="Prose er utarbeidet av Udir."
+/>

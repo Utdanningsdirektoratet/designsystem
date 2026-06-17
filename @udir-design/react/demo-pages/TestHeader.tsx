@@ -6,16 +6,16 @@ import {
   HatSchoolIcon,
   LeaveIcon,
 } from '@udir-design/icons';
-import { Avatar } from 'src/components/avatar/Avatar';
-import { Badge } from 'src/components/badge/Badge';
-import { Button } from 'src/components/button/Button';
-import { Divider } from 'src/components/divider/Divider';
-import { Dropdown } from 'src/components/dropdown/Dropdown';
+import { Avatar } from 'src/components/avatar';
+import { Badge } from 'src/components/badge';
+import { Button } from 'src/components/button';
+import { Divider } from 'src/components/divider';
+import { Dropdown } from 'src/components/dropdown';
 import { Header } from 'src/components/header';
-import { Link } from 'src/components/link/Link';
-import { List } from 'src/components/list/List';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Link } from 'src/components/link';
+import { List } from 'src/components/list';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
 
 type Profile = {
   name: string;

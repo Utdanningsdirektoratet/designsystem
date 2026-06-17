@@ -3,11 +3,11 @@ import cl from 'clsx/lite';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useEffect, useId, useRef } from 'react';
 import { UploadIcon } from '@udir-design/icons';
-import { Button } from '../button/Button';
-import { Card } from '../card/Card';
-import { Field } from '../field/Field';
-import { Label } from '../typography/label/Label';
-import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
+import { Button } from '../button';
+import { Card } from '../card';
+import { Field } from '../field';
+import { Label } from '../typography/label';
+import { ValidationMessage } from '../typography/validationMessage';
 import type { FileUploadProps } from './FileUploadTrigger';
 
 export type FileUploadDropzoneProps = FileUploadProps & {

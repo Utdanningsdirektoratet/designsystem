@@ -1,5 +1,5 @@
-import { Pagination } from 'src/components/pagination/Pagination';
-import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
+import { Pagination } from 'src/components/pagination';
+import { usePagination } from 'src/hooks/usePagination';
 import styles from './PaginationControls.module.scss';
 
 export interface PaginationControlsProps {

@@ -7,16 +7,25 @@ import './togglegroup.css';
 
 export type ToggleGroupProps = Omit<
   DigdirToggleGroupProps,
-  'data-color' | 'data-toggle-group'
+  'data-color' | 'data-toggle-group' | 'variant'
 > & {
+  /**
+   * Specify which variant to use
+   * @default secondary
+   */
+  variant?: 'primary' | 'secondary';
   'aria-label'?: string;
 };
 
 export const ToggleGroup = forwardRef<HTMLFieldSetElement, ToggleGroupProps>(
-  function ToggleGroup({ 'aria-label': ariaLabel, ...props }, ref) {
+  function ToggleGroup(
+    { variant = 'secondary', 'aria-label': ariaLabel, ...props },
+    ref,
+  ) {
     return (
       <DigdirToggleGroup
         {...props}
+        variant={variant}
         data-toggle-group={ariaLabel} // temporary until Digdir supports aria-label directly
         ref={ref}
       />

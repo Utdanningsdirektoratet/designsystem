@@ -1,6 +1,6 @@
 import type { Dispatch, SetStateAction } from 'react';
-import { Card } from 'src/components/card/Card';
-import { Dialog } from 'src/components/dialog/Dialog';
+import { Card } from 'src/components/card';
+import { Dialog } from 'src/components/dialog';
 import { PackageInformation } from './PackageInformation';
 import type { UdirSymbol } from './SymbolDisplay.utils';
 import { SymbolInformation } from './SymbolInformation';

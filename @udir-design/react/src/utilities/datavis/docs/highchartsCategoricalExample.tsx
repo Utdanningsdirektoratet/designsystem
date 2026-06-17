@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-imports */
 import Highcharts from 'highcharts';
 import { HighchartsReact } from 'highcharts-react-official';
-import { getHighchartsTheme } from '@udir-design/react/utilities/datavis/alpha';
+import { getHighchartsTheme } from '@udir-design/react/beta/utilities';
 import '@udir-design/theme/datavis.css';
 import 'highcharts/i18n/nb-NO'; // Norsk språkpakke
 

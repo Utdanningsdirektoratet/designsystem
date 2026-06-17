@@ -1,0 +1,73 @@
+# Reusable workflow for building and deploying Storybook docs to Azure Blob Storage.
+# Called from ci.yml for both production and PR preview deployments.
+
+name: Deploy Docs
+
+on:
+  workflow_call:
+    inputs:
+      destination-path:
+        description: >
+          Target path in the storage container. A 'release/' prefix is
+          automatically stripped (e.g. 'release/1.0.0' becomes '1.0.0').
+        required: true
+        type: string
+      environment:
+        description: GitHub environment to use (must contain DOCS_STORAGE_CONNECTION_STRING).
+        required: true
+        type: string
+      post-preview-comment:
+        description: Post or update a PR comment with the preview link.
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          fetch-depth: 0
+
+      - uses: ./.github/actions/pnpm-setup
+
+      - name: Build storybook
+        run: pnpm turbo run build:docs --filter=@udir-design/react
+
+      - name: Set destination path
+        env:
+          RAW_PATH: ${{ inputs.destination-path }}
+        run: echo "DESTINATION_PATH=${RAW_PATH/release\//}" >> $GITHUB_ENV
+
+      - uses: azure/cli@9eb25b8360668fb0ecbafa808d40e2197b2f5f52 # v3.0.0
+        name: Empty target directory
+        env:
+          AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.DOCS_STORAGE_CONNECTION_STRING }}
+        with:
+          azcliversion: 2.78.0
+          inlineScript: |
+            az storage blob delete-batch --account-name stdesignsystemdocs -s '$web' --pattern "$DESTINATION_PATH/*"
+
+      - uses: azure/cli@9eb25b8360668fb0ecbafa808d40e2197b2f5f52 # v3.0.0
+        name: Upload to target directory
+        env:
+          AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.DOCS_STORAGE_CONNECTION_STRING }}
+        with:
+          azcliversion: 2.78.0
+          inlineScript: |
+            az storage blob upload-batch --account-name stdesignsystemdocs -s @udir-design/react/storybook-static -d '$web' --destination-path $DESTINATION_PATH
+
+      - name: Post preview link
+        if: inputs.post-preview-comment
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          BODY="📚 **Docs preview**: https://stdesignsystemdocs.z1.web.core.windows.net/${DESTINATION_PATH}/"
+          gh pr comment "$PR_NUMBER" --edit-last --create-if-none --body "$BODY"

@@ -1,24 +1,24 @@
 import { Meta, Controls, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
 
 import * as TableStories from './Table.stories';
-import * as useDrilldownTableStories from '../../utilities/hooks/useDrilldownTable/useDrilldownTable.stories';
+import * as useDrilldownTableStories from '../../hooks/useDrilldownTable/useDrilldownTable.stories';
 
 <Meta of={TableStories} />
 
 # Table
 
-`Table` brukes for å vise strukturert informasjon på en ryddig og oversiktlig måte.
+`Table` brukes til å vise strukturert informasjon på en ryddig og oversiktlig måte.
 Tabeller gjør det enklere for brukerne å skanne og sammenligne informasjon.
 
 **Passer til å**
 
-- gjøre det enkelt for brukerne å sammenligne og skanne informasjon
-- strukturere og vise data effektivt i rader og kolonner
+- gjøre det enkelt for brukerne å skanne og sammenligne informasjon
+- strukturere og vise data i rader og kolonner
 - presentere oversikter med tall eller annen informasjon som kan sorteres
 
 **Passer ikke til å**
 
-- lage layout eller strukturere innholdet på en side visuelt
+- lage layout eller strukturere innhold visuelt på en side
 - presentere informasjon som egner seg bedre i liste- eller kortform
 - vise bare én kolonne eller svært få datapunkter uten behov for sammenligning
 - vise store datamengder på mobil, der tabellen blir vanskelig å lese
@@ -55,10 +55,9 @@ import { Table } from '@udir-design/react';
 
 ### Tabelltekst
 
-Bruk [`<caption>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption) til å beskrive en tabell
-på samme måte som vi ville brukt en overskrift.
-En tabelltekst hjelper brukerne til å finne, navigere og forstå tabeller.
-Denne plasseres rett etter `Table`-taggen.
+Bruk [`<caption>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption) til å beskrive hva tabellen viser, på samme måte som en overskrift.
+En tabelltekst hjelper brukerne med å finne, navigere i og forstå tabeller.
+Plasser [`<caption>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption) rett etter `Table`-taggen.
 
 ```jsx
 <Table>
@@ -69,35 +68,33 @@ Denne plasseres rett etter `Table`-taggen.
 
 ### Rad- og kolonneoverskrifter
 
-Bruk tabelloverskrifter til å fortelle brukerne hva som er innholdet i radene og kolonnene.
-Bruk [scope-atributtet](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th#scope) til å hjelpe brukere av hjelpeteknologi til å
-skille mellom overskriftene på rader og kolonner.
+Bruk tabelloverskrifter til å fortelle brukerne hva radene og kolonnene inneholder.
+Bruk [scope-attributtet](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th#scope) for å hjelpe brukere av hjelpeteknologi med å
+skille mellom rad- og kolonneoverskrifter.
 
-Tabelloverskrifter kan få en tinted farge. Dette kontrolleres med to props for column- og row headers respektivt: `tintedColumnHeader` og `tintedRowHeader`. Vær bevisst på når man velger å bruke tinted headere, og vær gjerne konsekvent i hvert system.
+Tabelloverskrifter kan få tinted bakgrunnsfarge. Dette styres med `tintedColumnHeader` og `tintedRowHeader`. Vær bevisst på når du bruker tinted overskrifter, og vær gjerne konsekvent i hvert system.
 
 <Canvas of={TableStories.ColumnAndRowHeaders} />
 
 ### Tall i en tabell
 
-Når det er tall i en tabell som skal sammenlignes, plasser tallene til høyre i tabellfeltet.
+Når tall i en tabell skal sammenlignes, plasser tallene til høyre i tabellfeltet.
 
 ## Eksempler
 
-Tabeller kan være enkle med få rader og kolonner, eller de kan ha mye innhold med interaktive komponenter som lenker, knapper,
-avkryssingsbokser og nedtrekkslister.
+Tabeller kan være enkle, med få rader og kolonner, eller mer omfattende med interaktive elementer som lenker, knapper, avkryssingsbokser og nedtrekkslister.
 
-Alle tabeller har titler på kolonner og mulighet for å sortere dataene i kolonnen.
-Tabellen skal kunne vises i den bredden som innholdet krever.
+Alle tabeller har kolonneoverskrifter og mulighet for sortering. Tabellen skal kunne vises i den bredden som innholdet krever.
 
 ### Sticky header
 
-Bruk `stickyHeader={true}` for å få en sticky header som gjør det lettere å få oversikt i større tabeller med mye informasjon. Dette gjelder både row- og column headere.
+Bruk `stickyHeader={true}` for å gjøre en overskrift sticky (fast). Dette gjør det enklere å få oversikt i større tabeller med mye informasjon. Dette gjelder både rad- og kolonneoverskrifter.
 
 <Canvas of={TableStories.StickyHeader} />
 
 ### Med skjemaelementer
 
-Du kan legge inn skjemaelementer i en tabell, men du må håndtere logikken selv.
+Du kan bruke skjemaelementer i en tabell, men da må du selv håndtere logikken.
 
 <Canvas of={TableStories.WithFormElements} />
 
@@ -105,10 +102,10 @@ Du kan legge inn skjemaelementer i en tabell, men du må håndtere logikken selv
 
 Du kan bruke props på `Table.HeaderCell` for å vise at tabellen kan sorteres etter innholdet i en kolonne.
 
-- Bruk `sort`-prop'en for å indikere sorteringsretningen:
-  - `"none"` – ingen sortering
-  - `"ascending"` – stigende rekkefølge
-  - `"descending"` – synkende rekkefølge
+- Bruk `sort`-propen for å indikere sorteringsretningen:
+  - `"none"` - ingen sortering
+  - `"ascending"` - stigende rekkefølge
+  - `"descending"` - synkende rekkefølge
 - Bruk `onClick` for å håndtere hva som skal skje når brukeren klikker på kolonneoverskriften.
 
 Dette gir brukeren visuell tilbakemelding på sorteringsstatus og gjør det mulig å implementere egendefinert sorteringslogikk.
@@ -117,10 +114,9 @@ Dette gir brukeren visuell tilbakemelding på sorteringsstatus og gjør det muli
 
 ### Fixed
 
-Du kan legge på `table-layout: fixed` for å få en tabell som ikke endrer bredden på kolonnene når innholdet endrer seg.
-Dette hjelper nettleseren til å tegne tabellen raskere.
+Du kan bruke `table-layout: fixed` når du vil at kolonnebredden ikke skal endre seg, selv når innholdet endrer seg. Dette hjelper nettleseren til å tegne tabellen raskere.
 
-Det er spesielt nyttig i tabeller med paginering eller annen dynamisk oppdatering av innhold, der stabil kolonnebredde gir bedre brukeropplevelse.
+Det er spesielt nyttig i tabeller med paginering eller annen dynamisk oppdatering av innhold, der stabile kolonnebredder gir bedre brukeropplevelse.
 
 <Canvas of={TableStories.FixedTable} />
 
@@ -208,35 +204,34 @@ Hvis hierarkiet er dypt, vurder om en annen presentasjonsform passer bedre.
 
 ## Retningslinjer
 
-Vi bruker `Table` når vi skal organisere og vise data på en strukturert måte i rader og kolonner for brukerne.
+Vi bruker `Table` når vi skal organisere og vise data i rader og kolonner på en strukturert måte.
 
-- Alt innhold bør være venstrejustert i tabeller, unntatt tall som bør høyrejusteres for at brukerne lett skal kunne sammenligne tallene.
+- Innhold i tabeller bør være venstrejustert. Unntaket er tall, som bør høyrejusteres for at brukerne lett skal kunne sammenligne tallene.
 
-- For å spare plass, kan vi bruke en meny, hvis flere handlinger i en tabellrad ikke må være synlig for brukerne hele tiden.
+- For å spare plass kan du bruke en meny når flere handlinger i en tabellrad ikke trenger å være synlige for brukerne hele tiden.
 
-- I overskriftceller bruker vi `<Table.HeaderCell>`, ikke `<Table.Cell>`. En celle er en overskrift hvis den beskriver
-  innholdet i samme rad eller kolonne.
+- I overskriftceller bruker vi `<Table.HeaderCell>`, ikke `<Table.Cell>`. En celle er en overskrift hvis den beskriver innholdet i samme rad eller kolonne.
 
 ## Tekst i Table
 
-Unngå lange tekster i tabellceller. Hold innholdet kort og konsist, slik at det er lett å skanne på tvers av rader og kolonner. Hvis du trenger å vise mer informasjon, kan du vurdere å lenke til en detaljside. Bruk overskrifter til å fortelle brukerne hva slags innhold de finner i radene og kolonnene.
+Unngå lange tekster i tabellceller. Hold innholdet kort og konsist, slik at det er lett å skanne på tvers av rader og kolonner. Hvis du trenger å vise mer informasjon, kan du vurdere å lenke til en detaljside. Bruk overskrifter som tydelig viser hva radene og kolonnene inneholder.
 
-Som hovedregel skal innhold i celler være venstrejustert, slik at det blir lettere å lese og skanne informasjon. Unntaket er tall og valuta, og noen ganger skjemaelementer og knapper. For å sikre god lesbarhet på smale skjermer, skal innhold i rader som hovedregel være toppjustert.
+Innhold i celler bør som hovedregel være venstrejustert for best lesbarhet. Unntaket er tall og valuta, og i noen tilfeller skjemaelementer og knapper. På smale skjermer bør innhold i rader som hovedregel være toppjustert.
 
 ## Tilgjengelighet
 
-For å sikre at tabeller fungerer optimalt for alle brukere er det viktig å følge disse retningslinjene:
+For å sikre at tabeller fungerer optimalt for alle brukere, er det viktig å følge disse retningslinjene:
 
 - **Enkelt celleinnhold:**
-  Tabellceller bør ikke slås sammen, og hver celle bør inneholde kun ett interaktivt element. Dette bidrar til at brukerne raskt får oversikt over innholdet og lettere kan sammenligne og skanne informasjonen.
+  Tabellceller bør ikke slås sammen, og hver celle bør inneholde kun ett interaktivt element. Dette bidrar til at brukerne raskt får oversikt over innholdet og lettere kan skanne og sammenligne informasjonen.
 - **Overskrifter:**
   For at brukerne skal kunne navigere i innholdet med skjermleser, er det viktig å bruke rad- og/eller kolonneoverskrifter (`<Table.HeaderCell>`). Bruk `scope="row"` og `scope="col"` for å angi om overskriften gjelder en rad eller kolonne. Hvis det er behov for å spare plass, kan vi visuelt skjule én eller flere overskrifter.
 - **Caption-element:**
-  Tabeller skal alltid ha et `<caption>`-element med kort tekst om hva tabellen viser. Skjermlesere vil lese `<caption>`-elementet, og brukerne kan ta stilling til om de vil lese videre i tabellen.
+  Tabeller skal alltid ha et `<caption>`-element med en kort beskrivelse av hva tabellen viser. Skjermlesere leser denne teksten først, slik at brukeren kan vurdere om tabellen er relevant.
 - **Tomme celler:**
   Tomme celler skal være `Table.Cell`. Dette er viktig for å sikre at skjermlesere kan navigere riktig i tabellen.
 - **Tastaturnavigering:**
-  Sjekk at du kan velge ulik sortering med tastatur. Test med skjermleser at du hører hva som er sorterbart, typer sortering og at du ikke mister fokus når du endrer sortering.
+  Sjekk at sortering kan styres med tastatur. Test med skjermleser at du hører hva som kan sorteres, hvilken sortering som er valgt, og at fokus beholdes når sorteringen endres.
 - **Tilpasning for mobil:**
   Det kan være vanskelig å vise tabeller på mobil, siden det ikke finnes et felles design som fungerer i alle sammenhenger.
-  De vanligste alternativene for mobil er en tabell som ruller horisontalt eller omgjøring til listevisning.
+  De vanligste alternativene for mobil er en tabell som ruller horisontalt eller å vise innholdet i listevisning.

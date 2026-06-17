@@ -1,6 +1,7 @@
 import type { DSErrorSummaryElement } from '@digdir/designsystemet-web';
 import type { FieldError, FieldErrors } from 'react-hook-form';
-import { ErrorSummary } from 'src/components/errorSummary/ErrorSummary';
+import { ErrorSummary } from 'src/components/errorSummary';
+import type { UseFormNavigationReturn } from 'src/hooks/useFormNavigation';
 import type { FieldId, FormValues, PageFields, PageId } from './FormDemo';
 import { findPageForField } from './FormDemo';
 
@@ -10,7 +11,7 @@ type Props = {
   errors: FieldErrors<FormValues>;
   errorSummaryRef: React.RefObject<DSErrorSummaryElement | null>;
   pageFields: PageFields;
-  setId: React.Dispatch<React.SetStateAction<PageId | null>>;
+  setId: UseFormNavigationReturn<PageId>['setId'];
 };
 
 const getMessage = (

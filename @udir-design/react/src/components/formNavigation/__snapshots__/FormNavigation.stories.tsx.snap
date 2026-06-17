@@ -847,6 +847,7 @@ exports[`Full 1`] = `
           <div>
             <input
               id="<removed>"
+              autocomplete="off"
               type="text"
               name="q1"
             >
@@ -862,6 +863,7 @@ exports[`Full 1`] = `
           <div>
             <input
               id="<removed>"
+              autocomplete="off"
               type="text"
               name="q2"
             >
@@ -1066,6 +1068,7 @@ exports[`Simple Navigation 1`] = `
           <div>
             <input
               id="<removed>"
+              autocomplete="off"
               type="text"
               name="step1"
             >

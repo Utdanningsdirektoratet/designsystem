@@ -1,6 +1,6 @@
 import { EnvelopeClosedIcon, FilePdfFillIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
-import { Paragraph } from '../typography/paragraph/Paragraph';
+import { Paragraph } from 'src/components/typography/paragraph';
 import { Link } from './Link';
 
 const meta = preview.meta({

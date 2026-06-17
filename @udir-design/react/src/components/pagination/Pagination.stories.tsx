@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
-import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
-import { Search } from '../search/Search';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
+import { Search } from 'src/components/search';
+import { usePagination } from 'src/hooks/usePagination';
 import { Pagination } from './Pagination';
 import { Pagination as FakePagination } from './docs/FakePagination';
 import { PaginationButton } from './docs/FakePaginationButton';
@@ -11,12 +12,19 @@ import { PaginationList } from './docs/FakePaginationList';
 
 const meta = preview.meta({
   component: FakePagination,
+  argTypes: {
+    asChild: {
+      description:
+        '**@deprecated** This is not supported anymore, as the element needs to be `ds-pagination`',
+      control: false,
+    },
+  },
   subcomponents: {
     'Pagination.List': PaginationList,
     'Pagination.Item': PaginationItem,
     'Pagination.Button': PaginationButton,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
@@ -102,7 +110,8 @@ export const Preview = meta.story({
 });
 
 export const Mobile = meta.story({
-  render() {
+  parameters: { docs: advancedCodeDocs },
+  render(args) {
     const [page, setCurrentPage] = useState(3);
     const { pages, nextButtonProps, prevButtonProps } = usePagination({
       currentPage: page,
@@ -112,7 +121,7 @@ export const Mobile = meta.story({
     });
 
     return (
-      <Pagination aria-label="Sidenavigering">
+      <Pagination aria-label="Sidenavigering" {...args}>
         <Pagination.List>
           <Pagination.Item>
             <Pagination.Button aria-label="Forrige side" {...prevButtonProps} />
@@ -138,7 +147,8 @@ export const Mobile = meta.story({
 });
 
 export const WithAnchor = meta.story({
-  render() {
+  parameters: { docs: advancedCodeDocs },
+  render(args) {
     const [page, setCurrentPage] = useState(4);
     const { pages, nextButtonProps, prevButtonProps } = usePagination({
       currentPage: page,
@@ -171,9 +181,9 @@ export const WithAnchor = meta.story({
         }}
       >
         <Search>
-          <Search.Input aria-label="Søk" value={url} />
+          <Search.Input aria-label="Søk" value={url} autoComplete="url" />
         </Search>
-        <Pagination aria-label="Sidenavigering">
+        <Pagination aria-label="Sidenavigering" {...args}>
           <Pagination.List>
             <Pagination.Item>
               <Pagination.Button

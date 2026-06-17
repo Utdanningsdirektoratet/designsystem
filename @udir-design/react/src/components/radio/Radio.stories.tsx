@@ -1,12 +1,12 @@
 import { expect, fn, userEvent, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
-import { Card } from '../card/Card';
-import { Fieldset } from '../fieldset/Fieldset';
+import { Card } from 'src/components/card';
+import { Fieldset } from 'src/components/fieldset';
 import { Radio } from './Radio';
 
 const meta = preview.meta({
   component: Radio,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',

@@ -2,7 +2,7 @@ import * as Highcharts from 'highcharts';
 import { HighchartsReact } from 'highcharts-react-official';
 import { useRef, useState } from 'react';
 import { Table } from 'src/components/table';
-import { Heading } from 'src/components/typography/heading/Heading';
+import { Heading } from 'src/components/typography/heading';
 import { getHighchartsTheme } from 'src/utilities/datavis';
 import { DataControls } from '../../components/data-controls/DataControls';
 import { LoadChart } from '../../components/loading/LoadChart';

@@ -1,22 +1,22 @@
 import { MultiplyIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { Alert } from 'src/components/alert';
-import { Button } from 'src/components/button/Button';
-import { Details } from 'src/components/details/Details';
-import { Dialog } from 'src/components/dialog/Dialog';
-import { Divider } from 'src/components/divider/Divider';
-import { List } from 'src/components/list/List';
-import { Popover } from 'src/components/popover/Popover';
+import { Button } from 'src/components/button';
+import { Details } from 'src/components/details';
+import { Dialog } from 'src/components/dialog';
+import { Divider } from 'src/components/divider';
+import { List } from 'src/components/list';
+import { Popover } from 'src/components/popover';
 import { Table } from 'src/components/table';
-import { TableOfContents } from 'src/components/tableOfContents/TableOfContents';
-import { useTableOfContents } from 'src/utilities/hooks/useTableOfContents/useTableOfContents';
-import { Heading } from '../heading/Heading';
-import { Paragraph } from '../paragraph/Paragraph';
+import { TableOfContents } from 'src/components/tableOfContents';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
+import { useTableOfContents } from 'src/hooks/useTableOfContents';
 import { Prose } from './Prose';
 
 const meta = preview.meta({
   component: Prose,
-  tags: ['beta', 'udir'],
+  tags: ['udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',
@@ -26,7 +26,7 @@ const meta = preview.meta({
 });
 
 export const Preview = meta.story({
-  render: () => {
+  render: (args) => {
     return (
       <div
         style={{
@@ -34,7 +34,7 @@ export const Preview = meta.story({
           justifyContent: 'center',
         }}
       >
-        <Prose style={{ maxWidth: '50rem' }} data-testid="prose">
+        <Prose {...args} style={{ maxWidth: '50rem' }} data-testid="prose">
           <Alert>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </Alert>
@@ -203,7 +203,7 @@ const dummyData = [
 ];
 
 export const Headings = meta.story({
-  render: () => {
+  render: (args) => {
     return (
       <div
         style={{
@@ -211,7 +211,7 @@ export const Headings = meta.story({
           justifyContent: 'center',
         }}
       >
-        <Prose style={{ maxWidth: '50rem' }}>
+        <Prose {...args} style={{ maxWidth: '50rem' }}>
           <Heading level={1} data-size="2xl">
             Heading xxl
           </Heading>

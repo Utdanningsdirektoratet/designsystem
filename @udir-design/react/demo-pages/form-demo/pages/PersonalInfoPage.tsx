@@ -1,13 +1,13 @@
 import { useFormContext } from 'react-hook-form';
-import { Checkbox } from 'src/components/checkbox/Checkbox';
-import { Field } from 'src/components/field/Field';
+import { Checkbox } from 'src/components/checkbox';
+import { Field } from 'src/components/field';
 import { FieldNecessity } from 'src/components/fieldNecessity';
-import { Fieldset } from 'src/components/fieldset/Fieldset';
-import { Input } from 'src/components/input/Input';
-import { Textfield } from 'src/components/textfield/Textfield';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Label } from 'src/components/typography/label/Label';
-import { ValidationMessage } from 'src/components/typography/validationMessage/ValidationMessage';
+import { Fieldset } from 'src/components/fieldset';
+import { Input } from 'src/components/input';
+import { Textfield } from 'src/components/textfield';
+import { Heading } from 'src/components/typography/heading';
+import { Label } from 'src/components/typography/label';
+import { ValidationMessage } from 'src/components/typography/validationMessage';
 import {
   type FormValues,
   type PageProps,

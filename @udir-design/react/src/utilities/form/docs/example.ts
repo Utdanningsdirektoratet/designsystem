@@ -6,7 +6,7 @@ import {
   getFieldIds,
   getStepIds,
   makeStepFinder,
-} from '@udir-design/react/utilities/form/alpha';
+} from '@udir-design/react/beta/utilities';
 
 export const steps = defineSteps({
   firstStep: ['question1', 'question2'],

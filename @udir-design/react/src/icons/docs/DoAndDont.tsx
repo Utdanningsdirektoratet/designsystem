@@ -5,10 +5,10 @@ import {
   CaretLeftIcon,
 } from '@udir-design/icons';
 import { Do, Dont, Stack } from '.storybook/docs/components';
-import { Button } from 'src/components/button/Button';
-import { Card } from 'src/components/card/Card';
-import { Tag } from 'src/components/tag/Tag';
-import { Heading } from 'src/components/typography/heading/Heading';
+import { Button } from 'src/components/button';
+import { Card } from 'src/components/card';
+import { Tag } from 'src/components/tag';
+import { Heading } from 'src/components/typography/heading';
 
 export const IconEx1 = () => {
   return (
