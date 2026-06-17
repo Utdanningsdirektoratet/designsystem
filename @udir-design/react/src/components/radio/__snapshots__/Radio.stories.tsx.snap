@@ -25,9 +25,9 @@ exports[`Focused 1`] = `
 
 exports[`Inline 1`] = `
 <style>
-  .example-radio-group {
+  .inline-radio-group {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   gap: var(--ds-size-6);
 }
 </style>

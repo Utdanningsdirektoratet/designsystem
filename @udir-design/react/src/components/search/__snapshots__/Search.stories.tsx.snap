@@ -3,12 +3,12 @@
 exports[`Controlled 1`] = `
 <div>
   <style>
-    .example-form {
+    .controlled-form {
           display: flex;
           flex-direction: column;
           gap: var(--ds-size-4);
         }
-        .example-chip-group {
+        .controlled-chip-group {
           display: flex;
           align-items: center;
           gap: var(--ds-size-4);
@@ -86,6 +86,13 @@ exports[`Form 1`] = `
 `;
 
 exports[`Live Search 1`] = `
+<style>
+  .live-search {
+          display: flex;
+          gap: var(--ds-size-1);
+          align-items: center;
+        }
+</style>
 <div>
   <div>
     <input

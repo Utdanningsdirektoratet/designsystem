@@ -280,7 +280,14 @@ exports[`Example Dropzone With Explicit Size 1`] = `
 `;
 
 exports[`Example Items 1`] = `
-<div style="<removed>">
+<style>
+  .example-items-main {
+          display: flex;
+          flex-direction: column;
+          gap: var(--ds-size-3);
+        }
+</style>
+<div>
   <h3 data-size="2xs">
     Vedlegg (4):
   </h3>
@@ -628,7 +635,14 @@ exports[`Example Items 1`] = `
 `;
 
 exports[`Example Trigger 1`] = `
-<div style="<removed>">
+<style>
+  .example-trigger-main {
+          display: flex;
+          flex-direction: column;
+          gap: var(--ds-size-3);
+        }
+</style>
+<div>
   <div>
     <label
       data-weight="medium"
@@ -753,7 +767,14 @@ exports[`Example Trigger 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<div style="<removed>">
+<style>
+  .preview-main {
+          display: flex;
+          gap: var(--ds-size-18);
+          justify-content: center;
+        }
+</style>
+<div>
   <div data-size="md">
     <label
       data-weight="medium"
@@ -856,7 +877,17 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Readonly 1`] = `
-<div style="<removed>">
+<style>
+  .readonly-main {
+  background: var(--ds-color-neutral-surface-tinted);
+  display: flex;
+  gap: var(--ds-size-12);
+  justify-content: center;
+  padding: var(--ds-size-8);
+  border-radius: var(--ds-border-radius-md);
+}
+</style>
+<div>
   <div>
     <label
       data-weight="medium"
@@ -932,7 +963,14 @@ exports[`Readonly 1`] = `
 `;
 
 exports[`Too Many Files 1`] = `
-<div style="<removed>">
+<style>
+  .too-many-files-main {
+          display: flex;
+          flex-direction: column;
+          gap: var(--ds-size-3);
+        }
+</style>
+<div>
   <div style="<removed>">
     <label
       data-weight="medium"
@@ -1221,7 +1259,14 @@ exports[`Too Many Files 1`] = `
 `;
 
 exports[`Upload 1`] = `
-<div style="<removed>">
+<style>
+  .upload-main {
+          display: flex;
+          flex-direction: column;
+          gap: var(--ds-size-3);
+        }
+</style>
+<div>
   <div>
     <label
       data-weight="medium"

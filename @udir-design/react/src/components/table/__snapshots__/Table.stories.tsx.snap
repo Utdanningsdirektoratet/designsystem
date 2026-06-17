@@ -2,17 +2,17 @@
 
 exports[`Column And Row Headers 1`] = `
 <style>
-  .example-caption {
+  .column-and-row-headers-caption {
   font-size: var(--ds-font-size-3);
   caption-side: bottom;
   text-align: center;
   font-weight: normal;
   margin-top: var(--ds-size-2);
 }
-.example-table-body {
+.column-and-row-headers-body {
   text-align: right;
 }
-.example-table-body-headercell {
+.column-and-row-headers-headercell {
   text-align: left;
 }
 </style>
@@ -214,21 +214,12 @@ exports[`Expandable Rows 1`] = `
 
 exports[`Fixed Table 1`] = `
 <style>
-  .example-main {
-  height: 420px;
-  width: 580px;
-  overflow: auto;
-  padding: 0;
-}
-.example-table {
+  .fixed-table {
   table-layout: fixed;
   margin-bottom: 12px;
 }
-.example-table-body-cell {
-  font-feature-settings: "'tnum' 1",
-}
-.example-textfield {
-  min-width: 250px;
+.fixed-table-body-cell {
+  font-feature-settings: "tnum" 1;
 }
 </style>
 <table id="<removed>">
@@ -347,13 +338,13 @@ exports[`Fixed Table 1`] = `
 
 exports[`Multiple Header Rows 1`] = `
 <style>
-  .example-table-head-headercell {
+  .multiple-table-head-headercell {
   text-align: center;
 }
-.example-table-body {
+.multiple-table-body {
   text-align: right;
 }
-.example-table-body-headercell {
+.multiple-table-body-headercell {
   text-align: left;
 }
 </style>
@@ -782,19 +773,19 @@ exports[`Sortable 1`] = `
 
 exports[`Sticky Header 1`] = `
 <style>
-  .example-heading {
+  .stickyheader-heading {
   margin-bottom: var(--ds-size-3);
 }
-.example-main {
+.stickyheader-main {
   height: 420px;
   width: 580px;
   overflow: auto;
   padding: 0;
 }
-.example-table-body {
+.stickyheader-table-body {
   text-align: right;
 }
-.example-table-body-headercell {
+.stickyheader-table-body-headercell {
   text-align: left;
 }
 </style>
@@ -1049,16 +1040,15 @@ exports[`With Border 1`] = `
 
 exports[`With Form Elements 1`] = `
 <style>
-  .example-main {
-  height: 420px;
-  width: 580px;
-  overflow: auto;
-  padding: 0;
+  .with-form-elements-table-body {
+  align-content: start;
+  justify-content: center;
+  align-items: center;
 }
-.example-table-body-cell {
+.with-form-elements-table-body-cell {
   min-width: 200px;
 }
-.example-textfield {
+.with-form-elements-textfield {
   min-width: 250px;
 }
 </style>

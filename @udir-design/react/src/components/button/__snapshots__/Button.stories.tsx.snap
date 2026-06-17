@@ -128,7 +128,16 @@ exports[`Danger 1`] = `
 `;
 
 exports[`Danger Pseudo States 1`] = `
-<div style="<removed>">
+<style>
+  .example-main {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: inherit;
+  align-items: center;
+  justify-items: center;
+}
+</style>
+<div>
   <label
     data-weight="medium"
     data-size="sm"
@@ -991,7 +1000,16 @@ exports[`Neutral 1`] = `
 `;
 
 exports[`Neutral Pseudo States 1`] = `
-<div style="<removed>">
+<style>
+  .example-main {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: inherit;
+  align-items: center;
+  justify-items: center;
+}
+</style>
+<div>
   <label
     data-weight="medium"
     data-size="sm"
