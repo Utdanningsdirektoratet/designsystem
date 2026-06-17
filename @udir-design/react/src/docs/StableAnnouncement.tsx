@@ -14,18 +14,17 @@ export function StableAnnouncement() {
         />
       </Card.Block>
       <Card.Block>
-        <Heading level={2}>Udirs designsystem er stabilt!</Heading>
+        <Heading level={2}>Udirs designsystem er lansert!</Heading>
         <Paragraph>
-          Etter to år med kartlegging, design og utvikling er vi glade for
-          endelig å kunne tilby den første stabile versjonen av Udirs
-          designsystem!
+          Etter grundig kartlegging, pilotering, design og utvikling er vi glade
+          for å lansere den første stabile versjonen av Udirs designsystem!
         </Paragraph>
         <Paragraph>
-          Versjon 1.0.0 er resultatet av et solid kartleggingsarbeid, et godt
-          samarbeid med Digdir og en grundig design- og utviklingsprosess. Takk
-          til alle dere som har testet, gitt tilbakemeldinger og bidratt
-          underveis. Vi er stolte av resultatet, og ser frem til å videreutvikle
-          og forbedre designsystemet sammen med dere.
+          Versjon 1.0.0 er resultatet av et solid samarbeid på tvers av
+          avdelinger og leverandører. Tusen takk til alle dere som har testet
+          betaversjonen, gitt tilbakemeldinger, stilt spørsmål, meldt inn behov
+          og bidratt underveis. Vi har vært avhengig av dette for å sikre at
+          designsystemet treffer behovene til dere som skal bruke det.
         </Paragraph>
       </Card.Block>
     </Card>
