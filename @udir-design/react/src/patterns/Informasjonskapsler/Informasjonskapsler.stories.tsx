@@ -42,7 +42,7 @@ export const Preview = meta.story({
             }
             @media (max-width: 40rem) {
               .cookies-buttons > button {
-          flex: 1 1 auto;
+                flex: 1 1 auto;
               }
             }
           `}

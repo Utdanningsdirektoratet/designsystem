@@ -55,7 +55,7 @@ export const Floating = meta.story({
     <>
       <style>
         {`
-.example-avatar {
+.floating-avatar {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -79,19 +79,19 @@ export const Floating = meta.story({
       </Badge.Position>
       <Badge.Position placement="top-right" overlap="circle">
         <Badge {...args} />
-        <Avatar className="example-avatar" aria-label={'Avatar 1'} />
+        <Avatar className="floating-avatar" aria-label={'Avatar 1'} />
       </Badge.Position>
       <Badge.Position placement="top-left" overlap="circle">
         <Badge {...args} />
-        <Avatar className="example-avatar" aria-label={'Avatar 1'} />
+        <Avatar className="floating-avatar" aria-label={'Avatar 1'} />
       </Badge.Position>
       <Badge.Position placement="bottom-right" overlap="circle">
         <Badge {...args} />
-        <Avatar className="example-avatar" aria-label={'Avatar 1'} />
+        <Avatar className="floating-avatar" aria-label={'Avatar 1'} />
       </Badge.Position>
       <Badge.Position placement="bottom-left" overlap="circle">
         <Badge {...args} />
-        <Avatar className="example-avatar" aria-label={'Avatar 1'} />
+        <Avatar className="floating-avatar" aria-label={'Avatar 1'} />
       </Badge.Position>
     </>
   ),
@@ -103,13 +103,13 @@ export const CustomPlacement = meta.story({
     <>
       <style>
         {`
-.example-badge {
+.custom-placement-badge {
   --dsc-badge-top: 16%;
   --dsc-badge-right: 10%;
 }`}
       </style>
       <Badge.Position placement="top-right">
-        <Badge className="example-badge" {...args} />
+        <Badge className="custom-placement-badge" {...args} />
         <EnvelopeClosedFillIcon title="Meldinger" />
       </Badge.Position>
     </>
@@ -164,12 +164,12 @@ export const InButton = meta.story({
     <>
       <style>
         {`
-.example-main {
+.in-button-main {
   display: flex;
   gap: var(--ds-size-4);
 }`}
       </style>
-      <div className="example-main">
+      <div className="in-button-main">
         <Button icon variant="tertiary">
           <Badge.Position>
             <Badge {...args} count={1000} maxCount={99} />
@@ -238,7 +238,7 @@ export const ColorVariants = meta.story({
     <>
       <style>
         {`
-.example-content {
+.color-variants-content {
   display: grid;
   grid-template-columns: repeat(4, 60px);
   gap: var(--ds-size-2);
@@ -247,7 +247,7 @@ export const ColorVariants = meta.story({
   width: 100%;
 }`}
       </style>
-      <div className="example-content">
+      <div className="color-variants-content">
         {Object.entries(ColorsMap).map(([key, value]) => (
           <Badge key={key} {...value} count={15} maxCount={9} {...args} />
         ))}
@@ -261,28 +261,28 @@ export const SystemAlerts = meta.story({
     <>
       <style>
         {`
-.example-main {
+.system-alerts-main {
   display: flex;
   flex-direction: column;
   width: 30rem;
 }
-.example-heading {
+.system-alerts-heading {
   margin-block-end: var(--ds-size-4);
 }
-.example-details-content {
+.system-alerts-details-content {
   gap: var(--ds-size-4);
   display: flex;
   flex-direction: column;
 }`}
       </style>
-      <div className="example-main">
-        <Heading className="example-heading">Systemvarsler</Heading>
+      <div className="system-alerts-main">
+        <Heading className="system-alerts-heading">Systemvarsler</Heading>
         <Details>
           <Details.Summary>
             Kritisk{' '}
             <Badge count={2} maxCount={9} data-color="danger" {...args} />
           </Details.Summary>
-          <Details.Content className="example-details-content">
+          <Details.Content className="system-alerts-details-content">
             {Array.from({ length: 2 }, (_, i) => (
               <Varsel key={i} importance="danger" />
             ))}
@@ -293,7 +293,7 @@ export const SystemAlerts = meta.story({
             Advarsler{' '}
             <Badge count={6} maxCount={9} data-color="warning" {...args} />
           </Details.Summary>
-          <Details.Content className="example-details-content">
+          <Details.Content className="system-alerts-details-content">
             {Array.from({ length: 6 }, (_, i) => (
               <Varsel key={i} importance="warning" />
             ))}
@@ -304,7 +304,7 @@ export const SystemAlerts = meta.story({
             Andre hendelser{' '}
             <Badge count={11} maxCount={9} data-color="info" {...args} />
           </Details.Summary>
-          <Details.Content className="example-details-content">
+          <Details.Content className="system-alerts-details-content">
             {Array.from({ length: 11 }, (_, i) => (
               <Varsel key={i} importance="info" />
             ))}
@@ -321,13 +321,13 @@ function Varsel({ importance }: { importance: 'danger' | 'warning' | 'info' }) {
     <>
       <style>
         {`
-.example-header {
+.varsel-header {
   display: flex;
   justify-content: space-between;
 }`}
       </style>
       <Card>
-        <div className="example-header">
+        <div className="varsel-header">
           <Heading level={3} data-size="xs">
             Varsel
           </Heading>

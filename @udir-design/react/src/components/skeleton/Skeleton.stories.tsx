@@ -45,13 +45,13 @@ export const Components = meta.story({
       <>
         <style>
           {`
-.example-main {
+.components-main {
   display: flex;
   align-items: center;
   gap: 20px;
 }`}
         </style>
-        <div className="example-main">
+        <div className="components-main">
           <Skeleton variant="circle" width="50px" {...args} />
           <Skeleton variant="rectangle" width="100px" {...args} />
           <Paragraph>
@@ -114,31 +114,31 @@ export const Cards = meta.story({
       <>
         <style>
           {`
-.example-main {
+.cards-main {
   margin: var(--ds-size-12);
-    display: flex;
-    flex-direction: column;
-    gap: var(--ds-size-6);
-  }
-.example-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+}
+.cards-buttons {
   display: flex;
   justify-content: end;
 }
-.example-card {
+.cards-card {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--ds-size-6);
 }
-.example-card-block {
+.cards-card-block {
   display: flex;
   flex-direction: column;
 }`}
         </style>
-        <div className="example-main">
+        <div className="cards-main">
           <Heading level={3} data-size="lg">
             Elever
           </Heading>
-          <div className="example-buttons">
+          <div className="cards-buttons">
             <Button variant="tertiary">
               <PlusCircleIcon aria-hidden /> Legg til elev
             </Button>
@@ -149,7 +149,7 @@ export const Cards = meta.story({
               <FilterIcon aria-hidden /> Filter
             </Button>
           </div>
-          <div className="example-card">
+          <div className="cards-card">
             {StudentData.map((student) => (
               <Card key={student.id}>
                 <Card.Block>
@@ -157,7 +157,7 @@ export const Cards = meta.story({
                     {student.name}
                   </Skeleton>
                 </Card.Block>
-                <Card.Block className="example-card-block">
+                <Card.Block className="cards-card-block">
                   <Skeleton variant="text" {...args}>
                     Fødselsdato: {student.birthday}
                   </Skeleton>
@@ -189,21 +189,21 @@ export const UsageExample = meta.story({
       <>
         <style>
           {`
-.example-main {
+.usage-main {
   display: flex;
   gap: var(--ds-size-12);
   margin: var(--ds-size-12);
 }
-.example-section {
+.usage-section {
   flex: 1 1 200px;
 }
-.example-meta {
+.usage-meta {
   display: flex;
   gap: var(--ds-size-2);
   align-items: center;
   padding-block: var(--ds-size-1);
 }
-.example-image {
+.usage-image {
   display: block;
   width: 100%;
   height: 200px;
@@ -211,13 +211,13 @@ export const UsageExample = meta.story({
   border-radius: 10px;
 }`}
         </style>
-        <div className="example-main">
-          <Prose className="example-section">
+        <div className="usage-main">
+          <Prose className="usage-section">
             <Skeleton height="200px" {...args} />
             <Heading>
               <Skeleton variant="text" width="15" />
             </Heading>
-            <div className="example-meta">
+            <div className="usage-meta">
               <Skeleton variant="circle" width="40px" height="40px" {...args} />
               <Skeleton variant="text" {...args}>
                 Forfatter | sist endret
@@ -225,14 +225,14 @@ export const UsageExample = meta.story({
             </div>
             <Skeleton variant="text" width="260" />
           </Prose>
-          <Prose className="example-section">
+          <Prose className="usage-section">
             <img
               src={schoolImage}
               alt="Bøker på et bord"
-              className="example-image"
+              className="usage-image"
             />
             <Heading>Undersøke</Heading>
-            <div className="example-meta">
+            <div className="usage-meta">
               <Avatar
                 data-size="xs"
                 initials="KN"
@@ -278,17 +278,17 @@ export const Text = meta.story({
     <>
       <style>
         {`
-.example-text {
+.text-main {
   display: flex;
   gap: var(--ds-size-12);
   margin: var(--ds-size-12);
 }
-.example-text-column {
+.text-column {
   flex: 1 1 200px;
 }`}
       </style>
-      <div className="example-text">
-        <Prose className="example-text-column">
+      <div className="text-main">
+        <Prose className="text-column">
           <Heading>Den kjekkaste leiken</Heading>
           <Paragraph data-size="sm">
             Det er verken dyrt eller komplisert å leggje til rette for den
@@ -297,7 +297,7 @@ export const Text = meta.story({
             ut, og dei ville spesielt sjå på situasjonar med fysisk aktivitet.
           </Paragraph>
         </Prose>
-        <Prose className="example-text-column">
+        <Prose className="text-column">
           <Heading>
             <Skeleton {...args}>Den kjekkaste leiken</Skeleton>
           </Heading>

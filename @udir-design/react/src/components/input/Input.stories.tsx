@@ -126,15 +126,15 @@ export const Controlled = meta.story({
       <>
         <style>
           {`
-        .example-main {
+        .controlled-main {
           display: flex;
           gap: var(--ds-size-2);
           align-items: end;
           width: 100%;
-         }`}
+        }`}
         </style>
         <Prose>
-          <div className="example-main">
+          <div className="controlled-main">
             <Field>
               <Label>Skriv inn verdi</Label>
               <Input
@@ -196,19 +196,19 @@ export const Text = meta.story({
       <>
         <style>
           {`
-.example-main {
+.text-main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   max-width: 90vw;
 }
-.example-heading {
+.text-heading {
   grid-column: 1 / -1;
 }`}
         </style>
         {sizes.map((size) => (
-          <div className="example-main" key={size} data-size={size}>
-            <Heading data-size="2xs" className="example-heading">
+          <div className="text-main" key={size} data-size={size}>
+            <Heading data-size="2xs" className="text-heading">
               {sizenames[size]}
             </Heading>
             {states.map((state) => (
@@ -305,20 +305,20 @@ export const Radio = meta.story({
       <>
         <style>
           {`
-.example-main {
+.radio-main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   max-width: 90vw;
 }
-.example-heading {
+.radio-heading {
   grid-column: 1 / -1;
   margin-top: 16px;
 }`}
         </style>
         {sizes.map((size) => (
-          <div className="example-main" key={size} data-size={size}>
-            <Heading className="example-heading" data-size="2xs">
+          <div className="radio-main" key={size} data-size={size}>
+            <Heading className="radio-heading" data-size="2xs">
               {sizenames[size]}
             </Heading>
             {states.map((state) => (
@@ -395,40 +395,44 @@ export const Checkbox = meta.story({
     ];
 
     return (
-      <div
-        style={{
-          display: 'grid',
-          gap: '2rem',
-        }}
-      >
-        {sizes.map((size) => (
-          <div
-            key={size}
-            data-size={size}
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '1rem',
-            }}
-          >
-            <Heading data-size="2xs" style={{ gridColumn: '1 / -1' }}>
-              {sizenames[size]}
-            </Heading>
-            {states.map((state) => (
-              <Field key={state.label}>
-                <Input
-                  {...args}
-                  name={`${size}-${state.label
-                    .toLowerCase()
-                    .replace(' ', '-')}`}
-                  {...state.props}
-                />
-                <Label>{state.label}</Label>
-              </Field>
-            ))}
-          </div>
-        ))}
-      </div>
+      <>
+        <style>
+          {`
+.checkbox-main {
+  display: grid;
+  gap: 2rem;
+}
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.checkbox-heading {
+  grid-column: 1 / -1;
+}`}
+        </style>
+        <div className="checkbox-main">
+          {sizes.map((size) => (
+            <div className="checkbox-grid" key={size} data-size={size}>
+              <Heading className="checkbox-heading" data-size="2xs">
+                {sizenames[size]}
+              </Heading>
+              {states.map((state) => (
+                <Field key={state.label}>
+                  <Input
+                    {...args}
+                    name={`${size}-${state.label
+                      .toLowerCase()
+                      .replace(' ', '-')}`}
+                    {...state.props}
+                  />
+                  <Label>{state.label}</Label>
+                </Field>
+              ))}
+            </div>
+          ))}
+        </div>
+      </>
     );
   },
 });
@@ -469,24 +473,24 @@ export const Switch = meta.story({
       <>
         <style>
           {`
-.example-main {
+.switch-main {
   display: grid;
   gap: 2rem;
 }
-.example-section {
+.switch-section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   max-width: 90vw;
 }
-.example-heading {
+.switch-heading {
   grid-column: 1 / -1;
 }`}
         </style>
-        <div className="example-main">
+        <div className="switch-main">
           {sizes.map((size) => (
-            <div className="example-section" key={size} data-size={size}>
-              <Heading className="example-heading" data-size="2xs">
+            <div className="switch-section" key={size} data-size={size}>
+              <Heading className="switch-heading" data-size="2xs">
                 {sizenames[size]}
               </Heading>
               {states.map((state) => (

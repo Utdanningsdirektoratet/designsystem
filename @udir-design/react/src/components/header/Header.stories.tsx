@@ -223,15 +223,15 @@ export const WithNavigationLinks = meta.story({
     <>
       <style>
         {`
-  /* Styles defined in application-specific css */
-  .withNavLinks-header-menu-nav {
-    max-width: 800px;
-    display: flex;
-    padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
-    gap: var(--ds-size-4);
-    row-gap: var(--ds-size-10);
-    justify-items: center;
-  }`}
+/* Styles defined in application-specific css */
+.withNavLinks-header-menu-nav {
+  max-width: 800px;
+  display: flex;
+  padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
+  gap: var(--ds-size-4);
+  row-gap: var(--ds-size-10);
+  justify-items: center;
+}`}
       </style>
       <Header {...args}>
         <Header.Navigation data-show="sm">
@@ -349,22 +349,21 @@ export const WithMenu = meta.story({
     <>
       <style>
         {`
-        /* Styles defined in application-specific css */
-        .withMenu-header-menu-nav {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-          max-width: 800px;
-          margin: 0 auto;
-          padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
-          gap: var(--ds-size-4);
-          row-gap: var(--ds-size-10);
-          justify-items: center;
-        }
-        @media (max-width: 34.375rem) {
-          .withMenu-header-menu-nav {
-            justify-items: flex-start;
-          }
-        }`}
+/* Styles defined in application-specific css */
+.withMenu-header-menu-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
+  gap: var(--ds-size-4);
+  row-gap: var(--ds-size-10);
+  justify-items: center;
+}
+@media (max-width: 34.375rem) {
+  .withMenu-header-menu-nav {
+  justify-items: flex-start;
+}}`}
       </style>
       <Header {...args}>
         <Header.MenuButton />
@@ -450,26 +449,25 @@ export const WithThemeMenus = meta.story({
       <>
         <style>
           {`
-  /* Styles defined in application-specific css */
-  :is(#header-education-menu, #header-learning-menu, #header-mobile-menu) > nav {
-    display: grid;
-    margin: 0 auto;
-    padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
-    gap: var(--ds-size-4);
-    row-gap: var(--ds-size-10);
-  }
-  :is(#header-education-menu, #header-mobile-menu) > nav {
-    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-    max-width: 800px;
-  }
-  :is(#header-education-menu, #header-learning-menu) > nav {
-    justify-items: center;
-  }
-  #header-learning-menu > nav {
-    grid-template-columns: 1fr 1fr;
-    max-width: 500px;
-  }
-  `}
+/* Styles defined in application-specific css */
+:is(#header-education-menu, #header-learning-menu, #header-mobile-menu) > nav {
+  display: grid;
+  margin: 0 auto;
+  padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
+  gap: var(--ds-size-4);
+  row-gap: var(--ds-size-10);
+}
+:is(#header-education-menu, #header-mobile-menu) > nav {
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  max-width: 800px;
+}
+:is(#header-education-menu, #header-learning-menu) > nav {
+  justify-items: center;
+}
+#header-learning-menu > nav {
+  grid-template-columns: 1fr 1fr;
+  max-width: 500px;
+}`}
         </style>
         <Header {...args}>
           <Header.ThemeMenuButton
@@ -612,23 +610,22 @@ export const WithNavigationLinksAndMenu = meta.story({
     <>
       <style>
         {`
-  /* Styles defined in application-specific css */
+/* Styles defined in application-specific css */
+.withNavLinksAndMenu-header-menu-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--ds-size-5) var(--ds-size-10) var(--ds-size-10);
+  gap: var(--ds-size-4);
+  row-gap: var(--ds-size-10);
+  justify-items: center;
+}
+@media (max-width: 34.375rem) {
   .withNavLinksAndMenu-header-menu-nav {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
-    max-width: 800px;
-    margin: 0 auto;
-    padding: var(--ds-size-5) var(--ds-size-10) var(--ds-size-10);
-    gap: var(--ds-size-4);
-    row-gap: var(--ds-size-10);
-    justify-items: center;
+    justify-items: flex-start;
   }
-  @media (max-width: 34.375rem) {
-    .withNavLinksAndMenu-header-menu-nav {
-      justify-items: flex-start;
-    }
-  }
-  `}
+}`}
       </style>
       <Header {...args}>
         <Header.Navigation data-show="sm">
@@ -831,27 +828,26 @@ export const Responsive = meta.story({
       <>
         <style>
           {`
-  /* Styles defined in application-specific css */
+/* Styles defined in application-specific css */
+.responsive-header-menu-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--ds-size-10);
+  gap: var(--ds-size-4);
+  row-gap: var(--ds-size-10);
+  justify-items: center;
+}
+.responsive-header-menu-user-button {
+  margin: 0 var(--ds-size-5);
+  justify-self: end;
+}
+@media (max-width: 34.375rem) {
   .responsive-header-menu-nav {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-    max-width: 800px;
-    margin: 0 auto;
-    padding: var(--ds-size-10);
-    gap: var(--ds-size-4);
-    row-gap: var(--ds-size-10);
-    justify-items: center;
+    justify-items: flex-start;
   }
-  .responsive-header-menu-user-button {
-    margin: 0 var(--ds-size-5);
-    justify-self: end;
-  }
-  @media (max-width: 34.375rem) {
-    .responsive-header-menu-nav {
-      justify-items: flex-start;
-    }
-  }
-  `}
+}`}
         </style>
         <Header {...args}>
           <Header.Navigation data-show="lg">
@@ -989,38 +985,37 @@ export const AutoHideSticky = meta.story({
       <>
         <style>
           {`
-  /* Styles defined in application-specific css */
+/* Styles defined in application-specific css */
+.autoHideSticky-header-menu-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
+  gap: var(--ds-size-4);
+  row-gap: var(--ds-size-10);
+  justify-items: center;
+}
+@media (max-width: 34.375rem) {
   .autoHideSticky-header-menu-nav {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-    max-width: 800px;
-    margin: 0 auto;
-    padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
-    gap: var(--ds-size-4);
-    row-gap: var(--ds-size-10);
-    justify-items: center;
+    justify-items: flex-start;
   }
-  @media (max-width: 34.375rem) {
-    .autoHideSticky-header-menu-nav {
-      justify-items: flex-start;
-    }
-  }
-  main {
-    padding: var(--ds-size-18);
-    display: flex;
-    flex-direction: column;
-    gap: var(--ds-size-4);
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  main hr {
-    margin-top: var(--ds-size-30);
-  }
-  main hr + p {
-    margin-top: calc(var(--ds-size-30) * 2);
-    margin-bottom: calc(var(--ds-size-30) * 2);
-  }
-  `}
+}
+main {
+  padding: var(--ds-size-18);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+  max-width: 800px;
+  margin: 0 auto;
+}
+main hr {
+  margin-top: var(--ds-size-30);
+}
+main hr + p {
+  margin-top: calc(var(--ds-size-30) * 2);
+  margin-bottom: calc(var(--ds-size-30) * 2);
+}`}
         </style>
         <Header {...args}>
           <Header.Navigation data-show="md">
@@ -1253,17 +1248,16 @@ export const UdirNo = meta.story({
       <>
         <style>
           {`
-  /* Styles defined in application-specific css */
-  .udirNo-header-menu-nav {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: var(--ds-size-10) var(--ds-size-15);
-    gap: var(--ds-size-4);
-    row-gap: var(--ds-size-10);
-  }
-  `}
+/* Styles defined in application-specific css */
+.udirNo-header-menu-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--ds-size-10) var(--ds-size-15);
+  gap: var(--ds-size-4);
+  row-gap: var(--ds-size-10);
+}`}
         </style>
         <Header
           applicationName="Utdanningsdirektoratet"

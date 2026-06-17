@@ -245,7 +245,7 @@ export const Controlled = meta.story({
         }
         .example-list-item {
           display: flex;
-         }
+        }
         .example-list-content {
           align-items: center;
           display: flex;

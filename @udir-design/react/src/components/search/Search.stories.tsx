@@ -107,18 +107,18 @@ export const Controlled = meta.story({
       <Prose>
         <style>
           {`
-        .example-form {
+        .controlled-form {
           display: flex;
           flex-direction: column;
           gap: var(--ds-size-4);
         }
-        .example-chip-group {
+        .controlled-chip-group {
           display: flex;
           align-items: center;
           gap: var(--ds-size-4);
         }`}
         </style>
-        <form className="example-form" onSubmit={handleSubmit}>
+        <form className="controlled-form" onSubmit={handleSubmit}>
           <Search {...args}>
             <Search.Input
               id="search-input-controlled"
@@ -129,7 +129,7 @@ export const Controlled = meta.story({
             <Search.Clear />
             <Search.Button type="submit" />
           </Search>
-          <div className="example-chip-group">
+          <div className="controlled-chip-group">
             <Paragraph data-size="sm">Hurtigsøk:</Paragraph>
             <Chip.Button
               onClick={() => {
@@ -160,7 +160,7 @@ export const Controlled = meta.story({
         {searchTerm && (
           <>
             <Paragraph>Søker etter: {searchTerm}</Paragraph>
-            <div className="example-form">
+            <div className="controlled-form">
               <Skeleton variant="rectangle" height="150px" />
               <Skeleton variant="rectangle" width="200px" />
               <Skeleton variant="rectangle" />
@@ -259,35 +259,39 @@ export const LiveSearch = meta.story({
     const setSearchValueDebounced = useDebounceCallback(setSearchValue, 500);
 
     return (
-      <Prose>
-        <Search {...args}>
-          <Search.Input
-            aria-label="Søk"
-            value={value}
-            onChange={(e) => {
-              const newValue = e.target.value;
-              setValue(newValue);
-              // Don't search while typing
-              setSearchValue('');
-              // Search after stopped typing
-              setSearchValueDebounced(newValue);
-            }}
-          />
-          <Search.Clear />
-        </Search>
-        {searchValue !== '' && (
-          <div
-            style={{
-              display: 'flex',
-              gap: 'var(--ds-size-1)',
-              alignItems: 'center',
-            }}
-          >
-            <Spinner aria-hidden data-size="xs" />
-            <span>Søker etter: {searchValue}</span>
-          </div>
-        )}
-      </Prose>
+      <>
+        <style>
+          {`
+        .live-search {
+          display: flex;
+          gap: var(--ds-size-1);
+          align-items: center;
+        }`}
+        </style>
+        <Prose>
+          <Search {...args}>
+            <Search.Input
+              aria-label="Søk"
+              value={value}
+              onChange={(e) => {
+                const newValue = e.target.value;
+                setValue(newValue);
+                // Don't search while typing
+                setSearchValue('');
+                // Search after stopped typing
+                setSearchValueDebounced(newValue);
+              }}
+            />
+            <Search.Clear />
+          </Search>
+          {searchValue !== '' && (
+            <div className="live-search">
+              <Spinner aria-hidden data-size="xs" />
+              <span>Søker etter: {searchValue}</span>
+            </div>
+          )}
+        </Prose>
+      </>
     );
   },
 });

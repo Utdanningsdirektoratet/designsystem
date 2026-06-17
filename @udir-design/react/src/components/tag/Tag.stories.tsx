@@ -111,25 +111,25 @@ export const Article = meta.story({
     <>
       <style>
         {`
-.example-img {
+.article-img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
 }
-.example-div {
+.article-main {
   display: flex;
   gap: 10px;
   margin-top: var(--ds-size-4);
   margin-bottom: var(--ds-size-3);
 }
-.example-div-2 {
+.article-div {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: var(--ds-size-2);
 }
-.example-list {
+.article-list {
     list-style: none;
     display: flex;
     gap: 10px;
@@ -141,11 +141,11 @@ export const Article = meta.story({
         <img
           src={electricianImage}
           alt="Bøker på et bord"
-          className="example-img"
+          className="article-img"
         />
-        <div className="example-div">
+        <div className="article-main">
           <Heading>Rådgivning for lærlinger</Heading>
-          <ul className="example-list">
+          <ul className="article-list">
             <li>
               <Tag data-color="accent" data-size="sm" {...args}>
                 Videregående
@@ -158,7 +158,7 @@ export const Article = meta.story({
             </li>
           </ul>
         </div>
-        <div className="example-div-2">
+        <div className="article-div">
           <Avatar data-size="xs" initials="ON" aria-label={'Kari Nordmann'} />
           <Paragraph>Ola Nordmann | 19.06.2025</Paragraph>
         </div>
