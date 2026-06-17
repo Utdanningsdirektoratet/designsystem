@@ -37,7 +37,6 @@ export const Preview = meta.story({
   display: flex;
   flex-direction: column;
 }
-
 .demo-banner-main-content {
   padding-block-start: var(--ds-size-10);
   padding-block-end: var(--ds-size-18);
@@ -49,26 +48,21 @@ export const Preview = meta.story({
   gap: var(--ds-size-4);
   flex: 1;
 }
-
 .demo-banner-section {
   width: 50%;
   display: flex;
   flex-direction: column;
   gap: var(--ds-size-6);
 }
-
 .demo-banner-paragraph {
   margin-top: var(--ds-size-3);
 }
-
 .demo-banner-card {
   max-width: 300px;
 }
-
 .demo-banner-link {
   width: fit-content;
 }
-
 .demo-banner-aside {
     width: 400px;
 }`}
@@ -125,38 +119,34 @@ export const WithScroll = meta.story({
     <>
       <style>
         {`
-          .demo-banner-main-content {
-            padding: var(--ds-size-18);
-            display: flex;
-            flex-direction: column;
-            gap: var(--ds-size-4);
-            max-width: 800px;
-            margin: 0 auto;
-          }
-
-          .demo-banner-paragraph {
-            margin-top: var(--ds-size-3);
-          }
-
-          .demo-banner-heading {
-            margin-top: var(--ds-size-5);
-          }
-        `}
+.with-scroll-main-content {
+  padding: var(--ds-size-18);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+  max-width: 800px;
+  margin: 0 auto;
+}
+.with-scroll-paragraph {
+  margin-top: var(--ds-size-3);
+}
+.with-scroll-heading {
+  margin-top: var(--ds-size-5);
+}`}
       </style>
-
       <DemoBanner data-testid="banner" {...args}>
         <Header applicationName="Tjenestenavn" />
-        <main className="demo-banner-main-content">
+        <main className="with-scroll-main-content">
           <Heading level={1} data-size="lg">
             Samisk i skolen
           </Heading>
-          <Paragraph className="demo-banner-paragraph">
+          <Paragraph className="with-scroll-paragraph">
             Alle elever skal lære om samer og samiske forhold i skolen. Retten
             til også å få undervisning i samiske språk og undervisning på samisk
             i andre fag, er ulik innenfor og utenfor samiske distrikt. I de
             samiske distriktene er norsk og samisk sidestilte i opplæringen.
           </Paragraph>
-          <Heading level={2} className="demo-banner-heading">
+          <Heading level={2} className="with-scroll-heading">
             Rett til opplæring i samisk i videregående opplæring
           </Heading>
           <Paragraph>
@@ -179,7 +169,7 @@ export const WithScroll = meta.story({
             Retten til opplæring i samisk for samiske elever i videregående
             opplæring er videreført.
           </Paragraph>
-          <Heading level={2} className="demo-banner-heading">
+          <Heading level={2} className="with-scroll-heading">
             Tilbud om del av opplæringen i et samiskspråklig miljø
           </Heading>
           <Paragraph>

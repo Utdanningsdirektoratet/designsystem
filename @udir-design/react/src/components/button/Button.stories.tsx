@@ -365,30 +365,37 @@ const makePseudoStatesStory = makeStoryTransformer((originalStory) => ({
   render: (args, ctx) => {
     const argsObj = args as object;
     return (
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, auto)',
-          gap: 'inherit',
-          alignItems: 'center',
-          justifyItems: 'center',
-        }}
-      >
-        <Label data-size="sm">Default</Label>
-        {originalStory.input.render?.(argsObj, ctx)}
-        <Label data-size="sm">Hover</Label>
-        {originalStory.input.render?.({ ...argsObj, className: 'hover' }, ctx)}
-        <Label data-size="sm">Pressed</Label>
-        {originalStory.input.render?.(
-          { ...argsObj, className: 'hover active' },
-          ctx,
-        )}
-        <Label data-size="sm">Focused</Label>
-        {originalStory.input.render?.(
-          { ...argsObj, className: 'focusVisible' },
-          ctx,
-        )}
-      </div>
+      <>
+        <style>
+          {`
+.example-main {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: inherit;
+  align-items: center;
+  justify-items: center;
+}`}
+        </style>
+        <div className="example-main">
+          <Label data-size="sm">Default</Label>
+          {originalStory.input.render?.(argsObj, ctx)}
+          <Label data-size="sm">Hover</Label>
+          {originalStory.input.render?.(
+            { ...argsObj, className: 'hover' },
+            ctx,
+          )}
+          <Label data-size="sm">Pressed</Label>
+          {originalStory.input.render?.(
+            { ...argsObj, className: 'hover active' },
+            ctx,
+          )}
+          <Label data-size="sm">Focused</Label>
+          {originalStory.input.render?.(
+            { ...argsObj, className: 'focusVisible' },
+            ctx,
+          )}
+        </div>
+      </>
     );
   },
   args: originalStory.composed.args,

@@ -142,16 +142,16 @@ const detailsColorDecorator: Decorator = (Story) => {
   };
 
   return (
-    <div>
-      <Stack
-        direction="row"
-        data-size="sm"
-        style={{
-          paddingInline: '1rem',
-          paddingTop: '1rem',
-          marginBottom: 'var(--ds-size-5)',
-        }}
-      >
+    <>
+      <style>
+        {`
+.example-stack {
+  padding-inline: 1rem;
+  padding-top: 1rem;
+  margin-bottom: var(--ds-size-5);
+}`}
+      </style>
+      <Stack className="example-stack" direction="row" data-size="sm">
         <Fieldset>
           <Fieldset.Legend>Farge</Fieldset.Legend>
           <ToggleGroup
@@ -189,7 +189,7 @@ const detailsColorDecorator: Decorator = (Story) => {
           children: <Story />,
         })}
       </div>
-    </div>
+    </>
   );
 };
 
@@ -328,23 +328,30 @@ const makePseudoStatesStory = makeStoryTransformer((originalStory) => ({
   render: (args, ctx) => {
     const argsObj = args as object;
     return (
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 'var(--ds-size-4)',
-        }}
-      >
-        <Label data-size="sm">Default</Label>
-        {originalStory.input.render?.(args, ctx)}
-        <Label data-size="sm">Hover</Label>
-        {originalStory.input.render?.({ ...argsObj, className: 'hover' }, ctx)}
-        <Label data-size="sm">Focused</Label>
-        {originalStory.input.render?.(
-          { ...argsObj, className: 'focusVisible' },
-          ctx,
-        )}
-      </div>
+      <>
+        <style>
+          {`
+.example-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+}`}
+        </style>
+        <div className="example-main">
+          <Label data-size="sm">Default</Label>
+          {originalStory.input.render?.(args, ctx)}
+          <Label data-size="sm">Hover</Label>
+          {originalStory.input.render?.(
+            { ...argsObj, className: 'hover' },
+            ctx,
+          )}
+          <Label data-size="sm">Focused</Label>
+          {originalStory.input.render?.(
+            { ...argsObj, className: 'focusVisible' },
+            ctx,
+          )}
+        </div>
+      </>
     );
   },
   args: originalStory.composed.args,

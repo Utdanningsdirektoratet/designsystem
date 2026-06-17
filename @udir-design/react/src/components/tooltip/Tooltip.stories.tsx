@@ -59,12 +59,12 @@ export const Placement = meta.story({
       <>
         <style>
           {`
-.example-main {
-  display: flex; 
+.placement-main {
+  display: flex;
   gap: var(--ds-size-2);
 }`}
         </style>
-        <div className="example-main">
+        <div className="placement-main">
           <Tooltip {...args} placement="left" content="Slett">
             <Button icon variant="secondary">
               <TrashIcon aria-hidden />
@@ -96,12 +96,12 @@ export const Aria = meta.story({
     <>
       <style>
         {`
-.example-main {
-  display: flex; 
+.aria-main {
+  display: flex;
   gap: var(--ds-size-2);
 }`}
       </style>
-      <div className="example-main">
+      <div className="aria-main">
         <Tooltip {...args} content="Jeg er hovedinformasjon (aria-label)">
           <Button icon>
             <FilesIcon aria-hidden />
