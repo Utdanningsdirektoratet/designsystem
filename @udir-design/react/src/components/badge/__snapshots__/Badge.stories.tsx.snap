@@ -2,7 +2,7 @@
 
 exports[`Color Variants 1`] = `
 <style>
-  .example-content {
+  .color-variants-content {
   display: grid;
   grid-template-columns: repeat(4, 60px);
   gap: var(--ds-size-2);
@@ -77,7 +77,7 @@ exports[`Color Variants 1`] = `
 
 exports[`Custom Placement 1`] = `
 <style>
-  .example-badge {
+  .custom-placement-badge {
   --dsc-badge-top: 16%;
   --dsc-badge-right: 10%;
 }
@@ -117,7 +117,7 @@ exports[`Custom Placement 1`] = `
 
 exports[`Floating 1`] = `
 <style>
-  .example-avatar {
+  .floating-avatar {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -315,7 +315,7 @@ exports[`Floating 1`] = `
 
 exports[`In Button 1`] = `
 <style>
-  .example-main {
+  .in-button-main {
   display: flex;
   gap: var(--ds-size-4);
 }
@@ -528,15 +528,15 @@ exports[`Status 1`] = `
 
 exports[`System Alerts 1`] = `
 <style>
-  .example-main {
+  .system-alerts-main {
   display: flex;
   flex-direction: column;
   width: 30rem;
 }
-.example-heading {
+.system-alerts-heading {
   margin-block-end: var(--ds-size-4);
 }
-.example-details-content {
+.system-alerts-details-content {
   gap: var(--ds-size-4);
   display: flex;
   flex-direction: column;
@@ -558,7 +558,7 @@ exports[`System Alerts 1`] = `
     </summary>
     <div>
       <style>
-        .example-header {
+        .varsel-header {
   display: flex;
   justify-content: space-between;
 }
@@ -581,7 +581,7 @@ exports[`System Alerts 1`] = `
         </p>
       </div>
       <style>
-        .example-header {
+        .varsel-header {
   display: flex;
   justify-content: space-between;
 }
@@ -617,7 +617,7 @@ exports[`System Alerts 1`] = `
     </summary>
     <div>
       <style>
-        .example-header {
+        .varsel-header {
   display: flex;
   justify-content: space-between;
 }
@@ -640,7 +640,7 @@ exports[`System Alerts 1`] = `
         </p>
       </div>
       <style>
-        .example-header {
+        .varsel-header {
   display: flex;
   justify-content: space-between;
 }
@@ -663,7 +663,7 @@ exports[`System Alerts 1`] = `
         </p>
       </div>
       <style>
-        .example-header {
+        .varsel-header {
   display: flex;
   justify-content: space-between;
 }
@@ -686,7 +686,7 @@ exports[`System Alerts 1`] = `
         </p>
       </div>
       <style>
-        .example-header {
+        .varsel-header {
   display: flex;
   justify-content: space-between;
 }
@@ -709,7 +709,7 @@ exports[`System Alerts 1`] = `
         </p>
       </div>
       <style>
-        .example-header {
+        .varsel-header {
   display: flex;
   justify-content: space-between;
 }
@@ -732,7 +732,7 @@ exports[`System Alerts 1`] = `
         </p>
       </div>
       <style>
-        .example-header {
+        .varsel-header {
   display: flex;
   justify-content: space-between;
 }
@@ -768,7 +768,7 @@ exports[`System Alerts 1`] = `
     </summary>
     <div>
       <style>
-        .example-header {
+        .varsel-header {
   display: flex;
   justify-content: space-between;
 }
@@ -784,7 +784,7 @@ exports[`System Alerts 1`] = `
         </p>
       </div>
       <style>
-        .example-header {
+        .varsel-header {
   display: flex;
   justify-content: space-between;
 }
@@ -800,7 +800,7 @@ exports[`System Alerts 1`] = `
         </p>
       </div>
       <style>
-        .example-header {
+        .varsel-header {
   display: flex;
   justify-content: space-between;
 }
@@ -816,7 +816,7 @@ exports[`System Alerts 1`] = `
         </p>
       </div>
       <style>
-        .example-header {
+        .varsel-header {
   display: flex;
   justify-content: space-between;
 }
@@ -832,7 +832,7 @@ exports[`System Alerts 1`] = `
         </p>
       </div>
       <style>
-        .example-header {
+        .varsel-header {
   display: flex;
   justify-content: space-between;
 }
@@ -848,7 +848,7 @@ exports[`System Alerts 1`] = `
         </p>
       </div>
       <style>
-        .example-header {
+        .varsel-header {
   display: flex;
   justify-content: space-between;
 }
@@ -864,7 +864,7 @@ exports[`System Alerts 1`] = `
         </p>
       </div>
       <style>
-        .example-header {
+        .varsel-header {
   display: flex;
   justify-content: space-between;
 }
@@ -880,7 +880,7 @@ exports[`System Alerts 1`] = `
         </p>
       </div>
       <style>
-        .example-header {
+        .varsel-header {
   display: flex;
   justify-content: space-between;
 }
@@ -896,7 +896,7 @@ exports[`System Alerts 1`] = `
         </p>
       </div>
       <style>
-        .example-header {
+        .varsel-header {
   display: flex;
   justify-content: space-between;
 }
@@ -912,7 +912,7 @@ exports[`System Alerts 1`] = `
         </p>
       </div>
       <style>
-        .example-header {
+        .varsel-header {
   display: flex;
   justify-content: space-between;
 }
@@ -928,7 +928,7 @@ exports[`System Alerts 1`] = `
         </p>
       </div>
       <style>
-        .example-header {
+        .varsel-header {
   display: flex;
   justify-content: space-between;
 }

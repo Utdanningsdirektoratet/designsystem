@@ -167,7 +167,14 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Pseudo States 1`] = `
-<div style="<removed>">
+<style>
+  .example-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+}
+</style>
+<div>
   <label
     data-weight="medium"
     data-size="sm"

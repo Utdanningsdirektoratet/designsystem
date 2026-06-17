@@ -2,8 +2,8 @@
 
 exports[`Aria 1`] = `
 <style>
-  .example-main {
-  display: flex; 
+  .aria-main {
+  display: flex;
   gap: var(--ds-size-2);
 }
 </style>
@@ -51,8 +51,8 @@ exports[`Aria 1`] = `
 
 exports[`Placement 1`] = `
 <style>
-  .example-main {
-  display: flex; 
+  .placement-main {
+  display: flex;
   gap: var(--ds-size-2);
 }
 </style>

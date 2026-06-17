@@ -1,15 +1,23 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Checkbox 1`] = `
-<div style="<removed>">
-  <div
-    data-size="sm"
-    style="<removed>"
-  >
-    <h2
-      data-size="2xs"
-      style="<removed>"
-    >
+<style>
+  .checkbox-main {
+  display: grid;
+  gap: 2rem;
+}
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.checkbox-heading {
+  grid-column: 1 / -1;
+}
+</style>
+<div>
+  <div data-size="sm">
+    <h2 data-size="2xs">
       Small
     </h2>
     <ds-field data-clickdelegatefor="<removed>">
@@ -186,14 +194,8 @@ exports[`Checkbox 1`] = `
       </label>
     </ds-field>
   </div>
-  <div
-    data-size="md"
-    style="<removed>"
-  >
-    <h2
-      data-size="2xs"
-      style="<removed>"
-    >
+  <div data-size="md">
+    <h2 data-size="2xs">
       Medium
     </h2>
     <ds-field data-clickdelegatefor="<removed>">
@@ -370,14 +372,8 @@ exports[`Checkbox 1`] = `
       </label>
     </ds-field>
   </div>
-  <div
-    data-size="lg"
-    style="<removed>"
-  >
-    <h2
-      data-size="2xs"
-      style="<removed>"
-    >
+  <div data-size="lg">
+    <h2 data-size="2xs">
       Large
     </h2>
     <ds-field data-clickdelegatefor="<removed>">
@@ -559,12 +555,12 @@ exports[`Checkbox 1`] = `
 
 exports[`Controlled 1`] = `
 <style>
-  .example-main {
+  .controlled-main {
           display: flex;
           gap: var(--ds-size-2);
           align-items: end;
           width: 100%;
-         }
+        }
 </style>
 <div>
   <div>
@@ -657,13 +653,13 @@ exports[`Preview 1`] = `
 
 exports[`Radio 1`] = `
 <style>
-  .example-main {
+  .radio-main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   max-width: 90vw;
 }
-.example-heading {
+.radio-heading {
   grid-column: 1 / -1;
   margin-top: 16px;
 }
@@ -1029,17 +1025,17 @@ exports[`Radio 1`] = `
 
 exports[`Switch 1`] = `
 <style>
-  .example-main {
+  .switch-main {
   display: grid;
   gap: 2rem;
 }
-.example-section {
+.switch-section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   max-width: 90vw;
 }
-.example-heading {
+.switch-heading {
   grid-column: 1 / -1;
 }
 </style>
@@ -1337,13 +1333,13 @@ exports[`Switch 1`] = `
 
 exports[`Text 1`] = `
 <style>
-  .example-main {
+  .text-main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   max-width: 90vw;
 }
-.example-heading {
+.text-heading {
   grid-column: 1 / -1;
 }
 </style>

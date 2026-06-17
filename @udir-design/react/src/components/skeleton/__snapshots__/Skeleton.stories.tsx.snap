@@ -2,22 +2,22 @@
 
 exports[`Cards 1`] = `
 <style>
-  .example-main {
+  .cards-main {
   margin: var(--ds-size-12);
-    display: flex;
-    flex-direction: column;
-    gap: var(--ds-size-6);
-  }
-.example-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+}
+.cards-buttons {
   display: flex;
   justify-content: end;
 }
-.example-card {
+.cards-card {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--ds-size-6);
 }
-.example-card-block {
+.cards-card-block {
   display: flex;
   flex-direction: column;
 }
@@ -371,7 +371,7 @@ exports[`Children 1`] = `
 
 exports[`Components 1`] = `
 <style>
-  .example-main {
+  .components-main {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -412,12 +412,12 @@ exports[`Preview 1`] = `
 
 exports[`Text 1`] = `
 <style>
-  .example-text {
+  .text-main {
   display: flex;
   gap: var(--ds-size-12);
   margin: var(--ds-size-12);
 }
-.example-text-column {
+.text-column {
   flex: 1 1 200px;
 }
 </style>
@@ -460,21 +460,21 @@ exports[`Text 1`] = `
 
 exports[`Usage Example 1`] = `
 <style>
-  .example-main {
+  .usage-main {
   display: flex;
   gap: var(--ds-size-12);
   margin: var(--ds-size-12);
 }
-.example-section {
+.usage-section {
   flex: 1 1 200px;
 }
-.example-meta {
+.usage-meta {
   display: flex;
   gap: var(--ds-size-2);
   align-items: center;
   padding-block: var(--ds-size-1);
 }
-.example-image {
+.usage-image {
   display: block;
   width: 100%;
   height: 200px;
