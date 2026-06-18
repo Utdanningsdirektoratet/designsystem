@@ -7,7 +7,17 @@ import * as SwitchStories from '../components/switch/Switch.stories';
 
 # Disabled og ReadOnly
 
-Skjemakomponentene støtter `disabled` og `readOnly`. Vi anbefaler å unngå begge tilstandene så langt det lar seg gjøre, fordi de skaper utfordringer for brukerne.
+Skjemakomponentene støtter `disabled` og `readOnly`. Vi anbefaler å unngå begge tilstandene så langt det lar seg gjøre, fordi de skaper utfordringer for brukerne. Velg derfor helst et av alternativene under før du tyr til `disabled` eller `readOnly`.
+
+## Bruk heller et alternativ
+
+I de fleste tilfeller finnes det en bedre løsning enn å deaktivere eller skrivebeskytte et felt. Vurder disse alternativene først:
+
+- **Fjern feltet** når det ikke er relevant. Et deaktivert felt tar fortsatt visuell plass og kan forvirre, mens et felt som ikke vises ikke skaper støy. Forklar gjerne brukeren hvorfor noe ikke er tilgjengelig.
+- **Vis informasjon som ren tekst** når en verdi bare skal presenteres og ikke endres. Da er det ingen tvil om at innholdet ikke er redigerbart.
+
+- **Vis feilmeldinger i stedet for å deaktivere send- eller lagre-knappen.** La brukeren trykke, og vis tydelige feilmeldinger som forklarer hva som mangler. En deaktivert knapp forteller ikke brukeren hvorfor de ikke kommer videre.
+- **For knapper: bruk `loading`** med `aria-disabled` i stedet for `disabled` mens noe lastes eller lagres. Da beholder knappen fokus og er synlig for hjelpemidler. Se [retningslinjene for `Button`](/docs/components-button--docs#lasting).
 
 ## Ikke bruk deaktivert (`disabled`)
 
@@ -67,10 +77,3 @@ Inputkomponentene støtter `readOnly` for å gjøre feltet skrivebeskyttet. Felt
 - [`Checkbox`](/docs/components-checkbox--docs#unngå-skrivebeskyttet-checkbox)
 - [`Radio`](/docs/components-radio--docs#unngå-skrivebeskyttet-radio)
 - [`Switch`](/docs/components-switch--docs#unngå-skrivebeskyttet-switch)
-
-## Alternativer
-
-- **Fjern feltet** og forklar brukeren hvorfor det ikke er tilgjengelig.
-- **Vis informasjon som ren tekst** i stedet for et skrivebeskyttet felt.
-- **Bruk betinget visning** — vis feltet bare når det er relevant, for eksempel basert på et tidligere valg i skjemaet.
-- **For knapper**: Bruk `loading`-tilstanden med `aria-disabled` i stedet for `disabled`. Da beholder knappen fokus og er synlig for hjelpemidler. Se [retningslinjene for `Button`](/docs/components-button--docs#lasting).
