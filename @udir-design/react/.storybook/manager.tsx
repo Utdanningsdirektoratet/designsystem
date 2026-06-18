@@ -3,6 +3,7 @@ import './manager.css';
 import './addons/sourceCodeToolbar';
 import '@pagefind/component-ui';
 import '@pagefind/component-ui/css';
+import { configureInstance } from '@pagefind/component-ui';
 import React from 'react';
 import type { API_HashEntry } from 'storybook/internal/types';
 import { addons } from 'storybook/manager-api';
@@ -188,6 +189,13 @@ function RenderWithTagBadge({
   }
 }
 
+// —— Pagefind config
+
+configureInstance('default', {
+  baseUrl: window.location.pathname,
+  bundlePath: `${window.location.pathname}pagefind/`,
+});
+
 // ── Pagefind search modal (PoC) ─────────────────────────────────────────
 // Storybook has no sidebar slot API, so we inject the search trigger into
 // the sidebar DOM once it renders.
@@ -221,7 +229,6 @@ window.addEventListener('message', (e) => {
 const searchRoot = document.createElement('div');
 searchRoot.id = 'pagefind-search-root';
 searchRoot.innerHTML = `
-  <pagefind-config bundlepath="./pagefind/"></pagefind-config>
   <pagefind-modal-trigger placeholder="Search"></pagefind-modal-trigger>
   <pagefind-modal>
     <pagefind-modal-header>
