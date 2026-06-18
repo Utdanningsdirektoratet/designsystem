@@ -432,6 +432,55 @@ export const ExampleItems = meta.story({
       </div>
     );
   },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step('All file items are rendered', async () => {
+      await expect(canvas.getByText('eksempel1.pdf')).toBeInTheDocument();
+      await expect(canvas.getByText('eksempel2.docx')).toBeInTheDocument();
+      await expect(canvas.getByText('eksempel3.png')).toBeInTheDocument();
+      await expect(canvas.getByText('eksempel4.pdf')).toBeInTheDocument();
+      await expect(canvas.getByText('eksempel5.tsx')).toBeInTheDocument();
+    });
+
+    await step('Error message is shown for rejected file', async () => {
+      await expect(
+        canvas.getByText('Filformatet støttes ikke'),
+      ).toBeInTheDocument();
+    });
+
+    await step('Readonly and loading items have no remove button', async () => {
+      const removeButtons = canvas.getAllByRole('button');
+      await expect(removeButtons).toHaveLength(3);
+    });
+
+    await step('Loading item shows a spinner', async () => {
+      await expect(
+        canvas.getByRole('img', { name: 'spinner' }),
+      ).toBeInTheDocument();
+    });
+
+    await step('Loading item has aria-busy set', async () => {
+      const busyItem = canvasElement.querySelector('[aria-busy="true"]');
+      await expect(busyItem).toBeInTheDocument();
+    });
+
+    await step('Error item has aria-invalid set', async () => {
+      const invalidItem = canvasElement.querySelector('[aria-invalid="true"]');
+      await expect(invalidItem).toBeInTheDocument();
+    });
+
+    await step('File size is shown for normal items', async () => {
+      // eksempel1.pdf = 300 000 bytes = 0.29 MB
+      await expect(canvas.getByText('0.29 MB')).toBeInTheDocument();
+    });
+
+    await step('Clicking remove deletes the file from the list', async () => {
+      const removeButtons = canvas.getAllByRole('button');
+      await userEvent.click(removeButtons[0]);
+      await expect(canvas.queryByText('eksempel1.pdf')).not.toBeInTheDocument();
+    });
+  },
 });
 
 export const Upload = meta.story({
@@ -479,5 +528,31 @@ export const Upload = meta.story({
         )}
       </div>
     );
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const fileInput = canvasElement.querySelector('input') as HTMLInputElement;
+    const dummyFile = new File(['abc'.repeat(100000)], 'rapport.pdf', {
+      type: 'application/pdf',
+    });
+
+    await step('Trigger input exists', async () => {
+      await expect(fileInput).toBeTruthy();
+    });
+
+    await step('No file item shown before upload', async () => {
+      await expect(canvas.queryByText('rapport.pdf')).not.toBeInTheDocument();
+    });
+
+    await step('File item appears after upload', async () => {
+      await userEvent.upload(fileInput, dummyFile);
+      await expect(await canvas.findByText('rapport.pdf')).toBeInTheDocument();
+    });
+
+    await step('Item shows loading spinner after upload', async () => {
+      await expect(
+        canvas.getByRole('img', { name: 'spinner' }),
+      ).toBeInTheDocument();
+    });
   },
 });
