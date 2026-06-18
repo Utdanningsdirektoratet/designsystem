@@ -115,19 +115,19 @@ export const Checkbox = meta.story({
       <>
         <style>
           {`
-.example-section {
+.chip-checkbox-main {
   display: flex;
   flex-direction: column;
   gap: var(--ds-size-4);
 }
-.example-checkbox {
+.chip-checkbox-checkbox {
   display: flex;
   gap: var(--ds-size-1);
 }`}
         </style>
-        <div className="example-section">
+        <div className="chip-checkbox-main">
           <Paragraph>Vis data for</Paragraph>
-          <div className="example-checkbox">
+          <div className="chip-checkbox-checkbox">
             {options.map((year) => (
               <Chip.Checkbox key={year} aria-label={year} {...args}>
                 {year}
@@ -165,19 +165,19 @@ export const Radio = meta.story({
       <>
         <style>
           {`
-.example-section {
+.chip-radio-main {
   display: flex;
   flex-direction: column;
   gap: var(--ds-size-4);
 }
-.example-radio {
+.chip-radio-radio__group {
   display: flex;
   gap: var(--ds-size-1);
 }`}
         </style>
-        <div className="example-section">
+        <div className="chip-radio-main">
           <Paragraph>Vis data for</Paragraph>
-          <div className="example-radio">
+          <div className="chip-radio-radio__group">
             {options.map((grade) => (
               <Chip.Radio
                 key={grade}
@@ -249,17 +249,17 @@ export const Button = meta.story({
       <>
         <style>
           {`
-.example-section {
+.chip-button-main {
   display: flex;
   flex-direction: column;
   gap: var(--ds-size-4);
 }
-.example-buttons {
+.chip-button-button__group {
   display: flex;
   gap: var(--ds-size-2);
 }`}
         </style>
-        <div className="example-section">
+        <div className="chip-button-main">
           <Search>
             <Search.Input
               aria-label="søk"
@@ -269,7 +269,7 @@ export const Button = meta.story({
             <Search.Clear />
             <Search.Button type="submit" />
           </Search>
-          <div className="example-buttons">
+          <div className="chip-button-button__group">
             <Paragraph>Hurtigsøk: </Paragraph>
             <Chip.Button onClick={() => setInputValue('Læreplaner')} {...args}>
               Læreplaner

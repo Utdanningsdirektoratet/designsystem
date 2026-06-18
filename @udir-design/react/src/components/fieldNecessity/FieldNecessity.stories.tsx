@@ -28,13 +28,16 @@ export const Preview = meta.story({
     <>
       <style>
         {`
-.example-field-necessity {
+.field-necessity-preview-field-necessity {
   display: flex;
   flex-direction: column;
   row-gap: var(--ds-size-4);
 }`}
       </style>
-      <FieldNecessity className="example-field-necessity" {...args}>
+      <FieldNecessity
+        className="field-necessity-preview-field-necessity"
+        {...args}
+      >
         <Textfield label={<span>Fornavn</span>} required />
         <Textfield label={<span>Mellomnavn</span>} />
         <Textfield label={<span>Etternavn</span>} required />
@@ -49,14 +52,17 @@ export const Outline = meta.story({
     <>
       <style>
         {`
-.example-field-necessity {
+.field-necessity-outline-field-necessity {
   display: flex;
   flex-direction: column;
   row-gap: var(--ds-size-4);
 }`}
       </style>
       <Card variant="tinted">
-        <FieldNecessity className="example-field-necessity" {...args}>
+        <FieldNecessity
+          className="field-necessity-outline-field-necessity"
+          {...args}
+        >
           <Textfield label={<span>Fornavn</span>} required />
           <Textfield label={<span>Mellomnavn</span>} />
           <Textfield label={<span>Etternavn</span>} required />
@@ -71,13 +77,16 @@ export const Readonly = meta.story({
     <>
       <style>
         {`
-.example-field-necessity {
+.field-necessity-readonly-field-necessity {
   display: flex;
   flex-direction: column;
   row-gap: var(--ds-size-4);
 }`}
       </style>
-      <FieldNecessity className="example-field-necessity" {...args}>
+      <FieldNecessity
+        className="field-necessity-readonly-field-necessity"
+        {...args}
+      >
         <Textfield label={<span>Fornavn</span>} required readOnly />
         <Textfield label={<span>Mellomnavn</span>} readOnly />
         <Textfield label={<span>Etternavn</span>} required readOnly />
@@ -91,13 +100,16 @@ export const AllRequired = meta.story({
     <>
       <style>
         {`
-.example-field-necessity {
+.field-necessity-all-required-field-necessity {
   display: flex;
   flex-direction: column;
   row-gap: var(--ds-size-4);
 }`}
       </style>
-      <FieldNecessity className="example-field-necessity" {...args}>
+      <FieldNecessity
+        className="field-necessity-all-required-field-necessity"
+        {...args}
+      >
         <Textfield label={<span>Fornavn</span>} required />
         <Textfield label={<span>Etternavn</span>} required />
       </FieldNecessity>
@@ -110,13 +122,16 @@ export const AllOptional = meta.story({
     <>
       <style>
         {`
-.example-field-necessity {
+.field-necessity-all-optional-field-necessity {
   display: flex;
   flex-direction: column;
   row-gap: var(--ds-size-4);
 }`}
       </style>
-      <FieldNecessity className="example-field-necessity" {...args}>
+      <FieldNecessity
+        className="field-necessity-all-optional-field-necessity"
+        {...args}
+      >
         <Textfield multiline label={<span>Hva synes du om skjemaet?</span>} />
         <Textfield multiline label={<span>Har du noen andre innspill?</span>} />
       </FieldNecessity>
@@ -242,13 +257,16 @@ export const ManualSummaryPlacement = meta.story({
     <>
       <style>
         {`
-.example-field-necessity {
+.field-necessity-manual-summary-placement-field-necessity {
   display: flex;
   flex-direction: column;
   row-gap: var(--ds-size-4);
 }`}
       </style>
-      <FieldNecessity className="example-field-necessity" {...args}>
+      <FieldNecessity
+        className="field-necessity-manual-summary-placement-field-necessity"
+        {...args}
+      >
         <Heading level={2} data-size="md">
           Kontaktinformasjon
         </Heading>

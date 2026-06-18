@@ -176,13 +176,13 @@ export const WithAnchor = meta.story({
       <>
         <style>
           {`
-.with-anchor-main {
+.pagination-with-anchor-main {
   gap: 70px;
   display: flex;
   flex-direction: column;
 }`}
         </style>
-        <div className="with-anchor-main">
+        <div className="pagination-with-anchor-main">
           <Search>
             <Search.Input aria-label="Søk" value={url} autoComplete="url" />
           </Search>

@@ -126,7 +126,7 @@ export const Controlled = meta.story({
       <>
         <style>
           {`
-        .controlled-main {
+        .input-controlled-main {
           display: flex;
           gap: var(--ds-size-2);
           align-items: end;
@@ -134,7 +134,7 @@ export const Controlled = meta.story({
         }`}
         </style>
         <Prose>
-          <div className="controlled-main">
+          <div className="input-controlled-main">
             <Field>
               <Label>Skriv inn verdi</Label>
               <Input
@@ -196,19 +196,19 @@ export const Text = meta.story({
       <>
         <style>
           {`
-.text-main {
+.input-text-main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   max-width: 90vw;
 }
-.text-heading {
+.input-text-heading {
   grid-column: 1 / -1;
 }`}
         </style>
         {sizes.map((size) => (
-          <div className="text-main" key={size} data-size={size}>
-            <Heading data-size="2xs" className="text-heading">
+          <div className="input-text-main" key={size} data-size={size}>
+            <Heading data-size="2xs" className="input-text-heading">
               {sizenames[size]}
             </Heading>
             {states.map((state) => (
@@ -305,20 +305,20 @@ export const Radio = meta.story({
       <>
         <style>
           {`
-.radio-main {
+.input-radio-main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   max-width: 90vw;
 }
-.radio-heading {
+.input-radio-heading {
   grid-column: 1 / -1;
   margin-top: 16px;
 }`}
         </style>
         {sizes.map((size) => (
-          <div className="radio-main" key={size} data-size={size}>
-            <Heading className="radio-heading" data-size="2xs">
+          <div className="input-radio-main" key={size} data-size={size}>
+            <Heading className="input-radio-heading" data-size="2xs">
               {sizenames[size]}
             </Heading>
             {states.map((state) => (
@@ -398,23 +398,23 @@ export const Checkbox = meta.story({
       <>
         <style>
           {`
-.checkbox-main {
+.input-checkbox-main {
   display: grid;
   gap: 2rem;
 }
-.checkbox-grid {
+.input-checkbox-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
-.checkbox-heading {
+.input-checkbox-heading {
   grid-column: 1 / -1;
 }`}
         </style>
-        <div className="checkbox-main">
+        <div className="input-checkbox-main">
           {sizes.map((size) => (
-            <div className="checkbox-grid" key={size} data-size={size}>
-              <Heading className="checkbox-heading" data-size="2xs">
+            <div className="input-checkbox-grid" key={size} data-size={size}>
+              <Heading className="input-checkbox-heading" data-size="2xs">
                 {sizenames[size]}
               </Heading>
               {states.map((state) => (
@@ -473,24 +473,24 @@ export const Switch = meta.story({
       <>
         <style>
           {`
-.switch-main {
+.input-switch-main {
   display: grid;
   gap: 2rem;
 }
-.switch-section {
+.input-switch-section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   max-width: 90vw;
 }
-.switch-heading {
+.input-switch-heading {
   grid-column: 1 / -1;
 }`}
         </style>
-        <div className="switch-main">
+        <div className="input-switch-main">
           {sizes.map((size) => (
-            <div className="switch-section" key={size} data-size={size}>
-              <Heading className="switch-heading" data-size="2xs">
+            <div className="input-switch-section" key={size} data-size={size}>
+              <Heading className="input-switch-heading" data-size="2xs">
                 {sizenames[size]}
               </Heading>
               {states.map((state) => (

@@ -2,7 +2,7 @@
 
 exports[`Aria 1`] = `
 <style>
-  .aria-main {
+  .tooltip-aria-main {
   display: flex;
   gap: var(--ds-size-2);
 }
@@ -51,7 +51,7 @@ exports[`Aria 1`] = `
 
 exports[`Placement 1`] = `
 <style>
-  .placement-main {
+  .tooltip-placement-main {
   display: flex;
   gap: var(--ds-size-2);
 }

@@ -2,7 +2,7 @@
 
 exports[`All Optional 1`] = `
 <style>
-  .example-field-necessity {
+  .field-necessity-all-optional-field-necessity {
   display: flex;
   flex-direction: column;
   row-gap: var(--ds-size-4);
@@ -52,7 +52,7 @@ exports[`All Optional 1`] = `
 
 exports[`All Required 1`] = `
 <style>
-  .example-field-necessity {
+  .field-necessity-all-required-field-necessity {
   display: flex;
   flex-direction: column;
   row-gap: var(--ds-size-4);
@@ -292,7 +292,7 @@ exports[`Individual Checkboxes 1`] = `
 
 exports[`Manual Summary Placement 1`] = `
 <style>
-  .example-field-necessity {
+  .field-necessity-manual-summary-placement-field-necessity {
   display: flex;
   flex-direction: column;
   row-gap: var(--ds-size-4);
@@ -367,7 +367,7 @@ exports[`Manual Summary Placement 1`] = `
 
 exports[`Outline 1`] = `
 <style>
-  .example-field-necessity {
+  .field-necessity-outline-field-necessity {
   display: flex;
   flex-direction: column;
   row-gap: var(--ds-size-4);
@@ -436,7 +436,7 @@ exports[`Outline 1`] = `
 
 exports[`Preview 1`] = `
 <style>
-  .example-field-necessity {
+  .field-necessity-preview-field-necessity {
   display: flex;
   flex-direction: column;
   row-gap: var(--ds-size-4);
@@ -502,7 +502,7 @@ exports[`Preview 1`] = `
 
 exports[`Readonly 1`] = `
 <style>
-  .example-field-necessity {
+  .field-necessity-readonly-field-necessity {
   display: flex;
   flex-direction: column;
   row-gap: var(--ds-size-4);

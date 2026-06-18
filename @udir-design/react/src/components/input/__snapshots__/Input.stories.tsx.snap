@@ -2,16 +2,16 @@
 
 exports[`Checkbox 1`] = `
 <style>
-  .checkbox-main {
+  .input-checkbox-main {
   display: grid;
   gap: 2rem;
 }
-.checkbox-grid {
+.input-checkbox-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
-.checkbox-heading {
+.input-checkbox-heading {
   grid-column: 1 / -1;
 }
 </style>
@@ -555,7 +555,7 @@ exports[`Checkbox 1`] = `
 
 exports[`Controlled 1`] = `
 <style>
-  .controlled-main {
+  .input-controlled-main {
           display: flex;
           gap: var(--ds-size-2);
           align-items: end;
@@ -653,13 +653,13 @@ exports[`Preview 1`] = `
 
 exports[`Radio 1`] = `
 <style>
-  .radio-main {
+  .input-radio-main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   max-width: 90vw;
 }
-.radio-heading {
+.input-radio-heading {
   grid-column: 1 / -1;
   margin-top: 16px;
 }
@@ -1025,17 +1025,17 @@ exports[`Radio 1`] = `
 
 exports[`Switch 1`] = `
 <style>
-  .switch-main {
+  .input-switch-main {
   display: grid;
   gap: 2rem;
 }
-.switch-section {
+.input-switch-section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   max-width: 90vw;
 }
-.switch-heading {
+.input-switch-heading {
   grid-column: 1 / -1;
 }
 </style>
@@ -1333,13 +1333,13 @@ exports[`Switch 1`] = `
 
 exports[`Text 1`] = `
 <style>
-  .text-main {
+  .input-text-main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   max-width: 90vw;
 }
-.text-heading {
+.input-text-heading {
   grid-column: 1 / -1;
 }
 </style>

@@ -368,7 +368,7 @@ const makePseudoStatesStory = makeStoryTransformer((originalStory) => ({
       <>
         <style>
           {`
-.example-main {
+.button-example-main {
   display: grid;
   grid-template-columns: repeat(4, auto);
   gap: inherit;
@@ -376,7 +376,7 @@ const makePseudoStatesStory = makeStoryTransformer((originalStory) => ({
   justify-items: center;
 }`}
         </style>
-        <div className="example-main">
+        <div className="button-example-main">
           <Label data-size="sm">Default</Label>
           {originalStory.input.render?.(argsObj, ctx)}
           <Label data-size="sm">Hover</Label>

@@ -69,7 +69,7 @@ export const Inline = meta.story({
     <>
       <style>
         {`
-.inline-radio-group {
+.radio-inline-radio__group {
   display: flex;
   flex-wrap: wrap;
   gap: var(--ds-size-6);
@@ -80,7 +80,7 @@ export const Inline = meta.story({
         <Fieldset.Description>
           Bekreft om du ønsker å bli kontaktet per e-post.
         </Fieldset.Description>
-        <div className="inline-radio-group">
+        <div className="radio-inline-radio__group">
           <Radio name="my-inline" label="Ja" value="ja" {...args} />
           <Radio name="my-inline" label="Nei" value="nei" {...args} />
         </div>

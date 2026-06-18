@@ -57,19 +57,19 @@ export const Icon = meta.story({
     <>
       <style>
         {`
-.example-tag {
-  paddingInlineStart: 'var(--ds-size-1)
+.tag-icon-tag {
+  padding-inline-start: var(--ds-size-1);
 }
-.example-icon {
-  marginInlineEnd: 'var(--ds-size-1)'
+.tag-icon-icon {
+  margin-inline-end: var(--ds-size-1); 
 }`}
       </style>
-      <Tag className="example-tag" {...args}>
-        <RobotIcon aria-hidden className="example-icon" />
+      <Tag className="tag-icon-tag" {...args}>
+        <RobotIcon aria-hidden className="tag-icon-icon" />
         Teksten er KI-generert
       </Tag>
-      <Tag data-color="support1" className="example-tag" {...args}>
-        <ParagraphIcon aria-hidden className="example-icon" />
+      <Tag data-color="support1" className="tag-icon-tag" {...args}>
+        <ParagraphIcon aria-hidden className="tag-icon-icon" />
         Privatskoleloven
       </Tag>
     </>
@@ -111,25 +111,25 @@ export const Article = meta.story({
     <>
       <style>
         {`
-.article-img {
+.tag-article-img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
 }
-.article-main {
+.tag-article-main {
   display: flex;
   gap: 10px;
   margin-top: var(--ds-size-4);
   margin-bottom: var(--ds-size-3);
 }
-.article-div {
+.tag-article-div {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: var(--ds-size-2);
 }
-.article-list {
+.tag-article-list {
     list-style: none;
     display: flex;
     gap: 10px;
@@ -141,11 +141,11 @@ export const Article = meta.story({
         <img
           src={electricianImage}
           alt="Bøker på et bord"
-          className="article-img"
+          className="tag-article-img"
         />
-        <div className="article-main">
+        <div className="tag-article-main">
           <Heading>Rådgivning for lærlinger</Heading>
-          <ul className="article-list">
+          <ul className="tag-article-list">
             <li>
               <Tag data-color="accent" data-size="sm" {...args}>
                 Videregående
@@ -158,7 +158,7 @@ export const Article = meta.story({
             </li>
           </ul>
         </div>
-        <div className="article-div">
+        <div className="tag-article-div">
           <Avatar data-size="xs" initials="ON" aria-label={'Kari Nordmann'} />
           <Paragraph>Ola Nordmann | 19.06.2025</Paragraph>
         </div>

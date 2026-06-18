@@ -77,10 +77,10 @@ exports[`Custom Close Button 1`] = `
 
 exports[`Dialog Non Modal 1`] = `
 <style>
-  .example-field {
+  .dialog-non-modal-field {
   width: 400px;
 }
-.example-dialog-non-modal {
+.dialog-non-modal-dialog {
    width: 300px;
    left: 65%;
 }
@@ -149,7 +149,7 @@ exports[`Dialog Non Modal 1`] = `
 
 exports[`Dialog With Form 1`] = `
 <style>
-  .example-buttons {
+  .dialog-with-form-button__group {
           display: flex;
           gap: var(--ds-size-2);
           margin-top: var(--ds-size-4);
@@ -224,7 +224,7 @@ exports[`Dialog With Form 1`] = `
 
 exports[`Dialog With Max Width 1`] = `
 <style>
-  .example-dialog-max-width {
+  .dialog-with-max-width-dialog {
   max-width: 1200px;
 }
 </style>
@@ -312,10 +312,10 @@ exports[`Dialog With Open Prop 1`] = `
 
 exports[`Dialog With Suggestion 1`] = `
 <style>
-  .example-dialog-suggestion {
+  .dialog-with-suggestion-dialog {
   overflow: visible;
 }
-.example-dialog-block {
+.dialog-with-suggestion-dialog-block {
    display: flex;
    gap: var(--ds-size-2);
 }
@@ -499,18 +499,18 @@ exports[`Dialog With Suggestion 1`] = `
 
 exports[`Drawer 1`] = `
 <style>
-  .example-main {
+  .dialog-drawer-main {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.example-radio-group {
+.dialog-drawer-radio__group {
   display: flex;
   flex-wrap: wrap;
   gap: var(--ds-size-5);
   margin-bottom: var(--ds-size-8);
 }
-.example-dialog-drawer {
+.dialog-drawer-dialog {
   z-index: 10;
 }
 </style>
@@ -648,7 +648,7 @@ exports[`Drawer 1`] = `
 
 exports[`Preview 1`] = `
 <style>
-  .example-dialog-preview {
+  .dialog-preview-dialog {
   z-index: 10;
 }
 </style>

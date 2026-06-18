@@ -223,8 +223,7 @@ export const WithNavigationLinks = meta.story({
     <>
       <style>
         {`
-/* Styles defined in application-specific css */
-.withNavLinks-header-menu-nav {
+.header-with-nav-links-header-menu-nav {
   max-width: 800px;
   display: flex;
   padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
@@ -245,7 +244,7 @@ export const WithNavigationLinks = meta.story({
         <Header.Menu>
           <nav
             aria-label="Menynavigasjon"
-            className="withNavLinks-header-menu-nav"
+            className="header-with-nav-links-header-menu-nav"
           >
             <List.Unordered>
               <Header.Menu.Link href="#">Navlink 1</Header.Menu.Link>
@@ -349,8 +348,7 @@ export const WithMenu = meta.story({
     <>
       <style>
         {`
-/* Styles defined in application-specific css */
-.withMenu-header-menu-nav {
+.header-with-menu-header-menu-nav {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
   max-width: 800px;
@@ -361,7 +359,7 @@ export const WithMenu = meta.story({
   justify-items: center;
 }
 @media (max-width: 34.375rem) {
-  .withMenu-header-menu-nav {
+  .header-with-menu-header-menu-nav {
   justify-items: flex-start;
 }}`}
       </style>
@@ -370,18 +368,14 @@ export const WithMenu = meta.story({
         <Header.Menu>
           <nav
             aria-labelledby="header-menu-navigation"
-            className="withMenu-header-menu-nav"
+            className="header-with-menu-header-menu-nav"
           >
             <h2 id="header-menu-navigation" className="ds-sr-only">
               Menynavigasjon
             </h2>
             {menuLinks.map((column) => (
-              <div key={column.heading}>
-                <Heading
-                  level={3}
-                  data-size="xs"
-                  style={{ marginBottom: 'var(--ds-size-3)' }}
-                >
+              <Prose key={column.heading}>
+                <Heading level={3} data-size="xs">
                   <Link href="#">{column.heading}</Link>
                 </Heading>
                 <List.Unordered>
@@ -394,7 +388,7 @@ export const WithMenu = meta.story({
                     </Header.Menu.Link>
                   ))}
                 </List.Unordered>
-              </div>
+              </Prose>
             ))}
           </nav>
         </Header.Menu>
@@ -449,7 +443,6 @@ export const WithThemeMenus = meta.story({
       <>
         <style>
           {`
-/* Styles defined in application-specific css */
 :is(#header-education-menu, #header-learning-menu, #header-mobile-menu) > nav {
   display: grid;
   margin: 0 auto;
@@ -482,12 +475,8 @@ export const WithThemeMenus = meta.story({
                 Temameny 1 navigasjon
               </h2>
               {themeMenu1.map((column) => (
-                <div key={column.heading}>
-                  <Heading
-                    level={3}
-                    data-size="xs"
-                    style={{ marginBottom: 'var(--ds-size-3)' }}
-                  >
+                <Prose key={column.heading}>
+                  <Heading level={3} data-size="xs">
                     {column.heading}
                   </Heading>
                   <List.Unordered>
@@ -500,7 +489,7 @@ export const WithThemeMenus = meta.story({
                       </Header.Menu.Link>
                     ))}
                   </List.Unordered>
-                </div>
+                </Prose>
               ))}
             </nav>
           </Header.Menu>
@@ -516,12 +505,8 @@ export const WithThemeMenus = meta.story({
                 Temameny 2 navigasjon
               </h2>
               {themeMenu2.map((column) => (
-                <div key={column.heading}>
-                  <Heading
-                    level={3}
-                    data-size="xs"
-                    style={{ marginBottom: 'var(--ds-size-3)' }}
-                  >
+                <Prose key={column.heading}>
+                  <Heading level={3} data-size="xs">
                     {column.heading}
                   </Heading>
                   <List.Unordered>
@@ -534,7 +519,7 @@ export const WithThemeMenus = meta.story({
                       </Header.Menu.Link>
                     ))}
                   </List.Unordered>
-                </div>
+                </Prose>
               ))}
             </nav>
           </Header.Menu>
@@ -548,12 +533,8 @@ export const WithThemeMenus = meta.story({
                 Menynavigasjon
               </h2>
               {themeMenu1.map((column) => (
-                <div key={column.heading + 'mobile'}>
-                  <Heading
-                    level={3}
-                    data-size="xs"
-                    style={{ marginBottom: 'var(--ds-size-3)' }}
-                  >
+                <Prose key={column.heading + 'mobile'}>
+                  <Heading level={3} data-size="xs">
                     {column.heading}
                   </Heading>
                   <List.Unordered>
@@ -566,15 +547,11 @@ export const WithThemeMenus = meta.story({
                       </Header.Menu.Link>
                     ))}
                   </List.Unordered>
-                </div>
+                </Prose>
               ))}
               {themeMenu2.map((column) => (
-                <div key={column.heading + 'mobile'}>
-                  <Heading
-                    level={3}
-                    data-size="xs"
-                    style={{ marginBottom: 'var(--ds-size-3)' }}
-                  >
+                <Prose key={column.heading + 'mobile'}>
+                  <Heading level={3} data-size="xs">
                     {column.heading}
                   </Heading>
                   <List.Unordered>
@@ -587,7 +564,7 @@ export const WithThemeMenus = meta.story({
                       </Header.Menu.Link>
                     ))}
                   </List.Unordered>
-                </div>
+                </Prose>
               ))}
             </nav>
           </Header.Menu>
@@ -610,8 +587,7 @@ export const WithNavigationLinksAndMenu = meta.story({
     <>
       <style>
         {`
-/* Styles defined in application-specific css */
-.withNavLinksAndMenu-header-menu-nav {
+.header-with-nav-links-and-menu-header-menu-nav {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
   max-width: 800px;
@@ -622,7 +598,7 @@ export const WithNavigationLinksAndMenu = meta.story({
   justify-items: center;
 }
 @media (max-width: 34.375rem) {
-  .withNavLinksAndMenu-header-menu-nav {
+  .header-with-nav-links-and-menu-header-menu-nav {
     justify-items: flex-start;
   }
 }`}
@@ -638,7 +614,7 @@ export const WithNavigationLinksAndMenu = meta.story({
         <Header.Menu>
           <nav
             aria-labelledby="header-menu-navigation"
-            className="withNavLinksAndMenu-header-menu-nav"
+            className="header-with-nav-links-and-menu-header-menu-nav"
           >
             <h2 id="header-menu-navigation" className="ds-sr-only">
               Menynavigasjon
@@ -657,12 +633,8 @@ export const WithNavigationLinksAndMenu = meta.story({
               </List.Unordered>
             </div>
             {navAndMenuLinks.map((column) => (
-              <div key={column.heading}>
-                <Heading
-                  level={3}
-                  data-size="xs"
-                  style={{ marginBottom: 'var(--ds-size-3)' }}
-                >
+              <Prose key={column.heading}>
+                <Heading level={3} data-size="xs">
                   {column.heading}
                 </Heading>
                 <List.Unordered>
@@ -675,7 +647,7 @@ export const WithNavigationLinksAndMenu = meta.story({
                     </Header.Menu.Link>
                   ))}
                 </List.Unordered>
-              </div>
+              </Prose>
             ))}
           </nav>
         </Header.Menu>
@@ -691,13 +663,12 @@ export const LongApplicationName = meta.story({
       <>
         <style>
           {`
-        /* Styles defined in application-specific css */
         @media (max-width: 30rem) {
         .uds-header__logo > :last-child {
           font-size: var(--ds-font-size-4);
         }
         @media (max-width: 23rem) {
-          .myMenuText {
+          .header-long-application-name-menu-span {
             // Visually hidden but accessible for screen readers
             border: 0;
             clip: rect(0 0 0 0);
@@ -711,7 +682,7 @@ export const LongApplicationName = meta.story({
         </style>
         <Header applicationName="Foreldre&shy;undersøkelsen i barnehage">
           <Header.MenuButton>
-            <span className="myMenuText">Meny</span>
+            <span className="header-long-application-name-menu-span">Meny</span>
           </Header.MenuButton>
           <Header.Menu>{/* Menyinnhold her*/}</Header.Menu>
         </Header>
@@ -828,8 +799,11 @@ export const Responsive = meta.story({
       <>
         <style>
           {`
-/* Styles defined in application-specific css */
-.responsive-header-menu-nav {
+.header-responsive-header-menu-user-button {
+  margin: 0 var(--ds-size-5);
+  justify-self: end;
+}
+.header-responsive-header-menu-nav {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
   max-width: 800px;
@@ -839,12 +813,8 @@ export const Responsive = meta.story({
   row-gap: var(--ds-size-10);
   justify-items: center;
 }
-.responsive-header-menu-user-button {
-  margin: 0 var(--ds-size-5);
-  justify-self: end;
-}
 @media (max-width: 34.375rem) {
-  .responsive-header-menu-nav {
+  .header-responsive-header-menu-nav {
     justify-items: flex-start;
   }
 }`}
@@ -900,7 +870,7 @@ export const Responsive = meta.story({
               popoverTarget="usermenuInMenu"
               avatar={<Avatar aria-hidden>SH</Avatar>}
               data-hide="md"
-              className="responsive-header-menu-user-button"
+              className="header-responsive-header-menu-user-button"
             />
             <Dropdown
               id="usermenuInMenu"
@@ -936,21 +906,17 @@ export const Responsive = meta.story({
             </Dropdown>
             <nav
               aria-labelledby="header-menu-navigation"
-              className="responsive-header-menu-nav"
+              className="header-responsive-header-menu-nav"
             >
               <h2 id="header-menu-navigation" className="ds-sr-only">
                 Menynavigasjon
               </h2>
               {responsiveLinks.map((column) => (
-                <div
+                <Prose
                   key={column.heading}
                   data-hide={column.heading === 'Navlinker' ? 'lg' : ''}
                 >
-                  <Heading
-                    level={3}
-                    data-size="xs"
-                    style={{ marginBottom: 'var(--ds-size-3)' }}
-                  >
+                  <Heading level={3} data-size="xs">
                     {column.heading}
                   </Heading>
                   <List.Unordered>
@@ -963,7 +929,7 @@ export const Responsive = meta.story({
                       </Header.Menu.Link>
                     ))}
                   </List.Unordered>
-                </div>
+                </Prose>
               ))}
             </nav>
           </Header.Menu>
@@ -985,8 +951,7 @@ export const AutoHideSticky = meta.story({
       <>
         <style>
           {`
-/* Styles defined in application-specific css */
-.autoHideSticky-header-menu-nav {
+.header-auto-hide-sticky-header-menu-nav {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
   max-width: 800px;
@@ -997,11 +962,11 @@ export const AutoHideSticky = meta.story({
   justify-items: center;
 }
 @media (max-width: 34.375rem) {
-  .autoHideSticky-header-menu-nav {
+  .header-auto-hide-sticky-header-menu-nav {
     justify-items: flex-start;
   }
 }
-main {
+.header-auto-hide-sticky-main {
   padding: var(--ds-size-18);
   display: flex;
   flex-direction: column;
@@ -1009,10 +974,10 @@ main {
   max-width: 800px;
   margin: 0 auto;
 }
-main hr {
+.header-auto-hide-sticky-main hr {
   margin-top: var(--ds-size-30);
 }
-main hr + p {
+.header-auto-hide-sticky-main hr + p {
   margin-top: calc(var(--ds-size-30) * 2);
   margin-bottom: calc(var(--ds-size-30) * 2);
 }`}
@@ -1029,21 +994,17 @@ main hr + p {
           <Header.Menu data-testid="header-menu">
             <nav
               aria-labelledby="header-menu-navigation"
-              className="autoHideSticky-header-menu-nav"
+              className="header-auto-hide-sticky-header-menu-nav"
             >
               <h2 id="header-menu-navigation" className="ds-sr-only">
                 Menynavigasjon
               </h2>
               {responsiveLinks.map((column) => (
-                <div
+                <Prose
                   key={column.heading}
                   data-hide={column.heading === 'Navlinker' ? 'md' : ''}
                 >
-                  <Heading
-                    level={3}
-                    data-size="xs"
-                    style={{ marginBottom: 'var(--ds-size-3)' }}
-                  >
+                  <Heading level={3} data-size="xs">
                     {column.heading}
                   </Heading>
                   <List.Unordered>
@@ -1056,12 +1017,12 @@ main hr + p {
                       </Header.Menu.Link>
                     ))}
                   </List.Unordered>
-                </div>
+                </Prose>
               ))}
             </nav>
           </Header.Menu>
         </Header>
-        <main>
+        <main className="header-auto-hide-sticky-main">
           <Prose>
             <Heading level={1} data-size="lg">
               Samisk i skolen
@@ -1248,8 +1209,7 @@ export const UdirNo = meta.story({
       <>
         <style>
           {`
-/* Styles defined in application-specific css */
-.udirNo-header-menu-nav {
+.header-udir-no-header-menu-nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
   max-width: 1280px;
@@ -1257,23 +1217,27 @@ export const UdirNo = meta.story({
   padding: var(--ds-size-10) var(--ds-size-15);
   gap: var(--ds-size-4);
   row-gap: var(--ds-size-10);
+}
+.header-udir-no-header-search {
+  max-width: 280px;
+}
+.header-udir-no-header-menu-search {
+  width: auto;
+  margin: var(--ds-size-5) var(--ds-size-5) 0;
 }`}
         </style>
         <Header
           applicationName="Utdanningsdirektoratet"
           href="https://www.udir.no/"
         >
-          <Search style={{ maxWidth: '280px' }} data-show="sm">
+          <Search className="header-udir-no-header-search" data-show="sm">
             <Search.Input aria-label="Søk" placeholder="Søk" />
             <Search.Clear />
           </Search>
           <Header.MenuButton variant="secondary" />
           <Header.Menu>
             <Search
-              style={{
-                width: 'auto',
-                margin: 'var(--ds-size-5) var(--ds-size-5) 0',
-              }}
+              className="header-udir-no-header-menu-search"
               data-hide="sm"
             >
               <Search.Input aria-label="Søk" placeholder="Søk" />
@@ -1281,18 +1245,14 @@ export const UdirNo = meta.story({
             </Search>
             <nav
               aria-labelledby="header-menu-navigation"
-              className="udirNo-header-menu-nav"
+              className="header-udir-no-header-menu-nav"
             >
               <h2 id="header-menu-navigation" className="ds-sr-only">
                 Menynavigasjon
               </h2>
               {linksUdirNo.map((column) => (
-                <div key={column.heading}>
-                  <Heading
-                    level={3}
-                    data-size="xs"
-                    style={{ marginBottom: 'var(--ds-size-3)' }}
-                  >
+                <Prose key={column.heading}>
+                  <Heading level={3} data-size="xs">
                     {column.heading}
                   </Heading>
                   <List.Unordered>
@@ -1302,7 +1262,7 @@ export const UdirNo = meta.story({
                       </Header.Menu.Link>
                     ))}
                   </List.Unordered>
-                </div>
+                </Prose>
               ))}
             </nav>
           </Header.Menu>

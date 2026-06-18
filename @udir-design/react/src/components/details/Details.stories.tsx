@@ -145,13 +145,13 @@ const detailsColorDecorator: Decorator = (Story) => {
     <>
       <style>
         {`
-.example-stack {
+.details-decorator-stack {
   padding-inline: 1rem;
   padding-top: 1rem;
   margin-bottom: var(--ds-size-5);
 }`}
       </style>
-      <Stack className="example-stack" direction="row" data-size="sm">
+      <Stack className="details-decorator-stack" direction="row" data-size="sm">
         <Fieldset>
           <Fieldset.Legend>Farge</Fieldset.Legend>
           <ToggleGroup
@@ -331,13 +331,13 @@ const makePseudoStatesStory = makeStoryTransformer((originalStory) => ({
       <>
         <style>
           {`
-.example-main {
+.details-example-main {
   display: flex;
   flex-direction: column;
   gap: var(--ds-size-4);
 }`}
         </style>
-        <div className="example-main">
+        <div className="details-example-main">
           <Label data-size="sm">Default</Label>
           {originalStory.input.render?.(args, ctx)}
           <Label data-size="sm">Hover</Label>

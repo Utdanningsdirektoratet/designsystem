@@ -75,7 +75,7 @@ export const Preview = meta.story({
     <>
       <style>
         {`
-.example-dialog-preview {
+.dialog-preview-dialog {
   z-index: 10;
 }`}
       </style>
@@ -83,7 +83,7 @@ export const Preview = meta.story({
         <Dialog.Trigger data-size={args['data-size']}>
           Åpne Dialog
         </Dialog.Trigger>
-        <Dialog {...args} className="example-dialog-preview">
+        <Dialog {...args} className="dialog-preview-dialog">
           <Prose>
             <Heading>Dialog header</Heading>
             <Paragraph>
@@ -355,7 +355,7 @@ export const DialogWithForm = meta.story({
       <>
         <style>
           {`
-        .example-buttons {
+        .dialog-with-form-button__group {
           display: flex;
           gap: var(--ds-size-2);
           margin-top: var(--ds-size-4);
@@ -380,7 +380,7 @@ export const DialogWithForm = meta.story({
                 onChange={(e) => setInput(e.target.value)}
               />
             </Prose>
-            <div className="example-buttons">
+            <div className="dialog-with-form-button__group">
               <Button
                 command="close"
                 commandfor="dialog-with-form"
@@ -410,13 +410,13 @@ export const DialogWithMaxWidth = meta.story({
     <>
       <style>
         {`
-.example-dialog-max-width {
+.dialog-with-max-width-dialog {
   max-width: 1200px;
 }`}
       </style>
       <Dialog.TriggerContext>
         <Dialog.Trigger variant="secondary">Åpne Dialog</Dialog.Trigger>
-        <Dialog className="example-dialog-max-width" {...args}>
+        <Dialog className="dialog-with-max-width-dialog" {...args}>
           <Prose>
             <Heading>Dialog som er veldig bred</Heading>
             <Paragraph>
@@ -447,10 +447,10 @@ export const DialogWithSuggestion = meta.story({
       <>
         <style>
           {`
-.example-dialog-suggestion {
+.dialog-with-suggestion-dialog {
   overflow: visible;
 }
-.example-dialog-block {
+.dialog-with-suggestion-dialog-block {
    display: flex;
    gap: var(--ds-size-2);
 }`}
@@ -458,7 +458,7 @@ export const DialogWithSuggestion = meta.story({
         <Dialog.TriggerContext>
           <Dialog.Trigger variant="secondary">Åpne Dialog</Dialog.Trigger>
           <Dialog
-            className="example-dialog-suggestion"
+            className="dialog-with-suggestion-dialog"
             ref={dialogRef}
             {...args}
           >
@@ -487,7 +487,7 @@ export const DialogWithSuggestion = meta.story({
                 </Suggestion>
               </Field>
             </Dialog.Block>
-            <Dialog.Block className="example-dialog-block">
+            <Dialog.Block className="dialog-with-suggestion-dialog-block">
               <Button
                 onClick={() => {
                   window.alert(`Skjema er sendt inn`);
@@ -544,15 +544,15 @@ export const DialogNonModal = meta.story({
       <>
         <style>
           {`
-.example-field {
+.dialog-non-modal-field {
   width: 400px;
 }
-.example-dialog-non-modal {
+.dialog-non-modal-dialog {
    width: 300px;
    left: 65%;
 }`}
         </style>
-        <Field className="example-field">
+        <Field className="dialog-non-modal-field">
           <Label>Besvarelse</Label>
           <Textarea rows={8} autoComplete="off" />
         </Field>
@@ -560,7 +560,7 @@ export const DialogNonModal = meta.story({
           Åpne skrivetips
         </Button>
         <Dialog
-          className="example-dialog-non-modal"
+          className="dialog-non-modal-dialog"
           ref={dialogRef}
           modal={false}
           {...args}
@@ -608,22 +608,22 @@ export const Drawer = meta.story({
       <>
         <style>
           {`
-.example-main {
+.dialog-drawer-main {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.example-radio-group {
+.dialog-drawer-radio__group {
   display: flex;
   flex-wrap: wrap;
   gap: var(--ds-size-5);
   margin-bottom: var(--ds-size-8);
 }
-.example-dialog-drawer {
+.dialog-drawer-dialog {
   z-index: 10;
 }`}
         </style>
-        <div className="example-main">
+        <div className="dialog-drawer-main">
           <Prose>
             <Checkbox
               label="Modal"
@@ -638,7 +638,7 @@ export const Drawer = meta.story({
               }}
             >
               <Fieldset.Legend>Velg plassering for dialogen</Fieldset.Legend>
-              <div className="example-radio-group">
+              <div className="dialog-drawer-radio__group">
                 <Radio
                   name="drawer"
                   label="Midten"
@@ -671,7 +671,7 @@ export const Drawer = meta.story({
             <Dialog.Trigger>Open Dialog</Dialog.Trigger>
             <Dialog
               modal={modal}
-              className="example-dialog-drawer"
+              className="dialog-drawer-dialog"
               closedby="any"
               placement={placement}
               {...args}

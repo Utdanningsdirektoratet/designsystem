@@ -162,13 +162,13 @@ export const Position = meta.story({
     <>
       <style>
         {`
-.example-main {
+.field-position-main {
   display: flex;
   flex-direction: column;
   gap: var(--ds-size-2);
 }`}
       </style>
-      <div className="example-main">
+      <div className="field-position-main">
         <Field {...args} position="end">
           <Label>Flymodus</Label>
           <Input type="checkbox" role="switch" id={'airplane'} />

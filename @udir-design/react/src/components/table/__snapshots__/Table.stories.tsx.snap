@@ -2,17 +2,17 @@
 
 exports[`Column And Row Headers 1`] = `
 <style>
-  .column-and-row-headers-caption {
+  .table-column-and-row-headers-table-caption {
   font-size: var(--ds-font-size-3);
   caption-side: bottom;
   text-align: center;
   font-weight: normal;
   margin-top: var(--ds-size-2);
 }
-.column-and-row-headers-body {
+.table-column-and-row-headers-table-body {
   text-align: right;
 }
-.column-and-row-headers-headercell {
+.table-column-and-row-headers-table-headercell {
   text-align: left;
 }
 </style>
@@ -214,11 +214,11 @@ exports[`Expandable Rows 1`] = `
 
 exports[`Fixed Table 1`] = `
 <style>
-  .fixed-table {
+  .table-fixed-table {
   table-layout: fixed;
   margin-bottom: 12px;
 }
-.fixed-table-body-cell {
+.table-fixed-table-cell {
   font-feature-settings: "tnum" 1;
 }
 </style>
@@ -338,13 +338,13 @@ exports[`Fixed Table 1`] = `
 
 exports[`Multiple Header Rows 1`] = `
 <style>
-  .multiple-table-head-headercell {
+  .table-multiple-header-rows-table-headercell {
   text-align: center;
 }
-.multiple-table-body {
+.table-multiple-header-rows-table-body {
   text-align: right;
 }
-.multiple-table-body-headercell {
+.table-multiple-header-rows-table-headercell {
   text-align: left;
 }
 </style>
@@ -773,19 +773,19 @@ exports[`Sortable 1`] = `
 
 exports[`Sticky Header 1`] = `
 <style>
-  .stickyheader-heading {
+  .table-sticky-header-heading {
   margin-bottom: var(--ds-size-3);
 }
-.stickyheader-main {
+.table-sticky-header-main {
   height: 420px;
   width: 580px;
   overflow: auto;
   padding: 0;
 }
-.stickyheader-table-body {
+.table-sticky-header-table-body {
   text-align: right;
 }
-.stickyheader-table-body-headercell {
+.table-sticky-header-table-headercell {
   text-align: left;
 }
 </style>
@@ -1040,15 +1040,15 @@ exports[`With Border 1`] = `
 
 exports[`With Form Elements 1`] = `
 <style>
-  .with-form-elements-table-body {
+  .table-with-form-elements-table-body {
   align-content: start;
   justify-content: center;
   align-items: center;
 }
-.with-form-elements-table-body-cell {
+.table-with-form-elements-table-cell {
   min-width: 200px;
 }
-.with-form-elements-textfield {
+.table-with-form-elements-textfield {
   min-width: 250px;
 }
 </style>

@@ -1981,7 +1981,7 @@ exports[`Preview 1`] = `
 
 exports[`With Scroll 1`] = `
 <style>
-  .with-scroll-main-content {
+  .demo-banner-with-scroll-main {
   padding: var(--ds-size-18);
   display: flex;
   flex-direction: column;
@@ -1989,10 +1989,10 @@ exports[`With Scroll 1`] = `
   max-width: 800px;
   margin: 0 auto;
 }
-.with-scroll-paragraph {
+.demo-banner-with-scroll-paragraph {
   margin-top: var(--ds-size-3);
 }
-.with-scroll-heading {
+.demo-banner-with-scroll-heading {
   margin-top: var(--ds-size-5);
 }
 </style>

@@ -166,7 +166,7 @@ export const PlacementWithHeader = meta.story({
     <>
       <style>
         {`
-.content {
+.breadcrumbs-content {
   max-width: 80rem;
   margin: var(--ds-size-4) auto 0;
   padding: 0 var(--ds-size-5);
@@ -175,7 +175,7 @@ export const PlacementWithHeader = meta.story({
       <Header applicationName="Tjenestenavn">
         <Header.MenuButton />
       </Header>
-      <div className="content">
+      <div className="breadcrumbs-content">
         <Breadcrumbs {...args}>
           <Breadcrumbs.Link href="#" aria-label="Tilbake til Utdanningsløpet">
             Utdanningsløpet

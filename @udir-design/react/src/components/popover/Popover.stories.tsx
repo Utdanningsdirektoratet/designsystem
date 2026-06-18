@@ -49,7 +49,7 @@ export const Preview = meta.story({
     <>
       <style>
         {`
-.example-section {
+.popover-preview-button__group {
   display: flex;
   gap: var(--ds-size-2);
   margin-top: var(--ds-size-2);
@@ -61,7 +61,7 @@ export const Preview = meta.story({
         </Popover.Trigger>
         <Popover {...args}>
           Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
-          <div className="example-section">
+          <div className="popover-preview-button__group">
             <Button data-size="sm">Ja, fjern</Button>
             <Button data-size="sm" variant="tertiary">
               Avbryt
@@ -107,7 +107,7 @@ export const Interactive = meta.story({
     <>
       <style>
         {`
-.example-popover-buttons {
+.popover-interactive-popover-button__group {
   display: flex;
   gap: var(--ds-size-2);
   margin-top: var(--ds-size-2);
@@ -119,7 +119,7 @@ export const Interactive = meta.story({
         </Popover.Trigger>
         <Popover {...args}>
           <Paragraph>Vil du lagre endringene dine?</Paragraph>
-          <div className="example-popover-buttons">
+          <div className="popover-interactive-popover-button__group">
             <Button data-size="sm">Lagre</Button>
             <Button data-size="sm" variant="tertiary">
               Ikke lagre
@@ -262,7 +262,7 @@ export const Variants = meta.story({
       <>
         <style>
           {`
-.example-main {
+.popover-variants-main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 100px;
@@ -270,7 +270,7 @@ export const Variants = meta.story({
   margin-top: var(--ds-size-12);
 }`}
         </style>
-        <div className="example-main">
+        <div className="popover-variants-main">
           {Object.entries(VariantsMap).map(([key, props]) => (
             <Popover.TriggerContext key={key}>
               <Popover.Trigger variant="tertiary">popover</Popover.Trigger>
@@ -298,7 +298,7 @@ export const ColorVariants = meta.story({
       <>
         <style>
           {`
-.example-main {
+.popover-color-variants-main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 100px;
@@ -306,7 +306,7 @@ export const ColorVariants = meta.story({
   margin-top: var(--ds-size-12);
 }`}
         </style>
-        <div className="example-main">
+        <div className="popover-color-variants-main">
           {Object.entries(ColorVariantsMap).map(([key, props]) => (
             <Popover.TriggerContext key={key}>
               <Popover.Trigger variant="tertiary">popover</Popover.Trigger>
@@ -336,7 +336,7 @@ export const Controlled = meta.story({
       <>
         <style>
           {`
-        .example-popover-buttons {
+        .popover-controlled-popover-button__group {
           display: flex;
           gap: var(--ds-size-2);
           margin-top: var(--ds-size-2);
@@ -348,7 +348,7 @@ export const Controlled = meta.story({
           </Popover.Trigger>
           <Popover open={open} {...args}>
             Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
-            <div className="example-popover-buttons">
+            <div className="popover-controlled-popover-button__group">
               <Button data-size="sm" onClick={() => setOpen(false)}>
                 Ja, fjern
               </Button>
@@ -379,7 +379,7 @@ export const WithoutContext = meta.story({
       <>
         <style>
           {`
-        .example-popover-buttons {
+        .popover-without-context-popover-button__group {
           display: flex;
           gap: var(--ds-size-2);
           margin-top: var(--ds-size-2);
@@ -402,7 +402,7 @@ export const WithoutContext = meta.story({
           <Paragraph>
             Er du sikker på at du vil slette raden? Handlingen kan ikke angres.
           </Paragraph>
-          <div className="example-popover-buttons">
+          <div className="popover-without-context-popover-button__group">
             <Button data-size="sm">Ja, slett den</Button>
             <Button data-size="sm" variant="tertiary">
               Avbryt

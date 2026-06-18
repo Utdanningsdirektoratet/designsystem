@@ -26,13 +26,13 @@ exports[`Affix 1`] = `
 
 exports[`Controlled 1`] = `
 <style>
-  .example-main {
+  .textfield-controlled-main {
           display: flex;
           gap: var(--ds-size-2);
           align-items: end;
           width: 100%;
         }
-        .example-textfield {
+        .textfield-controlled-textfield {
           flex-grow: 1;
         }
 </style>

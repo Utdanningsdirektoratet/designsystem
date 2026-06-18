@@ -20,31 +20,31 @@ const typedIcons = Icons as Record<string, Icon>;
 export const OutlineIcons = meta.story({
   render: () => {
     return (
-      <div className="icons">
-        {Object.entries(typedIcons).map(([key, Component]) => {
-          return (
-            !key.includes('Fill') && (
-              <React.Fragment key={key}>
-                <Component
-                  aria-label={key}
-                  height="3rem"
-                  width="3rem"
-                  aria-hidden
-                  className="icon-color"
-                />
-              </React.Fragment>
-            )
-          );
-        })}
+      <>
         <style>
           {`
-          .icons{
-            display: flex;
-            flex-wrap: wrap;
-          }
-          `}
+.icons-outline-icon-grid{
+  display: flex;
+  flex-wrap: wrap;
+}`}
         </style>
-      </div>
+        <div className="icons-outline-icon-grid">
+          {Object.entries(typedIcons).map(([key, Component]) => {
+            return (
+              !key.includes('Fill') && (
+                <React.Fragment key={key}>
+                  <Component
+                    aria-label={key}
+                    height="3rem"
+                    width="3rem"
+                    aria-hidden
+                  />
+                </React.Fragment>
+              )
+            );
+          })}
+        </div>
+      </>
     );
   },
 });
@@ -52,35 +52,32 @@ export const OutlineIcons = meta.story({
 export const FillIcons = meta.story({
   render: () => {
     return (
-      <div className="icons">
-        {Object.entries(typedIcons).map(([key, Component]) => {
-          return (
-            key.includes('Fill') && (
-              <React.Fragment key={key}>
-                <Component
-                  aria-label={key}
-                  height="3rem"
-                  width="3rem"
-                  aria-hidden
-                  className="icon-color"
-                />
-              </React.Fragment>
-            )
-          );
-        })}
+      <>
         <style>
           {`
-          .icons{
-            display: flex;
-            flex-wrap: wrap;
-            background: var(--a-gray-900);
-          }
-          .icon-color{
-            color: var(--a-icon-on-inverted);
-          }
-          `}
+.icons-fill-icons-grid{
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--a-gray-900);
+}`}
         </style>
-      </div>
+        <div className="icons-fill-icons-grid">
+          {Object.entries(typedIcons).map(([key, Component]) => {
+            return (
+              key.includes('Fill') && (
+                <React.Fragment key={key}>
+                  <Component
+                    aria-label={key}
+                    height="3rem"
+                    width="3rem"
+                    aria-hidden
+                  />
+                </React.Fragment>
+              )
+            );
+          })}
+        </div>
+      </>
     );
   },
 });
