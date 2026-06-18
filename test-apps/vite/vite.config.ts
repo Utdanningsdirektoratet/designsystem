@@ -18,6 +18,7 @@ export default defineConfig({
     outDir: './dist',
     emptyOutDir: true,
     reportCompressedSize: true,
+    chunkSizeWarningLimit: Infinity,
     commonjsOptions: {
       transformMixedEsModules: true,
     },
