@@ -20,13 +20,12 @@
     /* Keep <data> in rendering tree for counter-increment but hide visually. */
     & > data {
       counter-increment: selected;
-      position: absolute;
-      visibility: hidden;
+      @composes ds-sr-only from '@digdir/designsystemet-css/base.css';
     }
 
     /* Hide listbox when in count display mode. */
     &::part(items) {
-      visibility: hidden;
+      @composes ds-sr-only from '@digdir/designsystemet-css/base.css';
     }
 
     /* NOTE: This styling should be reflected in tag.css */
