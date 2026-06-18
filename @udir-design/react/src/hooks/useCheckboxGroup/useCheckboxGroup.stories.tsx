@@ -128,18 +128,18 @@ export const IndeterminateInTable = meta.story({
       <>
         <style>
           {`
-        .example-col-1 {
+        .checkbox-group-col-1 {
           width: 1px;
         }
-        .example-col-2 {
+        .checkbox-group-col-2 {
           width: 10em;
         }`}
         </style>
         <Table>
           <colgroup>
             {/* ensure the first column only takes up the necessary space */}
-            <col className="example-col-1" />
-            <col className="example-col-2" />
+            <col className="checkbox-group-col-1" />
+            <col className="checkbox-group-col-2" />
             <col />
           </colgroup>
           <Table.Head>
@@ -218,11 +218,11 @@ export const Controlled = meta.story({
       <>
         <style>
           {`
-.example-section {
+.checkbox-group-controlled-section {
   display: flex;
   gap: var(--ds-size-2);
 }
-.example-button {
+.checkbox-group-controlled-button {
   width: fit-content;
 }`}
         </style>
@@ -236,7 +236,7 @@ export const Controlled = meta.story({
         <Divider />
         <Paragraph>(Annet innhold)</Paragraph>
         <Divider />
-        <div className="example-section">
+        <div className="checkbox-group-controlled-section">
           <Paragraph>
             {isFiltered ? 'Viser innhold for:' : 'Viser alt innhold'}
           </Paragraph>
@@ -253,7 +253,7 @@ export const Controlled = meta.story({
         </div>
         {isFiltered && (
           <Button
-            className="example-button"
+            className="checkbox-group-controlled-button"
             variant="secondary"
             onClick={() => setValue([])}
           >

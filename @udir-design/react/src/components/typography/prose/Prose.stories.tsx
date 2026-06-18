@@ -31,16 +31,16 @@ export const Preview = meta.story({
       <>
         <style>
           {`
-.example-main {
+.prose-preview-main {
   display: flex;
   justify-content: center;
 }
-.example-prose {
+.prose-preview-prose {
   max-width: 50rem;
 }`}
         </style>
-        <div className="example-main">
-          <Prose className="example-prose" data-testid="prose" {...args}>
+        <div className="prose-preview-main">
+          <Prose className="prose-preview-prose" data-testid="prose" {...args}>
             <Alert>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Alert>
@@ -213,16 +213,16 @@ export const Headings = meta.story({
       <>
         <style>
           {`
-.example-main {
+.prose-headings-main {
   display: flex;
   justify-content: center;
 }
-.example-prose {
+.prose-headings-prose {
   max-width: 50rem;
 }`}
         </style>
-        <div className="example-main">
-          <Prose className="example-prose" {...args}>
+        <div className="prose-headings-main">
+          <Prose className="prose-headings-prose" {...args}>
             <Heading level={1} data-size="2xl">
               Heading xxl
             </Heading>
@@ -299,17 +299,17 @@ export const WithDialog = meta.story({
       <>
         <style>
           {`
-.example-prose {
+.prose-with-dialog-prose {
   max-width: 50rem;
 }
-.example-dialog {
+.prose-with-dialog-dialog {
   z-index: 10;
 }`}
         </style>
-        <Prose className="example-prose" {...args}>
+        <Prose className="prose-with-dialog-prose" {...args}>
           <Dialog.TriggerContext>
             <Dialog.Trigger>Åpne Dialog</Dialog.Trigger>
-            <Dialog className="example-dialog" closedby="any" open>
+            <Dialog className="prose-with-dialog-dialog" closedby="any" open>
               <Prose>
                 <Heading>Dialog header</Heading>
                 <Paragraph>
@@ -333,16 +333,16 @@ export const WithPopover = meta.story({
       <>
         <style>
           {`
-.example-prose {
+.prose-with-popover-prose {
   max-width: 50rem;
 }
-.example-popover-content {
+.prose-with-popover-button__group {
   display: flex;
   gap: var(--ds-size-2);
   margin-top: var(--ds-size-4);
 }`}
         </style>
-        <Prose className="example-prose" {...args}>
+        <Prose className="prose-with-popover-prose" {...args}>
           <Popover.TriggerContext>
             <Popover.Trigger variant="tertiary">
               Fjern <MultiplyIcon aria-hidden />
@@ -351,7 +351,7 @@ export const WithPopover = meta.story({
               Er du sikker på at du vil fjerne raden? Handlingen kan ikke
               angres.
               <Prose>
-                <div className="example-popover-content">
+                <div className="prose-with-popover-button__group">
                   <Button data-size="sm">Ja, fjern</Button>
                   <Button data-size="sm" variant="tertiary">
                     Avbryt

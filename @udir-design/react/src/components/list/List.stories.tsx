@@ -138,12 +138,12 @@ export const WithLinks = meta.story({
     <>
       <style>
         {`
-.example-list {
+.list-with-links-list-unordered {
   list-style: none; 
   padding: 0;
 }`}
       </style>
-      <List.Unordered className="example-list" {...args}>
+      <List.Unordered className="list-with-links-list-unordered" {...args}>
         {designLinks.map((link) => (
           <List.Item key={link.href}>
             <Link href={link.href} target="_blank">
@@ -176,13 +176,13 @@ export const AsNav = meta.story({
     <>
       <style>
         {`
-.example-list {
+.list-as-nav-list-unordered {
   list-style: none; 
   padding: 0;
 }`}
       </style>
       <nav aria-label="Snarveier">
-        <List.Unordered className="example-list" {...args}>
+        <List.Unordered className="list-as-nav-list-unordered" {...args}>
           {navLinks.map((link) => (
             <List.Item key={link.href}>
               <Link href={link.href} target="_blank">

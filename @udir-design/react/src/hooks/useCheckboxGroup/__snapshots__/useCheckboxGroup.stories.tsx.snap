@@ -2,11 +2,11 @@
 
 exports[`Controlled 1`] = `
 <style>
-  .example-section {
+  .checkbox-group-controlled-section {
   display: flex;
   gap: var(--ds-size-2);
 }
-.example-button {
+.checkbox-group-controlled-button {
   width: fit-content;
 }
 </style>
@@ -291,10 +291,10 @@ exports[`Group 1`] = `
 
 exports[`Indeterminate In Table 1`] = `
 <style>
-  .example-col-1 {
+  .checkbox-group-col-1 {
           width: 1px;
         }
-        .example-col-2 {
+        .checkbox-group-col-2 {
           width: 10em;
         }
 </style>

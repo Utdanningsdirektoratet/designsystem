@@ -81,7 +81,7 @@ export const Controlled = meta.story({
       <>
         <style>
           {`
-        .example-button-group {
+        .radio-group-controlled-button__group {
           display: flex;
           gap: var(--ds-size-2);
         }`}
@@ -105,7 +105,7 @@ export const Controlled = meta.story({
             Du har valgt:{' '}
             {educationLevels.find((level) => level.value === value)?.label}
           </Paragraph>
-          <div className="example-button-group">
+          <div className="radio-group-controlled-button__group">
             <Button
               variant="secondary"
               onClick={() => setValue('kindergarten')}

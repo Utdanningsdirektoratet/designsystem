@@ -98,35 +98,35 @@ export const FormExample = meta.story({
       <>
         <style>
           {`
-.example-main {
+.progress-bar-form-example-main {
   display: flex;
   flex-direction: column;
   gap: var(--ds-size-6);
 }
-.example-fieldset-content {
+.progress-bar-form-example-fieldset-content {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: flex-end;
   margin-block-end: var(--ds-size-4);
 }
-.example-progress-bar {
+.progress-bar-form-example-progress-bar {
   width: 30%;
 }
-.example-buttons {
+.progress-bar-form-example-button__group {
   display: flex;
   justify-content: flex-start;
   gap: var(--ds-size-4);
 }`}
         </style>
-        <div className="example-main">
+        <div className="progress-bar-form-example-main">
           <Fieldset id="rankings">
-            <div className="example-fieldset-content">
+            <div className="progress-bar-form-example-fieldset-content">
               <Fieldset.Legend>
                 <Heading level={4}>Skjema</Heading>
               </Fieldset.Legend>
               <ProgressBar
-                className="example-progress-bar"
+                className="progress-bar-form-example-progress-bar"
                 {...args}
                 tabIndex={-1}
                 ref={progressRef}
@@ -166,7 +166,7 @@ export const FormExample = meta.story({
               </Table.Body>
             </Table>
           </Fieldset>
-          <div className="example-buttons">
+          <div className="progress-bar-form-example-button__group">
             {page > 1 && (
               <Button variant="tertiary" onClick={() => prevPage()}>
                 <ArrowLeftIcon aria-hidden />

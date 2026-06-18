@@ -119,7 +119,7 @@ export const WithScroll = meta.story({
     <>
       <style>
         {`
-.with-scroll-main-content {
+.demo-banner-with-scroll-main {
   padding: var(--ds-size-18);
   display: flex;
   flex-direction: column;
@@ -127,26 +127,26 @@ export const WithScroll = meta.story({
   max-width: 800px;
   margin: 0 auto;
 }
-.with-scroll-paragraph {
+.demo-banner-with-scroll-paragraph {
   margin-top: var(--ds-size-3);
 }
-.with-scroll-heading {
+.demo-banner-with-scroll-heading {
   margin-top: var(--ds-size-5);
 }`}
       </style>
       <DemoBanner data-testid="banner" {...args}>
         <Header applicationName="Tjenestenavn" />
-        <main className="with-scroll-main-content">
+        <main className="demo-banner-with-scroll-main">
           <Heading level={1} data-size="lg">
             Samisk i skolen
           </Heading>
-          <Paragraph className="with-scroll-paragraph">
+          <Paragraph className="demo-banner-with-scroll-paragraph">
             Alle elever skal lære om samer og samiske forhold i skolen. Retten
             til også å få undervisning i samiske språk og undervisning på samisk
             i andre fag, er ulik innenfor og utenfor samiske distrikt. I de
             samiske distriktene er norsk og samisk sidestilte i opplæringen.
           </Paragraph>
-          <Heading level={2} className="with-scroll-heading">
+          <Heading level={2} className="demo-banner-with-scroll-heading">
             Rett til opplæring i samisk i videregående opplæring
           </Heading>
           <Paragraph>
@@ -169,7 +169,7 @@ export const WithScroll = meta.story({
             Retten til opplæring i samisk for samiske elever i videregående
             opplæring er videreført.
           </Paragraph>
-          <Heading level={2} className="with-scroll-heading">
+          <Heading level={2} className="demo-banner-with-scroll-heading">
             Tilbud om del av opplæringen i et samiskspråklig miljø
           </Heading>
           <Paragraph>

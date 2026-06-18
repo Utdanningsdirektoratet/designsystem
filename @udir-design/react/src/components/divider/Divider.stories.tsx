@@ -28,10 +28,10 @@ export const Preview = meta.story({
     <>
       <style>
         {`
-.example-divider-preview {
+.divider-preview-divider {
   margin: var(--ds-size-4) 0;
 }
-.example-list-unordered {
+.divider-preview-list-unordered {
   list-style: none;
   padding: 0;
 }`}
@@ -51,9 +51,9 @@ export const Preview = meta.story({
           arbeid med å ivareta barnas behov for omsorg og lek, og fremme læring
           og danning som grunnlag for allsidig utvikling.
         </Paragraph>
-        <Divider {...args} className="example-divider-preview" />
+        <Divider {...args} className="divider-preview-divider" />
         <Heading level={2}>Se også</Heading>
-        <List.Unordered className="example-list-unordered">
+        <List.Unordered className="divider-preview-list-unordered">
           <List.Item>
             <Link href="https://www.udir.no/kvalitet-og-kompetanse/hva-er-kvalitet/#a190252">
               Kvalitet i SFO

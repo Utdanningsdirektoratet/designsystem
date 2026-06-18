@@ -2,11 +2,11 @@
 
 exports[`Headings 1`] = `
 <style>
-  .example-main {
+  .prose-headings-main {
   display: flex;
   justify-content: center;
 }
-.example-prose {
+.prose-headings-prose {
   max-width: 50rem;
 }
 </style>
@@ -63,11 +63,11 @@ exports[`Headings 1`] = `
 
 exports[`Preview 1`] = `
 <style>
-  .example-main {
+  .prose-preview-main {
   display: flex;
   justify-content: center;
 }
-.example-prose {
+.prose-preview-prose {
   max-width: 50rem;
 }
 </style>
@@ -378,10 +378,10 @@ exports[`Preview 1`] = `
 
 exports[`With Dialog 1`] = `
 <style>
-  .example-prose {
+  .prose-with-dialog-prose {
   max-width: 50rem;
 }
-.example-dialog {
+.prose-with-dialog-dialog {
   z-index: 10;
 }
 </style>
@@ -430,10 +430,10 @@ exports[`With Dialog 1`] = `
 
 exports[`With Popover 1`] = `
 <style>
-  .example-prose {
+  .prose-with-popover-prose {
   max-width: 50rem;
 }
-.example-popover-content {
+.prose-with-popover-button__group {
   display: flex;
   gap: var(--ds-size-2);
   margin-top: var(--ds-size-4);

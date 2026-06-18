@@ -2,7 +2,7 @@
 
 exports[`Color Variants 1`] = `
 <style>
-  .example-main {
+  .popover-color-variants-main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 100px;
@@ -160,7 +160,7 @@ exports[`Color Variants 1`] = `
 
 exports[`Controlled 1`] = `
 <style>
-  .example-popover-buttons {
+  .popover-controlled-popover-button__group {
           display: flex;
           gap: var(--ds-size-2);
           margin-top: var(--ds-size-2);
@@ -248,7 +248,7 @@ exports[`Dotted Underline 1`] = `
 
 exports[`Interactive 1`] = `
 <style>
-  .example-popover-buttons {
+  .popover-interactive-popover-button__group {
   display: flex;
   gap: var(--ds-size-2);
   margin-top: var(--ds-size-2);
@@ -310,7 +310,7 @@ exports[`Interactive 1`] = `
 
 exports[`Preview 1`] = `
 <style>
-  .example-section {
+  .popover-preview-button__group {
   display: flex;
   gap: var(--ds-size-2);
   margin-top: var(--ds-size-2);
@@ -369,7 +369,7 @@ exports[`Preview 1`] = `
 
 exports[`Variants 1`] = `
 <style>
-  .example-main {
+  .popover-variants-main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 100px;
@@ -527,7 +527,7 @@ exports[`Variants 1`] = `
 
 exports[`Without Context 1`] = `
 <style>
-  .example-popover-buttons {
+  .popover-without-context-popover-button__group {
           display: flex;
           gap: var(--ds-size-2);
           margin-top: var(--ds-size-2);

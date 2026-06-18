@@ -3,8 +3,7 @@
 exports[`Auto Hide Sticky 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-.autoHideSticky-header-menu-nav {
+    .header-auto-hide-sticky-header-menu-nav {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
   max-width: 800px;
@@ -15,11 +14,11 @@ exports[`Auto Hide Sticky 1`] = `
   justify-items: center;
 }
 @media (max-width: 34.375rem) {
-  .autoHideSticky-header-menu-nav {
+  .header-auto-hide-sticky-header-menu-nav {
     justify-items: flex-start;
   }
 }
-main {
+.header-auto-hide-sticky-main {
   padding: var(--ds-size-18);
   display: flex;
   flex-direction: column;
@@ -27,10 +26,10 @@ main {
   max-width: 800px;
   margin: 0 auto;
 }
-main hr {
+.header-auto-hide-sticky-main hr {
   margin-top: var(--ds-size-30);
 }
-main hr + p {
+.header-auto-hide-sticky-main hr + p {
   margin-top: calc(var(--ds-size-30) * 2);
   margin-bottom: calc(var(--ds-size-30) * 2);
 }
@@ -108,10 +107,7 @@ main hr + p {
               Menynavigasjon
             </h2>
             <div data-hide="md">
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Navlinker
               </h3>
               <ul>
@@ -133,10 +129,7 @@ main hr + p {
               </ul>
             </div>
             <div data-hide>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 1
               </h3>
               <ul>
@@ -168,10 +161,7 @@ main hr + p {
               </ul>
             </div>
             <div data-hide>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 2
               </h3>
               <ul>
@@ -251,8 +241,7 @@ main hr + p {
 exports[`Auto Hide Sticky Test 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-.autoHideSticky-header-menu-nav {
+    .header-auto-hide-sticky-header-menu-nav {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
   max-width: 800px;
@@ -263,11 +252,11 @@ exports[`Auto Hide Sticky Test 1`] = `
   justify-items: center;
 }
 @media (max-width: 34.375rem) {
-  .autoHideSticky-header-menu-nav {
+  .header-auto-hide-sticky-header-menu-nav {
     justify-items: flex-start;
   }
 }
-main {
+.header-auto-hide-sticky-main {
   padding: var(--ds-size-18);
   display: flex;
   flex-direction: column;
@@ -275,10 +264,10 @@ main {
   max-width: 800px;
   margin: 0 auto;
 }
-main hr {
+.header-auto-hide-sticky-main hr {
   margin-top: var(--ds-size-30);
 }
-main hr + p {
+.header-auto-hide-sticky-main hr + p {
   margin-top: calc(var(--ds-size-30) * 2);
   margin-bottom: calc(var(--ds-size-30) * 2);
 }
@@ -356,10 +345,7 @@ main hr + p {
               Menynavigasjon
             </h2>
             <div data-hide="md">
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Navlinker
               </h3>
               <ul>
@@ -381,10 +367,7 @@ main hr + p {
               </ul>
             </div>
             <div data-hide>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 1
               </h3>
               <ul>
@@ -416,10 +399,7 @@ main hr + p {
               </ul>
             </div>
             <div data-hide>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 2
               </h3>
               <ul>
@@ -499,13 +479,12 @@ main hr + p {
 exports[`Long Application Name 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-        @media (max-width: 30rem) {
+    @media (max-width: 30rem) {
         .uds-header__logo > :last-child {
           font-size: var(--ds-font-size-4);
         }
         @media (max-width: 23rem) {
-          .myMenuText {
+          .header-long-application-name-menu-span {
             // Visually hidden but accessible for screen readers
             border: 0;
             clip: rect(0 0 0 0);
@@ -622,8 +601,11 @@ exports[`Pride Logo 1`] = `
 exports[`Responsive 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-.responsive-header-menu-nav {
+    .header-responsive-header-menu-user-button {
+  margin: 0 var(--ds-size-5);
+  justify-self: end;
+}
+.header-responsive-header-menu-nav {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
   max-width: 800px;
@@ -633,12 +615,8 @@ exports[`Responsive 1`] = `
   row-gap: var(--ds-size-10);
   justify-items: center;
 }
-.responsive-header-menu-user-button {
-  margin: 0 var(--ds-size-5);
-  justify-self: end;
-}
 @media (max-width: 34.375rem) {
-  .responsive-header-menu-nav {
+  .header-responsive-header-menu-nav {
     justify-items: flex-start;
   }
 }
@@ -932,10 +910,7 @@ exports[`Responsive 1`] = `
               Menynavigasjon
             </h2>
             <div data-hide="lg">
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Navlinker
               </h3>
               <ul>
@@ -957,10 +932,7 @@ exports[`Responsive 1`] = `
               </ul>
             </div>
             <div data-hide>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 1
               </h3>
               <ul>
@@ -992,10 +964,7 @@ exports[`Responsive 1`] = `
               </ul>
             </div>
             <div data-hide>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 2
               </h3>
               <ul>
@@ -1032,8 +1001,7 @@ exports[`Responsive 1`] = `
 exports[`Udir No 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-.udirNo-header-menu-nav {
+    .header-udir-no-header-menu-nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
   max-width: 1280px;
@@ -1041,6 +1009,13 @@ exports[`Udir No 1`] = `
   padding: var(--ds-size-10) var(--ds-size-15);
   gap: var(--ds-size-4);
   row-gap: var(--ds-size-10);
+}
+.header-udir-no-header-search {
+  max-width: 280px;
+}
+.header-udir-no-header-menu-search {
+  width: auto;
+  margin: var(--ds-size-5) var(--ds-size-5) 0;
 }
   </style>
   <header
@@ -1064,10 +1039,7 @@ exports[`Udir No 1`] = `
         </div>
       </a>
       <div>
-        <div
-          data-show="sm"
-          style="<removed>"
-        >
+        <div data-show="sm">
           <input
             placeholder="Søk"
             aria-label="Søk"
@@ -1094,10 +1066,7 @@ exports[`Udir No 1`] = `
           data-placement="none"
           data-variant="default"
         >
-          <div
-            data-hide="sm"
-            style="<removed>"
-          >
+          <div data-hide="sm">
             <input
               placeholder="Søk"
               aria-label="Søk"
@@ -1116,10 +1085,7 @@ exports[`Udir No 1`] = `
               Menynavigasjon
             </h2>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Utdanningsløpet
               </h3>
               <ul>
@@ -1166,10 +1132,7 @@ exports[`Udir No 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Læring og trivsel
               </h3>
               <ul>
@@ -1206,10 +1169,7 @@ exports[`Udir No 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Prøver og vurdering
               </h3>
               <ul>
@@ -1241,10 +1201,7 @@ exports[`Udir No 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Kompetanse og tilskudd
               </h3>
               <ul>
@@ -1286,10 +1243,7 @@ exports[`Udir No 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Tall og forskning
               </h3>
               <ul>
@@ -1336,10 +1290,7 @@ exports[`Udir No 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Regelverk og tilsyn
               </h3>
               <ul>
@@ -1479,8 +1430,7 @@ exports[`With Language Picker 1`] = `
 exports[`With Menu 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-.withMenu-header-menu-nav {
+    .header-with-menu-header-menu-nav {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
   max-width: 800px;
@@ -1491,7 +1441,7 @@ exports[`With Menu 1`] = `
   justify-items: center;
 }
 @media (max-width: 34.375rem) {
-  .withMenu-header-menu-nav {
+  .header-with-menu-header-menu-nav {
   justify-items: flex-start;
 }}
   </style>
@@ -1537,10 +1487,7 @@ exports[`With Menu 1`] = `
               Menynavigasjon
             </h2>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 <a href="#">
                   Designprofil
                 </a>
@@ -1564,10 +1511,7 @@ exports[`With Menu 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 <a href="#">
                   Illustrasjoner
                 </a>
@@ -1591,10 +1535,7 @@ exports[`With Menu 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 <a href="#">
                   Nyttige lenker
                 </a>
@@ -1628,8 +1569,7 @@ exports[`With Menu 1`] = `
 exports[`With Menu Test 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-.withMenu-header-menu-nav {
+    .header-with-menu-header-menu-nav {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
   max-width: 800px;
@@ -1640,7 +1580,7 @@ exports[`With Menu Test 1`] = `
   justify-items: center;
 }
 @media (max-width: 34.375rem) {
-  .withMenu-header-menu-nav {
+  .header-with-menu-header-menu-nav {
   justify-items: flex-start;
 }}
   </style>
@@ -1686,10 +1626,7 @@ exports[`With Menu Test 1`] = `
               Menynavigasjon
             </h2>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 <a href="#">
                   Designprofil
                 </a>
@@ -1713,10 +1650,7 @@ exports[`With Menu Test 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 <a href="#">
                   Illustrasjoner
                 </a>
@@ -1740,10 +1674,7 @@ exports[`With Menu Test 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 <a href="#">
                   Nyttige lenker
                 </a>
@@ -1777,8 +1708,7 @@ exports[`With Menu Test 1`] = `
 exports[`With Navigation Links 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-.withNavLinks-header-menu-nav {
+    .header-with-nav-links-header-menu-nav {
   max-width: 800px;
   display: flex;
   padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
@@ -1885,8 +1815,7 @@ exports[`With Navigation Links 1`] = `
 exports[`With Navigation Links And Menu 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-.withNavLinksAndMenu-header-menu-nav {
+    .header-with-nav-links-and-menu-header-menu-nav {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
   max-width: 800px;
@@ -1897,7 +1826,7 @@ exports[`With Navigation Links And Menu 1`] = `
   justify-items: center;
 }
 @media (max-width: 34.375rem) {
-  .withNavLinksAndMenu-header-menu-nav {
+  .header-with-nav-links-and-menu-header-menu-nav {
     justify-items: flex-start;
   }
 }
@@ -1987,10 +1916,7 @@ exports[`With Navigation Links And Menu 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 1
               </h3>
               <ul>
@@ -2012,10 +1938,7 @@ exports[`With Navigation Links And Menu 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 2
               </h3>
               <ul>
@@ -2042,10 +1965,7 @@ exports[`With Navigation Links And Menu 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 3
               </h3>
               <ul>
@@ -2216,8 +2136,7 @@ exports[`With Tag 1`] = `
 exports[`With Theme Menus 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-:is(#header-education-menu, #header-learning-menu, #header-mobile-menu) > nav {
+    :is(#header-education-menu, #header-learning-menu, #header-mobile-menu) > nav {
   display: grid;
   margin: 0 auto;
   padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
@@ -2279,10 +2198,7 @@ exports[`With Theme Menus 1`] = `
               Temameny 1 navigasjon
             </h2>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 1
               </h3>
               <ul>
@@ -2304,10 +2220,7 @@ exports[`With Theme Menus 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 2
               </h3>
               <ul>
@@ -2334,10 +2247,7 @@ exports[`With Theme Menus 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 3
               </h3>
               <ul>
@@ -2379,10 +2289,7 @@ exports[`With Theme Menus 1`] = `
               Temameny 2 navigasjon
             </h2>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 4
               </h3>
               <ul>
@@ -2404,10 +2311,7 @@ exports[`With Theme Menus 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 5
               </h3>
               <ul>
@@ -2454,10 +2358,7 @@ exports[`With Theme Menus 1`] = `
               Menynavigasjon
             </h2>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 1
               </h3>
               <ul>
@@ -2479,10 +2380,7 @@ exports[`With Theme Menus 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 2
               </h3>
               <ul>
@@ -2509,10 +2407,7 @@ exports[`With Theme Menus 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 3
               </h3>
               <ul>
@@ -2534,10 +2429,7 @@ exports[`With Theme Menus 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 4
               </h3>
               <ul>
@@ -2559,10 +2451,7 @@ exports[`With Theme Menus 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 5
               </h3>
               <ul>

@@ -2,7 +2,7 @@
 
 exports[`As Link 1`] = `
 <style>
-  .example-link {
+  .avatar-as-link {
   display: flex;
   gap: var(--ds-size-2);
   align-items: center;
@@ -105,12 +105,12 @@ exports[`Content 1`] = `
 
 exports[`Icons 1`] = `
 <style>
-  .avatar-group {
+  .avatar-icons {
   display: flex;
   gap: var(--ds-size-2);
   flex-direction: column;
 }
-.avatar-icon-group {
+.avatar-icons__group {
   display: flex;
   align-items: center;
   gap: var(--ds-size-2);

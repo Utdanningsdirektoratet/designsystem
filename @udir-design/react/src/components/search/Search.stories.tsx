@@ -107,18 +107,18 @@ export const Controlled = meta.story({
       <Prose>
         <style>
           {`
-        .controlled-form {
+        .search-controlled-form {
           display: flex;
           flex-direction: column;
           gap: var(--ds-size-4);
         }
-        .controlled-chip-group {
+        .search-controlled-chip__group {
           display: flex;
           align-items: center;
           gap: var(--ds-size-4);
         }`}
         </style>
-        <form className="controlled-form" onSubmit={handleSubmit}>
+        <form className="search-controlled-form" onSubmit={handleSubmit}>
           <Search {...args}>
             <Search.Input
               id="search-input-controlled"
@@ -129,7 +129,7 @@ export const Controlled = meta.story({
             <Search.Clear />
             <Search.Button type="submit" />
           </Search>
-          <div className="controlled-chip-group">
+          <div className="search-controlled-chip__group">
             <Paragraph data-size="sm">Hurtigsøk:</Paragraph>
             <Chip.Button
               onClick={() => {
@@ -160,7 +160,7 @@ export const Controlled = meta.story({
         {searchTerm && (
           <>
             <Paragraph>Søker etter: {searchTerm}</Paragraph>
-            <div className="controlled-form">
+            <div className="search-controlled-form">
               <Skeleton variant="rectangle" height="150px" />
               <Skeleton variant="rectangle" width="200px" />
               <Skeleton variant="rectangle" />
@@ -262,7 +262,7 @@ export const LiveSearch = meta.story({
       <>
         <style>
           {`
-        .live-search {
+        .search-live-output__group {
           display: flex;
           gap: var(--ds-size-1);
           align-items: center;
@@ -285,7 +285,7 @@ export const LiveSearch = meta.story({
             <Search.Clear />
           </Search>
           {searchValue !== '' && (
-            <div className="live-search">
+            <div className="search-live-output__group">
               <Spinner aria-hidden data-size="xs" />
               <span>Søker etter: {searchValue}</span>
             </div>

@@ -281,7 +281,7 @@ exports[`Example Dropzone With Explicit Size 1`] = `
 
 exports[`Example Items 1`] = `
 <style>
-  .example-items-main {
+  .file-upload-example-items-main {
           display: flex;
           flex-direction: column;
           gap: var(--ds-size-3);
@@ -636,7 +636,7 @@ exports[`Example Items 1`] = `
 
 exports[`Example Trigger 1`] = `
 <style>
-  .example-trigger-main {
+  .file-upload-example-trigger-main {
           display: flex;
           flex-direction: column;
           gap: var(--ds-size-3);
@@ -768,7 +768,7 @@ exports[`Example Trigger 1`] = `
 
 exports[`Preview 1`] = `
 <style>
-  .preview-main {
+  .file-upload-preview-main {
           display: flex;
           gap: var(--ds-size-18);
           justify-content: center;
@@ -878,7 +878,7 @@ exports[`Preview 1`] = `
 
 exports[`Readonly 1`] = `
 <style>
-  .readonly-main {
+  .file-upload-readonly-main {
   background: var(--ds-color-neutral-surface-tinted);
   display: flex;
   gap: var(--ds-size-12);
@@ -964,7 +964,7 @@ exports[`Readonly 1`] = `
 
 exports[`Too Many Files 1`] = `
 <style>
-  .too-many-files-main {
+  .file-upload-too-many-files-main {
           display: flex;
           flex-direction: column;
           gap: var(--ds-size-3);
@@ -1260,7 +1260,7 @@ exports[`Too Many Files 1`] = `
 
 exports[`Upload 1`] = `
 <style>
-  .upload-main {
+  .file-upload-upload-main {
           display: flex;
           flex-direction: column;
           gap: var(--ds-size-3);

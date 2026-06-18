@@ -2,22 +2,22 @@
 
 exports[`Cards 1`] = `
 <style>
-  .cards-main {
+  .skeleton-cards-main {
   margin: var(--ds-size-12);
   display: flex;
   flex-direction: column;
   gap: var(--ds-size-6);
 }
-.cards-buttons {
+.skeleton-cards-button__group {
   display: flex;
   justify-content: end;
 }
-.cards-card {
+.skeleton-cards-card__group {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--ds-size-6);
 }
-.cards-card-block {
+.skeleton-cards-card-block {
   display: flex;
   flex-direction: column;
 }
@@ -371,7 +371,7 @@ exports[`Children 1`] = `
 
 exports[`Components 1`] = `
 <style>
-  .components-main {
+  .skeleton-components-main {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -412,12 +412,12 @@ exports[`Preview 1`] = `
 
 exports[`Text 1`] = `
 <style>
-  .text-main {
+  .skeleton-text-main {
   display: flex;
   gap: var(--ds-size-12);
   margin: var(--ds-size-12);
 }
-.text-column {
+.skeleton-text-section {
   flex: 1 1 200px;
 }
 </style>
@@ -460,21 +460,21 @@ exports[`Text 1`] = `
 
 exports[`Usage Example 1`] = `
 <style>
-  .usage-main {
+  .skeleton-usage-example-main {
   display: flex;
   gap: var(--ds-size-12);
   margin: var(--ds-size-12);
 }
-.usage-section {
+.skeleton-usage-example-section {
   flex: 1 1 200px;
 }
-.usage-meta {
+.skeleton-usage-example-meta {
   display: flex;
   gap: var(--ds-size-2);
   align-items: center;
   padding-block: var(--ds-size-1);
 }
-.usage-image {
+.skeleton-usage-example-image {
   display: block;
   width: 100%;
   height: 200px;

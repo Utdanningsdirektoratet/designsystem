@@ -181,19 +181,19 @@ export const Controlled = meta.story({
       <>
         <style>
           {`
-        .example-main {
+        .textfield-controlled-main {
           display: flex;
           gap: var(--ds-size-2);
           align-items: end;
           width: 100%;
         }
-        .example-textfield {
+        .textfield-controlled-textfield {
           flex-grow: 1;
         }`}
         </style>
-        <div className="example-main">
+        <div className="textfield-controlled-main">
           <Textfield
-            className="example-textfield"
+            className="textfield-controlled-textfield"
             {...args}
             value={value}
             onChange={(

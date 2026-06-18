@@ -239,19 +239,19 @@ export const Controlled = meta.story({
       <>
         <style>
           {`
-        .example-list-unordered {
+        .tabs-controlled-list-unordered {
           list-style: none;
           padding: 0;
         }
-        .example-list-item {
+        .tabs-controlled-list-item {
           display: flex;
         }
-        .example-list-content {
+        .tabs-controlled-list-content {
           align-items: center;
           display: flex;
           gap: var(--ds-size-2);
         }
-        .example-list-header {
+        .tabs-controlled-list-header {
           margin-bottom: var(--ds-size-2);
           margin-top: var(--ds-size-4);
         }`}
@@ -268,21 +268,21 @@ export const Controlled = meta.story({
             </Tabs.Tab>
           </Tabs.List>
           <Tabs.Panel value="users">
-            <List.Unordered className="example-list-unordered">
-              <List.Item className="example-list-item">
+            <List.Unordered className="tabs-controlled-list-unordered">
+              <List.Item className="tabs-controlled-list-item">
                 <Button variant="secondary" onClick={() => setTab('profile')}>
                   <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde
                   Hansen (deg)
                 </Button>
               </List.Item>
-              <List.Item className="example-list-item">
-                <Link href="#" className="example-list-content">
+              <List.Item className="tabs-controlled-list-item">
+                <Link href="#" className="tabs-controlled-list-content">
                   <Avatar aria-label="Bruker 2" data-color="support1" />
                   Stian Stølan
                 </Link>
               </List.Item>
-              <List.Item className="example-list-item">
-                <Link href="#" className="example-list-content">
+              <List.Item className="tabs-controlled-list-item">
+                <Link href="#" className="tabs-controlled-list-content">
                   <Avatar aria-label="Bruker 3" data-color="support2" />
                   Lina Larsen
                 </Link>
@@ -290,11 +290,11 @@ export const Controlled = meta.story({
             </List.Unordered>
           </Tabs.Panel>
           <Tabs.Panel value="profile">
-            <div className="example-list-content">
+            <div className="tabs-controlled-list-content">
               <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde Hansen
             </div>
 
-            <Heading level={3} className="example-list-header">
+            <Heading level={3} className="tabs-controlled-list-header">
               Detaljer
             </Heading>
             <Paragraph>34 år</Paragraph>

@@ -2,7 +2,7 @@
 
 exports[`Composed 1`] = `
 <style>
-  .example-heading {
+  .card-composed-heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -121,12 +121,12 @@ exports[`Composed 1`] = `
 
 exports[`Horizontal 1`] = `
 <style>
-  .example-card {
+  .card-horizontal-card {
   display: grid;
   grid-auto-flow: column;
   width: 700px;
 }
-.example-img {
+.card-horizontal-img {
   height: 100%;
   object-fit: cover;
 }

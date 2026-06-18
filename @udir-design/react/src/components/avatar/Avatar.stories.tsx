@@ -124,28 +124,28 @@ export const Icons = meta.story({
   render: (args) => (
     <>
       <style>{`
-.avatar-group {
+.avatar-icons {
   display: flex;
   gap: var(--ds-size-2);
   flex-direction: column;
 }
-.avatar-icon-group {
+.avatar-icons__group {
   display: flex;
   align-items: center;
   gap: var(--ds-size-2);
 }`}</style>
-      <div className="avatar-group">
-        <div className="avatar-icon-group">
+      <div className="avatar-icons">
+        <div className="avatar-icons__group">
           <Avatar {...args} aria-hidden />
           <span>Person</span>
         </div>
-        <div className="avatar-icon-group">
+        <div className="avatar-icons__group">
           <Avatar {...args} aria-hidden>
             <HatSchoolIcon />
           </Avatar>
           <span>Skole</span>
         </div>
-        <div className="avatar-icon-group">
+        <div className="avatar-icons__group">
           <Avatar {...args} aria-hidden>
             <BriefcaseIcon />
           </Avatar>
@@ -163,12 +163,12 @@ export const AsLink = meta.story({
   render: (args) => (
     <>
       <style>{`
-.example-link {
+.avatar-as-link {
   display: flex;
   gap: var(--ds-size-2);
   align-items: center;
 }`}</style>
-      <Link className="example-link" href="/">
+      <Link className="avatar-as-link" href="/">
         <Avatar {...args} />
         <span>Ola Nordmann</span>
       </Link>

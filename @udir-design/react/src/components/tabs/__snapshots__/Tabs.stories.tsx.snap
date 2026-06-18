@@ -2,19 +2,19 @@
 
 exports[`Controlled 1`] = `
 <style>
-  .example-list-unordered {
+  .tabs-controlled-list-unordered {
           list-style: none;
           padding: 0;
         }
-        .example-list-item {
+        .tabs-controlled-list-item {
           display: flex;
         }
-        .example-list-content {
+        .tabs-controlled-list-content {
           align-items: center;
           display: flex;
           gap: var(--ds-size-2);
         }
-        .example-list-header {
+        .tabs-controlled-list-header {
           margin-bottom: var(--ds-size-2);
           margin-top: var(--ds-size-4);
         }

@@ -55,13 +55,13 @@ export const Preview = meta.story({
       <>
         <style>
           {`
-        .preview-main {
+        .file-upload-preview-main {
           display: flex;
           gap: var(--ds-size-18);
           justify-content: center;
         }`}
         </style>
-        <div className="preview-main">
+        <div className="file-upload-preview-main">
           <FileUpload.Trigger {...args} inputProps={{ ...args.inputProps }} />
           <FileUpload.Dropzone
             {...args}
@@ -82,7 +82,7 @@ export const Readonly = meta.story({
       <>
         <style>
           {`
-.readonly-main {
+.file-upload-readonly-main {
   background: var(--ds-color-neutral-surface-tinted);
   display: flex;
   gap: var(--ds-size-12);
@@ -91,7 +91,7 @@ export const Readonly = meta.story({
   border-radius: var(--ds-border-radius-md);
 }`}
         </style>
-        <div className="readonly-main">
+        <div className="file-upload-readonly-main">
           <FileUpload.Trigger
             {...args}
             inputProps={{ readOnly: true }}
@@ -260,13 +260,13 @@ export const TooManyFiles = meta.story({
       <>
         <style>
           {`
-        .too-many-files-main {
+        .file-upload-too-many-files-main {
           display: flex;
           flex-direction: column;
           gap: var(--ds-size-3);
         }`}
         </style>
-        <div className="too-many-files-main">
+        <div className="file-upload-too-many-files-main">
           <FileUpload.Dropzone
             label="Last opp dokumentasjon"
             description="Du kan kun laste opp 2 filer."
@@ -329,13 +329,13 @@ export const ExampleTrigger = meta.story({
       <>
         <style>
           {`
-        .example-trigger-main {
+        .file-upload-example-trigger-main {
           display: flex;
           flex-direction: column;
           gap: var(--ds-size-3);
         }`}
         </style>
-        <div className="example-trigger-main">
+        <div className="file-upload-example-trigger-main">
           <FileUpload.Trigger
             inputProps={{
               accept: 'image/png, image/jpeg',
@@ -408,13 +408,13 @@ export const ExampleItems = meta.story({
       <>
         <style>
           {`
-        .example-items-main {
+        .file-upload-example-items-main {
           display: flex;
           flex-direction: column;
           gap: var(--ds-size-3);
         }`}
         </style>
-        <div className="example-items-main">
+        <div className="file-upload-example-items-main">
           {files.length > 0 && (
             <>
               <Heading level={3} data-size="2xs">
@@ -480,13 +480,13 @@ export const Upload = meta.story({
       <>
         <style>
           {`
-        .upload-main {
+        .file-upload-upload-main {
           display: flex;
           flex-direction: column;
           gap: var(--ds-size-3);
         }`}
         </style>
-        <div className="upload-main">
+        <div className="file-upload-upload-main">
           <FileUpload.Trigger
             label="Last opp rapport"
             description="Du kan legge ved 1 fil."

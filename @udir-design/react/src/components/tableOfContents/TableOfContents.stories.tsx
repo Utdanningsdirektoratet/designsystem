@@ -49,19 +49,19 @@ export const Preview = meta.story({
       <>
         <style>
           {`
-.example-main {
+.table-of-contents-preview-main {
   overflow: auto;
   display: flex;
   flex-direction: column;
   gap: var(--ds-size-5);
 }
-.example-table-of-contents {
+.table-of-contents-preview-table-of-contents {
   width: 450px;
 }`}
         </style>
-        <div className="example-main">
+        <div className="table-of-contents-preview-main">
           <TableOfContents
-            className="example-table-of-contents"
+            className="table-of-contents-preview-table-of-contents"
             {...args}
             data-testid="table-of-contents"
           />

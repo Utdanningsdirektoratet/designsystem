@@ -194,7 +194,7 @@ export const Composed = meta.story({
     <>
       <style>
         {`
-.example-heading {
+.card-composed-heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -202,7 +202,7 @@ export const Composed = meta.story({
       </style>
       <Card {...args}>
         <Card.Block>
-          <div className="example-heading">
+          <div className="card-composed-heading">
             <Heading>Rolle 1</Heading>
             <Button variant="secondary" data-color="danger" data-size="sm">
               <TrashFillIcon aria-hidden />
@@ -315,22 +315,22 @@ export const Horizontal = meta.story({
       <>
         <style>
           {`
-.example-card {
+.card-horizontal-card {
   display: grid;
   grid-auto-flow: column;
   width: 700px;
 }
-.example-img {
+.card-horizontal-img {
   height: 100%;
   object-fit: cover;
 }`}
         </style>
-        <Card {...args} className="example-card">
+        <Card {...args} className="card-horizontal-card">
           <Card.Block>
             <img
               src={url}
               alt="Barn som spiser lunsj"
-              className="example-img"
+              className="card-horizontal-img"
             />
           </Card.Block>
           <Card.Block>
