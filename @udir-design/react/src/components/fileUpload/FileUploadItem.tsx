@@ -124,91 +124,6 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
 );
 FileUploadItem.displayName = 'FileUpload.Item';
 
-export function formatFileSize(file: File): string | null {
-  if (!file.size) {
-    return null;
-  }
-  const megaBytes = file.size / (1024 * 1024);
-
-  return `${megaBytes.toFixed(2)} MB`;
-}
-
-function Icon({
-  file,
-  showError,
-  loading,
-}: {
-  file: File;
-  showError: boolean;
-  loading?: boolean;
-}) {
-  const extension = file.name.substring(file.name.lastIndexOf('.') + 1);
-
-  if (loading) {
-    return <Spinner aria-label="spinner" />;
-  }
-
-  if (showError) {
-    return <FileXMarkIcon aria-hidden />;
-  }
-
-  switch (extension) {
-    case 'jpg':
-    case 'jpeg':
-    case 'png':
-    case 'gif':
-    case 'webp':
-      return <FileImageIcon aria-hidden />;
-    case 'pdf':
-      return <FilePdfIcon aria-hidden />;
-    case 'txt':
-      return <FileTextIcon aria-hidden />;
-    case 'csv':
-      return <FileCsvIcon aria-hidden />;
-    case 'xls':
-    case 'xlsx':
-      return <FileExcelIcon aria-hidden />;
-    case 'doc':
-    case 'docx':
-      return <FileWordIcon aria-hidden />;
-    default:
-      return <FileIcon aria-hidden />;
-  }
-}
-
-const downloadFile = (file: File): void => {
-  const a = document.createElement('a');
-  const url = URL.createObjectURL(file);
-  a.href = url;
-  a.download = file.name;
-  a.click();
-
-  URL.revokeObjectURL(url);
-};
-
-interface FileNameProps {
-  file: File;
-  href?: string;
-}
-
-const FileName = ({ file, href }: FileNameProps) => {
-  if (href) {
-    return <Link href={href}>{file.name}</Link>;
-  }
-
-  return (
-    <Link
-      download={file.name}
-      onClick={(event) => {
-        event.preventDefault();
-        downloadFile(file);
-      }}
-    >
-      {file.name}
-    </Link>
-  );
-};
-
 export interface FileUploadListItem {
   /**
    * Either a native File or file metadata.
@@ -306,3 +221,88 @@ export const FileUploadList = forwardRef<HTMLDivElement, FileUploadListProps>(
   ),
 );
 FileUploadList.displayName = 'FileUpload.List';
+
+export function formatFileSize(file: File): string | null {
+  if (!file.size) {
+    return null;
+  }
+  const megaBytes = file.size / (1024 * 1024);
+
+  return `${megaBytes.toFixed(2)} MB`;
+}
+
+function Icon({
+  file,
+  showError,
+  loading,
+}: {
+  file: File;
+  showError: boolean;
+  loading?: boolean;
+}) {
+  const extension = file.name.substring(file.name.lastIndexOf('.') + 1);
+
+  if (loading) {
+    return <Spinner aria-label="spinner" />;
+  }
+
+  if (showError) {
+    return <FileXMarkIcon aria-hidden />;
+  }
+
+  switch (extension) {
+    case 'jpg':
+    case 'jpeg':
+    case 'png':
+    case 'gif':
+    case 'webp':
+      return <FileImageIcon aria-hidden />;
+    case 'pdf':
+      return <FilePdfIcon aria-hidden />;
+    case 'txt':
+      return <FileTextIcon aria-hidden />;
+    case 'csv':
+      return <FileCsvIcon aria-hidden />;
+    case 'xls':
+    case 'xlsx':
+      return <FileExcelIcon aria-hidden />;
+    case 'doc':
+    case 'docx':
+      return <FileWordIcon aria-hidden />;
+    default:
+      return <FileIcon aria-hidden />;
+  }
+}
+
+const downloadFile = (file: File): void => {
+  const a = document.createElement('a');
+  const url = URL.createObjectURL(file);
+  a.href = url;
+  a.download = file.name;
+  a.click();
+
+  URL.revokeObjectURL(url);
+};
+
+interface FileNameProps {
+  file: File;
+  href?: string;
+}
+
+const FileName = ({ file, href }: FileNameProps) => {
+  if (href) {
+    return <Link href={href}>{file.name}</Link>;
+  }
+
+  return (
+    <Link
+      download={file.name}
+      onClick={(event) => {
+        event.preventDefault();
+        downloadFile(file);
+      }}
+    >
+      {file.name}
+    </Link>
+  );
+};
