@@ -1,5 +1,5 @@
 import { FileUploadDropzone } from './FileUploadDropzone';
-import { FileUploadItem } from './FileUploadItem';
+import { FileUploadItem, FileUploadList } from './FileUploadItem';
 import { FileUploadTrigger } from './FileUploadTrigger';
 
 export type FileUpload = {
@@ -26,14 +26,24 @@ export type FileUpload = {
    * <FileUpload.Item />
    */
   Item: typeof FileUploadItem;
+  /**
+   * Component that displays multiple uploaded files
+   * in a compact list with dividers
+   *
+   * @example
+   * <FileUpload.List items={items} onRemove={handleRemove} />
+   */
+  List: typeof FileUploadList;
 };
 
 export const FileUpload: FileUpload = {
   Trigger: FileUploadTrigger,
   Dropzone: FileUploadDropzone,
   Item: FileUploadItem,
+  List: FileUploadList,
 };
 
 FileUpload.Trigger.displayName = 'FileUpload.Trigger';
 FileUpload.Dropzone.displayName = 'FileUpload.Dropzone';
 FileUpload.Item.displayName = 'FileUpload.Item';
+FileUpload.List.displayName = 'FileUpload.List';
