@@ -1,7 +1,7 @@
 import type { Color } from '@digdir/designsystemet-react/colors';
 import type { ComponentType } from 'react';
 import { Fragment } from 'react/jsx-runtime';
-import { PlusIcon, TrashFillIcon } from '@udir-design/icons';
+import { ArrowRightIcon, PlusIcon, TrashFillIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { Button } from 'src/components/button';
 import { Field } from 'src/components/field';
@@ -343,6 +343,66 @@ export const Horizontal = meta.story({
           </Paragraph>
         </Card.Block>
       </Card>
+    );
+  },
+});
+
+export const Cluster = meta.story({
+  render: (args) => {
+    const links = [
+      { text: 'Lesing', url: '#' },
+      { text: 'Fravær i skolen', url: '#' },
+      { text: 'Barnehagemiljø', url: '#' },
+      { text: 'God digital praksis', url: '#' },
+      { text: 'Skolemiljø', url: '#' },
+      { text: 'Kunstig intelligens i skolen', url: '#' },
+    ];
+
+    const rows = Array.from({ length: Math.ceil(links.length / 2) }, (_, i) =>
+      links.slice(i * 2, (i + 1) * 2),
+    );
+
+    return (
+      <>
+        <style>
+          {`
+.card-cluster {
+  width: 750px;
+}
+.card-cluster__row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--ds-size-4);
+}
+.card-cluster__item {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-2);
+  padding: var(--ds-size-4) 0 var(--ds-size-8) 0;
+  min-width: 0;
+  border-block-end: 1px solid var(--ds-color-border-subtle);
+}
+.card-cluster__row:last-child .card-cluster__item {
+  border-block-end: none;
+  padding-block-end: var(--ds-size-4);
+}
+.card-cluster__item > svg {
+  flex-shrink: 0;
+}`}
+        </style>
+        <Card {...args} className="card-cluster">
+          {rows.map((row, rowIndex) => (
+            <div key={rowIndex} className="card-cluster__row">
+              {row.map((link) => (
+                <div key={link.text} className="card-cluster__item">
+                  <ArrowRightIcon aria-hidden data-size="lg" />
+                  <LinkComponent href={link.url}>{link.text}</LinkComponent>
+                </div>
+              ))}
+            </div>
+          ))}
+        </Card>
+      </>
     );
   },
 });
