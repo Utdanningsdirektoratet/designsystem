@@ -17,17 +17,17 @@ allowBuilds:
   unrs-resolver: false
 
 catalog:
-  '@babel/types': ^7.29.7
+  '@babel/types': ^8.0.0
   '@types/js-yaml': ^4.0.9
-  '@commitlint/cli': ^20.5.3
-  '@commitlint/config-conventional': ^20.5.3
-  '@commitlint/types': ^20.5.0
+  '@commitlint/cli': ^21.0.2
+  '@commitlint/config-conventional': ^21.0.2
+  '@commitlint/types': ^21.0.1
   '@digdir/designsystemet': 1.15.0
   '@digdir/designsystemet-css': 1.15.0
   '@digdir/designsystemet-react': 1.15.0
   '@digdir/designsystemet-types': 1.15.0
   '@digdir/designsystemet-web': 1.15.0
-  '@eslint/js': ^9.39.4
+  '@eslint/js': ^10.0.1
   '@figma/rest-api-spec': ^0.37.0
   '@hookform/resolvers': ^5.4.0
   '@navikt/aksel-icons': ^8.12.1
@@ -66,9 +66,9 @@ catalog:
   camelcase: ^9.0.0
   chromatic: ^17.4.1
   clsx: 2.1.1
-  cssnano: ^7.1.9
+  cssnano: ^8.0.2
   diffable-html: ^6.0.1
-  eslint: ^9.39.4
+  eslint: ^10.5.0
   eslint-config-next: ^16.2.9
   eslint-config-prettier: 10.1.8
   eslint-plugin-import: ^2.32.0
@@ -81,10 +81,10 @@ catalog:
   hast-util-from-html: ^2.0.3
   hast-util-is-element: ^3.0.0
   hast-util-to-html: ^9.0.5
-  highcharts: ^12.6.0
+  highcharts: ^13.0.0
   highcharts-react-official: ^3.2.3
   husky: ^9.1.7
-  js-yaml: ^4.2.0
+  js-yaml: ^5.0.0
   jsdom: ^29.1.1
   lodash-es: ^4.18.1
   madge: ^8.0.0
@@ -126,8 +126,8 @@ catalog:
   unified: ^11.0.5
   unist-util-remove: ^4.0.0
   unist-util-visit: ^5.1.0
-  vite: ^7.3.5
-  vite-plugin-dts: ^4.5.4
+  vite: ^8.0.16
+  vite-plugin-dts: ^5.0.2
   vite-tsconfig-paths: ^6.1.1
   vitest: ^4.1.9
   yargs: ^18.0.0
