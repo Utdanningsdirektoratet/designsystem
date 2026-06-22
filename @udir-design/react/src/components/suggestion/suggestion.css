@@ -13,6 +13,12 @@
 }
 
 .ds-suggestion {
+  /* u-combobox 2.0.5 changed [role="listbox"] from display:contents to inline-flex,
+     so chips no longer participate in the host's flex-wrap. Restore wrapping. */
+  &::part(items) {
+    flex-wrap: wrap;
+  }
+
   /* Count display mode: use CSS counter to show number of selected items */
   &[data-display='count'] {
     counter-reset: selected;
