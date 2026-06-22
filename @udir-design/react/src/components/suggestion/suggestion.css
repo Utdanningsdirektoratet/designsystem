@@ -25,6 +25,7 @@
 
     /* Hide listbox when in count display mode. */
     &::part(items) {
+      position: absolute;
       @composes ds-sr-only from '@digdir/designsystemet-css/base.css';
     }
 
