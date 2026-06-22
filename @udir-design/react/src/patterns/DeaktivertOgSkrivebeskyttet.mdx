@@ -7,23 +7,23 @@ import * as SwitchStories from '../components/switch/Switch.stories';
 
 # Disabled og ReadOnly
 
-Skjemakomponentene støtter `disabled` og `readOnly`. Vi anbefaler å unngå begge tilstandene så langt det lar seg gjøre, fordi de skaper utfordringer for brukerne. Velg derfor helst et av alternativene under før du tyr til `disabled` eller `readOnly`.
+Skjemakomponentene støtter `disabled` og `readOnly`. Vi anbefaler likevel å unngå begge tilstandene så langt det lar seg gjøre, fordi de kan skape utfordringer for brukerne. Vurder derfor alternativene under før du tar i bruk `disabled` eller `readOnly`.
 
 ## Bruk heller et alternativ
 
 I de fleste tilfeller finnes det en bedre løsning enn å deaktivere eller skrivebeskytte et felt. Vurder disse alternativene først:
 
-- **Fjern feltet** når det ikke er relevant. Et deaktivert felt tar fortsatt visuell plass og kan forvirre, mens et felt som ikke vises ikke skaper støy. Forklar gjerne brukeren hvorfor noe ikke er tilgjengelig.
-- **Vis informasjon som ren tekst** når en verdi bare skal presenteres og ikke endres. Da er det ingen tvil om at innholdet ikke er redigerbart.
+- **Fjern feltet** når det ikke er relevant. Et deaktivert felt tar fortsatt visuell plass og kan virke forvirrende, mens et felt som ikke vises ikke skaper unødvendig støy. Forklar gjerne brukeren hvorfor noe ikke er tilgjengelig.
+- **Vis informasjon som ren tekst** når en verdi bare skal presenteres og ikke endres. Da er det tydelig at innholdet ikke er redigerbart.
 
-- **Vis feilmeldinger i stedet for å deaktivere send- eller lagre-knappen.** La brukeren trykke, og vis tydelige feilmeldinger som forklarer hva som mangler. En deaktivert knapp forteller ikke brukeren hvorfor de ikke kommer videre.
+- **Vis feilmeldinger i stedet for å deaktivere send- eller lagreknappen.** La brukeren trykke på knappen, og vis tydelige feilmeldinger som forklarer hva som mangler. En deaktivert knapp forteller ikke brukeren hvorfor de ikke kommer videre.
 - **For knapper: bruk `loading`** med `aria-disabled` i stedet for `disabled` mens noe lastes eller lagres. Da beholder knappen fokus og er synlig for hjelpemidler. Se [retningslinjene for `Button`](/docs/components-button--docs#lasting).
 
 ## Ikke bruk deaktivert (`disabled`)
 
 Deaktiverte felt kan være vanskelige å oppfatte visuelt, og noen brukere vil ikke forstå hvorfor feltet ikke er klikkbart. I tillegg er deaktiverte felt ikke fokuserbare med tastatur, noe som gjør dem usynlige for skjermleserbrukere.
 
-Hvis et felt ikke er relevant, bør du helst fjerne det fremfor å deaktivere det. Tilby gjerne brukeren informasjon om hvorfor noe ikke er tilgjengelig.
+Hvis et felt ikke er relevant, bør du helst fjerne det fremfor å deaktivere det. Gi gjerne brukeren informasjon om hvorfor noe ikke er tilgjengelig.
 
 Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander) og hvilke alternativer som finnes.
 
@@ -53,7 +53,7 @@ Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](h
 
 ## Unngå skrivebeskyttet (`readOnly`)
 
-Inputkomponentene støtter `readOnly` for å gjøre feltet skrivebeskyttet. Feltet får en visuell indikasjon som skiller seg fra redigerbare felt. Vi unngår likevel `readOnly` så langt det lar seg gjøre, fordi slike felt kan være forvirrende for noen brukere. Ikke alle vil skjønne hvorfor de ikke får til å endre innholdet i feltet.
+Inputkomponentene støtter `readOnly` for å gjøre feltet skrivebeskyttet. Feltet får en visuell indikasjon som skiller seg fra redigerbare felt. Vi anbefaler likevel å unngå `readOnly` så langt det lar seg gjøre, fordi slike felt kan være forvirrende for noen brukere. Det er ikke alltid tydelig hvorfor innholdet kan leses, men ikke endres.
 
 ### Eksempler på skrivebeskyttede felt
 
