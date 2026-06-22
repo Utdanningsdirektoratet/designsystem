@@ -43,6 +43,7 @@ export * from './tabs';
 export * from './tag';
 export * from './textarea';
 export * from './textfield';
+export * from './toggleGroup';
 export * from './tooltip';
 export * from './typography/heading';
 export * from './typography/label';

@@ -4,5 +4,11 @@ import type { ToggleGroupItemProps } from '../';
 /**
  * This component only exists to add relevant html props for ToggleGroupItem
  */
-export const ToggleGroupItem: FunctionComponent<ToggleGroupItemProps> = () =>
-  null;
+export const ToggleGroupItem: FunctionComponent<
+  Omit<ToggleGroupItemProps, 'icon'> & {
+    /**
+     * **@deprecated** Icon prop is deprecated
+     */
+    icon?: boolean;
+  }
+> = () => null;
