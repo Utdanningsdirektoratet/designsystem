@@ -617,56 +617,54 @@ export const Drawer = meta.story({
   display: flex;
   flex-wrap: wrap;
   gap: var(--ds-size-5);
-  margin-bottom: var(--ds-size-8);
+  margin-bottom: var(--ds-size-4);
 }
 .dialog-drawer-dialog {
   z-index: 10;
 }`}
         </style>
-        <div className="dialog-drawer-main">
-          <Prose>
-            <Checkbox
-              label="Modal"
-              checked={modal}
-              id="modal-checkbox"
-              onChange={(e) => setModal(e.target.checked)}
-            />
-            <Fieldset
-              onChange={(e: ChangeEvent<HTMLFieldSetElement>) => {
-                const target = e.target as unknown as HTMLInputElement;
-                setPlacement(target.value as DialogProps['placement']);
-              }}
-            >
-              <Fieldset.Legend>Velg plassering for dialogen</Fieldset.Legend>
-              <div className="dialog-drawer-radio__group">
-                <Radio
-                  name="drawer"
-                  label="Midten"
-                  value="center"
-                  id="center-radio"
-                />
-                <Radio name="drawer" label="Topp" value="top" id="top-radio" />
-                <Radio
-                  name="drawer"
-                  label="Bunn"
-                  value="bottom"
-                  id="bottom-radio"
-                />
-                <Radio
-                  name="drawer"
-                  label="Venstre"
-                  value="left"
-                  id="left-radio"
-                />
-                <Radio
-                  name="drawer"
-                  label="Høyre"
-                  value="right"
-                  id="right-radio"
-                />
-              </div>
-            </Fieldset>
-          </Prose>
+        <Prose className="dialog-drawer-main">
+          <Checkbox
+            label="Modal"
+            checked={modal}
+            id="modal-checkbox"
+            onChange={(e) => setModal(e.target.checked)}
+          />
+          <Fieldset
+            onChange={(e: ChangeEvent<HTMLFieldSetElement>) => {
+              const target = e.target as unknown as HTMLInputElement;
+              setPlacement(target.value as DialogProps['placement']);
+            }}
+          >
+            <Fieldset.Legend>Velg plassering for dialogen</Fieldset.Legend>
+            <div className="dialog-drawer-radio__group">
+              <Radio
+                name="drawer"
+                label="Midten"
+                value="center"
+                id="center-radio"
+              />
+              <Radio name="drawer" label="Topp" value="top" id="top-radio" />
+              <Radio
+                name="drawer"
+                label="Bunn"
+                value="bottom"
+                id="bottom-radio"
+              />
+              <Radio
+                name="drawer"
+                label="Venstre"
+                value="left"
+                id="left-radio"
+              />
+              <Radio
+                name="drawer"
+                label="Høyre"
+                value="right"
+                id="right-radio"
+              />
+            </div>
+          </Fieldset>
           <Dialog.TriggerContext>
             <Dialog.Trigger>Open Dialog</Dialog.Trigger>
             <Dialog
@@ -684,7 +682,7 @@ export const Drawer = meta.story({
               </Dialog.Block>
             </Dialog>
           </Dialog.TriggerContext>
-        </div>
+        </Prose>
       </>
     );
   },

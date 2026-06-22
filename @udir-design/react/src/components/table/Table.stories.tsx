@@ -846,13 +846,13 @@ export const MultipleHeaderRows = meta.story({
       <>
         <style>
           {`
-.table-multiple-header-rows-table-headercell {
+.table-multiple-header-rows-table-head-headercell {
   text-align: center;
 }
 .table-multiple-header-rows-table-body {
   text-align: right;
 }
-.table-multiple-header-rows-table-headercell {
+.table-multiple-header-rows-table-body-headercell {
   text-align: left;
 }`}
         </style>
@@ -864,7 +864,7 @@ export const MultipleHeaderRows = meta.story({
               </Table.HeaderCell>
               <Table.HeaderCell
                 colSpan={5}
-                className="table-multiple-header-rows-table-headercell"
+                className="table-multiple-header-rows-table-head-headercell"
               >
                 Trives du på skolen?
               </Table.HeaderCell>
@@ -884,7 +884,7 @@ export const MultipleHeaderRows = meta.story({
             <Table.Row>
               <Table.HeaderCell
                 scope={'row'}
-                className="table-multiple-header-rows-table-headercell"
+                className="table-multiple-header-rows-table-body-headercell"
               >
                 Idrettsfag
               </Table.HeaderCell>
@@ -897,7 +897,7 @@ export const MultipleHeaderRows = meta.story({
             <Table.Row>
               <Table.HeaderCell
                 scope={'row'}
-                className="table-multiple-header-rows-table-headercell"
+                className="table-multiple-header-rows-table-body-headercell"
               >
                 Medier og kommunikasjon
               </Table.HeaderCell>
@@ -910,7 +910,7 @@ export const MultipleHeaderRows = meta.story({
             <Table.Row>
               <Table.HeaderCell
                 scope={'row'}
-                className="table-multiple-header-rows-table-headercell"
+                className="table-multiple-header-rows-table-body-headercell"
               >
                 Musikk, dans og drama
               </Table.HeaderCell>
@@ -923,7 +923,7 @@ export const MultipleHeaderRows = meta.story({
             <Table.Row>
               <Table.HeaderCell
                 scope={'row'}
-                className="table-multiple-header-rows-table-headercell"
+                className="table-multiple-header-rows-table-body-headercell"
               >
                 Studiespesialisering
               </Table.HeaderCell>

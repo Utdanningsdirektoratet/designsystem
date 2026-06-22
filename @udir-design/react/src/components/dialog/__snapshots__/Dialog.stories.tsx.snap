@@ -508,108 +508,106 @@ exports[`Drawer 1`] = `
   display: flex;
   flex-wrap: wrap;
   gap: var(--ds-size-5);
-  margin-bottom: var(--ds-size-8);
+  margin-bottom: var(--ds-size-4);
 }
 .dialog-drawer-dialog {
   z-index: 10;
 }
 </style>
 <div>
-  <div>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        id="<removed>"
-        type="checkbox"
-        checked
-      >
-      <label
-        data-weight="regular"
-        for="<removed>"
-      >
-        Modal
-      </label>
-    </ds-field>
-    <fieldset aria-labelledby="<removed>">
-      <legend
-        data-weight="medium"
-        id="<removed>"
-      >
-        Velg plassering for dialogen
-      </legend>
-      <div>
-        <ds-field data-clickdelegatefor="<removed>">
-          <input
-            id="<removed>"
-            type="radio"
-            value="center"
-            name="drawer"
-          >
-          <label
-            data-weight="regular"
-            for="<removed>"
-          >
-            Midten
-          </label>
-        </ds-field>
-        <ds-field data-clickdelegatefor="<removed>">
-          <input
-            id="<removed>"
-            type="radio"
-            value="top"
-            name="drawer"
-          >
-          <label
-            data-weight="regular"
-            for="<removed>"
-          >
-            Topp
-          </label>
-        </ds-field>
-        <ds-field data-clickdelegatefor="<removed>">
-          <input
-            id="<removed>"
-            type="radio"
-            value="bottom"
-            name="drawer"
-          >
-          <label
-            data-weight="regular"
-            for="<removed>"
-          >
-            Bunn
-          </label>
-        </ds-field>
-        <ds-field data-clickdelegatefor="<removed>">
-          <input
-            id="<removed>"
-            type="radio"
-            value="left"
-            name="drawer"
-          >
-          <label
-            data-weight="regular"
-            for="<removed>"
-          >
-            Venstre
-          </label>
-        </ds-field>
-        <ds-field data-clickdelegatefor="<removed>">
-          <input
-            id="<removed>"
-            type="radio"
-            value="right"
-            name="drawer"
-          >
-          <label
-            data-weight="regular"
-            for="<removed>"
-          >
-            Høyre
-          </label>
-        </ds-field>
-      </div>
-    </fieldset>
-  </div>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      id="<removed>"
+      type="checkbox"
+      checked
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      Modal
+    </label>
+  </ds-field>
+  <fieldset aria-labelledby="<removed>">
+    <legend
+      data-weight="medium"
+      id="<removed>"
+    >
+      Velg plassering for dialogen
+    </legend>
+    <div>
+      <ds-field data-clickdelegatefor="<removed>">
+        <input
+          id="<removed>"
+          type="radio"
+          value="center"
+          name="drawer"
+        >
+        <label
+          data-weight="regular"
+          for="<removed>"
+        >
+          Midten
+        </label>
+      </ds-field>
+      <ds-field data-clickdelegatefor="<removed>">
+        <input
+          id="<removed>"
+          type="radio"
+          value="top"
+          name="drawer"
+        >
+        <label
+          data-weight="regular"
+          for="<removed>"
+        >
+          Topp
+        </label>
+      </ds-field>
+      <ds-field data-clickdelegatefor="<removed>">
+        <input
+          id="<removed>"
+          type="radio"
+          value="bottom"
+          name="drawer"
+        >
+        <label
+          data-weight="regular"
+          for="<removed>"
+        >
+          Bunn
+        </label>
+      </ds-field>
+      <ds-field data-clickdelegatefor="<removed>">
+        <input
+          id="<removed>"
+          type="radio"
+          value="left"
+          name="drawer"
+        >
+        <label
+          data-weight="regular"
+          for="<removed>"
+        >
+          Venstre
+        </label>
+      </ds-field>
+      <ds-field data-clickdelegatefor="<removed>">
+        <input
+          id="<removed>"
+          type="radio"
+          value="right"
+          name="drawer"
+        >
+        <label
+          data-weight="regular"
+          for="<removed>"
+        >
+          Høyre
+        </label>
+      </ds-field>
+    </div>
+  </fieldset>
   <button
     data-variant="primary"
     type="button"

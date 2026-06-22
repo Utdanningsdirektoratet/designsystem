@@ -338,13 +338,13 @@ exports[`Fixed Table 1`] = `
 
 exports[`Multiple Header Rows 1`] = `
 <style>
-  .table-multiple-header-rows-table-headercell {
+  .table-multiple-header-rows-table-head-headercell {
   text-align: center;
 }
 .table-multiple-header-rows-table-body {
   text-align: right;
 }
-.table-multiple-header-rows-table-headercell {
+.table-multiple-header-rows-table-body-headercell {
   text-align: left;
 }
 </style>

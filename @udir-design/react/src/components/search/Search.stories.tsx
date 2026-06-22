@@ -110,12 +110,12 @@ export const Controlled = meta.story({
         .search-controlled-form {
           display: flex;
           flex-direction: column;
-          gap: var(--ds-size-4);
+          gap: var(--ds-size-3);
         }
         .search-controlled-chip__group {
           display: flex;
           align-items: center;
-          gap: var(--ds-size-4);
+          gap: var(--ds-size-3);
         }`}
         </style>
         <form className="search-controlled-form" onSubmit={handleSubmit}>
