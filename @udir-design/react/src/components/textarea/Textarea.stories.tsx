@@ -5,7 +5,6 @@ import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from '../button/Button';
 import { Field } from '../field/Field';
 import { Label } from '../typography/label/Label';
-import { Prose } from '../typography/prose/Prose';
 import { Textarea } from './Textarea';
 import { Textarea as FakeTextarea } from './docs/FakeTextarea';
 
@@ -101,7 +100,7 @@ export const Controlled = meta.story({
     customStyles: {
       display: 'flex',
       flexDirection: 'column',
-      gap: 'var(--ds-size-2)',
+      gap: 'var(--ds-size-3)',
     },
     docs: advancedCodeDocs,
   },
@@ -109,7 +108,7 @@ export const Controlled = meta.story({
     const [value, setValue] = useState(`${args.value || ''}`);
 
     return (
-      <Prose>
+      <>
         <Field>
           <Label>Beskriv bekymringen din</Label>
           <Textarea
@@ -124,7 +123,7 @@ export const Controlled = meta.story({
         <Button variant="secondary" onClick={() => setValue('')}>
           Tøm feltet
         </Button>
-      </Prose>
+      </>
     );
   },
 });

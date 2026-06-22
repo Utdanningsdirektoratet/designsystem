@@ -2,7 +2,6 @@ import type { Decorator } from '@storybook/react-vite';
 import { createElement, useState } from 'react';
 import { expect, userEvent } from 'storybook/test';
 import { ChevronDownUpIcon, ChevronUpDownIcon } from '@udir-design/icons';
-import { Stack } from '.storybook/docs/components';
 import preview from '.storybook/preview';
 import { makeStoryTransformer } from '.storybook/utils/makeStoryTransformer';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
@@ -146,12 +145,15 @@ const detailsColorDecorator: Decorator = (Story) => {
       <style>
         {`
 .details-decorator-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-size-4);
   padding-inline: 1rem;
   padding-top: 1rem;
   margin-bottom: var(--ds-size-5);
 }`}
       </style>
-      <Stack className="details-decorator-stack" direction="row" data-size="sm">
+      <div className="details-decorator-stack">
         <Fieldset>
           <Fieldset.Legend>Farge</Fieldset.Legend>
           <ToggleGroup
@@ -180,7 +182,7 @@ const detailsColorDecorator: Decorator = (Story) => {
             ))}
           </ToggleGroup>
         </Fieldset>
-      </Stack>
+      </div>
       <div data-storybook-decorator>
         {/* eslint-disable-next-line react/no-children-prop -- createElement requires children in props */}
         {createElement(card === 'none' ? 'div' : Card, {
