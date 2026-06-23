@@ -14,7 +14,7 @@ import { Input, type InputProps } from '../../components/input';
 import { Label } from '../../components/typography/label';
 
 const meta = preview.meta({
-  title: 'Patterns/Dato og klokkeslett',
+  title: 'Patterns/Dato og tid',
   tags: ['alpha', 'udir'],
   parameters: {
     componentOrigin: { originator: 'self' },
@@ -23,7 +23,7 @@ const meta = preview.meta({
 
 export const Preview = meta.story({
   parameters: {
-    docs: { ...advancedCodeDocs, story: { height: '500px' } },
+    docs: { ...advancedCodeDocs, story: { height: '475px' } },
   },
 
   render() {

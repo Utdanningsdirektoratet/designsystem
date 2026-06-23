@@ -53,8 +53,8 @@
 
 /* Selected day */
 .uds-datepicker .react-datepicker__day--selected {
-  background-color: var(--ds-color-accent-base-default);
-  color: var(--ds-color-accent-base-contrast-default);
+  background-color: var(--ds-color-base-default);
+  color: var(--ds-color-base-contrast-default);
 }
 
 .uds-datepicker .react-datepicker__day--selected:hover {
@@ -82,7 +82,7 @@
 
 /* Focus ring */
 .uds-datepicker .react-datepicker__day:focus-visible {
-@composes ds-focus from '@digdir/designsystemet-css/base.css';
+  @composes ds-focus from '@digdir/designsystemet-css/base.css';
 }
 
 /* Custom header */
