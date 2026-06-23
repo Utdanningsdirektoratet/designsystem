@@ -12,9 +12,11 @@ npm add @udir-design/theme@beta @udir-design/react@beta
 
 ## Oppsett
 
-### Laste inn riktig font
+### Last inn korrekt font
 
-Last inn fonten Inter, f.eks. ved å plassere følgende i din `index.html` `<head>`
+Komponentbiblioteket bruker fonten `Inter`. For at komponentene skal vises med riktig typografi, må fonten lastes inn i applikasjonen.
+
+Legg følgende i `<head>` i `index.html`:
 
 ```html
 <link
@@ -24,17 +26,17 @@ Last inn fonten Inter, f.eks. ved å plassere følgende i din `index.html` `<hea
 />
 ```
 
-### Laste inn stilsettet
+### Importer stilsettet
 
-Du må laste inn bibliotekets stilsett, som ligger i `@udir-design/react/style.css`.
+For at komponentene skal vises korrekt, må du importere bibliotekets stilsett fra `@udir-design/react/style.css`.
 
-Eksempel: importer stilsettet fra ditt JavaScript- eller TypeScript-entrypoint
+Du kan for eksempel gjøre dette i JavaScript- eller TypeScript-entrypointet:
 
 ```ts
 import '@udir-design/react/style.css';
 ```
 
-Alternativt eksempel: importer stilsettet fra din primære css-fil
+Alternativt kan du importere stilsettet fra en CSS-fil:
 
 ```css
 @import '@udir-design/react/style.css';
@@ -42,9 +44,9 @@ Alternativt eksempel: importer stilsettet fra din primære css-fil
 
 ### Konfigurere standard typografi
 
-Biblioteket setter ingen globale stiler. For å få en konsistent typografi på nettsiden må du derfor selv sette en standard typografistil for HTML som ikke bruker komponenter fra biblioteket.
+Biblioteket setter ingen globale stiler. For å få konsistent typografi også på innhold som ikke bruker komponenter fra biblioteket, må du selv definere standard typografi for applikasjonen.
 
-Dette gjøres slik:
+Dette kan gjøres slik:
 
 ```css
 body {
@@ -55,7 +57,9 @@ body {
 
 ### Skru på typedefinisjoner for `data-color`
 
-Dersom du bryker TypeScript, bør du legge til typene for `@udir-design/theme` og `@udir-design/react/html` i din `tsconfig.json`. Dette gir typesjekking og autocomplete for Udirs farger og størrelser (`data-color` og `data-size` properties), både i bibliotekets komponenter og vanlige HTML-tags.
+Hvis du bruker TypeScript, anbefaler vi å legge til typene for `@udir-design/theme` og `@udir-design/react/html` i `tsconfig.json`.
+
+Da får du typesjekking og autoutfylling for Udirs farger og størrelser (`data-color` og `data-size`) både på komponenter fra biblioteket og vanlige HTML-elementer.
 
 Et enkelt eksempel:
 
@@ -69,7 +73,7 @@ Et enkelt eksempel:
 }
 ```
 
-Dette må passes inn med din eksisterende tsconfig, her er et eksempel på en ekte tsconfig fra en testapplikasjon:
+Legg typene til i den eksisterende `tsconfig.json`-filen. Under er et eksempel fra en testapplikasjon:
 
 ```jsonc
 {

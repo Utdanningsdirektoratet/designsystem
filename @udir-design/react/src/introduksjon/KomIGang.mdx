@@ -1,4 +1,6 @@
 import { Meta } from '@storybook/addon-docs/blocks';
+import README from '../../README.md?raw';
+import { IncludeMarkdown } from '.storybook/docs/components';
 
 <Meta title="Introduksjon/Kom i gang" />
 
@@ -27,60 +29,7 @@ Andre pakker i designsystemet kan også være relevante, avhengig av behovene i 
 npm add @udir-design/css @udir-design/icons @udir-design/symbols
 ```
 
-## Last inn font
-
-Komponentbiblioteket bruker fonten `Inter`. For at komponentene skal vises med riktig typografi, må fonten lastes inn i applikasjonen.
-
-Legg følgende i `<head>` i `index.html`:
-
-```html
-<link
-  rel="preload stylesheet"
-  as="style"
-  href="https://altinncdn.no/fonts/inter/v4/inter.css"
-/>
-```
-
-## Last inn stilsettet
-
-For at komponentene skal vises korrekt, må du laste inn bibliotekets stilsett fra `@udir-design/react/style.css`.
-
-Du kan gjøre dette i JavaScript- eller TypeScript-entrypointet ditt:
-
-```tsx
-import '@udir-design/react/style.css';
-```
-
-Alternativt kan du importere stilsettet fra en CSS-fil:
-
-```css
-@import '@udir-design/react/style.css';
-```
-
-## Konfigurer typografi
-
-Biblioteket setter ingen globale stiler. For å få en konsistent typografi på innhold som ikke bruker komponenter fra biblioteket, anbefaler vi å sette en standard typografistil på `body`:
-
-```css
-body {
-  font-family: 'Inter', sans-serif;
-  font-feature-settings: 'cv05' 1; /* Enable lowercase l with tail */
-}
-```
-
-## Legg til TypeScript-typer
-
-Bruker du TypeScript, anbefaler vi å legge til typene for `@udir-design/theme` og `@udir-design/react/html` i `tsconfig.json`. Da får du typesjekking og autocomplete for Udirs farger og størrelser (`data-color` og `data-size`-attributter), både på komponenter fra biblioteket og vanlige HTML-elementer.
-
-Legg til følgende i `compilerOptions`:
-
-```json
-{
-  "compilerOptions": {
-    "types": ["@udir-design/theme", "@udir-design/react/html"]
-  }
-}
-```
+<IncludeMarkdown markdown={README} sectionId="oppsett" />
 
 ## Ta i bruk komponentene
 
