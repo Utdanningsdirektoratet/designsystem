@@ -2,6 +2,7 @@ import { forwardRef, useRef, useState } from 'react';
 import DatePicker, {
   type ReactDatePickerCustomHeaderProps,
 } from 'react-datepicker';
+import { expect, userEvent, within } from 'storybook/test';
 import { ChevronLeftIcon, ChevronRightIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
@@ -102,6 +103,59 @@ export const Preview = meta.story({
           </Field>
         </div>
       </>
+    );
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const popup = within(canvasElement.ownerDocument.body);
+    const input = canvas.getByLabelText('Dato for prosjektstart');
+
+    await step(
+      'Calendar opens when the user clicks the date field',
+      async () => {
+        await userEvent.click(input);
+        expect(
+          popup.getByRole('button', { name: 'Forrige måned' }),
+        ).toBeInTheDocument();
+        expect(
+          popup.getByRole('button', { name: 'Neste måned' }),
+        ).toBeInTheDocument();
+      },
+    );
+
+    await step('Month navigation changes the displayed month', async () => {
+      const monthLabel = canvasElement.ownerDocument.querySelector(
+        '.uds-datepicker__month-label',
+      );
+      expect(monthLabel).toBeTruthy();
+      const currentMonth = monthLabel?.textContent;
+
+      await userEvent.click(popup.getByRole('button', { name: 'Neste måned' }));
+      const nextMonth = canvasElement.ownerDocument.querySelector(
+        '.uds-datepicker__month-label',
+      )?.textContent;
+      expect(nextMonth).not.toBe(currentMonth);
+
+      await userEvent.click(
+        popup.getByRole('button', { name: 'Forrige måned' }),
+      );
+      const previousMonth = canvasElement.ownerDocument.querySelector(
+        '.uds-datepicker__month-label',
+      )?.textContent;
+      expect(previousMonth).toBe(currentMonth);
+    });
+
+    await step(
+      'Selecting day 15 updates the input value in dd.MM.yyyy format',
+      async () => {
+        const day15 = canvasElement.ownerDocument.querySelector(
+          '.react-datepicker__day--015:not(.react-datepicker__day--outside-month)',
+        ) as HTMLElement | null;
+
+        expect(day15).toBeTruthy();
+        await userEvent.click(day15 as HTMLElement);
+        expect((input as HTMLInputElement).value).toMatch(/^15\.\d{2}\.\d{4}$/);
+      },
     );
   },
 });
