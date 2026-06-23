@@ -82,8 +82,7 @@
 
 /* Focus ring */
 .uds-datepicker .react-datepicker__day:focus-visible {
-  outline: 3px solid var(--ds-color-focus-outer);
-  outline-offset: 0;
+@composes ds-focus from '@digdir/designsystemet-css/base.css';
 }
 
 /* Custom header */
