@@ -17,6 +17,7 @@ exports[`Cluster 1`] = `
   padding: var(--ds-size-4) 0 var(--ds-size-8) 0;
   min-width: 0;
   border-block-end: 1px solid var(--ds-color-border-subtle);
+  text-decoration: none;
 }
 .card-cluster__row:last-child .card-cluster__item {
   border-block-end: none;
@@ -28,7 +29,7 @@ exports[`Cluster 1`] = `
 </style>
 <div data-variant="default">
   <div>
-    <div>
+    <a href="#">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
@@ -46,11 +47,11 @@ exports[`Cluster 1`] = `
         >
         </path>
       </svg>
-      <a href="#">
+      <span>
         Lesing
-      </a>
-    </div>
-    <div>
+      </span>
+    </a>
+    <a href="#">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
@@ -68,13 +69,13 @@ exports[`Cluster 1`] = `
         >
         </path>
       </svg>
-      <a href="#">
+      <span>
         Fravær i skolen
-      </a>
-    </div>
+      </span>
+    </a>
   </div>
   <div>
-    <div>
+    <a href="#">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
@@ -92,11 +93,11 @@ exports[`Cluster 1`] = `
         >
         </path>
       </svg>
-      <a href="#">
+      <span>
         Barnehagemiljø
-      </a>
-    </div>
-    <div>
+      </span>
+    </a>
+    <a href="#">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
@@ -114,13 +115,13 @@ exports[`Cluster 1`] = `
         >
         </path>
       </svg>
-      <a href="#">
+      <span>
         God digital praksis
-      </a>
-    </div>
+      </span>
+    </a>
   </div>
   <div>
-    <div>
+    <a href="#">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
@@ -138,11 +139,11 @@ exports[`Cluster 1`] = `
         >
         </path>
       </svg>
-      <a href="#">
+      <span>
         Skolemiljø
-      </a>
-    </div>
-    <div>
+      </span>
+    </a>
+    <a href="#">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
@@ -160,10 +161,10 @@ exports[`Cluster 1`] = `
         >
         </path>
       </svg>
-      <a href="#">
+      <span>
         Kunstig intelligens i skolen
-      </a>
-    </div>
+      </span>
+    </a>
   </div>
 </div>
 `;

@@ -381,6 +381,7 @@ export const Cluster = meta.story({
   padding: var(--ds-size-4) 0 var(--ds-size-8) 0;
   min-width: 0;
   border-block-end: 1px solid var(--ds-color-border-subtle);
+  text-decoration: none;
 }
 .card-cluster__row:last-child .card-cluster__item {
   border-block-end: none;
@@ -394,10 +395,14 @@ export const Cluster = meta.story({
           {rows.map((row, rowIndex) => (
             <div key={rowIndex} className="card-cluster__row">
               {row.map((link) => (
-                <div key={link.text} className="card-cluster__item">
+                <LinkComponent
+                  href={link.url}
+                  key={link.text}
+                  className="card-cluster__item"
+                >
                   <ArrowRightIcon aria-hidden data-size="lg" />
-                  <LinkComponent href={link.url}>{link.text}</LinkComponent>
-                </div>
+                  <span>{link.text}</span>
+                </LinkComponent>
               ))}
             </div>
           ))}
