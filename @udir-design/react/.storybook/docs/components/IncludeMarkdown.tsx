@@ -1,5 +1,5 @@
 import type { SeverityColors } from '@digdir/designsystemet-react/colors';
-import { Markdown, Source } from '@storybook/addon-docs/blocks';
+import { Markdown, Source, type SourceProps } from '@storybook/addon-docs/blocks';
 import { toHtml } from 'hast-util-to-html';
 import type { Heading, Root, RootContent, Text } from 'mdast';
 import { toHast } from 'mdast-util-to-hast';
@@ -59,7 +59,7 @@ export const IncludeMarkdown: React.FC<Props> = ({
               'language-',
               '',
             );
-            return <Source code={content.trimEnd()} language={language} />;
+            return <Source code={content.trimEnd()} language={language as SourceProps['language']} />;
           },
           code: (props: Props) => (
             <code
