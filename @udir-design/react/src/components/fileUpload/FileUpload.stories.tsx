@@ -230,7 +230,7 @@ export const TooManyFiles = meta.story({
   render: (args) => {
     const [files, setFiles] = useState<File[]>([
       new File(['abc'.repeat(100000)], 'eksempel1.pdf'),
-      new File(['abc'.repeat(10000)], 'eksempel2.docx'),
+      new File(['abc'.repeat(3000)], 'eksempel2.docx'),
       new File(['abc'.repeat(1000000)], 'eksempel3.png'),
     ]);
 
@@ -403,6 +403,7 @@ export const ExampleItems = meta.story({
               <FileUpload.Item
                 key={index}
                 file={file}
+                description={`Filopplasting ${index + 1}`}
                 readonly={index === 2 && true}
                 loading={index === 3 && true}
                 onRemove={() => removeFile(file)}
