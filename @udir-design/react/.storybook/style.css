@@ -14,3 +14,14 @@ body {
   font-family: 'Inter', sans-serif;
   font-feature-settings: 'cv05' 1; /* Enable lowercase l with tail */
 }
+
+/* Scrollable Controls table on mobile */
+@media (max-width: 600px) {
+  table.docblock-argstable {
+    display: block;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+  }
+}
