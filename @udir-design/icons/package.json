@@ -2,9 +2,9 @@
   "name": "@udir-design/icons",
   "version": "0.0.0-semantically-released",
   "scripts": {
-    "copy-aksel-icons": "svgo --config svgo.config.aksel.mjs -f ./node_modules/@navikt/aksel-icons/dist/svg -o ./dist/svg",
+    "copy-aksel-icons": "svgo --quiet --config svgo.config.aksel.mjs -f ./node_modules/@navikt/aksel-icons/dist/svg -o ./dist/svg",
     "copy-style": "cp src/style.css dist/",
-    "compile": "tsdown src/index.ts src/metadata.ts --format esm,cjs --dts",
+    "compile": "tsdown src/index.ts src/metadata.ts --format esm,cjs --dts --logLevel warn",
     "build": "pnpm clean && pnpm compile && pnpm copy-aksel-icons && pnpm copy-style && pnpm generate-css",
     "generate-css": "tsx generate-css.ts",
     "inject": "echo 'Dummy script to trigger pnpm injected dependency sync'",
