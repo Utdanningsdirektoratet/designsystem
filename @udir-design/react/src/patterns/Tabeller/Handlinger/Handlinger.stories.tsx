@@ -333,8 +333,12 @@ export const Preview = meta.story({
               <Table.HeaderCell className="desktop-only">
                 Skriftlig
               </Table.HeaderCell>
-              <Table.HeaderCell className="desktop-only" aria-label="Rediger" />
-              <Table.HeaderCell aria-label="Handlinger" />
+              <Table.HeaderCell className="desktop-only" aria-label="Rediger">
+                Rediger
+              </Table.HeaderCell>
+              <Table.HeaderCell aria-label="Handlinger">
+                Handlinger
+              </Table.HeaderCell>
             </Table.Row>
           </Table.Head>
           <Table.Body>
@@ -367,7 +371,11 @@ export const Preview = meta.story({
                   {row.skriftligkarakter}
                 </Table.Cell>
                 <Table.Cell className="desktop-only">
-                  <Button variant="tertiary" data-size="sm">
+                  <Button
+                    variant="tertiary"
+                    data-size="sm"
+                    aria-label="Rediger"
+                  >
                     <PencilWritingIcon aria-hidden />
                   </Button>
                 </Table.Cell>
@@ -377,6 +385,7 @@ export const Preview = meta.story({
                     variant="tertiary"
                     icon
                     title="Flere valg"
+                    aria-label="Handlinger"
                     data-size="sm"
                   >
                     <MenuElipsisVerticalIcon aria-hidden />
@@ -384,14 +393,14 @@ export const Preview = meta.story({
                   <Dropdown id={`row-menu-${row.id}`}>
                     <Dropdown.List>
                       <Dropdown.Item>
-                        <Dropdown.Button>
+                        <Dropdown.Button aria-label="Rediger">
                           <PencilWritingIcon aria-hidden /> Rediger
                         </Dropdown.Button>
-                        <Dropdown.Button>
+                        <Dropdown.Button aria-label="Eksporter">
                           <DownloadIcon aria-hidden /> Eksporter
                         </Dropdown.Button>
                         <Divider />
-                        <Dropdown.Button data-color="danger">
+                        <Dropdown.Button aria-label="Slett" data-color="danger">
                           <TrashFillIcon aria-hidden /> Slett
                         </Dropdown.Button>
                       </Dropdown.Item>
