@@ -14,26 +14,67 @@ import {
   type SuggestionOptionProps,
   type SuggestionSingleProps as DigdirSuggestionSingleProps,
 } from '@digdir/designsystemet-react';
-import type {
-  ComponentRef,
-  ForwardRefExoticComponent,
-  RefAttributes,
+import {
+  type ComponentRef,
+  type ForwardRefExoticComponent,
+  type RefAttributes,
+  forwardRef,
 } from 'react';
+import './suggestion.css';
 
-type SuggestionSingleProps = Omit<DigdirSuggestionSingleProps, 'data-color'>;
+type SuggestionDisplayProps = {
+  /**
+   * How selected items are displayed when `multiple` is true.
+   *
+   * - `chips` renders removable chips for each selected item (default)
+   * - `count` hides chips and shows a count label (e.g. "2 valgt")
+   *
+   * Customize the label text with the `--dsc-suggestion-count-label` CSS variable.
+   *
+   * @default 'chips'
+   */
+  display?: 'chips' | 'count';
+};
+
+type SuggestionSingleProps = Omit<DigdirSuggestionSingleProps, 'data-color'> &
+  SuggestionDisplayProps;
 type SuggestionMultipleProps = Omit<
   DigdirSuggestionMultipleProps,
   'data-color'
->;
+> &
+  SuggestionDisplayProps;
 type SuggestionProps = SuggestionSingleProps | SuggestionMultipleProps;
 
-const Suggestion = DigdirSuggestion as ForwardRefExoticComponent<
+const SuggestionBase = forwardRef<
+  ComponentRef<typeof DigdirSuggestion>,
+  SuggestionProps
+>(function Suggestion({ display = 'chips', ...rest }, ref) {
+  const multiple = 'multiple' in rest && rest.multiple === true;
+
+  return (
+    <DigdirSuggestion
+      {...(rest as DigdirSuggestionSingleProps)}
+      data-display={multiple && display === 'count' ? 'count' : undefined}
+      ref={ref}
+    />
+  );
+});
+
+const Suggestion: ForwardRefExoticComponent<
   SuggestionProps & RefAttributes<ComponentRef<typeof DigdirSuggestion>>
-> &
-  Pick<
-    typeof DigdirSuggestion,
-    'Clear' | 'Empty' | 'Input' | 'List' | 'Option'
-  >;
+> & {
+  Clear: typeof SuggestionClear;
+  Empty: typeof SuggestionEmpty;
+  Input: typeof SuggestionInput;
+  List: typeof SuggestionList;
+  Option: typeof SuggestionOption;
+} = Object.assign(SuggestionBase, {
+  Clear: SuggestionClear,
+  Empty: SuggestionEmpty,
+  Input: SuggestionInput,
+  List: SuggestionList,
+  Option: SuggestionOption,
+});
 
 Suggestion.displayName = 'Suggestion';
 SuggestionClear.displayName = 'Suggestion.Clear';

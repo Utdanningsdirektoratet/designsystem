@@ -1,0 +1,65 @@
+/* Translations are defined outside component class so users can easily add translations */
+:root,
+[lang='nb'] {
+  --dsc-suggestion-count-label: 'valgt';
+}
+
+[lang='nn'] {
+  --dsc-suggestion-count-label: 'valde';
+}
+
+[lang='en'] {
+  --dsc-suggestion-count-label: 'selected';
+}
+
+.ds-suggestion {
+  /* u-combobox 2.0.5 changed [role="listbox"] from display:contents to inline-flex,
+     so chips no longer participate in the host's flex-wrap. Restore wrapping. */
+  &::part(items) {
+    flex-wrap: wrap;
+  }
+
+  /* Count display mode: use CSS counter to show number of selected items */
+  &[data-display='count'] {
+    counter-reset: selected;
+
+    /* Keep <data> in rendering tree for counter-increment but hide visually. */
+    & > data {
+      counter-increment: selected;
+      @composes ds-sr-only from '@digdir/designsystemet-css/base.css';
+    }
+
+    /* Hide listbox when in count display mode. */
+    &::part(items) {
+      position: absolute;
+      @composes ds-sr-only from '@digdir/designsystemet-css/base.css';
+    }
+
+    /* NOTE: This styling should be reflected in tag.css */
+    &:has(> data)::after {
+      content: counter(selected) ' ' var(--dsc-suggestion-count-label);
+      position: absolute;
+      inset-inline-start: var(--ds-size-3);
+      top: 50%;
+      translate: 0 -50%;
+      pointer-events: none;
+      z-index: 1;
+      align-items: center;
+      background: var(--ds-color-surface-tinted);
+      border: solid transparent var(--ds-border-width-default);
+      border-radius: var(--ds-border-radius-sm);
+      box-sizing: border-box;
+      color: var(--ds-color-text-default);
+      font-size: var(--ds-body-sm-font-size);
+      line-height: var(--ds-line-height-sm);
+      min-height: var(--ds-size-8);
+      padding: 0 var(--ds-size-2);
+      display: inline-flex;
+    }
+
+    /* Hide count display when focused to prevent overlap with input text. */
+    &:focus-within::after {
+      display: none;
+    }
+  }
+}

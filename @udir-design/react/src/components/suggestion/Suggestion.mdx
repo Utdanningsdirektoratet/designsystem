@@ -2,6 +2,7 @@ import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as SuggestionStories from './Suggestion.stories';
 import { SuggestionList } from './Suggestion';
 import { Alert } from '@udir-design/react/alpha';
+import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/CssLanguageVariables';
 
 <Meta of={SuggestionStories} />
 
@@ -41,7 +42,15 @@ import { Suggestion } from '@udir-design/react/alpha';
 
 ### Flervalg
 
+Bruk `multiple` for å kunne velge flere alternativer.
+
 <Canvas of={SuggestionStories.Multiple} />
+
+### Flervalg med tag for å vise antall valgte alternativer
+
+Bruk `display="count"` for å vise antall valgte alternativer i en tag. Teksten i taggen kan tilpasses med CSS-variabelen `--dsc-suggestion-count-label`.
+
+<Canvas of={SuggestionStories.MultipleCount} />
 
 ### Filter
 
@@ -67,3 +76,11 @@ I eksempelet under viser vi `Spinner` i `Suggestion.Empty`.
 
 `Suggestion` baserer seg på [u-combobox fra u-elements](https://u-elements.github.io/u-elements/elements/u-combobox).
 Den er inspirert av [open-ui sitt combobox mønster](https://open-ui.org/components/combobox.explainer/).
+
+## Språkstøtte
+
+Komponenten har innebygget støtte for bokmål, nynorsk og engelsk. [Slik støtter du flere språk](/docs/components-språkstøtte--docs).
+
+Følgende tekstvariabler er tilgjengelige for overstyring:
+
+<CssLanguageVariables variables={['--dsc-suggestion-count-label']} />
