@@ -67,10 +67,10 @@
         data-color="neutral"
         type="button"
         aria-label="Lukk dialogvindu"
-        id="cookie-details-close"
-        command="close"
-        commandfor="cookie-details-dialog"
+        id="cookie-dialog-close"
         data-icon="true"
+        command="close"
+        onclick="CookieInformation.declineAllCategories()"
       ></button>
       <div class="uds-prose">
         <h2 class="ds-heading" id="cookie-dialog-heading">
@@ -206,30 +206,40 @@
             </h3>
             <p class="ds-paragraph">{{{this.cookie_type_description}}}</p>
 
-            <div>
-              {{#each this.cookie_type_results}}
-              <details class="ds-details" data-variant="default">
-                <summary>{{{this.data_processor_name}}}</summary>
-                <div class="cookies-details">
-                  <span>Formål: </span>{{{this.description}}}<br />
-                  <span>Navn: </span>{{{this.name}}}<br />
-                  <span>Utløpstid: </span>{{{this.expiration}}}<br />
-                  <span>Leverandør: </span>{{{this.domain}}}<br />
-                  {{#if this.data_processor_privacy_policy}}
-                  <span>Personvernerklæring: </span
-                  ><a
-                    class="ds-link"
-                    href="{{{this.data_processor_privacy_policy}}}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-testid="coi-banner__cookie-details__privacy-policy-link"
-                    >Se personvernerklæring</a
-                  >
-                  {{/if}}
+            <details class="ds-details" data-variant="default">
+              <summary>
+                {{this.cookie_type_count}} {{lowercase this.cookie_type_name}}
+              </summary>
+              <div class="uds-prose">
+                {{#each this.cookie_type_results}}
+                <div class="uds-prose">
+                  <h4 class="ds-heading" data-size="2xs">{{sum @index 1}}</h4>
+                  <ul class="cookies-details">
+                    <li>
+                      <strong>Leverandør: </strong
+                      >{{{this.data_processor_name}}}
+                    </li>
+                    <li><strong>Formål: </strong>{{{this.description}}}</li>
+                    <li><strong>Navn: </strong>{{{this.name}}}</li>
+                    <li><strong>Utløpstid: </strong>{{{this.expiration}}}</li>
+                    {{#if this.data_processor_privacy_policy}}
+                    <li>
+                      <strong>Personvernerklæring: </strong
+                      ><a
+                        class="ds-link"
+                        href="{{{this.data_processor_privacy_policy}}}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-testid="coi-banner__cookie-details__privacy-policy-link"
+                        >Se personvernerklæring</a
+                      >
+                    </li>
+                    {{/if}}
+                  </ul>
                 </div>
-              </details>
-              {{/each}}
-            </div>
+                {{/each}}
+              </div>
+            </details>
           </div>
         </div>
         {{/if}} {{/each}}

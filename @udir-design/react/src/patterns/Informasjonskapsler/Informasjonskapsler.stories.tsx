@@ -4,7 +4,6 @@ import {
   Link,
   Paragraph,
 } from '@digdir/designsystemet-react';
-import { Fragment } from 'react';
 import { InformationSquareFillIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
@@ -180,84 +179,56 @@ export const Preview = meta.story({
               <Dialog>
                 <Prose>
                   <Heading level={2}>Informasjonskapsler</Heading>
-                  {Object.entries(cookieData).map(([kategori, cookies]) => {
-                    // Group cookies by provider
-                    const grouped = cookies.reduce<
-                      Record<string, typeof cookies>
-                    >((acc, cookie) => {
-                      if (!acc[cookie.leverandør]) {
-                        acc[cookie.leverandør] = [];
-                      }
-                      acc[cookie.leverandør].push(cookie);
-                      return acc;
-                    }, {});
-
-                    return (
-                      <div key={kategori} className="cookies-container">
-                        <Prose>
-                          <Heading data-size="xs" level={3}>
-                            {kategori.charAt(0).toUpperCase() +
-                              kategori.slice(1)}
-                          </Heading>
-                          <Paragraph>{cookieDescriptions[kategori]}</Paragraph>
-                          <div>
-                            {Object.entries(grouped).map(
-                              ([leverandør, providerCookies]) => (
-                                <Details key={leverandør}>
-                                  <Details.Summary>
-                                    {leverandør}
-                                  </Details.Summary>
-                                  <Details.Content className="cookies-details">
-                                    <Prose>
-                                      {providerCookies.map((cookie, index) => (
-                                        <Fragment key={cookie.navn}>
-                                          {providerCookies.length > 1 && (
-                                            <Heading data-size="2xs" level={4}>
-                                              {index + 1}
-                                            </Heading>
-                                          )}
-                                          <ul>
-                                            <li>
-                                              <strong>Formål: </strong>
-                                              {cookie.formål}
-                                            </li>
-                                            <li>
-                                              <strong>Navn: </strong>
-                                              {cookie.navn}
-                                            </li>
-                                            <li>
-                                              <strong>Utløpstid: </strong>
-                                              {cookie.utløpstid}
-                                            </li>
-                                            <li>
-                                              <strong>Leverandør: </strong>
-                                              {cookie.leverandør}
-                                            </li>
-                                            <li>
-                                              <strong>
-                                                Personvernerklæring:{' '}
-                                              </strong>
-                                              <Link
-                                                href={
-                                                  cookie.personvernerklæring
-                                                }
-                                              >
-                                                Se personvernerklæring
-                                              </Link>
-                                            </li>
-                                          </ul>
-                                        </Fragment>
-                                      ))}
-                                    </Prose>
-                                  </Details.Content>
-                                </Details>
-                              ),
-                            )}
-                          </div>
-                        </Prose>
-                      </div>
-                    );
-                  })}
+                  {Object.entries(cookieData).map(([kategori, cookies]) => (
+                    <div key={kategori} className="cookies-container">
+                      <Prose>
+                        <Heading data-size="xs" level={3}>
+                          {kategori.charAt(0).toUpperCase() + kategori.slice(1)}
+                        </Heading>
+                        <Paragraph>{cookieDescriptions[kategori]}</Paragraph>
+                        <Details>
+                          <Details.Summary>
+                            {cookies.length} {kategori}
+                          </Details.Summary>
+                          <Details.Content className="cookies-details">
+                            <Prose>
+                              {cookies.map((cookie, index) => (
+                                <Prose key={cookie.navn}>
+                                  <Heading data-size="2xs" level={4}>
+                                    {index + 1}
+                                  </Heading>
+                                  <ul>
+                                    <li>
+                                      <strong>Leverandør: </strong>
+                                      {cookie.leverandør}
+                                    </li>
+                                    <li>
+                                      <strong>Formål: </strong>
+                                      {cookie.formål}
+                                    </li>
+                                    <li>
+                                      <strong>Navn: </strong>
+                                      {cookie.navn}
+                                    </li>
+                                    <li>
+                                      <strong>Utløpstid: </strong>
+                                      {cookie.utløpstid}
+                                    </li>
+                                    <li>
+                                      <strong>Personvernerklæring: </strong>
+                                      <Link href={cookie.personvernerklæring}>
+                                        Se personvernerklæring
+                                      </Link>
+                                    </li>
+                                  </ul>
+                                </Prose>
+                              ))}
+                            </Prose>
+                          </Details.Content>
+                        </Details>
+                      </Prose>
+                    </div>
+                  ))}
                 </Prose>
               </Dialog>
             </Dialog.TriggerContext>

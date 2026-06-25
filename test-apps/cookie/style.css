@@ -7,8 +7,6 @@
 body {
   font-family: var(--ds-font-family);
 }
-
-/* Button group layout (matching Informasjonskapsler.stories.tsx) */
 .cookies-buttons {
   display: flex;
   gap: var(--ds-size-4);
@@ -31,8 +29,14 @@ body {
   mask: center / 100% no-repeat var(--uds-icon-informationSquareFill);
 }
 
-/* Cookie details: bold labels for each field */
-.cookies-details > span {
+/* Cookie details: list styling and bold labels */
+.cookies-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cookies-details > li > strong {
   font-weight: 600;
 }
 
