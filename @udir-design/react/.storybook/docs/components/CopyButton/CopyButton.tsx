@@ -1,6 +1,6 @@
 import { useState } from 'react';
+import { ClipboardCheckmarkIcon, FilesIcon } from '@udir-design/icons';
 import { Button } from 'src/components/button';
-import { FilesIcon, ClipboardCheckmarkIcon } from '@udir-design/icons';
 import styles from './copyButton.module.css';
 
 interface CopyButtonProps {
