@@ -1,4 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import {
+  type Dispatch,
+  type SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { FilterIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
@@ -12,16 +18,13 @@ import { Fieldset } from 'src/components/fieldset/Fieldset';
 import { Pagination } from 'src/components/pagination/Pagination';
 import { Search } from 'src/components/search/Search';
 import { Select } from 'src/components/select/Select';
-import {
-  Suggestion,
-  type SuggestionMultipleProps,
-} from 'src/components/suggestion/Suggestion';
+import { Suggestion } from 'src/components/suggestion/Suggestion';
 import { Table } from 'src/components/table';
 import { Heading } from 'src/components/typography/heading/Heading';
 import { Label } from 'src/components/typography/label/Label';
 import { Prose } from 'src/components/typography/prose/Prose';
-import { useCheckboxGroup } from 'src/utilities/hooks/useCheckboxGroup/useCheckboxGroup';
-import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
+import { useCheckboxGroup } from 'src/hooks/useCheckboxGroup/useCheckboxGroup';
+import { usePagination } from 'src/hooks/usePagination/usePagination';
 import './filtering.css';
 
 function ActiveFilters({
@@ -31,9 +34,9 @@ function ActiveFilters({
   setFylke,
 }: {
   emne: string[];
-  setEmne: React.Dispatch<React.SetStateAction<string[]>>;
+  setEmne: Dispatch<SetStateAction<string[]>>;
   fylke: string[];
-  setFylke: React.Dispatch<React.SetStateAction<string[]>>;
+  setFylke: Dispatch<SetStateAction<string[]>>;
 }) {
   if (emne.length === 0 && fylke.length === 0) return null;
   return (
@@ -126,11 +129,17 @@ export const Preview = meta.story({
     const [emne, setEmne] = useState<string[]>([]);
     const [fylke, setFylke] = useState<string[]>([]);
 
+    const handleClearFilters = () => {
+      setEmne([]);
+      setFylke([]);
+      setSearchQuery('');
+    };
+
     useEffect(() => {
       setCurrentPage(1);
     }, [emne, fylke, searchQuery]);
 
-    const filteredData = [...grades]
+    const filteredData = grades
       .filter((d) => emne.length === 0 || emne.includes(d.emne))
       .filter((d) => fylke.length === 0 || fylke.includes(d.fylke))
       .filter((d) => {
@@ -149,7 +158,8 @@ export const Preview = meta.story({
       setCurrentPage,
     });
 
-    const rangeStart = (page - 1) * itemsPerPage + 1;
+    const rangeStart =
+      filteredData.length === 0 ? 0 : (page - 1) * itemsPerPage + 1;
     const rangeEnd = Math.min(page * itemsPerPage, filteredData.length);
     const paginatedData = filteredData.slice(
       (page - 1) * itemsPerPage,
@@ -159,6 +169,70 @@ export const Preview = meta.story({
     return (
       <div className="example-main">
         <div className="example-filters-section">
+          <div className="example-suggestion-section">
+            <Field className="example-suggestion-field">
+              <Label>Velg emner</Label>
+              <Suggestion
+                multiple
+                display="count"
+                selected={emne}
+                onSelectedChange={(items) =>
+                  setEmne(items.map((item) => item.value))
+                }
+              >
+                <Suggestion.Input />
+                <Suggestion.Clear />
+                <Suggestion.List>
+                  <Suggestion.Empty>Tomt</Suggestion.Empty>
+                  {uniqueEmner.map((option) => (
+                    <Suggestion.Option
+                      key={option}
+                      label={option}
+                      value={option}
+                    >
+                      {option}
+                    </Suggestion.Option>
+                  ))}
+                </Suggestion.List>
+              </Suggestion>
+            </Field>
+            <Field className="example-suggestion-field">
+              <Label>Velg fylker</Label>
+              <Suggestion
+                multiple
+                display="count"
+                selected={fylke}
+                onSelectedChange={(items) =>
+                  setFylke(items.map((item) => item.value))
+                }
+              >
+                <Suggestion.Input />
+                <Suggestion.Clear />
+                <Suggestion.List>
+                  <Suggestion.Empty>Tomt</Suggestion.Empty>
+                  {uniqueFylker.map((option) => (
+                    <Suggestion.Option
+                      key={option}
+                      label={option}
+                      value={option}
+                    >
+                      {option}
+                    </Suggestion.Option>
+                  ))}
+                </Suggestion.List>
+              </Suggestion>
+            </Field>
+            <Field>
+              <Button
+                onClick={handleClearFilters}
+                variant="tertiary"
+                data-size="sm"
+                className="example-clear-filters"
+              >
+                Fjern alle filtre
+              </Button>
+            </Field>
+          </div>
           <Field className="example-search-field">
             <Label>Søk</Label>
             <Search>
@@ -170,52 +244,6 @@ export const Preview = meta.story({
               <Search.Clear onClick={() => setSearchQuery('')} />
             </Search>
           </Field>
-          <div className="example-suggestion-section">
-            <Field className="example-suggestion-field">
-              <Label>Velg emne(r)</Label>
-              <Suggestion
-                {...(args as SuggestionMultipleProps)}
-                multiple
-                selected={emne}
-                onSelectedChange={(items) =>
-                  setEmne(items.map((item) => item.value))
-                }
-              >
-                <Suggestion.Input />
-                <Suggestion.Clear />
-                <Suggestion.List>
-                  <Suggestion.Empty>Tomt</Suggestion.Empty>
-                  {uniqueEmner.map((c) => (
-                    <Suggestion.Option key={c} label={c} value={c}>
-                      {c}
-                    </Suggestion.Option>
-                  ))}
-                </Suggestion.List>
-              </Suggestion>
-            </Field>
-            <Field className="example-suggestion-field">
-              <Label>Velg fylke(r)</Label>
-              <Suggestion
-                {...(args as SuggestionMultipleProps)}
-                multiple
-                selected={fylke}
-                onSelectedChange={(items) =>
-                  setFylke(items.map((item) => item.value))
-                }
-              >
-                <Suggestion.Input />
-                <Suggestion.Clear />
-                <Suggestion.List>
-                  <Suggestion.Empty>Tomt</Suggestion.Empty>
-                  {uniqueFylker.map((fylke) => (
-                    <Suggestion.Option key={fylke} label={fylke} value={fylke}>
-                      {fylke}
-                    </Suggestion.Option>
-                  ))}
-                </Suggestion.List>
-              </Suggestion>
-            </Field>
-          </div>
         </div>
         <ActiveFilters
           emne={emne}
@@ -288,16 +316,16 @@ export const Preview = meta.story({
             </span>
             <Field className="example-controls-section-select">
               <Label>Rader per side</Label>
-              <Select>
+              <Select
+                value={String(itemsPerPage)}
+                onChange={(event) => {
+                  setItemsPerPage(Number(event.target.value));
+                  setCurrentPage(1);
+                }}
+                autoComplete="off"
+              >
                 {[5, 10, 25, 50].map((size) => (
-                  <Select.Option
-                    key={size}
-                    value={size}
-                    onClick={() => {
-                      setItemsPerPage(size);
-                      setCurrentPage(1);
-                    }}
-                  >
+                  <Select.Option key={size} value={String(size)}>
                     {size}
                   </Select.Option>
                 ))}
@@ -354,13 +382,20 @@ export const WithDialog = meta.story({
       setCurrentPage(1);
     }, [emne, fylke, eksamen, searchQuery]);
 
+    const handleClearFilters = () => {
+      setEmne([]);
+      setFylke([]);
+      setEksamen([]);
+      setSearchQuery('');
+    };
+
     const { getCheckboxProps } = useCheckboxGroup({
       name: 'checkbox-group',
       value: draftEksamen,
       onChange: (value) => setDraftEksamen(value),
     });
 
-    const filteredData = [...grades]
+    const filteredData = grades
       .filter((d) => emne.length === 0 || emne.includes(d.emne))
       .filter((d) => fylke.length === 0 || fylke.includes(d.fylke))
       .filter((d) => {
@@ -379,7 +414,8 @@ export const WithDialog = meta.story({
       setCurrentPage,
     });
 
-    const rangeStart = (page - 1) * itemsPerPage + 1;
+    const rangeStart =
+      filteredData.length === 0 ? 0 : (page - 1) * itemsPerPage + 1;
     const rangeEnd = Math.min(page * itemsPerPage, filteredData.length);
     const paginatedData = filteredData.slice(
       (page - 1) * itemsPerPage,
@@ -416,101 +452,117 @@ export const WithDialog = meta.story({
                 }
               }}
             >
-              <Heading>Filter</Heading>
-              <div className="example-dialog-filters">
-                <Prose>
-                  <Fieldset>
-                    <Fieldset.Legend>Karaktertype</Fieldset.Legend>
-                    <Checkbox
-                      label="Skriftlig"
-                      {...getCheckboxProps('skriftlig')}
-                    />
-                    <Checkbox
-                      label="Muntlig"
-                      {...getCheckboxProps('muntlig')}
-                    />
-                    <Checkbox
-                      label="Standpunkt"
-                      {...getCheckboxProps('standpunkt')}
-                    />
-                  </Fieldset>
-                </Prose>
-                <Prose>
-                  <Field className="example-suggestion-field">
-                    <Label>Velg emne</Label>
-                    <Suggestion
-                      {...(args as SuggestionMultipleProps)}
-                      multiple
-                      selected={draftEmne}
-                      onSelectedChange={(items) =>
-                        setDraftEmne(items.map((item) => item.value))
-                      }
-                    >
-                      <Suggestion.Input />
-                      <Suggestion.Clear />
-                      <Suggestion.List>
-                        <Suggestion.Empty>Tomt</Suggestion.Empty>
-                        {uniqueEmner.map((emne) => (
-                          <Suggestion.Option
-                            key={emne}
-                            label={emne}
-                            value={emne}
-                          >
-                            {emne}
-                          </Suggestion.Option>
-                        ))}
-                      </Suggestion.List>
-                    </Suggestion>
-                  </Field>
-                  <Field className="example-suggestion-field">
-                    <Label>Velg fylke</Label>
-                    <Suggestion
-                      {...(args as SuggestionMultipleProps)}
-                      multiple
-                      selected={draftFylke}
-                      onSelectedChange={(items) =>
-                        setDraftFylke(items.map((item) => item.value))
-                      }
-                    >
-                      <Suggestion.Input />
-                      <Suggestion.Clear />
-                      <Suggestion.List>
-                        <Suggestion.Empty>Tomt</Suggestion.Empty>
-                        {uniqueFylker.map((f) => (
-                          <Suggestion.Option key={f} label={f} value={f}>
-                            {f}
-                          </Suggestion.Option>
-                        ))}
-                      </Suggestion.List>
-                    </Suggestion>
-                  </Field>
-                </Prose>
-              </div>
-              <Field className="example-footer">
-                <Button
-                  onClick={() => {
-                    setEmne(draftEmne);
-                    setFylke(draftFylke);
-                    setEksamen(draftEksamen);
-                    dialogRef.current?.close();
-                  }}
-                >
-                  Lagre
-                </Button>
-                <Button
-                  variant="secondary"
-                  onClick={() => {
-                    setDraftEmne(emne);
-                    setDraftFylke(fylke);
-                    setDraftEksamen(eksamen);
-                    dialogRef.current?.close();
-                  }}
-                >
-                  Avbryt
-                </Button>
-              </Field>
+              <Prose>
+                <Heading>Filter</Heading>
+                <div className="example-dialog-filters">
+                  <Prose>
+                    <Fieldset>
+                      <Fieldset.Legend>Karaktertype</Fieldset.Legend>
+                      <Checkbox
+                        label="Skriftlig"
+                        {...getCheckboxProps('skriftlig')}
+                      />
+                      <Checkbox
+                        label="Muntlig"
+                        {...getCheckboxProps('muntlig')}
+                      />
+                      <Checkbox
+                        label="Standpunkt"
+                        {...getCheckboxProps('standpunkt')}
+                      />
+                    </Fieldset>
+                  </Prose>
+                  <Prose>
+                    <Field className="example-suggestion-field">
+                      <Label>Velg emner</Label>
+                      <Suggestion
+                        multiple
+                        display="count"
+                        selected={draftEmne}
+                        onSelectedChange={(items) =>
+                          setDraftEmne(items.map((item) => item.value))
+                        }
+                      >
+                        <Suggestion.Input />
+                        <Suggestion.Clear />
+                        <Suggestion.List>
+                          <Suggestion.Empty>Tomt</Suggestion.Empty>
+                          {uniqueEmner.map((option) => (
+                            <Suggestion.Option
+                              key={option}
+                              label={option}
+                              value={option}
+                            >
+                              {option}
+                            </Suggestion.Option>
+                          ))}
+                        </Suggestion.List>
+                      </Suggestion>
+                    </Field>
+                    <Field className="example-suggestion-field">
+                      <Label>Velg fylker</Label>
+                      <Suggestion
+                        multiple
+                        display="count"
+                        selected={draftFylke}
+                        onSelectedChange={(items) =>
+                          setDraftFylke(items.map((item) => item.value))
+                        }
+                      >
+                        <Suggestion.Input />
+                        <Suggestion.Clear />
+                        <Suggestion.List>
+                          <Suggestion.Empty>Tomt</Suggestion.Empty>
+                          {uniqueFylker.map((option) => (
+                            <Suggestion.Option
+                              key={option}
+                              label={option}
+                              value={option}
+                            >
+                              {option}
+                            </Suggestion.Option>
+                          ))}
+                        </Suggestion.List>
+                      </Suggestion>
+                    </Field>
+                  </Prose>
+                </div>
+                <Field className="example-footer">
+                  <Button
+                    onClick={() => {
+                      setEmne(draftEmne);
+                      setFylke(draftFylke);
+                      setEksamen(draftEksamen);
+                      dialogRef.current?.close();
+                    }}
+                  >
+                    Lagre
+                  </Button>
+                  <Button
+                    variant="secondary"
+                    onClick={() => {
+                      setDraftEmne(emne);
+                      setDraftFylke(fylke);
+                      setDraftEksamen(eksamen);
+                      dialogRef.current?.close();
+                    }}
+                  >
+                    Avbryt
+                  </Button>
+                </Field>
+              </Prose>
             </Dialog>
           </Dialog.TriggerContext>
+          <Field>
+            <Button
+              onClick={handleClearFilters}
+              variant="tertiary"
+              data-size="sm"
+              className="example-clear-filters"
+            >
+              Fjern alle filtre
+            </Button>
+          </Field>
         </div>
 
         <ActiveFilters
@@ -596,20 +648,20 @@ export const WithDialog = meta.story({
           </Pagination>
           <div className="example-controls-section">
             <span>
-              Rad {rangeStart}–{rangeEnd} av {filteredData.length}
+              Rad {rangeStart}-{rangeEnd} av {filteredData.length}
             </span>
             <Field className="example-controls-section-select">
               <Label>Rader per side</Label>
-              <Select>
+              <Select
+                value={String(itemsPerPage)}
+                onChange={(event) => {
+                  setItemsPerPage(Number(event.target.value));
+                  setCurrentPage(1);
+                }}
+                autoComplete="off"
+              >
                 {[5, 10, 25, 50].map((size) => (
-                  <Select.Option
-                    key={size}
-                    value={size}
-                    onClick={() => {
-                      setItemsPerPage(size);
-                      setCurrentPage(1);
-                    }}
-                  >
+                  <Select.Option key={size} value={String(size)}>
                     {size}
                   </Select.Option>
                 ))}

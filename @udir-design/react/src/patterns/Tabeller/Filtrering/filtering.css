@@ -9,8 +9,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: var(--ds-size-6);
+  align-items: flex-end;
+  gap: var(--ds-size-2);
 }
 
 .example-filters-section-modal {
@@ -30,7 +30,6 @@
 }
 
 .example-suggestion-field {
-  max-width: none;
   width: 100%;
 }
 
@@ -42,6 +41,10 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--ds-size-4);
+}
+
+.example-clear-filters {
+  white-space: nowrap;
 }
 
 .example-controls {
@@ -139,7 +142,7 @@
     flex-direction: row;
     justify-content: space-between;
     width: fit-content;
-    gap: var(--ds-size-8);
+    gap: var(--ds-size-10);
   }
 }
 

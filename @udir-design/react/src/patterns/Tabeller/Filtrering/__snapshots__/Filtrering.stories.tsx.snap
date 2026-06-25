@@ -4,42 +4,17 @@ exports[`Preview 1`] = `
 <div data-size="auto">
   <div>
     <div>
-      <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
-          Søk
-        </label>
-        <div>
-          <input
-            placeholder
-            aria-label="Søk"
-            type="search"
-            value
-            id="<removed>"
-          >
-          <button
-            data-icon="true"
-            data-variant="tertiary"
-            type="reset"
-            aria-label="Tøm"
-          >
-          </button>
-        </div>
-      </ds-field>
       <div>
         <ds-field>
           <label
             data-weight="medium"
             for="<removed>"
           >
-            Velg emne(r)
+            Velg emner
           </label>
           <ds-suggestion
             data-multiple
-            zebra
-            data-color="neutral"
+            data-display="count"
           >
             <input
               placeholder=" "
@@ -118,12 +93,11 @@ exports[`Preview 1`] = `
             data-weight="medium"
             for="<removed>"
           >
-            Velg fylke(r)
+            Velg fylker
           </label>
           <ds-suggestion
             data-multiple
-            zebra
-            data-color="neutral"
+            data-display="count"
           >
             <input
               placeholder=" "
@@ -277,7 +251,40 @@ exports[`Preview 1`] = `
             </u-datalist>
           </ds-suggestion>
         </ds-field>
+        <ds-field>
+          <button
+            data-variant="tertiary"
+            type="button"
+            data-size="sm"
+          >
+            Fjern alle filtre
+          </button>
+        </ds-field>
       </div>
+      <ds-field>
+        <label
+          data-weight="medium"
+          for="<removed>"
+        >
+          Søk
+        </label>
+        <div>
+          <input
+            placeholder
+            aria-label="Søk"
+            type="search"
+            value
+            id="<removed>"
+          >
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="reset"
+            aria-label="Tøm"
+          >
+          </button>
+        </div>
+      </ds-field>
     </div>
     <table
       data-zebra="true"
@@ -493,7 +500,10 @@ exports[`Preview 1`] = `
           >
             Rader per side
           </label>
-          <select id="<removed>">
+          <select
+            autocomplete="off"
+            id="<removed>"
+          >
             <option value="5">
               5
             </option>
@@ -583,331 +593,340 @@ exports[`With Dialog 1`] = `
           command="close"
         >
         </button>
-        <h2>
-          Filter
-        </h2>
         <div>
+          <h2>
+            Filter
+          </h2>
           <div>
-            <fieldset aria-labelledby="<removed>">
-              <legend
-                data-weight="medium"
-                id="<removed>"
-              >
-                Karaktertype
-              </legend>
-              <ds-field data-clickdelegatefor="<removed>">
-                <input
-                  type="checkbox"
-                  value="skriftlig"
-                  checked
-                  name="checkbox-group"
+            <div>
+              <fieldset aria-labelledby="<removed>">
+                <legend
+                  data-weight="medium"
                   id="<removed>"
                 >
+                  Karaktertype
+                </legend>
+                <ds-field data-clickdelegatefor="<removed>">
+                  <input
+                    type="checkbox"
+                    value="skriftlig"
+                    checked
+                    name="checkbox-group"
+                    id="<removed>"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="<removed>"
+                  >
+                    Skriftlig
+                  </label>
+                </ds-field>
+                <ds-field data-clickdelegatefor="<removed>">
+                  <input
+                    type="checkbox"
+                    value="muntlig"
+                    checked
+                    name="checkbox-group"
+                    id="<removed>"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="<removed>"
+                  >
+                    Muntlig
+                  </label>
+                </ds-field>
+                <ds-field data-clickdelegatefor="<removed>">
+                  <input
+                    type="checkbox"
+                    value="standpunkt"
+                    checked
+                    name="checkbox-group"
+                    id="<removed>"
+                  >
+                  <label
+                    data-weight="regular"
+                    for="<removed>"
+                  >
+                    Standpunkt
+                  </label>
+                </ds-field>
+              </fieldset>
+            </div>
+            <div>
+              <ds-field>
                 <label
-                  data-weight="regular"
+                  data-weight="medium"
                   for="<removed>"
                 >
-                  Skriftlig
+                  Velg emner
                 </label>
-              </ds-field>
-              <ds-field data-clickdelegatefor="<removed>">
-                <input
-                  type="checkbox"
-                  value="muntlig"
-                  checked
-                  name="checkbox-group"
-                  id="<removed>"
+                <ds-suggestion
+                  data-multiple
+                  data-display="count"
                 >
+                  <input
+                    placeholder=" "
+                    type="text"
+                    id="<removed>"
+                    aria-description="No selected"
+                    list=":u-datalist3"
+                    popovertarget=":u-datalist3"
+                  >
+                  <button
+                    aria-label="Tøm"
+                    hidden
+                    type="reset"
+                    aria-hidden="false"
+                    tabindex="-1"
+                  >
+                  </button>
+                  <u-datalist
+                    data-nofilter
+                    data-sr-plural="%d forslag"
+                    data-sr-singular="%d forslag"
+                    popover="manual"
+                    role="listbox"
+                    data-sr-of="of"
+                    hidden
+                    tabindex="-1"
+                    aria-multiselectable="true"
+                    id="<removed>"
+                    data-is-floating="true"
+                  >
+                    <u-option
+                      label="Engelsk"
+                      value="Engelsk"
+                      role="option"
+                      aria-disabled="false"
+                      aria-selected="false"
+                      id="<removed>"
+                    >
+                      Engelsk
+                    </u-option>
+                    <u-option
+                      label="Matematikk"
+                      value="Matematikk"
+                      role="option"
+                      aria-disabled="false"
+                      aria-selected="false"
+                      id="<removed>"
+                    >
+                      Matematikk
+                    </u-option>
+                    <u-option
+                      label="Hovedmål"
+                      value="Hovedmål"
+                      role="option"
+                      aria-disabled="false"
+                      aria-selected="false"
+                      id="<removed>"
+                    >
+                      Hovedmål
+                    </u-option>
+                    <u-option
+                      label="Sidemål"
+                      value="Sidemål"
+                      role="option"
+                      aria-disabled="false"
+                      aria-selected="false"
+                      id="<removed>"
+                    >
+                      Sidemål
+                    </u-option>
+                  </u-datalist>
+                </ds-suggestion>
+              </ds-field>
+              <ds-field>
                 <label
-                  data-weight="regular"
+                  data-weight="medium"
                   for="<removed>"
                 >
-                  Muntlig
+                  Velg fylker
                 </label>
-              </ds-field>
-              <ds-field data-clickdelegatefor="<removed>">
-                <input
-                  type="checkbox"
-                  value="standpunkt"
-                  checked
-                  name="checkbox-group"
-                  id="<removed>"
+                <ds-suggestion
+                  data-multiple
+                  data-display="count"
                 >
-                <label
-                  data-weight="regular"
-                  for="<removed>"
-                >
-                  Standpunkt
-                </label>
+                  <input
+                    placeholder=" "
+                    type="text"
+                    id="<removed>"
+                    aria-description="No selected"
+                    list=":u-datalist4"
+                    popovertarget=":u-datalist4"
+                  >
+                  <button
+                    aria-label="Tøm"
+                    hidden
+                    type="reset"
+                    aria-hidden="false"
+                    tabindex="-1"
+                  >
+                  </button>
+                  <u-datalist
+                    data-nofilter
+                    data-sr-plural="%d forslag"
+                    data-sr-singular="%d forslag"
+                    popover="manual"
+                    role="listbox"
+                    data-sr-of="of"
+                    hidden
+                    tabindex="-1"
+                    aria-multiselectable="true"
+                    id="<removed>"
+                    data-is-floating="true"
+                  >
+                    <u-option
+                      label="Agder"
+                      value="Agder"
+                      role="option"
+                      aria-disabled="false"
+                      aria-selected="false"
+                      id="<removed>"
+                    >
+                      Agder
+                    </u-option>
+                    <u-option
+                      label="Akershus"
+                      value="Akershus"
+                      role="option"
+                      aria-disabled="false"
+                      aria-selected="false"
+                      id="<removed>"
+                    >
+                      Akershus
+                    </u-option>
+                    <u-option
+                      label="Buskerud"
+                      value="Buskerud"
+                      role="option"
+                      aria-disabled="false"
+                      aria-selected="false"
+                      id="<removed>"
+                    >
+                      Buskerud
+                    </u-option>
+                    <u-option
+                      label="Finnmark"
+                      value="Finnmark"
+                      role="option"
+                      aria-disabled="false"
+                      aria-selected="false"
+                      id="<removed>"
+                    >
+                      Finnmark
+                    </u-option>
+                    <u-option
+                      label="Innlandet"
+                      value="Innlandet"
+                      role="option"
+                      aria-disabled="false"
+                      aria-selected="false"
+                      id="<removed>"
+                    >
+                      Innlandet
+                    </u-option>
+                    <u-option
+                      label="Nordland"
+                      value="Nordland"
+                      role="option"
+                      aria-disabled="false"
+                      aria-selected="false"
+                      id="<removed>"
+                    >
+                      Nordland
+                    </u-option>
+                    <u-option
+                      label="Oslo"
+                      value="Oslo"
+                      role="option"
+                      aria-disabled="false"
+                      aria-selected="false"
+                      id="<removed>"
+                    >
+                      Oslo
+                    </u-option>
+                    <u-option
+                      label="Rogaland"
+                      value="Rogaland"
+                      role="option"
+                      aria-disabled="false"
+                      aria-selected="false"
+                      id="<removed>"
+                    >
+                      Rogaland
+                    </u-option>
+                    <u-option
+                      label="Telemark"
+                      value="Telemark"
+                      role="option"
+                      aria-disabled="false"
+                      aria-selected="false"
+                      id="<removed>"
+                    >
+                      Telemark
+                    </u-option>
+                    <u-option
+                      label="Troms"
+                      value="Troms"
+                      role="option"
+                      aria-disabled="false"
+                      aria-selected="false"
+                      id="<removed>"
+                    >
+                      Troms
+                    </u-option>
+                    <u-option
+                      label="Vestland"
+                      value="Vestland"
+                      role="option"
+                      aria-disabled="false"
+                      aria-selected="false"
+                      id="<removed>"
+                    >
+                      Vestland
+                    </u-option>
+                    <u-option
+                      label="Viken"
+                      value="Viken"
+                      role="option"
+                      aria-disabled="false"
+                      aria-selected="false"
+                      id="<removed>"
+                    >
+                      Viken
+                    </u-option>
+                  </u-datalist>
+                </ds-suggestion>
               </ds-field>
-            </fieldset>
+            </div>
           </div>
-          <div>
-            <ds-field>
-              <label
-                data-weight="medium"
-                for="<removed>"
-              >
-                Velg emne
-              </label>
-              <ds-suggestion
-                data-multiple
-                zebra
-                data-color="neutral"
-              >
-                <input
-                  placeholder=" "
-                  type="text"
-                  id="<removed>"
-                  aria-description="No selected"
-                  list=":u-datalist3"
-                  popovertarget=":u-datalist3"
-                >
-                <button
-                  aria-label="Tøm"
-                  hidden
-                  type="reset"
-                  aria-hidden="false"
-                  tabindex="-1"
-                >
-                </button>
-                <u-datalist
-                  data-nofilter
-                  data-sr-plural="%d forslag"
-                  data-sr-singular="%d forslag"
-                  popover="manual"
-                  role="listbox"
-                  data-sr-of="of"
-                  hidden
-                  tabindex="-1"
-                  aria-multiselectable="true"
-                  id="<removed>"
-                  data-is-floating="true"
-                >
-                  <u-option
-                    label="Engelsk"
-                    value="Engelsk"
-                    role="option"
-                    aria-disabled="false"
-                    aria-selected="false"
-                    id="<removed>"
-                  >
-                    Engelsk
-                  </u-option>
-                  <u-option
-                    label="Matematikk"
-                    value="Matematikk"
-                    role="option"
-                    aria-disabled="false"
-                    aria-selected="false"
-                    id="<removed>"
-                  >
-                    Matematikk
-                  </u-option>
-                  <u-option
-                    label="Hovedmål"
-                    value="Hovedmål"
-                    role="option"
-                    aria-disabled="false"
-                    aria-selected="false"
-                    id="<removed>"
-                  >
-                    Hovedmål
-                  </u-option>
-                  <u-option
-                    label="Sidemål"
-                    value="Sidemål"
-                    role="option"
-                    aria-disabled="false"
-                    aria-selected="false"
-                    id="<removed>"
-                  >
-                    Sidemål
-                  </u-option>
-                </u-datalist>
-              </ds-suggestion>
-            </ds-field>
-            <ds-field>
-              <label
-                data-weight="medium"
-                for="<removed>"
-              >
-                Velg fylke
-              </label>
-              <ds-suggestion
-                data-multiple
-                zebra
-                data-color="neutral"
-              >
-                <input
-                  placeholder=" "
-                  type="text"
-                  id="<removed>"
-                  aria-description="No selected"
-                  list=":u-datalist4"
-                  popovertarget=":u-datalist4"
-                >
-                <button
-                  aria-label="Tøm"
-                  hidden
-                  type="reset"
-                  aria-hidden="false"
-                  tabindex="-1"
-                >
-                </button>
-                <u-datalist
-                  data-nofilter
-                  data-sr-plural="%d forslag"
-                  data-sr-singular="%d forslag"
-                  popover="manual"
-                  role="listbox"
-                  data-sr-of="of"
-                  hidden
-                  tabindex="-1"
-                  aria-multiselectable="true"
-                  id="<removed>"
-                  data-is-floating="true"
-                >
-                  <u-option
-                    label="Agder"
-                    value="Agder"
-                    role="option"
-                    aria-disabled="false"
-                    aria-selected="false"
-                    id="<removed>"
-                  >
-                    Agder
-                  </u-option>
-                  <u-option
-                    label="Akershus"
-                    value="Akershus"
-                    role="option"
-                    aria-disabled="false"
-                    aria-selected="false"
-                    id="<removed>"
-                  >
-                    Akershus
-                  </u-option>
-                  <u-option
-                    label="Buskerud"
-                    value="Buskerud"
-                    role="option"
-                    aria-disabled="false"
-                    aria-selected="false"
-                    id="<removed>"
-                  >
-                    Buskerud
-                  </u-option>
-                  <u-option
-                    label="Finnmark"
-                    value="Finnmark"
-                    role="option"
-                    aria-disabled="false"
-                    aria-selected="false"
-                    id="<removed>"
-                  >
-                    Finnmark
-                  </u-option>
-                  <u-option
-                    label="Innlandet"
-                    value="Innlandet"
-                    role="option"
-                    aria-disabled="false"
-                    aria-selected="false"
-                    id="<removed>"
-                  >
-                    Innlandet
-                  </u-option>
-                  <u-option
-                    label="Nordland"
-                    value="Nordland"
-                    role="option"
-                    aria-disabled="false"
-                    aria-selected="false"
-                    id="<removed>"
-                  >
-                    Nordland
-                  </u-option>
-                  <u-option
-                    label="Oslo"
-                    value="Oslo"
-                    role="option"
-                    aria-disabled="false"
-                    aria-selected="false"
-                    id="<removed>"
-                  >
-                    Oslo
-                  </u-option>
-                  <u-option
-                    label="Rogaland"
-                    value="Rogaland"
-                    role="option"
-                    aria-disabled="false"
-                    aria-selected="false"
-                    id="<removed>"
-                  >
-                    Rogaland
-                  </u-option>
-                  <u-option
-                    label="Telemark"
-                    value="Telemark"
-                    role="option"
-                    aria-disabled="false"
-                    aria-selected="false"
-                    id="<removed>"
-                  >
-                    Telemark
-                  </u-option>
-                  <u-option
-                    label="Troms"
-                    value="Troms"
-                    role="option"
-                    aria-disabled="false"
-                    aria-selected="false"
-                    id="<removed>"
-                  >
-                    Troms
-                  </u-option>
-                  <u-option
-                    label="Vestland"
-                    value="Vestland"
-                    role="option"
-                    aria-disabled="false"
-                    aria-selected="false"
-                    id="<removed>"
-                  >
-                    Vestland
-                  </u-option>
-                  <u-option
-                    label="Viken"
-                    value="Viken"
-                    role="option"
-                    aria-disabled="false"
-                    aria-selected="false"
-                    id="<removed>"
-                  >
-                    Viken
-                  </u-option>
-                </u-datalist>
-              </ds-suggestion>
-            </ds-field>
-          </div>
+          <ds-field>
+            <button
+              data-variant="primary"
+              type="button"
+            >
+              Lagre
+            </button>
+            <button
+              data-variant="secondary"
+              type="button"
+            >
+              Avbryt
+            </button>
+          </ds-field>
         </div>
-        <ds-field>
-          <button
-            data-variant="primary"
-            type="button"
-          >
-            Lagre
-          </button>
-          <button
-            data-variant="secondary"
-            type="button"
-          >
-            Avbryt
-          </button>
-        </ds-field>
       </dialog>
+      <ds-field>
+        <button
+          data-variant="tertiary"
+          type="button"
+          data-size="sm"
+        >
+          Fjern alle filtre
+        </button>
+      </ds-field>
     </div>
     <table
       data-zebra="true"
@@ -1114,7 +1133,7 @@ exports[`With Dialog 1`] = `
       </ds-pagination>
       <div>
         <span>
-          Rad 1–5 av 48
+          Rad 1-5 av 48
         </span>
         <ds-field>
           <label
@@ -1123,7 +1142,10 @@ exports[`With Dialog 1`] = `
           >
             Rader per side
           </label>
-          <select id="<removed>">
+          <select
+            autocomplete="off"
+            id="<removed>"
+          >
             <option value="5">
               5
             </option>
