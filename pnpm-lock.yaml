@@ -916,6 +916,18 @@ importers:
         specifier: 'catalog:'
         version: 5.5.3
 
+  test-apps/cookie:
+    dependencies:
+      '@digdir/designsystemet-css':
+        specifier: 'catalog:'
+        version: 1.21.0
+      '@udir-design/css':
+        specifier: workspace:*
+        version: link:../../@udir-design/css
+      '@udir-design/theme':
+        specifier: workspace:*
+        version: link:../../@udir-design/theme
+
   test-apps/nextjs:
     dependencies:
       '@udir-design/icons':
