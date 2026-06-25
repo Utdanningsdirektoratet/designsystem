@@ -1,6 +1,7 @@
 import { type ChangeEvent, useEffect, useRef, useState } from 'react';
 import {
   DownloadIcon,
+  MenuElipsisHorizontalIcon,
   MenuElipsisVerticalIcon,
   PencilWritingIcon,
   TrashFillIcon,
@@ -132,12 +133,7 @@ export const Preview = meta.story({
     };
 
     const selectAll = () => {
-      if (allOnPageSelected) return;
-      setSelectedIds((prev) => {
-        const next = new Set(prev);
-        paginatedData.forEach((row) => next.add(row.id));
-        return next;
-      });
+      setSelectedIds(new Set(filteredData.map((row) => row.id)));
     };
 
     const toggleRow = (id: string) => {
@@ -270,7 +266,7 @@ export const Preview = meta.story({
               <p data-size="sm">{selectedIds.size} valgt</p>
               <div className="handlinger-toolbar__buttons">
                 <Button variant="tertiary" onClick={selectAll} data-size="sm">
-                  Velg alle
+                  Velg alle {filteredData.length}
                 </Button>
                 <Button
                   variant="tertiary"
@@ -282,24 +278,59 @@ export const Preview = meta.story({
               </div>
             </div>
             <div className="handlinger-toolbar__actions">
-              <Button data-variant="tertiary" data-size="sm">
-                <PencilWritingIcon aria-hidden />
-                Rediger
-              </Button>
-              <Button data-variant="tertiary" data-size="sm">
-                <DownloadIcon aria-hidden />
-                Eksporter
-              </Button>
-              <div className="handlinger-toolbar__divider" />
-              <Button
-                data-variant="tertiary"
-                data-color="danger"
-                data-size="sm"
-                onClick={() => setSelectedIds(new Set())}
-              >
-                <TrashFillIcon aria-hidden />
-                Slett
-              </Button>
+              {isMobile ? (
+                <>
+                  <Button
+                    popoverTarget="toolbar-actions-menu"
+                    variant="tertiary"
+                    icon
+                    title="Flere valg"
+                    data-size="sm"
+                  >
+                    <MenuElipsisHorizontalIcon aria-hidden />
+                  </Button>
+                  <Dropdown id="toolbar-actions-menu">
+                    <Dropdown.List>
+                      <Dropdown.Item>
+                        <Dropdown.Button>
+                          <PencilWritingIcon aria-hidden /> Rediger
+                        </Dropdown.Button>
+                        <Dropdown.Button>
+                          <DownloadIcon aria-hidden /> Eksporter
+                        </Dropdown.Button>
+                        <Divider />
+                        <Dropdown.Button
+                          data-color="danger"
+                          onClick={() => setSelectedIds(new Set())}
+                        >
+                          <TrashFillIcon aria-hidden /> Slett
+                        </Dropdown.Button>
+                      </Dropdown.Item>
+                    </Dropdown.List>
+                  </Dropdown>
+                </>
+              ) : (
+                <>
+                  <Button data-variant="tertiary" data-size="sm">
+                    <PencilWritingIcon aria-hidden />
+                    Rediger
+                  </Button>
+                  <Button data-variant="tertiary" data-size="sm">
+                    <DownloadIcon aria-hidden />
+                    Eksporter
+                  </Button>
+                  <div className="handlinger-toolbar__divider" />
+                  <Button
+                    data-variant="tertiary"
+                    data-color="danger"
+                    data-size="sm"
+                    onClick={() => setSelectedIds(new Set())}
+                  >
+                    <TrashFillIcon aria-hidden />
+                    Slett
+                  </Button>
+                </>
+              )}
             </div>
           </div>
         )}
@@ -334,10 +365,10 @@ export const Preview = meta.story({
                 Skriftlig
               </Table.HeaderCell>
               <Table.HeaderCell className="desktop-only" aria-label="Rediger">
-                Rediger
+                <PencilWritingIcon aria-hidden />
               </Table.HeaderCell>
               <Table.HeaderCell aria-label="Handlinger">
-                Handlinger
+                <MenuElipsisVerticalIcon aria-hidden />
               </Table.HeaderCell>
             </Table.Row>
           </Table.Head>

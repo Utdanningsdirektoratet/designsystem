@@ -51,14 +51,18 @@
   }
 }
 
+.handlinger-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding-inline: var(--ds-size-2);
+}
+
 @media (min-width: 48rem) {
   .example-filters-section {
     flex-direction: row;
     align-items: flex-end;
-  }
-
-  .handlinger-toolbar {
-    flex-direction: row;
   }
 
   .example-search-field {
@@ -74,14 +78,6 @@
     max-width: 280px;
     width: auto;
   }
-}
-
-.handlinger-toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  padding-inline: var(--ds-size-2);
 }
 
 .handlinger-toolbar__divider {
@@ -152,10 +148,6 @@
 @media (min-width: 48rem) {
   .show-below-tablet {
     display: none;
-  }
-
-  .handlinger-toolbar {
-    flex-direction: row;
   }
 
   .hide-below-tablet {
