@@ -140,7 +140,14 @@ exports[`Preview 1`] = `
 `;
 
 exports[`With Anchor 1`] = `
-<div style="<removed>">
+<style>
+  .pagination-with-anchor-main {
+  gap: 70px;
+  display: flex;
+  flex-direction: column;
+}
+</style>
+<div>
   <div>
     <input
       placeholder

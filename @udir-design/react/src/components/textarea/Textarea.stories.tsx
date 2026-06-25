@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
-import { Button } from 'src/components/button';
-import { Field } from 'src/components/field';
-import { Label } from 'src/components/typography/label';
+import { Button } from '../button/Button';
+import { Field } from '../field/Field';
+import { Label } from '../typography/label/Label';
 import { Textarea } from './Textarea';
 import { Textarea as FakeTextarea } from './docs/FakeTextarea';
 
@@ -100,7 +100,7 @@ export const Controlled = meta.story({
     customStyles: {
       display: 'flex',
       flexDirection: 'column',
-      gap: 'var(--ds-size-2)',
+      gap: 'var(--ds-size-3)',
     },
     docs: advancedCodeDocs,
   },
@@ -120,11 +120,7 @@ export const Controlled = meta.story({
             ) => setValue(e.target.value)}
           />
         </Field>
-        <Button
-          variant="secondary"
-          onClick={() => setValue('')}
-          style={{ marginTop: 'var(--ds-size-2)' }}
-        >
+        <Button variant="secondary" onClick={() => setValue('')}>
           Tøm feltet
         </Button>
       </>

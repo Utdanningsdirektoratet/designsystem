@@ -3,17 +3,16 @@
 exports[`Drawer 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-            .cookies-buttons {
-              display: flex;
-              gap: var(--ds-size-4);
-              flex-wrap: wrap;
-            }
-            @media (max-width: 40rem) {
-              .cookies-buttons > button {
-          flex: 1 1 auto;
-              }
-            }
+    .informasjonskapsler-preview-cookies-button__group {
+  display: flex;
+  gap: var(--ds-size-4);
+  flex-wrap: wrap;
+}
+@media (max-width: 40rem) {
+  .informasjonskapsler-preview-cookies-button__group > button {
+    flex: 1 1 auto;
+  }
+}
   </style>
   <dialog
     data-placement="bottom"
@@ -72,17 +71,16 @@ exports[`Drawer 1`] = `
 exports[`Preview 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-            .cookies-buttons {
-              display: flex;
-              gap: var(--ds-size-4);
-              flex-wrap: wrap;
-            }
-            @media (max-width: 40rem) {
-              .cookies-buttons > button {
-          flex: 1 1 auto;
-              }
-            }
+    .informasjonskapsler-preview-cookies-button__group {
+  display: flex;
+  gap: var(--ds-size-4);
+  flex-wrap: wrap;
+}
+@media (max-width: 40rem) {
+  .informasjonskapsler-preview-cookies-button__group > button {
+    flex: 1 1 auto;
+  }
+}
   </style>
   <dialog
     data-placement="center"

@@ -1,7 +1,13 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Aria 1`] = `
-<div style="<removed>">
+<style>
+  .tooltip-aria-main {
+  display: flex;
+  gap: var(--ds-size-2);
+}
+</style>
+<div>
   <button
     data-icon="true"
     data-variant="primary"
@@ -44,7 +50,13 @@ exports[`Aria 1`] = `
 `;
 
 exports[`Placement 1`] = `
-<div style="<removed>">
+<style>
+  .tooltip-placement-main {
+  display: flex;
+  gap: var(--ds-size-2);
+}
+</style>
+<div>
   <button
     data-icon="true"
     data-variant="secondary"

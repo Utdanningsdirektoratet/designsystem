@@ -1,10 +1,14 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`As Link 1`] = `
-<a
-  href="/"
-  style="<removed>"
->
+<style>
+  .avatar-as-link {
+  display: flex;
+  gap: var(--ds-size-2);
+  align-items: center;
+}
+</style>
+<a href="/">
   <span
     data-variant="circle"
     role="img"
@@ -101,16 +105,16 @@ exports[`Content 1`] = `
 
 exports[`Icons 1`] = `
 <style>
-  .avatar-group {
-          display: flex;
-          gap: var(--ds-size-2);
-          flex-direction: column;
-        }
-        .avatar-icon-group {
-          display: flex;
-          align-items: center;
-          gap: var(--ds-size-2);
-        }
+  .avatar-icons {
+  display: flex;
+  gap: var(--ds-size-2);
+  flex-direction: column;
+}
+.avatar-icons__group {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-2);
+}
 </style>
 <div>
   <div>

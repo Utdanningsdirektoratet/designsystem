@@ -565,11 +565,21 @@ exports[`Manual 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<div style="<removed>">
+<style>
+  .table-of-contents-preview-main {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-5);
+}
+.table-of-contents-preview-table-of-contents {
+  width: 450px;
+}
+</style>
+<div>
   <div
     data-variant="default"
     data-color="neutral"
-    style="<removed>"
   >
     <details
       open

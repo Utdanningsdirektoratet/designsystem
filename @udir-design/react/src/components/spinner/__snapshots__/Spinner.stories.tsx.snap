@@ -268,10 +268,10 @@ exports[`Variants 1`] = `
 exports[`With Text 1`] = `
 <style>
   .spinner-with-text {
-        display: flex;
-        gap: 0.5rem;
-        align-items: center;
-      }
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
 </style>
 <div>
   <svg

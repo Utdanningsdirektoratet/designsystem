@@ -76,7 +76,16 @@ exports[`Custom Close Button 1`] = `
 `;
 
 exports[`Dialog Non Modal 1`] = `
-<ds-field style="<removed>">
+<style>
+  .dialog-non-modal-field {
+  width: 400px;
+}
+.dialog-non-modal-dialog {
+   width: 300px;
+   left: 65%;
+}
+</style>
+<ds-field>
   <label
     data-weight="medium"
     for="<removed>"
@@ -102,7 +111,6 @@ exports[`Dialog Non Modal 1`] = `
   data-modal="false"
   id="<removed>"
   open
-  style="<removed>"
 >
   <button
     data-icon="true"
@@ -114,30 +122,39 @@ exports[`Dialog Non Modal 1`] = `
     command="close"
   >
   </button>
-  <h2 style="<removed>">
-    Hva besvarelsen burde inneholde
-  </h2>
-  <ul>
-    <li>
-      intro til prosjektet
-    </li>
-    <li>
-      oversikt over hva som er gjort i prosjektet
-    </li>
-    <li>
-      beskrivelse av prosjektmålene
-    </li>
-    <li>
-      metode for å oppnå prosjektmålene
-    </li>
-    <li>
-      leveranse
-    </li>
-  </ul>
+  <div>
+    <h2>
+      Hva besvarelsen burde inneholde
+    </h2>
+    <ul>
+      <li>
+        intro til prosjektet
+      </li>
+      <li>
+        oversikt over hva som er gjort i prosjektet
+      </li>
+      <li>
+        beskrivelse av prosjektmålene
+      </li>
+      <li>
+        metode for å oppnå prosjektmålene
+      </li>
+      <li>
+        leveranse
+      </li>
+    </ul>
+  </div>
 </dialog>
 `;
 
 exports[`Dialog With Form 1`] = `
+<style>
+  .dialog-with-form-button__group {
+          display: flex;
+          gap: var(--ds-size-2);
+          margin-top: var(--ds-size-4);
+        }
+</style>
 <button
   data-variant="primary"
   type="button"
@@ -162,27 +179,29 @@ exports[`Dialog With Form 1`] = `
     command="close"
   >
   </button>
-  <h2 style="<removed>">
-    Skjemainnsending
-  </h2>
-  <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
-      Navn
-    </label>
-    <div>
-      <input
-        autofocus="true"
-        autocomplete="name"
-        type="text"
-        value
-        id="<removed>"
+  <div>
+    <h2>
+      Skjemainnsending
+    </h2>
+    <ds-field>
+      <label
+        data-weight="medium"
+        for="<removed>"
       >
-    </div>
-  </ds-field>
-  <div style="<removed>">
+        Navn
+      </label>
+      <div>
+        <input
+          autofocus="true"
+          autocomplete="name"
+          type="text"
+          value
+          id="<removed>"
+        >
+      </div>
+    </ds-field>
+  </div>
+  <div>
     <button
       commandfor="dialog-with-form"
       data-variant="primary"
@@ -204,6 +223,11 @@ exports[`Dialog With Form 1`] = `
 `;
 
 exports[`Dialog With Max Width 1`] = `
+<style>
+  .dialog-with-max-width-dialog {
+  max-width: 1200px;
+}
+</style>
 <button
   data-variant="secondary"
   type="button"
@@ -216,7 +240,6 @@ exports[`Dialog With Max Width 1`] = `
   data-modal="true"
   id="<removed>"
   open
-  style="<removed>"
 >
   <button
     data-icon="true"
@@ -228,12 +251,14 @@ exports[`Dialog With Max Width 1`] = `
     command="close"
   >
   </button>
-  <h2 style="<removed>">
-    Dialog som er veldig bred
-  </h2>
-  <p data-variant="default">
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
-  </p>
+  <div>
+    <h2>
+      Dialog som er veldig bred
+    </h2>
+    <p data-variant="default">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+    </p>
+  </div>
 </dialog>
 `;
 
@@ -286,6 +311,15 @@ exports[`Dialog With Open Prop 1`] = `
 `;
 
 exports[`Dialog With Suggestion 1`] = `
+<style>
+  .dialog-with-suggestion-dialog {
+  overflow: visible;
+}
+.dialog-with-suggestion-dialog-block {
+   display: flex;
+   gap: var(--ds-size-2);
+}
+</style>
 <button
   data-variant="secondary"
   type="button"
@@ -298,7 +332,6 @@ exports[`Dialog With Suggestion 1`] = `
   data-modal="true"
   id="<removed>"
   open
-  style="<removed>"
 >
   <button
     data-icon="true"
@@ -447,7 +480,7 @@ exports[`Dialog With Suggestion 1`] = `
       </ds-suggestion>
     </ds-field>
   </div>
-  <div style="<removed>">
+  <div>
     <button
       data-variant="primary"
       type="button"
@@ -465,11 +498,24 @@ exports[`Dialog With Suggestion 1`] = `
 `;
 
 exports[`Drawer 1`] = `
-<div style="<removed>">
-  <ds-field
-    data-clickdelegatefor="<removed>"
-    style="<removed>"
-  >
+<style>
+  .dialog-drawer-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dialog-drawer-radio__group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-size-5);
+  margin-bottom: var(--ds-size-4);
+}
+.dialog-drawer-dialog {
+  z-index: 10;
+}
+</style>
+<div>
+  <ds-field data-clickdelegatefor="<removed>">
     <input
       id="<removed>"
       type="checkbox"
@@ -489,7 +535,7 @@ exports[`Drawer 1`] = `
     >
       Velg plassering for dialogen
     </legend>
-    <div style="<removed>">
+    <div>
       <ds-field data-clickdelegatefor="<removed>">
         <input
           id="<removed>"
@@ -575,7 +621,6 @@ exports[`Drawer 1`] = `
     id="<removed>"
     closedby="any"
     open
-    style="<removed>"
   >
     <button
       data-icon="true"
@@ -600,39 +645,40 @@ exports[`Drawer 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<div>
+<style>
+  .dialog-preview-dialog {
+  z-index: 10;
+}
+</style>
+<button
+  data-variant="primary"
+  type="button"
+  aria-haspopup="dialog"
+>
+  Åpne Dialog
+</button>
+<dialog
+  data-placement="center"
+  data-modal="true"
+  id="<removed>"
+  closedby="any"
+  open
+>
   <button
-    data-variant="primary"
+    data-icon="true"
+    commandfor="_r_0_"
+    data-variant="tertiary"
     type="button"
-    aria-haspopup="dialog"
+    aria-label="Lukk dialogvindu"
+    data-color="neutral"
+    command="close"
   >
-    Åpne Dialog
   </button>
-  <dialog
-    data-placement="center"
-    data-modal="true"
-    id="<removed>"
-    closedby="any"
-    open
-    style="<removed>"
-  >
-    <button
-      data-icon="true"
-      commandfor="_r_0_"
-      data-variant="tertiary"
-      type="button"
-      aria-label="Lukk dialogvindu"
-      data-color="neutral"
-      command="close"
-    >
-    </button>
-    <h2 style="<removed>">
+  <div>
+    <h2>
       Dialog header
     </h2>
-    <p
-      data-variant="default"
-      style="<removed>"
-    >
+    <p data-variant="default">
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
     </p>
     <p
@@ -641,8 +687,8 @@ exports[`Preview 1`] = `
     >
       Dialog footer
     </p>
-  </dialog>
-</div>
+  </div>
+</dialog>
 `;
 
 exports[`With Header And Footer 1`] = `
@@ -681,15 +727,14 @@ exports[`With Header And Footer 1`] = `
     </h2>
   </div>
   <div>
-    <p
-      data-variant="default"
-      style="<removed>"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales eros justo. Aenean non mi ipsum. Cras viverra elit nec vulputate mattis. Nunc placerat euismod pulvinar. Sed nec fringilla nulla, sit amet ultricies ante. Morbi egestas venenatis massa, eu interdum leo rutrum eu. Nulla varius, mi ac feugiat lacinia, magna eros ullamcorper arcu, vel tincidunt erat leo nec tortor. Sed ut dui arcu. Morbi commodo ipsum hendrerit est imperdiet imperdiet. Etiam sed maximus nisi. Quisque posuere posuere orci, non egestas risus facilisis a. Vivamus non tempus felis, in maximus lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-    </p>
-    <p data-variant="default">
-      Etiam nec tincidunt est. Integer semper sodales efficitur. Pellentesque pellentesque varius leo id congue. Integer lacinia porttitor massa id euismod. Maecenas porta, magna nec interdum eleifend, risus magna condimentum neque, a gravida nisl risus a elit. Donec accumsan metus et lectus placerat varius. Donec tristique odio arcu. Donec cursus leo a dui auctor pulvinar. Sed in elit urna. Nunc vitae magna sed nibh elementum dignissim et ut massa.
-    </p>
+    <div>
+      <p data-variant="default">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales eros justo. Aenean non mi ipsum. Cras viverra elit nec vulputate mattis. Nunc placerat euismod pulvinar. Sed nec fringilla nulla, sit amet ultricies ante. Morbi egestas venenatis massa, eu interdum leo rutrum eu. Nulla varius, mi ac feugiat lacinia, magna eros ullamcorper arcu, vel tincidunt erat leo nec tortor. Sed ut dui arcu. Morbi commodo ipsum hendrerit est imperdiet imperdiet. Etiam sed maximus nisi. Quisque posuere posuere orci, non egestas risus facilisis a. Vivamus non tempus felis, in maximus lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+      </p>
+      <p data-variant="default">
+        Etiam nec tincidunt est. Integer semper sodales efficitur. Pellentesque pellentesque varius leo id congue. Integer lacinia porttitor massa id euismod. Maecenas porta, magna nec interdum eleifend, risus magna condimentum neque, a gravida nisl risus a elit. Donec accumsan metus et lectus placerat varius. Donec tristique odio arcu. Donec cursus leo a dui auctor pulvinar. Sed in elit urna. Nunc vitae magna sed nibh elementum dignissim et ut massa.
+      </p>
+    </div>
   </div>
   <div>
     Footer

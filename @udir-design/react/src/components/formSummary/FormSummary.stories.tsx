@@ -70,8 +70,11 @@ export const Preview = meta.story({
 });
 
 export const NestedSections = meta.story({
-  render: () => (
-    <FormSummary className="form-summary-size" title="Oppsummering">
+  args: {
+    title: 'Oppsummering',
+  },
+  render: (args) => (
+    <FormSummary {...args} className="form-summary-size">
       <FormSummary.Section title="Foresatt" editHref="#" headingLevel={3}>
         <FormSummary.Fields>
           <FormSummary.Field label="Fornavn" value="Ola" />
@@ -108,8 +111,11 @@ export const NestedSections = meta.story({
 });
 
 export const ErrorStates = meta.story({
-  render: () => (
-    <FormSummary className="form-summary-size" title="Oppsummering">
+  args: {
+    title: 'Oppsummering',
+  },
+  render: (args) => (
+    <FormSummary className="form-summary-size" {...args}>
       <FormSummary.Section title="Foresatt" editHref="#" headingLevel={3}>
         <FormSummary.Fields>
           <FormSummary.Field label="Fornavn" error="Fornavn må fylles ut" />

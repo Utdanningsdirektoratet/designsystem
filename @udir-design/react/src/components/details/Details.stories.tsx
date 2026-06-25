@@ -2,17 +2,17 @@ import type { Decorator } from '@storybook/react-vite';
 import { createElement, useState } from 'react';
 import { expect, userEvent } from 'storybook/test';
 import { ChevronDownUpIcon, ChevronUpDownIcon } from '@udir-design/icons';
-import { Stack } from '.storybook/docs/components';
 import preview from '.storybook/preview';
 import { makeStoryTransformer } from '.storybook/utils/makeStoryTransformer';
-import { Button } from 'src/components/button';
-import type { CardProps } from 'src/components/card';
-import { Card } from 'src/components/card';
-import { Fieldset } from 'src/components/fieldset';
-import { Link } from 'src/components/link';
-import { List } from 'src/components/list';
-import { Label } from 'src/components/typography/label';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
+import { Button } from '../button/Button';
+import type { CardProps } from '../card/Card';
+import { Card } from '../card/Card';
+import { Fieldset } from '../fieldset/Fieldset';
+import { Link } from '../link/Link';
+import { List } from '../list/List';
 import { ToggleGroup } from '../toggleGroup';
+import { Label } from '../typography/label/Label';
 import { Details } from './Details';
 import { Details as FakeDetails } from './docs/FakeDetails';
 import { DetailsContent } from './docs/FakeDetailsContent';
@@ -141,16 +141,19 @@ const detailsColorDecorator: Decorator = (Story) => {
   };
 
   return (
-    <div>
-      <Stack
-        direction="row"
-        data-size="sm"
-        style={{
-          paddingInline: '1rem',
-          paddingTop: '1rem',
-          marginBottom: 'var(--ds-size-5)',
-        }}
-      >
+    <>
+      <style>
+        {`
+.details-decorator-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-size-4);
+  padding-inline: 1rem;
+  padding-top: 1rem;
+  margin-bottom: var(--ds-size-5);
+}`}
+      </style>
+      <div className="details-decorator-stack">
         <Fieldset>
           <Fieldset.Legend>Farge</Fieldset.Legend>
           <ToggleGroup
@@ -179,7 +182,7 @@ const detailsColorDecorator: Decorator = (Story) => {
             ))}
           </ToggleGroup>
         </Fieldset>
-      </Stack>
+      </div>
       <div data-storybook-decorator>
         {/* eslint-disable-next-line react/no-children-prop -- createElement requires children in props */}
         {createElement(card === 'none' ? 'div' : Card, {
@@ -188,7 +191,7 @@ const detailsColorDecorator: Decorator = (Story) => {
           children: <Story />,
         })}
       </div>
-    </div>
+    </>
   );
 };
 
@@ -231,7 +234,8 @@ export const InCardWithColor = meta.story({
 });
 
 export const Controlled = meta.story({
-  render() {
+  parameters: { docs: advancedCodeDocs },
+  render(args) {
     const [open1, setOpen1] = useState(false);
     const [open2, setOpen2] = useState(false);
     const [open3, setOpen3] = useState(false);
@@ -257,7 +261,7 @@ export const Controlled = meta.story({
           )}
         </Button>
         <br />
-        <Details open={open1} onToggle={() => setOpen1(!open1)}>
+        <Details open={open1} onToggle={() => setOpen1(!open1)} {...args}>
           <Details.Summary>Hva er Feide?</Details.Summary>
           <Details.Content>
             <p>
@@ -277,7 +281,7 @@ export const Controlled = meta.story({
             </p>
           </Details.Content>
         </Details>
-        <Details open={open2} onToggle={() => setOpen2(!open2)}>
+        <Details open={open2} onToggle={() => setOpen2(!open2)} {...args}>
           <Details.Summary>Hva er UIDP?</Details.Summary>
           <Details.Content>
             <p>
@@ -302,7 +306,7 @@ export const Controlled = meta.story({
             </p>
           </Details.Content>
         </Details>
-        <Details open={open3} onToggle={() => setOpen3(!open3)}>
+        <Details open={open3} onToggle={() => setOpen3(!open3)} {...args}>
           <Details.Summary>Hva er UBAS?</Details.Summary>
           <Details.Content>
             <p>
@@ -326,23 +330,30 @@ const makePseudoStatesStory = makeStoryTransformer((originalStory) => ({
   render: (args, ctx) => {
     const argsObj = args as object;
     return (
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 'var(--ds-size-4)',
-        }}
-      >
-        <Label data-size="sm">Default</Label>
-        {originalStory.input.render?.(args, ctx)}
-        <Label data-size="sm">Hover</Label>
-        {originalStory.input.render?.({ ...argsObj, className: 'hover' }, ctx)}
-        <Label data-size="sm">Focused</Label>
-        {originalStory.input.render?.(
-          { ...argsObj, className: 'focusVisible' },
-          ctx,
-        )}
-      </div>
+      <>
+        <style>
+          {`
+.details-example-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+}`}
+        </style>
+        <div className="details-example-main">
+          <Label data-size="sm">Default</Label>
+          {originalStory.input.render?.(args, ctx)}
+          <Label data-size="sm">Hover</Label>
+          {originalStory.input.render?.(
+            { ...argsObj, className: 'hover' },
+            ctx,
+          )}
+          <Label data-size="sm">Focused</Label>
+          {originalStory.input.render?.(
+            { ...argsObj, className: 'focusVisible' },
+            ctx,
+          )}
+        </div>
+      </>
     );
   },
   args: originalStory.composed.args,

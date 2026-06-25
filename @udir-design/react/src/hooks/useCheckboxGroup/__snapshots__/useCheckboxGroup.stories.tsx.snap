@@ -1,6 +1,15 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Controlled 1`] = `
+<style>
+  .checkbox-group-controlled-section {
+  display: flex;
+  gap: var(--ds-size-2);
+}
+.checkbox-group-controlled-button {
+  width: fit-content;
+}
+</style>
 <fieldset aria-labelledby="<removed>">
   <legend
     data-weight="medium"
@@ -64,7 +73,7 @@ exports[`Controlled 1`] = `
   (Annet innhold)
 </p>
 <hr aria-hidden="true">
-<div style="<removed>">
+<div>
   <p data-variant="default">
     Viser innhold for:
   </p>
@@ -86,7 +95,6 @@ exports[`Controlled 1`] = `
 <button
   data-variant="secondary"
   type="button"
-  style="<removed>"
 >
   Tøm filtre
 </button>
@@ -282,10 +290,18 @@ exports[`Group 1`] = `
 `;
 
 exports[`Indeterminate In Table 1`] = `
+<style>
+  .checkbox-group-col-1 {
+          width: 1px;
+        }
+        .checkbox-group-col-2 {
+          width: 10em;
+        }
+</style>
 <table>
   <colgroup>
-    <col style="<removed>">
-    <col style="<removed>">
+    <col>
+    <col>
     <col>
   </colgroup>
   <thead>

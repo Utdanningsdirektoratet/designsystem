@@ -1,5 +1,4 @@
 import { Pagination, usePagination } from '@digdir/designsystemet-react';
-import type React from 'react';
 import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
@@ -158,23 +157,22 @@ export const ColumnAndRowHeaders = meta.story({
     <>
       <style>
         {`
-.example-caption {
+.table-column-and-row-headers-table-caption {
   font-size: var(--ds-font-size-3);
   caption-side: bottom;
   text-align: center;
   font-weight: normal;
   margin-top: var(--ds-size-2);
 }
-.example-table-body {
+.table-column-and-row-headers-table-body {
   text-align: right;
 }
-.example-table-body-headercell {
+.table-column-and-row-headers-table-headercell {
   text-align: left;
-}
-`}
+}`}
       </style>
       <Table {...args} data-color="accent">
-        <caption className="example-caption">
+        <caption className="table-column-and-row-headers-table-caption">
           Svarprosent for elevundersøkelsen nasjonalt
         </caption>
         <Table.Head>
@@ -185,11 +183,11 @@ export const ColumnAndRowHeaders = meta.story({
             <Table.HeaderCell scope="col">2024-25</Table.HeaderCell>
           </Table.Row>
         </Table.Head>
-        <Table.Body className="example-table-body">
+        <Table.Body className="table-column-and-row-headers-table-body">
           <Table.Row>
             <Table.HeaderCell
               scope="row"
-              className="example-table-body-headercell"
+              className="table-column-and-row-headers-table-headercell"
             >
               8. trinn
             </Table.HeaderCell>
@@ -200,7 +198,7 @@ export const ColumnAndRowHeaders = meta.story({
           <Table.Row>
             <Table.HeaderCell
               scope="row"
-              className="example-table-body-headercell"
+              className="table-column-and-row-headers-table-headercell"
             >
               9. trinn
             </Table.HeaderCell>
@@ -211,7 +209,7 @@ export const ColumnAndRowHeaders = meta.story({
           <Table.Row>
             <Table.HeaderCell
               scope="row"
-              className="example-table-body-headercell"
+              className="table-column-and-row-headers-table-headercell"
             >
               10. trinn
             </Table.HeaderCell>
@@ -222,7 +220,7 @@ export const ColumnAndRowHeaders = meta.story({
           <Table.Row>
             <Table.HeaderCell
               scope="row"
-              className="example-table-body-headercell"
+              className="table-column-and-row-headers-table-headercell"
             >
               Vg1
             </Table.HeaderCell>
@@ -233,7 +231,7 @@ export const ColumnAndRowHeaders = meta.story({
           <Table.Row>
             <Table.HeaderCell
               scope="row"
-              className="example-table-body-headercell"
+              className="table-column-and-row-headers-table-headercell"
             >
               Vg2
             </Table.HeaderCell>
@@ -244,7 +242,7 @@ export const ColumnAndRowHeaders = meta.story({
           <Table.Row>
             <Table.HeaderCell
               scope="row"
-              className="example-table-body-headercell"
+              className="table-column-and-row-headers-table-headercell"
             >
               Vg3
             </Table.HeaderCell>
@@ -422,28 +420,27 @@ export const StickyHeader = meta.story({
       <>
         <style>
           {`
-.example-heading {
+.table-sticky-header-heading {
   margin-bottom: var(--ds-size-3);
 }
-.example-main {
+.table-sticky-header-main {
   height: 420px;
   width: 580px;
   overflow: auto;
   padding: 0;
 }
-.example-table-body {
+.table-sticky-header-table-body {
   text-align: right;
 }
-.example-table-body-headercell {
+.table-sticky-header-table-headercell {
   text-align: left;
-}
-`}
+}`}
         </style>
-        <Heading className="example-heading">
+        <Heading className="table-sticky-header-heading">
           Ansattes utdanning fordelt på eiertype (ordinære), 2021
         </Heading>
         {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- scrollable region needs tabIndex for keyboard access */}
-        <div role="region" tabIndex={0} className="example-main">
+        <div role="region" tabIndex={0} className="table-sticky-header-main">
           <Table {...args}>
             <caption className="ds-sr-only">
               Ansattes utdanning fordelt på eiertype (ordinære), 2021
@@ -460,11 +457,11 @@ export const StickyHeader = meta.story({
                 <Table.HeaderCell>Totalt</Table.HeaderCell>
               </Table.Row>
             </Table.Head>
-            <Table.Body className="example-table-body">
+            <Table.Body className="table-sticky-header-table-body">
               <Table.Row>
                 <Table.HeaderCell
                   scope="row"
-                  className="example-table-body-headercell"
+                  className="table-sticky-header-table-headercell"
                 >
                   Barnehagelærer
                 </Table.HeaderCell>
@@ -477,7 +474,7 @@ export const StickyHeader = meta.story({
               <Table.Row>
                 <Table.HeaderCell
                   scope="row"
-                  className="example-table-body-headercell"
+                  className="table-sticky-header-table-headercell"
                 >
                   Annen pedagogisk utdanning
                 </Table.HeaderCell>
@@ -490,7 +487,7 @@ export const StickyHeader = meta.story({
               <Table.Row>
                 <Table.HeaderCell
                   scope="row"
-                  className="example-table-body-headercell"
+                  className="table-sticky-header-table-headercell"
                 >
                   Annen høyere utdanning
                 </Table.HeaderCell>
@@ -503,7 +500,7 @@ export const StickyHeader = meta.story({
               <Table.Row>
                 <Table.HeaderCell
                   scope="row"
-                  className="example-table-body-headercell"
+                  className="table-sticky-header-table-headercell"
                 >
                   Barne- og ungdomsarbeider
                 </Table.HeaderCell>
@@ -516,7 +513,7 @@ export const StickyHeader = meta.story({
               <Table.Row>
                 <Table.HeaderCell
                   scope="row"
-                  className="example-table-body-headercell"
+                  className="table-sticky-header-table-headercell"
                 >
                   Annet fagarbeider
                 </Table.HeaderCell>
@@ -529,7 +526,7 @@ export const StickyHeader = meta.story({
               <Table.Row>
                 <Table.HeaderCell
                   scope="row"
-                  className="example-table-body-headercell"
+                  className="table-sticky-header-table-headercell"
                 >
                   Annen bakgrunn
                 </Table.HeaderCell>
@@ -558,19 +555,17 @@ export const WithFormElements = meta.story({
       <>
         <style>
           {`
-.example-main {
-  height: 420px;
-  width: 580px;
-  overflow: auto;
-  padding: 0;
+.table-with-form-elements-table-body {
+  align-content: start;
+  justify-content: center;
+  align-items: center;
 }
-.example-table-body-cell {
+.table-with-form-elements-table-cell {
   min-width: 200px;
 }
-.example-textfield {
+.table-with-form-elements-textfield {
   min-width: 250px;
-}
-`}
+}`}
         </style>
         <Table {...args}>
           <Table.Head>
@@ -590,7 +585,7 @@ export const WithFormElements = meta.story({
               <Table.HeaderCell>Alternativ 2</Table.HeaderCell>
             </Table.Row>
           </Table.Head>
-          <Table.Body className="example-table-body">
+          <Table.Body className="table-with-form-elements-table-body">
             <Table.Row>
               <Table.Cell>
                 <Checkbox
@@ -602,7 +597,7 @@ export const WithFormElements = meta.story({
                 />
               </Table.Cell>
               <Table.Cell>1.</Table.Cell>
-              <Table.Cell className="example-table-body-cell">
+              <Table.Cell className="table-with-form-elements-table-cell">
                 <Textfield
                   data-size="sm"
                   value="Trives du på skolen?"
@@ -610,7 +605,7 @@ export const WithFormElements = meta.story({
                   autoComplete="off"
                 />
               </Table.Cell>
-              <Table.Cell className="example-table-body-cell">
+              <Table.Cell className="table-with-form-elements-table-cell">
                 <Textfield
                   data-size="sm"
                   value="Trives ikke noe særlig"
@@ -618,7 +613,7 @@ export const WithFormElements = meta.story({
                   autoComplete="off"
                 />
               </Table.Cell>
-              <Table.Cell className="example-table-body-cell">
+              <Table.Cell className="table-with-form-elements-table-cell">
                 <Textfield
                   value="Trives godt"
                   data-size="sm"
@@ -644,7 +639,7 @@ export const WithFormElements = meta.story({
                   value="Har du opplevd mobbing?"
                   aria-label={`Textfield 2-1`}
                   autoComplete="off"
-                  className="example-textfield"
+                  className="table-with-form-elements-textfield"
                 />
               </Table.Cell>
               <Table.Cell>
@@ -776,25 +771,15 @@ export const FixedTable = meta.story({
       <>
         <style>
           {`
-.example-main {
-  height: 420px;
-  width: 580px;
-  overflow: auto;
-  padding: 0;
-}
-.example-table {
+.table-fixed-table {
   table-layout: fixed;
   margin-bottom: 12px;
 }
-.example-table-body-cell {
-  font-feature-settings: "'tnum' 1",
-}
-.example-textfield {
-  min-width: 250px;
-}
-`}
+.table-fixed-table-cell {
+  font-feature-settings: "tnum" 1;
+}`}
         </style>
-        <Table {...args} id="myTable" className="example-table">
+        <Table {...args} id="myTable" className="table-fixed-table">
           <caption>Tildeling skolebibliotek 2024</caption>
           <Table.Head>
             <Table.Row>
@@ -806,7 +791,7 @@ export const FixedTable = meta.story({
             {currentItems.map((item) => (
               <Table.Row key={item.id}>
                 <Table.Cell>{item.kommune}</Table.Cell>
-                <Table.Cell className="example-table-body-cell">
+                <Table.Cell className="table-fixed-table-cell">
                   {item.tildeling}
                 </Table.Cell>
               </Table.Row>
@@ -861,16 +846,15 @@ export const MultipleHeaderRows = meta.story({
       <>
         <style>
           {`
-.example-table-head-headercell {
+.table-multiple-header-rows-table-head-headercell {
   text-align: center;
 }
-.example-table-body {
+.table-multiple-header-rows-table-body {
   text-align: right;
 }
-.example-table-body-headercell {
+.table-multiple-header-rows-table-body-headercell {
   text-align: left;
-}
-`}
+}`}
         </style>
         <Table {...args}>
           <Table.Head>
@@ -880,7 +864,7 @@ export const MultipleHeaderRows = meta.story({
               </Table.HeaderCell>
               <Table.HeaderCell
                 colSpan={5}
-                className="example-table-head-headercell"
+                className="table-multiple-header-rows-table-head-headercell"
               >
                 Trives du på skolen?
               </Table.HeaderCell>
@@ -896,11 +880,11 @@ export const MultipleHeaderRows = meta.story({
               <Table.HeaderCell>Trives svært godt</Table.HeaderCell>
             </Table.Row>
           </Table.Head>
-          <Table.Body className="example-table-body">
+          <Table.Body className="table-multiple-header-rows-table-body">
             <Table.Row>
               <Table.HeaderCell
                 scope={'row'}
-                className="example-table-body-headercell"
+                className="table-multiple-header-rows-table-body-headercell"
               >
                 Idrettsfag
               </Table.HeaderCell>
@@ -913,7 +897,7 @@ export const MultipleHeaderRows = meta.story({
             <Table.Row>
               <Table.HeaderCell
                 scope={'row'}
-                className="example-table-body-headercell"
+                className="table-multiple-header-rows-table-body-headercell"
               >
                 Medier og kommunikasjon
               </Table.HeaderCell>
@@ -926,7 +910,7 @@ export const MultipleHeaderRows = meta.story({
             <Table.Row>
               <Table.HeaderCell
                 scope={'row'}
-                className="example-table-body-headercell"
+                className="table-multiple-header-rows-table-body-headercell"
               >
                 Musikk, dans og drama
               </Table.HeaderCell>
@@ -939,7 +923,7 @@ export const MultipleHeaderRows = meta.story({
             <Table.Row>
               <Table.HeaderCell
                 scope={'row'}
-                className="example-table-body-headercell"
+                className="table-multiple-header-rows-table-body-headercell"
               >
                 Studiespesialisering
               </Table.HeaderCell>
