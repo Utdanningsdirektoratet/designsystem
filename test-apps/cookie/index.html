@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="nb">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookie Banner</title>
+    <link
+      rel="preload stylesheet"
+      as="style"
+      href="https://altinncdn.no/fonts/inter/v4/inter.css"
+    />
+    <!-- Utdanningsdirektoratet Design System (served from node_modules via Express).
+         1) Udir design tokens, 2) Digdir base component styles, 3) Udir overrides. -->
+    <link rel="stylesheet" href="/css/theme/dist/index.css" />
+    <link rel="stylesheet" href="/css/digdir/dist/src/index.css" />
+    <link rel="stylesheet" href="/css/udir/dist/components.css" />
+    <link rel="stylesheet" href="/css/udir/dist/icons.css" />
+    <!-- Your custom styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script>
+      // Stub API — stands in for the real CookieInformation backend
+      window.CookieInformation = {
+        submitAllCategories: function () {
+          hideCookieBanner();
+        },
+        submitConsent: function () {
+          hideCookieBanner();
+        },
+        declineAllCategories: function () {
+          hideCookieBanner();
+        },
+        changeCategoryConsentDecision: function (name) {
+          console.log('Toggle:', name);
+        },
+        getConsentGivenFor: function () {
+          return false;
+        },
+      };
+      window.CookieConsent = {
+        renew: function () {
+          showCookieBanner();
+        },
+      };
+      // Show the banner once the page and script.js have fully loaded
+      window.addEventListener('load', function () {
+        showCookieBanner();
+      });
+    </script>
+
+    <!-- Main cookie consent dialog -->
+    <dialog
+      class="ds-dialog"
+      data-placement="center"
+      data-modal="true"
+      id="cookie-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Cookie Information"
+      data-testid="coi-banner__wrapper"
+      lang="{{language}}"
+    >
+      <button
+        class="ds-button"
+        data-variant="tertiary"
+        data-color="neutral"
+        type="button"
+        aria-label="Lukk dialogvindu"
+        id="cookie-dialog-close"
+        data-icon="true"
+        command="close"
+        onclick="CookieInformation.declineAllCategories()"
+      ></button>
+      <div class="uds-prose">
+        <h2 class="ds-heading" id="cookie-dialog-heading">
+          {{{banner_heading}}}
+        </h2>
+        <p class="ds-paragraph">{{{banner_main_text}}}</p>
+        <fieldset class="ds-fieldset" autocomplete="off">
+          <legend class="ds-label" data-weight="medium">
+            Velg hvilke informasjonskapsler du godtar
+          </legend>
+          {{#each cookie_categories}} {{#unless this.is_unclassified}} {{#if
+          this.is_necessary}}
+          <ds-field
+            class="ds-field"
+            data-clickdelegatefor="{{this.cookie_type_label}}"
+          >
+            <input
+              class="ds-input coi__checkbox"
+              type="checkbox"
+              id="{{this.cookie_type_label}}"
+              name="{{this.cookie_type_label}}"
+              data-testid="coi-banner__checkbox--{{this.cookie_type_label}}"
+              checked
+              onclick="return false;"
+            />
+            <label
+              class="ds-label"
+              data-weight="regular"
+              for="{{this.cookie_type_label}}"
+            >
+              {{{this.cookie_type_name}}} (kan ikke velges bort)
+            </label>
+          </ds-field>
+          {{/if}} {{#if this.cookie_type_count}} {{#unless this.is_necessary}}
+          {{#unless this.is_unclassified}}
+          <ds-field
+            class="ds-field"
+            data-clickdelegatefor="{{this.cookie_type_label}}"
+          >
+            <input
+              class="ds-input coi__checkbox"
+              type="checkbox"
+              id="{{this.cookie_type_label}}"
+              name="{{this.cookie_type_label}}"
+              data-testid="coi-banner__checkbox--{{this.cookie_type_label}}"
+              onclick="CookieInformation.changeCategoryConsentDecision('{{this.cookie_type_label}}')"
+            />
+            <label
+              class="ds-label"
+              data-weight="regular"
+              for="{{this.cookie_type_label}}"
+            >
+              {{{this.cookie_type_name}}}
+            </label>
+          </ds-field>
+          {{/unless}} {{/unless}} {{/if}} {{/unless}} {{/each}}
+        </fieldset>
+        <button
+          class="ds-button cookie-details-trigger"
+          data-variant="tertiary"
+          type="button"
+          id="cookie-details-trigger"
+        >
+          Se hvilke informasjonskapsler vi bruker
+        </button>
+      </div>
+
+      <div class="cookies-buttons">
+        <button
+          class="ds-button"
+          data-variant="secondary"
+          data-size="md"
+          type="button"
+          id="btn-accept-all"
+          data-testid="coi-banner__accept-all-categories-button"
+          onclick="CookieInformation.submitAllCategories()"
+        >
+          {{accept_cookies_button}}
+        </button>
+        <button
+          class="ds-button"
+          data-variant="secondary"
+          data-size="md"
+          type="button"
+          id="btn-accept-selected"
+          data-testid="coi-banner__update-categories-button"
+          onclick="CookieInformation.submitConsent()"
+        >
+          {{{translations.update_consent_button}}}
+        </button>
+        <button
+          class="ds-button"
+          data-variant="secondary"
+          data-size="md"
+          type="button"
+          id="btn-decline"
+          data-testid="coi-banner__decline-all-categories-button"
+          onclick="CookieInformation.declineAllCategories()"
+        >
+          {{{decline_cookies_button}}}
+        </button>
+      </div>
+    </dialog>
+
+    <!-- Cookie details dialog -->
+    <dialog
+      class="ds-dialog"
+      data-placement="center"
+      data-modal="true"
+      id="cookie-details-dialog"
+      role="dialog"
+      aria-modal="true"
+    >
+      <button
+        class="ds-button"
+        data-variant="tertiary"
+        data-color="neutral"
+        type="button"
+        aria-label="Lukk dialogvindu"
+        id="cookie-details-close"
+        command="close"
+        commandfor="cookie-details-dialog"
+        data-icon="true"
+      ></button>
+      <div class="uds-prose" id="cookie-details-content">
+        <h2 class="ds-heading">{{{translations.cookies_overview}}}</h2>
+
+        {{#each cookie_categories}} {{#if this.cookie_type_count}}
+        <div class="cookies-category">
+          <div class="uds-prose">
+            <h3 class="ds-heading" data-size="xs">
+              {{{this.cookie_type_name}}}
+            </h3>
+            <p class="ds-paragraph">{{{this.cookie_type_description}}}</p>
+
+            <details class="ds-details" data-variant="default">
+              <summary>
+                {{this.cookie_type_count}} {{lowercase this.cookie_type_name}}
+              </summary>
+              <div class="uds-prose">
+                {{#each this.cookie_type_results}}
+                <div class="uds-prose">
+                  <h4 class="ds-heading" data-size="2xs">{{sum @index 1}}</h4>
+                  <ul class="cookies-details">
+                    <li>
+                      <strong>Leverandør: </strong
+                      >{{{this.data_processor_name}}}
+                    </li>
+                    <li><strong>Formål: </strong>{{{this.description}}}</li>
+                    <li><strong>Navn: </strong>{{{this.name}}}</li>
+                    <li><strong>Utløpstid: </strong>{{{this.expiration}}}</li>
+                    {{#if this.data_processor_privacy_policy}}
+                    <li>
+                      <strong>Personvernerklæring: </strong
+                      ><a
+                        class="ds-link"
+                        href="{{{this.data_processor_privacy_policy}}}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-testid="coi-banner__cookie-details__privacy-policy-link"
+                        >Se personvernerklæring</a
+                      >
+                    </li>
+                    {{/if}}
+                  </ul>
+                </div>
+                {{/each}}
+              </div>
+            </details>
+          </div>
+        </div>
+        {{/if}} {{/each}}
+      </div>
+    </dialog>
+
+    <!-- Renew consent button (shown after banner is closed) -->
+    <button
+      type="button"
+      id="Coi-Renew"
+      class="ds-button"
+      data-variant="tertiary"
+      data-size="sm"
+      aria-label="Endre samtykke for informasjonskapsler"
+      data-testid="coi-banner__renew-consent-button"
+      onclick="CookieConsent.renew()"
+      style="
+        display: none;
+        position: fixed;
+        bottom: var(--ds-size-4);
+        left: var(--ds-size-4);
+        z-index: 1000;
+      "
+    >
+      Endre samtykke
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>

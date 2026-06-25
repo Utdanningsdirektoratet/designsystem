@@ -1,0 +1,213 @@
+import { Table } from '@udir-design/react/beta';
+import { Unstyled } from '@storybook/addon-docs/blocks';
+import { CopyButton } from '.storybook/docs/components';
+import exampleData from './exampleData.json';
+
+export const cookieCategories = Object.fromEntries(
+  exampleData.categories.map((category) => [category.id, category]),
+);
+
+# Bruk av Cookie Information
+
+Udir har avtale med [Cookie Information](https://cookieinformation.com/) som leverandør av løsninger for håndtering av informasjonskapsler. Tjenester som bruker informasjonskapsler kan bruke Cookie Information som teknisk løsning for å håndtere samtykke til informasjonskapsler. [Kontakt ansvarlig for Cookie Information](https://systemoversikten.udir.no/systemer/S293/detaljer) for å komme i gang.
+
+Cookie Information tilbyr ikke tilgangsstyring. Oppsettet gjøres derfor i samarbeid med ansvarlig for Cookie Information. Sørg for å tilpasse teksten til tjenesten din på forhånd. Se nærmere beskrivelse av oppsettet under.
+
+## Oppsett
+
+I dashbordet til Cookie Information velger du "Udir Design Informasjonskapsler" som designmal for tjenesten din. Dette sikrer at tjenesten følger føringene for visuell utforming av valg for informasjonskapsler som er beskrevet i [Informasjonskapsler](https://designsystem.udir.no/patterns/informasjonskapsler).
+
+Under "Copy and translations" i dashbordet finner du tekst for samtykke til informasjonskapsler som kan brukes i tjenesten. Teksten bør tilpasses tjenesten din, og kvalitetssikres av internjuridisk. Under følger hvilke felter som må fylles ut, med eksempler på innhold. Felter som ikke er listet opp her brukes ikke i malen.
+
+<Unstyled>
+  <Table
+    border
+    tintedColumnHeader
+    tintedRowHeader
+    style={{ maxWidth: '40rem' }}
+  >
+    <caption className="ds-sr-only">
+      Tekster for Cookie Information-oppsett
+    </caption>
+    <Table.Body>
+      <Table.Row>
+        <Table.HeaderCell
+          scope="colgroup"
+          colSpan={3}
+          style={{
+            textAlign: 'center',
+            backgroundColor: 'var(--ds-color-surface-tinted)',
+          }}
+        >
+          Consent popup
+        </Table.HeaderCell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Headline</Table.HeaderCell>
+        <Table.Cell>{exampleData.heading}</Table.Cell>
+        <Table.Cell>
+          <CopyButton text={exampleData.heading} />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Consent popup text</Table.HeaderCell>
+        <Table.Cell>{exampleData.body}</Table.Cell>
+        <Table.Cell>
+          <CopyButton text={exampleData.body} />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Accept button</Table.HeaderCell>
+        <Table.Cell>{exampleData.labels.acceptAll}</Table.Cell>
+        <Table.Cell>
+          <CopyButton text={exampleData.labels.acceptAll} />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Decline button</Table.HeaderCell>
+        <Table.Cell>{exampleData.labels.declineOptional}</Table.Cell>
+        <Table.Cell>
+          <CopyButton text={exampleData.labels.declineOptional} />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell
+          scope="colgroup"
+          colSpan={3}
+          style={{
+            textAlign: 'center',
+            backgroundColor: 'var(--ds-color-surface-tinted)',
+          }}
+        >
+          Cookie Policy
+        </Table.HeaderCell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Headline</Table.HeaderCell>
+        <Table.Cell>
+          {exampleData.labels.overview}
+        </Table.Cell>
+        <Table.Cell>
+          <CopyButton
+            text={exampleData.labels.overview}
+          />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">
+          Save current setting button text
+        </Table.HeaderCell>
+        <Table.Cell>
+          {exampleData.labels.acceptSelected}
+        </Table.Cell>
+        <Table.Cell>
+          <CopyButton
+            text={exampleData.labels.acceptSelected}
+          />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell
+          scope="colgroup"
+          colSpan={3}
+          style={{
+            textAlign: 'center',
+            backgroundColor: 'var(--ds-color-surface-tinted)',
+          }}
+        >
+          Tracking categories
+        </Table.HeaderCell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">
+          {cookieCategories.necessary.name}
+        </Table.HeaderCell>
+        <Table.Cell>
+          {cookieCategories.necessary.description}
+        </Table.Cell>
+        <Table.Cell>
+          <CopyButton
+            text={
+              cookieCategories.necessary.description
+            }
+          />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">
+          {cookieCategories.functional.name}
+        </Table.HeaderCell>
+        <Table.Cell>
+          {cookieCategories.functional.description}
+        </Table.Cell>
+        <Table.Cell>
+          <CopyButton
+            text={
+              cookieCategories.functional.description
+            }
+          />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">
+          {cookieCategories.statistical.name}
+        </Table.HeaderCell>
+        <Table.Cell>
+          {cookieCategories.statistical.description}
+        </Table.Cell>
+        <Table.Cell>
+          <CopyButton
+            text={cookieCategories.statistical.description}
+          />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">
+          {cookieCategories.marketing.name}
+        </Table.HeaderCell>
+        <Table.Cell>
+          {cookieCategories.marketing.description}
+        </Table.Cell>
+        <Table.Cell>
+          <CopyButton
+            text={cookieCategories.marketing.description}
+          />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">
+          {cookieCategories.unclassified.name}
+        </Table.HeaderCell>
+        <Table.Cell>
+          {cookieCategories.unclassified.description}
+        </Table.Cell>
+        <Table.Cell>
+          <CopyButton
+            text={
+              cookieCategories.unclassified.description
+            }
+          />
+        </Table.Cell>
+      </Table.Row>
+    </Table.Body>
+
+  </Table>
+</Unstyled>
+
+## Installere i tjenesten
+
+1. Kopier koden nedenfor.
+
+```
+<script
+  id="CookieConsent"
+  src="https://policy.app.cookieinformation.com/uc.js"
+  data-culture="NB"
+  data-gcm-version="2.0"
+  type="text/javascript"
+></script>
+```
+
+2. Lim inn koden i `<head>`-taggen i HTML-filen for tjenesten din.
+
+Samtykkehåndteringen vil dukke opp på siden din innen 10 minutter.
