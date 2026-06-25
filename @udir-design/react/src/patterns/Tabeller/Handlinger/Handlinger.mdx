@@ -9,8 +9,6 @@ import * as HandlingerStories from './Handlinger.stories';
 
 Handlinger i tabeller lar brukere utføre oppgaver knyttet til én eller flere rader, for eksempel å åpne, redigere, eksportere eller slette innhold. Hvordan handlingene vises, bør avhenge av hvor ofte de brukes, hvor mange som er tilgjengelige, og hvilke konsekvenser de har. Et godt bruksmønster gjør handlingene enkle å finne og forstå uten at tabellen blir uoversiktlig.
 
-<Canvas of={HandlingerStories.Preview} />
-
 ## Handlinger for én rad
 
 Vanlige eller viktige handlinger som gjelder én rad, kan vises direkte i raden. Dette kan for eksempel være «Åpne», «Rediger» eller «Slett». Det bør helst ikke vises mer enn én eller to handlinger direkte, siden mange knapper kan gjøre tabellen uoversiktlig. Handlingene bør plasseres samlet helt til høyre i raden.
@@ -43,3 +41,19 @@ Handlingslinjen bør vise:
 Avkrysningsboksen i tabellhodet bør velge alle synlige rader på den aktuelle siden. Dersom tabellen er paginert og brukeren kan velge alle resultater på tvers av sider, bør dette kommuniseres tydelig:
 
 > Alle de 25 radene på denne siden er valgt. Velg alle de 340 resultatene.
+
+# Eksempler
+
+Handlinger kan vises på ulike måter, avhengig av hvor mange handlinger som er tilgjengelige, hvor ofte de brukes, og hvor mye plass som er tilgjengelig.
+
+## Verktøylinje med tekst og ikoner
+
+I det første eksempelet vises handlingene med tekst og ikoner i en verktøylinje over tabellen. Dette gjør dem enkle å oppdage og forstå, og passer godt når det er god plass, eller når handlingene er viktige og brukes ofte. Destruktive handlinger, som «Slett», kan skilles tydelig fra de øvrige handlingene.
+
+<Canvas of={HandlingerStories.Preview} />
+
+## Kompakt verktøylinje
+
+I det andre eksempelet samles handlingene i en kompakt verktøylinje. Denne løsningen tar mindre plass og passer godt når det finnes få handlinger. Ikonbaserte handlinger kan imidlertid være vanskeligere å forstå, og bør derfor ha tydelige tilgjengelige navn og eventuelt en tooltip. Mindre brukte handlinger kan plasseres i en meny med tre prikker.
+
+<Canvas of={HandlingerStories.WithActionCard} />
