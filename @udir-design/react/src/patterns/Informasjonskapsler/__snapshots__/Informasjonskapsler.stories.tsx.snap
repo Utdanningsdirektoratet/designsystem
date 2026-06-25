@@ -146,14 +146,23 @@ exports[`Preview 1`] = `
               <p data-variant="default">
                 Nødvendige informasjonskapsler hjelper med å gjøre en hjemmeside brukbar ved å aktivere grunnleggende funksjoner, slik som side-navigasjon og tilgang til sikre områder av hjemmesiden. Hjemmesiden kan ikke fungere optimalt uten disse informasjonskapslene.
               </p>
-              <div>
-                <details data-variant="default">
-                  <summary>
-                    Cookie Information
-                  </summary>
+              <details data-variant="default">
+                <summary>
+                  3 nødvendige
+                </summary>
+                <div>
                   <div>
                     <div>
+                      <h4 data-size="2xs">
+                        1
+                      </h4>
                       <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Cookie Information
+                        </li>
                         <li>
                           <strong>
                             Formål:
@@ -174,12 +183,6 @@ exports[`Preview 1`] = `
                         </li>
                         <li>
                           <strong>
-                            Leverandør:
-                          </strong>
-                          Cookie Information
-                        </li>
-                        <li>
-                          <strong>
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/cookie-information/privacy">
@@ -188,18 +191,17 @@ exports[`Preview 1`] = `
                         </li>
                       </ul>
                     </div>
-                  </div>
-                </details>
-                <details data-variant="default">
-                  <summary>
-                    Cloudflare
-                  </summary>
-                  <div>
                     <div>
                       <h4 data-size="2xs">
-                        1
+                        2
                       </h4>
                       <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Cloudflare
+                        </li>
                         <li>
                           <strong>
                             Formål:
@@ -220,12 +222,6 @@ exports[`Preview 1`] = `
                         </li>
                         <li>
                           <strong>
-                            Leverandør:
-                          </strong>
-                          Cloudflare
-                        </li>
-                        <li>
-                          <strong>
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/cloudflare/privacy">
@@ -233,10 +229,18 @@ exports[`Preview 1`] = `
                           </a>
                         </li>
                       </ul>
+                    </div>
+                    <div>
                       <h4 data-size="2xs">
-                        2
+                        3
                       </h4>
                       <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Cloudflare
+                        </li>
                         <li>
                           <strong>
                             Formål:
@@ -257,12 +261,6 @@ exports[`Preview 1`] = `
                         </li>
                         <li>
                           <strong>
-                            Leverandør:
-                          </strong>
-                          Cloudflare
-                        </li>
-                        <li>
-                          <strong>
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/cloudflare/privacy">
@@ -272,8 +270,8 @@ exports[`Preview 1`] = `
                       </ul>
                     </div>
                   </div>
-                </details>
-              </div>
+                </div>
+              </details>
             </div>
           </div>
           <div>
@@ -284,14 +282,23 @@ exports[`Preview 1`] = `
               <p data-variant="default">
                 Funksjonelle informasjonskapsler gjør det mulig å lagre opplysninger som endrer måten hjemmesiden ser ut eller oppfører seg på. F.eks. ditt foretrukne språk eller den regionen du befinner deg i.
               </p>
-              <div>
-                <details data-variant="default">
-                  <summary>
-                    Optimizely
-                  </summary>
+              <details data-variant="default">
+                <summary>
+                  1 funksjonelle
+                </summary>
+                <div>
                   <div>
                     <div>
+                      <h4 data-size="2xs">
+                        1
+                      </h4>
                       <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Optimizely
+                        </li>
                         <li>
                           <strong>
                             Formål:
@@ -312,12 +319,6 @@ exports[`Preview 1`] = `
                         </li>
                         <li>
                           <strong>
-                            Leverandør:
-                          </strong>
-                          Optimizely
-                        </li>
-                        <li>
-                          <strong>
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/optimizely/privacy">
@@ -327,8 +328,8 @@ exports[`Preview 1`] = `
                       </ul>
                     </div>
                   </div>
-                </details>
-              </div>
+                </div>
+              </details>
             </div>
           </div>
           <div>
@@ -339,17 +340,23 @@ exports[`Preview 1`] = `
               <p data-variant="default">
                 Statistiske informasjonskapsler hjelper hjemmesidens eier med å forstå hvordan besøkende samhandler med hjemmesiden ved å samle inn og rapportere opplysninger.
               </p>
-              <div>
-                <details data-variant="default">
-                  <summary>
-                    Google Analytics
-                  </summary>
+              <details data-variant="default">
+                <summary>
+                  5 statistiske
+                </summary>
+                <div>
                   <div>
                     <div>
                       <h4 data-size="2xs">
                         1
                       </h4>
                       <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Google Analytics
+                        </li>
                         <li>
                           <strong>
                             Formål:
@@ -370,12 +377,6 @@ exports[`Preview 1`] = `
                         </li>
                         <li>
                           <strong>
-                            Leverandør:
-                          </strong>
-                          Google Analytics
-                        </li>
-                        <li>
-                          <strong>
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/google/privacy">
@@ -383,10 +384,18 @@ exports[`Preview 1`] = `
                           </a>
                         </li>
                       </ul>
+                    </div>
+                    <div>
                       <h4 data-size="2xs">
                         2
                       </h4>
                       <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Google Analytics
+                        </li>
                         <li>
                           <strong>
                             Formål:
@@ -407,12 +416,6 @@ exports[`Preview 1`] = `
                         </li>
                         <li>
                           <strong>
-                            Leverandør:
-                          </strong>
-                          Google Analytics
-                        </li>
-                        <li>
-                          <strong>
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/google/privacy">
@@ -420,10 +423,18 @@ exports[`Preview 1`] = `
                           </a>
                         </li>
                       </ul>
+                    </div>
+                    <div>
                       <h4 data-size="2xs">
                         3
                       </h4>
                       <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Google Analytics
+                        </li>
                         <li>
                           <strong>
                             Formål:
@@ -444,12 +455,6 @@ exports[`Preview 1`] = `
                         </li>
                         <li>
                           <strong>
-                            Leverandør:
-                          </strong>
-                          Google Analytics
-                        </li>
-                        <li>
-                          <strong>
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/google/privacy">
@@ -458,15 +463,17 @@ exports[`Preview 1`] = `
                         </li>
                       </ul>
                     </div>
-                  </div>
-                </details>
-                <details data-variant="default">
-                  <summary>
-                    Siteimprove
-                  </summary>
-                  <div>
                     <div>
+                      <h4 data-size="2xs">
+                        4
+                      </h4>
                       <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Siteimprove
+                        </li>
                         <li>
                           <strong>
                             Formål:
@@ -487,12 +494,6 @@ exports[`Preview 1`] = `
                         </li>
                         <li>
                           <strong>
-                            Leverandør:
-                          </strong>
-                          Siteimprove
-                        </li>
-                        <li>
-                          <strong>
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/siteimprove/privacy">
@@ -501,15 +502,17 @@ exports[`Preview 1`] = `
                         </li>
                       </ul>
                     </div>
-                  </div>
-                </details>
-                <details data-variant="default">
-                  <summary>
-                    Microsoft Azure
-                  </summary>
-                  <div>
                     <div>
+                      <h4 data-size="2xs">
+                        5
+                      </h4>
                       <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Microsoft Azure
+                        </li>
                         <li>
                           <strong>
                             Formål:
@@ -530,12 +533,6 @@ exports[`Preview 1`] = `
                         </li>
                         <li>
                           <strong>
-                            Leverandør:
-                          </strong>
-                          Microsoft Azure
-                        </li>
-                        <li>
-                          <strong>
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/microsoft/privacy">
@@ -545,8 +542,8 @@ exports[`Preview 1`] = `
                       </ul>
                     </div>
                   </div>
-                </details>
-              </div>
+                </div>
+              </details>
             </div>
           </div>
         </div>
