@@ -1,0 +1,43 @@
+/**
+ * Cookie banner — layout overrides
+ * Visual styling is handled by the design system CSS classes (.ds-dialog, .ds-button, etc.)
+ * loaded from node_modules. Only layout/spacing rules that the DS doesn't cover are defined here.
+ */
+
+body {
+  font-family: var(--ds-font-family);
+}
+
+/* Button group layout (matching Informasjonskapsler.stories.tsx) */
+.cookies-buttons {
+  display: flex;
+  gap: var(--ds-size-4);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 40rem) {
+  .cookies-buttons > button {
+    flex: 1 1 auto;
+  }
+}
+
+/* Icon on cookie details trigger (uses CSS variable from @udir-design/css) */
+.cookie-details-trigger::before {
+  content: '';
+  width: 1.3em;
+  height: 1.3em;
+  flex-shrink: 0;
+  background: currentColor;
+  mask: center / 100% no-repeat var(--uds-icon-informationSquareFill);
+}
+
+/* Cookie details: bold labels for each field */
+.cookies-details > span {
+  font-weight: 600;
+}
+
+/* Body no-scroll when dialog is open (native <dialog> with ::backdrop handles overlay) */
+html.no-scroll,
+html.no-scroll body {
+  overflow: hidden;
+}
