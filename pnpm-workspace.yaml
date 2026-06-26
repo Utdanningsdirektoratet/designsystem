@@ -30,14 +30,14 @@ catalog:
   '@eslint/js': ^9.39.4
   '@figma/rest-api-spec': ^0.37.0
   '@hookform/resolvers': ^5.4.0
-  '@navikt/aksel-icons': ^8.12.1
+  '@navikt/aksel-icons': ^8.13.1
   '@next/eslint-plugin-next': ^16.2.9
-  '@radix-ui/react-slot': ^1.2.5
-  '@storybook/addon-a11y': ^10.4.5
-  '@storybook/addon-docs': ^10.4.5
-  '@storybook/addon-vitest': ^10.4.5
+  '@radix-ui/react-slot': ^1.3.0
+  '@storybook/addon-a11y': ^10.4.6
+  '@storybook/addon-docs': ^10.4.6
+  '@storybook/addon-vitest': ^10.4.6
   '@storybook/icons': ^2.0.2
-  '@storybook/react-vite': ^10.4.5
+  '@storybook/react-vite': ^10.4.6
   '@svgr/cli': 8.1.0
   '@svgr/core': ^8.1.0
   '@testing-library/react': ^16.3.2
@@ -50,8 +50,8 @@ catalog:
   '@types/react-dom': ^19.2.3
   '@types/remark-heading-id': ^1.0.0
   '@types/yargs': ^17.0.35
-  '@typescript-eslint/eslint-plugin': ^8.61.0
-  '@typescript-eslint/parser': ^8.61.0
+  '@typescript-eslint/eslint-plugin': ^8.62.0
+  '@typescript-eslint/parser': ^8.62.0
   '@typescript/native-preview': 7.0.0-dev.20260527.1
   '@u-elements/u-details': ^1.0.0
   '@u-elements/u-progress': ^1.0.1
@@ -60,11 +60,11 @@ catalog:
   '@vitest/browser-playwright': ^4.1.9
   '@vitest/coverage-v8': ^4.1.9
   '@vitest/ui': ^4.1.9
-  autoprefixer: ^10.5.0
+  autoprefixer: ^10.5.2
   axe-core: ^4.12.1
   axe-playwright: ^2.2.2
   camelcase: ^9.0.0
-  chromatic: ^17.4.1
+  chromatic: ^17.6.0
   clsx: 2.1.1
   cssnano: ^7.1.9
   diffable-html: ^6.0.1
@@ -75,7 +75,7 @@ catalog:
   eslint-plugin-jsx-a11y: ^6.10.2
   eslint-plugin-react: ^7.37.5
   eslint-plugin-react-hooks: ^7.1.1
-  eslint-plugin-storybook: ^10.4.5
+  eslint-plugin-storybook: ^10.4.6
   fast-glob: ^3.3.3
   fuse.js: ^7.4.2
   hast-util-from-html: ^2.0.3
@@ -90,7 +90,7 @@ catalog:
   madge: ^8.0.0
   mdast-util-to-hast: ^13.2.1
   next: ^16.2.9
-  playwright: ^1.61.0
+  playwright: ^1.61.1
   postcss: ^8.5.15
   postcss-cli: ^11.0.1
   postcss-easy-import: ^4.0.0
@@ -101,8 +101,8 @@ catalog:
   react: ^19.2.7
   react-dom: ^19.2.7
   react-dropzone: ^15.0.0
-  react-hook-form: ^7.79.0
-  react-router-dom: ^7.17.0
+  react-hook-form: ^7.80.0
+  react-router-dom: ^7.18.0
   react-style-stringify: ^1.2.0
   remark-gfm: ^4.0.1
   remark-heading-id: ^1.0.1
@@ -112,27 +112,27 @@ catalog:
   sass: ^1.101.0
   sharp: ^0.34.5
   shx: ^0.4.0
-  storybook: ^10.4.5
-  storybook-addon-pseudo-states: ^10.4.5
-  style-dictionary: ^5.4.4
+  storybook: ^10.4.6
+  storybook-addon-pseudo-states: ^10.4.6
+  style-dictionary: ^5.5.0
   svgo: ^4.0.1
-  tsdown: ^0.22.2
+  tsdown: ^0.22.3
   tslib: ^2.8.1
   tsx: ^4.22.4
   type-fest: ^5.7.0
   typedoc: ^0.28.19
   typescript: ^6.0.3
-  typescript-eslint: ^8.61.0
+  typescript-eslint: ^8.62.0
   unified: ^11.0.5
   unist-util-remove: ^4.0.0
   unist-util-visit: ^5.1.0
-  vite: ^7.3.5
+  vite: ^7.3.6
   vite-plugin-dts: ^4.5.4
   vite-tsconfig-paths: ^6.1.1
   vitest: ^4.1.9
   yargs: ^18.0.0
   zod: ^4.4.3
-  turbo: ^2.9.18
+  turbo: ^2.10.0
   '@types/eslint-plugin-jsx-a11y': ^6.10.1
   '@eslint/config-helpers': ^0.6.0
   semantic-release: ^25.0.5
