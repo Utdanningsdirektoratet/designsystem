@@ -229,7 +229,7 @@ export const Preview = meta.story({
                 data-size="sm"
                 className="example-clear-filters"
               >
-                Fjern alle filtre
+                Fjern filtre
               </Button>
             </Field>
           </div>
