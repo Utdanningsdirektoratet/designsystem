@@ -178,7 +178,7 @@ export const OnlyIcons = meta.story({
         </ToggleGroup.Item>
       </Tooltip>
       <Tooltip content="Høyrestilt">
-        <ToggleGroup.Item value="høyrestilt" icon>
+        <ToggleGroup.Item value="høyrestilt">
           <AlignRightIcon aria-hidden />
         </ToggleGroup.Item>
       </Tooltip>

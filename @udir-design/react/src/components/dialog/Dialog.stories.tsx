@@ -60,13 +60,6 @@ const meta = preview.meta({
       },
     },
   },
-  argTypes: {
-    asChild: {
-      description:
-        '**@deprecated** Will be removed in the next major version. Should always be a `<dialog>` element.',
-      control: false,
-    },
-  },
   play: async (ctx) => defaultPlay(ctx.canvasElement),
 });
 

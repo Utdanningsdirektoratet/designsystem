@@ -24,18 +24,6 @@ const meta = preview.meta({
       alignItems: 'center',
     },
   },
-  argTypes: {
-    type: {
-      description:
-        '**@deprecated** This prop has no effect. The tooltip will automatically use `aria-description` if the trigger already has accessible text, and `aria-label` otherwise.',
-      control: false,
-    },
-    open: {
-      description:
-        '**@deprecated** This should not be used on Tooltip. Use a Popover instead.',
-      control: false,
-    },
-  },
   args: {
     // Children and content is required in Tooltip props, so we must set something
     children: undefined,

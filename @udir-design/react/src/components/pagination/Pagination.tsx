@@ -15,7 +15,7 @@ import type {
 } from 'react';
 import './pagination.css';
 
-type PaginationProps = Omit<DigdirPaginationProps, 'data-color'>;
+type PaginationProps = Omit<DigdirPaginationProps, 'data-color' | 'asChild'>;
 
 const Pagination = DigdirPagination as ForwardRefExoticComponent<
   PaginationProps & RefAttributes<ComponentRef<typeof DigdirPagination>>

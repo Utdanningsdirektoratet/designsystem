@@ -12,13 +12,6 @@ import { PaginationList } from './docs/FakePaginationList';
 
 const meta = preview.meta({
   component: FakePagination,
-  argTypes: {
-    asChild: {
-      description:
-        '**@deprecated** This is not supported anymore, as the element needs to be `ds-pagination`',
-      control: false,
-    },
-  },
   subcomponents: {
     'Pagination.List': PaginationList,
     'Pagination.Item': PaginationItem,

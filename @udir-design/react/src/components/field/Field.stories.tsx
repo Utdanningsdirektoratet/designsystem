@@ -24,13 +24,6 @@ const meta = preview.meta({
     },
     layout: 'centered',
   },
-  argTypes: {
-    asChild: {
-      description:
-        '**@deprecated** This is not supported anymore, as the element needs to be `ds-field`.',
-      control: false,
-    },
-  },
 });
 
 export const Preview = meta.story({

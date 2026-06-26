@@ -15,7 +15,7 @@ import type {
 } from 'react';
 import './dialog.css';
 
-type DialogProps = Omit<DigdirDialogProps, 'data-color'>;
+type DialogProps = Omit<DigdirDialogProps, 'data-color' | 'asChild'>;
 
 const Dialog = DigdirDialog as ForwardRefExoticComponent<
   DialogProps & RefAttributes<ComponentRef<typeof DigdirDialog>>
