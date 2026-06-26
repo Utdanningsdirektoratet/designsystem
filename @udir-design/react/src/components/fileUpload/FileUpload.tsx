@@ -1,5 +1,6 @@
 import { FileUploadDropzone } from './FileUploadDropzone';
-import { FileUploadItem, FileUploadList } from './FileUploadItem';
+import { FileUploadItem } from './FileUploadItem';
+import { FileUploadList } from './FileUploadList';
 import { FileUploadTrigger } from './FileUploadTrigger';
 
 export type FileUpload = {
