@@ -51,7 +51,6 @@ export default definePreview({
           ['Retningslinjer', 'Ikoner'],
           'demo',
           'patterns',
-          ['Introduksjon', '*'],
           'components',
         ],
       },

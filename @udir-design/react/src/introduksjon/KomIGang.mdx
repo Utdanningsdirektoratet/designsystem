@@ -1,0 +1,62 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import README from '../../README.md?raw';
+import { IncludeMarkdown } from '.storybook/docs/components';
+
+<Meta title="Introduksjon/Kom i gang" />
+
+# Kom i gang
+
+Her finner du det du trenger for å installere og ta i bruk Udirs komponentbibliotek i et prosjekt.
+
+## Installer pakkene
+
+Designsystemet består av flere pakker med ulike formål. For å bruke komponentbiblioteket må du installere `@udir-design/react` og `@udir-design/theme`.
+
+- [`@udir-design/react`](https://github.com/Utdanningsdirektoratet/designsystem/tree/main/%40udir-design/react) - React-komponenter og tilhørende funksjonalitet.
+- [`@udir-design/theme`](https://github.com/Utdanningsdirektoratet/designsystem/tree/main/%40udir-design/theme) - Design tokens for blant annet farger, typografi, spacing og størrelser.
+
+```bash
+npm add @udir-design/react @udir-design/theme
+```
+
+Andre pakker i designsystemet kan også være relevante, avhengig av behovene i prosjektet ditt:
+
+- [`@udir-design/css`](https://github.com/Utdanningsdirektoratet/designsystem/tree/main/%40udir-design/css) - CSS-filer og stilsett for designsystemet.
+- [`@udir-design/icons`](https://github.com/Utdanningsdirektoratet/designsystem/tree/main/%40udir-design/icons) - Ikoner tilgjengelig som React-komponenter.
+- [`@udir-design/symbols`](https://github.com/Utdanningsdirektoratet/designsystem/tree/main/%40udir-design/symbols) - Symboler og grafiske elementer brukt i Udirs tjenester.
+
+```bash
+npm add @udir-design/css @udir-design/icons @udir-design/symbols
+```
+
+<IncludeMarkdown markdown={README} sectionId="oppsett" />
+
+## Ta i bruk komponentene
+
+Når oppsettet er på plass, kan du importere og bruke komponentene i applikasjonen din.
+
+```tsx
+import { Details, Card } from '@udir-design/react';
+import { ChevronDownIcon } from '@udir-design/icons';
+
+export const MyComponent = () => (
+  <Card>
+    <Details>
+      <Details.Summary>
+        <ChevronDownIcon aria-hidden />
+        Første overskrift
+      </Details.Summary>
+      <Details.Content>Skjult innhold som kan åpnes</Details.Content>
+    </Details>
+    <Details>
+      <Details.Summary>
+        <ChevronDownIcon aria-hidden />
+        Andre overskrift
+      </Details.Summary>
+      <Details.Content>Mer skjult innhold her</Details.Content>
+    </Details>
+  </Card>
+);
+```
+
+Du finner oversikt over alle komponentene og tilhørende dokumentasjon i menyen til venstre.
