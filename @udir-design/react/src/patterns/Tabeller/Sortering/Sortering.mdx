@@ -1,0 +1,19 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import * as SorteringStories from './Sortering.stories';
+
+<Meta of={SorteringStories} />
+
+# Sortering
+
+Sortering lar brukeren selv bestemme rekkefølgen på innholdet. Det gjør det enklere å finne spesifikk informasjon og sammenligne verdier på tvers av rader. En tydelig og intuitiv sorteringsfunksjon bidrar til at brukeren opplever grensesnittet som mer oversiktlig og forutsigbart.
+
+For at sortering skal oppleves som forståelig og trygg, bør det være tydelig hvilke kolonner som kan sorteres, hvilken sortering som er aktiv, om sorteringen er stigende eller synkende, og hvordan sortering kan slås av.
+
+Disse behovene dekkes gjennom `sort`-propen i `Table`-komponenten, som gir en spesifikk styling av kolonneheaderen. Selve sorteringslogikken håndteres ved bruk av `onClick`. Du kan [lese mer om hvordan man håndterer sortering i dokumentasjonen for Table](https://design.udir.no/beta/?path=/docs/components-table--docs#sortering-av-rader).
+
+<Canvas of={SorteringStories.Preview} />
+
+## Stabil sortering
+
+En stabil sorteringsalgoritme bevarer den opprinnelige rekkefølgen for rader med lik verdi i den sorterte kolonnen. Hvis brukeren for eksempel først sorterer alfabetisk på navn og deretter på alder, vil rader med samme alder fortsatt være sortert alfabetisk på navn innenfor hver aldersgruppe. Uten stabil sortering kan rekkefølgen på rader med lik verdi bli uforutsigbar. Det legges ingen absolutte føringer for bruk av stabil sortering; hvert systemteam må selv vurdere om det er ønskelig og relevant i sin kontekst.

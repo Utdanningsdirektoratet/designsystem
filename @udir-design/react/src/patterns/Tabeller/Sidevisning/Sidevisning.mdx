@@ -1,0 +1,81 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { INITIAL_VIEWPORTS } from 'storybook/viewport';
+
+import * as SidevisningStories from './Sidevisning.stories';
+
+<Meta of={SidevisningStories} />
+
+# Sidevisning
+
+Når en tabell inneholder mange rader, bør den ha kontrollert sidevisning. Det gjør det enklere for brukeren å navigere i innholdet uten å bli overveldet av informasjon.
+
+Vi anbefaler å unngå tabeller med uendelig scrolling. Slike tabeller kan gjøre det vanskelig å nå innhold som ligger under tabellen og gir ofte dårligere kontroll over navigasjonen.
+
+Dette mønsteret tar ikke stilling til om sidevisning håndteres i frontend eller backend. Det avhenger av størrelsen på datasettet og den tekniske konteksten, og må vurderes av hvert enkelt team.
+
+Sidevisningen bør gjøre det mulig å navigere fram og tilbake mellom sider, velge antall rader per side, se hvilke rader som vises nå, og se totalt antall rader i tabellen.
+
+## Desktop, nettbrett og mobil
+
+<Canvas of={SidevisningStories.Preview} />
+
+## Sidenavigasjon
+
+For å navigere mellom sider i tabellen brukes [`Pagination`](/docs/components-pagination--docs).
+
+## Velge antall rader per side
+
+I store tabeller bør brukeren kunne velge hvor mange rader som vises om gangen. Ulike oppgaver gir ulike behov, og det kan oppleves overveldende å måtte bla gjennom mange rader uten kontroll over visningen. Dette kan løses med en [`Select`](/docs/components-select--docs) for å velge antall rader per side.
+
+Hvilke intervaller som tilbys, bør tilpasses størrelsen på datasettet. Som utgangspunkt bør valgene følge jevne intervaller, for eksempel 5, 10, 15 eller 10, 20, 30 eller 10, 25, 50. Når brukeren velger et nytt antall rader, bør tabellen oppdateres umiddelbart, og navigasjonen tilpasses de nye sidetallene.
+
+Et alternativ som viser alle radene kan vurderes når tabellen kun har et moderat antall rader. I store datasett bør dette brukes med varsomhet, fordi det kan gi en uoversiktlig og treg opplevelse.
+
+## Visning av antall treff
+
+For å gi brukeren oversikt over hvilke rader som er synlige, og totalt antall rader i tabellen, brukes formuleringen «Rad 30–40 av 230». Denne teksten bør alltid være synlig når sidevisning er aktiv.
+
+## Plassering
+
+Alle komponenter for sidevisning plasseres under tabellen. Dette skiller dem tydelig fra elementer over tabellen, som filtre, søkefelt og handlinger. Plasseringen varierer med skjermstørrelsen:
+
+**Stor skjerm (desktop)**
+Pagination plasseres til venstre. «Rad X–Y av Z» og «Rader per side» plasseres til høyre, med «Rad X–Y av Z» til venstre for «Rader per side».
+
+<Canvas of={SidevisningStories.Preview} />
+
+**Mellomstore skjermer (nettbrett)**
+Pagination plasseres på første rad. På andre rad plasseres «Rad X–Y av Z» til venstre og «Rader per side» til høyre. Radene er midtstilt.
+
+<div
+  style={{
+    width: INITIAL_VIEWPORTS['ipad'].styles.height,
+    justifySelf: 'center',
+  }}
+>
+  <Canvas
+    of={SidevisningStories.Preview}
+    story={{
+      inline: false,
+      height: INITIAL_VIEWPORTS['ipad'].styles.width,
+    }}
+  />
+</div>
+
+**Små skjermer (mobil)**
+Pagination plasseres på første rad. På andre rad plasseres «Rad X–Y av Z». På tredje rad plasseres «Rader per side». Radene er midtstilt.
+
+<div
+  style={{
+    width: INITIAL_VIEWPORTS['iphone14pro'].styles.width,
+    justifySelf: 'center',
+  }}
+>
+  <Canvas
+    of={SidevisningStories.Preview}
+    story={{
+      inline: false,
+      height: INITIAL_VIEWPORTS['iphone14pro'].styles.height,
+    }}
+  />
+</div>

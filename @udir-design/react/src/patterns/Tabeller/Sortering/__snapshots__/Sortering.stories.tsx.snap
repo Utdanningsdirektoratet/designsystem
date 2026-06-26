@@ -1,0 +1,110 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Preview 1`] = `
+<div data-size="auto">
+  <table
+    data-zebra="true"
+    data-color="neutral"
+  >
+    <thead>
+      <tr>
+        <th aria-sort="none">
+          <button type="button">
+            Emne
+          </button>
+        </th>
+        <th aria-sort="none">
+          <button type="button">
+            Muntlig karakter
+          </button>
+        </th>
+        <th aria-sort="none">
+          <button type="button">
+            Antall elever
+          </button>
+        </th>
+        <th aria-sort="none">
+          <button type="button">
+            Skriftlig karakter
+          </button>
+        </th>
+        <th aria-sort="none">
+          <button type="button">
+            Antall elever
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Engelsk
+        </td>
+        <td>
+          3.92
+        </td>
+        <td>
+          5044
+        </td>
+        <td>
+          4.16
+        </td>
+        <td>
+          9221
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Matematikk
+        </td>
+        <td>
+          3.27
+        </td>
+        <td>
+          6483
+        </td>
+        <td>
+          4.08
+        </td>
+        <td>
+          8942
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Norsk Hovedmål
+        </td>
+        <td>
+          3.23
+        </td>
+        <td>
+          5459
+        </td>
+        <td>
+          4.08
+        </td>
+        <td>
+          8955
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Norsk Sidemål
+        </td>
+        <td>
+          3.26
+        </td>
+        <td>
+          5238
+        </td>
+        <td>
+          4.18
+        </td>
+        <td>
+          9495
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
