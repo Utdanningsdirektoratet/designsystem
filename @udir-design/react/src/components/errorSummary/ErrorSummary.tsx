@@ -21,10 +21,7 @@ type ErrorSummaryProps = Omit<DigdirErrorSummaryProps, 'asChild'>;
 const ErrorSummary = DigdirErrorSummary as ForwardRefExoticComponent<
   ErrorSummaryProps & RefAttributes<ComponentRef<typeof DigdirErrorSummary>>
 > &
-  Pick<
-    typeof DigdirErrorSummary,
-    'Heading' | 'Item' | 'Link' | 'List'
-  >;
+  Pick<typeof DigdirErrorSummary, 'Heading' | 'Item' | 'Link' | 'List'>;
 
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 ErrorSummary.displayName = 'ErrorSummary';
