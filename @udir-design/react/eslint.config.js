@@ -22,7 +22,8 @@ const commonRestrictedImports = [
 ];
 
 const restrictBarrelImports = {
-  regex: '^((src|\\.{1,2})\\/)((\\.{1,2}\\/)|\\w+\\/)*(alpha|beta|stable)',
+  regex:
+    '^((src|\\.{1,2})\\/)((\\.{1,2}\\/)|\\w+\\/)*(alpha|beta|stable)(?!\\w)',
   // group: ['**/alpha', '**/beta', '**/stable'],
   message:
     'Do not import from barrel files. It can make the library hard to tree-shake and prohibits tools like Chromatic from performing dependency analysis.',
