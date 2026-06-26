@@ -1,6 +1,9 @@
 import './style.css';
 import './manager.css';
 import './addons/sourceCodeToolbar';
+import '@pagefind/component-ui';
+import '@pagefind/component-ui/css';
+import { configureInstance } from '@pagefind/component-ui';
 import React from 'react';
 import type { API_HashEntry } from 'storybook/internal/types';
 import { addons } from 'storybook/manager-api';
@@ -185,3 +188,107 @@ function RenderWithTagBadge({
     return children ?? item.name;
   }
 }
+
+// —— Pagefind config
+
+configureInstance('default', {
+  baseUrl: window.location.pathname,
+  bundlePath: `${window.location.pathname}pagefind/`,
+});
+
+// ── Pagefind search modal (PoC) ─────────────────────────────────────────
+// Storybook has no sidebar slot API, so we inject the search trigger into
+// the sidebar DOM once it renders.
+
+// Intercept ⌘K / Ctrl+K before Storybook's handler fires, so the
+// Pagefind modal opens instead of "Find components". We stop the event
+// AND programmatically click the trigger since stopPropagation blocks
+// Pagefind's own listener too.
+document.addEventListener(
+  'keydown',
+  (e) => {
+    if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+      e.preventDefault();
+      e.stopPropagation();
+      document
+        .querySelector<HTMLElement>('pagefind-modal-trigger button')
+        ?.click();
+    }
+  },
+  { capture: true },
+);
+
+// Listen for ⌘K from the preview iframe (which is a separate browsing context)
+window.addEventListener('message', (e) => {
+  if (e.data === 'pagefind:open') {
+    document
+      .querySelector<HTMLElement>('pagefind-modal-trigger button')
+      ?.click();
+  }
+});
+const searchRoot = document.createElement('div');
+searchRoot.id = 'pagefind-search-root';
+searchRoot.innerHTML = `
+  <pagefind-modal-trigger placeholder="Search"></pagefind-modal-trigger>
+  <pagefind-modal>
+    <pagefind-modal-header>
+      <pagefind-input></pagefind-input>
+      <pagefind-filter-dropdown filter="category" label="Kategori"></pagefind-filter-dropdown>
+    </pagefind-modal-header>
+    <pagefind-modal-body>
+      <pagefind-summary></pagefind-summary>
+      <pagefind-results>
+        <script type="text/pagefind-template">
+          <li class="pf-result">
+            <div class="pf-result-card">
+              <div class="pf-result-content">
+                <p class="pf-result-title">
+                  {{#if meta.category}}
+                  <span class="pf-result-category" style="display:block;font-size:0.7rem;opacity:0.5;margin-bottom:0.1rem">{{ meta.category }}</span>
+                  {{/if}}
+                  <a class="pf-result-link" href="{{ meta.url | default(url) | safeUrl }}">{{ meta.title }}</a>
+                  {{#if meta.tier}}
+                    <span class="ds-tag storybook-tag-badge" data-size="custom" data-variant="outline" data-color="{{ meta.tier_color }}">{{ meta.tier }}</span>
+                    {{/if}}
+                  </p>
+                  {{#if excerpt}}
+                <p class="pf-result-excerpt">{{+ excerpt +}}</p>
+                {{/if}}
+              </div>
+            </div>
+            {{#if sub_results}}
+            <ul class="pf-heading-chips">
+              {{#each sub_results as sub}}
+              <li class="pf-heading-chip">
+                <a class="pf-heading-link" href="{{ sub.url | safeUrl }}">{{ sub.title }}</a>
+                <p class="pf-heading-excerpt">{{+ sub.excerpt +}}</p>
+              </li>
+              {{/each}}
+            </ul>
+            {{/if}}
+          </li>
+        </script>
+      </pagefind-results>
+    </pagefind-modal-body>
+    <pagefind-modal-footer>
+      <pagefind-keyboard-hints></pagefind-keyboard-hints>
+    </pagefind-modal-footer>
+  </pagefind-modal>
+`;
+
+const observer = new MutationObserver(() => {
+  // The sidebar's flex container is the grandparent of .sidebar-header.
+  // Insert our search root as a sibling of the wrapper div that contains
+  // .sidebar-header, the filter input, and the tree nav.
+  const sidebarHeaderWrapper = document.querySelector(
+    'div:has(> .sidebar-header)',
+  );
+  if (
+    sidebarHeaderWrapper &&
+    !document.getElementById('pagefind-search-root')
+  ) {
+    sidebarHeaderWrapper.after(searchRoot);
+    observer.disconnect();
+  }
+});
+observer.observe(document.body, { childList: true, subtree: true });

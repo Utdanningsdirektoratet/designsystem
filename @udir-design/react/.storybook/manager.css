@@ -21,3 +21,38 @@
 [aria-controls='storybook-mobile-menu'] .uds-sb-mobile-nav-button {
   display: inline;
 }
+
+#pagefind-search-root pagefind-modal-trigger {
+  display: block;
+}
+
+#pagefind-search-root pagefind-filter-dropdown {
+  margin-top: var(--ds-size-2);
+}
+
+/* Hide the simple "Find components" input (replaced by Pagefind) but keep the tag filtering button */
+label[for='storybook-explorer-searchfield'] + [role='search'] {
+  justify-content: flex-end;
+}
+label[for='storybook-explorer-searchfield']
+  + [role='search']
+  [role='combobox'] {
+  width: unset;
+  flex-grow: 0;
+}
+label[for='storybook-explorer-searchfield']
+  + [role='search']
+  [role='combobox']
+  /* hide search icon, input field, and shortcut legend */
+  > :is(:first-child, input, code) {
+  display: none;
+}
+/* if we want text on the filter button, we can uncomment this */
+/*
+label[for='storybook-explorer-searchfield']
+  + [role='search']
+  [role='combobox']
+  button[aria-haspopup='dialog']::before {
+  content: attr(aria-label);
+}
+*/
