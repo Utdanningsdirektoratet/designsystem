@@ -7,7 +7,7 @@ import { Pagination } from 'src/components/pagination/Pagination';
 import { Select } from 'src/components/select/Select';
 import { Table } from 'src/components/table';
 import { Label } from 'src/components/typography/label/Label';
-import { usePagination } from 'src/utilities/hooks/usePagination/usePagination';
+import { usePagination } from 'src/hooks/usePagination/usePagination';
 import './sidevisning.css';
 
 type Data = {

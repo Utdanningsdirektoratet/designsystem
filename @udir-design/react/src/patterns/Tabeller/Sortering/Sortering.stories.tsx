@@ -11,8 +11,6 @@ type Data = {
   eleverMuntlig: number;
   skriftligkarakter: string;
   eleverSkriftlig: number;
-  standpunktkarakter: string;
-  antallelever: number;
 };
 
 type SortDirection = Exclude<TableHeaderCellProps['sort'], 'none'> | undefined;
@@ -21,9 +19,7 @@ type SortField =
   | 'muntligkarakter'
   | 'eleverMuntlig'
   | 'skriftligkarakter'
-  | 'eleverSkriftlig'
-  | 'standpunktkarakter'
-  | 'antallelever';
+  | 'eleverSkriftlig';
 
 const meta = preview.meta({
   tags: ['alpha', 'udir'],
@@ -81,8 +77,6 @@ export const Preview = meta.story({
       if (field === 'skriftligkarakter') return Number(row.skriftligkarakter);
       if (field === 'eleverMuntlig') return Number(row.eleverMuntlig);
       if (field === 'eleverSkriftlig') return Number(row.eleverSkriftlig);
-      if (field === 'standpunktkarakter') return Number(row.standpunktkarakter);
-      if (field === 'antallelever') return Number(row.antallelever);
       return 0;
     };
 
@@ -132,18 +126,6 @@ export const Preview = meta.story({
             >
               Antall elever
             </Table.HeaderCell>
-            <Table.HeaderCell
-              sort={sortField === 'standpunktkarakter' ? sortDirection : 'none'}
-              onClick={() => handleSort('standpunktkarakter')}
-            >
-              Standpunkt
-            </Table.HeaderCell>
-            <Table.HeaderCell
-              sort={sortField === 'antallelever' ? sortDirection : 'none'}
-              onClick={() => handleSort('antallelever')}
-            >
-              Antall elever
-            </Table.HeaderCell>
           </Table.Row>
         </Table.Head>
         <Table.Body>
@@ -154,8 +136,6 @@ export const Preview = meta.story({
               <Table.Cell>{row.eleverMuntlig}</Table.Cell>
               <Table.Cell>{row.skriftligkarakter}</Table.Cell>
               <Table.Cell>{row.eleverSkriftlig}</Table.Cell>
-              <Table.Cell>{row.standpunktkarakter}</Table.Cell>
-              <Table.Cell>{row.antallelever}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
@@ -179,6 +159,4 @@ const grades: Data[] = emner.map((emne) => ({
   eleverMuntlig: Math.floor(seeded(`${emne}-eleverMuntlig`) * 3001) + 5000,
   skriftligkarakter: (seeded(`${emne}-skriftlig`) * 1.2 + 3).toFixed(2),
   eleverSkriftlig: Math.floor(seeded(`${emne}-eleverSkriftlig`) * 3001) + 7000,
-  standpunktkarakter: (seeded(`${emne}-standpunkt`) * 1.2 + 3.2).toFixed(2),
-  antallelever: Math.floor(seeded(`${emne}-antall`) * 10001) + 5000,
 }));
