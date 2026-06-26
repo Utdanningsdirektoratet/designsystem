@@ -1,5 +1,174 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Cluster 1`] = `
+<style>
+  .card-cluster {
+  width: 750px;
+}
+.card-cluster__row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--ds-size-4);
+}
+.card-cluster__item {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-2);
+  padding: var(--ds-size-4) 0 var(--ds-size-8) 0;
+  min-width: 0;
+  border-block-end: 1px solid var(--ds-color-border-subtle);
+  text-decoration: none;
+}
+.card-cluster__row:last-child .card-cluster__item {
+  border-block-end: none;
+  padding-block-end: var(--ds-size-4);
+}
+.card-cluster__item > svg {
+  flex-shrink: 0;
+}
+</style>
+<div data-variant="default">
+  <div>
+    <a href="#">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+        data-size="lg"
+      >
+        <path
+          fill="currentColor"
+          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+        >
+        </path>
+      </svg>
+      <span>
+        Lesing
+      </span>
+    </a>
+    <a href="#">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+        data-size="lg"
+      >
+        <path
+          fill="currentColor"
+          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+        >
+        </path>
+      </svg>
+      <span>
+        Fravær i skolen
+      </span>
+    </a>
+  </div>
+  <div>
+    <a href="#">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+        data-size="lg"
+      >
+        <path
+          fill="currentColor"
+          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+        >
+        </path>
+      </svg>
+      <span>
+        Barnehagemiljø
+      </span>
+    </a>
+    <a href="#">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+        data-size="lg"
+      >
+        <path
+          fill="currentColor"
+          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+        >
+        </path>
+      </svg>
+      <span>
+        God digital praksis
+      </span>
+    </a>
+  </div>
+  <div>
+    <a href="#">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+        data-size="lg"
+      >
+        <path
+          fill="currentColor"
+          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+        >
+        </path>
+      </svg>
+      <span>
+        Skolemiljø
+      </span>
+    </a>
+    <a href="#">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+        data-size="lg"
+      >
+        <path
+          fill="currentColor"
+          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+        >
+        </path>
+      </svg>
+      <span>
+        Kunstig intelligens i skolen
+      </span>
+    </a>
+  </div>
+</div>
+`;
+
 exports[`Composed 1`] = `
 <div data-variant="default">
   <div>
