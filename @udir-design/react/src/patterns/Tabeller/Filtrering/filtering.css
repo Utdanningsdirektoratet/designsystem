@@ -24,12 +24,13 @@
 .example-suggestion-section {
   display: flex;
   flex-direction: column;
-  gap: var(--ds-size-4);
+  gap: var(--ds-size-2);
   align-items: flex-end;
   width: 100%;
 }
 
 .example-suggestion-field {
+  min-width: 175px;
   width: 100%;
 }
 
