@@ -12,7 +12,7 @@ npm add @udir-design/theme@beta @udir-design/react@beta
 
 ## Oppsett
 
-### Last inn korrekt font
+### Laste inn korrekt font
 
 Komponentbiblioteket bruker fonten `Inter`. For at komponentene skal vises med riktig typografi, må fonten lastes inn i applikasjonen.
 
@@ -26,7 +26,7 @@ Legg følgende i `<head>` i `index.html`:
 />
 ```
 
-### Importer stilsettet
+### Importere stilsettet
 
 For at komponentene skal vises korrekt, må du importere bibliotekets stilsett fra `@udir-design/react/style.css`.
 
