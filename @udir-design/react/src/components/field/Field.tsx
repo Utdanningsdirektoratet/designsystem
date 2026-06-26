@@ -24,7 +24,9 @@ type FieldCounterProps = Omit<DigdirFieldCounterProps, 'hint'>;
 const Field = DigdirField as ForwardRefExoticComponent<
   FieldProps & RefAttributes<ComponentRef<typeof DigdirField>>
 > &
-  Pick<typeof DigdirField, 'Affix' | 'Affixes' | 'Counter' | 'Description'>;
+  Pick<typeof DigdirField, 'Affix' | 'Affixes' | 'Description'> & {
+    Counter: typeof FieldCounter;
+  };
 
 const FieldCounter = DigdirFieldCounter as ForwardRefExoticComponent<
   FieldCounterProps & RefAttributes<ComponentRef<typeof DigdirFieldCounter>>
