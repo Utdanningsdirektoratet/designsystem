@@ -15,13 +15,6 @@ import { ErrorSummaryList } from './docs/FakeErrorSummaryList';
 
 const meta = preview.meta({
   component: FakeErrorSummary,
-  argTypes: {
-    asChild: {
-      description:
-        '**@deprecated** This is not supported anymore, as the element needs to be `ds-error-summary`',
-      control: false,
-    },
-  },
   subcomponents: {
     'ErrorSummary.Heading': ErrorSummaryHeading,
     'ErrorSummary.Item': ErrorSummaryItem,

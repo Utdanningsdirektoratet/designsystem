@@ -15,12 +15,6 @@ import { SelectOption as FakeSelectOption } from './docs/FakeSelectOption';
 
 const meta = preview.meta({
   component: FakeSelect,
-  argTypes: {
-    readOnly: {
-      description: '**@deprecated** Use `aria-readonly` instead.',
-      control: false,
-    },
-  },
   subcomponents: {
     'Select.Optgroup': FakeSelectOptgroup,
     'Select.Option': FakeSelectOption,

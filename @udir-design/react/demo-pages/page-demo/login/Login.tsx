@@ -24,7 +24,7 @@ export function Login() {
         autoComplete="email"
         className={styles.userField}
       />
-      <Tooltip content="Trykk for å få hjelp" type="describedby">
+      <Tooltip content="Trykk for å få hjelp">
         <Link href="#">Glemt passord?</Link>
       </Tooltip>
       <Button className={styles.userButton}>Opprett ny bruker</Button>

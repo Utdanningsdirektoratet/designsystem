@@ -1,11 +1,23 @@
 import {
-  ToggleGroupItem,
-  type ToggleGroupItemProps,
+  ToggleGroupItem as DigdirToggleGroupItem,
+  type ToggleGroupItemProps as DigdirToggleGroupItemProps,
 } from '@digdir/designsystemet-react';
+import type {
+  ComponentRef,
+  ForwardRefExoticComponent,
+  RefAttributes,
+} from 'react';
 import {
   ToggleGroup as ToggleGroupParent,
   type ToggleGroupProps,
 } from './ToggleGroup';
+
+type ToggleGroupItemProps = Omit<DigdirToggleGroupItemProps, 'icon'>;
+
+const ToggleGroupItem = DigdirToggleGroupItem as ForwardRefExoticComponent<
+  ToggleGroupItemProps &
+    RefAttributes<ComponentRef<typeof DigdirToggleGroupItem>>
+>;
 
 type ToggleGroup = typeof ToggleGroupParent & {
   /**
