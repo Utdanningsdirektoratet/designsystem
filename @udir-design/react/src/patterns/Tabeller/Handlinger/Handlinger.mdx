@@ -1,0 +1,59 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { INITIAL_VIEWPORTS } from 'storybook/viewport';
+
+import * as HandlingerStories from './Handlinger.stories';
+
+<Meta of={HandlingerStories} />
+
+# Handlinger
+
+Handlinger i tabeller lar brukere utføre oppgaver knyttet til én eller flere rader, for eksempel å åpne, redigere, eksportere eller slette innhold. Hvordan handlingene vises, bør avhenge av hvor ofte de brukes, hvor mange som er tilgjengelige, og hvilke konsekvenser de har. Et godt bruksmønster gjør handlingene enkle å finne og forstå uten at tabellen blir uoversiktlig.
+
+## Handlinger for én rad
+
+Vanlige eller viktige handlinger som gjelder én rad, kan vises direkte i raden. Dette kan for eksempel være «Åpne», «Rediger» eller «Slett». Det bør helst ikke vises mer enn én eller to handlinger direkte, siden mange knapper kan gjøre tabellen uoversiktlig. Handlingene bør plasseres samlet helt til høyre i raden.
+
+Mindre brukte handlinger kan samles i en meny, ofte vist med tre prikker. Dette er en anbefalt løsning når det finnes mange handlinger knyttet til en rad. Menyen bør plasseres på samme sted i alle radene, vanligvis helt til høyre.
+
+Handlinger kan også vises når brukeren holder pekeren over raden. Dette kan derimot gjøre dem vanskeligere å oppdage for nye brukere som ikke kjenner mønsteret. Løsningen er også utfordrende på berøringsskjermer, der hover ikke er tilgjengelig.
+
+Et anbefalt bruksmønster er:
+
+- Klikk på raden åpner en detaljvisning, dersom raden er klikkbar
+- Én eller to handlinger vises direkte i raden
+- Resterende handlinger plasseres i en meny
+
+Unngå at:
+
+- Destruktive handlinger, som «Slett», er den mest fremtredende handlingen
+- Raden og knappene i raden utfører konkurrerende handlinger. Er hele raden klikkbar, skal knapper i raden ha tydelige klikkflater og ikke påvirkes av radhandlingen.
+
+## Handlinger for flere rad
+
+Massehandlinger bør vanligvis bli tilgjengelige etter at brukeren har valgt én eller flere rader med avkrysningsbokser. Handlingene kan for eksempel vises i en verktøylinje over tabellen. En handling bør bare være aktiv dersom den kan utføres på alle de valgte radene.
+
+Handlingslinjen bør vise:
+
+- Hvor mange rader som er valgt.
+- Hvilke handlinger som kan utføres.
+- En tydelig måte å fjerne utvalget på.
+
+Avkrysningsboksen i tabellhodet bør velge alle synlige rader på den aktuelle siden. Dersom tabellen er paginert og brukeren kan velge alle resultater på tvers av sider, bør dette kommuniseres tydelig:
+
+> Alle de 25 radene på denne siden er valgt. Velg alle de 340 resultatene.
+
+# Eksempler
+
+Handlinger kan vises på ulike måter, avhengig av hvor mange handlinger som er tilgjengelige, hvor ofte de brukes, og hvor mye plass som er tilgjengelig.
+
+## Verktøylinje med tekst og ikoner
+
+I det første eksempelet vises handlingene med tekst og ikoner i en verktøylinje over tabellen. Dette gjør dem enkle å oppdage og forstå, og passer godt når det er god plass, eller når handlingene er viktige og brukes ofte. Destruktive handlinger, som «Slett», kan skilles tydelig fra de øvrige handlingene.
+
+<Canvas of={HandlingerStories.Preview} />
+
+## Kompakt verktøylinje
+
+I det andre eksempelet samles handlingene i en kompakt verktøylinje. Denne løsningen tar mindre plass og passer godt når det finnes få handlinger. Ikonbaserte handlinger kan imidlertid være vanskeligere å forstå, og bør derfor ha tydelige tilgjengelige navn og eventuelt en tooltip. Mindre brukte handlinger kan plasseres i en meny med tre prikker.
+
+<Canvas of={HandlingerStories.WithActionCard} />
