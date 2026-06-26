@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  generateSequentialMonochromaticColors,
   getCategoricalColors,
   getSequentialDivergentColors,
   getSequentialMonochromaticColors,
@@ -53,6 +54,83 @@ describe('getSequentialMonochromaticColors', () => {
     expect(getSequentialMonochromaticColors()).toEqual(
       getSequentialMonochromaticColors(),
     );
+  });
+});
+
+describe('generateSequentialMonochromaticColors', () => {
+  it('returns correct number of colors', () => {
+    expect(generateSequentialMonochromaticColors(10)).toHaveLength(10);
+    expect(generateSequentialMonochromaticColors(1)).toHaveLength(1);
+    expect(generateSequentialMonochromaticColors(8)).toHaveLength(8);
+    expect(generateSequentialMonochromaticColors(14)).toHaveLength(14);
+  });
+
+  it('returns hex color strings', () => {
+    for (const color of generateSequentialMonochromaticColors(10)) {
+      expect(color).toMatch(/^#[0-9a-f]{6}$/);
+    }
+  });
+
+  it('starts with the lightest anchor color', () => {
+    expect(generateSequentialMonochromaticColors(10)[0]).toBe('#5ba27e');
+  });
+
+  it('ends with the darkest anchor color', () => {
+    const colors = generateSequentialMonochromaticColors(10);
+    expect(colors[colors.length - 1]).toBe('#0b1e15');
+  });
+
+  it('returns just the start color when count is 1', () => {
+    expect(generateSequentialMonochromaticColors(1)).toEqual(['#5ba27e']);
+  });
+
+  it('returns start and end when count is 2', () => {
+    expect(generateSequentialMonochromaticColors(2)).toEqual([
+      '#5ba27e',
+      '#0b1e15',
+    ]);
+  });
+
+  it('throws RangeError for count below 1', () => {
+    expect(() => generateSequentialMonochromaticColors(0)).toThrow(RangeError);
+  });
+
+  it('produces perceptually uniform lightness steps', () => {
+    // Convert hex to Oklab lightness to verify uniform spacing
+    const srgbToLinear = (c: number) => {
+      const s = c / 255;
+      return s <= 0.04045 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+    };
+    const hexToOklabL = (hex: string) => {
+      const n = parseInt(hex.slice(1), 16);
+      const r = srgbToLinear((n >> 16) & 0xff);
+      const g = srgbToLinear((n >> 8) & 0xff);
+      const b = srgbToLinear(n & 0xff);
+      const l = Math.cbrt(
+        0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b,
+      );
+      const m = Math.cbrt(
+        0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b,
+      );
+      const s = Math.cbrt(
+        0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b,
+      );
+      return 0.2104542553 * l + 0.793617785 * m - 0.0040720468 * s;
+    };
+
+    const colors = generateSequentialMonochromaticColors(8);
+    const lightnessValues = colors.map(hexToOklabL);
+
+    // Calculate lightness steps between consecutive colors
+    const steps = lightnessValues
+      .slice(1)
+      .map((L, i) => lightnessValues[i] - L);
+
+    // All steps should be approximately equal (within 5% of the mean step)
+    const meanStep = steps.reduce((a, b) => a + b, 0) / steps.length;
+    for (const step of steps) {
+      expect(step).toBeCloseTo(meanStep, 2);
+    }
   });
 });
 
