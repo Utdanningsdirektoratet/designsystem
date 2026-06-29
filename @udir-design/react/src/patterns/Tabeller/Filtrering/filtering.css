@@ -1,4 +1,5 @@
 .example-main {
+  min-width: 275px;
   margin: var(--ds-size-2);
   display: flex;
   flex-direction: column;
@@ -76,10 +77,14 @@
   gap: var(--ds-size-2);
   white-space: nowrap;
   align-items: center;
+  > .ds-input {
+    margin-top: 0;
+  }
 }
 
 .example-active-filters {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--ds-size-6);
 }
 
@@ -88,7 +93,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--ds-size-2);
-  max-width: 30rem;
+  max-width: min(30rem, 100%);
   > ul {
     margin: 0;
     padding: 0;

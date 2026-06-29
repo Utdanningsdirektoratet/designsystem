@@ -132,7 +132,6 @@ export const Preview = meta.story({
     const handleClearFilters = () => {
       setEmne([]);
       setFylke([]);
-      setSearchQuery('');
     };
 
     useEffect(() => {
