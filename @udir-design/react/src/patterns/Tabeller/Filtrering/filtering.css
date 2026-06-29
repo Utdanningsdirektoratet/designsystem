@@ -45,6 +45,13 @@
   gap: var(--ds-size-4);
 }
 
+.example-dialog-section {
+  display: flex;
+  flex-direction: row;
+  gap: var(--ds-size-2);
+  align-items: center;
+}
+
 .example-clear-filters {
   white-space: nowrap;
 }

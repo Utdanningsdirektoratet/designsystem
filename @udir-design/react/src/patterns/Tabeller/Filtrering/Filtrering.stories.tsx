@@ -435,124 +435,124 @@ export const WithDialog = meta.story({
               <Search.Clear onClick={() => setSearchQuery('')} />
             </Search>
           </Field>
-          <Dialog.TriggerContext>
-            <Dialog.Trigger variant="secondary">
-              <FilterIcon aria-label="Filter" />
-              Filter
-            </Dialog.Trigger>
-            <Dialog
-              ref={dialogRef}
-              closedby="any"
-              onToggle={(e) => {
-                if ((e.target as HTMLDialogElement).open) {
-                  setDraftEmne(emne);
-                  setDraftFylke(fylke);
-                  setDraftEksamen(eksamen);
-                }
-              }}
-            >
-              <Prose>
-                <Heading>Filter</Heading>
-                <div className="example-dialog-filters">
-                  <Prose>
-                    <Fieldset>
-                      <Fieldset.Legend>Karaktertype</Fieldset.Legend>
-                      <Checkbox
-                        label="Skriftlig"
-                        {...getCheckboxProps('skriftlig')}
-                      />
-                      <Checkbox
-                        label="Muntlig"
-                        {...getCheckboxProps('muntlig')}
-                      />
-                      <Checkbox
-                        label="Standpunkt"
-                        {...getCheckboxProps('standpunkt')}
-                      />
-                    </Fieldset>
-                  </Prose>
-                  <Prose>
-                    <Field className="example-suggestion-field">
-                      <Label>Velg emner</Label>
-                      <Suggestion
-                        multiple
-                        display="count"
-                        selected={draftEmne}
-                        onSelectedChange={(items) =>
-                          setDraftEmne(items.map((item) => item.value))
-                        }
-                      >
-                        <Suggestion.Input />
-                        <Suggestion.Clear />
-                        <Suggestion.List>
-                          <Suggestion.Empty>Tomt</Suggestion.Empty>
-                          {uniqueEmner.map((option) => (
-                            <Suggestion.Option
-                              key={option}
-                              label={option}
-                              value={option}
-                            >
-                              {option}
-                            </Suggestion.Option>
-                          ))}
-                        </Suggestion.List>
-                      </Suggestion>
-                    </Field>
-                    <Field className="example-suggestion-field">
-                      <Label>Velg fylker</Label>
-                      <Suggestion
-                        multiple
-                        display="count"
-                        selected={draftFylke}
-                        onSelectedChange={(items) =>
-                          setDraftFylke(items.map((item) => item.value))
-                        }
-                      >
-                        <Suggestion.Input />
-                        <Suggestion.Clear />
-                        <Suggestion.List>
-                          <Suggestion.Empty>Tomt</Suggestion.Empty>
-                          {uniqueFylker.map((option) => (
-                            <Suggestion.Option
-                              key={option}
-                              label={option}
-                              value={option}
-                            >
-                              {option}
-                            </Suggestion.Option>
-                          ))}
-                        </Suggestion.List>
-                      </Suggestion>
-                    </Field>
-                  </Prose>
-                </div>
-                <Field className="example-footer">
-                  <Button
-                    onClick={() => {
-                      setEmne(draftEmne);
-                      setFylke(draftFylke);
-                      setEksamen(draftEksamen);
-                      dialogRef.current?.close();
-                    }}
-                  >
-                    Lagre
-                  </Button>
-                  <Button
-                    variant="secondary"
-                    onClick={() => {
-                      setDraftEmne(emne);
-                      setDraftFylke(fylke);
-                      setDraftEksamen(eksamen);
-                      dialogRef.current?.close();
-                    }}
-                  >
-                    Avbryt
-                  </Button>
-                </Field>
-              </Prose>
-            </Dialog>
-          </Dialog.TriggerContext>
-          <Field>
+          <div className="example-dialog-section">
+            <Dialog.TriggerContext>
+              <Dialog.Trigger variant="secondary">
+                <FilterIcon aria-label="Filter" />
+                Filter
+              </Dialog.Trigger>
+              <Dialog
+                ref={dialogRef}
+                closedby="any"
+                onToggle={(e) => {
+                  if ((e.target as HTMLDialogElement).open) {
+                    setDraftEmne(emne);
+                    setDraftFylke(fylke);
+                    setDraftEksamen(eksamen);
+                  }
+                }}
+              >
+                <Prose>
+                  <Heading>Filter</Heading>
+                  <div className="example-dialog-filters">
+                    <Prose>
+                      <Fieldset>
+                        <Fieldset.Legend>Karaktertype</Fieldset.Legend>
+                        <Checkbox
+                          label="Skriftlig"
+                          {...getCheckboxProps('skriftlig')}
+                        />
+                        <Checkbox
+                          label="Muntlig"
+                          {...getCheckboxProps('muntlig')}
+                        />
+                        <Checkbox
+                          label="Standpunkt"
+                          {...getCheckboxProps('standpunkt')}
+                        />
+                      </Fieldset>
+                    </Prose>
+                    <Prose>
+                      <Field className="example-suggestion-field">
+                        <Label>Velg emner</Label>
+                        <Suggestion
+                          multiple
+                          display="count"
+                          selected={draftEmne}
+                          onSelectedChange={(items) =>
+                            setDraftEmne(items.map((item) => item.value))
+                          }
+                        >
+                          <Suggestion.Input />
+                          <Suggestion.Clear />
+                          <Suggestion.List>
+                            <Suggestion.Empty>Tomt</Suggestion.Empty>
+                            {uniqueEmner.map((option) => (
+                              <Suggestion.Option
+                                key={option}
+                                label={option}
+                                value={option}
+                              >
+                                {option}
+                              </Suggestion.Option>
+                            ))}
+                          </Suggestion.List>
+                        </Suggestion>
+                      </Field>
+                      <Field className="example-suggestion-field">
+                        <Label>Velg fylker</Label>
+                        <Suggestion
+                          multiple
+                          display="count"
+                          selected={draftFylke}
+                          onSelectedChange={(items) =>
+                            setDraftFylke(items.map((item) => item.value))
+                          }
+                        >
+                          <Suggestion.Input />
+                          <Suggestion.Clear />
+                          <Suggestion.List>
+                            <Suggestion.Empty>Tomt</Suggestion.Empty>
+                            {uniqueFylker.map((option) => (
+                              <Suggestion.Option
+                                key={option}
+                                label={option}
+                                value={option}
+                              >
+                                {option}
+                              </Suggestion.Option>
+                            ))}
+                          </Suggestion.List>
+                        </Suggestion>
+                      </Field>
+                    </Prose>
+                  </div>
+                  <div className="example-footer">
+                    <Button
+                      onClick={() => {
+                        setEmne(draftEmne);
+                        setFylke(draftFylke);
+                        setEksamen(draftEksamen);
+                        dialogRef.current?.close();
+                      }}
+                    >
+                      Lagre
+                    </Button>
+                    <Button
+                      variant="secondary"
+                      onClick={() => {
+                        setDraftEmne(emne);
+                        setDraftFylke(fylke);
+                        setDraftEksamen(eksamen);
+                        dialogRef.current?.close();
+                      }}
+                    >
+                      Avbryt
+                    </Button>
+                  </div>
+                </Prose>
+              </Dialog>
+            </Dialog.TriggerContext>
             <Button
               onClick={handleClearFilters}
               variant="tertiary"
@@ -561,7 +561,7 @@ export const WithDialog = meta.story({
             >
               Fjern alle filtre
             </Button>
-          </Field>
+          </div>
         </div>
 
         <ActiveFilters
