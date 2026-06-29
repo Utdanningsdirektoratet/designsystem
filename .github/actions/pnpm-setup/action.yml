@@ -1,5 +1,5 @@
-name: Prepare pnpm & Nx
-description: Installs pnpm, sets up the pnpm cache, and sets the Nx hashes
+name: Prepare pnpm & CI caches
+description: Installs pnpm, sets up the pnpm + Turborepo caches, and configures SCM base for affected detection
 inputs:
   registry-url:
     description: |
@@ -25,6 +25,35 @@ runs:
     - run: pnpm install
       shell: bash
 
-    - uses: nrwl/nx-set-shas@afb73a62d26e41464e9254689e1fd6122ee683c1 # v5.0.1
+    # Turborepo remote cache via GitHub Actions cache.
+    # The key includes the job name so parallel/sequential jobs don't overwrite each other.
+    # The restore-keys fall back progressively: same job first, then any job on the same OS,
+    # so e.g. storybook-tests can reuse build results cached by the main job.
+    - name: Cache Turborepo
+      uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
       with:
-        main-branch-name: ${{ github.base_ref || github.ref_name }}
+        path: .turbo/cache
+        key: turbo-${{ runner.os }}-${{ github.job }}-${{ github.sha }}
+        restore-keys: |
+          turbo-${{ runner.os }}-${{ github.job }}-
+          turbo-${{ runner.os }}-
+
+    # Set Turborepo SCM base for affected detection.
+    # For PRs: compare against the PR target branch (e.g. "origin/main").
+    # For pushes: compare against the previous branch HEAD before the push,
+    #   so turbo can identify which packages were affected by the new commits.
+    #   Falls back to ref_name if github.event.before is unavailable or is the
+    #   zero SHA (initial branch creation).
+    - name: Set TURBO_SCM_BASE
+      shell: bash
+      run: |
+        if [[ "${{ github.event_name }}" == "push" ]]; then
+          BEFORE="${{ github.event.before }}"
+          if [[ -n "$BEFORE" && "$BEFORE" != "0000000000000000000000000000000000000000" ]]; then
+            echo "TURBO_SCM_BASE=$BEFORE" >> "$GITHUB_ENV"
+          else
+            echo "TURBO_SCM_BASE=origin/${{ github.ref_name }}" >> "$GITHUB_ENV"
+          fi
+        else
+          echo "TURBO_SCM_BASE=origin/${{ github.base_ref || github.ref_name }}" >> "$GITHUB_ENV"
+        fi

@@ -11,14 +11,14 @@ import {
   PersonIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
-import { formatReactSource } from '.storybook/utils/sourceTransformers';
-import { Avatar } from '../avatar/Avatar';
-import { Button } from '../button/Button';
-import { Link } from '../link/Link';
-import { List } from '../list/List';
-import { Tooltip } from '../tooltip/Tooltip';
-import { Heading } from '../typography/heading/Heading';
-import { Paragraph } from '../typography/paragraph/Paragraph';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
+import { Avatar } from 'src/components/avatar';
+import { Button } from 'src/components/button';
+import { Link } from 'src/components/link';
+import { List } from 'src/components/list';
+import { Tooltip } from 'src/components/tooltip';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
 import { Tabs } from './Tabs';
 import { Tabs as FakeTabs } from './docs/FakeTabs';
 import { TabsList } from './docs/FakeTabsList';
@@ -32,13 +32,13 @@ const meta = preview.meta({
     'Tabs.Tab': TabsTab,
     'Tabs.Panel': TabsPanel,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
     },
     layout: 'centered',
-    /* a11y complains on aria-controls on tabs when there is no tabs-panel, which there are several places in the examples */
+    /* a11y complains about aria-controls on tabs when there is no tab panel, which is the case in several examples */
     a11y: {
       config: {
         rules: [
@@ -55,18 +55,19 @@ const meta = preview.meta({
 export const Preview = meta.story({
   args: {
     defaultValue: 'value1',
-    children: [
+  },
+  render: (args) => (
+    <Tabs {...args}>
       <Tabs.List>
         <Tabs.Tab value="value1">Tab 1</Tabs.Tab>
         <Tabs.Tab value="value2">Tab 2</Tabs.Tab>
         <Tabs.Tab value="value3">Tab 3</Tabs.Tab>
-      </Tabs.List>,
-      <Tabs.Panel value="value1">Innhold for Tab 1</Tabs.Panel>,
-      <Tabs.Panel value="value2">Innhold for Tab 2</Tabs.Panel>,
-      <Tabs.Panel value="value3">Innhold for Tab 3</Tabs.Panel>,
-    ],
-  },
-  render: (args) => <Tabs {...args} />,
+      </Tabs.List>
+      <Tabs.Panel value="value1">Innhold for Tab 1</Tabs.Panel>
+      <Tabs.Panel value="value2">Innhold for Tab 2</Tabs.Panel>
+      <Tabs.Panel value="value3">Innhold for Tab 3</Tabs.Panel>
+    </Tabs>
+  ),
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
     const tab1 = canvas.getByRole('tab', { name: /tab 1/i });
@@ -152,6 +153,9 @@ export const OnlyText = meta.story({
           <Tabs.Tab value="prøver">Prøver</Tabs.Tab>
           <Tabs.Tab value="prøvesvar">Prøvesvar</Tabs.Tab>
         </Tabs.List>
+        <Tabs.Panel value="oversikt">Innhold for oversikt</Tabs.Panel>
+        <Tabs.Panel value="prøver">Innhold for prøver</Tabs.Panel>
+        <Tabs.Panel value="prøvesvar">Innhold for prøvesvar</Tabs.Panel>
       </Tabs>
     );
   },
@@ -178,6 +182,9 @@ export const IconsWithText = meta.story({
             Videregående
           </Tabs.Tab>
         </Tabs.List>
+        <Tabs.Panel value="barnehage">Innhold for barnehage</Tabs.Panel>
+        <Tabs.Panel value="grunnskole">Innhold for grunnskole</Tabs.Panel>
+        <Tabs.Panel value="videregående">Innhold for videregående</Tabs.Panel>
       </Tabs>
     );
   },
@@ -211,110 +218,92 @@ export const OnlyIcons = meta.story({
           </Tabs.Tab>
         </Tooltip>
       </Tabs.List>
+      <Tabs.Panel value="gallery">Innhold for galleri</Tabs.Panel>
+      <Tabs.Panel value="profile">Innhold for profilen din</Tabs.Panel>
+      <Tabs.Panel value="notifications">Innhold for varsler</Tabs.Panel>
+      <Tabs.Panel value="settings">Innhold for innstillinger</Tabs.Panel>
     </Tabs>
   ),
 });
 
 export const Controlled = meta.story({
-  render: (args) => {
-    const [tab, setTab] = useState('users');
-    return (
-      <Tabs {...args} value={tab} onChange={setTab}>
-        <Tabs.List>
-          <Tabs.Tab value="users">
-            <PersonGroupIcon aria-hidden />
-            Brukere
-          </Tabs.Tab>
-          <Tabs.Tab value="profile">
-            <PersonIcon aria-hidden />
-            Din profil
-          </Tabs.Tab>
-        </Tabs.List>
-        <Tabs.Panel value="users">
-          <List.Unordered
-            style={{
-              listStyle: 'none',
-              padding: 0,
-            }}
-          >
-            <List.Item
-              style={{
-                display: 'flex',
-              }}
-            >
-              <Button variant="secondary" onClick={() => setTab('profile')}>
-                <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde
-                Hansen (deg)
-              </Button>
-            </List.Item>
-            <List.Item
-              style={{
-                display: 'flex',
-              }}
-            >
-              <Link
-                href="#"
-                style={{
-                  alignItems: 'center',
-                  display: 'flex',
-                  gap: 'var(--ds-size-2)',
-                }}
-              >
-                <Avatar aria-label="Bruker 2" data-color="support1" />
-                Stian Stølan
-              </Link>
-            </List.Item>
-            <List.Item
-              style={{
-                display: 'flex',
-              }}
-            >
-              <Link
-                href="#"
-                style={{
-                  alignItems: 'center',
-                  display: 'flex',
-                  gap: 'var(--ds-size-2)',
-                }}
-              >
-                <Avatar aria-label="Bruker 3" data-color="support2" />
-                Lina Larsen
-              </Link>
-            </List.Item>
-          </List.Unordered>
-        </Tabs.Panel>
-        <Tabs.Panel value="profile">
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 'var(--ds-size-2)',
-            }}
-          >
-            <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde Hansen
-          </div>
-
-          <Heading
-            level={3}
-            style={{
-              marginBottom: 'var(--ds-size-2)',
-              marginTop: 'var(--ds-size-4)',
-            }}
-          >
-            Detaljer
-          </Heading>
-          <Paragraph>34 år</Paragraph>
-          <Paragraph>Mysen, Norge</Paragraph>
-          <Paragraph>Lærer</Paragraph>
-          <Paragraph>Mysen Videregående skole</Paragraph>
-        </Tabs.Panel>
-      </Tabs>
-    );
-  },
   parameters: {
     customStyles: {
       width: '500px',
     },
-    docs: { source: { type: 'code', transform: formatReactSource } },
+    docs: advancedCodeDocs,
+  },
+  render: (args) => {
+    const [tab, setTab] = useState('users');
+    return (
+      <>
+        <style>
+          {`
+          .example-list-unordered {
+            list-style: none;
+            padding: 0;
+          }
+          .example-list-item {
+            display: flex;
+           }
+          .example-list-content {
+            align-items: center;
+            display: flex;
+            gap: var(--ds-size-2);
+          }
+          .example-list-header {
+            margin-bottom: var(--ds-size-2);
+            margin-top: var(--ds-size-4);
+          }`}
+        </style>
+        <Tabs {...args} value={tab} onChange={setTab}>
+          <Tabs.List>
+            <Tabs.Tab value="users">
+              <PersonGroupIcon aria-hidden />
+              Brukere
+            </Tabs.Tab>
+            <Tabs.Tab value="profile">
+              <PersonIcon aria-hidden />
+              Din profil
+            </Tabs.Tab>
+          </Tabs.List>
+          <Tabs.Panel value="users">
+            <List.Unordered className="example-list-unordered">
+              <List.Item className="example-list-item">
+                <Button variant="secondary" onClick={() => setTab('profile')}>
+                  <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde
+                  Hansen (deg)
+                </Button>
+              </List.Item>
+              <List.Item className="example-list-item">
+                <Link href="#" className="example-list-content">
+                  <Avatar aria-label="Bruker 2" data-color="support1" />
+                  Stian Stølan
+                </Link>
+              </List.Item>
+              <List.Item className="example-list-item">
+                <Link href="#" className="example-list-content">
+                  <Avatar aria-label="Bruker 3" data-color="support2" />
+                  Lina Larsen
+                </Link>
+              </List.Item>
+            </List.Unordered>
+          </Tabs.Panel>
+          <Tabs.Panel value="profile">
+            <div className="example-list-content">
+              <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde Hansen
+            </div>
+
+            <Heading level={3} className="example-list-header">
+              Detaljer
+            </Heading>
+            <Paragraph>34 år</Paragraph>
+            <Paragraph>Mysen, Norge</Paragraph>
+            <Paragraph>Lærer</Paragraph>
+            <Paragraph>Mysen Videregående skole</Paragraph>
+          </Tabs.Panel>
+        </Tabs>
+      </>
+    );
   },
 });

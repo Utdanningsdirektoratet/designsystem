@@ -6,9 +6,9 @@ import { DisabledEx, ReadOnlyEx } from './docs/doAndDont';
 
 # Select
 
-`Select` er en nedtrekksliste som lar brukeren velge ett alternativ fra et utvalg av muligheter.  
+`Select` er en nedtrekksliste som lar brukeren velge ett alternativ fra et utvalg av muligheter.
 Komponenten er bygget på [HTML-elementet `<select>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/select), som benytter seg av operativsystemets standarder.
-Dette sikrer forutsigbarhet og tilgjengelighet, men det setter noen begrensninger på hvordan komponenten kan tilpasses.
+Dette sikrer forutsigbarhet og tilgjengelighet, men det setter også noen begrensninger på hvordan komponenten kan tilpasses.
 For eksempel er det ikke mulig å overstyre formateringen av alternativene.
 
 **Passer til å**
@@ -18,8 +18,8 @@ For eksempel er det ikke mulig å overstyre formateringen av alternativene.
 **Passer ikke til å**
 
 - navigere mellom sider eller seksjoner i en applikasjon
-- velge flere alternativer, bruk heller [`Suggestion`](/docs/components-suggestion--docs) eller [`Checkbox`](/docs/components-checkbox--docs)
-- velge fra en liste med få alternativer, bruk heller [`Radio`](/docs/components-radio--docs)
+- velge flere alternativer – bruk heller [`Suggestion`](/docs/components-suggestion--docs) eller [`Checkbox`](/docs/components-checkbox--docs)
+- velge fra en liste med få alternativer – bruk heller [`Radio`](/docs/components-radio--docs)
 
 ## Slik bruker du Select
 
@@ -49,14 +49,14 @@ Bruk `ValidationMessage` for å vise feilmeldinger.
 
 ### Gruppering av alternativer
 
-Gruppering brukes for å organisere alternativer i kategorier, noe som gjør lange lister mer oversiktlige og enklere å navigere.
+Gruppering brukes for å organisere alternativer i kategorier, slik at lange lister blir mer oversiktlige og enklere å navigere.
 
 <Canvas of={SelectStories.WithOptgroup} />
 
 ### Kontrollert tilstand
 
-Tilstanden til `Select` kan kontrolleres ved å bruke value og onChange. Dette er nyttig når du vil at `Select` skal oppdatere seg selv basert på endringer i andre komponenter eller tilstander.
-For eksempel kan du filtrere alternativene i `Select` basert på brukerens valg i en annen komponent. I eksempelet nedenfor velger man fylke først slik at man ikke må bla gjennnom en lang liste med byer.
+Tilstanden til `Select` kan kontrolleres med `value` og `onChange`. Dette er nyttig når `Select` skal oppdateres basert på endringer i andre komponenter eller tilstander.
+Du kan for eksempel filtrere alternativene i `Select` basert på brukerens valg i en annen komponent. I eksempelet under velger brukeren fylke først, slik at listen med byer blir kortere og enklere å navigere.
 
 <Canvas of={SelectStories.Controlled} />
 
@@ -64,15 +64,15 @@ For eksempel kan du filtrere alternativene i `Select` basert på brukerens valg 
 
 ### Antall alternativer
 
-Bruk `Select` når det er 7 eller flere alternativer. For færre alternativer kan [`Radio`](/docs/components-radio--docs) være enklere for brukerne. Det kan ofte være bedre å stille flere spørsmål i forkant for å redusere antallet alternativer å velge mellom.
+Bruk `Select` når det er 7 eller flere alternativer. Ved færre alternativer kan [`Radio`](/docs/components-radio--docs) være enklere for brukerne. Det kan også være bedre å stille ett eller flere spørsmål i forkant for å redusere antall valg.
 
 ### Tilpass bredden på feltet
 
-Tilpass bredden etter hva brukerne skal velge - f.eks. kort bredde for telefonnummer og bredere for stedsnavn. Ulik bredde på feltene gjør det lettere å navigere i skjemaer med mange felter.
+Tilpass bredden etter hva brukerne skal velge, for eksempel smal bredde for telefonnummer og bredere for stedsnavn. Ulik bredde på feltene gjør det lettere å navigere i skjemaer med mange felter.
 
 ### Ikke bruk deaktivert Select
 
-Vi unngår deaktivert (`disabled`) `Select` fordi de kan være vanskelige å oppfatte. Noen brukere vil ikke forstå hvorfor den ikke er klikkbar. Hvis et `Select` ikke er relevant, bør du helst fjerne det fremfor å deaktivere det. Tilby gjerne brukeren informasjon om hvorfor noe ikke er tilgjengelig.
+Vi unngår deaktivert (`disabled`) `Select` fordi det kan være vanskelig for brukeren å forstå hvorfor feltet ikke kan brukes. Hvis feltet ikke er relevant, bør det heller fjernes enn deaktiveres. Gi gjerne en kort forklaring på hvorfor feltet ikke er tilgjengelig.
 
 Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander) og hvilke alternativer som finnes.
 
@@ -80,16 +80,13 @@ Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](h
 
 ### Unngå skrivebeskyttet Select
 
-`Select` støtter `aria-readonly`-attributtet for å gjøre feltet skrivebeskyttet, og gir en visuell indikasjon
-som skiller seg fra redigerbare felter. Vi unngår likevel `aria-readonly` så langt det lar seg gjøre, fordi
-slike felter kan være forvirrende for noen brukere. Ikke alle vil skjønne hvorfor de ikke får til å
-endre innholdet i feltet.
+`Select` støtter `aria-readonly` for å gjøre feltet skrivebeskyttet og vise at det skiller seg fra redigerbare felt. Vi unngår likevel `aria-readonly` så langt det lar seg gjøre, fordi slike felt kan være forvirrende for noen brukere. Ikke alle forstår hvorfor innholdet ikke kan endres.
 
 <ReadOnlyEx />
 
 ## Tekst i Select
 
-Det skal alltid være `label` på `Select`. I spesielle tilfeller kan vi skjule `label`. Det kan for eksempel være i tabeller, hvis feltet får `label` fra tabelloverskriften. Selv om vi har tenkt å skjule den, må vi alltid skrive en `label` som gir mening, siden den leses opp av skjermlesere.
+Det skal alltid være en `label` på `Select`. I spesielle tilfeller kan labelen skjules, for eksempel i tabeller der feltet får navn fra kolonneoverskriften. Selv om labelen skjules visuelt, må den alltid være tydelig og meningsfull, siden den leses opp av skjermlesere.
 
 - Hold `label` kort, unngå at den går over to linjer.
 - Unngå å legge til beskrivelse som ikke er relevant eller meningsfull for brukeren.
@@ -97,7 +94,7 @@ Det skal alltid være `label` på `Select`. I spesielle tilfeller kan vi skjule 
 
 ## Tilgjengelighet
 
-Det er en kjent feil at HTML-elementet `<select>` ikke fungerer med VoiceOver i Chrome på Mac.
+Det er en kjent feil at HTML-elementet `<select>` ikke fungerer med VoiceOver i Chrome på macOS.
 
 ### Tastaturnavigasjon
 

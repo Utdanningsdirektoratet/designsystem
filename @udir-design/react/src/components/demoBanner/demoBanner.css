@@ -1,9 +1,24 @@
+:root,
+[lang='nb'] {
+  --udsc-demo-banner-text: 'Dette er en demo';
+}
+
+[lang='nn'] {
+  --udsc-demo-banner-text: 'Dette er ein demo';
+}
+
+[lang='en'] {
+  --udsc-demo-banner-text: 'This is a demo';
+}
+
 .uds-demo-banner {
   /* Parent needs overflow: visible for sticky banner to work */
   overflow: visible;
 
   > .uds-header::after,
-  > div:last-child {
+  > div:last-child::after {
+    content: var(--udsc-demo-banner-text);
+    display: block;
     background: var(--ds-color-warning-base-default);
     padding: var(--ds-size-2) var(--ds-size-4);
     text-align: center;
@@ -14,17 +29,13 @@
     margin-block-end: calc(1lh + (var(--ds-size-2) * 2));
 
     &::after {
-      content: var(--udsc-demo-banner-text);
-      display: block;
       margin-inline-start: calc(-1 * var(--udsc-header-padding));
       margin-inline-end: calc(-1 * var(--udsc-header-padding));
       margin-block-start: var(--udsc-header-padding);
     }
   }
 
-  > div {
-    &:last-child {
-      inset-block-end: 0;
-    }
+  > div:last-child::after {
+    inset-block-end: 0;
   }
 }

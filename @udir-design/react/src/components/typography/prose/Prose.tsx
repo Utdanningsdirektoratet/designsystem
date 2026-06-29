@@ -7,7 +7,7 @@ export type ProseProps = HTMLAttributes<HTMLDivElement>;
 
 /**
  * Use `Prose` to render elements
- * with a preset spacing grid .
+ * with a preset spacing grid.
  *
  * @example
  * <Prose>

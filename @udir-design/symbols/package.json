@@ -50,7 +50,8 @@
     "build": "tsdown",
     "postbuild": "pnpm run copy:svgs",
     "fetch-new:symbols": "tsx config/figma/index.ts",
-    "generate:pngs": "node config/svg-to-png.js"
+    "generate:pngs": "node config/svg-to-png.js",
+    "lint": "eslint . --max-warnings 0"
   },
   "devDependencies": {
     "@babel/types": "catalog:",

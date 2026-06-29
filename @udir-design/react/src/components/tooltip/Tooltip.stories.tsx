@@ -7,12 +7,12 @@ import {
   TrashIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
-import { Button } from '../button/Button';
+import { Button } from 'src/components/button';
 import { Tooltip } from './Tooltip';
 
 const meta = preview.meta({
   component: Tooltip,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
@@ -25,8 +25,9 @@ const meta = preview.meta({
     },
   },
   args: {
-    // Children is required in Tooltip props, so we must set something
+    // Children and content is required in Tooltip props, so we must set something
     children: undefined,
+    content: undefined,
   },
 });
 
@@ -53,10 +54,10 @@ export const Preview = meta.story({
 });
 
 export const Placement = meta.story({
-  render: () => {
+  render: (args) => {
     return (
       <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
-        <Tooltip placement="left" content="Slett">
+        <Tooltip {...args} placement="left" content="Slett">
           <Button icon variant="secondary">
             <TrashIcon aria-hidden />
           </Button>
@@ -82,14 +83,14 @@ export const Placement = meta.story({
 });
 
 export const Aria = meta.story({
-  render: () => (
+  render: (args) => (
     <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
-      <Tooltip content="Jeg er hovedinformasjon (aria-labelledby)">
+      <Tooltip {...args} content="Jeg er hovedinformasjon (aria-label)">
         <Button icon>
           <FilesIcon aria-hidden />
         </Button>
       </Tooltip>
-      <Tooltip content="Jeg er tillegsinformasjon (aria-describedby)">
+      <Tooltip content="Jeg er tillegsinformasjon (aria-description)">
         <Button>Tekst i trigger</Button>
       </Tooltip>
     </div>

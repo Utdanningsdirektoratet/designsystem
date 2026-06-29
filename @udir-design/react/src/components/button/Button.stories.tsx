@@ -12,9 +12,9 @@ import {
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { makeStoryTransformer } from '.storybook/utils/makeStoryTransformer';
-import { Card } from '../card/Card';
-import { Tooltip } from '../tooltip/Tooltip';
-import { Label } from '../typography/label/Label';
+import { Card } from 'src/components/card';
+import { Tooltip } from 'src/components/tooltip';
+import { Label } from 'src/components/typography/label';
 import { Button } from './Button';
 
 const meta = preview.meta({
@@ -76,8 +76,13 @@ export const Secondary = meta.story({
 export const Tertiary = meta.story({
   args: {
     variant: 'tertiary',
-    children: [<NotePencilIcon aria-hidden />, 'Rediger'],
   },
+  render: (args) => (
+    <Button {...args}>
+      <NotePencilIcon aria-hidden />
+      Rediger
+    </Button>
+  ),
 });
 
 export const Neutral = meta.story({

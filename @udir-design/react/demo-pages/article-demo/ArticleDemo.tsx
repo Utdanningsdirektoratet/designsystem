@@ -1,17 +1,17 @@
 import cl from 'clsx';
 import { useRef } from 'react';
 import { ArrowUpIcon, DownloadIcon } from '@udir-design/icons';
-import { Breadcrumbs } from 'src/components/breadcrumbs/Breadcrumbs';
-import { Button } from 'src/components/button/Button';
-import { Card } from 'src/components/card/Card';
-import { Details } from 'src/components/details/Details';
-import { Divider } from 'src/components/divider/Divider';
-import { Link } from 'src/components/link/Link';
-import { TableOfContents } from 'src/components/tableOfContents/TableOfContents';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
-import { Prose } from 'src/components/typography/prose/Prose';
-import { useTableOfContents } from 'src/utilities/hooks/useTableOfContents/useTableOfContents';
+import { Breadcrumbs } from 'src/components/breadcrumbs';
+import { Button } from 'src/components/button';
+import { Card } from 'src/components/card';
+import { Details } from 'src/components/details';
+import { Divider } from 'src/components/divider';
+import { Link } from 'src/components/link';
+import { TableOfContents } from 'src/components/tableOfContents';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
+import { Prose } from 'src/components/typography/prose';
+import { useTableOfContents } from 'src/hooks/useTableOfContents';
 import classes from './ArticleDemo.module.css';
 import { ContentSection } from './content-section/ContentSection';
 import { measures } from './strings/measures';
@@ -34,7 +34,7 @@ export const ArticleDemo = () => {
       aria-label="Tilpasset opplæring"
       className={cl(classes.article, classes.contentSpacing)}
     >
-      <Breadcrumbs aria-label="Du er her:">
+      <Breadcrumbs aria-label="Du er her:" className={classes.breadcrumbs}>
         <Breadcrumbs.Link
           href="https://www.udir.no/laring-og-trivsel/lareplanverket/stotte/"
           aria-label="Tilbake til Støtte til arbeid med læreplanverket"

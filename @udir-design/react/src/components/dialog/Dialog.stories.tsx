@@ -3,19 +3,19 @@ import { useRef, useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
-import { Button } from '../button/Button';
-import { Checkbox } from '../checkbox/Checkbox';
-import { Field } from '../field/Field';
-import { Fieldset } from '../fieldset/Fieldset';
-import { List } from '../list/List';
-import { Radio } from '../radio/Radio';
-import { Suggestion } from '../suggestion/Suggestion';
-import { Textarea } from '../textarea/Textarea';
-import { Textfield } from '../textfield/Textfield';
-import { Heading } from '../typography/heading/Heading';
-import { Label } from '../typography/label/Label';
-import { Paragraph } from '../typography/paragraph/Paragraph';
-import { Prose } from '../typography/prose/Prose';
+import { Button } from 'src/components/button';
+import { Checkbox } from 'src/components/checkbox';
+import { Field } from 'src/components/field';
+import { Fieldset } from 'src/components/fieldset';
+import { List } from 'src/components/list';
+import { Radio } from 'src/components/radio';
+import { Suggestion } from 'src/components/suggestion';
+import { Textarea } from 'src/components/textarea';
+import { Textfield } from 'src/components/textfield';
+import { Heading } from 'src/components/typography/heading';
+import { Label } from 'src/components/typography/label';
+import { Paragraph } from 'src/components/typography/paragraph';
+import { Prose } from 'src/components/typography/prose';
 import type { DialogProps } from './Dialog';
 import { Dialog } from './Dialog';
 import styles from './dialog.stories.module.scss';
@@ -36,7 +36,7 @@ async function defaultPlay(canvasElement: HTMLElement) {
 
 const meta = preview.meta({
   component: Dialog,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
@@ -167,35 +167,37 @@ export const WithoutDialogTriggerContext = meta.story({
 
 export const WithoutDialogTriggerContextWithCommand = meta.story({
   parameters: { docs: advancedCodeDocs },
-  render: (args) => (
-    <>
-      <Button command="show-modal" commandfor="dialog-with-command">
-        Åpne Dialog med command
-      </Button>
-      <Dialog id="dialog-with-command" {...args}>
-        <Prose>
-          <Heading>
-            Dialog med <code>command</code>
-          </Heading>
-          <Paragraph>
-            Her bruker vi <code>command</code> og <code>commandfor</code> for å
-            åpne og lukke dialogen
-          </Paragraph>
-          <Paragraph>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
-            doloremque obcaecati assumenda odio ducimus sunt et.
-          </Paragraph>
-          <Button
-            variant="secondary"
-            command="close"
-            commandfor="dialog-with-command"
-          >
-            Lukk dialog
-          </Button>
-        </Prose>
-      </Dialog>
-    </>
-  ),
+  render(args) {
+    return (
+      <>
+        <Button command="show-modal" commandfor="dialog-with-command">
+          Åpne Dialog med command
+        </Button>
+        <Dialog id="dialog-with-command" {...args}>
+          <Prose>
+            <Heading>
+              Dialog med <code>command</code>
+            </Heading>
+            <Paragraph>
+              Her bruker vi <code>command</code> og <code>commandfor</code> for
+              å åpne og lukke dialogen
+            </Paragraph>
+            <Paragraph>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+            </Paragraph>
+            <Button
+              variant="secondary"
+              command="close"
+              commandfor="dialog-with-command"
+            >
+              Lukk dialog
+            </Button>
+          </Prose>
+        </Dialog>
+      </>
+    );
+  },
 });
 
 export const DialogWithOpenProp = meta.story({
@@ -269,13 +271,20 @@ export const CustomCloseButton = meta.story({
 
 export const BackdropClosedbyAny = meta.story({
   parameters: { docs: advancedCodeDocs },
-  render() {
+  render(args) {
     return (
       <Dialog.TriggerContext>
         <Dialog.Trigger variant="secondary">Åpne Dialog</Dialog.Trigger>
-        <Dialog closedby="any" onClose={() => alert('Dialog ble lukket')}>
+        <Dialog
+          {...args}
+          closedby="any"
+          onClose={() => alert('Dialog ble lukket')}
+        >
           <Heading>
-            Dialog med <code>closedby="any"</code>
+            Dialog med{' '}
+            <code>
+              closedby={'"'}any{'"'}
+            </code>
           </Heading>
           <Paragraph>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
@@ -288,10 +297,10 @@ export const BackdropClosedbyAny = meta.story({
 });
 
 export const WithHeaderAndFooter = meta.story({
-  render: () => (
+  render: (args) => (
     <Dialog.TriggerContext>
       <Dialog.Trigger>Gå til neste</Dialog.Trigger>
-      <Dialog>
+      <Dialog {...args}>
         <Dialog.Block>
           <Paragraph data-size="sm">Undertittel</Paragraph>
           <Heading>Dette må du vite før du går videre</Heading>
@@ -349,6 +358,7 @@ export const DialogWithForm = meta.story({
             autofocus="true"
             label="Navn"
             value={input}
+            autocomplete="name"
             onChange={(e) => setInput(e.target.value)}
           />
           <div
@@ -382,10 +392,10 @@ export const DialogWithForm = meta.story({
 });
 
 export const DialogWithMaxWidth = meta.story({
-  render: () => (
+  render: (args) => (
     <Dialog.TriggerContext>
       <Dialog.Trigger variant="secondary">Åpne Dialog</Dialog.Trigger>
-      <Dialog style={{ maxWidth: 1200 }}>
+      <Dialog style={{ maxWidth: 1200 }} {...args}>
         <Heading style={{ marginBottom: 'var(--ds-size-2)' }}>
           Dialog som er veldig bred
         </Heading>
@@ -409,12 +419,12 @@ const DATA_PLACES = [
 ];
 
 export const DialogWithSuggestion = meta.story({
-  render() {
+  render: (args) => {
     const dialogRef = useRef<HTMLDialogElement>(null);
     return (
       <Dialog.TriggerContext>
         <Dialog.Trigger variant="secondary">Åpne Dialog</Dialog.Trigger>
-        <Dialog style={{ overflow: 'visible' }} ref={dialogRef}>
+        <Dialog style={{ overflow: 'visible' }} ref={dialogRef} {...args}>
           <Dialog.Block>
             <Heading>Dialog med innhold utenfor</Heading>
           </Dialog.Block>
@@ -491,13 +501,13 @@ export const DialogNonModal = meta.story({
       gap: 'var(--ds-size-4)',
     },
   },
-  render() {
+  render: (args) => {
     const dialogRef = useRef<HTMLDialogElement>(null);
     return (
       <>
         <Field style={{ width: '400px' }}>
           <Label>Besvarelse</Label>
-          <Textarea rows={8} />
+          <Textarea rows={8} autoComplete="off" />
         </Field>
         <Button variant="secondary" onClick={() => dialogRef.current?.show()}>
           Åpne skrivetips
@@ -507,8 +517,9 @@ export const DialogNonModal = meta.story({
           modal={false}
           style={{
             width: '300px',
-            left: '80%',
+            left: '65%',
           }}
+          {...args}
         >
           <Heading style={{ marginBottom: 'var(--ds-size-2)' }}>
             Hva besvarelsen burde inneholde
@@ -545,7 +556,7 @@ export const DialogNonModal = meta.story({
 });
 
 export const Drawer = meta.story({
-  render() {
+  render: (args) => {
     const [placement, setPlacement] =
       useState<DialogProps['placement']>('bottom');
     const [modal, setModal] = useState(true);
@@ -571,6 +582,7 @@ export const Drawer = meta.story({
             setPlacement(target.value as DialogProps['placement']);
           }}
         >
+          <Fieldset.Legend>Velg plassering for dialogen</Fieldset.Legend>
           <div
             style={{
               display: 'flex',
@@ -603,11 +615,12 @@ export const Drawer = meta.story({
             closedby="any"
             placement={placement}
             style={{ zIndex: '10' }}
+            {...args}
           >
             <Dialog.Block>
               <Paragraph>
                 This is a {modal ? 'modal' : 'non-modal'} Dialog with{' '}
-                <code>placement="{placement}"</code>
+                <code>placement={`"${placement}"`}</code>
               </Paragraph>
             </Dialog.Block>
           </Dialog>

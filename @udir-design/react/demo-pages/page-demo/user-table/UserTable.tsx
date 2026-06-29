@@ -1,10 +1,9 @@
-import React from 'react';
-import { Button } from 'src/components/button/Button';
-import { Popover } from 'src/components/popover/Popover';
-import { Search } from 'src/components/search/Search';
-import { Select } from 'src/components/select/Select';
+import { Button } from 'src/components/button';
+import { Popover } from 'src/components/popover';
+import { Search } from 'src/components/search';
+import { Select } from 'src/components/select';
 import { Table } from 'src/components/table';
-import { Heading } from 'src/components/typography/heading/Heading';
+import { Heading } from 'src/components/typography/heading';
 import styles from './UserTable.module.scss';
 
 export function UserTable() {

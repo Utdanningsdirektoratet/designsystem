@@ -8,11 +8,12 @@ import {
   ComponentIcon,
   ImageIcon,
   LayersIcon,
+  PuzzlePieceIcon,
   RectangleSectionsIcon,
   TokenIcon,
   WrenchIcon,
 } from '@udir-design/icons';
-import { type TagProps } from 'src/components/tag/Tag';
+import { type TagProps } from 'src/components/tag';
 import customTheme from './docs/customTheme';
 
 const tagBadges = {
@@ -95,6 +96,17 @@ addons.setConfig({
             </>
           );
         }
+        if (item.id === 'hooks') {
+          return (
+            <>
+              <PuzzlePieceIcon
+                aria-hidden
+                className="sidebar-subheading-icon"
+              />
+              Hooks
+            </>
+          );
+        }
         if (item.id === 'utilities') {
           return (
             <>
@@ -128,6 +140,7 @@ addons.setConfig({
           .replace('iconsandsymbols', 'Ikoner og symboler')
           .replace('patterns', 'Bruksmønstre')
           .replace('components', 'Komponenter')
+          .replace('hooks', 'Hooks')
           .replace('design-tokens', 'Design tokens')
           .replace('utilities', 'Hjelpeverktøy');
         if (item.type === 'story') {

@@ -3,5 +3,7 @@
  * It exports the beta-stage components, plus everything in stable.
  */
 export * from './stable';
+// eslint-disable-next-line @typescript-eslint/consistent-type-exports
 export * from './components/beta';
-export * from './utilities/hooks/beta';
+// eslint-disable-next-line @typescript-eslint/consistent-type-exports
+export * from './hooks/beta';

@@ -10,12 +10,13 @@ Dropdown er en generisk nedtrekksliste. Den legger grunnmuren for å bygge menye
 
 **Passer til å**
 
-- brukes som kontekstmeny
+- tilby flere valg i en meny uten at de tar plass i grensesnittet
 - liste ut handlinger
 
 **Passer ikke til å**
 
-- beskrive handlinger eller elementer (se [`Popover`](/docs/components-popover--docs) eller [`Tooltip`](/docs/components-tooltip--docs))
+- beskrive handlinger eller elementer – bruk heller [`Popover`](/docs/components-popover--docs) eller [`Tooltip`](/docs/components-tooltip--docs)
+- tilby handlinger som er primære eller ofte brukt – bruk heller [`Button`](/docs/components-button--docs)
 
 ## Slik bruker du Dropdown
 
@@ -52,7 +53,9 @@ import { Dropdown } from '@udir-design/react';
 
 ## Eksempler
 
-Du kan legge ikon og lignende komponenter slik som `Avatar` rett inn i `Dropdown.Item`.
+### Ikoner og andre komponenter
+
+Du kan legge ikoner og lignende komponenter, som for eksempel `Avatar`, direkte i `Dropdown.Item`.
 
 <Canvas of={DropdownStories.Avatars} />
 
@@ -68,7 +71,7 @@ Merk at vi ikke bruker `onClick` på triggeren, `Dropdown` håndterer dette inte
 
 Triggeren er en [`Button`](/docs/components-button--docs) som standard. Du kan bruke `asChild` for å endre `Dropdown.Trigger` elementet. Dersom du skal legge på funksjoner som `onClick`, legg det på ditt element, og legg `asChild` på `Dropdown.Trigger`.
 
-Fordi `Dropdown` bruker popover API-et, kan du også bruke `Dropdown` uten `Dropdown.TriggerContext` og `Dropdown.Trigger`. Da må du legge til `popovertarget={id}` på komponenten som skal brukes som trigger, og `id` på `Dropdown`.
+Fordi `Dropdown` bruker Popover API-et, kan du også bruke `Dropdown` uten `Dropdown.TriggerContext` og `Dropdown.Trigger`. Da må du legge til `popovertarget={id}` på komponenten som skal brukes som trigger, og `id` på `Dropdown`.
 
 <Canvas of={DropdownStories.WithoutContext} />
 
@@ -94,8 +97,7 @@ Dersom du bruker `Dropdown` uten å gjøre noe selv, vil fokuserbare elementer i
 
 ## Kompatibilitet
 
-`Dropdown` bruker [popover API-et](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover). Dette API-et er klassifisert som [Baseline:
-Newly available](https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility) fra april 2024,
+`Popover` bruker [Popover API-et](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover). API-et ble klassifisert som [Baseline: Newly available](https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility) fra april 2024,
 med Firefox som siste nettleser la det til. I noen tilfeller kan en oppleve at brukere av ulike grunner er låst til eldre nettleserversjoner, og da kan det være aktuelt å legge til en polyfill for å sikre at `Dropdown` fungerer for alle.
 
 - [Popover-Polyfill](https://github.com/oddbird/popover-polyfill)

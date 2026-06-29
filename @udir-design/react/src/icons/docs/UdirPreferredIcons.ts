@@ -93,7 +93,7 @@ export const guidelinesRecord: Partial<
     {
       type: 'dont',
       description:
-        'Ikke bruk til å indikere en status, bruk heller komponenten Badge',
+        'Ikke bruk til å indikere en status – bruk heller komponenten Badge',
     },
   ],
   ChevronDown: [

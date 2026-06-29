@@ -1,7 +1,7 @@
 import { counties } from '.storybook/data';
 import { Dont, Stack } from '.storybook/docs/components';
-import { Field } from 'src/components/field/Field';
-import { Label } from 'src/components/typography/label/Label';
+import { Field } from 'src/components/field';
+import { Label } from 'src/components/typography/label';
 import { Select } from '../Select';
 
 export const DisabledEx = () => {

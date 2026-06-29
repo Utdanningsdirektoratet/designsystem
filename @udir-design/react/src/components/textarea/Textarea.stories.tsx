@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
-import { Button } from '../button/Button';
-import { Field } from '../field/Field';
-import { Label } from '../typography/label/Label';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
+import { Button } from 'src/components/button';
+import { Field } from 'src/components/field';
+import { Label } from 'src/components/typography/label';
 import { Textarea } from './Textarea';
 import { Textarea as FakeTextarea } from './docs/FakeTextarea';
 
 const meta = preview.meta({
   component: FakeTextarea,
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
@@ -29,6 +30,7 @@ export const Preview = meta.story({
     rows: 3,
     cols: 20,
     id: 'my-textarea',
+    autoComplete: 'off',
   },
   render: (args) => (
     <Field>
@@ -74,6 +76,7 @@ export const Preview = meta.story({
 export const FullWidth = meta.story({
   args: {
     id: 'my-textarea',
+    autoComplete: 'off',
   },
   parameters: {
     customStyles: {
@@ -91,6 +94,7 @@ export const FullWidth = meta.story({
 export const Controlled = meta.story({
   args: {
     id: 'textfield-controlled',
+    autoComplete: 'off',
   },
   parameters: {
     customStyles: {
@@ -98,6 +102,7 @@ export const Controlled = meta.story({
       flexDirection: 'column',
       gap: 'var(--ds-size-2)',
     },
+    docs: advancedCodeDocs,
   },
   render: (args) => {
     const [value, setValue] = useState(`${args.value || ''}`);
@@ -131,6 +136,7 @@ export const Disabled = meta.story({
   args: {
     id: 'textarea-disabled',
     disabled: true,
+    autoComplete: 'off',
   },
   render: (args) => (
     <Field>
@@ -144,6 +150,7 @@ export const ReadOnly = meta.story({
   args: {
     id: 'textarea-readonly',
     readOnly: true,
+    autoComplete: 'off',
   },
   render: (args) => (
     <Field>

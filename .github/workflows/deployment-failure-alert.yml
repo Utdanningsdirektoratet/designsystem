@@ -1,0 +1,24 @@
+name: Deployment failure alert
+
+on:
+  deployment_status:
+
+permissions: {}
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    if: |
+      github.event.deployment_status.state == 'failure' &&
+      (github.event.deployment.ref == 'main' || startsWith(github.event.deployment.ref, 'release/'))
+    steps:
+      - uses: slackapi/slack-github-action@45a88b9581bfab2566dc881e2cd66d334e621e2c # v3.0.3
+        with:
+          webhook: ${{ secrets.SLACK_DS_UDIR_DEV_WEBHOOK }}
+          webhook-type: incoming-webhook
+          errors: true
+          retries: RAPID
+          payload: |
+            {
+              "text": "❌ Deployment to *${{ github.event.deployment.environment }}* failed: <${{ github.event.deployment_status.log_url }}|View logs>"
+            }

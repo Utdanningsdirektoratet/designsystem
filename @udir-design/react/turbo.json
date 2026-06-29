@@ -1,0 +1,74 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "lint:cycles": {
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "!vitest.config.ts",
+        "!**/*.test.*",
+        "!**/*.spec.*",
+        "!.storybook/**",
+        "!**/*.mdx",
+        "!**/*.stories.*",
+        "!src/**/demo/**",
+        "!src/**/docs/**"
+      ]
+    },
+    "build": {
+      "dependsOn": ["^build", "^inject", "lint:cycles"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "!vitest.config.ts",
+        "!**/*.test.*",
+        "!**/*.spec.*",
+        "!.storybook/**",
+        "!**/*.mdx",
+        "!**/*.stories.*",
+        "!src/**/demo/**",
+        "!src/**/docs/**"
+      ]
+    },
+    "build:storybook": {
+      "dependsOn": ["build"],
+      "inputs": ["$TURBO_DEFAULT$", "!**/*.test.*", "!**/*.spec.*"],
+      "env": ["GITHUB_HEAD_REF"],
+      "outputs": ["storybook-static/**"]
+    },
+    "dev": {
+      "persistent": true,
+      "dependsOn": ["build", "lint:cycles"]
+    },
+    "watch:typedoc": {
+      "persistent": true
+    },
+    "serve:typedoc": {
+      "persistent": true
+    },
+    "serve:docs": {
+      "persistent": true,
+      "dependsOn": ["build:storybook", "build:docs"]
+    },
+    "test:unit": {
+      "dependsOn": ["build"],
+      "inputs": ["$TURBO_DEFAULT$"]
+    },
+    "test:storybook": {
+      "dependsOn": ["build"],
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": ["test-reports/storybook.json", "test-reports/storybook/**"]
+    },
+    "build:docs": {
+      "dependsOn": ["build:storybook"],
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": ["storybook-static/typedoc/**"]
+    },
+    "view-test-report:storybook": {
+      "persistent": true,
+      "dependsOn": ["test:storybook"]
+    },
+    "inject": {
+      "dependsOn": ["build"]
+    }
+  }
+}

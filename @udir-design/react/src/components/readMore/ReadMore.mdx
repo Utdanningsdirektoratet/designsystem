@@ -6,15 +6,18 @@ import * as ReadMoreStories from './ReadMore.stories';
 
 # ReadMore
 
-`ReadMore` består av en knapp som åpner/lukker et tekstpanel. Komponenten brukes i skjemaer for å forklare vanskelige begreper eller ord, eller for å gi mer utdypende informasjon om hvorfor et spørsmål stilles.
+`ReadMore` består av en knapp som åpner/lukker et tekstpanel. Komponenten har liknende funksjon som [`Details`](/docs/components-details--docs), men er mer diskré og har færre valgmuligheter. Den passer i kontekster med liten plass, som for eksempel i skjemaer, eller der `Details` ville være for iøynefallende.
 
 **Passer til å**
 
-- begrunne spørsmål
-- forklare vanskelige begreper eller ord
+- forklare ord og begreper etter de er brukt
+- begrunne spørsmål i skjemaer
+- vise utdypende informasjon uten å ta stor plass
 
 **Passer ikke til å**
 
+- forklare ord og begreper i løpende tekst – bruk heller [`Popover`](/docs/components-popover--docs)
+- påkalle brukerens oppmerksomhet – bruk heller [`Details`](/docs/components-details--docs)
 - vise nødvendig informasjon
 - vise mye eller rikt innhold
 
@@ -31,7 +34,7 @@ import * as ReadMoreStories from './ReadMore.stories';
 
 ### Tekst på knappen
 
-Teksten på knappen skal skrives slik at bruker forstår hva som vises i panelet som åpnes. Ofte refererer dette til beskrivelsen av input-feltet.
+Teksten på knappen skal skrives slik at bruker forstår hva som vises i panelet som åpnes. I et skjema refererer dette ofte til beskrivelsen av input-feltet.
 
 - Teksten på knappen bør ikke skrives som et spørsmål.
 - Hold teksten på knappen kort, unngå at den går over to linjer.

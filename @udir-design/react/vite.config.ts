@@ -87,8 +87,8 @@ export default defineConfig({
         stable: 'src/stable.ts',
         alpha: 'src/alpha.ts',
         beta: 'src/beta.ts',
-        'utilities/form/alpha': 'src/utilities/form/alpha.ts',
-        'utilities/datavis/alpha': 'src/utilities/datavis/alpha.ts',
+        'utilities/alpha': 'src/utilities/alpha.ts',
+        'utilities/beta': 'src/utilities/beta.ts',
       },
       name: '@udir-design/react',
       // Change this to the formats you want to support.

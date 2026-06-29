@@ -1,0 +1,23 @@
+{
+  "name": "@internal/ci",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "test:unit": "vitest run",
+    "typecheck": "tsgo --build"
+  },
+  "devDependencies": {
+    "@semantic-release/exec": "catalog:",
+    "@types/js-yaml": "catalog:",
+    "@types/yargs": "catalog:",
+    "conventional-changelog-conventionalcommits": "catalog:",
+    "fast-glob": "catalog:",
+    "js-yaml": "catalog:",
+    "semantic-release": "catalog:",
+    "tsx": "catalog:",
+    "vitest": "catalog:",
+    "yargs": "catalog:"
+  }
+}

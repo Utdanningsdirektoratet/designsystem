@@ -1,9 +1,9 @@
 import type { SeverityColors } from '@digdir/designsystemet-react/colors';
 import { LightBulbIcon } from '@udir-design/icons';
 import { Alert } from 'src/components/alert';
-import { Card } from 'src/components/card/Card';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Card } from 'src/components/card';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
 import styles from './SimpleAlert.module.scss';
 
 export const SimpleAlert: React.FC<

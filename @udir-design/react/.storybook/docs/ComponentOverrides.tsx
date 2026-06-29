@@ -1,10 +1,10 @@
 import { LinkIcon } from '@udir-design/icons';
-import { Link } from 'src/components/link/Link';
-import { List } from 'src/components/list/List';
+import { Link } from 'src/components/link';
+import { List } from 'src/components/list';
 import { Table } from 'src/components/table';
-import type { HeadingProps } from 'src/components/typography/heading/Heading';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import type { HeadingProps } from 'src/components/typography/heading';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
 import type { MdxComponentOverrides } from '../types';
 import componentStyles from './componentOverrides.module.scss';
 import { StorybookLink, handleLinkClick } from './components/StorybookLink';

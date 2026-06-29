@@ -16,10 +16,10 @@ import {
   TrashIcon,
   XMarkOctagonFillIcon,
 } from '@udir-design/icons';
-import { Button } from '../button/Button';
-import { Card } from '../card/Card';
-import { Link } from '../link/Link';
-import { Spinner } from '../spinner/Spinner';
+import { Button } from '../button';
+import { Card } from '../card';
+import { Link } from '../link';
+import { Spinner } from '../spinner';
 
 /**
  * Inspired by Nav's Aksel
@@ -122,6 +122,7 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
     );
   },
 );
+FileUploadItem.displayName = 'FileUpload.Item';
 
 export function formatFileSize(file: File): string | null {
   if (!file.size) {

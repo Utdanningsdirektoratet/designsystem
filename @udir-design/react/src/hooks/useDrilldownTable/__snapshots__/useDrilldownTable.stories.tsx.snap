@@ -1,0 +1,416 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Preview 1`] = `
+<table
+  data-zebra="true"
+  data-color="support1"
+  data-tinted-column-header="true"
+  data-tinted-row-header="true"
+  style="<removed>"
+>
+  <caption style="<removed>">
+    Nasjonale prøver 5. trinn – skoleåret 2024–25, snitt skalapoeng
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">
+        Område
+      </th>
+      <th
+        scope="col"
+        style="<removed>"
+      >
+        Lesing
+      </th>
+      <th
+        scope="col"
+        style="<removed>"
+      >
+        Regning
+      </th>
+      <th
+        scope="col"
+        style="<removed>"
+      >
+        Engelsk
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      id="<removed>"
+      data-level="1"
+    >
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="true"
+          aria-describedby="<removed>"
+        >
+          Nasjonalt
+        </button>
+        <span
+          aria-hidden="true"
+          id="<removed>"
+        >
+          Nivå 1
+        </span>
+      </th>
+      <td style="<removed>">
+        50
+      </td>
+      <td style="<removed>">
+        50
+      </td>
+      <td style="<removed>">
+        50
+      </td>
+    </tr>
+    <tr
+      id="<removed>"
+      data-level="2"
+    >
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+          aria-describedby="<removed>"
+        >
+          Akershus
+        </button>
+        <span
+          aria-hidden="true"
+          id="<removed>"
+        >
+          Nivå 2
+        </span>
+      </th>
+      <td style="<removed>">
+        52
+      </td>
+      <td style="<removed>">
+        52
+      </td>
+      <td style="<removed>">
+        53
+      </td>
+    </tr>
+    <tr
+      id="<removed>"
+      data-level="2"
+    >
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="true"
+          aria-describedby="<removed>"
+        >
+          Oslo
+        </button>
+        <span
+          aria-hidden="true"
+          id="<removed>"
+        >
+          Nivå 2
+        </span>
+      </th>
+      <td style="<removed>">
+        53
+      </td>
+      <td style="<removed>">
+        52
+      </td>
+      <td style="<removed>">
+        54
+      </td>
+    </tr>
+    <tr
+      id="<removed>"
+      data-level="3"
+    >
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+          aria-describedby="<removed>"
+        >
+          Frogner
+        </button>
+        <span
+          aria-hidden="true"
+          id="<removed>"
+        >
+          Nivå 3
+        </span>
+      </th>
+      <td style="<removed>">
+        55
+      </td>
+      <td style="<removed>">
+        53
+      </td>
+      <td style="<removed>">
+        56
+      </td>
+    </tr>
+    <tr
+      id="<removed>"
+      data-level="3"
+    >
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+          aria-describedby="<removed>"
+        >
+          Gamle Oslo
+        </button>
+        <span
+          aria-hidden="true"
+          id="<removed>"
+        >
+          Nivå 3
+        </span>
+      </th>
+      <td style="<removed>">
+        52
+      </td>
+      <td style="<removed>">
+        50
+      </td>
+      <td style="<removed>">
+        52
+      </td>
+    </tr>
+    <tr
+      id="<removed>"
+      data-level="3"
+    >
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+          aria-describedby="<removed>"
+        >
+          Grünerløkka
+        </button>
+        <span
+          aria-hidden="true"
+          id="<removed>"
+        >
+          Nivå 3
+        </span>
+      </th>
+      <td style="<removed>">
+        54
+      </td>
+      <td style="<removed>">
+        52
+      </td>
+      <td style="<removed>">
+        55
+      </td>
+    </tr>
+    <tr
+      id="<removed>"
+      data-level="3"
+    >
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+          aria-describedby="<removed>"
+        >
+          Nordre Aker
+        </button>
+        <span
+          aria-hidden="true"
+          id="<removed>"
+        >
+          Nivå 3
+        </span>
+      </th>
+      <td style="<removed>">
+        53
+      </td>
+      <td style="<removed>">
+        52
+      </td>
+      <td style="<removed>">
+        54
+      </td>
+    </tr>
+    <tr
+      id="<removed>"
+      data-level="3"
+    >
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+          aria-describedby="<removed>"
+        >
+          St. Hanshaugen
+        </button>
+        <span
+          aria-hidden="true"
+          id="<removed>"
+        >
+          Nivå 3
+        </span>
+      </th>
+      <td style="<removed>">
+        54
+      </td>
+      <td style="<removed>">
+        53
+      </td>
+      <td style="<removed>">
+        55
+      </td>
+    </tr>
+    <tr
+      id="<removed>"
+      data-level="3"
+    >
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+          aria-describedby="<removed>"
+        >
+          Søndre Nordstrand
+        </button>
+        <span
+          aria-hidden="true"
+          id="<removed>"
+        >
+          Nivå 3
+        </span>
+      </th>
+      <td style="<removed>">
+        50
+      </td>
+      <td style="<removed>">
+        48
+      </td>
+      <td style="<removed>">
+        50
+      </td>
+    </tr>
+    <tr
+      id="<removed>"
+      data-level="2"
+    >
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+          aria-describedby="<removed>"
+        >
+          Rogaland
+        </button>
+        <span
+          aria-hidden="true"
+          id="<removed>"
+        >
+          Nivå 2
+        </span>
+      </th>
+      <td style="<removed>">
+        50
+      </td>
+      <td style="<removed>">
+        51
+      </td>
+      <td style="<removed>">
+        51
+      </td>
+    </tr>
+    <tr
+      id="<removed>"
+      data-level="2"
+    >
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+          aria-describedby="<removed>"
+        >
+          Trøndelag
+        </button>
+        <span
+          aria-hidden="true"
+          id="<removed>"
+        >
+          Nivå 2
+        </span>
+      </th>
+      <td style="<removed>">
+        50
+      </td>
+      <td style="<removed>">
+        51
+      </td>
+      <td style="<removed>">
+        50
+      </td>
+    </tr>
+    <tr
+      id="<removed>"
+      data-level="2"
+    >
+      <th scope="row">
+        <button
+          type="button"
+          aria-expanded="false"
+          aria-describedby="<removed>"
+        >
+          Vestland
+        </button>
+        <span
+          aria-hidden="true"
+          id="<removed>"
+        >
+          Nivå 2
+        </span>
+      </th>
+      <td style="<removed>">
+        51
+      </td>
+      <td style="<removed>">
+        51
+      </td>
+      <td style="<removed>">
+        50
+      </td>
+    </tr>
+    <tr
+      id="<removed>"
+      data-level="2"
+    >
+      <th
+        scope="row"
+        aria-describedby="<removed>"
+      >
+        …
+        <span
+          aria-hidden="true"
+          id="<removed>"
+        >
+          Nivå 2
+        </span>
+      </th>
+      <td style="<removed>">
+        …
+      </td>
+      <td style="<removed>">
+        …
+      </td>
+      <td style="<removed>">
+        …
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

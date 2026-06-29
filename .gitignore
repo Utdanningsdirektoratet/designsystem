@@ -5,6 +5,7 @@ dist
 tmp
 /out-tsc
 *.tsbuildinfo
+.turbo
 
 # dependencies
 node_modules
@@ -39,11 +40,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
-.nx/cache
-.nx/workspace-data
-/migrations.json
-
-
 storybook-static
 build-storybook.log
 .env.*
@@ -54,6 +50,4 @@ test-reports/
 .next
 out
 vitest.config.*.timestamp*
-.cursor/rules/nx-rules.mdc
-.github/instructions/nx.instructions.md
 next-env.d.ts

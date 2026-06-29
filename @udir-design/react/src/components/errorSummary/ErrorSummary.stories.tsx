@@ -3,9 +3,9 @@ import { expect, userEvent, waitFor, within } from 'storybook/test';
 import { WithInertInitialRender } from '.storybook/decorators/WithInertInitialRender';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
-import { formatReactSource } from '.storybook/utils/sourceTransformers';
-import { Button } from '../button/Button';
-import { Textfield } from '../textfield/Textfield';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
+import { Button } from 'src/components/button';
+import { Textfield } from 'src/components/textfield';
 import { ErrorSummary } from './ErrorSummary';
 import { ErrorSummary as FakeErrorSummary } from './docs/FakeErrorSummary';
 import { ErrorSummaryHeading } from './docs/FakeErrorSummaryHeading';
@@ -21,7 +21,7 @@ const meta = preview.meta({
     'ErrorSummary.Link': ErrorSummaryLink,
     'ErrorSummary.List': ErrorSummaryList,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
@@ -99,6 +99,15 @@ export const WithForm = meta.story({
 });
 
 export const ShowHide = meta.story({
+  parameters: {
+    docs: advancedCodeDocs,
+    customStyles: {
+      display: 'flex',
+      flexDirection: 'column',
+      placeItems: 'center',
+      gap: 'var(--ds-size-4)',
+    },
+  },
   render: () => {
     const [show, setShow] = useState(false);
 
@@ -136,14 +145,5 @@ export const ShowHide = meta.story({
     const errorSummary = canvas.getByTestId('show-hide');
     await expect(errorSummary).toBeVisible();
     await waitFor(() => expect(errorSummary).toHaveFocus());
-  },
-  parameters: {
-    docs: { source: { type: 'code', transform: formatReactSource } },
-    customStyles: {
-      display: 'flex',
-      flexDirection: 'column',
-      placeItems: 'center',
-      gap: 'var(--ds-size-4)',
-    },
   },
 });

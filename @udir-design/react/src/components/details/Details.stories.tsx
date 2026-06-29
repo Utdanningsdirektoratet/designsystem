@@ -5,14 +5,14 @@ import { ChevronDownUpIcon, ChevronUpDownIcon } from '@udir-design/icons';
 import { Stack } from '.storybook/docs/components';
 import preview from '.storybook/preview';
 import { makeStoryTransformer } from '.storybook/utils/makeStoryTransformer';
-import { Button } from '../button/Button';
-import type { CardProps } from '../card/Card';
-import { Card } from '../card/Card';
-import { Fieldset } from '../fieldset/Fieldset';
-import { Link } from '../link/Link';
-import { List } from '../list/List';
+import { Button } from 'src/components/button';
+import type { CardProps } from 'src/components/card';
+import { Card } from 'src/components/card';
+import { Fieldset } from 'src/components/fieldset';
+import { Link } from 'src/components/link';
+import { List } from 'src/components/list';
+import { Label } from 'src/components/typography/label';
 import { ToggleGroup } from '../toggleGroup';
-import { Label } from '../typography/label/Label';
 import { Details } from './Details';
 import { Details as FakeDetails } from './docs/FakeDetails';
 import { DetailsContent } from './docs/FakeDetailsContent';
@@ -181,6 +181,7 @@ const detailsColorDecorator: Decorator = (Story) => {
         </Fieldset>
       </Stack>
       <div data-storybook-decorator>
+        {/* eslint-disable-next-line react/no-children-prop -- createElement requires children in props */}
         {createElement(card === 'none' ? 'div' : Card, {
           variant: card !== 'none' ? card : undefined,
           'data-color': color,

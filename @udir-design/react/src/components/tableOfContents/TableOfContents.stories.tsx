@@ -3,16 +3,16 @@ import { expect, within } from 'storybook/test';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
-import { useTableOfContents } from 'src/utilities/hooks/useTableOfContents/useTableOfContents';
-import { Heading } from '../typography/heading/Heading';
-import { Paragraph } from '../typography/paragraph/Paragraph';
-import { Prose } from '../typography/prose/Prose';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
+import { Prose } from 'src/components/typography/prose';
+import { useTableOfContents } from 'src/hooks/useTableOfContents';
 import type { TableOfContentsProps } from './TableOfContents';
 import { TableOfContents } from './TableOfContents';
 
 const meta = preview.meta({
   component: TableOfContents,
-  tags: ['beta', 'udir'],
+  tags: ['udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',

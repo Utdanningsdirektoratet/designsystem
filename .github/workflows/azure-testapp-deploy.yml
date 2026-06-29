@@ -21,7 +21,7 @@ jobs:
       pull-requests: 'read'
     steps:
       - name: Check out repo
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
         with:
           fetch-depth: 0
           filter: tree:0
@@ -30,15 +30,7 @@ jobs:
 
       - name: Determine whether to deploy
         id: should_deploy
-        run: |
-          IS_NEXTJS_AFFECTED=$(./@internal/build-tools/bin/is-project-affected.sh test-app-nextjs)
-          IS_WORKFLOW_MODIFIED=$(./@internal/build-tools/bin/is-file-modified.sh .github/workflows/azure-testapp-deploy.yml)
-          echo "Is the Next.js test app affected? $IS_NEXTJS_AFFECTED"
-          echo "Is the deployment workflow modified? $IS_WORKFLOW_MODIFIED"
-          echo "Is the deploy triggered through a manual workflow dispatch? $IS_DISPATCH"
-          ($IS_DISPATCH || $IS_NEXTJS_AFFECTED || $IS_WORKFLOW_MODIFIED) && SHOULD_DEPLOY=true || SHOULD_DEPLOY=false
-          echo "Conclusion: should we deploy the test app? $SHOULD_DEPLOY"
-          echo "should_deploy=$SHOULD_DEPLOY" >> "$GITHUB_OUTPUT"
+        run: echo "should_deploy=$(./@internal/ci/bin/should-deploy-testapp.ts)" >> "$GITHUB_OUTPUT"
         env:
           IS_DISPATCH: ${{ github.event_name == 'workflow_dispatch'}}
 
@@ -55,17 +47,17 @@ jobs:
 
     steps:
       - name: Check out repo
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
 
       - name: Log in to GHCR
-        uses: docker/login-action@4907a6ddec9925e35a0a9e82d7399ccc52663121 # v4.1.0
+        uses: docker/login-action@650006c6eb7dba73a995cc03b0b2d7f5ca915bee # v4.2.0
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push image
-        uses: docker/build-push-action@bcafcacb16a39f128d818304e6c9c0c18556b85f # v7.1.0
+        uses: docker/build-push-action@f9f3042f7e2789586610d6e8b85c8f03e5195baf # v7.2.0
         with:
           context: .
           file: ./test-apps/nextjs/Dockerfile

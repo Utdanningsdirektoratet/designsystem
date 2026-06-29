@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { formatReactSource } from '.storybook/utils/sourceTransformers';
-import { Card } from '../card/Card';
-import { Checkbox } from '../checkbox/Checkbox';
-import { Fieldset } from '../fieldset/Fieldset';
-import { Heading } from '../typography/heading/Heading';
+import { Card } from 'src/components/card';
+import { Checkbox } from 'src/components/checkbox';
+import { Fieldset } from 'src/components/fieldset';
+import { Heading } from 'src/components/typography/heading';
 import { Switch } from './Switch';
 
 const meta = preview.meta({

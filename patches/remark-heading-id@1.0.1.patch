@@ -8,7 +8,7 @@ index 0ed8554d4ac1212086a0968eb80b172bea65b5a2..9ced44a71e1ab5154ea39e63028d1803
  
 -const visit = require('unist-util-visit')
 -const { setNodeId, getDefaultId } = require('./util')
-+import { visit } from 'unist-util-visit'
++import visit from 'unist-util-visit'
 +import { setNodeId, getDefaultId } from './util'
  
 -module.exports = function(options = { defaults: false }) {

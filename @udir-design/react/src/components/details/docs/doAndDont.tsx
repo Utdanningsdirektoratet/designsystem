@@ -1,8 +1,8 @@
 import { Do, Dont, Stack } from '.storybook/docs/components';
-import { Card } from 'src/components/card/Card';
-import { Link } from 'src/components/link/Link';
-import { List } from 'src/components/list/List';
-import { Heading } from 'src/components/typography/heading/Heading';
+import { Card } from 'src/components/card';
+import { Link } from 'src/components/link';
+import { List } from 'src/components/list';
+import { Heading } from 'src/components/typography/heading';
 import { Details } from '../Details';
 
 export const DetailsEx1 = () => {

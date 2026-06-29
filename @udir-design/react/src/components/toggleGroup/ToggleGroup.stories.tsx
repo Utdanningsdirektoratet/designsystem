@@ -12,13 +12,14 @@ import {
   XMarkOctagonIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
+import { Button } from 'src/components/button';
+import { Card } from 'src/components/card';
+import { Fieldset } from 'src/components/fieldset';
+import { Tooltip } from 'src/components/tooltip';
+import { Heading } from 'src/components/typography/heading';
 import { demoChromaticModes } from 'src/demo/demoParameters';
-import { Button } from '../button/Button';
-import { Card } from '../card/Card';
-import { Fieldset } from '../fieldset/Fieldset';
 import { Table } from '../table';
-import { Tooltip } from '../tooltip/Tooltip';
-import { Heading } from '../typography/heading/Heading';
 import { ToggleGroup as FakeToggleGroup } from './docs/FakeToggleGroup';
 import { ToggleGroupItem } from './docs/FakeToggleGroupItem';
 import { ToggleGroup } from './';
@@ -28,7 +29,7 @@ const meta = preview.meta({
   subcomponents: {
     'ToggleGroup.Item': ToggleGroupItem,
   },
-  tags: ['beta', 'digdir'],
+  tags: ['digdir'],
   parameters: {
     componentOrigin: {
       originator: 'digdir',
@@ -177,7 +178,7 @@ export const OnlyIcons = meta.story({
         </ToggleGroup.Item>
       </Tooltip>
       <Tooltip content="Høyrestilt">
-        <ToggleGroup.Item value="høyrestilt" icon>
+        <ToggleGroup.Item value="høyrestilt">
           <AlignRightIcon aria-hidden />
         </ToggleGroup.Item>
       </Tooltip>
@@ -259,6 +260,7 @@ export const Controlled = meta.story({
       gap: '1rem',
       maxWidth: '750px',
     },
+    docs: advancedCodeDocs,
   },
   render: function Render(args) {
     const [value, setValue] = useState<string>('correctedAnswers');
@@ -355,10 +357,10 @@ export const Controlled = meta.story({
 });
 
 export const ToggleGroupInColorContext = meta.story({
-  args: Preview.input.args,
+  args: Primary.input.args,
   render: (args) => (
     <Card data-color="accent" variant="tinted">
-      {Preview.input.render(args)}
+      {Primary.input.render(args)}
     </Card>
   ),
   play: async ({ canvasElement, step }) => {

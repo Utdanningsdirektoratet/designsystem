@@ -10,7 +10,7 @@ const meta = preview.meta({
     'FormSummary.Fields': FormSummary.Fields,
     'FormSummary.Field': FormSummary.Field,
   },
-  tags: ['alpha'],
+  tags: [],
   parameters: {
     componentOrigin: {
       originator: 'self',

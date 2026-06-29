@@ -26,10 +26,10 @@ exports[`Always Show All 1`] = `
       popovertarget=":u-datalist7"
       aria-autocomplete="list"
       aria-controls=":u-datalist7"
+      aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
       role="combobox"
-      aria-expanded="true"
     >
     <button
       aria-label="Tøm"
@@ -54,11 +54,11 @@ exports[`Always Show All 1`] = `
       style="<removed>"
     >
       <u-option
+        selected
         role="option"
         aria-disabled="false"
         aria-selected="true"
         id="<removed>"
-        selected
         aria-hidden="false"
       >
         Sogndal
@@ -148,10 +148,10 @@ exports[`Controlled Independent Label Value 1`] = `
       popovertarget=":u-datalist4"
       aria-autocomplete="list"
       aria-controls=":u-datalist4"
+      aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
       role="combobox"
-      aria-expanded="true"
     >
     <button
       aria-label="Tøm"
@@ -178,11 +178,11 @@ exports[`Controlled Independent Label Value 1`] = `
       <u-option
         label="Lars"
         value="#004"
+        selected
         role="option"
         aria-disabled="false"
         aria-selected="true"
         id="<removed>"
-        selected
         aria-hidden="false"
       >
         Lars
@@ -592,10 +592,10 @@ exports[`Custom Filter Alt 1 1`] = `
       popovertarget=":u-datalist5"
       aria-autocomplete="list"
       aria-controls=":u-datalist5"
+      aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
       role="combobox"
-      aria-expanded="true"
     >
     <button
       aria-label="Tøm"
@@ -712,10 +712,10 @@ exports[`Custom Filter Alt 2 1`] = `
       popovertarget=":u-datalist6"
       aria-autocomplete="list"
       aria-controls=":u-datalist6"
+      aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
       role="combobox"
-      aria-expanded="true"
     >
     <button
       aria-label="Tøm"
@@ -830,14 +830,14 @@ exports[`Default Value 1`] = `
       placeholder=" "
       type="text"
       id="<removed>"
-      list=":u-datalist10"
-      popovertarget=":u-datalist10"
+      list=":u-datalist11"
+      popovertarget=":u-datalist11"
       aria-autocomplete="list"
-      aria-controls=":u-datalist10"
+      aria-controls=":u-datalist11"
+      aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
       role="combobox"
-      aria-expanded="true"
     >
     <button
       aria-label="Tøm"
@@ -862,11 +862,11 @@ exports[`Default Value 1`] = `
       style="<removed>"
     >
       <u-option
+        selected
         role="option"
         aria-disabled="false"
         aria-selected="true"
         id="<removed>"
-        selected
         aria-hidden="false"
       >
         Sogndal
@@ -953,10 +953,10 @@ exports[`Fetch External 1`] = `
       popovertarget=":u-datalist8"
       aria-autocomplete="list"
       aria-controls=":u-datalist8"
+      aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
       role="combobox"
-      aria-expanded="true"
     >
     <button
       aria-label="Tøm"
@@ -1004,14 +1004,14 @@ exports[`In Details 1`] = `
           placeholder=" "
           type="text"
           id="<removed>"
-          list=":u-datalist11"
-          popovertarget=":u-datalist11"
+          list=":u-datalist12"
+          popovertarget=":u-datalist12"
           aria-autocomplete="list"
-          aria-controls=":u-datalist11"
+          aria-controls=":u-datalist12"
+          aria-expanded="true"
           autocomplete="off"
           enterkeyhint="done"
           role="combobox"
-          aria-expanded="true"
         >
         <button
           aria-label="Tøm"
@@ -1124,10 +1124,10 @@ exports[`Multiple 1`] = `
       popovertarget=":u-datalist9"
       aria-autocomplete="list"
       aria-controls=":u-datalist9"
+      aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
       role="combobox"
-      aria-expanded="true"
     >
     <button
       aria-label="Tøm"
@@ -1255,6 +1255,178 @@ exports[`Multiple 1`] = `
 </ds-field>
 `;
 
+exports[`Multiple Count 1`] = `
+<ds-field>
+  <label
+    data-weight="medium"
+    for="<removed>"
+  >
+    Velg destinasjoner
+  </label>
+  <ds-suggestion
+    data-multiple
+    data-display="count"
+  >
+    <data
+      value="Oslo"
+      aria-label="Oslo, Press to remove"
+      role="option"
+      slot="items"
+      tabindex="-1"
+    >
+      Oslo
+    </data>
+    <data
+      value="Sogndal"
+      aria-label="Sogndal, Press to remove"
+      role="option"
+      slot="items"
+      tabindex="-1"
+    >
+      Sogndal
+    </data>
+    <input
+      placeholder=" "
+      type="text"
+      id="<removed>"
+      aria-description="Navigate left to find 2 selected"
+      list=":u-datalist10"
+      popovertarget=":u-datalist10"
+      aria-autocomplete="list"
+      aria-controls=":u-datalist10"
+      aria-expanded="true"
+      autocomplete="off"
+      enterkeyhint="done"
+      role="combobox"
+    >
+    <button
+      aria-label="Tøm"
+      hidden
+      type="reset"
+      aria-hidden="false"
+      tabindex="-1"
+    >
+    </button>
+    <u-datalist
+      data-nofilter
+      data-sr-plural="%d forslag"
+      data-sr-singular="%d forslag"
+      popover="manual"
+      role="listbox"
+      data-sr-of="of"
+      tabindex="-1"
+      aria-multiselectable="true"
+      id="<removed>"
+      data-is-floating="true"
+      aria-label="Velg destinasjoner"
+      data-floating="bottom"
+      style="<removed>"
+    >
+      <u-option
+        label="Sogndal"
+        value="Sogndal"
+        selected
+        role="option"
+        aria-disabled="false"
+        aria-selected="true"
+        id="<removed>"
+        aria-hidden="false"
+      >
+        Sogndal
+        <div>
+          Kommune
+        </div>
+      </u-option>
+      <u-option
+        label="Oslo"
+        value="Oslo"
+        selected
+        role="option"
+        aria-disabled="false"
+        aria-selected="true"
+        id="<removed>"
+        aria-hidden="false"
+      >
+        Oslo
+        <div>
+          Kommune
+        </div>
+      </u-option>
+      <u-option
+        label="Brønnøysund"
+        value="Brønnøysund"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<removed>"
+        aria-hidden="false"
+      >
+        Brønnøysund
+        <div>
+          Kommune
+        </div>
+      </u-option>
+      <u-option
+        label="Stavanger"
+        value="Stavanger"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<removed>"
+        aria-hidden="false"
+      >
+        Stavanger
+        <div>
+          Kommune
+        </div>
+      </u-option>
+      <u-option
+        label="Trondheim"
+        value="Trondheim"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<removed>"
+        aria-hidden="false"
+      >
+        Trondheim
+        <div>
+          Kommune
+        </div>
+      </u-option>
+      <u-option
+        label="Bergen"
+        value="Bergen"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<removed>"
+        aria-hidden="false"
+      >
+        Bergen
+        <div>
+          Kommune
+        </div>
+      </u-option>
+      <u-option
+        label="Lillestrøm"
+        value="Lillestrøm"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<removed>"
+        aria-hidden="false"
+      >
+        Lillestrøm
+        <div>
+          Kommune
+        </div>
+      </u-option>
+    </u-datalist>
+  </ds-suggestion>
+</ds-field>
+`;
+
 exports[`Preview 1`] = `
 <ds-field>
   <label
@@ -1272,10 +1444,10 @@ exports[`Preview 1`] = `
       popovertarget=":u-datalist1"
       aria-autocomplete="list"
       aria-controls=":u-datalist1"
+      aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
       role="combobox"
-      aria-expanded="true"
     >
     <button
       aria-label="Tøm"

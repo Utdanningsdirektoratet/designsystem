@@ -1,9 +1,8 @@
-import React from 'react';
-import { Button } from 'src/components/button/Button';
-import { Link } from 'src/components/link/Link';
-import { Textfield } from 'src/components/textfield/Textfield';
-import { Tooltip } from 'src/components/tooltip/Tooltip';
-import { Heading } from 'src/components/typography/heading/Heading';
+import { Button } from 'src/components/button';
+import { Link } from 'src/components/link';
+import { Textfield } from 'src/components/textfield';
+import { Tooltip } from 'src/components/tooltip';
+import { Heading } from 'src/components/typography/heading';
 import styles from './Login.module.scss';
 
 export function Login() {
@@ -25,7 +24,7 @@ export function Login() {
         autoComplete="email"
         className={styles.userField}
       />
-      <Tooltip content="Trykk for å få hjelp" type="describedby">
+      <Tooltip content="Trykk for å få hjelp">
         <Link href="#">Glemt passord?</Link>
       </Tooltip>
       <Button className={styles.userButton}>Opprett ny bruker</Button>

@@ -6,7 +6,7 @@ exports[`Controlled 1`] = `
 </h1>
 <fieldset
   data-toggle-group="Filtrer på status"
-  data-variant="primary"
+  data-variant="secondary"
   aria-label="Filtrer på status"
 >
   <label data-variant="tertiary">
@@ -238,7 +238,7 @@ exports[`Controlled 1`] = `
 exports[`Only Icons 1`] = `
 <fieldset
   data-toggle-group="Tekstjustering"
-  data-variant="primary"
+  data-variant="secondary"
   aria-label="Tekstjustering"
 >
   <label
@@ -348,7 +348,7 @@ exports[`Only Text 1`] = `
   </legend>
   <fieldset
     data-toggle-group="Filtrering av skjema"
-    data-variant="primary"
+    data-variant="secondary"
     aria-label="Filtrering av skjema"
   >
     <label data-variant="tertiary">
@@ -383,7 +383,7 @@ exports[`Only Text 1`] = `
 exports[`Preview 1`] = `
 <fieldset
   data-toggle-group="Velg epostboks"
-  data-variant="primary"
+  data-variant="secondary"
   aria-label="Velg epostboks"
 >
   <label data-variant="tertiary">
@@ -612,7 +612,7 @@ exports[`Secondary Only Icons 1`] = `
 exports[`Text And Icons 1`] = `
 <fieldset
   data-toggle-group="Filtrer på status"
-  data-variant="primary"
+  data-variant="secondary"
   aria-label="Filtrer på status"
 >
   <label data-variant="tertiary">

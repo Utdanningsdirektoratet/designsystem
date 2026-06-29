@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ToggleGroup } from 'src/components/toggleGroup';
-import { Heading } from 'src/components/typography/heading/Heading';
-import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Heading } from 'src/components/typography/heading';
+import { Paragraph } from 'src/components/typography/paragraph';
 import { CodeBlock } from '../../icons/docs/CodeBlock';
 import styles from '../../icons/docs/packageInformation.module.css';
 

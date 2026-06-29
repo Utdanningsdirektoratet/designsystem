@@ -26,13 +26,13 @@
       "import": "./dist/beta.js",
       "require": "./dist/beta.cjs"
     },
-    "./utilities/form/alpha": {
-      "import": "./dist/utilities/form/alpha.js",
-      "require": "./dist/utilities/form/alpha.cjs"
+    "./alpha/utilities": {
+      "import": "./dist/utilities/alpha.js",
+      "require": "./dist/utilities/alpha.cjs"
     },
-    "./utilities/datavis/alpha": {
-      "import": "./dist/utilities/datavis/alpha.js",
-      "require": "./dist/utilities/datavis/alpha.cjs"
+    "./beta/utilities": {
+      "import": "./dist/utilities/beta.js",
+      "require": "./dist/utilities/beta.cjs"
     },
     "./html": {
       "types": "./dist/html.d.ts"
@@ -45,6 +45,7 @@
   "scripts": {
     "build": "vite build",
     "inject": "echo 'Dummy script to trigger pnpm injected dependency sync'",
+    "lint": "eslint . --max-warnings 0",
     "lint:cycles": "pnpm madge --circular ./src/alpha.ts",
     "typecheck": "tsgo --build",
     "dev": "storybook dev --port 6005",
@@ -53,10 +54,11 @@
     "watch:typedoc": "typedoc --watch --tsconfig tsconfig.lib.json",
     "serve:typedoc": "pnpm dlx http-server --port=8090 -c-1 ./storybook-static/typedoc",
     "serve:docs": "pnpm dlx http-server ./storybook-static",
-    "pretest": "pnpm pretest:storybook",
+    "pretest": "pnpm exec playwright install --with-deps chromium",
     "test": "vitest --outputFile.json test-reports/all.json",
+    "pretest:unit": "pnpm pretest",
     "test:unit": "vitest --project unit --outputFile.json test-reports/unit.json",
-    "pretest:storybook": "pnpm exec playwright install --with-deps chromium",
+    "pretest:storybook": "pnpm pretest",
     "test:storybook": "vitest --project storybook --outputFile.json test-reports/storybook.json --outputFile.html test-reports/storybook/index.html",
     "view-test-report:storybook": "pnpm dlx http-server ./test-reports/storybook"
   },

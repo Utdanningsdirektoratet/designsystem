@@ -1,5 +1,7 @@
-import nxEslintPlugin from '@nx/eslint-plugin';
-import { defineConfig } from 'eslint/config';
+import { defineConfig } from '@eslint/config-helpers';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
 import storybook from 'eslint-plugin-storybook';
 import baseConfig, { importOrderConfig } from '../../eslint.config.js';
 
@@ -20,18 +22,34 @@ const commonRestrictedImports = [
 ];
 
 const restrictBarrelImports = {
-  regex: '^((src|\\.{1,2})\\/)((\\.{1,2}\\/)|\\w+\\/)*(alpha|beta|stable)',
+  regex:
+    '^((src|\\.{1,2})\\/)((\\.{1,2}\\/)|\\w+\\/)*(alpha|beta|stable)(?!\\w)',
   // group: ['**/alpha', '**/beta', '**/stable'],
   message:
     'Do not import from barrel files. It can make the library hard to tree-shake and prohibits tools like Chromatic from performing dependency analysis.',
 };
 
 export default defineConfig(
-  nxEslintPlugin.configs['flat/react'],
+  react.configs.flat.recommended,
+  react.configs.flat['jsx-runtime'],
+  reactHooks.configs.flat.recommended,
+  jsxA11y.flatConfigs.recommended,
   storybook.configs['flat/recommended'],
   baseConfig,
   {
+    settings: { react: { version: 'detect' } },
+  },
+  {
     ignores: ['!.storybook'],
+  },
+  {
+    // Intentionally disabled: prop-types is redundant with TypeScript,
+    // and autoFocus is a legitimate API in a component library.
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+    rules: {
+      'react/prop-types': 'off',
+      'jsx-a11y/no-autofocus': 'off',
+    },
   },
   {
     files: ['**/*.ts', '**/*.tsx'],
@@ -85,6 +103,26 @@ export default defineConfig(
   {
     // Storybook & docs-specific overrides
     files: ['**/*.stories.{ts,tsx}', '**/{.storybook,demo,docs}/**/*.{ts,tsx}'],
+    rules: {
+      // Storybook requires `import React` at runtime even with JSX transform
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          vars: 'all',
+          args: 'all',
+          argsIgnorePattern: '^_',
+          caughtErrors: 'all',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          varsIgnorePattern: '^(_|React$)',
+        },
+      ],
+      '@typescript-eslint/consistent-type-imports': 'off',
+      '@typescript-eslint/no-unused-expressions': [
+        'error',
+        { allowTernary: true },
+      ],
+    },
   },
   {
     // Overrides for demo pages shared with test-apps

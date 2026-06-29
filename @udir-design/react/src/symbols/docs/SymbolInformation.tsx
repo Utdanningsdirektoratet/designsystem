@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import * as Symbols from '@udir-design/symbols';
-import { Select } from 'src/components/select/Select';
+import { Select } from 'src/components/select';
 import { ToggleGroup } from 'src/components/toggleGroup';
-import { Heading } from 'src/components/typography/heading/Heading';
+import { Heading } from 'src/components/typography/heading';
 import { CodeBlock } from '../../icons/docs/CodeBlock';
 import { type UdirSymbol, symbolsByBaseName } from './SymbolDisplay.utils';
 import styles from './symbolInformation.module.css';

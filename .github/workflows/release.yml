@@ -9,8 +9,8 @@ on:
 env:
   # either the PR *target* branch, or the current branch being released
   BRANCH_NAME: ${{ github.base_ref || github.ref_name }}
-  # NOTE: We explicitly DON'T add the NX_CLOUD_ACCESS_TOKEN env var in the release workflow,
-  # to be entirely sure that our published libraries can't be affected by cache poisoning
+  # Turborepo cache is safe to use here: it's repo-scoped (GitHub Actions cache)
+  # and content-addressed (Turbo hashing), so artifacts match source deterministically.
 
 jobs:
   semantic-release:
@@ -28,7 +28,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
 
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
         with:
           fetch-depth: 0
 
@@ -37,15 +37,15 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       # Build only the projects we are releasing
-      - run: pnpm nx run-many -t build -p "@udir-design/*"
+      - run: pnpm turbo run build --filter="@udir-design/*"
 
       - name: Preview semantic-release for this PR
         if: success() && github.event_name == 'pull_request'
-        run: ./@internal/build-tools/bin/semantic-release.ts --branch $BRANCH_NAME --preview-changelog
+        run: ./@internal/ci/bin/semantic-release.ts --branch $BRANCH_NAME --preview-changelog
 
       - name: Output preview changelog to file
         if: success() && github.event_name == 'pull_request'
-        run: ./@internal/build-tools/bin/preview-changelogs.sh > CHANGELOG_PREVIEW.md
+        run: ./@internal/ci/bin/preview-changelogs.sh > CHANGELOG_PREVIEW.md
 
       - name: Add changelog as comment on PR
         if: success() && github.event_name == 'pull_request'
@@ -56,7 +56,7 @@ jobs:
 
       - name: Run semantic-release script
         if: success() && github.event_name != 'pull_request'
-        run: ./@internal/build-tools/bin/semantic-release.ts --branch $BRANCH_NAME ${{ inputs.dry-run && '--dry-run' || '--publish'}}
+        run: ./@internal/ci/bin/semantic-release.ts --branch $BRANCH_NAME ${{ inputs.dry-run && '--dry-run' || '--publish'}}
         shell: bash
         # See https://docs.github.com/en/actions/use-cases-and-examples/publishing-packages/publishing-nodejs-packages
         env:

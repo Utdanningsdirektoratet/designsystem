@@ -1,0 +1,18 @@
+.card {
+  display: flex;
+  width: fit-content;
+  @media (max-width: 40rem) {
+    flex-direction: column;
+  }
+}
+
+.imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  img {
+    width: 14rem;
+    height: auto;
+  }
+}
