@@ -53,7 +53,7 @@ export function getSequentialMonochromaticColors(): readonly string[] {
  * Anchor hex values for the monochromatic palette (light mode).
  * These mirror --uds-data-color-sequential-monochromatic-1 and -8.
  */
-const MONOCHROMATIC_HEX_START = '#7EDFAE';
+const MONOCHROMATIC_HEX_START = '#7edfae';
 const MONOCHROMATIC_HEX_END = '#0b1e15';
 
 function hexToRgb(hex: string): [number, number, number] {

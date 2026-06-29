@@ -72,7 +72,7 @@ describe('generateSequentialMonochromaticColors', () => {
   });
 
   it('starts with the lightest anchor color', () => {
-    expect(generateSequentialMonochromaticColors(10)[0]).toBe('#5ba27e');
+    expect(generateSequentialMonochromaticColors(10)[0]).toBe('#7edfae');
   });
 
   it('ends with the darkest anchor color', () => {
@@ -81,12 +81,12 @@ describe('generateSequentialMonochromaticColors', () => {
   });
 
   it('returns just the start color when count is 1', () => {
-    expect(generateSequentialMonochromaticColors(1)).toEqual(['#5ba27e']);
+    expect(generateSequentialMonochromaticColors(1)).toEqual(['#7edfae']);
   });
 
   it('returns start and end when count is 2', () => {
     expect(generateSequentialMonochromaticColors(2)).toEqual([
-      '#5ba27e',
+      '#7edfae',
       '#0b1e15',
     ]);
   });
