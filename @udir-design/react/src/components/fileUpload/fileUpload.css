@@ -209,6 +209,67 @@
   }
 }
 
+/* FileUpload.List */
+.uds-file-upload__list {
+  padding: 0;
+  overflow: hidden;
+  cursor: default;
+
+  [data-tooltip] {
+    --ds-tooltip: var(--udsc-fileUpload-removeFile-text);
+  }
+
+  > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.uds-file-upload__list-item {
+  > .ds-divider {
+    margin-block: 0;
+  }
+}
+
+.uds-file-upload__list-row {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-4);
+  padding: var(--ds-size-3) var(--ds-size-6);
+}
+
+.uds-file-upload__list-icon > svg {
+  width: auto;
+  height: var(--ds-size-8);
+  display: block;
+}
+
+.uds-file-upload__list-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-3);
+  flex-wrap: wrap;
+  word-break: break-all;
+}
+
+.uds-file-upload__list-size {
+  font-size: var(--ds-font-size-sm);
+  color: var(--ds-color-neutral-text-subtle);
+  white-space: nowrap;
+}
+
+.uds-file-upload__list-error {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-1);
+  font-size: var(--ds-font-size-sm);
+  color: var(--ds-color-danger-text-subtle);
+  width: 100%;
+}
+
 /* FileUpload.Item */
 .uds-file-upload__item {
   [data-tooltip] {
