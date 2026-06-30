@@ -9,7 +9,7 @@ import { Table } from 'src/components/table';
 import { Label } from 'src/components/typography/label/Label';
 import { usePagination } from 'src/hooks/usePagination/usePagination';
 import { grades } from '../grades';
-import './sidevisning.css';
+import styles from './sidevisning-preview.module.css';
 
 const meta = preview.meta({
   tags: ['alpha', 'udir'],
@@ -75,27 +75,27 @@ export const Preview = meta.story({
     };
 
     return (
-      <div className="example-main">
+      <div className={styles['preview-main']}>
         <Table {...args}>
           <Table.Head>
             <Table.Row>
-              <Table.HeaderCell className="show-below-tablet">
+              <Table.HeaderCell className={styles['show-below-tablet']}>
                 Fylke, emne
               </Table.HeaderCell>
-              <Table.HeaderCell className="hide-below-tablet">
+              <Table.HeaderCell className={styles['hide-below-tablet']}>
                 Fylke
               </Table.HeaderCell>
-              <Table.HeaderCell className="hide-below-tablet">
+              <Table.HeaderCell className={styles['hide-below-tablet']}>
                 Emne
               </Table.HeaderCell>
-              <Table.HeaderCell className="hide-below-tablet">
+              <Table.HeaderCell className={styles['hide-below-tablet']}>
                 Antall elever
               </Table.HeaderCell>
               <Table.HeaderCell>Standpunkt</Table.HeaderCell>
-              <Table.HeaderCell className="desktop-only">
+              <Table.HeaderCell className={styles['desktop-only']}>
                 Muntlig
               </Table.HeaderCell>
-              <Table.HeaderCell className="desktop-only">
+              <Table.HeaderCell className={styles['desktop-only']}>
                 Skriftlig
               </Table.HeaderCell>
             </Table.Row>
@@ -103,30 +103,30 @@ export const Preview = meta.story({
           <Table.Body>
             {paginatedData.map((row) => (
               <Table.Row key={row.id}>
-                <Table.Cell className="show-below-tablet">
+                <Table.Cell className={styles['show-below-tablet']}>
                   {row.fylke}, <br /> {row.emne}
                 </Table.Cell>
-                <Table.Cell className="hide-below-tablet">
+                <Table.Cell className={styles['hide-below-tablet']}>
                   {row.fylke}
                 </Table.Cell>
-                <Table.Cell className="hide-below-tablet">
+                <Table.Cell className={styles['hide-below-tablet']}>
                   {row.emne}
                 </Table.Cell>
-                <Table.Cell className="hide-below-tablet">
+                <Table.Cell className={styles['hide-below-tablet']}>
                   {row.antallelever}
                 </Table.Cell>
                 <Table.Cell>{row.standpunktkarakter}</Table.Cell>
-                <Table.Cell className="desktop-only">
+                <Table.Cell className={styles['desktop-only']}>
                   {row.muntligkarakter}
                 </Table.Cell>
-                <Table.Cell className="desktop-only">
+                <Table.Cell className={styles['desktop-only']}>
                   {row.skriftligkarakter}
                 </Table.Cell>
               </Table.Row>
             ))}
           </Table.Body>
         </Table>
-        <div className="example-controls">
+        <div className={styles['preview-controls']}>
           <Pagination aria-label="Sidenavigering" data-size="sm">
             <Pagination.List>
               <Pagination.Item>
@@ -155,11 +155,11 @@ export const Preview = meta.story({
               </Pagination.Item>
             </Pagination.List>
           </Pagination>
-          <div className="example-controls-section">
-            <span className="example-controls-section-span">
+          <div className={styles['preview-controls-section']}>
+            <span className={styles['preview-controls-section-span']}>
               Rad {rangeStart}-{rangeEnd} av {totalRows}
             </span>
-            <Field className="example-controls-section-select">
+            <Field className={styles['preview-controls-section-select']}>
               <Label>Rader per side</Label>
               <Select
                 value={String(itemsPerPage)}

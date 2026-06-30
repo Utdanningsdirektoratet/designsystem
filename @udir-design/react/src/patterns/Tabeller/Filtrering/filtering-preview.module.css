@@ -1,4 +1,4 @@
-.example-main {
+.preview-main {
   min-width: 200px;
   margin: var(--ds-size-2);
   display: flex;
@@ -6,7 +6,7 @@
   gap: var(--ds-size-8);
 }
 
-.example-filters-section {
+.preview-filters-section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,15 +14,7 @@
   gap: var(--ds-size-2);
 }
 
-.example-filters-section-modal {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-4);
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.example-suggestion-section {
+.preview-suggestion-section {
   display: flex;
   flex-direction: column;
   gap: var(--ds-size-2);
@@ -30,33 +22,20 @@
   width: 100%;
 }
 
-.example-suggestion-field {
+.preview-suggestion-field {
   min-width: 150px;
   width: 100%;
 }
 
-.example-search-field {
+.preview-search-field {
   width: 100%;
 }
 
-.example-dialog-filters {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--ds-size-4);
-}
-
-.example-dialog-section {
-  display: flex;
-  flex-direction: row;
-  gap: var(--ds-size-2);
-  align-items: center;
-}
-
-.example-clear-filters {
+.preview-clear-filters {
   white-space: nowrap;
 }
 
-.example-controls {
+.preview-controls {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -65,7 +44,7 @@
   margin: var(--ds-size-6) var(--ds-size-2);
 }
 
-.example-controls-section {
+.preview-controls-section {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -74,28 +53,28 @@
   gap: var(--ds-size-2);
 }
 
-.example-controls-section-span {
+.preview-controls-section-span {
   color: var(--ds-color-neutral-text-subtle);
 }
 
-.example-controls-section-select {
+.preview-controls-section-select {
   display: flex;
   flex-direction: row;
   gap: var(--ds-size-2);
   white-space: nowrap;
   align-items: center;
-  > .ds-input {
+  > select {
     margin-top: 0;
   }
 }
 
-.example-active-filters {
+.preview-active-filters {
   display: flex;
   flex-wrap: wrap;
   gap: var(--ds-size-6);
 }
 
-.example-active-filters-group {
+.preview-active-filters-group {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -111,47 +90,27 @@
   }
 }
 
-.example-footer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: var(--ds-size-2);
-}
-
-.example-footer button {
-  margin: 0;
-}
-
 @media (min-width: 48rem) {
-  .example-filters-section {
+  .preview-filters-section {
     flex-direction: row;
     align-items: flex-end;
   }
 
-  .example-filters-section-modal {
-    flex-direction: row;
-    align-items: flex-end;
-  }
-
-  .example-suggestion-section {
+  .preview-suggestion-section {
     flex-direction: row;
     width: auto;
   }
 
-  .example-dialog-filters {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .example-suggestion-field {
+  .preview-suggestion-field {
     max-width: 280px;
     width: auto;
   }
 
-  .example-search-field {
+  .preview-search-field {
     width: auto;
   }
 
-  .example-controls-section {
+  .preview-controls-section {
     flex-direction: row;
     justify-content: space-between;
     width: fit-content;
@@ -160,17 +119,12 @@
 }
 
 @media (min-width: 64rem) {
-  .example-filters-section-modal {
-    flex-direction: row;
-    align-items: flex-end;
-  }
-
-  .example-controls {
+  .preview-controls {
     flex-direction: row;
     justify-content: space-between;
   }
 
-  .example-controls-section {
+  .preview-controls-section {
     gap: var(--ds-size-6);
   }
 }

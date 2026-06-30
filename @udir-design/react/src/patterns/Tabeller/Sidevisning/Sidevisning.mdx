@@ -1,7 +1,9 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import { INITIAL_VIEWPORTS } from 'storybook/viewport';
+import { CssToggle } from '.storybook/docs/components';
 
 import * as SidevisningStories from './Sidevisning.stories';
+import sidevisningCss from './sidevisning-preview.module.css?raw';
 
 <Meta of={SidevisningStories} />
 
@@ -14,6 +16,8 @@ Dette mønsteret tar ikke stilling til om sidevisning håndteres i frontend elle
 Sidevisningen bør gjøre det mulig å navigere fram og tilbake mellom sider, velge antall rader per side, se hvilke rader som vises nå, og se totalt antall rader i tabellen.
 
 <Canvas of={SidevisningStories.Preview} />
+
+<CssToggle code={sidevisningCss} />
 
 ## Sidenavigasjon
 

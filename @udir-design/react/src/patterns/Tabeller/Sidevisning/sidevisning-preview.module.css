@@ -1,8 +1,8 @@
-.example-main {
+.preview-main {
   margin: 20px;
 }
 
-.example-controls {
+.preview-controls {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,7 +11,7 @@
   margin: var(--ds-size-6) var(--ds-size-2);
 }
 
-.example-controls-section {
+.preview-controls-section {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -20,7 +20,7 @@
   gap: var(--ds-size-2);
 }
 
-.example-controls-section-select {
+.preview-controls-section-select {
   display: flex;
   flex-direction: row;
   gap: var(--ds-size-2);
@@ -28,11 +28,11 @@
   align-items: center;
 }
 
-.example-controls-section-select select {
+.preview-controls-section-select select {
   margin-top: 0;
 }
 
-.example-controls-section-span {
+.preview-controls-section-span {
   color: var(--ds-color-neutral-text-subtle);
 }
 
@@ -54,7 +54,7 @@
     display: table-cell;
   }
 
-  .example-controls-section {
+  .preview-controls-section {
     flex-direction: row;
     justify-content: space-between;
     width: fit-content;
@@ -67,12 +67,12 @@
     display: table-cell;
   }
 
-  .example-controls {
+  .preview-controls {
     flex-direction: row;
     justify-content: space-between;
   }
 
-  .example-controls-section {
+  .preview-controls-section {
     gap: var(--ds-size-6);
   }
 }
