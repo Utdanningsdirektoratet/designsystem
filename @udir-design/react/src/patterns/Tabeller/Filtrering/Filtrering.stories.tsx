@@ -30,7 +30,8 @@ import {
   uniqueEmner as emner,
   uniqueFylker as fylker,
 } from '../grades';
-import './filtering.css';
+import dialogStyles from './filtering-dialog.module.css';
+import previewStyles from './filtering-preview.module.css';
 
 const meta = preview.meta({
   tags: ['alpha', 'udir'],
@@ -126,10 +127,10 @@ export const Preview = meta.story({
     );
 
     return (
-      <div className="example-main">
-        <div className="example-filters-section">
-          <div className="example-suggestion-section">
-            <Field className="example-suggestion-field">
+      <div className={previewStyles['preview-main']}>
+        <div className={previewStyles['preview-filters-section']}>
+          <div className={previewStyles['preview-suggestion-section']}>
+            <Field className={previewStyles['preview-suggestion-field']}>
               <Label>Velg emner</Label>
               <Suggestion
                 multiple
@@ -155,7 +156,7 @@ export const Preview = meta.story({
                 </Suggestion.List>
               </Suggestion>
             </Field>
-            <Field className="example-suggestion-field">
+            <Field className={previewStyles['preview-suggestion-field']}>
               <Label>Velg fylker</Label>
               <Suggestion
                 multiple
@@ -186,13 +187,13 @@ export const Preview = meta.story({
                 onClick={handleClearFilters}
                 variant="tertiary"
                 data-size="sm"
-                className="example-clear-filters"
+                className={previewStyles['preview-clear-filters']}
               >
                 Fjern filtre
               </Button>
             </Field>
           </div>
-          <Field className="example-search-field">
+          <Field className={previewStyles['preview-search-field']}>
             <Label>Søk</Label>
             <Search>
               <Search.Input
@@ -240,7 +241,7 @@ export const Preview = meta.story({
             ))}
           </Table.Body>
         </Table>
-        <div className="example-controls">
+        <div className={previewStyles['preview-controls']}>
           <Pagination aria-label="Sidenavigering" data-size="sm">
             <Pagination.List>
               <Pagination.Item>
@@ -269,11 +270,11 @@ export const Preview = meta.story({
               </Pagination.Item>
             </Pagination.List>
           </Pagination>
-          <div className="example-controls-section">
-            <span className="example-controls-section-span">
+          <div className={previewStyles['preview-controls-section']}>
+            <span className={previewStyles['preview-controls-section-span']}>
               Rad {rangeStart}-{rangeEnd} av {filteredData.length}
             </span>
-            <Field className="example-controls-section-select">
+            <Field className={previewStyles['preview-controls-section-select']}>
               <Label>Rader per side</Label>
               <Select
                 value={String(itemsPerPage)}
@@ -397,8 +398,8 @@ export const WithDialog = meta.story({
     );
 
     return (
-      <div className="example-main">
-        <div className="example-filters-section-modal">
+      <div className={dialogStyles['dialog-main']}>
+        <div className={dialogStyles['dialog-filters-section']}>
           <Field>
             <Label>Søk</Label>
             <Search>
@@ -410,7 +411,7 @@ export const WithDialog = meta.story({
               <Search.Clear onClick={() => setSearchQuery('')} />
             </Search>
           </Field>
-          <div className="example-dialog-section">
+          <div className={dialogStyles['dialog-section']}>
             <Dialog.TriggerContext>
               <Dialog.Trigger variant="secondary">
                 <FilterIcon aria-label="Filter" />
@@ -429,7 +430,7 @@ export const WithDialog = meta.story({
               >
                 <Prose>
                   <Heading>Filter</Heading>
-                  <div className="example-dialog-filters">
+                  <div className={dialogStyles['dialog-filters']}>
                     <Prose>
                       <Fieldset>
                         <Fieldset.Legend>Karaktertype</Fieldset.Legend>
@@ -448,7 +449,9 @@ export const WithDialog = meta.story({
                       </Fieldset>
                     </Prose>
                     <Prose>
-                      <Field className="example-suggestion-field">
+                      <Field
+                        className={dialogStyles['dialog-suggestion-field']}
+                      >
                         <Label>Velg emner</Label>
                         <Suggestion
                           multiple
@@ -474,7 +477,9 @@ export const WithDialog = meta.story({
                           </Suggestion.List>
                         </Suggestion>
                       </Field>
-                      <Field className="example-suggestion-field">
+                      <Field
+                        className={dialogStyles['dialog-suggestion-field']}
+                      >
                         <Label>Velg fylker</Label>
                         <Suggestion
                           multiple
@@ -502,7 +507,7 @@ export const WithDialog = meta.story({
                       </Field>
                     </Prose>
                   </div>
-                  <div className="example-footer">
+                  <div className={dialogStyles['dialog-footer']}>
                     <Button
                       onClick={() => {
                         setEmne(draftEmne);
@@ -532,7 +537,7 @@ export const WithDialog = meta.story({
               onClick={handleClearFilters}
               variant="tertiary"
               data-size="sm"
-              className="example-clear-filters"
+              className={dialogStyles['dialog-clear-filters']}
             >
               Fjern alle filtre
             </Button>
@@ -591,7 +596,7 @@ export const WithDialog = meta.story({
             ))}
           </Table.Body>
         </Table>
-        <div className="example-controls">
+        <div className={dialogStyles['dialog-controls']}>
           <Pagination aria-label="Sidenavigering" data-size="sm">
             <Pagination.List>
               <Pagination.Item>
@@ -620,11 +625,11 @@ export const WithDialog = meta.story({
               </Pagination.Item>
             </Pagination.List>
           </Pagination>
-          <div className="example-controls-section">
-            <span className="example-controls-section-span">
+          <div className={dialogStyles['dialog-controls-section']}>
+            <span className={dialogStyles['dialog-controls-section-span']}>
               Rad {rangeStart}-{rangeEnd} av {filteredData.length}
             </span>
-            <Field className="example-controls-section-select">
+            <Field className={dialogStyles['dialog-controls-section-select']}>
               <Label>Rader per side</Label>
               <Select
                 value={String(itemsPerPage)}
@@ -661,9 +666,9 @@ function ActiveFilters({
 }) {
   if (emne.length === 0 && fylke.length === 0) return null;
   return (
-    <div className="example-active-filters">
+    <div className={previewStyles['preview-active-filters']}>
       {emne.length > 0 && (
-        <div className="example-active-filters-group">
+        <div className={previewStyles['preview-active-filters-group']}>
           <Label>Emne</Label>
           <ul>
             {emne.map((e) => (
@@ -680,7 +685,7 @@ function ActiveFilters({
         </div>
       )}
       {fylke.length > 0 && (
-        <div className="example-active-filters-group">
+        <div className={previewStyles['preview-active-filters-group']}>
           <Label>Fylke</Label>
           <ul>
             {fylke.map((f) => (

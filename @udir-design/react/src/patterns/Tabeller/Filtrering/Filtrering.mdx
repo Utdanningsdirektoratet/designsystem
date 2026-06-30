@@ -1,6 +1,9 @@
-import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Unstyled } from '@storybook/addon-docs/blocks';
+import { CssToggle } from '.storybook/docs/components';
 
 import * as FiltreringStories from './Filtrering.stories';
+import previewCss from './filtering-preview.module.css?raw';
+import dialogCss from './filtering-dialog.module.css?raw';
 
 <Meta of={FiltreringStories} />
 
@@ -14,12 +17,20 @@ Filtrering lar brukeren begrense hvilke rader som vises, basert på verdier i é
 
 <Canvas of={FiltreringStories.Preview} />
 
+<CssToggle code={previewCss} />
+
+<br />
+
 Dersom det er behov for mer avansert filtrering med sammensatte eller spissede
 filtervalg, bør dette plasseres i en egen dialog. Det frigjør plass i den
 primære verktøylinjen og gir brukeren et dedikert sted for komplekse filtervalg
 uten at grensesnittet over tabellen blir uoversiktlig.
 
-<Canvas of={FiltreringStories.WithDialog} />
+<Canvas of={FiltreringStories.WithDialog} sourceState="hidden" />
+
+<CssToggle code={dialogCss} />
+
+<br />
 
 ## Søk
 
