@@ -1,0 +1,192 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Bruk loading for knapper 1`] = `
+<div style="<removed>">
+  <button
+    data-variant="primary"
+    type="button"
+  >
+    Lagre
+  </button>
+  <button
+    data-variant="secondary"
+    type="button"
+  >
+    Avbryt
+  </button>
+</div>
+`;
+
+exports[`Fjern feltet 1`] = `
+<ds-field>
+  <label
+    data-weight="medium"
+    for="<removed>"
+  >
+    Fullt navn
+  </label>
+  <div>
+    <input
+      id="<removed>"
+      type="text"
+    >
+  </div>
+</ds-field>
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
+    Skal du registrere en bedrift?
+  </legend>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="radio"
+      value="nei"
+      checked
+      name="bedrift"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      Nei
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="radio"
+      value="ja"
+      name="bedrift"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      Ja
+    </label>
+  </ds-field>
+</fieldset>
+`;
+
+exports[`Merk feltet med tekst 1`] = `
+<fieldset aria-labelledby="<removed>">
+  <legend
+    data-weight="medium"
+    id="<removed>"
+  >
+    Velg hvilke informasjonskapsler du godtar
+  </legend>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="checkbox"
+      checked
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      Nødvendige (kan ikke velges bort)
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="checkbox"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      Funksjonelle
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="checkbox"
+      id="<removed>"
+    >
+    <label
+      data-weight="regular"
+      for="<removed>"
+    >
+      Statistiske
+    </label>
+  </ds-field>
+</fieldset>
+`;
+
+exports[`Vis feilmeldinger 1`] = `
+<ds-field>
+  <label
+    data-weight="medium"
+    for="<removed>"
+  >
+    Fullt navn
+  </label>
+  <div>
+    <input
+      id="<removed>"
+      type="text"
+      value
+    >
+  </div>
+</ds-field>
+<ds-field>
+  <label
+    data-weight="medium"
+    for="<removed>"
+  >
+    E-postadresse
+  </label>
+  <div>
+    <input
+      id="<removed>"
+      type="email"
+      value
+    >
+  </div>
+</ds-field>
+<button
+  data-variant="primary"
+  type="button"
+>
+  Send inn
+</button>
+`;
+
+exports[`Vis informasjon som ren tekst 1`] = `
+<div>
+  <h3 data-size="2xs">
+    Organisasjonsnummer
+  </h3>
+  <p data-variant="default">
+    123 456 789
+  </p>
+</div>
+<div>
+  <h3 data-size="2xs">
+    E-postadresse
+  </h3>
+  <p data-variant="default">
+    bruker@example.com
+  </p>
+</div>
+<ds-field>
+  <label
+    data-weight="medium"
+    for="<removed>"
+  >
+    Telefonnummer
+  </label>
+  <div>
+    <input
+      id="<removed>"
+      type="text"
+    >
+  </div>
+</ds-field>
+`;
