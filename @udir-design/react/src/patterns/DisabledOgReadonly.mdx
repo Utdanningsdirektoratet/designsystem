@@ -2,6 +2,7 @@ import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import * as TextfieldStories from '../components/textfield/Textfield.stories';
 import * as SelectStories from '../components/select/Select.stories';
 import * as SwitchStories from '../components/switch/Switch.stories';
+import * as DisabledOgReadonlyStories from './DisabledOgReadonly.stories';
 
 <Meta title="patterns/Disabled og ReadOnly" tags={['alpha']} />
 
@@ -13,13 +14,27 @@ Skjemakomponentene støtter `disabled` og `readOnly`. Vi anbefaler å unngå beg
 
 I de fleste tilfeller finnes det en bedre løsning enn å deaktivere eller skrivebeskytte et felt. Vurder disse alternativene først:
 
-- **Fjern feltet** når det ikke er relevant. Et deaktivert felt tar fortsatt visuell plass og kan forvirre, mens et felt som ikke vises ikke skaper støy. Forklar gjerne brukeren hvorfor noe ikke er tilgjengelig.
-- **Vis informasjon som ren tekst** når en verdi bare skal presenteres og ikke endres. Da er det ingen tvil om at innholdet ikke er redigerbart.
+**Merk feltet med tekst** som forklarer at det ikke kan endres. Dette gjør det tydelig at feltet ikke er redigerbart. Husk å forklare hvorfor feltet ikke kan endres hvis det ikke er åpenbart.
 
-- **Vis feilmeldinger i stedet for å deaktivere send- eller lagre-knappen.** La brukeren trykke, og vis tydelige feilmeldinger som forklarer hva som mangler. En deaktivert knapp forteller ikke brukeren hvorfor de ikke kommer videre.
-- **For knapper: bruk `loading`** med `aria-disabled` i stedet for `disabled` mens noe lastes eller lagres. Da beholder knappen fokus og er synlig for hjelpemidler. Se [retningslinjene for `Button`](/docs/components-button--docs#lasting).
+<Canvas of={DisabledOgReadonlyStories.MerkFeltetMedTekst} />
 
-## Ikke bruk deaktivert (`disabled`)
+**Fjern feltet** når det ikke er relevant. Et deaktivert felt tar fortsatt visuell plass og kan forvirre, mens et felt som ikke vises ikke skaper støy. Forklar gjerne brukeren hvorfor noe ikke er tilgjengelig.
+
+<Canvas of={DisabledOgReadonlyStories.FjernFeltet} />
+
+**Vis informasjon som ren tekst** når en verdi bare skal presenteres og ikke endres.
+
+<Canvas of={DisabledOgReadonlyStories.VisInformasjonSomRenTekst} />
+
+**Vis feilmeldinger i stedet for å deaktivere send- eller lagre-knappen.** La brukeren trykke, og vis tydelige feilmeldinger som forklarer hva som mangler. En deaktivert knapp forteller ikke brukeren hvorfor de ikke kommer videre.
+
+<Canvas of={DisabledOgReadonlyStories.VisFeilmeldinger} />
+
+**For knapper:** bruk `loading` med `aria-disabled` i stedet for `disabled` mens noe lastes eller lagres. Da beholder knappen fokus og er synlig for hjelpemidler. Se [retningslinjene for `Button`](/docs/components-button--docs#lasting).
+
+<Canvas of={DisabledOgReadonlyStories.BrukLoadingForKnapper} />
+
+## Ikke bruk deaktivert (disabled)
 
 Deaktiverte felt kan være vanskelige å oppfatte visuelt, og noen brukere vil ikke forstå hvorfor feltet ikke er klikkbart. I tillegg er deaktiverte felt ikke fokuserbare med tastatur, noe som gjør dem usynlige for skjermleserbrukere.
 
@@ -41,7 +56,7 @@ Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](h
 
 <Canvas of={SwitchStories.Disabled} />
 
-### Komponenter som støtter `disabled`
+### Komponenter som støtter disabled
 
 - [`Textfield`](/docs/components-textfield--docs#ikke-bruk-deaktivert-textfield)
 - [`Textarea`](/docs/components-textarea--docs)
@@ -51,7 +66,7 @@ Nav har en god forklaring på [hvorfor deaktiverte tilstander er problematisk](h
 - [`Switch`](/docs/components-switch--docs#ikke-bruk-deaktivert-switch)
 - [`Button`](/docs/components-button--docs)
 
-## Unngå skrivebeskyttet (`readOnly`)
+## Unngå skrivebeskyttet (readOnly)
 
 Inputkomponentene støtter `readOnly` for å gjøre feltet skrivebeskyttet. Feltet får en visuell indikasjon som skiller seg fra redigerbare felt. Vi unngår likevel `readOnly` så langt det lar seg gjøre, fordi slike felt kan være forvirrende for noen brukere. Ikke alle vil skjønne hvorfor de ikke får til å endre innholdet i feltet.
 
@@ -69,7 +84,7 @@ Inputkomponentene støtter `readOnly` for å gjøre feltet skrivebeskyttet. Felt
 
 <Canvas of={SwitchStories.ReadOnly} />
 
-### Komponenter som støtter `readOnly`
+### Komponenter som støtter readOnly
 
 - [`Textfield`](/docs/components-textfield--docs#unngå-skrivebeskyttet-textfield)
 - [`Textarea`](/docs/components-textarea--docs)
