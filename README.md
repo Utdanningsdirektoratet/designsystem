@@ -89,7 +89,7 @@ Vi legger ut melding på Slack-kanalen #designsystem-udir når vi mener en kompo
 
 # Hva tester vi?
 
-I designsystemet har vi med flere nivåer av automatisert testing for alle komponenter.
+I designsystemet har vi flere nivåer av automatisert testing for alle komponenter.
 Vi publiserer aldri nye versjoner av komponentbiblioteket før alle nye eller endrede komponenter har bestått disse testene.
 
 Alle våre automatiserte tester kjører i nettleseren Chromium.
@@ -100,7 +100,7 @@ Vi bruker **komponenttester** for å teste hvordan individuelle komponenter rend
 
 ### Oppførsel
 
-I de tilfellene vi implementerer egen oppførsel for komponenter eller hjelpefunksjoner, vil det finnes **enhetstester** for å teste denne oppførselen isolert.
+I de tilfellene vi implementerer egen oppførsel for komponenter eller hjelpefunksjoner, bruker vi **enhetstester** for å teste denne oppførselen isolert.
 
 ## Demosider
 
@@ -112,11 +112,11 @@ Vi smoketester Next.js-testapplikasjonen i produksjonsmodus og besøker alle dem
 
 ## Felles for komponenter og demosider
 
-Både komponenttester og komposisjonstester er basert på eksempler (eng: _stories_) i Storybook. I tillegg til det som er beskrevet over, får hvert eksempel også automatisk en snapshottest, en visuell test, og en regelbasert UU-test.
+Både komponenttester og komposisjonstester er basert på eksempler (engelsk: _stories_) i Storybook. I tillegg til det som er beskrevet over, får hvert eksempel også automatisk en snapshottest, en visuell test, og en regelbasert UU-test.
 
 **Snapshottester** avdekker uventede endringer i HTML-markupen som blir generert fra hver enkelt komponent, og **visuelle tester** avdekker uventede visuelle endringer i komponentene. Om det er endringer i markup eller utseende vurderer designteamet endringen manuelt for å avgjøre om den er godkjent eller ikke.
 
-Vi bruker bruker [Axe](https://github.com/dequelabs/axe-core) til **regelbaserte UU-tester** for å avdekke vanlige brudd på universell utforming. Disse reglene, som er [beskrevet i Axe sin dokumentasjon](https://github.com/dequelabs/axe-core/blob/master/doc/rule-descriptions.md), kan ikke fange opp alle brudd. Vi supplerer derfor de regelbaserte testene med andre UU-tester som vi gjennomfører i samarbeid med UU-eksperter fra Udirs testteam. Dette kan være manuelle testrutiner eller automatiserte komponent- og komposisjonstester.
+Vi bruker [Axe](https://github.com/dequelabs/axe-core) til **regelbaserte UU-tester** for å avdekke vanlige brudd på universell utforming. Disse reglene, som er [beskrevet i Axe sin dokumentasjon](https://github.com/dequelabs/axe-core/blob/master/doc/rule-descriptions.md), kan ikke fange opp alle brudd. Vi supplerer derfor de regelbaserte testene med andre UU-tester som vi gjennomfører i samarbeid med UU-eksperter fra Udirs testteam. Dette kan være manuelle testrutiner eller automatiserte komponent- og komposisjonstester.
 
 > [!WARNING]
 > Komponenter fra designsystemet er i tråd med UU-tilsynets krav til
