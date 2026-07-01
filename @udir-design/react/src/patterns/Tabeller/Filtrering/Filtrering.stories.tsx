@@ -131,32 +131,6 @@ export const Preview = meta.story({
         <div className={previewStyles['preview-filters-section']}>
           <div className={previewStyles['preview-suggestion-section']}>
             <Field className={previewStyles['preview-suggestion-field']}>
-              <Label>Velg emner</Label>
-              <Suggestion
-                multiple
-                display="count"
-                selected={emne}
-                onSelectedChange={(items) =>
-                  setEmne(items.map((item) => item.value))
-                }
-              >
-                <Suggestion.Input />
-                <Suggestion.Clear />
-                <Suggestion.List>
-                  <Suggestion.Empty>Tomt</Suggestion.Empty>
-                  {emner.map((option) => (
-                    <Suggestion.Option
-                      key={option}
-                      label={option}
-                      value={option}
-                    >
-                      {option}
-                    </Suggestion.Option>
-                  ))}
-                </Suggestion.List>
-              </Suggestion>
-            </Field>
-            <Field className={previewStyles['preview-suggestion-field']}>
               <Label>Velg fylker</Label>
               <Suggestion
                 multiple
@@ -171,6 +145,32 @@ export const Preview = meta.story({
                 <Suggestion.List>
                   <Suggestion.Empty>Tomt</Suggestion.Empty>
                   {fylker.map((option) => (
+                    <Suggestion.Option
+                      key={option}
+                      label={option}
+                      value={option}
+                    >
+                      {option}
+                    </Suggestion.Option>
+                  ))}
+                </Suggestion.List>
+              </Suggestion>
+            </Field>
+            <Field className={previewStyles['preview-suggestion-field']}>
+              <Label>Velg emner</Label>
+              <Suggestion
+                multiple
+                display="count"
+                selected={emne}
+                onSelectedChange={(items) =>
+                  setEmne(items.map((item) => item.value))
+                }
+              >
+                <Suggestion.Input />
+                <Suggestion.Clear />
+                <Suggestion.List>
+                  <Suggestion.Empty>Tomt</Suggestion.Empty>
+                  {emner.map((option) => (
                     <Suggestion.Option
                       key={option}
                       label={option}
@@ -665,23 +665,6 @@ function ActiveFilters({
   if (emne.length === 0 && fylke.length === 0) return null;
   return (
     <div className={previewStyles['preview-active-filters']}>
-      {emne.length > 0 && (
-        <div className={previewStyles['preview-active-filters-group']}>
-          <Label>Emne</Label>
-          <ul>
-            {emne.map((e) => (
-              <li key={e}>
-                <Chip.Removable
-                  aria-label={`Fjern ${e}`}
-                  onClick={() => setEmne((prev) => prev.filter((v) => v !== e))}
-                >
-                  {e}
-                </Chip.Removable>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
       {fylke.length > 0 && (
         <div className={previewStyles['preview-active-filters-group']}>
           <Label>Fylke</Label>
@@ -695,6 +678,23 @@ function ActiveFilters({
                   }
                 >
                   {f}
+                </Chip.Removable>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {emne.length > 0 && (
+        <div className={previewStyles['preview-active-filters-group']}>
+          <Label>Emne</Label>
+          <ul>
+            {emne.map((e) => (
+              <li key={e}>
+                <Chip.Removable
+                  aria-label={`Fjern ${e}`}
+                  onClick={() => setEmne((prev) => prev.filter((v) => v !== e))}
+                >
+                  {e}
                 </Chip.Removable>
               </li>
             ))}
