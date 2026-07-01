@@ -42,40 +42,8 @@ Alle komponenter for sidevisning plasseres under tabellen. Dette skiller dem tyd
 **Stor skjerm (desktop)**
 Pagination plasseres til venstre. «Rad X–Y av Z» og «Rader per side» plasseres til høyre, med «Rad X–Y av Z» til venstre for «Rader per side».
 
-<Canvas of={SidevisningStories.Preview} />
-
 **Mellomstore skjermer (nettbrett)**
 Pagination plasseres på første rad. På andre rad plasseres «Rad X–Y av Z» til venstre og «Rader per side» til høyre. Radene er midtstilt.
 
-<div
-  style={{
-    width: INITIAL_VIEWPORTS['ipad'].styles.height,
-    justifySelf: 'center',
-  }}
->
-  <Canvas
-    of={SidevisningStories.Preview}
-    story={{
-      inline: false,
-      height: INITIAL_VIEWPORTS['ipad'].styles.width,
-    }}
-  />
-</div>
-
 **Små skjermer (mobil)**
 Pagination plasseres på første rad. På andre rad plasseres «Rad X–Y av Z». På tredje rad plasseres «Rader per side». Radene er midtstilt.
-
-<div
-  style={{
-    width: INITIAL_VIEWPORTS['iphone14promax'].styles.width,
-    justifySelf: 'center',
-  }}
->
-  <Canvas
-    of={SidevisningStories.Preview}
-    story={{
-      inline: false,
-      height: INITIAL_VIEWPORTS['iphone14promax'].styles.height,
-    }}
-  />
-</div>
