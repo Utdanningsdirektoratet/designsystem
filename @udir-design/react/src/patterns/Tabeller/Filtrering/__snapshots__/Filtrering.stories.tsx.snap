@@ -10,7 +10,7 @@ exports[`Preview 1`] = `
             data-weight="medium"
             for="<removed>"
           >
-            Velg emner
+            Velg fylker
           </label>
           <ds-suggestion
             data-multiple
@@ -23,89 +23,6 @@ exports[`Preview 1`] = `
               aria-description="No selected"
               list=":u-datalist1"
               popovertarget=":u-datalist1"
-            >
-            <button
-              aria-label="Tøm"
-              hidden
-              type="reset"
-              aria-hidden="false"
-              tabindex="-1"
-            >
-            </button>
-            <u-datalist
-              data-nofilter
-              data-sr-plural="%d forslag"
-              data-sr-singular="%d forslag"
-              popover="manual"
-              role="listbox"
-              data-sr-of="of"
-              hidden
-              tabindex="-1"
-              aria-multiselectable="true"
-              id="<removed>"
-              data-is-floating="true"
-            >
-              <u-option
-                label="Engelsk"
-                value="Engelsk"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Engelsk
-              </u-option>
-              <u-option
-                label="Matematikk"
-                value="Matematikk"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Matematikk
-              </u-option>
-              <u-option
-                label="Hovedmål"
-                value="Hovedmål"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Hovedmål
-              </u-option>
-              <u-option
-                label="Sidemål"
-                value="Sidemål"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Sidemål
-              </u-option>
-            </u-datalist>
-          </ds-suggestion>
-        </ds-field>
-        <ds-field>
-          <label
-            data-weight="medium"
-            for="<removed>"
-          >
-            Velg fylker
-          </label>
-          <ds-suggestion
-            data-multiple
-            data-display="count"
-          >
-            <input
-              placeholder=" "
-              type="text"
-              id="<removed>"
-              aria-description="No selected"
-              list=":u-datalist2"
-              popovertarget=":u-datalist2"
             >
             <button
               aria-label="Tøm"
@@ -247,6 +164,89 @@ exports[`Preview 1`] = `
                 id="<removed>"
               >
                 Viken
+              </u-option>
+            </u-datalist>
+          </ds-suggestion>
+        </ds-field>
+        <ds-field>
+          <label
+            data-weight="medium"
+            for="<removed>"
+          >
+            Velg emner
+          </label>
+          <ds-suggestion
+            data-multiple
+            data-display="count"
+          >
+            <input
+              placeholder=" "
+              type="text"
+              id="<removed>"
+              aria-description="No selected"
+              list=":u-datalist2"
+              popovertarget=":u-datalist2"
+            >
+            <button
+              aria-label="Tøm"
+              hidden
+              type="reset"
+              aria-hidden="false"
+              tabindex="-1"
+            >
+            </button>
+            <u-datalist
+              data-nofilter
+              data-sr-plural="%d forslag"
+              data-sr-singular="%d forslag"
+              popover="manual"
+              role="listbox"
+              data-sr-of="of"
+              hidden
+              tabindex="-1"
+              aria-multiselectable="true"
+              id="<removed>"
+              data-is-floating="true"
+            >
+              <u-option
+                label="Engelsk"
+                value="Engelsk"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Engelsk
+              </u-option>
+              <u-option
+                label="Matematikk"
+                value="Matematikk"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Matematikk
+              </u-option>
+              <u-option
+                label="Hovedmål"
+                value="Hovedmål"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Hovedmål
+              </u-option>
+              <u-option
+                label="Sidemål"
+                value="Sidemål"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Sidemål
               </u-option>
             </u-datalist>
           </ds-suggestion>
