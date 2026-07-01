@@ -3,3 +3,4 @@ export { SimpleAlert } from './SimpleAlert/SimpleAlert';
 export { Do, Dont } from './DoAndDont/DoAndDont';
 export { HideToc } from './HideToc';
 export { IncludeMarkdown } from './IncludeMarkdown';
+export { CssToggle } from './CssToggle/CssToggle';
