@@ -24,6 +24,13 @@ exports[`Focused 1`] = `
 `;
 
 exports[`Inline 1`] = `
+<style>
+  .radio-inline-radio__group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-size-6);
+}
+</style>
 <fieldset aria-labelledby="<removed>">
   <legend
     data-weight="medium"
@@ -37,7 +44,7 @@ exports[`Inline 1`] = `
   >
     Bekreft om du ønsker å bli kontaktet per e-post.
   </p>
-  <div style="<removed>">
+  <div>
     <ds-field data-clickdelegatefor="<removed>">
       <input
         type="radio"

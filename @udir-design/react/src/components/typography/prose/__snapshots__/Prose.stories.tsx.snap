@@ -1,8 +1,17 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Headings 1`] = `
-<div style="<removed>">
-  <div style="<removed>">
+<style>
+  .prose-headings-main {
+  display: flex;
+  justify-content: center;
+}
+.prose-headings-prose {
+  max-width: 50rem;
+}
+</style>
+<div>
+  <div>
     <h1 data-size="2xl">
       Heading xxl
     </h1>
@@ -10,51 +19,60 @@ exports[`Headings 1`] = `
       data-variant="default"
       data-size="xl"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem.
     </p>
     <h2 data-size="xl">
       Heading xl
     </h2>
     <p data-variant="default">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem.
     </p>
     <h3 data-size="lg">
       Heading lg
     </h3>
     <p data-variant="default">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem.
     </p>
     <h4 data-size="md">
       Heading md
     </h4>
     <p data-variant="default">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem.
     </p>
     <h5 data-size="sm">
       Heading sm
     </h5>
     <p data-variant="default">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem.
     </p>
     <h6 data-size="xs">
       Heading xs
     </h6>
     <p data-variant="default">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem.
     </p>
     <h6 data-size="2xs">
       Heading xxs
     </h6>
     <p data-variant="default">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem. Suspendisse tortor nisl, porttitor eget cursus quis, facilisis et lacus. Sed sit amet laoreet orci.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt eleifend nulla vel aliquam. Vestibulum semper in dolor vel scelerisque. Cras justo sapien, ultricies a pretium ac, porta vitae lorem.
     </p>
   </div>
 </div>
 `;
 
 exports[`Preview 1`] = `
-<div style="<removed>">
-  <div style="<removed>">
+<style>
+  .prose-preview-main {
+  display: flex;
+  justify-content: center;
+}
+.prose-preview-prose {
+  max-width: 50rem;
+}
+</style>
+<div>
+  <div>
     <div data-color="info">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </div>
@@ -212,7 +230,7 @@ exports[`Preview 1`] = `
       Første overskrift (h2)
     </h2>
     <p data-variant="default">
-      Aenean vehicula leo et euismod rutrum. Donec eget orci est. Vivamus sapien magna, dictum at velit quis, mattis molestie eros. Vivamus vitae purus purus. Maecenas mollis elementum aliquam. Donec efficitur urna sed ante consectetur, in scelerisque lectus tristique. Ut et nunc turpis. Mauris faucibus sagittis est nec mollis. Pellentesque sollicitudin nisl mauris, at dapibus mi vestibulum non.
+      Aenean vehicula leo et euismod rutrum. Donec eget orci est. Vivamus sapien magna, dictum at velit quis, mattis molestie eros. Vivamus vitae purus purus. Maecenas mollis elementum aliquam. Donec efficitur urna sed ante consectetur, in scelerisque lectus tristique.
     </p>
     <h3
       data-size="sm"
@@ -232,7 +250,7 @@ exports[`Preview 1`] = `
       Andre underoverskrift (h3)
     </h3>
     <p data-variant="default">
-      In quis fermentum enim, a rhoncus dui. Quisque in placerat nisi. Praesent sollicitudin ante eu lacus sagittis aliquet. Cras ut gravida nisi. In sed sapien eu nulla rhoncus fringilla. Mauris nec orci mollis, tincidunt purus a, tempor mauris. Integer faucibus nisi a sem laoreet dapibus sed a tellus. Proin sit amet velit vel lacus faucibus laoreet. Vivamus in rutrum enim. Fusce nulla nisl, iaculis vitae quam sit amet, vehicula semper sem.
+      In quis fermentum enim, a rhoncus dui. Quisque in placerat nisi. Praesent sollicitudin ante eu lacus sagittis aliquet. Cras ut gravida nisi. In sed sapien eu nulla rhoncus fringilla.
     </p>
     <table
       data-zebra="true"
@@ -333,15 +351,14 @@ exports[`Preview 1`] = `
           Første details
         </summary>
         <div>
-          <p data-variant="default">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae lacus ullamcorper, malesuada risus sed, consequat est. Donec lobortis leo et condimentum consequat. Aenean vehicula leo et euismod rutrum. Donec eget orci est.
-          </p>
-          <p
-            data-variant="default"
-            style="<removed>"
-          >
-            Vivamus sapien magna, dictum at velit quis, mattis molestie eros. Vivamus vitae purus purus. Maecenas mollis elementum aliquam. Donec efficitur urna sed ante consectetur, in scelerisque lectus tristique.
-          </p>
+          <div>
+            <p data-variant="default">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae lacus ullamcorper, malesuada risus sed, consequat est. Donec lobortis leo et condimentum consequat. Aenean vehicula leo et euismod rutrum. Donec eget orci est.
+            </p>
+            <p data-variant="default">
+              Vivamus sapien magna, dictum at velit quis, mattis molestie eros. Vivamus vitae purus purus. Maecenas mollis elementum aliquam. Donec efficitur urna sed ante consectetur, in scelerisque lectus tristique.
+            </p>
+          </div>
         </div>
       </details>
       <details data-variant="default">
@@ -360,7 +377,15 @@ exports[`Preview 1`] = `
 `;
 
 exports[`With Dialog 1`] = `
-<div style="<removed>">
+<style>
+  .prose-with-dialog-prose {
+  max-width: 50rem;
+}
+.prose-with-dialog-dialog {
+  z-index: 10;
+}
+</style>
+<div>
   <button
     data-variant="primary"
     type="button"
@@ -374,7 +399,6 @@ exports[`With Dialog 1`] = `
     id="<removed>"
     closedby="any"
     open
-    style="<removed>"
   >
     <button
       data-icon="true"
@@ -386,27 +410,36 @@ exports[`With Dialog 1`] = `
       command="close"
     >
     </button>
-    <h2 style="<removed>">
-      Dialog header
-    </h2>
-    <p
-      data-variant="default"
-      style="<removed>"
-    >
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
-    </p>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
-      Dialog footer
-    </p>
+    <div>
+      <h2>
+        Dialog header
+      </h2>
+      <p data-variant="default">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+      </p>
+      <p
+        data-variant="default"
+        data-size="sm"
+      >
+        Dialog footer
+      </p>
+    </div>
   </dialog>
 </div>
 `;
 
 exports[`With Popover 1`] = `
-<div style="<removed>">
+<style>
+  .prose-with-popover-prose {
+  max-width: 50rem;
+}
+.prose-with-popover-button__group {
+  display: flex;
+  gap: var(--ds-size-2);
+  margin-top: var(--ds-size-4);
+}
+</style>
+<div>
   <button
     data-variant="tertiary"
     type="button"
@@ -439,21 +472,23 @@ exports[`With Popover 1`] = `
     style="<removed>"
   >
     Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
-    <div style="<removed>">
-      <button
-        data-variant="primary"
-        type="button"
-        data-size="sm"
-      >
-        Ja, fjern
-      </button>
-      <button
-        data-variant="tertiary"
-        type="button"
-        data-size="sm"
-      >
-        Avbryt
-      </button>
+    <div>
+      <div>
+        <button
+          data-variant="primary"
+          type="button"
+          data-size="sm"
+        >
+          Ja, fjern
+        </button>
+        <button
+          data-variant="tertiary"
+          type="button"
+          data-size="sm"
+        >
+          Avbryt
+        </button>
+      </div>
     </div>
   </div>
 </div>

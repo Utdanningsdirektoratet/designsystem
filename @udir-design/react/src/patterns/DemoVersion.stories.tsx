@@ -15,6 +15,7 @@ import { Header } from 'src/components/header';
 import { Link } from 'src/components/link';
 import { Heading } from 'src/components/typography/heading';
 import { Paragraph } from 'src/components/typography/paragraph';
+import { Prose } from 'src/components/typography/prose/Prose';
 
 const meta = preview.meta({
   title: 'patterns/Demoversjon av tjenester',
@@ -39,92 +40,106 @@ export const Preview = meta.story({
   render: () => {
     const isInert = useIsInert();
     return (
-      <DemoBanner
-        style={{
-          background: 'var(--ds-color-accent-background-tinted)',
-          minHeight: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
-        <Header applicationName="Tjenestenavn" />
-        <div
-          style={{
-            paddingBlockStart: 'var(--ds-size-10)',
-            paddingBlockEnd: 'var(--ds-size-18)',
-            paddingInline: 'var(--ds-size-18)',
-            margin: '0 auto',
-            maxWidth: '1200px',
-            display: 'flex',
-            justifyContent: 'space-between',
-            gap: 'var(--ds-size-4)',
-            flex: 1,
-          }}
-        >
-          <div
-            style={{
-              width: '50%',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 'var(--ds-size-6)',
-            }}
-          >
-            <Heading level={1} data-size="lg">
-              Lorem ipsum dolor sit amet consectetur
-            </Heading>
-            <Paragraph style={{ marginTop: 'var(--ds-size-3)' }}>
-              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
-              mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
-              fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
-              vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum
-              auctor ornare leo, non suscipit magna interdum eu.
-            </Paragraph>
-            <Card style={{ maxWidth: '300px' }}>
-              <Heading level={2}>
-                <a href="/">Logg inn</a>
-              </Heading>
-            </Card>
-            <Link href="#" style={{ width: 'fit-content' }}>
-              Lorem ipsum dolor sit amet consectetur.
-            </Link>
+      <>
+        <style>
+          {`
+.demo-version-preview-demo-banner {
+  background: var(--ds-color-accent-background-tinted);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.demo-version-preview-content {
+  padding-block-start: var(--ds-size-10);
+  padding-block-end: var(--ds-size-18);
+  padding-inline: var(--ds-size-18);
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--ds-size-4);
+  flex: 1;
+}
+.demo-version-preview-content-text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+}
+.demo-version-preview-content-card {
+  max-width: 300px;
+}
+.demo-version-preview-content-link {
+  width: fit-content;
+}
+.demo-version-preview-content-symbol {
+  width: 400px;
+}
+.demo-version-preview-content-dialog {
+  max-width: 650px;
+}
+`}
+        </style>
+        <DemoBanner className="demo-version-preview-demo-banner">
+          <Header applicationName="Tjenestenavn" />
+          <div className="demo-version-preview-content">
+            <div className="demo-version-preview-content-text">
+              <Prose>
+                <Heading level={1} data-size="lg">
+                  Lorem ipsum dolor sit amet consectetur
+                </Heading>
+                <Paragraph>
+                  Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et
+                  massa mi. Aliquam in hendrerit urna. Pellentesque sit amet
+                  sapien fringilla, mattis ligula consectetur, ultrices mauris.
+                  Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
+                  Vestibulum auctor ornare leo, non suscipit magna interdum eu.
+                </Paragraph>
+                <Card className="demo-version-preview-content-card">
+                  <Heading level={2}>
+                    <a href="/">Logg inn</a>
+                  </Heading>
+                </Card>
+                <Link className="demo-version-preview-content-link" href="#">
+                  Lorem ipsum dolor sit amet consectetur.
+                </Link>
+              </Prose>
+            </div>
+            <div className="demo-version-preview-content-symbol">
+              <Laering3 style={{ width: '100%', height: 'fit-content' }} />
+            </div>
           </div>
-          <div style={{ width: '400px' }}>
-            <Laering3 style={{ width: '100%', height: 'fit-content' }} />
-          </div>
-        </div>
-        <Dialog
-          open={true}
-          style={{ maxWidth: '650px' }}
-          id="demo-version-dialog"
-          // In docs, initially render Dialog as inert so it doesn't steal focus
-          {...(isInert && { inert: true })}
-        >
-          <Heading style={{ marginBlockEnd: 'var(--ds-size-4)' }}>
-            Lorem ipsum dolor sit amet consectetur
-          </Heading>
-          <Paragraph style={{ marginBlockEnd: 'var(--ds-size-3)' }}>
-            Lorem ipsum dolor sit lorem a amet, consectetur adipiscing elit, sed
-            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-            enim ad.
-          </Paragraph>
-          <Alert
-            data-color="warning"
-            style={{ marginBlockEnd: 'var(--ds-size-3)' }}
+          <Dialog
+            open={true}
+            className="demo-version-preview-content-dialog"
+            id="demo-version-dialog"
+            // In docs, initially render Dialog as inert so it doesn't steal focus
+            {...(isInert && { inert: true })}
           >
-            Dette er kun en demo. Dine data vil ikke lagres og du risikerer å
-            måtte fylle ut på nytt.
-          </Alert>
-          <Button command="close" commandfor="demo-version-dialog">
-            Fortsett til demo
-          </Button>
-        </Dialog>
-        <Footer>
-          <Footer.List>
-            <Footer.Item href="#">Tilgjengelighet</Footer.Item>
-            <Footer.Item href="#">Informasjonskapsler</Footer.Item>
-          </Footer.List>
-        </Footer>
-      </DemoBanner>
+            <Prose>
+              <Heading>Lorem ipsum dolor sit amet consectetur</Heading>
+              <Paragraph>
+                Lorem ipsum dolor sit lorem a amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad.
+              </Paragraph>
+              <Alert data-color="warning">
+                Dette er kun en demo. Dine data vil ikke lagres og du risikerer
+                å måtte fylle ut på nytt.
+              </Alert>
+            </Prose>
+            <Button command="close" commandfor="demo-version-dialog">
+              Fortsett til demo
+            </Button>
+          </Dialog>
+          <Footer>
+            <Footer.List>
+              <Footer.Item href="#">Tilgjengelighet</Footer.Item>
+              <Footer.Item href="#">Informasjonskapsler</Footer.Item>
+            </Footer.List>
+          </Footer>
+        </DemoBanner>
+      </>
     );
   },
 });

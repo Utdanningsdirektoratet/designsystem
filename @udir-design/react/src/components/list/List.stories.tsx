@@ -1,6 +1,7 @@
 import preview from '.storybook/preview';
-import { Link } from 'src/components/link';
-import { Heading } from 'src/components/typography/heading';
+import { Link } from '../link/Link';
+import { Heading } from '../typography/heading/Heading';
+import { Prose } from '../typography/prose/Prose';
 import { List } from './List';
 import { ListItem } from './docs/FakeListItem';
 import { ListOrdered } from './docs/FakeListOrdered';
@@ -42,33 +43,25 @@ export const Preview = meta.story({
 });
 
 export const Ordered = meta.story({
-  render: () => (
-    <>
-      <Heading
-        level={2}
-        data-size="xs"
-        style={{ marginBottom: 'var(--ds-size-2)' }}
-      >
+  render: (args) => (
+    <Prose>
+      <Heading level={2} data-size="xs">
         Slik gjennomfører dere metoden:
       </Heading>
-      <List.Ordered>
+      <List.Ordered {...args}>
         <List.Item>Presenter en problemstilling.</List.Item>
         <List.Item>Gå sammen to og to for å reflektere.</List.Item>
         <List.Item>Del innsikter og spørsmål i plenum.</List.Item>
         <List.Item>Noter ned viktige innspill og refleksjoner.</List.Item>
       </List.Ordered>
-    </>
+    </Prose>
   ),
 });
 
 export const Unordered = meta.story({
   render: (args) => (
-    <>
-      <Heading
-        level={2}
-        data-size="xs"
-        style={{ marginBottom: 'var(--ds-size-2)' }}
-      >
+    <Prose>
+      <Heading level={2} data-size="xs">
         Gjennom arbeid med kommunikasjon, språk og tekst skal barnehagen bidra
         til at barna
       </Heading>
@@ -84,16 +77,13 @@ export const Unordered = meta.story({
           videreutvikler sin begrepsforståelse og bruker et variert ordforråd
         </List.Item>
       </List.Unordered>
-    </>
+    </Prose>
   ),
 });
 
 export const Indented = meta.story({
-  args: {
-    style: { marginTop: 'var(--ds-size-2)' },
-  },
   render: (args) => (
-    <>
+    <Prose>
       <Heading level={2} data-size="xs">
         Innhold
       </Heading>
@@ -124,7 +114,7 @@ export const Indented = meta.story({
           </List.Unordered>
         </List.Item>
       </List.Ordered>
-    </>
+    </Prose>
   ),
 });
 
@@ -144,19 +134,25 @@ const designLinks = [
 ];
 
 export const WithLinks = meta.story({
-  args: {
-    style: { listStyle: 'none', padding: 0 },
-  },
   render: (args) => (
-    <List.Unordered {...args}>
-      {designLinks.map((link) => (
-        <List.Item key={link.href}>
-          <Link href={link.href} target="_blank">
-            {link.text}
-          </Link>
-        </List.Item>
-      ))}
-    </List.Unordered>
+    <>
+      <style>
+        {`
+.list-with-links-list-unordered {
+  list-style: none; 
+  padding: 0;
+}`}
+      </style>
+      <List.Unordered className="list-with-links-list-unordered" {...args}>
+        {designLinks.map((link) => (
+          <List.Item key={link.href}>
+            <Link href={link.href} target="_blank">
+              {link.text}
+            </Link>
+          </List.Item>
+        ))}
+      </List.Unordered>
+    </>
   ),
 });
 
@@ -176,20 +172,26 @@ const navLinks = [
 ];
 
 export const AsNav = meta.story({
-  args: {
-    style: { listStyle: 'none', padding: 0 },
-  },
   render: (args) => (
-    <nav aria-label="Snarveier">
-      <List.Unordered {...args}>
-        {navLinks.map((link) => (
-          <List.Item key={link.href}>
-            <Link href={link.href} target="_blank">
-              {link.text}
-            </Link>
-          </List.Item>
-        ))}
-      </List.Unordered>
-    </nav>
+    <>
+      <style>
+        {`
+.list-as-nav-list-unordered {
+  list-style: none; 
+  padding: 0;
+}`}
+      </style>
+      <nav aria-label="Snarveier">
+        <List.Unordered className="list-as-nav-list-unordered" {...args}>
+          {navLinks.map((link) => (
+            <List.Item key={link.href}>
+              <Link href={link.href} target="_blank">
+                {link.text}
+              </Link>
+            </List.Item>
+          ))}
+        </List.Unordered>
+      </nav>
+    </>
   ),
 });

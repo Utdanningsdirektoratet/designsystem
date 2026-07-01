@@ -1,12 +1,34 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Form Example 1`] = `
-<div style="<removed>">
+<style>
+  .progress-bar-form-example-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+}
+.progress-bar-form-example-fieldset-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-block-end: var(--ds-size-4);
+}
+.progress-bar-form-example-progress-bar {
+  width: 30%;
+}
+.progress-bar-form-example-button__group {
+  display: flex;
+  justify-content: flex-start;
+  gap: var(--ds-size-4);
+}
+</style>
+<div>
   <fieldset
     id="<removed>"
     aria-labelledby="<removed>"
   >
-    <div style="<removed>">
+    <div>
       <legend
         data-weight="medium"
         id="<removed>"
@@ -18,7 +40,6 @@ exports[`Form Example 1`] = `
       <div
         data-color="accent"
         tabindex="-1"
-        style="<removed>"
       >
         <span>
           Skjemafremgang
@@ -187,7 +208,7 @@ exports[`Form Example 1`] = `
       </tbody>
     </table>
   </fieldset>
-  <div style="<removed>">
+  <div>
     <button
       data-variant="secondary"
       type="button"

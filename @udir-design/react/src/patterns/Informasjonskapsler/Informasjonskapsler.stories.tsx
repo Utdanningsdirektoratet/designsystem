@@ -34,18 +34,16 @@ export const Preview = meta.story({
       <>
         <style>
           {`
-            /* Styles defined in application-specific css */
-            .cookies-buttons {
-              display: flex;
-              gap: var(--ds-size-4);
-              flex-wrap: wrap;
-            }
-            @media (max-width: 40rem) {
-              .cookies-buttons > button {
-          flex: 1 1 auto;
-              }
-            }
-          `}
+.informasjonskapsler-preview-cookies-button__group {
+  display: flex;
+  gap: var(--ds-size-4);
+  flex-wrap: wrap;
+}
+@media (max-width: 40rem) {
+  .informasjonskapsler-preview-cookies-button__group > button {
+    flex: 1 1 auto;
+  }
+}`}
         </style>
         <Dialog
           open={true}
@@ -66,7 +64,7 @@ export const Preview = meta.story({
               Du kan når som helst endre samtykket ditt via lenken i bunnmenyen.
             </Paragraph>
           </Prose>
-          <div className="cookies-buttons">
+          <div className="informasjonskapsler-preview-cookies-button__group">
             <Button variant="secondary">Godta alle</Button>
             <Button variant="secondary">Tilpass valg</Button>
             <Button variant="secondary">Avvis valgfrie</Button>

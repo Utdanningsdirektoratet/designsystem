@@ -1,7 +1,17 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Color Variants 1`] = `
-<div style="<removed>">
+<style>
+  .badge-color-variants-content {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  gap: var(--ds-size-2);
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+</style>
+<div>
   <span
     data-count="9+"
     data-variant="base"
@@ -66,6 +76,12 @@ exports[`Color Variants 1`] = `
 `;
 
 exports[`Custom Placement 1`] = `
+<style>
+  .badge-custom-placement-badge {
+  --dsc-badge-top: 16%;
+  --dsc-badge-right: 10%;
+}
+</style>
 <span
   data-overlap="rectangle"
   data-placement="top-right"
@@ -73,7 +89,6 @@ exports[`Custom Placement 1`] = `
   <span
     data-variant="base"
     data-color="danger"
-    style="<removed>"
   >
   </span>
   <svg
@@ -102,7 +117,7 @@ exports[`Custom Placement 1`] = `
 
 exports[`Floating 1`] = `
 <style>
-  .example-avatar {
+  .badge-floating-avatar {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -299,7 +314,13 @@ exports[`Floating 1`] = `
 `;
 
 exports[`In Button 1`] = `
-<div style="<removed>">
+<style>
+  .badge-in-button-main {
+  display: flex;
+  gap: var(--ds-size-4);
+}
+</style>
+<div>
   <button
     data-icon="true"
     data-variant="tertiary"
@@ -507,15 +528,15 @@ exports[`Status 1`] = `
 
 exports[`System Alerts 1`] = `
 <style>
-  .example-main {
+  .badge-system-alerts-main {
   display: flex;
   flex-direction: column;
   width: 30rem;
 }
-.example-heading {
+.badge-system-alerts-heading {
   margin-block-end: var(--ds-size-4);
 }
-.example-details-content {
+.badge-system-alerts-details-content {
   gap: var(--ds-size-4);
   display: flex;
   flex-direction: column;
@@ -536,8 +557,14 @@ exports[`System Alerts 1`] = `
       </span>
     </summary>
     <div>
+      <style>
+        .badge-varsel-header {
+  display: flex;
+  justify-content: space-between;
+}
+      </style>
       <div data-variant="default">
-        <div style="<removed>">
+        <div>
           <h3 data-size="xs">
             Varsel
           </h3>
@@ -553,8 +580,14 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
+      <style>
+        .badge-varsel-header {
+  display: flex;
+  justify-content: space-between;
+}
+      </style>
       <div data-variant="default">
-        <div style="<removed>">
+        <div>
           <h3 data-size="xs">
             Varsel
           </h3>
@@ -583,8 +616,14 @@ exports[`System Alerts 1`] = `
       </span>
     </summary>
     <div>
+      <style>
+        .badge-varsel-header {
+  display: flex;
+  justify-content: space-between;
+}
+      </style>
       <div data-variant="default">
-        <div style="<removed>">
+        <div>
           <h3 data-size="xs">
             Varsel
           </h3>
@@ -600,8 +639,14 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
+      <style>
+        .badge-varsel-header {
+  display: flex;
+  justify-content: space-between;
+}
+      </style>
       <div data-variant="default">
-        <div style="<removed>">
+        <div>
           <h3 data-size="xs">
             Varsel
           </h3>
@@ -617,8 +662,14 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
+      <style>
+        .badge-varsel-header {
+  display: flex;
+  justify-content: space-between;
+}
+      </style>
       <div data-variant="default">
-        <div style="<removed>">
+        <div>
           <h3 data-size="xs">
             Varsel
           </h3>
@@ -634,8 +685,14 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
+      <style>
+        .badge-varsel-header {
+  display: flex;
+  justify-content: space-between;
+}
+      </style>
       <div data-variant="default">
-        <div style="<removed>">
+        <div>
           <h3 data-size="xs">
             Varsel
           </h3>
@@ -651,8 +708,14 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
+      <style>
+        .badge-varsel-header {
+  display: flex;
+  justify-content: space-between;
+}
+      </style>
       <div data-variant="default">
-        <div style="<removed>">
+        <div>
           <h3 data-size="xs">
             Varsel
           </h3>
@@ -668,8 +731,14 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
+      <style>
+        .badge-varsel-header {
+  display: flex;
+  justify-content: space-between;
+}
+      </style>
       <div data-variant="default">
-        <div style="<removed>">
+        <div>
           <h3 data-size="xs">
             Varsel
           </h3>
@@ -698,8 +767,14 @@ exports[`System Alerts 1`] = `
       </span>
     </summary>
     <div>
+      <style>
+        .badge-varsel-header {
+  display: flex;
+  justify-content: space-between;
+}
+      </style>
       <div data-variant="default">
-        <div style="<removed>">
+        <div>
           <h3 data-size="xs">
             Varsel
           </h3>
@@ -708,8 +783,14 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
+      <style>
+        .badge-varsel-header {
+  display: flex;
+  justify-content: space-between;
+}
+      </style>
       <div data-variant="default">
-        <div style="<removed>">
+        <div>
           <h3 data-size="xs">
             Varsel
           </h3>
@@ -718,8 +799,14 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
+      <style>
+        .badge-varsel-header {
+  display: flex;
+  justify-content: space-between;
+}
+      </style>
       <div data-variant="default">
-        <div style="<removed>">
+        <div>
           <h3 data-size="xs">
             Varsel
           </h3>
@@ -728,8 +815,14 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
+      <style>
+        .badge-varsel-header {
+  display: flex;
+  justify-content: space-between;
+}
+      </style>
       <div data-variant="default">
-        <div style="<removed>">
+        <div>
           <h3 data-size="xs">
             Varsel
           </h3>
@@ -738,8 +831,14 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
+      <style>
+        .badge-varsel-header {
+  display: flex;
+  justify-content: space-between;
+}
+      </style>
       <div data-variant="default">
-        <div style="<removed>">
+        <div>
           <h3 data-size="xs">
             Varsel
           </h3>
@@ -748,8 +847,14 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
+      <style>
+        .badge-varsel-header {
+  display: flex;
+  justify-content: space-between;
+}
+      </style>
       <div data-variant="default">
-        <div style="<removed>">
+        <div>
           <h3 data-size="xs">
             Varsel
           </h3>
@@ -758,8 +863,14 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
+      <style>
+        .badge-varsel-header {
+  display: flex;
+  justify-content: space-between;
+}
+      </style>
       <div data-variant="default">
-        <div style="<removed>">
+        <div>
           <h3 data-size="xs">
             Varsel
           </h3>
@@ -768,8 +879,14 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
+      <style>
+        .badge-varsel-header {
+  display: flex;
+  justify-content: space-between;
+}
+      </style>
       <div data-variant="default">
-        <div style="<removed>">
+        <div>
           <h3 data-size="xs">
             Varsel
           </h3>
@@ -778,8 +895,14 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
+      <style>
+        .badge-varsel-header {
+  display: flex;
+  justify-content: space-between;
+}
+      </style>
       <div data-variant="default">
-        <div style="<removed>">
+        <div>
           <h3 data-size="xs">
             Varsel
           </h3>
@@ -788,8 +911,14 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
+      <style>
+        .badge-varsel-header {
+  display: flex;
+  justify-content: space-between;
+}
+      </style>
       <div data-variant="default">
-        <div style="<removed>">
+        <div>
           <h3 data-size="xs">
             Varsel
           </h3>
@@ -798,8 +927,14 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
+      <style>
+        .badge-varsel-header {
+  display: flex;
+  justify-content: space-between;
+}
+      </style>
       <div data-variant="default">
-        <div style="<removed>">
+        <div>
           <h3 data-size="xs">
             Varsel
           </h3>

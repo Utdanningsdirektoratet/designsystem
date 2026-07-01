@@ -2,25 +2,25 @@
 
 exports[`Article 1`] = `
 <style>
-  .example-img {
+  .tag-article-img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
 }
-.example-div {
+.tag-article-main {
   display: flex;
   gap: 10px;
   margin-top: var(--ds-size-4);
   margin-bottom: var(--ds-size-3);
 }
-.example-div-2 {
+.tag-article-div {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: var(--ds-size-2);
 }
-.example-list {
+.tag-article-list {
     list-style: none;
     display: flex;
     gap: 10px;
@@ -106,11 +106,11 @@ exports[`Colors 1`] = `
 
 exports[`Icon 1`] = `
 <style>
-  .example-tag {
-  paddingInlineStart: 'var(--ds-size-1)
+  .tag-icon-tag {
+  padding-inline-start: var(--ds-size-1);
 }
-.example-icon {
-  marginInlineEnd: 'var(--ds-size-1)'
+.tag-icon-icon {
+  margin-inline-end: var(--ds-size-1); 
 }
 </style>
 <span data-variant="default">

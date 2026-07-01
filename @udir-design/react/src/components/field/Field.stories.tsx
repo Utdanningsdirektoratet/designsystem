@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { expect, waitFor } from 'storybook/test';
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
-import { Input } from 'src/components/input';
-import { Textarea } from 'src/components/textarea';
-import { Label } from 'src/components/typography/label';
-import { ValidationMessage } from 'src/components/typography/validationMessage';
+import { Input } from '../input/Input';
+import { Textarea } from '../textarea/Textarea';
+import { Label } from '../typography/label/Label';
+import { ValidationMessage } from '../typography/validationMessage/ValidationMessage';
 import { Field } from './Field';
 import { Field as FakeField } from './docs/FakeField';
 import { FieldCounter } from './docs/FakeFieldCounter';
@@ -152,22 +152,26 @@ export const Format = meta.story({
 
 export const Position = meta.story({
   render: (args) => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--ds-size-2)',
-      }}
-    >
-      <Field {...args} position="end">
-        <Label>Flymodus</Label>
-        <Input type="checkbox" role="switch" id={'airplane'} />
-      </Field>
-      <Field {...args} position="end">
-        <Label>Lydløs</Label>
-        <Input type="checkbox" role="switch" id={'sounds'} />
-      </Field>
-    </div>
+    <>
+      <style>
+        {`
+.field-position-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-2);
+}`}
+      </style>
+      <div className="field-position-main">
+        <Field {...args} position="end">
+          <Label>Flymodus</Label>
+          <Input type="checkbox" role="switch" id={'airplane'} />
+        </Field>
+        <Field {...args} position="end">
+          <Label>Lydløs</Label>
+          <Input type="checkbox" role="switch" id={'sounds'} />
+        </Field>
+      </div>
+    </>
   ),
   play: async ({ canvasElement, step }) => {
     const canvas = canvasElement as HTMLElement;

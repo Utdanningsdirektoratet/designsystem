@@ -1,11 +1,17 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`All Optional 1`] = `
+<style>
+  .field-necessity-all-optional-field-necessity {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--ds-size-4);
+}
+</style>
 <div
   data-show-required="true"
   data-show-optional="false"
   data-show-summary="true"
-  style="<removed>"
 >
   <ds-field>
     <label
@@ -45,11 +51,17 @@ exports[`All Optional 1`] = `
 `;
 
 exports[`All Required 1`] = `
+<style>
+  .field-necessity-all-required-field-necessity {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--ds-size-4);
+}
+</style>
 <div
   data-show-required="true"
   data-show-optional="false"
   data-show-summary="true"
-  style="<removed>"
 >
   <ds-field>
     <label
@@ -279,11 +291,17 @@ exports[`Individual Checkboxes 1`] = `
 `;
 
 exports[`Manual Summary Placement 1`] = `
+<style>
+  .field-necessity-manual-summary-placement-field-necessity {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--ds-size-4);
+}
+</style>
 <div
   data-show-required="true"
   data-show-optional="false"
   data-show-summary="true"
-  style="<removed>"
 >
   <h2 data-size="md">
     Kontaktinformasjon
@@ -348,13 +366,19 @@ exports[`Manual Summary Placement 1`] = `
 `;
 
 exports[`Outline 1`] = `
+<style>
+  .field-necessity-outline-field-necessity {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--ds-size-4);
+}
+</style>
 <div data-variant="tinted">
   <div
     data-variant="outline"
     data-show-required="true"
     data-show-optional="false"
     data-show-summary="true"
-    style="<removed>"
   >
     <ds-field>
       <label
@@ -411,11 +435,17 @@ exports[`Outline 1`] = `
 `;
 
 exports[`Preview 1`] = `
+<style>
+  .field-necessity-preview-field-necessity {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--ds-size-4);
+}
+</style>
 <div
   data-show-required="true"
   data-show-optional="false"
   data-show-summary="true"
-  style="<removed>"
 >
   <ds-field>
     <label
@@ -471,11 +501,17 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Readonly 1`] = `
+<style>
+  .field-necessity-readonly-field-necessity {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--ds-size-4);
+}
+</style>
 <div
   data-show-required="true"
   data-show-optional="false"
   data-show-summary="true"
-  style="<removed>"
 >
   <ds-field>
     <label

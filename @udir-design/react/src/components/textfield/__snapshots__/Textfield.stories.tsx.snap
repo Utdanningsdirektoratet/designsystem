@@ -25,8 +25,19 @@ exports[`Affix 1`] = `
 `;
 
 exports[`Controlled 1`] = `
-<div style="<removed>">
-  <ds-field style="<removed>">
+<style>
+  .textfield-controlled-main {
+          display: flex;
+          gap: var(--ds-size-2);
+          align-items: end;
+          width: 100%;
+        }
+        .textfield-controlled-textfield {
+          flex-grow: 1;
+        }
+</style>
+<div>
+  <ds-field>
     <label
       data-weight="medium"
       for="<removed>"

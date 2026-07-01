@@ -166,73 +166,77 @@ export const WithAnchor = meta.story({
     const nextDisabled = nextButtonProps?.['aria-disabled'];
 
     return (
-      <div
-        style={{
-          gap: 70,
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
-        <Search>
-          <Search.Input aria-label="Søk" value={url} autoComplete="url" />
-        </Search>
-        <Pagination aria-label="Sidenavigering" {...args}>
-          <Pagination.List>
-            <Pagination.Item>
-              <Pagination.Button
-                asChild
-                aria-label="Forrige side"
-                {...prevButtonProps}
-              >
-                <a
-                  onClick={(e) => {
-                    if (prevDisabled) return;
-                    handleAnchorClick(e, page - 1);
-                  }}
-                  href={`#side-${page - 1}`}
+      <>
+        <style>
+          {`
+.pagination-with-anchor-main {
+  gap: 70px;
+  display: flex;
+  flex-direction: column;
+}`}
+        </style>
+        <div className="pagination-with-anchor-main">
+          <Search>
+            <Search.Input aria-label="Søk" value={url} autoComplete="url" />
+          </Search>
+          <Pagination aria-label="Sidenavigering" {...args}>
+            <Pagination.List>
+              <Pagination.Item>
+                <Pagination.Button
+                  asChild
+                  aria-label="Forrige side"
+                  {...prevButtonProps}
                 >
-                  Forrige
-                </a>
-              </Pagination.Button>
-            </Pagination.Item>
-            {pages.map(({ page, itemKey, buttonProps }) => (
-              <Pagination.Item key={itemKey}>
-                {typeof page === 'number' && (
-                  <Pagination.Button
-                    asChild
-                    aria-label={`Side ${page}`}
-                    {...buttonProps}
+                  <a
+                    onClick={(e) => {
+                      if (prevDisabled) return;
+                      handleAnchorClick(e, page - 1);
+                    }}
+                    href={`#side-${page - 1}`}
                   >
-                    <a
-                      href={`#side-${page}`}
-                      onClick={(e) => handleAnchorClick(e, page)}
-                    >
-                      {page}
-                    </a>
-                  </Pagination.Button>
-                )}
+                    Forrige
+                  </a>
+                </Pagination.Button>
               </Pagination.Item>
-            ))}
-            <Pagination.Item>
-              <Pagination.Button
-                asChild
-                aria-label="Neste side"
-                {...nextButtonProps}
-              >
-                <a
-                  onClick={(e) => {
-                    if (nextDisabled) return;
-                    handleAnchorClick(e, page + 1);
-                  }}
-                  href={`#side-${page + 1}`}
+              {pages.map(({ page, itemKey, buttonProps }) => (
+                <Pagination.Item key={itemKey}>
+                  {typeof page === 'number' && (
+                    <Pagination.Button
+                      asChild
+                      aria-label={`Side ${page}`}
+                      {...buttonProps}
+                    >
+                      <a
+                        href={`#side-${page}`}
+                        onClick={(e) => handleAnchorClick(e, page)}
+                      >
+                        {page}
+                      </a>
+                    </Pagination.Button>
+                  )}
+                </Pagination.Item>
+              ))}
+              <Pagination.Item>
+                <Pagination.Button
+                  asChild
+                  aria-label="Neste side"
+                  {...nextButtonProps}
                 >
-                  Neste
-                </a>
-              </Pagination.Button>
-            </Pagination.Item>
-          </Pagination.List>
-        </Pagination>
-      </div>
+                  <a
+                    onClick={(e) => {
+                      if (nextDisabled) return;
+                      handleAnchorClick(e, page + 1);
+                    }}
+                    href={`#side-${page + 1}`}
+                  >
+                    Neste
+                  </a>
+                </Pagination.Button>
+              </Pagination.Item>
+            </Pagination.List>
+          </Pagination>
+        </div>
+      </>
     );
   },
 });

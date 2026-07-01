@@ -64,12 +64,11 @@ export const WithText = meta.story({
     <>
       <style>
         {`
-      .spinner-with-text {
-        display: flex;
-        gap: 0.5rem;
-        align-items: center;
-      }
-      `}
+.spinner-with-text {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}`}
       </style>
       <div className="spinner-with-text">
         <Spinner {...args} />
