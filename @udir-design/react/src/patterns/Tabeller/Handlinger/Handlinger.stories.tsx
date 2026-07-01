@@ -31,7 +31,8 @@ import {
 } from 'src/components/suggestion/Suggestion';
 import { Table } from 'src/components/table';
 import { Label } from 'src/components/typography/label/Label';
-import './handlinger.css';
+import './handlinger-toolbar.css';
+import './handlinger-toolbar-card.css';
 import { usePagination } from 'src/hooks/usePagination';
 
 type Data = {
