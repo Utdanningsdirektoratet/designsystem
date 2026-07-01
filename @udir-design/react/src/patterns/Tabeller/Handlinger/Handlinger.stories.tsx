@@ -3,13 +3,13 @@ import {
   type ComponentProps,
   type ReactNode,
   useEffect,
+  useId,
   useRef,
   useState,
 } from 'react';
 import {
   DownloadIcon,
   MenuElipsisHorizontalIcon,
-  MenuElipsisVerticalIcon,
   PencilWritingIcon,
   TrashFillIcon,
 } from '@udir-design/icons';
@@ -79,6 +79,7 @@ const ActionTable = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [emne, setEmne] = useState<string[]>([]);
   const [fylke, setFylke] = useState<string[]>([]);
+  const rowMenuPrefix = useId();
   const [isMobile, setIsMobile] = useState(
     () => !window.matchMedia('(min-width: 48rem)').matches,
   );
@@ -347,16 +348,16 @@ const ActionTable = ({
               </Table.Cell>
               <Table.Cell>
                 <Button
-                  popoverTarget={`row-menu-${row.id}`}
+                  popoverTarget={`${rowMenuPrefix}-row-menu-${row.id}`}
                   variant="tertiary"
                   icon
                   title="Flere valg"
                   aria-label="Handlinger"
                   data-size="sm"
                 >
-                  <MenuElipsisVerticalIcon aria-hidden />
+                  <MenuElipsisHorizontalIcon aria-hidden />
                 </Button>
-                <Dropdown id={`row-menu-${row.id}`}>
+                <Dropdown id={`${rowMenuPrefix}-row-menu-${row.id}`}>
                   <Dropdown.List>
                     <Dropdown.Item>
                       <Dropdown.Button aria-label="Rediger">
@@ -445,78 +446,85 @@ export const Preview = meta.story({
       isMobile,
       selectAll,
       clearSelection,
-    }: ToolbarApi) => (
-      <div className="action-toolbar">
-        <div className="action-toolbar__selection">
-          <p data-size="sm">{selectedCount} valgt</p>
-          <div className="action-toolbar__buttons">
-            <div className="action-toolbar__divider" />
-            <Button variant="tertiary" onClick={selectAll} data-size="sm">
-              Velg alle {filteredCount}
-            </Button>
-            <div className="action-toolbar__divider" />
-            <Button variant="tertiary" onClick={clearSelection} data-size="sm">
-              Fjern alle
-            </Button>
-          </div>
-        </div>
-        <div className="action-toolbar__actions">
-          {isMobile ? (
-            <>
-              <Button
-                popoverTarget="toolbar-actions-menu"
-                variant="tertiary"
-                icon
-                title="Flere valg"
-                data-size="sm"
-              >
-                <MenuElipsisHorizontalIcon aria-hidden />
-              </Button>
-              <Dropdown id="toolbar-actions-menu">
-                <Dropdown.List>
-                  <Dropdown.Item>
-                    <Dropdown.Button>
-                      <PencilWritingIcon aria-hidden /> Rediger
-                    </Dropdown.Button>
-                    <Dropdown.Button>
-                      <DownloadIcon aria-hidden /> Eksporter
-                    </Dropdown.Button>
-                    <Divider />
-                    <Dropdown.Button
-                      data-color="danger"
-                      onClick={clearSelection}
-                    >
-                      <TrashFillIcon aria-hidden /> Slett
-                    </Dropdown.Button>
-                  </Dropdown.Item>
-                </Dropdown.List>
-              </Dropdown>
-            </>
-          ) : (
-            <>
-              <Button data-variant="tertiary" data-size="sm">
-                <PencilWritingIcon aria-hidden />
-                Rediger
-              </Button>
-              <Button data-variant="tertiary" data-size="sm">
-                <DownloadIcon aria-hidden />
-                Eksporter
+    }: ToolbarApi) => {
+      const menuId = useId();
+      return (
+        <div className="action-toolbar">
+          <div className="action-toolbar__selection">
+            <p data-size="sm">{selectedCount} valgt</p>
+            <div className="action-toolbar__buttons">
+              <div className="action-toolbar__divider" />
+              <Button variant="tertiary" onClick={selectAll} data-size="sm">
+                Velg alle {filteredCount}
               </Button>
               <div className="action-toolbar__divider" />
               <Button
-                data-variant="tertiary"
-                data-color="danger"
-                data-size="sm"
+                variant="tertiary"
                 onClick={clearSelection}
+                data-size="sm"
               >
-                <TrashFillIcon aria-hidden />
-                Slett
+                Fjern alle
               </Button>
-            </>
-          )}
+            </div>
+          </div>
+          <div className="action-toolbar__actions">
+            {isMobile ? (
+              <>
+                <Button
+                  popoverTarget={`toolbar-actions-menu-${menuId}`}
+                  variant="tertiary"
+                  icon
+                  title="Flere valg"
+                  data-size="sm"
+                >
+                  <MenuElipsisHorizontalIcon aria-hidden />
+                </Button>
+                <Dropdown id={`toolbar-actions-menu-${menuId}`}>
+                  <Dropdown.List>
+                    <Dropdown.Item>
+                      <Dropdown.Button>
+                        <PencilWritingIcon aria-hidden /> Rediger
+                      </Dropdown.Button>
+                      <Dropdown.Button>
+                        <DownloadIcon aria-hidden /> Eksporter
+                      </Dropdown.Button>
+                      <Divider />
+                      <Dropdown.Button
+                        data-color="danger"
+                        onClick={clearSelection}
+                      >
+                        <TrashFillIcon aria-hidden /> Slett
+                      </Dropdown.Button>
+                    </Dropdown.Item>
+                  </Dropdown.List>
+                </Dropdown>
+              </>
+            ) : (
+              <>
+                <Button data-variant="tertiary" data-size="sm">
+                  <PencilWritingIcon aria-hidden />
+                  Rediger
+                </Button>
+                <Button data-variant="tertiary" data-size="sm">
+                  <DownloadIcon aria-hidden />
+                  Eksporter
+                </Button>
+                <div className="action-toolbar__divider" />
+                <Button
+                  data-variant="tertiary"
+                  data-color="danger"
+                  data-size="sm"
+                  onClick={clearSelection}
+                >
+                  <TrashFillIcon aria-hidden />
+                  Slett
+                </Button>
+              </>
+            )}
+          </div>
         </div>
-      </div>
-    );
+      );
+    };
     return (
       <ActionTable args={args} toolbar={(api) => <ActionToolbar {...api} />} />
     );
@@ -539,59 +547,65 @@ export const WithActionCard = meta.story({
       selectedCount,
       selectAll,
       clearSelection,
-    }: ToolbarApi) => (
-      <div className="action-toolbar-card">
-        <p>{selectedCount} valgt</p>
-        <div className="action-toolbar-card__actions">
-          <Button
-            variant="tertiary"
-            title="Rediger"
-            onClick={selectAll}
-            data-size="sm"
-          >
-            Velg alle
-          </Button>
-          <div className="action-toolbar-card__divider" />
-          <Button
-            variant="tertiary"
-            title="Rediger "
-            onClick={clearSelection}
-            data-size="sm"
-          >
-            Fjern alle
-          </Button>
-          <div className="action-toolbar-card__divider" />
-          <Button variant="tertiary" icon title="Rediger">
-            <PencilWritingIcon aria-hidden />
-          </Button>
-          <div className="action-toolbar-card__divider" />
-          <Button
-            popoverTarget="toolbar-card-actions-menu"
-            variant="tertiary"
-            icon
-            title="Flere valg"
-          >
-            <MenuElipsisHorizontalIcon aria-hidden />
-          </Button>
-          <Dropdown id="toolbar-card-actions-menu" placement="bottom-start">
-            <Dropdown.List>
-              <Dropdown.Item>
-                <Dropdown.Button>
-                  <PencilWritingIcon aria-hidden /> Rediger
-                </Dropdown.Button>
-                <Dropdown.Button>
-                  <DownloadIcon aria-hidden /> Eksporter
-                </Dropdown.Button>
-                <Divider />
-                <Dropdown.Button data-color="danger" onClick={clearSelection}>
-                  <TrashFillIcon aria-hidden /> Slett
-                </Dropdown.Button>
-              </Dropdown.Item>
-            </Dropdown.List>
-          </Dropdown>
+    }: ToolbarApi) => {
+      const menuId = useId();
+      return (
+        <div className="action-toolbar-card">
+          <p>{selectedCount} valgt</p>
+          <div className="action-toolbar-card__actions">
+            <Button
+              variant="tertiary"
+              title="Rediger"
+              onClick={selectAll}
+              data-size="sm"
+            >
+              Velg alle
+            </Button>
+            <div className="action-toolbar-card__divider" />
+            <Button
+              variant="tertiary"
+              title="Rediger "
+              onClick={clearSelection}
+              data-size="sm"
+            >
+              Fjern alle
+            </Button>
+            <div className="action-toolbar-card__divider" />
+            <Button variant="tertiary" icon title="Rediger">
+              <PencilWritingIcon aria-hidden />
+            </Button>
+            <div className="action-toolbar-card__divider" />
+            <Button
+              popoverTarget={`toolbar-card-actions-menu-${menuId}`}
+              variant="tertiary"
+              icon
+              title="Flere valg"
+            >
+              <MenuElipsisHorizontalIcon aria-hidden />
+            </Button>
+            <Dropdown
+              id={`toolbar-card-actions-menu-${menuId}`}
+              placement="bottom-start"
+            >
+              <Dropdown.List>
+                <Dropdown.Item>
+                  <Dropdown.Button>
+                    <PencilWritingIcon aria-hidden /> Rediger
+                  </Dropdown.Button>
+                  <Dropdown.Button>
+                    <DownloadIcon aria-hidden /> Eksporter
+                  </Dropdown.Button>
+                  <Divider />
+                  <Dropdown.Button data-color="danger" onClick={clearSelection}>
+                    <TrashFillIcon aria-hidden /> Slett
+                  </Dropdown.Button>
+                </Dropdown.Item>
+              </Dropdown.List>
+            </Dropdown>
+          </div>
         </div>
-      </div>
-    );
+      );
+    };
 
     return (
       <ActionTable
