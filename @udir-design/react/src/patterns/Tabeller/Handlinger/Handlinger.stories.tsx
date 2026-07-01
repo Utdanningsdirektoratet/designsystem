@@ -170,9 +170,9 @@ const ActionTable = ({
   };
 
   return (
-    <div className="example-main">
-      <div className="example-filters-section">
-        <Field className="example-search-field">
+    <div className="actions">
+      <div className="actions-filters-section">
+        <Field className="actions-search-field">
           <Label>Søk</Label>
           <Search>
             <Search.Input
@@ -183,9 +183,9 @@ const ActionTable = ({
             <Search.Clear onClick={() => setSearchQuery('')} />
           </Search>
         </Field>
-        <div className="example-suggestion-section">
-          <Field className="example-suggestion-field">
-            <Label>Velg emne(r)</Label>
+        <div className="actions-suggestion-section">
+          <Field className="actions-suggestion-field">
+            <Label>Velg emner</Label>
             <Suggestion
               {...(args as SuggestionMultipleProps)}
               multiple
@@ -206,8 +206,8 @@ const ActionTable = ({
               </Suggestion.List>
             </Suggestion>
           </Field>
-          <Field className="example-suggestion-field">
-            <Label>Velg fylke(r)</Label>
+          <Field className="actions-suggestion-field">
+            <Label>Velg fylker</Label>
             <Suggestion
               {...(args as SuggestionMultipleProps)}
               multiple
@@ -231,9 +231,9 @@ const ActionTable = ({
         </div>
       </div>
       {(emne.length > 0 || fylke.length > 0) && (
-        <div className="example-active-filters">
+        <div className="actions-active-filters">
           {emne.length > 0 && (
-            <div className="example-active-filters-group">
+            <div className="actions-active-filters-group">
               <Label>Emne</Label>
               <ul>
                 {emne.map((e) => (
@@ -251,7 +251,7 @@ const ActionTable = ({
             </div>
           )}
           {fylke.length > 0 && (
-            <div className="example-active-filters-group">
+            <div className="actions-active-filters-group">
               <Label>Fylke</Label>
               <ul>
                 {fylke.map((f) => (
@@ -378,7 +378,7 @@ const ActionTable = ({
           ))}
         </Table.Body>
       </Table>
-      <div className="example-controls">
+      <div className="actions-controls">
         <Pagination aria-label="Sidenavigering" data-size="sm">
           <Pagination.List>
             <Pagination.Item>
@@ -404,11 +404,11 @@ const ActionTable = ({
             </Pagination.Item>
           </Pagination.List>
         </Pagination>
-        <div className="example-controls-section">
-          <span className="example-controls-section-span">
+        <div className="actions-controls-section">
+          <span className="actions-controls-section-span">
             Rad {rangeStart}-{rangeEnd} av {totalRows}
           </span>
-          <Field className="example-controls-section-select">
+          <Field className="actions-controls-section-select">
             <Label>Rader per side</Label>
             <Select
               value={String(itemsPerPage)}
@@ -553,6 +553,7 @@ export const WithActionCard = meta.story({
         <div className="action-toolbar-card">
           <p>{selectedCount} valgt</p>
           <div className="action-toolbar-card__actions">
+            <div className="action-toolbar-card__divider" />
             <Button
               variant="tertiary"
               title="Rediger"
