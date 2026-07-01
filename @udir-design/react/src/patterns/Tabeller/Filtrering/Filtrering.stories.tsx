@@ -355,8 +355,6 @@ export const WithDialog = meta.story({
     const handleClearFilters = () => {
       setEmne([]);
       setFylke([]);
-      setEksamen([]);
-      setSearchQuery('');
     };
 
     const { getCheckboxProps } = useCheckboxGroup({
@@ -539,7 +537,7 @@ export const WithDialog = meta.story({
               data-size="sm"
               className={dialogStyles['dialog-clear-filters']}
             >
-              Fjern alle filtre
+              Fjern filtre
             </Button>
           </div>
         </div>
