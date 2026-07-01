@@ -1,7 +1,10 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import { INITIAL_VIEWPORTS } from 'storybook/viewport';
+import { CssToggle } from '.storybook/docs/components';
 
 import * as HandlingerStories from './Handlinger.stories';
+import toolbarCss from './handlinger-toolbar.css?raw';
+import toolbarCardCss from './handlinger-toolbar-card.css?raw';
 
 <Meta of={HandlingerStories} />
 
@@ -52,8 +55,12 @@ I det første eksempelet vises handlingene med tekst og ikoner i en verktøylinj
 
 <Canvas of={HandlingerStories.Preview} />
 
+<CssToggle code={toolbarCss} />
+
 ## Kompakt verktøylinje
 
 I det andre eksempelet samles handlingene i en kompakt verktøylinje. Denne løsningen tar mindre plass og passer godt når det finnes få handlinger. Ikonbaserte handlinger kan imidlertid være vanskeligere å forstå, og bør derfor ha tydelige tilgjengelige navn og eventuelt en tooltip. Mindre brukte handlinger kan plasseres i en meny med tre prikker.
 
 <Canvas of={HandlingerStories.WithActionCard} />
+
+<CssToggle code={toolbarCardCss} />
