@@ -378,14 +378,14 @@ export const Cluster = meta.story({
   display: flex;
   align-items: center;
   gap: var(--ds-size-2);
-  padding: var(--ds-size-4) 0 var(--ds-size-8) 0;
+  padding: var(--ds-size-2) 0 var(--ds-size-4) 0;
   min-width: 0;
   border-block-end: 1px solid var(--ds-color-border-subtle);
   text-decoration: none;
 }
 .card-cluster__row:last-child .card-cluster__item {
   border-block-end: none;
-  padding-block-end: var(--ds-size-4);
+  padding-block-end: var(--ds-size-2);
 }
 .card-cluster__item > svg {
   flex-shrink: 0;
