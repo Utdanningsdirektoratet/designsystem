@@ -1,0 +1,19 @@
+{
+  "name": "cookie",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@digdir/designsystemet-css": "catalog:",
+    "@udir-design/css": "workspace:*",
+    "@udir-design/theme": "workspace:*",
+    "express": "^5.2.1"
+  }
+}

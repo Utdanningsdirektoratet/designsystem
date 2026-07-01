@@ -1,74 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Drawer 1`] = `
-<div data-size="auto">
-  <style>
-    /* Styles defined in application-specific css */
-            .cookies-buttons {
-              display: flex;
-              gap: var(--ds-size-4);
-              flex-wrap: wrap;
-            }
-            @media (max-width: 40rem) {
-              .cookies-buttons > button {
-          flex: 1 1 auto;
-              }
-            }
-  </style>
-  <dialog
-    data-placement="bottom"
-    data-modal="false"
-    id="<removed>"
-    open
-  >
-    <button
-      data-icon="true"
-      commandfor="_r_1_"
-      data-variant="tertiary"
-      type="button"
-      aria-label="Lukk dialogvindu"
-      data-color="neutral"
-      command="close"
-    >
-    </button>
-    <div>
-      <h2>
-        Vi bruker informasjonskapsler
-      </h2>
-      <p data-variant="default">
-        Nødvendige informasjonskapsler sørger for at nettstedet fungerer og er sikkert, og kan ikke velges bort. Andre brukes til statistikk, analyse, og å forbedre brukeropplevelsen. Godkjenner du alle, hjelper du oss å lage bedre nettsider og tjenester.
-        <a href="#">
-          Om informasjonskapslene.
-        </a>
-      </p>
-      <p data-variant="default">
-        Du kan når som helst endre samtykket ditt via lenken i bunnmenyen.
-      </p>
-    </div>
-    <div>
-      <button
-        data-variant="secondary"
-        type="button"
-      >
-        Godta alle
-      </button>
-      <button
-        data-variant="secondary"
-        type="button"
-      >
-        Tilpass valg
-      </button>
-      <button
-        data-variant="secondary"
-        type="button"
-      >
-        Avvis valgfrie
-      </button>
-    </div>
-  </dialog>
-</div>
-`;
-
 exports[`Preview 1`] = `
 <div data-size="auto">
   <style>
@@ -77,6 +8,14 @@ exports[`Preview 1`] = `
               display: flex;
               gap: var(--ds-size-4);
               flex-wrap: wrap;
+            }
+            .cookies-details ul {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+            }
+            .cookies-details li > strong {
+              font-weight: 600;
             }
             @media (max-width: 40rem) {
               .cookies-buttons > button {
@@ -102,17 +41,513 @@ exports[`Preview 1`] = `
     </button>
     <div>
       <h2>
-        Vi bruker informasjonskapsler
+        [Tjenestenavn] bruker informasjonskapsler
       </h2>
       <p data-variant="default">
-        Nødvendige informasjonskapsler sørger for at nettstedet fungerer og er sikkert, og kan ikke velges bort. Andre brukes til statistikk, analyse, og å forbedre brukeropplevelsen. Godkjenner du alle, hjelper du oss å lage bedre nettsider og tjenester.
-        <a href="#">
-          Om informasjonskapslene.
-        </a>
+        Nødvendige informasjonskapsler sørger for at tjenesten fungerer og er sikker, og kan ikke velges bort. Andre brukes til statistikk, analyse, og å forbedre brukeropplevelsen. Godkjenner du alle, hjelper du oss å lage bedre tjenester.
       </p>
       <p data-variant="default">
         Du kan når som helst endre samtykket ditt via lenken i bunnmenyen.
       </p>
+      <fieldset aria-labelledby="<removed>">
+        <legend
+          data-weight="medium"
+          id="<removed>"
+        >
+          Velg hvilke informasjonskapsler du godtar
+        </legend>
+        <ds-field data-clickdelegatefor="<removed>">
+          <input
+            type="checkbox"
+            checked
+            id="<removed>"
+          >
+          <label
+            data-weight="regular"
+            for="<removed>"
+          >
+            Nødvendige (kan ikke velges bort)
+          </label>
+        </ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
+          <input
+            type="checkbox"
+            id="<removed>"
+          >
+          <label
+            data-weight="regular"
+            for="<removed>"
+          >
+            Funksjonelle
+          </label>
+        </ds-field>
+        <ds-field data-clickdelegatefor="<removed>">
+          <input
+            type="checkbox"
+            id="<removed>"
+          >
+          <label
+            data-weight="regular"
+            for="<removed>"
+          >
+            Statistiske
+          </label>
+        </ds-field>
+      </fieldset>
+      <button
+        data-variant="tertiary"
+        type="button"
+        aria-haspopup="dialog"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M3.25 4A.75.75 0 0 1 4 3.25h16a.75.75 0 0 1 .75.75v16a.75.75 0 0 1-.75.75H4a.75.75 0 0 1-.75-.75zM11 7.75a1 1 0 1 1 2 0 1 1 0 0 1-2 0m-1.25 3a.75.75 0 0 1 .75-.75H12a.75.75 0 0 1 .75.75v4.75h.75a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5h.75v-4h-.75a.75.75 0 0 1-.75-.75"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+        Se hvilke informasjonskapsler vi bruker
+      </button>
+      <dialog
+        data-placement="center"
+        data-modal="true"
+        id="<removed>"
+      >
+        <button
+          data-icon="true"
+          commandfor="_r_2_"
+          data-variant="tertiary"
+          type="button"
+          aria-label="Lukk dialogvindu"
+          data-color="neutral"
+          command="close"
+        >
+        </button>
+        <div>
+          <h2>
+            Informasjonskapsler
+          </h2>
+          <div>
+            <div>
+              <h3 data-size="xs">
+                Nødvendige
+              </h3>
+              <p data-variant="default">
+                Nødvendige informasjonskapsler hjelper med å gjøre tjenesten brukbar ved å aktivere grunnleggende funksjoner knyttet til for eksempel navigasjon, sikkerhet og ytelse. Tjenesten kan ikke fungere optimalt uten disse informasjonskapslene.
+              </p>
+              <details data-variant="default">
+                <summary>
+                  3 nødvendige
+                </summary>
+                <div>
+                  <div>
+                    <div>
+                      <h4 data-size="2xs">
+                        1
+                      </h4>
+                      <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Cookie Information
+                        </li>
+                        <li>
+                          <strong>
+                            Formål:
+                          </strong>
+                          Støtter nettstedets tekniske funksjoner.
+                        </li>
+                        <li>
+                          <strong>
+                            Navn:
+                          </strong>
+                          CookieConsent
+                        </li>
+                        <li>
+                          <strong>
+                            Utløpstid:
+                          </strong>
+                          1 år
+                        </li>
+                        <li>
+                          <strong>
+                            Personvernerklæring:
+                          </strong>
+                          <a href="https://example.com/cookie-information/privacy">
+                            Se personvernerklæring
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 data-size="2xs">
+                        2
+                      </h4>
+                      <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Cloudflare
+                        </li>
+                        <li>
+                          <strong>
+                            Formål:
+                          </strong>
+                          Beskytter mot ondsinnede besøkende og begrenser risikoen for serveroverbelastning.
+                        </li>
+                        <li>
+                          <strong>
+                            Navn:
+                          </strong>
+                          __cfruid
+                        </li>
+                        <li>
+                          <strong>
+                            Utløpstid:
+                          </strong>
+                          Sesjon
+                        </li>
+                        <li>
+                          <strong>
+                            Personvernerklæring:
+                          </strong>
+                          <a href="https://example.com/cloudflare/privacy">
+                            Se personvernerklæring
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 data-size="2xs">
+                        3
+                      </h4>
+                      <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Cloudflare
+                        </li>
+                        <li>
+                          <strong>
+                            Formål:
+                          </strong>
+                          Bekrefter at besøkende har bestått sikkerhetsutfordringen.
+                        </li>
+                        <li>
+                          <strong>
+                            Navn:
+                          </strong>
+                          cf_clearance
+                        </li>
+                        <li>
+                          <strong>
+                            Utløpstid:
+                          </strong>
+                          30 minutter
+                        </li>
+                        <li>
+                          <strong>
+                            Personvernerklæring:
+                          </strong>
+                          <a href="https://example.com/cloudflare/privacy">
+                            Se personvernerklæring
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 data-size="xs">
+                Funksjonelle
+              </h3>
+              <p data-variant="default">
+                Funksjonelle informasjonskapsler lagrer opplysninger som endrer måten tjenesten ser ut eller oppfører seg på slik at den blir bedre tilpasset deg, for eksempel ditt foretrukne språk eller den regionen du befinner deg i.
+              </p>
+              <details data-variant="default">
+                <summary>
+                  1 funksjonelle
+                </summary>
+                <div>
+                  <div>
+                    <div>
+                      <h4 data-size="2xs">
+                        1
+                      </h4>
+                      <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Optimizely
+                        </li>
+                        <li>
+                          <strong>
+                            Formål:
+                          </strong>
+                          Brukes til A/B-testing og personalisering av innhold.
+                        </li>
+                        <li>
+                          <strong>
+                            Navn:
+                          </strong>
+                          optimizelyEndUserId
+                        </li>
+                        <li>
+                          <strong>
+                            Utløpstid:
+                          </strong>
+                          6 måneder
+                        </li>
+                        <li>
+                          <strong>
+                            Personvernerklæring:
+                          </strong>
+                          <a href="https://example.com/optimizely/privacy">
+                            Se personvernerklæring
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h3 data-size="xs">
+                Statistiske
+              </h3>
+              <p data-variant="default">
+                Statistiske informasjonskapsler samler anonyme opplysninger om hvordan tjenesten blir brukt, slik at vi kan bruke dem til å gjøre tjenesten mest mulig tilpasset brukernes behov.
+              </p>
+              <details data-variant="default">
+                <summary>
+                  5 statistiske
+                </summary>
+                <div>
+                  <div>
+                    <div>
+                      <h4 data-size="2xs">
+                        1
+                      </h4>
+                      <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Google Analytics
+                        </li>
+                        <li>
+                          <strong>
+                            Formål:
+                          </strong>
+                          Samler inn anonym statistikk om hvordan besøkende bruker nettstedet.
+                        </li>
+                        <li>
+                          <strong>
+                            Navn:
+                          </strong>
+                          _ga
+                        </li>
+                        <li>
+                          <strong>
+                            Utløpstid:
+                          </strong>
+                          2 år
+                        </li>
+                        <li>
+                          <strong>
+                            Personvernerklæring:
+                          </strong>
+                          <a href="https://example.com/google/privacy">
+                            Se personvernerklæring
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 data-size="2xs">
+                        2
+                      </h4>
+                      <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Google Analytics
+                        </li>
+                        <li>
+                          <strong>
+                            Formål:
+                          </strong>
+                          Brukes til å skille brukere.
+                        </li>
+                        <li>
+                          <strong>
+                            Navn:
+                          </strong>
+                          _gid
+                        </li>
+                        <li>
+                          <strong>
+                            Utløpstid:
+                          </strong>
+                          24 timer
+                        </li>
+                        <li>
+                          <strong>
+                            Personvernerklæring:
+                          </strong>
+                          <a href="https://example.com/google/privacy">
+                            Se personvernerklæring
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 data-size="2xs">
+                        3
+                      </h4>
+                      <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Google Analytics
+                        </li>
+                        <li>
+                          <strong>
+                            Formål:
+                          </strong>
+                          Brukes til å begrense forespørsler.
+                        </li>
+                        <li>
+                          <strong>
+                            Navn:
+                          </strong>
+                          _gat
+                        </li>
+                        <li>
+                          <strong>
+                            Utløpstid:
+                          </strong>
+                          1 minutt
+                        </li>
+                        <li>
+                          <strong>
+                            Personvernerklæring:
+                          </strong>
+                          <a href="https://example.com/google/privacy">
+                            Se personvernerklæring
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 data-size="2xs">
+                        4
+                      </h4>
+                      <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Siteimprove
+                        </li>
+                        <li>
+                          <strong>
+                            Formål:
+                          </strong>
+                          Måler trafikk og brukeratferd for å forbedre nettstedet.
+                        </li>
+                        <li>
+                          <strong>
+                            Navn:
+                          </strong>
+                          nmstat, siteimproveses
+                        </li>
+                        <li>
+                          <strong>
+                            Utløpstid:
+                          </strong>
+                          1000 dager / Sesjon
+                        </li>
+                        <li>
+                          <strong>
+                            Personvernerklæring:
+                          </strong>
+                          <a href="https://example.com/siteimprove/privacy">
+                            Se personvernerklæring
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 data-size="2xs">
+                        5
+                      </h4>
+                      <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Microsoft Azure
+                        </li>
+                        <li>
+                          <strong>
+                            Formål:
+                          </strong>
+                          Samler inn diagnose- og ytelsesdata for applikasjonsovervåking.
+                        </li>
+                        <li>
+                          <strong>
+                            Navn:
+                          </strong>
+                          ai_session, ai_user
+                        </li>
+                        <li>
+                          <strong>
+                            Utløpstid:
+                          </strong>
+                          30 minutter / 1 år
+                        </li>
+                        <li>
+                          <strong>
+                            Personvernerklæring:
+                          </strong>
+                          <a href="https://example.com/microsoft/privacy">
+                            Se personvernerklæring
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </dialog>
     </div>
     <div>
       <button
@@ -125,7 +560,7 @@ exports[`Preview 1`] = `
         data-variant="secondary"
         type="button"
       >
-        Tilpass valg
+        Godta valgte
       </button>
       <button
         data-variant="secondary"

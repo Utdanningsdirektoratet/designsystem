@@ -1,0 +1,168 @@
+import { Table } from '@udir-design/react/beta';
+import { Unstyled } from '@storybook/addon-docs/blocks';
+import { CopyButton } from '.storybook/docs/components';
+
+# Bruk av Cookie Information
+
+Udir har avtale med [Cookie Information](https://cookieinformation.com/) som leverandør av løsninger for håndtering av informasjonskapsler. Tjenester som bruker informasjonskapsler kan bruke Cookie Information som teknisk løsning for å håndtere samtykke til informasjonskapsler. [Kontakt ansvarlig for Cookie Information](https://systemoversikten.udir.no/systemer/S293/detaljer) for å få tilgang til Cookie Information.
+
+## Oppsett
+
+I dashbordet til Cookie Information velger du "Udir Design Informasjonskapsler" som designmal for tjenesten din. Dette sikrer at tjenesten følger føringene for visuell utforming av valg for informasjonskapsler som er beskrevet i [Informasjonskapsler](https://designsystem.udir.no/patterns/informasjonskapsler).
+
+Under "Copy and translations" i dashbordet finner du tekst for samtykke til informasjonskapsler som kan brukes i tjenesten. Teksten bør tilpasses tjenesten din, og kvalitetssikres av internjuridisk. Under følger hvilke felter som må fylles ut, med eksempler på innhold. Felter som ikke er listet opp her brukes ikke i malen.
+
+<Unstyled>
+  <Table
+    border
+    tintedColumnHeader
+    tintedRowHeader
+    style={{ maxWidth: '40rem' }}
+  >
+    <caption className="ds-sr-only">
+      Tekster for Cookie Information-oppsett
+    </caption>
+    <Table.Body>
+      <Table.Row>
+        <Table.HeaderCell
+          scope="colgroup"
+          colSpan={3}
+          style={{
+            textAlign: 'center',
+            backgroundColor: 'var(--ds-color-surface-tinted)',
+          }}
+        >
+          Consent popup
+        </Table.HeaderCell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Headline</Table.HeaderCell>
+        <Table.Cell>[Tjenestenavn] bruker informasjonskapsler</Table.Cell>
+        <Table.Cell>
+          <CopyButton text="[Tjenestenavn] bruker informasjonskapsler" />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Consent popup text</Table.HeaderCell>
+        <Table.Cell>
+          Nødvendige informasjonskapsler sørger for at tjenesten fungerer og er
+          sikker, og kan ikke velges bort. Andre brukes til statistikk, analyse,
+          og å forbedre brukeropplevelsen. Godkjenner du alle, hjelper du oss å
+          lage bedre tjenester.
+         
+          Du kan når som helst endre samtykket ditt via lenken i bunnmenyen.
+        </Table.Cell>
+        <Table.Cell>
+          <CopyButton text="Nødvendige informasjonskapsler sørger for at tjenesten fungerer og er sikker, og kan ikke velges bort. Andre brukes til statistikk, analyse, og å forbedre brukeropplevelsen. Godkjenner du alle, hjelper du oss å lage bedre tjenester.
+          <br />
+          <br />
+          Du kan når som helst endre samtykket ditt via lenken i bunnmenyen." />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Accept button</Table.HeaderCell>
+        <Table.Cell>Godta alle</Table.Cell>
+        <Table.Cell>
+          <CopyButton text="Godta alle" />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Decline button</Table.HeaderCell>
+        <Table.Cell>Avvis valgfrie</Table.Cell>
+        <Table.Cell>
+          <CopyButton text="Avvis valgfrie" />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell
+          scope="colgroup"
+          colSpan={3}
+          style={{
+            textAlign: 'center',
+            backgroundColor: 'var(--ds-color-surface-tinted)',
+          }}
+        >
+          Cookie Policy
+        </Table.HeaderCell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Headline</Table.HeaderCell>
+        <Table.Cell>Informasjonskapsler</Table.Cell>
+        <Table.Cell>
+          <CopyButton text="Informasjonskapsler" />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">
+          Save current setting button text
+        </Table.HeaderCell>
+        <Table.Cell>Godta valgte</Table.Cell>
+        <Table.Cell>
+          <CopyButton text="Godta valgte" />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell
+          scope="colgroup"
+          colSpan={3}
+          style={{
+            textAlign: 'center',
+            backgroundColor: 'var(--ds-color-surface-tinted)',
+          }}
+        >
+          Tracking categories
+        </Table.HeaderCell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Nødvendige</Table.HeaderCell>
+        <Table.Cell>
+          Nødvendige informasjonskapsler hjelper med å gjøre tjenesten brukbar ved å aktivere grunnleggende funksjoner knyttet til for eksempel navigasjon, sikkerhet og ytelse. Tjenesten kan ikke fungere optimalt uten disse informasjonskapslene.
+        </Table.Cell>
+        <Table.Cell>
+          <CopyButton text="Nødvendige informasjonskapsler hjelper med å gjøre tjenesten brukbar ved å aktivere grunnleggende funksjoner knyttet til for eksempel navigasjon, sikkerhet og ytelse. Tjenesten kan ikke fungere optimalt uten disse informasjonskapslene." />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Funksjonelle</Table.HeaderCell>
+        <Table.Cell>
+        Funksjonelle informasjonskapsler lagrer opplysninger som endrer måten tjenesten ser ut eller oppfører seg på slik at den blir bedre tilpasset deg, for eksempel ditt foretrukne språk eller den regionen du befinner deg i.
+        </Table.Cell>
+        <Table.Cell>
+          <CopyButton text="Funksjonelle informasjonskapsler lagrer opplysninger som endrer måten tjenesten ser ut eller oppfører seg på slik at den blir bedre tilpasset deg, for eksempel ditt foretrukne språk eller den regionen du befinner deg i." />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Statistiske</Table.HeaderCell>
+        <Table.Cell>
+       Statistiske informasjonskapsler samler anonyme opplysninger om hvordan tjenesten blir brukt, slik at vi kan bruke dem til å gjøre tjenesten mest mulig tilpasset brukernes behov.
+        </Table.Cell>
+        <Table.Cell>
+          <CopyButton text="Statistiske informasjonskapsler samler anonyme opplysninger om hvordan tjenesten blir brukt, slik at vi kan bruke dem til å gjøre tjenesten mest mulig tilpasset brukernes behov." />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Markedsføring</Table.HeaderCell>
+        <Table.Cell>
+          Markedsførings-informasjonskapsler brukes til å spore besøkende på
+          tvers av hjemmesider. Hensikten er å vise annonser som er relevante og
+          engasjerende for den enkelte brukeren, og dermed mer verdifulle for
+          utgivere og tredjeparts-annonsører.
+        </Table.Cell>
+        <Table.Cell>
+          <CopyButton text="Markedsførings-informasjonskapsler brukes til å spore besøkende på tvers av hjemmesider. Hensikten er å vise annonser som er relevante og engasjerende for den enkelte brukeren, og dermed mer verdifulle for utgivere og tredjeparts-annonsører." />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Uklassifiserte</Table.HeaderCell>
+        <Table.Cell>
+          Vi er i ferd med å klassifisere uklassifiserte informasjonskapsler
+          sammen med leverandørene av de enkelte informasjonskapsler.
+        </Table.Cell>
+        <Table.Cell>
+          <CopyButton text="Vi er i ferd med å klassifisere uklassifiserte informasjonskapsler sammen med leverandørene av de enkelte informasjonskapsler." />
+        </Table.Cell>
+      </Table.Row>
+    </Table.Body>
+
+  </Table>
+</Unstyled>
