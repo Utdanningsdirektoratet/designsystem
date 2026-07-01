@@ -37,11 +37,11 @@ const meta = preview.meta({
 
 const cookieDescriptions: Record<string, string> = {
   nødvendige:
-    'Nødvendige informasjonskapsler hjelper med å gjøre en hjemmeside brukbar ved å aktivere grunnleggende funksjoner, slik som side-navigasjon og tilgang til sikre områder av hjemmesiden. Hjemmesiden kan ikke fungere optimalt uten disse informasjonskapslene.',
+    'Nødvendige informasjonskapsler hjelper med å gjøre tjenesten brukbar ved å aktivere grunnleggende funksjoner knyttet til for eksempel navigasjon, sikkerhet og ytelse. Tjenesten kan ikke fungere optimalt uten disse informasjonskapslene.',
   funksjonelle:
-    'Funksjonelle informasjonskapsler gjør det mulig å lagre opplysninger som endrer måten hjemmesiden ser ut eller oppfører seg på. F.eks. ditt foretrukne språk eller den regionen du befinner deg i.',
+    'Funksjonelle informasjonskapsler lagrer opplysninger som endrer måten tjenesten ser ut eller oppfører seg på slik at den blir bedre tilpasset deg, for eksempel ditt foretrukne språk eller den regionen du befinner deg i.',
   statistiske:
-    'Statistiske informasjonskapsler hjelper hjemmesidens eier med å forstå hvordan besøkende samhandler med hjemmesiden ved å samle inn og rapportere opplysninger.',
+    'Statistiske informasjonskapsler samler anonyme opplysninger om hvordan tjenesten blir brukt, slik at vi kan bruke dem til å gjøre tjenesten mest mulig tilpasset brukernes behov.',
 };
 
 const cookieData = {
