@@ -1972,15 +1972,15 @@ exports[`Preview 1`] = `
       <div data-color="warning">
         Dette er kun en demo. Dine data vil ikke lagres og du risikerer å måtte fylle ut på nytt.
       </div>
-      <button
-        commandfor="demo-version-dialog"
-        data-variant="primary"
-        type="button"
-        command="close"
-      >
-        Fortsett til demo
-      </button>
     </div>
+    <button
+      commandfor="demo-version-dialog"
+      data-variant="primary"
+      type="button"
+      command="close"
+    >
+      Fortsett til demo
+    </button>
   </dialog>
   <footer style="<removed>">
     <div>

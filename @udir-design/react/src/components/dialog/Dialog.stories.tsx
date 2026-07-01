@@ -83,8 +83,8 @@ export const Preview = meta.story({
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
             </Paragraph>
-            <Paragraph data-size="sm">Dialog footer</Paragraph>
           </Prose>
+          <Paragraph data-size="sm">Dialog footer</Paragraph>
         </Dialog>
       </Dialog.TriggerContext>
     </>
@@ -189,14 +189,14 @@ export const WithoutDialogTriggerContextWithCommand = meta.story({
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
             </Paragraph>
-            <Button
-              variant="secondary"
-              command="close"
-              commandfor="dialog-with-command"
-            >
-              Lukk dialog
-            </Button>
           </Prose>
+          <Button
+            variant="secondary"
+            command="close"
+            commandfor="dialog-with-command"
+          >
+            Lukk dialog
+          </Button>
         </Dialog>
       </>
     );
@@ -224,10 +224,10 @@ export const DialogWithOpenProp = meta.story({
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
             </Paragraph>
-            <Button variant="secondary" onClick={() => setOpen(false)}>
-              Lukk dialog
-            </Button>
           </Prose>
+          <Button variant="secondary" onClick={() => setOpen(false)}>
+            Lukk dialog
+          </Button>
         </Dialog>
       </>
     );
@@ -281,16 +281,18 @@ export const BackdropClosedbyAny = meta.story({
           closedby="any"
           onClose={() => alert('Dialog ble lukket')}
         >
-          <Heading>
-            Dialog med{' '}
-            <code>
-              closedby={'"'}any{'"'}
-            </code>
-          </Heading>
-          <Paragraph>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
-            doloremque obcaecati assumenda odio ducimus sunt et.
-          </Paragraph>
+          <Prose>
+            <Heading>
+              Dialog med{' '}
+              <code>
+                closedby={'"'}any{'"'}
+              </code>
+            </Heading>
+            <Paragraph>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+            </Paragraph>
+          </Prose>
         </Dialog>
       </Dialog.TriggerContext>
     );
@@ -321,17 +323,17 @@ export const WithHeaderAndFooter = meta.story({
               felis, in maximus lorem. Class aptent taciti sociosqu ad litora
               torquent per conubia nostra, per inceptos himenaeos.
             </Paragraph>
-            <Paragraph>
-              Etiam nec tincidunt est. Integer semper sodales efficitur.
-              Pellentesque pellentesque varius leo id congue. Integer lacinia
-              porttitor massa id euismod. Maecenas porta, magna nec interdum
-              eleifend, risus magna condimentum neque, a gravida nisl risus a
-              elit. Donec accumsan metus et lectus placerat varius. Donec
-              tristique odio arcu. Donec cursus leo a dui auctor pulvinar. Sed
-              in elit urna. Nunc vitae magna sed nibh elementum dignissim et ut
-              massa.
-            </Paragraph>
           </Prose>
+          <Paragraph>
+            Etiam nec tincidunt est. Integer semper sodales efficitur.
+            Pellentesque pellentesque varius leo id congue. Integer lacinia
+            porttitor massa id euismod. Maecenas porta, magna nec interdum
+            eleifend, risus magna condimentum neque, a gravida nisl risus a
+            elit. Donec accumsan metus et lectus placerat varius. Donec
+            tristique odio arcu. Donec cursus leo a dui auctor pulvinar. Sed in
+            elit urna. Nunc vitae magna sed nibh elementum dignissim et ut
+            massa.
+          </Paragraph>
         </Dialog.Block>
         <Dialog.Block>Footer</Dialog.Block>
       </Dialog>
@@ -412,11 +414,11 @@ export const DialogWithMaxWidth = meta.story({
         <Dialog className="dialog-with-max-width-dialog" {...args}>
           <Prose>
             <Heading>Dialog som er veldig bred</Heading>
-            <Paragraph>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
-            </Paragraph>
           </Prose>
+          <Paragraph>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
+            doloremque obcaecati assumenda odio ducimus sunt et.
+          </Paragraph>
         </Dialog>
       </Dialog.TriggerContext>
     </>
@@ -560,14 +562,14 @@ export const DialogNonModal = meta.story({
         >
           <Prose>
             <Heading>Hva besvarelsen burde inneholde</Heading>
-            <List.Unordered>
-              <List.Item>intro til prosjektet</List.Item>
-              <List.Item>oversikt over hva som er gjort i prosjektet</List.Item>
-              <List.Item>beskrivelse av prosjektmålene</List.Item>
-              <List.Item>metode for å oppnå prosjektmålene</List.Item>
-              <List.Item>leveranse</List.Item>
-            </List.Unordered>
           </Prose>
+          <List.Unordered>
+            <List.Item>intro til prosjektet</List.Item>
+            <List.Item>oversikt over hva som er gjort i prosjektet</List.Item>
+            <List.Item>beskrivelse av prosjektmålene</List.Item>
+            <List.Item>metode for å oppnå prosjektmålene</List.Item>
+            <List.Item>leveranse</List.Item>
+          </List.Unordered>
         </Dialog>
       </>
     );

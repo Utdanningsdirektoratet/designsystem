@@ -25,15 +25,17 @@ exports[`Backdrop Closedby Any 1`] = `
     command="close"
   >
   </button>
-  <h2>
-    Dialog med
-    <code>
-      closedby="any"
-    </code>
-  </h2>
-  <p data-variant="default">
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
-  </p>
+  <div>
+    <h2>
+      Dialog med
+      <code>
+        closedby="any"
+      </code>
+    </h2>
+    <p data-variant="default">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+    </p>
+  </div>
 </dialog>
 `;
 
@@ -126,24 +128,24 @@ exports[`Dialog Non Modal 1`] = `
     <h2>
       Hva besvarelsen burde inneholde
     </h2>
-    <ul>
-      <li>
-        intro til prosjektet
-      </li>
-      <li>
-        oversikt over hva som er gjort i prosjektet
-      </li>
-      <li>
-        beskrivelse av prosjektmålene
-      </li>
-      <li>
-        metode for å oppnå prosjektmålene
-      </li>
-      <li>
-        leveranse
-      </li>
-    </ul>
   </div>
+  <ul>
+    <li>
+      intro til prosjektet
+    </li>
+    <li>
+      oversikt over hva som er gjort i prosjektet
+    </li>
+    <li>
+      beskrivelse av prosjektmålene
+    </li>
+    <li>
+      metode for å oppnå prosjektmålene
+    </li>
+    <li>
+      leveranse
+    </li>
+  </ul>
 </dialog>
 `;
 
@@ -255,10 +257,10 @@ exports[`Dialog With Max Width 1`] = `
     <h2>
       Dialog som er veldig bred
     </h2>
-    <p data-variant="default">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
-    </p>
   </div>
+  <p data-variant="default">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
+  </p>
 </dialog>
 `;
 
@@ -300,13 +302,13 @@ exports[`Dialog With Open Prop 1`] = `
     <p data-variant="default">
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
     </p>
-    <button
-      data-variant="secondary"
-      type="button"
-    >
-      Lukk dialog
-    </button>
   </div>
+  <button
+    data-variant="secondary"
+    type="button"
+  >
+    Lukk dialog
+  </button>
 </dialog>
 `;
 
@@ -681,13 +683,13 @@ exports[`Preview 1`] = `
     <p data-variant="default">
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
     </p>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
-      Dialog footer
-    </p>
   </div>
+  <p
+    data-variant="default"
+    data-size="sm"
+  >
+    Dialog footer
+  </p>
 </dialog>
 `;
 
@@ -731,10 +733,10 @@ exports[`With Header And Footer 1`] = `
       <p data-variant="default">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales eros justo. Aenean non mi ipsum. Cras viverra elit nec vulputate mattis. Nunc placerat euismod pulvinar. Sed nec fringilla nulla, sit amet ultricies ante. Morbi egestas venenatis massa, eu interdum leo rutrum eu. Nulla varius, mi ac feugiat lacinia, magna eros ullamcorper arcu, vel tincidunt erat leo nec tortor. Sed ut dui arcu. Morbi commodo ipsum hendrerit est imperdiet imperdiet. Etiam sed maximus nisi. Quisque posuere posuere orci, non egestas risus facilisis a. Vivamus non tempus felis, in maximus lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
       </p>
-      <p data-variant="default">
-        Etiam nec tincidunt est. Integer semper sodales efficitur. Pellentesque pellentesque varius leo id congue. Integer lacinia porttitor massa id euismod. Maecenas porta, magna nec interdum eleifend, risus magna condimentum neque, a gravida nisl risus a elit. Donec accumsan metus et lectus placerat varius. Donec tristique odio arcu. Donec cursus leo a dui auctor pulvinar. Sed in elit urna. Nunc vitae magna sed nibh elementum dignissim et ut massa.
-      </p>
     </div>
+    <p data-variant="default">
+      Etiam nec tincidunt est. Integer semper sodales efficitur. Pellentesque pellentesque varius leo id congue. Integer lacinia porttitor massa id euismod. Maecenas porta, magna nec interdum eleifend, risus magna condimentum neque, a gravida nisl risus a elit. Donec accumsan metus et lectus placerat varius. Donec tristique odio arcu. Donec cursus leo a dui auctor pulvinar. Sed in elit urna. Nunc vitae magna sed nibh elementum dignissim et ut massa.
+    </p>
   </div>
   <div>
     Footer
@@ -840,14 +842,14 @@ exports[`Without Dialog Trigger Context With Command 1`] = `
     <p data-variant="default">
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
     </p>
-    <button
-      commandfor="dialog-with-command"
-      data-variant="secondary"
-      type="button"
-      command="close"
-    >
-      Lukk dialog
-    </button>
   </div>
+  <button
+    commandfor="dialog-with-command"
+    data-variant="secondary"
+    type="button"
+    command="close"
+  >
+    Lukk dialog
+  </button>
 </dialog>
 `;

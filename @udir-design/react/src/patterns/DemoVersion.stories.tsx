@@ -127,10 +127,10 @@ export const Preview = meta.story({
                 Dette er kun en demo. Dine data vil ikke lagres og du risikerer
                 å måtte fylle ut på nytt.
               </Alert>
-              <Button command="close" commandfor="demo-version-dialog">
-                Fortsett til demo
-              </Button>
             </Prose>
+            <Button command="close" commandfor="demo-version-dialog">
+              Fortsett til demo
+            </Button>
           </Dialog>
           <Footer>
             <Footer.List>
