@@ -51,27 +51,6 @@
   }
 }
 
-.action-toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  padding-inline: var(--ds-size-3) 0;
-}
-
-.action-toolbar-card {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  width: fit-content;
-  height: 48px;
-  gap: var(--ds-size-4);
-  padding-inline: var(--ds-size-4) 0;
-  padding-block: 0;
-  border: 1px solid var(--ds-color-neutral-border-default);
-  border-radius: var(--ds-border-radius-md);
-}
-
 @media (min-width: 48rem) {
   .actions-filters-section {
     flex-direction: row;
@@ -91,42 +70,6 @@
     max-width: 280px;
     width: auto;
   }
-}
-
-.action-toolbar__divider {
-  width: 1px;
-  height: 1.5rem;
-  background-color: var(--ds-color-neutral-border-default);
-}
-
-.action-toolbar__selection {
-  font-weight: var(--ds-font-weight-medium);
-  display: flex;
-  align-items: center;
-  gap: var(--ds-size-4);
-}
-
-.action-toolbar__buttons {
-  display: flex;
-  gap: var(--ds-size-2);
-  align-items: center;
-}
-
-.action-toolbar__actions {
-  display: flex;
-  gap: var(--ds-size-1);
-  align-items: center;
-}
-
-.action-toolbar-card__actions {
-  display: flex;
-  align-items: center;
-}
-
-.action-toolbar-card__divider {
-  width: 0.5px;
-  align-self: stretch;
-  background-color: var(--ds-color-neutral-border-default);
 }
 
 .actions-controls {
@@ -191,10 +134,6 @@
     display: table-cell;
   }
 
-  .action-toolbar {
-    flex-direction: row;
-  }
-
   .actions-controls {
     flex-direction: row;
     justify-content: space-between;
@@ -203,4 +142,28 @@
   .actions-controls-section {
     gap: var(--ds-size-6);
   }
+}
+
+.action-toolbar-card {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: fit-content;
+  height: 48px;
+  gap: var(--ds-size-4);
+  padding-inline: var(--ds-size-4) 0;
+  padding-block: 0;
+  border: 1px solid var(--ds-color-neutral-border-default);
+  border-radius: var(--ds-border-radius-md);
+}
+
+.action-toolbar-card__actions {
+  display: flex;
+  align-items: center;
+}
+
+.action-toolbar-card__divider {
+  width: 0.5px;
+  align-self: stretch;
+  background-color: var(--ds-color-neutral-border-default);
 }
