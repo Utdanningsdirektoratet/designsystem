@@ -7,16 +7,13 @@ import * as InformasjonskapslerStories from './Informasjonskapsler.stories';
 # Informasjonskapsler
 
 Tjenester som bruker informasjonskapsler må informere brukerne og gi mulighet til å på forhånd velge hvilke informasjonskapsler som settes.
+Udir bruker Cookie Information som felleskomponent for håndtering av informasjonskapsler i Udirs eksterne tjenester, slik at vi håndterer samtykke og informasjon på en lik og kontrollert måte. [Kontakt ansvarlig for Cookie Information](https://systemoversikten.udir.no/systemer/S293/detaljer) for å ta løsningen i bruk i din tjeneste. Se også [mal for oppsett](/docs/patterns-informasjonskapsler-cookieinformation--docs).
 
-Designsystemet gir **ikke** føringer for hvilken **teknisk løsning** systemene bruker for håndtering av informasjonskapsler. Tjenestene kan bruke [Cookie Information](https://cookieinformation.com/) eller utvikle løsningen selv. Kontakt [Udirs Plattformteam](https://utdanningsdirektoratet.sharepoint.com/sites/officesupport/SitePages/Plattformteam.aspx?csf=1&web=1&e=XcrCIq&CID=7e689178-fdb1-4884-befe-5ee7121c64aa) ved valg av teknisk løsning for ditt system.
-
-Designsystemet gir føringer for **den visuelle utformingen** av valg for informasjonskapsler. Den visuelle utformingen bør være som beskrevet under.
-
-[Se hvordan du kan bruke Udirs mal i Cookie Information](/docs/patterns-informasjonskapsler-cookieinformation--docs).
+Designsystemet gir føringer for den **visuelle utformingen** av Udirs bruk av Cookie Information. Hvis du bruker egenutviklet håndtering av informasjonskapsler, skal du likevel følge den visuelle utformingen. Den er nærmere beskrevet på denne siden.
 
 ## Dialog
 
-Valg for informasjonskapsler skal vises i en [`ikke-modal Dialog`](/docs/components-dialog--docs#ikke-modal-dialog) som er synlig ved første besøk på tjenesten. Den plasseres i midten av vinduet.
+Valg for informasjonskapsler skal vises i en [`Dialog`](/docs/components-dialog--docs) som er synlig ved første besøk på tjenesten. Den plasseres i midten av vinduet.
 
 Merk: eksempelet er ikke interaktivt. [Gå til interaktivt eksempel](/story/patterns-informasjonskapsler--preview).
 
