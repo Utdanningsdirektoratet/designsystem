@@ -3,8 +3,7 @@ import { INITIAL_VIEWPORTS } from 'storybook/viewport';
 import { CssToggle } from '.storybook/docs/components';
 
 import * as HandlingerStories from './Handlinger.stories';
-import toolbarCss from './handlinger-toolbar.css?raw';
-import toolbarCardCss from './handlinger-toolbar-card.css?raw';
+import toolbarCss from './handlinger-toolbar.module.css?raw';
 
 <Meta of={HandlingerStories} />
 
@@ -18,8 +17,6 @@ Vanlige eller viktige handlinger som gjelder én rad, kan vises direkte i raden.
 
 Mindre brukte handlinger kan samles i en meny, ofte vist med tre prikker. Dette er en anbefalt løsning når det finnes mange handlinger knyttet til en rad. Menyen bør plasseres på samme sted i alle radene, vanligvis helt til høyre.
 
-Handlinger kan også vises når brukeren holder pekeren over raden. Dette kan derimot gjøre dem vanskeligere å oppdage for nye brukere som ikke kjenner mønsteret. Løsningen er også utfordrende på berøringsskjermer, der hover ikke er tilgjengelig.
-
 Et anbefalt bruksmønster er:
 
 - Klikk på raden åpner en detaljvisning, dersom raden er klikkbar
@@ -31,7 +28,7 @@ Unngå at:
 - Destruktive handlinger, som «Slett», er den mest fremtredende handlingen
 - Raden og knappene i raden utfører konkurrerende handlinger. Er hele raden klikkbar, skal knapper i raden ha tydelige klikkflater og ikke påvirkes av radhandlingen.
 
-## Handlinger for flere rad
+## Handlinger for flere rader
 
 Massehandlinger bør vanligvis bli tilgjengelige etter at brukeren har valgt én eller flere rader med avkrysningsbokser. Handlingene kan for eksempel vises i en verktøylinje over tabellen. En handling bør bare være aktiv dersom den kan utføres på alle de valgte radene.
 
@@ -49,18 +46,20 @@ Avkrysningsboksen i tabellhodet bør velge alle synlige rader på den aktuelle s
 
 Handlinger kan vises på ulike måter, avhengig av hvor mange handlinger som er tilgjengelige, hvor ofte de brukes, og hvor mye plass som er tilgjengelig.
 
-## Verktøylinje med tekst og ikoner
+## Verktøylinje og radhandlinger
 
-I det første eksempelet vises handlingene med tekst og ikoner i en verktøylinje over tabellen. Dette gjør dem enkle å oppdage og forstå, og passer godt når det er god plass, eller når handlingene er viktige og brukes ofte. Destruktive handlinger, som «Slett», kan skilles tydelig fra de øvrige handlingene.
-
-<Canvas of={HandlingerStories.Preview} />
+<Canvas
+  of={HandlingerStories.Preview}
+  story={{ inline: false, height: '800px' }}
+/>
 
 <CssToggle code={toolbarCss} />
 
-## Kompakt verktøylinje
+<br />
 
-I det andre eksempelet samles handlingene i en kompakt verktøylinje. Denne løsningen tar mindre plass og passer godt når det finnes få handlinger. Ikonbaserte handlinger kan imidlertid være vanskeligere å forstå, og bør derfor ha tydelige tilgjengelige navn og eventuelt en tooltip. Mindre brukte handlinger kan plasseres i en meny med tre prikker.
+## Med secondary knapper
 
-<Canvas of={HandlingerStories.WithActionCard} />
-
-<CssToggle code={toolbarCardCss} />
+<Canvas
+  of={HandlingerStories.Secondary}
+  story={{ inline: false, height: '800px' }}
+/>

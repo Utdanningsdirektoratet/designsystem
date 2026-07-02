@@ -35,6 +35,7 @@ exports[`Preview 1`] = `
             data-multiple
             hover
             data-color="neutral"
+            data-display="count"
           >
             <input
               placeholder
@@ -128,6 +129,7 @@ exports[`Preview 1`] = `
             data-multiple
             hover
             data-color="neutral"
+            data-display="count"
           >
             <input
               placeholder
@@ -295,6 +297,24 @@ exports[`Preview 1`] = `
         </ds-field>
       </div>
     </div>
+    <div>
+      <div>
+        <p data-size="sm">
+          0 valgt
+        </p>
+        <div>
+        </div>
+        <div>
+          <button
+            data-variant="tertiary"
+            type="button"
+            data-size="sm"
+          >
+            Velg alle 48
+          </button>
+        </div>
+      </div>
+    </div>
     <table
       data-hover="true"
       data-color="neutral"
@@ -379,6 +399,9 @@ exports[`Preview 1`] = `
               type="button"
               data-size="sm"
               aria-label="Rediger"
+              data-tooltip="Rediger"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -407,8 +430,11 @@ exports[`Preview 1`] = `
               type="button"
               popovertarget="_r_0_-row-menu-Agder-Engelsk"
               title="Flere valg"
-              aria-label="Handlinger"
+              aria-label="Flere valg"
               data-size="sm"
+              data-tooltip="Flere valg"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -423,7 +449,7 @@ exports[`Preview 1`] = `
                 <path
                   fill="currentColor"
                   fill-rule="evenodd"
-                  d="M6 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m4.5 1.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m6 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0"
+                  d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m1.5 4.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"
                   clip-rule="evenodd"
                 >
                 </path>
@@ -558,6 +584,9 @@ exports[`Preview 1`] = `
               type="button"
               data-size="sm"
               aria-label="Rediger"
+              data-tooltip="Rediger"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -586,8 +615,11 @@ exports[`Preview 1`] = `
               type="button"
               popovertarget="_r_0_-row-menu-Agder-Matematikk"
               title="Flere valg"
-              aria-label="Handlinger"
+              aria-label="Flere valg"
               data-size="sm"
+              data-tooltip="Flere valg"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -602,7 +634,7 @@ exports[`Preview 1`] = `
                 <path
                   fill="currentColor"
                   fill-rule="evenodd"
-                  d="M6 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m4.5 1.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m6 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0"
+                  d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m1.5 4.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"
                   clip-rule="evenodd"
                 >
                 </path>
@@ -737,6 +769,9 @@ exports[`Preview 1`] = `
               type="button"
               data-size="sm"
               aria-label="Rediger"
+              data-tooltip="Rediger"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -765,8 +800,11 @@ exports[`Preview 1`] = `
               type="button"
               popovertarget="_r_0_-row-menu-Agder-Hovedmål"
               title="Flere valg"
-              aria-label="Handlinger"
+              aria-label="Flere valg"
               data-size="sm"
+              data-tooltip="Flere valg"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -781,7 +819,7 @@ exports[`Preview 1`] = `
                 <path
                   fill="currentColor"
                   fill-rule="evenodd"
-                  d="M6 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m4.5 1.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m6 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0"
+                  d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m1.5 4.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"
                   clip-rule="evenodd"
                 >
                 </path>
@@ -916,6 +954,9 @@ exports[`Preview 1`] = `
               type="button"
               data-size="sm"
               aria-label="Rediger"
+              data-tooltip="Rediger"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -944,8 +985,11 @@ exports[`Preview 1`] = `
               type="button"
               popovertarget="_r_0_-row-menu-Agder-Sidemål"
               title="Flere valg"
-              aria-label="Handlinger"
+              aria-label="Flere valg"
               data-size="sm"
+              data-tooltip="Flere valg"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -960,7 +1004,7 @@ exports[`Preview 1`] = `
                 <path
                   fill="currentColor"
                   fill-rule="evenodd"
-                  d="M6 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m4.5 1.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m6 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0"
+                  d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m1.5 4.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"
                   clip-rule="evenodd"
                 >
                 </path>
@@ -1095,6 +1139,9 @@ exports[`Preview 1`] = `
               type="button"
               data-size="sm"
               aria-label="Rediger"
+              data-tooltip="Rediger"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1123,8 +1170,11 @@ exports[`Preview 1`] = `
               type="button"
               popovertarget="_r_0_-row-menu-Akershus-Engelsk"
               title="Flere valg"
-              aria-label="Handlinger"
+              aria-label="Flere valg"
               data-size="sm"
+              data-tooltip="Flere valg"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1139,7 +1189,7 @@ exports[`Preview 1`] = `
                 <path
                   fill="currentColor"
                   fill-rule="evenodd"
-                  d="M6 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m4.5 1.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m6 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0"
+                  d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m1.5 4.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"
                   clip-rule="evenodd"
                 >
                 </path>
@@ -1346,7 +1396,7 @@ exports[`Preview 1`] = `
 </div>
 `;
 
-exports[`With Action Card 1`] = `
+exports[`Secondary 1`] = `
 <div data-size="auto">
   <div>
     <div>
@@ -1386,6 +1436,7 @@ exports[`With Action Card 1`] = `
             data-multiple
             hover
             data-color="neutral"
+            data-display="count"
           >
             <input
               placeholder=" "
@@ -1470,6 +1521,7 @@ exports[`With Action Card 1`] = `
             data-multiple
             hover
             data-color="neutral"
+            data-display="count"
           >
             <input
               placeholder=" "
@@ -1625,6 +1677,22 @@ exports[`With Action Card 1`] = `
         </ds-field>
       </div>
     </div>
+    <div>
+      <div>
+        <p data-size="sm">
+          0 valgt
+        </p>
+        <div>
+          <button
+            data-variant="secondary"
+            type="button"
+            data-size="sm"
+          >
+            Velg alle 48
+          </button>
+        </div>
+      </div>
+    </div>
     <table
       data-hover="true"
       data-color="neutral"
@@ -1709,6 +1777,9 @@ exports[`With Action Card 1`] = `
               type="button"
               data-size="sm"
               aria-label="Rediger"
+              data-tooltip="Rediger"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1735,10 +1806,13 @@ exports[`With Action Card 1`] = `
               data-icon="true"
               data-variant="tertiary"
               type="button"
-              popovertarget="_r_s_-row-menu-Agder-Engelsk"
+              popovertarget="_r_t_-row-menu-Agder-Engelsk"
               title="Flere valg"
-              aria-label="Handlinger"
+              aria-label="Flere valg"
               data-size="sm"
+              data-tooltip="Flere valg"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1753,7 +1827,7 @@ exports[`With Action Card 1`] = `
                 <path
                   fill="currentColor"
                   fill-rule="evenodd"
-                  d="M6 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m4.5 1.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m6 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0"
+                  d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m1.5 4.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"
                   clip-rule="evenodd"
                 >
                 </path>
@@ -1887,6 +1961,9 @@ exports[`With Action Card 1`] = `
               type="button"
               data-size="sm"
               aria-label="Rediger"
+              data-tooltip="Rediger"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1913,10 +1990,13 @@ exports[`With Action Card 1`] = `
               data-icon="true"
               data-variant="tertiary"
               type="button"
-              popovertarget="_r_s_-row-menu-Agder-Matematikk"
+              popovertarget="_r_t_-row-menu-Agder-Matematikk"
               title="Flere valg"
-              aria-label="Handlinger"
+              aria-label="Flere valg"
               data-size="sm"
+              data-tooltip="Flere valg"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1931,7 +2011,7 @@ exports[`With Action Card 1`] = `
                 <path
                   fill="currentColor"
                   fill-rule="evenodd"
-                  d="M6 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m4.5 1.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m6 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0"
+                  d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m1.5 4.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"
                   clip-rule="evenodd"
                 >
                 </path>
@@ -2065,6 +2145,9 @@ exports[`With Action Card 1`] = `
               type="button"
               data-size="sm"
               aria-label="Rediger"
+              data-tooltip="Rediger"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -2091,10 +2174,13 @@ exports[`With Action Card 1`] = `
               data-icon="true"
               data-variant="tertiary"
               type="button"
-              popovertarget="_r_s_-row-menu-Agder-Hovedmål"
+              popovertarget="_r_t_-row-menu-Agder-Hovedmål"
               title="Flere valg"
-              aria-label="Handlinger"
+              aria-label="Flere valg"
               data-size="sm"
+              data-tooltip="Flere valg"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -2109,7 +2195,7 @@ exports[`With Action Card 1`] = `
                 <path
                   fill="currentColor"
                   fill-rule="evenodd"
-                  d="M6 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m4.5 1.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m6 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0"
+                  d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m1.5 4.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"
                   clip-rule="evenodd"
                 >
                 </path>
@@ -2243,6 +2329,9 @@ exports[`With Action Card 1`] = `
               type="button"
               data-size="sm"
               aria-label="Rediger"
+              data-tooltip="Rediger"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -2269,10 +2358,13 @@ exports[`With Action Card 1`] = `
               data-icon="true"
               data-variant="tertiary"
               type="button"
-              popovertarget="_r_s_-row-menu-Agder-Sidemål"
+              popovertarget="_r_t_-row-menu-Agder-Sidemål"
               title="Flere valg"
-              aria-label="Handlinger"
+              aria-label="Flere valg"
               data-size="sm"
+              data-tooltip="Flere valg"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -2287,7 +2379,7 @@ exports[`With Action Card 1`] = `
                 <path
                   fill="currentColor"
                   fill-rule="evenodd"
-                  d="M6 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m4.5 1.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m6 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0"
+                  d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m1.5 4.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"
                   clip-rule="evenodd"
                 >
                 </path>
@@ -2421,6 +2513,9 @@ exports[`With Action Card 1`] = `
               type="button"
               data-size="sm"
               aria-label="Rediger"
+              data-tooltip="Rediger"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -2447,10 +2542,13 @@ exports[`With Action Card 1`] = `
               data-icon="true"
               data-variant="tertiary"
               type="button"
-              popovertarget="_r_s_-row-menu-Akershus-Engelsk"
+              popovertarget="_r_t_-row-menu-Akershus-Engelsk"
               title="Flere valg"
-              aria-label="Handlinger"
+              aria-label="Flere valg"
               data-size="sm"
+              data-tooltip="Flere valg"
+              data-placement="top"
+              data-autoplacement="true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -2465,7 +2563,7 @@ exports[`With Action Card 1`] = `
                 <path
                   fill="currentColor"
                   fill-rule="evenodd"
-                  d="M6 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m4.5 1.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m6 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0"
+                  d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m1.5 4.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"
                   clip-rule="evenodd"
                 >
                 </path>
