@@ -65,21 +65,12 @@ export const Preview = meta.story({
     const [isMobile, setIsMobile] = useState(
       () => !window.matchMedia('(min-width: 48rem)').matches,
     );
-    const [isDesktop, setIsDesktop] = useState(
-      () => window.matchMedia('(min-width: 64rem)').matches,
-    );
 
     useEffect(() => {
-      const mobileQuery = window.matchMedia('(min-width: 48rem)');
-      const desktopQuery = window.matchMedia('(min-width: 64rem)');
-      const onMobile = (e: MediaQueryListEvent) => setIsMobile(!e.matches);
-      const onDesktop = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
-      mobileQuery.addEventListener('change', onMobile);
-      desktopQuery.addEventListener('change', onDesktop);
-      return () => {
-        mobileQuery.removeEventListener('change', onMobile);
-        desktopQuery.removeEventListener('change', onDesktop);
-      };
+      const mq = window.matchMedia('(min-width: 48rem)');
+      const handler = (e: MediaQueryListEvent) => setIsMobile(!e.matches);
+      mq.addEventListener('change', handler);
+      return () => mq.removeEventListener('change', handler);
     }, []);
 
     const [emne, setEmne] = useState<string[]>([]);
@@ -214,29 +205,49 @@ export const Preview = meta.story({
         <Table {...args}>
           <Table.Head>
             <Table.Row>
-              {isMobile && <Table.HeaderCell>Fylke, emne</Table.HeaderCell>}
-              {!isMobile && <Table.HeaderCell>Fylke</Table.HeaderCell>}
-              {!isMobile && <Table.HeaderCell>Emne</Table.HeaderCell>}
-              {isDesktop && <Table.HeaderCell>Antall elever</Table.HeaderCell>}
+              <Table.HeaderCell className={previewStyles['show-below-mobile']}>
+                Fylke, emne
+              </Table.HeaderCell>
+              <Table.HeaderCell className={previewStyles['hide-below-mobile']}>
+                Fylke
+              </Table.HeaderCell>
+              <Table.HeaderCell className={previewStyles['hide-below-mobile']}>
+                Emne
+              </Table.HeaderCell>
+              <Table.HeaderCell className={previewStyles['desktop-only']}>
+                Antall elever
+              </Table.HeaderCell>
               <Table.HeaderCell>Standpunkt</Table.HeaderCell>
-              {!isMobile && <Table.HeaderCell>Muntlig </Table.HeaderCell>}
-              {!isMobile && <Table.HeaderCell>Skriftlig </Table.HeaderCell>}
+              <Table.HeaderCell className={previewStyles['hide-below-mobile']}>
+                Muntlig
+              </Table.HeaderCell>
+              <Table.HeaderCell className={previewStyles['hide-below-mobile']}>
+                Skriftlig
+              </Table.HeaderCell>
             </Table.Row>
           </Table.Head>
           <Table.Body>
             {paginatedData.map((row) => (
               <Table.Row key={row.id}>
-                {isMobile && (
-                  <Table.Cell>
-                    {row.fylke}, <br /> {row.emne}
-                  </Table.Cell>
-                )}
-                {!isMobile && <Table.Cell>{row.fylke}</Table.Cell>}
-                {!isMobile && <Table.Cell>{row.emne}</Table.Cell>}
-                {isDesktop && <Table.Cell>{row.antallelever}</Table.Cell>}
+                <Table.Cell className={previewStyles['show-below-mobile']}>
+                  {row.fylke}, <br /> {row.emne}
+                </Table.Cell>
+                <Table.Cell className={previewStyles['hide-below-mobile']}>
+                  {row.fylke}
+                </Table.Cell>
+                <Table.Cell className={previewStyles['hide-below-mobile']}>
+                  {row.emne}
+                </Table.Cell>
+                <Table.Cell className={previewStyles['desktop-only']}>
+                  {row.antallelever}
+                </Table.Cell>
                 <Table.Cell>{row.standpunktkarakter}</Table.Cell>
-                {!isMobile && <Table.Cell>{row.muntligkarakter}</Table.Cell>}
-                {!isMobile && <Table.Cell>{row.skriftligkarakter}</Table.Cell>}
+                <Table.Cell className={previewStyles['hide-below-mobile']}>
+                  {row.muntligkarakter}
+                </Table.Cell>
+                <Table.Cell className={previewStyles['hide-below-mobile']}>
+                  {row.skriftligkarakter}
+                </Table.Cell>
               </Table.Row>
             ))}
           </Table.Body>
@@ -316,9 +327,14 @@ export const WithDialog = meta.story({
     const [isMobile, setIsMobile] = useState(
       () => !window.matchMedia('(min-width: 48rem)').matches,
     );
-    const [isDesktop, setIsDesktop] = useState(
-      () => window.matchMedia('(min-width: 64rem)').matches,
-    );
+
+    useEffect(() => {
+      const mq = window.matchMedia('(min-width: 48rem)');
+      const handler = (e: MediaQueryListEvent) => setIsMobile(!e.matches);
+      mq.addEventListener('change', handler);
+      return () => mq.removeEventListener('change', handler);
+    }, []);
+
     const [emne, setEmne] = useState<string[]>([]);
     const [fylke, setFylke] = useState<string[]>([]);
     const [eksamen, setEksamen] = useState<string[]>([
@@ -334,19 +350,6 @@ export const WithDialog = meta.story({
       'standpunkt',
     ]);
     const dialogRef = useRef<HTMLDialogElement>(null);
-
-    useEffect(() => {
-      const mobileQuery = window.matchMedia('(min-width: 48rem)');
-      const desktopQuery = window.matchMedia('(min-width: 64rem)');
-      const onMobile = (e: MediaQueryListEvent) => setIsMobile(!e.matches);
-      const onDesktop = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
-      mobileQuery.addEventListener('change', onMobile);
-      desktopQuery.addEventListener('change', onDesktop);
-      return () => {
-        mobileQuery.removeEventListener('change', onMobile);
-        desktopQuery.removeEventListener('change', onDesktop);
-      };
-    }, []);
 
     useEffect(() => {
       setCurrentPage(1);
@@ -551,10 +554,18 @@ export const WithDialog = meta.story({
         <Table {...args}>
           <Table.Head>
             <Table.Row>
-              {isMobile && <Table.HeaderCell>Fylke, emne</Table.HeaderCell>}
-              {!isMobile && <Table.HeaderCell>Fylke</Table.HeaderCell>}
-              {!isMobile && <Table.HeaderCell>Emne</Table.HeaderCell>}
-              {isDesktop && <Table.HeaderCell>Antall elever</Table.HeaderCell>}
+              <Table.HeaderCell className={dialogStyles['show-below-mobile']}>
+                Fylke, emne
+              </Table.HeaderCell>
+              <Table.HeaderCell className={dialogStyles['hide-below-mobile']}>
+                Fylke
+              </Table.HeaderCell>
+              <Table.HeaderCell className={dialogStyles['hide-below-mobile']}>
+                Emne
+              </Table.HeaderCell>
+              <Table.HeaderCell className={dialogStyles['desktop-only']}>
+                Antall elever
+              </Table.HeaderCell>
               {eksamen.includes('standpunkt') && (
                 <Table.HeaderCell>Standpunkt</Table.HeaderCell>
               )}
@@ -571,14 +582,18 @@ export const WithDialog = meta.story({
           <Table.Body>
             {paginatedData.map((row) => (
               <Table.Row key={row.id}>
-                {isMobile && (
-                  <Table.Cell>
-                    {row.fylke}, <br /> {row.emne}
-                  </Table.Cell>
-                )}
-                {!isMobile && <Table.Cell>{row.fylke}</Table.Cell>}
-                {!isMobile && <Table.Cell>{row.emne}</Table.Cell>}
-                {isDesktop && <Table.Cell>{row.antallelever}</Table.Cell>}
+                <Table.Cell className={dialogStyles['show-below-mobile']}>
+                  {row.fylke}, <br /> {row.emne}
+                </Table.Cell>
+                <Table.Cell className={dialogStyles['hide-below-mobile']}>
+                  {row.fylke}
+                </Table.Cell>
+                <Table.Cell className={dialogStyles['hide-below-mobile']}>
+                  {row.emne}
+                </Table.Cell>
+                <Table.Cell className={dialogStyles['desktop-only']}>
+                  {row.antallelever}
+                </Table.Cell>
                 {eksamen.includes('standpunkt') && (
                   <Table.Cell>{row.standpunktkarakter}</Table.Cell>
                 )}

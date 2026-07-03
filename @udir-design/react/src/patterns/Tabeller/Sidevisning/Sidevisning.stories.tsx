@@ -44,10 +44,10 @@ export const Preview = meta.story({
     );
 
     useEffect(() => {
-      const mediaQuery = window.matchMedia('(min-width: 48rem)');
+      const mq = window.matchMedia('(min-width: 48rem)');
       const handler = (e: MediaQueryListEvent) => setIsMobile(!e.matches);
-      mediaQuery.addEventListener('change', handler);
-      return () => mediaQuery.removeEventListener('change', handler);
+      mq.addEventListener('change', handler);
+      return () => mq.removeEventListener('change', handler);
     }, []);
 
     const totalRows = grades.length;

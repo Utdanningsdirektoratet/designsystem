@@ -1,4 +1,5 @@
 .preview-main {
+  container-type: inline-size;
   min-width: 200px;
   margin: var(--ds-size-2);
   display: flex;
@@ -33,6 +34,15 @@
 
 .preview-clear-filters {
   white-space: nowrap;
+}
+
+.show-below-mobile {
+  display: table-cell;
+}
+
+.hide-below-mobile,
+.desktop-only {
+  display: none;
 }
 
 .preview-controls {
@@ -90,24 +100,36 @@
   }
 }
 
-@media (min-width: 48rem) {
+@container (min-width: 30rem) {
+  .show-below-mobile {
+    display: none;
+  }
+
+  .hide-below-mobile {
+    display: table-cell;
+  }
+
   .preview-filters-section {
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-end;
   }
 
   .preview-suggestion-section {
     flex-direction: row;
     width: auto;
+    flex: 1 0 28rem;
   }
 
   .preview-suggestion-field {
-    max-width: 280px;
+    max-width: 17.5rem;
     width: auto;
   }
 
   .preview-search-field {
     width: auto;
+    max-width: 20rem;
+    flex: 1 0 12.5rem;
   }
 
   .preview-controls-section {
@@ -118,7 +140,11 @@
   }
 }
 
-@media (min-width: 64rem) {
+@container (min-width: 50rem) {
+  .desktop-only {
+    display: table-cell;
+  }
+
   .preview-controls {
     flex-direction: row;
     justify-content: space-between;
