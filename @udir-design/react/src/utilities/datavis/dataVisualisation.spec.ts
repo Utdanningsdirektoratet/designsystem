@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  generateSequentialDivergentColors,
   generateSequentialMonochromaticColors,
   getCategoricalColors,
   getSequentialDivergentColors,
@@ -157,6 +158,103 @@ describe('getSequentialDivergentColors', () => {
     expect(getSequentialDivergentColors()).toEqual(
       getSequentialDivergentColors(),
     );
+  });
+});
+
+describe('generateSequentialDivergentColors', () => {
+  it('returns correct number of colors', () => {
+    expect(generateSequentialDivergentColors(7)).toHaveLength(7);
+    expect(generateSequentialDivergentColors(3)).toHaveLength(3);
+    expect(generateSequentialDivergentColors(9)).toHaveLength(9);
+    expect(generateSequentialDivergentColors(10)).toHaveLength(10);
+    expect(generateSequentialDivergentColors(16)).toHaveLength(16);
+  });
+
+  it('returns hex color strings', () => {
+    for (const color of generateSequentialDivergentColors(11)) {
+      expect(color).toMatch(/^#[0-9a-f]{6}$/);
+    }
+  });
+
+  it('starts with the darkest green anchor color', () => {
+    expect(generateSequentialDivergentColors(7)[0]).toBe('#1e422f');
+  });
+
+  it('ends with the darkest blue anchor color', () => {
+    const colors = generateSequentialDivergentColors(7);
+    expect(colors[colors.length - 1]).toBe('#2e3c51');
+  });
+
+  it('always includes the neutral center color', () => {
+    for (const count of [3, 7, 8, 9, 10, 16]) {
+      const colors = generateSequentialDivergentColors(count);
+      expect(colors).toContain('#dedede');
+    }
+  });
+
+  it('places neutral center at the correct index for odd counts', () => {
+    const colors7 = generateSequentialDivergentColors(7);
+    expect(colors7[3]).toBe('#dedede');
+
+    const colors9 = generateSequentialDivergentColors(9);
+    expect(colors9[4]).toBe('#dedede');
+
+    const colors11 = generateSequentialDivergentColors(11);
+    expect(colors11[5]).toBe('#dedede');
+  });
+
+  it('returns 3 colors for minimum count', () => {
+    const colors = generateSequentialDivergentColors(3);
+    expect(colors).toEqual(['#1e422f', '#dedede', '#2e3c51']);
+  });
+
+  it('throws RangeError for count below 3', () => {
+    expect(() => generateSequentialDivergentColors(2)).toThrow(RangeError);
+    expect(() => generateSequentialDivergentColors(1)).toThrow(RangeError);
+    expect(() => generateSequentialDivergentColors(0)).toThrow(RangeError);
+  });
+
+  it('returns the same color sequence each call', () => {
+    expect(generateSequentialDivergentColors(10)).toEqual(
+      generateSequentialDivergentColors(10),
+    );
+  });
+
+  it('produces monotonic lightness in each arm', () => {
+    const srgbToLinear = (c: number) => {
+      const s = c / 255;
+      return s <= 0.04045 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+    };
+    const hexToOklabL = (hex: string) => {
+      const n = parseInt(hex.slice(1), 16);
+      const r = srgbToLinear((n >> 16) & 0xff);
+      const g = srgbToLinear((n >> 8) & 0xff);
+      const b = srgbToLinear(n & 0xff);
+      const l = Math.cbrt(
+        0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b,
+      );
+      const m = Math.cbrt(
+        0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b,
+      );
+      const s = Math.cbrt(
+        0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b,
+      );
+      return 0.2104542553 * l + 0.793617785 * m - 0.0040720468 * s;
+    };
+
+    const colors = generateSequentialDivergentColors(11);
+    const lightness = colors.map(hexToOklabL);
+    const centerIdx = Math.floor((11 - 1) / 2);
+
+    // Left arm: lightness should increase (dark green → neutral)
+    for (let i = 1; i <= centerIdx; i++) {
+      expect(lightness[i]).toBeGreaterThan(lightness[i - 1]);
+    }
+
+    // Right arm: lightness should decrease (neutral → dark blue)
+    for (let i = centerIdx + 1; i < colors.length; i++) {
+      expect(lightness[i]).toBeLessThan(lightness[i - 1]);
+    }
   });
 });
 
