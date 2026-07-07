@@ -12,7 +12,7 @@ import {
 } from 'src/utilities/datavis';
 import classes from './datavis.module.css';
 
-function generateCssSnippet(colors: string[], prefix: string): string {
+function generateCssSnippet(colors: readonly string[], prefix: string): string {
   const vars = colors
     .map((hex, i) => `  ${prefix}-${i + 1}: ${hex};`)
     .join('\n');
