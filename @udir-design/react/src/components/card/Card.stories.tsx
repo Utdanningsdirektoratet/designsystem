@@ -1,7 +1,7 @@
 import type { Color } from '@digdir/designsystemet-react/colors';
 import type { ComponentType } from 'react';
 import { Fragment } from 'react/jsx-runtime';
-import { PlusIcon, TrashFillIcon } from '@udir-design/icons';
+import { ArrowRightIcon, PlusIcon, TrashFillIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { Button } from '../button/Button';
 import { Field } from '../field/Field';
@@ -350,6 +350,80 @@ export const Horizontal = meta.story({
             </Paragraph>
           </Card.Block>
         </Card>
+      </>
+    );
+  },
+});
+
+export const Cluster = meta.story({
+  parameters: {
+    customStyles: {
+      display: 'block',
+      width: '100%',
+      maxWidth: 800,
+    },
+  },
+  render: (args) => {
+    const links = [
+      { text: 'Lesing', url: '#' },
+      { text: 'Barnehagemiljø', url: '#' },
+      { text: 'Skolemiljø', url: '#' },
+      { text: 'Fravær i skolen', url: '#' },
+      { text: 'God digital praksis', url: '#' },
+      { text: 'Kunstig intelligens i skolen', url: '#' },
+    ];
+
+    return (
+      <>
+        <style>
+          {`
+.card-cluster-wrapper {
+  container-type: inline-size;
+}
+.card-cluster {
+  --dsc-card-content-margin-block: 0;
+  --dsc-card-padding: var(--ds-size-2) var(--ds-size-6);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+  column-gap: var(--ds-size-4);
+}
+.card-cluster__item {
+  padding-block: var(--ds-size-4);
+  border-block-end: 1px solid var(--ds-color-border-subtle);
+  text-decoration: none;
+}
+.card-cluster__item:last-child {
+  border-block-end: none;
+}
+@container (min-width: 564px) {
+  .card-cluster__item:nth-last-child(2) {
+    border-block-end: none;
+  }
+}
+.card-cluster__item:hover {
+  text-decoration: underline;
+}
+.card-cluster__item > svg {
+  flex-shrink: 0;
+  width: var(--ds-size-6);
+  height: var(--ds-size-6);
+  align-self: flex-start;
+}`}
+        </style>
+        <div className="card-cluster-wrapper">
+          <Card {...args} className="card-cluster">
+            {links.map((link) => (
+              <LinkComponent
+                href={link.url}
+                key={link.text}
+                className="card-cluster__item"
+              >
+                <ArrowRightIcon aria-hidden />
+                <span>{link.text}</span>
+              </LinkComponent>
+            ))}
+          </Card>
+        </div>
       </>
     );
   },
