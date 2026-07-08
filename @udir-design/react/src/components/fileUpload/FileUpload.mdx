@@ -53,7 +53,7 @@ Dersom du ønsker å begrense antall filer implementeres dette selv. Om brukeren
 
 ### Vedlegg
 
-Delkomponenten `FileUpload.Item` brukes til å vise status for filer som er lastet opp. Du kan bruke `error` til å vise feilmeldinger, for eksempel dersom filformatet ikke er riktig. Teksten under filnavnet kan settes med `description`, for eksempel til en kort beskrivelse av filen. Hvis `description` ikke er satt, vises filstørrelsen automatisk. Du kan skjule teksten helt ved å sette `hideDescription` på komponenten.
+Delkomponenten `FileUpload.Item` brukes til å vise status for filer som er lastet opp. Du kan bruke `error` til å vise feilmeldinger, for eksempel dersom filformatet ikke er riktig. Teksten under filnavnet kan settes med `description`, for eksempel til en kort beskrivelse av filen. Hvis `description` ikke er satt, vises filstørrelsen automatisk. Du kan skjule teksten helt ved å sette `description` til `null`.
 
 Filnavnet er en [`Link`](/docs/components-link--docs) med `download`-attributtet, slik at brukeren kan laste ned en kopi av filen ved å klikke på navnet.
 

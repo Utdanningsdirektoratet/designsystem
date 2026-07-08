@@ -495,9 +495,7 @@ export const ExampleItems = meta.story({
     });
 
     await step('Description is shown for normal items', async () => {
-      await expect(
-        canvas.getByText('Filopplasting 1'),
-      ).toBeInTheDocument();
+      await expect(canvas.getByText('Filopplasting 1')).toBeInTheDocument();
     });
 
     await step('Clicking remove deletes the file from the list', async () => {

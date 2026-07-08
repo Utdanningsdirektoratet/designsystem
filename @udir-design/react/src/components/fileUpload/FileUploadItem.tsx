@@ -32,13 +32,9 @@ export interface FileUploadItemProps extends Omit<
   'data-size'?: Size;
   /**
    * Data shown below the file name. Falls back to the formatted file size if not provided.
+   * Set to `null` to hide the description entirely.
    */
   description?: ReactNode;
-  /**
-   * Hides the description paragraph entirely.
-   * @default false
-   */
-  hideDescription?: boolean;
   /**
    * Either a native File or file metadata.
    */
@@ -78,7 +74,6 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
       className,
       'data-size': size,
       description,
-      hideDescription = false,
       onRemove,
       ...rest
     }: FileUploadItemProps,
@@ -102,7 +97,7 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
             <Paragraph data-size="sm">
               {/* Loading text in css */}
               {!loading &&
-                !hideDescription &&
+                description !== null &&
                 (description ?? formatFileSize(file))}
             </Paragraph>
           </div>
