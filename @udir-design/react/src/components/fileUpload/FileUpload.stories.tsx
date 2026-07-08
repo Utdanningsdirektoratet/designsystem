@@ -238,7 +238,7 @@ export const TooManyFiles = meta.story({
   render: (args) => {
     const [files, setFiles] = useState<File[]>([
       new File(['abc'.repeat(100000)], 'eksempel1.pdf'),
-      new File(['abc'.repeat(10000)], 'eksempel2.docx'),
+      new File(['abc'.repeat(3000)], 'eksempel2.docx'),
       new File(['abc'.repeat(1000000)], 'eksempel3.png'),
     ]);
 
@@ -424,6 +424,7 @@ export const ExampleItems = meta.story({
                 <FileUpload.Item
                   key={index}
                   file={file}
+                  description={`Filopplasting ${index + 1}`}
                   readonly={index === 2 && true}
                   loading={index === 3 && true}
                   onRemove={() => removeFile(file)}
@@ -493,9 +494,8 @@ export const ExampleItems = meta.story({
       await expect(invalidItem).toBeInTheDocument();
     });
 
-    await step('File size is shown for normal items', async () => {
-      // eksempel1.pdf = 300 000 bytes = 0.29 MB
-      await expect(canvas.getByText('0.29 MB')).toBeInTheDocument();
+    await step('Description is shown for normal items', async () => {
+      await expect(canvas.getByText('Filopplasting 1')).toBeInTheDocument();
     });
 
     await step('Clicking remove deletes the file from the list', async () => {

@@ -2,7 +2,7 @@ import { Paragraph, Tooltip } from '@digdir/designsystemet-react';
 import type { Size } from '@digdir/designsystemet-react';
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
-import type { MouseEvent } from 'react';
+import type { MouseEvent, ReactNode } from 'react';
 import type { HTMLAttributes } from 'react';
 import {
   FileCsvIcon,
@@ -30,6 +30,11 @@ export interface FileUploadItemProps extends Omit<
   'data-color'
 > {
   'data-size'?: Size;
+  /**
+   * Data shown below the file name. Falls back to the formatted file size if not provided.
+   * Set to `null` to hide the description entirely.
+   */
+  description?: ReactNode;
   /**
    * Either a native File or file metadata.
    */
@@ -68,6 +73,7 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
       readonly = false,
       className,
       'data-size': size,
+      description,
       onRemove,
       ...rest
     }: FileUploadItemProps,
@@ -90,7 +96,9 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
             <FileName file={file} href={href} />
             <Paragraph data-size="sm">
               {/* Loading text in css */}
-              {!loading && formatFileSize(file)}
+              {!loading &&
+                description !== null &&
+                (description ?? formatFileSize(file))}
             </Paragraph>
           </div>
           {!loading && !readonly && (
@@ -124,13 +132,17 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
 );
 FileUploadItem.displayName = 'FileUpload.Item';
 
+const KB = 1024;
+const MB = 1024 * 1024;
+
 export function formatFileSize(file: File): string | null {
-  if (!file.size) {
+  if (file.size === 0) {
     return null;
   }
-  const megaBytes = file.size / (1024 * 1024);
-
-  return `${megaBytes.toFixed(2)} MB`;
+  if (file.size < 0.01 * MB) {
+    return `${(file.size / KB).toFixed(2)} KB`;
+  }
+  return `${(file.size / MB).toFixed(2)} MB`;
 }
 
 function Icon({
