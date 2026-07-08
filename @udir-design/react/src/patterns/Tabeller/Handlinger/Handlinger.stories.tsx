@@ -25,10 +25,7 @@ import { Field } from 'src/components/field/Field';
 import { Pagination } from 'src/components/pagination/Pagination';
 import { Search } from 'src/components/search/Search';
 import { Select } from 'src/components/select/Select';
-import {
-  Suggestion,
-  type SuggestionMultipleProps,
-} from 'src/components/suggestion/Suggestion';
+import { Suggestion } from 'src/components/suggestion/Suggestion';
 import { Table } from 'src/components/table';
 import { Tooltip } from 'src/components/tooltip/Tooltip';
 import { Label } from 'src/components/typography/label/Label';
@@ -62,7 +59,6 @@ const meta = preview.meta({
 type ToolbarApi = {
   selectedCount: number;
   filteredCount: number;
-  isMobile: boolean;
   selectAll: () => void;
   clearSelection: () => void;
 };
@@ -173,51 +169,16 @@ const ActionTable = ({
   return (
     <div className={styles.actions}>
       <div className={styles['actions-filters-section']}>
-        <Field className={styles['actions-search-field']}>
-          <Label>Søk</Label>
-          <Search>
-            <Search.Input
-              aria-label="Søk"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-            <Search.Clear onClick={() => setSearchQuery('')} />
-          </Search>
-        </Field>
         <div className={styles['actions-suggestion-section']}>
-          <Field className={styles['actions-suggestion-field']}>
-            <Label>Velg emner</Label>
-            <Suggestion
-              {...(args as SuggestionMultipleProps)}
-              multiple
-              selected={emne}
-              onSelectedChange={(items) =>
-                setEmne(items.map((item) => item.value))
-              }
-              display="count"
-            >
-              <Suggestion.Input />
-              <Suggestion.Clear />
-              <Suggestion.List>
-                <Suggestion.Empty>Tomt</Suggestion.Empty>
-                {uniqueEmner.map((e) => (
-                  <Suggestion.Option key={e} label={e} value={e}>
-                    {e}
-                  </Suggestion.Option>
-                ))}
-              </Suggestion.List>
-            </Suggestion>
-          </Field>
           <Field className={styles['actions-suggestion-field']}>
             <Label>Velg fylker</Label>
             <Suggestion
-              {...(args as SuggestionMultipleProps)}
               multiple
+              display="count"
               selected={fylke}
               onSelectedChange={(items) =>
                 setFylke(items.map((item) => item.value))
               }
-              display="count"
             >
               <Suggestion.Input />
               <Suggestion.Clear />
@@ -231,42 +192,90 @@ const ActionTable = ({
               </Suggestion.List>
             </Suggestion>
           </Field>
+          <Field className={styles['actions-suggestion-field']}>
+            <Label>Velg emner</Label>
+            <Suggestion
+              multiple
+              display="count"
+              selected={emne}
+              onSelectedChange={(items) =>
+                setEmne(items.map((item) => item.value))
+              }
+            >
+              <Suggestion.Input />
+              <Suggestion.Clear />
+              <Suggestion.List>
+                <Suggestion.Empty>Tomt</Suggestion.Empty>
+                {uniqueEmner.map((e) => (
+                  <Suggestion.Option key={e} label={e} value={e}>
+                    {e}
+                  </Suggestion.Option>
+                ))}
+              </Suggestion.List>
+            </Suggestion>
+          </Field>
+          <Field>
+            <Button
+              onClick={() => {
+                setEmne([]);
+                setFylke([]);
+              }}
+              variant="tertiary"
+              data-size="sm"
+              className={styles['actions-clear-filters']}
+            >
+              Fjern filtre
+            </Button>
+          </Field>
         </div>
+        <Field className={styles['actions-search-field']}>
+          <Label>Søk</Label>
+          <Search>
+            <Search.Input
+              aria-label="Søk"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <Search.Clear onClick={() => setSearchQuery('')} />
+          </Search>
+        </Field>
       </div>
       {(emne.length > 0 || fylke.length > 0) && (
         <div className={styles['actions-active-filters']}>
-          {emne.length > 0 && (
-            <div className={styles['actions-active-filters-group']}>
-              <Label>Emne</Label>
-              <ul>
-                {emne.map((e) => (
-                  <Chip.Removable
-                    key={e}
-                    aria-label={`Fjern ${e}`}
-                    onClick={() =>
-                      setEmne((prev) => prev.filter((v) => v !== e))
-                    }
-                  >
-                    {e}
-                  </Chip.Removable>
-                ))}
-              </ul>
-            </div>
-          )}
           {fylke.length > 0 && (
             <div className={styles['actions-active-filters-group']}>
               <Label>Fylke</Label>
               <ul>
                 {fylke.map((f) => (
-                  <Chip.Removable
-                    key={f}
-                    aria-label={`Fjern ${f}`}
-                    onClick={() =>
-                      setFylke((prev) => prev.filter((v) => v !== f))
-                    }
-                  >
-                    {f}
-                  </Chip.Removable>
+                  <li key={f}>
+                    <Chip.Removable
+                      aria-label={`Fjern ${f}`}
+                      onClick={() =>
+                        setFylke((prev) => prev.filter((v) => v !== f))
+                      }
+                    >
+                      {f}
+                    </Chip.Removable>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {emne.length > 0 && (
+            <div className={styles['actions-active-filters-group']}>
+              <Label>Emne</Label>
+              <ul>
+                {emne.map((e) => (
+                  <li key={e}>
+                    <Chip.Removable
+                      aria-label={`Fjern ${e}`}
+                      onClick={() =>
+                        setEmne((prev) => prev.filter((v) => v !== e))
+                      }
+                    >
+                      {e}
+                    </Chip.Removable>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -276,7 +285,6 @@ const ActionTable = ({
       {toolbar({
         selectedCount: selectedIds.size,
         filteredCount: filteredData.length,
-        isMobile,
         selectAll,
         clearSelection: () => setSelectedIds(new Set()),
       })}
@@ -291,16 +299,16 @@ const ActionTable = ({
                 onChange={toggleSelectAll}
               />
             </Table.HeaderCell>
-            <Table.HeaderCell className={styles['show-below-tablet']}>
+            <Table.HeaderCell className={styles['show-below-mobile']}>
               Fylke, emne
             </Table.HeaderCell>
-            <Table.HeaderCell className={styles['hide-below-tablet']}>
+            <Table.HeaderCell className={styles['hide-below-mobile']}>
               Fylke
             </Table.HeaderCell>
-            <Table.HeaderCell className={styles['hide-below-tablet']}>
+            <Table.HeaderCell className={styles['hide-below-mobile']}>
               Emne
             </Table.HeaderCell>
-            <Table.HeaderCell className={styles['hide-below-tablet']}>
+            <Table.HeaderCell className={styles['hide-below-mobile']}>
               Antall elever
             </Table.HeaderCell>
             <Table.HeaderCell>Standpunkt</Table.HeaderCell>
@@ -309,12 +317,6 @@ const ActionTable = ({
             </Table.HeaderCell>
             <Table.HeaderCell className={styles['desktop-only']}>
               Skriftlig
-            </Table.HeaderCell>
-            <Table.HeaderCell
-              className={styles['desktop-only']}
-              aria-label="Rediger"
-            >
-              Rediger
             </Table.HeaderCell>
             <Table.HeaderCell aria-label="Handlinger">
               Handling
@@ -331,16 +333,16 @@ const ActionTable = ({
                   onChange={() => toggleRow(row.id)}
                 />
               </Table.Cell>
-              <Table.Cell className={styles['show-below-tablet']}>
+              <Table.Cell className={styles['show-below-mobile']}>
                 {row.fylke}, <br /> {row.emne}
               </Table.Cell>
-              <Table.Cell className={styles['hide-below-tablet']}>
+              <Table.Cell className={styles['hide-below-mobile']}>
                 {row.fylke}
               </Table.Cell>
-              <Table.Cell className={styles['hide-below-tablet']}>
+              <Table.Cell className={styles['hide-below-mobile']}>
                 {row.emne}
               </Table.Cell>
-              <Table.Cell className={styles['hide-below-tablet']}>
+              <Table.Cell className={styles['hide-below-mobile']}>
                 {row.antallelever}
               </Table.Cell>
               <Table.Cell>{row.standpunktkarakter}</Table.Cell>
@@ -349,17 +351,6 @@ const ActionTable = ({
               </Table.Cell>
               <Table.Cell className={styles['desktop-only']}>
                 {row.skriftligkarakter}
-              </Table.Cell>
-              <Table.Cell className={styles['desktop-only']}>
-                <Tooltip content="Rediger">
-                  <Button
-                    variant="tertiary"
-                    data-size="sm"
-                    aria-label="Rediger"
-                  >
-                    <PencilWritingIcon aria-hidden />
-                  </Button>
-                </Tooltip>
               </Table.Cell>
               <Table.Cell>
                 <Tooltip content="Flere valg">
@@ -460,7 +451,6 @@ export const Preview = meta.story({
     const ActionToolbar = ({
       selectedCount,
       filteredCount,
-      isMobile,
       selectAll,
       clearSelection,
     }: ToolbarApi) => {
@@ -489,55 +479,49 @@ export const Preview = meta.story({
           </div>
           {selectedCount > 0 && (
             <div className={styles['action-toolbar-actions']}>
-              {isMobile ? (
-                <>
-                  <Tooltip content="Flere valg">
-                    <Button
-                      popoverTarget={`toolbar-actions-menu-${menuId}`}
-                      variant="tertiary"
-                      icon
-                      title="Flere valg"
-                      data-size="sm"
-                    >
-                      <MenuElipsisVerticalIcon aria-hidden />
-                    </Button>
-                  </Tooltip>
-                  <Dropdown id={`toolbar-actions-menu-${menuId}`}>
-                    <Dropdown.List>
-                      <Dropdown.Item>
-                        <Dropdown.Button>
-                          <PencilWritingIcon aria-hidden /> Rediger
-                        </Dropdown.Button>
-                        <Dropdown.Button>
-                          <DownloadIcon aria-hidden /> Eksporter
-                        </Dropdown.Button>
-                        <Divider />
-                        <Dropdown.Button
-                          data-color="danger"
-                          onClick={clearSelection}
-                        >
-                          <TrashFillIcon aria-hidden /> Slett
-                        </Dropdown.Button>
-                      </Dropdown.Item>
-                    </Dropdown.List>
-                  </Dropdown>
-                </>
-              ) : (
-                <>
-                  <Button variant="tertiary" data-size="sm">
-                    <PencilWritingIcon aria-hidden />
-                    Rediger
+              <div className={styles['action-toolbar-actions-mobile']}>
+                <Tooltip content="Flere valg">
+                  <Button
+                    popoverTarget={`toolbar-actions-menu-${menuId}`}
+                    variant="tertiary"
+                    icon
+                    title="Flere valg"
+                    data-size="sm"
+                  >
+                    <MenuElipsisVerticalIcon aria-hidden />
                   </Button>
-                  <Button variant="tertiary" data-size="sm">
-                    <DownloadIcon aria-hidden />
-                    Eksporter
-                  </Button>
-                  <Button variant="tertiary" data-color="danger" data-size="sm">
-                    <TrashFillIcon aria-hidden />
-                    Slett
-                  </Button>
-                </>
-              )}
+                </Tooltip>
+                <Dropdown id={`toolbar-actions-menu-${menuId}`}>
+                  <Dropdown.List>
+                    <Dropdown.Item>
+                      <Dropdown.Button>
+                        <PencilWritingIcon aria-hidden /> Rediger
+                      </Dropdown.Button>
+                      <Dropdown.Button>
+                        <DownloadIcon aria-hidden /> Eksporter
+                      </Dropdown.Button>
+                      <Divider />
+                      <Dropdown.Button data-color="danger">
+                        <TrashFillIcon aria-hidden /> Slett
+                      </Dropdown.Button>
+                    </Dropdown.Item>
+                  </Dropdown.List>
+                </Dropdown>
+              </div>
+              <div className={styles['action-toolbar-actions-desktop']}>
+                <Button variant="tertiary" data-size="sm">
+                  <PencilWritingIcon aria-hidden />
+                  Rediger
+                </Button>
+                <Button variant="tertiary" data-size="sm">
+                  <DownloadIcon aria-hidden />
+                  Eksporter
+                </Button>
+                <Button variant="tertiary" data-color="danger" data-size="sm">
+                  <TrashFillIcon aria-hidden />
+                  Slett
+                </Button>
+              </div>
             </div>
           )}
         </div>
@@ -564,7 +548,6 @@ export const Secondary = meta.story({
     const ActionToolbar = ({
       selectedCount,
       filteredCount,
-      isMobile,
       selectAll,
       clearSelection,
     }: ToolbarApi) => {
@@ -592,59 +575,49 @@ export const Secondary = meta.story({
           </div>
           {selectedCount > 0 && (
             <div className={styles['action-toolbar-actions']}>
-              {isMobile ? (
-                <>
-                  <Tooltip content="Flere valg">
-                    <Button
-                      popoverTarget={`toolbar-actions-menu-${menuId}`}
-                      variant="secondary"
-                      icon
-                      title="Flere valg"
-                      data-size="sm"
-                    >
-                      <MenuElipsisVerticalIcon aria-hidden />
-                    </Button>
-                  </Tooltip>
-                  <Dropdown id={`toolbar-actions-menu-${menuId}`}>
-                    <Dropdown.List>
-                      <Dropdown.Item>
-                        <Dropdown.Button>
-                          <PencilWritingIcon aria-hidden /> Rediger
-                        </Dropdown.Button>
-                        <Dropdown.Button>
-                          <DownloadIcon aria-hidden /> Eksporter
-                        </Dropdown.Button>
-                        <Divider />
-                        <Dropdown.Button
-                          data-color="danger"
-                          onClick={clearSelection}
-                        >
-                          <TrashFillIcon aria-hidden /> Slett
-                        </Dropdown.Button>
-                      </Dropdown.Item>
-                    </Dropdown.List>
-                  </Dropdown>
-                </>
-              ) : (
-                <>
-                  <Button variant="secondary" data-size="sm">
-                    <PencilWritingIcon aria-hidden />
-                    Rediger
-                  </Button>
-                  <Button variant="secondary" data-size="sm">
-                    <DownloadIcon aria-hidden />
-                    Eksporter
-                  </Button>
+              <div className={styles['action-toolbar-actions-mobile']}>
+                <Tooltip content="Flere valg">
                   <Button
+                    popoverTarget={`toolbar-actions-menu-${menuId}`}
                     variant="secondary"
-                    data-color="danger"
+                    icon
+                    title="Flere valg"
                     data-size="sm"
                   >
-                    <TrashFillIcon aria-hidden />
-                    Slett
+                    <MenuElipsisVerticalIcon aria-hidden />
                   </Button>
-                </>
-              )}
+                </Tooltip>
+                <Dropdown id={`toolbar-actions-menu-${menuId}`}>
+                  <Dropdown.List>
+                    <Dropdown.Item>
+                      <Dropdown.Button>
+                        <PencilWritingIcon aria-hidden /> Rediger
+                      </Dropdown.Button>
+                      <Dropdown.Button>
+                        <DownloadIcon aria-hidden /> Eksporter
+                      </Dropdown.Button>
+                      <Divider />
+                      <Dropdown.Button data-color="danger">
+                        <TrashFillIcon aria-hidden /> Slett
+                      </Dropdown.Button>
+                    </Dropdown.Item>
+                  </Dropdown.List>
+                </Dropdown>
+              </div>
+              <div className={styles['action-toolbar-actions-desktop']}>
+                <Button variant="secondary" data-size="sm">
+                  <PencilWritingIcon aria-hidden />
+                  Rediger
+                </Button>
+                <Button variant="secondary" data-size="sm">
+                  <DownloadIcon aria-hidden />
+                  Eksporter
+                </Button>
+                <Button variant="secondary" data-color="danger" data-size="sm">
+                  <TrashFillIcon aria-hidden />
+                  Slett
+                </Button>
+              </div>
             </div>
           )}
         </div>

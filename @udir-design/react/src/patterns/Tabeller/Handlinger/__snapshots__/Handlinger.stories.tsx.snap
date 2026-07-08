@@ -4,116 +4,7 @@ exports[`Preview 1`] = `
 <div data-size="auto">
   <div>
     <div>
-      <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
-          Søk
-        </label>
-        <div>
-          <input
-            placeholder
-            aria-label="Søk"
-            type="search"
-            value
-            id="<removed>"
-          >
-          <button
-            data-icon="true"
-            data-variant="tertiary"
-            type="reset"
-            aria-label="Tøm"
-          >
-          </button>
-        </div>
-      </ds-field>
       <div>
-        <ds-field>
-          <label
-            data-weight="medium"
-            for="<removed>"
-          >
-            Velg emner
-          </label>
-          <ds-suggestion
-            data-multiple
-            hover
-            data-color="neutral"
-            data-display="count"
-          >
-            <input
-              placeholder=" "
-              type="text"
-              id="<removed>"
-              aria-description="No selected"
-              list=":u-datalist1"
-              popovertarget=":u-datalist1"
-            >
-            <button
-              aria-label="Tøm"
-              hidden
-              type="reset"
-              aria-hidden="false"
-              tabindex="-1"
-            >
-            </button>
-            <u-datalist
-              data-nofilter
-              data-sr-plural="%d forslag"
-              data-sr-singular="%d forslag"
-              popover="manual"
-              role="listbox"
-              data-sr-of="of"
-              hidden
-              tabindex="-1"
-              aria-multiselectable="true"
-              id="<removed>"
-              data-is-floating="true"
-            >
-              <u-option
-                label="Engelsk"
-                value="Engelsk"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Engelsk
-              </u-option>
-              <u-option
-                label="Hovedmål"
-                value="Hovedmål"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Hovedmål
-              </u-option>
-              <u-option
-                label="Matematikk"
-                value="Matematikk"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Matematikk
-              </u-option>
-              <u-option
-                label="Sidemål"
-                value="Sidemål"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Sidemål
-              </u-option>
-            </u-datalist>
-          </ds-suggestion>
-        </ds-field>
         <ds-field>
           <label
             data-weight="medium"
@@ -123,8 +14,6 @@ exports[`Preview 1`] = `
           </label>
           <ds-suggestion
             data-multiple
-            hover
-            data-color="neutral"
             data-display="count"
           >
             <input
@@ -132,8 +21,8 @@ exports[`Preview 1`] = `
               type="text"
               id="<removed>"
               aria-description="No selected"
-              list=":u-datalist2"
-              popovertarget=":u-datalist2"
+              list=":u-datalist1"
+              popovertarget=":u-datalist1"
             >
             <button
               aria-label="Tøm"
@@ -279,7 +168,123 @@ exports[`Preview 1`] = `
             </u-datalist>
           </ds-suggestion>
         </ds-field>
+        <ds-field>
+          <label
+            data-weight="medium"
+            for="<removed>"
+          >
+            Velg emner
+          </label>
+          <ds-suggestion
+            data-multiple
+            data-display="count"
+          >
+            <input
+              placeholder=" "
+              type="text"
+              id="<removed>"
+              aria-description="No selected"
+              list=":u-datalist2"
+              popovertarget=":u-datalist2"
+            >
+            <button
+              aria-label="Tøm"
+              hidden
+              type="reset"
+              aria-hidden="false"
+              tabindex="-1"
+            >
+            </button>
+            <u-datalist
+              data-nofilter
+              data-sr-plural="%d forslag"
+              data-sr-singular="%d forslag"
+              popover="manual"
+              role="listbox"
+              data-sr-of="of"
+              hidden
+              tabindex="-1"
+              aria-multiselectable="true"
+              id="<removed>"
+              data-is-floating="true"
+            >
+              <u-option
+                label="Engelsk"
+                value="Engelsk"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Engelsk
+              </u-option>
+              <u-option
+                label="Hovedmål"
+                value="Hovedmål"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Hovedmål
+              </u-option>
+              <u-option
+                label="Matematikk"
+                value="Matematikk"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Matematikk
+              </u-option>
+              <u-option
+                label="Sidemål"
+                value="Sidemål"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Sidemål
+              </u-option>
+            </u-datalist>
+          </ds-suggestion>
+        </ds-field>
+        <ds-field>
+          <button
+            data-variant="tertiary"
+            type="button"
+            data-size="sm"
+          >
+            Fjern filtre
+          </button>
+        </ds-field>
       </div>
+      <ds-field>
+        <label
+          data-weight="medium"
+          for="<removed>"
+        >
+          Søk
+        </label>
+        <div>
+          <input
+            placeholder
+            aria-label="Søk"
+            type="search"
+            value
+            id="<removed>"
+          >
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="reset"
+            aria-label="Tøm"
+          >
+          </button>
+        </div>
+      </ds-field>
     </div>
     <div>
       <div>
@@ -335,9 +340,6 @@ exports[`Preview 1`] = `
           <th>
             Skriftlig
           </th>
-          <th aria-label="Rediger">
-            Rediger
-          </th>
           <th aria-label="Handlinger">
             Handling
           </th>
@@ -376,36 +378,6 @@ exports[`Preview 1`] = `
           </td>
           <td>
             3.26
-          </td>
-          <td>
-            <button
-              data-variant="tertiary"
-              type="button"
-              data-size="sm"
-              aria-label="Rediger"
-              data-tooltip="Rediger"
-              data-placement="top"
-              data-autoplacement="true"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
-                aria-hidden="true"
-              >
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
-                  clip-rule="evenodd"
-                >
-                </path>
-              </svg>
-            </button>
           </td>
           <td>
             <button
@@ -564,36 +536,6 @@ exports[`Preview 1`] = `
           </td>
           <td>
             <button
-              data-variant="tertiary"
-              type="button"
-              data-size="sm"
-              aria-label="Rediger"
-              data-tooltip="Rediger"
-              data-placement="top"
-              data-autoplacement="true"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
-                aria-hidden="true"
-              >
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
-                  clip-rule="evenodd"
-                >
-                </path>
-              </svg>
-            </button>
-          </td>
-          <td>
-            <button
               data-icon="true"
               data-variant="tertiary"
               type="button"
@@ -746,36 +688,6 @@ exports[`Preview 1`] = `
           </td>
           <td>
             3.16
-          </td>
-          <td>
-            <button
-              data-variant="tertiary"
-              type="button"
-              data-size="sm"
-              aria-label="Rediger"
-              data-tooltip="Rediger"
-              data-placement="top"
-              data-autoplacement="true"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
-                aria-hidden="true"
-              >
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
-                  clip-rule="evenodd"
-                >
-                </path>
-              </svg>
-            </button>
           </td>
           <td>
             <button
@@ -934,36 +846,6 @@ exports[`Preview 1`] = `
           </td>
           <td>
             <button
-              data-variant="tertiary"
-              type="button"
-              data-size="sm"
-              aria-label="Rediger"
-              data-tooltip="Rediger"
-              data-placement="top"
-              data-autoplacement="true"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
-                aria-hidden="true"
-              >
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
-                  clip-rule="evenodd"
-                >
-                </path>
-              </svg>
-            </button>
-          </td>
-          <td>
-            <button
               data-icon="true"
               data-variant="tertiary"
               type="button"
@@ -1116,36 +998,6 @@ exports[`Preview 1`] = `
           </td>
           <td>
             3.05
-          </td>
-          <td>
-            <button
-              data-variant="tertiary"
-              type="button"
-              data-size="sm"
-              aria-label="Rediger"
-              data-tooltip="Rediger"
-              data-placement="top"
-              data-autoplacement="true"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
-                aria-hidden="true"
-              >
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
-                  clip-rule="evenodd"
-                >
-                </path>
-              </svg>
-            </button>
           </td>
           <td>
             <button
@@ -1384,116 +1236,7 @@ exports[`Secondary 1`] = `
 <div data-size="auto">
   <div>
     <div>
-      <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
-          Søk
-        </label>
-        <div>
-          <input
-            placeholder
-            aria-label="Søk"
-            type="search"
-            value
-            id="<removed>"
-          >
-          <button
-            data-icon="true"
-            data-variant="tertiary"
-            type="reset"
-            aria-label="Tøm"
-          >
-          </button>
-        </div>
-      </ds-field>
       <div>
-        <ds-field>
-          <label
-            data-weight="medium"
-            for="<removed>"
-          >
-            Velg emner
-          </label>
-          <ds-suggestion
-            data-multiple
-            hover
-            data-color="neutral"
-            data-display="count"
-          >
-            <input
-              placeholder=" "
-              type="text"
-              id="<removed>"
-              aria-description="No selected"
-              list=":u-datalist3"
-              popovertarget=":u-datalist3"
-            >
-            <button
-              aria-label="Tøm"
-              hidden
-              type="reset"
-              aria-hidden="false"
-              tabindex="-1"
-            >
-            </button>
-            <u-datalist
-              data-nofilter
-              data-sr-plural="%d forslag"
-              data-sr-singular="%d forslag"
-              popover="manual"
-              role="listbox"
-              data-sr-of="of"
-              hidden
-              tabindex="-1"
-              aria-multiselectable="true"
-              id="<removed>"
-              data-is-floating="true"
-            >
-              <u-option
-                label="Engelsk"
-                value="Engelsk"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Engelsk
-              </u-option>
-              <u-option
-                label="Hovedmål"
-                value="Hovedmål"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Hovedmål
-              </u-option>
-              <u-option
-                label="Matematikk"
-                value="Matematikk"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Matematikk
-              </u-option>
-              <u-option
-                label="Sidemål"
-                value="Sidemål"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Sidemål
-              </u-option>
-            </u-datalist>
-          </ds-suggestion>
-        </ds-field>
         <ds-field>
           <label
             data-weight="medium"
@@ -1503,8 +1246,6 @@ exports[`Secondary 1`] = `
           </label>
           <ds-suggestion
             data-multiple
-            hover
-            data-color="neutral"
             data-display="count"
           >
             <input
@@ -1512,8 +1253,8 @@ exports[`Secondary 1`] = `
               type="text"
               id="<removed>"
               aria-description="No selected"
-              list=":u-datalist4"
-              popovertarget=":u-datalist4"
+              list=":u-datalist3"
+              popovertarget=":u-datalist3"
             >
             <button
               aria-label="Tøm"
@@ -1659,7 +1400,123 @@ exports[`Secondary 1`] = `
             </u-datalist>
           </ds-suggestion>
         </ds-field>
+        <ds-field>
+          <label
+            data-weight="medium"
+            for="<removed>"
+          >
+            Velg emner
+          </label>
+          <ds-suggestion
+            data-multiple
+            data-display="count"
+          >
+            <input
+              placeholder=" "
+              type="text"
+              id="<removed>"
+              aria-description="No selected"
+              list=":u-datalist4"
+              popovertarget=":u-datalist4"
+            >
+            <button
+              aria-label="Tøm"
+              hidden
+              type="reset"
+              aria-hidden="false"
+              tabindex="-1"
+            >
+            </button>
+            <u-datalist
+              data-nofilter
+              data-sr-plural="%d forslag"
+              data-sr-singular="%d forslag"
+              popover="manual"
+              role="listbox"
+              data-sr-of="of"
+              hidden
+              tabindex="-1"
+              aria-multiselectable="true"
+              id="<removed>"
+              data-is-floating="true"
+            >
+              <u-option
+                label="Engelsk"
+                value="Engelsk"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Engelsk
+              </u-option>
+              <u-option
+                label="Hovedmål"
+                value="Hovedmål"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Hovedmål
+              </u-option>
+              <u-option
+                label="Matematikk"
+                value="Matematikk"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Matematikk
+              </u-option>
+              <u-option
+                label="Sidemål"
+                value="Sidemål"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Sidemål
+              </u-option>
+            </u-datalist>
+          </ds-suggestion>
+        </ds-field>
+        <ds-field>
+          <button
+            data-variant="tertiary"
+            type="button"
+            data-size="sm"
+          >
+            Fjern filtre
+          </button>
+        </ds-field>
       </div>
+      <ds-field>
+        <label
+          data-weight="medium"
+          for="<removed>"
+        >
+          Søk
+        </label>
+        <div>
+          <input
+            placeholder
+            aria-label="Søk"
+            type="search"
+            value
+            id="<removed>"
+          >
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="reset"
+            aria-label="Tøm"
+          >
+          </button>
+        </div>
+      </ds-field>
     </div>
     <div>
       <div>
@@ -1713,9 +1570,6 @@ exports[`Secondary 1`] = `
           <th>
             Skriftlig
           </th>
-          <th aria-label="Rediger">
-            Rediger
-          </th>
           <th aria-label="Handlinger">
             Handling
           </th>
@@ -1757,40 +1611,10 @@ exports[`Secondary 1`] = `
           </td>
           <td>
             <button
-              data-variant="tertiary"
-              type="button"
-              data-size="sm"
-              aria-label="Rediger"
-              data-tooltip="Rediger"
-              data-placement="top"
-              data-autoplacement="true"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
-                aria-hidden="true"
-              >
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
-                  clip-rule="evenodd"
-                >
-                </path>
-              </svg>
-            </button>
-          </td>
-          <td>
-            <button
               data-icon="true"
               data-variant="tertiary"
               type="button"
-              popovertarget="_r_t_-row-menu-Agder-Engelsk"
+              popovertarget="_r_o_-row-menu-Agder-Engelsk"
               title="Flere valg"
               aria-label="Flere valg"
               data-size="sm"
@@ -1942,40 +1766,10 @@ exports[`Secondary 1`] = `
           </td>
           <td>
             <button
-              data-variant="tertiary"
-              type="button"
-              data-size="sm"
-              aria-label="Rediger"
-              data-tooltip="Rediger"
-              data-placement="top"
-              data-autoplacement="true"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
-                aria-hidden="true"
-              >
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
-                  clip-rule="evenodd"
-                >
-                </path>
-              </svg>
-            </button>
-          </td>
-          <td>
-            <button
               data-icon="true"
               data-variant="tertiary"
               type="button"
-              popovertarget="_r_t_-row-menu-Agder-Matematikk"
+              popovertarget="_r_o_-row-menu-Agder-Matematikk"
               title="Flere valg"
               aria-label="Flere valg"
               data-size="sm"
@@ -2127,40 +1921,10 @@ exports[`Secondary 1`] = `
           </td>
           <td>
             <button
-              data-variant="tertiary"
-              type="button"
-              data-size="sm"
-              aria-label="Rediger"
-              data-tooltip="Rediger"
-              data-placement="top"
-              data-autoplacement="true"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
-                aria-hidden="true"
-              >
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
-                  clip-rule="evenodd"
-                >
-                </path>
-              </svg>
-            </button>
-          </td>
-          <td>
-            <button
               data-icon="true"
               data-variant="tertiary"
               type="button"
-              popovertarget="_r_t_-row-menu-Agder-Hovedmål"
+              popovertarget="_r_o_-row-menu-Agder-Hovedmål"
               title="Flere valg"
               aria-label="Flere valg"
               data-size="sm"
@@ -2312,40 +2076,10 @@ exports[`Secondary 1`] = `
           </td>
           <td>
             <button
-              data-variant="tertiary"
-              type="button"
-              data-size="sm"
-              aria-label="Rediger"
-              data-tooltip="Rediger"
-              data-placement="top"
-              data-autoplacement="true"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
-                aria-hidden="true"
-              >
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
-                  clip-rule="evenodd"
-                >
-                </path>
-              </svg>
-            </button>
-          </td>
-          <td>
-            <button
               data-icon="true"
               data-variant="tertiary"
               type="button"
-              popovertarget="_r_t_-row-menu-Agder-Sidemål"
+              popovertarget="_r_o_-row-menu-Agder-Sidemål"
               title="Flere valg"
               aria-label="Flere valg"
               data-size="sm"
@@ -2497,40 +2231,10 @@ exports[`Secondary 1`] = `
           </td>
           <td>
             <button
-              data-variant="tertiary"
-              type="button"
-              data-size="sm"
-              aria-label="Rediger"
-              data-tooltip="Rediger"
-              data-placement="top"
-              data-autoplacement="true"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                fill="none"
-                viewbox="0 0 24 24"
-                focusable="false"
-                role="img"
-                aria-hidden="true"
-              >
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  d="M14.97 4.47a3.2 3.2 0 0 1 4.562.001c1.26 1.27 1.268 3.368-.002 4.637l-8.5 8.5a.75.75 0 0 1-.38.204l-4.5.922a.75.75 0 0 1-.882-.897l1-4.5a.75.75 0 0 1 .202-.367zm3.498 1.058a1.7 1.7 0 0 0-2.438.002l-.97.97 2.479 2.478.93-.93c.68-.68.681-1.832-.001-2.52M7.685 13.876 14 7.56l2.478 2.478-6.35 6.35-3.145.644zM3.5 20.25a.75.75 0 0 0 0 1.5h17a.75.75 0 0 0 0-1.5z"
-                  clip-rule="evenodd"
-                >
-                </path>
-              </svg>
-            </button>
-          </td>
-          <td>
-            <button
               data-icon="true"
               data-variant="tertiary"
               type="button"
-              popovertarget="_r_t_-row-menu-Akershus-Engelsk"
+              popovertarget="_r_o_-row-menu-Akershus-Engelsk"
               title="Flere valg"
               aria-label="Flere valg"
               data-size="sm"
