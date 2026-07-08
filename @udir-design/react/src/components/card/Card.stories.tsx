@@ -348,65 +348,74 @@ export const Horizontal = meta.story({
 });
 
 export const Cluster = meta.story({
+  parameters: {
+    customStyles: {
+      display: 'block',
+      width: '100%',
+      maxWidth: 800,
+    },
+  },
   render: (args) => {
     const links = [
       { text: 'Lesing', url: '#' },
-      { text: 'Fravær i skolen', url: '#' },
       { text: 'Barnehagemiljø', url: '#' },
-      { text: 'God digital praksis', url: '#' },
       { text: 'Skolemiljø', url: '#' },
+      { text: 'Fravær i skolen', url: '#' },
+      { text: 'God digital praksis', url: '#' },
       { text: 'Kunstig intelligens i skolen', url: '#' },
     ];
-
-    const rows = Array.from({ length: Math.ceil(links.length / 2) }, (_, i) =>
-      links.slice(i * 2, (i + 1) * 2),
-    );
 
     return (
       <>
         <style>
           {`
-.card-cluster {
-  width: 750px;
+.card-cluster-wrapper {
+  container-type: inline-size;
 }
-.card-cluster__row {
+.card-cluster {
+  --dsc-card-content-margin-block: 0;
+  --dsc-card-padding: var(--ds-size-2) var(--ds-size-6);
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
   column-gap: var(--ds-size-4);
 }
 .card-cluster__item {
-  display: flex;
-  align-items: center;
-  gap: var(--ds-size-2);
-  padding: var(--ds-size-2) 0 var(--ds-size-4) 0;
-  min-width: 0;
+  padding-block: var(--ds-size-4);
   border-block-end: 1px solid var(--ds-color-border-subtle);
   text-decoration: none;
 }
-.card-cluster__row:last-child .card-cluster__item {
+.card-cluster__item:last-child {
   border-block-end: none;
-  padding-block-end: var(--ds-size-2);
+}
+@container (min-width: 564px) {
+  .card-cluster__item:nth-last-child(2) {
+    border-block-end: none;
+  }
+}
+.card-cluster__item:hover {
+  text-decoration: underline;
 }
 .card-cluster__item > svg {
   flex-shrink: 0;
+  width: var(--ds-size-6);
+  height: var(--ds-size-6);
+  align-self: flex-start;
 }`}
         </style>
-        <Card {...args} className="card-cluster">
-          {rows.map((row, rowIndex) => (
-            <div key={rowIndex} className="card-cluster__row">
-              {row.map((link) => (
-                <LinkComponent
-                  href={link.url}
-                  key={link.text}
-                  className="card-cluster__item"
-                >
-                  <ArrowRightIcon aria-hidden data-size="lg" />
-                  <span>{link.text}</span>
-                </LinkComponent>
-              ))}
-            </div>
-          ))}
-        </Card>
+        <div className="card-cluster-wrapper">
+          <Card {...args} className="card-cluster">
+            {links.map((link) => (
+              <LinkComponent
+                href={link.url}
+                key={link.text}
+                className="card-cluster__item"
+              >
+                <ArrowRightIcon aria-hidden data-size="lg" />
+                <span>{link.text}</span>
+              </LinkComponent>
+            ))}
+          </Card>
+        </div>
       </>
     );
   },
