@@ -2,8 +2,7 @@ import { Paragraph, Tooltip } from '@digdir/designsystemet-react';
 import type { Size } from '@digdir/designsystemet-react';
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
-import type { MouseEvent } from 'react';
-import type { HTMLAttributes } from 'react';
+import type { HTMLAttributes, MouseEvent } from 'react';
 import {
   FileCsvIcon,
   FileExcelIcon,
@@ -39,7 +38,7 @@ export interface FileUploadItemProps extends Omit<
    */
   error?: string;
   /**
-   * Props for the delete button.
+   * Callback when the remove button is clicked.
    */
   onRemove: (file: File, event: MouseEvent<HTMLButtonElement>) => void;
   /**
@@ -133,7 +132,7 @@ export function formatFileSize(file: File): string | null {
   return `${megaBytes.toFixed(2)} MB`;
 }
 
-function Icon({
+export function Icon({
   file,
   showError,
   loading,
@@ -176,7 +175,7 @@ function Icon({
   }
 }
 
-const downloadFile = (file: File): void => {
+export const downloadFile = (file: File): void => {
   const a = document.createElement('a');
   const url = URL.createObjectURL(file);
   a.href = url;
@@ -191,7 +190,7 @@ interface FileNameProps {
   href?: string;
 }
 
-const FileName = ({ file, href }: FileNameProps) => {
+export const FileName = ({ file, href }: FileNameProps) => {
   if (href) {
     return <Link href={href}>{file.name}</Link>;
   }

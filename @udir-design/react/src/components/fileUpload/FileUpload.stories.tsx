@@ -6,8 +6,10 @@ import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Heading } from 'src/components/typography/heading';
+import { Prose } from '../typography/prose';
 import { FileUploadDropzone } from './docs/FakeFileUploadDropzone';
 import { FileUploadItem } from './docs/FakeFileUploadItem';
+import { FileUploadList } from './docs/FakeFileUploadList';
 import { FileUploadTrigger } from './docs/FakeFileUploadTrigger';
 import { FileUpload } from './index';
 
@@ -16,6 +18,7 @@ const meta = preview.meta({
   subcomponents: {
     'FileUpload.Dropzone': FileUploadDropzone,
     'FileUpload.Item': FileUploadItem,
+    'FileUpload.List': FileUploadList,
   },
   tags: ['udir'],
   parameters: {
@@ -583,5 +586,39 @@ export const Upload = meta.story({
         canvas.getByRole('img', { name: 'spinner' }),
       ).toBeInTheDocument();
     });
+  },
+});
+
+export const List = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  args: {
+    'data-size': 'md',
+  },
+  render: (args) => {
+    const dummyFiles = [
+      { file: new File(['abc'.repeat(100000)], 'kandidat-12.pdf') },
+      { file: new File(['abc'.repeat(100000)], 'kandidat-13.pdf') },
+      { file: new File(['abc'.repeat(100000)], 'kandidat-14.pdf') },
+      { file: new File(['abc'.repeat(100000)], 'kandidat-15.pdf') },
+      {
+        file: new File(['abc'.repeat(288000)], 'kandidat-16.tsx'),
+        error: 'Filformatet støttes ikke',
+      },
+    ];
+
+    const [files, setFiles] = useState(dummyFiles);
+
+    const removeFile = (fileToRemove: File) => {
+      setFiles((prev) => prev.filter(({ file }) => file !== fileToRemove));
+    };
+
+    return (
+      <Prose>
+        <Heading level={3} data-size="2xs">
+          Vedlegg ({files.length}):
+        </Heading>
+        <FileUpload.List {...args} items={files} onRemove={removeFile} />
+      </Prose>
+    );
   },
 });
