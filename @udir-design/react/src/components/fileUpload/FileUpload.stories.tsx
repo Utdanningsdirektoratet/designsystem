@@ -494,9 +494,10 @@ export const ExampleItems = meta.story({
       await expect(invalidItem).toBeInTheDocument();
     });
 
-    await step('File size is shown for normal items', async () => {
-      // eksempel1.pdf = 300 000 bytes = 0.29 MB
-      await expect(canvas.getByText('0.29 MB')).toBeInTheDocument();
+    await step('Description is shown for normal items', async () => {
+      await expect(
+        canvas.getByText('Filopplasting 1'),
+      ).toBeInTheDocument();
     });
 
     await step('Clicking remove deletes the file from the list', async () => {
