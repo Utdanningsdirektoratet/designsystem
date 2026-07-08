@@ -2,33 +2,68 @@ import {
   Tabs as DigdirTabs,
   TabsList,
   type TabsListProps,
-  TabsPanel,
-  type TabsPanelProps,
+  TabsPanel as DigdirTabsPanel,
+  type TabsPanelProps as DigdirTabsPanelProps,
   type TabsProps as DigdirTabsProps,
   TabsTab,
   type TabsTabProps,
 } from '@digdir/designsystemet-react';
 import './tabs.css';
-import type {
-  ComponentRef,
-  ForwardRefExoticComponent,
-  RefAttributes,
-} from 'react';
+import { type ComponentRef, type Ref, forwardRef } from 'react';
 
 type TabsProps = Omit<DigdirTabsProps, 'data-color'> & {
   /**
-   * Change the color scheme of the button
+   * Change the color scheme of the tabs
    */
   'data-color'?: 'neutral' | 'accent';
+  /**
+   * Change the visual style of the tabs
+   * @default undefined
+   */
+  variant?: 'default' | 'card';
 };
 
-const Tabs = DigdirTabs as ForwardRefExoticComponent<
-  TabsProps & RefAttributes<ComponentRef<typeof DigdirTabs>>
-> &
-  Pick<typeof DigdirTabs, 'List' | 'Tab' | 'Panel'>;
+type TabsPanelProps = DigdirTabsPanelProps & {
+  /**
+   * Change the visual style of the panel
+   * @default undefined
+   */
+  variant?: 'default' | 'card';
+};
 
-// For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
-Tabs.displayName = 'Tabs';
+const TabsPanel = forwardRef<
+  ComponentRef<typeof DigdirTabsPanel>,
+  TabsPanelProps
+>(function TabsPanel({ variant, ...rest }, ref) {
+  return (
+    <DigdirTabsPanel
+      ref={ref as Ref<ComponentRef<typeof DigdirTabsPanel>>}
+      data-variant={variant}
+      {...rest}
+    />
+  );
+});
+
+const Tabs = Object.assign(
+  forwardRef<ComponentRef<typeof DigdirTabs>, TabsProps>(function Tabs(
+    { variant, ...rest },
+    ref,
+  ) {
+    return (
+      <DigdirTabs
+        ref={ref as Ref<ComponentRef<typeof DigdirTabs>>}
+        data-variant={variant}
+        {...rest}
+      />
+    );
+  }),
+  {
+    displayName: 'Tabs',
+    List: DigdirTabs.List,
+    Tab: DigdirTabs.Tab,
+    Panel: TabsPanel,
+  },
+);
 
 export type { TabsListProps, TabsPanelProps, TabsProps, TabsTabProps };
 export { Tabs, TabsList, TabsPanel, TabsTab };
