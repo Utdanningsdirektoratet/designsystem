@@ -410,7 +410,7 @@ export const Cluster = meta.story({
                 key={link.text}
                 className="card-cluster__item"
               >
-                <ArrowRightIcon aria-hidden data-size="lg" />
+                <ArrowRightIcon aria-hidden />
                 <span>{link.text}</span>
               </LinkComponent>
             ))}
