@@ -28,21 +28,23 @@ export const ColorTokensTable = ({
 
   return (
     <div data-color={selectedColor}>
-      <Field className={classes.input}>
-        <Label>{selectLabel}</Label>
-        <Select
-          value={selectedColor || ''}
-          onChange={(e) =>
-            setSelectedColor(e.target.value as (typeof colors)[number])
-          }
-        >
-          {colors.map((color) => (
-            <Select.Option key={color} value={color}>
-              {color}
-            </Select.Option>
-          ))}
-        </Select>
-      </Field>
+      {colors.length > 1 && (
+        <Field className={classes.input}>
+          <Label>{selectLabel}</Label>
+          <Select
+            value={selectedColor || ''}
+            onChange={(e) =>
+              setSelectedColor(e.target.value as (typeof colors)[number])
+            }
+          >
+            {colors.map((color) => (
+              <Select.Option key={color} value={color}>
+                {color}
+              </Select.Option>
+            ))}
+          </Select>
+        </Field>
+      )}
       <Table
         data-color="neutral"
         data-colors={colors}
