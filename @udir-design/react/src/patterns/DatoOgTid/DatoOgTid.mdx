@@ -1,5 +1,6 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
-
+import { CssToggle } from '.storybook/docs/components';
+import previewCss from './datepicker.css?raw';
 import * as DatoOgTidStories from './DatoOgTid.stories';
 
 <Meta of={DatoOgTidStories} />
@@ -17,3 +18,4 @@ Dersom det likevel er behov for å bruke tredjepartskomponenter, bør disse tilp
 Under vises et eksempel på hvordan en tredjepartskomponent ([react-datepicker](https://www.npmjs.com/package/react-datepicker)) kan tilpasses ved hjelp av komponenter fra designsystemet og CSS, slik at den samsvarer med resten av designsystemet.
 
 <Canvas of={DatoOgTidStories.Preview} />
+<CssToggle code={previewCss} />
