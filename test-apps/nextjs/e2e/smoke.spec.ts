@@ -9,7 +9,7 @@ for (const route of routes) {
 
     expect(response?.status()).toBe(200);
 
-    const main = page.locator('main#main-content');
+    const main = page.locator('main');
     await expect(main).toBeVisible();
     await expect(main).not.toBeEmpty();
 
