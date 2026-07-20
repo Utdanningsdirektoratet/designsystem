@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --max-warnings 0",
-    "typecheck": "tsgo --build"
+    "typecheck": "tsc --build"
   },
   "dependencies": {
     "@udir-design/icons": "workspace:*",
@@ -22,6 +22,7 @@
     "@types/react-dom": "catalog:",
     "@vitejs/plugin-react-swc": "catalog:",
     "sass": "catalog:",
+    "typescript": "catalog:",
     "vite": "catalog:",
     "vite-tsconfig-paths": "catalog:",
     "vitest": "catalog:"

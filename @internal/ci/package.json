@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "test:unit": "vitest run",
-    "typecheck": "tsgo --build"
+    "typecheck": "tsc --build"
   },
   "devDependencies": {
     "@semantic-release/exec": "catalog:",
@@ -17,6 +17,7 @@
     "js-yaml": "catalog:",
     "semantic-release": "catalog:",
     "tsx": "catalog:",
+    "typescript": "catalog:",
     "vitest": "catalog:",
     "yargs": "catalog:"
   }
