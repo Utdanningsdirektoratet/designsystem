@@ -802,9 +802,14 @@ Nytt symbol legges til i [Symbolbiblioteket i Figma](https://www.figma.com/desig
 
 Nedlasting av oppdaterte symboler fra Figma gjøres i et lokalt repo av [Udirs Designsystem](https://github.com/Utdanningsdirektoratet/designsystem).
 
-`.env.local` må inneholde gyldig Figma-token: `FIGMA_TOKEN={token}`.
+`.env.local` må inneholde gyldig Figma-token: `FIGMA_TOKEN={token}`. [Les hvordan du lager et personal access token hos Figma](https://help.figma.com/hc/en-us/articles/8085703771159-Manage-personal-access-tokens)
 
-Kjør følgende kommando i `designsystem/@udir-design/symbols`:
+Tokenet må ha følgende scopes:
+
+- `library_content:read`
+- `file_content:read`
+
+Deretter, kjør følgende kommando i `designsystem/@udir-design/symbols`:
 
 ```bash
 pnpm --filter @udir-design/symbols run fetch-new:symbols
