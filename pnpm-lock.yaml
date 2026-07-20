@@ -231,9 +231,6 @@ catalogs:
     jsdom:
       specifier: ^29.1.1
       version: 29.1.1
-    lodash-es:
-      specifier: ^4.18.1
-      version: 4.18.1
     mdast-util-to-hast:
       specifier: ^13.2.1
       version: 13.2.1
@@ -793,9 +790,6 @@ importers:
       js-yaml:
         specifier: 'catalog:'
         version: 5.2.1
-      lodash-es:
-        specifier: 'catalog:'
-        version: 4.18.1
       prettier:
         specifier: 'catalog:'
         version: 3.8.3

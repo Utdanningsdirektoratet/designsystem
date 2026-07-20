@@ -2,8 +2,7 @@ import { writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { PublishedComponent } from '@figma/rest-api-spec';
 import { dump } from 'js-yaml';
-import { upperFirst } from 'lodash-es';
-import { resolveName } from './symbol-name';
+import { resolveName, upperFirst } from './symbol-name';
 
 export type SymbolYml = {
   name: string;
