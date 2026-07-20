@@ -226,8 +226,8 @@ catalogs:
       specifier: ^9.1.7
       version: 9.1.7
     js-yaml:
-      specifier: ^4.3.0
-      version: 4.3.0
+      specifier: ^5.2.1
+      version: 5.2.1
     jsdom:
       specifier: ^29.1.1
       version: 29.1.1
@@ -492,7 +492,7 @@ importers:
         version: 3.3.3
       js-yaml:
         specifier: 'catalog:'
-        version: 4.3.0
+        version: 5.2.1
       semantic-release:
         specifier: 'catalog:'
         version: 25.0.8(@typescript/typescript6@6.0.2)(supports-color@8.1.1)
@@ -792,7 +792,7 @@ importers:
         version: 3.3.3
       js-yaml:
         specifier: 'catalog:'
-        version: 4.3.0
+        version: 5.2.1
       lodash-es:
         specifier: 'catalog:'
         version: 4.18.1
@@ -5604,6 +5604,10 @@ packages:
 
   js-yaml@4.3.0:
     resolution: {integrity: sha512-1td788aAnnZ5qs7V2QIRl1owjtYpbKt749Y3xauqQgwIIGF/xXWz1wMTEBx5O3LK3lXLVuqXPdPxj2BoFHaW9Q==}
+    hasBin: true
+
+  js-yaml@5.2.1:
+    resolution: {integrity: sha512-zfLtNfQqxVqq3uaTqSkh4x4hZw3KHobGUA0fJUj4wawW8bsQLTVqpHdXSIzidh7o+4lEW36tANuAGdaFx6Zgnw==}
     hasBin: true
 
   jsdom@29.1.1:
@@ -12702,6 +12706,10 @@ snapshots:
   js-tokens@4.0.0: {}
 
   js-yaml@4.3.0:
+    dependencies:
+      argparse: 2.0.1
+
+  js-yaml@5.2.1:
     dependencies:
       argparse: 2.0.1
 

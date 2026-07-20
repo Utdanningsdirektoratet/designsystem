@@ -53,7 +53,7 @@ export const makeConfig = (
     const yml = dump(config, {
       noRefs: true,
       skipInvalid: false,
-      quotingType: '"',
+      quoteStyle: 'double',
     });
 
     writeFileSync(resolve(dirLocation, `${config.name}.yml`), yml, {
