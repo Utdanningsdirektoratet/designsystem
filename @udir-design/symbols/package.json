@@ -49,7 +49,7 @@
     "prebuild": "shx rm -rf generated-src && shx mkdir -p generated-src && pnpm run update:metadata && pnpm run generate",
     "build": "tsdown",
     "postbuild": "pnpm run copy:svgs",
-    "fetch-new:symbols": "tsx config/figma/index.ts",
+    "fetch-new:symbols": "node --env-file=../../.env.local --import tsx config/figma/index.ts",
     "generate:pngs": "node config/svg-to-png.js",
     "lint": "eslint . --max-warnings 0"
   },
