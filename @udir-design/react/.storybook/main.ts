@@ -56,12 +56,17 @@ export default defineMain({
       : // When running locally we just get the branch name currently checked out
         execSync('git rev-parse --abbrev-ref HEAD').toString().trimEnd();
 
+    // Disable vite:dts plugin, since it logs "You are building a library that may not need to generate declaration files"
+    cfg.plugins = cfg.plugins?.filter((p) => (p as Plugin).name !== 'vite:dts');
+
     return mergeConfig(cfg, {
+      logLevel: 'warn',
       define: {
         __GIT_BRANCH__: JSON.stringify(branchName),
       },
       build: {
         cssCodeSplit: false,
+        chunkSizeWarningLimit: Infinity,
       },
       plugins: [fixStorybookMockerEntryPlugin()],
       optimizeDeps: {
