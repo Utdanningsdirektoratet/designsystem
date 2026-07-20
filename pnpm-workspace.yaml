@@ -52,7 +52,7 @@ catalog:
   '@types/yargs': ^17.0.35
   '@typescript-eslint/eslint-plugin': ^8.62.1
   '@typescript-eslint/parser': ^8.62.1
-  '@typescript/native-preview': 7.0.0-dev.20260527.1
+  '@typescript/native': npm:typescript@^7.0.2
   '@u-elements/u-details': ^1.0.0
   '@u-elements/u-progress': ^1.0.1
   '@vitejs/plugin-react-swc': ^4.3.1
@@ -121,7 +121,7 @@ catalog:
   tsx: ^4.23.0
   type-fest: ^5.7.0
   typedoc: ^0.28.19
-  typescript: ^6.0.3
+  typescript: 'npm:@typescript/typescript6@^6.0.2'
   typescript-eslint: ^8.62.1
   unified: ^11.0.5
   unist-util-remove: ^4.0.0
