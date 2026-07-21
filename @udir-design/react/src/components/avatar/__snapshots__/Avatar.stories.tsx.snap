@@ -10,7 +10,6 @@ exports[`As Link 1`] = `
 </style>
 <a href="/">
   <span
-    data-variant="circle"
     role="img"
     aria-hidden="true"
   >
@@ -23,28 +22,24 @@ exports[`As Link 1`] = `
 
 exports[`Color Variants 1`] = `
 <span
-  data-variant="circle"
   role="img"
   aria-label="color neutral"
   data-color="neutral"
 >
 </span>
 <span
-  data-variant="circle"
   role="img"
   aria-label="color accent"
   data-color="accent"
 >
 </span>
 <span
-  data-variant="circle"
   role="img"
   aria-label="color support1"
   data-color="support1"
 >
 </span>
 <span
-  data-variant="circle"
   role="img"
   aria-label="color support2"
   data-color="support2"
@@ -54,20 +49,17 @@ exports[`Color Variants 1`] = `
 
 exports[`Content 1`] = `
 <span
-  data-variant="circle"
   role="img"
   aria-label="Ola Nordmann"
 >
 </span>
 <span
-  data-variant="circle"
   data-initials="ON"
   role="img"
   aria-label="Ola Nordmann"
 >
 </span>
 <span
-  data-variant="circle"
   role="img"
   aria-label="Ola Nordmann"
 >
@@ -91,7 +83,6 @@ exports[`Content 1`] = `
   </svg>
 </span>
 <span
-  data-variant="circle"
   role="img"
   aria-label="Ola Nordmann"
 >
@@ -119,7 +110,6 @@ exports[`Icons 1`] = `
 <div>
   <div>
     <span
-      data-variant="circle"
       role="img"
       aria-hidden="true"
     >
@@ -130,7 +120,6 @@ exports[`Icons 1`] = `
   </div>
   <div>
     <span
-      data-variant="circle"
       role="img"
       aria-hidden="true"
     >
@@ -159,7 +148,6 @@ exports[`Icons 1`] = `
   </div>
   <div>
     <span
-      data-variant="circle"
       role="img"
       aria-hidden="true"
     >
@@ -196,7 +184,6 @@ exports[`In Dropdown 1`] = `
   popovertarget="_r_1_"
 >
   <span
-    data-variant="circle"
     data-initials="ON"
     role="img"
     aria-hidden="true"
@@ -227,7 +214,6 @@ exports[`In Dropdown 1`] = `
   id="<removed>"
   popover="manual"
   data-placement="bottom-end"
-  data-variant="default"
   data-size="md"
   data-floating="bottom-end"
   style="<removed>"
@@ -246,13 +232,11 @@ exports[`In Dropdown 1`] = `
           data-placement="top-right"
         >
           <span
-            data-variant="base"
             data-color="danger"
             data-size="sm"
           >
           </span>
           <span
-            data-variant="circle"
             data-initials="ON"
             role="img"
             aria-hidden="true"
@@ -269,7 +253,6 @@ exports[`In Dropdown 1`] = `
         type="button"
       >
         <span
-          data-variant="circle"
           role="img"
           data-size="xs"
           data-color="support1"
@@ -303,7 +286,6 @@ exports[`In Dropdown 1`] = `
 
 exports[`Preview 1`] = `
 <span
-  data-variant="circle"
   role="img"
   aria-label="Ola Nordmann"
 >
@@ -312,7 +294,6 @@ exports[`Preview 1`] = `
 
 exports[`Sizes 1`] = `
 <span
-  data-variant="circle"
   data-initials="xs"
   role="img"
   aria-label="extra small"
@@ -320,14 +301,12 @@ exports[`Sizes 1`] = `
 >
 </span>
 <span
-  data-variant="circle"
   role="img"
   aria-label="extra small"
   data-size="xs"
 >
 </span>
 <span
-  data-variant="circle"
   data-initials="sm"
   role="img"
   aria-label="small"
@@ -335,14 +314,12 @@ exports[`Sizes 1`] = `
 >
 </span>
 <span
-  data-variant="circle"
   role="img"
   aria-label="small"
   data-size="sm"
 >
 </span>
 <span
-  data-variant="circle"
   data-initials="md"
   role="img"
   aria-label="medium"
@@ -350,14 +327,12 @@ exports[`Sizes 1`] = `
 >
 </span>
 <span
-  data-variant="circle"
   role="img"
   aria-label="medium"
   data-size="md"
 >
 </span>
 <span
-  data-variant="circle"
   data-initials="lg"
   role="img"
   aria-label="large"
@@ -365,7 +340,6 @@ exports[`Sizes 1`] = `
 >
 </span>
 <span
-  data-variant="circle"
   role="img"
   aria-label="large"
   data-size="lg"

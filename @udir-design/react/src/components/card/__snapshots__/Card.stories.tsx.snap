@@ -36,7 +36,7 @@ exports[`Cluster 1`] = `
 }
 </style>
 <div>
-  <div data-variant="default">
+  <div>
     <a href="#">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +175,7 @@ exports[`Composed 1`] = `
   align-items: center;
 }
 </style>
-<div data-variant="default">
+<div>
   <div>
     <div>
       <h2>
@@ -289,10 +289,7 @@ exports[`Horizontal 1`] = `
   object-fit: cover;
 }
 </style>
-<div
-  data-variant="default"
-  data-clickdelegatefor="<removed>"
->
+<div data-clickdelegatefor="<removed>">
   <div>
     <img
       alt="Barn som spiser lunsj"
@@ -310,7 +307,7 @@ exports[`Horizontal 1`] = `
         Hva gjør du når en elev ikke har det trygt og godt på skolen?
       </a>
     </h2>
-    <p data-variant="default">
+    <p>
       Hvis dere mistenker eller kjenner til at en elev ikke har det trygt og godt, skal dere snarest undersøke saken. Vi har laget råd om hva dere kan gjøre.
     </p>
   </div>
@@ -318,7 +315,7 @@ exports[`Horizontal 1`] = `
 `;
 
 exports[`Media 1`] = `
-<div data-variant="default">
+<div>
   <div>
     <img
       alt="Fotografi av forskjellig skoleutstyr"
@@ -329,17 +326,17 @@ exports[`Media 1`] = `
     <h2>
       Skoleutstyr
     </h2>
-    <p data-variant="default">
+    <p>
       Fylkeskommunen skal sørge for at elevene i videregående skole får gratis lærebøker og andre trykte og digitale læremidler og digitalt utstyr.
     </p>
   </div>
 </div>
-<div data-variant="default">
+<div>
   <div>
     <h2>
       Skoleutstyr
     </h2>
-    <p data-variant="default">
+    <p>
       Fylkeskommunen skal sørge for at elevene i videregående skole får gratis lærebøker og andre trykte og digitale læremidler og digitalt utstyr.
     </p>
   </div>
@@ -353,20 +350,14 @@ exports[`Media 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<div
-  data-variant="default"
-  data-color="neutral"
->
+<div data-color="neutral">
   <h2>
     Tittel
   </h2>
-  <p data-variant="default">
+  <p>
     Innhold
   </p>
-  <p
-    data-variant="default"
-    data-size="sm"
-  >
+  <p data-size="sm">
     Fotnote
   </p>
 </div>
@@ -378,7 +369,7 @@ exports[`Variants 1`] = `
   data-color="neutral"
 >
   <div>
-    <p data-variant="default">
+    <p>
       data-color: neutral
       <br>
       variant: default
@@ -391,7 +382,7 @@ exports[`Variants 1`] = `
   data-color="neutral"
 >
   <div>
-    <p data-variant="default">
+    <p>
       data-color: neutral
       <br>
       variant: tinted
@@ -404,7 +395,7 @@ exports[`Variants 1`] = `
   data-color="accent"
 >
   <div>
-    <p data-variant="default">
+    <p>
       data-color: accent
       <br>
       variant: default
@@ -417,7 +408,7 @@ exports[`Variants 1`] = `
   data-color="accent"
 >
   <div>
-    <p data-variant="default">
+    <p>
       data-color: accent
       <br>
       variant: tinted
@@ -430,7 +421,7 @@ exports[`Variants 1`] = `
   data-color="support1"
 >
   <div>
-    <p data-variant="default">
+    <p>
       data-color: support1
       <br>
       variant: default
@@ -443,7 +434,7 @@ exports[`Variants 1`] = `
   data-color="support1"
 >
   <div>
-    <p data-variant="default">
+    <p>
       data-color: support1
       <br>
       variant: tinted
@@ -456,7 +447,7 @@ exports[`Variants 1`] = `
   data-color="support2"
 >
   <div>
-    <p data-variant="default">
+    <p>
       data-color: support2
       <br>
       variant: default
@@ -469,7 +460,7 @@ exports[`Variants 1`] = `
   data-color="support2"
 >
   <div>
-    <p data-variant="default">
+    <p>
       data-color: support2
       <br>
       variant: tinted
@@ -480,10 +471,7 @@ exports[`Variants 1`] = `
 `;
 
 exports[`Video 1`] = `
-<div
-  data-variant="default"
-  data-color="neutral"
->
+<div data-color="neutral">
   <div>
     <iframe
       data-chromatic="ignore"
@@ -499,7 +487,7 @@ exports[`Video 1`] = `
     <h2>
       Ny opplæringslov
     </h2>
-    <p data-variant="default">
+    <p>
       Kunnskapsminister Kari Nessa Nordtun om den nye opplæringsloven.
     </p>
   </div>
@@ -508,7 +496,6 @@ exports[`Video 1`] = `
 
 exports[`With Anchor 1`] = `
 <div
-  data-variant="default"
   data-color="support1"
   data-clickdelegatefor="<removed>"
 >
@@ -529,19 +516,15 @@ exports[`With Anchor 1`] = `
         Påmelding til eksamen
       </a>
     </h2>
-    <p data-variant="default">
+    <p>
       Du må melde deg på innen 1. februar for våreksamen og 15. september for høsteksamen.
     </p>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       Privatisteksamen
     </p>
   </div>
 </div>
 <div
-  data-variant="default"
   data-color="neutral"
   data-clickdelegatefor="<removed>"
 >
@@ -556,13 +539,10 @@ exports[`With Anchor 1`] = `
         Påmelding til eksamen
       </a>
     </h2>
-    <p data-variant="default">
+    <p>
       Du må melde deg på innen 1. februar for våreksamen og 15. september for høsteksamen.
     </p>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       Privatisteksamen
     </p>
   </div>
@@ -577,7 +557,6 @@ exports[`With Anchor 1`] = `
 
 exports[`With Anchor Focused 1`] = `
 <div
-  data-variant="default"
   data-color="support1"
   data-clickdelegatefor="<removed>"
 >
@@ -598,19 +577,15 @@ exports[`With Anchor Focused 1`] = `
         Påmelding til eksamen
       </a>
     </h2>
-    <p data-variant="default">
+    <p>
       Du må melde deg på innen 1. februar for våreksamen og 15. september for høsteksamen.
     </p>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       Privatisteksamen
     </p>
   </div>
 </div>
 <div
-  data-variant="default"
   data-color="neutral"
   data-clickdelegatefor="<removed>"
 >
@@ -625,13 +600,10 @@ exports[`With Anchor Focused 1`] = `
         Påmelding til eksamen
       </a>
     </h2>
-    <p data-variant="default">
+    <p>
       Du må melde deg på innen 1. februar for våreksamen og 15. september for høsteksamen.
     </p>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       Privatisteksamen
     </p>
   </div>
@@ -646,7 +618,6 @@ exports[`With Anchor Focused 1`] = `
 
 exports[`With Link 1`] = `
 <div
-  data-variant="default"
   data-color="support1"
   data-clickdelegatefor="<removed>"
 >
@@ -667,19 +638,15 @@ exports[`With Link 1`] = `
         Påmelding til eksamen
       </a>
     </h2>
-    <p data-variant="default">
+    <p>
       Du må melde deg på innen 1. februar for våreksamen og 15. september for høsteksamen.
     </p>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       Privatisteksamen
     </p>
   </div>
 </div>
 <div
-  data-variant="default"
   data-color="neutral"
   data-clickdelegatefor="<removed>"
 >
@@ -694,13 +661,10 @@ exports[`With Link 1`] = `
         Påmelding til eksamen
       </a>
     </h2>
-    <p data-variant="default">
+    <p>
       Du må melde deg på innen 1. februar for våreksamen og 15. september for høsteksamen.
     </p>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       Privatisteksamen
     </p>
   </div>
@@ -715,7 +679,6 @@ exports[`With Link 1`] = `
 
 exports[`With Link Focused 1`] = `
 <div
-  data-variant="default"
   data-color="support1"
   data-clickdelegatefor="<removed>"
 >
@@ -736,19 +699,15 @@ exports[`With Link Focused 1`] = `
         Påmelding til eksamen
       </a>
     </h2>
-    <p data-variant="default">
+    <p>
       Du må melde deg på innen 1. februar for våreksamen og 15. september for høsteksamen.
     </p>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       Privatisteksamen
     </p>
   </div>
 </div>
 <div
-  data-variant="default"
   data-color="neutral"
   data-clickdelegatefor="<removed>"
 >
@@ -763,13 +722,10 @@ exports[`With Link Focused 1`] = `
         Påmelding til eksamen
       </a>
     </h2>
-    <p data-variant="default">
+    <p>
       Du må melde deg på innen 1. februar for våreksamen og 15. september for høsteksamen.
     </p>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       Privatisteksamen
     </p>
   </div>

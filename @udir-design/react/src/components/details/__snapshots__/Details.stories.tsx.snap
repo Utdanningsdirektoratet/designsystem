@@ -27,7 +27,7 @@ exports[`Controlled 1`] = `
   Åpne alle
 </button>
 <br>
-<details data-variant="default">
+<details>
   <summary>
     Hva er Feide?
   </summary>
@@ -43,7 +43,7 @@ exports[`Controlled 1`] = `
     </p>
   </div>
 </details>
-<details data-variant="default">
+<details>
   <summary>
     Hva er UIDP?
   </summary>
@@ -62,7 +62,7 @@ exports[`Controlled 1`] = `
     </p>
   </div>
 </details>
-<details data-variant="default">
+<details>
   <summary>
     Hva er UBAS?
   </summary>
@@ -78,11 +78,8 @@ exports[`Controlled 1`] = `
 `;
 
 exports[`In Card 1`] = `
-<div
-  data-variant="default"
-  data-color="neutral"
->
-  <details data-variant="default">
+<div data-color="neutral">
+  <details>
     <summary>
       Vedlegg
     </summary>
@@ -126,7 +123,7 @@ exports[`In Card With Color 1`] = `
   data-variant="tinted"
   data-color="accent"
 >
-  <details data-variant="default">
+  <details>
     <summary>
       Kva er nasjonale prøver?
     </summary>
@@ -134,7 +131,7 @@ exports[`In Card With Color 1`] = `
       Føremålet med nasjonale prøver er å gi skolane kunnskap om elevane sine grunnleggjande ferdigheiter i lesing, rekning og engelsk. Informasjonen frå prøvene skal danne grunnlag for undervegsvurdering og kvalitetsutvikling på alle nivå i skolesystemet.
     </div>
   </details>
-  <details data-variant="default">
+  <details>
     <summary>
       Korleis skal nasjonale prøver brukast?
     </summary>
@@ -156,7 +153,7 @@ exports[`In Card With Color 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<details data-variant="default">
+<details>
   <summary>
     Kva er nasjonale prøver?
   </summary>
@@ -178,7 +175,7 @@ exports[`Pseudo States 1`] = `
   <label data-size="sm">
     Default
   </label>
-  <details data-variant="default">
+  <details>
     <summary>
       Kva er nasjonale prøver?
     </summary>
@@ -189,7 +186,7 @@ exports[`Pseudo States 1`] = `
   <label data-size="sm">
     Hover
   </label>
-  <details data-variant="default">
+  <details>
     <summary>
       Kva er nasjonale prøver?
     </summary>
@@ -200,7 +197,7 @@ exports[`Pseudo States 1`] = `
   <label data-size="sm">
     Focused
   </label>
-  <details data-variant="default">
+  <details>
     <summary>
       Kva er nasjonale prøver?
     </summary>

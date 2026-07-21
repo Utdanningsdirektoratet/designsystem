@@ -14,10 +14,7 @@ exports[`Example Drop Zone 1`] = `
   >
     Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
   </div>
-  <div
-    data-variant="default"
-    role="presentation"
-  >
+  <div role="presentation">
     <div>
     </div>
     <button
@@ -59,10 +56,7 @@ exports[`Example Drop Zone 1`] = `
 <h3 data-size="2xs">
   Vedlegg (1):
 </h3>
-<div
-  data-variant="default"
-  aria-invalid="false"
->
+<div aria-invalid="false">
   <div>
     <div>
       <svg
@@ -93,10 +87,7 @@ exports[`Example Drop Zone 1`] = `
       <a download="eksempel1.pdf">
         eksempel1.pdf
       </a>
-      <p
-        data-variant="default"
-        data-size="sm"
-      >
+      <p data-size="sm">
         0.29 MB
       </p>
     </div>
@@ -154,10 +145,7 @@ exports[`Example Dropzone With Explicit Size 1`] = `
   >
     Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
   </div>
-  <div
-    data-variant="default"
-    role="presentation"
-  >
+  <div role="presentation">
     <div>
     </div>
     <button
@@ -199,10 +187,7 @@ exports[`Example Dropzone With Explicit Size 1`] = `
 <h3 data-size="2xs">
   Vedlegg (1):
 </h3>
-<div
-  data-variant="default"
-  aria-invalid="false"
->
+<div aria-invalid="false">
   <div>
     <div>
       <svg
@@ -233,10 +218,7 @@ exports[`Example Dropzone With Explicit Size 1`] = `
       <a download="eksempel1.pdf">
         eksempel1.pdf
       </a>
-      <p
-        data-variant="default"
-        data-size="sm"
-      >
+      <p data-size="sm">
         0.29 MB
       </p>
     </div>
@@ -289,10 +271,7 @@ exports[`Example Items 1`] = `
   <h3 data-size="2xs">
     Vedlegg (3):
   </h3>
-  <div
-    data-variant="default"
-    aria-invalid="false"
-  >
+  <div aria-invalid="false">
     <div>
       <div>
         <svg
@@ -323,10 +302,7 @@ exports[`Example Items 1`] = `
         <a download="eksempel2.docx">
           eksempel2.docx
         </a>
-        <p
-          data-variant="default"
-          data-size="sm"
-        >
+        <p data-size="sm">
           Filopplasting 1
         </p>
       </div>
@@ -365,10 +341,7 @@ exports[`Example Items 1`] = `
     >
     </div>
   </div>
-  <div
-    data-variant="default"
-    aria-invalid="false"
-  >
+  <div aria-invalid="false">
     <div>
       <div>
         <svg
@@ -394,10 +367,7 @@ exports[`Example Items 1`] = `
         <a download="eksempel3.png">
           eksempel3.png
         </a>
-        <p
-          data-variant="default"
-          data-size="sm"
-        >
+        <p data-size="sm">
           Filopplasting 2
         </p>
       </div>
@@ -436,10 +406,7 @@ exports[`Example Items 1`] = `
     >
     </div>
   </div>
-  <div
-    data-variant="default"
-    aria-invalid="false"
-  >
+  <div aria-invalid="false">
     <div>
       <div>
         <svg
@@ -470,10 +437,7 @@ exports[`Example Items 1`] = `
         <a download="eksempel4.pdf">
           eksempel4.pdf
         </a>
-        <p
-          data-variant="default"
-          data-size="sm"
-        >
+        <p data-size="sm">
           Filopplasting 3
         </p>
       </div>
@@ -490,10 +454,7 @@ exports[`Example Items 1`] = `
   >
     Vedlegg med feil:
   </h3>
-  <div
-    data-variant="default"
-    aria-invalid="true"
-  >
+  <div aria-invalid="true">
     <div>
       <div>
         <svg
@@ -519,10 +480,7 @@ exports[`Example Items 1`] = `
         <a download="eksempel5.tsx">
           eksempel5.tsx
         </a>
-        <p
-          data-variant="default"
-          data-size="sm"
-        >
+        <p data-size="sm">
           0.82 MB
         </p>
       </div>
@@ -559,7 +517,7 @@ exports[`Example Items 1`] = `
       aria-relevant="additions removals"
       aria-live="polite"
     >
-      <p data-variant="default">
+      <p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1em"
@@ -642,10 +600,7 @@ exports[`Example Trigger 1`] = `
   <h3 data-size="2xs">
     Vedlegg (1):
   </h3>
-  <div
-    data-variant="default"
-    aria-invalid="false"
-  >
+  <div aria-invalid="false">
     <div>
       <div>
         <svg
@@ -671,10 +626,7 @@ exports[`Example Trigger 1`] = `
         <a download="eksempel1.png">
           eksempel1.png
         </a>
-        <p
-          data-variant="default"
-          data-size="sm"
-        >
+        <p data-size="sm">
           0.29 MB
         </p>
       </div>
@@ -780,10 +732,7 @@ exports[`Preview 1`] = `
     >
       Beskrivelse
     </div>
-    <div
-      data-variant="default"
-      role="presentation"
-    >
+    <div role="presentation">
       <div>
       </div>
       <button
@@ -895,7 +844,7 @@ exports[`Readonly 1`] = `
     >
       Beskrivelse for Dropzone
     </div>
-    <div data-variant="default">
+    <div>
       <div>
       </div>
     </div>
@@ -930,10 +879,7 @@ exports[`Too Many Files 1`] = `
     >
       Du kan kun laste opp 2 filer.
     </div>
-    <div
-      data-variant="default"
-      role="presentation"
-    >
+    <div role="presentation">
       <div>
       </div>
       <button
@@ -977,10 +923,7 @@ exports[`Too Many Files 1`] = `
   <h3 data-size="2xs">
     Vedlegg (3):
   </h3>
-  <div
-    data-variant="default"
-    aria-invalid="false"
-  >
+  <div aria-invalid="false">
     <div>
       <div>
         <svg
@@ -1011,10 +954,7 @@ exports[`Too Many Files 1`] = `
         <a download="eksempel1.pdf">
           eksempel1.pdf
         </a>
-        <p
-          data-variant="default"
-          data-size="sm"
-        >
+        <p data-size="sm">
           0.29 MB
         </p>
       </div>
@@ -1053,10 +993,7 @@ exports[`Too Many Files 1`] = `
     >
     </div>
   </div>
-  <div
-    data-variant="default"
-    aria-invalid="false"
-  >
+  <div aria-invalid="false">
     <div>
       <div>
         <svg
@@ -1087,10 +1024,7 @@ exports[`Too Many Files 1`] = `
         <a download="eksempel2.docx">
           eksempel2.docx
         </a>
-        <p
-          data-variant="default"
-          data-size="sm"
-        >
+        <p data-size="sm">
           8.79 KB
         </p>
       </div>
@@ -1129,10 +1063,7 @@ exports[`Too Many Files 1`] = `
     >
     </div>
   </div>
-  <div
-    data-variant="default"
-    aria-invalid="false"
-  >
+  <div aria-invalid="false">
     <div>
       <div>
         <svg
@@ -1158,10 +1089,7 @@ exports[`Too Many Files 1`] = `
         <a download="eksempel3.png">
           eksempel3.png
         </a>
-        <p
-          data-variant="default"
-          data-size="sm"
-        >
+        <p data-size="sm">
           2.86 MB
         </p>
       </div>
@@ -1258,7 +1186,6 @@ exports[`Upload 1`] = `
     Vedlegg (1):
   </h3>
   <div
-    data-variant="default"
     aria-invalid="false"
     aria-busy="true"
   >
@@ -1291,10 +1218,7 @@ exports[`Upload 1`] = `
         <a download="rapport.pdf">
           rapport.pdf
         </a>
-        <p
-          data-variant="default"
-          data-size="sm"
-        >
+        <p data-size="sm">
         </p>
       </div>
     </div>

@@ -100,10 +100,7 @@ exports[`Fieldset Checkboxes 1`] = `
         Hvordan vil du helst at vi skal kontakte deg?
       </span>
     </legend>
-    <p
-      data-variant="default"
-      id="<removed>"
-    >
+    <p id="<removed>">
       Velg de alternativene som er relevante for deg.
     </p>
     <ds-field data-clickdelegatefor="<removed>">
@@ -288,7 +285,7 @@ exports[`Manual Summary Placement 1`] = `
   <h2 data-size="md">
     Kontaktinformasjon
   </h2>
-  <p data-variant="default">
+  <p>
     Vi trenger å vite hvordan vi kan kontakte deg i etterkant av søknaden.
   </p>
   <div>

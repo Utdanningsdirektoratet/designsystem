@@ -23,9 +23,9 @@ exports[`Controlled 1`] = `
   <ds-tablist role="tablist">
     <ds-tab
       aria-controls="_r_b_-users"
+      aria-selected="true"
       data-value="users"
       role="tab"
-      aria-selected="true"
       tabindex="0"
       id="<removed>"
     >
@@ -51,9 +51,9 @@ exports[`Controlled 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_b_-profile"
+      aria-selected="false"
       data-value="profile"
       role="tab"
-      aria-selected="false"
       tabindex="-1"
     >
       <svg
@@ -79,10 +79,10 @@ exports[`Controlled 1`] = `
   </ds-tablist>
   <ds-tabpanel
     id="<removed>"
+    role="tabpanel"
     aria-hidden="false"
     tabindex="0"
     aria-labelledby="<removed>"
-    role="tabpanel"
   >
     <ul>
       <li>
@@ -91,7 +91,6 @@ exports[`Controlled 1`] = `
           type="button"
         >
           <span
-            data-variant="circle"
             role="img"
             aria-label="Bruker 1"
             data-color="accent"
@@ -103,7 +102,6 @@ exports[`Controlled 1`] = `
       <li>
         <a href="#">
           <span
-            data-variant="circle"
             role="img"
             aria-label="Bruker 2"
             data-color="support1"
@@ -115,7 +113,6 @@ exports[`Controlled 1`] = `
       <li>
         <a href="#">
           <span
-            data-variant="circle"
             role="img"
             aria-label="Bruker 3"
             data-color="support2"
@@ -134,7 +131,6 @@ exports[`Controlled 1`] = `
   >
     <div>
       <span
-        data-variant="circle"
         role="img"
         aria-label="Bruker 1"
         data-color="accent"
@@ -145,16 +141,16 @@ exports[`Controlled 1`] = `
     <h3>
       Detaljer
     </h3>
-    <p data-variant="default">
+    <p>
       34 år
     </p>
-    <p data-variant="default">
+    <p>
       Mysen, Norge
     </p>
-    <p data-variant="default">
+    <p>
       Lærer
     </p>
-    <p data-variant="default">
+    <p>
       Mysen Videregående skole
     </p>
   </ds-tabpanel>
@@ -166,9 +162,9 @@ exports[`Icons With Text 1`] = `
   <ds-tablist role="tablist">
     <ds-tab
       aria-controls="_r_2_-barnehage"
+      aria-selected="true"
       data-value="barnehage"
       role="tab"
-      aria-selected="true"
       tabindex="0"
       id="<removed>"
     >
@@ -194,9 +190,9 @@ exports[`Icons With Text 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_2_-grunnskole"
+      aria-selected="false"
       data-value="grunnskole"
       role="tab"
-      aria-selected="false"
       tabindex="-1"
     >
       <svg
@@ -221,9 +217,9 @@ exports[`Icons With Text 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_2_-videregående"
+      aria-selected="false"
       data-value="videregående"
       role="tab"
-      aria-selected="false"
       tabindex="-1"
     >
       <svg
@@ -249,10 +245,10 @@ exports[`Icons With Text 1`] = `
   </ds-tablist>
   <ds-tabpanel
     id="<removed>"
+    role="tabpanel"
     aria-hidden="false"
     tabindex="0"
     aria-labelledby="<removed>"
-    role="tabpanel"
   >
     Innhold for barnehage
   </ds-tabpanel>
@@ -280,14 +276,13 @@ exports[`Only Icons 1`] = `
   <ds-tablist role="tablist">
     <ds-tab
       aria-controls="_r_6_-gallery"
+      aria-selected="false"
       data-value="gallery"
+      role="tab"
       data-tooltip="Galleri"
       data-placement="top"
       data-autoplacement
-      role="tab"
-      aria-selected="false"
       tabindex="-1"
-      id="<removed>"
       aria-label="Galleri"
     >
       <svg
@@ -311,12 +306,12 @@ exports[`Only Icons 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_6_-profile"
+      aria-selected="true"
       data-value="profile"
+      role="tab"
       data-tooltip="Profilen din"
       data-placement="top"
       data-autoplacement
-      role="tab"
-      aria-selected="true"
       tabindex="0"
       id="<removed>"
       aria-label="Profilen din"
@@ -342,12 +337,12 @@ exports[`Only Icons 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_6_-notifications"
+      aria-selected="false"
       data-value="notifications"
+      role="tab"
       data-tooltip="Varsler"
       data-placement="top"
       data-autoplacement
-      role="tab"
-      aria-selected="false"
       tabindex="-1"
       aria-label="Varsler"
     >
@@ -372,12 +367,12 @@ exports[`Only Icons 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_6_-settings"
+      aria-selected="false"
       data-value="settings"
+      role="tab"
       data-tooltip="Innstillinger"
       data-placement="top"
       data-autoplacement
-      role="tab"
-      aria-selected="false"
       tabindex="-1"
       aria-label="Innstillinger"
     >
@@ -403,9 +398,8 @@ exports[`Only Icons 1`] = `
   </ds-tablist>
   <ds-tabpanel
     id="<removed>"
-    aria-hidden="true"
-    aria-labelledby="<removed>"
     role="tabpanel"
+    aria-hidden="true"
     hidden
   >
     Innhold for galleri
@@ -443,9 +437,9 @@ exports[`Only Text 1`] = `
   <ds-tablist role="tablist">
     <ds-tab
       aria-controls="_r_1_-oversikt"
+      aria-selected="true"
       data-value="oversikt"
       role="tab"
-      aria-selected="true"
       tabindex="0"
       id="<removed>"
     >
@@ -453,18 +447,18 @@ exports[`Only Text 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_1_-prøver"
+      aria-selected="false"
       data-value="prøver"
       role="tab"
-      aria-selected="false"
       tabindex="-1"
     >
       Prøver
     </ds-tab>
     <ds-tab
       aria-controls="_r_1_-prøvesvar"
+      aria-selected="false"
       data-value="prøvesvar"
       role="tab"
-      aria-selected="false"
       tabindex="-1"
     >
       Prøvesvar
@@ -472,10 +466,10 @@ exports[`Only Text 1`] = `
   </ds-tablist>
   <ds-tabpanel
     id="<removed>"
+    role="tabpanel"
     aria-hidden="false"
     tabindex="0"
     aria-labelledby="<removed>"
-    role="tabpanel"
   >
     Innhold for oversikt
   </ds-tabpanel>
@@ -503,9 +497,9 @@ exports[`Preview 1`] = `
   <ds-tablist role="tablist">
     <ds-tab
       aria-controls="_r_0_-value1"
+      aria-selected="true"
       data-value="value1"
       role="tab"
-      aria-selected="true"
       tabindex="0"
       id="<removed>"
     >
@@ -513,9 +507,9 @@ exports[`Preview 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_0_-value2"
+      aria-selected="false"
       data-value="value2"
       role="tab"
-      aria-selected="false"
       tabindex="-1"
       id="<removed>"
     >
@@ -523,9 +517,9 @@ exports[`Preview 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_0_-value3"
+      aria-selected="false"
       data-value="value3"
       role="tab"
-      aria-selected="false"
       tabindex="-1"
       id="<removed>"
     >
@@ -534,9 +528,9 @@ exports[`Preview 1`] = `
   </ds-tablist>
   <ds-tabpanel
     id="<removed>"
+    role="tabpanel"
     aria-hidden="false"
     aria-labelledby="<removed>"
-    role="tabpanel"
     tabindex="0"
   >
     Innhold for Tab 1

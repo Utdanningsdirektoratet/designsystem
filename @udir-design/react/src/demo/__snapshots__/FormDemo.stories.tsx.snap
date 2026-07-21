@@ -222,10 +222,7 @@ exports[`Form Page 2 1`] = `
             Kategori
           </span>
         </legend>
-        <p
-          data-variant="default"
-          id="<removed>"
-        >
+        <p id="<removed>">
           Hvilken kategori hører prosjektet til?
         </p>
         <ds-field data-clickdelegatefor="<removed>">
@@ -823,10 +820,7 @@ exports[`Form Page 3 1`] = `
         >
           Du kan laste opp filer i PDF-format. Filer kan være opptil 25 MB.
         </div>
-        <div
-          data-variant="default"
-          role="presentation"
-        >
+        <div role="presentation">
           <div>
           </div>
           <button
@@ -1161,7 +1155,7 @@ exports[`Form Page 4 1`] = `
       <h2>
         Innsending
       </h2>
-      <p data-variant="default">
+      <p>
         Send inn søknaden.
       </p>
       <div>
@@ -1440,13 +1434,10 @@ exports[`Form Page 5 1`] = `
         <h2 data-size="sm">
           Kvittering
         </h2>
-        <p
-          data-variant="default"
-          data-size="xl"
-        >
+        <p data-size="xl">
           Takk!
         </p>
-        <p data-variant="default">
+        <p>
           Vi har mottatt din søknad. Du hører tilbake innen en måned.
         </p>
       </div>
@@ -1720,10 +1711,7 @@ exports[`Form Story 1`] = `
             Hvordan ønsker du at vi skal kontakte deg?
           </span>
         </legend>
-        <p
-          data-variant="default"
-          id="<removed>"
-        >
+        <p id="<removed>">
           Velg ett eller flere alternativer
         </p>
         <ds-field data-clickdelegatefor="<removed>">

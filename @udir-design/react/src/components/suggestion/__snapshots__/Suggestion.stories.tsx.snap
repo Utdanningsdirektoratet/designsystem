@@ -388,10 +388,7 @@ exports[`Controlled Multiple 1`] = `
   aria-hidden="true"
   style="<removed>"
 >
-<p
-  data-variant="default"
-  style="<removed>"
->
+<p style="<removed>">
   Valgte reisemål: Sogndal, Stavanger
 </p>
 <button type="button">
@@ -546,10 +543,7 @@ exports[`Controlled Single 1`] = `
   aria-hidden="true"
   style="<removed>"
 >
-<p
-  data-variant="default"
-  style="<removed>"
->
+<p style="<removed>">
   Valgte reisemål: Sogndal
 </p>
 <button type="button">
@@ -957,7 +951,7 @@ exports[`Fetch External 1`] = `
 `;
 
 exports[`In Details 1`] = `
-<details data-variant="default">
+<details>
   <summary>
     Åpne details som har overflow: clip;
   </summary>

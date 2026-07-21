@@ -5,14 +5,10 @@
   "themes": {
     "udir": {
       "colors": {
-        "main": {
-          "accent": "#76c69d"
-        },
-        "neutral": "#303030",
-        "support": {
-          "support1": "#bed5e8",
-          "support2": "#e5ceae"
-        }
+        "accent": "#76c69d",
+        "support1": "#bed5e8",
+        "support2": "#e5ceae",
+        "neutral": "#303030"
       },
       "overrides": {
         "severity": {

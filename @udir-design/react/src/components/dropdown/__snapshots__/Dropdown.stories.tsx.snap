@@ -7,7 +7,6 @@ exports[`Avatars 1`] = `
   popovertarget="_r_5_"
 >
   <span
-    data-variant="circle"
     role="img"
     aria-label="Kai Nordmann"
   >
@@ -36,7 +35,6 @@ exports[`Avatars 1`] = `
   id="<removed>"
   popover="manual"
   data-placement="bottom-end"
-  data-variant="default"
   data-floating="bottom-end"
   style="<removed>"
 >
@@ -50,7 +48,6 @@ exports[`Avatars 1`] = `
         type="button"
       >
         <span
-          data-variant="circle"
           role="img"
           aria-label="Kai Nordmann"
         >
@@ -64,7 +61,6 @@ exports[`Avatars 1`] = `
         type="button"
       >
         <span
-          data-variant="circle"
           role="img"
           aria-label="Sarpsborg kommune"
           data-color="support1"
@@ -89,10 +85,7 @@ exports[`Avatars 1`] = `
           </svg>
         </span>
         Sarpsborg kommune
-        <span
-          data-count="9+"
-          data-variant="base"
-        >
+        <span data-count="9+">
         </span>
       </button>
     </li>
@@ -157,7 +150,6 @@ exports[`Controlled 1`] = `
   id="<removed>"
   popover="manual"
   data-placement="bottom-end"
-  data-variant="default"
   data-floating="bottom-end"
   style="<removed>"
 >
@@ -236,7 +228,6 @@ exports[`Controlled Without Context 1`] = `
   id="<removed>"
   popover="manual"
   data-placement="bottom-end"
-  data-variant="default"
   data-floating="bottom-end"
   style="<removed>"
 >
@@ -296,7 +287,6 @@ exports[`Icons 1`] = `
   id="<removed>"
   popover="manual"
   data-placement="bottom-end"
-  data-variant="default"
   data-floating="bottom-end"
   style="<removed>"
 >
@@ -390,7 +380,6 @@ exports[`Preview 1`] = `
   id="<removed>"
   popover="manual"
   data-placement="bottom-end"
-  data-variant="default"
   data-floating="bottom-end"
   style="<removed>"
 >
@@ -430,7 +419,6 @@ exports[`Selected 1`] = `
   id="<removed>"
   popover="manual"
   data-placement="bottom-end"
-  data-variant="default"
   data-floating="bottom-end"
   style="<removed>"
 >
@@ -494,7 +482,6 @@ exports[`Without Context 1`] = `
   id="<removed>"
   popover="manual"
   data-placement="bottom-end"
-  data-variant="default"
   data-floating="bottom-end"
   style="<removed>"
 >
