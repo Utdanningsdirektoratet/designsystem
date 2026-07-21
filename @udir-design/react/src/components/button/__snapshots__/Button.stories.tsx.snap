@@ -5,7 +5,6 @@ exports[`As Link 1`] = `
   target="_blank"
   rel="noreferrer"
   href="https://www.udir.no/"
-  data-variant="primary"
 >
   Gå til udir.no
 </a>
@@ -16,10 +15,7 @@ exports[`Button In Color Context 1`] = `
   data-variant="tinted"
   data-color="accent"
 >
-  <button
-    data-variant="primary"
-    type="button"
-  >
+  <button type="button">
     Knapp
   </button>
 </div>
@@ -138,10 +134,7 @@ exports[`Danger Pseudo States 1`] = `
 }
 </style>
 <div>
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
+  <label data-size="sm">
     Default
   </label>
   <button
@@ -219,10 +212,7 @@ exports[`Danger Pseudo States 1`] = `
     </svg>
     Slett
   </button>
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
+  <label data-size="sm">
     Hover
   </label>
   <button
@@ -300,10 +290,7 @@ exports[`Danger Pseudo States 1`] = `
     </svg>
     Slett
   </button>
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
+  <label data-size="sm">
     Pressed
   </label>
   <button
@@ -381,10 +368,7 @@ exports[`Danger Pseudo States 1`] = `
     </svg>
     Slett
   </button>
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
+  <label data-size="sm">
     Focused
   </label>
   <button
@@ -1010,10 +994,7 @@ exports[`Neutral Pseudo States 1`] = `
 }
 </style>
 <div>
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
+  <label data-size="sm">
     Default
   </label>
   <button
@@ -1091,10 +1072,7 @@ exports[`Neutral Pseudo States 1`] = `
     </svg>
     Videresend
   </button>
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
+  <label data-size="sm">
     Hover
   </label>
   <button
@@ -1172,10 +1150,7 @@ exports[`Neutral Pseudo States 1`] = `
     </svg>
     Videresend
   </button>
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
+  <label data-size="sm">
     Pressed
   </label>
   <button
@@ -1253,10 +1228,7 @@ exports[`Neutral Pseudo States 1`] = `
     </svg>
     Videresend
   </button>
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
+  <label data-size="sm">
     Focused
   </label>
   <button

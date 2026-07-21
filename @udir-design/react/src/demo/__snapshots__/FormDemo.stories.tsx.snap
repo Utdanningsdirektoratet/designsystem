@@ -179,10 +179,7 @@ exports[`Form Page 2 1`] = `
       <div>
       </div>
       <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
+        <label for="<removed>">
           <span>
             Tittel på prosjektet
           </span>
@@ -198,10 +195,7 @@ exports[`Form Page 2 1`] = `
         </div>
       </ds-field>
       <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
+        <label for="<removed>">
           <span>
             Beskrivelse av prosjektet
           </span>
@@ -223,10 +217,7 @@ exports[`Form Page 2 1`] = `
         tabindex="-1"
         aria-labelledby="<removed>"
       >
-        <legend
-          data-weight="medium"
-          id="<removed>"
-        >
+        <legend id="<removed>">
           <span>
             Kategori
           </span>
@@ -298,10 +289,7 @@ exports[`Form Page 2 1`] = `
         </details>
       </fieldset>
       <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
+        <label for="<removed>">
           <span>
             Gjennomføringssted
           </span>
@@ -504,10 +492,7 @@ exports[`Form Page 2 1`] = `
         </ds-suggestion>
       </ds-field>
       <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
+        <label for="<removed>">
           <span>
             Aldersgruppe
           </span>
@@ -614,7 +599,6 @@ exports[`Form Page 2 1`] = `
               Avbryt
             </button>
             <button
-              data-variant="primary"
               type="submit"
               style="<removed>"
             >
@@ -826,7 +810,6 @@ exports[`Form Page 3 1`] = `
       </div>
       <div>
         <label
-          data-weight="medium"
           id="<removed>"
           for="<removed>"
         >
@@ -885,10 +868,7 @@ exports[`Form Page 3 1`] = `
         >
       </div>
       <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
+        <label for="<removed>">
           <span>
             Kommentarer til dokumentasjon
           </span>
@@ -974,7 +954,6 @@ exports[`Form Page 3 1`] = `
               Avbryt
             </button>
             <button
-              data-variant="primary"
               type="submit"
               style="<removed>"
             >
@@ -1210,7 +1189,6 @@ exports[`Form Page 4 1`] = `
           Forrige
         </button>
         <button
-          data-variant="primary"
           type="button"
           style="<removed>"
         >
@@ -1254,7 +1232,6 @@ exports[`Form Page 4 1`] = `
               Avbryt
             </button>
             <button
-              data-variant="primary"
               type="submit"
               style="<removed>"
             >
@@ -1494,7 +1471,6 @@ exports[`Form Page 5 1`] = `
               Avbryt
             </button>
             <button
-              data-variant="primary"
               type="submit"
               style="<removed>"
             >
@@ -1705,10 +1681,7 @@ exports[`Form Story 1`] = `
       <div>
       </div>
       <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
+        <label for="<removed>">
           <span>
             Fornavn
           </span>
@@ -1724,10 +1697,7 @@ exports[`Form Story 1`] = `
         </div>
       </ds-field>
       <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
+        <label for="<removed>">
           <span>
             Etternavn
           </span>
@@ -1745,10 +1715,7 @@ exports[`Form Story 1`] = `
         tabindex="-1"
         aria-labelledby="<removed>"
       >
-        <legend
-          data-weight="medium"
-          id="<removed>"
-        >
+        <legend id="<removed>">
           <span>
             Hvordan ønsker du at vi skal kontakte deg?
           </span>
@@ -1855,7 +1822,6 @@ exports[`Form Story 1`] = `
               Avbryt
             </button>
             <button
-              data-variant="primary"
               type="submit"
               style="<removed>"
             >

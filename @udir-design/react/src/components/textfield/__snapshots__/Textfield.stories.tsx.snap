@@ -2,10 +2,7 @@
 
 exports[`Affix 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Hvor mange kroner koster det per måned?
   </label>
   <div>
@@ -38,10 +35,7 @@ exports[`Controlled 1`] = `
 </style>
 <div>
   <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
+    <label for="<removed>">
       Fullt navn
     </label>
     <div>
@@ -64,10 +58,7 @@ exports[`Controlled 1`] = `
 
 exports[`Counter 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Legg til en beskrivelse
   </label>
   <div>
@@ -92,10 +83,7 @@ exports[`Counter 1`] = `
 
 exports[`Disabled 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Disabled Textfield
   </label>
   <div>
@@ -107,10 +95,7 @@ exports[`Disabled 1`] = `
   </div>
 </ds-field>
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Disabled multiline Textfield
   </label>
   <div>
@@ -127,10 +112,7 @@ exports[`Disabled 1`] = `
 
 exports[`Focused 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Label
   </label>
   <div>
@@ -144,10 +126,7 @@ exports[`Focused 1`] = `
 
 exports[`Format 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Fødselsnummer
   </label>
   <div>
@@ -163,10 +142,7 @@ exports[`Format 1`] = `
 
 exports[`Preview 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Label
   </label>
   <div>
@@ -180,10 +156,7 @@ exports[`Preview 1`] = `
 
 exports[`Read Only 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     ReadOnly Textfield
   </label>
   <div>
@@ -195,10 +168,7 @@ exports[`Read Only 1`] = `
   </div>
 </ds-field>
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     ReadOnly multiline Textfield
   </label>
   <div>
@@ -215,10 +185,7 @@ exports[`Read Only 1`] = `
 
 exports[`Rows 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Beskrivelse
   </label>
   <div>

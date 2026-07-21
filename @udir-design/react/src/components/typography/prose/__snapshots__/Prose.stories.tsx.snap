@@ -387,7 +387,6 @@ exports[`With Dialog 1`] = `
 </style>
 <div>
   <button
-    data-variant="primary"
     type="button"
     aria-haspopup="dialog"
   >
@@ -475,7 +474,6 @@ exports[`With Popover 1`] = `
     <div>
       <div>
         <button
-          data-variant="primary"
           type="button"
           data-size="sm"
         >

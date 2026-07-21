@@ -2,10 +2,7 @@
 
 exports[`Always Show All 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Viser alle options også når valgt
   </label>
   <ds-suggestion>
@@ -50,8 +47,8 @@ exports[`Always Show All 1`] = `
       id="<removed>"
       data-is-floating="true"
       aria-label="Viser alle options også når valgt"
-      data-floating="bottom"
       style="<removed>"
+      data-floating="bottom"
     >
       <u-option
         selected
@@ -124,10 +121,7 @@ exports[`Always Show All 1`] = `
 
 exports[`Controlled Independent Label Value 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Velg person
   </label>
   <ds-suggestion>
@@ -172,8 +166,8 @@ exports[`Controlled Independent Label Value 1`] = `
       id="<removed>"
       data-is-floating="true"
       aria-label="Velg person"
-      data-floating="bottom"
       style="<removed>"
+      data-floating="bottom"
     >
       <u-option
         label="Lars"
@@ -243,10 +237,7 @@ exports[`Controlled Independent Label Value 1`] = `
 
 exports[`Controlled Multiple 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Velg destinasjoner
   </label>
   <ds-suggestion data-multiple>
@@ -403,20 +394,14 @@ exports[`Controlled Multiple 1`] = `
 >
   Valgte reisemål: Sogndal, Stavanger
 </p>
-<button
-  data-variant="primary"
-  type="button"
->
+<button type="button">
   Sett reisemål til Sogndal, Stavanger
 </button>
 `;
 
 exports[`Controlled Single 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Velg destinasjon
   </label>
   <ds-suggestion>
@@ -567,20 +552,14 @@ exports[`Controlled Single 1`] = `
 >
   Valgte reisemål: Sogndal
 </p>
-<button
-  data-variant="primary"
-  type="button"
->
+<button type="button">
   Sett reisemål til Sogndal
 </button>
 `;
 
 exports[`Custom Filter Alt 1 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Skriv inn et tall mellom 1-6
   </label>
   <ds-suggestion>
@@ -617,8 +596,8 @@ exports[`Custom Filter Alt 1 1`] = `
       id="<removed>"
       data-is-floating="true"
       aria-label="Skriv inn et tall mellom 1-6"
-      data-floating="bottom"
       style="<removed>"
+      data-floating="bottom"
     >
       <u-option
         value="sogndal"
@@ -697,10 +676,7 @@ exports[`Custom Filter Alt 1 1`] = `
 
 exports[`Custom Filter Alt 2 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Skriv inn et tall mellom 1-6
   </label>
   <ds-suggestion>
@@ -737,8 +713,8 @@ exports[`Custom Filter Alt 2 1`] = `
       id="<removed>"
       data-is-floating="true"
       aria-label="Skriv inn et tall mellom 1-6"
-      data-floating="bottom"
       style="<removed>"
+      data-floating="bottom"
     >
       <u-option
         role="option"
@@ -810,10 +786,7 @@ exports[`Custom Filter Alt 2 1`] = `
 
 exports[`Default Value 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Velg en destinasjon
   </label>
   <ds-suggestion>
@@ -858,8 +831,8 @@ exports[`Default Value 1`] = `
       id="<removed>"
       data-is-floating="true"
       aria-label="Velg en destinasjon"
-      data-floating="bottom"
       style="<removed>"
+      data-floating="bottom"
     >
       <u-option
         selected
@@ -938,10 +911,7 @@ exports[`Default Value 1`] = `
 
 exports[`Fetch External 1`] = `
 <ds-field lang="en">
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Search for countries (in english)
   </label>
   <ds-suggestion>
@@ -978,8 +948,8 @@ exports[`Fetch External 1`] = `
       id="<removed>"
       data-is-floating="true"
       aria-label="Search for countries (in english)"
-      data-floating="bottom"
       style="<removed>"
+      data-floating="bottom"
     >
     </u-datalist>
   </ds-suggestion>
@@ -993,10 +963,7 @@ exports[`In Details 1`] = `
   </summary>
   <div>
     <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Velg en destinasjon
       </label>
       <ds-suggestion autofocus>
@@ -1033,8 +1000,8 @@ exports[`In Details 1`] = `
           id="<removed>"
           data-is-floating="true"
           aria-label="Velg en destinasjon"
-          data-floating="bottom"
           style="<removed>"
+          data-floating="bottom"
         >
           <u-option
             role="option"
@@ -1108,10 +1075,7 @@ exports[`In Details 1`] = `
 
 exports[`Multiple 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Velg en destinasjon
   </label>
   <ds-suggestion data-multiple>
@@ -1149,8 +1113,8 @@ exports[`Multiple 1`] = `
       id="<removed>"
       data-is-floating="true"
       aria-label="Velg en destinasjon"
-      data-floating="bottom"
       style="<removed>"
+      data-floating="bottom"
     >
       <u-option
         label="Sogndal"
@@ -1257,10 +1221,7 @@ exports[`Multiple 1`] = `
 
 exports[`Multiple Count 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Velg destinasjoner
   </label>
   <ds-suggestion
@@ -1319,8 +1280,8 @@ exports[`Multiple Count 1`] = `
       id="<removed>"
       data-is-floating="true"
       aria-label="Velg destinasjoner"
-      data-floating="bottom"
       style="<removed>"
+      data-floating="bottom"
     >
       <u-option
         label="Sogndal"
@@ -1429,10 +1390,7 @@ exports[`Multiple Count 1`] = `
 
 exports[`Preview 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Velg en destinasjon
   </label>
   <ds-suggestion>
@@ -1469,8 +1427,8 @@ exports[`Preview 1`] = `
       id="<removed>"
       data-is-floating="true"
       aria-label="Velg en destinasjon"
-      data-floating="bottom"
       style="<removed>"
+      data-floating="bottom"
     >
       <u-option
         label="Sogndal"

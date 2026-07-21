@@ -19,10 +19,7 @@ exports[`Bruk loading for knapper 1`] = `
 
 exports[`Fjern feltet 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Fullt navn
   </label>
   <div>
@@ -33,10 +30,7 @@ exports[`Fjern feltet 1`] = `
   </div>
 </ds-field>
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     Skal du registrere en bedrift?
   </legend>
   <ds-field data-clickdelegatefor="<removed>">
@@ -73,10 +67,7 @@ exports[`Fjern feltet 1`] = `
 
 exports[`Merk feltet med tekst 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     Velg hvilke informasjonskapsler du godtar
   </legend>
   <ds-field data-clickdelegatefor="<removed>">
@@ -121,10 +112,7 @@ exports[`Merk feltet med tekst 1`] = `
 
 exports[`Vis feilmeldinger 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Fullt navn
   </label>
   <div>
@@ -136,10 +124,7 @@ exports[`Vis feilmeldinger 1`] = `
   </div>
 </ds-field>
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     E-postadresse
   </label>
   <div>
@@ -176,10 +161,7 @@ exports[`Vis informasjon som ren tekst 1`] = `
   </p>
 </div>
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Telefonnummer
   </label>
   <div>

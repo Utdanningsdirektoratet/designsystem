@@ -6,10 +6,7 @@ exports[`Preview 1`] = `
     <div>
       <div>
         <ds-field>
-          <label
-            data-weight="medium"
-            for="<removed>"
-          >
+          <label for="<removed>">
             Velg fylker
           </label>
           <ds-suggestion
@@ -169,10 +166,7 @@ exports[`Preview 1`] = `
           </ds-suggestion>
         </ds-field>
         <ds-field>
-          <label
-            data-weight="medium"
-            for="<removed>"
-          >
+          <label for="<removed>">
             Velg emner
           </label>
           <ds-suggestion
@@ -262,10 +256,7 @@ exports[`Preview 1`] = `
         </ds-field>
       </div>
       <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
+        <label for="<removed>">
           Søk
         </label>
         <div>
@@ -453,7 +444,6 @@ exports[`Preview 1`] = `
           <li>
             <button
               aria-disabled="true"
-              data-variant="tertiary"
               type="button"
               aria-label="Forrige side"
             >
@@ -461,7 +451,6 @@ exports[`Preview 1`] = `
           </li>
           <li>
             <button
-              data-variant="tertiary"
               type="button"
               aria-current="true"
               aria-label="Side 1"
@@ -471,7 +460,6 @@ exports[`Preview 1`] = `
           </li>
           <li>
             <button
-              data-variant="tertiary"
               type="button"
               aria-label="Side 2"
             >
@@ -480,7 +468,6 @@ exports[`Preview 1`] = `
           </li>
           <li>
             <button
-              data-variant="tertiary"
               type="button"
               aria-label="Side 3"
             >
@@ -489,7 +476,6 @@ exports[`Preview 1`] = `
           </li>
           <li>
             <button
-              data-variant="tertiary"
               type="button"
               aria-label="Side 4"
             >
@@ -500,7 +486,6 @@ exports[`Preview 1`] = `
           </li>
           <li>
             <button
-              data-variant="tertiary"
               type="button"
               aria-label="Side 10"
             >
@@ -509,7 +494,6 @@ exports[`Preview 1`] = `
           </li>
           <li>
             <button
-              data-variant="tertiary"
               type="button"
               aria-label="Neste side"
             >
@@ -522,10 +506,7 @@ exports[`Preview 1`] = `
           Rad 1-5 av 48
         </span>
         <ds-field>
-          <label
-            data-weight="medium"
-            for="<removed>"
-          >
+          <label for="<removed>">
             Rader per side
           </label>
           <select
@@ -557,10 +538,7 @@ exports[`With Dialog 1`] = `
   <div>
     <div>
       <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
+        <label for="<removed>">
           Søk
         </label>
         <div>
@@ -629,10 +607,7 @@ exports[`With Dialog 1`] = `
             <div>
               <div>
                 <fieldset aria-labelledby="<removed>">
-                  <legend
-                    data-weight="medium"
-                    id="<removed>"
-                  >
+                  <legend id="<removed>">
                     Karaktertype
                   </legend>
                   <ds-field data-clickdelegatefor="<removed>">
@@ -684,10 +659,7 @@ exports[`With Dialog 1`] = `
               </div>
               <div>
                 <ds-field>
-                  <label
-                    data-weight="medium"
-                    for="<removed>"
-                  >
+                  <label for="<removed>">
                     Velg emner
                   </label>
                   <ds-suggestion
@@ -767,10 +739,7 @@ exports[`With Dialog 1`] = `
                   </ds-suggestion>
                 </ds-field>
                 <ds-field>
-                  <label
-                    data-weight="medium"
-                    for="<removed>"
-                  >
+                  <label for="<removed>">
                     Velg fylker
                   </label>
                   <ds-suggestion
@@ -932,10 +901,7 @@ exports[`With Dialog 1`] = `
               </div>
             </div>
             <div>
-              <button
-                data-variant="primary"
-                type="button"
-              >
+              <button type="button">
                 Lagre
               </button>
               <button
@@ -1123,7 +1089,6 @@ exports[`With Dialog 1`] = `
           <li>
             <button
               aria-disabled="true"
-              data-variant="tertiary"
               type="button"
               aria-label="Forrige side"
             >
@@ -1131,7 +1096,6 @@ exports[`With Dialog 1`] = `
           </li>
           <li>
             <button
-              data-variant="tertiary"
               type="button"
               aria-current="true"
               aria-label="Side 1"
@@ -1141,7 +1105,6 @@ exports[`With Dialog 1`] = `
           </li>
           <li>
             <button
-              data-variant="tertiary"
               type="button"
               aria-label="Side 2"
             >
@@ -1150,7 +1113,6 @@ exports[`With Dialog 1`] = `
           </li>
           <li>
             <button
-              data-variant="tertiary"
               type="button"
               aria-label="Side 3"
             >
@@ -1159,7 +1121,6 @@ exports[`With Dialog 1`] = `
           </li>
           <li>
             <button
-              data-variant="tertiary"
               type="button"
               aria-label="Side 4"
             >
@@ -1170,7 +1131,6 @@ exports[`With Dialog 1`] = `
           </li>
           <li>
             <button
-              data-variant="tertiary"
               type="button"
               aria-label="Side 10"
             >
@@ -1179,7 +1139,6 @@ exports[`With Dialog 1`] = `
           </li>
           <li>
             <button
-              data-variant="tertiary"
               type="button"
               aria-label="Neste side"
             >
@@ -1192,10 +1151,7 @@ exports[`With Dialog 1`] = `
           Rad 1-5 av 48
         </span>
         <ds-field>
-          <label
-            data-weight="medium"
-            for="<removed>"
-          >
+          <label for="<removed>">
             Rader per side
           </label>
           <select
