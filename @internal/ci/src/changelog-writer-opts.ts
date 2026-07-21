@@ -79,8 +79,7 @@ function wrapTransform(
 
     // Rename "BREAKING CHANGES" → "Breaking Changes" to match old format
     const notes = result['notes'] as
-      | { title: string; text: string }[]
-      | undefined;
+      { title: string; text: string }[] | undefined;
     if (notes) {
       for (const note of notes) {
         if (note.title === 'BREAKING CHANGES') {

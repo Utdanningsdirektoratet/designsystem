@@ -120,13 +120,11 @@ export function getSourceLinks(
 
   const links = R.toPairs(builtinLinkPaths)
     .filter((pair): pair is [BuiltInLink, string] => pair[1] !== false)
-    .map(
-      ([key, path], index): SourceLink => ({
-        label: builtinLinkLabels[key],
-        href: buildGitHubUrl(path, gitBranch),
-        order: index,
-      }),
-    );
+    .map(([key, path], index): SourceLink => ({
+      label: builtinLinkLabels[key],
+      href: buildGitHubUrl(path, gitBranch),
+      order: index,
+    }));
 
   // Create links to sibling components from a documentation page, when docs are
   // shared between multiple components (e.g. Typography and Logo)

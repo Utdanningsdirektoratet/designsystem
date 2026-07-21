@@ -17,8 +17,8 @@
 2. Press "Kopier tema"
 3. Under "Json til Figma", copy the contents under Light / Dark to
    the corresponding file under `design-tokens`:  
-    **Udir, Light**: `primitives/colors/light/udir.json`  
-    **Udir, Dark**: `primitives/colors/dark/udir.json`  
+   **Udir, Light**: `primitives/colors/light/udir.json`  
+   **Udir, Dark**: `primitives/colors/dark/udir.json`  
    This can also be done in Tokens Studio for Figma.
 4. **IMPORTANT!** In the JSON data you copied, replace `theme` on line 2
    with the correct theme identifier, depending on the theme you're customizing.
