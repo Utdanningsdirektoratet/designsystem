@@ -19,88 +19,87 @@ allowBuilds:
 catalog:
   '@babel/types': ^7.29.7
   '@types/js-yaml': ^4.0.9
-  '@commitlint/cli': ^20.5.3
-  '@commitlint/config-conventional': ^20.5.3
-  '@commitlint/types': ^20.5.0
+  '@commitlint/cli': ^21.2.1
+  '@commitlint/config-conventional': ^21.2.0
+  '@commitlint/types': ^21.2.0
   '@digdir/designsystemet': 1.15.0
   '@digdir/designsystemet-css': 1.15.0
   '@digdir/designsystemet-react': 1.15.0
   '@digdir/designsystemet-types': 1.15.0
   '@digdir/designsystemet-web': 1.15.0
-  '@eslint/js': ^9.39.4
+  '@eslint/js': ^9.39.5
   '@figma/rest-api-spec': ^0.41.0
   '@hookform/resolvers': ^5.4.0
-  '@navikt/aksel-icons': ^8.14.0
+  '@navikt/aksel-icons': 8.15.0
   '@next/eslint-plugin-next': ^16.2.10
   '@radix-ui/react-slot': ^1.3.0
-  '@storybook/addon-a11y': ^10.4.6
-  '@storybook/addon-docs': ^10.4.6
-  '@storybook/addon-vitest': ^10.4.6
+  '@storybook/addon-a11y': ^10.5.2
+  '@storybook/addon-docs': ^10.5.2
+  '@storybook/addon-vitest': ^10.5.2
   '@storybook/icons': ^2.1.0
-  '@storybook/react-vite': ^10.4.6
+  '@storybook/react-vite': ^10.5.2
   '@svgr/cli': 8.1.0
   '@svgr/core': ^8.1.0
   '@testing-library/react': ^16.3.2
   '@tokens-studio/sd-transforms': ^2.0.3
   '@types/diffable-html': ^5.0.2
   '@types/mdast': ^4.0.4
-  '@types/node': ^24.13.2
+  '@types/node': ^24.13.3
   '@types/ramda': ^0.32.0
   '@types/react': ^19.2.17
   '@types/react-dom': ^19.2.3
   '@types/remark-heading-id': ^1.0.0
   '@types/yargs': ^17.0.35
-  '@typescript-eslint/eslint-plugin': ^8.62.1
-  '@typescript-eslint/parser': ^8.62.1
+  '@typescript-eslint/eslint-plugin': ^8.64.0
+  '@typescript-eslint/parser': ^8.64.0
   '@typescript/native': npm:typescript@^7.0.2
   '@u-elements/u-details': ^1.0.0
   '@u-elements/u-progress': ^1.0.1
   '@vitejs/plugin-react-swc': ^4.3.1
-  '@vitest/browser': ^4.1.9
-  '@vitest/browser-playwright': ^4.1.9
-  '@vitest/coverage-v8': ^4.1.9
-  '@vitest/ui': ^4.1.9
-  autoprefixer: ^10.5.2
+  '@vitest/browser': ^4.1.10
+  '@vitest/browser-playwright': ^4.1.10
+  '@vitest/coverage-v8': ^4.1.10
+  '@vitest/ui': ^4.1.10
+  autoprefixer: ^10.5.4
   axe-core: ^4.12.1
   axe-playwright: ^2.2.2
   camelcase: ^9.0.0
-  chromatic: ^17.6.0
+  chromatic: ^18.0.1
   clsx: 2.1.1
   cssnano: ^7.1.9
   diffable-html: ^6.0.1
-  eslint: ^9.39.4
+  eslint: ^9.39.5
   eslint-config-next: ^16.2.10
   eslint-config-prettier: 10.1.8
   eslint-plugin-import: ^2.32.0
   eslint-plugin-jsx-a11y: ^6.10.2
   eslint-plugin-react: ^7.37.5
   eslint-plugin-react-hooks: ^7.1.1
-  eslint-plugin-storybook: ^10.4.6
+  eslint-plugin-storybook: ^10.5.2
   fast-glob: ^3.3.3
-  fuse.js: ^7.4.2
+  fuse.js: ^7.5.0
   hast-util-from-html: ^2.0.3
   hast-util-is-element: ^3.0.0
   hast-util-to-html: ^9.0.5
   highcharts: ^12.6.0
   highcharts-react-official: ^3.2.3
   husky: ^9.1.7
-  js-yaml: ^4.2.0
+  js-yaml: ^5.2.1
   jsdom: ^29.1.1
-  lodash-es: ^4.18.1
   mdast-util-to-hast: ^13.2.1
   next: ^16.2.10
   playwright: ^1.61.1
-  postcss: ^8.5.16
+  postcss: ^8.5.20
   postcss-cli: ^11.0.1
   postcss-easy-import: ^4.0.0
   postcss-load-config: ^6.0.1
   postcss-nesting: ^14.0.0
-  prettier: 3.8.3
+  prettier: 3.9.5
   ramda: ^0.32.0
   react: ^19.2.7
   react-dom: ^19.2.7
   react-dropzone: ^15.0.0
-  react-hook-form: ^7.80.0
+  react-hook-form: ^7.82.0
   react-router-dom: ^7.18.1
   react-style-stringify: ^1.2.0
   remark-gfm: ^4.0.1
@@ -111,30 +110,30 @@ catalog:
   sass: ^1.101.0
   sharp: ^0.35.3
   shx: ^0.4.0
-  storybook: ^10.4.6
-  storybook-addon-pseudo-states: ^10.4.6
+  storybook: ^10.5.2
+  storybook-addon-pseudo-states: ^10.5.2
   style-dictionary: ^5.5.0
-  svgo: ^4.0.1
-  tsdown: ^0.22.3
+  svgo: ^4.0.2
+  tsdown: ^0.22.12
   tslib: ^2.8.1
-  tsx: ^4.23.0
-  type-fest: ^5.7.0
-  typedoc: ^0.28.19
+  tsx: ^4.23.1
+  type-fest: ^5.8.0
+  typedoc: ^0.28.20
   typescript: 'npm:@typescript/typescript6@^6.0.2'
-  typescript-eslint: ^8.62.1
+  typescript-eslint: ^8.64.0
   unified: ^11.0.5
   unist-util-remove: ^4.0.0
   unist-util-visit: ^5.1.0
   vite: ^7.3.6
   vite-plugin-dts: ^4.5.4
   vite-tsconfig-paths: ^6.1.1
-  vitest: ^4.1.9
+  vitest: ^4.1.10
   yargs: ^18.0.0
   zod: ^4.4.3
-  turbo: ^2.10.3
+  turbo: ^2.10.5
   '@types/eslint-plugin-jsx-a11y': ^6.10.1
   '@eslint/config-helpers': ^0.6.0
-  semantic-release: ^25.0.5
+  semantic-release: ^25.0.8
   '@semantic-release/exec': ^7.1.0
   conventional-changelog-conventionalcommits: ^9.3.1
   conventional-changelog-writer: ^8.4.0
@@ -161,6 +160,7 @@ minimumReleaseAge: 1440
 minimumReleaseAgeExclude:
   - '@digdir/*'
   - '@u-elements/*'
+  - brace-expansion@1.1.16 || 2.1.2 || 5.0.7
 
 overrides:
   axios@>=1.0.0 <1.15.0: '>=1.15.0'

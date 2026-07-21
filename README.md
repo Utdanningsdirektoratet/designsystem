@@ -460,7 +460,7 @@ Testene utføres også automatisk før publisering av kodebibliotekene, og publi
 Fordi vi har noen egne tokensett i tillegg til de fra Digdir er prosessen for å oppdatere dem noe ulik den beskrevet hos Digdir.
 
 1. Oppdater config-fila `design-tokens/designsystemet.config.json`, manuelt eller ved bruk av temabyggeren
-2. Kjør kommandoen `pnpm --filter @udir-design/tokens run create` i terminalen
+2. Kjør kommandoen `pnpm --filter tokens run create` i terminalen
 3. Reverter sletting av våre egne tokensett (`*.overrides.json`)
 4. Se gjennom filene `$metadata.json` og `$themes.json`. Om den eneste endringen er at våre ekstra tokensett er fjernet, kan filene bare reverteres. Ellers må vi integrere endringene fra Digdir med våre ekstra linjer
 5. Kjør `pnpm turbo @udir-design/theme#build` for å oppdatere css-variabler
@@ -802,12 +802,17 @@ Nytt symbol legges til i [Symbolbiblioteket i Figma](https://www.figma.com/desig
 
 Nedlasting av oppdaterte symboler fra Figma gjøres i et lokalt repo av [Udirs Designsystem](https://github.com/Utdanningsdirektoratet/designsystem).
 
-`.env.local` må inneholde gyldig Figma-token: `FIGMA_TOKEN={token}`.
+`.env.local` må inneholde gyldig Figma-token: `FIGMA_TOKEN={token}`. [Les hvordan du lager et personal access token hos Figma](https://help.figma.com/hc/en-us/articles/8085703771159-Manage-personal-access-tokens)
 
-Kjør følgende kommando i `designsystem/@udir-design/symbols`:
+Tokenet må ha følgende scopes:
+
+- `library_content:read`
+- `file_content:read`
+
+Deretter, kjør følgende kommando i `designsystem/@udir-design/symbols`:
 
 ```bash
-pnpm --filter @udir-design/symbols run fetch-new:symbols
+pnpm --filter symbols run fetch-new:symbols
 ```
 
 ### Generere PNG
@@ -819,7 +824,7 @@ Generering av PNG-er gjøres i et lokalt repo av [Udirs Designsystem](https://gi
 Kjør følgende kommando i `designsystem/@udir-design/symbols`:
 
 ```bash
-pnpm --filter @udir-design/symbols run generate:pngs
+pnpm --filter symbols run generate:pngs
 ```
 
 ## Hvordan publisere en ny versjon
