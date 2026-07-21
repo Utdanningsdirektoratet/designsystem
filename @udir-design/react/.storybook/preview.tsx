@@ -56,6 +56,7 @@ export default definePreview({
       },
     },
 
+    htmlLang: 'nb',
     docs: docsParameters,
 
     viewport: {

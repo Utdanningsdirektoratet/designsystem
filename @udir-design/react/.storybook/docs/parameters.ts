@@ -8,6 +8,7 @@ import { hideTocForIds } from './components/HideToc';
 export const docsParameters: DocsTypes['parameters']['docs'] & {
   components?: MdxComponentOverrides;
 } = {
+  lang: 'nb',
   container: DocsContainer,
   // Configure the table of contents
   toc: {
