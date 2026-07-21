@@ -38,7 +38,7 @@ jobs:
         if: steps.prettier_run.outputs.has_changes == 1
         run: |
           git commit --all -m "style: format files with prettier ${{ steps.prettier_info.outputs.version }}"
-          echo "# $(git show -s --format='%s')\n$(git rev-parse HEAD)" > .git-blame-ignore-revs
+          echo "# $(git show -s --format='%s')\n$(git rev-parse HEAD)" >> .git-blame-ignore-revs
           git commit --all -m "chore: update .git-blame-ignore-revs"
 
       - name: Create or update pull request
