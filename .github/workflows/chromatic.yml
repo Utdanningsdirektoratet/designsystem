@@ -32,10 +32,25 @@ jobs:
       - name: Build storybook
         run: pnpm turbo run build:docs --filter=@udir-design/react
 
+      # Resolve the commit to diff runtime dependencies against. Prefer the most
+      # recent ancestor commit that already has a successful Chromatic build
+      # (the commit Chromatic will baseline TurboSnap against), so that pushing
+      # dependency-free commits to a PR that once changed deps can re-enable
+      # TurboSnap instead of being stuck on full builds. Falls back to
+      # TURBO_SCM_BASE (the PR target branch) when no such commit exists.
+      - name: Resolve dependency-diff base
+        id: dep_diff_base
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BASE=$(./@internal/ci/bin/resolve-chromatic-base.ts)
+          echo "Resolved dependency-diff base: $BASE"
+          echo "base=$BASE" >> "$GITHUB_OUTPUT"
+
       - name: Check runtime dependency changes
         id: diff_runtime_deps
         run: |
-          pnpm tsx ./@internal/ci/bin/diff-runtime-deps.ts --base "${TURBO_SCM_BASE:-main}" \
+          pnpm tsx ./@internal/ci/bin/diff-runtime-deps.ts --base "${{ steps.dep_diff_base.outputs.base }}" \
             && echo "deps_changed=false" >> "$GITHUB_OUTPUT" \
             || echo "deps_changed=true" >> "$GITHUB_OUTPUT"
 
