@@ -100,8 +100,8 @@
     &::before {
       content: '';
       display: block;
-      width: 1.3em;
-      height: 1.3em;
+      width: var(--ds-icon-size);
+      height: var(--ds-icon-size);
       background: currentColor;
       mask-image: var(--uds-header__menu-button-icon-default);
       mask-size: contain;

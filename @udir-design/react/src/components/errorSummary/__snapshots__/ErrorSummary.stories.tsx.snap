@@ -39,10 +39,7 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Show Hide 1`] = `
-<button
-  data-variant="primary"
-  type="button"
->
+<button type="button">
   Skjul feilmelding
 </button>
 <ds-error-summary
@@ -76,10 +73,7 @@ exports[`Show Hide 1`] = `
 
 exports[`With Form 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Fornavn
   </label>
   <div>
@@ -98,10 +92,7 @@ exports[`With Form 1`] = `
   </p>
 </ds-field>
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Telefon
   </label>
   <div>

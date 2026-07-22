@@ -30,10 +30,7 @@ exports[`Controlled 1`] = `
         aria-label="Tøm"
       >
       </button>
-      <button
-        data-variant="primary"
-        type="submit"
-      >
+      <button type="submit">
         Søk
       </button>
     </div>
@@ -74,10 +71,7 @@ exports[`Form 1`] = `
         aria-label="Tøm"
       >
       </button>
-      <button
-        data-variant="primary"
-        type="submit"
-      >
+      <button type="submit">
         Søk
       </button>
     </div>
@@ -127,10 +121,7 @@ exports[`Preview 1`] = `
       aria-label="Tøm"
     >
     </button>
-    <button
-      data-variant="primary"
-      type="submit"
-    >
+    <button type="submit">
       Søk
     </button>
   </div>
@@ -166,10 +157,7 @@ exports[`Variants 1`] = `
       aria-label="Tøm"
     >
     </button>
-    <button
-      data-variant="primary"
-      type="submit"
-    >
+    <button type="submit">
       Søk
     </button>
   </div>
@@ -198,10 +186,7 @@ exports[`Variants 1`] = `
 
 exports[`With Label 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Søk i læreplaner
   </label>
   <div>
@@ -218,10 +203,7 @@ exports[`With Label 1`] = `
       aria-label="Tøm"
     >
     </button>
-    <button
-      data-variant="primary"
-      type="submit"
-    >
+    <button type="submit">
       Søk
     </button>
   </div>

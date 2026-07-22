@@ -2,10 +2,7 @@
 
 exports[`Affix 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Hvor mange kroner koster det per måned?
   </label>
   <div>
@@ -27,10 +24,7 @@ exports[`Affix 1`] = `
 
 exports[`Counter 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Legg til en beskrivelse
   </label>
   <textarea
@@ -54,10 +48,7 @@ exports[`Counter 1`] = `
 
 exports[`Format 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Fødselsnummer
   </label>
   <input
@@ -83,10 +74,7 @@ exports[`Position 1`] = `
       data-position="end"
       data-clickdelegatefor="<removed>"
     >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Flymodus
       </label>
       <input
@@ -99,10 +87,7 @@ exports[`Position 1`] = `
       data-position="end"
       data-clickdelegatefor="<removed>"
     >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Lydløs
       </label>
       <input
@@ -117,10 +102,7 @@ exports[`Position 1`] = `
 
 exports[`Preview 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     E-post
   </label>
   <div

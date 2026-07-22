@@ -295,7 +295,6 @@ exports[`Preview 1`] = `
           <li>
             <button
               aria-disabled="true"
-              data-variant="tertiary"
               type="button"
               aria-label="Forrige side"
             >
@@ -303,7 +302,6 @@ exports[`Preview 1`] = `
           </li>
           <li>
             <button
-              data-variant="tertiary"
               type="button"
               aria-current="true"
               aria-label="Side 1"
@@ -313,7 +311,6 @@ exports[`Preview 1`] = `
           </li>
           <li>
             <button
-              data-variant="tertiary"
               type="button"
               aria-label="Side 2"
             >
@@ -322,7 +319,6 @@ exports[`Preview 1`] = `
           </li>
           <li>
             <button
-              data-variant="tertiary"
               type="button"
               aria-label="Side 3"
             >
@@ -331,7 +327,6 @@ exports[`Preview 1`] = `
           </li>
           <li>
             <button
-              data-variant="tertiary"
               type="button"
               aria-label="Side 4"
             >
@@ -340,7 +335,6 @@ exports[`Preview 1`] = `
           </li>
           <li>
             <button
-              data-variant="tertiary"
               type="button"
               aria-label="Side 5"
             >
@@ -349,7 +343,6 @@ exports[`Preview 1`] = `
           </li>
           <li>
             <button
-              data-variant="tertiary"
               type="button"
               aria-label="Neste side"
             >
@@ -362,10 +355,7 @@ exports[`Preview 1`] = `
           Rad 1-10 av 48
         </span>
         <ds-field>
-          <label
-            data-weight="medium"
-            for="<removed>"
-          >
+          <label for="<removed>">
             Rader per side
           </label>
           <select

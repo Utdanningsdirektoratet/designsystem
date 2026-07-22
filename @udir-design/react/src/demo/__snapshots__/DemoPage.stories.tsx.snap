@@ -38,10 +38,7 @@ exports[`Page Story 1`] = `
   <div>
     <div>
       <fieldset aria-labelledby="<removed>">
-        <legend
-          data-weight="medium"
-          id="<removed>"
-        >
+        <legend id="<removed>">
           Handleliste
         </legend>
         <ds-field data-clickdelegatefor="<removed>">
@@ -146,10 +143,7 @@ exports[`Page Story 1`] = `
         Opprett ny bruker
       </h2>
       <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
+        <label for="<removed>">
           Navn
         </label>
         <div>
@@ -162,10 +156,7 @@ exports[`Page Story 1`] = `
         </div>
       </ds-field>
       <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
+        <label for="<removed>">
           E-post
         </label>
         <div>
@@ -186,10 +177,7 @@ exports[`Page Story 1`] = `
       >
         Glemt passord?
       </a>
-      <button
-        data-variant="primary"
-        type="button"
-      >
+      <button type="button">
         Opprett ny bruker
       </button>
     </div>
@@ -484,7 +472,6 @@ exports[`Page Story 1`] = `
             </option>
           </select>
           <button
-            data-variant="primary"
             type="button"
             popovertarget="_r_3_"
           >
@@ -499,7 +486,6 @@ exports[`Page Story 1`] = `
             Er du sikker på at du vil gjennomføre? Handlingen vil utføres på alle brukere.
             <div style="<removed>">
               <button
-                data-variant="primary"
                 type="button"
                 data-size="sm"
               >
@@ -529,10 +515,7 @@ exports[`Page Story 1`] = `
             aria-label="Tøm"
           >
           </button>
-          <button
-            data-variant="primary"
-            type="submit"
-          >
+          <button type="submit">
             Søk
           </button>
         </div>

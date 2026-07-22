@@ -14,10 +14,7 @@ exports[`All Optional 1`] = `
   data-show-summary="true"
 >
   <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
+    <label for="<removed>">
       <span>
         Hva synes du om skjemaet?
       </span>
@@ -31,10 +28,7 @@ exports[`All Optional 1`] = `
     </div>
   </ds-field>
   <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
+    <label for="<removed>">
       <span>
         Har du noen andre innspill?
       </span>
@@ -64,10 +58,7 @@ exports[`All Required 1`] = `
   data-show-summary="true"
 >
   <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
+    <label for="<removed>">
       <span>
         Fornavn
       </span>
@@ -81,10 +72,7 @@ exports[`All Required 1`] = `
     </div>
   </ds-field>
   <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
+    <label for="<removed>">
       <span>
         Etternavn
       </span>
@@ -107,10 +95,7 @@ exports[`Fieldset Checkboxes 1`] = `
   data-show-summary="false"
 >
   <fieldset aria-labelledby="<removed>">
-    <legend
-      data-weight="medium"
-      id="<removed>"
-    >
+    <legend id="<removed>">
       <span>
         Hvordan vil du helst at vi skal kontakte deg?
       </span>
@@ -189,10 +174,7 @@ exports[`Fieldset Radios 1`] = `
   data-show-summary="false"
 >
   <fieldset aria-labelledby="<removed>">
-    <legend
-      data-weight="medium"
-      id="<removed>"
-    >
+    <legend id="<removed>">
       <span>
         Velg din aldersgruppe
       </span>
@@ -312,10 +294,7 @@ exports[`Manual Summary Placement 1`] = `
   <div>
   </div>
   <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
+    <label for="<removed>">
       <span>
         Fornavn
       </span>
@@ -329,10 +308,7 @@ exports[`Manual Summary Placement 1`] = `
     </div>
   </ds-field>
   <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
+    <label for="<removed>">
       <span>
         Etternavn
       </span>
@@ -346,10 +322,7 @@ exports[`Manual Summary Placement 1`] = `
     </div>
   </ds-field>
   <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
+    <label for="<removed>">
       <span>
         E-postadresse
       </span>
@@ -381,10 +354,7 @@ exports[`Outline 1`] = `
     data-show-summary="true"
   >
     <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         <span>
           Fornavn
         </span>
@@ -398,10 +368,7 @@ exports[`Outline 1`] = `
       </div>
     </ds-field>
     <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         <span>
           Mellomnavn
         </span>
@@ -414,10 +381,7 @@ exports[`Outline 1`] = `
       </div>
     </ds-field>
     <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         <span>
           Etternavn
         </span>
@@ -448,10 +412,7 @@ exports[`Preview 1`] = `
   data-show-summary="true"
 >
   <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
+    <label for="<removed>">
       <span>
         Fornavn
       </span>
@@ -465,10 +426,7 @@ exports[`Preview 1`] = `
     </div>
   </ds-field>
   <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
+    <label for="<removed>">
       <span>
         Mellomnavn
       </span>
@@ -481,10 +439,7 @@ exports[`Preview 1`] = `
     </div>
   </ds-field>
   <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
+    <label for="<removed>">
       <span>
         Etternavn
       </span>
@@ -514,10 +469,7 @@ exports[`Readonly 1`] = `
   data-show-summary="true"
 >
   <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
+    <label for="<removed>">
       <span>
         Fornavn
       </span>
@@ -532,10 +484,7 @@ exports[`Readonly 1`] = `
     </div>
   </ds-field>
   <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
+    <label for="<removed>">
       <span>
         Mellomnavn
       </span>
@@ -549,10 +498,7 @@ exports[`Readonly 1`] = `
     </div>
   </ds-field>
   <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
+    <label for="<removed>">
       <span>
         Etternavn
       </span>
@@ -576,10 +522,7 @@ exports[`Single Optional Field 1`] = `
   data-show-summary="false"
 >
   <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
+    <label for="<removed>">
       <span>
         Har du noen kommentarer?
       </span>
@@ -602,10 +545,7 @@ exports[`Single Required Field 1`] = `
   data-show-summary="false"
 >
   <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
+    <label for="<removed>">
       <span>
         Beskriv hendelsesforløpet
       </span>

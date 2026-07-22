@@ -1,0 +1,4 @@
+.ds-search {
+  /* adjust icon size to before Digdir v1.16.0 */
+  --ds-icon-size: var(--ds-size-7);
+}

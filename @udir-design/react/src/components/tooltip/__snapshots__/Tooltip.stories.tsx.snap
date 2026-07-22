@@ -10,7 +10,6 @@ exports[`Aria 1`] = `
 <div>
   <button
     data-icon="true"
-    data-variant="primary"
     type="button"
     data-tooltip="Jeg er hovedinformasjon (aria-label)"
     data-placement="top"
@@ -37,7 +36,6 @@ exports[`Aria 1`] = `
     </svg>
   </button>
   <button
-    data-variant="primary"
     type="button"
     data-tooltip="Jeg er tillegsinformasjon (aria-description)"
     data-placement="top"

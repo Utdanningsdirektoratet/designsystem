@@ -200,7 +200,6 @@ exports[`Controlled 1`] = `
   Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
   <div>
     <button
-      data-variant="primary"
       type="button"
       data-size="sm"
     >
@@ -291,7 +290,6 @@ exports[`Interactive 1`] = `
   </p>
   <div>
     <button
-      data-variant="primary"
       type="button"
       data-size="sm"
     >
@@ -350,7 +348,6 @@ exports[`Preview 1`] = `
   Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
   <div>
     <button
-      data-variant="primary"
       type="button"
       data-size="sm"
     >
@@ -534,7 +531,6 @@ exports[`Without Context 1`] = `
         }
 </style>
 <button
-  data-variant="primary"
   type="button"
   popovertarget="my-popover"
   aria-label="Slett rad"
@@ -575,7 +571,6 @@ exports[`Without Context 1`] = `
   </p>
   <div>
     <button
-      data-variant="primary"
       type="button"
       data-size="sm"
     >

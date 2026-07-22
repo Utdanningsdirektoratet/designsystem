@@ -88,10 +88,7 @@ exports[`Dialog Non Modal 1`] = `
 }
 </style>
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Besvarelse
   </label>
   <textarea
@@ -158,7 +155,6 @@ exports[`Dialog With Form 1`] = `
         }
 </style>
 <button
-  data-variant="primary"
   type="button"
   aria-haspopup="dialog"
 >
@@ -186,10 +182,7 @@ exports[`Dialog With Form 1`] = `
       Skjemainnsending
     </h2>
     <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Navn
       </label>
       <div>
@@ -206,7 +199,6 @@ exports[`Dialog With Form 1`] = `
   <div>
     <button
       commandfor="dialog-with-form"
-      data-variant="primary"
       type="button"
       command="close"
     >
@@ -266,7 +258,6 @@ exports[`Dialog With Max Width 1`] = `
 
 exports[`Dialog With Open Prop 1`] = `
 <button
-  data-variant="primary"
   type="button"
   aria-haspopup="dialog"
 >
@@ -352,10 +343,7 @@ exports[`Dialog With Suggestion 1`] = `
   </div>
   <div>
     <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Velg en kommune
       </label>
       <ds-suggestion>
@@ -483,10 +471,7 @@ exports[`Dialog With Suggestion 1`] = `
     </ds-field>
   </div>
   <div>
-    <button
-      data-variant="primary"
-      type="button"
-    >
+    <button type="button">
       Send inn
     </button>
     <button
@@ -531,10 +516,7 @@ exports[`Drawer 1`] = `
     </label>
   </ds-field>
   <fieldset aria-labelledby="<removed>">
-    <legend
-      data-weight="medium"
-      id="<removed>"
-    >
+    <legend id="<removed>">
       Velg plassering for dialogen
     </legend>
     <div>
@@ -611,7 +593,6 @@ exports[`Drawer 1`] = `
     </div>
   </fieldset>
   <button
-    data-variant="primary"
     type="button"
     aria-haspopup="dialog"
   >
@@ -653,7 +634,6 @@ exports[`Preview 1`] = `
 }
 </style>
 <button
-  data-variant="primary"
   type="button"
   aria-haspopup="dialog"
 >
@@ -695,7 +675,6 @@ exports[`Preview 1`] = `
 
 exports[`With Header And Footer 1`] = `
 <button
-  data-variant="primary"
   type="button"
   aria-haspopup="dialog"
 >
@@ -798,7 +777,6 @@ exports[`Without Dialog Trigger Context 1`] = `
 exports[`Without Dialog Trigger Context With Command 1`] = `
 <button
   commandfor="dialog-with-command"
-  data-variant="primary"
   type="button"
   command="show-modal"
   aria-haspopup="dialog"

@@ -286,7 +286,6 @@ exports[`Fixed Table 1`] = `
   <ul>
     <li>
       <button
-        data-variant="tertiary"
         type="button"
         aria-label="Forrige side"
         aria-hidden="true"
@@ -296,7 +295,6 @@ exports[`Fixed Table 1`] = `
     </li>
     <li>
       <button
-        data-variant="tertiary"
         type="button"
         aria-label="Side 1"
         aria-current="true"
@@ -306,7 +304,6 @@ exports[`Fixed Table 1`] = `
     </li>
     <li>
       <button
-        data-variant="tertiary"
         type="button"
         aria-label="Side 2"
       >
@@ -315,7 +312,6 @@ exports[`Fixed Table 1`] = `
     </li>
     <li>
       <button
-        data-variant="tertiary"
         type="button"
         aria-label="Side 3"
       >
@@ -324,7 +320,6 @@ exports[`Fixed Table 1`] = `
     </li>
     <li>
       <button
-        data-variant="tertiary"
         type="button"
         aria-label="Neste side"
         aria-hidden="false"

@@ -1,6 +1,10 @@
-.ds-button {
+:not(.ds-toggle-group) > .ds-button {
   &[data-variant='tertiary']:not([data-color='danger']),
   &[data-variant='secondary']:not([data-color='danger']) {
     --dsc-button-color: var(--ds-color-text-default);
   }
+}
+
+.ds-button[data-icon] {
+  --ds-icon-size: var(--ds-size-7);
 }
