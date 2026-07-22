@@ -87,7 +87,7 @@
     "@types/react-dom": "catalog:",
     "@types/remark-heading-id": "catalog:",
     "@udir-design/symbols": "workspace:*",
-    "@vitejs/plugin-react-swc": "catalog:",
+    "@vitejs/plugin-react": "catalog:",
     "@vitest/browser": "catalog:",
     "@vitest/browser-playwright": "catalog:",
     "@vitest/coverage-v8": "catalog:",
@@ -127,9 +127,8 @@
     "unified": "catalog:",
     "unist-util-remove": "catalog:",
     "unist-util-visit": "catalog:",
+    "unplugin-dts": "catalog:",
     "vite": "catalog:",
-    "vite-plugin-dts": "catalog:",
-    "vite-tsconfig-paths": "catalog:",
     "vitest": "catalog:",
     "zod": "catalog:"
   },
@@ -142,5 +141,14 @@
     "@types/react": {
       "optional": true
     }
-  }
+  },
+  "trackedDevDependencies": [
+    "vite",
+    "@vitejs/plugin-react",
+    "storybook",
+    "@storybook/react-vite",
+    "@storybook/addon-docs",
+    "storybook-addon-pseudo-states",
+    "sass"
+  ]
 }

@@ -57,7 +57,9 @@ export default defineMain({
         execSync('git rev-parse --abbrev-ref HEAD').toString().trimEnd();
 
     // Disable vite:dts plugin, since it logs "You are building a library that may not need to generate declaration files"
-    cfg.plugins = cfg.plugins?.filter((p) => (p as Plugin).name !== 'vite:dts');
+    cfg.plugins = cfg.plugins?.filter(
+      (p) => (p as Plugin).name !== 'unplugin:dts',
+    );
 
     return mergeConfig(cfg, {
       logLevel: 'warn',

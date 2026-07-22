@@ -1,12 +1,11 @@
 /// <reference types='vitest' />
 import * as path from 'node:path';
-import react from '@vitejs/plugin-react-swc';
+import react from '@vitejs/plugin-react';
 import * as R from 'ramda';
 import ts from 'typescript';
+import dts from 'unplugin-dts/vite';
 import type { Plugin } from 'vite';
 import { createFilter, defineConfig } from 'vite';
-import dts from 'vite-plugin-dts';
-import tsConfigPaths from 'vite-tsconfig-paths';
 import pkg from './package.json';
 
 const resolveAlias = (alias: string): string =>
@@ -30,6 +29,7 @@ export default defineConfig({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/@udir-design/react',
   resolve: {
+    tsconfigPaths: true,
     alias: resolveAliases({
       src: 'src',
       '.storybook': '.storybook',
@@ -47,7 +47,6 @@ export default defineConfig({
   plugins: [
     processComponentCss(),
     react(),
-    tsConfigPaths(),
     dts({
       entryRoot: 'src',
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
@@ -79,9 +78,6 @@ export default defineConfig({
     outDir: './dist',
     emptyOutDir: true,
     reportCompressedSize: true,
-    commonjsOptions: {
-      transformMixedEsModules: true,
-    },
     lib: {
       entry: {
         stable: 'src/stable.ts',
@@ -95,7 +91,7 @@ export default defineConfig({
       // Don't forget to update your package.json as well.
       formats: ['es', 'cjs'],
     },
-    rollupOptions: {
+    rolldownOptions: {
       // External packages that should not be bundled into your library.
       external: [...dependencies, ...dependenciesSubmodules],
     },
