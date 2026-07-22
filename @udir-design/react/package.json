@@ -141,5 +141,14 @@
     "@types/react": {
       "optional": true
     }
-  }
+  },
+  "trackedDevDependencies": [
+    "vite",
+    "@vitejs/plugin-react",
+    "storybook",
+    "@storybook/react-vite",
+    "@storybook/addon-docs",
+    "storybook-addon-pseudo-states",
+    "sass"
+  ]
 }

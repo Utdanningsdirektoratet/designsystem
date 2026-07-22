@@ -13,6 +13,14 @@
  * non-committed output (e.g. PostCSS, svgo) opt in to tracking their build
  * tools, so that version bumps trigger a full Chromatic rebuild.
  *
+ * Alternatively, a package can declare a `trackedDevDependencies` array to
+ * include *only* the listed devDependencies. This suits packages whose
+ * devDependencies are mostly unrelated test/lint tooling but a handful of build
+ * tools affect the built output (e.g. the Vite/Storybook toolchain behind
+ * `@udir-design/react`). Transitive dependencies of tracked packages are
+ * followed automatically, so tracking the top-level bundler is enough to catch
+ * churn in its sub-dependencies (e.g. rolldown, esbuild).
+ *
  * Workspace dependencies (workspace:*) are followed recursively so that
  * transitive dependency changes through sibling packages are also detected.
  *
@@ -42,6 +50,7 @@ interface PackageJson {
   peerDependencies?: Record<string, string>;
   devDependencies?: Record<string, string>;
   untrackedDevDependencies?: string[];
+  trackedDevDependencies?: string[];
 }
 
 interface LockfileImporterDep {
@@ -117,8 +126,17 @@ function formatSnapshotKey(key: string): string {
  * Extracts tracked dependency names from a parsed package.json.
  *
  * Always includes `dependencies` + `peerDependencies` (excluding `@types/*`).
- * When the package declares `untrackedDevDependencies`, all `devDependencies`
- * not in that list are also included.
+ * A package can additionally opt devDependencies into the closure via one of:
+ *   - `untrackedDevDependencies`: track *all* devDependencies except those
+ *     listed (a blocklist; suits packages whose whole devDep set is a build
+ *     pipeline, e.g. PostCSS/svgo).
+ *   - `trackedDevDependencies`: track *only* the listed devDependencies (an
+ *     allowlist; suits packages whose devDeps are mostly unrelated test/lint
+ *     tooling but a handful of build tools affect the published/built output,
+ *     e.g. the Vite/Storybook toolchain behind `@udir-design/react`).
+ *
+ * The two fields are mutually exclusive; if both are present,
+ * `trackedDevDependencies` takes precedence.
  */
 function parseTrackedDepNames(pkg: PackageJson): Set<string> {
   const names = new Set<string>();
@@ -128,7 +146,14 @@ function parseTrackedDepNames(pkg: PackageJson): Set<string> {
   ]) {
     if (!isTypesPackage(name)) names.add(name);
   }
-  if (pkg.untrackedDevDependencies) {
+  if (pkg.trackedDevDependencies) {
+    const devDependencies = new Set(Object.keys(pkg.devDependencies ?? {}));
+    for (const name of pkg.trackedDevDependencies) {
+      if (!isTypesPackage(name) && devDependencies.has(name)) {
+        names.add(name);
+      }
+    }
+  } else if (pkg.untrackedDevDependencies) {
     const ignored = new Set(pkg.untrackedDevDependencies);
     for (const name of Object.keys(pkg.devDependencies ?? {})) {
       if (!isTypesPackage(name) && !ignored.has(name)) {
