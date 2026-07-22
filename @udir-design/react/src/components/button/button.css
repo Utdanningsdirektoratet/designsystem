@@ -4,3 +4,7 @@
     --dsc-button-color: var(--ds-color-text-default);
   }
 }
+
+.ds-button[data-icon] {
+  --ds-icon-size: var(--ds-size-7);
+}
