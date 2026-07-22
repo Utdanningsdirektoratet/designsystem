@@ -135,6 +135,36 @@ exports[`Colors 1`] = `
 </button>
 `;
 
+exports[`Nowrap 1`] = `
+<label>
+  <input
+    type="radio"
+    value="nynorsk"
+    checked
+    name="my-radio"
+  >
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in lobortis eros. Aenean id tellus molestie, semper massa non, ultricies sapien.
+</label>
+<label>
+  <input
+    type="checkbox"
+    value="nynorsk"
+    checked
+    name="my-checkbox"
+  >
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in lobortis eros. Aenean id tellus molestie, semper massa non, ultricies sapien.
+</label>
+<button
+  type="button"
+  data-removable="true"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in lobortis eros. Aenean id tellus molestie, semper massa non, ultricies sapien.
+</button>
+<button type="button">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in lobortis eros. Aenean id tellus molestie, semper massa non, ultricies sapien.
+</button>
+`;
+
 exports[`Preview 1`] = `
 <button
   type="button"
@@ -228,5 +258,39 @@ exports[`Removable 1`] = `
   aria-label="Slett Videregående"
 >
   Videregående
+</button>
+`;
+
+exports[`Wrap 1`] = `
+<label data-wrap="wrap">
+  <input
+    type="radio"
+    value="nynorsk"
+    checked
+    name="my-radio"
+  >
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in lobortis eros. Aenean id tellus molestie, semper massa non, ultricies sapien.
+</label>
+<label data-wrap="wrap">
+  <input
+    type="checkbox"
+    value="nynorsk"
+    checked
+    name="my-checkbox"
+  >
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in lobortis eros. Aenean id tellus molestie, semper massa non, ultricies sapien.
+</label>
+<button
+  type="button"
+  data-removable="true"
+  data-wrap="wrap"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in lobortis eros. Aenean id tellus molestie, semper massa non, ultricies sapien.
+</button>
+<button
+  type="button"
+  data-wrap="wrap"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in lobortis eros. Aenean id tellus molestie, semper massa non, ultricies sapien.
 </button>
 `;

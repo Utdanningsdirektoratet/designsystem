@@ -1,3 +1,4 @@
+import './chip.css';
 import {
   Chip,
   ChipButton,
