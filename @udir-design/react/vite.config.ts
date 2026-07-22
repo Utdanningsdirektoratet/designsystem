@@ -3,9 +3,9 @@ import * as path from 'node:path';
 import react from '@vitejs/plugin-react';
 import * as R from 'ramda';
 import ts from 'typescript';
+import dts from 'unplugin-dts/vite';
 import type { Plugin } from 'vite';
 import { createFilter, defineConfig } from 'vite';
-import dts from 'vite-plugin-dts';
 import pkg from './package.json';
 
 const resolveAlias = (alias: string): string =>
