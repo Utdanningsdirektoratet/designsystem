@@ -66,12 +66,12 @@ exports[`Controlled 1`] = `
 >
 </p>
 <hr aria-hidden="true">
-<p data-variant="default">
+<p>
   (Annet innhold)
 </p>
 <hr aria-hidden="true">
 <div>
-  <p data-variant="default">
+  <p>
     Viser innhold for:
   </p>
   <button
@@ -156,10 +156,7 @@ exports[`Disabled 1`] = `
   <legend id="<removed>">
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Velg de alternativene som er relevante for deg.
   </p>
   <ds-field data-clickdelegatefor="<removed>">
@@ -222,10 +219,7 @@ exports[`Group 1`] = `
   <legend id="<removed>">
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Velg de alternativene som er relevante for deg.
   </p>
   <ds-field data-clickdelegatefor="<removed>">
@@ -404,10 +398,7 @@ exports[`Outline 1`] = `
   <legend id="<removed>">
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Velg de alternativene som er relevante for deg.
   </p>
   <ds-field
@@ -476,10 +467,7 @@ exports[`Read Only 1`] = `
   <legend id="<removed>">
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Velg de alternativene som er relevante for deg.
   </p>
   <ds-field data-clickdelegatefor="<removed>">
@@ -542,10 +530,7 @@ exports[`With Error 1`] = `
   <legend id="<removed>">
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Velg de alternativene som er relevante for deg.
   </p>
   <ds-field data-clickdelegatefor="<removed>">

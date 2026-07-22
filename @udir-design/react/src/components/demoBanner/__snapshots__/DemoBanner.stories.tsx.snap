@@ -69,13 +69,10 @@ exports[`Preview 1`] = `
       <h1 data-size="lg">
         Lorem ipsum dolor sit amet consectetur
       </h1>
-      <p data-variant="default">
+      <p>
         Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu.
       </p>
-      <div
-        data-variant="default"
-        data-clickdelegatefor="<removed>"
-      >
+      <div data-clickdelegatefor="<removed>">
         <h2>
           <a
             href="/"
@@ -2026,25 +2023,25 @@ exports[`With Scroll 1`] = `
     <h1 data-size="lg">
       Samisk i skolen
     </h1>
-    <p data-variant="default">
+    <p>
       Alle elever skal lære om samer og samiske forhold i skolen. Retten til også å få undervisning i samiske språk og undervisning på samisk i andre fag, er ulik innenfor og utenfor samiske distrikt. I de samiske distriktene er norsk og samisk sidestilte i opplæringen.
     </p>
     <h2>
       Rett til opplæring i samisk i videregående opplæring
     </h2>
-    <p data-variant="default">
+    <p>
       Det er innført en rett til opplæring i samisk i videregående opplæring for alle elever som har hatt opplæring i eller på samisk i grunnskolen. Dette gjelder uavhengig av om eleven har samisk bakgrunn eller ikke.
     </p>
-    <p data-variant="default">
+    <p>
       Bakgrunnen for rettigheten er at elever som har hatt opplæring i samisk som første- eller andrespråk i grunnskolen får mulighet til å fortsette med opplæringen i samisk, og sikre eleven et helhetlig opplæringsløp. Det er ikke stilt krav om lengden på eller innholdet i opplæringen i grunnskolen, eks. om eleven har hatt samisk som første- eller andrespråk. Elevene har ikke rett til å velge et annet samisk språk i videregående opplæring enn det elevene hadde på grunnskolen.
     </p>
-    <p data-variant="default">
+    <p>
       Retten til opplæring i samisk for samiske elever i videregående opplæring er videreført.
     </p>
     <h2>
       Tilbud om del av opplæringen i et samiskspråklig miljø
     </h2>
-    <p data-variant="default">
+    <p>
       Det er tatt inn i loven at kommunen og fylkeskommunen skal gi eleven tilbud om del av opplæringen i et samiskspråklig miljø dersom det er nødvendig for at opplæringen skal være pedagogisk forsvarlig. Dette står i § 3-2 for grunnskolen og § 6-2 for videregående opplæring. Denne regelen tar i hovedsak sikte på tilfeller der opplæringen i samisk blir gitt som fjernundervisning.
     </p>
   </main>

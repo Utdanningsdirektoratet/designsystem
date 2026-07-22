@@ -118,7 +118,6 @@ exports[`Table Story 1`] = `
             <td>
               <div>
                 <span
-                  data-variant="circle"
                   role="img"
                   aria-label="Lise Nordmann"
                 >
@@ -136,10 +135,7 @@ exports[`Table Story 1`] = `
               22345678
             </td>
             <td>
-              <span
-                data-variant="default"
-                data-color="warning"
-              >
+              <span data-color="warning">
                 Ikke eksportert
               </span>
             </td>
@@ -226,7 +222,6 @@ exports[`Table Story 1`] = `
             <td>
               <div>
                 <span
-                  data-variant="circle"
                   role="img"
                   aria-label="Ola Nordmann"
                 >
@@ -244,10 +239,7 @@ exports[`Table Story 1`] = `
               87654321
             </td>
             <td>
-              <span
-                data-variant="default"
-                data-color="success"
-              >
+              <span data-color="success">
                 Eksportert
               </span>
             </td>
@@ -334,7 +326,6 @@ exports[`Table Story 1`] = `
             <td>
               <div>
                 <span
-                  data-variant="circle"
                   role="img"
                   aria-label="Kari Nordmann"
                 >
@@ -352,10 +343,7 @@ exports[`Table Story 1`] = `
               11223344
             </td>
             <td>
-              <span
-                data-variant="default"
-                data-color="warning"
-              >
+              <span data-color="warning">
                 Ikke eksportert
               </span>
             </td>
@@ -442,7 +430,6 @@ exports[`Table Story 1`] = `
             <td>
               <div>
                 <span
-                  data-variant="circle"
                   role="img"
                   aria-label="Per Nordmann"
                 >
@@ -460,10 +447,7 @@ exports[`Table Story 1`] = `
               44332211
             </td>
             <td>
-              <span
-                data-variant="default"
-                data-color="warning"
-              >
+              <span data-color="warning">
                 Ikke eksportert
               </span>
             </td>
@@ -550,7 +534,6 @@ exports[`Table Story 1`] = `
             <td>
               <div>
                 <span
-                  data-variant="circle"
                   role="img"
                   aria-label="Anne Nordmann"
                 >
@@ -568,10 +551,7 @@ exports[`Table Story 1`] = `
               55667788
             </td>
             <td>
-              <span
-                data-variant="default"
-                data-color="success"
-              >
+              <span data-color="success">
                 Eksportert
               </span>
             </td>
@@ -669,7 +649,7 @@ exports[`Table Story 1`] = `
           <h2 data-size="xs">
             Eksporter liste
           </h2>
-          <p data-variant="default">
+          <p>
             I hvilket format ønsker du å eksportere listen?
           </p>
           <div>

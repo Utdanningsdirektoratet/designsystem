@@ -14,7 +14,6 @@ exports[`Color Variants 1`] = `
 <div>
   <span
     data-count="9+"
-    data-variant="base"
     data-color="neutral"
   >
   </span>
@@ -26,7 +25,6 @@ exports[`Color Variants 1`] = `
   </span>
   <span
     data-count="9+"
-    data-variant="base"
     data-color="danger"
   >
   </span>
@@ -38,7 +36,6 @@ exports[`Color Variants 1`] = `
   </span>
   <span
     data-count="9+"
-    data-variant="base"
     data-color="info"
   >
   </span>
@@ -50,7 +47,6 @@ exports[`Color Variants 1`] = `
   </span>
   <span
     data-count="9+"
-    data-variant="base"
     data-color="warning"
   >
   </span>
@@ -62,7 +58,6 @@ exports[`Color Variants 1`] = `
   </span>
   <span
     data-count="9+"
-    data-variant="base"
     data-color="success"
   >
   </span>
@@ -86,10 +81,7 @@ exports[`Custom Placement 1`] = `
   data-overlap="rectangle"
   data-placement="top-right"
 >
-  <span
-    data-variant="base"
-    data-color="danger"
-  >
+  <span data-color="danger">
   </span>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -127,10 +119,7 @@ exports[`Floating 1`] = `
   data-overlap="rectangle"
   data-placement="top-right"
 >
-  <span
-    data-variant="base"
-    data-color="danger"
-  >
+  <span data-color="danger">
   </span>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -158,10 +147,7 @@ exports[`Floating 1`] = `
   data-overlap="rectangle"
   data-placement="top-left"
 >
-  <span
-    data-variant="base"
-    data-color="danger"
-  >
+  <span data-color="danger">
   </span>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -189,10 +175,7 @@ exports[`Floating 1`] = `
   data-overlap="rectangle"
   data-placement="bottom-right"
 >
-  <span
-    data-variant="base"
-    data-color="danger"
-  >
+  <span data-color="danger">
   </span>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -220,10 +203,7 @@ exports[`Floating 1`] = `
   data-overlap="rectangle"
   data-placement="bottom-left"
 >
-  <span
-    data-variant="base"
-    data-color="danger"
-  >
+  <span data-color="danger">
   </span>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -251,13 +231,9 @@ exports[`Floating 1`] = `
   data-overlap="circle"
   data-placement="top-right"
 >
-  <span
-    data-variant="base"
-    data-color="danger"
-  >
+  <span data-color="danger">
   </span>
   <span
-    data-variant="circle"
     role="img"
     aria-label="Avatar 1"
   >
@@ -267,13 +243,9 @@ exports[`Floating 1`] = `
   data-overlap="circle"
   data-placement="top-left"
 >
-  <span
-    data-variant="base"
-    data-color="danger"
-  >
+  <span data-color="danger">
   </span>
   <span
-    data-variant="circle"
     role="img"
     aria-label="Avatar 1"
   >
@@ -283,13 +255,9 @@ exports[`Floating 1`] = `
   data-overlap="circle"
   data-placement="bottom-right"
 >
-  <span
-    data-variant="base"
-    data-color="danger"
-  >
+  <span data-color="danger">
   </span>
   <span
-    data-variant="circle"
     role="img"
     aria-label="Avatar 1"
   >
@@ -299,13 +267,9 @@ exports[`Floating 1`] = `
   data-overlap="circle"
   data-placement="bottom-left"
 >
-  <span
-    data-variant="base"
-    data-color="danger"
-  >
+  <span data-color="danger">
   </span>
   <span
-    data-variant="circle"
     role="img"
     aria-label="Avatar 1"
   >
@@ -332,7 +296,6 @@ exports[`In Button 1`] = `
     >
       <span
         data-count="99+"
-        data-variant="base"
         data-color="danger"
       >
       </span>
@@ -370,7 +333,6 @@ exports[`In Button 1`] = `
     >
       <span
         data-count="10"
-        data-variant="base"
         data-color="danger"
       >
       </span>
@@ -406,10 +368,7 @@ exports[`In Button 1`] = `
       data-overlap="rectangle"
       data-placement="top-right"
     >
-      <span
-        data-variant="base"
-        data-color="danger"
-      >
+      <span data-color="danger">
       </span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -442,39 +401,37 @@ exports[`In Tabs 1`] = `
   <ds-tablist role="tablist">
     <ds-tab
       aria-controls="_r_6_-value1"
+      aria-selected="true"
       data-value="value1"
       role="tab"
-      aria-selected="true"
       tabindex="0"
     >
       Nye saker
       <span
         data-count="10+"
-        data-variant="base"
         data-color="neutral"
       >
       </span>
     </ds-tab>
     <ds-tab
       aria-controls="_r_6_-value2"
+      aria-selected="false"
       data-value="value2"
       role="tab"
-      aria-selected="false"
       tabindex="-1"
     >
       Pågående saker
       <span
         data-count="2"
-        data-variant="base"
         data-color="neutral"
       >
       </span>
     </ds-tab>
     <ds-tab
       aria-controls="_r_6_-value3"
+      aria-selected="false"
       data-value="value3"
       role="tab"
-      aria-selected="false"
       tabindex="-1"
     >
       Løste saker
@@ -484,10 +441,7 @@ exports[`In Tabs 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<span
-  data-count="9+"
-  data-variant="base"
->
+<span data-count="9+">
 </span>
 `;
 
@@ -497,10 +451,7 @@ exports[`Status 1`] = `
   data-placement="top-right"
   data-size="lg"
 >
-  <span
-    data-variant="base"
-    data-color="danger"
-  >
+  <span data-color="danger">
   </span>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -546,12 +497,11 @@ exports[`System Alerts 1`] = `
   <h2>
     Systemvarsler
   </h2>
-  <details data-variant="default">
+  <details>
     <summary>
       Kritisk
       <span
         data-count="2"
-        data-variant="base"
         data-color="danger"
       >
       </span>
@@ -563,20 +513,19 @@ exports[`System Alerts 1`] = `
   justify-content: space-between;
 }
       </style>
-      <div data-variant="default">
+      <div>
         <div>
           <h3 data-size="xs">
             Varsel
           </h3>
           <span
-            data-variant="default"
             data-color="danger"
             data-size="sm"
           >
             Kritisk
           </span>
         </div>
-        <p data-variant="default">
+        <p>
           Dette er et varsel.
         </p>
       </div>
@@ -586,31 +535,29 @@ exports[`System Alerts 1`] = `
   justify-content: space-between;
 }
       </style>
-      <div data-variant="default">
+      <div>
         <div>
           <h3 data-size="xs">
             Varsel
           </h3>
           <span
-            data-variant="default"
             data-color="danger"
             data-size="sm"
           >
             Kritisk
           </span>
         </div>
-        <p data-variant="default">
+        <p>
           Dette er et varsel.
         </p>
       </div>
     </div>
   </details>
-  <details data-variant="default">
+  <details>
     <summary>
       Advarsler
       <span
         data-count="6"
-        data-variant="base"
         data-color="warning"
       >
       </span>
@@ -622,20 +569,19 @@ exports[`System Alerts 1`] = `
   justify-content: space-between;
 }
       </style>
-      <div data-variant="default">
+      <div>
         <div>
           <h3 data-size="xs">
             Varsel
           </h3>
           <span
-            data-variant="default"
             data-color="warning"
             data-size="sm"
           >
             Advarsler
           </span>
         </div>
-        <p data-variant="default">
+        <p>
           Dette er et varsel.
         </p>
       </div>
@@ -645,20 +591,19 @@ exports[`System Alerts 1`] = `
   justify-content: space-between;
 }
       </style>
-      <div data-variant="default">
+      <div>
         <div>
           <h3 data-size="xs">
             Varsel
           </h3>
           <span
-            data-variant="default"
             data-color="warning"
             data-size="sm"
           >
             Advarsler
           </span>
         </div>
-        <p data-variant="default">
+        <p>
           Dette er et varsel.
         </p>
       </div>
@@ -668,20 +613,19 @@ exports[`System Alerts 1`] = `
   justify-content: space-between;
 }
       </style>
-      <div data-variant="default">
+      <div>
         <div>
           <h3 data-size="xs">
             Varsel
           </h3>
           <span
-            data-variant="default"
             data-color="warning"
             data-size="sm"
           >
             Advarsler
           </span>
         </div>
-        <p data-variant="default">
+        <p>
           Dette er et varsel.
         </p>
       </div>
@@ -691,20 +635,19 @@ exports[`System Alerts 1`] = `
   justify-content: space-between;
 }
       </style>
-      <div data-variant="default">
+      <div>
         <div>
           <h3 data-size="xs">
             Varsel
           </h3>
           <span
-            data-variant="default"
             data-color="warning"
             data-size="sm"
           >
             Advarsler
           </span>
         </div>
-        <p data-variant="default">
+        <p>
           Dette er et varsel.
         </p>
       </div>
@@ -714,20 +657,19 @@ exports[`System Alerts 1`] = `
   justify-content: space-between;
 }
       </style>
-      <div data-variant="default">
+      <div>
         <div>
           <h3 data-size="xs">
             Varsel
           </h3>
           <span
-            data-variant="default"
             data-color="warning"
             data-size="sm"
           >
             Advarsler
           </span>
         </div>
-        <p data-variant="default">
+        <p>
           Dette er et varsel.
         </p>
       </div>
@@ -737,31 +679,29 @@ exports[`System Alerts 1`] = `
   justify-content: space-between;
 }
       </style>
-      <div data-variant="default">
+      <div>
         <div>
           <h3 data-size="xs">
             Varsel
           </h3>
           <span
-            data-variant="default"
             data-color="warning"
             data-size="sm"
           >
             Advarsler
           </span>
         </div>
-        <p data-variant="default">
+        <p>
           Dette er et varsel.
         </p>
       </div>
     </div>
   </details>
-  <details data-variant="default">
+  <details>
     <summary>
       Andre hendelser
       <span
         data-count="9+"
-        data-variant="base"
         data-color="info"
       >
       </span>
@@ -773,13 +713,13 @@ exports[`System Alerts 1`] = `
   justify-content: space-between;
 }
       </style>
-      <div data-variant="default">
+      <div>
         <div>
           <h3 data-size="xs">
             Varsel
           </h3>
         </div>
-        <p data-variant="default">
+        <p>
           Dette er et varsel.
         </p>
       </div>
@@ -789,13 +729,13 @@ exports[`System Alerts 1`] = `
   justify-content: space-between;
 }
       </style>
-      <div data-variant="default">
+      <div>
         <div>
           <h3 data-size="xs">
             Varsel
           </h3>
         </div>
-        <p data-variant="default">
+        <p>
           Dette er et varsel.
         </p>
       </div>
@@ -805,13 +745,13 @@ exports[`System Alerts 1`] = `
   justify-content: space-between;
 }
       </style>
-      <div data-variant="default">
+      <div>
         <div>
           <h3 data-size="xs">
             Varsel
           </h3>
         </div>
-        <p data-variant="default">
+        <p>
           Dette er et varsel.
         </p>
       </div>
@@ -821,13 +761,13 @@ exports[`System Alerts 1`] = `
   justify-content: space-between;
 }
       </style>
-      <div data-variant="default">
+      <div>
         <div>
           <h3 data-size="xs">
             Varsel
           </h3>
         </div>
-        <p data-variant="default">
+        <p>
           Dette er et varsel.
         </p>
       </div>
@@ -837,13 +777,13 @@ exports[`System Alerts 1`] = `
   justify-content: space-between;
 }
       </style>
-      <div data-variant="default">
+      <div>
         <div>
           <h3 data-size="xs">
             Varsel
           </h3>
         </div>
-        <p data-variant="default">
+        <p>
           Dette er et varsel.
         </p>
       </div>
@@ -853,13 +793,13 @@ exports[`System Alerts 1`] = `
   justify-content: space-between;
 }
       </style>
-      <div data-variant="default">
+      <div>
         <div>
           <h3 data-size="xs">
             Varsel
           </h3>
         </div>
-        <p data-variant="default">
+        <p>
           Dette er et varsel.
         </p>
       </div>
@@ -869,13 +809,13 @@ exports[`System Alerts 1`] = `
   justify-content: space-between;
 }
       </style>
-      <div data-variant="default">
+      <div>
         <div>
           <h3 data-size="xs">
             Varsel
           </h3>
         </div>
-        <p data-variant="default">
+        <p>
           Dette er et varsel.
         </p>
       </div>
@@ -885,13 +825,13 @@ exports[`System Alerts 1`] = `
   justify-content: space-between;
 }
       </style>
-      <div data-variant="default">
+      <div>
         <div>
           <h3 data-size="xs">
             Varsel
           </h3>
         </div>
-        <p data-variant="default">
+        <p>
           Dette er et varsel.
         </p>
       </div>
@@ -901,13 +841,13 @@ exports[`System Alerts 1`] = `
   justify-content: space-between;
 }
       </style>
-      <div data-variant="default">
+      <div>
         <div>
           <h3 data-size="xs">
             Varsel
           </h3>
         </div>
-        <p data-variant="default">
+        <p>
           Dette er et varsel.
         </p>
       </div>
@@ -917,13 +857,13 @@ exports[`System Alerts 1`] = `
   justify-content: space-between;
 }
       </style>
-      <div data-variant="default">
+      <div>
         <div>
           <h3 data-size="xs">
             Varsel
           </h3>
         </div>
-        <p data-variant="default">
+        <p>
           Dette er et varsel.
         </p>
       </div>
@@ -933,13 +873,13 @@ exports[`System Alerts 1`] = `
   justify-content: space-between;
 }
       </style>
-      <div data-variant="default">
+      <div>
         <div>
           <h3 data-size="xs">
             Varsel
           </h3>
         </div>
-        <p data-variant="default">
+        <p>
           Dette er et varsel.
         </p>
       </div>

@@ -99,7 +99,7 @@ exports[`Cards 1`] = `
     </button>
   </div>
   <div>
-    <div data-variant="default">
+    <div>
       <div>
         <span
           aria-hidden="true"
@@ -140,7 +140,7 @@ exports[`Cards 1`] = `
         </span>
       </div>
     </div>
-    <div data-variant="default">
+    <div>
       <div>
         <span
           aria-hidden="true"
@@ -181,7 +181,7 @@ exports[`Cards 1`] = `
         </span>
       </div>
     </div>
-    <div data-variant="default">
+    <div>
       <div>
         <span
           aria-hidden="true"
@@ -222,7 +222,7 @@ exports[`Cards 1`] = `
         </span>
       </div>
     </div>
-    <div data-variant="default">
+    <div>
       <div>
         <span
           aria-hidden="true"
@@ -263,7 +263,7 @@ exports[`Cards 1`] = `
         </span>
       </div>
     </div>
-    <div data-variant="default">
+    <div>
       <div>
         <span
           aria-hidden="true"
@@ -304,7 +304,7 @@ exports[`Cards 1`] = `
         </span>
       </div>
     </div>
-    <div data-variant="default">
+    <div>
       <div>
         <span
           aria-hidden="true"
@@ -354,10 +354,10 @@ exports[`Children 1`] = `
   aria-hidden="true"
   data-variant="rectangle"
 >
-  <p data-variant="default">
+  <p>
     Her er en tekst som blir sendt inn som barn av en Skeleton.
   </p>
-  <p data-variant="default">
+  <p>
     Se hvordan Skeleton da dekker den samlede bredden og høyden til barna.
   </p>
   <button type="button">
@@ -387,7 +387,7 @@ exports[`Components 1`] = `
     style="<removed>"
   >
   </span>
-  <p data-variant="default">
+  <p>
     <span
       aria-hidden="true"
       data-text="----------"
@@ -401,7 +401,6 @@ exports[`Components 1`] = `
 exports[`Preview 1`] = `
 <span
   aria-hidden="true"
-  data-variant="rectangle"
   style="<removed>"
 >
 </span>
@@ -423,10 +422,7 @@ exports[`Text 1`] = `
     <h2>
       Den kjekkaste leiken
     </h2>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       Det er verken dyrt eller komplisert å leggje til rette for den leiken barna liker best. Når viser barna mest trivsel i uteleiken? Det ønskte forskarar i forskingsprosjektet «EnCompetence» å finne ut, og dei ville spesielt sjå på situasjonar med fysisk aktivitet.
     </p>
   </div>
@@ -440,10 +436,7 @@ exports[`Text 1`] = `
         Den kjekkaste leiken
       </span>
     </h2>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       <span
         aria-hidden="true"
         data-text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
@@ -483,7 +476,6 @@ exports[`Usage Example 1`] = `
   <div>
     <span
       aria-hidden="true"
-      data-variant="rectangle"
       style="<removed>"
     >
     </span>
@@ -527,18 +519,17 @@ exports[`Usage Example 1`] = `
     </h2>
     <div>
       <span
-        data-variant="circle"
         data-initials="KN"
         role="img"
         aria-label="Kari Nordmann"
         data-size="xs"
       >
       </span>
-      <p data-variant="default">
+      <p>
         Kari Nordmann | 27.06.2025
       </p>
     </div>
-    <p data-variant="default">
+    <p>
       Barnehagen er pliktig til å gjennomføre undersøkelser som med rimelighet kan forventes. Barnehagen må innhente nok informasjon til å avdekke hva som er problemet og hva som gjør at barnet ikke har det trygt og godt.
     </p>
   </div>

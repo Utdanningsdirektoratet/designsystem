@@ -112,6 +112,7 @@ export const FileUploadTrigger = forwardRef<HTMLDivElement, FileUploadProps>(
           {/* Text in css */}
         </Button>
         <input
+          className="ds-input"
           type="file"
           ref={fileInputRef}
           {...inputProps}

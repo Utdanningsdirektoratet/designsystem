@@ -38,7 +38,7 @@ exports[`Controlled 1`] = `
       Varsler
     </label>
   </ds-field>
-  <p data-variant="default">
+  <p>
     Velg hvilke typer varsler du ønsker å motta.
   </p>
   <ds-field data-clickdelegatefor="<removed>">
@@ -217,10 +217,7 @@ exports[`Group End 1`] = `
       Innstillinger
     </h2>
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Innstillinger som gjelder hele systemet.
   </p>
   <ds-field
