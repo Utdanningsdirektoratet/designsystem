@@ -326,3 +326,49 @@ export const Colors = meta.story({
     </>
   ),
 });
+
+export const Nowrap = meta.story({
+  parameters: {
+    layout: 'padded',
+    customStyles: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(10rem, 1fr))',
+      alignItems: 'start',
+    },
+  },
+  render: (args) => (
+    <>
+      <Chip.Radio {...args} name="my-radio" value="nynorsk" defaultChecked>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in
+        lobortis eros. Aenean id tellus molestie, semper massa non, ultricies
+        sapien.
+      </Chip.Radio>
+      <Chip.Checkbox
+        {...args}
+        name="my-checkbox"
+        value="nynorsk"
+        defaultChecked
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in
+        lobortis eros. Aenean id tellus molestie, semper massa non, ultricies
+        sapien.
+      </Chip.Checkbox>
+      <Chip.Removable {...args}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in
+        lobortis eros. Aenean id tellus molestie, semper massa non, ultricies
+        sapien.
+      </Chip.Removable>
+      <Chip.Button {...args}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in
+        lobortis eros. Aenean id tellus molestie, semper massa non, ultricies
+        sapien.
+      </Chip.Button>
+    </>
+  ),
+});
+
+export const Wrap = Nowrap.extend({
+  args: {
+    'data-wrap': 'wrap',
+  },
+});
