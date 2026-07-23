@@ -9,7 +9,7 @@
     "generate-css": "tsx generate-css.ts",
     "inject": "echo 'Dummy script to trigger pnpm injected dependency sync'",
     "clean": "rimraf ./dist && mkdir ./dist",
-    "lint": "eslint . --max-warnings 0"
+    "lint": "oxlint --max-warnings 0"
   },
   "repository": {
     "type": "git",

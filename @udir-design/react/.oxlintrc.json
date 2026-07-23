@@ -1,0 +1,286 @@
+{
+  "$schema": "../../node_modules/oxlint/configuration_schema.json",
+  "extends": ["../../.oxlintrc.json"],
+  // `categories` and `env` are inherited from the root config. The importx
+  // jsPlugin is inherited too and merges with the storybook plugin added here.
+  "plugins": ["react", "jsx-a11y", "typescript", "unicorn"],
+  "settings": {
+    "react": {
+      "version": "19"
+    },
+    "import/internal-regex": "^(@udir-design|src)/"
+  },
+  "jsPlugins": ["eslint-plugin-storybook"],
+  "ignorePatterns": ["!.storybook"],
+  "rules": {
+    // Correctness react/jsx-a11y rules are enabled via the inherited
+    // `categories.correctness`. Listed here: react rules outside correctness,
+    // `exhaustive-deps` (kept at warn), and jsx-a11y rules that carry options.
+    "react/display-name": "error",
+    "react/jsx-no-comment-textnodes": "error",
+    "react/jsx-no-target-blank": "error",
+    "react/no-unescaped-entities": "error",
+    "react/no-unknown-property": "error",
+    "react/rules-of-hooks": "error",
+    "react/exhaustive-deps": "warn",
+    "react/require-render-return": "error",
+    "react/react-compiler": "error",
+    "typescript/no-deprecated": "error",
+    "jsx-a11y/interactive-supports-focus": [
+      "error",
+      {
+        "tabbable": [
+          "button",
+          "checkbox",
+          "link",
+          "searchbox",
+          "spinbutton",
+          "switch",
+          "textbox"
+        ]
+      }
+    ],
+    "jsx-a11y/no-interactive-element-to-noninteractive-role": [
+      "error",
+      {
+        "tr": ["none", "presentation"],
+        "canvas": ["img"]
+      }
+    ],
+    "jsx-a11y/no-noninteractive-element-interactions": [
+      "error",
+      {
+        "handlers": [
+          "onClick",
+          "onError",
+          "onLoad",
+          "onMouseDown",
+          "onMouseUp",
+          "onKeyPress",
+          "onKeyDown",
+          "onKeyUp"
+        ],
+        "alert": ["onKeyUp", "onKeyDown", "onKeyPress"],
+        "body": ["onError", "onLoad"],
+        "dialog": ["onKeyUp", "onKeyDown", "onKeyPress"],
+        "iframe": ["onError", "onLoad"],
+        "img": ["onError", "onLoad"]
+      }
+    ],
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": [
+      "error",
+      {
+        "ul": [
+          "listbox",
+          "menu",
+          "menubar",
+          "radiogroup",
+          "tablist",
+          "tree",
+          "treegrid"
+        ],
+        "ol": [
+          "listbox",
+          "menu",
+          "menubar",
+          "radiogroup",
+          "tablist",
+          "tree",
+          "treegrid"
+        ],
+        "li": [
+          "menuitem",
+          "menuitemradio",
+          "menuitemcheckbox",
+          "option",
+          "row",
+          "tab",
+          "treeitem"
+        ],
+        "table": ["grid"],
+        "td": ["gridcell"],
+        "fieldset": ["radiogroup", "presentation"]
+      }
+    ],
+    "jsx-a11y/no-noninteractive-tabindex": [
+      "error",
+      {
+        "tags": [],
+        "roles": ["tabpanel"],
+        "allowExpressionValues": true
+      }
+    ],
+    "jsx-a11y/no-static-element-interactions": [
+      "error",
+      {
+        "allowExpressionValues": true,
+        "handlers": [
+          "onClick",
+          "onMouseDown",
+          "onMouseUp",
+          "onKeyPress",
+          "onKeyDown",
+          "onKeyUp"
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+      "rules": {
+        "jsx-a11y/no-autofocus": "off"
+      }
+    },
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "rules": {
+        "no-redeclare": "off",
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["@udir-design/react", "@udir-design/react/*"],
+                "message": "Do not import from @udir-design/react module, use relative paths instead."
+              },
+              {
+                "group": ["**/dist/*"],
+                "message": "Do not import from the dist directory."
+              },
+              {
+                "group": ["**/node_modules/*"],
+                "message": "Do not import from the node_modules directory."
+              },
+              {
+                "regex": "^((src|\\.{1,2})\\/)((\\.{1,2}\\/)|\\w+\\/)*(alpha|beta|stable)(?!\\w)",
+                "message": "Do not import from barrel files. It can make the library hard to tree-shake and prohibits tools like Chromatic from performing dependency analysis."
+              }
+            ]
+          }
+        ],
+        "typescript/consistent-type-imports": "error",
+        "typescript/consistent-type-exports": "error",
+        "importx/order": [
+          "error",
+          {
+            "groups": [
+              "builtin",
+              "external",
+              "internal",
+              "parent",
+              "sibling",
+              "index"
+            ],
+            "named": true,
+            "alphabetize": { "order": "asc" },
+            "newlines-between": "never",
+            "pathGroups": [
+              {
+                "pattern": "@udir-design/**",
+                "group": "external",
+                "position": "after"
+              },
+              { "pattern": "src/**", "group": "internal" },
+              { "pattern": ".storybook/**", "group": "internal" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "**/*.stories.{ts,tsx,js,jsx,mjs,cjs}",
+        "**/*.story.{ts,tsx,js,jsx,mjs,cjs}"
+      ],
+      "rules": {
+        "storybook/await-interactions": "error",
+        "storybook/context-in-play-function": "error",
+        "storybook/default-exports": "error",
+        "storybook/hierarchy-separator": "warn",
+        "storybook/no-redundant-story-name": "warn",
+        "storybook/no-renderer-packages": "error",
+        "storybook/prefer-pascal-case": "warn",
+        "storybook/story-exports": "error",
+        "storybook/use-storybook-expect": "error",
+        "storybook/use-storybook-testing-library": "error",
+        "import/no-anonymous-default-export": "off",
+        "react/rules-of-hooks": "off"
+      },
+      "plugins": ["import"]
+    },
+    {
+      "files": [".storybook/main.{js,cjs,mjs,ts}"],
+      "rules": {
+        "storybook/no-uninstalled-addons": "error"
+      }
+    },
+    {
+      "files": [
+        "**/*.stories.{ts,tsx}",
+        "**/{.storybook,demo,docs}/**/*.{ts,tsx}"
+      ],
+      "rules": {
+        "no-unused-vars": [
+          "error",
+          {
+            "vars": "all",
+            "args": "all",
+            "argsIgnorePattern": "^_",
+            "caughtErrors": "all",
+            "caughtErrorsIgnorePattern": "^_",
+            "destructuredArrayIgnorePattern": "^_",
+            "varsIgnorePattern": "^(_|React$)"
+          }
+        ],
+        "no-unused-expressions": [
+          "error",
+          {
+            "allowTernary": true
+          }
+        ],
+        "typescript/consistent-type-imports": "off"
+      }
+    },
+    {
+      "files": ["demo-pages/**/*.{ts,tsx}"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["@udir-design/react", "@udir-design/react/*"],
+                "message": "Do not import from @udir-design/react module, use relative paths instead."
+              },
+              {
+                "group": ["**/dist/*"],
+                "message": "Do not import from the dist directory."
+              },
+              {
+                "group": ["**/node_modules/*"],
+                "message": "Do not import from the node_modules directory."
+              },
+              {
+                "regex": "^((src|\\.{1,2})\\/)((\\.{1,2}\\/)|\\w+\\/)*(alpha|beta|stable)(?!\\w)",
+                "message": "Do not import from barrel files. It can make the library hard to tree-shake and prohibits tools like Chromatic from performing dependency analysis."
+              },
+              {
+                "group": ["**/*.js"],
+                "message": "Files shared with test-apps cannot import with .js extension."
+              },
+              {
+                "group": ["../**/src/components/*"],
+                "message": "Files shared with test-apps cannot import library components from relative paths. Import from 'src/components/...' instead."
+              },
+              {
+                "group": ["../**/src/utilities/*"],
+                "message": "Files shared with test-apps cannot import library utilities from relative paths. Import from 'src/utilities/...' instead."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

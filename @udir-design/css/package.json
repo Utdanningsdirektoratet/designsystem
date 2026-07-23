@@ -35,6 +35,6 @@
   "untrackedDevDependencies": [],
   "scripts": {
     "build": "postcss src/*.css --dir dist/",
-    "lint": "eslint . --max-warnings 0"
+    "lint": "oxlint --max-warnings 0"
   }
 }
