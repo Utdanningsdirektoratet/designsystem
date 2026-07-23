@@ -48,7 +48,7 @@ export const HeaderUserButton = forwardRef<
         <span>{name}</span>
         {description && <span>{description}</span>}
       </div>
-      {avatar && avatar}
+      {avatar}
     </button>
   );
 });
