@@ -16,7 +16,7 @@
       "@udir-design/symbols": ["../symbols/generated-src/index.ts"],
       "@udir-design/symbols/metadata": ["../symbols/generated-src/metadata.ts"]
     },
-    "types": ["vite/client", "../theme/dist/types"]
+    "types": ["vite/client", "@udir-design/theme"]
   },
   "files": [],
   "exclude": [

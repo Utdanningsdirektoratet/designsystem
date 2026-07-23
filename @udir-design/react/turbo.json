@@ -2,6 +2,9 @@
   "$schema": "https://turbo.build/schema.json",
   "extends": ["//"],
   "tasks": {
+    "lint": {
+      "dependsOn": ["^build"]
+    },
     "lint:cycles": {
       "inputs": [
         "$TURBO_DEFAULT$",
