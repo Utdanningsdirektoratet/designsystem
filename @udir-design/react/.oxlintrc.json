@@ -153,7 +153,7 @@
                 "message": "Do not import from the node_modules directory."
               },
               {
-                "regex": "^((src|\\.{1,2})\\/)((\\.{1,2}\\/)|\\w+\\/)*(alpha|beta|stable)(?!\\w)",
+                "regex": "^((src|\\.{1,2})\\/)((\\.{1,2}\\/)|\\w+\\/)*(alpha|beta|stable)\\b",
                 "message": "Do not import from barrel files. It can make the library hard to tree-shake and prohibits tools like Chromatic from performing dependency analysis."
               }
             ]
@@ -274,7 +274,7 @@
                 "message": "Do not import from the node_modules directory."
               },
               {
-                "regex": "^((src|\\.{1,2})\\/)((\\.{1,2}\\/)|\\w+\\/)*(alpha|beta|stable)(?!\\w)",
+                "regex": "^((src|\\.{1,2})\\/)((\\.{1,2}\\/)|\\w+\\/)*(alpha|beta|stable)\\b",
                 "message": "Do not import from barrel files. It can make the library hard to tree-shake and prohibits tools like Chromatic from performing dependency analysis."
               },
               {
