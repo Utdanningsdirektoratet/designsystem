@@ -1,4 +1,4 @@
-name: Update prettier
+name: Update oxfmt
 on:
   workflow_dispatch:
   schedule:
@@ -10,7 +10,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  update-prettier:
+  update-oxfmt:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
@@ -22,31 +22,31 @@ jobs:
           git config --global user.name "github-actions[bot]"
 
       - name: Check if update is necessary
-        run: echo "version=$(pnpm outdated -r prettier --json | jq -r '.prettier.latest // ""')" >> "$GITHUB_OUTPUT"
-        id: prettier_info
+        run: echo "version=$(pnpm outdated -r oxfmt --json | jq -r '.oxfmt.latest // ""')" >> "$GITHUB_OUTPUT"
+        id: oxfmt_info
 
-      - name: Update Prettier and format all files
-        if: steps.prettier_info.outputs.version
-        id: prettier_run
+      - name: Update oxfmt and format all files
+        if: steps.oxfmt_info.outputs.version
+        id: oxfmt_run
         run: |
-          pnpm update -r --latest prettier && pnpm dedupe
-          git commit --all -m "build: update prettier to ${{ steps.prettier_info.outputs.version }}"
-          pnpm prettier:write
+          pnpm update -r --latest oxfmt && pnpm dedupe
+          git commit --all -m "build: update oxfmt to ${{ steps.oxfmt_info.outputs.version }}"
+          pnpm fmt
           echo has_changes="$(git diff --stat --exit-code)" >> "$GITHUB_OUTPUT"
 
       - name: Commit changes and update .git-blame-ignore-revs
-        if: steps.prettier_run.outputs.has_changes == 1
+        if: steps.oxfmt_run.outputs.has_changes == 1
         run: |
-          git commit --all -m "style: format files with prettier ${{ steps.prettier_info.outputs.version }}"
+          git commit --all -m "style: format files with oxfmt ${{ steps.oxfmt_info.outputs.version }}"
           echo "# $(git show -s --format='%s')\n$(git rev-parse HEAD)" >> .git-blame-ignore-revs
           git commit --all -m "chore: update .git-blame-ignore-revs"
 
       - name: Create or update pull request
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
-          branch: build/update-prettier
+          branch: build/update-oxfmt
           base: ${{ github.event.repository.default_branch }}
           author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
-          title: 'build: update prettier to ${{ steps.prettier_info.outputs.version }}'
-          body: Updates prettier to the latest version and formats all files
+          title: 'build: update oxfmt to ${{ steps.oxfmt_info.outputs.version }}'
+          body: Updates oxfmt to the latest version and formats all files
           draft: always-true

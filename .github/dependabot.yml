@@ -19,7 +19,7 @@ updates:
     ignore:
       # Some updates require more care, so we handle these ourself
       - dependency-name: '@digdir/*'
-      - dependency-name: prettier
+      - dependency-name: oxfmt
       - dependency-name: storybook
         update-types: [version-update:semver-major]
       - dependency-name: '@storybook/*'
