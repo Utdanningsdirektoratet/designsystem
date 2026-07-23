@@ -1,7 +1,7 @@
 {
   "name": "test-app-nextjs",
-  "type": "module",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -12,10 +12,10 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@udir-design/react": "workspace:*",
-    "@udir-design/theme": "workspace:*",
-    "@udir-design/symbols": "workspace:*",
     "@udir-design/icons": "workspace:*",
+    "@udir-design/react": "workspace:*",
+    "@udir-design/symbols": "workspace:*",
+    "@udir-design/theme": "workspace:*",
     "next": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:"

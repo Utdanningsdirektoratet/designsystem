@@ -1,7 +1,7 @@
 {
   "name": "test-app-vite",
-  "type": "module",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,8 +11,8 @@
   "dependencies": {
     "@udir-design/icons": "workspace:*",
     "@udir-design/react": "workspace:*",
-    "@udir-design/theme": "workspace:*",
     "@udir-design/symbols": "workspace:*",
+    "@udir-design/theme": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-router-dom": "catalog:"

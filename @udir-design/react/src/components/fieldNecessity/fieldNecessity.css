@@ -112,11 +112,11 @@
 
     /* All fields are required */
     &:has(:is(input, textarea):required, [aria-required='true']):not(
-        :has(
-          :is(input, textarea):optional:not([aria-required='true']),
-          [aria-required='false']
-        )
-      ) {
+      :has(
+        :is(input, textarea):optional:not([aria-required='true']),
+        [aria-required='false']
+      )
+    ) {
       .uds-field-necessity-summary,
       &:not(:has(.uds-field-necessity-summary))::before {
         --dsc-tag-background: var(--ds-color-warning-surface-tinted);
@@ -135,8 +135,8 @@
 
     /* All fields are optional */
     &:has(:optional:not([aria-required='true']), [aria-required='false']):not(
-        :has(:required, [aria-required='true'])
-      ) {
+      :has(:required, [aria-required='true'])
+    ) {
       .uds-field-necessity-summary,
       &:not(:has(.uds-field-necessity-summary))::before {
         --dsc-tag-background: var(--ds-color-info-surface-tinted);
