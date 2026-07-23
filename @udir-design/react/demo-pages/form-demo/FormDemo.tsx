@@ -16,7 +16,6 @@ import { FieldNecessity } from 'src/components/fieldNecessity';
 import type { FieldsetProps } from 'src/components/fieldset';
 import { FormNavigation } from 'src/components/formNavigation';
 import { Heading } from 'src/components/typography/heading';
-import { Paragraph } from 'src/components/typography/paragraph';
 import { useFormNavigation } from 'src/hooks/useFormNavigation';
 import type { GetFieldId, GetStepId } from 'src/utilities/form/navigation';
 import {
@@ -26,6 +25,8 @@ import {
 } from 'src/utilities/form/navigation';
 import { ErrorSummaryContent } from './ErrorSummaryContent';
 import classes from './FormDemo.module.css';
+import { ConfirmationPage } from './pages/ConfirmationPage';
+import { DeliverPage } from './pages/DeliverPage';
 import { DocumentationPage } from './pages/DocumentationPage';
 import { PersonalInfoPage } from './pages/PersonalInfoPage';
 import { ProjectPage } from './pages/ProjectPage';
@@ -224,36 +225,11 @@ export const FormDemo = ({
       case 'documentation':
         return <DocumentationPage {...props} />;
       case 'deliver':
-        return <DeliverPage />;
+        return <DeliverPage {...props} />;
       case 'confirmation':
         return <ConfirmationPage />;
     }
   };
-
-  const DeliverPage = () => {
-    return (
-      <>
-        <Heading level={2}>Innsending</Heading>
-        <Paragraph>
-          {isSubmitSuccessful
-            ? 'Du har allerede sendt inn søknaden.'
-            : 'Send inn søknaden.'}
-        </Paragraph>
-      </>
-    );
-  };
-
-  const ConfirmationPage = () => (
-    <div className={classes.confirmation}>
-      <Heading level={2} data-size="sm">
-        Kvittering
-      </Heading>
-      <Paragraph data-size="xl">Takk!</Paragraph>
-      <Paragraph>
-        Vi har mottatt din søknad. Du hører tilbake innen en måned.
-      </Paragraph>
-    </div>
-  );
 
   const hasErrors = attemptedSubmit && Object.keys(errors).length > 0;
 
@@ -285,6 +261,12 @@ export const FormDemo = ({
             Testsøknad
           </Heading>
           <FieldNecessity variant="outline" asChild>
+            {/* eslint-disable-next-line react/react-compiler --
+                False positive with react-hook-form: handleSubmit(onSubmit)
+                returns a submit event handler that only invokes onSubmit on
+                actual form submission, not during render. The compiler cannot
+                prove this and flags onSubmit as ref-like because it closes
+                over dialogDeliverRef.current internally. */}
             <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
               {renderCurrentPage()}
               <div className={classes.navigateButtons}>
