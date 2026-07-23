@@ -199,28 +199,28 @@ export const reactPackageRules = {
 } satisfies DummyRuleMap;
 
 /**
- * jsx-a11y rules that carry options. The correctness rules without options are
- * enabled implicitly via the inherited `categories.correctness`.
+ * jsx-a11y rules that need option overrides. The remaining correctness rules
+ * (and any rule whose config exactly matches Oxlint's defaults) are enabled
+ * implicitly via the inherited `categories.correctness`.
+ *
+ * Note: for these rules, providing a config object *replaces* the default map
+ * wholesale (it is not deep-merged), so any element/handler entries we still
+ * want must be listed explicitly even when they match the built-in defaults.
  */
+const listOrderedRoles = [
+  'listbox',
+  'menu',
+  'menubar',
+  'radiogroup',
+  'tablist',
+  'tree',
+  'treegrid',
+];
+
 export const jsxA11yOptionRules = {
-  'jsx-a11y/interactive-supports-focus': [
-    'error',
-    {
-      tabbable: [
-        'button',
-        'checkbox',
-        'link',
-        'searchbox',
-        'spinbutton',
-        'switch',
-        'textbox',
-      ],
-    },
-  ],
-  'jsx-a11y/no-interactive-element-to-noninteractive-role': [
-    'error',
-    { tr: ['none', 'presentation'], canvas: ['img'] },
-  ],
+  // Narrows the handler list from Oxlint's broad default (25 handlers) to the
+  // upstream eslint-plugin-jsx-a11y recommended set. The per-element exception
+  // entries match the default but must be repeated because config replaces it.
   'jsx-a11y/no-noninteractive-element-interactions': [
     'error',
     {
@@ -241,27 +241,13 @@ export const jsxA11yOptionRules = {
       img: ['onError', 'onLoad'],
     },
   ],
+  // Extends the default allowed-role map with `listbox` on ul/ol, `option` on
+  // li, plus grid/gridcell overrides for table/td.
   'jsx-a11y/no-noninteractive-element-to-interactive-role': [
     'error',
     {
-      ul: [
-        'listbox',
-        'menu',
-        'menubar',
-        'radiogroup',
-        'tablist',
-        'tree',
-        'treegrid',
-      ],
-      ol: [
-        'listbox',
-        'menu',
-        'menubar',
-        'radiogroup',
-        'tablist',
-        'tree',
-        'treegrid',
-      ],
+      ul: listOrderedRoles,
+      ol: listOrderedRoles,
       li: [
         'menuitem',
         'menuitemradio',
@@ -276,10 +262,7 @@ export const jsxA11yOptionRules = {
       fieldset: ['radiogroup', 'presentation'],
     },
   ],
-  'jsx-a11y/no-noninteractive-tabindex': [
-    'error',
-    { tags: [], roles: ['tabpanel'], allowExpressionValues: true },
-  ],
+  // `allowExpressionValues: true` differs from the default (`false`).
   'jsx-a11y/no-static-element-interactions': [
     'error',
     {
