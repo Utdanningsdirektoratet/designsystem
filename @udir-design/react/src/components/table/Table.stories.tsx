@@ -440,7 +440,7 @@ export const StickyHeader = meta.story({
           Ansattes utdanning fordelt på eiertype (ordinære), 2021
         </Heading>
         {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- scrollable region needs tabIndex for keyboard access */}
-        <div role="region" tabIndex={0} className="table-sticky-header-main">
+        <section tabIndex={0} className="table-sticky-header-main">
           <Table {...args}>
             <caption className="ds-sr-only">
               Ansattes utdanning fordelt på eiertype (ordinære), 2021
@@ -538,7 +538,7 @@ export const StickyHeader = meta.story({
               </Table.Row>
             </Table.Body>
           </Table>
-        </div>
+        </section>
       </>
     );
   },
