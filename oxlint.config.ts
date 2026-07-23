@@ -9,9 +9,11 @@ import {
 } from './oxlint.shared.ts';
 
 export default defineConfig({
-  // Built-in plugins enabled repo-wide. `oxc` (normally a default) is omitted
-  // on purpose: the original ESLint setup never enabled its rules.
-  plugins: ['typescript', 'unicorn'],
+  // Built-in plugins enabled repo-wide. `oxc` adds Oxlint-specific rules that
+  // have no ESLint counterpart; its correctness rules fire automatically via
+  // `categories.correctness` below, and a few high-value non-correctness rules
+  // are opted into explicitly in `rules`.
+  plugins: ['typescript', 'unicorn', 'oxc'],
 
   // Oxlint categories group rules by their *nature* (correctness, suspicious,
   // pedantic, style, restriction) — NOT by which ESLint preset enabled them.
@@ -44,6 +46,15 @@ export default defineConfig({
     // eslint-plugin-unicorn — stand-in for ESLint's
     // `import/enforce-node-protocol-usage` (no direct oxlint equivalent).
     'unicorn/prefer-node-protocol': 'error',
+
+    // Oxlint-specific rules outside the `correctness` category.
+    // Perf: catches accidental O(n²) spreads inside reducers/loops.
+    // (`oxc/no-map-spread` was evaluated but deemed too noisy for cold code
+    // where the perf cost is negligible and the suggested fix mutates inputs.)
+    'oxc/no-accumulating-spread': 'error',
+    // `this` in an exported function is almost always a bug in library code —
+    // bundlers replace it with `undefined` at the call site.
+    'oxc/no-this-in-exported-function': 'error',
 
     // eslint:recommended rules categorized outside `correctness`.
     'no-case-declarations': 'error',
