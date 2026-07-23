@@ -339,7 +339,7 @@ De vanlige stegene for å jobbe i monorepoet er
 > Under panseret kjører `pnpm build` følgende kommando:
 >
 > ```
-> pnpm prettier:check && turbo run typecheck lint test:unit build build:docs
+> pnpm fmt:check && turbo run typecheck lint test:unit build build:docs
 > ```
 
 ### Kjøre tasks med Turborepo
@@ -725,24 +725,24 @@ Designsystem-bibliotekene fra Digdir er pinnet for å ha full kontroll over hvil
 pnpm update -r --latest "@digdir/*"
 ```
 
-#### `prettier`
+#### `oxfmt`
 
 > [!IMPORTANT]
-> Oppdateringer av `prettier` skjer automatisk [hver mandag kl 02:00 (UTC)](https://github.com/Utdanningsdirektoratet/designsystem/actions/workflows/update-prettier.yml), og eventuelle endringer må godkjennes i en pull request.
+> Oppdateringer av `oxfmt` skjer automatisk [hver mandag kl 02:00 (UTC)](https://github.com/Utdanningsdirektoratet/designsystem/actions/workflows/update-oxfmt.yml), og eventuelle endringer må godkjennes i en pull request.
 
-Siden nye versjoner av `prettier` ofte påvirker kodeformateringen, er denne versjonen pinnet slik at disse endringene kun skjer når vi velger det selv. Det beste er å gjøre følgende på en branch med ingen uncommited changes:
+Siden nye versjoner av `oxfmt` ofte påvirker kodeformateringen, er denne versjonen pinnet slik at disse endringene kun skjer når vi velger det selv. Det beste er å gjøre følgende på en branch med ingen uncommited changes:
 
 ```sh
-pnpm update -r --latest prettier
-git commit --all -m "build: update prettier to $(npm view prettier version)"
-pnpm prettier:write
-git commit --all -m "style: format files with prettier $(npm view prettier version)"
+pnpm update -r --latest oxfmt
+git commit --all -m "build: update oxfmt to $(npm view oxfmt version)"
+pnpm fmt
+git commit --all -m "style: format files with oxfmt $(npm view oxfmt version)"
 echo "# $(git show -s --format='%s')\n$(git rev-parse HEAD)" > .git-blame-ignore-revs
 git commit --all -m "chore: update .git-blame-ignore-revs"
 ```
 
 > [!NOTE]
-> Vi legger commits med Prettier-formatering inn i `.git-blame-ignore-revs` slik at de
+> Vi legger commits med oxfmt-formatering inn i `.git-blame-ignore-revs` slik at de
 > blir ignorert i blame-visningen på GitHub.
 > Les mer om dette i [GitHubs dokumentasjon](https://docs.github.com/en/repositories/working-with-files/using-files/viewing-and-understanding-files#ignore-commits-in-the-blame-view)
 
@@ -889,7 +889,7 @@ Dette er de viktigste verktøyene og tjenestene vi bruker i designsystemet.
 ### Kodekvalitet
 
 - [Oxlint](https://oxc.rs/docs/guide/usage/linter/) — statisk analyse av kodebasen for å finne mulige problemer
-- [prettier](https://prettier.io/) — håndterer konsistent formatering av kodebasen
+- [Oxfmt](https://oxc.rs/docs/guide/usage/formatter/) — håndterer konsistent formatering av kodebasen
 - [commitlint](https://commitlint.js.org/) — sørger for at commits følger [Conventional Commits-standarden for commitmeldinger](https://www.conventionalcommits.org/en/v1.0.0/), slik at vi lettere kan lage endringslogg
 
 # Thanks

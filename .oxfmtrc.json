@@ -1,0 +1,23 @@
+{
+  "singleQuote": true,
+  "printWidth": 80,
+  "ignorePatterns": [
+    "pnpm-lock.yaml",
+    "design-tokens/src",
+    "design-tokens/visualization",
+    "dist",
+    "coverage",
+    ".nx/cache",
+    ".nx/workspace-data",
+    "**/*.generated.ts",
+    "**/*.generated.tsx"
+  ],
+  "overrides": [
+    {
+      "files": ["tsconfig*.json"],
+      "options": {
+        "trailingComma": "none"
+      }
+    }
+  ]
+}

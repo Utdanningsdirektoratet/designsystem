@@ -53,15 +53,17 @@ const options: Highcharts.Options = {
         },
       ],
 
-      data: tests.map((item): Highcharts.PointOptionsObject => ({
-        name: item.name,
-        y: item.value,
-        selected: true,
-        accessibility: {
-          // Adds percentage readout for screen readers, since we have it visually
-          description: `${Math.round((item.value / total) * 100)}%`,
-        },
-      })),
+      data: tests.map(
+        (item): Highcharts.PointOptionsObject => ({
+          name: item.name,
+          y: item.value,
+          selected: true,
+          accessibility: {
+            // Adds percentage readout for screen readers, since we have it visually
+            description: `${Math.round((item.value / total) * 100)}%`,
+          },
+        }),
+      ),
     },
   ],
   accessibility: {

@@ -1,8 +1,8 @@
 {
   "name": "@internal/ci",
   "version": "0.0.0",
-  "type": "module",
   "private": true,
+  "type": "module",
   "scripts": {
     "lint": "oxlint --max-warnings 0",
     "test:unit": "vitest run",
