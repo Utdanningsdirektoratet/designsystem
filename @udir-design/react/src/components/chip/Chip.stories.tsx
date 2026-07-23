@@ -4,22 +4,14 @@ import { expect, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { Search } from '../search/Search';
 import { Paragraph } from '../typography/paragraph/Paragraph';
-import type {
-  ChipButtonProps,
-  ChipCheckboxProps,
-  ChipRadioProps,
-  ChipRemovableProps,
-} from './Chip';
+import type { ChipButtonProps, ChipRadioProps } from './Chip';
 import { Chip } from './Chip';
 import { ChipButton } from './docs/FakeChipButton';
 import { ChipCheckbox } from './docs/FakeChipCheckbox';
 import { ChipRadio } from './docs/FakeChipRadio';
 import { ChipRemovable } from './docs/FakeChipRemovable';
 
-type CombinedProps = ChipRadioProps &
-  ChipButtonProps &
-  ChipCheckboxProps &
-  ChipRemovableProps;
+type CombinedProps = ChipRadioProps & ChipButtonProps;
 
 // Hack to get the first tab in Controls to have the correct name Chip.Button instead of ChipButton
 if (Object.hasOwn(ChipButton, '__docgenInfo')) {
@@ -205,7 +197,6 @@ export const Removable = meta.story({
         {filter.map((item) => (
           <Chip.Removable
             key={item}
-            {...args}
             aria-label={`Slett ${item}`}
             onClick={() => {
               setFilter((x) =>
