@@ -17,7 +17,7 @@ allowBuilds:
   unrs-resolver: false
 
 catalog:
-  '@babel/types': ^7.29.7
+  '@babel/types': ^8.0.4
   '@types/js-yaml': ^4.0.9
   '@commitlint/cli': ^21.2.1
   '@commitlint/config-conventional': ^21.2.0
@@ -27,7 +27,7 @@ catalog:
   '@digdir/designsystemet-react': 1.18.0
   '@digdir/designsystemet-types': 1.18.0
   '@digdir/designsystemet-web': 1.18.0
-  '@eslint/js': ^9.39.5
+  '@eslint/js': ^10.0.1
   '@figma/rest-api-spec': ^0.41.0
   '@hookform/resolvers': ^5.4.0
   '@navikt/aksel-icons': 8.15.0
@@ -66,9 +66,9 @@ catalog:
   camelcase: ^9.0.0
   chromatic: ^18.0.1
   clsx: 2.1.1
-  cssnano: ^7.1.9
+  cssnano: ^8.0.2
   diffable-html: ^6.0.1
-  eslint: ^9.39.5
+  eslint: ^10.7.0
   eslint-config-next: ^16.2.10
   eslint-config-prettier: 10.1.8
   eslint-plugin-import: ^2.32.0
@@ -81,7 +81,7 @@ catalog:
   hast-util-from-html: ^2.0.3
   hast-util-is-element: ^3.0.0
   hast-util-to-html: ^9.0.5
-  highcharts: ^12.6.0
+  highcharts: ^13.0.0
   highcharts-react-official: ^3.2.3
   husky: ^9.1.7
   js-yaml: ^5.2.1
@@ -98,7 +98,7 @@ catalog:
   ramda: ^0.32.0
   react: ^19.2.7
   react-dom: ^19.2.7
-  react-dropzone: ^15.0.0
+  react-dropzone: ^19.1.1
   react-hook-form: ^7.82.0
   react-router-dom: ^7.18.1
   react-style-stringify: ^1.2.0
@@ -133,8 +133,8 @@ catalog:
   '@eslint/config-helpers': ^0.6.0
   semantic-release: ^25.0.8
   '@semantic-release/exec': ^7.1.0
-  conventional-changelog-conventionalcommits: ^9.3.1
-  conventional-changelog-writer: ^8.4.0
+  conventional-changelog-conventionalcommits: ^10.2.1
+  conventional-changelog-writer: ^9.2.0
   dpdm: ^4.2.0
   unplugin-dts: ^1.0.3
 
