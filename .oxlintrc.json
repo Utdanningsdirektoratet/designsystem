@@ -58,11 +58,8 @@
     "typescript/no-unnecessary-type-constraint": "error",
     "typescript/no-unsafe-function-type": "error",
 
-    // Noisy type-aware correctness rules that `categories.correctness` turns on.
-    // Disabled for now to keep the correctness net without a large backlog.
-    // TODO(follow-up): fix existing violations and re-enable. At time of writing:
-    // ~200 `no-floating-promises` + ~8 `unbound-method` findings in @udir-design/react.
-    "typescript/no-floating-promises": "off",
+    // `typescript/unbound-method` remains off pending follow-up (~7 findings
+    // in @udir-design/react, all Storybook `render: OtherStory.render` sites).
     "typescript/unbound-method": "off"
   },
   "overrides": [

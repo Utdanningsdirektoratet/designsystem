@@ -205,7 +205,14 @@
         "storybook/use-storybook-expect": "error",
         "storybook/use-storybook-testing-library": "error",
         "import/no-anonymous-default-export": "off",
-        "react/rules-of-hooks": "off"
+        "react/rules-of-hooks": "off",
+        // Storybook play-function assertions like `expect(el).toBeTruthy()`
+        // return chainable promise-likes but throw synchronously, so the
+        // floating-promise warning is noise here. Missing `await` before
+        // `userEvent.*` (the semantically-important case, where subsequent
+        // steps depend on completion) is already caught by
+        // `storybook/await-interactions` above.
+        "typescript/no-floating-promises": "off"
       },
       "plugins": ["import"]
     },
