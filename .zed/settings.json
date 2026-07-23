@@ -1,8 +1,26 @@
 {
   "format_on_save": "on",
   "languages": {
-    "JSONC": {
+    "JSON": {
       "formatter": "prettier"
+    },
+    "JSONC": {
+      "formatter": {
+        "external": {
+          "command": "pnpm",
+          "arguments": ["exec", "prettier", "--stdin-filepath", "{buffer_path}"]
+        }
+      }
+    },
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.fixAll.oxc": true
+      }
+    },
+    "TSX": {
+      "code_actions_on_format": {
+        "source.fixAll.oxc": true
+      }
     }
   }
 }
