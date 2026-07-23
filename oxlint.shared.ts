@@ -218,29 +218,6 @@ const listOrderedRoles = [
 ];
 
 export const jsxA11yOptionRules = {
-  // Narrows the handler list from Oxlint's broad default (25 handlers) to the
-  // upstream eslint-plugin-jsx-a11y recommended set. The per-element exception
-  // entries match the default but must be repeated because config replaces it.
-  'jsx-a11y/no-noninteractive-element-interactions': [
-    'error',
-    {
-      handlers: [
-        'onClick',
-        'onError',
-        'onLoad',
-        'onMouseDown',
-        'onMouseUp',
-        'onKeyPress',
-        'onKeyDown',
-        'onKeyUp',
-      ],
-      alert: ['onKeyUp', 'onKeyDown', 'onKeyPress'],
-      body: ['onError', 'onLoad'],
-      dialog: ['onKeyUp', 'onKeyDown', 'onKeyPress'],
-      iframe: ['onError', 'onLoad'],
-      img: ['onError', 'onLoad'],
-    },
-  ],
   // Extends the default allowed-role map with `listbox` on ul/ol, `option` on
   // li, plus grid/gridcell overrides for table/td.
   'jsx-a11y/no-noninteractive-element-to-interactive-role': [
