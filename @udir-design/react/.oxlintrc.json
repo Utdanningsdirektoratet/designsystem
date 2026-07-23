@@ -189,6 +189,34 @@
       }
     },
     {
+      // The barrel files themselves must be allowed to re-export from the
+      // subordinate barrels (`./components/alpha`, `./hooks/alpha`, etc.).
+      // Redefines `no-restricted-imports` without the barrel-file regex; the
+      // rule config is replaced entirely by this later override.
+      "files": ["src/alpha.ts", "src/beta.ts", "src/stable.ts"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["@udir-design/react", "@udir-design/react/*"],
+                "message": "Do not import from @udir-design/react module, use relative paths instead."
+              },
+              {
+                "group": ["**/dist/*"],
+                "message": "Do not import from the dist directory."
+              },
+              {
+                "group": ["**/node_modules/*"],
+                "message": "Do not import from the node_modules directory."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "files": [
         "**/*.stories.{ts,tsx,js,jsx,mjs,cjs}",
         "**/*.story.{ts,tsx,js,jsx,mjs,cjs}"
