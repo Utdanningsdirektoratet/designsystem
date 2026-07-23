@@ -212,7 +212,12 @@
         // `userEvent.*` (the semantically-important case, where subsequent
         // steps depend on completion) is already caught by
         // `storybook/await-interactions` above.
-        "typescript/no-floating-promises": "off"
+        "typescript/no-floating-promises": "off",
+        // Reusing another story's `render` via `render: OtherStory.render`
+        // trips unbound-method because Storybook's `StoryObj.render` is
+        // typed with a method signature. At runtime the receiver is stable
+        // and stories don't rely on `this`, so this is a false positive.
+        "typescript/unbound-method": "off"
       },
       "plugins": ["import"]
     },

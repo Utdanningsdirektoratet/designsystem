@@ -56,11 +56,7 @@
     "typescript/no-namespace": "error",
     "typescript/no-require-imports": "error",
     "typescript/no-unnecessary-type-constraint": "error",
-    "typescript/no-unsafe-function-type": "error",
-
-    // `typescript/unbound-method` remains off pending follow-up (~7 findings
-    // in @udir-design/react, all Storybook `render: OtherStory.render` sites).
-    "typescript/unbound-method": "off"
+    "typescript/no-unsafe-function-type": "error"
   },
   "overrides": [
     {
