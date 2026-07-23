@@ -1,6 +1,10 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["tsconfig.base.json", ".oxlintrc.json"],
+  "globalDependencies": [
+    "tsconfig.base.json",
+    "oxlint.config.ts",
+    "oxlint.shared.ts"
+  ],
   "futureFlags": {
     "affectedUsingTaskInputs": true
   },

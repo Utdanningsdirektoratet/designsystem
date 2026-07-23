@@ -1,7 +1,0 @@
-{
-  "$schema": "../../node_modules/oxlint/configuration_schema.json",
-  // Everything (plugins, categories, env, settings, jsPlugins, rules, overrides)
-  // is inherited from the root config via `extends` — no package-specific config
-  // is needed here.
-  "extends": ["../../.oxlintrc.json"]
-}

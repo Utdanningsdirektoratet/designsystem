@@ -525,36 +525,45 @@ Vanligvis legger vi koden for hoved-entrypointet i `src/index.ts`.
 
 #### Oxlint
 
-For at linting skal fungere trenger du en `.oxlintrc.json`-fil.
+For at linting skal fungere trenger du en `oxlint.config.ts`-fil.
 
 Her er et minimalt oppsett som kun skrur på basekonfigurasjonen som er definert i rot av monorepoet:
 
-```jsonc
-{
-  "$schema": "../../node_modules/oxlint/configuration_schema.json",
-  "extends": ["../../.oxlintrc.json"],
-}
+```ts
+import { defineConfig } from 'oxlint';
+import baseConfig from '../../oxlint.config.ts';
+
+export default defineConfig({
+  extends: [baseConfig],
+});
 ```
 
 Det kan være relevant å utvide denne med flere plugins og egne regler.
 Merk at `rules`, `plugins` og `overrides` merges additivt fra `extends`,
 mens `categories`, `env`, `settings` og `jsPlugins` arves ved erstatning
-(må derfor gjentas her hvis du overstyrer dem):
+(må derfor gjentas her hvis du overstyrer dem). Gjenbrukbare byggeklosser
+ligger i `oxlint.shared.ts` i rot av monorepoet:
 
-```jsonc
-{
-  "$schema": "../../node_modules/oxlint/configuration_schema.json",
-  "extends": ["../../.oxlintrc.json"],
-  "plugins": ["react", "jsx-a11y", "typescript", "unicorn"],
-  "settings": {
-    "react": { "version": "19" },
-    "import/internal-regex": "^(@udir-design|src)/",
+```ts
+import { defineConfig } from 'oxlint';
+import baseConfig from '../../oxlint.config.ts';
+import {
+  jsxA11yOptionRules,
+  reactPackagePlugins,
+  reactPackageRules,
+  reactPackageSettings,
+} from '../../oxlint.shared.ts';
+
+export default defineConfig({
+  extends: [baseConfig],
+  plugins: reactPackagePlugins,
+  settings: reactPackageSettings,
+  rules: {
+    ...reactPackageRules,
+    ...jsxA11yOptionRules,
+    // Dine egne regler her.
   },
-  "rules": {
-    // Dine egne regler her, f.eks.:
-    "react/exhaustive-deps": "warn",
-  },
-}
+});
 ```
 
 #### Turborepo-konfigurasjon
@@ -589,7 +598,7 @@ Hvis pakken trenger egne innstillinger, kan du legge til filen `turbo.json` i pa
 ├── src/
 │   ├── ...
 │   └── index.ts
-├── .oxlintrc.json
+├── oxlint.config.ts
 ├── README.md
 ├── tsconfig.json
 ├── package.json
@@ -629,7 +638,7 @@ Du trenger da en `package.json` med:
 }
 ```
 
-I disse pakkene trenger du ikke tenke på `"exports"` eller at andre pakker kan være avhengige av de. Sett pakken opp etter anvisning fra dokumentasjonen til teknologien du tester med, men husk å bruke vårt baseoppsett for TypeScript (`tsconfig.base.json`) og Oxlint (`.oxlintrc.json`).
+I disse pakkene trenger du ikke tenke på `"exports"` eller at andre pakker kan være avhengige av de. Sett pakken opp etter anvisning fra dokumentasjonen til teknologien du tester med, men husk å bruke vårt baseoppsett for TypeScript (`tsconfig.base.json`) og Oxlint (`oxlint.config.ts`).
 
 ## Hvordan håndtere avhengigheter
 
