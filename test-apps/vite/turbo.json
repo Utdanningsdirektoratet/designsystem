@@ -5,6 +5,10 @@
     "dev": {
       "persistent": true,
       "dependsOn": ["^build", "^inject"]
+    },
+    "lint": {
+      "dependsOn": ["^build", "^inject"],
+      "inputs": ["$TURBO_DEFAULT$"]
     }
   }
 }
