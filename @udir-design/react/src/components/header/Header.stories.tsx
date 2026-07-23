@@ -65,7 +65,7 @@ export const Preview = meta.story({
     const header = canvas.getByTestId('header');
 
     await step('Header is rendered', async () => {
-      await expect(header).toBeInTheDocument;
+      await expect(header).toBeInTheDocument();
     });
   },
 });

@@ -1,4 +1,3 @@
-import { useDebounceCallback } from '@digdir/designsystemet-react';
 import { Source } from '@storybook/addon-docs/blocks';
 import { useState } from 'react';
 import { Card } from 'src/components/card';
@@ -9,6 +8,7 @@ import { Tabs } from 'src/components/tabs';
 import { Heading } from 'src/components/typography/heading';
 import { Label } from 'src/components/typography/label';
 import { Paragraph } from 'src/components/typography/paragraph';
+import { useDebounceCallback } from 'src/utilities/useDebounceCallback';
 import { ColorTokensTable } from '../color/color-table';
 import datavisTokens from '../design-tokens/color-datavis.json';
 import colorTokens from '../design-tokens/color.json';

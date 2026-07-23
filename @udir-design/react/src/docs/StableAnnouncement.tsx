@@ -7,11 +7,13 @@ export function StableAnnouncement() {
   return (
     <Card className={styles.card}>
       <Card.Block className={styles.imgContainer}>
+        {/* eslint-disable jsx-a11y/no-redundant-roles -- Without this, SVG src may cause VoiceOver to enumerate internal SVG elements in older Safari versions. See https://bugs.webkit.org/show_bug.cgi?id=216364 */}
         <img
           src={`${import.meta.env.BASE_URL}img/feiring.svg`}
           alt={'Feiring'}
           role="img"
         />
+        {/* eslint-enable jsx-a11y/no-redundant-roles */}
       </Card.Block>
       <Card.Block>
         <Heading level={2}>Udirs designsystem er lansert!</Heading>

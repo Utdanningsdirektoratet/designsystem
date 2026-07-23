@@ -1,4 +1,4 @@
-import type { Size } from '@digdir/designsystemet-react';
+import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
 import '@u-elements/u-details/polyfill';
 import type { HTMLAttributes, ReactNode } from 'react';

@@ -19,7 +19,7 @@ const meta = preview.meta<
       control: {
         type: 'number',
       },
-      defaultValue: 1,
+      table: { defaultValue: { summary: '1' } },
       description: 'The current page number',
       type: { name: 'number' },
     },
@@ -27,7 +27,7 @@ const meta = preview.meta<
       control: {
         type: 'number',
       },
-      defaultValue: 1,
+      table: { defaultValue: { summary: '1' } },
       description: 'The total number of pages',
       type: { name: 'number' },
     },
@@ -35,7 +35,7 @@ const meta = preview.meta<
       control: {
         type: 'number',
       },
-      defaultValue: 7,
+      table: { defaultValue: { summary: '7' } },
       description: 'The maximum number of pages to show',
       type: { name: 'number' },
     },

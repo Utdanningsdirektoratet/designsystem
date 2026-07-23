@@ -45,7 +45,7 @@
   "scripts": {
     "build": "vite build",
     "inject": "echo 'Dummy script to trigger pnpm injected dependency sync'",
-    "lint": "eslint . --max-warnings 0",
+    "lint": "oxlint --type-aware --max-warnings 0",
     "lint:cycles": "pnpm dpdm --no-warning --no-tree --exit-code circular:1 ./src/alpha.ts",
     "typecheck": "tsc --build",
     "dev": "storybook dev --port 6005",
@@ -87,6 +87,7 @@
     "@types/react-dom": "catalog:",
     "@types/remark-heading-id": "catalog:",
     "@udir-design/symbols": "workspace:*",
+    "@udir-design/theme": "workspace:*",
     "@vitejs/plugin-react": "catalog:",
     "@vitest/browser": "catalog:",
     "@vitest/browser-playwright": "catalog:",

@@ -105,7 +105,7 @@ export const Controlled = meta.story({
     docs: advancedCodeDocs,
   },
   render: (args) => {
-    const [value, setValue] = useState(`${args.value || ''}`);
+    const [value, setValue] = useState(String(args.value ?? ''));
 
     return (
       <>

@@ -772,10 +772,7 @@ exports[`Sticky Header 1`] = `
 <h2>
   Ansattes utdanning fordelt på eiertype (ordinære), 2021
 </h2>
-<div
-  role="region"
-  tabindex="0"
->
+<section tabindex="0">
   <table
     data-sticky-header="true"
     data-zebra="true"
@@ -933,7 +930,7 @@ exports[`Sticky Header 1`] = `
       </tr>
     </tbody>
   </table>
-</div>
+</section>
 `;
 
 exports[`With Border 1`] = `
