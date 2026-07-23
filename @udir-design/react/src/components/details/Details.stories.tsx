@@ -1,5 +1,5 @@
 import type { Decorator } from '@storybook/react-vite';
-import { createElement, useState } from 'react';
+import { useState } from 'react';
 import { expect, userEvent } from 'storybook/test';
 import { ChevronDownUpIcon, ChevronUpDownIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
@@ -184,12 +184,15 @@ const detailsColorDecorator: Decorator = (Story) => {
         </Fieldset>
       </div>
       <div data-storybook-decorator>
-        {/* eslint-disable-next-line react/no-children-prop -- createElement requires children in props */}
-        {createElement(card === 'none' ? 'div' : Card, {
-          variant: card !== 'none' ? card : undefined,
-          'data-color': color,
-          children: <Story />,
-        })}
+        {card === 'none' ? (
+          <div data-color={color}>
+            <Story />
+          </div>
+        ) : (
+          <Card variant={card} data-color={color}>
+            <Story />
+          </Card>
+        )}
       </div>
     </>
   );
