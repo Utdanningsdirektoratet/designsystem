@@ -28,7 +28,7 @@ type NoUnusedVarsRule = Tuple<NonNullable<DummyRuleMap['no-unused-vars']>>;
 // File-pattern globs
 // ---------------------------------------------------------------------------
 
-/** All TypeScript source files (matches typescript-eslint's default). */
+/** All TypeScript source files (`.ts`, `.tsx`, `.mts`, `.cts`). */
 export const TS_FILES = ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.cts'];
 
 /** TypeScript files that contain JSX/TSX or plain TS (no `.mts`/`.cts`). */
@@ -132,15 +132,15 @@ export const noUnusedVars = (varsIgnorePattern = '^_'): NoUnusedVarsRule => [
 ];
 
 // ---------------------------------------------------------------------------
-// typescript-eslint recommended `eslint-recommended` layer
+// Core rule overrides for TypeScript files
 // ---------------------------------------------------------------------------
 
 /**
- * The `eslint-recommended` layer of typescript-eslint's recommended preset:
- * turn off the core ESLint rules the TypeScript compiler already enforces, and
- * enable the TS-friendly stylistic rules the preset ships with.
+ * Applied to TypeScript files: disable the core JS rules the TS compiler
+ * already enforces (and would just double-report), and enable a few TS-safe
+ * stylistic checks that still add value in a typed codebase.
  */
-export const tsEslintRecommendedLayer = {
+export const coreRulesForTypeScript = {
   'constructor-super': 'off',
   'getter-return': 'off',
   'no-class-assign': 'off',

@@ -5,7 +5,7 @@ import {
   TS_TSX_FILES,
   importOrder,
   noUnusedVars,
-  tsEslintRecommendedLayer,
+  coreRulesForTypeScript,
 } from './oxlint.shared.ts';
 
 export default defineConfig({
@@ -15,10 +15,9 @@ export default defineConfig({
   // are opted into explicitly in `rules`.
   plugins: ['typescript', 'unicorn', 'oxc'],
 
-  // Oxlint categories group rules by their *nature* (correctness, suspicious,
-  // pedantic, style, restriction) — NOT by which ESLint preset enabled them.
-  // There is therefore no category that reproduces `eslint:recommended` or
-  // `typescript-eslint` recommended, so rules are listed explicitly below.
+  // Enable every rule Oxlint categorizes as `correctness` (real bugs / broken
+  // code). Other categories (`suspicious`, `pedantic`, `style`, `restriction`)
+  // are opt-in per-rule below.
   categories: {
     correctness: 'error',
   },
@@ -34,17 +33,15 @@ export default defineConfig({
     'import/internal-regex': '^(@udir-design|src)/',
   },
 
-  // No `ignorePatterns`: oxlint honors `.gitignore` automatically, and every
-  // pattern that used to live here was a verbatim duplicate of a `.gitignore`
-  // entry. Add package-local exceptions in nested configs when needed.
+  // No `ignorePatterns`: Oxlint honors `.gitignore` automatically. Add
+  // package-local exceptions in nested configs when needed.
 
   rules: {
     // Correctness rules are enabled in bulk via `categories.correctness` above
-    // (inherited by every package). Only recommended rules that oxlint places
-    // OUTSIDE the correctness category are listed explicitly below.
+    // (inherited by every package). Rules listed here are ones we want
+    // enforced that Oxlint places outside the correctness category.
 
-    // eslint-plugin-unicorn — stand-in for ESLint's
-    // `import/enforce-node-protocol-usage` (no direct oxlint equivalent).
+    // Enforce the `node:` protocol prefix on Node built-in module imports.
     'unicorn/prefer-node-protocol': 'error',
 
     // Oxlint-specific rules outside the `correctness` category.
@@ -56,7 +53,7 @@ export default defineConfig({
     // bundlers replace it with `undefined` at the call site.
     'oxc/no-this-in-exported-function': 'error',
 
-    // eslint:recommended rules categorized outside `correctness`.
+    // Core JavaScript rules Oxlint categorizes outside `correctness`.
     'no-case-declarations': 'error',
     'no-empty': 'error',
     'no-fallthrough': 'error',
@@ -66,7 +63,7 @@ export default defineConfig({
     'no-unexpected-multiline': 'error',
     'no-array-constructor': 'error',
 
-    // typescript-eslint recommended rules categorized outside `correctness`.
+    // TypeScript rules Oxlint categorizes outside `correctness`.
     'typescript/ban-ts-comment': 'error',
     'typescript/no-empty-object-type': 'error',
     'typescript/no-explicit-any': 'error',
@@ -78,9 +75,10 @@ export default defineConfig({
 
   overrides: [
     {
-      // typescript-eslint recommended, `eslint-recommended` layer.
+      // See `coreRulesForTypeScript` in `oxlint.shared.ts` for what's disabled
+      // and enabled here, and why.
       files: TS_FILES,
-      rules: tsEslintRecommendedLayer,
+      rules: coreRulesForTypeScript,
     },
     {
       // Custom import hygiene (eslint-plugin-import, via the `importx` alias).

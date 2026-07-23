@@ -1,5 +1,5 @@
 import { defineConfig } from 'oxlint';
-import { TS_FILES, tsEslintRecommendedLayer } from '../../oxlint.shared.ts';
+import { TS_FILES, coreRulesForTypeScript } from '../../oxlint.shared.ts';
 
 // Standalone config (no `extends`), so `categories`/`env` are declared here.
 export default defineConfig({
@@ -16,7 +16,7 @@ export default defineConfig({
     'no-array-constructor': 'error',
     'no-unused-expressions': 'warn',
     'no-unused-vars': 'warn',
-    // === eslint-plugin-next recommended ===
+    // Next.js-specific rules.
     'nextjs/google-font-display': 'warn',
     'nextjs/google-font-preconnect': 'warn',
     'nextjs/next-script-for-ga': 'warn',
@@ -38,7 +38,7 @@ export default defineConfig({
     'nextjs/no-duplicate-head': 'error',
     'nextjs/no-head-import-in-document': 'error',
     'nextjs/no-script-component-in-head': 'error',
-    // === typescript-eslint recommended ===
+    // TypeScript-specific rules.
     'typescript/ban-ts-comment': 'error',
     'typescript/no-duplicate-enum-values': 'error',
     'typescript/no-empty-object-type': 'error',
@@ -59,7 +59,7 @@ export default defineConfig({
   },
   overrides: [
     {
-      // eslint-config-next: react + jsx-a11y + import rules for app source.
+      // React + jsx-a11y + import rules for Next.js app source.
       files: ['**/*.{js,jsx,mjs,ts,tsx,mts,cts}'],
       plugins: ['react', 'import', 'jsx-a11y'],
       env: {
@@ -111,9 +111,9 @@ export default defineConfig({
       },
     },
     {
-      // typescript-eslint eslint-recommended layer (turn off core rules TS covers).
+      // Core rule overrides for TypeScript files (turn off ones TS covers).
       files: TS_FILES,
-      rules: tsEslintRecommendedLayer,
+      rules: coreRulesForTypeScript,
     },
   ],
 });
