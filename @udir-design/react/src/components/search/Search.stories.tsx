@@ -1,9 +1,9 @@
-import { useDebounceCallback } from '@digdir/designsystemet-react';
 import { useState } from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { assertExists } from '../../utilities/helpers/assertExists';
+import { useDebounceCallback } from '../../utilities/useDebounceCallback';
 import { Chip } from '../chip/Chip';
 import { Field } from '../field/Field';
 import { Skeleton } from '../skeleton/Skeleton';

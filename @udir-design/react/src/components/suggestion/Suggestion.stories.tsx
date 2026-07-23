@@ -1,4 +1,3 @@
-import { useDebounceCallback } from '@digdir/designsystemet-react';
 import { type InputEvent, useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
@@ -9,6 +8,7 @@ import { Field } from 'src/components/field';
 import { Spinner } from 'src/components/spinner';
 import { Label } from 'src/components/typography/label';
 import { Paragraph } from 'src/components/typography/paragraph';
+import { useDebounceCallback } from 'src/utilities/useDebounceCallback';
 import { Suggestion } from './Suggestion';
 import type {
   SuggestionItem,
