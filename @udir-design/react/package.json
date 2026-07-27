@@ -1,15 +1,15 @@
 {
   "name": "@udir-design/react",
+  "version": "0.0.0-semantically-released",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "github:Utdanningsdirektoratet/designsystem",
     "directory": "@udir-design/react"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "license": "MIT",
-  "version": "0.0.0-semantically-released",
+  "files": [
+    "./dist"
+  ],
   "type": "module",
   "main": "./dist/stable.js",
   "types": "./dist/stable.d.ts",
@@ -39,9 +39,9 @@
     },
     "./style.css": "./dist/style.css"
   },
-  "files": [
-    "./dist"
-  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "vite build",
     "inject": "echo 'Dummy script to trigger pnpm injected dependency sync'",
@@ -109,6 +109,7 @@
     "highcharts-react-official": "catalog:",
     "mdast-util-to-hast": "catalog:",
     "playwright": "catalog:",
+    "prettier": "catalog:",
     "ramda": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",

@@ -1,23 +1,27 @@
 {
   "name": "@udir-design/css",
+  "version": "0.0.0-semantically-released",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "github:Utdanningsdirektoratet/designsystem",
     "directory": "@udir-design/css"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "license": "MIT",
-  "version": "0.0.0-semantically-released",
+  "files": [
+    "./dist"
+  ],
   "type": "module",
   "exports": {
     ".": "./dist/index.css",
     "./components.css": "./dist/components.css"
   },
-  "files": [
-    "./dist"
-  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "postcss src/*.css --dir dist/",
+    "lint": "oxlint --max-warnings 0"
+  },
   "dependencies": {
     "@digdir/designsystemet-css": "catalog:",
     "@udir-design/theme": "workspace:*"
@@ -32,9 +36,5 @@
     "postcss-load-config": "catalog:",
     "postcss-nesting": "catalog:"
   },
-  "untrackedDevDependencies": [],
-  "scripts": {
-    "build": "postcss src/*.css --dir dist/",
-    "lint": "oxlint --max-warnings 0"
-  }
+  "untrackedDevDependencies": []
 }

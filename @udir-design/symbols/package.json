@@ -2,15 +2,16 @@
   "name": "@udir-design/symbols",
   "version": "0.0.0-semantically-released",
   "license": "MIT",
-  "type": "module",
-  "publishConfig": {
-    "access": "public"
-  },
   "repository": {
     "type": "git",
     "url": "github:Utdanningsdirektoratet/designsystem",
     "directory": "@udir-design/symbols"
   },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -38,12 +39,11 @@
     "./svg/*.svg": "./dist/svg/*.svg",
     "./package.json": "./package.json"
   },
-  "files": [
-    "dist"
-  ],
-  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "generate": "svgr symbols --silent --typescript --ext tsx --no-prettier --index-template config/index-template.js --out-dir generated-src && mv generated-src/index.tsx generated-src/index.ts && prettier --log-level warn --write ./generated-src",
+    "generate": "svgr symbols --silent --typescript --ext tsx --no-prettier --index-template config/index-template.js --out-dir generated-src && mv generated-src/index.tsx generated-src/index.ts && oxfmt ./generated-src",
     "update:metadata": "node config/metadata.js",
     "copy:svgs": "shx mkdir -p dist/svg && svgo --quiet --config=config/svgo.config.js -f symbols -o dist/svg",
     "prebuild": "shx rm -rf generated-src && shx mkdir -p generated-src && pnpm run update:metadata && pnpm run generate",
@@ -61,7 +61,7 @@
     "@types/react": "catalog:",
     "fast-glob": "catalog:",
     "js-yaml": "catalog:",
-    "prettier": "catalog:",
+    "oxfmt": "catalog:",
     "react": "catalog:",
     "sharp": "catalog:",
     "shx": "catalog:",

@@ -1,12 +1,13 @@
 {
   "name": "designsystem",
   "version": "0.0.0",
+  "private": true,
   "license": "MIT",
   "type": "module",
   "scripts": {
     "prepare": "husky",
     "dev": "turbo run dev watch:typedoc serve:typedoc --filter=@udir-design/react",
-    "build": "pnpm prettier:check && turbo run typecheck lint test:unit build build:docs",
+    "build": "pnpm fmt:check && turbo run typecheck lint test:unit build build:docs",
     "build:storybook": "turbo run build:storybook --filter=@udir-design/react",
     "build:docs": "turbo run build:docs --filter=@udir-design/react",
     "test:storybook": "turbo run test:storybook --filter=@udir-design/react",
@@ -21,11 +22,9 @@
     "codeql:results:actions": "echo 'CodeQL found the following problems in GitHub Actions code:\n' && jq -f .codeql/get-results.jq .codeql/actions-results.json",
     "codeql:results": "pnpm codeql:results:ts && pnpm codeql:results:actions",
     "codeql": "pnpm codeql:db && pnpm codeql:scan && pnpm codeql:results",
-    "prettier:check": "pnpm prettier --check .",
-    "prettier:write": "pnpm prettier --write ."
+    "fmt": "pnpm oxfmt",
+    "fmt:check": "pnpm oxfmt --check"
   },
-  "private": true,
-  "packageManager": "pnpm@11.15.1+sha512.81350b07e53c9538a02f1f2303b4290fa2d7be04e56e2a970c4cc4b417dc761de196edabd49d55c7dc9580db81007c44143e4e3d7e462b3000d23c255122d065",
   "devDependencies": {
     "@commitlint/cli": "catalog:",
     "@commitlint/config-conventional": "catalog:",
@@ -36,10 +35,10 @@
     "eslint-plugin-import": "catalog:",
     "husky": "catalog:",
     "jsdom": "catalog:",
+    "oxfmt": "catalog:",
     "oxlint": "catalog:",
     "oxlint-tsgolint": "catalog:",
     "playwright": "catalog:",
-    "prettier": "catalog:",
     "tslib": "catalog:",
     "tsx": "catalog:",
     "turbo": "catalog:",
@@ -51,5 +50,6 @@
       "version": "24.15.0",
       "onFail": "download"
     }
-  }
+  },
+  "packageManager": "pnpm@11.15.1+sha512.81350b07e53c9538a02f1f2303b4290fa2d7be04e56e2a970c4cc4b417dc761de196edabd49d55c7dc9580db81007c44143e4e3d7e462b3000d23c255122d065"
 }
