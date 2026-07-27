@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router';
 import { TestFooter as Footer } from '@udir-design/demos/TestFooter';
 import { TestHeader as Header } from '@udir-design/demos/TestHeader';
 import { DemoBanner, SkipLink } from '@udir-design/react/beta';

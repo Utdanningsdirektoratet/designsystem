@@ -2,6 +2,9 @@ name: Update patch and minor versions
 description: Updates all dependencies according to the version ranges defined in package.json files
 on:
   workflow_dispatch:
+  schedule:
+    # Runs at 23:00, only on Sunday
+    - cron: 0 23 * * 0
 
 permissions:
   contents: write
@@ -11,18 +14,38 @@ jobs:
   update-deps:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: ./.github/actions/pnpm-setup
-      - run: pnpm update -r && pnpm dedupe
+      - name: Configure git user
+        run: |
+          # Setup the committers identity.
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+      - name: Update GitHub Actions
+        run: pnpm update '!*' '*/*' '!@*'
+      - name: Commit actions update if necessary
+        id: commit-actions
+        run: |
+          if ! git diff --quiet --exit-code; then
+            git commit --all -m "ci(deps): update patch and minor versions of github actions"
+            echo "committed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Update npm dependencies
+        run: pnpm update -r && pnpm dedupe
+      - name: Commit npm update if necessary
+        id: commit-npm
+        run: |
+          if ! git diff --quiet --exit-code; then
+            git commit --all -m "build(deps): update patch and minor versions"
+            echo "committed=true" >> "$GITHUB_OUTPUT"
+          fi
       - name: Create or update pull request
+        if: steps.commit-actions.outputs.committed == 'true' || steps.commit-npm.outputs.committed == 'true'
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           branch: build/update-patch-and-minor-deps
           base: ${{ github.event.repository.default_branch }}
           author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
-          commit-message: 'build: update patch and minor versions of dependencies'
-          # Unfortunately GITHUB_TOKEN doesn't have permission to read teams
-          # team-reviewers: Designsystemet-devs
           title: 'build: update patch and minor versions of dependencies'
           body: Updates dependencies within existing version ranges
           # When GITHUB_TOKEN is used when creating the PR, GitHub doesn't allow
