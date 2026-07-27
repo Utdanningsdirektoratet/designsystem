@@ -136,5 +136,11 @@ export default defineConfig({
         ]),
       },
     },
+    {
+      files: ['**/*.{spec,test}.ts'],
+      rules: {
+        'typescript/no-deprecated': 'allow',
+      },
+    },
   ],
 });
