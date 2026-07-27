@@ -1,5 +1,13 @@
 {
   "format_on_save": "on",
+  "prettier": {
+    "allowed": false
+  },
+  "formatter": {
+    "language_server": {
+      "name": "oxfmt"
+    }
+  },
   "languages": {
     "TypeScript": {
       "code_actions_on_format": {
