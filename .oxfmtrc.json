@@ -1,4 +1,5 @@
 {
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
   "singleQuote": true,
   "printWidth": 80,
   "ignorePatterns": [
@@ -17,6 +18,12 @@
       "files": ["tsconfig*.json"],
       "options": {
         "trailingComma": "none"
+      }
+    },
+    {
+      "files": ["pnpm-workspace.yaml"],
+      "options": {
+        "singleQuote": false
       }
     }
   ]
