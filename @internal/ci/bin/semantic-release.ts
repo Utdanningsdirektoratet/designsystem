@@ -5,7 +5,7 @@ import yargs, { Options } from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { semanticRelease } from '../src/semantic-release.js';
 
-(async () => {
+await (async () => {
   const yargsInstance = yargs(hideBin(process.argv));
   const options = await yargsInstance
     .version(false) // disable default --version option in yargs
