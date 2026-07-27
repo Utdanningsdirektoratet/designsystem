@@ -3,6 +3,10 @@ import { TS_FILES, coreRulesForTypeScript } from '../../oxlint.shared.ts';
 
 // Standalone config (no `extends`), so `categories`/`env` are declared here.
 export default defineConfig({
+  options: {
+    typeAware: true,
+    denyWarnings: true,
+  },
   plugins: ['nextjs', 'typescript'],
   categories: {
     correctness: 'off',

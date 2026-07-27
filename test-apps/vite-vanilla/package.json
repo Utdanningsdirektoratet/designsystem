@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "oxlint --max-warnings 0"
+    "lint": "oxlint"
   },
   "dependencies": {
     "@digdir/designsystemet-css": "catalog:",

@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "lint": "oxlint --max-warnings 0",
+    "lint": "oxlint",
     "test:unit": "vitest run",
     "typecheck": "tsc --build"
   },
