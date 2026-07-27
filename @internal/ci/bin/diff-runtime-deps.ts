@@ -83,7 +83,7 @@ function readPkgJsonFromGit(
 
 // ─── Entry point ──────────────────────────────────────────────────────────────
 
-(async () => {
+await (async () => {
   const yargsInstance = yargs(hideBin(process.argv));
   const options = await yargsInstance
     .version(false)

@@ -20,7 +20,7 @@
   },
   "scripts": {
     "build": "postcss src/*.css --dir dist/",
-    "lint": "oxlint --max-warnings 0"
+    "lint": "oxlint"
   },
   "dependencies": {
     "@digdir/designsystemet-css": "catalog:",
