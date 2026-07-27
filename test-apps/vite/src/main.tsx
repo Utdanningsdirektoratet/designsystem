@@ -2,7 +2,7 @@ import '@udir-design/react/style.css';
 import '@udir-design/theme/datavis.css';
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router';
 import App from './App';
 import Article from './pages/Article';
 import Dashboard from './pages/Dashboard';
