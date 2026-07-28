@@ -62,4 +62,27 @@
       display: none;
     }
   }
+
+  &:has(input:placeholder-shown) input {
+    --_dsc-icon-margin-inline: 0.5em;
+    /* SVG background-images can't inherit currentColor, so the chevron uses a
+       pre-colored icon (see chevronIcon.css) swapped per color scheme, instead
+       of using upstream's gradient trick. */
+    background-image: var(--_dsc-chevron-icon-down);
+    background-size: 1.4em;
+    background-position: calc(
+      100% - var(--_dsc-icon-margin-inline) + var(--dsc-input-stroke-width)
+    );
+
+    :dir(rtl) & {
+      background-position: calc(
+        var(--_dsc-icon-margin-inline) - var(--dsc-input-stroke-width)
+      );
+    }
+  }
+
+  /* Swap icon when listbox is open */
+  &:has(input:placeholder-shown):has(:popover-open) input {
+    background-image: var(--_dsc-chevron-icon-up);
+  }
 }

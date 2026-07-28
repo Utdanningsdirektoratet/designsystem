@@ -1,5 +1,6 @@
 import './style.css';
 import '../src/components/base.css';
+import '../src/components/chevronIcon.css';
 import './docs/customTheme.scss';
 import addonA11y from '@storybook/addon-a11y';
 import addonDocs from '@storybook/addon-docs';
