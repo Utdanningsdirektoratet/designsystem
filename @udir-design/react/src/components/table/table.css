@@ -11,7 +11,7 @@
 }
 
 .ds-table {
-  --dsc-table-background--zebra: var(--ds-color-neutral-background-tinted);
+  --dsc-table-background--zebra: var(--ds-color-background-tinted);
   --dsc-table-header-background--sorted: var(--ds-color-surface-active);
 
   td {
