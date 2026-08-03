@@ -1,12 +1,12 @@
 /* Drilldown: language-aware level label injected by useDrilldownTable.
  * These are read by the hook via getComputedStyle, not used in CSS content. */
 :root,
-[lang="nb"],
-[lang="nn"] {
+[lang='nb'],
+[lang='nn'] {
   --udsc-table-level-prefix: Nivå;
 }
 
-[lang="en"] {
+[lang='en'] {
   --udsc-table-level-prefix: Level;
 }
 
@@ -15,7 +15,7 @@
   --dsc-table-header-background--sorted: var(--ds-color-surface-active);
 
   td {
-    font-feature-settings: "tnum" 1;
+    font-feature-settings: 'tnum' 1;
   }
 
   &[data-zebra] > thead > tr > :is(th, td) {
@@ -34,12 +34,12 @@
     --dsc-table-header-background: var(--ds-color-surface-tinted);
   }
 
-  &[data-tinted-row-header] th[scope="row"] {
+  &[data-tinted-row-header] th[scope='row'] {
     background-color: var(--ds-color-surface-tinted);
   }
 
   &[data-sticky-header] {
-    th[scope="row"] {
+    th[scope='row'] {
       background-color: var(--ds-color-neutral-background-default);
       position: sticky;
       inset-inline-start: 0;
@@ -49,12 +49,12 @@
       background-color: var(--ds-color-surface-tinted);
     }
 
-    &[data-tinted-row-header] th[scope="row"] {
+    &[data-tinted-row-header] th[scope='row'] {
       background-color: var(--ds-color-surface-tinted);
     }
   }
 
-  &[data-border="true"],
+  &[data-border='true'],
   &[data-tinted-column-header] {
     > caption {
       margin-bottom: var(--ds-size-3);
@@ -77,7 +77,7 @@
     &::before {
       all: unset;
       display: inline-block;
-      content: "";
+      content: '';
       background: currentcolor;
       flex-shrink: 0;
       height: var(--ds-size-5);
@@ -86,7 +86,7 @@
       rotate: -90deg;
     }
 
-    &[aria-expanded="true"]::before {
+    &[aria-expanded='true']::before {
       rotate: 0deg;
     }
   }
@@ -102,11 +102,11 @@
     }
 
     /* Remove border between expanded row and its content */
-    &:has(button[aria-expanded="true"]) > :is(td, th) {
+    &:has(button[aria-expanded='true']) > :is(td, th) {
       border-bottom: 0;
     }
 
-    &:has(button[aria-expanded="false"]) + tr > td[colspan]:only-child {
+    &:has(button[aria-expanded='false']) + tr > td[colspan]:only-child {
       display: none;
     }
   }
@@ -141,16 +141,16 @@
   & > tbody > tr[data-level] {
     --dsc-table-drilldown-depth: 0;
 
-    &[data-level="2"] {
+    &[data-level='2'] {
       --dsc-table-drilldown-depth: 1;
     }
-    &[data-level="3"] {
+    &[data-level='3'] {
       --dsc-table-drilldown-depth: 2;
     }
-    &[data-level="4"] {
+    &[data-level='4'] {
       --dsc-table-drilldown-depth: 3;
     }
-    &[data-level="5"] {
+    &[data-level='5'] {
       --dsc-table-drilldown-depth: 4;
     }
 
