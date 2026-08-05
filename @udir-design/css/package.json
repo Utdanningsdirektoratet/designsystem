@@ -20,6 +20,7 @@
   },
   "scripts": {
     "build": "postcss src/*.css --dir dist/",
+    "watch": "pnpm run build --watch --verbose",
     "lint": "oxlint"
   },
   "dependencies": {
