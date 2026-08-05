@@ -1,0 +1,34 @@
+@layer ds.base {
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--ds-font-family);
+    font-feature-settings: 'cv05' 1;
+    line-height: var(--ds-line-height-md);
+    overflow-wrap: break-word;
+  }
+
+  :where(button, input, optgroup, select, textarea) {
+    font: inherit;
+  }
+
+  :where(img, video) {
+    display: block;
+    max-inline-size: 100%;
+    block-size: auto;
+  }
+
+  table {
+    border-color: currentcolor;
+  }
+}

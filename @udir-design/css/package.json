@@ -13,6 +13,7 @@
   "type": "module",
   "exports": {
     ".": "./dist/index.css",
+    "./baseline.css": "./dist/baseline.css",
     "./components.css": "./dist/components.css"
   },
   "publishConfig": {

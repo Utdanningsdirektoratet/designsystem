@@ -2,14 +2,46 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  min-height: 100%;
   background-color: var(--ds-color-neutral-background-default);
 }
 
 body {
   background: transparent;
-  font-family: 'Inter', sans-serif;
-  font-feature-settings: 'cv05' 1; /* Enable lowercase l with tail */
+}
+
+.baseline-comparison {
+  margin-block-start: var(--ds-size-6);
+}
+
+.baseline-comparison__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--ds-size-4);
+}
+
+.baseline-comparison figure {
+  min-inline-size: 0;
+  margin: 0;
+}
+
+.baseline-comparison figcaption {
+  margin-block-end: var(--ds-size-2);
+  font-weight: 600;
+}
+
+.baseline-comparison iframe {
+  display: block;
+  inline-size: 100%;
+  block-size: 48rem;
+  border: 1px solid var(--ds-color-border-default);
+  background: white;
+}
+
+@media (max-width: 48rem) {
+  .baseline-comparison__grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .symbol-box {

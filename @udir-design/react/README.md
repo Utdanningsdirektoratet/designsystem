@@ -44,9 +44,25 @@ Alternativt kan du importere stilsettet fra en CSS-fil:
 
 ### Konfigurere standard typografi
 
-Biblioteket setter ingen globale stiler. For å få konsistent typografi også på innhold som ikke bruker komponenter fra biblioteket, må du selv definere standard typografi for applikasjonen.
+Biblioteket setter ingen globale stiler. Nye applikasjoner kan velge å bruke
+Udirs grunnstiler for å få konsistent typografi også på innhold som ikke bruker
+komponenter fra biblioteket:
 
-Dette kan gjøres slik:
+```bash
+npm add @udir-design/css@beta
+```
+
+Importer grunnstilene etter komponentstilene:
+
+```ts
+import '@udir-design/react/style.css';
+import '@udir-design/css/baseline.css';
+```
+
+Grunnstilene er valgfrie og beholder nettleserens semantiske standardstiler. Se
+`@udir-design/css` for mer informasjon om innhold og kaskadelag.
+
+Du kan alternativt definere typografien selv:
 
 ```css
 body {
