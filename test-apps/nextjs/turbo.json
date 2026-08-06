@@ -3,7 +3,7 @@
   "extends": ["//"],
   "tasks": {
     "lint": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build", "^inject"]
     },
     "build": {
       "outputs": [".next/**", "!.next/cache/**", "!.next/dev/**"]
