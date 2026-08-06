@@ -1,4 +1,5 @@
 import type { Decorator } from '@storybook/react-vite';
+import { focusFormField } from 'src/utilities/form/focus';
 
 const handleScrollHash = (event: MouseEvent) => {
   if (event.defaultPrevented) {
@@ -17,10 +18,7 @@ const handleScrollHash = (event: MouseEvent) => {
       // We scroll the entire field (label, optional description, and input) into view,
       // then focus the input field. This prevents scrolling to an input field without showing
       // the related label.
-      const target = element.closest('ds-field') ?? element;
-      const input = element.querySelector<HTMLElement>('.ds-input') ?? element;
-      target.scrollIntoView();
-      input.focus({ preventScroll: true });
+      focusFormField(element);
     } else {
       element.scrollIntoView();
       element.focus({ preventScroll: true });

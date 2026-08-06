@@ -6,4 +6,5 @@
 
 export * from './datavis/dataVisualisation';
 export * from './datavis/highcharts';
+export * from './form/focus';
 export * from './form/navigation';

@@ -2,6 +2,7 @@ import type { DSErrorSummaryElement } from '@digdir/designsystemet-web';
 import type { FieldError, FieldErrors } from 'react-hook-form';
 import { ErrorSummary } from 'src/components/errorSummary';
 import type { UseFormNavigationReturn } from 'src/hooks/useFormNavigation';
+import { focusFormField } from 'src/utilities/form/focus';
 import type { FieldId, FormValues, PageFields, PageId } from './FormDemo';
 import { findPageForField } from './FormDemo';
 
@@ -65,13 +66,7 @@ export function ErrorSummaryContent({
                   const pageId = findPageForField(fieldName);
                   if (!pageId) return;
                   setId(pageId);
-                  window.setTimeout(() => {
-                    const el = document.getElementById(fieldName);
-                    const field = el?.closest('ds-field') ?? el;
-                    const input = el?.querySelector('input') ?? el;
-                    field?.scrollIntoView();
-                    input?.focus({ preventScroll: true });
-                  }, 50);
+                  window.setTimeout(() => focusFormField(fieldName), 50);
                 }}
               >
                 {getMessage(err)}
