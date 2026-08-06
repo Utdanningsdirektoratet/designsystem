@@ -43,3 +43,47 @@ import '@udir-design/css';
 Det er foreløpig ingen dokumentasjon på hvordan man bruker komponentene uten React. Generelt sett er det ganske lett å få likt utseende som med React, men eventuell interaktivitet må implementeres selv.
 
 Enn så lenge anbefaler vi å lese [React-dokumentasjonen](https://design.udir.no), inspisere DOM-en i eksemplene, og se hvilke klasser og data-attributter som settes i forskjellige tilstander.
+
+## Grunnstiler for applikasjoner
+
+Nye applikasjoner kan velge å bruke et lite sett med globale grunnstiler:
+
+```js
+import '@udir-design/css';
+import '@udir-design/css/baseline.css';
+```
+
+Fra CSS:
+
+```css
+@import '@udir-design/css';
+@import '@udir-design/css/baseline.css';
+```
+
+Grunnstilene er valgfrie og er ikke en del av standardimporten. De gir
+forutsigbar boksstørrelse, fjerner nettleserens marg rundt `body`, bruker
+designsystemets typografi, lar skjemakontroller arve typografi og hindrer store
+bilder og videoer i å flyte ut av beholderen sin.
+
+Stilene beholder nettleserens standarder for blant annet overskrifter, avsnitt,
+lister, lenker, skjemakontroller og fokusmarkering. De fjerner heller ikke
+animasjoner eller tilpasninger for høykontrastmodus.
+
+Grunnstilene ligger i laget `ds.base`. Vanlig applikasjons-CSS som ikke ligger i
+et lag, overstyrer derfor grunnstilene uten sterkere selektorer eller
+`!important`.
+
+Fonten `Inter` må fortsatt lastes inn av applikasjonen. Se oppsettet i
+React-dokumentasjonen for anbefalt fontimport.
+
+### Bruke et annet preflight-bibliotek
+
+Importer Tailwind eller andre preflight-biblioteker etter Designsystemet og
+Udirs grunnstiler. Da får det siste biblioteket kontroll over overlappende
+grunnstiler:
+
+```css
+@import '@udir-design/css';
+@import '@udir-design/css/baseline.css';
+@import 'tailwindcss';
+```
