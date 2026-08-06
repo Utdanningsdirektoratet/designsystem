@@ -3,6 +3,7 @@
   "extends": ["//"],
   "tasks": {
     "dev": {
+      "with": ["@udir-design/css#watch"],
       "persistent": true,
       "dependsOn": ["^build", "^inject"]
     },

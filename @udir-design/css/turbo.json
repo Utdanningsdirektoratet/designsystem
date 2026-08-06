@@ -8,6 +8,9 @@
         "../react/src/components/**/*.css",
         "!../react/src/components/**/*.module.css"
       ]
+    },
+    "watch": {
+      "persistent": true
     }
   }
 }

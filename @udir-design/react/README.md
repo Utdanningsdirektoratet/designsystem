@@ -42,9 +42,23 @@ Alternativt kan du importere stilsettet fra en CSS-fil:
 @import '@udir-design/react/style.css';
 ```
 
-### Konfigurere standard typografi
+### Sette opp globale stiler
 
-Biblioteket setter ingen globale stiler. For å få konsistent typografi også på innhold som ikke bruker komponenter fra biblioteket, må du selv definere standard typografi for applikasjonen.
+Biblioteket setter ingen globale stiler, men vi har noen anbefalinger.
+
+#### Scroll offset
+
+Ved lenking innad i siden, for eksempel fra en innholdsfortegnelse, er det lurt å definere en scroll offset. Dette gjør at Header eller DemoBanner aldri legger seg på toppen av innholdet du scroller til:
+
+```css
+html {
+  scroll-padding-top: var(--uds-scroll-padding-top);
+}
+```
+
+#### Typografi
+
+For å få konsistent typografi også på innhold som ikke bruker komponenter fra biblioteket, må du selv definere standard typografi for applikasjonen.
 
 Dette kan gjøres slik:
 

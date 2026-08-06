@@ -9,6 +9,7 @@
       "outputs": [".next/**", "!.next/cache/**", "!.next/dev/**"]
     },
     "dev": {
+      "with": ["@udir-design/css#watch"],
       "persistent": true,
       "dependsOn": ["^build", "^inject"]
     },

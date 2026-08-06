@@ -106,7 +106,7 @@ Feilmeldinger håndteres ved hjelp av valgfri skjemavalidering, sammen med inlin
 - Feilmeldinger skal vanligvis først vises når brukeren har forsøkt å sende inn skjemaet. Dette er for å unngå forvirring under utfylling.
 - Sider som inneholder flere felter, skal ha en [`ErrorSummary`](/docs/components-errorsummary--docs) som oppsummerer feilene på den aktuelle siden. Det er ikke nødvendig dersom siden kun inneholder ett felt.
 - Bruk en [`ErrorSummary`](/docs/components-errorsummary--docs) på innleveringssiden for å gi en oversikt over alle feil i skjemaet. Dette hjelper brukeren med å raskt identifisere og navigere til feilene som må rettes opp.
-- Lenkene i [`ErrorSummary`](/docs/components-errorsummary--docs) skal navigere til riktig side og fokusere de aktuelle feltene når de klikkes.
+- Lenkene i [`ErrorSummary`](/docs/components-errorsummary--docs) skal navigere til riktig side og fokusere de aktuelle feltene når de klikkes. Du må også sørge for at label og beskrivelse vises på skjermen når feltet fokuseres, da standardoppførsel i nettleser er å plassere det fokuserte elementet på toppen av skjermen. Funksjonen `focusFormField` fra [hjelpefunksjoner for skjema](/docs/utilities-hjelpefunksjoner-for-skjema--docs) hjelper deg med dette.
 - Bruk `markInvalid` og `markCompleted` fra [`useFormNavigation`](/docs/utilities-useformnavigation--docs) for å oppdatere stegenes tilstand basert på valideringsresultatene.
 
 ### Tekst i FormNavigation
