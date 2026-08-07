@@ -141,9 +141,9 @@ exports[`Nowrap 1`] = `
     type="radio"
     value="nynorsk"
     checked
-    name="my-radio"
+    name="components-chip--nowrap"
   >
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in lobortis eros. Aenean id tellus molestie, semper massa non, ultricies sapien.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 </label>
 <label>
   <input
@@ -152,16 +152,16 @@ exports[`Nowrap 1`] = `
     checked
     name="my-checkbox"
   >
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in lobortis eros. Aenean id tellus molestie, semper massa non, ultricies sapien.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 </label>
 <button
   type="button"
   data-removable="true"
 >
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in lobortis eros. Aenean id tellus molestie, semper massa non, ultricies sapien.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 </button>
 <button type="button">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in lobortis eros. Aenean id tellus molestie, semper massa non, ultricies sapien.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 </button>
 `;
 
@@ -267,9 +267,9 @@ exports[`Wrap 1`] = `
     type="radio"
     value="nynorsk"
     checked
-    name="my-radio"
+    name="components-chip--wrap"
   >
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in lobortis eros. Aenean id tellus molestie, semper massa non, ultricies sapien.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 </label>
 <label data-wrap="wrap">
   <input
@@ -278,19 +278,19 @@ exports[`Wrap 1`] = `
     checked
     name="my-checkbox"
   >
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in lobortis eros. Aenean id tellus molestie, semper massa non, ultricies sapien.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 </label>
 <button
   type="button"
   data-removable="true"
   data-wrap="wrap"
 >
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in lobortis eros. Aenean id tellus molestie, semper massa non, ultricies sapien.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 </button>
 <button
   type="button"
   data-wrap="wrap"
 >
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in lobortis eros. Aenean id tellus molestie, semper massa non, ultricies sapien.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 </button>
 `;
