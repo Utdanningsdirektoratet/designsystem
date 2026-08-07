@@ -42,11 +42,3 @@ jobs:
           author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
           title: 'build: update patch and minor versions of dependencies'
           body: Updates dependencies within existing version ranges
-          # When GITHUB_TOKEN is used when creating the PR, GitHub doesn't allow
-          # further workflows to run automatically to prevent recursion.
-          # To circumvent this, the PR is created as a draft. When we manually
-          # set the PR to "ready for review", the standard CI workflow will be run.
-          # The alternatives to this is creating a machine user and an associated PAT,
-          # or creating a GitHub App. See:
-          # https://github.com/peter-evans/create-pull-request/blob/main/docs/concepts-guidelines.md#triggering-further-workflow-runs
-          draft: always-true
