@@ -327,12 +327,10 @@ export const Nowrap = meta.story({
       alignItems: 'start',
     },
   },
-  render: (args) => (
+  render: (args, ctx) => (
     <>
-      <Chip.Radio {...args} name="my-radio" value="nynorsk" defaultChecked>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in
-        lobortis eros. Aenean id tellus molestie, semper massa non, ultricies
-        sapien.
+      <Chip.Radio {...args} name={ctx.id} value="nynorsk" defaultChecked>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </Chip.Radio>
       <Chip.Checkbox
         {...args}
@@ -340,19 +338,13 @@ export const Nowrap = meta.story({
         value="nynorsk"
         defaultChecked
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in
-        lobortis eros. Aenean id tellus molestie, semper massa non, ultricies
-        sapien.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </Chip.Checkbox>
       <Chip.Removable {...args}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in
-        lobortis eros. Aenean id tellus molestie, semper massa non, ultricies
-        sapien.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </Chip.Removable>
       <Chip.Button {...args}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in
-        lobortis eros. Aenean id tellus molestie, semper massa non, ultricies
-        sapien.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </Chip.Button>
     </>
   ),
