@@ -17,7 +17,7 @@ allowBuilds:
   unrs-resolver: false
 
 catalog:
-  "@babel/types": ^7.29.7
+  "@babel/types": ^7.29.8
   "@types/js-yaml": ^4.0.9
   "@commitlint/cli": ^21.2.1
   "@commitlint/config-conventional": ^21.2.0
@@ -28,14 +28,14 @@ catalog:
   "@digdir/designsystemet-types": 1.18.0
   "@digdir/designsystemet-web": 1.18.0
   "@figma/rest-api-spec": ^0.41.0
-  "@hookform/resolvers": ^5.5.7
+  "@hookform/resolvers": ^5.7.1
   "@navikt/aksel-icons": 8.15.0
   "@radix-ui/react-slot": ^1.3.3
-  "@storybook/addon-a11y": ^10.5.4
-  "@storybook/addon-docs": ^10.5.4
-  "@storybook/addon-vitest": ^10.5.4
+  "@storybook/addon-a11y": ^10.5.6
+  "@storybook/addon-docs": ^10.5.6
+  "@storybook/addon-vitest": ^10.5.6
   "@storybook/icons": ^2.1.0
-  "@storybook/react-vite": ^10.5.4
+  "@storybook/react-vite": ^10.5.6
   "@svgr/cli": 8.1.0
   "@svgr/core": ^8.1.0
   "@testing-library/react": ^16.3.2
@@ -44,20 +44,20 @@ catalog:
   "@types/mdast": ^4.0.4
   "@types/node": ^24.13.3
   "@types/ramda": ^0.32.0
-  "@types/react": ^19.2.17
-  "@types/react-dom": ^19.2.3
+  "@types/react": ^19.2.18
+  "@types/react-dom": ^19.2.4
   "@types/remark-heading-id": ^1.0.0
   "@types/yargs": ^17.0.35
   "@typescript/native": npm:typescript@^7.0.2
   "@u-elements/u-details": ^1.0.0
   "@u-elements/u-progress": ^1.0.1
-  "@vitejs/plugin-react": ^6.0.4
+  "@vitejs/plugin-react": ^6.0.5
   "@vitest/browser": ^4.1.10
   "@vitest/browser-playwright": ^4.1.10
   "@vitest/coverage-v8": ^4.1.10
   "@vitest/ui": ^4.1.10
   autoprefixer: ^10.5.4
-  axe-core: ^4.12.1
+  axe-core: ^4.13.0
   axe-playwright: ^2.2.2
   camelcase: ^9.0.0
   chromatic: ^18.1.0
@@ -65,7 +65,7 @@ catalog:
   cssnano: ^7.1.9
   diffable-html: ^6.0.1
   eslint-plugin-import: ^2.32.0
-  eslint-plugin-storybook: ^10.5.4
+  eslint-plugin-storybook: ^10.5.6
   fast-glob: ^3.3.3
   fuse.js: ^7.5.0
   hast-util-from-html: ^2.0.3
@@ -74,12 +74,12 @@ catalog:
   highcharts: ^12.6.0
   highcharts-react-official: ^3.2.3
   husky: ^9.1.7
-  js-yaml: ^5.2.2
+  js-yaml: ^5.2.3
   jsdom: ^29.1.1
   mdast-util-to-hast: ^13.2.1
-  next: ^16.2.12
-  playwright: ^1.62.0
-  postcss: ^8.5.23
+  next: ^16.3.0
+  playwright: ^1.62.1
+  postcss: ^8.5.26
   postcss-cli: ^11.0.1
   postcss-easy-import: ^4.0.0
   postcss-load-config: ^6.0.1
@@ -90,7 +90,7 @@ catalog:
   react: ^19.2.8
   react-dom: ^19.2.8
   react-dropzone: ^15.0.0
-  react-hook-form: ^7.83.0
+  react-hook-form: ^7.84.0
   react-style-stringify: ^1.2.0
   remark-gfm: ^4.0.1
   remark-heading-id: ^1.0.1
@@ -100,31 +100,31 @@ catalog:
   sass: ^1.102.0
   sharp: ^0.35.3
   shx: ^0.4.0
-  storybook: ^10.5.4
-  storybook-addon-pseudo-states: ^10.5.4
+  storybook: ^10.5.6
+  storybook-addon-pseudo-states: ^10.5.6
   style-dictionary: ^5.5.0
   svgo: ^4.0.2
   tsdown: ^0.22.14
   tslib: ^2.8.1
-  tsx: ^4.23.1
+  tsx: ^4.23.9
   type-fest: ^5.8.0
   typedoc: ^0.28.20
   typescript: "npm:@typescript/typescript6@^6.0.2"
   unified: ^11.0.5
   unist-util-remove: ^4.0.0
   unist-util-visit: ^5.1.0
-  vite: ^8.1.5
+  vite: ^8.2.0
   vitest: ^4.1.10
   yargs: ^18.1.0
   zod: ^4.4.3
-  turbo: ^2.10.7
-  semantic-release: ^25.0.8
+  turbo: ^2.10.8
+  semantic-release: ^25.0.9
   "@semantic-release/exec": ^7.1.0
   conventional-changelog-conventionalcommits: ^9.3.1
   conventional-changelog-writer: ^8.4.0
-  dpdm: ^4.2.0
+  dpdm: ^4.3.0
   unplugin-dts: ^1.0.3
-  oxlint: ^1.75.0
+  oxlint: ^1.77.0
   oxlint-tsgolint: ^7.0.2001
   react-router: ^8.3.0
 
