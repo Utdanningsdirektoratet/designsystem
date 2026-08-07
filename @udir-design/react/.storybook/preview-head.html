@@ -1,3 +1,20 @@
+<!--
+  Pin CSS @layer precedence order explicitly.
+
+  In Storybook we hand-assemble the CSS: the designsystemet layers (`ds.*`) load
+  via `.storybook/style.css`, while the Udir component layers (`udir.components`)
+  load per-component from each component's `.tsx`. That makes the final layer
+  precedence depend on the bundler's module ordering. Declaring the parent-layer
+  order here locks `udir` above `ds` regardless of how the bundler orders the
+  emitted CSS.
+
+  Without this, some bundler versions (e.g. rolldown >=1.2.0, used by Vite 8.2.x)
+  hoist the `udir.components` block above the `ds.*` layers, which makes
+  designsystemet defaults override our customizations.
+-->
+<style>
+  @layer ds, udir;
+</style>
 <link
   rel="preload stylesheet"
   as="style"
