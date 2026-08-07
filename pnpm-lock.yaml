@@ -336,6 +336,10 @@ catalogs:
     zod:
       specifier: ^4.4.3
       version: 4.4.3
+  ts7:
+    typescript:
+      specifier: ^7.0.2
+      version: 7.0.2
 
 overrides:
   axios@>=1.0.0 <1.15.0: '>=1.15.0'
@@ -831,8 +835,8 @@ importers:
         specifier: 'catalog:'
         version: 1.102.0
       typescript:
-        specifier: 'catalog:'
-        version: '@typescript/typescript6@6.0.2'
+        specifier: catalog:ts7
+        version: 7.0.2
 
   test-apps/vite:
     dependencies:
