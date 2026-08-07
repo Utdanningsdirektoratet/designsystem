@@ -1,0 +1,22 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    # "/" covers .github/workflows; the glob covers our composite actions.
+    directories:
+      - /
+      - /.github/actions/*
+    schedule:
+      interval: weekly
+      day: sunday
+      time: '23:00'
+    groups:
+      github-actions:
+        patterns:
+          - '*'
+        update-types:
+          - minor
+          - patch
+    commit-message:
+      # Matches the repo's conventional-commit convention: ci(deps): ...
+      prefix: ci
+      include: scope
