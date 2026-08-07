@@ -191,6 +191,3 @@ trustPolicyExclude:
   # tinyexec@1.2.2 is safe according to https://github.com/tinylibs/tinyexec/issues/136
   # and https://socket.dev/npm/package/tinyexec/overview/1.2.2
   - tinyexec@1.2.2
-
-update:
-  githubActions: true
