@@ -15,6 +15,14 @@ Søk og filtrering er sentrale verktøy for å hjelpe brukeren med å finne frem
 
 Filtrering lar brukeren begrense hvilke rader som vises, basert på verdier i én eller flere kolonner. Dersom et filter gjelder for data i en bestemt kolonne, skal label for input-feltet matche kolonneoverskriften i tabellen. Dette gjør det lettere for brukeren å forstå sammenhengen mellom filteret og innholdet det påvirker.
 
+Det er lagt opp til tre måter å filtrere på med [`Suggestion`](/docs/components-suggestion--docs).
+
+1. [`Suggestion` med `display="count"` og `Chip`](/story/patterns-tabeller-filtrering--preview) for å vise antall aktive filtre og presentere hvilke filtre som er valgt.
+2. [`Suggestion` med `display="count"`, uten chips](/story/patterns-tabeller-filtrering--count-without-chips) for å spare plass.
+3. [`Suggestion` med `display="default"`](/story/patterns-tabeller-filtrering--default-display) hvor chips automatisk vises over inputfeltet.
+
+Førstnevnte brukes i eksemplene under. Den gir brukeren mulighet til å se hvilke filtre som er aktive, og å fjerne dem enkelt. Dersom det er mange filtre, kan det være hensiktsmessig å bruke en variant uten chips for å spare plass. Det siste alternativet kan brukes når det er få filtre og man ønsker å vise dem tydelig.
+
 <Canvas of={FiltreringStories.Preview} />
 
 <CssToggle code={previewCss} />
