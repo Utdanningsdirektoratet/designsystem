@@ -6,7 +6,7 @@ import ts from 'typescript';
 import dts from 'unplugin-dts/vite';
 import type { Plugin } from 'vite';
 import { createFilter, defineConfig } from 'vite';
-import pkg from './package.json';
+import pkg from './package.json' with { type: 'json' };
 
 const resolveAlias = (alias: string): string =>
   path.resolve(import.meta.dirname, alias);
@@ -26,7 +26,7 @@ const dependenciesSubmodules = dependencies.map(
 );
 
 export default defineConfig({
-  root: __dirname,
+  root: import.meta.dirname,
   cacheDir: '../../node_modules/.vite/@udir-design/react',
   resolve: {
     tsconfigPaths: true,
@@ -49,7 +49,7 @@ export default defineConfig({
     react(),
     dts({
       entryRoot: 'src',
-      tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
+      tsconfigPath: path.join(import.meta.dirname, 'tsconfig.lib.json'),
       afterDiagnostic: (diagnostics) => {
         const errors = diagnostics.filter(
           (x) => x.category === ts.DiagnosticCategory.Error,
