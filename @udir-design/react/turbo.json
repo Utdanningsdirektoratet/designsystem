@@ -58,17 +58,12 @@
     },
     "test:storybook": {
       "dependsOn": ["build"],
-      "inputs": ["$TURBO_DEFAULT$"],
-      "outputs": ["test-reports/storybook.json", "test-reports/storybook/**"]
+      "inputs": ["$TURBO_DEFAULT$"]
     },
     "build:docs": {
       "dependsOn": ["build:storybook"],
       "inputs": ["$TURBO_DEFAULT$"],
       "outputs": ["storybook-static/typedoc/**"]
-    },
-    "view-test-report:storybook": {
-      "persistent": true,
-      "dependsOn": ["test:storybook"]
     },
     "inject": {
       "dependsOn": ["build"]

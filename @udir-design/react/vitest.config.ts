@@ -9,16 +9,13 @@ export default defineConfig({
     watch: false,
     reporters: [
       'default',
-      // html reporter has a bug in 4.0.15, which is fixed but not yet released
-      // https://github.com/vitest-dev/vitest/issues/9190
-      // [
-      //   'html',
-      //   {
-      //     addFileAttribute: true,
-      //     classnameTemplate: '{filename}',
-      //     outputFile: './test-reports/index.html',
-      //   },
-      // ],
+      [
+        'html',
+        {
+          addFileAttribute: true,
+          classnameTemplate: '{filename}',
+        },
+      ],
       [
         'json',
         {
@@ -27,6 +24,10 @@ export default defineConfig({
         },
       ],
     ],
+    outputFile: {
+      json: './test-reports/report.json',
+      html: './test-reports/index.html',
+    },
     coverage: {
       reportsDirectory: '../../coverage/@udir-design/react',
       reporter: [['json', { file: 'test-coverage.json' }]],
