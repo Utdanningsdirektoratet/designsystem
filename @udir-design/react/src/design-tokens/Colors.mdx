@@ -9,8 +9,8 @@ import {
   DatavisColorDisplay,
   DatavisValueColorDisplay,
   DatavisGradient,
-  DatavisSeqColorDisplay,
-  DatavisSeqDivColorDisplay,
+  DatavisGenSeqColorDisplay,
+  DatavisGenSeqDivColorDisplay,
   DatavisDivGradient,
 } from './docs/color/datavis-color-display';
 
@@ -93,7 +93,9 @@ Sekvensiell eller numerisk data som har en naturlig rekkefølge fra lav til høy
 
 Monokromatisk palett bruker samme fargeverdier i både light mode og dark mode.
 
-<DatavisSeqColorDisplay />
+<DatavisGenSeqColorDisplay showCssSnippet={false} />
+
+<br />
 
 <DatavisGradient />
 
@@ -101,7 +103,9 @@ Monokromatisk palett bruker samme fargeverdier i både light mode og dark mode.
 
 Numeriske data med avvik fra et midtpunkt bruker en divergerende palett med to monokromatiske fargepaletter som står i kontrast til hverandre med en nøytral farge som midtpunkt. Mørkere farge indikerer høyere verdi. Dette er godt egnet for å vise data over og under et midtpunkt, som for eksempel elevers prestasjonsforskjeller i en nasjonal prøve.
 
-<DatavisSeqDivColorDisplay />
+<DatavisGenSeqDivColorDisplay showCssSnippet={false} />
+
+<br />
 
 <DatavisDivGradient />
 
