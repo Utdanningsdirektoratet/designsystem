@@ -56,7 +56,7 @@ const tableArgs = {
 
 const previewArgs = {
   ...tableArgs,
-  suggestionDisplay: 'count' as 'count' | 'default',
+  suggestionDisplay: 'count' as 'count' | 'chips',
   showActiveFilters: true,
 };
 
@@ -339,9 +339,9 @@ export const CountWithoutChips = Preview.extend({
   args: { showActiveFilters: false },
 });
 
-export const DefaultDisplay = Preview.extend({
+export const ChipsDisplay = Preview.extend({
   args: {
-    suggestionDisplay: 'default',
+    suggestionDisplay: 'chips',
     showActiveFilters: false,
   },
 });

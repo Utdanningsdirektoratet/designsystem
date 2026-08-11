@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Count Without Chips 1`] = `
+exports[`Chips Display 1`] = `
 <div data-size="auto">
   <div>
     <div>
@@ -9,17 +9,14 @@ exports[`Count Without Chips 1`] = `
           <label for="<removed>">
             Velg fylker
           </label>
-          <ds-suggestion
-            data-multiple
-            data-display="count"
-          >
+          <ds-suggestion data-multiple>
             <input
               placeholder=" "
               type="text"
               id="<removed>"
               aria-description="No selected"
-              list=":u-datalist3"
-              popovertarget=":u-datalist3"
+              list=":u-datalist5"
+              popovertarget=":u-datalist5"
             >
             <button
               aria-label="Tøm"
@@ -169,17 +166,14 @@ exports[`Count Without Chips 1`] = `
           <label for="<removed>">
             Velg kommuner
           </label>
-          <ds-suggestion
-            data-multiple
-            data-display="count"
-          >
+          <ds-suggestion data-multiple>
             <input
               placeholder=" "
               type="text"
               id="<removed>"
               aria-description="No selected"
-              list=":u-datalist4"
-              popovertarget=":u-datalist4"
+              list=":u-datalist6"
+              popovertarget=":u-datalist6"
             >
             <button
               aria-label="Tøm"
@@ -686,7 +680,7 @@ exports[`Count Without Chips 1`] = `
 </div>
 `;
 
-exports[`Default Display 1`] = `
+exports[`Count Without Chips 1`] = `
 <div data-size="auto">
   <div>
     <div>
@@ -695,14 +689,17 @@ exports[`Default Display 1`] = `
           <label for="<removed>">
             Velg fylker
           </label>
-          <ds-suggestion data-multiple>
+          <ds-suggestion
+            data-multiple
+            data-display="count"
+          >
             <input
               placeholder=" "
               type="text"
               id="<removed>"
               aria-description="No selected"
-              list=":u-datalist5"
-              popovertarget=":u-datalist5"
+              list=":u-datalist3"
+              popovertarget=":u-datalist3"
             >
             <button
               aria-label="Tøm"
@@ -852,14 +849,17 @@ exports[`Default Display 1`] = `
           <label for="<removed>">
             Velg kommuner
           </label>
-          <ds-suggestion data-multiple>
+          <ds-suggestion
+            data-multiple
+            data-display="count"
+          >
             <input
               placeholder=" "
               type="text"
               id="<removed>"
               aria-description="No selected"
-              list=":u-datalist6"
-              popovertarget=":u-datalist6"
+              list=":u-datalist4"
+              popovertarget=":u-datalist4"
             >
             <button
               aria-label="Tøm"
