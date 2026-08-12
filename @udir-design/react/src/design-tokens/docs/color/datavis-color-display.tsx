@@ -21,11 +21,12 @@ function generateCssSnippet(colors: readonly string[], prefix: string): string {
 }
 
 const datavisColors = getCategoricalColors().map((value, index) => ({
-  number: String(index + 1),
+  number: index + 1,
   value,
 }));
 
 export const DatavisColorDisplay = () => {
+  const flexRatio = 1.6;
   return (
     <div className={classes.containerSm}>
       {datavisColors.map((color) => (
@@ -33,8 +34,11 @@ export const DatavisColorDisplay = () => {
           key={color.number}
           className={classes.swatchCard}
           style={{
+            paddingInline: 'var(--ds-size-1)',
             background: color.value,
-            flexGrow: `calc(10 - (${color.number} * 2))`,
+            flexBasis: 0,
+            minWidth: 0,
+            flexGrow: Math.pow(flexRatio, datavisColors.length - color.number),
           }}
         >
           {color.number}
