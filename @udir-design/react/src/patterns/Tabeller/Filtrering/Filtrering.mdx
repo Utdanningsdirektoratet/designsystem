@@ -1,4 +1,4 @@
-import { Meta, Canvas, Unstyled } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import { CssToggle } from '.storybook/docs/components';
 
 import * as FiltreringStories from './Filtrering.stories';
@@ -15,11 +15,27 @@ Søk og filtrering er sentrale verktøy for å hjelpe brukeren med å finne frem
 
 Filtrering lar brukeren begrense hvilke rader som vises, basert på verdier i én eller flere kolonner. Dersom et filter gjelder for data i en bestemt kolonne, skal label for input-feltet matche kolonneoverskriften i tabellen. Dette gjør det lettere for brukeren å forstå sammenhengen mellom filteret og innholdet det påvirker.
 
+### Filtrering med Suggestion
+
+Bruk [`Suggestion`](/docs/components-suggestion--docs) med `display="count"` for å velge én eller flere verdier som tabellen skal filtreres etter.
+
 <Canvas of={FiltreringStories.Preview} />
 
 <CssToggle code={previewCss} />
 
 <br />
+
+### Visning av aktive filtre
+
+[`Chip`](/docs/components-chip--docs) kan brukes til å vise aktive filtre. Det gir oversikt over valgene og gjør det enkelt å fjerne filtre direkte fra listen.
+
+<Canvas of={FiltreringStories.WithChips} />
+
+<CssToggle code={previewCss} />
+
+<br />
+
+### Filtrering i dialog
 
 Dersom det er behov for mer avansert filtrering med sammensatte eller spissede
 filtervalg, bør dette plasseres i en egen dialog. Det frigjør plass i den

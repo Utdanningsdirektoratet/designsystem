@@ -1,10 +1,4 @@
-import {
-  type Dispatch,
-  type SetStateAction,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { FilterIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
@@ -25,13 +19,16 @@ import { Label } from 'src/components/typography/label/Label';
 import { Prose } from 'src/components/typography/prose/Prose';
 import { useCheckboxGroup } from 'src/hooks/useCheckboxGroup/useCheckboxGroup';
 import { usePagination } from 'src/hooks/usePagination/usePagination';
-import {
-  grades,
-  uniqueEmner as emner,
-  uniqueFylker as fylker,
-} from '../grades';
 import dialogStyles from './filtering-dialog.module.css';
 import previewStyles from './filtering-preview.module.css';
+import {
+  type SchoolStatus,
+  schoolStatuses,
+  schools,
+  uniqueCounties,
+  uniqueSystemNames,
+  uniqueYears,
+} from './schools';
 
 const meta = preview.meta({
   tags: ['alpha', 'udir'],
@@ -47,60 +44,62 @@ const meta = preview.meta({
   ],
 });
 
+const tableArgs = {
+  zebra: true,
+  stickyHeader: false,
+  border: false,
+  hover: false,
+  tintedColumnHeader: false,
+  tintedRowHeader: false,
+  'data-color': 'neutral' as const,
+};
+
 export const Preview = meta.story({
   parameters: { docs: advancedCodeDocs },
-  args: {
-    zebra: true,
-    stickyHeader: false,
-    border: false,
-    hover: false,
-    tintedColumnHeader: false,
-    tintedRowHeader: false,
-    'data-color': 'neutral',
-  },
+  args: { ...tableArgs, showActiveFilters: false },
   render: (args) => {
+    const { showActiveFilters, ...tableProps } = args;
     const [itemsPerPage, setItemsPerPage] = useState(5);
     const [page, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
+    const [filters, setFilters] = useState<Filters>(initialFilters);
     const [isMobile, setIsMobile] = useState(
       () => !window.matchMedia('(min-width: 48rem)').matches,
     );
 
     useEffect(() => {
-      const mq = window.matchMedia('(min-width: 48rem)');
-      const handler = (e: MediaQueryListEvent) => setIsMobile(!e.matches);
-      mq.addEventListener('change', handler);
-      return () => mq.removeEventListener('change', handler);
+      const mediaQuery = window.matchMedia('(min-width: 48rem)');
+      const handleChange = (event: MediaQueryListEvent) =>
+        setIsMobile(!event.matches);
+      mediaQuery.addEventListener('change', handleChange);
+      return () => mediaQuery.removeEventListener('change', handleChange);
     }, []);
 
-    const [emne, setEmne] = useState<string[]>([]);
-    const [fylke, setFylke] = useState<string[]>([]);
-
-    const handleClearFilters = () => {
-      setEmne([]);
-      setFylke([]);
+    const handleFiltersChange = (nextFilters: Filters) => {
+      setFilters(nextFilters);
+      setCurrentPage(1);
     };
 
-    useEffect(() => {
-      setCurrentPage(1);
-    }, [emne, fylke, searchQuery]);
+    const normalizedQuery = searchQuery.trim().toLowerCase();
+    const filteredData = schools.filter((school) => {
+      const matchesFilters =
+        (filters.counties.length === 0 ||
+          filters.counties.includes(school.county)) &&
+        (filters.municipalities.length === 0 ||
+          filters.municipalities.includes(school.municipality));
+      if (!matchesFilters || !normalizedQuery) return matchesFilters;
 
-    const filteredData = grades
-      .filter((d) => emne.length === 0 || emne.includes(d.emne))
-      .filter((d) => fylke.length === 0 || fylke.includes(d.fylke))
-      .filter((d) => {
-        if (!searchQuery) return true;
-        const q = searchQuery.toLowerCase();
-        return [
-          d.fylke,
-          d.emne,
-          d.antallelever,
-          d.standpunktkarakter,
-          d.muntligkarakter,
-          d.skriftligkarakter,
-        ].some((v) => String(v).toLowerCase().includes(q));
-      });
-
+      return [
+        school.year,
+        school.organizationNumber,
+        school.schoolName,
+        school.county,
+        school.municipality,
+        school.status,
+        school.systemName,
+      ].some((value) => String(value).toLowerCase().includes(normalizedQuery));
+    });
+    const municipalityOptions = getMunicipalities(filters.counties);
     const totalPages = Math.ceil(filteredData.length / itemsPerPage);
     const { pages, nextButtonProps, prevButtonProps } = usePagination({
       currentPage: page,
@@ -108,7 +107,6 @@ export const Preview = meta.story({
       showPages: isMobile ? 3 : 6,
       setCurrentPage,
     });
-
     const rangeStart =
       filteredData.length === 0 ? 0 : (page - 1) * itemsPerPage + 1;
     const rangeEnd = Math.min(page * itemsPerPage, filteredData.length);
@@ -126,48 +124,56 @@ export const Preview = meta.story({
               <Suggestion
                 multiple
                 display="count"
-                selected={fylke}
+                selected={filters.counties}
                 onSelectedChange={(items) =>
-                  setFylke(items.map((item) => item.value))
+                  handleFiltersChange(
+                    updateCounties(
+                      filters,
+                      items.map((item) => item.value),
+                    ),
+                  )
                 }
               >
                 <Suggestion.Input />
                 <Suggestion.Clear />
                 <Suggestion.List>
                   <Suggestion.Empty>Tomt</Suggestion.Empty>
-                  {fylker.map((option) => (
+                  {uniqueCounties.map((county) => (
                     <Suggestion.Option
-                      key={option}
-                      label={option}
-                      value={option}
+                      key={county}
+                      label={county}
+                      value={county}
                     >
-                      {option}
+                      {county}
                     </Suggestion.Option>
                   ))}
                 </Suggestion.List>
               </Suggestion>
             </Field>
             <Field className={previewStyles['preview-suggestion-field']}>
-              <Label>Velg emner</Label>
+              <Label>Velg kommuner</Label>
               <Suggestion
                 multiple
                 display="count"
-                selected={emne}
+                selected={filters.municipalities}
                 onSelectedChange={(items) =>
-                  setEmne(items.map((item) => item.value))
+                  handleFiltersChange({
+                    ...filters,
+                    municipalities: items.map((item) => item.value),
+                  })
                 }
               >
                 <Suggestion.Input />
                 <Suggestion.Clear />
                 <Suggestion.List>
                   <Suggestion.Empty>Tomt</Suggestion.Empty>
-                  {emner.map((option) => (
+                  {municipalityOptions.map((municipality) => (
                     <Suggestion.Option
-                      key={option}
-                      label={option}
-                      value={option}
+                      key={municipality}
+                      label={municipality}
+                      value={municipality}
                     >
-                      {option}
+                      {municipality}
                     </Suggestion.Option>
                   ))}
                 </Suggestion.List>
@@ -175,7 +181,7 @@ export const Preview = meta.story({
             </Field>
             <Field>
               <Button
-                onClick={handleClearFilters}
+                onClick={() => handleFiltersChange(emptyFilters)}
                 variant="tertiary"
                 data-size="sm"
                 className={previewStyles['preview-clear-filters']}
@@ -190,68 +196,82 @@ export const Preview = meta.story({
               <Search.Input
                 aria-label="Søk"
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(event) => {
+                  setSearchQuery(event.target.value);
+                  setCurrentPage(1);
+                }}
               />
-              <Search.Clear onClick={() => setSearchQuery('')} />
+              <Search.Clear
+                onClick={() => {
+                  setSearchQuery('');
+                  setCurrentPage(1);
+                }}
+              />
             </Search>
           </Field>
         </div>
-        <ActiveFilters
-          emne={emne}
-          setEmne={setEmne}
-          fylke={fylke}
-          setFylke={setFylke}
-        />
-        <Table {...args}>
+
+        {showActiveFilters && (
+          <ActiveFilters filters={filters} onChange={handleFiltersChange} />
+        )}
+
+        <Table {...tableProps}>
           <Table.Head>
             <Table.Row>
+              <Table.HeaderCell>År</Table.HeaderCell>
               <Table.HeaderCell className={previewStyles['show-below-mobile']}>
-                Fylke, emne
+                Skole
               </Table.HeaderCell>
               <Table.HeaderCell className={previewStyles['hide-below-mobile']}>
-                Fylke
+                Org.nummer
               </Table.HeaderCell>
               <Table.HeaderCell className={previewStyles['hide-below-mobile']}>
-                Emne
+                Skolenavn
               </Table.HeaderCell>
               <Table.HeaderCell className={previewStyles['desktop-only']}>
-                Antall elever
+                Fylke
               </Table.HeaderCell>
-              <Table.HeaderCell>Standpunkt</Table.HeaderCell>
-              <Table.HeaderCell className={previewStyles['hide-below-mobile']}>
-                Muntlig
+              <Table.HeaderCell className={previewStyles['desktop-only']}>
+                Kommune
               </Table.HeaderCell>
+              <Table.HeaderCell>Status</Table.HeaderCell>
               <Table.HeaderCell className={previewStyles['hide-below-mobile']}>
-                Skriftlig
+                Systemnavn
               </Table.HeaderCell>
             </Table.Row>
           </Table.Head>
           <Table.Body>
-            {paginatedData.map((row) => (
-              <Table.Row key={row.id}>
+            {paginatedData.map((school) => (
+              <Table.Row key={school.id}>
+                <Table.Cell>{school.year}</Table.Cell>
                 <Table.Cell className={previewStyles['show-below-mobile']}>
-                  {row.fylke}, <br /> {row.emne}
+                  {school.schoolName}
+                  <br />
+                  {school.organizationNumber}
                 </Table.Cell>
                 <Table.Cell className={previewStyles['hide-below-mobile']}>
-                  {row.fylke}
+                  {school.organizationNumber}
                 </Table.Cell>
                 <Table.Cell className={previewStyles['hide-below-mobile']}>
-                  {row.emne}
+                  {school.schoolName}
                 </Table.Cell>
                 <Table.Cell className={previewStyles['desktop-only']}>
-                  {row.antallelever}
+                  {school.county}
                 </Table.Cell>
-                <Table.Cell>{row.standpunktkarakter}</Table.Cell>
-                <Table.Cell className={previewStyles['hide-below-mobile']}>
-                  {row.muntligkarakter}
+                <Table.Cell className={previewStyles['desktop-only']}>
+                  {school.municipality}
+                </Table.Cell>
+                <Table.Cell>
+                  <Status status={school.status} />
                 </Table.Cell>
                 <Table.Cell className={previewStyles['hide-below-mobile']}>
-                  {row.skriftligkarakter}
+                  {school.systemName}
                 </Table.Cell>
               </Table.Row>
             ))}
           </Table.Body>
         </Table>
+
         <div className={previewStyles['preview-controls']}>
           <Pagination aria-label="Sidenavigering" data-size="sm">
             <Pagination.List>
@@ -261,16 +281,16 @@ export const Preview = meta.story({
                   {...prevButtonProps}
                 />
               </Pagination.Item>
-              {pages.map(({ page, itemKey, buttonProps }) => (
+              {pages.map(({ page: pageNumber, itemKey, buttonProps }) => (
                 <Pagination.Item key={itemKey}>
-                  {typeof page === 'number' && (
+                  {typeof pageNumber === 'number' ? (
                     <Pagination.Button
                       {...buttonProps}
-                      aria-label={`Side ${page}`}
+                      aria-label={`Side ${pageNumber}`}
                     >
-                      {page}
+                      {pageNumber}
                     </Pagination.Button>
-                  )}
+                  ) : null}
                 </Pagination.Item>
               ))}
               <Pagination.Item>
@@ -309,79 +329,74 @@ export const Preview = meta.story({
   },
 });
 
+export const WithChips = Preview.extend({
+  args: { showActiveFilters: true },
+});
+
 export const WithDialog = meta.story({
   parameters: { docs: advancedCodeDocs },
-  args: {
-    zebra: true,
-    stickyHeader: false,
-    border: false,
-    hover: false,
-    tintedColumnHeader: false,
-    tintedRowHeader: false,
-    'data-color': 'neutral',
-  },
+  args: { ...tableArgs, showActiveFilters: true },
   render: (args) => {
     const [itemsPerPage, setItemsPerPage] = useState(5);
     const [page, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
+    const [filters, setFilters] = useState<Filters>(initialFilters);
+    const [draftFilters, setDraftFilters] = useState<Filters>(initialFilters);
     const [isMobile, setIsMobile] = useState(
       () => !window.matchMedia('(min-width: 48rem)').matches,
     );
-
-    useEffect(() => {
-      const mq = window.matchMedia('(min-width: 48rem)');
-      const handler = (e: MediaQueryListEvent) => setIsMobile(!e.matches);
-      mq.addEventListener('change', handler);
-      return () => mq.removeEventListener('change', handler);
-    }, []);
-
-    const [emne, setEmne] = useState<string[]>([]);
-    const [fylke, setFylke] = useState<string[]>([]);
-    const [eksamen, setEksamen] = useState<string[]>([
-      'skriftlig',
-      'muntlig',
-      'standpunkt',
-    ]);
-    const [draftEmne, setDraftEmne] = useState<string[]>([]);
-    const [draftFylke, setDraftFylke] = useState<string[]>([]);
-    const [draftEksamen, setDraftEksamen] = useState<string[]>([
-      'skriftlig',
-      'muntlig',
-      'standpunkt',
-    ]);
     const dialogRef = useRef<HTMLDialogElement>(null);
 
     useEffect(() => {
-      setCurrentPage(1);
-    }, [emne, fylke, eksamen, searchQuery]);
+      const mediaQuery = window.matchMedia('(min-width: 48rem)');
+      const handleChange = (event: MediaQueryListEvent) =>
+        setIsMobile(!event.matches);
+      mediaQuery.addEventListener('change', handleChange);
+      return () => mediaQuery.removeEventListener('change', handleChange);
+    }, []);
 
-    const handleClearFilters = () => {
-      setEmne([]);
-      setFylke([]);
+    const handleFiltersChange = (nextFilters: Filters) => {
+      setFilters(nextFilters);
+      setCurrentPage(1);
     };
 
-    const { getCheckboxProps } = useCheckboxGroup({
-      name: 'checkbox-group',
-      value: draftEksamen,
-      onChange: (value) => setDraftEksamen(value),
+    const { getCheckboxProps, setValue: setCheckboxValues } = useCheckboxGroup({
+      name: 'dialog-status',
+      value: draftFilters.statuses,
+      onChange: (statuses) =>
+        setDraftFilters({
+          ...draftFilters,
+          statuses: statuses as SchoolStatus[],
+        }),
     });
 
-    const filteredData = grades
-      .filter((d) => emne.length === 0 || emne.includes(d.emne))
-      .filter((d) => fylke.length === 0 || fylke.includes(d.fylke))
-      .filter((d) => {
-        if (!searchQuery) return true;
-        const q = searchQuery.toLowerCase();
-        return [
-          d.fylke,
-          d.emne,
-          d.antallelever,
-          d.standpunktkarakter,
-          d.muntligkarakter,
-          d.skriftligkarakter,
-        ].some((v) => String(v).toLowerCase().includes(q));
-      });
+    const normalizedQuery = searchQuery.trim().toLowerCase();
+    const filteredData = schools.filter((school) => {
+      const matchesFilters =
+        (filters.years.length === 0 ||
+          filters.years.includes(String(school.year))) &&
+        (filters.counties.length === 0 ||
+          filters.counties.includes(school.county)) &&
+        (filters.municipalities.length === 0 ||
+          filters.municipalities.includes(school.municipality)) &&
+        (filters.statuses.length === 0 ||
+          filters.statuses.includes(school.status)) &&
+        (filters.systemNames.length === 0 ||
+          filters.systemNames.includes(school.systemName));
+      if (!matchesFilters || !normalizedQuery) return matchesFilters;
 
+      return [
+        school.year,
+        school.organizationNumber,
+        school.schoolName,
+        school.county,
+        school.municipality,
+        school.status,
+        school.systemName,
+      ].some((value) => String(value).toLowerCase().includes(normalizedQuery));
+    });
+
+    const municipalityOptions = getMunicipalities(draftFilters.counties);
     const totalPages = Math.ceil(filteredData.length / itemsPerPage);
     const { pages, nextButtonProps, prevButtonProps } = usePagination({
       currentPage: page,
@@ -389,7 +404,6 @@ export const WithDialog = meta.story({
       showPages: isMobile ? 3 : 6,
       setCurrentPage,
     });
-
     const rangeStart =
       filteredData.length === 0 ? 0 : (page - 1) * itemsPerPage + 1;
     const rangeEnd = Math.min(page * itemsPerPage, filteredData.length);
@@ -401,119 +415,189 @@ export const WithDialog = meta.story({
     return (
       <div className={dialogStyles['dialog-main']}>
         <div className={dialogStyles['dialog-filters-section']}>
-          <Field>
+          <Field className={previewStyles['preview-search-field']}>
             <Label>Søk</Label>
             <Search>
               <Search.Input
                 aria-label="Søk"
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(event) => {
+                  setSearchQuery(event.target.value);
+                  setCurrentPage(1);
+                }}
               />
-              <Search.Clear onClick={() => setSearchQuery('')} />
+              <Search.Clear
+                onClick={() => {
+                  setSearchQuery('');
+                  setCurrentPage(1);
+                }}
+              />
             </Search>
           </Field>
           <div className={dialogStyles['dialog-section']}>
             <Dialog.TriggerContext>
               <Dialog.Trigger variant="secondary">
-                <FilterIcon aria-label="Filter" />
+                <FilterIcon aria-hidden />
                 Filter
               </Dialog.Trigger>
               <Dialog
                 ref={dialogRef}
                 closedby="any"
-                onToggle={(e) => {
-                  if ((e.target as HTMLDialogElement).open) {
-                    setDraftEmne(emne);
-                    setDraftFylke(fylke);
-                    setDraftEksamen(eksamen);
+                onToggle={(event) => {
+                  if ((event.target as HTMLDialogElement).open) {
+                    setDraftFilters(filters);
+                    setCheckboxValues(filters.statuses);
                   }
                 }}
               >
                 <Prose>
                   <Heading>Filter</Heading>
                   <div className={dialogStyles['dialog-filters']}>
-                    <Prose>
+                    <div className={dialogStyles['dialog-filter-column']}>
+                      <Field
+                        className={previewStyles['preview-suggestion-field']}
+                      >
+                        <Label>År</Label>
+                        <Suggestion
+                          multiple
+                          display="count"
+                          selected={draftFilters.years}
+                          onSelectedChange={(items) =>
+                            setDraftFilters({
+                              ...draftFilters,
+                              years: items.map((item) => item.value),
+                            })
+                          }
+                        >
+                          <Suggestion.Input />
+                          <Suggestion.Clear />
+                          <Suggestion.List>
+                            <Suggestion.Empty>Tomt</Suggestion.Empty>
+                            {uniqueYears.map(String).map((year) => (
+                              <Suggestion.Option
+                                key={year}
+                                label={year}
+                                value={year}
+                              >
+                                {year}
+                              </Suggestion.Option>
+                            ))}
+                          </Suggestion.List>
+                        </Suggestion>
+                      </Field>
+                      <Field
+                        className={previewStyles['preview-suggestion-field']}
+                      >
+                        <Label>Fylke</Label>
+                        <Suggestion
+                          multiple
+                          display="count"
+                          selected={draftFilters.counties}
+                          onSelectedChange={(items) =>
+                            setDraftFilters(
+                              updateCounties(
+                                draftFilters,
+                                items.map((item) => item.value),
+                              ),
+                            )
+                          }
+                        >
+                          <Suggestion.Input />
+                          <Suggestion.Clear />
+                          <Suggestion.List>
+                            <Suggestion.Empty>Tomt</Suggestion.Empty>
+                            {uniqueCounties.map((county) => (
+                              <Suggestion.Option
+                                key={county}
+                                label={county}
+                                value={county}
+                              >
+                                {county}
+                              </Suggestion.Option>
+                            ))}
+                          </Suggestion.List>
+                        </Suggestion>
+                      </Field>
+                      <Field
+                        className={previewStyles['preview-suggestion-field']}
+                      >
+                        <Label>Kommune</Label>
+                        <Suggestion
+                          multiple
+                          display="count"
+                          selected={draftFilters.municipalities}
+                          onSelectedChange={(items) =>
+                            setDraftFilters({
+                              ...draftFilters,
+                              municipalities: items.map((item) => item.value),
+                            })
+                          }
+                        >
+                          <Suggestion.Input />
+                          <Suggestion.Clear />
+                          <Suggestion.List>
+                            <Suggestion.Empty>Tomt</Suggestion.Empty>
+                            {municipalityOptions.map((municipality) => (
+                              <Suggestion.Option
+                                key={municipality}
+                                label={municipality}
+                                value={municipality}
+                              >
+                                {municipality}
+                              </Suggestion.Option>
+                            ))}
+                          </Suggestion.List>
+                        </Suggestion>
+                      </Field>
+                    </div>
+                    <div className={dialogStyles['dialog-filter-column']}>
                       <Fieldset>
-                        <Fieldset.Legend>Karaktertype</Fieldset.Legend>
-                        <Checkbox
-                          label="Skriftlig"
-                          {...getCheckboxProps('skriftlig')}
-                        />
-                        <Checkbox
-                          label="Muntlig"
-                          {...getCheckboxProps('muntlig')}
-                        />
-                        <Checkbox
-                          label="Standpunkt"
-                          {...getCheckboxProps('standpunkt')}
-                        />
+                        <Fieldset.Legend>Status</Fieldset.Legend>
+                        {schoolStatuses.map((status) => (
+                          <Checkbox
+                            key={status}
+                            label={status}
+                            {...getCheckboxProps(status)}
+                          />
+                        ))}
                       </Fieldset>
-                    </Prose>
-                    <Prose>
                       <Field
-                        className={dialogStyles['dialog-suggestion-field']}
+                        className={previewStyles['preview-suggestion-field']}
                       >
-                        <Label>Velg emner</Label>
+                        <Label>Systemnavn</Label>
                         <Suggestion
                           multiple
                           display="count"
-                          selected={draftEmne}
+                          selected={draftFilters.systemNames}
                           onSelectedChange={(items) =>
-                            setDraftEmne(items.map((item) => item.value))
+                            setDraftFilters({
+                              ...draftFilters,
+                              systemNames: items.map((item) => item.value),
+                            })
                           }
                         >
                           <Suggestion.Input />
                           <Suggestion.Clear />
                           <Suggestion.List>
                             <Suggestion.Empty>Tomt</Suggestion.Empty>
-                            {emner.map((option) => (
+                            {uniqueSystemNames.map((systemName) => (
                               <Suggestion.Option
-                                key={option}
-                                label={option}
-                                value={option}
+                                key={systemName}
+                                label={systemName}
+                                value={systemName}
                               >
-                                {option}
+                                {systemName}
                               </Suggestion.Option>
                             ))}
                           </Suggestion.List>
                         </Suggestion>
                       </Field>
-                      <Field
-                        className={dialogStyles['dialog-suggestion-field']}
-                      >
-                        <Label>Velg fylker</Label>
-                        <Suggestion
-                          multiple
-                          display="count"
-                          selected={draftFylke}
-                          onSelectedChange={(items) =>
-                            setDraftFylke(items.map((item) => item.value))
-                          }
-                        >
-                          <Suggestion.Input />
-                          <Suggestion.Clear />
-                          <Suggestion.List>
-                            <Suggestion.Empty>Tomt</Suggestion.Empty>
-                            {fylker.map((option) => (
-                              <Suggestion.Option
-                                key={option}
-                                label={option}
-                                value={option}
-                              >
-                                {option}
-                              </Suggestion.Option>
-                            ))}
-                          </Suggestion.List>
-                        </Suggestion>
-                      </Field>
-                    </Prose>
+                    </div>
                   </div>
                   <div className={dialogStyles['dialog-footer']}>
                     <Button
                       onClick={() => {
-                        setEmne(draftEmne);
-                        setFylke(draftFylke);
-                        setEksamen(draftEksamen);
+                        handleFiltersChange(draftFilters);
                         dialogRef.current?.close();
                       }}
                     >
@@ -522,9 +606,7 @@ export const WithDialog = meta.story({
                     <Button
                       variant="secondary"
                       onClick={() => {
-                        setDraftEmne(emne);
-                        setDraftFylke(fylke);
-                        setDraftEksamen(eksamen);
+                        setDraftFilters(filters);
                         dialogRef.current?.close();
                       }}
                     >
@@ -535,7 +617,7 @@ export const WithDialog = meta.story({
               </Dialog>
             </Dialog.TriggerContext>
             <Button
-              onClick={handleClearFilters}
+              onClick={() => handleFiltersChange(emptyFilters)}
               variant="tertiary"
               data-size="sm"
               className={dialogStyles['dialog-clear-filters']}
@@ -545,70 +627,65 @@ export const WithDialog = meta.story({
           </div>
         </div>
 
-        <ActiveFilters
-          emne={emne}
-          setEmne={setEmne}
-          fylke={fylke}
-          setFylke={setFylke}
-        />
+        <ActiveFilters filters={filters} onChange={handleFiltersChange} />
+
         <Table {...args}>
           <Table.Head>
             <Table.Row>
+              <Table.HeaderCell>År</Table.HeaderCell>
               <Table.HeaderCell className={dialogStyles['show-below-mobile']}>
-                Fylke, emne
+                Skole
               </Table.HeaderCell>
               <Table.HeaderCell className={dialogStyles['hide-below-mobile']}>
-                Fylke
+                Org.nummer
               </Table.HeaderCell>
               <Table.HeaderCell className={dialogStyles['hide-below-mobile']}>
-                Emne
+                Skolenavn
               </Table.HeaderCell>
               <Table.HeaderCell className={dialogStyles['desktop-only']}>
-                Antall elever
+                Fylke
               </Table.HeaderCell>
-              {eksamen.includes('standpunkt') && (
-                <Table.HeaderCell>Standpunkt</Table.HeaderCell>
-              )}
-              {eksamen.includes('muntlig') &&
-                (!isMobile || !eksamen.includes('standpunkt')) && (
-                  <Table.HeaderCell>Muntlig</Table.HeaderCell>
-                )}
-              {eksamen.includes('skriftlig') &&
-                (!isMobile || !eksamen.includes('standpunkt')) && (
-                  <Table.HeaderCell>Skriftlig</Table.HeaderCell>
-                )}
+              <Table.HeaderCell className={dialogStyles['desktop-only']}>
+                Kommune
+              </Table.HeaderCell>
+              <Table.HeaderCell>Status</Table.HeaderCell>
+              <Table.HeaderCell className={dialogStyles['hide-below-mobile']}>
+                Systemnavn
+              </Table.HeaderCell>
             </Table.Row>
           </Table.Head>
           <Table.Body>
-            {paginatedData.map((row) => (
-              <Table.Row key={row.id}>
+            {paginatedData.map((school) => (
+              <Table.Row key={school.id}>
+                <Table.Cell>{school.year}</Table.Cell>
                 <Table.Cell className={dialogStyles['show-below-mobile']}>
-                  {row.fylke}, <br /> {row.emne}
+                  {school.schoolName}
+                  <br />
+                  {school.organizationNumber}
                 </Table.Cell>
                 <Table.Cell className={dialogStyles['hide-below-mobile']}>
-                  {row.fylke}
+                  {school.organizationNumber}
                 </Table.Cell>
                 <Table.Cell className={dialogStyles['hide-below-mobile']}>
-                  {row.emne}
+                  {school.schoolName}
                 </Table.Cell>
                 <Table.Cell className={dialogStyles['desktop-only']}>
-                  {row.antallelever}
+                  {school.county}
                 </Table.Cell>
-                {eksamen.includes('standpunkt') && (
-                  <Table.Cell>{row.standpunktkarakter}</Table.Cell>
-                )}
-                {eksamen.includes('muntlig') &&
-                  (!isMobile || !eksamen.includes('standpunkt')) && (
-                    <Table.Cell>{row.muntligkarakter}</Table.Cell>
-                  )}
-                {eksamen.includes('skriftlig') &&
-                  (!isMobile || !eksamen.includes('standpunkt')) && (
-                    <Table.Cell>{row.skriftligkarakter}</Table.Cell>
-                  )}
+                <Table.Cell className={dialogStyles['desktop-only']}>
+                  {school.municipality}
+                </Table.Cell>
+                <Table.Cell>
+                  <Status status={school.status} />
+                </Table.Cell>
+                <Table.Cell className={dialogStyles['hide-below-mobile']}>
+                  {school.systemName}
+                </Table.Cell>
               </Table.Row>
             ))}
           </Table.Body>
         </Table>
+
         <div className={dialogStyles['dialog-controls']}>
           <Pagination aria-label="Sidenavigering" data-size="sm">
             <Pagination.List>
@@ -618,16 +695,16 @@ export const WithDialog = meta.story({
                   {...prevButtonProps}
                 />
               </Pagination.Item>
-              {pages.map(({ page, itemKey, buttonProps }) => (
+              {pages.map(({ page: pageNumber, itemKey, buttonProps }) => (
                 <Pagination.Item key={itemKey}>
-                  {typeof page === 'number' && (
+                  {typeof pageNumber === 'number' ? (
                     <Pagination.Button
                       {...buttonProps}
-                      aria-label={`Side ${page}`}
+                      aria-label={`Side ${pageNumber}`}
                     >
-                      {page}
+                      {pageNumber}
                     </Pagination.Button>
-                  )}
+                  ) : null}
                 </Pagination.Item>
               ))}
               <Pagination.Item>
@@ -666,56 +743,146 @@ export const WithDialog = meta.story({
   },
 });
 
+type Filters = {
+  years: string[];
+  counties: string[];
+  municipalities: string[];
+  statuses: SchoolStatus[];
+  systemNames: string[];
+};
+
+const emptyFilters: Filters = {
+  years: [],
+  counties: [],
+  municipalities: [],
+  statuses: [],
+  systemNames: [],
+};
+
+const initialFilters: Filters = {
+  ...emptyFilters,
+  counties: ['Agder', 'Rogaland'],
+  municipalities: ['Arendal', 'Kristiansand', 'Sandnes'],
+};
+
+function getMunicipalities(counties: string[]) {
+  return [
+    ...new Set(
+      schools
+        .filter(
+          (school) => counties.length === 0 || counties.includes(school.county),
+        )
+        .map((school) => school.municipality),
+    ),
+  ].sort();
+}
+
+function updateCounties(filters: Filters, counties: string[]): Filters {
+  const municipalities = getMunicipalities(counties);
+
+  return {
+    ...filters,
+    counties,
+    municipalities: filters.municipalities.filter((municipality) =>
+      municipalities.includes(municipality),
+    ),
+  };
+}
+
 function ActiveFilters({
-  emne,
-  setEmne,
-  fylke,
-  setFylke,
+  filters,
+  onChange,
 }: {
-  emne: string[];
-  setEmne: Dispatch<SetStateAction<string[]>>;
-  fylke: string[];
-  setFylke: Dispatch<SetStateAction<string[]>>;
+  filters: Filters;
+  onChange: (filters: Filters) => void;
 }) {
-  if (emne.length === 0 && fylke.length === 0) return null;
+  const groups = [
+    filters.years.length > 0
+      ? { label: 'År', values: filters.years, key: 'years' as const }
+      : null,
+    filters.counties.length > 0
+      ? { label: 'Fylke', values: filters.counties, key: 'counties' as const }
+      : null,
+    filters.municipalities.length > 0
+      ? {
+          label: 'Kommune',
+          values: filters.municipalities,
+          key: 'municipalities' as const,
+        }
+      : null,
+    filters.statuses.length > 0
+      ? { label: 'Status', values: filters.statuses, key: 'statuses' as const }
+      : null,
+    filters.systemNames.length > 0
+      ? {
+          label: 'Systemnavn',
+          values: filters.systemNames,
+          key: 'systemNames' as const,
+        }
+      : null,
+  ].filter((group) => group !== null);
+
+  if (groups.length === 0) return null;
+
   return (
     <div className={previewStyles['preview-active-filters']}>
-      {fylke.length > 0 && (
-        <div className={previewStyles['preview-active-filters-group']}>
-          <Label>Fylke</Label>
+      {groups.map((group) => (
+        <div
+          className={previewStyles['preview-active-filters-group']}
+          key={group.key}
+        >
+          <Label>{group.label}</Label>
           <ul>
-            {fylke.map((f) => (
-              <li key={f}>
+            {group.values.map((value) => (
+              <li key={value}>
                 <Chip.Removable
-                  aria-label={`Fjern ${f}`}
-                  onClick={() =>
-                    setFylke((prev) => prev.filter((v) => v !== f))
-                  }
+                  aria-label={`Fjern ${value}`}
+                  onClick={() => {
+                    if (group.key === 'counties') {
+                      onChange(
+                        updateCounties(
+                          filters,
+                          filters.counties.filter((county) => county !== value),
+                        ),
+                      );
+                      return;
+                    }
+
+                    onChange({
+                      ...filters,
+                      [group.key]: filters[group.key].filter(
+                        (item) => item !== value,
+                      ),
+                    });
+                  }}
                 >
-                  {f}
+                  {value}
                 </Chip.Removable>
               </li>
             ))}
           </ul>
         </div>
-      )}
-      {emne.length > 0 && (
-        <div className={previewStyles['preview-active-filters-group']}>
-          <Label>Emne</Label>
-          <ul>
-            {emne.map((e) => (
-              <li key={e}>
-                <Chip.Removable
-                  aria-label={`Fjern ${e}`}
-                  onClick={() => setEmne((prev) => prev.filter((v) => v !== e))}
-                >
-                  {e}
-                </Chip.Removable>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      ))}
     </div>
+  );
+}
+
+function Status({ status }: { status: SchoolStatus }) {
+  const color =
+    status === 'Ferdig'
+      ? 'success'
+      : status === 'Behandles'
+        ? 'warning'
+        : 'danger';
+
+  return (
+    <span className={previewStyles['preview-status']}>
+      <span
+        aria-hidden
+        className={previewStyles['preview-status-dot']}
+        data-color={color}
+      />
+      {status}
+    </span>
   );
 }

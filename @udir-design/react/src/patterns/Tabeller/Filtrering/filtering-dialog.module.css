@@ -23,7 +23,15 @@
 .dialog-filters {
   display: grid;
   grid-template-columns: 1fr;
+  align-items: start;
   gap: var(--ds-size-4);
+}
+
+.dialog-filter-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+  min-width: 0;
 }
 
 .dialog-section {

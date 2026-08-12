@@ -32,8 +32,39 @@
   width: 100%;
 }
 
+.preview-filter-field {
+  min-width: 0;
+  width: 100%;
+}
+
 .preview-clear-filters {
   white-space: nowrap;
+}
+
+.preview-status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-size-2);
+  white-space: nowrap;
+}
+
+.preview-status-dot {
+  width: var(--ds-size-2);
+  aspect-ratio: 1;
+  flex: none;
+  border-radius: 50%;
+
+  &[data-color='success'] {
+    background: var(--ds-color-success-base-default);
+  }
+
+  &[data-color='warning'] {
+    background: var(--ds-color-warning-base-default);
+  }
+
+  &[data-color='danger'] {
+    background: var(--ds-color-danger-base-default);
+  }
 }
 
 .show-below-mobile {
