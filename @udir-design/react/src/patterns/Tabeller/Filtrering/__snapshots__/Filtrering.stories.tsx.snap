@@ -1,1371 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Chips Display 1`] = `
-<div data-size="auto">
-  <div>
-    <div>
-      <div>
-        <ds-field>
-          <label for="<removed>">
-            Velg fylker
-          </label>
-          <ds-suggestion data-multiple>
-            <input
-              placeholder=" "
-              type="text"
-              id="<removed>"
-              aria-description="No selected"
-              list=":u-datalist5"
-              popovertarget=":u-datalist5"
-            >
-            <button
-              aria-label="Tøm"
-              hidden
-              type="reset"
-              aria-hidden="false"
-              tabindex="-1"
-            >
-            </button>
-            <u-datalist
-              data-nofilter
-              data-sr-plural="%d forslag"
-              data-sr-singular="%d forslag"
-              popover="manual"
-              role="listbox"
-              data-sr-of="of"
-              hidden
-              tabindex="-1"
-              aria-multiselectable="true"
-              id="<removed>"
-              data-is-floating="true"
-            >
-              <u-option
-                label="Agder"
-                value="Agder"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Agder
-              </u-option>
-              <u-option
-                label="Akershus"
-                value="Akershus"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Akershus
-              </u-option>
-              <u-option
-                label="Buskerud"
-                value="Buskerud"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Buskerud
-              </u-option>
-              <u-option
-                label="Finnmark"
-                value="Finnmark"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Finnmark
-              </u-option>
-              <u-option
-                label="Innlandet"
-                value="Innlandet"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Innlandet
-              </u-option>
-              <u-option
-                label="Nordland"
-                value="Nordland"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Nordland
-              </u-option>
-              <u-option
-                label="Oslo"
-                value="Oslo"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Oslo
-              </u-option>
-              <u-option
-                label="Rogaland"
-                value="Rogaland"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Rogaland
-              </u-option>
-              <u-option
-                label="Telemark"
-                value="Telemark"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Telemark
-              </u-option>
-              <u-option
-                label="Troms"
-                value="Troms"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Troms
-              </u-option>
-              <u-option
-                label="Trøndelag"
-                value="Trøndelag"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Trøndelag
-              </u-option>
-              <u-option
-                label="Vestland"
-                value="Vestland"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Vestland
-              </u-option>
-            </u-datalist>
-          </ds-suggestion>
-        </ds-field>
-        <ds-field>
-          <label for="<removed>">
-            Velg kommuner
-          </label>
-          <ds-suggestion data-multiple>
-            <input
-              placeholder=" "
-              type="text"
-              id="<removed>"
-              aria-description="No selected"
-              list=":u-datalist6"
-              popovertarget=":u-datalist6"
-            >
-            <button
-              aria-label="Tøm"
-              hidden
-              type="reset"
-              aria-hidden="false"
-              tabindex="-1"
-            >
-            </button>
-            <u-datalist
-              data-nofilter
-              data-sr-plural="%d forslag"
-              data-sr-singular="%d forslag"
-              popover="manual"
-              role="listbox"
-              data-sr-of="of"
-              hidden
-              tabindex="-1"
-              aria-multiselectable="true"
-              id="<removed>"
-              data-is-floating="true"
-            >
-              <u-option
-                label="Alta"
-                value="Alta"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Alta
-              </u-option>
-              <u-option
-                label="Arendal"
-                value="Arendal"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Arendal
-              </u-option>
-              <u-option
-                label="Bergen"
-                value="Bergen"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Bergen
-              </u-option>
-              <u-option
-                label="Bodø"
-                value="Bodø"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Bodø
-              </u-option>
-              <u-option
-                label="Bærum"
-                value="Bærum"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Bærum
-              </u-option>
-              <u-option
-                label="Drammen"
-                value="Drammen"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Drammen
-              </u-option>
-              <u-option
-                label="Hamar"
-                value="Hamar"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Hamar
-              </u-option>
-              <u-option
-                label="Kristiansand"
-                value="Kristiansand"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Kristiansand
-              </u-option>
-              <u-option
-                label="Oslo"
-                value="Oslo"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Oslo
-              </u-option>
-              <u-option
-                label="Sandnes"
-                value="Sandnes"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Sandnes
-              </u-option>
-              <u-option
-                label="Skien"
-                value="Skien"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Skien
-              </u-option>
-              <u-option
-                label="Stavanger"
-                value="Stavanger"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Stavanger
-              </u-option>
-              <u-option
-                label="Tromsø"
-                value="Tromsø"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Tromsø
-              </u-option>
-              <u-option
-                label="Trondheim"
-                value="Trondheim"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Trondheim
-              </u-option>
-            </u-datalist>
-          </ds-suggestion>
-        </ds-field>
-        <ds-field>
-          <button
-            data-variant="tertiary"
-            type="button"
-            data-size="sm"
-          >
-            Fjern filtre
-          </button>
-        </ds-field>
-      </div>
-      <ds-field>
-        <label for="<removed>">
-          Søk
-        </label>
-        <div>
-          <input
-            placeholder
-            aria-label="Søk"
-            type="search"
-            value
-            id="<removed>"
-          >
-          <button
-            data-icon="true"
-            data-variant="tertiary"
-            type="reset"
-            aria-label="Tøm"
-          >
-          </button>
-        </div>
-      </ds-field>
-    </div>
-    <table
-      data-zebra="true"
-      data-color="neutral"
-    >
-      <thead>
-        <tr>
-          <th>
-            År
-          </th>
-          <th>
-            Skole
-          </th>
-          <th>
-            Org.nummer
-          </th>
-          <th>
-            Skolenavn
-          </th>
-          <th>
-            Fylke
-          </th>
-          <th>
-            Kommune
-          </th>
-          <th>
-            Status
-          </th>
-          <th>
-            Systemnavn
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            2026
-          </td>
-          <td>
-            Abildsø skole
-            <br>
-            11111111
-          </td>
-          <td>
-            11111111
-          </td>
-          <td>
-            Abildsø skole
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="success"
-              >
-              </span>
-              Ferdig
-            </span>
-          </td>
-          <td>
-            Brukerstøtte
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2026
-          </td>
-          <td>
-            Ammerud skole
-            <br>
-            22222222
-          </td>
-          <td>
-            22222222
-          </td>
-          <td>
-            Ammerud skole
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="success"
-              >
-              </span>
-              Ferdig
-            </span>
-          </td>
-          <td>
-            Brukerstøtte
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2026
-          </td>
-          <td>
-            Apalløkka skole
-            <br>
-            33333333
-          </td>
-          <td>
-            33333333
-          </td>
-          <td>
-            Apalløkka skole
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="warning"
-              >
-              </span>
-              Behandles
-            </span>
-          </td>
-          <td>
-            Brukerstøtte
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2026
-          </td>
-          <td>
-            Høyenhall skole
-            <br>
-            44444444
-          </td>
-          <td>
-            44444444
-          </td>
-          <td>
-            Høyenhall skole
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="warning"
-              >
-              </span>
-              Behandles
-            </span>
-          </td>
-          <td>
-            Brukerstøtte
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2026
-          </td>
-          <td>
-            Manglerud skole
-            <br>
-            55555555
-          </td>
-          <td>
-            55555555
-          </td>
-          <td>
-            Manglerud skole
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="warning"
-              >
-              </span>
-              Behandles
-            </span>
-          </td>
-          <td>
-            Brukerstøtte
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <div>
-      <ds-pagination
-        aria-label="Sidenavigering"
-        data-size="sm"
-        role="navigation"
-      >
-        <ul>
-          <li>
-            <button
-              aria-disabled="true"
-              type="button"
-              aria-label="Forrige side"
-            >
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              aria-current="true"
-              aria-label="Side 1"
-            >
-              1
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              aria-label="Side 2"
-            >
-              2
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              aria-label="Side 3"
-            >
-              3
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              aria-label="Side 4"
-            >
-              4
-            </button>
-          </li>
-          <li>
-          </li>
-          <li>
-            <button
-              type="button"
-              aria-label="Side 10"
-            >
-              10
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              aria-label="Neste side"
-            >
-            </button>
-          </li>
-        </ul>
-      </ds-pagination>
-      <div>
-        <span>
-          Rad 1-5 av 48
-        </span>
-        <ds-field>
-          <label for="<removed>">
-            Rader per side
-          </label>
-          <select
-            autocomplete="off"
-            id="<removed>"
-          >
-            <option value="5">
-              5
-            </option>
-            <option value="10">
-              10
-            </option>
-            <option value="25">
-              25
-            </option>
-            <option value="50">
-              50
-            </option>
-          </select>
-        </ds-field>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Count Without Chips 1`] = `
-<div data-size="auto">
-  <div>
-    <div>
-      <div>
-        <ds-field>
-          <label for="<removed>">
-            Velg fylker
-          </label>
-          <ds-suggestion
-            data-multiple
-            data-display="count"
-          >
-            <input
-              placeholder=" "
-              type="text"
-              id="<removed>"
-              aria-description="No selected"
-              list=":u-datalist3"
-              popovertarget=":u-datalist3"
-            >
-            <button
-              aria-label="Tøm"
-              hidden
-              type="reset"
-              aria-hidden="false"
-              tabindex="-1"
-            >
-            </button>
-            <u-datalist
-              data-nofilter
-              data-sr-plural="%d forslag"
-              data-sr-singular="%d forslag"
-              popover="manual"
-              role="listbox"
-              data-sr-of="of"
-              hidden
-              tabindex="-1"
-              aria-multiselectable="true"
-              id="<removed>"
-              data-is-floating="true"
-            >
-              <u-option
-                label="Agder"
-                value="Agder"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Agder
-              </u-option>
-              <u-option
-                label="Akershus"
-                value="Akershus"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Akershus
-              </u-option>
-              <u-option
-                label="Buskerud"
-                value="Buskerud"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Buskerud
-              </u-option>
-              <u-option
-                label="Finnmark"
-                value="Finnmark"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Finnmark
-              </u-option>
-              <u-option
-                label="Innlandet"
-                value="Innlandet"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Innlandet
-              </u-option>
-              <u-option
-                label="Nordland"
-                value="Nordland"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Nordland
-              </u-option>
-              <u-option
-                label="Oslo"
-                value="Oslo"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Oslo
-              </u-option>
-              <u-option
-                label="Rogaland"
-                value="Rogaland"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Rogaland
-              </u-option>
-              <u-option
-                label="Telemark"
-                value="Telemark"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Telemark
-              </u-option>
-              <u-option
-                label="Troms"
-                value="Troms"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Troms
-              </u-option>
-              <u-option
-                label="Trøndelag"
-                value="Trøndelag"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Trøndelag
-              </u-option>
-              <u-option
-                label="Vestland"
-                value="Vestland"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Vestland
-              </u-option>
-            </u-datalist>
-          </ds-suggestion>
-        </ds-field>
-        <ds-field>
-          <label for="<removed>">
-            Velg kommuner
-          </label>
-          <ds-suggestion
-            data-multiple
-            data-display="count"
-          >
-            <input
-              placeholder=" "
-              type="text"
-              id="<removed>"
-              aria-description="No selected"
-              list=":u-datalist4"
-              popovertarget=":u-datalist4"
-            >
-            <button
-              aria-label="Tøm"
-              hidden
-              type="reset"
-              aria-hidden="false"
-              tabindex="-1"
-            >
-            </button>
-            <u-datalist
-              data-nofilter
-              data-sr-plural="%d forslag"
-              data-sr-singular="%d forslag"
-              popover="manual"
-              role="listbox"
-              data-sr-of="of"
-              hidden
-              tabindex="-1"
-              aria-multiselectable="true"
-              id="<removed>"
-              data-is-floating="true"
-            >
-              <u-option
-                label="Alta"
-                value="Alta"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Alta
-              </u-option>
-              <u-option
-                label="Arendal"
-                value="Arendal"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Arendal
-              </u-option>
-              <u-option
-                label="Bergen"
-                value="Bergen"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Bergen
-              </u-option>
-              <u-option
-                label="Bodø"
-                value="Bodø"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Bodø
-              </u-option>
-              <u-option
-                label="Bærum"
-                value="Bærum"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Bærum
-              </u-option>
-              <u-option
-                label="Drammen"
-                value="Drammen"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Drammen
-              </u-option>
-              <u-option
-                label="Hamar"
-                value="Hamar"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Hamar
-              </u-option>
-              <u-option
-                label="Kristiansand"
-                value="Kristiansand"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Kristiansand
-              </u-option>
-              <u-option
-                label="Oslo"
-                value="Oslo"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Oslo
-              </u-option>
-              <u-option
-                label="Sandnes"
-                value="Sandnes"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Sandnes
-              </u-option>
-              <u-option
-                label="Skien"
-                value="Skien"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Skien
-              </u-option>
-              <u-option
-                label="Stavanger"
-                value="Stavanger"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Stavanger
-              </u-option>
-              <u-option
-                label="Tromsø"
-                value="Tromsø"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Tromsø
-              </u-option>
-              <u-option
-                label="Trondheim"
-                value="Trondheim"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Trondheim
-              </u-option>
-            </u-datalist>
-          </ds-suggestion>
-        </ds-field>
-        <ds-field>
-          <button
-            data-variant="tertiary"
-            type="button"
-            data-size="sm"
-          >
-            Fjern filtre
-          </button>
-        </ds-field>
-      </div>
-      <ds-field>
-        <label for="<removed>">
-          Søk
-        </label>
-        <div>
-          <input
-            placeholder
-            aria-label="Søk"
-            type="search"
-            value
-            id="<removed>"
-          >
-          <button
-            data-icon="true"
-            data-variant="tertiary"
-            type="reset"
-            aria-label="Tøm"
-          >
-          </button>
-        </div>
-      </ds-field>
-    </div>
-    <table
-      data-zebra="true"
-      data-color="neutral"
-    >
-      <thead>
-        <tr>
-          <th>
-            År
-          </th>
-          <th>
-            Skole
-          </th>
-          <th>
-            Org.nummer
-          </th>
-          <th>
-            Skolenavn
-          </th>
-          <th>
-            Fylke
-          </th>
-          <th>
-            Kommune
-          </th>
-          <th>
-            Status
-          </th>
-          <th>
-            Systemnavn
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            2026
-          </td>
-          <td>
-            Abildsø skole
-            <br>
-            11111111
-          </td>
-          <td>
-            11111111
-          </td>
-          <td>
-            Abildsø skole
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="success"
-              >
-              </span>
-              Ferdig
-            </span>
-          </td>
-          <td>
-            Brukerstøtte
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2026
-          </td>
-          <td>
-            Ammerud skole
-            <br>
-            22222222
-          </td>
-          <td>
-            22222222
-          </td>
-          <td>
-            Ammerud skole
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="success"
-              >
-              </span>
-              Ferdig
-            </span>
-          </td>
-          <td>
-            Brukerstøtte
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2026
-          </td>
-          <td>
-            Apalløkka skole
-            <br>
-            33333333
-          </td>
-          <td>
-            33333333
-          </td>
-          <td>
-            Apalløkka skole
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="warning"
-              >
-              </span>
-              Behandles
-            </span>
-          </td>
-          <td>
-            Brukerstøtte
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2026
-          </td>
-          <td>
-            Høyenhall skole
-            <br>
-            44444444
-          </td>
-          <td>
-            44444444
-          </td>
-          <td>
-            Høyenhall skole
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="warning"
-              >
-              </span>
-              Behandles
-            </span>
-          </td>
-          <td>
-            Brukerstøtte
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2026
-          </td>
-          <td>
-            Manglerud skole
-            <br>
-            55555555
-          </td>
-          <td>
-            55555555
-          </td>
-          <td>
-            Manglerud skole
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="warning"
-              >
-              </span>
-              Behandles
-            </span>
-          </td>
-          <td>
-            Brukerstøtte
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <div>
-      <ds-pagination
-        aria-label="Sidenavigering"
-        data-size="sm"
-        role="navigation"
-      >
-        <ul>
-          <li>
-            <button
-              aria-disabled="true"
-              type="button"
-              aria-label="Forrige side"
-            >
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              aria-current="true"
-              aria-label="Side 1"
-            >
-              1
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              aria-label="Side 2"
-            >
-              2
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              aria-label="Side 3"
-            >
-              3
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              aria-label="Side 4"
-            >
-              4
-            </button>
-          </li>
-          <li>
-          </li>
-          <li>
-            <button
-              type="button"
-              aria-label="Side 10"
-            >
-              10
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              aria-label="Neste side"
-            >
-            </button>
-          </li>
-        </ul>
-      </ds-pagination>
-      <div>
-        <span>
-          Rad 1-5 av 48
-        </span>
-        <ds-field>
-          <label for="<removed>">
-            Rader per side
-          </label>
-          <select
-            autocomplete="off"
-            id="<removed>"
-          >
-            <option value="5">
-              5
-            </option>
-            <option value="10">
-              10
-            </option>
-            <option value="25">
-              25
-            </option>
-            <option value="50">
-              50
-            </option>
-          </select>
-        </ds-field>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Preview 1`] = `
 <div data-size="auto">
   <div>
@@ -1379,11 +13,29 @@ exports[`Preview 1`] = `
             data-multiple
             data-display="count"
           >
+            <data
+              value="Agder"
+              aria-label="Agder, Press to remove"
+              role="option"
+              slot="items"
+              tabindex="-1"
+            >
+              Agder
+            </data>
+            <data
+              value="Rogaland"
+              aria-label="Rogaland, Press to remove"
+              role="option"
+              slot="items"
+              tabindex="-1"
+            >
+              Rogaland
+            </data>
             <input
               placeholder=" "
               type="text"
               id="<removed>"
-              aria-description="No selected"
+              aria-description="Navigate left to find 2 selected"
               list=":u-datalist1"
               popovertarget=":u-datalist1"
             >
@@ -1411,9 +63,10 @@ exports[`Preview 1`] = `
               <u-option
                 label="Agder"
                 value="Agder"
+                selected
                 role="option"
                 aria-disabled="false"
-                aria-selected="false"
+                aria-selected="true"
                 id="<removed>"
               >
                 Agder
@@ -1481,9 +134,10 @@ exports[`Preview 1`] = `
               <u-option
                 label="Rogaland"
                 value="Rogaland"
+                selected
                 role="option"
                 aria-disabled="false"
-                aria-selected="false"
+                aria-selected="true"
                 id="<removed>"
               >
                 Rogaland
@@ -1539,11 +193,38 @@ exports[`Preview 1`] = `
             data-multiple
             data-display="count"
           >
+            <data
+              value="Arendal"
+              aria-label="Arendal, Press to remove"
+              role="option"
+              slot="items"
+              tabindex="-1"
+            >
+              Arendal
+            </data>
+            <data
+              value="Kristiansand"
+              aria-label="Kristiansand, Press to remove"
+              role="option"
+              slot="items"
+              tabindex="-1"
+            >
+              Kristiansand
+            </data>
+            <data
+              value="Sandnes"
+              aria-label="Sandnes, Press to remove"
+              role="option"
+              slot="items"
+              tabindex="-1"
+            >
+              Sandnes
+            </data>
             <input
               placeholder=" "
               type="text"
               id="<removed>"
-              aria-description="No selected"
+              aria-description="Navigate left to find 3 selected"
               list=":u-datalist2"
               popovertarget=":u-datalist2"
             >
@@ -1569,114 +250,37 @@ exports[`Preview 1`] = `
               data-is-floating="true"
             >
               <u-option
-                label="Alta"
-                value="Alta"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Alta
-              </u-option>
-              <u-option
                 label="Arendal"
                 value="Arendal"
+                selected
                 role="option"
                 aria-disabled="false"
-                aria-selected="false"
+                aria-selected="true"
                 id="<removed>"
               >
                 Arendal
               </u-option>
               <u-option
-                label="Bergen"
-                value="Bergen"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Bergen
-              </u-option>
-              <u-option
-                label="Bodø"
-                value="Bodø"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Bodø
-              </u-option>
-              <u-option
-                label="Bærum"
-                value="Bærum"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Bærum
-              </u-option>
-              <u-option
-                label="Drammen"
-                value="Drammen"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Drammen
-              </u-option>
-              <u-option
-                label="Hamar"
-                value="Hamar"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Hamar
-              </u-option>
-              <u-option
                 label="Kristiansand"
                 value="Kristiansand"
+                selected
                 role="option"
                 aria-disabled="false"
-                aria-selected="false"
+                aria-selected="true"
                 id="<removed>"
               >
                 Kristiansand
               </u-option>
               <u-option
-                label="Oslo"
-                value="Oslo"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Oslo
-              </u-option>
-              <u-option
                 label="Sandnes"
                 value="Sandnes"
+                selected
                 role="option"
                 aria-disabled="false"
-                aria-selected="false"
+                aria-selected="true"
                 id="<removed>"
               >
                 Sandnes
-              </u-option>
-              <u-option
-                label="Skien"
-                value="Skien"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Skien
               </u-option>
               <u-option
                 label="Stavanger"
@@ -1687,26 +291,6 @@ exports[`Preview 1`] = `
                 id="<removed>"
               >
                 Stavanger
-              </u-option>
-              <u-option
-                label="Tromsø"
-                value="Tromsø"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Tromsø
-              </u-option>
-              <u-option
-                label="Trondheim"
-                value="Trondheim"
-                role="option"
-                aria-disabled="false"
-                aria-selected="false"
-                id="<removed>"
-              >
-                Trondheim
               </u-option>
             </u-datalist>
           </ds-suggestion>
@@ -1781,21 +365,21 @@ exports[`Preview 1`] = `
             2026
           </td>
           <td>
-            Abildsø skole
+            Alta ungdomsskole
             <br>
-            11111111
+            10000001
           </td>
           <td>
-            11111111
+            10000001
           </td>
           <td>
-            Abildsø skole
+            Alta ungdomsskole
           </td>
           <td>
-            Oslo
+            Agder
           </td>
           <td>
-            Oslo
+            Arendal
           </td>
           <td>
             <span>
@@ -1813,59 +397,24 @@ exports[`Preview 1`] = `
         </tr>
         <tr>
           <td>
-            2026
+            2025
           </td>
           <td>
-            Ammerud skole
+            Arendal videregående skole
             <br>
-            22222222
+            10000002
           </td>
           <td>
-            22222222
+            10000002
           </td>
           <td>
-            Ammerud skole
+            Arendal videregående skole
           </td>
           <td>
-            Oslo
+            Agder
           </td>
           <td>
-            Oslo
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="success"
-              >
-              </span>
-              Ferdig
-            </span>
-          </td>
-          <td>
-            Brukerstøtte
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2026
-          </td>
-          <td>
-            Apalløkka skole
-            <br>
-            33333333
-          </td>
-          <td>
-            33333333
-          </td>
-          <td>
-            Apalløkka skole
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            Oslo
+            Kristiansand
           </td>
           <td>
             <span>
@@ -1878,29 +427,29 @@ exports[`Preview 1`] = `
             </span>
           </td>
           <td>
-            Brukerstøtte
+            PAS
           </td>
         </tr>
         <tr>
           <td>
-            2026
+            2025
           </td>
           <td>
-            Høyenhall skole
+            Hamar katedralskole
             <br>
-            44444444
+            10000008
           </td>
           <td>
-            44444444
+            10000008
           </td>
           <td>
-            Høyenhall skole
+            Hamar katedralskole
           </td>
           <td>
-            Oslo
+            Rogaland
           </td>
           <td>
-            Oslo
+            Sandnes
           </td>
           <td>
             <span>
@@ -1913,29 +462,29 @@ exports[`Preview 1`] = `
             </span>
           </td>
           <td>
-            Brukerstøtte
+            PAS
           </td>
         </tr>
         <tr>
           <td>
-            2026
+            2025
           </td>
           <td>
-            Manglerud skole
+            Stavanger katedralskole
             <br>
-            55555555
+            10000014
           </td>
           <td>
-            55555555
+            10000014
           </td>
           <td>
-            Manglerud skole
+            Stavanger katedralskole
           </td>
           <td>
-            Oslo
+            Agder
           </td>
           <td>
-            Oslo
+            Arendal
           </td>
           <td>
             <span>
@@ -1948,7 +497,42 @@ exports[`Preview 1`] = `
             </span>
           </td>
           <td>
-            Brukerstøtte
+            PAS
+          </td>
+        </tr>
+        <tr>
+          <td>
+            2024
+          </td>
+          <td>
+            Tromsdalen videregående skole
+            <br>
+            10000015
+          </td>
+          <td>
+            10000015
+          </td>
+          <td>
+            Tromsdalen videregående skole
+          </td>
+          <td>
+            Agder
+          </td>
+          <td>
+            Kristiansand
+          </td>
+          <td>
+            <span>
+              <span
+                aria-hidden="true"
+                data-color="danger"
+              >
+              </span>
+              Avvist
+            </span>
+          </td>
+          <td>
+            Prøveadministrasjon
           </td>
         </tr>
       </tbody>
@@ -1988,27 +572,672 @@ exports[`Preview 1`] = `
           <li>
             <button
               type="button"
-              aria-label="Side 3"
+              aria-label="Neste side"
             >
-              3
             </button>
           </li>
-          <li>
-            <button
-              type="button"
-              aria-label="Side 4"
-            >
-              4
-            </button>
-          </li>
-          <li>
-          </li>
-          <li>
-            <button
-              type="button"
-              aria-label="Side 10"
-            >
+        </ul>
+      </ds-pagination>
+      <div>
+        <span>
+          Rad 1-5 av 9
+        </span>
+        <ds-field>
+          <label for="<removed>">
+            Rader per side
+          </label>
+          <select
+            autocomplete="off"
+            id="<removed>"
+          >
+            <option value="5">
+              5
+            </option>
+            <option value="10">
               10
+            </option>
+            <option value="25">
+              25
+            </option>
+            <option value="50">
+              50
+            </option>
+          </select>
+        </ds-field>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`With Chips 1`] = `
+<div data-size="auto">
+  <div>
+    <div>
+      <div>
+        <ds-field>
+          <label for="<removed>">
+            Velg fylker
+          </label>
+          <ds-suggestion
+            data-multiple
+            data-display="count"
+          >
+            <data
+              value="Agder"
+              aria-label="Agder, Press to remove"
+              role="option"
+              slot="items"
+              tabindex="-1"
+            >
+              Agder
+            </data>
+            <data
+              value="Rogaland"
+              aria-label="Rogaland, Press to remove"
+              role="option"
+              slot="items"
+              tabindex="-1"
+            >
+              Rogaland
+            </data>
+            <input
+              placeholder=" "
+              type="text"
+              id="<removed>"
+              aria-description="Navigate left to find 2 selected"
+              list=":u-datalist3"
+              popovertarget=":u-datalist3"
+            >
+            <button
+              aria-label="Tøm"
+              hidden
+              type="reset"
+              aria-hidden="false"
+              tabindex="-1"
+            >
+            </button>
+            <u-datalist
+              data-nofilter
+              data-sr-plural="%d forslag"
+              data-sr-singular="%d forslag"
+              popover="manual"
+              role="listbox"
+              data-sr-of="of"
+              hidden
+              tabindex="-1"
+              aria-multiselectable="true"
+              id="<removed>"
+              data-is-floating="true"
+            >
+              <u-option
+                label="Agder"
+                value="Agder"
+                selected
+                role="option"
+                aria-disabled="false"
+                aria-selected="true"
+                id="<removed>"
+              >
+                Agder
+              </u-option>
+              <u-option
+                label="Akershus"
+                value="Akershus"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Akershus
+              </u-option>
+              <u-option
+                label="Buskerud"
+                value="Buskerud"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Buskerud
+              </u-option>
+              <u-option
+                label="Finnmark"
+                value="Finnmark"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Finnmark
+              </u-option>
+              <u-option
+                label="Innlandet"
+                value="Innlandet"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Innlandet
+              </u-option>
+              <u-option
+                label="Nordland"
+                value="Nordland"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Nordland
+              </u-option>
+              <u-option
+                label="Oslo"
+                value="Oslo"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Oslo
+              </u-option>
+              <u-option
+                label="Rogaland"
+                value="Rogaland"
+                selected
+                role="option"
+                aria-disabled="false"
+                aria-selected="true"
+                id="<removed>"
+              >
+                Rogaland
+              </u-option>
+              <u-option
+                label="Telemark"
+                value="Telemark"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Telemark
+              </u-option>
+              <u-option
+                label="Troms"
+                value="Troms"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Troms
+              </u-option>
+              <u-option
+                label="Trøndelag"
+                value="Trøndelag"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Trøndelag
+              </u-option>
+              <u-option
+                label="Vestland"
+                value="Vestland"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Vestland
+              </u-option>
+            </u-datalist>
+          </ds-suggestion>
+        </ds-field>
+        <ds-field>
+          <label for="<removed>">
+            Velg kommuner
+          </label>
+          <ds-suggestion
+            data-multiple
+            data-display="count"
+          >
+            <data
+              value="Arendal"
+              aria-label="Arendal, Press to remove"
+              role="option"
+              slot="items"
+              tabindex="-1"
+            >
+              Arendal
+            </data>
+            <data
+              value="Kristiansand"
+              aria-label="Kristiansand, Press to remove"
+              role="option"
+              slot="items"
+              tabindex="-1"
+            >
+              Kristiansand
+            </data>
+            <data
+              value="Sandnes"
+              aria-label="Sandnes, Press to remove"
+              role="option"
+              slot="items"
+              tabindex="-1"
+            >
+              Sandnes
+            </data>
+            <input
+              placeholder=" "
+              type="text"
+              id="<removed>"
+              aria-description="Navigate left to find 3 selected"
+              list=":u-datalist4"
+              popovertarget=":u-datalist4"
+            >
+            <button
+              aria-label="Tøm"
+              hidden
+              type="reset"
+              aria-hidden="false"
+              tabindex="-1"
+            >
+            </button>
+            <u-datalist
+              data-nofilter
+              data-sr-plural="%d forslag"
+              data-sr-singular="%d forslag"
+              popover="manual"
+              role="listbox"
+              data-sr-of="of"
+              hidden
+              tabindex="-1"
+              aria-multiselectable="true"
+              id="<removed>"
+              data-is-floating="true"
+            >
+              <u-option
+                label="Arendal"
+                value="Arendal"
+                selected
+                role="option"
+                aria-disabled="false"
+                aria-selected="true"
+                id="<removed>"
+              >
+                Arendal
+              </u-option>
+              <u-option
+                label="Kristiansand"
+                value="Kristiansand"
+                selected
+                role="option"
+                aria-disabled="false"
+                aria-selected="true"
+                id="<removed>"
+              >
+                Kristiansand
+              </u-option>
+              <u-option
+                label="Sandnes"
+                value="Sandnes"
+                selected
+                role="option"
+                aria-disabled="false"
+                aria-selected="true"
+                id="<removed>"
+              >
+                Sandnes
+              </u-option>
+              <u-option
+                label="Stavanger"
+                value="Stavanger"
+                role="option"
+                aria-disabled="false"
+                aria-selected="false"
+                id="<removed>"
+              >
+                Stavanger
+              </u-option>
+            </u-datalist>
+          </ds-suggestion>
+        </ds-field>
+        <ds-field>
+          <button
+            data-variant="tertiary"
+            type="button"
+            data-size="sm"
+          >
+            Fjern filtre
+          </button>
+        </ds-field>
+      </div>
+      <ds-field>
+        <label for="<removed>">
+          Søk
+        </label>
+        <div>
+          <input
+            placeholder
+            aria-label="Søk"
+            type="search"
+            value
+            id="<removed>"
+          >
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="reset"
+            aria-label="Tøm"
+          >
+          </button>
+        </div>
+      </ds-field>
+    </div>
+    <div>
+      <div>
+        <label>
+          Fylke
+        </label>
+        <ul>
+          <li>
+            <button
+              type="button"
+              data-removable="true"
+              aria-label="Fjern Agder"
+            >
+              Agder
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              data-removable="true"
+              aria-label="Fjern Rogaland"
+            >
+              Rogaland
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <label>
+          Kommune
+        </label>
+        <ul>
+          <li>
+            <button
+              type="button"
+              data-removable="true"
+              aria-label="Fjern Arendal"
+            >
+              Arendal
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              data-removable="true"
+              aria-label="Fjern Kristiansand"
+            >
+              Kristiansand
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              data-removable="true"
+              aria-label="Fjern Sandnes"
+            >
+              Sandnes
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <table
+      data-zebra="true"
+      data-color="neutral"
+    >
+      <thead>
+        <tr>
+          <th>
+            År
+          </th>
+          <th>
+            Skole
+          </th>
+          <th>
+            Org.nummer
+          </th>
+          <th>
+            Skolenavn
+          </th>
+          <th>
+            Fylke
+          </th>
+          <th>
+            Kommune
+          </th>
+          <th>
+            Status
+          </th>
+          <th>
+            Systemnavn
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            2026
+          </td>
+          <td>
+            Alta ungdomsskole
+            <br>
+            10000001
+          </td>
+          <td>
+            10000001
+          </td>
+          <td>
+            Alta ungdomsskole
+          </td>
+          <td>
+            Agder
+          </td>
+          <td>
+            Arendal
+          </td>
+          <td>
+            <span>
+              <span
+                aria-hidden="true"
+                data-color="success"
+              >
+              </span>
+              Ferdig
+            </span>
+          </td>
+          <td>
+            Brukerstøtte
+          </td>
+        </tr>
+        <tr>
+          <td>
+            2025
+          </td>
+          <td>
+            Arendal videregående skole
+            <br>
+            10000002
+          </td>
+          <td>
+            10000002
+          </td>
+          <td>
+            Arendal videregående skole
+          </td>
+          <td>
+            Agder
+          </td>
+          <td>
+            Kristiansand
+          </td>
+          <td>
+            <span>
+              <span
+                aria-hidden="true"
+                data-color="warning"
+              >
+              </span>
+              Behandles
+            </span>
+          </td>
+          <td>
+            PAS
+          </td>
+        </tr>
+        <tr>
+          <td>
+            2025
+          </td>
+          <td>
+            Hamar katedralskole
+            <br>
+            10000008
+          </td>
+          <td>
+            10000008
+          </td>
+          <td>
+            Hamar katedralskole
+          </td>
+          <td>
+            Rogaland
+          </td>
+          <td>
+            Sandnes
+          </td>
+          <td>
+            <span>
+              <span
+                aria-hidden="true"
+                data-color="warning"
+              >
+              </span>
+              Behandles
+            </span>
+          </td>
+          <td>
+            PAS
+          </td>
+        </tr>
+        <tr>
+          <td>
+            2025
+          </td>
+          <td>
+            Stavanger katedralskole
+            <br>
+            10000014
+          </td>
+          <td>
+            10000014
+          </td>
+          <td>
+            Stavanger katedralskole
+          </td>
+          <td>
+            Agder
+          </td>
+          <td>
+            Arendal
+          </td>
+          <td>
+            <span>
+              <span
+                aria-hidden="true"
+                data-color="warning"
+              >
+              </span>
+              Behandles
+            </span>
+          </td>
+          <td>
+            PAS
+          </td>
+        </tr>
+        <tr>
+          <td>
+            2024
+          </td>
+          <td>
+            Tromsdalen videregående skole
+            <br>
+            10000015
+          </td>
+          <td>
+            10000015
+          </td>
+          <td>
+            Tromsdalen videregående skole
+          </td>
+          <td>
+            Agder
+          </td>
+          <td>
+            Kristiansand
+          </td>
+          <td>
+            <span>
+              <span
+                aria-hidden="true"
+                data-color="danger"
+              >
+              </span>
+              Avvist
+            </span>
+          </td>
+          <td>
+            Prøveadministrasjon
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <ds-pagination
+        aria-label="Sidenavigering"
+        data-size="sm"
+        role="navigation"
+      >
+        <ul>
+          <li>
+            <button
+              aria-disabled="true"
+              type="button"
+              aria-label="Forrige side"
+            >
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              aria-current="true"
+              aria-label="Side 1"
+            >
+              1
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              aria-label="Side 2"
+            >
+              2
             </button>
           </li>
           <li>
@@ -2022,7 +1251,7 @@ exports[`Preview 1`] = `
       </ds-pagination>
       <div>
         <span>
-          Rad 1-5 av 48
+          Rad 1-5 av 9
         </span>
         <ds-field>
           <label for="<removed>">
@@ -2111,7 +1340,7 @@ exports[`With Dialog 1`] = `
         >
           <button
             data-icon="true"
-            commandfor="_r_b_"
+            commandfor="_r_9_"
             data-variant="tertiary"
             type="button"
             aria-label="Lukk dialogvindu"
@@ -2138,8 +1367,8 @@ exports[`With Dialog 1`] = `
                       type="text"
                       id="<removed>"
                       aria-description="No selected"
-                      list=":u-datalist7"
-                      popovertarget=":u-datalist7"
+                      list=":u-datalist5"
+                      popovertarget=":u-datalist5"
                     >
                     <button
                       aria-label="Tøm"
@@ -2203,13 +1432,31 @@ exports[`With Dialog 1`] = `
                     data-multiple
                     data-display="count"
                   >
+                    <data
+                      value="Agder"
+                      aria-label="Agder, Press to remove"
+                      role="option"
+                      slot="items"
+                      tabindex="-1"
+                    >
+                      Agder
+                    </data>
+                    <data
+                      value="Rogaland"
+                      aria-label="Rogaland, Press to remove"
+                      role="option"
+                      slot="items"
+                      tabindex="-1"
+                    >
+                      Rogaland
+                    </data>
                     <input
                       placeholder=" "
                       type="text"
                       id="<removed>"
-                      aria-description="No selected"
-                      list=":u-datalist8"
-                      popovertarget=":u-datalist8"
+                      aria-description="Navigate left to find 2 selected"
+                      list=":u-datalist6"
+                      popovertarget=":u-datalist6"
                     >
                     <button
                       aria-label="Tøm"
@@ -2235,9 +1482,10 @@ exports[`With Dialog 1`] = `
                       <u-option
                         label="Agder"
                         value="Agder"
+                        selected
                         role="option"
                         aria-disabled="false"
-                        aria-selected="false"
+                        aria-selected="true"
                         id="<removed>"
                       >
                         Agder
@@ -2305,9 +1553,10 @@ exports[`With Dialog 1`] = `
                       <u-option
                         label="Rogaland"
                         value="Rogaland"
+                        selected
                         role="option"
                         aria-disabled="false"
-                        aria-selected="false"
+                        aria-selected="true"
                         id="<removed>"
                       >
                         Rogaland
@@ -2363,13 +1612,40 @@ exports[`With Dialog 1`] = `
                     data-multiple
                     data-display="count"
                   >
+                    <data
+                      value="Arendal"
+                      aria-label="Arendal, Press to remove"
+                      role="option"
+                      slot="items"
+                      tabindex="-1"
+                    >
+                      Arendal
+                    </data>
+                    <data
+                      value="Kristiansand"
+                      aria-label="Kristiansand, Press to remove"
+                      role="option"
+                      slot="items"
+                      tabindex="-1"
+                    >
+                      Kristiansand
+                    </data>
+                    <data
+                      value="Sandnes"
+                      aria-label="Sandnes, Press to remove"
+                      role="option"
+                      slot="items"
+                      tabindex="-1"
+                    >
+                      Sandnes
+                    </data>
                     <input
                       placeholder=" "
                       type="text"
                       id="<removed>"
-                      aria-description="No selected"
-                      list=":u-datalist9"
-                      popovertarget=":u-datalist9"
+                      aria-description="Navigate left to find 3 selected"
+                      list=":u-datalist7"
+                      popovertarget=":u-datalist7"
                     >
                     <button
                       aria-label="Tøm"
@@ -2393,114 +1669,37 @@ exports[`With Dialog 1`] = `
                       data-is-floating="true"
                     >
                       <u-option
-                        label="Alta"
-                        value="Alta"
-                        role="option"
-                        aria-disabled="false"
-                        aria-selected="false"
-                        id="<removed>"
-                      >
-                        Alta
-                      </u-option>
-                      <u-option
                         label="Arendal"
                         value="Arendal"
+                        selected
                         role="option"
                         aria-disabled="false"
-                        aria-selected="false"
+                        aria-selected="true"
                         id="<removed>"
                       >
                         Arendal
                       </u-option>
                       <u-option
-                        label="Bergen"
-                        value="Bergen"
-                        role="option"
-                        aria-disabled="false"
-                        aria-selected="false"
-                        id="<removed>"
-                      >
-                        Bergen
-                      </u-option>
-                      <u-option
-                        label="Bodø"
-                        value="Bodø"
-                        role="option"
-                        aria-disabled="false"
-                        aria-selected="false"
-                        id="<removed>"
-                      >
-                        Bodø
-                      </u-option>
-                      <u-option
-                        label="Bærum"
-                        value="Bærum"
-                        role="option"
-                        aria-disabled="false"
-                        aria-selected="false"
-                        id="<removed>"
-                      >
-                        Bærum
-                      </u-option>
-                      <u-option
-                        label="Drammen"
-                        value="Drammen"
-                        role="option"
-                        aria-disabled="false"
-                        aria-selected="false"
-                        id="<removed>"
-                      >
-                        Drammen
-                      </u-option>
-                      <u-option
-                        label="Hamar"
-                        value="Hamar"
-                        role="option"
-                        aria-disabled="false"
-                        aria-selected="false"
-                        id="<removed>"
-                      >
-                        Hamar
-                      </u-option>
-                      <u-option
                         label="Kristiansand"
                         value="Kristiansand"
+                        selected
                         role="option"
                         aria-disabled="false"
-                        aria-selected="false"
+                        aria-selected="true"
                         id="<removed>"
                       >
                         Kristiansand
                       </u-option>
                       <u-option
-                        label="Oslo"
-                        value="Oslo"
-                        role="option"
-                        aria-disabled="false"
-                        aria-selected="false"
-                        id="<removed>"
-                      >
-                        Oslo
-                      </u-option>
-                      <u-option
                         label="Sandnes"
                         value="Sandnes"
+                        selected
                         role="option"
                         aria-disabled="false"
-                        aria-selected="false"
+                        aria-selected="true"
                         id="<removed>"
                       >
                         Sandnes
-                      </u-option>
-                      <u-option
-                        label="Skien"
-                        value="Skien"
-                        role="option"
-                        aria-disabled="false"
-                        aria-selected="false"
-                        id="<removed>"
-                      >
-                        Skien
                       </u-option>
                       <u-option
                         label="Stavanger"
@@ -2511,26 +1710,6 @@ exports[`With Dialog 1`] = `
                         id="<removed>"
                       >
                         Stavanger
-                      </u-option>
-                      <u-option
-                        label="Tromsø"
-                        value="Tromsø"
-                        role="option"
-                        aria-disabled="false"
-                        aria-selected="false"
-                        id="<removed>"
-                      >
-                        Tromsø
-                      </u-option>
-                      <u-option
-                        label="Trondheim"
-                        value="Trondheim"
-                        role="option"
-                        aria-disabled="false"
-                        aria-selected="false"
-                        id="<removed>"
-                      >
-                        Trondheim
                       </u-option>
                     </u-datalist>
                   </ds-suggestion>
@@ -2597,8 +1776,8 @@ exports[`With Dialog 1`] = `
                       type="text"
                       id="<removed>"
                       aria-description="No selected"
-                      list=":u-datalist10"
-                      popovertarget=":u-datalist10"
+                      list=":u-datalist8"
+                      popovertarget=":u-datalist8"
                     >
                     <button
                       aria-label="Tøm"
@@ -2678,6 +1857,67 @@ exports[`With Dialog 1`] = `
         </button>
       </div>
     </div>
+    <div>
+      <div>
+        <label>
+          Fylke
+        </label>
+        <ul>
+          <li>
+            <button
+              type="button"
+              data-removable="true"
+              aria-label="Fjern Agder"
+            >
+              Agder
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              data-removable="true"
+              aria-label="Fjern Rogaland"
+            >
+              Rogaland
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <label>
+          Kommune
+        </label>
+        <ul>
+          <li>
+            <button
+              type="button"
+              data-removable="true"
+              aria-label="Fjern Arendal"
+            >
+              Arendal
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              data-removable="true"
+              aria-label="Fjern Kristiansand"
+            >
+              Kristiansand
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              data-removable="true"
+              aria-label="Fjern Sandnes"
+            >
+              Sandnes
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
     <table
       data-zebra="true"
       data-color="neutral"
@@ -2716,21 +1956,21 @@ exports[`With Dialog 1`] = `
             2026
           </td>
           <td>
-            Abildsø skole
+            Alta ungdomsskole
             <br>
-            11111111
+            10000001
           </td>
           <td>
-            11111111
+            10000001
           </td>
           <td>
-            Abildsø skole
+            Alta ungdomsskole
           </td>
           <td>
-            Oslo
+            Agder
           </td>
           <td>
-            Oslo
+            Arendal
           </td>
           <td>
             <span>
@@ -2748,59 +1988,24 @@ exports[`With Dialog 1`] = `
         </tr>
         <tr>
           <td>
-            2026
+            2025
           </td>
           <td>
-            Ammerud skole
+            Arendal videregående skole
             <br>
-            22222222
+            10000002
           </td>
           <td>
-            22222222
+            10000002
           </td>
           <td>
-            Ammerud skole
+            Arendal videregående skole
           </td>
           <td>
-            Oslo
+            Agder
           </td>
           <td>
-            Oslo
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="success"
-              >
-              </span>
-              Ferdig
-            </span>
-          </td>
-          <td>
-            Brukerstøtte
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2026
-          </td>
-          <td>
-            Apalløkka skole
-            <br>
-            33333333
-          </td>
-          <td>
-            33333333
-          </td>
-          <td>
-            Apalløkka skole
-          </td>
-          <td>
-            Oslo
-          </td>
-          <td>
-            Oslo
+            Kristiansand
           </td>
           <td>
             <span>
@@ -2813,29 +2018,29 @@ exports[`With Dialog 1`] = `
             </span>
           </td>
           <td>
-            Brukerstøtte
+            PAS
           </td>
         </tr>
         <tr>
           <td>
-            2026
+            2025
           </td>
           <td>
-            Høyenhall skole
+            Hamar katedralskole
             <br>
-            44444444
+            10000008
           </td>
           <td>
-            44444444
+            10000008
           </td>
           <td>
-            Høyenhall skole
+            Hamar katedralskole
           </td>
           <td>
-            Oslo
+            Rogaland
           </td>
           <td>
-            Oslo
+            Sandnes
           </td>
           <td>
             <span>
@@ -2848,29 +2053,29 @@ exports[`With Dialog 1`] = `
             </span>
           </td>
           <td>
-            Brukerstøtte
+            PAS
           </td>
         </tr>
         <tr>
           <td>
-            2026
+            2025
           </td>
           <td>
-            Manglerud skole
+            Stavanger katedralskole
             <br>
-            55555555
+            10000014
           </td>
           <td>
-            55555555
+            10000014
           </td>
           <td>
-            Manglerud skole
+            Stavanger katedralskole
           </td>
           <td>
-            Oslo
+            Agder
           </td>
           <td>
-            Oslo
+            Arendal
           </td>
           <td>
             <span>
@@ -2883,7 +2088,42 @@ exports[`With Dialog 1`] = `
             </span>
           </td>
           <td>
-            Brukerstøtte
+            PAS
+          </td>
+        </tr>
+        <tr>
+          <td>
+            2024
+          </td>
+          <td>
+            Tromsdalen videregående skole
+            <br>
+            10000015
+          </td>
+          <td>
+            10000015
+          </td>
+          <td>
+            Tromsdalen videregående skole
+          </td>
+          <td>
+            Agder
+          </td>
+          <td>
+            Kristiansand
+          </td>
+          <td>
+            <span>
+              <span
+                aria-hidden="true"
+                data-color="danger"
+              >
+              </span>
+              Avvist
+            </span>
+          </td>
+          <td>
+            Prøveadministrasjon
           </td>
         </tr>
       </tbody>
@@ -2923,32 +2163,6 @@ exports[`With Dialog 1`] = `
           <li>
             <button
               type="button"
-              aria-label="Side 3"
-            >
-              3
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              aria-label="Side 4"
-            >
-              4
-            </button>
-          </li>
-          <li>
-          </li>
-          <li>
-            <button
-              type="button"
-              aria-label="Side 10"
-            >
-              10
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
               aria-label="Neste side"
             >
             </button>
@@ -2957,7 +2171,7 @@ exports[`With Dialog 1`] = `
       </ds-pagination>
       <div>
         <span>
-          Rad 1-5 av 48
+          Rad 1-5 av 9
         </span>
         <ds-field>
           <label for="<removed>">

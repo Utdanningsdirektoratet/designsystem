@@ -54,21 +54,15 @@ const tableArgs = {
   'data-color': 'neutral' as const,
 };
 
-const previewArgs = {
-  ...tableArgs,
-  suggestionDisplay: 'count' as 'count' | 'chips',
-  showActiveFilters: true,
-};
-
 export const Preview = meta.story({
   parameters: { docs: advancedCodeDocs },
-  args: previewArgs,
+  args: { ...tableArgs, showActiveFilters: false },
   render: (args) => {
-    const { suggestionDisplay, showActiveFilters, ...tableProps } = args;
+    const { showActiveFilters, ...tableProps } = args;
     const [itemsPerPage, setItemsPerPage] = useState(5);
     const [page, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
-    const [filters, setFilters] = useState<Filters>(emptyFilters);
+    const [filters, setFilters] = useState<Filters>(initialFilters);
     const [isMobile, setIsMobile] = useState(
       () => !window.matchMedia('(min-width: 48rem)').matches,
     );
@@ -129,7 +123,7 @@ export const Preview = meta.story({
               <Label>Velg fylker</Label>
               <Suggestion
                 multiple
-                display={suggestionDisplay}
+                display="count"
                 selected={filters.counties}
                 onSelectedChange={(items) =>
                   handleFiltersChange(
@@ -160,7 +154,7 @@ export const Preview = meta.story({
               <Label>Velg kommuner</Label>
               <Suggestion
                 multiple
-                display={suggestionDisplay}
+                display="count"
                 selected={filters.municipalities}
                 onSelectedChange={(items) =>
                   handleFiltersChange({
@@ -335,26 +329,19 @@ export const Preview = meta.story({
   },
 });
 
-export const CountWithoutChips = Preview.extend({
-  args: { showActiveFilters: false },
-});
-
-export const ChipsDisplay = Preview.extend({
-  args: {
-    suggestionDisplay: 'chips',
-    showActiveFilters: false,
-  },
+export const WithChips = Preview.extend({
+  args: { showActiveFilters: true },
 });
 
 export const WithDialog = meta.story({
   parameters: { docs: advancedCodeDocs },
-  args: tableArgs,
+  args: { ...tableArgs, showActiveFilters: true },
   render: (args) => {
     const [itemsPerPage, setItemsPerPage] = useState(5);
     const [page, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
-    const [filters, setFilters] = useState<Filters>(emptyFilters);
-    const [draftFilters, setDraftFilters] = useState<Filters>(emptyFilters);
+    const [filters, setFilters] = useState<Filters>(initialFilters);
+    const [draftFilters, setDraftFilters] = useState<Filters>(initialFilters);
     const [isMobile, setIsMobile] = useState(
       () => !window.matchMedia('(min-width: 48rem)').matches,
     );
@@ -770,6 +757,12 @@ const emptyFilters: Filters = {
   municipalities: [],
   statuses: [],
   systemNames: [],
+};
+
+const initialFilters: Filters = {
+  ...emptyFilters,
+  counties: ['Agder', 'Rogaland'],
+  municipalities: ['Arendal', 'Kristiansand', 'Sandnes'],
 };
 
 function getMunicipalities(counties: string[]) {

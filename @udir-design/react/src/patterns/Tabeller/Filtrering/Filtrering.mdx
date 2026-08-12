@@ -1,4 +1,4 @@
-import { Meta, Canvas, Unstyled } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import { CssToggle } from '.storybook/docs/components';
 
 import * as FiltreringStories from './Filtrering.stories';
@@ -15,19 +15,27 @@ Søk og filtrering er sentrale verktøy for å hjelpe brukeren med å finne frem
 
 Filtrering lar brukeren begrense hvilke rader som vises, basert på verdier i én eller flere kolonner. Dersom et filter gjelder for data i en bestemt kolonne, skal label for input-feltet matche kolonneoverskriften i tabellen. Dette gjør det lettere for brukeren å forstå sammenhengen mellom filteret og innholdet det påvirker.
 
-Det er lagt opp til tre måter å filtrere på med [`Suggestion`](/docs/components-suggestion--docs).
+### Filtrering med Suggestion
 
-1. [`Suggestion` med `display="count"` og `Chip`](/story/patterns-tabeller-filtrering--preview) for å vise antall aktive filtre og presentere hvilke filtre som er valgt.
-2. [`Suggestion` med `display="count"`, uten chips](/story/patterns-tabeller-filtrering--count-without-chips) for å spare plass.
-3. [`Suggestion` med `display="chips"`](/story/patterns-tabeller-filtrering--chips-display) hvor chips automatisk vises over inputfeltet.
-
-Førstnevnte brukes i eksemplene under. Den gir brukeren mulighet til å se hvilke filtre som er aktive, og å fjerne dem enkelt. Dersom det er mange filtre, kan det være hensiktsmessig å bruke en variant uten chips for å spare plass. Det siste alternativet kan brukes når det er få filtre og man ønsker å vise dem tydelig.
+Bruk [`Suggestion`](/docs/components-suggestion--docs) med `display="count"` for å velge én eller flere verdier som tabellen skal filtreres etter.
 
 <Canvas of={FiltreringStories.Preview} />
 
 <CssToggle code={previewCss} />
 
 <br />
+
+### Visning av aktive filtre
+
+[`Chip`](/docs/components-chip--docs) kan brukes til å vise aktive filtre. Det gir oversikt over valgene og gjør det enkelt å fjerne filtre direkte fra listen.
+
+<Canvas of={FiltreringStories.WithChips} />
+
+<CssToggle code={previewCss} />
+
+<br />
+
+### Filtrering i dialog
 
 Dersom det er behov for mer avansert filtrering med sammensatte eller spissede
 filtervalg, bør dette plasseres i en egen dialog. Det frigjør plass i den
