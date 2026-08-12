@@ -62,8 +62,8 @@ export const FileUploadTrigger = forwardRef<HTMLDivElement, FileUploadProps>(
     const fileInputRef = useRef<HTMLInputElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
     const cssVar = inputProps?.multiple
-      ? '--udsc-fileUpload-addFiles-text'
-      : '--udsc-fileUpload-addFile-text';
+      ? '--udsc-fileUpload-chooseFiles-text'
+      : '--udsc-fileUpload-chooseFile-text';
     // This is to make sure accessibility tests pass. Not actually necessary to make screenreaders announce the button.
     useEffect(() => {
       if (typeof window === 'undefined' || !buttonRef.current) return;
