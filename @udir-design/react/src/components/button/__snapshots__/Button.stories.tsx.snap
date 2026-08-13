@@ -5,7 +5,6 @@ exports[`As Link 1`] = `
   target="_blank"
   rel="noreferrer"
   href="https://www.udir.no/"
-  data-variant="primary"
 >
   Gå til udir.no
 </a>
@@ -16,10 +15,7 @@ exports[`Button In Color Context 1`] = `
   data-variant="tinted"
   data-color="accent"
 >
-  <button
-    data-variant="primary"
-    type="button"
-  >
+  <button type="button">
     Knapp
   </button>
 </div>
@@ -128,11 +124,17 @@ exports[`Danger 1`] = `
 `;
 
 exports[`Danger Pseudo States 1`] = `
-<div style="<removed>">
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
+<style>
+  .button-example-main {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: inherit;
+  align-items: center;
+  justify-items: center;
+}
+</style>
+<div>
+  <label data-size="sm">
     Default
   </label>
   <button
@@ -210,10 +212,7 @@ exports[`Danger Pseudo States 1`] = `
     </svg>
     Slett
   </button>
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
+  <label data-size="sm">
     Hover
   </label>
   <button
@@ -291,10 +290,7 @@ exports[`Danger Pseudo States 1`] = `
     </svg>
     Slett
   </button>
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
+  <label data-size="sm">
     Pressed
   </label>
   <button
@@ -372,10 +368,7 @@ exports[`Danger Pseudo States 1`] = `
     </svg>
     Slett
   </button>
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
+  <label data-size="sm">
     Focused
   </label>
   <button
@@ -991,11 +984,17 @@ exports[`Neutral 1`] = `
 `;
 
 exports[`Neutral Pseudo States 1`] = `
-<div style="<removed>">
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
+<style>
+  .button-example-main {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: inherit;
+  align-items: center;
+  justify-items: center;
+}
+</style>
+<div>
+  <label data-size="sm">
     Default
   </label>
   <button
@@ -1073,10 +1072,7 @@ exports[`Neutral Pseudo States 1`] = `
     </svg>
     Videresend
   </button>
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
+  <label data-size="sm">
     Hover
   </label>
   <button
@@ -1154,10 +1150,7 @@ exports[`Neutral Pseudo States 1`] = `
     </svg>
     Videresend
   </button>
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
+  <label data-size="sm">
     Pressed
   </label>
   <button
@@ -1235,10 +1228,7 @@ exports[`Neutral Pseudo States 1`] = `
     </svg>
     Videresend
   </button>
-  <label
-    data-weight="medium"
-    data-size="sm"
-  >
+  <label data-size="sm">
     Focused
   </label>
   <button

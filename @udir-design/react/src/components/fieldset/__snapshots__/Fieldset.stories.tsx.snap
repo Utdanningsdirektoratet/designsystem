@@ -2,18 +2,12 @@
 
 exports[`Legend As Heading 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     <h2 data-size="sm">
       Hvilke tjenester bruker du?
     </h2>
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Påloggingssystemer hos Udir
   </p>
   <ds-field data-clickdelegatefor="<removed>">
@@ -63,16 +57,10 @@ exports[`Legend As Heading 1`] = `
 
 exports[`Preview 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     Hvilken fjordarm bor du ved?
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Valget vil hjelpe oss å forbedre innholdet vi viser deg.
   </p>
   <ds-field data-clickdelegatefor="<removed>">
@@ -122,10 +110,7 @@ exports[`Preview 1`] = `
 
 exports[`With Checkbox 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     Godtar du vilkårene?
   </legend>
   <ds-field data-clickdelegatefor="<removed>">
@@ -145,25 +130,16 @@ exports[`With Checkbox 1`] = `
 
 exports[`With Textfield 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     <h2 data-size="sm">
       Adresse
     </h2>
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Skriv inn adressen din for å motta post fra oss.
   </p>
   <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
+    <label for="<removed>">
       Gateadresse
     </label>
     <div>
@@ -176,10 +152,7 @@ exports[`With Textfield 1`] = `
     </div>
   </ds-field>
   <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
+    <label for="<removed>">
       Postnummer
     </label>
     <div>
@@ -195,10 +168,7 @@ exports[`With Textfield 1`] = `
     </div>
   </ds-field>
   <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
-    >
+    <label for="<removed>">
       Poststed
     </label>
     <div>

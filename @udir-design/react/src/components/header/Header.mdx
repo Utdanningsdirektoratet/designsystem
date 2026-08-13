@@ -145,7 +145,7 @@ Er navnet så langt at det må brekke på tre linjer, kan det være nødvendig �
 
 ```css
 @media (max-width: <største bredde der navn går over tre linjer>) {
-  .uds-header {
+  :root {
     --udsc-header-height: var(--ds-size-26);
   }
 }
@@ -201,6 +201,8 @@ Resultatet er at knappen alltid finnes tilgjengelig for brukeren – bare på ul
 ### Header skjules og vises automatisk
 
 `Header` er `sticky` og skjules automatisk ved scrolling. Det vil si at når brukeren scroller nedover på siden, vil `Header` skjule seg for å gi mer plass til innholdet. Når brukeren starter å scrolle opp igjen, vil den vises igjen. Slik har brukerne alltid tilgang til viktig funksjonalitet, uavhengig av hvor langt ned på siden de har scrollet.
+
+For at lenking innad i en side skal fungere optimalt, for eksempel fra `TableOfContents` eller `ErrorSummary`, må du sette en scroll offset som tar høyde for at `Header` kan ligge øverst på skjermen. Dette gjør du med `scroll-padding-top` i global CSS, som beskrevet i [kom i gang som utvikler](/docs/introduksjon-kom-i-gang-som-utvikler--docs#scroll-offset).
 
 Foreldreelementet får automatisk `overflow: visible`. Sørg for at dette ikke blir overskrevet. Ønsker du at headeren skal bli igjen på toppen av siden, setter du `sticky=false`.
 

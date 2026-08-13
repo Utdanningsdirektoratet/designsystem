@@ -1,7 +1,18 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Button 1`] = `
-<div style="<removed>">
+<style>
+  .chip-button-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+}
+.chip-button-button__group {
+  display: flex;
+  gap: var(--ds-size-2);
+}
+</style>
+<div>
   <div>
     <input
       placeholder
@@ -16,15 +27,12 @@ exports[`Button 1`] = `
       aria-label="Tøm"
     >
     </button>
-    <button
-      data-variant="primary"
-      type="submit"
-    >
+    <button type="submit">
       Søk
     </button>
   </div>
-  <div style="<removed>">
-    <p data-variant="default">
+  <div>
+    <p>
       Hurtigsøk:
     </p>
     <button type="button">
@@ -41,11 +49,22 @@ exports[`Button 1`] = `
 `;
 
 exports[`Checkbox 1`] = `
-<div style="<removed>">
-  <p data-variant="default">
+<style>
+  .chip-checkbox-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+}
+.chip-checkbox-checkbox {
+  display: flex;
+  gap: var(--ds-size-1);
+}
+</style>
+<div>
+  <p>
     Vis data for
   </p>
-  <div style="<removed>">
+  <div>
     <label>
       <input
         aria-label="2020"
@@ -116,6 +135,36 @@ exports[`Colors 1`] = `
 </button>
 `;
 
+exports[`Nowrap 1`] = `
+<label>
+  <input
+    type="radio"
+    value="nynorsk"
+    checked
+    name="components-chip--nowrap"
+  >
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</label>
+<label>
+  <input
+    type="checkbox"
+    value="nynorsk"
+    checked
+    name="my-checkbox"
+  >
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</label>
+<button
+  type="button"
+  data-removable="true"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</button>
+<button type="button">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</button>
+`;
+
 exports[`Preview 1`] = `
 <button
   type="button"
@@ -151,11 +200,22 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Radio 1`] = `
-<div style="<removed>">
-  <p data-variant="default">
+<style>
+  .chip-radio-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+}
+.chip-radio-radio__group {
+  display: flex;
+  gap: var(--ds-size-1);
+}
+</style>
+<div>
+  <p>
     Vis data for
   </p>
-  <div style="<removed>">
+  <div>
     <label>
       <input
         aria-label="Barnehage"
@@ -198,5 +258,39 @@ exports[`Removable 1`] = `
   aria-label="Slett Videregående"
 >
   Videregående
+</button>
+`;
+
+exports[`Wrap 1`] = `
+<label data-wrap="wrap">
+  <input
+    type="radio"
+    value="nynorsk"
+    checked
+    name="components-chip--wrap"
+  >
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</label>
+<label data-wrap="wrap">
+  <input
+    type="checkbox"
+    value="nynorsk"
+    checked
+    name="my-checkbox"
+  >
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</label>
+<button
+  type="button"
+  data-removable="true"
+  data-wrap="wrap"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</button>
+<button
+  type="button"
+  data-wrap="wrap"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 </button>
 `;

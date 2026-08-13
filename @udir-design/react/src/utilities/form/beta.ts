@@ -8,4 +8,5 @@
  * Note: Members must be imported from `@udir-design/react/beta/utilities`
  * @module
  */
+export * from './focus';
 export * from './navigation';

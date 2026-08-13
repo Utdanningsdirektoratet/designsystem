@@ -3,4 +3,8 @@
   a[aria-current='true'] {
     color: var(--ds-color-base-contrast-default);
   }
+
+  .ds-button {
+    --dsc-button-color: var(--ds-color-text-default);
+  }
 }

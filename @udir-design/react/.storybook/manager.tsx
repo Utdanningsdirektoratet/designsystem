@@ -7,6 +7,7 @@ import { addons } from 'storybook/manager-api';
 import {
   ComponentIcon,
   ImageIcon,
+  InformationSquareIcon,
   LayersIcon,
   PuzzlePieceIcon,
   RectangleSectionsIcon,
@@ -53,6 +54,17 @@ addons.setConfig({
     },
     renderLabel(item) {
       if (item.type === 'root') {
+        if (item.id === 'introduksjon') {
+          return (
+            <>
+              <InformationSquareIcon
+                aria-hidden
+                className="sidebar-subheading-icon"
+              />
+              Introduksjon
+            </>
+          );
+        }
         if (item.id === 'iconsandsymbols') {
           return (
             <>

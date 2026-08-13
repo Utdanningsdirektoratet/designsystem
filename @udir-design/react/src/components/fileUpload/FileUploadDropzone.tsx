@@ -110,6 +110,7 @@ export const FileUploadDropzone = forwardRef<
         )}
       </Card>
       <input
+        className="ds-input"
         type="file"
         {...inputProps}
         onClick={(e) => {

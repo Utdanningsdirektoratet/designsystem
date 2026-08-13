@@ -838,10 +838,7 @@ exports[`Full 1`] = `
       </h2>
       <form>
         <ds-field>
-          <label
-            data-weight="medium"
-            for="<removed>"
-          >
+          <label for="<removed>">
             Første spørsmål
           </label>
           <div>
@@ -854,10 +851,7 @@ exports[`Full 1`] = `
           </div>
         </ds-field>
         <ds-field>
-          <label
-            data-weight="medium"
-            for="<removed>"
-          >
+          <label for="<removed>">
             Andre spørsmål
           </label>
           <div>
@@ -1059,10 +1053,7 @@ exports[`Simple Navigation 1`] = `
       </h2>
       <form>
         <ds-field>
-          <label
-            data-weight="medium"
-            for="<removed>"
-          >
+          <label for="<removed>">
             Steg 1
           </label>
           <div>

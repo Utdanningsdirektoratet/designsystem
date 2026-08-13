@@ -5,10 +5,7 @@ exports[`Controlled 1`] = `
   Hvor bor du?
 </h2>
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Fylke
   </label>
   <select id="<removed>">
@@ -63,10 +60,7 @@ exports[`Controlled 1`] = `
   </select>
 </ds-field>
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     By
   </label>
   <select id="<removed>">
@@ -79,10 +73,7 @@ exports[`Controlled 1`] = `
 
 exports[`Disabled 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Fylke
   </label>
   <select
@@ -146,10 +137,7 @@ exports[`Disabled 1`] = `
 
 exports[`Preview 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Fylke
   </label>
   <select
@@ -213,10 +201,7 @@ exports[`Preview 1`] = `
 
 exports[`Read Only 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Fylke
   </label>
   <select
@@ -280,10 +265,7 @@ exports[`Read Only 1`] = `
 
 exports[`With Error 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Fylke
   </label>
   <select
@@ -351,10 +333,7 @@ exports[`With Error 1`] = `
 
 exports[`With Optgroup 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Klassetrinn
   </label>
   <select id="<removed>">

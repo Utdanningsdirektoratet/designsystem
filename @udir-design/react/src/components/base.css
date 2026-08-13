@@ -1,0 +1,5 @@
+:root,
+/* fix icon size not updating when size mode changes */
+[data-size] {
+  --ds-icon-size: var(--ds-size-6);
+}

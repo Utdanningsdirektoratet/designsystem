@@ -63,7 +63,8 @@
     /* Icons */
     & :where(img, svg) {
       flex-shrink: 0;
-      font-size: 1.3em;
+      /* revert icon size override from .ds-link */
+      --ds-icon-size: var(--ds-size-6);
     }
 
     /* Header */

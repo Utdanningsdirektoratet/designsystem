@@ -1,9 +1,183 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Composed 1`] = `
-<div data-variant="default">
+exports[`Cluster 1`] = `
+<style>
+  .card-cluster-wrapper {
+  container-type: inline-size;
+}
+.card-cluster {
+  --dsc-card-content-margin-block: 0;
+  --dsc-card-padding: var(--ds-size-2) var(--ds-size-6);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+  column-gap: var(--ds-size-4);
+}
+.card-cluster__item {
+  padding-block: var(--ds-size-4);
+  border-block-end: 1px solid var(--ds-color-border-subtle);
+  text-decoration: none;
+}
+.card-cluster__item:last-child {
+  border-block-end: none;
+}
+@container (min-width: 564px) {
+  .card-cluster__item:nth-last-child(2) {
+    border-block-end: none;
+  }
+}
+.card-cluster__item:hover {
+  text-decoration: underline;
+}
+.card-cluster__item > svg {
+  flex-shrink: 0;
+  width: var(--ds-size-6);
+  height: var(--ds-size-6);
+  align-self: flex-start;
+}
+</style>
+<div>
   <div>
-    <div style="<removed>">
+    <a href="#">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+        >
+        </path>
+      </svg>
+      <span>
+        Lesing
+      </span>
+    </a>
+    <a href="#">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+        >
+        </path>
+      </svg>
+      <span>
+        Barnehagemiljø
+      </span>
+    </a>
+    <a href="#">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+        >
+        </path>
+      </svg>
+      <span>
+        Skolemiljø
+      </span>
+    </a>
+    <a href="#">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+        >
+        </path>
+      </svg>
+      <span>
+        Fravær i skolen
+      </span>
+    </a>
+    <a href="#">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+        >
+        </path>
+      </svg>
+      <span>
+        God digital praksis
+      </span>
+    </a>
+    <a href="#">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M14.088 6.873a.75.75 0 0 1 .942.097l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H5a.75.75 0 0 1-.75-.74V12a.75.75 0 0 1 .75-.75h12.19l-3.22-3.22a.75.75 0 0 1 .118-1.157"
+        >
+        </path>
+      </svg>
+      <span>
+        Kunstig intelligens i skolen
+      </span>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Composed 1`] = `
+<style>
+  .card-composed-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+</style>
+<div>
+  <div>
+    <div>
       <h2>
         Rolle 1
       </h2>
@@ -37,10 +211,7 @@ exports[`Composed 1`] = `
   </div>
   <div>
     <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Velg rolle
       </label>
       <select id="<removed>">
@@ -56,10 +227,7 @@ exports[`Composed 1`] = `
       </select>
     </ds-field>
     <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Fødselsnummer
       </label>
       <div>
@@ -70,10 +238,7 @@ exports[`Composed 1`] = `
       </div>
     </ds-field>
     <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Etternavn
       </label>
       <div>
@@ -113,16 +278,22 @@ exports[`Composed 1`] = `
 `;
 
 exports[`Horizontal 1`] = `
-<div
-  data-variant="default"
-  data-clickdelegatefor="<removed>"
-  style="<removed>"
->
+<style>
+  .card-horizontal-card {
+  display: grid;
+  grid-auto-flow: column;
+  width: 700px;
+}
+.card-horizontal-img {
+  height: 100%;
+  object-fit: cover;
+}
+</style>
+<div data-clickdelegatefor="<removed>">
   <div>
     <img
       alt="Barn som spiser lunsj"
       src="https://www.udir.no/contentassets/0ae1c5846c254b9f8800c59c393fd03d/skolemiljo.png"
-      style="<removed>"
     >
   </div>
   <div>
@@ -136,7 +307,7 @@ exports[`Horizontal 1`] = `
         Hva gjør du når en elev ikke har det trygt og godt på skolen?
       </a>
     </h2>
-    <p data-variant="default">
+    <p>
       Hvis dere mistenker eller kjenner til at en elev ikke har det trygt og godt, skal dere snarest undersøke saken. Vi har laget råd om hva dere kan gjøre.
     </p>
   </div>
@@ -144,7 +315,7 @@ exports[`Horizontal 1`] = `
 `;
 
 exports[`Media 1`] = `
-<div data-variant="default">
+<div>
   <div>
     <img
       alt="Fotografi av forskjellig skoleutstyr"
@@ -155,17 +326,17 @@ exports[`Media 1`] = `
     <h2>
       Skoleutstyr
     </h2>
-    <p data-variant="default">
+    <p>
       Fylkeskommunen skal sørge for at elevene i videregående skole får gratis lærebøker og andre trykte og digitale læremidler og digitalt utstyr.
     </p>
   </div>
 </div>
-<div data-variant="default">
+<div>
   <div>
     <h2>
       Skoleutstyr
     </h2>
-    <p data-variant="default">
+    <p>
       Fylkeskommunen skal sørge for at elevene i videregående skole får gratis lærebøker og andre trykte og digitale læremidler og digitalt utstyr.
     </p>
   </div>
@@ -179,20 +350,14 @@ exports[`Media 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<div
-  data-variant="default"
-  data-color="neutral"
->
+<div data-color="neutral">
   <h2>
     Tittel
   </h2>
-  <p data-variant="default">
+  <p>
     Innhold
   </p>
-  <p
-    data-variant="default"
-    data-size="sm"
-  >
+  <p data-size="sm">
     Fotnote
   </p>
 </div>
@@ -204,7 +369,7 @@ exports[`Variants 1`] = `
   data-color="neutral"
 >
   <div>
-    <p data-variant="default">
+    <p>
       data-color: neutral
       <br>
       variant: default
@@ -217,7 +382,7 @@ exports[`Variants 1`] = `
   data-color="neutral"
 >
   <div>
-    <p data-variant="default">
+    <p>
       data-color: neutral
       <br>
       variant: tinted
@@ -230,7 +395,7 @@ exports[`Variants 1`] = `
   data-color="accent"
 >
   <div>
-    <p data-variant="default">
+    <p>
       data-color: accent
       <br>
       variant: default
@@ -243,7 +408,7 @@ exports[`Variants 1`] = `
   data-color="accent"
 >
   <div>
-    <p data-variant="default">
+    <p>
       data-color: accent
       <br>
       variant: tinted
@@ -256,7 +421,7 @@ exports[`Variants 1`] = `
   data-color="support1"
 >
   <div>
-    <p data-variant="default">
+    <p>
       data-color: support1
       <br>
       variant: default
@@ -269,7 +434,7 @@ exports[`Variants 1`] = `
   data-color="support1"
 >
   <div>
-    <p data-variant="default">
+    <p>
       data-color: support1
       <br>
       variant: tinted
@@ -282,7 +447,7 @@ exports[`Variants 1`] = `
   data-color="support2"
 >
   <div>
-    <p data-variant="default">
+    <p>
       data-color: support2
       <br>
       variant: default
@@ -295,7 +460,7 @@ exports[`Variants 1`] = `
   data-color="support2"
 >
   <div>
-    <p data-variant="default">
+    <p>
       data-color: support2
       <br>
       variant: tinted
@@ -306,10 +471,7 @@ exports[`Variants 1`] = `
 `;
 
 exports[`Video 1`] = `
-<div
-  data-variant="default"
-  data-color="neutral"
->
+<div data-color="neutral">
   <div>
     <iframe
       data-chromatic="ignore"
@@ -325,7 +487,7 @@ exports[`Video 1`] = `
     <h2>
       Ny opplæringslov
     </h2>
-    <p data-variant="default">
+    <p>
       Kunnskapsminister Kari Nessa Nordtun om den nye opplæringsloven.
     </p>
   </div>
@@ -334,7 +496,6 @@ exports[`Video 1`] = `
 
 exports[`With Anchor 1`] = `
 <div
-  data-variant="default"
   data-color="support1"
   data-clickdelegatefor="<removed>"
 >
@@ -355,19 +516,15 @@ exports[`With Anchor 1`] = `
         Påmelding til eksamen
       </a>
     </h2>
-    <p data-variant="default">
+    <p>
       Du må melde deg på innen 1. februar for våreksamen og 15. september for høsteksamen.
     </p>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       Privatisteksamen
     </p>
   </div>
 </div>
 <div
-  data-variant="default"
   data-color="neutral"
   data-clickdelegatefor="<removed>"
 >
@@ -382,13 +539,10 @@ exports[`With Anchor 1`] = `
         Påmelding til eksamen
       </a>
     </h2>
-    <p data-variant="default">
+    <p>
       Du må melde deg på innen 1. februar for våreksamen og 15. september for høsteksamen.
     </p>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       Privatisteksamen
     </p>
   </div>
@@ -403,7 +557,6 @@ exports[`With Anchor 1`] = `
 
 exports[`With Anchor Focused 1`] = `
 <div
-  data-variant="default"
   data-color="support1"
   data-clickdelegatefor="<removed>"
 >
@@ -424,19 +577,15 @@ exports[`With Anchor Focused 1`] = `
         Påmelding til eksamen
       </a>
     </h2>
-    <p data-variant="default">
+    <p>
       Du må melde deg på innen 1. februar for våreksamen og 15. september for høsteksamen.
     </p>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       Privatisteksamen
     </p>
   </div>
 </div>
 <div
-  data-variant="default"
   data-color="neutral"
   data-clickdelegatefor="<removed>"
 >
@@ -451,13 +600,10 @@ exports[`With Anchor Focused 1`] = `
         Påmelding til eksamen
       </a>
     </h2>
-    <p data-variant="default">
+    <p>
       Du må melde deg på innen 1. februar for våreksamen og 15. september for høsteksamen.
     </p>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       Privatisteksamen
     </p>
   </div>
@@ -472,7 +618,6 @@ exports[`With Anchor Focused 1`] = `
 
 exports[`With Link 1`] = `
 <div
-  data-variant="default"
   data-color="support1"
   data-clickdelegatefor="<removed>"
 >
@@ -493,19 +638,15 @@ exports[`With Link 1`] = `
         Påmelding til eksamen
       </a>
     </h2>
-    <p data-variant="default">
+    <p>
       Du må melde deg på innen 1. februar for våreksamen og 15. september for høsteksamen.
     </p>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       Privatisteksamen
     </p>
   </div>
 </div>
 <div
-  data-variant="default"
   data-color="neutral"
   data-clickdelegatefor="<removed>"
 >
@@ -520,13 +661,10 @@ exports[`With Link 1`] = `
         Påmelding til eksamen
       </a>
     </h2>
-    <p data-variant="default">
+    <p>
       Du må melde deg på innen 1. februar for våreksamen og 15. september for høsteksamen.
     </p>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       Privatisteksamen
     </p>
   </div>
@@ -541,7 +679,6 @@ exports[`With Link 1`] = `
 
 exports[`With Link Focused 1`] = `
 <div
-  data-variant="default"
   data-color="support1"
   data-clickdelegatefor="<removed>"
 >
@@ -562,19 +699,15 @@ exports[`With Link Focused 1`] = `
         Påmelding til eksamen
       </a>
     </h2>
-    <p data-variant="default">
+    <p>
       Du må melde deg på innen 1. februar for våreksamen og 15. september for høsteksamen.
     </p>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       Privatisteksamen
     </p>
   </div>
 </div>
 <div
-  data-variant="default"
   data-color="neutral"
   data-clickdelegatefor="<removed>"
 >
@@ -589,13 +722,10 @@ exports[`With Link Focused 1`] = `
         Påmelding til eksamen
       </a>
     </h2>
-    <p data-variant="default">
+    <p>
       Du må melde deg på innen 1. februar for våreksamen og 15. september for høsteksamen.
     </p>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       Privatisteksamen
     </p>
   </div>

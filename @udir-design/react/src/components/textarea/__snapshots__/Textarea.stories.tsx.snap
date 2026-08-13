@@ -2,10 +2,7 @@
 
 exports[`Controlled 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Beskriv bekymringen din
   </label>
   <textarea
@@ -19,7 +16,6 @@ exports[`Controlled 1`] = `
 <button
   data-variant="secondary"
   type="button"
-  style="<removed>"
 >
   Tøm feltet
 </button>
@@ -27,10 +23,7 @@ exports[`Controlled 1`] = `
 
 exports[`Disabled 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Disabled Textarea
   </label>
   <textarea
@@ -45,10 +38,7 @@ exports[`Disabled 1`] = `
 
 exports[`Focused 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Label
   </label>
   <textarea
@@ -64,10 +54,7 @@ exports[`Focused 1`] = `
 
 exports[`Full Width 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Beskriv bekymringen din
   </label>
   <textarea
@@ -81,10 +68,7 @@ exports[`Full Width 1`] = `
 
 exports[`Preview 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Label
   </label>
   <textarea
@@ -100,10 +84,7 @@ exports[`Preview 1`] = `
 
 exports[`Read Only 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Read-Only Textarea
   </label>
   <textarea

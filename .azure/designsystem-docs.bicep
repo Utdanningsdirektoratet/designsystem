@@ -110,7 +110,7 @@ var redirectRuleDefs redirectRuleType[] = [
   { name: 'alpha' }
   { name: 'beta' }
   { name: 'latest' }
-  { name: 'root', from: '/', to: '/beta/', type: 'TemporaryRedirect' }
+  { name: 'root', from: '/', to: '/latest/' }
 ]
 
 @onlyIfNotExists()

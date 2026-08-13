@@ -21,6 +21,13 @@ import * as TableOfContentStories from './TableOfContents.stories';
 <Canvas of={TableOfContentStories.Preview} withToolbar />
 <Controls of={TableOfContentStories.Preview} />
 
+```css
+/* global css om du ønsker smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+```
+
 ```jsx
 import { TableOfContents, useTableOfContents } from '@udir-design/react';
 

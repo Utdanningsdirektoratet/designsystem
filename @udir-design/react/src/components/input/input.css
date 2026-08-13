@@ -20,3 +20,25 @@
     var(--dsc-input-padding-inline);
   line-height: var(--dsc-input-line-height);
 }
+
+.ds-input:is(select) {
+  /* SVG background-images can't inherit currentColor, so the chevron uses a
+     pre-colored icon (see chevronIcon.css) swapped per color scheme, instead
+     of using upstream's gradient trick. */
+  --_dsc-icon-margin-inline: 0.5em;
+  background-image: var(--_dsc-chevron-icon-down);
+  background-size: 1.4em;
+  background-position: calc(
+    100% - var(--_dsc-icon-margin-inline) + var(--dsc-input-stroke-width)
+  );
+
+  :dir(rtl) & {
+    background-position: calc(
+      var(--_dsc-icon-margin-inline) - var(--dsc-input-stroke-width)
+    );
+  }
+
+  &:open {
+    background-image: var(--_dsc-chevron-icon-up);
+  }
+}

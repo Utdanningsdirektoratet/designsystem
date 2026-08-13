@@ -3,17 +3,16 @@
 exports[`Drawer 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-            .cookies-buttons {
-              display: flex;
-              gap: var(--ds-size-4);
-              flex-wrap: wrap;
-            }
-            @media (max-width: 40rem) {
-              .cookies-buttons > button {
-          flex: 1 1 auto;
-              }
-            }
+    .informasjonskapsler-preview-cookies-button__group {
+  display: flex;
+  gap: var(--ds-size-4);
+  flex-wrap: wrap;
+}
+@media (max-width: 40rem) {
+  .informasjonskapsler-preview-cookies-button__group > button {
+    flex: 1 1 auto;
+  }
+}
   </style>
   <dialog
     data-placement="bottom"
@@ -35,13 +34,13 @@ exports[`Drawer 1`] = `
       <h2>
         Vi bruker informasjonskapsler
       </h2>
-      <p data-variant="default">
+      <p>
         Nødvendige informasjonskapsler sørger for at nettstedet fungerer og er sikkert, og kan ikke velges bort. Andre brukes til statistikk, analyse, og å forbedre brukeropplevelsen. Godkjenner du alle, hjelper du oss å lage bedre nettsider og tjenester.
         <a href="#">
           Om informasjonskapslene.
         </a>
       </p>
-      <p data-variant="default">
+      <p>
         Du kan når som helst endre samtykket ditt via lenken i bunnmenyen.
       </p>
     </div>
@@ -72,17 +71,16 @@ exports[`Drawer 1`] = `
 exports[`Preview 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-            .cookies-buttons {
-              display: flex;
-              gap: var(--ds-size-4);
-              flex-wrap: wrap;
-            }
-            @media (max-width: 40rem) {
-              .cookies-buttons > button {
-          flex: 1 1 auto;
-              }
-            }
+    .informasjonskapsler-preview-cookies-button__group {
+  display: flex;
+  gap: var(--ds-size-4);
+  flex-wrap: wrap;
+}
+@media (max-width: 40rem) {
+  .informasjonskapsler-preview-cookies-button__group > button {
+    flex: 1 1 auto;
+  }
+}
   </style>
   <dialog
     data-placement="center"
@@ -104,13 +102,13 @@ exports[`Preview 1`] = `
       <h2>
         Vi bruker informasjonskapsler
       </h2>
-      <p data-variant="default">
+      <p>
         Nødvendige informasjonskapsler sørger for at nettstedet fungerer og er sikkert, og kan ikke velges bort. Andre brukes til statistikk, analyse, og å forbedre brukeropplevelsen. Godkjenner du alle, hjelper du oss å lage bedre nettsider og tjenester.
         <a href="#">
           Om informasjonskapslene.
         </a>
       </p>
-      <p data-variant="default">
+      <p>
         Du kan når som helst endre samtykket ditt via lenken i bunnmenyen.
       </p>
     </div>

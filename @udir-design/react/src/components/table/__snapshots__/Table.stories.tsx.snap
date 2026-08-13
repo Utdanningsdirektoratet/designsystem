@@ -2,17 +2,17 @@
 
 exports[`Column And Row Headers 1`] = `
 <style>
-  .example-caption {
+  .table-column-and-row-headers-table-caption {
   font-size: var(--ds-font-size-3);
   caption-side: bottom;
   text-align: center;
   font-weight: normal;
   margin-top: var(--ds-size-2);
 }
-.example-table-body {
+.table-column-and-row-headers-table-body {
   text-align: right;
 }
-.example-table-body-headercell {
+.table-column-and-row-headers-table-headercell {
   text-align: left;
 }
 </style>
@@ -214,21 +214,12 @@ exports[`Expandable Rows 1`] = `
 
 exports[`Fixed Table 1`] = `
 <style>
-  .example-main {
-  height: 420px;
-  width: 580px;
-  overflow: auto;
-  padding: 0;
-}
-.example-table {
+  .table-fixed-table {
   table-layout: fixed;
   margin-bottom: 12px;
 }
-.example-table-body-cell {
-  font-feature-settings: "'tnum' 1",
-}
-.example-textfield {
-  min-width: 250px;
+.table-fixed-table-cell {
+  font-feature-settings: "tnum" 1;
 }
 </style>
 <table id="<removed>">
@@ -295,7 +286,6 @@ exports[`Fixed Table 1`] = `
   <ul>
     <li>
       <button
-        data-variant="tertiary"
         type="button"
         aria-label="Forrige side"
         aria-hidden="true"
@@ -305,7 +295,6 @@ exports[`Fixed Table 1`] = `
     </li>
     <li>
       <button
-        data-variant="tertiary"
         type="button"
         aria-label="Side 1"
         aria-current="true"
@@ -315,7 +304,6 @@ exports[`Fixed Table 1`] = `
     </li>
     <li>
       <button
-        data-variant="tertiary"
         type="button"
         aria-label="Side 2"
       >
@@ -324,7 +312,6 @@ exports[`Fixed Table 1`] = `
     </li>
     <li>
       <button
-        data-variant="tertiary"
         type="button"
         aria-label="Side 3"
       >
@@ -333,7 +320,6 @@ exports[`Fixed Table 1`] = `
     </li>
     <li>
       <button
-        data-variant="tertiary"
         type="button"
         aria-label="Neste side"
         aria-hidden="false"
@@ -347,13 +333,13 @@ exports[`Fixed Table 1`] = `
 
 exports[`Multiple Header Rows 1`] = `
 <style>
-  .example-table-head-headercell {
+  .table-multiple-header-rows-table-head-headercell {
   text-align: center;
 }
-.example-table-body {
+.table-multiple-header-rows-table-body {
   text-align: right;
 }
-.example-table-body-headercell {
+.table-multiple-header-rows-table-body-headercell {
   text-align: left;
 }
 </style>
@@ -536,10 +522,7 @@ exports[`Preview 1`] = `
         rita@nordmann.no
       </td>
       <td>
-        <span
-          data-variant="default"
-          data-color="info"
-        >
+        <span data-color="info">
           I arbeid
         </span>
       </td>
@@ -566,10 +549,7 @@ exports[`Preview 1`] = `
         kari@nordmann.no
       </td>
       <td>
-        <span
-          data-variant="default"
-          data-color="success"
-        >
+        <span data-color="success">
           Ferdig
         </span>
       </td>
@@ -596,10 +576,7 @@ exports[`Preview 1`] = `
         ola@nordmann.no
       </td>
       <td>
-        <span
-          data-variant="default"
-          data-color="info"
-        >
+        <span data-color="info">
           I arbeid
         </span>
       </td>
@@ -626,10 +603,7 @@ exports[`Preview 1`] = `
         kai@nordmann.no
       </td>
       <td>
-        <span
-          data-variant="default"
-          data-color="warning"
-        >
+        <span data-color="warning">
           Ikke begynt
         </span>
       </td>
@@ -656,10 +630,7 @@ exports[`Preview 1`] = `
         mateo@nordmann.no
       </td>
       <td>
-        <span
-          data-variant="default"
-          data-color="success"
-        >
+        <span data-color="success">
           Ferdig
         </span>
       </td>
@@ -782,29 +753,26 @@ exports[`Sortable 1`] = `
 
 exports[`Sticky Header 1`] = `
 <style>
-  .example-heading {
+  .table-sticky-header-heading {
   margin-bottom: var(--ds-size-3);
 }
-.example-main {
+.table-sticky-header-main {
   height: 420px;
   width: 580px;
   overflow: auto;
   padding: 0;
 }
-.example-table-body {
+.table-sticky-header-table-body {
   text-align: right;
 }
-.example-table-body-headercell {
+.table-sticky-header-table-headercell {
   text-align: left;
 }
 </style>
 <h2>
   Ansattes utdanning fordelt på eiertype (ordinære), 2021
 </h2>
-<div
-  role="region"
-  tabindex="0"
->
+<section tabindex="0">
   <table
     data-sticky-header="true"
     data-zebra="true"
@@ -962,7 +930,7 @@ exports[`Sticky Header 1`] = `
       </tr>
     </tbody>
   </table>
-</div>
+</section>
 `;
 
 exports[`With Border 1`] = `
@@ -1049,16 +1017,15 @@ exports[`With Border 1`] = `
 
 exports[`With Form Elements 1`] = `
 <style>
-  .example-main {
-  height: 420px;
-  width: 580px;
-  overflow: auto;
-  padding: 0;
+  .table-with-form-elements-table-body {
+  align-content: start;
+  justify-content: center;
+  align-items: center;
 }
-.example-table-body-cell {
+.table-with-form-elements-table-cell {
   min-width: 200px;
 }
-.example-textfield {
+.table-with-form-elements-textfield {
   min-width: 250px;
 }
 </style>

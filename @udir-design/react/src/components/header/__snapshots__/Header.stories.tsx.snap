@@ -3,37 +3,36 @@
 exports[`Auto Hide Sticky 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-  .autoHideSticky-header-menu-nav {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-    max-width: 800px;
-    margin: 0 auto;
-    padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
-    gap: var(--ds-size-4);
-    row-gap: var(--ds-size-10);
-    justify-items: center;
+    .header-auto-hide-sticky-header-menu-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
+  gap: var(--ds-size-4);
+  row-gap: var(--ds-size-10);
+  justify-items: center;
+}
+@media (max-width: 34.375rem) {
+  .header-auto-hide-sticky-header-menu-nav {
+    justify-items: flex-start;
   }
-  @media (max-width: 34.375rem) {
-    .autoHideSticky-header-menu-nav {
-      justify-items: flex-start;
-    }
-  }
-  main {
-    padding: var(--ds-size-18);
-    display: flex;
-    flex-direction: column;
-    gap: var(--ds-size-4);
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  main hr {
-    margin-top: var(--ds-size-30);
-  }
-  main hr + p {
-    margin-top: calc(var(--ds-size-30) * 2);
-    margin-bottom: calc(var(--ds-size-30) * 2);
-  }
+}
+.header-auto-hide-sticky-main {
+  padding: var(--ds-size-18);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+  max-width: 800px;
+  margin: 0 auto;
+}
+.header-auto-hide-sticky-main hr {
+  margin-top: var(--ds-size-30);
+}
+.header-auto-hide-sticky-main hr + p {
+  margin-top: calc(var(--ds-size-30) * 2);
+  margin-bottom: calc(var(--ds-size-30) * 2);
+}
   </style>
   <header
     data-scroll-direction="up"
@@ -101,17 +100,13 @@ exports[`Auto Hide Sticky 1`] = `
           id="<removed>"
           popover="auto"
           data-placement="none"
-          data-variant="default"
         >
           <nav aria-labelledby="<removed>">
             <h2 id="<removed>">
               Menynavigasjon
             </h2>
             <div data-hide="md">
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Navlinker
               </h3>
               <ul>
@@ -133,10 +128,7 @@ exports[`Auto Hide Sticky 1`] = `
               </ul>
             </div>
             <div data-hide>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 1
               </h3>
               <ul>
@@ -168,10 +160,7 @@ exports[`Auto Hide Sticky 1`] = `
               </ul>
             </div>
             <div data-hide>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 2
               </h3>
               <ul>
@@ -207,39 +196,39 @@ exports[`Auto Hide Sticky 1`] = `
       <h1 data-size="lg">
         Samisk i skolen
       </h1>
-      <p data-variant="default">
+      <p>
         Alle elever skal lære om samer og samiske forhold i skolen. Retten til også å få undervisning i samiske språk og undervisning på samisk i andre fag, er ulik innenfor og utenfor samiske distrikt. I de samiske distriktene er norsk og samisk sidestilte i opplæringen.
       </p>
       <h2>
         Rett til opplæring i samisk i videregående opplæring
       </h2>
-      <p data-variant="default">
+      <p>
         Det er innført en rett til opplæring i samisk i videregående opplæring for alle elever som har hatt opplæring i eller på samisk i grunnskolen. Dette gjelder uavhengig av om eleven har samisk bakgrunn eller ikke.
       </p>
-      <p data-variant="default">
+      <p>
         Bakgrunnen for rettigheten er at elever som har hatt opplæring i samisk som første- eller andrespråk i grunnskolen får mulighet til å fortsette med opplæringen i samisk, og sikre eleven et helhetlig opplæringsløp. Det er ikke stilt krav om lengden på eller innholdet i opplæringen i grunnskolen, eks. om eleven har hatt samisk som første- eller andrespråk. Elevene har ikke rett til å velge et annet samisk språk i videregående opplæring enn det elevene hadde på grunnskolen.
       </p>
-      <p data-variant="default">
+      <p>
         Retten til opplæring i samisk for samiske elever i videregående opplæring er videreført.
       </p>
       <h2>
         Tilbud om del av opplæringen i et samiskspråklig miljø
       </h2>
-      <p data-variant="default">
+      <p>
         Det er tatt inn i loven at kommunen og fylkeskommunen skal gi eleven tilbud om del av opplæringen i et samiskspråklig miljø dersom det er nødvendig for at opplæringen skal være pedagogisk forsvarlig. Dette står i
         <a href="#">
           § 3-2 for grunnskolen og § 6-2 for videregående opplæring
         </a>
         Denne regelen tar i hovedsak sikte på tilfeller der opplæringen i samisk blir gitt som fjernundervisning.
       </p>
-      <p data-variant="default">
+      <p>
         Vurderingen av om det er «nødvendig for at opplæringen skal være pedagogisk forsvarlig», handler om hvorvidt eleven skal kunne nå kompetansemålene i læreplanen. Det kan ikke knyttes til ytre rammer for eksempel hvor mange andre som snakker det samiskspråket i området, økonomi og ressurser.
       </p>
-      <p data-variant="default">
+      <p>
         Hvor store deler av opplæringen i samisk det eventuelt er nødvendig å gi i et samiskspråklig miljø, kommer an på en konkret vurdering av om opplæringen gir eleven grunnlag for å nå kompetansemålene i læreplanen eller ikke.
       </p>
       <hr aria-hidden="true">
-      <p data-variant="default">
+      <p>
         (Annet innhold)
       </p>
       <hr aria-hidden="true">
@@ -251,37 +240,36 @@ exports[`Auto Hide Sticky 1`] = `
 exports[`Auto Hide Sticky Test 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-  .autoHideSticky-header-menu-nav {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-    max-width: 800px;
-    margin: 0 auto;
-    padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
-    gap: var(--ds-size-4);
-    row-gap: var(--ds-size-10);
-    justify-items: center;
+    .header-auto-hide-sticky-header-menu-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
+  gap: var(--ds-size-4);
+  row-gap: var(--ds-size-10);
+  justify-items: center;
+}
+@media (max-width: 34.375rem) {
+  .header-auto-hide-sticky-header-menu-nav {
+    justify-items: flex-start;
   }
-  @media (max-width: 34.375rem) {
-    .autoHideSticky-header-menu-nav {
-      justify-items: flex-start;
-    }
-  }
-  main {
-    padding: var(--ds-size-18);
-    display: flex;
-    flex-direction: column;
-    gap: var(--ds-size-4);
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  main hr {
-    margin-top: var(--ds-size-30);
-  }
-  main hr + p {
-    margin-top: calc(var(--ds-size-30) * 2);
-    margin-bottom: calc(var(--ds-size-30) * 2);
-  }
+}
+.header-auto-hide-sticky-main {
+  padding: var(--ds-size-18);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+  max-width: 800px;
+  margin: 0 auto;
+}
+.header-auto-hide-sticky-main hr {
+  margin-top: var(--ds-size-30);
+}
+.header-auto-hide-sticky-main hr + p {
+  margin-top: calc(var(--ds-size-30) * 2);
+  margin-bottom: calc(var(--ds-size-30) * 2);
+}
   </style>
   <header
     data-scroll-direction="up"
@@ -349,17 +337,14 @@ exports[`Auto Hide Sticky Test 1`] = `
           id="<removed>"
           popover="auto"
           data-placement="none"
-          data-variant="default"
+          style="<removed>"
         >
           <nav aria-labelledby="<removed>">
             <h2 id="<removed>">
               Menynavigasjon
             </h2>
             <div data-hide="md">
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Navlinker
               </h3>
               <ul>
@@ -381,10 +366,7 @@ exports[`Auto Hide Sticky Test 1`] = `
               </ul>
             </div>
             <div data-hide>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 1
               </h3>
               <ul>
@@ -416,10 +398,7 @@ exports[`Auto Hide Sticky Test 1`] = `
               </ul>
             </div>
             <div data-hide>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 2
               </h3>
               <ul>
@@ -455,39 +434,39 @@ exports[`Auto Hide Sticky Test 1`] = `
       <h1 data-size="lg">
         Samisk i skolen
       </h1>
-      <p data-variant="default">
+      <p>
         Alle elever skal lære om samer og samiske forhold i skolen. Retten til også å få undervisning i samiske språk og undervisning på samisk i andre fag, er ulik innenfor og utenfor samiske distrikt. I de samiske distriktene er norsk og samisk sidestilte i opplæringen.
       </p>
       <h2>
         Rett til opplæring i samisk i videregående opplæring
       </h2>
-      <p data-variant="default">
+      <p>
         Det er innført en rett til opplæring i samisk i videregående opplæring for alle elever som har hatt opplæring i eller på samisk i grunnskolen. Dette gjelder uavhengig av om eleven har samisk bakgrunn eller ikke.
       </p>
-      <p data-variant="default">
+      <p>
         Bakgrunnen for rettigheten er at elever som har hatt opplæring i samisk som første- eller andrespråk i grunnskolen får mulighet til å fortsette med opplæringen i samisk, og sikre eleven et helhetlig opplæringsløp. Det er ikke stilt krav om lengden på eller innholdet i opplæringen i grunnskolen, eks. om eleven har hatt samisk som første- eller andrespråk. Elevene har ikke rett til å velge et annet samisk språk i videregående opplæring enn det elevene hadde på grunnskolen.
       </p>
-      <p data-variant="default">
+      <p>
         Retten til opplæring i samisk for samiske elever i videregående opplæring er videreført.
       </p>
       <h2>
         Tilbud om del av opplæringen i et samiskspråklig miljø
       </h2>
-      <p data-variant="default">
+      <p>
         Det er tatt inn i loven at kommunen og fylkeskommunen skal gi eleven tilbud om del av opplæringen i et samiskspråklig miljø dersom det er nødvendig for at opplæringen skal være pedagogisk forsvarlig. Dette står i
         <a href="#">
           § 3-2 for grunnskolen og § 6-2 for videregående opplæring
         </a>
         Denne regelen tar i hovedsak sikte på tilfeller der opplæringen i samisk blir gitt som fjernundervisning.
       </p>
-      <p data-variant="default">
+      <p>
         Vurderingen av om det er «nødvendig for at opplæringen skal være pedagogisk forsvarlig», handler om hvorvidt eleven skal kunne nå kompetansemålene i læreplanen. Det kan ikke knyttes til ytre rammer for eksempel hvor mange andre som snakker det samiskspråket i området, økonomi og ressurser.
       </p>
-      <p data-variant="default">
+      <p>
         Hvor store deler av opplæringen i samisk det eventuelt er nødvendig å gi i et samiskspråklig miljø, kommer an på en konkret vurdering av om opplæringen gir eleven grunnlag for å nå kompetansemålene i læreplanen eller ikke.
       </p>
       <hr aria-hidden="true">
-      <p data-variant="default">
+      <p>
         (Annet innhold)
       </p>
       <hr aria-hidden="true">
@@ -499,13 +478,12 @@ exports[`Auto Hide Sticky Test 1`] = `
 exports[`Long Application Name 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-        @media (max-width: 30rem) {
+    @media (max-width: 30rem) {
         .uds-header__logo > :last-child {
           font-size: var(--ds-font-size-4);
         }
         @media (max-width: 23rem) {
-          .myMenuText {
+          .header-long-application-name-menu-span {
             // Visually hidden but accessible for screen readers
             border: 0;
             clip: rect(0 0 0 0);
@@ -554,7 +532,6 @@ exports[`Long Application Name 1`] = `
           id="<removed>"
           popover="auto"
           data-placement="none"
-          data-variant="default"
         >
         </div>
       </div>
@@ -622,26 +599,25 @@ exports[`Pride Logo 1`] = `
 exports[`Responsive 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-  .responsive-header-menu-nav {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-    max-width: 800px;
-    margin: 0 auto;
-    padding: var(--ds-size-10);
-    gap: var(--ds-size-4);
-    row-gap: var(--ds-size-10);
-    justify-items: center;
+    .header-responsive-header-menu-user-button {
+  margin: 0 var(--ds-size-5);
+  justify-self: end;
+}
+.header-responsive-header-menu-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--ds-size-10);
+  gap: var(--ds-size-4);
+  row-gap: var(--ds-size-10);
+  justify-items: center;
+}
+@media (max-width: 34.375rem) {
+  .header-responsive-header-menu-nav {
+    justify-items: flex-start;
   }
-  .responsive-header-menu-user-button {
-    margin: 0 var(--ds-size-5);
-    justify-self: end;
-  }
-  @media (max-width: 34.375rem) {
-    .responsive-header-menu-nav {
-      justify-items: flex-start;
-    }
-  }
+}
   </style>
   <header
     data-scroll-direction="up"
@@ -713,7 +689,6 @@ exports[`Responsive 1`] = `
             </span>
           </div>
           <span
-            data-variant="circle"
             role="img"
             aria-hidden="true"
           >
@@ -726,7 +701,6 @@ exports[`Responsive 1`] = `
           id="<removed>"
           popover="manual"
           data-placement="bottom-end"
-          data-variant="default"
         >
           <h2>
             Bytt profil
@@ -743,7 +717,6 @@ exports[`Responsive 1`] = `
                   data-placement="top-right"
                 >
                   <span
-                    data-variant="circle"
                     role="img"
                     aria-hidden="true"
                   >
@@ -768,7 +741,6 @@ exports[`Responsive 1`] = `
                   </span>
                   <span
                     data-count="9+"
-                    data-variant="base"
                     aria-hidden="true"
                     data-color="danger"
                   >
@@ -817,7 +789,6 @@ exports[`Responsive 1`] = `
           id="<removed>"
           popover="auto"
           data-placement="none"
-          data-variant="default"
         >
           <button
             type="button"
@@ -834,7 +805,6 @@ exports[`Responsive 1`] = `
               </span>
             </div>
             <span
-              data-variant="circle"
               role="img"
               aria-hidden="true"
             >
@@ -847,7 +817,6 @@ exports[`Responsive 1`] = `
             id="<removed>"
             popover="manual"
             data-placement="bottom-end"
-            data-variant="default"
           >
             <h2>
               Bytt profil
@@ -864,7 +833,6 @@ exports[`Responsive 1`] = `
                     data-placement="top-right"
                   >
                     <span
-                      data-variant="circle"
                       role="img"
                       aria-hidden="true"
                     >
@@ -889,7 +857,6 @@ exports[`Responsive 1`] = `
                     </span>
                     <span
                       data-count="9+"
-                      data-variant="base"
                       aria-hidden="true"
                       data-color="danger"
                     >
@@ -932,10 +899,7 @@ exports[`Responsive 1`] = `
               Menynavigasjon
             </h2>
             <div data-hide="lg">
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Navlinker
               </h3>
               <ul>
@@ -957,10 +921,7 @@ exports[`Responsive 1`] = `
               </ul>
             </div>
             <div data-hide>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 1
               </h3>
               <ul>
@@ -992,10 +953,7 @@ exports[`Responsive 1`] = `
               </ul>
             </div>
             <div data-hide>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 2
               </h3>
               <ul>
@@ -1032,16 +990,22 @@ exports[`Responsive 1`] = `
 exports[`Udir No 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-  .udirNo-header-menu-nav {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: var(--ds-size-10) var(--ds-size-15);
-    gap: var(--ds-size-4);
-    row-gap: var(--ds-size-10);
-  }
+    .header-udir-no-header-menu-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--ds-size-10) var(--ds-size-15);
+  gap: var(--ds-size-4);
+  row-gap: var(--ds-size-10);
+}
+.header-udir-no-header-search {
+  max-width: 280px;
+}
+.header-udir-no-header-menu-search {
+  width: auto;
+  margin: var(--ds-size-5) var(--ds-size-5) 0;
+}
   </style>
   <header
     data-scroll-direction="up"
@@ -1064,10 +1028,7 @@ exports[`Udir No 1`] = `
         </div>
       </a>
       <div>
-        <div
-          data-show="sm"
-          style="<removed>"
-        >
+        <div data-show="sm">
           <input
             placeholder="Søk"
             aria-label="Søk"
@@ -1092,12 +1053,8 @@ exports[`Udir No 1`] = `
           id="<removed>"
           popover="auto"
           data-placement="none"
-          data-variant="default"
         >
-          <div
-            data-hide="sm"
-            style="<removed>"
-          >
+          <div data-hide="sm">
             <input
               placeholder="Søk"
               aria-label="Søk"
@@ -1116,10 +1073,7 @@ exports[`Udir No 1`] = `
               Menynavigasjon
             </h2>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Utdanningsløpet
               </h3>
               <ul>
@@ -1166,10 +1120,7 @@ exports[`Udir No 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Læring og trivsel
               </h3>
               <ul>
@@ -1206,10 +1157,7 @@ exports[`Udir No 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Prøver og vurdering
               </h3>
               <ul>
@@ -1241,10 +1189,7 @@ exports[`Udir No 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Kompetanse og tilskudd
               </h3>
               <ul>
@@ -1286,10 +1231,7 @@ exports[`Udir No 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Tall og forskning
               </h3>
               <ul>
@@ -1336,10 +1278,7 @@ exports[`Udir No 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Regelverk og tilsyn
               </h3>
               <ul>
@@ -1429,7 +1368,6 @@ exports[`With Language Picker 1`] = `
           id="<removed>"
           popover="manual"
           data-placement="bottom-end"
-          data-variant="default"
         >
           <ul>
             <li>
@@ -1479,22 +1417,20 @@ exports[`With Language Picker 1`] = `
 exports[`With Menu 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-        .withMenu-header-menu-nav {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-          max-width: 800px;
-          margin: 0 auto;
-          padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
-          gap: var(--ds-size-4);
-          row-gap: var(--ds-size-10);
-          justify-items: center;
-        }
-        @media (max-width: 34.375rem) {
-          .withMenu-header-menu-nav {
-            justify-items: flex-start;
-          }
-        }
+    .header-with-menu-header-menu-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
+  gap: var(--ds-size-4);
+  row-gap: var(--ds-size-10);
+  justify-items: center;
+}
+@media (max-width: 34.375rem) {
+  .header-with-menu-header-menu-nav {
+  justify-items: flex-start;
+}}
   </style>
   <header
     data-scroll-direction="up"
@@ -1531,17 +1467,13 @@ exports[`With Menu 1`] = `
           id="<removed>"
           popover="auto"
           data-placement="none"
-          data-variant="default"
         >
           <nav aria-labelledby="<removed>">
             <h2 id="<removed>">
               Menynavigasjon
             </h2>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 <a href="#">
                   Designprofil
                 </a>
@@ -1565,10 +1497,7 @@ exports[`With Menu 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 <a href="#">
                   Illustrasjoner
                 </a>
@@ -1592,10 +1521,7 @@ exports[`With Menu 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 <a href="#">
                   Nyttige lenker
                 </a>
@@ -1629,22 +1555,20 @@ exports[`With Menu 1`] = `
 exports[`With Menu Test 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-        .withMenu-header-menu-nav {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-          max-width: 800px;
-          margin: 0 auto;
-          padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
-          gap: var(--ds-size-4);
-          row-gap: var(--ds-size-10);
-          justify-items: center;
-        }
-        @media (max-width: 34.375rem) {
-          .withMenu-header-menu-nav {
-            justify-items: flex-start;
-          }
-        }
+    .header-with-menu-header-menu-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
+  gap: var(--ds-size-4);
+  row-gap: var(--ds-size-10);
+  justify-items: center;
+}
+@media (max-width: 34.375rem) {
+  .header-with-menu-header-menu-nav {
+  justify-items: flex-start;
+}}
   </style>
   <header
     data-scroll-direction="up"
@@ -1681,17 +1605,14 @@ exports[`With Menu Test 1`] = `
           id="<removed>"
           popover="auto"
           data-placement="none"
-          data-variant="default"
+          style="<removed>"
         >
           <nav aria-labelledby="<removed>">
             <h2 id="<removed>">
               Menynavigasjon
             </h2>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 <a href="#">
                   Designprofil
                 </a>
@@ -1715,10 +1636,7 @@ exports[`With Menu Test 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 <a href="#">
                   Illustrasjoner
                 </a>
@@ -1742,10 +1660,7 @@ exports[`With Menu Test 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 <a href="#">
                   Nyttige lenker
                 </a>
@@ -1779,15 +1694,14 @@ exports[`With Menu Test 1`] = `
 exports[`With Navigation Links 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-  .withNavLinks-header-menu-nav {
-    max-width: 800px;
-    display: flex;
-    padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
-    gap: var(--ds-size-4);
-    row-gap: var(--ds-size-10);
-    justify-items: center;
-  }
+    .header-with-nav-links-header-menu-nav {
+  max-width: 800px;
+  display: flex;
+  padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
+  gap: var(--ds-size-4);
+  row-gap: var(--ds-size-10);
+  justify-items: center;
+}
   </style>
   <header
     data-scroll-direction="up"
@@ -1856,7 +1770,6 @@ exports[`With Navigation Links 1`] = `
           id="<removed>"
           popover="auto"
           data-placement="none"
-          data-variant="default"
         >
           <nav aria-label="Menynavigasjon">
             <ul>
@@ -1887,22 +1800,21 @@ exports[`With Navigation Links 1`] = `
 exports[`With Navigation Links And Menu 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-  .withNavLinksAndMenu-header-menu-nav {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
-    max-width: 800px;
-    margin: 0 auto;
-    padding: var(--ds-size-5) var(--ds-size-10) var(--ds-size-10);
-    gap: var(--ds-size-4);
-    row-gap: var(--ds-size-10);
-    justify-items: center;
+    .header-with-nav-links-and-menu-header-menu-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--ds-size-5) var(--ds-size-10) var(--ds-size-10);
+  gap: var(--ds-size-4);
+  row-gap: var(--ds-size-10);
+  justify-items: center;
+}
+@media (max-width: 34.375rem) {
+  .header-with-nav-links-and-menu-header-menu-nav {
+    justify-items: flex-start;
   }
-  @media (max-width: 34.375rem) {
-    .withNavLinksAndMenu-header-menu-nav {
-      justify-items: flex-start;
-    }
-  }
+}
   </style>
   <header
     data-scroll-direction="up"
@@ -1962,7 +1874,6 @@ exports[`With Navigation Links And Menu 1`] = `
           id="<removed>"
           popover="auto"
           data-placement="none"
-          data-variant="default"
         >
           <nav aria-labelledby="<removed>">
             <h2 id="<removed>">
@@ -1989,10 +1900,7 @@ exports[`With Navigation Links And Menu 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 1
               </h3>
               <ul>
@@ -2014,10 +1922,7 @@ exports[`With Navigation Links And Menu 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 2
               </h3>
               <ul>
@@ -2044,10 +1949,7 @@ exports[`With Navigation Links And Menu 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 3
               </h3>
               <ul>
@@ -2203,10 +2105,7 @@ exports[`With Tag 1`] = `
         </span>
       </a>
       <div>
-        <span
-          data-variant="default"
-          data-color="accent"
-        >
+        <span data-color="accent">
           Dev
         </span>
       </div>
@@ -2218,25 +2117,24 @@ exports[`With Tag 1`] = `
 exports[`With Theme Menus 1`] = `
 <div data-size="auto">
   <style>
-    /* Styles defined in application-specific css */
-  :is(#header-education-menu, #header-learning-menu, #header-mobile-menu) > nav {
-    display: grid;
-    margin: 0 auto;
-    padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
-    gap: var(--ds-size-4);
-    row-gap: var(--ds-size-10);
-  }
-  :is(#header-education-menu, #header-mobile-menu) > nav {
-    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-    max-width: 800px;
-  }
-  :is(#header-education-menu, #header-learning-menu) > nav {
-    justify-items: center;
-  }
-  #header-learning-menu > nav {
-    grid-template-columns: 1fr 1fr;
-    max-width: 500px;
-  }
+    :is(#header-education-menu, #header-learning-menu, #header-mobile-menu) > nav {
+  display: grid;
+  margin: 0 auto;
+  padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
+  gap: var(--ds-size-4);
+  row-gap: var(--ds-size-10);
+}
+:is(#header-education-menu, #header-mobile-menu) > nav {
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  max-width: 800px;
+}
+:is(#header-education-menu, #header-learning-menu) > nav {
+  justify-items: center;
+}
+#header-learning-menu > nav {
+  grid-template-columns: 1fr 1fr;
+  max-width: 500px;
+}
   </style>
   <header
     data-scroll-direction="up"
@@ -2274,17 +2172,13 @@ exports[`With Theme Menus 1`] = `
           id="<removed>"
           popover="auto"
           data-placement="none"
-          data-variant="default"
         >
           <nav aria-labelledby="<removed>">
             <h2 id="<removed>">
               Temameny 1 navigasjon
             </h2>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 1
               </h3>
               <ul>
@@ -2306,10 +2200,7 @@ exports[`With Theme Menus 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 2
               </h3>
               <ul>
@@ -2336,10 +2227,7 @@ exports[`With Theme Menus 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 3
               </h3>
               <ul>
@@ -2374,17 +2262,13 @@ exports[`With Theme Menus 1`] = `
           id="<removed>"
           popover="auto"
           data-placement="none"
-          data-variant="default"
         >
           <nav aria-labelledby="<removed>">
             <h2 id="<removed>">
               Temameny 2 navigasjon
             </h2>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 4
               </h3>
               <ul>
@@ -2406,10 +2290,7 @@ exports[`With Theme Menus 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 5
               </h3>
               <ul>
@@ -2449,17 +2330,13 @@ exports[`With Theme Menus 1`] = `
           id="<removed>"
           popover="auto"
           data-placement="none"
-          data-variant="default"
         >
           <nav aria-labelledby="<removed>">
             <h2 id="<removed>">
               Menynavigasjon
             </h2>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 1
               </h3>
               <ul>
@@ -2481,10 +2358,7 @@ exports[`With Theme Menus 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 2
               </h3>
               <ul>
@@ -2511,10 +2385,7 @@ exports[`With Theme Menus 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 3
               </h3>
               <ul>
@@ -2536,10 +2407,7 @@ exports[`With Theme Menus 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 4
               </h3>
               <ul>
@@ -2561,10 +2429,7 @@ exports[`With Theme Menus 1`] = `
               </ul>
             </div>
             <div>
-              <h3
-                data-size="xs"
-                style="<removed>"
-              >
+              <h3 data-size="xs">
                 Overskrift 5
               </h3>
               <ul>
@@ -2696,7 +2561,6 @@ exports[`With User Button 1`] = `
             </span>
           </div>
           <span
-            data-variant="circle"
             role="img"
             aria-hidden="true"
           >
@@ -2711,7 +2575,6 @@ exports[`With User Button 1`] = `
           id="<removed>"
           popover="manual"
           data-placement="bottom-end"
-          data-variant="default"
         >
           <h2>
             Bytt profil
@@ -2728,7 +2591,6 @@ exports[`With User Button 1`] = `
                   data-placement="top-right"
                 >
                   <span
-                    data-variant="circle"
                     role="img"
                     aria-hidden="true"
                   >
@@ -2753,7 +2615,6 @@ exports[`With User Button 1`] = `
                   </span>
                   <span
                     data-count="9+"
-                    data-variant="base"
                     aria-hidden="true"
                     data-color="danger"
                   >
@@ -2798,7 +2659,6 @@ exports[`With User Button 1`] = `
           data-hide="sm"
         >
           <span
-            data-variant="circle"
             role="img"
             aria-label="Stian Hansen"
           >
@@ -2813,19 +2673,18 @@ exports[`With User Button 1`] = `
           id="<removed>"
           popover="manual"
           data-placement="bottom-end"
-          data-variant="default"
         >
           <h2>
             Detaljer
           </h2>
           <ul>
             <li style="<removed>">
-              <p data-variant="default">
+              <p>
                 Stian Hansen
               </p>
             </li>
             <li style="<removed>">
-              <p data-variant="default">
+              <p>
                 Admin
               </p>
             </li>
@@ -2846,7 +2705,6 @@ exports[`With User Button 1`] = `
                   data-placement="top-right"
                 >
                   <span
-                    data-variant="circle"
                     role="img"
                     aria-hidden="true"
                   >
@@ -2871,7 +2729,6 @@ exports[`With User Button 1`] = `
                   </span>
                   <span
                     data-count="9+"
-                    data-variant="base"
                     aria-hidden="true"
                     data-color="danger"
                   >
@@ -2956,7 +2813,6 @@ exports[`With User Button Test 1`] = `
             </span>
           </div>
           <span
-            data-variant="circle"
             role="img"
             aria-hidden="true"
           >
@@ -2971,7 +2827,6 @@ exports[`With User Button Test 1`] = `
           id="<removed>"
           popover="manual"
           data-placement="bottom-end"
-          data-variant="default"
           data-floating="bottom-end"
           style="<removed>"
         >
@@ -2990,7 +2845,6 @@ exports[`With User Button Test 1`] = `
                   data-placement="top-right"
                 >
                   <span
-                    data-variant="circle"
                     role="img"
                     aria-hidden="true"
                   >
@@ -3015,7 +2869,6 @@ exports[`With User Button Test 1`] = `
                   </span>
                   <span
                     data-count="9+"
-                    data-variant="base"
                     aria-hidden="true"
                     data-color="danger"
                   >
@@ -3060,7 +2913,6 @@ exports[`With User Button Test 1`] = `
           data-hide="sm"
         >
           <span
-            data-variant="circle"
             role="img"
             aria-label="Stian Hansen"
           >
@@ -3075,19 +2927,18 @@ exports[`With User Button Test 1`] = `
           id="<removed>"
           popover="manual"
           data-placement="bottom-end"
-          data-variant="default"
         >
           <h2>
             Detaljer
           </h2>
           <ul>
             <li style="<removed>">
-              <p data-variant="default">
+              <p>
                 Stian Hansen
               </p>
             </li>
             <li style="<removed>">
-              <p data-variant="default">
+              <p>
                 Admin
               </p>
             </li>
@@ -3108,7 +2959,6 @@ exports[`With User Button Test 1`] = `
                   data-placement="top-right"
                 >
                   <span
-                    data-variant="circle"
                     role="img"
                     aria-hidden="true"
                   >
@@ -3133,7 +2983,6 @@ exports[`With User Button Test 1`] = `
                   </span>
                   <span
                     data-count="9+"
-                    data-variant="base"
                     aria-hidden="true"
                     data-color="danger"
                   >

@@ -1,6 +1,6 @@
 import './progressBar.css';
 import '@u-elements/u-progress';
-import { type Size } from '@digdir/designsystemet-react';
+import type { Size } from '@digdir/designsystemet-types';
 import type { Color } from '@digdir/designsystemet-types';
 import { UHTMLProgressShadowRoot } from '@u-elements/u-progress';
 import cl from 'clsx/lite';

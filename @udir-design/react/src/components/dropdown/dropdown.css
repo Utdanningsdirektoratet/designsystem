@@ -10,8 +10,8 @@
       position: absolute;
       inset-inline-start: var(--ds-size-1);
       display: inline-block;
-      width: 1.3em;
-      height: 1.3em;
+      width: var(--ds-icon-size);
+      height: var(--ds-icon-size);
       background: currentColor;
       mask: center / 100% no-repeat var(--uds-icon-checkmark);
       vertical-align: middle;

@@ -12,7 +12,10 @@ import { resolveName } from './symbol-name';
 
 const symbolFolder = './symbols';
 
-main();
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
 
 async function main() {
   console.info('Started symbol-update from Figma');

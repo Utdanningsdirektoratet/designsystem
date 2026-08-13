@@ -13,7 +13,7 @@ export const getPath = (href: string | undefined): string => {
   // if link starts with /, add current path to link
   if (href.startsWith('/')) {
     // Get location from window.parent instead of document, otherwise pathname is iframe.html
-    const { origin = '', pathname } = window.parent.location;
+    const { origin, pathname } = window.parent.location;
 
     return `${origin}${pathname}?path=${href}`;
   }

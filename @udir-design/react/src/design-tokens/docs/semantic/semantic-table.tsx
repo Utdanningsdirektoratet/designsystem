@@ -34,15 +34,15 @@ const getValuePreview = (variable: string, value: string, size?: string) => {
     return <BorderRadius value={value} />;
   }
 
-  if (/^--ds-shadow/.test(variable)) {
+  if (variable.startsWith('--ds-shadow')) {
     return <Shadow value={value} />;
   }
 
-  if (/^--ds-opacity/.test(variable)) {
+  if (variable.startsWith('--ds-opacity')) {
     return <Opacity value={value} />;
   }
 
-  if (/^--ds-border-width/.test(variable)) {
+  if (variable.startsWith('--ds-border-width')) {
     return <BorderWidth value={value} />;
   }
 

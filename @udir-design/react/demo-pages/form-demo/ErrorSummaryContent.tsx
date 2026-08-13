@@ -2,6 +2,7 @@ import type { DSErrorSummaryElement } from '@digdir/designsystemet-web';
 import type { FieldError, FieldErrors } from 'react-hook-form';
 import { ErrorSummary } from 'src/components/errorSummary';
 import type { UseFormNavigationReturn } from 'src/hooks/useFormNavigation';
+import { focusFormField } from 'src/utilities/form/focus';
 import type { FieldId, FormValues, PageFields, PageId } from './FormDemo';
 import { findPageForField } from './FormDemo';
 
@@ -51,44 +52,23 @@ export function ErrorSummaryContent({
   if (!shouldShow) return null;
 
   const renderErrorList = () => {
-    if (isFinalPage) {
-      const allKeys = Object.keys(errors) as FieldId[];
-
-      return (
-        <ErrorSummary.List>
-          {allKeys.map((fieldName) => {
-            const err = errors[fieldName];
-            return (
-              <ErrorSummary.Item key={fieldName}>
-                <ErrorSummary.Link
-                  href={`#${fieldName}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const pageId = findPageForField(fieldName);
-                    if (!pageId) return;
-                    setId(pageId);
-                    window.setTimeout(() => {
-                      const el = document.getElementById(fieldName);
-                      el?.focus();
-                    }, 50);
-                  }}
-                >
-                  {getMessage(err)}
-                </ErrorSummary.Link>
-              </ErrorSummary.Item>
-            );
-          })}
-        </ErrorSummary.List>
-      );
-    }
-
+    const keys = isFinalPage ? (Object.keys(errors) as FieldId[]) : pageErrors;
     return (
       <ErrorSummary.List>
-        {pageErrors.map((fieldName) => {
+        {keys.map((fieldName) => {
           const err = errors[fieldName];
           return (
             <ErrorSummary.Item key={fieldName}>
-              <ErrorSummary.Link href={`#${fieldName}`}>
+              <ErrorSummary.Link
+                href={`#${fieldName}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const pageId = findPageForField(fieldName);
+                  if (!pageId) return;
+                  setId(pageId);
+                  window.setTimeout(() => focusFormField(fieldName), 50);
+                }}
+              >
                 {getMessage(err)}
               </ErrorSummary.Link>
             </ErrorSummary.Item>

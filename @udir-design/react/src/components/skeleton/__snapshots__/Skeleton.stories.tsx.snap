@@ -2,22 +2,22 @@
 
 exports[`Cards 1`] = `
 <style>
-  .example-main {
+  .skeleton-cards-main {
   margin: var(--ds-size-12);
-    display: flex;
-    flex-direction: column;
-    gap: var(--ds-size-6);
-  }
-.example-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+}
+.skeleton-cards-button__group {
   display: flex;
   justify-content: end;
 }
-.example-card {
+.skeleton-cards-card__group {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--ds-size-6);
 }
-.example-card-block {
+.skeleton-cards-card-block {
   display: flex;
   flex-direction: column;
 }
@@ -99,7 +99,7 @@ exports[`Cards 1`] = `
     </button>
   </div>
   <div>
-    <div data-variant="default">
+    <div>
       <div>
         <span
           aria-hidden="true"
@@ -140,7 +140,7 @@ exports[`Cards 1`] = `
         </span>
       </div>
     </div>
-    <div data-variant="default">
+    <div>
       <div>
         <span
           aria-hidden="true"
@@ -181,7 +181,7 @@ exports[`Cards 1`] = `
         </span>
       </div>
     </div>
-    <div data-variant="default">
+    <div>
       <div>
         <span
           aria-hidden="true"
@@ -222,7 +222,7 @@ exports[`Cards 1`] = `
         </span>
       </div>
     </div>
-    <div data-variant="default">
+    <div>
       <div>
         <span
           aria-hidden="true"
@@ -263,7 +263,7 @@ exports[`Cards 1`] = `
         </span>
       </div>
     </div>
-    <div data-variant="default">
+    <div>
       <div>
         <span
           aria-hidden="true"
@@ -304,7 +304,7 @@ exports[`Cards 1`] = `
         </span>
       </div>
     </div>
-    <div data-variant="default">
+    <div>
       <div>
         <span
           aria-hidden="true"
@@ -354,16 +354,13 @@ exports[`Children 1`] = `
   aria-hidden="true"
   data-variant="rectangle"
 >
-  <p data-variant="default">
+  <p>
     Her er en tekst som blir sendt inn som barn av en Skeleton.
   </p>
-  <p data-variant="default">
+  <p>
     Se hvordan Skeleton da dekker den samlede bredden og høyden til barna.
   </p>
-  <button
-    data-variant="primary"
-    type="button"
-  >
+  <button type="button">
     Knapp
   </button>
 </span>
@@ -371,7 +368,7 @@ exports[`Children 1`] = `
 
 exports[`Components 1`] = `
 <style>
-  .example-main {
+  .skeleton-components-main {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -390,7 +387,7 @@ exports[`Components 1`] = `
     style="<removed>"
   >
   </span>
-  <p data-variant="default">
+  <p>
     <span
       aria-hidden="true"
       data-text="----------"
@@ -404,7 +401,6 @@ exports[`Components 1`] = `
 exports[`Preview 1`] = `
 <span
   aria-hidden="true"
-  data-variant="rectangle"
   style="<removed>"
 >
 </span>
@@ -412,12 +408,12 @@ exports[`Preview 1`] = `
 
 exports[`Text 1`] = `
 <style>
-  .example-text {
+  .skeleton-text-main {
   display: flex;
   gap: var(--ds-size-12);
   margin: var(--ds-size-12);
 }
-.example-text-column {
+.skeleton-text-section {
   flex: 1 1 200px;
 }
 </style>
@@ -426,10 +422,7 @@ exports[`Text 1`] = `
     <h2>
       Den kjekkaste leiken
     </h2>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       Det er verken dyrt eller komplisert å leggje til rette for den leiken barna liker best. Når viser barna mest trivsel i uteleiken? Det ønskte forskarar i forskingsprosjektet «EnCompetence» å finne ut, og dei ville spesielt sjå på situasjonar med fysisk aktivitet.
     </p>
   </div>
@@ -443,10 +436,7 @@ exports[`Text 1`] = `
         Den kjekkaste leiken
       </span>
     </h2>
-    <p
-      data-variant="default"
-      data-size="sm"
-    >
+    <p data-size="sm">
       <span
         aria-hidden="true"
         data-text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
@@ -460,21 +450,21 @@ exports[`Text 1`] = `
 
 exports[`Usage Example 1`] = `
 <style>
-  .example-main {
+  .skeleton-usage-example-main {
   display: flex;
   gap: var(--ds-size-12);
   margin: var(--ds-size-12);
 }
-.example-section {
+.skeleton-usage-example-section {
   flex: 1 1 200px;
 }
-.example-meta {
+.skeleton-usage-example-meta {
   display: flex;
   gap: var(--ds-size-2);
   align-items: center;
   padding-block: var(--ds-size-1);
 }
-.example-image {
+.skeleton-usage-example-image {
   display: block;
   width: 100%;
   height: 200px;
@@ -486,7 +476,6 @@ exports[`Usage Example 1`] = `
   <div>
     <span
       aria-hidden="true"
-      data-variant="rectangle"
       style="<removed>"
     >
     </span>
@@ -530,18 +519,17 @@ exports[`Usage Example 1`] = `
     </h2>
     <div>
       <span
-        data-variant="circle"
         data-initials="KN"
         role="img"
         aria-label="Kari Nordmann"
         data-size="xs"
       >
       </span>
-      <p data-variant="default">
+      <p>
         Kari Nordmann | 27.06.2025
       </p>
     </div>
-    <p data-variant="default">
+    <p>
       Barnehagen er pliktig til å gjennomføre undersøkelser som med rimelighet kan forventes. Barnehagen må innhente nok informasjon til å avdekke hva som er problemet og hva som gjør at barnet ikke har det trygt og godt.
     </p>
   </div>

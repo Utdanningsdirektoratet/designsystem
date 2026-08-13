@@ -16,7 +16,9 @@ function useLoadChart(delayMs: number) {
       }, delayMs);
     }
 
-    fetchHighcharts();
+    fetchHighcharts().catch((error) => {
+      console.error('Failed to load Highcharts', error);
+    });
     return () => clearTimeout(timer);
   }, [delayMs]);
 

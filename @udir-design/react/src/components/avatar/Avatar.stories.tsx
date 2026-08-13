@@ -4,9 +4,9 @@ import {
   HatSchoolIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
-import { Badge } from 'src/components/badge';
-import { Dropdown } from 'src/components/dropdown';
-import { Link } from 'src/components/link';
+import { Badge } from '../badge/Badge';
+import { Dropdown } from '../dropdown/Dropdown';
+import { Link } from '../link/Link';
 import { Avatar } from './Avatar';
 
 const meta = preview.meta({
@@ -124,29 +124,28 @@ export const Icons = meta.story({
   render: (args) => (
     <>
       <style>{`
-        .avatar-group {
-          display: flex;
-          gap: var(--ds-size-2);
-          flex-direction: column;
-        }
-        .avatar-icon-group {
-          display: flex;
-          align-items: center;
-          gap: var(--ds-size-2);
-        }
-      `}</style>
-      <div className="avatar-group">
-        <div className="avatar-icon-group">
+.avatar-icons {
+  display: flex;
+  gap: var(--ds-size-2);
+  flex-direction: column;
+}
+.avatar-icons__group {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-2);
+}`}</style>
+      <div className="avatar-icons">
+        <div className="avatar-icons__group">
           <Avatar {...args} aria-hidden />
           <span>Person</span>
         </div>
-        <div className="avatar-icon-group">
+        <div className="avatar-icons__group">
           <Avatar {...args} aria-hidden>
             <HatSchoolIcon />
           </Avatar>
           <span>Skole</span>
         </div>
-        <div className="avatar-icon-group">
+        <div className="avatar-icons__group">
           <Avatar {...args} aria-hidden>
             <BriefcaseIcon />
           </Avatar>
@@ -162,12 +161,17 @@ export const AsLink = meta.story({
     'aria-hidden': true,
   },
   render: (args) => (
-    <Link
-      href="/"
-      style={{ display: 'flex', gap: 'var(--ds-size-2)', alignItems: 'center' }}
-    >
-      <Avatar {...args} />
-      <span>Ola Nordmann</span>
-    </Link>
+    <>
+      <style>{`
+.avatar-as-link {
+  display: flex;
+  gap: var(--ds-size-2);
+  align-items: center;
+}`}</style>
+      <Link className="avatar-as-link" href="/">
+        <Avatar {...args} />
+        <span>Ola Nordmann</span>
+      </Link>
+    </>
   ),
 });

@@ -1,5 +1,9 @@
 import type { SeverityColors } from '@digdir/designsystemet-react/colors';
-import { Markdown } from '@storybook/addon-docs/blocks';
+import {
+  Markdown,
+  Source,
+  type SourceProps,
+} from '@storybook/addon-docs/blocks';
 import { toHtml } from 'hast-util-to-html';
 import type { Heading, Root, RootContent, Text } from 'mdast';
 import { toHast } from 'mdast-util-to-hast';
@@ -46,6 +50,26 @@ export const IncludeMarkdown: React.FC<Props> = ({
       options={{
         overrides: {
           ...componentOverrides,
+          pre: ({ children }: React.HTMLAttributes<HTMLPreElement>) => {
+            const code = children as React.ReactElement<{
+              children?: string;
+              className?: string;
+            }>;
+            const content =
+              typeof code?.props?.children === 'string'
+                ? code.props.children
+                : '';
+            const language = (code?.props?.className ?? '').replace(
+              'language-',
+              '',
+            );
+            return (
+              <Source
+                code={content.trimEnd()}
+                language={language as SourceProps['language']}
+              />
+            );
+          },
           code: (props: Props) => (
             <code
               {...props}

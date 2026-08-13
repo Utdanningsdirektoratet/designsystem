@@ -21,9 +21,10 @@ export const DocumentationPage = ({
   const errors = showErrors ? formState.errors : {};
 
   const removeFile = (fileToRemove: File) => {
-    setValue('documentation', [
-      ...uploadedFiles.filter((file) => file.name === fileToRemove.name),
-    ]);
+    setValue(
+      'documentation',
+      uploadedFiles.filter((file) => file.name === fileToRemove.name),
+    );
   };
 
   const removeRejected = (rejectedToRemove: FileWithPath) => {

@@ -1,12 +1,13 @@
 {
   "name": "designsystem",
   "version": "0.0.0",
+  "private": true,
   "license": "MIT",
   "type": "module",
   "scripts": {
     "prepare": "husky",
     "dev": "turbo run dev watch:typedoc serve:typedoc --filter=@udir-design/react",
-    "build": "pnpm prettier:check && turbo run typecheck lint test:unit build build:docs",
+    "build": "pnpm fmt:check && turbo run typecheck lint test:unit build build:docs",
     "build:storybook": "turbo run build:storybook --filter=@udir-design/react",
     "build:docs": "turbo run build:docs --filter=@udir-design/react",
     "test:storybook": "turbo run test:storybook --filter=@udir-design/react",
@@ -21,39 +22,27 @@
     "codeql:results:actions": "echo 'CodeQL found the following problems in GitHub Actions code:\n' && jq -f .codeql/get-results.jq .codeql/actions-results.json",
     "codeql:results": "pnpm codeql:results:ts && pnpm codeql:results:actions",
     "codeql": "pnpm codeql:db && pnpm codeql:scan && pnpm codeql:results",
-    "prettier:check": "pnpm prettier --check .",
-    "prettier:write": "pnpm prettier --write ."
+    "fmt": "pnpm oxfmt",
+    "fmt:check": "pnpm oxfmt --check"
   },
-  "private": true,
-  "packageManager": "pnpm@11.7.0+sha512.19cc852c120c7125760f2443ee6be0ca5b40f9f50598de1a09a1f177503e010e57c23c77646e01e761de59bf874fb22a3398c33ab9691fc13eb946b6f0f4d620",
   "devDependencies": {
     "@commitlint/cli": "catalog:",
     "@commitlint/config-conventional": "catalog:",
     "@commitlint/types": "catalog:",
-    "@eslint/config-helpers": "catalog:",
-    "@eslint/js": "catalog:",
     "@testing-library/react": "catalog:",
-    "@types/eslint-plugin-jsx-a11y": "catalog:",
     "@types/node": "catalog:",
-    "@typescript-eslint/eslint-plugin": "catalog:",
-    "@typescript-eslint/parser": "catalog:",
-    "@typescript/native-preview": "catalog:",
-    "eslint": "catalog:",
-    "eslint-config-prettier": "catalog:",
+    "@typescript/native": "catalog:",
     "eslint-plugin-import": "catalog:",
-    "eslint-plugin-jsx-a11y": "catalog:",
-    "eslint-plugin-react": "catalog:",
-    "eslint-plugin-react-hooks": "catalog:",
     "husky": "catalog:",
     "jsdom": "catalog:",
-    "madge": "catalog:",
+    "oxfmt": "catalog:",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:",
     "playwright": "catalog:",
-    "prettier": "catalog:",
     "tslib": "catalog:",
     "tsx": "catalog:",
     "turbo": "catalog:",
-    "typescript": "catalog:",
-    "typescript-eslint": "catalog:"
+    "typescript": "catalog:"
   },
   "devEngines": {
     "runtime": {
@@ -61,5 +50,6 @@
       "version": "24.15.0",
       "onFail": "download"
     }
-  }
+  },
+  "packageManager": "pnpm@11.17.0+sha512.cca3cea332ad254bb84145f966d19f4879615210346fc92c79a047f23a0d7b3cca3c3792f0076ba1f1831d277efbcf0a9119b31a9a60eca7fb3d6231f331ef72"
 }

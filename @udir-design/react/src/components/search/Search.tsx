@@ -1,3 +1,4 @@
+import './search.css';
 import {
   Search as DigdirSearch,
   SearchButton,

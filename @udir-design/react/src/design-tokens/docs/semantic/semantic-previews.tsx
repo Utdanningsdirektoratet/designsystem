@@ -21,7 +21,7 @@ export const Size = ({ value, size }: { value: string; size?: string }) => {
   useEffect(() => {
     if (!document) return;
 
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+    // eslint-disable-next-line react/react-compiler
     setComputedValue(getComputedValue(value, size));
   }, [value, size]);
 
@@ -77,7 +77,7 @@ export const ComputedValue = ({
   useEffect(() => {
     if (!document) return;
 
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+    // eslint-disable-next-line react/react-compiler
     setComputedValue(getComputedValue(value, size));
   }, [value, size]);
 

@@ -1,0 +1,14 @@
+.ds-chip {
+  padding-block: calc(
+    var(--dsc-chip-height) / 2 - var(--dsc-chip-border-width) - 0.5lh
+  );
+
+  &:has(input) {
+    padding-inline-start: calc(
+      var(--dsc-chip-spacing) + var(--ds-size-1) / 2 + var(--dsc-chip-icon-size)
+    );
+  }
+  &:has(input[type='checkbox']) {
+    padding-inline-end: var(--dsc-chip-spacing);
+  }
+}

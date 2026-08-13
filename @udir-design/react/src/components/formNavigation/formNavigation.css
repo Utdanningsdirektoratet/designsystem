@@ -10,7 +10,7 @@
   );
   --uds-form-navigation-invalid-icon: var(--uds-icon-xMarkOctagon);
   --uds-form-navigation-invalid-active-icon: var(--uds-icon-xMarkOctagonFill);
-  --uds-form-navigation-icon-size: 1.3em;
+  --uds-form-navigation-icon-size: var(--ds-icon-size);
 
   display: flex;
   flex-direction: column;

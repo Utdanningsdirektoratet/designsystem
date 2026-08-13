@@ -89,7 +89,7 @@ Vi legger ut melding på Slack-kanalen #designsystem-udir når vi mener en kompo
 
 # Hva tester vi?
 
-I designsystemet har vi med flere nivåer av automatisert testing for alle komponenter.
+I designsystemet har vi flere nivåer av automatisert testing for alle komponenter.
 Vi publiserer aldri nye versjoner av komponentbiblioteket før alle nye eller endrede komponenter har bestått disse testene.
 
 Alle våre automatiserte tester kjører i nettleseren Chromium.
@@ -100,7 +100,7 @@ Vi bruker **komponenttester** for å teste hvordan individuelle komponenter rend
 
 ### Oppførsel
 
-I de tilfellene vi implementerer egen oppførsel for komponenter eller hjelpefunksjoner, vil det finnes **enhetstester** for å teste denne oppførselen isolert.
+I de tilfellene vi implementerer egen oppførsel for komponenter eller hjelpefunksjoner, bruker vi **enhetstester** for å teste denne oppførselen isolert.
 
 ## Demosider
 
@@ -112,11 +112,11 @@ Vi smoketester Next.js-testapplikasjonen i produksjonsmodus og besøker alle dem
 
 ## Felles for komponenter og demosider
 
-Både komponenttester og komposisjonstester er basert på eksempler (eng: _stories_) i Storybook. I tillegg til det som er beskrevet over, får hvert eksempel også automatisk en snapshottest, en visuell test, og en regelbasert UU-test.
+Både komponenttester og komposisjonstester er basert på eksempler (engelsk: _stories_) i Storybook. I tillegg til det som er beskrevet over, får hvert eksempel også automatisk en snapshottest, en visuell test, og en regelbasert UU-test.
 
 **Snapshottester** avdekker uventede endringer i HTML-markupen som blir generert fra hver enkelt komponent, og **visuelle tester** avdekker uventede visuelle endringer i komponentene. Om det er endringer i markup eller utseende vurderer designteamet endringen manuelt for å avgjøre om den er godkjent eller ikke.
 
-Vi bruker bruker [Axe](https://github.com/dequelabs/axe-core) til **regelbaserte UU-tester** for å avdekke vanlige brudd på universell utforming. Disse reglene, som er [beskrevet i Axe sin dokumentasjon](https://github.com/dequelabs/axe-core/blob/master/doc/rule-descriptions.md), kan ikke fange opp alle brudd. Vi supplerer derfor de regelbaserte testene med andre UU-tester som vi gjennomfører i samarbeid med UU-eksperter fra Udirs testteam. Dette kan være manuelle testrutiner eller automatiserte komponent- og komposisjonstester.
+Vi bruker [Axe](https://github.com/dequelabs/axe-core) til **regelbaserte UU-tester** for å avdekke vanlige brudd på universell utforming. Disse reglene, som er [beskrevet i Axe sin dokumentasjon](https://github.com/dequelabs/axe-core/blob/master/doc/rule-descriptions.md), kan ikke fange opp alle brudd. Vi supplerer derfor de regelbaserte testene med andre UU-tester som vi gjennomfører i samarbeid med UU-eksperter fra Udirs testteam. Dette kan være manuelle testrutiner eller automatiserte komponent- og komposisjonstester.
 
 > [!WARNING]
 > Komponenter fra designsystemet er i tråd med UU-tilsynets krav til
@@ -339,7 +339,7 @@ De vanlige stegene for å jobbe i monorepoet er
 > Under panseret kjører `pnpm build` følgende kommando:
 >
 > ```
-> pnpm prettier:check && turbo run typecheck lint test:unit build build:docs
+> pnpm fmt:check && turbo run typecheck lint test:unit build build:docs
 > ```
 
 ### Kjøre tasks med Turborepo
@@ -460,7 +460,7 @@ Testene utføres også automatisk før publisering av kodebibliotekene, og publi
 Fordi vi har noen egne tokensett i tillegg til de fra Digdir er prosessen for å oppdatere dem noe ulik den beskrevet hos Digdir.
 
 1. Oppdater config-fila `design-tokens/designsystemet.config.json`, manuelt eller ved bruk av temabyggeren
-2. Kjør kommandoen `pnpm --filter @udir-design/tokens run create` i terminalen
+2. Kjør kommandoen `pnpm --filter tokens run create` i terminalen
 3. Reverter sletting av våre egne tokensett (`*.overrides.json`)
 4. Se gjennom filene `$metadata.json` og `$themes.json`. Om den eneste endringen er at våre ekstra tokensett er fjernet, kan filene bare reverteres. Ellers må vi integrere endringene fra Digdir med våre ekstra linjer
 5. Kjør `pnpm turbo @udir-design/theme#build` for å oppdatere css-variabler
@@ -523,39 +523,47 @@ Dersom TypeScript-koden skal publiseres, pass på at build-scriptet genererer f�
 
 Vanligvis legger vi koden for hoved-entrypointet i `src/index.ts`.
 
-#### ESLint
+#### Oxlint
 
-For at linting skal fungere trenger du en `eslint.config.js`-fil.
+For at linting skal fungere trenger du en `oxlint.config.ts`-fil.
 
-Her er et minimalt oppsett som kun skrur på basekonfigurasjonen som er definert i rot av monorepoet.
+Her er et minimalt oppsett som kun skrur på basekonfigurasjonen som er definert i rot av monorepoet:
 
-```js
-import { defineConfig } from 'eslint/config';
-import baseConfig from '../../eslint.config.js';
+```ts
+import { defineConfig } from 'oxlint';
+import baseConfig from '../../oxlint.config.ts';
 
-export default defineConfig(baseConfig);
+export default defineConfig({
+  extends: [baseConfig],
+});
 ```
 
-Det kan være relevant å utvide denne med andre forhåndsdefinerte innstillinger, og eventuelt egen konfigurasjon:
+Det kan være relevant å utvide denne med flere plugins og egne regler.
+Merk at `rules`, `plugins` og `overrides` merges additivt fra `extends`,
+mens `categories`, `env`, `settings` og `jsPlugins` arves ved erstatning
+(må derfor gjentas her hvis du overstyrer dem). Gjenbrukbare byggeklosser
+ligger i `oxlint.shared.ts` i rot av monorepoet:
 
-```js
-import { defineConfig } from 'eslint/config';
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
-import baseConfig from '../../eslint.config.js';
+```ts
+import { defineConfig } from 'oxlint';
+import baseConfig from '../../oxlint.config.ts';
+import {
+  jsxA11yOptionRules,
+  reactPackagePlugins,
+  reactPackageRules,
+  reactPackageSettings,
+} from '../../oxlint.shared.ts';
 
-export default defineConfig(
-  react.configs.flat.recommended, // React-regler
-  react.configs.flat['jsx-runtime'], // Fjerner krav om `import React`
-  reactHooks.configs.flat.recommended, // React Hooks-regler
-  baseConfig, // Monorepoets felles eslint-konfigurasjon
-  {
-    settings: { react: { version: 'detect' } },
+export default defineConfig({
+  extends: [baseConfig],
+  plugins: reactPackagePlugins,
+  settings: reactPackageSettings,
+  rules: {
+    ...reactPackageRules,
+    ...jsxA11yOptionRules,
+    // Dine egne regler her.
   },
-  {
-    // Din egen skreddersydde konfigurasjon her
-  },
-);
+});
 ```
 
 #### Turborepo-konfigurasjon
@@ -590,7 +598,7 @@ Hvis pakken trenger egne innstillinger, kan du legge til filen `turbo.json` i pa
 ├── src/
 │   ├── ...
 │   └── index.ts
-├── eslint.config.js
+├── oxlint.config.ts
 ├── README.md
 ├── tsconfig.json
 ├── package.json
@@ -630,7 +638,7 @@ Du trenger da en `package.json` med:
 }
 ```
 
-I disse pakkene trenger du ikke tenke på `"exports"` eller at andre pakker kan være avhengige av de. Sett pakken opp etter anvisning fra dokumentasjonen til teknologien du tester med, men husk å bruke vårt baseoppsett for TypeScript (`tsconfig.base.json`) og ESLint `eslint.config.js`.
+I disse pakkene trenger du ikke tenke på `"exports"` eller at andre pakker kan være avhengige av de. Sett pakken opp etter anvisning fra dokumentasjonen til teknologien du tester med, men husk å bruke vårt baseoppsett for TypeScript (`tsconfig.base.json`) og Oxlint (`oxlint.config.ts`).
 
 ## Hvordan håndtere avhengigheter
 
@@ -717,24 +725,24 @@ Designsystem-bibliotekene fra Digdir er pinnet for å ha full kontroll over hvil
 pnpm update -r --latest "@digdir/*"
 ```
 
-#### `prettier`
+#### `oxfmt`
 
 > [!IMPORTANT]
-> Oppdateringer av `prettier` skjer automatisk [hver mandag kl 02:00 (UTC)](https://github.com/Utdanningsdirektoratet/designsystem/actions/workflows/update-prettier.yml), og eventuelle endringer må godkjennes i en pull request.
+> Oppdateringer av `oxfmt` skjer automatisk [hver mandag kl 02:00 (UTC)](https://github.com/Utdanningsdirektoratet/designsystem/actions/workflows/update-oxfmt.yml), og eventuelle endringer må godkjennes i en pull request.
 
-Siden nye versjoner av `prettier` ofte påvirker kodeformateringen, er denne versjonen pinnet slik at disse endringene kun skjer når vi velger det selv. Det beste er å gjøre følgende på en branch med ingen uncommited changes:
+Siden nye versjoner av `oxfmt` ofte påvirker kodeformateringen, er denne versjonen pinnet slik at disse endringene kun skjer når vi velger det selv. Det beste er å gjøre følgende på en branch med ingen uncommited changes:
 
 ```sh
-pnpm update -r --latest prettier
-git commit --all -m "build: update prettier to $(npm view prettier version)"
-pnpm prettier:write
-git commit --all -m "style: format files with prettier $(npm view prettier version)"
+pnpm update -r --latest oxfmt
+git commit --all -m "build: update oxfmt to $(npm view oxfmt version)"
+pnpm fmt
+git commit --all -m "style: format files with oxfmt $(npm view oxfmt version)"
 echo "# $(git show -s --format='%s')\n$(git rev-parse HEAD)" > .git-blame-ignore-revs
 git commit --all -m "chore: update .git-blame-ignore-revs"
 ```
 
 > [!NOTE]
-> Vi legger commits med Prettier-formatering inn i `.git-blame-ignore-revs` slik at de
+> Vi legger commits med oxfmt-formatering inn i `.git-blame-ignore-revs` slik at de
 > blir ignorert i blame-visningen på GitHub.
 > Les mer om dette i [GitHubs dokumentasjon](https://docs.github.com/en/repositories/working-with-files/using-files/viewing-and-understanding-files#ignore-commits-in-the-blame-view)
 
@@ -802,12 +810,17 @@ Nytt symbol legges til i [Symbolbiblioteket i Figma](https://www.figma.com/desig
 
 Nedlasting av oppdaterte symboler fra Figma gjøres i et lokalt repo av [Udirs Designsystem](https://github.com/Utdanningsdirektoratet/designsystem).
 
-`.env.local` må inneholde gyldig Figma-token: `FIGMA_TOKEN={token}`.
+`.env.local` må inneholde gyldig Figma-token: `FIGMA_TOKEN={token}`. [Les hvordan du lager et personal access token hos Figma](https://help.figma.com/hc/en-us/articles/8085703771159-Manage-personal-access-tokens)
 
-Kjør følgende kommando i `designsystem/@udir-design/symbols`:
+Tokenet må ha følgende scopes:
+
+- `library_content:read`
+- `file_content:read`
+
+Deretter, kjør følgende kommando i `designsystem/@udir-design/symbols`:
 
 ```bash
-pnpm --filter @udir-design/symbols run fetch-new:symbols
+pnpm --filter symbols run fetch-new:symbols
 ```
 
 ### Generere PNG
@@ -819,7 +832,7 @@ Generering av PNG-er gjøres i et lokalt repo av [Udirs Designsystem](https://gi
 Kjør følgende kommando i `designsystem/@udir-design/symbols`:
 
 ```bash
-pnpm --filter @udir-design/symbols run generate:pngs
+pnpm --filter symbols run generate:pngs
 ```
 
 ## Hvordan publisere en ny versjon
@@ -875,8 +888,8 @@ Dette er de viktigste verktøyene og tjenestene vi bruker i designsystemet.
 
 ### Kodekvalitet
 
-- [typescript-eslint](https://typescript-eslint.io/) — statisk analyse av kodebasen for å finne mulige problemer
-- [prettier](https://prettier.io/) — håndterer konsistent formatering av kodebasen
+- [Oxlint](https://oxc.rs/docs/guide/usage/linter/) — statisk analyse av kodebasen for å finne mulige problemer
+- [Oxfmt](https://oxc.rs/docs/guide/usage/formatter/) — håndterer konsistent formatering av kodebasen
 - [commitlint](https://commitlint.js.org/) — sørger for at commits følger [Conventional Commits-standarden for commitmeldinger](https://www.conventionalcommits.org/en/v1.0.0/), slik at vi lettere kan lage endringslogg
 
 # Thanks

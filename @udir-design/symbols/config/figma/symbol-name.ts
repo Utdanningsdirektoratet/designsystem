@@ -1,5 +1,7 @@
 import { PublishedComponent } from '@figma/rest-api-spec';
-import { upperFirst } from 'lodash-es';
+
+export const upperFirst = (string: string) =>
+  string.charAt(0).toUpperCase() + string.slice(1);
 
 export const resolveName = (icon: PublishedComponent) => {
   const variant = icon.name.replace('Style=', '').trim();

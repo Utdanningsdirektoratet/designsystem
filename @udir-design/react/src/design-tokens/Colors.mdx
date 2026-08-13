@@ -9,8 +9,8 @@ import {
   DatavisColorDisplay,
   DatavisValueColorDisplay,
   DatavisGradient,
-  DatavisSeqColorDisplay,
-  DatavisSeqDivColorDisplay,
+  DatavisGenSeqColorDisplay,
+  DatavisGenSeqDivColorDisplay,
   DatavisDivGradient,
 } from './docs/color/datavis-color-display';
 
@@ -76,32 +76,35 @@ For kategorier som allerede har en naturlig rekkefølge, for eksempel kvartaler,
 
 ### Sekvensiell data
 
-<SimpleAlert type="warning">
-  De sekvensielle palettene er under arbeid. Fargene kan endres eller fjernes i
-  nær fremtid.
-</SimpleAlert>
+Vi tilbyr to paletter for sekvensielle data:
 
-**Sekvensielle paletter:**
+- **Monokromatisk palett** – for data med naturlig rekkefølge fra lav til høy.
 
-- **Monokromatisk palett** - For data med naturlig rekkefølge fra lav til høy.
+- **Divergerende palett** – for data med avvik fra et midtpunkt.
 
-- **Divergerende palett** - For data med avvik fra et midtpunkt.
+For begge palettene er fargenyansene de samme i både light mode og dark mode.
+
+Fargenyansene kan enten være klart adskilt eller ha en jevn overgang avhgengig av hvor mange nyanser du velger å generere:
+jo flere nyanser, jo jevnere vil overgangen mellom dem være. Det er derfor ingen automatikk i at to nyanser har god nok kontrast
+til å stå ved siden av hverandre uten ekstra hjelpemidler som f.eks. skravering eller ledetekst.
 
 #### Monokromatisk palett
 
-Sekvensiell eller numerisk data som har en naturlig rekkefølge fra lav til høy verdi bruker en monokromatisk fargepalett i én fargeskala fra lys til mørk, der mørkere farge indikerer høyere verdi. Fargenyansene kan enten være klart adskilt eller ha en jevn overgang.
+Data som har en naturlig rekkefølge fra lav til høy verdi bruker en monokromatisk fargepalett i én fargeskala fra lys til mørk, der mørkere farge indikerer høyere verdi.
 
-Monokromatisk palett bruker samme fargeverdier i både light mode og dark mode.
+<DatavisGenSeqColorDisplay showCssSnippet={false} />
 
-<DatavisSeqColorDisplay />
+<br />
 
 <DatavisGradient />
 
 #### Divergerende palett
 
-Numeriske data med avvik fra et midtpunkt bruker en divergerende palett med to monokromatiske fargepaletter som står i kontrast til hverandre med en nøytral farge som midtpunkt. Mørkere farge indikerer høyere verdi. Dette er godt egnet for å vise data over og under et midtpunkt, som for eksempel elevers prestasjonsforskjeller i en nasjonal prøve.
+Data med avvik over og under et midtpunkt bruker en divergerende palett med to monokromatiske fargepaletter. Disse står i kontrast til hverandre med en nøytral farge som midtpunkt, og mørkere farge indikerer større avvik fra midtpunktet.
 
-<DatavisSeqDivColorDisplay />
+<DatavisGenSeqDivColorDisplay showCssSnippet={false} />
+
+<br />
 
 <DatavisDivGradient />
 

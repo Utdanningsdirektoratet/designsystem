@@ -19,10 +19,7 @@ exports[`Checked 1`] = `
 
 exports[`Controlled 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     <h2>
       Innstillinger
     </h2>
@@ -41,7 +38,7 @@ exports[`Controlled 1`] = `
       Varsler
     </label>
   </ds-field>
-  <p data-variant="default">
+  <p>
     Velg hvilke typer varsler du ønsker å motta.
   </p>
   <ds-field data-clickdelegatefor="<removed>">
@@ -143,10 +140,7 @@ exports[`Focused 1`] = `
 
 exports[`Group 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     Varsler
   </legend>
   <ds-field data-clickdelegatefor="<removed>">
@@ -218,18 +212,12 @@ exports[`Group 1`] = `
 
 exports[`Group End 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     <h2>
       Innstillinger
     </h2>
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Innstillinger som gjelder hele systemet.
   </p>
   <ds-field
@@ -272,10 +260,7 @@ exports[`Group End 1`] = `
 
 exports[`Outline 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     Varsler
   </legend>
   <ds-field

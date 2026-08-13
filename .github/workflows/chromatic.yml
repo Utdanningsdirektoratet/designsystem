@@ -23,7 +23,7 @@ jobs:
       CHROMATIC_EXIT_ZERO_ON_CHANGES: true
       CHROMATIC_EXIT_ONCE_UPLOADED: true
     steps:
-      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
 
@@ -32,16 +32,31 @@ jobs:
       - name: Build storybook
         run: pnpm turbo run build:docs --filter=@udir-design/react
 
+      # Resolve the commit to diff runtime dependencies against. Prefer the most
+      # recent ancestor commit that already has a successful Chromatic build
+      # (the commit Chromatic will baseline TurboSnap against), so that pushing
+      # dependency-free commits to a PR that once changed deps can re-enable
+      # TurboSnap instead of being stuck on full builds. Falls back to
+      # TURBO_SCM_BASE (the PR target branch) when no such commit exists.
+      - name: Resolve dependency-diff base
+        id: dep_diff_base
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BASE=$(./@internal/ci/bin/resolve-chromatic-base.ts)
+          echo "Resolved dependency-diff base: $BASE"
+          echo "base=$BASE" >> "$GITHUB_OUTPUT"
+
       - name: Check runtime dependency changes
         id: diff_runtime_deps
         run: |
-          pnpm tsx ./@internal/ci/bin/diff-runtime-deps.ts --base "${TURBO_SCM_BASE:-main}" \
+          pnpm tsx ./@internal/ci/bin/diff-runtime-deps.ts --base "${{ steps.dep_diff_base.outputs.base }}" \
             && echo "deps_changed=false" >> "$GITHUB_OUTPUT" \
             || echo "deps_changed=true" >> "$GITHUB_OUTPUT"
 
       - name: Publish Storybook to Chromatic (TurboSnap)
         if: steps.diff_runtime_deps.outputs.deps_changed != 'true'
-        uses: chromaui/action@1db61b73b7919508ee8e62336f04bd0aed6da756 # v17.4.1
+        uses: chromaui/action@14cfaef73576e69f95f47f60058063f46ca38719 # v18.1.0
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: ${{ env.CHROMATIC_WORKING_DIR }}
@@ -72,7 +87,7 @@ jobs:
 
       - name: Publish Storybook to Chromatic (full build)
         if: steps.diff_runtime_deps.outputs.deps_changed == 'true'
-        uses: chromaui/action@1db61b73b7919508ee8e62336f04bd0aed6da756 # v17.4.1
+        uses: chromaui/action@14cfaef73576e69f95f47f60058063f46ca38719 # v18.1.0
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: ${{ env.CHROMATIC_WORKING_DIR }}

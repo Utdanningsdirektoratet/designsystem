@@ -1,4 +1,4 @@
-import type { Size } from '@digdir/designsystemet-react';
+import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
 import type { HTMLAttributes, ReactNode } from 'react';
 import { forwardRef, useEffect, useId, useRef } from 'react';
@@ -62,8 +62,8 @@ export const FileUploadTrigger = forwardRef<HTMLDivElement, FileUploadProps>(
     const fileInputRef = useRef<HTMLInputElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
     const cssVar = inputProps?.multiple
-      ? '--udsc-fileUpload-addFiles-text'
-      : '--udsc-fileUpload-addFile-text';
+      ? '--udsc-fileUpload-chooseFiles-text'
+      : '--udsc-fileUpload-chooseFile-text';
     // This is to make sure accessibility tests pass. Not actually necessary to make screenreaders announce the button.
     useEffect(() => {
       if (typeof window === 'undefined' || !buttonRef.current) return;
@@ -112,6 +112,7 @@ export const FileUploadTrigger = forwardRef<HTMLDivElement, FileUploadProps>(
           {/* Text in css */}
         </Button>
         <input
+          className="ds-input"
           type="file"
           ref={fileInputRef}
           {...inputProps}

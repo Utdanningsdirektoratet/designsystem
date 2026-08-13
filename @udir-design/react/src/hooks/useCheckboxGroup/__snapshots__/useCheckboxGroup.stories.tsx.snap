@@ -1,11 +1,17 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Controlled 1`] = `
+<style>
+  .checkbox-group-controlled-section {
+  display: flex;
+  gap: var(--ds-size-2);
+}
+.checkbox-group-controlled-button {
+  width: fit-content;
+}
+</style>
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     Utdanningsnivå
   </legend>
   <ds-field data-clickdelegatefor="<removed>">
@@ -60,12 +66,12 @@ exports[`Controlled 1`] = `
 >
 </p>
 <hr aria-hidden="true">
-<p data-variant="default">
+<p>
   (Annet innhold)
 </p>
 <hr aria-hidden="true">
-<div style="<removed>">
-  <p data-variant="default">
+<div>
+  <p>
     Viser innhold for:
   </p>
   <button
@@ -86,7 +92,6 @@ exports[`Controlled 1`] = `
 <button
   data-variant="secondary"
   type="button"
-  style="<removed>"
 >
   Tøm filtre
 </button>
@@ -148,16 +153,10 @@ exports[`Default 1`] = `
 
 exports[`Disabled 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Velg de alternativene som er relevante for deg.
   </p>
   <ds-field data-clickdelegatefor="<removed>">
@@ -217,16 +216,10 @@ exports[`Disabled 1`] = `
 
 exports[`Group 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Velg de alternativene som er relevante for deg.
   </p>
   <ds-field data-clickdelegatefor="<removed>">
@@ -282,10 +275,18 @@ exports[`Group 1`] = `
 `;
 
 exports[`Indeterminate In Table 1`] = `
+<style>
+  .checkbox-group-col-1 {
+          width: 1px;
+        }
+        .checkbox-group-col-2 {
+          width: 10em;
+        }
+</style>
 <table>
   <colgroup>
-    <col style="<removed>">
-    <col style="<removed>">
+    <col>
+    <col>
     <col>
   </colgroup>
   <thead>
@@ -394,16 +395,10 @@ exports[`Indeterminate In Table 1`] = `
 
 exports[`Outline 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Velg de alternativene som er relevante for deg.
   </p>
   <ds-field
@@ -469,16 +464,10 @@ exports[`Outline 1`] = `
 
 exports[`Read Only 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Velg de alternativene som er relevante for deg.
   </p>
   <ds-field data-clickdelegatefor="<removed>">
@@ -538,16 +527,10 @@ exports[`Read Only 1`] = `
 
 exports[`With Error 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     Hvordan vil du helst at vi skal kontakte deg?
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Velg de alternativene som er relevante for deg.
   </p>
   <ds-field data-clickdelegatefor="<removed>">

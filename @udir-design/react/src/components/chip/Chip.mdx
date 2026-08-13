@@ -60,7 +60,7 @@ import { Chip } from '@udir-design/react';
 
 ### Chip.Radio
 
-`Chip.Radio` kan brukast som eit alternativ til `Radio` når brukaren kun kan bruke eit filter av ganga.
+`Chip.Radio` kan brukast som eit alternativ til `Radio` når brukaren kun kan bruke eitt filter om gongen.
 
 <Canvas of={ChipStories.Radio} />
 
@@ -75,6 +75,16 @@ import { Chip } from '@udir-design/react';
 Du kan bruke alle identitetsfargane på `Chip`.
 
 <Canvas of={ChipStories.Colors} />
+
+### Med tekst over fleire linjer
+
+`Chip` tvinger som standard tekst til ei enkelt linje, og forkortar teksten med ellipse om teksten er for lang.
+
+<Canvas of={ChipStories.Nowrap} />
+
+Bruk `data-wrap="wrap"` dersom du ønsker å tillate tekst over fleire linjer inne i `Chip`.
+
+<Canvas of={ChipStories.Wrap} />
 
 ## Retningslinjer
 

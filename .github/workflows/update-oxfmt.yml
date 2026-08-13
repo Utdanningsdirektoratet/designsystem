@@ -1,0 +1,52 @@
+name: Update oxfmt
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs at 02:00, only on Monday
+    - cron: 0 2 * * 1
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-oxfmt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: ./.github/actions/pnpm-setup
+      - name: Configure git user
+        run: |
+          # Setup the committers identity.
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+      - name: Check if update is necessary
+        run: echo "version=$(pnpm outdated -r oxfmt --json | jq -r '.oxfmt.latest // ""')" >> "$GITHUB_OUTPUT"
+        id: oxfmt_info
+
+      - name: Update oxfmt and format all files
+        if: steps.oxfmt_info.outputs.version
+        id: oxfmt_run
+        run: |
+          pnpm update -r --latest oxfmt && pnpm dedupe
+          git commit --all -m "build: update oxfmt to ${{ steps.oxfmt_info.outputs.version }}"
+          pnpm fmt
+          echo has_changes="$(git diff --stat --exit-code)" >> "$GITHUB_OUTPUT"
+
+      - name: Commit changes and update .git-blame-ignore-revs
+        if: steps.oxfmt_run.outputs.has_changes == 1
+        run: |
+          git commit --all -m "style: format files with oxfmt ${{ steps.oxfmt_info.outputs.version }}"
+          echo "# $(git show -s --format='%s')\n$(git rev-parse HEAD)" >> .git-blame-ignore-revs
+          git commit --all -m "chore: update .git-blame-ignore-revs"
+
+      - name: Create or update pull request
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          branch: build/update-oxfmt
+          base: ${{ github.event.repository.default_branch }}
+          author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+          title: 'build: update oxfmt to ${{ steps.oxfmt_info.outputs.version }}'
+          body: Updates oxfmt to the latest version and formats all files
+          draft: always-true

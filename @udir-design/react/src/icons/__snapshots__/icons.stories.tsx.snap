@@ -1,6 +1,13 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Fill Icons 1`] = `
+<style>
+  .icons-fill-icons-grid{
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--a-gray-900);
+}
+</style>
 <div>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -7598,6 +7605,23 @@ exports[`Fill Icons 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
+    aria-label="TimelineFillIcon"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      d="M18 3a3 3 0 0 1 3 3v12l-.004.154a3 3 0 0 1-2.842 2.842L18 21H6l-.154-.004a3 3 0 0 1-2.842-2.842L3 18V6a3 3 0 0 1 3-3zm-8 12.25a.75.75 0 0 0 0 1.5h7a.75.75 0 0 0 0-1.5zm-3-4a.75.75 0 0 0 0 1.5h7a.75.75 0 0 0 0-1.5zm3-4a.75.75 0 0 0 0 1.5h7a.75.75 0 0 0 0-1.5z"
+    >
+    </path>
+  </svg>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="3rem"
+    height="3rem"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
     aria-label="TimerFillIcon"
     aria-hidden="true"
   >
@@ -8084,20 +8108,16 @@ exports[`Fill Icons 1`] = `
     >
     </path>
   </svg>
-  <style>
-    .icons{
-            display: flex;
-            flex-wrap: wrap;
-            background: var(--a-gray-900);
-          }
-          .icon-color{
-            color: var(--a-icon-on-inverted);
-          }
-  </style>
 </div>
 `;
 
 exports[`Outline Icons 1`] = `
+<style>
+  .icons-outline-icon-grid{
+  display: flex;
+  flex-wrap: wrap;
+}
+</style>
 <div>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -17523,6 +17543,23 @@ exports[`Outline Icons 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
+    aria-label="TimelineIcon"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      d="M18 3a3 3 0 0 1 3 3v12l-.004.154a3 3 0 0 1-2.842 2.842L18 21H6l-.154-.004a3 3 0 0 1-2.842-2.842L3 18V6a3 3 0 0 1 3-3zM6 4.5A1.5 1.5 0 0 0 4.5 6v12A1.5 1.5 0 0 0 6 19.5h12a1.5 1.5 0 0 0 1.5-1.5V6A1.5 1.5 0 0 0 18 4.5zm11 10.75a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1 0-1.5zm-3-4a.75.75 0 0 1 0 1.5H7a.75.75 0 0 1 0-1.5zm3-4a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1 0-1.5z"
+    >
+    </path>
+  </svg>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="3rem"
+    height="3rem"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
     aria-label="TimerIcon"
     aria-hidden="true"
   >
@@ -18172,11 +18209,5 @@ exports[`Outline Icons 1`] = `
     >
     </path>
   </svg>
-  <style>
-    .icons{
-            display: flex;
-            flex-wrap: wrap;
-          }
-  </style>
 </div>
 `;

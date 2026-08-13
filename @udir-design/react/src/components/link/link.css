@@ -9,4 +9,7 @@
   &:focus-visible {
     text-decoration: none;
   }
+
+  /* adjust icon size to before Digdir v1.16.0 */
+  --ds-icon-size: 1em;
 }

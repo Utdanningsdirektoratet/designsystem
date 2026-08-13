@@ -52,22 +52,26 @@ export const Preview = meta.story({
         },
       });
     return (
-      <div
-        style={{
-          display: 'flex',
-          gap: 'var(--ds-size-18)',
-          justifyContent: 'center',
-        }}
-      >
-        <FileUpload.Trigger {...args} inputProps={{ ...args.inputProps }} />
-        <FileUpload.Dropzone
-          {...args}
-          inputProps={getInputProps({ ...args.inputProps })}
-          isDragGlobal={isDragGlobal}
-          isDragActive={isDragActive}
-          cardProps={getRootProps()}
-        />
-      </div>
+      <>
+        <style>
+          {`
+        .file-upload-preview-main {
+          display: flex;
+          gap: var(--ds-size-18);
+          justify-content: center;
+        }`}
+        </style>
+        <div className="file-upload-preview-main">
+          <FileUpload.Trigger {...args} inputProps={{ ...args.inputProps }} />
+          <FileUpload.Dropzone
+            {...args}
+            inputProps={getInputProps({ ...args.inputProps })}
+            isDragGlobal={isDragGlobal}
+            isDragActive={isDragActive}
+            cardProps={getRootProps()}
+          />
+        </div>
+      </>
     );
   },
 });
@@ -75,29 +79,33 @@ export const Preview = meta.story({
 export const Readonly = meta.story({
   render: (args) => {
     return (
-      <div
-        style={{
-          background: 'var(--ds-color-neutral-surface-tinted)',
-          display: 'flex',
-          gap: 'var(--ds-size-12)',
-          justifyContent: 'center',
-          padding: 'var(--ds-size-8)',
-          borderRadius: 'var(--ds-border-radius-md)',
-        }}
-      >
-        <FileUpload.Trigger
-          {...args}
-          inputProps={{ readOnly: true }}
-          label="Lesemodus"
-          description="Beskrivelse for Trigger"
-        />
-        <FileUpload.Dropzone
-          {...args}
-          inputProps={{ readOnly: true, max: 2 }}
-          label="Lesemodus"
-          description="Beskrivelse for Dropzone"
-        />
-      </div>
+      <>
+        <style>
+          {`
+.file-upload-readonly-main {
+  background: var(--ds-color-neutral-surface-tinted);
+  display: flex;
+  gap: var(--ds-size-12);
+  justify-content: center;
+  padding: var(--ds-size-8);
+  border-radius: var(--ds-border-radius-md);
+}`}
+        </style>
+        <div className="file-upload-readonly-main">
+          <FileUpload.Trigger
+            {...args}
+            inputProps={{ readOnly: true }}
+            label="Lesemodus"
+            description="Beskrivelse for Trigger"
+          />
+          <FileUpload.Dropzone
+            {...args}
+            inputProps={{ readOnly: true, max: 2 }}
+            label="Lesemodus"
+            description="Beskrivelse for Dropzone"
+          />
+        </div>
+      </>
     );
   },
 });
@@ -230,7 +238,7 @@ export const TooManyFiles = meta.story({
   render: (args) => {
     const [files, setFiles] = useState<File[]>([
       new File(['abc'.repeat(100000)], 'eksempel1.pdf'),
-      new File(['abc'.repeat(10000)], 'eksempel2.docx'),
+      new File(['abc'.repeat(3000)], 'eksempel2.docx'),
       new File(['abc'.repeat(1000000)], 'eksempel3.png'),
     ]);
 
@@ -249,43 +257,47 @@ export const TooManyFiles = meta.story({
       });
 
     return (
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 'var(--ds-size-3)',
-        }}
-      >
-        <FileUpload.Dropzone
-          label="Last opp dokumentasjon"
-          description="Du kan kun laste opp 2 filer."
-          data-testid="dropzone"
-          error={
-            files.length > 2 &&
-            'Du har lastet opp for mange filer. Fjern noen for å kunne sende inn skjemaet.'
-          }
-          inputProps={getInputProps()}
-          cardProps={getRootProps()}
-          isDragGlobal={isDragGlobal}
-          isDragActive={isDragActive}
-          style={{ maxWidth: '450px', width: '100%' }}
-          {...args}
-        />
-        {files.length > 0 && (
-          <>
-            <Heading level={3} data-size="2xs">
-              Vedlegg ({files.length}):
-            </Heading>
-            {files.map((file, index) => (
-              <FileUpload.Item
-                key={index}
-                file={file}
-                onRemove={() => removeFile(file)}
-              />
-            ))}
-          </>
-        )}
-      </div>
+      <>
+        <style>
+          {`
+        .file-upload-too-many-files-main {
+          display: flex;
+          flex-direction: column;
+          gap: var(--ds-size-3);
+        }`}
+        </style>
+        <div className="file-upload-too-many-files-main">
+          <FileUpload.Dropzone
+            label="Last opp dokumentasjon"
+            description="Du kan kun laste opp 2 filer."
+            data-testid="dropzone"
+            error={
+              files.length > 2 &&
+              'Du har lastet opp for mange filer. Fjern noen for å kunne sende inn skjemaet.'
+            }
+            inputProps={getInputProps()}
+            cardProps={getRootProps()}
+            isDragGlobal={isDragGlobal}
+            isDragActive={isDragActive}
+            style={{ maxWidth: '450px', width: '100%' }}
+            {...args}
+          />
+          {files.length > 0 && (
+            <>
+              <Heading level={3} data-size="2xs">
+                Vedlegg ({files.length}):
+              </Heading>
+              {files.map((file, index) => (
+                <FileUpload.Item
+                  key={index}
+                  file={file}
+                  onRemove={() => removeFile(file)}
+                />
+              ))}
+            </>
+          )}
+        </div>
+      </>
     );
   },
 });
@@ -297,6 +309,7 @@ const ErrorMessages = new Map<string, string>([
 ]);
 
 export const ExampleTrigger = meta.story({
+  parameters: { docs: advancedCodeDocs },
   args: {
     label: 'Last opp profilbilde',
     description: 'Du kan laste opp filer i PNG- og JPEG-format.',
@@ -313,30 +326,34 @@ export const ExampleTrigger = meta.story({
     };
 
     return (
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 'var(--ds-size-3)',
-        }}
-      >
-        <FileUpload.Trigger
-          inputProps={{
-            accept: 'image/png, image/jpeg',
-          }}
-          onChange={(e) => handleOnChange(e)}
-          data-testid="trigger"
-          {...args}
-        />
-        {file && (
-          <>
-            <Heading level={3} data-size="2xs">
-              Vedlegg (1):
-            </Heading>
-            <FileUpload.Item file={file} onRemove={() => setFile(null)} />
-          </>
-        )}
-      </div>
+      <>
+        <style>
+          {`
+        .file-upload-example-trigger-main {
+          display: flex;
+          flex-direction: column;
+          gap: var(--ds-size-3);
+        }`}
+        </style>
+        <div className="file-upload-example-trigger-main">
+          <FileUpload.Trigger
+            inputProps={{
+              accept: 'image/png, image/jpeg',
+            }}
+            onChange={(e) => handleOnChange(e)}
+            data-testid="trigger"
+            {...args}
+          />
+          {file && (
+            <>
+              <Heading level={3} data-size="2xs">
+                Vedlegg (1):
+              </Heading>
+              <FileUpload.Item file={file} onRemove={() => setFile(null)} />
+            </>
+          )}
+        </div>
+      </>
     );
   },
   play: async ({ canvasElement, step }) => {
@@ -360,7 +377,8 @@ export const ExampleTrigger = meta.story({
 });
 
 export const ExampleItems = meta.story({
-  render: () => {
+  parameters: { docs: advancedCodeDocs },
+  render: (args) => {
     const dummyFiles: File[] = [
       new File(['abc'.repeat(100000)], 'eksempel1.pdf'),
       new File(['abc'.repeat(10000)], 'eksempel2.docx'),
@@ -387,55 +405,110 @@ export const ExampleItems = meta.story({
     };
 
     return (
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 'var(--ds-size-3)',
-        }}
-      >
-        {files.length > 0 && (
-          <>
-            <Heading level={3} data-size="2xs">
-              Vedlegg ({files.length}):
-            </Heading>
-            {files.map((file, index) => (
-              <FileUpload.Item
-                key={index}
-                file={file}
-                readonly={index === 2 && true}
-                loading={index === 3 && true}
-                onRemove={() => removeFile(file)}
-              />
-            ))}
-          </>
-        )}
-        {rejected.length > 0 && (
-          <>
-            <Heading
-              level={3}
-              data-size="2xs"
-              style={{ marginBlockStart: 'var(--ds-size-3)' }}
-            >
-              Vedlegg med feil:
-            </Heading>
-            {rejected.map((file, index) => (
-              <FileUpload.Item
-                key={index}
-                file={file}
-                onRemove={() => removeRejected(file)}
-                error={'Filformatet støttes ikke'}
-              />
-            ))}
-          </>
-        )}
-      </div>
+      <>
+        <style>
+          {`
+        .file-upload-example-items-main {
+          display: flex;
+          flex-direction: column;
+          gap: var(--ds-size-3);
+        }`}
+        </style>
+        <div className="file-upload-example-items-main">
+          {files.length > 0 && (
+            <>
+              <Heading level={3} data-size="2xs">
+                Vedlegg ({files.length}):
+              </Heading>
+              {files.map((file, index) => (
+                <FileUpload.Item
+                  key={index}
+                  file={file}
+                  description={`Filopplasting ${index + 1}`}
+                  readonly={index === 2 && true}
+                  loading={index === 3 && true}
+                  onRemove={() => removeFile(file)}
+                />
+              ))}
+            </>
+          )}
+          {rejected.length > 0 && (
+            <>
+              <Heading
+                level={3}
+                data-size="2xs"
+                style={{ marginBlockStart: 'var(--ds-size-3)' }}
+              >
+                Vedlegg med feil:
+              </Heading>
+              {rejected.map((file, index) => (
+                <FileUpload.Item
+                  {...args}
+                  key={index}
+                  file={file}
+                  onRemove={() => removeRejected(file)}
+                  error={'Filformatet støttes ikke'}
+                />
+              ))}
+            </>
+          )}
+        </div>
+      </>
     );
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step('All file items are rendered', async () => {
+      await expect(canvas.getByText('eksempel1.pdf')).toBeInTheDocument();
+      await expect(canvas.getByText('eksempel2.docx')).toBeInTheDocument();
+      await expect(canvas.getByText('eksempel3.png')).toBeInTheDocument();
+      await expect(canvas.getByText('eksempel4.pdf')).toBeInTheDocument();
+      await expect(canvas.getByText('eksempel5.tsx')).toBeInTheDocument();
+    });
+
+    await step('Error message is shown for rejected file', async () => {
+      await expect(
+        canvas.getByText('Filformatet støttes ikke'),
+      ).toBeInTheDocument();
+    });
+
+    await step('Readonly and loading items have no remove button', async () => {
+      const removeButtons = canvas.getAllByRole('button');
+      await expect(removeButtons).toHaveLength(3);
+    });
+
+    await step('Loading item shows a spinner', async () => {
+      await expect(
+        canvas.getByRole('img', { name: 'spinner' }),
+      ).toBeInTheDocument();
+    });
+
+    await step('Loading item has aria-busy set', async () => {
+      const busyItem = canvasElement.querySelector('[aria-busy="true"]');
+      await expect(busyItem).toBeInTheDocument();
+    });
+
+    await step('Error item has aria-invalid set', async () => {
+      const invalidItem = canvasElement.querySelector('[aria-invalid="true"]');
+      await expect(invalidItem).toBeInTheDocument();
+    });
+
+    await step('Description is shown for normal items', async () => {
+      await expect(canvas.getByText('Filopplasting 1')).toBeInTheDocument();
+    });
+
+    await step('Clicking remove deletes the file from the list', async () => {
+      const removeButtons = canvas.getAllByRole('button');
+      await userEvent.click(removeButtons[0]);
+      await expect(canvas.queryByText('eksempel1.pdf')).not.toBeInTheDocument();
+    });
   },
 });
 
 export const Upload = meta.story({
-  render: () => {
+  parameters: { docs: advancedCodeDocs },
+  render: (args) => {
     const [file, setFile] = useState<File | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
 
@@ -453,31 +526,62 @@ export const Upload = meta.story({
       }
     };
     return (
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 'var(--ds-size-3)',
-        }}
-      >
-        <FileUpload.Trigger
-          label="Last opp rapport"
-          description="Du kan legge ved 1 fil."
-          onChange={handleOnChange}
-        />
-        {file && (
-          <>
-            <Heading level={3} data-size="2xs">
-              Vedlegg (1):
-            </Heading>
-            <FileUpload.Item
-              loading={loading}
-              file={file}
-              onRemove={() => setFile(null)}
-            />
-          </>
-        )}
-      </div>
+      <>
+        <style>
+          {`
+        .file-upload-upload-main {
+          display: flex;
+          flex-direction: column;
+          gap: var(--ds-size-3);
+        }`}
+        </style>
+        <div className="file-upload-upload-main">
+          <FileUpload.Trigger
+            label="Last opp rapport"
+            description="Du kan legge ved 1 fil."
+            onChange={handleOnChange}
+            {...args}
+          />
+          {file && (
+            <>
+              <Heading level={3} data-size="2xs">
+                Vedlegg (1):
+              </Heading>
+              <FileUpload.Item
+                loading={loading}
+                file={file}
+                onRemove={() => setFile(null)}
+              />
+            </>
+          )}
+        </div>
+      </>
     );
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const fileInput = canvasElement.querySelector('input') as HTMLInputElement;
+    const dummyFile = new File(['abc'.repeat(100000)], 'rapport.pdf', {
+      type: 'application/pdf',
+    });
+
+    await step('Trigger input exists', async () => {
+      await expect(fileInput).toBeTruthy();
+    });
+
+    await step('No file item shown before upload', async () => {
+      await expect(canvas.queryByText('rapport.pdf')).not.toBeInTheDocument();
+    });
+
+    await step('File item appears after upload', async () => {
+      await userEvent.upload(fileInput, dummyFile);
+      await expect(await canvas.findByText('rapport.pdf')).toBeInTheDocument();
+    });
+
+    await step('Item shows loading spinner after upload', async () => {
+      await expect(
+        canvas.getByRole('img', { name: 'spinner' }),
+      ).toBeInTheDocument();
+    });
   },
 });

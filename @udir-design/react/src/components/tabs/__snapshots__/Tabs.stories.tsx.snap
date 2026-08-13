@@ -1,31 +1,212 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Card Panel 1`] = `
+<style>
+  .tabs {
+          max-width: 40rem;
+          margin-top: var(--ds-size-4);
+        }
+</style>
+<h2>
+  Designtokens
+</h2>
+<ds-tabs data-variant="card">
+  <ds-tablist role="tablist">
+    <ds-tab
+      aria-controls="_r_f_-value1"
+      aria-selected="true"
+      data-value="value1"
+      role="tab"
+      tabindex="0"
+      id="<removed>"
+    >
+      Farger
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_f_-value2"
+      aria-selected="false"
+      data-value="value2"
+      role="tab"
+      tabindex="-1"
+    >
+      Størrelser
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_f_-value3"
+      aria-selected="false"
+      data-value="value3"
+      role="tab"
+      tabindex="-1"
+    >
+      Responsivitet
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_f_-value4"
+      aria-selected="false"
+      data-value="value4"
+      role="tab"
+      tabindex="-1"
+    >
+      Spacing
+    </ds-tab>
+  </ds-tablist>
+  <ds-tabpanel
+    id="<removed>"
+    data-variant="card"
+    role="tabpanel"
+    aria-hidden="false"
+    tabindex="0"
+    aria-labelledby="<removed>"
+  >
+    <div>
+      <p>
+        Fargene for brukergrensesnitt er delt opp i underkategorier for identitetsfarger og varselfarger. Disse fargene er testet for kontrast og tilgjengelighet, og de gir forutsigbarhet og konsistens på tvers av komponenter og plattformer. Når du bruker fargene skal du alltid referere til design tokens, ikke hardkodede verdier.
+      </p>
+      <p>
+        Farger i denne gruppen brukes for eksempel på komponenter som knapper, bakgrunner, lenker, ikoner og lignende.
+      </p>
+    </div>
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="<removed>"
+    data-variant="card"
+    role="tabpanel"
+    aria-hidden="true"
+    hidden
+  >
+    <div>
+      <p>
+        Vi bruker størrelsesvariabler (design tokens) for å definere spacing (mellomrom), sizing (bredder og høyder) og fontstørrelser på en konsistent måte. Verdien til størrelsesvariabler avhenger av hvilken størrelsesmodus som er aktiv. Du kan endre størrelsesmodus ved å sette data-size-attributtet i kode eller size mode i Figma.
+      </p>
+    </div>
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="<removed>"
+    data-variant="card"
+    role="tabpanel"
+    aria-hidden="true"
+    hidden
+  >
+    <div>
+      <p>
+        For å styre størrelsesmodus i kode kan man sette
+        <code>
+          data-size='sm'
+        </code>
+        ,
+        <code>
+          data-size='md'
+        </code>
+        eller
+        <code>
+          data-size='lg'
+        </code>
+        , typisk på et rot-element, men det er ofte lurt å sette størrelsesmodus basert på brukerens skjermstørrelse.
+      </p>
+    </div>
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="<removed>"
+    data-variant="card"
+    role="tabpanel"
+    aria-hidden="true"
+    hidden
+  >
+    <div>
+      <p>
+        Størrelsesvariablene kan brukes til avstander slik som for eksempel marger og avstand mellom avsnitt i tekst. De kan også brukes til å sette bredder og høyder på elementer, for eksempel knapper og input-felt. Det er viktig å bruke størrelsesvariablene riktig for å sikre konsistens i designet ditt.
+      </p>
+    </div>
+  </ds-tabpanel>
+</ds-tabs>
+`;
+
+exports[`Card Variant 1`] = `
+<ds-tabs data-variant="card">
+  <ds-tablist role="tablist">
+    <ds-tab
+      aria-controls="_r_e_-value1"
+      aria-selected="true"
+      data-value="value1"
+      role="tab"
+      tabindex="0"
+      id="<removed>"
+    >
+      Tab 1
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_e_-value2"
+      aria-selected="false"
+      data-value="value2"
+      role="tab"
+      tabindex="-1"
+    >
+      Tab 2
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_e_-value3"
+      aria-selected="false"
+      data-value="value3"
+      role="tab"
+      tabindex="-1"
+    >
+      Tab 3
+    </ds-tab>
+  </ds-tablist>
+  <ds-tabpanel
+    id="<removed>"
+    role="tabpanel"
+    aria-hidden="false"
+    tabindex="0"
+    aria-labelledby="<removed>"
+  >
+    Innhold for tab 1
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="<removed>"
+    role="tabpanel"
+    aria-hidden="true"
+    hidden
+  >
+    Innhold for tab 2
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="<removed>"
+    role="tabpanel"
+    aria-hidden="true"
+    hidden
+  >
+    Innhold for tab 3
+  </ds-tabpanel>
+</ds-tabs>
+`;
+
 exports[`Controlled 1`] = `
 <style>
-  .example-list-unordered {
-            list-style: none;
-            padding: 0;
-          }
-          .example-list-item {
-            display: flex;
-           }
-          .example-list-content {
-            align-items: center;
-            display: flex;
-            gap: var(--ds-size-2);
-          }
-          .example-list-header {
-            margin-bottom: var(--ds-size-2);
-            margin-top: var(--ds-size-4);
-          }
+  .tabs-controlled-list-unordered {
+          list-style: none;
+          padding: 0;
+        }
+        .tabs-controlled-list-item {
+          display: flex;
+        }
+        .tabs-controlled-list-content {
+          align-items: center;
+          display: flex;
+          gap: var(--ds-size-2);
+        }
+        .tabs-controlled-list-header {
+          margin-bottom: var(--ds-size-2);
+          margin-top: var(--ds-size-4);
+        }
 </style>
 <ds-tabs>
   <ds-tablist role="tablist">
     <ds-tab
       aria-controls="_r_b_-users"
+      aria-selected="true"
       data-value="users"
       role="tab"
-      aria-selected="true"
       tabindex="0"
       id="<removed>"
     >
@@ -51,9 +232,9 @@ exports[`Controlled 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_b_-profile"
+      aria-selected="false"
       data-value="profile"
       role="tab"
-      aria-selected="false"
       tabindex="-1"
     >
       <svg
@@ -79,10 +260,10 @@ exports[`Controlled 1`] = `
   </ds-tablist>
   <ds-tabpanel
     id="<removed>"
+    role="tabpanel"
     aria-hidden="false"
     tabindex="0"
     aria-labelledby="<removed>"
-    role="tabpanel"
   >
     <ul>
       <li>
@@ -91,7 +272,6 @@ exports[`Controlled 1`] = `
           type="button"
         >
           <span
-            data-variant="circle"
             role="img"
             aria-label="Bruker 1"
             data-color="accent"
@@ -103,7 +283,6 @@ exports[`Controlled 1`] = `
       <li>
         <a href="#">
           <span
-            data-variant="circle"
             role="img"
             aria-label="Bruker 2"
             data-color="support1"
@@ -115,7 +294,6 @@ exports[`Controlled 1`] = `
       <li>
         <a href="#">
           <span
-            data-variant="circle"
             role="img"
             aria-label="Bruker 3"
             data-color="support2"
@@ -134,7 +312,6 @@ exports[`Controlled 1`] = `
   >
     <div>
       <span
-        data-variant="circle"
         role="img"
         aria-label="Bruker 1"
         data-color="accent"
@@ -145,16 +322,16 @@ exports[`Controlled 1`] = `
     <h3>
       Detaljer
     </h3>
-    <p data-variant="default">
+    <p>
       34 år
     </p>
-    <p data-variant="default">
+    <p>
       Mysen, Norge
     </p>
-    <p data-variant="default">
+    <p>
       Lærer
     </p>
-    <p data-variant="default">
+    <p>
       Mysen Videregående skole
     </p>
   </ds-tabpanel>
@@ -166,9 +343,9 @@ exports[`Icons With Text 1`] = `
   <ds-tablist role="tablist">
     <ds-tab
       aria-controls="_r_2_-barnehage"
+      aria-selected="true"
       data-value="barnehage"
       role="tab"
-      aria-selected="true"
       tabindex="0"
       id="<removed>"
     >
@@ -194,9 +371,9 @@ exports[`Icons With Text 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_2_-grunnskole"
+      aria-selected="false"
       data-value="grunnskole"
       role="tab"
-      aria-selected="false"
       tabindex="-1"
     >
       <svg
@@ -221,9 +398,9 @@ exports[`Icons With Text 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_2_-videregående"
+      aria-selected="false"
       data-value="videregående"
       role="tab"
-      aria-selected="false"
       tabindex="-1"
     >
       <svg
@@ -249,10 +426,10 @@ exports[`Icons With Text 1`] = `
   </ds-tablist>
   <ds-tabpanel
     id="<removed>"
+    role="tabpanel"
     aria-hidden="false"
     tabindex="0"
     aria-labelledby="<removed>"
-    role="tabpanel"
   >
     Innhold for barnehage
   </ds-tabpanel>
@@ -280,14 +457,13 @@ exports[`Only Icons 1`] = `
   <ds-tablist role="tablist">
     <ds-tab
       aria-controls="_r_6_-gallery"
+      aria-selected="false"
       data-value="gallery"
+      role="tab"
       data-tooltip="Galleri"
       data-placement="top"
       data-autoplacement
-      role="tab"
-      aria-selected="false"
       tabindex="-1"
-      id="<removed>"
       aria-label="Galleri"
     >
       <svg
@@ -311,12 +487,12 @@ exports[`Only Icons 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_6_-profile"
+      aria-selected="true"
       data-value="profile"
+      role="tab"
       data-tooltip="Profilen din"
       data-placement="top"
       data-autoplacement
-      role="tab"
-      aria-selected="true"
       tabindex="0"
       id="<removed>"
       aria-label="Profilen din"
@@ -342,12 +518,12 @@ exports[`Only Icons 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_6_-notifications"
+      aria-selected="false"
       data-value="notifications"
+      role="tab"
       data-tooltip="Varsler"
       data-placement="top"
       data-autoplacement
-      role="tab"
-      aria-selected="false"
       tabindex="-1"
       aria-label="Varsler"
     >
@@ -372,12 +548,12 @@ exports[`Only Icons 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_6_-settings"
+      aria-selected="false"
       data-value="settings"
+      role="tab"
       data-tooltip="Innstillinger"
       data-placement="top"
       data-autoplacement
-      role="tab"
-      aria-selected="false"
       tabindex="-1"
       aria-label="Innstillinger"
     >
@@ -403,9 +579,8 @@ exports[`Only Icons 1`] = `
   </ds-tablist>
   <ds-tabpanel
     id="<removed>"
-    aria-hidden="true"
-    aria-labelledby="<removed>"
     role="tabpanel"
+    aria-hidden="true"
     hidden
   >
     Innhold for galleri
@@ -443,9 +618,9 @@ exports[`Only Text 1`] = `
   <ds-tablist role="tablist">
     <ds-tab
       aria-controls="_r_1_-oversikt"
+      aria-selected="true"
       data-value="oversikt"
       role="tab"
-      aria-selected="true"
       tabindex="0"
       id="<removed>"
     >
@@ -453,18 +628,18 @@ exports[`Only Text 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_1_-prøver"
+      aria-selected="false"
       data-value="prøver"
       role="tab"
-      aria-selected="false"
       tabindex="-1"
     >
       Prøver
     </ds-tab>
     <ds-tab
       aria-controls="_r_1_-prøvesvar"
+      aria-selected="false"
       data-value="prøvesvar"
       role="tab"
-      aria-selected="false"
       tabindex="-1"
     >
       Prøvesvar
@@ -472,10 +647,10 @@ exports[`Only Text 1`] = `
   </ds-tablist>
   <ds-tabpanel
     id="<removed>"
+    role="tabpanel"
     aria-hidden="false"
     tabindex="0"
     aria-labelledby="<removed>"
-    role="tabpanel"
   >
     Innhold for oversikt
   </ds-tabpanel>
@@ -503,9 +678,9 @@ exports[`Preview 1`] = `
   <ds-tablist role="tablist">
     <ds-tab
       aria-controls="_r_0_-value1"
+      aria-selected="true"
       data-value="value1"
       role="tab"
-      aria-selected="true"
       tabindex="0"
       id="<removed>"
     >
@@ -513,9 +688,9 @@ exports[`Preview 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_0_-value2"
+      aria-selected="false"
       data-value="value2"
       role="tab"
-      aria-selected="false"
       tabindex="-1"
       id="<removed>"
     >
@@ -523,9 +698,9 @@ exports[`Preview 1`] = `
     </ds-tab>
     <ds-tab
       aria-controls="_r_0_-value3"
+      aria-selected="false"
       data-value="value3"
       role="tab"
-      aria-selected="false"
       tabindex="-1"
       id="<removed>"
     >
@@ -534,9 +709,9 @@ exports[`Preview 1`] = `
   </ds-tablist>
   <ds-tabpanel
     id="<removed>"
+    role="tabpanel"
     aria-hidden="false"
     aria-labelledby="<removed>"
-    role="tabpanel"
     tabindex="0"
   >
     Innhold for Tab 1

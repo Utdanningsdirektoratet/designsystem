@@ -1,29 +1,29 @@
 {
   "name": "test-app-vite",
-  "type": "module",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint . --max-warnings 0",
-    "typecheck": "tsgo --build"
+    "lint": "oxlint",
+    "typecheck": "tsc --build"
   },
   "dependencies": {
     "@udir-design/icons": "workspace:*",
     "@udir-design/react": "workspace:*",
-    "@udir-design/theme": "workspace:*",
     "@udir-design/symbols": "workspace:*",
+    "@udir-design/theme": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "react-router-dom": "catalog:"
+    "react-router": "catalog:"
   },
   "devDependencies": {
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
-    "@vitejs/plugin-react-swc": "catalog:",
+    "@vitejs/plugin-react": "catalog:",
     "sass": "catalog:",
+    "typescript": "catalog:",
     "vite": "catalog:",
-    "vite-tsconfig-paths": "catalog:",
     "vitest": "catalog:"
   },
   "dependenciesMeta": {

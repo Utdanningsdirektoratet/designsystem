@@ -1,7 +1,23 @@
 {
+  "format_on_save": "on",
+  "prettier": {
+    "allowed": false
+  },
+  "formatter": {
+    "language_server": {
+      "name": "oxfmt"
+    }
+  },
   "languages": {
-    "JSONC": {
-      "formatter": "prettier"
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.fixAll.oxc": true
+      }
+    },
+    "TSX": {
+      "code_actions_on_format": {
+        "source.fixAll.oxc": true
+      }
     }
   }
 }

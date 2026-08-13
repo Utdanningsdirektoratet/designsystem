@@ -46,13 +46,11 @@ exports[`Dashboard Page 2 1`] = `
         >
           <span
             data-count="9+"
-            data-variant="base"
             aria-hidden="true"
             data-color="danger"
           >
           </span>
           <span
-            data-variant="circle"
             role="img"
             aria-hidden="true"
           >
@@ -66,7 +64,6 @@ exports[`Dashboard Page 2 1`] = `
         id="<removed>"
         popover="manual"
         data-placement="bottom-end"
-        data-variant="default"
       >
         <h2>
           Bytt profil
@@ -83,7 +80,6 @@ exports[`Dashboard Page 2 1`] = `
                 data-placement="top-right"
               >
                 <span
-                  data-variant="circle"
                   role="img"
                   aria-hidden="true"
                 >
@@ -108,7 +104,6 @@ exports[`Dashboard Page 2 1`] = `
                 </span>
                 <span
                   data-count="9+"
-                  data-variant="base"
                   aria-hidden="true"
                   data-color="danger"
                 >
@@ -160,13 +155,11 @@ exports[`Dashboard Page 2 1`] = `
         >
           <span
             data-count="9+"
-            data-variant="base"
             aria-hidden="true"
             data-color="danger"
           >
           </span>
           <span
-            data-variant="circle"
             role="img"
             aria-label="Stian Hansen"
           >
@@ -180,7 +173,6 @@ exports[`Dashboard Page 2 1`] = `
         id="<removed>"
         popover="manual"
         data-placement="bottom-end"
-        data-variant="default"
       >
         <ul>
           <li>
@@ -189,12 +181,12 @@ exports[`Dashboard Page 2 1`] = `
             </h2>
           </li>
           <li style="<removed>">
-            <p data-variant="default">
+            <p>
               Stian Hansen
             </p>
           </li>
           <li style="<removed>">
-            <p data-variant="default">
+            <p>
               Admin
             </p>
           </li>
@@ -210,7 +202,6 @@ exports[`Dashboard Page 2 1`] = `
               type="button"
             >
               <span
-                data-variant="circle"
                 role="img"
                 aria-hidden="true"
               >
@@ -234,10 +225,7 @@ exports[`Dashboard Page 2 1`] = `
                 </svg>
               </span>
               Grålum skole
-              <span
-                data-count="9+"
-                data-variant="base"
-              >
+              <span data-count="9+">
               </span>
             </button>
           </li>
@@ -277,6 +265,7 @@ exports[`Dashboard Page 2 1`] = `
   data-color-scheme="light"
   data-size="auto"
   lang="nb"
+  id="<removed>"
 >
   <h1 data-size="md">
     Schweigaardsgate skole
@@ -285,19 +274,18 @@ exports[`Dashboard Page 2 1`] = `
     <ds-tablist role="tablist">
       <ds-tab
         aria-controls="_r_i_-overview"
+        aria-selected="false"
         data-value="overview"
         role="tab"
-        aria-selected="false"
         tabindex="-1"
-        id="<removed>"
       >
         Oversikt
       </ds-tab>
       <ds-tab
         aria-controls="_r_i_-tests"
+        aria-selected="true"
         data-value="tests"
         role="tab"
-        aria-selected="true"
         tabindex="0"
         id="<removed>"
       >
@@ -305,18 +293,18 @@ exports[`Dashboard Page 2 1`] = `
       </ds-tab>
       <ds-tab
         aria-controls="_r_i_-test-answers"
+        aria-selected="false"
         data-value="test-answers"
         role="tab"
-        aria-selected="false"
         tabindex="-1"
       >
         Prøvesvar
       </ds-tab>
       <ds-tab
         aria-controls="_r_i_-settings"
+        aria-selected="false"
         data-value="settings"
         role="tab"
-        aria-selected="false"
         tabindex="-1"
       >
         Innstillinger
@@ -324,17 +312,16 @@ exports[`Dashboard Page 2 1`] = `
     </ds-tablist>
     <ds-tabpanel
       id="<removed>"
-      aria-hidden="true"
-      aria-labelledby="<removed>"
       role="tabpanel"
+      aria-hidden="true"
       hidden
     >
-      <p data-variant="default">
+      <p>
         Her får du en oversikt over all den overordnede informasjonen.
       </p>
       <div>
         <div>
-          <div data-variant="default">
+          <div>
             <h2>
               Viktige datoer
             </h2>
@@ -402,12 +389,12 @@ exports[`Dashboard Page 2 1`] = `
       tabindex="0"
       aria-labelledby="<removed>"
     >
-      <p data-variant="default">
+      <p>
         Oversikt over prøver for Schweigaardsgate skole.
       </p>
       <div>
         <div>
-          <div data-variant="default">
+          <div>
             <h2>
               Viktige datoer
             </h2>
@@ -431,7 +418,6 @@ exports[`Dashboard Page 2 1`] = `
           <div>
             <a
               href="/"
-              data-variant="default"
               data-color="neutral"
             >
               <h2>
@@ -440,7 +426,6 @@ exports[`Dashboard Page 2 1`] = `
             </a>
             <a
               href="/"
-              data-variant="default"
               data-color="neutral"
             >
               <h2>
@@ -494,12 +479,12 @@ exports[`Dashboard Page 2 1`] = `
       aria-hidden="true"
       hidden
     >
-      <p data-variant="default">
+      <p>
         Oversikt over prøvesvar for Schweigaardsgate skole.
       </p>
       <div>
         <div>
-          <div data-variant="default">
+          <div>
             <h2>
               Viktige datoer
             </h2>
@@ -568,7 +553,7 @@ exports[`Dashboard Page 2 1`] = `
     >
       <div>
         <div>
-          <div data-variant="default">
+          <div>
             <h2>
               Viktige datoer
             </h2>
@@ -645,16 +630,10 @@ exports[`Dashboard Page 2 1`] = `
                 Personvern
               </h2>
               <fieldset aria-labelledby="<removed>">
-                <legend
-                  data-weight="medium"
-                  id="<removed>"
-                >
+                <legend id="<removed>">
                   Hvem kan se profilen din?
                 </legend>
-                <p
-                  data-variant="default"
-                  id="<removed>"
-                >
+                <p id="<removed>">
                   Velg hvem som har tilgang til å se profilen din.
                 </p>
                 <ds-field data-clickdelegatefor="<removed>">
@@ -840,13 +819,11 @@ exports[`Dashboard Page 3 1`] = `
         >
           <span
             data-count="9+"
-            data-variant="base"
             aria-hidden="true"
             data-color="danger"
           >
           </span>
           <span
-            data-variant="circle"
             role="img"
             aria-hidden="true"
           >
@@ -860,7 +837,6 @@ exports[`Dashboard Page 3 1`] = `
         id="<removed>"
         popover="manual"
         data-placement="bottom-end"
-        data-variant="default"
       >
         <h2>
           Bytt profil
@@ -877,7 +853,6 @@ exports[`Dashboard Page 3 1`] = `
                 data-placement="top-right"
               >
                 <span
-                  data-variant="circle"
                   role="img"
                   aria-hidden="true"
                 >
@@ -902,7 +877,6 @@ exports[`Dashboard Page 3 1`] = `
                 </span>
                 <span
                   data-count="9+"
-                  data-variant="base"
                   aria-hidden="true"
                   data-color="danger"
                 >
@@ -954,13 +928,11 @@ exports[`Dashboard Page 3 1`] = `
         >
           <span
             data-count="9+"
-            data-variant="base"
             aria-hidden="true"
             data-color="danger"
           >
           </span>
           <span
-            data-variant="circle"
             role="img"
             aria-label="Stian Hansen"
           >
@@ -974,7 +946,6 @@ exports[`Dashboard Page 3 1`] = `
         id="<removed>"
         popover="manual"
         data-placement="bottom-end"
-        data-variant="default"
       >
         <ul>
           <li>
@@ -983,12 +954,12 @@ exports[`Dashboard Page 3 1`] = `
             </h2>
           </li>
           <li style="<removed>">
-            <p data-variant="default">
+            <p>
               Stian Hansen
             </p>
           </li>
           <li style="<removed>">
-            <p data-variant="default">
+            <p>
               Admin
             </p>
           </li>
@@ -1004,7 +975,6 @@ exports[`Dashboard Page 3 1`] = `
               type="button"
             >
               <span
-                data-variant="circle"
                 role="img"
                 aria-hidden="true"
               >
@@ -1028,10 +998,7 @@ exports[`Dashboard Page 3 1`] = `
                 </svg>
               </span>
               Grålum skole
-              <span
-                data-count="9+"
-                data-variant="base"
-              >
+              <span data-count="9+">
               </span>
             </button>
           </li>
@@ -1071,6 +1038,7 @@ exports[`Dashboard Page 3 1`] = `
   data-color-scheme="light"
   data-size="auto"
   lang="nb"
+  id="<removed>"
 >
   <h1 data-size="md">
     Schweigaardsgate skole
@@ -1079,28 +1047,27 @@ exports[`Dashboard Page 3 1`] = `
     <ds-tablist role="tablist">
       <ds-tab
         aria-controls="_r_10_-overview"
+        aria-selected="false"
         data-value="overview"
         role="tab"
-        aria-selected="false"
         tabindex="-1"
-        id="<removed>"
       >
         Oversikt
       </ds-tab>
       <ds-tab
         aria-controls="_r_10_-tests"
+        aria-selected="false"
         data-value="tests"
         role="tab"
-        aria-selected="false"
         tabindex="-1"
       >
         Prøver
       </ds-tab>
       <ds-tab
         aria-controls="_r_10_-test-answers"
+        aria-selected="true"
         data-value="test-answers"
         role="tab"
-        aria-selected="true"
         tabindex="0"
         id="<removed>"
       >
@@ -1108,9 +1075,9 @@ exports[`Dashboard Page 3 1`] = `
       </ds-tab>
       <ds-tab
         aria-controls="_r_10_-settings"
+        aria-selected="false"
         data-value="settings"
         role="tab"
-        aria-selected="false"
         tabindex="-1"
       >
         Innstillinger
@@ -1118,17 +1085,16 @@ exports[`Dashboard Page 3 1`] = `
     </ds-tablist>
     <ds-tabpanel
       id="<removed>"
-      aria-hidden="true"
-      aria-labelledby="<removed>"
       role="tabpanel"
+      aria-hidden="true"
       hidden
     >
-      <p data-variant="default">
+      <p>
         Her får du en oversikt over all den overordnede informasjonen.
       </p>
       <div>
         <div>
-          <div data-variant="default">
+          <div>
             <h2>
               Viktige datoer
             </h2>
@@ -1195,12 +1161,12 @@ exports[`Dashboard Page 3 1`] = `
       aria-hidden="true"
       hidden
     >
-      <p data-variant="default">
+      <p>
         Oversikt over prøver for Schweigaardsgate skole.
       </p>
       <div>
         <div>
-          <div data-variant="default">
+          <div>
             <h2>
               Viktige datoer
             </h2>
@@ -1224,7 +1190,6 @@ exports[`Dashboard Page 3 1`] = `
           <div>
             <a
               href="/"
-              data-variant="default"
               data-color="neutral"
             >
               <h2>
@@ -1233,7 +1198,6 @@ exports[`Dashboard Page 3 1`] = `
             </a>
             <a
               href="/"
-              data-variant="default"
               data-color="neutral"
             >
               <h2>
@@ -1288,12 +1252,12 @@ exports[`Dashboard Page 3 1`] = `
       tabindex="0"
       aria-labelledby="<removed>"
     >
-      <p data-variant="default">
+      <p>
         Oversikt over prøvesvar for Schweigaardsgate skole.
       </p>
       <div>
         <div>
-          <div data-variant="default">
+          <div>
             <h2>
               Viktige datoer
             </h2>
@@ -1362,7 +1326,7 @@ exports[`Dashboard Page 3 1`] = `
     >
       <div>
         <div>
-          <div data-variant="default">
+          <div>
             <h2>
               Viktige datoer
             </h2>
@@ -1439,16 +1403,10 @@ exports[`Dashboard Page 3 1`] = `
                 Personvern
               </h2>
               <fieldset aria-labelledby="<removed>">
-                <legend
-                  data-weight="medium"
-                  id="<removed>"
-                >
+                <legend id="<removed>">
                   Hvem kan se profilen din?
                 </legend>
-                <p
-                  data-variant="default"
-                  id="<removed>"
-                >
+                <p id="<removed>">
                   Velg hvem som har tilgang til å se profilen din.
                 </p>
                 <ds-field data-clickdelegatefor="<removed>">
@@ -1634,13 +1592,11 @@ exports[`Dashboard Page 4 1`] = `
         >
           <span
             data-count="9+"
-            data-variant="base"
             aria-hidden="true"
             data-color="danger"
           >
           </span>
           <span
-            data-variant="circle"
             role="img"
             aria-hidden="true"
           >
@@ -1654,7 +1610,6 @@ exports[`Dashboard Page 4 1`] = `
         id="<removed>"
         popover="manual"
         data-placement="bottom-end"
-        data-variant="default"
       >
         <h2>
           Bytt profil
@@ -1671,7 +1626,6 @@ exports[`Dashboard Page 4 1`] = `
                 data-placement="top-right"
               >
                 <span
-                  data-variant="circle"
                   role="img"
                   aria-hidden="true"
                 >
@@ -1696,7 +1650,6 @@ exports[`Dashboard Page 4 1`] = `
                 </span>
                 <span
                   data-count="9+"
-                  data-variant="base"
                   aria-hidden="true"
                   data-color="danger"
                 >
@@ -1748,13 +1701,11 @@ exports[`Dashboard Page 4 1`] = `
         >
           <span
             data-count="9+"
-            data-variant="base"
             aria-hidden="true"
             data-color="danger"
           >
           </span>
           <span
-            data-variant="circle"
             role="img"
             aria-label="Stian Hansen"
           >
@@ -1768,7 +1719,6 @@ exports[`Dashboard Page 4 1`] = `
         id="<removed>"
         popover="manual"
         data-placement="bottom-end"
-        data-variant="default"
       >
         <ul>
           <li>
@@ -1777,12 +1727,12 @@ exports[`Dashboard Page 4 1`] = `
             </h2>
           </li>
           <li style="<removed>">
-            <p data-variant="default">
+            <p>
               Stian Hansen
             </p>
           </li>
           <li style="<removed>">
-            <p data-variant="default">
+            <p>
               Admin
             </p>
           </li>
@@ -1798,7 +1748,6 @@ exports[`Dashboard Page 4 1`] = `
               type="button"
             >
               <span
-                data-variant="circle"
                 role="img"
                 aria-hidden="true"
               >
@@ -1822,10 +1771,7 @@ exports[`Dashboard Page 4 1`] = `
                 </svg>
               </span>
               Grålum skole
-              <span
-                data-count="9+"
-                data-variant="base"
-              >
+              <span data-count="9+">
               </span>
             </button>
           </li>
@@ -1865,6 +1811,7 @@ exports[`Dashboard Page 4 1`] = `
   data-color-scheme="light"
   data-size="auto"
   lang="nb"
+  id="<removed>"
 >
   <h1 data-size="md">
     Schweigaardsgate skole
@@ -1873,37 +1820,36 @@ exports[`Dashboard Page 4 1`] = `
     <ds-tablist role="tablist">
       <ds-tab
         aria-controls="_r_1e_-overview"
+        aria-selected="false"
         data-value="overview"
         role="tab"
-        aria-selected="false"
         tabindex="-1"
-        id="<removed>"
       >
         Oversikt
       </ds-tab>
       <ds-tab
         aria-controls="_r_1e_-tests"
+        aria-selected="false"
         data-value="tests"
         role="tab"
-        aria-selected="false"
         tabindex="-1"
       >
         Prøver
       </ds-tab>
       <ds-tab
         aria-controls="_r_1e_-test-answers"
+        aria-selected="false"
         data-value="test-answers"
         role="tab"
-        aria-selected="false"
         tabindex="-1"
       >
         Prøvesvar
       </ds-tab>
       <ds-tab
         aria-controls="_r_1e_-settings"
+        aria-selected="true"
         data-value="settings"
         role="tab"
-        aria-selected="true"
         tabindex="0"
         id="<removed>"
       >
@@ -1912,17 +1858,16 @@ exports[`Dashboard Page 4 1`] = `
     </ds-tablist>
     <ds-tabpanel
       id="<removed>"
-      aria-hidden="true"
-      aria-labelledby="<removed>"
       role="tabpanel"
+      aria-hidden="true"
       hidden
     >
-      <p data-variant="default">
+      <p>
         Her får du en oversikt over all den overordnede informasjonen.
       </p>
       <div>
         <div>
-          <div data-variant="default">
+          <div>
             <h2>
               Viktige datoer
             </h2>
@@ -1989,12 +1934,12 @@ exports[`Dashboard Page 4 1`] = `
       aria-hidden="true"
       hidden
     >
-      <p data-variant="default">
+      <p>
         Oversikt over prøver for Schweigaardsgate skole.
       </p>
       <div>
         <div>
-          <div data-variant="default">
+          <div>
             <h2>
               Viktige datoer
             </h2>
@@ -2018,7 +1963,6 @@ exports[`Dashboard Page 4 1`] = `
           <div>
             <a
               href="/"
-              data-variant="default"
               data-color="neutral"
             >
               <h2>
@@ -2027,7 +1971,6 @@ exports[`Dashboard Page 4 1`] = `
             </a>
             <a
               href="/"
-              data-variant="default"
               data-color="neutral"
             >
               <h2>
@@ -2081,12 +2024,12 @@ exports[`Dashboard Page 4 1`] = `
       aria-hidden="true"
       hidden
     >
-      <p data-variant="default">
+      <p>
         Oversikt over prøvesvar for Schweigaardsgate skole.
       </p>
       <div>
         <div>
-          <div data-variant="default">
+          <div>
             <h2>
               Viktige datoer
             </h2>
@@ -2156,7 +2099,7 @@ exports[`Dashboard Page 4 1`] = `
     >
       <div>
         <div>
-          <div data-variant="default">
+          <div>
             <h2>
               Viktige datoer
             </h2>
@@ -2233,16 +2176,10 @@ exports[`Dashboard Page 4 1`] = `
                 Personvern
               </h2>
               <fieldset aria-labelledby="<removed>">
-                <legend
-                  data-weight="medium"
-                  id="<removed>"
-                >
+                <legend id="<removed>">
                   Hvem kan se profilen din?
                 </legend>
-                <p
-                  data-variant="default"
-                  id="<removed>"
-                >
+                <p id="<removed>">
                   Velg hvem som har tilgang til å se profilen din.
                 </p>
                 <ds-field data-clickdelegatefor="<removed>">
@@ -2428,13 +2365,11 @@ exports[`Dashboard Story 1`] = `
         >
           <span
             data-count="9+"
-            data-variant="base"
             aria-hidden="true"
             data-color="danger"
           >
           </span>
           <span
-            data-variant="circle"
             role="img"
             aria-hidden="true"
           >
@@ -2448,7 +2383,6 @@ exports[`Dashboard Story 1`] = `
         id="<removed>"
         popover="manual"
         data-placement="bottom-end"
-        data-variant="default"
       >
         <h2>
           Bytt profil
@@ -2465,7 +2399,6 @@ exports[`Dashboard Story 1`] = `
                 data-placement="top-right"
               >
                 <span
-                  data-variant="circle"
                   role="img"
                   aria-hidden="true"
                 >
@@ -2490,7 +2423,6 @@ exports[`Dashboard Story 1`] = `
                 </span>
                 <span
                   data-count="9+"
-                  data-variant="base"
                   aria-hidden="true"
                   data-color="danger"
                 >
@@ -2542,13 +2474,11 @@ exports[`Dashboard Story 1`] = `
         >
           <span
             data-count="9+"
-            data-variant="base"
             aria-hidden="true"
             data-color="danger"
           >
           </span>
           <span
-            data-variant="circle"
             role="img"
             aria-label="Stian Hansen"
           >
@@ -2562,7 +2492,6 @@ exports[`Dashboard Story 1`] = `
         id="<removed>"
         popover="manual"
         data-placement="bottom-end"
-        data-variant="default"
       >
         <ul>
           <li>
@@ -2571,12 +2500,12 @@ exports[`Dashboard Story 1`] = `
             </h2>
           </li>
           <li style="<removed>">
-            <p data-variant="default">
+            <p>
               Stian Hansen
             </p>
           </li>
           <li style="<removed>">
-            <p data-variant="default">
+            <p>
               Admin
             </p>
           </li>
@@ -2592,7 +2521,6 @@ exports[`Dashboard Story 1`] = `
               type="button"
             >
               <span
-                data-variant="circle"
                 role="img"
                 aria-hidden="true"
               >
@@ -2616,10 +2544,7 @@ exports[`Dashboard Story 1`] = `
                 </svg>
               </span>
               Grålum skole
-              <span
-                data-count="9+"
-                data-variant="base"
-              >
+              <span data-count="9+">
               </span>
             </button>
           </li>
@@ -2659,6 +2584,7 @@ exports[`Dashboard Story 1`] = `
   data-color-scheme="light"
   data-size="auto"
   lang="nb"
+  id="<removed>"
 >
   <h1 data-size="md">
     Schweigaardsgate skole
@@ -2667,9 +2593,9 @@ exports[`Dashboard Story 1`] = `
     <ds-tablist role="tablist">
       <ds-tab
         aria-controls="_r_4_-overview"
+        aria-selected="true"
         data-value="overview"
         role="tab"
-        aria-selected="true"
         tabindex="0"
         id="<removed>"
       >
@@ -2677,27 +2603,27 @@ exports[`Dashboard Story 1`] = `
       </ds-tab>
       <ds-tab
         aria-controls="_r_4_-tests"
+        aria-selected="false"
         data-value="tests"
         role="tab"
-        aria-selected="false"
         tabindex="-1"
       >
         Prøver
       </ds-tab>
       <ds-tab
         aria-controls="_r_4_-test-answers"
+        aria-selected="false"
         data-value="test-answers"
         role="tab"
-        aria-selected="false"
         tabindex="-1"
       >
         Prøvesvar
       </ds-tab>
       <ds-tab
         aria-controls="_r_4_-settings"
+        aria-selected="false"
         data-value="settings"
         role="tab"
-        aria-selected="false"
         tabindex="-1"
       >
         Innstillinger
@@ -2705,17 +2631,17 @@ exports[`Dashboard Story 1`] = `
     </ds-tablist>
     <ds-tabpanel
       id="<removed>"
+      role="tabpanel"
       aria-hidden="false"
       tabindex="0"
       aria-labelledby="<removed>"
-      role="tabpanel"
     >
-      <p data-variant="default">
+      <p>
         Her får du en oversikt over all den overordnede informasjonen.
       </p>
       <div>
         <div>
-          <div data-variant="default">
+          <div>
             <h2>
               Viktige datoer
             </h2>
@@ -2782,12 +2708,12 @@ exports[`Dashboard Story 1`] = `
       aria-hidden="true"
       hidden
     >
-      <p data-variant="default">
+      <p>
         Oversikt over prøver for Schweigaardsgate skole.
       </p>
       <div>
         <div>
-          <div data-variant="default">
+          <div>
             <h2>
               Viktige datoer
             </h2>
@@ -2811,7 +2737,6 @@ exports[`Dashboard Story 1`] = `
           <div>
             <a
               href="/"
-              data-variant="default"
               data-color="neutral"
             >
               <h2>
@@ -2820,7 +2745,6 @@ exports[`Dashboard Story 1`] = `
             </a>
             <a
               href="/"
-              data-variant="default"
               data-color="neutral"
             >
               <h2>
@@ -2874,12 +2798,12 @@ exports[`Dashboard Story 1`] = `
       aria-hidden="true"
       hidden
     >
-      <p data-variant="default">
+      <p>
         Oversikt over prøvesvar for Schweigaardsgate skole.
       </p>
       <div>
         <div>
-          <div data-variant="default">
+          <div>
             <h2>
               Viktige datoer
             </h2>
@@ -2948,7 +2872,7 @@ exports[`Dashboard Story 1`] = `
     >
       <div>
         <div>
-          <div data-variant="default">
+          <div>
             <h2>
               Viktige datoer
             </h2>
@@ -3025,16 +2949,10 @@ exports[`Dashboard Story 1`] = `
                 Personvern
               </h2>
               <fieldset aria-labelledby="<removed>">
-                <legend
-                  data-weight="medium"
-                  id="<removed>"
-                >
+                <legend id="<removed>">
                   Hvem kan se profilen din?
                 </legend>
-                <p
-                  data-variant="default"
-                  id="<removed>"
-                >
+                <p id="<removed>">
                   Velg hvem som har tilgang til å se profilen din.
                 </p>
                 <ds-field data-clickdelegatefor="<removed>">

@@ -1,7 +1,16 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Color Variants 1`] = `
-<div style="<removed>">
+<style>
+  .popover-color-variants-main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 100px;
+  place-items: center;
+  margin-top: var(--ds-size-12);
+}
+</style>
+<div>
   <button
     data-variant="tertiary"
     type="button"
@@ -13,7 +22,6 @@ exports[`Color Variants 1`] = `
     id="<removed>"
     popover="manual"
     data-placement="top"
-    data-variant="default"
     data-color="neutral"
     data-floating="top"
     style="<removed>"
@@ -49,7 +57,6 @@ exports[`Color Variants 1`] = `
     id="<removed>"
     popover="manual"
     data-placement="top"
-    data-variant="default"
     data-color="accent"
     data-floating="top"
     style="<removed>"
@@ -85,7 +92,6 @@ exports[`Color Variants 1`] = `
     id="<removed>"
     popover="manual"
     data-placement="top"
-    data-variant="default"
     data-color="support1"
     data-floating="top"
     style="<removed>"
@@ -121,7 +127,6 @@ exports[`Color Variants 1`] = `
     id="<removed>"
     popover="manual"
     data-placement="top"
-    data-variant="default"
     data-color="support2"
     data-floating="top"
     style="<removed>"
@@ -150,6 +155,13 @@ exports[`Color Variants 1`] = `
 `;
 
 exports[`Controlled 1`] = `
+<style>
+  .popover-controlled-popover-button__group {
+          display: flex;
+          gap: var(--ds-size-2);
+          margin-top: var(--ds-size-2);
+        }
+</style>
 <button
   data-variant="tertiary"
   type="button"
@@ -177,14 +189,12 @@ exports[`Controlled 1`] = `
   id="<removed>"
   popover="manual"
   data-placement="top"
-  data-variant="default"
   data-floating="bottom"
   style="<removed>"
 >
   Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
-  <div style="<removed>">
+  <div>
     <button
-      data-variant="primary"
       type="button"
       data-size="sm"
     >
@@ -202,7 +212,7 @@ exports[`Controlled 1`] = `
 `;
 
 exports[`Dotted Underline 1`] = `
-<p data-variant="default">
+<p>
   I aldersgruppen 1-5 år går 93 prosent av barna i barnehage. I aldersgruppen 3-5 år er andelen 97 prosent. Til sammenligning er
   <button
     data-popover="inline"
@@ -216,12 +226,11 @@ exports[`Dotted Underline 1`] = `
   id="<removed>"
   popover="manual"
   data-placement="top"
-  data-variant="default"
   data-color="neutral"
   data-floating="bottom"
   style="<removed>"
 >
-  <p data-variant="default">
+  <p>
     <strong>
       Organisasjonen for økonomisk samarbeid og utvikling
     </strong>
@@ -231,6 +240,13 @@ exports[`Dotted Underline 1`] = `
 `;
 
 exports[`Interactive 1`] = `
+<style>
+  .popover-interactive-popover-button__group {
+  display: flex;
+  gap: var(--ds-size-2);
+  margin-top: var(--ds-size-2);
+}
+</style>
 <button
   data-variant="secondary"
   type="button"
@@ -259,16 +275,14 @@ exports[`Interactive 1`] = `
   id="<removed>"
   popover="manual"
   data-placement="top"
-  data-variant="default"
   data-floating="bottom"
   style="<removed>"
 >
-  <p data-variant="default">
+  <p>
     Vil du lagre endringene dine?
   </p>
-  <div style="<removed>">
+  <div>
     <button
-      data-variant="primary"
       type="button"
       data-size="sm"
     >
@@ -286,6 +300,13 @@ exports[`Interactive 1`] = `
 `;
 
 exports[`Preview 1`] = `
+<style>
+  .popover-preview-button__group {
+  display: flex;
+  gap: var(--ds-size-2);
+  margin-top: var(--ds-size-2);
+}
+</style>
 <button
   data-variant="tertiary"
   type="button"
@@ -313,14 +334,12 @@ exports[`Preview 1`] = `
   id="<removed>"
   popover="manual"
   data-placement="top"
-  data-variant="default"
   data-floating="bottom"
   style="<removed>"
 >
   Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
-  <div style="<removed>">
+  <div>
     <button
-      data-variant="primary"
       type="button"
       data-size="sm"
     >
@@ -338,7 +357,16 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Variants 1`] = `
-<div style="<removed>">
+<style>
+  .popover-variants-main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 100px;
+  place-items: center;
+  margin-top: var(--ds-size-12);
+}
+</style>
+<div>
   <button
     data-variant="tertiary"
     type="button"
@@ -350,7 +378,6 @@ exports[`Variants 1`] = `
     id="<removed>"
     popover="manual"
     data-placement="top"
-    data-variant="default"
     data-color="success"
     data-floating="top"
     style="<removed>"
@@ -386,7 +413,6 @@ exports[`Variants 1`] = `
     id="<removed>"
     popover="manual"
     data-placement="top"
-    data-variant="default"
     data-color="danger"
     data-floating="top"
     style="<removed>"
@@ -422,7 +448,6 @@ exports[`Variants 1`] = `
     id="<removed>"
     popover="manual"
     data-placement="top"
-    data-variant="default"
     data-color="info"
     data-floating="top"
     style="<removed>"
@@ -458,7 +483,6 @@ exports[`Variants 1`] = `
     id="<removed>"
     popover="manual"
     data-placement="top"
-    data-variant="default"
     data-color="warning"
     data-floating="top"
     style="<removed>"
@@ -487,8 +511,14 @@ exports[`Variants 1`] = `
 `;
 
 exports[`Without Context 1`] = `
+<style>
+  .popover-without-context-popover-button__group {
+          display: flex;
+          gap: var(--ds-size-2);
+          margin-top: var(--ds-size-2);
+        }
+</style>
 <button
-  data-variant="primary"
   type="button"
   popovertarget="my-popover"
   aria-label="Slett rad"
@@ -519,17 +549,15 @@ exports[`Without Context 1`] = `
   id="<removed>"
   popover="manual"
   data-placement="top"
-  data-variant="default"
   data-color="neutral"
   data-floating="bottom"
   style="<removed>"
 >
-  <p data-variant="default">
+  <p>
     Er du sikker på at du vil slette raden? Handlingen kan ikke angres.
   </p>
-  <div style="<removed>">
+  <div>
     <button
-      data-variant="primary"
       type="button"
       data-size="sm"
     >

@@ -10,6 +10,11 @@
 @import '../../css/src/icons.css';
 @import '../../theme/dist/datavis.css';
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--uds-scroll-padding-top);
+}
+
 body {
   font-family: 'Inter', sans-serif;
   font-feature-settings: 'cv05' 1; /* Enable lowercase l with tail */

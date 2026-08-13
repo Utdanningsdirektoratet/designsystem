@@ -11,7 +11,7 @@
 }
 
 .ds-table {
-  --dsc-table-background--zebra: var(--ds-color-neutral-background-tinted);
+  --dsc-table-background--zebra: var(--ds-color-background-tinted);
   --dsc-table-header-background--sorted: var(--ds-color-surface-active);
 
   td {
@@ -111,8 +111,33 @@
     }
   }
 
-  /* Drilldown / tree-structured rows */
+  /* Lock cell backgrounds for expandable rows so Digdir's hover can't override */
+  & > tbody:has(> tr:not([data-level]) > :is(td, th) > button[aria-expanded]) {
+    > tr > :is(th, td) {
+      background: var(--dsc-table-background);
+    }
+  }
 
+  /* Zebra striping for expandable rows */
+  &[data-zebra]
+    > tbody:has(> tr:not([data-level]) > :is(td, th) > button[aria-expanded]) {
+    > tr:nth-child(4n + 3) > :is(th, td),
+    > tr:nth-child(4n + 4) > :is(th, td) {
+      background: var(--dsc-table-background--zebra);
+    }
+  }
+
+  /* Hover effect for expandable rows */
+  &[data-hover]
+    > tbody:has(> tr:not([data-level]) > :is(td, th) > button[aria-expanded]) {
+    @media (hover: hover) and (pointer: fine) {
+      > tr:has(> :is(td, th) > button[aria-expanded]):hover > :is(th, td) {
+        background: var(--dsc-table-background--hover);
+      }
+    }
+  }
+
+  /* Drilldown / tree-structured rows */
   & > tbody > tr[data-level] {
     --dsc-table-drilldown-depth: 0;
 

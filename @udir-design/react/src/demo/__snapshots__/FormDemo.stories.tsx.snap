@@ -1,7 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Form Page 2 1`] = `
-<div data-size="auto">
+<div
+  data-size="auto"
+  id="<removed>"
+>
   <div>
     <div>
       <details
@@ -179,10 +182,7 @@ exports[`Form Page 2 1`] = `
       <div>
       </div>
       <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
+        <label for="<removed>">
           <span>
             Tittel på prosjektet
           </span>
@@ -198,10 +198,7 @@ exports[`Form Page 2 1`] = `
         </div>
       </ds-field>
       <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
+        <label for="<removed>">
           <span>
             Beskrivelse av prosjektet
           </span>
@@ -223,18 +220,12 @@ exports[`Form Page 2 1`] = `
         tabindex="-1"
         aria-labelledby="<removed>"
       >
-        <legend
-          data-weight="medium"
-          id="<removed>"
-        >
+        <legend id="<removed>">
           <span>
             Kategori
           </span>
         </legend>
-        <p
-          data-variant="default"
-          id="<removed>"
-        >
+        <p id="<removed>">
           Hvilken kategori hører prosjektet til?
         </p>
         <ds-field data-clickdelegatefor="<removed>">
@@ -298,10 +289,7 @@ exports[`Form Page 2 1`] = `
         </details>
       </fieldset>
       <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
+        <label for="<removed>">
           <span>
             Gjennomføringssted
           </span>
@@ -504,10 +492,7 @@ exports[`Form Page 2 1`] = `
         </ds-suggestion>
       </ds-field>
       <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
+        <label for="<removed>">
           <span>
             Aldersgruppe
           </span>
@@ -614,7 +599,6 @@ exports[`Form Page 2 1`] = `
               Avbryt
             </button>
             <button
-              data-variant="primary"
               type="submit"
               style="<removed>"
             >
@@ -647,7 +631,10 @@ exports[`Form Page 2 1`] = `
 `;
 
 exports[`Form Page 3 1`] = `
-<div data-size="auto">
+<div
+  data-size="auto"
+  id="<removed>"
+>
   <div>
     <div>
       <details
@@ -826,7 +813,6 @@ exports[`Form Page 3 1`] = `
       </div>
       <div>
         <label
-          data-weight="medium"
           id="<removed>"
           for="<removed>"
         >
@@ -840,10 +826,7 @@ exports[`Form Page 3 1`] = `
         >
           Du kan laste opp filer i PDF-format. Filer kan være opptil 25 MB.
         </div>
-        <div
-          data-variant="default"
-          role="presentation"
-        >
+        <div role="presentation">
           <div>
           </div>
           <button
@@ -885,10 +868,7 @@ exports[`Form Page 3 1`] = `
         >
       </div>
       <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
+        <label for="<removed>">
           <span>
             Kommentarer til dokumentasjon
           </span>
@@ -974,7 +954,6 @@ exports[`Form Page 3 1`] = `
               Avbryt
             </button>
             <button
-              data-variant="primary"
               type="submit"
               style="<removed>"
             >
@@ -1007,7 +986,10 @@ exports[`Form Page 3 1`] = `
 `;
 
 exports[`Form Page 4 1`] = `
-<div data-size="auto">
+<div
+  data-size="auto"
+  id="<removed>"
+>
   <div>
     <div>
       <details
@@ -1182,7 +1164,7 @@ exports[`Form Page 4 1`] = `
       <h2>
         Innsending
       </h2>
-      <p data-variant="default">
+      <p>
         Send inn søknaden.
       </p>
       <div>
@@ -1210,7 +1192,6 @@ exports[`Form Page 4 1`] = `
           Forrige
         </button>
         <button
-          data-variant="primary"
           type="button"
           style="<removed>"
         >
@@ -1254,7 +1235,6 @@ exports[`Form Page 4 1`] = `
               Avbryt
             </button>
             <button
-              data-variant="primary"
               type="submit"
               style="<removed>"
             >
@@ -1287,7 +1267,10 @@ exports[`Form Page 4 1`] = `
 `;
 
 exports[`Form Page 5 1`] = `
-<div data-size="auto">
+<div
+  data-size="auto"
+  id="<removed>"
+>
   <div>
     <div>
       <details
@@ -1463,13 +1446,10 @@ exports[`Form Page 5 1`] = `
         <h2 data-size="sm">
           Kvittering
         </h2>
-        <p
-          data-variant="default"
-          data-size="xl"
-        >
+        <p data-size="xl">
           Takk!
         </p>
-        <p data-variant="default">
+        <p>
           Vi har mottatt din søknad. Du hører tilbake innen en måned.
         </p>
       </div>
@@ -1494,7 +1474,6 @@ exports[`Form Page 5 1`] = `
               Avbryt
             </button>
             <button
-              data-variant="primary"
               type="submit"
               style="<removed>"
             >
@@ -1527,7 +1506,10 @@ exports[`Form Page 5 1`] = `
 `;
 
 exports[`Form Story 1`] = `
-<div data-size="auto">
+<div
+  data-size="auto"
+  id="<removed>"
+>
   <div>
     <div>
       <details
@@ -1705,10 +1687,7 @@ exports[`Form Story 1`] = `
       <div>
       </div>
       <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
+        <label for="<removed>">
           <span>
             Fornavn
           </span>
@@ -1724,10 +1703,7 @@ exports[`Form Story 1`] = `
         </div>
       </ds-field>
       <ds-field>
-        <label
-          data-weight="medium"
-          for="<removed>"
-        >
+        <label for="<removed>">
           <span>
             Etternavn
           </span>
@@ -1745,18 +1721,12 @@ exports[`Form Story 1`] = `
         tabindex="-1"
         aria-labelledby="<removed>"
       >
-        <legend
-          data-weight="medium"
-          id="<removed>"
-        >
+        <legend id="<removed>">
           <span>
             Hvordan ønsker du at vi skal kontakte deg?
           </span>
         </legend>
-        <p
-          data-variant="default"
-          id="<removed>"
-        >
+        <p id="<removed>">
           Velg ett eller flere alternativer
         </p>
         <ds-field data-clickdelegatefor="<removed>">
@@ -1855,7 +1825,6 @@ exports[`Form Story 1`] = `
               Avbryt
             </button>
             <button
-              data-variant="primary"
               type="submit"
               style="<removed>"
             >

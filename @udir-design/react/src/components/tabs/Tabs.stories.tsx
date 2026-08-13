@@ -19,6 +19,7 @@ import { List } from 'src/components/list';
 import { Tooltip } from 'src/components/tooltip';
 import { Heading } from 'src/components/typography/heading';
 import { Paragraph } from 'src/components/typography/paragraph';
+import { Prose } from '../typography/prose';
 import { Tabs } from './Tabs';
 import { Tabs as FakeTabs } from './docs/FakeTabs';
 import { TabsList } from './docs/FakeTabsList';
@@ -239,22 +240,22 @@ export const Controlled = meta.story({
       <>
         <style>
           {`
-          .example-list-unordered {
-            list-style: none;
-            padding: 0;
-          }
-          .example-list-item {
-            display: flex;
-           }
-          .example-list-content {
-            align-items: center;
-            display: flex;
-            gap: var(--ds-size-2);
-          }
-          .example-list-header {
-            margin-bottom: var(--ds-size-2);
-            margin-top: var(--ds-size-4);
-          }`}
+        .tabs-controlled-list-unordered {
+          list-style: none;
+          padding: 0;
+        }
+        .tabs-controlled-list-item {
+          display: flex;
+        }
+        .tabs-controlled-list-content {
+          align-items: center;
+          display: flex;
+          gap: var(--ds-size-2);
+        }
+        .tabs-controlled-list-header {
+          margin-bottom: var(--ds-size-2);
+          margin-top: var(--ds-size-4);
+        }`}
         </style>
         <Tabs {...args} value={tab} onChange={setTab}>
           <Tabs.List>
@@ -268,21 +269,21 @@ export const Controlled = meta.story({
             </Tabs.Tab>
           </Tabs.List>
           <Tabs.Panel value="users">
-            <List.Unordered className="example-list-unordered">
-              <List.Item className="example-list-item">
+            <List.Unordered className="tabs-controlled-list-unordered">
+              <List.Item className="tabs-controlled-list-item">
                 <Button variant="secondary" onClick={() => setTab('profile')}>
                   <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde
                   Hansen (deg)
                 </Button>
               </List.Item>
-              <List.Item className="example-list-item">
-                <Link href="#" className="example-list-content">
+              <List.Item className="tabs-controlled-list-item">
+                <Link href="#" className="tabs-controlled-list-content">
                   <Avatar aria-label="Bruker 2" data-color="support1" />
                   Stian Stølan
                 </Link>
               </List.Item>
-              <List.Item className="example-list-item">
-                <Link href="#" className="example-list-content">
+              <List.Item className="tabs-controlled-list-item">
+                <Link href="#" className="tabs-controlled-list-content">
                   <Avatar aria-label="Bruker 3" data-color="support2" />
                   Lina Larsen
                 </Link>
@@ -290,11 +291,11 @@ export const Controlled = meta.story({
             </List.Unordered>
           </Tabs.Panel>
           <Tabs.Panel value="profile">
-            <div className="example-list-content">
+            <div className="tabs-controlled-list-content">
               <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde Hansen
             </div>
 
-            <Heading level={3} className="example-list-header">
+            <Heading level={3} className="tabs-controlled-list-header">
               Detaljer
             </Heading>
             <Paragraph>34 år</Paragraph>
@@ -306,4 +307,105 @@ export const Controlled = meta.story({
       </>
     );
   },
+});
+
+export const CardVariant = meta.story({
+  args: {
+    defaultValue: 'value1',
+    variant: 'card',
+  },
+  render: (args) => (
+    <Tabs {...args}>
+      <Tabs.List>
+        <Tabs.Tab value="value1">Tab 1</Tabs.Tab>
+        <Tabs.Tab value="value2">Tab 2</Tabs.Tab>
+        <Tabs.Tab value="value3">Tab 3</Tabs.Tab>
+      </Tabs.List>
+      <Tabs.Panel value="value1">Innhold for tab 1</Tabs.Panel>
+      <Tabs.Panel value="value2">Innhold for tab 2</Tabs.Panel>
+      <Tabs.Panel value="value3">Innhold for tab 3</Tabs.Panel>
+    </Tabs>
+  ),
+});
+
+export const CardPanel = meta.story({
+  args: {
+    defaultValue: 'value1',
+    variant: 'card',
+  },
+  parameters: {
+    customStyles: {
+      backgroundColor: 'var(--ds-color-background-tinted)',
+    },
+  },
+  render: (args) => (
+    <>
+      <style>
+        {`
+        .tabs {
+          max-width: 40rem;
+          margin-top: var(--ds-size-4);
+        }
+      `}
+      </style>
+      <Heading level={2}>Designtokens</Heading>
+      <Tabs {...args} className="tabs">
+        <Tabs.List>
+          <Tabs.Tab value="value1">Farger</Tabs.Tab>
+          <Tabs.Tab value="value2">Størrelser</Tabs.Tab>
+          <Tabs.Tab value="value3">Responsivitet</Tabs.Tab>
+          <Tabs.Tab value="value4">Spacing</Tabs.Tab>
+        </Tabs.List>
+        <Tabs.Panel variant="card" value="value1">
+          <Prose>
+            <Paragraph>
+              Fargene for brukergrensesnitt er delt opp i underkategorier for
+              identitetsfarger og varselfarger. Disse fargene er testet for
+              kontrast og tilgjengelighet, og de gir forutsigbarhet og
+              konsistens på tvers av komponenter og plattformer. Når du bruker
+              fargene skal du alltid referere til design tokens, ikke hardkodede
+              verdier.
+            </Paragraph>
+            <Paragraph>
+              Farger i denne gruppen brukes for eksempel på komponenter som
+              knapper, bakgrunner, lenker, ikoner og lignende.
+            </Paragraph>
+          </Prose>
+        </Tabs.Panel>
+        <Tabs.Panel variant="card" value="value2">
+          <Prose>
+            <Paragraph>
+              Vi bruker størrelsesvariabler (design tokens) for å definere
+              spacing (mellomrom), sizing (bredder og høyder) og fontstørrelser
+              på en konsistent måte. Verdien til størrelsesvariabler avhenger av
+              hvilken størrelsesmodus som er aktiv. Du kan endre størrelsesmodus
+              ved å sette data-size-attributtet i kode eller size mode i Figma.
+            </Paragraph>
+          </Prose>
+        </Tabs.Panel>
+        <Tabs.Panel variant="card" value="value3">
+          <Prose>
+            <Paragraph>
+              For å styre størrelsesmodus i kode kan man sette{' '}
+              <code>{`data-size='sm'`}</code>, <code>{`data-size='md'`}</code>{' '}
+              eller <code>{`data-size='lg'`}</code>, typisk på et rot-element,
+              men det er ofte lurt å sette størrelsesmodus basert på brukerens
+              skjermstørrelse.
+            </Paragraph>
+          </Prose>
+        </Tabs.Panel>
+        <Tabs.Panel variant="card" value="value4">
+          <Prose>
+            <Paragraph>
+              Størrelsesvariablene kan brukes til avstander slik som for
+              eksempel marger og avstand mellom avsnitt i tekst. De kan også
+              brukes til å sette bredder og høyder på elementer, for eksempel
+              knapper og input-felt. Det er viktig å bruke størrelsesvariablene
+              riktig for å sikre konsistens i designet ditt.
+            </Paragraph>
+          </Prose>
+        </Tabs.Panel>
+      </Tabs>
+    </>
+  ),
 });

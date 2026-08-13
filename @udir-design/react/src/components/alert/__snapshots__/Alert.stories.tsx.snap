@@ -3,10 +3,7 @@
 exports[`Correct Live Region 1`] = `
 <div role="alert">
 </div>
-<button
-  data-variant="primary"
-  type="button"
->
+<button type="button">
   Handling som fører til varsel
 </button>
 `;
@@ -80,10 +77,7 @@ exports[`With Link 1`] = `
 `;
 
 exports[`Wrong Live Region 1`] = `
-<button
-  data-variant="primary"
-  type="button"
->
+<button type="button">
   Handling som fører til varsel
 </button>
 `;

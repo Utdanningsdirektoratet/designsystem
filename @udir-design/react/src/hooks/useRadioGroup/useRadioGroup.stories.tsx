@@ -1,13 +1,14 @@
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import type { DecoratorType } from '.storybook/types';
-import { formatReactSource } from '.storybook/utils/sourceTransformers';
-import { Button } from 'src/components/button';
-import { Divider } from 'src/components/divider';
-import { Fieldset } from 'src/components/fieldset';
-import { Radio } from 'src/components/radio';
-import { Paragraph } from 'src/components/typography/paragraph';
-import { ValidationMessage } from 'src/components/typography/validationMessage';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
+import { Button } from 'src/components/button/Button';
+import { Divider } from 'src/components/divider/Divider';
+import { Fieldset } from 'src/components/fieldset/Fieldset';
+import { Radio } from 'src/components/radio/Radio';
+import { Paragraph } from 'src/components/typography/paragraph/Paragraph';
+import { Prose } from 'src/components/typography/prose/Prose';
+import { ValidationMessage } from 'src/components/typography/validationMessage/ValidationMessage';
 import { useRadioGroup as fakeUseRadioGroup } from './docs/FakeUseRadioGroup';
 import { type UseRadioGroupProps, useRadioGroup } from './useRadioGroup';
 
@@ -70,7 +71,7 @@ export const Controlled = meta.story({
       gap: 'var(--ds-size-2)',
       flexDirection: 'column',
     },
-    docs: { source: { type: 'code', transform: formatReactSource } },
+    docs: advancedCodeDocs,
   },
   render: (args) => {
     const { value, setValue, getRadioProps } = useRadioGroup({
@@ -78,6 +79,13 @@ export const Controlled = meta.story({
     });
     return (
       <>
+        <style>
+          {`
+        .radio-group-controlled-button__group {
+          display: flex;
+          gap: var(--ds-size-2);
+        }`}
+        </style>
         <Fieldset>
           <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
           <Fieldset.Description>
@@ -91,19 +99,24 @@ export const Controlled = meta.story({
             />
           ))}
         </Fieldset>
-        <Divider style={{ marginTop: 'var(--ds-size-4)' }} />
-        <Paragraph style={{ marginBlock: 'var(--ds-size-2)' }}>
-          Du har valgt:{' '}
-          {educationLevels.find((level) => level.value === value)?.label}
-        </Paragraph>
-        <div data-size="sm" style={{ display: 'flex', gap: '1rem' }}>
-          <Button variant="secondary" onClick={() => setValue('kindergarten')}>
-            Velg Barnehage
-          </Button>
-          <Button variant="secondary" onClick={() => setValue('primary')}>
-            Velg Grunnskole
-          </Button>
-        </div>
+        <Prose>
+          <Divider />
+          <Paragraph>
+            Du har valgt:{' '}
+            {educationLevels.find((level) => level.value === value)?.label}
+          </Paragraph>
+          <div className="radio-group-controlled-button__group">
+            <Button
+              variant="secondary"
+              onClick={() => setValue('kindergarten')}
+            >
+              Velg Barnehage
+            </Button>
+            <Button variant="secondary" onClick={() => setValue('primary')}>
+              Velg Grunnskole
+            </Button>
+          </div>
+        </Prose>
       </>
     );
   },

@@ -1,15 +1,23 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Checkbox 1`] = `
-<div style="<removed>">
-  <div
-    data-size="sm"
-    style="<removed>"
-  >
-    <h2
-      data-size="2xs"
-      style="<removed>"
-    >
+<style>
+  .input-checkbox-main {
+  display: grid;
+  gap: 2rem;
+}
+.input-checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.input-checkbox-heading {
+  grid-column: 1 / -1;
+}
+</style>
+<div>
+  <div data-size="sm">
+    <h2 data-size="2xs">
       Small
     </h2>
     <ds-field data-clickdelegatefor="<removed>">
@@ -18,10 +26,7 @@ exports[`Checkbox 1`] = `
         name="sm-default"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Default
       </label>
     </ds-field>
@@ -32,10 +37,7 @@ exports[`Checkbox 1`] = `
         name="sm-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Checked
       </label>
     </ds-field>
@@ -46,10 +48,7 @@ exports[`Checkbox 1`] = `
         name="sm-indeterminate"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Indeterminate
       </label>
     </ds-field>
@@ -60,10 +59,7 @@ exports[`Checkbox 1`] = `
         name="sm-disabled"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Disabled
       </label>
     </ds-field>
@@ -75,10 +71,7 @@ exports[`Checkbox 1`] = `
         name="sm-disabled-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Disabled checked
       </label>
     </ds-field>
@@ -90,10 +83,7 @@ exports[`Checkbox 1`] = `
         name="sm-disabled-indeterminate"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Disabled indeterminate
       </label>
     </ds-field>
@@ -104,10 +94,7 @@ exports[`Checkbox 1`] = `
         name="sm-invalid"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Invalid
       </label>
     </ds-field>
@@ -119,10 +106,7 @@ exports[`Checkbox 1`] = `
         name="sm-invalid-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Invalid checked
       </label>
     </ds-field>
@@ -134,10 +118,7 @@ exports[`Checkbox 1`] = `
         name="sm-invalid-indeterminate"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Invalid indeterminate
       </label>
     </ds-field>
@@ -148,10 +129,7 @@ exports[`Checkbox 1`] = `
         name="sm-read-only"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Read-only
       </label>
     </ds-field>
@@ -163,10 +141,7 @@ exports[`Checkbox 1`] = `
         name="sm-read-only-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Read-only checked
       </label>
     </ds-field>
@@ -178,22 +153,13 @@ exports[`Checkbox 1`] = `
         name="sm-read-only-indeterminate"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Read-only indeterminate
       </label>
     </ds-field>
   </div>
-  <div
-    data-size="md"
-    style="<removed>"
-  >
-    <h2
-      data-size="2xs"
-      style="<removed>"
-    >
+  <div data-size="md">
+    <h2 data-size="2xs">
       Medium
     </h2>
     <ds-field data-clickdelegatefor="<removed>">
@@ -202,10 +168,7 @@ exports[`Checkbox 1`] = `
         name="md-default"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Default
       </label>
     </ds-field>
@@ -216,10 +179,7 @@ exports[`Checkbox 1`] = `
         name="md-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Checked
       </label>
     </ds-field>
@@ -230,10 +190,7 @@ exports[`Checkbox 1`] = `
         name="md-indeterminate"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Indeterminate
       </label>
     </ds-field>
@@ -244,10 +201,7 @@ exports[`Checkbox 1`] = `
         name="md-disabled"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Disabled
       </label>
     </ds-field>
@@ -259,10 +213,7 @@ exports[`Checkbox 1`] = `
         name="md-disabled-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Disabled checked
       </label>
     </ds-field>
@@ -274,10 +225,7 @@ exports[`Checkbox 1`] = `
         name="md-disabled-indeterminate"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Disabled indeterminate
       </label>
     </ds-field>
@@ -288,10 +236,7 @@ exports[`Checkbox 1`] = `
         name="md-invalid"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Invalid
       </label>
     </ds-field>
@@ -303,10 +248,7 @@ exports[`Checkbox 1`] = `
         name="md-invalid-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Invalid checked
       </label>
     </ds-field>
@@ -318,10 +260,7 @@ exports[`Checkbox 1`] = `
         name="md-invalid-indeterminate"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Invalid indeterminate
       </label>
     </ds-field>
@@ -332,10 +271,7 @@ exports[`Checkbox 1`] = `
         name="md-read-only"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Read-only
       </label>
     </ds-field>
@@ -347,10 +283,7 @@ exports[`Checkbox 1`] = `
         name="md-read-only-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Read-only checked
       </label>
     </ds-field>
@@ -362,22 +295,13 @@ exports[`Checkbox 1`] = `
         name="md-read-only-indeterminate"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Read-only indeterminate
       </label>
     </ds-field>
   </div>
-  <div
-    data-size="lg"
-    style="<removed>"
-  >
-    <h2
-      data-size="2xs"
-      style="<removed>"
-    >
+  <div data-size="lg">
+    <h2 data-size="2xs">
       Large
     </h2>
     <ds-field data-clickdelegatefor="<removed>">
@@ -386,10 +310,7 @@ exports[`Checkbox 1`] = `
         name="lg-default"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Default
       </label>
     </ds-field>
@@ -400,10 +321,7 @@ exports[`Checkbox 1`] = `
         name="lg-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Checked
       </label>
     </ds-field>
@@ -414,10 +332,7 @@ exports[`Checkbox 1`] = `
         name="lg-indeterminate"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Indeterminate
       </label>
     </ds-field>
@@ -428,10 +343,7 @@ exports[`Checkbox 1`] = `
         name="lg-disabled"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Disabled
       </label>
     </ds-field>
@@ -443,10 +355,7 @@ exports[`Checkbox 1`] = `
         name="lg-disabled-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Disabled checked
       </label>
     </ds-field>
@@ -458,10 +367,7 @@ exports[`Checkbox 1`] = `
         name="lg-disabled-indeterminate"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Disabled indeterminate
       </label>
     </ds-field>
@@ -472,10 +378,7 @@ exports[`Checkbox 1`] = `
         name="lg-invalid"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Invalid
       </label>
     </ds-field>
@@ -487,10 +390,7 @@ exports[`Checkbox 1`] = `
         name="lg-invalid-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Invalid checked
       </label>
     </ds-field>
@@ -502,10 +402,7 @@ exports[`Checkbox 1`] = `
         name="lg-invalid-indeterminate"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Invalid indeterminate
       </label>
     </ds-field>
@@ -516,10 +413,7 @@ exports[`Checkbox 1`] = `
         name="lg-read-only"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Read-only
       </label>
     </ds-field>
@@ -531,10 +425,7 @@ exports[`Checkbox 1`] = `
         name="lg-read-only-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Read-only checked
       </label>
     </ds-field>
@@ -546,10 +437,7 @@ exports[`Checkbox 1`] = `
         name="lg-read-only-indeterminate"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Read-only indeterminate
       </label>
     </ds-field>
@@ -558,35 +446,39 @@ exports[`Checkbox 1`] = `
 `;
 
 exports[`Controlled 1`] = `
-<div style="<removed>">
-  <ds-field>
-    <label
-      data-weight="medium"
-      for="<removed>"
+<style>
+  .input-controlled-main {
+          display: flex;
+          gap: var(--ds-size-2);
+          align-items: end;
+          width: 100%;
+        }
+</style>
+<div>
+  <div>
+    <ds-field>
+      <label for="<removed>">
+        Skriv inn verdi
+      </label>
+      <input
+        type="text"
+        value
+        id="<removed>"
+      >
+    </ds-field>
+    <button
+      data-variant="secondary"
+      type="button"
     >
-      Skriv inn verdi
-    </label>
-    <input
-      type="text"
-      value
-      id="<removed>"
-    >
-  </ds-field>
-  <button
-    data-variant="secondary"
-    type="button"
-  >
-    Tøm feltet
-  </button>
+      Tøm feltet
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Html Size 1`] = `
 <ds-field>
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Input with size
   </label>
   <input
@@ -599,10 +491,7 @@ exports[`Html Size 1`] = `
 
 exports[`Input Types 1`] = `
 <ds-field data-clickdelegatefor="<removed>">
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Checkbox
   </label>
   <input
@@ -611,10 +500,7 @@ exports[`Input Types 1`] = `
   >
 </ds-field>
 <ds-field data-clickdelegatefor="<removed>">
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Radio
   </label>
   <input
@@ -623,10 +509,7 @@ exports[`Input Types 1`] = `
   >
 </ds-field>
 <ds-field data-clickdelegatefor="<removed>">
-  <label
-    data-weight="medium"
-    for="<removed>"
-  >
+  <label for="<removed>">
     Switch
   </label>
   <input
@@ -646,395 +529,324 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Radio 1`] = `
-<div>
-  <div
-    data-size="sm"
-    style="<removed>"
-  >
-    <h2
-      data-size="2xs"
-      style="<removed>"
+<style>
+  .input-radio-main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 90vw;
+}
+.input-radio-heading {
+  grid-column: 1 / -1;
+  margin-top: 16px;
+}
+</style>
+<div data-size="sm">
+  <h2 data-size="2xs">
+    Small
+  </h2>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="radio"
+      name="sm-Default"
+      id="<removed>"
     >
-      Small
-    </h2>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        type="radio"
-        name="sm-Default"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Default
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        type="radio"
-        checked
-        name="sm-Checked"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Checked
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        disabled
-        type="radio"
-        name="sm-Disabled"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Disabled
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        disabled
-        type="radio"
-        checked
-        name="sm-Disabled"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Disabled checked
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        aria-invalid="true"
-        type="radio"
-        name="sm-Invalid"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Invalid
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        aria-invalid="true"
-        type="radio"
-        checked
-        name="sm-Invalid"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Invalid checked
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        readonly
-        type="radio"
-        name="sm-Read-only"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Read-only
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        readonly
-        type="radio"
-        checked
-        name="sm-Read-only"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Read-only checked
-      </label>
-    </ds-field>
-  </div>
-  <div
-    data-size="md"
-    style="<removed>"
-  >
-    <h2
-      data-size="2xs"
-      style="<removed>"
+    <label for="<removed>">
+      Default
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="radio"
+      checked
+      name="sm-Checked"
+      id="<removed>"
     >
-      Medium
-    </h2>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        type="radio"
-        name="md-Default"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Default
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        type="radio"
-        checked
-        name="md-Checked"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Checked
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        disabled
-        type="radio"
-        name="md-Disabled"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Disabled
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        disabled
-        type="radio"
-        checked
-        name="md-Disabled"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Disabled checked
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        aria-invalid="true"
-        type="radio"
-        name="md-Invalid"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Invalid
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        aria-invalid="true"
-        type="radio"
-        checked
-        name="md-Invalid"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Invalid checked
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        readonly
-        type="radio"
-        name="md-Read-only"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Read-only
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        readonly
-        type="radio"
-        checked
-        name="md-Read-only"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Read-only checked
-      </label>
-    </ds-field>
-  </div>
-  <div
-    data-size="lg"
-    style="<removed>"
-  >
-    <h2
-      data-size="2xs"
-      style="<removed>"
+    <label for="<removed>">
+      Checked
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      disabled
+      type="radio"
+      name="sm-Disabled"
+      id="<removed>"
     >
-      Large
-    </h2>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        type="radio"
-        name="lg-Default"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Default
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        type="radio"
-        checked
-        name="lg-Checked"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Checked
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        disabled
-        type="radio"
-        name="lg-Disabled"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Disabled
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        disabled
-        type="radio"
-        checked
-        name="lg-Disabled"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Disabled checked
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        aria-invalid="true"
-        type="radio"
-        name="lg-Invalid"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Invalid
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        aria-invalid="true"
-        type="radio"
-        checked
-        name="lg-Invalid"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Invalid checked
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        readonly
-        type="radio"
-        name="lg-Read-only"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Read-only
-      </label>
-    </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
-      <input
-        readonly
-        type="radio"
-        checked
-        name="lg-Read-only"
-        id="<removed>"
-      >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Read-only checked
-      </label>
-    </ds-field>
-  </div>
+    <label for="<removed>">
+      Disabled
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      disabled
+      type="radio"
+      checked
+      name="sm-Disabled"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Disabled checked
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      aria-invalid="true"
+      type="radio"
+      name="sm-Invalid"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Invalid
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      aria-invalid="true"
+      type="radio"
+      checked
+      name="sm-Invalid"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Invalid checked
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      readonly
+      type="radio"
+      name="sm-Read-only"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Read-only
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      readonly
+      type="radio"
+      checked
+      name="sm-Read-only"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Read-only checked
+    </label>
+  </ds-field>
+</div>
+<div data-size="md">
+  <h2 data-size="2xs">
+    Medium
+  </h2>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="radio"
+      name="md-Default"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Default
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="radio"
+      checked
+      name="md-Checked"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Checked
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      disabled
+      type="radio"
+      name="md-Disabled"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Disabled
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      disabled
+      type="radio"
+      checked
+      name="md-Disabled"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Disabled checked
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      aria-invalid="true"
+      type="radio"
+      name="md-Invalid"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Invalid
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      aria-invalid="true"
+      type="radio"
+      checked
+      name="md-Invalid"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Invalid checked
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      readonly
+      type="radio"
+      name="md-Read-only"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Read-only
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      readonly
+      type="radio"
+      checked
+      name="md-Read-only"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Read-only checked
+    </label>
+  </ds-field>
+</div>
+<div data-size="lg">
+  <h2 data-size="2xs">
+    Large
+  </h2>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="radio"
+      name="lg-Default"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Default
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      type="radio"
+      checked
+      name="lg-Checked"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Checked
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      disabled
+      type="radio"
+      name="lg-Disabled"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Disabled
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      disabled
+      type="radio"
+      checked
+      name="lg-Disabled"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Disabled checked
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      aria-invalid="true"
+      type="radio"
+      name="lg-Invalid"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Invalid
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      aria-invalid="true"
+      type="radio"
+      checked
+      name="lg-Invalid"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Invalid checked
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      readonly
+      type="radio"
+      name="lg-Read-only"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Read-only
+    </label>
+  </ds-field>
+  <ds-field data-clickdelegatefor="<removed>">
+    <input
+      readonly
+      type="radio"
+      checked
+      name="lg-Read-only"
+      id="<removed>"
+    >
+    <label for="<removed>">
+      Read-only checked
+    </label>
+  </ds-field>
 </div>
 `;
 
 exports[`Switch 1`] = `
-<div style="<removed>">
-  <div
-    data-size="sm"
-    style="<removed>"
-  >
-    <h2
-      data-size="2xs"
-      style="<removed>"
-    >
+<style>
+  .input-switch-main {
+  display: grid;
+  gap: 2rem;
+}
+.input-switch-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 90vw;
+}
+.input-switch-heading {
+  grid-column: 1 / -1;
+}
+</style>
+<div>
+  <div data-size="sm">
+    <h2 data-size="2xs">
       Small
     </h2>
     <ds-field data-clickdelegatefor="<removed>">
@@ -1044,10 +856,7 @@ exports[`Switch 1`] = `
         name="sm-default"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Default
       </label>
     </ds-field>
@@ -1059,10 +868,7 @@ exports[`Switch 1`] = `
         name="sm-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Checked
       </label>
     </ds-field>
@@ -1074,10 +880,7 @@ exports[`Switch 1`] = `
         name="sm-disabled"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Disabled
       </label>
     </ds-field>
@@ -1090,10 +893,7 @@ exports[`Switch 1`] = `
         name="sm-disabled-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Disabled checked
       </label>
     </ds-field>
@@ -1105,10 +905,7 @@ exports[`Switch 1`] = `
         name="sm-read-only"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Read-only
       </label>
     </ds-field>
@@ -1121,22 +918,13 @@ exports[`Switch 1`] = `
         name="sm-read-only-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Read-only checked
       </label>
     </ds-field>
   </div>
-  <div
-    data-size="md"
-    style="<removed>"
-  >
-    <h2
-      data-size="2xs"
-      style="<removed>"
-    >
+  <div data-size="md">
+    <h2 data-size="2xs">
       Medium
     </h2>
     <ds-field data-clickdelegatefor="<removed>">
@@ -1146,10 +934,7 @@ exports[`Switch 1`] = `
         name="md-default"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Default
       </label>
     </ds-field>
@@ -1161,10 +946,7 @@ exports[`Switch 1`] = `
         name="md-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Checked
       </label>
     </ds-field>
@@ -1176,10 +958,7 @@ exports[`Switch 1`] = `
         name="md-disabled"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Disabled
       </label>
     </ds-field>
@@ -1192,10 +971,7 @@ exports[`Switch 1`] = `
         name="md-disabled-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Disabled checked
       </label>
     </ds-field>
@@ -1207,10 +983,7 @@ exports[`Switch 1`] = `
         name="md-read-only"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Read-only
       </label>
     </ds-field>
@@ -1223,22 +996,13 @@ exports[`Switch 1`] = `
         name="md-read-only-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Read-only checked
       </label>
     </ds-field>
   </div>
-  <div
-    data-size="lg"
-    style="<removed>"
-  >
-    <h2
-      data-size="2xs"
-      style="<removed>"
-    >
+  <div data-size="lg">
+    <h2 data-size="2xs">
       Large
     </h2>
     <ds-field data-clickdelegatefor="<removed>">
@@ -1248,10 +1012,7 @@ exports[`Switch 1`] = `
         name="lg-default"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Default
       </label>
     </ds-field>
@@ -1263,10 +1024,7 @@ exports[`Switch 1`] = `
         name="lg-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Checked
       </label>
     </ds-field>
@@ -1278,10 +1036,7 @@ exports[`Switch 1`] = `
         name="lg-disabled"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Disabled
       </label>
     </ds-field>
@@ -1294,10 +1049,7 @@ exports[`Switch 1`] = `
         name="lg-disabled-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Disabled checked
       </label>
     </ds-field>
@@ -1309,10 +1061,7 @@ exports[`Switch 1`] = `
         name="lg-read-only"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Read-only
       </label>
     </ds-field>
@@ -1325,10 +1074,7 @@ exports[`Switch 1`] = `
         name="lg-read-only-checked"
         id="<removed>"
       >
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
+      <label for="<removed>">
         Read-only checked
       </label>
     </ds-field>
@@ -1337,249 +1083,204 @@ exports[`Switch 1`] = `
 `;
 
 exports[`Text 1`] = `
-<div>
-  <div
-    data-size="sm"
-    style="<removed>"
-  >
-    <h2
-      data-size="2xs"
-      style="<removed>"
+<style>
+  .input-text-main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 90vw;
+}
+.input-text-heading {
+  grid-column: 1 / -1;
+}
+</style>
+<div data-size="sm">
+  <h2 data-size="2xs">
+    Small
+  </h2>
+  <ds-field>
+    <label for="<removed>">
+      Default
+    </label>
+    <input
+      data-size="sm"
+      type="text"
+      value="Value"
+      name="sm-default"
+      id="<removed>"
     >
-      Small
-    </h2>
-    <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Default
-      </label>
-      <input
-        data-size="sm"
-        type="text"
-        value="Value"
-        name="sm-default"
-        id="<removed>"
-      >
-    </ds-field>
-    <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Disabled
-      </label>
-      <input
-        disabled
-        data-size="sm"
-        type="text"
-        value="Value"
-        name="sm-disabled"
-        id="<removed>"
-      >
-    </ds-field>
-    <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Invalid
-      </label>
-      <input
-        data-size="sm"
-        type="text"
-        value="Value"
-        name="sm-invalid"
-        id="<removed>"
-        aria-describedby="<removed>"
-        aria-invalid="true"
-      >
-      <p
-        data-field="validation"
-        id="<removed>"
-      >
-        Feilmelding
-      </p>
-    </ds-field>
-    <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Read-only
-      </label>
-      <input
-        readonly
-        data-size="sm"
-        type="text"
-        value="Value"
-        name="sm-read-only"
-        id="<removed>"
-      >
-    </ds-field>
-  </div>
-  <div
-    data-size="md"
-    style="<removed>"
-  >
-    <h2
-      data-size="2xs"
-      style="<removed>"
+  </ds-field>
+  <ds-field>
+    <label for="<removed>">
+      Disabled
+    </label>
+    <input
+      disabled
+      data-size="sm"
+      type="text"
+      value="Value"
+      name="sm-disabled"
+      id="<removed>"
     >
-      Medium
-    </h2>
-    <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Default
-      </label>
-      <input
-        data-size="md"
-        type="text"
-        value="Value"
-        name="md-default"
-        id="<removed>"
-      >
-    </ds-field>
-    <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Disabled
-      </label>
-      <input
-        disabled
-        data-size="md"
-        type="text"
-        value="Value"
-        name="md-disabled"
-        id="<removed>"
-      >
-    </ds-field>
-    <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Invalid
-      </label>
-      <input
-        data-size="md"
-        type="text"
-        value="Value"
-        name="md-invalid"
-        id="<removed>"
-        aria-describedby="<removed>"
-        aria-invalid="true"
-      >
-      <p
-        data-field="validation"
-        id="<removed>"
-      >
-        Feilmelding
-      </p>
-    </ds-field>
-    <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Read-only
-      </label>
-      <input
-        readonly
-        data-size="md"
-        type="text"
-        value="Value"
-        name="md-read-only"
-        id="<removed>"
-      >
-    </ds-field>
-  </div>
-  <div
-    data-size="lg"
-    style="<removed>"
-  >
-    <h2
-      data-size="2xs"
-      style="<removed>"
+  </ds-field>
+  <ds-field>
+    <label for="<removed>">
+      Invalid
+    </label>
+    <input
+      data-size="sm"
+      type="text"
+      value="Value"
+      name="sm-invalid"
+      id="<removed>"
+      aria-describedby="<removed>"
+      aria-invalid="true"
     >
-      Large
-    </h2>
-    <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Default
-      </label>
-      <input
-        data-size="lg"
-        type="text"
-        value="Value"
-        name="lg-default"
-        id="<removed>"
-      >
-    </ds-field>
-    <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Disabled
-      </label>
-      <input
-        disabled
-        data-size="lg"
-        type="text"
-        value="Value"
-        name="lg-disabled"
-        id="<removed>"
-      >
-    </ds-field>
-    <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Invalid
-      </label>
-      <input
-        data-size="lg"
-        type="text"
-        value="Value"
-        name="lg-invalid"
-        id="<removed>"
-        aria-describedby="<removed>"
-        aria-invalid="true"
-      >
-      <p
-        data-field="validation"
-        id="<removed>"
-      >
-        Feilmelding
-      </p>
-    </ds-field>
-    <ds-field>
-      <label
-        data-weight="medium"
-        for="<removed>"
-      >
-        Read-only
-      </label>
-      <input
-        readonly
-        data-size="lg"
-        type="text"
-        value="Value"
-        name="lg-read-only"
-        id="<removed>"
-      >
-    </ds-field>
-  </div>
+    <p
+      data-field="validation"
+      id="<removed>"
+    >
+      Feilmelding
+    </p>
+  </ds-field>
+  <ds-field>
+    <label for="<removed>">
+      Read-only
+    </label>
+    <input
+      readonly
+      data-size="sm"
+      type="text"
+      value="Value"
+      name="sm-read-only"
+      id="<removed>"
+    >
+  </ds-field>
+</div>
+<div data-size="md">
+  <h2 data-size="2xs">
+    Medium
+  </h2>
+  <ds-field>
+    <label for="<removed>">
+      Default
+    </label>
+    <input
+      data-size="md"
+      type="text"
+      value="Value"
+      name="md-default"
+      id="<removed>"
+    >
+  </ds-field>
+  <ds-field>
+    <label for="<removed>">
+      Disabled
+    </label>
+    <input
+      disabled
+      data-size="md"
+      type="text"
+      value="Value"
+      name="md-disabled"
+      id="<removed>"
+    >
+  </ds-field>
+  <ds-field>
+    <label for="<removed>">
+      Invalid
+    </label>
+    <input
+      data-size="md"
+      type="text"
+      value="Value"
+      name="md-invalid"
+      id="<removed>"
+      aria-describedby="<removed>"
+      aria-invalid="true"
+    >
+    <p
+      data-field="validation"
+      id="<removed>"
+    >
+      Feilmelding
+    </p>
+  </ds-field>
+  <ds-field>
+    <label for="<removed>">
+      Read-only
+    </label>
+    <input
+      readonly
+      data-size="md"
+      type="text"
+      value="Value"
+      name="md-read-only"
+      id="<removed>"
+    >
+  </ds-field>
+</div>
+<div data-size="lg">
+  <h2 data-size="2xs">
+    Large
+  </h2>
+  <ds-field>
+    <label for="<removed>">
+      Default
+    </label>
+    <input
+      data-size="lg"
+      type="text"
+      value="Value"
+      name="lg-default"
+      id="<removed>"
+    >
+  </ds-field>
+  <ds-field>
+    <label for="<removed>">
+      Disabled
+    </label>
+    <input
+      disabled
+      data-size="lg"
+      type="text"
+      value="Value"
+      name="lg-disabled"
+      id="<removed>"
+    >
+  </ds-field>
+  <ds-field>
+    <label for="<removed>">
+      Invalid
+    </label>
+    <input
+      data-size="lg"
+      type="text"
+      value="Value"
+      name="lg-invalid"
+      id="<removed>"
+      aria-describedby="<removed>"
+      aria-invalid="true"
+    >
+    <p
+      data-field="validation"
+      id="<removed>"
+    >
+      Feilmelding
+    </p>
+  </ds-field>
+  <ds-field>
+    <label for="<removed>">
+      Read-only
+    </label>
+    <input
+      readonly
+      data-size="lg"
+      type="text"
+      value="Value"
+      name="lg-read-only"
+      id="<removed>"
+    >
+  </ds-field>
 </div>
 `;

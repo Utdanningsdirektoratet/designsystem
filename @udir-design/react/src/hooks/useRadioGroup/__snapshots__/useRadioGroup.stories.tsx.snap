@@ -1,17 +1,17 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Controlled 1`] = `
+<style>
+  .radio-group-controlled-button__group {
+          display: flex;
+          gap: var(--ds-size-2);
+        }
+</style>
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     Utdanningsnivå
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Velg det høyeste utdanningsnivået du har fullført.
   </p>
   <ds-field data-clickdelegatefor="<removed>">
@@ -71,41 +71,31 @@ exports[`Controlled 1`] = `
     </label>
   </ds-field>
 </fieldset>
-<hr
-  aria-hidden="true"
-  style="<removed>"
->
-<p
-  data-variant="default"
-  style="<removed>"
->
-  Du har valgt:
-</p>
-<div
-  data-size="sm"
-  style="<removed>"
->
-  <button
-    data-variant="secondary"
-    type="button"
-  >
-    Velg Barnehage
-  </button>
-  <button
-    data-variant="secondary"
-    type="button"
-  >
-    Velg Grunnskole
-  </button>
+<div>
+  <hr aria-hidden="true">
+  <p>
+    Du har valgt:
+  </p>
+  <div>
+    <button
+      data-variant="secondary"
+      type="button"
+    >
+      Velg Barnehage
+    </button>
+    <button
+      data-variant="secondary"
+      type="button"
+    >
+      Velg Grunnskole
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Default 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     Velg din aldersgruppe
   </legend>
   <ds-field data-clickdelegatefor="<removed>">
@@ -161,16 +151,10 @@ exports[`Default 1`] = `
 
 exports[`Disabled 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     Velg din aldersgruppe
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
   <ds-field data-clickdelegatefor="<removed>">
@@ -229,16 +213,10 @@ exports[`Disabled 1`] = `
 
 exports[`Group 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     Velg din aldersgruppe
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
   <ds-field data-clickdelegatefor="<removed>">
@@ -294,16 +272,10 @@ exports[`Group 1`] = `
 
 exports[`Outline 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     Velg din aldersgruppe
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
   <ds-field
@@ -368,16 +340,10 @@ exports[`Outline 1`] = `
 
 exports[`Read Only 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     Velg din aldersgruppe
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
   <ds-field data-clickdelegatefor="<removed>">
@@ -436,16 +402,10 @@ exports[`Read Only 1`] = `
 
 exports[`With Error 1`] = `
 <fieldset aria-labelledby="<removed>">
-  <legend
-    data-weight="medium"
-    id="<removed>"
-  >
+  <legend id="<removed>">
     Velg din aldersgruppe
   </legend>
-  <p
-    data-variant="default"
-    id="<removed>"
-  >
+  <p id="<removed>">
     Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
   <ds-field data-clickdelegatefor="<removed>">

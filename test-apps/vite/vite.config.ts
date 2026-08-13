@@ -1,9 +1,9 @@
-import react from '@vitejs/plugin-react-swc';
+import path from 'node:path';
+import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
-import tsConfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  root: __dirname,
+  root: import.meta.dirname,
   cacheDir: '../../node_modules/.vite/test-apps/vite',
   server: {
     port: 4200,
@@ -13,14 +13,21 @@ export default defineConfig({
     port: 4300,
     host: 'localhost',
   },
-  plugins: [react(), tsConfigPaths()],
+  plugins: [react()],
+  resolve: {
+    tsconfigPaths: true,
+    alias: {
+      '.storybook': path.resolve(
+        import.meta.dirname,
+        '../../@udir-design/react/.storybook',
+      ),
+    },
+  },
   build: {
     outDir: './dist',
     emptyOutDir: true,
     reportCompressedSize: true,
-    commonjsOptions: {
-      transformMixedEsModules: true,
-    },
+    chunkSizeWarningLimit: Infinity,
   },
   define: {
     'import.meta.vitest': undefined,

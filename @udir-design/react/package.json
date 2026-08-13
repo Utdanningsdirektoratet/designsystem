@@ -1,15 +1,15 @@
 {
   "name": "@udir-design/react",
+  "version": "0.0.0-semantically-released",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "github:Utdanningsdirektoratet/designsystem",
     "directory": "@udir-design/react"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "license": "MIT",
-  "version": "0.0.0-semantically-released",
+  "files": [
+    "./dist"
+  ],
   "type": "module",
   "main": "./dist/stable.js",
   "types": "./dist/stable.d.ts",
@@ -39,15 +39,15 @@
     },
     "./style.css": "./dist/style.css"
   },
-  "files": [
-    "./dist"
-  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "vite build",
     "inject": "echo 'Dummy script to trigger pnpm injected dependency sync'",
-    "lint": "eslint . --max-warnings 0",
-    "lint:cycles": "pnpm madge --circular ./src/alpha.ts",
-    "typecheck": "tsgo --build",
+    "lint": "oxlint",
+    "lint:cycles": "pnpm dpdm --no-warning --no-tree --exit-code circular:1 ./src/alpha.ts",
+    "typecheck": "tsc --build",
     "dev": "storybook dev --port 6005",
     "build:storybook": "storybook build --stats-json",
     "build:docs": "typedoc",
@@ -55,12 +55,11 @@
     "serve:typedoc": "pnpm dlx http-server --port=8090 -c-1 ./storybook-static/typedoc",
     "serve:docs": "pnpm dlx http-server ./storybook-static",
     "pretest": "pnpm exec playwright install --with-deps chromium",
-    "test": "vitest --outputFile.json test-reports/all.json",
+    "test": "vitest",
     "pretest:unit": "pnpm pretest",
-    "test:unit": "vitest --project unit --outputFile.json test-reports/unit.json",
+    "test:unit": "vitest --project unit",
     "pretest:storybook": "pnpm pretest",
-    "test:storybook": "vitest --project storybook --outputFile.json test-reports/storybook.json --outputFile.html test-reports/storybook/index.html",
-    "view-test-report:storybook": "pnpm dlx http-server ./test-reports/storybook"
+    "test:storybook": "vitest --project storybook"
   },
   "dependencies": {
     "@digdir/designsystemet-react": "catalog:",
@@ -87,7 +86,8 @@
     "@types/react-dom": "catalog:",
     "@types/remark-heading-id": "catalog:",
     "@udir-design/symbols": "workspace:*",
-    "@vitejs/plugin-react-swc": "catalog:",
+    "@udir-design/theme": "workspace:*",
+    "@vitejs/plugin-react": "catalog:",
     "@vitest/browser": "catalog:",
     "@vitest/browser-playwright": "catalog:",
     "@vitest/coverage-v8": "catalog:",
@@ -98,6 +98,7 @@
     "chromatic": "catalog:",
     "clsx": "catalog:",
     "diffable-html": "catalog:",
+    "dpdm": "catalog:",
     "eslint-plugin-storybook": "catalog:",
     "fuse.js": "catalog:",
     "hast-util-from-html": "catalog:",
@@ -107,6 +108,7 @@
     "highcharts-react-official": "catalog:",
     "mdast-util-to-hast": "catalog:",
     "playwright": "catalog:",
+    "prettier": "catalog:",
     "ramda": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -122,12 +124,12 @@
     "storybook-addon-pseudo-states": "catalog:",
     "type-fest": "catalog:",
     "typedoc": "catalog:",
+    "typescript": "catalog:",
     "unified": "catalog:",
     "unist-util-remove": "catalog:",
     "unist-util-visit": "catalog:",
+    "unplugin-dts": "catalog:",
     "vite": "catalog:",
-    "vite-plugin-dts": "catalog:",
-    "vite-tsconfig-paths": "catalog:",
     "vitest": "catalog:",
     "zod": "catalog:"
   },
@@ -140,5 +142,14 @@
     "@types/react": {
       "optional": true
     }
-  }
+  },
+  "trackedDevDependencies": [
+    "vite",
+    "@vitejs/plugin-react",
+    "storybook",
+    "@storybook/react-vite",
+    "@storybook/addon-docs",
+    "storybook-addon-pseudo-states",
+    "sass"
+  ]
 }
