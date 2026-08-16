@@ -19,8 +19,8 @@ allowBuilds:
 catalog:
   "@babel/types": ^7.29.8
   "@types/js-yaml": ^4.0.9
-  "@commitlint/cli": ^21.2.1
-  "@commitlint/config-conventional": ^21.2.0
+  "@commitlint/cli": ^21.2.2
+  "@commitlint/config-conventional": ^21.2.2
   "@commitlint/types": ^21.2.0
   "@digdir/designsystemet": 1.18.0
   "@digdir/designsystemet-css": 1.18.0
@@ -28,14 +28,14 @@ catalog:
   "@digdir/designsystemet-types": 1.18.0
   "@digdir/designsystemet-web": 1.18.0
   "@figma/rest-api-spec": ^0.41.0
-  "@hookform/resolvers": ^5.7.1
+  "@hookform/resolvers": ^5.9.0
   "@navikt/aksel-icons": 8.15.0
   "@radix-ui/react-slot": ^1.3.3
-  "@storybook/addon-a11y": ^10.5.7
-  "@storybook/addon-docs": ^10.5.7
-  "@storybook/addon-vitest": ^10.5.7
+  "@storybook/addon-a11y": ^10.5.8
+  "@storybook/addon-docs": ^10.5.8
+  "@storybook/addon-vitest": ^10.5.8
   "@storybook/icons": ^2.1.0
-  "@storybook/react-vite": ^10.5.7
+  "@storybook/react-vite": ^10.5.8
   "@svgr/cli": 8.1.0
   "@svgr/core": ^8.1.0
   "@testing-library/react": ^16.3.2
@@ -60,12 +60,12 @@ catalog:
   axe-core: ^4.13.0
   axe-playwright: ^2.2.2
   camelcase: ^9.0.0
-  chromatic: ^18.1.0
+  chromatic: ^18.2.0
   clsx: 2.1.1
   cssnano: ^7.1.9
   diffable-html: ^6.0.1
   eslint-plugin-import: ^2.32.0
-  eslint-plugin-storybook: ^10.5.7
+  eslint-plugin-storybook: ^10.5.8
   fast-glob: ^3.3.3
   fuse.js: ^7.5.0
   hast-util-from-html: ^2.0.3
@@ -74,10 +74,10 @@ catalog:
   highcharts: ^12.6.0
   highcharts-react-official: ^3.2.3
   husky: ^9.1.7
-  js-yaml: ^5.2.3
+  js-yaml: ^5.3.0
   jsdom: ^29.1.1
   mdast-util-to-hast: ^13.2.1
-  next: ^16.3.0
+  next: ^16.3.1
   playwright: ^1.62.1
   postcss: ^8.5.26
   postcss-cli: ^11.0.1
@@ -100,13 +100,13 @@ catalog:
   sass: ^1.102.0
   sharp: ^0.35.3
   shx: ^0.4.0
-  storybook: ^10.5.7
-  storybook-addon-pseudo-states: ^10.5.7
+  storybook: ^10.5.8
+  storybook-addon-pseudo-states: ^10.5.8
   style-dictionary: ^5.5.1
   svgo: ^4.0.2
   tsdown: ^0.22.14
   tslib: ^2.8.1
-  tsx: ^4.23.11
+  tsx: ^4.23.12
   type-fest: ^5.8.0
   typedoc: ^0.28.20
   typescript: "npm:@typescript/typescript6@^6.0.2"
@@ -117,14 +117,14 @@ catalog:
   vitest: ^4.1.10
   yargs: ^18.1.0
   zod: ^4.4.3
-  turbo: ^2.10.9
+  turbo: ^2.10.10
   semantic-release: ^25.0.9
   "@semantic-release/exec": ^7.1.0
   conventional-changelog-conventionalcommits: ^9.3.1
   conventional-changelog-writer: ^8.4.0
   dpdm: ^4.3.0
   unplugin-dts: ^1.0.3
-  oxlint: ^1.77.0
+  oxlint: ^1.78.0
   oxlint-tsgolint: ^7.0.2001
   react-router: ^8.3.0
 
