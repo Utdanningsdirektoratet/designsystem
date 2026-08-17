@@ -1,7 +1,9 @@
 import { Table } from '@udir-design/react/beta';
 import { Unstyled } from '@storybook/addon-docs/blocks';
 import { CopyButton } from '.storybook/docs/components';
-import exampleData from './exampleData.json';
+import localizedExampleData from './exampleData.json';
+
+export const exampleData = localizedExampleData.nb;
 
 export const cookieCategories = Object.fromEntries(
   exampleData.categories.map((category) => [category.id, category]),
@@ -54,56 +56,6 @@ Under "Copy and translations" i dashbordet finner du tekst for samtykke til info
         <Table.Cell>{exampleData.body}</Table.Cell>
         <Table.Cell>
           <CopyButton text={exampleData.body} />
-        </Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.HeaderCell scope="row">Accept button</Table.HeaderCell>
-        <Table.Cell>{exampleData.labels.acceptAll}</Table.Cell>
-        <Table.Cell>
-          <CopyButton text={exampleData.labels.acceptAll} />
-        </Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.HeaderCell scope="row">Decline button</Table.HeaderCell>
-        <Table.Cell>{exampleData.labels.declineOptional}</Table.Cell>
-        <Table.Cell>
-          <CopyButton text={exampleData.labels.declineOptional} />
-        </Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.HeaderCell
-          scope="colgroup"
-          colSpan={3}
-          style={{
-            textAlign: 'center',
-            backgroundColor: 'var(--ds-color-surface-tinted)',
-          }}
-        >
-          Cookie Policy
-        </Table.HeaderCell>
-      </Table.Row>
-      <Table.Row>
-        <Table.HeaderCell scope="row">Headline</Table.HeaderCell>
-        <Table.Cell>
-          {exampleData.labels.overview}
-        </Table.Cell>
-        <Table.Cell>
-          <CopyButton
-            text={exampleData.labels.overview}
-          />
-        </Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.HeaderCell scope="row">
-          Save current setting button text
-        </Table.HeaderCell>
-        <Table.Cell>
-          {exampleData.labels.acceptSelected}
-        </Table.Cell>
-        <Table.Cell>
-          <CopyButton
-            text={exampleData.labels.acceptSelected}
-          />
         </Table.Cell>
       </Table.Row>
       <Table.Row>
@@ -198,7 +150,7 @@ Under "Copy and translations" i dashbordet finner du tekst for samtykke til info
 
 1. Kopier koden nedenfor.
 
-```
+```html
 <script
   id="CookieConsent"
   src="https://policy.app.cookieinformation.com/uc.js"
@@ -211,3 +163,28 @@ Under "Copy and translations" i dashbordet finner du tekst for samtykke til info
 2. Lim inn koden i `<head>`-taggen i HTML-filen for tjenesten din.
 
 Samtykkehåndteringen vil dukke opp på siden din innen 10 minutter.
+
+## Språk
+
+Verdien i `data-culture` velger språk for både innholdet fra Cookie Information
+og de faste tekstene i designmalen. Malen støtter `NB` og `EN`. Ukjente eller
+manglende språkverdier bruker bokmål. Støtte for flere språk krever at språket
+legges til i oversettelsesobjektet i JavaScript-filen for designmalen.
+
+## Åpne samtykkedialogen igjen
+
+Bruk `CookieConsent.renew()` på en knapp for å åpne samtykkedialogen igjen.
+
+I HTML:
+
+```html
+<button type="button" onclick="CookieConsent.renew()">Endre samtykke</button>
+```
+
+I React:
+
+```tsx
+<Button type="button" onClick={() => window.CookieConsent?.renew()}>
+  Endre samtykke
+</Button>
+```
