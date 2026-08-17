@@ -44,28 +44,15 @@ exports[`Preview 1`] = `
         [Tjenestenavn] bruker informasjonskapsler
       </h2>
       <p>
-        Nødvendige informasjonskapsler sørger for at tjenesten fungerer og er sikker, og kan ikke velges bort. Valgfrie brukes til å [beskriv kort hva de valgfrie informasjonskapslene brukes til].
-      </p>
-      <p>
-        Du kan når som helst endre samtykket ditt via lenken i bunnfeltet. Samtykket gjelder for: eksempel.no, admin.eksempel.no
+        Nødvendige informasjonskapsler bidrar til at tjenesten fungerer og er sikker, og kan ikke velges bort.
       </p>
       <fieldset aria-labelledby="<removed>">
         <legend id="<removed>">
-          Velg hvilke informasjonskapsler du godtar
+          Velg hvilke valgfrie informasjonskapsler du godtar
         </legend>
-        <ds-field data-clickdelegatefor="<removed>">
-          <input
-            type="checkbox"
-            checked
-            id="<removed>"
-          >
-          <label
-            data-weight="regular"
-            for="<removed>"
-          >
-            Nødvendige (kan ikke velges bort)
-          </label>
-        </ds-field>
+        <p id="<removed>">
+          Valgfrie informasjonskapsler brukes til å [beskriv kort hva de valgfrie informasjonskapslene brukes til].
+        </p>
         <ds-field data-clickdelegatefor="<removed>">
           <input
             type="checkbox"
@@ -92,9 +79,10 @@ exports[`Preview 1`] = `
         </ds-field>
       </fieldset>
       <button
-        data-variant="tertiary"
+        data-variant="secondary"
         type="button"
         aria-haspopup="dialog"
+        data-size="sm"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -183,7 +171,7 @@ exports[`Preview 1`] = `
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/cookie-information/privacy">
-                            Se personvernerklæring
+                            Cookie Information personvernerklæring
                           </a>
                         </li>
                       </ul>
@@ -222,7 +210,7 @@ exports[`Preview 1`] = `
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/cloudflare/privacy">
-                            Se personvernerklæring
+                            Cloudflare personvernerklæring
                           </a>
                         </li>
                       </ul>
@@ -238,7 +226,7 @@ exports[`Preview 1`] = `
                 Funksjonelle
               </h3>
               <p>
-                Funksjonelle informasjonskapsler lagrer opplysninger som endrer måten tjenesten ser ut eller oppfører seg på slik at den blir bedre tilpasset deg. Tjenesten lagrer [sett inn hvilke opplysninger som lagres og hvor de lagres]. Ved å samtykke godtar du at vi kan behandle dataene.
+                Funksjonelle informasjonskapsler lagrer opplysninger som endrer måten tjenesten ser ut eller oppfører seg på slik at den blir bedre tilpasset deg. Tjenesten lagrer [sett inn hvilke opplysninger som lagres]. Opplysningene lagres hos leverandør. Ved å samtykke godtar du at vi kan behandle dataene.
               </p>
               <details>
                 <summary>
@@ -280,7 +268,7 @@ exports[`Preview 1`] = `
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/optimizely/privacy">
-                            Se personvernerklæring
+                            Optimizely personvernerklæring
                           </a>
                         </li>
                       </ul>
@@ -296,7 +284,7 @@ exports[`Preview 1`] = `
                 Statistiske
               </h3>
               <p>
-                Statistiske informasjonskapsler samler anonyme opplysninger om hvordan tjenesten blir brukt, slik at vi kan bruke dem til å gjøre tjenesten mest mulig tilpasset brukernes behov. Tjenesten lagrer [sett inn hvilke opplysninger som lagres og hvor de lagres]. Ved å samtykke godtar du at vi kan behandle dataene.
+                Statistiske informasjonskapsler samler anonyme opplysninger om hvordan tjenesten blir brukt, slik at vi kan bruke dem til å gjøre tjenesten mest mulig tilpasset brukernes behov. Tjenesten lagrer [sett inn hvilke opplysninger som lagres]. Opplysningene lagres hos leverandør. Ved å samtykke godtar du at vi kan behandle dataene.
               </p>
               <details>
                 <summary>
@@ -338,7 +326,7 @@ exports[`Preview 1`] = `
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/google/privacy">
-                            Se personvernerklæring
+                            Google Analytics personvernerklæring
                           </a>
                         </li>
                       </ul>
@@ -377,7 +365,7 @@ exports[`Preview 1`] = `
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/siteimprove/privacy">
-                            Se personvernerklæring
+                            Siteimprove personvernerklæring
                           </a>
                         </li>
                       </ul>
@@ -416,7 +404,7 @@ exports[`Preview 1`] = `
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/microsoft/privacy">
-                            Se personvernerklæring
+                            Microsoft Azure personvernerklæring
                           </a>
                         </li>
                       </ul>
@@ -428,6 +416,9 @@ exports[`Preview 1`] = `
           </div>
         </div>
       </dialog>
+      <p>
+        Du kan når som helst endre samtykket ditt via lenken i bunnfeltet. Samtykket gjelder for: abc.udir.no, xyz.udir.no.
+      </p>
     </div>
     <div>
       <button
