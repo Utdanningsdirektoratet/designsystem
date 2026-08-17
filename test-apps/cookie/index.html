@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="nb">
+<html lang="{{language}}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cookie Banner</title>
+    <title data-i18n="pageTitle">Informasjonskapsler</title>
     <link
       rel="preload stylesheet"
       as="style"
@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <script>
+    <script id="CookieConsent" data-culture="{{culture}}">
       // Stub API — stands in for the real CookieInformation backend
       window.CookieInformation = {
         submitAllCategories: function () {
@@ -58,6 +58,7 @@
       role="dialog"
       aria-modal="true"
       aria-label="Cookie Information"
+      data-i18n-aria-label="dialogLabel"
       data-testid="coi-banner__wrapper"
       lang="{{language}}"
     >
@@ -67,6 +68,7 @@
         data-color="neutral"
         type="button"
         aria-label="Lukk dialogvindu"
+        data-i18n-aria-label="closeDialog"
         id="cookie-dialog-close"
         data-icon="true"
         command="close"
@@ -76,36 +78,22 @@
         <h2 class="ds-heading" id="cookie-dialog-heading">
           {{{banner_heading}}}
         </h2>
-        <p class="ds-paragraph">{{{banner_main_text}}}</p>
+        <p class="ds-paragraph" data-i18n="necessaryExplanation">
+          Nødvendige informasjonskapsler bidrar til at tjenesten fungerer og er
+          sikker, og kan ikke velges bort.
+        </p>
         <fieldset class="ds-fieldset" autocomplete="off">
-          <legend class="ds-label" data-weight="medium">
-            Velg hvilke informasjonskapsler du godtar
-          </legend>
-          {{#each cookie_categories}} {{#unless this.is_unclassified}} {{#if
-          this.is_necessary}}
-          <ds-field
-            class="ds-field"
-            data-clickdelegatefor="{{this.cookie_type_label}}"
+          <legend
+            class="ds-label"
+            data-weight="medium"
+            data-i18n="optionalLegend"
           >
-            <input
-              class="ds-input coi__checkbox"
-              type="checkbox"
-              id="{{this.cookie_type_label}}"
-              name="{{this.cookie_type_label}}"
-              data-testid="coi-banner__checkbox--{{this.cookie_type_label}}"
-              checked
-              onclick="return false;"
-            />
-            <label
-              class="ds-label"
-              data-weight="regular"
-              for="{{this.cookie_type_label}}"
-            >
-              {{{this.cookie_type_name}}} (kan ikke velges bort)
-            </label>
-          </ds-field>
-          {{/if}} {{#if this.cookie_type_count}} {{#unless this.is_necessary}}
-          {{#unless this.is_unclassified}}
+            Velg hvilke valgfrie informasjonskapsler du godtar
+          </legend>
+          <p class="ds-paragraph">{{{banner_main_text}}}</p>
+          {{#each cookie_categories}} {{#unless this.is_unclassified}} {{#if
+          this.cookie_type_count}} {{#unless this.is_necessary}} {{#unless
+          this.is_unclassified}}
           <ds-field
             class="ds-field"
             data-clickdelegatefor="{{this.cookie_type_label}}"
@@ -130,12 +118,22 @@
         </fieldset>
         <button
           class="ds-button cookie-details-trigger"
-          data-variant="tertiary"
+          data-variant="secondary"
+          data-size="sm"
           type="button"
           id="cookie-details-trigger"
+          data-i18n="detailsTrigger"
         >
           Se hvilke informasjonskapsler vi bruker
         </button>
+        <p class="ds-paragraph">
+          <span data-i18n="consentCanBeChanged"
+            >Du kan når som helst endre samtykket ditt via lenken i
+            bunnfeltet.</span
+          >
+          <span data-i18n="consentAppliesTo">Samtykket gjelder for</span>:
+          {{website_domains}}.
+        </p>
       </div>
 
       <div class="cookies-buttons">
@@ -146,9 +144,10 @@
           type="button"
           id="btn-accept-all"
           data-testid="coi-banner__accept-all-categories-button"
+          data-i18n="acceptAll"
           onclick="CookieInformation.submitAllCategories()"
         >
-          {{accept_cookies_button}}
+          Godta alle
         </button>
         <button
           class="ds-button"
@@ -157,9 +156,10 @@
           type="button"
           id="btn-accept-selected"
           data-testid="coi-banner__update-categories-button"
+          data-i18n="acceptSelected"
           onclick="CookieInformation.submitConsent()"
         >
-          {{{translations.update_consent_button}}}
+          Godta valgte
         </button>
         <button
           class="ds-button"
@@ -168,9 +168,10 @@
           type="button"
           id="btn-decline"
           data-testid="coi-banner__decline-all-categories-button"
+          data-i18n="declineOptional"
           onclick="CookieInformation.declineAllCategories()"
         >
-          {{{decline_cookies_button}}}
+          Avvis valgfrie
         </button>
       </div>
     </dialog>
@@ -190,13 +191,16 @@
         data-color="neutral"
         type="button"
         aria-label="Lukk dialogvindu"
+        data-i18n-aria-label="closeDialog"
         id="cookie-details-close"
         command="close"
         commandfor="cookie-details-dialog"
         data-icon="true"
       ></button>
       <div class="uds-prose" id="cookie-details-content">
-        <h2 class="ds-heading">{{{translations.cookies_overview}}}</h2>
+        <h2 class="ds-heading" data-i18n="overviewHeading">
+          Informasjonskapsler
+        </h2>
 
         {{#each cookie_categories}} {{#if this.cookie_type_count}}
         <div class="cookies-category">
@@ -208,7 +212,7 @@
 
             <details class="ds-details" data-variant="default">
               <summary>
-                {{this.cookie_type_count}} {{lowercase this.cookie_type_name}}
+                {{this.cookie_type_count}} {{this.cookie_type_name_lowercase}}
               </summary>
               <div class="uds-prose">
                 {{#each this.cookie_type_results}}
@@ -216,22 +220,34 @@
                   <h4 class="ds-heading" data-size="2xs">{{sum @index 1}}</h4>
                   <ul class="cookies-details">
                     <li>
-                      <strong>Leverandør: </strong
+                      <strong data-i18n="provider">Leverandør: </strong
                       >{{{this.data_processor_name}}}
                     </li>
-                    <li><strong>Formål: </strong>{{{this.description}}}</li>
-                    <li><strong>Navn: </strong>{{{this.name}}}</li>
-                    <li><strong>Utløpstid: </strong>{{{this.expiration}}}</li>
+                    <li>
+                      <strong data-i18n="purpose">Formål: </strong
+                      >{{{this.description}}}
+                    </li>
+                    <li>
+                      <strong data-i18n="name">Navn: </strong>{{{this.name}}}
+                    </li>
+                    <li>
+                      <strong data-i18n="expiration">Utløpstid: </strong
+                      >{{{this.expiration}}}
+                    </li>
                     {{#if this.data_processor_privacy_policy}}
                     <li>
-                      <strong>Personvernerklæring: </strong
+                      <strong data-i18n="privacyPolicy"
+                        >Personvernerklæring: </strong
                       ><a
                         class="ds-link"
                         href="{{{this.data_processor_privacy_policy}}}"
                         target="_blank"
                         rel="noopener noreferrer"
                         data-testid="coi-banner__cookie-details__privacy-policy-link"
-                        >Se personvernerklæring</a
+                        data-i18n="viewPrivacyPolicy"
+                        data-i18n-provider="{{this.data_processor_name}}"
+                        >Se {{{this.data_processor_name}}}
+                        personvernerklæring</a
                       >
                     </li>
                     {{/if}}
@@ -254,6 +270,8 @@
       data-variant="tertiary"
       data-size="sm"
       aria-label="Endre samtykke for informasjonskapsler"
+      data-i18n="renewConsent"
+      data-i18n-aria-label="renewConsent"
       data-testid="coi-banner__renew-consent-button"
       onclick="CookieConsent.renew()"
       style="

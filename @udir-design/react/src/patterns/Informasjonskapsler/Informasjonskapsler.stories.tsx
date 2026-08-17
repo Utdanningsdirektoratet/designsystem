@@ -13,6 +13,32 @@ import { Fieldset } from 'src/components/fieldset';
 import { Heading } from 'src/components/typography/heading';
 import { Prose } from 'src/components/typography/prose';
 import exampleData from './exampleData.json';
+import { type Locale, getPageLocale, translations } from './translations';
+
+type ExampleData = {
+  heading: string;
+  body: string;
+  websiteDomains: string;
+  categories: Array<{
+    id: string;
+    name: string;
+    description: string;
+    necessary: boolean;
+    cookies: Array<{
+      provider: string;
+      purpose: string;
+      name: string;
+      expiration: string;
+      domain: string;
+      privacyPolicyUrl: string;
+    }>;
+  }>;
+};
+
+const localizedExampleData = exampleData as unknown as Record<
+  Locale,
+  ExampleData
+>;
 
 const meta = preview.meta({
   tags: ['alpha', 'udir'],
@@ -36,13 +62,16 @@ const meta = preview.meta({
   ],
 });
 
-const categoriesWithCookies = exampleData.categories.filter(
-  (category) => category.cookies.length > 0,
-);
-
 export const Preview = meta.story({
   args: {},
   render: (args, context) => {
+    const locale = getPageLocale();
+    const content = localizedExampleData[locale];
+    const text = translations[locale];
+    const categoriesWithCookies = content.categories.filter(
+      (category) => category.cookies.length > 0,
+    );
+
     return (
       <>
         <style>
@@ -75,37 +104,28 @@ export const Preview = meta.story({
           {...(context.viewMode === 'docs' && { inert: true })}
         >
           <Prose>
-            <Heading>{exampleData.heading}</Heading>
-            {exampleData.body
-              .split('\n\n')
-              .map((paragraph, index, paragraphs) => (
-                <Paragraph key={paragraph}>
-                  {paragraph}
-                  {index === paragraphs.length - 1 && (
-                    <> Samtykket gjelder for: {exampleData.websiteDomains}</>
-                  )}
-                </Paragraph>
-              ))}
+            <Heading>{content.heading}</Heading>
+
+            <Paragraph>{text.necessaryExplanation}</Paragraph>
+
             <Fieldset>
-              <Fieldset.Legend>
-                Velg hvilke informasjonskapsler du godtar
-              </Fieldset.Legend>
-              {categoriesWithCookies.map((category) => (
-                <Checkbox
-                  key={category.id}
-                  label={`${category.name}${category.necessary ? ' (kan ikke velges bort)' : ''}`}
-                  checked={category.necessary ? true : undefined}
-                />
-              ))}
+              <Fieldset.Legend>{text.optionalLegend}</Fieldset.Legend>
+              <Fieldset.Description>{content.body}</Fieldset.Description>
+              {categoriesWithCookies
+                .filter((category) => !category.necessary)
+                .map((category) => (
+                  <Checkbox key={category.id} label={category.name} />
+                ))}
             </Fieldset>
+
             <Dialog.TriggerContext>
-              <Dialog.Trigger variant="tertiary">
+              <Dialog.Trigger variant="secondary" data-size="sm">
                 <InformationSquareFillIcon aria-hidden />
-                Se hvilke informasjonskapsler vi bruker
+                {text.detailsTrigger}
               </Dialog.Trigger>
               <Dialog>
                 <Prose>
-                  <Heading level={2}>Informasjonskapsler</Heading>
+                  <Heading level={2}>{text.overviewHeading}</Heading>
                   {categoriesWithCookies.map((category) => (
                     <div key={category.name} className="cookies-container">
                       <Prose>
@@ -116,7 +136,7 @@ export const Preview = meta.story({
                         <Details>
                           <Details.Summary>
                             {category.cookies.length}{' '}
-                            {category.name.toLocaleLowerCase('nb')}
+                            {category.name.toLocaleLowerCase(locale)}
                           </Details.Summary>
                           <Details.Content className="cookies-details">
                             <Prose>
@@ -127,25 +147,28 @@ export const Preview = meta.story({
                                   </Heading>
                                   <ul>
                                     <li>
-                                      <strong>Leverandør: </strong>
+                                      <strong>{text.provider}: </strong>
                                       {cookie.provider}
                                     </li>
                                     <li>
-                                      <strong>Formål: </strong>
+                                      <strong>{text.purpose}: </strong>
                                       {cookie.purpose}
                                     </li>
                                     <li>
-                                      <strong>Navn: </strong>
+                                      <strong>{text.name}: </strong>
                                       {cookie.name}
                                     </li>
                                     <li>
-                                      <strong>Utløpstid: </strong>
+                                      <strong>{text.expiration}: </strong>
                                       {cookie.expiration}
                                     </li>
                                     <li>
-                                      <strong>Personvernerklæring: </strong>
+                                      <strong>{text.privacyPolicy}: </strong>
                                       <Link href={cookie.privacyPolicyUrl}>
-                                        Se personvernerklæring
+                                        {text.viewPrivacyPolicy.replace(
+                                          '{provider}',
+                                          cookie.provider,
+                                        )}
                                       </Link>
                                     </li>
                                   </ul>
@@ -160,16 +183,16 @@ export const Preview = meta.story({
                 </Prose>
               </Dialog>
             </Dialog.TriggerContext>
+            <Paragraph>
+              {text.consentCanBeChanged} {text.consentAppliesTo}:{' '}
+              {content.websiteDomains}.
+            </Paragraph>
           </Prose>
 
           <div className="cookies-buttons">
-            <Button variant="secondary">{exampleData.labels.acceptAll}</Button>
-            <Button variant="secondary">
-              {exampleData.labels.acceptSelected}
-            </Button>
-            <Button variant="secondary">
-              {exampleData.labels.declineOptional}
-            </Button>
+            <Button variant="secondary">{text.acceptAll}</Button>
+            <Button variant="secondary">{text.acceptSelected}</Button>
+            <Button variant="secondary">{text.declineOptional}</Button>
           </div>
         </Dialog>
       </>
