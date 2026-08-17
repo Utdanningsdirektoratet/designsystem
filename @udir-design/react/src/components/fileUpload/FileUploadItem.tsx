@@ -2,8 +2,7 @@ import { Paragraph, Tooltip } from '@digdir/designsystemet-react';
 import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
-import type { MouseEvent, ReactNode } from 'react';
-import type { HTMLAttributes } from 'react';
+import type { HTMLAttributes, MouseEvent, ReactNode } from 'react';
 import {
   FileCsvIcon,
   FileExcelIcon,
@@ -44,7 +43,7 @@ export interface FileUploadItemProps extends Omit<
    */
   error?: string;
   /**
-   * Props for the delete button.
+   * Callback when the remove button is clicked.
    */
   onRemove: (file: File, event: MouseEvent<HTMLButtonElement>) => void;
   /**
