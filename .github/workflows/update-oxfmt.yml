@@ -54,4 +54,3 @@ jobs:
           author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
           title: 'build: update oxfmt to ${{ steps.oxfmt_info.outputs.version }}'
           body: Updates oxfmt to the latest version and formats all files
-          draft: always-true
