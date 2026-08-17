@@ -32,13 +32,18 @@ jobs:
           pnpm update -r --latest oxfmt && pnpm dedupe
           git commit --all -m "build: update oxfmt to ${{ steps.oxfmt_info.outputs.version }}"
           pnpm fmt
-          echo has_changes="$(git diff --stat --exit-code)" >> "$GITHUB_OUTPUT"
+          git diff --stat
+          if git diff --quiet; then
+            echo "has_changes=0" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=1" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Commit changes and update .git-blame-ignore-revs
         if: steps.oxfmt_run.outputs.has_changes == 1
         run: |
           git commit --all -m "style: format files with oxfmt ${{ steps.oxfmt_info.outputs.version }}"
-          echo "# $(git show -s --format='%s')\n$(git rev-parse HEAD)" >> .git-blame-ignore-revs
+          printf '# %s\n%s\n' "$(git show -s --format='%s')" "$(git rev-parse HEAD)" >> .git-blame-ignore-revs
           git commit --all -m "chore: update .git-blame-ignore-revs"
 
       - name: Create or update pull request
