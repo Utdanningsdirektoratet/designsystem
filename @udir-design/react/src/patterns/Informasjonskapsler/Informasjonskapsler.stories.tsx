@@ -18,6 +18,7 @@ import { type Locale, getPageLocale, translations } from './translations';
 type ExampleData = {
   heading: string;
   body: string;
+  cookieDeclarationText: string;
   websiteDomains: string;
   categories: Array<{
     id: string;
@@ -126,6 +127,14 @@ export const Preview = meta.story({
               <Dialog>
                 <Prose>
                   <Heading level={2}>{text.overviewHeading}</Heading>
+                  <Paragraph>
+                    Les om hvordan vi behandler personopplysninger og hvilke
+                    rettigheter du har i{' '}
+                    <Link href="https://example.com/privacy">
+                      vår personvernerklæring
+                    </Link>
+                    .
+                  </Paragraph>
                   {categoriesWithCookies.map((category) => (
                     <div key={category.name} className="cookies-container">
                       <Prose>

@@ -67,6 +67,25 @@ Under "Copy and translations" i dashbordet finner du tekst for samtykke til info
             backgroundColor: 'var(--ds-color-surface-tinted)',
           }}
         >
+          Cookie policy
+        </Table.HeaderCell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell scope="row">Cookie policy text</Table.HeaderCell>
+        <Table.Cell>{exampleData.cookieDeclarationText}</Table.Cell>
+        <Table.Cell>
+          <CopyButton text={exampleData.cookieDeclarationText} />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.HeaderCell
+          scope="colgroup"
+          colSpan={3}
+          style={{
+            textAlign: 'center',
+            backgroundColor: 'var(--ds-color-surface-tinted)',
+          }}
+        >
           Tracking categories
         </Table.HeaderCell>
       </Table.Row>
@@ -168,7 +187,7 @@ Samtykkehåndteringen vil dukke opp på siden din innen 10 minutter.
 
 Verdien i `data-culture` velger språk for både innholdet fra Cookie Information
 og de faste tekstene i designmalen. Malen støtter `NB` og `EN`. Ukjente eller
-manglende språkverdier bruker bokmål. Støtte for flere språk krever at språket
+manglende språkverdier bruker `NB`. Støtte for flere språk krever at språket
 legges til i oversettelsesobjektet i JavaScript-filen for designmalen.
 
 ## Åpne samtykkedialogen igjen

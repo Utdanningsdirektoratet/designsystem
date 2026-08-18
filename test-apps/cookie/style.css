@@ -30,6 +30,22 @@ body {
 }
 
 /* Cookie details: list styling and bold labels */
+.cookies-category summary span {
+  text-transform: lowercase;
+}
+
+.cookies-category .ds-details > .uds-prose {
+  counter-reset: cookie-details;
+}
+
+.cookies-category .ds-details > .uds-prose > .uds-prose {
+  counter-increment: cookie-details;
+}
+
+.cookies-category h4::before {
+  content: counter(cookie-details);
+}
+
 .cookies-details {
   list-style: none;
   padding: 0;
