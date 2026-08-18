@@ -123,6 +123,13 @@ exports[`Preview 1`] = `
           <h2>
             Informasjonskapsler
           </h2>
+          <p>
+            Les om hvordan vi behandler personopplysninger og hvilke rettigheter du har i
+            <a href="https://example.com/privacy">
+              vår personvernerklæring
+            </a>
+            .
+          </p>
           <div>
             <div>
               <h3 data-size="xs">
@@ -171,7 +178,7 @@ exports[`Preview 1`] = `
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/cookie-information/privacy">
-                            Cookie Information personvernerklæring
+                            Cookie Information - Personvernerklæring
                           </a>
                         </li>
                       </ul>
@@ -210,7 +217,7 @@ exports[`Preview 1`] = `
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/cloudflare/privacy">
-                            Cloudflare personvernerklæring
+                            Cloudflare - Personvernerklæring
                           </a>
                         </li>
                       </ul>
@@ -226,7 +233,7 @@ exports[`Preview 1`] = `
                 Funksjonelle
               </h3>
               <p>
-                Funksjonelle informasjonskapsler lagrer opplysninger som endrer måten tjenesten ser ut eller oppfører seg på slik at den blir bedre tilpasset deg. Tjenesten lagrer [sett inn hvilke opplysninger som lagres]. Opplysningene lagres hos leverandør. Ved å samtykke godtar du at vi kan behandle dataene.
+                Funksjonelle informasjonskapsler lagrer opplysninger som endrer måten tjenesten ser ut eller oppfører seg på slik at den blir bedre tilpasset deg. Tjenesten lagrer [sett inn hvilke opplysninger som lagres]. Opplysningene lagres hos leverandør. Se hver enkelt leverandørs personvernerklæring for mer informasjon. Ved å samtykke godtar du at vi kan behandle dataene.
               </p>
               <details>
                 <summary>
@@ -268,7 +275,7 @@ exports[`Preview 1`] = `
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/optimizely/privacy">
-                            Optimizely personvernerklæring
+                            Optimizely - Personvernerklæring
                           </a>
                         </li>
                       </ul>
@@ -284,7 +291,7 @@ exports[`Preview 1`] = `
                 Statistiske
               </h3>
               <p>
-                Statistiske informasjonskapsler samler anonyme opplysninger om hvordan tjenesten blir brukt, slik at vi kan bruke dem til å gjøre tjenesten mest mulig tilpasset brukernes behov. Tjenesten lagrer [sett inn hvilke opplysninger som lagres]. Opplysningene lagres hos leverandør. Ved å samtykke godtar du at vi kan behandle dataene.
+                Statistiske informasjonskapsler samler anonyme opplysninger om hvordan tjenesten blir brukt, slik at vi kan bruke dem til å gjøre tjenesten mest mulig tilpasset brukernes behov. Tjenesten lagrer [sett inn hvilke opplysninger som lagres]. Opplysningene lagres hos leverandør. Se hver enkelt leverandørs personvernerklæring for mer informasjon. Ved å samtykke godtar du at vi kan behandle dataene.
               </p>
               <details>
                 <summary>
@@ -326,7 +333,7 @@ exports[`Preview 1`] = `
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/google/privacy">
-                            Google Analytics personvernerklæring
+                            Google Analytics - Personvernerklæring
                           </a>
                         </li>
                       </ul>
@@ -365,7 +372,7 @@ exports[`Preview 1`] = `
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/siteimprove/privacy">
-                            Siteimprove personvernerklæring
+                            Siteimprove - Personvernerklæring
                           </a>
                         </li>
                       </ul>
@@ -404,7 +411,7 @@ exports[`Preview 1`] = `
                             Personvernerklæring:
                           </strong>
                           <a href="https://example.com/microsoft/privacy">
-                            Microsoft Azure personvernerklæring
+                            Microsoft Azure - Personvernerklæring
                           </a>
                         </li>
                       </ul>
@@ -417,7 +424,7 @@ exports[`Preview 1`] = `
         </div>
       </dialog>
       <p>
-        Du kan når som helst endre samtykket ditt via lenken i bunnfeltet. Samtykket gjelder for: abc.udir.no, xyz.udir.no.
+        Du kan når som helst endre samtykket ditt via lenken i bunnfeltet. Samtykket gjelder for: [abc].udir.no, [xyz].udir.no.
       </p>
     </div>
     <div>

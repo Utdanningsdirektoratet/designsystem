@@ -22,7 +22,7 @@ const translations = {
     name: 'Navn: ',
     expiration: 'Utløpstid: ',
     privacyPolicy: 'Personvernerklæring: ',
-    viewPrivacyPolicy: '{provider} personvernerklæring',
+    viewPrivacyPolicy: 'Personvernerklæring',
     consentCanBeChanged:
       'Du kan når som helst endre samtykket ditt via lenken i bunnfeltet.',
     consentAppliesTo: 'Samtykket gjelder for',
@@ -45,7 +45,7 @@ const translations = {
     name: 'Name: ',
     expiration: 'Expiration: ',
     privacyPolicy: 'Privacy policy: ',
-    viewPrivacyPolicy: '{provider} privacy policy',
+    viewPrivacyPolicy: 'Privacy policy',
     consentCanBeChanged:
       'You can change your consent at any time using the link in the footer.',
     consentAppliesTo: 'The consent applies to',
@@ -68,11 +68,7 @@ const resolveLocale = () => {
 
 const applyTranslations = () => {
   const text = translations[resolveLocale()];
-  const translate = (key, element) =>
-    (text[key] ?? translations.nb[key]).replace(
-      '{provider}',
-      element.dataset.i18nProvider ?? '{provider}',
-    );
+  const translate = (key) => text[key] ?? translations.nb[key];
 
   document.querySelectorAll('[data-i18n]').forEach((element) => {
     element.textContent = translate(element.dataset.i18n, element);
