@@ -201,7 +201,7 @@
         <h2 class="ds-heading" data-i18n="overviewHeading">
           Informasjonskapsler
         </h2>
-
+        <p class="ds-paragraph">{{{cookie_declaration_text}}}</p>
         {{#each cookie_categories}} {{#if this.cookie_type_count}}
         <div class="cookies-category">
           <div class="uds-prose">
@@ -212,12 +212,13 @@
 
             <details class="ds-details" data-variant="default">
               <summary>
-                {{this.cookie_type_count}} {{this.cookie_type_name_lowercase}}
+                {{this.cookie_type_count}}
+                <span>{{{this.cookie_type_name}}}</span>
               </summary>
               <div class="uds-prose">
                 {{#each this.cookie_type_results}}
                 <div class="uds-prose">
-                  <h4 class="ds-heading" data-size="2xs">{{sum @index 1}}</h4>
+                  <h4 class="ds-heading" data-size="2xs"></h4>
                   <ul class="cookies-details">
                     <li>
                       <strong data-i18n="provider">Leverandør: </strong
@@ -244,10 +245,10 @@
                         target="_blank"
                         rel="noopener noreferrer"
                         data-testid="coi-banner__cookie-details__privacy-policy-link"
-                        data-i18n="viewPrivacyPolicy"
-                        data-i18n-provider="{{this.data_processor_name}}"
-                        >Se {{{this.data_processor_name}}}
-                        personvernerklæring</a
+                        >{{{this.data_processor_name}}} -
+                        <span data-i18n="viewPrivacyPolicy"
+                          >personvernerklæring</span
+                        ></a
                       >
                     </li>
                     {{/if}}
