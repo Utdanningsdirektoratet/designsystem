@@ -20,6 +20,7 @@ const buildData = (culture) => {
     culture: locale.toUpperCase(),
     banner_heading: content.heading,
     banner_main_text: content.body,
+    cookie_declaration_text: content.cookieDeclarationText,
     website_domains: content.websiteDomains,
     cookie_categories: content.categories.map((category) => ({
       cookie_type_label: `cookie_cat_${category.id}`,
