@@ -121,8 +121,8 @@
     }
   }
 
-  /* 
-  * Override opacity for label and description when disabled, 
+  /*
+  * Override opacity for label and description when disabled,
   * to ensure they are still readable since disabled button is used for readOnly.
   */
   > label,
@@ -203,54 +203,130 @@
   }
 }
 
+/* FileUpload.List */
+.uds-file-upload__list {
+  /* Icon size and the matching indent used to align the error message with the
+     file name. Overridden by the compact variant below. */
+  --udsc-fileUpload-item-icon-size: var(--ds-size-10);
+  --udsc-fileUpload-item-icon-gap: var(--ds-size-3);
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+
+  &[data-variant='default'] {
+    gap: var(--ds-size-3);
+
+    > .uds-file-upload__item {
+      max-width: 30rem;
+
+      &[data-invalid] {
+        --dsc-card-border-color: var(--ds-color-danger-border-strong);
+      }
+    }
+  }
+
+  /* Collapses the item cards into what reads as a single card, with the files
+     divided by lines. Each item keeps its own card border; dropping the border
+     between them leaves exactly one line, so no card styling is duplicated. */
+  &[data-variant='compact'] {
+    --udsc-fileUpload-item-icon-size: var(--ds-size-8);
+    --udsc-fileUpload-item-icon-gap: var(--ds-size-4);
+
+    > .uds-file-upload__item {
+      /* Must be set on the item, not the list: the item is itself a `.ds-card`,
+         which declares `--dsc-card-padding` locally and would shadow an
+         inherited value. */
+      --dsc-card-padding: var(--ds-size-3) var(--ds-size-6);
+
+      border-radius: 0;
+
+      &:not(:first-child) {
+        border-block-start-width: 0;
+      }
+
+      &:first-child {
+        border-start-start-radius: var(--dsc-card-border-radius);
+        border-start-end-radius: var(--dsc-card-border-radius);
+      }
+
+      &:last-child {
+        border-end-start-radius: var(--dsc-card-border-radius);
+        border-end-end-radius: var(--dsc-card-border-radius);
+      }
+    }
+
+    .uds-file-upload__item-error > p {
+      font-size: var(--ds-font-size-minus-1);
+    }
+  }
+}
+
 /* FileUpload.Item */
 .uds-file-upload__item {
+  word-break: break-all;
+
   [data-tooltip] {
     --ds-tooltip: var(--udsc-fileUpload-removeFile-text);
   }
-  padding: var(--ds-size-6);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 30rem;
-  word-break: break-all;
 
   /* Uploading text in the paragraph after link */
   &[aria-busy='true'] .ds-link + .ds-paragraph::before {
     content: var(--udsc-fileUpload-uploading-text);
   }
+}
 
-  > div {
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
+.uds-file-upload__item-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
 
-  > div > div > svg {
-    width: auto;
-    height: var(--ds-size-10);
-    margin-inline-end: var(--ds-size-3);
-    align-self: center;
-  }
-
-  &[aria-invalid='true'] {
-    --dsc-card-border-color: var(--ds-color-danger-border-strong);
-
-    > div:last-of-type > p {
-      padding-inline-start: var(--ds-size-12);
-      color: var(--ds-color-danger-text-subtle);
-      display: flex;
-      gap: var(--ds-size-2);
-      margin-block-start: var(--ds-size-1);
-      align-items: center;
-    }
-  }
-
-  > div > .ds-button {
+  > .ds-button {
     margin-inline-start: auto;
   }
+}
 
-  > * + * {
-    margin-block-start: 0;
+.uds-file-upload__item-icon > svg {
+  width: auto;
+  height: var(--udsc-fileUpload-item-icon-size);
+  margin-inline-end: var(--udsc-fileUpload-item-icon-gap);
+  display: block;
+  align-self: center;
+}
+
+.uds-file-upload__item-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.uds-file-upload__item-error {
+  margin-block-start: 0;
+
+  > p {
+    padding-inline-start: calc(
+      var(--udsc-fileUpload-item-icon-size) +
+        var(--udsc-fileUpload-item-icon-gap)
+    );
+    color: var(--ds-color-danger-text-subtle);
+    display: flex;
+    gap: var(--ds-size-2);
+    margin-block-start: var(--ds-size-1);
+    align-items: center;
+  }
+}
+
+/* Variant: compact — one card for the whole list, description inline */
+.uds-file-upload__list[data-variant='compact'] .uds-file-upload__item-content {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-3);
+  flex-wrap: wrap;
+
+  > .ds-paragraph {
+    color: var(--ds-color-neutral-text-subtle);
+    white-space: nowrap;
   }
 }

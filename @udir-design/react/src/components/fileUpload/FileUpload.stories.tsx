@@ -6,8 +6,10 @@ import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Heading } from 'src/components/typography/heading';
+import { Prose } from '../typography/prose';
 import { FileUploadDropzone } from './docs/FakeFileUploadDropzone';
 import { FileUploadItem } from './docs/FakeFileUploadItem';
+import { FileUploadList } from './docs/FakeFileUploadList';
 import { FileUploadTrigger } from './docs/FakeFileUploadTrigger';
 import { FileUpload } from './index';
 
@@ -15,6 +17,7 @@ const meta = preview.meta({
   component: FileUploadTrigger,
   subcomponents: {
     'FileUpload.Dropzone': FileUploadDropzone,
+    'FileUpload.List': FileUploadList,
     'FileUpload.Item': FileUploadItem,
   },
   tags: ['udir'],
@@ -167,13 +170,15 @@ export const ExampleDropZone = meta.story({
             <Heading level={3} data-size="2xs">
               Vedlegg ({files.length}):
             </Heading>
-            {files.map((file, index) => (
-              <FileUpload.Item
-                key={index}
-                file={file}
-                onRemove={() => removeFile(file)}
-              />
-            ))}
+            <FileUpload.List>
+              {files.map((file, index) => (
+                <FileUpload.Item
+                  key={index}
+                  file={file}
+                  onRemove={() => removeFile(file)}
+                />
+              ))}
+            </FileUpload.List>
           </>
         )}
         {rejected.length > 0 && (
@@ -181,14 +186,16 @@ export const ExampleDropZone = meta.story({
             <Heading level={3} data-size="2xs">
               Vedlegg med feil:
             </Heading>
-            {rejected.map(({ file, errors }, index) => (
-              <FileUpload.Item
-                key={index}
-                file={file}
-                onRemove={() => removeRejected(file)}
-                error={ErrorMessages.get(errors[0].code)}
-              />
-            ))}
+            <FileUpload.List>
+              {rejected.map(({ file, errors }, index) => (
+                <FileUpload.Item
+                  key={index}
+                  file={file}
+                  onRemove={() => removeRejected(file)}
+                  error={ErrorMessages.get(errors[0].code)}
+                />
+              ))}
+            </FileUpload.List>
           </>
         )}
       </>
@@ -287,13 +294,15 @@ export const TooManyFiles = meta.story({
               <Heading level={3} data-size="2xs">
                 Vedlegg ({files.length}):
               </Heading>
-              {files.map((file, index) => (
-                <FileUpload.Item
-                  key={index}
-                  file={file}
-                  onRemove={() => removeFile(file)}
-                />
-              ))}
+              <FileUpload.List>
+                {files.map((file, index) => (
+                  <FileUpload.Item
+                    key={index}
+                    file={file}
+                    onRemove={() => removeFile(file)}
+                  />
+                ))}
+              </FileUpload.List>
             </>
           )}
         </div>
@@ -349,7 +358,9 @@ export const ExampleTrigger = meta.story({
               <Heading level={3} data-size="2xs">
                 Vedlegg (1):
               </Heading>
-              <FileUpload.Item file={file} onRemove={() => setFile(null)} />
+              <FileUpload.List>
+                <FileUpload.Item file={file} onRemove={() => setFile(null)} />
+              </FileUpload.List>
             </>
           )}
         </div>
@@ -378,7 +389,7 @@ export const ExampleTrigger = meta.story({
 
 export const ExampleItems = meta.story({
   parameters: { docs: advancedCodeDocs },
-  render: (args) => {
+  render: () => {
     const dummyFiles: File[] = [
       new File(['abc'.repeat(100000)], 'eksempel1.pdf'),
       new File(['abc'.repeat(10000)], 'eksempel2.docx'),
@@ -420,16 +431,18 @@ export const ExampleItems = meta.story({
               <Heading level={3} data-size="2xs">
                 Vedlegg ({files.length}):
               </Heading>
-              {files.map((file, index) => (
-                <FileUpload.Item
-                  key={index}
-                  file={file}
-                  description={`Filopplasting ${index + 1}`}
-                  readonly={index === 2 && true}
-                  loading={index === 3 && true}
-                  onRemove={() => removeFile(file)}
-                />
-              ))}
+              <FileUpload.List>
+                {files.map((file, index) => (
+                  <FileUpload.Item
+                    key={index}
+                    file={file}
+                    description={`Filopplasting ${index + 1}`}
+                    readonly={index === 2 && true}
+                    loading={index === 3 && true}
+                    onRemove={() => removeFile(file)}
+                  />
+                ))}
+              </FileUpload.List>
             </>
           )}
           {rejected.length > 0 && (
@@ -441,15 +454,16 @@ export const ExampleItems = meta.story({
               >
                 Vedlegg med feil:
               </Heading>
-              {rejected.map((file, index) => (
-                <FileUpload.Item
-                  {...args}
-                  key={index}
-                  file={file}
-                  onRemove={() => removeRejected(file)}
-                  error={'Filformatet støttes ikke'}
-                />
-              ))}
+              <FileUpload.List>
+                {rejected.map((file, index) => (
+                  <FileUpload.Item
+                    key={index}
+                    file={file}
+                    onRemove={() => removeRejected(file)}
+                    error={'Filformatet støttes ikke'}
+                  />
+                ))}
+              </FileUpload.List>
             </>
           )}
         </div>
@@ -489,13 +503,26 @@ export const ExampleItems = meta.story({
       await expect(busyItem).toBeInTheDocument();
     });
 
-    await step('Error item has aria-invalid set', async () => {
-      const invalidItem = canvasElement.querySelector('[aria-invalid="true"]');
+    await step('Error item is marked as invalid', async () => {
+      const invalidItem = canvasElement.querySelector('[data-invalid]');
       await expect(invalidItem).toBeInTheDocument();
     });
 
     await step('Description is shown for normal items', async () => {
       await expect(canvas.getByText('Filopplasting 1')).toBeInTheDocument();
+    });
+
+    await step('Files are exposed as lists of cards', async () => {
+      const [files, rejected] = canvas.getAllByRole('list');
+      await expect(within(files).getAllByRole('listitem')).toHaveLength(4);
+      await expect(within(rejected).getAllByRole('listitem')).toHaveLength(1);
+
+      /* Both variants render the same cards; the compact variant only
+         collapses them together in CSS. */
+      await expect(files).not.toHaveClass('ds-card');
+      for (const item of within(files).getAllByRole('listitem')) {
+        await expect(item).toHaveClass('ds-card');
+      }
     });
 
     await step('Clicking remove deletes the file from the list', async () => {
@@ -547,11 +574,13 @@ export const Upload = meta.story({
               <Heading level={3} data-size="2xs">
                 Vedlegg (1):
               </Heading>
-              <FileUpload.Item
-                loading={loading}
-                file={file}
-                onRemove={() => setFile(null)}
-              />
+              <FileUpload.List>
+                <FileUpload.Item
+                  loading={loading}
+                  file={file}
+                  onRemove={() => setFile(null)}
+                />
+              </FileUpload.List>
             </>
           )}
         </div>
@@ -578,10 +607,96 @@ export const Upload = meta.story({
       await expect(await canvas.findByText('rapport.pdf')).toBeInTheDocument();
     });
 
+    await step('A single file is still exposed as a list', async () => {
+      const list = canvas.getByRole('list');
+      await expect(within(list).getAllByRole('listitem')).toHaveLength(1);
+    });
+
     await step('Item shows loading spinner after upload', async () => {
       await expect(
         canvas.getByRole('img', { name: 'spinner' }),
       ).toBeInTheDocument();
+    });
+  },
+});
+
+export const CompactList = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  args: {
+    'data-size': 'md',
+  },
+  render: (args) => {
+    const dummyFiles = [
+      { file: new File(['abc'.repeat(100000)], 'kandidat-12.pdf') },
+      { file: new File(['abc'.repeat(100000)], 'kandidat-13.pdf') },
+      { file: new File(['abc'.repeat(100000)], 'kandidat-14.pdf') },
+      { file: new File(['abc'.repeat(100000)], 'kandidat-15.pdf') },
+      {
+        file: new File(['abc'.repeat(288000)], 'kandidat-16.tsx'),
+        error: 'Filformatet støttes ikke',
+      },
+    ];
+
+    const [files, setFiles] = useState(dummyFiles);
+
+    const removeFile = (fileToRemove: File) => {
+      setFiles((prev) => prev.filter(({ file }) => file !== fileToRemove));
+    };
+
+    return (
+      <Prose>
+        <Heading level={3} data-size="2xs">
+          Vedlegg ({files.length}):
+        </Heading>
+        <FileUpload.List variant="compact" data-size={args['data-size']}>
+          {files.map(({ file, error }, index) => (
+            <FileUpload.Item
+              key={index}
+              file={file}
+              error={error}
+              onRemove={() => removeFile(file)}
+            />
+          ))}
+        </FileUpload.List>
+      </Prose>
+    );
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step('Files are exposed as a list', async () => {
+      const list = canvas.getByRole('list');
+      await expect(list.tagName).toBe('UL');
+      await expect(within(list).getAllByRole('listitem')).toHaveLength(5);
+    });
+
+    await step(
+      'Compact variant renders one card with the files as blocks',
+      async () => {
+        const list = canvas.getByRole('list');
+        await expect(list).not.toHaveClass('ds-card');
+
+        const [first, second] = within(list).getAllByRole('listitem');
+        await expect(first).toHaveClass('ds-card');
+        await expect(second).toHaveClass('ds-card');
+
+        /* Every item keeps its own card border, but the border between two
+           items is dropped so they read as one card divided by lines. */
+        await expect(getComputedStyle(first).borderBlockStartWidth).not.toBe(
+          '0px',
+        );
+        await expect(getComputedStyle(second).borderBlockStartWidth).toBe(
+          '0px',
+        );
+      },
+    );
+
+    await step('Clicking remove deletes the file from the list', async () => {
+      const [removeButton] = canvas.getAllByRole('button');
+      await userEvent.click(removeButton);
+      await expect(
+        canvas.queryByText('kandidat-12.pdf'),
+      ).not.toBeInTheDocument();
     });
   },
 });
