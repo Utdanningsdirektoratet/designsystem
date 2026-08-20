@@ -2,8 +2,7 @@ import { Paragraph, Tooltip } from '@digdir/designsystemet-react';
 import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
-import type { MouseEvent, ReactNode } from 'react';
-import type { HTMLAttributes } from 'react';
+import type { HTMLAttributes, MouseEvent, ReactNode } from 'react';
 import {
   FileCsvIcon,
   FileExcelIcon,
@@ -17,7 +16,6 @@ import {
   XMarkOctagonFillIcon,
 } from '@udir-design/icons';
 import { Button } from '../button';
-import { Card } from '../card';
 import { Link } from '../link';
 import { Spinner } from '../spinner';
 
@@ -26,13 +24,14 @@ import { Spinner } from '../spinner';
  */
 
 export interface FileUploadItemProps extends Omit<
-  HTMLAttributes<HTMLDivElement>,
+  HTMLAttributes<HTMLLIElement>,
   'data-color'
 > {
   'data-size'?: Size;
   /**
-   * Data shown below the file name. Falls back to the formatted file size if not provided.
-   * Set to `null` to hide the description entirely.
+   * Data shown with the file name: below it in the `default` list variant, inline in `compact`.
+   * Falls back to the formatted file size if not provided.
+   * Set to `null` to hide it entirely.
    */
   description?: ReactNode;
   /**
@@ -44,7 +43,7 @@ export interface FileUploadItemProps extends Omit<
    */
   error?: string;
   /**
-   * Props for the delete button.
+   * Callback when the remove button is clicked.
    */
   onRemove: (file: File, event: MouseEvent<HTMLButtonElement>) => void;
   /**
@@ -63,8 +62,8 @@ export interface FileUploadItemProps extends Omit<
   href?: string;
 }
 
-export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
-  (
+export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
+  function FileUploadItem(
     {
       file,
       error,
@@ -78,24 +77,27 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
       ...rest
     }: FileUploadItemProps,
     ref,
-  ) => {
+  ) {
+    /* Composes Digdir's card class rather than the `Card` component, so the
+       item stays a plain element without React-only behaviour. `FileUpload.List`
+       restyles these cards in CSS to build the `compact` variant. */
     return (
-      <Card
-        className={cl('uds-file-upload__item', className)}
-        aria-invalid={Boolean(error)}
+      <li
+        className={cl('ds-card', 'uds-file-upload__item', className)}
+        data-invalid={Boolean(error) || undefined}
         aria-busy={Boolean(loading) || undefined}
         data-size={size}
         ref={ref}
         {...rest}
       >
-        <div>
-          <div>
+        <div className="uds-file-upload__item-row">
+          <div className="uds-file-upload__item-icon">
             <Icon file={file} showError={Boolean(error)} loading={loading} />
           </div>
-          <div>
+          <div className="uds-file-upload__item-content">
             <FileName file={file} href={href} />
             <Paragraph data-size="sm">
-              {/* Loading text in css */}
+              {/* Loading text in css. Always rendered so the ::before can hook onto it. */}
               {!loading &&
                 description !== null &&
                 (description ?? formatFileSize(file))}
@@ -117,7 +119,7 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
         <div
           aria-relevant="additions removals"
           aria-live="polite"
-          className="error"
+          className="uds-file-upload__item-error"
         >
           {Boolean(error) && (
             <Paragraph>
@@ -126,7 +128,7 @@ export const FileUploadItem = forwardRef<HTMLDivElement, FileUploadItemProps>(
             </Paragraph>
           )}
         </div>
-      </Card>
+      </li>
     );
   },
 );
@@ -145,7 +147,7 @@ export function formatFileSize(file: File): string | null {
   return `${(file.size / MB).toFixed(2)} MB`;
 }
 
-function Icon({
+export function Icon({
   file,
   showError,
   loading,
@@ -188,7 +190,7 @@ function Icon({
   }
 }
 
-const downloadFile = (file: File): void => {
+export const downloadFile = (file: File): void => {
   const a = document.createElement('a');
   const url = URL.createObjectURL(file);
   a.href = url;
@@ -203,7 +205,7 @@ interface FileNameProps {
   href?: string;
 }
 
-const FileName = ({ file, href }: FileNameProps) => {
+export const FileName = ({ file, href }: FileNameProps) => {
   if (href) {
     return <Link href={href}>{file.name}</Link>;
   }

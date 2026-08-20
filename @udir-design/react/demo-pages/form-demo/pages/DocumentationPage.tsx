@@ -77,13 +77,15 @@ export const DocumentationPage = ({
             Vedlegg ({uploadedFiles.length}):
           </Heading>
 
-          {uploadedFiles.map((file, index) => (
-            <FileUpload.Item
-              key={index}
-              file={file}
-              onRemove={() => removeFile(file)}
-            />
-          ))}
+          <FileUpload.List>
+            {uploadedFiles.map((file, index) => (
+              <FileUpload.Item
+                key={index}
+                file={file}
+                onRemove={() => removeFile(file)}
+              />
+            ))}
+          </FileUpload.List>
         </>
       )}
 
@@ -93,14 +95,16 @@ export const DocumentationPage = ({
             Vedlegg med feil:
           </Heading>
 
-          {rejected.map(({ file, errors }, index) => (
-            <FileUpload.Item
-              key={index}
-              file={file}
-              onRemove={() => removeRejected(file)}
-              error={ErrorMessages.get(errors[0].code)}
-            />
-          ))}
+          <FileUpload.List>
+            {rejected.map(({ file, errors }, index) => (
+              <FileUpload.Item
+                key={index}
+                file={file}
+                onRemove={() => removeRejected(file)}
+                error={ErrorMessages.get(errors[0].code)}
+              />
+            ))}
+          </FileUpload.List>
         </>
       )}
       <Field>
