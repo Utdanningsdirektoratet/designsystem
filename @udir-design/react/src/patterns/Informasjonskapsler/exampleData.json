@@ -1,0 +1,192 @@
+{
+  "nb": {
+    "language": "nb",
+    "heading": "[Tjenestenavn] bruker informasjonskapsler",
+    "body": "Valgfrie informasjonskapsler brukes til å [beskriv kort hva de valgfrie informasjonskapslene brukes til].",
+    "cookieDeclarationText": "Les om hvordan vi behandler personopplysninger og hvilke rettigheter du har i <a class=\"ds-link\" href=\"[sett inn lenke til tjenestens personvernerklæring]\">vår personvernerklæring</a>.",
+    "websiteDomains": "[abc].udir.no, [xyz].udir.no",
+    "categories": [
+      {
+        "id": "necessary",
+        "name": "Nødvendige",
+        "description": "Nødvendige informasjonskapsler hjelper med å gjøre tjenesten brukbar ved å aktivere grunnleggende funksjoner knyttet til [sett inn relevante funksjoner i tjenesten, f.eks. navigasjon, sikkerhet og ytelse]. Tjenesten kan ikke fungere optimalt uten disse informasjonskapslene.",
+        "necessary": true,
+        "cookies": [
+          {
+            "provider": "Cookie Information",
+            "purpose": "Støtter nettstedets tekniske funksjoner.",
+            "name": "CookieConsent",
+            "expiration": "1 år",
+            "domain": "cookieinformation.com",
+            "privacyPolicyUrl": "https://example.com/cookie-information/privacy"
+          },
+          {
+            "provider": "Cloudflare",
+            "purpose": "Beskytter mot ondsinnede besøkende og begrenser risikoen for serveroverbelastning.",
+            "name": "__cfruid, cf_clearance",
+            "expiration": "Sesjon / 30 minutter",
+            "domain": "cloudflare.com",
+            "privacyPolicyUrl": "https://example.com/cloudflare/privacy"
+          }
+        ]
+      },
+      {
+        "id": "functional",
+        "name": "Funksjonelle",
+        "description": "Funksjonelle informasjonskapsler lagrer opplysninger som endrer måten tjenesten ser ut eller oppfører seg på slik at den blir bedre tilpasset deg. Tjenesten lagrer [sett inn hvilke opplysninger som lagres]. Opplysningene lagres hos leverandør. Se hver enkelt leverandørs personvernerklæring for mer informasjon. Ved å samtykke godtar du at vi kan behandle dataene.",
+        "necessary": false,
+        "cookies": [
+          {
+            "provider": "Optimizely",
+            "purpose": "Brukes til å teste ulike versjoner av tjenesten og personalisering av innhold.",
+            "name": "optimizelyEndUserId",
+            "expiration": "6 måneder",
+            "domain": "optimizely.com",
+            "privacyPolicyUrl": "https://example.com/optimizely/privacy"
+          }
+        ]
+      },
+      {
+        "id": "statistical",
+        "name": "Statistiske",
+        "description": "Statistiske informasjonskapsler samler anonyme opplysninger om hvordan tjenesten blir brukt, slik at vi kan bruke dem til å gjøre tjenesten mest mulig tilpasset brukernes behov. Tjenesten lagrer [sett inn hvilke opplysninger som lagres]. Opplysningene lagres hos leverandør. Se hver enkelt leverandørs personvernerklæring for mer informasjon. Ved å samtykke godtar du at vi kan behandle dataene.",
+        "necessary": false,
+        "cookies": [
+          {
+            "provider": "Google Analytics",
+            "purpose": "Samler inn anonym statistikk om hvordan besøkende bruker nettstedet.",
+            "name": "_ga, _gid, _gat",
+            "expiration": "2 år / 24 timer / 1 minutt",
+            "domain": "google.com",
+            "privacyPolicyUrl": "https://example.com/google/privacy"
+          },
+          {
+            "provider": "Siteimprove",
+            "purpose": "Måler trafikk og brukeratferd for å forbedre nettstedet.",
+            "name": "nmstat, siteimproveses",
+            "expiration": "1000 dager / Sesjon",
+            "domain": "siteimprove.com",
+            "privacyPolicyUrl": "https://example.com/siteimprove/privacy"
+          },
+          {
+            "provider": "Microsoft Azure",
+            "purpose": "Samler inn diagnose- og ytelsesdata for applikasjonsovervåking.",
+            "name": "ai_session, ai_user",
+            "expiration": "30 minutter / 1 år",
+            "domain": "microsoft.com",
+            "privacyPolicyUrl": "https://example.com/microsoft/privacy"
+          }
+        ]
+      },
+      {
+        "id": "marketing",
+        "name": "Markedsføring",
+        "description": "Markedsførings-informasjonskapsler brukes til å spore besøkende på tvers av hjemmesider. Hensikten er å vise annonser som er relevante og engasjerende for den enkelte brukeren, og dermed mer verdifulle for utgivere og tredjeparts-annonsører. Opplysningene lagres hos leverandør. Se hver enkelt leverandørs personvernerklæring for mer informasjon. Ved å samtykke godtar du at vi kan behandle dataene.",
+        "necessary": false,
+        "cookies": []
+      },
+      {
+        "id": "unclassified",
+        "name": "Uklassifiserte",
+        "description": "Vi er i ferd med å klassifisere uklassifiserte informasjonskapsler sammen med leverandørene av de enkelte informasjonskapsler.",
+        "necessary": false,
+        "cookies": []
+      }
+    ]
+  },
+  "en": {
+    "language": "en",
+    "heading": "[Service name] uses cookies",
+    "body": "Optional cookies are used to [briefly describe what the optional cookies are used for].",
+    "cookieDeclarationText": "Read about how we process personal data and your rights in <a class=\"ds-link\" href=\"[insert link to the service's privacy policy]\">our privacy policy</a>.",
+    "websiteDomains": "abc.udir.no, xyz.udir.no",
+    "categories": [
+      {
+        "id": "necessary",
+        "name": "Necessary",
+        "description": "Necessary cookies help make the service usable by enabling basic functions related to [insert relevant service functions, for example navigation, security and performance]. The service cannot function optimally without these cookies.",
+        "necessary": true,
+        "cookies": [
+          {
+            "provider": "Cookie Information",
+            "purpose": "Supports the website's technical functions.",
+            "name": "CookieConsent",
+            "expiration": "1 year",
+            "domain": "cookieinformation.com",
+            "privacyPolicyUrl": "https://example.com/cookie-information/privacy"
+          },
+          {
+            "provider": "Cloudflare",
+            "purpose": "Protects against malicious visitors and reduces the risk of server overload.",
+            "name": "__cfruid, cf_clearance",
+            "expiration": "Session / 30 minutes",
+            "domain": "cloudflare.com",
+            "privacyPolicyUrl": "https://example.com/cloudflare/privacy"
+          }
+        ]
+      },
+      {
+        "id": "functional",
+        "name": "Functional",
+        "description": "Functional cookies store information that changes how the service looks or behaves so it can be better adapted to you. The service stores [insert what information is stored]. The information is stored with the provider. See each provider's privacy policy for more information. By consenting, you accept that we may process the data.",
+        "necessary": false,
+        "cookies": [
+          {
+            "provider": "Optimizely",
+            "purpose": "Used to test different versions of the service and personalize content.",
+            "name": "optimizelyEndUserId",
+            "expiration": "6 months",
+            "domain": "optimizely.com",
+            "privacyPolicyUrl": "https://example.com/optimizely/privacy"
+          }
+        ]
+      },
+      {
+        "id": "statistical",
+        "name": "Statistics",
+        "description": "Statistics cookies collect anonymous information about how the service is used so that we can adapt it to users' needs. The service stores [insert what information is stored]. The information is stored with the provider. See each provider's privacy policy for more information. By consenting, you accept that we may process the data.",
+        "necessary": false,
+        "cookies": [
+          {
+            "provider": "Google Analytics",
+            "purpose": "Collects anonymous statistics about how visitors use the website.",
+            "name": "_ga, _gid, _gat",
+            "expiration": "2 years / 24 hours / 1 minute",
+            "domain": "google.com",
+            "privacyPolicyUrl": "https://example.com/google/privacy"
+          },
+          {
+            "provider": "Siteimprove",
+            "purpose": "Measures traffic and user behaviour to improve the website.",
+            "name": "nmstat, siteimproveses",
+            "expiration": "1000 days / Session",
+            "domain": "siteimprove.com",
+            "privacyPolicyUrl": "https://example.com/siteimprove/privacy"
+          },
+          {
+            "provider": "Microsoft Azure",
+            "purpose": "Collects diagnostic and performance data for application monitoring.",
+            "name": "ai_session, ai_user",
+            "expiration": "30 minutes / 1 year",
+            "domain": "microsoft.com",
+            "privacyPolicyUrl": "https://example.com/microsoft/privacy"
+          }
+        ]
+      },
+      {
+        "id": "marketing",
+        "name": "Marketing",
+        "description": "Marketing cookies are used to track visitors across websites. The purpose is to display advertisements that are relevant and engaging to individual users and therefore more valuable to publishers and third-party advertisers. The information is stored with the provider. See each provider's privacy policy for more information. By consenting, you accept that we may process the data.",
+        "necessary": false,
+        "cookies": []
+      },
+      {
+        "id": "unclassified",
+        "name": "Unclassified",
+        "description": "We are working with the cookie providers to classify unclassified cookies.",
+        "necessary": false,
+        "cookies": []
+      }
+    ]
+  }
+}
