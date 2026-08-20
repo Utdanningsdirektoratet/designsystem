@@ -1,7 +1,7 @@
 import { Paragraph, Tooltip } from '@digdir/designsystemet-react';
 import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
-import { forwardRef } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import type { MouseEvent, ReactNode } from 'react';
 import type { HTMLAttributes } from 'react';
 import {
@@ -188,15 +188,33 @@ function Icon({
   }
 }
 
-const downloadFile = (file: File): void => {
-  const a = document.createElement('a');
-  const url = URL.createObjectURL(file);
-  a.href = url;
-  a.download = file.name;
-  a.click();
+/**
+ * Prototype (option E): resolve a real URL for the file — either the `href`
+ * prop or an object URL created for the native `File` — so the rendered anchor
+ * is a genuine link. Ctrl/middle-click and the context menu then behave the way
+ * the link styling promises, and `download` works natively without
+ * `preventDefault`. When no URL can be resolved, the name is plain text rather
+ * than a link that goes nowhere.
+ */
 
-  URL.revokeObjectURL(url);
-};
+/**
+ * Creates an object URL for `file`, revoking it when the item unmounts.
+ *
+ * The URL is created in a lazy initializer rather than an effect, so it exists
+ * on first render and the name never flashes as plain text. This means the URL
+ * is tied to the component instance: pass a new `key` if the `file` prop is
+ * replaced with a different file.
+ */
+function useObjectUrl(file: File | undefined): string | undefined {
+  const [url] = useState(() => (file ? URL.createObjectURL(file) : undefined));
+
+  useEffect(() => {
+    if (!url) return;
+    return () => URL.revokeObjectURL(url);
+  }, [url]);
+
+  return url;
+}
 
 interface FileNameProps {
   file: File;
@@ -204,21 +222,20 @@ interface FileNameProps {
 }
 
 const FileName = ({ file, href }: FileNameProps) => {
-  if (href) {
-    return <Link href={href}>{file.name}</Link>;
+  const objectUrl = useObjectUrl(href ? undefined : file);
+  const url = href ?? objectUrl;
+
+  if (!url) {
+    return <span className="file-name">{file.name}</span>;
   }
 
-  /* `href` is required for the anchor to be focusable and expose link
-     semantics, and for `download` to have any effect. The actual download is
-     handled by `downloadFile`, so navigation is prevented. */
   return (
     <Link
-      href="#"
-      download={file.name}
-      onClick={(event) => {
-        event.preventDefault();
-        downloadFile(file);
-      }}
+      className="file-name"
+      href={url}
+      /* Only force a download for the generated object URL. When the consumer
+         supplies `href`, the server decides via `Content-Disposition`. */
+      download={href ? undefined : file.name}
     >
       {file.name}
     </Link>

@@ -215,8 +215,9 @@
   max-width: 30rem;
   word-break: break-all;
 
-  /* Uploading text in the paragraph after link */
-  &[aria-busy='true'] .ds-link + .ds-paragraph::before {
+  /* Uploading text in the paragraph after the file name. Keyed on `.file-name`
+     rather than `.ds-link` so it also works when the name is not a link. */
+  &[aria-busy='true'] .file-name + .ds-paragraph::before {
     content: var(--udsc-fileUpload-uploading-text);
   }
 

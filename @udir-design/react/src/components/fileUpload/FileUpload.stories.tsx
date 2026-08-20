@@ -233,6 +233,13 @@ export const ExampleDropzoneWithExplicitSize = ExampleDropZone.extend({
   ],
 });
 
+/* TEMPORARY: scratch story for manually testing the option 4 download
+   prototype with real files. Starts empty, so nothing is pre-populated.
+   Remove before committing. */
+export const ExampleDropZoneEmpty = ExampleDropZone.extend({
+  play: undefined,
+});
+
 export const TooManyFiles = meta.story({
   parameters: { docs: advancedCodeDocs },
   render: (args) => {
