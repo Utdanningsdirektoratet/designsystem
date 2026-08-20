@@ -20,6 +20,10 @@ Knapper lar brukerne utføre en handling. Vi har variantene `primary`, `secondar
 
 - navigere til andre sider eller ut av tjenesten – bruk heller [`Link`](/docs/components-link--docs)
 
+**Tommelfingerregel**
+
+Hvis "Kopier lenkeadresse" ville gitt brukeren noe nyttig, er det en `Link`. Hvis ikke er det en `Button`, selv om resultatet er at noe åpnes eller lastes ned
+
 ## Slik bruker du Button
 
 <Canvas of={ButtonStories.Preview} withToolbar />
@@ -75,7 +79,18 @@ Vi kan bruke en `danger`-knapp sammen med én eller flere `neutral`-knapper for 
 
 ### Knapp som lenke
 
-Bruk `asChild` dersom du trenger å bruke knappen som en lenke. Vurder først om det er mer hensiktsmessig å bruke [`Link`](/docs/components-link--docs)-komponenten. Knapp som lenke kan gi tydeligere visuell prioritet når navigasjonen er en viktig handling.
+Bruk `asChild` dersom du trenger å bruke knappen som en lenke. Vurder først om det er mer hensiktsmessig å bruke [`Link`](/docs/components-link--docs)-komponenten.
+
+Tommelfingerregelen over avgjør hvilket element du skal bruke. `asChild` endrer bare utseendet: elementet er fortsatt en lenke, så høyreklikk, midtklikk og å åpne i ny fane fungerer som normalt.
+
+Det er likevel en avveining:
+
+- Knappeutseendet gir tydeligere visuell prioritet, og passer når navigasjonen er en viktig handling på siden.
+- Knappeutseendet lover ikke lenkeoppførsel, så færre brukere tenker på å kopiere lenkeadressen eller åpne i ny fane. Funksjonaliteten er der, men den er mindre synlig.
+
+Et typisk eksempel er et skjema over flere sider der hvert steg har sin egen URL. Forrige og Neste er da ekte lenker, men vi gir dem knappeutseende, for eksempel `secondary` og `primary`, fordi det å komme videre er en viktig handling på siden. Har ikke stegene egne URL-er, er Forrige og Neste vanlige knapper.
+
+Velg knappeutseende når du vil at brukeren skal klikke seg videre der og da, og `Link` når det er sannsynlig at brukeren vil ta vare på adressen.
 
 [Les mer om komposisjon](https://www.designsystemet.no/grunnleggende/for-utviklere/komposisjon).
 
