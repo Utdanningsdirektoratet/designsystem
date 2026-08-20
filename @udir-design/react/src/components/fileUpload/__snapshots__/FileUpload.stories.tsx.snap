@@ -84,7 +84,10 @@ exports[`Example Drop Zone 1`] = `
       </svg>
     </div>
     <div>
-      <a download="eksempel1.pdf">
+      <a
+        href="#"
+        download="eksempel1.pdf"
+      >
         eksempel1.pdf
       </a>
       <p data-size="sm">
@@ -215,7 +218,10 @@ exports[`Example Dropzone With Explicit Size 1`] = `
       </svg>
     </div>
     <div>
-      <a download="eksempel1.pdf">
+      <a
+        href="#"
+        download="eksempel1.pdf"
+      >
         eksempel1.pdf
       </a>
       <p data-size="sm">
@@ -299,7 +305,10 @@ exports[`Example Items 1`] = `
         </svg>
       </div>
       <div>
-        <a download="eksempel2.docx">
+        <a
+          href="#"
+          download="eksempel2.docx"
+        >
           eksempel2.docx
         </a>
         <p data-size="sm">
@@ -364,7 +373,10 @@ exports[`Example Items 1`] = `
         </svg>
       </div>
       <div>
-        <a download="eksempel3.png">
+        <a
+          href="#"
+          download="eksempel3.png"
+        >
           eksempel3.png
         </a>
         <p data-size="sm">
@@ -434,7 +446,10 @@ exports[`Example Items 1`] = `
         </svg>
       </div>
       <div>
-        <a download="eksempel4.pdf">
+        <a
+          href="#"
+          download="eksempel4.pdf"
+        >
           eksempel4.pdf
         </a>
         <p data-size="sm">
@@ -477,7 +492,10 @@ exports[`Example Items 1`] = `
         </svg>
       </div>
       <div>
-        <a download="eksempel5.tsx">
+        <a
+          href="#"
+          download="eksempel5.tsx"
+        >
           eksempel5.tsx
         </a>
         <p data-size="sm">
@@ -623,7 +641,10 @@ exports[`Example Trigger 1`] = `
         </svg>
       </div>
       <div>
-        <a download="eksempel1.png">
+        <a
+          href="#"
+          download="eksempel1.png"
+        >
           eksempel1.png
         </a>
         <p data-size="sm">
@@ -951,7 +972,10 @@ exports[`Too Many Files 1`] = `
         </svg>
       </div>
       <div>
-        <a download="eksempel1.pdf">
+        <a
+          href="#"
+          download="eksempel1.pdf"
+        >
           eksempel1.pdf
         </a>
         <p data-size="sm">
@@ -1021,7 +1045,10 @@ exports[`Too Many Files 1`] = `
         </svg>
       </div>
       <div>
-        <a download="eksempel2.docx">
+        <a
+          href="#"
+          download="eksempel2.docx"
+        >
           eksempel2.docx
         </a>
         <p data-size="sm">
@@ -1086,7 +1113,10 @@ exports[`Too Many Files 1`] = `
         </svg>
       </div>
       <div>
-        <a download="eksempel3.png">
+        <a
+          href="#"
+          download="eksempel3.png"
+        >
           eksempel3.png
         </a>
         <p data-size="sm">
@@ -1215,7 +1245,10 @@ exports[`Upload 1`] = `
         </svg>
       </div>
       <div>
-        <a download="rapport.pdf">
+        <a
+          href="#"
+          download="rapport.pdf"
+        >
           rapport.pdf
         </a>
         <p data-size="sm">

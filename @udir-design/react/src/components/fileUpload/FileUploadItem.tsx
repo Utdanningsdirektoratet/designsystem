@@ -208,8 +208,12 @@ const FileName = ({ file, href }: FileNameProps) => {
     return <Link href={href}>{file.name}</Link>;
   }
 
+  /* `href` is required for the anchor to be focusable and expose link
+     semantics, and for `download` to have any effect. The actual download is
+     handled by `downloadFile`, so navigation is prevented. */
   return (
     <Link
+      href="#"
       download={file.name}
       onClick={(event) => {
         event.preventDefault();
