@@ -215,62 +215,36 @@ export const Preview = meta.story({
           <ActiveFilters filters={filters} onChange={handleFiltersChange} />
         )}
 
-        <Table {...tableProps}>
-          <Table.Head>
-            <Table.Row>
-              <Table.HeaderCell>År</Table.HeaderCell>
-              <Table.HeaderCell className={previewStyles['show-below-mobile']}>
-                Skole
-              </Table.HeaderCell>
-              <Table.HeaderCell className={previewStyles['hide-below-mobile']}>
-                Org.nummer
-              </Table.HeaderCell>
-              <Table.HeaderCell className={previewStyles['hide-below-mobile']}>
-                Skolenavn
-              </Table.HeaderCell>
-              <Table.HeaderCell className={previewStyles['desktop-only']}>
-                Fylke
-              </Table.HeaderCell>
-              <Table.HeaderCell className={previewStyles['desktop-only']}>
-                Kommune
-              </Table.HeaderCell>
-              <Table.HeaderCell>Status</Table.HeaderCell>
-              <Table.HeaderCell className={previewStyles['hide-below-mobile']}>
-                Systemnavn
-              </Table.HeaderCell>
-            </Table.Row>
-          </Table.Head>
-          <Table.Body>
-            {paginatedData.map((school) => (
-              <Table.Row key={school.id}>
-                <Table.Cell>{school.year}</Table.Cell>
-                <Table.Cell className={previewStyles['show-below-mobile']}>
-                  {school.schoolName}
-                  <br />
-                  {school.organizationNumber}
-                </Table.Cell>
-                <Table.Cell className={previewStyles['hide-below-mobile']}>
-                  {school.organizationNumber}
-                </Table.Cell>
-                <Table.Cell className={previewStyles['hide-below-mobile']}>
-                  {school.schoolName}
-                </Table.Cell>
-                <Table.Cell className={previewStyles['desktop-only']}>
-                  {school.county}
-                </Table.Cell>
-                <Table.Cell className={previewStyles['desktop-only']}>
-                  {school.municipality}
-                </Table.Cell>
-                <Table.Cell>
-                  <Status status={school.status} />
-                </Table.Cell>
-                <Table.Cell className={previewStyles['hide-below-mobile']}>
-                  {school.systemName}
-                </Table.Cell>
+        <div className={previewStyles['preview-table-scroll']}>
+          <Table {...tableProps}>
+            <Table.Head>
+              <Table.Row>
+                <Table.HeaderCell>År</Table.HeaderCell>
+                <Table.HeaderCell>Org.nummer</Table.HeaderCell>
+                <Table.HeaderCell>Skolenavn</Table.HeaderCell>
+                <Table.HeaderCell>Fylke</Table.HeaderCell>
+                <Table.HeaderCell>Kommune</Table.HeaderCell>
+                <Table.HeaderCell>Status</Table.HeaderCell>
+                <Table.HeaderCell>Systemnavn</Table.HeaderCell>
               </Table.Row>
-            ))}
-          </Table.Body>
-        </Table>
+            </Table.Head>
+            <Table.Body>
+              {paginatedData.map((school) => (
+                <Table.Row key={school.id}>
+                  <Table.Cell>{school.year}</Table.Cell>
+                  <Table.Cell>{school.organizationNumber}</Table.Cell>
+                  <Table.Cell>{school.schoolName}</Table.Cell>
+                  <Table.Cell>{school.county}</Table.Cell>
+                  <Table.Cell>{school.municipality}</Table.Cell>
+                  <Table.Cell>
+                    <Status status={school.status} />
+                  </Table.Cell>
+                  <Table.Cell>{school.systemName}</Table.Cell>
+                </Table.Row>
+              ))}
+            </Table.Body>
+          </Table>
+        </div>
 
         <div className={previewStyles['preview-controls']}>
           <Pagination aria-label="Sidenavigering" data-size="sm">
@@ -629,62 +603,36 @@ export const WithDialog = meta.story({
 
         <ActiveFilters filters={filters} onChange={handleFiltersChange} />
 
-        <Table {...args}>
-          <Table.Head>
-            <Table.Row>
-              <Table.HeaderCell>År</Table.HeaderCell>
-              <Table.HeaderCell className={dialogStyles['show-below-mobile']}>
-                Skole
-              </Table.HeaderCell>
-              <Table.HeaderCell className={dialogStyles['hide-below-mobile']}>
-                Org.nummer
-              </Table.HeaderCell>
-              <Table.HeaderCell className={dialogStyles['hide-below-mobile']}>
-                Skolenavn
-              </Table.HeaderCell>
-              <Table.HeaderCell className={dialogStyles['desktop-only']}>
-                Fylke
-              </Table.HeaderCell>
-              <Table.HeaderCell className={dialogStyles['desktop-only']}>
-                Kommune
-              </Table.HeaderCell>
-              <Table.HeaderCell>Status</Table.HeaderCell>
-              <Table.HeaderCell className={dialogStyles['hide-below-mobile']}>
-                Systemnavn
-              </Table.HeaderCell>
-            </Table.Row>
-          </Table.Head>
-          <Table.Body>
-            {paginatedData.map((school) => (
-              <Table.Row key={school.id}>
-                <Table.Cell>{school.year}</Table.Cell>
-                <Table.Cell className={dialogStyles['show-below-mobile']}>
-                  {school.schoolName}
-                  <br />
-                  {school.organizationNumber}
-                </Table.Cell>
-                <Table.Cell className={dialogStyles['hide-below-mobile']}>
-                  {school.organizationNumber}
-                </Table.Cell>
-                <Table.Cell className={dialogStyles['hide-below-mobile']}>
-                  {school.schoolName}
-                </Table.Cell>
-                <Table.Cell className={dialogStyles['desktop-only']}>
-                  {school.county}
-                </Table.Cell>
-                <Table.Cell className={dialogStyles['desktop-only']}>
-                  {school.municipality}
-                </Table.Cell>
-                <Table.Cell>
-                  <Status status={school.status} />
-                </Table.Cell>
-                <Table.Cell className={dialogStyles['hide-below-mobile']}>
-                  {school.systemName}
-                </Table.Cell>
+        <div className={dialogStyles['dialog-table-scroll']}>
+          <Table {...args}>
+            <Table.Head>
+              <Table.Row>
+                <Table.HeaderCell>År</Table.HeaderCell>
+                <Table.HeaderCell>Org.nummer</Table.HeaderCell>
+                <Table.HeaderCell>Skolenavn</Table.HeaderCell>
+                <Table.HeaderCell>Fylke</Table.HeaderCell>
+                <Table.HeaderCell>Kommune</Table.HeaderCell>
+                <Table.HeaderCell>Status</Table.HeaderCell>
+                <Table.HeaderCell>Systemnavn</Table.HeaderCell>
               </Table.Row>
-            ))}
-          </Table.Body>
-        </Table>
+            </Table.Head>
+            <Table.Body>
+              {paginatedData.map((school) => (
+                <Table.Row key={school.id}>
+                  <Table.Cell>{school.year}</Table.Cell>
+                  <Table.Cell>{school.organizationNumber}</Table.Cell>
+                  <Table.Cell>{school.schoolName}</Table.Cell>
+                  <Table.Cell>{school.county}</Table.Cell>
+                  <Table.Cell>{school.municipality}</Table.Cell>
+                  <Table.Cell>
+                    <Status status={school.status} />
+                  </Table.Cell>
+                  <Table.Cell>{school.systemName}</Table.Cell>
+                </Table.Row>
+              ))}
+            </Table.Body>
+          </Table>
+        </div>
 
         <div className={dialogStyles['dialog-controls']}>
           <Pagination aria-label="Sidenavigering" data-size="sm">

@@ -7,6 +7,14 @@
   gap: var(--ds-size-8);
 }
 
+.dialog-table-scroll {
+  overflow-x: auto;
+
+  > table {
+    min-width: 50rem;
+  }
+}
+
 .dialog-filters-section {
   display: flex;
   flex-direction: column;
@@ -43,15 +51,6 @@
 
 .dialog-clear-filters {
   white-space: nowrap;
-}
-
-.show-below-mobile {
-  display: table-cell;
-}
-
-.hide-below-mobile,
-.desktop-only {
-  display: none;
 }
 
 .dialog-controls {
@@ -121,14 +120,6 @@
 }
 
 @container (min-width: 30rem) {
-  .show-below-mobile {
-    display: none;
-  }
-
-  .hide-below-mobile {
-    display: table-cell;
-  }
-
   .dialog-filters-section {
     flex-direction: row;
     flex-wrap: wrap;
@@ -153,10 +144,6 @@
 }
 
 @container (min-width: 50rem) {
-  .desktop-only {
-    display: table-cell;
-  }
-
   .dialog-filters-section {
     flex-direction: row;
     align-items: flex-end;
