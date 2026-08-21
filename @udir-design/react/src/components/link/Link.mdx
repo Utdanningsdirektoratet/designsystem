@@ -61,6 +61,12 @@ Plasser teksten i `<span>` for å få anbefalt mellomrom uten understrek mellom 
 
 ## Retningslinjer
 
+### Ikke bruk lenke med knappeoppførsel
+
+Ikke bruk `asChild` for å gi en handling lenkeutseende. Lenkeutseendet lover brukeren at adressen kan kopieres, åpnes i ny fane eller lagres, og det kan ikke en handling innfri. Skal handlingen være nedtonet, bruk `tertiary`-varianten av [`Button`](/docs/components-button--docs).
+
+Unntaket er handlinger som må stå midt inne i en tekst. En knapp bryter tekstflyten, og da er lenkeutseende det eneste alternativet systemet har.
+
 ### Sett noreferrer på eksterne lenker
 
 Når du lenker til en ekstern side utenfor Udir, bør du alltid sette `rel="noreferrer"` på `Link`-elementet. Dette beskytter brukerne mot enkelte sikkerhetsrisikoer og personvernproblemer som kan oppstå når de klikker på eksterne lenker. Les mer om dette hos MDN:
