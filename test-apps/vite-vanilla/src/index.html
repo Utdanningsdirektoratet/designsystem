@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="no">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite Vanilla App</title>
+    <title>Vanilla HTML med Udir designsystem</title>
     <link
       rel="preload stylesheet"
       as="style"
@@ -12,35 +12,69 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div
-      id="app"
-      class="ds-card uds-prose"
-      data-color="accent"
-      data-variant="tinted"
-    >
-      <h1 class="ds-heading" data-size="md">Vanilla html/css/js med Vite</h1>
-      <p>
-        Eksempel på bruk av Udirs designsystem-biblioteker uten React, med Vite
-        som bundler.
-      </p>
-      <button type="button" class="ds-button">
-        <svg>
-          <use id="icon-pencil" />
-        </svg>
-        Knapp med SVG-ikon
-      </button>
-      <div class="symbol-box">
-        <span>Datamaskinsymbol</span>
-        <img id="symbol-computer" alt="" />
-      </div>
-      <span>Inline SVG-ikon</span>
-      <a class="ds-link" href="/underside">
-        <svg>
-          <use id="icon-arrow-link" /></svg
-        ><span>Lenke med SVG-ikon</span>
-      </a>
-      <div class="idea-box">Du kan også bruke ikoner og symboler i CSS</div>
-    </div>
+    <main id="app">
+      <section
+        id="component-demo"
+        class="ds-card uds-prose"
+        data-color="accent"
+        data-variant="tinted"
+      >
+        <h1 class="ds-heading" data-size="md">Vanilla HTML med Vite</h1>
+        <p>
+          Eksempel på bruk av Udirs designsystem-biblioteker uten React, med
+          Vite som bundler.
+        </p>
+        <button type="button" class="ds-button">
+          <svg>
+            <use id="icon-pencil" />
+          </svg>
+          Knapp med SVG-ikon
+        </button>
+        <div class="symbol-box">
+          <span>Datamaskinsymbol</span>
+          <img id="symbol-computer" alt="" />
+        </div>
+        <span>Inline SVG-ikon</span>
+        <a class="ds-link" href="/underside">
+          <svg>
+            <use id="icon-arrow-link" /></svg
+          ><span>Lenke med SVG-ikon</span>
+        </a>
+        <div class="idea-box">Du kan også bruke ikoner og symboler i CSS</div>
+      </section>
+
+      <article class="uds-rich-text">
+        <div>
+          <h2>Fra idé til ferdig resultat</h2>
+          <p>
+            Et <strong>godt resultat</strong> starter med en
+            <em>tydelig plan</em>. <a href="#steg">Se stegene i planen</a>.
+          </p>
+        </div>
+        <section>
+          <h3>Dette trenger du</h3>
+          <ul>
+            <li>et tydelig mål</li>
+            <li>
+              en enkel plan
+              <ul>
+                <li>oppgaver og tidsfrister</li>
+              </ul>
+            </li>
+          </ul>
+          <h4 id="steg">Steg for steg</h4>
+          <ol>
+            <li>Beskriv hva du vil oppnå</li>
+            <li>Del arbeidet inn i mindre oppgaver</li>
+          </ol>
+          <blockquote>
+            <p>En enkel plan gjør det lettere å komme i gang.</p>
+          </blockquote>
+          <hr />
+          <p>Ta vare på planen slik at du kan bruke den igjen senere.</p>
+        </section>
+      </article>
+    </main>
     <script type="module" src="index.js"></script>
   </body>
 </html>

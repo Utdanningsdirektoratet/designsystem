@@ -1,0 +1,150 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Interactive Comparison 1`] = `
+<div style="<removed>">
+  <ds-field>
+    <label for="<removed>">
+      Riktekstredigeringsverktøy
+    </label>
+    <div
+      data-field="description"
+      id="<removed>"
+    >
+      Legg inn tekst som kan formateres med HTML. Forhåndsvisning av innholdet vises under.
+    </div>
+    <textarea
+      id="<removed>"
+      rows="10"
+      spellcheck="false"
+      aria-describedby="<removed>"
+      style="<removed>"
+    >
+      &lt;h2>Oppdatert innhold&lt;/h2>&lt;img src="test.jpg" alt="Test" onerror="alert(1)">&lt;script>alert(1)&lt;/script>
+    </textarea>
+  </ds-field>
+  <fieldset
+    data-toggle-group="Velg forhåndsvisning"
+    data-variant="secondary"
+    aria-label="Velg forhåndsvisning"
+  >
+    <label data-variant="tertiary">
+      <input
+        type="radio"
+        value="styled"
+        checked
+        name="togglegroup-name-_r_0_"
+      >
+      Med RichText
+    </label>
+    <label data-variant="tertiary">
+      <input
+        type="radio"
+        value="unstyled"
+        name="togglegroup-name-_r_0_"
+      >
+      Uten RichText
+    </label>
+  </fieldset>
+  <section
+    aria-live="polite"
+    aria-label="Forhåndsvisning"
+    style="<removed>"
+  >
+    <iframe
+      sandbox="allow-same-origin"
+      srcdoc="<h2>Oppdatert innhold</h2><img src=&quot;test.jpg&quot; alt=&quot;Test&quot;>"
+      title="HTML uten RichText-stiler"
+      style="<removed>"
+    >
+    </iframe>
+  </section>
+</div>
+`;
+
+exports[`Preview 1`] = `
+<div>
+  <article>
+    <div>
+      <h2>
+        Fra idé til ferdig resultat
+      </h2>
+      <p>
+        Et
+        <strong>
+          godt resultat
+        </strong>
+        starter med en
+        <em>
+          tydelig plan
+        </em>
+        .
+        <a href="#steg">
+          Se stegene i planen
+        </a>
+        .
+      </p>
+    </div>
+    <section>
+      <h3>
+        Dette trenger du
+      </h3>
+      <ul>
+        <li>
+          et tydelig mål
+        </li>
+        <li>
+          en enkel plan
+          <ul>
+            <li>
+              oppgaver og tidsfrister
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h4 id="<removed>">
+        Steg for steg
+      </h4>
+      <ol>
+        <li>
+          Beskriv hva du vil oppnå
+        </li>
+        <li>
+          Del arbeidet inn i mindre oppgaver
+        </li>
+      </ol>
+      <blockquote>
+        <p>
+          En enkel plan gjør det lettere å komme i gang.
+        </p>
+      </blockquote>
+      <hr>
+      <h5>
+        Når arbeidet er ferdig
+      </h5>
+      <figure>
+        <picture>
+          <source
+            media="(min-width: 40rem)"
+            srcset="/img/feiring.svg"
+          >
+          <img
+            alt="Illustrasjon av en feiring"
+            src="/img/feiring.svg"
+          >
+        </picture>
+        <figcaption>
+          Marker at målet er nådd.
+        </figcaption>
+      </figure>
+    </section>
+    <div>
+      <h6>
+        Mer informasjon
+      </h6>
+      <p>
+        Ta vare på planen slik at du kan bruke den som utgangspunkt senere.
+      </p>
+    </div>
+  </article>
+</div>
+`;
