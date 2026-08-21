@@ -13,12 +13,14 @@ Komponenten er basert på [anchor HTML-elementet](https://developer.mozilla.org/
 **Passer til å**
 
 - lenke til en annen side
-- åpne en fil
+- åpne eller laste ned en fil som ligger på en URL
 - navigere til en annen del av samme side
 
 **Passer ikke til å**
 
 - utføre handlinger – bruk heller [`Button`](/docs/components-button--docs)
+
+**Tommelfingerregel:** Hvis "Kopier lenkeadresse" ville gitt brukeren noe nyttig, er det en `Link`. Hvis ikke er det en [`Button`](/docs/components-button--docs), selv om resultatet er at noe åpnes eller lastes ned.
 
 ## Slik bruker du Link
 
@@ -56,6 +58,12 @@ Plasser teksten i `<span>` for å få anbefalt mellomrom uten understrek mellom 
 <Canvas of={LinkStories.File} />
 
 ## Retningslinjer
+
+### Ikke bruk lenke med knappeoppførsel
+
+Ikke bruk `asChild` for å gi en handling lenkeutseende. Lenkeutseendet lover brukeren at adressen kan kopieres, åpnes i ny fane eller lagres, og det kan ikke en handling innfri. Skal handlingen være nedtonet, bruk `tertiary`-varianten av [`Button`](/docs/components-button--docs).
+
+Unntaket er handlinger som må stå midt inne i en tekst. En knapp bryter tekstflyten, og da er lenkeutseende det eneste alternativet systemet har.
 
 ### Sett noreferrer på eksterne lenker
 
