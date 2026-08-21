@@ -288,104 +288,80 @@ const ActionTable = ({
         selectAll,
         clearSelection: () => setSelectedIds(new Set()),
       })}
-      <Table {...args}>
-        <Table.Head>
-          <Table.Row>
-            <Table.HeaderCell>
-              <Checkbox
-                ref={selectAllRef}
-                aria-label="Velg alle"
-                checked={allOnPageSelected}
-                onChange={toggleSelectAll}
-              />
-            </Table.HeaderCell>
-            <Table.HeaderCell className={styles['show-below-mobile']}>
-              Fylke, emne
-            </Table.HeaderCell>
-            <Table.HeaderCell className={styles['hide-below-mobile']}>
-              Fylke
-            </Table.HeaderCell>
-            <Table.HeaderCell className={styles['hide-below-mobile']}>
-              Emne
-            </Table.HeaderCell>
-            <Table.HeaderCell className={styles['hide-below-mobile']}>
-              Antall elever
-            </Table.HeaderCell>
-            <Table.HeaderCell>Standpunkt</Table.HeaderCell>
-            <Table.HeaderCell className={styles['desktop-only']}>
-              Muntlig
-            </Table.HeaderCell>
-            <Table.HeaderCell className={styles['desktop-only']}>
-              Skriftlig
-            </Table.HeaderCell>
-            <Table.HeaderCell aria-label="Handlinger">
-              Handling
-            </Table.HeaderCell>
-          </Table.Row>
-        </Table.Head>
-        <Table.Body>
-          {paginatedData.map((row) => (
-            <Table.Row key={row.id}>
-              <Table.Cell>
+      <div className={styles['actions-table-scroll']}>
+        <Table {...args}>
+          <Table.Head>
+            <Table.Row>
+              <Table.HeaderCell>
                 <Checkbox
-                  aria-label={`Velg rad for ${row.fylke}, ${row.emne}`}
-                  checked={selectedIds.has(row.id)}
-                  onChange={() => toggleRow(row.id)}
+                  ref={selectAllRef}
+                  aria-label="Velg alle"
+                  checked={allOnPageSelected}
+                  onChange={toggleSelectAll}
                 />
-              </Table.Cell>
-              <Table.Cell className={styles['show-below-mobile']}>
-                {row.fylke}, <br /> {row.emne}
-              </Table.Cell>
-              <Table.Cell className={styles['hide-below-mobile']}>
-                {row.fylke}
-              </Table.Cell>
-              <Table.Cell className={styles['hide-below-mobile']}>
-                {row.emne}
-              </Table.Cell>
-              <Table.Cell className={styles['hide-below-mobile']}>
-                {row.antallelever}
-              </Table.Cell>
-              <Table.Cell>{row.standpunktkarakter}</Table.Cell>
-              <Table.Cell className={styles['desktop-only']}>
-                {row.muntligkarakter}
-              </Table.Cell>
-              <Table.Cell className={styles['desktop-only']}>
-                {row.skriftligkarakter}
-              </Table.Cell>
-              <Table.Cell>
-                <Tooltip content="Flere valg">
-                  <Button
-                    popoverTarget={`${rowMenuPrefix}-row-menu-${row.id}`}
-                    variant="tertiary"
-                    icon
-                    title="Flere valg"
-                    aria-label="Handlinger"
-                    data-size="sm"
-                  >
-                    <MenuElipsisVerticalIcon aria-hidden />
-                  </Button>
-                </Tooltip>
-                <Dropdown id={`${rowMenuPrefix}-row-menu-${row.id}`}>
-                  <Dropdown.List>
-                    <Dropdown.Item>
-                      <Dropdown.Button aria-label="Rediger">
-                        <PencilWritingIcon aria-hidden /> Rediger
-                      </Dropdown.Button>
-                      <Dropdown.Button aria-label="Eksporter">
-                        <DownloadIcon aria-hidden /> Eksporter
-                      </Dropdown.Button>
-                      <Divider />
-                      <Dropdown.Button aria-label="Slett" data-color="danger">
-                        <TrashFillIcon aria-hidden /> Slett
-                      </Dropdown.Button>
-                    </Dropdown.Item>
-                  </Dropdown.List>
-                </Dropdown>
-              </Table.Cell>
+              </Table.HeaderCell>
+              <Table.HeaderCell>Fylke</Table.HeaderCell>
+              <Table.HeaderCell>Emne</Table.HeaderCell>
+              <Table.HeaderCell>Antall elever</Table.HeaderCell>
+              <Table.HeaderCell>Standpunkt</Table.HeaderCell>
+              <Table.HeaderCell>Muntlig</Table.HeaderCell>
+              <Table.HeaderCell>Skriftlig</Table.HeaderCell>
+              <Table.HeaderCell aria-label="Handlinger">
+                Handling
+              </Table.HeaderCell>
             </Table.Row>
-          ))}
-        </Table.Body>
-      </Table>
+          </Table.Head>
+          <Table.Body>
+            {paginatedData.map((row) => (
+              <Table.Row key={row.id}>
+                <Table.Cell>
+                  <Checkbox
+                    aria-label={`Velg rad for ${row.fylke}, ${row.emne}`}
+                    checked={selectedIds.has(row.id)}
+                    onChange={() => toggleRow(row.id)}
+                  />
+                </Table.Cell>
+                <Table.Cell>{row.fylke}</Table.Cell>
+                <Table.Cell>{row.emne}</Table.Cell>
+                <Table.Cell>{row.antallelever}</Table.Cell>
+                <Table.Cell>{row.standpunktkarakter}</Table.Cell>
+                <Table.Cell>{row.muntligkarakter}</Table.Cell>
+                <Table.Cell>{row.skriftligkarakter}</Table.Cell>
+                <Table.Cell>
+                  <Tooltip content="Flere valg">
+                    <Button
+                      popoverTarget={`${rowMenuPrefix}-row-menu-${row.id}`}
+                      variant="tertiary"
+                      icon
+                      title="Flere valg"
+                      aria-label="Handlinger"
+                      data-size="sm"
+                    >
+                      <MenuElipsisVerticalIcon aria-hidden />
+                    </Button>
+                  </Tooltip>
+                  <Dropdown id={`${rowMenuPrefix}-row-menu-${row.id}`}>
+                    <Dropdown.List>
+                      <Dropdown.Item>
+                        <Dropdown.Button aria-label="Rediger">
+                          <PencilWritingIcon aria-hidden /> Rediger
+                        </Dropdown.Button>
+                        <Dropdown.Button aria-label="Eksporter">
+                          <DownloadIcon aria-hidden /> Eksporter
+                        </Dropdown.Button>
+                        <Divider />
+                        <Dropdown.Button aria-label="Slett" data-color="danger">
+                          <TrashFillIcon aria-hidden /> Slett
+                        </Dropdown.Button>
+                      </Dropdown.Item>
+                    </Dropdown.List>
+                  </Dropdown>
+                </Table.Cell>
+              </Table.Row>
+            ))}
+          </Table.Body>
+        </Table>
+      </div>
       <div className={styles['actions-controls']}>
         <Pagination aria-label="Sidenavigering" data-size="sm">
           <Pagination.List>

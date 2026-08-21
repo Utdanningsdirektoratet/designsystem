@@ -76,56 +76,32 @@ export const Preview = meta.story({
 
     return (
       <div className={styles['preview-main']}>
-        <Table {...args}>
-          <Table.Head>
-            <Table.Row>
-              <Table.HeaderCell className={styles['show-below-tablet']}>
-                Fylke, emne
-              </Table.HeaderCell>
-              <Table.HeaderCell className={styles['hide-below-tablet']}>
-                Fylke
-              </Table.HeaderCell>
-              <Table.HeaderCell className={styles['hide-below-tablet']}>
-                Emne
-              </Table.HeaderCell>
-              <Table.HeaderCell className={styles['hide-below-tablet']}>
-                Antall elever
-              </Table.HeaderCell>
-              <Table.HeaderCell>Standpunkt</Table.HeaderCell>
-              <Table.HeaderCell className={styles['desktop-only']}>
-                Muntlig
-              </Table.HeaderCell>
-              <Table.HeaderCell className={styles['desktop-only']}>
-                Skriftlig
-              </Table.HeaderCell>
-            </Table.Row>
-          </Table.Head>
-          <Table.Body>
-            {paginatedData.map((row) => (
-              <Table.Row key={row.id}>
-                <Table.Cell className={styles['show-below-tablet']}>
-                  {row.fylke}, <br /> {row.emne}
-                </Table.Cell>
-                <Table.Cell className={styles['hide-below-tablet']}>
-                  {row.fylke}
-                </Table.Cell>
-                <Table.Cell className={styles['hide-below-tablet']}>
-                  {row.emne}
-                </Table.Cell>
-                <Table.Cell className={styles['hide-below-tablet']}>
-                  {row.antallelever}
-                </Table.Cell>
-                <Table.Cell>{row.standpunktkarakter}</Table.Cell>
-                <Table.Cell className={styles['desktop-only']}>
-                  {row.muntligkarakter}
-                </Table.Cell>
-                <Table.Cell className={styles['desktop-only']}>
-                  {row.skriftligkarakter}
-                </Table.Cell>
+        <div className={styles['preview-table-scroll']}>
+          <Table {...args}>
+            <Table.Head>
+              <Table.Row>
+                <Table.HeaderCell>Fylke</Table.HeaderCell>
+                <Table.HeaderCell>Emne</Table.HeaderCell>
+                <Table.HeaderCell>Antall elever</Table.HeaderCell>
+                <Table.HeaderCell>Standpunkt</Table.HeaderCell>
+                <Table.HeaderCell>Muntlig</Table.HeaderCell>
+                <Table.HeaderCell>Skriftlig</Table.HeaderCell>
               </Table.Row>
-            ))}
-          </Table.Body>
-        </Table>
+            </Table.Head>
+            <Table.Body>
+              {paginatedData.map((row) => (
+                <Table.Row key={row.id}>
+                  <Table.Cell>{row.fylke}</Table.Cell>
+                  <Table.Cell>{row.emne}</Table.Cell>
+                  <Table.Cell>{row.antallelever}</Table.Cell>
+                  <Table.Cell>{row.standpunktkarakter}</Table.Cell>
+                  <Table.Cell>{row.muntligkarakter}</Table.Cell>
+                  <Table.Cell>{row.skriftligkarakter}</Table.Cell>
+                </Table.Row>
+              ))}
+            </Table.Body>
+          </Table>
+        </div>
         <div className={styles['preview-controls']}>
           <Pagination aria-label="Sidenavigering" data-size="sm">
             <Pagination.List>

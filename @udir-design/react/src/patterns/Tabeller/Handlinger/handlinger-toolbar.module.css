@@ -7,6 +7,14 @@
   gap: var(--ds-size-4);
 }
 
+.actions-table-scroll {
+  overflow-x: auto;
+
+  > table {
+    min-width: 50rem;
+  }
+}
+
 .actions-filters-section {
   display: flex;
   flex-direction: column;
@@ -113,24 +121,7 @@
   color: var(--ds-color-neutral-text-subtle);
 }
 
-.show-below-mobile {
-  display: table-cell;
-}
-
-.hide-below-mobile,
-.desktop-only {
-  display: none;
-}
-
 @container (min-width: 30rem) {
-  .show-below-mobile {
-    display: none;
-  }
-
-  .hide-below-mobile {
-    display: table-cell;
-  }
-
   .actions-controls-section {
     flex-direction: row;
     justify-content: space-between;
@@ -140,10 +131,6 @@
 }
 
 @container (min-width: 50rem) {
-  .desktop-only {
-    display: table-cell;
-  }
-
   .actions-controls {
     flex-direction: row;
     justify-content: space-between;
