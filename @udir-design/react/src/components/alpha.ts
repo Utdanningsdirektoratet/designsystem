@@ -4,4 +4,5 @@
 
 export * from './fileUpload';
 export * from './formSummary';
+export * from './richText';
 export * from './suggestion';

@@ -1,0 +1,122 @@
+import { Meta, Canvas, Controls, Unstyled } from '@storybook/addon-docs/blocks';
+import { Table } from '@udir-design/react/beta';
+import * as RichTextStories from './RichText.stories';
+
+<Meta of={RichTextStories} />
+
+# RichText
+
+`RichText` gir Udirs typografi,
+avstander og komponentstiler til semantisk HTML. Den er for eksempel nyttig for å vise innhold fra en CMS-løsning som har et riktekstredigeringsverktøy. Sanitering av innholdet må gjøres av applikasjonen før det sendes til `RichText`.
+
+## Slik bruker du RichText
+
+<Canvas
+  of={RichTextStories.Preview}
+  story={{ inline: false, height: '1000px' }}
+/>
+<Controls of={RichTextStories.Preview} />
+
+### Støttet innhold
+
+`RichText` støtter følgende HTML-elementer:
+
+<Unstyled>
+  <Table border tintedColumnHeader style={{ maxWidth: 'fit-content' }}>
+    <caption className="ds-sr-only">
+      HTML-elementer som støttes av RichText
+    </caption>
+    <Table.Head>
+      <Table.Row>
+        <Table.HeaderCell scope="col">Innholdstype</Table.HeaderCell>
+        <Table.HeaderCell scope="col">HTML-elementer</Table.HeaderCell>
+      </Table.Row>
+    </Table.Head>
+    <Table.Body>
+      <Table.Row>
+        <Table.Cell>Overskrifter</Table.Cell>
+        <Table.Cell>
+          <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code>,{' '}
+          <code>h6</code>
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>Tekst</Table.Cell>
+        <Table.Cell>
+          <code>p</code>, <code>br</code>, <code>strong</code>, <code>em</code>,{' '}
+          <code>span</code>
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>Lenker</Table.Cell>
+        <Table.Cell>
+          <code>a</code>
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>Lister</Table.Cell>
+        <Table.Cell>
+          <code>ul</code>, <code>ol</code>, <code>li</code>
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>Sitater og skillelinjer</Table.Cell>
+        <Table.Cell>
+          <code>blockquote</code>, <code>hr</code>
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>Bilder</Table.Cell>
+        <Table.Cell>
+          <code>img</code>, <code>picture</code>, <code>source</code>,{' '}
+          <code>figure</code>, <code>figcaption</code>
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>Containers</Table.Cell>
+        <Table.Cell>
+          <code>div</code>, <code>section</code>, <code>article</code>
+        </Table.Cell>
+      </Table.Row>
+    </Table.Body>
+  </Table>
+</Unstyled>
+
+<br />
+
+Sidens `h1` skal ligge utenfor `RichText`. Innholdet skal ha en logisk
+overskriftstruktur uten å hoppe over nivåer.
+
+### Bruk med React
+
+`RichText` kan motta React-elementer som `children` eller HTML i `dangerouslySetInnerHTML`.
+
+```tsx
+import { RichText } from '@udir-design/react/alpha';
+
+<RichText dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />;
+```
+
+`dangerouslySetInnerHTML` skal bare brukes med innhold som applikasjonen har
+sanitert. Applikasjonen må også validere URL-protokoller i lenker og bilder.
+
+Når designsystemkomponenter som `Alert` eller `Card` brukes som `children`,
+beholder de sin egen typografi og sine egne avstander. `RichText`-stilene stopper
+ved komponenter med klasser som starter med `ds-` eller `uds-`.
+
+### Bruk uten React
+
+Bruk klassen `.uds-rich-text` på et element som omslutter HTML-en.
+
+```html
+<div class="uds-rich-text">
+  <h2>Overskrift</h2>
+  <p>Brødtekst fra publiseringsløsningen.</p>
+</div>
+```
+
+## Eksempel
+
+Eksempelet under simulerer et riktekstredigeringsverktøy hvor innholdet blir sanitert før det sendes til `RichText`. Her er det også mulighet for å sammenligne innholdet før og etter sanitering. HTML-en saniteres med [DOMPurify](https://github.com/cure53/dompurify).
+
+<Canvas of={RichTextStories.InteractiveComparison} />

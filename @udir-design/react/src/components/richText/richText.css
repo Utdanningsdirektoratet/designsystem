@@ -1,0 +1,180 @@
+.uds-rich-text {
+  --dsc-rich-text-block-spacing: var(--ds-size-5);
+  --dsc-rich-text-list-item-spacing: var(--ds-size-3);
+  --dsc-rich-text-nested-list-item-spacing: var(--ds-size-2);
+  color: var(--ds-color-text-default);
+}
+
+@scope (.uds-rich-text) to (
+  :is(
+    [class^='ds-'],
+    [class*=' ds-'],
+    [class^='uds-'],
+    [class*=' uds-']
+  )
+) {
+  :is(h1, h2, h3, h4, h5, h6) {
+    @composes ds-heading from '@digdir/designsystemet-css/heading.css';
+
+    margin-block-end: var(--ds-size-4);
+  }
+
+  h1 {
+    font-size: var(--ds-heading-lg-font-size);
+    font-weight: var(--ds-heading-lg-font-weight);
+    letter-spacing: var(--ds-heading-lg-letter-spacing);
+    line-height: var(--ds-heading-lg-line-height);
+    margin-block-start: var(--ds-size-10);
+  }
+
+  h2 {
+    font-size: var(--ds-heading-md-font-size);
+    font-weight: var(--ds-heading-md-font-weight);
+    letter-spacing: var(--ds-heading-md-letter-spacing);
+    line-height: var(--ds-heading-md-line-height);
+    margin-block-start: var(--ds-size-9);
+  }
+
+  h3 {
+    font-size: var(--ds-heading-sm-font-size);
+    font-weight: var(--ds-heading-sm-font-weight);
+    letter-spacing: var(--ds-heading-sm-letter-spacing);
+    line-height: var(--ds-heading-sm-line-height);
+    margin-block-start: var(--ds-size-8);
+  }
+
+  h4 {
+    font-size: var(--ds-heading-xs-font-size);
+    font-weight: var(--ds-heading-xs-font-weight);
+    letter-spacing: var(--ds-heading-xs-letter-spacing);
+    line-height: var(--ds-heading-xs-line-height);
+    margin-block-start: var(--ds-size-7);
+  }
+
+  :is(h5, h6) {
+    font-size: var(--ds-heading-2xs-font-size);
+    font-weight: var(--ds-heading-2xs-font-weight);
+    letter-spacing: var(--ds-heading-2xs-letter-spacing);
+    line-height: var(--ds-heading-2xs-line-height);
+    margin-block-start: var(--ds-size-6);
+  }
+
+  :is(p, ul, ol, blockquote) {
+    font-size: var(--ds-body-md-font-size);
+    font-weight: var(--ds-body-md-font-weight);
+    letter-spacing: var(--ds-body-md-letter-spacing);
+    line-height: var(--ds-body-md-line-height);
+  }
+
+  p {
+    margin-block-end: var(--dsc-rich-text-block-spacing);
+    margin-block-start: 0;
+  }
+
+  a {
+    @composes ds-link from '@digdir/designsystemet-css/link.css';
+
+    --dsc-link-color--active: var(--ds-color-text-subtle);
+    --dsc-link-color--hover: var(--ds-color-text-subtle);
+    --dsc-link-color: var(--ds-color-text-default);
+  }
+
+  a:where(:visited) {
+    color: var(--dsc-link-color--visited);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    a:where(:hover) {
+      color: var(--dsc-link-color--hover);
+      text-decoration-thickness: var(
+        --dsc-link-text-decoration-thickness--hover
+      );
+    }
+  }
+
+  a:focus-visible {
+    outline: var(--_ds--focus, var(--dsc-focus-outline));
+    outline-offset: var(--_ds--focus, var(--ds-border-width-focus));
+    box-shadow: var(--_ds--focus, var(--dsc-focus-boxShadow));
+    text-decoration: none;
+  }
+
+  a:focus-visible * {
+    --_ds--focus: ;
+  }
+
+  a:where(:active) {
+    color: var(--dsc-link-color--active);
+    background: var(--dsc-link-background--active);
+  }
+
+  :is(ul, ol) {
+    @composes ds-list from '@digdir/designsystemet-css/list.css';
+
+    margin-block-end: var(--dsc-rich-text-block-spacing);
+  }
+
+  :is(ul, ol) > li + li {
+    margin-block-start: var(--dsc-rich-text-list-item-spacing);
+  }
+
+  :is(ul, ol) > li > :is(ul, ol) > li + li {
+    margin-block-start: var(--dsc-rich-text-nested-list-item-spacing);
+  }
+
+  :is(ul, ol) > li::before {
+    position: absolute;
+    content: '\200B';
+  }
+
+  blockquote {
+    margin-block: var(--ds-size-7);
+    margin-inline: 0;
+    padding-inline-start: var(--ds-size-5);
+    border-inline-start: var(--ds-border-width-highlight) solid
+      var(--ds-color-border-default);
+  }
+
+  figure {
+    margin-block: var(--ds-size-7);
+    margin-inline: 0;
+  }
+
+  hr {
+    @composes ds-divider from '@digdir/designsystemet-css/divider.css';
+  }
+
+  :is(img, picture) {
+    display: block;
+    max-inline-size: 100%;
+    block-size: auto;
+  }
+
+  figcaption {
+    margin-block-start: var(--ds-size-2);
+    color: var(--ds-color-text-subtle);
+    font-size: var(--ds-body-sm-font-size);
+    font-weight: var(--ds-body-sm-font-weight);
+    letter-spacing: var(--ds-body-sm-letter-spacing);
+    line-height: var(--ds-body-sm-line-height);
+  }
+
+  /* Remove margins at the outer edge through two neutral CMS wrappers. */
+  :scope > :first-child,
+  :scope > :is(div, section, article):first-child > :first-child,
+  :scope
+    > :is(div, section, article):first-child
+    > :is(div, section, article):first-child
+    > :first-child {
+    margin-block-start: 0;
+  }
+
+  :scope > :last-child,
+  :scope > :is(div, section, article):last-child > :last-child,
+  :scope
+    > :is(div, section, article):last-child
+    > :is(div, section, article):last-child
+    > :last-child {
+    margin-block-end: 0;
+  }
+}
