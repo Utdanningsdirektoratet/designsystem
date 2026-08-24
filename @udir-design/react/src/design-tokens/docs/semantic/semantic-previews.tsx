@@ -21,7 +21,7 @@ export const Size = ({ value, size }: { value: string; size?: string }) => {
   useEffect(() => {
     if (!document) return;
 
-    // eslint-disable-next-line react/set-state-in-effect
+    // oxlint-disable-next-line react/set-state-in-effect
     setComputedValue(getComputedValue(value, size));
   }, [value, size]);
 
@@ -77,7 +77,7 @@ export const ComputedValue = ({
   useEffect(() => {
     if (!document) return;
 
-    // eslint-disable-next-line react/set-state-in-effect
+    // oxlint-disable-next-line react/set-state-in-effect
     setComputedValue(getComputedValue(value, size));
   }, [value, size]);
 

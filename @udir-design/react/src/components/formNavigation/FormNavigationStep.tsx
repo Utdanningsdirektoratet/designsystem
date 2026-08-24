@@ -41,7 +41,7 @@ export const FormNavigationStep = forwardRef<
       // in WAI-ARIA 1.2 but still announced by NVDA/JAWS/VoiceOver, so we keep
       // it until the migration lands. FormNavigationGroup's <summary> has the
       // same issue and should be migrated together.
-      // eslint-disable-next-line jsx-a11y/role-supports-aria-props -- see TODO above
+      // oxlint-disable-next-line jsx-a11y/role-supports-aria-props -- see TODO above
       aria-invalid={state === 'invalid' || undefined}
       ref={ref}
       {...rest}
