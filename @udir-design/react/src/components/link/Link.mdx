@@ -20,7 +20,7 @@ Komponenten er basert på [anchor HTML-elementet](https://developer.mozilla.org/
 
 - utføre handlinger – bruk heller [`Button`](/docs/components-button--docs)
 
-**Tommelfingerregel:** Hvis "Kopier lenkeadresse" ville gitt brukeren noe nyttig, er det en `Link`. Hvis ikke er det en [`Button`](/docs/components-button--docs), selv om resultatet er at noe åpnes eller lastes ned.
+**Knapp eller lenke?** Hvis brukeren burde kunne høyreklikke og kopiere lenkeadressen, bruk helst en `Link`, alternativt [`Button` med lenkeoppførsel](/docs/components-button--docs#knapp-med-lenkeoppførsel). Hvis ikke, bruk [`Button`](/docs/components-button--docs) selv om resultatet er at noe åpnes eller lastes ned.
 
 ## Slik bruker du Link
 
@@ -61,9 +61,7 @@ Plasser teksten i `<span>` for å få anbefalt mellomrom uten understrek mellom 
 
 ### Ikke bruk lenke med knappeoppførsel
 
-Ikke bruk `asChild` for å gi en handling lenkeutseende. Lenkeutseendet lover brukeren at adressen kan kopieres, åpnes i ny fane eller lagres, og det kan ikke en handling innfri. Skal handlingen være nedtonet, bruk `tertiary`-varianten av [`Button`](/docs/components-button--docs).
-
-Unntaket er handlinger som må stå midt inne i en tekst. En knapp bryter tekstflyten, og da er lenkeutseende det eneste alternativet systemet har.
+Ikke bruk `Link` med `asChild` og et `button`-barn for å gi lenkeutseende med knappeoppførsel. Lenkeutseendet lover brukeren at adressen kan kopieres, åpnes i ny fane eller lagres, og det kan ikke en `button` innfri. Skal handlingen være nedtonet, bruk `tertiary`-varianten av [`Button`](/docs/components-button--docs).
 
 ### Sett noreferrer på eksterne lenker
 

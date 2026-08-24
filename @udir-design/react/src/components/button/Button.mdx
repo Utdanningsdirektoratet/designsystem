@@ -20,7 +20,7 @@ Knapper lar brukerne utføre en handling. Vi har variantene `primary`, `secondar
 
 - navigere til andre sider eller ut av tjenesten – bruk heller [`Link`](/docs/components-link--docs)
 
-**Tommelfingerregel:** Hvis "Kopier lenkeadresse" ville gitt brukeren noe nyttig, er det en [`Link`](/docs/components-link--docs). Hvis ikke er det en `Button`, selv om resultatet er at noe åpnes eller lastes ned.
+**Knapp eller lenke?** Hvis brukeren burde kunne høyreklikke og kopiere lenkeadressen, bruk helst en [`Link`](/docs/components-link--docs), alternativt [`Button` med lenkeoppførsel](#knapp-med-lenkeoppførsel). Hvis ikke, bruk `Button` selv om resultatet er at noe åpnes eller lastes ned.
 
 ## Slik bruker du Button
 
@@ -120,9 +120,9 @@ I eksempelet over blir `aria-disabled` satt av `loading="true"`. Skjermlesere og
 
 ### Knapp med lenkeoppførsel
 
-Bruk `asChild` dersom du trenger å bruke knappen som en lenke. Vurder først om det er mer hensiktsmessig å bruke [`Link`](/docs/components-link--docs)-komponenten.
+Bruk `asChild` og send inn `<a href="...">` som barn dersom du trenger lenkeoppførsel med knappeutseende. Vurder først om det er mer hensiktsmessig å bruke [`Link`](/docs/components-link--docs)-komponenten.
 
-Tommelfingerregelen over avgjør hvilket element du skal bruke. `asChild` endrer bare utseendet: elementet er fortsatt en lenke, så høyreklikk, midtklikk og å åpne i ny fane fungerer som normalt.
+`asChild` med `<a href="...">` endrer det underliggende elementet, slik at høyreklikk, midtklikk og å åpne i ny fane fungerer som normalt.
 
 Det er likevel en avveining:
 
@@ -133,9 +133,9 @@ Et typisk eksempel er et skjema over flere sider der hvert steg har sin egen URL
 
 Velg knappeutseende når du vil at brukeren skal klikke seg videre der og da, og `Link` når det er sannsynlig at brukeren vil ta vare på adressen.
 
-Det motsatte, en handling med lenkeutseende, anbefaler vi ikke. Se [`Link`](/docs/components-link--docs).
+Det motsatte, knappeoppførsel med lenkeutseende, [anbefaler vi ikke](/docs/components-link--docs#ikke-bruk-lenke-med-knappeoppførsel)
 
-[Les mer om komposisjon](https://designsystemet.no/no/fundamentals/code/composition).
+[Les mer om å bruke `asChild` for komposisjon](https://designsystemet.no/no/fundamentals/code/composition).
 
 <Canvas of={ButtonStories.AsLink} />
 
