@@ -162,7 +162,7 @@ export const Position = meta.story({
 }`}
       </style>
       <div className="field-position-main">
-        {/* eslint-disable jsx-a11y/role-has-required-aria-props --
+        {/* oxlint-disable jsx-a11y/role-has-required-aria-props --
             False positive: <input type="checkbox" role="switch"> is
             spec-compliant. WAI-ARIA §5.2.2 says host-language attributes
             fulfill "required states" requirements, and §8.4 confirms
@@ -177,7 +177,7 @@ export const Position = meta.story({
           <Label>Lydløs</Label>
           <Input type="checkbox" role="switch" id={'sounds'} />
         </Field>
-        {/* eslint-enable jsx-a11y/role-has-required-aria-props */}
+        {/* oxlint-enable jsx-a11y/role-has-required-aria-props */}
       </div>
     </>
   ),

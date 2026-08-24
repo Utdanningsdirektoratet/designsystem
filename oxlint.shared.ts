@@ -194,7 +194,11 @@ export const reactPackageRules = {
   'react/rules-of-hooks': 'error',
   'react/exhaustive-deps': 'warn',
   'react/require-render-return': 'error',
-  'react/react-compiler': 'error',
+  'react/hooks': 'error',
+  'react/capitalized-calls': 'error',
+  'react/memo-dependencies': 'error',
+  'react/exhaustive-effect-dependencies': 'error',
+  'react/no-deriving-state-in-effects': 'error',
   'typescript/no-deprecated': 'error',
 } satisfies DummyRuleMap;
 

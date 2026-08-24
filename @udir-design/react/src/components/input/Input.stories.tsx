@@ -261,7 +261,7 @@ export const InputTypes = meta.story({
         </Field>
         <Field>
           <Label>Switch</Label>
-          {/* eslint-disable-next-line jsx-a11y/role-has-required-aria-props --
+          {/* oxlint-disable-next-line jsx-a11y/role-has-required-aria-props --
               False positive: <input type="checkbox" role="switch"> is
               spec-compliant. WAI-ARIA §5.2.2 + §8.4: the native `checked`
               state on <input type="checkbox"> satisfies the aria-checked

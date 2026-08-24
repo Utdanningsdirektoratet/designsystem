@@ -1,4 +1,4 @@
-/* eslint-disable no-restricted-imports */
+/* oxlint-disable no-restricted-imports */
 //@ts-expect-error example code
 import { Cell, Pie, PieChart } from 'recharts';
 import { getCategoricalColors } from '@udir-design/react/beta/utilities';
