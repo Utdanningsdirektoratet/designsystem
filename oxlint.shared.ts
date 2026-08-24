@@ -194,7 +194,6 @@ export const reactPackageRules = {
   'react/rules-of-hooks': 'error',
   'react/exhaustive-deps': 'warn',
   'react/require-render-return': 'error',
-  'react/react-compiler': 'error',
   'typescript/no-deprecated': 'error',
 } satisfies DummyRuleMap;
 
