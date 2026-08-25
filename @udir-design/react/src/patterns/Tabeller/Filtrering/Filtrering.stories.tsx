@@ -179,16 +179,18 @@ export const Preview = meta.story({
                 </Suggestion.List>
               </Suggestion>
             </Field>
-            <Field>
-              <Button
-                onClick={() => handleFiltersChange(emptyFilters)}
-                variant="tertiary"
-                data-size="sm"
-                className={previewStyles['preview-clear-filters']}
-              >
-                Fjern filtre
-              </Button>
-            </Field>
+            {hasActiveFilters(filters) && (
+              <Field>
+                <Button
+                  onClick={() => handleFiltersChange(emptyFilters)}
+                  variant="tertiary"
+                  data-size="sm"
+                  className={previewStyles['preview-clear-filters']}
+                >
+                  Fjern filtre
+                </Button>
+              </Field>
+            )}
           </div>
           <Field className={previewStyles['preview-search-field']}>
             <Label>Søk</Label>
@@ -590,14 +592,16 @@ export const WithDialog = meta.story({
                 </Prose>
               </Dialog>
             </Dialog.TriggerContext>
-            <Button
-              onClick={() => handleFiltersChange(emptyFilters)}
-              variant="tertiary"
-              data-size="sm"
-              className={dialogStyles['dialog-clear-filters']}
-            >
-              Fjern filtre
-            </Button>
+            {hasActiveFilters(filters) && (
+              <Button
+                onClick={() => handleFiltersChange(emptyFilters)}
+                variant="tertiary"
+                data-size="sm"
+                className={dialogStyles['dialog-clear-filters']}
+              >
+                Fjern filtre
+              </Button>
+            )}
           </div>
         </div>
 
@@ -712,6 +716,10 @@ const initialFilters: Filters = {
   counties: ['Agder', 'Rogaland'],
   municipalities: ['Arendal', 'Kristiansand', 'Sandnes'],
 };
+
+function hasActiveFilters(filters: Filters) {
+  return Object.values(filters).some((values) => values.length > 0);
+}
 
 function getMunicipalities(counties: string[]) {
   return [
