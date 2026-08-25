@@ -13,7 +13,7 @@ import { FileUploadDropzone } from './docs/FakeFileUploadDropzone';
 import { FileUploadItem } from './docs/FakeFileUploadItem';
 import { FileUploadList } from './docs/FakeFileUploadList';
 import { FileUploadTrigger } from './docs/FakeFileUploadTrigger';
-import { FileUpload } from './index';
+import { FileUpload, FileUploadFileSize } from './index';
 
 const meta = preview.meta({
   component: FileUploadTrigger,
@@ -21,6 +21,7 @@ const meta = preview.meta({
     'FileUpload.Dropzone': FileUploadDropzone,
     'FileUpload.List': FileUploadList,
     'FileUpload.Item': FileUploadItem,
+    'FileUpload.FileSize': FileUploadFileSize,
   },
   tags: ['udir'],
   parameters: {
@@ -434,7 +435,12 @@ export const ExampleItems = meta.story({
                 <FileUpload.Item
                   key={index}
                   file={file}
-                  description={`Filopplasting ${index + 1}`}
+                  description={
+                    <>
+                      {`Filopplasting ${index + 1} (`}
+                      <FileUpload.FileSize size={file.size} />)
+                    </>
+                  }
                   readonly={index === 2 && true}
                   loading={index === 3 && true}
                   onRemove={() => removeFile(file)}
@@ -506,7 +512,9 @@ export const ExampleItems = meta.story({
     });
 
     await step('Description is shown for normal items', async () => {
-      await expect(canvas.getByText('Filopplasting 1')).toBeInTheDocument();
+      await expect(
+        canvas.getByText('Filopplasting 1', { exact: false }),
+      ).toBeInTheDocument();
     });
 
     await step('Files are exposed as lists of cards', async () => {

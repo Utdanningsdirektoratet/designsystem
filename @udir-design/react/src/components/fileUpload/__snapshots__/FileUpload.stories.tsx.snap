@@ -41,9 +41,11 @@ exports[`Compact List 1`] = `
           <a download="kandidat-13.pdf">
             kandidat-13.pdf
           </a>
-          <p data-size="sm">
-            0.29 MB
-          </p>
+          <div>
+            <span>
+              293 KB
+            </span>
+          </div>
         </div>
         <button
           data-icon="true"
@@ -108,9 +110,11 @@ exports[`Compact List 1`] = `
           <a download="kandidat-14.pdf">
             kandidat-14.pdf
           </a>
-          <p data-size="sm">
-            0.29 MB
-          </p>
+          <div>
+            <span>
+              293 KB
+            </span>
+          </div>
         </div>
         <button
           data-icon="true"
@@ -175,9 +179,11 @@ exports[`Compact List 1`] = `
           <a download="kandidat-15.pdf">
             kandidat-15.pdf
           </a>
-          <p data-size="sm">
-            0.29 MB
-          </p>
+          <div>
+            <span>
+              293 KB
+            </span>
+          </div>
         </div>
         <button
           data-icon="true"
@@ -237,9 +243,11 @@ exports[`Compact List 1`] = `
           <a download="kandidat-16.tsx">
             kandidat-16.tsx
           </a>
-          <p data-size="sm">
-            0.82 MB
-          </p>
+          <div>
+            <span>
+              844 KB
+            </span>
+          </div>
         </div>
         <button
           data-icon="true"
@@ -389,9 +397,11 @@ exports[`Example Drop Zone 1`] = `
         <a download="eksempel1.pdf">
           eksempel1.pdf
         </a>
-        <p data-size="sm">
-          0.29 MB
-        </p>
+        <div>
+          <span>
+            293 KB
+          </span>
+        </div>
       </div>
       <button
         data-icon="true"
@@ -519,9 +529,11 @@ exports[`Example Dropzone With Explicit Size 1`] = `
         <a download="eksempel1.pdf">
           eksempel1.pdf
         </a>
-        <p data-size="sm">
-          0.29 MB
-        </p>
+        <div>
+          <span>
+            293 KB
+          </span>
+        </div>
       </div>
       <button
         data-icon="true"
@@ -598,9 +610,13 @@ exports[`Example Items 1`] = `
           <a download="eksempel2.docx">
             eksempel2.docx
           </a>
-          <p data-size="sm">
-            Filopplasting 1
-          </p>
+          <div>
+            Filopplasting 1 (
+            <span>
+              29 KB
+            </span>
+            )
+          </div>
         </div>
         <button
           data-icon="true"
@@ -660,9 +676,13 @@ exports[`Example Items 1`] = `
           <a download="eksempel3.png">
             eksempel3.png
           </a>
-          <p data-size="sm">
-            Filopplasting 2
-          </p>
+          <div>
+            Filopplasting 2 (
+            <span>
+              2,86 MB
+            </span>
+            )
+          </div>
         </div>
         <button
           data-icon="true"
@@ -727,9 +747,13 @@ exports[`Example Items 1`] = `
           <a download="eksempel4.pdf">
             eksempel4.pdf
           </a>
-          <p data-size="sm">
-            Filopplasting 3
-          </p>
+          <div>
+            Filopplasting 3 (
+            <span>
+              360 KB
+            </span>
+            )
+          </div>
         </div>
       </div>
       <div aria-live="polite">
@@ -772,9 +796,11 @@ exports[`Example Items 1`] = `
           <a download="eksempel5.tsx">
             eksempel5.tsx
           </a>
-          <p data-size="sm">
-            0.82 MB
-          </p>
+          <div>
+            <span>
+              844 KB
+            </span>
+          </div>
         </div>
         <button
           data-icon="true"
@@ -913,9 +939,11 @@ exports[`Example Trigger 1`] = `
           <a download="eksempel1.png">
             eksempel1.png
           </a>
-          <p data-size="sm">
-            0.29 MB
-          </p>
+          <div>
+            <span>
+              293 KB
+            </span>
+          </div>
         </div>
         <button
           data-icon="true"
@@ -1219,9 +1247,11 @@ exports[`Too Many Files 1`] = `
           <a download="eksempel1.pdf">
             eksempel1.pdf
           </a>
-          <p data-size="sm">
-            0.29 MB
-          </p>
+          <div>
+            <span>
+              293 KB
+            </span>
+          </div>
         </div>
         <button
           data-icon="true"
@@ -1286,9 +1316,11 @@ exports[`Too Many Files 1`] = `
           <a download="eksempel2.docx">
             eksempel2.docx
           </a>
-          <p data-size="sm">
-            8.79 KB
-          </p>
+          <div>
+            <span>
+              9 KB
+            </span>
+          </div>
         </div>
         <button
           data-icon="true"
@@ -1348,9 +1380,11 @@ exports[`Too Many Files 1`] = `
           <a download="eksempel3.png">
             eksempel3.png
           </a>
-          <p data-size="sm">
-            2.86 MB
-          </p>
+          <div>
+            <span>
+              2,86 MB
+            </span>
+          </div>
         </div>
         <button
           data-icon="true"
@@ -1469,8 +1503,8 @@ exports[`Upload 1`] = `
           <a download="rapport.pdf">
             rapport.pdf
           </a>
-          <p data-size="sm">
-          </p>
+          <div>
+          </div>
         </div>
       </div>
       <div aria-live="polite">

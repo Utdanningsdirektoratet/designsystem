@@ -67,6 +67,7 @@ import {
 import {
   FileUpload,
   FileUploadDropzone,
+  FileUploadFileSize,
   FileUploadItem,
   FileUploadList,
   FileUploadTrigger,
@@ -268,7 +269,12 @@ export function cspDemoComponents(props: CspDemoProps) {
       <FileUploadTrigger label="Last opp" variant="secondary" />
       <FileUploadDropzone label="Last opp" isDragActive />
       <FileUploadList variant="compact">
-        <FileUploadItem file={file} onRemove={noop} loading />
+        <FileUploadItem
+          file={file}
+          description={<FileUploadFileSize size={file.size} />}
+          onRemove={noop}
+          loading
+        />
         <FileUploadItem file={file} onRemove={noop} error="Feil" />
       </FileUploadList>
     </>
@@ -485,6 +491,7 @@ export function cspDemoComponents(props: CspDemoProps) {
       </FileUpload.List>
     ),
     FileUploadDropzone: fileUpload,
+    FileUploadFileSize: fileUpload,
     FileUploadItem: fileUpload,
     FileUploadList: fileUpload,
     FileUploadTrigger: fileUpload,
