@@ -32,6 +32,7 @@ import { FileUpload } from '@udir-design/react';
 - `FileUpload.Dropzone` eller `FileUpload.Trigger` er feltet brukeren velger filer med.
 - `FileUpload.List` viser vedleggene som en liste (`<ul>` med `<li>`), slik at skjermlesere kan lese ut hvor mange vedlegg det er og hvor i lista brukeren befinner seg.
 - `FileUpload.Item` viser ett vedlegg. Derfor må `FileUpload.Item` alltid ligge inni en `FileUpload.List`.
+- `FileUpload.FileSize` viser en filstørrelse, for eksempel i beskrivelsen av et vedlegg.
 
 ```tsx
 <FileUpload.List>
@@ -67,7 +68,24 @@ Varianten `FileUpload.Trigger` er en knapp som åpner nettleserens filvelger. Du
 
 Filnavnet er en [`Link`](/docs/components-link--docs) med `download`-attributtet, slik at brukeren kan laste ned en kopi av filen ved å klikke på navnet.
 
-Vi viser filstørrelsen automatisk. Dersom du vil vise noe annet i stedet for filstørrelsen, for eksempel en kort beskrivelse av filen, kan du sette `description`. Om du hverken vil vise filstørrelse eller egen informasjon, sett `description` til `null`.
+Vi viser filstørrelsen automatisk. Dersom du vil vise noe annet i stedet for filstørrelsen, for eksempel en kort beskrivelse av filen, kan du sette `description`.
+
+Du kan også kombinere filstørrelse og egen informasjon fritt ved å bruke `FileUpload.FileSize` i `description`:
+
+```tsx
+<FileUpload.Item
+  file={file}
+  onRemove={handleRemove}
+  description={
+    <>
+      <FileUpload.FileSize size={file.size} />{' '}
+      <span>Endret 23. april 2026</span>
+    </>
+  }
+/>
+```
+
+Om du hverken vil vise filstørrelse eller egen informasjon, sett `description` til `null`.
 
 Du kan bruke `error` til å vise feilmeldinger, for eksempel dersom filformatet ikke er riktig.
 
