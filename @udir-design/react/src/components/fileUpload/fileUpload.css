@@ -275,7 +275,7 @@
   }
 
   /* Uploading text in the paragraph after link */
-  &[aria-busy='true'] .ds-link + .ds-paragraph::before {
+  &[aria-busy='true'] .ds-link + .uds-file-upload__item-description::before {
     content: var(--udsc-fileUpload-uploading-text);
   }
 }
@@ -303,6 +303,10 @@
   flex: 1;
 }
 
+.uds-file-upload__item-description {
+  font-size: var(--ds-font-size-minus-1);
+}
+
 .uds-file-upload__item-error {
   margin-block-start: 0;
 
@@ -326,7 +330,7 @@
   gap: var(--ds-size-3);
   flex-wrap: wrap;
 
-  > .ds-paragraph {
+  > .uds-file-upload__item-description {
     color: var(--ds-color-neutral-text-subtle);
     white-space: nowrap;
   }

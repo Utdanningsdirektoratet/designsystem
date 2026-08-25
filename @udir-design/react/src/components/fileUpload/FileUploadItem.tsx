@@ -18,6 +18,7 @@ import {
 import { Button } from '../button';
 import { Link } from '../link';
 import { Spinner } from '../spinner';
+import { FileUploadFileSize } from './FileUploadFileSize';
 
 /**
  * Inspired by Nav's Aksel
@@ -30,7 +31,7 @@ export interface FileUploadItemProps extends Omit<
   'data-size'?: Size;
   /**
    * Data shown with the file name: below it in the `default` list variant, inline in `compact`.
-   * Falls back to the formatted file size if not provided.
+   * Falls back to showing the formatted file size using `FileUpload.FileSize` if not provided.
    * Set to `null` to hide it entirely.
    */
   description?: ReactNode;
@@ -96,12 +97,12 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
           </div>
           <div className="uds-file-upload__item-content">
             <FileName file={file} href={href} />
-            <Paragraph data-size="sm">
+            <div className="uds-file-upload__item-description">
               {/* Loading text in css. Always rendered so the ::before can hook onto it. */}
               {!loading &&
                 description !== null &&
-                (description ?? formatFileSize(file))}
-            </Paragraph>
+                (description ?? <FileUploadFileSize size={file.size} />)}
+            </div>
           </div>
           {!loading && !readonly && (
             <Tooltip content="">
@@ -129,19 +130,6 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
   },
 );
 FileUploadItem.displayName = 'FileUpload.Item';
-
-const KB = 1024;
-const MB = 1024 * 1024;
-
-export function formatFileSize(file: File): string | null {
-  if (file.size === 0) {
-    return null;
-  }
-  if (file.size < 0.01 * MB) {
-    return `${(file.size / KB).toFixed(2)} KB`;
-  }
-  return `${(file.size / MB).toFixed(2)} MB`;
-}
 
 export function Icon({
   file,
