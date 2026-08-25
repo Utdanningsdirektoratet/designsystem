@@ -50,6 +50,7 @@ export default defineConfig({
             instances: [{ browser: 'chromium' }],
             provider: playwright(),
             headless: true,
+            screenshotFailures: false,
           },
           setupFiles: ['./vitest.setup.ts'],
           include: [
@@ -76,6 +77,7 @@ export default defineConfig({
             instances: [{ browser: 'chromium' }],
             provider: playwright(),
             headless: true,
+            screenshotFailures: false,
           },
           setupFiles: ['./.storybook/vitest.setup.ts'],
           snapshotSerializers: ['./.storybook/story-snapshot-serializer.ts'],
