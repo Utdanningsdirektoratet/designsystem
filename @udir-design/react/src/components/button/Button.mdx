@@ -20,6 +20,8 @@ Knapper lar brukerne utføre en handling. Vi har variantene `primary`, `secondar
 
 - navigere til andre sider eller ut av tjenesten – bruk heller [`Link`](/docs/components-link--docs)
 
+**Knapp eller lenke?** Hvis brukeren burde kunne høyreklikke og kopiere lenkeadressen, bruk helst en [`Link`](/docs/components-link--docs), alternativt [`Button` med lenkeoppførsel](#knapp-med-lenkeoppførsel). Hvis ikke, bruk `Button` selv om resultatet er at noe åpnes eller lastes ned.
+
 ## Slik bruker du Button
 
 <Canvas of={ButtonStories.Preview} withToolbar />
@@ -73,14 +75,6 @@ Vi kan bruke en `danger`-knapp sammen med én eller flere `neutral`-knapper for 
 
 ## Eksempler
 
-### Knapp som lenke
-
-Bruk `asChild` dersom du trenger å bruke knappen som en lenke. Vurder først om det er mer hensiktsmessig å bruke [`Link`](/docs/components-link--docs)-komponenten. Knapp som lenke kan gi tydeligere visuell prioritet når navigasjonen er en viktig handling.
-
-[Les mer om komposisjon](https://www.designsystemet.no/grunnleggende/for-utviklere/komposisjon).
-
-<Canvas of={ButtonStories.AsLink} />
-
 ### Knapp med kun ikon
 
 Knapper med kun ikon bruker vi bare for godt kjente ikoner, som Lukk og Slett. Knappen må da ha en tilgjengelig tekst som forklarer hva den gjør, for eksempel med `aria-label` eller i en `Tooltip` som i eksempelet under.
@@ -123,6 +117,27 @@ I eksempelet over blir `aria-disabled` satt av `loading="true"`. Skjermlesere og
 </SimpleAlert>
 
 ## Retningslinjer
+
+### Knapp med lenkeoppførsel
+
+Bruk `asChild` og send inn `<a href="...">` som barn dersom du trenger lenkeoppførsel med knappeutseende. Vurder først om det er mer hensiktsmessig å bruke [`Link`](/docs/components-link--docs)-komponenten.
+
+`asChild` med `<a href="...">` endrer det underliggende elementet, slik at høyreklikk, midtklikk og å åpne i ny fane fungerer som normalt.
+
+Det er likevel en avveining:
+
+- Knappeutseendet gir tydeligere visuell prioritet, og passer når navigasjonen er en viktig handling på siden.
+- Knappeutseendet lover ikke lenkeoppførsel, så færre brukere tenker på å kopiere lenkeadressen eller åpne i ny fane. Funksjonaliteten er der, men den er mindre synlig.
+
+Et typisk eksempel er et skjema over flere sider der hvert steg har sin egen URL. Forrige og Neste er da ekte lenker, men vi gir dem knappeutseende, for eksempel `secondary` og `primary`, fordi det å komme videre er en viktig handling på siden. Har ikke stegene egne URL-er, er Forrige og Neste vanlige knapper.
+
+Velg knappeutseende når du vil at brukeren skal klikke seg videre der og da, og `Link` når det er sannsynlig at brukeren vil ta vare på adressen.
+
+Det motsatte, knappeoppførsel med lenkeutseende, [anbefaler vi ikke](/docs/components-link--docs#ikke-bruk-lenke-med-knappeoppførsel)
+
+[Les mer om å bruke `asChild` for komposisjon](https://designsystemet.no/no/fundamentals/code/composition).
+
+<Canvas of={ButtonStories.AsLink} />
 
 ### Plassering av knapper
 
