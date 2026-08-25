@@ -116,11 +116,7 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
             </Tooltip>
           )}
         </div>
-        <div
-          aria-relevant="additions removals"
-          aria-live="polite"
-          className="uds-file-upload__item-error"
-        >
+        <div aria-live="polite" className="uds-file-upload__item-error">
           {Boolean(error) && (
             <Paragraph>
               <XMarkOctagonFillIcon aria-hidden />
