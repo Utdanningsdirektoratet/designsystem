@@ -69,7 +69,24 @@ Filer som er lastet opp vises med `FileUpload.List` og én `FileUpload.Item` per
 
 Filnavnet er en [`Link`](/docs/components-link--docs) med `download`-attributtet, slik at brukeren kan laste ned en kopi av filen ved å klikke på navnet.
 
-Vi viser filstørrelsen automatisk. Dersom du vil vise noe annet i stedet for filstørrelsen, for eksempel en kort beskrivelse av filen, kan du sette `description`. Du kan fjerne filstørrelsen ved å sette `description` til `null`.
+Vi viser filstørrelsen automatisk. Dersom du vil vise noe annet i stedet for filstørrelsen, for eksempel en kort beskrivelse av filen, kan du sette `description`.
+
+Du kan også kombinere filstørrelse og egen informasjon fritt ved å bruke `FileUpload.FileSize` i `description`:
+
+```tsx
+<FileUpload.Item
+  file={file}
+  onRemove={handleRemove}
+  description={
+    <>
+      <FileUpload.FileSize size={file.size} />{' '}
+      <span>Endret 23. april 2026</span>
+    </>
+  }
+/>
+```
+
+Om du hverken vil vise filstørrelse eller egen informasjon, sett `description` til `null`.
 
 Du kan bruke `error` til å vise feilmeldinger, for eksempel dersom filformatet ikke er riktig.
 
