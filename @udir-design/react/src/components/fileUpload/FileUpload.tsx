@@ -1,4 +1,5 @@
 import { FileUploadDropzone } from './FileUploadDropzone';
+import { FileUploadFileSize } from './FileUploadFileSize';
 import { FileUploadItem } from './FileUploadItem';
 import { FileUploadList } from './FileUploadList';
 import { FileUploadTrigger } from './FileUploadTrigger';
@@ -12,16 +13,14 @@ export type FileUpload = {
    */
   Trigger: typeof FileUploadTrigger;
   /**
-   * Component that provides a dropzone
-   * for file upload
+   * Component that provides a dropzone for file upload
    *
    * @example
    * <FileUpload.Dropzone />
    */
   Dropzone: typeof FileUploadDropzone;
   /**
-   * Component that previews a file
-   * uploaded by the user.
+   * Component that previews a file uploaded by the user.
    *
    * Must be placed inside a `FileUpload.List`.
    *
@@ -41,6 +40,25 @@ export type FileUpload = {
    * </FileUpload.List>
    */
   List: typeof FileUploadList;
+  /**
+   * Component that displays the size of a file with proper formatting.
+   *
+   * Is used automatically in `FileUpload.Item` if description is not set.
+   * Useful for customising the item description while still displaying file size.
+   *
+   * @example
+   * <FileUpload.Item
+   *   file={file}
+   *   onRemove={handleRemove}
+   *   description={
+   *     <>
+   *       <FileUpload.FileSize size={file.size} />{' '}
+   *       <span>Endret 23. april 2026</span>
+   *     </>
+   *   }
+   * />
+   */
+  FileSize: typeof FileUploadFileSize;
 };
 
 export const FileUpload: FileUpload = {
@@ -48,9 +66,11 @@ export const FileUpload: FileUpload = {
   Dropzone: FileUploadDropzone,
   Item: FileUploadItem,
   List: FileUploadList,
+  FileSize: FileUploadFileSize,
 };
 
 FileUpload.Trigger.displayName = 'FileUpload.Trigger';
 FileUpload.Dropzone.displayName = 'FileUpload.Dropzone';
 FileUpload.Item.displayName = 'FileUpload.Item';
 FileUpload.List.displayName = 'FileUpload.List';
+FileUpload.FileSize.displayName = 'FileUpload.FileSize';
