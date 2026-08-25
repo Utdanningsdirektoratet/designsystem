@@ -23,7 +23,8 @@ export const DocumentationPage = ({
   const removeFile = (fileToRemove: File) => {
     setValue(
       'documentation',
-      uploadedFiles.filter((file) => file.name === fileToRemove.name),
+      uploadedFiles.filter((file) => file !== fileToRemove),
+      { shouldValidate: true },
     );
   };
 
