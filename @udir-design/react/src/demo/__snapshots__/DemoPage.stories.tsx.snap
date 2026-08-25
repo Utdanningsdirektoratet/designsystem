@@ -500,24 +500,25 @@ exports[`Page Story 1`] = `
             </div>
           </div>
         </div>
-        <div>
+        <ds-suggestion>
           <input
-            placeholder
             aria-label="Søk"
             autocomplete="off"
             type="search"
           >
           <button
-            data-icon="true"
             data-variant="tertiary"
             type="reset"
             aria-label="Tøm"
+            aria-hidden="false"
+            hidden
+            tabindex="-1"
           >
           </button>
           <button type="submit">
             Søk
           </button>
-        </div>
+        </ds-suggestion>
       </div>
       <div>
         <table>

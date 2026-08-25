@@ -16,7 +16,7 @@ exports[`Always Show All 1`] = `
       Sogndal
     </data>
     <input
-      placeholder=" "
+      placeholder
       type="text"
       id="<removed>"
       list=":u-datalist7"
@@ -50,6 +50,19 @@ exports[`Always Show All 1`] = `
       style="<removed>"
       data-floating="bottom"
     >
+      <u-option
+        data-empty
+        hidden
+        label="Sogndal"
+        value
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<removed>"
+        aria-hidden="true"
+      >
+        Tomt
+      </u-option>
       <u-option
         selected
         role="option"
@@ -135,7 +148,7 @@ exports[`Controlled Independent Label Value 1`] = `
       Lars
     </data>
     <input
-      placeholder=" "
+      placeholder
       type="text"
       id="<removed>"
       list=":u-datalist4"
@@ -169,6 +182,19 @@ exports[`Controlled Independent Label Value 1`] = `
       style="<removed>"
       data-floating="bottom"
     >
+      <u-option
+        data-empty
+        hidden
+        label="Lars"
+        value
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<removed>"
+        aria-hidden="true"
+      >
+        Tomt
+      </u-option>
       <u-option
         label="Lars"
         value="#004"
@@ -260,7 +286,7 @@ exports[`Controlled Multiple 1`] = `
       Stavanger
     </data>
     <input
-      placeholder=" "
+      placeholder
       type="text"
       id="<removed>"
       aria-description="Navigate left to find 2 selected"
@@ -288,6 +314,18 @@ exports[`Controlled Multiple 1`] = `
       id="<removed>"
       data-is-floating="true"
     >
+      <u-option
+        data-empty
+        hidden
+        label
+        value
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<removed>"
+      >
+        Tomt
+      </u-option>
       <u-option
         label="Sogndal"
         value="Sogndal"
@@ -412,7 +450,7 @@ exports[`Controlled Single 1`] = `
       Sogndal
     </data>
     <input
-      placeholder=" "
+      placeholder
       type="text"
       id="<removed>"
       list=":u-datalist2"
@@ -438,6 +476,18 @@ exports[`Controlled Single 1`] = `
       id="<removed>"
       data-is-floating="true"
     >
+      <u-option
+        data-empty
+        hidden
+        label="Sogndal"
+        value
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<removed>"
+      >
+        Tomt
+      </u-option>
       <u-option
         label="Sogndal"
         value="Sogndal"
@@ -558,7 +608,7 @@ exports[`Custom Filter Alt 1 1`] = `
   </label>
   <ds-suggestion>
     <input
-      placeholder=" "
+      placeholder
       type="text"
       id="<removed>"
       list=":u-datalist5"
@@ -593,6 +643,19 @@ exports[`Custom Filter Alt 1 1`] = `
       style="<removed>"
       data-floating="bottom"
     >
+      <u-option
+        data-empty
+        hidden
+        label
+        value
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<removed>"
+        aria-hidden="true"
+      >
+        Tomt
+      </u-option>
       <u-option
         value="sogndal"
         role="option"
@@ -675,7 +738,7 @@ exports[`Custom Filter Alt 2 1`] = `
   </label>
   <ds-suggestion>
     <input
-      placeholder=" "
+      placeholder
       type="text"
       id="<removed>"
       list=":u-datalist6"
@@ -710,6 +773,19 @@ exports[`Custom Filter Alt 2 1`] = `
       style="<removed>"
       data-floating="bottom"
     >
+      <u-option
+        data-empty
+        hidden
+        label
+        value
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<removed>"
+        aria-hidden="true"
+      >
+        Tomt
+      </u-option>
       <u-option
         role="option"
         aria-disabled="false"
@@ -794,7 +870,7 @@ exports[`Default Value 1`] = `
       Sogndal
     </data>
     <input
-      placeholder=" "
+      placeholder
       type="text"
       id="<removed>"
       list=":u-datalist11"
@@ -828,6 +904,19 @@ exports[`Default Value 1`] = `
       style="<removed>"
       data-floating="bottom"
     >
+      <u-option
+        data-empty
+        hidden
+        label="Sogndal"
+        value
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<removed>"
+        aria-hidden="true"
+      >
+        Tomt
+      </u-option>
       <u-option
         selected
         role="option"
@@ -910,7 +999,7 @@ exports[`Fetch External 1`] = `
   </label>
   <ds-suggestion>
     <input
-      placeholder=" "
+      placeholder
       type="text"
       id="<removed>"
       list=":u-datalist8"
@@ -962,7 +1051,7 @@ exports[`In Details 1`] = `
       </label>
       <ds-suggestion autofocus>
         <input
-          placeholder=" "
+          placeholder
           type="text"
           id="<removed>"
           list=":u-datalist12"
@@ -997,6 +1086,19 @@ exports[`In Details 1`] = `
           style="<removed>"
           data-floating="bottom"
         >
+          <u-option
+            data-empty
+            hidden
+            label
+            value
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+            id="<removed>"
+            aria-hidden="true"
+          >
+            Tomt
+          </u-option>
           <u-option
             role="option"
             aria-disabled="false"
@@ -1074,7 +1176,7 @@ exports[`Multiple 1`] = `
   </label>
   <ds-suggestion data-multiple>
     <input
-      placeholder=" "
+      placeholder
       type="text"
       id="<removed>"
       aria-description="No selected"
@@ -1110,6 +1212,19 @@ exports[`Multiple 1`] = `
       style="<removed>"
       data-floating="bottom"
     >
+      <u-option
+        data-empty
+        hidden
+        label
+        value
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<removed>"
+        aria-hidden="true"
+      >
+        Tomt
+      </u-option>
       <u-option
         label="Sogndal"
         value="Sogndal"
@@ -1241,7 +1356,7 @@ exports[`Multiple Count 1`] = `
       Sogndal
     </data>
     <input
-      placeholder=" "
+      placeholder
       type="text"
       id="<removed>"
       aria-description="Navigate left to find 2 selected"
@@ -1277,6 +1392,19 @@ exports[`Multiple Count 1`] = `
       style="<removed>"
       data-floating="bottom"
     >
+      <u-option
+        data-empty
+        hidden
+        label
+        value
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<removed>"
+        aria-hidden="true"
+      >
+        Tomt
+      </u-option>
       <u-option
         label="Sogndal"
         value="Sogndal"
@@ -1389,7 +1517,7 @@ exports[`Preview 1`] = `
   </label>
   <ds-suggestion>
     <input
-      placeholder=" "
+      placeholder
       type="text"
       id="<removed>"
       list=":u-datalist1"
@@ -1424,6 +1552,19 @@ exports[`Preview 1`] = `
       style="<removed>"
       data-floating="bottom"
     >
+      <u-option
+        data-empty
+        hidden
+        label
+        value
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<removed>"
+        aria-hidden="true"
+      >
+        Tomt
+      </u-option>
       <u-option
         label="Sogndal"
         value="Sogndal"

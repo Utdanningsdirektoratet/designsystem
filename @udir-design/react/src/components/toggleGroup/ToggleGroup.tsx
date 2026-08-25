@@ -5,31 +5,37 @@ import {
 import { forwardRef } from 'react';
 import './togglegroup.css';
 
+// Digdir's deprecated optional data-toggle-group branch permits unnamed groups.
+// Require exactly one supported accessible name instead.
+type ToggleGroupAccessibleName =
+  | {
+      'aria-label': string;
+      'aria-labelledby'?: never;
+    }
+  | {
+      'aria-label'?: never;
+      'aria-labelledby': string;
+    };
+
 export type ToggleGroupProps = Omit<
   DigdirToggleGroupProps,
-  'data-color' | 'data-toggle-group' | 'variant'
-> & {
-  /**
-   * Specify which variant to use
-   * @default secondary
-   */
-  variant?: 'primary' | 'secondary';
-  'aria-label'?: string;
-};
+  | 'aria-label'
+  | 'aria-labelledby'
+  | 'data-color'
+  | 'data-toggle-group'
+  | 'variant'
+> &
+  ToggleGroupAccessibleName & {
+    /**
+     * Specify which variant to use.
+     * @default secondary
+     */
+    variant?: 'primary' | 'secondary';
+  };
 
 export const ToggleGroup = forwardRef<HTMLFieldSetElement, ToggleGroupProps>(
-  function ToggleGroup(
-    { variant = 'secondary', 'aria-label': ariaLabel, ...props },
-    ref,
-  ) {
-    return (
-      <DigdirToggleGroup
-        {...props}
-        variant={variant}
-        data-toggle-group={ariaLabel} // temporary until Digdir supports aria-label directly
-        ref={ref}
-      />
-    );
+  function ToggleGroup({ variant = 'secondary', ...props }, ref) {
+    return <DigdirToggleGroup {...props} variant={variant} ref={ref} />;
   },
 );
 

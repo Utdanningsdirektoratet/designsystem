@@ -135,15 +135,14 @@ exports[`With Anchor 1`] = `
 }
 </style>
 <div>
-  <div>
+  <ds-suggestion>
     <input
-      placeholder
       aria-label="Søk"
       autocomplete="url"
       type="search"
       value="https://udir.design.no/pagination"
     >
-  </div>
+  </ds-suggestion>
   <ds-pagination
     aria-label="Sidenavigering"
     role="navigation"

@@ -1028,20 +1028,22 @@ exports[`Udir No 1`] = `
         </div>
       </a>
       <div>
-        <div data-show="sm">
+        <ds-suggestion data-show="sm">
           <input
-            placeholder="Søk"
             aria-label="Søk"
+            placeholder="Søk"
             type="search"
           >
           <button
-            data-icon="true"
             data-variant="tertiary"
             type="reset"
             aria-label="Tøm"
+            aria-hidden="false"
+            hidden
+            tabindex="-1"
           >
           </button>
-        </div>
+        </ds-suggestion>
         <button
           data-variant="secondary"
           type="button"
@@ -1054,20 +1056,22 @@ exports[`Udir No 1`] = `
           popover="auto"
           data-placement="none"
         >
-          <div data-hide="sm">
+          <ds-suggestion data-hide="sm">
             <input
-              placeholder="Søk"
               aria-label="Søk"
+              placeholder="Søk"
               type="search"
             >
             <button
-              data-icon="true"
               data-variant="tertiary"
               type="reset"
               aria-label="Tøm"
+              aria-hidden="false"
+              hidden
+              tabindex="-1"
             >
             </button>
-          </div>
+          </ds-suggestion>
           <nav aria-labelledby="<removed>">
             <h2 id="<removed>">
               Menynavigasjon
@@ -2058,21 +2062,23 @@ exports[`With Search 1`] = `
         </span>
       </a>
       <div>
-        <div>
+        <ds-suggestion>
           <input
-            placeholder="Søk"
             aria-label="Søk"
+            placeholder="Søk"
             type="search"
             value
           >
           <button
-            data-icon="true"
             data-variant="tertiary"
             type="reset"
             aria-label="Tøm"
+            aria-hidden="false"
+            hidden
+            tabindex="-1"
           >
           </button>
-        </div>
+        </ds-suggestion>
       </div>
     </div>
   </header>

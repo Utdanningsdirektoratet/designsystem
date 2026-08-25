@@ -26,6 +26,9 @@ import { ToggleGroup } from './';
 
 const meta = preview.meta({
   component: FakeToggleGroup,
+  args: {
+    'aria-label': 'Velg epostboks',
+  },
   subcomponents: {
     'ToggleGroup.Item': ToggleGroupItem,
   },
@@ -45,7 +48,7 @@ export const Preview = meta.story({
     onChange: fn(),
   },
   render: (args) => (
-    <ToggleGroup {...args} aria-label="Velg epostboks">
+    <ToggleGroup {...args}>
       <ToggleGroup.Item value="innboks">Innboks</ToggleGroup.Item>
       <ToggleGroup.Item value="utkast">Utkast</ToggleGroup.Item>
       <ToggleGroup.Item value="arkiv">Arkiv</ToggleGroup.Item>
@@ -74,13 +77,13 @@ export const Preview = meta.story({
       await userEvent.tab();
       expect(innboksInput).toHaveFocus();
 
-      await userEvent.keyboard('{arrowright}');
+      await userEvent.keyboard('{ArrowRight}');
       expect(utkastInput).toHaveFocus();
 
-      await userEvent.keyboard('{arrowright}');
+      await userEvent.keyboard('{ArrowRight}');
       expect(arkivInput).toHaveFocus();
 
-      await userEvent.keyboard('{arrowleft}');
+      await userEvent.keyboard('{ArrowLeft}');
       expect(utkastInput).toHaveFocus();
     });
 
@@ -115,7 +118,6 @@ export const Secondary = meta.story({
   render: Preview.input.render,
 });
 
-// TODO: this example should use `aria-labelledby` when supported by Digdir
 export const OnlyText = meta.story({
   args: {},
   parameters: {
@@ -127,8 +129,10 @@ export const OnlyText = meta.story({
   },
   render: () => (
     <Fieldset>
-      <Fieldset.Legend>Filtrering av skjema</Fieldset.Legend>
-      <ToggleGroup defaultValue="personlig" aria-label="Filtrering av skjema">
+      <Fieldset.Legend id="form-filter-label">
+        Filtrering av skjema
+      </Fieldset.Legend>
+      <ToggleGroup defaultValue="personlig" aria-labelledby="form-filter-label">
         <ToggleGroup.Item value="personlig">Personlig</ToggleGroup.Item>
         <ToggleGroup.Item value="generelt">Generelt</ToggleGroup.Item>
         <ToggleGroup.Item value="tilleggsinformasjon">
@@ -163,10 +167,11 @@ export const TextAndIcons = meta.story({
 
 export const OnlyIcons = meta.story({
   args: {
+    'aria-label': 'Tekstjustering',
     defaultValue: 'venstrestilt',
   },
   render: (args) => (
-    <ToggleGroup {...args} aria-label="Tekstjustering">
+    <ToggleGroup {...args}>
       <Tooltip content="Venstrestilt">
         <ToggleGroup.Item value="venstrestilt">
           <AlignLeftIcon aria-hidden />
@@ -263,6 +268,11 @@ export const Controlled = meta.story({
     docs: advancedCodeDocs,
   },
   render: function Render(args) {
+    const {
+      'aria-label': _ariaLabel,
+      'aria-labelledby': _ariaLabelledby,
+      ...toggleGroupProps
+    } = args;
     const [value, setValue] = useState<string>('correctedAnswers');
     const isAnswers = value === 'answers';
     const actionData = {
@@ -287,7 +297,7 @@ export const Controlled = meta.story({
           aria-label="Filtrer på status"
           value={value}
           onChange={setValue}
-          {...args}
+          {...toggleGroupProps}
         >
           <ToggleGroup.Item value="answers">
             <TasklistIcon aria-hidden />

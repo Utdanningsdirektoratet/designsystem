@@ -69,6 +69,7 @@ import ${icon.name}Svg from
           Bruk i kode
         </Heading>
         <ToggleGroup
+          aria-label="Velg kodeformat"
           data-size="sm"
           variant="secondary"
           value={codeType}

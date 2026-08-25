@@ -108,12 +108,13 @@ Vi kan vise brukeren at en knapp laster ved å kombinere knappen med en spinner 
 
 <Canvas of={ButtonStories.Loading} />
 
-I eksempelet over blir `aria-disabled` satt av `loading="true"`. Skjermlesere og andre hjelpemidler vil bli informert om at knappen finnes, men ikke er aktiv. I motsetning til `disabled`, kan knappen fortsatt få fokus når noen navigerer med tastaturet.
+`loading="true"` setter automatisk `aria-busy="true"`, som forteller hjelpemidler at en handling pågår. Knappen kan fortsatt få fokus når noen navigerer med tastaturet. Vurder også om statusen bør komme fram på andre måter, for eksempel ved å endre knappeteksten fra «Lagre» til «Lagrer».
+
+En knapp som laster skal ikke være deaktivert, hverken med `aria-disabled` eller `disabled`.
 
 <SimpleAlert type="info" heading="Vær oppmerksom på">
-  `loading="true"` eller `aria-disabled` stopper ikke automatisk knappen fra å
-  utløse `onClick`. Du må selv passe på at callback-funksjonen ikke kjører når
-  knappen er deaktivert.
+  `loading="true"` stopper ikke knappen fra å utløse `onClick`. Du må selv passe
+  på at callback-funksjonen ikke kjører mens knappen laster.
 </SimpleAlert>
 
 ## Retningslinjer
