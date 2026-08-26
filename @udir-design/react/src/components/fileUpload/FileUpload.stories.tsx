@@ -392,22 +392,26 @@ export const ExampleTrigger = meta.story({
 export const ExampleItems = meta.story({
   parameters: { docs: advancedCodeDocs },
   render: () => {
-    const dummyFiles: File[] = [
-      new File(['abc'.repeat(100000)], 'eksempel1.pdf'),
-      new File(['abc'.repeat(10000)], 'eksempel2.docx'),
-      new File(['abc'.repeat(1000000)], 'eksempel3.png'),
-      new File(['abc'.repeat(123000)], 'eksempel4.pdf'),
+    type FileInfo = { file: File; href?: string };
+    const dummyFiles: FileInfo[] = [
+      { file: new File(['abc'.repeat(100000)], 'eksempel1.pdf') },
+      { file: new File(['abc'.repeat(10000)], 'eksempel2.docx') },
+      {
+        file: new File(['abc'.repeat(1000000)], 'eksempel3.png'),
+        href: '/eksempel3.png',
+      },
+      { file: new File(['abc'.repeat(123000)], 'eksempel4.pdf') },
     ];
     const dummyRejected: File[] = [
       new File(['abc'.repeat(288000)], 'eksempel5.tsx'),
     ];
 
-    const [files, setFiles] = useState<File[]>(dummyFiles);
+    const [files, setFiles] = useState<FileInfo[]>(dummyFiles);
     const [rejected, setRejected] = useState<File[]>(dummyRejected);
 
     const removeFile = (fileToRemove: File) => {
       setFiles((prevItems) =>
-        prevItems.filter((file) => file !== fileToRemove),
+        prevItems.filter((item) => item.file !== fileToRemove),
       );
     };
 
@@ -434,19 +438,20 @@ export const ExampleItems = meta.story({
                 Vedlegg ({files.length}):
               </Heading>
               <FileUpload.List>
-                {files.map((file, index) => (
+                {files.map((item, index) => (
                   <FileUpload.Item
                     key={index}
-                    file={file}
+                    file={item.file}
+                    href={item.href}
                     description={
                       <>
                         <span>Filopplasting {index + 1}</span> (
-                        <FileUpload.FileSize size={file.size} />)
+                        <FileUpload.FileSize size={item.file.size} />)
                       </>
                     }
                     readonly={index === 2 && true}
                     loading={index === 3 && true}
-                    onRemove={() => removeFile(file)}
+                    onRemove={() => removeFile(item.file)}
                   />
                 ))}
               </FileUpload.List>
