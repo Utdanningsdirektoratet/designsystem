@@ -275,7 +275,7 @@
   }
 
   /* Uploading text in the paragraph after link */
-  &[aria-busy='true'] .ds-link + .uds-file-upload__item-description::before {
+  &[aria-busy='true'] .uds-file-upload__item-description::before {
     content: var(--udsc-fileUpload-uploading-text);
   }
 }
