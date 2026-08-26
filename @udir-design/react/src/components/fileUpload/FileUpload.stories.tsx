@@ -12,6 +12,7 @@ import { FileUploadDropzone } from './docs/FakeFileUploadDropzone';
 import { FileUploadItem } from './docs/FakeFileUploadItem';
 import { FileUploadList } from './docs/FakeFileUploadList';
 import { FileUploadTrigger } from './docs/FakeFileUploadTrigger';
+import { FileMeta } from './types';
 import { FileUpload, FileUploadFileSize } from './index';
 
 const meta = preview.meta({
@@ -206,6 +207,7 @@ export const ExampleDropZone = meta.story({
   play: async ({ canvasElement, step }) => {
     const canvas = canvasElement as HTMLElement;
     const dropzone = canvas.querySelector('input') as HTMLInputElement;
+    // must be a File object, not FileMeta
     const dummyFile = new File(['abc'.repeat(100000)], 'eksempel1.pdf', {
       type: 'application/pdf',
     });
@@ -245,13 +247,13 @@ export const ExampleDropzoneWithExplicitSize = ExampleDropZone.extend({
 export const TooManyFiles = meta.story({
   parameters: { docs: advancedCodeDocs },
   render: (args) => {
-    const [files, setFiles] = useState<File[]>([
-      new File(['abc'.repeat(100000)], 'eksempel1.pdf'),
-      new File(['abc'.repeat(3000)], 'eksempel2.docx'),
-      new File(['abc'.repeat(1000000)], 'eksempel3.png'),
+    const [files, setFiles] = useState<FileMeta[]>([
+      { size: 300000, name: 'eksempel1.pdf' },
+      { size: 9000, name: 'eksempel2.docx' },
+      { size: 3000000, name: 'eksempel3.png' },
     ]);
 
-    const removeFile = (fileToRemove: File) => {
+    const removeFile = (fileToRemove: FileMeta) => {
       setFiles((prevItems) =>
         prevItems.filter((file) => file !== fileToRemove),
       );
@@ -372,6 +374,7 @@ export const ExampleTrigger = meta.story({
   play: async ({ canvasElement, step }) => {
     const canvas = canvasElement as HTMLElement;
     const trigger = canvas.querySelector('input') as HTMLInputElement;
+    // must be a File object, not FileMeta
     const dummyFile = new File(['abc'.repeat(100000)], 'eksempel1.png', {
       type: 'image/png',
     });
@@ -392,30 +395,28 @@ export const ExampleTrigger = meta.story({
 export const ExampleItems = meta.story({
   parameters: { docs: advancedCodeDocs },
   render: () => {
-    type FileInfo = { file: File; href?: string };
+    type FileInfo = { file: FileMeta; href?: string };
     const dummyFiles: FileInfo[] = [
-      { file: new File(['abc'.repeat(100000)], 'eksempel1.pdf') },
-      { file: new File(['abc'.repeat(10000)], 'eksempel2.docx') },
+      { file: { size: 300000, name: 'eksempel1.pdf' } },
+      { file: { size: 30000, name: 'eksempel2.docx' } },
       {
-        file: new File(['abc'.repeat(1000000)], 'eksempel3.png'),
+        file: { size: 3000000, name: 'eksempel3.png' },
         href: '/eksempel3.png',
       },
-      { file: new File(['abc'.repeat(123000)], 'eksempel4.pdf') },
+      { file: { size: 369000, name: 'eksempel4.pdf' } },
     ];
-    const dummyRejected: File[] = [
-      new File(['abc'.repeat(288000)], 'eksempel5.tsx'),
-    ];
+    const dummyRejected: FileMeta[] = [{ size: 864000, name: 'eksempel5.tsx' }];
 
     const [files, setFiles] = useState<FileInfo[]>(dummyFiles);
-    const [rejected, setRejected] = useState<File[]>(dummyRejected);
+    const [rejected, setRejected] = useState<FileMeta[]>(dummyRejected);
 
-    const removeFile = (fileToRemove: File) => {
+    const removeFile = (fileToRemove: FileMeta) => {
       setFiles((prevItems) =>
         prevItems.filter((item) => item.file !== fileToRemove),
       );
     };
 
-    const removeRejected = (rejectedToRemove: File) => {
+    const removeRejected = (rejectedToRemove: FileMeta) => {
       setRejected((prevFile) =>
         prevFile.filter((file) => file.name !== rejectedToRemove.name),
       );
@@ -602,6 +603,7 @@ export const Upload = meta.story({
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
     const fileInput = canvasElement.querySelector('input') as HTMLInputElement;
+    // must be a File object, not FileMeta
     const dummyFile = new File(['abc'.repeat(100000)], 'rapport.pdf', {
       type: 'application/pdf',
     });
@@ -638,20 +640,21 @@ export const CompactList = meta.story({
     'data-size': 'md',
   },
   render: (args) => {
-    const dummyFiles = [
-      { file: new File(['abc'.repeat(100000)], 'kandidat-12.pdf') },
-      { file: new File(['abc'.repeat(100000)], 'kandidat-13.pdf') },
-      { file: new File(['abc'.repeat(100000)], 'kandidat-14.pdf') },
-      { file: new File(['abc'.repeat(100000)], 'kandidat-15.pdf') },
+    type FileInfo = { file: FileMeta; error?: string };
+    const dummyFiles: FileInfo[] = [
+      { file: { size: 300000, name: 'kandidat-12.pdf' } },
+      { file: { size: 300000, name: 'kandidat-13.pdf' } },
+      { file: { size: 300000, name: 'kandidat-14.pdf' } },
+      { file: { size: 300000, name: 'kandidat-15.pdf' } },
       {
-        file: new File(['abc'.repeat(288000)], 'kandidat-16.tsx'),
+        file: { size: 864000, name: 'kandidat-16.tsx' },
         error: 'Filformatet støttes ikke',
       },
     ];
 
     const [files, setFiles] = useState(dummyFiles);
 
-    const removeFile = (fileToRemove: File) => {
+    const removeFile = (fileToRemove: FileMeta) => {
       setFiles((prev) => prev.filter(({ file }) => file !== fileToRemove));
     };
 

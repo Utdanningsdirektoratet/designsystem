@@ -13,6 +13,8 @@ export type {
   FileUploadListProps,
   FileUploadListVariant,
 } from './FileUploadList';
+export type { FileMeta } from './types';
+
 export {
   FileUpload,
   FileUploadDropzone,
