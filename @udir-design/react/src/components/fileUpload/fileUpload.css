@@ -304,6 +304,7 @@
 }
 
 .uds-file-upload__item-description {
+  color: var(--ds-color-neutral-text-subtle);
   font-size: var(--ds-font-size-minus-1);
 }
 
@@ -331,7 +332,6 @@
   flex-wrap: wrap;
 
   > .uds-file-upload__item-description {
-    color: var(--ds-color-neutral-text-subtle);
     white-space: nowrap;
   }
 }
