@@ -6,7 +6,7 @@ export interface FileUploadFileSizeProps extends Omit<
   'children'
 > {
   /** Size in bytes */
-  size: number;
+  size: number | undefined;
   /**
    * Language for number formatting.
    * Auto-detected from the nearest ancestor `lang` attribute if not set.
@@ -19,7 +19,7 @@ export const FileUploadFileSize = forwardRef<
   FileUploadFileSizeProps
 >(function FileUploadFileSize({ size, lang, ...rest }, ref) {
   const [locale, setNode] = useResolvedLocale(lang);
-  const formatted = formatFileSize(size, locale);
+  const formatted = size ? formatFileSize(size, locale) : null;
 
   const setRef = useCallback(
     (node: HTMLSpanElement | null) => {
