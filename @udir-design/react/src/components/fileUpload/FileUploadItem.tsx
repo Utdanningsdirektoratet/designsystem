@@ -19,10 +19,7 @@ import { Button } from '../button';
 import { Link } from '../link';
 import { Spinner } from '../spinner';
 import { FileUploadFileSize } from './FileUploadFileSize';
-
-/**
- * Inspired by Nav's Aksel
- */
+import type { FileMeta } from './types';
 
 export interface FileUploadItemProps extends Omit<
   HTMLAttributes<HTMLLIElement>,
@@ -38,7 +35,7 @@ export interface FileUploadItemProps extends Omit<
   /**
    * Either a native File or file metadata.
    */
-  file: File;
+  file: FileMeta;
   /**
    * Error message relating to the item.
    */
@@ -46,7 +43,7 @@ export interface FileUploadItemProps extends Omit<
   /**
    * Callback when the remove button is clicked.
    */
-  onRemove: (file: File, event: MouseEvent<HTMLButtonElement>) => void;
+  onRemove: (file: FileMeta, event: MouseEvent<HTMLButtonElement>) => void;
   /**
    * Toggle loading state.
    *
@@ -136,7 +133,7 @@ export function Icon({
   showError,
   loading,
 }: {
-  file: File;
+  file: FileMeta;
   showError: boolean;
   loading?: boolean;
 }) {
@@ -185,7 +182,7 @@ export const downloadFile = (file: File): void => {
 };
 
 interface FileNameProps {
-  file: File;
+  file: FileMeta;
   href?: string;
 }
 
